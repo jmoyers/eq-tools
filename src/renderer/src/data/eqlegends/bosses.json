@@ -1,9 +1,9 @@
 {
-  "scrapedAt": "2026-08-01T21:56:34.712Z",
+  "scrapedAt": "2026-08-01T22:02:19.067Z",
   "targets": [
     {
       "name": "Lord Nagafen",
-      "category": "Dragons",
+      "category": "Open World",
       "match": [
         "Lord Nagafen"
       ],
@@ -12,7 +12,7 @@
     },
     {
       "name": "Lady Vox",
-      "category": "Dragons",
+      "category": "Open World",
       "match": [
         "Lady Vox"
       ],
@@ -21,7 +21,7 @@
     },
     {
       "name": "Master Yael",
-      "category": "Dragons",
+      "category": "Open World",
       "match": [
         "Master Yael"
       ],

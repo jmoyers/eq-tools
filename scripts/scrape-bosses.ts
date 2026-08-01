@@ -27,10 +27,11 @@ interface Curated {
 // Classic-only (no Kunark/Velious). Ordered as the EQL progression:
 // Nagafen -> Vox -> Yael -> Plane of Fear -> Plane of Hate -> Plane of Sky.
 const TARGETS: Curated[] = [
-  // Dragons (early raid progression)
-  { name: 'Lord Nagafen', category: 'Dragons', match: ['Lord Nagafen'], zone: "Nagafen's Lair" },
-  { name: 'Lady Vox', category: 'Dragons', match: ['Lady Vox'], zone: 'Permafrost Keep' },
-  { name: 'Master Yael', category: 'Dragons', match: ['Master Yael'], zone: 'The Hole' },
+  // Open-world raid targets (early progression). Naggy/Vox are dragons, Yael a
+  // lich — grouped as the pre-plane open-world bosses.
+  { name: 'Lord Nagafen', category: 'Open World', match: ['Lord Nagafen'], zone: "Nagafen's Lair" },
+  { name: 'Lady Vox', category: 'Open World', match: ['Lady Vox'], zone: 'Permafrost Keep' },
+  { name: 'Master Yael', category: 'Open World', match: ['Master Yael'], zone: 'The Hole' },
 
   // Plane of Fear
   { name: 'Cazic Thule', category: 'Plane of Fear', match: ['Cazic Thule', 'Cazic-Thule'], zone: 'Plane of Fear' },

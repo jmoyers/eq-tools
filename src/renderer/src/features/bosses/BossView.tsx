@@ -20,7 +20,7 @@ const TIER_LONG = ['D0 · base', 'D1 · Awakened', 'D2 · Adaptive', 'D3 · Fuse
 const TIER_COLOR = ['#7a7a7a', '#5fbf72', '#6fb3d2', '#b07fd0', '#e0a94a']
 
 // EQL raid progression order.
-const CATEGORY_ORDER = ['Dragons', 'Plane of Fear', 'Plane of Hate', 'Plane of Sky']
+const CATEGORY_ORDER = ['Open World', 'Plane of Fear', 'Plane of Hate', 'Plane of Sky']
 
 const DENSITY_KEY = 'eq.bossDensity'
 type Density = 'compact' | 'comfortable'
