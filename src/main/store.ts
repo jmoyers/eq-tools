@@ -7,17 +7,34 @@ const emptyProgress: ProgressState = {
   inventorySource: undefined
 }
 
+export interface WindowBounds {
+  x: number
+  y: number
+  width: number
+  height: number
+}
+
 interface StoreShape {
   /** progress keyed by character id (name_server) */
   byCharacter: Record<string, ProgressState>
   /** last selected character's log path */
   activeLogPath?: string
+  /** last window position + size */
+  windowBounds?: WindowBounds
 }
 
 const store = new Store<StoreShape>({
   name: 'eq-tools-progress',
-  defaults: { byCharacter: {}, activeLogPath: undefined }
+  defaults: { byCharacter: {}, activeLogPath: undefined, windowBounds: undefined }
 })
+
+export function getWindowBounds(): WindowBounds | undefined {
+  return store.get('windowBounds')
+}
+
+export function setWindowBounds(b: WindowBounds): void {
+  store.set('windowBounds', b)
+}
 
 function allProgress(): Record<string, ProgressState> {
   return store.get('byCharacter', {})

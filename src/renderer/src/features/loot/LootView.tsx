@@ -14,7 +14,7 @@ import {
   TextField,
   Typography
 } from '@mui/material'
-import type { KillMap, LootEvent } from '@shared/types'
+import type { LootEvent } from '@shared/types'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
@@ -43,7 +43,6 @@ function fmtTime(ts: number): string {
 export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [history, setHistory] = useState<LootEvent[]>([])
-  const [kills, setKills] = useState<KillMap>({})
   const [query, setQuery] = useState('')
   const [groupByItem, setGroupByItem] = useState(true)
   const [questOnly, setQuestOnly] = useState(false)
@@ -51,7 +50,6 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
 
   useEffect(() => {
     void window.eq.getLootHistory().then(setHistory)
-    void window.eq.getKills().then(setKills)
   }, [])
   useEffect(() => {
     if (lastLoot) setHistory((h) => [...h, lastLoot])
@@ -222,7 +220,6 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
           onClose={() => setSelected(null)}
           item={selected}
           events={history.filter((e) => e.item.toLowerCase() === selected.toLowerCase())}
-          kills={kills}
           stats={itemStats[selected.toLowerCase()]}
           isQuestItem={questItemNames.has(selected.toLowerCase())}
         />

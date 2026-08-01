@@ -9,9 +9,11 @@ import { loadInventory } from './inventory/parseInventory'
 import {
   getActiveLogPath,
   getProgress,
+  getWindowBounds,
   setActiveLogPath,
   setInventory,
-  setQuestComplete
+  setQuestComplete,
+  setWindowBounds
 } from './store'
 import type { CharacterRef, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../shared/types'
 
@@ -31,9 +33,11 @@ function activeCharId(): string {
 }
 
 function createWindow(): void {
+  const bounds = getWindowBounds()
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 860,
+    ...(bounds ?? { width: 1280, height: 860 }),
+    minWidth: 900,
+    minHeight: 600,
     show: false,
     title: 'EQ Legends Companion',
     backgroundColor: '#0f1115',
@@ -45,6 +49,16 @@ function createWindow(): void {
   })
 
   mainWindow.on('ready-to-show', () => mainWindow?.show())
+
+  // Remember window position + size across restarts.
+  const saveBounds = (): void => {
+    if (mainWindow && !mainWindow.isMinimized() && !mainWindow.isMaximized()) {
+      setWindowBounds(mainWindow.getBounds())
+    }
+  }
+  mainWindow.on('moved', saveBounds)
+  mainWindow.on('resized', saveBounds)
+  mainWindow.on('close', saveBounds)
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
     void shell.openExternal(details.url)
@@ -103,9 +117,10 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
         mainWindow?.webContents.send(IPC.onTurnIn, t)
       },
       onKill: (mob, tier, ts) => {
-        const k = (kills[mob] ??= { count: 0, bestTier: 0, lastTs: 0 })
+        const k = (kills[mob] ??= { count: 0, bestTier: 0, firstTs: 0, lastTs: 0 })
         k.count += 1
         k.bestTier = Math.max(k.bestTier, tier)
+        k.firstTs = k.firstTs ? Math.min(k.firstTs, ts) : ts
         k.lastTs = Math.max(k.lastTs, ts)
       },
       onLevelUp: (level, ts) => {

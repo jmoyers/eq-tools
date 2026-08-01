@@ -42,11 +42,13 @@ export interface LevelEvent {
   level: number
 }
 
-/** Aggregated kill info for a mob (for drop rates + boss instance tiers). */
+/** Aggregated kill info for a mob (for loot sourcing + boss instance tiers). */
 export interface KillInfo {
   count: number
   /** highest instance difficulty tier the mob was killed at (0=base … 4=Refined) */
   bestTier: number
+  /** first time this mob was killed (ms) */
+  firstTs: number
   lastTs: number
 }
 

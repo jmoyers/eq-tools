@@ -12,7 +12,7 @@ import {
   Typography
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import type { KillMap, LootEvent } from '@shared/types'
+import type { LootEvent } from '@shared/types'
 
 function StatCard({ label, value, hint }: { label: string; value: string; hint?: string }): JSX.Element {
   return (
@@ -115,7 +115,6 @@ export function ItemDetailDialog({
   onClose,
   item,
   events,
-  kills,
   stats,
   isQuestItem
 }: {
@@ -123,7 +122,6 @@ export function ItemDetailDialog({
   onClose: () => void
   item: string
   events: LootEvent[]
-  kills: KillMap
   stats?: string
   isQuestItem: boolean
 }): JSX.Element {
@@ -136,15 +134,11 @@ export function ItemDetailDialog({
       if (e.zone) byZone.set(e.zone, (byZone.get(e.zone) ?? 0) + 1)
     }
     const sources = [...bySource.entries()]
-      .map(([name, count]) => {
-        const k = kills[name]?.count ?? 0
-        return { name, count, kills: k, rate: k > 0 ? count / k : null }
-      })
+      .map(([name, count]) => ({ name, count }))
       .sort((a, b) => b.count - a.count)
     const zones = [...byZone.entries()].map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count)
-    const rates = sources.map((s) => s.rate).filter((r): r is number => r != null)
-    return { sources, zones, bestRate: rates.length ? Math.max(...rates) : null }
-  }, [events, kills])
+    return { sources, zones }
+  }, [events])
 
   const total = events.length
   const maxSource = agg.sources[0]?.count ?? 1
@@ -166,11 +160,6 @@ export function ItemDetailDialog({
           <StatCard label="Times looted" value={String(total)} />
           <StatCard label="Distinct mobs" value={String(agg.sources.length)} />
           <StatCard label="Zones seen" value={String(agg.zones.length)} />
-          <StatCard
-            label="Best drop rate"
-            value={agg.bestRate != null ? `${Math.round(agg.bestRate * 100)}%` : '—'}
-            hint="drops ÷ kills, from your log"
-          />
         </Stack>
 
         {stats && (
@@ -193,17 +182,11 @@ export function ItemDetailDialog({
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
           <Box sx={{ flex: 1 }}>
             <Typography variant="subtitle2" gutterBottom>
-              Dropped by
+              Dropped by <Typography component="span" variant="caption" color="text.secondary">(times seen)</Typography>
             </Typography>
             {agg.sources.length === 0 && <Typography variant="caption">No source recorded.</Typography>}
             {agg.sources.map((s) => (
-              <Bar
-                key={s.name}
-                label={s.name}
-                value={s.count}
-                max={maxSource}
-                right={`${s.count}× ${s.rate != null ? `· ${Math.round(s.rate * 100)}% of ${s.kills} kills` : ''}`}
-              />
+              <Bar key={s.name} label={s.name} value={s.count} max={maxSource} right={`${s.count}× seen`} />
             ))}
           </Box>
           <Box sx={{ flex: 1 }}>

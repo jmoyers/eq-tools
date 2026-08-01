@@ -11,9 +11,10 @@ export interface ScanResult {
 }
 
 function recordKill(kills: KillMap, mob: string, tier: number, ts: number): void {
-  const k = (kills[mob] ??= { count: 0, bestTier: 0, lastTs: 0 })
+  const k = (kills[mob] ??= { count: 0, bestTier: 0, firstTs: 0, lastTs: 0 })
   k.count += 1
   k.bestTier = Math.max(k.bestTier, tier)
+  k.firstTs = k.firstTs ? Math.min(k.firstTs, ts) : ts
   k.lastTs = Math.max(k.lastTs, ts)
 }
 
