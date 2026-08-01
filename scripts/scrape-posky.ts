@@ -265,19 +265,50 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
   return quests
 }
 
+function normName(s: string): string {
+  return s.toLowerCase().replace(/\s+/g, ' ').trim()
+}
+
+function titleCase(s: string): string {
+  return s.replace(/\b\w/g, (c) => c.toUpperCase())
+}
+
+/** Turn a Rune-column value ("Wind Rune Meda") into required rune item(s). */
+function runeItems(runeText: string): PoskyItem[] {
+  return runeText
+    .split(/,|\band\b/)
+    .map((r) => r.trim())
+    .filter((r) => /\brune\b/i.test(r))
+    .map((name) => ({
+      name,
+      who: ['random drop — any Plane of Sky mob'],
+      where: 'Plane of Sky',
+      count: 1
+    }))
+}
+
 async function main(): Promise<void> {
   const all: PoskyQuest[] = []
 
-  // Fetch the overview page once — it's the fallback source for classes whose
-  // dedicated page is missing or uses a non-table layout (e.g. Enchanter).
+  // Fetch the overview page once. Its compact per-class table is both the fallback
+  // item source for classes without a dedicated page AND the source of the wind
+  // rune that every class quest requires.
   const mainHtml = await fetchParsedHtml('Plane of Sky')
   const $main = mainHtml ? cheerio.load(mainHtml) : null
+
+  const compactByClass: Record<string, PoskyQuest[]> = {}
+  for (const cls of CLASSES) compactByClass[cls] = $main ? parseMainPageClass($main, cls, 'Plane of Sky') : []
+
+  // Quest name -> rune string, across every class.
+  const runeByQuest = new Map<string, string>()
+  for (const cls of CLASSES)
+    for (const q of compactByClass[cls]) if (q.rune) runeByQuest.set(`${cls}::${normName(q.name)}`, q.rune)
 
   for (const cls of CLASSES) {
     let quests: PoskyQuest[] = []
     let usedTitle = ''
 
-    // Layout A: dedicated tests page with Item/Who/Where tables (richest data).
+    // Layout A: dedicated tests page with Item/Who/Where tables (richest drop data).
     for (const title of candidateTitles(cls)) {
       const html = await fetchParsedHtml(title)
       if (html) {
@@ -292,9 +323,25 @@ async function main(): Promise<void> {
     }
 
     // Layout B: fall back to the compact table on the main page.
-    if (quests.length === 0 && $main) {
-      quests = parseMainPageClass($main, cls, 'Plane of Sky')
+    if (quests.length === 0) {
+      quests = compactByClass[cls]
       usedTitle = 'Plane of Sky (compact)'
+    }
+
+    // Every Plane of Sky class quest also requires a wind rune. Some dedicated
+    // pages already list it (with inconsistent casing like "rune neza"); the rest
+    // need it folded in from the compact table's Rune column. Normalize either way
+    // so a quest never shows the rune twice.
+    for (const q of quests) {
+      const canonical = (runeByQuest.get(`${cls}::${normName(q.name)}`) ?? q.rune)?.trim()
+      const existing = q.items.findIndex((i) => /\brune\b/i.test(i.name))
+      if (existing >= 0) {
+        q.items[existing].name = canonical || titleCase(q.items[existing].name)
+        q.items[existing].who = ['random drop — any Plane of Sky mob']
+        q.items[existing].where = 'Plane of Sky'
+      } else if (canonical) {
+        for (const ri of runeItems(canonical)) q.items.push(ri)
+      }
     }
 
     const items = quests.reduce((s, q) => s + q.items.length, 0)

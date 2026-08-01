@@ -26,6 +26,8 @@ import {
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import RefreshIcon from '@mui/icons-material/Refresh'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import type { LootEvent } from '@shared/types'
 import { useProgress, type QuestProgress } from './useProgress'
 
@@ -161,21 +163,46 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
         {filtered.map((q) => (
           <Accordion key={q.key} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Stack direction="row" spacing={2} alignItems="center" sx={{ width: '100%', pr: 2 }}>
-                <Chip label={q.className} size="small" color="secondary" variant="outlined" sx={{ minWidth: 92 }} />
-                <Box sx={{ minWidth: 220 }}>
-                  <Typography variant="subtitle2">{q.name}</Typography>
-                  {q.reward && (
-                    <Typography variant="caption" color="primary.main">
-                      → {q.reward}
-                    </Typography>
+              <Stack spacing={0.75} sx={{ width: '100%', pr: 2 }}>
+                <Stack direction="row" spacing={2} alignItems="center">
+                  <Chip label={q.className} size="small" color="secondary" variant="outlined" sx={{ minWidth: 92 }} />
+                  <Box sx={{ minWidth: 220 }}>
+                    <Typography variant="subtitle2">{q.name}</Typography>
+                    {q.reward && (
+                      <Typography variant="caption" color="primary.main">
+                        → {q.reward}
+                      </Typography>
+                    )}
+                  </Box>
+                  <Box sx={{ flexGrow: 1 }} />
+                  {q.completed ? (
+                    <Chip size="small" color="success" variant="outlined" label="Turned in" />
+                  ) : (
+                    <Chip
+                      size="small"
+                      variant="outlined"
+                      color={q.missing.length === 0 ? 'success' : 'default'}
+                      label={q.missing.length === 0 ? 'Ready to turn in' : `${q.missing.length} of ${q.items.length} missing`}
+                    />
                   )}
-                </Box>
-                <Box sx={{ flexGrow: 1 }} />
-                {q.missing.length > 0 && !q.completed && (
-                  <Chip size="small" variant="outlined" label={`${q.missing.length} missing`} />
-                )}
-                <ProgressBar q={q} />
+                  <ProgressBar q={q} />
+                </Stack>
+                <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ pl: '100px' }}>
+                  {q.items.map((it) => {
+                    const done = it.have >= it.need || q.completed
+                    return (
+                      <Chip
+                        key={it.name}
+                        size="small"
+                        variant="outlined"
+                        color={done ? 'success' : 'default'}
+                        icon={done ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
+                        label={it.need > 1 ? `${it.name} ${it.have}/${it.need}` : it.name}
+                        sx={{ opacity: done ? 1 : 0.65 }}
+                      />
+                    )
+                  })}
+                </Stack>
               </Stack>
             </AccordionSummary>
             <AccordionDetails>

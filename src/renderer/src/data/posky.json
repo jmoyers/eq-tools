@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-08-01T20:23:27.903Z",
+  "scrapedAt": "2026-08-01T20:42:38.441Z",
   "quests": [
     {
       "className": "Bard",
@@ -15,6 +15,14 @@
             "Gorga"
           ],
           "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -35,6 +43,14 @@
           ],
           "where": "Island 4",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -53,6 +69,14 @@
             "SL"
           ],
           "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -73,6 +97,14 @@
           ],
           "where": "Island 6",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Caza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -91,6 +123,14 @@
             "SotS"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Fana",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -111,6 +151,14 @@
           ],
           "where": "Island 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -130,6 +178,14 @@
           ],
           "where": "Island 5",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Beza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -148,6 +204,14 @@
             "PoS"
           ],
           "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -176,6 +240,14 @@
           ],
           "where": "Island 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -194,6 +266,14 @@
             "Gorga"
           ],
           "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -214,6 +294,14 @@
           ],
           "where": "Island 6",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Geza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -232,6 +320,14 @@
             "SotS"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Jaka",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -252,6 +348,14 @@
           ],
           "where": "Island 6",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -270,6 +374,14 @@
             "SL"
           ],
           "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ozah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -290,6 +402,14 @@
           ],
           "where": "Island 3",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -309,6 +429,14 @@
           ],
           "where": "Island 2",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Lena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -327,6 +455,14 @@
             "KoS"
           ],
           "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -361,6 +497,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Lena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -398,6 +542,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -438,6 +590,14 @@
           ],
           "where": "Island 5 boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Caza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Cleric Plane of Sky Tests"
@@ -475,6 +635,14 @@
             "Bazzt Zzzt"
           ],
           "where": "Island 6 boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Neza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -524,6 +692,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Cleric Plane of Sky Tests"
@@ -571,6 +747,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Cleric Plane of Sky Tests"
@@ -604,6 +788,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -641,6 +833,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -681,6 +881,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Druid Plane of Sky Tests"
@@ -718,6 +926,14 @@
             "Bazzt Zzzt"
           ],
           "where": "Island 6 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -766,6 +982,14 @@
           ],
           "where": "Island 6",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Druid Plane of Sky Tests"
@@ -813,6 +1037,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Druid Plane of Sky Tests"
@@ -831,6 +1063,14 @@
             "Gorga"
           ],
           "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -851,6 +1091,14 @@
           ],
           "where": "Island 4",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ozah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -869,6 +1117,14 @@
             "SL"
           ],
           "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Beza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -889,6 +1145,14 @@
           ],
           "where": "Island 6",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Caza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -908,6 +1172,14 @@
           ],
           "where": "Island 7",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Fana",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -926,6 +1198,14 @@
             "EoV"
           ],
           "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -961,6 +1241,14 @@
           ],
           "where": "Island 3 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Lena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Magician Plane of Sky Tests"
@@ -995,6 +1283,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Neza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1043,6 +1339,14 @@
           ],
           "where": "Island 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Jaka",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Magician Plane of Sky Tests"
@@ -1079,6 +1383,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Magician Plane of Sky Tests"
@@ -1112,6 +1424,14 @@
             "Bazzt Zzzt"
           ],
           "where": "Island 6 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1155,6 +1475,14 @@
             "Sister of the Spire"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1203,6 +1531,14 @@
           ],
           "where": "Island 7",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Magician Plane of Sky Tests"
@@ -1214,9 +1550,9 @@
       "rewardStats": "You say, 'Strength'\nHolwin says, 'So be it, the test of strength you shall have. Bring to me some silken strands and a wind rune caza. The task will not be easy, but it should serve as an adequate test of strength, for one of your abilities.' \nReward:Back Straps of Mastery\nMAGIC ITEM LORE ITEM NO DROP\nSlot: BACK WRIST\nAC: 15\nSTR: +7 STA: +7 CHA: +5 HP: +50\nWT: 0.3 Size: SMALL\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "wind rune caza",
+          "name": "Wind Rune Caza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1239,9 +1575,9 @@
       "rewardStats": "You say, 'sight'\nHolwin says, 'The test of sight is a test of both body and mind. The mind will allow you to see that which is usually invisible. Bring me a cracked leather eyepatch and a wind rune geza and I will assist you in seeing what should not be seen.'\nReward:Ton Po's Eye Patch\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nEnd: +25\nSTR: +8 DEX: +8 AGI: +8\nEffect: See Invisible (Worn)\nWT: 0.1 Size: TINY\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "wind rune geza",
+          "name": "Wind Rune Geza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1264,9 +1600,9 @@
       "rewardStats": "You say, 'speed'\nHolwin says, 'The test of speed. Every monk must be swift if he is to best his opponent. Speed in both mind and body is essential in many facets of life. Return to me some dove slippers and a wind rune jaka and I shall aid your speed of mind.'\nReward:Sandals of Alacrity\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FEET\nCharges: 2\nAC: 6\nSTR: +10 AGI: +10 HP: +20\nEffect: Alacrity (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.5 Size: SMALL\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "wind rune jaka",
+          "name": "Wind Rune Jaka",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1289,9 +1625,9 @@
       "rewardStats": "You say, 'Tears'\nHolwin says, 'The test of tears involves knowing when to release, and when to provide a shoulder for another. Bring me a silken wrap and a wind rune beza. I will teach you the way.' \nReward:Ton Po's Shoulder Wraps\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 8\nSTR: +4 DEX: +4 AGI: +4\nSV FIRE: +10 SV DISEASE: +10 SV COLD: +10 SV MAGIC: +10 SV POISON: +10\nWT: 0.3 Size: SMALL\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "wind rune beza",
+          "name": "Wind Rune Beza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1314,9 +1650,9 @@
       "rewardStats": "You say, 'fists'\nHolwin says, 'A monk must know when to use his or her fists, and when to use the mind. In this endeavor, you must decide which you shall use. Return to me, once you have found them, a pair of brass knuckles, nebulous sapphire and a wind rune neza.'\nReward:Wu's Fist of Mastery\nMAGIC ITEM NO DROP\nSlot: PRIMARY SECONDARY\nSkill: 1H Blunt Atk Delay: 22\nDMG: 16 \nWT: 0.5 Size: TINY\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "rune neza",
+          "name": "Wind Rune Neza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1349,9 +1685,9 @@
       "rewardStats": "You say, 'tranquility'\nHolwin says, 'Ah, the test of tranquility. Only the tranquil monk can achieve enlightenment. Are you such an individual? Time shall tell. Retrieve these items for me. Bring a Tear of Quellious, and a wind rune lena. Then we shall assess your ability.' \nReward:Golden Sash of Tranquility\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 5\nHaste: +41%\nSTR: +15 DEX: +15 AGI: +15\nWT: 0.1 Size: SMALL\nClass: MNK\nRace: ALL",
       "items": [
         {
-          "name": "wind rune lena",
+          "name": "Wind Rune Lena",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1382,9 +1718,9 @@
           "count": 1
         },
         {
-          "name": "wind rune lena",
+          "name": "Wind Rune Lena",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1407,9 +1743,9 @@
           "count": 1
         },
         {
-          "name": "wind rune neza",
+          "name": "Wind Rune Neza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1432,9 +1768,9 @@
           "count": 1
         },
         {
-          "name": "wind rune ozah",
+          "name": "Wind Rune Ozah",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1457,9 +1793,9 @@
           "count": 1
         },
         {
-          "name": "wind rune azia",
+          "name": "Wind Rune Azia",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1492,9 +1828,9 @@
           "count": 1
         },
         {
-          "name": "wind rune fana",
+          "name": "Wind Rune Fana",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1517,9 +1853,9 @@
           "count": 1
         },
         {
-          "name": "wind rune caza",
+          "name": "Wind Rune Caza",
           "who": [
-            "random drop"
+            "random drop — any Plane of Sky mob"
           ],
           "where": "Plane of Sky",
           "count": 1
@@ -1561,6 +1897,14 @@
           ],
           "where": "Island 6 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ozah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Paladin Plane of Sky Tests"
@@ -1598,6 +1942,14 @@
             "Sister of the Spire"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Geza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1647,6 +1999,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Paladin Plane of Sky Tests"
@@ -1686,6 +2046,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Lena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Paladin Plane of Sky Tests"
@@ -1719,6 +2087,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1756,6 +2132,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Neza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1796,6 +2180,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Ranger Plane of Sky Tests"
@@ -1833,6 +2225,14 @@
             "Bazzt Zzzt"
           ],
           "where": "Island 6 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1880,6 +2280,14 @@
             "the Hand of Veeshan"
           ],
           "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1929,6 +2337,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Ranger Plane of Sky Tests"
@@ -1947,6 +2363,14 @@
             "Gorga"
           ],
           "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ozah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -1967,6 +2391,14 @@
           ],
           "where": "Island 7",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -1985,6 +2417,14 @@
             "SL"
           ],
           "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2005,6 +2445,14 @@
           ],
           "where": "Island 4",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Plane of Sky"
@@ -2023,6 +2471,14 @@
             "BZ"
           ],
           "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Geza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2050,6 +2506,14 @@
             "EoV"
           ],
           "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Jaka",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2084,6 +2548,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Ozah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2121,6 +2593,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Beza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2161,6 +2641,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shadow Knight Plane of Sky Tests"
@@ -2200,6 +2688,14 @@
           ],
           "where": "Island 6 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Fana",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shadow Knight Plane of Sky Tests"
@@ -2238,6 +2734,14 @@
             "the Hand of Veeshan"
           ],
           "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2331,6 +2835,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shadow Knight Plane of Sky Tests"
@@ -2364,6 +2876,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Meda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2410,6 +2930,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Kala",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shaman Plane of Sky Tests"
@@ -2448,6 +2976,14 @@
             "The Spiroc Lord"
           ],
           "where": "Island 5 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Beza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2497,6 +3033,14 @@
           ],
           "where": "Island 5",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Ena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shaman Plane of Sky Tests"
@@ -2534,6 +3078,14 @@
             "Sister of the Spire"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Heda",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2583,6 +3135,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Geza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Shaman Plane of Sky Tests"
@@ -2619,6 +3179,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Azia",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2659,6 +3227,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Beza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Warrior Plane of Sky Tests"
@@ -2692,6 +3268,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Neza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2740,6 +3324,14 @@
           ],
           "where": "Islands 1.5, 4, 8*",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Warrior Plane of Sky Tests"
@@ -2781,6 +3373,14 @@
             "Sister of the Spire"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Jaka",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2829,6 +3429,14 @@
           ],
           "where": "Islands 1.5, 4, 8",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Fana",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Warrior Plane of Sky Tests"
@@ -2862,6 +3470,14 @@
             "Gorgalosk"
           ],
           "where": "Island 3 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Dena",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2899,6 +3515,14 @@
             "Keeper of Souls"
           ],
           "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Fana",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -2939,6 +3563,14 @@
           ],
           "where": "Island 5 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Geza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Wizard Plane of Sky Tests"
@@ -2977,6 +3609,14 @@
           ],
           "where": "Island 6 Boss",
           "count": 1
+        },
+        {
+          "name": "Wind Rune Izah",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
         }
       ],
       "source": "Wizard Plane of Sky Tests"
@@ -3013,6 +3653,14 @@
             "Sister of the Spire"
           ],
           "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Jaka",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
@@ -3061,6 +3709,14 @@
             "the Hand of Veeshan"
           ],
           "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Wind Rune Caza",
+          "who": [
+            "random drop — any Plane of Sky mob"
+          ],
+          "where": "Plane of Sky",
           "count": 1
         }
       ],
