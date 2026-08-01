@@ -1,12 +1,18 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { IPC } from '../shared/ipc'
-import { resolveActiveCharacter } from './log/config'
+import { characterId, listCharacters, parseLogName, resolveActiveCharacter } from './log/config'
 import { Tailer } from './log/Tailer'
-import { matchLoot } from './log/parse'
+import { getRuleset } from './log/rulesets'
 import { scanLootHistory } from './log/scanHistory'
 import { loadInventory } from './inventory/parseInventory'
-import { getProgress, setInventory, setQuestComplete } from './store'
+import {
+  getActiveLogPath,
+  getProgress,
+  setActiveLogPath,
+  setInventory,
+  setQuestComplete
+} from './store'
 import type { CharacterRef, LootEvent } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
@@ -15,6 +21,10 @@ let character: CharacterRef | null = null
 
 /** Complete loot record, rebuilt from the log each launch and appended live. */
 let lootHistory: LootEvent[] = []
+
+function activeCharId(): string {
+  return character ? characterId(character) : 'none'
+}
 
 function createWindow(): void {
   mainWindow = new BrowserWindow({
@@ -45,19 +55,30 @@ function createWindow(): void {
   }
 }
 
-async function startTailing(): Promise<void> {
-  character = resolveActiveCharacter()
-  if (!character) {
-    console.warn('[eq-tools] No EQ log found; log tailing disabled.')
-    return
+/** Resolve which character to track on launch: last selected, else most recent. */
+function resolveInitialCharacter(): CharacterRef | null {
+  const savedPath = getActiveLogPath()
+  if (savedPath) {
+    const ref = parseLogName(savedPath)
+    if (ref) return ref
   }
-  console.log(`[eq-tools] Tailing ${character.name}@${character.server}: ${character.logPath}`)
+  return resolveActiveCharacter()
+}
+
+/** Point the tailer + loot history at a character (used at startup and on switch). */
+async function tailCharacter(ref: CharacterRef): Promise<void> {
+  await tailer?.stop()
+  tailer = null
+  character = ref
+  setActiveLogPath(ref.logPath)
+  console.log(`[eq-tools] Tailing ${ref.name}@${ref.server}: ${ref.logPath}`)
 
   // Build the full loot history from the existing log before tailing new lines.
-  lootHistory = await scanLootHistory(character.logPath)
+  lootHistory = await scanLootHistory(ref.logPath)
   console.log(`[eq-tools] Loaded ${lootHistory.length} historical loot events.`)
 
-  tailer = new Tailer(character.logPath, { fromStart: false })
+  const { matchLoot } = getRuleset()
+  tailer = new Tailer(ref.logPath, { fromStart: false })
   tailer.on('line', (line) => {
     mainWindow?.webContents.send(IPC.onLine, line)
     const loot = matchLoot(line)
@@ -70,17 +91,33 @@ async function startTailing(): Promise<void> {
   void tailer.start()
 }
 
+async function startTailing(): Promise<void> {
+  const ref = resolveInitialCharacter()
+  if (!ref) {
+    console.warn('[eq-tools] No EQ log found; log tailing disabled.')
+    return
+  }
+  await tailCharacter(ref)
+}
+
 function registerIpc(): void {
   ipcMain.handle(IPC.getCharacter, () => character)
-  ipcMain.handle(IPC.getProgress, () => getProgress())
+  ipcMain.handle(IPC.listCharacters, () => listCharacters())
+  ipcMain.handle(IPC.setCharacter, async (_e, logPath: string) => {
+    const ref = listCharacters().find((c) => c.logPath === logPath) ?? parseLogName(logPath)
+    if (!ref) return { ok: false as const, error: 'Character log not found.' }
+    await tailCharacter(ref)
+    return { ok: true as const, character: ref }
+  })
+  ipcMain.handle(IPC.getProgress, () => getProgress(activeCharId()))
   ipcMain.handle(IPC.reloadInventory, () => {
     const res = loadInventory(character?.name)
     if (!res) return { ok: false as const, error: 'No *-Inventory.txt found in the EQ folder.' }
-    setInventory(res.counts, { path: res.path, loadedAt: res.loadedAt })
-    return { ok: true as const, path: res.path, loadedAt: res.loadedAt, progress: getProgress() }
+    setInventory(activeCharId(), res.counts, { path: res.path, loadedAt: res.loadedAt })
+    return { ok: true as const, path: res.path, loadedAt: res.loadedAt, progress: getProgress(activeCharId()) }
   })
   ipcMain.handle(IPC.setQuestComplete, (_e, questKey: string, complete: boolean) =>
-    setQuestComplete(questKey, complete)
+    setQuestComplete(activeCharId(), questKey, complete)
   )
   ipcMain.handle(IPC.getLootHistory, () => lootHistory)
 }

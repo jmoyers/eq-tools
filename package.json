@@ -13,7 +13,9 @@
     "scrape:posky": "tsx scripts/scrape-posky.ts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
-    "typecheck": "npm run typecheck:node && npm run typecheck:web"
+    "typecheck": "npm run typecheck:node && npm run typecheck:web",
+    "dist": "npm run build && electron-builder --win",
+    "dist:dir": "npm run build && electron-builder --win --dir"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -33,6 +35,7 @@
     "@vitejs/plugin-react": "^4.3.3",
     "cheerio": "^1.0.0",
     "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
     "electron-vite": "^2.3.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",

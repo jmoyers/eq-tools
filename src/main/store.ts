@@ -1,34 +1,59 @@
 import Store from 'electron-store'
 import type { HeldCounts, ProgressState } from '../shared/types'
 
-const defaults: ProgressState = {
+const emptyProgress: ProgressState = {
   inventory: {},
   completedQuests: [],
   inventorySource: undefined
 }
 
-const store = new Store<{ progress: ProgressState }>({
-  name: 'eq-tools-progress',
-  defaults: { progress: defaults }
-})
-
-export function getProgress(): ProgressState {
-  return store.get('progress', defaults)
+interface StoreShape {
+  /** progress keyed by character id (name_server) */
+  byCharacter: Record<string, ProgressState>
+  /** last selected character's log path */
+  activeLogPath?: string
 }
 
-function setProgress(next: ProgressState): ProgressState {
-  store.set('progress', next)
+const store = new Store<StoreShape>({
+  name: 'eq-tools-progress',
+  defaults: { byCharacter: {}, activeLogPath: undefined }
+})
+
+function allProgress(): Record<string, ProgressState> {
+  return store.get('byCharacter', {})
+}
+
+export function getProgress(charId: string): ProgressState {
+  return allProgress()[charId] ?? emptyProgress
+}
+
+function setProgress(charId: string, next: ProgressState): ProgressState {
+  const all = allProgress()
+  all[charId] = next
+  store.set('byCharacter', all)
   return next
 }
 
-export function setInventory(counts: HeldCounts, source: { path: string; loadedAt: string }): ProgressState {
-  return setProgress({ ...getProgress(), inventory: counts, inventorySource: source })
+export function setInventory(
+  charId: string,
+  counts: HeldCounts,
+  source: { path: string; loadedAt: string }
+): ProgressState {
+  return setProgress(charId, { ...getProgress(charId), inventory: counts, inventorySource: source })
 }
 
-export function setQuestComplete(questKey: string, complete: boolean): ProgressState {
-  const p = getProgress()
+export function setQuestComplete(charId: string, questKey: string, complete: boolean): ProgressState {
+  const p = getProgress(charId)
   const set = new Set(p.completedQuests)
   if (complete) set.add(questKey)
   else set.delete(questKey)
-  return setProgress({ ...p, completedQuests: [...set] })
+  return setProgress(charId, { ...p, completedQuests: [...set] })
+}
+
+export function getActiveLogPath(): string | undefined {
+  return store.get('activeLogPath')
+}
+
+export function setActiveLogPath(logPath: string): void {
+  store.set('activeLogPath', logPath)
 }

@@ -9,35 +9,64 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  ListSubheader,
+  MenuItem,
+  Select,
   Toolbar,
   Typography
 } from '@mui/material'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import Inventory2Icon from '@mui/icons-material/Inventory2'
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
 import CircleIcon from '@mui/icons-material/Circle'
 import type { CharacterRef, LootEvent } from '@shared/types'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
+import InventoryView from './features/inventory/InventoryView'
 
 const DRAWER_WIDTH = 220
 
-type View = 'posky' | 'loot' | 'combat'
+type View = 'posky' | 'inventory' | 'loot' | 'combat'
+
+function lastPlayed(ms?: number): string {
+  if (!ms) return ''
+  const secs = Math.max(0, (Date.now() - ms) / 1000)
+  if (secs < 90) return 'just now'
+  const mins = secs / 60
+  if (mins < 90) return `${Math.round(mins)}m ago`
+  const hrs = mins / 60
+  if (hrs < 36) return `${Math.round(hrs)}h ago`
+  return `${Math.round(hrs / 24)}d ago`
+}
 
 export default function App(): JSX.Element {
   const [view, setView] = useState<View>('posky')
   const [character, setCharacter] = useState<CharacterRef | null>(null)
+  const [characters, setCharacters] = useState<CharacterRef[]>([])
   const [lastLoot, setLastLoot] = useState<LootEvent | null>(null)
   const [live, setLive] = useState(false)
 
   useEffect(() => {
     void window.eq.getCharacter().then(setCharacter)
+    void window.eq.listCharacters().then(setCharacters)
     const off = window.eq.onLoot((loot) => {
       setLastLoot(loot)
       setLive(true)
     })
     return off
   }, [])
+
+  const onSelectCharacter = async (logPath: string): Promise<void> => {
+    const res = await window.eq.setCharacter(logPath)
+    if (res.ok && res.character) {
+      setCharacter(res.character)
+      setLive(false)
+      setLastLoot(null)
+    }
+  }
+
+  const viewKey = character?.logPath ?? 'none'
 
   return (
     <Box sx={{ display: 'flex', height: '100vh' }}>
@@ -48,18 +77,34 @@ export default function App(): JSX.Element {
             EQ Legends Companion
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          {character ? (
-            <Chip
+          {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
+          {characters.length > 0 ? (
+            <Select
               size="small"
-              icon={<CircleIcon sx={{ fontSize: 12, color: live ? 'success.main' : 'text.disabled' }} />}
-              label={`${character.name} · ${character.server}`}
-              variant="outlined"
-            />
+              value={character?.logPath ?? ''}
+              onChange={(e) => void onSelectCharacter(e.target.value)}
+              sx={{ minWidth: 220 }}
+              renderValue={(v) => {
+                const c = characters.find((x) => x.logPath === v)
+                return c ? `${c.name} · ${c.server}` : 'Select character'
+              }}
+            >
+              <ListSubheader>Characters — most recently played</ListSubheader>
+              {characters.map((c) => (
+                <MenuItem key={c.logPath} value={c.logPath}>
+                  <Box>
+                    <Typography variant="body2">
+                      {c.name} · {c.server}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      last played {lastPlayed(c.lastPlayed)}
+                    </Typography>
+                  </Box>
+                </MenuItem>
+              ))}
+            </Select>
           ) : (
             <Chip size="small" color="warning" label="No log detected" variant="outlined" />
-          )}
-          {lastLoot && (
-            <Chip size="small" color="success" variant="outlined" label={`Looted: ${lastLoot.item}`} />
           )}
         </Toolbar>
       </AppBar>
@@ -80,9 +125,15 @@ export default function App(): JSX.Element {
             </ListItemIcon>
             <ListItemText primary="Plane of Sky" />
           </ListItemButton>
-          <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
+          <ListItemButton selected={view === 'inventory'} onClick={() => setView('inventory')}>
             <ListItemIcon>
               <Inventory2Icon />
+            </ListItemIcon>
+            <ListItemText primary="Inventory" />
+          </ListItemButton>
+          <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
+            <ListItemIcon>
+              <ReceiptLongIcon />
             </ListItemIcon>
             <ListItemText primary="Loot" />
           </ListItemButton>
@@ -98,8 +149,9 @@ export default function App(): JSX.Element {
       <Box component="main" sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <Toolbar variant="dense" />
         <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-          {view === 'posky' && <PoskyView lastLoot={lastLoot} />}
-          {view === 'loot' && <LootView lastLoot={lastLoot} />}
+          {view === 'posky' && <PoskyView key={viewKey} lastLoot={lastLoot} />}
+          {view === 'inventory' && <InventoryView key={viewKey} lastLoot={lastLoot} />}
+          {view === 'loot' && <LootView key={viewKey} lastLoot={lastLoot} />}
           {view === 'combat' && (
             <Typography color="text.secondary">
               Combat analysis coming next. The log pipeline is already streaming every line to the

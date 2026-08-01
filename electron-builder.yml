@@ -1,0 +1,39 @@
+appId: com.jmoyers.eqtools
+productName: EQ Legends Companion
+copyright: Copyright © 2026 jmoyers
+
+directories:
+  buildResources: build
+  output: release/${version}
+
+# electron-vite bundles main/preload/renderer into out/. Ship that plus the
+# externalized production dependencies (electron-store, chokidar, …).
+files:
+  - out/**
+  - package.json
+  - '!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}'
+  - '!**/*.{o,obj,map,ts,tsx}'
+
+asarUnpack:
+  - resources/**
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  # We don't code-sign; skipping sign+rcedit avoids the winCodeSign toolchain,
+  # which can't extract on Windows without symlink privilege (Developer Mode).
+  signAndEditExecutable: false
+  # Provide build/icon.ico to brand the app; a default icon is used otherwise.
+
+# One-click installer: double-click, it installs and launches. Friendly for
+# distributing to friends who don't want an install wizard.
+nsis:
+  oneClick: true
+  perMachine: false
+  runAfterFinish: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: EQ Legends Companion
+  artifactName: ${productName}-Setup-${version}.${ext}

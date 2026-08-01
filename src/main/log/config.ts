@@ -9,10 +9,26 @@ export const EQ_ROOT =
 export const EQ_LOGS_DIR = join(EQ_ROOT, 'Logs')
 
 /** Parse "eqlog_<Character>_<server>.txt" into a CharacterRef. */
-function parseLogName(logPath: string): CharacterRef | null {
+export function parseLogName(logPath: string): CharacterRef | null {
   const m = /^eqlog_(.+?)_(.+?)\.txt$/i.exec(basename(logPath))
   if (!m) return null
-  return { name: m[1], server: m[2], logPath }
+  const lastPlayed = existsSync(logPath) ? statSync(logPath).mtimeMs : undefined
+  return { name: m[1], server: m[2], logPath, lastPlayed }
+}
+
+/** Stable id for a character (used to key per-character progress). */
+export function characterId(c: CharacterRef): string {
+  return `${c.name}_${c.server}`.toLowerCase()
+}
+
+/** All detected character logs, most-recently-played first. */
+export function listCharacters(): CharacterRef[] {
+  if (!existsSync(EQ_LOGS_DIR)) return []
+  return readdirSync(EQ_LOGS_DIR)
+    .filter((f) => /^eqlog_.+\.txt$/i.test(f))
+    .map((f) => parseLogName(join(EQ_LOGS_DIR, f)))
+    .filter((c): c is CharacterRef => c !== null)
+    .sort((a, b) => (b.lastPlayed ?? 0) - (a.lastPlayed ?? 0))
 }
 
 /**

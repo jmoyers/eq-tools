@@ -1,44 +1,75 @@
 # EQ Legends Companion
 
 A desktop app (Electron + TypeScript + React + MUI) for **EverQuest Legends** that
-processes your combat log in real time. First feature: a **Plane of Sky** class-quest
-tracker showing which required drops you have vs. still need, filterable by class and
-prioritized by how close each quest is to done. Combat analysis (DPS, timelines) is the
-next milestone — the log pipeline already streams every parsed line to the UI.
+processes your combat log in real time. Today it focuses on **Plane of Sky** class-quest
+tracking; combat analysis (DPS, timelines) is the next milestone — the log pipeline already
+streams every parsed line to the UI.
 
 ## Requirements
 
-- Node.js LTS (installed via `winget install OpenJS.NodeJS.LTS`)
-- EverQuest Legends with logging enabled (`/log on`). The app auto-detects the most
-  recently written `eqlog_<char>_<server>.txt` under
+- Node.js LTS (`winget install OpenJS.NodeJS.LTS`)
+- EverQuest Legends with logging on (`/log on`). The app auto-detects `eqlog_*` files under
   `C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest Legends\Logs`.
 
 ## Scripts
 
 ```bash
-npm run dev            # launch the app with hot reload
-npm run build          # production build into out/
-npm run scrape:posky   # refresh Plane of Sky quest data from eqlwiki.com
-npm run typecheck      # type-check main, preload, and renderer
+npm run dev            # launch with hot reload
+npm run build          # production bundle into out/
+npm run dist           # build the one-click Windows installer (release/)
+npm run scrape:posky   # refresh quest data (default source: eqlegends)
+npm run typecheck      # type-check main, preload, renderer, scripts
 ```
 
-## How it works
+## Features
 
-- **Log pipeline** (`src/main/log/`): `Tailer` byte-tails the active log (polling, survives
-  log rotation); `parse.ts` turns lines into events. Self-loot lines
-  (`--You have looted a <item> from <mob>'s corpse.--`) become live progress updates.
-- **Plane of Sky data** (`scripts/scrape-posky.ts` → `src/renderer/src/data/posky.json`):
-  scraped from the EQ Legends wiki (MediaWiki API). 16 classes, ~95 quests. Classes with
-  dedicated pages get full mob/island drop info; the rest fall back to the wiki's compact
-  per-class table. Re-run the scraper to refresh; the JSON is committed so the app needs no
-  network at runtime.
-- **Inventory** (`src/main/inventory/`): run `/outputfile inventory` in-game, then click
-  **Reload inventory**. The app parses `<Character>-Inventory.txt`, seeds held-item counts,
-  and keeps them current from live loot. Progress persists via `electron-store`.
+- **Characters** — every detected `eqlog_*` file is listed in the top-right picker, sorted by
+  last played. Switch characters and the app re-reads that log and keeps **per-character**
+  progress (turn-ins, inventory).
+- **Plane of Sky** — all 16 classes' quests from the authoritative main
+  [Plane of Sky](https://eqlwiki.com/Plane_of_Sky) page. Multi-select class filter (remembered),
+  search, and sort (Closest to done / Fewest missing). Each quest row shows every required item
+  as a chip — green ✓ = have, grey = still needed — plus a rune. Hover any item for an EQ-style
+  **stat popover** (name, slot, damage, stats, saves).
+- **Inventory** — reconciliation view: per item, how many you **looted** (log) vs. have in your
+  **export**, what's been **turned in**, and the **net** available.
+- **Loot** — full looted-item history (real-time), searchable, group-by-item, PoSky items flagged.
+- **Turn-ins** — mark a quest "Turned in / complete" and its items are subtracted from your
+  simulated inventory, so a drop handed in for one quest stops counting toward another.
 
-## Plane of Sky view
+### Counting source
 
-- Multi-select **class filter**, search, and sort (Closest to done / Fewest missing / By class).
-- Each quest shows a progress bar (`have/need`), missing-item count, and — expanded — every
-  required item with who drops it and on which island. Mark a quest **Turned in / complete**
-  once you hand it in (turn-ins consume the items, so this can't be inferred from inventory).
+A "Count items from" selector (remembered) controls how the app decides what you have:
+
+- **Log (looted)** — everything the character has ever looted, parsed from the whole log on
+  launch and updated live. Default, because it doesn't depend on the inventory export (which may
+  miss an un-exported bank, e.g. the Dragonhoard).
+- **Inventory export** — your last `/outputfile inventory` dump. Click **Reload inventory** after
+  running the command in-game.
+- **Both** — the higher of the two per item.
+
+## Architecture: swappable sources
+
+Different EQ servers/emulators have wildly different rules, so the app is built around **profiles**
+(`src/shared/profiles.ts`). Each profile has:
+
+- a **quest-data source** (`scripts/sources/<id>.ts` implementing `QuestSource`) that scrapes data
+  into `src/renderer/src/data/<id>/posky.json`;
+- a **log ruleset** (`src/main/log/rulesets.ts`) for that server's log format.
+
+To add e.g. Project 1999: add a profile, implement `scripts/sources/p99.ts`, register it in
+`scripts/sources/index.ts`, run `npm run scrape:posky -- --source p99`, and add a ruleset if the
+log format differs. The runtime loads data via `src/renderer/src/data/index.ts` keyed by the
+active profile.
+
+## Distributing to friends
+
+```bash
+npm run dist
+```
+
+produces a **one-click installer** at `release/<version>/EQ Legends Companion-Setup-<version>.exe`
+— double-click installs and launches, adds Start-menu/desktop shortcuts. Unsigned, so Windows
+SmartScreen may warn on first run (More info → Run anyway). The build is not code-signed
+(`signAndEditExecutable: false` in `electron-builder.yml`); to sign, provide a certificate and
+remove that flag.

@@ -5,6 +5,8 @@ export interface CharacterRef {
   name: string
   server: string
   logPath: string
+  /** log file mtime (ms) — used as "last played" */
+  lastPlayed?: number
 }
 
 /** A single parsed log line. */

@@ -7,6 +7,8 @@ export const IPC = {
   setQuestComplete: 'progress:setQuestComplete',
   getLootHistory: 'loot:getHistory',
   getCharacter: 'character:get',
+  listCharacters: 'character:list',
+  setCharacter: 'character:set',
 
   // main -> renderer (send/on)
   onLoot: 'log:loot',

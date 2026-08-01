@@ -12,8 +12,17 @@ export interface ReloadInventoryResult {
   progress?: ProgressState
 }
 
+export interface SetCharacterResult {
+  ok: boolean
+  error?: string
+  character?: CharacterRef
+}
+
 const api = {
   getCharacter: (): Promise<CharacterRef | null> => ipcRenderer.invoke(IPC.getCharacter),
+  listCharacters: (): Promise<CharacterRef[]> => ipcRenderer.invoke(IPC.listCharacters),
+  setCharacter: (logPath: string): Promise<SetCharacterResult> =>
+    ipcRenderer.invoke(IPC.setCharacter, logPath),
   getProgress: (): Promise<ProgressState> => ipcRenderer.invoke(IPC.getProgress),
   reloadInventory: (): Promise<ReloadInventoryResult> => ipcRenderer.invoke(IPC.reloadInventory),
   setQuestComplete: (questKey: string, complete: boolean): Promise<ProgressState> =>

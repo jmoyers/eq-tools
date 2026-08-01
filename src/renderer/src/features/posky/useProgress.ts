@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { CountSource, LootEvent, PoskyData, PoskyQuest, ProgressState } from '@shared/types'
-import poskyRaw from '../../data/posky.json'
+import type { CountSource, LootEvent, PoskyQuest, ProgressState } from '@shared/types'
+import { getPoskyData } from '../../data'
+import { reconcile, type InventoryRow } from '../inventory/reconcile'
+import { questKey } from './keys'
 
-const posky = poskyRaw as unknown as PoskyData
+const posky = getPoskyData()
 
 const COUNT_SOURCE_KEY = 'eq.countSource'
 
-export function questKey(q: Pick<PoskyQuest, 'className' | 'name'>): string {
-  return `${q.className}::${q.name}`
-}
+export { questKey }
 
 function loadCountSource(): CountSource {
   const v = localStorage.getItem(COUNT_SOURCE_KEY)
@@ -78,6 +78,7 @@ export interface UseProgress {
   classes: string[]
   progress: ProgressState | null
   lootHistory: LootEvent[]
+  inventoryRows: InventoryRow[]
   countSource: CountSource
   setCountSource: (s: CountSource) => void
   reloadInventory: () => Promise<string>
@@ -121,7 +122,7 @@ export function useProgress(lastLoot: LootEvent | null): UseProgress {
     setProgress(next)
   }, [])
 
-  // Counts derived from the log (everything ever looted).
+  // Counts + display names derived from the log (everything ever looted).
   const logCounts = useMemo<Record<string, number>>(() => {
     const c: Record<string, number> = {}
     for (const e of lootHistory) {
@@ -131,21 +132,32 @@ export function useProgress(lastLoot: LootEvent | null): UseProgress {
     return c
   }, [lootHistory])
 
-  // Held counts per the selected source.
-  const held = useMemo<Record<string, number>>(() => {
-    const inv = progress?.inventory ?? {}
-    if (countSource === 'inventory') return inv
-    if (countSource === 'log') return logCounts
-    const out: Record<string, number> = { ...inv }
-    for (const [k, v] of Object.entries(logCounts)) out[k] = Math.max(out[k] ?? 0, v)
-    return out
-  }, [progress, logCounts, countSource])
+  const lootNames = useMemo<Record<string, string>>(() => {
+    const m: Record<string, string> = {}
+    for (const e of lootHistory) m[e.item.toLowerCase()] ??= e.item
+    return m
+  }, [lootHistory])
+
+  // Reconcile held items (log + inventory), subtracting anything consumed by
+  // quests that have been turned in.
+  const { net, rows: inventoryRows } = useMemo(
+    () =>
+      reconcile({
+        log: logCounts,
+        inv: progress?.inventory ?? {},
+        lootNames,
+        countSource,
+        completedKeys: progress?.completedQuests ?? [],
+        quests: posky.quests
+      }),
+    [logCounts, lootNames, progress, countSource]
+  )
 
   const quests = useMemo<QuestProgress[]>(() => {
     if (!progress) return []
     const completedSet = new Set(progress.completedQuests)
-    return posky.quests.map((q) => computeQuestProgress(q, held, completedSet))
-  }, [progress, held])
+    return posky.quests.map((q) => computeQuestProgress(q, net, completedSet))
+  }, [progress, net])
 
   const classes = useMemo(() => [...new Set(posky.quests.map((q) => q.className))].sort(), [])
 
@@ -155,6 +167,7 @@ export function useProgress(lastLoot: LootEvent | null): UseProgress {
     classes,
     progress,
     lootHistory,
+    inventoryRows,
     countSource,
     setCountSource,
     reloadInventory,

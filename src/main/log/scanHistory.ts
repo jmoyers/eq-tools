@@ -1,5 +1,6 @@
 import { readFile } from 'fs/promises'
-import { parseLine, matchLoot } from './parse'
+import { parseLine } from './parse'
+import { getRuleset } from './rulesets'
 import type { LootEvent } from '../../shared/types'
 
 /**
@@ -15,6 +16,7 @@ export async function scanLootHistory(logPath: string): Promise<LootEvent[]> {
   } catch {
     return []
   }
+  const { matchLoot } = getRuleset()
   const events: LootEvent[] = []
   for (const raw of text.split(/\r?\n/)) {
     if (!raw.includes('looted')) continue // cheap pre-filter before regex

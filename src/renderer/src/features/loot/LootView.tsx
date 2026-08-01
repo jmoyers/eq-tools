@@ -14,14 +14,12 @@ import {
   TextField,
   Typography
 } from '@mui/material'
-import type { LootEvent, PoskyData } from '@shared/types'
-import poskyRaw from '../../data/posky.json'
-
-const posky = poskyRaw as unknown as PoskyData
+import type { LootEvent } from '@shared/types'
+import { getPoskyData } from '../../data'
 
 // Names of every item required by a Plane of Sky quest (for highlighting).
 const questItemNames = new Set<string>(
-  posky.quests.flatMap((q) => q.items.map((i) => i.name.toLowerCase()))
+  getPoskyData().quests.flatMap((q) => q.items.map((i) => i.name.toLowerCase()))
 )
 
 const MAX_ROWS = 500
