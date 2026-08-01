@@ -1,311 +1,376 @@
-// Combat parsing + a live DPS engine with charm/pet attribution.
+// A tight combat data model + engine. Public API:
+//   const eng = new CombatEngine()
+//   eng.ingest(text, ts)              // feed each parsed log line
+//   eng.snapshot(now, { combinePets, selectedId })  // pull a view for the UI
 //
-// The hard problem in EQ: the log identifies actors by NAME only (no ids, no
-// team). We accurately attribute You + your charmed pets by anchoring on "You"
-// and "<mob> has been charmed" (a message only the charmer sees). Other named
-// sources are tracked but flagged "unverified" because we can't know their pets
-// or whether a mob is their charm. Charm windows gate a mob's damage: while it's
-// your charmed pet its damage-to-enemies is yours; once charm wears off (or it
-// dies) it reverts to an enemy.
+// Combat is scoped to YOU: an encounter starts when you or your pet deal/take
+// damage and groups all activity until an idle gap (staggered adds join the same
+// encounter). Encounters are recorded to history; the "zone overall" aggregate
+// resets when you zone. DPS uses (last hit − first hit), so it never decays after
+// a fight ends.
 
-export type DamageKind = 'melee' | 'spell' | 'dot'
+import { parseCombatLine, type DamageEvent } from './parse'
 
-interface DamageEvent {
-  kind: 'damage'
-  ts: number
-  attacker: string
-  target: string
-  amount: number
-  ability: string
-  dtype: DamageKind
-}
-interface CharmEvent { kind: 'charm' | 'uncharm' | 'death'; mob: string }
-type CombatEvent = DamageEvent | CharmEvent | null
+export type SourceKind = 'you' | 'pet' | 'enemy'
 
-const MELEE_VERBS =
-  'hits?|slashes?|pierces?|crushes?|bashes?|kicks?|bites?|claws?|gores?|mauls?|punches?|strikes?|slices?|backstabs?|slams?|stings?|rends?|smashes?|gnaws?|lashes?'
-
-const MELEE_RE = new RegExp(`^(.+?) (?:${MELEE_VERBS}) (.+?) for (\\d+) points? of damage`)
-const SPELL_HIT_RE = /^(.+?) (?:hits?) (.+?) for (\d+) points of \w+ damage by (.+?)\.?( \(.*\))?$/
-const DOT_RE = /^(.+?) has taken (\d+) damage from (.+?)\.$/
-const CHARM_RE = /^(.+?) has been charmed\.$/
-const UNCHARM_RE = /^Your (.+?) spell has worn off of (.+?)\.$/
-const SLAIN_BY_RE = /^(.+?) has been slain by .+?!$/
-const SLAIN_YOU_RE = /^You have slain (.+?)!$/
-const CHARM_SPELL_RE = /charm|beguile|allure|cajole|dictate|besiege|agacerie|enthrall|beckon|command of druzzil|dominate|boltran/i
-
-function norm(name: string): string {
-  const n = name.trim()
-  if (n === 'YOU' || n === 'You' || n === 'you' || n === 'yourself') return 'You'
-  return n
-}
-
-export function parseCombatLine(text: string, ts: number): CombatEvent {
-  // charm lifecycle first (cheap checks)
-  let m = CHARM_RE.exec(text)
-  if (m) return { kind: 'charm', mob: norm(m[1]) }
-  m = UNCHARM_RE.exec(text)
-  if (m && CHARM_SPELL_RE.test(m[1])) return { kind: 'uncharm', mob: norm(m[2]) }
-  m = SLAIN_YOU_RE.exec(text)
-  if (m) return { kind: 'death', mob: norm(m[1]) }
-  m = SLAIN_BY_RE.exec(text)
-  if (m) return { kind: 'death', mob: norm(m[1]) }
-
-  // spell direct damage: "You hit X for N points of magic damage by Spell."
-  m = SPELL_HIT_RE.exec(text)
-  if (m) {
-    return {
-      kind: 'damage',
-      ts,
-      attacker: norm(m[1]),
-      target: norm(m[2]),
-      amount: Number(m[3]),
-      ability: m[4].trim(),
-      dtype: 'spell'
-    }
-  }
-  // DoT: "X has taken N damage from your Spell." | "... from Spell by Caster."
-  m = DOT_RE.exec(text)
-  if (m) {
-    const target = norm(m[1])
-    const amount = Number(m[2])
-    const rest = m[3]
-    let attacker = '?'
-    let ability = rest
-    if (/^your /i.test(rest)) {
-      attacker = 'You'
-      ability = rest.replace(/^your /i, '')
-    } else {
-      const by = / by (.+)$/.exec(rest)
-      if (by) {
-        attacker = norm(by[1])
-        ability = rest.slice(0, by.index)
-      }
-    }
-    if (attacker === '?') return null
-    return { kind: 'damage', ts, attacker, target, amount, ability: ability.trim(), dtype: 'dot' }
-  }
-  // melee: "X crushes Y for N points of damage."
-  m = MELEE_RE.exec(text)
-  if (m) {
-    return {
-      kind: 'damage',
-      ts,
-      attacker: norm(m[1]),
-      target: norm(m[2]),
-      amount: Number(m[3]),
-      ability: 'Melee',
-      dtype: 'melee'
-    }
-  }
-  return null
-}
-
-// ----- engine -----
-
-export type EntityKind = 'you' | 'pet' | 'other'
-
-interface EntityAgg {
+export interface SkillStat {
   name: string
-  kind: EntityKind
   total: number
-  abilities: Map<string, number>
+  hits: number
+  crits: number
+  max: number
+}
+interface SourceStat {
+  name: string
+  kind: SourceKind
+  total: number
+  hits: number
+  crits: number
+  bySkill: Map<string, SkillStat>
 }
 
-interface Scope {
-  entities: Map<string, EntityAgg> // outgoing, keyed by id
-  incoming: Map<string, number> // damage to You, by attacker
-  enemyDmg: Map<string, number> // for target label
+function addToSource(src: SourceStat, ev: DamageEvent): void {
+  src.total += ev.amount
+  src.hits += 1
+  if (ev.crit) src.crits += 1
+  const s = src.bySkill.get(ev.skill) ?? { name: ev.skill, total: 0, hits: 0, crits: 0, max: 0 }
+  s.total += ev.amount
+  s.hits += 1
+  if (ev.crit) s.crits += 1
+  s.max = Math.max(s.max, ev.amount)
+  src.bySkill.set(ev.skill, s)
 }
 
-function newScope(): Scope {
-  return { entities: new Map(), incoming: new Map(), enemyDmg: new Map() }
+class Agg {
+  out = new Map<string, SourceStat>() // friendly (you + pets), keyed by id
+  inc = new Map<string, SourceStat>() // damage to you, keyed by attacker
+  targets = new Map<string, number>() // damage dealt to each enemy
+
+  addOut(id: string, name: string, kind: SourceKind, ev: DamageEvent): void {
+    const s = this.out.get(id) ?? { name, kind, total: 0, hits: 0, crits: 0, bySkill: new Map() }
+    addToSource(s, ev)
+    this.out.set(id, s)
+  }
+  addInc(name: string, ev: DamageEvent): void {
+    const s = this.inc.get(name) ?? { name, kind: 'enemy', total: 0, hits: 0, crits: 0, bySkill: new Map() }
+    addToSource(s, ev)
+    this.inc.set(name, s)
+  }
+  bumpTarget(name: string, amount: number): void {
+    this.targets.set(name, (this.targets.get(name) ?? 0) + amount)
+  }
 }
 
-export interface EntitySnap {
+interface Encounter {
+  id: string
+  zone?: string
+  startTs: number
+  lastTs: number
+  agg: Agg
+  engaged: Set<string>
+}
+
+// ---- snapshot view types (the UI contract) ----
+
+export interface SkillView {
+  name: string
+  total: number
+  pct: number
+  hits: number
+  crits: number
+  max: number
+}
+export interface SourceView {
   id: string
   name: string
-  kind: EntityKind
+  kind: SourceKind
   total: number
   dps: number
   pct: number
-  abilities: { name: string; total: number }[]
+  hits: number
+  crits: number
+  critPct: number
+  skills: SkillView[]
 }
-export interface IncomingSnap {
+export interface SegmentView {
+  id: string
+  kind: 'fight' | 'zone'
   name: string
-  total: number
-  dps: number
-  pct: number
+  zone?: string
+  durationSec: number
+  active: boolean
+  outTotal: number
+  outDps: number
+  entities: SourceView[]
+  inTotal: number
+  inDps: number
+  incoming: SourceView[]
 }
-export interface ScopeSnap {
+export interface SegmentSummary {
+  id: string
+  kind: 'fight' | 'zone' | 'current'
+  name: string
   durationSec: number
   total: number
   dps: number
-  entities: EntitySnap[]
-  incoming: IncomingSnap[]
-  incomingTotal: number
+  startTs: number
+  active: boolean
 }
 export interface CombatSnapshot {
-  fight: ScopeSnap & { target: string; active: boolean }
-  overall: ScopeSnap
+  selectedId: string
+  selected: SegmentView | null
+  segments: SegmentSummary[]
+  inCombat: boolean
+  zone?: string
 }
 
-const GAP_MS = 12_000 // idle gap that ends a fight
+export interface SnapshotOpts {
+  combinePets?: boolean
+  selectedId?: string
+}
+
+const SEGMENT_GAP_MS = 10_000
+const ACTIVE_MS = 3_000
 
 export class CombatEngine {
   private charmed = new Set<string>()
-  private fStart = 0
-  private fLast = 0
-  private fTarget = ''
-  private fight = newScope()
-  private combatMs = 0
-  private overall = newScope()
+  private zone?: string
+  private seq = 0
+  private current: Encounter | null = null
+  private history: Encounter[] = []
+  private zoneAgg = new Agg()
+  private zoneFinalizedMs = 0
 
   reset(): void {
     this.charmed.clear()
-    this.fStart = this.fLast = 0
-    this.fTarget = ''
-    this.fight = newScope()
-    this.combatMs = 0
-    this.overall = newScope()
-  }
-
-  private foldFight(): void {
-    if (!this.fStart) return
-    this.combatMs += Math.max(0, this.fLast - this.fStart)
-    for (const [id, e] of this.fight.entities) {
-      const o = this.overall.entities.get(id) ?? { name: e.name, kind: e.kind, total: 0, abilities: new Map() }
-      o.total += e.total
-      for (const [a, v] of e.abilities) o.abilities.set(a, (o.abilities.get(a) ?? 0) + v)
-      this.overall.entities.set(id, o)
-    }
-    for (const [k, v] of this.fight.incoming) this.overall.incoming.set(k, (this.overall.incoming.get(k) ?? 0) + v)
-    this.fight = newScope()
-    this.fStart = this.fLast = 0
-    this.fTarget = ''
+    this.current = null
+    this.history = []
+    this.zoneAgg = new Agg()
+    this.zoneFinalizedMs = 0
   }
 
   ingest(text: string, ts: number): void {
     const ev = parseCombatLine(text, ts)
     if (!ev) return
-    if (ev.kind !== 'damage') {
-      if (ev.kind === 'charm') this.charmed.add(ev.mob)
-      else this.charmed.delete(ev.mob) // uncharm or death
+    if (ev.t !== 'dmg') {
+      if (ev.t === 'zone') {
+        this.finalizeCurrent()
+        this.zone = ev.value
+        this.zoneAgg = new Agg()
+        this.zoneFinalizedMs = 0
+      } else if (ev.t === 'charm') {
+        this.charmed.add(ev.value)
+      } else if (ev.t === 'uncharm') {
+        this.charmed.delete(ev.value)
+      } else {
+        // death
+        this.charmed.delete(ev.value)
+        this.current?.engaged.delete(ev.value)
+      }
       return
     }
-    // damage
+    // ev is a DamageEvent
     if (ev.amount <= 0) return
-    if (this.fLast && ts - this.fLast > GAP_MS) this.foldFight()
-    if (!this.fStart) this.fStart = ts
-    this.fLast = ts
-
     const isYou = ev.attacker === 'You'
     const isPet = !isYou && this.charmed.has(ev.attacker)
+    const friendlyAtk = isYou || isPet
     const targetIsYou = ev.target === 'You'
     const targetIsFriendly = targetIsYou || this.charmed.has(ev.target)
 
-    // Outgoing (friendly damage to enemies)
-    if (isYou || isPet) {
-      if (!targetIsFriendly) {
-        const id = isYou ? 'you' : `pet:${ev.attacker}`
-        this.addOut(id, isYou ? 'You' : ev.attacker, isYou ? 'you' : 'pet', ev.ability, ev.amount)
-        this.bumpEnemy(ev.target, ev.amount)
-      }
-    } else if (!targetIsFriendly) {
-      // Unverified other source damaging a non-friendly target.
-      this.addOut(`other:${ev.attacker}`, ev.attacker, 'other', ev.ability, ev.amount)
-    }
+    const outgoing = friendlyAtk && !targetIsFriendly
+    const incoming = targetIsYou && !isYou
+    if (!outgoing && !incoming) return // not your fight
 
-    // Incoming (anything damaging You)
-    if (targetIsYou && !isYou) {
-      this.fight.incoming.set(ev.attacker, (this.fight.incoming.get(ev.attacker) ?? 0) + ev.amount)
+    const enc = this.ensureEncounter(ts)
+    enc.lastTs = ts
+
+    if (outgoing) {
+      const id = isYou ? 'you' : `pet:${ev.attacker}`
+      const kind: SourceKind = isYou ? 'you' : 'pet'
+      enc.agg.addOut(id, isYou ? 'You' : ev.attacker, kind, ev)
+      enc.agg.bumpTarget(ev.target, ev.amount)
+      this.zoneAgg.addOut(id, isYou ? 'You' : ev.attacker, kind, ev)
+      this.zoneAgg.bumpTarget(ev.target, ev.amount)
+      enc.engaged.add(ev.target)
+    }
+    if (incoming) {
+      enc.agg.addInc(ev.attacker, ev)
+      this.zoneAgg.addInc(ev.attacker, ev)
+      enc.engaged.add(ev.attacker)
     }
   }
 
-  private addOut(id: string, name: string, kind: EntityKind, ability: string, amount: number): void {
-    const e = this.fight.entities.get(id) ?? { name, kind, total: 0, abilities: new Map() }
-    e.total += amount
-    e.abilities.set(ability, (e.abilities.get(ability) ?? 0) + amount)
-    this.fight.entities.set(id, e)
-  }
-
-  private bumpEnemy(target: string, amount: number): void {
-    const v = (this.fight.enemyDmg.get(target) ?? 0) + amount
-    this.fight.enemyDmg.set(target, v)
-    if (!this.fTarget || v > (this.fight.enemyDmg.get(this.fTarget) ?? 0)) this.fTarget = target
-  }
-
-  snapshot(now: number, combinePets: boolean, showOthers: boolean): CombatSnapshot {
-    const active = this.fLast > 0 && now - this.fLast <= GAP_MS
-    const fightDur = this.fStart ? Math.max(1, ((active ? now : this.fLast) - this.fStart) / 1000) : 0
-    const fight = this.buildScope(this.fight, fightDur, combinePets, showOthers)
-
-    // overall = finished fights + current fight
-    const merged = newScope()
-    for (const scope of [this.overall, this.fight]) {
-      for (const [id, e] of scope.entities) {
-        const m = merged.entities.get(id) ?? { name: e.name, kind: e.kind, total: 0, abilities: new Map() }
-        m.total += e.total
-        for (const [a, v] of e.abilities) m.abilities.set(a, (m.abilities.get(a) ?? 0) + v)
-        merged.entities.set(id, m)
-      }
-      for (const [k, v] of scope.incoming) merged.incoming.set(k, (merged.incoming.get(k) ?? 0) + v)
+  private ensureEncounter(ts: number): Encounter {
+    if (this.current && ts - this.current.lastTs > SEGMENT_GAP_MS) this.finalizeCurrent()
+    if (!this.current) {
+      this.current = { id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts, agg: new Agg(), engaged: new Set() }
     }
-    const overallDur = Math.max(1, (this.combatMs + (this.fStart ? (active ? now : this.fLast) - this.fStart : 0)) / 1000)
-    const overall = this.buildScope(merged, overallDur, combinePets, showOthers)
+    return this.current
+  }
 
+  private finalizeCurrent(): void {
+    if (!this.current) return
+    this.zoneFinalizedMs += Math.max(0, this.current.lastTs - this.current.startTs)
+    this.history.push(this.current)
+    this.current = null
+  }
+
+  // ---- snapshot ----
+
+  snapshot(now: number, opts: SnapshotOpts = {}): CombatSnapshot {
+    const combinePets = opts.combinePets ?? false
+    const inCombat = !!this.current && now - this.current.lastTs < ACTIVE_MS
+
+    // segment summaries: current (if any) + history (newest first) + zone overall
+    const segments: SegmentSummary[] = []
+    if (this.current) segments.push(this.encSummary(this.current, 'current', now))
+    for (let i = this.history.length - 1; i >= 0; i--) segments.push(this.encSummary(this.history[i], 'fight', now))
+    segments.push(this.zoneSummary())
+
+    const defaultId = this.current?.id ?? this.history[this.history.length - 1]?.id ?? 'zone'
+    const selectedId =
+      opts.selectedId && segments.some((s) => s.id === opts.selectedId) ? opts.selectedId : defaultId
+
+    const selected = this.buildSelected(selectedId, now, combinePets)
+    return { selectedId, selected, segments, inCombat, zone: this.zone }
+  }
+
+  private encSummary(e: Encounter, kind: 'fight' | 'current', now: number): SegmentSummary {
+    const total = sumMap(e.agg.out)
+    const dur = Math.max(1, (e.lastTs - e.startTs) / 1000)
     return {
-      fight: { ...fight, target: this.fTarget || (active ? '…' : 'No target'), active },
-      overall
-    }
-  }
-
-  private buildScope(scope: Scope, durationSec: number, combinePets: boolean, showOthers: boolean): ScopeSnap {
-    // optionally merge pets into You
-    const ents = new Map<string, EntityAgg>()
-    for (const [id, e] of scope.entities) {
-      if (combinePets && e.kind === 'pet') {
-        const you = ents.get('you') ?? { name: 'You +pets', kind: 'you', total: 0, abilities: new Map() }
-        you.name = 'You +pets'
-        you.total += e.total
-        for (const [a, v] of e.abilities) you.abilities.set(`(pet) ${e.name}: ${a}`, (you.abilities.get(`(pet) ${e.name}: ${a}`) ?? 0) + v)
-        ents.set('you', you)
-      } else {
-        ents.set(id, { ...e, abilities: new Map(e.abilities) })
-      }
-    }
-    let list = [...ents.entries()].map(([id, e]) => ({ id, ...e }))
-    if (!showOthers) list = list.filter((e) => e.kind !== 'other')
-    // friendly total = you + pets (exclude 'other' from the headline total)
-    const friendlyTotal = list.filter((e) => e.kind !== 'other').reduce((s, e) => s + e.total, 0)
-    const max = Math.max(1, ...list.map((e) => e.total))
-    list.sort((a, b) => b.total - a.total)
-    const entities: EntitySnap[] = list.map((e) => ({
       id: e.id,
-      name: e.name,
-      kind: e.kind,
-      total: e.total,
-      dps: e.total / durationSec,
-      pct: (e.total / max) * 100,
-      abilities: [...e.abilities.entries()]
-        .map(([name, total]) => ({ name, total }))
-        .sort((a, b) => b.total - a.total)
-        .slice(0, 12)
-    }))
-
-    const incomingTotal = [...scope.incoming.values()].reduce((s, v) => s + v, 0)
-    const inMax = Math.max(1, ...scope.incoming.values())
-    const incoming: IncomingSnap[] = [...scope.incoming.entries()]
-      .map(([name, total]) => ({ name, total, dps: total / durationSec, pct: (total / inMax) * 100 }))
-      .sort((a, b) => b.total - a.total)
-
-    return {
-      durationSec,
-      total: friendlyTotal,
-      dps: friendlyTotal / durationSec,
-      entities,
-      incoming,
-      incomingTotal
+      kind,
+      name: encounterName(e),
+      durationSec: dur,
+      total,
+      dps: total / dur,
+      startTs: e.startTs,
+      active: kind === 'current' && now - e.lastTs < ACTIVE_MS
     }
   }
+
+  private zoneSummary(): SegmentSummary {
+    const total = sumMap(this.zoneAgg.out)
+    const dur = this.zoneDurationSec()
+    return {
+      id: 'zone',
+      kind: 'zone',
+      name: `${this.zone ?? 'Session'} — overall`,
+      durationSec: dur,
+      total,
+      dps: total / dur,
+      startTs: 0,
+      active: false
+    }
+  }
+
+  private zoneDurationSec(): number {
+    const cur = this.current ? this.current.lastTs - this.current.startTs : 0
+    return Math.max(1, (this.zoneFinalizedMs + cur) / 1000)
+  }
+
+  private buildSelected(id: string, now: number, combinePets: boolean): SegmentView | null {
+    if (id === 'zone') {
+      return this.buildView('zone', 'zone', `${this.zone ?? 'Session'} — overall`, this.zone, this.zoneAgg, this.zoneDurationSec(), false, combinePets)
+    }
+    const e = this.current?.id === id ? this.current : this.history.find((h) => h.id === id)
+    if (!e) return null
+    const dur = Math.max(1, (e.lastTs - e.startTs) / 1000)
+    const active = this.current?.id === id && now - e.lastTs < ACTIVE_MS
+    return this.buildView(e.id, 'fight', encounterName(e), e.zone, e.agg, dur, active, combinePets)
+  }
+
+  private buildView(
+    id: string,
+    kind: 'fight' | 'zone',
+    name: string,
+    zone: string | undefined,
+    agg: Agg,
+    durationSec: number,
+    active: boolean,
+    combinePets: boolean
+  ): SegmentView {
+    const entities = sourceViews(agg.out, durationSec, combinePets)
+    const incoming = sourceViews(agg.inc, durationSec, false)
+    const outTotal = entities.reduce((s, e) => s + e.total, 0)
+    const inTotal = incoming.reduce((s, e) => s + e.total, 0)
+    return {
+      id,
+      kind,
+      name,
+      zone,
+      durationSec,
+      active,
+      outTotal,
+      outDps: outTotal / durationSec,
+      entities,
+      inTotal,
+      inDps: inTotal / durationSec,
+      incoming
+    }
+  }
+}
+
+function sumMap(m: Map<string, SourceStat>): number {
+  let t = 0
+  for (const s of m.values()) t += s.total
+  return t
+}
+
+function encounterName(e: Encounter): string {
+  const sorted = [...e.agg.targets.entries()].sort((a, b) => b[1] - a[1])
+  if (sorted.length === 0) return 'Combat'
+  const top = sorted[0][0]
+  return sorted.length > 1 ? `${top} +${sorted.length - 1}` : top
+}
+
+function sourceViews(map: Map<string, SourceStat>, durationSec: number, combinePets: boolean): SourceView[] {
+  // optionally merge pets into You
+  const merged = new Map<string, SourceStat>()
+  for (const [id, s] of map) {
+    if (combinePets && s.kind === 'pet') {
+      const you = merged.get('you') ?? { name: 'You +pets', kind: 'you', total: 0, crits: 0, hits: 0, bySkill: new Map() }
+      you.name = 'You +pets'
+      you.total += s.total
+      you.hits += s.hits
+      you.crits += s.crits
+      for (const [k, sk] of s.bySkill) {
+        const key = `${s.name}: ${k}`
+        you.bySkill.set(key, { ...sk, name: key })
+      }
+      merged.set('you', you)
+    } else {
+      merged.set(id, s)
+    }
+  }
+  const list = [...merged.entries()]
+  const maxTotal = Math.max(1, ...list.map(([, s]) => s.total))
+  return list
+    .map(([id, s]) => {
+      const skMax = Math.max(1, ...[...s.bySkill.values()].map((k) => k.total))
+      return {
+        id,
+        name: s.name,
+        kind: s.kind,
+        total: s.total,
+        dps: s.total / durationSec,
+        pct: (s.total / maxTotal) * 100,
+        hits: s.hits,
+        crits: s.crits,
+        critPct: s.hits ? (s.crits / s.hits) * 100 : 0,
+        skills: [...s.bySkill.values()]
+          .sort((a, b) => b.total - a.total)
+          .slice(0, 12)
+          .map((k) => ({
+            name: k.name,
+            total: k.total,
+            pct: (k.total / skMax) * 100,
+            hits: k.hits,
+            crits: k.crits,
+            max: k.max
+          }))
+      }
+    })
+    .sort((a, b) => b.total - a.total)
 }

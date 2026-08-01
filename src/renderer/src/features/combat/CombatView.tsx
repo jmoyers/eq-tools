@@ -6,7 +6,9 @@ import {
   Chip,
   Collapse,
   FormControlLabel,
+  MenuItem,
   Paper,
+  Select,
   Stack,
   Switch,
   ToggleButton,
@@ -15,36 +17,35 @@ import {
 } from '@mui/material'
 import CircleIcon from '@mui/icons-material/Circle'
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
-import { useCombat } from './useCombat'
-import type { EntitySnap, ScopeSnap } from './engine'
+import { LIVE, useCombat } from './useCombat'
+import type { SegmentView, SourceView } from './engine'
 
-const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', other: '#6b6b6b' }
-const IN_COLOR = '#cf6679'
+const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 
 function fmt(n: number): string {
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M'
   if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K'
   return String(Math.round(n))
 }
-function fmtDps(n: number): string {
-  return fmt(n) + '/s'
-}
 function fmtDur(sec: number): string {
   const s = Math.max(0, Math.round(sec))
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 }
 
+/** A Details-style scaled horizontal bar. */
 function Bar({
   color,
   pct,
-  left,
+  rank,
+  name,
   right,
   onClick,
   faded
 }: {
   color: string
   pct: number
-  left: ReactNode
+  rank?: number
+  name: ReactNode
   right: string
   onClick?: () => void
   faded?: boolean
@@ -54,26 +55,26 @@ function Bar({
       onClick={onClick}
       sx={{
         position: 'relative',
-        height: 24,
+        height: 22,
         borderRadius: 0.5,
-        mb: 0.5,
+        mb: '3px',
         overflow: 'hidden',
         cursor: onClick ? 'pointer' : 'default',
-        bgcolor: 'action.hover',
+        bgcolor: 'rgba(255,255,255,0.04)',
         opacity: faded ? 0.7 : 1
       }}
     >
-      <Box sx={{ position: 'absolute', inset: 0, width: `${pct}%`, bgcolor: color, opacity: 0.55 }} />
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        sx={{ position: 'absolute', inset: 0, px: 1 }}
-      >
-        <Typography variant="caption" noWrap sx={{ fontWeight: 600 }}>
-          {left}
+      <Box sx={{ position: 'absolute', inset: 0, width: `${Math.max(2, pct)}%`, bgcolor: color, opacity: 0.5 }} />
+      <Stack direction="row" alignItems="center" sx={{ position: 'absolute', inset: 0, px: 0.75 }} spacing={0.75}>
+        {rank != null && (
+          <Typography variant="caption" sx={{ color: 'text.secondary', width: 16, textAlign: 'right' }}>
+            {rank}
+          </Typography>
+        )}
+        <Typography variant="caption" noWrap sx={{ fontWeight: 600, flexGrow: 1 }}>
+          {name}
         </Typography>
-        <Typography variant="caption" sx={{ whiteSpace: 'nowrap', ml: 1 }}>
+        <Typography variant="caption" sx={{ whiteSpace: 'nowrap' }}>
           {right}
         </Typography>
       </Stack>
@@ -81,37 +82,35 @@ function Bar({
   )
 }
 
-function EntityRow({ e }: { e: EntitySnap }): JSX.Element {
+function EntityRow({ e, rank }: { e: SourceView; rank: number }): JSX.Element {
   const [open, setOpen] = useState(false)
+  const crit = e.critPct >= 1 ? ` · ${Math.round(e.critPct)}% crit` : ''
   return (
     <Box>
       <Bar
-        color={KIND_COLOR[e.kind]}
+        color={KIND_COLOR[e.kind] ?? '#888'}
         pct={e.pct}
-        faded={e.kind === 'other'}
-        onClick={e.abilities.length ? () => setOpen((o) => !o) : undefined}
-        left={
+        rank={rank}
+        faded={e.kind === 'enemy'}
+        onClick={e.skills.length ? () => setOpen((o) => !o) : undefined}
+        name={
           <>
             {e.name}
             {e.kind === 'pet' && <Chip label="pet" size="small" sx={{ ml: 0.5, height: 14, fontSize: 9 }} />}
-            {e.kind === 'other' && (
-              <Chip label="unverified" size="small" variant="outlined" sx={{ ml: 0.5, height: 14, fontSize: 9 }} />
-            )}
           </>
         }
-        right={`${fmtDps(e.dps)} · ${fmt(e.total)}`}
+        right={`${fmt(e.total)} · ${fmt(e.dps)}/s${crit}`}
       />
       <Collapse in={open}>
-        <Box sx={{ pl: 1, pb: 0.5 }}>
-          {e.abilities.map((a) => (
-            <Stack key={a.name} direction="row" justifyContent="space-between">
-              <Typography variant="caption" color="text.secondary" noWrap>
-                {a.name}
-              </Typography>
-              <Typography variant="caption" color="text.secondary">
-                {fmt(a.total)}
-              </Typography>
-            </Stack>
+        <Box sx={{ pl: 3, pr: 0.5, py: 0.5 }}>
+          {e.skills.map((s) => (
+            <Bar
+              key={s.name}
+              color={KIND_COLOR[e.kind] ?? '#888'}
+              pct={s.pct}
+              name={s.name}
+              right={`${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
+            />
           ))}
         </Box>
       </Collapse>
@@ -119,53 +118,29 @@ function EntityRow({ e }: { e: EntitySnap }): JSX.Element {
   )
 }
 
-function ScopePanel({
-  title,
-  subtitle,
-  scope,
-  mode
-}: {
-  title: ReactNode
-  subtitle: string
-  scope: ScopeSnap
-  mode: 'out' | 'in'
-}): JSX.Element {
+function SegmentBody({ seg, mode }: { seg: SegmentView; mode: 'out' | 'in' }): JSX.Element {
+  const rows = mode === 'out' ? seg.entities : seg.incoming
+  const total = mode === 'out' ? seg.outTotal : seg.inTotal
+  const dps = mode === 'out' ? seg.outDps : seg.inDps
   return (
-    <Paper variant="outlined" sx={{ p: 1.5, flex: 1, minWidth: 280, display: 'flex', flexDirection: 'column' }}>
+    <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
       <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: 1 }}>
-        <Typography variant="subtitle2">{title}</Typography>
-        <Typography variant="caption" color="text.secondary">
-          {subtitle}
+        <Typography variant="subtitle1" noWrap>
+          {seg.name}
+          {seg.active && (
+            <CircleIcon sx={{ fontSize: 10, color: 'success.main', ml: 1, verticalAlign: 'middle' }} />
+          )}
+        </Typography>
+        <Typography variant="body2" sx={{ color: mode === 'out' ? 'primary.main' : KIND_COLOR.enemy }}>
+          {fmt(dps)}/s <Typography component="span" variant="caption" color="text.secondary">· {fmt(total)} · {fmtDur(seg.durationSec)}</Typography>
         </Typography>
       </Stack>
-      <Typography variant="h5" sx={{ color: mode === 'out' ? 'primary.main' : IN_COLOR, mb: 1 }}>
-        {fmtDps(mode === 'out' ? scope.dps : scope.incomingTotal / scope.durationSec)}
-        <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>
-          {mode === 'out' ? `${fmt(scope.total)} dmg` : `${fmt(scope.incomingTotal)} taken`} · {fmtDur(scope.durationSec)}
-        </Typography>
-      </Typography>
-      <Box sx={{ overflow: 'auto' }}>
-        {mode === 'out' ? (
-          scope.entities.length ? (
-            scope.entities.map((e) => <EntityRow key={e.id} e={e} />)
-          ) : (
-            <Typography variant="caption" color="text.secondary">
-              No damage yet.
-            </Typography>
-          )
-        ) : scope.incoming.length ? (
-          scope.incoming.map((s) => (
-            <Bar
-              key={s.name}
-              color={IN_COLOR}
-              pct={s.pct}
-              left={s.name}
-              right={`${fmtDps(s.dps)} · ${fmt(s.total)}`}
-            />
-          ))
+      <Box sx={{ overflow: 'auto', flexGrow: 1 }}>
+        {rows.length ? (
+          rows.map((e, i) => <EntityRow key={e.id} e={e} rank={i + 1} />)
         ) : (
           <Typography variant="caption" color="text.secondary">
-            No incoming damage.
+            {mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.'}
           </Typography>
         )}
       </Box>
@@ -174,26 +149,34 @@ function ScopePanel({
 }
 
 export default function CombatView(): JSX.Element {
-  const { snap, combinePets, setCombinePets, showOthers, setShowOthers, reset } = useCombat()
+  const { snap, combinePets, setCombinePets, selection, setSelection, reset } = useCombat()
   const [mode, setMode] = useState<'out' | 'in'>('out')
+
+  const history = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
+  const zone = (snap?.segments ?? []).find((s) => s.kind === 'zone')
 
   return (
     <Stack spacing={1.5} sx={{ height: '100%' }}>
-      <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
+      <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
+        <Select size="small" value={selection} onChange={(e) => setSelection(e.target.value)} sx={{ minWidth: 260 }}>
+          <MenuItem value={LIVE}>▶ Current fight (live)</MenuItem>
+          {zone && <MenuItem value="zone">◆ {zone.name} · {fmtDur(zone.durationSec)}</MenuItem>}
+          {history.map((s) => (
+            <MenuItem key={s.id} value={s.id}>
+              {s.name} · {fmtDur(s.durationSec)} · {fmt(s.dps)}/s
+            </MenuItem>
+          ))}
+        </Select>
         <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_e, v) => v && setMode(v)}>
           <ToggleButton value="out">Outgoing</ToggleButton>
           <ToggleButton value="in">Incoming</ToggleButton>
         </ToggleButtonGroup>
         <FormControlLabel
-          control={<Switch checked={combinePets} onChange={(e) => setCombinePets(e.target.checked)} />}
+          control={<Switch size="small" checked={combinePets} onChange={(e) => setCombinePets(e.target.checked)} />}
           label="Combine pets"
         />
-        <FormControlLabel
-          control={<Switch checked={showOthers} onChange={(e) => setShowOthers(e.target.checked)} />}
-          label="Show others"
-        />
         <Box sx={{ flexGrow: 1 }} />
-        {snap?.fight.active && (
+        {snap?.inCombat && (
           <Chip
             size="small"
             icon={<CircleIcon sx={{ fontSize: 10, color: 'success.main' }} />}
@@ -206,31 +189,18 @@ export default function CombatView(): JSX.Element {
         </Button>
       </Stack>
 
-      {snap && (
-        <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} sx={{ flexGrow: 1, minHeight: 0 }}>
-          <ScopePanel
-            title={
-              <>
-                Current fight
-                {snap.fight.target && (
-                  <Typography component="span" variant="caption" color="text.secondary" sx={{ ml: 1 }}>
-                    vs {snap.fight.target}
-                  </Typography>
-                )}
-              </>
-            }
-            subtitle={snap.fight.active ? 'live' : 'ended'}
-            scope={snap.fight}
-            mode={mode}
-          />
-          <ScopePanel title="Overall (session)" subtitle="all fights" scope={snap.overall} mode={mode} />
-        </Stack>
+      {snap?.selected ? (
+        <SegmentBody seg={snap.selected} mode={mode} />
+      ) : (
+        <Typography color="text.secondary" sx={{ p: 2 }}>
+          No combat yet — engage something and it&apos;ll appear here live.
+        </Typography>
       )}
 
       <Alert severity="info" sx={{ py: 0 }}>
-        You and your charmed pets are tracked accurately via charm windows. Other names are shown as{' '}
-        <strong>unverified</strong> (toggle above) — the log names actors without ids, so other players&apos; pets and
-        charms can&apos;t be attributed. Combat history + timelines come next.
+        Encounters start when you or your pets deal/take damage and end after ~10s idle (staggered adds join the same
+        fight). DPS = damage ÷ (last − first hit), so it freezes when a fight ends. Overall resets when you zone. Click a
+        row to see its skill breakdown. Combat history + timelines expand from here.
       </Alert>
     </Stack>
   )
