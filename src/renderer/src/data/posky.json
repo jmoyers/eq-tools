@@ -1,0 +1,3070 @@
+{
+  "scrapedAt": "2026-08-01T20:23:27.903Z",
+  "quests": [
+    {
+      "className": "Bard",
+      "name": "Bard Test of Tone",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Meda",
+      "reward": "Mask of Song",
+      "rewardStats": "Mask of Song MAGIC ITEM LORE ITEM NO DROP Slot: FACE AC: 12 STR: +3 DEX: +3 STA: +3 CHA: +3 WIS: +3 INT: +3 AGI: +3 SV FIRE: +7 SV DISEASE: +7 SV COLD: +7 SV MAGIC: +7 SV POISON: +7 WT: 0.5 Size: MEDIUM Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Light Woolen Mask",
+          "who": [
+            "Gorga"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Bard",
+      "name": "Bard Test of Voice",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Kala",
+      "reward": "Mantle of the Songweaver",
+      "rewardStats": "Mantle of the Songweaver MAGIC ITEM LORE ITEM NO DROP Slot: SHOULDERS Charges: 5 AC: 9 STR: +7 DEX: +7 CHA: +5 AGI: +5 SV MAGIC: +5 Effect: Fury (Must Equip, Casting Time: Instant) at Level 45 WT: 2.5 Size: SMALL Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Light Woolen Mantle",
+          "who": [
+            "KoS"
+          ],
+          "where": "Island 4",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Bard",
+      "name": "Bard Test of Pitch",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Azia",
+      "reward": "Ervaj's Flute of Flight",
+      "rewardStats": "Ervaj's Flute of Flight MAGIC ITEM LORE ITEM NO DROP Slot: PRIMARY Wind Resonance: 12 STR: +8 STA: +10 CHA: +10 INT: +5 WT: 0.1 Size: TINY Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Crude Wooden Flute",
+          "who": [
+            "SL"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Bard",
+      "name": "Bard Test of Wind",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Caza",
+      "reward": "Fae Amulet",
+      "rewardStats": "Fae Amulet MAGIC ITEM LORE ITEM NO DROP Slot: NECK Charges: 4 AC: 5 DEX: +4 STA: +4 HP: +50 SV DISEASE: +10 SV POISON: +10 Effect: Healing (Must Equip, Casting Time: Instant) at Level 45 WT: 0.1 Size: TINY Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Amulet of Woven Hair",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Bard",
+      "name": "Bard Test of Brass",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Fana",
+      "reward": "Denon's Horn of Disaster",
+      "rewardStats": "Denon's Horn of Disaster MAGIC ITEM LORE ITEM NO DROP Slot: PRIMARY Brass Resonance: 14 STR: +5 CHA: +10 INT: +5 HP: +50 WT: 2.0 Size: MEDIUM Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Glowing Diamond",
+          "who": [
+            "SotS"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Bard",
+      "name": "Bard Test of Harmony",
+      "giver": "Cilin Spellsinger",
+      "rune": "Wind Rune Heda",
+      "reward": "Harmonic Spear",
+      "rewardStats": "Harmonic Spear MAGIC ITEM LORE ITEM NO DROP Slot: PRIMARY Skill: Piercing Atk Delay: 21 DMG: 10 STR: +5 DEX: +5 CHA: +5 Effect: Chant of Battle (Combat, Casting Time: Instant) at Level 45 WT: 3.5 Size: MEDIUM Class: BRD Race: ALL",
+      "items": [
+        {
+          "name": "Nebulous Diamond",
+          "who": [
+            "EoV"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Beastlord",
+      "name": "Beastlord Test of Aviak",
+      "giver": "Animist Kratho",
+      "rune": "Wind Rune Beza",
+      "reward": "Spiroc Beak Earcuff",
+      "rewardStats": "Spiroc Beak Earcuff Lore Equipped, No Trade Slot: EAR Class: BST Race: ALL AC: 4 HP: +10 Mana: +10 End: +10 WIS: +5 CHA: +5 WT: 0.1 Size: TINY Click Effect: Vigor of Zehkes (Must Equip) Cast Time: Instant Required Level: 46 Cooldown: 120 seconds",
+      "items": [
+        {
+          "name": "Spiroc Elder's Totem",
+          "who": [
+            "SL"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Beastlord",
+      "name": "Beastlord Test of Azarack",
+      "giver": "Animist Kratho",
+      "rune": "Wind Rune Heda",
+      "reward": "Azarack Skin Wristwraps",
+      "rewardStats": "Azarack Skin Wristwraps No Trade Class: BST Race: ALL Wrist AC: 5 HP: +35 END: +10 STR: +5 STA: +5 DEX: +5 WT: 1.0 Size: SMALL Click Effect: Whirl Bolt (Must Equip) - Cast Time: 1.0 seconds, Required Level: 46, Cooldown: 240 seconds",
+      "items": [
+        {
+          "name": "Azarack Skin",
+          "who": [
+            "PoS"
+          ],
+          "where": "Island 2",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Beastlord",
+      "name": "Beastlord Test of Claw",
+      "giver": "Animist Kratho",
+      "rune": "Wind Rune Izah",
+      "reward": "Windhowl",
+      "rewardStats": "Windhowl No Trade Slot: Primary Skill: Hand to Hand Atk Delay: 22 DMG: 12 HP: +55 End: +25 STR: +4 DEX: +4 Effect: Herikol's Soothing (Combat, Casting Time: Instant) at Level 46 WT: 0.1 Size: Tiny Class: BST Race: ALL , Spirit RenderSpirit Render No Trade Slot: Secondary Skill: Hand to Hand Atk Delay: 23 DMG: 10 HP: 25 Mana: 25 Effect: Sha's Lethargy (Combat, Casting Time: Instant) at Level 46 WT: 0.1 Size: Tiny Class: BST Race: ALL",
+      "items": [
+        {
+          "name": "Sphinx Claw",
+          "who": [
+            "SotS"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Mithril Bands",
+          "who": [
+            "EoV"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Beastlord",
+      "name": "Beastlord Test of Harpy",
+      "giver": "Animist Kratho",
+      "rune": "Wind Rune Kala",
+      "reward": "Griffin-Hide Armguards",
+      "rewardStats": "Griffin-Hide Armguards LORE ITEM NO TRADE Slot: ARMS Class: BST Race: ALL AC: 6 STA: +4 WIS: +3 SV MAGIC: +5 SV FIRE: +5 SV COLD: +5 SV DISEASE: +5 SV POISON: +5 End: +15 WT: 2.5 Size: SMALL",
+      "items": [
+        {
+          "name": "Leather Cord",
+          "who": [
+            "Gorga"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Beastlord",
+      "name": "Beastlord Test of Wind",
+      "giver": "Animist Kratho",
+      "rune": "Wind Rune Geza",
+      "reward": "Diaphonous Waistband",
+      "rewardStats": "Diaphonous Waistband Lore Equipped, No Trade Slot: WAIST Class: BST Race: ALL AC: 5 STR: +5 WIS: +10 DEX: +10 Haste: +41% WT: 0.1 Size: SMALL",
+      "items": [
+        {
+          "name": "Silken Wrap",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Sharpness",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Jaka",
+      "reward": "Skycleaver",
+      "rewardStats": "Skycleaver Lore Equipped, No Trade Slot: PRIMARY Class: BER Race: ALL Skill: 2H Slashing Atk Delay: 35 DMG: 30 Dmg Bon: 24 STA: +5 DEX: +10 SV DISEASE: +5 WT: 8.0 Size: GIANT Combat Effect: Haste (Req Level 30)",
+      "items": [
+        {
+          "name": "Djinni War Blade",
+          "who": [
+            "SotS"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Will",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Ena",
+      "reward": "Molten Coil",
+      "rewardStats": "Molten Coil Lore Equipped, No Trade Slot: FINGERS Class: BER Race: ALL AC: 5 Mana: -55 STR: +6 STA: +5 AGI: +5 DEX: +6 CHA: +10 SV FIRE: +5 WT: 0.1 Size: TINY",
+      "items": [
+        {
+          "name": "Pulsating Ruby",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Ferocity",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Ozah",
+      "reward": "Sash of Ferocity",
+      "rewardStats": "Sash of Ferocity Lore Equipped, No Trade Slot: WAIST Class: BER Race: ALL AC: 10 STR: +6 DEX: +5 SV MAGIC: +5 Haste: +41% WT: 0.1 Size: SMALL",
+      "items": [
+        {
+          "name": "High Quality Raiment",
+          "who": [
+            "SL"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Burden",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Azia",
+      "reward": "Shroud of the Sky",
+      "rewardStats": "Shroud of the Sky Lore Equipped, No Trade Slot: SHOULDERS Class: BER Race: ALL AC: 8 HP: +25 End: +25 STR: +7 WIS: +7 DEX: +7 WT: 2.5 Size: SMALL Click Effect: Raging Strength (Must Equip) Cast Time: 3.5 seconds Required Level: 46 Cooldown: 120 seconds",
+      "items": [
+        {
+          "name": "Feathered Cape",
+          "who": [
+            "Gorga"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Blood",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Lena",
+      "reward": "Blood-Drawn Runes",
+      "rewardStats": "Blood-Drawn Runes No Trade, Quest Slot: CHEST Class: BER Race: ALL HP: +55 End: +25 STR: +10 STA: +10 AGI: +5 DEX: +10 HP Regen: +10 Size: LARGE",
+      "items": [
+        {
+          "name": "Azarack Blood",
+          "who": [
+            "PoS"
+          ],
+          "where": "Island 2",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Berserker",
+      "name": "Berserker Test of Fools Errand",
+      "giver": "Stragen The Hewer",
+      "rune": "Wind Rune Dena",
+      "reward": "Cudgel of the Fool",
+      "rewardStats": "Cudgel of the Fool LORE ITEM NO TRADE Slot: PRIMARY Skill: 2H Blunt Atk Delay: 52 DMG: 45 Dmg Bonus: 40 INT: -7 Effect: Fury of the Chosen (Combat) WT: 5.7 Size: GIANT Class: BER Race: ALL",
+      "items": [
+        {
+          "name": "Jester's Mask",
+          "who": [
+            "KoS"
+          ],
+          "where": "Island 4",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of Courage",
+      "giver": "Alan Harten",
+      "reward": "Truewind Earring",
+      "rewardStats": "Alan Harten says 'You have come seeking the knowledge and treasures I possess. I will impart such things to you, if you do a service to your god. It matters not who that god may be, but the service and the faith you must exemplify. Bring to me an ochre tessera, a sky emerald, and a silver hoop. \nReward:Truewind Earring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: EAR\nDEX: +5 WIS: +9\nSV COLD: +10\nWT: 0.1 Size: TINY\nClass: CLR\nRace: ALL",
+      "items": [
+        {
+          "name": "Ochre Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Sky Emerald",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 boss",
+          "count": 1
+        },
+        {
+          "name": "Silver Hoop",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 boss",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of Skill",
+      "giver": "Alan Harten",
+      "reward": "Aegis of the Wind",
+      "rewardStats": "Alan Harten says 'The test of skill it will be. Bring to me a golden disc, a piece of dark wood, and a small shield. You shall be rewarded upon your return. \nReward:Aegis of the Wind\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SECONDARY\nAC: 25\nWIS: +9 MANA: +60\nSV DISEASE: +10\nWT: 9.5 Size: LARGE\nClass: CLR\nRace: ALL",
+      "items": [
+        {
+          "name": "Gold Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Dark Wood",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Small Shield",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 boss",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of Protection",
+      "giver": "Alan Harten",
+      "reward": "Pauldrons of Piety",
+      "rewardStats": "Alan Harten says 'So, you must be a great protector to have ventured this far. Bring to me an adumbrate globe, a glowing diamond, and some shiny pauldrons to get your reward. \nReward:Pauldrons of Piety\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 11\nSTA: +8 CHA: +2 WIS: +12 MANA: +35\nWT: 4.5 Size: SMALL\nClass: CLR\nRace: ALL",
+      "items": [
+        {
+          "name": "Adumbrate Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Faintly Glowing Diamond",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Shiny Pauldrons",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 boss",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of Resolution",
+      "giver": "Deric Lennox",
+      "reward": "Necklace of Resolution",
+      "rewardStats": "Deric Lennox says 'The test of resolution be an easy one. Trust me there! I'll just be needin' ye t' bring me a spiroc statuette, a spiroc healing totem, and a silvered spiroc necklace. Ne'er liked those blasted birds anyway. \nReward:Necklace of Resolution\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nCharges: Unlimited\nAC: 4\nSTR: +5 WIS: +7 HP: +30 MANA: +15\nEffect: Promised Renewal (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.1 Size: TINY\nClass: CLR\nRace: ALL",
+      "items": [
+        {
+          "name": "Spiroc Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Healing Totem",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Silvered Spiroc Necklace",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 boss",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of Theurgy",
+      "giver": "Deric Lennox",
+      "reward": "Theurgist's Star",
+      "rewardStats": "Deric Lennox says 'The test of theurgy. Ne'er unnerstood it meself. It calls fer ye t' bring me an efreeti mace, a saffron spiroc feather, a glowing sapphire, an' some djinni aura. \nReward:Theurgist's Star\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 25\nDMG: 15 \nWIS: +10 MANA: +40\nSV DISEASE: +25 SV POISON: +25\nEffect: Blessing of the Theurgist (Combat, Casting Time: Instant) at Level 50\nWT: 4.0 Size: MEDIUM\nClass: CLR\nRace: ALL",
+      "items": [
+        {
+          "name": "Saffron Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Glowing Sapphire",
+          "who": [
+            "Bazzzazzt",
+            "Bzzzt",
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Djinni Aura",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7 boss",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Mace",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Cleric",
+      "name": "Cleric Test of The Weak",
+      "giver": "Deric Lennox",
+      "reward": "Truwian Baton",
+      "items": [
+        {
+          "name": "Manna Nectar",
+          "who": [
+            "bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Shimmering Topaz",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Mithril Bands",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8 boss",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Standard",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Cleric Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of Wolf",
+      "giver": "Will Treewalker",
+      "reward": "Drake-Hide Mask",
+      "rewardStats": "Will Treewalker says 'So you wish to take the test of the wolf, do you? Go forth unto the islands and find an azure tessera, black face paint, and a worn leather mask. Bring them back to me, but not until you have all three, and you shall be rewarded. \nReward:Drake-Hide Mask\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nAC: 4\nSTR: +10 DEX: +10 WIS: +10 AGI: +10 MANA: +10\nSV MAGIC: +7\nWT: 0.4 Size: SMALL\nClass: DRU\nRace: ALL",
+      "items": [
+        {
+          "name": "Azure Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Black Face Paint",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Worn Leather Mask",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of Bear",
+      "giver": "Will Treewalker",
+      "reward": "Nature Walker's Mantle",
+      "rewardStats": "Will Treewalker says 'Ah, the test of the bear it is. Find in this plane a copper disc, a nature walker's sky emerald, and a mantle of woven grass. Bring all three at one time to me for your reward. \nReward:Nature Walker's Mantle\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 6\nDEX: +4 WIS: +4 AGI: +4 MANA: +50\nWT: 2.5 Size: SMALL\nClass: DRU\nRace: ALL",
+      "items": [
+        {
+          "name": "Copper Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Nature Walker's Sky Emerald",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Mantle of Woven Grass",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of Tree",
+      "giver": "Will Treewalker",
+      "reward": "Shillelagh",
+      "rewardStats": "Will Treewalker says 'The test of the tree is said to be a test of Nature and only those stout of limb and bark will succeed. Bring to me a diaphanous globe, some hardened clay and a spiroc battle staff. Hand them all to me at once and the reward will be yours. \nReward:Shillelagh\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 25\nDMG: 10 AC: 2\nCHA: +4 WIS: +9 AGI: +2 MANA: +50\nSV FIRE: +5\nWT: 4.0 Size: LARGE\nClass: DRU\nRace: ALL",
+      "items": [
+        {
+          "name": "Diaphanous Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Hardened Clay",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Battle Staff",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of The Bee",
+      "giver": "Fenalla Moonshadow",
+      "reward": "Honeycomb Belt",
+      "rewardStats": "Fenalla Moonshadow says 'The test of the bee, you say? Very well, go forth and gain an efreeti statuette, a wilder's girdle and finally a piece of divine honeycomb. Bring them to me after you have them all and I shall grant thy just reward. \nReward:Honeycomb Belt\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 6\nCHA: +2 WIS: +8 MANA: +75\nHaste: +26% \nWT: 2.0 Size: SMALL\nClass: DRU\nRace: ALL",
+      "items": [
+        {
+          "name": "Efreeti Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Wilder's Girdle",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Divine Honeycomb",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of Eagle",
+      "giver": "Fenalla Moonshadow",
+      "reward": "Spiroc Banisher Focus",
+      "rewardStats": "Fenalla Moonshadow says 'The test of the eagle is very difficult, and one must be as strong as the Great Pine to finish. For this test I shall need you to find a white-tipped spiroc feather, some acidic venom, an ethereal ruby and finally a spiroc elder's totem. Return all four at once and the prize will be yours. \nReward:Spiroc Banisher Focus\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY SECONDARY\nSTR: -2 DEX: -2 WIS: +20 AGI: -2 MANA: +10\nWT: 1.0 Size: SMALL\nClass: DRU\nRace: ALL",
+      "items": [
+        {
+          "name": "White-tipped Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Ruby",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7 Boss",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Elder's Totem",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        },
+        {
+          "name": "Acidic Venom",
+          "who": [
+            "Bazzt Zzzt",
+            "Bazzzazzt",
+            "Bizazzzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Druid",
+      "name": "Druid Test of Nature",
+      "giver": "Fenalla Moonshadow",
+      "reward": "Espri",
+      "items": [
+        {
+          "name": "Lush Nectar",
+          "who": [
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Fire Sky Ruby (Druid version weighs 3.0)",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Storm Sky Opal",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Scimitar",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Druid Plane of Sky Tests"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Illusion",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Meda",
+      "reward": "Sphinx Hair Cord",
+      "rewardStats": "Sphinx Hair Cord MAGIC ITEM LORE ITEM NO DROP Slot: WAIST AC: 4 CHA: +5 INT: +5 SV FIRE: +10 SV DISEASE: +10 SV COLD: +10 WT: 0.2 Size: SMALL Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Finely Woven Cloth Cord",
+          "who": [
+            "Gorga"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Metamorphism",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Ozah",
+      "reward": "Wind Walker's Mantle",
+      "rewardStats": "Wind Walker's Mantle MAGIC ITEM LORE ITEM NO DROP Slot: SHOULDERS AC: 6 STR: +5 DEX: +5 CHA: +10 AGI: +2 HP: +50 WT: 0.3 Size: SMALL Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Light Cloth Mantle",
+          "who": [
+            "KoS"
+          ],
+          "where": "Island 4",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Deception",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Beza",
+      "reward": "Ivory Mask",
+      "rewardStats": "Ivory Mask MAGIC ITEM LORE ITEM NO DROP Slot: FACE AC: 6 CHA: +6 INT: +6 MANA: +30 WT: 0.5 Size: MEDIUM Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Silken Mask",
+          "who": [
+            "SL"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Disillusion",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Caza",
+      "reward": "Earring of Displacement",
+      "rewardStats": "Earring of Displacement MAGIC ITEM LORE ITEM NO DROP Slot: EAR Charges: 2 AC: 6 CHA: +4 INT: +4 MANA: +25 Effect: Gravity Flux (Must Equip, Casting Time: Instant) at Level 45 WT: 0.1 Size: TINY Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Adamantium Earring",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Memorization",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Fana",
+      "reward": "Necklace of Whispering Winds",
+      "rewardStats": "Necklace of Whispering Winds MAGIC ITEM LORE ITEM NO DROP Slot: NECK Charges: 2 AC: 4 STA: +5 CHA: +10 INT: +5 MANA: +35 Effect: Cajoling Whispers (Must Equip, Casting Time: Instant) at Level 45 WT: 0.1 Size: TINY Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Glowing Necklace",
+          "who": [
+            "SotS"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Enchanter",
+      "name": "Enchanter Test of Incapacitation",
+      "giver": "Enchanter Jolas",
+      "rune": "Wind Rune Izah",
+      "reward": "Rod of the Protecting Winds",
+      "rewardStats": "Rod of the Protecting Winds MAGIC ITEM LORE ITEM NO DROP Slot: PRIMARY Skill: 2H Blunt Atk Delay: 45 DMG: 35 AC: 10 CHA: +15 INT: +15 MANA: +75 Effect: Rune III (Must Equip, Casting Time: Instant) at Level 45 Charges: Infinite Cooldown: 180 seconds WT: 5.0 Size: LARGE Class: ENC Race: ALL",
+      "items": [
+        {
+          "name": "Large Sky Sapphire",
+          "who": [
+            "EoV"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Clarification",
+      "giver": "Frederic Calermin",
+      "reward": "Bracelet of Clarification",
+      "rewardStats": "Frederic Calermin says 'Clarification it is. Proceed upward through the sky and return to me a crimson tessera, an ethereal sapphire, and a feathered cape. This will prove your abilities to me and I will reward you with the Bracelet of Clarification. \nReward:Bracelet of Clarification\nLORE ITEM NO DROP\nSlot: BACK WRIST\nAC: 6\nCHA: +1 INT: +9 MANA: +10\nWT: 0.5 Size: MEDIUM\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Crimson Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Sapphire",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Feathered Cape",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Empowerment",
+      "giver": "Frederic Calermin",
+      "reward": "Mask of Empowerment",
+      "rewardStats": "Frederic Calermin says 'Empowerment it is. Proceed upward through the sky and return to me an iron disk, a gem of empowerment, and a ceramic mask. This will prove your abilities to me and I will reward you with the Mask of Empowerment. \nReward:Mask of Empowerment\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nCharges: 5\nAC: 4\nDEX: +7 INT: +7 AGI: +7\nEffect: Burnout III (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.4 Size: SMALL\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Iron Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Gem of Empowerment",
+          "who": [
+            "a gorgalask",
+            "a spirited harpie"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Ceramic Mask",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Gesticulation",
+      "giver": "Frederic Calermin",
+      "reward": "Staff of The Magister",
+      "rewardStats": "Reward:Staff of The Magister\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 48\nDMG: 16 \nINT: +15 MANA: +75\nSV FIRE: +10 SV COLD: +20 SV POISON: +10\nWT: 4.0 Size: LARGE\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Sweet Nectar",
+          "who": [
+            "Bazzzazzt",
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Magi Staff",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Sphinx Crown",
+          "who": [
+            "a fatestealer drake",
+            "a heartsbane drake",
+            "a windrider drake"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Hazy Opal",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Shielding",
+      "giver": "Frederic Calermin",
+      "reward": "Gold White Pendant",
+      "rewardStats": "Frederic Calermin says 'Shielding it is. Proceed upward through the sky and return to me a hyaline globe, an ivory pendant, and a gold coffer. This will prove your abilities to me and I will reward you with a gold white pendant. \nReward:Gold White Pendant\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nAC: 2\nINT: +5 MANA: +50\nWT: 0.1 Size: TINY\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Hyaline Globe",
+          "who": [
+            "a crystalline cloud"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Ivory Pendant",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Golden Coffer",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Summoning",
+      "giver": "Roanis Elindar",
+      "reward": "Drake-Hide Amice",
+      "rewardStats": "Roanis Elindar says 'Summoning it is. Proceed upward through the sky and return to me a harpy statuette, a finely woven cloth amice, and a large diamond. This will prove your abilities to me and I will reward you with a drake hide amice. \nReward:Drake-Hide Amice\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nCharges: 10\nAC: 6\nSTA: +5 HP: +50 MANA: +50\nEffect: Malaise (Must Equip, Casting Time: Instant) at Level 45\nWT: 2.5 Size: SMALL\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Harpy Statuette",
+          "who": [
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Finely Woven Cloth Amice",
+          "who": [
+            "The Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Large Diamond",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Interpretation",
+      "giver": "Roanis Elindar",
+      "reward": "Duennan Shielding Ring",
+      "rewardStats": "You say, 'I choose interpretation.'\nRoanis Elindar says, 'Interpretation it is. Proceed upward through the sky and return to me a Carmine Spiroc Feather, a Blood Sky Amethyst, and a Golden Efreeti Ring. This will prove your abilities to me and I will reward you with the Duennan Shielding Ring.'\nReward:Duennan Shielding Ring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nCharges: 1\nAC: 4\nWIS: +5 INT: +5 MANA: +30\nEffect: Harmshield (Must Equip, Casting Time: Instant)\nWT: 0.1 Size: TINY\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Carmine Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc caller",
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc vanquisher",
+            "a spiroc walker",
+            "The Spiroc Guardian"
+          ],
+          "where": "Island 5, Island 5 Boss",
+          "count": 1
+        },
+        {
+          "name": "Blood Sky Amethyst",
+          "who": [
+            "Bazzzazzt",
+            "Bizazzzt",
+            "Bzzazzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Golden Efreeti Ring",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Magician",
+      "name": "Magician Test of Displacement",
+      "giver": "Roanis Elindar",
+      "reward": "Staff of Elemental Mastery: Air",
+      "rewardStats": "Roanis Elindar says 'Displacement it is. Proceed upward through the sky and return to me some sweet nectar, the crown of elemental mastery, a large opal, and a djinni stave. This will prove your abilities to me and I will reward you with the Staff of Elemental Mastery. \nReward:Staff of Elemental Mastery: Air\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 30\nDMG: 15 \nEffect: Reclaim Energy (Any Slot/Can Equip, Casting Time: Instant) at Level 40\nFocus Effect: Servant of Air\nWT: 5.0 Size: LARGE\nClass: MAG\nRace: ALL",
+      "items": [
+        {
+          "name": "Sweet Nectar",
+          "who": [
+            "Bazzzazzt",
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Djinni Stave",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Large Opal",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Crown of Elemental Mastery",
+          "who": [
+            "a fatestealer drake",
+            "a greater sphinx",
+            "a heartsbane drake",
+            "a windrider drake",
+            "an undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Magician Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Strength",
+      "reward": "Back Straps of Mastery",
+      "rewardStats": "You say, 'Strength'\nHolwin says, 'So be it, the test of strength you shall have. Bring to me some silken strands and a wind rune caza. The task will not be easy, but it should serve as an adequate test of strength, for one of your abilities.' \nReward:Back Straps of Mastery\nMAGIC ITEM LORE ITEM NO DROP\nSlot: BACK WRIST\nAC: 15\nSTR: +7 STA: +7 CHA: +5 HP: +50\nWT: 0.3 Size: SMALL\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "wind rune caza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Silken Strands",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Sight",
+      "reward": "Ton Po's Eye Patch",
+      "rewardStats": "You say, 'sight'\nHolwin says, 'The test of sight is a test of both body and mind. The mind will allow you to see that which is usually invisible. Bring me a cracked leather eyepatch and a wind rune geza and I will assist you in seeing what should not be seen.'\nReward:Ton Po's Eye Patch\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nEnd: +25\nSTR: +8 DEX: +8 AGI: +8\nEffect: See Invisible (Worn)\nWT: 0.1 Size: TINY\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "wind rune geza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Cracked Leather Eyepatch",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Speed",
+      "reward": "Sandals of Alacrity",
+      "rewardStats": "You say, 'speed'\nHolwin says, 'The test of speed. Every monk must be swift if he is to best his opponent. Speed in both mind and body is essential in many facets of life. Return to me some dove slippers and a wind rune jaka and I shall aid your speed of mind.'\nReward:Sandals of Alacrity\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FEET\nCharges: 2\nAC: 6\nSTR: +10 AGI: +10 HP: +20\nEffect: Alacrity (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.5 Size: SMALL\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "wind rune jaka",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Dove Slippers",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Tears",
+      "reward": "Ton Po's Shoulder Wraps",
+      "rewardStats": "You say, 'Tears'\nHolwin says, 'The test of tears involves knowing when to release, and when to provide a shoulder for another. Bring me a silken wrap and a wind rune beza. I will teach you the way.' \nReward:Ton Po's Shoulder Wraps\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 8\nSTR: +4 DEX: +4 AGI: +4\nSV FIRE: +10 SV DISEASE: +10 SV COLD: +10 SV MAGIC: +10 SV POISON: +10\nWT: 0.3 Size: SMALL\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "wind rune beza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Silken Wrap",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Fists",
+      "reward": "Wu's Fist of Mastery",
+      "rewardStats": "You say, 'fists'\nHolwin says, 'A monk must know when to use his or her fists, and when to use the mind. In this endeavor, you must decide which you shall use. Return to me, once you have found them, a pair of brass knuckles, nebulous sapphire and a wind rune neza.'\nReward:Wu's Fist of Mastery\nMAGIC ITEM NO DROP\nSlot: PRIMARY SECONDARY\nSkill: 1H Blunt Atk Delay: 22\nDMG: 16 \nWT: 0.5 Size: TINY\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "rune neza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Brass Knuckles",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4 and 8",
+          "count": 1
+        },
+        {
+          "name": "Nebulous Sapphire",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Monk",
+      "name": "Monk Test of Tranquility",
+      "reward": "Golden Sash of Tranquility",
+      "rewardStats": "You say, 'tranquility'\nHolwin says, 'Ah, the test of tranquility. Only the tranquil monk can achieve enlightenment. Are you such an individual? Time shall tell. Retrieve these items for me. Bring a Tear of Quellious, and a wind rune lena. Then we shall assess your ability.' \nReward:Golden Sash of Tranquility\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 5\nHaste: +41%\nSTR: +15 DEX: +15 AGI: +15\nWT: 0.1 Size: SMALL\nClass: MNK\nRace: ALL",
+      "items": [
+        {
+          "name": "wind rune lena",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        },
+        {
+          "name": "Tear of Quellious",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Monk Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Flight",
+      "reward": "Bloody Griffon-Hide Wrist Guard",
+      "rewardStats": "You say, 'flight'\nDrakis Bloodcaster says, 'So, you wish to start upon the test of flight? So be it. You must return to me a griffon's beak and a wind rune lena to reap your rewards. May the darkness guide your steps.'\nReward:Bloody Griffon-Hide Wrist Guard\nMAGIC ITEM LORE ITEM\nSlot: WRIST\nCharges: 10\nAC: 5\nDEX: +5 CHA: +10 INT: +5 AGI: +5 MANA: +25\nEffect: Levitate (Must Equip, Casting Time: Instant) at Level 30\nWT: 1.0 Size: SMALL\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Griffon's Beak",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "wind rune lena",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Power",
+      "reward": "Cloak of Spiroc Feathers",
+      "rewardStats": "You say, 'power'\nDrakis Bloodcaster says, 'The test of power it is. Prove yourself worthy of power and bring me a black silk cape and a wind rune neza. Only then will you know true power.'\nReward:Cloak of Spiroc Feathers\nLORE ITEM NO DROP\nSlot: BACK\nAC: 6\nSTR: +5 STA: +6 INT: +5 MANA: +50\nWT: 0.5 Size: MEDIUM\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Black Silk Cape",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "wind rune neza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Mind",
+      "reward": "Bloodsoaked Raiment",
+      "rewardStats": "You say, 'mind'\nDrakis Bloodcaster says, 'The test of mind it shall be. You must return to me, from this place of air and mist, a fine cloth raiment and a wind rune ozah. Then, and only then, you shall have the reward you deserve!'\nReward:Bloodsoaked Raiment\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 4\nDEX: +3 INT: +5 HP: +30 MANA: +65\nWT: 0.3 Size: SMALL\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Fine Cloth Raiment",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "wind rune ozah",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Heart",
+      "reward": "Sphinx Heart Amulet",
+      "rewardStats": "You say, 'heart'\nDrakis Bloodcaster says, 'So the heart it shall be. Bring me, foolish one, a pulsating ruby and a wind rune azia. Perhaps then you shall find your reward.'\nReward:Sphinx Heart Amulet\nMAGIC ITEM LORE ITEM\nSlot: NECK\nAC: 4\nSTR: +10 CHA: -5 INT: +10 MANA: +25\nSV DISEASE: +5\nEffect: Ultravision (Worn)\nWT: 0.1 Size: TINY\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Pulsating Ruby",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "wind rune azia",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Hands",
+      "reward": "Gorgon Head Staff",
+      "rewardStats": "You say, 'hands'\nDrakis Bloodcaster says, 'The test of the hands it shall be. Bring me a gorgon head, efreeti great staff and a wind rune fana. When you return, I shall reward you for your deeds, assuming you live through the experience. Hahaha!'\nReward:Gorgon Head Staff\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 41\nDMG: 14 \nINT: +15 MANA: +75\nSV DISEASE: +25\nEffect: Tishan's Clash (Combat, Casting Time: Instant) at Level 50\nWT: 5.0 Size: LARGE\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Gorgon Head",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Great Staff",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4 and 8",
+          "count": 1
+        },
+        {
+          "name": "wind rune fana",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Necromancer",
+      "name": "Necromancer Test of Finger",
+      "reward": "Band of Wailing Winds",
+      "rewardStats": "You say, 'finger'\nDrakis Bloodcaster says, 'The finger. Needed for nearly every casting you shall ever hope to produce, it truly is the most powerful tool of creation. Should you bring me the ring of veeshan and a wind rune caza, I shall reward you with power you can only now begin to comprehend.'\nReward:Band of Wailing Winds\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nCharges: 3\nAC: 2\nINT: +5 MANA: +50\nEffect: Invoke Fear (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.1 Size: TINY\nClass: NEC\nRace: ALL",
+      "items": [
+        {
+          "name": "Ring of Veeshan",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "wind rune caza",
+          "who": [
+            "random drop"
+          ],
+          "where": "Plane of Sky",
+          "count": 1
+        }
+      ],
+      "source": "Necromancer Plane of Sky Tests"
+    },
+    {
+      "className": "Paladin",
+      "name": "Paladin Test of Sacrifice",
+      "giver": "Gregori Lightbringer",
+      "reward": "Aldryn, Blade of the Ocean",
+      "rewardStats": "Gregori Lightbringer says 'You have sacrificed much to come so far, Erudite. Sacrifice this one last time and the Sword of Ocean Breeze shall be yours. Retrieve a griffon statuette, a spiroc peace totem, and a bixie sword blade. \nReward:Aldryn, Blade of the Ocean\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Slashing Atk Delay: 26\nDMG: 20 \nSTR: +10 STA: +10 WIS: +8\nWT: 2.0 Size: MEDIUM\nClass: PAL\nRace: ALL",
+      "items": [
+        {
+          "name": "Griffon Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Peace Totem",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Bixie Sword Blade",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Paladin Plane of Sky Tests"
+    },
+    {
+      "className": "Paladin",
+      "name": "Paladin Test of Love",
+      "giver": "Gregori Lightbringer",
+      "reward": "Thelvorn, Blade of Light",
+      "rewardStats": "Gregori Lightbringer says 'Love is what brings us close to the gods we follow. Without it, we could not truly worship them, and would be lost. Prove yourself to me and return with a dark spiroc feather, ethereal topaz, and a sphinxian claw. In return, I will give you Zephyrwind. \nReward:Thelvorn, Blade of Light\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Slashing Atk Delay: 26\nDMG: 20 \nWIS: +15\nEffect: Dismiss Summoned (Combat, Casting Time: Instant) at Level 45\nWT: 3.0 Size: MEDIUM\nClass: PAL\nRace: ALL",
+      "items": [
+        {
+          "name": "Dark Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Topaz",
+          "who": [
+            "Bazzzazzt",
+            "Bizazzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Sphinx Claw",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Paladin Plane of Sky Tests"
+    },
+    {
+      "className": "Paladin",
+      "name": "Paladin Test of Compassion",
+      "giver": "Gregori Lightbringer",
+      "reward": "Truvinan",
+      "rewardStats": "Gregori Lightbringer says 'Compassion is of great importance to us. Without it, we do not feel empathy, and cannot truly follow the path we claim to travel. Return to me an efreeti two handed sword, dulcet nectar, a golden hilt, and a large sky diamond. If you present these to me, I will award you Truvinan, the divine wind. \nReward:Truvinan\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 40\nDMG: 32 \nEffect: Dismiss Undead (Combat, Casting Time: Instant) at Level 45\nWT: 8.0 Size: LARGE\nClass: PAL\nRace: ALL",
+      "items": [
+        {
+          "name": "Dulcet Nectar",
+          "who": [
+            "bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Golden Hilt",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Large Sky Diamond",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Zweihander",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Paladin Plane of Sky Tests"
+    },
+    {
+      "className": "Paladin",
+      "name": "Paladin Test of Spirit",
+      "giver": "Dirkog Steelhand",
+      "reward": "Girdle of Faith",
+      "rewardStats": "Reward:Girdle of Faith\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 10\nSTR: +6 WIS: +6 AGI: +6\nHaste: +41% \nWT: 1.0 Size: SMALL\nClass: PAL\nRace: ALL",
+      "items": [
+        {
+          "name": "Diaphanous Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Silvery Girdle",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Ivory Sky Diamond",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Paladin Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of Body",
+      "giver": "Relinin Skyrunner",
+      "reward": "Griffon Talon Necklace",
+      "rewardStats": "Relinin Skyrunner says 'Very well. You must scour this plane and bring back to me these components: an auburn tessera, a ysgaril root, and a griffon talon. Make haste, and good luck. \nReward:Griffon Talon Necklace\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nAC: 4\nSTR: +4 STA: +4 WIS: +5\nSV FIRE: +5 SV COLD: +5\nWT: 0.1 Size: TINY\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Auburn Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Ysgaril Root",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Griffon Talon",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of Defense",
+      "giver": "Relinin Skyrunner",
+      "reward": "Dark Cloak of the Sky",
+      "rewardStats": "Relinin Skyrunner says 'Defense it is. You must prove yourself worthy enough for the spiroc spirits to guard you. Bring back to me a mithril disc, a harpy tongue, and a fine velvet cloak. Good luck to you. \nReward:Dark Cloak of the Sky\nMAGIC ITEM LORE ITEM NO DROP\nSlot: BACK\nAC: 6\nSTR: +7 DEX: +7 WIS: +7 AGI: +7 HP: +55\nEffect: Haste (Any Slot/Can Equip, Casting Time: Instant) at Level 40\nWT: 5.0 Size: MEDIUM\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Mithril Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Harpy Tongue",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Fine Velvet Cloak",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of The Earth",
+      "giver": "Relinin Skyrunner",
+      "reward": "Earthshaker's Mantle",
+      "rewardStats": "Relinin Skyrunner says 'Elemental earth you say? When adeptly controlled, the elements can be among our best allies. Retrieve a gridelin globe, a dragon hide mantle, and a spiroc earth totem. Only with these items can you master the element of earth. \nReward:Earthshaker's Mantle\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nCharges: 2\nAC: 9\nSTR: +8 DEX: +8 WIS: +8\nSV FIRE: +10 SV MAGIC: +10\nEffect: Earthquake (Must Equip, Casting Time: Instant) at Level 49\nWT: 2.5 Size: SMALL\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Gridelin Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Dragon Hide Mantle",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Earth Totem",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of Thunder",
+      "giver": "Gordon Treecaller",
+      "reward": "Thunderforged Earring",
+      "rewardStats": "Gordon Treecaller says 'One of my greatest allies indeed. Thunder can be very powerful if used properly. Bring me a djinni statuette, a spiroc thunder totem, and a white gold earring. Then you will know the true power of nature. \nReward:Thunderforged Earring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: EAR\nAC: 8\nDEX: +8 WIS: +8 AGI: +8 MANA: +25\nEffect: Careless Lightning (Must Equip, Casting Time: 12.0) at Level 45\nWT: 0.1 Size: TINY\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Djinni Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Thunder Totem",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "White Gold Earring",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of Blade",
+      "giver": "Gordon Treecaller",
+      "reward": "Arydryidriyorn",
+      "rewardStats": "Gordon Treecaller says 'Very good choice, my blade is my best friend and yours will be as well if you can complete this task. Retrieve an efreeti long sword, an emerald spiroc feather, some bitter honey, and a circlet of brambles. Be careful with the honey - if it is tainted, the blade will not come to life. \nReward:Arydryidriyorn\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY SECONDARY\nSkill: 1H Slashing Atk Delay: 21\nDMG: 12 \nSTR: +8 WIS: +8 HP: +50\nEffect: Shield of Brambles (Combat, Casting Time: Instant) at Level 45\nWT: 1.0 Size: MEDIUM\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Emerald Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Bitter Honey",
+          "who": [
+            "Bazzzazzt",
+            "Bizazzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Circlet of Brambles",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Long Sword",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Ranger",
+      "name": "Ranger Test of Ranged Attack",
+      "giver": "Gordon Treecaller",
+      "reward": "Windstriker",
+      "rewardStats": "Gordon Treecaller says 'Many of the fools on Norrath don't realize how powerful a good bow can be. Many dread wolves have met their fate from my bow and you can have the same power if you can bring me back these items. Efreeti war bow, thickened nectar, sphinx tallow, and a shimmering pearl. \nReward:Windstriker\nMAGIC ITEM LORE ITEM NO DROP\nSlot: RANGE\nSkill: Archery Atk Delay: 60\nDMG: 45\nSTR: +5 DEX: +5 AGI: +5 HP: +50\nEffect: Whirlwind (Combat, Casting Time: Instant) at Level 50\nWT: 4.0 Range: 200 Size: MEDIUM\nClass: RNG\nRace: ALL",
+      "items": [
+        {
+          "name": "Thickened Nectar",
+          "who": [
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Sphinx Tallow",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Shimmering Pearl",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Bow",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Ranger Plane of Sky Tests"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Thievery",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Ozah",
+      "reward": "Wispy Choker of Vigor",
+      "rewardStats": "Wispy Choker of Vigor MAGIC ITEM LORE ITEM NO DROP Slot: NECK AC: 5 STR: +9 DEX: +9 AGI: +3 HP: +20 WT: 0.1 Size: TINY Class: ROG Race: ALL",
+      "items": [
+        {
+          "name": "Inlaid Choker",
+          "who": [
+            "Gorga"
+          ],
+          "where": "Island 3",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Trickery",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Izah",
+      "reward": "Renard's Belt of Quickness",
+      "rewardStats": "Renard's Belt of Quickness MAGIC ITEM LORE ITEM NO DROP Slot: WAIST AC: 6 STR: +5 DEX: +12 CHA: +5 AGI: +12 Haste: +41% WT: 1.0 Size: MEDIUM Class: ROG Race: ALL",
+      "items": [
+        {
+          "name": "Sphinxian Circlet",
+          "who": [
+            "SotS"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Silence",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Ena",
+      "reward": "Griffon Wing Spauldors",
+      "rewardStats": "Griffon Wing Spauldors MAGIC ITEM LORE ITEM NO DROP Slot: SHOULDERS Charges: 10 AC: 9 STR: +6 DEX: +6 AGI: +4 HP: +30 Effect: Levitate (Must Equip, Casting Time: Instant) at Level 45 WT: 2.5 Size: SMALL Class: ROG Race: ALL",
+      "items": [
+        {
+          "name": "Spiroc Sky Totem",
+          "who": [
+            "SL"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Cunning",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Dena",
+      "reward": "Crystal Mask",
+      "rewardStats": "Crystal Mask MAGIC ITEM LORE ITEM NO DROP Slot: FACE AC: 8 STR: +6 DEX: +8 SV MAGIC: +10 Effect: Gather Shadows (Must Equip, Casting Time: 3.0) at Level 45 WT: 0.4 Size: SMALL Class: ROG Race: ALL",
+      "items": [
+        {
+          "name": "Jester's Mask",
+          "who": [
+            "KoS"
+          ],
+          "where": "Island 4",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Stealth",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Geza",
+      "reward": "Scintillating Bracer of Protection",
+      "rewardStats": "Scintillating Bracer of Protection MAGIC ITEM LORE ITEM NO DROP Slot: WRIST AC: 9 STR: +3 DEX: +3 WIS: +2 SV FIRE: +8 SV DISEASE: +8 SV COLD: +8 SV MAGIC: +8 SV POISON: +8 WT: 2.5 Size: MEDIUM Class: ROG Race: ALL except IKS",
+      "items": [
+        {
+          "name": "Fine Wool Cloak",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Rogue",
+      "name": "Rogue Test of Deception",
+      "giver": "Thalik Silenthand",
+      "rune": "Wind Rune Jaka",
+      "reward": "Thornstinger",
+      "rewardStats": "Thornstinger MAGIC ITEM LORE ITEM NO DROP Slot: PRIMARY Skill: Piercing Atk Delay: 19 DMG: 12BACKSTAB: 12 STR: +5 DEX: +5 AGI: +5 HP: +50 Effect: Rampage (Combat, Casting Time: Instant) at Level 45 WT: 2.0 Size: SMALL Class: ROG Race: ALL",
+      "items": [
+        {
+          "name": "Bixie Stinger",
+          "who": [
+            "BZ"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Bloodsky Sapphire",
+          "who": [
+            "EoV"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Plane of Sky"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Bash",
+      "giver": "Gragrot",
+      "reward": "Amulet of the Sphinx Eye",
+      "rewardStats": "Gragrot says 'Gragrot like bashin. Gragrot say you like bashin too! Give Gragrot an ebon tessera, a sphinx eye opal, and a finely crafted amulet. Gragrot then give you sphinx eye amulet. \nReward:Amulet of the Sphinx Eye\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nAC: 15\nSTR: +7 CHA: +3 WIS: +3 INT: +14 MANA: +25\nEffect: Ultravision (Worn)\nWT: 0.1 Size: TINY\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Ebon Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Sphinx Eye Opal",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Finely Crafted Amulet",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Smash",
+      "giver": "Gragrot",
+      "reward": "Crimson Ring of the Djinni",
+      "rewardStats": "Gragrot says 'Gragrot wants you smashin. Smash, smash, and return a copper disk, a small sapphire, and a silvery ring. Then Gragrot give you djinni's finger ring. \nReward:Crimson Ring of the Djinni\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nAC: 8\nSTR: +7 DEX: +7 INT: +5\nSV MAGIC: +5\nWT: 0.1 Size: TINY\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Copper Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Small Sapphire",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Silvery Ring",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Slash",
+      "giver": "Gragrot",
+      "reward": "Pegasus-Hide Belt",
+      "rewardStats": "Gragrot says 'Gragrot see you is powerful, but Gragrot wonders if you is good at slashin'. Gragrot says return with a diaphanous globe, a piece of dried leather, and a finely woven cloth belt. Gragrot then give you pegasus hide belt. \nReward:Pegasus-Hide Belt\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 8\nSTR: +6 INT: +6 AGI: +6\nHaste: +41% \nWT: 1.0 Size: SMALL\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Diaphanous Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Dried Leather",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Finely Woven Cloth Belt",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Disempowerment",
+      "giver": "Tynicon Dlin",
+      "reward": "Blood Sky Face Plate",
+      "rewardStats": "Tynicon DLin says 'Disempowerment, destroying goodly magic. Proceed upward through the sky and return to me a griffon statuette, a blood sky emerald, and rusted pauldrons. This will prove your abilities to me and I will reward you with the Blood Sky Faceplate. \nReward:Blood Sky Face Plate\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nAC: 9\nSTR: +10 DEX: +12 MANA: +60\nSV DISEASE: +10\nWT: 4.5 Size: SMALL\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Griffon Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Blood Sky Emerald",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Rusted Pauldrons",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Envenoming",
+      "giver": "Tynicon Dlin",
+      "reward": "Obtenebrate Mithril Guard",
+      "rewardStats": "Tynicon DLin says 'Venom and hate permeate us more than our dumber, larger brohers. Return to me an efreeti war shield, a dark spiroc feather, and a shard of obsidian and prove that your soul is envenomed with hatred. If you do so, the obtenebrate metal guard shall be yours. \nReward:Obtenebrate Mithril Guard\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SECONDARY\nAC: 35\nSTR: +15\nSV FIRE: +15\nWT: 6.0 Size: MEDIUM\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Dark Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Obsidian Shard (Sky)",
+          "who": [
+            "Bazzzazzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Shield",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Raising of the Dead",
+      "giver": "Tynicon Dlin",
+      "reward": "Pearlescent Pauldrons",
+      "rewardStats": "Tynicon DLin says 'The dead are our allies against those who would oppose us. Proceed upward through the sky and return to me a large sky pearl, a jar of honey, a sphinxian ring, and fae pauldrons. This will prove your abilities to me and I will reward you with the pearlescent pauldrons. \nReward:Pearlescent Pauldrons\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nAC: 10\nSTR: +10 DEX: +15 INT: +15 MANA: +50\nWT: 4.5 Size: MEDIUM\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Large Sky Pearl",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Jar of Honey",
+          "who": [
+            "Bazzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Sphinxian Ring",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Fae Pauldrons",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shadow Knight",
+      "name": "Shadow Knight Test of Necropotence",
+      "giver": "Tynicon Dlin",
+      "reward": "Khyldorn the Blood Drinker",
+      "rewardStats": "Tynicon DLin says 'Only the most powerful and vile of shadowknights manage to complete this test. Return to me an efreeti war axe, some dulcet nectar, a bloodstained hilt, and a blood sky ruby. Doing so will earn you the right to wield the Drinker of Blood. \nReward:Khyldorn the Blood Drinker\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 43\nDMG: 36 \nSTR: +10 INT: +7\nEffect: Siphon (Combat, Casting Time: Instant) at Level 50\nWT: 8.0 Size: GIANT\nClass: SHD\nRace: ALL",
+      "items": [
+        {
+          "name": "Dulcet Nectar",
+          "who": [
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Bloodstained Hilt",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Blood Sky Ruby",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Axe",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Shadow Knight Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of Might",
+      "giver": "Gina MacStargan",
+      "reward": "Amulet of the Fang",
+      "rewardStats": "Gina MacStargan says 'The test of might it is. Go find an auburn tessera, a drake fang and a leather cord. Bring them to me when you have them all and I shall reward you. \nReward:Amulet of the Fang\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nAC: 8\nCHA: +2 WIS: +8 MANA: +10\nSV FIRE: +10 SV MAGIC: +5\nWT: 0.1 Size: TINY\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Auburn Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Drake Fang",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Leather Cord",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of Health",
+      "giver": "Gina MacStargan",
+      "reward": "Bracelet of the Spirits",
+      "rewardStats": "Gina MacStargan says 'The test of health is difficult. I am sure that you will find it a challenge. Bring to me a platinum disc, some ethereal amber, a shimmering amber and finally a ceremonial belt. Return them all to me at once and you shall have your just reward. \nReward:Bracelet of the Spirits\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WRIST WAIST\nCharges: 2\nAC: 5\nSTR: +5 DEX: +5 WIS: +5 AGI: +5 MANA: +50\nEffect: Alacrity (Must Equip, Casting Time: Instant) at Level 45\nWT: 1.0 Size: SMALL\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Platinum Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Amber",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Shimmering Amber",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        },
+        {
+          "name": "Ceremonial Belt",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of Sight",
+      "giver": "Gina MacStargan",
+      "reward": "Fairy-Hide Mantle",
+      "rewardStats": "Gina MacStargan says 'So you wish to take the test of sigh, do you? Get me a phosphoric globe, a sphinx hide and a light damask mantle. Give them all to me at the same time and I shall reward you well. \nReward:Fairy-Hide Mantle\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nCharges: 2\nAC: 9\nSTR: +5 WIS: +12\nSV FIRE: +10 SV COLD: +10 SV MAGIC: +10\nEffect: Guardian Spirit (Must Equip, Casting Time: Instant) at Level 45\nWT: 2.5 Size: SMALL\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Phosphoric Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Sphinx Hide",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Light Damask Mantle",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of Shrink",
+      "giver": "Ooga",
+      "reward": "Warhammer of the Wind",
+      "rewardStats": "Ooga says 'Ohh! Dat gud tes', me know cuz me did it. Me had get a efreeti war club, djinni statuette, sum corrosive venom an' sum wooden bands. Was hard for Ooga, me took long to get dem. Yuz give all to me at same time an' me give yuz what me got. \nReward:Warhammer of the Wind\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 24\nDMG: 12 \nWIS: +14 HP: +50 MANA: +50\nWT: 3.5 Size: LARGE\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Djinni Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Club",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        },
+        {
+          "name": "Corrosive Venom",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        },
+        {
+          "name": "Wooden Bands",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of Snake",
+      "giver": "Ooga",
+      "reward": "Vermilion Sky Ring",
+      "rewardStats": "Ooga says 'Mmm, tes' of snake not too bad, me did it an' still alive. When me did it, me got emerald spiroc feather, bixie essence, an' spiritualist's ring. Me get gud stuff for dat. Yuz giv me stuff all at once an me give to yuz what me got. \nReward:Vermilion Sky Ring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nAC: 5\nDEX: +3 WIS: +7\nSV DISEASE: +20\nEffect: Feign Death (Must Equip, Casting Time: Instant, Cooldown: 300 seconds.) at Level 45\nWT: 2.0 Size: MEDIUM\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Emerald Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Bixie Essence",
+          "who": [
+            "Bazzzazzt",
+            "Bizazzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Spiritualist's Ring",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Shaman",
+      "name": "Shaman Test of The Witch Doctor",
+      "giver": "Ooga",
+      "reward": "Garduk",
+      "rewardStats": "Ooga says 'Oh! Now yuz got in da big mojo, me had big hard time wit dis one. Me got in lot of trouble when me got efreeti war maul, thickened nectar, fire sky ruby an' symbol of Veeshan. Yuz giv to me. Me be easy on yuz an' giv prize me got. \nReward:Garduk\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: Piercing Atk Delay: 40\nDMG: 23 \nWIS: +15 MANA: +75\nEffect: Tagar's Insects (Combat, Casting Time: Instant)\nWT: 6.0 Size: LARGE\nClass: SHM\nRace: ALL",
+      "items": [
+        {
+          "name": "Thickened Nectar",
+          "who": [
+            "Bzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Fire Sky Ruby (Shaman version weight 12.0)",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Symbol of Veeshan",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Maul",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Shaman Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Strength",
+      "giver": "Falorn",
+      "reward": "Runed Wind Amulet",
+      "rewardStats": "Falorn says 'Remember, true strength lies not only in the body, but in the mind as well. Return to me a bronze disc, a small pick, and a stone amulet. If you manage to do this, my runed wind amulet shall be yours. \nReward:Runed Wind Amulet\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nAC: 6\nSTR: +7 AGI: +7 HP: +40\nWT: 0.1 Size: TINY\nClass: WAR\nRace: ALL",
+      "items": [
+        {
+          "name": "Bronze Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Small Pick",
+          "who": [
+            "a sprited harpie",
+            "a watchful guard",
+            "a gorgalask*",
+            "Gorgalosk*"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Stone Amulet",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Force",
+      "giver": "Falorn",
+      "reward": "Aerated Pauldrons",
+      "items": [
+        {
+          "name": "Pearlescent Globe",
+          "who": [
+            "a shimmering meteor",
+            "a gust of wind",
+            "a crystalline cloud",
+            "a gorgalask"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Silver Mesh",
+          "who": [
+            "a soul carrier*",
+            "an essence carrier*",
+            "a soul tamer*",
+            "an essence tamer*"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Air Totem",
+          "who": [
+            "Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Skill",
+      "giver": "Falorn",
+      "reward": "Azure Ruby Ring",
+      "rewardStats": "Falorn says 'The test of skill it is. Go upward and retrieve these three items: an ivory tessera, a small ruby, and an azure ring. Return these to me and the azure ruby ring shall be yours. \nReward:Azure Ruby Ring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nAC: 5\nSTR: +6 DEX: +9 STA: +6\nWT: 0.1 Size: TINY\nClass: WAR\nRace: ALL",
+      "items": [
+        {
+          "name": "Ivory Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Small Ruby",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Azure Ring",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Bash",
+      "giver": "Ogog",
+      "reward": "Fangol",
+      "rewardStats": "Ogog says 'This one hard. Ogog like it. Ogog need efreeti battle axe, some honey nectar, bottled djinni, and ethereal emerald. Then Ogog make you best basher.' \nReward:Fangol\nMAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 35\nDMG: 29 \nSTR: +3 DEX: +10 STA: +10\nSV POISON: +5\nEffect: Fangol's Breath (Combat, Casting Time: Instant) at Level 50\nWT: 8.0 Size: GIANT\nClass: WAR\nRace: ALL",
+      "items": [
+        {
+          "name": "Honeyed Nectar",
+          "who": [
+            "Bazzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Emerald",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Bottled Djinni",
+          "who": [
+            "a fatestealer drake*",
+            "a windrider drake*",
+            "an undine spirit*",
+            "a greater sphinx* ?"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Battle Axe",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan*"
+          ],
+          "where": "Islands 1.5, 4, 8*",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Smash",
+      "giver": "Ogog",
+      "reward": "Dagas",
+      "rewardStats": "Ogog says 'Ogog smash good. . . Ogog no think you can smash good. But Ogog let you try. You get Ogog Djinni War Blade, some virulent wasp poison, and a mottled spiroc feather. Ogog say you good warrior if you do this!' \nReward:Dagas\nMAGIC ITEM LORE EQUIPPED NO DROP\nSlot: PRIMARY SECONDARY\nSkill: 1H Slashing Atk Delay: 21\nDMG: 11 AC: 20\nSTR: +3 AGI: +2 HP: +100\nWT: 2.5 Size: MEDIUM\nClass: WAR\nRace: ALL",
+      "items": [
+        {
+          "name": "Mottled Spiroc Feather",
+          "who": [
+            "A spiroc arbiter",
+            "A spiroc caller",
+            "A spiroc expulser",
+            "A spiroc revolter",
+            "A spiroc vanquisher",
+            "A spiroc walker",
+            "The Spiroc Guardian*"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Virulent Poison",
+          "who": [
+            "Bizazzzt",
+            "Bzzzt",
+            "Bazzzazzt*"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Djinni War Blade",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Warrior",
+      "name": "Warrior Test of Think",
+      "giver": "Ogog",
+      "reward": "Belt of the Four Winds",
+      "rewardStats": "Ogog says 'Ogog think you can do this one maybe. Ogog no know, though. You bring Ogog efreeti belt, pegasus statue, a spiroc wind totem, and a wind tablet. Ogog say good luck!'\nReward:Belt of the Four Winds\nMAGIC ITEM LORE ITEM NO DROP\nSlot: WAIST\nAC: 5\nSTR: +12 DEX: +6 STA: +12 AGI: +6\nSV MAGIC: +5\nHaste: +41% \nWT: 2.0 Size: MEDIUM\nClass: WAR\nRace: ALL",
+      "items": [
+        {
+          "name": "Pegasus Statuette",
+          "who": [
+            "A Soul Carrier",
+            "A Soul Harvester",
+            "An essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Wind Tablet",
+          "who": [
+            "Bazzt Zzzt",
+            "Spiroc Lord* ?"
+          ],
+          "where": "Island Bosses (5+)",
+          "count": 1
+        },
+        {
+          "name": "Spiroc Wind Totem",
+          "who": [
+            "normal spirocs"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Efreeti Belt",
+          "who": [
+            "Noble Dojorn",
+            "Hand of Veeshan",
+            "Overseer of Air* ?"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Warrior Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Concentration",
+      "giver": "Neasin Leornic",
+      "reward": "Augmentor's Mask",
+      "rewardStats": "Neasin Leornic says 'Concentration is of the utmost importance to a wizard. Without it, we cannot cast even the most simple dweomer. Proceed upward through the sky and return to me an azure tessera, an augmentor's gem, and a grey damask cloak. This will prove your ability to concentrate and I will reward you with an Augmentor's Mask. \nReward:Augmentor's Mask\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nAC: 6\nDEX: +4 INT: +9 AGI: +8 MANA: +9\nWT: 0.5 Size: MEDIUM\nClass: WIZ\nRace: ALL",
+      "items": [
+        {
+          "name": "Azure Tessera",
+          "who": [
+            "a thunder spirit"
+          ],
+          "where": "Island 1",
+          "count": 1
+        },
+        {
+          "name": "Augmentor's Gem",
+          "who": [
+            "Protector of Sky"
+          ],
+          "where": "Island 2 Boss",
+          "count": 1
+        },
+        {
+          "name": "Grey Damask Cloak",
+          "who": [
+            "Gorgalosk"
+          ],
+          "where": "Island 3 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Focus",
+      "giver": "Neasin Leornic",
+      "reward": "Al`Kabor's Cap of Binding",
+      "rewardStats": "Neasin Leornic says 'Focus is a must. Travel among the residents of the sky and bring to me an iron disk, an ethereal opal, and a woven skull cap. This will prove your ability to focus and I will reward you with Al'Kabor's cap. \nReward:Al`Kabor's Cap of Binding\nMAGIC ITEM LORE ITEM NO DROP\nSlot: HEAD\nCharges: 4\nAC: 6\nSTR: +5 INT: +8 HP: +40 MANA: +20\nSV FIRE: +10 SV COLD: +10\nEffect: Bonds of Force (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.2 Size: SMALL\nClass: WIZ\nRace: ALL",
+      "items": [
+        {
+          "name": "Iron Disc",
+          "who": [
+            "an azarack"
+          ],
+          "where": "Island 2",
+          "count": 1
+        },
+        {
+          "name": "Ethereal Opal",
+          "who": [
+            "a gorgalask",
+            "a watchful guard",
+            "a spirited harpie",
+            "an avenging gazer"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Woven Skull Cap",
+          "who": [
+            "Keeper of Souls"
+          ],
+          "where": "Island 4 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Meditation",
+      "giver": "Neasin Leornic",
+      "reward": "Raiment of Thunder",
+      "rewardStats": "Neasin Leornic says 'A wizard is nothing without meditation. Meditation allows us to focus and concentrate when casting our spells of power. Fly to those above and return to me a hyaline globe, a sky topaz, and high quality raiment. If you are successful, I will reward you with the Raiment of Thunder. \nReward:Raiment of Thunder\nMAGIC ITEM LORE ITEM NO DROP\nSlot: SHOULDERS\nCharges: 2\nAC: 4\nSTR: +5 INT: +5 MANA: +15\nSV DISEASE: +5 SV POISON: +10\nEffect: Thunder Strike (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.3 Size: SMALL\nClass: WIZ\nRace: ALL",
+      "items": [
+        {
+          "name": "Hyaline Globe",
+          "who": [
+            "a crystalline cloud",
+            "a shimmering meteor",
+            "a gust of wind"
+          ],
+          "where": "Island 3",
+          "count": 1
+        },
+        {
+          "name": "Sky Topaz",
+          "who": [
+            "a soul carrier",
+            "an essence carrier",
+            "a soul tamer",
+            "an essence tamer"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "High Quality Raiment",
+          "who": [
+            "The Spiroc Lord"
+          ],
+          "where": "Island 5 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Conception",
+      "giver": "Abec Lanor",
+      "reward": "Solidate Mithril Ring",
+      "rewardStats": "Abec Ianor says 'Conception is vital. Travel beyond and bring forth an efreeti statuette, a mithril air ring, and a box of winds. From these, I will produce a ring that will protect you wherever you go. \nReward:Solidate Mithril Ring\nMAGIC ITEM LORE ITEM NO DROP\nSlot: FINGER\nCharges: 3\nAC: 4\nSTR: +5 INT: +5 AGI: +6 MANA: +50\nEffect: Steelskin (Must Equip, Casting Time: Instant) at Level 45\nWT: 0.1 Size: TINY\nClass: WIZ\nRace: ALL",
+      "items": [
+        {
+          "name": "Efreeti Statuette",
+          "who": [
+            "a soul harvester",
+            "an essence harvester"
+          ],
+          "where": "Island 4",
+          "count": 1
+        },
+        {
+          "name": "Mithril Air Ring",
+          "who": [
+            "a spiroc expulser",
+            "a spiroc revolter",
+            "a spiroc walker",
+            "Spiroc Guardian"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Box of Winds",
+          "who": [
+            "Bazzt Zzzt"
+          ],
+          "where": "Island 6 Boss",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Visualization",
+      "giver": "Abec Lanor",
+      "reward": "Amulet of the Void",
+      "rewardStats": "Abec Ianor says 'Visualize and succeed. Proceed upward and bring to me a white-tipped spiroc feather, a pulsating sapphire, and an amethyst amulet. With these items, I will be able to produce an amulet that will aid in your travels to our home. \nReward:Amulet of the Void\nMAGIC ITEM LORE ITEM NO DROP\nSlot: NECK\nCharges: 1\nAC: 4\nDEX: +5 CHA: +5 INT: +5 AGI: +5 MANA: +50\nEffect: Alter Plane: Sky (Any Slot/Can Equip, Casting Time: Instant) at Level 45\nWT: 0.1 Size: TINY\nClass: WIZ\nRace: ALL\nAmulet of Planar Transference",
+      "items": [
+        {
+          "name": "White-tipped Spiroc Feather",
+          "who": [
+            "a spiroc arbiter",
+            "a spiroc banisher",
+            "a spiroc caller"
+          ],
+          "where": "Island 5",
+          "count": 1
+        },
+        {
+          "name": "Pulsating Sapphire",
+          "who": [
+            "Bazzzazzt",
+            "Bzzzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Amethyst Amulet",
+          "who": [
+            "Sister of the Spire"
+          ],
+          "where": "Island 7",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    },
+    {
+      "className": "Wizard",
+      "name": "Wizard Test of Preparation",
+      "giver": "Abec Lanor",
+      "reward": "Nargon's Staff",
+      "rewardStats": "Abec Ianor says 'Always be prepared. Adventure and return an efreeti war staff, some lush nectar, a copper air band, and a large sky sapphire. You shall be rewarded with the Staff of Storms. \nReward:Nargon's Staff\nMAGIC ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 48\nDMG: 16 \nINT: +15 MANA: +75\nSV DISEASE: +25 SV MAGIC: +10\nWT: 4.0 Size: LARGE\nClass: WIZ\nRace: ALL",
+      "items": [
+        {
+          "name": "Lush Nectar",
+          "who": [
+            "Bazzzazzt"
+          ],
+          "where": "Island 6",
+          "count": 1
+        },
+        {
+          "name": "Copper Air Band",
+          "who": [
+            "a fatestealer drake",
+            "heartsbane drake",
+            "a windrider drake",
+            "a greater sphinx",
+            "undine spirit"
+          ],
+          "where": "Island 7",
+          "count": 1
+        },
+        {
+          "name": "Large Sky Sapphire",
+          "who": [
+            "Eye of Veeshan"
+          ],
+          "where": "Island 8",
+          "count": 1
+        },
+        {
+          "name": "Efreeti War Staff",
+          "who": [
+            "Noble Dojorn",
+            "Overseer of Air",
+            "the Hand of Veeshan"
+          ],
+          "where": "Islands 1.5, 4, 8",
+          "count": 1
+        }
+      ],
+      "source": "Wizard Plane of Sky Tests"
+    }
+  ]
+}
