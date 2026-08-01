@@ -2,11 +2,10 @@
 
 export const IPC = {
   // renderer -> main (invoke/handle)
-  getPoskyData: 'posky:getData',
   getProgress: 'progress:get',
   reloadInventory: 'inventory:reload',
   setQuestComplete: 'progress:setQuestComplete',
-  resetLiveLoot: 'progress:resetLiveLoot',
+  getLootHistory: 'loot:getHistory',
   getCharacter: 'character:get',
 
   // main -> renderer (send/on)

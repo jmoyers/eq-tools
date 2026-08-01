@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Accordion,
   AccordionDetails,
@@ -28,10 +28,22 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
-import type { LootEvent } from '@shared/types'
+import type { CountSource, LootEvent } from '@shared/types'
 import { useProgress, type QuestProgress } from './useProgress'
+import { ItemTooltip } from './ItemTooltip'
 
 type SortKey = 'closest' | 'least-missing' | 'class'
+
+const SELECTED_CLASSES_KEY = 'eq.selectedClasses'
+
+function loadSelectedClasses(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(SELECTED_CLASSES_KEY) ?? '[]')
+    return Array.isArray(v) ? (v as string[]) : []
+  } catch {
+    return []
+  }
+}
 
 const WIKI_BASE = 'https://eqlwiki.com/'
 
@@ -58,13 +70,19 @@ function ProgressBar({ q }: { q: QuestProgress }): JSX.Element {
 }
 
 export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
-  const { quests, classes, reloadInventory, setQuestComplete, inventoryInfo } = useProgress(lastLoot)
-  const [selectedClasses, setSelectedClasses] = useState<string[]>([])
+  const { quests, classes, countSource, setCountSource, reloadInventory, setQuestComplete, inventoryInfo } =
+    useProgress(lastLoot)
+  const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<SortKey>('closest')
   const [hideCompleted, setHideCompleted] = useState(false)
   const [hideNoItems, setHideNoItems] = useState(true)
   const [toast, setToast] = useState<string | null>(null)
+
+  // Remember the class filter across restarts.
+  useEffect(() => {
+    localStorage.setItem(SELECTED_CLASSES_KEY, JSON.stringify(selectedClasses))
+  }, [selectedClasses])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -140,10 +158,31 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
           label="Only quests with turn-ins"
         />
         <Box sx={{ flexGrow: 1 }} />
+        <Tooltip title="How the app decides which items you have. Log = everything you've ever looted (survives an un-exported bank). Inventory = your last /outputfile dump. Both = the higher of the two.">
+          <TextField
+            select
+            size="small"
+            label="Count items from"
+            value={countSource}
+            onChange={(e) => setCountSource(e.target.value as CountSource)}
+            sx={{ minWidth: 170 }}
+          >
+            <MenuItem value="log">Log (looted)</MenuItem>
+            <MenuItem value="inventory">Inventory export</MenuItem>
+            <MenuItem value="both">Both (max)</MenuItem>
+          </TextField>
+        </Tooltip>
         <Tooltip title="Run /outputfile inventory in-game, then reload">
-          <Button variant="outlined" startIcon={<RefreshIcon />} onClick={onReload}>
-            Reload inventory
-          </Button>
+          <span>
+            <Button
+              variant="outlined"
+              startIcon={<RefreshIcon />}
+              onClick={onReload}
+              disabled={countSource === 'log'}
+            >
+              Reload inventory
+            </Button>
+          </span>
         </Tooltip>
       </Stack>
 
@@ -154,8 +193,12 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
         </Alert>
       ) : (
         <Typography variant="body2" color="text.secondary">
-          {filtered.length} of {totalQuests} quests
-          {inventoryInfo ? ` · inventory loaded ${new Date(inventoryInfo.loadedAt).toLocaleString()}` : ' · no inventory loaded yet'}
+          {filtered.length} of {totalQuests} quests · counting from{' '}
+          {countSource === 'log' ? 'looted log' : countSource === 'inventory' ? 'inventory export' : 'log + inventory'}
+          {countSource !== 'log' &&
+            (inventoryInfo
+              ? ` · inventory loaded ${new Date(inventoryInfo.loadedAt).toLocaleString()}`
+              : ' · no inventory loaded yet')}
         </Typography>
       )}
 
@@ -169,9 +212,11 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                   <Box sx={{ minWidth: 220 }}>
                     <Typography variant="subtitle2">{q.name}</Typography>
                     {q.reward && (
-                      <Typography variant="caption" color="primary.main">
-                        → {q.reward}
-                      </Typography>
+                      <ItemTooltip name={q.reward} stats={q.rewardStats}>
+                        <Typography variant="caption" color="primary.main" sx={{ cursor: 'help' }}>
+                          → {q.reward}
+                        </Typography>
+                      </ItemTooltip>
                     )}
                   </Box>
                   <Box sx={{ flexGrow: 1 }} />
@@ -191,15 +236,16 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                   {q.items.map((it) => {
                     const done = it.have >= it.need || q.completed
                     return (
-                      <Chip
-                        key={it.name}
-                        size="small"
-                        variant="outlined"
-                        color={done ? 'success' : 'default'}
-                        icon={done ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
-                        label={it.need > 1 ? `${it.name} ${it.have}/${it.need}` : it.name}
-                        sx={{ opacity: done ? 1 : 0.65 }}
-                      />
+                      <ItemTooltip key={it.name} name={it.name} stats={it.stats} who={it.who} where={it.where}>
+                        <Chip
+                          size="small"
+                          variant="outlined"
+                          color={done ? 'success' : 'default'}
+                          icon={done ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
+                          label={it.need > 1 ? `${it.name} ${it.have}/${it.need}` : it.name}
+                          sx={{ opacity: done ? 1 : 0.65 }}
+                        />
+                      </ItemTooltip>
                     )
                   })}
                 </Stack>
@@ -242,7 +288,11 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                     const done = it.have >= it.need
                     return (
                       <TableRow key={it.name}>
-                        <TableCell sx={{ color: done ? 'success.main' : 'text.primary' }}>{it.name}</TableCell>
+                        <TableCell sx={{ color: done ? 'success.main' : 'text.primary' }}>
+                          <ItemTooltip name={it.name} stats={it.stats} who={it.who} where={it.where}>
+                            <span style={{ cursor: 'help' }}>{it.name}</span>
+                          </ItemTooltip>
+                        </TableCell>
                         <TableCell>
                           {it.have}/{it.need}
                         </TableCell>

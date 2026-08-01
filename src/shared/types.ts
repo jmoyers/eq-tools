@@ -34,6 +34,10 @@ export interface PoskyItem {
   where: string
   /** how many are needed (defaults to 1) */
   count: number
+  /** wiki page title for the item (for linking) */
+  page?: string
+  /** EQ-style stat block text (name/flags/slot/stats), for the hover popover */
+  stats?: string
 }
 
 export interface PoskyQuest {
@@ -47,8 +51,10 @@ export interface PoskyQuest {
   rune?: string
   /** reward item name */
   reward?: string
-  /** reward item stat blob (raw text) */
+  /** reward item stat blob (EQ-style text) */
   rewardStats?: string
+  /** wiki page title for the reward item */
+  rewardPage?: string
   /** required turn-in items */
   items: PoskyItem[]
   /** source wiki page title */
@@ -63,12 +69,18 @@ export interface PoskyData {
 /** Held-item counts keyed by lowercased item name. */
 export type HeldCounts = Record<string, number>
 
-/** Persisted user progress. */
+/**
+ * How the app decides which items you "have":
+ * - 'log'       : count everything the character has ever looted (log parsing)
+ * - 'inventory' : count only what's in the latest /outputfile inventory dump
+ * - 'both'      : the higher of the two per item
+ */
+export type CountSource = 'log' | 'inventory' | 'both'
+
+/** Persisted user progress (inventory + quest completion). */
 export interface ProgressState {
   /** counts from the last inventory dump, keyed lowercased name */
   inventory: HeldCounts
-  /** items looted live since the inventory snapshot, keyed lowercased name */
-  liveLoot: HeldCounts
   /** quest keys (className::name) the user marked complete/turned-in */
   completedQuests: string[]
   /** metadata about the last inventory load */

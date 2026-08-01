@@ -4,13 +4,17 @@ import { IPC } from '../shared/ipc'
 import { resolveActiveCharacter } from './log/config'
 import { Tailer } from './log/Tailer'
 import { matchLoot } from './log/parse'
+import { scanLootHistory } from './log/scanHistory'
 import { loadInventory } from './inventory/parseInventory'
-import { addLiveLoot, getProgress, resetLiveLoot, setInventory, setQuestComplete } from './store'
-import type { CharacterRef } from '../shared/types'
+import { getProgress, setInventory, setQuestComplete } from './store'
+import type { CharacterRef, LootEvent } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
+
+/** Complete loot record, rebuilt from the log each launch and appended live. */
+let lootHistory: LootEvent[] = []
 
 function createWindow(): void {
   mainWindow = new BrowserWindow({
@@ -41,19 +45,24 @@ function createWindow(): void {
   }
 }
 
-function startTailing(): void {
+async function startTailing(): Promise<void> {
   character = resolveActiveCharacter()
   if (!character) {
     console.warn('[eq-tools] No EQ log found; log tailing disabled.')
     return
   }
   console.log(`[eq-tools] Tailing ${character.name}@${character.server}: ${character.logPath}`)
+
+  // Build the full loot history from the existing log before tailing new lines.
+  lootHistory = await scanLootHistory(character.logPath)
+  console.log(`[eq-tools] Loaded ${lootHistory.length} historical loot events.`)
+
   tailer = new Tailer(character.logPath, { fromStart: false })
   tailer.on('line', (line) => {
     mainWindow?.webContents.send(IPC.onLine, line)
     const loot = matchLoot(line)
     if (loot) {
-      addLiveLoot(loot.item)
+      lootHistory.push(loot)
       mainWindow?.webContents.send(IPC.onLoot, loot)
     }
   })
@@ -73,13 +82,13 @@ function registerIpc(): void {
   ipcMain.handle(IPC.setQuestComplete, (_e, questKey: string, complete: boolean) =>
     setQuestComplete(questKey, complete)
   )
-  ipcMain.handle(IPC.resetLiveLoot, () => resetLiveLoot())
+  ipcMain.handle(IPC.getLootHistory, () => lootHistory)
 }
 
 app.whenReady().then(() => {
   registerIpc()
   createWindow()
-  startTailing()
+  void startTailing()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()

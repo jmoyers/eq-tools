@@ -14,13 +14,15 @@ import {
 } from '@mui/material'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
+import Inventory2Icon from '@mui/icons-material/Inventory2'
 import CircleIcon from '@mui/icons-material/Circle'
 import type { CharacterRef, LootEvent } from '@shared/types'
 import PoskyView from './features/posky/PoskyView'
+import LootView from './features/loot/LootView'
 
 const DRAWER_WIDTH = 220
 
-type View = 'posky' | 'combat'
+type View = 'posky' | 'loot' | 'combat'
 
 export default function App(): JSX.Element {
   const [view, setView] = useState<View>('posky')
@@ -78,6 +80,12 @@ export default function App(): JSX.Element {
             </ListItemIcon>
             <ListItemText primary="Plane of Sky" />
           </ListItemButton>
+          <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
+            <ListItemIcon>
+              <Inventory2Icon />
+            </ListItemIcon>
+            <ListItemText primary="Loot" />
+          </ListItemButton>
           <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
             <ListItemIcon>
               <BarChartIcon />
@@ -90,9 +98,9 @@ export default function App(): JSX.Element {
       <Box component="main" sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <Toolbar variant="dense" />
         <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-          {view === 'posky' ? (
-            <PoskyView lastLoot={lastLoot} />
-          ) : (
+          {view === 'posky' && <PoskyView lastLoot={lastLoot} />}
+          {view === 'loot' && <LootView lastLoot={lastLoot} />}
+          {view === 'combat' && (
             <Typography color="text.secondary">
               Combat analysis coming next. The log pipeline is already streaming every line to the
               renderer — this view will render DPS, timelines, and encounter breakdowns.

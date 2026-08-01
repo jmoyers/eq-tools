@@ -119,18 +119,25 @@ function parseClassPage(cls: string, html: string, sourceTitle: string): PoskyQu
         .find('tr')
         .slice(1)
         .each((_i, tr) => {
-          const cells = $(tr)
-            .find('td,th')
-            .map((_j, c) => $(c).text().replace(/\s+/g, ' ').trim())
-            .get()
-          if (cells.length < 3) return
-          const name = cells[itemCol]
+          const tds = $(tr).find('td,th')
+          if (tds.length < 3) return
+          const name = $(tds[itemCol]).text().replace(/\s+/g, ' ').trim()
           if (!name) return
-          const who = (cells[whoCol] ?? '')
+          const who = $(tds[whoCol])
+            .text()
+            .replace(/\s+/g, ' ')
+            .trim()
             .split(',')
             .map((s) => s.trim())
             .filter(Boolean)
-          items.push({ name, who, where: cells[whereCol] ?? '', count: 1 })
+          const page = $(tds[itemCol]).find('a').first().attr('title')?.trim()
+          items.push({
+            name,
+            who,
+            where: $(tds[whereCol]).text().replace(/\s+/g, ' ').trim(),
+            count: 1,
+            page: page || undefined
+          })
         })
 
       if (items.length === 0) continue
@@ -139,6 +146,7 @@ function parseClassPage(cls: string, html: string, sourceTitle: string): PoskyQu
       const range = $(pendingQuest.headingEl).parent().nextUntil(el)
       const rewardAnchor = range.find('a').filter((_i, a) => !!$(a).text().trim()).first()
       const reward = rewardAnchor.length ? dedupeDoubled(rewardAnchor.text()) : undefined
+      const rewardPage = rewardAnchor.attr('title')?.trim()
       let rewardStats = range.text().replace(/\n{2,}/g, '\n').replace(/[ \t]{2,}/g, ' ').trim() || undefined
       if (reward && rewardStats) rewardStats = rewardStats.replace(reward + reward, reward)
 
@@ -148,6 +156,7 @@ function parseClassPage(cls: string, html: string, sourceTitle: string): PoskyQu
         giver,
         reward,
         rewardStats: rewardStats && rewardStats.length < 600 ? rewardStats : undefined,
+        rewardPage: rewardPage || undefined,
         items,
         source: sourceTitle
       })
@@ -218,6 +227,16 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
       const name = $(tds[cQuest]).text().replace(/\s+/g, ' ').trim()
       if (!name) return
 
+      // Map item name -> wiki page title from the cell's anchors.
+      const pageByName: Record<string, string> = {}
+      $(tds[cItems])
+        .find('a')
+        .each((_j, a) => {
+          const t = $(a).text().trim()
+          const title = $(a).attr('title')?.trim()
+          if (t && title) pageByName[normName(t)] = title
+        })
+
       // Parse the "Quest Items" cell: entries look like "Name (island-who)".
       const itemsText = $(tds[cItems]).text().replace(/\s+/g, ' ').trim()
       const items: PoskyItem[] = []
@@ -234,12 +253,13 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
             name: itemName,
             who: who ? [who] : [],
             where: island && /^[\d.]/.test(island) ? `Island ${island}` : island ?? '',
-            count: 1
+            count: 1,
+            page: pageByName[normName(itemName)]
           })
         }
       }
       if (items.length === 0 && itemsText) {
-        items.push({ name: itemsText, who: [], where: '', count: 1 })
+        items.push({ name: itemsText, who: [], where: '', count: 1, page: pageByName[normName(itemsText)] })
       }
 
       const rune = cRune >= 0 ? $(tds[cRune]).text().replace(/\s+/g, ' ').trim() : undefined
@@ -247,6 +267,7 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
       const rewardCell = cReward >= 0 ? $(tds[cReward]) : null
       const rewardAnchor = rewardCell?.find('a').filter((_j, a) => !!$(a).text().trim()).first()
       const reward = rewardAnchor?.length ? dedupeDoubled(rewardAnchor.text()) : undefined
+      const rewardPage = rewardAnchor?.attr('title')?.trim()
       let rewardStats = rewardCell?.text().replace(/\s+/g, ' ').trim()
       if (reward && rewardStats) rewardStats = rewardStats.replace(reward + reward, reward)
 
@@ -257,6 +278,7 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
         rune: rune || undefined,
         reward,
         rewardStats: rewardStats && rewardStats.length < 600 ? rewardStats : undefined,
+        rewardPage: rewardPage || undefined,
         items,
         source
       })
@@ -285,6 +307,24 @@ function runeItems(runeText: string): PoskyItem[] {
       where: 'Plane of Sky',
       count: 1
     }))
+}
+
+/**
+ * Extract the EQ-style stat block from an item's wiki page: everything from the
+ * item name down to the "Drops From" section (flags, slot, damage, stats, saves).
+ */
+function parseItemStats(html: string, itemName: string): string | undefined {
+  const $ = cheerio.load(html)
+  const root = $('.mw-parser-output').first()
+  if (!root.length) return undefined
+  const before = root.text().split(/Drops From/i)[0] ?? ''
+  const lines = before
+    .split('\n')
+    .map((l) => l.replace(/[ \t]{2,}/g, ' ').trim())
+    .filter(Boolean)
+  while (lines.length && normName(lines[0]) === normName(itemName)) lines.shift()
+  const stats = lines.join('\n').trim()
+  return stats && stats.length < 500 ? stats : undefined
 }
 
 async function main(): Promise<void> {
@@ -350,6 +390,30 @@ async function main(): Promise<void> {
     all.push(...quests)
     await sleep(200)
   }
+
+  // Fetch each unique item/reward wiki page once and attach its stat block.
+  const pages = new Set<string>()
+  for (const q of all) {
+    for (const it of q.items) if (it.page) pages.add(it.page)
+    if (q.rewardPage) pages.add(q.rewardPage)
+  }
+  console.log(`\nFetching stat blocks for ${pages.size} unique items...`)
+  const statByPage = new Map<string, string>()
+  let done = 0
+  for (const page of pages) {
+    const html = await fetchParsedHtml(page)
+    if (html) {
+      const stats = parseItemStats(html, page)
+      if (stats) statByPage.set(page, stats)
+    }
+    if (++done % 25 === 0) console.log(`   ${done}/${pages.size}`)
+    await sleep(110)
+  }
+  for (const q of all) {
+    for (const it of q.items) if (it.page && statByPage.has(it.page)) it.stats = statByPage.get(it.page)
+    if (q.rewardPage && statByPage.has(q.rewardPage)) q.rewardStats = statByPage.get(q.rewardPage)
+  }
+  console.log(`Attached stats for ${statByPage.size}/${pages.size} items.`)
 
   const data: PoskyData = { scrapedAt: new Date().toISOString(), quests: all }
   const here = dirname(fileURLToPath(import.meta.url))

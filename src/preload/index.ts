@@ -2,6 +2,8 @@ import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type { CharacterRef, LogLine, LootEvent, ProgressState } from '../shared/types'
 
+export type { CharacterRef, LogLine, LootEvent, ProgressState }
+
 export interface ReloadInventoryResult {
   ok: boolean
   error?: string
@@ -16,7 +18,7 @@ const api = {
   reloadInventory: (): Promise<ReloadInventoryResult> => ipcRenderer.invoke(IPC.reloadInventory),
   setQuestComplete: (questKey: string, complete: boolean): Promise<ProgressState> =>
     ipcRenderer.invoke(IPC.setQuestComplete, questKey, complete),
-  resetLiveLoot: (): Promise<ProgressState> => ipcRenderer.invoke(IPC.resetLiveLoot),
+  getLootHistory: (): Promise<LootEvent[]> => ipcRenderer.invoke(IPC.getLootHistory),
 
   onLoot: (cb: (loot: LootEvent) => void): (() => void) => {
     const listener = (_e: unknown, loot: LootEvent): void => cb(loot)
