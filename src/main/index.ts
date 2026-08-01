@@ -5,6 +5,7 @@ import { characterId, listCharacters, parseLogName, resolveActiveCharacter } fro
 import { Tailer } from './log/Tailer'
 import { newLogState, processLine, type LogState } from './log/process'
 import { scanLog } from './log/scanHistory'
+import { CombatEngine } from './combat/engine'
 import { loadInventory } from './inventory/parseInventory'
 import {
   getActiveLogPath,
@@ -37,6 +38,7 @@ let levels: LevelEvent[] = []
 let aas: AAEvent[] = []
 let aaSpends: AASpendEvent[] = []
 let logState: LogState = newLogState()
+const combat = new CombatEngine()
 
 function activeCharId(): string {
   return character ? characterId(character) : 'none'
@@ -101,8 +103,11 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   setActiveLogPath(ref.logPath)
   console.log(`[eq-tools] Tailing ${ref.name}@${ref.server}: ${ref.logPath}`)
 
-  // Scan the whole log first: loot (with mob + zone), turn-ins, and kills.
-  const scan = await scanLog(ref.logPath)
+  // Scan the whole log first: loot, turn-ins, kills, levels/AA — and seed the
+  // combat engine so charm/encounter state reflects reality before the live tail.
+  combat.reset()
+  const scan = await scanLog(ref.logPath, (t, ts) => combat.ingest(t, ts))
+  combat.setLive()
   lootHistory = scan.loot
   turnIns = scan.turnIns
   kills = scan.kills
@@ -119,6 +124,7 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   tailer = new Tailer(ref.logPath, { fromStart: false })
   tailer.on('line', (line) => {
     mainWindow?.webContents.send(IPC.onLine, line)
+    combat.ingest(line.text, line.ts)
     processLine(line, logState, {
       onLoot: (loot) => {
         lootHistory.push(loot)
@@ -187,6 +193,7 @@ function registerIpc(): void {
   ipcMain.handle(IPC.getLevels, () => levels)
   ipcMain.handle(IPC.getAAs, () => aas)
   ipcMain.handle(IPC.getAASpends, () => aaSpends)
+  ipcMain.handle(IPC.getCombatSnapshot, (_e, opts) => combat.snapshot(Date.now(), opts ?? {}))
 }
 
 app.whenReady().then(() => {

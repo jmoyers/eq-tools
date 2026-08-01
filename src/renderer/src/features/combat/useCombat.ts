@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getCombatEngine } from './store'
-import type { CombatSnapshot } from './engine'
+import type { CombatSnapshot } from '@shared/combat'
 
 export const LIVE = '__live__'
 
@@ -8,30 +7,39 @@ export interface UseCombat {
   snap: CombatSnapshot | null
   combinePets: boolean
   setCombinePets: (v: boolean) => void
-  /** LIVE (follow current) or a specific segment id */
+  showUnparsed: boolean
+  setShowUnparsed: (v: boolean) => void
   selection: string
   setSelection: (id: string) => void
-  reset: () => void
 }
 
+/**
+ * Polls the main-process combat engine ~2x/sec. The engine owns all state (it's
+ * seeded from the full log and fed the live tail), so the UI is a pure view.
+ */
 export function useCombat(): UseCombat {
   const [combinePets, setCombinePets] = useState(false)
+  const [showUnparsed, setShowUnparsed] = useState(false)
   const [selection, setSelection] = useState<string>(LIVE)
   const [snap, setSnap] = useState<CombatSnapshot | null>(null)
 
   useEffect(() => {
-    const eng = getCombatEngine()
-    const tick = (): void =>
-      setSnap(eng.snapshot(Date.now(), { combinePets, selectedId: selection === LIVE ? undefined : selection }))
-    tick()
-    const iv = setInterval(tick, 500)
-    return () => clearInterval(iv)
-  }, [combinePets, selection])
+    let alive = true
+    const tick = async (): Promise<void> => {
+      const s = await window.eq.getCombatSnapshot({
+        combinePets,
+        selectedId: selection === LIVE ? undefined : selection,
+        showUnparsed
+      })
+      if (alive) setSnap(s)
+    }
+    void tick()
+    const iv = setInterval(() => void tick(), 500)
+    return () => {
+      alive = false
+      clearInterval(iv)
+    }
+  }, [combinePets, selection, showUnparsed])
 
-  const reset = (): void => {
-    getCombatEngine().reset()
-    setSelection(LIVE)
-  }
-
-  return { snap, combinePets, setCombinePets, selection, setSelection, reset }
+  return { snap, combinePets, setCombinePets, showUnparsed, setShowUnparsed, selection, setSelection }
 }

@@ -29,7 +29,6 @@ import InventoryView from './features/inventory/InventoryView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
 import CombatView from './features/combat/CombatView'
-import { initCombat } from './features/combat/store'
 
 const DRAWER_WIDTH = 220
 
@@ -54,7 +53,6 @@ export default function App(): JSX.Element {
   const [live, setLive] = useState(false)
 
   useEffect(() => {
-    initCombat()
     void window.eq.getCharacter().then(setCharacter)
     void window.eq.listCharacters().then(setCharacters)
     const off = window.eq.onLoot((loot) => {

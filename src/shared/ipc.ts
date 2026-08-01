@@ -11,6 +11,7 @@ export const IPC = {
   getLevels: 'levels:get',
   getAAs: 'aa:get',
   getAASpends: 'aa:getSpends',
+  getCombatSnapshot: 'combat:snapshot',
   getCharacter: 'character:get',
   listCharacters: 'character:list',
   setCharacter: 'character:set',

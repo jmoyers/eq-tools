@@ -1,8 +1,9 @@
 // Parses EverQuest Legends combat log lines into typed events. Covers melee
 // (with crit/riposte/special modifiers), typed spell nukes, DoTs, damage shields,
-// and the charm/zone/death lifecycle. See engine.ts for how these are modeled.
+// and the charm/zone/death lifecycle. See engine.ts for how these drive the state
+// machine.
 
-export type DamageType = 'melee' | 'spell' | 'dot' | 'ds'
+import type { DamageType } from '../../shared/combat'
 
 export interface DamageEvent {
   t: 'dmg'
@@ -11,12 +12,9 @@ export interface DamageEvent {
   target: string
   amount: number
   dtype: DamageType
-  /** magic/fire/cold/poison/disease/… for typed spells; undefined for pure melee */
   dclass?: string
-  /** the skill or spell/DS name that dealt it (e.g. "Melee", "Backstab", "Ignite") */
   skill: string
   crit: boolean
-  /** raw modifier in parens, e.g. "Riposte", "Slay Undead", "Finishing Blow" */
   modifier?: string
 }
 export interface LifecycleEvent {
@@ -40,6 +38,24 @@ const SLAIN_YOU_RE = /^You have slain (.+?)!$/
 const ZONE_RE = /^You have entered (.+?)\.$/
 const CHARM_SPELL_RE =
   /charm|beguile|allure|cajole|dictate|besiege|agacerie|enthrall|beckon|command of druzzil|dominate|boltran/i
+
+/** Cheap pre-check so callers can skip non-combat lines before the regex battery. */
+export function looksCombat(text: string): boolean {
+  return (
+    text.includes('points of') ||
+    text.includes('has taken') ||
+    text.includes('has been charmed') ||
+    text.includes('worn off of') ||
+    text.includes('has been slain') ||
+    text.includes('You have slain') ||
+    text.includes('You have entered')
+  )
+}
+
+/** True if a line looks like damage but we couldn't classify it (for the miss log). */
+export function looksDamage(text: string): boolean {
+  return /\bfor \d+ points? of|\bhas taken \d+ damage/.test(text)
+}
 
 function norm(name: string): string {
   const n = name.trim()
@@ -70,7 +86,6 @@ export function parseCombatLine(text: string, ts: number): CombatEvent {
   m = SLAIN_BY_RE.exec(text)
   if (m) return { t: 'death', value: norm(m[1]) }
 
-  // Damage shield: "X is burned by YOUR flames for N points of non-melee damage."
   m = DS_RE.exec(text)
   if (m) {
     const owner = m[2] === 'YOUR' ? 'You' : norm(m[2].replace(/'s$/, ''))
@@ -85,7 +100,6 @@ export function parseCombatLine(text: string, ts: number): CombatEvent {
       crit: false
     }
   }
-  // Typed spell: "You hit X for N points of magic damage by Spell. (Critical)"
   m = SPELL_RE.exec(text)
   if (m) {
     const modifier = m[6]
@@ -102,7 +116,6 @@ export function parseCombatLine(text: string, ts: number): CombatEvent {
       modifier
     }
   }
-  // DoT: "X has taken N damage from your Spell." | "... from Spell by Caster."
   m = DOT_RE.exec(text)
   if (m) {
     const target = norm(m[1])
@@ -123,7 +136,6 @@ export function parseCombatLine(text: string, ts: number): CombatEvent {
     if (attacker === '?') return null
     return { t: 'dmg', ts, attacker, target, amount, dtype: 'dot', skill: skill.trim(), crit: false }
   }
-  // Melee: "X crushes Y for N points of damage. (Riposte)"
   m = MELEE_RE.exec(text)
   if (m) {
     const verbM = MELEE_VERB_RE.exec(text)

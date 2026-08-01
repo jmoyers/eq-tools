@@ -11,6 +11,7 @@ import type {
   ProgressState,
   TurnInEvent
 } from '../shared/types'
+import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 
@@ -43,6 +44,8 @@ const api = {
   getLevels: (): Promise<LevelEvent[]> => ipcRenderer.invoke(IPC.getLevels),
   getAAs: (): Promise<AAEvent[]> => ipcRenderer.invoke(IPC.getAAs),
   getAASpends: (): Promise<AASpendEvent[]> => ipcRenderer.invoke(IPC.getAASpends),
+  getCombatSnapshot: (opts: SnapshotOpts): Promise<CombatSnapshot> =>
+    ipcRenderer.invoke(IPC.getCombatSnapshot, opts),
 
   onLoot: (cb: (loot: LootEvent) => void): (() => void) => {
     const listener = (_e: unknown, loot: LootEvent): void => cb(loot)

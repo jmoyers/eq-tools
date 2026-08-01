@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises'
 import { parseLine } from './parse'
 import { newLogState, processLine } from './process'
+import { looksCombat } from '../combat/parse'
 import type { AAEvent, AASpendEvent, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../../shared/types'
 
 export interface ScanResult {
@@ -26,7 +27,10 @@ function recordKill(kills: KillMap, mob: string, tier: number, ts: number): void
  * level-ups. Log parsing is the default count source — more reliable than an
  * inventory dump when items sit in an un-exported bank (e.g. the Dragonhoard).
  */
-export async function scanLog(logPath: string): Promise<ScanResult> {
+export async function scanLog(
+  logPath: string,
+  onCombatLine?: (text: string, ts: number) => void
+): Promise<ScanResult> {
   let text: string
   try {
     text = await readFile(logPath, 'utf8')
@@ -43,20 +47,20 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
   const state = newLogState()
 
   for (const raw of text.split(/\r?\n/)) {
-    // cheap pre-filter before the regex dispatch
-    if (
-      !raw.includes('looted') &&
-      !raw.includes('entered') &&
-      !raw.includes('slain') &&
-      !raw.includes('offered') &&
-      !raw.includes('complete the trade') &&
-      !raw.includes('gained a level') &&
-      !raw.includes('ability point')
-    ) {
-      continue
-    }
+    const scanRelevant =
+      raw.includes('looted') ||
+      raw.includes('entered') ||
+      raw.includes('slain') ||
+      raw.includes('offered') ||
+      raw.includes('complete the trade') ||
+      raw.includes('gained a level') ||
+      raw.includes('ability point')
+    const combatRelevant = !!onCombatLine && looksCombat(raw)
+    if (!scanRelevant && !combatRelevant) continue
     const line = parseLine(raw)
     if (!line) continue
+    if (combatRelevant) onCombatLine!(line.text, line.ts)
+    if (!scanRelevant) continue
     processLine(line, state, {
       onLoot: (e) => loot.push(e),
       onTurnIn: (e) => turnIns.push(e),
