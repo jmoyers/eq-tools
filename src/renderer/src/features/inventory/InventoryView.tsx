@@ -19,11 +19,14 @@ import {
 import RefreshIcon from '@mui/icons-material/Refresh'
 import type { CountSource, LootEvent } from '@shared/types'
 import { useProgress } from '../posky/useProgress'
+import { useFavorites } from '../favorites/useFavorites'
+import { FavoriteStar } from '../favorites/FavoriteStar'
 
 const MAX_ROWS = 600
 
 export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
   const { inventoryRows, countSource, setCountSource, reloadInventory, inventoryInfo } = useProgress(lastLoot)
+  const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [query, setQuery] = useState('')
   const [onlyReconciled, setOnlyReconciled] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
@@ -33,8 +36,10 @@ export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null
     let list = inventoryRows
     if (onlyReconciled) list = list.filter((r) => r.log > 0 && r.inv > 0)
     if (q) list = list.filter((r) => r.name.toLowerCase().includes(q))
-    return list
-  }, [inventoryRows, query, onlyReconciled])
+    // Pin favorites to the top (stable over the existing net-desc order).
+    return [...list].sort((a, b) => Number(isFavorite(b.name)) - Number(isFavorite(a.name)))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inventoryRows, query, onlyReconciled, isFavorite])
 
   const onReload = async (): Promise<void> => setToast(await reloadInventory())
 
@@ -100,6 +105,7 @@ export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null
         <Table size="small" stickyHeader>
           <TableHead>
             <TableRow>
+              <TableCell padding="checkbox" />
               <TableCell>Item</TableCell>
               <Tooltip title="Times looted (from the log)">
                 <TableCell align="right">Looted</TableCell>
@@ -115,6 +121,9 @@ export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null
           <TableBody>
             {rows.slice(0, MAX_ROWS).map((r) => (
               <TableRow key={r.key} hover sx={{ opacity: r.net === 0 ? 0.55 : 1 }}>
+                <TableCell padding="checkbox">
+                  <FavoriteStar name={r.name} favorited={isFavorite(r.name)} onToggle={toggleFavorite} />
+                </TableCell>
                 <TableCell>{r.name}</TableCell>
                 <TableCell align="right" sx={{ color: r.log ? 'secondary.main' : 'text.disabled' }}>
                   {r.log || '—'}

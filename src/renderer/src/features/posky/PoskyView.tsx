@@ -28,9 +28,13 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
+import StarIcon from '@mui/icons-material/Star'
+import StarBorderIcon from '@mui/icons-material/StarBorder'
 import type { CountSource, LootEvent } from '@shared/types'
 import { useProgress, type QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
+import { useFavorites } from '../favorites/useFavorites'
+import { FavoriteStar } from '../favorites/FavoriteStar'
 
 type SortKey = 'closest' | 'least-missing' | 'class'
 
@@ -72,12 +76,16 @@ function ProgressBar({ q }: { q: QuestProgress }): JSX.Element {
 export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
   const { quests, classes, countSource, setCountSource, reloadInventory, setQuestComplete, inventoryInfo } =
     useProgress(lastLoot)
+  const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<SortKey>('closest')
   const [hideCompleted, setHideCompleted] = useState(false)
   const [hideNoItems, setHideNoItems] = useState(true)
+  const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
+
+  const questHasFavorite = (q: QuestProgress): boolean => q.items.some((it) => isFavorite(it.name))
 
   // Remember the class filter across restarts.
   useEffect(() => {
@@ -90,6 +98,7 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
     if (selectedClasses.length) list = list.filter((x) => selectedClasses.includes(x.className))
     if (hideCompleted) list = list.filter((x) => !x.completed)
     if (hideNoItems) list = list.filter((x) => x.needCount > 0)
+    if (favoritesOnly) list = list.filter(questHasFavorite)
     if (q) {
       list = list.filter(
         (x) =>
@@ -111,8 +120,12 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
     } else {
       sorted.sort((a, b) => a.className.localeCompare(b.className) || a.name.localeCompare(b.name))
     }
+    // Pin quests that contain a favorited, still-needed item to the top (stable).
+    const pinned = (x: QuestProgress): boolean => !x.completed && questHasFavorite(x)
+    sorted.sort((a, b) => Number(pinned(b)) - Number(pinned(a)))
     return sorted
-  }, [quests, selectedClasses, query, sort, hideCompleted, hideNoItems])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quests, selectedClasses, query, sort, hideCompleted, hideNoItems, favoritesOnly, isFavorite])
 
   const onReload = async (): Promise<void> => setToast(await reloadInventory())
 
@@ -156,6 +169,18 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
         <FormControlLabel
           control={<Checkbox checked={hideNoItems} onChange={(e) => setHideNoItems(e.target.checked)} />}
           label="Only quests with turn-ins"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={favoritesOnly}
+              onChange={(e) => setFavoritesOnly(e.target.checked)}
+              icon={<StarBorderIcon />}
+              checkedIcon={<StarIcon />}
+              sx={{ color: 'warning.main', '&.Mui-checked': { color: 'warning.main' } }}
+            />
+          }
+          label="Favorites only"
         />
         <Box sx={{ flexGrow: 1 }} />
         <Tooltip title="How the app decides which items you have. Log = everything you've ever looted (survives an un-exported bank). Inventory = your last /outputfile dump. Both = the higher of the two.">
@@ -233,21 +258,36 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                   <ProgressBar q={q} />
                 </Stack>
                 <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ pl: '100px' }}>
-                  {q.items.map((it) => {
-                    const done = it.have >= it.need || q.completed
-                    return (
-                      <ItemTooltip key={it.name} name={it.name} stats={it.stats} who={it.who} where={it.where}>
-                        <Chip
-                          size="small"
-                          variant="outlined"
-                          color={done ? 'success' : 'default'}
-                          icon={done ? <CheckCircleIcon /> : <RadioButtonUncheckedIcon />}
-                          label={it.need > 1 ? `${it.name} ${it.have}/${it.need}` : it.name}
-                          sx={{ opacity: done ? 1 : 0.65 }}
-                        />
-                      </ItemTooltip>
-                    )
-                  })}
+                  {[...q.items]
+                    .sort((a, b) => Number(isFavorite(b.name)) - Number(isFavorite(a.name)))
+                    .map((it) => {
+                      const done = it.have >= it.need || q.completed
+                      const fav = isFavorite(it.name)
+                      return (
+                        <ItemTooltip key={it.name} name={it.name} stats={it.stats} who={it.who} where={it.where}>
+                          <Chip
+                            size="small"
+                            variant={fav ? 'filled' : 'outlined'}
+                            color={fav ? 'warning' : done ? 'success' : 'default'}
+                            icon={
+                              fav ? (
+                                <StarIcon />
+                              ) : done ? (
+                                <CheckCircleIcon />
+                              ) : (
+                                <RadioButtonUncheckedIcon />
+                              )
+                            }
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              toggleFavorite(it.name)
+                            }}
+                            label={it.need > 1 ? `${it.name} ${it.have}/${it.need}` : it.name}
+                            sx={{ opacity: done && !fav ? 0.65 : 1 }}
+                          />
+                        </ItemTooltip>
+                      )
+                    })}
                 </Stack>
               </Stack>
             </AccordionSummary>
@@ -277,6 +317,7 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
               <Table size="small">
                 <TableHead>
                   <TableRow>
+                    <TableCell padding="checkbox" />
                     <TableCell>Item</TableCell>
                     <TableCell>Have</TableCell>
                     <TableCell>Dropped by</TableCell>
@@ -288,6 +329,9 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                     const done = it.have >= it.need
                     return (
                       <TableRow key={it.name}>
+                        <TableCell padding="checkbox">
+                          <FavoriteStar name={it.name} favorited={isFavorite(it.name)} onToggle={toggleFavorite} />
+                        </TableCell>
                         <TableCell sx={{ color: done ? 'success.main' : 'text.primary' }}>
                           <ItemTooltip name={it.name} stats={it.stats} who={it.who} where={it.where}>
                             <span style={{ cursor: 'help' }}>{it.name}</span>

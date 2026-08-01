@@ -16,6 +16,8 @@ import {
 } from '@mui/material'
 import type { LootEvent } from '@shared/types'
 import { getPoskyData } from '../../data'
+import { useFavorites } from '../favorites/useFavorites'
+import { FavoriteStar } from '../favorites/FavoriteStar'
 
 // Names of every item required by a Plane of Sky quest (for highlighting).
 const questItemNames = new Set<string>(
@@ -31,6 +33,7 @@ function fmtTime(ts: number): string {
 }
 
 export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
+  const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [history, setHistory] = useState<LootEvent[]>([])
   const [query, setQuery] = useState('')
   const [groupByItem, setGroupByItem] = useState(false)
@@ -64,8 +67,11 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
         map.set(key, { item: e.item, count: 1, last: e.ts })
       }
     }
-    return [...map.values()].sort((a, b) => b.count - a.count || b.last - a.last)
-  }, [events])
+    const list = [...map.values()].sort((a, b) => b.count - a.count || b.last - a.last)
+    // Pin favorites to the top (stable).
+    return list.sort((a, b) => Number(isFavorite(b.item)) - Number(isFavorite(a.item)))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [events, isFavorite])
 
   const isQuestItem = (name: string): boolean => questItemNames.has(name.toLowerCase())
 
@@ -106,6 +112,7 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
           <Table size="small" stickyHeader>
             <TableHead>
               <TableRow>
+                <TableCell padding="checkbox" />
                 <TableCell>Item</TableCell>
                 <TableCell align="right">Times looted</TableCell>
                 <TableCell>Last looted</TableCell>
@@ -114,6 +121,9 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
             <TableBody>
               {grouped.slice(0, MAX_ROWS).map((g) => (
                 <TableRow key={g.item} hover>
+                  <TableCell padding="checkbox">
+                    <FavoriteStar name={g.item} favorited={isFavorite(g.item)} onToggle={toggleFavorite} />
+                  </TableCell>
                   <TableCell>
                     <Stack direction="row" spacing={1} alignItems="center">
                       <span>{g.item}</span>
@@ -130,6 +140,7 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
           <Table size="small" stickyHeader>
             <TableHead>
               <TableRow>
+                <TableCell padding="checkbox" />
                 <TableCell sx={{ width: 160 }}>Time</TableCell>
                 <TableCell>Item</TableCell>
               </TableRow>
@@ -137,6 +148,9 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
             <TableBody>
               {events.slice(0, MAX_ROWS).map((e, i) => (
                 <TableRow key={`${e.ts}-${e.item}-${i}`} hover>
+                  <TableCell padding="checkbox">
+                    <FavoriteStar name={e.item} favorited={isFavorite(e.item)} onToggle={toggleFavorite} />
+                  </TableCell>
                   <TableCell sx={{ color: 'text.secondary' }}>{fmtTime(e.ts)}</TableCell>
                   <TableCell>
                     <Stack direction="row" spacing={1} alignItems="center">
