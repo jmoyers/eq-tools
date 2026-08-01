@@ -88,6 +88,15 @@ export function matchLevelUp(line: LogLine): number | null {
   return m ? Number(m[1]) : null
 }
 
+// "You have gained an ability point!  You now have 7 ability points."
+// "You have gained 2 ability point(s)!  You now have 3 ability point(s)."
+const AA_RE = /^You have gained (an|\d+) ability point(?:\(s\))?!\s+You now have (\d+) ability point/
+export function matchAA(line: LogLine): { amount: number; nowHave: number } | null {
+  const m = AA_RE.exec(line.text)
+  if (!m) return null
+  return { amount: m[1] === 'an' ? 1 : Number(m[1]), nowHave: Number(m[2]) }
+}
+
 // EQ Legends encodes instance difficulty in the zone name:
 //   base (no suffix) = d0, "(Awakened)" = d1, "(Adaptive)" = d2,
 //   "(Fused)" = d3, "(Refined)" = d4. Also strips "- Solo"/"- Group N".

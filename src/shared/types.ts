@@ -42,6 +42,15 @@ export interface LevelEvent {
   level: number
 }
 
+/** An AA/ability-point gain ("You have gained N ability point(s)! You now have M"). */
+export interface AAEvent {
+  ts: number
+  /** points gained by this event */
+  amount: number
+  /** unspent points the game reports after the gain */
+  nowHave: number
+}
+
 /** Aggregated kill info for a mob (for loot sourcing + boss instance tiers). */
 export interface KillInfo {
   count: number

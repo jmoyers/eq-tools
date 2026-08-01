@@ -15,7 +15,7 @@ import {
   setQuestComplete,
   setWindowBounds
 } from './store'
-import type { CharacterRef, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../shared/types'
+import type { AAEvent, CharacterRef, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
@@ -26,6 +26,7 @@ let lootHistory: LootEvent[] = []
 let turnIns: TurnInEvent[] = []
 let kills: KillMap = {}
 let levels: LevelEvent[] = []
+let aas: AAEvent[] = []
 let logState: LogState = newLogState()
 
 function activeCharId(): string {
@@ -97,11 +98,12 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   turnIns = scan.turnIns
   kills = scan.kills
   levels = scan.levels
+  aas = scan.aas
   logState = newLogState()
   console.log(
     `[eq-tools] Loaded ${lootHistory.length} loot, ${turnIns.length} turn-ins, ${
       Object.keys(kills).length
-    } mobs, ${levels.length} level-ups.`
+    } mobs, ${levels.length} level-ups, ${aas.length} AA gains.`
   )
 
   tailer = new Tailer(ref.logPath, { fromStart: false })
@@ -126,6 +128,10 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
       onLevelUp: (level, ts) => {
         levels.push({ ts, level })
         mainWindow?.webContents.send(IPC.onLevel, { ts, level })
+      },
+      onAA: (amount, nowHave, ts) => {
+        aas.push({ ts, amount, nowHave })
+        mainWindow?.webContents.send(IPC.onAA, { ts, amount, nowHave })
       }
     })
   })
@@ -165,6 +171,7 @@ function registerIpc(): void {
   ipcMain.handle(IPC.getKills, () => kills)
   ipcMain.handle(IPC.getTurnIns, () => turnIns)
   ipcMain.handle(IPC.getLevels, () => levels)
+  ipcMain.handle(IPC.getAAs, () => aas)
 }
 
 app.whenReady().then(() => {

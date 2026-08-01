@@ -18,6 +18,7 @@ export interface LogHandlers {
   onKill?(mob: string, tier: number, ts: number): void
   onZone?(zone: string): void
   onLevelUp?(level: number, ts: number): void
+  onAA?(amount: number, nowHave: number, ts: number): void
 }
 
 /**
@@ -51,6 +52,12 @@ export function processLine(line: LogLine, state: LogState, h: LogHandlers, prof
   const level = r.matchLevelUp(line)
   if (level != null) {
     h.onLevelUp?.(level, line.ts)
+    return
+  }
+
+  const aa = r.matchAA(line)
+  if (aa) {
+    h.onAA?.(aa.amount, aa.nowHave, line.ts)
     return
   }
 

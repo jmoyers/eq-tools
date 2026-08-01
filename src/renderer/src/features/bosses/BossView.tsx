@@ -187,8 +187,12 @@ export default function BossView({ lastLoot }: { lastLoot: LootEvent | null }): 
     () => (localStorage.getItem(DENSITY_KEY) as Density) || 'compact'
   )
 
+  // Live: refresh kill data on load, on new loot, and on a short poll so a boss
+  // defeated in-game lights up the dashboard in real time.
   useEffect(() => {
     void window.eq.getKills().then(setKills)
+    const iv = setInterval(() => void window.eq.getKills().then(setKills), 3000)
+    return () => clearInterval(iv)
   }, [])
   useEffect(() => {
     if (lastLoot) void window.eq.getKills().then(setKills)

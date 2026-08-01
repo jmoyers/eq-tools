@@ -1,6 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type {
+  AAEvent,
   CharacterRef,
   KillMap,
   LevelEvent,
@@ -39,6 +40,7 @@ const api = {
   getKills: (): Promise<KillMap> => ipcRenderer.invoke(IPC.getKills),
   getTurnIns: (): Promise<TurnInEvent[]> => ipcRenderer.invoke(IPC.getTurnIns),
   getLevels: (): Promise<LevelEvent[]> => ipcRenderer.invoke(IPC.getLevels),
+  getAAs: (): Promise<AAEvent[]> => ipcRenderer.invoke(IPC.getAAs),
 
   onLoot: (cb: (loot: LootEvent) => void): (() => void) => {
     const listener = (_e: unknown, loot: LootEvent): void => cb(loot)
@@ -54,6 +56,11 @@ const api = {
     const listener = (_e: unknown, ev: LevelEvent): void => cb(ev)
     ipcRenderer.on(IPC.onLevel, listener)
     return () => ipcRenderer.removeListener(IPC.onLevel, listener)
+  },
+  onAA: (cb: (e: AAEvent) => void): (() => void) => {
+    const listener = (_e: unknown, ev: AAEvent): void => cb(ev)
+    ipcRenderer.on(IPC.onAA, listener)
+    return () => ipcRenderer.removeListener(IPC.onAA, listener)
   },
   onLine: (cb: (line: LogLine) => void): (() => void) => {
     const listener = (_e: unknown, line: LogLine): void => cb(line)

@@ -1,13 +1,14 @@
 import { readFile } from 'fs/promises'
 import { parseLine } from './parse'
 import { newLogState, processLine } from './process'
-import type { KillMap, LevelEvent, LootEvent, TurnInEvent } from '../../shared/types'
+import type { AAEvent, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../../shared/types'
 
 export interface ScanResult {
   loot: LootEvent[]
   turnIns: TurnInEvent[]
   kills: KillMap
   levels: LevelEvent[]
+  aas: AAEvent[]
 }
 
 function recordKill(kills: KillMap, mob: string, tier: number, ts: number): void {
@@ -29,13 +30,14 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
   try {
     text = await readFile(logPath, 'utf8')
   } catch {
-    return { loot: [], turnIns: [], kills: {}, levels: [] }
+    return { loot: [], turnIns: [], kills: {}, levels: [], aas: [] }
   }
 
   const loot: LootEvent[] = []
   const turnIns: TurnInEvent[] = []
   const kills: KillMap = {}
   const levels: LevelEvent[] = []
+  const aas: AAEvent[] = []
   const state = newLogState()
 
   for (const raw of text.split(/\r?\n/)) {
@@ -46,7 +48,8 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
       !raw.includes('slain') &&
       !raw.includes('offered') &&
       !raw.includes('complete the trade') &&
-      !raw.includes('gained a level')
+      !raw.includes('gained a level') &&
+      !raw.includes('ability point')
     ) {
       continue
     }
@@ -56,9 +59,10 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
       onLoot: (e) => loot.push(e),
       onTurnIn: (e) => turnIns.push(e),
       onKill: (mob, tier, ts) => recordKill(kills, mob, tier, ts),
-      onLevelUp: (level, ts) => levels.push({ ts, level })
+      onLevelUp: (level, ts) => levels.push({ ts, level }),
+      onAA: (amount, nowHave, ts) => aas.push({ ts, amount, nowHave })
     })
   }
 
-  return { loot, turnIns, kills, levels }
+  return { loot, turnIns, kills, levels, aas }
 }
