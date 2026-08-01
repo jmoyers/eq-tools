@@ -12,6 +12,7 @@ import {
   Tooltip,
   Typography
 } from '@mui/material'
+import CheckIcon from '@mui/icons-material/Check'
 import type { KillMap, LootEvent, RaidTarget } from '@shared/types'
 import { getBossData } from '../../data'
 
@@ -36,7 +37,15 @@ interface TargetStatus {
   lastTs: number
 }
 
-function BossImage({ target, height }: { target: RaidTarget; height: number }): JSX.Element {
+function BossImage({
+  target,
+  height,
+  dim
+}: {
+  target: RaidTarget
+  height: number
+  dim?: boolean
+}): JSX.Element {
   const [failed, setFailed] = useState(false)
   if (target.image && !failed) {
     return (
@@ -45,7 +54,14 @@ function BossImage({ target, height }: { target: RaidTarget; height: number }): 
         src={target.image}
         alt={target.name}
         onError={() => setFailed(true)}
-        sx={{ width: '100%', height, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+        sx={{
+          width: '100%',
+          height,
+          objectFit: 'cover',
+          objectPosition: 'top',
+          display: 'block',
+          filter: dim ? 'grayscale(1) brightness(0.5)' : 'none'
+        }}
       />
     )
   }
@@ -77,29 +93,68 @@ function BossImage({ target, height }: { target: RaidTarget; height: number }): 
 
 function TargetCard({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.Element {
   const imgH = compact ? 70 : 120
+  const tierColor = TIER_COLOR[s.bestTier]
   return (
-    <Paper variant="outlined" sx={{ overflow: 'hidden', opacity: s.killed ? 1 : 0.5 }}>
+    <Paper
+      variant="outlined"
+      sx={{
+        overflow: 'hidden',
+        position: 'relative',
+        borderWidth: 2,
+        borderColor: s.killed ? tierColor : 'divider',
+        boxShadow: s.killed ? `0 0 10px ${tierColor}55` : 'none',
+        transition: 'transform 120ms',
+        '&:hover': { transform: 'translateY(-2px)' }
+      }}
+    >
+      {s.killed && (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 4,
+            left: 4,
+            zIndex: 1,
+            width: 20,
+            height: 20,
+            borderRadius: '50%',
+            bgcolor: tierColor,
+            color: '#fff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: 1
+          }}
+        >
+          <CheckIcon sx={{ fontSize: 14 }} />
+        </Box>
+      )}
       <Box sx={{ position: 'relative' }}>
-        <BossImage target={s.target} height={imgH} />
+        <BossImage target={s.target} height={imgH} dim={!s.killed} />
         <Tooltip title={s.killed ? TIER_LONG[s.bestTier] : 'Not defeated'}>
           <Chip
             size="small"
-            label={s.killed ? TIER_SHORT[s.bestTier] : '—'}
+            label={s.killed ? TIER_SHORT[s.bestTier] : 'not defeated'}
             sx={{
               position: 'absolute',
               top: 4,
               right: 4,
               height: 20,
-              bgcolor: s.killed ? TIER_COLOR[s.bestTier] : 'rgba(0,0,0,0.6)',
+              bgcolor: s.killed ? tierColor : 'rgba(0,0,0,0.65)',
               color: '#fff',
               fontWeight: 700,
+              fontSize: 11,
               '& .MuiChip-label': { px: 0.75 }
             }}
           />
         </Tooltip>
       </Box>
       <Box sx={{ p: compact ? 0.75 : 1 }}>
-        <Typography variant={compact ? 'caption' : 'body2'} noWrap title={s.target.name} sx={{ fontWeight: 600 }}>
+        <Typography
+          variant={compact ? 'caption' : 'body2'}
+          noWrap
+          title={s.target.name}
+          sx={{ fontWeight: 600, color: s.killed ? 'text.primary' : 'text.secondary' }}
+        >
           {s.target.name}
         </Typography>
         {!compact && (

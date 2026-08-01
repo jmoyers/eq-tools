@@ -12,14 +12,20 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import type { BossData, RaidTarget } from '../src/shared/types'
 
-const API = 'https://eqlwiki.com/api.php'
-const UA = 'eq-tools-bosses/0.1 (personal raid tracker)'
+const EQL = 'https://eqlwiki.com'
+const P99 = 'https://wiki.project1999.com'
+const UA = 'Mozilla/5.0 eq-tools-bosses/0.2 (personal raid tracker)'
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
 interface Curated {
   name: string
   category: string
+  /** eqlwiki page title override */
   page?: string
+  /** Project 1999 wiki page title override (better classic NPC portraits) */
+  p99?: string
+  /** manual image URL override (highest priority) */
+  image?: string
   match: string[]
   zone?: string
 }
@@ -34,7 +40,7 @@ const TARGETS: Curated[] = [
   { name: 'Master Yael', category: 'Open World', match: ['Master Yael'], zone: 'The Hole' },
 
   // Plane of Fear
-  { name: 'Cazic Thule', category: 'Plane of Fear', match: ['Cazic Thule', 'Cazic-Thule'], zone: 'Plane of Fear' },
+  { name: 'Cazic Thule', category: 'Plane of Fear', p99: 'Cazic Thule (God)', match: ['Cazic Thule', 'Cazic-Thule'], zone: 'Plane of Fear' },
   { name: 'Dread', category: 'Plane of Fear', match: ['Dread'], zone: 'Plane of Fear' },
   { name: 'Terror', category: 'Plane of Fear', match: ['Terror'], zone: 'Plane of Fear' },
   { name: 'Fright', category: 'Plane of Fear', match: ['Fright'], zone: 'Plane of Fear' },
@@ -66,33 +72,58 @@ const TARGETS: Curated[] = [
   { name: 'Eye of Veeshan', category: 'Plane of Sky', match: ['Eye of Veeshan'], zone: 'Plane of Sky — Island 8' }
 ]
 
-const HOST = 'https://eqlwiki.com'
-
-/** Grab the first non-loot-icon content image from the mob's wiki page. */
-async function fetchImage(page: string): Promise<string | undefined> {
-  const url = `${API}?action=parse&page=${encodeURIComponent(
+async function pageHtml(apiBase: string, page: string): Promise<string | undefined> {
+  const url = `${apiBase}/api.php?action=parse&page=${encodeURIComponent(
     page
-  )}&prop=text&format=json&formatversion=2&redirects=1`
+  )}&prop=text&format=json&redirects=1`
   try {
     const res = await fetch(url, { headers: { 'User-Agent': UA } })
-    const json = (await res.json()) as { parse?: { text?: string }; error?: unknown }
-    const html = json.parse?.text
-    if (!html) return undefined
-    const srcs = [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1])
-    // Prefer a portrait: an /images/ file that isn't a loot-item icon.
-    const pick = srcs.find((s) => /\/images\//.test(s) && !/Item_\d+/i.test(s))
-    if (!pick) return undefined
-    return pick.startsWith('http') ? pick : HOST + pick
+    const json = (await res.json()) as { parse?: { text?: string | { '*'?: string } }; error?: unknown }
+    if (json.error) return undefined
+    const t = json.parse?.text
+    return typeof t === 'string' ? t : t?.['*']
   } catch {
     return undefined
   }
+}
+
+function imgSrcs(html: string): string[] {
+  return [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]).filter((s) => /\/images\//.test(s))
+}
+
+/** Project 1999 wiki: prefer the "Npc_*" portrait convention. */
+async function p99Image(page: string): Promise<string | undefined> {
+  const html = await pageHtml(P99, page)
+  if (!html) return undefined
+  const srcs = imgSrcs(html)
+  const pick = srcs.find((s) => /Npc_/i.test(s)) ?? srcs.find((s) => !/Item_|WarningIcon|\.svg/i.test(s))
+  if (!pick) return undefined
+  return pick.startsWith('http') ? pick : P99 + pick
+}
+
+/** EQ Legends wiki fallback: first non-loot-icon image. */
+async function eqlImage(page: string): Promise<string | undefined> {
+  const html = await pageHtml(EQL, page)
+  if (!html) return undefined
+  const pick = imgSrcs(html).find((s) => !/Item_\d+/i.test(s))
+  if (!pick) return undefined
+  return pick.startsWith('http') ? pick : EQL + pick
+}
+
+/** Multi-source image resolution: manual override → P99 portrait → eqlwiki. */
+async function fetchImage(t: Curated): Promise<string | undefined> {
+  if (t.image) return t.image
+  const p99 = await p99Image(t.p99 ?? t.name)
+  if (p99) return p99
+  await sleep(80)
+  return eqlImage(t.page ?? t.name)
 }
 
 async function main(): Promise<void> {
   const targets: RaidTarget[] = []
   let withImg = 0
   for (const t of TARGETS) {
-    const image = await fetchImage(t.page ?? t.name)
+    const image = await fetchImage(t)
     if (image) withImg++
     targets.push({ name: t.name, category: t.category, match: t.match, zone: t.zone, image })
     console.log(`  ${image ? '🖼 ' : '·  '}${t.name}`)
