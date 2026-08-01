@@ -19,6 +19,7 @@ export interface LogHandlers {
   onZone?(zone: string): void
   onLevelUp?(level: number, ts: number): void
   onAA?(amount: number, nowHave: number, ts: number): void
+  onAASpend?(ability: string, cost: number, ts: number): void
 }
 
 /**
@@ -58,6 +59,12 @@ export function processLine(line: LogLine, state: LogState, h: LogHandlers, prof
   const aa = r.matchAA(line)
   if (aa) {
     h.onAA?.(aa.amount, aa.nowHave, line.ts)
+    return
+  }
+
+  const aaSpend = r.matchAASpend(line)
+  if (aaSpend) {
+    h.onAASpend?.(aaSpend.ability, aaSpend.cost, line.ts)
     return
   }
 

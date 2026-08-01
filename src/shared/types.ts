@@ -51,6 +51,13 @@ export interface AAEvent {
   nowHave: number
 }
 
+/** An AA purchase ("You have gained the ability X at a cost of N ability points"). */
+export interface AASpendEvent {
+  ts: number
+  ability: string
+  cost: number
+}
+
 /** Aggregated kill info for a mob (for loot sourcing + boss instance tiers). */
 export interface KillInfo {
   count: number

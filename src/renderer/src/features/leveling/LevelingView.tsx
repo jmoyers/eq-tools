@@ -3,7 +3,7 @@ import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
-import type { AAEvent, LevelEvent } from '@shared/types'
+import type { AAEvent, AASpendEvent, LevelEvent } from '@shared/types'
 
 function fmtDelta(ms: number): string {
   if (ms <= 0) return '—'
@@ -79,15 +79,19 @@ interface FeedItem {
 export default function LevelingView(): JSX.Element {
   const [levels, setLevels] = useState<LevelEvent[]>([])
   const [aas, setAAs] = useState<AAEvent[]>([])
+  const [spends, setSpends] = useState<AASpendEvent[]>([])
 
   useEffect(() => {
     void window.eq.getLevels().then(setLevels)
     void window.eq.getAAs().then(setAAs)
+    void window.eq.getAASpends().then(setSpends)
     const offL = window.eq.onLevel((e) => setLevels((p) => [...p, e]))
     const offA = window.eq.onAA((e) => setAAs((p) => [...p, e]))
+    const offS = window.eq.onAASpend((e) => setSpends((p) => [...p, e]))
     return () => {
       offL()
       offA()
+      offS()
     }
   }, [])
 
@@ -96,7 +100,19 @@ export default function LevelingView(): JSX.Element {
 
   const currentLevel = sortedLevels.length ? Math.max(...sortedLevels.map((l) => l.level)) : null
   const aaEarned = sortedAAs.reduce((s, a) => s + a.amount, 0)
-  const aaUnspent = sortedAAs.length ? sortedAAs[sortedAAs.length - 1].nowHave : null
+  const aaSpent = spends.reduce((s, a) => s + a.cost, 0)
+
+  // Unspent = the game's last authoritative "you now have", minus every AA spent
+  // after that point. Ends where the character actually is (0), not a stale value.
+  const aaUnspent = useMemo(() => {
+    const lastGain = sortedAAs[sortedAAs.length - 1]
+    if (!lastGain) return null
+    let pool = lastGain.nowHave
+    for (const s of spends) if (s.ts >= lastGain.ts) pool = Math.max(0, pool - s.cost)
+    return pool
+  }, [sortedAAs, spends])
+
+  const purchases = useMemo(() => [...spends].sort((a, b) => b.ts - a.ts), [spends])
 
   const aaCumulative = useMemo(() => {
     let sum = 0
@@ -133,15 +149,22 @@ export default function LevelingView(): JSX.Element {
         <HeroCard
           icon={<AutoAwesomeIcon fontSize="large" />}
           value={aaEarned ? aaEarned.toLocaleString() : '—'}
-          label="AA earned"
-          sub="cumulative from the log"
+          label="AA points earned"
+          sub="gained, from the log"
           accent="#6fb3d2"
+        />
+        <HeroCard
+          icon={<AutoAwesomeIcon fontSize="large" />}
+          value={aaSpent ? aaSpent.toLocaleString() : '—'}
+          label="AA points spent"
+          sub={`${spends.length} abilities bought`}
+          accent="#b07fd0"
         />
         <HeroCard
           icon={<BoltIcon fontSize="large" />}
           value={aaUnspent != null ? aaUnspent.toLocaleString() : '—'}
           label="AA unspent"
-          sub="as last reported in-game"
+          sub="earned − spent"
           accent="#5fbf72"
         />
       </Stack>
@@ -171,12 +194,36 @@ export default function LevelingView(): JSX.Element {
             )}
           </Stack>
 
-          <Paper variant="outlined" sx={{ p: 2, flex: 1, minWidth: 260, display: 'flex', flexDirection: 'column' }}>
-            <Typography variant="subtitle2" gutterBottom>
-              Recent progress
-            </Typography>
-            <Box sx={{ overflow: 'auto' }}>
-              {feed.map((f, i) => (
+          <Stack spacing={2} sx={{ flex: 1, minWidth: 260, minHeight: 0 }}>
+            {purchases.length > 0 && (
+              <Paper variant="outlined" sx={{ p: 2, display: 'flex', flexDirection: 'column', maxHeight: '45%' }}>
+                <Typography variant="subtitle2" gutterBottom>
+                  AAs purchased{' '}
+                  <Typography component="span" variant="caption" color="text.secondary">
+                    ({purchases.length})
+                  </Typography>
+                </Typography>
+                <Box sx={{ overflow: 'auto' }}>
+                  {purchases.map((p, i) => (
+                    <Stack key={`${p.ts}-${i}`} direction="row" spacing={1} alignItems="center" sx={{ py: 0.3 }}>
+                      <AutoAwesomeIcon sx={{ fontSize: 12, color: '#b07fd0' }} />
+                      <Typography variant="caption" sx={{ flexGrow: 1 }} noWrap title={p.ability}>
+                        {p.ability}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {p.cost} pt{p.cost === 1 ? '' : 's'}
+                      </Typography>
+                    </Stack>
+                  ))}
+                </Box>
+              </Paper>
+            )}
+            <Paper variant="outlined" sx={{ p: 2, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+              <Typography variant="subtitle2" gutterBottom>
+                Recent progress
+              </Typography>
+              <Box sx={{ overflow: 'auto' }}>
+                {feed.map((f, i) => (
                 <Stack
                   key={`${f.ts}-${f.kind}-${i}`}
                   direction="row"
@@ -203,8 +250,9 @@ export default function LevelingView(): JSX.Element {
                   </Typography>
                 </Stack>
               ))}
-            </Box>
-          </Paper>
+              </Box>
+            </Paper>
+          </Stack>
         </Stack>
       )}
     </Stack>

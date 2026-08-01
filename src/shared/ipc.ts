@@ -10,6 +10,7 @@ export const IPC = {
   getTurnIns: 'turnins:get',
   getLevels: 'levels:get',
   getAAs: 'aa:get',
+  getAASpends: 'aa:getSpends',
   getCharacter: 'character:get',
   listCharacters: 'character:list',
   setCharacter: 'character:set',
@@ -19,5 +20,6 @@ export const IPC = {
   onTurnIn: 'log:turnin',
   onLevel: 'log:level',
   onAA: 'log:aa',
+  onAASpend: 'log:aaSpend',
   onLine: 'log:line'
 } as const

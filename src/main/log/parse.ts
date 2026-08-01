@@ -97,6 +97,18 @@ export function matchAA(line: LogLine): { amount: number; nowHave: number } | nu
   return { amount: m[1] === 'an' ? 1 : Number(m[1]), nowHave: Number(m[2]) }
 }
 
+// Spending AA on an ability:
+//   You have gained the ability "Spell Casting Mastery" at a cost of 3 ability points.
+//   You have gained the ability to use Sneak at a cost of 1 ability point.
+const AA_SPEND_RE = / at a cost of (\d+) ability points?\.$/
+const AA_ABILITY_RE = /gained the ability (?:"([^"]+)"|to use (.+?)) at a cost of/
+export function matchAASpend(line: LogLine): { ability: string; cost: number } | null {
+  const c = AA_SPEND_RE.exec(line.text)
+  if (!c) return null
+  const a = AA_ABILITY_RE.exec(line.text)
+  return { ability: (a?.[1] ?? a?.[2] ?? 'ability').trim(), cost: Number(c[1]) }
+}
+
 // EQ Legends encodes instance difficulty in the zone name:
 //   base (no suffix) = d0, "(Awakened)" = d1, "(Adaptive)" = d2,
 //   "(Fused)" = d3, "(Refined)" = d4. Also strips "- Solo"/"- Group N".
