@@ -3,8 +3,8 @@ import { join } from 'path'
 import { IPC } from '../shared/ipc'
 import { characterId, listCharacters, parseLogName, resolveActiveCharacter } from './log/config'
 import { Tailer } from './log/Tailer'
-import { getRuleset } from './log/rulesets'
-import { scanLootHistory } from './log/scanHistory'
+import { newLogState, processLine, type LogState } from './log/process'
+import { scanLog } from './log/scanHistory'
 import { loadInventory } from './inventory/parseInventory'
 import {
   getActiveLogPath,
@@ -13,14 +13,17 @@ import {
   setInventory,
   setQuestComplete
 } from './store'
-import type { CharacterRef, LootEvent } from '../shared/types'
+import type { CharacterRef, KillCounts, LootEvent, TurnInEvent } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
 
-/** Complete loot record, rebuilt from the log each launch and appended live. */
+/** Log-derived state for the active character, rebuilt on launch + appended live. */
 let lootHistory: LootEvent[] = []
+let turnIns: TurnInEvent[] = []
+let kills: KillCounts = {}
+let logState: LogState = newLogState()
 
 function activeCharId(): string {
   return character ? characterId(character) : 'none'
@@ -73,19 +76,34 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   setActiveLogPath(ref.logPath)
   console.log(`[eq-tools] Tailing ${ref.name}@${ref.server}: ${ref.logPath}`)
 
-  // Build the full loot history from the existing log before tailing new lines.
-  lootHistory = await scanLootHistory(ref.logPath)
-  console.log(`[eq-tools] Loaded ${lootHistory.length} historical loot events.`)
+  // Scan the whole log first: loot (with mob + zone), turn-ins, and kills.
+  const scan = await scanLog(ref.logPath)
+  lootHistory = scan.loot
+  turnIns = scan.turnIns
+  kills = scan.kills
+  logState = newLogState()
+  console.log(
+    `[eq-tools] Loaded ${lootHistory.length} loot events, ${turnIns.length} turn-ins, ${
+      Object.keys(kills).length
+    } distinct mobs.`
+  )
 
-  const { matchLoot } = getRuleset()
   tailer = new Tailer(ref.logPath, { fromStart: false })
   tailer.on('line', (line) => {
     mainWindow?.webContents.send(IPC.onLine, line)
-    const loot = matchLoot(line)
-    if (loot) {
-      lootHistory.push(loot)
-      mainWindow?.webContents.send(IPC.onLoot, loot)
-    }
+    processLine(line, logState, {
+      onLoot: (loot) => {
+        lootHistory.push(loot)
+        mainWindow?.webContents.send(IPC.onLoot, loot)
+      },
+      onTurnIn: (t) => {
+        turnIns.push(t)
+        mainWindow?.webContents.send(IPC.onTurnIn, t)
+      },
+      onKill: (mob) => {
+        kills[mob] = (kills[mob] ?? 0) + 1
+      }
+    })
   })
   tailer.on('error', (err) => console.error('[eq-tools] tailer error', err))
   void tailer.start()
@@ -120,6 +138,8 @@ function registerIpc(): void {
     setQuestComplete(activeCharId(), questKey, complete)
   )
   ipcMain.handle(IPC.getLootHistory, () => lootHistory)
+  ipcMain.handle(IPC.getKills, () => kills)
+  ipcMain.handle(IPC.getTurnIns, () => turnIns)
 }
 
 app.whenReady().then(() => {

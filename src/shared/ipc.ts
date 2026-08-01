@@ -6,11 +6,14 @@ export const IPC = {
   reloadInventory: 'inventory:reload',
   setQuestComplete: 'progress:setQuestComplete',
   getLootHistory: 'loot:getHistory',
+  getKills: 'loot:getKills',
+  getTurnIns: 'turnins:get',
   getCharacter: 'character:get',
   listCharacters: 'character:list',
   setCharacter: 'character:set',
 
   // main -> renderer (send/on)
   onLoot: 'log:loot',
+  onTurnIn: 'log:turnin',
   onLine: 'log:line'
 } as const

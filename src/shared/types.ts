@@ -19,11 +19,25 @@ export interface LogLine {
   raw: string
 }
 
-/** A loot event detected in the log ("You have looted a X"). */
+/** A loot event detected in the log ("You have looted a X from <mob>'s corpse"). */
 export interface LootEvent {
   ts: number
   item: string
+  /** mob the item was looted from, if present */
+  source?: string
+  /** zone the character was in when it was looted */
+  zone?: string
 }
+
+/** A completed NPC trade / quest turn-in ("You offered … / complete the trade"). */
+export interface TurnInEvent {
+  ts: number
+  npc: string
+  items: string[]
+}
+
+/** Kill counts keyed by mob name (for drop-rate estimates). */
+export type KillCounts = Record<string, number>
 
 // ----- Plane of Sky quest data (produced by scripts/scrape-posky.ts) -----
 

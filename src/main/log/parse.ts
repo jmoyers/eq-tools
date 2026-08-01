@@ -30,16 +30,55 @@ export function parseLine(raw: string): LogLine | null {
 // Real EQ Legends self-loot lines look like:
 //   --You have looted a Mote of Infinitesimal Potential from Bazzzazzt's corpse.--
 //   --You have looted an Efreeti War Staff from the Hand of Veeshan's corpse.--
-// The optional " from <source> corpse" suffix must be stripped from the item name.
-const LOOT_RE = /^--You have looted (?:an? )?(.+?)(?: from .+? corpse)?\.--$/
+// Capture the item and the source mob (from "<mob>'s corpse").
+const LOOT_RE = /^--You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.--$/
 // Dashless fallback for servers/cases that omit the surrounding dashes.
-const LOOT_RE_PLAIN = /^You have looted (?:an? )?(.+?)(?: from .+? corpse)?\.$/
+const LOOT_RE_PLAIN = /^You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.$/
+
+function cleanMob(s?: string): string | undefined {
+  if (!s) return undefined
+  return s.replace(/['`’]s$/i, '').trim() || undefined
+}
 
 /** Extract a self-loot event from a parsed line, or null. */
 export function matchLoot(line: LogLine): LootEvent | null {
   const m = LOOT_RE.exec(line.text) ?? LOOT_RE_PLAIN.exec(line.text)
   if (!m) return null
-  return { ts: line.ts, item: m[1].trim() }
+  return { ts: line.ts, item: m[1].trim(), source: cleanMob(m[2]) }
+}
+
+// "You have entered The Oasis of Marr."
+const ZONE_RE = /^You have entered (.+?)\.$/
+export function matchZone(line: LogLine): string | null {
+  const m = ZONE_RE.exec(line.text)
+  return m ? m[1].trim() : null
+}
+
+// Kills, for drop-rate denominators:
+//   "You have slain a spectre!"
+//   "Maestro of Rancor has been slain by Innoruuk`s Chosen!"
+const SLAIN_SELF_RE = /^You have slain (.+?)!$/
+const SLAIN_BY_RE = /^(.+?) has been slain by .+?!$/
+export function matchKill(line: LogLine): string | null {
+  const self = SLAIN_SELF_RE.exec(line.text)
+  if (self) return self[1].trim()
+  const by = SLAIN_BY_RE.exec(line.text)
+  if (by && !/^you\b/i.test(by[1])) return by[1].trim()
+  return null
+}
+
+// Turn-ins: "You offered 1 Sphinx Claw to Dason Goldblade." then
+//           "You complete the trade with Dason Goldblade."
+const OFFER_RE = /^You offered [\d,]+ (.+?) to (.+?)\.$/
+export function matchOffer(line: LogLine): { item: string; npc: string } | null {
+  const m = OFFER_RE.exec(line.text)
+  return m ? { item: m[1].trim(), npc: m[2].trim() } : null
+}
+
+const TRADE_DONE_RE = /^You complete the trade with (.+?)\.$/
+export function matchTradeComplete(line: LogLine): string | null {
+  const m = TRADE_DONE_RE.exec(line.text)
+  return m ? m[1].trim() : null
 }
 
 // ----- combat matchers (stubs for the next milestone) -----

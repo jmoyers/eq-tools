@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { CountSource, LootEvent, PoskyQuest, ProgressState } from '@shared/types'
+import type { CountSource, LootEvent, PoskyQuest, ProgressState, TurnInEvent } from '@shared/types'
 import { getPoskyData } from '../../data'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
@@ -9,6 +9,25 @@ const posky = getPoskyData()
 const COUNT_SOURCE_KEY = 'eq.countSource'
 
 export { questKey }
+
+/**
+ * Match logged turn-ins to quests: a quest is turned in when its giver received
+ * (in one trade) every item the quest requires.
+ */
+function matchTurnIns(turnIns: TurnInEvent[], quests: PoskyQuest[]): Set<string> {
+  const matched = new Set<string>()
+  for (const t of turnIns) {
+    const npc = t.npc.toLowerCase()
+    const offered = new Set(t.items.map((i) => i.toLowerCase()))
+    for (const q of quests) {
+      if (!q.giver || q.giver.toLowerCase() !== npc) continue
+      if (q.items.length > 0 && q.items.every((it) => offered.has(it.name.toLowerCase()))) {
+        matched.add(questKey(q))
+      }
+    }
+  }
+  return matched
+}
 
 function loadCountSource(): CountSource {
   const v = localStorage.getItem(COUNT_SOURCE_KEY)
@@ -90,18 +109,34 @@ export function useProgress(lastLoot: LootEvent | null): UseProgress {
   const [progress, setProgress] = useState<ProgressState | null>(null)
   const [character, setCharacter] = useState<string | null>(null)
   const [lootHistory, setLootHistory] = useState<LootEvent[]>([])
+  const [turnIns, setTurnIns] = useState<TurnInEvent[]>([])
   const [countSource, setCountSourceState] = useState<CountSource>(loadCountSource)
 
   useEffect(() => {
     void window.eq.getProgress().then(setProgress)
     void window.eq.getCharacter().then((c) => setCharacter(c?.name ?? null))
     void window.eq.getLootHistory().then(setLootHistory)
+    void window.eq.getTurnIns().then(setTurnIns)
+    const off = window.eq.onTurnIn((t) => setTurnIns((prev) => [...prev, t]))
+    return off
   }, [])
 
   // Append live loot to the in-memory history.
   useEffect(() => {
     if (lastLoot) setLootHistory((h) => [...h, lastLoot])
   }, [lastLoot])
+
+  // Auto-complete quests whose items were turned in to their giver (from the log).
+  useEffect(() => {
+    if (!progress) return
+    const matched = matchTurnIns(turnIns, posky.quests)
+    const done = new Set(progress.completedQuests)
+    const toComplete = [...matched].filter((k) => !done.has(k))
+    if (toComplete.length === 0) return
+    void Promise.all(toComplete.map((k) => window.eq.setQuestComplete(k, true))).then((results) => {
+      if (results.length) setProgress(results[results.length - 1])
+    })
+  }, [turnIns, progress])
 
   const setCountSource = useCallback((s: CountSource) => {
     localStorage.setItem(COUNT_SOURCE_KEY, s)

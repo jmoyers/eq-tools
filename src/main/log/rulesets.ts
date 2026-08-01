@@ -1,18 +1,35 @@
-import { matchLoot as classicMatchLoot } from './parse'
+import {
+  matchKill,
+  matchLoot,
+  matchOffer,
+  matchTradeComplete,
+  matchZone
+} from './parse'
 import { DEFAULT_PROFILE } from '../../shared/profiles'
 import type { LogLine, LootEvent } from '../../shared/types'
 
 /**
  * A per-profile set of log-parsing rules. EQ servers/emulators can differ in how
- * loot, combat, etc. appear in the log, so parsing is looked up by profile. Add a
- * new ruleset here when adding a server whose log format differs.
+ * loot, zones, kills, and trades appear in the log, so parsing is looked up by
+ * profile. Add a new ruleset when adding a server whose log format differs.
  */
 export interface LogRuleset {
   id: string
   matchLoot(line: LogLine): LootEvent | null
+  matchZone(line: LogLine): string | null
+  matchKill(line: LogLine): string | null
+  matchOffer(line: LogLine): { item: string; npc: string } | null
+  matchTradeComplete(line: LogLine): string | null
 }
 
-const classic: LogRuleset = { id: 'classic', matchLoot: classicMatchLoot }
+const classic: LogRuleset = {
+  id: 'classic',
+  matchLoot,
+  matchZone,
+  matchKill,
+  matchOffer,
+  matchTradeComplete
+}
 
 export const RULESETS: Record<string, LogRuleset> = {
   eqlegends: classic,

@@ -14,15 +14,23 @@ import {
   TextField,
   Typography
 } from '@mui/material'
-import type { LootEvent } from '@shared/types'
+import type { KillCounts, LootEvent } from '@shared/types'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
+import { ItemDetailDialog } from './ItemDetailDialog'
+
+const posky = getPoskyData()
 
 // Names of every item required by a Plane of Sky quest (for highlighting).
-const questItemNames = new Set<string>(
-  getPoskyData().quests.flatMap((q) => q.items.map((i) => i.name.toLowerCase()))
-)
+const questItemNames = new Set<string>(posky.quests.flatMap((q) => q.items.map((i) => i.name.toLowerCase())))
+
+// EQ stat block per item name (quest items + rewards), for the drill-down.
+const itemStats: Record<string, string> = {}
+for (const qz of posky.quests) {
+  for (const it of qz.items) if (it.stats) itemStats[it.name.toLowerCase()] = it.stats
+  if (qz.reward && qz.rewardStats) itemStats[qz.reward.toLowerCase()] = qz.rewardStats
+}
 
 const MAX_ROWS = 500
 
@@ -35,12 +43,15 @@ function fmtTime(ts: number): string {
 export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [history, setHistory] = useState<LootEvent[]>([])
+  const [kills, setKills] = useState<KillCounts>({})
   const [query, setQuery] = useState('')
-  const [groupByItem, setGroupByItem] = useState(false)
+  const [groupByItem, setGroupByItem] = useState(true)
   const [questOnly, setQuestOnly] = useState(false)
+  const [selected, setSelected] = useState<string | null>(null)
 
   useEffect(() => {
     void window.eq.getLootHistory().then(setHistory)
+    void window.eq.getKills().then(setKills)
   }, [])
   useEffect(() => {
     if (lastLoot) setHistory((h) => [...h, lastLoot])
@@ -56,18 +67,31 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
   }, [history, q, questOnly])
 
   const grouped = useMemo(() => {
-    const map = new Map<string, { item: string; count: number; last: number }>()
+    interface Group {
+      item: string
+      count: number
+      last: number
+      sources: Map<string, number>
+      zones: Set<string>
+    }
+    const map = new Map<string, Group>()
     for (const e of events) {
       const key = e.item.toLowerCase()
-      const cur = map.get(key)
-      if (cur) {
-        cur.count += 1
-        cur.last = Math.max(cur.last, e.ts)
-      } else {
-        map.set(key, { item: e.item, count: 1, last: e.ts })
+      let cur = map.get(key)
+      if (!cur) {
+        cur = { item: e.item, count: 0, last: 0, sources: new Map(), zones: new Set() }
+        map.set(key, cur)
       }
+      cur.count += 1
+      cur.last = Math.max(cur.last, e.ts)
+      if (e.source) cur.sources.set(e.source, (cur.sources.get(e.source) ?? 0) + 1)
+      if (e.zone) cur.zones.add(e.zone)
     }
-    const list = [...map.values()].sort((a, b) => b.count - a.count || b.last - a.last)
+    const list = [...map.values()].map((g) => {
+      const topSource = [...g.sources.entries()].sort((a, b) => b[1] - a[1])[0]?.[0]
+      return { item: g.item, count: g.count, last: g.last, topSource, zoneCount: g.zones.size }
+    })
+    list.sort((a, b) => b.count - a.count || b.last - a.last)
     // Pin favorites to the top (stable).
     return list.sort((a, b) => Number(isFavorite(b.item)) - Number(isFavorite(a.item)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -95,7 +119,8 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
         />
         <Box sx={{ flexGrow: 1 }} />
         <Typography variant="body2" color="text.secondary">
-          {history.length.toLocaleString()} loot events · {grouped.length.toLocaleString()} unique items
+          {history.length.toLocaleString()} loot events · {grouped.length.toLocaleString()} unique items · click a
+          row for mob/zone/drop-rate breakdown
         </Typography>
       </Stack>
 
@@ -115,12 +140,19 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
                 <TableCell padding="checkbox" />
                 <TableCell>Item</TableCell>
                 <TableCell align="right">Times looted</TableCell>
+                <TableCell>Top source</TableCell>
+                <TableCell align="right">Zones</TableCell>
                 <TableCell>Last looted</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {grouped.slice(0, MAX_ROWS).map((g) => (
-                <TableRow key={g.item} hover>
+                <TableRow
+                  key={g.item}
+                  hover
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => setSelected(g.item)}
+                >
                   <TableCell padding="checkbox">
                     <FavoriteStar name={g.item} favorited={isFavorite(g.item)} onToggle={toggleFavorite} />
                   </TableCell>
@@ -131,6 +163,10 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
                     </Stack>
                   </TableCell>
                   <TableCell align="right">{g.count}</TableCell>
+                  <TableCell sx={{ color: 'text.secondary' }}>{g.topSource ?? '—'}</TableCell>
+                  <TableCell align="right" sx={{ color: 'text.secondary' }}>
+                    {g.zoneCount || '—'}
+                  </TableCell>
                   <TableCell sx={{ color: 'text.secondary' }}>{fmtTime(g.last)}</TableCell>
                 </TableRow>
               ))}
@@ -141,13 +177,20 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
             <TableHead>
               <TableRow>
                 <TableCell padding="checkbox" />
-                <TableCell sx={{ width: 160 }}>Time</TableCell>
+                <TableCell sx={{ width: 150 }}>Time</TableCell>
                 <TableCell>Item</TableCell>
+                <TableCell>From</TableCell>
+                <TableCell>Zone</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {events.slice(0, MAX_ROWS).map((e, i) => (
-                <TableRow key={`${e.ts}-${e.item}-${i}`} hover>
+                <TableRow
+                  key={`${e.ts}-${e.item}-${i}`}
+                  hover
+                  sx={{ cursor: 'pointer' }}
+                  onClick={() => setSelected(e.item)}
+                >
                   <TableCell padding="checkbox">
                     <FavoriteStar name={e.item} favorited={isFavorite(e.item)} onToggle={toggleFavorite} />
                   </TableCell>
@@ -158,6 +201,8 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
                       {isQuestItem(e.item) && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
                     </Stack>
                   </TableCell>
+                  <TableCell sx={{ color: 'text.secondary' }}>{e.source ?? '—'}</TableCell>
+                  <TableCell sx={{ color: 'text.secondary' }}>{e.zone ?? '—'}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -170,6 +215,18 @@ export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): 
           </Typography>
         )}
       </Box>
+
+      {selected && (
+        <ItemDetailDialog
+          open
+          onClose={() => setSelected(null)}
+          item={selected}
+          events={history.filter((e) => e.item.toLowerCase() === selected.toLowerCase())}
+          kills={kills}
+          stats={itemStats[selected.toLowerCase()]}
+          isQuestItem={questItemNames.has(selected.toLowerCase())}
+        />
+      )}
     </Stack>
   )
 }
