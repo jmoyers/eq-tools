@@ -13,7 +13,7 @@ import {
   setInventory,
   setQuestComplete
 } from './store'
-import type { CharacterRef, KillCounts, LootEvent, TurnInEvent } from '../shared/types'
+import type { CharacterRef, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
@@ -22,7 +22,8 @@ let character: CharacterRef | null = null
 /** Log-derived state for the active character, rebuilt on launch + appended live. */
 let lootHistory: LootEvent[] = []
 let turnIns: TurnInEvent[] = []
-let kills: KillCounts = {}
+let kills: KillMap = {}
+let levels: LevelEvent[] = []
 let logState: LogState = newLogState()
 
 function activeCharId(): string {
@@ -81,11 +82,12 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   lootHistory = scan.loot
   turnIns = scan.turnIns
   kills = scan.kills
+  levels = scan.levels
   logState = newLogState()
   console.log(
-    `[eq-tools] Loaded ${lootHistory.length} loot events, ${turnIns.length} turn-ins, ${
+    `[eq-tools] Loaded ${lootHistory.length} loot, ${turnIns.length} turn-ins, ${
       Object.keys(kills).length
-    } distinct mobs.`
+    } mobs, ${levels.length} level-ups.`
   )
 
   tailer = new Tailer(ref.logPath, { fromStart: false })
@@ -100,8 +102,15 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
         turnIns.push(t)
         mainWindow?.webContents.send(IPC.onTurnIn, t)
       },
-      onKill: (mob) => {
-        kills[mob] = (kills[mob] ?? 0) + 1
+      onKill: (mob, tier, ts) => {
+        const k = (kills[mob] ??= { count: 0, bestTier: 0, lastTs: 0 })
+        k.count += 1
+        k.bestTier = Math.max(k.bestTier, tier)
+        k.lastTs = Math.max(k.lastTs, ts)
+      },
+      onLevelUp: (level, ts) => {
+        levels.push({ ts, level })
+        mainWindow?.webContents.send(IPC.onLevel, { ts, level })
       }
     })
   })
@@ -140,6 +149,7 @@ function registerIpc(): void {
   ipcMain.handle(IPC.getLootHistory, () => lootHistory)
   ipcMain.handle(IPC.getKills, () => kills)
   ipcMain.handle(IPC.getTurnIns, () => turnIns)
+  ipcMain.handle(IPC.getLevels, () => levels)
 }
 
 app.whenReady().then(() => {

@@ -8,6 +8,7 @@ export const IPC = {
   getLootHistory: 'loot:getHistory',
   getKills: 'loot:getKills',
   getTurnIns: 'turnins:get',
+  getLevels: 'levels:get',
   getCharacter: 'character:get',
   listCharacters: 'character:list',
   setCharacter: 'character:set',
@@ -15,5 +16,6 @@ export const IPC = {
   // main -> renderer (send/on)
   onLoot: 'log:loot',
   onTurnIn: 'log:turnin',
+  onLevel: 'log:level',
   onLine: 'log:line'
 } as const

@@ -11,6 +11,7 @@
     "preview": "electron-vite preview",
     "start": "electron-vite dev",
     "scrape:posky": "tsx scripts/scrape-posky.ts",
+    "scrape:bosses": "tsx scripts/scrape-bosses.ts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",

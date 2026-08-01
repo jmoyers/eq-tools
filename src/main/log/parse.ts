@@ -81,6 +81,30 @@ export function matchTradeComplete(line: LogLine): string | null {
   return m ? m[1].trim() : null
 }
 
+// "You have gained a level! Welcome to level 26!"
+const LEVEL_RE = /^You have gained a level! Welcome to level (\d+)!$/
+export function matchLevelUp(line: LogLine): number | null {
+  const m = LEVEL_RE.exec(line.text)
+  return m ? Number(m[1]) : null
+}
+
+// EQ Legends encodes instance difficulty in the zone name:
+//   base (no suffix) = d0, "(Awakened)" = d1, "(Adaptive)" = d2,
+//   "(Fused)" = d3, "(Refined)" = d4. Also strips "- Solo"/"- Group N".
+const TIER_ADJ: Record<string, number> = { awakened: 1, adaptive: 2, fused: 3, refined: 4 }
+export const TIER_LABELS = ['d0', 'd1 · Awakened', 'd2 · Adaptive', 'd3 · Fused', 'd4 · Refined']
+
+export function zoneTier(zone: string): { base: string; tier: number } {
+  const adj = /\(([A-Za-z]+)\)\s*$/.exec(zone)
+  const tier = adj ? TIER_ADJ[adj[1].toLowerCase()] ?? 0 : 0
+  const base = zone
+    .replace(/\s*-\s*(Solo|Group)\b.*$/i, '')
+    .replace(/\s+\d+\s*\([^)]*\)\s*$/, '')
+    .replace(/\s+\([^)]*\)\s*$/, '')
+    .trim()
+  return { base, tier }
+}
+
 // ----- combat matchers (stubs for the next milestone) -----
 // Left intentionally minimal; the tailer already delivers every parsed line,
 // so combat analysis can subscribe to `log:line` without reworking Phase 2.

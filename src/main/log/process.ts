@@ -1,5 +1,6 @@
 import type { LogLine, LootEvent, TurnInEvent } from '../../shared/types'
 import { getRuleset } from './rulesets'
+import { zoneTier } from './parse'
 
 /** Cross-line state carried while processing a log (current zone, pending trade). */
 export interface LogState {
@@ -14,8 +15,9 @@ export function newLogState(): LogState {
 export interface LogHandlers {
   onLoot?(e: LootEvent): void
   onTurnIn?(e: TurnInEvent): void
-  onKill?(mob: string): void
+  onKill?(mob: string, tier: number, ts: number): void
   onZone?(zone: string): void
+  onLevelUp?(level: number, ts: number): void
 }
 
 /**
@@ -42,7 +44,13 @@ export function processLine(line: LogLine, state: LogState, h: LogHandlers, prof
 
   const kill = r.matchKill(line)
   if (kill) {
-    h.onKill?.(kill)
+    h.onKill?.(kill, zoneTier(state.zone ?? '').tier, line.ts)
+    return
+  }
+
+  const level = r.matchLevelUp(line)
+  if (level != null) {
+    h.onLevelUp?.(level, line.ts)
     return
   }
 

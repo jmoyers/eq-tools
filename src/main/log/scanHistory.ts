@@ -1,31 +1,40 @@
 import { readFile } from 'fs/promises'
 import { parseLine } from './parse'
 import { newLogState, processLine } from './process'
-import type { KillCounts, LootEvent, TurnInEvent } from '../../shared/types'
+import type { KillMap, LevelEvent, LootEvent, TurnInEvent } from '../../shared/types'
 
 export interface ScanResult {
   loot: LootEvent[]
   turnIns: TurnInEvent[]
-  kills: KillCounts
+  kills: KillMap
+  levels: LevelEvent[]
+}
+
+function recordKill(kills: KillMap, mob: string, tier: number, ts: number): void {
+  const k = (kills[mob] ??= { count: 0, bestTier: 0, lastTs: 0 })
+  k.count += 1
+  k.bestTier = Math.max(k.bestTier, tier)
+  k.lastTs = Math.max(k.lastTs, ts)
 }
 
 /**
  * Scan the entire log once and extract loot (with source mob + zone), quest
- * turn-ins, and kill counts. Loot parsing from the full log is the default count
- * source — more reliable than an inventory dump when items sit in an un-exported
- * bank (e.g. the Dragonhoard).
+ * turn-ins, kills (with best instance tier, for drop rates + boss progress), and
+ * level-ups. Log parsing is the default count source — more reliable than an
+ * inventory dump when items sit in an un-exported bank (e.g. the Dragonhoard).
  */
 export async function scanLog(logPath: string): Promise<ScanResult> {
   let text: string
   try {
     text = await readFile(logPath, 'utf8')
   } catch {
-    return { loot: [], turnIns: [], kills: {} }
+    return { loot: [], turnIns: [], kills: {}, levels: [] }
   }
 
   const loot: LootEvent[] = []
   const turnIns: TurnInEvent[] = []
-  const kills: KillCounts = {}
+  const kills: KillMap = {}
+  const levels: LevelEvent[] = []
   const state = newLogState()
 
   for (const raw of text.split(/\r?\n/)) {
@@ -35,7 +44,8 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
       !raw.includes('entered') &&
       !raw.includes('slain') &&
       !raw.includes('offered') &&
-      !raw.includes('complete the trade')
+      !raw.includes('complete the trade') &&
+      !raw.includes('gained a level')
     ) {
       continue
     }
@@ -44,11 +54,10 @@ export async function scanLog(logPath: string): Promise<ScanResult> {
     processLine(line, state, {
       onLoot: (e) => loot.push(e),
       onTurnIn: (e) => turnIns.push(e),
-      onKill: (mob) => {
-        kills[mob] = (kills[mob] ?? 0) + 1
-      }
+      onKill: (mob, tier, ts) => recordKill(kills, mob, tier, ts),
+      onLevelUp: (level, ts) => levels.push({ ts, level })
     })
   }
 
-  return { loot, turnIns, kills }
+  return { loot, turnIns, kills, levels }
 }

@@ -1,5 +1,6 @@
 import {
   matchKill,
+  matchLevelUp,
   matchLoot,
   matchOffer,
   matchTradeComplete,
@@ -20,6 +21,7 @@ export interface LogRuleset {
   matchKill(line: LogLine): string | null
   matchOffer(line: LogLine): { item: string; npc: string } | null
   matchTradeComplete(line: LogLine): string | null
+  matchLevelUp(line: LogLine): number | null
 }
 
 const classic: LogRuleset = {
@@ -28,7 +30,8 @@ const classic: LogRuleset = {
   matchZone,
   matchKill,
   matchOffer,
-  matchTradeComplete
+  matchTradeComplete,
+  matchLevelUp
 }
 
 export const RULESETS: Record<string, LogRuleset> = {

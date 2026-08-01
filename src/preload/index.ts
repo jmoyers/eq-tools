@@ -2,7 +2,8 @@ import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type {
   CharacterRef,
-  KillCounts,
+  KillMap,
+  LevelEvent,
   LogLine,
   LootEvent,
   ProgressState,
@@ -35,8 +36,9 @@ const api = {
   setQuestComplete: (questKey: string, complete: boolean): Promise<ProgressState> =>
     ipcRenderer.invoke(IPC.setQuestComplete, questKey, complete),
   getLootHistory: (): Promise<LootEvent[]> => ipcRenderer.invoke(IPC.getLootHistory),
-  getKills: (): Promise<KillCounts> => ipcRenderer.invoke(IPC.getKills),
+  getKills: (): Promise<KillMap> => ipcRenderer.invoke(IPC.getKills),
   getTurnIns: (): Promise<TurnInEvent[]> => ipcRenderer.invoke(IPC.getTurnIns),
+  getLevels: (): Promise<LevelEvent[]> => ipcRenderer.invoke(IPC.getLevels),
 
   onLoot: (cb: (loot: LootEvent) => void): (() => void) => {
     const listener = (_e: unknown, loot: LootEvent): void => cb(loot)
@@ -47,6 +49,11 @@ const api = {
     const listener = (_e: unknown, t: TurnInEvent): void => cb(t)
     ipcRenderer.on(IPC.onTurnIn, listener)
     return () => ipcRenderer.removeListener(IPC.onTurnIn, listener)
+  },
+  onLevel: (cb: (e: LevelEvent) => void): (() => void) => {
+    const listener = (_e: unknown, ev: LevelEvent): void => cb(ev)
+    ipcRenderer.on(IPC.onLevel, listener)
+    return () => ipcRenderer.removeListener(IPC.onLevel, listener)
   },
   onLine: (cb: (line: LogLine) => void): (() => void) => {
     const listener = (_e: unknown, line: LogLine): void => cb(line)

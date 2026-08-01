@@ -19,15 +19,19 @@ import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import Inventory2Icon from '@mui/icons-material/Inventory2'
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import CircleIcon from '@mui/icons-material/Circle'
 import type { CharacterRef, LootEvent } from '@shared/types'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import InventoryView from './features/inventory/InventoryView'
+import LevelingView from './features/leveling/LevelingView'
+import BossView from './features/bosses/BossView'
 
 const DRAWER_WIDTH = 220
 
-type View = 'posky' | 'inventory' | 'loot' | 'combat'
+type View = 'posky' | 'inventory' | 'loot' | 'leveling' | 'bosses' | 'combat'
 
 function lastPlayed(ms?: number): string {
   if (!ms) return ''
@@ -137,6 +141,18 @@ export default function App(): JSX.Element {
             </ListItemIcon>
             <ListItemText primary="Loot" />
           </ListItemButton>
+          <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
+            <ListItemIcon>
+              <EmojiEventsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Raid Targets" />
+          </ListItemButton>
+          <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
+            <ListItemIcon>
+              <TrendingUpIcon />
+            </ListItemIcon>
+            <ListItemText primary="Leveling" />
+          </ListItemButton>
           <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
             <ListItemIcon>
               <BarChartIcon />
@@ -152,6 +168,8 @@ export default function App(): JSX.Element {
           {view === 'posky' && <PoskyView key={viewKey} lastLoot={lastLoot} />}
           {view === 'inventory' && <InventoryView key={viewKey} lastLoot={lastLoot} />}
           {view === 'loot' && <LootView key={viewKey} lastLoot={lastLoot} />}
+          {view === 'bosses' && <BossView key={viewKey} lastLoot={lastLoot} />}
+          {view === 'leveling' && <LevelingView key={viewKey} />}
           {view === 'combat' && (
             <Typography color="text.secondary">
               Combat analysis coming next. The log pipeline is already streaming every line to the

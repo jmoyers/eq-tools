@@ -12,7 +12,7 @@ import {
   Typography
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import type { KillCounts, LootEvent } from '@shared/types'
+import type { KillMap, LootEvent } from '@shared/types'
 
 function StatCard({ label, value, hint }: { label: string; value: string; hint?: string }): JSX.Element {
   return (
@@ -123,7 +123,7 @@ export function ItemDetailDialog({
   onClose: () => void
   item: string
   events: LootEvent[]
-  kills: KillCounts
+  kills: KillMap
   stats?: string
   isQuestItem: boolean
 }): JSX.Element {
@@ -137,7 +137,7 @@ export function ItemDetailDialog({
     }
     const sources = [...bySource.entries()]
       .map(([name, count]) => {
-        const k = kills[name] ?? 0
+        const k = kills[name]?.count ?? 0
         return { name, count, kills: k, rate: k > 0 ? count / k : null }
       })
       .sort((a, b) => b.count - a.count)

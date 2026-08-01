@@ -36,8 +36,22 @@ export interface TurnInEvent {
   items: string[]
 }
 
-/** Kill counts keyed by mob name (for drop-rate estimates). */
-export type KillCounts = Record<string, number>
+/** A level-up ("You have gained a level! Welcome to level N!"). */
+export interface LevelEvent {
+  ts: number
+  level: number
+}
+
+/** Aggregated kill info for a mob (for drop rates + boss instance tiers). */
+export interface KillInfo {
+  count: number
+  /** highest instance difficulty tier the mob was killed at (0=base … 4=Refined) */
+  bestTier: number
+  lastTs: number
+}
+
+/** Kill info keyed by mob name. */
+export type KillMap = Record<string, KillInfo>
 
 // ----- Plane of Sky quest data (produced by scripts/scrape-posky.ts) -----
 
@@ -80,6 +94,26 @@ export interface PoskyQuest {
 export interface PoskyData {
   scrapedAt: string
   quests: PoskyQuest[]
+}
+
+// ----- Raid targets (bosses) -----
+
+export interface RaidTarget {
+  /** display name */
+  name: string
+  /** grouping, e.g. "Plane of Hate", "Dragons", "Gods & Avatars" */
+  category: string
+  /** exact in-log "slain" names to match against kills */
+  match: string[]
+  /** hotlinked wiki image URL */
+  image?: string
+  /** home zone / instance */
+  zone?: string
+}
+
+export interface BossData {
+  scrapedAt: string
+  targets: RaidTarget[]
 }
 
 /** Held-item counts keyed by lowercased item name. */

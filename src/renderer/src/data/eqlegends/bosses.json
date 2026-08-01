@@ -1,0 +1,239 @@
+{
+  "scrapedAt": "2026-08-01T21:47:20.947Z",
+  "targets": [
+    {
+      "name": "Innoruuk, the Prince of Hate",
+      "category": "Plane of Hate",
+      "match": [
+        "Innoruuk, the Prince of Hate"
+      ],
+      "zone": "Plane of Hate",
+      "image": "https://eqlwiki.com/images/8/87/Innoruuk.PNG"
+    },
+    {
+      "name": "Maestro of Rancor",
+      "category": "Plane of Hate",
+      "match": [
+        "Maestro of Rancor"
+      ],
+      "zone": "Plane of Hate",
+      "image": "https://eqlwiki.com/images/0/04/Maestro_of_Rancor.png"
+    },
+    {
+      "name": "Lord of Loathing",
+      "category": "Plane of Hate",
+      "match": [
+        "Lord of Loathing"
+      ],
+      "zone": "Plane of Hate"
+    },
+    {
+      "name": "High Priest M`kari",
+      "category": "Plane of Hate",
+      "match": [
+        "High Priest M`kari"
+      ],
+      "zone": "Plane of Hate",
+      "image": "https://eqlwiki.com/images/b/b2/Npc_high_priest_mkari.png"
+    },
+    {
+      "name": "Ashenbone Broodmaster",
+      "category": "Plane of Hate",
+      "match": [
+        "Ashenbone Broodmaster"
+      ],
+      "zone": "Plane of Hate"
+    },
+    {
+      "name": "Magi P`tasa",
+      "category": "Plane of Hate",
+      "match": [
+        "Magi P`tasa"
+      ],
+      "zone": "Plane of Hate"
+    },
+    {
+      "name": "Coercer T`vala",
+      "category": "Plane of Hate",
+      "match": [
+        "Coercer T`vala"
+      ],
+      "zone": "Plane of Hate",
+      "image": "https://eqlwiki.com/images/1/1f/Npc_coercer_t%60vala.png"
+    },
+    {
+      "name": "Cazic Thule",
+      "category": "Plane of Fear",
+      "match": [
+        "Cazic Thule",
+        "Cazic-Thule"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/7/7f/Ct.jpg"
+    },
+    {
+      "name": "Dread",
+      "category": "Plane of Fear",
+      "match": [
+        "Dread"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/4/4d/Npc_dread.png"
+    },
+    {
+      "name": "Terror",
+      "category": "Plane of Fear",
+      "match": [
+        "Terror"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/4/4d/Npc_terror.png"
+    },
+    {
+      "name": "Fright",
+      "category": "Plane of Fear",
+      "match": [
+        "Fright"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/thumb/d/dd/Npc_fright.png/900px-Npc_fright.png"
+    },
+    {
+      "name": "Phoboplasm",
+      "category": "Plane of Fear",
+      "match": [
+        "Phoboplasm"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/f/f4/Npc_phoboplasm.png"
+    },
+    {
+      "name": "Corrupter of Life",
+      "category": "Plane of Fear",
+      "match": [
+        "Corrupter of Life"
+      ],
+      "zone": "Plane of Fear",
+      "image": "https://eqlwiki.com/images/thumb/4/41/Npc_corrupter_of_life.png/900px-Npc_corrupter_of_life.png"
+    },
+    {
+      "name": "The Spiroc Lord",
+      "category": "Plane of Sky",
+      "match": [
+        "The Spiroc Lord"
+      ],
+      "zone": "Plane of Sky",
+      "image": "https://eqlwiki.com/images/1/11/Pos_tsl1.png"
+    },
+    {
+      "name": "Sister of the Spire",
+      "category": "Plane of Sky",
+      "match": [
+        "Sister of the Spire"
+      ],
+      "zone": "Plane of Sky"
+    },
+    {
+      "name": "Bazzt Zzzt",
+      "category": "Plane of Sky",
+      "match": [
+        "Bazzt Zzzt"
+      ],
+      "zone": "Plane of Sky"
+    },
+    {
+      "name": "Eye of Veeshan",
+      "category": "Plane of Sky",
+      "match": [
+        "Eye of Veeshan"
+      ],
+      "zone": "Plane of Sky"
+    },
+    {
+      "name": "Lord Nagafen",
+      "category": "Dragons",
+      "match": [
+        "Lord Nagafen"
+      ],
+      "zone": "Nagafen's Lair",
+      "image": "https://eqlwiki.com/images/thumb/e/ee/Npc_lord_nagafen.png/900px-Npc_lord_nagafen.png"
+    },
+    {
+      "name": "Lady Vox",
+      "category": "Dragons",
+      "match": [
+        "Lady Vox"
+      ],
+      "zone": "Permafrost Keep",
+      "image": "https://eqlwiki.com/images/thumb/b/b3/Npc_lady_vox.png/900px-Npc_lady_vox.png"
+    },
+    {
+      "name": "Gorenaire",
+      "category": "Dragons",
+      "match": [
+        "Gorenaire"
+      ],
+      "zone": "Dreadlands"
+    },
+    {
+      "name": "Talendor",
+      "category": "Dragons",
+      "match": [
+        "Talendor"
+      ],
+      "zone": "Skyfire Mountains"
+    },
+    {
+      "name": "Severilous",
+      "category": "Dragons",
+      "match": [
+        "Severilous"
+      ],
+      "zone": "The Emerald Jungle"
+    },
+    {
+      "name": "Faydedar",
+      "category": "Dragons",
+      "match": [
+        "Faydedar"
+      ],
+      "zone": "Timorous Deep",
+      "image": "https://eqlwiki.com/images/thumb/2/25/Map_Icon.png/12px-Map_Icon.png"
+    },
+    {
+      "name": "Trakanon",
+      "category": "Dragons",
+      "match": [
+        "Trakanon"
+      ],
+      "zone": "Old Sebilis"
+    },
+    {
+      "name": "Venril Sathir",
+      "category": "Dragons",
+      "match": [
+        "Venril Sathir"
+      ],
+      "zone": "Karnor's Castle",
+      "image": "https://eqlwiki.com/images/thumb/9/94/WarningIcon.png/30px-WarningIcon.png"
+    },
+    {
+      "name": "Drelzna",
+      "category": "Dragons",
+      "match": [
+        "Drelzna"
+      ],
+      "zone": "Nagafen's Lair",
+      "image": "https://eqlwiki.com/images/3/3e/Npc_drelzna.png"
+    },
+    {
+      "name": "Efreeti Lord Djarn",
+      "category": "Other Named",
+      "match": [
+        "Efreeti Lord Djarn"
+      ],
+      "zone": "Solusek's Eye",
+      "image": "https://eqlwiki.com/images/thumb/2/23/Efreeti_lord_djarn.png/900px-Efreeti_lord_djarn.png"
+    }
+  ]
+}
