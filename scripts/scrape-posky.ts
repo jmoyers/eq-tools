@@ -40,13 +40,6 @@ const CLASSES = [
   'Wizard'
 ]
 
-/** Alternate page titles to try when the canonical one is missing. */
-function candidateTitles(cls: string): string[] {
-  const titles = [`${cls} Plane of Sky Tests`]
-  if (cls === 'Shadow Knight') titles.push('Shadowknight Plane of Sky Tests')
-  return titles
-}
-
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
 async function fetchParsedHtml(title: string): Promise<string | null> {
@@ -70,101 +63,6 @@ function dedupeDoubled(s: string): string {
 
 function cleanHeading(s: string): string {
   return s.replace(/\[\s*edit[^\]]*\]/gi, '').trim()
-}
-
-const NON_QUEST_H2 = new Set(['contents', 'checklist', 'quest start', 'quest starter', 'notes'])
-
-function isItemTable(headers: string[]): boolean {
-  const h = headers.map((x) => x.toLowerCase())
-  return h.includes('item') && h.includes('who') && h.includes('where')
-}
-
-function parseClassPage(cls: string, html: string, sourceTitle: string): PoskyQuest[] {
-  const $ = cheerio.load(html)
-  const quests: PoskyQuest[] = []
-
-  // Walk h1/h2/table in document order.
-  const nodes = $('h1, h2, table').toArray()
-  let giver: string | undefined
-  let pendingQuest: { name: string; headingEl: AnyNode } | null = null
-
-  for (const el of nodes) {
-    const tag = (el as unknown as { tagName: string }).tagName?.toLowerCase()
-
-    if (tag === 'h1') {
-      giver = cleanHeading($(el).text())
-      continue
-    }
-    if (tag === 'h2') {
-      const name = cleanHeading($(el).text())
-      pendingQuest = NON_QUEST_H2.has(name.toLowerCase()) ? null : { name, headingEl: el }
-      continue
-    }
-    if (tag === 'table') {
-      const headerCells = $(el)
-        .find('tr')
-        .first()
-        .find('th,td')
-        .map((_i, c) => $(c).text().trim())
-        .get()
-      if (!isItemTable(headerCells) || !pendingQuest) continue
-
-      const idx = headerCells.map((h) => h.toLowerCase())
-      const itemCol = idx.indexOf('item')
-      const whoCol = idx.indexOf('who')
-      const whereCol = idx.indexOf('where')
-
-      const items: PoskyItem[] = []
-      $(el)
-        .find('tr')
-        .slice(1)
-        .each((_i, tr) => {
-          const tds = $(tr).find('td,th')
-          if (tds.length < 3) return
-          const name = $(tds[itemCol]).text().replace(/\s+/g, ' ').trim()
-          if (!name) return
-          const who = $(tds[whoCol])
-            .text()
-            .replace(/\s+/g, ' ')
-            .trim()
-            .split(',')
-            .map((s) => s.trim())
-            .filter(Boolean)
-          const page = $(tds[itemCol]).find('a').first().attr('title')?.trim()
-          items.push({
-            name,
-            who,
-            where: $(tds[whereCol]).text().replace(/\s+/g, ' ').trim(),
-            count: 1,
-            page: page || undefined
-          })
-        })
-
-      if (items.length === 0) continue
-
-      // Reward = first item link between the heading and this table.
-      const range = $(pendingQuest.headingEl).parent().nextUntil(el)
-      const rewardAnchor = range.find('a').filter((_i, a) => !!$(a).text().trim()).first()
-      const reward = rewardAnchor.length ? dedupeDoubled(rewardAnchor.text()) : undefined
-      const rewardPage = rewardAnchor.attr('title')?.trim()
-      let rewardStats = range.text().replace(/\n{2,}/g, '\n').replace(/[ \t]{2,}/g, ' ').trim() || undefined
-      if (reward && rewardStats) rewardStats = rewardStats.replace(reward + reward, reward)
-
-      quests.push({
-        className: cls,
-        name: pendingQuest.name,
-        giver,
-        reward,
-        rewardStats: rewardStats && rewardStats.length < 600 ? rewardStats : undefined,
-        rewardPage: rewardPage || undefined,
-        items,
-        source: sourceTitle
-      })
-      pendingQuest = null
-    }
-  }
-
-  return quests
 }
 
 /**
@@ -237,29 +135,37 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
           if (t && title) pageByName[normName(t)] = title
         })
 
-      // Parse the "Quest Items" cell: entries look like "Name (island-who)".
-      const itemsText = $(tds[cItems]).text().replace(/\s+/g, ' ').trim()
+      // Parse the "Quest Items" cell. Each item sits on its own line (<br>) and
+      // looks like "Name (island-who)", "Name (island)", or just "Name".
+      const cellHtml = $(tds[cItems]).html() ?? ''
+      const segments = cellHtml
+        .split(/<br\s*\/?>/i)
+        .map((h) => cheerio.load('<x>' + h + '</x>')('x').text().replace(/\s+/g, ' ').trim())
+        .filter(Boolean)
+
       const items: PoskyItem[] = []
-      const re = /([^,()]+?)\s*\(([^)]+)\)/g
-      let m: RegExpExecArray | null
-      while ((m = re.exec(itemsText))) {
-        const itemName = m[1].replace(/^[,;]+/, '').trim()
-        const inside = m[2].trim()
-        const dash = inside.split('-')
-        const island = dash[0]?.trim()
-        const who = dash.slice(1).join('-').trim()
-        if (itemName) {
-          items.push({
-            name: itemName,
-            who: who ? [who] : [],
-            where: island && /^[\d.]/.test(island) ? `Island ${island}` : island ?? '',
-            count: 1,
-            page: pageByName[normName(itemName)]
-          })
+      const pushItem = (name: string, inside?: string): void => {
+        const itemName = name.replace(/^[,;]+/, '').trim()
+        if (!itemName) return
+        let where = ''
+        let who: string[] = []
+        if (inside !== undefined) {
+          const dash = inside.trim().split('-')
+          const island = dash[0]?.trim()
+          const w = dash.slice(1).join('-').trim()
+          who = w ? [w] : []
+          where = island && /^[\d.]/.test(island) ? `Island ${island}` : island ?? ''
         }
+        items.push({ name: itemName, who, where, count: 1, page: pageByName[normName(itemName)] })
       }
-      if (items.length === 0 && itemsText) {
-        items.push({ name: itemsText, who: [], where: '', count: 1, page: pageByName[normName(itemsText)] })
+
+      for (const seg of segments) {
+        const matches = [...seg.matchAll(/([^,()]+?)\s*\(([^)]+)\)/g)]
+        if (matches.length) {
+          for (const mm of matches) pushItem(mm[1], mm[2])
+        } else {
+          pushItem(seg)
+        }
       }
 
       const rune = cRune >= 0 ? $(tds[cRune]).text().replace(/\s+/g, ' ').trim() : undefined
@@ -291,9 +197,6 @@ function normName(s: string): string {
   return s.toLowerCase().replace(/\s+/g, ' ').trim()
 }
 
-function titleCase(s: string): string {
-  return s.replace(/\b\w/g, (c) => c.toUpperCase())
-}
 
 /** Turn a Rune-column value ("Wind Rune Meda") into required rune item(s). */
 function runeItems(runeText: string): PoskyItem[] {
@@ -330,65 +233,29 @@ function parseItemStats(html: string, itemName: string): string | undefined {
 async function main(): Promise<void> {
   const all: PoskyQuest[] = []
 
-  // Fetch the overview page once. Its compact per-class table is both the fallback
-  // item source for classes without a dedicated page AND the source of the wind
-  // rune that every class quest requires.
+  // The main "Plane of Sky" page's compact per-class table is the authoritative
+  // source: quest name, giver, trigger, wind rune, required items, and reward.
+  // (The dedicated "<Class> Plane of Sky Tests" pages carry stale/older data and
+  // are intentionally NOT used.)
   const mainHtml = await fetchParsedHtml('Plane of Sky')
   const $main = mainHtml ? cheerio.load(mainHtml) : null
-
-  const compactByClass: Record<string, PoskyQuest[]> = {}
-  for (const cls of CLASSES) compactByClass[cls] = $main ? parseMainPageClass($main, cls, 'Plane of Sky') : []
-
-  // Quest name -> rune string, across every class.
-  const runeByQuest = new Map<string, string>()
-  for (const cls of CLASSES)
-    for (const q of compactByClass[cls]) if (q.rune) runeByQuest.set(`${cls}::${normName(q.name)}`, q.rune)
+  if (!$main) throw new Error('Could not fetch the Plane of Sky page.')
 
   for (const cls of CLASSES) {
-    let quests: PoskyQuest[] = []
-    let usedTitle = ''
+    const quests = parseMainPageClass($main, cls, 'Plane of Sky')
 
-    // Layout A: dedicated tests page with Item/Who/Where tables (richest drop data).
-    for (const title of candidateTitles(cls)) {
-      const html = await fetchParsedHtml(title)
-      if (html) {
-        const parsed = parseClassPage(cls, html, title)
-        if (parsed.length) {
-          quests = parsed
-          usedTitle = title
-          break
-        }
-      }
-      await sleep(120)
-    }
-
-    // Layout B: fall back to the compact table on the main page.
-    if (quests.length === 0) {
-      quests = compactByClass[cls]
-      usedTitle = 'Plane of Sky (compact)'
-    }
-
-    // Every Plane of Sky class quest also requires a wind rune. Some dedicated
-    // pages already list it (with inconsistent casing like "rune neza"); the rest
-    // need it folded in from the compact table's Rune column. Normalize either way
-    // so a quest never shows the rune twice.
+    // Every quest also requires the wind rune listed in the Rune column — fold it
+    // in as a required item (it drops randomly from any Plane of Sky mob).
     for (const q of quests) {
-      const canonical = (runeByQuest.get(`${cls}::${normName(q.name)}`) ?? q.rune)?.trim()
-      const existing = q.items.findIndex((i) => /\brune\b/i.test(i.name))
-      if (existing >= 0) {
-        q.items[existing].name = canonical || titleCase(q.items[existing].name)
-        q.items[existing].who = ['random drop — any Plane of Sky mob']
-        q.items[existing].where = 'Plane of Sky'
-      } else if (canonical) {
-        for (const ri of runeItems(canonical)) q.items.push(ri)
-      }
+      const canonical = q.rune?.trim()
+      const hasRune = q.items.some((i) => /\brune\b/i.test(i.name))
+      if (canonical && !hasRune) for (const ri of runeItems(canonical)) q.items.push(ri)
     }
 
     const items = quests.reduce((s, q) => s + q.items.length, 0)
-    if (quests.length) console.log(`  ✓ ${cls}: ${quests.length} quests, ${items} items  (${usedTitle})`)
+    if (quests.length) console.log(`  ✓ ${cls}: ${quests.length} quests, ${items} items`)
     else console.warn(`  ! ${cls}: no quests found`)
     all.push(...quests)
-    await sleep(200)
   }
 
   // Fetch each unique item/reward wiki page once and attach its stat block.
