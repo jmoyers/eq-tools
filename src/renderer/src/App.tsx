@@ -28,6 +28,7 @@ import LootView from './features/loot/LootView'
 import InventoryView from './features/inventory/InventoryView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
+import CombatView from './features/combat/CombatView'
 
 const DRAWER_WIDTH = 220
 
@@ -170,12 +171,7 @@ export default function App(): JSX.Element {
           {view === 'loot' && <LootView key={viewKey} lastLoot={lastLoot} />}
           {view === 'bosses' && <BossView key={viewKey} lastLoot={lastLoot} />}
           {view === 'leveling' && <LevelingView key={viewKey} />}
-          {view === 'combat' && (
-            <Typography color="text.secondary">
-              Combat analysis coming next. The log pipeline is already streaming every line to the
-              renderer — this view will render DPS, timelines, and encounter breakdowns.
-            </Typography>
-          )}
+          {view === 'combat' && <CombatView key={viewKey} />}
         </Box>
       </Box>
     </Box>
