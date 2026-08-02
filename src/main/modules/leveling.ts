@@ -30,6 +30,19 @@ export class LevelingModule implements EqModule<LevelingSnap, LevelingDelta> {
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
     switch (ev.kind) {
+      case 'epoch':
+        // Character rebirth (Task #49): the prior epoch's levels/AA belong to a dead
+        // same-name character. Drop them so the AA identity (allocated/unspent/earned) and
+        // the level timeline reflect ONLY the current character. Pending deltas are cleared
+        // too — during a rescan this happens mid-replay (no deltas push); on a live wipe the
+        // renderer re-hydrates from the post-epoch snapshot (index.ts re-sends onCharacter).
+        this.levels = []
+        this.aaGains = []
+        this.aaSpends = []
+        this.pLevels = []
+        this.pGains = []
+        this.pSpends = []
+        return
       case 'level': {
         const e: LevelEvent = { ts: ev.ts, level: ev.level }
         this.levels.push(e)

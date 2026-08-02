@@ -85,9 +85,16 @@ test('full-log replay: earned == allocated + unspent, and below Σ gains', { ski
   // The refund double-count is real and removed: Σ gains exceeds true earned.
   assert.ok(sumGains > acct.earned, `Σ gains (${sumGains}) should exceed earned (${acct.earned}) — respec churn`)
 
-  // Current tripwire figures (Aug 2 log). Update deliberately if the log grows.
-  assert.equal(acct.unspent, 1, 'current unspent = 1 (last "you now have" minus later spends)')
-  assert.equal(acct.allocated, 219, 'current allocated = 219 (latest-epoch cost, cost-0 excluded)')
-  assert.equal(acct.earned, 220, 'current earned = allocated + unspent = 220')
-  assert.equal(sumGains, 228, 'Σ gain lines = 228 (the double-counting figure the old headline used)')
+  // Current tripwire figure. NB the real log is the user's LIVE, actively-appended file, so
+  // `unspent` / `earned` / Σ gains DRIFT as the user plays (they grew 1→3 / 220→222 / 228→230
+  // between the Task #48 snapshot and now). `allocated` is the STABLE load-bearing number — no
+  // new AA purchases move it — so it's the durable tripwire; the rest are asserted as
+  // relationships, not frozen magnitudes.
+  //
+  // NB2 (Task #49): this figure is the pre-epoch, CONTAMINATED allocation. It sums the beta
+  // character's AA on top of the current character's, because THIS test replays through the
+  // LevelingModule WITHOUT the epoch detector (it pins the raw refund-proof math in isolation).
+  // With character-epoch detection wired in (see tests/epochWindows.test.mts), the same log
+  // yields the correct in-game allocated = 206.
+  assert.equal(acct.allocated, 219, 'contaminated (no-epoch) allocated = 219 (latest-epoch cost, cost-0 excluded)')
 })

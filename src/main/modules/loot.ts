@@ -22,6 +22,15 @@ export class LootModule implements EqModule<LootSnap, LootDelta> {
 
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
+    if (ev.kind === 'epoch') {
+      // Character rebirth (Task #49): loot before the boundary is a dead same-name
+      // character's. Clear the history so held-count / quest-progress derivation sees only
+      // the current character. Keep `zone` (world state, not character-scoped — the next
+      // zone line refreshes it regardless).
+      this.loot = []
+      this.pending = []
+      return
+    }
     if (ev.kind === 'zone') {
       this.zone = ev.zone
       return

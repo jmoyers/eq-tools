@@ -875,6 +875,65 @@ together, and it should build good sane defaults that help you with both by defa
     cumulative GAIN lines (relabeled "AA gained over time" with a caption) — it honestly
     runs AHEAD of the earned headline because it includes refund re-grants; no clever
     refund inference is attempted (simpler + honest per the user).**
+  - **Character epochs (Task #49) — the BETA-WIPE story (grep this for future same-name+server
+    cases).** EQ names its log `eqlog_<Char>_<server>.txt`, so a character DELETED and
+    RECREATED with the SAME name on the SAME server **reuses the SAME log file**. On this real
+    log a BETA character reached level 26 (Jul 19) / 30 (Jul 20), was **wiped at launch**, and
+    the file CONTINUES with `Welcome to EverQuest Legends!` logins then a `You have gained a
+    level! Welcome to level 2!` on **Jul 28 12:32:09 (real line 172394)**, re-leveling 2→3→…→50
+    as a fresh character. Everything before that boundary belongs to the **dead beta character**
+    and CONTAMINATES every character-scoped tally: AA (dashboard read a contaminated 219-220
+    allocated vs the in-game **206**), loot, kills, turn-ins, and Plane-of-Sky quest completions.
+    (The Jul-28 "respec" the Task #48 AA model saw was this CROSS-EPOCH contamination, not a real
+    respec.) The fix:
+    - **Detection** (`src/main/log/epochDetector.ts`, a tiny stateful `EpochDetector`): a `level`
+      event whose new level is a DECISIVE regression vs the highest level seen this epoch — **new
+      level ≤ 3 OR a drop of > 5 levels** — is a rebirth. Classic EQ death-deleveling loses at most
+      a level or two, so a SMALL regression is TOLERATED without a reset (the real log's duplicate
+      `Welcome to level 11!` on Jul 28 is NOT a regression — 11 is not below 11). The whole log
+      implicitly starts in epoch 0. **NOT the `Welcome to EverQuest Legends!` line** — that prints
+      on EVERY login (14× in the real log), so it's not an epoch signal; the level regression is
+      the one unambiguous rebirth fingerprint.
+    - **Emission**: `index.ts` subscribes the detector to the bus LAST and, on a regression, hands
+      a derived **`epoch { reason:'level-regression', level }`** event back onto the SAME bus via
+      **`bus.emitDerived`** (the Task #47 derived-events path — the natural fit). No feedback loop
+      (the detector ignores the `epoch` kind); `live` is inherited so a replayed rebirth stays
+      `live:false`. **Delivery ORDER**: a derived event drains AFTER the primary reaches every
+      listener, so the `level` line that TRIPS the epoch is folded THEN the reset fires — the
+      post-epoch leveling timeline starts at the NEXT ding (the boundary `level 2` entry is dropped
+      as the boundary marker). This is intentional and harmless; the **AA identity is unaffected**
+      (the level line carries no AA).
+    - **Module reset matrix** (each character-scoped module handles `kind:'epoch'` in `onEvent`):
+      **leveling** clears levels/aaGains/aaSpends; **loot** clears the history (keeps `zone` —
+      world state); **turnins** clears turn-ins + any half-formed offer; **kills** clears the
+      KillMap; **buffs** calls `clearAllForGap()` — clears LIVE actives/open/pending + entity
+      (pet/charm) bindings but PRESERVES mined durations / everFaded / class / emote-recognition /
+      the observed-message overlay (game-KNOWLEDGE, identical across a rebirth — not character
+      state). **combat** finalizes the open fight + clears the charmed set + `world.reset()` but
+      KEEPS encounter history (the DPS meter is session-scoped; zone lines already reset it).
+      **character** module unchanged (ref + zone are identity/world state). **alerts** unchanged
+      (user config). A LIVE wipe re-hydrates the renderer via the `onCharacter` re-send in
+      `tailCharacter` (the module deltas are append/merge-only, so a shrink needs a full
+      re-hydrate — same mechanism a character switch uses); a RESCAN applies the epoch mid-replay
+      so post-scan snapshots are already post-epoch.
+    - **completedQuests decision (honest):** `store.completedQuests` is a bare `string[]` with NO
+      manual-vs-auto provenance, so the two are INDISTINGUISHABLE in the store. We deliberately do
+      **NOT** clear it on epoch: auto-completions re-derive from the now-epoch-anchored turnins
+      module (a completion whose turn-in survives post-epoch stays; the effect only ADDS), and a
+      clear-all would irreversibly destroy MANUAL completions. On THIS log it's moot — the 5 beta
+      turn-ins are Gloomingdeep tutorial (Doug / Dead Doug), which match NO Plane-of-Sky quest, so
+      quest auto-complete was never contaminated; the store's two `Paladin Test` completions are
+      the CURRENT character's real quests (from post-epoch turn-ins). If a future same-name case DID
+      persist a contaminated auto-completion, the safe path is to clear only entries whose turn-in
+      evidence no longer exists post-epoch — deferred until a case actually needs it.
+    - **Contamination table (full-log replay, magnitudes drift as the LIVE log grows — assert
+      DIRECTION + `allocated`):** AA allocated **219→206** (the in-game number; earned=allocated+
+      unspent, Σ gains == earned post-epoch = zero cross-epoch refund churn), loot **~3.9k→~3.4k**,
+      kills **~4.7k→~3.9k**, turn-ins **8→3**. Pinned by `tests/epochWindows.test.mts` (a
+      hand-verified golden window on `fixtures/epoch-beta-wipe.log` — 12 verbatim real lines across
+      the boundary — plus a full-log tripwire asserting `allocated==206`, the identity, and the
+      contamination direction; the aaAccounting full-log test's stale frozen numbers were relaxed
+      to the stable `allocated` since the live log drifts unspent/gains).
 - **Combat** (see `src/main/combat/parse.ts`):
   - Melee: `<A> <verb> <B> for N points of damage.` + optional `(Critical)` /
     `(Riposte)` / `(Slay Undead)` / `(Finishing Blow)` modifier. Verbs conjugate:

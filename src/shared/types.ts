@@ -245,6 +245,7 @@ export type LogEventKind =
   | 'aaActivate'
   | 'illusionFade'
   | 'buffExpired'
+  | 'epoch'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */

@@ -353,6 +353,19 @@ export class CombatEngine {
   ingestEvent(ev: LogEvent, live: boolean): void {
     if (live) this.recording = true
     switch (ev.kind) {
+      case 'epoch': {
+        // Character rebirth (Task #49): a same-name character was wiped/recreated. The DPS
+        // meter is session-scoped (the user's live encounter history + the zone aggregate,
+        // reset on every zone line already), so we deliberately KEEP it — a rebirth is not a
+        // reason to lose the current session's fights. But the beta character's charmed/pet
+        // world state is stale, so finalize any open fight and clear the pet sets as a cheap
+        // safety (a zone line after the rebirth login would clear it anyway; this makes the
+        // boundary explicit and independent of that ordering).
+        this.finalizeCurrent()
+        this.charmed = new Set()
+        this.world.reset()
+        return
+      }
       case 'zone': {
         this.finalizeCurrent()
         this.zone = ev.zone

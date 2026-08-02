@@ -481,6 +481,17 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     // A DERIVED buffExpired (Task #47) is our OWN synthesized event — never fold it (that
     // would be a feedback loop). It exists purely for the alerts module to match.
     if (ev.kind === 'buffExpired') return
+    // Character rebirth (Task #49): a same-name character was wiped/recreated. Clear ALL LIVE
+    // state — actives, open casts, pending, and the entity (pet/charm) bindings — via the
+    // same path a 30-min session gap uses. What we KEEP is deliberate: mined durations
+    // (samples/stats), the everFaded/class/dispTally maps, learned landing-emote recognition,
+    // and the observed-message overlay are GAME-KNOWLEDGE, not character state — a spell's
+    // duration and its cast messages are identical across a rebirth, so re-learning them from
+    // zero would needlessly cold-start the model. Only the live who/what/when clears.
+    if (ev.kind === 'epoch') {
+      this.clearAllForGap()
+      return
+    }
     // Record the primary event's identity so any buffExpired we synthesize while folding it is
     // stamped with the right seq/ts/live (alerts respects the replay gate via `live`).
     this.curSeq = ev.seq

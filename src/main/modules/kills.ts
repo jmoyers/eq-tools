@@ -26,6 +26,15 @@ export class KillsModule implements EqModule<KillsSnap, KillsDelta> {
 
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
+    if (ev.kind === 'epoch') {
+      // Character rebirth (Task #49): kills before the boundary are a dead same-name
+      // character's. Clear the KillMap. (The delta is a per-mob merge, not a full replace, so
+      // a LIVE wipe relies on the re-hydration index.ts triggers via onCharacter; during a
+      // rescan the reset happens mid-replay and no deltas push.)
+      this.kills = {}
+      this.dirty = new Set()
+      return
+    }
     if (ev.kind === 'zone') {
       this.zone = ev.zone
       return

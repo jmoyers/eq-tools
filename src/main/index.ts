@@ -11,6 +11,7 @@ import { loadSpellDb, applyOverlayCorrections, buildSpellCatalog } from './data/
 import { MessageOverlayMiner } from './data/messageOverlay'
 import { baselineOverlay, loadUserOverlay, saveUserOverlay } from './data/overlayPersistence'
 import { LogBus } from './log/bus'
+import { EpochDetector } from './log/epochDetector'
 import { scanLog } from './log/scanHistory'
 import { CombatEngine } from './combat/engine'
 import { findInventoryFile, loadInventory } from './inventory/parseInventory'
@@ -88,6 +89,14 @@ process.on('unhandledRejection', (reason) => {
 const bus = new LogBus()
 let seq = 0
 const combat = new CombatEngine()
+// Character-epoch detection (Task #49): a decisive level REGRESSION (new ≤3 or drop >5) is
+// the fingerprint of a same-name+server character being WIPED + recreated (they reuse the
+// same log file — see epochDetector.ts's beta-wipe story). On detection we hand a derived
+// `epoch` event back onto the SAME bus (the Task #47 emitDerived path), which every
+// character-scoped module resets on, so post-scan tallies (AA/loot/kills/turn-ins/quests)
+// reflect ONLY the current character. Fires mid-replay during a rescan, so epochs apply
+// historically for free; a live wipe works identically.
+const epoch = new EpochDetector()
 
 // The extension framework. Modules own their slice of log-derived state and push
 // deltas to the renderer over the generic `module:delta` channel. Registration
@@ -149,6 +158,31 @@ registry.register(buffsModule)
 // registration-order drift). Registry first, then combat — same order as before.
 registry.attach(bus)
 bus.subscribe((ev, live) => combat.ingestEvent(ev, live))
+// Epoch detection subscription (Task #49). Runs LAST so it observes the `level` event after
+// the modules/combat have folded it, then queues a derived `epoch` event via emitDerived;
+// the bus delivers that to EVERY listener (registry modules + combat) after the level event
+// finishes — the modules reset their live folded state on it. Ignore the derived epoch event
+// itself here (only the primary `level` line can trip a regression) so no feedback loop is
+// possible, matching the buffs→buffExpired contract.
+bus.subscribe((ev, live) => {
+  if (ev.kind === 'epoch') return
+  const epochEv = epoch.observe(ev)
+  if (epochEv) {
+    console.log(
+      `[eq-tools] Character epoch boundary detected at ${new Date(epochEv.ts).toISOString()} (level→${epochEv.level}): resetting character-scoped modules. Everything before this belongs to a prior same-name character (see epochDetector.ts).`
+    )
+    bus.emitDerived(epochEv, live)
+    // A LIVE wipe (rare — deleting + recreating your character while the app tails) shrinks
+    // every module's state, but module deltas are append/merge-only (a shrink can't be
+    // expressed as a delta), so the renderer would keep the stale pre-epoch rows. Re-send
+    // onCharacter so every useModule view RE-HYDRATES from the (now post-epoch) snapshots —
+    // the same full-rebuild path a character switch uses. Deferred to a microtask so the
+    // derived epoch event finishes draining to the modules (they reset) BEFORE the renderer
+    // re-fetches their snapshots. During a rescan (live:false) the post-scan onCharacter send
+    // in tailCharacter already covers this, so we only do it live.
+    if (live) queueMicrotask(() => mainWindow?.webContents.send(IPC.onCharacter, character))
+  }
+})
 
 function activeCharId(): string {
   return character ? characterId(character) : 'none'
@@ -311,6 +345,7 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   // immediately (zone is folded from the log during the scan).
   seq = 0
   registry.reset()
+  epoch.reset()
   characterModule.setCharacter(ref)
   combat.reset()
   // Inject the player's own name (we know it from the ref) BEFORE the scan replay,

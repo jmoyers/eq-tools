@@ -394,6 +394,32 @@ export interface BuffExpiredEvent extends LogEventBase {
   target: 'self' | string
 }
 
+/**
+ * A DERIVED character-EPOCH boundary (Task #49). NOT a parsed line: it is SYNTHESIZED
+ * by the feeder (index.ts bus subscription) and handed back onto the SAME bus via
+ * `emitDerived` when it observes a decisive level REGRESSION — the fingerprint of a
+ * character REBIRTH (a same-name+server character wiped/recreated, which reuses the SAME
+ * log file). The user's real case: a BETA character reached level 26/30 (Jul 19-20), was
+ * WIPED at launch, and the log continues with `Welcome to EverQuest Legends!` then a
+ * `Welcome to level 2!` re-level on Jul 28 — everything before that boundary belongs to a
+ * DEAD character and contaminates AA / loot / kills / turn-ins / quest counts.
+ *
+ * DETECTION (in the feeder, where level events stream): a `level` event whose new level is
+ * DECISIVELY below the highest level seen this epoch — new level ≤ 3 OR a drop of > 5
+ * levels. Classic EQ death-deleveling loses at most a level or two around XP thresholds, so
+ * a small regression (e.g. a duplicate `level 11` after XP loss) is TOLERATED without an
+ * epoch reset; only a decisive drop is a rebirth. The whole log implicitly starts in epoch 0.
+ *
+ * On this event, character-scoped modules RESET their live folded state (see modules/*),
+ * so post-scan state reflects ONLY the current character. `reason` documents the trigger;
+ * `level` is the new (post-rebirth) level that tripped it.
+ */
+export interface EpochEvent extends LogEventBase {
+  kind: 'epoch'
+  reason: 'level-regression'
+  level: number
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -427,4 +453,5 @@ export type LogEvent =
   | AaActivateEvent
   | IllusionFadeEvent
   | BuffExpiredEvent
+  | EpochEvent
   | UnknownEvent

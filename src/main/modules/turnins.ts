@@ -22,6 +22,15 @@ export class TurnInsModule implements EqModule<TurnInSnap, TurnInDelta> {
 
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
+    if (ev.kind === 'epoch') {
+      // Character rebirth (Task #49): turn-ins before the boundary are a dead same-name
+      // character's. Clear them so Plane-of-Sky quest AUTO-completion (which re-derives from
+      // this module) reflects only the current character. Drop any half-formed offer group.
+      this.turnIns = []
+      this.pendingOffer = null
+      this.pending = []
+      return
+    }
     if (ev.kind === 'offer') {
       if (this.pendingOffer && this.pendingOffer.npc === ev.npc) this.pendingOffer.items.push(ev.item)
       else this.pendingOffer = { npc: ev.npc, items: [ev.item] }
