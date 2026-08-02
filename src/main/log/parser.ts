@@ -174,6 +174,30 @@ const BUFF_FADE_SELF_RE = /^Your (.+?) spell has worn off\.$/
 // third-person "<mob> has been slain by <x>!" SLAIN_BY_RE, which needs "has").
 const PLAYER_DEATH_RE = /^You have been slain by (.+?)!$/
 
+// ----- spell-landing emotes (Task #33): the cast-target discriminator -----
+// EQ prints a short flavor line the instant a buff lands. Two forms:
+//   SELF:  "You feel much faster."  "You feel much better."  "You feel armored."  …
+//   PET:   "<Name> feels much faster."  "Bzzazzt feels much better."             …
+// These are CANDIDATES only — the buffs module learns which emote reliably follows a
+// given spell's cast (≥2×, no contradiction) before trusting it, and only uses a
+// temporally-adjacent one to set a cast's target. So the gate is deliberately
+// PERMISSIVE: it just needs to isolate the "<subject> <perception-verb> …." shape and
+// reject the obvious non-emotes (upkeep/weather/state spam) so the learner sees a clean
+// candidate stream. It is matched LAST in classify() (after every real family), so it
+// can never shadow a combat/cast/charm/etc. line — anything that already parsed is gone.
+//
+// Self form: "You <verb> …." where <verb> is a perception/appearance verb. We EXCLUDE
+// the ubiquitous upkeep/state lines ("You are hungry/thirsty/no longer …", "You have
+// …", "You feel a traveling spirit …" is allowed — harmless flavor). The exclusions
+// keep the candidate stream lean; a stray candidate that doesn't consistently follow a
+// cast is ignored by the learner anyway.
+const EMOTE_SELF_RE =
+  /^You (?:feel|look|sense|seem)\b[^.]*\.$/
+// Third-person: "<Name> <verb>s …." — the verb ends in s (feels/looks/seems) and the
+// subject is a name (may contain spaces/apostrophes/backticks, EQ mob names).
+const EMOTE_PET_RE =
+  /^([A-Z][A-Za-z'`]*(?: [A-Za-z'`]+)*) (?:feels|looks|seems)\b[^.]*\.$/
+
 // ----- heal (NEW): "<healer> healed <target> for N hit points[ by <spell>]." -----
 // Two shapes in the real log:
 //   "<healer> healed <target> for 120 hit points by <Spell>."         (amount only)
@@ -219,6 +243,28 @@ export function idKey(name: string): string {
   const n = name.trim().toLowerCase()
   if (n === 'you' || n === 'yourself' || n === 'your') return 'you'
   return n
+}
+
+/**
+ * Canonical SPELL key (Task #33): lowercase, trimmed, with a trailing rank token
+ * stripped. EQ Legends suffixes current-session casts with a Roman-numeral RANK —
+ * "You begin casting Swift Like the Wind I." / "Shiftless Deeds IV" / "Allure VI" —
+ * but EVERY fade/fizzle/interrupt line DROPS the rank ("Your Swift Like the Wind spell
+ * has worn off …", "Your Shiftless Deeds spell fizzles!"). Keying the buffs model by
+ * the raw name breaks cast↔fade pairing (2,507/12,442 casts carry a rank tail).
+ *
+ * The stripped token is a trailing I–X Roman numeral at the END of the name only,
+ * word-bounded. VERIFIED SAFE against the real log (2026-08-01): NO fade/fizzle/
+ * interrupt line ever ends in a Roman numeral, and every one of the 16 distinct
+ * rank-tailed base spells (Swift Like the Wind, Shiftless Deeds, Allure, Clarity,
+ * Superior Healing, Lay on Hands, …) is a real spell whose identity does not include a
+ * Roman-numeral word — so stripping the tail can never merge two genuinely-different
+ * spells. The DISPLAY name keeps its suffix (callers pass the raw spell for display);
+ * only the KEY is canonicalized.
+ */
+const RANK_TAIL_RE = / (?:I|II|III|IV|V|VI|VII|VIII|IX|X)$/
+export function spellCanonKey(spell: string): string {
+  return spell.trim().replace(RANK_TAIL_RE, '').trim().toLowerCase()
 }
 
 function meleeSkill(verb: string): string {
@@ -513,6 +559,18 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
       const a = AA_ABILITY_RE.exec(text)
       return { kind: 'aaSpend', seq, ts, raw, ability: (a?.[1] ?? a?.[2] ?? 'ability').trim(), cost }
     }
+  }
+
+  // --- spell-landing emotes (Task #33) — matched LAST so it never shadows a real
+  // family. A candidate emote the buffs module uses to discriminate cast targets. ---
+  if (text.startsWith('You ')) {
+    // Exclude upkeep/state spam that shares the "You <verb> …" shape but is never a
+    // spell-landing emote (hunger/thirst/state-off). "You feel/look/sense/seem …" only.
+    if (EMOTE_SELF_RE.test(text)) return { kind: 'spellEmote', seq, ts, raw, subject: 'self', text }
+  } else {
+    const m = EMOTE_PET_RE.exec(text)
+    // Never treat "You"/"Your" as a pet subject (self form handled above).
+    if (m && idKey(m[1]) !== 'you') return { kind: 'spellEmote', seq, ts, raw, subject: norm(m[1]), text }
   }
 
   return { kind: 'unknown', seq, ts, raw }

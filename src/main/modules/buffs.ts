@@ -54,7 +54,7 @@
 import type { EqModule } from './types'
 import type { LogEvent } from '../../shared/logEvents'
 import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '../../shared/types'
-import { idKey } from '../log/parser'
+import { idKey, spellCanonKey } from '../log/parser'
 import {
   charmedPetDiesOnDeathLine,
   classifyFadeTarget,
@@ -79,6 +79,43 @@ const LAND_TIMEOUT_MS = 15_000
  */
 const MAX_SAMPLE_MS = 3 * 60 * 60_000 // 3 hours
 
+/**
+ * Session-gap boundary (Task #33, finding #5). An event-time gap of at least this long
+ * means the player logged out (or was AFK past any buff duration): EQ buffs cannot
+ * survive it, so ALL actives (self + pets) are CLEARED and their open casts CENSORED at
+ * the gap boundary. Short relogs (< 30 min) keep state — buffs really do persist a quick
+ * zone/relog. Real log has many such gaps (e.g. Aug 1 02:52 → 13:00, a 608-min logout).
+ */
+const SESSION_GAP_MS = 30 * 60_000 // 30 minutes
+
+/**
+ * Active-buff HYGIENE cap (Task #33, finding #6). Any active whose elapsed exceeds this
+ * bound auto-retires (censored) — a buff that's run this far past its learned window was
+ * really stripped by an unobserved event (death/zone/relog the model didn't catch). The
+ * bound is per-spell: max(2×p75, ABSOLUTE) so a spell with a long learned duration still
+ * gets slack, but nothing survives past the absolute floor. The "overdue · any moment"
+ * display is only for MILDLY over p75; it must never show hours-old rows.
+ */
+const HYGIENE_ABSOLUTE_MS = 90 * 60_000 // 90 minutes when no/low stats
+function hygieneCapMs(p75: number | null, n: number): number {
+  const stat = p75 != null && n >= 2 ? 2 * p75 : 0
+  return Math.max(stat, HYGIENE_ABSOLUTE_MS)
+}
+
+/** Window after a castBegin within which a landing emote is attributed to that cast. */
+const EMOTE_WINDOW_MS = 5_000
+/**
+ * An emote TEXT must appear adjacent to a cast this many times before it is TRUSTED as a
+ * real landing emote (Task #33, finding #2). This is the noise filter: a spell's true
+ * landing emote ("You feel much faster.") recurs after every cast of it; a coincidental
+ * flavor line (a DoT tick's "You feel your skin ignite.") does not consistently sit in a
+ * cast window, so it never reaches the threshold and never binds a cast's target. NOTE
+ * this gates on the emote TEXT (is it a landing emote at all?), NOT on a spell↔emote
+ * binding — a spell can be cast on both self and pet (Swift Like the Wind is, in the real
+ * log), so the per-cast emote SUBJECT is the only honest per-cast target discriminator.
+ */
+const EMOTE_MIN_OBSERVATIONS = 2
+
 /** Map a fade-target disposition to the buff CLASS surfaced to the UI. */
 function classForDisposition(d: EntityDisposition): BuffClass {
   return d === 'hostile' ? 'debuff' : d === 'self' ? 'self' : 'pet'
@@ -93,6 +130,9 @@ interface OpenCast {
   disp: EntityDisposition
   /** Canonical name key of the bound entity ('pet' sentinel / mob key / undefined self). */
   boundKey?: string
+  /** True when `disp` came from a trusted landing EMOTE — never re-bind these (the emote
+   *  is ground truth for this cast's target; a later pet claim must not steal it). */
+  emoteBound?: boolean
 }
 
 /** A cast in flight (You begin casting …) not yet landed/cleared. */
@@ -102,6 +142,12 @@ interface Pending {
   beganTs: number
   /** Refresh whose new startedTs is staged until confirmation (see landPending). */
   stagedRefresh: boolean
+  /**
+   * The landing emote seen within EMOTE_WINDOW_MS of this cast (Task #33), if any — its
+   * subject ('self' or a pet name key) overrides the inferred cast disposition at land
+   * time. Only trusted once the spell→emote association is LEARNED (≥2 observations).
+   */
+  emoteSubjectKey?: string
 }
 
 /** Per-spell accumulated duration samples + display name + observed classes. */
@@ -110,9 +156,13 @@ interface SpellSamples {
   samples: number[]
 }
 
-/** Canonical spell key (case-stable). */
+/**
+ * Canonical spell key (case-stable, RANK-STRIPPED — Task #33). Delegates to the shared
+ * parser helper so a ranked cast ("Swift Like the Wind I") keys the same as its
+ * rank-less fade ("Swift Like the Wind"). Display name keeps the rank.
+ */
 function spellKey(s: string): string {
-  return s.trim().toLowerCase()
+  return spellCanonKey(s)
 }
 
 function percentile(sortedAsc: number[], p: number): number {
@@ -153,6 +203,22 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   /** Last fade disposition per spell key — for open-cast entity binding at land time. */
   private fadeDisp = new Map<string, EntityDisposition>()
 
+  // ── emote learning (Task #33): recognize real landing-emote TEXTS ──
+  /**
+   * How many times each emote TEXT has appeared adjacent (≤ EMOTE_WINDOW_MS) to some
+   * cast. Once a text reaches EMOTE_MIN_OBSERVATIONS it is a RECOGNIZED landing emote and
+   * its SUBJECT is trusted to discriminate each cast's target (self vs pet). This filters
+   * coincidental flavor from real landing emotes without assuming a spell targets only
+   * self or only pet (it may do both). In production the full-log replay recognizes the
+   * common landing emotes long before the live tail; golden-window tests prime it with a
+   * real earlier excerpt of the same session (mirroring that replay).
+   */
+  private emoteTextCount = new Map<string, number>()
+
+  // ── session-gap tracking (Task #33, finding #5) ──
+  /** ts of the last event folded — to detect a ≥ SESSION_GAP_MS logout gap. */
+  private lastEventTs = 0
+
   // ── entity state (the who/what) — a tiny parallel to the combat WorldModel ──
   /** Canonical name key of the live charmed pet, or undefined. */
   private charmedKey?: string
@@ -178,6 +244,8 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.dispTally = new Map()
     this.fadeTarget = new Map()
     this.fadeDisp = new Map()
+    this.emoteTextCount = new Map()
+    this.lastEventTs = 0
     this.charmedKey = undefined
     this.charmedDisplay = undefined
     this.summonedKey = undefined
@@ -201,9 +269,19 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
 
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
+    // Session-gap clear (Task #33, finding #5): a long event-time gap = logout/AFK past
+    // any buff duration → clear ALL actives + censor opens at the boundary. Checked
+    // BEFORE landing so a stale pending cast across the gap doesn't confirm into a buff.
+    if (this.lastEventTs > 0 && ev.ts - this.lastEventTs >= SESSION_GAP_MS) {
+      this.clearAllForGap()
+    }
+    this.lastEventTs = ev.ts
     // Time-based landing: any event with a timestamp can trip the pending cast's
     // 15s land timeout (the fold is time-ordered).
     this.maybeLandPendingByTime(ev.ts)
+    // Hygiene sweep (Task #33, finding #6): retire any active run past its cap. Cheap;
+    // runs on every event so an overdue row never persists into the snapshot.
+    this.sweepHygiene(ev.ts)
 
     switch (ev.kind) {
       case 'castBegin': {
@@ -215,6 +293,22 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         if (!existing && this.everFaded.has(key)) {
           this.active.set(key, this.buildActive(ev.spell, key, ev.ts, true))
           this.dirty = true
+        }
+        break
+      }
+      case 'spellEmote': {
+        // A landing emote within EMOTE_WINDOW_MS of the pending cast discriminates that
+        // cast's TARGET (Task #33, finding #2). Count the emote text (to recognize it as a
+        // real landing emote) and, once recognized, stamp the pending cast's subject so
+        // landPending binds it correctly — a self-emote ⇒ SELF buff even while a charmed
+        // pet is live (the fix for the user's invisible self buffs).
+        const p = this.pending
+        if (p && ev.ts - p.beganTs <= EMOTE_WINDOW_MS && ev.ts >= p.beganTs && !p.emoteSubjectKey) {
+          const n = (this.emoteTextCount.get(ev.text) ?? 0) + 1
+          this.emoteTextCount.set(ev.text, n)
+          if (n >= EMOTE_MIN_OBSERVATIONS) {
+            p.emoteSubjectKey = ev.subject === 'self' ? 'self' : idKey(ev.subject)
+          }
         }
         break
       }
@@ -259,8 +353,16 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       }
       // ── entity lifecycle (the who/what state) ──
       case 'charm': {
-        this.charmedKey = idKey(ev.mob)
+        const newKey = idKey(ev.mob)
+        // SINGLE-PET INVARIANT (Task #33, finding #3): one pet at a time. Charming a
+        // DIFFERENT mob retires the prior charmed pet (its buffs can no longer be
+        // observed fading). A summoned pet coexisting is likewise retired — claiming/
+        // charming a new pet supersedes it (EQ swaps you to the new pet).
+        if (this.charmedKey && this.charmedKey !== newKey) this.retireEntity('charmed', ev.ts)
+        if (this.summonedKey) this.retireEntity('summoned', ev.ts)
+        this.charmedKey = newKey
         this.charmedDisplay = ev.mob
+        this.rebindPetBuffsToPet('charmed')
         // A fresh charm resets the inferred pet target (new fight).
         this.petTargetKey = undefined
         this.petTargetDisplay = undefined
@@ -270,9 +372,16 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         // A petClaim can be either pet kind; if it names the charmed mob it's the
         // charmed pet (already tracked), otherwise it's a summoned (proper-named) pet.
         const key = idKey(ev.name)
-        if (key !== this.charmedKey) {
+        if (key !== this.charmedKey && key !== this.summonedKey) {
+          // SINGLE-PET INVARIANT (finding #3): a NEW summoned pet retires the previous
+          // summoned pet AND any live charmed pet (you can't hold both). This kills the
+          // Gibober→Jenann succession bug where Gibober's Intensify Death open cast
+          // paired with a fade 62 min later (long after Jenann replaced him).
+          if (this.summonedKey) this.retireEntity('summoned', ev.ts)
+          if (this.charmedKey) this.retireEntity('charmed', ev.ts)
           this.summonedKey = key
           this.summonedDisplay = ev.name
+          this.rebindPetBuffsToPet('summoned')
         }
         break
       }
@@ -293,15 +402,26 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         // keeps the pet alive on such a line — the pet is retired only by uncharm/zone,
         // never censored by a name-only slain line. So a pet-name death does NOT retire
         // the pet; it only clears an inferred hostile target of the same name.
-        const petMatch = key === this.charmedKey || key === this.summonedKey
-        if (petMatch) {
+        const isSummoned = key === this.summonedKey
+        const isCharmed = key === this.charmedKey
+        if (isSummoned) {
+          // A SUMMONED pet has a UNIQUE proper name (Xeneker, Gibober, Jenann…) — there
+          // is no same-named hostile twin, so a "<Name> has been slain by <other>!" line
+          // is UNAMBIGUOUSLY the pet's real death. Retire + censor its buffs (Task #33,
+          // finding #4 — the "Intensify Death [Xeneker] 287h" bug: Xeneker died at
+          // 20:22 but its open pet-buff cast never faded, leaving a stale multi-hour
+          // active bound to a dead pet). The twin-ambiguity conservatism applies only to
+          // CHARMED pets (common mob names). Slain-by-YOU still can't be your own pet.
+          const killerIsYou = ev.bySelf || idKey(ev.killer ?? '') === 'you'
+          if (!killerIsYou) this.retireEntity('summoned', ev.ts)
+        } else if (isCharmed) {
           const killerIsYou = ev.bySelf || idKey(ev.killer ?? '') === 'you'
           const killerSameName = !ev.bySelf && ev.killer != null && idKey(ev.killer) === key
           if (charmedPetDiesOnDeathLine({ killerIsYou, killerSameName })) {
-            this.retireEntity(key === this.charmedKey ? 'charmed' : 'summoned', ev.ts)
+            this.retireEntity('charmed', ev.ts)
           }
-          // else: keep the pet (conservative). Still fall through to hostile-target
-          // clearing below in case a same-named hostile twin was the pet's target.
+          // else: keep the charmed pet (conservative — a common-named slain line is
+          // twin-ambiguous). Fall through to hostile-target clearing below.
         } else {
           // A plain hostile death censors any open debuff bound to it.
           this.censorHostileEntity(key)
@@ -321,9 +441,11 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     }
   }
 
-  /** Wall-clock heartbeat (Task #30): drive the 15s land timeout in real time. */
+  /** Wall-clock heartbeat (Task #30): drive the 15s land timeout in real time; also
+   *  sweep overdue actives (Task #33) so a stale row is retired even while the log idles. */
   onTick(nowMs: number): void {
     this.maybeLandPendingByTime(nowMs)
+    this.sweepHygiene(nowMs)
   }
 
   private maybeLandPendingByTime(now: number): void {
@@ -353,28 +475,53 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     //     (this is what kills the 13h Clarity / 23.8h Swift outliers — an open cast on
     //     a left-behind pet can never be observed fading).
     //   - no live pet → self.
-    const disp = this.inferCastDisposition(p.key)
+    const disp = this.inferCastDisposition(p.key, p.emoteSubjectKey)
     const boundKey = this.boundKeyFor(disp)
     // Refresh censoring: replacing the map entry discards a prior open cast's pairing.
-    this.open.set(p.key, { spell: p.spell, key: p.key, landedTs, disp, boundKey })
+    this.open.set(p.key, {
+      spell: p.spell, key: p.key, landedTs, disp, boundKey,
+      emoteBound: p.emoteSubjectKey != null
+    })
 
     // Surface as a CONFIRMED active buff (only spells known to be buffs/debuffs show).
     if (this.everFaded.has(p.key)) {
-      this.active.set(p.key, this.buildActive(p.spell, p.key, landedTs, false))
+      this.active.set(p.key, this.buildActive(p.spell, p.key, landedTs, false, disp))
     }
     this.dirty = true
   }
 
   /**
-   * Infer the target disposition of a cast at LAND time from the current entity state
-   * and the spell's learned class. This is what makes zone/death censoring correct: an
-   * open cast on the live charmed pet is bound 'charmed', so the pet being left behind
-   * on a zone censors it (no bogus multi-hour sample).
+   * Infer the target disposition of a cast at LAND time from the current entity state,
+   * a LEARNED landing emote (Task #33), and the spell's learned class. This is what
+   * makes zone/death censoring correct: an open cast on the live charmed pet is bound
+   * 'charmed', so the pet being left behind on a zone censors it (no bogus multi-hour
+   * sample).
+   *
+   * The learned EMOTE is DECISIVE when present (finding #2): a self-emote ("You feel
+   * much faster.") proves a SELF cast even while a charmed pet is live — this is the fix
+   * for the user's exact complaint (their real self buffs were invisible because every
+   * cast was assumed to target the charmed pet). A pet-name emote binds that pet.
    */
-  private inferCastDisposition(key: string): EntityDisposition {
-    if (this.classOf(key) === 'debuff') return 'hostile'
+  private inferCastDisposition(key: string, emoteSubjectKey?: string): EntityDisposition {
+    if (emoteSubjectKey === 'self') return 'self'
+    if (emoteSubjectKey && emoteSubjectKey !== 'self') {
+      // The emote names a subject: match it to a live pet, else treat as summoned pet
+      // (a proper-named pet the emote proves the buff landed on).
+      if (this.charmedKey && emoteSubjectKey === this.charmedKey) return 'charmed'
+      if (this.summonedKey && emoteSubjectKey === this.summonedKey) return 'summoned'
+      // Named subject that isn't a currently-tracked pet: still a pet the buff landed on.
+      return this.summonedKey ? 'summoned' : 'charmed'
+    }
+    const cls = this.classOf(key)
+    if (cls === 'debuff') return 'hostile'
     if (this.charmedKey) return 'charmed'
     if (this.summonedKey) return 'summoned'
+    // No live pet: even a pet-classed spell has nowhere to land but the player, so bind
+    // 'self' (a pet buff cast with no pet is really a self-cast or a misfire). Binding it
+    // to a phantom pet would wrongly censor it on the next zone. When a pet IS live, the
+    // pet-form binding above handles the Xeneker case (buff bound to the single pet →
+    // censored on that pet's death), and a pet claimed moments AFTER a pet-buff cast is
+    // handled by re-binding on retire (single-pet invariant censors all pet-class opens).
     return 'self'
   }
 
@@ -401,6 +548,47 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.dirty = true
   }
 
+  /**
+   * Session-gap clear (Task #33, finding #5): a ≥ SESSION_GAP_MS event-time gap means a
+   * logout/AFK past any buff duration. Clear ALL actives (self + pets), censor every open
+   * cast (drop, no sample), abandon the pending cast, and retire pet entities — nothing
+   * survives a logout. This is what stops a buff cast right before a long pause from
+   * replaying as a live "active" for hours.
+   */
+  private clearAllForGap(): void {
+    const changed = this.active.size > 0 || this.open.size > 0 || this.pending != null
+    this.active.clear()
+    this.open.clear()
+    this.pending = null
+    this.charmedKey = undefined
+    this.charmedDisplay = undefined
+    this.summonedKey = undefined
+    this.summonedDisplay = undefined
+    this.petTargetKey = undefined
+    this.petTargetDisplay = undefined
+    if (changed) this.dirty = true
+  }
+
+  /**
+   * Hygiene sweep (Task #33, finding #6): retire (censor) any active whose elapsed has
+   * run past its per-spell hygiene cap — a buff this far past its learned window was
+   * really stripped by an unobserved event. Its open cast is dropped too (no sample). No
+   * hours-old "overdue" rows ever reach the snapshot.
+   */
+  private sweepHygiene(now: number): void {
+    let changed = false
+    for (const [k, a] of [...this.active]) {
+      if (a.provisional) continue // a still-casting entry hasn't started its clock
+      const cap = hygieneCapMs(a.p75, a.n)
+      if (now - a.startedTs > cap) {
+        this.active.delete(k)
+        this.open.delete(k)
+        changed = true
+      }
+    }
+    if (changed) this.dirty = true
+  }
+
   /** playerDeath strips SELF buffs: censor open SELF casts + clear their actives. */
   private onPlayerDeath(): void {
     let changed = false
@@ -425,24 +613,28 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   }
 
   /**
-   * Retire one of YOUR pets: on uncharm/death/zone-left-behind. Censors every open
-   * cast bound to that pet (the fade can no longer be observed) and clears its actives.
+   * Retire one of YOUR pets: on uncharm/death/zone-left-behind/succession. Censors every
+   * open cast + active bound to a PET (the fade can no longer be observed).
+   *
+   * SINGLE-PET INVARIANT (Task #33, finding #3+#4): there is exactly ONE pet at a time, so
+   * a pet retirement censors EVERY pet-disposition open cast and EVERY pet-class active —
+   * not just those whose boundKey matches the exact retiring name. This is what fixes the
+   * Xeneker bug: an Intensify Death cast bound to the pet BEFORE the pet's name was known
+   * (bound 'charmed' as a fallback) is still censored when the (summoned) pet Xeneker dies,
+   * because both refer to the one live pet. Charmed-vs-summoned distinction only matters
+   * for ZONE (summoned follows, charmed is left behind) — handled in onZone, not here.
    */
   private retireEntity(kind: 'charmed' | 'summoned', _ts: number): void {
-    const retiredKey = kind === 'charmed' ? this.charmedKey : this.summonedKey
-    const cls: BuffClass = 'pet'
     let changed = false
     for (const [k, o] of [...this.open]) {
-      const matches =
-        o.disp === kind || (o.boundKey != null && o.boundKey === retiredKey) ||
-        (o.boundKey === 'pet' && this.dispMatchesPetForm(o.disp, kind))
-      if (matches) {
+      // Any pet-disposition open cast belongs to the one pet being retired.
+      if (o.disp === 'charmed' || o.disp === 'summoned') {
         this.open.delete(k)
         changed = true
       }
     }
     for (const [k, a] of [...this.active]) {
-      if (a.cls === cls && this.activeBelongsToPet(a, kind, retiredKey)) {
+      if (a.cls === 'pet') {
         this.active.delete(k)
         changed = true
       }
@@ -457,17 +649,31 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     if (changed) this.dirty = true
   }
 
-  private dispMatchesPetForm(disp: EntityDisposition, kind: 'charmed' | 'summoned'): boolean {
-    return disp === kind
-  }
-
-  private activeBelongsToPet(a: ActiveBuff, kind: 'charmed' | 'summoned', retiredKey?: string): boolean {
-    // Bind by disposition first; fall back to matching the display name to the pet.
-    if (a.disposition === kind) return true
-    if (a.target && retiredKey && idKey(a.target) === retiredKey) return true
-    // 'pet' possessive form buffs belong to whichever pet kind owned the possessive.
-    if (a.target === 'pet') return this.petKindForPossessive() === kind
-    return false
+  /**
+   * Re-bind recently-landed pet-class buffs to a NEWLY-acquired pet (Task #33, finding
+   * #4). EQ names the pet only in a claim/charm line that can arrive SECONDS after you
+   * buff it — e.g. Intensify Death cast at 19:52:31, Xeneker (the pet) claimed 19:57:42.
+   * Such a cast lands bound 'self' (no pet was known yet); when the pet then appears, the
+   * buff was really on it all along, so re-bind its open cast + active to the pet so the
+   * pet's later death/retire CENSORS it (instead of a stale self buff lingering). Only
+   * casts that landed within REBIND_WINDOW of the claim are re-bound (an old self buff
+   * isn't retroactively a pet buff). Debuffs/self spells are never re-bound.
+   */
+  private rebindPetBuffsToPet(kind: 'charmed' | 'summoned'): void {
+    const REBIND_WINDOW_MS = 10 * 60_000
+    let changed = false
+    for (const [k, o] of this.open) {
+      if (o.disp !== 'self') continue
+      if (o.emoteBound) continue // an emote proved this cast's target — never override it
+      if (this.classOf(k) !== 'pet') continue
+      if (this.lastEventTs - o.landedTs > REBIND_WINDOW_MS) continue
+      o.disp = kind
+      o.boundKey = kind === 'charmed' ? this.charmedKey : this.summonedKey
+      const a = this.active.get(k)
+      if (a) this.active.set(k, this.buildActive(a.spell, k, a.startedTs, a.provisional, kind))
+      changed = true
+    }
+    if (changed) this.dirty = true
   }
 
   /** Censor open DEBUFF casts bound to a hostile entity that just died / was left behind. */
@@ -545,7 +751,9 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     }
     s.samples.push(durMs)
     const a = this.active.get(key)
-    if (a) this.active.set(key, this.buildActive(a.spell, key, a.startedTs, a.provisional))
+    // Preserve the active's bound disposition when restatting so a self-emoted buff
+    // doesn't get reclassified into the pet group by the plurality vote (Task #33).
+    if (a) this.active.set(key, this.buildActive(a.spell, key, a.startedTs, a.provisional, a.disposition))
     this.dirty = true
   }
 
@@ -590,11 +798,20 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     spell: string,
     key: string,
     startedTs: number,
-    provisional?: boolean
+    provisional?: boolean,
+    /**
+     * The disposition THIS cast landed with (Task #33), from a learned landing emote or
+     * the land-time inference. When provided it OVERRIDES the spell's plurality class for
+     * THIS active entry — so a self-emoted cast of a normally-pet spell (e.g. Swift Like
+     * the Wind cast on the player while a charmed pet is live) renders as a SELF buff, not
+     * dumped into the pet group. Absent (a provisional entry before land) → fall back to
+     * the spell's learned class.
+     */
+    dispOverride?: EntityDisposition
   ): ActiveBuff {
     const st = this.statFor(key)
-    const cls = this.classOf(key)
-    const disp = this.fadeDisp.get(key)
+    const cls: BuffClass = dispOverride ? classForDisposition(dispOverride) : this.classOf(key)
+    const disp: EntityDisposition | undefined = dispOverride ?? this.fadeDisp.get(key)
     // Target label + inference. Self: none. Pet: the pet's name/'pet' form. Debuff:
     // the inferred hostile fight target (or flagged inferred when unknown).
     let target: string | undefined

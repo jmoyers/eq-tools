@@ -234,6 +234,28 @@ export interface PlayerDeathEvent extends LogEventBase {
   killer?: string
 }
 
+/**
+ * A CANDIDATE spell-landing emote (Task #33). EQ prints a short flavor line the instant
+ * a buff lands — self-form `You feel much faster.` / `You feel much better.` or the
+ * third-person form `<Name> feels much faster.` naming the pet the buff landed on. These
+ * DISCRIMINATE a cast's target (self vs pet) that `castBegin` alone can't: the buffs
+ * module learns castBegin(S) → emote within 3s and, when the emote's SUBJECT is self,
+ * marks S's active as a SELF buff; a pet-name subject marks the pet.
+ *
+ * This is a permissive CANDIDATE (many of these lines are unrelated flavor — hunger,
+ * weather, ambient effects). The buffs module only trusts one that consistently follows
+ * a given spell's cast (seen ≥2× with no contradiction) AND is temporally adjacent to a
+ * live cast, so false candidates never bind. `subject` is 'self' for the `You …` form,
+ * else the raw name (a pet). `text` is the whole emote (for association keying).
+ */
+export interface SpellEmoteEvent extends LogEventBase {
+  kind: 'spellEmote'
+  /** 'self' for the `You <verb> …` form; otherwise the named subject (a pet name). */
+  subject: string
+  /** The full emote text (association key). */
+  text: string
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -261,4 +283,5 @@ export type LogEvent =
   | CastInterruptedEvent
   | BuffFadeEvent
   | PlayerDeathEvent
+  | SpellEmoteEvent
   | UnknownEvent

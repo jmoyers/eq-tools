@@ -15,6 +15,7 @@
     "fetch:packs": "tsx scripts/fetch-packs.mts",
     "gen:icon": "tsx scripts/gen-icon.mts",
     "gen:sounds": "tsx scripts/gen-sounds.mts",
+    "test": "node --import tsx --test tests/*.test.mts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",

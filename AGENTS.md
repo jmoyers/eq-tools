@@ -315,7 +315,67 @@ shares one bucket; the entity model is name-keyed (no twin instances) — it del
 never censors a pet on a name-only death line (a genuine pet death reported ONLY as a
 same-named slain line, with no uncharm, leaves buffs open until the next zone censors
 them); the SELF group is empty on this Enchanter's log because every one of the player's
-own casts targets the charmed pet (documented reality — see BuffFadeEvent).
+own casts targets the charmed pet (documented reality — see BuffFadeEvent). *(The SELF-
+group-empty claim is SUPERSEDED by Task #33's emote learning — self casts now surface, see
+below.)*
+
+**Golden-window world model + buff rebuild (Task #33).** The user saw days-old "active"
+buffs on long-dead pets while real self buffs were invisible. Fixed by six changes to the
+buffs model, each pinned by a hand-verified golden-window test (`tests/`, `npm test`):
+
+- **Rank canonicalization (finding #1).** Current-session casts are rank-suffixed —
+  `You begin casting Swift Like the Wind I.` / `Shiftless Deeds IV` / `Allure VI` — but
+  EVERY fade/fizzle/interrupt line DROPS the rank. 2,507/12,442 casts carry a Roman tail.
+  `spellCanonKey()` (parser.ts) strips a trailing ` I`..` X` (word-bounded, end-of-name
+  only) for the KEY; the display name keeps the suffix. VERIFIED SAFE: no fade line ever
+  ends in a Roman numeral, and all 16 rank-tailed base spells are real spells whose
+  identity has no Roman word (so stripping never merges two spells). This is what makes a
+  ranked cast pair with its rank-less fade (W6).
+- **Landing-emote cast-target discrimination (finding #2).** EQ prints a flavor line the
+  instant a buff lands — self `You feel much faster.` or third-person `<pet> feels much
+  faster.`. The parser emits a permissive `spellEmote {subject,text}` candidate (matched
+  LAST in `classify()`, after every real family, so it never shadows combat/cast/charm).
+  The buffs module RECOGNIZES a landing-emote TEXT once it's appeared adjacent (≤5s) to a
+  cast ≥2× (the noise filter — coincidental DoT/weather flavor never recurs cleanly in a
+  cast window), then trusts each cast's emote SUBJECT to bind that cast's target: a
+  self-emote ⇒ SELF buff even while a charmed pet is live. NB a spell can be cast on BOTH
+  self and pet (Swift Like the Wind is, in the real log), so there is NO global spell↔emote
+  binding — the per-cast subject is the only honest discriminator; an emote-bound cast is
+  never re-bound by a later pet claim (`emoteBound` flag). This is the direct fix for the
+  user's invisible self buffs (W1).
+- **Single-pet invariant (finding #3).** One pet at a time. A new `charm`/`petClaim`
+  RETIRES the previous pet (charmed or summoned) — `retireEntity` censors EVERY
+  pet-disposition open cast + pet-class active (single pet ⇒ every pet buff is on it). This
+  kills the Gibober→Jenann succession bug (a 62-min bogus sample from an open cast that
+  outlived its pet) (W3).
+- **Entity retirement drops actives (finding #4).** A SUMMONED pet has a unique proper name
+  (Xeneker/Gibober/Jenann) with no hostile twin, so a `<Name> has been slain by <other>!`
+  line is unambiguously its death → retire + censor (fixed the "Intensify Death [Xeneker]
+  287h" stale active). A pet buff cast BEFORE its pet's name is known (Intensify @19:52:31,
+  Xeneker claimed @19:57:42) binds 'self', then `rebindPetBuffsToPet` re-binds it to the
+  pet on the claim (within a 10-min window) so the pet's later death censors it (W2). The
+  CHARMED-pet twin-ambiguity conservatism (name-only slain ⇒ keep) is unchanged.
+- **Session gap (finding #5).** An event-time gap ≥ 30 min (`SESSION_GAP_MS`) ⇒ clear ALL
+  actives (self + pets) + censor opens + retire pets at the boundary — a logout/AFK past
+  any buff duration. Short relogs (< 30 min) keep state. Learned maps (everFaded / class /
+  emote recognition) are PRESERVED across the gap (only live actives/entities clear) (W4).
+- **Active hygiene cap (finding #6).** Any active with elapsed > max(2×p75 [n≥2], 90 min)
+  auto-retires (censored) on every event + `onTick`. No hours-old rows; the "overdue · any
+  moment" display is only for mildly-over-p75.
+
+**Golden-window testing methodology (the deliverable the user mandated — follow it for any
+future buffs/world-model change).** `tests/goldenWindows.test.mts` + `tests/fixtures/*.log`.
+For each window: LOCATE a real span in `eqlog_Primitive_freeport.txt`, READ it line-by-line,
+EXTRACT it verbatim (chat trimmed) via `tests/extract-fixtures.mjs` (committed — the user's
+own log), then replay through the REAL parser + BuffsModule and assert the world model
+(active buffs w/ target+class, mined stats). A golden window is a SLICE, so windows that
+depend on learned state are PRIMED with an earlier real excerpt (`*-priming.log`) that warms
+the classifier/everFaded/emote-recognition BEFORE the window — exactly what the full-log
+replay does ahead of the live tail in production (`replayBuffs(lines, tick, {prime})`).
+`tests/fullReplaySmoke.test.mts` replays the WHOLE log and asserts no active older than the
+hygiene cap, no active bound to a retired entity, and rank-merged stat keys. `npm test` runs
+all. This is additive-only to the parser (spellEmote is formerly-`unknown`; combat/charm/cc/
+death counts unchanged — regression-checked); world.ts/combat engine untouched.
 
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in

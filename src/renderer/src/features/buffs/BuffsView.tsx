@@ -236,9 +236,12 @@ export default function BuffsView(): JSX.Element {
         </Stack>
         <Typography variant="caption" color="text.secondary">
           Buffs are bound to WHO they're on — self, your pet, or (for debuffs like slows) a hostile
-          mob. Durations are mined from each cast→fade pair; fades that can never be observed (a
-          charmed pet or mob left behind on a zone, or an entity's death) are censored, not sampled.
-          Debuff targets are inferred (the cast line has no target) and shown as such.
+          mob. Cast targets are learned from landing emotes ("You feel much faster." ⇒ self); ranks
+          are merged so "Swift Like the Wind I" and its rank-less fade pair. Durations are mined from
+          each cast→fade pair; fades that can never be observed — a charmed pet or mob left behind on a
+          zone, an entity's death, or a logout gap (≥30 min clears everything) — are censored, not
+          sampled, and a buff run far past its window auto-retires. Debuff targets are inferred (the
+          cast line has no target) and shown as such.
         </Typography>
       </Box>
 
