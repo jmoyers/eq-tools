@@ -259,11 +259,63 @@ stats table sorted by n. Live via `useModule('buffs', …)`.
 moment a long class buff drops (the BuffsView caption points users at this). All five
 new kinds are in `LogEventKind`, so any is alert-targetable.
 
+**Entity-aware simulation (Task #32 — the who/what/when model).** Buffs now BIND to WHO
+they're on: **self | summoned pet | charmed pet | hostile mob (debuff)**. The module
+keeps a tiny entity state (charmedKey/summonedKey + an inferred pet fight-target) fed by
+`charm`/`petClaim`/`uncharm`/`cc`/`death`/`zone`, conceptually parallel to the combat
+WorldModel and SHARING its pure lifecycle rules via **`src/main/combat/entityRules.ts`**
+(extracted this task: `PetKind` type, `isLeftBehindOnZone`, `deathCensors`,
+`classifyFadeTarget`, `charmedPetDiesOnDeathLine`). world.ts re-exports `PetKind` and its
+`zone()` survivor branch now calls `isLeftBehindOnZone` — a pure refactor, combat
+regression-gated byte-for-byte (youOut/petOut/incoming/fights identical on a frozen log).
+The buffs module does NOT touch the engine's live world instance (modules are independent
+consumers) — it re-derives the small state it needs.
+
+- **Censoring the unobservable-fade outlier class (rule #3).** An open cast is bound at
+  LAND time to a target entity (`inferCastDisposition`: a known debuff → the inferred
+  hostile target; else the live charmed pet, else summoned, else self). When that entity
+  is RETIRED before the fade — **zone-left-behind** (charmed pet or hostile mob; a
+  SUMMONED pet follows and survives) or **entity death** — the open cast is CENSORED (no
+  duration sample), not paired into a bogus multi-hour duration. This killed the old
+  **23.8h "Swift Like the Wind" outlier** (a charmed-pet buff whose real fade was never
+  observed): Swift is now correctly a PET buff, max ≈7m. A final **`MAX_SAMPLE_MS` (3h)
+  ceiling** drops any land→fade gap beyond any plausible EQ buff (the backstop for an
+  orphaned open cast across a multi-day logoff with no intervening zone line in the
+  scanned window — otherwise 200h+ pairings for Spirit Armor / Reckless Strength leak in).
+- **Same-name twin safety.** The buffs model is NAME-keyed (no twin instances), so a
+  `<charmedName> has been slain` line is twin-ambiguous. The shared
+  `charmedPetDiesOnDeathLine` rule (mirroring world.ts death cases 2a/2b/2c) returns
+  FALSE — a name-only slain line NEVER censors the pet's buffs; the pet is retired only by
+  an explicit `uncharm` (charm-spell worn off) or a `zone`. Without this, a hostile
+  same-named twin you kill (`bySelf`) would wrongly clear charm and misclassify every
+  subsequent pet-buff fade as hostile.
+- **Debuffs are a distinct class (rule #5).** Classification is a **PLURALITY VOTE** over
+  a spell's observed fade dispositions (`dispTally`), NOT a sticky "ever hostile" flag: a
+  real pet buff occasionally fades during a charm gap (would be mislabeled by a sticky
+  rule) and a real debuff is hostile in the majority. `classOf`: hostile > friendly →
+  `debuff`; self-plurality → `self`; else `pet`. **Rule 5(a) holds — a debuff never
+  appears as self** (self requires a self plurality, which a majority-hostile spell can't
+  have; validated: debuff∩self overlap = NONE). Frozen-log result: Languid Pace → DEBUFF
+  (~52s slow), Tashani/Pacify/Soothe/Calm/Heat Blood → DEBUFF; Courage/Holy Armor → PET
+  (~27m). Active **debuff targets are INFERRED** (castBegin has no target) from the pet's
+  current fight target (last `cc`/`charm`) and surfaced with `inferredTarget:true` → the
+  UI shows a "target: inferred" chip, NEVER a silent guess (rule 5c).
+- **Types** (`shared/types.ts`): `BuffClass = 'self'|'pet'|'debuff'`; `BuffStat.cls`,
+  `ActiveBuff.cls`/`.disposition`/`.inferredTarget` are additive.
+- **BuffsView** now renders Active and Mined-durations in three VISUALLY-DISTINCT
+  class sections (Self / Pet buffs / Debuffs) — `classAccent`/`classLabel` in
+  buffs/format.ts give debuffs a red-ish (`error.main`) left border vs pet green / self
+  gold. Debuff rows show the inferred-target chip with an explanatory tooltip.
+
 **Out of scope (still):** an overlay window (later phase); a spell never yet observed
 fading still won't show as active until its first fade classifies it as a buff (the
-`everFaded` gate — a provisional entry is only created for known buffs); and duration
+`everFaded` gate — a provisional entry is only created for known buffs); duration
 samples are keyed per spell, not per (spell,target), so a buff on two named targets
-shares one bucket.
+shares one bucket; the entity model is name-keyed (no twin instances) — it deliberately
+never censors a pet on a name-only death line (a genuine pet death reported ONLY as a
+same-named slain line, with no uncharm, leaves buffs open until the next zone censors
+them); the SELF group is empty on this Enchanter's log because every one of the player's
+own casts targets the charmed pet (documented reality — see BuffFadeEvent).
 
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in

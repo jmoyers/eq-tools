@@ -71,6 +71,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { idKey } from '../log/parser'
+import { isLeftBehindOnZone, type PetKind } from './entityRules'
 
 /**
  * How an instance became your pet:
@@ -79,8 +80,12 @@ import { idKey } from '../log/parser'
  *                tell). Persists across zone lines (verified in the real log: a
  *                summoned pet kept dealing damage after 3 zone transitions with no
  *                re-summon), so zone() does NOT retire it.
+ *
+ * The type + the zone-survivor rule are now SHARED with the buffs simulation (Task
+ * #32) — see combat/entityRules.ts. Re-exported here so existing importers of
+ * `world.ts`'s PetKind are unaffected.
  */
-export type PetKind = 'charmed' | 'summoned'
+export type { PetKind }
 
 export interface Instance {
   instanceId: string
@@ -383,7 +388,11 @@ export class WorldModel {
     for (const list of this.byName.values()) {
       for (const inst of list) {
         if (inst.retired) continue
-        if (inst.charmed && inst.petKind === 'summoned') {
+        // Shared rule (entityRules.isLeftBehindOnZone): only a live SUMMONED pet
+        // survives a zone; charmed pets and hostiles are left behind. A hostile
+        // instance has petKind undefined → left behind (unchanged behavior).
+        const kind = inst.charmed ? inst.petKind : undefined
+        if (inst.charmed && !isLeftBehindOnZone(kind)) {
           inst.lastSeenTs = ts
           survivors.push(inst)
         } else {

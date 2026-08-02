@@ -35,3 +35,27 @@ export function remainingFraction(elapsedMs: number, estimatedMs: number): numbe
 export function isOverdue(elapsedMs: number, p75: number | null, n: number): boolean {
   return p75 != null && n >= 2 && elapsedMs > p75
 }
+
+import type { BuffClass } from '@shared/types'
+
+/**
+ * The left-border accent color (an MUI theme path) for a buff class (Task #32). Self
+ * and pet buffs read as friendly (gold/green); debuffs are visually distinct with a
+ * red-ish accent so the user never confuses a slow cast on an enemy with their own buff.
+ */
+export function classAccent(cls: BuffClass): string {
+  switch (cls) {
+    case 'debuff':
+      return 'error.main'
+    case 'pet':
+      return 'success.main'
+    case 'self':
+    default:
+      return 'warning.main'
+  }
+}
+
+/** Human label for a buff-class section header. */
+export function classLabel(cls: BuffClass): string {
+  return cls === 'debuff' ? 'Debuffs' : cls === 'pet' ? 'Pet buffs' : 'Self buffs'
+}

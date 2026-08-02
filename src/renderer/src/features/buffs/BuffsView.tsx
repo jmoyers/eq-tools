@@ -14,9 +14,11 @@ import {
   Typography
 } from '@mui/material'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
-import type { ActiveBuff, BuffStat, BuffsDelta, BuffsSnap } from '@shared/types'
+import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
-import { fmtDuration, remainingFraction, isOverdue } from './format'
+import { fmtDuration, remainingFraction, isOverdue, classAccent, classLabel } from './format'
+
+const CLASS_ORDER: BuffClass[] = ['self', 'pet', 'debuff']
 
 // Stable empty reference so hooks don't churn before hydration.
 const EMPTY_BUFFS: BuffsSnap = { active: [], stats: {} }
@@ -41,6 +43,10 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
   // before the land timeout confirms it. Dim the row + show a "casting…" hint.
   const provisional = buff.provisional === true
 
+  // Debuff target is INFERRED (castBegin carries no target) — surface it honestly as a
+  // "target: inferred" chip, never a silent guess (Task #32 rule 5c).
+  const inferred = buff.inferredTarget === true
+
   return (
     <Paper
       variant="outlined"
@@ -50,14 +56,27 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
         flexDirection: 'column',
         gap: 0.5,
         opacity: provisional ? 0.6 : 1,
-        borderStyle: provisional ? 'dashed' : 'solid'
+        borderStyle: provisional ? 'dashed' : 'solid',
+        // Class accent: red-ish left border for debuffs, green for pet, gold for self.
+        borderLeft: '3px solid',
+        borderLeftColor: classAccent(buff.cls)
       }}
     >
       <Stack direction="row" alignItems="baseline" spacing={1}>
         <Typography variant="body2" sx={{ fontWeight: 600 }}>
           {buff.spell}
         </Typography>
-        {buff.target === 'pet' ? (
+        {inferred ? (
+          <Tooltip title="Debuff target inferred from the pet's current fight target — castBegin carries no target, so this is a best guess, not a confirmed target.">
+            <Chip
+              size="small"
+              label={buff.target ? `target: ${buff.target} (inferred)` : 'target: inferred'}
+              variant="outlined"
+              color="warning"
+              sx={{ height: 18, fontSize: 11, maxWidth: 180, '& .MuiChip-label': { px: 0.75 } }}
+            />
+          </Tooltip>
+        ) : buff.target === 'pet' ? (
           <Chip size="small" label="pet" variant="outlined" sx={{ height: 18, fontSize: 11 }} />
         ) : buff.target ? (
           <Chip
@@ -123,18 +142,19 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
   )
 }
 
-/** The dense per-spell stats table, sorted by sample count. */
-function StatsTable({ stats }: { stats: Record<string, BuffStat> }): JSX.Element {
+/** The dense per-spell stats table for ONE class, sorted by sample count. */
+function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: BuffClass }): JSX.Element {
   const rows = useMemo(
     () =>
-      Object.values(stats).sort((a, b) => b.n - a.n || a.spell.localeCompare(b.spell)),
-    [stats]
+      Object.values(stats)
+        .filter((s) => s.cls === cls)
+        .sort((a, b) => b.n - a.n || a.spell.localeCompare(b.spell)),
+    [stats, cls]
   )
   if (rows.length === 0) {
     return (
       <Typography variant="body2" color="text.secondary">
-        No buff durations mined yet. Cast a buff on yourself or your pet and let it wear off — the
-        duration model learns from each land→fade pair.
+        No {classLabel(cls).toLowerCase()} durations mined yet.
       </Typography>
     )
   }
@@ -188,6 +208,20 @@ export default function BuffsView(): JSX.Element {
   const active = snap.active
   const minedCount = Object.values(snap.stats).filter((s) => s.n > 0).length
 
+  // Group active buffs by class so Self / Pet / Debuffs render as visually-distinct
+  // sections (Task #32). Within a group, preserve the snapshot's startedTs order.
+  const activeByClass = useMemo(() => {
+    const g: Record<BuffClass, ActiveBuff[]> = { self: [], pet: [], debuff: [] }
+    for (const b of active) g[b.cls].push(b)
+    return g
+  }, [active])
+  // Which classes have any mined stats — to decide whether to render each table.
+  const statsClasses = useMemo(() => {
+    const present = new Set<BuffClass>()
+    for (const s of Object.values(snap.stats)) present.add(s.cls)
+    return CLASS_ORDER.filter((c) => present.has(c))
+  }, [snap.stats])
+
   return (
     <Stack spacing={2}>
       <Box>
@@ -201,33 +235,48 @@ export default function BuffsView(): JSX.Element {
           />
         </Stack>
         <Typography variant="caption" color="text.secondary">
-          Durations are mined from your own cast→fade history (self and pet buffs). Remaining time is
-          an estimate from the median observed duration; the ± is the p25–p75 spread and n is how many
-          samples back it.
+          Buffs are bound to WHO they're on — self, your pet, or (for debuffs like slows) a hostile
+          mob. Durations are mined from each cast→fade pair; fades that can never be observed (a
+          charmed pet or mob left behind on a zone, or an entity's death) are censored, not sampled.
+          Debuff targets are inferred (the cast line has no target) and shown as such.
         </Typography>
       </Box>
 
       <Box>
         <Typography variant="subtitle2" gutterBottom>
-          Active buffs
+          Active
         </Typography>
         {active.length === 0 ? (
           <Typography variant="body2" color="text.secondary">
             No active buffs tracked. A buff appears here once you cast it and it has been observed
-            wearing off before (the fade is how the app knows a spell is a buff).
+            wearing off before (the fade is how the app knows a spell is a buff/debuff).
           </Typography>
         ) : (
-          <Box
-            sx={{
-              display: 'grid',
-              gap: 1,
-              gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'
-            }}
-          >
-            {active.map((b) => (
-              <ActiveRow key={b.spell} buff={b} now={now} />
+          <Stack spacing={1.5}>
+            {CLASS_ORDER.filter((c) => activeByClass[c].length > 0).map((c) => (
+              <Box key={c}>
+                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
+                  <Box
+                    sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(c) }}
+                  />
+                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                    {classLabel(c)}
+                  </Typography>
+                </Stack>
+                <Box
+                  sx={{
+                    display: 'grid',
+                    gap: 1,
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'
+                  }}
+                >
+                  {activeByClass[c].map((b) => (
+                    <ActiveRow key={b.spell} buff={b} now={now} />
+                  ))}
+                </Box>
+              </Box>
             ))}
-          </Box>
+          </Stack>
         )}
       </Box>
 
@@ -235,9 +284,33 @@ export default function BuffsView(): JSX.Element {
         <Typography variant="subtitle2" gutterBottom>
           Mined durations
         </Typography>
-        <Paper variant="outlined" sx={{ p: 1 }}>
-          <StatsTable stats={snap.stats} />
-        </Paper>
+        {statsClasses.length === 0 ? (
+          <Typography variant="body2" color="text.secondary">
+            No buff durations mined yet. Cast a buff on yourself or your pet and let it wear off — the
+            duration model learns from each land→fade pair.
+          </Typography>
+        ) : (
+          <Stack spacing={1.5}>
+            {statsClasses.map((c) => (
+              <Box key={c}>
+                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
+                  <Box
+                    sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(c) }}
+                  />
+                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                    {classLabel(c)}
+                  </Typography>
+                </Stack>
+                <Paper
+                  variant="outlined"
+                  sx={{ p: 1, borderLeft: '3px solid', borderLeftColor: classAccent(c) }}
+                >
+                  <StatsTable stats={snap.stats} cls={c} />
+                </Paper>
+              </Box>
+            ))}
+          </Stack>
+        )}
       </Box>
 
       <Typography variant="caption" color="text.secondary">

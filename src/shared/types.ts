@@ -311,10 +311,22 @@ export type AlertsDelta = { fired: FiredAlert[] }
 // own buffs (self and pet-targeted; in this Enchanter's log the pet is the main
 // buff target — see logEvents.ts BuffFadeEvent).
 
+/**
+ * The class a spell is shown under (Task #32 entity model):
+ *   'self'   — a buff on the player.
+ *   'pet'    — a buff on the player's summoned/charmed pet.
+ *   'debuff' — cast on a HOSTILE mob (e.g. Languid Pace slow). Never shown as self.
+ * Classified per spell by the disposition of its observed fades; a spell that has EVER
+ * faded on a hostile entity is a debuff.
+ */
+export type BuffClass = 'self' | 'pet' | 'debuff'
+
 /** Per-spell mined duration statistics (milliseconds). */
 export interface BuffStat {
   /** spell name (display casing of the first observed cast/fade). */
   spell: string
+  /** display class — self buff / pet buff / debuff (Task #32). */
+  cls: BuffClass
   /** number of duration samples (landed→fade pairs). */
   n: number
   /** median duration (ms); null when n === 0 (spell seen fading but never cleanly paired). */
@@ -331,6 +343,14 @@ export interface BuffStat {
 /** A currently-active (landed, not yet faded) buff. */
 export interface ActiveBuff {
   spell: string
+  /** display class — self buff / pet buff / debuff (Task #32). */
+  cls: BuffClass
+  /**
+   * The bound entity disposition (Task #32): 'self' | 'summoned' | 'charmed' |
+   * 'hostile'. Undefined only for a provisional entry cast before any fade classified
+   * the spell. Drives which group the row renders under and the target chip.
+   */
+  disposition?: 'self' | 'summoned' | 'charmed' | 'hostile'
   /** ts (ms) the cast landed / was last refreshed. */
   startedTs: number
   /** estimated duration from mined median (ms); null when no samples yet. */
@@ -340,8 +360,14 @@ export interface ActiveBuff {
   p75: number | null
   /** sample count behind the estimate (confidence hint). */
   n: number
-  /** 'pet' when the buff is on the player's pet, undefined for self. */
+  /** 'pet'/pet name for a pet buff, the inferred mob name for a debuff, undefined for self. */
   target?: string
+  /**
+   * True when `target` is an INFERENCE, not fact (Task #32): a debuff's active target
+   * is inferred from the pet's current fight target because castBegin carries no
+   * target. The UI must present this as "target: inferred", never as a silent guess.
+   */
+  inferredTarget?: boolean
   /**
    * True while this is an OPTIMISTIC (not-yet-confirmed) landing (Task #30): shown
    * the instant `castBegin` fires so a buff is visible immediately, before the 15s
