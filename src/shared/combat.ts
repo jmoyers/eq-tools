@@ -311,6 +311,21 @@ export interface CombatSnapshot {
   /** zone-session list (Task #54): the live zone + capped finalized-zone history, newest-first
    *  after the live one. Drives the ZONE selector in the main view + the 'overall' overlay. */
   zoneSessions: ZoneSessionSummary[]
+  /**
+   * HYDRATION (Task #56): true while the engine is still folding the historical scan
+   * (`live:false` replay) and false once the Tailer's live handoff happens. Every snapshot
+   * taken during the replay describes a HISTORICAL moment — an encounter from hours ago is
+   * `current` and looks live. The UI must render a quiet loading state instead of that
+   * churning fake-live meter; this is the only honest signal for it.
+   */
+  hydrating: boolean
+  /**
+   * True when the LIVE selection (no explicit `selectedId`) resolved to the live ZONE
+   * session because NO fight is currently open. The dashboard then shows zone-overall data
+   * and labels itself as such — a dashboard must never go empty while data exists, and it
+   * must never present a finished fight as the current one.
+   */
+  liveFallback: boolean
 }
 
 export interface SnapshotOpts {

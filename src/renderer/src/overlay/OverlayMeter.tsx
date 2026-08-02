@@ -316,18 +316,23 @@ export default function OverlayMeter(): JSX.Element {
   const drill = cfg?.drill ?? null
   const now = Date.now()
 
-  const seg = snap?.selected ?? undefined
-  const live = !!snap?.inCombat
+  // HYDRATION (Task #56): while the engine replays the log, every snapshot is a HISTORICAL
+  // moment — an overlay pinned over the game would churn through hours-old pulls as if they
+  // were live. Render quiet and empty until the tail takes over (the main window shows the
+  // same "Reading log…" state); one flag gates the whole surface.
+  const hydrating = snap?.hydrating ?? true
+  const seg = hydrating ? undefined : snap?.selected ?? undefined
+  const live = !hydrating && !!snap?.inCombat
   const isFight = kind === 'fight'
 
   // Header title + rate/duration for the selected segment.
-  const headerName = seg?.name ?? (isFight ? 'No fight' : 'No zone')
+  const headerName = hydrating ? 'Reading log…' : seg?.name ?? (isFight ? 'No fight' : 'No zone')
   const durationSec = seg?.durationSec ?? 0
   const totalDps = seg?.outDps ?? 0
 
   // Selector options.
-  const fightRows = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
-  const zoneRows = snap?.zoneSessions ?? []
+  const fightRows = hydrating ? [] : (snap?.segments ?? []).filter((s) => s.kind === 'fight')
+  const zoneRows = hydrating ? [] : snap?.zoneSessions ?? []
 
   const patch = (p: Partial<OverlayConfig>): void => {
     setCfg((c) => (c ? { ...c, ...p } : c))

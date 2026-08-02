@@ -15,9 +15,9 @@
     "scrape:spells": "tsx scripts/scrape-spells.ts",
     "fetch:packs": "tsx scripts/fetch-packs.mts",
     "gen:icon": "tsx scripts/gen-icon.mts",
-    "gen:sounds": "tsx scripts/gen-sounds.mts",
     "gen:message-overlay": "tsx scripts/gen-message-overlay.ts",
     "test": "node --import tsx --test tests/*.test.mts",
+    "test:e2e": "node --import tsx tests/e2e/combat-dashboard.e2e.mts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
@@ -45,6 +45,7 @@
     "electron": "^33.2.0",
     "electron-builder": "^25.1.8",
     "electron-vite": "^2.3.0",
+    "playwright-core": "^1.62.1",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "vite": "^5.4.11"

@@ -1,3 +1,6 @@
+// FIRST import on purpose: in EQ_E2E mode this re-points `userData` at a fresh temp dir
+// before electron-store is constructed (module-level) further down this import list.
+import { E2E } from './e2e'
 import { app, shell, BrowserWindow, dialog, ipcMain } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
 import { existsSync } from 'fs'
@@ -265,7 +268,11 @@ function createWindow(): void {
     }
   })
 
-  mainWindow.on('ready-to-show', () => mainWindow?.show())
+  // E2E: never show (and therefore never focus) the window — the harness drives it
+  // entirely through the renderer's DOM while the user is playing.
+  mainWindow.on('ready-to-show', () => {
+    if (!E2E) mainWindow?.show()
+  })
 
   // Frameless title bar (Task #23): push maximize state so the React max/restore
   // button can swap its icon. Sent on every transition + once at first paint.
@@ -411,7 +418,7 @@ const OVERLAY_DEFAULT_SIZE: Record<OverlayKind, { width: number; height: number 
 function createOverlayWindow(kind: OverlayKind): void {
   const existing = overlayWindows[kind]
   if (existing && !existing.isDestroyed()) {
-    existing.show()
+    if (!E2E) existing.show()
     return
   }
   const cfg = getOverlayConfig(kind)
@@ -455,6 +462,8 @@ function createOverlayWindow(kind: OverlayKind): void {
   })
 
   w.on('ready-to-show', () => {
+    // E2E: overlays stay hidden too (they're always-on-top — showing one would cover the game).
+    if (E2E) return
     // showInactive so opening the overlay never steals focus from the game.
     w.showInactive()
     w.setAlwaysOnTop(true, 'screen-saver')
@@ -895,7 +904,9 @@ function registerIpc(): void {
 // app, or an auto-update restart) must not spin up a second window tailing the same
 // log. If we don't get the lock, quit immediately; the primary instance receives a
 // `second-instance` event and focuses/restores its existing window instead.
-const gotSingleInstanceLock = app.requestSingleInstanceLock()
+// E2E: skip the lock entirely (never request it), so a headless test instance can run
+// alongside the user's dev app instead of quitting — and can't steal its focus either.
+const gotSingleInstanceLock = E2E || app.requestSingleInstanceLock()
 if (!gotSingleInstanceLock) {
   app.quit()
 } else {
@@ -917,11 +928,14 @@ if (!gotSingleInstanceLock) {
     // pack in the background (non-blocking, silent — errors go to errors.log and retry
     // next launch). On success, tell the renderer the pack set changed so it re-lists +
     // invalidates its sound caches and the sound becomes usable live.
-    void provisionDefaultPacks()
-      .then((n) => {
-        if (n > 0) mainWindow?.webContents.send(IPC.onSoundPacksChanged)
-      })
-      .catch((err) => logError('main:provisionPacks', err))
+    // E2E: skip (fresh temp userData ⇒ it would re-download every pack, off-network noise).
+    if (!E2E) {
+      void provisionDefaultPacks()
+        .then((n) => {
+          if (n > 0) mainWindow?.webContents.send(IPC.onSoundPacksChanged)
+        })
+        .catch((err) => logError('main:provisionPacks', err))
+    }
     // Auto-update (Task #27): checks GitHub Releases on the selected channel;
     // no-ops in dev. getMainWindow is lazy so status pushes hit the live window.
     initUpdater(() => mainWindow)

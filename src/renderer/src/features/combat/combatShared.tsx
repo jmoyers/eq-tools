@@ -298,7 +298,8 @@ export function DashCard({
   right,
   children,
   grow,
-  minHeight
+  minHeight,
+  height
 }: {
   title: string
   right?: ReactNode
@@ -306,6 +307,13 @@ export function DashCard({
   /** let the card absorb leftover column height (its body scrolls). */
   grow?: boolean
   minHeight?: number
+  /**
+   * FIXED card height (`flex: 0 0 <height>px`) — for a card whose body is an ever-growing
+   * append-only ring. Without it such a card sizes to its CONTENT (`flex: 0 0 auto` can
+   * neither grow nor shrink), so it silently steals the whole column from its shrinkable
+   * siblings — which is exactly how the combat log ate the dashboard. Wins over minHeight.
+   */
+  height?: number
 }): JSX.Element {
   return (
     <Paper
@@ -315,7 +323,11 @@ export function DashCard({
         display: 'flex',
         flexDirection: 'column',
         minWidth: 0,
-        ...(grow ? { flex: '1 1 0', minHeight: minHeight ?? 0 } : { flex: '0 0 auto', minHeight })
+        ...(grow
+          ? { flex: '1 1 0', minHeight: minHeight ?? 0 }
+          : height != null
+            ? { flex: `0 0 ${height}px`, minHeight: 0, maxHeight: height }
+            : { flex: '0 0 auto', minHeight })
       }}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="baseline" spacing={1} sx={{ mb: 0.75 }}>

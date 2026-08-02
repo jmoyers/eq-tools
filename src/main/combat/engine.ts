@@ -582,6 +582,14 @@ export class CombatEngine {
   private zoneSeq = 0
   private recent: ClassifiedLine[] = []
   private recording = false
+  /**
+   * HYDRATION (Task #56). True from construction/reset until the historical scan hands off
+   * to the live Tailer (`setLive()`, or the first live event as a belt-and-braces fallback).
+   * While true, `current` is a fight from the PAST being replayed, so a snapshot's "live"
+   * fields are historical — the snapshot carries this flag so the UI renders a loading state
+   * instead of a churning fake-live meter.
+   */
+  private hydrating = true
   /** ts of the last encounter-relevant activity (attributed damage OR a CC event).
    *  Drives the FALLBACK_IDLE_MS closure independent of the damage timeline. */
   private lastActivityTs = 0
@@ -592,9 +600,11 @@ export class CombatEngine {
   private stance?: { name: string; ts: number }
   private invocation?: { name: string; ts: number }
 
-  /** Enable classification logging (after the historical scan, for the live tail). */
+  /** Enable classification logging (after the historical scan, for the live tail), and
+   *  flip HYDRATION off — from here on every snapshot describes the real present. */
   setLive(): void {
     this.recording = true
+    this.hydrating = false
   }
 
   /**
@@ -642,6 +652,9 @@ export class CombatEngine {
     this.zoneSeq = 0
     this.recent = []
     this.recording = false
+    // A reset always precedes a fresh full-log scan (startup / character switch), so we're
+    // hydrating again until that scan hands off to the tail.
+    this.hydrating = true
     this.lastActivityTs = 0
     this.stance = undefined
     this.invocation = undefined
@@ -663,7 +676,10 @@ export class CombatEngine {
    * mutate state silently; live events are also ring-logged.
    */
   ingestEvent(ev: LogEvent, live: boolean): void {
-    if (live) this.recording = true
+    if (live) {
+      this.recording = true
+      this.hydrating = false
+    }
     switch (ev.kind) {
       case 'epoch': {
         // Character rebirth (Task #49): a same-name character was wiped/recreated. The DPS
@@ -1345,7 +1361,13 @@ export class CombatEngine {
     }
     segments.push(this.zoneSummary())
 
-    const defaultId = this.current?.id ?? this.history[this.history.length - 1]?.id ?? 'zone'
+    // LIVE selection resolution (Task #56). "Current fight (live)" means: the open fight if
+    // there is one, otherwise the live ZONE session — NOT the most recent finalized fight.
+    // Falling back to the last fight presented a finished encounter as the current one (it
+    // even kept re-labelling itself as fights closed), and the zone aggregate is the honest
+    // "what's happening here overall" view that always has data between pulls. `liveFallback`
+    // tells the UI to say so out loud.
+    const defaultId = this.current?.id ?? 'zone'
     // Validate against ALL encounters, not just the capped segment window — a
     // selected finalized fight outside the cap is still fully resolvable via
     // buildSelected() (it searches this.history directly).
@@ -1354,8 +1376,11 @@ export class CombatEngine {
       this.current?.id === opts.selectedId ||
       this.history.some((h) => h.id === opts.selectedId) ||
       this.zoneHistory.some((z) => z.id === opts.selectedId)
-    const selectedId = opts.selectedId && selectableId ? opts.selectedId : defaultId
+    const explicit = !!(opts.selectedId && selectableId)
+    const selectedId = explicit ? opts.selectedId! : defaultId
     const selected = this.buildSelected(selectedId, now, combinePets)
+    // LIVE was asked for, no fight is open ⇒ `selected` is the live zone session.
+    const liveFallback = !explicit && !this.current
 
     const recent = (opts.showUnparsed ? this.recent : this.recent.filter((r) => r.cat !== 'unparsed')).slice(-150)
     const stance: StanceState = {
@@ -1368,7 +1393,9 @@ export class CombatEngine {
     return {
       selectedId, selected, segments, inCombat, zone: this.zone,
       recent, stance, timeline,
-      zoneSessions: this.zoneSessionSummaries()
+      zoneSessions: this.zoneSessionSummaries(),
+      hydrating: this.hydrating,
+      liveFallback
     }
   }
 

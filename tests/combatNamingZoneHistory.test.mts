@@ -133,3 +133,58 @@ test('Z2: zone-session history is capped at 20 finalized sessions', () => {
   // Newest-first: the most recent finalized zone is Zone24.
   assert.equal(finalized[0].zone, 'Zone24')
 })
+
+// ============================================================================
+// Task #56 — LIVE selection resolution + hydration signal.
+//
+// "Current fight (live)" must mean the OPEN fight, or — when there is none — the live ZONE
+// session, never the most recent FINISHED fight (which the UI would then present as current,
+// silently re-labelling itself as fights closed). `liveFallback` is the flag that lets the UI
+// say which of the two it's showing. `hydrating` marks the historical-replay phase, where
+// every snapshot describes a moment in the past.
+// ============================================================================
+
+const ONE_PULL: string[] = [
+  '[Sun Jul 19 12:00:00 2026] You have entered Befallen.',
+  '[Sun Jul 19 12:00:01 2026] You crush a skeleton for 100 points of damage.',
+  '[Sun Jul 19 12:00:02 2026] You crush a skeleton for 100 points of damage.'
+]
+
+test('L1: LIVE with an OPEN fight selects that fight (no fallback)', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  const lastTs = feed(eng, ONE_PULL)
+  const snap = eng.snapshot(lastTs + 500, {})
+  assert.equal(snap.liveFallback, false)
+  assert.equal(snap.selected!.kind, 'fight')
+  assert.ok(snap.selected!.outTotal > 0)
+})
+
+test('L2: LIVE with NO open fight falls back to the live zone session, flagged + populated', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  const lastTs = feed(eng, ONE_PULL)
+  // Far enough in the future that the fight closed on the idle fallback.
+  const snap = eng.snapshot(lastTs + 120_000, {})
+  assert.equal(snap.liveFallback, true, 'the UI is told it is showing the zone, not a fight')
+  assert.equal(snap.selectedId, 'zone')
+  assert.equal(snap.selected!.kind, 'zone')
+  // The whole point: the dashboard is never empty while the zone has data.
+  assert.equal(snap.selected!.outTotal, 200)
+  assert.ok(snap.selected!.entities.length > 0)
+  // An EXPLICIT pick is never a fallback, even when it resolves to the same zone session.
+  assert.equal(eng.snapshot(lastTs + 120_000, { selectedId: 'zone' }).liveFallback, false)
+})
+
+test('L3: hydrating is true during the historical replay and false once the tail takes over', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  assert.equal(eng.snapshot(Date.now(), {}).hydrating, true, 'fresh engine = replay phase')
+  const lastTs = feed(eng, ONE_PULL) // ingested with live:false — still replaying
+  assert.equal(eng.snapshot(lastTs + 500, {}).hydrating, true)
+  eng.setLive()
+  assert.equal(eng.snapshot(lastTs + 500, {}).hydrating, false)
+  // A character switch replays from scratch, so hydration starts over.
+  eng.reset()
+  assert.equal(eng.snapshot(Date.now(), {}).hydrating, true)
+})

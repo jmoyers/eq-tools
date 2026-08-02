@@ -4,6 +4,7 @@ import {
   Breadcrumbs,
   Button,
   Chip,
+  CircularProgress,
   Collapse,
   FormControlLabel,
   Link,
@@ -11,6 +12,7 @@ import {
   MenuItem,
   Paper,
   Select,
+  Skeleton,
   Stack,
   Switch,
   ToggleButton,
@@ -113,7 +115,7 @@ const EntityRow = memo(function EntityRow({
     ) : null
   const onClick = onDrill ?? (e.skills.length ? () => setOpen((o) => !o) : undefined)
   return (
-    <Box>
+    <Box data-testid="meter-row">
       <Bar
         color={KIND_COLOR[e.kind] ?? '#888'}
         pct={e.pct}
@@ -299,13 +301,16 @@ function SegmentBody({
   tl,
   mode,
   drill,
-  setDrill
+  setDrill,
+  fallbackNote
 }: {
   seg: SegmentView
   tl: TimelineView | null
   mode: 'out' | 'in'
   drill: Drill | null
   setDrill: (d: Drill | null) => void
+  /** Set when the LIVE selection fell back to the zone session (no fight open) — says so. */
+  fallbackNote?: string | null
 }): JSX.Element {
   const rows = mode === 'out' ? seg.entities : seg.incoming
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
@@ -359,6 +364,18 @@ function SegmentBody({
           </Typography>
         </Typography>
       </Stack>
+
+      {/* LIVE with no open fight: the body is the zone session, and it says so (Task #56). */}
+      {fallbackNote && (
+        <Typography
+          data-testid="live-fallback"
+          variant="caption"
+          color="text.secondary"
+          sx={{ display: 'block', mt: -0.75, mb: 0.75 }}
+        >
+          {fallbackNote}
+        </Typography>
+      )}
 
       {/* Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */}
       {crumb && (
@@ -440,6 +457,10 @@ function ProcessingLog({
     const el = ref.current
     if (el) el.scrollTop = el.scrollHeight
   }, [lines])
+  // FIXED height, not minHeight (Task #56): this card's body is an append-only ring that grows
+  // to 150 lines. As `flex: 0 0 auto` it sized to that CONTENT and — being unshrinkable —
+  // squeezed the entire dashboard down to its `minHeight: 0`, so a few seconds after the live
+  // tail started the Combat tab was JUST a scrolling log. The ring scrolls inside a fixed box.
   return (
     <DashCard
       title="Combat log"
@@ -450,10 +471,11 @@ function ProcessingLog({
           sx={{ m: 0 }}
         />
       }
-      minHeight={168}
+      height={220}
     >
       <Box
         ref={ref}
+        data-testid="combat-log"
         sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, fontFamily: '"Consolas","Courier New",monospace', fontSize: 11 }}
       >
         {lines.length === 0 && <QuietNote>Waiting for combat…</QuietNote>}
@@ -524,10 +546,42 @@ type CombatSnapshotStance = NonNullable<ReturnType<typeof useCombat>['snap']>['s
  * object each second and re-run every derivation. The signature below changes exactly when
  * the content can have changed — id, event count, raw count, duration — so a static
  * selection derives ONCE and a live fight still recomputes every tick.
+ *
+ * NO_SIG is the first-render sentinel: it only has to differ from every real signature (a
+ * real one is '' for "no timeline", else 'id|…' with pipes) so the first render adopts.
  */
+const NO_SIG = '<none>'
+
+/**
+ * HYDRATION state (Task #56). During the startup replay the engine is folding the whole log,
+ * so every snapshot's "current fight" is an encounter from hours ago: the dashboard churned
+ * through historical pulls as if they were live, then snapped to the real present. That is a
+ * lie the UI shouldn't tell, so while `snap.hydrating` is true the dashboard body is this
+ * quiet, dense placeholder — state ("Reading log…"), never process.
+ */
+function HydratingPanel(): JSX.Element {
+  return (
+    <Paper
+      variant="outlined"
+      data-testid="combat-hydrating"
+      sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+    >
+      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+        <CircularProgress size={13} thickness={5} />
+        <Typography variant="caption" color="text.secondary">
+          Reading log…
+        </Typography>
+      </Stack>
+      {[0, 1, 2, 3, 4].map((i) => (
+        <Skeleton key={i} variant="rounded" height={22} sx={{ mb: '3px', opacity: 1 - i * 0.15 }} />
+      ))}
+    </Paper>
+  )
+}
+
 function useStableTimeline(tl: TimelineView | null | undefined): TimelineView | null {
   const sig = tl ? `${tl.id}|${tl.rawCount}|${tl.events.length}|${tl.durationMs}|${tl.lanes.length}` : ''
-  const sigRef = useRef<string>(' ')
+  const sigRef = useRef<string>(NO_SIG)
   const valRef = useRef<TimelineView | null>(null)
   if (sig !== sigRef.current) {
     sigRef.current = sig
@@ -575,7 +629,17 @@ export default function CombatView(): JSX.Element {
   // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
   const now = Date.now()
 
+  // Startup replay in progress (Task #56): the engine is still folding history, so nothing in
+  // this snapshot describes the present. `snap === null` (first fetch in flight) reads the same
+  // way — both are "we're not ready", and both render the quiet loading state.
+  const hydrating = snap?.hydrating ?? true
   const seg = snap?.selected ?? null
+  // LIVE is selected but no fight is open → `selected` is the live ZONE session (the engine
+  // decides this; see snapshot()'s liveFallback). Say so instead of silently relabelling.
+  const fallbackNote =
+    snap?.liveFallback && selection === LIVE
+      ? `No active fight — showing ${snap.zone ?? 'this zone'} overall`
+      : null
   const tl = useStableTimeline(snap?.timeline)
   // Why the event-derived panels have nothing to show: a zone session keeps no ring at all,
   // an older fight had its ring dropped at finalize. Both are quiet notes, never errors.
@@ -589,10 +653,18 @@ export default function CombatView(): JSX.Element {
     (drill?.kind === 'entity' ? previewRows.find((r) => r.id === drill.entityId) : undefined) ?? previewRows[0] ?? null
 
   return (
-    <Stack spacing={1.5} sx={{ height: '100%' }}>
+    // The tab owns exactly the height it's given: the dashboard (flexGrow) takes what's left
+    // after the header and the FIXED-height combat log, and nothing here may spill into the
+    // app's scrolling content area. Before Task #56 the unbounded log below did exactly that —
+    // it grew past the viewport and pushed the dashboard to 0px, leaving "just a combat log".
+    <Stack spacing={1.5} sx={{ height: '100%', minHeight: 0, overflow: 'hidden' }}>
       <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
         <Select
           size="small"
+          data-testid="segment-select"
+          // While hydrating, the fight list is a churning replay artifact — don't invite a
+          // pick from it (the value stays LIVE and the list settles the moment the tail runs).
+          disabled={hydrating}
           value={selection}
           onChange={(e) => {
             const v = e.target.value
@@ -664,7 +736,9 @@ export default function CombatView(): JSX.Element {
         )}
       </Stack>
 
-      {view === 'timeline' ? (
+      {hydrating ? (
+        <HydratingPanel />
+      ) : view === 'timeline' ? (
         tl ? (
           <CombatTimeline tl={tl} />
         ) : (
@@ -679,6 +753,7 @@ export default function CombatView(): JSX.Element {
         // Dashboard: the source meter anchors the left column; the event-derived panels
         // stack down the right. Columns collapse to a single scrolling column when narrow.
         <Box
+          data-testid="combat-dashboard"
           sx={{
             display: 'flex',
             gap: 1.5,
@@ -697,7 +772,7 @@ export default function CombatView(): JSX.Element {
               flexDirection: 'column'
             }}
           >
-            <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} />
+            <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} fallbackNote={fallbackNote} />
           </Box>
           <Box
             sx={{

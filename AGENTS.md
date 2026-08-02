@@ -226,7 +226,7 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   Scrapers (output committed): `scrape:posky` (quest-item cells: iterate
   `<li>` items — `<br>`-splitting once dropped trailing unhinted items),
   `scrape:bosses` (curated list incl. efreeti spawn-chain "Other:" bosses),
-  `scrape:spells`, `gen:message-overlay`, `gen:sounds`, `gen:icon`.
+  `scrape:spells`, `gen:message-overlay`, `gen:icon`.
 - Item knowledge: `itemLookup.ts` — local-first (posky) → wiki
   `{{Itempage}}` (`statsblock` flags / `relatedquests` / `notes`), userData
   cache with negative caching, live-loot background prefetch.
@@ -234,9 +234,14 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   browse/install any of ~350 packs in-app. The single shipped default
   (`alan-rickman`, pinned tag) is GITIGNORED audio, self-provisioned via the
   same installPack path (one tarball GET, retried with backoff, additive:
-  never removes or re-downloads an installed pack). The old peon/sc_marine/
-  default packs are no longer provisioned but remain registry-installable,
-  and any alert still pointing at them keeps working if they're on disk.
+  never removes or re-downloads an installed pack). The synthesized `default`
+  chime pack is DELETED (generator + assets, Task #57) — it is not listed,
+  generated, or shipped anywhere; peon/sc_marine are no longer provisioned but
+  remain registry-installable. Alerts pointing at any retired pack are rewritten
+  onto the analogous alan-rickman line by a ONE-TIME, version-stamped store
+  migration (`migrateAlertSounds` in data/defaultPacks.ts, run from
+  `getAlerts()`), so an upgrading user's alerts never go silently mute. Every
+  picker pre-selects alan-rickman (`fallbackPack`), never `packs[0]`.
 
 ## UI conventions
 

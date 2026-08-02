@@ -167,7 +167,13 @@ test('W-tax1: stance + invocation state is tracked and current', () => {
 
 test('W-tax1: the timeline pins the stance + invocation spans and lanes the skills', () => {
   const { eng, lastTs } = replay()
-  const snap = eng.snapshot(lastTs + 6000, { timeline: true })
+  const now = lastTs + 6000
+  // By `now` the fight has closed, and the LIVE default deliberately resolves to the ZONE
+  // session rather than the last finished fight (Task #56: a finished fight is never presented
+  // as the current one), so ask for the fight's timeline explicitly.
+  const fight = eng.snapshot(now, {}).segments.find((s) => s.kind === 'fight')
+  assert.ok(fight, 'the fight is finalized into history')
+  const snap = eng.snapshot(now, { timeline: true, selectedId: fight!.id })
   const tl = snap.timeline
   assert.ok(tl, 'a fight is selected with a timeline')
   // Both pinned groups present, both starting at t=0 (inherited into the fight).
