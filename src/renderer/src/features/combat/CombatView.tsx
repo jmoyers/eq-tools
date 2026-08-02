@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState, type ReactNode } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import {
   Box,
   Breadcrumbs,
@@ -22,12 +22,14 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
 import { LIVE, useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
+import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
+import { Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
+import { flattenSkills, skillsForTarget, type Drill } from './dashboardData'
 import { formatDate, formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import type { ClassifiedLine, DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
+import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 
-const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 const ROLE_COLOR: Record<string, string> = {
   you: '#d9b25f',
   pet: '#6fb3d2',
@@ -36,10 +38,6 @@ const ROLE_COLOR: Record<string, string> = {
   dropped: '#e0554f'
 }
 
-function fmtDur(sec: number): string {
-  const s = Math.max(0, Math.round(sec))
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
-}
 function fmtClock(ts: number): string {
   return formatTime(ts)
 }
@@ -68,61 +66,6 @@ function timingLabel(startTs: number, durationSec: number, now: number): string 
   if (age) bits.push(age)
   bits.push(fmtDur(durationSec))
   return bits.join(' · ')
-}
-
-function Bar({
-  color,
-  pct,
-  rank,
-  name,
-  right,
-  onClick,
-  accent
-}: {
-  color: string
-  pct: number
-  rank?: number
-  name: ReactNode
-  right: string
-  onClick?: () => void
-  /** Full-height left stripe — keeps a row's category readable even when its fill is 2% wide. */
-  accent?: string
-}): JSX.Element {
-  return (
-    <Box
-      onClick={onClick}
-      sx={{
-        position: 'relative',
-        height: 22,
-        borderRadius: 0.5,
-        mb: '3px',
-        overflow: 'hidden',
-        cursor: onClick ? 'pointer' : 'default',
-        bgcolor: 'rgba(255,255,255,0.04)'
-      }}
-    >
-      <Box sx={{ position: 'absolute', inset: 0, width: `${Math.max(2, pct)}%`, bgcolor: color, opacity: 0.5 }} />
-      {accent && <Box sx={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: accent }} />}
-      <Stack
-        direction="row"
-        alignItems="center"
-        sx={{ position: 'absolute', inset: 0, pl: accent ? '9px' : 0.75, pr: 0.75 }}
-        spacing={0.75}
-      >
-        {rank != null && (
-          <Typography variant="caption" sx={{ color: 'text.secondary', width: 16, textAlign: 'right' }}>
-            {rank}
-          </Typography>
-        )}
-        <Typography variant="caption" noWrap sx={{ fontWeight: 600, flexGrow: 1 }}>
-          {name}
-        </Typography>
-        <Typography variant="caption" sx={{ whiteSpace: 'nowrap' }}>
-          {right}
-        </Typography>
-      </Stack>
-    </Box>
-  )
 }
 
 function missSummary(m: SourceView['missBreakdown']): string {
@@ -203,16 +146,7 @@ const EntityRow = memo(function EntityRow({
         <Collapse in={open}>
           <Box sx={{ pl: 3, pr: 0.5, py: 0.5 }}>
             {flattenSkills(e).map((s) => (
-              <Bar
-                key={`${s.category}|${s.name}`}
-                color={CAT_COLOR[s.category]}
-                accent={CAT_COLOR[s.category]}
-                pct={s.pct}
-                name={s.name}
-                right={`${fmt(s.total)} · ${s.hits} hits${
-                  s.misses ? ` · ${Math.round((s.hits / (s.hits + s.misses)) * 100)}% hit` : ''
-                }${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
-              />
+              <SkillBar key={`${s.category}|${s.name}`} s={s} />
             ))}
           </Box>
         </Collapse>
@@ -250,40 +184,6 @@ function IncomingHeals({ seg }: { seg: SegmentView }): JSX.Element | null {
       ))}
     </Box>
   )
-}
-
-// Category colors — the drill-down's ONLY grouping cue now that the category nav level is gone.
-const CAT_COLOR: Record<DamageCategory, string> = {
-  melee: '#d9b25f',
-  slay: '#e8d48a',
-  spell: '#a98fe0',
-  dot: '#6fb3d2',
-  ds: '#cf6679'
-}
-// Red-tint for resist/miss rate badges (matches the timeline's hollow marks).
-const RESIST_COLOR = '#e05663'
-
-// Drill-down selection: null = level 1 (entities); {entityId} = level 2, ONE flat ranked list
-// of every skill/spell that entity landed, across all taxonomy categories. The category is a
-// COLOR (bar fill + left stripe + legend), not a nav level — the old source→category→skill
-// path buried single-skill categories behind an extra click. Esc / Back / breadcrumb → level 1.
-interface Drill {
-  entityId: string
-}
-
-/** A skill row tagged with the category it was rolled up under (the color key). */
-type FlatSkill = SkillView & { category: DamageCategory }
-
-/**
- * Flatten a source's per-category skill lists into ONE list ranked by damage desc, and
- * re-base each row's bar pct on the global max (the engine's `pct` is relative to the
- * skill's own category max, which would make small categories render full-width here).
- */
-function flattenSkills(e: SourceView): FlatSkill[] {
-  const rows: FlatSkill[] = e.categories.flatMap((c) => c.skills.map((s) => ({ ...s, category: c.category })))
-  rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
-  const max = Math.max(1, ...rows.map((r) => r.total))
-  return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
 }
 
 /**
@@ -355,41 +255,8 @@ function CategoryLegend({
   )
 }
 
-/** One flat skill/spell row, colored by its parent category (fill + left stripe). */
-function SkillBar({ s }: { s: FlatSkill }): JSX.Element {
-  const color = CAT_COLOR[s.category]
-  const resists = s.resists ?? 0
-  const casts = s.hits + resists
-  // A spell/dot lane can carry resists (Task #51 v2). Show a resist-rate badge and,
-  // for a lane that only ever resisted (0 hits), a resist-only right-hand summary.
-  return (
-    <Bar
-      color={color}
-      accent={color}
-      pct={s.pct}
-      name={
-        <>
-          {s.name}
-          {resists > 0 && (
-            <Tooltip title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round((s.hits / casts) * 100)}% landed`}>
-              <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
-                {Math.round((resists / casts) * 100)}% resist
-              </Typography>
-            </Tooltip>
-          )}
-        </>
-      }
-      right={
-        s.hits > 0
-          ? `${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`
-          : `${resists} resisted · 0 landed`
-      }
-    />
-  )
-}
-
 /**
- * Level-2 (the only drill level): the category legend + ONE flat ranked list of every
+ * Level-2 (one of two level-2 subjects): the category legend + ONE flat ranked list of every
  * skill/spell this entity landed. The melee-rounds heuristic footer rides along.
  */
 function EntitySkillBars({ e }: { e: SourceView }): JSX.Element {
@@ -403,11 +270,7 @@ function EntitySkillBars({ e }: { e: SourceView }): JSX.Element {
       {rows.map((s) => (
         <SkillBar key={`${s.category}|${s.name}`} s={s} />
       ))}
-      {rows.length === 0 && (
-        <Typography variant="caption" color="text.secondary">
-          No skill breakdown for this source.
-        </Typography>
-      )}
+      {rows.length === 0 && <QuietNote>No skill breakdown for this source.</QuietNote>}
       {rounds && (rounds.multiHitRounds > 0 || rounds.maxHitsInRound > 1) && (
         <Tooltip
           title={`Heuristic: EQ never logs double/triple attack, so a "round" here is same-second, same-skill melee/slay hits — a cluster proxy, not a certainty. Main-hand vs off-hand is not distinguishable. Distribution (hits→rounds): ${rounds.histogram
@@ -426,13 +289,20 @@ function EntitySkillBars({ e }: { e: SourceView }): JSX.Element {
   )
 }
 
+/**
+ * The dashboard's anchor panel: the source meter (level 1) and, when drilled, ONE level-2
+ * subject — either an entity's flat skill list or a MOB's (everything you+pet landed on it).
+ * The two drill kinds are a union, so there is always exactly one breadcrumb.
+ */
 function SegmentBody({
   seg,
+  tl,
   mode,
   drill,
   setDrill
 }: {
   seg: SegmentView
+  tl: TimelineView | null
   mode: 'out' | 'in'
   drill: Drill | null
   setDrill: (d: Drill | null) => void
@@ -442,8 +312,14 @@ function SegmentBody({
   const dps = mode === 'out' ? seg.outDps : seg.inDps
 
   // If a stale drill points at an entity no longer present (fight changed), fall back to
-  // level 1 — `drilledEntity` undefined is the only stale case now.
-  const drilledEntity = drill ? rows.find((r) => r.id === drill.entityId) : undefined
+  // level 1. The mob drill goes stale the same way when the ring disappears.
+  const drilledEntity = drill?.kind === 'entity' ? rows.find((r) => r.id === drill.entityId) : undefined
+  const targetName = drill?.kind === 'target' ? drill.target : null
+  const targetDetail = useMemo(
+    () => (tl && targetName ? skillsForTarget(tl, targetName) : null),
+    [tl, targetName]
+  )
+  const crumb = drilledEntity?.name ?? (targetDetail ? targetName : null)
 
   return (
     <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
@@ -484,8 +360,8 @@ function SegmentBody({
         </Typography>
       </Stack>
 
-      {/* Drill-down breadcrumb + Back. Two levels only: entity list ↔ flat skill list. */}
-      {drilledEntity && (
+      {/* Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */}
+      {crumb && (
         <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75 }}>
           <Button
             size="small"
@@ -500,33 +376,36 @@ function SegmentBody({
               All
             </Link>
             <Typography variant="caption" color="text.primary">
-              {drilledEntity.name}
+              {targetDetail ? `damage to ${crumb}` : crumb}
             </Typography>
           </Breadcrumbs>
         </Stack>
       )}
 
       <Box sx={{ overflow: 'auto', flexGrow: 1 }}>
-        {!drilledEntity &&
+        {!crumb &&
           (rows.length ? (
             rows.map((e, i) => (
               <EntityRow
                 key={e.id}
                 e={e}
                 rank={i + 1}
-                onDrill={mode === 'out' ? () => setDrill({ entityId: e.id }) : undefined}
+                onDrill={mode === 'out' ? () => setDrill({ kind: 'entity', entityId: e.id }) : undefined}
               />
             ))
           ) : (
-            <Typography variant="caption" color="text.secondary">
+            <QuietNote>
               {mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.'}
-            </Typography>
+            </QuietNote>
           ))}
 
         {/* Keyed by entity so switching sources resets the legend's category filter. */}
         {drilledEntity && <EntitySkillBars key={drilledEntity.id} e={drilledEntity} />}
+        {!drilledEntity && targetDetail && targetName && (
+          <TargetSkillBars target={targetName} detail={targetDetail} seg={seg} />
+        )}
 
-        {mode === 'in' && !drilledEntity && <IncomingHeals seg={seg} />}
+        {mode === 'in' && !crumb && <IncomingHeals seg={seg} />}
       </Box>
     </Paper>
   )
@@ -562,31 +441,27 @@ function ProcessingLog({
     if (el) el.scrollTop = el.scrollHeight
   }, [lines])
   return (
-    <Paper variant="outlined" sx={{ p: 1, height: 190, display: 'flex', flexDirection: 'column' }}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 0.5 }}>
-        <Typography variant="caption" color="text.secondary">
-          Combat log
-        </Typography>
+    <DashCard
+      title="Combat log"
+      right={
         <FormControlLabel
           control={<Switch size="small" checked={showUnparsed} onChange={(e) => setShowUnparsed(e.target.checked)} />}
           label={<Typography variant="caption">show unparsed</Typography>}
           sx={{ m: 0 }}
         />
-      </Stack>
+      }
+      minHeight={168}
+    >
       <Box
         ref={ref}
-        sx={{ overflow: 'auto', flexGrow: 1, fontFamily: '"Consolas","Courier New",monospace', fontSize: 11 }}
+        sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, fontFamily: '"Consolas","Courier New",monospace', fontSize: 11 }}
       >
-        {lines.length === 0 && (
-          <Typography variant="caption" color="text.disabled">
-            Waiting for combat…
-          </Typography>
-        )}
+        {lines.length === 0 && <QuietNote>Waiting for combat…</QuietNote>}
         {lines.map((l, i) => (
           <LogLine key={`${l.ts}|${l.cat}|${i}`} l={l} />
         ))}
       </Box>
-    </Paper>
+    </DashCard>
   )
 }
 
@@ -643,6 +518,24 @@ function StanceChips({ stance }: { stance: NonNullable<CombatSnapshotStance> }):
 }
 type CombatSnapshotStance = NonNullable<ReturnType<typeof useCombat>['snap']>['stance']
 
+/**
+ * Stabilise the timeline's IDENTITY across snapshot ticks. Every poll rebuilds the payload,
+ * so a frozen finalized encounter would hand the dashboard a brand-new (but identical)
+ * object each second and re-run every derivation. The signature below changes exactly when
+ * the content can have changed — id, event count, raw count, duration — so a static
+ * selection derives ONCE and a live fight still recomputes every tick.
+ */
+function useStableTimeline(tl: TimelineView | null | undefined): TimelineView | null {
+  const sig = tl ? `${tl.id}|${tl.rawCount}|${tl.events.length}|${tl.durationMs}|${tl.lanes.length}` : ''
+  const sigRef = useRef<string>(' ')
+  const valRef = useRef<TimelineView | null>(null)
+  if (sig !== sigRef.current) {
+    sigRef.current = sig
+    valRef.current = tl ?? null
+  }
+  return valRef.current
+}
+
 export default function CombatView(): JSX.Element {
   const {
     snap,
@@ -653,17 +546,15 @@ export default function CombatView(): JSX.Element {
     selection,
     setSelection,
     maxSegments,
-    loadMore,
-    wantTimeline,
-    setWantTimeline
+    loadMore
   } = useCombat()
   const [mode, setMode] = useState<'out' | 'in'>('out')
-  const [view, setView] = useState<'bars' | 'timeline'>('bars')
+  const [view, setView] = useState<'dash' | 'timeline'>('dash')
   const [drill, setDrill] = useState<Drill | null>(null)
 
-  // Esc leaves the drill-down (there is only one level below the entity list now).
+  // Esc leaves the drill-down (there is only one level below the source list).
   useEffect(() => {
-    if (view !== 'bars') return
+    if (view !== 'dash') return
     const onKey = (ev: KeyboardEvent): void => {
       if (ev.key !== 'Escape' || !drill) return
       setDrill(null)
@@ -674,8 +565,6 @@ export default function CombatView(): JSX.Element {
 
   // Reset the drill when the selected fight / mode changes (a drill is per-fight).
   useEffect(() => setDrill(null), [selection, mode])
-  // Fetch the timeline payload only while the Timeline view is active.
-  useEffect(() => setWantTimeline(view === 'timeline'), [view, setWantTimeline])
 
   const history = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
   const zoneSessions = snap?.zoneSessions ?? []
@@ -685,6 +574,19 @@ export default function CombatView(): JSX.Element {
   // A single `now` for the whole render so all the relative-age labels agree; it advances
   // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
   const now = Date.now()
+
+  const seg = snap?.selected ?? null
+  const tl = useStableTimeline(snap?.timeline)
+  // Why the event-derived panels have nothing to show: a zone session keeps no ring at all,
+  // an older fight had its ring dropped at finalize. Both are quiet notes, never errors.
+  const ringless: Ringless = tl ? null : seg?.kind === 'zone' ? 'zone' : 'evicted'
+  // The scrolling window only follows `now` for the live fight (the selector's other rows
+  // are all finalized encounters and zone sessions).
+  const live = selection === LIVE
+  // The preview follows the drill when a source is drilled, else the top row of the meter.
+  const previewRows = mode === 'out' ? seg?.entities ?? [] : seg?.incoming ?? []
+  const previewSource =
+    (drill?.kind === 'entity' ? previewRows.find((r) => r.id === drill.entityId) : undefined) ?? previewRows[0] ?? null
 
   return (
     <Stack spacing={1.5} sx={{ height: '100%' }}>
@@ -737,10 +639,10 @@ export default function CombatView(): JSX.Element {
           ))}
         </Select>
         <ToggleButtonGroup size="small" exclusive value={view} onChange={(_e, v) => v && setView(v)}>
-          <ToggleButton value="bars">Bars</ToggleButton>
+          <ToggleButton value="dash">Dashboard</ToggleButton>
           <ToggleButton value="timeline">Timeline</ToggleButton>
         </ToggleButtonGroup>
-        {view === 'bars' && (
+        {view === 'dash' && (
           <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_e, v) => v && setMode(v)}>
             <ToggleButton value="out">Outgoing</ToggleButton>
             <ToggleButton value="in">Incoming</ToggleButton>
@@ -763,8 +665,8 @@ export default function CombatView(): JSX.Element {
       </Stack>
 
       {view === 'timeline' ? (
-        snap?.timeline ? (
-          <CombatTimeline tl={snap.timeline} />
+        tl ? (
+          <CombatTimeline tl={tl} />
         ) : (
           <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>
             <Typography color="text.secondary">
@@ -773,8 +675,48 @@ export default function CombatView(): JSX.Element {
             </Typography>
           </Paper>
         )
-      ) : snap?.selected ? (
-        <SegmentBody seg={snap.selected} mode={mode} drill={drill} setDrill={setDrill} />
+      ) : seg ? (
+        // Dashboard: the source meter anchors the left column; the event-derived panels
+        // stack down the right. Columns collapse to a single scrolling column when narrow.
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1.5,
+            flexGrow: 1,
+            minHeight: 0,
+            overflow: 'auto',
+            flexDirection: { xs: 'column', md: 'row' }
+          }}
+        >
+          <Box
+            sx={{
+              flex: { md: '1.5 1 0' },
+              minWidth: 0,
+              minHeight: { xs: 300, md: 0 },
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} />
+          </Box>
+          <Box
+            sx={{
+              flex: { md: '1 1 0' },
+              minWidth: 0,
+              minHeight: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1.5
+            }}
+          >
+            <DpsChartCard tl={tl} live={live} ringless={ringless} />
+            <BreakdownPreviewCard
+              source={previewSource}
+              onOpen={() => previewSource && setDrill({ kind: 'entity', entityId: previewSource.id })}
+            />
+            <MobDamageCard tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
+          </Box>
+        </Box>
       ) : (
         <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>
           <Typography color="text.secondary">No combat yet — engage something and it&apos;ll appear here live.</Typography>

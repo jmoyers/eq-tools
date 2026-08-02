@@ -20,7 +20,14 @@ export interface UseCombat {
   maxSegments: number
   /** bump the cap by another page of fights (Load more) */
   loadMore: () => void
-  /** when true, the snapshot includes the selected encounter's timeline (Task #51). */
+  /**
+   * When true, the snapshot includes the selected encounter's timeline (Task #51).
+   * Defaults to TRUE now that the combat DASHBOARD derives its DPS curve and per-mob
+   * breakdown from the same event ring — the payload is needed for every ring-backed
+   * selection, not just while the Timeline chart is on screen. The engine caps a
+   * serialized timeline at 2k events (uniform-stride downsample above that), so the
+   * cost is bounded; ring-less selections (zone sessions) return null for free.
+   */
   wantTimeline: boolean
   setWantTimeline: (v: boolean) => void
 }
@@ -39,7 +46,7 @@ export function useCombat(): UseCombat {
   const [showUnparsed, setShowUnparsed] = useState(false)
   const [selection, setSelection] = useState<string>(LIVE)
   const [maxSegments, setMaxSegments] = useState(DEFAULT_MAX_SEGMENTS)
-  const [wantTimeline, setWantTimeline] = useState(false)
+  const [wantTimeline, setWantTimeline] = useState(true)
   const [snap, setSnap] = useState<CombatSnapshot | null>(null)
 
   useEffect(() => {
