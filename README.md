@@ -88,16 +88,16 @@ Clean-machine installer test harnesses (Windows Sandbox + Windows containers) li
 
 ### Sound packs
 
-Alert sounds come from **sound packs**. The `default` pack (original synthesized
-tones) ships with the app. Two imported voice packs — **Orc Peon** and **StarCraft
-Marine** — are sourced from [PeonPing/og-packs](https://github.com/PeonPing/og-packs)
-and licensed **CC-BY-NC-4.0** (non-commercial); attribution and license live in each
-pack's `manifest.json`.
+Alert sounds come from **sound packs**. The app ships exactly one: **Alan Rickman**
+(`alan-rickman`) — spoken-word notification lines from
+[utensils/openpeon-alan-rickman-soundpack](https://github.com/utensils/openpeon-alan-rickman-soundpack),
+licensed **CC-BY-4.0**; attribution and license live in the pack's `manifest.json`. It
+is the default selection in every alert sound picker.
 
-You don't have to do anything to get them: **the app downloads the voice packs
-automatically on first launch** (silently, in the background) if they aren't already
-installed, so the seeded alerts have their sounds even on a fresh install. You can also
-browse and install more packs from within the app (Alerts → **Sound packs…**).
+You don't have to do anything to get it: **the app downloads the pack automatically on
+first launch** (silently, in the background) if it isn't already installed, so the
+seeded alerts have their sounds even on a fresh install. You can also browse and
+install ~350 more packs from within the app (Alerts → **Sound packs…**).
 
 **Custom sounds.** Drop your own pack into `<userData>/soundpacks/<id>/` — a folder
 with a `manifest.json` (`{ id, name, sounds: { <soundId>: { file, label } } }`) plus
@@ -105,9 +105,9 @@ with a `manifest.json` (`{ id, name, sounds: { <soundId>: { file, label } } }`) 
 `<userData>` is `%AppData%\eq-tools`. For example, add your own Final Fantasy fanfare
 as `victory.mp3` and select it for the raid-defeat alert.
 
-For a source build, `npm run fetch:packs` downloads the same voice packs into
-`resources/soundpacks/` so they're bundled by `npm run dist` (the app's runtime
-auto-provisioning is the fallback for installers built without them). The app never
+For a source build, `npm run fetch:packs` downloads the same pack into
+`resources/soundpacks/` so it's bundled by `npm run dist` (the app's runtime
+auto-provisioning is the fallback for installers built without it). The app never
 depends on that script having been run.
 
 ## Extending it

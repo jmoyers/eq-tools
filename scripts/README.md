@@ -8,8 +8,7 @@ Node on PATH (`export PATH="/c/Program Files/nodejs:$PATH"` on this machine).
 | Script | `npm run` | What it does |
 | --- | --- | --- |
 | `gen-icon.mts` | `gen:icon` | Generates `build/icon.png` + `build/icon.ico` (dark panel + gold "EQ" mark) with zero deps. Re-run after editing the glyph. |
-| `gen-sounds.mts` | `gen:sounds` | Synthesizes the bundled `default` sound pack (original WAVs). |
-| `fetch-packs.mts` | `fetch:packs` | Downloads the CC-BY-NC voice packs (`peon`, `sc_marine`) from github.com/PeonPing/og-packs into `resources/soundpacks/`, converting the source `openpeon.json` to our `manifest.json` shape. **These packs are gitignored** (game audio stays out of the public repo) — run this after a fresh clone before `npm run dist`. Idempotent: only missing/empty files are re-downloaded. |
+| `fetch-packs.mts` | `fetch:packs` | Downloads the shipped voice pack (`alan-rickman`, pinned tag — see `src/main/data/defaultPacks.ts`) into `resources/soundpacks/`, converting the source `openpeon.json` to our `manifest.json` shape. **The audio is gitignored** (it stays out of the public repo) — run this after a fresh clone before `npm run dist`. Idempotent: only missing/empty files are re-downloaded. |
 | `scrape-posky.ts` / `scrape-bosses.ts` | `scrape:posky` / `scrape:bosses` | Refresh quest / raid-target data (offline, committed output). |
 
 ## Installer packaging

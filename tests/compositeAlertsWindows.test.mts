@@ -47,7 +47,7 @@ test('A composite any/all truth table on synthetic events (real AlertsModule)', 
         { type: 'event', kind: 'buffExpired', where: { spell: 'Clarity' } }
       ]
     },
-    sound: { packId: 'default', soundId: 'chime' },
+    sound: { packId: 'alan-rickman', soundId: 'input-required-input-required-01' },
     cooldownMs: 0
   }
   const allAlert: AlertDef = {
@@ -61,7 +61,7 @@ test('A composite any/all truth table on synthetic events (real AlertsModule)', 
         { type: 'raw', regex: 'speed returns' }
       ]
     },
-    sound: { packId: 'default', soundId: 'chime' },
+    sound: { packId: 'alan-rickman', soundId: 'input-required-input-required-01' },
     cooldownMs: 0
   }
   const single: AlertDef = {
@@ -69,7 +69,7 @@ test('A composite any/all truth table on synthetic events (real AlertsModule)', 
     name: 'single',
     enabled: true,
     trigger: { type: 'event', kind: 'buffExpired', where: { spell: 'Valor' } },
-    sound: { packId: 'default', soundId: 'chime' },
+    sound: { packId: 'alan-rickman', soundId: 'input-required-input-required-01' },
     cooldownMs: 0
   }
 
@@ -126,7 +126,7 @@ test('A2 composite cooldown is alert-level (one fire per cooldown window)', () =
         { type: 'event', kind: 'death' }
       ]
     },
-    sound: { packId: 'default', soundId: 'chime' },
+    sound: { packId: 'alan-rickman', soundId: 'input-required-input-required-01' },
     cooldownMs: 10_000
   }
   const mod = new AlertsModule()
@@ -159,7 +159,7 @@ test('B resolved buffExpired: shared self wears-off fires an alert with where:{s
       name: 'Quickness wears off',
       enabled: true,
       trigger: { type: 'event', kind: 'buffExpired', where: { spell: 'Quickness' } },
-      sound: { packId: 'default', soundId: 'warning' },
+      sound: { packId: 'alan-rickman', soundId: 'input-required-input-required-02' },
       cooldownMs: 0
     }
   ])

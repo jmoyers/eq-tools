@@ -8,7 +8,12 @@ import type {
   ProgressState,
   UpdateChannel
 } from '../shared/types'
-import { DEFAULT_ALERT_PACK_ID, DEFAULT_ALERT_SOUNDS } from './data/defaultPacks'
+import {
+  ALERT_SOUND_MIGRATION_VERSION,
+  DEFAULT_ALERT_PACK_ID,
+  DEFAULT_ALERT_SOUNDS,
+  migrateAlertSounds
+} from './data/defaultPacks'
 
 const emptyProgress: ProgressState = {
   inventory: {},
@@ -40,6 +45,11 @@ interface StoreShape {
   alerts?: AlertDef[]
   /** alerts extension: global sound preferences */
   alertPrefs?: AlertPrefs
+  /**
+   * Version stamp of the retired-pack → shipped-pack alert sound migration
+   * (Task #57). Absent ⇒ never migrated; see migrateStoredAlertSounds().
+   */
+  alertSoundMigration?: number
   /** auto-update release channel (Task #27): 'main' (bleeding edge) | 'stable' */
   updateChannel?: UpdateChannel
   /** floating overlay DPS meter config (Task #52) — LEGACY flat key, migrated into
@@ -214,16 +224,38 @@ const SEED_ALERTS: AlertDef[] = [
 ]
 
 /**
+ * One-time migration (Task #57): alerts authored against a retired pack — the deleted
+ * synthesized `default` pack, or the `peon`/`sc_marine`/`bastion` packs the app used to
+ * provision — are re-pointed at the analogous Alan Rickman line (mapping +
+ * rationale: src/main/data/defaultPacks.ts). Without it an upgrading user's alerts go
+ * silently mute once those pack dirs are gone.
+ *
+ * Version-stamped and idempotent: it runs on the FIRST alert read after upgrading and
+ * never again, so a user who reinstalls `peon` from the registry and re-points an alert
+ * at it keeps that choice. Returns the (possibly rewritten) list.
+ */
+function migrateStoredAlertSounds(alerts: AlertDef[]): AlertDef[] {
+  if ((store.get('alertSoundMigration') ?? 0) >= ALERT_SOUND_MIGRATION_VERSION) return alerts
+  const { alerts: next, changed } = migrateAlertSounds(alerts)
+  if (changed > 0) store.set('alerts', next)
+  store.set('alertSoundMigration', ALERT_SOUND_MIGRATION_VERSION)
+  return next
+}
+
+/**
  * Return the stored alert list, seeding the defaults exactly once (when the key is
- * absent — an empty [] the user emptied intentionally is respected).
+ * absent — an empty [] the user emptied intentionally is respected). Existing lists
+ * pass through the retired-pack sound migration on their first read after an upgrade.
  */
 export function getAlerts(): AlertDef[] {
   const existing = store.get('alerts')
   if (existing === undefined) {
     store.set('alerts', SEED_ALERTS)
+    // Seeds already reference the shipped pack; stamp so the migration never re-runs.
+    store.set('alertSoundMigration', ALERT_SOUND_MIGRATION_VERSION)
     return SEED_ALERTS
   }
-  return existing
+  return migrateStoredAlertSounds(existing)
 }
 
 /** Upsert an alert by id (insert if new, replace in place otherwise). Returns the list. */

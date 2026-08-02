@@ -70,6 +70,7 @@ import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
 import SoundPacksDialog from './SoundPacksDialog'
 import SuggestAlertsDialog from './SuggestAlertsDialog'
 import { invalidateSoundCaches } from './soundCache'
+import { DEFAULT_PACK_ID } from './suggestions'
 
 // The LogEvent kinds an 'event' trigger can select. Derived from the LogEventKind union
 // (ALL_LOG_EVENT_KINDS is exhaustiveness-checked) so the picker can NEVER drift from the real
@@ -122,6 +123,21 @@ function newId(name: string): string {
   return `${base}-${Math.random().toString(36).slice(2, 6)}`
 }
 
+/**
+ * The pack a picker falls back to when the alert's own pack is missing (uninstalled) or
+ * a brand-new alert has no pack yet: the SHIPPED default (Alan Rickman), never
+ * "whatever happens to sort first". Only if that pack somehow isn't installed do we
+ * take the first available one.
+ */
+function fallbackPack(packs: SoundPack[]): SoundPack | undefined {
+  return packs.find((p) => p.id === DEFAULT_PACK_ID) ?? packs[0]
+}
+
+/** First selectable soundId in a pack ('' when packs haven't loaded yet). */
+function firstSoundId(pack: SoundPack | undefined): string {
+  return pack ? Object.keys(pack.sounds)[0] ?? '' : ''
+}
+
 /** The pack→sound picker used inline per-alert and in the add/edit dialog. */
 function SoundPicker({
   packs,
@@ -134,7 +150,7 @@ function SoundPicker({
   soundId: string
   onChange: (packId: string, soundId: string) => void
 }): JSX.Element {
-  const pack = packs.find((p) => p.id === packId) ?? packs[0]
+  const pack = packs.find((p) => p.id === packId) ?? fallbackPack(packs)
   const soundIds = pack ? Object.keys(pack.sounds) : []
   return (
     <Stack direction="row" spacing={1}>
@@ -367,8 +383,8 @@ function AlertDialog({
   const [name, setName] = useState('')
   const [mode, setMode] = useState<CombineMode>('single')
   const [conditions, setConditions] = useState<ConditionDraft[]>([blankCondition()])
-  const [packId, setPackId] = useState(packs[0]?.id ?? 'default')
-  const [soundId, setSoundId] = useState('chime')
+  const [packId, setPackId] = useState(fallbackPack(packs)?.id ?? DEFAULT_PACK_ID)
+  const [soundId, setSoundId] = useState(firstSoundId(fallbackPack(packs)))
   const [volume, setVolume] = useState(1)
   const [cooldownMs, setCooldownMs] = useState(DEFAULT_COOLDOWN_MS)
 
@@ -393,8 +409,9 @@ function AlertDialog({
       setName('')
       setMode('single')
       setConditions([blankCondition()])
-      setPackId(packs[0]?.id ?? 'default')
-      setSoundId(packs[0] ? Object.keys(packs[0].sounds)[0] : 'chime')
+      const preset = fallbackPack(packs)
+      setPackId(preset?.id ?? DEFAULT_PACK_ID)
+      setSoundId(firstSoundId(preset))
       setVolume(1)
       setCooldownMs(DEFAULT_COOLDOWN_MS)
     }

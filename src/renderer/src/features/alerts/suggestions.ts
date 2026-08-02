@@ -68,12 +68,13 @@ export interface Suggestion {
 }
 
 /**
- * The default sound pack the seeded built-ins use. Mirrors DEFAULT_ALERT_PACK_ID /
- * DEFAULT_ALERT_SOUNDS in src/main/data/defaultPacks.ts — repeated as literals because
- * the renderer bundle can't import from src/main. Keep the two in sync (the ids there
- * carry the spoken line each one is).
+ * The default sound pack — the ONE pack the app ships, the pack every picker
+ * pre-selects (AlertsView), and the pack the seeded built-ins + these suggestions use.
+ * Mirrors DEFAULT_ALERT_PACK_ID / DEFAULT_ALERT_SOUNDS in src/main/data/defaultPacks.ts
+ * — repeated as literals because the renderer bundle can't import from src/main. Keep
+ * the two in sync (the ids there carry the spoken line each one is).
  */
-const DEFAULT_PACK = 'alan-rickman'
+export const DEFAULT_PACK_ID = 'alan-rickman'
 /** Default cooldown for a suggested alert (ms). */
 const DEFAULT_COOLDOWN_MS = 3000
 
@@ -90,7 +91,7 @@ function buildDef(entry: SpellCatalogEntry, template: TemplateKind): AlertDef {
     name: `${entry.name} ${t.verb}`,
     enabled: true,
     trigger: { type: 'event', kind: t.kind, where },
-    sound: { packId: DEFAULT_PACK, soundId: t.sound },
+    sound: { packId: DEFAULT_PACK_ID, soundId: t.sound },
     cooldownMs: DEFAULT_COOLDOWN_MS,
     note: `Suggested alert (Task #38/#47) — ${template} for ${entry.name}.`
   }
@@ -115,7 +116,7 @@ export function illusionSuggestion(): Suggestion {
       enabled: true,
       trigger: { type: 'event', kind: 'illusionFade' },
       // "It has all gone rather pear-shaped."
-      sound: { packId: DEFAULT_PACK, soundId: 'task-error-task-error-08' },
+      sound: { packId: DEFAULT_PACK_ID, soundId: 'task-error-task-error-08' },
       cooldownMs: DEFAULT_COOLDOWN_MS,
       note: 'Suggested alert (Task #38) — fires when your illusion clicks/wears off.'
     }
