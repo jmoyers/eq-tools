@@ -6,3 +6,7 @@ release/
 *.log
 .vite/
 devlog.txt
+
+# downloaded sound packs (CC-BY-NC, fetched from PeonPing/og-packs — see scripts)
+resources/soundpacks/peon/
+resources/soundpacks/sc_marine/

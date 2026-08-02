@@ -30,7 +30,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
-import type { CountSource, LootEvent } from '@shared/types'
+import type { CountSource } from '@shared/types'
 import { useProgress, type QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
 import { useFavorites } from '../favorites/useFavorites'
@@ -73,9 +73,9 @@ function ProgressBar({ q }: { q: QuestProgress }): JSX.Element {
   )
 }
 
-export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
+export default function PoskyView(): JSX.Element {
   const { quests, classes, countSource, setCountSource, reloadInventory, setQuestComplete, inventoryInfo } =
-    useProgress(lastLoot)
+    useProgress()
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
@@ -242,6 +242,11 @@ export default function PoskyView({ lastLoot }: { lastLoot: LootEvent | null }):
                           → {q.reward}
                         </Typography>
                       </ItemTooltip>
+                    )}
+                    {q.giver && (
+                      <Typography variant="caption" color="text.secondary" display="block">
+                        Turn in → {q.giver}
+                      </Typography>
                     )}
                   </Box>
                   <Box sx={{ flexGrow: 1 }} />

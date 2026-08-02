@@ -6,7 +6,7 @@
   "author": "jmoyers",
   "private": true,
   "scripts": {
-    "dev": "electron-vite dev",
+    "dev": "electron-vite dev --watch",
     "build": "electron-vite build",
     "preview": "electron-vite preview",
     "start": "electron-vite dev",

@@ -1,5 +1,5 @@
 import Store from 'electron-store'
-import type { HeldCounts, ProgressState } from '../shared/types'
+import type { AlertDef, AlertPrefs, HeldCounts, ProgressState } from '../shared/types'
 
 const emptyProgress: ProgressState = {
   inventory: {},
@@ -21,6 +21,10 @@ interface StoreShape {
   activeLogPath?: string
   /** last window position + size */
   windowBounds?: WindowBounds
+  /** alerts extension: the user's alert definitions (Task #18) */
+  alerts?: AlertDef[]
+  /** alerts extension: global sound preferences */
+  alertPrefs?: AlertPrefs
 }
 
 const store = new Store<StoreShape>({
@@ -73,4 +77,83 @@ export function getActiveLogPath(): string | undefined {
 
 export function setActiveLogPath(logPath: string): void {
   store.set('activeLogPath', logPath)
+}
+
+// ----- Alerts extension (Task #18) -----
+
+const DEFAULT_ALERT_PREFS: AlertPrefs = { globalVolume: 0.7, muted: false }
+
+/**
+ * Alerts seeded once, the first time the alerts store is empty. Kept minimal and
+ * self-documenting: a charm-break warning (live 'uncharm' event) and a boss-defeat
+ * fanfare (renderer app signal). A future agent adds more via saveAlert().
+ */
+const SEED_ALERTS: AlertDef[] = [
+  {
+    id: 'charm-break',
+    name: 'Charm break',
+    enabled: true,
+    trigger: { type: 'event', kind: 'uncharm' },
+    // peon "Me not that kind of orc!" — urgent/indignant, good attention-grab for
+    // suddenly losing your charmed pet (Task #21; imported CC-BY-NC-4.0 peon pack).
+    sound: { packId: 'peon', soundId: 'error-notthatorc' },
+    note: 'Seeded default — fires when a charm spell wears off (you lose your pet).'
+  },
+  {
+    id: 'boss-defeat',
+    name: 'Raid target defeated',
+    enabled: true,
+    trigger: { type: 'app', signal: 'bossDefeat' },
+    sound: { packId: 'default', soundId: 'victory' },
+    note: 'Seeded default — fires the same moment boss confetti does.'
+  }
+]
+
+/**
+ * Return the stored alert list, seeding the defaults exactly once (when the key is
+ * absent — an empty [] the user emptied intentionally is respected).
+ */
+export function getAlerts(): AlertDef[] {
+  const existing = store.get('alerts')
+  if (existing === undefined) {
+    store.set('alerts', SEED_ALERTS)
+    return SEED_ALERTS
+  }
+  return existing
+}
+
+/** Upsert an alert by id (insert if new, replace in place otherwise). Returns the list. */
+export function saveAlert(def: AlertDef): AlertDef[] {
+  const list = getAlerts()
+  const idx = list.findIndex((a) => a.id === def.id)
+  const next = idx >= 0 ? list.map((a) => (a.id === def.id ? def : a)) : [...list, def]
+  store.set('alerts', next)
+  return next
+}
+
+/** Delete an alert by id. Returns the remaining list. */
+export function deleteAlert(id: string): AlertDef[] {
+  const next = getAlerts().filter((a) => a.id !== id)
+  store.set('alerts', next)
+  return next
+}
+
+/** Restore the seeded built-in alert set, discarding any user edits (Task #22). */
+export function resetAlerts(): AlertDef[] {
+  const next = SEED_ALERTS.map((a) => ({ ...a }))
+  store.set('alerts', next)
+  return next
+}
+
+export function getAlertPrefs(): AlertPrefs {
+  return { ...DEFAULT_ALERT_PREFS, ...(store.get('alertPrefs') ?? {}) }
+}
+
+export function setAlertPrefs(prefs: AlertPrefs): AlertPrefs {
+  const next: AlertPrefs = {
+    globalVolume: Math.max(0, Math.min(1, prefs.globalVolume)),
+    muted: !!prefs.muted
+  }
+  store.set('alertPrefs', next)
+  return next
 }

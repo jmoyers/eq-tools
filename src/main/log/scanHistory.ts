@@ -1,75 +1,105 @@
-import { readFile } from 'fs/promises'
-import { parseLine } from './parse'
-import { newLogState, processLine } from './process'
-import { looksCombat } from '../combat/parse'
-import type { AAEvent, AASpendEvent, KillMap, LevelEvent, LootEvent, TurnInEvent } from '../../shared/types'
+import { createReadStream } from 'fs'
+import { stat } from 'fs/promises'
+import { setImmediate as yieldToLoop } from 'timers/promises'
+import { parseEvent } from './parser'
+import type { LogBus } from './bus'
 
 export interface ScanResult {
-  loot: LootEvent[]
-  turnIns: TurnInEvent[]
-  kills: KillMap
-  levels: LevelEvent[]
-  aas: AAEvent[]
-  aaSpends: AASpendEvent[]
-}
-
-function recordKill(kills: KillMap, mob: string, tier: number, ts: number): void {
-  const k = (kills[mob] ??= { count: 0, bestTier: 0, firstTs: 0, lastTs: 0 })
-  k.count += 1
-  k.bestTier = Math.max(k.bestTier, tier)
-  k.firstTs = k.firstTs ? Math.min(k.firstTs, ts) : ts
-  k.lastTs = Math.max(k.lastTs, ts)
+  /**
+   * Byte offset (into the file) of the end of the last complete line processed.
+   * The live tailer resumes here so no bytes appended during the scan are lost
+   * and none are double-read. See FIX 1 in AGENTS notes.
+   */
+  endOffset: number
+  /**
+   * The next sequence number to use. The scan stamps events [startSeq, seq); the
+   * tailer continues from here so the whole scan+tail stream is one monotonic
+   * sequence for the character.
+   */
+  seq: number
 }
 
 /**
- * Scan the entire log once and extract loot (with source mob + zone), quest
- * turn-ins, kills (with best instance tier, for drop rates + boss progress), and
- * level-ups. Log parsing is the default count source — more reliable than an
- * inventory dump when items sit in an un-exported bank (e.g. the Dragonhoard).
+ * Stream the log once and emit every canonical LogEvent onto the bus with
+ * live:false. This is the historical feeder: it produces the exact same event
+ * stream the live tailer will continue, so every consumer (loot/kills/levels/AA
+ * reducers, the combat engine) is rebuilt from one parse pass instead of three
+ * hand-synced pipelines.
+ *
+ * Streaming (FIX 2): reads via a byte stream with a chunk-based line splitter and
+ * yields to the event loop periodically, so the Electron main process is never
+ * blocked for the multi-second duration of a 68MB scan. Events are emitted in
+ * strict file order.
+ *
+ * Bounded (FIX 1): captures the file size S up front, processes only bytes [0, S),
+ * and returns `endOffset` = the byte offset of the end of the last complete line
+ * at or before S. The caller hands this to the tailer as its start offset for a
+ * gapless handoff.
  */
 export async function scanLog(
   logPath: string,
-  onCombatLine?: (text: string, ts: number) => void
+  bus: LogBus,
+  startSeq = 0,
+  profileId?: string
 ): Promise<ScanResult> {
-  let text: string
+  let size: number
   try {
-    text = await readFile(logPath, 'utf8')
+    size = (await stat(logPath)).size
   } catch {
-    return { loot: [], turnIns: [], kills: {}, levels: [], aas: [], aaSpends: [] }
+    return { endOffset: 0, seq: startSeq }
+  }
+  if (size === 0) return { endOffset: 0, seq: startSeq }
+
+  let seq = startSeq
+
+  const handle = (raw: string): void => {
+    const ev = parseEvent(raw, seq, profileId)
+    if (!ev) return // not a log line at all (no timestamp)
+    seq++
+    bus.emit(ev, false)
   }
 
-  const loot: LootEvent[] = []
-  const turnIns: TurnInEvent[] = []
-  const kills: KillMap = {}
-  const levels: LevelEvent[] = []
-  const aas: AAEvent[] = []
-  const aaSpends: AASpendEvent[] = []
-  const state = newLogState()
+  // Byte-accurate line splitting. We track bytes consumed (not chars) so the
+  // returned offset lines up exactly with the file for the tailer handoff.
+  // `endOffset` advances to just past each newline of a fully-processed line.
+  let endOffset = 0
+  // Bytes buffered for the current, not-yet-terminated line.
+  let pendingBytes = 0
+  let leftover = '' // decoded text of the current partial line
+  let chunkCount = 0
 
-  for (const raw of text.split(/\r?\n/)) {
-    const scanRelevant =
-      raw.includes('looted') ||
-      raw.includes('entered') ||
-      raw.includes('slain') ||
-      raw.includes('offered') ||
-      raw.includes('complete the trade') ||
-      raw.includes('gained a level') ||
-      raw.includes('ability point')
-    const combatRelevant = !!onCombatLine && looksCombat(raw)
-    if (!scanRelevant && !combatRelevant) continue
-    const line = parseLine(raw)
-    if (!line) continue
-    if (combatRelevant) onCombatLine!(line.text, line.ts)
-    if (!scanRelevant) continue
-    processLine(line, state, {
-      onLoot: (e) => loot.push(e),
-      onTurnIn: (e) => turnIns.push(e),
-      onKill: (mob, tier, ts) => recordKill(kills, mob, tier, ts),
-      onLevelUp: (level, ts) => levels.push({ ts, level }),
-      onAA: (amount, nowHave, ts) => aas.push({ ts, amount, nowHave }),
-      onAASpend: (ability, cost, ts) => aaSpends.push({ ts, ability, cost })
-    })
+  const stream = createReadStream(logPath, { start: 0, end: size - 1, highWaterMark: 1 << 20 })
+
+  try {
+    for await (const chunk of stream) {
+      const buf = chunk as Buffer
+      let lineStart = 0
+      for (let i = 0; i < buf.length; i++) {
+        if (buf[i] !== 0x0a) continue // find '\n'
+        // Bytes for this line = pending (from prior chunks) + [lineStart..i] incl. '\n'.
+        const segBytes = i - lineStart + 1
+        endOffset += pendingBytes + segBytes
+        let raw = leftover + buf.toString('utf8', lineStart, i)
+        if (raw.endsWith('\r')) raw = raw.slice(0, -1)
+        if (raw) handle(raw)
+        leftover = ''
+        pendingBytes = 0
+        lineStart = i + 1
+      }
+      // Carry the trailing partial line to the next chunk.
+      if (lineStart < buf.length) {
+        pendingBytes += buf.length - lineStart
+        leftover += buf.toString('utf8', lineStart, buf.length)
+      }
+      // Yield to the event loop so IPC / UI stay responsive during a big scan.
+      if (++chunkCount % 4 === 0) await yieldToLoop()
+    }
+  } catch {
+    // Partial results are still valid up to endOffset; fall through and return.
   }
 
-  return { loot, turnIns, kills, levels, aas, aaSpends }
+  // A trailing partial line (no final newline) is intentionally NOT counted in
+  // endOffset — the tailer will re-read those bytes and complete the line when
+  // the game appends the rest, avoiding a dropped/duplicated final entry.
+  return { endOffset, seq }
 }

@@ -1,19 +1,22 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type {
-  AAEvent,
-  AASpendEvent,
+  AlertDef,
+  AlertPrefs,
   CharacterRef,
-  KillMap,
-  LevelEvent,
   LogLine,
   LootEvent,
+  ModuleDelta,
+  ModuleSnapshot,
   ProgressState,
-  TurnInEvent
+  SoundData,
+  SoundPack
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
+export type { ModuleDelta, ModuleSnapshot }
+export type { AlertDef, AlertPrefs, SoundData, SoundPack }
 
 export interface ReloadInventoryResult {
   ok: boolean
@@ -29,6 +32,19 @@ export interface SetCharacterResult {
   character?: CharacterRef
 }
 
+/** Payload of the inventory auto-reload push. */
+export interface InventoryReloadEvent {
+  path: string
+  loadedAt: string
+}
+
+/** Payload the renderer sends over `error:report` (fire-and-forget). */
+export interface RendererErrorReport {
+  message: string
+  stack?: string
+  source: string
+}
+
 const api = {
   getCharacter: (): Promise<CharacterRef | null> => ipcRenderer.invoke(IPC.getCharacter),
   listCharacters: (): Promise<CharacterRef[]> => ipcRenderer.invoke(IPC.listCharacters),
@@ -38,44 +54,78 @@ const api = {
   reloadInventory: (): Promise<ReloadInventoryResult> => ipcRenderer.invoke(IPC.reloadInventory),
   setQuestComplete: (questKey: string, complete: boolean): Promise<ProgressState> =>
     ipcRenderer.invoke(IPC.setQuestComplete, questKey, complete),
-  getLootHistory: (): Promise<LootEvent[]> => ipcRenderer.invoke(IPC.getLootHistory),
-  getKills: (): Promise<KillMap> => ipcRenderer.invoke(IPC.getKills),
-  getTurnIns: (): Promise<TurnInEvent[]> => ipcRenderer.invoke(IPC.getTurnIns),
-  getLevels: (): Promise<LevelEvent[]> => ipcRenderer.invoke(IPC.getLevels),
-  getAAs: (): Promise<AAEvent[]> => ipcRenderer.invoke(IPC.getAAs),
-  getAASpends: (): Promise<AASpendEvent[]> => ipcRenderer.invoke(IPC.getAASpends),
   getCombatSnapshot: (opts: SnapshotOpts): Promise<CombatSnapshot> =>
     ipcRenderer.invoke(IPC.getCombatSnapshot, opts),
 
-  onLoot: (cb: (loot: LootEvent) => void): (() => void) => {
-    const listener = (_e: unknown, loot: LootEvent): void => cb(loot)
-    ipcRenderer.on(IPC.onLoot, listener)
-    return () => ipcRenderer.removeListener(IPC.onLoot, listener)
+  // ---- alerts extension (Task #18) ----
+  listAlerts: (): Promise<AlertDef[]> => ipcRenderer.invoke(IPC.listAlerts),
+  saveAlert: (def: AlertDef): Promise<AlertDef[]> => ipcRenderer.invoke(IPC.saveAlert, def),
+  deleteAlert: (id: string): Promise<AlertDef[]> => ipcRenderer.invoke(IPC.deleteAlert, id),
+  testAlert: (id: string): Promise<AlertDef | null> => ipcRenderer.invoke(IPC.testAlert, id),
+  resetAlerts: (): Promise<AlertDef[]> => ipcRenderer.invoke(IPC.resetAlerts),
+  /** Report a renderer-evaluated 'app' fire so main records it in history (fire-and-forget). */
+  appFired: (alertId: string, context: string): void => {
+    try {
+      ipcRenderer.send(IPC.appFired, { alertId, context })
+    } catch {
+      // history is best-effort; a failed report just omits one recent-fire row.
+    }
   },
-  onTurnIn: (cb: (t: TurnInEvent) => void): (() => void) => {
-    const listener = (_e: unknown, t: TurnInEvent): void => cb(t)
-    ipcRenderer.on(IPC.onTurnIn, listener)
-    return () => ipcRenderer.removeListener(IPC.onTurnIn, listener)
+  getAlertPrefs: (): Promise<AlertPrefs> => ipcRenderer.invoke(IPC.getAlertPrefs),
+  setAlertPrefs: (prefs: AlertPrefs): Promise<AlertPrefs> =>
+    ipcRenderer.invoke(IPC.setAlertPrefs, prefs),
+  listSoundPacks: (): Promise<SoundPack[]> => ipcRenderer.invoke(IPC.listSoundPacks),
+  getSoundData: (packId: string, soundId: string): Promise<SoundData | null> =>
+    ipcRenderer.invoke(IPC.getSoundData, packId, soundId),
+
+  // ---- generic module transport ----
+  /** Full hydration snapshot for a module (null if the id is unknown). */
+  getModuleSnapshot: <Snap>(moduleId: string): Promise<ModuleSnapshot<Snap> | null> =>
+    ipcRenderer.invoke(IPC.getModuleSnapshot, moduleId),
+  /** Subscribe to every `module:delta`; the hook filters by moduleId. */
+  onModuleDelta: <Delta>(cb: (d: ModuleDelta<Delta>) => void): (() => void) => {
+    const listener = (_e: unknown, d: ModuleDelta<Delta>): void => cb(d)
+    ipcRenderer.on(IPC.onModuleDelta, listener)
+    return () => ipcRenderer.removeListener(IPC.onModuleDelta, listener)
   },
-  onLevel: (cb: (e: LevelEvent) => void): (() => void) => {
-    const listener = (_e: unknown, ev: LevelEvent): void => cb(ev)
-    ipcRenderer.on(IPC.onLevel, listener)
-    return () => ipcRenderer.removeListener(IPC.onLevel, listener)
+
+  onProgress: (cb: (p: ProgressState) => void): (() => void) => {
+    const listener = (_e: unknown, p: ProgressState): void => cb(p)
+    ipcRenderer.on(IPC.onProgress, listener)
+    return () => ipcRenderer.removeListener(IPC.onProgress, listener)
   },
-  onAA: (cb: (e: AAEvent) => void): (() => void) => {
-    const listener = (_e: unknown, ev: AAEvent): void => cb(ev)
-    ipcRenderer.on(IPC.onAA, listener)
-    return () => ipcRenderer.removeListener(IPC.onAA, listener)
-  },
-  onAASpend: (cb: (e: AASpendEvent) => void): (() => void) => {
-    const listener = (_e: unknown, ev: AASpendEvent): void => cb(ev)
-    ipcRenderer.on(IPC.onAASpend, listener)
-    return () => ipcRenderer.removeListener(IPC.onAASpend, listener)
+  onInventoryReload: (cb: (e: InventoryReloadEvent) => void): (() => void) => {
+    const listener = (_e: unknown, ev: InventoryReloadEvent): void => cb(ev)
+    ipcRenderer.on(IPC.onInventoryReload, listener)
+    return () => ipcRenderer.removeListener(IPC.onInventoryReload, listener)
   },
   onLine: (cb: (line: LogLine) => void): (() => void) => {
     const listener = (_e: unknown, line: LogLine): void => cb(line)
     ipcRenderer.on(IPC.onLine, listener)
     return () => ipcRenderer.removeListener(IPC.onLine, listener)
+  },
+  onCharacter: (cb: (c: CharacterRef | null) => void): (() => void) => {
+    const listener = (_e: unknown, c: CharacterRef | null): void => cb(c)
+    ipcRenderer.on(IPC.onCharacter, listener)
+    return () => ipcRenderer.removeListener(IPC.onCharacter, listener)
+  },
+  onCombatActivity: (cb: () => void): (() => void) => {
+    const listener = (): void => cb()
+    ipcRenderer.on(IPC.onCombatActivity, listener)
+    return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
+  },
+
+  /**
+   * Fire-and-forget error report from the renderer (window.onerror,
+   * unhandledrejection, React ErrorBoundary) → main → errors.log + dev stdout.
+   * Never throws so a broken UI can always report why it broke.
+   */
+  reportError: (report: RendererErrorReport): void => {
+    try {
+      ipcRenderer.send(IPC.reportError, report)
+    } catch {
+      // If IPC itself is unavailable, the renderer console handler still logged.
+    }
   }
 }
 

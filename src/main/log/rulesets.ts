@@ -1,50 +1,45 @@
-import {
-  matchAA,
-  matchAASpend,
-  matchKill,
-  matchLevelUp,
-  matchLoot,
-  matchOffer,
-  matchTradeComplete,
-  matchZone
-} from './parse'
 import { DEFAULT_PROFILE } from '../../shared/profiles'
-import type { LogLine, LootEvent } from '../../shared/types'
 
 /**
- * A per-profile set of log-parsing rules. EQ servers/emulators can differ in how
- * loot, zones, kills, and trades appear in the log, so parsing is looked up by
- * profile. Add a new ruleset when adding a server whose log format differs.
+ * Per-profile parser configuration. Different EQ servers/emulators can differ in
+ * log wording, so the single parse pass (see parser.ts) is parameterized by a
+ * config looked up per profile. Today the only genuine per-profile knob is the
+ * charm-spell stem set (which "worn off" lines count as un-charm vs MEZ); the bulk
+ * of the grammar is shared "classic" EQ. Add fields here as real divergences show
+ * up rather than forking whole regex batteries.
  */
-export interface LogRuleset {
+export interface ParserConfig {
   id: string
-  matchLoot(line: LogLine): LootEvent | null
-  matchZone(line: LogLine): string | null
-  matchKill(line: LogLine): string | null
-  matchOffer(line: LogLine): { item: string; npc: string } | null
-  matchTradeComplete(line: LogLine): string | null
-  matchLevelUp(line: LogLine): number | null
-  matchAA(line: LogLine): { amount: number; nowHave: number } | null
-  matchAASpend(line: LogLine): { ability: string; cost: number } | null
+  /**
+   * Matches the spell name from "Your <spell> spell has worn off of <mob>." to
+   * decide whether it un-charms a pet. True charm spells only — MEZ spells also
+   * wear off but must NOT uncharm. Stems audited against real worn-off lines.
+   */
+  charmSpell: RegExp
+  /**
+   * Matches the spell name from "Your <spell> spell has worn off of <mob>." to
+   * decide whether it is a CROWD-CONTROL (mez/root) spell — as opposed to a charm
+   * spell (handled by charmSpell) or an unrelated buff/debuff. A CC spell wearing
+   * off means the mob was mez'd/rooted right up to that moment, so the engine treats
+   * it as a keep-alive CC refresh. Stems audited against real worn-off lines:
+   * Mesmerization/Mesmerize/Enthrall/Entrance/Dazzle (mez), Largo's Melodic Binding
+   * & Screaming Terror (bard/enchanter mez), Ensnare/Immobilize/Suffocate (root).
+   * Deliberately EXCLUDES pacify/lull/calm (aggro-reduction, not a hold).
+   */
+  ccSpell: RegExp
 }
 
-const classic: LogRuleset = {
+const classic: ParserConfig = {
   id: 'classic',
-  matchLoot,
-  matchZone,
-  matchKill,
-  matchOffer,
-  matchTradeComplete,
-  matchLevelUp,
-  matchAA,
-  matchAASpend
+  charmSpell: /\bcharm\b|beguile|allure|cajol|dictate|besiege|agacerie|beckon|command of druzzil|dominate|boltran/i,
+  ccSpell: /mesmeriz|enthrall|entranc|dazzle|largo's melodic binding|screaming terror|ensnar|immobiliz|suffocat/i
 }
 
-export const RULESETS: Record<string, LogRuleset> = {
+export const PARSER_CONFIGS: Record<string, ParserConfig> = {
   eqlegends: classic,
-  p99: classic // classic format; refine if P99 differs
+  p99: classic // classic format; refine if P99 diverges
 }
 
-export function getRuleset(profileId: string = DEFAULT_PROFILE): LogRuleset {
-  return RULESETS[profileId] ?? classic
+export function getParserConfig(profileId: string = DEFAULT_PROFILE): ParserConfig {
+  return PARSER_CONFIGS[profileId] ?? classic
 }

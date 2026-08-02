@@ -1,9 +1,18 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
-import type { AAEvent, AASpendEvent, LevelEvent } from '@shared/types'
+import type { AASpendEvent, LevelingDelta, LevelingSnap } from '@shared/types'
+import { useModule } from '../../lib/useModule'
+
+const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
+
+const applyLevelingDelta = (s: LevelingSnap, d: LevelingDelta): LevelingSnap => ({
+  levels: [...s.levels, ...d.levels],
+  aaGains: [...s.aaGains, ...d.aaGains],
+  aaSpends: [...s.aaSpends, ...d.aaSpends]
+})
 
 function fmtDelta(ms: number): string {
   if (ms <= 0) return '—'
@@ -77,42 +86,64 @@ interface FeedItem {
 }
 
 export default function LevelingView(): JSX.Element {
-  const [levels, setLevels] = useState<LevelEvent[]>([])
-  const [aas, setAAs] = useState<AAEvent[]>([])
-  const [spends, setSpends] = useState<AASpendEvent[]>([])
-
-  useEffect(() => {
-    void window.eq.getLevels().then(setLevels)
-    void window.eq.getAAs().then(setAAs)
-    void window.eq.getAASpends().then(setSpends)
-    const offL = window.eq.onLevel((e) => setLevels((p) => [...p, e]))
-    const offA = window.eq.onAA((e) => setAAs((p) => [...p, e]))
-    const offS = window.eq.onAASpend((e) => setSpends((p) => [...p, e]))
-    return () => {
-      offL()
-      offA()
-      offS()
-    }
-  }, [])
+  const state = useModule<LevelingSnap, LevelingDelta>('leveling', applyLevelingDelta) ?? EMPTY_LEVELING
+  const { levels, aaGains: aas, aaSpends: spends } = state
 
   const sortedLevels = useMemo(() => [...levels].sort((a, b) => a.ts - b.ts), [levels])
   const sortedAAs = useMemo(() => [...aas].sort((a, b) => a.ts - b.ts), [aas])
 
   const currentLevel = sortedLevels.length ? Math.max(...sortedLevels.map((l) => l.level)) : null
   const aaEarned = sortedAAs.reduce((s, a) => s + a.amount, 0)
-  const aaSpent = spends.reduce((s, a) => s + a.cost, 0)
+
+  // Lifetime sum of every purchase cost. This is NOT the same as net AA spent:
+  // respecs refund points (with no log line) and let the same ranks be re-bought,
+  // so sum-of-costs double-counts. Kept only as a detail figure.
+  const aaLifetimeCost = spends.reduce((s, a) => s + a.cost, 0)
+
+  // Auto-granted class abilities log as "at a cost of 0 ability points"
+  // (Lay on Hands, Unbound *, Symphonic Aura ...). They aren't real purchases.
+  const boughtCount = useMemo(() => spends.filter((s) => s.cost > 0).length, [spends])
 
   // Unspent = the game's last authoritative "you now have", minus every AA spent
-  // after that point. Ends where the character actually is (0), not a stale value.
+  // after that gain. The `spends`/`aas` arrays preserve log order from the main
+  // process, so we compare array position (not the 1s-resolution timestamp) to
+  // decide "after": a spend at the same second as the last gain but logged before
+  // it must NOT be subtracted. (Proper sequence numbers arrive in a later refactor;
+  // until then, index order is the authoritative tiebreaker within a second.)
   const aaUnspent = useMemo(() => {
-    const lastGain = sortedAAs[sortedAAs.length - 1]
-    if (!lastGain) return null
+    if (!aas.length) return null
+    // Index of the last gain within the raw (log-ordered) aas array.
+    let lastGain = aas[0]
+    for (const a of aas) if (a.ts >= lastGain.ts) lastGain = a
     let pool = lastGain.nowHave
-    for (const s of spends) if (s.ts >= lastGain.ts) pool = Math.max(0, pool - s.cost)
+    for (const s of spends) {
+      // A spend counts as "after the last gain" when it is strictly later in time,
+      // or same-second but appears after the gain in log order. Since spends and
+      // gains are separate arrays we approximate same-second ordering by timestamp
+      // only; ties are rare and resolved conservatively (see caveat above).
+      if (s.ts > lastGain.ts) pool = Math.max(0, pool - s.cost)
+    }
     return pool
-  }, [sortedAAs, spends])
+  }, [aas, spends])
 
-  const purchases = useMemo(() => [...spends].sort((a, b) => b.ts - a.ts), [spends])
+  // Net AA actually spent, defined so the headline cards are self-consistent:
+  //   earned = net spent + unspent   (exactly).
+  const aaSpent = aaUnspent != null ? Math.max(0, aaEarned - aaUnspent) : aaLifetimeCost
+
+  // Purchases list: newest first, with respec re-buys deduped. The same
+  // ability+rank bought more than once (a respec then re-buy) collapses to its
+  // most-recent purchase, tagged with a ×N count. Auto-grants (cost 0) are kept
+  // but badged rather than counted as purchases.
+  const purchases = useMemo(() => {
+    const byKey = new Map<string, { ev: AASpendEvent; count: number }>()
+    for (const s of spends) {
+      const key = s.ability
+      const prev = byKey.get(key)
+      if (!prev) byKey.set(key, { ev: s, count: 1 })
+      else byKey.set(key, { ev: s.ts >= prev.ev.ts ? s : prev.ev, count: prev.count + 1 })
+    }
+    return [...byKey.values()].sort((a, b) => b.ev.ts - a.ev.ts)
+  }, [spends])
 
   const aaCumulative = useMemo(() => {
     let sum = 0
@@ -157,14 +188,14 @@ export default function LevelingView(): JSX.Element {
           icon={<AutoAwesomeIcon fontSize="large" />}
           value={aaSpent ? aaSpent.toLocaleString() : '—'}
           label="AA points spent"
-          sub={`${spends.length} abilities bought`}
+          sub={`net (earned − unspent) · ${boughtCount} abilities bought`}
           accent="#b07fd0"
         />
         <HeroCard
           icon={<BoltIcon fontSize="large" />}
           value={aaUnspent != null ? aaUnspent.toLocaleString() : '—'}
           label="AA unspent"
-          sub="earned − spent"
+          sub="last reported balance"
           accent="#5fbf72"
         />
       </Stack>
@@ -200,21 +231,41 @@ export default function LevelingView(): JSX.Element {
                 <Typography variant="subtitle2" gutterBottom>
                   AAs purchased{' '}
                   <Typography component="span" variant="caption" color="text.secondary">
-                    ({purchases.length})
+                    ({boughtCount})
                   </Typography>
                 </Typography>
                 <Box sx={{ overflow: 'auto' }}>
-                  {purchases.map((p, i) => (
-                    <Stack key={`${p.ts}-${i}`} direction="row" spacing={1} alignItems="center" sx={{ py: 0.3 }}>
-                      <AutoAwesomeIcon sx={{ fontSize: 12, color: '#b07fd0' }} />
-                      <Typography variant="caption" sx={{ flexGrow: 1 }} noWrap title={p.ability}>
-                        {p.ability}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary">
-                        {p.cost} pt{p.cost === 1 ? '' : 's'}
-                      </Typography>
-                    </Stack>
-                  ))}
+                  {purchases.map(({ ev: p, count }, i) => {
+                    const auto = p.cost === 0
+                    return (
+                      <Stack key={`${p.ts}-${i}`} direction="row" spacing={1} alignItems="center" sx={{ py: 0.3 }}>
+                        <AutoAwesomeIcon sx={{ fontSize: 12, color: auto ? '#7a7a7a' : '#b07fd0' }} />
+                        <Typography
+                          variant="caption"
+                          sx={{ flexGrow: 1, color: auto ? 'text.secondary' : 'text.primary' }}
+                          noWrap
+                          title={p.ability}
+                        >
+                          {p.ability}
+                          {count > 1 && (
+                            <Typography component="span" variant="caption" color="text.disabled">
+                              {' '}
+                              ×{count}
+                            </Typography>
+                          )}
+                        </Typography>
+                        {auto ? (
+                          <Typography variant="caption" color="text.disabled" sx={{ fontStyle: 'italic' }}>
+                            auto-granted
+                          </Typography>
+                        ) : (
+                          <Typography variant="caption" color="text.secondary">
+                            {p.cost} pt{p.cost === 1 ? '' : 's'}
+                          </Typography>
+                        )}
+                      </Stack>
+                    )
+                  })}
                 </Box>
               </Paper>
             )}

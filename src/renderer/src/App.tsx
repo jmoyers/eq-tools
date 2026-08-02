@@ -12,6 +12,8 @@ import {
   ListSubheader,
   MenuItem,
   Select,
+  Snackbar,
+  Alert,
   Toolbar,
   Typography
 } from '@mui/material'
@@ -22,17 +24,37 @@ import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import CircleIcon from '@mui/icons-material/Circle'
-import type { CharacterRef, LootEvent } from '@shared/types'
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
+import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
+import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
+import type { CharacterRef } from '@shared/types'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import InventoryView from './features/inventory/InventoryView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
 import CombatView from './features/combat/CombatView'
+import AlertsView from './features/alerts/AlertsView'
+import BuffsView from './features/buffs/BuffsView'
+import AlertPlayer, { fireAppSignal } from './features/alerts/player'
+import { getBossData } from './data'
+import { useBossKills } from './features/bosses/useBossKills'
+import type { TargetStatus } from './features/bosses/bossStatus'
+
+const bossData = getBossData()
 
 const DRAWER_WIDTH = 220
 
-type View = 'posky' | 'inventory' | 'loot' | 'leveling' | 'bosses' | 'combat'
+type View = 'posky' | 'inventory' | 'loot' | 'leveling' | 'bosses' | 'combat' | 'alerts' | 'buffs'
+
+const VIEW_KEY = 'eq.view'
+const DEFAULT_VIEW: View = 'posky'
+const KNOWN_VIEWS: View[] = ['posky', 'inventory', 'loot', 'leveling', 'bosses', 'combat', 'alerts', 'buffs']
+
+function loadView(): View {
+  const v = localStorage.getItem(VIEW_KEY)
+  return v && (KNOWN_VIEWS as string[]).includes(v) ? (v as View) : DEFAULT_VIEW
+}
 
 function lastPlayed(ms?: number): string {
   if (!ms) return ''
@@ -46,20 +68,50 @@ function lastPlayed(ms?: number): string {
 }
 
 export default function App(): JSX.Element {
-  const [view, setView] = useState<View>('posky')
+  const [view, setView] = useState<View>(loadView)
   const [character, setCharacter] = useState<CharacterRef | null>(null)
   const [characters, setCharacters] = useState<CharacterRef[]>([])
-  const [lastLoot, setLastLoot] = useState<LootEvent | null>(null)
   const [live, setLive] = useState(false)
+  // App-wide "raid target defeated" toast — fires on any tab.
+  const [defeatToast, setDefeatToast] = useState<TargetStatus | null>(null)
+
+  const [rebuild, setRebuild] = useState(0)
+
+  // App-level boss-kill watch: independent of the Boss tab being open, so the
+  // snackbar shows anywhere. useBossKills gates out the historical baseline. This
+  // is the SINGLE always-mounted detector, so it's the one place we fire the
+  // 'bossDefeat' app signal for the alerts extension. Task #24 splits the two:
+  //   - onKill      → snackbar on ANY roster kill, incl. repeats (matches confetti).
+  //   - onNewDefeat → the bossDefeat sound ONLY on a first defeat at a new tier.
+  // fireAppSignal also applies the alert's cooldown, so even if the Boss tab's own
+  // detector fires in the same instant it can't double-play.
+  useBossKills(bossData.targets, {
+    onKill: (s) => setDefeatToast(s),
+    onNewDefeat: (s) => fireAppSignal('bossDefeat', s.target.name)
+  })
+
+  // Remember the selected tab across launches (renderer-only).
+  useEffect(() => {
+    localStorage.setItem(VIEW_KEY, view)
+  }, [view])
 
   useEffect(() => {
     void window.eq.getCharacter().then(setCharacter)
     void window.eq.listCharacters().then(setCharacters)
-    const off = window.eq.onLoot((loot) => {
-      setLastLoot(loot)
-      setLive(true)
+    // Any live module delta means the tail is producing events — light the dot.
+    const offDelta = window.eq.onModuleDelta(() => setLive(true))
+    // FIX 3: main pushes onCharacter once state is fully rebuilt (startup + switch).
+    // Sync the character and bump a rebuild counter so views reliably remount and
+    // re-fetch their snapshots against the freshly-rebuilt state.
+    const offChar = window.eq.onCharacter((c) => {
+      setCharacter(c)
+      setLive(false)
+      setRebuild((n) => n + 1)
     })
-    return off
+    return () => {
+      offDelta()
+      offChar()
+    }
   }, [])
 
   const onSelectCharacter = async (logPath: string): Promise<void> => {
@@ -67,11 +119,10 @@ export default function App(): JSX.Element {
     if (res.ok && res.character) {
       setCharacter(res.character)
       setLive(false)
-      setLastLoot(null)
     }
   }
 
-  const viewKey = character?.logPath ?? 'none'
+  const viewKey = `${character?.logPath ?? 'none'}#${rebuild}`
 
   return (
     <Box sx={{ display: 'flex', height: '100vh' }}>
@@ -160,20 +211,54 @@ export default function App(): JSX.Element {
             </ListItemIcon>
             <ListItemText primary="Combat" />
           </ListItemButton>
+          <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
+            <ListItemIcon>
+              <AutoFixHighIcon />
+            </ListItemIcon>
+            <ListItemText primary="Buffs" />
+          </ListItemButton>
+          <ListItemButton selected={view === 'alerts'} onClick={() => setView('alerts')}>
+            <ListItemIcon>
+              <NotificationsActiveIcon />
+            </ListItemIcon>
+            <ListItemText primary="Alerts" />
+          </ListItemButton>
         </List>
       </Drawer>
 
       <Box component="main" sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <Toolbar variant="dense" />
         <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-          {view === 'posky' && <PoskyView key={viewKey} lastLoot={lastLoot} />}
-          {view === 'inventory' && <InventoryView key={viewKey} lastLoot={lastLoot} />}
-          {view === 'loot' && <LootView key={viewKey} lastLoot={lastLoot} />}
-          {view === 'bosses' && <BossView key={viewKey} lastLoot={lastLoot} />}
+          {view === 'posky' && <PoskyView key={viewKey} />}
+          {view === 'inventory' && <InventoryView key={viewKey} />}
+          {view === 'loot' && <LootView key={viewKey} />}
+          {view === 'bosses' && <BossView key={viewKey} />}
           {view === 'leveling' && <LevelingView key={viewKey} />}
           {view === 'combat' && <CombatView key={viewKey} />}
+          {view === 'buffs' && <BuffsView key={viewKey} />}
+          {view === 'alerts' && <AlertsView key={viewKey} />}
         </Box>
       </Box>
+
+      {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
+      <AlertPlayer />
+
+      <Snackbar
+        open={!!defeatToast}
+        autoHideDuration={6000}
+        onClose={() => setDefeatToast(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          severity="success"
+          variant="filled"
+          icon={<EmojiEventsIcon2 fontSize="inherit" />}
+          onClose={() => setDefeatToast(null)}
+          sx={{ alignItems: 'center' }}
+        >
+          Raid target defeated: {defeatToast?.target.name}!
+        </Alert>
+      </Snackbar>
     </Box>
   )
 }

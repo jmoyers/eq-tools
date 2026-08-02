@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import {
   Alert,
   Box,
@@ -14,7 +14,8 @@ import {
   TextField,
   Typography
 } from '@mui/material'
-import type { LootEvent } from '@shared/types'
+import type { LootDelta, LootEvent, LootSnap } from '@shared/types'
+import { useModule } from '../../lib/useModule'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
@@ -34,26 +35,24 @@ for (const qz of posky.quests) {
 
 const MAX_ROWS = 500
 
+// Stable empty reference so useMemo deps don't churn before hydration.
+const EMPTY_LOOT: LootEvent[] = []
+
 function fmtTime(ts: number): string {
   if (!ts) return ''
   const d = new Date(ts)
   return d.toLocaleString([], { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
 
-export default function LootView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
+const applyLootDelta = (state: LootSnap, delta: LootDelta): LootSnap => [...state, ...delta.appended]
+
+export default function LootView(): JSX.Element {
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
-  const [history, setHistory] = useState<LootEvent[]>([])
+  const history = useModule<LootSnap, LootDelta>('loot', applyLootDelta) ?? EMPTY_LOOT
   const [query, setQuery] = useState('')
   const [groupByItem, setGroupByItem] = useState(true)
   const [questOnly, setQuestOnly] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
-
-  useEffect(() => {
-    void window.eq.getLootHistory().then(setHistory)
-  }, [])
-  useEffect(() => {
-    if (lastLoot) setHistory((h) => [...h, lastLoot])
-  }, [lastLoot])
 
   const q = query.trim().toLowerCase()
 

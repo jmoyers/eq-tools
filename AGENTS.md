@@ -36,15 +36,192 @@ encounter history.
 ## Architecture / data flow
 
 ```
-Tailer (byte-offset, polling)  ──►  parseLine  ──►  processLine (loot/kill/zone/
-   src/main/log/Tailer.ts                            turnin/level/AA)   src/main/log/process.ts
-                                              └─►  CombatEngine.ingest   src/main/combat/engine.ts
-On character load: scanLog() reads the WHOLE file once and feeds BOTH pipelines,
-seeding all state (this is why history/charm work from app start).
-IPC:  getX()  for snapshots (loot, kills, levels, AAs, combat) ;
-      onX events (onLoot/onLevel/onAA/onTurnIn/…) for live pushes.
-Renderer subscribes/polls; main owns all authoritative state.
+scan+tail ─► parseEvent ─► LogBus (one typed LogEvent stream, one seq counter)
+  src/main/log/{scanHistory,Tailer,parser}.ts        src/main/log/bus.ts
+        ├─► ModuleRegistry ─► EqModule[] (loot/turnins/kills/leveling/character)
+        │       src/main/modules/*   own a state slice; push `module:delta`
+        └─► CombatEngine.ingestEvent  src/main/combat/engine.ts
+On character load: scanLog() STREAMS the file (1MB chunks, yields to the event
+loop — never readFile a 68MB log into one string) and emits live:false onto the
+bus; the Tailer continues live:true from `endOffset` (`startOffset` option) — this
+handoff makes the scan→tail seam lossless; do not revert to `fromStart:false`
+(starting at current EOF loses every line appended during the scan).
 ```
+
+### The module framework (extension contract) — src/main/modules/
+
+- `EqModule<Snap,Delta>` = { id, reset(), onEvent(ev,live), snapshot()→{seq,state},
+  flushDelta()→{seq,delta}|null }. `ModuleRegistry` subscribes every module to the
+  bus (registration order = delivery order) and owns the push loop: after LIVE
+  events it schedules a trailing ~100ms flush; each non-null `flushDelta()` is sent
+  as **`module:delta` `{moduleId,seq,delta}`**. During replay (live:false) modules
+  fold silently — no deltas. `module:getSnapshot(id)` returns `snapshot()`. `seq` =
+  last LogEvent seq the module consumed → renderer uses it for dupe/gap detection.
+- Renderer: **`useModule(id, applyDelta)`** (src/renderer/src/lib) hydrates via
+  getSnapshot, subscribes to module:delta filtered by id, applies in seq order
+  (delta.seq ≤ known → skip), re-hydrates on `log:character`. This is the ONE
+  transport for loot/turnins/kills/leveling/character — the old per-feature
+  get*/on* channels were **removed**.
+- **Combat is a documented transport variant**, NOT a registered module: it keeps
+  its own `combat:snapshot` IPC + `combat:activity` throttled (≤1/250ms) nudge
+  (fetch a fresh snapshot on ping; 1s fallback poll). See modules/types.ts header.
+- Other pushes: `progress:changed` (quest complete / inventory reload → every view
+  stays consistent), `inventory:autoReloaded` (chokidar watch on `*-Inventory.txt`
+  auto-reloads + refreshes), `log:character` (state rebuilt on switch), `log:line`.
+- Boss confetti + sound are TWO-TIERED (Task #24). Two pure detectors in
+  features/bosses/bossStatus.ts, both fed by `useBossKills(targets, {onKill,
+  onNewDefeat})`:
+  - `bossKills()` — ANY roster-target kill (count↑), including a REPEAT at the
+    same/lower tier → drives the canvas `Confetti` + card flash in BossView and the
+    app-wide MUI Snackbar (App.tsx). This is `onKill`.
+  - `newDefeats()` — the subset that's a first defeat at a NEW tier (prev count 0 or
+    bestTier↑) → additionally fires the `bossDefeat` app-signal SOUND, and nothing
+    more. This is `onNewDefeat` (App only). Repeat kills stay silent.
+  The historical baseline is still seeded silently on first snapshot so load ≠
+  confetti/sound. `onNewDefeat` passes the boss name as context to
+  `fireAppSignal('bossDefeat', name)` so it lands in the alert's recent-fires
+  history (see below).
+- Reducers: src/main/log/reducers.ts is now just the pure kill core
+  (`isCountedKill`, `recordKill`) the kills module reuses — the old monolithic
+  reduceEvent/LogStore is gone.
+
+### The Alerts extension (Task #18) — the first non-trivial EqModule
+
+Triggered sounds: match something in the log (or an app signal) → play a sound.
+This is the reference implementation of the extension contract for future agents.
+
+- **`AlertsModule`** (src/main/modules/alerts.ts) is a normal registered EqModule.
+  It evaluates `event`/`raw` triggers on **LIVE events only** (replay never fires),
+  honors each alert's `enabled` + `cooldownMs`, and pushes fires as the standard
+  `module:delta` payload `{ fired: Array<{alertId, ts, matchedText}> }`. `app`
+  triggers are **renderer-evaluated** (they depend on derived boss state) — the
+  module stores/serves their defs but never fires them.
+- **AlertDef schema** (JSON-serializable, in `shared/types.ts`, persisted in
+  electron-store under `alerts`):
+  ```ts
+  interface AlertDef {
+    id: string; name: string; enabled: boolean
+    trigger:
+      | { type: 'event'; kind: LogEventKind; where?: Record<string,string> }
+      | { type: 'raw'; regex: string }            // raw line, case-insensitive
+      | { type: 'app'; signal: 'bossDefeat' }     // renderer-side signal
+    sound: { packId: string; soundId: string }
+    volume?: number       // 0..1, ×globalVolume (default 1)
+    cooldownMs?: number   // default 2000
+    note?: string         // freeform provenance (agent authorship, etc.)
+  }
+  ```
+  `where` field matchers: each value is an **exact case-insensitive string** OR a
+  `/regex/` string (leading+trailing slash → compiled `new RegExp(body, 'i')`).
+  The field is looked up on the LogEvent by key (e.g. `{ mob: '/spirit/' }` on an
+  `uncharm` event). An invalid regex degrades to no-match, never throws.
+- **How an agent authors an alert** from a sentence like "alert me on charm
+  breaks": pick a `trigger.kind` from the LogEvent kinds (see `LogEventKind` in
+  shared/types.ts, mirrors `logEvents.ts` — e.g. `uncharm`, `death`, `loot`,
+  `level`), pick a `sound` (`sounds:listPacks` → pack id + sound id), then write
+  the def via the `alerts:save` IPC (`window.eq.saveAlert(def)`). Set a stable
+  `id` and a `note` recording provenance. **Regex gotchas:** `raw` and `/regex/`
+  fields are passed straight to `RegExp` — escape metacharacters (`\.`, `\(`,
+  backticks in EQ names are literal so fine), and remember JSON strings need
+  doubled backslashes (`"\\."`). Validate the `kind` against `LogEventKind`; an
+  unknown kind simply never matches.
+- **Sound packs**: a pack = a directory with `manifest.json`
+  `{ id, name, sounds: { [soundId]: { file, label } } }` + audio files
+  (`.wav`/`.mp3`/`.ogg`). Two sources, both surfaced by `sounds.ts` `listPacks()`:
+  - **bundled** — `resources/soundpacks/<id>/` (shipped; asarUnpack'd in prod).
+    The `default` pack is GENERATED by `scripts/gen-sounds.mts` (raw-PCM WAV
+    synthesis, zero deps) — `victory` (original JRPG-ish fanfare; we do NOT ship
+    copyrighted game audio), `warning`, `chime`, `horn`. Re-run
+    `npx tsx scripts/gen-sounds.mts` to regenerate. Two IMPORTED voice packs also
+    ship (Task #21, from github.com/PeonPing/og-packs, CC-BY-NC-4.0, recorded in
+    each pack's `manifest.json` as a `license` field): `peon` (Orc Peon, 17 .wav)
+    and `sc_marine` (StarCraft Marine, 16 .mp3). Their CESP source categories
+    (task.complete / input.required / …) are preserved as label prefixes so the
+    picker reads well (e.g. "Complete · Work complete."). The seeded `charm-break`
+    alert points at `peon/error-notthatorc` ("Me not that kind of orc!").
+  - **user** — `<userData>/soundpacks/<id>/` (on this machine
+    `%AppData%\eq-tools\soundpacks`); a user drops their own files + manifest and
+    it appears in the picker (user packs shadow bundled ones with the same id).
+  `sounds:getData(packId, soundId)` returns `{ mime, dataBase64 }`; the renderer
+  builds a **Blob URL** (CSP-safe — `media-src 'self' blob:` in index.html) and
+  caches it (`features/alerts/soundCache.ts`).
+- **Renderer**: `features/alerts/player.tsx` is **always mounted** in App.tsx. It
+  (a) plays `module:delta` fires at `globalVolume × alert.volume` (skips if muted,
+  overlapping plays allowed), and (b) exposes `fireAppSignal('bossDefeat')`. That
+  signal is fired from App's single always-mounted `useBossKills` defeat callback
+  — the same instant the snackbar/confetti fire — and `fireAppSignal` re-applies
+  the alert cooldown, so even if BossView's own detector fires in the same tick it
+  can't double-play (single-fire per defeat). `AlertsView` is the "Alerts" nav tab
+  (global volume + mute, per-alert enable/volume/sound-picker/test/delete, add
+  dialog). Prefs live in electron-store (`alertPrefs`), main-owned, `alertPrefs:get/set`.
+- **Seeded once** (when the `alerts` store key is absent): `charm-break`
+  (`event`/`uncharm` → `peon`/error-notthatorc) and `boss-defeat` (`app`/bossDefeat
+  → default/victory). An empty list the user cleared is respected (not re-seeded).
+  A "Reset to defaults" button (`alerts:reset` IPC → store `resetAlerts()`) restores
+  this exact set behind a confirm dialog.
+- **Recent fires + transparency (Task #22).** The `AlertsModule` holds a per-alert
+  ring buffer (`AlertFireRecord[]`, last 20, newest last) — the single source of
+  truth for the "recent fires" UI. It's fed by BOTH main-side event/raw fires
+  (recorded in `onEvent`) AND renderer-evaluated `app` fires: the player calls
+  `window.eq.appFired(alertId, context)` → main `alertsModule.appFired()` records it
+  and `registry.flushNow()` pushes it over the SAME `module:delta` transport
+  (appFired bumps the module seq so useModule doesn't reject the delta as a dupe).
+  The ring is in `snapshot().state.history` (keyed by alert id) and survives
+  flushDelta/character switch. `AlertsView` hydrates it via `useModule('alerts', …)`
+  and shows an expandable, dense, monospace "recent fires" panel per alert (time +
+  the matched line / signal context). Each alert row shows a compact trigger badge
+  (`event:uncharm`, `raw:/regex/i`, `app:bossDefeat`). The add dialog is now
+  add/EDIT — every alert incl. built-ins opens in it (name, trigger type/kind/where,
+  raw regex with live validation, sound, volume, cooldown); built-ins are just
+  stored defs with stable ids, no special casing.
+
+### The Buffs extension (Task #19) — a log-mined buff-duration model
+
+`BuffsModule` (src/main/modules/buffs.ts, a normal registered EqModule) tracks the
+player's own buffs and learns each spell's duration from the log — no static spell
+DB. Five NEW parser events feed it (all additive, all formerly `unknown` — proven
+zero-regression on charm/cc/uncharm/death):
+
+- `castBegin { spell }` — `You begin casting <S>.` / `You begin singing <S>.`
+- `castFizzle { spell }` — `Your <S> spell fizzles!`
+- `castInterrupted { spell }` — `Your <S> spell is interrupted.` **NB (log evidence):
+  there is NO bare `Your spell is interrupted.` line — the shape always names the
+  spell. `You regain your concentration and continue your casting.` is the OPPOSITE
+  (a recovered cast) and is deliberately NOT parsed.**
+- `buffFade { spell, target? }` — TARGETLESS `Your <S> spell has worn off.` (self) or
+  `Your pet's <S> spell has worn off.` (`target:'pet'`). This is a pure fallthrough
+  AFTER the `worn off OF <mob>` charm/cc handler — the two never overlap (no ` of `),
+  so uncharm/cc emission is untouched. **In this Enchanter's real log EVERY targetless
+  fade is the pet form** (the charmed pet is the main buff target) — so durations are
+  effectively mined from pet buffs; both self and pet are the player's own casts.
+- `playerDeath { killer? }` — `You have been slain by <X>!` (distinct from the
+  third-person SLAIN_BY `<mob> has been slain by <x>!`, which needs `has`, not `have`).
+
+**Model:** `castBegin(S)` → pending; a fizzle/interrupt of S clears it; otherwise the
+cast is treated as LANDED when the next `castBegin` arrives OR 15s of log-time elapse
+(cast times are unknown — this is the documented approximation; the landed timestamp
+is the cast-BEGIN ts, since cast seconds are negligible vs minute-scale durations).
+Each landed cast pairs with the NEXT `buffFade` of S → a duration sample. CENSORED (no
+sample) on recast-before-fade (a refresh — restart the timer) or `playerDeath`-before-
+fade (death strips buffs + clears all active). **Zone lines do NOT clear buffs** (EQ
+buffs persist through zoning). Per-spell stats = n / median / p25 / p75 / min / max.
+The honest **buff discriminator**: only spells that have EVER produced a `buffFade` are
+treated as buffs — nukes/mez/charm emit `castBegin` too but never self-fade, so they're
+excluded. Snapshot `{ active: ActiveBuff[], stats: {spell: BuffStat} }`; the module
+ships its whole (small) snapshot as each delta.
+
+**BuffsView** (`features/buffs/BuffsView.tsx`, "Buffs" nav tab, AutoFixHigh icon) shows
+active buffs with a live elapsed/estimated-remaining bar (indeterminate + "unknown
+duration" when n=0), ± p25–p75 spread, and n as a confidence hint; below, a dense
+stats table sorted by n. Live via `useModule('buffs', …)`.
+
+**Alert synergy:** a fade can drive a sound — author an alert with
+`{ type:'event', kind:'buffFade', where:{ spell:'Clarity' } }` to be reminded the
+moment a long class buff drops (the BuffsView caption points users at this). All five
+new kinds are in `LogEventKind`, so any is alert-targetable.
+
+**Out of scope (v1):** an overlay window (later phase); and self-buffs never yet
+observed fading only appear once their first fade is seen.
 
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
@@ -64,35 +241,84 @@ Renderer subscribes/polls; main owns all authoritative state.
 - Turn-in: `You offered N <item> to <NPC>.` … `You complete the trade with <NPC>.`
 - Level: `You have gained a level! Welcome to level N!`
 - AA gain: `You have gained N ability point(s)! You now have M ability point(s).`
-  AA spend: `You have gained the ability "<X>" at a cost of N ability points.`
-  ("You now have M" is **unspent**, not lifetime; unspent = last M − spends after.)
+  AA spend — TWO formats: `You have gained the ability "<X>" at a cost of N ability
+  points.` (rank 1) and the dominant `You have improved <X> <rank> at a cost of N
+  ability point(s).` ("You now have M" is **unspent**, not lifetime.)
+  Gotchas (all validated): cost-0 spend lines are **auto-grants**, not purchases;
+  **respecs re-log purchases** (same ability+rank re-bought, no refund line exists)
+  so sum-of-costs ≠ net spent — headline "spent" must be `earned − unspent`.
 - **Combat** (see `src/main/combat/parse.ts`):
   - Melee: `<A> <verb> <B> for N points of damage.` + optional `(Critical)` /
-    `(Riposte)` / `(Slay Undead)` / `(Finishing Blow)` modifier.
+    `(Riposte)` / `(Slay Undead)` / `(Finishing Blow)` modifier. Verbs conjugate:
+    first person `You slash/crush/smite/cleave…`, third person `slashes/cleaves…` —
+    the regex must match BOTH (a `slashes?` pattern silently drops all first-person
+    melee; this once hid 22% of all damage). `smite`/`cleave` are real EQL verbs.
   - Spell (typed): `<A> hit <B> for N points of <class> damage by <Spell>. (Critical)`.
   - DoT: `<B> has taken N damage from your <Spell>.` | `… from <Spell> by <caster>.`
-  - Damage shield: `<B> is burned by YOUR flames for N points of non-melee damage.`
+    (`<B> has taken N damage by <Spell>.` with NO caster = someone else's DoT — skip.)
+  - Damage shield out: `<B> is burned by YOUR flames for N points of non-melee damage.`
+    Incoming DS: `YOU are burned by <mob>'s <element> for N points of non-melee damage!`
   - Mob nuke on you: `<mob> hit you for N points of magic damage by <Spell>.`
+- **Entity-name casing**: lifecycle lines use lowercase articles (`a froglok…has
+  been charmed.`) but sentence-start damage lines capitalize (`A froglok…hits`).
+  All identity comparisons must use a canonical lowercase key (see `idKey()`),
+  keeping display casing separately.
 - **Charm lifecycle** (only the charmer sees these, so they're yours):
   - `<mob> has been charmed.` → pet on.
-  - `Your <charm spell> spell has worn off of <mob>.` → pet off (only for charm
-    spells: Allure/Beguile/Charm/Dictate/… — ignore buffs like *Dazzle* wearing off).
-  - `<mob> has been slain …` → pet off.
+  - `Your <charm spell> spell has worn off of <mob>.` → pet off — charm spells ONLY
+    (Charm/Beguile/Allure/Cajol…/Dictate/Agacerie…). **Enthrall/Entrance/Mesmerize
+    are MEZ, not charm** — do not uncharm on them ("cajole" won't match "Cajoling
+    Whispers"; stems are audited against real worn-off lines).
+  - `<mob> has been slain …` → pet off. **Zoning clears all charm** (charm cannot
+    survive a zone line).
 
 ## Combat engine = a formal state machine
 
 State: `charmed:Set`, `zone`, `current` encounter, `history[]`, `zoneAgg`. One
 transition per ingested line (documented at the top of `engine.ts`). Rules:
 
-- Attribution: `A=You` → your out; `A∈charmed && B∉friendly` → pet out; `B=You` →
-  incoming; else ignored (not your fight).
-- Encounters group **staggered adds**; a new one starts after a `SEGMENT_GAP_MS`
-  (10s) idle. **DPS = damage ÷ (lastHit − firstHit)** so it freezes when a fight
-  ends (do NOT divide by `now` — that was the "sliding average / NaN" bug).
+- Attribution lives in the pure, unit-testable `classify()` (engine.ts):
+  `A=You` → your out — **even if B's name is charmed** (a same-named hostile twin;
+  you can't meaningfully melee your own pet); `A∈charmed, B=You` → incoming;
+  `A∈charmed, A==B` → pet out flagged **ambiguous** (pet↔twin, direction unknowable
+  — surfaced as a `~` badge, never silently guessed); `A∈charmed, B other` → pet
+  out; else ignored (not your fight). All comparisons via canonical `idKey()`.
+- **Encounter segmentation is death-closed** (Task #20, replacing the old
+  `SEGMENT_GAP_MS` idle rule). A fight CLOSES when either:
+  - every engaged **hostile** instance is *gone* — retired (dead/zoned) OR idle for
+    `LINGER_MS` (5s) with no attributed damage involving it (a mob the pet stopped
+    fighting that never got a death line) — AND `LINGER_MS` has passed since the last
+    attributed damage overall. A live charmed pet is **excluded** from this check (it
+    never dies, so it would otherwise pin every charm-grind fight open forever).
+  - OR no attributed damage AND no CC event for `FALLBACK_IDLE_MS` (60s) — the
+    fled/deaggroed backstop for mobs the log never reports dead.
+  A **CC (mez/root) application or refresh** HOLDS the encounter open regardless of
+  damage gaps while the CC'd instance is alive (`CC_HOLD_MS` 120s backstop expiry) —
+  this is the *mez-and-wait* case (the pure time-gap rule would wrongly split it).
+  Pet swap (uncharm→re-charm) is **not** a boundary event. Empty (0-damage) shells
+  are dropped at finalize. Closure is **time-driven**, so it's evaluated both on the
+  next ingested damage/CC event AND in `snapshot(now)` (the poll may be the first
+  observation past a threshold); finalization always stamps the encounter's own
+  `lastTs` (a damage ts), never the eval moment. **DPS = damage ÷ (lastHit −
+  firstHit)** so it freezes when a fight ends (do NOT divide by `now` — that was the
+  "sliding average / NaN" bug).
+- **Active-time DPS**: each encounter accumulates `activeMs` = Σ over attributed
+  damage hits of `min(ts − prevHitTs, ACTIVE_MS)` (3s cap, standard meter convention;
+  first hit adds 0). Surfaced as `activeSec`/`activeDps` (total ÷ activeSec) on the
+  segment summary/view; the CombatView shows it as a subtle "(act N/s)" caption next
+  to wall-clock DPS (which stays the headline). `activeSec ≤ durationSec` always.
+- **CC events** (`kind:'cc'`, `shared/logEvents.ts`): mez/root, NOT charm. Parser
+  emits them from `<mob> has been mesmerized|enthralled|entranced|ensnared.`
+  (application) and from `Your <mez/root spell> spell has worn off of <mob>.`
+  (`refresh:true` keep-alive). The charm-vs-mez split in the worn-off handler is
+  intact: a **charm** spell worn-off still emits `uncharm`; a **CC** spell worn-off
+  now emits a `cc` refresh (was previously dropped). Spell families are the
+  `charmSpell`/`ccSpell` regexes in `log/rulesets.ts`.
 - Overall aggregate resets on **zone**.
-- Name-only ambiguity is unsolved-by-design: if two `a fire giant warrior`s exist
-  and one is charmed, the log can't distinguish them. We rely on explicit
-  charm/worn-off/death messages, never guess.
+- Same-name ambiguity is handled by the `classify()` rules above: your own hits and
+  hits on you are always attributed; only pet↔same-named-twin lines are ambiguous,
+  and those are counted as pet damage with an explicit ambiguous flag. A full
+  entity-instance world model (spawn generations) is the planned next step.
 - The engine keeps a capped **classification ring** (recent parsed lines) for the
   live processing log; `looksDamage()` flags damage-shaped lines it *couldn't*
   parse so misses are visible via the "show unparsed" toggle.
@@ -120,6 +346,21 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
   how every combat/AA claim in the history was validated.
 - After launching dev in the background, the app window can't be screenshotted
   (dev Electron isn't a registered app), so verify via logs + tsx scripts.
+- **A blank window should now be impossible** (Task #13 error harness). Every JS
+  error — main uncaught/unhandled, renderer `window.onerror`/rejection, React
+  render crashes (caught by `ErrorBoundary` wrapping `<App/>`), dead render
+  processes, failed loads, preload errors, and renderer console warnings/errors —
+  is captured. Instead of a blank shell the user sees a dark "Something broke"
+  fallback with the message, a collapsed stack, and a Reload button.
+  - **When debugging a broken/blank UI, check `errors.log` FIRST.** Location:
+    `app.getPath('userData')/errors.log` → on this machine
+    `C:\Users\jmoye\AppData\Roaming\eq-tools\errors.log` (the path is also printed
+    at startup: `[eq-tools] Error log: …`). It's append-only, truncated at ~1MB.
+  - Every captured error is also `console.error`'d with the grep-able prefix
+    **`[eq-tools:error]`**, so it lands in the `electron-vite dev --watch` stdout
+    (the task `.output` file) — `grep '\[eq-tools:error\]'` to find them. Source
+    tags identify origin: `main:uncaughtException`, `main:render-process-gone`,
+    `renderer:onerror`, `renderer:ErrorBoundary`, `renderer:console`, etc.
 
 ## TypeScript notes
 

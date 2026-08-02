@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Alert,
   Box,
@@ -17,19 +17,26 @@ import {
   Typography
 } from '@mui/material'
 import RefreshIcon from '@mui/icons-material/Refresh'
-import type { CountSource, LootEvent } from '@shared/types'
+import type { CountSource } from '@shared/types'
 import { useProgress } from '../posky/useProgress'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 
 const MAX_ROWS = 600
 
-export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
-  const { inventoryRows, countSource, setCountSource, reloadInventory, inventoryInfo } = useProgress(lastLoot)
+export default function InventoryView(): JSX.Element {
+  const { inventoryRows, countSource, setCountSource, reloadInventory, inventoryInfo } = useProgress()
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [query, setQuery] = useState('')
   const [onlyReconciled, setOnlyReconciled] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
+  // When main auto-reloads the *-Inventory.txt (chokidar watch), surface it.
+  const [autoUpdatedAt, setAutoUpdatedAt] = useState<number | null>(null)
+
+  useEffect(() => {
+    const off = window.eq.onInventoryReload(() => setAutoUpdatedAt(Date.now()))
+    return off
+  }, [])
 
   const rows = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -93,6 +100,11 @@ export default function InventoryView({ lastLoot }: { lastLoot: LootEvent | null
         {totals.items.toLocaleString()} distinct items · {totals.net.toLocaleString()} net held ·{' '}
         {totals.consumed.toLocaleString()} consumed by turn-ins
         {inventoryInfo ? ` · export loaded ${new Date(inventoryInfo.loadedAt).toLocaleString()}` : ' · no export loaded'}
+        {autoUpdatedAt && (
+          <Typography component="span" variant="body2" sx={{ color: 'success.main' }}>
+            {' '}· auto-updated {new Date(autoUpdatedAt).toLocaleTimeString()}
+          </Typography>
+        )}
       </Typography>
 
       <Alert severity="info" sx={{ py: 0 }}>

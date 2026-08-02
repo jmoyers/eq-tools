@@ -11,6 +11,7 @@
 //   zone   → finalize current, reset zoneAgg
 //   charm  → charmed.add(mob)     (message only the charmer sees ⇒ it's yours)
 //   uncharm/death(charm spell/mob death) → charmed.delete(mob)
+//   cc     → mark the mob's instance engaged + CC-held (mez/root keep-alive)
 //   damage → route to current encounter + zoneAgg (see route())
 //
 // Attribution rule (damage `A → B` for N):
@@ -19,18 +20,32 @@
 //   B = You            → incoming
 //   otherwise          → not your fight (ignored)
 //
-// Encounters group staggered combat: a new fight begins when there's damage and
-// either none is in progress or the last one was >SEGMENT_GAP_MS ago. DPS uses
-// (lastHit − firstHit), so it freezes when a fight ends.
+// Encounter segmentation (Task #20 — death-closed, replacing the old idle-gap
+// rule). A fight CLOSES when either:
+//   - every engaged hostile instance is retired (dead/zoned) AND LINGER_MS passes
+//     with no new attributed damage → crisp pull boundaries from the death timeline;
+//   - OR no attributed damage AND no CC event for FALLBACK_IDLE_MS (fled/deagro).
+// A CC (mez/root) application or refresh HOLDS the encounter open regardless of
+// damage gaps while the CC'd instance is alive (the mez-and-wait case). Pet swap
+// (uncharm/charm) is NOT a boundary event. Closure is time-driven, so it's evaluated
+// both on the next ingested event and in snapshot(now) — finalization always stamps
+// the encounter's own lastTs (a damage ts), never the eval moment. DPS uses
+// (lastHit − firstHit), so it freezes when a fight ends. Each encounter also tracks
+// activeMs (Σ capped gaps between hits) for an active-time DPS stat.
 //
 // Seeding: the engine is fed the entire log on load (recording=false) so charm
 // and encounter state reflect reality before the live tail (recording=true)
 // takes over — this is why a pet charmed before the app opened is still tracked.
 
-import { looksDamage, parseCombatLine, type DamageEvent } from './parse'
+import { idKey } from '../log/parser'
+import { WorldModel } from './world'
+import type { LogEvent, MissType } from '../../shared/logEvents'
+import type { DamageType } from '../../shared/combat'
 import type {
   ClassifiedLine,
   CombatSnapshot,
+  HealerView,
+  MissBreakdown,
   SegmentSummary,
   SegmentView,
   SnapshotOpts,
@@ -38,12 +53,33 @@ import type {
   SourceView
 } from '../../shared/combat'
 
+/**
+ * The engine's internal damage record. Sourced from the canonical `damage`
+ * LogEvent, but with a non-null attacker (caster-less other-player DoTs — which
+ * carry attacker:null — are ignored by the engine before this is built).
+ */
+interface DamageEvent {
+  ts: number
+  attacker: string
+  target: string
+  amount: number
+  dtype: DamageType
+  dclass?: string
+  skill: string
+  crit: boolean
+  modifier?: string
+}
+
 interface SkillStat {
   name: string
   total: number
   hits: number
   crits: number
   max: number
+  misses: number
+}
+function newMissBreakdown(): MissBreakdown {
+  return { miss: 0, dodge: 0, parry: 0, riposte: 0, block: 0, absorb: 0 }
 }
 interface SourceStat {
   name: string
@@ -51,14 +87,27 @@ interface SourceStat {
   total: number
   hits: number
   crits: number
+  ambiguousHits: number
+  ambiguousTotal: number
+  /** Avoided swings by this source, all outcomes. */
+  misses: number
+  miss: MissBreakdown
   bySkill: Map<string, SkillStat>
 }
 
-function addToSource(src: SourceStat, ev: DamageEvent): void {
+function newSkill(name: string): SkillStat {
+  return { name, total: 0, hits: 0, crits: 0, max: 0, misses: 0 }
+}
+
+function addToSource(src: SourceStat, ev: DamageEvent, ambiguous: boolean): void {
   src.total += ev.amount
   src.hits += 1
   if (ev.crit) src.crits += 1
-  const s = src.bySkill.get(ev.skill) ?? { name: ev.skill, total: 0, hits: 0, crits: 0, max: 0 }
+  if (ambiguous) {
+    src.ambiguousHits += 1
+    src.ambiguousTotal += ev.amount
+  }
+  const s = src.bySkill.get(ev.skill) ?? newSkill(ev.skill)
   s.total += ev.amount
   s.hits += 1
   if (ev.crit) s.crits += 1
@@ -66,22 +115,65 @@ function addToSource(src: SourceStat, ev: DamageEvent): void {
   src.bySkill.set(ev.skill, s)
 }
 
+/** Fold a miss (avoided swing) into a source's accuracy stats. */
+function addMissToSource(src: SourceStat, mtype: MissType, skill: string): void {
+  src.misses += 1
+  src.miss[mtype] += 1
+  const s = src.bySkill.get(skill) ?? newSkill(skill)
+  s.misses += 1
+  src.bySkill.set(skill, s)
+}
+
+function newSource(name: string, kind: SourceKind): SourceStat {
+  return { name, kind, total: 0, hits: 0, crits: 0, ambiguousHits: 0, ambiguousTotal: 0, misses: 0, miss: newMissBreakdown(), bySkill: new Map() }
+}
+
 class Agg {
+  // Keyed by INSTANCE id (or 'you'/'pet:<instanceId>'); `name` holds display.
   out = new Map<string, SourceStat>()
   inc = new Map<string, SourceStat>()
-  targets = new Map<string, number>()
-  addOut(id: string, name: string, kind: SourceKind, ev: DamageEvent): void {
-    const s = this.out.get(id) ?? { name, kind, total: 0, hits: 0, crits: 0, bySkill: new Map() }
-    addToSource(s, ev)
+  targets = new Map<string, { name: string; amount: number }>()
+  /** Healing received by hostile instances engaged here (instanceId → total). */
+  enemyHeal = new Map<string, { name: string; amount: number }>()
+  /** Healing received by You / your pets: healerKey → { name, total, count }. */
+  incHeal = new Map<string, { name: string; amount: number; count: number }>()
+  addOut(id: string, name: string, kind: SourceKind, ev: DamageEvent, ambiguous = false): void {
+    const s = this.out.get(id) ?? newSource(name, kind)
+    if (s.name !== name) s.name = name
+    addToSource(s, ev, ambiguous)
     this.out.set(id, s)
   }
-  addInc(name: string, ev: DamageEvent): void {
-    const s = this.inc.get(name) ?? { name, kind: 'enemy' as SourceKind, total: 0, hits: 0, crits: 0, bySkill: new Map() }
-    addToSource(s, ev)
-    this.inc.set(name, s)
+  addInc(id: string, name: string, ev: DamageEvent): void {
+    const s = this.inc.get(id) ?? newSource(name, 'enemy')
+    addToSource(s, ev, false)
+    this.inc.set(id, s)
   }
-  bumpTarget(name: string, amount: number): void {
-    this.targets.set(name, (this.targets.get(name) ?? 0) + amount)
+  addOutMiss(id: string, name: string, kind: SourceKind, mtype: MissType, skill: string): void {
+    const s = this.out.get(id) ?? newSource(name, kind)
+    if (s.name !== name) s.name = name
+    addMissToSource(s, mtype, skill)
+    this.out.set(id, s)
+  }
+  addIncMiss(id: string, name: string, mtype: MissType, skill: string): void {
+    const s = this.inc.get(id) ?? newSource(name, 'enemy')
+    addMissToSource(s, mtype, skill)
+    this.inc.set(id, s)
+  }
+  addEnemyHeal(id: string, name: string, amount: number): void {
+    const t = this.enemyHeal.get(id) ?? { name, amount: 0 }
+    t.amount += amount
+    this.enemyHeal.set(id, t)
+  }
+  addIncHeal(healerKey: string, name: string, amount: number): void {
+    const t = this.incHeal.get(healerKey) ?? { name, amount: 0, count: 0 }
+    t.amount += amount
+    t.count += 1
+    this.incHeal.set(healerKey, t)
+  }
+  bumpTarget(id: string, name: string, amount: number): void {
+    const t = this.targets.get(id) ?? { name, amount: 0 }
+    t.amount += amount
+    this.targets.set(id, t)
   }
 }
 
@@ -92,37 +184,155 @@ interface Encounter {
   lastTs: number
   agg: Agg
   engaged: Set<string>
+  /** instanceId → ts it was last involved in attributed damage (as our target or as
+   *  an incoming attacker). Drives the "gone" staleness in death-close: a hostile
+   *  that stopped being fought and never got a death line is treated as gone once it
+   *  has been idle for LINGER_MS, so a pull that ends with a mob fleeing still closes
+   *  crisply instead of waiting out the 60s fallback. */
+  engagedSeen: Map<string, number>
+  /** Active-combat time accumulator (ms): on each attributed damage hit we add
+   *  min(ts - prevDamageTs, ACTIVE_MS). First hit adds 0. See ACTIVE_MS. */
+  activeMs: number
+  /** ts of the previous attributed damage hit, for the activeMs delta. */
+  prevDamageTs?: number
+  /** instanceId → epoch-ms until which this engaged instance is CC-held. While any
+   *  engaged instance is alive (CC'd instances count as alive), the encounter stays
+   *  OPEN regardless of damage gaps — the mez-and-wait case. */
+  ccActiveUntil: Map<string, number>
+  /** Memoized SegmentSummary, populated once at finalize time. A finalized
+   *  encounter is immutable, so its summary is stable for the rest of the session
+   *  — recomputing it for all ~1,400 history entries on every snapshot() (2×+/sec)
+   *  was the dominant snapshot cost (Task #17). */
+  summary?: SegmentSummary
 }
 
-const SEGMENT_GAP_MS = 10_000
+// Encounter closure (Task #20 — death-closed segmentation, replacing the old
+// SEGMENT_GAP_MS idle rule):
+//   LINGER_MS   — after every engaged hostile instance is retired (dead/zoned),
+//                 wait this long with no new attributed damage before finalizing at
+//                 the last damage ts. Crisp pull boundaries come from the death
+//                 timeline; the linger absorbs the trailing DoT tick / cleanup swing.
+//   FALLBACK_IDLE_MS — if there's no attributed damage AND no CC event for this long
+//                 while instances remain engaged-but-not-retired (mob fled/deagroed,
+//                 the log never reports a death), close anyway.
+//   ACTIVE_MS   — per-hit active-time cap AND the "in combat" freshness window.
+const LINGER_MS = 5_000
+const FALLBACK_IDLE_MS = 60_000
+// How long a single CC application/refresh keeps an instance "held" (alive for
+// closure) without further evidence. A live mez is re-applied well within this, and
+// resumed damage refreshes activity; this is only the backstop expiry for a CC that
+// is never refreshed and never followed by damage (so a lone mez can't pin a fight
+// open forever). It exceeds FALLBACK_IDLE_MS so an actively-refreshed mez holds.
+const CC_HOLD_MS = 120_000
 const ACTIVE_MS = 3_000
 const RECENT_CAP = 300
 
+/** How a damage event `A → B` is attributed given the charmed set. */
+export type Attribution =
+  | { kind: 'out-you' }
+  | { kind: 'out-pet'; petKey: string; petName: string; ambiguous: boolean }
+  | { kind: 'incoming' }
+  | { kind: 'ignore' }
+
+/**
+ * Pure attribution decision — the whole point is same-name twin handling.
+ * `charmed` is a Set of canonical (lowercased) keys.
+ *
+ * Rules (decided with the user):
+ *   You → charmed-name : ALWAYS outgoing to a hostile twin (never dropped as FF).
+ *   charmed-name → You : ALWAYS incoming.
+ *   charmed-name → same-name (A==B, charmed) : pet outgoing, but AMBIGUOUS
+ *     (could be your pet hitting a hostile twin, or a hostile twin hitting your
+ *      pet) — attribute to the pet and flag it.
+ *   charmed-name → other : pet outgoing (existing rule).
+ *   You → other : outgoing.  other → You : incoming.  else ignore.
+ */
+export function classify(ev: DamageEvent, charmed: ReadonlySet<string>): Attribution {
+  const aKey = idKey(ev.attacker)
+  const bKey = idKey(ev.target)
+  const aYou = aKey === 'you'
+  const bYou = bKey === 'you'
+  const aPet = !aYou && charmed.has(aKey)
+  const bPet = !bYou && charmed.has(bKey)
+
+  if (aYou) {
+    // You → anything (including a charmed name = a hostile twin) is outgoing.
+    return bYou ? { kind: 'ignore' } : { kind: 'out-you' }
+  }
+  if (aPet) {
+    // Charmed pet is the attacker.
+    if (bYou) return { kind: 'incoming' } // pet-name → You is always incoming
+    const ambiguous = aKey === bKey // same-name twin: can't tell pet from twin
+    return { kind: 'out-pet', petKey: aKey, petName: ev.attacker, ambiguous }
+  }
+  if (bYou) return { kind: 'incoming' }
+  // Attacker not friendly, target not you. If target is a pet, this is a mob
+  // hitting your pet — not tracked as our incoming (existing behavior: ignore).
+  void bPet
+  return { kind: 'ignore' }
+}
+
 export class CombatEngine {
+  /** Canonical charmed name keys — kept in lockstep with the WorldModel's charmed
+   *  instances so the pure classify() (which only needs name membership) is
+   *  unchanged. The world model owns instance identity; this is a fast lookup. */
   private charmed = new Set<string>()
+  private world = new WorldModel()
+  /** The player's own proper name key (e.g. "primitive"). Normally INJECTED by
+   *  index.ts via setPlayerName() (it knows the character from the tail ref). As a
+   *  cheap fallback (guards a mis-parsed injected name) it can also be LEARNED from
+   *  heal lines: EQ writes self-heals as "You healed <PlayerName> for N", so a heal
+   *  whose healer is You and whose target is neither a charmed pet nor an engaged
+   *  hostile reveals the player's name. An injected name always wins over a learned
+   *  one. Once known, heals targeting that name count as incoming. */
+  private playerKey?: string
+  /** True once setPlayerName() injected the name, so heal-based learning can't
+   *  overwrite it. */
+  private playerKeyInjected = false
   private zone?: string
   private seq = 0
   private current: Encounter | null = null
   private history: Encounter[] = []
   private zoneAgg = new Agg()
   private zoneFinalizedMs = 0
+  /** Sum of finalized encounters' activeMs this zone (for the zone active-DPS). */
+  private zoneActiveMs = 0
   private recent: ClassifiedLine[] = []
   private recording = false
+  /** ts of the last encounter-relevant activity (attributed damage OR a CC event).
+   *  Drives the FALLBACK_IDLE_MS closure independent of the damage timeline. */
+  private lastActivityTs = 0
 
   /** Enable classification logging (after the historical scan, for the live tail). */
   setLive(): void {
     this.recording = true
   }
 
+  /**
+   * Inject the player's own character name (from index.ts's tail ref). This is the
+   * authoritative source: called before the scan replay and again on a character
+   * switch after reset(). Keyed canonically so it matches the idKey() the heal path
+   * uses. Wins over any heal-line-learned name.
+   */
+  setPlayerName(name: string): void {
+    this.playerKey = idKey(name)
+    this.playerKeyInjected = true
+  }
+
   reset(): void {
     this.charmed.clear()
+    this.world.reset()
+    this.playerKey = undefined
+    this.playerKeyInjected = false
     this.zone = undefined
     this.current = null
     this.history = []
     this.zoneAgg = new Agg()
     this.zoneFinalizedMs = 0
+    this.zoneActiveMs = 0
     this.recent = []
     this.recording = false
+    this.lastActivityTs = 0
   }
 
   private log(ts: number, cat: string, role: ClassifiedLine['role'], text: string): void {
@@ -131,96 +341,415 @@ export class CombatEngine {
     if (this.recent.length > RECENT_CAP) this.recent.shift()
   }
 
-  ingest(text: string, ts: number): void {
-    const ev = parseCombatLine(text, ts)
-    if (!ev) {
-      if (looksDamage(text)) this.log(ts, 'unparsed', 'dropped', text)
-      return
-    }
-    if (ev.t !== 'dmg') {
-      if (ev.t === 'zone') {
+  /**
+   * Fold one canonical LogEvent into the state machine. The engine consumes
+   * damage/charm/uncharm/death/zone directly (the old internal parse call path is
+   * gone). heal/miss are parse-only for now — logged to the classification ring
+   * for visibility, but not aggregated. Any other kind is ignored.
+   *
+   * `live` drives the classification ring (recording): historical replay events
+   * mutate state silently; live events are also ring-logged.
+   */
+  ingestEvent(ev: LogEvent, live: boolean): void {
+    if (live) this.recording = true
+    switch (ev.kind) {
+      case 'zone': {
         this.finalizeCurrent()
-        this.zone = ev.value
+        this.zone = ev.zone
         this.zoneAgg = new Agg()
         this.zoneFinalizedMs = 0
-        this.log(ts, 'zone', 'info', `▸ entered ${ev.value}`)
-      } else if (ev.t === 'charm') {
-        this.charmed.add(ev.value)
-        this.log(ts, 'charm', 'info', `⚡ charmed ${ev.value}`)
-      } else if (ev.t === 'uncharm') {
-        this.charmed.delete(ev.value)
-        this.log(ts, 'uncharm', 'info', `✕ charm broke: ${ev.value}`)
-      } else {
-        this.charmed.delete(ev.value)
-        this.current?.engaged.delete(ev.value)
-        this.log(ts, 'death', 'info', `☠ ${ev.value} died`)
+        this.zoneActiveMs = 0
+        // Charm cannot survive a zone transition, and hostile mobs don't follow —
+        // both are retired. SUMMONED class pets DO persist across zones (real-log
+        // verified), so world.zone() returns the survivors and we rebuild the fast
+        // charmed name-set from them (dropping stale charmed/hostile names).
+        const survivors = this.world.zone(ev.ts)
+        this.charmed = new Set(survivors.map((i) => i.nameKey))
+        this.log(ev.ts, 'zone', 'info', `▸ entered ${ev.zone}`)
+        return
       }
-      return
+      case 'charm': {
+        const inst = this.world.charm(ev.mob, ev.ts)
+        this.charmed.add(idKey(ev.mob))
+        this.log(ev.ts, 'charm', 'info', `⚡ charmed ${this.world.label(inst)} [${inst.instanceId}]`)
+        return
+      }
+      case 'petClaim': {
+        // A pet addressed you as master → the named entity is your pet. Bind it as
+        // a summoned pet (idempotent; charmed pets that also tell you this stay
+        // charmed). This is the ONLY binding signal for random-named class pets.
+        const inst = this.world.claim(ev.name, ev.ts)
+        this.charmed.add(idKey(ev.name))
+        this.log(ev.ts, 'charm', 'info', `⚡ pet claim ${this.world.label(inst)} [${inst.instanceId}]`)
+        return
+      }
+      case 'uncharm': {
+        this.world.uncharm(ev.mob, ev.ts)
+        this.charmed.delete(idKey(ev.mob))
+        this.log(ev.ts, 'uncharm', 'info', `✕ charm broke: ${ev.mob}`)
+        return
+      }
+      case 'cc': {
+        // Crowd control (mez/root, not charm). Evaluate any pending closure at this
+        // ts first (a CC on a fresh pull shouldn't attach to a stale fight), then
+        // mark the CC'd instance engaged + CC-held so the encounter stays OPEN across
+        // the mez-and-wait gap. A CC'd instance counts as "alive" for closure.
+        this.evalClosure(ev.ts)
+        const inst = this.world.resolve(ev.mob, ev.ts)
+        if (inst.instanceId === 'you') return
+        const enc = this.ensureEncounter(ev.ts)
+        enc.engaged.add(inst.instanceId)
+        enc.engagedSeen.set(inst.instanceId, ev.ts)
+        enc.ccActiveUntil.set(inst.instanceId, ev.ts + CC_HOLD_MS)
+        this.lastActivityTs = ev.ts
+        const tag = ev.refresh ? 'refresh' : 'applied'
+        this.log(ev.ts, 'cc', 'info', `✜ CC ${tag}: ${this.world.label(inst)}${ev.spell ? ` (${ev.spell})` : ''}`)
+        return
+      }
+      case 'death': {
+        const key = idKey(ev.name)
+        const killerKey = ev.bySelf ? 'you' : ev.killer ? idKey(ev.killer) : undefined
+        const res = this.world.death(ev.name, ev.ts, killerKey)
+        // Keep the fast charmed-name set in lockstep: only drop the name from the
+        // set when NO charmed instance of it remains live.
+        if (!this.world.petInstance(ev.name)) this.charmed.delete(key)
+        // The retired instance stays in `engaged` (so an in-fight heal on the corpse
+        // still counts) — closure consults world.isRetired(), not set membership.
+        // Clear any CC hold on the dead instance so it can't keep the fight open.
+        if (res.retired) this.current?.ccActiveUntil.delete(res.retired.instanceId)
+        const petNote = res.wasPet ? ' (pet)' : ''
+        const ambNote = res.ambiguous ? ' ~ambiguous' : ''
+        this.log(ev.ts, 'death', 'info', `☠ ${ev.name} died${petNote}${ambNote} — ${res.reason}`)
+        return
+      }
+      case 'damage': {
+        // Caster-less other-player DoTs (attacker:null) are not our fight.
+        if (ev.attacker === null) {
+          this.log(ev.ts, 'other', 'dropped', ev.raw)
+          return
+        }
+        // Close any pending encounter at this ts BEFORE routing, so attributed damage
+        // after a closure starts a fresh encounter rather than reviving the old one.
+        this.evalClosure(ev.ts)
+        const d: DamageEvent = {
+          ts: ev.ts, attacker: ev.attacker, target: ev.target, amount: ev.amount,
+          dtype: ev.dtype, dclass: ev.dclass, skill: ev.skill, crit: ev.crit, modifier: ev.modifier
+        }
+        this.route(d)
+        return
+      }
+      case 'heal':
+        this.routeHeal(ev.ts, ev.healer ?? null, ev.target, ev.amount, ev.spell)
+        this.log(ev.ts, 'heal', 'info', `+ ${ev.healer ?? '?'} → ${ev.target} ${ev.amount}${ev.spell ? ` (${ev.spell})` : ''}`)
+        return
+      case 'miss':
+        this.routeMiss(ev.ts, ev.attacker, ev.target, ev.mtype)
+        return
+      default:
+        return
     }
-    this.route(ev)
   }
 
   private route(ev: DamageEvent): void {
     if (ev.amount <= 0) return
-    const isYou = ev.attacker === 'You'
-    const isPet = !isYou && this.charmed.has(ev.attacker)
-    const friendlyAtk = isYou || isPet
-    const targetIsYou = ev.target === 'You'
-    const targetIsFriendly = targetIsYou || this.charmed.has(ev.target)
+    const at = classify(ev, this.charmed)
+    if (at.kind === 'ignore') return
 
-    const outgoing = friendlyAtk && !targetIsFriendly
-    const incoming = targetIsYou && !isYou
-    if (!outgoing && !incoming) return
+    // Twin evidence: You→charmed-name or same-name→same-name proves a hostile twin
+    // co-exists with the pet; ensure the world model has a second instance so the
+    // pet and the hostile twin resolve to distinct identities.
+    if (at.kind === 'out-you' && this.charmed.has(idKey(ev.target))) {
+      this.world.noteTwinEvidence(ev.target, ev.ts)
+    }
+    if (at.kind === 'out-pet' && at.ambiguous) {
+      this.world.noteTwinEvidence(ev.target, ev.ts)
+    }
 
     const enc = this.ensureEncounter(ev.ts)
+    // Active-time accrual: add the gap since the previous attributed hit, capped at
+    // ACTIVE_MS (standard meter convention — a long lull between hits counts as at
+    // most one "active" tick, not the whole idle stretch). First hit adds 0.
+    if (enc.prevDamageTs !== undefined) {
+      enc.activeMs += Math.min(Math.max(0, ev.ts - enc.prevDamageTs), ACTIVE_MS)
+    }
+    enc.prevDamageTs = ev.ts
     enc.lastTs = ev.ts
+    this.lastActivityTs = ev.ts
 
     const critMark = ev.crit ? '*' : ''
-    if (outgoing) {
-      const id = isYou ? 'you' : `pet:${ev.attacker}`
-      const kind: SourceKind = isYou ? 'you' : 'pet'
-      enc.agg.addOut(id, isYou ? 'You' : ev.attacker, kind, ev)
-      enc.agg.bumpTarget(ev.target, ev.amount)
-      this.zoneAgg.addOut(id, isYou ? 'You' : ev.attacker, kind, ev)
-      this.zoneAgg.bumpTarget(ev.target, ev.amount)
-      enc.engaged.add(ev.target)
-      this.log(ev.ts, ev.dtype, kind, `${ev.attacker} → ${ev.target}  ${ev.amount}${critMark}  ${ev.skill}`)
+    if (at.kind === 'incoming') {
+      // Attacker is a hostile (or the pet hitting you). Resolve to an instance so
+      // twins are distinct in the incoming list.
+      const attInst = this.world.resolve(ev.attacker, ev.ts)
+      const id = attInst.instanceId
+      const name = this.world.label(attInst)
+      enc.agg.addInc(id, name, ev)
+      this.zoneAgg.addInc(id, name, ev)
+      enc.engaged.add(id)
+      enc.engagedSeen.set(id, ev.ts)
+      this.log(ev.ts, ev.dtype, 'enemy', `${name} → You  ${ev.amount}${critMark}  ${ev.skill}`)
+      return
     }
-    if (incoming) {
-      enc.agg.addInc(ev.attacker, ev)
-      this.zoneAgg.addInc(ev.attacker, ev)
-      enc.engaged.add(ev.attacker)
-      this.log(ev.ts, ev.dtype, 'enemy', `${ev.attacker} → You  ${ev.amount}${critMark}  ${ev.skill}`)
+
+    // Outgoing (you or pet).
+    const isYou = at.kind === 'out-you'
+    let id: string
+    let name: string
+    const kind: SourceKind = isYou ? 'you' : 'pet'
+    if (isYou) {
+      id = 'you'
+      name = 'You'
+    } else {
+      // Resolve the pet to its charmed instance so twin pets are distinct.
+      const petInst = this.world.petInstance(ev.attacker) ?? this.world.resolve(ev.attacker, ev.ts, true)
+      id = `pet:${petInst.instanceId}`
+      name = this.world.label(petInst)
+      // The pet is trading blows with its target — record that engagement for the
+      // death-disambiguation rule (case 2b).
+      this.world.notePetEngagement(ev.attacker, idKey(ev.target))
+    }
+    const ambiguous = at.kind === 'out-pet' && at.ambiguous
+    // Resolve the target to an instance. For a same-name ambiguous pet hit the
+    // target is the HOSTILE twin (preferCharmed=false picks the hostile instance).
+    const tgtInst = this.world.resolve(ev.target, ev.ts)
+    const tgtId = tgtInst.instanceId
+    const tgtName = this.world.label(tgtInst)
+    enc.agg.addOut(id, name, kind, ev, ambiguous)
+    enc.agg.bumpTarget(tgtId, tgtName, ev.amount)
+    this.zoneAgg.addOut(id, name, kind, ev, ambiguous)
+    this.zoneAgg.bumpTarget(tgtId, tgtName, ev.amount)
+    enc.engaged.add(tgtId)
+    enc.engagedSeen.set(tgtId, ev.ts)
+    const cat = ambiguous ? 'ambiguous' : ev.dtype
+    const mark = ambiguous ? '~' : critMark
+    this.log(ev.ts, cat, kind, `${name} → ${tgtName}  ${ev.amount}${mark}  ${ev.skill}`)
+  }
+
+  /**
+   * Consume a miss (avoided swing) with the same attribution rules as damage.
+   * We synthesize a zero-amount DamageEvent to reuse classify(); a melee skill
+   * name isn't in the miss line, so avoided swings bucket under a "Melee" skill.
+   */
+  private routeMiss(ts: number, attacker: string, target: string, mtype: MissType): void {
+    const probe: DamageEvent = {
+      ts, attacker, target, amount: 0, dtype: 'melee', skill: 'Melee', crit: false
+    }
+    const at = classify(probe, this.charmed)
+    if (at.kind === 'ignore') return
+    // A miss doesn't extend or close an encounter (closure is death/CC/fallback
+    // driven), but it attaches to the in-progress fight if one is fresh (so hit% is
+    // per-fight). Otherwise it still counts toward the zone aggregate.
+    const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+
+    if (at.kind === 'incoming') {
+      const attInst = this.world.resolve(attacker, ts)
+      const id = attInst.instanceId
+      const name = this.world.label(attInst)
+      enc?.agg.addIncMiss(id, name, mtype, 'Melee')
+      this.zoneAgg.addIncMiss(id, name, mtype, 'Melee')
+      this.log(ts, 'miss', 'enemy', `${name} ✕ You (${mtype})`)
+      return
+    }
+    const isYou = at.kind === 'out-you'
+    let id: string
+    let name: string
+    const kind: SourceKind = isYou ? 'you' : 'pet'
+    if (isYou) {
+      id = 'you'
+      name = 'You'
+    } else {
+      const petInst = this.world.petInstance(attacker) ?? this.world.resolve(attacker, ts, true)
+      id = `pet:${petInst.instanceId}`
+      name = this.world.label(petInst)
+    }
+    enc?.agg.addOutMiss(id, name, kind, mtype, 'Melee')
+    this.zoneAgg.addOutMiss(id, name, kind, mtype, 'Melee')
+    this.log(ts, 'miss', kind, `${name} ✕ ${target} (${mtype})`)
+  }
+
+  /**
+   * Consume a heal. Two things matter for combat stats:
+   *   - target is an engaged HOSTILE instance → count as "enemy healing" (it undoes
+   *     our damage; effective-DPS context per encounter + zone).
+   *   - target is You or one of your pets → count as incoming healing (with top
+   *     healers).
+   * Other heals (party members, unrelated NPCs) are ignored for aggregation.
+   */
+  private routeHeal(ts: number, healer: string | null, target: string, amount: number, _spell?: string): void {
+    if (amount <= 0) return
+    const tKey = idKey(target)
+    const healerKey = healer ? idKey(healer) : null
+    const isYouTgt = tKey === 'you'
+    const isPetTgt = !isYouTgt && this.charmed.has(tKey)
+    const engagedHostile = this.isEngagedHostile(tKey)
+
+    // Learn the player's proper name as a FALLBACK only (injected name wins):
+    // "You healed <Player>" where the target is not a pet and not an engaged
+    // hostile → that name IS the player. (EQ never writes literal "You" as a heal
+    // target; it uses the character name.)
+    if (
+      !this.playerKeyInjected &&
+      healerKey === 'you' &&
+      !isYouTgt &&
+      !isPetTgt &&
+      !engagedHostile &&
+      this.playerKey === undefined
+    ) {
+      this.playerKey = tKey
+    }
+    const isPlayerTgt = this.playerKey !== undefined && tKey === this.playerKey
+
+    if (isYouTgt || isPetTgt || isPlayerTgt) {
+      // Incoming heal to You (or the player by name) / your pet.
+      const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+      const hk = healerKey ?? 'unknown'
+      const healerName = healer ?? 'Unknown'
+      enc?.agg.addIncHeal(hk, healerName, amount)
+      this.zoneAgg.addIncHeal(hk, healerName, amount)
+      return
+    }
+
+    // Heal on a hostile instance we're currently engaged with → enemy healing.
+    const inst = this.world.resolve(target, ts)
+    const enc = this.current
+    if (enc && enc.engaged.has(inst.instanceId)) {
+      enc.agg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
+      this.zoneAgg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
     }
   }
 
+  /** True if `nameKey` currently resolves to an engaged hostile instance. */
+  private isEngagedHostile(nameKey: string): boolean {
+    if (!this.current) return false
+    for (const list of [this.current]) {
+      for (const id of list.engaged) {
+        // engaged ids are instanceIds "<nameKey>#gen"; compare the nameKey prefix.
+        const hash = id.lastIndexOf('#')
+        if (hash > 0 && id.slice(0, hash) === nameKey) return true
+      }
+    }
+    return false
+  }
+
   private ensureEncounter(ts: number): Encounter {
-    if (this.current && ts - this.current.lastTs > SEGMENT_GAP_MS) this.finalizeCurrent()
+    // Closure is decided by evalClosure() (death-linger / CC-hold / fallback), which
+    // ingestEvent runs before routing. Here we only lazily open a new encounter.
     if (!this.current) {
-      this.current = { id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts, agg: new Agg(), engaged: new Set() }
+      this.current = {
+        id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts,
+        agg: new Agg(), engaged: new Set(), engagedSeen: new Map(), activeMs: 0, ccActiveUntil: new Map()
+      }
     }
     return this.current
   }
 
+  /**
+   * Evaluate deferred closure of the current encounter as of `now`. Encounters can
+   * now close purely from time passing (no more events), so this is called at the
+   * top of each damage/CC ingest AND from snapshot(now) — whichever comes first.
+   * Finalization always stamps the encounter's lastTs (a damage timestamp), never
+   * `now`, so startTs/lastTs/duration reflect the real fight, not the eval moment.
+   *
+   * Rules:
+   *  - CC-hold: if any engaged instance is still CC-held (ccActiveUntil > now), keep
+   *    OPEN regardless of gaps (the mez-and-wait case).
+   *  - Death-close: once every engaged hostile instance is retired (dead/zoned) and
+   *    LINGER_MS has passed since the last damage, finalize.
+   *  - Fallback: if no attributed damage AND no CC for FALLBACK_IDLE_MS (fled/deagro,
+   *    no death logged), finalize.
+   */
+  private evalClosure(now: number): void {
+    const enc = this.current
+    if (!enc) return
+
+    // CC-hold: any engaged instance still under an unexpired CC hold keeps it open.
+    for (const until of enc.ccActiveUntil.values()) {
+      if (until > now) return
+    }
+
+    // Is every engaged HOSTILE instance gone? A hostile is "gone" if it's retired
+    // (dead/zoned) OR it has been idle (no attributed damage involving it) for at
+    // least LINGER_MS — a mob the pet stopped fighting that never got a death line
+    // (fled/deaggroed) shouldn't pin the pull open past the linger. A live charmed
+    // pet is never a mob we're killing, so it's excluded — otherwise the pet (which
+    // never dies) would pin every charm-grind encounter open forever. CC'd instances
+    // had their unexpired hold checked above.
+    let hostiles = 0
+    let allGone = true
+    for (const id of enc.engaged) {
+      if (this.world.isLivePet(id)) continue
+      hostiles++
+      const seen = enc.engagedSeen.get(id) ?? enc.lastTs
+      const gone = this.world.isRetired(id) || now - seen >= LINGER_MS
+      if (!gone) {
+        allGone = false
+        break
+      }
+    }
+
+    const sinceDamage = now - enc.lastTs
+    const sinceActivity = now - this.lastActivityTs
+
+    // Death-close: every engaged hostile is dead/gone and the linger has elapsed.
+    if (allGone && hostiles > 0 && sinceDamage >= LINGER_MS) {
+      this.finalizeCurrent()
+      return
+    }
+    // Fallback: no damage and no CC for the idle window (mob fled / deaggroed).
+    if (sinceActivity >= FALLBACK_IDLE_MS) {
+      this.finalizeCurrent()
+    }
+  }
+
   private finalizeCurrent(): void {
     if (!this.current) return
-    this.zoneFinalizedMs += Math.max(0, this.current.lastTs - this.current.startTs)
-    this.history.push(this.current)
+    const enc = this.current
     this.current = null
+    // Drop empty encounters: a CC application (or a lone miss) can open an encounter
+    // that never accrues any attributed damage — e.g. a mez lands and the mob is
+    // then killed by someone else. Don't pollute history/zone with a 0-damage shell.
+    if (enc.agg.out.size === 0 && enc.agg.inc.size === 0) return
+    this.zoneFinalizedMs += Math.max(0, enc.lastTs - enc.startTs)
+    this.zoneActiveMs += enc.activeMs
+    // Compute the immutable summary once, now that the encounter is frozen. A
+    // finalized fight's summary never uses `now` (its `active` is always false),
+    // so 0 is a safe sentinel. Reused on every snapshot() thereafter.
+    enc.summary = this.encSummary(enc, 'fight', 0)
+    this.history.push(enc)
   }
 
   snapshot(now: number, opts: SnapshotOpts = {}): CombatSnapshot {
+    // Encounters can close purely from elapsed time (death-linger / fallback). A
+    // snapshot may be the first observation after that threshold, so evaluate the
+    // deferred closure here (stamped at the encounter's own lastTs, not `now`).
+    this.evalClosure(now)
     const combinePets = opts.combinePets ?? false
+    const maxSegments = opts.maxSegments ?? 100
     const inCombat = !!this.current && now - this.current.lastTs < ACTIVE_MS
 
+    // Only the current encounter + zone summary are recomputed per call; finalized
+    // fight summaries are memoized (immutable). Cap the finalized fights we
+    // serialize to `maxSegments` newest-first — the zone summary and current
+    // encounter are always included regardless of the cap.
     const segments: SegmentSummary[] = []
     if (this.current) segments.push(this.encSummary(this.current, 'current', now))
-    for (let i = this.history.length - 1; i >= 0; i--) segments.push(this.encSummary(this.history[i], 'fight', now))
+    const startIdx = this.history.length - 1
+    const stopIdx = Math.max(0, this.history.length - maxSegments)
+    for (let i = startIdx; i >= stopIdx; i--) {
+      const e = this.history[i]
+      segments.push(e.summary ?? this.encSummary(e, 'fight', now))
+    }
     segments.push(this.zoneSummary())
 
     const defaultId = this.current?.id ?? this.history[this.history.length - 1]?.id ?? 'zone'
-    const selectedId =
-      opts.selectedId && segments.some((s) => s.id === opts.selectedId) ? opts.selectedId : defaultId
+    // Validate against ALL encounters, not just the capped segment window — a
+    // selected finalized fight outside the cap is still fully resolvable via
+    // buildSelected() (it searches this.history directly).
+    const selectableId =
+      opts.selectedId === 'zone' ||
+      this.current?.id === opts.selectedId ||
+      this.history.some((h) => h.id === opts.selectedId)
+    const selectedId = opts.selectedId && selectableId ? opts.selectedId : defaultId
     const selected = this.buildSelected(selectedId, now, combinePets)
 
     const recent = (opts.showUnparsed ? this.recent : this.recent.filter((r) => r.cat !== 'unparsed')).slice(-150)
@@ -230,6 +759,7 @@ export class CombatEngine {
   private encSummary(e: Encounter, kind: 'fight' | 'current', now: number): SegmentSummary {
     const total = sumMap(e.agg.out)
     const dur = Math.max(1, (e.lastTs - e.startTs) / 1000)
+    const activeSec = Math.min(dur, e.activeMs / 1000)
     return {
       id: e.id,
       kind,
@@ -237,14 +767,18 @@ export class CombatEngine {
       durationSec: dur,
       total,
       dps: total / dur,
+      activeSec,
+      activeDps: total / Math.max(1, activeSec),
       startTs: e.startTs,
-      active: kind === 'current' && now - e.lastTs < ACTIVE_MS
+      active: kind === 'current' && now - e.lastTs < ACTIVE_MS,
+      enemyHealTotal: sumHeal(e.agg.enemyHeal)
     }
   }
 
   private zoneSummary(): SegmentSummary {
     const total = sumMap(this.zoneAgg.out)
     const dur = this.zoneDurationSec()
+    const activeSec = Math.min(dur, this.zoneActiveSec())
     return {
       id: 'zone',
       kind: 'zone',
@@ -252,9 +786,17 @@ export class CombatEngine {
       durationSec: dur,
       total,
       dps: total / dur,
+      activeSec,
+      activeDps: total / Math.max(1, activeSec),
       startTs: 0,
-      active: false
+      active: false,
+      enemyHealTotal: sumHeal(this.zoneAgg.enemyHeal)
     }
+  }
+
+  private zoneActiveSec(): number {
+    const cur = this.current ? this.current.activeMs : 0
+    return (this.zoneActiveMs + cur) / 1000
   }
 
   private zoneDurationSec(): number {
@@ -264,13 +806,15 @@ export class CombatEngine {
 
   private buildSelected(id: string, now: number, combinePets: boolean): SegmentView | null {
     if (id === 'zone') {
-      return this.buildView('zone', 'zone', `${this.zone ?? 'Session'} — overall`, this.zone, this.zoneAgg, this.zoneDurationSec(), false, combinePets)
+      const zDur = this.zoneDurationSec()
+      return this.buildView('zone', 'zone', `${this.zone ?? 'Session'} — overall`, this.zone, this.zoneAgg, zDur, Math.min(zDur, this.zoneActiveSec()), false, combinePets)
     }
     const e = this.current?.id === id ? this.current : this.history.find((h) => h.id === id)
     if (!e) return null
     const dur = Math.max(1, (e.lastTs - e.startTs) / 1000)
+    const activeSec = Math.min(dur, e.activeMs / 1000)
     const active = this.current?.id === id && now - e.lastTs < ACTIVE_MS
-    return this.buildView(e.id, 'fight', encounterName(e), e.zone, e.agg, dur, active, combinePets)
+    return this.buildView(e.id, 'fight', encounterName(e), e.zone, e.agg, dur, activeSec, active, combinePets)
   }
 
   private buildView(
@@ -280,6 +824,7 @@ export class CombatEngine {
     zone: string | undefined,
     agg: Agg,
     durationSec: number,
+    activeSec: number,
     active: boolean,
     combinePets: boolean
   ): SegmentView {
@@ -287,6 +832,9 @@ export class CombatEngine {
     const incoming = sourceViews(agg.inc, durationSec, false)
     const outTotal = entities.reduce((s, e) => s + e.total, 0)
     const inTotal = incoming.reduce((s, e) => s + e.total, 0)
+    const incomingHealers: HealerView[] = [...agg.incHeal.values()]
+      .map((h) => ({ name: h.name, total: h.amount, count: h.count }))
+      .sort((a, b) => b.total - a.total)
     return {
       id,
       kind,
@@ -294,14 +842,25 @@ export class CombatEngine {
       zone,
       durationSec,
       active,
+      activeSec,
       outTotal,
       outDps: outTotal / durationSec,
+      activeDps: outTotal / Math.max(1, activeSec),
       entities,
       inTotal,
       inDps: inTotal / durationSec,
-      incoming
+      incoming,
+      enemyHealTotal: sumHeal(agg.enemyHeal),
+      incomingHealTotal: incomingHealers.reduce((s, h) => s + h.total, 0),
+      incomingHealers
     }
   }
+}
+
+function sumHeal(m: Map<string, { amount: number }>): number {
+  let t = 0
+  for (const v of m.values()) t += v.amount
+  return t
 }
 
 function sumMap(m: Map<string, SourceStat>): number {
@@ -311,9 +870,9 @@ function sumMap(m: Map<string, SourceStat>): number {
 }
 
 function encounterName(e: Encounter): string {
-  const sorted = [...e.agg.targets.entries()].sort((a, b) => b[1] - a[1])
+  const sorted = [...e.agg.targets.values()].sort((a, b) => b.amount - a.amount)
   if (sorted.length === 0) return 'Combat'
-  const top = sorted[0][0]
+  const top = sorted[0].name
   return sorted.length > 1 ? `${top} +${sorted.length - 1}` : top
 }
 
@@ -321,14 +880,27 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
   const merged = new Map<string, SourceStat>()
   for (const [id, s] of map) {
     if (combinePets && s.kind === 'pet') {
-      const you = merged.get('you') ?? { name: 'You +pets', kind: 'you' as SourceKind, total: 0, crits: 0, hits: 0, bySkill: new Map() }
+      const you = merged.get('you') ?? newSource('You +pets', 'you')
       you.name = 'You +pets'
       you.total += s.total
       you.hits += s.hits
       you.crits += s.crits
+      you.ambiguousHits += s.ambiguousHits
+      you.ambiguousTotal += s.ambiguousTotal
+      you.misses += s.misses
+      for (const k of MISS_KEYS) you.miss[k] += s.miss[k]
       for (const [k, sk] of s.bySkill) {
         const key = `${s.name}: ${k}`
-        you.bySkill.set(key, { ...sk, name: key })
+        const prev = you.bySkill.get(key)
+        if (prev) {
+          prev.total += sk.total
+          prev.hits += sk.hits
+          prev.crits += sk.crits
+          prev.misses += sk.misses
+          prev.max = Math.max(prev.max, sk.max)
+        } else {
+          you.bySkill.set(key, { ...sk, name: key })
+        }
       }
       merged.set('you', you)
     } else {
@@ -340,6 +912,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
   return list
     .map(([id, s]) => {
       const skMax = Math.max(1, ...[...s.bySkill.values()].map((k) => k.total))
+      const swings = s.hits + s.misses
       return {
         id,
         name: s.name,
@@ -350,11 +923,18 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
         hits: s.hits,
         crits: s.crits,
         critPct: s.hits ? (s.crits / s.hits) * 100 : 0,
+        ambiguousHits: s.ambiguousHits,
+        ambiguousTotal: s.ambiguousTotal,
+        misses: s.misses,
+        hitPct: swings ? (s.hits / swings) * 100 : 100,
+        missBreakdown: { ...s.miss },
         skills: [...s.bySkill.values()]
           .sort((a, b) => b.total - a.total)
           .slice(0, 12)
-          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max }))
+          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses }))
       }
     })
     .sort((a, b) => b.total - a.total)
 }
+
+const MISS_KEYS: MissType[] = ['miss', 'dodge', 'parry', 'riposte', 'block', 'absorb']

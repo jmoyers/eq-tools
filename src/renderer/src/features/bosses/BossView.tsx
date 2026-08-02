@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import {
   Box,
   Chip,
@@ -13,8 +13,11 @@ import {
   Typography
 } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
-import type { KillMap, LootEvent, RaidTarget } from '@shared/types'
+import type { RaidTarget } from '@shared/types'
 import { getBossData } from '../../data'
+import { useBossKills } from './useBossKills'
+import type { TargetStatus } from './bossStatus'
+import Confetti from './Confetti'
 
 const TIER_SHORT = ['D0', 'D1', 'D2', 'D3', 'D4']
 const TIER_LONG = ['D0 · base', 'D1 · Awakened', 'D2 · Adaptive', 'D3 · Fused', 'D4 · Refined']
@@ -27,15 +30,6 @@ const DENSITY_KEY = 'eq.bossDensity'
 type Density = 'compact' | 'comfortable'
 
 const bosses = getBossData()
-
-interface TargetStatus {
-  target: RaidTarget
-  killed: boolean
-  bestTier: number
-  count: number
-  firstTs: number
-  lastTs: number
-}
 
 function BossImage({
   target,
@@ -91,7 +85,7 @@ function BossImage({
   )
 }
 
-function TargetCard({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.Element {
+function TargetCard({ s, compact, flash }: { s: TargetStatus; compact: boolean; flash?: boolean }): JSX.Element {
   const imgH = compact ? 70 : 120
   const tierColor = TIER_COLOR[s.bestTier]
   return (
@@ -101,10 +95,15 @@ function TargetCard({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.
         overflow: 'hidden',
         position: 'relative',
         borderWidth: 2,
-        borderColor: s.killed ? tierColor : 'divider',
-        boxShadow: s.killed ? `0 0 10px ${tierColor}55` : 'none',
-        transition: 'transform 120ms',
-        '&:hover': { transform: 'translateY(-2px)' }
+        borderColor: flash ? tierColor : s.killed ? tierColor : 'divider',
+        boxShadow: flash
+          ? `0 0 22px ${tierColor}, 0 0 8px ${tierColor}`
+          : s.killed
+            ? `0 0 10px ${tierColor}55`
+            : 'none',
+        transform: flash ? 'scale(1.04)' : 'none',
+        transition: 'transform 200ms, box-shadow 200ms, border-color 200ms',
+        '&:hover': { transform: flash ? 'scale(1.04)' : 'translateY(-2px)' }
       }}
     >
       {s.killed && (
@@ -179,24 +178,34 @@ function TargetCard({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.
   )
 }
 
-export default function BossView({ lastLoot }: { lastLoot: LootEvent | null }): JSX.Element {
-  const [kills, setKills] = useState<KillMap>({})
+export default function BossView(): JSX.Element {
   const [query, setQuery] = useState('')
   const [defeatedOnly, setDefeatedOnly] = useState(false)
   const [density, setDensity] = useState<Density>(
     () => (localStorage.getItem(DENSITY_KEY) as Density) || 'compact'
   )
+  // Names of bosses currently flashing, and the id of the active confetti burst.
+  const [flashing, setFlashing] = useState<Set<string>>(new Set())
+  const [burst, setBurst] = useState<number | null>(null)
 
-  // Live: refresh kill data on load, on new loot, and on a short poll so a boss
-  // defeated in-game lights up the dashboard in real time.
-  useEffect(() => {
-    void window.eq.getKills().then(setKills)
-    const iv = setInterval(() => void window.eq.getKills().then(setKills), 3000)
-    return () => clearInterval(iv)
+  // ANY live roster-boss kill (incl. a repeat at the same/lower tier, Task #24):
+  // fire confetti over the view and flash the boss card for ~3s. The kills module
+  // (via useBossKills) already gates out the historical baseline, so this only
+  // fires for kills that happen while the app is open. The bossDefeat *sound* is
+  // handled separately in App (new-tier defeats only).
+  const onKill = useCallback((s: TargetStatus) => {
+    setBurst((n) => (n ?? 0) + 1)
+    setFlashing((prev) => new Set(prev).add(s.target.name))
+    window.setTimeout(() => {
+      setFlashing((prev) => {
+        const next = new Set(prev)
+        next.delete(s.target.name)
+        return next
+      })
+    }, 3000)
   }, [])
-  useEffect(() => {
-    if (lastLoot) void window.eq.getKills().then(setKills)
-  }, [lastLoot])
+
+  const { statuses } = useBossKills(bosses.targets, { onKill })
 
   const setDensityPersist = (d: Density | null): void => {
     if (!d) return
@@ -204,33 +213,6 @@ export default function BossView({ lastLoot }: { lastLoot: LootEvent | null }): 
     setDensity(d)
   }
   const compact = density === 'compact'
-
-  const killByLower = useMemo(() => {
-    const m: KillMap = {}
-    for (const [name, info] of Object.entries(kills)) m[name.toLowerCase()] = info
-    return m
-  }, [kills])
-
-  const statuses = useMemo<TargetStatus[]>(() => {
-    return bosses.targets.map((target) => {
-      let bestTier = 0
-      let count = 0
-      let firstTs = 0
-      let lastTs = 0
-      let killed = false
-      for (const name of target.match) {
-        const info = killByLower[name.toLowerCase()]
-        if (info) {
-          killed = true
-          bestTier = Math.max(bestTier, info.bestTier)
-          count += info.count
-          firstTs = firstTs ? Math.min(firstTs, info.firstTs) : info.firstTs
-          lastTs = Math.max(lastTs, info.lastTs)
-        }
-      }
-      return { target, killed, bestTier, count, firstTs, lastTs }
-    })
-  }, [killByLower])
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -256,7 +238,8 @@ export default function BossView({ lastLoot }: { lastLoot: LootEvent | null }): 
   const minCol = compact ? 116 : 180
 
   return (
-    <Stack spacing={1.5} sx={{ height: '100%' }}>
+    <Stack spacing={1.5} sx={{ height: '100%', position: 'relative' }}>
+      {burst != null && <Confetti key={burst} onDone={() => setBurst(null)} />}
       <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
         <TextField
           size="small"
@@ -301,7 +284,7 @@ export default function BossView({ lastLoot }: { lastLoot: LootEvent | null }): 
               }}
             >
               {list.map((s) => (
-                <TargetCard key={s.target.name} s={s} compact={compact} />
+                <TargetCard key={s.target.name} s={s} compact={compact} flash={flashing.has(s.target.name)} />
               ))}
             </Box>
           </Box>

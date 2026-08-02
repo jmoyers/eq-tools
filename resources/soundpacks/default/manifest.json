@@ -1,0 +1,22 @@
+{
+  "id": "default",
+  "name": "Default (built-in)",
+  "sounds": {
+    "victory": {
+      "file": "victory.wav",
+      "label": "Victory fanfare"
+    },
+    "warning": {
+      "file": "warning.wav",
+      "label": "Warning (two-tone)"
+    },
+    "chime": {
+      "file": "chime.wav",
+      "label": "Chime"
+    },
+    "horn": {
+      "file": "horn.wav",
+      "label": "Alert horn"
+    }
+  }
+}

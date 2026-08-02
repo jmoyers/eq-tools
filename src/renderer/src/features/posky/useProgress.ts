@@ -1,8 +1,24 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { CountSource, LootEvent, PoskyQuest, ProgressState, TurnInEvent } from '@shared/types'
+import type {
+  CountSource,
+  LootDelta,
+  LootEvent,
+  LootSnap,
+  PoskyQuest,
+  ProgressState,
+  TurnInDelta,
+  TurnInEvent,
+  TurnInSnap
+} from '@shared/types'
 import { getPoskyData } from '../../data'
+import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
+
+const applyLootDelta = (s: LootSnap, d: LootDelta): LootSnap => [...s, ...d.appended]
+const applyTurnInDelta = (s: TurnInSnap, d: TurnInDelta): TurnInSnap => [...s, ...d.appended]
+const EMPTY_LOOT: LootEvent[] = []
+const EMPTY_TURNINS: TurnInEvent[] = []
 
 const posky = getPoskyData()
 
@@ -105,26 +121,31 @@ export interface UseProgress {
   inventoryInfo: ProgressState['inventorySource']
 }
 
-export function useProgress(lastLoot: LootEvent | null): UseProgress {
+export function useProgress(): UseProgress {
   const [progress, setProgress] = useState<ProgressState | null>(null)
   const [character, setCharacter] = useState<string | null>(null)
-  const [lootHistory, setLootHistory] = useState<LootEvent[]>([])
-  const [turnIns, setTurnIns] = useState<TurnInEvent[]>([])
   const [countSource, setCountSourceState] = useState<CountSource>(loadCountSource)
+
+  const lootHistory = useModule<LootSnap, LootDelta>('loot', applyLootDelta) ?? EMPTY_LOOT
+  const turnIns = useModule<TurnInSnap, TurnInDelta>('turnins', applyTurnInDelta) ?? EMPTY_TURNINS
 
   useEffect(() => {
     void window.eq.getProgress().then(setProgress)
     void window.eq.getCharacter().then((c) => setCharacter(c?.name ?? null))
-    void window.eq.getLootHistory().then(setLootHistory)
-    void window.eq.getTurnIns().then(setTurnIns)
-    const off = window.eq.onTurnIn((t) => setTurnIns((prev) => [...prev, t]))
-    return off
+    // Progress can change in main (auto-complete from a turn-in, inventory
+    // auto-reload) — stay consistent with those pushes instead of a refetch race.
+    const offProgress = window.eq.onProgress(setProgress)
+    const offInv = window.eq.onInventoryReload(() => void window.eq.getProgress().then(setProgress))
+    const offChar = window.eq.onCharacter((c) => {
+      setCharacter(c?.name ?? null)
+      void window.eq.getProgress().then(setProgress)
+    })
+    return () => {
+      offProgress()
+      offInv()
+      offChar()
+    }
   }, [])
-
-  // Append live loot to the in-memory history.
-  useEffect(() => {
-    if (lastLoot) setLootHistory((h) => [...h, lastLoot])
-  }, [lastLoot])
 
   // Auto-complete quests whose items were turned in to their giver (from the log).
   useEffect(() => {
