@@ -669,6 +669,15 @@ SAME entity.
     tradeskill depot` (2×), and the transform form `You looted <item> … to create a <item+N>`
     (item combine/upgrade). Add these deliberately if a feature needs them.
   - Full-log tally (2026-08-01 replay): 3513 loot rows — 27 currency, 2817 sold, 669 kept.
+  - **`+N` variant normalization (Task #42).** EQ drops upgraded `+N` variants broadly
+    (`Sphinx Claw +1`, `Belt of Concordance +1`, …). `normalizeItemName()` /
+    `itemCountKey()` (`src/renderer/src/lib/itemName.ts`) strip a trailing ` +<digits>`
+    (end-anchored, word-bounded — sibling of Task #33's `spellCanonKey`) at the COUNTING
+    boundary ONLY (`useProgress.logCounts`/`lootNames`, `matchTurnIns` offered+quest keys,
+    `computeQuestProgress` held lookup, `reconcile` base/inv/consumption, `LootView`
+    quest-item recognition + stat drill-down). DISPLAY is untouched — loot history keeps
+    showing `Sphinx Claw +1`. Verified safe against the real log: every distinct looted
+    name ending in ` +N` is an upgrade variant, none a legit base item name.
 - Zone: `You have entered <zone>.` — **instance tier is in the name**: base = D0,
   `(Awakened)` D1, `(Adaptive)` D2, `(Fused)` D3, `(Refined)` D4.
 - Kill: `You have slain <mob>!` / `<mob> has been slain by <x>!`.

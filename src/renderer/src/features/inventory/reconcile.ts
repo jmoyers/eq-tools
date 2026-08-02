@@ -1,4 +1,5 @@
 import type { CountSource, PoskyQuest } from '@shared/types'
+import { itemCountKey } from '../../lib/itemName'
 import { questKey } from '../posky/keys'
 
 export interface InventoryRow {
@@ -47,12 +48,23 @@ export function reconcile(input: ReconcileInput): ReconcileResult {
 
   const nameByKey: Record<string, string> = { ...lootNames }
 
+  // Re-key the inventory-export counts onto the normalized counting key so a
+  // `Sphinx Claw +1` in the export pools with a base `Sphinx Claw` (Task #42). The
+  // `log` map arrives already normalized (useProgress.logCounts), but the raw
+  // inventory export names do not, so fold them here (summing collisions).
+  const invByKey: Record<string, number> = {}
+  for (const [rawK, n] of Object.entries(inv)) {
+    const k = itemCountKey(rawK)
+    invByKey[k] = (invByKey[k] ?? 0) + n
+    nameByKey[k] ??= rawK
+  }
+
   // base held per the active source
   const base: Record<string, number> = {}
-  const keysUnion = new Set([...Object.keys(log), ...Object.keys(inv)])
+  const keysUnion = new Set([...Object.keys(log), ...Object.keys(invByKey)])
   for (const k of keysUnion) {
     const l = log[k] ?? 0
-    const i = inv[k] ?? 0
+    const i = invByKey[k] ?? 0
     base[k] = countSource === 'log' ? l : countSource === 'inventory' ? i : Math.max(l, i)
   }
 
@@ -62,7 +74,7 @@ export function reconcile(input: ReconcileInput): ReconcileResult {
   for (const q of quests) {
     if (!completed.has(questKey(q))) continue
     for (const it of q.items) {
-      const k = it.name.toLowerCase()
+      const k = itemCountKey(it.name)
       const need = it.count > 0 ? it.count : 1
       consumed[k] = (consumed[k] ?? 0) + need
       ;(consumedBy[k] ??= []).push(q.name)
@@ -83,7 +95,7 @@ export function reconcile(input: ReconcileInput): ReconcileResult {
       key: k,
       name: nameByKey[k] ?? k,
       log: log[k] ?? 0,
-      inv: inv[k] ?? 0,
+      inv: invByKey[k] ?? 0,
       base: b,
       consumed: c,
       net: n,

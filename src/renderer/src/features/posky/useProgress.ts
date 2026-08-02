@@ -11,6 +11,7 @@ import type {
   TurnInSnap
 } from '@shared/types'
 import { getPoskyData } from '../../data'
+import { itemCountKey, normalizeItemName } from '../../lib/itemName'
 import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
@@ -34,10 +35,12 @@ function matchTurnIns(turnIns: TurnInEvent[], quests: PoskyQuest[]): Set<string>
   const matched = new Set<string>()
   for (const t of turnIns) {
     const npc = t.npc.toLowerCase()
-    const offered = new Set(t.items.map((i) => i.toLowerCase()))
+    // Normalize the +N variant at the matching boundary: a `You offered 1 Sphinx
+    // Claw +1` line should satisfy a quest requiring `Sphinx Claw` (Task #42).
+    const offered = new Set(t.items.map((i) => itemCountKey(i)))
     for (const q of quests) {
       if (!q.giver || q.giver.toLowerCase() !== npc) continue
-      if (q.items.length > 0 && q.items.every((it) => offered.has(it.name.toLowerCase()))) {
+      if (q.items.length > 0 && q.items.every((it) => offered.has(itemCountKey(it.name)))) {
         matched.add(questKey(q))
       }
     }
@@ -84,7 +87,7 @@ export function computeQuestProgress(
   const key = questKey(quest)
   const items: ItemProgress[] = quest.items.map((it) => {
     const need = it.count > 0 ? it.count : 1
-    const have = Math.min(need, held[it.name.toLowerCase()] ?? 0)
+    const have = Math.min(need, held[itemCountKey(it.name)] ?? 0)
     return { name: it.name, who: it.who, where: it.where, need, have, stats: it.stats, page: it.page }
   })
   const needCount = items.reduce((s, i) => s + i.need, 0)
@@ -189,15 +192,26 @@ export function useProgress(): UseProgress {
     const c: Record<string, number> = {}
     for (const e of lootHistory) {
       if (e.disposition === 'sold') continue
-      const k = e.item.toLowerCase()
+      // Fold +N variants onto the base counting key (Task #42): `Sphinx Claw` and
+      // `Sphinx Claw +1` are two of the same held item for quest purposes.
+      const k = itemCountKey(e.item)
       c[k] = (c[k] ?? 0) + 1
     }
     return c
   }, [lootHistory])
 
+  // Display names keyed by the SAME normalized counting key logCounts uses, so the
+  // reconcile rows (keyed by counting key) resolve a name. We prefer the BASE
+  // (un-suffixed) display when we've seen it, so a `Sphinx Claw` + `Sphinx Claw +1`
+  // pool reads as "Sphinx Claw" (the quest item), not the variant.
   const lootNames = useMemo<Record<string, string>>(() => {
     const m: Record<string, string> = {}
-    for (const e of lootHistory) m[e.item.toLowerCase()] ??= e.item
+    for (const e of lootHistory) {
+      const k = itemCountKey(e.item)
+      const base = normalizeItemName(e.item)
+      // First writer wins, but a base (un-suffixed) name upgrades a variant one.
+      if (m[k] === undefined || (m[k] !== base && base === e.item)) m[k] = base
+    }
     return m
   }, [lootHistory])
 

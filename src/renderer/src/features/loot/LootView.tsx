@@ -18,6 +18,7 @@ import type { LootDelta, LootEvent, LootSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
+import { itemCountKey } from '../../lib/itemName'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
@@ -25,14 +26,18 @@ import { ItemDetailDialog } from './ItemDetailDialog'
 
 const posky = getPoskyData()
 
-// Names of every item required by a Plane of Sky quest (for highlighting).
-const questItemNames = new Set<string>(posky.quests.flatMap((q) => q.items.map((i) => i.name.toLowerCase())))
+// Names of every item required by a Plane of Sky quest (for highlighting). Keyed by the
+// normalized counting key (Task #42) so an upgraded `Sphinx Claw +1` row is still flagged
+// as a Sky quest item — the row keeps showing its `+N`; only the RECOGNITION is normalized.
+const questItemNames = new Set<string>(posky.quests.flatMap((q) => q.items.map((i) => itemCountKey(i.name))))
 
 // EQ stat block per item name (quest items + rewards), for the drill-down.
 const itemStats: Record<string, string> = {}
 for (const qz of posky.quests) {
-  for (const it of qz.items) if (it.stats) itemStats[it.name.toLowerCase()] = it.stats
-  if (qz.reward && qz.rewardStats) itemStats[qz.reward.toLowerCase()] = qz.rewardStats
+  // Keyed by the normalized counting key so a `+N` variant drill-down resolves the base
+  // item's stat block (Task #42).
+  for (const it of qz.items) if (it.stats) itemStats[itemCountKey(it.name)] = it.stats
+  if (qz.reward && qz.rewardStats) itemStats[itemCountKey(qz.reward)] = qz.rewardStats
 }
 
 // Fixed dense-row height (px) for the windowed tables (MUI Table size="small").
@@ -67,7 +72,7 @@ function DispositionChip({ disposition }: { disposition?: 'currency' | 'sold' })
 }
 
 function isQuestItem(name: string): boolean {
-  return questItemNames.has(name.toLowerCase())
+  return questItemNames.has(itemCountKey(name))
 }
 
 interface GroupRow {
@@ -336,8 +341,8 @@ export default function LootView(): JSX.Element {
           onClose={() => setSelected(null)}
           item={selected}
           events={history.filter((e) => e.item.toLowerCase() === selected.toLowerCase())}
-          stats={itemStats[selected.toLowerCase()]}
-          isQuestItem={questItemNames.has(selected.toLowerCase())}
+          stats={itemStats[itemCountKey(selected)]}
+          isQuestItem={questItemNames.has(itemCountKey(selected))}
         />
       )}
     </Stack>
