@@ -50,7 +50,8 @@ test('W1 current session: self Swift Like the Wind active, no stale pre-session 
 
   const swift = findActive(snap, 'swift like the wind')
   assert.ok(swift, 'Swift Like the Wind should be an active buff at ~19:56')
-  assert.equal(swift!.cls, 'self', 'Swift here is a SELF buff (self landing emote)')
+  assert.equal(swift!.cls, 'buff', 'Swift is a beneficial buff (spell property, Task #35)')
+  assert.equal(swift!.self, true, 'this instance is on the player (self landing emote)')
   assert.equal(swift!.disposition, 'self', 'bound disposition is self')
   assert.equal(swift!.target ?? undefined, undefined, 'a self buff has no target chip')
   assert.equal(swift!.provisional, undefined, 'confirmed, not provisional, by 19:56')
@@ -75,34 +76,42 @@ test('W1 current session: self Swift Like the Wind active, no stale pre-session 
 // ─────────────────────────────────────────────────────────────────────────────
 // W2 — XENEKER DEATH (finding #4: a retired entity drops its actives + censors opens).
 // Raw: eqlog lines 159640 → 167260, Mon Jul 20. Primed with the single real Intensify
-// Death fade (line 97684, Jul 19) so it's a KNOWN pet buff (everFaded + class 'pet').
+// Death fade (line 97684, Jul 19) so it's a KNOWN buff (everFaded + class 'buff').
 // HAND-VERIFIED sequence:
-//   19:52:31  You begin casting Intensify Death.   (pet buff; pet's name not yet known)
-//   19:57:42  Xeneker told you, 'Attacking … Master.'   (Xeneker = your summoned pet)
+//   19:52:31  You begin casting Intensify Death.   (a buff; NO pet claimed yet, NO emote)
+//   19:57:42  Xeneker told you, 'Attacking … Master.'   (Xeneker = your summoned pet, LATER)
 //   …          (Intensify never fades — no "pet's Intensify Death worn off" after)
 //   20:22:03  Xeneker has been slain by a wan ghoul knight!   (a DIFFERENT killer)
-// Xeneker is a SUMMONED pet with a UNIQUE proper name (no hostile twin), so the slain-by-
-// other line is unambiguously its real death. BEFORE 20:22:03 Intensify Death is active
-// bound to Xeneker; AFTER, it is GONE + censored (no bogus multi-hour "287h" sample).
-test('W2 Xeneker death: pet buff active before, censored + gone after the slain line', () => {
+//
+// TASK #35 model: a buff binds to the entity the landing MESSAGE/emote named. Intensify
+// Death at 19:52:31 has NEITHER a message NOR a landing emote, and NO pet is live at cast
+// time (Xeneker is claimed 5m later), so the honest binding is SELF — the old pet-specific
+// `rebindPetBuffsToPet` retro-binding was DELETED. The property the user's complaint was
+// about STILL holds: nothing is bound to the (later-dead) pet Xeneker, so no stale
+// "Intensify on a corpse" active and no bogus multi-hour "287h" sample. Xeneker's death,
+// being a pet-entity retirement, censors any instance bound to Xeneker's key — there are
+// none here — and the self instance is short-lived flavor that hygiene sweeps.
+test('W2 Xeneker death: no stale buff bound to the dead pet, no bogus multi-hour sample', () => {
   const prime = readFixture('w2-priming.log')
   const lines = readFixture('w2-xeneker-death.log')
 
-  // Reconstruct the before/after around the exact slain line by replaying to two cut
-  // points (the death line's ts is the boundary).
   const slainTs = tsOf('[Mon Jul 20 20:22:03 2026] x')
   const before = lines.filter((l) => tsOf(l) > 0 && tsOf(l) < slainTs)
   const throughDeath = lines.filter((l) => tsOf(l) > 0 && tsOf(l) <= slainTs)
 
   const snapBefore = replayBuffs(before, slainTs - 1000, { prime })
   const intensBefore = findActive(snapBefore, 'intensify death')
-  assert.ok(intensBefore, 'Intensify Death should be active on Xeneker before the slain line')
-  assert.equal(intensBefore!.cls, 'pet', 'Intensify Death is a pet buff')
+  assert.ok(intensBefore, 'Intensify Death should be active before the slain line')
+  assert.equal(intensBefore!.cls, 'buff', 'Intensify Death is a beneficial buff (spell property)')
+  // It is NOT bound to Xeneker (no message/emote named the pet; no pet live at cast).
+  assert.notEqual(intensBefore!.target, 'Xeneker', 'not bound to Xeneker (never message-named it)')
 
   const snapAfter = replayBuffs(throughDeath, slainTs, { prime })
-  assert.ok(!findActive(snapAfter, 'intensify death'), 'Intensify Death gone after Xeneker dies')
-
-  // Censored: the open cast was DROPPED, not paired into a bogus 30-min sample.
+  // No active is bound to the now-dead pet Xeneker (the actual user complaint).
+  for (const a of snapAfter.active) {
+    assert.notEqual((a.target ?? '').toLowerCase(), 'xeneker', `no active on the dead pet (${a.spell})`)
+  }
+  // Censored: no bogus multi-hour sample was mined from the unobserved fade.
   const stat = snapAfter.stats['intensify death']
   assert.ok(!stat || stat.n === 0, 'no duration sample recorded from the unobserved fade')
 })
@@ -179,9 +188,10 @@ test('W5 charmed pet zoned away: its pet buffs are censored + gone after the zon
   const before = lines.filter((l) => tsOf(l) > 0 && tsOf(l) < zoneTs)
   const snapBefore = replayBuffs(before, zoneTs - 1000, { prime })
   const boonBefore = findActive(snapBefore, 'boon of the garou')
-  assert.ok(boonBefore, 'a pet buff (Boon) should be active on the charmed imp before the zone')
-  assert.equal(boonBefore!.cls, 'pet', 'Boon of the Garou is a pet buff here')
-  assert.equal(boonBefore!.disposition, 'charmed', 'bound to the charmed pet')
+  assert.ok(boonBefore, 'Boon should be active on the charmed imp before the zone')
+  assert.equal(boonBefore!.cls, 'buff', 'Boon of the Garou is a beneficial buff (spell property)')
+  assert.equal(boonBefore!.self, false, 'this instance is on the pet, not the player')
+  assert.equal(boonBefore!.disposition, 'charmed', 'bound to the charmed pet entity')
 
   const snapAfter = replayBuffs(lines, tsOf(lines[lines.length - 1]), { prime })
   assert.ok(!findActive(snapAfter, 'boon of the garou'), 'Boon censored + gone after the zone')

@@ -67,9 +67,13 @@ test('full-log replay: final active list has no stale or retired-entity bindings
     assert.ok(elapsed <= cap, `active "${a.spell}" is ${Math.round(elapsed / 60_000)}m old (> cap ${Math.round(cap / 60_000)}m)`)
   }
 
-  // (2) No active bound to a retired entity: every pet buff targets the CURRENT pet.
+  // (2) No active bound to a retired entity (Task #35): a pet-disposition instance targets
+  // the CURRENT pet. Instances are keyed by (spell, entity); a buff on the pet carries the
+  // pet's disposition ('charmed'/'summoned') and its name in `target`.
   for (const a of snap.active) {
-    if (a.cls !== 'pet' || !a.target || a.target === 'pet') continue
+    if (a.self) continue
+    if (a.disposition !== 'charmed' && a.disposition !== 'summoned') continue
+    if (!a.target || a.target === 'pet') continue
     const t = idKey(a.target)
     assert.ok(
       t === charmedKey || t === summonedKey,

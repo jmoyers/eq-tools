@@ -16,9 +16,18 @@ import {
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
-import { fmtDuration, remainingFraction, isOverdue, classAccent, classLabel } from './format'
+import {
+  fmtDuration,
+  remainingFraction,
+  isOverdue,
+  classAccent,
+  groupKey,
+  groupLabel
+} from './format'
 
-const CLASS_ORDER: BuffClass[] = ['self', 'pet', 'debuff']
+// Stats-table sections: buffs first, then debuffs (Task #35 — a spell property).
+const CLASS_ORDER: BuffClass[] = ['buff', 'debuff']
+const CLASS_LABEL: Record<BuffClass, string> = { buff: 'Buffs', debuff: 'Debuffs' }
 
 // Stable empty reference so hooks don't churn before hydration.
 const EMPTY_BUFFS: BuffsSnap = { active: [], stats: {} }
@@ -78,7 +87,7 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
           {buff.spell}
         </Typography>
         {inferred ? (
-          <Tooltip title="Debuff target inferred from the pet's current fight target — castBegin carries no target, so this is a best guess, not a confirmed target.">
+          <Tooltip title="Target inferred from the pet's current fight target — castBegin carries no target, so this is a best guess, not a confirmed target.">
             <Chip
               size="small"
               label={buff.target ? `target: ${buff.target} (inferred)` : 'target: inferred'}
@@ -87,15 +96,6 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
               sx={{ height: 18, fontSize: 11, maxWidth: 180, '& .MuiChip-label': { px: 0.75 } }}
             />
           </Tooltip>
-        ) : buff.target === 'pet' ? (
-          <Chip size="small" label="pet" variant="outlined" sx={{ height: 18, fontSize: 11 }} />
-        ) : buff.target ? (
-          <Chip
-            size="small"
-            label={buff.target}
-            variant="outlined"
-            sx={{ height: 18, fontSize: 11, maxWidth: 120, '& .MuiChip-label': { px: 0.75 } }}
-          />
         ) : null}
         {provisional && (
           <Chip
@@ -208,7 +208,7 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
   if (rows.length === 0) {
     return (
       <Typography variant="body2" color="text.secondary">
-        No {classLabel(cls).toLowerCase()} durations mined yet.
+        No {CLASS_LABEL[cls].toLowerCase()} durations mined yet.
       </Typography>
     )
   }
@@ -295,12 +295,28 @@ export default function BuffsView(): JSX.Element {
   const active = snap.active
   const minedCount = Object.values(snap.stats).filter((s) => s.n > 0).length
 
-  // Group active buffs by class so Self / Pet / Debuffs render as visually-distinct
-  // sections (Task #32). Within a group, preserve the snapshot's startedTs order.
-  const activeByClass = useMemo(() => {
-    const g: Record<BuffClass, ActiveBuff[]> = { self: [], pet: [], debuff: [] }
-    for (const b of active) g[b.cls].push(b)
-    return g
+  // PRIORITY layout (Task #35): "Your buffs" (self) FIRST, then one group per bound entity
+  // sorted by liveliness/recency (most-recently-refreshed entity first — the current pet
+  // naturally tops this). Buff vs debuff is a per-row style (classAccent), not a group.
+  const activeGroups = useMemo(() => {
+    const byKey = new Map<string, ActiveBuff[]>()
+    for (const b of active) {
+      const k = groupKey(b)
+      const list = byKey.get(k)
+      if (list) list.push(b)
+      else byKey.set(k, [b])
+    }
+    const recency = (list: ActiveBuff[]): number => Math.max(...list.map((b) => b.startedTs))
+    return [...byKey.entries()]
+      .sort((a, b) => {
+        if (a[0] === 'self') return -1 // self always first
+        if (b[0] === 'self') return 1
+        return recency(b[1]) - recency(a[1]) // then most-recent entity first
+      })
+      .map(([key, list]) => ({
+        key,
+        buffs: [...list].sort((x, y) => x.startedTs - y.startedTs)
+      }))
   }, [active])
   // Which classes have any mined stats — to decide whether to render each table.
   const statsClasses = useMemo(() => {
@@ -322,16 +338,17 @@ export default function BuffsView(): JSX.Element {
           />
         </Stack>
         <Typography variant="caption" color="text.secondary">
-          Buffs are bound to WHO they're on — self, your pet, or (for debuffs like slows) a hostile
-          mob. Applies are recognized from the exact chat MESSAGE each spell prints (so Quick Buff
-          bursts, which show no "You begin casting" line, still register — look for the "message" chip),
-          and durations come from the spell database ("db") when known, else the recency-weighted max of
-          observed casts ("observed"). Expiry favors the spell's own wear-off message; a buff past its
-          estimate sits "past estimate · awaiting wear-off" rather than vanishing. Self-cast illusions
-          under the Permanent Illusion AA are marked permanent. Cast targets are also learned from
-          landing emotes; ranks are merged; fades that can never be observed (a pet/mob left behind on a
-          zone, a death, or a ≥30-min logout gap) are censored, and a buff run far past its window
-          auto-retires. Debuff targets are inferred and shown as such.
+          Each active buff is an INSTANCE bound to WHO it's on: your own buffs show first ("Your
+          buffs"), then a group per entity — your pet naturally tops that list — so the same spell can
+          run on you AND your pet at once. Applies are recognized from the exact chat MESSAGE each spell
+          prints (so Quick Buff bursts, which show no "You begin casting" line, still register — look for
+          the "message" chip), and durations come from the spell database ("db") when known, else the
+          recency-weighted max of observed casts ("observed"). Detrimental spells (debuffs like slows,
+          cast on hostile mobs) are styled with a red accent wherever they appear. Expiry favors the
+          spell's own wear-off message; a buff past its estimate sits "past estimate · awaiting wear-off"
+          rather than vanishing. Self-cast illusions under the Permanent Illusion AA are marked permanent.
+          Ranks are merged; fades that can never be observed (a pet/mob left behind on a zone, a death, or
+          a ≥30-min logout gap) are censored, and a buff run far past its window auto-retires.
         </Typography>
       </Box>
 
@@ -346,15 +363,18 @@ export default function BuffsView(): JSX.Element {
           </Typography>
         ) : (
           <Stack spacing={1.5}>
-            {CLASS_ORDER.filter((c) => activeByClass[c].length > 0).map((c) => (
-              <Box key={c}>
+            {activeGroups.map((g) => (
+              <Box key={g.key}>
                 <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-                  <Box
-                    sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(c) }}
-                  />
                   <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {classLabel(c)}
+                    {groupLabel(g.key)}
                   </Typography>
+                  <Chip
+                    size="small"
+                    variant="outlined"
+                    label={g.buffs.length}
+                    sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
+                  />
                 </Stack>
                 <Box
                   sx={{
@@ -363,8 +383,8 @@ export default function BuffsView(): JSX.Element {
                     gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'
                   }}
                 >
-                  {activeByClass[c].map((b) => (
-                    <ActiveRow key={b.spell} buff={b} now={now} />
+                  {g.buffs.map((b) => (
+                    <ActiveRow key={`${b.spell}@${b.self ? 'self' : b.target ?? '?'}`} buff={b} now={now} />
                   ))}
                 </Box>
               </Box>
@@ -391,7 +411,7 @@ export default function BuffsView(): JSX.Element {
                     sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(c) }}
                   />
                   <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {classLabel(c)}
+                    {CLASS_LABEL[c]}
                   </Typography>
                 </Stack>
                 <Paper

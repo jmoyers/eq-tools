@@ -301,11 +301,12 @@ consumers) — it re-derives the small state it needs.
   current fight target (last `cc`/`charm`) and surfaced with `inferredTarget:true` → the
   UI shows a "target: inferred" chip, NEVER a silent guess (rule 5c).
 - **Types** (`shared/types.ts`): `BuffClass = 'self'|'pet'|'debuff'`; `BuffStat.cls`,
-  `ActiveBuff.cls`/`.disposition`/`.inferredTarget` are additive.
-- **BuffsView** now renders Active and Mined-durations in three VISUALLY-DISTINCT
-  class sections (Self / Pet buffs / Debuffs) — `classAccent`/`classLabel` in
-  buffs/format.ts give debuffs a red-ish (`error.main`) left border vs pet green / self
-  gold. Debuff rows show the inferred-target chip with an explanatory tooltip.
+  `ActiveBuff.cls`/`.disposition`/`.inferredTarget` are additive. **(SUPERSEDED by Task #35:
+  `BuffClass` is now `'buff'|'debuff'` — the 'self'/'pet' distinction became an entity BINDING,
+  not a class. See the '#35 de-specialized' notes below.)**
+- **BuffsView** rendered Active and Mined-durations in three class sections (Self / Pet buffs /
+  Debuffs). **(SUPERSEDED by Task #35: the UI now groups by ENTITY — "Your buffs" first, then a
+  group per bound entity — with a red accent per-row for debuffs.)**
 
 **Out of scope (still):** an overlay window (later phase); a spell never yet observed
 fading still won't show as active until its first fade classifies it as a buff (the
@@ -424,6 +425,51 @@ message-driven apply/expiry model:
   "Your valor fades." removes an active Valor 25m in (< 54m DB, so message-driven not swept);
   **W9** post-purchase self Boon = permanent, same spell pet-cast = normal 6m. All W1–W6 stay
   green (their fixtures gained real emote/heal lines but replay DB-free).
+
+**'pet' DE-SPECIALIZED — the (spell, entity) instance model (Task #35).** The user's directive:
+"the whole special category for 'pet' is not supposed to be exceptional in the data model and
+tracking — it's just supposed to PRIORITIZE showing you buffs you cast on self first, then
+others second (pet is others)." So the model was corrected:
+
+- **A buff INSTANCE is `(spell, targetEntity)`**, keyed by `(spellKey, entityKey)` where
+  `entityKey` is `'self'` or a canonical entity-name key (a NUL joins them — can't appear in a
+  name). `active`/`open` are keyed by this INSTANCE key, so the SAME spell coexists on the
+  player AND the pet AND a mob as independent instances with independent timers. This REMOVED
+  the old one-active-per-spell limitation (W9 now asserts a permanent self Boon and a normal pet
+  Boon SIMULTANEOUSLY). **Do NOT reintroduce a 'pet' `BuffClass`** — `BuffClass` is now just
+  `'buff' | 'debuff'`; who a buff is on is an ENTITY BINDING, not a class. **`ActiveBuff.self`**
+  (on the player?) + **`.target`** (the bound entity's display name for non-self) drive the UI.
+- **DELETED (not generalized):** the `'pet'` BuffClass; `petTargetKey` plumbing *inside buff
+  records*; `rebindPetBuffsToPet` (the pet-specific retro-binding — a buff now binds to the
+  entity the landing MESSAGE/emote named, or the live-pet/self inference at cast time; a cast
+  with no message/emote and no live pet binds SELF, e.g. W2's Intensify — the property the user
+  cared about, "no stale buff on a dead pet", still holds because nothing binds to the pet's key
+  unless named). No pet-special branches in retirement/censor.
+- **buff vs debuff is a SPELL property** (`classOf`): DB `spellType` (Detrimental → `debuff`,
+  Beneficial → `buff`) is authoritative; only a spell ABSENT from the DB falls back to
+  fade-disposition plurality. This KILLED the class-flip wart (Tashani/Shiftless toggling
+  pet↔debuff as fades landed on different targets). A debuff is never a self buff (even if
+  cast-timing bound it to the self key before its class was known, `buildActive` presents it as
+  non-self/inferred-target). A message apply is GROUND TRUTH: it drops any cast-timing-inferred
+  provisional of the same spell and binds the target the message named.
+- **Entity lifecycle generalized (`retireEntity(entityKey)`):** retiring ANY entity censors
+  every open cast + active INSTANCE bound to its key — the pet is just the entity currently
+  claimed (charm/petClaim/uncharm/summoned-death/zone-left-behind/single-pet succession). Buffs
+  on OTHER players / arbitrary mobs fall out free: bound to their entity, censored when it's
+  retired. Per-spell duration MINING is unchanged (`recordFade` pairs the exact instance, else
+  the oldest same-spell open cast — cast-timing can't always predict the fade's named target).
+- **UI = PRIORITY, not taxonomy** (`BuffsView`/`format.ts`): "Your buffs" (self) render FIRST,
+  then one group per bound entity sorted by recency (the current pet naturally tops it);
+  `groupKey`/`groupLabel` do the grouping. Detrimental spells get a red accent (`classAccent`)
+  wherever they appear. Provenance/permanent/message/inferred chips from #34 kept.
+- **W10 (the user's verification standard):** the real Aug 1 21:01:50 window — fighting
+  Cazic-Thule in The Plane of Fear, the pet phoboplasm charmed. `Cazic-Thule slows down.` is the
+  msg_cast_on_other shared by the enchanter slows (Forlorn/Languid Pace/Shiftless/Tepid Deeds +
+  an NPC Rejuvenation), AMBIGUOUS — resolved to **Shiftless Deeds** (cast twice seconds earlier,
+  21:01:40/46) via cast history, bound BY MESSAGE to entity `Cazic-Thule` (`inferredTarget`
+  UNSET). Full-log replay: **0 of 14 final actives are inferredTarget** — targets are
+  message-bound, `inferred` is fallback-only. Final self bar (from #34) survives unchanged; pet
+  (phoboplasm) buffs listed under the pet's name; debuffs on hostiles.
 
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in

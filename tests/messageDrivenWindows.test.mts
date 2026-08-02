@@ -48,7 +48,8 @@ test('W7 Quick Buff burst: self Clarity/Valor/Symbol/Swift visible with no cast 
   ] as const) {
     const a = findActive(snap, needle)
     assert.ok(a, `${needle} should be an active SELF buff from the Quick Buff burst`)
-    assert.equal(a!.cls, 'self', `${needle} is a self buff`)
+    assert.equal(a!.cls, 'buff', `${needle} is a beneficial buff (spell property, Task #35)`)
+    assert.equal(a!.self, true, `${needle} instance is on the player`)
     assert.equal(a!.durationSource, 'db', `${needle} uses the authoritative DB duration`)
     assert.equal(a!.messageDriven, true, `${needle} was applied by an exact chat message`)
     assert.equal(a!.provisional, undefined, `${needle} is confident (not provisional)`)
@@ -77,7 +78,8 @@ test('W8 wears-off: "Your valor fades." authoritatively removes the active Valor
   const snapBefore = replayBuffsWithDb(before, wearTs - 1000)
   const valorBefore = findActive(snapBefore, 'valor')
   assert.ok(valorBefore, 'Valor should be active before "Your valor fades."')
-  assert.equal(valorBefore!.cls, 'self', 'Valor is a self buff')
+  assert.equal(valorBefore!.cls, 'buff', 'Valor is a beneficial buff (spell property)')
+  assert.equal(valorBefore!.self, true, 'this Valor instance is on the player')
   assert.equal(valorBefore!.durationSource, 'db', 'Valor duration is authoritative (DB)')
   // It has NOT yet exceeded its DB duration (removal is the message, not a timeout).
   assert.ok(wearTs - valorBefore!.startedTs < 54 * MIN, 'Valor removed before its 54-min DB window elapses')
@@ -88,7 +90,7 @@ test('W8 wears-off: "Your valor fades." authoritatively removes the active Valor
 })
 
 // ─────────────────────────────────────────────────────────────────────────────
-// W9 — PERMANENT ILLUSION (self-cast illusion = ∞; same spell on pet = normal).
+// W9 — PERMANENT ILLUSION + COEXISTING INSTANCES (Task #35 upgrade).
 // Raw: eqlog lines 635150 → 639850, Fri Jul 31. The Permanent Illusion AA is purchased at
 // 00:40:53 (line 635160). Boon of the Garou is an ILLUSION-flagged spell (DB illusion:true).
 // HAND-VERIFIED sequence (all AFTER the purchase):
@@ -97,39 +99,88 @@ test('W8 wears-off: "Your valor fades." authoritatively removes the active Valor
 //   00:48:10  You begin casting Boon of the Garou II.
 //   00:48:10  an abhorrent's face contorts …  → PET-cast Boon on the charmed abhorrent → NORMAL
 //   00:54:07  Your Boon of the Garou spell has worn off of an abhorrent.  (the pet Boon fades)
-// The model is NAME-KEYED (one active per spell), so the two casts occupy the slot in turn;
-// we assert each in its own moment: after the self-cast Boon is PERMANENT; after the pet-cast
-// it is a NORMAL pet buff (6-min DB estimate).
-test('W9 Permanent Illusion: self-cast Boon is permanent, pet-cast Boon is normal', () => {
+//
+// TASK #35: a buff INSTANCE is (spell, entity), so the SAME spell coexists on self AND on
+// the pet as TWO independent instances — the old "one active per spell" limitation is gone.
+// At 00:48:10 we assert BOTH SIMULTANEOUSLY: the permanent self Boon (∞) and the normal pet
+// Boon (6-min DB estimate) are BOTH active at once.
+test('W9 Permanent Illusion: self permanent Boon + pet normal Boon coexist as two instances', () => {
   const lines = readFixture('w9-permanent-illusion.log')
   const selfTs = tsOf('[Fri Jul 31 00:44:38 2026] x')
   const petTs = tsOf('[Fri Jul 31 00:48:10 2026] x')
 
-  // After the SELF-cast (00:44:38, post-purchase): Boon is a PERMANENT self illusion.
+  // After the SELF-cast (00:44:38, post-purchase): Boon is a PERMANENT self buff.
   const throughSelf = lines.filter((l) => tsOf(l) > 0 && tsOf(l) <= selfTs)
   const snapSelf = replayBuffsWithDb(throughSelf, selfTs)
   const boonSelf = findActive(snapSelf, 'boon of the garou')
   assert.ok(boonSelf, 'self-cast Boon of the Garou should be active')
-  assert.equal(boonSelf!.cls, 'self', 'self-cast Boon is a self buff')
+  assert.equal(boonSelf!.cls, 'buff', 'Boon is a beneficial buff (spell property)')
+  assert.equal(boonSelf!.self, true, 'this instance is on the player')
   assert.equal(boonSelf!.permanent, true, 'self-cast illusion is PERMANENT (Permanent Illusion AA)')
   assert.equal(boonSelf!.estimatedMs, null, 'a permanent buff has no finite estimate/countdown')
 
-  // After the PET-cast (00:48:10): Boon is now a NORMAL pet buff on the charmed abhorrent.
+  // After the PET-cast (00:48:10): BOTH the self permanent Boon AND a NEW pet Boon are active
+  // AT THE SAME TIME — two instances of one spell, keyed by (spell, entity) (Task #35).
   const throughPet = lines.filter((l) => tsOf(l) > 0 && tsOf(l) <= petTs)
   const snapPet = replayBuffsWithDb(throughPet, petTs)
-  const boonPet = findActive(snapPet, 'boon of the garou')
-  assert.ok(boonPet, 'pet-cast Boon of the Garou should be active')
-  assert.equal(boonPet!.cls, 'pet', 'pet-cast Boon is a pet buff')
-  assert.notEqual(boonPet!.permanent, true, 'pet-cast illusion is NOT permanent')
-  // Normal DB duration (~6 min for Boon of the Garou at max level).
-  assert.equal(Math.round((boonPet!.estimatedMs ?? 0) / MIN), 6, 'pet Boon has its normal ~6-min DB estimate')
+  const boons = snapPet.active.filter((a) => a.spell.toLowerCase().includes('boon of the garou'))
+  assert.equal(boons.length, 2, 'self AND pet Boon coexist as two simultaneous instances')
 
-  // Right after the "worn off of an abhorrent" fade (00:54:07), the pet Boon is gone (the
-  // model is name-keyed, so this asserts the pet-cast instance specifically, before a later
-  // 00:57:58 pet-recast re-fills the slot).
+  const selfBoon = boons.find((b) => b.self)
+  const petBoon = boons.find((b) => !b.self)
+  assert.ok(selfBoon, 'the self permanent Boon is still active')
+  assert.equal(selfBoon!.permanent, true, 'the self Boon remains permanent')
+  assert.equal(selfBoon!.estimatedMs, null, 'the self Boon has no countdown')
+
+  assert.ok(petBoon, 'the pet Boon is active alongside the self Boon')
+  assert.equal(petBoon!.cls, 'buff', 'the pet Boon is the same beneficial buff spell')
+  assert.equal(petBoon!.disposition, 'charmed', 'the pet Boon is bound to the charmed pet')
+  assert.notEqual(petBoon!.permanent, true, 'the pet-cast instance is NOT permanent')
+  assert.equal(Math.round((petBoon!.estimatedMs ?? 0) / MIN), 6, 'pet Boon has its normal ~6-min DB estimate')
+
+  // After the "worn off of an abhorrent" fade (00:54:07): the PET instance is gone, the
+  // permanent SELF instance remains — the two are independent (Task #35).
   const fadeTs = tsOf('[Fri Jul 31 00:54:07 2026] x')
   const throughFade = lines.filter((l) => tsOf(l) > 0 && tsOf(l) <= fadeTs)
   const snapFade = replayBuffsWithDb(throughFade, fadeTs)
-  const boonFade = findActive(snapFade, 'boon of the garou')
-  assert.ok(!boonFade || boonFade.permanent === true, 'pet Boon removed by its worn-off message (only a permanent self Boon may remain)')
+  const fadeBoons = snapFade.active.filter((a) => a.spell.toLowerCase().includes('boon of the garou'))
+  assert.ok(!fadeBoons.some((b) => !b.self), 'the pet Boon is removed by its worn-off message')
+  assert.ok(fadeBoons.some((b) => b.self && b.permanent), 'the permanent self Boon survives')
+})
+
+// ─────────────────────────────────────────────────────────────────────────────
+// W10 — CAZIC-THULE SLOW (Task #35, the verification standard the user set).
+// Raw: eqlog lines 919140 → 924080, Sat Aug 01. The user was fighting Cazic-Thule in The
+// Plane of Fear. HAND-VERIFIED (read line-by-line from the real log):
+//   20:46:05  You have entered The Plane of Fear - Solo 1 (Awakened).   (zone)
+//   20:56:52  phoboplasm has been charmed.                              (the charmed pet)
+//   21:01:40  You begin casting Shiftless Deeds IV.                     (a slow, RANKED)
+//   21:01:46  You begin casting Shiftless Deeds IV.                     (recast)
+//   21:01:50  Cazic-Thule slows down.                                   (the slow LANDED)
+// "<Target> slows down." is the msg_cast_on_other shared by the enchanter slows (Forlorn
+// Deeds / Languid Pace / Shiftless Deeds / Tepid Deeds / an NPC Rejuvenation). It is
+// AMBIGUOUS across those, so the module resolves it to the one the player actually cast this
+// session — Shiftless Deeds (cast twice, seconds earlier). CRITICAL (the user's standard):
+// the target 'Cazic-Thule' comes FROM THE MESSAGE, not inferred — so the active is
+// message-bound to entity 'Cazic-Thule' with inferredTarget UNSET. (The window's earlier
+// "Fright slows down." 20:46:53 / "Dread slows down." 20:51:43 are the same slow landing on
+// other Fear mobs the pet was clearing; we assert the Cazic instance specifically.)
+test('W10 Cazic-Thule slow: Shiftless Deeds bound BY MESSAGE to entity Cazic-Thule', () => {
+  const lines = readFixture('w10-cazic-slow.log')
+  const slowTs = tsOf('[Sat Aug 01 21:01:50 2026] x')
+  const through = lines.filter((l) => tsOf(l) > 0 && tsOf(l) <= slowTs + 1000)
+  const snap = replayBuffsWithDb(through, slowTs + 1000)
+
+  // Exactly one Shiftless Deeds instance, on Cazic-Thule, by MESSAGE (not inferred).
+  const sds = snap.active.filter((a) => a.spell.toLowerCase().includes('shiftless'))
+  assert.equal(sds.length, 1, 'a single Shiftless Deeds instance (the message replaced the cast-timing guess)')
+  const sd = sds[0]
+  assert.equal(sd.cls, 'debuff', 'Shiftless Deeds is a debuff (spell property: Detrimental)')
+  assert.equal(sd.self, false, 'a debuff is never the player’s own buff')
+  assert.equal(sd.target, 'Cazic-Thule', 'bound to the entity the MESSAGE named')
+  assert.equal(sd.messageDriven, true, 'applied by the exact "Cazic-Thule slows down." message')
+  assert.notEqual(sd.inferredTarget, true, 'the target is message-bound, NOT inferred (user standard)')
+  assert.notEqual(sd.provisional, true, 'confirmed by the landing message, not provisional')
+  // Duration is Shiftless Deeds' authoritative DB value (2m30s), not another candidate's.
+  assert.equal(Math.round((sd.estimatedMs ?? 0) / 1000), 150, 'Shiftless Deeds DB duration ~2m30s')
 })

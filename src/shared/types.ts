@@ -316,20 +316,25 @@ export type AlertsDelta = { fired: FiredAlert[] }
 // buff target — see logEvents.ts BuffFadeEvent).
 
 /**
- * The class a spell is shown under (Task #32 entity model):
- *   'self'   — a buff on the player.
- *   'pet'    — a buff on the player's summoned/charmed pet.
- *   'debuff' — cast on a HOSTILE mob (e.g. Languid Pace slow). Never shown as self.
- * Classified per spell by the disposition of its observed fades; a spell that has EVER
- * faded on a hostile entity is a debuff.
+ * Whether a spell is a beneficial BUFF or a detrimental DEBUFF (Task #35).
+ *
+ * This is a property of the SPELL, not of who it's on. It comes from the scraped spell
+ * DB's `spellType` (Beneficial → 'buff', Detrimental → 'debuff'); for a spell absent
+ * from the DB it falls back to the plurality of its observed fade-target dispositions (a
+ * spell that mostly fades on hostile entities is a debuff).
+ *
+ * NOTE (Task #35 model correction): there is deliberately NO 'pet' class. A buff cast on
+ * the pet is just a 'buff' bound to the pet ENTITY — "pet" is a priority/grouping concern
+ * for the UI (show self first, then other entities), not a data-model taxonomy. Do not
+ * reintroduce a 'pet' BuffClass.
  */
-export type BuffClass = 'self' | 'pet' | 'debuff'
+export type BuffClass = 'buff' | 'debuff'
 
 /** Per-spell mined duration statistics (milliseconds). */
 export interface BuffStat {
   /** spell name (display casing of the first observed cast/fade). */
   spell: string
-  /** display class — self buff / pet buff / debuff (Task #32). */
+  /** buff vs debuff — a spell property (Task #35). */
   cls: BuffClass
   /** number of duration samples (landed→fade pairs). */
   n: number
@@ -358,15 +363,21 @@ export interface BuffStat {
   estimatorSource?: 'db' | 'observed'
 }
 
-/** A currently-active (landed, not yet faded) buff. */
+/** A currently-active (landed, not yet faded) buff INSTANCE = (spell, target entity). */
 export interface ActiveBuff {
   spell: string
-  /** display class — self buff / pet buff / debuff (Task #32). */
+  /** buff vs debuff — a SPELL property (Task #35), not who it's on. */
   cls: BuffClass
   /**
-   * The bound entity disposition (Task #32): 'self' | 'summoned' | 'charmed' |
-   * 'hostile'. Undefined only for a provisional entry cast before any fade classified
-   * the spell. Drives which group the row renders under and the target chip.
+   * True when this instance is on the PLAYER (self). False when it's on some other
+   * entity (a pet, another player, or — for a debuff — a hostile mob). The UI shows
+   * self instances first ("Your buffs"), then per-entity groups (Task #35).
+   */
+  self: boolean
+  /**
+   * The bound entity disposition (Task #32), kept for the module's own censor logic:
+   * 'self' | 'summoned' | 'charmed' | 'hostile'. Undefined only for a provisional entry
+   * cast before its target was known. The UI groups by `self`/`target`, not by this.
    */
   disposition?: 'self' | 'summoned' | 'charmed' | 'hostile'
   /** ts (ms) the cast landed / was last refreshed. */
@@ -378,7 +389,11 @@ export interface ActiveBuff {
   p75: number | null
   /** sample count behind the estimate (confidence hint). */
   n: number
-  /** 'pet'/pet name for a pet buff, the inferred mob name for a debuff, undefined for self. */
+  /**
+   * The bound entity's display name for a NON-self instance (the pet's name, another
+   * player, or the inferred mob for a debuff); undefined for a self instance. This is
+   * both the group key and the target chip in the UI (Task #35).
+   */
   target?: string
   /**
    * True when `target` is an INFERENCE, not fact (Task #32): a debuff's active target

@@ -42,7 +42,11 @@ const KEEP = [
   /valor fades\.$/,
   /speed returns to normal\.$/,
   /illusion fades\.$/,
-  /You feel\.\.\. strange\.$/ // Boon of the Garou self-cast (ellipsis breaks the emote KEEP)
+  /You feel\.\.\. strange\.$/, // Boon of the Garou self-cast (ellipsis breaks the emote KEEP)
+  // Slow debuff cast-on-other message (Task #35 W10): "<Target> slows down." — the
+  // msg_cast_on_other of the enchanter slows (Shiftless Deeds / Languid Pace / …). Its
+  // subject is the mob the slow landed on, so it binds a debuff to that entity BY MESSAGE.
+  /slows down\.$/
 ]
 function keep(line) {
   if (!line.startsWith('[')) return false
@@ -92,6 +96,14 @@ slice(915470, 923352, 'w8-wears-off.log')
 // 00:44:38 (636178) → PERMANENT; pet-cast Boon on the charmed abhorrent 00:48:10 (637015)
 // → NORMAL, wears off 00:54:07 (638646).
 slice(635150, 639850, 'w9-permanent-illusion.log')
+
+// W10 CAZIC-THULE SLOW (Task #35): the user was fighting Cazic-Thule in The Plane of Fear.
+// zone into Fear 20:46:05 (919145); charm the pet phoboplasm 20:56:52 (923617); cast
+// Shiftless Deeds IV on Cazic-Thule at 21:01:40 (923936) and 21:01:46 (923994); then
+// "Cazic-Thule slows down." 21:01:50 (924020) — the msg_cast_on_other of the slow, ambiguous
+// across the enchanter slows, RESOLVED to Shiftless Deeds via the player's just-prior casts,
+// and bound BY MESSAGE (not inferred) to the entity 'Cazic-Thule'.
+slice(919140, 924080, 'w10-cazic-slow.log')
 
 // ── Priming fixtures (Task #33): a real earlier excerpt that establishes learned state
 // (everFaded / spell class / recognized landing emotes) BEFORE a golden window, mirroring

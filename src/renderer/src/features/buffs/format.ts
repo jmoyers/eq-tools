@@ -36,26 +36,29 @@ export function isOverdue(elapsedMs: number, p75: number | null, n: number): boo
   return p75 != null && n >= 2 && elapsedMs > p75
 }
 
-import type { BuffClass } from '@shared/types'
+import type { ActiveBuff, BuffClass } from '@shared/types'
 
 /**
- * The left-border accent color (an MUI theme path) for a buff class (Task #32). Self
- * and pet buffs read as friendly (gold/green); debuffs are visually distinct with a
- * red-ish accent so the user never confuses a slow cast on an enemy with their own buff.
+ * The left-border accent color (an MUI theme path) for a buff-class (Task #35). A DEBUFF
+ * (detrimental, cast on a hostile) is visually distinct with a red-ish accent so the user
+ * never confuses a slow on an enemy with their own buff; beneficial buffs read gold.
+ * NOTE (Task #35): the accent is a SPELL property (buff vs debuff), NOT who it's on — a
+ * buff on the pet is not a different color from a buff on the player.
  */
 export function classAccent(cls: BuffClass): string {
-  switch (cls) {
-    case 'debuff':
-      return 'error.main'
-    case 'pet':
-      return 'success.main'
-    case 'self':
-    default:
-      return 'warning.main'
-  }
+  return cls === 'debuff' ? 'error.main' : 'warning.main'
 }
 
-/** Human label for a buff-class section header. */
-export function classLabel(cls: BuffClass): string {
-  return cls === 'debuff' ? 'Debuffs' : cls === 'pet' ? 'Pet buffs' : 'Self buffs'
+/**
+ * The group key for the UI's PRIORITY layout (Task #35): self buffs first ('self'), then
+ * one group per bound entity (the current pet naturally tops the per-entity list). Debuffs
+ * on hostile mobs sit in their target's group but are styled distinct by `classAccent`.
+ */
+export function groupKey(b: ActiveBuff): string {
+  return b.self ? 'self' : b.target ?? 'other'
+}
+
+/** Human label for an entity group header. */
+export function groupLabel(key: string): string {
+  return key === 'self' ? 'Your buffs' : key === 'other' ? 'Other targets' : key
 }
