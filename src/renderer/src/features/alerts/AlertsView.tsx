@@ -59,10 +59,12 @@ import type {
   AlertsDelta,
   AlertsSnap,
   AlertTrigger,
+  AlertTriggerPrimitive,
   AppSignal,
   LogEventKind,
   SoundPack
 } from '@shared/types'
+import { ALL_LOG_EVENT_KINDS } from '@shared/logEventKinds'
 import { useModule } from '../../lib/useModule'
 import { formatTime } from '../../lib/formatDate'
 import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
@@ -70,19 +72,22 @@ import SoundPacksDialog from './SoundPacksDialog'
 import SuggestAlertsDialog from './SuggestAlertsDialog'
 import { invalidateSoundCaches } from './soundCache'
 
-// The LogEvent kinds an 'event' trigger can select (mirrors logEvents.ts).
-const EVENT_KINDS: LogEventKind[] = [
-  'zone', 'loot', 'offer', 'trade', 'level', 'aaGain', 'aaSpend', 'death',
-  'damage', 'heal', 'miss', 'charm', 'uncharm', 'petClaim', 'unknown'
-]
-const APP_SIGNALS: AppSignal[] = ['bossDefeat']
+// The LogEvent kinds an 'event' trigger can select. Derived from the LogEventKind union
+// (ALL_LOG_EVENT_KINDS is exhaustiveness-checked) so the picker can NEVER drift from the real
+// set of events a trigger can match (Task #47 — this absorbs the previously hand-maintained,
+// already-stale list which was missing buff/cast/cc kinds entirely).
+const EVENT_KINDS: readonly LogEventKind[] = ALL_LOG_EVENT_KINDS
+const APP_SIGNALS: AppSignal[] = ['bossDefeat', 'questComplete']
 
-const APP_SIGNAL_LABEL: Record<AppSignal, string> = { bossDefeat: 'Raid target defeated' }
+const APP_SIGNAL_LABEL: Record<AppSignal, string> = {
+  bossDefeat: 'Raid target defeated',
+  questComplete: 'Quest completed'
+}
 
 const DEFAULT_COOLDOWN_MS = 2000
 
-/** Compact trigger badge: `event:uncharm`, `raw:/regex/i`, `app:bossDefeat`. */
-function triggerBadge(t: AlertTrigger): string {
+/** Compact badge for ONE primitive condition: `event:uncharm`, `raw:/regex/i`, `app:bossDefeat`. */
+function primitiveBadge(t: AlertTriggerPrimitive): string {
   if (t.type === 'event') {
     const where = t.where && Object.keys(t.where).length
       ? ` {${Object.entries(t.where).map(([k, v]) => `${k}=${v}`).join(', ')}}`
@@ -91,6 +96,14 @@ function triggerBadge(t: AlertTrigger): string {
   }
   if (t.type === 'raw') return `raw:/${t.regex}/i`
   return `app:${t.signal}`
+}
+
+/** Compact trigger badge; a composite renders `any(…, …)` / `all(…, …)` (Task #47). */
+function triggerBadge(t: AlertTrigger): string {
+  if ('conditions' in t) {
+    return `${t.type}(${t.conditions.map(primitiveBadge).join(', ')})`
+  }
+  return primitiveBadge(t)
 }
 
 /** Validate a raw regex live; returns an error string or null. */
@@ -159,6 +172,182 @@ function SoundPicker({
   )
 }
 
+// ── Composite-trigger editing (Task #47) ──────────────────────────────────────
+//
+// The dialog edits triggers as a "combine mode" (single / any / all) over a LIST of primitive
+// CONDITION DRAFTS. A single-condition alert is `mode:'single'` (backward-compatible: renders
+// exactly like before). `any`/`all` show the condition list with add/remove rows. Each draft
+// holds the union of every primitive's fields; only the relevant ones are read per type.
+
+type CombineMode = 'single' | 'any' | 'all'
+
+interface ConditionDraft {
+  ttype: AlertTriggerPrimitive['type']
+  kind: LogEventKind
+  fieldKey: string
+  fieldVal: string
+  regex: string
+  signal: AppSignal
+}
+
+function blankCondition(): ConditionDraft {
+  return { ttype: 'event', kind: 'uncharm', fieldKey: '', fieldVal: '', regex: '', signal: 'bossDefeat' }
+}
+
+/** Hydrate a condition draft from a stored primitive trigger. */
+function draftFromPrimitive(t: AlertTriggerPrimitive): ConditionDraft {
+  const d = blankCondition()
+  d.ttype = t.type
+  if (t.type === 'event') {
+    d.kind = t.kind
+    const first = t.where ? Object.entries(t.where)[0] : undefined
+    d.fieldKey = first?.[0] ?? ''
+    d.fieldVal = first?.[1] ?? ''
+  } else if (t.type === 'raw') {
+    d.regex = t.regex
+  } else {
+    d.signal = t.signal
+  }
+  return d
+}
+
+/** Build a stored primitive trigger from a condition draft. */
+function primitiveFromDraft(d: ConditionDraft): AlertTriggerPrimitive {
+  if (d.ttype === 'raw') return { type: 'raw', regex: d.regex }
+  if (d.ttype === 'app') return { type: 'app', signal: d.signal }
+  const where =
+    d.fieldKey.trim() && d.fieldVal.trim() ? { [d.fieldKey.trim()]: d.fieldVal.trim() } : undefined
+  return { type: 'event', kind: d.kind, where }
+}
+
+/** The /regex/ validation error for a condition draft's field value, or null. */
+function conditionFieldValErr(d: ConditionDraft): string | null {
+  if (d.ttype !== 'event') return null
+  const v = d.fieldVal.trim()
+  return v.startsWith('/') && v.endsWith('/') ? regexError(v.slice(1, -1)) : null
+}
+
+/** The raw-regex validation error for a condition draft, or null. */
+function conditionRawErr(d: ConditionDraft): string | null {
+  return d.ttype === 'raw' ? regexError(d.regex) : null
+}
+
+/** Editor for ONE primitive condition (reused for single + each composite row). */
+function ConditionEditor({
+  draft,
+  onChange
+}: {
+  draft: ConditionDraft
+  onChange: (next: ConditionDraft) => void
+}): JSX.Element {
+  const set = (patch: Partial<ConditionDraft>): void => onChange({ ...draft, ...patch })
+  const rawErr = conditionRawErr(draft)
+  const fieldValErr = conditionFieldValErr(draft)
+  return (
+    <Stack spacing={1.5}>
+      <Box>
+        <Typography variant="caption" color="text.secondary">
+          Trigger type
+        </Typography>
+        <Select
+          size="small"
+          fullWidth
+          value={draft.ttype}
+          onChange={(e) => set({ ttype: e.target.value as AlertTriggerPrimitive['type'] })}
+        >
+          <MenuItem value="event">Log event (typed)</MenuItem>
+          <MenuItem value="raw">Raw line (regex)</MenuItem>
+          <MenuItem value="app">App signal</MenuItem>
+        </Select>
+      </Box>
+
+      {draft.ttype === 'event' && (
+        <>
+          <Box>
+            <Typography variant="caption" color="text.secondary">
+              Event kind
+            </Typography>
+            <Select
+              size="small"
+              fullWidth
+              value={draft.kind}
+              onChange={(e) => set({ kind: e.target.value as LogEventKind })}
+            >
+              {EVENT_KINDS.map((k) => (
+                <MenuItem key={k} value={k}>
+                  {k}
+                </MenuItem>
+              ))}
+            </Select>
+          </Box>
+          <Stack direction="row" spacing={1}>
+            <TextField
+              size="small"
+              label="Field (optional)"
+              placeholder="e.g. spell, target"
+              value={draft.fieldKey}
+              onChange={(e) => set({ fieldKey: e.target.value })}
+              fullWidth
+            />
+            <TextField
+              size="small"
+              label="Equals or /regex/"
+              value={draft.fieldVal}
+              onChange={(e) => set({ fieldVal: e.target.value })}
+              error={fieldValErr != null}
+              helperText={fieldValErr ?? ' '}
+              fullWidth
+            />
+          </Stack>
+          <Typography variant="caption" color="text.secondary">
+            Leave the field blank to fire on every {draft.kind} event. A value in /slashes/ is a
+            case-insensitive regex. For <code>buffExpired</code>, use <code>target</code>=
+            <code>self</code> for your own buffs, or omit <code>target</code> to match a buff
+            wearing off you OR your pet/target.
+          </Typography>
+        </>
+      )}
+
+      {draft.ttype === 'raw' && (
+        <>
+          <TextField
+            size="small"
+            label="Regex (matched against the raw log line, case-insensitive)"
+            value={draft.regex}
+            onChange={(e) => set({ regex: e.target.value })}
+            error={rawErr != null}
+            helperText={rawErr ?? 'Valid pattern'}
+          />
+          <Typography variant="caption" color="text.secondary">
+            Matches anywhere in the line. Escape regex metacharacters
+            (e.g. <code>\.</code>, <code>\(</code>) with a backslash.
+          </Typography>
+        </>
+      )}
+
+      {draft.ttype === 'app' && (
+        <Box>
+          <Typography variant="caption" color="text.secondary">
+            Signal
+          </Typography>
+          <Select
+            size="small"
+            fullWidth
+            value={draft.signal}
+            onChange={(e) => set({ signal: e.target.value as AppSignal })}
+          >
+            {APP_SIGNALS.map((s) => (
+              <MenuItem key={s} value={s}>
+                {APP_SIGNAL_LABEL[s]}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
+      )}
+    </Stack>
+  )
+}
+
 /**
  * The add/edit dialog. `initial` is null for "add", or an existing def for "edit"
  * (including a seeded built-in — no special casing beyond keeping its id stable).
@@ -177,12 +366,8 @@ function AlertDialog({
   onSave: (def: AlertDef) => void
 }): JSX.Element {
   const [name, setName] = useState('')
-  const [ttype, setTtype] = useState<AlertTrigger['type']>('event')
-  const [kind, setKind] = useState<LogEventKind>('uncharm')
-  const [fieldKey, setFieldKey] = useState('')
-  const [fieldVal, setFieldVal] = useState('')
-  const [regex, setRegex] = useState('')
-  const [signal, setSignal] = useState<AppSignal>('bossDefeat')
+  const [mode, setMode] = useState<CombineMode>('single')
+  const [conditions, setConditions] = useState<ConditionDraft[]>([blankCondition()])
   const [packId, setPackId] = useState(packs[0]?.id ?? 'default')
   const [soundId, setSoundId] = useState('chime')
   const [volume, setVolume] = useState(1)
@@ -193,26 +378,22 @@ function AlertDialog({
     if (!open) return
     if (initial) {
       setName(initial.name)
-      setTtype(initial.trigger.type)
-      setKind(initial.trigger.type === 'event' ? initial.trigger.kind : 'uncharm')
-      const where = initial.trigger.type === 'event' ? initial.trigger.where : undefined
-      const firstEntry = where ? Object.entries(where)[0] : undefined
-      setFieldKey(firstEntry?.[0] ?? '')
-      setFieldVal(firstEntry?.[1] ?? '')
-      setRegex(initial.trigger.type === 'raw' ? initial.trigger.regex : '')
-      setSignal(initial.trigger.type === 'app' ? initial.trigger.signal : 'bossDefeat')
+      const t = initial.trigger
+      if ('conditions' in t) {
+        setMode(t.type)
+        setConditions(t.conditions.length ? t.conditions.map(draftFromPrimitive) : [blankCondition()])
+      } else {
+        setMode('single')
+        setConditions([draftFromPrimitive(t)])
+      }
       setPackId(initial.sound.packId)
       setSoundId(initial.sound.soundId)
       setVolume(initial.volume ?? 1)
       setCooldownMs(initial.cooldownMs ?? DEFAULT_COOLDOWN_MS)
     } else {
       setName('')
-      setTtype('event')
-      setKind('uncharm')
-      setFieldKey('')
-      setFieldVal('')
-      setRegex('')
-      setSignal('bossDefeat')
+      setMode('single')
+      setConditions([blankCondition()])
       setPackId(packs[0]?.id ?? 'default')
       setSoundId(packs[0] ? Object.keys(packs[0].sounds)[0] : 'chime')
       setVolume(1)
@@ -220,23 +401,33 @@ function AlertDialog({
     }
   }, [open, initial, packs])
 
-  const buildTrigger = (): AlertTrigger => {
-    if (ttype === 'raw') return { type: 'raw', regex }
-    if (ttype === 'app') return { type: 'app', signal }
-    const where = fieldKey.trim() && fieldVal.trim() ? { [fieldKey.trim()]: fieldVal.trim() } : undefined
-    return { type: 'event', kind, where }
+  const setCondition = (i: number, next: ConditionDraft): void =>
+    setConditions((prev) => prev.map((c, j) => (j === i ? next : c)))
+  const addCondition = (): void => setConditions((prev) => [...prev, blankCondition()])
+  const removeCondition = (i: number): void =>
+    setConditions((prev) => (prev.length <= 1 ? prev : prev.filter((_, j) => j !== i)))
+
+  // Switching INTO a composite from single keeps the existing condition and adds a second so
+  // the OR/AND is meaningful; switching back to single collapses to the first condition.
+  const changeMode = (next: CombineMode): void => {
+    setMode(next)
+    if (next === 'single') setConditions((prev) => prev.slice(0, 1))
+    else setConditions((prev) => (prev.length >= 2 ? prev : [...prev, blankCondition()]))
   }
 
-  const rawErr = ttype === 'raw' ? regexError(regex) : null
-  const fieldValErr =
-    ttype === 'event' && fieldVal.trim().startsWith('/') && fieldVal.trim().endsWith('/')
-      ? regexError(fieldVal.trim().slice(1, -1))
-      : null
+  const buildTrigger = (): AlertTrigger => {
+    if (mode === 'single') return primitiveFromDraft(conditions[0])
+    return { type: mode, conditions: conditions.map(primitiveFromDraft) }
+  }
+
+  const conditionsValid = conditions.every(
+    (c) => conditionRawErr(c) == null && conditionFieldValErr(c) == null
+  )
 
   const canSave =
     name.trim().length > 0 &&
-    (ttype !== 'raw' || rawErr == null) &&
-    fieldValErr == null &&
+    conditions.length > 0 &&
+    conditionsValid &&
     packId.length > 0 &&
     soundId.length > 0
 
@@ -270,100 +461,57 @@ function AlertDialog({
           />
           <Box>
             <Typography variant="caption" color="text.secondary">
-              Trigger type
+              Fire when…
             </Typography>
             <Select
               size="small"
               fullWidth
-              value={ttype}
-              onChange={(e) => setTtype(e.target.value as AlertTrigger['type'])}
+              value={mode}
+              onChange={(e) => changeMode(e.target.value as CombineMode)}
             >
-              <MenuItem value="event">Log event (typed)</MenuItem>
-              <MenuItem value="raw">Raw line (regex)</MenuItem>
-              <MenuItem value="app">App signal</MenuItem>
+              <MenuItem value="single">a single condition matches</MenuItem>
+              <MenuItem value="any">ANY of these conditions matches (or)</MenuItem>
+              <MenuItem value="all">ALL of these match the same event (and)</MenuItem>
             </Select>
+            {mode === 'all' && (
+              <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>
+                “All” requires every condition to match the SAME incoming log event (same-event,
+                not a correlation window).
+              </Typography>
+            )}
           </Box>
 
-          {ttype === 'event' && (
-            <>
-              <Box>
-                <Typography variant="caption" color="text.secondary">
-                  Event kind
-                </Typography>
-                <Select
-                  size="small"
-                  fullWidth
-                  value={kind}
-                  onChange={(e) => setKind(e.target.value as LogEventKind)}
-                >
-                  {EVENT_KINDS.map((k) => (
-                    <MenuItem key={k} value={k}>
-                      {k}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Box>
-              <Stack direction="row" spacing={1}>
-                <TextField
-                  size="small"
-                  label="Field (optional)"
-                  placeholder="e.g. mob"
-                  value={fieldKey}
-                  onChange={(e) => setFieldKey(e.target.value)}
-                  fullWidth
-                />
-                <TextField
-                  size="small"
-                  label="Equals or /regex/"
-                  value={fieldVal}
-                  onChange={(e) => setFieldVal(e.target.value)}
-                  error={fieldValErr != null}
-                  helperText={fieldValErr ?? ' '}
-                  fullWidth
-                />
-              </Stack>
-              <Typography variant="caption" color="text.secondary">
-                Leave the field blank to fire on every {kind} event. A value in
-                /slashes/ is treated as a case-insensitive regex.
-              </Typography>
-            </>
-          )}
-
-          {ttype === 'raw' && (
-            <>
-              <TextField
-                size="small"
-                label="Regex (matched against the raw log line, case-insensitive)"
-                value={regex}
-                onChange={(e) => setRegex(e.target.value)}
-                error={rawErr != null}
-                helperText={rawErr ?? 'Valid pattern'}
-              />
-              <Typography variant="caption" color="text.secondary">
-                Matches anywhere in the line. Escape regex metacharacters
-                (e.g. <code>\.</code>, <code>\(</code>) with a backslash.
-              </Typography>
-            </>
-          )}
-
-          {ttype === 'app' && (
-            <Box>
-              <Typography variant="caption" color="text.secondary">
-                Signal
-              </Typography>
-              <Select
-                size="small"
-                fullWidth
-                value={signal}
-                onChange={(e) => setSignal(e.target.value as AppSignal)}
-              >
-                {APP_SIGNALS.map((s) => (
-                  <MenuItem key={s} value={s}>
-                    {APP_SIGNAL_LABEL[s]}
-                  </MenuItem>
-                ))}
-              </Select>
-            </Box>
+          {mode === 'single' ? (
+            <ConditionEditor draft={conditions[0]} onChange={(next) => setCondition(0, next)} />
+          ) : (
+            <Stack spacing={1.5}>
+              {conditions.map((c, i) => (
+                <Paper key={i} variant="outlined" sx={{ p: 1.25, position: 'relative' }}>
+                  <Stack direction="row" alignItems="center" sx={{ mb: 0.5 }}>
+                    <Typography variant="caption" color="text.secondary" sx={{ fontWeight: 600 }}>
+                      Condition {i + 1}
+                    </Typography>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Tooltip title="Remove condition">
+                      <span>
+                        <IconButton
+                          size="small"
+                          color="error"
+                          disabled={conditions.length <= 1}
+                          onClick={() => removeCondition(i)}
+                        >
+                          <DeleteOutlineIcon fontSize="small" />
+                        </IconButton>
+                      </span>
+                    </Tooltip>
+                  </Stack>
+                  <ConditionEditor draft={c} onChange={(next) => setCondition(i, next)} />
+                </Paper>
+              ))}
+              <Button startIcon={<AddIcon />} size="small" onClick={addCondition} sx={{ alignSelf: 'flex-start' }}>
+                Add condition
+              </Button>
+            </Stack>
           )}
 
           <Divider />

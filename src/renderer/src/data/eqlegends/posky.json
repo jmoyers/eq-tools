@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-08-01T21:03:47.092Z",
+  "scrapedAt": "2026-08-02T07:20:14.128Z",
   "quests": [
     {
       "className": "Bard",
@@ -141,6 +141,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 0.1 Size: SMALL\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti War Horn",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Horn",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nBrass Resonance: 12\nWT: 5.0 Size: MEDIUM\nClass: BRD\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Fana",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -169,6 +177,14 @@
           "count": 1,
           "page": "Nebulous Diamond",
           "stats": "LORE ITEM NO DROP\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti War Spear",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Spear",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: Piercing Atk Delay: 40\nDMG: 15BACKSTAB: 15\nWT: 5.0 Size: MEDIUM\nClass: WAR BRD ROG SHM\nRace: ALL"
         },
         {
           "name": "Wind Rune Heda",
@@ -270,6 +286,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 12.0 Size: LARGE\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Brass Knuckles",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Brass Knuckles",
+          "stats": "Slot: PRIMARY SECONDARY\nSkill: 1H Blunt Atk Delay: 25\nDMG: 10\nWT: 1.0 Size: MEDIUM\nClass: WAR MNK\nRace: ALL\nDespite being a weapon, this item is stackable."
+        },
+        {
           "name": "Wind Rune Izah",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -358,6 +382,14 @@
           "count": 1,
           "page": "Djinni War Blade",
           "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY SECONDARY\nSkill: 1H Slashing Atk Delay: 24\nDMG: 10\nWT: 2.0 Size: MEDIUM\nClass: WAR\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Standard",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Standard",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: SECONDARY\nSkill: 1H Blunt Atk Delay: 10\nDMG: 3\nWT: 10.0 Size: LARGE\nClass: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM NEC WIZ MAG ENC\nRace: ALL"
         },
         {
           "name": "Wind Rune Jaka",
@@ -507,6 +539,14 @@
           "count": 1,
           "page": "Jester's Mask",
           "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: FACE\nAC: 5\nAGI: +2\nWT: 15.0 Size: LARGE\nClass: ROG\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Great Staff",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Great Staff",
+          "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 42\nDMG: 14\nINT: +4\nSV FIRE: +5 SV COLD: +5\nWT: 0.2 Size: SMALL\nClass: NEC\nRace: ALL"
         },
         {
           "name": "Wind Rune Dena",
@@ -659,6 +699,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 5.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti Mace",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Mace",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 30\nDMG: 10\nWT: 1.0 Size: MEDIUM\nClass: ALL except DRU NEC WIZ MAG ENC\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Kala",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -687,6 +735,14 @@
           "count": 1,
           "page": "Mithril Bands",
           "stats": "LORE ITEM NO DROP\nWT: 12.0 Size: LARGE\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Standard",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Standard",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: SECONDARY\nSkill: 1H Blunt Atk Delay: 10\nDMG: 3\nWT: 10.0 Size: LARGE\nClass: WAR CLR PAL RNG SHD DRU MNK BRD ROG SHM NEC WIZ MAG ENC\nRace: ALL"
         },
         {
           "name": "Wind Rune Ena",
@@ -777,6 +833,14 @@
           "count": 1,
           "page": "Spiroc Battle Staff",
           "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 30\nDMG: 8\nWIS: +2 MANA: +10\nWT: 5.0 Size: MEDIUM\nClass: ALL except BRD ROG\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Statuette",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Statuette",
+          "stats": "LORE ITEM\nWT: 1.0 Size: SMALL\nClass: ALL\nRace: ALL"
         },
         {
           "name": "Wind Rune Azia",
@@ -877,6 +941,14 @@
           "count": 1,
           "page": "Storm Sky Opal",
           "stats": "LORE ITEM NO DROP\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Scimitar",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Scimitar",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 1H Slashing Atk Delay: 29\nDMG: 12\nMANA: +10\nWT: 0.1 Size: SMALL\nClass: WAR PAL RNG SHD DRU MNK BRD ROG\nRace: ALL"
         },
         {
           "name": "Wind Rune Izah",
@@ -1059,6 +1131,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 0.1 Size: MEDIUM\nClass: ALL\nRace: ALL\nThere are two versions of this item: the Large Sky Sapphire (Enchanter), with 15-weight, for the Enchanter quest \"Azure Star Sapphire\", and this 0.1-weight version that looks like a Black Sapphire for the Wizard quest (\"Eye of the Storm\")."
         },
         {
+          "name": "Efreeti Wind Staff",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Wind Staff",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 36\nDMG: 12\nINT: +3\nWT: 15.0 Size: LARGE\nClass: CLR DRU SHM NEC WIZ MAG ENC\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Izah",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -1237,6 +1317,14 @@
           "count": 1,
           "page": "Hazy Opal",
           "stats": "LORE ITEM NO DROP\nWT: 0.2 Size: SMALL\nClass: MAG\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Magi Staff",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Magi Staff",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 36\nDMG: 12 AC: 5\nSTA: +2 CHA: +2 INT: +5\nWT: 2.0 Size: LARGE\nClass: NEC WIZ MAG ENC\nRace: ALL"
         },
         {
           "name": "Wind Rune Jaka",
@@ -1436,6 +1524,14 @@
           "count": 1,
           "page": "Nebulous Sapphire",
           "stats": "LORE ITEM NO DROP\nWT: 5.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Brass Knuckles",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Brass Knuckles",
+          "stats": "Slot: PRIMARY SECONDARY\nSkill: 1H Blunt Atk Delay: 25\nDMG: 10\nWT: 1.0 Size: MEDIUM\nClass: WAR MNK\nRace: ALL\nDespite being a weapon, this item is stackable."
         },
         {
           "name": "Wind Rune Neza",
@@ -1648,6 +1744,14 @@
           "stats": "LORE ITEM\nWT: 12.0 Size: LARGE\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti Great Staff",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Great Staff",
+          "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 42\nDMG: 14\nINT: +4\nSV FIRE: +5 SV COLD: +5\nWT: 0.2 Size: SMALL\nClass: NEC\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Fana",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -1774,6 +1878,14 @@
           "count": 1,
           "page": "Large Sky Diamond",
           "stats": "LORE ITEM NO DROP\nWT: 0.1 Size: SMALL\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Zweihander",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Zweihander",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 45\nDMG: 24\nWT: 0.1 Size: SMALL\nClass: WAR PAL RNG SHD\nRace: ALL"
         },
         {
           "name": "Wind Rune Izah",
@@ -1926,6 +2038,14 @@
           "stats": "MAGIC ITEM LORE ITEM NO DROP\nSlot: HEAD\nAC: 4\nSTR: +2 WIS: +2\nWT: 5.0 Size: MEDIUM\nClass: RNG\nRace: ALL"
         },
         {
+          "name": "Efreeti Long Sword",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Long Sword",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY SECONDARY\nSkill: 1H Slashing Atk Delay: 28\nDMG: 11\nWT: 0.1 Size: SMALL\nClass: WAR PAL RNG SHD BRD ROG\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Ena",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -1954,6 +2074,14 @@
           "count": 1,
           "page": "Shimmering Pearl",
           "stats": "LORE ITEM NO DROP\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL\nNot to be confused with the Shimmering Pearl* for the Cleric Epic Quest."
+        },
+        {
+          "name": "Efreeti War Bow",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Bow",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: RANGE\nSkill: Archery Atk Delay: 100\nDMG: 40\nWT: 1.0 Range: 75 Size: MEDIUM\nClass: WAR RNG\nRace: ALL"
         },
         {
           "name": "Wind Rune Heda",
@@ -2364,6 +2492,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 10.0 Size: LARGE\nClass: SHD\nRace: ALL"
         },
         {
+          "name": "Efreeti War Axe",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Axe",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 28\nDMG: 12\nWT: 0.1 Size: SMALL\nClass: WAR PAL SHD\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Kala",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -2484,6 +2620,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 5.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti War Club",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Club",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 1H Blunt Atk Delay: 26\nDMG: 11\nWT: 1.0 Size: MEDIUM\nClass: ALL except BRD NEC WIZ MAG ENC\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Ena",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -2550,6 +2694,14 @@
           "count": 1,
           "page": "Symbol of Veeshan",
           "stats": "LORE ITEM NO DROP\nWT: 5.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti War Maul",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Maul",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 35\nDMG: 15\nWT: 10.0 Size: LARGE\nClass: WAR PAL RNG SHD SHM\nRace: ALL"
         },
         {
           "name": "Wind Rune Geza",
@@ -2672,6 +2824,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 2.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti Belt",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Belt",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: WAIST\nAC: 4\nSTR: +1 WIS: +1 INT: +1\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Fana",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -2740,6 +2900,14 @@
           "count": 1,
           "page": "Ethereal Emerald",
           "stats": "LORE ITEM NO DROP\nWT: 0.5 Size: SMALL\nClass: ALL\nRace: ALL"
+        },
+        {
+          "name": "Efreeti Battle Axe",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Battle Axe",
+          "stats": "MAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Slashing Atk Delay: 28\nDMG: 15\nWT: 0.5 Size: SMALL\nClass: WAR PAL RNG SHD\nRace: ALL"
         },
         {
           "name": "Wind Rune Dena",
@@ -2862,6 +3030,14 @@
           "stats": "LORE ITEM NO DROP\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
         },
         {
+          "name": "Efreeti Statuette",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti Statuette",
+          "stats": "LORE ITEM\nWT: 1.0 Size: SMALL\nClass: ALL\nRace: ALL"
+        },
+        {
           "name": "Wind Rune Izah",
           "who": [
             "random drop — any Plane of Sky mob"
@@ -2919,6 +3095,14 @@
           "where": "Island 8",
           "count": 1,
           "page": "Large Sky Lapis (page does not exist)"
+        },
+        {
+          "name": "Efreeti War Staff",
+          "who": [],
+          "where": "",
+          "count": 1,
+          "page": "Efreeti War Staff",
+          "stats": "Similar in appearance to the Cracked Staff, Norrath's most trusted weapon.\nEfreeti War Staff\nMAGIC ITEM LORE ITEM\nSlot: PRIMARY\nSkill: 2H Blunt Atk Delay: 30\nDMG: 10\nWT: 1.0 Size: MEDIUM\nClass: ALL\nRace: ALL"
         },
         {
           "name": "Wind Rune Caza",

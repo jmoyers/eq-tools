@@ -11,6 +11,13 @@
 // on derived boss state that lives in the renderer), so this module stores/serves
 // their defs via snapshot() but never fires them itself.
 //
+// COMPOSITE triggers (Task #47): a trigger may be `{type:'any'|'all', conditions:[…]}` over
+// the primitive event/raw/app shapes. 'any' fires when ANY condition matches a single event
+// (OR); 'all' fires only when EVERY condition matches THE SAME event (AND — same-event only,
+// no cross-event windows). Cooldown stays alert-level. It also matches the DERIVED
+// `buffExpired` event the buffs module synthesizes (a resolved, unambiguous "wears off you /
+// your pet" signal) — see shared/logEvents.ts BuffExpiredEvent + log/bus.ts emitDerived.
+//
 // Alert defs are owned by the store; the module holds a live copy that main keeps
 // in sync (setDefs) whenever the user saves/deletes an alert.
 
@@ -22,6 +29,7 @@ import type {
   AlertsDelta,
   AlertsSnap,
   AlertTrigger,
+  AlertTriggerPrimitive,
   FiredAlert
 } from '../../shared/types'
 
@@ -49,26 +57,31 @@ function compileFieldMatch(spec: string): (fieldValue: string) => boolean {
   return (v) => v.toLowerCase() === lower
 }
 
-/** A trigger prepared for fast evaluation (regex compiled once at setDefs time). */
-interface CompiledEventTrigger {
-  kind: string
-  fields: Array<{ key: string; test: (v: string) => boolean }>
+/** A single PRIMITIVE condition prepared for fast evaluation (regex compiled once). */
+interface CompiledCondition {
+  event?: { kind: string; fields: Array<{ key: string; test: (v: string) => boolean }> }
+  raw?: RegExp
+  // 'app' primitives compile to neither event nor raw → they never match main-side.
 }
 
+/**
+ * A compiled alert. A primitive trigger compiles to a single condition (`composite:'single'`);
+ * a composite compiles to its type ('any'/'all') + the list of compiled conditions (Task #47).
+ */
 interface CompiledAlert {
   def: AlertDef
-  event?: CompiledEventTrigger
-  raw?: RegExp
+  composite: 'single' | 'any' | 'all'
+  conditions: CompiledCondition[]
 }
 
-function compileAlert(def: AlertDef): CompiledAlert {
-  const t: AlertTrigger = def.trigger
+/** Compile one PRIMITIVE trigger into a matcher condition. */
+function compileCondition(t: AlertTriggerPrimitive): CompiledCondition {
   if (t.type === 'event') {
     const fields = Object.entries(t.where ?? {}).map(([key, spec]) => ({
       key,
       test: compileFieldMatch(spec)
     }))
-    return { def, event: { kind: t.kind, fields } }
+    return { event: { kind: t.kind, fields } }
   }
   if (t.type === 'raw') {
     let re: RegExp
@@ -78,10 +91,18 @@ function compileAlert(def: AlertDef): CompiledAlert {
       // A bad regex should never match (and never throw); use a pattern that can't.
       re = /$.^/
     }
-    return { def, raw: re }
+    return { raw: re }
   }
-  // 'app' triggers are renderer-evaluated; nothing to compile here.
-  return { def }
+  // 'app' triggers are renderer-evaluated; compile to an empty condition (never matches here).
+  return {}
+}
+
+function compileAlert(def: AlertDef): CompiledAlert {
+  const t: AlertTrigger = def.trigger
+  if ('conditions' in t) {
+    return { def, composite: t.type, conditions: t.conditions.map(compileCondition) }
+  }
+  return { def, composite: 'single', conditions: [compileCondition(t)] }
 }
 
 export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
@@ -175,22 +196,49 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
     return last !== undefined && ts - last < cd
   }
 
-  /** Returns the matched text if the alert's trigger matches `ev`, else null. */
+  /**
+   * Returns the matched text if the alert's trigger matches `ev`, else null.
+   *
+   * Composite semantics (Task #47) — evaluated against the SINGLE incoming event:
+   *   'any'    → fires when at least ONE condition matches (OR).
+   *   'all'    → fires only when EVERY condition matches THE SAME event (AND).
+   *   'single' → the one primitive condition (backward-compatible, unchanged).
+   * Cross-event correlation is deliberately out of scope; an 'all' over conditions that can
+   * never co-occur on one event (e.g. two different `kind`s) simply never fires.
+   */
   private matches(c: CompiledAlert, ev: LogEvent): string | null {
-    if (c.event) {
-      if (ev.kind !== c.event.kind) return null
-      for (const f of c.event.fields) {
-        const raw = (ev as unknown as Record<string, unknown>)[f.key]
-        if (raw == null) return null
-        if (!f.test(String(raw))) return null
+    if (c.composite === 'all') {
+      // Every condition must match this one event. An empty condition list can't be satisfied
+      // meaningfully — treat it as no-match to avoid a firehose.
+      if (c.conditions.length === 0) return null
+      for (const cond of c.conditions) {
+        if (!this.conditionMatches(cond, ev)) return null
       }
       return ev.raw
     }
-    if (c.raw) {
-      return c.raw.test(ev.raw) ? ev.raw : null
+    // 'any' and 'single': fire on the first matching condition.
+    for (const cond of c.conditions) {
+      if (this.conditionMatches(cond, ev)) return ev.raw
     }
-    // 'app' triggers never match here.
     return null
+  }
+
+  /** Whether ONE primitive condition matches `ev`. */
+  private conditionMatches(cond: CompiledCondition, ev: LogEvent): boolean {
+    if (cond.event) {
+      if (ev.kind !== cond.event.kind) return false
+      for (const f of cond.event.fields) {
+        const raw = (ev as unknown as Record<string, unknown>)[f.key]
+        if (raw == null) return false
+        if (!f.test(String(raw))) return false
+      }
+      return true
+    }
+    if (cond.raw) {
+      return cond.raw.test(ev.raw)
+    }
+    // 'app' conditions never match main-side.
+    return false
   }
 
   snapshot(): { seq: number; state: AlertsSnap } {

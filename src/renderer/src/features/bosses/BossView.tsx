@@ -17,7 +17,7 @@ import type { RaidTarget } from '@shared/types'
 import { getBossData } from '../../data'
 import { useBossKills } from './useBossKills'
 import type { TargetStatus } from './bossStatus'
-import Confetti from './Confetti'
+import Confetti from '../../lib/Confetti'
 import { tierStyle } from '../../lib/tierChip'
 import { formatDate, formatDateTime } from '../../lib/formatDate'
 

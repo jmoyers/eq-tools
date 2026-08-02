@@ -23,14 +23,27 @@ export type TemplateKind = 'wearsOff' | 'fade' | 'lands'
 /** UI + authoring metadata for each template. */
 export const SUGGEST_TEMPLATES: Record<
   TemplateKind,
-  { chip: string; kind: LogEventKind; verb: string; sound: string }
+  { chip: string; kind: LogEventKind; verb: string; sound: string; where?: (name: string) => Record<string, string> }
 > = {
-  // Beneficial + wears-off message: the authoritative self-expiry line.
-  wearsOff: { chip: 'When it wears off you', kind: 'buffWearOff', verb: 'wears off', sound: 'warning' },
-  // Beneficial: pet/named-target fades.
-  fade: { chip: 'When it fades on pet/target', kind: 'buffFade', verb: 'fades', sound: 'chime' },
+  // Beneficial: the DUAL-DEFAULT expiry (Task #47). The user's directive — "the wears off for
+  // you is different than for somebody else … build good sane defaults that help with both by
+  // default." The buffs module emits a RESOLVED `buffExpired { spell, target }` for BOTH sides:
+  // a self message wears-off (target 'self') AND a fade on your pet/target (target = its name).
+  // So ONE simple trigger `{buffExpired, where:{spell}}` (target omitted → matches any) fires
+  // whether the buff wears off YOU or your pet — the sane both-sides default, no composite
+  // needed for this template. (The composite machinery still ships for user-authored combos.)
+  wearsOff: {
+    chip: 'When it wears off (you or your pet)',
+    kind: 'buffExpired',
+    verb: 'wears off',
+    sound: 'warning',
+    where: (name) => ({ spell: name })
+  },
+  // Beneficial: JUST the pet/named-target fade side (target-only), for users who want to
+  // separate it from the self-side. Uses the raw buffFade the parser already emits.
+  fade: { chip: 'When it fades on pet/target only', kind: 'buffFade', verb: 'fades', sound: 'chime', where: (name) => ({ spell: name }) },
   // Detrimental + cast-on-other: the debuff landing on a target.
-  lands: { chip: 'When it lands on a target', kind: 'buffApply', verb: 'lands', sound: 'chime' }
+  lands: { chip: 'When it lands on a target', kind: 'buffApply', verb: 'lands', sound: 'chime', where: (name) => ({ spell: name }) }
 }
 
 /** A concrete suggestion: the template it came from + the exact AlertDef it authors. */
@@ -51,14 +64,15 @@ function suggestionId(spellKey: string, template: TemplateKind): string {
 /** Build the AlertDef for one (spell, template) pair. */
 function buildDef(entry: SpellCatalogEntry, template: TemplateKind): AlertDef {
   const t = SUGGEST_TEMPLATES[template]
+  const where = t.where ? t.where(entry.name) : undefined
   return {
     id: suggestionId(entry.key, template),
     name: `${entry.name} ${t.verb}`,
     enabled: true,
-    trigger: { type: 'event', kind: t.kind, where: { spell: entry.name } },
+    trigger: { type: 'event', kind: t.kind, where },
     sound: { packId: DEFAULT_PACK, soundId: t.sound },
     cooldownMs: DEFAULT_COOLDOWN_MS,
-    note: `Suggested alert (Task #38) — ${template} for ${entry.name}.`
+    note: `Suggested alert (Task #38/#47) — ${template} for ${entry.name}.`
   }
 }
 

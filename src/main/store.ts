@@ -122,6 +122,18 @@ const SEED_ALERTS: AlertDef[] = [
     trigger: { type: 'app', signal: 'bossDefeat' },
     sound: { packId: 'default', soundId: 'victory' },
     note: 'Seeded default — fires the same moment boss confetti does.'
+  },
+  {
+    id: 'quest-complete',
+    name: 'Sky quest complete',
+    enabled: true,
+    // Fires the same instant a Plane of Sky quest auto-completes from a detected
+    // turn-in (giver received every required item) — the renderer's questComplete
+    // app signal, fired exactly where the quest-complete confetti + snackbar do
+    // (Task #46). Never fires on load/hydration or manual checkbox completion.
+    trigger: { type: 'app', signal: 'questComplete' },
+    sound: { packId: 'default', soundId: 'victory' },
+    note: 'Seeded default — fires the same moment a Sky quest turn-in celebration does.'
   }
 ]
 

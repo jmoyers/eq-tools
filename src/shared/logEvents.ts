@@ -350,6 +350,34 @@ export interface IllusionFadeEvent extends LogEventBase {
   target: 'self'
 }
 
+/**
+ * A DERIVED, RESOLVED buff-expiry event (Task #47). Unlike the parser's raw buffWearOff
+ * (which carries an AMBIGUOUS `candidates` list for the 123 shared-message families) or
+ * illusionFade (which names no spell at all), this event is SYNTHESIZED by the buffs module
+ * AFTER it resolves the wear-off against the live active set — so `spell` is the ACTUAL buff
+ * that faded and `target` is who it was on.
+ *
+ * DERIVED EVENTS (the design contract): the buffs module is the only authoritative source of
+ * the resolved "wears off YOU" signal — the raw parser line is inherently ambiguous. Rather
+ * than duplicate the active-set resolution in the alerts module, buffs emits this ONE
+ * resolved event back onto the SAME bus (see log/bus.ts `emitDerived`), which the alerts
+ * module (registered after buffs) matches like any other event. It is clearly namespaced,
+ * never re-emitted by any consumer (buffs ignores it), and covers BOTH sides of the user's
+ * "the wears off for you is different than for somebody else" concern with a single kind:
+ *   - a SELF wears-off (message-driven buffWearOff / illusionFade, resolved) → target:'self'.
+ *   - a fade on the pet / another entity (buffFade, already resolved spell+target) →
+ *     target = that entity's display name.
+ * So an alert `{event, buffExpired, where:{spell:'Swift Like the Wind'}}` fires whether the
+ * buff wore off the player OR the player's pet — the "good sane default that helps with both".
+ */
+export interface BuffExpiredEvent extends LogEventBase {
+  kind: 'buffExpired'
+  /** The RESOLVED spell that expired (display casing) — never ambiguous. */
+  spell: string
+  /** 'self' when it wore off the player; else the bound entity's display name (pet/mob/player). */
+  target: 'self' | string
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -382,4 +410,5 @@ export type LogEvent =
   | BuffWearOffEvent
   | AaActivateEvent
   | IllusionFadeEvent
+  | BuffExpiredEvent
   | UnknownEvent

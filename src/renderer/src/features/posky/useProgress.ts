@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type {
   CountSource,
   LootDelta,
@@ -16,6 +16,7 @@ import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
 import { ambiguousQuestNames, computeSharedItems, type SharedItemsMap } from './sharedItems'
+import { matchTurnIns, newlyCompletedTurnIns } from './turnInCelebration'
 
 const applyLootDelta = (s: LootSnap, d: LootDelta): LootSnap => [...s, ...d.appended]
 const applyTurnInDelta = (s: TurnInSnap, d: TurnInDelta): TurnInSnap => [...s, ...d.appended]
@@ -30,30 +31,13 @@ const posky = getPoskyData()
 const sharedItemsMap: SharedItemsMap = computeSharedItems(posky.quests)
 const ambiguousNames = ambiguousQuestNames(posky.quests)
 
+// questKey → quest, derived once (static bundled data). Used by the live turn-in
+// celebration to resolve a matched key back to its quest for the callback (Task #46).
+const questByKey = new Map<string, PoskyQuest>(posky.quests.map((q) => [questKey(q), q]))
+
 const COUNT_SOURCE_KEY = 'eq.countSource'
 
 export { questKey }
-
-/**
- * Match logged turn-ins to quests: a quest is turned in when its giver received
- * (in one trade) every item the quest requires.
- */
-function matchTurnIns(turnIns: TurnInEvent[], quests: PoskyQuest[]): Set<string> {
-  const matched = new Set<string>()
-  for (const t of turnIns) {
-    const npc = t.npc.toLowerCase()
-    // Normalize the +N variant at the matching boundary: a `You offered 1 Sphinx
-    // Claw +1` line should satisfy a quest requiring `Sphinx Claw` (Task #42).
-    const offered = new Set(t.items.map((i) => itemCountKey(i)))
-    for (const q of quests) {
-      if (!q.giver || q.giver.toLowerCase() !== npc) continue
-      if (q.items.length > 0 && q.items.every((it) => offered.has(itemCountKey(it.name)))) {
-        matched.add(questKey(q))
-      }
-    }
-  }
-  return matched
-}
 
 function loadCountSource(): CountSource {
   const v = localStorage.getItem(COUNT_SOURCE_KEY)
@@ -135,13 +119,46 @@ export interface UseProgress {
   ambiguousQuestNames: Set<string>
 }
 
-export function useProgress(): UseProgress {
+export interface UseProgressOptions {
+  /**
+   * Fired ONCE per quest the instant it transitions to completed via a LIVE detected
+   * turn-in (the giver received every required item while the app is open). Mirrors the
+   * boss-defeat celebration contract (Task #46 / #24): the historical baseline (quests
+   * already completed on load, and turn-ins found in the initial log scan) is seeded
+   * SILENTLY on the first snapshot and NEVER fires; only a transition observed after that
+   * baseline fires. Manual checkbox completion (setQuestComplete) does NOT route through
+   * here, so it never celebrates.
+   */
+  onQuestComplete?: (quest: PoskyQuest) => void
+}
+
+export function useProgress(opts?: UseProgressOptions): UseProgress {
   const [progress, setProgress] = useState<ProgressState | null>(null)
   const [character, setCharacter] = useState<string | null>(null)
   const [countSource, setCountSourceState] = useState<CountSource>(loadCountSource)
 
   const lootHistory = useModule<LootSnap, LootDelta>('loot', applyLootDelta) ?? EMPTY_LOOT
-  const turnIns = useModule<TurnInSnap, TurnInDelta>('turnins', applyTurnInDelta) ?? EMPTY_TURNINS
+  // Raw (nullable) turn-in snapshot: null until the module hydrates. We gate the
+  // celebration baseline on hydration so the historical turn-ins that arrive WITH the
+  // snapshot seed the baseline silently instead of looking like live transitions.
+  const turnInsRaw = useModule<TurnInSnap, TurnInDelta>('turnins', applyTurnInDelta)
+  const turnIns = turnInsRaw ?? EMPTY_TURNINS
+
+  // Baseline of quest keys already satisfied by a turn-in — seeded silently on the FIRST
+  // observation so historical turn-ins (in the initial log scan) never celebrate. A key
+  // that appears in the matched set AFTER the baseline is a live transition → celebrate
+  // exactly once. Kept in a ref (not state) so it never triggers a re-render, mirroring
+  // useBossKills' prevRef. Reset on character switch (state re-hydrates from scratch).
+  const matchedBaselineRef = useRef<Set<string> | null>(null)
+  const onQuestCompleteRef = useRef(opts?.onQuestComplete)
+  onQuestCompleteRef.current = opts?.onQuestComplete
+
+  useEffect(() => {
+    const off = window.eq.onCharacter(() => {
+      matchedBaselineRef.current = null
+    })
+    return off
+  }, [])
 
   useEffect(() => {
     void window.eq.getProgress().then(setProgress)
@@ -161,17 +178,31 @@ export function useProgress(): UseProgress {
     }
   }, [])
 
-  // Auto-complete quests whose items were turned in to their giver (from the log).
+  // Auto-complete quests whose items were turned in to their giver (from the log), and
+  // celebrate ONLY genuine live transitions (never the historical baseline). Gated on the
+  // turn-in snapshot being HYDRATED (turnInsRaw != null) so the historical turn-ins that
+  // arrive with the first snapshot seed the baseline silently rather than firing.
   useEffect(() => {
-    if (!progress) return
-    const matched = matchTurnIns(turnIns, posky.quests)
+    if (!progress || turnInsRaw == null) return
+    const matched = matchTurnIns(turnInsRaw, posky.quests)
+
+    // Celebrate any key newly in `matched` vs the last observation — but seed the
+    // baseline SILENTLY on the first hydrated run so the initial log scan's historical
+    // turn-ins (and already-persisted completions) never fire. This is the boss-defeat
+    // baseline rule applied to turn-ins (Task #46).
+    for (const key of newlyCompletedTurnIns(matchedBaselineRef.current, matched)) {
+      const quest = questByKey.get(key)
+      if (quest) onQuestCompleteRef.current?.(quest)
+    }
+    matchedBaselineRef.current = matched
+
     const done = new Set(progress.completedQuests)
     const toComplete = [...matched].filter((k) => !done.has(k))
     if (toComplete.length === 0) return
     void Promise.all(toComplete.map((k) => window.eq.setQuestComplete(k, true))).then((results) => {
       if (results.length) setProgress(results[results.length - 1])
     })
-  }, [turnIns, progress])
+  }, [turnInsRaw, progress])
 
   const setCountSource = useCallback((s: CountSource) => {
     localStorage.setItem(COUNT_SOURCE_KEY, s)

@@ -127,13 +127,31 @@ function parseMainPageClass($: cheerio.CheerioAPI, cls: string, source: string):
           if (t && title) pageByName[normName(t)] = title
         })
 
-      // Parse the "Quest Items" cell. Each item sits on its own line (<br>) and
-      // looks like "Name (island-who)", "Name (island)", or just "Name".
-      const cellHtml = $(tds[cItems]).html() ?? ''
-      const segments = cellHtml
-        .split(/<br\s*\/?>/i)
-        .map((h) => cheerio.load('<x>' + h + '</x>')('x').text().replace(/\s+/g, ' ').trim())
-        .filter(Boolean)
+      // Parse the "Quest Items" cell. Two layouts appear on the page:
+      //   (a) the newer checkbox <ul><li> list — ONE item per <li>, e.g.
+      //       "<li>Nebulous Sapphire (7-SotS)</li><li>Brass Knuckles</li>"; and
+      //   (b) the older flat cell where items are <br>-separated on their own line.
+      // Each item looks like "Name (island-who)", "Name (island)", or just "Name".
+      //
+      // The <li> layout is the efreeti-cycle blind spot (Task #46): a second required
+      // item (an efreeti drop like Brass Knuckles / Efreeti War Horn) sits in its OWN
+      // <li> with NO parenthetical hint, trailing a first item that HAS one. Splitting
+      // the whole cell text by <br> yields a single blob, and the per-item paren regex
+      // then matches only the paren'd first item, silently dropping the efreeti item.
+      // Iterating <li> boundaries first restores those items. Falls back to <br> for
+      // the older flat cells (no <li>).
+      const itemsCell = $(tds[cItems])
+      const cellHtml = itemsCell.html() ?? ''
+      const liEls = itemsCell.find('li')
+      const segments = liEls.length
+        ? liEls
+            .map((_j, li) => $(li).text().replace(/\s+/g, ' ').trim())
+            .get()
+            .filter(Boolean)
+        : cellHtml
+            .split(/<br\s*\/?>/i)
+            .map((h) => cheerio.load('<x>' + h + '</x>')('x').text().replace(/\s+/g, ' ').trim())
+            .filter(Boolean)
 
       const items: PoskyItem[] = []
       const pushItem = (name: string, inside?: string): void => {

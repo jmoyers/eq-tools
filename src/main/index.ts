@@ -129,6 +129,13 @@ console.log(`[eq-tools] Spell DB: ${spellDb.spells.length} spells (${spellDb.cas
 // persisted overlay so it starts warm; the user's overlay is re-saved (debounced) as the
 // live log teaches it more.
 const buffsModule = new BuffsModule(spellDb, [baselineOverlay(), loadUserOverlay()])
+// DERIVED EVENTS (Task #47): the buffs module is the only authoritative source of the RESOLVED
+// "wears off you / your pet" signal (the raw parser buffWearOff carries an ambiguous candidate
+// list for the 123 shared-message families). Let it synthesize a `buffExpired { spell, target }`
+// back onto the SAME bus so the alerts module (registered after buffs) can match one reliable
+// kind for both sides. bus.emitDerived queues it until the current primary event finishes
+// delivering — no re-entrancy, no feedback loop (buffs ignores buffExpired).
+buffsModule.setDerivedEmitter((ev, live) => bus.emitDerived(ev, live))
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)

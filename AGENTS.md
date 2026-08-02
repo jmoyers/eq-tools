@@ -99,6 +99,24 @@ handoff makes the scan→tail seam lossless; do not revert to `fromStart:false`
   confetti/sound. `onNewDefeat` passes the boss name as context to
   `fireAppSignal('bossDefeat', name)` so it lands in the alert's recent-fires
   history (see below).
+- **Sky turn-in celebration (Task #46) mirrors the boss pattern for QUESTS.** When a
+  Plane of Sky quest transitions to COMPLETED via a detected turn-in (the giver
+  received every required item — the auto-complete path in `useProgress`), it fires:
+  confetti in PoskyView (when that tab is open) + an app-wide "Quest complete: <name>"
+  Snackbar + `fireAppSignal('questComplete', name)` sound (seeded `quest-complete`
+  alert → `default/victory`). The pure baseline-guarded detector is
+  `features/posky/turnInCelebration.ts` (`matchTurnIns` + `newlyCompletedTurnIns`):
+  the FIRST hydrated observation seeds a silent baseline (so historical completions AND
+  turn-ins found in the initial log scan NEVER fire), and only a key that enters the
+  matched set AFTER the baseline celebrates, exactly once. `useProgress({onQuestComplete})`
+  is mounted TWICE — always in App (snackbar + sound, any tab) and in PoskyView (confetti);
+  `fireAppSignal` applies the alert cooldown so the two can't double-play the sound.
+  **Manual checkbox completion does NOT celebrate** (it goes through `setQuestComplete`,
+  not the turn-in auto-complete effect). Baseline seeding is gated on the turn-in module
+  snapshot being hydrated (`turnInsRaw != null`) so historical turn-ins arriving with the
+  snapshot seed the baseline instead of looking live. Reset on character switch.
+  `Confetti.tsx` was moved to **`src/renderer/src/lib/Confetti.tsx`** (shared by BossView
+  + PoskyView). `AppSignal` gained `'questComplete'`.
 - Reducers: src/main/log/reducers.ts is now just the pure kill core
   (`isCountedKill`, `recordKill`) the kills module reuses — the old monolithic
   reduceEvent/LogStore is gone.
@@ -691,6 +709,73 @@ refinementWindows.test.mts` (+5 → 40 total); all prior windows stay green.
   attributed (own cast) and tracked on that entity — the user's complaint was STRANGER casts, not
   the user buffing others.
 
+**Composite alert triggers + resolved buffExpired (Task #47).** The user: "the 'wears off' for
+YOU is different than the wears off for somebody else — we should have a way to or/and conditions
+together, and it should build good sane defaults that help you with both by default." Three parts:
+
+- **Composite triggers (`shared/types.ts`, `modules/alerts.ts`).** `AlertTrigger` is now
+  `AlertTriggerPrimitive | AlertTriggerComposite`. A composite is
+  `{ type:'any'|'all', conditions: AlertTriggerPrimitive[] }` (the primitives are the SAME
+  event/raw/app shapes — **nesting depth 1**, so storage stays flat & JSON-serializable).
+  **SEMANTICS (documented + narrow on purpose):** `'any'` fires when ANY condition matches a
+  single incoming event (OR); `'all'` fires only when EVERY condition matches **THE SAME**
+  incoming event (AND — SAME-EVENT correlation only, **no cross-event windows** — an 'all' over
+  two different `kind`s can never fire, by design). Cooldown applies once at the **alert** level
+  as before (a composite fires at most once per cooldown, not per matching condition). `'app'`
+  conditions inside a composite are ignored by the main-side matcher (renderer-derived). Existing
+  single-trigger alerts are `composite:'single'` internally and render/edit/fire unchanged.
+- **DERIVED EVENTS (the transport decision) — `log/bus.ts` `emitDerived`, `modules/buffs.ts`.**
+  The reliable "wears off YOU" signal only exists AFTER the buffs module resolves the raw
+  ambiguous line against the live active set: the parser's `buffWearOff` carries a `candidates`
+  list (123 shared-message families) and `illusionFade` names no spell at all. Rather than
+  duplicate that resolution in the alerts module, **the buffs module synthesizes a RESOLVED
+  `buffExpired { spell, target:'self'|<entity display> }` event and hands it back onto the SAME
+  bus** via `bus.emitDerived(ev, live)` (wired in `index.ts`: `buffsModule.setDerivedEmitter(...)`).
+  The bus QUEUES a derived event and drains it AFTER the current primary event finishes reaching
+  every listener (no re-entrancy), then delivers it through the same listener loop — so the alerts
+  module (registered AFTER buffs) matches it like any event. **No feedback loop is possible:**
+  buffs is the only producer and it `return`s immediately on `kind==='buffExpired'`, so a derived
+  event never spawns another; `live` is inherited from the primary event, so a replayed wear-off
+  stays `live:false` and alerts never fire on replay. `buffExpired` is emitted at the three
+  resolution points — `removeAuthoritative` (message self wears-off, resolved), `clearSelfIllusion`
+  (`Your illusion fades.` → the one active self illusion), and the `buffFade` handler (pet/named
+  fades, already resolving spell+target) — so **ONE kind covers both sides**: `target:'self'` for
+  the player, the entity display name for a pet/mob/other-player. This is why any consumer that
+  wants "a wire that fires whether MY buff or MY PET's buff wore off" needs only `buffExpired`.
+  A wears-off with NO matching active buff emits nothing (never fabricate a phantom fade).
+- **target-match CONVENTION (Task #47).** On a `buffExpired` event trigger, `where:{target:'self'}`
+  matches only the PLAYER-side expiry; **OMITTING `target` matches any** (self OR a pet/entity) —
+  this is the "helps you with both by default." The where-matcher is unchanged (exact
+  case-insensitive OR `/regex/`); the convention is purely which fields you supply.
+- **Editor (`renderer/.../AlertsView.tsx`).** The add/edit dialog now has a "Fire when…" mode
+  (single / any / all); `any`/`all` show a **condition-list** UI (add/remove rows, each a full
+  primitive editor). The event-kind picker derives from **`shared/logEventKinds.ts`
+  `ALL_LOG_EVENT_KINDS`** — a runtime array **exhaustiveness-checked against the `LogEventKind`
+  union** (a `satisfies readonly LogEventKind[]` + a compile-time assignment), so it can NEVER
+  drift. (Fixing this drift surfaced that `cc` and every buff/cast kind were missing from the old
+  hand-maintained list; `cc` was also **missing from the `LogEventKind` union itself** and is now
+  added.) The compact trigger badge renders a composite as `any(…, …)` / `all(…, …)`.
+- **Wizard dual default — SIMPLE resolved kind, NOT a composite (honest choice).** The "wears off"
+  suggestion template (`features/alerts/suggestions.ts`) now authors a **single**
+  `{ event, buffExpired, where:{spell} }` alert (target omitted). Because the buffs module emits
+  `buffExpired` for BOTH the self wears-off AND the pet/target fade, this ONE simple trigger already
+  covers both sides — a composite in the template would be redundant. So the shipped default is the
+  simple resolved kind; the composite machinery ships for **user-authored** combos (the user asked
+  for or/and CAPABILITY + good defaults, not a composite in every template). The chip reads "When
+  it wears off (you or your pet)". A separate `fade` template ("…on pet/target only", raw `buffFade`)
+  remains for users who want only the pet side. **Idempotency:** suggestion ids are unchanged
+  (`suggest:<spellKey>:<template>`), so already-created `wearsOff` suggestions keep their id — the
+  only change is the trigger those defs carry when (re)created; old created defs pointing at the
+  legacy `buffWearOff` kind are LEFT AS-IS (they still fire on the self side; re-creating via the
+  wizard overwrites the same id with the dual-default trigger).
+- **Validation:** `tests/compositeAlertsWindows.test.mts` — (A) any/all/single truth table +
+  alert-level cooldown on synthetic events through the real AlertsModule; (B) the W16 shared
+  wears-off ("Your speed returns to normal.") end-to-end: BuffsModule emits a resolved
+  `buffExpired{spell:'Quickness', target:'self'}` and an alert `where:{spell:'Quickness'}` fires on
+  it (the raw ambiguous line never could); B2 no-active → no phantom; (C) the editor kind list
+  covers the full union. Additive to the buffs model — emitter defaults to none, so all
+  W1–W18 golden windows stay byte-for-byte green.
+
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
   the renderer and **missed any charm that happened before the app opened** — the
@@ -829,6 +914,25 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
   Source of truth is the **main Plane of Sky page** compact table on eqlwiki.com
   (the dedicated per-class pages are stale). Item stat blocks come from each
   item's wiki page.
+  - **Efreeti-cycle turn-in blind spot (Task #46) — the parser dropped the second
+    required item per quest.** The "Quest Items" cell has TWO layouts: a newer
+    checkbox `<ul><li>` list (one item per `<li>`) and an older flat `<br>`-separated
+    cell. The scraper split the whole cell text by `<br>` (yielding ONE blob for the
+    `<li>` layout) then ran a per-item paren regex `([^,()]+)\s*\((...)\)` — which
+    matched only the FIRST, paren-hinted item (`Nebulous Sapphire (7-SotS)`) and
+    silently dropped the trailing efreeti-cycle item with no hint (`Brass Knuckles`,
+    `Efreeti War Horn`, …). Fix in `parseMainPageClass` (`scripts/sources/eqlegends.ts`):
+    when the cell has `<li>` elements, iterate each `<li>` as one item segment; else
+    fall back to `<br>` splitting. This restored **23 items across the roster** (every
+    class's efreeti turn-in — Brass Knuckles lands in BOTH Beastlord Test of Claw and
+    Monk Test of Fists; the rest are the per-class Efreeti War Horn/Spear/Axe/etc.).
+    Existing entries were byte-for-byte unchanged. CROSS-CHECK METHOD (rerun after any
+    scraper change): replay the real log through `LootModule` + parser, collect distinct
+    items looted while zone ∈ Plane of Sky, and diff against posky.json quest items — the
+    only Sky-looted items NOT in posky are the wiki's non-class-quest classes (island
+    **Keys**, **Haste Belts** / **Bracers**, boss-drop reward gear like Golden Efreeti
+    armor, and generic drops), verified against their item pages. The class-quest set is
+    now closed (0 wiki `<li>` items missing).
 - Spell DB: `npm run scrape:spells` → **`src/main/data/spells.json`** (NOT the renderer
   data dir — the parser in MAIN needs it; imported+inlined by spellDb.ts). Source: every
   `Template:Spellpage` wiki page. See the Task #34 buffs notes above.

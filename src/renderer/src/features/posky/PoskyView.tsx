@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import {
   Accordion,
   AccordionDetails,
@@ -38,6 +38,7 @@ import { formatDateTime } from '../../lib/formatDate'
 import { sharingQuestLabel, type SharedItem } from './sharedItems'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
+import Confetti from '../../lib/Confetti'
 
 type SortKey = 'closest' | 'least-missing' | 'class'
 
@@ -125,6 +126,14 @@ function SharedItemsSection({
 }
 
 export default function PoskyView(): JSX.Element {
+  // A quest completing via a LIVE turn-in bursts confetti over this view (mirrors
+  // BossView's onKill confetti, Task #46). useProgress gates out the historical
+  // baseline, so this only fires for a real turn-in observed while the app is open.
+  const [burst, setBurst] = useState<number | null>(null)
+  const onQuestComplete = useCallback(() => {
+    setBurst((n) => (n ?? 0) + 1)
+  }, [])
+
   const {
     quests,
     classes,
@@ -135,7 +144,7 @@ export default function PoskyView(): JSX.Element {
     inventoryInfo,
     sharedItems,
     ambiguousQuestNames
-  } = useProgress()
+  } = useProgress({ onQuestComplete })
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
@@ -204,7 +213,8 @@ export default function PoskyView(): JSX.Element {
   const totalQuests = quests.length
 
   return (
-    <Stack spacing={2} sx={{ height: '100%' }}>
+    <Stack spacing={2} sx={{ height: '100%', position: 'relative' }}>
+      {burst != null && <Confetti key={burst} onDone={() => setBurst(null)} />}
       <Stack direction="row" spacing={2} flexWrap="wrap" alignItems="center" useFlexGap>
         <Autocomplete
           multiple

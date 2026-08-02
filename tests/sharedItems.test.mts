@@ -122,8 +122,13 @@ test('real posky.json: overlap stats are sane and Wind Runes never appear', () =
       contestedNames.add(si.name)
     }
   }
-  // From the data analysis: 10 distinct contested items across 19 quests.
-  assert.equal(map.size, 19, 'exactly 19 quests have ≥1 contested item')
-  assert.equal(contestedNames.size, 10, 'exactly 10 distinct contested items')
+  // From the data analysis: 14 distinct contested items across 23 quests. (Task #46
+  // restored the efreeti-cycle turn-in items the scraper had dropped — Brass Knuckles is
+  // now shared by Beastlord Test of Claw + Monk Test of Fists, Efreeti Great Staff by
+  // Berserker + Necromancer, Efreeti Standard by Berserker + Cleric, Efreeti Statuette by
+  // Druid + Wizard — lifting the counts from 19 quests / 10 items.)
+  assert.equal(map.size, 23, 'exactly 23 quests have ≥1 contested item')
+  assert.equal(contestedNames.size, 14, 'exactly 14 distinct contested items')
   assert.ok(contestedNames.has('Sphinx Claw'), 'Sphinx Claw is a known contested item')
+  assert.ok(contestedNames.has('Brass Knuckles'), 'Brass Knuckles (restored, Task #46) is contested')
 })

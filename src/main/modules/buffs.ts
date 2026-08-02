@@ -52,7 +52,7 @@
 // pending spell also implies it landed. Landed ts = cast-BEGIN ts.
 
 import type { EqModule } from './types'
-import type { LogEvent } from '../../shared/logEvents'
+import type { LogEvent, BuffExpiredEvent } from '../../shared/logEvents'
 import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap, MessageOverlay } from '../../shared/types'
 import { idKey, spellCanonKey } from '../log/parser'
 import type { SpellDb } from '../data/spellDb'
@@ -230,13 +230,59 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
    */
   private readonly miner: MessageOverlayMiner
 
-  constructor(db?: SpellDb, seedOverlays?: (MessageOverlay | null | undefined)[]) {
+  /**
+   * DERIVED-event emitter (Task #47). When the module RESOLVES a wear-off against the live
+   * active set (self message wears-off, illusion fade, or a targeted pet/entity fade), it
+   * synthesizes a `buffExpired { spell: RESOLVED, target }` event and hands it back to the
+   * bus through this callback so the alerts module can match ONE reliable kind for both the
+   * "wore off you" and "wore off your pet/target" sides. Optional — tests and the DB-mining
+   * script construct the module without an emitter (they capture emissions differently).
+   * `live` is threaded through from the primary event so a replayed wear-off stays live:false.
+   */
+  private emitDerived?: (ev: LogEvent, live: boolean) => void
+  /** The (seq, ts, live) of the primary event currently being folded — used to stamp derived events. */
+  private curSeq = 0
+  private curTs = 0
+  private curLive = false
+
+  constructor(
+    db?: SpellDb,
+    seedOverlays?: (MessageOverlay | null | undefined)[],
+    emitDerived?: (ev: LogEvent, live: boolean) => void
+  ) {
     this.db = db
+    this.emitDerived = emitDerived
     this.miner = new MessageOverlayMiner(db?.byKey)
     // Seed the miner with the committed baseline + the user's persisted overlay (both
     // additive) so it starts warm — a fresh install benefits from the shipped baseline,
     // a returning user keeps everything their own log has taught (Task #36).
     for (const ov of seedOverlays ?? []) this.miner.merge(ov)
+  }
+
+  /** Install/replace the derived-event emitter after construction (index.ts wires the bus). */
+  setDerivedEmitter(fn: (ev: LogEvent, live: boolean) => void): void {
+    this.emitDerived = fn
+  }
+
+  /**
+   * Synthesize a RESOLVED `buffExpired` derived event (Task #47) onto the bus. `target` is
+   * 'self' for a player-side expiry, else the bound entity's display name. Stamped with the
+   * primary event's seq/ts/live so it slots into the stream coherently and alerts respects the
+   * replay gate. No-op without an emitter (tests/scripts).
+   */
+  private emitBuffExpired(spell: string, target: 'self' | string): void {
+    if (!this.emitDerived) return
+    const who = target === 'self' ? 'you' : target
+    const ev: BuffExpiredEvent = {
+      kind: 'buffExpired',
+      seq: this.curSeq,
+      ts: this.curTs,
+      // A synthesized human-readable line — this is what the alert's recent-fires panel shows.
+      raw: `${spell} wore off ${who}.`,
+      spell,
+      target
+    }
+    this.emitDerived(ev, this.curLive)
   }
 
   /** Serialize the current learned overlay (for debounced persistence in index.ts). */
@@ -288,6 +334,10 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         this.active.delete(ik)
         this.open.delete(ik)
         this.dirty = true
+        // DERIVED buffExpired (Task #47): the raw `Your illusion fades.` line names no spell,
+        // but we've RESOLVED it to the one active self illusion — emit that resolved spell so
+        // an alert `where:{spell:'Illusion: Wood Elf'}` can fire on the player-side click-off.
+        this.emitBuffExpired(a.spell, 'self')
       }
     }
   }
@@ -426,8 +476,16 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     }
   }
 
-  onEvent(ev: LogEvent): void {
+  onEvent(ev: LogEvent, live = false): void {
     this.seq = ev.seq
+    // A DERIVED buffExpired (Task #47) is our OWN synthesized event — never fold it (that
+    // would be a feedback loop). It exists purely for the alerts module to match.
+    if (ev.kind === 'buffExpired') return
+    // Record the primary event's identity so any buffExpired we synthesize while folding it is
+    // stamped with the right seq/ts/live (alerts respects the replay gate via `live`).
+    this.curSeq = ev.seq
+    this.curTs = ev.ts
+    this.curLive = live
     if (this.lastEventTs > 0 && ev.ts - this.lastEventTs >= SESSION_GAP_MS) {
       this.clearAllForGap()
     }
@@ -558,6 +616,11 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         tally[disp]++
         if (this.pending && this.pending.key === key) this.landPending(ev.ts)
         this.recordFade(key, entityKey, ev.spell, ev.ts)
+        // DERIVED buffExpired (Task #47): buffFade already carries a RESOLVED spell + target
+        // (the possessive/named-target worn-off shapes name both). Synthesize the unified
+        // resolved event so ONE alert kind covers a fade on your pet/target as well as the
+        // self message wears-off above — the "helps you with both by default" the user asked for.
+        this.emitBuffExpired(ev.spell, this.buffFadeTargetDisplay(ev.target, entityKey))
         break
       }
       case 'playerDeath': {
@@ -818,6 +881,15 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     const spell = this.active.get(iKey)?.spell ?? this.samples.get(key)?.spell ?? key
     this.everFaded.add(key)
     this.recordFade(key, entityKey, spell, ts)
+    // DERIVED buffExpired (Task #47): the wear-off is now RESOLVED to `spell` on `entityKey`.
+    // Alerts match this reliable, unambiguous kind instead of the raw ambiguous buffWearOff.
+    this.emitBuffExpired(spell, this.targetDisplayFor(entityKey))
+  }
+
+  /** Map an entity key to a `buffExpired.target` value: 'self' or the entity's display name. */
+  private targetDisplayFor(entityKey: string): 'self' | string {
+    if (entityKey === SELF_KEY) return 'self'
+    return this.namedEntityDisplay.get(entityKey) ?? entityKey
   }
 
   /**
@@ -884,6 +956,24 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     const nameKey = idKey(rawTarget)
     const disp = classifyFadeTarget(nameKey, this.petState())
     return { entityKey: nameKey, disp }
+  }
+
+  /**
+   * The `buffExpired.target` display for a buffFade (Task #47). Targetless → 'self'; the
+   * possessive 'pet' form → the current pet's display name (or the literal 'pet'); a named
+   * mob → its raw display name (the fade line preserves casing).
+   */
+  private buffFadeTargetDisplay(rawTarget: string | undefined, entityKey: string): 'self' | string {
+    if (!rawTarget) return 'self'
+    if (rawTarget === 'pet') {
+      return this.namedEntityDisplay.get(entityKey) ?? this.currentPetDisplay() ?? 'pet'
+    }
+    return rawTarget
+  }
+
+  /** The current pet's display name (summoned preferred, else charmed), or undefined. */
+  private currentPetDisplay(): string | undefined {
+    return this.summonedDisplay ?? this.charmedDisplay
   }
 
   /**

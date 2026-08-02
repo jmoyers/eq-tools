@@ -223,6 +223,7 @@ export type LogEventKind =
   | 'miss'
   | 'charm'
   | 'uncharm'
+  | 'cc'
   | 'petClaim'
   | 'castBegin'
   | 'castFizzle'
@@ -234,25 +235,51 @@ export type LogEventKind =
   | 'buffWearOff'
   | 'aaActivate'
   | 'illusionFade'
+  | 'buffExpired'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */
-export type AppSignal = 'bossDefeat'
+export type AppSignal = 'bossDefeat' | 'questComplete'
 
 /**
- * An alert trigger. Three shapes:
+ * A PRIMITIVE alert trigger — the three original shapes:
  *  - event: match a typed LogEvent by `kind`, with optional field matchers. Each
  *    matcher value is either an exact string (case-insensitive equality on the
  *    stringified field) OR a `/regex/` string (slashes delimit → tested as a
- *    case-insensitive RegExp against the stringified field).
+ *    case-insensitive RegExp against the stringified field). For a `target` field,
+ *    the convention is `where:{target:'self'}` matches only the player-side expiry
+ *    and OMITTING target matches any (self OR another entity) — Task #47.
  *  - raw:   match the raw log line with a case-insensitive regex.
  *  - app:   a renderer-side signal (e.g. bossDefeat). Main stores/serves these but
  *           never evaluates them; the always-mounted player fires them.
  */
-export type AlertTrigger =
+export type AlertTriggerPrimitive =
   | { type: 'event'; kind: LogEventKind; where?: Record<string, string> }
   | { type: 'raw'; regex: string }
   | { type: 'app'; signal: AppSignal }
+
+/**
+ * A COMPOSITE trigger (Task #47) — combine primitive conditions with OR/AND:
+ *  - type 'any': fires when ANY condition matches a single incoming event (OR).
+ *  - type 'all': fires only when ALL conditions match THE SAME event (AND).
+ *
+ * SEMANTICS (documented, deliberately narrow): 'all' is same-event correlation only —
+ * every condition must match the ONE incoming event. Cross-event correlation windows
+ * (e.g. "buff X faded AND boss Y is up") are OUT OF SCOPE. Conditions are the primitive
+ * shapes above; nesting is not supported (depth 1), which keeps evaluation O(conditions)
+ * per event and the storage flat & JSON-serializable. Cooldown applies at the ALERT
+ * level as today (a composite fires at most once per cooldown, not per matching condition).
+ *
+ * 'app' conditions inside a composite are ignored by the main-side matcher (they depend on
+ * renderer-derived boss state); compose event/raw conditions for main-side alerts.
+ */
+export interface AlertTriggerComposite {
+  type: 'any' | 'all'
+  conditions: AlertTriggerPrimitive[]
+}
+
+/** An alert trigger: a primitive shape or an any/all composite (Task #47). */
+export type AlertTrigger = AlertTriggerPrimitive | AlertTriggerComposite
 
 /** Which sound a fired alert plays: a pack id + a sound id within that pack. */
 export interface AlertSoundRef {

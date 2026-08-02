@@ -12,10 +12,13 @@
 //   - each row shows the spell name, a buff/debuff chip (+ illusion), and small one-click
 //     TEMPLATE chips — each chip authors the EXACT alert whose trigger the spell DB can
 //     actually fire (validated against logEvents.ts + the AlertsModule matcher):
-//       "wears off you"        → { event, buffWearOff, where:{spell} }   (Beneficial + wears-off msg)
-//       "fades on pet/target"  → { event, buffFade,     where:{spell} }  (Beneficial)
-//       "lands on a target"    → { event, buffApply,    where:{spell} }  (Detrimental + cast-on-other)
-//       "illusion fades"       → { event, illusionFade }                 (shared, illusion spells)
+//       "wears off (you or pet)" → { event, buffExpired, where:{spell} }  (Beneficial + wears-off
+//                                    msg) — the DUAL DEFAULT (Task #47): the buffs module emits a
+//                                    RESOLVED buffExpired for a self wears-off AND a pet/target
+//                                    fade, so ONE simple trigger covers both sides by default.
+//       "fades on pet/target only" → { event, buffFade,   where:{spell} }  (Beneficial, pet side only)
+//       "lands on a target"      → { event, buffApply,   where:{spell} }  (Detrimental + cast-on-other)
+//       "illusion fades"         → { event, illusionFade }                (shared, illusion spells)
 //   - clicking a chip saves the alert immediately and shows an "Alert created — <name>"
 //     snackbar with an UNDO (deletes it) — no multi-step forms.
 //

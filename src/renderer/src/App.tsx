@@ -34,6 +34,7 @@ import AlertPlayer, { fireAppSignal } from './features/alerts/player'
 import { getBossData } from './data'
 import { useBossKills } from './features/bosses/useBossKills'
 import type { TargetStatus } from './features/bosses/bossStatus'
+import { useProgress } from './features/posky/useProgress'
 
 const bossData = getBossData()
 
@@ -57,6 +58,9 @@ export default function App(): JSX.Element {
   const [live, setLive] = useState(false)
   // App-wide "raid target defeated" toast — fires on any tab.
   const [defeatToast, setDefeatToast] = useState<TargetStatus | null>(null)
+  // App-wide "quest complete" toast — fires on any tab the instant a Sky turn-in
+  // auto-completes a quest.
+  const [questToast, setQuestToast] = useState<string | null>(null)
 
   const [rebuild, setRebuild] = useState(0)
 
@@ -71,6 +75,20 @@ export default function App(): JSX.Element {
   useBossKills(bossData.targets, {
     onKill: (s) => setDefeatToast(s),
     onNewDefeat: (s) => fireAppSignal('bossDefeat', s.target.name)
+  })
+
+  // App-level Sky turn-in watch: always mounted so the celebration fires on ANY tab,
+  // the same as the boss watch above. useProgress seeds a silent baseline on the first
+  // hydrated snapshot, so historical completions on load never fire — only a live
+  // turn-in transition does (Task #46). This is the SINGLE always-mounted place we fire
+  // the 'questComplete' app signal (sound) + the app-wide snackbar; PoskyView's own
+  // useProgress additionally bursts confetti when that tab is open. fireAppSignal applies
+  // the alert cooldown, so PoskyView's detector firing in the same tick can't double-play.
+  useProgress({
+    onQuestComplete: (q) => {
+      setQuestToast(q.name)
+      fireAppSignal('questComplete', q.name)
+    }
   })
 
   // Remember the selected tab across launches (renderer-only).
@@ -230,6 +248,23 @@ export default function App(): JSX.Element {
           sx={{ alignItems: 'center' }}
         >
           Raid target defeated: {defeatToast?.target.name}!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={!!questToast}
+        autoHideDuration={6000}
+        onClose={() => setQuestToast(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          severity="success"
+          variant="filled"
+          icon={<ShieldMoonIcon fontSize="inherit" />}
+          onClose={() => setQuestToast(null)}
+          sx={{ alignItems: 'center' }}
+        >
+          Quest complete: {questToast}
         </Alert>
       </Snackbar>
     </Box>
