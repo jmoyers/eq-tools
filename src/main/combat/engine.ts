@@ -99,6 +99,8 @@ interface SkillStat {
   hits: number
   crits: number
   max: number
+  /** Smallest LANDED amount on this lane; 0 = "no landed hit yet" (see accrueMin). */
+  min: number
   misses: number
   /** Spell resists on this spell/dot lane (Task #51 v2). */
   resists: number
@@ -152,7 +154,23 @@ interface SourceStat {
 }
 
 function newSkill(name: string): SkillStat {
-  return { name, total: 0, hits: 0, crits: 0, max: 0, misses: 0, resists: 0 }
+  return { name, total: 0, hits: 0, crits: 0, max: 0, min: 0, misses: 0, resists: 0 }
+}
+
+/**
+ * Fold a LANDED amount into a per-skill running minimum. 0 is the "nothing landed yet"
+ * sentinel: route() drops amount <= 0, so every value reaching here is > 0 and a lane that
+ * only ever missed/resisted keeps min 0 (never a fabricated "min 3 → min 0" from a whiff).
+ */
+function accrueMin(prev: number, amount: number): number {
+  return prev === 0 ? amount : Math.min(prev, amount)
+}
+
+/** Merge two per-skill minima under the same sentinel rule (used by the combine-pets fold). */
+function mergeMin(a: number, b: number): number {
+  if (a === 0) return b
+  if (b === 0) return a
+  return Math.min(a, b)
 }
 
 function newCategory(category: DamageCategory): CategoryStat {
@@ -196,6 +214,7 @@ function addToSource(src: SourceStat, ev: DamageEvent, ambiguous: boolean): void
   s.hits += 1
   if (ev.crit) s.crits += 1
   s.max = Math.max(s.max, ev.amount)
+  s.min = accrueMin(s.min, ev.amount)
   src.bySkill.set(ev.skill, s)
 
   // Category rollup (drill-down level 2/3): same skill breakdown, but partitioned by
@@ -210,6 +229,7 @@ function addToSource(src: SourceStat, ev: DamageEvent, ambiguous: boolean): void
   cs.hits += 1
   if (ev.crit) cs.crits += 1
   cs.max = Math.max(cs.max, ev.amount)
+  cs.min = accrueMin(cs.min, ev.amount)
   c.bySkill.set(ev.skill, cs)
   src.byCategory.set(ev.category, c)
 
@@ -1586,6 +1606,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
           prev.misses += sk.misses
           prev.resists += sk.resists
           prev.max = Math.max(prev.max, sk.max)
+          prev.min = mergeMin(prev.min, sk.min)
         } else {
           you.bySkill.set(key, { ...sk, name: key })
         }
@@ -1608,6 +1629,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
             prev.crits += sk.crits
             prev.resists += sk.resists
             prev.max = Math.max(prev.max, sk.max)
+            prev.min = mergeMin(prev.min, sk.min)
           } else {
             yc.bySkill.set(key, { ...sk, name: key })
           }
@@ -1668,8 +1690,9 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
  * own per-skill breakdown capped at 12 (same cap as the top-level skills — small payload).
  */
 /** Build a SkillView mapper closed over the category/source's max-total (for the bar pct).
- *  `misses` is always emitted (unchanged from pre-#51v2); `resists` is added additively
- *  and only present when non-zero so damage-only skill rows keep their exact prior shape. */
+ *  `misses` is always emitted (unchanged from pre-#51v2); `resists` and `min` are additive
+ *  and only present when they mean something (a non-zero resist count / at least one landed
+ *  hit), so damage-only and resist-only skill rows keep their exact prior shape. */
 function skillView(skMax: number): (k: SkillStat) => SkillView {
   return (k) => ({
     name: k.name,
@@ -1678,6 +1701,9 @@ function skillView(skMax: number): (k: SkillStat) => SkillView {
     hits: k.hits,
     crits: k.crits,
     max: k.max,
+    // min is meaningful only over LANDED hits: a lane that only ever missed/resisted has no
+    // smallest hit to report, and emitting 0 would read as "landed a 0-damage hit".
+    ...(k.hits > 0 ? { min: k.min } : {}),
     misses: k.misses,
     ...(k.resists ? { resists: k.resists } : {})
   })

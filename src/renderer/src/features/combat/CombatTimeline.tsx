@@ -3,9 +3,10 @@ import { Box, IconButton, Paper, Stack, Tooltip as MuiTooltip, Typography } from
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import FitScreenIcon from '@mui/icons-material/FitScreen'
-import type { DamageCategory, TimelineEvent, TimelineView } from '@shared/combat'
+import type { TimelineEvent, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
+import { CAT_COLOR, RESIST_COLOR } from './combatShared'
 
 // Dense, dark, WarcraftLogs-style timeline (Task #51 v2): X = encounter time, Y = one row
 // per skill/spell (left-axis labels), ticks where events occurred. Stance/invocation spans
@@ -21,15 +22,10 @@ import { formatNum as fmt } from '../../lib/formatRate'
 // Zoom/pan is a renderer-side view window [start,end] in ms; only ticks inside the window
 // render (windowed by visible time range) so the SVG stays cheap at the 5k ring cap.
 
-const CAT_COLOR: Record<DamageCategory, string> = {
-  melee: '#d9b25f',
-  slay: '#e8d48a',
-  spell: '#a98fe0',
-  dot: '#6fb3d2',
-  ds: '#cf6679'
-}
+// Category colors + the miss/resist tint come from combatShared — ONE source, so the timeline
+// lane stripe, the drill-down bar and the overlay can never disagree about what 'slay' looks
+// like (it used to keep a private copy, which is how slay stayed melee-gold here).
 const KIND_OPACITY: Record<string, number> = { you: 1, pet: 0.75, enemy: 0.5 }
-const RESIST_COLOR = '#e05663' // red-tinted mark for miss/resist ticks
 
 // Timeline sizing (Task #54): the chart FILLS its container. Width comes from a ResizeObserver on
 // the scroll box; lane height grows to use the available vertical space (min MIN_LANE_H for

@@ -152,6 +152,41 @@ for (const lag of [0, 6_000]) {
   })
 }
 
+/**
+ * Per-skill MIN (the skill-bar stat summary), hand-read off the FIXTURE. Fight 1 (the
+ * Teir`Dal rogue) is small enough to read exhaustively — every "You <verb> a Teir`Dal rogue
+ * for N points of damage." line in w24-multi-mob-no-split.log, by lane (slash/pierce fold into
+ * the parser's "Melee" skill; Bash and Backstab are their own):
+ *   Melee    : slash 110, pierce 34, pierce 59, slash 61 → 4 hits, 264, min 34, max 110
+ *   Bash     : 1                                          → 1 hit,    1, min  1, max   1
+ *   Backstab : 116, 19                                    → 2 hits, 135, min 19, max 116
+ * = 7 hits / 400 damage, matching the window's hand-counted rogue total.
+ */
+test('W24: per-skill min/max are hand-derivable from the fixture (rogue fight)', { skip: W24.length === 0 && 'fixture not present' }, () => {
+  const { eng, lastTs } = replay(W24)
+  const rogue = fights(eng, lastTs)[0]
+  const sel = eng.snapshot(lastTs + 120_000, { selectedId: rogue.id }).selected!
+  const you = sel.entities.find((e) => e.id === 'you')!
+  assert.equal(you.total, 400)
+  assert.equal(you.hits, 7)
+  const skills = new Map(you.skills.map((s) => [s.name, s]))
+
+  assert.equal(skills.get('Melee')?.total, 264)
+  assert.equal(skills.get('Melee')?.hits, 4)
+  assert.equal(skills.get('Melee')?.min, 34, 'the 34-damage pierce is the smallest landed swing')
+  assert.equal(skills.get('Melee')?.max, 110)
+
+  assert.equal(skills.get('Bash')?.min, 1, 'a single 1-damage bash: min === max')
+  assert.equal(skills.get('Bash')?.max, 1)
+
+  assert.equal(skills.get('Backstab')?.min, 19)
+  assert.equal(skills.get('Backstab')?.max, 116)
+
+  // min is per-LANE, never a source-wide floor: the source's smallest landed hit (Bash 1) is
+  // not the Melee lane's min. And no lane ever reports a min above its max.
+  for (const s of you.skills) if (s.hits > 0) assert.ok(s.min! > 0 && s.min! <= s.max, `${s.name}: 0 < min <= max`)
+})
+
 // ============================================================================
 // Axis isolation + the guards the fix must NOT break. Synthetic lines in the real log's
 // shapes (verb conjugation, "for N points of damage", the miss family), because each of

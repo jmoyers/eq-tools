@@ -1,15 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { OverlayConfig, OverlayDrill, OverlayKind } from '@shared/types'
 import type { DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
+import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
 import { useOverlayCombat } from './useOverlayCombat'
 
 // Palette (matches the app's combat colors; the overlay has no MUI theme).
 const GOLD = '#d9b25f'
 const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
+// KEEP IN SYNC with the app's CAT_COLOR (features/combat/combatShared.tsx) — the overlay is a
+// separate renderer entry with no MUI theme, so it carries its own copy. 'slay' is a radiant
+// ivory, deliberately far from melee gold: a Slay Undead proc flattens into a row named after
+// its weapon skill, so at the old pale-gold it was invisible next to the plain melee row.
 const CAT_COLOR: Record<DamageCategory, string> = {
   melee: '#d9b25f',
-  slay: '#e8d48a',
+  slay: '#f6f0da',
   spell: '#a98fe0',
   dot: '#6fb3d2',
   ds: '#cf6679'
@@ -42,7 +47,8 @@ function Bar({
   label,
   right,
   onClick,
-  accent
+  accent,
+  title
 }: {
   color: string
   pct: number
@@ -52,10 +58,14 @@ function Bar({
   onClick?: () => void
   /** Full-height left stripe — keeps a skill row's category readable at any bar width. */
   accent?: string
+  /** Native hover tooltip spelling out the compacted right-hand stats (interactive mode only —
+   *  a locked overlay is click-through, so nothing hovers it). */
+  title?: string
 }): JSX.Element {
   return (
     <div
       onClick={onClick}
+      title={title}
       style={{
         position: 'relative',
         height: 18,
@@ -115,6 +125,51 @@ function flattenSkills(e: SourceView): FlatSkill[] {
   return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
 }
 
+/**
+ * The overlay's per-skill stat run, embedded INSIDE the bar after the name — identical form to
+ * the main view's bars (features/combat/combatShared.tsx skillStatText):
+ *   `12% miss · 3 - 145dmg`
+ * Density here comes from carrying FEWER stats, never from compressing labels (`12%m` / `145/3`
+ * are unreadable in a glance-and-forget overlay). The counts the main view puts one click down
+ * in its expanded readout live in this row's hover `title` instead — the overlay has no room
+ * for an expansion, and in locked (click-through) mode there would be no way to collapse one.
+ * The row TOTAL is not here — it owns the right end of the bar.
+ */
+function skillStat(s: FlatSkill): string {
+  if (s.hits === 0) return `0 landed · ${s.resists ?? 0} resisted`
+  const misses = s.misses ?? 0
+  const swings = s.hits + misses
+  const parts: string[] = []
+  if (misses > 0 && swings > 0) parts.push(`${Math.round((misses / swings) * 100)}% miss`)
+  const min = s.min ?? 0
+  parts.push(min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}dmg` : `${fmt(s.max)}dmg`)
+  return parts.join(' · ')
+}
+
+/**
+ * The overlay's stand-in for the main view's expanded per-ability readout: the same figures,
+ * fully labeled, as the row's hover title (interactive mode — a locked overlay is
+ * click-through, so it neither hovers nor could collapse an inline expansion).
+ */
+function skillTitle(s: FlatSkill, catLabel: string): string {
+  if (s.hits === 0) return `${s.name} (${catLabel}) — 0 landed · ${s.resists ?? 0} resisted`
+  const misses = s.misses ?? 0
+  const swings = s.hits + misses
+  const resists = s.resists ?? 0
+  const casts = s.hits + resists
+  const bits = [
+    `total ${fmt(s.total)}`,
+    `${s.hits} hits`,
+    `avg per hit ${fmt(Math.round(s.total / s.hits))}`,
+    `${s.crits} crits (${Math.round((s.crits / s.hits) * 100)}% crit)`
+  ]
+  if (misses > 0) bits.push(`${Math.round((misses / swings) * 100)}% miss (${misses} of ${swings} swings avoided)`)
+  if (resists > 0) bits.push(`${resists} resisted of ${casts} casts (${Math.round((resists / casts) * 100)}%)`)
+  const min = s.min ?? 0
+  bits.push(min > 0 && min !== s.max ? `damage range ${fmt(min)} - ${fmt(s.max)}` : `damage range ${fmt(s.max)}`)
+  return `${s.name} (${catLabel}) — ${bits.join(' · ')}`
+}
+
 /** The bar body: entities → flat skill list, driven by the drill state.
  *  `setDrill` is null in locked mode: the same levels render, minus every affordance. */
 function MeterBars({
@@ -154,8 +209,24 @@ function MeterBars({
             color={CAT_COLOR[s.category]}
             accent={CAT_COLOR[s.category]}
             pct={s.pct}
-            label={s.name}
-            right={s.hits > 0 ? `${fmt(s.total)} · ${s.hits}` : `${s.resists ?? 0} resist`}
+            label={
+              <>
+                {s.name}
+                {/* A Slay Undead proc flattens into a row named after its weapon skill, so
+                    without this tag it is a duplicate of the plain melee row. The category has
+                    to be readable from the ROW; the overlay has no legend to fall back on. */}
+                {s.category === 'slay' && (
+                  <span style={{ color: CAT_COLOR.slay, fontWeight: 600 }}> · Slay Undead</span>
+                )}
+                {/* Labeled stats ride inside the bar, dimmed against the name; the right end
+                    of every row stays the total alone so the list scans as a ranking. */}
+                <span style={{ marginLeft: 6, color: 'rgba(255,255,255,0.62)', fontWeight: 400 }}>
+                  {skillStat(s)}
+                </span>
+              </>
+            }
+            right={fmt(s.total)}
+            title={skillTitle(s, CATEGORY_LABEL[s.category])}
           />
         ))}
       </MeterCrumb>

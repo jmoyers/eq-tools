@@ -29,6 +29,13 @@ export interface SkillView {
   hits: number
   crits: number
   max: number
+  /**
+   * Smallest LANDED hit amount on this lane. Tracked over damage amounts ONLY — a miss or a
+   * resist carries no amount, so an all-avoided lane must never report `min 0`. Absent when
+   * the lane never landed a hit (resist-only lanes), and equal to `max` for a single-hit or
+   * fixed-damage lane (the UI collapses that case to just the max).
+   */
+  min?: number
   /** Avoided swings for this skill (miss/dodge/parry/riposte/block/absorb). */
   misses?: number
   /** Spell resists for this spell/dot lane (Task #51 v2). resist rate = resists/(hits+resists). */

@@ -15,7 +15,18 @@ import { Box, Stack, Tooltip, Typography } from '@mui/material'
 import type { SegmentView, SourceView, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import { ApproxChip, Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
+import {
+  ApproxChip,
+  Bar,
+  CAT_COLOR,
+  DashCard,
+  KIND_COLOR,
+  QuietNote,
+  RESIST_COLOR,
+  SkillBar,
+  SkillName,
+  fmtDur
+} from './combatShared'
 import {
   buildDpsSeries,
   composition,
@@ -246,7 +257,7 @@ export function BreakdownPreviewCard({
             <Box key={`${s.category}|${s.name}`} sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: '1px' }}>
               <Box sx={{ width: 6, height: 6, borderRadius: '2px', bgcolor: CAT_COLOR[s.category], flexShrink: 0 }} />
               <Typography variant="caption" noWrap sx={{ flexGrow: 1, minWidth: 0 }}>
-                {s.name}
+                <SkillName name={s.name} category={s.category} />
               </Typography>
               <Box
                 sx={{

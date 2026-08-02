@@ -225,8 +225,9 @@ export interface TargetDetail {
  * grouped by (lane, category). You + pet are COMBINED here — the ring's per-event `kind`
  * could split them, but the panel exists to answer "what killed this mob", and a combined
  * list keeps the row set short; the header labels the combination.
- * `max` is the largest single observed hit and is deliberately NOT scaled by the sampling
- * factor (a sampled max is a lower bound; inflating it would invent a hit that never landed).
+ * `max`/`min` are the largest/smallest single observed hits and are deliberately NOT scaled by
+ * the sampling factor (a sampled max is a lower bound and a sampled min an upper bound;
+ * scaling either would invent a hit that never landed).
  */
 export function skillsForTarget(tl: TimelineView, target: string): TargetDetail {
   const scale = sampleScale(tl)
@@ -242,7 +243,7 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
     const key = `${e.category}|${e.lane}`
     let row = byLane.get(key)
     if (!row) {
-      row = { name: e.lane, category: e.category, total: 0, pct: 0, hits: 0, crits: 0, max: 0, misses: 0, resists: 0 }
+      row = { name: e.lane, category: e.category, total: 0, pct: 0, hits: 0, crits: 0, max: 0, min: 0, misses: 0, resists: 0 }
       byLane.set(key, row)
     }
     if (e.outcome === 'miss') {
@@ -258,6 +259,9 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
       if (e.crit) crits += 1
       if (e.crit) row.crits += 1
       if (e.amount > row.max) row.max = e.amount
+      // min over LANDED amounts only (0 = nothing landed yet — a miss/resist tick carries no
+      // amount and must never pull the minimum to 0). Like `max` it is left UNSCALED.
+      if (!row.min || e.amount < row.min) row.min = e.amount
       total += e.amount
     }
   }

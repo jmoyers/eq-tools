@@ -104,6 +104,48 @@ test('W-tax1: level-3 per-skill breakdown within the spell category', () => {
   assert.equal(skills.get('Vampiric Embrace')?.total, 58)
 })
 
+/**
+ * Per-skill MIN/MAX (the skill-bar stat summary). Hand-read straight off the WINDOW lines
+ * above — every landed amount, per lane:
+ *   melee 'Melee' (smite/crush): 7, 22, 2, 18, 22, 22          → min  2 / max 22 (6 hits)
+ *   melee 'Kick':                10, 9, 7                      → min  7 / max 10 (3 hits)
+ *   slay  'Melee' (the one Slay Undead crush): 75              → min 75 / max 75 (1 hit)
+ *   spell 'Smiting Strike':      63, 63                        → min 63 / max 63 (2 hits)
+ *   spell 'Vampiric Embrace':    29, 29                        → min 29 / max 29 (2 hits)
+ * The single-value lanes are the "min === max collapses to just max" case the UI relies on.
+ */
+test('W-tax1: per-skill min tracks the smallest LANDED hit, next to max', () => {
+  const { eng, lastTs } = replay()
+  const snap = eng.snapshot(lastTs + 6000, { selectedId: 'zone' })
+  const you = snap.selected!.entities.find((e) => e.id === 'you')!
+  const cat = (c: string): Map<string, { min?: number; max: number; hits: number }> =>
+    new Map(you.categories.find((x) => x.category === c)!.skills.map((s) => [s.name, s]))
+
+  const melee = cat('melee')
+  assert.equal(melee.get('Melee')?.min, 2, 'smallest crush in the window')
+  assert.equal(melee.get('Melee')?.max, 22)
+  assert.equal(melee.get('Kick')?.min, 7)
+  assert.equal(melee.get('Kick')?.max, 10)
+
+  // Slay Undead is its own lane: one 75 hit, so min === max (the UI collapses it to "max 75").
+  const slay = cat('slay')
+  assert.equal(slay.get('Melee')?.min, 75)
+  assert.equal(slay.get('Melee')?.max, 75)
+
+  const spell = cat('spell')
+  assert.equal(spell.get('Smiting Strike')?.min, 63)
+  assert.equal(spell.get('Vampiric Embrace')?.min, 29)
+
+  // The source-level lane merges melee + slay under the same skill name ("Melee"), so its min
+  // is the melee 2 and its max the slay 75 — the aggregation is per (lane) there by design.
+  const top = new Map(you.skills.map((s) => [s.name, s]))
+  assert.equal(top.get('Melee')?.min, 2)
+  assert.equal(top.get('Melee')?.max, 75)
+
+  // Totals are untouched by the additive field (the tripwire again).
+  assert.equal(you.total, 378)
+})
+
 test('W-tax1: melee-rounds heuristic is an honest cluster distribution', () => {
   const { eng, lastTs } = replay()
   const snap = eng.snapshot(lastTs + 6000, { selectedId: 'zone' })
@@ -236,6 +278,32 @@ test('W-res1: resist is a lane + a rate, and does NOT move the damage total (tri
   assert.ok(mez, 'the resisted mez is a lane in the spell category')
   assert.equal(mez!.hits, 0)
   assert.equal(mez!.resists, 1)
+})
+
+/**
+ * min is over LANDED amounts only. This window is the proof: nine avoided swings and one
+ * fully-resisted spell, none of which carries an amount — so the melee lane's min stays the
+ * real smallest hit (the 2-damage smite) and the resist-only mez lane reports NO min at all
+ * rather than a fabricated 0. Hand-read from RESIST_WINDOW:
+ *   'Melee' (slash 83 + smite 2)  → min  2 / max  83, plus 9 misses
+ *   'Kick'  (106, 106)            → min 106 / max 106  (min === max)
+ *   'Mesmerization III'           → 0 hits, 1 resist   → min undefined
+ */
+test('W-res1: misses and resists never fabricate a min of 0', () => {
+  const { eng, lastTs } = replayResist()
+  const snap = eng.snapshot(lastTs + 6000, {})
+  const you = snap.selected!.entities.find((e) => e.id === 'you')!
+  const top = new Map(you.skills.map((s) => [s.name, s]))
+  assert.equal(top.get('Melee')?.misses, 9, 'the whiffs bucket under the Melee lane')
+  assert.equal(top.get('Melee')?.min, 2, 'nine whiffs did NOT pull the minimum to 0')
+  assert.equal(top.get('Melee')?.max, 83)
+  assert.equal(top.get('Kick')?.min, 106)
+  assert.equal(top.get('Kick')?.max, 106)
+  const mez = you.categories.find((c) => c.category === 'spell')!.skills.find((s) => s.name === 'Mesmerization III')!
+  assert.equal(mez.hits, 0)
+  assert.equal(mez.resists, 1)
+  assert.equal(mez.min, undefined, 'a lane that only ever resisted has no smallest landed hit')
+  assert.equal(you.total, 705, 'damage total still byte-identical')
 })
 
 test('W-res1: the timeline carries a resist tick + a miss tick, each attributed', () => {
