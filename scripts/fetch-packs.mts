@@ -23,58 +23,9 @@ import { fileURLToPath } from 'node:url'
 // Reuse the shared CESP→our-manifest conversion so registry installs (packRegistry.ts)
 // and this CLI produce byte-identical labels ("Complete · Work complete.").
 import { cespToManifestSounds, packBasename, type CespManifest } from '../src/main/sounds'
-
-const BASE = 'https://raw.githubusercontent.com/PeonPing/og-packs/main'
-
-/**
- * Source-filename → our stable soundId. Keyed by basename so it's independent of
- * the `sounds/` prefix. These reproduce the committed manifests exactly.
- */
-const ID_MAP: Record<string, Record<string, string>> = {
-  peon: {
-    'PeonReady1.wav': 'ready',
-    'PeonWhat4.wav': 'need-doing',
-    'PeonYes1.wav': 'ack-cando',
-    'PeonYes2.wav': 'ack-happy',
-    'PeonYes4.wav': 'ack-okie',
-    'PeonYesAttack3.wav': 'ack-try',
-    'PeonWorkComplete.wav': 'complete-work',
-    'PeonYes3.wav': 'complete-workwork',
-    'PeonAngry4.wav': 'error-notthatorc',
-    'PeonDeath.wav': 'error-ugh',
-    'PeonWhat2.wav': 'input-hmm',
-    'PeonWhat3.wav': 'input-whatyouwant',
-    'PeonWhat1.wav': 'input-yes',
-    'PeonWarcry1.wav': 'limit-whynot',
-    'PeonAngry1.wav': 'spam-whaaat',
-    'PeonAngry2.wav': 'spam-leavemealone',
-    'PeonAngry3.wav': 'spam-notime'
-  },
-  sc_marine: {
-    'YouWannaPieceOfMe.mp3': 'start-pieceofme',
-    'GoGoGo.mp3': 'ack-gogogo',
-    'LetsMove.mp3': 'ack-letsmove',
-    'Outstanding.mp3': 'ack-outstanding',
-    'RockAndRoll.mp3': 'ack-rockandroll',
-    'JackedUpAndGoodToGo.mp3': 'complete-jackedup',
-    'GimmeSomethingToShoot.mp3': 'complete-shoot',
-    'Death1.mp3': 'error-ugh',
-    'Death2.mp3': 'error-ahh',
-    'Commander.mp3': 'input-commander',
-    'StandinBy.mp3': 'input-standinby',
-    'WeGottaMove.mp3': 'limit-wegottamove',
-    'GiveMeOrders.mp3': 'spam-orders',
-    'HesWhacked.mp3': 'spam-whacked',
-    'FragCommander.mp3': 'spam-frag',
-    'GetOutOfOutfit.mp3': 'spam-outfit'
-  }
-}
-
-/** Human display names for the pack (matches committed manifests). */
-const PACK_NAME: Record<string, string> = {
-  peon: 'Orc Peon',
-  sc_marine: 'StarCraft Marine'
-}
+// The pack id map + names live in ONE place, shared with the app's runtime
+// self-provisioner (src/main/provisionPacks.ts), so both write byte-identical manifests.
+import { OG_PACKS_BASE as BASE, PACK_ID_MAP as ID_MAP, PACK_NAME } from '../src/main/data/defaultPacks'
 
 const here = dirname(fileURLToPath(import.meta.url))
 const outRoot = join(here, '..', 'resources', 'soundpacks')

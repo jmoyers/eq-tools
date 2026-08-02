@@ -67,6 +67,7 @@ import { useModule } from '../../lib/useModule'
 import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
 import SoundPacksDialog from './SoundPacksDialog'
 import SuggestAlertsDialog from './SuggestAlertsDialog'
+import { invalidateSoundCaches } from './soundCache'
 
 // The LogEvent kinds an 'event' trigger can select (mirrors logEvents.ts).
 const EVENT_KINDS: LogEventKind[] = [
@@ -495,7 +496,16 @@ export default function AlertsView(): JSX.Element {
     void reload()
     // Keep in sync if the player refreshes the shared store (e.g. on focus).
     const off = onAlertStoreChange(() => void reload())
-    return off
+    // A shipped default pack may finish auto-provisioning after startup — re-list packs
+    // and drop any stale sound caches so it's immediately selectable/playable (Task #39).
+    const offPacks = window.eq.onSoundPacksChanged(() => {
+      invalidateSoundCaches()
+      void reload()
+    })
+    return () => {
+      off()
+      offPacks()
+    }
   }, [reload])
 
   // After a registry install/uninstall, re-list packs so the inline pickers +
@@ -725,18 +735,6 @@ export default function AlertsView(): JSX.Element {
             )
           })}
         </Stack>
-
-        {/* User-pack hint */}
-        <Paper variant="outlined" sx={{ p: 1.5, mt: 2, bgcolor: 'action.hover' }}>
-          <Typography variant="caption" color="text.secondary">
-            <b>Custom sounds:</b> drop your own pack into{' '}
-            <code>&lt;userData&gt;/soundpacks/&lt;id&gt;/</code> — a folder with a{' '}
-            <code>manifest.json</code> (<code>{'{ id, name, sounds: { <soundId>: { file, label } } }'}</code>)
-            plus <code>.wav</code>/<code>.mp3</code>/<code>.ogg</code> files. For example, add your own
-            Final Fantasy fanfare as <code>victory.mp3</code> and select it above. On this machine{' '}
-            <code>&lt;userData&gt;</code> is <code>%AppData%\eq-tools</code>.
-          </Typography>
-        </Paper>
       </Box>
 
       <AlertDialog

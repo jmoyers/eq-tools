@@ -64,7 +64,7 @@ Switch channels in the app's settings (the channel selector).
 
 ```bash
 npm install
-npm run fetch:packs   # download the optional CC-BY-NC voice packs (see below)
+npm run fetch:packs   # optional: bundle the CC-BY-NC voice packs (auto-provisioned at runtime otherwise — see below)
 npm run dev           # launch with hot reload
 npm run build         # production bundle into out/
 npm run dist          # build the one-click Windows installer into release/
@@ -86,15 +86,29 @@ npm run dist
 Clean-machine installer test harnesses (Windows Sandbox + Windows containers) live in
 `scripts/sandbox` and `scripts/docker` — see [`scripts/README.md`](scripts/README.md).
 
-### Sound packs (`npm run fetch:packs`)
+### Sound packs
 
-The two imported voice packs — **Orc Peon** and **StarCraft Marine** — are sourced
-from [PeonPing/og-packs](https://github.com/PeonPing/og-packs) and licensed
-**CC-BY-NC-4.0** (non-commercial). Because they're third-party game audio, they are
-**not committed** to this repo; `npm run fetch:packs` downloads them into
-`resources/soundpacks/` so a source build has them. The bundled `default` pack (used
-by the seeded alerts as a fallback) is original synthesized audio and ships with the
-repo. Attribution and license are recorded in each pack's `manifest.json`.
+Alert sounds come from **sound packs**. The `default` pack (original synthesized
+tones) ships with the app. Two imported voice packs — **Orc Peon** and **StarCraft
+Marine** — are sourced from [PeonPing/og-packs](https://github.com/PeonPing/og-packs)
+and licensed **CC-BY-NC-4.0** (non-commercial); attribution and license live in each
+pack's `manifest.json`.
+
+You don't have to do anything to get them: **the app downloads the voice packs
+automatically on first launch** (silently, in the background) if they aren't already
+installed, so the seeded alerts have their sounds even on a fresh install. You can also
+browse and install more packs from within the app (Alerts → **Sound packs…**).
+
+**Custom sounds.** Drop your own pack into `<userData>/soundpacks/<id>/` — a folder
+with a `manifest.json` (`{ id, name, sounds: { <soundId>: { file, label } } }`) plus
+`.wav`/`.mp3`/`.ogg` files — and it appears in the alert sound pickers. On Windows
+`<userData>` is `%AppData%\eq-tools`. For example, add your own Final Fantasy fanfare
+as `victory.mp3` and select it for the raid-defeat alert.
+
+For a source build, `npm run fetch:packs` downloads the same voice packs into
+`resources/soundpacks/` so they're bundled by `npm run dist` (the app's runtime
+auto-provisioning is the fallback for installers built without them). The app never
+depends on that script having been run.
 
 ## Extending it
 

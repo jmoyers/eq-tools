@@ -188,7 +188,7 @@ export default function LevelingView(): JSX.Element {
           icon={<AutoAwesomeIcon fontSize="large" />}
           value={aaSpent ? aaSpent.toLocaleString() : '—'}
           label="AA points spent"
-          sub={`net (earned − unspent) · ${boughtCount} abilities bought`}
+          sub={`${boughtCount} abilities bought`}
           accent="#b07fd0"
         />
         <HeroCard

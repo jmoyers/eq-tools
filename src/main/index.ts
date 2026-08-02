@@ -24,6 +24,7 @@ import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import type { ModuleDelta } from './modules/types'
 import { getSoundData, listPacks } from './sounds'
+import { provisionDefaultPacks } from './provisionPacks'
 import {
   fetchPackSounds,
   fetchPreviewSound,
@@ -560,6 +561,17 @@ if (!gotSingleInstanceLock) {
     registerIpc()
     createWindow()
     void startTailing()
+    // Self-provision the shipped voice packs (Task #39): a CI-built installer ships
+    // WITHOUT the gitignored peon/sc_marine packs, so a fresh install's seeded
+    // charm-break alert would reference a missing sound. Download any missing default
+    // pack in the background (non-blocking, silent — errors go to errors.log and retry
+    // next launch). On success, tell the renderer the pack set changed so it re-lists +
+    // invalidates its sound caches and the sound becomes usable live.
+    void provisionDefaultPacks()
+      .then((n) => {
+        if (n > 0) mainWindow?.webContents.send(IPC.onSoundPacksChanged)
+      })
+      .catch((err) => logError('main:provisionPacks', err))
     // Auto-update (Task #27): checks GitHub Releases on the selected channel;
     // no-ops in dev. getMainWindow is lazy so status pushes hit the live window.
     initUpdater(() => mainWindow)

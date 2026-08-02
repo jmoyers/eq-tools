@@ -43,6 +43,10 @@ export const IPC = {
   // sound packs (discovery + audio bytes)
   listSoundPacks: 'sounds:listPacks',
   getSoundData: 'sounds:getData',
+  // main -> renderer: the set of available sound packs changed (e.g. a shipped
+  // default pack was auto-provisioned in the background at startup — Task #39). The
+  // renderer re-lists packs + invalidates its sound caches so it becomes usable live.
+  onSoundPacksChanged: 'sounds:changed',
   // suggested-alerts wizard (Task #38): a slim, searchable spell catalog derived from
   // the scraped spell DB + live per-spell usage from the buffs module's snapshot.
   spellsCatalog: 'spells:catalog',

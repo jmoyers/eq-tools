@@ -280,7 +280,7 @@ function ProcessingLog({
     <Paper variant="outlined" sx={{ p: 1, height: 190, display: 'flex', flexDirection: 'column' }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 0.5 }}>
         <Typography variant="caption" color="text.secondary">
-          Live classification — parsed lines as they stream in
+          Combat log
         </Typography>
         <FormControlLabel
           control={<Switch size="small" checked={showUnparsed} onChange={(e) => setShowUnparsed(e.target.checked)} />}
@@ -392,10 +392,7 @@ export default function CombatView(): JSX.Element {
       <ProcessingLog lines={snap?.recent ?? []} showUnparsed={showUnparsed} setShowUnparsed={setShowUnparsed} />
 
       <Alert severity="info" sx={{ py: 0 }}>
-        The engine runs in the background, seeded from your full log — so a pet charmed before you opened the app is
-        still tracked. Encounters close when everything you engaged dies (a mez/root holds a fight open while you wait),
-        and freeze DPS when a fight ends; overall resets on zone. <strong>act</strong> is active-time DPS (excludes idle
-        gaps). Toggle <strong> show unparsed</strong> to reveal any damage-shaped line the parser didn&apos;t understand.
+        <strong>act</strong> is active-time DPS — damage per second of actual combat time, excluding idle gaps.
       </Alert>
     </Stack>
   )

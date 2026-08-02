@@ -16,8 +16,7 @@ import {
   Typography
 } from '@mui/material'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined'
 import type {
   ActiveBuff,
   BuffClass,
@@ -165,7 +164,7 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
           <Stack direction="row" justifyContent="space-between" alignItems="center">
             <Typography variant="caption" color={overdue ? 'warning.main' : 'text.secondary'}>
               {overdue
-                ? 'past estimate · awaiting wear-off'
+                ? 'past estimate'
                 : `~${fmtDuration(remaining as number)} left`}
               {!overdue && spread != null && spread > 1000 ? ` (± ${fmtDuration(spread)})` : ''}
             </Typography>
@@ -200,7 +199,7 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
             sx={{ height: 8, borderRadius: 1, opacity: 0.5 }}
           />
           <Typography variant="caption" color="text.disabled">
-            unknown duration (no samples yet)
+            unknown duration
           </Typography>
         </>
       )}
@@ -220,7 +219,7 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
   if (rows.length === 0) {
     return (
       <Typography variant="body2" color="text.secondary">
-        No {CLASS_LABEL[cls].toLowerCase()} durations mined yet.
+        No {CLASS_LABEL[cls].toLowerCase()} durations yet.
       </Typography>
     )
   }
@@ -310,62 +309,25 @@ const VERDICT_LABEL: Record<OverlayVerdict, string> = {
 }
 
 /**
- * The observed-message overlay diagnostics (Task #36) — a dense, read-only, collapsible
- * audit of what the app LEARNED about the game's cast messages by mining the log: which
- * messages VERIFY a single spell, which are SHARED/GENERIC (can't name a spell — e.g. "You
- * feel different." for every illusion), and which CONTRADICT the wiki (its msg_* field is
- * wrong — e.g. Symbol of Pinzarn). This is the auditability the user asked for: a future
- * agent (or the user) can see the effective DB = spells.json + overlay, overlay wins.
+ * Diagnostics table (read-only): per-message verdicts. Collapsed behind an
+ * unobtrusive icon-button — no explanatory prose, just the data.
  */
 function OverlayDiagnostics({ overlay }: { overlay: MessageOverlay }): JSX.Element {
   const [open, setOpen] = useState(false)
-  const { stats } = overlay
-  // Show the actionable rows first: contradictions, then verified, then shared. Skip the
-  // low-signal UNKNOWN bulk. Cap so the table stays dense/scannable.
   const rows = useMemo(
     () => overlay.messages.filter((m) => m.verdict !== 'unknown').slice(0, 200),
     [overlay.messages]
   )
   return (
     <Box>
-      <Stack
-        direction="row"
-        alignItems="center"
-        spacing={1}
-        sx={{ cursor: 'pointer' }}
-        onClick={() => setOpen((v) => !v)}
-      >
-        <Typography variant="subtitle2">Message overlay (learned)</Typography>
-        <Chip
-          size="small"
-          variant="outlined"
-          color="success"
-          label={`${stats.verified} verified`}
-          sx={{ height: 18, fontSize: 11 }}
-        />
-        <Chip
-          size="small"
-          variant="outlined"
-          color="info"
-          label={`${stats.shared} shared`}
-          sx={{ height: 18, fontSize: 11 }}
-        />
-        <Chip
-          size="small"
-          variant="outlined"
-          color="error"
-          label={`${stats.contradictions} contradict wiki`}
-          sx={{ height: 18, fontSize: 11 }}
-        />
+      <Stack direction="row" alignItems="center" spacing={0.5}>
         <Box sx={{ flexGrow: 1 }} />
-        <IconButton size="small">{open ? <ExpandLessIcon /> : <ExpandMoreIcon />}</IconButton>
+        <Tooltip title="Diagnostics">
+          <IconButton size="small" onClick={() => setOpen((v) => !v)}>
+            <ScienceOutlinedIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
       </Stack>
-      <Typography variant="caption" color="text.secondary">
-        What we learned by mining the log about the messages each spell prints — augmenting the
-        wiki spell database ("effective DB = spells.json + overlay, overlay wins"). A{' '}
-        <b>shared</b> message can't identify a spell on its own (resolve via cast history); a{' '}
-        <b>contradicts wiki</b> row means the wiki's cast message for that spell is wrong.
-      </Typography>
       <Collapse in={open} unmountOnExit>
         <Paper variant="outlined" sx={{ mt: 1, p: 1, maxHeight: 380, overflow: 'auto' }}>
           <Table size="small" sx={{ '& td, & th': { py: 0.4, fontSize: 12 } }}>
@@ -469,22 +431,9 @@ export default function BuffsView(): JSX.Element {
           <Chip
             size="small"
             variant="outlined"
-            label={`${active.length} active · ${minedCount} mined`}
+            label={`${active.length} active · ${minedCount} tracked`}
           />
         </Stack>
-        <Typography variant="caption" color="text.secondary">
-          Each active buff is an INSTANCE bound to WHO it's on: your own buffs show first ("Your
-          buffs"), then a group per entity — your pet naturally tops that list — so the same spell can
-          run on you AND your pet at once. Applies are recognized from the exact chat MESSAGE each spell
-          prints (so Quick Buff bursts, which show no "You begin casting" line, still register — look for
-          the "message" chip), and durations come from the spell database ("db") when known, else the
-          recency-weighted max of observed casts ("observed"). Detrimental spells (debuffs like slows,
-          cast on hostile mobs) are styled with a red accent wherever they appear. Expiry favors the
-          spell's own wear-off message; a buff past its estimate sits "past estimate · awaiting wear-off"
-          rather than vanishing. Self-cast illusions under the Permanent Illusion AA are marked permanent.
-          Ranks are merged; fades that can never be observed (a pet/mob left behind on a zone, a death, or
-          a ≥30-min logout gap) are censored, and a buff run far past its window auto-retires.
-        </Typography>
       </Box>
 
       <Box>
@@ -493,8 +442,7 @@ export default function BuffsView(): JSX.Element {
         </Typography>
         {active.length === 0 ? (
           <Typography variant="body2" color="text.secondary">
-            No active buffs tracked. A buff appears here once you cast it and it has been observed
-            wearing off before (the fade is how the app knows a spell is a buff/debuff).
+            No active buffs.
           </Typography>
         ) : (
           <Stack spacing={1.5}>
@@ -530,12 +478,11 @@ export default function BuffsView(): JSX.Element {
 
       <Box>
         <Typography variant="subtitle2" gutterBottom>
-          Mined durations
+          Durations
         </Typography>
         {statsClasses.length === 0 ? (
           <Typography variant="body2" color="text.secondary">
-            No buff durations mined yet. Cast a buff on yourself or your pet and let it wear off — the
-            duration model learns from each land→fade pair.
+            No buff durations yet.
           </Typography>
         ) : (
           <Stack spacing={1.5}>
@@ -564,12 +511,6 @@ export default function BuffsView(): JSX.Element {
       {snap.overlay && snap.overlay.messages.length > 0 ? (
         <OverlayDiagnostics overlay={snap.overlay} />
       ) : null}
-
-      <Typography variant="caption" color="text.secondary">
-        Tip: you can wire a sound to any buff wearing off on the Alerts tab with an event trigger like{' '}
-        <code>{`{ type: 'event', kind: 'buffFade', where: { spell: 'Clarity' } }`}</code> — handy for
-        re-casting long class buffs the moment they drop.
-      </Typography>
     </Stack>
   )
 }

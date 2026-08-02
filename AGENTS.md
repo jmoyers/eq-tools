@@ -145,6 +145,26 @@ This is the reference implementation of the extension contract for future agents
   `sounds:getData(packId, soundId)` returns `{ mime, dataBase64 }`; the renderer
   builds a **Blob URL** (CSP-safe — `media-src 'self' blob:` in index.html) and
   caches it (`features/alerts/soundCache.ts`).
+- **Runtime self-provisioning of the voice packs (Task #39).** The `peon`/`sc_marine`
+  packs are **gitignored** — a CI-built installer ships WITHOUT them, so a fresh
+  install's seeded `charm-break` alert would point at a missing `peon/error-notthatorc`
+  sound. Fix: **`src/main/provisionPacks.ts` `provisionDefaultPacks()`**, called from
+  `main/index.ts` right after `createWindow()` (non-blocking). For each id in
+  `DEFAULT_PACK_IDS` NOT already in `listPacks()`, it downloads that pack from the SAME
+  og-packs source into `<userData>/soundpacks/<id>/`, running the shared
+  `cespToManifestSounds` conversion keyed by the pack's **fixed id map** so the produced
+  `manifest.json` is **byte-identical** to the committed one (verified) — the seeded
+  alert resolves whether the pack is bundled or provisioned. Staged into a
+  `.installing` sibling then atomically renamed (mirrors `installPack`). **Silent by
+  design:** errors go to `errorLog` only, never the UI; the next launch retries. On
+  success main sends **`IPC.onSoundPacksChanged` (`sounds:changed`)**; `AlertsView`
+  subscribes → `invalidateSoundCaches()` + re-list packs, so the sound is usable live
+  without a restart. The **id map + pack names + og-packs base URL live once** in
+  `src/main/data/defaultPacks.ts`, imported by BOTH `provisionPacks.ts` and
+  `scripts/fetch-packs.mts` (dev CLI, still works — bundles the packs into
+  `resources/soundpacks/` for a source build). `provisionDefaultPacks({ packsRoot,
+  installedIds })` takes optional overrides purely as a test/validation seam (avoids
+  needing an Electron `app` at all — the harness passes a temp root).
 - **Renderer**: `features/alerts/player.tsx` is **always mounted** in App.tsx. It
   (a) plays `module:delta` fires at `globalVolume × alert.volume` (skips if muted,
   overlapping plays allowed), and (b) exposes `fireAppSignal('bossDefeat')`. That
@@ -543,9 +563,13 @@ line and `You feel different.` resolved to different illusion candidates as inde
     the `BuffsModule(db, [baseline, userOverlay])` ctor. `src/main/data/overlayPersistence.ts` owns
     load/save; `OVERLAY_VERSION` guards a stale schema. Full-log overlay stats: **574 verified /
     1119 shared / 179 contradictions**.
-  - **Auditability.** `BuffsSnap.overlay` ships in the snapshot; `BuffsView`'s collapsible
-    "Message overlay (learned)" section is a dense read-only table (message · role · verdict · n ·
-    spells+counts), contradictions/verified/shared first (UNKNOWN hidden).
+  - **Auditability.** `BuffsSnap.overlay` ships in the snapshot; `BuffsView` exposes it as a
+    dense read-only table (message · role · verdict · n · spells+counts),
+    contradictions/verified/shared first (UNKNOWN hidden). Per Task #39 (product-not-process
+    UI) the table carries **no explanatory prose** and is collapsed behind an unobtrusive
+    science/tune icon-button (tooltip "Diagnostics") at the bottom of the view — it's for
+    debugging, not narration. The verdict chips (verified/shared/contradicts wiki) are state,
+    so they stay.
 - **Golden windows** (`tests/illusionOverlayWindows.test.mts`, +4 → 15 total): **W11** the real
   20:15:41→20:23:39 window — Wood Elf self illusion (generic msg + cast history), Boon on the pet,
   `Your illusion fades.` @20:23:39 clears the self illusion; asserts NEVER two self illusions and

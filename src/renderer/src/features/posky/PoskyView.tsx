@@ -213,8 +213,7 @@ export default function PoskyView(): JSX.Element {
 
       {totalQuests === 0 ? (
         <Alert severity="info">
-          No Plane of Sky data yet. Run <code>npm run scrape:posky</code> to pull quest data from the
-          wiki, then restart the app.
+          No Plane of Sky data available.
         </Alert>
       ) : (
         <Typography variant="body2" color="text.secondary">

@@ -85,6 +85,12 @@ const api = {
   listSoundPacks: (): Promise<SoundPack[]> => ipcRenderer.invoke(IPC.listSoundPacks),
   getSoundData: (packId: string, soundId: string): Promise<SoundData | null> =>
     ipcRenderer.invoke(IPC.getSoundData, packId, soundId),
+  /** Subscribe to "available sound packs changed" pushes (startup auto-provisioning). */
+  onSoundPacksChanged: (cb: () => void): (() => void) => {
+    const listener = (): void => cb()
+    ipcRenderer.on(IPC.onSoundPacksChanged, listener)
+    return () => ipcRenderer.removeListener(IPC.onSoundPacksChanged, listener)
+  },
   /** Suggested-alerts wizard (Task #38): the searchable spell catalog + live usage. */
   getSpellCatalog: (): Promise<SpellCatalog> => ipcRenderer.invoke(IPC.spellsCatalog),
 

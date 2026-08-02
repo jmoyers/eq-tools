@@ -167,7 +167,7 @@ export default function InventoryView(): JSX.Element {
         )}
         {inventoryRows.length === 0 && (
           <Typography color="text.secondary" sx={{ p: 2 }}>
-            Nothing held yet. Loot items in-game (log counting) or run <code>/outputfile inventory</code> and reload.
+            Nothing held yet.
           </Typography>
         )}
       </Box>
