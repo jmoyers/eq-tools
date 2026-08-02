@@ -27,7 +27,7 @@ export class LootModule implements EqModule<LootSnap, LootDelta> {
       return
     }
     if (ev.kind !== 'loot') return
-    const row: LootEvent = { ts: ev.ts, item: ev.item, source: ev.source, zone: this.zone }
+    const row: LootEvent = { ts: ev.ts, item: ev.item, source: ev.source, zone: this.zone, disposition: ev.disposition }
     this.loot.push(row)
     this.pending.push(row)
   }

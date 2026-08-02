@@ -67,6 +67,22 @@ export function zoneTier(zone: string): { base: string; tier: number } {
 const LOOT_RE = /^--You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.--$/
 // Dashless fallback for servers/cases that omit the surrounding dashes.
 const LOOT_RE_PLAIN = /^You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.$/
+// Auto-disposition loot (Task #40): the client can loot-and-route an item in one line —
+// EITHER into a currency/collection ("stored it in your currency") OR straight to the
+// vendor ("sold it for free." / "sold it for 1 gold, 4 silver and 3 copper."). These use
+// "You looted" (no leading "have", no surrounding dashes). VERIFIED shapes (real log
+// 2026-08-01):
+//   You looted a Wind Rune Caza from a greater sphinx's corpse and stored it in your currency
+//   You looted a Belt of Concordance +1 from Noble Dojorn's corpse and sold it for free.
+//   You looted a Swirling Mist from a gust of wind's corpse and sold it for 1 gold, 4 silver and 3 copper.
+// Currency lines carry NO trailing period; sold lines DO — both tolerated. The item is a
+// QUEST/held item that entered a currency tab (Wind Runes are Plane of Sky quest items),
+// so `disposition:'currency'` COUNTS toward held/quest progress. A `disposition:'sold'`
+// item was vendored — it is GONE, so it must NOT count as held. Both still record a loot
+// row (the drop happened). "stored it in your Dragon Hoard"/"tradeskill depot" and the
+// "…to create a <item>" combine form are OTHER dispositions not covered here (see AGENTS).
+const LOOT_CURRENCY_RE = /^You looted (?:an? )?(.+?) from (.+?) corpse and stored it in your currency\.?$/
+const LOOT_SOLD_RE = /^You looted (?:an? )?(.+?) from (.+?) corpse and sold it for (?:free|[\d,]+ (?:platinum|gold|silver|copper).*?)\.?$/
 
 const ZONE_RE = /^You have entered (.+?)\.$/
 // Pseudo-zone notices that share the "You have entered <X>." grammar but are NOT
@@ -532,6 +548,13 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
   if (text.includes('looted')) {
     const m = LOOT_RE.exec(text) ?? LOOT_RE_PLAIN.exec(text)
     if (m) return { kind: 'loot', seq, ts, raw, item: m[1].trim(), source: cleanMob(m[2]) }
+    // Auto-disposition variants (Task #40): looted-and-routed in one line. These carry a
+    // `disposition` the loot module/quest counting use to decide whether the item is still
+    // held ('currency' = kept, quest-countable) or gone ('sold' = vendored, excluded).
+    const cur = LOOT_CURRENCY_RE.exec(text)
+    if (cur) return { kind: 'loot', seq, ts, raw, item: cur[1].trim(), source: cleanMob(cur[2]), disposition: 'currency' }
+    const sold = LOOT_SOLD_RE.exec(text)
+    if (sold) return { kind: 'loot', seq, ts, raw, item: sold[1].trim(), source: cleanMob(sold[2]), disposition: 'sold' }
   }
 
   // --- turn-ins ---

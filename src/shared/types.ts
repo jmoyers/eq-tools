@@ -27,6 +27,12 @@ export interface LootEvent {
   source?: string
   /** zone the character was in when it was looted */
   zone?: string
+  /**
+   * Auto-disposition (Task #40) for looted-and-routed lines: 'currency' = stored in the
+   * currency tab (kept, quest-countable — e.g. Wind Runes), 'sold' = auto-vendored (gone,
+   * excluded from held counts). Undefined for ordinary kept loot.
+   */
+  disposition?: 'currency' | 'sold'
 }
 
 /** A completed NPC trade / quest turn-in ("You offered … / complete the trade"). */

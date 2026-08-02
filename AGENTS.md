@@ -627,7 +627,30 @@ SAME entity.
 
 - Timestamp: `[Sat Aug 01 13:00:28 2026] <message>`.
 - Loot (self): `--You have looted a <item> from <mob>'s corpse.--` (strip the
-  `from … corpse` suffix; capture the mob).
+  `from … corpse` suffix; capture the mob). Ordinary KEPT loot → no `disposition`.
+  - **Auto-disposition variants (Task #40)** — one-line looted-and-routed forms that use
+    `You looted` (no leading "have", no dashes). Two are parsed, both emit a `loot` event
+    with a `disposition` field:
+    - `You looted <item> from <mob>'s corpse and stored it in your currency` — **NO trailing
+      period** → `disposition:'currency'`. The item entered the currency tab and is a
+      QUEST/held collectible (Plane of Sky **Wind Runes** arrive this way), so it **COUNTS**
+      toward held/quest progress. These were previously UNPARSED — Sky quest progress silently
+      missed every currency-routed rune (Wind Runes also appear in the dashed form; both feed
+      `logCounts`, and `computeQuestProgress` clamps `have=min(need,held)` so over-count is
+      harmless).
+    - `You looted <item> from <mob>'s corpse and sold it for free.` / `… and sold it for
+      <N platinum, N gold, N silver and N copper>.` — **trailing period** → `disposition:'sold'`.
+      Auto-vendored → the item is GONE, so it is **excluded from held counts** (the ONE place
+      counts derive: `useProgress.logCounts` skips `disposition:'sold'`; reconcile + quest
+      progress both consume that map, so nothing double-subtracts a never-held item).
+    - Held-vs-gone rule lives in `useProgress.logCounts`; the disposition chip (dense
+      `currency`/`sold`) shows on `LootView` rows + grouped rows (grouped shows a shared
+      disposition only when ALL rows agree).
+  - **NOT parsed** (other dispositions seen in the log, out of Task #40 scope — left as
+    `unknown`): `… and stored it in your Dragon Hoard` (76×), `… and stored it in your
+    tradeskill depot` (2×), and the transform form `You looted <item> … to create a <item+N>`
+    (item combine/upgrade). Add these deliberately if a feature needs them.
+  - Full-log tally (2026-08-01 replay): 3513 loot rows — 27 currency, 2817 sold, 669 kept.
 - Zone: `You have entered <zone>.` — **instance tier is in the name**: base = D0,
   `(Awakened)` D1, `(Adaptive)` D2, `(Fused)` D3, `(Refined)` D4.
 - Kill: `You have slain <mob>!` / `<mob> has been slain by <x>!`.

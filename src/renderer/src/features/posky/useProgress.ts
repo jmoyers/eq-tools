@@ -178,10 +178,17 @@ export function useProgress(): UseProgress {
     setProgress(next)
   }, [])
 
-  // Counts + display names derived from the log (everything ever looted).
+  // Counts + display names derived from the log (everything still HELD from looting).
+  // Task #40: a 'sold' loot was auto-vendored the instant it dropped — the item is gone, so
+  // it must NOT count as held (for either quest progress or inventory reconcile, both of
+  // which derive from this one map). 'currency' loots (Wind Runes → the currency tab) and
+  // ordinary kept loot (undefined disposition) both count. Turn-in subtraction downstream
+  // (reconcile) operates on these held counts, so excluding sold here also keeps it from
+  // ever trying to subtract an item that was never held — no double-handling.
   const logCounts = useMemo<Record<string, number>>(() => {
     const c: Record<string, number> = {}
     for (const e of lootHistory) {
+      if (e.disposition === 'sold') continue
       const k = e.item.toLowerCase()
       c[k] = (c[k] ?? 0) + 1
     }

@@ -28,6 +28,16 @@ export interface LootEventE extends LogEventBase {
   kind: 'loot'
   item: string
   source?: string
+  /**
+   * Auto-disposition (Task #40) for the one-line looted-and-routed variants:
+   *   'currency' — `You looted <item> … and stored it in your currency` (kept; the item is a
+   *      quest/held collectible — e.g. a Plane of Sky Wind Rune — so it COUNTS toward held /
+   *      quest progress).
+   *   'sold'     — `You looted <item> … and sold it for free.` / `… for <money>.` (vendored;
+   *      the item is GONE, so it must NOT count as held).
+   * Undefined for the ordinary `--You have looted …--` form (kept, no routing implied).
+   */
+  disposition?: 'currency' | 'sold'
 }
 
 /** `You offered N <item> to <NPC>.` — one per item offered. */
