@@ -20,6 +20,7 @@ import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import type { ModuleDelta } from './modules/types'
 import { getSoundData, listPacks } from './sounds'
+import { fetchRegistry, installPack, uninstallPack } from './packRegistry'
 import { initUpdater } from './updater'
 import {
   deleteAlert,
@@ -36,7 +37,7 @@ import {
   setQuestComplete,
   setWindowBounds
 } from './store'
-import type { AlertDef, AlertPrefs, CharacterRef } from '../shared/types'
+import type { AlertDef, AlertPrefs, CharacterRef, PackInstallProgress } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
@@ -411,6 +412,30 @@ function registerIpc(): void {
   ipcMain.handle(IPC.getSoundData, (_e, packId: string, soundId: string) =>
     getSoundData(packId, soundId)
   )
+
+  // ---- sound-pack registry (openpeon.com integration, Task #29) ----
+  ipcMain.handle(IPC.packsRegistry, (_e, force?: boolean) => fetchRegistry(force ?? false))
+  ipcMain.handle(IPC.packsInstall, async (_e, name: string) => {
+    const reg = await fetchRegistry(false)
+    const pack = reg.packs.find((p) => p.name === name)
+    if (!pack) return { ok: false as const, error: `pack '${name}' not in registry` }
+    const emit = (p: PackInstallProgress): void => {
+      mainWindow?.webContents.send(IPC.onPackProgress, p)
+    }
+    try {
+      await installPack(pack, emit)
+      return { ok: true as const }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err)
+      logError('main:packRegistry', { message: `install '${name}' failed`, err })
+      emit({ name, phase: 'error', message })
+      return { ok: false as const, error: message }
+    }
+  })
+  ipcMain.handle(IPC.packsUninstall, (_e, name: string) => {
+    const ok = uninstallPack(name)
+    return ok ? { ok: true as const } : { ok: false as const, error: 'pack not found or not removable' }
+  })
 
   // ---- frameless window controls (Task #23) ----
   // The React title bar (App.tsx) drives the native window: these mirror the

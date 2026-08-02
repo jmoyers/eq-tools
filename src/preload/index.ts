@@ -8,7 +8,10 @@ import type {
   LootEvent,
   ModuleDelta,
   ModuleSnapshot,
+  PackInstallProgress,
+  PackMutationResult,
   ProgressState,
+  RegistryListResult,
   SoundData,
   SoundPack
 } from '../shared/types'
@@ -18,6 +21,7 @@ import type { UpdateChannel, UpdateStatus } from '../shared/types'
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack }
+export type { PackInstallProgress, PackMutationResult, RegistryListResult }
 export type { UpdateChannel, UpdateStatus }
 
 export interface ReloadInventoryResult {
@@ -79,6 +83,23 @@ const api = {
   listSoundPacks: (): Promise<SoundPack[]> => ipcRenderer.invoke(IPC.listSoundPacks),
   getSoundData: (packId: string, soundId: string): Promise<SoundData | null> =>
     ipcRenderer.invoke(IPC.getSoundData, packId, soundId),
+
+  // ---- sound-pack registry (openpeon.com integration, Task #29) ----
+  /** List registry packs (installed-flag reconciled). `force` bypasses the 24h cache. */
+  listRegistryPacks: (force?: boolean): Promise<RegistryListResult> =>
+    ipcRenderer.invoke(IPC.packsRegistry, force ?? false),
+  /** Install a pack by name; watch onPackProgress for per-phase progress. */
+  installPack: (name: string): Promise<PackMutationResult> =>
+    ipcRenderer.invoke(IPC.packsInstall, name),
+  /** Uninstall a user-installed pack by name. */
+  uninstallPack: (name: string): Promise<PackMutationResult> =>
+    ipcRenderer.invoke(IPC.packsUninstall, name),
+  /** Subscribe to install progress pushes. */
+  onPackProgress: (cb: (p: PackInstallProgress) => void): (() => void) => {
+    const listener = (_e: unknown, p: PackInstallProgress): void => cb(p)
+    ipcRenderer.on(IPC.onPackProgress, listener)
+    return () => ipcRenderer.removeListener(IPC.onPackProgress, listener)
+  },
 
   // ---- generic module transport ----
   /** Full hydration snapshot for a module (null if the id is unknown). */

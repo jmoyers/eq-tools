@@ -10,6 +10,20 @@ function key(packId: string, soundId: string): string {
   return `${packId}/${soundId}`
 }
 
+/**
+ * Drop all cached sound Blob URLs (revoking them). Call after a pack is
+ * installed/uninstalled so the next play re-fetches fresh bytes over IPC — a
+ * reinstalled pack may have changed, and a stale cache would keep old audio.
+ */
+export function invalidateSoundCaches(): void {
+  for (const p of cache.values()) {
+    void p.then((url) => {
+      if (url) URL.revokeObjectURL(url)
+    })
+  }
+  cache.clear()
+}
+
 /** Resolve a Blob URL for a pack sound (cached). Null if the sound can't be loaded. */
 export function getSoundUrl(packId: string, soundId: string): Promise<string | null> {
   const k = key(packId, soundId)

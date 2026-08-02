@@ -20,30 +20,11 @@
 import { mkdirSync, writeFileSync, existsSync, statSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+// Reuse the shared CESP→our-manifest conversion so registry installs (packRegistry.ts)
+// and this CLI produce byte-identical labels ("Complete · Work complete.").
+import { cespToManifestSounds, packBasename, type CespManifest } from '../src/main/sounds'
 
 const BASE = 'https://raw.githubusercontent.com/PeonPing/og-packs/main'
-
-interface CespSound {
-  file: string
-  label: string
-  sha256?: string
-}
-interface CespManifest {
-  display_name?: string
-  license?: string
-  categories: Record<string, { sounds: CespSound[] }>
-}
-
-/** Category → the label prefix our manifest uses so the picker reads well. */
-const CATEGORY_LABEL: Record<string, string> = {
-  'session.start': 'Start',
-  'task.acknowledge': 'Acknowledge',
-  'task.complete': 'Complete',
-  'task.error': 'Error',
-  'input.required': 'Input',
-  'resource.limit': 'Limit',
-  'user.spam': 'Spam'
-}
 
 /**
  * Source-filename → our stable soundId. Keyed by basename so it's independent of
@@ -98,11 +79,6 @@ const PACK_NAME: Record<string, string> = {
 const here = dirname(fileURLToPath(import.meta.url))
 const outRoot = join(here, '..', 'resources', 'soundpacks')
 
-function basename(p: string): string {
-  const parts = p.split('/')
-  return parts[parts.length - 1]
-}
-
 async function fetchText(url: string): Promise<string> {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`GET ${url} → ${res.status} ${res.statusText}`)
@@ -125,22 +101,21 @@ async function fetchPack(pack: string): Promise<void> {
   const soundsDir = join(packDir, 'sounds')
   mkdirSync(soundsDir, { recursive: true })
 
-  const manifestSounds: Record<string, { file: string; label: string }> = {}
+  // Convert with the SHARED helper, passing the pack's fixed ID_MAP as the soundId
+  // resolver so the generated manifest byte-matches the committed one.
+  const manifestSounds = cespToManifestSounds(cesp, (_category, file) => {
+    const soundId = idMap[packBasename(file)]
+    if (!soundId) console.warn(`  ! ${pack}: no soundId mapping for ${packBasename(file)} — skipping`)
+    return soundId ?? null
+  })
+
   let downloaded = 0
   let skipped = 0
-
-  for (const [category, group] of Object.entries(cesp.categories)) {
-    const prefix = CATEGORY_LABEL[category] ?? category
-    for (const s of group.sounds) {
-      const name = basename(s.file)
-      const soundId = idMap[name]
-      if (!soundId) {
-        console.warn(`  ! ${pack}: no soundId mapping for ${name} — skipping`)
-        continue
-      }
-      const relFile = `sounds/${name}`
-      manifestSounds[soundId] = { file: relFile, label: `${prefix} · ${s.label}` }
-
+  for (const group of Object.values(cesp.categories)) {
+    const sounds = Array.isArray(group) ? [] : (group.sounds ?? [])
+    for (const s of sounds) {
+      const name = packBasename(s.file)
+      if (!idMap[name]) continue
       const dest = join(soundsDir, name)
       // Idempotent: skip if a non-empty file already exists.
       if (existsSync(dest) && statSync(dest).size > 0) {

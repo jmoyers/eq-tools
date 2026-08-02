@@ -1,7 +1,8 @@
 // AlertsView — manage triggered-sound alerts + global sound preferences.
 //
 // Layout (dense, dark, matches the app):
-//   - a top bar with the global volume slider + mute toggle, "Add alert", and a
+//   - a top bar with the global volume slider + mute toggle, "Sound packs…"
+//     (opens the openpeon.com registry browser — Task #29), "Add alert", and a
 //     "Reset to defaults" button (restores the seeded built-in set, confirmed),
 //   - a list of alerts, each with an enable switch, per-alert volume, a
 //     pack→sound picker, a compact trigger chip, Test / Edit / Delete, and an
@@ -49,6 +50,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
 import HistoryIcon from '@mui/icons-material/History'
+import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
 import type {
   AlertDef,
   AlertFireRecord,
@@ -62,6 +64,7 @@ import type {
 } from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
+import SoundPacksDialog from './SoundPacksDialog'
 
 // The LogEvent kinds an 'event' trigger can select (mirrors logEvents.ts).
 const EVENT_KINDS: LogEventKind[] = [
@@ -468,6 +471,7 @@ export default function AlertsView(): JSX.Element {
   const [editTarget, setEditTarget] = useState<AlertDef | null>(null)
   const [confirmReset, setConfirmReset] = useState(false)
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
+  const [packsDialogOpen, setPacksDialogOpen] = useState(false)
 
   // Live recent-fires history from the alerts module (single source of truth).
   const snap = useModule<AlertsSnap, AlertsDelta>('alerts', applyAlertsDelta)
@@ -490,6 +494,16 @@ export default function AlertsView(): JSX.Element {
     const off = onAlertStoreChange(() => void reload())
     return off
   }, [reload])
+
+  // After a registry install/uninstall, re-list packs so the inline pickers +
+  // add/edit dialog surface the change immediately, and refresh the always-mounted
+  // player's shared store (it caches nothing pack-related, but keeps everything in
+  // sync on the same tick).
+  const refreshPacks = useCallback(async () => {
+    const ps = await window.eq.listSoundPacks()
+    setPacks(ps)
+    await refreshAlertStore()
+  }, [])
 
   const persistAlerts = useCallback(async (def: AlertDef) => {
     const list = await window.eq.saveAlert(def)
@@ -581,6 +595,14 @@ export default function AlertsView(): JSX.Element {
             label="Mute all"
           />
           <Box sx={{ flexGrow: 1 }} />
+          <Button
+            startIcon={<LibraryMusicIcon />}
+            variant="outlined"
+            size="small"
+            onClick={() => setPacksDialogOpen(true)}
+          >
+            Sound packs…
+          </Button>
           <Button
             startIcon={<RestartAltIcon />}
             variant="outlined"
@@ -711,6 +733,12 @@ export default function AlertsView(): JSX.Element {
           void persistAlerts(def)
           setDialogOpen(false)
         }}
+      />
+
+      <SoundPacksDialog
+        open={packsDialogOpen}
+        onClose={() => setPacksDialogOpen(false)}
+        onInstalledChange={() => void refreshPacks()}
       />
 
       <Dialog open={confirmReset} onClose={() => setConfirmReset(false)} maxWidth="xs">

@@ -18,7 +18,7 @@ import { app } from 'electron'
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { logError } from './errorLog'
-import type { SoundData, SoundPack, SoundPackManifest } from '../shared/types'
+import type { PackSound, SoundData, SoundPack, SoundPackManifest } from '../shared/types'
 
 const AUDIO_MIME: Record<string, string> = {
   '.wav': 'audio/wav',
@@ -42,6 +42,115 @@ function bundledRoots(): string[] {
 /** User soundpacks root: `<userData>/soundpacks`. Created lazily on demand. */
 function userRoot(): string {
   return join(app.getPath('userData'), 'soundpacks')
+}
+
+/** Public accessor for the user soundpacks root (used by packRegistry install/uninstall). */
+export function userPacksRoot(): string {
+  return userRoot()
+}
+
+// ----- CESP → our-manifest conversion (shared with scripts/fetch-packs.mts) -----
+//
+// openpeon.com packs ship a CESP `openpeon.json` that groups sounds by category
+// (session.start, task.complete, …). Our manifest flattens them to soundId keys
+// with a human label prefixed by the category ("Complete · Work complete."). Both
+// the CLI (scripts/fetch-packs.mts, for the bundled default packs) and the in-app
+// registry installer (packRegistry.ts) run the SAME conversion so labels read
+// identically regardless of source.
+
+/** Category → the label prefix our manifest uses so the picker reads well. */
+export const CESP_CATEGORY_LABEL: Record<string, string> = {
+  'session.start': 'Start',
+  'session.end': 'End',
+  'task.acknowledge': 'Acknowledge',
+  'task.complete': 'Complete',
+  'task.error': 'Error',
+  'task.progress': 'Progress',
+  'input.required': 'Input',
+  'resource.limit': 'Limit',
+  'user.spam': 'Spam'
+}
+
+/** A single sound entry inside a CESP category. */
+export interface CespSound {
+  file: string
+  label?: string
+  sha256?: string
+}
+
+/** The relevant subset of a CESP `openpeon.json`. */
+export interface CespManifest {
+  cesp_version?: string
+  name?: string
+  display_name?: string
+  version?: string
+  license?: string
+  categories: Record<string, { sounds?: CespSound[] } | CespSound[] | string[]>
+  category_aliases?: Record<string, string>
+}
+
+/** Basename of a possibly `sounds/`-prefixed path. */
+export function packBasename(p: string): string {
+  const parts = p.replace(/\\/g, '/').split('/')
+  return parts[parts.length - 1]
+}
+
+/**
+ * Derive a stable, filesystem-safe soundId from a source filename. Used for
+ * registry installs (which — unlike the bundled peon/marine packs — have no
+ * hand-curated ID_MAP). Prefix with the category so ids stay unique even when two
+ * categories share a basename; de-dup with a numeric suffix as a last resort.
+ */
+export function deriveSoundId(category: string, file: string, taken: Set<string>): string {
+  const base = packBasename(file).replace(/\.[^.]+$/, '')
+  const catSlug = category.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase()
+  const baseSlug = base.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase() || 'sound'
+  let id = catSlug ? `${catSlug}-${baseSlug}` : baseSlug
+  if (taken.has(id)) {
+    let i = 2
+    while (taken.has(`${id}-${i}`)) i++
+    id = `${id}-${i}`
+  }
+  taken.add(id)
+  return id
+}
+
+/**
+ * Normalize a CESP category value to a `{file,label?}[]` list. Handles the common
+ * `{ sounds: [...] }` shape plus defensive fallbacks: a bare array of entries, or
+ * an array of filename strings.
+ */
+function cespCategorySounds(value: CespManifest['categories'][string]): CespSound[] {
+  if (Array.isArray(value)) {
+    return value.map((v) => (typeof v === 'string' ? { file: v } : v)) as CespSound[]
+  }
+  if (value && Array.isArray(value.sounds)) return value.sounds
+  return []
+}
+
+/**
+ * Convert a parsed CESP manifest into OUR manifest sounds map. `idFor(category,
+ * file)` yields the soundId — the CLI passes a fixed ID_MAP lookup (to byte-match
+ * committed packs); the registry installer passes `deriveSoundId`. Labels become
+ * "<CategoryPrefix> · <label>" (label falls back to the basename).
+ */
+export function cespToManifestSounds(
+  cesp: CespManifest,
+  idFor: (category: string, file: string) => string | null
+): Record<string, PackSound> {
+  const sounds: Record<string, PackSound> = {}
+  for (const [category, value] of Object.entries(cesp.categories ?? {})) {
+    const prefix = CESP_CATEGORY_LABEL[category] ?? category
+    for (const s of cespCategorySounds(value)) {
+      if (!s || typeof s.file !== 'string') continue
+      const soundId = idFor(category, s.file)
+      if (!soundId) continue
+      const name = packBasename(s.file)
+      const label = s.label && s.label.trim() ? s.label : name
+      sounds[soundId] = { file: `sounds/${name}`, label: `${prefix} · ${label}` }
+    }
+  }
+  return sounds
 }
 
 /** Read + validate a pack manifest from a directory; null if missing/invalid. */

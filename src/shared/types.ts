@@ -381,6 +381,62 @@ export interface SoundData {
   dataBase64: string
 }
 
+// ----- Sound-pack registry (openpeon.com integration, Task #29) -----
+//
+// The openpeon.com registry (https://peonping.github.io/registry/index.json) lists
+// community sound packs. We surface it in-app: browse → install (download the pack's
+// GitHub release tarball, convert its CESP openpeon.json into our manifest.json,
+// write into <userData>/soundpacks/<name>/) → the pack appears in the sound pickers
+// immediately. Bundled packs are never in this registry list.
+
+/** One pack as listed in the registry index (subset of fields we use). */
+export interface RegistryPack {
+  /** stable pack name (also the install dir name + our manifest id). */
+  name: string
+  display_name: string
+  /** "Owner/Repo" the release tarball is fetched from. */
+  source_repo: string
+  /** git tag of the release (e.g. "v1.0.1"). */
+  source_ref: string
+  /** subdir within the extracted archive that is the pack root ("." for repo root). */
+  source_path: string
+  categories: string[]
+  sound_count: number
+  total_size_bytes: number
+  description?: string
+  license?: string
+  version?: string
+}
+
+/** A registry pack annotated with whether it's already installed locally. */
+export interface RegistryPackView extends RegistryPack {
+  installed: boolean
+}
+
+/** Reply of packs:registry — the reconciled list plus a soft error (offline, etc.). */
+export interface RegistryListResult {
+  packs: RegistryPackView[]
+  /** present when the live index couldn't be fetched (cached/empty list returned). */
+  error?: string
+  /** true when the list came from the on-disk/in-memory cache, not a live fetch. */
+  fromCache?: boolean
+}
+
+/** Progress push over `packs:progress` while a pack installs. */
+export interface PackInstallProgress {
+  name: string
+  phase: 'downloading' | 'extracting' | 'converting' | 'done' | 'error'
+  /** 0..100 during downloading, when a content-length is known. */
+  percent?: number
+  message?: string
+}
+
+/** Reply of packs:install / packs:uninstall. */
+export interface PackMutationResult {
+  ok: boolean
+  error?: string
+}
+
 /** Held-item counts keyed by lowercased item name. */
 export type HeldCounts = Record<string, number>
 

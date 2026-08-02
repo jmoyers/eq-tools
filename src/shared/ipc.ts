@@ -44,6 +44,16 @@ export const IPC = {
   listSoundPacks: 'sounds:listPacks',
   getSoundData: 'sounds:getData',
 
+  // ---- sound-pack registry (openpeon.com integration, Task #29) ----
+  // renderer -> main: list registry packs annotated with installed flags.
+  packsRegistry: 'packs:registry',
+  // renderer -> main: install a pack by name (streams progress via onPackProgress).
+  packsInstall: 'packs:install',
+  // renderer -> main: uninstall a user-installed pack by name.
+  packsUninstall: 'packs:uninstall',
+  // main -> renderer: install progress {name, phase, percent?, message?}.
+  onPackProgress: 'packs:progress',
+
   // ---- frameless window controls (Task #23) ----
   // renderer -> main: title-bar buttons drive the (frameless) native window.
   windowMinimize: 'window:minimize',
