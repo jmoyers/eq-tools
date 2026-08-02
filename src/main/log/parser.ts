@@ -64,25 +64,35 @@ export function zoneTier(zone: string): { base: string; tier: number } {
 // Loot (self):
 //   --You have looted a Mote of Infinitesimal Potential from Bazzzazzt's corpse.--
 //   --You have looted an Efreeti War Staff from the Hand of Veeshan's corpse.--
-const LOOT_RE = /^--You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.--$/
+//   --You have looted 2 Bone Chips from an elf skeleton's corpse.--
+// Every loot form can carry a STACK COUNT where the article goes (Task #47): a digit
+// run + space instead of "a "/"an ". Captured separately so the item name stays clean
+// (the old regexes swallowed "2 Bone Chips" as the item — a distinct bogus counting
+// key). VERIFIED SAFE against the real log: no looted item name starts with a digit
+// (stacked shapes observed only on the dashed + sold forms; the capture is symmetric
+// across the family anyway so a future stacked variant parses right).
+const LOOT_RE = /^--You have looted (?:(\d+) |an? )?(.+?)(?: from (.+?) corpse)?\.--$/
 // Dashless fallback for servers/cases that omit the surrounding dashes.
-const LOOT_RE_PLAIN = /^You have looted (?:an? )?(.+?)(?: from (.+?) corpse)?\.$/
-// Auto-disposition loot (Task #40): the client can loot-and-route an item in one line —
-// EITHER into a currency/collection ("stored it in your currency") OR straight to the
-// vendor ("sold it for free." / "sold it for 1 gold, 4 silver and 3 copper."). These use
-// "You looted" (no leading "have", no surrounding dashes). VERIFIED shapes (real log
-// 2026-08-01):
+const LOOT_RE_PLAIN = /^You have looted (?:(\d+) |an? )?(.+?)(?: from (.+?) corpse)?\.$/
+// Auto-disposition loot (Tasks #40/#47): the client can loot-and-route an item in one
+// line. These use "You looted" (no leading "have", no surrounding dashes). VERIFIED
+// shapes (real log 2026-08-01/02 — the full family, no unrouted "You looted" exists):
 //   You looted a Wind Rune Caza from a greater sphinx's corpse and stored it in your currency
 //   You looted a Belt of Concordance +1 from Noble Dojorn's corpse and sold it for free.
-//   You looted a Swirling Mist from a gust of wind's corpse and sold it for 1 gold, 4 silver and 3 copper.
-// Currency lines carry NO trailing period; sold lines DO — both tolerated. The item is a
-// QUEST/held item that entered a currency tab (Wind Runes are Plane of Sky quest items),
-// so `disposition:'currency'` COUNTS toward held/quest progress. A `disposition:'sold'`
-// item was vendored — it is GONE, so it must NOT count as held. Both still record a loot
-// row (the drop happened). "stored it in your Dragon Hoard"/"tradeskill depot" and the
-// "…to create a <item>" combine form are OTHER dispositions not covered here (see AGENTS).
-const LOOT_CURRENCY_RE = /^You looted (?:an? )?(.+?) from (.+?) corpse and stored it in your currency\.?$/
-const LOOT_SOLD_RE = /^You looted (?:an? )?(.+?) from (.+?) corpse and sold it for (?:free|[\d,]+ (?:platinum|gold|silver|copper).*?)\.?$/
+//   You looted 2 Spider Silk from a giant black widow's corpse and sold it for 2 gold, 8 silver and 6 copper.
+//   You looted a Dull Wooden Spear from Officer Grush's corpse and stored it in your Dragon Hoard
+//   You looted a Griffenne Blood from a soul carrier's corpse and stored it in your tradeskill depot
+//   You looted a Silver Earring from a necro acolyte's corpse to create a Silver Earring +1
+// Sold lines carry a trailing period; currency/hoard/depot/combine lines carry NONE
+// (tolerated everywhere). Dispositions: 'currency'/'hoard'/'depot' are all KEPT storage
+// (count toward held/quest progress); 'sold' was vendored — GONE, never held;
+// 'combined' consumed the looted copy AND a held copy to create the upgraded `created`
+// item (every one of the 293 real combine lines creates `<same base> +N`), so it nets
+// ZERO held. The one held-count rule lives in computeHeldCounts (renderer).
+const LOOT_CURRENCY_RE = /^You looted (?:(\d+) |an? )?(.+?) from (.+?) corpse and stored it in your currency\.?$/
+const LOOT_SOLD_RE = /^You looted (?:(\d+) |an? )?(.+?) from (.+?) corpse and sold it for (?:free|[\d,]+ (?:platinum|gold|silver|copper).*?)\.?$/
+const LOOT_STORED_RE = /^You looted (?:(\d+) |an? )?(.+?) from (.+?) corpse and stored it in your (Dragon Hoard|tradeskill depot)\.?$/
+const LOOT_COMBINE_RE = /^You looted (?:(\d+) |an? )?(.+?) from (.+?) corpse to create (?:an? )?(.+?)\.?$/
 
 const ZONE_RE = /^You have entered (.+?)\.$/
 // Pseudo-zone notices that share the "You have entered <X>." grammar but are NOT
@@ -547,14 +557,21 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
   // --- self-loot ---
   if (text.includes('looted')) {
     const m = LOOT_RE.exec(text) ?? LOOT_RE_PLAIN.exec(text)
-    if (m) return { kind: 'loot', seq, ts, raw, item: m[1].trim(), source: cleanMob(m[2]) }
-    // Auto-disposition variants (Task #40): looted-and-routed in one line. These carry a
-    // `disposition` the loot module/quest counting use to decide whether the item is still
-    // held ('currency' = kept, quest-countable) or gone ('sold' = vendored, excluded).
+    if (m) return loot(seq, ts, raw, m[2], cleanMob(m[3]), undefined, m[1])
+    // Auto-disposition variants (Tasks #40/#47): looted-and-routed in one line. These carry
+    // a `disposition` the loot module/quest counting use to decide whether the item is
+    // still held ('currency'/'hoard'/'depot' = kept, quest-countable), gone ('sold' =
+    // vendored), or merged into an upgrade ('combined' = consumed→created, net-zero held).
     const cur = LOOT_CURRENCY_RE.exec(text)
-    if (cur) return { kind: 'loot', seq, ts, raw, item: cur[1].trim(), source: cleanMob(cur[2]), disposition: 'currency' }
+    if (cur) return loot(seq, ts, raw, cur[2], cleanMob(cur[3]), 'currency', cur[1])
     const sold = LOOT_SOLD_RE.exec(text)
-    if (sold) return { kind: 'loot', seq, ts, raw, item: sold[1].trim(), source: cleanMob(sold[2]), disposition: 'sold' }
+    if (sold) return loot(seq, ts, raw, sold[2], cleanMob(sold[3]), 'sold', sold[1])
+    const stored = LOOT_STORED_RE.exec(text)
+    if (stored) {
+      return loot(seq, ts, raw, stored[2], cleanMob(stored[3]), stored[4] === 'Dragon Hoard' ? 'hoard' : 'depot', stored[1])
+    }
+    const comb = LOOT_COMBINE_RE.exec(text)
+    if (comb) return { ...loot(seq, ts, raw, comb[2], cleanMob(comb[3]), 'combined', comb[1]), created: comb[4].trim() }
   }
 
   // --- turn-ins ---
@@ -709,6 +726,21 @@ function buffApplyEvent(
     durationMs: first.durationMs,
     candidates: cands.map((s) => ({ name: s.name, durationMs: s.durationMs, illusion: s.illusion }))
   }
+}
+
+/** Build a loot event from the shared capture layout of the loot regex family (Task #47):
+ *  optional stack-count digits (in the article slot), item, source, disposition. `count`
+ *  is omitted (not 1) when the line names no stack, keeping the common case payload-free. */
+function loot(
+  seq: number, ts: number, raw: string,
+  item: string, source: string | undefined,
+  disposition: import('../../shared/logEvents').LootDisposition | undefined,
+  countStr: string | undefined
+): LogEvent & { kind: 'loot' } {
+  const ev: LogEvent & { kind: 'loot' } = { kind: 'loot', seq, ts, raw, item: item.trim(), source }
+  if (disposition) ev.disposition = disposition
+  if (countStr) ev.count = Number(countStr)
+  return ev
 }
 
 function dmg(

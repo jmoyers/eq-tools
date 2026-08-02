@@ -12,6 +12,7 @@ import type {
 } from '@shared/types'
 import { getPoskyData } from '../../data'
 import { itemCountKey, normalizeItemName } from '../../lib/itemName'
+import { computeHeldCounts } from './heldCounts'
 import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
@@ -224,23 +225,12 @@ export function useProgress(opts?: UseProgressOptions): UseProgress {
   }, [])
 
   // Counts + display names derived from the log (everything still HELD from looting).
-  // Task #40: a 'sold' loot was auto-vendored the instant it dropped — the item is gone, so
-  // it must NOT count as held (for either quest progress or inventory reconcile, both of
-  // which derive from this one map). 'currency' loots (Wind Runes → the currency tab) and
-  // ordinary kept loot (undefined disposition) both count. Turn-in subtraction downstream
-  // (reconcile) operates on these held counts, so excluding sold here also keeps it from
-  // ever trying to subtract an item that was never held — no double-handling.
-  const logCounts = useMemo<Record<string, number>>(() => {
-    const c: Record<string, number> = {}
-    for (const e of lootHistory) {
-      if (e.disposition === 'sold') continue
-      // Fold +N variants onto the base counting key (Task #42): `Sphinx Claw` and
-      // `Sphinx Claw +1` are two of the same held item for quest purposes.
-      const k = itemCountKey(e.item)
-      c[k] = (c[k] ?? 0) + 1
-    }
-    return c
-  }, [lootHistory])
+  // The disposition → held-vs-gone rule lives in computeHeldCounts (heldCounts.ts, the ONE
+  // place counts derive — Tasks #40/#47): sold and combined rows are excluded, everything
+  // else (kept/currency/hoard/depot) counts, stacked loots count their stack size. Turn-in
+  // subtraction downstream (reconcile) operates on these held counts, so excluding sold
+  // there also keeps it from ever subtracting an item that was never held.
+  const logCounts = useMemo<Record<string, number>>(() => computeHeldCounts(lootHistory), [lootHistory])
 
   // Display names keyed by the SAME normalized counting key logCounts uses, so the
   // reconcile rows (keyed by counting key) resolve a name. We prefer the BASE

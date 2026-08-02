@@ -1,5 +1,9 @@
 // Types shared across the main process, preload bridge, and renderer.
 
+import type { LootDisposition } from './logEvents'
+
+export type { LootDisposition }
+
 /** One EverQuest character whose log we watch. */
 export interface CharacterRef {
   name: string
@@ -28,11 +32,16 @@ export interface LootEvent {
   /** zone the character was in when it was looted */
   zone?: string
   /**
-   * Auto-disposition (Task #40) for looted-and-routed lines: 'currency' = stored in the
-   * currency tab (kept, quest-countable — e.g. Wind Runes), 'sold' = auto-vendored (gone,
-   * excluded from held counts). Undefined for ordinary kept loot.
+   * Auto-disposition (Tasks #40/#47) for looted-and-routed lines — currency/hoard/depot
+   * are kept (held), sold is gone, combined is net-zero (consumed into `created`). The
+   * ONE held-count rule lives in computeHeldCounts (features/posky/heldCounts.ts).
+   * Undefined for ordinary kept loot.
    */
-  disposition?: 'currency' | 'sold'
+  disposition?: LootDisposition
+  /** Stack size when the line names one (`2 Bone Chips`); undefined = 1 (Task #47). */
+  count?: number
+  /** The upgraded item a 'combined' loot created (`… to create a <item> +N`). */
+  created?: string
 }
 
 /** A completed NPC trade / quest turn-in ("You offered … / complete the trade"). */

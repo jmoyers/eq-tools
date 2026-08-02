@@ -14,7 +14,7 @@ import {
   TextField,
   Typography
 } from '@mui/material'
-import type { LootDelta, LootEvent, LootSnap } from '@shared/types'
+import type { LootDelta, LootDisposition, LootEvent, LootSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
@@ -58,16 +58,20 @@ function fmtTime(ts: number): string {
 
 const applyLootDelta = (state: LootSnap, delta: LootDelta): LootSnap => [...state, ...delta.appended]
 
-// A subtle disposition chip (Task #40): 'currency' = routed to the currency tab (kept),
-// 'sold' = auto-vendored (gone). Dense, low-emphasis — no chip for ordinary kept loot.
-function DispositionChip({ disposition }: { disposition?: 'currency' | 'sold' }): JSX.Element | null {
-  if (disposition === 'currency') {
-    return <Chip size="small" variant="outlined" color="info" label="currency" sx={{ height: 18, fontSize: 11 }} />
-  }
+// A subtle disposition chip (Tasks #40/#47): where a looted-and-routed item went.
+// Dense, low-emphasis — no chip for ordinary kept loot. Kept storage (currency/hoard/
+// depot) reads info-blue; 'sold' (gone) is dimmed; 'combined' (merged into an upgrade)
+// reads success-green.
+function DispositionChip({ disposition }: { disposition?: LootDisposition }): JSX.Element | null {
+  if (!disposition) return null
+  const sx = { height: 18, fontSize: 11 } as const
   if (disposition === 'sold') {
-    return <Chip size="small" variant="outlined" color="default" label="sold" sx={{ height: 18, fontSize: 11, opacity: 0.7 }} />
+    return <Chip size="small" variant="outlined" color="default" label="sold" sx={{ ...sx, opacity: 0.7 }} />
   }
-  return null
+  if (disposition === 'combined') {
+    return <Chip size="small" variant="outlined" color="success" label="combined" sx={sx} />
+  }
+  return <Chip size="small" variant="outlined" color="info" label={disposition} sx={sx} />
 }
 
 function isQuestItem(name: string): boolean {
@@ -80,7 +84,7 @@ interface GroupRow {
   last: number
   topSource?: string
   zoneCount: number
-  disposition?: 'currency' | 'sold'
+  disposition?: LootDisposition
 }
 
 // Memoized rows (React.memo + stable props) so a re-render that doesn't touch a
@@ -145,9 +149,14 @@ const FlatRow = memo(function FlatRow({
       <TableCell sx={{ color: 'text.secondary' }}>{fmtTime(e.ts)}</TableCell>
       <TableCell>
         <Stack direction="row" spacing={1} alignItems="center">
-          <span>{e.item}</span>
+          <span>{e.count && e.count > 1 ? `${e.count} × ${e.item}` : e.item}</span>
           {isQuestItem(e.item) && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
           <DispositionChip disposition={e.disposition} />
+          {e.disposition === 'combined' && e.created && (
+            <Typography variant="caption" color="text.secondary">
+              → {e.created}
+            </Typography>
+          )}
         </Stack>
       </TableCell>
       <TableCell sx={{ color: 'text.secondary' }}>{e.source ?? '—'}</TableCell>
@@ -189,30 +198,29 @@ export default function LootView(): JSX.Element {
       last: number
       sources: Map<string, number>
       zones: Set<string>
-      currency: number
-      sold: number
+      /** Distinct dispositions seen across the group's rows (undefined = kept). */
+      dispositions: Set<LootDisposition | undefined>
     }
     const map = new Map<string, Group>()
     for (const e of events) {
       const key = e.itemKey
       let cur = map.get(key)
       if (!cur) {
-        cur = { item: e.item, count: 0, last: 0, sources: new Map(), zones: new Set(), currency: 0, sold: 0 }
+        cur = { item: e.item, count: 0, last: 0, sources: new Map(), zones: new Set(), dispositions: new Set() }
         map.set(key, cur)
       }
-      cur.count += 1
+      // Stacked loots count their stack size (Task #47): "2 Bone Chips" is two items.
+      cur.count += e.count ?? 1
       cur.last = Math.max(cur.last, e.ts)
       if (e.source) cur.sources.set(e.source, (cur.sources.get(e.source) ?? 0) + 1)
       if (e.zone) cur.zones.add(e.zone)
-      if (e.disposition === 'currency') cur.currency += 1
-      else if (e.disposition === 'sold') cur.sold += 1
+      cur.dispositions.add(e.disposition)
     }
     const list = [...map.values()].map((g) => {
       const topSource = [...g.sources.entries()].sort((a, b) => b[1] - a[1])[0]?.[0]
       // The group's dominant disposition — shown only when ALL of its rows share one, so a
       // mixed item (some kept, some sold) stays unlabeled rather than mislabeled.
-      const disposition =
-        g.currency === g.count ? ('currency' as const) : g.sold === g.count ? ('sold' as const) : undefined
+      const disposition = g.dispositions.size === 1 ? [...g.dispositions][0] : undefined
       return { item: g.item, count: g.count, last: g.last, topSource, zoneCount: g.zones.size, disposition }
     })
     list.sort((a, b) => b.count - a.count || b.last - a.last)

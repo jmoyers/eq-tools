@@ -4,6 +4,7 @@ import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
 import type { AASpendEvent, LevelingDelta, LevelingSnap } from '@shared/types'
+import { computeAAAccounting } from '@shared/aa'
 import { useModule } from '../../lib/useModule'
 import { formatDate } from '../../lib/formatDate'
 
@@ -94,42 +95,19 @@ export default function LevelingView(): JSX.Element {
   const sortedAAs = useMemo(() => [...aas].sort((a, b) => a.ts - b.ts), [aas])
 
   const currentLevel = sortedLevels.length ? Math.max(...sortedLevels.map((l) => l.level)) : null
-  const aaEarned = sortedAAs.reduce((s, a) => s + a.amount, 0)
 
-  // Lifetime sum of every purchase cost. This is NOT the same as net AA spent:
-  // respecs refund points (with no log line) and let the same ranks be re-bought,
-  // so sum-of-costs double-counts. Kept only as a detail figure.
-  const aaLifetimeCost = spends.reduce((s, a) => s + a.cost, 0)
-
-  // Auto-granted class abilities log as "at a cost of 0 ability points"
-  // (Lay on Hands, Unbound *, Symphonic Aura ...). They aren't real purchases.
-  const boughtCount = useMemo(() => spends.filter((s) => s.cost > 0).length, [spends])
-
-  // Unspent = the game's last authoritative "you now have", minus every AA spent
-  // after that gain. The `spends`/`aas` arrays preserve log order from the main
-  // process, so we compare array position (not the 1s-resolution timestamp) to
-  // decide "after": a spend at the same second as the last gain but logged before
-  // it must NOT be subtracted. (Proper sequence numbers arrive in a later refactor;
-  // until then, index order is the authoritative tiebreaker within a second.)
-  const aaUnspent = useMemo(() => {
-    if (!aas.length) return null
-    // Index of the last gain within the raw (log-ordered) aas array.
-    let lastGain = aas[0]
-    for (const a of aas) if (a.ts >= lastGain.ts) lastGain = a
-    let pool = lastGain.nowHave
-    for (const s of spends) {
-      // A spend counts as "after the last gain" when it is strictly later in time,
-      // or same-second but appears after the gain in log order. Since spends and
-      // gains are separate arrays we approximate same-second ordering by timestamp
-      // only; ties are rare and resolved conservatively (see caveat above).
-      if (s.ts > lastGain.ts) pool = Math.max(0, pool - s.cost)
-    }
-    return pool
-  }, [aas, spends])
-
-  // Net AA actually spent, defined so the headline cards are self-consistent:
-  //   earned = net spent + unspent   (exactly).
-  const aaSpent = aaUnspent != null ? Math.max(0, aaEarned - aaUnspent) : aaLifetimeCost
+  // Refund-proof AA accounting (Task #48). The headline is NOT Σ gains — a respec
+  // refunds points with no log line, they re-enter as fresh gain lines, so Σ gains
+  // double-counts every refunded point. Instead:
+  //   allocated = latest-epoch cost per (ability,rank), cost-0 auto-grants excluded
+  //   unspent   = last authoritative "you now have" − spends after it
+  //   earned    = allocated + unspent   (the identity the user validated)
+  // See src/shared/aa.ts for the full derivation.
+  const acct = useMemo(() => computeAAAccounting(aas, spends), [aas, spends])
+  const aaEarned = acct.earned
+  const aaSpent = acct.allocated
+  const aaUnspent = aas.length ? acct.unspent : null
+  const boughtCount = acct.boughtCount
 
   // Purchases list: newest first, with respec re-buys deduped. The same
   // ability+rank bought more than once (a respec then re-buy) collapses to its
@@ -182,14 +160,14 @@ export default function LevelingView(): JSX.Element {
           icon={<AutoAwesomeIcon fontSize="large" />}
           value={aaEarned ? aaEarned.toLocaleString() : '—'}
           label="AA points earned"
-          sub="gained, from the log"
+          sub="spent + unspent"
           accent="#6fb3d2"
         />
         <HeroCard
           icon={<AutoAwesomeIcon fontSize="large" />}
           value={aaSpent ? aaSpent.toLocaleString() : '—'}
           label="AA points spent"
-          sub={`${boughtCount} abilities bought`}
+          sub={`${boughtCount} abilities allocated`}
           accent="#b07fd0"
         />
         <HeroCard
@@ -210,8 +188,10 @@ export default function LevelingView(): JSX.Element {
           <Stack spacing={2} sx={{ flex: 2, minWidth: 320 }}>
             {aaCumulative.length >= 2 && (
               <Paper variant="outlined" sx={{ p: 2 }}>
-                <Typography variant="subtitle2" gutterBottom>
-                  AA earned over time
+                <Typography variant="subtitle2">AA gained over time</Typography>
+                <Typography variant="caption" color="text.secondary" gutterBottom display="block">
+                  cumulative gain lines — includes points re-gained after a respec, so the final
+                  value runs ahead of the {aaEarned.toLocaleString()} earned headline
                 </Typography>
                 <AreaChart points={aaCumulative} color="#6fb3d2" />
               </Paper>

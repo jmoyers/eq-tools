@@ -23,21 +23,37 @@ export interface ZoneEvent extends LogEventBase {
   zone: string
 }
 
+/**
+ * Where a looted-and-routed item went (Tasks #40/#47). The held-vs-gone rule lives in
+ * ONE place — `computeHeldCounts` (renderer, features/posky/heldCounts.ts):
+ *   'currency' — stored in the currency tab (kept, quest-countable — e.g. Wind Runes)
+ *   'sold'     — auto-vendored the instant it dropped (gone, never held)
+ *   'hoard'    — stored in the Dragon Hoard (bank-type storage — HELD)
+ *   'depot'    — stored in the tradeskill depot (bank-type storage — HELD)
+ *   'combined' — consumed on pickup to create an upgraded `<item> +N` (see `created`;
+ *      net-ZERO for held counts — the looted copy and a held copy merge into one)
+ */
+export type LootDisposition = 'currency' | 'sold' | 'hoard' | 'depot' | 'combined'
+
 /** `--You have looted a <item> from <mob>'s corpse.--` (self-loot). */
 export interface LootEventE extends LogEventBase {
   kind: 'loot'
   item: string
   source?: string
   /**
-   * Auto-disposition (Task #40) for the one-line looted-and-routed variants:
-   *   'currency' — `You looted <item> … and stored it in your currency` (kept; the item is a
-   *      quest/held collectible — e.g. a Plane of Sky Wind Rune — so it COUNTS toward held /
-   *      quest progress).
-   *   'sold'     — `You looted <item> … and sold it for free.` / `… for <money>.` (vendored;
-   *      the item is GONE, so it must NOT count as held).
-   * Undefined for the ordinary `--You have looted …--` form (kept, no routing implied).
+   * Auto-disposition (Tasks #40/#47) for the one-line looted-and-routed variants
+   * (`You looted …` — no leading "have", no dashes). Undefined for the ordinary
+   * `--You have looted …--` form (kept, no routing implied). See LootDisposition.
    */
-  disposition?: 'currency' | 'sold'
+  disposition?: LootDisposition
+  /**
+   * Stack size when the line names one (Task #47): `--You have looted 2 Bone Chips …--`,
+   * `You looted 2 Phosphorous Powder … and sold it …`. Undefined = 1. Held counts add
+   * `count`, not 1 — a stacked loot is that many items.
+   */
+  count?: number
+  /** The upgraded item a 'combined' loot created (`… to create a <item> +N`). */
+  created?: string
 }
 
 /** `You offered N <item> to <NPC>.` — one per item offered. */

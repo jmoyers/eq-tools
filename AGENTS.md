@@ -788,9 +788,9 @@ together, and it should build good sane defaults that help you with both by defa
 - Timestamp: `[Sat Aug 01 13:00:28 2026] <message>`.
 - Loot (self): `--You have looted a <item> from <mob>'s corpse.--` (strip the
   `from … corpse` suffix; capture the mob). Ordinary KEPT loot → no `disposition`.
-  - **Auto-disposition variants (Task #40)** — one-line looted-and-routed forms that use
-    `You looted` (no leading "have", no dashes). Two are parsed, both emit a `loot` event
-    with a `disposition` field:
+  - **Auto-disposition variants (Tasks #40/#47)** — one-line looted-and-routed forms that
+    use `You looted` (no leading "have", no dashes). ALL are parsed, each emitting a `loot`
+    event with a `disposition` field:
     - `You looted <item> from <mob>'s corpse and stored it in your currency` — **NO trailing
       period** → `disposition:'currency'`. The item entered the currency tab and is a
       QUEST/held collectible (Plane of Sky **Wind Runes** arrive this way), so it **COUNTS**
@@ -803,14 +803,36 @@ together, and it should build good sane defaults that help you with both by defa
       Auto-vendored → the item is GONE, so it is **excluded from held counts** (the ONE place
       counts derive: `useProgress.logCounts` skips `disposition:'sold'`; reconcile + quest
       progress both consume that map, so nothing double-subtracts a never-held item).
-    - Held-vs-gone rule lives in `useProgress.logCounts`; the disposition chip (dense
-      `currency`/`sold`) shows on `LootView` rows + grouped rows (grouped shows a shared
+    - `You looted <item> from <mob>'s corpse and stored it in your Dragon Hoard` /
+      `… tradeskill depot` (Task #47, NO trailing period) → `disposition:'hoard'`/`'depot'`.
+      Bank-type storage — the item is **HELD** (counts toward quest progress / reconcile).
+    - `You looted <item> from <mob>'s corpse to create a <item> +N` (Task #47, no period) →
+      `disposition:'combined'` + **`created`** (the upgrade, on the event AND the LootEvent
+      row). The looted copy merged with an ALREADY-HELD copy into the upgrade, so a combine
+      is **NET-ZERO for held counts**: the counting key strips ` +N` (Task #42), so consumed
+      base + consumed held copy + created upgrade all share one key (loot +1, consume 2,
+      create 1 → 0), and the held copy stays counted by its own earlier loot row — combined
+      rows are simply skipped. Verified: all 293 real combine lines create `<same base> +N`.
+    - **Stack counts (Task #47):** every loot form can carry a digit run where the article
+      goes — dashed `--You have looted 2 Bone Chips …--` (kept) and sold `You looted 2
+      Phosphorous Powder …` both occur in the real log. Captured as `count` (undefined = 1)
+      so the item name stays clean (the old regexes swallowed the digits, minting bogus
+      "2 Bone Chips" counting keys); held counts add `count`, not 1. VERIFIED SAFE: no real
+      looted item name starts with a digit.
+    - Held-vs-gone rule lives in **`computeHeldCounts`**
+      (`src/renderer/src/features/posky/heldCounts.ts`, extracted from `useProgress.logCounts`
+      in Task #47 so the golden tests assert the PRODUCTION rule): kept/currency/hoard/depot
+      count (× stack size), sold + combined are skipped. The disposition chip (dense
+      `currency`/`sold`/`hoard`/`depot`/`combined`; flat rows also show `→ <created>` and a
+      `N ×` item prefix) shows on `LootView` rows + grouped rows (grouped shows a shared
       disposition only when ALL rows agree).
-  - **NOT parsed** (other dispositions seen in the log, out of Task #40 scope — left as
-    `unknown`): `… and stored it in your Dragon Hoard` (76×), `… and stored it in your
-    tradeskill depot` (2×), and the transform form `You looted <item> … to create a <item+N>`
-    (item combine/upgrade). Add these deliberately if a feature needs them.
-  - Full-log tally (2026-08-01 replay): 3513 loot rows — 27 currency, 2817 sold, 669 kept.
+  - The loot family is now FULLY parsed — a full-log replay leaves **zero** unknown lines
+    containing "looted". Golden windows: `tests/lootDispositionWindows.test.mts` (W19 hoard /
+    W19b depot + the whole disposition family in one 9-line span / W20 combine / W21 stacked
+    counts; fixtures extracted verbatim via `tests/extract-loot-fixtures.mjs` — the buffs
+    extractor drops loot lines, hence the sibling).
+  - Full-log tally (2026-08-02 replay): 3911 loot rows (4343 units incl. stacks) —
+    673 kept, 2830 sold, 293 combined, 80 hoard, 33 currency, 2 depot.
   - **`+N` variant normalization (Task #42).** EQ drops upgraded `+N` variants broadly
     (`Sphinx Claw +1`, `Belt of Concordance +1`, …). `normalizeItemName()` /
     `itemCountKey()` (`src/renderer/src/lib/itemName.ts`) strip a trailing ` +<digits>`
@@ -831,7 +853,28 @@ together, and it should build good sane defaults that help you with both by defa
   ability point(s).` ("You now have M" is **unspent**, not lifetime.)
   Gotchas (all validated): cost-0 spend lines are **auto-grants**, not purchases;
   **respecs re-log purchases** (same ability+rank re-bought, no refund line exists)
-  so sum-of-costs ≠ net spent — headline "spent" must be `earned − unspent`.
+  so sum-of-costs ≠ net spent.
+  - **Earned identity (Task #48) — refund-proof.** A respec refunds points with NO log
+    line; the refunded points RE-ENTER the pool and re-fire as fresh **gain** lines, then
+    re-fire as **spend** lines when re-bought. So `Σ gains == Σ spend costs` (228==228 on
+    the real log) and BOTH double-count every refunded point — the old "earned = Σ gains"
+    headline was inflated. A pool simulated from gains−spends tracks the game's own "You
+    now have M" with **0 drift**, confirming there is no other hidden AA line. The correct
+    headline: **`earned = allocated + unspent`** where **`allocated` = latest-epoch cost
+    per DISTINCT (ability, rank)**, cost-0 auto-grants excluded (latest-per-key collapses a
+    respec re-buy of the same rank — the ONLY refund signal the log carries), and
+    `unspent` = last authoritative "You now have M" − spends after it. The `ability` string
+    already carries the rank for the improved form (`"Combat Fury 3"`) and the quoted form
+    is rank 1, so `ability` alone is a valid (ability,rank) key. This is refund-proof for
+    same-rank re-buys (the common case); a refund whose points are re-spent on a DIFFERENT
+    ability leaves no log signal and can't be recovered (doesn't occur on this character —
+    only Mnemonic Retention's ladder was re-bought). Pure impl in **`src/shared/aa.ts`**
+    (`computeAAAccounting`), consumed by `LevelingView.tsx`; pinned by
+    `tests/aaAccounting.test.mts` (Mnemonic respec golden window + full-log identity).
+    Validated Aug 1: net 204 + unspent 2 = **206 earned**. **The AA-over-time chart shows
+    cumulative GAIN lines (relabeled "AA gained over time" with a caption) — it honestly
+    runs AHEAD of the earned headline because it includes refund re-grants; no clever
+    refund inference is attempted (simpler + honest per the user).**
 - **Combat** (see `src/main/combat/parse.ts`):
   - Melee: `<A> <verb> <B> for N points of damage.` + optional `(Critical)` /
     `(Riposte)` / `(Slay Undead)` / `(Finishing Blow)` modifier. Verbs conjugate:
