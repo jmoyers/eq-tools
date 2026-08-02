@@ -53,9 +53,10 @@
 
 import type { EqModule } from './types'
 import type { LogEvent } from '../../shared/logEvents'
-import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '../../shared/types'
+import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap, MessageOverlay } from '../../shared/types'
 import { idKey, spellCanonKey } from '../log/parser'
 import type { SpellDb } from '../data/spellDb'
+import { MessageOverlayMiner } from '../data/messageOverlay'
 import {
   charmedPetDiesOnDeathLine,
   classifyFadeTarget,
@@ -145,6 +146,42 @@ function spellKey(s: string): string {
   return spellCanonKey(s)
 }
 
+/**
+ * True when an un-catalogued line is SHAPED like a spell-landing flavor message (Task #36):
+ * a short-ish sentence ending in a period, not a numeric/combat/system line. Used to feed
+ * candidate landing messages the DB missed (e.g. Symbol of Pinzarn's real landing line,
+ * whose wiki msg_cast_on_you is wrong) into the overlay miner. Deliberately permissive — the
+ * miner's unambiguous-anchor + repeat-count rules reject coincidental pairings, so a
+ * false candidate never earns a VERIFIED verdict.
+ */
+// Casting-system / UI feedback lines that are SELF-directed ("you"/"your") in shape but are
+// never a spell-landing emote (they recur across every spell → pure noise). Rejected so a
+// coincidental burst pairing can't verify them.
+const CASTING_SYSTEM_RE =
+  /can't use that command|regain your concentration|change your invocation|begin reciting|cannot see your target|Auto attack|mend your wounds|shimmers briefly|feels alive with power|begins casting|begin singing|You must|Insufficient|You do not|not ready yet|too far|out of range|You have entered|received any tells|cannot reply|mostly successful|has been overwritten|You forget |memoriz|You can(not| ?'?t)|Your target|Your spell|Your .* spell|You have finished|Beginning to|You are (?:no longer|now)|not enough|you cannot reply/i
+/**
+ * True when an un-catalogued line is plausibly a SELF spell-landing flavor message the DB
+ * missed (Task #36) — the ONLY unknown-line class worth mining. It must be about the CASTER
+ * (contain "you"/"your" or start with "You"/"Your"), a short sentence ending in a period,
+ * with no numbers (damage/heal), no chat/tell/"by"/"from" markers, and not a casting-system
+ * / UI line. This deliberately EXCLUDES third-person mob-subject lines ("a revenant
+ * staggers.", "…spell is interrupted.") — those are combat spam that would poison the
+ * overlay with coincidental burst pairings. Symbol of Pinzarn's real "The symbol of Pinzarn
+ * flashes before your eyes." passes (it names "your eyes"); a mob effect line does not.
+ */
+function looksLandingMessage(text: string): boolean {
+  if (text.length < 6 || text.length > 90) return false
+  if (!text.endsWith('.')) return false
+  if (/\d/.test(text)) return false // damage/heal/point lines carry numbers
+  // Must reference the caster — a genuine cast-on-YOU line is about the player.
+  if (!/\byou\b|\byour\b/i.test(text)) return false
+  if (text.includes("' told you") || text.includes(' tells ') || text.includes(' says')) return false
+  if (text.includes(' by ') || text.includes(' from ')) return false
+  if (text.includes(' spell ') || text.includes('attention')) return false // combat cast spam
+  if (CASTING_SYSTEM_RE.test(text)) return false
+  return true
+}
+
 function percentile(sortedAsc: number[], p: number): number {
   if (sortedAsc.length === 0) return 0
   if (sortedAsc.length === 1) return sortedAsc[0]
@@ -169,14 +206,68 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   /** Recently-cast spell keys → last cast ts (Task #34), for ambiguous-message resolution. */
   private castHistory = new Map<string, number>()
 
-  constructor(db?: SpellDb) {
+  /**
+   * The observed-message overlay miner (Task #36). Mines (message, spell) associations from
+   * the log to VERIFY / flag-SHARED / flag-CONTRADICTS-WIKI the cast messages, augmenting
+   * spells.json with what we actually observe. Seeded with the committed baseline + the
+   * persisted user overlay at construction so it starts warm.
+   */
+  private readonly miner: MessageOverlayMiner
+
+  constructor(db?: SpellDb, seedOverlays?: (MessageOverlay | null | undefined)[]) {
     this.db = db
+    this.miner = new MessageOverlayMiner(db?.byKey)
+    // Seed the miner with the committed baseline + the user's persisted overlay (both
+    // additive) so it starts warm — a fresh install benefits from the shipped baseline,
+    // a returning user keeps everything their own log has taught (Task #36).
+    for (const ov of seedOverlays ?? []) this.miner.merge(ov)
+  }
+
+  /** Serialize the current learned overlay (for debounced persistence in index.ts). */
+  overlaySnapshot(): MessageOverlay {
+    return this.miner.build()
   }
 
   /** Authoritative DB duration (ms) for a spell key, or null when unknown. */
   private dbDurationFor(key: string): number | null {
     const s = this.db?.byKey.get(key)
     return s?.durationMs ?? null
+  }
+
+  /** True when a spell KEY is illusion-flagged in the DB (Task #36). */
+  private isIllusion(key: string): boolean {
+    return this.db?.byKey.get(key)?.illusion ?? false
+  }
+
+  /**
+   * ILLUSION EXCLUSIVITY (Task #36, the user's rule): only ONE illusion can be active on a
+   * given entity at a time (Permanent Illusion AA or not). Removes every illusion-flagged
+   * active + open instance bound to `entityKey` EXCEPT the one being applied now (`keepKey`).
+   * A new illusion apply on an entity replaces any prior illusion on that entity — applies
+   * to self AND pet (a pet illusion like Boon-on-pet replaces a prior pet illusion).
+   */
+  private clearIllusionsOn(entityKey: string, keepKey: string): void {
+    for (const [ik, a] of [...this.active]) {
+      if (ik === keepKey) continue
+      if (this.instanceEntityKey(ik) !== entityKey) continue
+      if (this.isIllusion(spellKey(a.spell))) {
+        this.active.delete(ik)
+        this.open.delete(ik)
+        this.dirty = true
+      }
+    }
+  }
+
+  /** Remove the (single) illusion-flagged SELF active — the `Your illusion fades.` handler. */
+  private clearSelfIllusion(): void {
+    for (const [ik, a] of [...this.active]) {
+      if (!a.self) continue
+      if (this.isIllusion(spellKey(a.spell))) {
+        this.active.delete(ik)
+        this.open.delete(ik)
+        this.dirty = true
+      }
+    }
   }
 
   /** The single cast currently in flight (You begin …), or null. */
@@ -249,6 +340,51 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     return this.summonedKey ?? this.charmedKey
   }
 
+  /** Strip the `[timestamp] ` prefix from a raw line → the bare message text (for the overlay). */
+  private messageTextOf(raw: string): string {
+    const i = raw.indexOf('] ')
+    return i >= 0 ? raw.slice(i + 2) : raw
+  }
+
+  /**
+   * Feed the observed-message overlay miner (Task #36). A castBegin is the association
+   * ANCHOR; the message-bearing events (buffApply / spellEmote = landing, buffWearOff /
+   * illusionFade / buffFade = wears-off) are candidate messages associated to the nearest
+   * anchor within the window. This runs on EVERY event before the switch, so it mines the
+   * same way in replay and live.
+   */
+  private mineForOverlay(ev: LogEvent): void {
+    switch (ev.kind) {
+      case 'castBegin':
+        this.miner.observeCast(ev.spell, ev.ts)
+        break
+      case 'buffApply':
+      case 'spellEmote':
+        this.miner.observeMessage(this.messageTextOf(ev.raw), ev.ts, 'landing')
+        this.overlayCacheDirty = true
+        break
+      case 'buffWearOff':
+      case 'illusionFade':
+      case 'buffFade':
+        this.miner.observeMessage(this.messageTextOf(ev.raw), ev.ts, 'wearsOff')
+        this.overlayCacheDirty = true
+        break
+      case 'unknown': {
+        // A line the parser classified as NOTHING but that could be an un-catalogued
+        // landing message (e.g. Symbol of Pinzarn's real "The symbol of Pinzarn flashes
+        // before your eyes." — the wiki's msg_cast_on_you is WRONG, so the DB table never
+        // matched it). Feed only flavor-SHAPED lines; the unambiguous-anchor + count rules
+        // in the miner discard coincidental pairings, so a wrong candidate never verifies.
+        const t = this.messageTextOf(ev.raw)
+        if (looksLandingMessage(t)) {
+          this.miner.observeMessage(t, ev.ts, 'landing')
+          this.overlayCacheDirty = true
+        }
+        break
+      }
+    }
+  }
+
   onEvent(ev: LogEvent): void {
     this.seq = ev.seq
     if (this.lastEventTs > 0 && ev.ts - this.lastEventTs >= SESSION_GAP_MS) {
@@ -257,6 +393,10 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.lastEventTs = ev.ts
     this.maybeLandPendingByTime(ev.ts)
     this.sweepHygiene(ev.ts)
+
+    // Observed-message overlay mining (Task #36): feed the anchor cast + any candidate
+    // message line so the miner accretes (message, spell) associations across replay + live.
+    this.mineForOverlay(ev)
 
     switch (ev.kind) {
       case 'castBegin': {
@@ -273,6 +413,9 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         this.pending = { spell: ev.spell, key, beganTs: ev.ts, stagedRefresh }
         if (!existing && this.everFaded.has(key)) {
           this.active.set(iKey, this.buildActive(ev.spell, key, eKey, ev.ts, true, disp))
+          // ILLUSION EXCLUSIVITY (Task #36): an optimistic illusion cast also replaces any
+          // prior illusion on the same entity (a message apply confirms it later).
+          if (this.isIllusion(key)) this.clearIllusionsOn(eKey, iKey)
           this.dirty = true
         }
         break
@@ -307,6 +450,13 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         // Authoritative, message-driven expiry. The wears-off emote prints to the buff
         // HOLDER (the player), so it clears the SELF instance of this spell (Task #34/#35).
         this.removeAuthoritative(spellKey(ev.spell), SELF_KEY, ev.ts)
+        break
+      }
+      case 'illusionFade': {
+        // `Your illusion fades.` (Task #36): the player's active illusion clicked/wore off.
+        // Only one illusion is ever active on self, so this removes whichever illusion self
+        // buff is active — no spell name needed (the line is 27-way-ambiguous by design).
+        this.clearSelfIllusion()
         break
       }
       case 'heal': {
@@ -449,6 +599,9 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
 
     if (this.everFaded.has(p.key)) {
       this.active.set(iKey, this.buildActive(p.spell, p.key, eKey, landedTs, false, disp))
+      // ILLUSION EXCLUSIVITY (Task #36): landing an illusion cast replaces any prior
+      // illusion on the same entity.
+      if (this.isIllusion(p.key)) this.clearIllusionsOn(eKey, iKey)
     }
     this.dirty = true
   }
@@ -504,6 +657,9 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       iKey,
       this.buildActive(spell, key, eKey, ts, false, disp, { messageDriven: true, permanent })
     )
+    // ILLUSION EXCLUSIVITY (Task #36): a new illusion apply on this entity replaces any
+    // prior illusion active on it (self OR pet). Only one illusion per entity at a time.
+    if (illusion) this.clearIllusionsOn(eKey, iKey)
     this.dirty = true
   }
 
@@ -946,8 +1102,20 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     }
     return {
       active: [...this.active.values()].sort((a, b) => a.startedTs - b.startedTs),
-      stats
+      stats,
+      overlay: this.cachedOverlay()
     }
+  }
+
+  /** Cache the built overlay; rebuild only when the miner observed something new. */
+  private overlayCache: MessageOverlay | null = null
+  private overlayCacheDirty = true
+  private cachedOverlay(): MessageOverlay {
+    if (this.overlayCacheDirty || this.overlayCache == null) {
+      this.overlayCache = this.miner.build()
+      this.overlayCacheDirty = false
+    }
+    return this.overlayCache
   }
 
   snapshot(): { seq: number; state: BuffsSnap } {

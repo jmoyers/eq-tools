@@ -573,6 +573,18 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     if (m) return { kind: 'aaActivate', seq, ts, raw, name: m[1].trim() }
   }
 
+  // --- illusion click-off (Task #36): "Your illusion fades." ---
+  // The shared removal line for EVERY illusion-flagged spell (Illusion: <race>, Boon of
+  // the Garou, …) — the DB lists it as msg_wears_off for 27 distinct spells, so it can't
+  // name which illusion faded. It doesn't need to: only ONE illusion is active at a time
+  // (the user's rule), so this removes whichever illusion self buff is active. Emitted
+  // HERE, before the DB buffWearOff table below, so the 27-way-ambiguous wears-off match
+  // never fires for this exact line (which would remove an arbitrary first candidate).
+  // NOT DB-gated — the text is unambiguous on its own.
+  if (text === 'Your illusion fades.') {
+    return { kind: 'illusionFade', seq, ts, raw, target: 'self' }
+  }
+
   // --- message-driven buff events (Task #34) — DB-gated, additive. Emitted only when a
   // spell database is installed on the config (installSpellDb); with no DB these never
   // fire so parser purity holds and existing tests/profiles are byte-for-byte unchanged.

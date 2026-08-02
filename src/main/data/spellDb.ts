@@ -118,3 +118,44 @@ export function loadSpellDb(): SpellDb {
   cached = buildSpellDb(file.spells)
   return cached
 }
+
+/**
+ * Apply observed-message-overlay corrections to the DB's cast-on-you table (Task #36) — the
+ * EFFECTIVE DB (spells.json + overlay, overlay WINS). For each VERIFIED / CONTRADICTS-WIKI
+ * landing message the overlay learned, register that exact text → the observed spell, so the
+ * parser recognizes a self-landing line the wiki got wrong or omitted (e.g. Symbol of
+ * Pinzarn's real "The symbol of Pinzarn flashes before your eyes.", whose wiki
+ * msg_cast_on_you is inaccurate). Additive + idempotent: an existing correct mapping is left
+ * alone; a contradiction REPLACES the message's candidates with the observed spell (overlay
+ * wins). Unknown/shared messages contribute nothing (a shared message can't name a spell).
+ */
+export function applyOverlayCorrections(
+  db: SpellDb,
+  corrections: Map<string, { spell: string; contradicts?: string }>
+): number {
+  let applied = 0
+  for (const [text, corr] of corrections) {
+    const spell = db.byKey.get(canonKey(corr.spell))
+    if (!spell) continue
+    // A cast-on-YOU landing message is a BENEFICIAL-buff signal (a detrimental spell the
+    // player casts lands on a MOB, not on themselves). A "correction" pointing at a
+    // Detrimental spell is a mining false positive (the self line coincided with a debuff
+    // cast); never let it override the DB. Skip it.
+    if (spell.spellType === 'Detrimental') continue
+    const existing = db.castOnYou.get(text)
+    if (corr.contradicts) {
+      // Wiki contradiction: the observed line really means THIS spell — override.
+      db.castOnYou.set(text, [spell])
+      applied++
+    } else if (!existing) {
+      // A verified landing message the DB didn't have — fill the gap.
+      db.castOnYou.set(text, [spell])
+      applied++
+    } else if (!existing.some((e) => canonKey(e.name) === canonKey(spell.name))) {
+      // The DB maps this text to other spells too; add ours as a candidate.
+      existing.push(spell)
+      applied++
+    }
+  }
+  return applied
+}

@@ -471,6 +471,63 @@ others second (pet is others)." So the model was corrected:
   message-bound, `inferred` is fallback-only. Final self bar (from #34) survives unchanged; pet
   (phoboplasm) buffs listed under the pet's name; debuffs on hostiles.
 
+**Illusion exclusivity + observed-message overlay (Task #36).** The final self bar wrongly showed
+MULTIPLE illusions at once (up to 8 on the full log) because the model never parsed the click-off
+line and `You feel different.` resolved to different illusion candidates as independent
+(spell,self) instances. Two fixes:
+
+- **Illusion rules.** (a) The parser now emits a dedicated **`illusionFade { target:'self' }`**
+  for the exact line `Your illusion fades.` — matched BEFORE the DB `buffWearOff` table (that line
+  is the `msg_wears_off` for 27 distinct illusion spells incl. Boon of the Garou, so a
+  wears-off match would remove an arbitrary FIRST candidate). The buffs module's handler calls
+  `clearSelfIllusion()` — removes whichever illusion-flagged self buff is active (there is at most
+  one), no spell name needed. (b) **Exclusivity (the user's rule): only ONE illusion per ENTITY at
+  a time.** `applyMessageBuff`/`landPending`/the optimistic castBegin path call `clearIllusionsOn(
+  entityKey, keepKey)` when the applied spell is illusion-flagged (`db.byKey.get(key)?.illusion`),
+  removing any prior illusion active/open bound to that SAME entity. Per-entity, so a self
+  illusion and a **pet** illusion (Boon-on-pet) coexist (W9 still passes). Full-log MAX
+  simultaneous self illusions went **8 → 1**; final self illusion = **Boon of the Garou (perm)**,
+  which matches the LAST illusion event in the log (`You feel... strange.` self-cast @22:08:02) —
+  the illusion display now tracks the last illusion cast, replacing the prior one each time.
+- **Observed-message overlay** (`src/main/data/messageOverlay.ts`, `MessageOverlayMiner`). The
+  user's directive: "augment the spell database with our own method of verifying variations of the
+  cast messages for everything we encounter." As the buffs module folds the log (replay AND live)
+  it feeds every `castBegin` (anchor) + candidate message line (`buffApply`/`spellEmote` = landing,
+  `buffWearOff`/`illusionFade`/`buffFade` = wears-off, plus un-catalogued **self-shaped** flavor
+  lines the DB missed — gated by `looksLandingMessage`, which requires a `you`/`your` reference and
+  rejects combat/system spam) into the miner, keyed by (messageText, spellKey). A message is
+  associated to a cast ONLY when the anchor is **unambiguous** (exactly one distinct spell in the
+  6s window) — this is what keeps VERIFIED verdicts trustworthy (a burst with 5 casts attributes
+  to none). Per-message **verdict**: **VERIFIED** (one spell, n≥2), **SHARED** (multiple spells —
+  e.g. `You feel different.` for every illusion; can't name a spell → resolve via cast history),
+  **CONTRADICTS-WIKI** (observed self-landing line ≠ the spell's `msg_cast_on_you`, and doesn't
+  match its `msg_cast_on_other` suffix either — e.g. `The symbol of Pinzarn/Transal flashes before
+  your eyes.` vs the wiki's wrong `A mystic symbol flashes…`), **UNKNOWN** (n<2).
+  - **Effective DB = spells.json + overlay, overlay WINS.** `deriveLandingCorrections()` → the
+    VERIFIED/CONTRADICTS-WIKI self-landing corrections; `applyOverlayCorrections(db, corr)` layers
+    them onto the parser's `castOnYou` table at startup (index.ts, BEFORE `installSpellDb`) so a
+    self-landing line the wiki got wrong/omitted is recognized. **FUTURE AGENTS: consult the
+    overlay before trusting a wiki cast message** — a SHARED verdict means the message can't name a
+    spell on its own (cast-history resolution required); a CONTRADICTS-WIKI verdict means the
+    wiki's `msg_*` for that spell is inaccurate.
+  - **Persistence.** Committed **baseline** `src/main/data/messageOverlay.baseline.json` (generated
+    by `npm run gen:message-overlay` from the full log; imported+inlined like spells.json so fresh
+    installs start warm) + the user's **`<userData>/message-overlay.json`** (versioned; saved
+    debounced ~60s on the tick + on quit; loaded at startup). Both seed the miner additively via
+    the `BuffsModule(db, [baseline, userOverlay])` ctor. `src/main/data/overlayPersistence.ts` owns
+    load/save; `OVERLAY_VERSION` guards a stale schema. Full-log overlay stats: **574 verified /
+    1119 shared / 179 contradictions**.
+  - **Auditability.** `BuffsSnap.overlay` ships in the snapshot; `BuffsView`'s collapsible
+    "Message overlay (learned)" section is a dense read-only table (message · role · verdict · n ·
+    spells+counts), contradictions/verified/shared first (UNKNOWN hidden).
+- **Golden windows** (`tests/illusionOverlayWindows.test.mts`, +4 → 15 total): **W11** the real
+  20:15:41→20:23:39 window — Wood Elf self illusion (generic msg + cast history), Boon on the pet,
+  `Your illusion fades.` @20:23:39 clears the self illusion; asserts NEVER two self illusions and
+  final self illusion count 0. **W11b** four illusions cast in sequence never pile up (exclusivity
+  on apply). **W12a** `You feel different.` classified SHARED. **W12b** Symbol of Transal's real
+  landing line recorded CONTRADICTS-WIKI (Pinzarn shares the inaccuracy but is cast-begun once;
+  Transal is the repeatable proof). All W1–W10 stay green.
+
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
   the renderer and **missed any charm that happened before the app opened** — the

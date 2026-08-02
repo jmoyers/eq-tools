@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import {
   Box,
   Chip,
+  Collapse,
+  IconButton,
   LinearProgress,
   Paper,
   Stack,
@@ -14,7 +16,17 @@ import {
   Typography
 } from '@mui/material'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
-import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '@shared/types'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import ExpandLessIcon from '@mui/icons-material/ExpandLess'
+import type {
+  ActiveBuff,
+  BuffClass,
+  BuffStat,
+  BuffsDelta,
+  BuffsSnap,
+  MessageOverlay,
+  OverlayVerdict
+} from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import {
   fmtDuration,
@@ -283,6 +295,129 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
   )
 }
 
+// Verdict → chip color + label for the overlay audit table (Task #36).
+const VERDICT_COLOR: Record<OverlayVerdict, 'success' | 'info' | 'error' | 'default'> = {
+  verified: 'success',
+  shared: 'info',
+  'contradicts-wiki': 'error',
+  unknown: 'default'
+}
+const VERDICT_LABEL: Record<OverlayVerdict, string> = {
+  verified: 'verified',
+  shared: 'shared',
+  'contradicts-wiki': 'contradicts wiki',
+  unknown: 'unknown'
+}
+
+/**
+ * The observed-message overlay diagnostics (Task #36) — a dense, read-only, collapsible
+ * audit of what the app LEARNED about the game's cast messages by mining the log: which
+ * messages VERIFY a single spell, which are SHARED/GENERIC (can't name a spell — e.g. "You
+ * feel different." for every illusion), and which CONTRADICT the wiki (its msg_* field is
+ * wrong — e.g. Symbol of Pinzarn). This is the auditability the user asked for: a future
+ * agent (or the user) can see the effective DB = spells.json + overlay, overlay wins.
+ */
+function OverlayDiagnostics({ overlay }: { overlay: MessageOverlay }): JSX.Element {
+  const [open, setOpen] = useState(false)
+  const { stats } = overlay
+  // Show the actionable rows first: contradictions, then verified, then shared. Skip the
+  // low-signal UNKNOWN bulk. Cap so the table stays dense/scannable.
+  const rows = useMemo(
+    () => overlay.messages.filter((m) => m.verdict !== 'unknown').slice(0, 200),
+    [overlay.messages]
+  )
+  return (
+    <Box>
+      <Stack
+        direction="row"
+        alignItems="center"
+        spacing={1}
+        sx={{ cursor: 'pointer' }}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <Typography variant="subtitle2">Message overlay (learned)</Typography>
+        <Chip
+          size="small"
+          variant="outlined"
+          color="success"
+          label={`${stats.verified} verified`}
+          sx={{ height: 18, fontSize: 11 }}
+        />
+        <Chip
+          size="small"
+          variant="outlined"
+          color="info"
+          label={`${stats.shared} shared`}
+          sx={{ height: 18, fontSize: 11 }}
+        />
+        <Chip
+          size="small"
+          variant="outlined"
+          color="error"
+          label={`${stats.contradictions} contradict wiki`}
+          sx={{ height: 18, fontSize: 11 }}
+        />
+        <Box sx={{ flexGrow: 1 }} />
+        <IconButton size="small">{open ? <ExpandLessIcon /> : <ExpandMoreIcon />}</IconButton>
+      </Stack>
+      <Typography variant="caption" color="text.secondary">
+        What we learned by mining the log about the messages each spell prints — augmenting the
+        wiki spell database ("effective DB = spells.json + overlay, overlay wins"). A{' '}
+        <b>shared</b> message can't identify a spell on its own (resolve via cast history); a{' '}
+        <b>contradicts wiki</b> row means the wiki's cast message for that spell is wrong.
+      </Typography>
+      <Collapse in={open} unmountOnExit>
+        <Paper variant="outlined" sx={{ mt: 1, p: 1, maxHeight: 380, overflow: 'auto' }}>
+          <Table size="small" sx={{ '& td, & th': { py: 0.4, fontSize: 12 } }}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Message</TableCell>
+                <TableCell>role</TableCell>
+                <TableCell>verdict</TableCell>
+                <TableCell align="right">n</TableCell>
+                <TableCell>spell(s) · count</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((m) => (
+                <TableRow key={`${m.role}:${m.text}`} hover>
+                  <TableCell sx={{ fontFamily: 'monospace', maxWidth: 320 }}>{m.text}</TableCell>
+                  <TableCell sx={{ color: 'text.secondary' }}>{m.role}</TableCell>
+                  <TableCell>
+                    <Chip
+                      size="small"
+                      variant="outlined"
+                      color={VERDICT_COLOR[m.verdict]}
+                      label={VERDICT_LABEL[m.verdict]}
+                      sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
+                    />
+                  </TableCell>
+                  <TableCell align="right">{m.total}</TableCell>
+                  <TableCell sx={{ color: 'text.secondary', maxWidth: 340 }}>
+                    {m.verdict === 'contradicts-wiki' && m.wikiConflict ? (
+                      <Tooltip title={`wiki claims: "${m.wikiConflict.wikiText}"`}>
+                        <span>
+                          {m.spells.map((s) => `${s.spell}:${s.count}`).join(', ')}{' '}
+                          <span style={{ opacity: 0.6 }}>(wiki ≠ observed)</span>
+                        </span>
+                      </Tooltip>
+                    ) : (
+                      m.spells
+                        .slice(0, 8)
+                        .map((s) => `${s.spell}:${s.count}`)
+                        .join(', ') + (m.spells.length > 8 ? ' …' : '')
+                    )}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Paper>
+      </Collapse>
+    </Box>
+  )
+}
+
 export default function BuffsView(): JSX.Element {
   const snap = useModule<BuffsSnap, BuffsDelta>('buffs', applyBuffsDelta) ?? EMPTY_BUFFS
   // Tick once a second so active-buff elapsed/remaining stay live between deltas.
@@ -425,6 +560,10 @@ export default function BuffsView(): JSX.Element {
           </Stack>
         )}
       </Box>
+
+      {snap.overlay && snap.overlay.messages.length > 0 ? (
+        <OverlayDiagnostics overlay={snap.overlay} />
+      ) : null}
 
       <Typography variant="caption" color="text.secondary">
         Tip: you can wire a sound to any buff wearing off on the Alerts tab with an event trigger like{' '}

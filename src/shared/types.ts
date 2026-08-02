@@ -227,6 +227,7 @@ export type LogEventKind =
   | 'buffApply'
   | 'buffWearOff'
   | 'aaActivate'
+  | 'illusionFade'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */
@@ -430,10 +431,67 @@ export interface ActiveBuff {
   messageDriven?: boolean
 }
 
-/** buffs module snapshot: live active buffs + mined per-spell stats. */
+// ----- Observed-message overlay (Task #36) -----
+//
+// The user's directive: "augment the spell database with our own method of verifying
+// variations of the cast messages for everything we encounter." During replay AND live
+// the buffs model MINES associations between the messages the game prints and the spell
+// the player was casting at the time, then derives a per-message VERDICT. The overlay is a
+// learned layer ON TOP of the scraped spells.json — where the overlay disagrees, it wins
+// (the wiki is known-inaccurate in places, e.g. Symbol of Pinzarn's landing message).
+//
+// A future agent should consult the overlay BEFORE trusting a wiki cast message: a message
+// the overlay marks SHARED can NOT identify a spell on its own (resolve via cast history);
+// a CONTRADICTS-WIKI verdict means the wiki's msg_* field for that spell is wrong.
+
+/** The verdict the overlay derives for one observed message text (Task #36). */
+export type OverlayVerdict =
+  | 'verified' // consistently follows exactly ONE spell (n≥2) — a reliable identifier.
+  | 'shared' // follows MULTIPLE spells (e.g. "You feel different.") — can't name a spell.
+  | 'contradicts-wiki' // observed pairing differs from spells.json's msg_* for that spell.
+  | 'unknown' // too few observations to judge (n<2, single spell).
+
+/** One observed message and what the overlay learned about it (Task #36). */
+export interface OverlayMessage {
+  /** The exact message text as it appears in the log (a landing or wears-off line). */
+  text: string
+  /** Whether it was observed as a landing message or a wears-off message. */
+  role: 'landing' | 'wearsOff'
+  /** The overlay's verdict for this message. */
+  verdict: OverlayVerdict
+  /** Per-spell observation counts (spell display name → times seen following that cast). */
+  spells: { spell: string; count: number }[]
+  /** Total observations of this message across all spells. */
+  total: number
+  /**
+   * For a CONTRADICTS-WIKI verdict: the spell whose spells.json msg_* field this message
+   * contradicts, and what the wiki claims. Undefined otherwise.
+   */
+  wikiConflict?: { spell: string; wikiText: string }
+}
+
+/**
+ * The persisted/served overlay (Task #36). `messages` is the learned registry; `corrections`
+ * is the subset the buffs model should APPLY over spells.json (verified single-spell landing
+ * messages the DB was missing, and contradiction fixes). Versioned so a schema change can
+ * invalidate a stale on-disk snapshot.
+ */
+export interface MessageOverlay {
+  version: number
+  /** When this overlay was last derived (ISO). */
+  updatedAt: string
+  /** The full learned message registry (for the audit UI). */
+  messages: OverlayMessage[]
+  /** Summary counts for the diagnostics header. */
+  stats: { verified: number; shared: number; contradictions: number; unknown: number }
+}
+
+/** buffs module snapshot: live active buffs + mined per-spell stats + the message overlay. */
 export interface BuffsSnap {
   active: ActiveBuff[]
   stats: Record<string, BuffStat>
+  /** The observed-message overlay (Task #36) — for the diagnostics/audit UI. */
+  overlay?: MessageOverlay
 }
 /** buffs module delta: the module ships a full snapshot each flush (small state). */
 export type BuffsDelta = BuffsSnap

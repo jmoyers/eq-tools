@@ -97,6 +97,27 @@ slice(915470, 923352, 'w8-wears-off.log')
 // → NORMAL, wears off 00:54:07 (638646).
 slice(635150, 639850, 'w9-permanent-illusion.log')
 
+// ── Task #36 illusion exclusivity + observed-message overlay ──
+// W11 ILLUSION EXCLUSIVITY: the real 20:15:41 → 20:23:39 window. "Your illusion fades."
+// (912007) clears the prior illusion; "You begin casting Illusion: Wood Elf." (912013)
+// + "You feel different." (912014) apply the Wood Elf illusion on SELF (resolved via cast
+// history from the generic message); "You begin casting Boon of the Garou II." (912610) +
+// "phoboplasm's face contorts…" (912612) apply Boon on the PET (not self); "Your illusion
+// fades." at 20:23:39 (913155) removes the self Wood Elf illusion. Assert: never two self
+// illusions at once, and at most one self illusion at the end.
+slice(912000, 913160, 'w11-illusion-exclusivity.log')
+// W12a OVERLAY LEARNING — SHARED: the 02:42-02:46 burst casts FOUR distinct illusion races
+// (Dwarf/High Elf/Erudite/Halfling), each followed by the GENERIC "You feel different."
+// (815096..815150) — so the overlay must classify that message SHARED (multiple spells).
+slice(815090, 815155, 'w12-shared-illusions.log')
+// W12b OVERLAY LEARNING — CONTRADICTS-WIKI: the sibling Symbol of Transal is cast-begun 9×
+// and each time prints "The symbol of Transal flashes before your eyes." — the wiki's
+// msg_cast_on_you ("A mystic symbol flashes before your eyes.") is WRONG, so the overlay
+// records a CONTRADICTS-WIKI verdict. (Symbol of Pinzarn shares this exact wiki inaccuracy
+// but is cast-begun only once, so its sibling Transal is the clean, repeatable proof.) The
+// window spans several Transal cast→flash pairs on Jul 19 (84286..108493).
+slice(84280, 108500, 'w12-symbol-contradiction.log')
+
 // W10 CAZIC-THULE SLOW (Task #35): the user was fighting Cazic-Thule in The Plane of Fear.
 // zone into Fear 20:46:05 (919145); charm the pet phoboplasm 20:56:52 (923617); cast
 // Shiftless Deeds IV on Cazic-Thule at 21:01:40 (923936) and 21:01:46 (923994); then

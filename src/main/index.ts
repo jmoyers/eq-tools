@@ -7,7 +7,9 @@ import { characterId, listCharacters, parseLogName, resolveActiveCharacter } fro
 import { Tailer } from './log/Tailer'
 import { parseEvent, parseLine } from './log/parser'
 import { installSpellDb } from './log/rulesets'
-import { loadSpellDb } from './data/spellDb'
+import { loadSpellDb, applyOverlayCorrections } from './data/spellDb'
+import { MessageOverlayMiner } from './data/messageOverlay'
+import { baselineOverlay, loadUserOverlay, saveUserOverlay } from './data/overlayPersistence'
 import { LogBus } from './log/bus'
 import { scanLog } from './log/scanHistory'
 import { CombatEngine } from './combat/engine'
@@ -100,11 +102,26 @@ alertsModule.setDefs(getAlerts())
 // parser emits PRECISE message-driven buff events (buffApply/buffWearOff) — and give the
 // same DB to the buffs module for authoritative durations + the self-heal-by-buff apply.
 const spellDb = loadSpellDb()
+// Effective DB = spells.json + observed-message overlay, overlay WINS (Task #36): fold the
+// committed baseline + the user's persisted overlay into a miner, derive its verified /
+// wiki-contradicting landing corrections, and apply them to the parser's cast-on-you table
+// so a self-landing line the wiki got wrong or omitted (e.g. Symbol of Pinzarn's real
+// message) is recognized. Done BEFORE installSpellDb so the parser uses the corrected DB.
+{
+  const seedMiner = new MessageOverlayMiner(spellDb.byKey)
+  seedMiner.merge(baselineOverlay())
+  seedMiner.merge(loadUserOverlay())
+  const n = applyOverlayCorrections(spellDb, seedMiner.deriveLandingCorrections())
+  console.log(`[eq-tools] Message overlay: applied ${n} cast-message corrections over the wiki DB.`)
+}
 installSpellDb(spellDb)
 console.log(`[eq-tools] Spell DB: ${spellDb.spells.length} spells (${spellDb.castOnYou.size} unique cast-on-you msgs).`)
 // The buffs extension (Task #19; message-driven model Task #34): tracks the player's own
 // buffs from precise message applies + cast-timing mining, serving live actives + stats.
-const buffsModule = new BuffsModule(spellDb)
+// Task #36: seed the observed-message overlay miner with the committed baseline + the user's
+// persisted overlay so it starts warm; the user's overlay is re-saved (debounced) as the
+// live log teaches it more.
+const buffsModule = new BuffsModule(spellDb, [baselineOverlay(), loadUserOverlay()])
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)
@@ -326,7 +343,17 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   // scanned from the log lands on the first tick (now ≫ its beganTs). Clear any prior
   // timer first (a character switch re-enters startTailing).
   if (tickTimer) clearInterval(tickTimer)
-  tickTimer = setInterval(() => registry.tick(Date.now()), 1000)
+  let overlaySaveTick = 0
+  tickTimer = setInterval(() => {
+    registry.tick(Date.now())
+    // Debounced overlay persistence (Task #36): the miner accretes from the live tail; snap
+    // it to userData every ~60s so the user's learned messages survive a restart. Cheap —
+    // overlaySnapshot() builds a small object; the write is best-effort.
+    if (++overlaySaveTick >= 60) {
+      overlaySaveTick = 0
+      saveUserOverlay(buffsModule.overlaySnapshot())
+    }
+  }, 1000)
 
   // Watch this character's inventory export so a fresh /outputfile auto-reloads.
   startInventoryWatch(ref)
@@ -530,5 +557,8 @@ app.on('window-all-closed', () => {
   void inventoryWatcher?.close()
   if (tickTimer) clearInterval(tickTimer)
   tickTimer = null
+  // Flush the learned message overlay one last time so the final session's observations
+  // aren't lost between debounced saves (Task #36).
+  saveUserOverlay(buffsModule.overlaySnapshot())
   if (process.platform !== 'darwin') app.quit()
 })

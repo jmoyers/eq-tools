@@ -314,6 +314,23 @@ export interface AaActivateEvent extends LogEventBase {
   name: string
 }
 
+/**
+ * `Your illusion fades.` — the player's ACTIVE illusion clicked/wore off (Task #36). This
+ * is the click-off/removal line printed for EVERY illusion-flagged spell (Illusion: <race>,
+ * Boon of the Garou, …) — the DB records it as the `msg_wears_off` for 27 distinct spells,
+ * so the message alone can NOT name which illusion faded. It doesn't have to: the user's
+ * rule is that only ONE illusion can be active on the player at a time, so this line removes
+ * whichever illusion-flagged self buff is currently active (there is at most one). Emitted
+ * IN PLACE OF a generic buffWearOff for this exact line so the buffs module never has to
+ * guess a spell key from the 27-way-ambiguous wears-off table. `target` is always 'self'
+ * (the illusion is on the player). DB-gated only in the sense that it is a plain message
+ * match with no candidate list — it fires regardless of the DB (the text is unambiguous).
+ */
+export interface IllusionFadeEvent extends LogEventBase {
+  kind: 'illusionFade'
+  target: 'self'
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -345,4 +362,5 @@ export type LogEvent =
   | BuffApplyEvent
   | BuffWearOffEvent
   | AaActivateEvent
+  | IllusionFadeEvent
   | UnknownEvent
