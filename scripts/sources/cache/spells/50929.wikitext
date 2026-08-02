@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Flowing Thought V
+| spellicon = H
+| description = Causes your thoughts to race faster, increasing your mana regeneration rate.
+
+See also [[Flowing Thought I]], [[Flowing Thought II]] and [[Flowing Thought III]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Essence of Nature}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 5 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 27 minutes @L9
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A cool breeze slips through your mind.
+| msg_cast_on_other = Someone  looks tranquil.
+| msg_wears_off = The cool breeze fades.
+
+}}
+
+[[Category:NPC Only Spells]]

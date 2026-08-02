@@ -1,0 +1,53 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Conjure Corpse
+| spellicon = L
+| description = Summons your target's corpse to you. Consumes a [[Tiny Jade Inlaid Coffin]] when cast. The advantage over the [[Summon Corpse]] spell is that the reagent is lighter weight at 0.1 and stacks to 20, rather than being a 10 weight container requiring a bag slot. Character to be summoned must be in zone and in group.
+
+Note: If the target is not a group member, then a Tiny Jade Inlaid Coffin is consumed anyway, but the corpse is not summoned.
+
+| classes = 
+
+* [[Necromancer]] - Level 57
+
+| items_with_effect = 
+
+<ul><li> {{:Crypt Master`s Conjuring Stone}}
+</li><li> {{:Robe of the Bonecaster}}
+</li><li> {{:Rotting Robe}}
+</li><li> {{:Plague_Bearer's Robe}}
+</li><li> {{:Warlock's Robe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Corpse(65) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 700
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Tiny Jade Inlaid Coffin]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+}}

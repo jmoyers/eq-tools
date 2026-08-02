@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Celestial Cleansing
+| spellicon = J
+| description = Fills your target's body with celestial cleansing light, healing 175 hit points every 6 seconds for 24 secs (between 4-5 ticks). This spell has the potential to tick a 5th time, totaling 875 hit-points, depending on when it lands on your target (how other tick based spells work). The overall mana efficiency is 3.88 or 3.11 hp/m. 
+
+Added post-Velious launch [http://www.project1999.com/forums/showpost.php?p=1176734&postcount=8].
+
+| classes = 
+
+* [[Paladin]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints v2 by 175 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 100
+| casting_time = 1.50
+| fizzle_time = 5.00
+| recast_time = 30.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Celestial light pumps through your body.
+| msg_cast_on_other = Someone 's body is covered with a soft glow.
+| msg_wears_off = The celestial light fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[East Commonlands]] | [[Rushka Deklamoor]] | Tunnel | (-1668,-4) }}
+}}
+
+}}

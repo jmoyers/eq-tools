@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Weak Poison
+
+| spellicon = N
+| description = Poisons your target, causing 6 damage initially and 6 damage every 6 seconds for up to 1 min.
+
+| classes = 
+
+This spell is cast by NPCs only. As a proc, procs at lv. 1 (confirmed)
+
+| items_with_effect = 
+
+<ul><li> {{:Ancient Snake Fang}}
+</li><li> [[Bixie Stinger (Bixie God's Stinger)]]
+</li><li> {{:Crookstinger}}
+</li><li> {{:Scourgetail Whip}}
+</li><li> {{:Tesch Val Sinisch}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 2 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 6 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 6 per tick }}
+
+| mana = 0
+| skill = 
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+
+}}
+
+[[Category: NPC Only Spells]]

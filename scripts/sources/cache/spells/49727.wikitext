@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Chase the Moon
+| spellicon = G
+| description = Fills your enemies' mind with confusion, causing them to flee.
+
+| classes = 
+
+* [[Enchanter]] - Level 16
+
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 70
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 6 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You begin to run.
+| msg_cast_on_other = Someone  begins to run.
+| msg_wears_off = You stop.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-4)]] | Library | (1106,-989) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Estra Nancer]] | Enchanter Guild (F2) | (536,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Litz B`Doph]] | Caster Guild (F1) | (132,-955) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Corrao Duperame]] | The Herb Jar | (302,-559) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Seren the Swift]] | Enchanter Guild | (509,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Lasiris Oncre]] | Caster Guild (F1) | (112,-768) }}
+}}
+
+}}

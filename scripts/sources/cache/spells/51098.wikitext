@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Lower Resists II
+| spellicon = C
+| description = Disrupts your target's magical aura, lowering magic, fire, cold, and disease resistances for up to 6 secs (1 ticks @L1 to 3.0 mins @L30).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Dilapidating Ash}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Fire Resist by 3 (L1) to 15 (L24) }}
+{{SpellSlotRow | 2 | Decrease Cold Resist by 3 (L1) to 15 (L24) }}
+{{SpellSlotRow | 3 | Decrease Magic Resist by 3 (L1) to 15 (L24) }}
+{{SpellSlotRow | 4 | Decrease Disease Resist by 3 (L1) to 15 (L24) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3 minutes @L30
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your body grows frail as poison seeps into your skin.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

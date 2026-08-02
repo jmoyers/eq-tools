@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Flame Lick
+| spellicon = 51
+| description = Surrounds your target in flickering flames, lowering their armor class, and doing 17 damage every 6 seconds for 36s. Requires, but does not consume, a fire beetle eye when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 1 (Autogranted)
+* [[Ranger]] - Level 3 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 1 (L1) to 17 (L32) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 10 | Decrease AC by 3 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 11 | Requires: [[Fire Beetle Eye]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 12
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| other = 
+
+* '''Focus:''' [[Fire Beetle Eye]] (Not consumed on cast)
+
+| msg_cast_on_you = You are surrounded by flickering flames.
+| msg_cast_on_other = Someone  is surrounded by flickering flames.
+| msg_wears_off = The flames are extinguished.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Gather Shadows
+| spellicon = 18
+| description = Calls shadows to conceal your body, allowing you to move undetected by many creatures for up to 20 min.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 30
+* [[Necromancer]] - Level 7 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Blood Ember Bracer}}
+</li><li> {{:Circlet of Shadows}}
+</li><li> {{:Circlet of Shadow}}
+</li><li> {{VeliousGray| {{:Cloak of Imperception}} }}
+</li><li> {{:Crystal Mask}}
+</li><li> {{:Incarnadine Breastplate}}
+</li><li> {{:Ring of Shadows}}
+</li><li> {{VeliousGray| {{:Ring of Stealthy Travel}} }}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 35
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 20 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You gather shadows about you.
+| msg_cast_on_other = Someone  steps into the shadows and disappears.
+| msg_wears_off = Your shadows fade.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

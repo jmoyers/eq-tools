@@ -1,0 +1,51 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shieldskin
+| spellicon = 77
+| description = Surrounds your skin in a protective aura that absorbs 55 damage. Consumes a cat's eye agate when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 14
+* [[Shadow Knight]] - Level 31
+* [[Wizard]] - Level 13
+
+| items_with_effect = 
+
+<ul><li> {{:Dragon Tooth Choker}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | UNKNOWN CALC 111 base 27 max 55 attrib Absorb Damage | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 41
+| range =  
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Cat's Eye Agate]]
+
+| msg_cast_on_you = A mystic force shields your skin.
+| msg_cast_on_other = Someone 's skin is covered in a mystic glow.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

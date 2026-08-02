@@ -1,0 +1,36 @@
+{{bug}}{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Conglaciation of Bone
+| spellicon = G
+| description = Freezes the flesh from your target's body, causing between 500 and @2 damage.
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 500 }}
+{{SpellSlotRow | 4 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 210
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You feel your bones harden and crack from the frost.
+| msg_cast_on_other = Someone 's bones freezes and crack.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Revamped Chardok, but may be bugged.[https://www.project1999.com/forums/showthread.php?t=332116]
+
+}}

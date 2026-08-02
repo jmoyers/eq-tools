@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Calimony
+| spellicon = C
+| description = Causes your body to fall into an undead state, increasing your total health and strength initially, but slowly draining @1 health every 6 seconds for up to 6.0 mins.
+
+This effect does not stack with <b>[[Strength of Nature]] or [[Regrowth]]/[[Chloroplast]]</b>, which will block the healing benefit and waste charges.
+
+Calimony will override both <b>[[Divine Glory]] and [[Divine Strength]]</b>, allowing the healing to work.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:10 Dose Potion of Stinging Wort}}
+</li><li> {{:Potion of Stinging Wort}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 2 per tick }}
+{{SpellSlotRow | 2 | Increase STR by 17 }}
+{{SpellSlotRow | 3 | Increase HP when cast by 300 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 6 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your body go numb.
+| msg_cast_on_other = Someone  is briefly shadowed.
+| msg_wears_off = You regain feeling.
+}}
+
+[[Category:NPC Only Spells]]

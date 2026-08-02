@@ -1,0 +1,40 @@
+<noinclude>{{Kunark_Era}}</noinclude>{{Spellpage|
+
+| spellname = Mortal Deftness
+| spellicon = R
+| description = Fills your target with a sense of mortal deftness, increasing their dexterity for 1 hour(s) 12.0 mins.
+
+Compare to the group version, [[Talisman of the Raptor]].
+
+| classes = 
+
+* [[Shaman]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase DEX by 60 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your muscles move with mortal deftness.
+| msg_cast_on_other = Someone  begins to move with mortal deftness.
+| msg_wears_off = Your deftness fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+
+}}

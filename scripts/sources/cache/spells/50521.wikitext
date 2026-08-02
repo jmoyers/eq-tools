@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Translocate: Nek
+| spellicon = V
+| description = Opens an arcane portal that teleports your target to Nektulos Forest.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 44
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Translocate to 432,-772,35 in nektulos | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 100
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Small Portal Fragments]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Temple of Solusek Ro]] | [[Terblyn Zelbus]] | Caster Quest NPC Area | (441,-72) }}
+}}
+| TableLocations = Temple of Solusek Ro
+| TableEra = {{{TableEra|Velious}}}
+
+}}

@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Largo's Assonant Binding
+| spellicon = A
+| description = A binding melody that surrounds your target in magical bonds, slowing their movement and attack speed, as well as lowering their agility.
+
+* The spell is listed as Largo's Assonant Binding on the spell vendor.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease AC by 15 (L51) to 19 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Attack Speed by 30% (L51) to 35% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Movement Speed by 52% (L51) to 61% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Decrease AGI by 45 (L51) to 50 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 150
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Strands of solid music bind your body.
+| msg_cast_on_other = Someone  is bound by strands of solid music.
+| msg_wears_off = The strands fade away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Balik Wolftrot]] | Outpost | (-3010,2968) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = Kunark
+}}

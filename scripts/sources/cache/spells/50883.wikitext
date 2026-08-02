@@ -1,0 +1,37 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Nature's Wrath
+| spellicon = C
+| description = Grips your target in the wrath of nature, causing 102 to 110 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Nature's Wrath}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 102 (L1) to 110 (L5) }}
+
+| skill = 
+| mana = 145
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been struck down by the wrath of nature.
+| msg_cast_on_other = Someone  has been struck down by the wrath of nature.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,46 @@
+{{Spellpagesmart|
+
+| spellname = Solon's Song of the Sirens
+| spellicon = D
+| description = An enticing melody that charms the target, allowing you to command it.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 27
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Charm (up to L37) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Magic Resist by 4 (L27) to 8 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (just the resists debuff)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Wooden Flute
+
+| msg_cast_on_you = You are captivated by the haunting tune.
+| msg_cast_on_other = Someone 's eyes glaze over.
+| msg_wears_off = You are no longer captivated.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

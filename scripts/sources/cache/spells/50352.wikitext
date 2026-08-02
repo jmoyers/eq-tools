@@ -1,0 +1,71 @@
+{{Spellpage|
+
+| spellname = Torpor
+| spellicon = J
+| description = Places your target into a state of torpor, healing 300 hit points every six seconds for 24 secs (between 4-5 ticks), but vastly decreasing their movement speed and attack rate. This spell has the potential to tick a 5th time, totaling 1500 hit-points, depending on when it lands on your target (similar to how dot ticks work). The overall mana efficiency is 7.5 or 6 hp/m.
+
+| classes = 
+
+* [[Shaman]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints v2 by 300 per tick }}
+{{SpellSlotRow | 3 | Decrease Movement Speed by 70-90% }} (unsure of exact %).
+{{SpellSlotRow | 11 | Decrease Attack Speed by 30% }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 4-5 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You fall into a state of torpor.
+| msg_cast_on_other = Someone  falls into a state of torpor.
+| msg_wears_off = Your state of torpor ends.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop   (Also drops from some Velious dragons)
+
+[[Burning Woods]]
+* [[Ixiblat Fer]]
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Sebilite Juggernaut]]
+* [[Emperor Chottal]]
+* [[Tolapumj]]
+* [[Trakanon]]
+* [[sebilite protector]]
+
+[[Skyfire Mountains]]
+* [[A Guardian Wurm]]
+* [[An Ancient Wyvern]]
+* [[Talendor]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Veeshan's Peak]]
+* [[Druushk]]
+* [[Nexona]]
+* [[Phara Dar]]
+* [[Silverwing]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+* [[Klandicar]]
+
+}}

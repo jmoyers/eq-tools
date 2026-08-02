@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Fire Elemental Attack
+| spellicon = 51
+| description = Engulfs your target in fire causing 2 to 51 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 2 (L1) to 51 (L50) }}
+
+| other = 
+
+* [[Magician|Magician's]] Fire Elemental Ability
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Direct Damage
+| resist = Cold (0)
+
+| msg_cast_on_you = Fire engulfs you.
+| msg_cast_on_other = Someone is engulfed by fire.       
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

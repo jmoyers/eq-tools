@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mana Sieve
+| spellicon = D
+| description = Tears at the mind of your opponent, draining their mana.
+
+| classes = * [[Enchanter]] - Level 30
+| items_with_effect = 
+
+<ul><li> {{:Wand of Mana Tapping}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Mana by 214 (L34) to 370 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel your mental energies slip away.
+| msg_cast_on_other = Someone  staggers with mental anguish. (?) <br> Someone staggers in pain. 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

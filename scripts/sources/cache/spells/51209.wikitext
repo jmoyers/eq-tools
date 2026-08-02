@@ -1,0 +1,33 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Goop Poison
+| spellicon = N
+| description = Fills your target's blood with poison, causing 30 damage initially and 10 damage every six seconds for 2 minutes.
+
+| classes = 
+
+This spell is only cast by [[Smoldering goo]].
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 30 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 10 per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone has been poisoned.
+| msg_wears_off = The poison has run its course.
+
+}}

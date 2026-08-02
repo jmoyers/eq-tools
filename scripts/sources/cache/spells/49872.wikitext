@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Ward Undead
+| spellicon = 153
+| description = A burst of holy power that inflicts 12 damage to an undead target.
+
+| classes = 
+
+* [[Cleric]] - Level 4
+* [[Necromancer]] - Level 6
+* [[Paladin]] - Level 1 (Autogranted)
+* [[Shadow Knight]] - Level 18
+
+| items_with_effect = 
+
+<ul><li> {{:Bonethunder Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 35 (L5) to 41 (L11) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 5
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

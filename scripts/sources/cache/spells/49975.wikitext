@@ -1,0 +1,38 @@
+[[File:Divine Might.png|thumb]]
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Divine Might
+| spellicon = D
+| description = Bestows divine might upon you, providing a chance to channel the will of the gods through your weapon when attacking. Adds {{SpellHoverLink|Divine Might Strike}} (melee proc).
+
+| classes = 
+
+* [[Paladin]] - Level 45
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc: [[Divine Might Effect]] }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your hand begins to glow with divine might.
+| msg_cast_on_other = Someone 's hands begin to glow with divine might.
+| msg_wears_off = Your hands stop glowing.
+
+| where_to_obtain = 
+
+* Obtained through the quest: [[The Bones of Darak Lightforge]].
+
+}}

@@ -1,0 +1,50 @@
+{{Spellpage|
+
+| spellname = Boil Blood
+| spellicon = O
+| description = Heats the blood of your target, causing 67 damage every 6 seconds for 42s.
+
+| classes = 
+
+* [[Necromancer]] - Level 28
+* [[Shadowknight]] - Level 53
+
+| items_with_effect = 
+
+<ul><li> {{:Blood Fire}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 24 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 136
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 42 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = Your blood boils.
+| msg_cast_on_other = Someone 's blood boils.
+| msg_wears_off = Your blood cools.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-1)]] | Necromancer Guild | (2082,-410) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Ainla Yurimar]] | Underground | (-162,-270) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Rizyra F'Lok]] | Necromancer Guild (F1) | (1335,-1213) }}
+{{SpellWhereRowB | [[Paineel]] | [[Leovre Kieqmarn]] | Necromancer Guild | (665,804) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Dallisen Xalladyr]] | Necromancer Guild | (402,-311) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Rott]] | Cubby near PvP Area | (-440,236) }}
+}}
+
+}}

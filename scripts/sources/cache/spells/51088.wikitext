@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Ghoul Root
+| spellicon = Q
+| description = Ghouls have a chance to proc this on melee hits, the duration and intensity can vary based on ghouls level. Max time is around 36 seconds.
+
+| classes = 
+
+This spell is cast by [[a ghoul|ghoul]] NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Root}}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 6 ticks 
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0) (possibly disease?; [[Talk:Ghoul_Root|see discussion]])
+
+| msg_cast_on_you = Your legs feel weak.
+| msg_cast_on_other = Someone  stumbles.
+| msg_wears_off = Strength returns to your legs.
+}}
+
+[[Category:NPC Only Spells]]

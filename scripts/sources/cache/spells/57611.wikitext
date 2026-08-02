@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Aria of Asceticism
+| spellicon = D
+| description = Katta's song increases the dexterity of your group, and gives your group members a chance to lower the dexterity of their opponent. Adds {{SpellHoverLink|Blade Dance}} (melee proc).
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Add Melee Proc: {{SpellHoverLink|Blade Dance}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase DEX by 75 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 100 (AE Range 100)
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your weapons whir with a magical rhythm.
+| msg_cast_on_other = 
+| msg_wears_off = The magical rhythm fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

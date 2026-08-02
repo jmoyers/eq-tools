@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Waves of the Deep Sea
+| spellicon = S
+| description = Crushes your target with a wave of water, causing 20 damage every 6 seconds and lowering attack speed for up to 6 secs (1 ticks @L1 to 2.5 mins @L50).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Trident of the Deep Sea}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 20 per tick }}
+{{SpellSlotRow | 2 | Decrease Attack Speed by 10% }}
+
+| skill = 
+| mana = 0
+| range = 40
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2.5 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = A wave crushes you.
+| msg_cast_on_other = Someone  is crushed by a wall of water.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

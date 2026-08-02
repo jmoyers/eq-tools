@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ethereal Cleansing
+| spellicon = 118
+| description = Fills your target's body with cleansing light, healing 100 hit points every six seconds for 24s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Paladin]] - Level 44
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 10 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 1.50
+| fizzle_time =
+| recast_time = 30.00
+| duration = 24 Sec
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Ethereal light pumps through your body.
+| msg_cast_on_other = 's body is covered in ethereal light.
+| msg_wears_off = The ethereal light fades.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

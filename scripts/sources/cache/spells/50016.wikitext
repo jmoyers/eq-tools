@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Terrorize Animal
+| spellicon = G
+| description = Incites fear in an animal target, causing them to flee.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 15
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Fear (up to L52) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | Duration: 54 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 9 ticks
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Magic (-20)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  runs away in terror!
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall Glade
+| TableEra = Classic
+
+}}

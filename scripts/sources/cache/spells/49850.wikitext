@@ -1,0 +1,51 @@
+{{Spellpage|
+
+| spellname = Asphyxiate
+| spellicon = M
+| description = Constricts your target's throat, causing between 50 damage initially and 45 damage every six seconds for 120 secs (20 ticks), as well as lowering their strength and agility. (950 total damage @ 3.8 DPM)
+
+| classes = 
+
+* [[Enchanter]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 50 }}
+{{SpellSlotRow | 2 | Decrease STR by 39 (L59) to 40 (L60) }}
+{{SpellSlotRow | 3 | Decrease AGI by 39 (L59) to 40 (L60) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 45 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 250
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 2 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel a shortness of breath.
+| msg_cast_on_other = Someone  begins to choke.
+| msg_wears_off = You can breathe again.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Sebilite Juggernaut]]
+
+[[The Overthere]]
+* [[a cliff golem]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+[[Burning Woods]]
+* [[Ixiblat Fer]]
+}}

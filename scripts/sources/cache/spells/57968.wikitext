@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Auspice
+| spellicon = 140
+| description = Drains the life from your target, doing 30 damage every six seconds for 54s. 10% of the life-force taken is used to heal your wounds.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Necromancer]] - Level 45
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 5 | Decrease Hitpoints by 30 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Return 100% of damage as HP | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 200
+| casting_time = 8.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 54 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease
+
+| msg_cast_on_you = Dark albatross circle overhead.
+| msg_cast_on_other =  goes pale with fear.
+| msg_wears_off = The albatross fade away.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

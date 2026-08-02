@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Augment Death
+| spellicon = 74
+| description = Fills your pet with rage, giving it increased attack speed, armor class, and strength for 60 min.
+
+| classes = * [[Necromancer]] - Level 35
+| items_with_effect = 
+
+<ul><li> {{:Pantaloons of the Bonecaster}}
+</li><li> {{:Plague Bearer's Trousers}}
+</li><li> {{:Rotting Trousers}}
+</li><li> {{:Warlock's Pantaloons}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 49% (L39) to 55% (L45) }}
+{{SpellSlotRow | 2 | Increase STR by 39 (L39) to 45 (L50) }}
+{{SpellSlotRow | 3 | Increase AC by 10 (L39) to 12 (L50) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 60 Min
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes gleam with madness.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-1)]] | Necromancer Guild | (2082,-410) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Ainla Yurimar]] | Underground | (-162,-270) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Rizyra F'Lok]] | Necromancer Guild (F1) | (1335,-1213) }}
+{{SpellWhereRow  | [[Paineel]] | [[Leovre Kieqmarn]] | Necromancer Guild | (665,804) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Dallisen Xalladyr]] | Necromancer Guild | (402,-311) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Rott]] | Cubby near PvP Area | (-440,236) }}
+}}
+
+}}

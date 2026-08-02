@@ -1,0 +1,45 @@
+{{Chardok Era}}
+{{Spellpage|
+
+| spellname = Gangrenous Touch of Zum`uul
+| spellicon = G
+| description = Drains your target of life energy, siphoning 720 hit points. 1.77 lifetap efficiency. This spell is disease-based and mostly worthless. It may be beneficial in PVP. [[Touch of Night]] is same amount of dmg and 10 mana less with a better -modifier. 
+
+Does not land on: 
+* ToV Dragons
+* VP Dragons
+* Zlandicar, Klandicar, Sontalak
+* Other high raid targets
+* PoG trash mobs
+* Most Giants
+
+| classes = 
+
+* [[Necromancer]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 720 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 415
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Disease (-150)
+
+| msg_cast_on_you = Your life force drains away at the Gangrenous Touch of Zum`uul.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+*[[Grand Advisor Zum`uul]]
+
+[[File:Gangrenous_TouchScreenshot_7.png|thumb|left|Ishen - Server first]]
+
+}}

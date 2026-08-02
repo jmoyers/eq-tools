@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Dulsehound
+| spellicon = J
+| description = Fills your body with pulsing energy, increasing your strength and regeneration rate for up to 3.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Potion of Dulsehound}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 6 per tick }}
+{{SpellSlotRow | 2 | Increase STR by 18 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a rush of adrenaline.
+| msg_cast_on_other = Someone  begins to rage.
+| msg_wears_off = Your adrenaline fades.
+}}
+
+[[Category:NPC Only Spells]]

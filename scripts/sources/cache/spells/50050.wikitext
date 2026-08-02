@@ -1,0 +1,52 @@
+{{Spellpagesmart|
+
+| spellname = Greater Wolf Form
+| spellicon = T
+| description = Fills you with the spirit of the wild, allowing you to take the form of a wolf, increasing your movement speed, and attack rating.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 30
+* [[Ranger]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Lupine Dagger}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion (race #796) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 52% (L34) to 60% (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase ATK by 35 (L34) to 40 (L39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 90
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Someone  turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRow  | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRow  | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+| TableLocations = Firiona Vie<br/>Kelethin<br/>Rivervale<br/>Surefall Glade
+| TableEra = {{{TableEra|Classic}}}
+}}
+[[Category: Illusions]]

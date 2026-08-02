@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Aura of Green Petals
+| spellicon = K
+| description = Covers you in an aura of green petals, increasing your poison resistance.
+
+50 PR, stacks with [[Resist Poison]], [[Dead Man Floating|DMF]], and [[Talisman of Shadoo]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Green Flower of Functionality}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 5 | Increase Poison Resist by 11 (L1) to 50 (L40) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are covered by an aura of green petals.
+| msg_cast_on_other = Someone  is covered by an aura of green petals.
+| msg_wears_off = The green petals drift away.
+}}
+
+[[Category:NPC Only Spells]]

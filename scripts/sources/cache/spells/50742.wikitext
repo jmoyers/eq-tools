@@ -1,0 +1,46 @@
+<noinclude>{{Kunark_Era}}</noinclude>{{Spellpage|
+
+| spellname = Voice of the Berserker
+| spellicon = R
+| description = Fills you with a berserk fury, increasing your strength, dexterity, and armor class for 18.7 mins @L59 to 20.5 mins @L65.
+
+<br> Unlike [[Fury]], [[Frenzy]], and [[Rage]], three earlier self only shaman spells, this one does NOT drain mana rapidly, making this an actual viable spell that might get cast now and then. It does however prevent casting spells for 30 seconds.
+<br> Prevents the three previous mentioned spells and [[Fleeting Fury]] from sticking.
+<br> If for some reason you don't have max wisdom at level 59 or 60, you can pair this with <s>[[Mortal Deftness]] and</s> [[Manicial Strength]] and [[Focus of Spirit]] for <s>194</s> 134 bonus Dex and a whopping 219 bonus strength, and use your maxed out str/dex for blacksmithing and fletching respectively.
+<br> Edit: Voice of the Berserker overrides [[Mortal Deftness]], and [[Speed of the Shissar]] overrides Voice of the Berserker. [[Primal Essence]] does not interfere with Voice of the Berserker.
+
+Casting this spell will cause your spell gems to grey out for 30 seconds but a simple click on any "GCD" item will unlock this and let you cast like normal immediately afterwards.
+
+| classes = 
+
+* [[Shaman]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase AC by 24 }}
+{{SpellSlotRow | 5 | Increase AGI by 74 (L59) to 80 (L65) }}
+{{SpellSlotRow | 6 | Increase STR by 84 (L59) to 90 (L65) }}
+{{SpellSlotRow | 7 | Increase DEX by 74 (L59) to 80 (L65) }}
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 1
+| range =  
+| casting_time = 1.00
+| fizzle_time = 30.00
+| recast_time = 2.25
+| duration = 18.7 minutes @L59 to 20.5 minutes @L65
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You lose yourself in your rage and go berserk.
+| msg_cast_on_other = Someone  goes berserk.
+| msg_wears_off = Your frenzy fades.
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

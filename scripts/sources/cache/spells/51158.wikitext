@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Acid Jet
+| spellicon = G
+| description = Causes 50 damage initially and 20 damage every 6 seconds for up to 5 mins. This spell is cast by black drakes in [[Temple of Veeshan]] such as [[an onyx sky drake]] and [[Nelaarn the Ebon Claw]].
+
+| classes = 
+
+This spell is cast by NPCs only. 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 50 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 20 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 8.00
+| duration = 3 minutes @L1 to 5 minutes @L2
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you =  Acid begins to eat at your flesh.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

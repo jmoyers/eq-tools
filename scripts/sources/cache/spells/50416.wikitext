@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Char
+| spellicon = O
+| description = Burns your target's skin with a charring flame, causing between 660 and 702 damage (2.70 DPM).
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 660 (L52) to 702 (L57) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 260
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin ignite and char.
+| msg_cast_on_other = Someone 's skin ignites and chars.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

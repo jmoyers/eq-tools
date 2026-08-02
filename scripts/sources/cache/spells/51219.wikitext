@@ -1,0 +1,36 @@
+<noinclude>{{Hate Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Maestro Lifetap
+| spellicon = G
+| description = [[Maestro of Rancor]]'s AoE lifetap proc.
+| classes = 
+This spell is cast by NPCs only.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 250 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 0
+| range = TGT:10 AE:30
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel a tugging at your soul.
+| msg_cast_on_other = Someone staggers.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

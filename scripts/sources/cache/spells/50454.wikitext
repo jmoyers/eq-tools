@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Gaze
+| spellicon = B
+| description = Strengthens your vision, allowing you to see much farther.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 11
+| items_with_effect = 
+
+<ul><li> {{:Acumen Mask}}
+</li><li> {{:Summoned: Staff of Warding}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Magnification by 50% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 15
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 3.00
+| duration = 2 Min 30 Sec
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your eyes feel stronger.
+| msg_cast_on_other = Someone 's eyes gleam.
+| msg_wears_off = Your vision fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Erudin]] | [[Weltria Ostriss]] | Library (F3) | (-1111,-242) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Jusar V'Lask]] | Library (F1) | (914,-1279) }}
+{{SpellWhereRow  | [[Felwithe|Southern Felwithe]] | [[Serri Moonwatcher]] | Wizard Guild | (441,-450) }}
+}}
+| TableLocations = Erudin<br/>Neriak<br/>Felwithe
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Nature's Melody
+| spellicon = A
+| description = A soothing melody of nature caresses your group granting increased armor class, strength, agility, and attack speed.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Nature's Melody}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 9 | Increase AC by 15 }}
+{{SpellSlotRow | 10 | Increase STR by 30 }}
+{{SpellSlotRow | 11 | Increase AGI by 30 }}
+{{SpellSlotRow | 12 | Increase Attack Speed by 60% }}
+
+| skill = 
+| mana = 0
+| range = 0
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2.5 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The melody of nature strengthens your arms.
+| msg_cast_on_other =  
+| msg_wears_off = The melody of nature leaves your arms.
+}}
+
+[[Category:NPC Only Spells]]

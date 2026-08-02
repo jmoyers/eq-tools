@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Hawk Eye
+| spellicon = 127
+| description = Focuses your vision, considerably improving your aim with a bow.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Ranger]] - Level 11 (Autogranted)
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Chance to Hit by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 125
+| range = 0
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 3.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your eyes sharpen, with an aura of avian presence.
+| msg_cast_on_other = 's eyes sharpen with an aura of avian presence.
+| msg_wears_off = The avian presence departs.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

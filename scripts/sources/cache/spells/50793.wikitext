@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = One Hundred Blows
+| spellicon = G
+| description = Pummels your target with a hundred blows, causing 120 damage and a 6-second stun.  The stun works on creatures up to level 55.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul>
+<li> {{:Ton Po's Bo Stick of Understanding}}
+</li><li> {{:Tranquil Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | SpinStun }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 120 }}
+
+| skill = 
+| mana = 55
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 6.50
+| duration = 1 ticks @L1 to 2 ticks @L4
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to spin from one hundred blows.
+| msg_cast_on_other = Someone  begins to spin from one hundred blows.
+| msg_wears_off = You feel dazed.
+}}

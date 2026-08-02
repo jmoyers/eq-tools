@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Soul Consumption
+| spellicon = U
+| description = Tears at your target's soul, draining 50 damage every 6 seconds for 5 ticks.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Innoruuk's Curse}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 50 per tick }}
+
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 5 ticks @L9
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off = The bond fades.
+}}
+
+[[Category:NPC Only Spells]]

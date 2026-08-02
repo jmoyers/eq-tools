@@ -1,0 +1,34 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+|spellname= Form of the Bear
+|spellicon=163
+|description=Illusion: Old Bear,  Increase Current Hit Points by 1 per Tick,   	Increase Wisdom by 5
+|classes=* [[Shaman]] - Level 25
+
+|slots=
+
+{{SpellSlotRowSmart | 2 | Increase Hit points by 1 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Wisdom by 5 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+|skill=[[Skill Alteration | Alteration]]
+|mana=100
+|range=100
+|casting_time=4.00
+|fizzle_time=1.5
+|recast_time=12
+|duration=2h 24m
+|target_type=Self
+|spell_type=Beneficial
+|resist= Unresistable
+
+|msg_cast_on_you=The spirit of the bear blesses you.
+|msg_cast_on_other=Target turns into a bear.
+|msg_wears_off=You are no longer a bear.
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

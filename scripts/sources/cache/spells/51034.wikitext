@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Camouflage
+| spellicon = 18
+| description = Covers your body in a mystic shield, allowing you to blend in with your outdoor surroundings.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 4 (Autogranted)
+* [[Ranger]] - Level 14
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Requires: Outdoors | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 15
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 20 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body fades away.
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off = You return to view.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

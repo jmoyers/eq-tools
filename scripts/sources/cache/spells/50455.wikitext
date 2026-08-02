@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Resistant Skin
+| spellicon = K
+| description = Covers you in resistant skin that protects you from poison and disease.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 9
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Disease Resist by 9 (L9) to 15 (L20) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Poison Resist by 11 (L12) to 15 (L20) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 35
+| range =  
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin shines.
+| msg_cast_on_other = Someone 's skin shines.
+| msg_wears_off = Your skin loses its luster.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-9)]] | Library | (1056,-981) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Effunic Korett]] | Wizard Guild (F2) | (921,726) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Dissa C'Luzz]] | Caster Guild (Basement) | (167,-896) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Dumisa D'Enetti]] | Caster Guild | (313,-679) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Charia Betou]] | Caster Guild (top floor) | (134,-740) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Freeport
+| TableEra = {{{TableEra|Classic}}}
+}}

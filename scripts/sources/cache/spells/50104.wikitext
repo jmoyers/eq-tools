@@ -1,0 +1,51 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Nature Walkers Behest
+| spellicon = L
+| description = Summons the spirit of a wild bear to obey your commands.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Pet: DruidPet | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 600
+| range =  
+| casting_time = 14.00
+| fizzle_time = 2.25
+| recast_time = 28.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a spirit of nature.
+| msg_cast_on_other = Someone  summons a spirit of nature.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+<noinclude>
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+[[Temple of Veeshan]]
+* [[A burning guardian]]
+* [[A fiery guardian]]
+* [[A glimmer drake]]
+* [[A shimmering green drake]]
+* [[An ancient ice wurm defender]]
+* [[An emerald watcher]]
+</noinclude>
+
+}}

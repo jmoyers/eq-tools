@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Grounding Strike
+| spellicon = 1
+| description = Blocks the nerves to your opponent's legs, rooting them for up to 1 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Poison Counter by 9 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = 1 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_on_you = You lack the strength to move.
+| msg_cast_on_other = 's feet won't budge!
+| msg_wears_off = The poison subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

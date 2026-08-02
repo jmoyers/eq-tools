@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Banish Summoned
+| spellicon = 153
+| description = A burst of holy power that inflicts 540 damage to a summoned target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 43
+* [[Magician]] - Level 48
+* [[Cleric]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Truesight Hammer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 529 (L43) to 540 (L47) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 136
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Construct/Elemental
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

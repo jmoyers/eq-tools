@@ -1,0 +1,50 @@
+{{Spellpagesmart|
+
+| spellname = Skin Like Diamond
+| spellicon = K
+| description = Hardens the skin of your target, increasing their hit points and armor class for 54.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 54
+* [[Druid]] - Level 39
+
+| items_with_effect = 
+
+<ul><li> {{:Elder Spiritist's Greaves}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 13 (L39) to 13 (L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 178 (L39) to 200 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 178 (L39) to 200 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 54 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin turns hard as diamond.
+| msg_cast_on_other = Someone 's skin turns hard as diamond.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Butcherblock Mountains]] | [[Ellona]] | Druid Ring | (-2085,2016) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRowB | [[The Wakening Land]] | [[Weinna Oakchild]] | ? | (521,-1038) }}
+}}
+| TableLocations = Butcherblock Mnt<br/>Firiona Vie<br/>Wakening Land
+| TableEra = {{{TableEra|Classic}}}
+}}

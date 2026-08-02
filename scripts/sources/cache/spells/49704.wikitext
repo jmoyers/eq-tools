@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mircyl's Animation
+| spellicon = 38
+| description = Animates a weapon and shield to attack your enemies.  Consumes a tiny dagger when cast.
+
+| classes = * [[Enchanter]] - Level 7 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Mircyl's Animation Summon|Mircyl's Animation]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 45
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Tiny Dagger]] x 3
+
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+</ul>
+
+}}

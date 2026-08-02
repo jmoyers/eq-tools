@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Fascination
+| spellicon = D
+| description = Causes enemies in the vicinity of your target to fall into an enchanted sleep for up to 36 secs (6 ticks).  This spell works on creatures up to level 55 (5.55 mana per second)
+
+This is the only mesmerization spell Enchanter has access to with a -MR modifier.
+
+| classes = 
+
+* [[Enchanter]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/55) }}
+{{SpellSlotRow | 2 | Memblur(1%) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 200
+| range = 200 (AE Range: 35)
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 6 ticks
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (-10)
+
+| msg_cast_on_you = You are fascinated by the pretty colors.
+| msg_cast_on_other = Someone  has been fascinated.
+| msg_wears_off = You are no longer fascinated.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

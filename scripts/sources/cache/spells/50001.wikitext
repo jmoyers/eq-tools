@@ -1,0 +1,39 @@
+{{Kunark Era}}
+
+{{Spellpage|
+
+| spellname = Divine Favor
+| spellicon = K
+| description = Guards your target with a divine favor, absorbing some damage.
+
+| classes = 
+
+* [[Paladin]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Absorb Damage by 150 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 100
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 360.00
+| duration = 5 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are surrounded by an aura of Divine Favor.
+| msg_cast_on_other = Someone  is surrounded by an aura of Divine Favor.
+| msg_wears_off = The Divine Favor fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+}}
+
+}}

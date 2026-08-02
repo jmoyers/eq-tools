@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Corporeal Empathy
+| spellicon = J
+| description = Restores your target's hit points at the expense of your own.
+
+| classes = * [[Necromancer]] - Level 43
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 215 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds disappear.
+| msg_cast_on_other = Someone 's wounds disappear.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Drops from Velious Level 30+ Mobs
+
+[[Cobalt Scar]]
+* [[a cobalt drake]]
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathbinder]]
+
+[[Great Divide]]
+* [[a guardian shardwurm]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystal Gargoyle]]
+* [[A Crystalline Gargoyle]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+* [[A Large Crystal Shard]]
+* [[A Velium Hunter]]
+
+
+}}

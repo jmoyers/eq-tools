@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Minor Illusion
+| spellicon = U
+| description = Cloaks you in a shimmering illusion that makes you appear to be a nearby inanimate object.
+
+| classes = 
+
+* [[Enchanter]] - Level 1
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 142 }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 7000% }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 10
+| range = 
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 36 minutes 6 seconds
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel different.
+| msg_cast_on_other = Someone 's image shimmers.
+| msg_wears_off = Your illusion fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRow  | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}
+[[Category: Illusions]]

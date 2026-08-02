@@ -1,0 +1,55 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Gallenite's Minor Destruction
+| spellicon = 161
+| focus_effect = 1
+| description = Increases the damage of spells by up to 20%.  This bonus will decay on spells over level 34.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Summoned: Gallenite's Jade Bracelet}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Spell Damage by 1% to 20% }}
+{{SpellSlotRow | 2 | Limit Max Level: 34 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Effect: Current HP }}
+{{SpellSlotRow | 4 | Limit Max Duration: 0s }}
+{{SpellSlotRow | 5 | Limit Type: Detrimental }}
+{{SpellSlotRow | 6 | Limit Target: Exclude Caster AE }}
+{{SpellSlotRow | 7 | Limit Target: Exclude Caster PB }}
+{{SpellSlotRow | 8 | Limit Target: Exclude Target AE }}
+{{SpellSlotRow | 9 | Limit Target: Exclude Old Giants }}
+{{SpellSlotRow | 10 | Limit Target: Exclude Old Dragons }}
+{{SpellSlotRow | 11 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 2:24:00 (3:36:00)
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

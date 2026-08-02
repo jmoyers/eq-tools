@@ -1,0 +1,56 @@
+{{Spellpagesmart|
+
+| spellname = Tremor
+| spellicon = 161
+| description = Causes the earth to tremble around you, causing between 106 and 122 damage to as many as 24 others nearby.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 21
+* [[Cleric]] - Level 34
+
+| items_with_effect = 
+
+<ul><li> {{:Donal's Boots of Mourning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 106 (L21) to 122 (L29) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 200
+| range = 30
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You hear the ground rumble.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guid | (412,-788) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Dorlita Splitshield]] | Cleric Guild | (733,138) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRow  | [[Northern Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+| TableLocations = Ak'Anon/Erudin<br/>Felwithe/Neriak<br/>Qeynos/Rivervale<br/>Northern Karana
+| TableEra = {{{TableEra|Classic}}}
+}}

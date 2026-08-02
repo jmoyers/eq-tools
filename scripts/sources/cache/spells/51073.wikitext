@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Starfire
+| spellicon = O
+| description = Ignites your target's skin, doing 634 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 48
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 634 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 186
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel the glare of the heavens.
+| msg_cast_on_other = Someone  is bathed in starfire.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | Plane of Growth Tower | (519,-1028) }}
+}}
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

@@ -22,7 +22,27 @@ const KEEP = [
   /Welcome to EverQuest Legends!/,
   // landing emotes (self + third-person) — the additive discriminator
   /^\[[^\]]+\] You (feel|look|are|sense|seem)\b[^.]*\.$/,
-  /^\[[^\]]+\] [A-Z][a-z'`]+(?: [a-zA-Z'`]+)? (feels|looks|seems|is surrounded|glows|shimmers)\b[^.]*\.$/
+  /^\[[^\]]+\] [A-Z][a-z'`]+(?: [a-zA-Z'`]+)? (feels|looks|seems|is surrounded|glows|shimmers)\b[^.]*\.$/,
+  // ── Task #34 message-driven model ──
+  // Activated AA (Quick Buff), the AA-purchase line (Permanent Illusion), self-heals that
+  // name a buff (the Symbol of Pinzarn apply signal), and ANY line matching a spell's
+  // msg_cast_on_you / msg_cast_on_other / msg_wears_off — since those messages are the
+  // whole point of these windows, we keep the buff-relevant flavor lines broadly.
+  /^\[[^\]]+\] You activate /,
+  /gained the ability "/,
+  /^\[[^\]]+\] You healed .+ by .+\.$/,
+  // cast-on-other / cast-on-you flavor that isn't a "You feel" self-emote (kept above):
+  /flashes before your eyes\.$/,
+  /looks tranquil\.$/,
+  /face contorts and stretches/,
+  /cool breeze slips through your mind\.$/,
+  /cool breeze fades\.$/,
+  /mystic symbol flashes|symbol of \w+ flashes/i,
+  /valorous\.$/,
+  /valor fades\.$/,
+  /speed returns to normal\.$/,
+  /illusion fades\.$/,
+  /You feel\.\.\. strange\.$/ // Boon of the Garou self-cast (ellipsis breaks the emote KEEP)
 ]
 function keep(line) {
   if (!line.startsWith('[')) return false
@@ -50,6 +70,28 @@ slice(814800, 815210, 'w4-logout-gap.log')
 slice(486900, 490943, 'w5-charm-zone.log')
 // W6 rank pairing: Shiftless IV 19:41:59 (901697) .. fade 19:45:53 (903364)
 slice(901690, 903370, 'w6-rank-pairing.log')
+
+// ── Task #34 message-driven windows ──
+// W7 Quick Buff burst: window starts at the 20:22:13 Swift cast (912560) so the ambiguous
+// "You feel much faster." burst message resolves to Swift (cast history), through the
+// "You activate Quick Buff." burst 20:29:44 (915471) .. after it (20:29:52, 915490). The
+// burst prints self-buff landing messages with NO "You begin casting" line — the
+// message-driven applies are the whole point.
+slice(912560, 915492, 'w7-quick-buff.log')
+// W7 priming: a real Clarity III cast (18:46:49, line 891005) warms cast history so the
+// ambiguous burst "A cool breeze slips through your mind." resolves to Clarity (not Boon of
+// the Clear Mind / Flowing Thought). Mirrors production, where the player casts Clarity
+// normally through the session before the Quick Buff burst.
+slice(891000, 891010, 'w7-priming.log')
+// W8 wears-off removes an active: Valor applies via the UNIQUE "You feel valorous."
+// message in the Quick Buff burst 20:29:46 (915472) .. wears off via the UNIQUE "Your valor
+// fades." 20:55:15 (923349), 25.5 min later (< Valor's 54-min DB duration, so it's a real
+// message-driven removal, not a hygiene sweep). Unique messages → no priming needed.
+slice(915470, 923352, 'w8-wears-off.log')
+// W9 Permanent Illusion: purchase 00:40:53 (635160); self-cast Boon "You feel... strange."
+// 00:44:38 (636178) → PERMANENT; pet-cast Boon on the charmed abhorrent 00:48:10 (637015)
+// → NORMAL, wears off 00:54:07 (638646).
+slice(635150, 639850, 'w9-permanent-illusion.log')
 
 // ── Priming fixtures (Task #33): a real earlier excerpt that establishes learned state
 // (everFaded / spell class / recognized landing emotes) BEFORE a golden window, mirroring

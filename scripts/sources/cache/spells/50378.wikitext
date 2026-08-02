@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Renew Summoning
+| spellicon = 99
+| description = Renews the health of your elemental pet, healing 87 damage, and curing their diseases, poisons, and curses.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 18
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 75 (L18) to 87 (L24) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Disease Counter by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 36
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's form shimmers blue.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

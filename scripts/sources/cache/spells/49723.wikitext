@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mist
+| spellicon = K
+| description = Causes your target's image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+| classes = * [[Enchanter]] - Level 10
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 6 (L12) to 7 (L16) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 30
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your image blurs.
+| msg_cast_on_other = Someone 's image blurs.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

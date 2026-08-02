@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Sanity Warp
+| spellicon = C
+| description = Strikes your target with a chaotic burst of mental energy, causing 87 damage and stunning targets up to level 55 for 1 second.
+
+| classes = 
+
+* [[Enchanter]] - Level 16
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 88 (L16) to 95 (L23) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 38
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = Reality runs amok.
+| msg_cast_on_other = Someone  looks delirious.
+| msg_wears_off = Reality returns.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-4)]] | Library | (1106,-989) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Estra Nancer]] | Enchanter Guild (F2) | (536,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Litz B`Doph]] | Caster Guild (F1) | (132,-955) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Corrao Duperame]] | The Herb Jar | (302,-559) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Seren the Swift]] | Enchanter Guild | (509,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Lasiris Oncre]] | Caster Guild (F1) | (112,-768) }}
+}}
+
+}}

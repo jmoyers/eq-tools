@@ -1,0 +1,30 @@
+{{Spellpage|
+
+| spellname = Surge of Enfeeblement
+| spellicon = I
+| description = Drains the strength of all nearby creatures for 6.0 mins.
+
+| classes = * [[Necromancer]] - Level 32
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 22 (L34) to 30 (L50) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 5.50
+| duration = 6 minutes
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your strength dwindle.
+| msg_cast_on_other = Someone  weakens.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+}}

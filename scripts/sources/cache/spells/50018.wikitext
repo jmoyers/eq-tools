@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Creeping Crud
+| spellicon = T
+| description = Covers your target in oozing filth, causing 85 damage every 6 seconds for 48s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 24
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 77 (L24) to 85 (L32) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 167
+| range = 250
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You feel the pain of a thousand stings.
+| msg_cast_on_other = Someone  is engulfed in a swarm.
+| msg_wears_off = The swarm departs.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Northern Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+}}
+| TableLocations = North Karana
+| TableEra = {{{TableEra|Classic}}}
+}}

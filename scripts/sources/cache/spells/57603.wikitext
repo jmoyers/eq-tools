@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = O`Keil's Levity
+| spellicon = M
+| description = Surrounds you in a cloud of searing steam that damages anything that strikes you, as well as allowing you the benefits of levitation.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 25
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 5 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 21 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Levitate (2) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Infravision | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Stacking: Block new spell if slot 1 is effect 'Damage Shield' and < 100| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 1.50
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = 
+
+| msg_cast_on_you = You rise on a gust of hot air.
+| msg_cast_on_other = Target rises on a gust of hot air.
+| msg_wears_off = You return to the ground.
+
+| items_with_effect = 
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

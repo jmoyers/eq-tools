@@ -1,0 +1,30 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Reoccurring Amnesia
+| spellicon = 39
+| description = Attacks your target's mind, providing a chance to forget those that have done them harm.<br>
+| classes = * [[Enchanter]] - Level 45
+| slots = 
+
+{{SpellSlotRow | 1 | Memblur(25%) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = 24 Sec
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your mind fog.
+| msg_cast_on_other = Someone  blinks a few times.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

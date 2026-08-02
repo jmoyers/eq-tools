@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Cinder Bolt
+| spellicon = 51
+| description = Burns your target's skin with a cinder bolt, causing 510 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 33
+| items_with_effect = 
+
+<ul><li> {{:Burnt Wood Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 499 (L33) to 510 (L37) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 165
+| range = 300
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Bolt
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = A stream of fire washes over you.
+| msg_cast_on_other = Someone  is bathed in fire.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

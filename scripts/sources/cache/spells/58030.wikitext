@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Voice of Darkness
+| spellicon = 91
+| description = Imbues your target's voice with the power of darkness, causing creatures to take more notice of their attacks for 10 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 39
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Agro Multiplier by 2% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 50
+| range = 150
+| casting_time = 2.00
+| fizzle_time =
+| recast_time = 540.00
+| duration = 10 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your voice is filled with sounds of darkness.
+| msg_cast_on_other =  speaks with the voice of darkness.
+| msg_wears_off = The dark voice fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

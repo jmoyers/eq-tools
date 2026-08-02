@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Angstlich's Assonance
+| spellicon = C
+| description = Envenomed notes attack your target's system, causing damage and slowing their attack rate for 1 min. 
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Attack Speed by 31% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 25 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 98 | Duration: 60 Seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | 99 | Cooldown: 12 Seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (except attack speed)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+| skill = [[Skill Brass | Brass]]
+
+| mana = 0
+| range = 150
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been deafened.
+| msg_cast_on_other = Someone  has been deafened.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Balik Wolftrot]] | Outpost | (-3010,2968) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = Kunark
+}}

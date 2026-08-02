@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Thunder of Karana
+| spellicon = 21
+| description = Summons the booming thunder of Karana, causing severe trauma to your target's mind and draining 100 mana.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Paladin]] - Level 47
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 3 | Decrease Mana by 100 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 75
+| range = 100
+| casting_time = 3.50
+| fizzle_time =
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = Your ears filled with the deafening roar of Karana's Thunder.
+| msg_cast_on_other = 's ears fill with the deafening roar of Karana's Thunder.
+| msg_wears_off = 
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

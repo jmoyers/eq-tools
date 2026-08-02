@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Deftness
+| spellicon = 8
+| description = Fills your target with a sense of deftness, increasing their dexterity for 54 min.
+
+| classes = 
+
+* [[Shaman]] - Level 39
+
+| items_with_effect = 
+
+<ul><li> {{:Jaundiced Bone Gauntlets}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase DEX by 40 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 80
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 54 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You feel dexterous.
+| msg_cast_on_other = Someone looks dexterous.
+| msg_wears_off = Your dexterity fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,48 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Asystole
+| spellicon = E
+| description = Causes your target's heartbeat to become irregular, adding 4 disease counters, lowering their strength by 40, armor class by 60, and doing 62 disease damage every 6 seconds for 42s.
+
+| classes = 
+
+* [[Necromancer]] - Level 40
+* [[Shadowknight]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 4 }}
+{{SpellSlotRow | 2 | Decrease STR by 37 (L44) to 40 (L50) }}
+{{SpellSlotRow | 3 | Decrease AC by 16 (L44) to 18 (L50) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 69 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 98
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 42 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = Your heart stops.
+| msg_cast_on_other = Someone  clutches their chest.
+| msg_wears_off = Your heartbeat resumes.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+{{SpellWhereRow  | [[Paineel]] | [[Nedorl Ipabrun]] | Necromancer Guild | (674,805) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+}}
+
+}}

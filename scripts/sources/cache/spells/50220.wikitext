@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Lich
+| spellicon = G
+| description = Grips your body in an unholy darkness, slowly draining your hit points while regenerating your mana.
+
+| classes = * [[Necromancer]] - Level 48
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 60 }}
+{{SpellSlotRow | 2 | Increase Mana by 20 per tick }}
+{{SpellSlotRow | 4 | Ultravision(1) }}
+{{SpellSlotRow | 7 | Decrease Hit Points by 22 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 5
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the skin peel from your bones.
+| msg_cast_on_other = Someone 's skin peels away.
+| msg_wears_off = Your flesh returns.
+
+| where_to_obtain =
+
+{{Necromancer Recipe| Lich | 184}}
+{{Recipe Component| Words of the Ethereal | 869}}
+
+}}

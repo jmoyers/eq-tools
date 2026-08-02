@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Elemental: Fire
+| spellicon = 38
+| description = Summons a fire elemental to aid you in battle.
+
+| classes = * [[Magician]] - Level 11
+| items_with_effect = 
+
+<ul><li> {{:Brazier of Elemental Summoning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Elemental: Fire Summon|Elemental: Fire]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 120
+| range =  
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:'''  [[Malachite]]
+* '''Focus:''' [[Torch of Alna]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

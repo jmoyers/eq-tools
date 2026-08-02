@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Ensnare
+| spellicon = 5
+| description = Entangles your target's feet with magical roots, slowing their movement speed for up to 14 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 26
+* [[Ranger]] - Level 51
+
+| items_with_effect = 
+
+<ul><li> {{:Tanglewood Shield}}
+</li><li> {{:Sap Encrusted Branch}}
+</li><li> {{:Spear of Constriction}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Movement Speed by 40% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 11 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are ensnared.
+| msg_cast_on_other = Someone  has been ensnared.
+| msg_wears_off = You are no longer ensnared.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

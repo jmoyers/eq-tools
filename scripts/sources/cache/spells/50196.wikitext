@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Spirit Tap
+| spellicon = 161
+| description = Drains your target of life energy, siphoning 210 hit points.
+
+| classes = 
+
+* [[Necromancer]] - Level 26
+* [[Shadow Knight]] - Level 36
+
+| items_with_effect = 
+
+<ul><li> {{:Ivandyr's Hoop}}
+</li><li>{{:The Scimitar of Lifestealing}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 132 (L29) to 150 (L35) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 152
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Tangling Weeds
+| spellicon = 5
+| description = Entangles your target's feet with magical roots, slowing their movement speed for up to 18s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 1 (Autogranted)
+* [[Ranger]] - Level 5 (Autogranted)
+
+| items_with_effect = 
+
+
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Movement Speed by 20% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 15
+| range = 200
+| casting_time = 0.5
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 18 seconds
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You slow down as your feet are covered in tangling weeds.
+| msg_cast_on_other = Target's movements slow as their feet are covered in tangling weeds.
+| msg_wears_off = The tangling weeds wither away.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

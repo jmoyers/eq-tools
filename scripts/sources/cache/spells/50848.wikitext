@@ -1,0 +1,30 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Dementing Visions
+| spellicon = C
+| description = Strikes your target with a chaotic burst of mental energy, causing 775 damage.
+
+| classes = 
+
+* [[Enchanter]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 775 }}
+
+| skill = [[Skill Evocation | Evocation]]
+| mana = 250
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Insidious imagery clouds your mind.
+| msg_cast_on_other = Someone 's mind is clouded by insidious imagery.
+| msg_wears_off =  
+}}

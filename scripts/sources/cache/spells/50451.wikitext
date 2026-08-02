@@ -1,0 +1,55 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shock of Ice
+| spellicon = S
+| description = Covers your target in a thin layer of ice, causing 58 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 8 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Solist's Icy Wand}}
+</li><li> {{:Wintry Club}}
+</li><li> {{:Dagger of Frost}}
+</li><li> {{:Spine Chill Spear}}
+</li><li> {{:Icy Blade}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 46 (L8) to 58 (L14) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 23
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your skin freezes over.
+| msg_cast_on_other = Someone 's skin freezes over.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-8)]] | Library | (1060,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Gissa Brist]] | Wizard Guild (F2) | (894,742) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Mak Ixtaz]] | Caster Guild (Basement) | (171,-893) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Rosdaria Sepria]] | Caster Guild | (327,-686) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Celent Newmist]] | Wizard Guild | (449,-341) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Mirpa Arana]] | Caster Guild (top floor) | (140,-79) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Felwithe/Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

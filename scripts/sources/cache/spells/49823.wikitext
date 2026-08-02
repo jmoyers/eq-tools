@@ -1,0 +1,37 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Theft of Thought
+| spellicon = D
+| description = Tears the energy from your target's mind, draining their mana and adding it to yours.
+
+| classes = * [[Enchanter]] - Level 50
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Mana by 346 (L51) to 400 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 25
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 120.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-1000)
+
+| msg_cast_on_you = You feel your mental energies drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Enchanter Spells (Good)]]
+* [[Enchanter Spells (Evil)]]
+
+}}

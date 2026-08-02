@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Turgur's Insects
+| spellicon = A
+| description = Engulfs your target in a swarm of insects, slowing their attack rate for 5.1 mins @L51 to 6.5 mins @L65.
+
+| classes = 
+
+* [[Shaman]] - Level 51
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 66% (L51) to 75% (L60) }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 16 }}
+
+| skill = [[Skill Alteration | Alteration]]
+| mana = 250
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 5.1 minutes @L51 to 6.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel drowsy.
+| msg_cast_on_other = Someone  yawns.
+| msg_wears_off = You feel less drowsy.
+}}

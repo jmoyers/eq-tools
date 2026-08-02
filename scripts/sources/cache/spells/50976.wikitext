@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Shield of the Eighth
+| spellicon = S
+| description = Infuses you with power, damaging any creature that attacks you.
+
+This effect does not stack with [[Call of Earth]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Coldain Hero's Insignia Ring}}
+</li><li> {{:Velium Coldain Insignia Ring}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Damage Shield by 8 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 0 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Cold (0)
+
+| msg_cast_on_you = You are enveloped in a swirling maelstrom.
+| msg_cast_on_other = Someone  is enveloped by a swirling maelstrom.
+| msg_wears_off = The maelstrom fades away.
+}}
+
+[[Category:NPC Only Spells]]

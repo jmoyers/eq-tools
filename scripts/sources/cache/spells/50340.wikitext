@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Manicial Strength
+| spellicon = R
+| description = Fills your target's body with maniacal power, increasing their strength for 2 hours 24 mins @ level 57. The buff is classically misspelled as "Manicial".
+
+Provides more STR than the group version, [[Talisman of the Rhino]].
+
+| classes = 
+
+* [[Shaman]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 68 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 2 hours 24 minutes @L57
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are filled with maniacal strength.
+| msg_cast_on_other = Someone 's muscles fill with maniacal strength.
+| msg_wears_off = Your strength fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+
+}}

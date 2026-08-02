@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Divine Wrath
+| spellicon = C
+| description = Strikes your target with the power of divine wrath.  Causing 250 damage and briefly stunning them.  The stun portion of this effect works on creatures up to level 55.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Sprinkler of Suffering}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 4.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 250 }}
+
+| skill = 
+| mana = 120
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are stunned.
+| msg_cast_on_other = Someone  is struck down.
+| msg_wears_off = You are no longer stunned.
+}}
+
+[[Category:NPC Only Spells]]

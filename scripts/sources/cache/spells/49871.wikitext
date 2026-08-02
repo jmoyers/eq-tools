@@ -1,0 +1,54 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Drink
+| spellicon = 37
+| description = Focuses mana into a globe of pure drinking water.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 1
+* [[Shaman]] - Level 2
+* [[Cleric]] - Level 3
+* [[Druid]] - Level 10
+* [[Beastlord]] - Level 17
+
+| items_with_effect = 
+
+<ul><li> {{:Belt of the River}}
+</li><li> {{:Singing Steel Boots}} pre-upgrade
+</li><li> {{:Spring Crystal}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Globe of Water}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 10
+| range = 0
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Summon Item
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

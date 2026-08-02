@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spiritual Brawn
+| spellicon = 1
+| description = Fills your target with spiritual brawn, increasing their hit points and attack rating for 72 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Beastlord]] - Level 42
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase ATK by 10 }}
+{{SpellSlotRowSmart | 4 | Increase Max Hit Points by 75 }}
+
+| skill = [[Skill  Alteration  |  Alteration]]
+| range = 75
+| resist = Unresistable
+| mana = 75
+| casting_time = 10.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 72 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+
+| msg_cast_on_you = You feel imbued with spiritual brawn.
+| msg_cast_on_other = Target has been filled with spiritual brawn. 
+| msg_wears_off = Your spiritual brawn fades.
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+
+}}

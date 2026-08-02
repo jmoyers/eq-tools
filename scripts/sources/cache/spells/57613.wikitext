@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Selo's Accelerating Chorus
+| spellicon = A
+| description = The rapid pace of this song fills your feet with speed, increasing the movement rate of your group for 2 min 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Movement Speed by 15% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 150
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 minutes, 30 seconds
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your feet move faster.
+| msg_cast_on_other =  
+| msg_wears_off = You slow down.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

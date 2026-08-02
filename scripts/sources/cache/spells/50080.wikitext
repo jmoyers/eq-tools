@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Savage Spirit
+| spellicon = T
+| description = Fills your pet with a savage spirit, increasing their attack speed, strength, and armor class.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 41
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Attack Speed by 64% (L44) to 70% (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase STR by 42 (L44) to 45 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AC by 15 (L44) to 16 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 60 Min
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes gleam with madness.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall
+| TableEra = {{{TableEra|Classic}}}
+}}

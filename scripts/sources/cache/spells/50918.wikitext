@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Kylie's Venom
+| spellicon = N
+| description = Poisons your target, decreasing hit points by 45 every 6 seconds and movement for up to 1 ticks @L1 to 1 min @L20.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Dragonspine Rapier}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 45 per tick }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 35% }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1 minute @L20
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You spasm violently.
+| msg_cast_on_other = Someone  spasms violently.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

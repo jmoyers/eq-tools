@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Negation of Life
+| spellicon = 877
+| description = Covers your target in a shroud of anti-life, decreasing their ability to be healed by 30%, and does 20 damage every 6 seconds for 1 min 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Necromancer]] - Level 18
+* [[Shadow Knight]] - Level 31
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 20 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Incoming Healing by 30% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 120
+| range = 200
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 1 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You are shrouded by anti-life magic.
+| msg_cast_on_other =  is shrouded by anti-life magic.
+| msg_wears_off = The shroud fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

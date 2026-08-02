@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Shock of Frost
+| spellicon = S
+| description = Covers your target in a thin layer of frost, causing 18 damage.
+
+| classes = * [[Wizard]] - Level 1 (Autogranted)
+| items_with_effect = 
+
+<ul><li> {{:Axe of the Frost}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 11 (L1) to 28 (L9) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 8
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your skin goes numb.
+| msg_cast_on_other = Someone 's skin goes numb.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+
+}}

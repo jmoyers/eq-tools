@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Deadly Lifetap
+| spellicon = G
+| description = Drains 1500 HP from the target. Cast by [[Trakanon]]. Melee procced by [[Miragul]], [[Nortlav the Scalekeeper]], [[Venril Sathir]], and [[Dracoliche]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Trakanon's Tooth}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 1500 }}
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 45.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-400)
+| skill = 
+
+| msg_cast_on_you = You feel a tugging at your soul.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

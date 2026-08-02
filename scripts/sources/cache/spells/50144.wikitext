@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Clinging Darkness
+| spellicon = 160
+| description = Summons a clinging darkness that binds your target's feet, decreasing their movement rate, and does 8 damage every 6 seconds for 48s.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 11
+* [[Necromancer]] - Level 4 (Autogranted)
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Regent Symbol of Innoruuk}}</li>
+<li>{{:Scepter of the Forlorn}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 5 per tick }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 24% (L4) to 30% (L10) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are in the grip of darkness.
+| msg_cast_on_other = Someone  is surrounded by darkness.
+| msg_wears_off = The darkness fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Frosty Death2
+| spellicon = S
+| description = Cast by [[a cobalt drake]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 500 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 24.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are shredded by ice.
+| msg_cast_on_other = Someone  is shredded by ice.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

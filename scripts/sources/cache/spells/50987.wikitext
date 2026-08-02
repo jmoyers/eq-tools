@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Summon Holy Ale of Brell
+| spellicon = L
+| description = Focuses mana into the form of the holy ale of Brell.  Consumes a [[Summoned: Globe of Water]] when cast.
+
+| classes = 
+
+* None
+
+| items_with_effect = 
+
+<ul><li> {{:Disciple Symbol of Brell Serilis}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Brell's Blessed Stout]] }}
+
+| skill = 
+| mana = 15
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Summoned: Globe of Water]]
+
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}

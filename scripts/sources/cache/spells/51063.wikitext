@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname =  Aloe Sweat
+| spellicon = K
+| description = Minor PR and DR self-only buff.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Disciple Symbol of Tunare}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Poison Resist by 10 (L1) to 15 (L20) }}
+{{SpellSlotRow | 4 | Increase Disease Resist by 10 (L1) to 15 (L20) }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2 minutes @L40
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable 
+
+| msg_cast_on_you = You begin to sweat aloe. 
+| msg_cast_on_other = Someone  begins to sweat aloe.
+| msg_wears_off = The aloe sweat fades. 
+}}

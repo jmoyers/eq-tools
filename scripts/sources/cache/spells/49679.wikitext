@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Pendril's Animation
+| spellicon = 38
+| description = Animates a weapon and shield to attack your enemies.  Consumes a [[Tiny Dagger]] when cast.
+
+| classes = 
+
+* [[Enchanter]] - Level 1 (Autogranted)
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Pendril's Animation Summon|Pendril's Animation]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 12
+| range =  
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Tiny Dagger]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off = 
+
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+</ul>
+
+}}

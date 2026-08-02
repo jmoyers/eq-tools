@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Shield of Brambles
+| spellicon = 155
+| description = Surrounds your target in a shield of brambles that cause damage to anything that strikes them for 15 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 27
+* [[Ranger]] - Level 43
+
+| items_with_effect = 
+
+<ul><li> {{:Arydryidriyorn}}
+</li><li> {{:Yannikil}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 11 (L29) to 12 (L32) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 80
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 15 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You are surrounded by a thorny barrier.
+| msg_cast_on_other = Someone  is surrounded by a thorny barrier.
+| msg_wears_off = The brambles fall away.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

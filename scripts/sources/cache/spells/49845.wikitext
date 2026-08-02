@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Tashanian
+| spellicon = T
+| description = Causes your target's ears to echo with the barking of Tashan, lowering their magic resistance.
+
+| classes = 
+
+* [[Enchanter]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Magic Resist by 37 (L57) to 39 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 40
+| range = 200
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 12.4 minutes @L57 to 13 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You hear the barking of Tashania.
+| msg_cast_on_other = Someone  glances nervously about.
+| msg_wears_off = The barking fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

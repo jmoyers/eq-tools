@@ -1,0 +1,48 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Pillar of Frost
+| spellicon = S
+| description = Creates a pillar of frost, causing between 755 and 800 damage on up to four creatures in the vicinity of your target. Single target mana efficiency is 2.32 to 2.46.
+<br>
+<br>
+This is a '''recommended''' quad-kiting spell for Wizards, replacing [[Circle of Force]] and being replaced by [[Pillar of Lightning]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 755 (L51) to 800 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 325
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = You are encased within a pillar of frost.
+| msg_cast_on_other = Someone  is encased within a pillar of frost.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+
+
+==Related Quests==
+
+* [[Wizard Spells (Good)]]
+* [[Wizard Spells (Evil)]]
+
+| TableLocations = [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

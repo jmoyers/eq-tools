@@ -1,0 +1,37 @@
+<noinclude>{{Kunark_Era}}</noinclude>{{Spellpage|
+
+| spellname = Talisman of the Rhino
+| spellicon = R
+| description = Fills your group with power of the rhino, increasing their strength for 1 hour(s) 3.0 mins.
+
+Provides less STR than the single target version, [[Maniacal Strength]]. Will be overwritten by [[Focus of Spirit]]
+
+| classes = 
+
+* [[Shaman]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 42 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 0
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the spirit of the rhino channel through you.
+| msg_cast_on_other = Someone  looks strong.
+| msg_wears_off = Your rhino spirit fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

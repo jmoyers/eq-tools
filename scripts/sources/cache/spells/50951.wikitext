@@ -1,0 +1,50 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Color Shift
+| spellicon = D
+| description = Creates a wave of intense color around you that assaults your opponent's senses, briefly stunning all nearby creatures. Works on mobs up to level 55.
+
+ 
+| classes = 
+
+* [[Enchanter]] - Level 20
+
+| items_with_effect = 
+
+<ul><li> {{:Crystal Rod of Confusion}}
+</li><li> {{:Incandescent Wand}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0 seconds }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 40
+| range = 25 (AOE)
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = Scintillating colors pound through your brain.
+| msg_cast_on_other = Someone  is stunned by scintillating colors.
+| msg_wears_off = The pretty colors fade.
+
+| where_to_obtain =
+
+* This spell is crafted with the [[Skill Research|Research Skill]] (Trivial: 42)
+** '''Yield: Spell: Color Shift''' x1
+** In [[Tome of Endless Enchantments]]:
+:: {{SmIcon|1004}} 1 x [[Part of Tasarin's Grimoire Pg. 312 (Left)]] - Dropped
+:: {{SmIcon|1005}} 1 x [[Part of Tasarin's Grimoire Pg. 312 (Right)]] - Dropped 
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+}}

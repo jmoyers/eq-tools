@@ -1,0 +1,54 @@
+{{Spellpage|
+
+| spellname = Word of Pain
+| spellicon = C
+| description = A forbidden word that causes between 24 and 29 damage to all nearby enemies.
+
+| classes = 
+
+* [[Cleric]] - Level 9
+
+| items_with_effect = 
+
+<ul><li> {{:Fayguard Bladecatcher}}
+</li><li> {{:Fayguard Parrying Dagger}}
+</li><li> {{:Painbringer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 24 (L9) to 29 (L14) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 47
+| range =  
+| casting_time = 2.10
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are wracked by pain.
+| msg_cast_on_other = Someone  writhes in pain.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-2)]] | Cleric Guild | (1238,-539) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-9)]] | Necromancer Guild | (2154,-366) }}
+{{SpellWhereRowB | [[Erudin]] | [[Mertitt Phentilly]] | Cleric Guild - Quellious (Outside) | (-741,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Celest Palestream]] | Cleric Guild | (24,-444) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Issia H'Rugla]] | Cleric Guild | (405,-766) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Amata D'Lavi]] | Cleric Guild (F1) | (103,311) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Mellisa Purgor]] | Paladin Guild | (-158,-130) }}
+{{SpellWhereRow  | [[Paineel]] | [[Lillean Han Oni]] | Cleric Guild | (1212,551) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Leon Ereek]] | Cleric Guild | (373,-434) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Frappy Slimfinger]] | Cleric Guild | (-214,-359) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Brita]] | Cleric Guild | (-184,812) }}
+}}
+
+}}

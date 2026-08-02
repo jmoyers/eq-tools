@@ -1,0 +1,62 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Wrath of the Elements
+| spellicon = M
+| description = Surrounds your target in an elemental maelstrom, causing 350 damage initially, and between 122 and 132 damage every 6 seconds for 30 secs (5 ticks).
+
+If it lasts the entire duration it will deal an average of 350 + 127 * 5 = 985 (max 1010).  Given the spell's cost that adds up to a 985/265 = 3.72 average damage per mana (DPM).
+
+Does not stack with [[Deadly Velium Poison]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease HP when cast by 350| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 90 per tick| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 265
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 5 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your body is consumed by the wrath of the elements.
+| msg_cast_on_other = Someone  is assaulted by the wrath of the elements.
+| msg_wears_off = The elemental assault departs.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathshaper]]
+* [[A Chetari Dominator]]
+* [[A Chetari seeker]]
+* [[Dustbinder Grakina]]
+
+[[Temple of Veeshan]]
+* [[A cerulean sky gazer]]
+* [[A fiery watcher]]
+* [[A glimmer drake]]
+* [[A shimmering green drake]]
+* [[An Ancient Sky Drake]]
+* [[An ancient frost guardian]]
+* [[An ancient shard wyvern]]
+* [[Tavekalem]]
+
+[[Velketor's Labyrinth]]
+* [[A Velium Hunter]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+}}

@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Imbue Emerald
+| spellicon = U
+| description = Focuses the power of Tunare into five emeralds. Consumes five emeralds when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 29
+* [[Druid]] - Level 29
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Imbued Emerald}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 600
+| range =  
+| casting_time = 10.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Emerald]] x5
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+}}

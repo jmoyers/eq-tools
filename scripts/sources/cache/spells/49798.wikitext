@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Wandering Mind
+| spellicon = D
+| description = Draws the energy from your target's mind, draining their mana and giving it to you.
+
+| classes = 
+
+* [[Enchanter]] - Level 38
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Target Mana by 6 per tick }}
+{{SpellSlotRow | 2 | Recourse Effect: Increase Caster Mana by 6 per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 5
+| range = 125
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 150.00
+| duration = 2 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You forget what you were supposed to be.
+| msg_cast_on_other = Someone  stares off into space.
+| msg_wears_off = You remember where you are.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRow  | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

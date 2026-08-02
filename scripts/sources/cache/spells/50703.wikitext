@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Vilia's Chorus of Celerity
+| spellicon = R
+| description = A energetic verse that heightens the attack speed of your group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 54
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Attack Speed by 45% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The beat of your heart increases to match the music.
+| msg_cast_on_other =  
+| msg_wears_off = The tempo fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Balik Wolftrot]] | Outpost | (-3010,2968) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = Kunark
+}}

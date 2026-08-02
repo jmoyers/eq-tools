@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Envenomed Heal
+| spellicon = C
+| description = Sends a strange refreshing poison through your system, healing you for 173 damage while stunning you for long period of time.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Pale Green Potion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 9 }}
+{{SpellSlotRow | 2 | Increase HP when cast by 150 }}
+{{SpellSlotRow | 3 | Stun for 32.0 seconds }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your mind reels as your body heals.
+| msg_cast_on_other = Someone  reels.
+| msg_wears_off = Your mind clears.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,103 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Invigor
+| spellicon = A
+| description = Renews the endurance of your target, replenishing their stamina for 18 secs (3 ticks).
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 9
+* [[Paladin]] - Level 22
+* [[Ranger]] - Level 30
+* [[Druid]] - Level 14
+* [[Shaman]] - Level 24
+* [[Enchanter]] - Level 24
+
+| items_with_effect = 
+
+<ul><li>  {{:Mrylokar's Greaves}}
+</li><li> {{:Singing Steel Vambraces}}
+</li><li> {{:Spiroc Wingblade}}
+</li><li> {{:Frozen Efreeti Boots}}
+</li><li> {{:Camii`s Bracer of Vigor}}
+</li><li> {{:Orb of the Crimson Bull}}
+</li><li> {{:Abram's Axe of the Stoic}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Stamina Loss by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 3.50
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your body zings with energy.
+| msg_cast_on_other = Someone  looks energized.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Grymm]] | Temple of Terror (First Floor) | (1018,-163) }}
+{{SpellWhereRow  | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRowB | [[Erudin]] | [[Issibla Belstince]] | Cleric Guild - Prexus (F2) | (-1031,-375) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Seria Woodwind]] | Paladin Guild | (-9,-197) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRowB | [[Greater Faydark]] | [[Zelli Starsfire]] | Kelethin Druid Guild | (-622,243) }}
+{{SpellWhereRow  | [[Greater Faydark]] | [[Verth Mistwielder]] | Kelethin Ranger Guild | (-414,494) }}
+{{SpellWhereRowB | [[Grobb]] | [[Barsk - Troll]] | Shaman Guild | (303,-417) }}
+{{SpellWhereRow  | [[Halas]] | [[Boraskor]] | Shaman Guild | (352,448) }}
+{{SpellWhereRowB | [[Kaladim|North Kaladim]] | [[Axa Stormshield]] | Paldin Guild | (938, 125) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Busey Nehart]] | Paladin Guild | (1283, 73) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Donala Baris]] | Paladin Guild (F3) | (208,-130) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRowB | [[Oggok]] | [[Barsk - Ogre]] | Shaman Guild | (665,1051) }}
+{{SpellWhereRow  | [[Paineel]] | [[Lillean Han Oni]] | Cleric Guild | (1212,551) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Staria Longhair]] | Druid Guild | (-62,-403) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Oriyame Nelafre]] | Cleric Guild | (-259,-539) }}
+{{SpellWhereRow  | [[Surefall Glade]] | [[Durvinna Barkkis]] | Ranger Guild | (104,-111) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Sallah]] | Druid Guild | (-153,-286) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Brita]] | Cleric Guild | (-184,812) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Keegan]] | Paladin Guild | (-210,543) }}
+}}
+| TableLocations = Vendors
+| TableEra = Classic
+}}
+
+<noinclude>
+* This spell is crafted with the [[Skill Research|Research Skill]].
+<table class="eoTable3" style="width:100%;">
+ <tr>
+	<th>Class</th>
+	<th>Trivial</th>
+	<th>Component 1</th>
+	<th>Component 2</th>
+  </tr>
+  <tr>
+	<td>Enchanter</td>
+	<td>62</td>
+	<td>[[Velishoul's Tome Pg. 16]]</td>
+	<td>[[Velishoul's Tome Pg. 17]]</td>
+  </tr>
+</table>
+</noinclude>

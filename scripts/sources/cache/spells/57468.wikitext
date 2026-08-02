@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Zephyr: Steamfont
+| spellicon = V
+| description = Opens a mystical portal that teleports your target to Steamfont Mountains.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Translocate to -1779,1668,-104 in [[Steamfont Mountains]]| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 100 
+| casting_time = 10.0
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Player fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+| TableLocations = W.Commonlands
+| TableEra = Classic
+
+}}

@@ -1,0 +1,40 @@
+{{Velious Era}}
+
+{{Spellpage|
+
+| spellname = Field of Bone Port
+| spellicon = C
+| description = Mystically transports you to the Field of Bone, nearish Kurn's Tower.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Potion of the Bone Field}}
+</li><li> {{:5 Dose Potion of the Bone Field}}
+</li><li> {{:Potion of the Bone Field}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to -1961,340,-51 in fieldofbone }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

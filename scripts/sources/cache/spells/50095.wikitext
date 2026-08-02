@@ -1,0 +1,46 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Spirit of Scale
+| spellicon = A
+| description = Imbues your group with the spirit of a scaled wolf, increasing their movement speed for 1 hour(s) 12.0 mins.  Any attack, or spell cast will break the enchantment. The single target version of this spell is [[Scale of Wolf]].
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 53
+* [[Shaman]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Make Fragile | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 70% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 1 hour 12 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Magic (-10)
+
+| msg_cast_on_you = You feel the spirit of the scaled wolf enter you.
+| msg_cast_on_other = Someone  is surrounded by a brief lupine aura.
+| msg_wears_off = The spirit of scale leaves you.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Shaman Spells (Good)]]
+* [[Shaman Spells (Evil)]]
+* [[Druid Spells]]
+| TableLocations = [[Druid Spells|Quest]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

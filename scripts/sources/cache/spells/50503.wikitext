@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Force Spiral of Al'Kabor
+| spellicon = C
+| description = Creates an energy spiral that causes between 162 and 172 damage to all creatures in the vicinity of your target.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 35
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 162 (L35) to 172 (L45) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are blasted by energy laden winds.
+| msg_cast_on_other = Someone  is blasted by energy laden winds.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* '''Wizard''' [[Research#Wizard_Spell_Recipes|Research]] (Trivial: 184)
+** '''Yield: Force Spiral of Al'Kabor''' x1
+** In [[Lexicon]]:
+{{Recipe Component| Rune of Al'Kabor | 967}}
+{{Recipe Component| Rune of The Helix | 967}}
+{{Recipe Component| Rune of Infraction | 967}}
+
+
+| TableLocations = [[Research]]
+| TableEra = {{{TableEra|Classic}}}
+
+}}

@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Column of Frost
+| spellicon = S
+| description = Creates a column of frost, causing between 27 and 31 damage to several creatures in the vicinity of your target.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 8
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 27 (L8) to 31 (L12) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 39
+| range = 200
+| casting_time = 2.70
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are encased in frost.
+| msg_cast_on_other = Someone  is encased in frost.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-8)]] | Library | (1060,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Gissa Brist]] | Wizard Guild (F2) | (894,742) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Mak Ixtaz]] | Caster Guild (Basement) | (171,-893) }}
+{{SpellWhereRow  | [[Felwithe|Southern Felwithe]] | [[Celent Newmist]] | Wizard Guild | (449,-341) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Mirpa Arana]] | Caster Guild (top floor) | (140,-79) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak<br/>Felwithe/Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

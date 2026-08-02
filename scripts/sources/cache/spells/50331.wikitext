@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Riotous Health
+| spellicon = R
+| description = Fills your target with riotous health, increasing their stamina for 1 hour(s) 12.0 mins.
+
+| classes = 
+
+* [[Shaman]] - Level 54
+
+| items_with_effect = 
+
+<ul><li> {{:Rune Crafter's Breastplate}}
+</li><li> {{:Spirit Caller's Breastplate}}
+</li><li> {{:Spirit Weaver's Breastplate}}
+</li><li> {{:Wolf Caller's Breastplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STA by 50 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body shines with riotous health.
+| msg_cast_on_other = Someone 's body shines with riotous health.
+| msg_wears_off = Your health fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+
+}}

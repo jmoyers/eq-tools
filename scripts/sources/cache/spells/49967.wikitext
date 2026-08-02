@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Naltron's Mark
+| spellicon = K
+| description = Covers your group in a shimmer of holy runes, increasing their hit points for 54 mins.
+
+This is a group version of [[Symbol of Naltron]], with slightly lower total HP. This spell consumes one peridot per cast.
+
+| classes = 
+
+* [[Cleric]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 3 | UNKNOWN CALC 118 base 406 max 446 attrib Max Hitpoints }}
+{{SpellSlotRow | 4 | UNKNOWN CALC 118 base 406 max 446 attrib HP when cast }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 500
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 4.00
+| recast_time = 12.00
+| duration = 54 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Peridot]]
+
+| msg_cast_on_you = A mystic symbol flashes before your eyes.
+| msg_cast_on_other = Someone  is cloaked in a shimmer of glowing symbols.
+| msg_wears_off = The mystic symbol fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}
+
+[[Category:Symbol line]]

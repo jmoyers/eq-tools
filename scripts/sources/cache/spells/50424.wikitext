@@ -1,0 +1,78 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Call of the Hero
+| spellicon = U
+| description = Conjures a mystical portal that summons one of your allies to your side.  The target must be in your group to be summoned.  Consumes a pearl when cast.  Originally, this spell would clear agro on the target when summoned.  However, sometime near the end of Velious it was changed to not auto clear agro.  That said, after this time you can still clear agro by leashing mobs with the summon. Generates  Aggro as of 12/9/23
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon PC | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 500
+| range = 20000
+| casting_time = 12.00
+| fizzle_time = 4.00
+| recast_time = 15.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Pearl]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  steps into a mystic portal.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Burning Woods]]
+* [[Gullerback]]
+
+[[Chardok]]
+* [[a Reanimated Berserker]]
+* [[Captain Di`ouz]]
+* [[Overseer Dal`guur]]
+
+[[City of Mist]]
+* [[a black reaver]]
+* [[Neh`Ashiir]]
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Howling Stones]]
+* [[an undertaker skeleton]]
+
+[[Old Sebilis]]
+* [[frenzied pox scarab]]
+* [[froglok commander]]
+* [[froglok ilis shaman]]
+* [[myconid spore king]]
+* [[sebilite guardian]]
+
+[[Skyfire Mountains]]
+* [[a mature wurm]]
+* [[a shadow drake]]
+* [[a wandering wurm]]
+* [[a wurm spirit]]
+* [[an elder wyvern]]
+* [[Eldrig the Old]]
+* [[Faerie of Dismay]]
+* [[Felia Goldenwing]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+}}

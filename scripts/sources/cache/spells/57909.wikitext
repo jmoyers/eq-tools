@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ward of the Divine
+| spellicon = 153
+| description = Places the Ward of Retribution around your body. This ward will periodically strike out at any creature that attacks you. This effect will fade after 120 strikes. Adds {{SpellHoverLink|Ward of the Divine Parry}} (defensive proc).
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 50
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Add Defensive Proc: {{SpellHoverLink|Ward of the Divine Parry}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 277
+| range = 100
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 20 Min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are cloaked in the blessing of a divine touch.
+| msg_cast_on_other =  is cloaked in the blessing of a divine touch.
+| msg_wears_off = The blessing fades.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

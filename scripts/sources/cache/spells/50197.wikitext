@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Summon Dead
+| spellicon = 91
+| description = Animates an undead servant from the remnants of the fallen.  Consumes [[Bone Chips|bone chips]] when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 29
+* [[Shadow Knight]] - Level 46
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon [[Summon Dead Summon|Skeletal Pet]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 290
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Bone Chips]] x 2
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone animates an undead servant.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

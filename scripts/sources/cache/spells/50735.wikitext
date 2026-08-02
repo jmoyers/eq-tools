@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Freezing Breath
+| spellicon = S
+| description = This is [[Gorenaire]]'s cold-based area effect slow + damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 750 }}
+{{SpellSlotRow | 3 | Decrease Attack Speed by 70% }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 5 minutes @L50
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (-150)
+
+| msg_cast_on_you = An icy cold shoots through your body, slowing your movements.
+| msg_cast_on_other = Someone  is slowed by the freezing blast.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

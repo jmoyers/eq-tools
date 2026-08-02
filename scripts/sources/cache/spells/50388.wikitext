@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Expedience
+| spellicon = 4
+| description = Fills your elemental pet with speed, increasing their movement rate.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 27
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 20% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 12 minutes
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  shimmers and blurs.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

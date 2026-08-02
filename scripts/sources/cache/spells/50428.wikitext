@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Cadeau of Flame
+| spellicon = O
+| description = Surrounds your target in a cadeau of flame, damaging any creature that attacks them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 33 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 33 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 155
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 6.6 minutes @L56 to 7.0 minutes @L60
+| target_type = Single
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You are enveloped in a cadeau of flame.
+| msg_cast_on_other = Someone  is enveloped in a cadeau of flame.
+| msg_wears_off = The flames die down.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

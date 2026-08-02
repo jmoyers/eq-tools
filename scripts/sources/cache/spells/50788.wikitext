@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Convergence
+| spellicon = J
+| description = Revives a slain ally, restoring 93 percent of their lost experience.  It takes some time for the recently revived to fully recover.  Consumes an [[Essence Emerald]] when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Resurrect and restore 93% experience }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 700
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = Instant
+| target_type = Corpse
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Essence Emerald]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[City of Mist]]
+* [[Gyrating goo]]
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

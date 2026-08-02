@@ -1,0 +1,61 @@
+{{Spellpage|
+
+| spellname = Center
+| spellicon = K
+| description = Provides your target with a focused sense of self, increasing their hit points and armor class for 27 min.
+
+| classes = 
+
+* [[Cleric]] - Level 7 (Autogranted)
+* [[Paladin]] - Level 20
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 5 (L9) to 6 (L14) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 44 (L9) to 95 (L60) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 44 (L9) to 95 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 40
+| range = 100
+| casting_time = 2.25
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel magnanimous of spirit.
+| msg_cast_on_other = Someone  is surrounded by a divine aura.
+| msg_wears_off = Your sense of center fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-9)]] | Necromancer Guild | (2154,-366) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-2)]] | Cleric Guild | (1238,-539) }}
+{{SpellWhereRowB | [[Erudin]] | [[Issibla Belstince]] | Cleric Guild - Prexus (F2) | (-1031,-375) }}
+{{SpellWhereRow  | [[Erudin]] | [[Mertitt Phentilly]] | Cleric Guild - Quellious (Outside) | (-741,-55) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Seria Woodwind]] | Paladin Guild | (-9,-197) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Celest Palestream]] | Cleric Guild | (24,-444) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Axa Stormshield]] | Paladin Guild | (938, 125) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Busey Nehart]] | Paladin Guild | (1283, 73) }}
+{{SpellWhereRowB | [[Kaladim|North Kaladim]] | [[Zeffan Holdsman]] | Cleric Guild | (732,125) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Issia H'Rugla]] | Cleric Guild | (405,-766) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Amata D'Lavi]] | Cleric Guild (F1) | (103,311) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Donala Baris]] | Paladin Guild (F3) | (208,-130) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Mellisa Purgor]] | Paladin Guild | (-158,-130) }}
+{{SpellWhereRow  | [[Paineel]] | [[Lillean Han Oni]] | Cleric Guild | (1212,551) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Leon Ereek]] | Cleric Guild | (373,-434) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Frappy Slimfinger]] | Cleric Guild | (-214,-359) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Oriyame Nelafre]] | Cleric Guild | (-259,-539) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Brita]] | Cleric Guild | (-184,812) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Keegan]] | Paladin Guild | (-210,543) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

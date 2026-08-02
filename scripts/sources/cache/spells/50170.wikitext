@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Infectious Cloud
+| spellicon = 41
+| description = Creates an infectious cloud, causing 20 damage initially and 5 damage every six seconds for 2.1 mins (125 damage) to all beings [4 targets] in a small area around your target.
+
+| classes = 
+
+* [[Necromancer]] - Level 15
+* [[Shaman]] - Level 15
+
+| items_with_effect = 
+
+<ul><li> {{:Rotted Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 5 per tick }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 20 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 78
+| range = 200
+| casting_time = 2.75
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 2.1 minutes
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = The bile wells up in your throat.
+| msg_cast_on_other = Someone  starts to retch.
+| msg_wears_off = You feel better.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

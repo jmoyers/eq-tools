@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Wind of Tishanian
+| spellicon = T
+| description = Causes the ears of all creatures in a small radius around your target to echo with the barking of Tashan, lowering their magic resistance. <s>Use this spell when you want your character to die fast.</s> Previously caused a high amount of threat.
+
+Usage tips: this spell is often considered garbage but is a good time saver when reverse charming. Root everything down and plop one into the pack. Also good in chardok to drop in a pack and then gating before lulling. Takes a little extra time but makes lulling a lot more reliable on top of having your named pre-tashed.
+
+| classes = 
+
+* [[Enchanter]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Magic Resist by 40 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 70
+| range = 200 (AE Range: 40)
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 13 minutes @L60
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You hear the barking of Tashania.
+| msg_cast_on_other = Someone  glances nervously about.
+| msg_wears_off = The barking fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Trakanon]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Veeshan's Peak]]
+* [[Silverwing]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

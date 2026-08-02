@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Poison Breath
+| spellicon = N
+| description = A green mist seeps into your skin.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 150 per tick }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 1200 }}
+
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 35.00
+| duration = 8 hours 20 minutes
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Poison (-150)
+| skill = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

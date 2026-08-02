@@ -1,0 +1,39 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Frostbite
+| spellicon = S
+| description = Freezes your target with ice, lowering armor class and causing 60 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Efreeti Ice Staff}}
+</li><li> {{:Frostbringer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 60 }}
+{{SpellSlotRow | 3 | Decrease AC by 15 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1 minute @L20
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Bitter cold blasts your skin.
+| msg_cast_on_other = Someone  is blasted by a gust of bitter cold.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

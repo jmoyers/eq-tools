@@ -1,0 +1,40 @@
+#REDIRECT [[Dustdevil]]<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Dustdevil
+| spellicon = 85
+| description = Ignites your target's skin, doing 582 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Druid]] - Level 43
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 582 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 162
+| range = 200
+| casting_time = 5.00
+| fizzle_time =1.5
+| recast_time = 1.5
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = Debris smashes against your body.
+| msg_cast_on_other = 's body is crushed by flying debris.
+| msg_wears_off = 
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}
+[[Category:Spells]]

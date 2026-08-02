@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Aanya's Quickening
+| spellicon = R
+| description = Grants your target quickened movement, increasing their attack speed for 24.0 mins.
+
+| classes = 
+
+* [[Enchanter]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 64% }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 275
+| range = 125
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 24 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You experience a quickening.
+| msg_cast_on_other = Someone  experiences a quickening.
+| msg_wears_off = Your speed returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

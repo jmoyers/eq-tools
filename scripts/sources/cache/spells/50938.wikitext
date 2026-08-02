@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Doljon's Rage
+| spellicon = S
+| description = Consumes your target in icy rage, causing 140 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Doljonijiarnimorinar}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 140 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are encased in a cone of icy rage.
+| msg_cast_on_other = Someone  is encased in a cone of icy rage.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

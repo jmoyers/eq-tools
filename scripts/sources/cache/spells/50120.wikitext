@@ -1,0 +1,41 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Entrapping Roots
+| spellicon = P
+| description = Commands roots to take hold of your target(s), doing 190 damage and preventing their movement for 3.0 mins.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease HP when cast by 190 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 3 minutes
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entwined.
+| msg_cast_on_other = Someone  is entrapped by roots.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+* [[Harla Dar]]
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

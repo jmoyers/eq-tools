@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Resurrection Effects
+| spellicon = G
+| description = This debuff accompanies any rez spell cast by players.
+
+It blocks most strength buffs, but doesn't block [[Focus of Spirit]].
+
+The effects listed below are probably incomplete, please confirm and expand them.
+
+| classes = 
+
+* [[Cleric]] - Various
+* [[Paladin]] - Various
+
+| slots = 
+
+{{SpellSlotRow | ? | Decrease HP by ~75% }}
+{{SpellSlotRow | ? | Decrease Mana by 100% }}
+{{SpellSlotRow | ? | Decrease STR by 20 (L??) to 98 (?) }}
+{{SpellSlotRow | ? | Decrease STA by XX (L??) to 102 (L60) }}
+{{SpellSlotRow | ? | Decrease AGI by XX (L??) to 48 (L60) }}
+{{SpellSlotRow | ? | Decrease WIS by XX (L??) to 50 (L60) }}
+{{SpellSlotRow | ? | Decrease INT by XX (L??) to 50 (L60) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 5 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are exhausted.
+| msg_cast_on_other = Some is exhausted.
+| msg_wears_off = You feel your strength return.
+
+}}
+
+[[Category:NPC Only Spells]]

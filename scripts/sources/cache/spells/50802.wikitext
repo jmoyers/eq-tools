@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Null Aura
+| spellicon = K
+| description = Covers your body in a protective aura that increases magic resistance and dexterity. Note: There are different versions of this spell corresponding to different potions - see the [[Alchemy]] page for details.  <br>
+This effect does not stack with [[Visions of Grandeur]] or [[Speed of the Shissar]] due to the Dex and Agi components (respectively).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Greater Null Potion}}
+</li><li> {{:10 Dose Minor Null Potion}}
+</li><li> {{:Greater Null Potion}}
+</li><li> {{:Null Potion}}
+</li><li> {{:Minor Null Potion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Magic Resist by 3 (L1) to 25 (L12) }}
+{{SpellSlotRow | 2 | Increase DEX by 3 (L1) to 25 (L12) }}
+{{SpellSlotRow | 3 | Decrease AGI by 3 (L1) to 15 (L12) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 30 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You drink the potion.
+| msg_cast_on_other = Someone  drinks a potion.
+| msg_wears_off = The potion has worn off.
+}}
+
+[[Category:NPC Only Spells]]

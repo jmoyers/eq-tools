@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Phantom Armor
+| spellicon = K
+| description = Covers you in phantom armor, increasing your hit point regeneration and armor class. Consumes '''four''' cat's eye agates when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Hitpoints by 5 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 21 (L52) to 22 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 225
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 30 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Cat's Eye Agate]] x4
+
+| msg_cast_on_you = You are covered in illusionary armor.
+| msg_cast_on_other = Someone  dons gleaming armor.
+| msg_wears_off = Your illusionary armor fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere<br/>Felwithe
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,50 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Spirit of Oak
+| spellicon = U
+| description = Transforms you into a stout tree, preventing movement, but increasing your regeneration. Does not stack with Protection of the Glades. Outdoor only.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion: 143 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }} (also removes run speed buffs)
+{{SpellSlotRowSmart | 3 | Increase Hitpoints by 10 per tick (L59) to 13 per tick (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Mana by 4 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 25
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have taken root.
+| msg_cast_on_other = Someone  turns into a tree.
+| msg_wears_off = You are no longer a tree.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Trakanon]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}
+[[Category: Illusions]]

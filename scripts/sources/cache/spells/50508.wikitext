@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Tishan's Relocation
+| spellicon = V
+| description = Opens an arcane portal that teleports your entire group to the [[Skyfire Mountains]]. This spell no longer has a Kunark dungeon requirement; it can currently be cast from anywhere in the world.
+
+'''Warning: The port in location for this spell is very dangerous.''' If you port in while visible, you will most likely die when alone or porting another. There are swarms of dispelling mobs at the zone in area. However, while invis, this port in location is nearly 100% safe. No mobs see invis and the only threat is the possibility of it breaking early. You can enter the zone invisibly by getting a friendly person to invis prime you. To perform this, join a group, and have that person begin to invis you. Before their cast finishes, begin your cast of Tishan's Relocation. Once their invis hits you, disband or have them disband before you finish the cast. You will port over to skyfire while remaining invis, as finishing casts does not break invisibility. With a primed invis, the port in at skyfire is much safer, and a very useful tool to Wizards. 
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 36
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Evacuate to -3097,787,-158 in skyfire | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+}}

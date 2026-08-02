@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Starshine
+| spellicon = 37
+| description = Creates a stone that glows with the light of the heavens. This spell can only be cast outdoors.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 9
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Globe of Stars}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 50
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A globe of stars forms within your hands.
+| msg_cast_on_other = Someone 's hands pulse softly with light.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Zelli Starsfire]] | Kelethin Druid Guild | (-622,243) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Staria Longhair]] | Druid Guild | (-62,-403) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Sallah]] | Druid Guild | (-153,-286) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall Glade
+| TableEra = Classic
+
+}}

@@ -1,0 +1,45 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Fetter
+| spellicon = Q
+| description = Causes the earth to adhere to your target's body, preventing them from moving for up to 3.0 mins. <br> This fast-casting root replaces [[Immobilize]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 58
+* [[Enchanter]] - Level 58
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 3 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet adhere to the ground.
+| msg_cast_on_other = Someone 's feet adhere to the ground. 
+| msg_wears_off = Your feet come free.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+}}

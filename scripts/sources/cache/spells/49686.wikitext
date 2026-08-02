@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Enfeeblement
+| spellicon = I
+| description = Weakens your opponent, lowering their strength and armor class.
+
+| classes = 
+
+* [[Enchanter]] - Level 4
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 18 (L4) to 20 (L8) }}
+{{SpellSlotRow | 2 | Decrease AC by 3 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 6 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel enfeebled.
+| msg_cast_on_other = Someone  is enfeebled.
+| msg_wears_off = Your strength returns.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRow  | [[Felwithe|South Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRowB  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

@@ -1,0 +1,51 @@
+{{Spellpage|
+
+| spellname = Heart Flutter
+| spellicon = E
+| description = Causes your target's heart beat to become irregular, lowering their strength by 20, armor class by 30, and doing 24 disease damage every 6 seconds for 36s.
+
+| classes = 
+
+* [[Necromancer]] - Level 13
+* [[Shadow Knight]] - Level 36
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease STR by 15 (L16) to 20 (L26) }}
+{{SpellSlotRow | 3 | Decrease AC by 7 (L16) to 9 (L24) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 12 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 41
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 7.00
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = Your heartbeat becomes irregular.
+| msg_cast_on_other = Someone  clutches their chest.
+| msg_wears_off = Your heartbeat steadies.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Grobb]] | [[Crilt - Troll]] | Shadow Knight Guild | (518,-618) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[New Sebilis Expedition]] | [[Crusader Silulika]] | Shadow Knight Spells | (240, -69) }}
+{{SpellWhereRowB | [[Oggok]] | [[Crilt - Ogre]] | Shadow Knight Guild | (276,-2) }}
+{{SpellWhereRow  | [[Paineel]] | [[Brettas Norval]] | Shadow Knight Guild | (888,468) }}
+{{SpellWhereRowB | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+}}
+
+}}

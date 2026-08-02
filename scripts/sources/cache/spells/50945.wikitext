@@ -1,0 +1,41 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Frostreaver's Blessing
+| spellicon = S
+| description = Blesses you with the power of the ancient coldain heroes, increasing your regeneration rate, attack rating, and causes damage to anyone who attacks you.
+
+This effect does not stack with [[Call of Earth]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ring of Dain Frostreaver IV}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 10 per tick }}
+{{SpellSlotRow | 2 | Increase Damage Shield by 10 }}
+{{SpellSlotRow | 5 | Increase ATK by 10 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 0 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Cold (0)
+
+| msg_cast_on_you = You feel the blessing of ancient Coldain heroes.
+| msg_cast_on_other = Someone  is blessed by the spirits of ancient Coldain heroes.
+| msg_wears_off = The blessing leaves.
+}}
+
+[[Category:NPC Only Spells]]

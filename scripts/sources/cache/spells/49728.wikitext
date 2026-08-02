@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Disempower
+| spellicon = 50
+| description = Strips the willpower from your target, decreasing their strength, stamina, and armor class for 2 min.
+
+| classes = 
+
+* [[Shaman]] - Level 12
+* [[Enchanter]] - Level 16
+
+| items_with_effect = 
+
+<ul><li> {{:Stalagterror Spine Spear}}
+</li></ul>
+
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease STA by 10 (L14) to 20 (L34) }}
+{{SpellSlotRow | 3 | Decrease STR by 14 (L14) to 15 (L16) }}
+{{SpellSlotRow | 4 | Decrease AC by 6 (L14) to 9 (L28) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range = 200
+| casting_time = 2.25
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 2 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel frail.
+| msg_cast_on_other = Someone  looks frail.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

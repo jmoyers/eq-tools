@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Servant of Bones
+| spellicon = L
+| description = Animates an undead servant from the remnants of the fallen.  Consumes bone chips when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Skeleton Pet: skel_pet_44_ }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 525
+| range =  
+| casting_time = 15.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Bone Chips]] x2
+* '''Focus:''' [[Encyclopedia Necrotheurgia]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  animates an undead servant.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

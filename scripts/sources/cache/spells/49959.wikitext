@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Stun Command
+| spellicon = D
+| description = Strikes several creatures around your target with holy might, briefly stunning them.
+
+| classes = 
+
+* [[Cleric]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 9.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 150
+| range = 200 (AE Range: 20)
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 30.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+[[Temple of Veeshan]]
+* [[A burning guardian]]
+* [[A fiery guardian]]
+* [[A glimmer drake]]
+* [[A shimmering green drake]]
+* [[An ancient frost guardian]]
+
+[[Western Wastes]]
+* [[Bratavar]]
+
+}}

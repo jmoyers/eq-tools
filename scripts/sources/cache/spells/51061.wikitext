@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Divine Might Effect
+| spellicon = C
+| description = Bestows divine might upon you, providing a chance to channel the will of the gods through your weapon when attacking.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 65 }}
+
+| skill = 
+| mana = 0
+| range = 40
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been struck by a surge of Divine Might.
+| msg_cast_on_other = Someone  is struck by a surge of Divine Might.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,54 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Wrath
+| spellicon = C
+| description = Calls upon the wrath of the gods to strike your target, inflicting 176 damage.
+
+| classes = 
+
+* [[Cleric]] - Level 29
+* [[Paladin]] - Level 34
+
+| items_with_effect = 
+
+<ul><li> {{:Sledge of Smashing}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 198 (L29) to 218 (L39) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 77
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been struck down by wrath.
+| msg_cast_on_other = Someone  has been struck down by wrath.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guid | (412,-788) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+}}

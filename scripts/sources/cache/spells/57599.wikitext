@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Minor Familiar
+| spellicon = L
+| description = Summons an imp familiar that grants you increased resistances, as well as reducing fizzle rates.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 25
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase All Resists by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Effective Casting Level by 2 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 290
+| range =  
+| casting_time = 12.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 6:00:00
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon forth a minor familiar.
+| msg_cast_on_other = Player summons forth a minor familiar.
+| msg_wears_off = Your familiar departs.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

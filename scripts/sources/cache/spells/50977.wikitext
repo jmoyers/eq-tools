@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Minion of Hate
+| spellicon = R
+| description = Increases the power of some undead minions. The only focus effect for Necromancer pets.
+
+| classes = 
+
+* NPC Only Spell
+
+| items_with_effect = 
+
+<ul><li> {{:Encyclopedia Necrotheurgia}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Pet Power Increase (10) }}
+{{SpellSlotRow | 2 | Limit: Max Level (60) }}
+{{SpellSlotRow | 3 | Limit: Min Level (48) }}
+{{SpellSlotRow | 4 | Limit: Resist (poison allowed) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 0
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other =
+| msg_wears_off = 
+
+}}

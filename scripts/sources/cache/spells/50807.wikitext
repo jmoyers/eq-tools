@@ -1,0 +1,52 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Disintegrate
+| spellicon = G
+| description = Completely destroys your target, leaving nothing behind.  This spell works on creatures up to level 46.  Consumes an opal when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Destroy Target | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 650
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 3.50
+| recast_time = 120.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Opal
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  has been disintegrated.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+==Drops From== 
+
+[[Old Sebilis]]
+* [[Emperor Chottal]]
+
+[[Veeshan's Peak]]
+* [[Nexona]]
+
+
+* Kunark Level 60+ Mob Drop
+| TableLocations = Level 60+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

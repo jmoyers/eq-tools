@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Chill of Unlife
+| spellicon = G
+| description = This is the AoE cast by [[Garzicor's Wraith]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 150 per tick }}
+{{SpellSlotRow | 4 | Decrease Attack Speed by 5% }}
+
+| skill = 
+| mana = 100
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 5.00
+| duration = 1 ticks @L1 to 1.5 minutes @L15
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (-300)
+
+| msg_cast_on_you = The chill of unlife wracks your body.
+| msg_cast_on_other = Someone  is wracked by the chill of unlife.
+| msg_wears_off = The chill subsides.
+}}
+
+[[Category:NPC Only Spells]]

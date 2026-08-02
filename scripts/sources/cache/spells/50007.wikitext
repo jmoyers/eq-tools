@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Careless Lightning
+| spellicon = 162
+| description = Calls down lightning from the sky, causing 105 damage to your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 16 (Autogranted)
+* [[Ranger]] - Level 37
+
+| items_with_effect = 
+
+<ul><li> {{:Windetched Staff}}
+</li><li> {{:Windruned Dagger}}
+</li><li> {{:Thunderforged Earring}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 96 (L16) to 105 (L25) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 37
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Lightning surges through your body.
+| msg_cast_on_other = Someone  has been struck by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

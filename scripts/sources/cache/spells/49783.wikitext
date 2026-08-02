@@ -1,0 +1,55 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Greater Shielding
+| spellicon = 133
+| description = Surrounds your body in a magical shield, increasing your hit points, armor class, and magic resistance.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 31
+* [[Magician]] - Level 32
+* [[Necromancer]] - Level 33
+* [[Wizard]] - Level 33
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Max HP by 91 (L31) to 100 (L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase AC by 28 (L34) to 29 (L39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase MR by 16 (L34) to 16 (L39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 120
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel armored.
+| msg_cast_on_other =  
+| msg_wears_off = Your shielding fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}
+
+[[Category:Shielding line]]

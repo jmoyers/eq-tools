@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Wonderous Rapidity
+| spellicon = R
+| description = Grants your target quickened movement, increasing their attack speed for 18.4 mins @L58 to 20.5 mins @L65.
+<br>
+Though [[Wonderous Rapidity]] is a higher percentage haste, [[Visions of Grandeur]] or [[Speed of the Shissar]] are generally preferred for their other stats, especially considering the haste cap is 100% for level 60s and many raiding characters have 36% worn haste or higher.
+
+| classes = 
+
+* [[Enchanter]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 70% }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 325
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 18.4 minutes @L58 to 19 minutes @L65
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to move with wonderous rapidity.
+| msg_cast_on_other = Someone  begins to move with wonderous rapidity.
+| msg_wears_off = Your speed returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

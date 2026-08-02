@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Markar`s Discord
+| spellicon = D
+| description = Strikes your target with energy, stunning them briefly and causing 750 damage.
+
+Mana efficiency is 2.5 DPM.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Stun for 8.0* seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 750 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 300
+| range = 200
+| casting_time = 3.30
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+* Drops from Level 50+ Kunark Mobs
+
+[[Emerald Jungle]]
+* [[Severilous]]
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

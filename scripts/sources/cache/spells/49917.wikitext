@@ -1,0 +1,49 @@
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Frenzied Strength
+| spellicon = R
+| description = Focuses your target's strength into an intense burst, increasing it for a short time, but then gradually decaying over the next 3 min.
+
+| classes = 
+
+* [[Cleric]] - Level 31
+* [[Paladin]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 40 (effect decreases over time) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 90
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 3 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your muscles erupt with frenzied strength.
+| msg_cast_on_other = Someone 's muscles bulge with frenzied strength.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guid | (412,-788) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Dorlita Splitshield]] | Cleric Guild | (733,138) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+
+}}

@@ -1,0 +1,45 @@
+{{Spellpagesmart|
+
+| spellname = Lyssa's Solidarity of Vision
+| spellicon = B
+| description = This song weaves a magical mesh around your eyes, allowing you to see what your target sees.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 34
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Bind Sight | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 10000
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Wooden Flute
+
+| msg_cast_on_you = Strands of music cover your eyes.
+| msg_cast_on_other = Someone 's eyes are covered by notes of solid music.
+| msg_wears_off = The strands fade away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Altrusan Belstince]] | Library (F1) | (-1102,-214) }}
+}}
+| TableLocations = Erudin
+| TableEra = Classic
+}}

@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Immolate
+| spellicon = 51
+| description = Inflicts burns on your target, causing between 67 and 72 damage every 6 seconds for 48s. Requires a fire beetle eye to cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 25
+* [[Ranger]] - Level 44
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 42 (L25) to 67 (L50) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 10 | Decrease AC by 10 (L29) to 18 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 72
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| other = 
+
+* '''Focus:''' [[Fire Beetle Eye]]
+
+| msg_cast_on_you = You are surrounded by blazing flames.
+| msg_cast_on_other = Someone  is surrounded by blazing flames.
+| msg_wears_off = The flames are extinguished.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

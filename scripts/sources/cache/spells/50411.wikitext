@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Burnout III
+| spellicon = 53
+| description = Infuses your elemental companion with energy, increasing their attack speed, armor class, and strength.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 47
+| items_with_effect = 
+
+<ul><li> {{:Arch Mage's Pantaloons}}
+</li><li> {{:Mask of Empowerment}}
+</li><li> {{:Pantaloons of Conjuration}}
+</li><li> {{:Prestidigitator's Trousers}}
+</li><li> {{:Robe of Burning Rage}}
+</li><li> {{:Summoner's Pantaloons}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 3 | Increase Strength by 50 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Attack Speed by 60% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Increase Armor Class by 11 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 60 minutes
+| target_type = Pet
+| spell_type = Haste
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  goes berserk.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

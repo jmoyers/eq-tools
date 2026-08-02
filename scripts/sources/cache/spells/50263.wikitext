@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Tainted Breath
+| spellicon = 42
+| description = Fills your target's blood with poison, causing 10 damage initially and 22 damage every six seconds for 42s.
+
+| classes = 
+
+* [[Shaman]] - Level 8 (Autogranted)
+* [[Beastlord]] - Level 19
+
+| items_with_effect = 
+
+<ul><li> {{:Poisoned Whip}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 5 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 10 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 10 (L1) to 22 (L50) per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 58
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 7 ticks
+| target_type = Single
+| spell_type = Damage Over Time
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = You are no longer poisoned.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

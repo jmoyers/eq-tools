@@ -1,0 +1,32 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Wave of Cold
+| spellicon = C
+| description = Cast by [[Eashen of the Sky]], [[Lord Feshlak]] and other dragons in ToV.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 350 }}
+
+| skill = Evocation
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = A blast of cold freezes your skin.
+| msg_cast_on_other =  Someone 's skin freezes.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

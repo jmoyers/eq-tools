@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Call of Sky
+| spellicon = 104
+| description = Imparts your weapons with the power of sky, allowing them a chance to strike with the fury of the storm. Adds {{SpellHoverLink|Call of Sky Strike}} (melee proc).
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Ranger]] - Level 36
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Add Melee Proc: {{SpellHoverLink|Call of Sky Strike}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range =  
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic?
+
+| msg_cast_on_you = The Call of Sky fills your weapons with power..
+| msg_cast_on_other = Someone 's weapons gleam.
+| msg_wears_off = The Call of Sky leaves.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

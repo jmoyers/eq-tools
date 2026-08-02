@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Eyes of the Cat
+| spellicon = 86
+| description = Infuses your eyes with the vision of a cat, allowing you to see more clearly in the dark.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Ranger]] - Level 27
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Infravision | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 35
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your vision shifts.
+| msg_cast_on_other = Someone 's eyes glow green.
+| msg_wears_off = Your vision returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

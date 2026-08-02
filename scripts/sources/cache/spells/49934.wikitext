@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Celestial Healing
+| spellicon = J
+| description = Fills your target's body with celestial power, healing 180 hit points every 6 seconds for 24s.
+| classes = 
+
+* [[Cleric]] - Level 44
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints v2 by 180 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 4-5 ticks
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Celestial light pumps through your body.
+| msg_cast_on_other = Someone 's body is covered with a soft glow.
+| msg_wears_off = The celestial light fades.
+
+| where_to_obtain = 
+[[Wakening Lands]]
+* [[a geonid]]
+* [[a geonid shaman]]
+
+[[Great Divide]]
+* [[an ancient shardwurm]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystalline Gargoyle]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+* [[A Large Crystal Shard]]
+* [[A Velium Broodling]]
+* [[A Velium Hunter]]
+
+}}

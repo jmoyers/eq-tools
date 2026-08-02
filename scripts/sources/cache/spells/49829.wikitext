@@ -1,0 +1,40 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Boltran's Agacerie
+| spellicon = D
+| description = Charms your target.
+
+Merchant class npcs can '''not''' be charmed.[https://www.project1999.com/forums/showthread.php?t=370884]
+
+| classes = 
+
+* [[Enchanter]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 53 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 400
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 6.3 minutes @L53 to 7.0 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been charmed.
+| msg_cast_on_other = Someone  has been charmed.
+| msg_wears_off = You are no longer charmed.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

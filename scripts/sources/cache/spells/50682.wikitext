@@ -1,0 +1,48 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Cantana of Soothing
+| spellicon = 99
+| description = A light cantata that regenerates the health, mana, and endurance of your entire group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 34
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 4 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Mana by 5 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Stamina Loss by 4 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Required''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]] †
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' Lute
+
+| msg_cast_on_you = You feel replenished.
+| msg_cast_on_other =  
+| msg_wears_off = The cantata of soothing fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs | (207, -145) }}
+}}
+| TableLocations = New Sebilis Expedition
+| TableEra = Classic
+}}

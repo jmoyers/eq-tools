@@ -1,0 +1,47 @@
+{{Spellpage|
+
+| spellname = Bravery
+| spellicon = K
+| description = Provides your target with a sense of bravery, increasing their hit points and armor class for 45 min.
+
+| classes = * [[Cleric]] - Level 22
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 9 (L24) to 10 (L30) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 114 (L24) to 140 (L50) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 114 (L24) to 140 (L50) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 70
+| range = 100
+| casting_time = 2.75
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 45 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel very brave.
+| msg_cast_on_other = Someone  looks brave.
+| msg_wears_off = Your bravery fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Duppa Pickstone]] | Cleric Guild | (745, 125) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

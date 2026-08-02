@@ -1,0 +1,47 @@
+<noinclude>{{disambig3|[[Vision]]}}</noinclude>
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Glimpse
+| spellicon = 106
+| description = Grants your eyes magical acuteness, allowing you to see clearly over long distances for 12s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Ranger]] - Level 2
+* [[Wizard]] - Level 2
+
+| items_with_effect = 
+
+<ul><li> {{:Preserved Split Paw Eye}}
+</li><li> {{:Evil Eye Lens}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Magnification by 55% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 5
+| range =  
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 13 seconds
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your eyes feel stronger.
+| msg_cast_on_other = Someone 's eyes gleam.
+| msg_wears_off = Your vision fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

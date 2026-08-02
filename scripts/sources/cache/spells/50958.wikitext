@@ -1,0 +1,43 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Breath of the Sea
+| spellicon = H
+| description = Chokes your target with mist, lowering attack speed and causing 20 damage every 6 seconds for up to 1 min.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Mutum's Ghostly Fleshstopper}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 20% }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 20 per tick }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 15.00
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are slowed by the  mist of the seas.
+| msg_cast_on_other = Someone is slowed by the mist of the seas.
+| msg_wears_off = The mist melts away.
+
+| items_with_effect = 
+
+<ul><li> {{:Wavecrasher}}
+</li></ul>
+}}
+
+[[Category:NPC Only Spells]]

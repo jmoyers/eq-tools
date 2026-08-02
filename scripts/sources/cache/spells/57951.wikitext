@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Phantom Plate
+| spellicon = 126
+| description = Focuses mana into the form of a pack of phantom plate armor.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Magician]] - Level 38
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Phantom Satchel}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Summon Into Bag: {{:Summoned: Phantom Plate Helm}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Summon Into Bag: {{:Summoned: Phantom Breastplate}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Summon Into Bag: {{:Summoned: Phantom Plate Vambraces}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Summon Into Bag: {{:Summoned: Phantom Plate Bracers}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Summon Into Bag: {{:Summoned: Phantom Plate Bracers}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 7 | Summon Into Bag: {{:Summoned: Phantom Plate Gauntlets}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 8 | Summon Into Bag: {{:Summoned: Phantom Plate Greaves}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 9 | Summon Into Bag: {{:Summoned: Phantom Plate Boots}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 300
+| range = 0
+| casting_time = 10.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a suit of phantom plate armor.
+| msg_cast_on_other = 
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

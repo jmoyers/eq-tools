@@ -1,0 +1,38 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpage|
+
+| spellname = Bone Melt
+| spellicon = C
+| description = Your target transforms into a skeleton after its flesh and marrow melts, causing 75 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Neb's Warbone}}
+</li><li> {{:Paebala Warbone}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 75 }}
+{{SpellSlotRow | 2 | Illusion: 60 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin burn from your body.
+| msg_cast_on_other = Someone 's skin burns away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

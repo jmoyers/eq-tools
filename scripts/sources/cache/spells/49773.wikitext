@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Obscure
+| spellicon = K
+| description = Causes your target's image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+| classes = * [[Enchanter]] - Level 27
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 12 (L29) to 13 (L34) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 50
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 45 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your image has been obscured.
+| msg_cast_on_other = Someone 's image shifts out of focus.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

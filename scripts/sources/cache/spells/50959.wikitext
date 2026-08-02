@@ -1,0 +1,36 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Embrace of the Kelpmaiden
+| spellicon = C
+| description = Vines of kelp entwine about your target, decreasing movement for up to 6 secs (1 ticks @L1 to 3.9 mins @L65).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Movement Speed by 40% }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3.9 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are snared by vines of kelp.
+| msg_cast_on_other = Someone  has been snared by vines of kelp.
+| msg_wears_off = You break free of the kelp.
+}}
+
+[[Category:NPC Only Spells]]

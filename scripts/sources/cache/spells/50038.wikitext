@@ -1,0 +1,53 @@
+{{Spellpagesmart|
+
+| spellname = Ring of Misty
+| spellicon = V
+| description = Opens a mystical portal that transports you to the [[Misty Thicket]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 29
+
+| items_with_effect = 
+
+<ul><li> {{:Crazy Cleric Greaves}} (3 Charges)
+</li><li> {{:Maleficent Leggings}} (3 Charges)
+</li><li> {{:Mischievous Dazzler Leggings}} (3 Charges)
+</li><li> {{:Monkey Hide Greaves}} (3 Charges)
+</li><li> {{:Shamanistic Shenannigan Greaves}} (3 Charges)
+</li><li> {{:Sly Summoners Pants}} (3 Charges)
+</li><li> {{:Twisted Nature Leggings}} (3 Charges)
+</li><li> {{:Wily Warlock Pants}} (3 Charges)
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -490,-1896,120 in misty | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (455,1386) }}
+}}
+| TableLocations = W.Commons
+| TableEra = {{{TableEra|Classic}}}
+
+}}

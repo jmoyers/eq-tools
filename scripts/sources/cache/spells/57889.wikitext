@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ward of Vie
+| spellicon = 128
+| description = Places the Ward of Vie on your target, absorbing a portion of incoming melee damage. This spell absorbs a set amount of damage before dissipating.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 20
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Mitigate Spell Damage by 10%, 460 total | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 100
+| casting_time = 4.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 36 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A faint white aura surrounds you.
+| msg_cast_on_other =  has been surrounded in a faint white aura.
+| msg_wears_off = The white aura fades.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

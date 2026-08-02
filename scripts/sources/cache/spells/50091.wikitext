@@ -1,0 +1,50 @@
+<noinclude>{{Kunark Era}}</noinclude><noinclude>{{Disambig3|[[Breath of Ro (Item)]]}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Breath of Ro
+| spellicon = O
+| description = Surrounds your target in dancing flames for 60 secs (10 ticks), causing 92 damage every six seconds as well as lowering their fire resistance and armor class. 3.68 Damage Per Mana. 
+
+Note: Must have a Fire Beetle Eye equipped, in your inventory, or in your bags when cast. 
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 52
+
+| slots = 
+{{SpellSlotRowSmart | 1 | Decrease AC by 20 (L55) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 92 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Fire Resist by 27 (L52) to 33 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| other = 
+
+* '''Focus:''' Fire Beetle Eye
+
+| msg_cast_on_you = You are immolated by blazing flames.
+| msg_cast_on_other = Someone  is immolated by blazing flames.
+| msg_wears_off = The flames die down.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

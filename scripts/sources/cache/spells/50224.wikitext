@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Envenomed Bolt
+| spellicon = 42
+| description = Fills your target's blood with poison, causing 41 damage initially and between 345 and 351 damage every six seconds for 36s.
+
+| classes = 
+
+* [[Shaman]] - Level 49
+* [[Necromancer]] - Level 50
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 10 }}
+{{SpellSlotRow | 2 | Decrease Current Hit Points by 41}}
+{{SpellSlotRow | 3 | Decrease Current Hit Points by 351 per Tick  }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 409
+| range = 200
+| casting_time = 3
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

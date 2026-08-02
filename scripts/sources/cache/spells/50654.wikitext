@@ -1,0 +1,40 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Vocarate: Fire
+| spellicon = L
+| description = Summons a fire elemental to aid you in battle.
+
+| classes = 
+
+* [[Magician]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SumFireR13 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 300
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+* '''Focus:''' [[Staff of Elemental Mastery: Fire]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via quests: [[Magician Spells (Evil)]] or [[Magician Spells (Good)]].
+
+}}

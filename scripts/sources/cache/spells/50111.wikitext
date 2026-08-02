@@ -1,0 +1,39 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Frost
+| spellicon = S
+| description = Covers your target in glistening ice, causing 762 damage<span style="text-decoration:line-through">, and lowering their fire resistance</span> (this is the game's descriptive text, but the spell does not actually lower fire resistance). Each cast yields approximately 3.04 damage per mana.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 762 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your blood freezes as you are iced by an intense cone of frost.
+| msg_cast_on_other = Someone  is iced by an intense cone of frost.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

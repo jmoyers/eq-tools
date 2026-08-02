@@ -1,0 +1,51 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shock of Fire
+| spellicon = O
+| description = Surrounds your target in fire, causing 20 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 4
+
+| items_with_effect = 
+
+<ul><li> {{:Fire Crystal Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 14 (L4) to 20 (L10) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 10
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin combust.
+| msg_cast_on_other = Someone  combusts.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-8)]] | Library | (1060,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Gissa Brist]] | Wizard Guild (F2) | (894,742) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Mak Ixtaz]] | Caster Guild (Basement) | (171,-893) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Rosdaria Sepria]] | Caster Guild | (327,-686) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Celent Newmist]] | Wizard Guild | (449,-341) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Mirpa Arana]] | Caster Guild (top floor) | (140,-79) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Felwithe/Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

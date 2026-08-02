@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Vexing Mordinia
+| spellicon = G
+| description = Drains the life from your target, dealing 122 damage per tick for 10 ticks for a total of 1220 damage and 2.46 DPM, and healing the caster for 122 hit points every six seconds for 54 secs (9 ticks). 2.22 tap efficiency. The healing duration is sometimes 10 ticks, discrepancies maybe from server ticks or bug?
+
+'''Does stack with [[Soul Well]], if Soul Well is casted first.'''
+
+| classes = 
+
+* [[Necromancer]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 122 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 495
+| range = 200
+| casting_time = 5.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 10 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = Vexing Mordinia begins to drain your life away.
+| msg_cast_on_other = Someone  staggers under the curse of Vexing Mordinia.
+| msg_wears_off = The Mordinia fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

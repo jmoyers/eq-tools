@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Scent of Dusk
+| spellicon = 160
+| description = Surrounds your target in the scent of dusk, causing them to be more susceptible to fire, poison, and disease.
+
+| classes = * [[Necromancer]] - Level 10
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Fire Resist by 7 (L12) to 9 (L16) }}
+{{SpellSlotRow | 3 | Decrease Poison Resist by 7 (L12) to 9 (L16) }}
+{{SpellSlotRow | 4 | Decrease Disease Resist by 7 (L12) to 9 (L16) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 11 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You smell the faint scent of dusk.
+| msg_cast_on_other = Someone  is surrounded by a dull haze.
+| msg_wears_off = The scent of dusk fades.
+
+| where_to_obtain = 
+This is a Kunark era spell.
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Peku Croxe]] | Underground | (-204,-244) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Misal S'Kor]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Gyrna Porrin]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

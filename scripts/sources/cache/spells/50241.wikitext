@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Cessation of Cor
+| spellicon = E
+| description = Causes your target's heartbeat to become irregular, lowering their strength and armor class, and doing 100 damage every 6 seconds for 60 secs for a total of 1100 damage. 4.4 DPM.
+
+'''Note:''' Previously known as "Cessation of the Blood."
+
+| classes = 
+
+* [[Necromancer]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 5 }}
+{{SpellSlotRow | 2 | Decrease STR by 50 }}
+{{SpellSlotRow | 3 | Decrease AC by 19 (L56) to 21 (L60) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 100 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 250
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1.0 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = The blood stops flowing in your veins.
+| msg_cast_on_other = Someone 's blood stills within their veins.
+| msg_wears_off = Your blood resumes movement.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

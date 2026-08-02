@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Fiery Might
+| spellicon = O
+| description = Envelops your body in an aura of blessed fire, increasing your regeneration rate, and causing harm to anyone who attacks you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Chestplate of Fiery Might}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 5 per tick }}
+{{SpellSlotRow | 2 | Increase Damage Shield by 5 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 0 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You are enveloped by an aura of fiery might.
+| msg_cast_on_other = Someone  is enveloped by an aura of fiery might.
+| msg_wears_off = The aura leaves you.
+}}
+
+[[Category:NPC Only Spells]]

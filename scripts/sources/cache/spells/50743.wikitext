@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Chaos Breath
+
+| spellicon = C
+| description = AE cast by dragons in VP and TOV, including but not limited to [[Silverwing]], [[Sevalak]], and [[Del Sapara]] in Western Wastes.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 1004 (L1) to 1260 (L65) }}
+{{SpellSlotRow | 2 | Toss Up(100) }}
+
+| mana = 337
+| skill = 
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = You experience chaotic weightlessness.
+| msg_cast_on_other = Someone  rises chaotically into the air.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Column of Fire
+| spellicon = 51
+| description = Conjures a column of fire that burns several creatures in the vicinity of your target, causing between 49 and 51 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 12
+
+| items_with_effect = 
+
+<ul><li> {{:Blazing Helm of Fennin Ro}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 49 (L12) to 51 (L14)| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 65
+| range = 200
+| casting_time = 3.25
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are immolated by flame.
+| msg_cast_on_other = Someone  is immolated by flame.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

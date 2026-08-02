@@ -1,0 +1,41 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Rage of Zomm
+| spellicon = L
+| description = Summons an elemental that attacks your target relentlessly until either your target or the elemental dies. The magician cannot command the elemental in any way, this includes turning off pet taunt.
+
+The elemental is very fragile - an [[orc pawn]] was able to one-shot it.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Pet: Burnout | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 120.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

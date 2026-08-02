@@ -1,0 +1,43 @@
+{{Disambig3|[[Blinding Poison II]] / [[Blinding Poison III]]}}
+{{Spellpage|
+
+| spellname = Blinding Poison I
+| spellicon = B
+| description = Disrupts the nerves in your target's eyes, causing blindness and lowering attack for up to 6 secs (1 ticks @L1 to 7 ticks @L14).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Retinal Deactivator}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 2 }}
+{{SpellSlotRow | 2 | Decrease ATK by 5 }}
+{{SpellSlotRow | 3 | Blindness(-1) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 7 ticks @L14
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your eyes begin to burn.
+| msg_cast_on_other = Someone  staggers around blindly.
+| msg_wears_off = Your sight returns.
+}}
+== See Also ==
+
+* [[Blinding Poison]]
+* [[Skill Make Poison]]
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Vengeance of Al`Kabor
+| spellicon = C
+| description = Creates a maelstrom of energy that causes between 942 and 952 damage to several creatures in the vicinity of your target.
+<br>Single target mana efficiency of 1.34 / 1.36 DPM. This spell also has a small stun component.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 942 (L59) to 952 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 700
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are blasted by the vengeance of Al'Kabor.
+| msg_cast_on_other = Someone  is blasted by the Vengeance of Al'Kabor.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+
+[[Veeshan's Peak]]
+* [[Nexona]]
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

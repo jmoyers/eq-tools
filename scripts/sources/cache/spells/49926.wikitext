@@ -1,0 +1,65 @@
+{{Spellpage|
+
+| spellname = Complete Healing
+| spellicon = J
+| description = Completely heals your target up to 10,000 hit points. 25 HP/mana (max); 816.3 HP/sec (max).
+
+
+
+Additional efficiency references:
+* 10000 HP: 25 HP/mana
+* 8000 HP: 20 HP/mana
+* 6000 HP: 15 HP/mana
+* 4000 HP: 10 HP/mana
+* 2000 HP: 5 HP/mana
+* 932 HP: 2.33 HP/mana (equal to [[Superior Healing]])
+
+See [[Healing Spell Lines]] to compare with other heals.
+
+| classes = 
+
+* [[Cleric]] - Level 39
+
+| items_with_effect = 
+
+<ul><li> {{:SoulFire}}
+</li><li> {{:Necklace of Resolution}}
+</li><li> {{:Reaper of the Dead}}
+</li><li> {{:Potion of Serious Healing}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Restores Up To 10,000 HP To Target Player or Pet }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 400
+| range = 100
+| casting_time = 10.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are completely healed.
+| msg_cast_on_other = Someone  is completely healed.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRowB | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+}}
+
+}}

@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Instill
+| spellicon = 117
+| description = Causes the earth to adhere to your target's feet, preventing them from moving for up to 1 min 36s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 17 (Autogranted)
+* [[Enchanter]] - Level 25
+* [[Cleric]] - Level 27
+* [[Shaman]] - Level 33
+* [[Necromancer]] - Level 53
+* [[Paladin]] - Level 54
+
+| slots = 
+
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 1.5
+| recast_time = 1.50
+| duration = 1m 36s
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = Your feet adhere to the ground.
+| msg_cast_on_other = Someone 's feet adhere to the ground. 
+| msg_wears_off = Your feet come free.
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

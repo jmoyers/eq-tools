@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Engorging Roots
+| spellicon = P
+| description = Commands roots to take hold of your target, doing between 178 and 190 damage, and preventing their movement for 3.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease HP when cast by 178 (L56) to 190 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 3 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entangled.
+| msg_cast_on_other = Someone 's feet become entangled.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

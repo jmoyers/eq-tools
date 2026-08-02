@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Enlightenment
+| spellicon = H
+| description = Expands your target's mind, increasing their intelligence and wisdom.
+
+| classes = 
+
+* [[Enchanter]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase WIS by 20 (L57) to 22 (L65) }}
+{{SpellSlotRow | 3 | Increase INT by 20 (L57) to 22 (L65) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 0 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have been enlightened.
+| msg_cast_on_other = Someone  has been enlightened.
+| msg_wears_off = Your enlightenment fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Trakanon]]
+
+}}

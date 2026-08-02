@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Aegis of Ro
+| spellicon = O
+| description = Surrounds your group in the aegis of Ro, damaging any creature that attacks them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 33 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 33 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 450
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 7 minutes @L60
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You are enveloped by the Aegis of Ro.
+| msg_cast_on_other = Someone  is enveloped by the Aegis of Ro.
+| msg_wears_off = The Aegis dies down.
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Old Sebilis]]
+* [[Tolapumj]]
+* [[Trakanon]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

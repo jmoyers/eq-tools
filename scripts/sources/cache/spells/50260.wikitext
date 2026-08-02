@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Spirit Pouch
+| spellicon = L
+| description = Conjures a spirit pouch that allows you to carry heavy loads unhindered.  The pouch and all of its contents will be lost if you leave the world of Norrath for a significant period of time.
+
+| classes = 
+
+* [[Shaman]] - Level 2
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: {{:Summoned: Spirit Pouch}}}}
+
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 40
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}
+== Quest Reward of ==
+[[Deathfist_Slashed_Belts| Deathfist Slashed Belts(Grobb Shaman Guild)]]

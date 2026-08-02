@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Silver Breath
+| description = Cast by [[Ail the Elder]], [[Dozekar the Cursed]], [[Lendiniara the Keeper]], [[Klandicar]] and possibly other dragons. PB AoE with top slot dispell and 400 DD component.
+| spellicon = C
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 400 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your skin freeze.
+| msg_cast_on_other = Someone 's skin freezes.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

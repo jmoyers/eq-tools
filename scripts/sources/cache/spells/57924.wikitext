@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Blood Siphon Strike
+| spellicon = 1
+| description = Drains the life from your target, doing 56 damage every six seconds for 36s, and healing your wounds for the same amount. Starting at level 46, additionally deals 100 damage when the spell lands.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 56 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Return 100% of damage as HP | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Poison Counter by 9 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_on_you = 
+| msg_cast_on_other =  begins to bleed profusely!
+| msg_wears_off = The poison subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

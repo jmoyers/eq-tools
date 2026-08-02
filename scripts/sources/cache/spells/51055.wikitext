@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Garzicor's Vengeance
+| spellicon = U
+| description = Invokes the power of Garzicor's vengeful spirit, lowering the attack rating of your target, and causing 30 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 8 ticks @L16).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ethereal Bladed Naginata}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 30 per tick }}
+{{SpellSlotRow | 3 | Decrease ATK by 20 }}
+
+| skill = 
+| mana = 100
+| range = 60
+| casting_time = 0.30
+| fizzle_time = 2.50
+| recast_time = 5.00
+| duration = 1 ticks @L1 to 8 ticks @L16
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  screams as freezing ethereal mist swirls around them.
+| msg_wears_off = The ethereal mist disperses.
+}}
+
+[[Category:NPC Only Spells]]

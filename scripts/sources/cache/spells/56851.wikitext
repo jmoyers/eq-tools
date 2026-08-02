@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname =Remove Lesser Curse
+| spellicon = 139
+| description = Cleanses your target's soul, removing lesser curses. 
+
+| classes = 
+
+* [[Cleric]] - Level 23
+* [[Druid]] - Level 23
+* [[Shaman]] - Level 24
+* [[Paladin]] - Level 34
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Curse Counter by 4 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.5
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single Friendly (or Self)
+| spell_type = Remove Curse
+| resist = 
+
+| other = 
+
+| msg_cast_on_you = You feel divine energy cleansing your soul. 
+| msg_cast_on_other =  	Target's aura glows slightly. 
+| msg_wears_off =
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

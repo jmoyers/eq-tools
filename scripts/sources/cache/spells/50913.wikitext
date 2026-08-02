@@ -1,0 +1,32 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Scream of Chaos
+| spellicon = C
+| description = Cast by [[Lord Vyemm]], a Gravity Flux like knockback into the air, will interrupt spells. Will put you in the lava if you're not careful.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 100 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You experience chaotic weightlessness.
+| msg_cast_on_other = Someone  rises chaotically into the air.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

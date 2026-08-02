@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Can o' Whoop Ass
+| spellicon = R
+| description = Fills your body with fierce energy, increasing your strength and attack speed.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Can o` Whoop Ass}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 200% }}
+{{SpellSlotRow | 2 | Increase STR by 75 }}
+{{SpellSlotRow | 3 | Increase Absorb Damage by 4000 }}
+{{SpellSlotRow | 4 | Decrease Stamina Loss by 50 }}
+
+| mana = 0
+| skill = 
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 minute
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You open up a Can o` Whoop Ass.
+| msg_cast_on_other = Someone  opens up a Can o` Whoop Ass.
+| msg_wears_off = Your can is empty.
+
+}}
+
+[[Category: NPC Only Spells]]

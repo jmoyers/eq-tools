@@ -1,0 +1,52 @@
+{{Spellpage|
+
+| spellname = Infusion
+| spellicon = H
+| description = Fuels your mind with energy taken from an [[Essence Emerald]].  Consumes an [[Essence Emerald]] when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Mana by 1000 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 600.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Essence Emerald]]
+
+| msg_cast_on_you = Your mind clears as a rush of essence fills you.
+| msg_cast_on_other = Someone  radiates with essence.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[The Overthere]]
+* [[a cliff golem]]
+
+[[Chardok]]
+* [[Sarnak Collective Auditor]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+* [[a guardian wurm]]
+
+}}

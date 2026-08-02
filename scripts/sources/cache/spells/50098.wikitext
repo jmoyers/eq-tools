@@ -1,0 +1,45 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Form of the Howler
+| spellicon = T
+| description = Fills you with the spirit of the wild, allowing you to take the form a wolf for 2 hour(s) 24.0 mins. Does not stack with Spirit of Oak, Mask of the Hunter or Gift of Brilliance. Does stack with PotG
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 54
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion: 42 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 62% (L54) to 67% (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Mana by 2 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Ultravision(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 2 hours 24 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Someone  turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Druid Spells]]
+| TableLocations = [[Druid Spells|Quest]]
+| TableEra = {{{TableEra|Kunark}}}
+}}[[Category: Illusions]]

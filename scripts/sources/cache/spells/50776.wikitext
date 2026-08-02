@@ -1,0 +1,36 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart| 
+
+| spellname = Concussion
+| spellicon = D
+| description = Attacks the mind of your target, causing them to forget some of the damage you have done to them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 37
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hate by 400 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 25
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You stagger from a blow to the head.
+| msg_cast_on_other = Someone  staggers from a blow to the head.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

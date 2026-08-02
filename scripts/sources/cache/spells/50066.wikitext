@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Share Wolf Form
+| spellicon = T
+| description = Fills your group with the spirit of the wild, allowing them to take the form of a wolf for 36 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 35
+| items_with_effect = 
+
+<ul><li> {{:Elder Spiritist's Bracer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion (race #796) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 49% (L39) to 60% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase ATK by 30 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 120
+| range = 0
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Someone  turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall
+| TableEra = {{{TableEra|Classic}}}
+}}
+[[Category: Illusions]]

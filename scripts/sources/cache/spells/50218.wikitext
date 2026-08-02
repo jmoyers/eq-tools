@@ -1,0 +1,48 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Drain Soul
+| spellicon = C
+| description = Drains your target of life energy, siphoning between 400 and 406 hit points.
+
+| classes = 
+
+* [[Necromancer]] - Level 48
+* [[Shadowknight]] - Level 60
+
+| items_with_effect = 
+
+<ul><li>  {{:Sathir's Wand}}
+</li><li> {{:Wand of Souls}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 332 (L49) to 338 (L50) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 248
+| range = 200
+| casting_time = 3.20
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+}}
+
+}}

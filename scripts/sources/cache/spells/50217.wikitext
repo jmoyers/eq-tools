@@ -1,0 +1,37 @@
+{{Classic Era}}{{Spellpage|
+
+| spellname = Dead Men Floating
+| spellicon = 137
+| description = Grants your group the power of the dead, including levitation, increased poison resistance, water breathing, and the ability to see invisible creatures.
+
+| classes = * [[Necromancer]] - Level 45
+| slots = 
+
+{{SpellSlotRow | 1 | Water Breathing(2) }}
+{{SpellSlotRow | 2 | See Invisible(1) }}
+{{SpellSlotRow | 3 | Levitate(2) }}
+{{SpellSlotRow | 4 | Increase Poison Resist by 69 (L49) to 75 (L50) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 375
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = 1 hour 12 minutes
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You become like the dead.
+| msg_cast_on_other = Someone  looks dead.
+| msg_wears_off = You return to life.
+
+| where_to_obtain = 
+
+[[Chardok]]
+
+* [[Arch Inspector Nibi'zi]]
+
+}}

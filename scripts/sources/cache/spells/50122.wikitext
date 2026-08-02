@@ -1,0 +1,47 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Nature's Touch
+| spellicon = J
+| description = Mends severe wounds, healing up to 880 damage. 2.2 HP healed per mana, 160HP/sec
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 880 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 400
+| range = 200
+| casting_time = 5.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel much better.
+| msg_cast_on_other = Someone  feels much better.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[East Commonlands]]              | [[Rushka Deklamoor]]          |   East Commons Tunnel    | (-1669, -4) }}
+}}
+
+
+| TableLocations = East Commonlands
+| TableEra = {{{TableEra|Velious}}}
+
+}}

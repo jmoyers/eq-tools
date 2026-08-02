@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Immolating Breath
+| spellicon = O
+| description = This is Talendor's fire AoE damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 500 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 100 per tick }}
+
+| skill = 
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 5 minutes @L50
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your flesh is seared from your bones.
+| msg_cast_on_other = Someone 's flesh is seared.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

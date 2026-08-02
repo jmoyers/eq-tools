@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Blaze
+| spellicon = 51
+| description = Burns your target's skin with blazing flame, causing 418 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 31
+| items_with_effect = 
+
+<ul><li> {{:Blazing Wand}}
+</li><li> {{:Sarnak_Summoner`s_Dagger}}
+</li><li>{{:Smoldering Cudgel}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 418 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 136
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin ignite.
+| msg_cast_on_other = Someone 's skin ignites.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

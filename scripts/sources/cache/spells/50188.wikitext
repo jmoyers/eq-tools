@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Scent of Shadow
+| spellicon = 160
+| description = Surrounds your target in the scent of shadow, causing them to be more susceptible to fire, poison, and disease.
+
+| classes = * [[Necromancer]] - Level 21
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 4 }}
+{{SpellSlotRow | 2 | Decrease Fire Resist by 14 (L24) to 18 (L32) }}
+{{SpellSlotRow | 3 | Decrease Poison Resist by 14 (L24) to 18 (L32) }}
+{{SpellSlotRow | 4 | Decrease Disease Resist by 14 (L24) to 18 (L32) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 11 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You smell the faint scent of shadow.
+| msg_cast_on_other = Someone  is surrounded by a dim haze.
+| msg_wears_off = The scent of shadow fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

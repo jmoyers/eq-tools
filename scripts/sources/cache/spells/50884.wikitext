@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Poison Animal II
+| spellicon = C
+| description = A potent venom specifically adapted to harm animals, causing between 16 and 298 damage every 6 seconds for up to Instant.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Beastchoker}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 16 (L1) to 298 (L48) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

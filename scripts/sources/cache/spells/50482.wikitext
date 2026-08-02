@@ -1,0 +1,37 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shock Spiral of Al'Kabor
+| spellicon = C
+| description = Creates an energy spiral that causes between 111 and 118 damage to all creatures in the vicinity of your target. 
+Note that this spell is significantly less mana-efficient than [[Column of Lightning]], but faster.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 28
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 111 (L28) to 118 (L35) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 200
+| range = 200
+| casting_time = 4.05
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are blasted by static winds.
+| msg_cast_on_other = Someone is blasted by static winds.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+| TableLocations = [[Research]]
+| TableEra = {{{TableEra|Classic}}}
+
+}}

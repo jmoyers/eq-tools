@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Invisibility Cloak
+| spellicon = B
+| description = Cloaks you in a mystic veil, rendering you invisible to many creatures for up to 3.0 mins @L1 to 20.0 mins @L7.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Gnomish Vanishing Device}}
+</li><li> {{:Clockwork Watchman Breastplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility(1) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 20 minutes @L7
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You vanish amidst the sound of whirrs and clicks.
+| msg_cast_on_other = Someone  vanishes amidst the sound of whirrs and clicks.
+| msg_wears_off = You appear.
+}}
+
+[[Category:NPC Only Spells]]

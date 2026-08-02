@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Paralyzing Poison I
+| spellicon = N
+| description = Paralyzes your target's muscles, slowing movement rate and attack speed.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Spine Break}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 2 }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 95% }}
+{{SpellSlotRow | 3 | Decrease Attack Speed by 50% }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 7 ticks @L14
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel your muscles lock.
+| msg_cast_on_other = Someone 's muscles lock.
+| msg_wears_off = Your feet come free.
+}}
+
+[[Category:NPC Only Spells]]

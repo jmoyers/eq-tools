@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Frost Dagger
+| spellicon = 56
+| description = Hurls a frost dagger at your target, causing 136 damage. Targets up to level 55 will be momentarily stunned, interrupting their spellcasting.
+
+| classes = 
+
+* [[Beastlord]] - Level 23
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Current Hit Points by 136 }}
+{{SpellSlotRow | 2 | Stun 0.0s up to level 55 }}
+
+| skill = [[Skill Evocation| Evocation]]
+
+| mana = 68
+| range = 200
+| casting_time = 0.50
+| fizzle_time = 1.5s
+| recast_time = 10.00
+| duration = Instant
+| target_type = Single
+| spell_type = Direct Damage
+| resist = Cold (0)
+
+| msg_cast_on_you = You stagger as spirits of frost slam against you.
+| msg_cast_on_other = Someone staggers as spirits of frost slam against them.
+| msg_wears_off = 
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+
+}}

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Summon Lava Diamond
+| spellicon = C
+| description = Summons a [[Lava Diamond]] through a primal portal.  Lava diamonds have the ability to surround the wielder in an aura of fire that will harm anyone who attacks them.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Sarnak Channeler Staff}}
+</li><li> {{:Sarnak Summoners Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Lava Diamond]] }}
+
+| skill = 
+| mana = 30
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

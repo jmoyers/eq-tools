@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Earth Elemental Attack
+| spellicon = 117
+| description = Roots your target's feet to the ground.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Root}}
+
+| other = 
+
+* [[Magician|Magician's]] Earth Elemental Ability
+
+| skill = 
+| mana = 0
+| range = 120
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 16.00
+| duration = 18s
+| target_type = Single
+| spell_type = Root
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet sink into the ground.
+| msg_cast_on_other = Someone sinks into the ground.         
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Pogonip
+| spellicon = S
+| description = Calls down a hailstorm from the sky, causing three waves of 62 damage, up to a maximum of 4 targets hit. (0.496DPM per hit)
+
+
+*Note: Rain nukes are limited to 4 hits total. Either you can hit the same mobs 3 times, you can hit 2 mobs twice each, or you can hit 4 mobs once each.
+'''WARNING:''' This spell '''WILL NOT''' deal the final killing blow to any mob. Instead, it will just resist to infinity.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 22
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 62 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 125
+| range = 150
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are sheathed in ice crystals.
+| msg_cast_on_other = Someone  is sheathed in ice crystals.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Northern Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+}}
+| TableLocations = North Karana
+| TableEra = Classic
+}}

@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Bulwark of Faith
+| spellicon = K
+| description = Covers your target in a holy guard, increasing their armor class for 1 hour(s) 21.0 mins.
+
+| classes = 
+
+* [[Cleric]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 37 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 350
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 21 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A bulwark of faith protects you.
+| msg_cast_on_other = Someone  is protected by a bulwark of pure faith.
+| msg_wears_off = You no longer feel shielded.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}
+
+[[Category:Aegis line]]

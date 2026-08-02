@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Aria of Asceticism
+| spellicon = K
+| description = A long forgotten aria that cleanses the target's body of poison and disease.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 45
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Poison Counter by 2 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Disease Counter by 2 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 100 (AE Range 100)
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Notes of purity cleanse your body.
+| msg_cast_on_other = Target is cleansed by notes of purity.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

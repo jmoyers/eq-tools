@@ -1,0 +1,47 @@
+{{Spellpagesmart|
+
+| spellname = Alenia's Disenchanting Melody
+| spellicon = U
+| description = A melody that strips the magical effects from everyone in your group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 22
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Cancel Magic (1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Required''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]] †
+
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' Lute
+
+| msg_cast_on_you = You feel a pulse of static energy wash over you.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Astar Leafsinger]] | Kelethin Bard Guild | (-252,293) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Topala Xenem]] | Bard Guild | (550,-136) }}
+}}
+| TableLocations = Qeynos<br/>Kelethin
+| TableEra = Classic
+}}

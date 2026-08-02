@@ -1,0 +1,39 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Flames of Ro
+| spellicon = C
+| description = Burns your target with the flames of Ro, causing 400 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Shissar Elementalist's Staff}}
+</li><li> {{:Shissar Elementalist`s Cane}}
+</li><li> {{:Staff of the Silent Star}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 400 }}
+
+| skill = 
+| mana = 320
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-300)
+
+| msg_cast_on_you = You burn.
+| msg_cast_on_other = Someone  begins to burn.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Thunder Blast
+| spellicon = C
+| description = Cast by [[Dozekar the Cursed]] and [[A greater sky drake]]. Single target HP and mana DoT.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 75 per tick }}
+{{SpellSlotRow | 3 | Decrease Mana by 75 per tick }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 8.00
+| duration = 1 ticks @L1 to 6.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your body is electrified as the lightning strikes you.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

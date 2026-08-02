@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Companion
+| spellicon = 120
+| description = Summons your pet to your current location.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Beastlord]] - Level 31
+* [[Enchanter]] - Level 43 
+* [[Magician]] - Level 36
+* [[Necromancer]] - Level 40 
+* [[Druid]] - Level 41 
+* [[Shaman]] - Level 40 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Call Pet | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| other =
+* Only works on summoned pets, not charmed pets.
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 50
+| range = 0
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Utility Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon your companion to your side.
+| msg_cast_on_other = Someone summons a companion to their side.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

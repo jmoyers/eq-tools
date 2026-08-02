@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Fire Flux
+| spellicon = 51
+| description = Creates a circle of fire around you, causing between 8 and 12 damage to all nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 1 (Autogranted)
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 8 (L1) to 12 (L8)| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 23
+| range =  
+| casting_time = 1.75
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Flames race across your body.
+| msg_cast_on_other = Someone  is covered in flames.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell can be obtained via quest: [[Rungupp (Quest)]].
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+
+}}

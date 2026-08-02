@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Efreeti Fire
+| spellicon = C
+| description = This AE is cast by [[Ixiblat Fer]] and [[Noble Dojorn]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 200 }}
+
+| skill = 
+| mana = 0
+| range = 75
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 24.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = The winds sear your flesh.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,34 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Torbas Poison Blast
+| spellicon = N
+| description = Strikes your target with a jet of poison, causing 466 damage.
+
+| classes = 
+
+* [[Necromancer]] - Level 49
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 466 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 186
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = A blast of poison eats at your skin.
+| msg_cast_on_other = Someone is blasted by a jet of poison.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Burst of Fire
+| spellicon = 51
+| description = Creates a ball of fire that burns your target, doing 14 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 3 (Autogranted)
+* [[Ranger]] - Level 14
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 11 (L3) to 14 (L8) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 7
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin singe as the Burst of Fire hits you.
+| msg_cast_on_other = Someone  singes as the Burst of Fire hits them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

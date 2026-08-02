@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Insidious Decay
+| spellicon = E
+| description = Infects your target with a fever, causing them to become more susceptible to other diseases. This spell cannot be resisted. [[Insidious Malady]](lv39) can be resisted, but has a stronger effect.
+
+| classes = 
+
+* [[Shaman]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Disease Resist by 36 (L52) to 42 (L65) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 100
+| range = 200
+| casting_time = 1.00
+| fizzle_time = 2.50
+| recast_time = 5.00
+| duration = 11.4 minutes @L52 to 14 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a fever settle upon you.
+| msg_cast_on_other = Someone  sweats and shivers, looking feverish.
+| msg_wears_off = Your fever has broken.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Shaman Spells (Good)]]
+* [[Shaman Spells (Evil)]]
+
+}}

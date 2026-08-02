@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Spirit of the Puma
+| spellicon = 2
+| description = Infuses your target with the spirit of the puma, allowing them to make a savage attack for extra damage. Adds {{SpellHoverLink|Puma Maw}} (melee proc).
+
+
+| classes = 
+
+* [[Shaman]] - Level 50
+
+| slots = 
+
+{{SpellSlotRow | 5 | Add Melee Proc: [[Puma Maw|<span class='itemeff'>'''Puma Maw'''</span>]] with 400% Rate Mod  }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 212
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = 60s
+| target_type = Target Group Member or Self
+| spell_type = Proc Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to snarl as your features become feline. 
+| msg_cast_on_other = Target growls with the spirit of the puma.
+| msg_wears_off =  	The spirit of the puma departs. 
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

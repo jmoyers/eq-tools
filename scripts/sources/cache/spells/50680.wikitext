@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Cassindra's Chorus of Clarity
+| spellicon = H
+| description = A quiet chorus that clears the minds of your group, allowing them to regenerate their mana faster.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 32
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Mana by 5 (L32) to 7 (L48) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your mind begins to clear.
+| msg_cast_on_other =  
+| msg_wears_off =
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Astar Leafsinger]] | Kelethin Bard Guild | (-252,293) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Topala Xenem]] | Bard Guild | (550,-136) }}
+}}
+| TableLocations = Qeynos<br/>Kelethin
+| TableEra = Classic
+}}

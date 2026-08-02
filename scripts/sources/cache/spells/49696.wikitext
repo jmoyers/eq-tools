@@ -1,0 +1,50 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Alliance
+| spellicon = H
+| description = Cloaks you in an amiable aura, causing creatures of your target's faction to view you more favorably.
+
+| classes = 
+
+* [[Enchanter]] - Level 8
+
+| items_with_effect = 
+
+<ul><li> {{:Ornate Velium Pendant}}
+</li><li> {{:Rod of Insidious Glamour}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Faction by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel quite amicable.
+| msg_cast_on_other = Someone  looks friendly.
+| msg_wears_off = You no longer feel amicable.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

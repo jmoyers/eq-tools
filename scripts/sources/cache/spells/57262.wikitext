@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Renewing Echo
+| spellicon = J
+| description = Fills your target's body with a renewing echo, immediately healing between 265 and 280 hit points, then healing twice more for 110 hit points every 6 seconds for 6s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 24
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 187 (L24) to 265 (L50)| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+{{SpellSlotRowSmart | 2 | Increase Hitpoints between 110 and 110 for two additional ticks.| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 1.5
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 0:06
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off = The echo of healing fades away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

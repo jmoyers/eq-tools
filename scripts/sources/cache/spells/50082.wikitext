@@ -1,0 +1,49 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Skin Like Nature
+| spellicon = K
+| description = Hardens the skin of your target, increasing their hit points and armor class for 1 hour(s) 12.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 59
+* [[Druid]] - Level 49
+| items_with_effect = 
+
+<ul><li> {{:Robe of the Spring}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 16 (L49) to 16 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 248 (L49) to 250 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 248 (L49) to 250 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Increase hitpoints by 2 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 300
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = 1 hour 12 minutes 24 seconds
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin shimmers with divine power.
+| msg_cast_on_other = Someone 's skin shimmers with divine power.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | Plane of Growth tower | (519,-1028) }}
+}}
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = {{{TableEra|Classic}}}
+}}

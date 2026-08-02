@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = essence drain
+| spellicon = C
+| description = Drains your target's mana by 80.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Essence Blade}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Mana by 80 }}
+
+| skill = 
+| mana = 0
+| range = 75
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your essence drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

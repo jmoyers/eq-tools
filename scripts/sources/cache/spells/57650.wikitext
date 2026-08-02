@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Malaria
+| spellicon = 41
+| description = Infects your target with a deadly plague of malaria, causing between 73 and 93 damage every six seconds for 1 min 12s.
+
+| classes = 
+
+* [[Beastlord]] - Level 40
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 24 (L1) to 73 (L50) per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 173
+| range = 200
+| casting_time = Instant
+| fizzle_time = 3.00
+| recast_time = 1.50
+| duration = 12 ticks
+| target_type = Single
+| spell_type = Damage Over Time
+| resist = Disease (0)
+
+| msg_cast_on_you = You cough and choke.
+| msg_cast_on_other = Someone coughs and chokes.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+}}

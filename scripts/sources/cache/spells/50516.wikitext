@@ -1,0 +1,59 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Enticement of Flame
+| spellicon = O
+| description = Covers your target in blistering flames, causing 500 damage. This damage is more difficult to resist than most spells.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 44
+
+| items_with_effect = 
+
+<ul><li> {{:Sorcerer's Robe}}
+</li><li> {{:Robe of Icicles}}
+</li><li> {{:Robe of the Invoker}}
+</li><li> {{:Sage's Robe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart| 2 | Decrease Hitpoints by 482 (L44) to 500 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 202
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = You succumb to the enticement of flame.
+| msg_cast_on_other = Someone  succumbs to the enticement of flame.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Velious Mobs
+
+[[Cobalt Scar]]
+* [[a cobalt drake]]
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathbinder]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystalline Gargoyle]]
+* [[A Crystalline Hunter]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+
+| TableLocations = Level 40+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+}}

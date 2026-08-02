@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Call of Earth
+| spellicon = 158
+| description = Focuses your target with the call of earth, increasing their armor class, and causing damage to anything that strikes them for 60 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Ranger]] - Level 48
+| items_with_effect = 
+
+<ul><li> {{:Breastplate of the Untamed}}
+</li><li> {{:Forest Stalker's Breastplate}}
+</li><li> {{:Runed Scout's Breastplate}}
+</li><li> {{:Golden Leaf Breastplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Damage Shield by 4 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AC by 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 50
+| range = 150
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = 1 hour 0 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The Call of Earth surrounds your body protectively.
+| msg_cast_on_other = Someone 's body is surrounded by the Call of Earth.
+| msg_wears_off = The Call of Earth leaves.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

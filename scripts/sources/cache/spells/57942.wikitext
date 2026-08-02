@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Phantom Leather
+| spellicon = 126
+| description = Focuses mana into the form of a pack of phantom leather armor.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Magician]] - Level 17
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Phantom Satchel}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Summon Into Bag: {{:Summoned: Phantom Leather Skullcap}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Summon Into Bag: {{:Summoned: Phantom Leather Tunic}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Summon Into Bag: {{:Summoned: Phantom Leather Sleeves}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Summon Into Bag: {{:Summoned: Phantom Leather Bracer}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Summon Into Bag: {{:Summoned: Phantom Leather Bracer}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 7 | Summon Into Bag: {{:Summoned: Phantom Leather Gloves}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 8 | Summon Into Bag: {{:Summoned: Phantom Leather Leggings}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 9 | Summon Into Bag: {{:Summoned: Phantom Leather Boots}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 100
+| range = 0
+| casting_time = 6.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a suit of phantom leather armor.
+| msg_cast_on_other = 
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

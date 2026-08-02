@@ -1,0 +1,48 @@
+{{Spellpagesmart|
+
+| spellname = McVaxius' Berserker Crescendo
+| spellicon = R
+| description = A crescendo that increases your group's attack speed, as well as increasing their strength and armor class.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 42
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Melee Haste by 8% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase STR by 15 (L42) to 21 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AC by 6 (L42) to 9 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (not attack speed)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' Horn
+
+| msg_cast_on_you = You go berserk.
+| msg_cast_on_other =  
+| msg_wears_off = You are no longer berserk.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+}}
+| TableLocations = Qeynos<br/>Freeport
+| TableEra = Classic
+}}

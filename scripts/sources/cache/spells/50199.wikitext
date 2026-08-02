@@ -1,0 +1,65 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Steelskin
+| spellicon = K
+| description = Surrounds your skin in a protective aura that absorbs 230 damage. Consumes a jasper when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 30
+* [[Necromancer]] - Level 32
+* [[Shadowknight]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Mystic Cloak}}
+</li><li> {{:Solidate Mithril Ring}}
+</li><li> {{:Sword of Rile}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | UNKNOWN CALC 113 base 168 max 230 attrib Absorb Damage | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 149
+| range =  
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 hour 12 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Jasper]]
+
+| msg_cast_on_you = Your skin becomes like steel.
+| msg_cast_on_other = Someone's skin looks like steel.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-10)]] | Library | (1052,-984) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-1)]] | Necromancer Guild | (2082,-410) }}
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Ainla Yurimar]] | Underground | (-162,-270) }}
+{{SpellWhereRowB | [[Erudin|Erudin Palace]] | [[Barstall Methinon]] | Wizard Guild (F2) | (914,757) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Rizyra F'Lok]] | Necromancer Guild (F1) | (1335,-1213) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kis K'Jartan]] | Caster Guild (Basement) | (171,-874) }}
+{{SpellWhereRow  | [[Paineel]] | [[Leovre Kieqmarn]] | Necromancer Guild | (665,804) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Dallisen Xalladyr]] | Necromancer Guild | (402,-311) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Trisco Qental]] | Caster Guild | (302,-666) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Rott]] | Cubby near PvP Area | (-440,236) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Chardo Ahdelia]] | Caster Guild (top floor) | (144,-735) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>The Overthere/Freeport<br/>Paineel/Cabilis
+| TableEra = {{{TableEra|Classic}}}
+}}

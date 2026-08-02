@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = FireElementalAura
+| spellicon = O
+| description = Cast by Magician Fire elemental pets and [[Dyzil's Deafening Decoy]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase damage shield by (pet_level+2) }}
+{{SpellSlotRow | 2 | Increase Fire resist by 5 }}
+
+| skill = 
+| mana = 0
+| range = 0 
+| casting_time = 0
+| fizzle_time = 1.5
+| recast_time = 12
+| duration = Unlimited
+| target_type = Self
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You begin to radiate.
+| msg_cast_on_other = Someone  begins to radiate.
+| msg_wears_off = The radiation fades. 
+}}
+
+[[Category:NPC Only Spells]]

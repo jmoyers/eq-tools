@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Silver Skin
+| spellicon = K
+| description = Covers your body in a protective skin that will absorb some damage done to you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Silver Whip of Rage}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Absorb Damage by 150 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin takes on a silvery hue.
+| msg_cast_on_other = Someone 's skin takes on a silvery hue.
+| msg_wears_off = The silvery hue fades.
+}}
+
+[[Category:NPC Only Spells]]

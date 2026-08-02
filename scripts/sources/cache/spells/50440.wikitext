@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Frost Bolt
+| spellicon = S
+| description = Creates a bolt of frost that freezes your target, causing 14 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 1 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 9 (L1) to 14 (L6) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 6
+| range = 300
+| casting_time = 1.00
+| fizzle_time = 2.50
+| recast_time = 13.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are chilled by a bolt of frost.
+| msg_cast_on_other = Someone  is chilled by a bolt of frost.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-8)]] | Library | (1060,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Gissa Brist]] | Wizard Guild (F2) | (894,742) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Mak Ixtaz]] | Caster Guild (Basement) | (171,-893) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Rosdaria Sepria]] | Caster Guild | (327,-686) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Celent Newmist]] | Wizard Guild | (449,-341) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Mirpa Arana]] | Caster Guild (top floor) | (140,-79) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Felwithe/Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

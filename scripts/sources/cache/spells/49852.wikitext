@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Rapture
+| spellicon = D
+| description = Causes your opponent to fall into an enchanted sleep for up to 24 secs (4 ticks).  This spell works on creatures up to level 61.  This spell is unresistible by mobs that aren't immune to mez. (17.70 mana per second)
+
+| classes = 
+
+* [[Enchanter]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/61) }}
+{{SpellSlotRow | 2 | Memblur(40%) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 425
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-1000)
+
+| msg_cast_on_you = You swoon, overcome by rapture.
+| msg_cast_on_other = Someone  swoons in raptured bliss.
+| msg_wears_off = The rapture fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

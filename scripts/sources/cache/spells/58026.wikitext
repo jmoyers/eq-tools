@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Dark Temptation
+| spellicon = 164
+| description = Grips your body in an unholy darkness, slowly draining your health while increasing your attack rating.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 32
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 2 | Increase ATK by 25 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 7 | Decrease Hitpoints by 3 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 0
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A dark voice beckons to you.
+| msg_cast_on_other = 's aura grows cold.
+| msg_wears_off = The dark voice fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

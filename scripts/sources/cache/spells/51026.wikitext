@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Hymn of Restoration
+| spellicon = J
+| description = A gentle melody that encourages your group's wounds to heal faster.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 6 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 9 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 30
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds begin to heal.
+| msg_cast_on_other =  
+| msg_wears_off = Your wounds stop healing.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Topala Xenem]] | Bard Guild | (550,-136)  }}
+{{SpellWhereRow  | [[Kelethin]] | [[Beleth Streamfoot]] | Bard Guild | (-240, 240)  }}
+{{SpellWhereRow  | [[North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-145, 578)  }}
+}}
+Quest:  [[Broken Lute]]
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin
+| TableEra = Classic
+}}

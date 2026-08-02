@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Spear of Pain
+| spellicon = 42
+| description = Hurls a spear of pain at your target, doing 325 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 48
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 325 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 138
+| range = 200
+| casting_time = 0.50
+| fizzle_time =
+| recast_time = 45.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease
+
+| msg_cast_on_you = A spear of pain sears your flesh.
+| msg_cast_on_other =  screams in pain.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Berserker Strength
+| spellicon = R
+| description = Hardens your skin and fills your arms with energy, increasing strength and absorbing damage, while also decreasing your agility.
+
+| classes = * [[Enchanter]] - Level 19
+| items_with_effect = 
+
+<ul><li> {{:Braided Beard of the Coldain}}
+</li><li> {{:Polished Granite Tomahawk}}
+</li><li> {{:Shadow Rager}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 20 (L20) to 25 (L30) }}
+{{SpellSlotRow | 2 | Increase Absorb Damage by 30 (L20) to 50 (L60) }}
+{{SpellSlotRow | 3 | Decrease AGI by 11 (L20) to 15 (L28) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = 3 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your muscles bulge with berserker strength.
+| msg_cast_on_other = Someone 's muscles bulge with berserker strength.
+| msg_wears_off = You feel your agility return.
+
+| where_to_obtain = 
+
+}}

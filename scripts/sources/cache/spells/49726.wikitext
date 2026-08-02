@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Whirl Till You Hurl
+| spellicon = M
+| description = Spins a targeted creature up to level 55 in a circle, preventing them from taking any action for 55 seconds.
+
+| classes = * [[Enchanter]] - Level 9
+| slots = 
+
+{{SpellSlotRow | 1 | SpinStun }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 55
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 6.50
+| duration = Up to 2 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You begin to spin.
+| msg_cast_on_other = Someone  begins to spin.
+| msg_wears_off = You feel dizzy.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

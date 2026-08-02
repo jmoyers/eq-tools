@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Storm Strike
+| spellicon = C
+| description = Engulfs your target in a maelstrom, causing between 102 and 155 damage and briefly stunning them.  The stun portion of this effect works on creatures up to level 55.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Maelstrom}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 102 (L1) to 155 (L28) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been engulfed by the maelstrom.
+| msg_cast_on_other = Someone  has been engulfed in the maelstrom.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

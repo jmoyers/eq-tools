@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Befuddling Strike
+| spellicon = 1
+| description = Causes your opponent to clutch their head, draining their mana by 10.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Mana by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_on_you = Your head pounds.
+| msg_cast_on_other =  stumbles, clutching their head!
+| msg_wears_off = The poison subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

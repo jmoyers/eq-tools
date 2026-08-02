@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Heroism
+| spellicon = K
+| description = Provides your target with heroic valor, increasing their hit points and armor class for 1 hour(s) 12.0 mins. Blocks Skin Like Nature and Natureskin. 
+
+| classes = 
+
+* [[Cleric]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 18 (L52) to 19 (L60) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 360 (L52) to 400 (L60) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 360 (L52) to 400 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 140
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel heroic.
+| msg_cast_on_other = Someone 's eyes gleam with heroic resolution.
+| msg_wears_off = Your heroism fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Fire Elemental Aura
+| spellicon = 157
+| description = Fire elemental's damage shield.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 3 (L1) to 52 (L50)}}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 5}}
+
+| other = 
+
+* [[Magician|Magician's]] Fire Elemental Ability
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Damage Shield
+| resist = Unresistable
+
+| msg_cast_on_you =
+| msg_cast_on_other = Someone begins to radiate.       
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

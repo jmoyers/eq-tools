@@ -1,0 +1,58 @@
+{{Spellpage|
+
+| spellname = Guard
+| spellicon = K
+| description = Covers your target in a holy guard, increasing their armor class for 45 min.
+
+| classes = 
+
+* [[Cleric]] - Level 25
+* [[Paladin]] - Level 39
+
+| items_with_effect = 
+
+<ul><li> {{:Bone Amulet of Blade Turning}}
+</li><li> {{:Guardians Mace}}
+</li><li> {{:Star of the Guardian}}
+</li><li> {{:Warding Star}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 18 (L29) to 19 (L34) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 80
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 45 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the favor of the gods upon you.
+| msg_cast_on_other = Someone  feels the favor of the gods upon them.
+| msg_wears_off = You no longer feel blessed.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Dorlita Splitshield]] | Cleric Guild | (733,138) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guild | (412,-788) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+
+}}
+
+[[Category:Aegis line]]

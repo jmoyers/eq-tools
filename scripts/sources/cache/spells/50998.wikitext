@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Cast Force
+| spellicon = C
+| description = Creates an aura of force around you, causing between 90 and 100 damage to all nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 24
+
+| items_with_effect = 
+
+<ul><li> {{:Holgresh Mojo Stick (Air)}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 90 (L24) to 101 (L30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 123
+| range =  
+| casting_time = 3.15
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Energy races across your body.
+| msg_cast_on_other = Someone  is covered in raging energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

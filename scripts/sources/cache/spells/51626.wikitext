@@ -1,0 +1,61 @@
+{{Screenshot Needed}}{{Velious Era}}{{Namedmobpage
+
+| imagefilename     = npc_kalkar_of_the_maelstrom.png
+
+| emu_id            = 124106
+| illia_id          = 7463
+
+| name              = Kalkar of the Maelstrom
+| race              = Drake
+| class             = [[Monk]]
+| level             = 65
+| agro_radius       = 150
+| run_speed         = 1.25
+
+| zone              = [[Temple of Veeshan]]
+| location          = 50% @ (139, -149)
+
+| AC                = 477
+| HP                = 120000
+| HP_regen          = 20
+| mana_regen        = 0
+
+| attacks_per_round = 2
+| attack_speed      = 76%
+| damage_per_hit    = 225 - 700
+| special           = [[Flurry (NPC Ability)|Flurry]], [[Enrage]], [[Summon]], Unmezable, Uncharmable, Unstunable, Unsnareable, Unfearable, See Invis, See Hide
+
+| description = [[NTOV Flurries|NTOV Flurry Mob]]
+
+| known_loot = 
+
+<ul><li>  {{:Shield of Fury}}                <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of the Protector}}       <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Bow of the Silver Fang}}        <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Barrier of Sound}}              <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of Dragonkind}}          <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of the Wurms}}           <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Shield of Thorns}}              <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Melodic Charm}}                 <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Runed Fang Necklace}}           <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Shadow Fang Necklace}}          <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Silent Fang Necklace}}          <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Ring of Superiority}}           <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li></ul>
+
+| factions = 
+
+* [[Claws of Veeshan]] <span class='profac'>(-30)</span>
+* [[Guardians of Veeshan]] <span class='profac'>(-30)</span>
+
+| opposing_factions = 
+
+* None
+
+| related_quests = 
+
+* None
+
+}}
+
+[[Category:Temple of Veeshan]]

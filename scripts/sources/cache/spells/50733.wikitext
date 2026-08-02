@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Whirlwind
+| spellicon = M
+| description = A whirlwind traps your target in the air, causing a great spin as well as 100 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Windstriker}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Levitate(1) }}
+{{SpellSlotRow | 2 | SpinStun }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 100 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.50
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are trapped within a whirling wind.
+| msg_cast_on_other = Someone  is trapped within a whirling wind.
+| msg_wears_off = The wind fades.
+
+
+}}
+
+[[Category: NPC Only Spells]]

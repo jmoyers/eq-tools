@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Tortoises Healing
+| spellicon = 118
+| description = Imbues your target with the health of a tortoise spirit, healing 120 hit points every 6 seconds for 24s, but vastly decreasing their movement rate.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shaman]] - Level 28
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 120 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Movement Speed by 100% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 155
+| range = 100
+| casting_time = 6.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 24 Sec
+| target_type = Target Group Member or Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You being to feel healed by the tortoise.
+| msg_cast_on_other =  is healed by the spirit of the tortoise.
+| msg_wears_off = You feel the tortoise spirit depart.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

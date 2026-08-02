@@ -1,0 +1,51 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Manaskin
+| spellicon = K
+| description = Covers you in a magical skin that absorbs some damage before dissipating.  This spell also increases your mana regeneration rate (1 extra mana point per tick).  '''Consumes one peridot when cast'''
+<br>''Note: this does NOT stack with the Wiz Epic, Barrier of Force''
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 52
+* [[Wizard]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Absorb Damage by 521 (L52) to 600 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stacking: Block new spell if slot 5 is effect 'Mana' and < 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Increase Current Mana by 1 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 330
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 2 hours 0 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Peridot]] x1
+
+| msg_cast_on_you = Your skin gleams with an incandescent glow.
+| msg_cast_on_other = Someone 's skin gleams with an incandescent glow.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere<br/>Cabilis
+| TableEra = {{{TableEra|Kunark}}}
+}}

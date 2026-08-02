@@ -1,0 +1,31 @@
+{{Velious Era}}
+
+{{Spellpage|
+
+| spellname = Death Peace
+| spellicon = G
+| description = Causes you to stop breathing and appear dead to most creatures.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Feign Death }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+| mana = 120
+| range =  
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  dies.
+| msg_wears_off = You no longer appear dead.
+}}

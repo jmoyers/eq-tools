@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| description = Cast by [[Aaryonar]], [[Dozekar the Cursed]], [[Lady Mirenilla]], and maybe others. This spell is the reason why some dragons are listed as being able to "summon at 100%".
+| spellname = Call of the Zero
+| spellicon = C
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon PC }}
+
+| skill = 
+| mana = 0
+| range = 450
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 5.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = A malevolent force drags you across physical space!
+| msg_cast_on_other = Someone  is ripped through a dimensional hole.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

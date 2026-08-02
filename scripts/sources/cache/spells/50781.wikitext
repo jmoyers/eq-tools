@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Clarity II
+| spellicon = H
+| description = Calms your target's thoughts, allowing them to regenerate mana more quickly. ([http://www.project1999.com/forums/showthread.php?t=34660 level 54]) 
+
+You must have a minimum level of 41 to receive this.
+
+| classes = 
+
+* [[Enchanter]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 11 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 115
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 35 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A soft breeze slips through your mind.
+| msg_cast_on_other = Someone  looks very tranquil.
+| msg_wears_off = The soft breeze fades.
+
+| where_to_obtain = 
+
+* This spell is obtained via a quest - [[Enchanter Spells (Good)]] or [[Enchanter Spells (Evil)]].
+
+}}

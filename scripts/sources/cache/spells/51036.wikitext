@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Dance of the Fireflies
+| spellicon = 37
+| description = Summons a swarm of mystic fireflies to your hands, providing light in dark areas.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 1
+* [[Ranger]] - Level 10
+
+| items_with_effect = 
+
+<ul><li> {{:Split Paw}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Firefly Globe}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 10
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A swarm of fireflies shimmers around your hand.
+| msg_cast_on_other = Someone 's hands flicker.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

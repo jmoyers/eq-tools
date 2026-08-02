@@ -1,0 +1,55 @@
+{{Spellpage|
+
+| spellname = Invigorate
+| spellicon = J
+| description = Fills your body with life<s>, healing between 82 and 115 damage.</s>
+
+Non-Cleric Players only have 90% healing efficiency. (100 * 0.9 = 90) [https://www.project1999.com/forums/showthread.php?p=3093713]
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Assassin's Chestguard}}
+</li><li> {{:Berserker's Breastplate}}
+</li><li> {{:Brigand's Chestguard}}
+</li><li> {{:Blood Lord's Breastplate}}
+</li><li> {{:Breastplate of the Myrmidon}}
+</li><li> {{:Champion's Breastplate}}
+</li><li> {{:Cobalt Breastplate}}
+</li><li> {{:Dark Runed Breastplate}}
+</li><li> {{:Deceiver's Chestguard}}
+</li><li> {{:Grand Master's Chest Wraps}}
+</li><li> {{:Golden Star Chest Wraps}}
+</li><li> {{:Malevolent Breastplate}}
+</li><li> {{:Mrylokar's Breastplate}}
+</li><li> {{:Noctivagant Breastplate}}
+</li><li> {{:Shadow Chestguard}}
+</li><li> {{:Silver Moon Chest Wraps}}
+</li><li> {{:Singing Steel Breastplate}}
+</li><li> {{:Warlord's Breastplate}}
+</li><li> {{:White Lotus Chest Wraps}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 71 (L1) to 100 (L30) }}
+
+| skill = 
+| mana = 60
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel much better.
+| msg_cast_on_other = Someone  looks invigorated.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Screaming Terror
+| spellicon = G
+| description = Fills your target with unholy terror, preventing them from moving, and possibly causing them to forget about their enemies.  This spell works on opponents up to level 55. 
+
+| classes = * [[Necromancer]] - Level 22
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (1/55) }}
+{{SpellSlotRow | 2 | Memblur(1%) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 2.60
+| fizzle_time = 2.25
+| recast_time = 6.50
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You begin to scream.
+| msg_cast_on_other = Someone  begins to scream.
+| msg_wears_off = You stop screaming.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

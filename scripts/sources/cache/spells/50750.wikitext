@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Obsidian Shatter
+| spellicon = O
+| description = Covers your target in flickering flames, causing 30 damage and lowering armor class for up to 1 min.
+
+
+
+Note: When this debuff was applied to me, it removed the cleric HP/AC buff "Center" and prevented it from being reapplied. It's probably the case that this debuff "does not stack" with the HP/AC buff lines from Clerics and Druids (i.e. Resolution, Heroism, Skin like Steel, etc.), and therefore overwrites them.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Drogan Obsidian Dagger}}
+</li><li> {{:Obsidian Shard}}
+</li><li> {{:Obsidian Flamberge}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease AC by 6 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 30 }}
+
+| mana = 0
+| skill = 
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are surrounded by flickering flames.
+| msg_cast_on_other = Someone  is surrounded by flickering flames.
+| msg_wears_off = The flames die down.
+
+}}
+
+[[Category: NPC Only Spells]]

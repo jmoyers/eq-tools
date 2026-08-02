@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Evacuate: Ro
+| spellicon = V
+| description = Evacuates your group to the Southern Desert of Ro.  While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.  
+
+<strike>If this spell is cast in Southern Desert of Ro the group will be evacuated to a spot near the Oasis zone, rather than the wizard platform.</strike> This bug has been fixed.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Evacuate to -1044,125,12 in sro | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Ignacia Rellasp]] | Library (F3) | (-1092,-224) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Drisi J'Axx]] | Library (F2) | (914,-1278) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Quiss Stormseeker]] | Wizard Guild | (465,-440) }}
+}}
+| TableLocations = Erudin<br/>Neriak<br/>Felwithe
+| TableEra = {{{TableEra|Classic}}}
+
+}}

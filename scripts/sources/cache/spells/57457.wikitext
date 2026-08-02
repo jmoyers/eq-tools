@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Harmony of Nature
+| spellicon = 39
+| description = Calms the savage spirit of almost any creature, making them less likely to attack. This spell works on creatures up to level 65.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 29
+* [[Ranger]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Reduce Aggro Radius by 15 (up to L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Reaction Radius (15/40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range = 200
+| casting_time = 2.5
+| fizzle_time = 2.25
+| recast_time = 3.00
+| duration = 42 seconds
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,38 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Celestial Elixir
+| spellicon = J
+| description = Fills your target's body with celestial elixir, healing 300 hit points every 6 seconds for 24 secs (4 ticks).<br><br>The regen effect from celestial elixir will stack with other magical and gear forms of regen. 4 healing per point of mana; see [[Healing Spell Lines]] to compare with other heals.
+
+| classes = 
+
+* [[Cleric]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 300 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Celestial Elixir pumps through your body.
+| msg_cast_on_other = Someone 's body is covered with a soft glow.
+| msg_wears_off = The Celestial Elixir fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}

@@ -1,0 +1,42 @@
+<noinclude>{{Velious Era}}
+</noinclude>{{Spellpagesmart|
+
+| spellname = Cinder Jolt
+| spellicon = D
+| description = Strikes your target with jolting fire, sometimes causing partial memory loss.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hate by 500 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Resist: Fire | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your head snaps back.
+| msg_cast_on_other = Someone 's head snaps back.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[East Commonlands]] | [[Rushka Deklamoor]] | Tunnel | (-1668,-4) }}
+}}
+| TableLocations = E.Commonlands<br/>Kelethin 
+| TableEra = Velious
+}}

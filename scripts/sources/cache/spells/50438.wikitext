@@ -1,0 +1,47 @@
+{{Velious Era}}{{Spellpage|
+
+| spellname = Monster Summoning III
+| spellicon = L
+| description = Conjures a pet in the form of a local monster to aid you in battle.
+
+| classes = 
+
+* [[Magician]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: MonsterSum3 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 400
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Velious Level 50+ Mob Drop
+
+[[Icewell Keep]]
+* [[Dain Frostreaver IV]]
+
+[[Plane of Growth]]
+* [[Fayl Everstrong]]
+* [[Prince Thirneg]]
+* [[Undogo Digolo]]
+
+}}

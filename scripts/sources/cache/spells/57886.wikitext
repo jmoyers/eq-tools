@@ -1,0 +1,33 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Puma Maw
+| spellicon = 161
+| description = Damages your target.
+
+| classes = 
+
+This is a proc from the [[Spirit of the Puma]] spell.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hit Points by 154 }}
+
+| skill = n/a
+| mana = 0
+| range = 100
+| casting_time = Instant
+| fizzle_time = n/a
+| recast_time = n/a
+| duration = Instant
+| target_type = Single
+| spell_type = Direct Damage
+| resist = Prismatic (-200)
+
+| msg_cast_on_you = Savage jaws tear into your skin.
+| msg_cast_on_other = Someone is rent by a savage maw.
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

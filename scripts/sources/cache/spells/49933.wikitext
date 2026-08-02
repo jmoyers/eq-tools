@@ -1,0 +1,58 @@
+{{Spellpage|
+
+| spellname = Banish Undead
+| spellicon = C
+| description = A burst of holy power that inflicts 468 damage to an undead target.
+
+| classes = 
+
+* [[Cleric]] - Level 43
+* [[Necromancer]] - Level 46
+
+| items_with_effect = 
+
+<ul><li> {{:DawnFire, Morning Star of Light}}
+</li><li> {{:Staff of Undead Legions}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 585 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 118
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-6)]] | Cleric Guild | (1197,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-14)]] | Necromancer Guild | (2111,-429) }}
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRowB | [[Erudin]] | [[Junice Weslent]] | Cleric Guild - Quellious (Outside) | (-697,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terren Starwatcher]] | Cleric Guild | (13,-426) }}
+{{SpellWhereRowB | [[Kaladim]] | [[Poriss Splitrock]] | Cleric Guild | (753,135) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Lyniv S'Kor]] | Cleric Guild | (410,-858) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Nosspri Andrika]] | Cleric Guild (basement) | (102,391) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Ladia Qursii]] | Cleric Guild (Outside) | (-225,-238) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Senst Ereek]] | Cleric Guild | (340,-413) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Misty Valefriend]] | Cleric Guild | (-226,-374) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+}}
+
+}}

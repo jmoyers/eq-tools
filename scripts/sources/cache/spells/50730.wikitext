@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Stone Breath
+| spellicon = C
+
+| description = A potent little stun spell.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 12.0 seconds }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 10 (L1) to 42 (L65) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Stone begins to form around your body.
+| msg_cast_on_other = Someone  is covered with a light layer of stone.
+| msg_wears_off = You burst through the stone.
+
+}}
+
+[[Category: NPC Only Spells]]

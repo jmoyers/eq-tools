@@ -1,0 +1,75 @@
+<onlyinclude><includeonly><div class="hbdiv">[[Burst of Fire]]<span class="hb">{{SpellBox
+|spellname = Burst of Flame
+|spellicon = O
+|spellDescription = Creates a ball of fire that burns your target, doing between 3 and 5 damage.
+|spellSchool = Evocation
+|isDetrimental = Yes
+|targetType = Single
+|spellResists = Fire(0)
+|castTime = 1.5
+|fizzleTime = 2.5
+|recastTime = 2.5
+|manaCost = 7
+|effects =
+1: Decrease Hitpoints by 3 (L1) to 5 (L4)
+|classes = [[Druid|Druid(1)]] - [[Shaman|Shaman(1)]] - [[Magician|Magician(1)]]
+|spellDuration = Instant
+}}</span></div></includeonly></onlyinclude>
+{{Spellpage|
+
+| spellname = Burst of Flame
+| spellicon = O
+| description = Creates a ball of fire that burns your target, doing between 3 and 5 damage.
+
+| classes = 
+
+* [[Druid]] - Level 1
+* [[Shaman]] - Level 1
+* [[Magician]] - Level 1
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of Fire}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 3 (L1) to 5 (L4) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 7
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 2.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin singe as the Burst of Flame hits you.
+| msg_cast_on_other = Someone  singes as the Burst of Flame hits them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-17)]] | Library | (1105,-1022) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Vessel Kabda]] | Temple of Terror (First Floor) | (1013,-218) }}
+{{SpellWhereRowB | [[Erudin|Erudin Palace]] | [[Killi Frillep]] | Magician Guild (F2) | (695,919) }}
+{{SpellWhereRow  | [[Greater Faydark]] | [[Uleen Laughingwater]] | Kelethin Druid Guild | (-639,237) }}
+{{SpellWhereRowB | [[Grobb]] | [[Tokun - Troll]] | Shaman Guild | (350,-400) }}
+{{SpellWhereRow  | [[Halas]] | [[Corak]] | Shaman Guild | (313,424) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Cizzar J'Axx]] | Caster Guild (Basement) | (135,-921) }}
+{{SpellWhereRow  | [[Oggok]] | [[Tokun - Ogre]] | Shaman Guild | (632,1091) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Ilscent Tagglefoot]] | Druid Guild | (-31,-418) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Bumpy Quickfinger]] | Druid Guild | (-74,-403) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Tsuden Korinte]] | Caster Guild | (322,-595) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Neapha Vesturo]] | The Herb Jar | (317,-554) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Vellera Wintergreen]] | Magician Guild | (715,-526) }}
+{{SpellWhereRow  | [[Surefall Glade]] | [[Qomber Roblen]] | Druid Guild | (-106,-260) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Trepo Merrop]] | Caster Guild (F3) | (133,-762) }}
+}}
+
+}}

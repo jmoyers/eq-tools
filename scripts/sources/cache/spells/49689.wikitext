@@ -1,0 +1,41 @@
+{{Classic Era}}{{Spellpage|
+
+| spellname = Haze
+| spellicon = K
+| description = Causes your target's image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+| classes = * [[Enchanter]] - Level 3
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 3 (L4) to 4 (L8) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 25
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 27 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your image blurs.
+| msg_cast_on_other = Someone 's image blurs.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRow  | [[Felwithe|South Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRowB  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

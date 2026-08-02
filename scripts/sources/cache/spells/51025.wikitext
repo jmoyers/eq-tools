@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Lyssa's Locating Lyric
+| spellicon = B
+| description = A clairvoyant chorus which points you towards your target's nearest corpse.  If nothing is targeted then it will point you to the closest corpse of any kind.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 4
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Locate Corpse | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A tune pervades your mind and beckons you.
+| msg_cast_on_other =  
+| msg_wears_off = You lose the locating tune.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Altrusan Belstince]] | Library (F1) | (-1102,-214) }}
+{{SpellWhereRow  | [[Greater Faydark]] | [[Beleth Streamfoot]] | Kelething Bard Guild | (-237,235) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-141,578) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Lysric Loresinger]] | Bard Guild | (553,-157) }}
+}}
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin<br/>Erudin
+| TableEra = Classic
+}}

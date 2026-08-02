@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Sirocco
+| spellicon = O
+| description = Conjures a blistering wind that assaults several creatures in the vicinity of your target, causing three waves of between 630 and @1 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 630| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 399
+| range = 150
+| casting_time = 5.50
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = A blistering wind envelops your body.
+| msg_cast_on_other = Someone 's skin blisters as sirocco envelops them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,44 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Song: Composition of Ervaj
+| spellicon = A
+| description = An ancient song that increases the attack speed of your group.  This increase is cumulative with most other effects that increase attack speed. It does stack with other haste buffs, it does not bypass the [[Haste_Guide#Haste_Caps|Haste_Cap]].
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Haste v2 by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 9 (L60) to 9 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]] †
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' [[Horn]]
+
+| msg_cast_on_you = A song of inspiration fills your weapon arm with strength.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drop from level 50+ Velious mobs
+| TableLocations = Unknown
+| TableEra = Velious
+}}

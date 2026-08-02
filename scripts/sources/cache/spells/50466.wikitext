@@ -1,0 +1,49 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Tishan's Clash
+| spellicon = D
+| description = Strikes your target with energy causing 50 damage and stunning them for 5 seconds up to level 55.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 19 (Autogranted)
+| items_with_effect = 
+
+<ul><li> {{:Gorgon Head Staff}}
+</li><li> {{:Harmonic Dagger}}
+</li><li> {{:Sword of the Morning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Stun (5.00 sec/55) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 30 (L20) to 50 (L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 65
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-9)]] | Library | (1056,-981) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Effunic Korett]] | Wizard Guild (F2) | (921,726) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Dissa C'Luzz]] | Caster Guild (Basement) | (167,-896) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Dumisa D'Enetti]] | Caster Guild | (313,-679) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Charia Betou]] | Caster Guild (top floor) | (134,-740) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

@@ -1,0 +1,38 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Talisman of Shadoo
+| spellicon = N
+| description = Protects your group with the talisman of Shadoo, shielding them from poison for 36.0 mins.
+
+''Note: No longer stacks with [[Resist Poison]].''
+
+| classes = 
+
+* [[Shaman]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Poison Resist by 45 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 0
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have been protected by the Talisman of Shadoo.
+| msg_cast_on_other = Someone  has been protected by the Talisman of Shadoo.
+| msg_wears_off = The Talisman fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+* Obtained via the quests: [[Shaman Spells (Good)]] or [[Shaman Spells (Evil)]]
+
+}}

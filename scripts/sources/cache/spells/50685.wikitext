@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Vilia's Verses of Celerity
+| spellicon = R
+| description = An energetic verse which hastens the attack speed of your group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 36
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Melee Haste by 20% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase AGI by 23 (L36) to 35 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AC by 5 (L36) to 8 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (not attack speed)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A burst of speed surges through your body.
+| msg_cast_on_other =  
+| msg_wears_off = Your surge of speed fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+}}
+| TableLocations = Qeynos<br/>Freeport
+| TableEra = Classic
+}}

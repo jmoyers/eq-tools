@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Collaboration
+| spellicon = H
+| description = Cloaks you in an amiable aura, causing creatures of your target's faction to view you more favorably.
+
+| classes = * [[Enchanter]] - Level 50
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Faction by 300 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel quite amicable.
+| msg_cast_on_other = Someone  looks friendly.
+| msg_wears_off = You no longer feel amicable.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

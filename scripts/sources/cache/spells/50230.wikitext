@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Scent of Terris
+| spellicon = G
+| description = Surrounds your target in the scent of Terris, causing them to be more susceptible to fire, poison, and disease.
+
+| classes = 
+
+* [[Necromancer]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Fire Resist by 33 (L52) to 36 (L58) }}
+{{SpellSlotRow | 3 | Decrease Poison Resist by 33 (L52) to 36 (L58) }}
+{{SpellSlotRow | 4 | Decrease Disease Resist by 33 (L52) to 36 (L58) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 11.4 minutes @L52 to 13 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You smell the faint scent of Terris.
+| msg_cast_on_other = Someone  is surrounded by a dark haze.
+| msg_wears_off = The scent of Terris fades.
+
+| where_to_obtain = 
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

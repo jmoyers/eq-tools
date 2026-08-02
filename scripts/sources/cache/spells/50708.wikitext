@@ -1,0 +1,49 @@
+<noinclude>{{Kunark Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Song of Midnight
+| spellicon = G
+| description = The dark sounds of the night cause your enemies to rapidly flee in terror. This song only works at night time.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Fear(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 8 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Movement Speed by 45% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | '''Night time only''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]]
+
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Horn
+
+| msg_cast_on_you = Your mind snaps in terror.
+| msg_cast_on_other = Someone  flees in nocturnal terror.
+| msg_wears_off = You are no longer terrified.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Balik Wolftrot]] | Outpost | (-3010,2968) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = Kunark
+}}

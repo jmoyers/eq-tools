@@ -1,0 +1,62 @@
+{{Spellpage|
+
+| spellname = Augmentation of Death
+| spellicon = G
+| description = Fills your pet with rage, giving it increased attack speed, armor class, and strength for 17 minutes.
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 65% }}
+{{SpellSlotRow | 2 | Increase STR by 52 (L55) to 55 (L60) }}
+{{SpellSlotRow | 3 | Increase AC by 14 (L55) to 15 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 250
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 30.00
+| duration = 17.5 minutes
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes gleam with madness.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Dragon Necropolis]]
+* [[A Chetari seeker]]
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A guardian power]]
+* [[A Sylvan Protector]]
+
+[[Siren's Grotto]]
+* [[A Siren Beguiler]]
+
+[[Temple of Veeshan]]
+* [[A cerulean sky gazer]]
+* [[A fiery temple guardian]]
+* [[A fiery watcher]]
+* [[A glimmer drake]]
+* [[A greater sky drake]]
+* [[A shimmering green drake]]
+* [[An Ancient Sky Drake]]
+* [[An ancient frost guardian]]
+* [[An ancient shard wyvern]]
+
+[[Velketor's Labyrinth]]
+* [[A Velium Hunter]]
+
+}}

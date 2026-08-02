@@ -1,0 +1,35 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = ancient breath
+| spellicon = C
+| description = Cast by [[Vulak`Aerr]] in NToV. AoE magic based slow. It can be cured with [[Abolish Disease]] or similar with multiple casts. When it lands, it has a red particle effect, like a fire nuke.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 60% }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 250 }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 20 per tick }}
+{{SpellSlotRow | 5 | Increase Disease Counter by 36 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 60.00
+| duration = 3 minutes @L1 to 3 hours 15 minutes @L65
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = Your life force drains away.
+| msg_cast_on_other =  Soandso screams in horror and pain.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

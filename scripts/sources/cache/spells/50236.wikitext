@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Chill Bones
+| spellicon = G
+| description = Freezes the flesh from your target's body, causing between 505 and 540 damage and temporarily transforming them into a skeleton. 2.57 DPM.
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease HP when cast by 505 (L55) to 515 (L65) }}
+{{SpellSlotRow | 3 | Illusion: 60 }}
+{{SpellSlotRow | 4 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 210
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You feel your skin harden and crack from the frost.
+| msg_cast_on_other = Someone 's skin freezes and cracks off.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+}}

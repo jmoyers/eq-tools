@@ -6,6 +6,8 @@ import { errorLogPath, logError } from './errorLog'
 import { characterId, listCharacters, parseLogName, resolveActiveCharacter } from './log/config'
 import { Tailer } from './log/Tailer'
 import { parseEvent, parseLine } from './log/parser'
+import { installSpellDb } from './log/rulesets'
+import { loadSpellDb } from './data/spellDb'
 import { LogBus } from './log/bus'
 import { scanLog } from './log/scanHistory'
 import { CombatEngine } from './combat/engine'
@@ -94,9 +96,15 @@ const characterModule = new CharacterModule()
 // (owned by the store), loaded into the module here and re-synced on every save.
 const alertsModule = new AlertsModule()
 alertsModule.setDefs(getAlerts())
-// The buffs extension (Task #19): mines per-spell buff durations from the cast/fade
-// lifecycle and serves live active buffs + stats over the standard module transport.
-const buffsModule = new BuffsModule()
+// Load the scraped spell DB (Task #34) and inject it into the parser config so the
+// parser emits PRECISE message-driven buff events (buffApply/buffWearOff) — and give the
+// same DB to the buffs module for authoritative durations + the self-heal-by-buff apply.
+const spellDb = loadSpellDb()
+installSpellDb(spellDb)
+console.log(`[eq-tools] Spell DB: ${spellDb.spells.length} spells (${spellDb.castOnYou.size} unique cast-on-you msgs).`)
+// The buffs extension (Task #19; message-driven model Task #34): tracks the player's own
+// buffs from precise message applies + cast-timing mining, serving live actives + stats.
+const buffsModule = new BuffsModule(spellDb)
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)

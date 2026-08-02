@@ -1,0 +1,38 @@
+{{Epics Era}}
+
+{{Spellpagesmart|
+
+| spellname = Summon Orb
+| spellicon = 37
+| description = Focuses mana into the form of an orb of elemental mastery.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 45
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Orb of Mastery}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 500
+| range =  
+| casting_time = 5.00
+| fizzle_time = 3.00
+| recast_time = 30.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A swirling orb of elements forms in your hand.
+| msg_cast_on_other = Someone  summons a swirling orb of elements.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* [[Magician Epic Quest]]
+
+| TableLocations = [[Magician Epic Quest]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

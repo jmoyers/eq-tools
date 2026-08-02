@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Bolt of Karana
+| spellicon = C
+| description = Strikes your target with a bolt of lightning, causing 200 damage. Only works outdoors.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Dragon Spine Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 200 }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 15.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Lightning surges through your body.
+| msg_cast_on_other = Someone  has been struck by lightning.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

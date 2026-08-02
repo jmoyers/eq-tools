@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Shadow Vortex
+| spellicon = 1
+| description = Covers your target in a mass of darkness that steals their armor class and gives it to you for 7 min 30s.
+
+| classes = 
+
+* [[Necromancer]] - Level 19
+* [[Shadow Knight]] - Level 37
+
+| items_with_effect = 
+
+<ul><li> {{:Cazic Quill}}
+</li><li> {{:Twisted Oaken Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 7 | Decrease AC by 9 (L20) to 12 (L30) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 40
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 6 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel a shadow pass over you.
+| msg_cast_on_other = Someone  is surrounded by a vortex of shadows.
+| msg_wears_off = The vortex of shadows fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

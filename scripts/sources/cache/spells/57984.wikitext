@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Swarm of Pain
+| spellicon = 159
+| description = Commands a swarm of insects to attack your target relentlessly, causing 56 every 6 seconds for 1 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Ranger]] - Level 40
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 50 (L40) to 56 (L46) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 167
+| range = 250
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 1 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you = A swarm of nifiliks crawl through your armor.
+| msg_cast_on_other =  is covered in a swarm of nifiliks.
+| msg_wears_off = The nifiliks stop biting you.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

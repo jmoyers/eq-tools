@@ -1,0 +1,61 @@
+<noinclude>{{Disambig3|[[Earthquake (game mechanic)]]}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Earthquake
+| spellicon = 161
+| description = Causes the earth to tremble around you, causing between 214 and 246 damage to up to 25 nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 31
+* [[Cleric]] - Level 44
+
+| items_with_effect = 
+
+<ul><li> {{:Earthshaker's Mantle}}
+</li><li> {{:Earthshaker}}
+</li><li> {{:Hierophant`s Crook}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 214 (L31) to 246 (L39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 375
+| range = 30
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel the ground shake.
+| msg_cast_on_other = Someone  is smashed by the heaving ground.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-6)]] | Cleric Guild | (1197,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-14)]] | Necromancer Guild | (2111,-429) }}
+{{SpellWhereRowB | [[Erudin]] | [[Junice Weslent]] | Cleric Guild - Quellious (Outside) | (-697,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terren Starwatcher]] | Cleric Guild | (13,-426) }}
+{{SpellWhereRowB | [[Kaladim]] | [[Poriss Splitrock]] | Cleric Guild | (753,135) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Lyniv S'Kor]] | Cleric Guild | (410,-858) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Nosspri Andrika]] | Cleric Guild (basement) | (102,391) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Ladia Qursii]] | Cleric Guild (Outside) | (-225,-238) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Senst Ereek]] | Cleric Guild | (340,-413) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Misty Valefriend]] | Cleric Guild | (-226,-374) }}
+{{SpellWhereRowB | [[Steamfont Mountains]] | [[Crisyn]] | Druid Ring | (-1750,1657) }}
+}}
+
+| TableLocations = Vendors
+| TableEra = {{{TableEra|Classic}}}
+}}

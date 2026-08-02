@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Sunskin
+| spellicon = B
+| description = Cloaks your group in a light aura, rendering them invisible to most undead creatures for up to 27.0 mins.
+
+| classes = 
+
+* [[Cleric]] - Level 51
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility versus Undead }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 120
+| range = 0
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 27 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your skin tingle.
+| msg_cast_on_other = Someone  fades a little.
+| msg_wears_off = Your skin stops tingling.
+
+| where_to_obtain = 
+
+* This spell is obtained via the quests: [[Cleric Spells (Good)]] or [[Cleric Spells (Evil)]].
+
+}}

@@ -1,0 +1,39 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Flame of the Efreeti
+| spellicon = C
+| description = Engulfs your target in flame, causing 100 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ancient Fire Etched Flamberge}}
+</li><li> {{:Baton of Flame}}
+</li><li> {{:Kreizenn's Flame}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 100 }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = Your skin erupts in flame.
+| msg_cast_on_other = Someone 's skin erupts in flame.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Thistlecoat
+| spellicon = 155
+| description = Surrounds your body in a coat of thistles that increases your armor class, as well as harming those that strike you.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 7
+* [[Ranger]] - Level 13
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Armor Class by 3 (L7) to 5 (L13) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Damage Shield by 1 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 25
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Thistles spring from your skin.
+| msg_cast_on_other = Someone 's skin sprouts thistles.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

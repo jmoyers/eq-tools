@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Mesmerize
+| spellicon = 35
+| description = Causes your opponent to fall into an enchanted sleep for up to 24s. This spell works on creatures up to level 55.
+
+| classes = * [[Enchanter]] - Level 2 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/55) }}
+{{SpellSlotRow | 2 | Memblur(1%) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 15
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You are mesmerized.
+| msg_cast_on_other = Someone  has been mesmerized.
+| msg_wears_off = You are no longer mesmerized.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRow  | [[Felwithe|South Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRowB  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

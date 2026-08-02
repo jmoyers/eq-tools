@@ -1,0 +1,47 @@
+{{Spellpage|
+
+| spellname = Trepidation
+| spellicon = G
+| description = A booming voice fills your target's ears, causing them to flee in terror.
+
+| classes = 
+
+* [[Cleric]] - Level 57
+* [[Necromancer]] - Level 56
+* [[Enchanter]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 7.00
+| duration = 6 ticks (36 seconds)
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-25)
+
+| msg_cast_on_you = Your mind fills with trepidation.
+| msg_cast_on_other = Someone  is filled with trepidation.
+| msg_wears_off = The trepidation fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}
+[[Old Sebilis]]
+* [[Blood of chottal]]
+* [[Sebilite Juggernaut]]
+[[City of Mist]]
+* [[Lord Rak'Ashiir]]

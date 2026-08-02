@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mass Imbue Diamond
+| spellicon = U
+| description = Focuses the power of Mithaniel Marr into five diamonds. Consumes five diamonds when cast.
+
+| classes = 
+
+* [[Cleric]] - Level 29
+* [[Shaman]] - Level 29
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: Imbued Diamond }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 600
+| range =  
+| casting_time = 10.00
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Diamond]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Grymm]] | Temple of Terror (First Floor) | (1018,-163) }}
+{{SpellWhereRow  | [[Grobb]] | [[Barsk - Troll]] | Shaman Guild | (303,-417) }}
+}}
+
+}}

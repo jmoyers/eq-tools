@@ -1,0 +1,46 @@
+{{Kunark Era}}
+{{Spellpagesmart|
+
+| spellname = Sloths Healing
+| spellicon = 118
+| description = Imbues your target with healing of a sloth spirit, healing 300 hit points every 6 seconds for 24 seconds, but vastly decreasing their movement rate. 
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+
+* [[Shaman]] - Level 50+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Current Hit Points by 300 per Tick }}
+{{SpellSlotRow | 3 | Decrease Movement Speed by 100% }}
+
+| items_with_effect = 
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| resist = n/a
+| casting_time = 6.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 24s
+| target_type = Single
+| spell_type = Heal Over Time
+
+
+| other = 
+
+| msg_cast_on_you = You .
+| msg_cast_on_other = Someone .
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

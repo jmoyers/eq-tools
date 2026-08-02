@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Illusion: Water Elemental
+| spellicon = U
+| description = Cloaks you in a shimmering illusion that makes you appear to be a Water Elemental, This spell also grants you magical breathing.
+
+| classes = * [[Enchanter]] - Level 28
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 75 }}
+{{SpellSlotRow | 2 | Water Breathing(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 50
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 36 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel different.
+| msg_cast_on_other = Someone 's image shimmers.
+| msg_wears_off = Your illusion fades.
+
+|items_with_effect = 
+
+<ul><li>  {{:Neriad Shawl}}
+</li></ul>
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Raine Beteria]] | Library (F2) | (-1048,-213) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Pinilla]] | Enchanter Guild (F3) | (564,736) }}
+}}
+
+}}
+[[Category: Illusions]]

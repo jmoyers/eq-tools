@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Wave of Life
+| spellicon = 99
+| description = Emanates a wave of life from the caster, healing 219 hit points for everyone in your group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Paladin]] - Level 39
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 201 (L39) to 219 (L45) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 274
+| range = 100
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 30.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A wave of healing washes over you.
+| msg_cast_on_other =  is surrounded by a wave of healing.
+| msg_wears_off = 
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

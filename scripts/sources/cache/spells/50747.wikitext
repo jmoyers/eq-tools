@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Shrieking Howl
+| spellicon = C
+| description = Engulfs your target in a piercing howl, causing 120 damage and a brief stun.  The stun works on creatures up to level 55.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Howling Cutlass}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 4.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 120 }}
+
+| mana = 120
+| skill = 
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are deafened.
+| msg_cast_on_other = Someone  is deafened.
+| msg_wears_off = You are no longer stunned.
+
+}}
+
+[[Category: NPC Only Spells]]

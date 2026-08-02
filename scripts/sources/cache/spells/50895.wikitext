@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Blessing of the Blackstar
+| spellicon = J
+| description = Grants your group a blessing, increasing hit points by 100.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Blackstar, Mace of Night}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 100 (L50) }}
+
+| skill = Alteration
+| mana = 0
+| range = 100 
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 0
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The blessing of the Blackstar surrounds you.
+| msg_cast_on_other = Someone  is surrounded by the blessing of the Blackstar.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

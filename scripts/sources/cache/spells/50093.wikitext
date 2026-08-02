@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Egress
+| spellicon = V
+| description = Opens a mystical portal that transports you to a relatively safe location in the current zone. See [[Travel Guide#Evacuate_Locations|the travel guide]] for locations.
+
+This spell now also works in indoor zones as of the September 5th, 2016 patch.
+
+Like the Evac and [[Succor]] spells, Egress does have a small chance to leave you behind, even though you are the only possible target for the spell. your mana will be drained, you will wave, and be in the same spot.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Evacuate to -1,-1,-1 in same | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  sinks into the ground.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via a quest: [[Druid Spells]].
+| TableLocations = Quest
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

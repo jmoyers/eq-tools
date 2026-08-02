@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Injected Poison III
+| spellicon = N
+| description = Poisons your target, causing between 2 and 49 damage initially and between 2 and 49 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 5 ticks @L5).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Amnesic Lolium}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 2 (L1) to 49 (L48) }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 2 per tick (L1) to 49 per tick (L48) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 5 ticks @L5
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

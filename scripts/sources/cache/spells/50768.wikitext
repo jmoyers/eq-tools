@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Barrier of Force
+| spellicon = K
+| description = Raises a barrier of force around your body that increases your mana regeneration and absorbs some damage before dissipating.
+
+| classes = 
+
+This spell is is the right-click effect of the [[Wizard]] epic weapon, the {{:Staff of the Four}}.
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of the Four}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Absorb Damage by 16 (L1) to 800 (L54) }}
+{{SpellSlotRow | 2 | Stacking: Block new spell if slot 5 is effect 'Mana' and < 20 }}
+{{SpellSlotRow | 5 | Increase Mana by 3 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 40 minutes @L34
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are surrounded by a swirling maelstrom of magical force.
+| msg_cast_on_other = Someone  is surrounded by a swirling maelstrom of magical force.
+| msg_wears_off = The maelstrom dissipates.
+}}
+
+[[Category:NPC Only Spells]]

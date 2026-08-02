@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Reanimation
+| spellicon = J
+| description = Revives a slain ally.  It takes some time for the recently revived to fully recover.
+
+| classes = 
+
+* [[Cleric]] - Level 12 (Autogranted)
+* [[Paladin]] - Level 22
+
+| slots = 
+
+{{SpellSlotRow | 1 | Resurrect ally }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = Instant
+| target_type = Corpse
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Spell Vendor Area | (96, -162, -21) }}
+}}
+
+}}

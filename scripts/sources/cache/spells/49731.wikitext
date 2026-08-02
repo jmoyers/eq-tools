@@ -1,0 +1,77 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Identify
+| spellicon = U
+| description = Provides magical information about the item that your target is holding.<br><br><br>To use the spell on yourself, pick the item you want to identify from your inventory by left clicking it, so that it's held on your cursor (as if you were moving the item).  Then, with the item held on your cursor, target yourself and cast the spell.<br><br>To use the spell on others, have them hold their item to be identified on their cursor while you cast the spell on them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Bard]] - Level 14 ([[Lyssa's Cataloging Libretto]])
+* [[Wizard]] - Level 16
+* [[Magician]] - Level 16
+* [[Enchanter]] - Level 16
+* [[Necromancer]] - Level 20
+
+| items_with_effect = 
+
+<ul><li> {{:Eye of Melnor}}
+</li><li> {{:Holgresh Grand Vizier Beads}}
+</li><li> {{:Rod of Identification}}
+</li><li> {{:Silvery Mask}}
+</li><li> {{:Star of Eyes}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Identify | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 50
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-2)]] | Library | (1074,-1004) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-6)]] | Necromancer Guild | (2085,-370) }}
+{{SpellWhereRowB | [[Erudin|Erudin Palace]] | [[Telor Beteria]] | Magician Guild (Outside) | (703,806) }}
+{{SpellWhereRow  | [[Neriak|Neriak - Commons]] | [[Tkaz H'Rugla]] | Caster Guild (F1) | (160,-968) }}
+{{SpellWhereRowB | [[Paineel]] | [[Nedorl Ipabrun]] | Necromancer Guild | (674,805) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Pai Berenis]] | Caster Guild | (309,-608) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Srell Tumblebrook]] | Building just inside zone | (450,-810) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Suffering]] | Cubby near PvP Area | (-382,272) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Xinari Anara]] | Caster Guild (F2) | (138,-755) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+* '''Necromancer''' [[Research]] (Trivial: 41)
+** '''Yield: Identify''' x1
+** In [[Book of Dark Bindings]]:
+:: {{SmIcon|869}} 1 x [[Words of Enlightenment]] - Dropped
+:: {{SmIcon|869}} 1 x [[Words of Anthology]] - Dropped
+
+* '''Wizard''' [[Research]] (Trivial: 21)
+** '''Yield: Identify''' x1
+** In [[Lexicon]]:
+:: {{SmIcon|967}} 1 x [[Rune of Falhalem]] - Dropped
+:: {{SmIcon|967}} 1 x [[Rune of Substance]] - Dropped
+
+| TableLocations = Vendors
+| TableEra = {{{TableEra|Classic}}}
+}}

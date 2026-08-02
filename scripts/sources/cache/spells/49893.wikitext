@@ -1,0 +1,57 @@
+{{Spellpage|
+
+| spellname = Holy Might
+| spellicon = D
+| description = Strikes an enemy with holy might, briefly stunning them and causing 60 damage. This spell works on creatures up to level 55.
+
+| classes = 
+
+* [[Cleric]] - Level 16
+* [[Paladin]] - Level 42
+
+| items_with_effect = 
+
+<ul><li> {{:Sarnak Devastator}}
+</li><li>{{:Forlorn Totem of Rolfron Zek}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0* seconds up to level 55 (*some player-cast stuns are capped at 4 seconds) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 29 (L19) to 60 (L50) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 60
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is stunned.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Duppa Pickstone]] | Cleric Guild | (748,128) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRow  | [[Paineel]] | [[Erelin Verisue]] | Cleric Guild | (1226,551) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Taben]] | Cleric Guild | (-227,809) }}
+}}
+
+}}

@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Shock of Poison
+| spellicon = N
+| description = Strikes your target with a jet of poison, causing between 200 and 210 damage.
+
+| classes = * [[Necromancer]] - Level 21
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 146 (L24) to 160 (L29) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 99
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel your skin burn as poison seeps through your skin.
+| msg_cast_on_other = Someone  screams in agony.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Invisibility versus Animal
+| spellicon = B
+| description = Covers your skin in a light veil that renders you invisible to most animals.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Earthen Boots}}
+</li><li>  {{:Goblin Gazughi Ring}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility versus Animals }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 18 minutes @L6
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Part of your image fades away.
+| msg_cast_on_other = Someone  is surrounded by an aura which shimmers and then fades away.
+| msg_wears_off = Your image returns.
+
+}}
+
+[[Category: NPC Only Spells]]

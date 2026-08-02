@@ -1,0 +1,64 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Invisibility
+| spellicon = 18
+| description = Cloaks your target in a mystic veil, making them invisible to many creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 4
+* [[Magician]] - Level 8
+* [[Wizard]] - Level 16
+* [[Shaman]] - Level 27
+* [[Beastlord]] - Level 43
+
+| items_with_effect = 
+
+<ul><li> {{:Cloudy Potion}}
+</li><li> {{:Beguiler's Slippers}}
+</li><li> {{:Resplendent Slippers}}
+</li><li> {{:Illusionist's Slippers}}
+</li><li> {{:Dazzling Slippers}}
+</li><li> {{:Cobalt Greaves}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 30
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 20 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Invisibility
+| resist = Unresistable
+
+| other = 
+* Must be grouped with your target.
+* Casting Invisibility on yourself will break your charm if you're an Enchanter with a charmed pet.
+* Certain actions will immediately break invis, such as turning on auto-attack, casting a spell, using certain combat skills, being damaged by an attack or direct-damage spell, opening (but not receiving) a trade window, looting corpses or getting the invis buff dispelled. This list might not be exhaustive.
+* All un-improved invisibility spells can randomly break early, sometimes mere seconds after casting. As such, invisibility should be treated as a method for mitigating risk of aggro, not eliminating it completely.
+* Many creatures may innately see invis. All undead can be expected to see invis, animals often tend not to see invis, humanoids and other monsters are a mixed bag.
+* To confirm if a non-indifferent NPC can see invis, cast invis on yourself and /consider it. If the faction message changes to indifferent, then it will not see you. If the faction message is anything else, it can still see you. If an NPC was indifferent to you to begin with, this method will not be informative.
+
+| msg_cast_on_you = You vanish.
+| msg_cast_on_other = Someone fades away.
+| msg_wears_off = You appear.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

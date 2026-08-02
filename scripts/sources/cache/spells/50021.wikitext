@@ -1,0 +1,37 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ring of Feerrott
+| spellicon = V
+| description = Opens a mystical portal that transports you to the [[Feerrott]] Jungle.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 22
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport group to 367,-1885,16 in [[Feerrott]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (455,1386) }}
+}}
+| TableLocations = West Commonlands
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,52 @@
+{{Spellpage|
+
+| spellname = Word of Health
+| spellicon = J
+| description = Mends the wounds of everyone in your group, healing 485 hit points.
+
+| classes = * [[Cleric]] - Level 30
+| items_with_effect = 
+
+<ul><li> {{:Akkirus' Greaves of the Risen}}
+</li><li> {{:Greaves of Forbidden Rites}}
+</li><li> {{:Greaves of Stability}}
+</li><li> {{:Rod of Health}}
+</li><li> {{:Templar's Leggings}}
+</li><li> {{:Tunareberry}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 94 (L34) to 100 (L40) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 302
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel much better.
+| msg_cast_on_other = Someone  feels much better.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRowB | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+}}
+
+}}

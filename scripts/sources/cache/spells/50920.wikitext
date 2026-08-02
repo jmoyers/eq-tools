@@ -1,0 +1,35 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Gift of Aerr
+| spellicon = C
+| description = Cast by [[Vulak`Aerr]] in NToV. Has a lifetap particle effect.
+
+It may be a PB AOE Lifetap. If there's 50 people fighting him, he AOE's and sucks up 2500 hp.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 50 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 15.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = A small piece of your soul is sucked out of you.
+| msg_cast_on_other = Soandso screams in horror and pain.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

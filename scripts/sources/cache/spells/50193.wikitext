@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Defoliate
+| spellicon = E
+| description = Inflicts severe damage upon a targeted plant, causing between 198 and 210 damage.
+
+'''Note: Not in game on p1999 or live.  This spell only exists on the Everquest test servers and is attainable by using the /testbuff command.  It is not dropped, researched or sold.  However, the level 52 version of the spell, [[Defoliation]], does exist.'''
+| classes = 
+
+* [[Necromancer]] - Level 29
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 198 (L29) to 210 (L35) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 100
+| range = 200
+| casting_time = 3.30
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Plant
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  wilts.
+| msg_wears_off =  
+
+
+}}

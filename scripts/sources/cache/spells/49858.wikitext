@@ -1,0 +1,59 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Divine Aura
+| spellicon = K
+| description = Encases the caster in a divine aura, rendering them invulnerable to all attacks for 18s.
+
+| classes = 
+
+* [[Cleric]] - Level 1 (Autogranted)
+* [[Paladin]] - Level 48
+
+| items_with_effect = 
+
+<ul><li> {{:Shiny Brass Idol}}
+</li><li> {{:Earring of the Frozen Skull}}
+</li><li> {{:Protection of the Dain}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invulnerability }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 10
+| range =  
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 900.00
+| duration = 3-4 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The gods have rendered you invulnerable.
+| msg_cast_on_other =  
+| msg_wears_off = Your invulnerability fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRowB | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (773,115) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F2) | (103,388) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRowB | [[Paineel]] | [[Zarnlel Apridor]] | Cleric Guild | (1125,440) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Derrin]] | Cleric Guild | (-205,773) }}
+}}
+
+}}

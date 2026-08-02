@@ -1,0 +1,40 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Invert Gravity
+| spellicon = C
+| description = Causes a sudden reversal in the gravity around your target, doing between 368 and 380 initial damage and causing them to fly high into the air.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 368 (L59) to 380 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Toss Up(350) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range = 200
+| casting_time = 6.10
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel gravity reverse.
+| msg_cast_on_other = Someone  rises chaotically into the air.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Kunark Level 50+ Mobs
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

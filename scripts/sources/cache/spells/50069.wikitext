@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Spikecoat
+| spellicon = 155
+| description = Surrounds your body in a coat of spikes that increases your armor class, as well as harming those that strike you.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 37
+* [[Ranger]] - Level 42
+
+| items_with_effect = 
+
+<ul><li> {{:Girdle of Living Thorns}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Armor Class by 19 (L37) to 21 (L44) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Damage Shield by 4 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 110
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Spikes spring from your skin.
+| msg_cast_on_other = Someone 's skin sprouts spikes.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

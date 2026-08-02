@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Dyn's Dizzying Draught
+| spellicon = M
+| description = Spins your target in a circle, preventing them from taking any action for 55 seconds up to level 55.
+| classes = * [[Enchanter]] - Level 28
+| slots = 
+
+{{SpellSlotRow | 1 | SpinStun }}
+{{SpellSlotRow | 2 | Decrease AC by 9 (L29) to 15 (L49) }}
+{{SpellSlotRow | 3 | Decrease Mana by 50 per tick }}
+{{SpellSlotRow | 4 | Decrease AGI by 30 (L29) to 50 (L49) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 35.00
+| duration = 2 Ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You begin to spin.
+| msg_cast_on_other = Someone  begins to spin.
+| msg_wears_off = You feel dizzy.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Denon's Dissension
+| spellicon = 24
+| description = A harsh dissonance that assails the minds of all nearby creatures, draining their mana.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 35
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Mana by 22 (L35) to 30 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]]
+
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Jagged notes tear through your mind.
+| msg_cast_on_other = Someone  winces.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+}}
+| TableLocations = Qeynos<br/>Freeport
+| TableEra = Classic
+}}

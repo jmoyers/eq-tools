@@ -1,0 +1,48 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Bobbing Corpse
+| spellicon = G
+| description = Causes your body to become like the dead, providing increased poison resistance, enduring breath, and levitation for 1 hour(s) 3.0 mins. 
+
+Compare to the necromancer's [[Dead Man Floating]].
+
+| classes = 
+
+* [[Shadow Knight]] - Level 55
+
+| items_with_effect = 
+
+<ul><li> {{:Shai`din Revenant Bauble}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Water Breathing(1) }}
+{{SpellSlotRow | 3 | Levitate(1) }}
+{{SpellSlotRow | 4 | Increase Poison Resist by 40 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin shrivels.
+| msg_cast_on_other = Someone 's skin shrivels.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+}}
+
+}}

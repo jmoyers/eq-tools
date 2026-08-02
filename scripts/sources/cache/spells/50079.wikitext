@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Form of the Great Wolf
+| spellicon = T
+| description = Fills you with the spirit of the wild, allowing you to take the form a wolf and granting *100%N.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 40
+| items_with_effect = 
+
+<ul><li> {{:Lycanthropic Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion (race #796) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 57% (L44) to 60% (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase ATK by 45 (L44) to 51 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Ultravision(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 135
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Someone  turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall
+| TableEra = {{{TableEra|Classic}}}
+}}
+[[Category: Illusions]]

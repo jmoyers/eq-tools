@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Spook the Dead
+| spellicon = 164
+| description = Inspires fear in an undead opponent, causing them to flee.
+
+| classes = 
+
+* [[Cleric]] - Level 1
+* [[Necromancer]] - Level 10
+* [[Paladin]] - Level 9
+* [[Shadow Knight]] - Level 20
+
+| items_with_effect = 
+
+<ul><li> {{:Initiate Symbol of Cazic Thule}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 10
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 18 Sec
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your bones tingle.
+| msg_cast_on_other = Someone  has the fear of life put in them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

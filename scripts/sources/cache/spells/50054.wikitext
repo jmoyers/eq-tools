@@ -1,0 +1,47 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Ring of Iceclad
+| spellicon = V
+| description = Opens a mystical portal that transports you to the [[Iceclad Ocean]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 34
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -630,4925,113 in iceclad | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow | [[Northern Karana|Northern Plains of Karana]] | [[Roule]] | Gypsy Camp | (-644,-218) }}
+{{SpellWhereRowB | [[Oasis of Marr]] | [[Transan]] | Gypsy Camp | (611,50) }}
+{{SpellWhereRow | [[Rathe Mountains]] | [[Tarikh Korula]] | Gypsy Camp | (3974,1422) }}
+{{SpellWhereRowB | [[The Wakening Land]] | [[Phillip Aghllsews]] | PoG Tower | (519,-1028) }}
+}}
+
+| TableLocations = N.Karana<br/>Oasis<br/>Rathe Mntns
+| TableEra = {{{TableEra|Velious}}}
+
+}}

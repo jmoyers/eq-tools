@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Yekan's Quickening
+| spellicon = 134
+| description = Fills your warder with the quickening of Yekan, increasing their attack speed, strength, armor class, and attack rating.
+
+| classes = 
+
+* [[Beastlord]] - Level 37
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase STR by 25 (L1) to 45 (L50) }}
+{{SpellSlotRow | 4 | Increase Attack Speed by 37% (L1) to 60% (L50) }}
+{{SpellSlotRow | 5 | Increase ATK by 20 }}
+{{SpellSlotRow | 6 | Increase AC by 5 (L1) to 10 (L50 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = 1 hour
+| target_type = Pet
+| spell_type = Pet Buff
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone begins to move with the speed of Yekan.
+| msg_wears_off =  
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+}}

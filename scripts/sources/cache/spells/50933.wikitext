@@ -1,0 +1,39 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Static Strike
+| spellicon = C
+| description = Strikes your target with a burst of intense force, causing between 133 and 179 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Veldrak's Shortblade}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 133 (L1) to 179 (L24) }}
+{{SpellSlotRow | 2 | Stun for 1.0 seconds }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0
+| fizzle_time = 0
+| recast_time = 0
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You stagger back.
+| msg_cast_on_other = Someone staggers back.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

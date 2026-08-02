@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Tashania
+| spellicon = T
+| description = Causes your target's ears to echo with the barking of Tashan, lowering their magic resistance. 
+
+| classes = * [[Enchanter]] - Level 41
+| items_with_effect = 
+
+<ul><li> {{:Shissar Nullifier Staff}}
+</li><li> {{:Orb of Tishan}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Magic Resist by 31 (L44) to 33 (L48) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 30
+| range = 200
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 11 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You hear the barking of Tashania.
+| msg_cast_on_other = Someone  glances nervously about.
+| msg_wears_off = The barking fades.
+
+| where_to_obtain = 
+
+* This spell is obtained via a quest - [[Coin of Tash (Tashania)]]. It is NO TRADE.
+
+}}

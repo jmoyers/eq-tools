@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Flare
+| spellicon = 89
+| description = Conjures a bolt of light that illuminates the surrounding area briefly.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 1
+
+| items_with_effect = 
+
+<ul><li> {{:Flare Stone}}
+</li>
+<li>{{:Summoned: Staff of Tracing}}
+</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Cast Light | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 3
+| range = 400
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 18.00
+| duration = Instant
+| target_type = Bolt
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+
+}}

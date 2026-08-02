@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Monkey Stun
+| spellicon = D
+| description = [[The tangrin]] has a chance to proc this stun on melee hits every 12 seconds. (02/10/2026: I aggroed him and was stunned by this long before he got into melee range, effectively making him very dangerous to pull.)
+| classes = 
+
+This spell is cast only by [[The tangrin]]
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 20.0 seconds}}
+{{SpellSlotRow | 2 | Decrease HP when cast by 233 }}
+
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.0s
+| duration = 20 seconds
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0) 
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+}}
+
+[[Category:NPC Only Spells]]

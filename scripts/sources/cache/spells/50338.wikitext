@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Bane of Nife
+| spellicon = N
+| description = Fills your target's blood with poison, causing 150 damage initially and 214 damage every six seconds for 42 secs (7 ticks). Total (1648) & 3.88 dpm. 
+
+| classes = 
+
+* [[Shaman]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 10 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 150 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 214 per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 425
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 7 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your veins fill with deadly poison.
+| msg_cast_on_other = Someone 's veins have been filled with deadly poison.
+| msg_wears_off = The poison has run its course.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Skyfire Mountains]]
+* [[Eldrig the Old]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+}}

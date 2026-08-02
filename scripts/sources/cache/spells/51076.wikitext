@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Vengeance of the Glades
+| spellicon = Q
+| description = Causes the earth to adhere to your target's feet, preventing them from moving for 60 secs.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Root }}
+
+| skill = 
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 4.00
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

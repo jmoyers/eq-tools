@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Grasping Roots
+| spellicon = 117
+| description = Commands roots to take hold of your target, doing 10 damage and preventing their movement for 48s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 2 (Autogranted)
+* [[Ranger]] - Level 15
+
+| items_with_effect = 
+
+<ul><li> {{:Warden Symbol of Tunare}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entwined.
+| msg_cast_on_other = Someone 's feet become entwined.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

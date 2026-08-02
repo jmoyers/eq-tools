@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Strip Enchantment
+| spellicon = U
+| description = Tears the magic from your target, causing their enchantments to fade.
+
+| classes = * [[Enchanter]] - Level 22
+| items_with_effect = 
+
+<ul><li> {{:Weeping Wand}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Cancel Magic(1) }}
+{{SpellSlotRow | 2 | Cancel Magic(1) }}
+{{SpellSlotRow | 3 | Cancel Magic(1) }}
+{{SpellSlotRow | 4 | Cancel Magic(1) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 70
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel very dispelled.
+| msg_cast_on_other = Someone  feels very dispelled.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

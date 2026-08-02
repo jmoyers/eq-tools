@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Summon Golin
+| spellicon = C
+| description = Summons the spirit of Golin to your side. An iksar skeleton pet that is about Level 25.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Crusader's Coffin}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: DALSkelGolin25 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

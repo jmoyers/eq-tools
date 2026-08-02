@@ -1,0 +1,47 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Upheaval
+| spellicon = 161
+| description = Causes the earth to tremble around you, causing between 648 and 728 (Level 59) damage to all nearby enemies.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 48
+* [[Cleric]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 618 (L48) to 638 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 625
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel the ground scream and heave.
+| msg_cast_on_other = Someone  is mauled by the moving ground.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Cleric Spells (Good)]]
+* [[Cleric Spells (Evil)]]
+* [[Druid Spells]]
+| TableLocations = Quest
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

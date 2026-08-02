@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Sear
+| spellicon = O
+| description = Inflicts minor burns on your target, causing 1 damage every 6 seconds for 6 secs (1 ticks @L1 to 5 ticks @L9).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Burynaibane Spider Fang}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 1 per tick }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 ticks @L1 to 5 ticks @L9
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| other = 
+* '''Focus:''' Fire Beetle Eye
+
+
+| msg_cast_on_you = Your skin blisters.
+| msg_cast_on_other = Someone 's skin blisters.
+| msg_wears_off = The blistering stops.
+}}
+
+[[Category:NPC Only Spells]]

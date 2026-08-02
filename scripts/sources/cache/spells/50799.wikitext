@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Aura of Antibody
+| spellicon = E
+| description = Grants your body strengthened immunities, increasing disease resistance for up to 30.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Greater Potion of Antibody}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase CHA by 3 (L1) to 25 (L12) }}
+{{SpellSlotRow | 4 | Increase Disease Resist by 3 (L1) to 25 (L12) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 30 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You drink the potion.
+| msg_cast_on_other = Someone  drinks a potion.
+| msg_wears_off = The potion has worn off.
+}}
+
+[[Category:NPC Only Spells]]

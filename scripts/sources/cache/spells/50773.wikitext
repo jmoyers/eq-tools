@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Blood Claw
+| spellicon = G
+| description = Poisons your target's blood, causing 20 initial damage and 15 damage every 6 seconds for up to 12 secs (2 ticks).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Bloodclaw Battle Axe}}</li>
+<li>{{:Bloodclaw Dagger}}</li>
+<li>{{:Bloodclaw Mace}}</li>
+<li>{{:Bloodclaw Long Sword}}</li>
+<li>{{:Bloodclaw Rapier}}</li>
+<li>{{:Bloodclaw Scimitar}}</li>
+<li>{{:Stiletto of the Bloodclaw}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 20 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 15 per tick }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel poison course through your veins.
+| msg_cast_on_other = Someone  looks pained.
+| msg_wears_off = The poison wears off.
+}}
+
+[[Category:NPC Only Spells]]

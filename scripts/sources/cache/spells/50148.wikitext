@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Numb the Dead
+| spellicon = 40
+| description = Numbs the awareness of the undead, making them less likely to attack.  This spell works on creatures up to level 30.
+
+| classes = 
+
+* [[Necromancer]] - Level 2
+* [[Shadow Knight]] - Level 9 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRow | 1 | Frenzy Radius (15/30) }}
+{{SpellSlotRow | 2 | Reaction Radius (25/30) }}
+{{SpellSlotRow | 3 | Lull }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 20
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 1.5
+| recast_time = 3.00
+| duration = 2 minutes
+| target_type = Undead
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' [[Bone Chips]]
+* '''Note:''' Charisma affects successful lull probability
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  looks ambivalent.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

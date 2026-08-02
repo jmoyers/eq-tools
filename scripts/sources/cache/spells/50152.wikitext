@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Dark Pact
+| spellicon = G
+| description = Grips your body in an unholy darkness, slowly draining your hit points while regenerating your mana.
+
+| classes = * [[Necromancer]] - Level 6 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease hitpoints by 2 per tick }}
+{{SpellSlotRow | 2 | Increase mana by 2 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 5
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your health begin to drain.
+| msg_cast_on_other = Someone  looks sick.
+| msg_wears_off = You feel better.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-4)]] | Necromancer Guild | (2099,-393) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Peku Croxe]] | Underground | (-200,-244) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Misal S'Kor]] | Necromancer Guild (F1) | (1337,-1239) }}
+{{SpellWhereRow  | [[Paineel]] | [[Kilevra Natasu]] | Necromancer Guild | (692,869) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Gyrna Porrin]] | Necromancer Guild | (291,-322) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Plight]] | Cubby near PvP Area | (-391,234) }}
+}}
+
+}}

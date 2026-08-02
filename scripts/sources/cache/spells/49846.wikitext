@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Umbra
+| spellicon = K
+| description = Causes your image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+Does not stack with [[Aegolism]]
+
+| classes = 
+
+* [[Enchanter]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 29 @level 58 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 80
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 39 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your image fades into the umbra.
+| msg_cast_on_other = Someone 's image fades into the umbra.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

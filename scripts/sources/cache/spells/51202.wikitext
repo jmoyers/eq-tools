@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Molten Breath
+| spellicon = O
+
+| description = 
+
+This is the area-effect damage and dispel cast by [[Sontalak]] as a proc.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 650 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 
+| range = 300
+| casting_time = 
+| fizzle_time = 
+| recast_time = 
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your body combusts as the lava hits you.
+| msg_cast_on_other = Someone 's body combusts as the lava hits them.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

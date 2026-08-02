@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Fungus Spores
+| spellicon = E
+| description = Fills your body with energy, increasing strength and stamina for up to 5.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Fungus Spores}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STA by 25 }}
+{{SpellSlotRow | 2 | Increase STR by 25 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 5 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You inhale the fungus spores.
+| msg_cast_on_other = Someone  inhales a dark powder.
+| msg_wears_off = Your fungus frenzy fades.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,38 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Markar's Relocation
+| spellicon = V
+| description = Opens an arcane portal that teleports your entire group to the [[Emerald Jungle]]. 
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 37
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Evacuate group to -1259,3504,-341 in [[emeraldjungle]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

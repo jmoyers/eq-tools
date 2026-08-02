@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Leviathan Eyes
+| spellicon = B
+| description = Fills your target's eyes with the spirit of the deep, granting them water breathing, greatly improved night vision, and the ability to see otherwise invisible creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 44
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | See Invisible | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Ultravision | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Water Breathing (1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The spirit of the deep fills your eyes.
+| msg_cast_on_other = Player's eyes fill with the water of the deep.
+| msg_wears_off = The spirit of the deep leaves you.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}

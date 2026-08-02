@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Vampire Charm
+| spellicon = D
+| description = Cast by [[Tserrina Syl'Tor (NPC)]] & '''[[an enraged vampire]]'''.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 60 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = 1 ticks @L1 to 1 minute @L20
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been charmed.
+| msg_cast_on_other = Someone  has been charmed.
+| msg_wears_off = You are no longer charmed.
+
+}}
+
+[[Category:NPC Only Spells]]

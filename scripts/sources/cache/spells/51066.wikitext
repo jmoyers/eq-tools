@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Engulfing Roots
+| spellicon = 117
+| description = Commands roots to take hold of your target, doing 160 damage, and preventing their movement for 3 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 45
+| items_with_effect = 
+
+<ul><li> {{:Fist of Nature}}
+</li><li> {{:Oakleaf Scimitar}}
+</li><li> {{:Petrified Heartwood Flamberge}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 145 (L45) to 160 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 3 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entwined.
+| msg_cast_on_other = Someone 's feet become entwined.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | � | (519,-1028) }}
+}}
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

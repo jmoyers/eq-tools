@@ -1,0 +1,39 @@
+{{Paineel Era}}
+{{Spellpage|
+
+| spellname = Ant Legs
+| spellicon = U
+| description = Shrinks your target, allowing them greater mobility in tight quarters. '''Shrink spell only works indoors.'''
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Ant's Potion}}
+</li><li> {{:5 Dose Ant's Potion}}
+</li><li> {{:Ant's Potion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Player Size by 34% }}
+
+| skill = 
+| mana = 50
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel smaller.
+| msg_cast_on_other = Someone  shrinks.
+| msg_wears_off = You return to normal height.
+}}
+
+[[Category:NPC Only Spells]]

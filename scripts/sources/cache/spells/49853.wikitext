@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Dictate
+| spellicon = D
+| description = Dominates your target's mind, allowing you to control them for a short time. This spell works on creatures up to level 58. Its effect is [mostly] irresistible and lasts a specific period of time (48 seconds).
+
+Merchant class npcs can '''not''' be charmed.[https://www.project1999.com/forums/showthread.php?t=370884]
+
+| classes = 
+
+* [[Enchanter]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 58 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 750
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 300.00
+| duration = 8 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-1000)
+
+| msg_cast_on_you = You have been charmed.
+| msg_cast_on_other = Someone  has been charmed.
+| msg_wears_off = You are no longer charmed.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Burning Woods]]
+* [[Ixiblat Fer]]
+
+}}

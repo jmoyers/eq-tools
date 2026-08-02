@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Liquid Silver II
+| spellicon = C
+| description = Liquidized silver that inflicts severe pain in undead creatures, causing between 16 and 308 damage every 6 seconds for up to Instant.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Calcium Rot}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 16 (L1) to 298 (L48) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = The liquid silver burns your body.
+| msg_cast_on_other = Someone 's body begins to smoke.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

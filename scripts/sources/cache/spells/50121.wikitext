@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Form of the Hunter
+| spellicon = T
+| description = Fills you with the spirit of the wild, allowing you to take the form a wolf for 3 hours @L60. Stacks with Mask of the Hunter. Does NOT stack with Avatar
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion: 42 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 70% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase ATK by 62 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Ultravision(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 3 hours 0 minutes @L60 
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Someone  turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+* [[Harla Dar]]
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}
+[[Category: Illusions]]

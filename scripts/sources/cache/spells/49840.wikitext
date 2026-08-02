@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Augment
+| spellicon = R
+| description = Fills your target with energy, increasing their attack speed, agility, and stamina regeneration. Does not stack with [[Call of Earth]].
+
+| classes = 
+
+* [[Enchanter]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 43% (L56) to 45% (L60) }}
+{{SpellSlotRow | 2 | Increase AGI by 33 (L56) to 35 (L60) }}
+{{SpellSlotRow | 3 | Increase AC by 17 (L56) to 18 (L60) }}
+{{SpellSlotRow | 4 | Decrease Stamina Loss by 3 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 135
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your body pulse with energy.
+| msg_cast_on_other = Someone 's body pulses with energy.
+| msg_wears_off = The pulsing energy fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

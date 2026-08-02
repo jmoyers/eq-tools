@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Sunbeam
+| spellicon = B
+| description = Calls down an intense sunbeam that blinds any creature near your target. Only usable outdoors.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 22
+| items_with_effect = 
+
+<ul><li> {{:Blazing Breastplate of Fennin Ro}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Blindness | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 40
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 3 ticks
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are blinded by a sunbeam.
+| msg_cast_on_other = Someone  is blinded by a sunbeam.
+| msg_wears_off = Your sight returns.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Northern Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+}}
+| TableLocations = Northern Karana
+| TableEra = {{{TableEra|Classic}}}
+}}

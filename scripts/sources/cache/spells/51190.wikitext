@@ -1,0 +1,260 @@
+{{Delete}}
+
+<center>'''Welcome to my Magician Epic guide!'''</center>
+<br>
+
+Have you ever wondered about the mage epic? How it functions exactly? Why is it so rare? There is very little information out there on the wiki or otherwise on this rare and unique spell. Yes the final reward is a spell: [[Summon Orb]]. I will detail how it all works, as well as an updated walk-through for the quest itself.
+
+<br>
+<br>
+
+
+'''DISCLAIMER:'''
+''
+''This quest is enormously difficult to complete. Be aware before reading this or starting the quest that many will be unlikely to complete it. This is because of the rarity of [[Staff of Elemental Mastery: Earth]]''
+''
+
+
+
+
+
+<br>
+'''<center>The Spell</center>'''
+<br>
+
+*The final reward for this epic quest is a spell. 
+*Requires level 46
+*Orb requires level 50 to activate
+*Costs 500 mana 
+*5 second cast 
+*Recast time of 5 minutes
+
+
+
+
+
+{{Spellpagesmart|
+
+| spellname = Summon Orb
+| spellicon = L
+| description = Focuses mana into the form of an orb of elemental mastery.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 46
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Orb of Mastery}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 500
+| range =  
+| casting_time = 5.00
+| fizzle_time = 3.00
+| recast_time = 300.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A swirling orb of elements forms in your hand.
+| msg_cast_on_other = Someone  summons a swirling orb of elements.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* [[Magician Epic Quest]]
+
+| TableLocations = [[Magician Epic Quest]]
+| TableEra = {{{TableEra|Kunark}}}
+}}
+
+<br>
+
+*Summon Orb summons the actual weapon, here it is below. Notice is it magic, lore, no drop but NOT no rent. This is the first Magician summoned item that doesn't disappear on log out! 
+
+
+{{Itembox
+|itemname    = Orb of Mastery
+|lucy_img_ID = 2868
+|statsblock  = 
+MAGIC ITEM  LORE ITEM  NO DROP<br>
+Slot: PRIMARY<br>
+Charges: 1<br>
+Skill: 1H Blunt  Atk Delay: 30<br>
+DMG: 20 <br>
+STR: +15  DEX: +5  STA: +10  INT: +20  MANA: +100<br>
+SV FIRE: +20  SV COLD: +20  SV MAGIC: +10<br>
+Effect:  [[Manifest Elements]] (Must Equip, Casting Time: 20.0) at Level 50<br>
+WT: 1.0  Size: TINY<br>
+Class: MAG<br>
+Race: ALL<br>
+}}
+
+
+<br>
+
+
+*The final effect is [[Manifest Elements]] which summons a unique elemental pet
+*20 second cast time
+*Spent orbs need to be destroyed and resummoned
+*No reagent required
+*Reclaim does not return any mana
+*The pet looks like a large Air elemental and has properties from all four elemantals
+*Warrior class (earth) it will bash and kick
+*Cold damage attack (water) 143 damage
+*Stun attack (air) 84 damage stun for 3 seconds
+*50 point damage shield (fire)
+*Always the same level, 49 
+*Always the same hit points (confirm)
+*Max hit for 67
+
+'''Note:''' ''Earlier in P99 history the epic pet had nonclassic Luclin hit tables where it would hit for 81, in 2019 this was reduced to the classic value of 67.''
+
+<br>
+
+
+
+<br>
+'''<center>The Quest</center>'''
+
+
+== Checklist ==
+{{CheckboxList}}
+==== The Beginning ====
+* Go find [[Rykas]] in [[Lake Rathetear]]. Receive Token of Mastery. 
+''This part can be skipped.''
+* Take the Token to [[Jahsohn Aksot]] in [[West Commonlands]]. '''''
+''You do not need the token to speak to Jahsohn, procure the items and return them to him when done.''
+
+==== Words of Magi'Kot ====
+* Kill an [[enraged dread wolf]] in Kithicor Forest. Loot [[Torn Page of Magi`kot pg. 1]].
+
+''Semi rare off the Wolves, you can solo this by running around at night and looking for them. I recomend finding someone to help you track to save time.''
+
+* Kill [[a tentacle terror (Unrest)|Tentacle Terrors]] in the Estate of [[Unrest]]. Loot [[Torn Page of Magi`kot pg. 2]].
+
+''Very common off these guys, best way is to grab one while leveling up there. Otherwise just be courteous to people exping down there.''
+* Kill [[a bloodthirsty ghoul]] in [[Lower Guk]]. Loot [[Torn Page of Magi`kot pg. 3]].
+
+''This part can be tricky, this room can be split and soloed at 60, but it is difficult. You will need root nets, and possibly gate out after each of the first couple kills. There are three spawn points that can have a bloodthirsty, frenzied, or regular placeholder. Bring a friend who can root to split the pull, space out the kill timers on the mobs and it's a fairly easy solo camp.''
+* Take them to [[Jahsohn Aksot]]in [[West Commonlands]]. Receive [[Words of Magi`kot]]. 
+''No need to speak to him first, just bring the Words to him when done.''
+
+==== Power of the Elements ====
+* Kill [[a gypsy dancer]] in [[Mistmoore]]. Loot the [[Power of Wind]].
+''Always drops, can solo this at 50, just be careful and go slow. Invis to the castle, summon a pet outside and single pull with cancel magic until you get to the music room.''
+* Kill [[Lava elemental]] or [[Blazing Elemental]] in [[Solusek's Eye]]. Loot the [[Power of Fire]].
+''This part can be time consuming, I recommend camping the Lava elemental as he seems to drop it every time. You can keep his PH down as well as all the blazing elementals if you're creative in finding a path in between.''
+* Kill [[famished ravener]]/[[Hungered Ravener]]/[[Gorged Ravener]] in [[Kaesora]]. Loot the [[Power of Water]].
+''This part is challenging if you want to preserve your faction with the outpost. Once inside Kaesora, invis up, take first left and down the drop off. Then right and straight, make sure to con the spiders, some see invis(Location 3). Go through the door and the broken wall in the closet. This is where you can swap to IvU, bring some [[Potion of unlife awareness]]. Head down the tunnels and around, keep an eye out for the raveners. With a bit of luck and level advantage you should be able to skirt the library (Location 5) and pop into the side room to the right (Location 6). There is a broken building in the middle, watch the pathers and wait for an opportunity to summon a pet. There are two spawns in the back room of the house, usually Raveners, and they often drop the power.''
+[[File:Epicmroute.jpg|300px|thumb|frame|center|]]
+* Kill [[A Fairy Guard]]/[[a faerie guard]] in [[Lesser Faydark]]. Loot [[Power of Earth]].
+''There are only 4-5 guards, does not always drop. I recomend clearing the camp, then zoning into Mistmoore to get the Wind, then go back out and hopefully you'll have it drop in one of those two clears.''
+* Give these to [[Walnan]] in the [[Butcherblock Mountains]]. Receive the [[Power of the Elements]].
+''She wanders along the road between Kaladim and the docks.''
+
+==== Words of Mastery ====
+* Kill [[A Magician]] and [[A Goblin Magician]] in [[Najena]] or [[an alligator]] in [[Cazic Thule]] (or possibly [[The Feerrott]]?) until you have the:
+** [[Torn Page of Mastery Earth]]
+** [[Torn Page of Mastery Fire]]
+** [[Torn Page of Mastery Water]]
+** [[Torn Page of Mastery Wind]].
+* Give the words to [[Akksstaff]] in Najena. Receive the [[Words of Mastery]].
+
+''Najena is a zone built for magicians, you can level here 15-35 easily. There are hidden camps and leveling routes all throughout the zone. The words can drop off more then just the various magicians (the named, dark bones, etc) murder everything for fun and profit. Akksstaff is in a hidden nook between Najena's pool and the Widowmistress area.''
+
+==== Power of the Orb ====
+* Go back to [[Rykas]] in Lake Rathetear. Give him the [[Words of Magi`kot]], the [[Power of the Elements]], and the [[Words of Mastery]]. Receive the [[Power of the Orb]].
+
+''This is the only time you need to come to Lake Rathe to speak Rykas, do all three subquests first then come to turn in''
+
+==== Element of Fire ====
+* Kill [[Neh'Ashiir]] in the City of Mist. Loot the [[Torch of the Elements]].
+''This is one the harder parts of the quest since you need a group and the Torch is definitely the rare drop off of this mob. If Neh spawns with the staff or shield you will see it, and when he has the torch he will not be holding anything. The bare minimum you need is a cleric, enchanter, and mage. Neh can complete heal AND charm, so he needs to be mana drained. The easiest way to pull him is to have the cleric, or enchanter pacify their way up the ramps to the upper level. Use the levitate trick to get past the locked door (hit your windows keys at the lowest point of levitate bob, and click in game at highest point to gain height) climb above the door and run across the gap to the other side. You can pull the black reaver through the door with pacify critical resists or by pet pulling. Drop the reaver in the broken gap in the walkway and he will fall onto this spot below for an easy kill. You can fight above, but have to deal with possible adds with respawns if you get too many reavers or Neh complete heals too many times. Expect to kill him 3-5 times.''
+[[File:Nehcom.jpg|300px|thumb|frame|center|]]
+* Kill (in order of difficulty) [[Gylton]] [[Phurzikon]], or [[Nezekezena]] in the Burning Woods until one drops a [[Burning Embers]].
+''These mobs are soloable at 60, but still difficult since they can summon you, bring a [[Shiny Brass Idol]] to help resummoned pets get aggro. I definitely recommend you bring a friend for this as they are easily duoed.''
+* Kill [[Undertow]] in Kedge Keep. Loot the [[Blazing Wand]].
+''This can be soloed 57+, check out my leveling guide for a detailed write up on how to solo Undertow and his guards.[[Kurrat's Magician Leveling Guide 50-60]] As far was spawning him (he has an 8 hour timer) your best bet is to park there and check periodically until you find him or his placeholder up. Then you can keep his spawn locked down as long as you wish. He seems to drop the wand about 50% of the time.''
+* Take [[Power of the Orb]] and these items to [[Jennus Lyklobar]] in [[Skyfire Mountains]]. Receive the [[Element of Fire]].
+''Jennus is hiding out near a lava river towards Veeshan's Peak''
+==== Element of Earth ====
+* Kill [[Innoruuk]]//[[Magi P`Tasa]] (depending on timeline) in the [[Plane of Hate]]. Loot the [[Staff of Elemental Mastery: Earth]].
+''There are three main ways to acquire this difficult piece, first I'll explain how to on a fresh Green server. Level to 50 as fast as you can, join one of the top guilds on the server and raid as much as you can. Once Plane of Hate is released make sure you track Innoruuk and goto every Inny kill you can. Be in the top 2 for Mage DKP in your guild. Eventually you will get the Staff, this is the best way, but for most of us out of reach.
+
+''For the more casual players you will need to wait for Epic revamp which is a few months into Velious, when the staff is moved to Magi P'Tasa, a miniboss. There are 10 minibosses and 12 (confirmed) spawn points in Hate. Each spawn point can be a regular mob or any of the minis, there can be multiple minis with the same name up at the same time. The spawn timer is 72 hours with 12 hour variance, I have confirmed this 24 hour window multiple times and have caught minis spawning when others have given up.
+''There are 3 spawn points in Inny's old room, on the concrete pads and one to the south. There are two in  the organ hall, 4 in different parts of the church, and 2 north of port in in the 4rd and 5th building. (counting port in room as the first.) Make sure you are tracking on a ranger for two reasons: A. you can find the direction of the mini from your tracking spot, this will help your puller find it faster, B. You can bind sight and physically see many of the different spawn points to verify if there is a PH up or if it's still in window. These maps are from the wiki but updated by Mikhal in Force of Will who was able to use some guild knowledge and a whole lot of time spent bind sighting to confirm these locations. The mini spawn points are all marked with A and a number, please note that some are second floor of first floor buildings, while A10,11,12 are in all Innoruuk's old room on the actual second floor.''
+''
+
+<center> First Floor Hate </center>
+[[File:1st Floor Hate Minis.png|300px|thumb|frame|center|]]
+
+
+<center> Second Floor Hate </center>
+[[File:2nd Floor Hate Minis.png|300px|thumb|frame|center|]]
+
+
+''So in order to catch a Magi pop you need to be tracking, if your guild kills minis then you will have the spawn windows, you can also watch for others killing them to find the window. The best time for this is after an Earthquake, usually 5 or 6 minis will pop and someone will go up and kill them all. Because of the frequency of earthquakes you will the most spawn windows on the weekends, and centered on Wednesdays. If you want to the most possible mini spawns, clear the PH's/minis every weekend and every Wednesday. Once you have a window you can start tracking. Count three days from the first kill, then subtract 12 hours for the start and add 12 hours for the finish. Don't sit there spamming the track hotkey for the whole 24 hours, that's insane and a one way ticket to burnout town. Check track every 30-60 minutes and eventually you will catch some spawns. Yes, you might miss some pops or be late by not checking track constantly, but the people who do will burnout and not be up there for long. Just be patient and keep at it and you will start to get Magi kills. He sometimes crushes when he has the staff, and the drop rate seems to be about 1 in 5 or so. Like any rare drop, the RNG can make this extremely rare so don't get discouraged if you don't get the staff right away. Your guild needs to be able to pull and kill Magi within 15-20 minutes from when you spot him up and send out a batphone in order to be competitive.''
+
+
+''For the more hardcore players who couldn't acquire a Staff during the classic era, you can one group Magi if you know what you're doing. He is even soloable by enchanters, much to the dismay of most players. This route is problematic, and I'm not going to go into detail on this, because I feel that farm crews ruin this awful grind and make it worse than it should be. If you're serious, and you have friends who are skilled, you can definitely kill mini's with small crews. Be aware of the server rules, and your reputation if you decide to go this route.''
+
+* Kill [[Slixin Klex]] in the [[Burning Wood]]. Loot [[Dirt of Underfoot]].''
+''Slixin is always up, although he is sometimes used as a charm pet, just ask the zone who has him. Slixin does not ways drop the dirt, but it's an easy solo kill. You will probably have to pet swap so find a place you can kite around. The hardest part is not getting adds during the fight.''
+* Quest for [[Shovel of Ponz]].
+* Quest for [[Broom of Trilon]].
+''Do these subquests while you're leveling in Najena and working on the torn pages. These focus items are something you should have while leveling up anyways.''
+* Bring these all to [[Tiblner Milnik]] in [[Firiona Vie]]. Receive [[Element of Earth]].
+''He wanders near the entrance to Firiona Vie, beware as an evil character there are many KOS mobs wandering around near him.''
+
+==== Element of Water ====
+* Kill [[Phinigel Autropos]] in [[Kedge Keep]]. Loot [[Staff of Elemental Mastery: Water]].
+''If you were fortunate to acquire this during classic when guilds still raided Phinny, this was the easiest way. He has a 12 hour spawn timer with no variance and can be killed with as few as 3 or 4 pet classes. I recommend minimum 4 pet classes to do this. One pet class binds at entrance, then everyone swims down to the lair and summons pets. The person who bound then sends their pet to attack the seahorses and gates back to entrance and waits until one of the others has pulled Phinny from the lair and engages with all the other pets. The puller can then zone out and back in to be Cothed down to the group. The staff is semi rare, expect to kill him 3-5 times.''
+* Kill [[Captain Rottgrime]] in [[The Overthere]]. Loot [[Tears of Erollisi]].
+''This could be duoed I'm sure, but safest with 3 pet classes. Have a factioned puller park a pet at Rottgrime in the outpost then run out and attack with the pet. Pull him back towards Skyfire ramp, then zone out and have the others send pets to engage. Zone back in and kill him, easy step.''
+* Kill [[Tarbul Earthstrider]] in [[East Karana]]. Loot [[Rain of Karana]].
+''His placeholder is the rogue lion that paths between the hill southeast of the northeast village towards the road and beyond. Look for the rogue lion you see in this area to isolate the spawn, Tarbul drops the Rain everytime.''
+[[File:Tarbulrain.jpg|300px|thumb|frame|center|]]
+* Takes the three items to [[Jinalis Andir]] in [[Dagnor's Cauldron]] and receive the [[Element of Water]].
+''Heads up for evil characters, none of the quest givers in this quest have any faction EXCEPT for this one, no idea why. Jinalis is on Erudite caster faction, so evil folks (or folks that have killed in Erudin) will be KOS to her. I was stumped on this part until someone suggested share wolf form, this brought my dark elf from scowls to apprehensive, which was enough to turn in.''
+
+==== Element of Wind ====
+* Kill mobs on the 7th island on the Plane of Air. Loot the [[Crown of Elemental Mastery]].
+''Common drop off the trash mobs on island seven, your guild should have some banked for the Air staff quest or the epic. If not, just make sure you attend Sky raids and you will get one eventually.''
+* Kill mobs in the Hole. Loot the [[Elemental Binder]].
+''Super common, always rotting drop. You can solo the entrance easily to get your own.''
+* Kill [[Quillmane]] in South Karana. Loot the [[Pegasus Feather Cloak]].
+''Due to the changes in Quillmanes spawn mechanics this has become a difficult item to acquire. Once these changes have been figured out hopefully someone will edit this and add the information in. For now, the best method is to have a tracker friend and kill everything you see that wanders near Splitpaw.''
+* Give these items to Kihun Solstin in the Plane of Air and receive the [[Element of Wind]].
+''Kihun is in the hallway where you port into the quest room.''
+==== Spell Summon Orb ====
+* Go to the [[Master of Elements]] and give him the four Elements. Receive Spell: [[Summon Orb]].
+::(If Master of Elements isn't spawned, Hail [[Kihun Solstin]] and say "I want to see the master.")
+''The master is in the quest room above the brazier. Make sure you're standing close to him when turning in, use hail to verify.''
+* Scribe your spell and summon the [[Orb of Mastery]]!
+{{End}}
+
+
+<br>
+<Center>'''Pro Tips and Shortcuts'''</center>
+*Ask around for a Water staff MQ, people frequently have these banked and it's monitary value is low. This allows you to keep your Water staff if you have one. 
+*Alot of folks have Blazing wands laying around as well, can probably get an MQ for free.
+*You can buy a Pegasus cloak MQ if you have the cash, this one won't be cheap. You can also buy one so you can keep yours, free levitate is win.
+*A large portion of this quest can be completed during classic on a fresh start Green, if you plan well you can be almost done by the time the epic patch comes out.
+*On a mature server you can acquire many of these items while leveling, saving lots of running time later.
+
+<br>
+
+
+<br>
+Thanks for reading my guide! Hopefully this will help people understand this item and quest better and maybe lead to some more folks being able to complete it. Thanks to everyone who helped me with the groupable parts, the many CoM Neh kills and the endless Hate runs and rezes and tracking and batphones. My guild is awesome and supportive and there's no way I could've completed it or made this guide with out them!
+
+<br>
+
+
+[[File:Kurepic.jpg|300px|thumb|frame|center|]]

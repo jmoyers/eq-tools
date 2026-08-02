@@ -1,0 +1,47 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Imbue Plains Pebble
+| spellicon = U
+| description = Focuses the power of Karana into a plains pebble. Consumes a plains pebble when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 29
+* [[Druid]] - Level 29
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Imbued Plains Pebble}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Plains Pebble]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Northern Karana|Northern Plains of Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+}}
+| TableLocations = N.Karana
+| TableEra = {{{TableEra|Classic}}}
+
+}}

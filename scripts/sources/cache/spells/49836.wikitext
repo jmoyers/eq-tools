@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Largarn`s Lamentation
+| spellicon = D
+| description = Strikes your target's mind, stunning them briefly and draining their mana.  
+
+| classes = 
+
+* [[Enchanter]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 8.0 seconds }}
+{{SpellSlotRow | 3 | Decrease Mana by 75 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 120
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are overcome by sadness.
+| msg_cast_on_other = Someone  begins to weep.
+| msg_wears_off = You are no longer sad.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

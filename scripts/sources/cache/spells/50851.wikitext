@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Blessing of the Theurgist
+| spellicon = C
+| description = Fills your mind with the power of the pantheon.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Theurgist}}
+</li><li> {{:Theurgist's Star}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Mana by 75 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The power of your god fills you.
+| msg_cast_on_other = Someone  is surrounded by a divine aura.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

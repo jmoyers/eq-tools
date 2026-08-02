@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Deadly Velium Poison
+| spellicon = N
+| description = Poisons your target with deadly velium poison, causing 30 damage every 6 seconds for up to 2.0 mins.<br>
+<br>
+<br>
+Despite having poison in its name, this cold-based DoT cannot be removed by [[Cure Poison]].<br>
+Prevents [[Regrowth]] from landing while active. [https://www.project1999.com/forums/showthread.php?t=262450]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 30 per tick }}
+
+| skill = 
+| mana = 0
+| range = 30
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-100)
+
+| msg_cast_on_you = You are wracked by deadly velium poison.
+| msg_cast_on_other = Someone  is wracked by deadly velium poison.
+| msg_wears_off = The poison leaves.
+}}
+
+[[Category:NPC Only Spells]]

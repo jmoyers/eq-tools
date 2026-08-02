@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Soul Leech
+| spellicon = C
+| description = Drains your target of life energy, siphoning between 75 and @1 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Soul Leech, Dark Sword of Blood}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 75 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your soul draining away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

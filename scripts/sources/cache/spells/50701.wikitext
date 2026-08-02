@@ -1,0 +1,51 @@
+<noinclude>{{Kunark Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Nillipus' March of the Wee
+| spellicon = R
+| description = A marching tune that surrounds your group with an aura of protection that absorbs some damage, as well as increasing armor class and agility. All members effected with this song have shrink effect applied, which of course is cancelled when a character is damaged for higher than the Rune shield effect. The shrink has no effect on already small races.<br>
+<br>
+
+If you click the buff off before it fades on its own, you will remain shrunk indefinitely.
+
+A song written by [[Nillipus]] the [[Brownie]] in [[Rivervale]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 9 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AGI by 18 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Absorb Damage by 12 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Shrink | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel small.
+| msg_cast_on_other =  
+| msg_wears_off = You feel bigger.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Balik Wolftrot]] | Outpost | (-3010,2968) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = Kunark
+}}

@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Syvelian's Anti-Magic Aria
+| spellicon = U
+| description = An aria that can strip away magical effects from your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|0}}}
+
+| classes = 
+
+* [[Bard]] - Level 40
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Cancel Magic (4) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a pulse of static energy wash over you.
+| msg_cast_on_other = Someone  is encased in a pulse of static energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Color Slant
+| spellicon = D
+| description = Creates a wave of intense color around you that assaults your opponent's senses, briefly stunning all nearby creatures, as well as draining their mana. Works on mobs up to level 55.
+
+| classes = 
+
+* [[Enchanter]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 8.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Mana by 100 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 125
+| range = 35 (AOE)
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Scintillating colors dazzle your brain.
+| msg_cast_on_other = Someone  is dazzled by scintillating colors.
+| msg_wears_off = The pretty colors fade.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+
+==Related Quests==
+
+* [[Enchanter Spells (Good)]]
+* [[Enchanter Spells (Evil)]]
+
+}}

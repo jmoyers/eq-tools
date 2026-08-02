@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Improved Superior Camou
+| spellicon = B
+| description = Covers your body in a mystic cloak, allowing you to blend in with your surroundings. This spell works both outdoors and indoors.
+
+| classes = 
+
+* [[Druid]] - Level 50
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 10 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You vanish.
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off = You appear.
+
+| where_to_obtain = 
+
+* Velious Mob Drop
+
+}}

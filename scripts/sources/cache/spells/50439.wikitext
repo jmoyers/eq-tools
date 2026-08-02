@@ -1,0 +1,39 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Scintillation
+| spellicon = O
+| description = Creates a circle of fire around you, causing between 597 and 608 damage to all nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 597 (L51) to 608 (L54)| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 361
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 6.50
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Scintillating flames race across your body.
+| msg_cast_on_other = Someone  is covered in scintillating flames.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Obtained with the quests: [[Magician Spells (Good)]] and [[Magician Spells (Evil)]].
+
+| TableLocations = [[Magician Spells (Evil)]] or [[Magician Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

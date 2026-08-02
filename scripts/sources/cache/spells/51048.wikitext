@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Cloud of Silence
+| spellicon = I
+| description = This AOE silence is cast by [[Ail the Elder]]. Like other RPGs, this prevents spellcasting, but also prevents the use of all effects, including clickies and weapon procs. It also prevents disciplines. It does not prevent (all?) skills.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Silence }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 15.00
+| duration = 3 minutes @L1 to 10 minutes @L4
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = You are in a cloud of silence.
+| msg_cast_on_other = Someone  is surrounded by a cloud of silence.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

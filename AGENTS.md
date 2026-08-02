@@ -377,6 +377,54 @@ hygiene cap, no active bound to a retired entity, and rank-merged stat keys. `np
 all. This is additive-only to the parser (spellEmote is formerly-`unknown`; combat/charm/cc/
 death counts unchanged — regression-checked); world.ts/combat engine untouched.
 
+**Spell database + message-driven buff model (Task #34).** The user's self buffs were
+invisible (cast via Quick Buff bursts that print NO "You begin casting" line) and mined
+durations read LOW (median of pet-buff samples). Fixed with a scraped spell DB + a
+message-driven apply/expiry model:
+
+- **Scraper** `npm run scrape:spells` (`scripts/scrape-spells.ts`) enumerates every
+  `Template:Spellpage` page (MediaWiki `list=embeddedin`, paged; raw wikitext cached under
+  `scripts/sources/cache/spells`) and parses the template fields → **`src/main/data/spells.json`**
+  (committed; 1926 spells — 46% w/ parsed durations, 84% w/ cast messages, 50% w/ wears-off,
+  46 illusions). Duration parser handles "27 minutes"/"16 Min"/"2 Min 30 Sec" (compound sum)
+  and level formulas ("4.4 minutes @L44 to 6.0 minutes @L60" → MAX per the user's "prior =
+  max" directive). The JSON is **imported directly** in `src/main/data/spellDb.ts` (NOT
+  readFileSync) so electron-vite INLINES it into the main bundle — a path-relative read would
+  miss it in prod (`out/main/` has no copy). `SpellEntry`/`SpellDbFile` in `shared/types.ts`.
+- **Derived lookup tables** (`spellDb.ts` `buildSpellDb`): `castOnYou`/`wearsOff`/
+  `castOnOtherSuffix` each map a message → **candidate spell LIST** (many spells share a
+  message — "You feel much faster." is Alacrity/Celerity/Quickness/Swift; rank variants share
+  theirs). The cast-on-other suffix strips the wiki's "Someone " subject so a log line ending
+  in "…looks tranquil." / "…'s face contorts…" matches by suffix, recovering the named target.
+- **Parser injection via ParserConfig** (parser purity preserved): `installSpellDb(db)` (main
+  startup, `rulesets.ts`) attaches the DB to the config; the parser emits, DB-gated & additive,
+  `buffApply {spell,target,illusion,durationMs,candidates}` (msg_cast_on_you self / cast-on-other
+  suffix), `buffWearOff {spell,target:'self'}` (msg_wears_off), and `aaActivate {name}`
+  (`You activate <X>.`). With NO DB installed these never fire — existing tests/profiles are
+  byte-for-byte unchanged (harness `replayBuffs` clears the DB; `replayBuffsWithDb` installs it).
+- **BuffsModule** (`db` ctor arg): `buffApply` → immediate CONFIRMED `messageDriven` self/target
+  active (covers Quick Buff bursts natively). AMBIGUOUS message resolved to the candidate the
+  player actually **cast this session** (`castHistory` from castBegin); if none resolves, the
+  apply is **skipped, never guessed**. An INSTANT spell (no duration, not illusion) or a
+  **Detrimental self-apply** (incoming mob debuff) is skipped — the bar shows only real self
+  buffs. A **self-heal-by-DB-buff** line (`You healed <you> … by Symbol of Pinzarn.`) also
+  applies (its wiki landing msg is wrong). `buffWearOff` = AUTHORITATIVE removal (favored over
+  estimate). **Estimator precedence:** DB duration (authoritative, `durationSource:'db'`) else
+  the **recency-weighted MAX** of the last 5 samples (`'observed'`, never median). **Permanent
+  Illusion** AA tracked from its `aaSpend` purchase event → a self-cast illusion after that ts
+  is `permanent` (∞, exempt from hygiene sweep). Hygiene cap raised to `max(2×p75, 2×dbDuration,
+  90min)`. `ActiveBuff.durationSource/permanent/messageDriven` + `BuffStat.dbDurationMs/
+  estimateMs/estimatorSource` are additive. **Full-log final bar:** Illusion: Wood Elf (perm),
+  Symbol of Pinzarn 27m, Group Resist Magic 18m, Boon of the Garou (perm), Valor 36m — the
+  user's real self buffs, DB-timed. **Estimator wins** (old-median → new DB): Swift 3m→16m,
+  Clarity 6m→27m, Valor 25m→54m, Symbol 32m→45m, Languid Pace 52s→3m.
+- **Golden windows** (`tests/messageDrivenWindows.test.mts`, DB-enabled): **W7** the 20:29:44
+  Quick Buff burst → Clarity/Valor/Symbol of Pinzarn/Swift active as SELF w/ DB durations, no
+  cast lines (primed w/ a real Clarity cast so the ambiguous "cool breeze" msg resolves); **W8**
+  "Your valor fades." removes an active Valor 25m in (< 54m DB, so message-driven not swept);
+  **W9** post-purchase self Boon = permanent, same spell pet-cast = normal 6m. All W1–W6 stay
+  green (their fixtures gained real emote/heal lines but replay DB-free).
+
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
   the renderer and **missed any charm that happened before the app opened** — the
@@ -483,6 +531,9 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
   Source of truth is the **main Plane of Sky page** compact table on eqlwiki.com
   (the dedicated per-class pages are stale). Item stat blocks come from each
   item's wiki page.
+- Spell DB: `npm run scrape:spells` → **`src/main/data/spells.json`** (NOT the renderer
+  data dir — the parser in MAIN needs it; imported+inlined by spellDb.ts). Source: every
+  `Template:Spellpage` wiki page. See the Task #34 buffs notes above.
 - Raid targets: `npm run scrape:bosses` → `.../eqlegends/bosses.json`. Roster is
   **classic-only** (no Kunark/Velious). Portraits come from the **Project 1999
   wiki** (`Npc_*` images, best classic art) with eqlwiki fallback; Cazic uses the

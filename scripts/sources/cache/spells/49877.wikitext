@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Sense the Dead
+| spellicon = 74
+| description = Provides you with a mystical undead awareness, pointing you towards the nearest undead creature.
+
+| classes = 
+
+* [[Cleric]] - Level 9
+* [[Necromancer]] - Level 1
+* [[Paladin]] - Level 4
+* [[Shadow Knight]] - Level 2
+
+| slots = 
+
+{{SpellSlotRow | 1 | Sense Undead }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 5
+| range =  
+| casting_time = 2.00
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Torrent of Poison
+| spellicon = N
+| description = Creates a rain of poison, causing 1-3 waves of 540 damage to 1-4 creatures in a small radius around your target. <br> At 1620-2160 damage, the potential blowback from this spell is significant. '''Use with extreme caution''' as it seems to prioritize hitting yourself up to twice if you cast it too close to the selected creature.<br>This spell seems to either hit four creatures one time,<br>Two creatures twice,<br>one creature three times,<br>or if cast on three creatures it will hit all three and then the original target once more.<br>If cast on a single creature while you're close to it, there's a chance of yourself and the creature getting hit twice each, or the creature getting hit three times and yourself once.<br>Despite having no resistance modifier, this spell has a high resist rate on creatures that normally could be hit by every spell you throw their way.
+
+| classes = 
+
+* [[Shaman]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 540 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 380
+| range = 150
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your skin steams and melts as poison rains down on you.
+| msg_cast_on_other = Someone 's skin steams and melts.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Shaman Spells (Good)]]
+* [[Shaman Spells (Evil)]]
+
+}}

@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Rejuvenation
+| spellicon = J
+| description = Slows your attack speed and lowers your intelligence while increasing your regeneration rate.<br>
+'''NOTE: This may not decrease attack speed at all, Lucy data shows it decreasing INT/STR until 2007.[http://lucy.allakhazam.com/spellhistory.html?id=1252&source=Live]'''
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Potion of Rejuvenation}}
+</li><li> {{:Potion of Rejuvenation}}
+</li><li> {{:Potion of Lesser Rejuvenation}}
+</li><li> {{:Potion of Greater Rejuvenation}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease INT by 2 (L1) to 61 (L60) }}
+{{SpellSlotRow | 2 | Decrease Attack Speed by 20% / (Decrease STR by 2 (L1) to 61 (L60)??) }}
+{{SpellSlotRow | 4 | Increase Hitpoints by 2 per tick (L1) to 61 per tick (L60) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You slow down.
+| msg_cast_on_other = Someone  slows down.
+| msg_wears_off = You speed back up.
+}}
+
+[[Category:NPC Only Spells]]

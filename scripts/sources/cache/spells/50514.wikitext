@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = West Portal
+| spellicon = V
+| description = Opens an arcane portal that teleports your entire group to the Western Plains of Karana.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -3569,-14815,36 in qey2hh1 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Qualtis Weslent]] | Library (F3) | (-1108,-253) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Misar D'Dbth]] | Library (F1) | (912,-1349) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Stormy]] | Wizard Guild | (460,-458) }}
+}}
+| TableLocations = Erudin<br/>Neriak<br/>Felwithe
+| TableEra = {{{TableEra|Classic}}}
+
+}}

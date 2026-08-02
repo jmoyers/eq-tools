@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Celestial Echo
+| spellicon = J
+| description = Fills your target's body with a celestial echo, immediately healing between 310 and 480 hit points, then healing twice more for between 165 and 190 hit points every 6 seconds for 6s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 34
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 262 (L34) to 310 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Hitpoints between 165 and 190 for two additional ticks. | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 245
+| range = 100
+| casting_time = 1.5
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 0:06
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are embraced by a spirit of healing.
+| msg_cast_on_other = Target is embraced by a spirit of healing.
+| msg_wears_off = The echo of healing fades away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

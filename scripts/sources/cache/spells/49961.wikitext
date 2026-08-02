@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Reviviscence
+| spellicon = J
+| description = Revives a slain ally, restoring nearly all of their lost experience.  It takes some time for the recently revived to fully recover.
+
+| classes = 
+
+* [[Cleric]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Water Sprinkler of Nem Ankh}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Resurrect and restore 96% experience }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 600
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 15.00
+| duration = Instant
+| target_type = Corpse
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+
+}}

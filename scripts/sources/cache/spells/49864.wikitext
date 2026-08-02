@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Cure Blindness
+| spellicon = 23
+| description = Cleanses the eyes of your target, removing some blindness effects.
+
+| classes = 
+
+* [[Cleric]] - Level 3
+* [[Shaman]] - Level 7
+
+| slots = 
+
+{{SpellSlotRow | 1 | Blindness(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 3.00
+| duration = Instant
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes sparkle.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

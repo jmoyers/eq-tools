@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Rage of Tallon
+
+| spellicon = O
+| description = Consumes your mind and body with the rage of Tallon Zek, increasing your dexterity, armor class, and attack rating for up to 6 secs (1 ticks @L1 to 2.0 mins @L40).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Blade of Tactics}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase DEX by 40 }}
+{{SpellSlotRow | 3 | Increase ATK by 30 }}
+{{SpellSlotRow | 4 | Increase AC by 12 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2 minutes @L40
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The Rage of Tallon guides your sword.
+| msg_cast_on_other = Someone  is guided by the Rage of Tallon.
+| msg_wears_off = Tallon's Rage departs.
+
+}}
+
+[[Category:NPC Only Spells]]

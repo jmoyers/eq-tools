@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Yonder
+| spellicon = V
+| description = Teleports you a large distance away in a random direction.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 25
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Random Teleport (short range) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 15
+| range =  
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-10)]] | Library | (1052,-984) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Barstall Methinon]] | Wizard Guild (F2) | (914,757) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kis K'Jartan]] | Caster Guild (Basement) | (171,-874) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Trisco Qental]] | Caster Guild | (302,-666) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Chardo Ahdelia]] | Caster Guild (top floor) | (144,-735) }}
+}}
+| TableLocations = Ak'anon/Erudin<br/>Neriak/Qeynos<br/>Freeport
+| TableEra = {{{TableEra|Classic}}}
+
+}}

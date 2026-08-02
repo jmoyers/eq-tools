@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Reagent Conservation III
+| spellicon = 161
+| focus_effect = 1
+| description = Reduces the chance that spell reagents will be consumed by up to 15%.  This bonus will decay on spells over level 60.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Robe of the Kedge}}</li>
+<li>{{:Runed Mithril Bracer}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Chance of Using Reagent by 1% to 15% }}
+{{SpellSlotRow | 2 | Limit Max Level: 60 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Effect: Exclude Summon Item }}
+{{SpellSlotRow | 4 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 2:24:00 (3:36:00)
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

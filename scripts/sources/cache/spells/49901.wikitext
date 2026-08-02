@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Wave of Fear
+| spellicon = G
+| description = A booming voice fills the ears of nearby enemies, causing them to flee in terror.
+
+| classes = * [[Cleric]] - Level 21
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 90
+| range =  
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 9.00
+| duration = 3 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your mind fills with fear.
+| msg_cast_on_other = Someone  looks very afraid.
+| msg_wears_off = You are no longer afraid.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+}}
+
+}}

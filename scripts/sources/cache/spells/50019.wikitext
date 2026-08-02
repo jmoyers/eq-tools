@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Ensnaring Roots
+| spellicon = 117
+| description = Commands roots to take hold of your target, doing 60 damage, and preventing their movement for 1 min 36s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 21
+* [[Ranger]] - Level 45
+
+| items_with_effect = 
+
+<ul><li> {{:Crystalline Silk Net}}
+</li><li> {{:Wooly Spider Silk Net}}
+</li><li> {{:Ebony Bladed Sword}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 31 (L21) to 60 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 Min 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entwined.
+| msg_cast_on_other = Someone's feet become entwined.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

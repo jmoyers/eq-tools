@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Choke
+| spellicon = M
+| description = Constricts your target's throat, causing 35 damage initially and 22 damage every six seconds for 48s, as well as lowering their strength and agility.
+
+| classes = * [[Enchanter]] - Level 11 (Autogranted)
+| items_with_effect = 
+
+<ul><li> {{:Whip of Strangulation}}
+</li><li> {{:Packmaster's Lash}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 18 (L12) to 20 (L16) }}
+{{SpellSlotRow | 2 | Decrease STR by 7 (L12) to 10 (L18) }}
+{{SpellSlotRow | 3 | Decrease AGI by 7 (L12) to 10 (L18) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 12 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 73
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel a shortness of breath.
+| msg_cast_on_other = Someone  begins to choke.
+| msg_wears_off = You can breathe again.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

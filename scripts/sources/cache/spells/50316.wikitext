@@ -1,0 +1,38 @@
+:''For the statistic, see [[Statistics#Charisma (CHA)]].''
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Charisma
+| spellicon = 15
+| description = Fills your target with an alluring aura, increasing their charisma for 63 min.
+
+| classes = 
+
+* [[Shaman]] - Level 47
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase CHA by 40 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 63 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You feel charismatic.
+| msg_cast_on_other = Someone looks charismatic.
+| msg_wears_off = Your charisma fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

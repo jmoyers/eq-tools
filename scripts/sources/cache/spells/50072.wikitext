@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Allure of the Wild
+| spellicon = 72
+| description = Beckons to the [[:Category:Animal | animals]] of the wild, allowing you to control them.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 43
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Charm (up to L49) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 220
+| range = 200
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = 16 Min
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  blinks.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Fatigue Drain
+| spellicon = C
+| description = Drains Stamina, is cast by [[A Will Sapper]] in Mistmoore.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Stamina Loss by 4 (L1) to 196 (L65) }}
+
+| skill = 
+| mana = 0
+| range = 15
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 6.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your vigor drain away.
+| msg_cast_on_other = Someone  looks faint.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

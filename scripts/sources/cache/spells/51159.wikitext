@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Phobocancel
+| spellicon = C
+| description = This NPC proc is cast by various faerie drakes and planar creatures.
+
+
+<br>[[phoboplasm]], [[a chromadrac]], a faerie dragon, [[a glare lord]], [[a mature chromadrac]], [[Faerie of Dismay]], [[Lord Gossimerwind]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Cancel Magic(4) }}
+{{SpellSlotRow | 2 | Cancel Magic(4) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a bit dispelled.
+| msg_cast_on_other = Someone  feels a bit dispelled.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Aegis
+| spellicon = K
+| description = Covers your target in a holy guard, increasing their armor class for 2 hour(s) 24.0 mins.
+
+| classes = 
+
+* [[Cleric]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 34 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 450
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 3.50
+| recast_time = 2.25
+| duration = 2 hours 24 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = An aegis of faith engulfs you.
+| msg_cast_on_other = Someone  is shielded behind an aegis of pure faith.
+| msg_wears_off = You no longer feel shielded.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[The Overthere]]
+* [[a cliff golem]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}
+
+[[Category:Aegis line]]

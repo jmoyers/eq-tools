@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Nonchalance
+| spellicon = 118
+| description = Places your target into a nonchalant state, healing 120 hit points every 6 seconds for 24s, but vastly decreasing their attack rate.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+
+* [[Shaman]] - Level 30
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Current Hit Points by 120 per Tick }}
+{{SpellSlotRow | 11 | Decrease Attack Speed by 30% }}
+
+| items_with_effect = 
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 155
+| range = 100
+| resist = n/a
+| casting_time = 6.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 24s
+| target_type = Target Group Member or Self
+| spell_type = Heal Over Time
+
+
+| other = 
+
+| msg_cast_on_you = You fall into a state of nonchalance.
+| msg_cast_on_other = Someone falls into a state of nonchalance.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

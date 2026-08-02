@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Poison Storm
+| spellicon = 42
+| description = Creates a rain of poison, causing three waves of 60 damage to everything in a small radius around your target.
+
+| classes = 
+
+* [[Shaman]] - Level 22
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 60 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 125
+| range = 150
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your skin blisters as poison rains down on you.
+| msg_cast_on_other = Someone 's skin blisters.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

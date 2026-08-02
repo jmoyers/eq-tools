@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Velocity
+| spellicon = A
+| description = Fills your elemental pet with speed, increasing their movement rate.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 58
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 59% (L58) to 62% (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  shimmers and blurs.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+==Drops From== 
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Emperor Chottal]]
+* [[Sebilite Juggernaut]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

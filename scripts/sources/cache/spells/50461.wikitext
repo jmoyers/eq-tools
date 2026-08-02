@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Project Lightning
+| spellicon = M
+| description = Creates a circle of lightning around you, causing between 57 and 62 damage to all nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 14 (Autogranted)
+| items_with_effect = 
+
+<ul><li> {{:Blued Two-Handed Hammer}}
+</li><li> {{:Ebonsting}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 55 (L14) to 62 (L21) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 85
+| range = n/a
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other =
+* AE Range: '''25'''
+* Push Back: '''3'''
+
+| msg_cast_on_you = Lightning flashes through your body.
+| msg_cast_on_other = Someone  is consumed by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

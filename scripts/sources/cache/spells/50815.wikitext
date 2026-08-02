@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = System Shock I
+| spellicon = N
+| description = Briefly stuns and injects a deadly poison into your target's system causing between 5 and 149 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Crystal Eritus}}
+</li><li> {{:Vial of Rabid Froth}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 5 (L1) to 149 (L37) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your body spasms as poison races through your system.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

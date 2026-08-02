@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Dementia
+| spellicon = C
+| description = Strikes your target with a chaotic burst of mental energy, causing between 571 and 675 damage. (2.7 DPM)
+
+| classes = 
+
+* [[Enchanter]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 615 (L54) to 675 (L60) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Twisted logic warps your mind.
+| msg_cast_on_other = Someone 's mind warps.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Enchanter Spells (Good)]]
+* [[Enchanter Spells (Evil)]]
+
+}}

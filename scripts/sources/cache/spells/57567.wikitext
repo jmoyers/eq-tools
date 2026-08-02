@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ward of Alendar
+| spellicon = K
+| description = Places the Ward of Alendar on your target, absorbing a portion of incoming spell damage. This spell absorbs a set amount of damage before dissipating. Consumes a bloodstone when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 29
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Mitigate Spell Damage by 20%, 460 total | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 100 
+| casting_time = 2.00
+| fizzle_time = 1.50
+| recast_time = 15.00
+| duration = 36 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Bloodstone]] x 1
+
+
+| msg_cast_on_you = A faint blue aura surrounds you.
+| msg_cast_on_other = Player has been surrounded in a faint blue aura.
+| msg_wears_off = The blue aura fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}

@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Ice
+| spellicon = S
+| description = Covers your target in glistening ice, causing between 520 and 538 damage, and lowering their fire resistance.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 47
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 511 (L47) to 520 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Fire Resist by 50 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 142
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are encased in frost.
+| msg_cast_on_other = Someone  is encased in frost.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | #3, Tower with portal to the Plane of Growth | (519,-1028) }}
+}}
+
+Will cause [[Breath of Ro]] to wear off of a mob.
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

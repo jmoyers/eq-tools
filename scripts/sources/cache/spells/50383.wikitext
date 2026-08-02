@@ -1,0 +1,54 @@
+{{Velious Era}}{{Spellpage|
+
+| spellname = Focus of Spirit
+| spellicon = K
+| description = Focuses your target's spiritual energy, granting increased hit points, strength, and dexterity for 1 hour(s) 40.0 mins. 
+
+<br> This spell has an unusual stacking mechanic. If a character has Focus, it will block the addition of [[Maniacal Strength]], [[Mortal Deftness]], and [[Voice of the Berserker]] spells. ''However'' if the character already has those buffs prior, the addition of Focus on top of those will not overwrite them, rather it will stack and both will apply to the character's statistics. Therefore, if a melee character would like all three buffs, they should click off any pre-existing Focus, then ask the [[Shaman]] for them. 
+
+<br> Focus of Spirit will always overwrite other Talisman spells however. It also seems to overwrite lower level spells such as [[Dexterity]].
+<br><br> Does not stack with [[Shield of the Magi]] and other INT caster HP buffs. Does not stack with [[Bedlam]] and other enchanter mat-free runes in that line. Does stack with [[Resurrection Effects]].
+
+| classes = 
+
+* [[Shaman]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Hitpoints by 405 }}
+{{SpellSlotRow | 2 | Increase HP when cast by 405 }}
+{{SpellSlotRow | 3 | Increase STR by 67 }}
+{{SpellSlotRow | 4 | Increase DEX by 60 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range = 100
+| casting_time = 13.00
+| fizzle_time = 3.00
+| recast_time = 2.25
+| duration = 1 hour 40 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel focused.
+| msg_cast_on_other = Someone  looks focused.
+| msg_wears_off = Your focus fades.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Fayl Everstrong]]
+* [[Prince Thirneg]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}
+
+[[Category:Talisman line]]

@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Shadowbond
+| spellicon = G
+| description = Transfers your own health to your target at a rate of 125 hit points every six seconds for 24 secs (4 ticks).
+
+| classes = 
+
+* [[Necromancer]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase Hitpoints by 125 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 10
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 21.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds begin to heal.
+| msg_cast_on_other = Someone  pulses with a blue-green aura.
+| msg_wears_off = Your pact fades.
+
+| where_to_obtain = 
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

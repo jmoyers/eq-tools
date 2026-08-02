@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Flamesong
+| spellicon = O
+| description = Consumes your target in a song of flame, causing 75 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Flamesong}} </li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 75 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Fire dances over your skin.
+| msg_cast_on_other = Someone 's skin is covered in a corona of fire.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

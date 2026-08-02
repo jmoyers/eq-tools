@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Ward Summoned
+| spellicon = C
+| description = A burst of holy power that inflicts 14 damage to a summoned target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 2
+* [[Magician]] - Level 9
+* [[Ranger]] - Level 16
+* [[Cleric]] - Level 17
+
+| items_with_effect = 
+
+<ul><li> [[Summoned: Sword of Runes]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 6 (L2) to 14 (L18) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 6
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Construct/Elemental
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

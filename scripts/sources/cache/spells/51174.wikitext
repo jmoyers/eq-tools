@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Brilliance
+| spellicon = H
+| description = Expands your target's mind, increasing their intelligence and wisdom.
+
+| classes = * [[Enchanter]] - Level 41
+| slots = 
+
+{{SpellSlotRow | 1 | Increase INT by 12 (L44) to 14 (L52) }}
+{{SpellSlotRow | 2 | Increase WIS by 6 (L44) to 8 (L52) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 125
+| range = 100
+| casting_time = 4.25
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 40 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your mind clears.
+| msg_cast_on_other = Someone  gains a flash of insight.
+| msg_wears_off = Your brilliance fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-5)]] | Library | (1104,-985) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Elentar Bealtarik]] | Enchanter Guild (F4) | (507,746) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tizzy C'Luzz]] | Caster Guild (Basement) | (172,-912) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Moreo O'Meek]] | Caster Guild (Outside) | (301,-637) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Nestess Branchtop]] | Enchanter Guild | (497,-926) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Jarel Ranin]] | Caster Guild (F1) | (157,-735) }}
+{{SpellWhereRowB | [[Skyshrine]] | [[Guardian Seacly]] | Spell Vendor's Room | (287,-881) }}
+}}
+
+}}

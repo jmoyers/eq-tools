@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Vampiric Curse
+| spellicon = G
+| description = Drains the life from your target, doing 21 damage every six seconds for 54s. 7% of the life-force taken is used to heal your wounds.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 57
+* [[Necromancer]] - Level 29
+
+| items_with_effect = 
+
+<ul><li> {{:Pestilence Scythe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 21 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 144
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 9 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your blood being drained away.
+| msg_cast_on_other = Someone  pales.
+| msg_wears_off = The curse fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }} 
+}}
+
+}}

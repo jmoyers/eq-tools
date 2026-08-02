@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Steal Strength
+| spellicon = C
+| description = Weapon proc. Superior to [[Siphon Strength]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 15 (L1) to 27 (L48) }}
+
+| items_with_effect = 
+
+<ul><li>  {{:Dark Reaver}}
+</li><li> {{:Beetle Stinger}}
+</li><li> {{:Shaded Torch}}
+</li></ul>
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 3 minutes @L1 to 9 minutes @L3
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

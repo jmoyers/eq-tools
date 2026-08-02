@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Touch of Night
+| spellicon = G
+| description = Drains your target of life energy, siphoning 720 hit points. 1.77 lifetap efficiency.
+
+| classes = 
+
+* [[Necromancer]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 720 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 405
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = Your life force drains away at the Touch of Night.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

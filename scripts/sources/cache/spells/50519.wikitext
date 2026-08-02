@@ -1,0 +1,38 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Frost Storm
+| spellicon = S
+| description = Calls down a frost storm that falls in three waves, causing between 250 damage to all creatures in the vicinity of your target. <br> Single target mana efficiency of 2.4
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 41
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 512 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 271
+| range = 150
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = Your skin freezes as frost rains down from above.
+| msg_cast_on_other = Someone 's skin freezes as frost rains down from above.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Sornita Eltern]] | Library (F3) | (-1108,-231) }}
+}}
+| TableLocations = Erudin
+| TableEra = {{{TableEra|Classic}}}
+
+}}

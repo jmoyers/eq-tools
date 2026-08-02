@@ -1,0 +1,35 @@
+{{Spellpagesmart|
+
+| spellname = Circle of Surefall Glade
+| spellicon = 129
+| description = Opens a mystical portal that transports your group to Surefall Glade.
+
+| classes = * [[Druid]] - Level 26
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to -209,-391,9 in qrg }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Aleena Lightleaf]] | Kelethin Ranger Guild | (-400,490) }}
+{{SpellWhereRowB | [[Greater Faydark]] | [[Hendricks]] | Kelethin | (-537, -550) }}
+}}
+
+}}

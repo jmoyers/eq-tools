@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Frost Breath
+| spellicon = S
+
+| description = 
+
+This is the area effect damage and dispel cast by [[Lady Vox]] and other cold dragons.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 500 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your body freezes as the frost hits you.
+| msg_cast_on_other = Someone 's body freezes as the frost hits them.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

@@ -1,0 +1,65 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Immobilize
+| spellicon = Q
+| description = Causes the earth to adhere to your target's feet, preventing them from moving for up to 1 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 39
+* [[Wizard]] - Level 39
+* [[Cleric]] - Level 46
+* [[Shaman]] - Level 51
+* [[Necromancer]] - Level 58
+
+| items_with_effect = 
+
+<ul><li> {{:Glob of Gooey Goo}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 80
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet adhere to the ground.
+| msg_cast_on_other = Someone's feet adhere to the ground.
+| msg_wears_off = Your feet come free.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-6)]] | Cleric Guild | (1197,-560)  }}
+{{SpellWhereRowB  | [[Erudin]] | [[Selint Chency]] | Cleric Guild - Quellious | (-637,-47) }}
+{{SpellWhereRow | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRowB  | [[Neriak|Neriak - 3rd Gate]] | [[Myris N'Tan]] | Cleric Guild | (401,-853) }}
+{{SpellWhereRow | [[Freeport|North Freeport]] | [[Egasia Reenix]] | Cleric Guild (top floor) | (116,302) }}
+{{SpellWhereRowB  | [[Qeynos|North Qeynos]] | [[Balhallia]] | Cleric Guild | (-133,-746) }}
+{{SpellWhereRow | [[Rivervale]] | [[Slim Waterman]] | Cleric Guild | (-229,-386) }}
+{{SpellWhereRowB  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+{{SpellWhereRowB  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]] (Trivial: 140)
+** '''Yield: Spell: Immobilize''' x1
+** In [[Tome of Endless Enchantments]]:
+:: {{SmIcon|1004}} 1 x [[Salil's Writ Pg. 282 (Left)]] - Dropped
+:: {{SmIcon|1005}} 1 x [[Salil's Writ Pg. 282 (Right)]] (Faded) - Dropped
+
+| TableLocations = Vendors
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Speed of the Shissar
+| spellicon = R
+| description = Fills your target with the power of the Shissar, increasing attack speed, agility, endurance regeneration, and armor class for 30 minutes.
+
+There doesn't seem to be a level requirement to receive the buff.
+
+This spell does not stack with most other haste spells such as [[Wonderous Rapidity]] (will not overwrite) or [[Visions of Grandeur]] (will overwrite). It also does not stack with certain AC buffs such as [[Call of Earth]] or the [[Yaulp]] line of spells; though it stacks fine with cleric AC buffs such as [[Bulwark of Faith]], [[Aegis]] and [[Aegolism]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of the Serpent}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 66% }}
+{{SpellSlotRow | 2 | Increase AGI by 40 }}
+{{SpellSlotRow | 5 | Decrease Stamina Loss by 3 }}
+{{SpellSlotRow | 6 | Increase AC by 12 }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 30 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body pulses with the spirit of the Shissar.
+| msg_cast_on_other = Someone 's body pulses with the spirit of the Shissar.
+| msg_wears_off = Your body slows.
+}}
+
+[[Category:NPC Only Spells]]

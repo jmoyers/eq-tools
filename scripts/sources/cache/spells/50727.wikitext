@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Lava Breath
+| spellicon = O
+
+| description = 
+
+This is the area-effect damage and dispel cast by [[Lord Nagafen]] and [[Zordakalicus Ragefire]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 500 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PBAOE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your body combusts as the lava hits you.
+| msg_cast_on_other = Someone 's body combusts as the lava hits them.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

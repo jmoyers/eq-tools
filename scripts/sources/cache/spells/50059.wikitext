@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Enveloping Roots
+| spellicon = 117
+| description = Commands roots to take hold of your target, doing 110 damage and preventing their movement for 1 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 36
+* [[Ranger]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 82 (L36) to 110 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 80
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet become entwined.
+| msg_cast_on_other = Someone 's feet become entwined.
+| msg_wears_off = The roots fall from your feet.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Butcherblock Mountains]] | [[Ellona]] | Druid Ring | (-2085,2016) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRowB | [[The Wakening Land]] | [[Weinna Oakchild]] | � | (521,-1038) }}
+}}
+| TableLocations = Butcherblock<br/>Firiona Vie<br/>Wakening Land
+| TableEra = {{{TableEra|Classic}}}
+}}

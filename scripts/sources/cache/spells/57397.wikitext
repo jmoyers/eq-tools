@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Intellectual Advancement
+| spellicon = H
+| description = Focuses your target's mental faculties, reducing their fizzle rate.
+
+| classes = 
+
+* [[Enchanter]] - Level 11
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Effective Casting Level by 3 }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 100
+| casting_time = 4
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your mind sharpens.
+| msg_cast_on_other = Someone' mind sharpens.
+| msg_wears_off = The intellectual advancement fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

@@ -1,0 +1,39 @@
+{{Spellpagesmart|
+
+| spellname = Fury of Air
+| spellicon = M
+| description = Summons a whirling wind 170 damage and stuns the target up to level 55 for 2 seconds.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 30
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 170 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 2.5 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 85
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (+15)
+
+| msg_cast_on_you = Lightning surges through your body.
+| msg_cast_on_other = Someone  has been struck by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+}}

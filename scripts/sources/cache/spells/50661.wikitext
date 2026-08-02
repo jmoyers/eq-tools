@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Lyssa's Cataloging Libretto
+| spellicon = B
+| description = An ancient tune that provides arcane  information about the item that your target is holding.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 14
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Identify | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Long forgotten knowledge sifts through your mind.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Altrusan Belstince]] | Library (F1) | (-1102,-214) }}
+}}
+| TableLocations = Erudin
+| TableEra = Classic
+}}

@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Skin Like Steel
+| spellicon = 131
+| description = Hardens the skin of your target, increasing their hit points and armor class for 36 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 24
+* [[Ranger]] - Level 38
+
+| items_with_effect = 
+
+<ul><li> {{:Coif of Wrath}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Armor Class by 8 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 74 (L24) to 100 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 74 (L24) to 100 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin turns hard as steel.
+| msg_cast_on_other = Someone 's skin turns hard as steel.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

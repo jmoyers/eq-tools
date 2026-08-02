@@ -1,0 +1,37 @@
+{{Hate Era}}{{Spellpage|
+
+| spellname = Scareling Step
+| spellicon = V
+| description = Teleports your target a large distance away in a random direction. This is an attack proc from [[A Scareling]].
+
+If this procs on an NPC, instead of the usual shadowstep, the mob will be [[Gate]]d.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Shadowstep | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

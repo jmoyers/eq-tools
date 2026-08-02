@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Mystic Precision
+| spellicon = M
+| description = Focuses mana into a nimbleness that seeps into your armor, granting increased dexterity for up to 3.0 mins @L1 to 1 hour(s) 3.0 mins @L21.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Clockwork Watchman Boots}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase DEX by 30 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 3 minutes @L21
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A precise infusion of mana energy sharpens your armors movement.
+| msg_cast_on_other = Someone 's armor movements are sharpened by an injection of mana energy.
+| msg_wears_off = The mana infusion fades.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,35 @@
+{{Classic Era}}
+{{Spellpage|
+
+| description = Cast by [[evil eye]] (the level 1 variant) upon its death. This seems to be one of the, if not the only spell with an infinite duration.
+| spellname = Infectious Spores
+| spellicon = E
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 10 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 4 per tick }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 5.00
+| duration = Unlimited
+| target_type = AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been infected by spores.
+| msg_cast_on_other = has been infected by spores.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

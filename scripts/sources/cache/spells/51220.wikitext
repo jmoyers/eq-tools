@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Wind of Tashani
+| spellicon = T
+| description = Causes your enemies' ears to echo with the barking of Tashan, lowering the magic resistance of all creatures in the vicinity of your target.
+
+| classes = 
+
+* [[Enchanter]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Magic Resist by 23 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 45
+| range = 200 (AE Range: 35)
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 12 minutes @L55 to 13 minutes @L60
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You hear the barking of the Tashani.
+| msg_cast_on_other = Someone  glances nervously about.
+| msg_wears_off = The barking fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

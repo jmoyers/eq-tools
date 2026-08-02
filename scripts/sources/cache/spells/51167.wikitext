@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Fist of Water
+| spellicon = A
+| description = Cast by [[Deep]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Attack Speed by 30% }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 40% }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1.5 minutes @L15
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You are encased in water.
+| msg_cast_on_other = Someone  is encased in water.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

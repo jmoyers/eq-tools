@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Largo's Melodic Binding
+| spellicon = A
+| description = This melody encompasses all nearby creatures in magical bonds, slowing their attack speed.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 20
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease AC by 4 (L20) to 10 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Attack Speed by 15% (L20) to 35% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (slow is not affected)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 30
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Strands of solid music bind your body.
+| msg_cast_on_other = Someone  is bound in strands of solid music.
+| msg_wears_off = The strands fade away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+}}
+| TableLocations = Qeynos<br/>Freeport
+| TableEra = Classic
+}}

@@ -1,0 +1,40 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Thunderbold
+| spellicon = D
+| description = Calls down a bolt of thunderous energy, causing 600 damage, and briefly stunning up to four creatures in the vicinity of your target. <br> Single target mana efficency of 2.0.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 54
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Stun for 3.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 600 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 300
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been stunned by thunder.
+| msg_cast_on_other = Someone  has been thunder-stunned.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via quests: [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]].
+| TableLocations = [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

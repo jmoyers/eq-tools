@@ -1,0 +1,38 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Melodious Befuddlement
+| spellicon = D
+| description = Befuddles your target with a soothing melody, causing them to fall unconscious and suffer from amnesia.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Melodious Truncheon}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/55) }}
+{{SpellSlotRow | 2 | Memblur(1%) }}
+
+| skill = 
+| mana = 20
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 1 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are mesmerized by an eerie melody.
+| msg_cast_on_other = Someone  has been mesmerized by an eerie melody.
+| msg_wears_off = You are no longer mesmerized.
+}}
+
+[[Category:NPC Only Spells]]

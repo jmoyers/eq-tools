@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Eye of Confusion
+| spellicon = B
+| description = Darkens your target's sight, often causing them to run about blindly.
+
+| classes = * [[Enchanter]] - Level 5
+| slots = 
+
+{{SpellSlotRow | 1 | Blindness(-1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 25
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel confused.
+| msg_cast_on_other = Someone  looks confused.
+| msg_wears_off = You are no longer confused.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

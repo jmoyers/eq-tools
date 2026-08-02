@@ -1,0 +1,59 @@
+{{Spellpage|
+
+| spellname = Demi Lich
+| spellicon = G
+| description = Grips your body in an unholy darkness, slowly draining your hit points while regenerating your mana.
+
+'''5th and final''' spell of the "Lich" spell line.
+
+Does '''not''' stack with any clarity spells.
+
+'''Does''' stack with bard mana songs.
+
+Is subject to PvP 33% damage reduction, so actually deals 32 damage per tick. See https://www.project1999.com/forums/showthread.php?t=3559
+
+| classes = 
+
+* [[Necromancer]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 60 (Skeleton) }}
+{{SpellSlotRow | 2 | Increase Mana by 31 per tick }}
+{{SpellSlotRow | 4 | Ultravision(1) }}
+{{SpellSlotRow | 7 | Decrease Hit Points by 48 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 19.0 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the skin peel from your bones.
+| msg_cast_on_other = Someone 's skin peels away.
+| msg_wears_off = Your flesh returns.
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+==Drops From== 
+
+[[Old Sebilis]]
+
+* [[Emperor Chottal]]
+* [[Tolapumj]]
+
+[[The Overthere]]
+* [[A cliff golem]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+
+
+}}

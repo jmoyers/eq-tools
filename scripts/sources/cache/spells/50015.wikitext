@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Superior Camouflage
+| spellicon = 34
+| description = Covers your target's body in a mystic cloak, allowing them to blend in with their surroundings.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 18
+* [[Ranger]] - Level 47
+
+| items_with_effect = 
+
+<ul><li> {{:Elder Spiritist's Helm}}
+</li><li> {{:Larrikan's Mask}}
+</li><li> {{:Tolan's Darkwood Helm}}
+</li><li> {{:Velium Studded Cloak}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 40
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 24 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You vanish.
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off = You appear.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

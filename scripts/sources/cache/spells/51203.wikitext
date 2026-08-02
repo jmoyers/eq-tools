@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Beholder Dispel
+| spellicon = U
+
+| description = 
+
+This is the targeted area-effect dispel cast by [[Lord Soptyvr]] and [[Sontalak]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Cancel Magic(9) }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+{{SpellSlotRow | 3 | Cancel Magic(9) }}
+{{SpellSlotRow | 4 | Cancel Magic(9) }}
+
+| skill = Abjuration
+| mana = 0
+| range = 30 AE
+| casting_time = 0.25
+| fizzle_time = 0
+| recast_time = 12.0
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel very dispelled.
+| msg_cast_on_other = Soandso feels very dispelled.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

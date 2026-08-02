@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Shock of Flame
+| spellicon = 51
+| description = Burns your target's skin with flames, causing 122 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 15
+| items_with_effect = 
+
+<ul><li> {{:Stormwood Battle Staff}}
+</li></ul>
+
+
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 115 (L15) to 122 (L22) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 48
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin ignite.
+| msg_cast_on_other = Someone 's skin ignites.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

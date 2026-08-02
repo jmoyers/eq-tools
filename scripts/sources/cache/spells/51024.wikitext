@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Anthem De Arms
+| spellicon = R
+| description = An ancient anthem that increases the strength and attack rate of your group. (Surpasses Chant of Battle [Level 1])
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 10
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Attack Speed by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase STR by 10 (L10) to 35 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A burst of strength surges through your body.
+| msg_cast_on_other =  
+| msg_wears_off = Your surge of strength fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+}}
+| TableLocations = Qeynos<br/>Freeport
+| TableEra = Classic
+}}

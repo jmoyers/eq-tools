@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mass Enchant Clay
+| spellicon = U
+| description = Enchants five large blocks of clay with magical energy. Consumes five large blocks of clay when cast.
+
+| classes = 
+
+* [[Enchanter]] - Level 8
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Large Block of Magic Clay]] x 5}}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 180
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Large Block of Clay]] x5
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Mizr N'Mar]] | Library (F1) | (911,-1314) }}
+{{SpellWhereRowB | [[Felwithe|South Felwithe]] | [[Alicia Starshimmer]] | Enchanter Guild | (606,-935) }}
+}}
+
+}}

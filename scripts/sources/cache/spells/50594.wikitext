@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Winds of Gelid
+| spellicon = S
+| description = Creates a wind of ice around you, causing between 1260 and @1 damage to all nearby creatures.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 1260 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 875
+| range =  
+| casting_time = 6.00
+| fizzle_time = 6.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = Freezing winds rend your body.
+| msg_cast_on_other = Someone 's body is torn by freezing winds.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+Drops from Kunark, Velious Level 60+ Mobs
+| TableLocations = Level 60+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

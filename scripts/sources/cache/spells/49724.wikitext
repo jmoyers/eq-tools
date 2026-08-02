@@ -1,0 +1,55 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Serpent Sight
+| spellicon = 86
+| description = Fills your target's eyes with the sight of the serpent, granting them improved night vision.
+
+| classes = 
+
+* [[Shaman]] - Level 6
+* [[Enchanter]] - Level 10
+* [[Beastlord]] - Level 16
+
+| items_with_effect = 
+
+<ul><li>  {{:Crown of King Tranix}}
+</li><li> {{:Glowing Stone Band}}
+</li><li> {{:Helot Skull Helm}}
+</li><li> {{:Pearlescent Mask}}
+</li><li> {{:Razing Sword of Skarlon}}
+</li><li> {{:Silvery Two Handed Axe}}
+</li><li> See also items with [[Ultravision]]
+</li><li> See also items with [[Truesight]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Infravision(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 30
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Vision
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your eyes tingle.
+| msg_cast_on_other = Someone's eyes glow red.
+| msg_wears_off = Your infravision fades.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

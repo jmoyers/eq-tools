@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Improved Invisibility to Undead
+| spellicon = 33
+| description = Cloaks your body in a light aura, rendering you invisible to most undead creatures for 10 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 48
+* [[Necromancer]] - Level 50
+* [[Shadow Knight]] - Level 61
+* [[Paladin]] - Level 63
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Improved Invisibility versus Undead | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range = 100
+| casting_time = 4.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 10 Min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your skin tingle.
+| msg_cast_on_other =  fades a little.
+| msg_wears_off = Your skin stops tingling.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

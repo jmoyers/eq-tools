@@ -1,0 +1,44 @@
+<noinclude>{{Disambig3|[[Armor of Harmony]] in Plane of Hate}}</noinclude>
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Harmony
+| spellicon = 39
+| description = Calms the savage spirit of almost any creature in an area around your target, making them less likely to attack. This spell works on creatures up to level 40, and only works outdoors.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 22
+* [[Druid]] - Level 5 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Reduce Aggro Radius by 15 (up to L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Reaction Radius (15/40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 25
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 2 Min
+| target_type = Targeted AE
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,38 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Cajole Undead
+| spellicon = D
+| description = Commands an undead creature to do your bidding, temporarily bending them to your will.
+
+| classes = * [[Necromancer]] - Level 47
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 51 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 245
+| range = 200
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = 16 Min
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  moans.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+}}
+
+}}

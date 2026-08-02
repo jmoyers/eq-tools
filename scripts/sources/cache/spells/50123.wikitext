@@ -1,0 +1,55 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Protection of the Glades
+| spellicon = K
+| description = Hardens the skin of your group, increasing their hit points, mana regeneration, and armor class for 1 hour(s) 40.0 mins.  Also known as PotG. The glades confer a great boon to any adventurer, unrestricted by normal Kunark era minimum level requirements. [[Aegolism]] and PotG do not stack with each other and neither will override the other.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 24 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 470 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 470 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Mana by 6 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 1200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = 1 hour 40 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin shimmers.
+| msg_cast_on_other = Someone 's skin shimmers.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Prince Thirneg]]
+* [[Rumbleroot]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+[[Sleeper's Tomb]]
+* [[an ancient sentry]]
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+
+}}

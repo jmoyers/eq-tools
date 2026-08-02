@@ -1,0 +1,39 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Tears of Solusek
+| spellicon = O
+| description = Tears of searing flame fall around your target, causing three waves of 645 damage to all creatures in the vicinity of your target.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 645 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 408
+| range = 150
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (-10)
+
+| msg_cast_on_you = Your skin blisters as the tears of Solusek rain down on you.
+| msg_cast_on_other = Someone 's skin blisters as the tears of Solusek rain upon them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via quests: [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]].
+| TableLocations = [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

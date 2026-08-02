@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Mark of Karn
+| spellicon = U
+| description = Covers your target in a glowing aura that heals anyone who strikes them. Also removes any existing damageshield on the target.
+
+| classes = 
+
+* [[Cleric]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Akkirus' Chestplate of the Risen}}
+</li><li> {{:Breastplate of Forbidden Rites}}
+</li><li> {{:Chestplate of Stability}}
+</li><li> {{:Templar's Chestplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Heals anyone that hits for 6 (also removes any existing damageshield) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 125
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 3.5 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your skin gleams with a pure aura.
+| msg_cast_on_other = Someone 's skin gleams with a pure aura.
+| msg_wears_off = The aura fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

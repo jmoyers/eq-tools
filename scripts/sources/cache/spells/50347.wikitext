@@ -1,0 +1,53 @@
+<noinclude>{{Kunark_Era}}</noinclude>{{Spellpage|
+
+| spellname = Pox of Bertoxxulous
+| spellicon = E
+| description = Sickens your target with a fever, causing 90 damage initially and 111 damage every six seconds for 1.8 minutes, total of 2088 damage & 4.86dpm.
+
+| classes = 
+
+* [[Shaman]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 111 per tick }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 90 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 430
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1.8 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = Your skin erupts in purulent pustules.
+| msg_cast_on_other = Someone 's skin erupts in purulent pock marks.
+| msg_wears_off = The pox has run its course.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Burning Woods]]
+* [[Ixiblat Fer]]
+
+[[Old Sebilis]]
+* [[Trakanon]]
+* [[Emperor Ganak]]
+
+[[Veeshan's Peak]]
+* [[Druushk]]
+* [[Hoshkar]]
+* [[Phara Dar]]
+* [[Xygoz]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+* [[Klandicar]]
+
+}}

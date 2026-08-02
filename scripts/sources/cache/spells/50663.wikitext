@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Tarew's Aquatic Ayre
+| spellicon = F
+| description = A song that surrounds your head with a cloud of air bubbles, allowing you to breathe underwater indefinitely.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 16
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Enduring Breath | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 4 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Tiny bubbles of music surround your head.
+| msg_cast_on_other =  
+| msg_wears_off = The bubbles disappear.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+}}
+| TableLocations = Highkeep
+| TableEra = Classic
+}}

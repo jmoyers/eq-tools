@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Rune V
+| spellicon = K
+| description = Covers your target in a shimmer of runes that absorb damage. Consumes 1x or 2x peridots when cast. (Absorbs 2HP per mana)
+***NOTE: This is a 51+ Kunark era spell and thus has a minimum level requirement of 39 (see [[Game Mechanics]])
+
+| classes = 
+
+* [[Enchanter]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Absorb Damage by 620 (L52) to 700 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 350
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 50 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' 1x [[Peridot]] ([http://www.project1999.com/forums/showthread.php?t=155457 used to consume 2 peridots])
+
+| msg_cast_on_you = A coat of shimmering runes surround you.
+| msg_cast_on_other = Someone  is surrounded by a shimmer of runes.
+| msg_wears_off = The shimmer of runes fade.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

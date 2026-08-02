@@ -1,0 +1,50 @@
+{{Spellpagesmart|
+
+| spellname = Skin Like Steel
+| spellicon = K
+| description = Hardens the skin of your target, increasing their hit points and armor class for 36.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 39
+* [[Druid]] - Level 24
+
+| items_with_effect = 
+
+<ul><li> {{:Coif of Wrath}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 9 (L24) to 10 (L30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 74 (L24) to 100 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 74 (L24) to 100 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = 36 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin turns hard as steel.
+| msg_cast_on_other = Someone 's skin turns hard as steel.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Cerila Windrider]] | Kelethin Ranger Guild | (-428,476) }}
+{{SpellWhereRow  | [[Northern Karana|Northern Plains of Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Bukem Breewood]] | Ranger Guild | (105,-80) }}
+}}
+| TableLocations = Kelethin<br/>N.Karana
+| TableEra = Classic
+}}

@@ -1,0 +1,46 @@
+{{Spellpagesmart|
+
+| spellname = Crission's Pixie Strike
+| spellicon = 35
+| description = A quiet lullaby that causes your target to fall into a magical sleep. Affects creatures up to level 45.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 28
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Mesmerize (up to L45) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Magic Resist by 6 (L28) to 13 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | Level Cap: 45 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (just the resists debuff)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Wooden Flute
+
+| msg_cast_on_you = You send forth music.
+| msg_cast_on_other = Someone 's eyes glaze over.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

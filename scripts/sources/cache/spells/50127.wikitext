@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Call of Flame
+| spellicon = 51
+| description = Hurls a magically burning arrow at your target, causing 300 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 300 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 106
+| range = 200
+| casting_time = 0.50
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin ignite.
+| msg_cast_on_other = Someone 's skin ignites.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via the [[Call of Flame Quest]].
+| TableLocations = [[Call of Flame Quest]]
+| TableEra = Classic
+}}

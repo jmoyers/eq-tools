@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Frenzied Spirit
+| spellicon = 38
+| description = Summons a companion from the spirit world in the form of a great wolf.
+
+| classes = 
+
+* [[Shaman]] - Level 45
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Frenzied_Spirit_Summon|Frenzied Spirit]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 500
+| range =  
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 32.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a frenzied spirit.
+| msg_cast_on_other = Someone  summons a frenzied spirit.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

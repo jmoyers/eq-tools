@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Blessing of the Squire
+| spellicon = K
+| description = Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 2.
+
+| classes = 
+
+* [[Cleric]] - Level 16
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc_Strike [[Blessing of the Squire]] [+2 Health per successful melee hit] }}
+
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 350
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50 seconds
+| recast_time = 5.00
+| duration = 40 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your hands glow a subdued gold.
+| msg_cast_on_other = Other_Player's hands have a subdued gold glow.
+| msg_wears_off = The golden glow fades.
+
+| where_to_obtain = 
+
+Cleric Spell Vendors.
+
+}}
+
+[[Category: Blessing of the Page line]]

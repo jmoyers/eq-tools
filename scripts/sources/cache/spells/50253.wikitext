@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Shroud of Pain
+| spellicon = 1
+| description = Covers your target in a mass of darkness that steals their armor class and gives it to you for 10 min.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 50
+
+| slots = 
+
+{{SpellSlotRow | 7 | Decrease AC by 15 (L50) to 18 (L59) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 10 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = A seething mass of darkness engulfs you.
+| msg_cast_on_other = Someone  is engulfed in a seething mass of darkness.
+| msg_wears_off = The pain subsides.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

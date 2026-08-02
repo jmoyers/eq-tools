@@ -1,0 +1,50 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Furor
+| spellicon = C
+| description = Calls upon the furor of the gods to strike your target, causing 33 damage.
+
+| classes = 
+
+* [[Cleric]] - Level 5 (Autogranted)
+* [[Paladin]] - Level 8
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 16 (L5) to 19 (L10) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 19
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden burst of force.
+| msg_cast_on_other = Someone  is struck by a sudden burst of force.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRowB | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (773,115) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F1) | (103,388) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRow  | [[Paineel]] | [[Oren Calferdo]] | Cleric Guild | (1125,427) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Zorik]] | Cleric Guild | (-182,770) }}
+}}
+
+}}

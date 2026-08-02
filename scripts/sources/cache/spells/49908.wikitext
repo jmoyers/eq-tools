@@ -1,0 +1,47 @@
+{{Classic Era}}{{Spellpage|
+
+| spellname = Revive
+| spellicon = J
+| description = Revives a slain ally, restoring 35% of their lost experience. It takes some time for the recently revived to fully recover.
+
+| classes = 
+
+* [[Cleric]] - Level 27
+* [[Paladin]] - Level 39
+
+| slots = 
+
+{{SpellSlotRow | 1 | Resurrect }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 450
+| range = 200
+| casting_time = 5.50
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = Instant
+| target_type = Corpse
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRowB | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+}}
+
+}}

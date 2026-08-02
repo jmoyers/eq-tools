@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = String Resonance 11
+| spellicon = C
+| focus_effect = 1
+| description = Increases the power of stringed instrument based bard songs by up to 110%.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+BRD
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Gypsy Lute}}</li>
+</ul> 
+
+| slots = 
+{{SpellSlotRow | 1 | Increases the power of stringed instrument based bard songs by up to 110% }}
+
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 1:57:00
+| target_type = Self
+| spell_type = 
+| resist = 
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

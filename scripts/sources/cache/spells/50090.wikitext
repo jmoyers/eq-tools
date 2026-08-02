@@ -1,0 +1,41 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Repulse Animal
+| spellicon = G
+| description = Incites fear in an [[:Category:Animal | animal]] target, causing them to flee.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Fear(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 8 ticks
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Magic (-25)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  is utterly repulsed!
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+}}

@@ -1,0 +1,69 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Paralyzing Earth
+| spellicon = Q
+| description = Causes the earth to adhere to your target's feet, preventing them from moving for up to 3 min.
+|merchant_value = 4p 7g 5s
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 45
+* [[Necromancer]] - Level 46
+* [[Wizard]] - Level 48
+* [[Cleric]] - Level 56
+* [[Shaman]] - Level 56
+
+| items_with_effect = 
+
+<ul><li> {{:Herbalist's Spade}} {{Era | Chardok}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 3 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your feet adhere to the ground.
+| msg_cast_on_other = Someone 's feet adhere to the ground.
+| msg_wears_off = Your feet come free.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+* This spell CAN be purchased through Overthere and Firiona Vie outposts.
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Shaman Spell Shop | (-3816,1651) }}
+{{SpellWhereRowB | [[Overthere]] | [[Kuglaz Grot]] | Evil Outpost | (2760, 2425) }}
+}}
+
+{{Necromancer Recipe| Paralyzing Earth | 184}}
+{{Recipe Component| Words of Crippling Force | 869}}
+
+{{Enchanter Recipe| Paralyzing Earth |184}}
+{{Recipe Component| Nilitim's Grimoire Pg. 400 | 869}}
+{{Recipe Component| Nilitim's Grimoire Pg. 401 | 869}}
+
+* '''Wizard''' [[Research#Wizard_Spell_Recipes|Research]] (Trivial: 184)
+** '''Yield: Paralyzing Earth''' x1
+** In [[Lexicon]]:
+{{Recipe Component| Rune of Crippling | 967}}
+{{Recipe Component| Rune of Rathe | 967}}
+
+| TableLocations = Level 50+ Mobs<br/>Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+}}

@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Herikol's Soothing
+| spellicon = 99
+| description = Restores your warder's health, healing 298 hit points, as well as curing them of diseases, poisons, and curses.
+| classes = 
+
+* [[Beastlord]] - Level 27
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Current Hit Points by 274 (L27) to 298 (L35) }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 10 }}
+{{SpellSlotRow | 3 | Decrease Poison Counter by 10 }}
+{{SpellSlotRow | 4 | Decrease curse Counter by 10 }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 108
+| range = 100
+| resist = Unresistable
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Pet Heal
+
+| other = 
+
+| msg_cast_on_you =
+| msg_cast_on_other = Someone feels much better.
+| msg_wears_off = 
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+}}

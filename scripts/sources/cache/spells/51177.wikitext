@@ -1,0 +1,48 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+| spellname = Gravity Flux
+| spellicon = C
+| description = '''Two different incompatible versions of this spell exists in game.''' One is crafted by [[Wizard]]s and the other is crafted by [[Enchanter]]s. Causes a sudden reversal in the gravity around your target, doing 214 damage. Only hits 4 mobs max. Please confirm damage at various levels.
+<br>
+<br>
+
+Quad-kiting Wizards are recommended to use the more mana efficient [[Circle of Force]] until level 51, then [[Pillar of Frost]].
+This spell has an alternate use to project yourself/duel to locations not easily accessible like ramparts of CoM. 
+
+When cast by NPCs, this spell can be very dangerous against players, as fall damage can be very brutal, especially if they are overweight or fall off nearby cliffs. [[Levitate]] and [[Dead Man Floating]] can counter this risk.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 36
+* [[Wizard]] - Level 43
+
+| items_with_effect = 
+
+<ul><li> {{:Earring of Displacement}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 242 (L36) to 270 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Toss Up(100) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 337
+| range = 200
+| casting_time = 5.90
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You experience chaotic weightlessness.
+| msg_cast_on_other = Someone  rises chaotically into the air.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

@@ -1,0 +1,59 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Emissary of Thule
+| spellicon = L
+| description = Summons forth a servant of fear to do your bidding.  Consumes 2x [[Bone Chips]] and 1x [[Peridot]] when successfully cast.
+
+Becomes immune to fear spells after the [[Timeline|Sept 2001 Era]].
+
+| classes = 
+
+* [[Necromancer]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Spectre Pet }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 650
+| range =  
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Bone Chips]] x2, [[Peridot]] x1
+* '''Focus:''' [[Encyclopedia Necrotheurgia]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  calls forth a servant of fear.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Old Sebilis]]
+* [[Emperor Chottal]]
+
+[[The Overthere]]
+* [[a cliff golem]]
+
+[[Veeshan's Peak]]
+* [[Xygoz]]
+
+[[Skyfire Mountains]]
+* [[A Guardian Wurm]]
+
+}}
+[[File:Ice_screenshot_20181107-101021.png|right|500px]]

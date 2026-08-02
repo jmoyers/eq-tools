@@ -1,0 +1,35 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Circle of Force
+| spellicon = 51
+| description = Creates a circle of force, causing between 193 and 216 damage to several creatures in the vicinity of your target. Single target mana efficiency of 1.15 to 1.23. <br>Targeted AoE / Rain Type spell without waves. Hits up to 4 creatures max.
+<br>
+<br>
+This is a '''recommended''' quad-kiting spell for Wizards, replacing [[Column of Lightning]] and being replaced by [[Pillar of Frost]]. Does not affect the caster.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 31
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 193 (L31) to 216 (L39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 175
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (-10)
+
+| msg_cast_on_you = You are immolated by raging energy.
+| msg_cast_on_other = Someone  is immolated by raging energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

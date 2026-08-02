@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Word of Vigor
+| spellicon = J
+| description = Mends the major wounds, healing between 537 and 620 hit points, and replenishes 100 Stamina to everyone in your group in range. Heals group for 590 each. [[Talk:Word of Vigor|See Discussion.]]
+
+| classes = 
+
+* [[Cleric]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 537 (L53) to 620 (L60) }}
+{{SpellSlotRow | 2 | Decrease Stamina Loss by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 750
+| range = 100
+| casting_time = 4.25
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel vigorous.
+| msg_cast_on_other = Someone  looks vigorous.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via the quests: [[Cleric Spells (Good)]] or [[Cleric Spells (Evil)]].
+
+}}

@@ -36,9 +36,13 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
   // ± spread from the p25/p75 IQR around the estimate.
   const spread =
     buff.p25 != null && buff.p75 != null ? (buff.p75 - buff.p25) / 2 : null
-  // Overdue (Task #30): run past the p75 window (n≥2) → show "any moment" instead of
-  // a bottomed-out countdown.
-  const overdue = isOverdue(elapsed, buff.p75, buff.n)
+  // Overdue (Task #30 + #34): run past the estimated window → show "past estimate" instead
+  // of a bottomed-out countdown. For mined estimates this needs n≥2 past p75; for a DB
+  // (authoritative) estimate, being past the DB duration itself is enough (expiry is now
+  // message-driven, so a DB buff sits "past estimate" until its wear-off line lands).
+  const overdue =
+    isOverdue(elapsed, buff.p75, buff.n) ||
+    (buff.durationSource === 'db' && buff.estimatedMs != null && elapsed > buff.estimatedMs)
   // Provisional (Task #30): shown optimistically the instant we saw the cast begin,
   // before the land timeout confirms it. Dim the row + show a "casting…" hint.
   const provisional = buff.provisional === true
@@ -46,6 +50,13 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
   // Debuff target is INFERRED (castBegin carries no target) — surface it honestly as a
   // "target: inferred" chip, never a silent guess (Task #32 rule 5c).
   const inferred = buff.inferredTarget === true
+
+  // Permanent illusion (Task #34): a self-cast illusion buff while the Permanent Illusion
+  // AA is owned lasts forever — no countdown, an explicit "permanent · illusion AA" state.
+  const permanent = buff.permanent === true
+  // Estimate provenance (Task #34): 'db' (authoritative wiki duration) vs 'observed'
+  // (recency-weighted max of mined samples). Shown as a small chip on the bar caption.
+  const source = buff.durationSource
 
   return (
     <Paper
@@ -95,13 +106,37 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
             sx={{ height: 18, fontSize: 11 }}
           />
         )}
+        {buff.messageDriven && !provisional && (
+          <Tooltip title="Confirmed by an exact chat message (its landing/heal line), not inferred from cast timing.">
+            <Chip
+              size="small"
+              label="message"
+              variant="outlined"
+              color="success"
+              sx={{ height: 18, fontSize: 11 }}
+            />
+          </Tooltip>
+        )}
         <Box sx={{ flexGrow: 1 }} />
         <Typography variant="caption" color="text.secondary">
           {fmtDuration(elapsed)} elapsed
         </Typography>
       </Stack>
 
-      {hasEst ? (
+      {permanent ? (
+        // Permanent illusion (Task #34): a full, steady bar and an explicit label — no
+        // countdown, because a self-cast illusion under the Permanent Illusion AA never fades.
+        <>
+          <LinearProgress
+            variant="determinate"
+            value={100}
+            sx={{ height: 8, borderRadius: 1, '& .MuiLinearProgress-bar': { bgcolor: 'warning.main' } }}
+          />
+          <Typography variant="caption" color="warning.main">
+            permanent · illusion AA
+          </Typography>
+        </>
+      ) : hasEst ? (
         <>
           <LinearProgress
             variant="determinate"
@@ -115,16 +150,35 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
               }
             }}
           />
-          <Stack direction="row" justifyContent="space-between">
+          <Stack direction="row" justifyContent="space-between" alignItems="center">
             <Typography variant="caption" color={overdue ? 'warning.main' : 'text.secondary'}>
               {overdue
-                ? 'overdue · any moment'
+                ? 'past estimate · awaiting wear-off'
                 : `~${fmtDuration(remaining as number)} left`}
               {!overdue && spread != null && spread > 1000 ? ` (± ${fmtDuration(spread)})` : ''}
             </Typography>
-            <Typography variant="caption" color="text.disabled">
-              n={buff.n}
-            </Typography>
+            <Stack direction="row" spacing={0.5} alignItems="center">
+              {/* Estimate provenance (Task #34): authoritative DB duration vs mined max. */}
+              {source && (
+                <Tooltip
+                  title={
+                    source === 'db'
+                      ? 'Duration from the spell database (authoritative wiki value).'
+                      : 'Duration estimated from observed casts (recency-weighted max of samples).'
+                  }
+                >
+                  <Chip
+                    size="small"
+                    label={source === 'db' ? 'db' : 'observed'}
+                    variant="outlined"
+                    sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
+                  />
+                </Tooltip>
+              )}
+              <Typography variant="caption" color="text.disabled">
+                n={buff.n}
+              </Typography>
+            </Stack>
           </Stack>
         </>
       ) : (
@@ -163,6 +217,7 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
       <TableHead>
         <TableRow>
           <TableCell>Spell</TableCell>
+          <TableCell align="right">estimate</TableCell>
           <TableCell align="right">n</TableCell>
           <TableCell align="right">median</TableCell>
           <TableCell align="right">IQR (p25–p75)</TableCell>
@@ -170,27 +225,59 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
         </TableRow>
       </TableHead>
       <TableBody>
-        {rows.map((s) => (
-          <TableRow key={s.spell} hover>
-            <TableCell>{s.spell}</TableCell>
-            <TableCell align="right">
-              {s.n === 0 ? (
-                <Tooltip title="Seen fading but no clean cast→fade pair yet">
-                  <span style={{ opacity: 0.5 }}>0</span>
-                </Tooltip>
-              ) : (
-                s.n
-              )}
-            </TableCell>
-            <TableCell align="right">{fmtDuration(s.medianMs)}</TableCell>
-            <TableCell align="right" style={{ opacity: 0.8 }}>
-              {s.p25 != null && s.p75 != null ? `${fmtDuration(s.p25)} – ${fmtDuration(s.p75)}` : '—'}
-            </TableCell>
-            <TableCell align="right" style={{ opacity: 0.65 }}>
-              {s.minMs != null && s.maxMs != null ? `${fmtDuration(s.minMs)} – ${fmtDuration(s.maxMs)}` : '—'}
-            </TableCell>
-          </TableRow>
-        ))}
+        {rows.map((s) => {
+          // The estimate the app uses (Task #34): DB duration when known ("db"), else the
+          // recency-weighted max of samples ("observed"). Falls back to median for older
+          // deltas without the field.
+          const estMs = s.estimateMs ?? s.dbDurationMs ?? s.medianMs
+          const estSrc = s.estimatorSource ?? (s.dbDurationMs != null ? 'db' : s.medianMs != null ? 'observed' : undefined)
+          return (
+            <TableRow key={s.spell} hover>
+              <TableCell>{s.spell}</TableCell>
+              <TableCell align="right">
+                {estMs != null ? (
+                  <Tooltip
+                    title={
+                      estSrc === 'db'
+                        ? 'Authoritative duration from the spell database.'
+                        : 'Recency-weighted max of observed casts.'
+                    }
+                  >
+                    <span>
+                      {fmtDuration(estMs)}
+                      {estSrc ? (
+                        <Chip
+                          size="small"
+                          label={estSrc === 'db' ? 'db' : 'obs'}
+                          variant="outlined"
+                          sx={{ ml: 0.5, height: 15, fontSize: 9, '& .MuiChip-label': { px: 0.4 } }}
+                        />
+                      ) : null}
+                    </span>
+                  </Tooltip>
+                ) : (
+                  '—'
+                )}
+              </TableCell>
+              <TableCell align="right">
+                {s.n === 0 ? (
+                  <Tooltip title="Seen fading but no clean cast→fade pair yet">
+                    <span style={{ opacity: 0.5 }}>0</span>
+                  </Tooltip>
+                ) : (
+                  s.n
+                )}
+              </TableCell>
+              <TableCell align="right">{fmtDuration(s.medianMs)}</TableCell>
+              <TableCell align="right" style={{ opacity: 0.8 }}>
+                {s.p25 != null && s.p75 != null ? `${fmtDuration(s.p25)} – ${fmtDuration(s.p75)}` : '—'}
+              </TableCell>
+              <TableCell align="right" style={{ opacity: 0.65 }}>
+                {s.minMs != null && s.maxMs != null ? `${fmtDuration(s.minMs)} – ${fmtDuration(s.maxMs)}` : '—'}
+              </TableCell>
+            </TableRow>
+          )
+        })}
       </TableBody>
     </Table>
   )
@@ -236,12 +323,15 @@ export default function BuffsView(): JSX.Element {
         </Stack>
         <Typography variant="caption" color="text.secondary">
           Buffs are bound to WHO they're on — self, your pet, or (for debuffs like slows) a hostile
-          mob. Cast targets are learned from landing emotes ("You feel much faster." ⇒ self); ranks
-          are merged so "Swift Like the Wind I" and its rank-less fade pair. Durations are mined from
-          each cast→fade pair; fades that can never be observed — a charmed pet or mob left behind on a
-          zone, an entity's death, or a logout gap (≥30 min clears everything) — are censored, not
-          sampled, and a buff run far past its window auto-retires. Debuff targets are inferred (the
-          cast line has no target) and shown as such.
+          mob. Applies are recognized from the exact chat MESSAGE each spell prints (so Quick Buff
+          bursts, which show no "You begin casting" line, still register — look for the "message" chip),
+          and durations come from the spell database ("db") when known, else the recency-weighted max of
+          observed casts ("observed"). Expiry favors the spell's own wear-off message; a buff past its
+          estimate sits "past estimate · awaiting wear-off" rather than vanishing. Self-cast illusions
+          under the Permanent Illusion AA are marked permanent. Cast targets are also learned from
+          landing emotes; ranks are merged; fades that can never be observed (a pet/mob left behind on a
+          zone, a death, or a ≥30-min logout gap) are censored, and a buff run far past its window
+          auto-retires. Debuff targets are inferred and shown as such.
         </Typography>
       </Box>
 

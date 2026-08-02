@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mass Crystallize Mana
+| spellicon = U
+| description = Crystallizes mana into a physical form, creating five vials of crystallized mana. Consumes five poison vials and five peridots when cast
+
+| classes = 
+
+* [[Enchanter]] - Level 20
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Vial of Cloudy Mana]] x 5}}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 600
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Peridot]] x 5, [[Poison Vial]] x 5
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lesser Faydark]] | [[A Brownie Merchant]] | Brownie Villiage | (1814,3118) }}
+}}
+
+}}

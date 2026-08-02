@@ -1,0 +1,53 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Alter Plane: Sky
+| spellicon = 129
+| description = Opens an arcane portal that teleports your entire group to the Plane of Sky.  Consumes a [[Cloudy Stone of Veeshan]] when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 46
+
+| items_with_effect = 
+
+<ul><li> {{:Amulet of Planar Transference}}
+</li><li> {{:Amulet of the Void}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport group to 1384,539,-664 in [[Plane of Air]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Cloudy Stone of Veeshan]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering dimensional portal.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Qualtis Weslent]] | Library (F3) | (-1108,-253) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Misar D'Dbth]] | Library (F1) | (912,-1349) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Stormy]] | Wizard Guild | (460,-458) }}
+}}
+| TableLocations = Erudin<br/>Neriak<br/>Felwithe
+| TableEra = {{{TableEra|Classic}}}
+
+}}

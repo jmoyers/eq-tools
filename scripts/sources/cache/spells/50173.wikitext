@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Drowsy
+| spellicon = 17
+| description = Inflicts your target with a drowsy fever, slowing their attack rate for 3 min 30s.
+
+| classes = 
+
+* [[Shaman]] - Level 5 (Autogranted)
+* [[Beastlord]] - Level 20
+
+| items_with_effect = 
+
+<ul><li> {{:Canyoneer Pike}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 25% }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 3 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 1.50
+| recast_time = 5.00
+| duration = 2 Min 30 Sec
+| target_type = Single
+| spell_type = Slow
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel drowsy.
+| msg_cast_on_other = Someone yawns.
+| msg_wears_off = You feel less drowsy.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

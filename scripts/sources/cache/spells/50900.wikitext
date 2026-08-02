@@ -1,0 +1,36 @@
+{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Aegis of Bathezid
+| spellicon = J
+| description = Grants you the protection of the Di'Zok, damaging any creature that attacks you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Regal Band of Bathezid}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Damage Shield by 25 }}
+
+| skill = 
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 25 minutes @L9
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = The protection of the Di`Zok radiates around you.
+| msg_cast_on_other = Someone  radiates with the protection of Di`Zok.
+| msg_wears_off = The protection of Di`Zok fades.
+}}
+
+[[Category:NPC Only Spells]]

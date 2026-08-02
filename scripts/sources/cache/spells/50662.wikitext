@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Kelin's Lucid Lullaby
+| spellicon = 35
+| description = A quiet lullaby that causes your target to fall into an enchanted sleep. Affects creatures up to level 30.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 15
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Mesmerize (up to L30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | Level Cap: 25 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}}  | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 30
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 18 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel quite drowsy.
+| msg_cast_on_other = Someone 's head nods.
+| msg_wears_off = You no longer feel sleepy.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

@@ -1,0 +1,45 @@
+<noinclude>{{Chardok Revamp Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Translocate: Great Divide
+| spellicon = V
+| description = Opens an arcane portal that teleports your target to the [[Great Divide]]. Unlike the equivalent Circle and Portal spells, Velious translocate spells do not require teeth like [[Tooth of the Great Divide]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Translocate to -3766,3651,-237 in greatdivide | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 100
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Small Portal Fragments]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Temple of Solusek Ro]] | [[Terblyn Zelbus]] | Caster Quest NPC Area | (441,-72) }}
+}}
+| TableLocations = Temple of Solusek Ro
+| TableEra = {{{TableEra|Chardok}}}
+
+}}

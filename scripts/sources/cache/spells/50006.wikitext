@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Calm Animal
+| spellicon = 39
+| description = Calms the ferocity of many animals, making them less likely to attack. This spell works on creatures up to level 50.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 15
+* [[Ranger]] - Level 31
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Reduce Aggro Radius by 5 (up to L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Reaction Radius (10/50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Pacify | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 42 Sec
+| target_type = Animal
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your aggression subside.
+| msg_cast_on_other = Someone  looks less aggressive.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

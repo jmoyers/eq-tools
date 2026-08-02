@@ -1,0 +1,55 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Flaming Sword of Xuzl
+| spellicon = L
+| description = Conjures a flaming sword that attacks your target until either it, or the target, is dead. Sounds impressive, but when you consider the fact that the flaming sword has 1 hp (source?) you begin to realize how much this spell sucks. Sword double attacks 28 damage per hit and bashes 17 max per round and somehow is an aggro magnet. Don't expect to get much out of this 700 mana sinkhole.
+
+Some wizards use this spell, plus a reclaim energy item, as an extra reserve mana battery. This tactic can be situationally useful but is often unreliable. Wizards with low conjuration may find it help to increase the skill by repeatedly casting [[Eye of Zomm]] or [[Halo of Light]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Pet: SumSword | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 700
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Kunark Level 50+ Mobs
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Trakanon]]
+* [[Sebilite protector]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+[[Veeshan's Peak]]
+* [[Silverwing]]
+
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

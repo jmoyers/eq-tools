@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Illusion: Human
+| spellicon = U
+| description = Cloaks you in a shimmering illusion that makes you appear to be a Human.
+
+| classes = * [[Enchanter]] - Level 2
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 1 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 10
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 36 Min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel different.
+| msg_cast_on_other = Someone 's image shimmers.
+| msg_wears_off = Your illusion fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Pinilla]] | Enchanter Guild (F3) | (564,736) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Syrn L'Crit]] | Caster Guid (Top Floor) | (139,-897) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Celamari Marre]] | Caster Guild | (329,-622) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Berill Gladeleaper]] | Enchanter Guild | (533,-865) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Monat D'Larme]] | Caster Guild (F1) | (123,-770) }}
+}}
+
+}}
+[[Category: Illusions]]

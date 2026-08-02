@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Kintaz's Animation
+| spellicon = 38
+| description = Animates a weapon and shield to attack your enemies. Consumes a tiny dagger when cast.
+
+| classes = * [[Enchanter]] - Level 48
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Kintaz's Animation Summon|Kintaz's Animation]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 300
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' 3 Tiny Daggers
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+</ul>
+
+}}

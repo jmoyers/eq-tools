@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Covetous Subversion
+| spellicon = G
+| description = Restores your target's mana at the expense of your own.
+
+| classes = * [[Necromancer]] - Level 43
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A foreign surge of mana refreshes your mind.
+| msg_cast_on_other = Someone  twitches.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+}}
+
+}}

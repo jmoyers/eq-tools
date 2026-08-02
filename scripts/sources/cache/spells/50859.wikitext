@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Dawncall
+| spellicon = C
+| description = Causes holy light to wash over your target, causing 125 damage to undead creatures every 6 seconds for up to 36 secs (6 ticks).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Great Spear of Dawn}}
+</li><li> {{:Dawncaller, Blade of the Morning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 125 per tick }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 6 ticks
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You stagger as the light of dawn washes over you.
+| msg_cast_on_other = Someone  staggers as the light of dawn washes over it.
+| msg_wears_off = The light of dawn retreats.
+}}
+
+[[Category:NPC Only Spells]]

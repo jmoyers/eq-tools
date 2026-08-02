@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Dread of Night
+| spellicon = G
+| description = Inspires fear in an undead opponent, causing them to flee.
+
+| classes = 
+
+* [[Cleric]] - Level 51
+* [[Necromancer]] - Level 51
+
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(7) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 1.75
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 8 ticks
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-25)
+
+| msg_cast_on_you = Your bones tingle.
+| msg_cast_on_other = Someone  has been instilled with the dread of night.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

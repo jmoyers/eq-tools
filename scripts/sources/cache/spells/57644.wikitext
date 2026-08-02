@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Echoing Light
+| spellicon = J
+| description = Fills your target's body with an echo of light, immediately healing 140 hit points, then healing twice more for 55 hit points every 6 seconds for 6s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 14
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 117 (L14) to 140 (L22) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Hitpoints between 55 and 55 for two additional ticks. | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 85
+| range = 100
+| casting_time = 1.5
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 0:06
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are embraced by a spirit of healing.
+| msg_cast_on_other = Target is embraced by a spirit of healing.
+| msg_wears_off = The echo of healing fades away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

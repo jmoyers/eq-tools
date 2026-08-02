@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Stalwart Regeneration
+| spellicon = Q
+| description = Causes your body to fervidly heal itself, increasing your regeneration, but rendering you unable to move your feet.
+
+Does NOT stack with certain spells containing regeneration or damage over time. 
+
+Does NOT stack with the spell version of <b>[[Aura of Battle]]</b>.
+Does NOT stack with <b>[[Rotting Flesh]], [[Putrefy Flesh]]</b>.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Bark Potion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Hitpoints by 2 per tick }}
+{{SpellSlotRow | 3 | Root }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 minute
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your feet anchor to the ground as you begin to regenerate.
+| msg_cast_on_other = Someone  is stuck to the ground as they begin to regenerate.
+| msg_wears_off = You have stopped regenerating.
+}}
+
+[[Category:NPC Only Spells]]

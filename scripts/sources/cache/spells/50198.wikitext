@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Beguile Undead
+| spellicon = D
+| description = Commands an undead creature to do your bidding, temporarily bending them to your will.
+
+| classes = * [[Necromancer]] - Level 31
+| items_with_effect = 
+
+* None
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 46 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 170
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 16 Min
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic 
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  moans.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-1)]] | Necromancer Guild | (2082,-410) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Ainla Yurimar]] | Underground | (-162,-270) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Rizyra F'Lok]] | Necromancer Guild (F1) | (1335,-1213) }}
+{{SpellWhereRow  | [[Paineel]] | [[Leovre Kieqmarn]] | Necromancer Guild | (665,804) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Dallisen Xalladyr]] | Necromancer Guild | (402,-311) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Rott]] | Cubby near PvP Area | (-440,236) }}
+}}
+
+}}

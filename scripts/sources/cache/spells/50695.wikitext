@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Selo's Chords of Cessation
+| spellicon = 143
+| description = A collection of chords that binds nearby enemies in magical cords, slowing their attacks and causing them damage. This song does not stack with lv54 [[Selo's Assonant Strane]].
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 48 (May 1999)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 2 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Attack Speed by 17% (L48) to 20% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 30 
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Chords of music bind your hands.
+| msg_cast_on_other = Someone  is bound in chords of music.
+| msg_wears_off = The chains disappear.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+}}
+| TableLocations = Highkeep
+| TableEra = Classic
+}}

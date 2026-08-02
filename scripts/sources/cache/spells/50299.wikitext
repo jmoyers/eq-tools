@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = McMerin's Feast
+| spellicon = H
+| description = Channels your body's energy to refresh your mind, trading hit points for mana.
+
+| classes = * [[Shaman]] - Level 38
+| items_with_effect = 
+
+<ul><li> {{:Sacrifice (item)}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 67 }}
+{{SpellSlotRow | 2 | Increase Mana by 30 (L39) to 36 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 0
+| range =  
+| casting_time = 1.25
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body aches as your mind clears.
+| msg_cast_on_other = Someone  winces.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell's scroll, [[McMerin's Feast]], is obtained via quests: [[Cannibalize II (Good)]] or [[Cannibalize II (Evil)]].
+
+}}

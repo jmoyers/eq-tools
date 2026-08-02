@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Magi Curse
+| spellicon = M
+| description = Cast by [[Tserrina Syl'Tor (NPC)]], [[VhalSera]], [[Amontehepna]], [[Cara Omica]], and possibly [[Ashley]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+* Though duration states this can last up to 1 minute, it generally only lasts 1 tick ( 6 seconds ) on NPCs aside from Tserrina Syl'Tor which can last up to 2 ticks. (12 seconds)
+* All 4 NPC's that utilize this spell are stunnable, virtually eliminating the possibility of it landing (Pending stun resists)
+| slots = 
+
+{{SpellSlotRow | 1 | SpinStun }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 100 per tick }}
+{{SpellSlotRow | 3 | Decrease Mana by 100 per tick }}
+{{SpellSlotRow | 4 | Increase Stamina Loss by 100 }}
+
+| skill = 
+| mana = 0
+| range = Combat
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1 minute @L20
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have been Magi cursed.
+| msg_cast_on_other = Someone  has been Magi cursed.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

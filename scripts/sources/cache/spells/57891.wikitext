@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Sermon of the Righteous
+| spellicon = 153
+| description = Bathes your target with holy light, causing 79 damage to undead every 6 seconds for 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 25
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 69 (L25) to 79 (L35) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 78
+| range = 200
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 30 Sec
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = 
+| msg_cast_on_other =  shrieks in pain.
+| msg_wears_off = The pain subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

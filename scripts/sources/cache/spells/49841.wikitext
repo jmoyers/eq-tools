@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Torment of Argli
+| spellicon = D
+| description = Consumes your target in mental torment, causing 28 damage every six seconds for 2.0 mins. This spell also lowers their intelligence and wisdom, and drains their mana. (560 total damage @ 3.73 DPM)
+
+| classes = 
+
+* [[Enchanter]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease WIS by up to -31 (L60) (effect increases over time) }}
+{{SpellSlotRow | 2 | Decrease Mana by 35 per tick }}
+{{SpellSlotRow | 3 | Derease INT by up to -31 (L60) (effect increases over time) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 28 per tick (effect decreases over time) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 150
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 2 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your thoughts muddle from the Torment of Argli.
+| msg_cast_on_other = Someone  screams from the Torment of Argli.
+| msg_wears_off = Your torment has ended.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

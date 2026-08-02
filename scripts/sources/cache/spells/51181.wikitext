@@ -1,0 +1,52 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Song: Melody of Ervaj
+| spellicon = A
+| description = An archaic song that increases the attack speed of your group.  This increase is cumulative with most other effects that increase attack speed. It does stack with other haste buffs, it does not bypass the [[Haste_Guide#Haste_Caps|Haste_Cap]].
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 50
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Haste v2 by 5% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 5 (L50) to 6 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]] †
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' [[Horn]]
+
+| msg_cast_on_you = A song of inspiration fills your weapon arm with strength.
+| msg_cast_on_other =  
+| msg_wears_off = The inspiration fades.
+
+| where_to_obtain = 
+* Drops from Velious Level 50+ Mobs
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathshaper]]
+* [[A Chetari Dominator]]
+* [[A Chetari seeker]]
+
+[[Plane of Growth]]
+* [[A Rolling Plains Steed]]
+
+| TableLocations = Velious Mobs
+| TableEra = Velious
+}}

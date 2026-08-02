@@ -1,0 +1,35 @@
+{{Spellpagesmart|
+
+| spellname = Call of Sky Strike
+| spellicon = 161
+| description = Decrease Hitpoints by 35 and Stun (1.00 sec). Proc from {{SpellHoverLink|Call of Sky}} buff.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Stun (1.00 sec) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 
+| range =  
+| casting_time = 
+| fizzle_time = 
+| recast_time = 
+| duration = 
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = A concussion of air knocks you backwards.
+| msg_cast_on_other = Someone is knocked backwards by a concussion of air.
+| msg_wears_off = 
+
+| TableEra = Velious
+}}

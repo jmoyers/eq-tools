@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Bounce
+| spellicon = 82
+| description = Surrounds your body in a reflective aura, providing a chance for all incoming spells to rebound back against the caster.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 43
+* [[Magician]] - Level 42
+* [[Necromancer]] - Level 44
+* [[Wizard]] - Level 44
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Chance to Reflect Spell by 40% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range =  
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 120.00
+| duration = 12 seconds
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A reflective aura surrounds you.
+| msg_cast_on_other = Player's image shimmers.
+| msg_wears_off = The reflective aura fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

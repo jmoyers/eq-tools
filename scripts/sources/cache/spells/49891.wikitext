@@ -1,0 +1,60 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Yaulp II
+| spellicon = R
+| description = Focuses your spiritual energy into a great battle cry, increasing your strength and armor class.
+
+| classes = 
+
+* [[Cleric]] - Level 16 (Autogranted)
+* [[Paladin]] - Level 38
+
+| items_with_effect = 
+
+<ul><li> {{:Brell's Keg Popper}}
+</li><li> {{:Donal's Helm of Mourning}}
+</li><li> {{:Frost Giant Femur}}
+</li><li> {{:Mask of War}}
+</li><li> {{:Shrieking Ahlspiess}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase AC by 8 }}
+{{SpellSlotRow | 3 | Increase STR by 20 }}
+{{SpellSlotRow | 4 | Decrease Stamina Loss by 1 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 1
+| range =  
+| casting_time = 0.50
+| fizzle_time = 2.25
+| recast_time = 18.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a surge of strength as you let forth a mighty yaulp.
+| msg_cast_on_other = Someone  lets loose a mighty yaulp.
+| msg_wears_off = Your surge of strength fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (0,-445) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRowB | [[Paineel]] | [[Erelin Verisue]] | Cleric Guild | (1226,551) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Taben]] | Cleric Guild | (-227,809) }}
+{{SpellWhereRowB | [[North Kaladim]] | [[Duppa Pickstone]] | Cleric Guild | (747,137) }}
+}}
+}}

@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = purge
+| spellicon = C
+| description = Removes minor toxins and disease from your body.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Sword of Blessings}}
+</li><li> {{:Unicorn Horn}}
+</li><li> {{:Unicorn Horn Fragments}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 1 }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

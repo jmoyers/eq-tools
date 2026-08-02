@@ -1,0 +1,46 @@
+{{Spellpagesmart|
+
+| spellname = Shauri's Sonorous Clouding
+| spellicon = B
+| description = This sonnet surrounds your body with a light fog, allowing you to slip by many creatures undetected.  This song also allows you to see invisible creatures.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 19
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | See Invisible(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Required''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]] †
+
+| mana = 0
+| range = 45
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Focus:''' Wooden Flute
+
+| msg_cast_on_you = A soft mist surrounds you.
+| msg_cast_on_other =  
+| msg_wears_off = You become visible.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Altrusan Belstince]] | Library (F1) | (-1102,-214) }}
+}}
+| TableLocations = Erudin
+| TableEra = Classic
+}}

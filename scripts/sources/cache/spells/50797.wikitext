@@ -1,0 +1,41 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = soul well
+| spellicon = G
+| description = Creates a bond between your soul and that of your target, siphoning progressively more health the longer the bond goes on.
+
+If a mob dies while the spell is active you will still continue to be healed until the end of the spell duration.
+
+'''Does stack with Vexing Mordinia, if Soul Well is casted first.'''
+
+Yellow text will say "Your Soul Well spell has worn off." and Vexing Mordinia replaces it on your buff bar. However, you will be able to see two "Soandso has healed you for X points of damage." messages.
+
+| classes = 
+
+* This spell is cast by items only.
+
+| items_with_effect = 
+
+<ul><li> {{:Shissar Deathspeaker Staff}}
+</li><li> {{:Shissar Seance Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 6 | Decrease Hitpoints of target by 22 to 120 per tick (increasing each tick) and healing you for a total of 650 to 781 depending if you get that last tick.}}
+
+| skill = 
+| mana = 360
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 1 ticks @L1 to 1 minute @L17
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off = The bond fades.
+}}

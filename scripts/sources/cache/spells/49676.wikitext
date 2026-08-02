@@ -1,0 +1,75 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Lull
+| spellicon = D
+| description = Lulls the mind of your target, lowering its aggressiveness for 2 min. Affects creatures up to level 30.
+
+| classes = 
+
+* [[Cleric]] - Level 1
+* [[Enchanter]] - Level 1 (Autogranted)
+* [[Paladin]] - Level 10
+
+| items_with_effect = 
+
+<ul><li> {{:Initiate Symbol of Quellious}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Frenzy Radius (15/30) }}
+{{SpellSlotRow | 2 | Reaction Radius (15/30) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 10
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 3.00
+| duration = 2 Min
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel less aggressive.
+| msg_cast_on_other = Someone  looks less aggressive.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRow  | [[Erudin]] | [[Kathar Varselli]] | Cleric Guild - Prexus (F1) | (-1067,-417) }}
+{{SpellWhereRowB | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Seleni Treekeeper]] | Paladin Guild | (-5,-256) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRow  | [[Felwithe|Southern Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (773,115) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Storn Trueblade]] | Paladin Guild | (939,124) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRow  | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F1) | (103,388) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Orex Nolus]] | Paladin Guild (F1) | (218,-119) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRow  | [[Paineel]] | [[Zarnlel Apridor]] | Cleric Guild | (1125,440) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Lisdon Trekka]] | Cleric Guild | (-236,-480) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Fesse Bontex]] | Cleric Guild | (-257,-510) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Khensol Undesta]] | Caster Guild | (290,-622) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Caleah Herblender]] | The Herb Jar | (311,-558) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Derrin]] | Cleric Guild | (-205,773) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Keegan]] | Paladin Guild | (-210,543) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

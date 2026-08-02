@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Translocate: North Karana
+| spellicon = 121
+| description = Opens an arcane portal that teleports your target to the Northern Plains of Karana.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Wizard]] - Level 35
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Translocate to -3685,1209,-5 in [[North Karana]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 100
+| casting_time = 10.00
+| fizzle_time =
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other =  fades away.
+| msg_wears_off = 
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Mend Bones
+| spellicon = J
+| description = Restores an undead servant, healing 32 hit points and curing them of diseases, poisons, and curses.
+
+| classes = * [[Necromancer]] - Level 7 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 33 (L8) to 50 (L25) }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 10 }}
+{{SpellSlotRow | 3 | Decrease Poison Counter by 10 }}
+{{SpellSlotRow | 4 | Decrease curse Counter by 10 }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 15
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  begins to mend.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-4)]] | Necromancer Guild | (2099,-393) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Peku Croxe]] | Underground | (-200,-244) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Misal S'Kor]] | Necromancer Guild (F1) | (1337,-1239) }}
+{{SpellWhereRowB | [[Paineel]] | [[Kilevra Natasu]] | Necromancer Guild | (692,869) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Gyrna Porrin]] | Necromancer Guild | (291,-322) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Plight]] | Cubby near PvP Area | (-391,234) }}
+}}
+
+}}

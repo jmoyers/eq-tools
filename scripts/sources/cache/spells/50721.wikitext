@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Trakanon's Touch
+| spellicon = C
+| description = This is the banishment that [[Trakanon]] casts.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to {{Loc|Old Sebilis|-1283,-117,-175|-1283,-117,-175}} in 2nd level of Sebilis }}
+
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+| skill = 
+
+| msg_cast_on_you = You have been teleported.
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Imbue Ruby
+| spellicon = U
+| description = Focuses the power of Brell Serilis into a ruby. Consumes a ruby when cast.
+
+| classes = 
+
+* [[Cleric]] - Level 29
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: Imbued Ruby }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Ruby]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+}}
+
+}}

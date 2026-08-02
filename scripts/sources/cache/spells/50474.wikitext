@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Nek Gate
+| spellicon = V
+| description = Opens an arcane portal that teleports you to Nektulos Forest.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 24
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to 432,-772,35 in nektulos | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Ignacia Rellasp]] | Library (F3) | (-1092,-224) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Drisi J'Axx]] | Library (F2) | (914,-1278) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Quiss Stormseeker]] | Wizard Guild | (465,-440) }}
+}}
+| TableLocations = Erudin<br/>Neriak<br/>Felwithe
+| TableEra = {{{TableEra|Classic}}}
+
+}}

@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Bind Sight
+| spellicon = 44
+| description = Covers your face in magical strands, allowing you to see through your target's eyes.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 8
+* [[Wizard]] - Level 16
+* [[Ranger]] - Level 17
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Bind Sight | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Stamina Loss by 2 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 15
+| range = 10000
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = 11 Min
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your sight is bound.
+| msg_cast_on_other = Someone 's eyes gleam and then go dark.
+| msg_wears_off = Your binding ends.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

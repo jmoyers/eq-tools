@@ -1,0 +1,48 @@
+{{Spellpage|
+
+| spellname = Rest the Dead
+| spellicon = D
+| description = Numbs the awareness of the undead, making them less likely to attack. This spell works on creatures up to level 50.
+
+| classes = 
+
+* [[Necromancer]] - Level 23
+* [[Shadowknight]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Frenzy Radius (1/45) }}
+{{SpellSlotRow | 2 | Reaction Radius (1/45) }}
+{{SpellSlotRow | 3 | Pacify }}
+{{SpellSlotRow | 4 | Memblur(1%) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 75
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 3 minutes
+| target_type = Undead
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  looks ambivalent.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRowB | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

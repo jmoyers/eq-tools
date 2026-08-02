@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Alluring Whispers
+| spellicon = U
+| description = Confuses your target's mind with alluring whispers, allowing you brief control. This spell works on creatures up to level 49.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Shissar Focus Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 49 }}
+
+| skill = 
+| mana = 0
+| range = 0
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.3 minutes @L1 to 19 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been charmed.
+| msg_cast_on_other = Someone  has been charmed.
+| msg_wears_off = You are no longer charmed.
+}}
+
+[[Category:NPC Only Spells]]

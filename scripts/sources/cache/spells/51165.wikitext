@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Stone Spider Stun
+| spellicon = C
+| description = This effect is melee procced by [[The Spiroc Lord]] and [[stone spider]]. It can be resisted with very high MR.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun (20.0 sec) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 10 (L1) to 0 (L70) to 65 (L110)}}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 20 Seconds
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = Stone begins to form around your body.
+| msg_cast_on_other = Someone is covered with a light layer of stone.
+| msg_wears_off = You burst through the stone.
+}}
+
+[[Category:NPC Only Spells]]

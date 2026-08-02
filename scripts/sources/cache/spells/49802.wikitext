@@ -1,0 +1,73 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Extinguish Fatigue
+| spellicon = A
+| description = Renews the endurance of your target, replenishing their stamina.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 19
+* [[Druid]] - Level 29
+* [[Shaman]] - Level 39
+* [[Enchanter]] - Level 44
+* [[Ranger]] - Level 52 {{Era | Kunark}}
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Stamina Loss by 90 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 3.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body zings with energy.
+| msg_cast_on_other = Someone  looks energized.
+| msg_wears_off =  
+
+| items_with_effect = 
+
+<ul><li>{{:Crown of Rile}}
+</li><li>{{:Rune Crafter's Boots}}</li>
+</li><li>{{:Spirit Caller's Boots}}</li>
+</li><li>{{:Spirit Weaver's Boots}}</li>
+</li><li>{{:Wolf Caller's Boots}}</li>
+</ul>
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Migron]] | Temple of Terror (First Floor) | (1031,-160) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Gaxl the scribe]] | Temple of Terror (West Tower - Bottom +1) | (1025,-109) }}
+{{SpellWhereRowB | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRow  | [[Grobb]] | [[Korff - Troll]] | Shaman Guild | (304,-438) }}
+{{SpellWhereRowB | [[Halas]] | [[Bolace]] | Shaman Guild | (326,478) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRowB | [[Oggok]] | [[Korff - Ogre]] | Shaman Guild | (667,1066) }}
+{{SpellWhereRow  | [[Paineel]] | [[Erelin Verisue]] | Cleric Guild | (1226,551) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+{{SpellWhereRow  | [[Steamfont Mountains]] | [[Crisyn]] | Druid Ring | (-1750,1657) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Taben]] | Cleric Guild | (-227,809) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+| TableLocations = Vendors
+| TableEra = Classic
+}}

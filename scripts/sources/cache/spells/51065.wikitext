@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Entomb in Ice
+| spellicon = C
+| description = This AE is cast by [[Sister of the Spire]] and [[Kelorek`Dar]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 1000 }}
+{{SpellSlotRow | 2 | Stun (6.00 sec) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 18.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are entombed in ice.
+| msg_cast_on_other = Someone  is entombed in ice. 
+| msg_wears_off = The ice cracks.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,71 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Resist Magic
+| spellicon = 69
+| description = Surrounds your target with an aura of protection, warding away magic for 36 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Enchanter]] - Level 37
+* [[Cleric]] - Level 43
+* [[Shaman]] - Level 43
+* [[Druid]] - Level 49
+* [[Paladin]] - Level 55
+
+| items_with_effect = 
+
+<ul><li> {{:Waters of Impenetrable Aura}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Magic Resist by 40 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 85
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Resist Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You feel resistant from magic.
+| msg_cast_on_other = Someone  is resistant to magic.
+| msg_wears_off = Your resist magic fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | <s>[[Ak'Anon]]</s> | <s>[[Clockwork Merchant (CG-6)]]</s> | <s>Cleric Guild</s> | <s>(1197,-560)</s> }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-14)]] | Necromancer Guild | (2111,-429) }}
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Migron]] | Temple of Terror (First Floor) | (1031,-160) }}
+{{SpellWhereRow  | [[Cabilis|East Cabilis]] | [[Gaxl the scribe]] | Temple of Terror (West Tower - Bottom +1) | (1025,-109) }}
+{{SpellWhereRowB | [[Erudin]] | [[Junice Weslent]] | Cleric Guild - Quellious (Outside) | (-697,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terren Starwatcher]] | Cleric Guild | (13,-426) }}
+{{SpellWhereRowB | [[Grobb]] | [[Korff - Troll]] | Shaman Guild | (304,-438) }}
+{{SpellWhereRow  | [[Halas]] | [[Bolace]] | Shaman Guild | (326,478) }}
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Lyniv S'Kor]] | Cleric Guild | (410,-858) }}
+{{SpellWhereRowB | [[North Kaladim]] | [[Poriss Splitrock]] | Cleric Guild  | (740,130) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Nosspri Andrika]] | Cleric Guild (basement) | (102,391) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Ladia Qursii]] | Cleric Guild (Outside) | (-225,-238) }}
+{{SpellWhereRow  | [[Oggok]] | [[Korff - Ogre]] | Shaman Guild | (667,1066) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Senst Ereek]] | Cleric Guild | (340,-413) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Misty Valefriend]] | Cleric Guild | (-226,-374) }}
+{{SpellWhereRowB | [[The Wakening Land]] | [[Phillip Aghllsews]] | � | (519,-1028) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

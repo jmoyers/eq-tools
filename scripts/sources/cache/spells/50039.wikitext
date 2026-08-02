@@ -1,0 +1,55 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Scale of Wolf
+| spellicon = 112
+| description = Imbues your target with the spirit of a scaled wolf, increasing their movement speed for 45 min. Any attack, or spell cast by your target will break the enchantment.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Shaman]] - Level 22
+* [[Druid]] - Level 26
+
+|quests=foo
+| items_with_effect = 
+
+<ul><li> {{:Crazy Cleric Boots}}
+</li><li> {{:Earring of Twisted Leaves}}
+</li><li> {{:Maleficent Boots}}
+</li><li> {{:Mischievous Dazzler Shoes}}
+</li><li> {{:Monkey Hide Boots}}
+</li><li> {{:Shamanistic Shenannigan Boots}}
+</li><li> {{:Sly Summoners Boots}}
+</li><li> {{:Twisted Nature Boots}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Make Fragile | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 57% (L24) to 70% (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 3.50
+| duration = 45 minutes
+| target_type = Target Group Member or Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the spirit-scale of wolf enter you.
+| msg_cast_on_other = Someone  is surrounded by a dark lupine aura.
+| msg_wears_off = The scale of wolf leaves you.
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

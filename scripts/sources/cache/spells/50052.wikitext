@@ -1,0 +1,52 @@
+<noinclude>:''For the statistic, see [[Statistics#Regeneration]].''</noinclude>
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Regeneration
+| spellicon = 118
+| description = Hastens your target's natural healing, regenerating up to 9 hit points every 6 seconds for 20 min 30s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 34
+* [[Shaman]] - Level 23
+
+| items_with_effect = 
+
+<ul><li> {{:Pliable Goo}}
+</li><li> {{:Spiroc Healer's Cloak}}
+</li><li> {{:Zlandicar's Heart}}
+</li><li> {{:Ceremonial Iksar Chestplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 5 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 16 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to regenerate.
+| msg_cast_on_other = Someone  begins to regenerate.
+| msg_wears_off = You have stopped regenerating.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

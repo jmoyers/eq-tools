@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Weakening Strike
+| spellicon = 1
+| description = weakens your targets limbs, slowing their attack rate for 3 min 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Melee Haste by 15% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Poison Counter by 9 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = 3 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_on_you = Your limbs slow down!
+| msg_cast_on_other = 's limbs move slower!
+| msg_wears_off = The poison subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

@@ -1,0 +1,59 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Ro's Fiery Sundering
+| spellicon = O
+| description = Surrounds your target in dancing flames, lowering their fire resistance and armor class. This spell generates a large amount of hate.
+
+Note: Didn't have a Fire (-200) resist modifier until 2002 because the "Resistadj" value wasn't created until then,[https://lucy.allakhazam.com/spellhistory.html?id=1437&source=Live] although the same patch that added Fire (-200) to Ro's Fiery Sundering also removed the pre-existing line "Slot 1: Lure(6)", implying that the spell was already abnormally hard to resist before the update that introduced the "Resistadj" value to the spell system. Prior to 2002, spells didn't have an entry for "Resistadj", with more difficult spells simply being given a "Lure" designation with some numerical value indicating how lure-y they were.
+
+In Lucy, the line reporting that the Resistadj value was changed from 0 to -200 was simply an indicator that the value was first created in the system.
+
+For context, [[Lure of Flame]] was marked as "Slot 1: Lure(5)" before the same patch on 2002-9-04 that updated Ro's Fiery Sundering to Fire (-200). The same patch in 2002 that removed "Slot 1: Lure(5)" from Lure of Flame also changed the Resistadj value from 0 to -300 for Lure of Flame, as well. Clearly, Lure of Flame did not actually have a Resistadj value of 0 before this patch; rather, the Resistadj value did not exist at all, and instead, stating that it was changed from 0 to -300 was Lucy's way of indicating that this new, unified Resistadj system had been added to replace the prior "Lure" designation that certain spells had. This was one part of several reworkings of the spell resist system that the old EQ devs had implemented over time. [https://lucy.allakhazam.com/spellhistory.html?id=1638&source=Live] 
+
+ 
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Fire Resist by 37 (L39) to 40 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease AC by 5 (L39) to 7 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 50
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = 1.9 minutes @L39 to 3 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-200)
+
+| other = 
+
+* '''Focus:''' [[Fire Beetle Eye]]
+
+| msg_cast_on_you = You are immolated in blazing flames.
+| msg_cast_on_other = Someone  is immolated in blazing flames.
+| msg_wears_off = The flames die down.
+
+| where_to_obtain = 
+
+* [[a Sifaye Thane]]
+* [[A Golem Usher]]
+* [[Eugie]]
+* [[Ry`Gorr elite guard]]
+* [[An Ancient Mummy]]
+Drop from various 30+ Velious mobs.
+
+| TableLocations = Dropped
+| TableEra = {{{TableEra|Classic}}}
+
+}}

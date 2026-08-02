@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Drain Spirit
+| spellicon = 161
+| description = Drains your target of life energy, siphoning 314 hit points.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 49
+* [[Necromancer]] - Level 39
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 207 (L39) to 226 (L44) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 213
+| range = 200
+| casting_time = 3.20
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

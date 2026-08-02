@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Knockback
+| spellicon = C
+| description = Hurls your target back through the air in a shallow, horizontal arc.
+<br>
+<br>When cast on the player by NPCs such as tentacle terrors, the player flies (often quite a considerable distance) in the opposite direction from where they are facing. The position of the NPC and player do not matter. [[Levitate]] and related effects will mitigate knockback's movement.
+<br>
+<br>When a player applies this effect to an NPC, the distance the NPC is knocked back is much less. The direction of the knockback is on the same vector as where the casting player is facing, regardless of the NPC's position or facing direction. Hate generated from this effect is between 25 and 100.
+<br>
+<br>When a player applies the effect to themselves, they are always knocked back due south.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Breezeboot's Frigid Gnasher}}
+</li><li> {{:Chetari Wardstaff}}
+</li><li> {{:Stronghorn's Horn}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 10 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 1.00
+| fizzle_time = 0.00
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = A massive force knocks you backwards.
+| msg_cast_on_other = Someone  flies backwards.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

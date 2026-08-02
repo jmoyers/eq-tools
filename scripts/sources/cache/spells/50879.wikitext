@@ -1,0 +1,57 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Evacuate
+| spellicon = V
+| description = Opens an arcane portal that teleports your entire group to a relatively safe location in the current zone. See [[Travel Guide#Evacuate_Locations|the travel guide]] for locations. <br> Compare to the Druid's [[Succor]].  There is a small chance of leaving someone (including the wizard casting the spell) behind.
+
+'''''Drains a total of 750 mana from the caster. Use [[Abscond]] if you are solo and only evacuating yourself.'''
+
+Also drains 750 mana from group members. Decreased mana of entire group, including caster, by 750 (not 150) until Luclin.[[https://lucy.allakhazam.com/spellhistory.html?id=1628&source=Live]]  Bards seem to be immune to this effect. Especially ones named Brad.''
+
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 57
+
+| items_with_effect = 
+
+<ul><li> {{:Di`zok Escape Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Mana by 750 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Evacuate to -150,-1,-1 in same zone | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+}}

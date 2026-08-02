@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Renew Elements
+| spellicon = 99
+| description = Renews the health of your elemental pet, healing 32 damage, and curing their diseases, poisons, and curses.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 7
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 22 (L7) to 32 (L17) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Disease Counter by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 15
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's form pulses red.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Sentinel
+| spellicon = L
+| description = Creates a watchful ward at a location you choose, which will alert you to movement in the area every 2 seconds for up to %i seconds.
+
+| classes = * [[Enchanter]] - Level 5
+| items_with_effect = 
+
+<ul><li> {{:Staff of the Observers}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Sentinel }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 25
+| range = 0
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 6 minutes
+| target_type = Free Target AE
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You sense that you are being watched.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

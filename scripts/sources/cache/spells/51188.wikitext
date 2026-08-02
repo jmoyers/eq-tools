@@ -1,0 +1,36 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpage|
+
+| spellname = Static
+| spellicon = C
+| description = Stirkes your target with a static pulse, causing 125 damage and stunning them for 3 seconds. Melee proc by [[Velketor the Sorcerer]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 125 }}
+{{SpellSlotRow | 2 | Stun for 3.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 0
+| range = 200
+| casting_time = Instant
+| fizzle_time = 0
+| recast_time = 7.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| other = 
+
+| msg_cast_on_you = You are consumed in a magic pulse.
+| msg_cast_on_other =is consumed in a magic pulse.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

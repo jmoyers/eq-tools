@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Flowing Thought I
+| spellicon = H
+| description = Causes your thoughts to race faster, increasing your mana regeneration rate.
+
+See also [[Flowing Thought II]], [[Flowing Thought III]] and [[Flowing Thought V]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>{{:Brain of Cazic Thule}}</li>
+<li>{{:Buckler of Insight}}</li>
+<li>{{:Choker of the Wretched}}</li>
+<li> {{:Eye of Cazic Thule}}</li>
+<li> {{:Mask of the Silver Eyes}}</li>
+<li>{{:Robe of Inspiration}}</li>
+<li>{{:Sal`Varae`s Robe of Darkness}}</li>
+<li>{{:Runed Coldain Prayer Shawl}}</li>
+<li>{{:White Dragon Idol}}</li>
+<li>{{:White Dragon Statue}}</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 1 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 27 minutes @L9
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A cool breeze slips through your mind.
+| msg_cast_on_other = Someone  looks tranquil.
+| msg_wears_off = The cool breeze fades.
+}}
+
+[[Category:NPC Only Spells]]

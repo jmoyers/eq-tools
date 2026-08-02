@@ -1,0 +1,66 @@
+{{Spellpage|
+
+| spellname = Courage
+| spellicon = K
+| description = Provides your target with a sense of courage, increasing their hit points and armor class for 27 min.
+
+| classes = 
+
+* [[Cleric]] - Level 1 (Autogranted)
+* [[Paladin]] - Level 8
+
+| items_with_effect = 
+
+<ul><li> [[Golden Locket (Locket of Courage)]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 3 (L1) to 4 (L10) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 11 (L1) to 20 (L10) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 11 (L1) to 20 (L10) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 12
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 27 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a rush of courage.
+| msg_cast_on_other = Someone  looks courageous.
+| msg_wears_off = You feel less courageous.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRowB | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRow  | [[Erudin]] | [[Kathar Varselli]] | Cleric Guild - Prexus (F1) | (-1067,-417) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Seleni Treekeeper]] | Paladin Guild | (-5,-256) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F1) | (103,388) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Orex Nolus]] | Paladin Guild (F1) | (218,-119) }}
+{{SpellWhereRowB | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (765,119) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Storn Trueblade]] | Paladin Guild | (939,124) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRow  | [[Paineel]] | [[Zarnlel Apridor]] | Cleric Guild | (1125,440) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Lisdon Trekka]] | Cleric Guild | (-236,-480) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Fesse Bontex]] | Cleric Guild | (-257,-510) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Derrin]] | Cleric Guild | (-205,773) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Keegan]] | Paladin Guild | (-210,543) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

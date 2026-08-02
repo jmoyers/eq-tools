@@ -1,0 +1,40 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Winged Death
+| spellicon = T
+| description = Commands a swarm of insects to attack your target relentlessly, causing 143 damage every six seconds for 60 secs (10 ticks). 4.08 Damage per Mana.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 53
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 143 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 350
+| range = 250
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 10 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You feel the pain of a million stings.
+| msg_cast_on_other = Someone  is engulfed in a swarm of deadly insects.
+| msg_wears_off = The swarm departs.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+}}

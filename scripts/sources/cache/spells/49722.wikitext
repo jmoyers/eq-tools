@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Memory Blur
+| spellicon = 39
+| description = Attacks your target's mind, providing a chance to forget those that have done them harm.
+
+| classes = * [[Enchanter]] - Level 10
+| slots = 
+
+{{SpellSlotRow | 1 | Memblur(10%) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 40
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel your mind fog.
+| msg_cast_on_other = Someone  blinks a few times.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

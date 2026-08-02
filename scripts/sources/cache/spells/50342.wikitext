@@ -1,0 +1,37 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Talisman of the Cat
+| spellicon = A
+| description = Fills your group with the spirit of the cat, increasing their agility for 1 hour(s) 3.0 mins.
+
+Provides less AGI than the single target version, [[Deliriously Nimble]].
+
+| classes = 
+
+* [[Shaman]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AGI by 45 @ 58 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 0
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the spirit of the cat channel through you.
+| msg_cast_on_other = Someone  looks agile.
+| msg_wears_off = Your feline spirit fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

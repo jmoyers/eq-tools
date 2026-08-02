@@ -1,0 +1,62 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Velium Shards
+| spellicon = S
+| description = Strikes your target with velium shards, causing 12 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ball of Velium}}
+</li><li> {{:Coldain Velium Dagger}}
+</li><li> {{:Coldain Velium Great Staff}}
+</li><li> {{:Coldain Velium Long Sword}}
+</li><li> {{:Coldain Velium Morning Star}}
+</li><li> {{:Coldain Velium-Pick}}
+</li><li> {{:Coldain Velium Scimitar}}
+</li><li> {{:Coldain Velium Short Sword}}
+</li><li> {{:Crystalline Spider Fang}}
+</li><li> {{:Forged Velium 2-Handed Sword}}
+</li><li> {{:Forged Velium Dagger}}
+</li><li> {{:Forged Velium Long Sword}}
+</li><li> {{:Forged Velium Morning Star}}
+</li><li> {{:Forged Velium Scimitar}}
+</li><li> {{:Forged Velium Short Sword}}
+</li><li> {{:Ice Forged Shackles}}
+</li><li> {{:Velium Dagger}}
+</li><li> {{:Velium Great Staff}}
+</li><li> {{:Velium Long Sword}}
+</li><li> {{:Velium Morning Star}}
+</li><li> {{:Velium Rapier}}
+</li><li> {{:Velium Scimitar}}
+</li><li> {{:Velium Short Blade}}
+</li><li> {{:Velium Short Sword}}
+</li><li> {{:Velium Two Handed Sword}}
+</li><li> {{:Velium Warhammer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 9 (L1) to 12 (L4) }}
+
+| skill = 
+| mana = 0
+| range = 30
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your skin is rent by shards of velium.
+| msg_cast_on_other = Someone 's skin is rent by shards of velium.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

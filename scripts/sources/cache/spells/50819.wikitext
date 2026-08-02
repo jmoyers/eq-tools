@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Levitation
+| spellicon = M
+| description = Forms a cloud of dense air around your feet, allowing you to float slightly off the ground for 20 min 30s.
+
+| classes = 
+
+* [[Druid]] - Level 50
+* [[Wizard]] - Level 50
+
+| items_with_effect = 
+
+<ul><li> {{:Vial of Roiling Gas}}
+</li>
+<li> {{:Summoned: Ring of Levitation}}
+</li>
+<li> {{:Ravener Tail Whip}}
+</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Levitate(1) }}
+
+| skill = 
+| mana = 60
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 16 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your feet leave the ground.
+| msg_cast_on_other = Someone  floats above the ground.
+| msg_wears_off = You can no longer levitate.
+}}
+
+[[Category:NPC Only Spells]]

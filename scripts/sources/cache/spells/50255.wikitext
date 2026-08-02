@@ -1,0 +1,47 @@
+{{Velious Era}}
+
+{{Spellpage|
+
+| spellname = Shroud of Death
+| spellicon = G
+| description = Imbues your attacks with a chance to steal life energy (50 points per proc) from your target for 20.0 mins.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc:  Shroud of Death Strike }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 20 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A nimbus of deathly darkness covers your hands.
+| msg_cast_on_other = Someone 's hands are covered by a nimbus of deathly darkness.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+* [[A thifling focuser]]
+
+[[Western Wastes]]
+* [[Bratavar]]
+* [[Harla Dar]]
+* [[Derasinal]]
+
+}}

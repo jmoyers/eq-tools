@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Memory Flux
+| spellicon = H
+| description = Attacks your target's mind, providing a chance to forget those that have done them harm.
+
+| classes = 
+
+* [[Enchanter]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Memblur(30%) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your mind fog.
+| msg_cast_on_other = Someone  blinks a few times.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

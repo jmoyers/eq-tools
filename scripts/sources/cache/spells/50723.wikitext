@@ -1,0 +1,48 @@
+{{Velious Era}}
+{{Spellpage|
+
+| description = Fills you with the aura of battle. As in classic, multiple sources of this effect will stack if worn, while only a single source of clicky effect is allowed. [https://www.project1999.com/forums/showpost.php?p=2033905&postcount=38].<br /> The clicky effect does not stack with [[Boon of the Garou]], [[Divine Purpose]] or [[Avatar]].
+| spellname = Aura of Battle
+| spellicon = R
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Hitpoints by 2 per tick }}
+{{SpellSlotRow | 3 | Increase ATK by 10 }}
+
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 1 hour 0 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+| skill = 
+
+| msg_cast_on_you = You are surrounded by an aura of battle. 
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| items_with_effect =
+
+<ul><li>  {{:Belt of Dwarf Slaying}}
+</li><li> {{:Belt of the Great Turtle}}
+</li><li> {{:Boots of Deep Thought}}
+</li><li> {{:Boots of Silent Striding}}
+</li><li> {{:Chestplate of Vindication}}
+</li><li> {{:Fearsome Shield}}
+</li><li> {{:Pauldrons of Ferocity}}
+</li><li> {{:Silver Mask of the Slayer}}
+</li><li> {{:Spirit Wracked Cord}}
+</li></ul>
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

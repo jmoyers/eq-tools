@@ -1,0 +1,40 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Track Corpse
+| spellicon = B
+| description = Provides a mystical sense that points you towards your target's nearest corpse.  If no target is chosen the spell points you toward the nearest non-specific corpse.
+
+This may be considered an improvement over [[Locate Corpse]].
+
+| classes = 
+
+* [[Necromancer]] - Level 20
+
+| slots = 
+
+{{SpellSlotRow | 1 | Locate Corpse }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 15
+| range =  
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 3.00
+| duration = 12 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off = You no longer track the dead.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithriss Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

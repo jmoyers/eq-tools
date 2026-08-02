@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Rend
+| spellicon = C
+| description = Tears the flesh from your target, causing 855 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 47
+| items_with_effect = 
+
+<ul><li> {{:Robe of Invocation}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart| 1 | Decrease Hitpoints by 855 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 227
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You scream as a magic force rends the skin from your body.
+| msg_cast_on_other = Someone  screams as a magic force rends their flesh.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Sornita Eltern]] | Library (F3) | (-1108,-231) }}
+{{SpellWhereRowB | [[Skyshrine]] | [[Guardian Trekolz]] | Spell vendors | (324, -877) }}
+}}
+| TableLocations = Erudin<br/>Skyshrine
+| TableEra = {{{TableEra|Classic}}}
+
+}}

@@ -1,0 +1,44 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Wave of Healing
+| spellicon = J
+| description = Emanates a wave of healing from the caster, healing 200 hit points for everyone in your group.
+
+| classes = 
+
+* [[Paladin]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 220 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 450
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 60.00
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A wave of healing washes over you.
+| msg_cast_on_other = Someone  is surrounded by a wave of healing.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+[[Western Wastes]]
+* [[Bratavar]]
+* [[Harla Dar]]
+
+}}

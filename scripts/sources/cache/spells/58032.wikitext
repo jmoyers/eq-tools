@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Terror of Shadows
+| spellicon = 28
+| description = Fills your target's mind with shadowed terror, inciting hatred.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 42
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Incite Hatred | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 40
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = Shadowed terror fills your mind.
+| msg_cast_on_other =  is consumed with shadowed terror.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

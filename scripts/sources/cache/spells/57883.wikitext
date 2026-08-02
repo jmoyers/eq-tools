@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Sha's Lethargy
+| spellicon = 17
+| description = Causes your target to fall into a lethargic state, slowing their attack speed for 3 min 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Beastlord]] - Level 50
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 2 | Decrease Melee Haste by 40% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Disease Counter by 12 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 1.50
+| recast_time = 5.00
+| duration = 2 Min 30 Sec
+| target_type = Single
+| spell_type = Slow
+| resist = Magic
+
+| msg_cast_on_you = You feel lethargic.
+| msg_cast_on_other =  feels lethargic.
+| msg_wears_off = You are no longer lethargic.
+
+| where_to_obtain =
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+}}

@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Force Snap
+| spellicon = C
+| description = Strikes your target with a burst of intense force, causing 252 damage and stunning targets up to level 55 for 1 second.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 17 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 218 (L17) to 252 (L26) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun (1.00 sec/55) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 69
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 13.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been force struck.
+| msg_cast_on_other = Target has been force struck.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

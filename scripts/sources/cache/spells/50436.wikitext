@@ -1,0 +1,41 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Valiant Companion
+| spellicon = L
+| description = Fills your elemental pet with mystical valor, rendering them immune to fear effects.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Fear Immunity | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 3.5 minutes
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  has become fearless!
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[East Commonlands]]              | [[Rushka Deklamoor]]          |   East Commons Tunnel    | (-1669, -4) }}
+}}
+| TableLocations = East Commonlands
+| TableEra = {{{TableEra|Velious}}}
+
+}}

@@ -1,0 +1,62 @@
+{{Velious Era}}{{Namedmobpage
+
+| imagefilename     = npc_belijor_the_emerald_eye.png
+| width             = 500px
+
+| emu_id            = 124057
+| illia_id          = 6532
+
+| name              = Belijor the Emerald Eye
+| race              = Drake
+| class             = [[Warrior]]
+| level             = 63
+| agro_radius       = 150
+| run_speed         = 1.25
+
+| zone              = [[Temple of Veeshan]]
+| location          = 100% @ (-431, -500)
+
+| AC                = 271
+| HP                = 75000
+| HP_regen          = 16
+| mana_regen        = 0
+
+| attacks_per_round = 2
+| attack_speed      = 80%
+| damage_per_hit    = 228  - 450
+| special           = Enrage, Summon, Slowable, Uncharmable, Unfearable, Unsnareable, Unmezzable, Unstunable, See Invis, See Hide
+
+| description = [[NTOV Flurries|NTOV Flurry Mob]]
+
+| known_loot = 
+
+<ul><li>  {{:Shield of Fury}}                <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of the Protector}}       <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Bow of the Silver Fang}}        <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Barrier of Sound}}              <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of Dragonkind}}          <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Shield of the Wurms}}           <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Shield of Thorns}}              <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Melodic Charm}}                 <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Runed Fang Necklace}}           <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Shadow Fang Necklace}}          <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li><li> {{:Silent Fang Necklace}}          <span class='drare'>(Rare)</span> <span class='ddb'>[Overall: 5.7%]</span>
+</li><li> {{:Ring of Superiority}}           <span class='drare'>(Ultra Rare)</span> <span class='ddb'>[Overall: 2.9%]</span>
+</li></ul>
+
+| factions = 
+
+* [[Claws of Veeshan]] <span class='profac'>(-50)</span>
+* [[Guardians of Veeshan]] <span class='profac'>(-50)</span>
+
+| opposing_factions = 
+
+* None
+
+| related_quests = 
+
+* None
+
+}}
+
+[[Category:Temple of Veeshan]]

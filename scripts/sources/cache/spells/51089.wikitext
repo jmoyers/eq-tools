@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Neutralize Magic
+| spellicon = C
+| description = Removes magical effects from you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Cleansing Pumice}}
+</li><li> {{:Glowing Black Sword}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Cancel Magic(4) }}
+{{SpellSlotRow | 2 | Cancel Magic(4) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel dispelled.
+| msg_cast_on_other = Someone  feels dispelled.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

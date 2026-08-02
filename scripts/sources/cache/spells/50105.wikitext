@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Tunare`s Request
+| spellicon = D
+| description = Beckons to the [[:Category:Animal | animals]] of the wild, allowing you to control them. This spell breaks like any other charm, except the mob won't aggro on you after it breaks.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Charm up to level 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 200
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = 2 hours 45 minutes @L55 to 3 hours 15 minutes @L65
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  blinks.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Trakanon]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

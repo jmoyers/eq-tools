@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Battery Vision
+| spellicon = B
+| description = Causes your goggles to emit a powerful light, allowing you to see otherwise invisible creatures for up to 27.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Clockwork Watchman Helm}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | See Invisible(1) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 27 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your goggles are imbued with bursts of battery powered sight.
+| msg_cast_on_other = Someone 's goggles are imbued with bursts of battery powered sight.
+| msg_wears_off = Your magic batteries dim.
+}}
+
+[[Category:NPC Only Spells]]

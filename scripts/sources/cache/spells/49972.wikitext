@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Sound of Force
+| spellicon = D
+| description = Strikes an enemy with holy might, briefly stunning them and causing 220 hit points of damage. This spell works on creatures up to level 55.
+
+| classes = * [[Cleric]] - Level 46
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 8.0* seconds up to level 55 (*some player-cast stuns are capped at 4 seconds) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 220 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 120
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are stunned.
+| msg_cast_on_other = Someone  is stunned.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant]] | Cleric Guild | (1197, -553) }}
+{{SpellWhereRow  | [[Erudin]] | [[Selint Chency]] | Cleric Guild - Quellious | (-637,-47) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Myris N'Tan]] | Cleric Guild | (401,-853) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Egasia Reenix]] | Cleric Guild (top floor) | (116,302) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Balhallia]] | Cleric Guild | (-133,-746) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Slim Waterman]] | Cleric Guild | (-229,-386) }}
+}}
+
+}}

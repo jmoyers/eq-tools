@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spirit of Khaliz
+| spellicon = 144
+| description = Summons a feral warder to aid you in battle.
+
+| classes = 
+
+* [[Beastlord]] - Level 15
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Warder: [[Spirit_of_Khaliz_Summon|Spirit of Khaliz]]  | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| other =
+
+| skill = [[Skill  Alteration  |  Alteration]]
+| range = 0
+| resist = Unresistable
+| mana = 75
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 10.0
+| duration = Instant
+| target_type = Self
+| spell_type = Pet
+
+| msg_cast_on_you = You summon a warder to your aid.
+| msg_cast_on_other = Target summons a warder. 
+| msg_wears_off = 
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+
+}}

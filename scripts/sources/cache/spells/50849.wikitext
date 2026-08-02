@@ -1,0 +1,39 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Strike of the Chosen
+| spellicon = C
+| description = Draws the life energy from your target, siphoning 80 health.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Gharn's Rock of Smashing}}
+</li><li> {{:Jaelen's Katana}}
+</li><li> {{:Palladius' Axe of Slaughter‎}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 80 }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

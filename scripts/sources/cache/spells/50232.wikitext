@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Deflux
+| spellicon = C
+| description = Drains your target of life energy, siphoning between 310 to 330 hitpoints. -310-330hp yields 1.566-1.667 tap efficiency respectively.
+
+| classes = 
+
+* [[Necromancer]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 310 (L54) to 330 (L58) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 198
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Discordant Mind
+| spellicon = C
+| description = Strikes your target with a chaotic burst of mental energy, causing 387 damage and stunning them up to level 55 for 1 second.
+
+| classes = * [[Enchanter]] - Level 43
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 508 (L44) to 528 (L48) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 126
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel part of your mind melt away.
+| msg_cast_on_other = Someone 's brain begins to melt.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-5)]] | Library | (1104,-985) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Elentar Bealtarik]] | Enchanter Guild (F4) | (507,746) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tizzy C'Luzz]] | Caster Guild (Basement) | (172,-912) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Moreo O'Meek]] | Caster Guild (Outside) | (301,-637) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Nestess Branchtop]] | Enchanter Guild | (497,-926) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Jarel Ranin]] | Caster Guild (F1) | (157,-735) }}
+}}
+
+}}

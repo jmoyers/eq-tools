@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Symphonic Harmony
+| spellicon = C
+| description = A symphonic harmony drifts across your target's body, causing forgetfulness about some of your aggressions.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Sainy's Singing Dagger}}
+</li><li> {{:Symphonic Saber}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hate by 100 (L1) to 132 (L65) }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel at peace.
+| msg_cast_on_other = Someone  looks peaceful.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

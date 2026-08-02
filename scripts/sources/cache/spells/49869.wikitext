@@ -1,0 +1,71 @@
+{{Spellpage|
+
+| spellname = Reckless Strength
+| spellicon = R
+| description = Focuses your target's strength into an intense burst, increasing it for a short time, but then gradually decaying over the next 3 min.
+
+| classes = 
+
+* [[Cleric]] - Level 2
+* [[Paladin]] - Level 18
+
+| items_with_effect = 
+
+<ul><li> {{:Cobalt Gauntlets}}
+</li><li> {{:Glowing Club}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 20 (effect decreases over time)
++20 STR for 20 sec<br>
++17 STR for 60 sec<br>
++7 STR for 20 sec - [[Yaulp]] becomes better here<br>
++4 STR for 20 sec<br>
++1 STR for 20 sec - Click off before the last 40sec<br>
+-3 STR for 20 sec<br>
+-5 STR for 10 sec<br>
+-8 STR for 10 sec<br> }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 3 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your muscles erupt with reckless strength.
+| msg_cast_on_other = Someone 's muscles bulge with reckless strength.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRowB | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRow  | [[Erudin]] | [[Issibla Belstince]] | Cleric Guild - Prexus (F2) | (-1031,-375) }}
+{{SpellWhereRowB | [[Felwithe|Northern Felwithe]] | [[Seria Woodwind]] | Paladin Guild | (-9,-197) }}
+{{SpellWhereRow  | [[Felwithe|Northern Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRowB | [[Kaladim|North Kaladim]] | [[Axa Stormshield]] | Paladin Guild | (938, 125) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Busey Nehart]] | Paladin Guild | (1283, 73) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (773,115) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F1) | (103,388) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Donala Baris]] | Paladin Guild (F3) | (208,-130) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRowB | [[Paineel]] | [[Oren Calferdo]] | Cleric Guild | (1125,427) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Oriyame Nelafre]] | Cleric Guild | (-259,-539) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Zorik]] | Cleric Guild | (-182,770) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Keegan]] | Paladin Guild | (-210,543) }}
+}}
+
+}}

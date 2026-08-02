@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Flame Song of Ro
+| spellicon = O
+
+| description = 
+
+This is the area-effect damage cast by [[Queen Velazul Di`zok]] and [[Lord Rak`Ashiir]]. <br>
+<br>
+Lucy data indicates this spell had a (0) resist mod until Luclin, when it was changed to -100 FR. [http://lucy.allakhazam.com/spellhistory.html?id=820&source=Live]<br>
+The effect can be removed by a magic dispel spell/song/clicky if the debuff is in a top slot.
+
+| classes =
+This spell is cast by NPCs only. 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 850 }}
+
+| skill = 
+| mana = 0
+| range = AE Range: 30
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 Tick
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (-300)
+
+| msg_cast_on_you = You are immolated by flame.
+| msg_cast_on_other = Someone is immolated in flame.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

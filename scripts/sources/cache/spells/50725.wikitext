@@ -1,0 +1,38 @@
+{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Shroud of Undeath
+| spellicon = G
+| description = Transforms you into a skeleton, imbuing your attacks with a chance to steal life energy (Max: 50) from your target for 20.0 mins. 
+Note that Skeletal form prevents slam, making it a bit less useful for Trolls & Ogres
+
+| classes = 
+
+* [[Shadow Knight]] - Level 55
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc: Shroud of Death Strike }}
+{{SpellSlotRow | 2 | Add effect: Icebone Skeletal Form }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 6.00
+| duration = 20 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A nimbus of deathly darkness covers your body.
+| msg_cast_on_other = Someone 's body is surrounded by a nimbus of deathly darkness.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+* Drops from [[Battle Master Ska`tu]] in [[Chardok]].
+
+}}

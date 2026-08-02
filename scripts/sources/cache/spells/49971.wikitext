@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Word of Redemption
+| spellicon = J
+| description = Mends the wounds of everyone in your group, healing between 7500 and @1 hit points.
+
+| classes = 
+
+* [[Cleric]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 10000 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1100
+| range = 0
+| casting_time = 12.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the touch of Redemption.
+| msg_cast_on_other = Someone  feels the touch of Redemption.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

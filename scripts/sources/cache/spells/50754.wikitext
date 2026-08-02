@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellicon = U
+| spellname = Enchant Mithril
+| description = Enchants a large brick of Mithril with magical energy.  Consumes a [[Large Brick of Mithril]] when cast. Creates an [[Enchanted Lrg. Brick of Mithril]].
+
+| classes = 
+
+* [[Enchanter]] - Level 48
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Enchanted Lrg. Brick of Mithril]] }}
+
+| skill = [[Alteration]]
+
+| mana = 325
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Large Brick of Mithril]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Felwithe]] | [[Alicia Starshimmer]] | Enchanter Guild | (607,-935) }}
+}}
+
+}}

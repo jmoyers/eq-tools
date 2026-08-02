@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = skunkspray
+| spellicon = E
+| description = A pesky debuff cast by, you guessed it, skunks. Doesn't really do much other than lower your merchant prices.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease CHA by 30 }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 18.00
+| duration = 3 minutes @L1 to 27 minutes @L9
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been sprayed with skunk musk.
+| msg_cast_on_other = Someone  is drenched in skunk musk.
+| msg_wears_off = You no longer smell of skunk.
+}}
+
+[[Category:NPC Only Spells]]

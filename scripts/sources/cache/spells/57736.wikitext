@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Magical Monologue
+| spellicon = 104
+| description = A simple tune that adds a magical quality to your group's weapons, allowing them to harm creatures that would otherwise be invulnerable.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Bard]] - Level 9
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Grant ability to hit Magic-immune creatures | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = 18 Sec
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your weapons glow.
+| msg_cast_on_other = 's weapons glow.
+| msg_wears_off = The glow fades from your weapons.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

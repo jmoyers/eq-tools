@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Primal Essence
+| spellicon = R
+| description = Strengthens your target's essence, increasing their strength, agility, stamina, and dexterity for 1 hour(s) 3.0 mins.
+<br> Stacks with all five, [[Focus of Spirit]], [[Manicial Strength]], [[Deliriously Nimble]], [[Riotous Health]], and [[Mortal Deftness]], but gets overridden by [[Avatar]] and [[Primal Avatar]].
+
+| classes = 
+
+* This spell didn't become a Shaman-castable spell until Luclin.
+
+| items_with_effect = 
+
+<ul><li> {{:Hammer of the Dragonborn}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase STA by 20 }}
+{{SpellSlotRow | 5 | Increase AGI by 20 }}
+{{SpellSlotRow | 6 | Increase STR by 20 }}
+{{SpellSlotRow | 7 | Increase DEX by 20 }}
+
+| skill = [[Skill Alteration | Alteration]]
+| mana = 100
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel primeval.
+| msg_cast_on_other = Someone  shines with a primal aura.
+| msg_wears_off = Your primal essence fades.
+}}

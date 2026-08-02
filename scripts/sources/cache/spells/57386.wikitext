@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Laceration
+| spellicon = 
+| combat_effect = 1
+| description = Wounds an enemy, reducing the healing they can receive from all sources.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Sharp Claws}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Need More Information }}
+
+| skill = n/a
+| duration = 0:00:24
+| mana = 60
+| casting_time = 2 seconds
+| recast_time = 1 second
+| fizzle_time = n/a
+| resist = Magic
+| target_type = Single
+| reflectable = Yes
+| range = 200
+| spell_type = Detrimental
+
+| msg_cast_on_you = You begin to bleed.
+| msg_cast_on_other = Soandso begins to bleed.
+| msg_wears_off =  The bleeding stops.
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

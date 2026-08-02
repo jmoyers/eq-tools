@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Defoliation
+| spellicon = E
+| description = Inflicts severe damage upon a targeted plant, causing between 645 and 725 damage.
+
+| classes = 
+
+* [[Necromancer]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 645 (L52) to 725 (L60) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Plant
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  wilts.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

@@ -1,0 +1,39 @@
+{{Classic Era}}
+ It was a way of forcing a certain DPS amount. So we didn't have any timers back in the day, right, there was no scripting, there was no timers. 
+ You wanted to make the fight doable but at the same time you didn't want it to be like an instant rezfest.
+ And so the deathtouches were possibly a way of just restricting the fight. You had to beat them before this time period.
+ - developer Todd Schmidt, 2020 [https://www.youtube.com/watch?v=z6E-u5NHNgw]
+{{Spellpage|
+
+| spellname = Cazic Touch
+| spellicon = C
+| description = Otherwise known as "Death Touch", this is an instant cast skill a number of high level Classic-era raid mobs have. As the nickname suggests, it is an unresistable instant kill with a 30 second cooldown that has to be managed by the raid. Pullers often act as sacrificial lambs for the ability, aggroing the mob and kiting them around until they get deathtouched so their tanks don't have to.
+
+Its namesake, [[Cazic Thule (God)]] was the first NPC with this ability. Several others in Plane of Sky were also given it, such as [[Keeper of Souls]], [[Spiroc Lord]], [[Sister of the Spire]], and the sphinxes on island 7. No NPCs in Velious were given this ability, as the 32k HP hard-cap was lifted, providing sufficient challenge for players without it.
+
+Mobs that have this ability won't always open with it. More so, they have a high chance of using it each second while aggroed - I've seen mobs in Sky wait 20 seconds before DTing, but the average wait is usually 3-10 seconds.
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 25000 }}
+
+| skill = 
+| mana = 0
+| range = 1000
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

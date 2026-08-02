@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Strength of the Kunzar
+| spellicon = R
+| description = Fills your body with the strength of the Kunzar, increasing your strength for up to 3.0 mins @L1 to 36.0 mins @L12.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Cobalt Boots}}
+</li><li> {{:Kunzar Hex Amulet}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 5 (L1) to 25 (L40) }}
+
+| skill = 
+| mana = 65
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.50
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel stronger.
+| msg_cast_on_other = Someone  looks stronger.
+| msg_wears_off = Your strength fades.
+}}

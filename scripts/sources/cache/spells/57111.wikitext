@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Blessing of the Lord Commander
+| spellicon = K
+| description = Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 6.
+
+| classes = 
+
+* [[Cleric]] - Level 48
+
+| items_with_effect = 
+
+<ul><li> {{:Baton of the Sky}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Strikes heal for 6 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 1250
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 1:00:00
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| spell_line = Blessing of the Page
+| resist = Unresistable
+
+| msg_cast_on_you = Your hands glow golden.
+| msg_cast_on_other = Someone's hands glow golden.
+| msg_wears_off = The golden glow fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

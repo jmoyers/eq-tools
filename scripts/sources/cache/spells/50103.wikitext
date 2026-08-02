@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Girdle of Karana
+| spellicon = R
+| description = Fills your target with the power of the stone, increasing their strength for 1 hour(s) 12.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase STR by 42 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 105
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 7.50
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the strength of Karana infuse you.
+| msg_cast_on_other = Someone  looks stronger.
+| msg_wears_off = Your Karanic strength fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Sebilite Juggernaut]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

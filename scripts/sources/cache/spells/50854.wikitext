@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Clockwork Poison
+| spellicon = C
+| description = Poisons your target and causes a dizzying spin.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Trochilic's Skean}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 5 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 1 per tick }}
+{{SpellSlotRow | 4 | SpinStun }}
+
+| skill = 
+| mana = 0
+| range = 75
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.  You begin to feel very dizzy.
+| msg_cast_on_other = Someone has been poisoned, and begins to look dizzy.
+| msg_wears_off = You no longer feel dizzy.
+}}
+
+[[Category:NPC Only Spells]]

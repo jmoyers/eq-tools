@@ -1,0 +1,50 @@
+<noinclude>{{Kunark_Era}}</noinclude>{{Spellpage|
+
+| spellname = Talisman of the Raptor
+| spellicon = R
+| description = Fills your group with the spirit of the raptor, increasing their dexterity for 1 hour(s) 3.0 mins.
+
+Compare to the single target version, [[Mortal Deftness]]. Will be overwritten by [[Focus of Spirit]]
+
+| classes = 
+
+* [[Shaman]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase DEX by 60 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 0
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the spirit of the raptor channel through you.
+| msg_cast_on_other = Someone  looks dexterous.
+| msg_wears_off = Your raptor spirit fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Sebilite Juggernaut]]
+
+[[Skyfire Mountains]]
+* [[A Guardian Wurm]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Veeshan's Peak]]
+* [[Nexona]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+}}

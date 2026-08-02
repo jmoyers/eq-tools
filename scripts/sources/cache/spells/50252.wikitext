@@ -1,0 +1,33 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Life Leech
+| spellicon = 47
+| description = Drains your target of life energy, siphoning 250 hit points.
+
+| classes = * [[Shadowknight]] - Level 47
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 250 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 181
+| range = 200
+| casting_time = 0.50
+| fizzle_time = 5.00
+| recast_time = 10.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  looks pale.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Obtained via [[The Etched Stone]] quest.
+
+}}

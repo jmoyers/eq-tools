@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Sathir's Mesmerization
+| spellicon = D
+
+| description = The nasty little stun cast by [[Venril Sathir]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 30.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 400 }}
+
+| skill = 
+| mana = 70
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are mesmerized.
+| msg_cast_on_other = Someone  has been mesmerized.
+| msg_wears_off = You are no longer mesmerized.
+
+}}
+
+[[Category: NPC Only Spells]]

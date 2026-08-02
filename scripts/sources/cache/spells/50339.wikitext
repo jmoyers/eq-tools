@@ -1,0 +1,48 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Malosini
+| spellicon = I
+| description = Decreases your target's resistance to cold, fire, magic, and poison.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Shaman]] - Level 57
+* [[Magician]] - Level 58
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Poison Resist by 60 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Magic Resist by 60 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Fire Resist by 60 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Decrease Cold Resist by 60 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 18.1 minutes @L57 to 20.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel very vulnerable.
+| msg_cast_on_other = Someone  looks very uncomfortable.
+| msg_wears_off = Your vulnerability fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

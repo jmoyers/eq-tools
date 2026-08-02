@@ -1,0 +1,59 @@
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Armor of Faith
+| spellicon = K
+| description = Covers your target in the armor of faith, increasing their armor class for 63 min.
+
+| classes = 
+
+* [[Cleric]] - Level 35
+* [[Paladin]] - Level 48
+
+| items_with_effect = 
+
+<ul><li> {{:Donal's Gauntlets of Mourning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 24 (L39) to 25 (L44) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 hour 3 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the favor of the gods upon you.
+| msg_cast_on_other = Someone  feels the favor of the gods upon them.
+| msg_wears_off = You no longer feel blessed.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-6)]] | Cleric Guild | (1197,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-14)]] | Necromancer Guild | (2111,-429) }}
+{{SpellWhereRowB | [[Erudin]] | [[Junice Weslent]] | Cleric Guild - Quellious (Outside) | (-697,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terren Starwatcher]] | Cleric Guild | (13,-426) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Poriss Splitrock]] | Cleric Guild | (765,145) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Lyniv S'Kor]] | Cleric Guild | (410,-858) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Nosspri Andrika]] | Cleric Guild (basement) | (102,391) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Ladia Qursii]] | Cleric Guild (Outside) | (-225,-238) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Senst Ereek]] | Cleric Guild | (340,-413) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Misty Valefriend]] | Cleric Guild | (-226,-374) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Khensol Undesta]] | Caster Guild | (290,-622) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Caleah Herblender]] | The Herb Jar | (311,-558) }}
+}}
+
+}}
+
+[[Category:Aegis line]]

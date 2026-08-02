@@ -1,0 +1,46 @@
+{{Spellpagesmart|
+
+| spellname = Kelin's Lugubrious Lament
+| spellicon = D
+| description = A sad song that calms the aggressive nature of many creatures. Affects creatures up to level 60.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 8 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Reduce Aggro Radius by 5 (up to L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Reaction Radius (10/60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Pacify | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 30 Sec
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel a strong sense of loss.
+| msg_cast_on_other = Someone  looks sad.
+| msg_wears_off = You no longer feel sad.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

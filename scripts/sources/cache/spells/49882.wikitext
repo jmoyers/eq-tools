@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Expulse Undead
+| spellicon = 153
+| description = A burst of holy power that inflicts 106 damage to an undead target.
+
+| classes = 
+
+* [[Cleric]] - Level 13
+* [[Necromancer]] - Level 19
+* [[Paladin]] - Level 30
+* [[Shadow Knight]] - Level 39
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 88 (L14) to 94 (L20) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 36
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

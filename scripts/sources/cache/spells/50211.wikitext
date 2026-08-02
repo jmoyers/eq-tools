@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Ignite Bones
+| spellicon = O
+| description = Burns the flesh from your target's bones and causes 500 damage, temporarily turns them into a skeleton, and stuns targets up to level 55 for 0 second.
+
+| classes = * [[Necromancer]] - Level 42
+| items_with_effect = 
+
+<ul><li> {{:Bone Bracelet of Condemnation}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 494 (L44) to 500 (L50) }}
+{{SpellSlotRow | 2 | Illusion: 60 }}
+{{SpellSlotRow | 3 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 210
+| range = 200
+| casting_time = 6.10
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin burn from your body.
+| msg_cast_on_other = Someone 's skin burns away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+}}
+
+}}

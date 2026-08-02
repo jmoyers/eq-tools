@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Shadow
+| spellicon = K
+| description = Causes your target's image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+| classes = * [[Enchanter]] - Level 48
+| items_with_effect = 
+
+<ul><li> {{:Crescent Blades of Luclin}} </li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 19 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 70
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 hour 30 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your image fades into shadow.
+| msg_cast_on_other = Someone 's image fades into the shadows.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-5)]] | Library | (1104,-985) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Elentar Bealtarik]] | Enchanter Guild (F4) | (507,746) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tizzy C'Luzz]] | Caster Guild (Basement) | (172,-912) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Moreo O'Meek]] | Caster Guild (Outside) | (301,-637) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Nestess Branchtop]] | Enchanter Guild | (497,-926) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Jarel Ranin]] | Caster Guild (F1) | (157,-735) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+}}

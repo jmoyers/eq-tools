@@ -1,0 +1,36 @@
+{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Harvest Leaves
+| spellicon = C
+| description = Harvests '''[[Withered Manisi Leaf]]s''' that are useful for [[Bind Wound|binding wound]]s. They are similar to [[Bandages]] or [[Aloe Swatch]]es.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Small Manisi Plant}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Withered Manisi Leaf]] }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 15.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You check your plant for dead leaves.
+| msg_cast_on_other = Someone  pulls out a leafy plant and looks at it.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

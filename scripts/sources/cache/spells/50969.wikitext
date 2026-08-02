@@ -1,0 +1,64 @@
+{{Kunark Era}}
+{{Disambig3|[[Primal Avatar]]}}
+{{Spellpage|
+
+| spellname = Avatar
+| spellicon = U
+| description = Infuses your target with the power of an avatar, increasing their strength, dexterity, agility, and attack rating for 6.0 mins.  
+
+Consumes an [[Emerald]] when cast (Emerald costs around 13p).
+
+This spell stacks with all other buffs except [[Primal Essence]] and [[Aura of Battle]].
+
+''Patch change 20 Feb, 2012: Kanras: Updated Avatar to give 100 AGI.''
+
+| classes = 
+
+* [[Shaman]] - Level 60
+
+| items_with_effect = 
+
+<ul><li> [[Primal Velium Weapons]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase ATK by 100 }}
+{{SpellSlotRow | 5 | Increase AGI by 100 }}
+{{SpellSlotRow | 6 | Increase STR by 100 }}
+{{SpellSlotRow | 7 | Increase DEX by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 325
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 180.00
+| duration = 6 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Emerald]]
+
+| msg_cast_on_you = Your body screams with the power of an Avatar.
+| msg_cast_on_other = Someone  has been infused with the power of an Avatar.
+| msg_wears_off = The Avatar departs.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Veeshan's Peak]]
+* [[Silverwing]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+* [[Klandicar]]
+
+}}

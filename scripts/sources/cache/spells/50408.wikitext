@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Phantom Plate
+| spellicon = 1
+| description = Covers you in the protection of phantom plate armor, increasing your hit point regeneration and armor class.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 41
+| items_with_effect = 
+
+<ul><li> {{:Shissar Guardian Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Hitpoints by 3 per tick    | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 17 (L44) to 18 (L48) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Cat's Eye Agate x3
+
+| msg_cast_on_you = You are covered in illusionary platemail armor.
+| msg_cast_on_other = Someone  dons platemail armor.
+| msg_wears_off = Your illusionary armor fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

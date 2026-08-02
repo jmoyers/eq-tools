@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Cog Boost
+| spellicon = C
+| description = Causes the cogs in your armor to spin faster and faster, increasing your attack speed for up to 1.3 mins @L1 to 19 mins @L60.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Clockwork Watchman Vambraces}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 40% }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.3 minutes @L1 to 19 minutes @L60
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The cogs in your armor spin faster and faster and faster.
+| msg_cast_on_other = Someone 's armor cogs begin to spin faster and faster and faster.
+| msg_wears_off = Your cogs squeal and slow.
+}}
+
+[[Category:NPC Only Spells]]

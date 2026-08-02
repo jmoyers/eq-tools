@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Agilmente's Aria of Eagles
+| spellicon = M
+| description = An aria that allows your group to levitate for a short time.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|0}}}
+
+| classes = 
+
+* [[Bard]] - Level 31
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Levitate | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Required''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]] †
+
+| mana = 0
+| range = 80
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Wooden Flute
+
+| msg_cast_on_you = The aria lifts you into the air..
+| msg_cast_on_other =  
+| msg_wears_off = You stop floating.
+
+| items_with_effect = 
+
+<ul><li> {{:Singing Steel Boots}}
+</li></ul>
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+}}
+| TableLocations = Highkeep
+| TableEra = Classic
+}}

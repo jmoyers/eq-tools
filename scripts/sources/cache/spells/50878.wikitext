@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Restore Sight
+| spellicon = C
+| description = Cleanses the eyes of your target, removing blindness.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Nightmare Hide}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Blindness(1) }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 0.00
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes sparkle.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

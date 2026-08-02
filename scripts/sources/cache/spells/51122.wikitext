@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Injected Poison V
+| spellicon = R
+| description = Poisons your target, causing between 3 and 122 damage initially and between 7 and 130 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 5 ticks @L5).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Inferno Blood}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 5 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 3 (L1) to 121 (L60) }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 7 per tick (L1) to 125 per tick (L60) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 5 ticks @L5
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

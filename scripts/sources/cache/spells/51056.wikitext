@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Shield of Song
+| spellicon = K
+| description = This song wraps an aura of protection around your group that absorbs damage .
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Absorb Damage by 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Absorb Magic Damage by 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Party
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are surrounded by a shield of song.
+| msg_cast_on_other = Someone  is surrounded by a shield of songs.
+| msg_wears_off = The shield of songs fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs | (207, -145) }}
+}}
+| TableLocations = New Sebilis Expedition
+| TableEra = Classic
+}}

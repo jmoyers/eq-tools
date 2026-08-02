@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Circle of Summer
+| spellicon = O
+| description = Calls upon the spirit of summer to protect your group from cold for 36.0 mins.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Cold Resist by 45 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 0
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are surrounded by a summer haze.
+| msg_cast_on_other = Someone  is surrounded by a summer haze.
+| msg_wears_off = Your summer haze clears.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Druid Spells]]
+| TableLocations = Dropped
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

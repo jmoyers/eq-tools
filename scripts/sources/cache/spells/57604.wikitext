@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Vision Shift
+| spellicon = B
+| description = Focuses your target's vision, allowing them to see otherwise invisible creatures, as well as allowing improved night vision.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 40
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | See Invisible | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Infravision | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 50
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 0
+| duration = 60 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your vision shifts to perceive the ethereal.
+| msg_cast_on_other = Target's eyes shift in and out of focus.
+| msg_wears_off = The vision shift fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

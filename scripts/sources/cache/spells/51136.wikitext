@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Liquid Silver I
+| spellicon = C
+| description = Invokes severe pain to the undead, causing between 16 and 260 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Lixt Wing Dust}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 2 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 16 (L1) to 250 (L40) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = The liquid silver burns your body.
+| msg_cast_on_other = Someone 's body begins to smoke.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

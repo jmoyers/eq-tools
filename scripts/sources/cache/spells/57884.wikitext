@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Blessing of Piety
+| spellicon = 138
+| description = Bestows your target with a divine blessing, allowing them to cast spells faster for 40 min. This blessing works on spells up to level 39.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 15 (Autogranted)
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Increase Spell Haste by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Limit: Max Level (39) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Limit: Spell Type 13 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Limit: Min. Casting Time 3.00 sec | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Limit: Exclude SPA 147 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 40 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your thoughts quicken as reverence fills your mind.
+| msg_cast_on_other =  is quickened by the Blessing of Reverence.
+| msg_wears_off = Your thoughts slow.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

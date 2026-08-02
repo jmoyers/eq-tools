@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Burst of Strength
+| spellicon = 16
+| description = Fills your target with a burst of power, increasing their strength, dexterity, and armor class for 18s.
+
+| classes = 
+
+* [[Shaman]] - Level 11
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase STR by 20 }}
+{{SpellSlotRow | 3 | Increase AC by 7 }}
+{{SpellSlotRow | 4 | Increase DEX by 20 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 15
+| range = 100
+| casting_time = 0.50
+| fizzle_time = 1.50
+| recast_time = 12.00
+| duration = 3 ticks
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+| resist = Unresistable
+
+| msg_cast_on_you = Your muscles scream with strength.
+| msg_cast_on_other = Someone  looks stronger.
+| msg_wears_off = Your strength fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Grott]] | Temple of Terror (First Floor) | (1050,-213) }}
+{{SpellWhereRow  | [[Grobb]] | [[Hoart - Troll]] | Shaman Guild | (329,-408) }}
+{{SpellWhereRowB | [[Halas]] | [[Tukanta]] | Shaman Guild | (352,423) }}
+{{SpellWhereRow  | [[Oggok]] | [[Hoart - Ogre]] | Shaman Guild | (666,1087) }}
+}}
+
+}}

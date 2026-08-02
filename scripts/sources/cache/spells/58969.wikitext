@@ -1,0 +1,48 @@
+{{Velious Era}}
+{{Spellpagesmart|
+
+| spellname = Naki's Superior Pernicity
+| spellicon = 161
+| focus_effect = 1
+| description = Reduces the cast time of spells by 15%.  This bonus will decay on spells over level 65.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Summoned: Naki's Spiked Ring}}</li>
+</ul>
+
+| slots = 
+{{SpellSlotRow | 1 | Increase Spell Haste by 15% }}
+{{SpellSlotRow | 2 | Limit Max Level: 51 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Spell: Exclude Promised Renewal }}
+{{SpellSlotRow | 4 | Limit Min Casting Time: 2s }}
+{{SpellSlotRow | 5 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 2:24:00 (3:36:00)
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

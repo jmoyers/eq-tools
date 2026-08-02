@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Specter Lifetap
+| spellicon = G
+| description = Tears the life from your target, siphoning between 2 and 40 damage.
+
+| classes =     * Item Effect
+
+| items_with_effect = 
+
+<ul><li> {{:Tserrina's Staff}} </li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 2 (L1) to 40 (L60)  }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 12
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

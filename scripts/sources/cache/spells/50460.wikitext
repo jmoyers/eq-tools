@@ -1,0 +1,37 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Pillar of Fire
+| spellicon = O
+| description = Creates a pillar of fire, causing between 68 and 76 damage to at most 4 creatures in the vicinity of your target. This is a wizard's second quad kiting spell.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 15
+| items_with_effect = 
+
+<ul><li> {{:Red Wood Wand}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 66 (L15) to 76 (L20) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 84
+| range = 200
+| casting_time = 3.15
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are immolated by flame.
+| msg_cast_on_other = Someone  is immolated by flame.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

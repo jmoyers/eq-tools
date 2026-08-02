@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Resuscitate
+| spellicon = J
+| description = Revives a slain ally, restoring 60% of their lost experience. It takes some time for the recently revived to fully recover.
+
+| classes = * [[Cleric]] - Level 37
+| slots = 
+
+{{SpellSlotRow | 1 | Resurrect and restore 50% experience }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 650
+| range = 200
+| casting_time = 3.95
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = Instant
+| target_type = Corpse
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+| items_with_effect = 
+
+<ul><li> {{:Pulsing Goo}}
+</li></ul>
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-5)]] | Cleric Guild | (1184,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-11)]] | Necromancer Guild | (2041,-410) }}
+{{SpellWhereRowB | [[Erudin]] | [[Lissa Respelti]] | Cleric Guild - Quellious | (-650,-45) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Assa Leafwind]] | Cleric Guild | (24,-466) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Krako Stonesplitter]] | Cleric Guild | (778,155) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Sol Punox]] | Cleric Guild | (400,-838) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Geep Tresoj]] | Cleric Guild (F1) | (93,427) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Henlom Visrek]] | Paladin Guild | (-135,-122) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Altha Shadowjumper]] | Cleric Guild | (-243,-358) }}
+}}
+
+}}

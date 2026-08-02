@@ -1,0 +1,121 @@
+{{Spellpage|
+
+| spellname = Curse of the Spirits
+| spellicon = D
+| description = Consumes your target in the curse of the spirits, causing progressively more damage the longer the spell lasts. Deals a total of 1425 damage over 1.5 minutes (15 ticks.)<br><br>
+Overwrites necromancer's spell [[Splurt]].
+
+<table class="wikitable">
+<tr>
+<th>Tick #</th>
+<th>Damage This Tick</th>
+<th>Total Damage Up to This Tick</th>
+</tr>
+<tr>
+<td>1</td>
+<td>11</td>
+<td>11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>23</td>
+<td>34</td>
+</tr>
+<tr>
+<td>3</td>
+<td>35</td>
+<td>69</td>
+</tr>
+<tr>
+<td>4</td>
+<td>47</td>
+<td>116</td>
+</tr>
+<tr>
+<td>5</td>
+<td>59</td>
+<td>175</td>
+</tr>
+<tr>
+<td>6</td>
+<td>71</td>
+<td>246</td>
+</tr>
+<tr>
+<td>7</td>
+<td>83</td>
+<td>329</td>
+</tr>
+<tr>
+<td>8</td>
+<td>95</td>
+<td>424</td>
+</tr>
+<tr>
+<td>9</td>
+<td>107</td>
+<td>531</td>
+</tr>
+<tr>
+<td>10</td>
+<td>119</td>
+<td>650</td>
+</tr>
+<tr>
+<td>11</td>
+<td>131</td>
+<td>781</td>
+</tr>
+<tr>
+<td>12</td>
+<td>143</td>
+<td>924</td>
+</tr>
+<tr>
+<td>13</td>
+<td>155</td>
+<td>1079</td>
+</tr>
+<tr>
+<td>14</td>
+<td>167</td>
+<td>1246</td>
+</tr>
+<tr>
+<td>15</td>
+<td>179</td>
+<td>1425</td>
+</tr>
+</table>
+
+
+| classes = 
+
+This spell is cast by right clicking the shaman epic. It does not stack and will be overwritten by a higher level shaman or any necro that casts Splurt (Splurt does the same thing except with 2 more ticks).
+
+| items_with_effect = 
+
+<ul><li> {{:Spear of Fate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 6 | Decrease Hitpoints by 11 to 179 per tick (increasing by 12 each tick) }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1.5 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your body is consumed by the raging spirits of the land.
+| msg_cast_on_other = Someone  is consumed by the raging spirits of the land.
+| msg_wears_off = The spirits have subsided.
+}}
+
+[[Category:NPC Only Spells]]

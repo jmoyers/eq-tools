@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Voice Graft
+| spellicon = U
+| description = Allows you to speak through your undead servant.
+
+| classes = * [[Necromancer]] - Level 15
+| items_with_effect = 
+
+<ul><li> {{:Preserved Chokidai Vocal Cords}}
+</li><li> {{:Sentient Two-Handed Axe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Voice Graft }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 10
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 27 minutes
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's head shimmers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

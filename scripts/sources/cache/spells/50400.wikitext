@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Barrier of Combustion
+| spellicon = 157
+| description = Surrounds your target in a barrier of combustion, damaging any creature that attacks them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 38
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 18 (L39) to 20 (L44) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 22 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 15 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You are enveloped by flame.
+| msg_cast_on_other = Someone  is enveloped by flame.
+| msg_wears_off = The flames die down.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

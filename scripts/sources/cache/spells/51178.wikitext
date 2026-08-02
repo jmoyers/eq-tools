@@ -1,0 +1,55 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Cannibalize IV
+| spellicon = H
+| description = Channels your body's energy to refresh your mind, trading hit points for mana. '''0.547(L58) to 0.554(L60) Mana per Hp'''
+
+| classes = 
+
+* [[Shaman]] - Level 58
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 148 }}
+{{SpellSlotRow | 2 | Increase Mana by 81 (L58) to 82 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 0
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 3.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body aches as your mind clears.
+| msg_cast_on_other = Someone  winces.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Velious Level 50+ Mob Drop
+
+[[Cobalt Scar]]
+* [[Kelorek'Dar]]
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[A Phase Puma]]
+* [[Rumbleroot]]
+* [[Treah Greenroot]]
+
+[[Siren's Grotto]]
+* [[Elna Kelpweaver]]
+
+[[Velketor's Labyrinth]]
+* [[Velketor the Sorcerer]]
+
+[[Western Wastes]]
+* [[Ayillish]]
+}}

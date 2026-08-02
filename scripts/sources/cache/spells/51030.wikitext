@@ -1,0 +1,52 @@
+{{Spellpagesmart|
+
+| spellname = Jonthan's Whistling Warsong
+| spellicon = R
+| description = An ancient war song that speeds your attacks and raises your armor class and strength.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 7 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Robe of the Whistling Fists}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Strength by 7 (L8) to 33 (L57) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Attack Speed by 16% (L7) to 25% (L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase AC by 2 (L7) to 10 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' (haste is not increased)| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You whistle an ancient warsong.
+| msg_cast_on_other =  
+| msg_wears_off = You stop whistling.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Beleth Streamfoot]] | Kelethin Bard Guild | (-237,235) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-141,578) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Lysric Loresinger]] | Bard Guild | (553,-157) }}
+}}
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin
+| TableEra = Classic
+}}

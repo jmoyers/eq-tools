@@ -1,0 +1,50 @@
+{{Spellpagesmart|
+
+| spellname = Share Form of the Great Wolf
+| spellicon = T
+| description = Fills your group with the spirit of the wild, allowing them to take the form a wolf for 360 min and granting *100%N.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 45
+
+| items_with_effect = 
+
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion (race #796) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by up to 60% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Grants Ultravision | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase ATK Power by up to 51 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = AE Range (40)
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 6:00:00
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a wolf.
+| msg_cast_on_other = Player turns into a wolf.
+| msg_wears_off = You are no longer a wolf.
+
+|| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+}}
+
+[[Category: Illusions]]

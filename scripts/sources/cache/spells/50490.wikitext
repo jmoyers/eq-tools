@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Harvest
+| spellicon = H
+| description = Gathers ambient mana from your surroundings that replenishes your mana pool and stuns you for 5 seconds.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 32
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Mana by 161 (L32) to 251 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 10.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 600.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You gather mana from your surroundings.
+| msg_cast_on_other = Someone  gathers glowing blue strands of mana.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Erudin]] | [[Weltria Ostriss]] | Library (F3) | (-1111,-242) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Jusar V'Lask]] | Library (F1) | (914,-1279) }}
+{{SpellWhereRow  | [[Felwithe|Southern Felwithe]] | [[Serri Moonwatcher]] | Wizard Guild | (441,-450) }}
+}}
+| TableLocations = Erudin/Neriak/Felwithe
+| TableEra = {{{TableEra|Classic}}}
+
+}}

@@ -1,0 +1,82 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Improved Invisibility
+| spellicon = B
+| description = Cloaks you in a mystic veil, rendering you invisible to many creatures for 10 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 55
+* [[Enchanter]] - Level 50
+
+| items_with_effect = 
+
+<ul><li> {{:Phase Spider Blood}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Improved Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 10 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You vanish.
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off = You appear.
+
+| where_to_obtain = 
+* Velious Level 50+ Mobs
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathbinder]]
+* [[A Chetari Deathshaper]]
+* [[A Chetari Dominator]]
+* [[A Chetari dustshaper]]
+* [[A Chetari Packrat]]
+* [[A Chetari seeker]]
+
+[[Plane of Growth]]
+* [[A Rolling Plains Steed]]
+
+[[Siren's Grotto]]
+* [[A Neriad Maiden]]
+* [[A servant manatee]]
+* [[A siren priestess]]
+
+[[Temple of Veeshan]]
+* [[A cerulean sky gazer]]
+* [[A fiery drake]]
+* [[A fiery temple guardian]]
+* [[A fiery watcher]]
+* [[A glimmer drake]]
+* [[A greater sky drake]]
+* [[A shimmer drake]]
+* [[A shimmering green drake]]
+* [[An Ancient Sky Drake]]
+* [[An ancient tigerclaw racnar]]
+* [[An elder crimson drake]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystalline Gargoyle]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+* [[A Frost Spectre]]
+* [[A Large Crystal Shard]]
+* [[A Velium Broodling]]
+* [[A Velium Hunter]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+}}

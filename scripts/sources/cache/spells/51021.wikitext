@@ -1,0 +1,56 @@
+{{Spellpagesmart|
+
+| spellname = Chant of Battle
+| spellicon = R
+| description = A simple tune that increases the strength, dexterity, and armor class of group members.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+
+
+* [[Bard]] - Level 1 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Harmonic Spear}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Armor Class by 1 (L1) to 4 (L44) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase STR by 5 (L1) to 20 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase DEX by 5 (L1) to 20 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 50
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+
+
+| msg_cast_on_you = You feel your pulse quicken.
+| msg_cast_on_other =  
+| msg_wears_off = Your battle fury fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Beleth Streamfoot]] | Kelethin Bard Guild | (-237,235) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Inisis Trimpet]] | Bard Guild | (-119,576) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-141,578) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalea Volesga]] | Bard Guild | (515,-132) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Lysric Loresinger]] | Bard Guild | (553,-157) }}
+}}
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin
+| TableEra = Classic
+}}

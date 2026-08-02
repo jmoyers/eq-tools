@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| description = You experience the regrowth of fungal spores.
+| spellname = Fungal Regrowth
+| spellicon = J
+| classes = 
+This spell is cast by items only.
+<b>Note:</b> The snare effect is only present in cast versions of this spell, such as from the fungi staves; the fungi tunic's worn effect does not reduce your movement speed.
+<b>Note:</b> The item-cast buff does NOT land if you have any movement speed buffs active, and overrides, and is overwritten by Regrowth
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 5 per tick (L1) to 15 per tick (L20) }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 10% (L1) to 42% (L65) }}
+
+| mana = 100
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = 1.2 minutes @L1 to 5 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+| skill = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| items_with_effect = 
+<ul><li> {{:Shroud of Longevity}}
+</li><li>{{:Fungus Covered Great Staff}}
+</li><li>{{:Fungi Covered Great Staff}}
+</li><li>{{:Fungus Covered Scale Tunic}}
+</li></ul>
+
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

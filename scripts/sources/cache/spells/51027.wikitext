@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Jaxan's Jig o' Vigor
+| spellicon = A
+| description = Fills your group with an invigorating rhythm that increases endurance regeneration.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 3
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Stamina Loss by 10 (L3) to 25 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 35
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The jig sends energy zinging through your body.
+| msg_cast_on_other =  
+| msg_wears_off = You are no longer invigorated.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Beleth Streamfoot]] | Kelething Bard Guild | (-237,235) }}
+{{SpellWhereRow  | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-141,578) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Lysric Loresinger]] | Bard Guild | (553,-157) }}
+}}
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin<br/>Highkeep
+| TableEra = Classic
+}}

@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Dragon Charm
+
+| spellicon = D
+
+| description = This is a charm spell cast by some dragons, especially in Kunark, such as [[Talendor]], [[Xygoz]] and [[Severilous]]. Like [[Dragon Roar]], the class of the dragon is no indication.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 0 }}
+
+| skill = 
+| mana = 245
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 15.00
+| duration = 1.3 minutes @L1 to 20.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Enslave Death
+| spellicon = D
+| description = Commands an undead creature to do your bidding, temporarily bending them to your will.
+
+| classes = 
+
+* [[Necromancer]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 55 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 300.00
+| duration = 5 ticks
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-1000)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  moans.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Dismiss Undead
+| spellicon = 153
+| description = A burst of holy power that inflicts 211 damage to an undead target.
+
+| classes = 
+
+* [[Cleric]] - Level 23
+* [[Necromancer]] - Level 28
+* [[Paladin]] - Level 46
+* [[Shadow Knight]] - Level 49
+
+| items_with_effect = 
+
+<ul><li> {{:Ghoulbane}}
+</li><li>{{:Corrupted Ghoulbane}}
+</li><li> {{:Truvinan}}
+</li><li> {{:Craslith}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 140 (L24) to 162 (L35) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 63
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

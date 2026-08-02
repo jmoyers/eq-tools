@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Illusion: Scaled Wolf
+| spellicon = T
+| description = Cloaks you in a shimmering illusion that makes you appear to be a Scaled Wolf.
+
+| classes = 
+
+* [[Enchanter]] - Level 44
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: Chokidai}}
+
+| skill = [[Skill Alteration| Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = 72 Min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are now a scaled wolf.
+| msg_cast_on_other = Player turns into a scaled wolf.
+| msg_wears_off = You are no longer a scaled wolf.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}
+[[Category: Illusions]]

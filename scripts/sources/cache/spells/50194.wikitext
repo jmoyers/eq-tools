@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Dooming Darkness
+| spellicon = 160
+| description = Summons a dooming darkness that binds your target's feet, decreasing their movement rate, and doing 20 damage every 6 seconds for 1 min 30s.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 44
+* [[Necromancer]] - Level 27
+
+| items_with_effect = 
+
+
+<ul><li> {{:Nightfall}}
+</li><li> {{:Obtenebrate Short Sword}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 20 per tick }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 49% (L29) to 60% (L50) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 120
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are engulfed in darkness.
+| msg_cast_on_other = Someone  is engulfed in darkness.
+| msg_wears_off = The darkness fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

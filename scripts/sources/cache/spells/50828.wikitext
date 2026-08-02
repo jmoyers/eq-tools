@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Enchant Steel
+| spellicon = U
+| description = Enchants a Large Brick of High Quality Ore with magical energy.  Consumes a Large Brick of High Quality Ore when cast. Creates an [[Large Brick of Enchanted Ore]].
+
+| classes = 
+
+* [[Enchanter]] - Level 46
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Large Brick of Enchanted Ore]] }}
+
+| skill = [[Skill Alteration | Alteration]]
+| mana = 325
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Large Brick of High Quality Ore]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[West Freeport]] | [[Voglan Dransed]] | The Academy of Arcane Science | (155,-762) }}
+}}
+
+}}

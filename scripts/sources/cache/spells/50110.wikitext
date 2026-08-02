@@ -1,0 +1,39 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Bonds of Tunare
+| spellicon = P
+| description = Ensnares up to 4 of those near your target in a tangle of dark vines that decreases their movement rate. If cast on a target next to you, it can snare yourself as well. Overrides [[Wrath of Nature]] (Druid Epic snare).
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Movement Speed by 65% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 115
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1.8 minutes
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Dark vines drag your feet into the ground.
+| msg_cast_on_other = Someone  is dragged down by dark vines.
+| msg_wears_off = Your feet come free.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+}}

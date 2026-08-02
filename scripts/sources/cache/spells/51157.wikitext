@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Burning Vengeance
+| spellicon = C
+| description = DD cast by [[A Soul Harvester]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 300 }}
+
+| skill = Alteration
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire?
+
+| msg_cast_on_you =  Your skin burns.
+| msg_cast_on_other =  Someone is struck by fire.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

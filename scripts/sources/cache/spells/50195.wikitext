@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Renew Bones
+| spellicon = J
+| description = Restores an undead servant, healing 175 hit points and curing them of diseases, poisons, and curses.
+
+| classes = * [[Necromancer]] - Level 26
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 154 (L29) to 175 (L50) }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 10 }}
+{{SpellSlotRow | 3 | Decrease Poison Counter by 10 }}
+{{SpellSlotRow | 4 | Decrease curse Counter by 10 }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 64
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  begins to mend.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* [[Quest renew bones]]
+
+{{Necromancer Recipe| Renew Bones | 93+}}
+{{Recipe Component| Words of Purification | 869}}
+{{Recipe Component| Words of the Incorporeal | 869}}
+{{Recipe Component| Words of Acquisition (Azia) | 869}}
+
+}}

@@ -1,0 +1,60 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Invisibility versus Undead
+| spellicon = 33
+| description = Cloaks your target in a light aura, rendering them invisible to most undead creatures for up to 27 min.
+
+| classes = 
+
+* [[Necromancer]] - Level 1
+* [[Shadowknight]] - Level 4 (Autogranted)
+* [[Cleric]] - Level 11
+* [[Enchanter]] - Level 14
+* [[Paladin]] - Level 17
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Potion of Unlife Awareness}}
+</li><li> {{:5 Dose Potion of Unlife Awareness}}
+</li><li> {{:Potion of Unlife Awareness}}
+</li><li> {{:Cloak of the Undead Eye}}
+</li><li> {{:Rat Bone Powder}}
+</li><li> {{:Rotting Boots}}
+</li><li> {{:Plague Bearer's Boots}}
+</li><li> {{:Warlock's Boots}}
+</li><li> {{:Boots of the Bonecaster}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility versus Undead }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 40
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 4.00
+| duration = 27 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel your skin tingle.
+| msg_cast_on_other = Someone  fades a little.
+| msg_wears_off = Your skin stops tingling.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

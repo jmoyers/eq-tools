@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Aura of Red Petals
+| spellicon = O
+| description = Covers you in an aura of red petals, increasing your fire resistance. Does not stack with [[Resist Fire]] or [[Circle of Winter]] spells.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Red Flower of Functionality}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Fire Resist by 11 (L1) to 50 (L40) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are covered by an aura of red petals.
+| msg_cast_on_other = Someone  is covered by an aura of red petals.
+| msg_wears_off = The red petals drift away.
+}}
+
+[[Category:NPC Only Spells]]

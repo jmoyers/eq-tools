@@ -1,0 +1,50 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Mask of the Hunter
+| spellicon = T
+| description = Covers your face in the mask of the hunter for 3 hours @L60, allowing you improved vision, increased mana regeneration, and the ability to see invisible creatures. Does not stack with Form of the Howler, but does stack with Form of the Hunter. Does not stack with Gift of Brilliance.
+
+The "magnification" effect is actually a field of view increase. Both it and the size increase are temporary and will be removed if you zone or camp; the mana regen and see invis remains for the full duration of the buff.
+
+Outdoor zones only. Buff persists indoors but must be applied outdoors.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Player Size by 25% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Magnification by 115% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Mana by 3 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | See Invisible(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 3 hours 0 minutes @L60
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your features sharpen.
+| msg_cast_on_other = Someone 's features sharpen.
+| msg_wears_off = Your features return to normal.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Skyfire Mountains]]
+* [[Talendor]]
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

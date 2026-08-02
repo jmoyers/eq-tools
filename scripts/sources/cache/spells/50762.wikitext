@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Torment of Shadows
+| spellicon = C
+| description = Consumes your target in shadows, slowing movement rate and causing 75 damage every 6 seconds for 1.6 mins for 1200 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Scythe of the Shadowed Soul}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 75 per tick }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 11% (L1) to 65% (L55) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1.6 minutes @L32
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your mind is filled by fear and terror from the shadows.
+| msg_cast_on_other = Someone  is gripped by shadows of fear and terror.
+| msg_wears_off = The shadows release your mind.
+}}
+
+[[Category:NPC Only Spells]]

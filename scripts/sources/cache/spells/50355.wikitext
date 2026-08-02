@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Burn
+| spellicon = 51
+| description = Burns your target's skin with fire, causing 14 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 4 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Dark Ember}}
+</li><li> {{:Smoldering Brand}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 13 (L4) to 14 (L5) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 7
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin blister and burn.
+| msg_cast_on_other = Someone 's skin blisters and burns.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

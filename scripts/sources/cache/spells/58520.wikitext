@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Air Elemental Attack
+| spellicon = 161
+| description = Stuns your target with a gust of air.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 3.00s }}
+
+| other = 
+
+* [[Magician|Magician's]] Air Elemental Ability
+
+| skill = 
+| mana = 0
+| range = 60
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Stun
+| resist = Magic (0)
+
+| msg_cast_on_you = You are stunned by a gust of air.
+| msg_cast_on_other = Someone is stunned by a gust of air.         
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

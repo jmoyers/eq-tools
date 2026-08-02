@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Pact of Shadow
+| spellicon = G
+| description = Transfers your own health to your target at a rate of 80 hit points every six seconds for 24s.
+
+| classes = 
+
+* [[Necromancer]] - Level 44
+
+| items_with_effect = 
+
+<ul><li> {{:Sacrificial Robe Clasp}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase Hitpoints by 80 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 10
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = 4 ticks
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds begin to heal.
+| msg_cast_on_other = Someone  pulses with a blue-green aura.
+| msg_wears_off = Your pact has faded.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-5)]] | Necromancer Guild | (2082,-397) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pain]] | Cubby near PvP Area | (-450,253) }}
+{{SpellWhereRowB | [[Freeport|East Freeport]] | [[Itzia Vunpe]] | Underground | (-161,-255) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Gasia N'Mare]] | Necromancer Guild (F2) | (1279,-1272) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Fellweni the Kraven]] | Bloodsaber Guild | (400, -325) }}
+}}
+
+}}

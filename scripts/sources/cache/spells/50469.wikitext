@@ -1,0 +1,38 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Column of Lightning
+| spellicon = M
+| description = Creates a column of lightning, causing between 128 and 136 damage to several (up to 4) creatures in the vicinity of your target. Single target mana efficiency of 0.985 to 1.05.
+<br>
+<br>
+This is a '''recommended''' quad-kiting spell for Wizards, being replaced by [[Circle of Force]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 24
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 128 (L24) to 136 (L28) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 130
+| range = 200
+| casting_time = 3.60
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are engulfed by lightning.
+| msg_cast_on_other = Someone  is engulfed by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = [[Skill Research|Research Skill]]
+
+}}

@@ -1,0 +1,34 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spirit of Vermin Strike
+| spellicon = E
+| description = Damages your target and inspires extra hatred in them.
+
+| classes = 
+
+This is a proc from the [[Spirit of Vermin]] spell.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hit Points by 102 }}
+{{SpellSlotRow | 2 | Increase Hate by 50 }}
+
+| skill = n/a
+| mana = 0
+| range = 300
+| casting_time = Instant
+| fizzle_time = n/a
+| recast_time = n/a
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (-5)
+
+| msg_cast_on_you = You falter as you are consumed by vermin.
+| msg_cast_on_other = Someone falters as they are consumed by vermin.           
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

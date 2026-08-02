@@ -1,0 +1,35 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Sedulous Subversion
+| spellicon = G
+| description = Restores your target's mana at the expense of your own.
+
+| classes = 
+
+* [[Necromancer]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 150 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 400
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A foreign surge of mana refreshes your mind.
+| msg_cast_on_other = Someone  twitches.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

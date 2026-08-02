@@ -1,0 +1,49 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Bonds of Force
+| spellicon = A
+| description = Surrounds your target's feet in arcane shackles, slowing their movement speed. Superseded at level 51 by [[Atol's Spectral Shackles]].
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 27
+| items_with_effect = 
+
+<ul><li> {{:Al`Kabor's Cap of Binding}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Movement Speed by 35% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 2 Min
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Bonds of force bind your feet to the ground.
+| msg_cast_on_other = Someone 's feet are bound by strands of force.
+| msg_wears_off = Your feet come free.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-10)]] | Library | (1052,-984) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Barstall Methinon]] | Wizard Guild (F2) | (914,757) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kis K'Jartan]] | Caster Guild (Basement) | (171,-874) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Trisco Qental]] | Caster Guild | (302,-666) }}
+{{SpellWhereRowB | [[Skyshrine]] | [[Guardian Trekolz]] | Spell vendors | (324, -877) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Chardo Ahdelia]] | Caster Guild (top floor) | (144,-735) }}
+}}
+
+| TableLocations = Ak'Anon/Erudin<br>Neriak/Qeynos<br>Felwithe/W.Freeport
+| TableEra = {{{TableEra|Classic}}}
+}}

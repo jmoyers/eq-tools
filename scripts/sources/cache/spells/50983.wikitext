@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Blinding Step
+| spellicon = V
+| description = Teleports you a short distance from your current location.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Murky Vial}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Shadowstep }}
+{{SpellSlotRow | 2 | Blindness(-1) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 minute
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

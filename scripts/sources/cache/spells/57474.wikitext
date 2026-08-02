@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Sanctuary
+| spellicon = L
+| description = Creates a watchful ward at a location you choose, which will alert you to movement in the area every 2 seconds for up to %i seconds.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 6
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Set targeted proximity alert for up to 360 seconds| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 25
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = Instant
+| target_type = Free Target AE
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have triggered your sentinel.
+| msg_cast_on_other = Target has triggered your sentinel.
+| msg_wears_off = The sanctuary fades.
+
+| where_to_obtain = 
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Spell Vendor Area | (96, -162, -21) }}
+}}
+
+| TableLocations = Vendors
+| TableEra = Classic
+
+}}

@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Open Black Box
+| spellicon = L
+| description = Summons a [[Twisted Druid Doll]] for the Druid PoM class armor set.
+| classes = 
+
+This spell is cast only from a clicky.
+
+| items_with_effect = 
+
+<ul><li> {{:Black Gift Box}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: {{:Black Gift Box}} }}
+
+| skill = None
+
+| mana = 0
+| range = 0 
+| casting_time = 0.0
+| fizzle_time = 0.0
+| recast_time = 0.0
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+}}

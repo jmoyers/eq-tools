@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Minion of Shadows
+| spellicon = L
+| description = Animates an undead servant from the remnants of the fallen. This pet is a rogue and will backstab but has less hit points than the level 49 pet which is a warrior. Consumes bone chips when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Skeleton Pet: skel_pet_43_ }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 525
+| range =  
+| casting_time = 14.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Bone Chips]] x2?
+* '''Focus:''' [[Encyclopedia Necrotheurgia]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  animates an undead servant.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

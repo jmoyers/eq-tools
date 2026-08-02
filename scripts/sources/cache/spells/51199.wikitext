@@ -1,0 +1,27 @@
+{{Spellpage|
+
+| spellname = siphon strength recourse
+| spellicon = M
+| description = The buff component of the [[Shroud of Hate]] ATK siphon.
+| classes = * [[Shadow Knight]] - Level 39
+| slots = 
+
+{{SpellSlotRow | 7 | Increase ATK by 20 }}
+
+| skill = [[Alteration]]
+| mana = 60
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 10 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Hatred fuels your arms.
+| msg_cast_on_other = Someone has been strengthened by hatred.
+| msg_wears_off = The hatred departs.
+}}
+
+[[Category:Spells]]

@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Call of Fire
+| spellicon = D
+| description = Imparts your weapons with the power of fire for 10.0 mins, allowing them a chance to strike with the fury of the flame causing 65 damage and briefly stunning your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Add Proc: [[Call Of Fire Strike]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range =  
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = 10 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The Call of Fire fills your weapons with power.
+| msg_cast_on_other = Someone 's weapons gleam.
+| msg_wears_off = The Call of Fire leaves.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+}}

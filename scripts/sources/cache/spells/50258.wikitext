@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Scale Skin
+| spellicon = 151
+| description = Causes your target to grow hard scales around their body, increasing their armor class for 27 min. Consumes [[Snake Scales]] when cast.
+
+| classes = 
+
+* [[Shaman]] - Level 3
+* [[Beastlord]] - Level 10
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 3 (L1) to 5 (L9) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 25
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 1.50
+| recast_time = 4.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Snake Scales]]
+
+| msg_cast_on_you = You grow scales.
+| msg_cast_on_other = Someone  grows scales.
+| msg_wears_off = You shed your scales.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+
+}}

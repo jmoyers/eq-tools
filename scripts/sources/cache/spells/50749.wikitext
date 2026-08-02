@@ -1,0 +1,42 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Dance of the Blade
+| spellicon = R
+| description = Fills your party with the dance of the blade, increasing their attack speed, strength, and attack rating for up to 2.5 mins.
+
+Dance of the Blade is V1 Haste and does not stack with other haste songs or spells. 
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Singing Short Sword}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 10 | Increase Attack Speed by 55% }}
+{{SpellSlotRow | 11 | Increase STR by 30 }}
+{{SpellSlotRow | 12 | Increase ATK by 30 }}
+
+| mana = 0
+| skill = 
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2.5 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The edge of the blade sharpens your mind.
+| msg_cast_on_other =  
+| msg_wears_off = Your combat prowess lessens.
+
+}}
+
+[[Category: NPC Only Spells]]

@@ -1,0 +1,49 @@
+{{Velious Era}}{{Spellpagesmart|
+
+| spellname = Strength of Nature
+| spellicon = K
+| description = Blesses your target with the strength of nature, increasing their hit points and attack rating for 1 hour.
+
+Doesn't stack with [[Paladin]]s' [[Divine Strength]], but does stack with [[Cleric]] and [[Shaman]] buffs.
+
+Doesn't stack with some ATK buffs such as [[Grim Aura]], [[Firefist]],  [[Yaulp IV]], and [[Celestial Tranquility]].
+
+This effect blocks the use of [[10 Dose Potion of Stinging Wort]]s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase ATK by 25 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stacking: Block new spell if slot 4 is effect 'Max Hitpoints' and < 400 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Max Hitpoints by 75 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 125
+| range = 150
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 1 hour 0 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Nature's strength flows through your muscles.
+| msg_cast_on_other = Someone 's body is strengthened by nature.
+| msg_wears_off = Nature's strength ebbs.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Cerila Windrider]] | Kelethin Ranger Guild | (-428,476) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Velious
+}}

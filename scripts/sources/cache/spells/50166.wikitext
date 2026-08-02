@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Wave of Enfeeblement
+| spellicon = 7
+| description = Creates an unholy aura that drains strength from those nearby.
+
+| classes = 
+
+* [[Necromancer]] - Level 9
+* [[Shadow Knight]] - Level 27
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 11 (L12) to 15 (L20) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 40
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 5.50
+| duration = 4 Min
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your strength dwindle.
+| msg_cast_on_other = Someone  weakens.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

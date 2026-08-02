@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Acumen
+| spellicon = B
+| description = Grants your target a quickness of mind and body, allowing them improved night vision, the ability to see invisible creatures, and greatly increased stamina regeneration.
+
+| classes = 
+
+* [[Shaman]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | See Invisible(2) }}
+{{SpellSlotRow | 2 | Ultravision(1) }}
+{{SpellSlotRow | 3 | Decrease Stamina Loss by 10 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your eyes tingle.
+| msg_cast_on_other = Someone 's eyes tingle.
+| msg_wears_off = Your eyes stop tingling.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Trakanon]]
+[[Skyfire Mountains]]
+* [[an ancient wyvern]]
+}}

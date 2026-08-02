@@ -1,0 +1,38 @@
+{{Classic Era}}{{Spellpage|
+
+| spellname = Divine Purpose
+| spellicon = J
+| description = Surrounds you with divine purpose, regenerating your hit points while slowly draining your mana.
+
+| classes = 
+
+* [[Paladin]] - Level 37
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Mana by 3 per tick }}
+{{SpellSlotRow | 2 | Increase Hitpoints by 8 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1
+| range =  
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A flame of divine purpose compels you.
+| msg_cast_on_other = Someone 's eyes are filled by the flame of a divine purpose.
+| msg_wears_off = The divine flame leaves.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Zealot Zorshais]] | Bank Room | (278, -115) }}
+}}
+
+}}

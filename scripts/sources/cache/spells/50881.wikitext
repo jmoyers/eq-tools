@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Blanket of Forgetfulness
+| spellicon = 39
+| description = Attacks the minds of all enemies in the vicinity of your target, providing a chance to forget those that have done them harm.
+
+| classes = * [[Enchanter]] - Level 46
+| items_with_effect = 
+
+<ul><li> {{:Spores of Forgetfulness}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Memblur(20%) }}
+{{SpellSlotRow | 2 | Memblur(20%) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 175
+| range = 200 (AE Range: 60)
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your mind fog.
+| msg_cast_on_other = Someone  blinks a few times.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

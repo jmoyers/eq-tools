@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Exile Undead
+| spellicon = C
+| description = A burst of holy power that inflicts between 675 and 725 damage to an undead target. (2.7-2.9 DPM)
+
+| classes = 
+
+* [[Cleric]] - Level 55
+* [[Necromancer]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 675 (L55) to 725 (L60) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}

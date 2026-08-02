@@ -1,0 +1,58 @@
+{{Spellpage|
+
+| spellname = Form of the Great Bear
+| spellicon = U
+| description = Transforms you into a bear, providing increased regeneration and wisdom, as well as potentially increasing/decreasing certain factions.<br><br>
+-'''NOTE'''-<br>
+Barbarians -> Polar bear illusion<br>
+Ogres -> Grizzly bear illusion<br>
+Iksars -> Black bear illusion<br>
+Trolls -> Black bear illusion
+
+| classes = 
+
+* [[Shaman]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 43 }}
+{{SpellSlotRow | 2 | Increase Hitpoints by 2 per tick }}
+{{SpellSlotRow | 3 | Increase WIS by 10 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 135
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 2 hours 24 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The spirit of the great bear blesses you.
+| msg_cast_on_other = Someone  turns into a bear.
+| msg_wears_off = You are no longer a bear.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+* [[A guardian power]]
+
+[[Temple of Veeshan]]
+* [[A burning guardian]]
+* [[A fiery guardian]]
+* [[A glimmer drake]]
+* [[A shimmering green drake]]
+* [[An ancient ice wurm defender]]
+
+[[Velketor's Labyrinth]]
+* [[A Velium Hunter]]
+
+}}
+[[Category: Illusions]]

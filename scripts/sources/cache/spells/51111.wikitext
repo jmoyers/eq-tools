@@ -1,0 +1,44 @@
+{{Disambig3|[[Brittle Haste I]] / [[Brittle Haste III]] / [[Brittle Haste IV]]}}
+{{Spellpage|
+
+| spellname = Brittle Haste II
+| spellicon = R
+| description = Speeds your target's metabolism, causing faster attacks while lowering strength and armor class for up to 6 secs (1 ticks @L1 to 1.2 mins @L12).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Xegony's Curse}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 3 }}
+{{SpellSlotRow | 2 | Increase Attack Speed by 15% }}
+{{SpellSlotRow | 3 | Decrease AC by 1 (L1) to 15 (L48) }}
+{{SpellSlotRow | 4 | Decrease STR by 11 (L1) to 58 (L48) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1.2 minutes @L12
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your heart begins to race and you feel weaker.
+| msg_cast_on_other = Someone  begins to move faster.
+| msg_wears_off = You return to normal.
+}}
+== See Also ==
+
+* [[Brittle Haste]]
+* [[Skill Make Poison]]
+
+[[Category:NPC Only Spells]]

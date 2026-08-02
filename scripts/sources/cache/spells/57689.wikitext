@@ -1,0 +1,47 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Flowering Heal
+| spellicon = 634
+| description = Seeds your target with healing energy, healing for 60 every 6 seconds for 24s and then healing for 197.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 20
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 60 per tick| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 197 after 4 ticks| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 130
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 1.50
+| recast_time = 2.00
+| duration = 24 seconds
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel a heal flowering within you.
+| msg_cast_on_other = Target is seeded with healing energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+| TableLocations = W.Commonlands
+| TableEra = Classic
+
+}}

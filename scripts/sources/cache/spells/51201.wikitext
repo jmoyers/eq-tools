@@ -1,0 +1,35 @@
+{{Spellpagesmart|
+
+| spellname = Call of Fire Strike
+| spellicon = D
+| description = Decrease Hitpoints by 65 and Stun (1.00 sec). Proc from [[Call of Fire]] buff.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 65 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Stun (1.00 sec) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 
+| range =  
+| casting_time = 
+| fizzle_time = 
+| recast_time = 
+| duration = 
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = A wave of flame washes over you.
+| msg_cast_on_other = Someone is smothered in a rolling wave of flame.
+| msg_wears_off = 
+
+| TableEra = Velious
+}}

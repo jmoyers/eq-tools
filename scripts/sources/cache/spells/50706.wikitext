@@ -1,0 +1,53 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Song: Occlusion of Sound
+| spellicon = G
+| description = An aura of silence envelops your enemy, causing them to become more susceptible to fire, ice, and magic. All debuffs enhanced by percussion instrument level.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Cold Resist by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Fire Resist by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Decrease Magic Resist by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | Unresistable | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Required''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]] †
+
+| mana = 0
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| other = 
+* '''Focus:''' [[Hand Drum]]
+
+| msg_cast_on_you = You reel in pain as every bone in your body vibrates.
+| msg_cast_on_other = Someone  reels in pain and loses concentration.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gale Wolf]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

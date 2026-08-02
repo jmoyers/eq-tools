@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Disambig3|the [[Haste Guide]]}}
+{{Spellpage|
+
+| description = You feel faster.
+| spellname = Haste
+| spellicon = R
+| classes = 
+
+This spell can be either a worn effect or a tiggered or proc'd buff from an item.  When worn, "level of the caster" is determined as a discrete variable on the specific item.  When tiggered or proc'd, the caster's actual level is used to determine haste percentage.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 2% (L1) to 35% (L49) }}
+
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+| skill = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| items_with_effect = 
+
+<ul><li>  {{:Dark Cloak of the Sky}}
+</li><li> {{:Ashenwood Short Spear}}
+</li><li> {{:Sphinxian Circlet}}
+</li><li> {{:Earthen Blade}}
+</li><li> {{:Executioner's Axe}}
+</li></ul> 
+| where_to_obtain = 
+
+Note = Dark cloak of the Sky appears to be producing 50% haste instead of a max of 35%. See '''discussion''' for details.
+
+}}
+
+[[Category: NPC Only Spells]]

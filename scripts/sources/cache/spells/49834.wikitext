@@ -1,0 +1,56 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shield of the Magi
+| spellicon = K
+| description = Surrounds your body in a magical shield, increasing your hit points, armor class, and magic resistance.<br><br>
+Does not stack with [[Focus of Spirit]], regardless of buff order.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 54
+* [[Wizard]] - Level 54
+* [[Magician]] - Level 54
+* [[Enchanter]] - Level 54
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Max Hitpoints by 232 (L54) to 250 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase AC by 39 (L54) to 44? 45? (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Increase Magic Resist by 22 (L54) to 24 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 300
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 30 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel armored.
+| msg_cast_on_other =  
+| msg_wears_off = Your shielding fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere<br/>Cabilis
+| TableEra = {{{TableEra|Kunark}}}
+
+}}
+
+[[Category:Shielding line]]

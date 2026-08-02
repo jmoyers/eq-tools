@@ -1,0 +1,54 @@
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Resolution
+| spellicon = K
+| description = Provides your target with a sense of resolution, increasing their hit points and armor class for 63 min.
+
+| classes = 
+
+* [[Cleric]] - Level 42
+* [[Paladin]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 15 (L44) to 16 (L50) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 232 (L44) to 250 (L50) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 232 (L44) to 250 (L50) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 110
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 hour 3 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel resolute.
+| msg_cast_on_other = Someone  looks resolute.
+| msg_wears_off = Your resolution fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-6)]] | Cleric Guild | (1197,-560) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-14)]] | Necromancer Guild | (2111,-429) }}
+{{SpellWhereRowB | [[Erudin]] | [[Junice Weslent]] | Cleric Guild - Quellious (Outside) | (-697,-55) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terren Starwatcher]] | Cleric Guild | (13,-426) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+{{SpellWhereRow  | [[Kaladim]] | [[Poriss Splitrock]] | Cleric Guild | (753,135) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Lyniv S'Kor]] | Cleric Guild | (410,-858) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Nosspri Andrika]] | Cleric Guild (basement) | (102,391) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Ladia Qursii]] | Cleric Guild (Outside) | (-225,-238) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Senst Ereek]] | Cleric Guild | (340,-413) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Misty Valefriend]] | Cleric Guild | (-226,-374) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

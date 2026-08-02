@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Rabies
+| spellicon = E
+| description = The king of annoying low-level spells. Many monsters proc Rabies - generally undead. This disease has a very long duration (48mins), so it's best to find someone to cast [[Cure Disease]] or your HP regeneration will be reduced.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 5 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 1 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 48 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = You have been diseased.
+| msg_cast_on_other = Someone  has been diseased.
+| msg_wears_off = You are no longer diseased.
+}}
+
+==Mobs that proc this Spell==
+*[[A Lesser Mummy]]
+*[[An Ancient Mummy]]
+*[[Crypt mummy]]
+*[[A Rabid Wolf]]
+*[[A Rabid Grizzly]]
+*[[A Lurking Mummy]]
+*[[A Shriveled Mummy]]
+*[[Tormented Dead]]
+-INCOMPLETE LIST-
+
+[[Category:NPC Only Spells]]

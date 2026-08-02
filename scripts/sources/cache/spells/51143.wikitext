@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Desperate Hope
+| spellicon = K
+| description = Provides protection from the gods, healing you for 200 damage and protecting you from an additional 296 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Serpent Blood Potion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | UNKNOWN CALC 111 base 200 max 0 attrib Absorb Damage }}
+{{SpellSlotRow | 2 | Increase HP when cast by 200 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A flickering shield surrounds you.
+| msg_cast_on_other = Someone  is covered by a flickering shield.
+| msg_wears_off = The shield fades.
+}}
+
+[[Category:NPC Only Spells]]

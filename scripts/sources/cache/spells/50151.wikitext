@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Dark Empathy
+| spellicon = 99
+| description = Creates a dark pact that transfers 30 of your hit points to your target.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 21
+* [[Necromancer]] - Level 6
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 30 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 20
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 7.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds disappear.
+| msg_cast_on_other = Someone 's wounds disappear.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

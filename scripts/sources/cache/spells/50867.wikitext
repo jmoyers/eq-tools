@@ -1,0 +1,35 @@
+{{Velious Era}}
+{{Spellpage|
+
+| description = Cast by [[Aaryonar]] in NToV.
+| spellname = Cloud of Disempowerment
+| spellicon = I
+
+| classes = 
+
+This spell is cast by NPCs only.
+Fun note: it knocks off Avatar.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Mana by 500 per tick }}
+{{SpellSlotRow | 3 | Decrease ATK by 200 }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 50 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 minute
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = You feel your skin freeze.
+| msg_cast_on_other = Someone 's skin freezes.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

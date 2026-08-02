@@ -1,0 +1,37 @@
+{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Knight's Blessing
+| spellicon = J
+| description = Surrounds your body in a holy aura, healing some of your wounds.
+
+Non-Cleric Players only have 90% healing efficiency. (180 * 0.9 = 162)
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Jeldorin}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 162 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel much better.
+| msg_cast_on_other = Someone  feels much better.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

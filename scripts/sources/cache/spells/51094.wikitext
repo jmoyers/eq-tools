@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = Harpy Voice
+| spellicon = D
+| description = AoE Mes
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/55) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = The voice of the Harpy drains your will to fight.
+| msg_cast_on_other = Someone  looks peaceful.
+| msg_wears_off = You regain your will to fight.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+| spellname = Mass Distill Mana
+| spellicon = U
+| description = Distills mana into a physical form, creating five vials of distilled mana. Consumes five poison vials and ten sapphires when cast
+
+| classes = 
+
+* [[Enchanter]] - Level 39
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Vial of Distilled Mana]] x 5}}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1200
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Sapphire]] x 10, [[Poison Vial]] x 5
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}

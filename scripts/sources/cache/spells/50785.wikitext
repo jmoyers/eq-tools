@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Stunning Blow
+| spellicon = C
+| description = Strikes your target with a stunning blow, causing between 11 and 60 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Adamantite Club}}
+</li><li> {{:Baton of Royal Stature}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 11 (L1) to 60 (L50) }}
+
+| skill = 
+| mana = 60
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You reel from a stunning blow.
+| msg_cast_on_other = Someone  reels from a stunning blow.
+| msg_wears_off = You are no longer stunned.
+}}
+
+[[Category:NPC Only Spells]]

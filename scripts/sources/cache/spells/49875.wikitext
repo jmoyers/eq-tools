@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Endure Poison
+| spellicon = 61
+| description = Surrounds your target with an aura of protection, warding away poison for 27 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 6
+* [[Paladin]] - Level 21
+* [[Druid]] - Level 19
+* [[Shaman]] - Level 11
+* [[Beastlord]] - Level 18
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Poison Resist by 16 (L6) to 20 (L10) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 20
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Resist Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You feel protected from poison.
+| msg_cast_on_other = Someone  is protected from poison.
+| msg_wears_off = Your endurance to poison fades.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Dizzying Wind
+| spellicon = M
+| description = Summons a whirling wind to stun your target while also doing 95 damage. This spell can only stun targets up to level 55 for 1 seconds.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 16
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 81 (L16) to 95 (L30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 50
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are slammed by an intense gust of wind.
+| msg_cast_on_other = Someone  is slammed by an intense gust of wind.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Surefall Glade]] | [[Sallah]] | Jaggedpine Treefolk Building | (-156,-287) }}
+{{SpellWhereRowB | [[Northern Karana]] | [[Tak Whistler]] | Druid Ring | (-2732,-1466) }}
+}}
+
+| TableLocations = N.Karana
+| TableEra = Classic
+
+}}

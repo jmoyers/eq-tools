@@ -1,0 +1,68 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = See Invisible
+| spellicon = 19
+| description = Places a magical enchantment upon your target's eyes, allowing them to see otherwise invisible creatures for 27 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Wizard]] - Level 4
+* [[Enchanter]] - Level 6 (Autogranted)
+* [[Druid]] - Level 13
+* [[Magician]] - Level 16
+* [[Ranger]] - Level 32
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | See Invisible | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 25
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your eyes tingle.
+| msg_cast_on_other =  
+| msg_wears_off = Your eyes stop tingling.
+
+| items_with_effect = 
+
+<ul><li>{{:Bile Etched Obsidian Choker}}
+</li><li>{{:Bracer of the Hidden}}
+</li><li>{{:Choker of Majdd}}
+</li><li>{{:Fingerbone Hoop}}
+</li><li>{{:Halo of the Enlightened}} (fear-revamp)
+</li><li>{{:Living Thunder Earring}}
+</li><li>{{:Ravenscale Mask}}
+</li><li>{{:Sabertooth Amulet}}
+</li><li>{{:Summoned: Staff of Symbols}}
+</li><li>{{:Tobrin's Mystical Eyepatch}}
+</li><li>{{:Ton Po's Eye Patch}}
+</li><li>{{:Qeynos Badge of Honor}}
+</li><li>{{:Ayill's Aged Stone Shield}}
+</li><li>{{:Faceguard of Bentos the Hero}}
+</li></ul>
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

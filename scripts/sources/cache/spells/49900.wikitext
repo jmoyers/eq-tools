@@ -1,0 +1,55 @@
+{{Spellpage|
+
+| spellname = Symbol of Ryltan
+| spellicon = K
+| description = Covers your target in a shimmer of holy runes, increasing their hit points for 36 min.
+
+| classes = 
+
+* [[Cleric]] - Level 21
+* [[Paladin]] - Level 33
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Max Hitpoints by 94 (L24) to 158 (L31) }}
+{{SpellSlotRow | 4 | Increase HP when cast by 94 (L24) to 158 (L31) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 111
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Bloodstone]]
+
+| msg_cast_on_you = The symbol of Ryltan flashes before your eyes.
+| msg_cast_on_other = Someone  is cloaked in a shimmer of glowing symbols.
+| msg_wears_off = The mystic symbol fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Duppa Pickstone]] | Cleric Guild | (745, 125) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+}}
+
+}}
+
+[[Category:Symbol line]]

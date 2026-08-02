@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Fiery Death
+| spellicon = O
+| description = Cast by [[Overking Bathezid]] in [[Chardok]]<br>
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 400 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 24.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are immolated by flame.
+| msg_cast_on_other = Someone  is immolated by flame.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

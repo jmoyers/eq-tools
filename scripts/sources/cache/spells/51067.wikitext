@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Fire
+| spellicon = O
+| description = Ignites your target's skin, doing 392 damage, and lowering their ice resistance for 18 secs (3 ticks). 1.51 DPM.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 48
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 392 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Cold Resist by 50 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 260
+| range = 200
+| casting_time = 6.50
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 3 ticks
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are immolated by flame.
+| msg_cast_on_other = Someone  is immolated by flame.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | PoG Tower | (519,-1028) }}
+}}
+
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

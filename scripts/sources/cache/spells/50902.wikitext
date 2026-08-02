@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Wave of Fire
+| spellicon = C
+| description = Cast by [[Lord Feshlak]] and other dragons in ToV.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 75 }}
+
+| skill = Evocation
+| mana = 150
+| range = 100
+| casting_time = 3.6
+| fizzle_time = 1.5
+| recast_time = 9.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = A blast of heat sears your flesh.
+| msg_cast_on_other = Soandso's skin sears.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Boiling Blood
+| spellicon = O
+| description = Boils the blood of your target, causing 24-36 damage every 6 seconds for 1 ticks @L1 to 1.8 mins @L36.
+
+Blocks [[Regeneration]], [[Chloroplast]] & [[Regrowth]]
+
+This is the damage over time cast by [[Lava duct crawler| Lava duct crawler]] from [[Nagafen's Lair]]. 
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Narandi's Lance}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 24 per tick (L1) to 36 per tick (L60) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 1.8 minutes @L36
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = Your blood boils.
+| msg_cast_on_other = Someone 's blood boils.
+| msg_wears_off = Your blood cools.
+}}
+
+[[Category:NPC Only Spells]]

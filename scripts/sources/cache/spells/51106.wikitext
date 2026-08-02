@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Contact Poison IV
+| spellicon = N
+| description = Shocks your target's body, causing between 13 and 450 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Soul Burn}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 13 (L1) to 445 (L55) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel your skin burn as poison seeps through your skin.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

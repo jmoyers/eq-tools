@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Breath of Karana
+| spellicon = M
+| description = Summons a whirling wind to stun your target, also doing between 772 and 812 damage. Outdoor only.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 772 (L56) to 812 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 250
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are slammed by an intense gust of wind.
+| msg_cast_on_other = Someone  is slammed by an intense gust of wind.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Emerald Jungle]]
+* [[Severilous]]
+
+
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+}}

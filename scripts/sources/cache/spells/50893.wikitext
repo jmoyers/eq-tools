@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Extended Regeneration
+| spellicon = Q
+| description = Fills your body with energy, increasing your regeneration rate.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Blood of the Dhampyre}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increases hitpoints by 2 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 0.00
+| duration = 30 seconds @L1 to 60 seconds @L9
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to regenerate.
+| msg_cast_on_other = Someone  begins to regenerate.
+| msg_wears_off = You have stopped regenerating.
+}}
+
+[[Category:NPC Only Spells]]

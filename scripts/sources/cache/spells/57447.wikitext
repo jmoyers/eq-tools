@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Circle of West Commons
+| spellicon = 129
+| description = Opens a mystical portal that transports your group to the [[West Commonlands|Western Commonlands]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 27
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport group to 478,1427,-48 in [[West Commonlands]]| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 100 
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Player creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+| TableLocations = W.Commonlands
+| TableEra = Classic
+
+}}

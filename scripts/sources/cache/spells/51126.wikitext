@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Weakening Poison III
+| spellicon = C
+| description = Catalyses atrophy in your target's muscles, lowering strength.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Monk's Hood Aconite}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 4 }}
+{{SpellSlotRow | 4 | Decrease STR by 2 (L1) to 54 (L53) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 6.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel your strength fade as poison spreads through your body
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

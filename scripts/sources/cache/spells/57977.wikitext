@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Brell's Steadfast Aegis
+| spellicon = 90
+| description = Surrounds your group with the aegis of the Underfoot, increasing their hit points for 150 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Paladin]] - Level 49
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 4 | Increase Max HP by 145 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 175
+| range = 100
+| casting_time = 8.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = 150 Min
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to radiate with divine strength.
+| msg_cast_on_other =  begins to radiate with divine strength.
+| msg_wears_off = Your divine strength fades.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

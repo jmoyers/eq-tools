@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Divine Glory
+| spellicon = K
+| description = Fills your target with a divine glory, increasing their hit points for 50.0 mins. Superseded by [[Divine Strength]].
+
+Added post-Velious launch [http://www.project1999.org/forums/showpost.php?p=1176734&postcount=8].
+
+| classes = 
+
+* [[Paladin]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase Max Hitpoints by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 50 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to radiate with divine glory.
+| msg_cast_on_other = Someone  begins to radiate with divine glory.
+| msg_wears_off = Your divine glory fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[East Commonlands]] | [[Rushka Deklamoor]] | Tunnel | (-1668,-4) }}
+}}
+
+}}

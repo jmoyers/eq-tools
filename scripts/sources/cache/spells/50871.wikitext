@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Dizzy III
+| spellicon = M
+| description = Hinders your target's sense of balance, causing the loss of agility and armor class.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Crippling Peptide}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 4 }}
+{{SpellSlotRow | 2 | Decrease AGI by 5 (L1) to 32 (L54) }}
+{{SpellSlotRow | 3 | Decrease AC by 3 (L1) to 19 (L54) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3 minutes @L30
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel dizzy as poison spreads through you.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

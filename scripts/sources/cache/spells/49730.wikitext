@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Enthrall
+| spellicon = 35
+| description = Causes your opponent to fall into an enchanted sleep for up to 48s. This spell works on creatures up to level 55.
+
+| classes = * [[Enchanter]] - Level 13 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/55) }}
+{{SpellSlotRow | 2 | Memblur(1%) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 45
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 8 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You have been enthralled.
+| msg_cast_on_other = Someone  has been enthralled.
+| msg_wears_off = You are no longer enthralled.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-4)]] | Library | (1106,-989) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Estra Nancer]] | Enchanter Guild (F2) | (536,761) }}
+{{SpellWhereRowB | [[Felwithe|Felwithe (South)]] | [[Seren the Swift]] | Enchanter Guild | (509,-910) }}
+{{SpellWhereRow  | [[Freeport|Freeport (West)]] | [[Lasiris Oncre]] | Caster Guild (F1) | (112,-768) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Litz B`Doph]] | Caster Guild (F1) | (132,-955) }}
+{{SpellWhereRow  | [[Qeynos|Qeynos (South)]] | [[Corrao Duperame]] | The Herb Jar | (302,-559) }}
+}}
+
+}}

@@ -1,0 +1,42 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Dyzil`s Deafening Decoy
+| spellicon = L
+| description = Summons the deafening decoy of Dyzil to aid you in battle. This warrior pet is skinned as a Fire elemental and casts a damage shield but has a higher level range and HP comparable to the L49 Earth elemental pet.  Decoy casts a short-range targeted AoE that does his level in damage to enemies very near his target (35 units) but also raises [[Hate]] by 100, making him more likely to hold aggro than a Fire elemental pet.
+
+
+Abilities: [[Kick]], [[Bash]], [[FireElementalAura]], [[FireElementalAttack2]]
+| classes = 
+
+* [[Magician]] - Level 56
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SumDecoy }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 350
+| range =  
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+* Note: the item is called Spell: Dyzi`l's Deafening Decoy using the backtick instead of single quote or apostrophe ( ` vs ') but scribes using the apostrophe.
+
+}}

@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Mana Preservation II
+| spellicon = C
+| focus_effect = 1
+| description = Reduces the mana cost of spells by up to 10%.  This bonus will decay on spells over level 44.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Black Alloy Medallion}}</li>
+<li>{{:Mane Attraction}}</li>
+<li>{{:Nisch Mas Ilkvel}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Spell Mana Cost by 1% to 10% }}
+{{SpellSlotRow | 2 | Limit Max Level: 44 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Spell: Exclude Promised Renewal }}
+{{SpellSlotRow | 4 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 2:24:00 (3:36:00)
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

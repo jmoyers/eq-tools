@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Greenmist
+| spellicon = M
+| description = Invokes the power of the Greenmist, stealing strength, armor class, and health from your target.  This spell will buff your AC, STR and provide a 30hp per tick HoT for 8 ticks while debuffing your target for the same.
+| classes = 
+
+* None
+
+| items_with_effect = 
+
+<ul><li> {{:Greenmist}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease STR by 3 (L1) to 20 (L34) }}
+{{SpellSlotRow | 4 | Decrease Hitpoints by 15 per tick (L1) to 30 per tick (L30) }}
+{{SpellSlotRow | 5 | Decrease AC by 4 }}
+
+| skill = 
+| mana = 0
+| range = 60
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 8 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  becomes engulfed in a noxious cloud of green mist.
+| msg_wears_off = The green mist disperses.
+}}
+
+[[Category:NPC Only Spells]]

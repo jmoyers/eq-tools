@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spirit of Inferno
+| spellicon = 2001
+| description = Fills your warder with the power of a great spirit, increasing their dexterity by 75 and giving them a chance to perform {{SpellHoverLink|Spirit of Inferno Strike}}, a {44}2 attack.
+
+| classes = 
+
+* [[Beastlord]] - Level 28
+
+
+| slots = 
+
+{{SpellSlotRow | 1 |  Add Melee Proc: [[Spirit of Inferno Strike|<span class='itemeff'>'''Spirit of Inferno Strike'''</span>]] with 150% Rate Mod }}
+{{SpellSlotRow | 2 |  Increase Dexterity by 75 }}
+
+| skill = [[Skill Alteration| Alteration]]
+
+| mana = 70
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 1.5s
+| recast_time = 6.00
+| duration = 44 minutes
+| target_type = Pet
+| spell_type = Pet Buff
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = Someone is imbued with the spirit of a blazing inferno. 
+| msg_wears_off = 
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+
+}}

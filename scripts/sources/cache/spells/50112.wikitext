@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Natureskin
+| spellicon = K
+| description = Hardens the skin of your target, increasing their hit points, regeneration rate, and armor class for 1 hour(s) 21.0 mins.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 18 (L57) to 19 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 391 (L57) to 400 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 391 (L57) to 400 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase hitpoints by 4 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 400
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 1 hour 21 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin shimmers.
+| msg_cast_on_other = Someone 's skin shimmers.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+}}

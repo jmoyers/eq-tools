@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Invoke Fear
+| spellicon = 154
+| description = A booming voice fills your target's ears, causing them to flee in terror.
+
+| classes = 
+
+* [[Cleric]] - Level 36
+* [[Enchanter]] - Level 35
+* [[Necromancer]] - Level 30
+* [[Shadow Knight]] - Level 43
+
+| items_with_effect = 
+
+<ul><li> {{:Band of Screaming Winds}}
+</li><li> {{:Band of Wailing Winds}}
+</li><li> {{:Staff of the Dreaded Gaze}}
+</li><li> {{:Polished Obsidian Great Axe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Fear(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 7.00
+| duration = 42 seconds
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your mind fills with fear.
+| msg_cast_on_other = Someone  looks very afraid.
+| msg_wears_off = You are no longer afraid.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

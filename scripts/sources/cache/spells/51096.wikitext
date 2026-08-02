@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Prime Healers Blessing
+| spellicon = J
+| description = Bestows the Prime Healer's blessing upon you, causing your wounds to heal much faster.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:The Prime Healer's Bulwark}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 5 per tick (L1) to 15 per tick (L20) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = 1.2 minutes @L1 to 5 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are washed in a vibrant blue light.
+| msg_cast_on_other = Someone  is washed in a vibrant blue light.
+| msg_wears_off = The blue light fades.
+
+
+}}
+
+[[Category:NPC Only Spells]]

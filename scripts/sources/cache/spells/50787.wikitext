@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Gift of Xev
+| spellicon = L
+| description = Focuses mana into the form of a meal pack filled with food and drink.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Glowing Backpack}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Summon Item: {{:Summoned: Black Bread}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Summon Item: {{:Summoned: Globe of Water}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Summon Item: {{:Summoned: Bandages}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 60
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Magician Spells (Good)]]
+* [[Magician Spells (Evil)]]
+| TableLocations = [[Magician Spells (Evil)]] or [[Magician Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

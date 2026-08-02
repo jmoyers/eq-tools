@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Gift of Brilliance
+| spellicon = H
+| description = Grants your target increased mental capacities, increasing their mana pool and mana regeneration. ** Will overwrite [[Form of the Howler]] **
+
+This spell is dissimilar to [[Brilliance]] which buffs INT.
+
+| classes = 
+
+* [[Enchanter]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Mana by 150 }}
+{{SpellSlotRow | 3 | Increase Mana by 2 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 450
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 hour 40 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your thoughts begin to race and flow faster.
+| msg_cast_on_other = Someone  appears to be staring into nothingness.
+| msg_wears_off = Your gift of brilliance fades.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Dragon Necropolis]]
+* [[Vaniki]]
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Treah Greenroot]]
+* [[Tunare (God)]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

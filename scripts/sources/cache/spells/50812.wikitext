@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Scorching Skin
+| spellicon = C
+| description = Causes your skin to steam, forming a protective shield that will damage any creature that attacks you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Kilva's Blistering Flesh}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Damage Shield by 1 (L1) to 16 (L60) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.2 minutes @L1 to 13 minutes @L60
+| target_type = Self
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = Your skin beings steam.
+| msg_cast_on_other = Someone 's skin begins to steam.
+| msg_wears_off = Your skin cools down.
+}}
+
+[[Category:NPC Only Spells]]

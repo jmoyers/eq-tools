@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Soul Devour
+| spellicon = C
+
+| description = 
+
+Consumes your target's soul in darkness, causing 500 damage. This is a direct damage spell proc'd by [[Lhranc]], [[General V`ghera]], [[the Hand of Veeshan]], and [[Vaniki]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 500 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your soul being consumed.
+| msg_cast_on_other = Someone  writhes in agony.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

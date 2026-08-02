@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Nature's Holy Wrath
+| spellicon = C
+| description = Direct Damage and Stun.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 150  }}
+{{SpellSlotRow | 3 | Stun for 1.0 seconds }}
+
+| items_with_effect = 
+
+<ul><li>  {{:Natures Defender}}
+</ul>
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you =  You feel the holy wrath of nature upon you.
+| msg_cast_on_other = Someone  is assaulted by the wrath of nature.           
+| msg_wears_off =  N/A
+
+}}
+
+[[Category:NPC Only Spells]]

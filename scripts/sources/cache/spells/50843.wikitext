@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Vigor
+| spellicon = R
+| description = Fills your body with energy, increasing your strength and agility for up to 30.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Greater Potion of Vigor}}
+</li><li> {{:5 Dose Greater Potion of Vigor}}
+</li><li> {{:Greater Potion of Vigor}}
+</li><li> {{:10 Dose Potion of Lesser Vigor}}
+</li><li> {{:5 Dose Potion of Lesser Vigor}}
+</li><li> {{:Potion of Lesser Vigor}}
+</li><li> {{:10 Dose Potion of Vigor}}
+</li><li> {{:5 Dose Potion of Vigor}}
+</li><li> {{:Potion of Vigor}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease STA by 2 (L1) to 20 (L19) }}
+{{SpellSlotRow | 3 | Increase AGI by 2 (L1) to 15 (L14) }}
+{{SpellSlotRow | 4 | Increase STR by 2 (L1) to 25 (L24) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 30 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You drink the potion.
+| msg_cast_on_other = Someone  drinks a potion.
+| msg_wears_off = The potion has worn off.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Thorny Shield
+| spellicon = P
+| description = Causes thorns to grow from your body, damaging any creature that attacks you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Cloak of Thorns}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase Damage Shield by 1 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 6.5 minutes @L65
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You are surrounded by a thorny barrier.
+| msg_cast_on_other = Someone  is surrounded by a thorny barrier.
+| msg_wears_off = The brambles fall away.
+}}
+
+[[Category:NPC Only Spells]]

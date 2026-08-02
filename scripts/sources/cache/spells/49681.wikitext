@@ -1,0 +1,50 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpage|
+
+| spellname = Shallow Breath
+| spellicon = M
+| description = Constricts your target's throat, causing 5 damage, as well as lowering their strength and agility for 12s.
+
+| classes = 
+
+* [[Enchanter]] - Level 1 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Water Crystal Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 3 (L1) to 5 (L4) }}
+{{SpellSlotRow | 2 | Decrease STR by 5 }}
+{{SpellSlotRow | 3 | Decrease AGI by 5 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 7
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel a shortness of breath.
+| msg_cast_on_other = Someone  begins to choke.
+| msg_wears_off = You can breathe again.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRowB | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

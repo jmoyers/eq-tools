@@ -1,0 +1,33 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpage|
+
+| spellname = The Dain's Justice
+| spellicon = C
+
+| description =
+
+This is the spell cast by [[Dain Frostreaver IV]] that banishes you down the well.
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to 603,3,65 in thurgadinb facing North }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = The justice of Dain Frostreaver casts you into the pit.
+| msg_cast_on_other = Someone  is cast into the pit by Dain Frostreaver's justice.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

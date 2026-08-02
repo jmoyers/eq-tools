@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Lure of Frost
+| spellicon = S
+| description = Shards of piercing ice consume your target, causing 640 damage. Mana efficiency of 2.0, DPS of 142. <br> This damage is much more difficult to resist than most spells.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart| 2 | Decrease Hitpoints by 640 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 320
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-300)
+
+| msg_cast_on_you = You succumb to the lure of frost.
+| msg_cast_on_other = Someone  succumbs to the lure of frost.
+| msg_wears_off =  
+
+| items_with_effect = 
+<ul><li>  {{:Frostmaidens Idol}}
+</li></ul>
+
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

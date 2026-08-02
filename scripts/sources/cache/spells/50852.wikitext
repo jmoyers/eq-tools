@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Everlasting Breath
+| spellicon = F
+| description = Fills your lungs with magical breath, removing your necessity for air for 27 min.
+
+| classes = * [[Druid]] - Level 50
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Potion of Aquatic Haunt}}
+</li><li> {{:5 Dose Potion of Aquatic Haunt}}
+</li><li> {{:Potion of Aquatic Haunt}}
+</li><li> {{:Runed Shell Necklace}}
+</li><li> {{:Enchanted Velium Mask}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Water Breathing(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+| mana = 55
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 27 minutes 6 seconds
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel no need to breathe.
+| msg_cast_on_other = Someone  doesn't seem to be breathing anymore.
+| msg_wears_off = You resume breathing.
+}}

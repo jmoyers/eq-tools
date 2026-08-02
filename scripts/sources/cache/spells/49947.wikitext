@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Remedy
+| spellicon = J
+| description = Mends major wounds, healing between 433 and 438 hit points. 2.5 healing/mana ratio.  See [[Healing Spell Lines]] to compare with other heals.
+
+| classes = 
+
+* [[Cleric]] - Level 51
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 433 (L51) to 438 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 175
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds fade.
+| msg_cast_on_other = Someone 's wounds fade away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}

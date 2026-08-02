@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Shroud of Hate
+| spellicon = 3
+| description = Consumes your target in a wave of hatred, lowering their attack rating and increasing yours.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 35
+
+| slots = 
+
+{{SpellSlotRow | 7 | Decrease ATK by 20 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 10 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Hatred fuels your arms.
+| msg_cast_on_other = Someone  is washed over by a wave of shadows.
+| msg_wears_off = The hatred departs.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

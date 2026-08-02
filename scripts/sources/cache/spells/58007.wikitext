@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Grow
+| spellicon = 108
+| description = Increases the size of your target, causing them to appear more imposing.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shaman]] - Level 16 (Autogranted)
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Grow to 133% size | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range = 200
+| casting_time = 4.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial (Group only)
+| resist = Unresistable
+
+| msg_cast_on_you = You feel bigger.
+| msg_cast_on_other =  grows taller.
+| msg_wears_off = You return to normal height.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

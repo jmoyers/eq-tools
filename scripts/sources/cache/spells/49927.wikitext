@@ -1,0 +1,50 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Dismiss Summoned
+| spellicon = 153
+| description = A burst of holy power that inflicts 244 damage to a summoned target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 23
+* [[Magician]] - Level 25
+* [[Ranger]] - Level 33
+* [[Cleric]] - Level 37
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 226 (L23) to 244 (L32) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 73
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Construct/Elemental
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+| items_with_effect = 
+
+<ul><li>{{:Gold Plated Koshigatana}}
+<li>{{:Thelvorn, Blade of Light}}
+</li></ul>
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Levant
+| spellicon = V
+| description = Teleports you through the shadow realm temporarily, reappearing in reality at the safe point of the zone. See [[Travel Guide#Evacuate_Locations|the travel guide]] for locations.
+
+May only be used at night ''(can start using it at 7pm and can no longer use it at 4am)''.
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Evacuate to specific location (See [[Travel Guide#Evacuate_Locations|the travel guide]]) in same zone }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  steps into the shadows.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

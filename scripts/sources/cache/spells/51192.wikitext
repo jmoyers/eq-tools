@@ -1,0 +1,41 @@
+{{Velious Era}}{{Spellpage|
+
+| spellname = Enchant: Velium
+| spellicon = U
+| description = Enchants a bar of velium with magical energy.  Consumes a bar of velium when cast.
+
+| classes = 
+
+* [[Enchanter]] - Level 44
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Enchanted Velium Bar]] }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Velium Bar]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Thurgadin]] | [[Nimren Stonecutter]] | Rogue Guild | (45,-113) }}
+}}
+
+}}

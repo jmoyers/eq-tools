@@ -1,0 +1,31 @@
+{{Sky Era}}{{Spellpage|
+
+| spellname   = Ab of Strength Recourse
+| spellicon   = I
+| description = Increase STR by 25. This is the buff provided by [[Abduction of Strength]].
+
+| classes = 
+
+This spell is only cast by NPCs until Luclin.
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase STR by 25 }}
+
+| skill = 
+| mana = 5
+| range =  
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 6 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Abducted strength pulses through you.
+| msg_cast_on_other = Someone's muscles pulse with abducted strength.
+| msg_wears_off = Your abducted strength fades.
+}}
+
+[[Category:Spells]]

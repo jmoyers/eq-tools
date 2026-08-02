@@ -1,0 +1,72 @@
+{{disambig3|[[Fortitude Discipline]]}}
+{{Spellpage|
+
+| spellname = Fortitude
+| spellicon = K
+| description = Provides your target with mystic fortitude, increasing their hit points and armor class for 2 hour(s) 24.0 mins.
+
+This spell trades the higher AC and HP of [[Heroism]] for a longer total duration. However, due to the lack of a group version of this spell (such as [[Heroic Bond]] for Heroism), and the lower total stats, Clerics tend to use Heroism and Heroic Bond instead, until getting [[Aegolism]] (which lasts roughly as long as Fortitude while keeping the stats of Heroic Bond).
+
+| classes = 
+
+* [[Cleric]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 17 (L55) to 18 (L60) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 320 (L55) to 360 (L65) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 320 (L55) to 360 (L65) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 175
+| range = 100
+| casting_time = 7.00
+| fizzle_time = 3.50
+| recast_time = 2.25
+| duration = 2 hours 24 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = An aura of fortitude fills you.
+| msg_cast_on_other = Someone 's body pulses with mystic fortitude.
+| msg_wears_off = Your fortitude fades.
+
+| items_with_effect = 
+
+<ul><li>  {{:Invigorating Spores}}
+</li></ul>
+
+| where_to_obtain = 
+
+[[Burning Woods]]
+
+* [[Azdalin]]
+* [[Gullerback]]
+* [[Nezekezena]]
+* [[Phurzikon]]
+
+[[Old Sebilis]]
+
+* [[frenzied pox scarab]]
+* [[Sebilite Juggernaut]]
+
+[[Skyfire Mountains]]
+
+* [[a lava walker]] (Wyvern)
+* [[a mature wurm]]
+* [[a mature wyvern]]
+* [[a soul devourer]]
+* [[a wandering wurm]]
+* [[a wurm spirit]]
+* [[an elder wyvern]]
+* [[Black Scar]]
+* [[Eldrig the Old]]
+* [[Felia Goldenwing]]
+* [[Guardian of Felia]]
+
+
+}}
+
+[[Category:Heroism line]]

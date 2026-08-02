@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Circle of Karana
+| spellicon = 129
+| description = Opens a mystical portal that transports your group to the [[Northern Plains of Karana]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Druid]] - Level 25
+| items_with_effect = 
+
+<ul><li> {{:Circle of Stones}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport group to -2706,-1494,-4 in [[North Karana]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Toxxulia Forest]] | [[Martyn Firechaser]] | Druid Ring | (1040,-359) }}
+}}
+| TableLocations = Toxxulia
+| TableEra = {{{TableEra|Classic}}}
+
+}}

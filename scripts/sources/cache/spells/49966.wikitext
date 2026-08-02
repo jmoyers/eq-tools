@@ -1,0 +1,48 @@
+{{Spellpage|
+
+| spellname = Enforced Reverence
+| spellicon = D
+| description = Strikes an enemy with holy might, briefly stunning them and causing between 300 and @2 damage. This spell works on creatures up to level @1.
+
+| classes = 
+
+* [[Cleric]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 8.0* seconds up to level 55 (*some player-cast stuns are capped at 4 seconds) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 300 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 200
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 24.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-10)
+
+| msg_cast_on_you = You are stunned into reverent awe.
+| msg_cast_on_other = Someone  gapes in reverent awe.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Blood of chottal]]
+* [[Sebilite juggernaut]]
+* [[Trakanon]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+
+}}

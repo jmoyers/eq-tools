@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Berserker Spirit
+| spellicon = R
+| description = Hardens your skin and fills your arms with energy, increasing strength and absorbing damage, while also decreasing your agility.
+
+| classes = * [[Enchanter]] - Level 47
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 40 }}
+{{SpellSlotRow | 2 | Increase Absorb Damage by 200 }}
+{{SpellSlotRow | 3 | Decrease AGI by 20 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 5 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your spirit screams with berserker strength.
+| msg_cast_on_other = Someone  lets loose a berserk yell.
+| msg_wears_off = The berserker spirit fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-5)]] | Library | (1104,-985) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Elentar Bealtarik]] | Enchanter Guild (F4) | (507,746) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tizzy C'Luzz]] | Caster Guild (Basement) | (172,-912) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Moreo O'Meek]] | Caster Guild (Outside) | (301,-637) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Nestess Branchtop]] | Enchanter Guild | (497,-926) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Jarel Ranin]] | Caster Guild (F1) | (157,-735) }}
+}}
+
+}}

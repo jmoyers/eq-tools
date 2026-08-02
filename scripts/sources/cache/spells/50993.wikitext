@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Mana Sink
+| spellicon = C
+| description = Drains the mental energy of your target, tearing mana from the mind.
+<br>
+<br>Decrease Mana by 12 (L1) to 130 (L60)
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Mortificator Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | UNKNOWN CALC 2 base -10 max 0 attrib Mana }}
+
+| skill = 
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your mind clouds.
+| msg_cast_on_other = Someone  winces.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Eye of Tallon
+| spellicon = B
+| description = Conjures a magical eye and gives you invisibility which can allow you to scout dangerous areas. 
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 57
+* [[Magician]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Eye of Zomm | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Invisibility(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Magnification by 120% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | See Invisible(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 65
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = 1 minute
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off = Your extra eye departs.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+}}

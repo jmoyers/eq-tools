@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Languid Pace
+| spellicon = A
+| description = Constricts your target's muscles, causing their attack speed to slow for 3 min 30s.
+
+| classes = 
+* [[Enchanter]] - Level 9 (Autogranted)
+* [[Beastlord]] - Level 35
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 18% (L12) to 30% (L60) }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 6 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range = 250
+| casting_time = 2.25
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 2 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You slow down.
+| msg_cast_on_other = Someone  slows down.
+| msg_wears_off = You speed back up.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+</ul>
+
+
+}}

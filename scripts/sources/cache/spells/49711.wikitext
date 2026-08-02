@@ -1,0 +1,61 @@
+<noinclude>{{disambig3|[[Bind Locations]]}}</noinclude>
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Bind Affinity
+| spellicon = 30
+| description = Binds the soul of your target to their current location. Use of this spell is often limited to towns and cities.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 10 (Autogranted)
+* [[Druid]] - Level 12 (Autogranted)
+* [[Enchanter]] - Level 12 (Autogranted?)
+* [[Magician]] - Level 12 (Autogranted?)
+* [[Necromancer]] - Level 12 (Autogranted?)
+* [[Wizard]] - Level 12 (Autogranted?)
+* [[Shaman]] - Level 14 (Autogranted?)
+
+| items_with_effect = 
+
+<ul><li> {{:Locket of Escape}}
+</li><li> {{:Ring of the Dead}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Bind Affinity | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel yourself bind to the area.
+| msg_cast_on_other = Someone  is bound to the area.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

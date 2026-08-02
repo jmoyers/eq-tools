@@ -1,0 +1,68 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Great Divide Portal
+| spellicon = V
+| description = Opens an arcane portal that teleports your entire group to the Great Divide.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -3766,3651,-237 in greatdivide | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Tooth of the Great Divide]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a shimmering portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow | [[Skyshrine]] | [[Guardian Trekolz]] | Spell vendors (see description) | (323,-874) }}
+}}
+
+* Drops from Velious Mobs
+* Drops from [[Shardwurm Matriarch]] in [[Great Divide]]
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathbinder]]
+* [[A Chetari Deathshaper]]
+* [[A Chetari Dominator]]
+* [[A Chetari Packrat]]
+* [[A Chetari seeker]]
+
+[[Siren's Grotto]]
+* [[A servant manatee]]
+* [[A siren priestess]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystalline Gargoyle]]
+* [[A Crystalline Hunter]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+* [[A Large Crystal Shard]]
+* [[A Velium Broodling]]
+* [[A Velium Hunter]]
+| TableLocations = Level 40+ Mobs<br/>Skyshrine
+| TableEra = {{{TableEra|Velious}}}
+
+}}

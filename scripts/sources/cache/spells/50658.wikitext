@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Cinda's Charismatic Carillon
+| spellicon = 30
+| description = A quiet tune that improves your faction standing with all creatures associated with your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 11
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Faction by 120 (L11) to 610 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 12 Sec
+| target_type = Single
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = You suddenly feel very friendly.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

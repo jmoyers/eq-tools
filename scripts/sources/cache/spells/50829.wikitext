@@ -1,0 +1,40 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Draught of Jiva
+| spellicon = C
+| description = Consumes your target in a sudden torrent of magic, causing between 663(L55) and 688(L60)  damage.
+<br>Mana efficiency of 3.04 / 3.2, DPS of 229.  Has a small stun component.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 55
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 663 (L55) to 688 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 215
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are caught in a torrent of reckless magic.
+| msg_cast_on_other = Someone  is caught in a torrent of reckless magic.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Tsunami
+| spellicon = C
+| description = Cast by [[Lord Koi'Doken]] and possibly other water dragons in ToV.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 400 }}
+{{SpellSlotRow | 3 | Stun for 2.0 seconds }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (-100)
+
+| msg_cast_on_you = A tsunami crushes you.
+| msg_cast_on_other = Someone  is crushed by a wall of water.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

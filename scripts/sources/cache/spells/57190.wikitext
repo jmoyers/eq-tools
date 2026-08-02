@@ -1,0 +1,77 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Invisibility Versus Undead
+| spellicon = B
+| description = ''Cloaks your target in a light aura, rendering them invisible to most undead creatures for up to 27 min.''
+
+<br>
+
+* Must be grouped with your target.<br>
+* Certain actions will immediately break invis, such as turning on auto-attack, casting a spell, using certain combat skills, being damaged by an attack or direct-damage spell, opening (but not receiving) a trade window, looting corpses or getting the invis buff dispelled. This list might not be exhaustive.
+* All un-improved invisibility spells can randomly break early, sometimes mere seconds after casting. As such, invisibility should be treated as a method for mitigating risk of aggro, not eliminating it completely.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 1
+* [[Shadowknight]] - Level 4
+* [[Cleric]] - Level 11
+* [[Enchanter]] - Level 14
+* [[Paladin]] - Level 17
+
+<!--
+| items_with_effect = 
+
+<ul><li> {{:Cloudy Potion}}
+</li><li> {{:Beguiler's Slippers}}
+</li><li> {{:Resplendent Slippers}}
+</li><li> {{:Illusionist's Slippers}}
+</li><li> {{:Dazzling Slippers}}
+</li><li> {{:Cobalt Greaves}}
+</li></ul>
+-->
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Invisibility(1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 30
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.5
+| recast_time = 4.0
+| duration = 27 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel your skin tingle.
+| msg_cast_on_other = Someone fades a little.
+| msg_wears_off = Your skin stops tingling.
+
+
+<!--
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-2)]] | Library | (1074,-1004) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-6)]] | Necromancer Guild | (2085,-370) }}
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Vessel Kirtokk]] | Temple of Terror (First Floor) | (1039,-213) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Telor Beteria]] | Magician Guild (Outside) | (703,806) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tkaz H'Rugla]] | Caster Guild (F1) | (160,-968) }}
+{{SpellWhereRow  | [[Oasis of Marr]] | [[Gadallion]] | Gypsy Camp | (495,0) }}
+{{SpellWhereRowB | [[Paineel]] | [[Nedorl Ipabrun]] | Necromancer Guild | (674,805) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Pai Berenis]] | Caster Guild | (309,-608) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Srell Tumblebrook]] | Building just inside zone | (450,-810) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Xinari Anara]] | Caster Guild (F2) | (138,-755) }}
+}}
+5 gold, 9 copper in Ak Anon with charisma 60
+-->
+| TableLocations = Vendors
+| TableEra = {{{TableEra|Classic}}}
+}}

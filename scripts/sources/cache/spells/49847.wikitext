@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Bedlam
+| spellicon = R
+| description = Hardens your skin and fills your arms with energy, increasing strength and absorbing damage, while also decreasing your agility. (Absorbs 1.75 HP per mana)
+Does NOT stack on Focus of Spirit
+
+| classes = 
+
+* [[Enchanter]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STR by 50 }}
+{{SpellSlotRow | 2 | Increase Absorb Damage by 350 }}
+{{SpellSlotRow | 3 | Decrease AGI by 25 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 6.8 minutes @L58 to 7.0 minutes @L60
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your eyes gleam with bedlam.
+| msg_cast_on_other = Someone 's eyes gleam with bedlam.
+| msg_wears_off = Your bedlam fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Froglok Ilis Shaman]]
+* [[Sebilite Juggernaut]]
+
+}}

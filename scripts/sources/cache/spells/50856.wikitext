@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Energy Sap
+| spellicon = C
+| description = Drains your target's energy, lowering attack speed for up to 6 secs (1 ticks @L1 to 6.5 mins @L65).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Willsapper}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 20% (L1) to 35% (L60) }}
+
+| skill = 
+| mana = 250
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 1 ticks @L1 to 6.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your energy being sapped.
+| msg_cast_on_other = Someone  yawns.
+| msg_wears_off = You feel less tired.
+}}
+
+[[Category:NPC Only Spells]]

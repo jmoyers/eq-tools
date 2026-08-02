@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Asp Venom Strike
+| spellicon = 1
+| description = Deals 62 points of poison damage to your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 62 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time =
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_on_you = You feel your blood begin to burn!
+| msg_cast_on_other =  screams as poison burns their veins!
+| msg_wears_off = The poison subsides.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

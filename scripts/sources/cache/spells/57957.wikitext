@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Golden Choker
+| spellicon = 37
+| description = Focuses mana into the form of a gold choker that sometimes allows you to cast a spell without consuming any reagents. This item works on spells up to level sixty.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Magician]] - Level 50
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Jedah's Golden Choker}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 160
+| range = 0
+| casting_time = 6.00
+| fizzle_time =
+| recast_time = 6.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

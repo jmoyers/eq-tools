@@ -1,0 +1,46 @@
+{{Spellpage|
+
+| spellname = Scent of Darkness
+| spellicon = 160
+| description = Surrounds your target in the scent of darkness, causing them to be more susceptible to fire, poison, and disease.
+
+| classes = * [[Necromancer]] - Level 37
+| items_with_effect = 
+
+<ul><li> {{:Nightshade Scented Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Fire Resist by 24 (L39) to 27 (L44) }}
+{{SpellSlotRow | 3 | Decrease Poison Resist by 24 (L39) to 27 (L44) }}
+{{SpellSlotRow | 4 | Decrease Disease Resist by 24 (L39) to 27 (L44) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 11 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You smell the faint scent of darkness.
+| msg_cast_on_other = Someone  is surrounded by a dark haze.
+| msg_wears_off = The scent of darkness fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-1)]] | Necromancer Guild | (2082,-410) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Ainla Yurimar]] | Underground | (-162,-270) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Rizyra F'Lok]] | Necromancer Guild (F1) | (1335,-1213) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Dallisen Xalladyr]] | Necromancer Guild | (402,-311) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Rott]] | Cubby near PvP Area | (-440,236) }}
+}}
+
+}}

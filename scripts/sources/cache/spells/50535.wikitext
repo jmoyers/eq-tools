@@ -1,0 +1,63 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Translocate
+| spellicon = V
+| description = Opens an arcane portal that teleports your target to their bind point.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 50
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Translocate to 1,0,0 in [[bind]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Drops from Level 50+ Velious Mobs
+
+[[Dragon Necropolis]]
+* [[A Chetari Deathbinder]]
+* [[A Chetari Deathshaper]]
+* [[A Chetari Dominator]]
+* [[A Chetari seeker]]
+
+[[Siren's Grotto]]
+* [[A servant manatee]]
+* [[A siren priestess]]
+* [[A neriad maiden]]
+* [[A neriad mistress]]
+
+[[Velketor's Labyrinth]]
+* [[A Crystalline Gargoyle]]
+* [[A Crystalline Hunter]]
+* [[A Frenzied Velium Broodling]]
+* [[A Frenzied Velium Stalker]]
+* [[A Large Crystal Shard]]
+* [[A Velium Broodling]]
+* [[A Velium Hunter]]
+
+[[Great Divide]]
+* [[a crystaline shardwurm]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Velious}}}
+
+}}

@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Dominate Undead
+| spellicon = D
+| description = Commands an undead creature to do your bidding, temporarily bending them to your will.
+
+| classes = * [[Necromancer]] - Level 18
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 32 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = 16 Min
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  moans.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRow  | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Khensol Undesta]] | Caster Guild | (290,-622) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Caleah Herblender]] | The Herb Jar | (311,-558) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+}}
+
+}}

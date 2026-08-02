@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Gift of Pure Thought
+| spellicon = H
+| description = Calms your group's thoughts, allowing them to regenerate mana more quickly. This spell is identical to [[Clarity II]], but it affects your whole group.
+
+Also, as an added point of information, everyone in a group within appropriate physical range regardless of level can receive any group buff, so long as the caster does not have a lower level targeted when trying to cast the spell. Meaning, a level 1 can receive this buff.
+
+Extra Cool Move: By Default, F7 targets the nearest player. When casting a GROUP BUFF, target yourself, then while the spell is casting hit F7 and it will land on that player AND their group regardless of level. This comes from a level 60 druid using the Regen Clicky and PoTG on low level groups all the time.
+
+| classes = 
+
+* [[Enchanter]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 11 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 33 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A soft breeze slips through your mind.
+| msg_cast_on_other = Someone  looks very tranquil.
+| msg_wears_off = The soft breeze fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Desist
+| spellicon = 25
+| description = Invokes the will of the gods, briefly stunning your opponent. This spell works on creatures up to level 55.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Paladin]] - Level 13
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Stun (2.50 sec/55) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 25
+| range = 200
+| casting_time = 1.75
+| fizzle_time =
+| recast_time = 10.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other =  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

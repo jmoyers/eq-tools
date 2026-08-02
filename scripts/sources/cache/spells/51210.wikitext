@@ -1,0 +1,30 @@
+<noinclude>{{Epics Era}}</noinclude>{{Spellpage|
+
+| spellname = FireBomb
+| spellicon = O
+| description = Creates a circle of fire around you, causing 500 damage to all nearby creatures.
+
+| classes = 
+
+This spell is only cast by [[A Freed Soul]] upon death. There are no messages in chat when the spell is cast/lands.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 500}}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 0
+| range = 300
+| casting_time = 0.0
+| fizzle_time = 0.0
+| recast_time = 0.0
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = N/A
+| msg_cast_on_other = N/A
+| msg_wears_off =  N/A
+}}

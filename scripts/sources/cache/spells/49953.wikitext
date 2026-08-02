@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Divine Light
+| spellicon = J
+| description = Bathes your target in divine light, healing between 880 and 910 hit points. 2.6 healing per point of mana.  See [[Healing Spell Lines]] to compare with other heals.
+
+| classes = 
+
+* [[Cleric]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 880 (L53) to 910 (L56) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are bathed in a divine light.
+| msg_cast_on_other = Someone  is bathed in a divine light.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}

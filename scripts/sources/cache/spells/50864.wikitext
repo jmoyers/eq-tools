@@ -1,0 +1,40 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Torment
+| spellicon = C
+| description = Enflames your target's wounds, causing 20 damage initially, and 10 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 5 ticks @L10).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Black Blade of Tormenting}}
+</li><li> {{:War Bow of Rallos Zek}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 20 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 10 per tick }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 5 ticks @L10
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your wounds begin to burn.
+| msg_cast_on_other = Someone  grimaces in pain.
+| msg_wears_off = Your wounds stop burning.
+}}
+
+[[Category:NPC Only Spells]]

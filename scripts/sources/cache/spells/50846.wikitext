@@ -1,0 +1,41 @@
+{{Disambig3|[[Flurry (NPC Ability)]]}}{{Spellpage|
+
+| spellname = Flurry
+| spellicon = R
+| description = Fills your arms with speed, granting an increased attack rate for up to 1.2 mins @L1 to 5.0 mins @L20.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Adrenaline Tap}}
+</li><li> {{:5 Dose Adrenaline Tap}}
+</li><li> {{:Adrenaline Tap}}
+</li><li> {{:10 Dose Vial of Tamed Mercury}}
+</li><li> {{:5 Dose Vial of Tamed Mercury}}
+</li><li> {{:Vial of Tamed Mercury}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 11% (L1) to 40% (L30) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.2 minutes @L1 to 5 minutes @L20
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel faster.
+| msg_cast_on_other = Someone  looks faster.
+| msg_wears_off = Your speed returns to normal.
+}}
+
+[[Category:NPC Only Spells]]

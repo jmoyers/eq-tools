@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Insipid Weakness
+| spellicon = I
+| description = Weakens your opponent, lowering their strength.
+
+| classes = 
+
+* [[Enchanter]] - Level 34
+
+| items_with_effect = 
+
+<ul><li> {{:Withered Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 35 (L34) to 51 (L50) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 80
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 3 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel weak.
+| msg_cast_on_other = Someone  is weakened.
+| msg_wears_off = Your strength returns.
+
+| where_to_obtain = 
+
+}}

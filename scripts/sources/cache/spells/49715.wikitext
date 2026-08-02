@@ -1,0 +1,77 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Enduring Breath
+| spellicon = 20
+| description = Magically fills your lungs with air, removing your need to breathe for 27 min. Consumes a handful of [[Fish Scales]] to cast.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 20
+* [[Druid]] - Level 6
+* [[Shaman]] - Level 12
+* [[Enchanter]] - Level 12
+* [[Beastlord]] - Level 25
+
+| items_with_effect = 
+
+
+<ul><li>  {{:Ancient Fishing Pole}}
+</li><li> {{:Deep Six Cutlass}}
+</li><li> {{:Drums of the Beast}}
+</li><li> {{:Fish Gill Extract}}
+</li><li> {{:Fishbone Earring}}
+</li><li> {{:Greaves of the Deep Sea}}
+</li><li> {{:Imbued Shield of Paineel}}
+</li><li> {{:Knotted Turtlebone Ring}}
+</li><li> {{:Lodizal_Shell_Shield}}
+</li><li> {{:Lord of Pain's Khukri}}
+</li><li> {{:Moss Mask}}
+</li><li> {{:Net of the Deep Sea}}
+</li><li> {{:Ornately Runed Shell Necklace}}
+</li><li> {{:Rebreather}}
+</li><li> {{:Riptide Spear}}
+</li><li> {{:Shield of Prexus}}
+</li><li> {{:Singing Steel Gauntlets}}
+</li><li> {{:Sleeves of the Kelpmaidens}}
+</li><li> {{:Staff of the Waterwalker}}
+</li><li> {{:Summoned: Waterstone}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Enduring Breath | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Consumes: [[Fish Scales]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Utility Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Fish Scales]]
+
+| msg_cast_on_you = You feel no need to breathe.
+| msg_cast_on_other = Someone doesn't seem to be breathing anymore.
+| msg_wears_off = You resume breathing.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Harnessing of Spirit
+| spellicon = 130
+| description = Focuses your target's spiritual energy, granting increased hit points, strength, and dexterity for 72 min.
+
+| classes = 
+
+* [[Shaman]] - Level 46
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Hit Points by 251 }}
+{{SpellSlotRow | 2 | Increase Current Hit Points by 251 }}
+{{SpellSlotRow | 4 | Increase Strength by 67 }}
+{{SpellSlotRow | 5 | Increase Dexterity by 50 }}
+{{SpellSlotRow | 6 | Stacking: Overwrite Existing Spell if Slot 1 is Strength and Less Than 67 }}
+{{SpellSlotRow | 7 | Stacking: Overwrite Existing Spell if Slot 1 is Dexterity and Less Than 50 }}
+{{SpellSlotRow | 8 | Stacking: Block New Spell if Slot 1 is Strength and Less Than 1067 }}
+{{SpellSlotRow | 9 | Stacking: Block New Spell if Slot 1 is Dexterity and Less Than 1050 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 425
+| range = 100
+| casting_time = 10.00
+| fizzle_time = 1.50
+| recast_time = 7.50
+| duration = 1 hour 12 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+
+| msg_cast_on_you = You feel tough. 
+| msg_cast_on_other = Target looks tougher.
+| msg_wears_off =  	Your hit points fade.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

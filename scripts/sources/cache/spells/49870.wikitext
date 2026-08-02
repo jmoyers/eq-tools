@@ -1,0 +1,68 @@
+{{Spellpage|
+
+| spellname = Stun
+| spellicon = D
+| description = Strikes an enemy with holy power, briefly stunning them. This spell works on creatures up to level 55.
+
+| classes = 
+
+* [[Cleric]] - Level 2
+* [[Paladin]] - Level 28
+
+| items_with_effect = 
+
+<ul><li> {{:Deepwater Bracer}}
+</li><li> {{:Gnoll Hide Lariat}}
+</li><li> {{:Goblin Skull Crusher}}
+</li><li> {{:Bronzewood Staff}}
+</li><li> {{:Howling Harpoon}}
+</li><li> {{:Ropy Tendril}}
+</li><li> {{:Sarnak Warhammer}}
+</li><li> {{:Skullcrusher of Kragg}}
+</li><li> {{:Spear of Mortification}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 4.0 seconds up to level 55 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 35
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are stunned.
+| msg_cast_on_other = Someone  is stunned.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-8)]] | Necromancer Guild | (2150,-357) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-1)]] | Cleric Guild | (1238,-548) }}
+{{SpellWhereRowB | [[Erudin]] | [[Issibla Belstince]] | Cleric Guild - Prexus (F2) | (-1031,-375) }}
+{{SpellWhereRow  | [[Erudin]] | [[Syra Printell]] | Cleric Guild - Quellious (Outside) | (-735,-47) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Seria Woodwind]] | Paladin Guild | (-9,-197) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Wellin Brookleap]] | Cleric Guild | (24,-456) }}
+{{SpellWhereRow  | [[North Kaladim]] | [[Gralpa Axeheft]] | Cleric Guild | (765,119) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Trik N'Tan]] | Cleric Guild | (413,-762) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Busey Nehart]] | Paladin Guild | (1283, 73) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Direlee Furme]] | Cleric Guild (F1) | (103,388) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Donala Baris]] | Paladin Guild (F3) | (208,-130) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Kragie Rolana]] | Paladin Guild | (-141,-125) }}
+{{SpellWhereRowB | [[Paineel]] | [[Oren Calferdo]] | Cleric Guild | (1125,427) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Likka Sowtsui]] | Cleric Guild | (371,-417) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Gilth Harvester]] | Cleric Guild | (-210,-351) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Bogen Chazel]] | Cleric Guild | (-260,-516) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Oriyame Nelafre]] | Cleric Guild | (-259,-539) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Zorik]] | Cleric Guild | (-182,770) }}
+}}
+
+}}

@@ -1,0 +1,50 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Regrowth
+| spellicon = J
+| description = Hastens your target's natural healing, regenerating 15 hit points every 6 seconds. <br> If the target regenerates lost health for the entire duration, it can be considered as a 2490 point heal at level 52, for a mana efficiency of 8.3 hp/m.
+
+This effect does not stack with wort pot's effect, [[Calimony]] (see [[Buff Lines#HP_Regeneration_.28Primary.29| Buff Lines]] for further info).
+
+This spell follows the kunark level restrictions (minimum level 41 to receive).
+
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 54
+* [[Shaman]] - Level 52
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 15 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 16.6 minutes @L52 to 19 minutes @L60
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to regenerate.
+| msg_cast_on_other = Someone  begins to regenerate.
+| msg_wears_off = You have stopped regenerating.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+}}

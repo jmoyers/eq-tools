@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Imbue Opal
+| spellicon = U
+| description = Focuses the power of Rodcet Nife into an opal. Consumes an opal when cast.
+
+| classes = 
+
+* [[Cleric]] - Level 29
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: Imbued Opal }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Opal]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Balhallia]] | Cleric Guild | (-133,-746) }}
+}}
+
+}}

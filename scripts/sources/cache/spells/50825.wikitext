@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Mana Conversion
+| spellicon = C
+| description = Consumes the energy of your body to fuel your mind.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Mana Robe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 60 }}
+{{SpellSlotRow | 2 | Increase Mana by 20 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 9.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your life force draining into your mind.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Lower Element
+| spellicon = U
+| description = Reduces the mystical fire and cold resistances of your target.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of Temperate Flux}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Fire Resist by 6 }}
+{{SpellSlotRow | 3 | Decrease Cold Resist by 6 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 0
+| duration = 5 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel uncomfortable.
+| msg_cast_on_other = Someone looks uncomfortable.
+| msg_wears_off = Your vulnerability fades.
+}}
+
+[[Category:NPC Only Spells]]

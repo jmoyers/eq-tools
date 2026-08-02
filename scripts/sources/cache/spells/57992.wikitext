@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Grounding Poison
+| spellicon = 1
+| description = Coats your weapon in Grounding Poison, giving you a chance to trigger {{SpellHoverLink|Grounding Strike}} on striking. This is considered a utility poison, only one of which may be active at a time.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 7 | Add Melee Proc: Grounding Strike | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+
+| mana = 0
+| range = 200
+| casting_time = 2.50
+| fizzle_time =
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Poison
+
+| msg_cast_on_you = You coat your blades in a tar-like poison.
+| msg_cast_on_other = 's feet won't budge!
+| msg_wears_off = The poison dries from the blade.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

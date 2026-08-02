@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Greater Conjuration: Water
+| spellicon = 38
+| description = Summons a water elemental to aid you in battle.
+
+| classes = 
+
+* [[Magician]] - Level 49
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Greater Conjuration: Water Summon|Greater Conjuration: Water]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+* '''Focus:''' [[Stein of Ulissa]], [[Staff of Elemental Mastery: Water]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

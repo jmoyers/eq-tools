@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Bellowing Winds
+| spellicon = M
+| description = Cast by [[Lady Nevederia]] and other dragons - PBAoE DD and long spinstun.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 250 per tick }}
+{{SpellSlotRow | 3 | SpinStun }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 3 ticks @L6
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You begin to spin.
+| msg_cast_on_other = Someone  begins to spin.
+| msg_wears_off = You feel dizzy.
+}}
+
+[[Category:NPC Only Spells]]

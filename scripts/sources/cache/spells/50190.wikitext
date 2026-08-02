@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Shadow Sight
+| spellicon = 87
+| description = Allows your eyes the vision of shadows, providing night vision and the ability to see invisible creatures.
+
+| classes = 
+
+* [[Necromancer]] - Level 22
+* [[Shadow Knight]] - Level 40
+
+| slots = 
+
+{{SpellSlotRow | 1 | Ultravision(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 50
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The shadows fade.
+| msg_cast_on_other = Someone 's eyes glow violet.
+| msg_wears_off = Your shadow sight fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

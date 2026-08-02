@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Sonic Scream
+| spellicon = D
+| description = Magic based stun cast by [[sonic bat]]s.
+
+| classes = 
+
+* NPC Only Spell
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 1 (L1) to 51 (L100) }}
+
+| skill = None
+
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You let out a high pitched scream.
+| msg_cast_on_other = Someone  lets out a high pitched scream.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+}}
+
+[[Category:NPC Only Spells]]

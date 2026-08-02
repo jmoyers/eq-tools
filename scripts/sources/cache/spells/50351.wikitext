@@ -1,0 +1,46 @@
+{{Disambig3|[[Avatar]]}}
+{{Spellpage|
+
+| spellname = Primal Avatar
+| spellicon = U
+| description = Infuses your target with the power of an avatar, increasing their strength, dexterity, agility, and attack rating for 6.0 mins @L60 to 6.5 mins @L65. Unlike [[Avatar]], this spell consumes no [[Emerald]]s.
+
+This spell is scribed from a NO DROP scroll which drops in [[Sleeper's Tomb]] only.
+
+This spell stacks with all other buffs except [[Primal Essence]].
+
+
+
+
+| classes = 
+
+* [[Shaman]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase ATK by 100 }}
+{{SpellSlotRow | 5 | Increase AGI by 100 }}
+{{SpellSlotRow | 6 | Increase STR by 100 }}
+{{SpellSlotRow | 7 | Increase DEX by 100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 325
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 180.00
+| duration = 6 minutes @L60
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your body screams with the power of an Avatar.
+| msg_cast_on_other = Someone  has been infused with the power of an Avatar.
+| msg_wears_off = The Avatar departs.
+
+| where_to_obtain = 
+
+* [[Sleeper's Tomb]] (Named mobs)
+
+}}

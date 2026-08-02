@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Electric Blast
+| spellicon = C
+| description = Cast by [[Cekenar]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 275 }}
+{{SpellSlotRow | 3 | Decrease Mana by 175 }}
+
+| skill = Evocation
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = Your body is electrified as lightning strikes you.
+| msg_cast_on_other =  Someone 's body is electrified as the lightning strikes.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

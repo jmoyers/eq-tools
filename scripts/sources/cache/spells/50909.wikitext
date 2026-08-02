@@ -1,0 +1,42 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Song of the Deep Seas
+| spellicon = F
+| description = The fury of the sea invigorates your group, increasing armor class, strength, agility, and attack speed. <br><br>Note: '''need to have /tgb off for it to work in group.''' A patch in 2022 changed the "cast on you" and "wears off" messages. They used to be "The fury of the deep see fills your arms." and "Your fury of the sea fades." but are now "You feel your pulse quicken." and "The battle fury fades."...no longer important, but the "Cast on you" effect was previously misspelled in game as "see" instead of "sea". 
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul>
+<li> {{:Nature's Melody}}</li>
+<li> {{:Siren Song, Dagger of the Sea}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 9 | Increase AC by 15 }}
+{{SpellSlotRow | 10 | Increase STR by 30 }}
+{{SpellSlotRow | 11 | Increase AGI by 30 }}
+{{SpellSlotRow | 12 | Increase Attack Speed by 60% }}
+
+| skill = 
+| mana = 0
+| range = 0
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2.5 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your pulse quicken.
+| msg_cast_on_other =  
+| msg_wears_off = The battle fury fades.
+}}
+
+[[Category:NPC Only Spells]]

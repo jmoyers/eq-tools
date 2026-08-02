@@ -1,0 +1,53 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Summon Food
+| spellicon = 37
+| description = Focuses mana into an edible loaf of black bread.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 8
+* [[Druid]] - Level 11
+* [[Shaman]] - Level 6
+* [[Magician]] - Level 1
+* [[Beastlord]] - Level 29
+
+| items_with_effect = 
+
+<ul><li> {{:Harvest Crystal}}
+</li><li> {{:Shovel of the Harvest}}
+</li><li> {{:Wee Harvester}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Summoned: Black Bread}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 10
+| range = 0
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Summon Item
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

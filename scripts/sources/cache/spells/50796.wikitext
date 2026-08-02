@@ -1,0 +1,46 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Circle of Winter
+| spellicon = S
+| description = Calls upon the spirit of winter to protect your group from fire for 36.0 mins.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Fire Resist by 45 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 150
+| range = 0
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 36 minutes
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are surrounded by a winter haze.
+| msg_cast_on_other = Someone  is surrounded by a winter haze.
+| msg_wears_off = Your winter haze clears.
+
+| where_to_obtain = 
+
+[[City of Mist]]
+* [[Gyrating Goo]]
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Druid Spells]]
+| TableLocations = Dropped
+| TableEra = {{{TableEra|Kunark}}}
+}}

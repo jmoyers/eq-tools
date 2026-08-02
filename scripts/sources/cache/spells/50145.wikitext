@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Grim Aura
+| spellicon = 3
+| description = Surrounds you in a dark aura, increasing your attack rating.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 16
+* [[Necromancer]] - Level 3
+
+| items_with_effect = 
+
+<ul><li> {{:Shrunken Goblin Skull Earring}}
+</li><li> {{:Hand of Shadow}}
+</li><li> {{:Reaper's Ring}}
+</li><li> {{:Sword of Pain}}
+</li><li> {{:Holgresh Spirit Beads}}
+
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase ATK by 5 to 10 (L10)}}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 25
+| range =  
+| casting_time = 3.00
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A dull aura covers your hand.
+| msg_cast_on_other = Someone 's hand is covered with a dull aura.
+| msg_wears_off = The grim aura fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

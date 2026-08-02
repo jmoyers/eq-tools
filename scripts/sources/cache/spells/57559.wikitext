@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Calming Visage
+| spellicon = D
+| description = Cloaks your target in a calming visage, diverting attention from any action they take.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 36
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Agro Multiplier by 5% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 100
+| range = 150 
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = 36 seconds
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You take on a non-threatening visage.
+| msg_cast_on_other = Player takes on a non-threatening visage.
+| msg_wears_off = The non-threatening visage fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}

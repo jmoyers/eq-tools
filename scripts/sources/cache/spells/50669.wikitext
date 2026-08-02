@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Melanie's Mellifluous Motion
+| spellicon = V
+| description = A chaotic chorus that causes your group to randomly teleport short distances.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 21
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Random Teleport (short range) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 600
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A mellifluous melody sweeps you away.
+| msg_cast_on_other = Someone  is swept away by a mellifluous melody.
+| msg_wears_off = The mellifluous melody fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+}}
+| TableLocations = Highkeep
+| TableEra = Classic
+}}

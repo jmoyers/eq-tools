@@ -1,0 +1,60 @@
+{{Spellpage|
+
+| spellname = Gift of Insight
+| spellicon = H
+| description = Grants your target increased mental capacities, increasing their mana pool and mana regeneration.  Overwrites [[Gift of Magic]].
+
+This spell is dissimilar to [[Insight]] which buffs WIS.
+
+You must have a minimum level of 42 to receive this.
+
+| classes = 
+
+* [[Enchanter]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Mana by 100 }}
+{{SpellSlotRow | 3 | Increase Mana by 1 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 hour 15 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your thoughts begin to race and flow faster.
+| msg_cast_on_other = Someone  appears to be staring into nothingness.
+| msg_wears_off = Your gift of insight fades.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Dragon Necropolis]]
+* [[A Chetari seeker]]
+* [[Vaniki]]
+
+[[Plane of Growth]]
+* [[An abstruse phantasm]]
+* [[A Gleaming Sphere of Light]]
+* [[A Sylvan Protector]]
+
+[[Temple of Veeshan]]
+* [[A cerulean sky gazer]]
+* [[A shimmer drake]]
+* [[A shimmering green drake]]
+* [[An Ancient Sky Drake]]
+* [[An ancient shard wyvern]]
+* [[An ancient tigerclaw racnar]]
+* [[An elder crimson drake]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

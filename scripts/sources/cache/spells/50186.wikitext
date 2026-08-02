@@ -1,0 +1,43 @@
+{{Spellpage|
+
+| spellname = Rapacious Subvention
+| spellicon = G
+| description = Restores your target's mana at the expense of your own (aka "Rapacious Subvention").
+
+| classes = 
+
+* [[Necromancer]] - Level 24 {{Kunark Short}}
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 60 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A foreign surge of mana refreshes your mind.
+| msg_cast_on_other = Someone  twitches.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-3)]] | Necromancer Guild | (2100,-398) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Pestilence]] | Cubby near PvP Area | (-410,231) }}
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Hundle Quatvel]] | Underground | (-186,-234) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Olak N'Mar]] | Necromancer Guild (F1) | (1337,-1226) }}
+{{SpellWhereRowB | [[Paineel]] | [[Devinious Natasu]] | Necromancer Guild | (675,887) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Vidurlyn Aeminee]] | Necromancer Guild | (308,-306) }}
+
+}}
+
+}}

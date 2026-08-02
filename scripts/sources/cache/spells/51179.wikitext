@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = DryBoneFireBurst
+| spellicon = O
+| description = This nuke is cast by the [[dry bones skeleton]]s and [[imp protector]]s.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 6 @L1 to 70 @L60 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire
+
+| msg_cast_on_you = You feel your skin smolder.
+| msg_cast_on_other =  Someone's skin smolders.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

@@ -1,0 +1,34 @@
+{{Spellpage|
+
+| spellname = Greater Spiroc Thunder
+| spellicon = M
+| description = 
+
+This is the area-effect damage ability used by by [[The Spiroc Lord]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 630 }}
+
+| skill = 
+| mana = 0
+| range = 240
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = Instant
+| target_type = PBAOE
+| spell_type = Detrimental
+| resist = Unresistible
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

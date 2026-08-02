@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Deliriously Nimble
+| spellicon = A
+| description = Fills your target with a delirious nimbleness, increasing their agility for 1 hour(s) 12.0 mins.
+
+Provides more AGI than the group version, [[Talisman of the Cat]].
+
+| classes = 
+
+* [[Shaman]] - Level 53
+
+| items_with_effect = 
+*None
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AGI by 52 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel deliriously nimble.
+| msg_cast_on_other = Someone  twitches, deliriously nimble.
+| msg_wears_off = Your agility fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+}}
+
+}}

@@ -1,0 +1,53 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Call of the Predator
+| spellicon = R
+| description = Summons the spirit of the predator to impart your group with an increased attack rating for 1 hour(s) 15.0 mins.
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase ATK by 40 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range = 150
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = 1 hour 15 minutes 24 seconds
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = The spirit of the predator strengthens your attacks.
+| msg_cast_on_other = Someone  growls as a whisper of the predator pervades the air.
+| msg_wears_off = The predator's spirit departs.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Icewell Keep]]
+* [[Dain Frostreaver IV]]
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Prince Thirneg]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+[[Sleeper's Tomb]]
+* [[an ancient sentry]]
+
+}}

@@ -1,0 +1,47 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Zumaik`s Animation
+| spellicon = L
+| description = Animates a pair of swords to attack your enemies.  Consumes three tiny daggers when cast.
+
+| classes = 
+
+* [[Enchanter]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: Animation13 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 350
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Three Tiny Daggers
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[The Overthere]]
+* [[A Cliff Golem]]
+[[Chardok]]
+* [[Interrogator Gi`mok]]
+* [[A Di`Zok Conscript]]
+[[Field of Bone]]
+* [[The Tangrin]]
+
+
+}}

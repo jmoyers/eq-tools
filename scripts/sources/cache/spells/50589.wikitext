@@ -1,0 +1,53 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Hsagra's Wrath
+| spellicon = O
+| description = <div style='float:right; border: 1px solid blue; padding: 10px; margin: 10px;'>
+'''Eligible Targets:'''
+* [[Derakor the Vindicator]]
+* [[King Tormax]]
+* [[Velketor the Sorcerer]]
+* [[Narandi the Wretched]]
+* [[Lord Yelinak?  (According to Vatrulak, unverified)]]
+</div>
+Consumes your target in the wrath of Hsagra, causing 2000 damage to certain types of giants.  Consumes a pair of peridots when cast.<br><br><br>
+
+Can only be cast on a select list of mobs! See list at right. 
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart  | 1 | Decrease Hitpoints by 2000 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 450
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 5.00
+| duration = Instant
+| target_type = Uber Giants
+| spell_type = Detrimental
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Peridot]] x2
+
+| msg_cast_on_you = Your soul is assaulted by the ages.
+| msg_cast_on_other = Someone 's soul is assaulted by the ages.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Obtained from the Velious quest [[Hsagra's Wrath Quest]].
+| TableLocations = [[Hsagra's Wrath Quest]]
+| TableEra = {{{TableEra|Velious}}}
+
+}}

@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Pack Spirit
+| spellicon = A
+| description = Imbues your group with the spirit of the wolf, increasing their movement speed for 36 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 35
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Movement Speed by 30% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 120
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 9.00
+| duration = 36 minutes
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the spirit of wolf enter you.
+| msg_cast_on_other = Someone  is surrounded by a brief lupine aura.
+| msg_wears_off = The spirit of wolf leaves you.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall
+| TableEra = {{{TableEra|Classic}}}
+}}

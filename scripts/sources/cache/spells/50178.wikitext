@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Harmshield
+| spellicon = 46
+| description = Completely removes your reaction to pain for 18s, rendering you invulnerable to damage.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 50
+* [[Necromancer]] - Level 20
+
+| items_with_effect = 
+
+<ul><li> {{:Duennan Shielding Ring}}
+</li></ul>
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 20 }}
+{{SpellSlotRow | 2 | Invulnerability }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 85
+| range =  
+| casting_time = 1.00
+| fizzle_time = 2.50
+| recast_time = 600.00
+| duration = 3 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You no longer feel pain.
+| msg_cast_on_other =  
+| msg_wears_off = Your invulnerability fades.
+
+|| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

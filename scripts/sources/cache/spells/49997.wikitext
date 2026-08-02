@@ -1,0 +1,54 @@
+{{Spellpagesmart|
+
+| spellname = Skin Like Rock
+| spellicon = K
+| description = Hardens the skin of your target, increasing their hit points and armor class for 27.0 mins.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 22
+* [[Druid]] - Level 14
+
+| items_with_effect = 
+
+<ul><li> {{:Holy Partisan of Underfoot}}
+</li><li> {{:Mountain Death Belt}}
+</li><li> {{:Shard of Golem Stone}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase AC by 6 (L14) to 7 (L18) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 54 (L14) to 105 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 54 (L14) to 105 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 60
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 8.00
+| duration = 27 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin turns hard as stone.
+| msg_cast_on_other = Someone 's skin turns hard as stone.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Zelli Starsfire]] | Kelethin Druid Guild | (-622,243) }}
+{{SpellWhereRow  | [[Greater Faydark]] | [[Verth Mistwielder]] | Kelethin Ranger Guild | (-414,494) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Staria Longhair]] | Druid Guild | (-62,-403) }}
+{{SpellWhereRow  | [[Surefall Glade]] | [[Durvinna Barkkis]] | Ranger Guild | (104,-111) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Sallah]] | Druid Guild | (-153,-286) }}
+}}
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall Glade
+| TableEra = Classic
+}}

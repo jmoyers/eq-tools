@@ -1,0 +1,43 @@
+{{Spellpagesmart|
+
+| spellname = Pack Regeneration
+| spellicon = J
+| description = Hastens your group's natural healing, regenerating up to 9 hit points every 6 seconds for 14 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 5 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = 11 Min
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to regenerate.
+| msg_cast_on_other = Someone  begins to regenerate.
+| msg_wears_off = You have stopped regenerating.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Butcherblock Mountains]] | [[Ellona]] | Druid Ring | (-2085,2016) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Weinna Oakchild]] | � | (521,-1038) }}
+}}
+
+| TableLocations = Butcherblock<br/>Wakening Land
+| TableEra = {{{TableEra|Classic}}}
+}}

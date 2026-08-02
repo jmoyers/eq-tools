@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Symbol of Marzin
+| spellicon = K
+| description = Covers your target in a shimmer of holy runes, increasing their hit points for 1 hour(s) 3.0 mins. Uses 1 peridot when cast.
+
+| classes = 
+
+* [[Cleric]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Max Hitpoints by 640 (L54) to 700 (L60) }}
+{{SpellSlotRow | 4 | Increase HP when cast by 640 (L54) to 700 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 350
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1 hour 3 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' 1 [[Peridot]]
+
+| msg_cast_on_you = A mystic symbol flashes before your eyes.
+| msg_cast_on_other = Someone  is cloaked in a shimmer of glowing symbols.
+| msg_wears_off = The mystic symbol fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}
+
+[[Category:Symbol line]]

@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Entrancing Lights
+| spellicon = D
+| description = Cause up to 8 nearby creatures to fall into an enchanted sleep for up to 6 seconds (1 tick).  This spell works on creatures up to level 55.
+
+| classes = 
+
+* [[Enchanter]] - Level 30
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (8/55) }}
+
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range = (Radius) 30
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 12.0
+| duration = 6 seconds
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = Dancing lights flicker in and out of your vision.
+| msg_cast_on_other = Player gawks at the glowing lights.
+| msg_wears_off = The lights fade.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Manipulator Chasartiz]] | Enchanter Spell Vendor | 87, -117, -21 }}
+}}
+}}

@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Mana Convert
+| spellicon = gem_153b
+| description = Converts the power of your body into mental energy.
+<br>
+| classes = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 60 }}
+{{SpellSlotRow | 2 | Increase Mana by 20 }}
+
+| skill =
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0
+| recast_time = 9
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your life force draining into your mind.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off=
+
+| where_to_obtain = 
+| items_with_effect = * [[Manastone]]
+
+}}

@@ -1,0 +1,48 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Jedah's Conservation
+| spellicon = 161
+| focus_effect = 1
+| description = Reduces the number of reagents consumed by spells by providing a 15% chance for the spell not to consume the reagent when cast. This bonus will decay on spells over level 44.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Summoned: Jedah's Silver Choker}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Chance of Using Reagent by 1% to 15% }}
+{{SpellSlotRow | 2 | Limit Max Level: 44 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Effect: Exclude Summon Item }}
+{{SpellSlotRow | 4 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 195min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

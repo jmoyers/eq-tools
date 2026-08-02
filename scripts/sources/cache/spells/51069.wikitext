@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Lightning Blast
+| spellicon = M
+| description = Calls down lightning from the sky, causing 477 damage to all those in the vicinity of your target.  2.04 damage per mana on a single target, 8.15 damage per mana on a full quad. Outdoors only.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 46
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 477 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 234
+| range = 200
+| casting_time = 6.10
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Lightning surges through your body.
+| msg_cast_on_other = Someone  has been struck by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lavastorm Mountains]] | [[Tisiana]] | Druid Ring | (982,1369) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Phillip Aghllsews]] | � | (519,-1028) }}
+}}
+
+| TableLocations = Lavastorm<br/>Wakening
+| TableEra = Classic
+
+}}

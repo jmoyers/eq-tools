@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Greater Mass Imbue Fire Opal
+| spellicon = 83
+| description = Focuses the power of Solusek Ro into twenty fire opals. Consumes twenty fire opals when cast.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Wizard]] - Level 42
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Summon Item: {{:Imbued Fire Opal}} | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 2400
+| range = 0
+| casting_time = 10.00
+| fizzle_time =
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off = 
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

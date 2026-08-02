@@ -174,6 +174,12 @@ const BUFF_FADE_SELF_RE = /^Your (.+?) spell has worn off\.$/
 // third-person "<mob> has been slain by <x>!" SLAIN_BY_RE, which needs "has").
 const PLAYER_DEATH_RE = /^You have been slain by (.+?)!$/
 
+// Activated AA (Task #34): "You activate Quick Buff." (69× in the real log). A Quick Buff
+// activation is followed within ~2-3s by a burst of self-buff landing messages (no "You
+// begin casting" lines) — the buffs module uses it as context to mark those applies
+// confident. Any activated AA matches; consumers filter by name.
+const AA_ACTIVATE_RE = /^You activate (.+?)\.$/
+
 // ----- spell-landing emotes (Task #33): the cast-target discriminator -----
 // EQ prints a short flavor line the instant a buff lands. Two forms:
 //   SELF:  "You feel much faster."  "You feel much better."  "You feel armored."  …
@@ -561,6 +567,41 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     }
   }
 
+  // --- activated AA (Task #34): "You activate <X>." (e.g. Quick Buff) ---
+  if (text.startsWith('You activate ')) {
+    const m = AA_ACTIVATE_RE.exec(text)
+    if (m) return { kind: 'aaActivate', seq, ts, raw, name: m[1].trim() }
+  }
+
+  // --- message-driven buff events (Task #34) — DB-gated, additive. Emitted only when a
+  // spell database is installed on the config (installSpellDb); with no DB these never
+  // fire so parser purity holds and existing tests/profiles are byte-for-byte unchanged.
+  // These matches take precedence over the permissive spellEmote candidate below: a line
+  // that EXACTLY matches a DB message names the exact spell, which is strictly more
+  // informative than an emote candidate. Unmatched emote-shaped lines still fall through
+  // to spellEmote, so Task #33's cast-target learning is untouched for non-DB spells. ---
+  const db = cfg.spellDb
+  if (db) {
+    // Self landing: msg_cast_on_you match → buffApply { self }. (Covers the Quick Buff
+    // burst, whose landing messages have no "You begin casting" line.) A message may map to
+    // several candidate spells (shared haste/clarity messages); we carry them all so the
+    // buffs module resolves via the player's cast history.
+    const selfCands = db.castOnYou.get(text)
+    if (selfCands && selfCands.length) return buffApplyEvent(seq, ts, raw, 'self', selfCands)
+    // Buff fade: msg_wears_off match → buffWearOff { self }. Message-driven expiry is
+    // favored over estimate-based removal (the user directive). We carry the first
+    // candidate's name (the module removes by the ACTIVE buff sharing the message anyway).
+    const wornCands = db.wearsOff.get(text)
+    if (wornCands && wornCands.length) {
+      return { kind: 'buffWearOff', seq, ts, raw, spell: wornCands[0].name, target: 'self' }
+    }
+    // Cast-on-other: the log names the target ("a froglok looks tranquil."), so match by
+    // the invariant SUFFIX the wiki records as "Someone looks tranquil." → "looks
+    // tranquil.". The target is the text before the suffix.
+    const other = matchCastOnOther(text, db)
+    if (other) return buffApplyEvent(seq, ts, raw, other.target, other.cands)
+  }
+
   // --- spell-landing emotes (Task #33) — matched LAST so it never shadows a real
   // family. A candidate emote the buffs module uses to discriminate cast targets. ---
   if (text.startsWith('You ')) {
@@ -574,6 +615,54 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
   }
 
   return { kind: 'unknown', seq, ts, raw }
+}
+
+/**
+ * Match a log line against the DB cast-on-other SUFFIX table (Task #34). The wiki records
+ * "Someone looks tranquil."; the log names the target ("a froglok looks tranquil."), so a
+ * line matches when it ENDS WITH a known suffix ("looks tranquil.") and the prefix is a
+ * plausible (non-empty) target name. Returns the spell + captured target, or null.
+ *
+ * Linear over the (few-hundred) unique suffixes only when the line could be an emote — the
+ * caller reaches here only after every combat/cast/charm family missed, so the volume is
+ * tiny. We test the longest suffixes first so a specific message isn't shadowed by a
+ * shorter generic one.
+ */
+function matchCastOnOther(
+  text: string,
+  db: NonNullable<ParserConfig['spellDb']>
+): { cands: import('../data/spellDb').SpellDb['spells']; target: string } | null {
+  for (const [suffix, cands] of db.castOnOtherSuffix) {
+    // Possessive suffixes ("'s face contorts …") attach directly to the name; others
+    // ("looks tranquil.") follow a space.
+    const attach = suffix.startsWith("'s") ? '' : ' '
+    const tail = attach + suffix
+    if (text.endsWith(tail) && text.length > tail.length) {
+      const target = text.slice(0, text.length - tail.length).trim()
+      if (target && target.length <= 60) return { cands, target: norm(target) }
+    }
+  }
+  return null
+}
+
+/** Build a buffApply event from a target + candidate spell list (Task #34). The `spell`
+ *  field is the first candidate (best-effort); `candidates` carries the full set for the
+ *  buffs module to resolve against the player's cast history when ambiguous. */
+function buffApplyEvent(
+  seq: number,
+  ts: number,
+  raw: string,
+  target: 'self' | string,
+  cands: import('../data/spellDb').SpellDb['spells']
+): LogEvent {
+  const first = cands[0]
+  return {
+    kind: 'buffApply', seq, ts, raw, target,
+    spell: first.name,
+    illusion: first.illusion,
+    durationMs: first.durationMs,
+    candidates: cands.map((s) => ({ name: s.name, durationMs: s.durationMs, illusion: s.illusion }))
+  }
 }
 
 function dmg(

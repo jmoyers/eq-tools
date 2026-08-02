@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Jyll's Wave of Heat
+| spellicon = O
+| description = Creates a circle of intense heat around you, causing between 638 and 648 damage to all nearby creatures.
+<br>Single target mana efficiency of 1.86 / 1.9 DPM.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 638 (L59) to 648 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 342
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (-10)
+
+| msg_cast_on_you = A wave of heat screams through you.
+| msg_cast_on_other = Someone  is ashed by an intense wave of heat.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

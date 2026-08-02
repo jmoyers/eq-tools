@@ -1,0 +1,41 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Fixation of Ro
+| spellicon = O
+| description = Surrounds your target in dancing flames, lowering their attack and armor class.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 42
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease AC by 15 (L44) to 18 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Decrease ATK by 52 (L44) to 60 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 150
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 10 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| other = 
+
+* '''Focus:''' Fire Beetle Eye
+
+| msg_cast_on_you = You are surrounded by an outline of cold flame.
+| msg_cast_on_other = Someone  is surrounded by an outline of cold flame.
+| msg_wears_off = The flames die away.
+
+| where_to_obtain = 
+* Velious Mob Drop 
+   
+| TableLocations = Dropped
+| TableEra = {{{TableEra|Velious}}}
+}}

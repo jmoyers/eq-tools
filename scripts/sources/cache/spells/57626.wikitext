@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Vengeance of the Wild
+| spellicon = G
+| description = Inflicts the vengeance of the wild on your target, causing between 122 and 131 damage every six seconds for 30s.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Curse Counter by 8 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hit Points between 121 and 132 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 180
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 6.00
+| duration = 5 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-30)
+
+| msg_cast_on_you = You are consumed by the flames of the wild.
+| msg_cast_on_other = Target has been consumed in the flames of the wild.
+| msg_wears_off = The wild flames fade away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+}}

@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Cloud
+| spellicon = K
+| description = Causes your target's image to blur, making it harder for your opponents to hit you by increasing your armor class.
+
+| classes = * [[Enchanter]] - Level 17
+| items_with_effect = 
+
+<ul><li> {{:Runed Sea Shell}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 9 (L20) to 10 (L25) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 40
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your image clouds.
+| msg_cast_on_other = Someone 's image clouds.
+| msg_wears_off = You come into focus.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-4)]] | Library | (1106,-989) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Estra Nancer]] | Enchanter Guild (F2) | (536,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Litz B`Doph]] | Caster Guild (F1) | (132,-955) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Corrao Duperame]] | The Herb Jar | (302,-559) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Seren the Swift]] | Enchanter Guild | (509,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Lasiris Oncre]] | Caster Guild (F1) | (112,-768) }}
+}}
+
+}}

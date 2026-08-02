@@ -1,0 +1,53 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Drones of Doom
+| spellicon = T
+| description = Commands a swarm of insects to attack your target relentlessly, causing 156 damage every six seconds for 48s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 32
+* [[Ranger]] - Level 54
+
+| items_with_effect = 
+
+<ul><li> {{:Elder Spiritist's Vambraces}}
+</li><li> {{:Nature Walker's Bracer}}
+</li><li> {{:Rod of Drones}}
+</li><li> {{:Rowyl's Bracer of Nature}}
+</li><li> {{:Woven Grass Bracelet}}
+</li><li> {{:Wristguard of Harmony}}
+</li><li> {{:Staff of the Earthcrafter}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 148 (L32) to 156 (L40) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 287
+| range = 250
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 48 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You feel the pain of a thousand stings.
+| msg_cast_on_other = Someone  is engulfed in a swarm.
+| msg_wears_off = The swarm departs.
+
+| where_to_obtain = 
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRow  | [[Steamfont Mountains]] | [[Crisyn]] | Druid Ring | (-1750,1657) }}
+}}
+
+| TableLocations = Steamfont Mnt<br/>Firiona Vie
+| TableEra = {{{TableEra|Classic}}}
+}}

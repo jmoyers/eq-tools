@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Aura of Marr
+| spellicon = R
+| description = Fills your body with the aura of Marr, healing between 10 and 130 damage while slowing your attack rate for up to 5.0 mins.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Frothy Goblin Tonic}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 5 (L1) to 64 (L60) }}
+{{SpellSlotRow | 2 | Decrease Attack Speed by 10% }}
+{{SpellSlotRow | 3 | Increase HP when cast by 10 (L1) to 305 (L60) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 5 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your wounds begin to heal.
+| msg_cast_on_other = Someone 's wounds begin to heal.
+| msg_wears_off = The Aura of Marr fades.
+}}
+
+[[Category:NPC Only Spells]]

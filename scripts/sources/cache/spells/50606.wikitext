@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Imbue Topaz
+| spellicon = U
+| description = Focuses the power of Quellious into a topaz. Consumes a topaz when cast.
+
+| classes = 
+
+* [[Cleric]] - Level 29
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: Imbued Topaz }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Topaz]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+}}
+
+}}

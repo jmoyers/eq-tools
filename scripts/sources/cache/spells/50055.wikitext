@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Strength of Stone
+| spellicon = R
+| description = Fills your target with the power of the stone, increasing their strength for 36 min.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 34
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Strength by 22 (L34) to 25 (L40) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 65
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel stronger.
+| msg_cast_on_other = Someone  looks stronger.
+| msg_wears_off = Your strength fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Steamfont Mountains]] | [[Crisyn]] | Druid Ring | (-1750,1657) }}
+}}
+
+| TableLocations = Steamfont Mntns
+| TableEra = {{{TableEra|Classic}}}
+}}

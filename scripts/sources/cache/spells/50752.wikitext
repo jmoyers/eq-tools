@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = GelatRot
+| description = Cast by [[Cuburt]] and other gelatinous cubes.
+| spellicon = C
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Root }}
+
+| mana = 0
+| skill = 
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3.2 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your legs feel numb.
+| msg_cast_on_other = Someone  stumbles.
+| msg_wears_off = You can feel your legs again.
+
+}}
+
+[[Category: NPC Only Spells]]

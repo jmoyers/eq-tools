@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Exile Summoned
+| spellicon = C
+| description = A burst of holy light that causes between 675 and 725 damage to a [[:Category:Summoned|summoned]] target. 2.7 damage per mana at 55; 2.9 damage per mana at 60.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 55
+* [[Magician]] - Level 56
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 675 (L55) to 725 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Summoned
+| spell_type = Detrimental
+| resist = Magic (-50)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+}}
+| TableLocations = Firiona Vie<br/>Freeport<br/>Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Burst of Flame
+| spellicon = 51
+| description = Creates a ball of fire that burns your target, doing 5 damage.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 1 (Autogranted)
+* [[Shaman]] - Level 1
+* [[Magician]] - Level 1 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of Fire}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 3 (L1) to 5 (L4) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 4
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin singe as the Burst of Flame hits you.
+| msg_cast_on_other = Someone  singes as the Burst of Flame hits them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

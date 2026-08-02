@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Lure of Lightning
+| spellicon = M
+| description = Bolts of lightning consume your target, causing 680 damage. This damage is much more difficult to resist than most spells.
+<br>Mana efficiency of 2.12, DPS of 147.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 58
+
+| slots = 
+
+{{SpellSlotRowSmart| 2 | Decrease Hitpoints by 680 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 320
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-300)
+
+| msg_cast_on_you = You succumb to the lure of lightning.
+| msg_cast_on_other = Someone succumbs to the lure of lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

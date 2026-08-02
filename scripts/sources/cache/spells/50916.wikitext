@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = blessing of the grove
+| spellicon = C
+| description = Grants you a blessing of nature, increasing your attack speed and armor class for up to 18 secs (3 ticks).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Tolan`s Longsword of the Glade}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 40% }}
+{{SpellSlotRow | 3 | Increase AC by 30 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your heart begin to race.
+| msg_cast_on_other = Someone  begins to move faster.
+| msg_wears_off = Your speed returns to normal.
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,52 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Tiny Companion
+| spellicon = 108
+| description = Shrinks your pet, allowing it better mobility in tight quarters. 
+
+| classes = 
+
+* [[Beastlord]] - Level 19
+* [[Druid]] - Level 17
+* [[Enchanter]] - Level 19
+* [[Magician]] - Level 19
+* [[Necromancer]] - Level 19
+* [[Shadow Knight]] - Level 19
+* [[Shaman]] - Level 16
+
+| items_with_effect = 
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Pet Size by 50% }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Utility Beneficial
+
+
+| msg_cast_on_you = You feel smaller.
+| msg_cast_on_other = Target shrinks.
+| msg_wears_off = You return to normal height. 
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

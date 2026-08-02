@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Fire Spiral of Al'Kabor
+| spellicon = O
+| description = Creates a fire spiral that causes between 69 and 76 damage to all creatures in the vicinity of your target.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 18
+| items_with_effect = 
+
+<ul><li> {{:Mystical Laig Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 69 (L18) to 76 (L25) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 150
+| range = 200
+| casting_time = 3.60
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You are blasted by blazing winds.
+| msg_cast_on_other = Someone  is blasted by blazing winds.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{Wizard Recipe| Fire Spiral of Al'Kabor| 41}}
+{{Recipe Component| Rune of Al'Kabor|967}}
+{{Recipe Component| Rune of Velious|967}}
+
+| TableLocations = [[Research]]
+
+| TableEra = {{{TableEra|Classic}}}
+
+}}

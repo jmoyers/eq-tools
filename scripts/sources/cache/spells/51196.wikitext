@@ -1,0 +1,78 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Reclaim Energy
+| spellicon = 89
+| description = Reclaims the energy needed to maintain your pet, causing the pet to dissipate and restore 75% of the mana cost spent to summon it.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 1
+* [[Magician]] - Level 1
+* [[Enchanter]] - Level 1
+
+| items_with_effect = 
+
+=== Magician Focus Items ===
+'''NOTE:''' These four "[[Magician Focus Items]]" can be right-clicked from inventory by any class, not just [[Magician]]s.  Thus, [[Enchanter]]s, [[Necromancers]], [[Shadow Knight]]s, [[Shaman]], and even [[Druid]]s can obtain those items to have a [[Reclaim Energy]] "clickie".
+
+<ul><li> {{:Broom of Trilon}}
+<li> {{:Shovel of Ponz}}
+<li> {{:Stein of Ulissa}}
+<li> {{:Torch of Alna}}
+</ul>
+
+=== Magician Staffs of Elemental Mastery ===
+<ul><li> {{:Staff of Elemental Mastery: Air}}
+</li><li> {{:Staff of Elemental Mastery: Earth}}
+</li><li> {{:Staff of Elemental Mastery: Fire}}
+</li><li> {{:Staff of Elemental Mastery: Water}}
+</ul>
+
+=== Magician Velious Armor ===
+<ul><li> {{:Prestidigitator's Wristband}}
+</li><li> {{:Arch Mage's Warband}}
+</li><li> {{:Summoner's Warband}}
+</li><li> {{:Wristband of Conjuration}}
+</li><li> {{:Harnessed soul gem}}
+</ul>
+
+=== Non-Magician Reclaim Energy Items ===
+<ul><li> {{:Encyclopedia Necrotheurgia}} ([[Necromancer]]-only)
+<li> {{:Helm of Ridossan}} ([[Erudite]] [[Shadow Knight]]-only)
+<li> {{:Beguiler's Wristguard}} = {{:Dazzling Wristguard}} = {{:Illusionist's Wristguard}} = {{:Resplendent Wristguard}} ([[Enchanter]])
+<li> {{:Warlock's Wristguard}} = {{:Plague Bearer's Wristguard}} < {{:Rotting Wristguard}} > {{:Wristband of the Bonecaster}} ([[Necromancer]])
+</ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Reclaim Energy | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 5
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = Instant
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  disperses.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Antidote
+| spellicon = N
+| description = Removes toxin from your target's system, curing them of severe poisons.
+
+| classes = 
+
+* [[Cleric]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Poison Counter by 16 }}
+{{SpellSlotRow | 2 | Decrease Poison Counter by 16 }}
+{{SpellSlotRow | 3 | Decrease Poison Counter by 16 }}
+{{SpellSlotRow | 4 | Decrease Poison Counter by 16 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+}}
+
+}}

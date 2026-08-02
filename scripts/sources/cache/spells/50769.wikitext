@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Breeze
+| spellicon = H
+| description = Calms your target's thoughts, allowing them to regenerate mana more quickly.
+
+| classes = * [[Enchanter]] - Level 14 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Mana by 2 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 27 minutes 6 seconds
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = A light breeze slips through your mind.
+| msg_cast_on_other = Someone  sighs in tranquility.
+| msg_wears_off = The light breeze fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB  | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2819, 2365) }}
+}}
+
+}}

@@ -1,0 +1,51 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Treeform
+| spellicon = 163
+| description = Transforms you into a stout tree, preventing movement, but increasing your regeneration. This spell can only be cast outdoors.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 6
+| items_with_effect = 
+
+<ul><li> {{:Maple Leaf Mask}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Illusion (race #143) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Hitpoints by 3 per tick (L9) to 5 per tick (L16) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart  | 4 | Decrease Fire Resist by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 36 Min
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You have taken root.
+| msg_cast_on_other = Someone  turns into a tree.
+| msg_wears_off = You are no longer a tree.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Horth Evergreen]] | Kelethin Druid Guild | (-640,219) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Torth Largefoot]] | Druid Guild | (-32,-384) }}
+{{SpellWhereRowB | [[Surefall Glade]] | [[Arrivae Valleren]] | Druid Guild | (-156,-300) }}
+}}
+
+| TableLocations = Kelethin<br/>Rivervale<br/>Surefall Glade
+| TableEra = Classic
+
+}}
+[[Category: Illusions]]

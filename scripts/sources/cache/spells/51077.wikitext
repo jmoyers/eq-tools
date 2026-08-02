@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Fist of Mastry
+| spellicon = C
+| description = This is a single target proc used by [[Vorash]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun (15.00 sec) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 500 }}
+ 
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 00.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you =
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

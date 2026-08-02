@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Wrath of Nature
+| spellicon = C
+| description = Grips your target in the wrath of nature, slowing their movement speed and causing 55 damage every 6 seconds for 180 secs (1650 damage total).
+
+Overwrites and blocks [[Snare]] and [[Ensnare]].
+
+| classes = 
+
+<ul><li> [[Druid|Druid (Epic)]]
+</li></ul>
+
+| items_with_effect = 
+
+<ul><li> {{:Nature Walkers Scimitar}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 55 per tick }}
+{{SpellSlotRowSmart | 2 | Decrease Movement Speed by 60% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You are gripped by nature's wrath.
+| msg_cast_on_other = Someone  has been gripped by nature's wrath.
+| msg_wears_off = The wrath of nature recedes.
+}}
+
+[[Category:NPC Only Spells]]

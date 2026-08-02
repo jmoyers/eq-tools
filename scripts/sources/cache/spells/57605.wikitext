@@ -1,0 +1,44 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ward of Calrena
+| spellicon = K
+| description = Places the ward of Calrena on your target, absorbing a portion of incoming spell damage. This spell absorbs a set amount of damage before dissipating. Consumes a jasper when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 49
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Mitigate Spell Damage by 25%, 560 total | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 175
+| range = 100 
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 15.00
+| duration = 36 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Jasper]] x 1
+
+
+| msg_cast_on_you = A dull blue aura surrounds you.
+| msg_cast_on_other = Player has been surrounded in a dull blue aura.
+| msg_wears_off = The blue aura fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

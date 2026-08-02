@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Armor of the Faithful
+| spellicon = K
+| description = Places mystic armor of protection around you, increasing your hit points and armor class.
+| classes = 
+
+* [[Cleric]] - Level 49
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Hitpoints by 260 }}
+{{SpellSlotRow | 2 | Increase AC by 6 }}
+{{SpellSlotRow | 3 | Increase HP when cast by 260 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel protected.
+| msg_cast_on_other = Target looks protected.
+| msg_wears_off = Your protection fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+
+}}

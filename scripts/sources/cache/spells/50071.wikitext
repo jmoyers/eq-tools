@@ -1,0 +1,46 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Wind of the South
+| spellicon = V
+| description = Opens a mystical portal that transports your group to the [[Emerald Jungle]].  This spell no longer has a Kunark dungeon requirement; it can currently be cast from anywhere in the world.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Evacuate to -3100,3500,-340 in [[Emerald Jungle]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  discorporates in a portal of wind.
+| msg_wears_off = You appear in a gust of wind.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+}}
+<noinclude>
+==See also==
+*[[Markar's Relocation]]
+</noinclude>

@@ -1,0 +1,45 @@
+{{Spellpagesmart|
+
+| spellname = Psalm of Mystic Shielding
+| spellicon = K
+| description = A mystic psalm enfolds your group, protecting them from magic as well as regenerating their health.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 41
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Magic Resist by 51 (L41) to 60 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Absorb Magic Damage by 15 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Hitpoints by 5 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 4 (L41) to 6 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 0
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel protected from magic.
+| msg_cast_on_other =  
+| msg_wears_off = Your aura fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Astar Leafsinger]] | Kelethin Bard Guild | (-252,293) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Topala Xenem]] | Bard Guild | (550,-136) }}
+}}
+| TableLocations = Qeynos<br/>Kelethin
+| TableEra = Classic
+}}

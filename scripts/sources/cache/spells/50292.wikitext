@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Health
+| spellicon = 10
+| description = Fills your target with superior health, increasing their stamina for 54 min.
+
+| classes = 
+
+* [[Shaman]] - Level 30
+
+| items_with_effect = 
+
+<ul><li> {{:Jaundiced Bone Greaves}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase STA by 29 (L34) to 31 (L38) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 80
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 54 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Statistic Buff
+| resist = Unresistable
+
+| msg_cast_on_you = You feel healthy.
+| msg_cast_on_other = Someone looks healthy.
+| msg_wears_off = Your health fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

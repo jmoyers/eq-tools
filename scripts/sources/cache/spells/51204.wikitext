@@ -1,0 +1,29 @@
+{{Spellpage|
+
+| spellname = SpectreLifetap
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 2 (L1) to 66 (L65) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you =  You feel your lifeforce drain away.
+| msg_cast_on_other = Soandso staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

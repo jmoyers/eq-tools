@@ -1,0 +1,60 @@
+{{Spellpage|
+
+| spellname = Symbol of Pinzarn
+| spellicon = K
+| description = Covers your target in a shimmer of holy runes, increasing their hit points for 45 min.
+
+| classes = 
+
+* [[Cleric]] - Level 31
+* [[Paladin]] - Level 46
+
+| items_with_effect = 
+
+<ul><li> {{:Deepwater Breastplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Max Hitpoints by 224 (L34) to 307 (L41) }}
+{{SpellSlotRow | 4 | Increase HP when cast by 224 (L34) to 307 (L41) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 45 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Jasper]]
+
+
+| msg_cast_on_you = A mystic symbol flashes before your eyes.
+| msg_cast_on_other = Someone  is cloaked in a shimmer of glowing symbols.
+| msg_wears_off = The mystic symbol fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guid | (412,-788) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Dorlita Splitshield]] | Cleric Guild | (733,138) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+
+}}
+
+[[Category:Symbol line]]

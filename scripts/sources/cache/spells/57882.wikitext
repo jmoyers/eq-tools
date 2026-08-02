@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Ward of Calliav
+| spellicon = 46
+| description = Places the Ward of Calliav on your pet, absorbing up to 11747 damage from the next 1 melee strikes or direct damage spells that hit it.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Magician]] - Level 46
+* [[Beastlord]] - Level 49
+* [[Necromancer]] - Level 49
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Absorb Hit up to 11747 damage | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 1.50
+| recast_time = 36.00
+| duration = 36 minutes
+| target_type = Pet
+| spell_type = Block
+| resist = Unresistable
+
+| msg_cast_on_you = You have been warded from harm.
+| msg_cast_on_other =  has been surrounded in the ward of Calliav.
+| msg_wears_off = The ward fades away.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+</ul>
+}}

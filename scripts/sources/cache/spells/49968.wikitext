@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = The Unspoken Word
+| spellicon = C
+| description = A forbidden word that causes between 605 and @3 damage to all nearby enemies.
+
+| classes = 
+
+* [[Cleric]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Blindness(-1) }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 605 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 427
+| range =  
+| casting_time = 1.00
+| fizzle_time = 5.00
+| recast_time = 120.00
+| duration = 1 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your mind bleeds with wonder.
+| msg_cast_on_other = Someone  writhes and staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

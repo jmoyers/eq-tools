@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ice Comet
+| spellicon = S
+| description = Summons a giant comet of ice from the sky, causing 808 damage to your target.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 49
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 808 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 203
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = You feel your skin freeze.
+| msg_cast_on_other = Someone 's skin freezes.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+Quest: [[Tarton's Wheel]]
+
+| TableEra = {{{TableEra|Classic}}}
+
+}}

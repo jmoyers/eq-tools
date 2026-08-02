@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Shield of Fire
+| spellicon = 157
+| description = Surrounds your target in a shield of fire, damaging any creature that attacks them.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 7
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Damage Shield by 5 (L8) to 6 (L12) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Fire Resist by 10 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 40
+| range = 100
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 15 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| msg_cast_on_you = You are enveloped by flame.
+| msg_cast_on_other = Someone  is enveloped by flame.
+| msg_wears_off = The flames die down.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

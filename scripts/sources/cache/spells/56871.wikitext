@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Curse
+| spellicon = 165
+| description = Inflicts an ancient curse upon your target, causing 148 damage every six seconds for 30s.
+
+| classes = 
+
+* [[Shaman]] - Level 34
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Curse Counter by 4   }}
+{{SpellSlotRow | 2 | Decrease Current Hit Points by 148 per Tick   }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 212
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 6.00
+| duration = 30 seconds
+| target_type = Single
+| spell_type = Curse
+| resist = Magic (0)
+
+
+| msg_cast_on_you = You have been cursed.
+| msg_cast_on_other =  Target has been cursed. 
+| msg_wears_off =  You are no longer cursed. 
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

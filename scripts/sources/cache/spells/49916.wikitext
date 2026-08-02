@@ -1,0 +1,57 @@
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Force
+| spellicon = D
+| description = Strikes an enemy with holy might, briefly stunning them and causing 90 damage. This spell works on creatures up to level 58.
+
+| classes = 
+
+* [[Cleric]] - Level 31
+* [[Paladin]] - Level 52
+
+| items_with_effect = 
+
+<ul><li> {{:Rod of Lamentation}}
+</li><li> {{:Rod of Mourning}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0* seconds up to level 55 (*some player-cast stuns are capped at 4 seconds) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 74 (L34) to 90 (L50) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 90
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-4)]] | Cleric Guild | (1223,-547) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-13)]] | Necromancer Guild | (2112,-438) }}
+{{SpellWhereRowB | [[Erudin]] | [[Alysa Eltern]] | Cleric Guild - Quellious (Outside) | (-707,-57) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Terri Woodshape]] | Cleric Guild | (2,-456) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Friz Punox]] | Cleric Guid | (412,-788) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Perep Chen]] | Cleric Guild (basement) | (106,311) }}
+{{SpellWhereRow  | [[Kaladim|North Kaladim]] | [[Dorlita Splitshield]] | Cleric Guild | (733,138) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Enpero Mesog]] | Cleric Guild (Outside) | (-216,-230) }}
+{{SpellWhereRowB | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Naes Ereek]] | Cleric Guild | (340,-427) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Alice Sweetoven]] | Cleric Guild | (-232,-419) }}
+}}
+
+}}

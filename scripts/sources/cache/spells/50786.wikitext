@@ -1,0 +1,44 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Death Pact
+| spellicon = K
+| description = Bestows the favor of the gods upon your target, granting them a second chance at life should they fall in battle.  Consumes a [[Pearl]] when cast. 
+
+| classes = 
+
+* [[Cleric]] - Level 51
+
+| slots = 
+
+{{SpellSlotRow | 1 | Death Save - Restore Partial Health }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 15.00
+| duration = 60 minutes (1 hour)
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Pearl]]
+
+| msg_cast_on_you = You are surrounded by a foreboding aura.
+| msg_cast_on_other = Someone  is covered in a foreboding aura.
+| msg_wears_off = The aura fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Cleric Spells (Good)]]
+* [[Cleric Spells (Evil)]]
+
+}}

@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Ring of Faydark
+| spellicon = C
+| description = Teleports you to the [[Lesser Faydark]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Tolan's Darkwood Breastplate}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to 1880,-1060,2 in lfaydark }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

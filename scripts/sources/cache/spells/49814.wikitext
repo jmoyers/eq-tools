@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Purify Mana
+| spellicon = U
+| description = Distills mana into a physical form.  Consumes a poison vial and four rubies when cast.
+
+| classes = * [[Enchanter]] - Level 45
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Vial of Purified Mana]] }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 500
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Ruby]] x4, [[Poison Vial]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Lesser Faydark]] | [[A Brownie Merchant]] | Brownie Villiage | (1814,3118) }}
+}}
+
+}}

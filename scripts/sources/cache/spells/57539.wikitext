@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Force of Nature
+| spellicon = 158
+| description = Focus yourself with the force of nature, increasing your attack rating, hitpoint regeneration, endurance regeneration, and causing damage to anything that strikes you.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 50
+
+| items_with_effect = 
+
+<ul><li> None </li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase ATK by 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Damage Shield by 5 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase Hitpoints by 6 per tick. Max: 19 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Endurance by 6 per tick. Max: 19 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+
+| skill = [[Skill Alteration| Alteration]]
+
+| mana = 100
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You become a force of nature.
+| msg_cast_on_other = Someone becomes a force of nature.
+| msg_wears_off = You return to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

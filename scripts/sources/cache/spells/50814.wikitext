@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Strong Disease
+| spellicon = E
+| description = Fills your target with disease, causing 20 damage initially and 3 damage every 6 seconds for up to 15.0 mins. 
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Chelaki Tail}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 20 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 3 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 15 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = You have been diseased.
+| msg_cast_on_other = Someone  has been diseased.
+| msg_wears_off = You are no longer diseased.
+}}
+
+[[Category:NPC Only Spells]]

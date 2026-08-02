@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Elnerick's Entombment of Ice
+| spellicon = U
+| description = Surrounds your target's feet in thick ice, causing between 325 and 378 damage, and preventing them from moving.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 35
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 295 (L35) to 325 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Root | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 225
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 3.50
+| duration = 24 seconds (4 ticks)
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = You are entombed in elemental ice.
+| msg_cast_on_other = Target is entombed by elemental ice.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

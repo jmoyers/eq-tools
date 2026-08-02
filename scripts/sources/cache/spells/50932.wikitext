@@ -1,0 +1,38 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Echinacea Infusion
+| spellicon = K
+| description = Minor PR and DR self-only buff.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Initiate Symbol of Tunare}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Poison Resist by 5 (L1) to 10 (L15) }}
+{{SpellSlotRow | 4 | Increase Disease Resist by 5 (L1) to 10 (L15) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2 minutes @L40
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel infused with Echinacea.
+| msg_cast_on_other = Someone  is infused with Echinacea.
+| msg_wears_off = Your Echinacea infusion fades.
+}}
+
+[[Category:NPC Only Spells]]

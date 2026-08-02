@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Gale of Poison
+| spellicon = 42
+| description = Creates a rain of poison, causing three waves of 122 damage to everything in a small radius around your target.
+
+| classes = 
+
+* [[Shaman]] - Level 36
+
+| items_with_effect = 
+
+<ul><li> {{:Poison Wind Censer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 122 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 200
+| range = 150
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = Your skin blisters as poison rains down on you.
+| msg_cast_on_other = Someone 's skin blisters.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

@@ -1,0 +1,46 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Shadow Step
+| spellicon = 48
+| description = Causes you to momentarily step into the realm of shadow, reentering reality a short distance away.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Necromancer]] - Level 5
+* [[Shadow Knight]] - Level 13
+* [[Wizard]] - Level 7
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Random Teleport (short range) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 10
+| range =  
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+| items_with_effect =  
+<ul><li> {{:Mask of Shadow}}
+</li><li> {{:Cap of the Insubstantial}}
+</li></ul>
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

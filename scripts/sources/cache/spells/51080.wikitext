@@ -1,0 +1,33 @@
+{{Allakhazam}}
+{{Spellpage|
+
+| spellname = Swift Spirit
+| spellicon = C
+| description = Fills your body with a spirit of swiftness, increasing your attack speed and attack rating.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 40% }}
+{{SpellSlotRow | 3 | Increase ATK by 30 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your heart begin to race.
+| msg_cast_on_other = Someone  begins to move faster.
+| msg_wears_off = Your speed returns to normal.
+}}
+
+[[Category:NPC Only Spells]]

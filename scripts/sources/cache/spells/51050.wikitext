@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Aura of White Petals
+| spellicon = K
+| description = Covers you in an aura of white petals, increasing your cold resistance. <br> Stacks with [[Circle of Summer]] and [[Resist Cold]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:White Flower of Functionality}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Cold Resist by 11 (L1) to 50 (L40) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 36 minutes @L12
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are covered by an aura of white petals.
+| msg_cast_on_other = Someone  is covered by an aura of white petals.
+| msg_wears_off = The white petals drift away.
+}}
+
+[[Category:NPC Only Spells]]

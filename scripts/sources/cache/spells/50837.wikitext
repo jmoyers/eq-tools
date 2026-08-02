@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Grease Injection
+| spellicon = A
+| description = Injects hot grease into your armor, granting increased movement for up to 3.0 mins @L1 to 18.0 mins @L6.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Clockwork Watchman Greaves}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Increase Movement Speed by 40% }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 18 minutes @L6
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = An injection of heated grease speeds the movement of your armor
+| msg_cast_on_other = Someone 's armor is sped up by an injection of heated grease.
+| msg_wears_off = Your armor slows.
+}}
+
+[[Category:NPC Only Spells]]

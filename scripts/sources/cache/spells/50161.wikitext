@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Heat Blood
+| spellicon = 51
+| description = Heats the blood of your target, causing 43 damage every six seconds for 36s.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 28
+* [[Necromancer]] - Level 10
+
+| items_with_effect = 
+
+<ul><li> {{:Ivory Handled Falchion}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 17 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 88
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 4.00
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = Your blood simmers.
+| msg_cast_on_other = Someone 's blood simmers.
+| msg_wears_off = Your blood cools.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

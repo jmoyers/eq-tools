@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Circle of Ro
+| spellicon = V
+| description = Opens a mystical portal that transports your group to the Southern Desert of Ro.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 34
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -2034,317,-19 in sro | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 0
+| casting_time = 16.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Group v1
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Toxxulia Forest]] | [[Martyn Firechaser]] | Druid Ring | (1040,-359) }}
+}}
+
+| TableLocations = Toxxulia
+| TableEra = {{{TableEra|Classic}}}
+}}

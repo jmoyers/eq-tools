@@ -1,0 +1,39 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Glamour of Tunare
+| spellicon = T
+| description = Dazzles your targeted [[:Category:Animal | animal]] with the glamour of Tunare, making them more vulnerable to magic.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 53
+
+| slots = 
+
+{{SpellSlotRowSmart| 1 | Increase Poison Counter by 1 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart| 2 | Decrease Magic Resist by 20 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 10
+| range = 200
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 16.9 minutes @L53 to 19 minutes @L60
+| target_type = Animal
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  is surrounded by a Tunarian glamour.
+| msg_wears_off = The glamour fades.
+
+| where_to_obtain = 
+
+* This spell is obtained via a quest: [[Druid Spells]].
+| TableLocations = [[Druid Spells|Quest]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

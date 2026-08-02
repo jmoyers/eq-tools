@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Seething Fury
+| spellicon = J
+| description = Consumes your mind and body in a seething fury, increasing your attack rate, armor class, and attack rating.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ragebringer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 40% }}
+{{SpellSlotRow | 2 | Increase AC by 9 }}
+{{SpellSlotRow | 3 | Increase ATK by 40 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 7.5 minutes @L3
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel your body filled by fury.
+| msg_cast_on_other = Someone 's body pulses with fury.
+| msg_wears_off = The fury fades.
+}}
+
+[[Category:NPC Only Spells]]

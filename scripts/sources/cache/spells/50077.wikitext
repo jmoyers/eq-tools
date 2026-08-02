@@ -1,0 +1,39 @@
+{{Spellpagesmart|
+
+| spellname = Drifting Death
+| spellicon = T
+| description = Commands a swarm of insects to attack your target relentlessly, causing between 195 and 198 damage every 6 seconds for 54s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 40
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 185 (L40) to 195 (L50) per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 370
+| range = 250
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 minute
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You feel the pain of a thousand stings.
+| msg_cast_on_other = Someone is engulfed in a swarm.
+| msg_wears_off = The swarm departs.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Butcherblock Mountains]] | [[Ellona]] | Druid Ring | (-2085,2016) }}
+{{SpellWhereRow  | [[The Wakening Land]] | [[Weinna Oakchild]] | Tower to Plane of Growth | (521,-1038) }}
+}}
+
+| TableLocations = Butcherblock<br/>Wakening
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Thurgadin Gate
+| spellicon = C
+| description = Mystically transports you to the city of [[Thurgadin]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> [[Vial of Velium Vapors]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to -865,4,14 in thurgadina }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

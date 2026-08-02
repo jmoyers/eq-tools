@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Insight
+| spellicon = H
+| description = Expands your target's mind, increasing their intelligence and wisdom.
+
+| classes = * [[Enchanter]] - Level 35
+| items_with_effect = 
+
+<ul><li> [[Potion of Wisdom]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase WIS by 10 (L39) to 14 (L52) }}
+{{SpellSlotRow | 2 | Increase INT by 5 (L39) to 8 (L52) }}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 125
+| range = 100
+| casting_time = 4.25
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 40 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your mind fills with wisdom.
+| msg_cast_on_other = Someone  looks wise.
+| msg_wears_off = Your wisdom fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

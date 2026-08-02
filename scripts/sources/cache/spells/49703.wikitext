@@ -1,0 +1,55 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Lesser Shielding
+| spellicon = 133
+| description = Surrounds your body in a magical shield, increasing your hit points, armor class, and magic resistance.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 5
+* [[Enchanter]] - Level 6
+* [[Wizard]] - Level 6
+* [[Necromancer]] - Level 8
+
+| items_with_effect = 
+
+<ul><li> {{:Cobalt Vambraces}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Max HP by 17 (L5) to 30 (L18) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase AC by 6 (L8) to 9 (L18) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 25
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel armored.
+| msg_cast_on_other =  
+| msg_wears_off = Your shielding fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}
+
+[[Category:Shielding line]]

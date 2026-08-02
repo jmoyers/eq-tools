@@ -1,0 +1,33 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Thunderclap
+| spellicon = C
+| description = Strikes your target with energy, stunning them briefly and causing between 210 and 232 damage.  This spell has a pushback (10) component in the direction the wizard is facing. Wizard PBAoE
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 30
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 210 (L30) to 232 (L38) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 175
+| range =  
+| casting_time = 3.15
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been thunderstruck.
+| msg_cast_on_other = Someone  has been thunder struck.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

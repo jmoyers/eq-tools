@@ -1,0 +1,45 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Lightning Strike
+| spellicon = M
+| description = Calls down lightning from the sky, causing between 163 and 184 damage and up to 3 others nearby. (1.23 DPM) This spell can hit at most 4 targets. Only castable outdoors.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 31
+| items_with_effect = 
+
+<ul><li> {{:Luminescent Staff}}
+</li><li> {{:Skydarkener}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 163 (L31) to 184 (L38) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 149
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Lightning surges through your body.
+| msg_cast_on_other = Someone  has been struck by lightning.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Steamfont Mountains]] | [[Crisyn]] | Druid Ring | (-1750,1657) }}
+}}
+
+| TableLocations = Steamfont Mntns
+| TableEra = {{{TableEra|Classic}}}
+}}

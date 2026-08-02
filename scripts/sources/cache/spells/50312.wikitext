@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Guardian Spirit
+| spellicon = 38
+| description = Summons a companion from the spirit world in the form of a great wolf.
+
+| classes = 
+
+* [[Shaman]] - Level 41
+
+| items_with_effect = 
+
+<ul><li> {{:Fairy-Hide Mantle}}
+</li><li> {{:Sphinx-Hide Mantle}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Guardian_Spirit_Summon|Guardian Spirit]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 450
+| range =  
+| casting_time = 14.00
+| fizzle_time = 2.25
+| recast_time = 28.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a guardian spirit.
+| msg_cast_on_other = Someone  summons a guardian spirit.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

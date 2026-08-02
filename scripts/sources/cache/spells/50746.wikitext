@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Mesmerizing Breath
+
+| spellicon = C
+| description = It silences players, disabling their spells, weapon procs, and ability to use clickies. Cast by [[Xygoz]] in VP. 
+
+| classes = 
+
+This spell is cast by NPCs only. 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Silence }}
+
+| mana = 0
+| skill = 
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 3 ticks
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = You are in a cloud of silence.
+| msg_cast_on_other = Someone  is surrounded by a cloud of silence.
+| msg_wears_off =  
+
+
+}}

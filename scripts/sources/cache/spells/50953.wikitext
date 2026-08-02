@@ -1,0 +1,36 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Blessing of Nature
+| spellicon = P
+| description = Fills your target's body with the aura of nature, covering it in a glowing aura that heals anyone who strikes it.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Razor Fang of Xygoz}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Damage Shield by 1 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.1 minutes @L1 to 2 minutes @L10
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your body is surrounded by an aura of nature.
+| msg_cast_on_other = Someone  is surrounded by an aura of nature.
+| msg_wears_off = The aura fades.
+}}
+
+[[Category:NPC Only Spells]]

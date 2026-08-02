@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Gift of Magic
+| spellicon = H
+| description = Grants your target increased mental capacities, increasing their mana pool.
+
+| classes = 
+
+* [[Enchanter]] - Level 34
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Max Mana by 50 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 hour 0 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your thoughts begin to race and flow faster.
+| msg_cast_on_other = Someone  appears to be staring into nothingness.
+| msg_wears_off = Your gift of magic fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Iceclad Ocean]] | [[Xorbinasticalus Zimralicus]] | Pirate Outpost | (4636,1312) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Loremaster Dorinan]] | Cleric Guild | (-334,813) }}
+}}
+
+}}

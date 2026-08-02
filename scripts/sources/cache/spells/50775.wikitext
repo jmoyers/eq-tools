@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Siphon
+| spellicon = C
+| description = Drains life energy from your target, siphoning 80 health.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Blood Point}}
+<li> {{:Khyldorn the Blood Drinker}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 80 }}
+{{SpellSlotRow | 2 | Increase Hitpoints by 80 (Self)}}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

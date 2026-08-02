@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Blessing of the Page
+| spellicon = K
+| description = Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 1.
+
+| classes = 
+
+* [[Cleric]] - Level 8
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc_Strike [[Blessing of the Page]] [+1 Health per successful melee hit] }}
+
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 175
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50 seconds
+| recast_time = 5.00
+| duration = 30:00 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your hands glow a dull gold.
+| msg_cast_on_other = Other_Player's hands have a dull gold glow.
+| msg_wears_off = The golden glow fades.
+
+| where_to_obtain = 
+
+Cleric Spell Vendors.
+
+}}
+
+[[Category: Blessing of the Page line]]

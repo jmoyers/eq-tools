@@ -1,0 +1,39 @@
+<noinclude>{{Classic Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Improved Superior Camo
+| spellicon = B
+| description = Covers your body in a mystic cloak, allowing you to blend in with your surroundings.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = * [[Druid]] - Level 48
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Improved Invisibility | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 75
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 10 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You vanish.
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off = You appear.
+
+| where_to_obtain = 
+* [[shardwurm matriarch]]
+* [[a crystaline shardwurm]]
+* Velious Mob Drop 
+   
+| TableLocations = Dropped
+| TableEra = {{{TableEra|Velious}}}
+}}

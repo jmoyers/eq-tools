@@ -1,0 +1,43 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Wrath of Ap'Sagor
+| spellicon = S
+| description = Creates a freezing ice storm that causes 448 damage to several creatures in the vicinity of your target. <br> Single target mana efficiency of 0.9. <br> This spell in its scroll form reads '''Wrath of Ap'Sagor'''. It scribes as '''Wrath of Al'Kabor'''.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Wizard]] - Level 48
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 448 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 500
+| range = 200
+| casting_time = 6.30
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = You are blasted by freezing winds.
+| msg_cast_on_other = Someone  is blasted by freezing winds.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+* '''Wizard''' [[Research#Wizard_Spell_Recipes|Research]] (Trivial: 184)
+** '''Yield: Wrath of Al'Kabor''' x1
+** In [[Lexicon]]:
+{{Recipe Component| Rune of Ap'Sagor | 967}}
+{{Recipe Component| Rune of Concussion | 967}}
+
+| TableLocations = [[Research]]
+| TableEra = {{{TableEra|Classic}}}
+}}

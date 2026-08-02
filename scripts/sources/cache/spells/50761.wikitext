@@ -1,0 +1,44 @@
+{{Spellpage|
+
+| spellname = Celestial Tranquility
+| spellicon = R
+| description = Fills your body with celestial power, increasing your attack, attack speed, and armor class for up to 18 secs (3 ticks).
+
+Doesn't stack with some other ATK buffs such as [[Grim Aura]], [[Firefist]], and [[Strength of Nature]].
+
+Superficially stacks with spell haste (such as that cast by enchanters and shamans) but only the larger of haste effects will actually apply.
+
+As other forms of spell haste, it will stack with worn haste and the Bards' Ervaj line of songs.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Celestial Fists}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase ATK by 40 }}
+{{SpellSlotRow | 5 | Increase Attack Speed by 40% }}
+{{SpellSlotRow | 8 | Increase AC by 12 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

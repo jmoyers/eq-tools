@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Pyrocruor
+| spellicon = O
+| description = Burns the blood of your target, causing 111 damage every six seconds for 1.9 minutes (19 ticks) for a total of 2109 damage. 5.273 DPM.
+
+| classes = 
+
+* [[Necromancer]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 111 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 400
+| range = 200
+| casting_time = 5.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1.9 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_on_you = Your blood ignites.
+| msg_cast_on_other = Someone 's blood ignites.
+| msg_wears_off = Your blood cools.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

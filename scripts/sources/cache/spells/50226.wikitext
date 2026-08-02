@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Splurt
+| spellicon = U
+| description = Causes your target's body to splurt, doing progressively more damage the longer it lasts (17 ticks). -1819hp & 7.5792 dpm.
+
+| classes = 
+
+* [[Necromancer]] - Level 51
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 11 to 203 per tick for 17 ticks, increasing by 12 each tick.}}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 237
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1.7 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = Your body begins to splurt.
+| msg_cast_on_other = Someone 's body begins to splurt.
+| msg_wears_off = Your body stops splurting.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

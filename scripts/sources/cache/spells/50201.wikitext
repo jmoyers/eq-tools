@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Venom of the Snake
+| spellicon = 42
+| description = Fills your target's blood with poison, causing 33 damage initially and 220 damage every six seconds for 36s.
+
+| classes = 
+
+* [[Shaman]] - Level 37
+* [[Necromancer]] - Level 34
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 7 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 40 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 59 per tick }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 203
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

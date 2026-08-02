@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Rage of Zek
+
+| spellicon = O
+| description = Strikes your target with the rage of Rallos Zek, causing 175 damage and severe anger in your target.
+
+| classes = 
+
+This spell is cast by weapon proc only.
+
+| items_with_effect = 
+
+<ul><li> {{:Jagged Blade of War}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 175 }}
+{{SpellSlotRow | 2 | Increase Hate by 500 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your soul consumed by the fury of Zek.
+| msg_cast_on_other = Someone 's soul is consumed by the fury of Zek.
+| msg_wears_off =  
+
+}}
+
+[[Category:NPC Only Spells]]

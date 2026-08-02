@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Sacred Word
+| spellicon = 25
+| description = A forbidden word that causes between 40 and 90 damage to %T enemies in an area around your target and stuns them up to level 55 for 6000 seconds.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Cleric]] - Level 39
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Stun (6.00 sec/55) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints between 40 and 90. | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 120
+| range = 200
+| casting_time = 3.00
+| fizzle_time =
+| recast_time = 18.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other =  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

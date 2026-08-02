@@ -1,0 +1,51 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Rune III
+| spellicon = K
+| description = Covers your target in a shimmer of runes that absorb damage. Consumes a jasper when cast.
+
+| classes = * [[Enchanter]] - Level 33
+| items_with_effect = 
+
+<ul><li> {{:Rod of the Protecting Winds}}
+</li><li> {{:Rod of Warding Winds}}
+</li><li> {{:Runed Blade}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | UNKNOWN CALC 113 base 168 max 230 attrib Absorb Damage }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 149
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 hour 12 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Jasper]]
+
+| msg_cast_on_you = A dark shimmer of runes surround you.
+| msg_cast_on_other = Someone  is surrounded by a shimmer of runes.
+| msg_wears_off = The shimmer of runes fade.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

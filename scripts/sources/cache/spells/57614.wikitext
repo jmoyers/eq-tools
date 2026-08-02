@@ -1,0 +1,41 @@
+{{Spellpagesmart|
+
+| spellname = Sionachie's Dreams
+| spellicon = H
+| description = A quiet lullaby that causes your target to fall into an enchanted sleep.  Affects creatures up to level 53.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 40
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Mesmerize (up to L53) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Magic Resist by 1 |simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Sionachie's dreams invade your mind.
+| msg_cast_on_other = Target's eyes glaze over.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

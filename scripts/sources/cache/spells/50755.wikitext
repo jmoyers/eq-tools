@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Rage of Vallon
+
+| spellicon = O
+| description = Strikes your target with the rage of Vallon Zek, causing 100 damage and severe anger in your target.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Blade of Strategy}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 100 }}
+{{SpellSlotRow | 2 | Increase Hate by 500 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2 minutes @L40
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your mind is crushed by the Rage of Vallon.
+| msg_cast_on_other = Someone  is weakened by the Rage of Vallon.
+| msg_wears_off = You regain your strength.
+
+}}
+
+[[Category: NPC Only Spells]]

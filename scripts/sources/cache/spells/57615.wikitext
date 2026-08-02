@@ -1,0 +1,40 @@
+{{Spellpagesmart|
+
+| spellname = Song of Sustenance
+| spellicon = A
+| description = An energetic song that fills your group with energy, eliminating their need for food and water.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 15
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Sustenance | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Stringed | Stringed]]
+
+| mana = 0
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 minute, 30 seconds
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are sustained.
+| msg_cast_on_other =  
+| msg_wears_off = Your hunger returns.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

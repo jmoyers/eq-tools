@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Word Divine
+| spellicon = C
+| description = A forbidden word that causes 339 damage to all nearby enemies.
+
+| classes = 
+
+* [[Cleric]] - Level 49
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 339 }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 304
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are wracked with pain.
+| msg_cast_on_other = Someone  writhes in pain.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant]] | Cleric Guild | (1197, -553) }}
+{{SpellWhereRow  | [[Erudin]] | [[Selint Chency]] | Cleric Guild - Quellious | (-637,-47) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Myris N'Tan]] | Cleric Guild | (401,-853) }}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Egasia Reenix]] | Cleric Guild (top floor) | (116,302) }}
+{{SpellWhereRowB | [[Qeynos|North Qeynos]] | [[Balhallia]] | Cleric Guild | (-133,-746) }}
+{{SpellWhereRow  | [[Rivervale]] | [[Slim Waterman]] | Cleric Guild | (-229,-386) }}
+}}
+
+}}

@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Selo's Accelerando
+| spellicon = A
+| description = The quick pace of this song fills your feet with speed, increasing the movement rate of your group.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 5 (Autogranted)
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Movement Speed by 15% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Percussion | Percussion]]
+
+| mana = 0
+| range = 150
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your feet move faster.
+| msg_cast_on_other =  
+| msg_wears_off = You slow down.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Beleth Streamfoot]] | Kelethin Bard Guild | (-237,235) }}
+{{SpellWhereRow  | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Lysric Loresinger]] | Bard Guild | (-141,578) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Lysric Loresinger]] | Bard Guild | (553,-157) }}
+}}
+| TableLocations = Qeynos<br/>Freeport<br/>Kelethin<br/>Highkeep
+| TableEra = Classic
+}}

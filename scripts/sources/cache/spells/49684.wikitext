@@ -1,0 +1,53 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = True North
+| spellicon = 79
+| description = Provides a magical sense of direction, changing your heading to point directly North.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 1
+* [[Enchanter]] - Level 1
+* [[Magician]] - Level 1
+* [[Shaman]] - Level 1
+* [[Wizard]] - Level 1
+* [[Necromancer]] - Level 2
+* [[Paladin]] - Level 3
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | True North | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 5
+| range =  
+| casting_time = 2.00
+| fizzle_time = 1.5
+| recast_time = 4.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You spin to face north.
+| msg_cast_on_other =  
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

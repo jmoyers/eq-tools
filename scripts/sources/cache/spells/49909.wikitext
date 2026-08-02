@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Word of Spirit
+| spellicon = 161
+| description = A forbidden word that causes between 91 and 104 damage to all nearby enemies.
+
+| classes = 
+
+* [[Cleric]] - Level 26
+* [[Necromancer]] - Level 27
+* [[Shadow Knight]] - Level 45
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 97 (L29) to 104 (L33) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 133
+| range =  
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 9.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are wracked with pain.
+| msg_cast_on_other = Someone  writhes in pain.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

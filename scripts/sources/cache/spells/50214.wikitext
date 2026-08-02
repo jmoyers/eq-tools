@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Bond of Death
+| spellicon = G
+| description = Drains the life from your target, doing 80 damage every six seconds for 54s. 28% of the life-force taken is used to heal your wounds.
+
+| classes = 
+
+* [[Necromancer]] - Level 49
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 80 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 360
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 9 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off = The bond fades.
+
+| where_to_obtain = 
+
+{{Necromancer Recipe| Bond of Death | 184}}
+{{Recipe Component| Words of Grappling | 869}}
+{{Recipe Component| Words of Odus | 869}}
+
+}}

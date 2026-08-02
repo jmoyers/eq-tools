@@ -1,0 +1,60 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Gate
+| spellicon = 31
+| description = Opens a magical portal that returns you to your bind point.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 5 (Autogranted)
+* [[Druid]] - Level 5 (Autogranted)
+* [[Shaman]] - Level 5 (Autogranted)
+* [[Necromancer]] - Level 4 (Autogranted?)
+* [[Wizard]] - Level 4 (Autogranted)
+* [[Magician]] - Level 4 (Autogranted?)
+* [[Enchanter]] - Level 4 (Autogranted?)
+
+| items_with_effect = 
+
+<ul><li> {{:Vial of Swirling Smoke}}
+</li><li> {{:Glimmer Ring}} (GM Event Only)
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Gate | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 70
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 8.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

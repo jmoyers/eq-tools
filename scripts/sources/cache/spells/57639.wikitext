@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Blessing of the Knight
+| spellicon = K
+| description = Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 4.
+
+| classes = 
+
+* [[Cleric]] - Level 34
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRow | 1 | Strikes heal for 4 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 750
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 50 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| spell_line = Blessing of the Page
+| resist = Unresistable
+
+| msg_cast_on_you = Your hands glow a pale gold.
+| msg_cast_on_other = Target's hands gain a pale gold glow.
+| msg_wears_off = The golden glow fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

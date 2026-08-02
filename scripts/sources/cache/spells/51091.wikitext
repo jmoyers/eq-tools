@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Judgment of Ice
+| spellicon = S
+| description = Strikes your target with Judgment of Ice, causing 125 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Frostreaver}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun (0.5 sec) }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 125}}
+
+| skill = Evocation
+| mana = 0
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-100)
+
+| msg_cast_on_you = Your skin is torn by the Judgment of Ice.
+| msg_cast_on_other = Someone 's skin is torn by the Judgment of Ice.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

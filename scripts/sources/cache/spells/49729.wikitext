@@ -1,0 +1,42 @@
+{{Classic Era}}{{Spellpage|
+
+| spellname = Enchant Electrum
+| spellicon = U
+| description = Enchants a bar of electrum with magical energy.  Consumes a bar of electrum when cast.
+
+| classes = 
+
+* [[Enchanter]] - Level 14
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Enchanted Electrum Bar]] }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range =  
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Electrum Bar]]
+
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Mizr N'Mar]] | Library (F1) | (911,-1314) }}
+{{SpellWhereRowB | [[Felwithe|South Felwithe]] | [[Alicia Starshimmer]] {{Era Short | Warrens}} | Enchanter guild | (600, -930) }}
+}}
+
+}}

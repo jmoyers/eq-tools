@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Convoke Shadow
+| spellicon = 91
+| description = Animates an undead servant from the remnants of the fallen. Consumes bone chips when cast.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 22
+* [[Necromancer]] - Level 12
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon [[Convoke Shadow Summon|Skeletal Pet]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 120
+| range =  
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 11.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Bone Chips
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone animates an undead servant.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

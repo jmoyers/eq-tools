@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| description = Cast by [[Lord Yelinak]] in Skyshrine.
+| spellname = ice breath
+| spellicon = S
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Mana by 50 per tick }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 300 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 120.00
+| duration = 1 minute
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = Shards of magical ice rend you.
+| msg_cast_on_other = Someone 's body is cut by shards of magical ice.
+| msg_wears_off = The shards depart.
+}}
+
+[[Category:NPC Only Spells]]

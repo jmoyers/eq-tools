@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = smolder
+| spellicon = O
+| description = Engulfs your target in fire, causing between 20 and 124 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Iceflame}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 20 (L1) to 84 (L65) }}
+
+| skill = 
+| mana = 0
+| range = 110
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 9.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Fire engulfs you.
+| msg_cast_on_other = Someone  is engulfed by fire.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

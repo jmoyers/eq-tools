@@ -1,0 +1,52 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Manastorm
+| spellicon = C
+| description = Creates a storm of mana around you, causing 675 damage (x3 waves?) to several creatures near your target, and draining their mana.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 675 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Mana by 50 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| mana = 427
+| range = 150
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+| skill = [[Evocation]]
+
+| msg_cast_on_you = Your skin numbs as deadly mana rains down from above.
+| msg_cast_on_other = Someone 's skin numbs as deadly mana rains down from above.
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Kunark Level 50+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Veeshan's Peak]]
+* [[Xygoz]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+* [[Klandicar]]
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,42 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Tishan`s Discord
+| spellicon = D
+| description = Strikes your target with energy, stunning them briefly and causing 260 damage.
+
+Mana efficiency is 2.0 DPM.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 51
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Stun for 5.0* seconds (*some player-cast stuns are capped at 4 seconds) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 260 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 130
+| range = 200
+| casting_time = 2.25
+| fizzle_time = 2.50
+| recast_time = 18.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+
+| where_to_obtain = 
+
+* This spell is obtained via quests: [[Wizard Spells (Evil)]] and [[Wizard Spells (Good)]].
+| TableLocations = [[Wizard Spells (Evil)]] or [[Wizard Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

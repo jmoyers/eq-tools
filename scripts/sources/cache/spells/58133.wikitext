@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Wind Resonance 10
+| spellicon = C
+| focus_effect = 1
+| description = Increases the power of wind instrument based bard songs by up to 100%.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+BRD
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Minotaur Horn}}</li>
+</ul> 
+
+| slots = 
+{{SpellSlotRow | 1 | Increases the power of wind instrument based bard songs by up to 100% }}
+
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 1:54:00
+| target_type = Self
+| spell_type = 
+| resist = 
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

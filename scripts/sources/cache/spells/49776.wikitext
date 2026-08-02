@@ -1,0 +1,72 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Ultravision
+| spellicon = 87
+| description = Provides vastly improved night vision.
+
+| classes = 
+
+* [[Shaman]] - Level 26
+* [[Enchanter]] - Level 27
+
+| items_with_effect = 
+
+<ul><li> {{:Crazy Cleric Helm}}
+</li><li> {{:Mempo of Likato}}
+</li><li> {{:Crown of Hatred}}
+</li><li> {{:Ebony Headband}}
+</li><li> {{:Eyepatch of the Shadows}}
+</li><li> {{:Left Eye of Xygoz}}
+</li><li> {{:Maleficent Crown}}
+</li><li> {{:Mischievous Dazzler Crown}}
+</li><li> {{:Monkey Hide Helm}}
+</li><li> {{:Mrylokar's Helm}}
+</li><li> {{:Rune Crafter's Bracer}}
+</li><li> {{:Shamanistic Shenannigan Helm}}
+</li><li> {{:Shield of the Stalwart Seas}}
+</li><li> {{:Sly Summoners Crown}}
+</li><li> {{:Sphinx Eye Amulet}}
+</li><li> {{:Sphinx Heart Amulet}}
+</li><li> {{:Spirit Caller's Bracer}}
+</li><li> {{:Spirit Weaver's Bracer}}
+</li><li> {{:Stained Cloth Mask}}
+</li><li> {{:Summoned: Coldstone}}
+</li><li> {{:Twisted Nature Crown}}
+</li><li> {{:Wily Warlock Crown}}
+</li><li> {{:Wolf Caller's Bracer}}
+</li><li> See also items with [[Chill Sight]]
+</li><li> See also items with [[Serpent Sight]]
+</li><li> See also items with [[Truesight]]
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Ultravision(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 55
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = Your eyes tingle.
+| msg_cast_on_other = Someone 's eyes glow violet.
+| msg_wears_off = Your ultravision fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

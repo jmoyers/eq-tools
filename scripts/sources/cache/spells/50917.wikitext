@@ -1,0 +1,39 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = abolish enchantment
+| spellicon = C
+| description = Removes magical effects from your target.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Abashi`s Rod of Disempowerment}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Cancel Magic(9) }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+{{SpellSlotRow | 3 | Cancel Magic(9) }}
+
+| skill = 
+| mana = 0
+| range = 250
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = Your enchantments fade.
+| msg_cast_on_other = Someone 's enchantments fades.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Celerity
+| spellicon = R
+| description = Grants your target quickened movement, increasing their attack speed for 16 min.
+
+| classes = 
+
+* [[Shaman]] - Level 56
+* [[Enchanter]] - Level 39
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 47% (L39) to 50% (L44) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 185
+| range = 100
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 16 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel much faster.
+| msg_cast_on_other = Someone  feels much faster.
+| msg_wears_off = Your speed returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-3)]] | Library | (1104,-992) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Horacia Garnellia]] | Enchanter Guild (F2) | (533,729) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[Neriak|Neriak - Commons]] | [[Kizya D'Dbth]] | Caster Guild (Basement) | (175,-923) }}
+{{SpellWhereRowB | [[Qeynos|South Qeynos]] | [[Isobelle Losiwoo]] | Caster Guild (Outside) | (328,-634) }}
+{{SpellWhereRow  | [[Felwithe|Southern Felwithe]] | [[Est Treewalker]] | Enchanter Guild | (595,-910) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Yarina Zarampo]] | Caster Guild (F1) | (131,-761) }}
+}}
+
+}}

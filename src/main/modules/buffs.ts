@@ -55,6 +55,7 @@ import type { EqModule } from './types'
 import type { LogEvent } from '../../shared/logEvents'
 import type { ActiveBuff, BuffClass, BuffStat, BuffsDelta, BuffsSnap } from '../../shared/types'
 import { idKey, spellCanonKey } from '../log/parser'
+import type { SpellDb } from '../data/spellDb'
 import {
   charmedPetDiesOnDeathLine,
   classifyFadeTarget,
@@ -115,6 +116,30 @@ const EMOTE_WINDOW_MS = 5_000
  * log), so the per-cast emote SUBJECT is the only honest per-cast target discriminator.
  */
 const EMOTE_MIN_OBSERVATIONS = 2
+
+/**
+ * Recency-weighted MAX window (Task #34). The mined estimate is the MAX over the most
+ * recent K samples — never the median (the user directive: estimates read LOW; use "more
+ * or less the max seen unless proven otherwise, weight recency"). Older samples decay out
+ * of the window so a spell whose rank/level changed converges on its current duration.
+ */
+const RECENT_SAMPLE_WINDOW = 5
+
+/**
+ * The activated-AA name whose burst of self-buff landing messages is trusted as confident
+ * (Task #34). A `You activate Quick Buff.` is followed within a few seconds by a burst of
+ * msg_cast_on_you lines (no "You begin casting"); we mark applies in that window confident.
+ */
+const QUICK_BUFF = 'quick buff'
+/** How long after a Quick Buff activation its burst applies are attributed to it. */
+const QUICK_BUFF_WINDOW_MS = 5_000
+
+/**
+ * The AA that makes self-cast illusion buffs PERMANENT (Task #34). Once purchased
+ * (`You have gained the ability "Permanent Illusion" …`), an illusion-flagged spell the
+ * player SELF-casts lasts forever on the player. Pet-cast instances keep normal durations.
+ */
+const PERMANENT_ILLUSION = 'permanent illusion'
 
 /** Map a fade-target disposition to the buff CLASS surfaced to the UI. */
 function classForDisposition(d: EntityDisposition): BuffClass {
@@ -179,6 +204,36 @@ function percentile(sortedAsc: number[], p: number): number {
 export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   readonly id = 'buffs'
   private seq = 0
+
+  /**
+   * The scraped spell database (Task #34), optional. When present it provides the
+   * AUTHORITATIVE (prior) duration per spell and the illusion flag. buffApply/buffWearOff
+   * events already carry duration+illusion, so the DB here is used for: (a) recognizing a
+   * self-heal-by-buff line as an apply (the Symbol of Pinzarn case, whose wiki landing
+   * message is inaccurate), and (b) the authoritative duration on cast-timing-mined
+   * actives. Absent → the module behaves as pre-#34 (mined-only, no message applies).
+   */
+  private readonly db?: SpellDb
+  /** ts of the last `You activate Quick Buff.` — burst applies within the window are confident. */
+  private quickBuffTs = 0
+  /** ts from which the Permanent Illusion AA is owned (self illusions become permanent). */
+  private permanentIllusionOwnedTs?: number
+  /** Recently-cast spell keys → last cast ts (Task #34), for ambiguous-message resolution. */
+  private castHistory = new Map<string, number>()
+
+  constructor(db?: SpellDb) {
+    this.db = db
+  }
+
+  /** Authoritative DB duration (ms) for a spell key, or null when unknown. */
+  private dbDurationFor(key: string): number | null {
+    const s = this.db?.byKey.get(key)
+    return s?.durationMs ?? null
+  }
+  /** Whether a spell key is an illusion buff per the DB. */
+  private isIllusion(key: string): boolean {
+    return this.db?.byKey.get(key)?.illusion ?? false
+  }
 
   /** The single cast currently in flight (You begin …), or null. */
   private pending: Pending | null = null
@@ -246,6 +301,9 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.fadeDisp = new Map()
     this.emoteTextCount = new Map()
     this.lastEventTs = 0
+    this.quickBuffTs = 0
+    this.permanentIllusionOwnedTs = undefined
+    this.castHistory = new Map()
     this.charmedKey = undefined
     this.charmedDisplay = undefined
     this.summonedKey = undefined
@@ -287,6 +345,10 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       case 'castBegin': {
         this.landPending(ev.ts)
         const key = spellKey(ev.spell)
+        // Record the cast for ambiguous-message resolution (Task #34): an ambiguous
+        // landing message (e.g. "You feel much faster." = Alacrity/Celerity/Quickness/Swift)
+        // resolves to whichever candidate the player actually cast most recently.
+        this.castHistory.set(key, ev.ts)
         const existing = this.active.get(key)
         const stagedRefresh = !!existing && !existing.provisional
         this.pending = { spell: ev.spell, key, beganTs: ev.ts, stagedRefresh }
@@ -308,6 +370,52 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
           this.emoteTextCount.set(ev.text, n)
           if (n >= EMOTE_MIN_OBSERVATIONS) {
             p.emoteSubjectKey = ev.subject === 'self' ? 'self' : idKey(ev.subject)
+          }
+        }
+        break
+      }
+      // ── message-driven buff apply/expiry (Task #34) ──
+      case 'aaActivate': {
+        // Quick Buff context: the burst of self-buff landing messages that follows has no
+        // "You begin casting" line, so mark applies in the window as confident.
+        if (idKey(ev.name) === QUICK_BUFF) this.quickBuffTs = ev.ts
+        break
+      }
+      case 'aaSpend': {
+        // Track Permanent Illusion AA ownership (Task #34). The purchase line is
+        // `You have gained the ability "Permanent Illusion" …` → aaSpend { ability:
+        // 'Permanent Illusion' }. From this ts forward, self-cast illusion buffs are
+        // permanent. (The module sees the whole event stream, so it learns this itself.)
+        if (this.permanentIllusionOwnedTs == null && idKey(ev.ability) === PERMANENT_ILLUSION) {
+          this.permanentIllusionOwnedTs = ev.ts
+        }
+        break
+      }
+      case 'buffApply': {
+        // Resolve an ambiguous landing message to the candidate the player actually cast
+        // (Task #34): "You feel much faster." → Swift Like the Wind when they cast Swift
+        // this session, not Alacrity/Celerity/Quickness. If a MULTI-candidate message can't
+        // be resolved (the player cast none of them; none is active), we DON'T GUESS a name
+        // — we skip it. A single-candidate (unambiguous) message always applies.
+        const r = this.resolveCandidate(ev.candidates)
+        if (r) this.applyMessageBuff(r.name, ev.target, ev.ts, r.illusion, r.durationMs)
+        break
+      }
+      case 'buffWearOff': {
+        // Authoritative, message-driven expiry (favored over estimate-based removal).
+        this.removeAuthoritative(spellKey(ev.spell), ev.ts)
+        break
+      }
+      case 'heal': {
+        // A SELF-heal naming a known DB buff is an apply signal (Task #34): the Symbol of
+        // Pinzarn case, whose wiki landing message is inaccurate so msg_cast_on_you never
+        // matches — but "You healed <you> for N hit points by Symbol of Pinzarn." names it.
+        // Only self-heals (healer 'You') of a DB spell that has a duration (a real buff).
+        if (this.db && ev.spell && idKey(ev.healer ?? '') === 'you') {
+          const key = spellKey(ev.spell)
+          const dbSpell = this.db.byKey.get(key)
+          if (dbSpell && dbSpell.durationMs != null) {
+            this.applyMessageBuff(dbSpell.name, 'self', ev.ts, dbSpell.illusion, dbSpell.durationMs)
           }
         }
         break
@@ -491,6 +599,108 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   }
 
   /**
+   * Apply a buff from an EXACT chat MESSAGE match (Task #34) — a msg_cast_on_you /
+   * msg_cast_on_other / self-heal-by-buff line. This is CONFIDENT (message-driven, not
+   * cast-timing-inferred), so the active is immediate, non-provisional, and marked
+   * messageDriven. It also natively covers the Quick Buff burst (a run of self applies with
+   * no "You begin casting"): each apply lands its own active here.
+   *
+   * `target` is 'self' for a cast-on-you / self-heal line, else the named target (pet/mob).
+   * A self illusion buff (illusion flag) cast while Permanent Illusion is OWNED is PERMANENT
+   * (∞ on the player); pet-cast illusions keep normal durations.
+   */
+  private applyMessageBuff(
+    spell: string,
+    target: 'self' | string,
+    ts: number,
+    illusion: boolean,
+    durationMs: number | null
+  ): void {
+    // Only spells with a real DURATION (a lasting buff/debuff) — or a known illusion —
+    // become persistent actives (Task #34). Many nuke/utility/gate spells share a cast
+    // message but are INSTANT (no duration); applying them would flood the bar with junk
+    // "unknown duration" rows. An instant spell is not a buff, so we skip it.
+    if (durationMs == null && !illusion) return
+    const key = spellKey(spell)
+    // A SELF apply of a DETRIMENTAL spell is an incoming debuff a MOB cast on the player
+    // (e.g. Engulfing Darkness / Immobilize) — not the player's own buff, which is this
+    // module's scope. Skip it so the player's buff bar shows only their beneficial buffs.
+    if (target === 'self' && this.db?.byKey.get(key)?.spellType === 'Detrimental') return
+    // A message apply proves this spell IS a buff (it lands + is trackable), so treat it
+    // like a fade for the everFaded discriminator — otherwise a message-only buff (never
+    // seen fading) wouldn't show as active. Its DB duration seeds the estimate.
+    this.everFaded.add(key)
+    // Clear any in-flight cast/open of this spell — the message is the ground-truth land.
+    if (this.pending && this.pending.key === key) this.pending = null
+
+    const self = target === 'self'
+    const disp: EntityDisposition = self ? 'self' : this.dispForNamedTarget(target)
+    const permanent =
+      self && illusion && this.permanentIllusionOwnedTs != null && ts >= this.permanentIllusionOwnedTs
+
+    // Bind an open cast so a later fade/wear-off/censor pairs a duration sample (message
+    // applies feed the same mining path). Permanent illusions never expire → no open cast.
+    if (!permanent) {
+      this.open.set(key, { spell, key, landedTs: ts, disp, boundKey: this.boundKeyFor(disp), emoteBound: self })
+    } else {
+      this.open.delete(key)
+    }
+    // Record the target disposition so classOf / target labels are correct for this spell.
+    this.fadeDisp.set(key, disp)
+    if (!self) this.fadeTarget.set(key, target)
+
+    this.active.set(key, this.buildActive(spell, key, ts, false, disp, { messageDriven: true, permanent }))
+    this.dirty = true
+  }
+
+  /**
+   * Resolve an ambiguous landing-message apply (Task #34) to the candidate the player
+   * actually cast. Preference order:
+   *   1. a candidate the player has cast this session (most-recent cast wins) — the honest
+   *      disambiguator ("You feel much faster." → Swift when they cast Swift, not Alacrity).
+   *   2. a candidate already ACTIVE (a re-apply of a running buff).
+   *   3. none → null (caller falls back to the parser's first candidate).
+   * A single-candidate message returns that candidate directly (unambiguous).
+   */
+  private resolveCandidate(
+    cands: { name: string; durationMs: number | null; illusion: boolean }[]
+  ): { name: string; durationMs: number | null; illusion: boolean } | null {
+    if (cands.length === 0) return null
+    if (cands.length === 1) return cands[0]
+    let best: { name: string; durationMs: number | null; illusion: boolean } | null = null
+    let bestTs = -1
+    for (const c of cands) {
+      const t = this.castHistory.get(spellKey(c.name))
+      if (t != null && t > bestTs) {
+        best = c
+        bestTs = t
+      }
+    }
+    if (best) return best
+    for (const c of cands) if (this.active.has(spellKey(c.name))) return c
+    return null
+  }
+
+  /** Disposition for a named message target: match a live pet, else hostile (a debuff). */
+  private dispForNamedTarget(target: string): EntityDisposition {
+    const k = idKey(target)
+    if (this.charmedKey && k === this.charmedKey) return 'charmed'
+    if (this.summonedKey && k === this.summonedKey) return 'summoned'
+    return 'hostile'
+  }
+
+  /**
+   * AUTHORITATIVE removal (Task #34): a msg_wears_off line proves the buff expired NOW.
+   * Favored over estimate-based removal. Pairs a duration sample if an open cast exists,
+   * then clears the active. Applies to the SELF form (wears-off emotes print to the holder).
+   */
+  private removeAuthoritative(key: string, ts: number): void {
+    const spell = this.active.get(key)?.spell ?? this.samples.get(key)?.spell ?? key
+    this.everFaded.add(key)
+    this.recordFade(key, spell, ts)
+  }
+
+  /**
    * Infer the target disposition of a cast at LAND time from the current entity state,
    * a LEARNED landing emote (Task #33), and the spell's learned class. This is what
    * makes zone/death censoring correct: an open cast on the live charmed pet is bound
@@ -579,7 +789,12 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     let changed = false
     for (const [k, a] of [...this.active]) {
       if (a.provisional) continue // a still-casting entry hasn't started its clock
-      const cap = hygieneCapMs(a.p75, a.n)
+      if (a.permanent) continue // a permanent illusion never expires (Task #34)
+      // Task #34: an authoritative DB duration extends the cap so a long DB buff (Valor
+      // 54m) isn't swept at the 90-min floor. Message-driven expiry remains the real
+      // remover; this is only the last-resort backstop for a missed wear-off line.
+      const dbMs = this.dbDurationFor(k)
+      const cap = Math.max(hygieneCapMs(a.p75, a.n), dbMs != null ? 2 * dbMs : 0)
       if (now - a.startedTs > cap) {
         this.active.delete(k)
         this.open.delete(k)
@@ -761,6 +976,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     const s = this.samples.get(key)
     if (!s || s.samples.length === 0) return null
     const sorted = [...s.samples].sort((a, b) => a - b)
+    const est = this.estimateFor(key)
     return {
       spell: s.spell,
       cls: this.classOf(key),
@@ -769,8 +985,28 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       p25: percentile(sorted, 0.25),
       p75: percentile(sorted, 0.75),
       minMs: sorted[0],
-      maxMs: sorted[sorted.length - 1]
+      maxMs: sorted[sorted.length - 1],
+      dbDurationMs: this.dbDurationFor(key),
+      estimateMs: est.ms,
+      estimatorSource: est.source
     }
+  }
+
+  /**
+   * The duration estimate for a spell key (Task #34) with provenance:
+   *   (a) DB duration when known → { ms, 'db' } (authoritative; the prior/truth).
+   *   (b) else the RECENCY-WEIGHTED MAX of mined samples → { ms, 'observed' }: the max
+   *       over the most recent RECENT_SAMPLE_WINDOW samples (never the median — estimates
+   *       read low; use the max, weight recency so old samples decay out).
+   *   (c) neither → { null, undefined }.
+   */
+  private estimateFor(key: string): { ms: number | null; source: 'db' | 'observed' | undefined } {
+    const dbMs = this.dbDurationFor(key)
+    if (dbMs != null) return { ms: dbMs, source: 'db' }
+    const s = this.samples.get(key)
+    if (!s || s.samples.length === 0) return { ms: null, source: undefined }
+    const recent = s.samples.slice(-RECENT_SAMPLE_WINDOW)
+    return { ms: Math.max(...recent), source: 'observed' }
   }
 
   /**
@@ -807,9 +1043,12 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
      * dumped into the pet group. Absent (a provisional entry before land) → fall back to
      * the spell's learned class.
      */
-    dispOverride?: EntityDisposition
+    dispOverride?: EntityDisposition,
+    /** Message-driven apply flags (Task #34): confident applies + permanent illusions. */
+    opts?: { messageDriven?: boolean; permanent?: boolean }
   ): ActiveBuff {
     const st = this.statFor(key)
+    const est = this.estimateFor(key)
     const cls: BuffClass = dispOverride ? classForDisposition(dispOverride) : this.classOf(key)
     const disp: EntityDisposition | undefined = dispOverride ?? this.fadeDisp.get(key)
     // Target label + inference. Self: none. Pet: the pet's name/'pet' form. Debuff:
@@ -832,18 +1071,24 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     } else {
       target = undefined // self
     }
+    const permanent = !!opts?.permanent
     return {
       spell,
       cls,
       disposition: disp,
       startedTs,
-      estimatedMs: st?.medianMs ?? null,
+      // Estimator precedence (Task #34): DB duration (authoritative) else recency-weighted
+      // MAX of samples — never the median. Permanent illusions have no finite estimate.
+      estimatedMs: permanent ? null : est.ms,
       p25: st?.p25 ?? null,
       p75: st?.p75 ?? null,
       n: st?.n ?? 0,
       target,
       ...(inferredTarget ? { inferredTarget: true } : {}),
-      ...(provisional ? { provisional: true } : {})
+      ...(provisional ? { provisional: true } : {}),
+      ...(est.source && !permanent ? { durationSource: est.source } : {}),
+      ...(permanent ? { permanent: true } : {}),
+      ...(opts?.messageDriven ? { messageDriven: true } : {})
     }
   }
 
@@ -855,15 +1100,20 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         stats[key] = st
       } else {
         const disp = this.samples.get(key)?.spell
+        const dbMs = this.dbDurationFor(key)
+        const dbSpell = this.db?.byKey.get(key)?.name
         stats[key] = {
-          spell: disp ?? key,
+          spell: disp ?? dbSpell ?? key,
           cls: this.classOf(key),
           n: 0,
           medianMs: null,
           p25: null,
           p75: null,
           minMs: null,
-          maxMs: null
+          maxMs: null,
+          dbDurationMs: dbMs,
+          estimateMs: dbMs,
+          estimatorSource: dbMs != null ? 'db' : undefined
         }
       }
     }

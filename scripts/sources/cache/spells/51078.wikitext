@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Ice Rend
+| spellicon = S
+| description = Freezes your target with a blast of ice, causing 30 damage and lowering armor class.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Drakkel Icegrinder}}
+</li><li> {{:Drakkel Icereaver}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 30 }}
+{{SpellSlotRow | 4 | Decrease AC by 9 }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = Your body is rent by freezing ice.
+| msg_cast_on_other = Someone 's body is rent by freezing ice.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

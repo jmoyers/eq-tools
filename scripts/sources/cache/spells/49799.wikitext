@@ -1,0 +1,54 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Arch Shielding
+| spellicon = 133
+| description = Surrounds your body in a magical shield, increasing your hit points, armor class, and magic resistance.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Enchanter]] - Level 40
+* [[Necromancer]] - Level 41
+* [[Magician]] - Level 43
+* [[Wizard]] - Level 44
+
+| items_with_effect = 
+
+<ul><li> {{:Tri-Plated Golden Hackle Hammer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Max HP by 140 (L40) to 150 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase AC by 35 (L44) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase MR by 20 (L44) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel armored.
+| msg_cast_on_other =  
+| msg_wears_off = Your shielding fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}
+
+[[Category:Shielding line]]

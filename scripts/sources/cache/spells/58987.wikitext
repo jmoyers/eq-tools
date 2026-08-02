@@ -1,0 +1,22 @@
+{{Spellpage|
+
+| spellname = Fury of the Chosen
+| spellicon = 49
+| description = Causes you to simmer with fury, granting increased strength, armor class, dexterity, and lowering stamina loss for up to 6 secs (1 ticks @L1 to 3 ticks @L6).
+
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase AC by 20 }}
+{{SpellSlotRow | 5 | Increase AGI by 35 }}
+{{SpellSlotRow | 6 | Increase Stamina by 1 }}
+{{SpellSlotRow | 7 | Increase DEX by 20 }}
+
+| msg_cast_on_you = You simmer with fury.
+| msg_cast_on_other = Someone simmers with fury.
+| msg_wears_off = Your fury fades.
+
+| items_with_effect = 
+
+<ul><li> {{:Cudgel of the Fool}}
+}}

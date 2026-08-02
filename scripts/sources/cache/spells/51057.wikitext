@@ -1,0 +1,37 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpage|
+
+| spellname = Mana Flare
+| spellicon = C
+| description = Fills your mind with a blinding flash of mana.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Pitted Iron Ring}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Mana by 150 per tick }}
+{{SpellSlotRow | 2 | Blindness(1) }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 18.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 4 ticks @L8
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are blinded by a manaflare.
+| msg_cast_on_other =  
+| msg_wears_off = The manaflare subsides.
+}}
+
+[[Category:NPC Only Spells]]

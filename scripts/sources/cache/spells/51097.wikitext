@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Malevolent Grasp
+| spellicon = C
+| description = Holds your target in a malevolent grasp of decay, causing 50 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 9 ticks @L15).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Malevolence}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 50 per tick }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 9 ticks @L15
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = You are caught in a malevolent grasp.
+| msg_cast_on_other = Someone  is caught in a malevolent grasp.
+| msg_wears_off = The malevolent grasp fades.
+}}
+
+[[Category:NPC Only Spells]]

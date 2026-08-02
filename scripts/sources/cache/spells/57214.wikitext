@@ -1,0 +1,51 @@
+{{Spellpagesmart|
+
+| spellname = Affliction Haste II
+| spellicon = C
+| focus_effect = 1
+| description = Reduces the cast time of long term detrimental spells by 33%.  This bonus will decay on spells over level 44.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+No eligible class
+
+| items_with_effect = 
+
+<ul>
+<li>{{:Chrysoberyl Talisman}}</li>
+<li>{{:Green Silken Drape}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Spell Haste by 33% }}
+{{SpellSlotRow | 2 | Limit Max Level: 44 (lose 5% per level after) }}
+{{SpellSlotRow | 3 | Limit Min Duration: 30s }}
+{{SpellSlotRow | 4 | Limit Min Casting Time: 2s }}
+{{SpellSlotRow | 5 | Limit Type: Detrimental }}
+{{SpellSlotRow | 6 | Limit Effect: Current HP }}
+{{SpellSlotRow | 7 | Limit Type: Exclude Combat Skills }}
+
+
+| skill = 
+| mana = 
+| range = 100
+| casting_time = Instant
+| fizzle_time = 
+| recast_time = 
+| duration = 2:24:00 (3:36:00)
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+| TableLocations = Items
+| TableEra = 
+}}

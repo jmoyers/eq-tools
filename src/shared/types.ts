@@ -224,6 +224,9 @@ export type LogEventKind =
   | 'buffFade'
   | 'playerDeath'
   | 'spellEmote'
+  | 'buffApply'
+  | 'buffWearOff'
+  | 'aaActivate'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */
@@ -339,6 +342,20 @@ export interface BuffStat {
   /** min / max sample (ms), null when n === 0. */
   minMs: number | null
   maxMs: number | null
+  /**
+   * The AUTHORITATIVE wiki duration (ms) for this spell, when the scraped DB knows it
+   * (Task #34). This is the prior/truth and takes precedence over mined samples in the
+   * estimator; null when the DB has no duration (mined-only spell).
+   */
+  dbDurationMs?: number | null
+  /**
+   * The value the estimator uses for the remaining-time bar (Task #34): the DB duration
+   * when known, else the recency-weighted MAX of mined samples. Provenance in
+   * `estimatorSource`. Null when neither is available (n=0, no DB duration).
+   */
+  estimateMs?: number | null
+  /** Where `estimateMs` came from: 'db' | 'observed'. */
+  estimatorSource?: 'db' | 'observed'
 }
 
 /** A currently-active (landed, not yet faded) buff. */
@@ -377,6 +394,25 @@ export interface ActiveBuff {
    * and shows a subtle "casting…" hint.
    */
   provisional?: boolean
+  /**
+   * Where `estimatedMs` came from (Task #34):
+   *   'db'       — the authoritative wiki duration (spells.json). The prior/truth.
+   *   'observed' — the recency-weighted MAX of mined samples (no DB duration known).
+   *   undefined  — no estimate (n=0 and no DB duration).
+   */
+  durationSource?: 'db' | 'observed'
+  /**
+   * True when this buff is PERMANENT (Task #34): an illusion-flagged spell the player
+   * self-cast while the Permanent Illusion AA is owned (self-cast illusions last forever
+   * on the player). The UI shows "permanent · illusion AA" and no countdown.
+   */
+  permanent?: boolean
+  /**
+   * True when this active was applied by an EXACT chat MESSAGE match (Task #34) — a
+   * msg_cast_on_you / msg_cast_on_other / self-heal-by-buff line — rather than inferred
+   * from cast timing. Message-driven applies are confident (no provisional dimming).
+   */
+  messageDriven?: boolean
 }
 
 /** buffs module snapshot: live active buffs + mined per-spell stats. */
@@ -386,6 +422,50 @@ export interface BuffsSnap {
 }
 /** buffs module delta: the module ships a full snapshot each flush (small state). */
 export type BuffsDelta = BuffsSnap
+
+// ----- Spell database (Task #34) -----
+//
+// A committed, scraped catalog of EQ Legends spells from the wiki (Template:Spellpage).
+// It is the PRIOR/TRUTH for buff durations and the source of the exact chat messages a
+// spell prints when it lands / wears off — which lets the parser emit PRECISE buffApply/
+// buffWearOff events (message-driven, not cast-timing-mined). See scripts/scrape-spells.ts
+// and src/main/data/spellDb.ts (the derived lookup tables + parser injection).
+
+/** One scraped spell (a Template:Spellpage page). Fields are best-effort; null when the
+ *  wiki page omits/uses an unparseable value (the raw text is retained where useful). */
+export interface SpellEntry {
+  /** Spell name (page title / spellname field). Rank variants are separate entries. */
+  name: string
+  /** Raw duration text from the wiki ("27 minutes", "instant", a level formula). */
+  durationText?: string
+  /** Parsed duration in ms; null when durationText is unparseable/absent/instant. */
+  durationMs: number | null
+  /** Casting time in ms (from casting_time seconds), when present. */
+  castTimeMs?: number
+  /** target_type ("Single Friendly (or Self)", "Single Hostile", …). */
+  targetType?: string
+  /** spell_type ("Beneficial" / "Detrimental"). */
+  spellType?: string
+  /** classes text ("Enchanter - Level 26"). */
+  classes?: string
+  /** msg_cast_on_you — printed to the caster when it lands on THEM ("A cool breeze …"). */
+  msgCastOnYou?: string
+  /** msg_cast_on_other — printed when it lands on someone else ("Someone looks tranquil."). */
+  msgCastOnOther?: string
+  /** msg_wears_off — printed when the buff fades ("The cool breeze fades."). */
+  msgWearsOff?: string
+  /** True when the effects/description text mentions an Illusion (Permanent Illusion AA). */
+  illusion: boolean
+  /** mana cost, when present. */
+  mana?: number
+}
+
+/** The committed spells.json shape: metadata + the spell list. */
+export interface SpellDbFile {
+  scrapedAt: string
+  count: number
+  spells: SpellEntry[]
+}
 
 /** A discovered sound within a pack manifest. */
 export interface PackSound {

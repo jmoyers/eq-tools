@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Flash of Light
+| spellicon = 23
+| description = Creates a bright flash of light, temporarily blinding your target.
+| classes = 
+
+* [[Beastlord]] - Level 5
+* [[Cleric]] - Level 1 (Autogranted)
+* [[Paladin]] - Level 2 (Autogranted)
+* [[Shaman]] - Level 1
+
+| slots = 
+
+{{SpellSlotRow | 1 | Blind }}
+{{SpellSlotRow | 2 | Decrease Attack by 5 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 12
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 1.50
+| recast_time = 3.00
+| duration = 12s
+| target_type = Single
+| spell_type = Utility Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are blinded by a flash of light.
+| msg_cast_on_other = Someone is blinded by a flash of light.
+| msg_wears_off = Your sight returns.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+
+}}

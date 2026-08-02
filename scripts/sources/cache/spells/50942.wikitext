@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = plagueratdisease
+| spellicon = E
+| description = Cast by [[a plague rat]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 2 (L1) to 66 (L65) }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 1 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 10 minutes @L4
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = You have been diseased.
+| msg_cast_on_other = Someone  has been diseased.
+| msg_wears_off = You are no longer diseased.
+}}
+
+[[Category:NPC Only Spells]]

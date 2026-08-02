@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Sharik's Replenishing
+| spellicon = 99
+| description = Restores your warder's health, healing 55 hit points, as well as curing them of diseases, poisons, and curses.
+| classes = 
+
+* [[Beastlord]] - Level 9 (Autogranted)
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Current Hit Points by 50 (L9) to 55 (L14) }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 10}}
+{{SpellSlotRow | 3 | Decrease Poison Counter by 10}}
+{{SpellSlotRow | 4 | Decrease Curse  Counter by 10}}
+
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 26
+| range = 100
+| resist = Unresistable
+| casting_time = 2.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Pet
+| spell_type = Pet Heal
+
+| other = 
+
+| msg_cast_on_you =
+| msg_cast_on_other = Someone feels better.
+| msg_wears_off = 
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+}}

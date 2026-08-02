@@ -1,0 +1,35 @@
+{{Epics Era}}{{Spellpage|
+
+| spellname = Fist of Earth
+| spellicon = D
+| description = Decrease Hitpoints by 200. This is an attack proc from the NPC [[Trunt]].
+
+| classes = 
+
+* None
+
+| slots =
+
+{{SpellSlotRow | 1 |Decrease Hitpoints by 200}}
+
+| skill = None
+
+| mana = 0
+| range = 37
+| casting_time = 0
+| fizzle_time = 0
+| recast_time = 0
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You feel the ground shake.
+| msg_cast_on_other = Someone is smashed by the heaving ground.
+| msg_wears_off =
+
+| where_to_obtain = 
+
+}}

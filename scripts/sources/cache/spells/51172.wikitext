@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Whirlbolt
+| spellicon = M
+
+| description = Cast by [[A fatestealer drake]] in [[Plane of Sky]]. Also a trap on the chardok bridge before entering royal keep.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+
+| slots = 
+
+{{SpellSlotRow | 1 | Root }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 200 per tick }}
+{{SpellSlotRow | 3 | Levitate(1) }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.50
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2 ticks @L4
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You are trapped within a whirling wind.
+| msg_cast_on_other = Someone  is trapped within a whirling wind.
+| msg_wears_off = The wind fades.
+}}
+
+[[Category:NPC Only Spells]]

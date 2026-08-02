@@ -1,0 +1,36 @@
+<noinclude>{{Velious Era}}</noinclude>{{Spellpage|
+
+| spellname = Rage of the Sky
+| spellicon = C
+| description = Summons down the rage of a stormy sky, causing between 133 and 179 damage to your target.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Gaudralek, Sword of the Sky}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 133 (L1) to 179 (L24) }}
+
+| skill = 
+| mana = 0
+| range = 60
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been force struck.
+| msg_cast_on_other = Someone  has been force struck.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

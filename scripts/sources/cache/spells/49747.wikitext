@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Illusion: Iksar
+| spellicon = U
+| description = Cloaks you in a shimmering illusion that makes you appear to be an Iksar. This spell also increases your regeneration rate slightly.
+
+| classes = 
+
+* [[Enchanter]] - Level 20
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 128 }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 50
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 36 minutes 6 seconds
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel different.
+| msg_cast_on_other = Someone 's image shimmers.
+| msg_wears_off = Your illusion fades.
+
+|items_with_effect = 
+
+<ul>
+<li>{{:Iksar Hide Mask}}</li>
+<li>{{:Iksar Egg}}</li>
+</ul>
+
+| where_to_obtain = 
+
+* Enchanter spell vendors, the spell scroll is called Vision of Sebilite.
+
+}}
+[[Category: Illusions]]

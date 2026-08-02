@@ -1,0 +1,56 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Mala
+| spellicon = I
+| description = Strips magical protection from your target, lowering their magic, fire, cold and poison resistances.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Cold Resist by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Magic Resist by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Decrease Poison Resist by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Decrease Fire Resist by 35 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = 13 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You feel very vulnerable.
+| msg_cast_on_other = Someone  looks very uncomfortable.
+| msg_wears_off = Your vulnerability fades.
+
+| where_to_obtain = 
+* Kunark Level 60+ Mob Drop
+
+[[Dreadlands]]
+* [[Gorenaire]]
+
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Tolapumj]]
+* [[Trakanon]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+* [[Klandicar]]
+
+| TableLocations = Level 60+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,41 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Wildfire
+| spellicon = O
+| description = Ignites your target's skin, doing 1024 damage. 3.2 damage per mana
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 59
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 1024 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 320
+| range = 200
+| casting_time = 5.80
+| fizzle_time = 2.70
+| recast_time = 2.70
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = Your skin ignites as wildfire courses over your body.
+| msg_cast_on_other = Someone 's skin ignites as wildfire courses over them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+}}
+| TableLocations = Firiona Vie
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

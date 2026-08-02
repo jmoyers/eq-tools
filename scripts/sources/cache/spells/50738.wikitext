@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Cleanse
+| spellicon = J
+| description = Cleanses your body, removing minor toxins and diseases as well as healing minor wounds.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Shining Star of Light}}
+</li><li> Several cultural smithing armor pieces have this effect, but this seems to be post-Classic
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Poison Counter by 1 }}
+{{SpellSlotRow | 2 | Decrease Disease Counter by 1 }}
+{{SpellSlotRow | 3 | Increase Hitpoints by 5 }}
+
+| mana = 0
+| range =  
+| skill = 
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel cleansed.
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

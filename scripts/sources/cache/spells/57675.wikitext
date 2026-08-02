@@ -1,0 +1,34 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spirit of Scorpion Strike
+| spellicon = N
+| description = Damages your target and inspires extra hatred in them.
+
+| classes = 
+
+This is a proc from the [[Spirit of the Scorpion]] spell.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hit Points by 92 }}
+{{SpellSlotRow | 2 | Increase Hate by 50 }}
+
+| skill = n/a
+| mana = 0
+| range = 300
+| casting_time = Instant
+| fizzle_time = n/a
+| recast_time = n/a
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (-5)
+
+| msg_cast_on_you = You spasm as the spirit of a scorpion rips through your body.
+| msg_cast_on_other = Someone spasms as the spirit of a scorpion rips through their body.           
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

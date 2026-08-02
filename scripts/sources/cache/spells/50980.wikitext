@@ -1,0 +1,37 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Strike of Thunder
+| spellicon = M
+| description = Strikes your target with the power of thunder, causing 125 damage every 6 seconds for up to 6 secs (1 ticks @L1 to 3 ticks @L3). This unusual effect is applied like a rain AOE with three waves, however it does not deal direct damage on each wave, rather it applies a DoT for 3 or 4 ticks.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Thunder Runed Great Sword}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 125 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3 ticks @L3
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = Your body is electrified as the lightning strikes you.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

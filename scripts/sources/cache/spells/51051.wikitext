@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Hug
+| spellicon = J
+| description = Hugging this doll will increase your regeneration rate. Why? No idea.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul>
+<li> {{:Crazy Cleric Doll}}</li>
+<li> {{:Maleficent Necromancer Doll}}</li>
+<li> {{:Sly Summoner Doll}}</li>
+<li> {{:Shamanistic Shenannigan Doll}}</li>
+</ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 6 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 5 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You hug your doll.
+| msg_cast_on_other = Someone  hugs their doll.
+| msg_wears_off = Your doll has forgotten you.
+}}
+
+[[Category:NPC Only Spells]]

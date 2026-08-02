@@ -1,0 +1,42 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Insidious Retrogression
+| spellicon = 145
+| description = Pelts your target's body with spores, causing 550 damage and decreasing their movement rate, strength, and attack rating for 1 min 36s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Necromancer]] - Level 46
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 546 (L46) to 550 (L50) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Decrease Movement Speed by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Decrease Strength by 25 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 7 | Decrease ATK by 25 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 210
+| range = 200
+| casting_time = 6.10
+| fizzle_time =
+| recast_time = 12.00
+| duration = 1 Min 36 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease
+
+| msg_cast_on_you = Your body is pelted by spores.
+| msg_cast_on_other = 's body is pelted by spores.
+| msg_wears_off = The spores expire.
+
+| where_to_obtain =
+
+| TableLocations =
+| TableEra = Classic
+}}

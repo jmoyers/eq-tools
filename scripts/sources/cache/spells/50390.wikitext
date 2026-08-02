@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Phantom Chain
+| spellicon = 1
+| description = Covers you in phantom chain armor, increasing your hit point regeneration and armor class.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 25
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Hitpoints by 2 per tick    | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 12 (L29) to 13 (L34) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 100
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Cat's Eye Agate x2
+
+| msg_cast_on_you = You are covered in illusionary chainmail armor.
+| msg_cast_on_other = Someone  dons chainmail armor.
+| msg_wears_off = Your illusionary armor fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

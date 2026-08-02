@@ -1,0 +1,41 @@
+<noinclude>{{Velious Era}}</noinclude>
+{{Spellpagesmart|
+
+| spellname = Ring of the Combines
+| spellicon = V
+| description = Opens a mystical portal that transports you to the [[Dreadlands]].
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 24
+
+| slots = 
+
+{{SpellSlotRowSmart  | 1 | Teleport to 2484,7717,1051 in dreadlands | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark|Greater Faydark]] | [[Srendon Gladetender]] | Kelethin Druid Guild | (-629, 210) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Velious
+}}

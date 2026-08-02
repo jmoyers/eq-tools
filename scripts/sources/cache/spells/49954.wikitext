@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Reckoning
+| spellicon = C
+| description = Calls upon the reckoning of the gods to strike your target, causing between 630 and 675 damage with a ''very'' slight knockback effect. (2.5 - 2.7 DPM)
+
+| classes = 
+
+* [[Cleric]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 630 (L54) to 675 (L60) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 250
+| range = 200
+| casting_time = 7.00
+| fizzle_time = 2.50
+| recast_time = 7.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been struck down by the judgement of the gods.
+| msg_cast_on_other = Someone  has been struck by the judgement of the gods.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Cleric Spells (Good)]]
+* [[Cleric Spells (Evil)]]
+
+}}

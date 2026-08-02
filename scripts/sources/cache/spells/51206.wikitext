@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = FireElementalAttack2
+| spellicon = O
+| description = Cast by [[Dyzil's Deafening Decoy]]
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease hitpoints by (pet_level) }}
+{{SpellSlotRow | 2 | Increase Hate by 100 }}
+
+| skill = 
+| mana = 0
+| range = 48 
+| casting_time = 0
+| fizzle_time = 0
+| recast_time = 6
+| duration = Instant
+| target_type = Targeted AE
+| AE_range = 35
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your ears bleed.
+| msg_cast_on_other = Someone staggers in pain.
+| msg_wears_off =
+}}
+
+[[Category:NPC Only Spells]]

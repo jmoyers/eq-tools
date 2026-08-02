@@ -1,0 +1,55 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Banishment
+| spellicon = C
+| description = Banishes your target to the nether realm, completely removing them (and their loot) from this plane of existence.  Consumes a [[Star Ruby|star ruby]] when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 60
+* [[Magician]] - Level 60
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Destroy Target | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 500
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 3.50
+| recast_time = 120.00
+| duration = Instant
+| target_type = Summoned
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Star Ruby
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+==Drops From== 
+* Kunark Level 50+ Mob Drop
+
+[[Chardok]]
+* [[Prince Selrach Di`zok]]
+
+[[Old Sebilis]]
+* [[Emperor Chottal]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

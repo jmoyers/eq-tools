@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Blinding Fear
+| spellicon = B
+| description = Blinds you with terror. Cast by [[Trakanon]].
+
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 6.0 seconds }}
+{{SpellSlotRow | 2 | Blindness(1) }}
+
+| mana = 0
+| range = 0
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = 1 ticks @L1 to 4 ticks @L4
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Unresistable
+| skill = 
+
+| msg_cast_on_you = You freeze in terror.
+| msg_cast_on_other =  
+| msg_wears_off = You are no longer afraid.
+
+| where_to_obtain = 
+
+}}
+
+[[Category: NPC Only Spells]]

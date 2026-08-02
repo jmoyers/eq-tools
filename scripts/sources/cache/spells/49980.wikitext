@@ -1,0 +1,51 @@
+{{Velious Era}}
+
+{{Spellpage|
+
+| spellname = Divine Strength
+| spellicon = K
+| description = Fills your target with a divine strength, increasing their hit points for 50.0 mins.  Stacks with every other hp buff '''except''' the [[Ranger]]s' [[Strength of Nature]]. Upgrade from [[Divine Glory]].
+
+| classes = 
+
+* [[Paladin]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase Max Hitpoints by 200 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 75
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 50 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to radiate with divine strength.
+| msg_cast_on_other = Someone  begins to radiate with divine strength.
+| msg_wears_off = Your divine strength fades.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Cobalt Scar]]
+* [[Kelorek'Dar]]
+
+[[Icewell Keep]]
+* [[Dain Frostreaver IV]]
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Prince Thirneg]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

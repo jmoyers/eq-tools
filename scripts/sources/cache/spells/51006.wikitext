@@ -1,0 +1,48 @@
+{{Spellpage|
+
+| spellname = Banishment of Shadows
+| spellicon = G
+| description = Banishes an undead creature to the shadow realm. Consumes a [[Star Ruby]] to cast.  Works on creatures up to level 51.
+
+| classes = 
+
+* [[Cleric]] - Level 60
+* [[Necromancer]] - Level 60
+
+| items_with_effect = 
+
+<ul><li> {{:Powder of Unanimation}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Destroy Target }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 750
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 3.50
+| recast_time = 120.00
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' [[Star Ruby]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Old Sebilis]]
+* [[Sebilite Juggernaut]]
+[[Western Wastes]]
+* [[Harla Dar]]
+}}

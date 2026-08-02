@@ -1,0 +1,58 @@
+{{Classic Era}}
+
+{{Spellpage|
+
+| spellname = Shield of Words
+| spellicon = K
+| description = Covers your target in a holy guard, increasing their armor class for 72 min.
+
+| classes = 
+
+* [[Cleric]] - Level 45
+* [[Paladin]] - Level 60
+
+| items_with_effect = 
+
+<ul><li> {{:Runed Protector's Breastplate}}
+</li><li> {{:Scaled Knight's Breastplate}}
+</li><li> {{:Shining Breastplate}}
+</li><li> {{:Breastplate of the Righteous}}
+</li><li> {{:Shissar Protection Staff}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 31 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 300
+| range = 100
+| casting_time = 8.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 1 hour 12 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the favor of the gods upon you.
+| msg_cast_on_other = Someone  feels the favor of the gods upon them.
+| msg_wears_off = You no longer feel blessed.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-10)]] | Necromancer Guild | (2148,-371) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant]] | Cleric Guild | (1197, -553) }}
+{{SpellWhereRow  | [[Erudin]] | [[Selint Chency]] | Cleric Guild - Quellious | (-637,-47) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Drizel Maxton]] | Outpost | (-3864,2927) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Myris N'Tan]] | Cleric Guild | (401,-853) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Egasia Reenix]] | Cleric Guild (top floor) | (116,302) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Balhallia]] | Cleric Guild | (-133,-746) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Slim Waterman]] | Cleric Guild | (-229,-386) }}
+}}
+
+}}
+
+[[Category:Aegis line]]

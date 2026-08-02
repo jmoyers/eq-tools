@@ -1,0 +1,41 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Pillar of Flame
+| spellicon = O
+| description = Creates a pillar of flame, causing between 937 and 952 damage to several creatures in the vicinity of your target. Single target mana efficiency of about 2.6 damage per mana.
+<br>
+<br>
+This is a '''recommended''' quad-kiting spell for Wizards, replacing [[Pillar of Lightning]]. 
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 937 (L57) to 952 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 364
+| range = 200
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 6.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Fire (-10)
+
+| msg_cast_on_you = You are immolated by a pillar of flame.
+| msg_cast_on_other = Someone  is immolated by a pillar of flame.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

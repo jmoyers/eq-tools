@@ -1,0 +1,50 @@
+{{Spellpage|
+
+| spellname = Trucidation
+| spellicon = C
+| description = Drains your target of life energy, siphoning 1100 hit points.  Consumes an essence emerald when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 1100 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 375
+| range = 200
+| casting_time = 5.90
+| fizzle_time = 2.50
+| recast_time = 900.00
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| other = 
+
+* '''Reagent:''' Essence Emerald
+
+| msg_cast_on_you = Your essence drains away.
+| msg_cast_on_other = Someone  seems drained.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Chardok]]
+* [[Overking Bathezid]]
+
+[[The Overthere]]
+* [[A Cliff Golem]]
+
+[[Veeshan's Peak]]
+* [[Druushk]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

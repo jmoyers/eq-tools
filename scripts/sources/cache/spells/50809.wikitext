@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Poison
+| spellicon = N
+| description = Poisons your target, causing 12 damage initially and 10 damage every 6 seconds for up to 1.2 mins @L1 to 1.5 mins @L3.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Infestation}}
+</li><li> {{:Pondfish Spine}}
+</li><li> {{:Scorpikis Claw Impaler}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 3 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 12 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 10 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1.2 minutes @L1 to 1.5 minutes @L3
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

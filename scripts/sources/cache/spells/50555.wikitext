@@ -1,0 +1,43 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Draught of Ice
+| spellicon = S
+| description = Consumes your target in a sudden torrent of ice, causing between 716 and 731 damage.
+<br>Mana efficiency of 3.3 / 3.4 DPM, 243 DPS.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 57
+
+| slots = 
+
+{{SpellSlotRowSmart| 1 | Decrease Hitpoints by 716 (L57) to 731 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 215
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (-10)
+
+| msg_cast_on_you = You are caught in a torrent of jagged ice.
+| msg_cast_on_other = Someone  is caught in a torrent of jagged ice.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

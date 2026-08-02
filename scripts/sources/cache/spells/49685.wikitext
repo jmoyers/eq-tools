@@ -1,0 +1,41 @@
+{{Spellpage|
+
+| spellname = Color Flux
+| spellicon = D
+| description = Creates a wave of intense color around you that assaults your opponent's senses, briefly stunning all nearby creatures. Works on mobs up to level 55.
+
+| classes = * [[Enchanter]] - Level 3 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 4.0 seconds }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 20
+| range = 20 (AOE) 
+| casting_time = 1.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = Scintillating colors pound through your brain.
+| msg_cast_on_other = Someone  is stunned by scintillating colors.
+| msg_wears_off = The pretty colors fade.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-7)]] | Library | (1093,-977) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Vellenon Harrance]] | Enchanter Guild (F2) | (507,727) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Lizza D'Unnar]] | Caster Guild (Basement) | (165,-192) }}
+{{SpellWhereRow  | [[Felwithe|South Felwithe]] | [[Xista Finder]] | Enchanter Guild | (527, -800) }}
+{{SpellWhereRowB  | [[Qeynos|South Qeynos]] | [[Chalios Bensted]] | Caster Guild | (324,-618) }}
+{{SpellWhereRow | [[Freeport|West Freeport]] | [[Remon Zarga]] | Caster Guild (F1) | (138,-712) }}
+}}
+
+}}

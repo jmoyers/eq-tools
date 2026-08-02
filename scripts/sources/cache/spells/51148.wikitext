@@ -1,0 +1,29 @@
+{{Spellpage|
+
+| spellname = Slime Mist
+| spellicon = E
+| description = A Strong Dot cast by [[A glimmering emerald drake]] in [[Temple of Veeshan]]
+| classes = This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 40 per tick }}
+{{SpellSlotRow | 2 | Decrease Attack Speed by 25% }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 8.00
+| duration = 1 ticks @L1 to 6.5 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = Your body is covered in a fine mist of slime.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

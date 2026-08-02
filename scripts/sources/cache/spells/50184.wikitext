@@ -1,0 +1,35 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Intensify Death
+| spellicon = 74
+| description = Intensifies the power of your undead servant, increasing their strength, armor class, and attack speed.
+
+| classes = * [[Necromancer]] - Level 23
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Attack Speed by 22% (L24) to 30% (L40) }}
+{{SpellSlotRow | 2 | Increase STR by 26 (L24) to 33 (L52) }}
+{{SpellSlotRow | 3 | Increase AC by 6 (L24) to 8 (L48) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 50
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 60 Min
+| target_type = Pet
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's eyes gleam with madness.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Quest [[Keeper Rott's Pages]]
+
+}}

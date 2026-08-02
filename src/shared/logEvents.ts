@@ -256,6 +256,64 @@ export interface SpellEmoteEvent extends LogEventBase {
   text: string
 }
 
+/**
+ * A PRECISE, message-driven buff application (Task #34). Emitted when a log line exactly
+ * matches a spell's `msg_cast_on_you` (target 'self') or a `msg_cast_on_other` suffix
+ * (target = the named subject). This is DB-driven and requires a spell database installed
+ * on the parser config (ParserConfig.spellDb); with no DB it never fires, so profiles
+ * without a DB behave exactly as before.
+ *
+ * This is what makes SELF buffs cast via a Quick Buff burst visible: the burst prints only
+ * landing messages ("A cool breeze slips through your mind.") with NO "You begin casting"
+ * line, so the cast-timing miner never saw them — the message match does.
+ */
+export interface BuffApplyEvent extends LogEventBase {
+  kind: 'buffApply'
+  /**
+   * The resolved spell name (display casing from the DB). When the landing message is
+   * AMBIGUOUS across several spells (many haste/clarity spells share one message — e.g.
+   * "You feel much faster." is Alacrity/Celerity/Quickness/Swift), this is a best-effort
+   * pick; `candidates` carries the full set so the buffs module can resolve it against the
+   * player's own recent cast history (which spell they actually cast).
+   */
+  spell: string
+  /** 'self' for a msg_cast_on_you match; the named target for a msg_cast_on_other match. */
+  target: 'self' | string
+  /** True when the (resolved) spell's effects are an Illusion (Permanent Illusion AA). */
+  illusion: boolean
+  /** DB duration in ms (the authoritative prior), or null when the DB has no duration. */
+  durationMs: number | null
+  /**
+   * All spells whose landing message equals this line (Task #34). Length 1 when the
+   * message is unique. When >1, the message alone can't name the spell; the buffs module
+   * disambiguates by the player's recent casts. Each candidate carries its own name +
+   * duration + illusion flag (they usually share a duration but not always).
+   */
+  candidates: { name: string; durationMs: number | null; illusion: boolean }[]
+}
+
+/**
+ * A PRECISE, message-driven buff expiry (Task #34): a log line exactly matched a spell's
+ * `msg_wears_off`. Message-driven expiry is FAVORED over estimate-based removal (the user
+ * directive). Target is 'self' — wears-off emotes are printed to the buff holder (the
+ * player) regardless of who the buff was on, so we treat them as clearing the player's bar.
+ */
+export interface BuffWearOffEvent extends LogEventBase {
+  kind: 'buffWearOff'
+  spell: string
+  target: 'self'
+}
+
+/**
+ * `You activate <X>.` — an activated AA (e.g. Quick Buff). The buffs module uses a Quick
+ * Buff activation as CONTEXT: the buff applies in the ~2-3s burst that follows are marked
+ * confident (message-driven). Any activated AA is captured; consumers filter by name.
+ */
+export interface AaActivateEvent extends LogEventBase {
+  kind: 'aaActivate'
+  name: string
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -284,4 +342,7 @@ export type LogEvent =
   | BuffFadeEvent
   | PlayerDeathEvent
   | SpellEmoteEvent
+  | BuffApplyEvent
+  | BuffWearOffEvent
+  | AaActivateEvent
   | UnknownEvent

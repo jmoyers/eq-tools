@@ -1,0 +1,38 @@
+{{Spellpage|
+
+| spellname = Frost Port
+| spellicon = C
+| description = Mystically transports you to the Everfrost peaks.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:10 Dose Potion of the Frost}}
+</li><li> {{:5 Dose Potion of the Frost}}
+</li><li> {{:Potion of the Frost}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to 115,919,-58 in everfrost }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

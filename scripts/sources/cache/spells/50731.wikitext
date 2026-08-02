@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Burrowing Scarab
+| spellicon = C
+| description = Tiny scarabs burrow into your target's skin, causing 50 damage initially and 50 damage every 6 seconds for up to 3 minutes (1 ticks @L1 to 3.0 mins @L60).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Death Scarab Gland}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 4 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 50 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 50 per tick }}
+
+| skill = 
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3.2 minutes @L65
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = A scarab burrows into your flesh.
+| msg_cast_on_other = Someone  shrieks as a scarab burrows into their skin.
+| msg_wears_off = The scarab dies.
+
+}}
+
+[[Category: NPC Only Spells]]

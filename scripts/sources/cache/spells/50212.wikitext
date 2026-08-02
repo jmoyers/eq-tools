@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Incinerate Bones
+| spellicon = O
+| description = Burns the flesh from your target's bones causing 500 damage and stunning them for 1 seconds up to level 55.
+
+| classes = * [[Necromancer]] - Level 42
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 494 (L44) to 500 (L50) }}
+{{SpellSlotRow | 3 | Stun for 0.0 seconds }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 210
+| range = 200
+| casting_time = 6.10
+| fizzle_time = 2.50
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You shriek as your bones are ablaze.
+| msg_cast_on_other = Someone  shrieks as their bones are set ablaze.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+[[Chardok]]
+
+* [[Battle Master Ska`tu]]
+
+}}

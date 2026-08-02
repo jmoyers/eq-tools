@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Disambig3|[[Charm (Equipment Slot)]]}}
+ Straight up, Charm was a very powerful effect and one of the signatures of the Enchanter. 
+ - designer Geoffrey Zatkin, 2021 [https://www.youtube.com/watch?v=gqW42BFqVjo]
+{{Spellpage|
+
+| spellname = Charm
+| spellicon = 26
+| description = Dominates your target's mind, allowing you to control them for a short time. This spell works on creatures up to level 25.
+
+| classes = * [[Enchanter]] - Level 11 (Autogranted)
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 25 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 60
+| range = 200
+| casting_time = 2.40
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 16 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You have been charmed.
+| msg_cast_on_other = Someone  has been charmed.
+| msg_wears_off = You are no longer charmed.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-6)]] | Library | (1100,-982) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Danilla Delucic]] | Enchanter Guild (F2) | (503,761) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tal G'Noir]] | Caster Guild (Basement) | (156,-973) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Gero Yopetu]] | The Herb Jar | (311,-550) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Porra]] | Enchanter Guild | (577,-806) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Atvo Siro]] | Caster Guild (F1) | (109,-735) }}
+}}
+
+}}

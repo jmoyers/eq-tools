@@ -1,0 +1,32 @@
+{{Spellpage|
+
+| spellname = Lightning Breath
+| description = AE cast by [[Druushk]] in Veeshan's Peak.
+| spellicon = M
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 1500 }}
+{{SpellSlotRow | 2 | Cancel Magic(9) }}
+
+| mana = 0
+| skill = 
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your body is electrified as the lightning strikes you.
+| msg_cast_on_other = Someone 's body is electrified as the lightning strikes.
+| msg_wears_off =  
+
+
+}}

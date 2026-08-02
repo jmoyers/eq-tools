@@ -1,0 +1,71 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Cancel Magic
+| spellicon = 32
+| description = Cancels magical enchantments affecting your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Beastlord]] - Level 35
+* [[Cleric]] - Level 13
+* [[Druid]] - Level 18
+* [[Enchanter]] - Level 7
+* [[Magician]] - Level 10
+* [[Necromancer]] - Level 15
+* [[Paladin]] - Level 32
+* [[Ranger]] - Level 30
+* [[Shadow Knight]] - Level 36
+* [[Shaman]] - Level 19
+* [[Wizard]] - Level 11 (Autogranted)
+
+| items_with_effect = 
+
+<ul><li>  {{:Potion of Negation}}
+</li><li> {{:Mrylokar's Gauntlets}}
+</li><li> {{:Deepwater Gauntlets}}
+</li><li> {{:Tolan's Darkwood Greaves}}
+</li><li> {{:Summoned: Staff of Runes}}
+</li><li> {{:Staff_of_Null}}
+</li><li> {{:Vindication}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Cancel Magic (1) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 30
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 1.50
+| recast_time = 5.00
+| duration = Instant
+| target_type = Single
+| spell_type = Utility Detrimental
+| resist = Unresistable
+
+| other = 
+
+| msg_cast_on_you = You feel a bit dispelled.
+| msg_cast_on_other = Someone feels a bit dispelled.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Cleric#Spell Vendors|Cleric Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Paladin#Spell Vendors|Paladin Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Leach
+| spellicon = G
+| description = Drains the life from your target, doing 8 damage every six seconds for 54s. 2% of the life-force taken is used to heal your wounds.
+
+| classes = * [[Necromancer]] - Level 9
+| items_with_effect = 
+
+<ul><li> {{:Soulfiend Lance}} </li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease Hitpoints by 8 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 72
+| range = 200
+| casting_time = 2.40
+| fizzle_time = 2.50
+| recast_time = 10.00
+| duration = 54 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your blood begin to leech away.
+| msg_cast_on_other = Someone  pales.
+| msg_wears_off =  
+
+| where_to_obtain = This is a Paineel era spell.
+
+{{SpellWhereTable|
+{{SpellWhereRow  | [[Freeport|East Freeport]] | [[Peku Croxe]] | Underground | (-200,-244) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Misal S'Kor]] | Necromancer Guild (F1) | (1337,-1239) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Gyrna Porrin]] | Necromancer Guild | (291,-322) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Keeper Plight]] | Cubby near PvP Area | (-391,234) }}
+}}
+
+}}

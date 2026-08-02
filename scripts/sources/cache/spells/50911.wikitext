@@ -1,0 +1,38 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Verlekarnorm's Disaster
+| spellicon = C
+| description = Stuns nearby targets, causing 150 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Verlekarnorm's Horn of Disaster}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Stun for 1.0 seconds }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 150 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 15.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = You are struck by a sudden force.
+| msg_cast_on_other = Someone  is struck by a sudden force.
+| msg_wears_off = You are no longer stunned.
+}}
+
+[[Category:NPC Only Spells]]

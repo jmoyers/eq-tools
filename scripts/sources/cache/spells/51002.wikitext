@@ -1,0 +1,39 @@
+{{Spellpage|
+
+| spellname = Hungry Earth
+| spellicon = Q
+| description = Roots an undead creature to the ground, preventing them from moving.
+
+| classes = 
+
+* [[Necromancer]] - Level 16
+
+| items_with_effect = 
+
+<ul><li> {{:Gravebinder}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease HP when cast by 26 (L16) to 75 (L65) }}
+{{SpellSlotRow | 2 | Root }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 7.50
+| duration = 8 ticks
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone 's feet sink into the ground.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+}}

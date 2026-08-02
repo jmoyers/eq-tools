@@ -1,0 +1,36 @@
+{{Velious Era}}{{Spellpage|
+
+| spellname = Ikatiar's Revenge
+| spellicon = N
+| description = Fills your target's blood with poison, causing 9 damage initially and 20 damage every 6 seconds for up to 36 secs (6 ticks). Lasts way longer when done by [[Ikatiar the Venom]], possibly 3 hours?
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Ikatiar's Stinger}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 20 per tick }}
+
+| skill = Innate
+| mana = 0
+| range = 20
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 0
+| duration = 6 ticks @L1 to 2 ticks @L4
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison
+
+| msg_cast_other = Someone's fangs gleam with poison.
+| msg_cast_on_you = You have been poisoned.
+| msg_cast_on_other = Someone  has been poison.
+| msg_wears_off = The poison has run its course.
+}}

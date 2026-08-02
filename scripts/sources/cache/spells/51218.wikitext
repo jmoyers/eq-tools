@@ -1,0 +1,39 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Lightning Call
+| spellicon = C
+| description = Wind and lightning slam into you from above, causing 110 to 122 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Sarnak Lightning Caller}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 110 (L19) to 122 (L25) }}
+{{SpellSlotRow | 2 | Stun for 0.1s }}
+
+
+| skill = 
+| mana = 80
+| range = 200
+| casting_time = 2.75s
+| fizzle_time = 2.50s
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic(0)
+
+| msg_cast_on_you = Wind and lightning slam into you from above.
+| msg_cast_on_other = Soandso is struck by a shock of lightning.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

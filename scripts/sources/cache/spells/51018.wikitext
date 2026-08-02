@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Tepid Deeds
+| spellicon = A
+| description = Constricts your target's muscles, reducing attack speed by 50% for 3 min 30s.
+
+| classes = * [[Enchanter]] - Level 23
+| items_with_effect = 
+
+<ul><li> {{:Truncheon of Doom}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 32% (L24) to 50% (L60) }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 9 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 100
+| range = 250
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 2 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+| msg_cast_on_you = You slow down.
+| msg_cast_on_other = Someone  slows down.
+| msg_wears_off = Your speed returns.
+
+| where_to_obtain = 
+
+
+}}

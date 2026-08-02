@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Stalking Probe
+| spellicon = B
+| description = Winds up a clockwork probe to explore dangerous areas for you.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Stalking Probe}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Eye of Zomm }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 1 ticks @L1 to 5 ticks @L5
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off = Your stalking probe stops.
+}}
+
+[[Category:NPC Only Spells]]

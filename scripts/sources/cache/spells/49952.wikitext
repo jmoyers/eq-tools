@@ -1,0 +1,56 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Annul Magic
+| spellicon = U
+| description = Cancels magical enchantments affecting your target.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Cleric]] - Level 53
+* [[Druid]] - Level 55
+* [[Shaman]] - Level 55
+* [[Necromancer]] - Level 53
+* [[Wizard]] - Level 53
+* [[Magician]] - Level 53
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Cancel Magic(9) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Cancel Magic(9) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 75
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel annulled.
+| msg_cast_on_other = Someone  feels annulled.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Shelae Wolfkin]] | Outpost | (-3818,1640) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Arial Fern]] | Outpost | (-3238,2257) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Brackin Nartoise]] | Outpost | (-3979,2612) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRowB | [[Firiona Vie]] | [[Clarissa Heartweaver]] | Outpost | (-3864,2974) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Vizra L'Nizlon]] | Outpost | (2788,2427) }}
+{{SpellWhereRowB | [[The Overthere]] | [[Kuglaz Grot]] | Outpost | (2757,2422) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Lissa T'Born]] | Outpost | (2737,2396) }}
+{{SpellWhereRowB | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere<br/>Cabilis
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

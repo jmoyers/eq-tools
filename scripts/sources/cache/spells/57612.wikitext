@@ -1,0 +1,47 @@
+{{Spellpagesmart|
+
+| spellname = Rizlona's Embers
+| spellicon = C
+| description = Increases the damage of your companions' direct damage spells by up to 1%. This bonus will decay on spells over level 52.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 45
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Spell Damage (Before DoT Crit) by 1% to 15% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Limit: Instant spells only | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Limit: Spell Type (Detrimental Only) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Limit: Combat Skills Not Allowed | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 5 | Limit: Max Level 52 (Lose 5% per level over cap) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 100 (AE Range 100)
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 ticks
+| target_type = Group
+| spell_type = Beneficial
+| resist = 
+
+| other = 
+
+| msg_cast_on_you = Rizlona's embers pulse through your body.
+| msg_cast_on_other = 
+| msg_wears_off = The embers fade away.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Orator Zikorisy]] | Bard Songs Vendor | (207, -145) }}
+}}
+
+}}

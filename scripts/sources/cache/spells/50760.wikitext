@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Manifest Elements
+| spellicon = C
+| description = Forms the primal elements into a powerful servant.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Orb of Mastery}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SumMageMultiElement }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Modulation
+| spellicon = C
+| description = Consumes your physical energy and transforms it into magical power. '''0.66 Mana per Hp'''
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Summoned: Modulating Rod}} {{Era | Sky}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 225 }}
+{{SpellSlotRow | 2 | Increase Mana by 150 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You modulate.
+| msg_cast_on_other = Someone  modulates.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

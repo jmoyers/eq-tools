@@ -1,0 +1,60 @@
+{{Spellpage|
+
+| spellname = Symbol of Transal
+| spellicon = K
+| description = Covers your target in a shimmer of holy runes, increasing their hit points for 27 min.
+
+| classes = 
+
+* [[Cleric]] - Level 11 (Autogranted)
+* [[Paladin]] - Level 24
+
+| slots = 
+
+{{SpellSlotRow | 3 | Increase Max Hitpoints by 34 (L14) to 73 (L21)}}
+{{SpellSlotRow | 4 | Increase HP when cast by 34 (L14) to 73 (L21) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 55
+| range = 100
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Cat's Eye Agate]]
+
+| msg_cast_on_you = A mystic symbol flashes before your eyes.
+| msg_cast_on_other = Someone  is cloaked in a shimmer of glowing symbols.
+| msg_wears_off = The mystic symbol fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (NG-9)]] | Necromancer Guild | (2154,-366) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (CG-2)]] | Cleric Guild | (1238,-539) }}
+{{SpellWhereRowB | [[Erudin]] | [[Issibla Belstince]] | Cleric Guild - Prexus (F2) | (-1031,-375) }}
+{{SpellWhereRow  | [[Erudin]] | [[Mertitt Phentilly]] | Cleric Guild - Quellious (Outside) | (-741,-55) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Seria Woodwind]] | Paladin Guild | (-9,-197) }}
+{{SpellWhereRow  | [[Felwithe]] | [[Celest Palestream]] | Cleric Guild | (24,-444) }}
+{{SpellWhereRowB | [[Neriak|Neriak - 3rd Gate]] | [[Issia H'Rugla]] | Cleric Guild | (405,-766) }}
+{{SpellWhereRowB | [[North Kaladim]] | [[Zeffan Holdsman]] | Cleric Guild | (730, 160)}}
+{{SpellWhereRow  | [[Freeport|North Freeport]] | [[Amata D'Lavi]] | Cleric Guild (F1) | (103,311) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Donala Baris]] | Paladin Guild (F3) | (208,-130) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Mellisa Purgor]] | Paladin Guild | (-158,-130) }}
+{{SpellWhereRowB | [[Paineel]] | [[Erelin Verisue]] | Cleric Guild | (1226,551) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Leon Ereek]] | Cleric Guild | (373,-434) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Frappy Slimfinger]] | Cleric Guild | (-214,-359) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Oriyame Nelafre]] | Cleric Guild | (-259,-539) }}
+{{SpellWhereRowB | [[Thurgadin]] | [[Lorekeeper Taben]] | Cleric Guild | (-227,809) }}
+}}
+
+}}
+
+[[Category:Symbol line]]

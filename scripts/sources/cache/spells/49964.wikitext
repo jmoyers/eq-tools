@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Word of Restoration
+| spellicon = J
+| description = Mends the wounds of everyone in your group, healing between 720 and 750 hit points as well as curing nine (9) disease and poison counters.
+
+| classes = 
+
+* [[Cleric]] - Level 57
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Hitpoints by 720 (L57) to 750 (L60) }}
+{{SpellSlotRow | 2 | Decrease Poison Counter by 9 }}
+{{SpellSlotRow | 3 | Decrease Disease Counter by 9 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 900
+| range = 100
+| casting_time = 4.50
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel restored.
+| msg_cast_on_other = Someone  feels restored.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

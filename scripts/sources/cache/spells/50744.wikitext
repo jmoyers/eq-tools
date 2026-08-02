@@ -1,0 +1,36 @@
+{{Kunark Era}}
+{{Disambig3|[[Disease Cloud]]}}
+{{Spellpage|
+
+|spellname = Diseased Cloud
+
+| spellicon = E
+|description = AE cast by dragons including [[Hoshkar]] in VP and [[Zlexak]] in ToV.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Attack Speed by 55% }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 1250 }}
+
+| mana = 0
+| skill = 
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 3.2 minutes @L65
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Disease (-150)
+
+| msg_cast_on_you = Your body begins to rot.
+| msg_cast_on_other = Someone 's body begins to rot.
+| msg_wears_off =  
+
+
+}}

@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Torbas Acid Blast
+| spellicon = N
+| description = Strikes your target with a jet of poison, causing 332 damage.
+
+| classes = * [[Necromancer]] - Level 32
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 207 (L34) to 220 (L39) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 147
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = A blast of acid eats at your skin.
+| msg_cast_on_other = Someone  is blasted by a jet of acid.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Iceclad Ocean]] | [[Xorbinasticalus Zimralicus]] | Pirate Outpost | (4636,1312) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Loremaster Dorinan]] | Cleric Guild | (-334,813) }}
+}}
+
+}}

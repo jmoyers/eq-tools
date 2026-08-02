@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Weakening Poison I
+| spellicon = C
+| description = Fills your target with poison, lowering their strength for up to 6 secs (1 ticks @L1 to 6 mins @L60).
+
+'''Rogue Poison.'''
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Regalis Poison}}
+</li><li> {{:Spider Venom}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Poison Counter by 2 }}
+{{SpellSlotRow | 4 | Decrease STR by 2 (L1) to 34 (L33) }}
+
+| skill = 
+| mana = 0
+| range = 50
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 6 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Poison (0)
+
+| msg_cast_on_you = You feel your strength fade as poison spreads through your body
+| msg_cast_on_other = Someone  has been poisoned.
+| msg_wears_off = The poison has run its course.
+}}
+
+[[Category:NPC Only Spells]]

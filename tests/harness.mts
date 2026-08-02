@@ -12,6 +12,8 @@ import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { parseEvent } from '../src/main/log/parser'
+import { installSpellDb } from '../src/main/log/rulesets'
+import { loadSpellDb } from '../src/main/data/spellDb'
 import { BuffsModule } from '../src/main/modules/buffs'
 import type { BuffsSnap } from '../src/shared/types'
 
@@ -37,7 +39,43 @@ export function readFixture(name: string): string[] {
  * warm classifier.
  */
 export function replayBuffs(lines: string[], finalTickMs?: number, opts?: { prime?: string[] }): BuffsSnap {
+  // Ensure the shared parser config has NO DB (Task #34): the W1–W6 windows assert the
+  // pre-DB cast-timing/emote path. A prior DB-enabled test in the same process would
+  // otherwise leave the DB installed and change parser output; clear it deterministically.
+  installSpellDb(undefined)
   const mod = new BuffsModule()
+  mod.reset()
+  let seq = 0
+  for (const raw of opts?.prime ?? []) {
+    const ev = parseEvent(raw, seq++)
+    if (ev) mod.onEvent(ev)
+  }
+  for (const raw of lines) {
+    const ev = parseEvent(raw, seq++)
+    if (ev) mod.onEvent(ev)
+  }
+  if (finalTickMs != null) mod.onTick(finalTickMs)
+  return mod.snapshot().state
+}
+
+/**
+ * DB-ENABLED replay (Task #34): install the real scraped spell DB into the parser config
+ * AND give it to the BuffsModule, then replay — exactly what production does. This
+ * exercises the message-driven path (buffApply/buffWearOff from exact chat messages,
+ * self-heal-by-buff applies, Permanent Illusion). Used by the W7–W9 golden windows.
+ * The DB install is process-global, so DB-off tests (W1–W6) must not run interleaved with
+ * the DB installed — they don't, because node:test runs files/tests sequentially and these
+ * DB tests are in a separate file; still, we keep the plain replayBuffs above DB-free by
+ * constructing its own module without a DB (the parser config is the only shared state).
+ */
+export function replayBuffsWithDb(
+  lines: string[],
+  finalTickMs?: number,
+  opts?: { prime?: string[] }
+): BuffsSnap {
+  const db = loadSpellDb()
+  installSpellDb(db)
+  const mod = new BuffsModule(db)
   mod.reset()
   let seq = 0
   for (const raw of opts?.prime ?? []) {

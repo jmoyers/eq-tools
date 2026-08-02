@@ -1,0 +1,53 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpage|
+
+| spellname = Cripple
+| spellicon = I
+| description = Saps your target's power, decreasing their agility, dexterity, strength, and armor class for 6.3 mins @L53 to 7.0 mins @L60.
+
+It's not a bad idea to cast this on raid targets who have dangerous procs, rampages, or flurries as it reduces the frequency of those attacks. It does generate significant aggro, however.
+
+Stacks with [[Suffocate]].
+
+| classes = 
+
+* [[Shaman]] - Level 53
+* [[Enchanter]] - Level 53
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease DEX by 58 (L53) to 65 (L60) }}
+{{SpellSlotRow | 2 | Decrease AGI by 68 (L53) to 75 (L60) }}
+{{SpellSlotRow | 3 | Decrease STR by 68 (L53) to 75 (L60) }}
+{{SpellSlotRow | 4 | Decrease AC by 30 (L53) to 33 (L60) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 225
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 6.3 minutes @L53 to 7.0 minutes @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been crippled.
+| msg_cast_on_other = Someone  has been crippled.
+| msg_wears_off = You feel your strength return.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Enchanter Spells (Good)]]
+* [[Enchanter Spells (Evil)]]
+* [[Shaman Spells (Good)]]
+* [[Shaman Spells (Evil)]]
+
+
+
+
+}}

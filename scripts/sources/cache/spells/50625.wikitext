@@ -1,0 +1,39 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Minor Summoning: Water
+| spellicon = 38
+| description = Summons a water elemental to aid you in battle.
+
+| classes = * [[Magician]] - Level 14
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: [[Minor Summoning: Water Summon|Minor Summoning: Water]] }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 160
+| range =  
+| casting_time = 9.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+* '''Focus:''' [[Stein of Ulissa]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

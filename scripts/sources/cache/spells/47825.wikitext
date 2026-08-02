@@ -1,0 +1,50 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Skin Like Rock
+| spellicon = 131
+| description = Hardens the skin of your target, increasing their hit points and armor class for 27 min.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 14
+* [[Ranger]] - Level 21
+
+| items_with_effect = 
+
+<ul><li> {{:Holy Partisan of Underfoot}}
+</li><li> {{:Mountain Death Belt}}
+</li><li> {{:Shard of Golem Stone}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Armor Class by 5 (L14) to 6 (L16) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Increase Max Hitpoints by 54 (L14) to 105 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Increase HP when cast by 54 (L14) to 105 (L65) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 60
+| range = 100
+| casting_time = 5.00
+| fizzle_time = 2.50
+| recast_time = 8.00
+| duration = 27 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin turns hard as stone.
+| msg_cast_on_other = Someone 's skin turns hard as stone.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+</ul>
+}}

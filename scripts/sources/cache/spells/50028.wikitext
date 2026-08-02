@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Beguile Plants
+| spellicon = 72
+| description = Beckons to the plants of the wild, allowing you to control them.
+
+<!--'''NOTE:''' There are very few plant mobs of level 25 or below in the game.  [[Man Eating Vine]]s in [[Swamp of No Hope ]] (level 25 exactly) are one of the best targets for this spell. -->
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Druid]] - Level 28
+| items_with_effect = 
+
+<ul><li> {{:Dark Oak Shillelagh}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Charm (up to L25) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 170
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 16 Min
+| target_type = Plant
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  blinks.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+}}

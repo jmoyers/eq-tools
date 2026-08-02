@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Phantom Leather
+| spellicon = 1
+| description = Covers you in phantom leather armor, increasing your hit point regeneration and armor class.
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 13
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Increase Hitpoints by 1 per tick  | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase AC by 8 (L16) to 9 (L20) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 60
+| range =  
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Cat's_Eye_Agate| Cat's Eye Agate]]
+
+| msg_cast_on_you = You are covered in illusionary leather armor.
+| msg_cast_on_other = Someone  dons leather armor.
+| msg_wears_off = Your illusionary armor fades.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

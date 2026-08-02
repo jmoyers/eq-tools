@@ -1,0 +1,46 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Scars of Sigil
+| spellicon = O
+| description = Burns your target's skin with the scars of Sigil, causing 450 damage (2.57 DPM). This is a quick cast fire-bolt.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Magician]] - Level 54
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 450 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 175
+| range = 300
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = Instant
+| target_type = Line of Sight
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = The Scars of Sigil burn you.
+| msg_cast_on_other = Someone  is burned by the Scars of Sigil.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[City of Mist]]
+* [[Gyrating goo]]
+
+==Related Quests==
+
+* [[Magician Spells (Good)]]
+* [[Magician Spells (Evil)]]
+
+| TableLocations = [[Magician Spells (Evil)]] or [[Magician Spells (Good)]]
+| TableEra = {{{TableEra|Kunark}}}
+}}

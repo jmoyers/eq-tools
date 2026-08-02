@@ -1,0 +1,42 @@
+{{Spellpage|
+
+| spellname = Spirit of the Howler
+| spellicon = L
+| description = Summons a companion from the spirit world in the form of a great wolf.
+Max Pet Level 39
+Max HP 2050
+HP Regen/tick 30
+Max hit 52*
+Max Kick 24
+Abilities Double Attack, Riposte, Shield
+
+
+| classes = 
+
+* [[Shaman]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SpiritWolf237 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 850
+| range =  
+| casting_time = 12.00
+| fizzle_time = 2.25
+| recast_time = 24.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You summon a howling spirit.
+| msg_cast_on_other = Someone  summons a howling spirit.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Drops from Kunark Level 50+ Mobs
+
+}}

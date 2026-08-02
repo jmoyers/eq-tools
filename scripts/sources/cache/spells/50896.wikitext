@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Rain of Molten LAva
+
+| spellicon = O
+| description = AE cast by [[Dagarn the Destroyer]] and [[a burning guardian]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 300 }}
+
+| mana = 0
+| skill = Evocation
+| range = 250
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Fire (-100)
+
+| msg_cast_by_other = Someone calls forth a circle of lava above you.
+| msg_cast_on_you = Lava sears your skin.
+| msg_cast_on_other = Someone 's skin is seared by lava.
+| msg_wears_off =  
+
+
+}}

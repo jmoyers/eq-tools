@@ -1,0 +1,38 @@
+{{Chardok Revamp Era}}{{Spellpage|
+
+| spellname = Boneshear
+| spellicon = C
+| description = Strikes deep into your target, chipping off shards of bone.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Boneshear}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Item: [[Bone Chips]] }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Magic (0)
+
+| msg_cast_on_you = Your blade strikes deep, shearing off a chip of bone.
+| msg_cast_on_other =  
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]
+
+Gives one bone chip per proc. The bone chips are normal bone chips and droppable/tradeable.

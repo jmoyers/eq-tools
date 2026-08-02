@@ -1,0 +1,48 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Greater Vocaration: Air
+| spellicon = L
+| description = Summons an air elemental to aid you in battle.
+
+| classes = 
+
+* [[Magician]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SumAirR14 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 400
+| range =  
+| casting_time = 10.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Malachite]]
+* '''Focus:''' [[Staff of Elemental Mastery: Air]]
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+* Drops from Kunark Level 60+ Mobs
+
+[[Skyfire]]
+* [[a guardian wurm]]
+
+[[Old Sebilis]]
+* [[Sebilite protector]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

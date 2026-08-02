@@ -1,0 +1,36 @@
+{{Kunark Era}}
+{{Spellpage|
+
+| spellname = Frost Shards
+| spellicon = S
+| description = Strikes your target with frozen shards, causing 620 damage.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Blade of Falling Stars}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 620  }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0
+| recast_time = 0
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You feel your skin freeze
+| msg_cast_on_other = Someone 's skin freezes.
+| msg_wears_off =  
+
+}}

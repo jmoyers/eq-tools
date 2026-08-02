@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Scythe of Darkness
+| spellicon = 153
+| description = Disrupts the dark energy of the undead, causing 346 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 47
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 346 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 112
+| range = 200
+| casting_time = 0.50
+| fizzle_time =
+| recast_time = 18.00
+| duration = Instant
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = A scythe of darkness tears through you.
+| msg_cast_on_other =  screams in pain.
+| msg_wears_off = 
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

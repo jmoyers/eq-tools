@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Illusion: Fire Elemental
+| spellicon = U
+| description = Cloaks you in a shimmering illusion that makes you appear to be a Fire Elemental.  This spell also provides you with a shield of flame that harms those who attack you.
+
+| classes = * [[Enchanter]] - Level 33
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 75 }}
+{{SpellSlotRow | 2 | Increase Damage Shield by 9 (L34) to 16 (L60) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 70
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 36 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| other = 
+
+| msg_cast_on_you = You feel different.
+| msg_cast_on_other = Someone 's image shimmers.
+| msg_wears_off = Your illusion fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Erudin]] | [[Raine Beteria]] | Library (F2) | (-1048,-213) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Pinilla]] | Enchanter Guild (F3) | (564,736) }}
+}}
+
+}}
+[[Category: Illusions]]

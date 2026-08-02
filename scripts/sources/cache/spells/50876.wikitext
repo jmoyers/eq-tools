@@ -1,0 +1,65 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Levitate
+| spellicon = 80
+| description = Forms a cloud of dense air around your feet, allowing you to float slightly off the ground for up to 20 min 30s. Consumes a [[Bat Wing]] when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Ranger]] - Level 35
+* [[Druid]] - Level 14 (Autogranted)
+* [[Shaman]] - Level 10
+* [[Wizard]] - Level 22
+* [[Enchanter]] - Level 15
+* [[Beastlord]] - Level 32
+
+| items_with_effect = 
+
+<ul><li> {{:Elder Spiritist's Boots}}
+</li><li> {{:Bloody Griffon-Hide Wrist Guard}}
+</li><li> {{:Rotted Griffon-Hide Wrist Guard}}
+</li><li> {{:Griffon Wing Spauldors}}
+</li><li> {{:Pegasus Feather Cloak}}
+</li><li> {{:Summoned: Ring of Levitation}}
+</li><li> {{:Potion of Antiweight}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 3 | Levitate | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Consumes: [[Bat Wing]] | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range = 100
+| casting_time = 3.00
+| fizzle_time = 1.50
+| recast_time = 5.00
+| duration = 16 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Utility Beneficial
+| resist = Unresistable
+
+| other = 
+* '''Reagent:''' [[Bat Wing]]
+* '''Note:''' Levitation naturally protects the recipient from taking fall damage, so it's a good defense against spells like [[Gravity Flux]].
+
+| msg_cast_on_you = Your feet leave the ground.
+| msg_cast_on_other = Someone's feet leave the ground.
+| msg_wears_off = You can no longer levitate.
+
+| where_to_obtain = 
+
+<ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li>
+<li>[[Druid#Spell Vendors|Druid Spell Vendors]]</li>
+<li>[[Enchanter#Spell Vendors|Enchanter Spell Vendors]]</li>
+<li>[[Ranger#Spell Vendors|Ranger Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+<li>[[Wizard#Spell Vendors|Wizard Spell Vendors]]</li>
+</ul>
+}}

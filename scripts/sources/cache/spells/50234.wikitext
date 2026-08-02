@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Thrall of Bones
+| spellicon = D
+| description = Commands an undead creature to do your bidding, temporarily bending them to your will.
+
+| classes = 
+
+* [[Necromancer]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Charm up to level 53 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 300
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 20.00
+| duration = 17.2 minutes @L54 to 20.5 minutes @L65
+| target_type = Undead
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  moans.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Necromancer Spells|Necromancer Spells (The Overthere)]]
+* [[Necromancer Spells (Cabilis)]]
+
+}}

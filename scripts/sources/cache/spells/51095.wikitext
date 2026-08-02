@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Trakanon Tail
+| spellicon = U
+| description = Need discription
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Staff of Endless Adventure}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Stamina Loss by 1 }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.01
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = 
+| msg_cast_on_other = 
+| msg_wears_off = 
+}}
+
+[[Category:NPC Only Spells]]

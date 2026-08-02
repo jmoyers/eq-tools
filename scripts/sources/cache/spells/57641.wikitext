@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Blessing of Faith
+| spellicon = A
+| description = Bestows your target with a divine blessing, allowing them to cast spells faster for 40 min. This blessing works on spells up to level 61.
+| classes = 
+
+* [[Cleric]] - Level 35
+
+| items_with_effect = 
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Spell Haste by 10% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Limit: Max Level (61) - lose 5% per level over cap | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }} 
+{{SpellSlotRowSmart | 3 | Limit: Min. Casting Time 3.00 sec | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }} 
+
+| skill = [[Skill Alteration | Alteration ]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 40:00
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| spell_line = Blessing of Piety
+| resist = Unresistable
+
+| msg_cast_on_you = Your thoughts quicken as faith fills your mind.
+| msg_cast_on_other = Target is quickened by the Blessing of Faith.
+| msg_wears_off = Your thoughts slow.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+}}
+}}

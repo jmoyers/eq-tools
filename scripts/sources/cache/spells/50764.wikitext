@@ -1,0 +1,37 @@
+{{Spellpage|
+
+| spellname = Earthcall
+| spellicon = A
+| description = Surrounds your target in gripping earth, slowing attack rate and causing 20 damage every 6 seconds for up to 150 secs (1 ticks @L1 to 2.5 mins @L50).
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Earthcaller}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 20% (L1) to 50% (L60) }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 20 per tick }}
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 2.5 minutes @L50
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = The earth's call dulls your mind and slows your muscles.
+| msg_cast_on_other = Someone  is slowed by the embracing earth.
+| msg_wears_off = The call of earth recedes.
+}}
+
+[[Category:NPC Only Spells]]

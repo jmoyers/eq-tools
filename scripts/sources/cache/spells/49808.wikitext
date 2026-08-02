@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Weakness
+| spellicon = I
+| description = Weakens your opponent, lowering their strength.
+
+| classes = * [[Enchanter]] - Level 42
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease STR by 59 (L44) to 65 (L50) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 120
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 3 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel weak.
+| msg_cast_on_other = Someone  is weakened.
+| msg_wears_off = Your strength returns.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (LG-5)]] | Library | (1104,-985) }}
+{{SpellWhereRow  | [[Erudin|Erudin Palace]] | [[Elentar Bealtarik]] | Enchanter Guild (F4) | (507,746) }}
+{{SpellWhereRowB | [[Neriak|Neriak - Commons]] | [[Tizzy C'Luzz]] | Caster Guild (Basement) | (172,-912) }}
+{{SpellWhereRow  | [[Qeynos|South Qeynos]] | [[Moreo O'Meek]] | Caster Guild (Outside) | (301,-637) }}
+{{SpellWhereRowB | [[Felwithe|Southern Felwithe]] | [[Nestess Branchtop]] | Enchanter Guild | (497,-926) }}
+{{SpellWhereRow  | [[Freeport|West Freeport]] | [[Jarel Ranin]] | Caster Guild (F1) | (157,-735) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]].
+
+}}

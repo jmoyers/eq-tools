@@ -1,0 +1,56 @@
+{{Velious Era}}{{Spellpage|
+
+| spellname = Aegolism
+| spellicon = K
+| description = Cloaks your target in an aura of protection, granting them increased hit points and armor class for 2 hour(s) 30.0 mins. <br> For stacking purposes, this spell is considered an "all-in-one" spell, replacing [[Heroism]], [[Symbol of Marzin]] and [[Aegis]] with a single buff with roughly the same stats and reduced overall mana cost. <br>
+<br>
+*This buff will prevent PoTG from sticking.
+
+| classes = 
+
+* [[Cleric]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stacking: Block new spell if slot 3 is effect 'Max Hitpoints' and < 1100 }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 1100 }}
+{{SpellSlotRow | 3 | Increase HP when cast by 1100 }}
+{{SpellSlotRow | 4 | Increase AC by 54 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 750
+| range = 100
+| casting_time = 14.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 2 hours 30 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' [[Peridot]]
+
+| msg_cast_on_you = You are filled with the power of Aegolism.
+| msg_cast_on_other = Someone 's eye gleams with the power of Aegolism.
+| msg_wears_off = Your aegolism fades.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Prince Thirneg]]
+* [[A Serene Forest Spirit]]
+* [[A thifling focuser]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}
+
+[[Category:Symbol line]]

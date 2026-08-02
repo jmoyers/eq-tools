@@ -1,0 +1,59 @@
+{{Spellpage|
+
+| spellname = Daring
+| spellicon = K
+| description = Provides your target with a sense of daring, increasing their hit points and armor class for 36 min.
+
+| classes = 
+
+* [[Cleric]] - Level 17 (Autogranted)
+* [[Paladin]] - Level 37
+
+| items_with_effect = 
+
+<ul><li> {{:Deepwater Helm}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase AC by 7 (L19) to 9 (L26) }}
+{{SpellSlotRow | 2 | Increase Max Hitpoints by 84 (L19) to 130 (L65) }}
+{{SpellSlotRow | 3 | Increase HP when cast by 84 (L19) to 130 (L65) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 60
+| range = 100
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 36 minutes
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel daring.
+| msg_cast_on_other = Someone  looks daring.
+| msg_wears_off = You no longer feel daring.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Ak'Anon]] | [[Clockwork Merchant (CG-3)]] | Cleric Guild | (1223,-538) }}
+{{SpellWhereRow  | [[Ak'Anon]] | [[Clockwork Merchant (NG-7)]] | Necromancer Guild | (2139,-359) }}
+{{SpellWhereRowB | [[Erudin]] | [[Stolace Printell]] | Cleric Guild - Quellious (Outside) | (-720,-58) }}
+{{SpellWhereRow  | [[Erudin]] | [[Tollari Mistell]] | Library (F1) | (-1067,-255) }}
+{{SpellWhereRowB | [[Felwithe]] | [[Allia Moondancer]] | Cleric Guild | (2,-444) }}
+{{SpellWhereRow  | [[Neriak|Neriak - 3rd Gate]] | [[Svlia C'Luzz]] | Cleric Guild | (402,-783) }}
+{{SpellWhereRowB | [[Freeport|North Freeport]] | [[Locarme Zennix]] | Cleric Guild (F1) | (103,286) }}
+{{SpellWhereRow  | [[Qeynos|North Qeynos]] | [[Berane Constarg]] | Paladin Guild | (-158,-160) }}
+{{SpellWhereRowB | [[Paineel]] | [[Erelin Verisue]] | Cleric Guild | (1226,551) }}
+{{SpellWhereRow  | [[Qeynos Aqueducts|Qeynos Catacombs]] | [[Tessia Sowtsui]] | Cleric Guild | (340,-434) }}
+{{SpellWhereRowB | [[Rivervale]] | [[Blippo Stumbletoe]] | Cleric Guild | (-208,-417) }}
+{{SpellWhereRow  | [[Thurgadin]] | [[Lorekeeper Taben]] | Cleric Guild | (-227,809) }}
+{{SpellWhereRowB | [[North Kaladim]] | [[Duppa Pickstone]]  | Cleric Guild | (745,125) }}
+}}
+
+}}
+
+[[Category:Heroism line]]

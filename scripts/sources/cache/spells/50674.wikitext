@@ -1,0 +1,50 @@
+{{Spellpagesmart|
+
+| spellname = Angstlich's Appalling Screech
+| spellicon = G
+| description = A terrifying screech that causes nearby enemies to run in terror.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 26
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Fear (up to L52) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''No''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Brass | Brass]]
+
+| mana = 0
+| range =  
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Focus:''' Horn
+
+| msg_cast_on_you = Your mind snaps in terror.
+| msg_cast_on_other = Someone  flees in terror.
+| msg_wears_off = You are no longer terrified.
+
+| items_with_effect = 
+
+<ul><li> {{:Singing Steel Greaves}}
+</li></ul>
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+| TableLocations = Kelethin
+| TableEra = Classic
+}}

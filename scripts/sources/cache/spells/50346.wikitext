@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Tigir`s Insects
+| spellicon = A
+| description = Engulfs creatures near your target in a cloud of insects, slowing their attack rates for 2.9 mins @L58 to 3.5 mins @L70. Max of 4 mobs.
+
+| classes = 
+
+* [[Shaman]] - Level 58
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 49% (L58) to 50% (L60) }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 16 }}
+{{SpellSlotRow | 4 | Decrease Hate by 200 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 350
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 5.00
+| duration = 2.9 minutes @L58 to 3.2 minutes @L65
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel drowsy.
+| msg_cast_on_other = Someone  yawns.
+| msg_wears_off = You feel less drowsy.
+
+| where_to_obtain = 
+[[Old Sebilis]]
+* [[Sebilite juggernaut]]
+* [[Trakanon]]
+
+[[The Overthere]]
+* [[a cliff golem]]
+
+[[City of Mist]]
+* [[Lord Rak'Ashiir]]
+
+
+}}

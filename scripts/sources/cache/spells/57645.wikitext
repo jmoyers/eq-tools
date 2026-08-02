@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Promised Renewal
+| spellicon = J
+| description = Imbues your target with life after 18s, healing for 5000.
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Cleric]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 5000 after three ticks. | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 915
+| range = 100
+| casting_time = 1
+| fizzle_time = 2.25
+| recast_time = 18.50
+| duration = 0:00:12
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are promised a divine renewal.
+| msg_cast_on_other = Target is promised a divine renewal.
+| msg_wears_off =  
+
+| items_with_effect = 
+
+<ul><li> {{:Necklace of Resolution}}
+<!-- </li><li> {{:Potion of Serious Healing}} Need to confirm if this item is still dropping and has this effect on Legends -->
+</li><li> {{:Reaper of the Dead}}
+</li><li> {{:SoulFire}}
+</li></ul>
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Apostate Cakazu]] | Cleric Spells Vendor | (97, -161, -21) }}
+{{SpellWhereRowB | [[North Freeport]] | [[Amata D`Lavi]] | Cleric Spells Vendor | (101, 307, -10) }}
+}}
+}}

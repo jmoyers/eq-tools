@@ -1,0 +1,53 @@
+{{Spellpage|
+
+| spellname = Arch Lich
+| spellicon = G
+| description = Grips your body in an unholy darkness, slowly draining your hit points while regenerating your mana.
+
+This spell is later buffed March 12, 2002 (post-Velious) when Demi Lich is downgraded to a level 56 spell. It is at this point that Arch Lich became 36 hp for 35 mana.
+
+Does '''not''' stack with any clarity spells.
+
+'''Does''' stack with bard mana songs.
+
+| classes = 
+
+* [[Necromancer]] - Level 60
+
+| slots = 
+
+{{SpellSlotRow | 1 | Illusion: 85 (Spectre) }}
+{{SpellSlotRow | 2 | Increase Mana by 20 per tick }}
+{{SpellSlotRow | 4 | Ultravision(1) }}
+{{SpellSlotRow | 5 | See Invisible(1) }}
+{{SpellSlotRow | 7 | Decrease hitpoints by 20 per tick }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 1
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 19 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You feel the skin peel from your bones.
+| msg_cast_on_other = Someone 's skin peels away.
+| msg_wears_off = Your flesh returns.
+
+| where_to_obtain = 
+* Velious Level 50+ Mob Drop
+
+[[Plane of Growth]]
+* [[Ail the Elder]]
+* [[Prince Thirneg]]
+* [[Treah Greenroot]]
+* [[Undogo Digolo]]
+
+[[Western Wastes]]
+* [[Harla Dar]]
+
+}}

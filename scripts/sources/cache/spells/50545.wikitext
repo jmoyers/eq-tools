@@ -1,0 +1,46 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Jyll`s Static Pulse
+| spellicon = C
+| description = Creates a circle of static energy around you, causing 495 damage and and a short duration stun to all nearby creatures. 
+<br>Single target mana efficiency of 1.63.
+
+Compared to [[Supernova]], this spell is more mana efficient and has a reduced recast time, but hits for less damage, will probably be resisted more often, and the stun causes more aggro. It does more DPS when the recast timer is considered, not considering resists. Of course, both nukes could also be used in alternation for even more DPS.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 53
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 495 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Stun for 0.0 seconds | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 285
+| range =  
+| casting_time = 2.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = A pulse of static energy slams through you.
+| msg_cast_on_other = Someone  is slammed by a pulse of static energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Selien Nartoise]] | Outpost | (-3980,2626) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Tyrin F'Linz]] | Outpost | (2812,2405) }}
+}}
+| TableLocations = Firiona Vie<br/>The Overthere
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

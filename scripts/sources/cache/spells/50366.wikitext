@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Burnout
+| spellicon = 53
+| description = Infuses your elemental companion with energy, increasing their attack speed, armor class, and strength.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 11
+| slots = 
+
+{{SpellSlotRowSmart | 3 | Increase Strength by 15 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 4 | Increase Attack Speed by 13% (L12) to 15% (L18) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 6 | Increase Armor Class by 6 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 35
+| range = 100
+| casting_time = 6.50
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 60 minutes
+| target_type = Pet
+| spell_type = Haste
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  goes berserk.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

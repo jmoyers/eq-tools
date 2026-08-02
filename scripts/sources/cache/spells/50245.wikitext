@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Devouring Darkness
+| spellicon = G
+| description = Summons a devouring darkness that binds your target's feet, decreasing their movement rate, and doing 107 damage every six seconds for 1.3 mins, for a total of 1391 damage. 3.4775 DPM.
+
+| classes = 
+
+* [[Necromancer]] - Level 59
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 107 per tick }}
+{{SpellSlotRow | 2 | Decrease Movement Speed by 69% (L59) to 70% (L60) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 400
+| range = 200
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 1.3 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are engulfed by devouring darkness.
+| msg_cast_on_other = Someone  is engulfed in devouring darkness.
+| msg_wears_off = The darkness fades.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+}}

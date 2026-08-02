@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellicon = C
+| spellname = Stun Breath
+| description = This area effect stun is cast by [[Zlandicar]] and dragons in [[Veeshan's Peak]] such as [[Phara Dar]].
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Stun for 12.0 seconds }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 900 }}
+
+| mana = 0
+| skill = 
+| range = 300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Targeted AE
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your eardrums rupture.
+| msg_cast_on_other = Someone  staggers with intense pain.
+| msg_wears_off =  
+
+}}

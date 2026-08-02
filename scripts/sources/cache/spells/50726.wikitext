@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Dragon Roar
+| spellicon = G
+
+| description =
+
+This is the fear spell cast by [[Lord Nagafen]], [[Lady Vox]], [[Gorenaire]], [[Talendor]] and many other boss dragons. It is difficult to resist, especially when spouted by higher level dragons.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Fear(1) }}
+
+| skill = 
+| mana = 0
+| range =  300
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 36.00
+| duration = 1 ticks @L1 to 3 ticks @L3
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-150)
+
+| msg_cast_on_you = You flee in terror.
+| msg_cast_on_other =  
+| msg_wears_off = You are no longer afraid.
+
+}}
+
+[[Category: NPC Only Spells]]

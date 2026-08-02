@@ -1,0 +1,44 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Vampiric Embrace
+| spellicon = 140
+| description = Gives your attacks a vampiric property, allowing a chance to steal life from your target. Adds {{SpellHoverLink|Vampiric Embrace}} (melee proc).
+
+| classes = 
+
+* [[Necromancer]] - Level 7 (Autogranted)
+* [[Shadow Knight]] - Level 15
+
+| items_with_effect = 
+
+<ul><li> {{:Blood Ember Vambraces}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Add Proc: VampEmbraceNecro }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 30
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your hand begins to glow.
+| msg_cast_on_other = Someone 's hands begin to glow.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

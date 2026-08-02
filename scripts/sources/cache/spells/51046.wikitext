@@ -1,0 +1,36 @@
+{{Spellpage|
+
+| spellname = Rodrick's Gift
+| spellicon = C
+| description = Causes you (not your target - you) to spin for a few seconds.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| items_with_effect = 
+
+<ul><li> {{:Dirk of the Traitor}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Causes you to spin }}
+
+| skill = 
+| mana = 0
+| range = 0
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 1 ticks @L60
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you =
+| msg_cast_on_other =
+| msg_wears_off =
+}}
+
+[[Category:NPC Only Spells]]

@@ -1,0 +1,34 @@
+{{Sky Era}}{{Spellpage|
+
+| spellname = Abduction of Strength
+| spellicon = I
+| description = Tears strength from your target and infuses your muscles for 6 minutes. Cast by [[a spirited harpie]] in [[Plane of Sky]] on island 3.
+
+| classes = 
+
+This spell is only cast by NPCs until Luclin.
+
+ Effect: Decrease Target's STR by 25
+ Recourse Effect:  Increase Caster's STR by 25 [[Ab. of Strength Recourse]]
+
+| slots = 
+
+{{SpellSlotRow | 3 | Decrease STR by25 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 5
+| range = 200
+| casting_time = 1.50
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 6 minutes
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You feel your strength dwindle.
+| msg_cast_on_other = Someone  weakens.
+| msg_wears_off = Your strength returns.
+
+}}

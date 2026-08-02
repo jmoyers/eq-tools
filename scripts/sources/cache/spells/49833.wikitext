@@ -1,0 +1,41 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Glamour of Kintaz
+| spellicon = D
+| description = Causes your opponent to fall into an enchanted sleep for up to 30 secs (5 ticks). This spell works on creatures up to level 57. (9.16 mana per second)
+
+This spell formerly had a -10MR resist modifier, but it was removed in 2014. [https://www.project1999.com/forums/showthread.php?t=155457]
+
+| classes = 
+
+* [[Enchanter]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Mesmerize (2/57) }}
+{{SpellSlotRow | 2 | Memblur(30%) }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 275
+| range = 200
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = 5 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You are mesmerized by the Glamour of Kintaz.
+| msg_cast_on_other = Someone  has been mesmerized by the Glamour of Kintaz.
+| msg_wears_off = You are no longer mesmerized.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Firiona Vie]] | [[Nertith Gracon]] | Outpost | (-3993,2613) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Kelsi Q'Grinol]] | Outpost | (2817,2366) }}
+}}
+
+}}

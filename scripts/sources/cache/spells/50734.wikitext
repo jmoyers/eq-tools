@@ -1,0 +1,42 @@
+{{Disambig3|The player cast version [[Complete Healing]]}}
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Complete Heal
+| spellicon = J
+| description = Completely restores the health of your target. Not to be confused with the player cast [[Complete Healing]].
+
+| classes = 
+
+This spell is cast by NPCs and items only.
+
+| items_with_effect = 
+
+<ul><li>  {{:Donal's Chestplate of Mourning}}
+</li><li> {{:Necklace of Resolution}}
+</li><li> {{:Reaper of the Dead}}
+</li><li> {{:SoulFire}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Complete Heal (with duration) }}
+
+| skill = 
+| mana = 350
+| range = 150
+| casting_time = 1.00
+| fizzle_time = 2.50
+| recast_time = 0.00
+| duration = 3 minutes @L1 to 7.5 minutes @L3
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You are completely healed.
+| msg_cast_on_other = Someone  is completely healed.
+| msg_wears_off =  
+
+}}
+
+[[Category: NPC Only Spells]]

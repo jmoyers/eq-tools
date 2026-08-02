@@ -1,0 +1,42 @@
+<noinclude>{{Chardok Revamp Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Ring of Cobalt Scar
+| spellicon = V
+| description = Opens a mystical portal that transports you to the Cobalt Scar.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport to -1065,-1634,299 in cobaltscar | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Someone  fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Srendon Gladetender]] | Druid Guild | (-627,215) }}
+}}
+
+| TableLocations = Wakening
+| TableEra = {{{TableEra|Velious}}}
+}}

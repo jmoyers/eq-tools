@@ -1,0 +1,48 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Manasink
+| spellicon = K
+| description = Covers your skin in a shimmering shield of mana that absorbs some spell damage.  Consumes a jasper when cast.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 58
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Absorb Magic Damage by 250 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range =  
+| casting_time = 4.50
+| fizzle_time = 2.25
+| recast_time = 9.00
+| duration = 1 hour 12 minutes
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Jasper
+
+| msg_cast_on_you = A silvery force slicks your skin.
+| msg_cast_on_other = Someone 's skin is slicked by a silvery glow.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+* Drops from Level 50+ Kunark Mobs
+
+[[Trakanon's Teeth]]
+* [[Spectral Commander]]
+
+
+| TableLocations = Level 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

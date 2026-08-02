@@ -1,0 +1,57 @@
+<noinclude>{{Kunark Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Regrowth of the Grove
+| spellicon = J
+| description = Hastens your groups natural healing, allowing them to recover hit points faster.
+
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Druid]] - Level 58
+
+| items_with_effect = 
+
+<ul><li> {{:Nature Walker's Chestguard}}
+</li><li> {{:Rowyl's Chestguard of Nature}}
+</li><li> {{:Woven Grass Chestguard}}
+</li><li> {{:Hauberk of Harmony}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Increase Hitpoints by 15 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 600
+| range = 0
+| casting_time = 6.00
+| fizzle_time = 2.50
+| recast_time = 2.25
+| duration = 18.4 minutes @L58 to 19 minutes @L60
+| target_type = Group v2
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = You begin to regenerate.
+| msg_cast_on_other = Someone  begins to regenerate.
+| msg_wears_off = You have stopped regenerating.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+[[Emerald Jungle]]
+* [[Severilous]]
+
+[[Old Sebilis]]
+* [[Sebilite protector]]
+* [[Trakanon]]
+
+[[The Overthere]]
+* [[a cliff golem]]
+| TableLocations = 50+ Mobs
+| TableEra = {{{TableEra|Kunark}}}
+
+}}

@@ -1,0 +1,49 @@
+{{Spellpagesmart|
+
+| spellname = Firestrike
+| spellicon = O
+| description = Ignites your target's skin, doing 422 damage.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 38
+* [[Ranger]] - Level 52
+
+| items_with_effect = 
+
+<ul><li> {{:Rain Caller}}
+</li><li> {{:Blade of Shadowed Flame}} (GM Event Item)
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 402 (L38) to 422 (L43) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 138
+| range = 200
+| casting_time = 4.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Fire (0)
+
+| msg_cast_on_you = You feel your skin ignite.
+| msg_cast_on_other = Someone 's skin ignites.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Butcherblock Mountains]] | [[Ellona]] | Druid Ring | (-2085,2016) }}
+{{SpellWhereRow  | [[Firiona Vie]] | [[Raciel Sanherb]] | Outpost | (-3396,3310) }}
+{{SpellWhereRowB | [[The Wakening Land]] | [[Weinna Oakchild]] | ? | (521,-1038) }}
+}}
+| TableLocations = Butcherblock Mnt<br/>Firiona Vie<br/>Wakening Land
+| TableEra = {{{TableEra|Classic}}}
+}}

@@ -1,0 +1,45 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Lifedraw
+| spellicon = 47
+| description = Drains your target of life energy, siphoning 105 hit points.
+
+| classes = 
+
+* [[Necromancer]] - Level 12
+* [[Shadow Knight]] - Level 15
+
+| items_with_effect = 
+
+<ul><li> {{:Deadwood Stave}}
+</li><li> {{:Blood Runed Scimitar}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 39 (L12) to 45 (L18) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 86
+| range = 200
+| casting_time = 2.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your lifeforce drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

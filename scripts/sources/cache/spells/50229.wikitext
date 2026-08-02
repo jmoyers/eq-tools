@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Plague
+| spellicon = 41
+| description = Sickens your target with a fever, causing 144 damage initially and between 147 and 156 damage every six seconds for 1 min 18s.
+
+| classes = 
+
+* [[Shaman]] - Level 49
+* [[Necromancer]] - Level 52
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 9 }}
+{{SpellSlotRow | 2 | Decrease Hitpoints by 55 per tick }}
+{{SpellSlotRow | 3 | Decrease HP when cast by 60 }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 308
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 1 Min 18 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = You feel feverish.
+| msg_cast_on_other = Someone  sweats and shivers, looking feverish.
+| msg_wears_off = Your fever has broken.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

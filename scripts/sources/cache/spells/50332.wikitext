@@ -1,0 +1,40 @@
+{{Spellpage|
+
+| spellname = Shroud of the Spirits
+| spellicon = K
+| description = Places a shroud of spirits on your target, increasing their armor class for 1 hour(s) 12.0 mins.
+
+| classes = 
+
+* [[Shaman]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 4 | Increase AC by 26 (L54) to 28 (L60) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 200
+| range = 100
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 12.00
+| duration = 1 hour 12 minutes
+| target_type = Single
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = A protective spirit shroud cloaks you.
+| msg_cast_on_other = Someone  is surrounded by a spirit shroud.
+| msg_wears_off = You are no longer shrouded.
+
+| where_to_obtain = 
+
+* Kunark Level 50+ Mob Drop
+
+==Related Quests==
+
+* [[Shaman Spells (Good)]]
+* [[Shaman Spells (Evil)]]
+
+}}

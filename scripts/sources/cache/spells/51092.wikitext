@@ -1,0 +1,33 @@
+{{Spellpage|
+
+| spellname = Scarab Storm
+| spellicon = C
+| description = 
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Disease Counter by 10 }}
+{{SpellSlotRow | 2 | Decrease HP when cast by 250 }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 50 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 1 ticks @L1 to 3.2 minutes @L65
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Disease (0)
+
+| msg_cast_on_you = Scarabs burrow into your flesh.
+| msg_cast_on_other = Someone  shrieks as scarabs burrow into their skin.
+| msg_wears_off = The scarabs die.
+}}
+
+[[Category:NPC Only Spells]]

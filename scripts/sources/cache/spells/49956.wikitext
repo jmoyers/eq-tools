@@ -1,0 +1,47 @@
+{{Spellpage|
+
+| spellname = Unswerving Hammer
+| spellicon = L
+| description = Summons a magical hammer that attacks your target relentlessly until either the hammer or the target dies.
+
+If there are additional mobs on the hammer's hate list, the hammer will stay alive and attack those mobs. The summoning cleric cannot control this hammer at all; e.g., it will always taunt. Using "Go Away" is of unknown use.
+
+The hammer has approximately 10 hp and cannot receive damage shields. It has a max hit of 40-45 depending on level. It can be given most other buffs once summoned (this was removed in later eras). 
+
+This spell does work in Plane of Sky and the hammer appears normally there.
+
+While the spell lists no range, the hammer will despawn very quickly if the target is not close enough to the hammer to begin an initial attack.
+
+The pet may be reclaimed with [[Reclaim Energy]], which increases the utility of the hammer somewhat. This pet is situationally useful for long melee-heavy fights with no AE spells such as [[Ulump Pujluk]] or [[An enraged golem]].
+
+This spell is called Unswerving Hammer of Faith once scribed.
+
+| classes = 
+
+* [[Cleric]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Summon Pet: SumHammer }}
+
+| skill = [[Skill Conjuration | Conjuration]]
+
+| mana = 600
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 2.25
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other =  
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+* This spell is obtained via the quests: [[Cleric Spells (Good)]] or [[Cleric Spells (Evil)]].
+
+}}

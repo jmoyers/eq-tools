@@ -1,0 +1,31 @@
+{{Spellpage|
+
+| spellname = BurningTouch2
+| spellicon = C
+| description = This strange spell is cast by [[Atheling Plague]] during combat.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Teleport to 7392,-3955,-230 in burningwood }}
+
+| skill = 
+| mana = 0
+| range = 100
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 30.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Unresistable
+
+| msg_cast_on_you = You have been teleported.
+| msg_cast_on_other = Someone  creates a mystic portal.
+| msg_wears_off = The portal shimmers and fades.
+}}
+
+[[Category:NPC Only Spells]]

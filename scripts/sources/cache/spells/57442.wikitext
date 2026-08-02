@@ -1,0 +1,44 @@
+{{Spellpagesmart|
+
+| spellname = Ring of South Ro
+| spellicon = V
+| description = Opens a mystical portal that transports you to [[Southern Desert of Ro|The Southern Desert of Ro]].
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Druid]] - Level 20
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Teleport group to -2034,317,-19 in [[South Ro]]| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 150
+| range =  
+| casting_time = 7.00
+| fizzle_time = 2.25
+| recast_time = 10.00
+| duration = Instant
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you =  
+| msg_cast_on_other = Player fades away.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Wanderer Rakshaazi]] | Spell Vendor Area | (120, -163) }}
+{{SpellWhereRow | [[West Commonlands]] | [[Slea Pinewhisper]] | Druid Ring | (450, 1383, -52) }}
+}}
+
+| TableLocations = W.Commonlands
+| TableEra = Classic
+
+}}

@@ -1,0 +1,49 @@
+{{Spellpage|
+
+| spellname = Banshee Aura
+| spellicon = 158
+| description = Surrounds your body with an aura of vengeful spirits, causing damage to anyone who strikes you. Requires, but does not consume, a pearl when cast.
+
+| classes = 
+
+* [[Necromancer]] - Level 15
+* [[Shadowknight]] - Level 54
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Damage Shield by 9 (L16) to 12 (L54) }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 60
+| range =  
+| casting_time = 5.00
+| fizzle_time = 2.25
+| recast_time = 9.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Cold (0)
+
+| other = 
+
+* '''Focus:''' [[Pearl]] (Not Consumed)
+
+| msg_cast_on_you = A shrieking aura surrounds you.
+| msg_cast_on_other = Someone  is surrounded by a shrieking aura.
+| msg_wears_off = The shrieking aura fades.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Cabilis|East Cabilis]] | [[Lord Vizaroth]] | Temple of Terror (West Tower - Basement) | (1128,-98) }}
+{{SpellWhereRow  | [[The Overthere]] | [[Grubmar Hartblak]] | Outpost | (2748,2351) }}
+}}
+
+* This spell is crafted with the [[Skill Research|Research Skill]] (Trivial: 16)
+** '''Yield: Banshee Aura''' x1
+** In [[Book of Dark Bindings]]:
+:: {{SmIcon|869}} 1 x [[Words of Derivation]] - Dropped
+:: {{SmIcon|869}} 1 x [[Words of Eradication]] - Dropped
+
+}}

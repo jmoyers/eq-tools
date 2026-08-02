@@ -1,0 +1,47 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Lifespike
+| spellicon = 47
+| description = Drains your target of life energy, siphoning 12 hit points.
+
+| classes = 
+
+* [[Necromancer]] - Level 3 (Autogranted)
+* [[Shadow Knight]] - Level 8
+
+| items_with_effect = 
+
+<ul><li> {{:Thin Boned Wand}}
+</li><li> {{:Blood Runed Short Sword}}
+</li><li> {{:Fang of the Garou}}
+</li><li> {{:Spirit Reaver}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 7 to 12 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 13
+| range = 200
+| casting_time = 1.5
+| fizzle_time = 1.5
+| recast_time = 1.5
+| duration = Instant
+| target_type = Lifetap
+| spell_type = Detrimental
+| resist = Magic (-200)
+
+| msg_cast_on_you = You feel your life force drain away.
+| msg_cast_on_other = Someone  staggers.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

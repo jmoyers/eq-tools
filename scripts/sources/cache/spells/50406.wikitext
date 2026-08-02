@@ -1,0 +1,36 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Elemental Maelstrom
+| spellicon = 162
+| description = Surrounds your target in an elemental maelstrom, causing 250 damage initially, and 69 damage every six seconds for 30s.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = * [[Magician]] - Level 43
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 250| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Hitpoints by 70 per tick| simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 87
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = 6 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your skin tears as bolts of elemental power strike you.
+| msg_cast_on_other = Someone 's skin shreds and tears as bolts of elemental power strike.
+| msg_wears_off = The elemental storm departs.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Magician#Spell Vendors|Magician Spell Vendors]]</li>
+</ul>
+}}

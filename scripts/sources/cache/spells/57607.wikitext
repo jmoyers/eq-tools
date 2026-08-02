@@ -1,0 +1,40 @@
+<noinclude>{{Classic Era}}</noinclude>{{Spellpagesmart|
+
+| spellname = Mana Ignition
+| spellicon = 569
+| description = Ignites the raw mana between you and your target, causing 400 damage and knocking the target, and yourself, back. This damage is incredibly difficult to resist.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+| classes = 
+
+* [[Wizard]] - Level 44
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Decrease Hitpoints by 400 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Pushback_Target (30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Pushback_Caster (30) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 200
+| range = 50
+| casting_time = 2.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Chromatic (-200)
+
+| msg_cast_on_you = A sudden flare of cosmic energy pierces your defenses.
+| msg_cast_on_other = Target is pierced by cosmic energy.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[New Sebilis Expedition]] | [[Defector Jabitzu]] | Wizard Spell Vendor | 147, -95, -21 }}
+}}
+}}

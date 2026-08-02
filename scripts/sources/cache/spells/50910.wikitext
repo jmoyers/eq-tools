@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Wave of Flame
+| spellicon = C
+| description = Cast by [[Lord Kreizenn]] in ToV. Note zero duration stun interrupts CH.  Wave of Flame checks against '''svCold''' not svFire.  This was patched on Live (11/11/2016) well after Velious Era.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Hitpoints by 250 }}
+{{SpellSlotRow | 3 | Stun for 0.0 seconds }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Cold (-100)
+
+| msg_cast_on_you = You feel your skin burn.
+| msg_cast_on_other = Someone 's skin burns.
+| msg_wears_off =  
+}}
+
+[[Category:NPC Only Spells]]

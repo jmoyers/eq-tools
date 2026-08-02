@@ -1,0 +1,51 @@
+:''Were you looking for [[Deadeye (NPC)]]?''
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Deadeye
+| spellicon = 86
+| description = Allows your eyes the vision of the dead, providing night vision and the ability to see invisible creatures.
+
+| classes = 
+
+* [[Necromancer]] - Level 5
+* [[Shadowknight]] - Level 17
+
+| items_with_effect = 
+
+<ul><li> {{:Atramentous Shield}}
+</li><li> {{:Blood Ember Helm}}
+</li><li> {{:Eye of Shadow}}
+</li><li> {{:Fright Forged Helm}}
+</li><li> {{:Harvester}}
+</li><li> {{:Icicle Tunic}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | See Invisible(1) }}
+{{SpellSlotRow | 2 | Infravision(1) }}
+
+| skill = [[Skill Divination | Divination]]
+
+| mana = 35
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your vision shifts.
+| msg_cast_on_other = Someone 's eyes glow red.
+| msg_wears_off = Your vision returns to normal.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

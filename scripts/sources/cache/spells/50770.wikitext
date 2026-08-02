@@ -1,0 +1,45 @@
+{{Spellpage|
+
+| spellname = Ykesha
+| spellicon = C
+| description = This DD proc will interrupt spells and cause 475 hate.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 75 }}
+{{SpellSlotRow | 2 | Stun for 0.0 seconds }}
+
+| items_with_effect = 
+
+<ul><li>  {{:Short Sword of the Ykesha}}
+</li><li> {{:Scimitar of the Ykesha}}
+</li><li> {{:Throneblade of the Ykesha}}
+</li><li> {{:Ringed Mace of the Ykesha}}
+</li><li> {{:Dragon Horn Ykesha}}
+</li><li> {{:Acid Etched War Sword}}
+</li><li> {{:Ykeshan Broad Axe}}
+</li><li> {{:Ykeshan War Club}}
+</li></ul>
+
+| skill = 
+| mana = 0
+| range = 200
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You have been struck by the force of Ykesha.
+| msg_cast_on_other = Someone  has been struck by the force of Ykesha.           
+| msg_wears_off =                
+
+}}
+
+[[Category:NPC Only Spells]]

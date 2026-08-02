@@ -1,0 +1,40 @@
+{{Kunark Era}}{{Spellpage|
+
+| spellname = Skin of the Shadow
+| spellicon = B
+| description = Covers your body in the skin of the shadow, granting invisibility and improved night vision. Only usable at night. Fixed duration invisibility, similar to Improved Invisibility provided to other caster classes. 
+
+| classes = 
+
+* [[Necromancer]] - Level 55
+
+| slots = 
+
+{{SpellSlotRow | 1 | Invisibility(1) }}
+{{SpellSlotRow | 2 | Increase Magnification by 115% }}
+{{SpellSlotRow | 3 | Ultravision(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 85
+| range =  
+| casting_time = 3.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 17.5 minutes @L55 to 20.5 minutes @L65
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| msg_cast_on_you = Your skin becomes shadow.
+| msg_cast_on_other = Someone 's skin turns to shadow.
+| msg_wears_off = Your skin returns to normal.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[The Overthere]] | [[Finlay Kitoran]] | Outpost | (2770,2367) }}
+{{SpellWhereRow  | [[Cabilis|West Cabilis]] | [[Lithrise Frizen]] | Building SE of Necromancer Guild | (170,660) }}
+}}
+
+}}

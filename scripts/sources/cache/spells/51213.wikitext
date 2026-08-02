@@ -1,0 +1,35 @@
+{{Spellpage|
+
+| spellname = Mud
+| spellicon = G
+
+| description = Blindness
+
+This is a blindness spell used by [[a muddite elder]] and [[a muddite minor]], it has a chance to be applied when struck in combat by these NPCs.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 1 | Blindness (-1) }}
+
+| skill = 
+| mana = 0
+| range = 24
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 2 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You have mud in your eyes.
+| msg_cast_on_other = Soandso gets mud in their eyes.
+| msg_wears_off = You wipe the mud away.
+
+}}
+
+[[Category: NPC Only Spells]]

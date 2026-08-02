@@ -1,0 +1,43 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Winter's Roar
+| spellicon = 56
+| description = Creates a rift of bitter cold, causing 246 damage to your target.
+
+| classes = 
+
+* [[Shaman]] - Level 33
+
+| items_with_effect = 
+
+<ul><li>  {{:Barbarian Spiritist`s Hammer}}
+</li><li> {{:Jaundiced Bone Bracer}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Decrease Hitpoints by 251 (L34) to 263 (L40) }}
+
+| skill = [[Skill Evocation | Evocation]]
+
+| mana = 116
+| range = 200
+| casting_time = 3.50
+| fizzle_time = 2.50
+| recast_time = 1.50
+| duration = Instant
+| target_type = Single
+| spell_type = Detrimental
+| resist = Cold (0)
+
+| msg_cast_on_you = You stagger as spirits of frost slam against you.
+| msg_cast_on_other = Someone  staggers as spirits of frost slam against them.
+| msg_wears_off =  
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shaman#Spell Vendors|Shaman Spell Vendors]]</li>
+</ul>
+}}

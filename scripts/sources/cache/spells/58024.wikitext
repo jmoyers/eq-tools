@@ -1,0 +1,41 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Scream of Hate
+| spellicon = 3
+| description = Consumes your target in a wave of hatred, lowering their attack rating and increasing yours.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes =
+
+* [[Shadow Knight]] - Level 15
+
+| items_with_effect =
+
+| slots =
+
+{{SpellSlotRowSmart | 7 | Decrease ATK by 8 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 85
+| range = 200
+| casting_time = 1.50
+| fizzle_time =
+| recast_time = 6.00
+| duration = 10 Min
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic
+
+| msg_cast_on_you = You feel a gut-wrenching hatred.
+| msg_cast_on_other =  is washed over by a wave of shadows.
+| msg_wears_off = The hatred departs.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

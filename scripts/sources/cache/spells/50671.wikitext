@@ -1,0 +1,42 @@
+{{Spellpagesmart|
+
+| spellname = Selo's Consonant Chain
+| spellicon = A
+| description = This song engulfs your target in magical bonds, slowing their movement and attack speed.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 23
+
+| slots = 
+
+{{SpellSlotRowSmart | 2 | Decrease Movement Speed by 30% | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 3 | Decrease Attack Speed by 16% (L23) to 35% (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | Enhanced by instrument? | '''Yes (attack speed unaffected)''' | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Singing | Singing]]
+
+| mana = 0
+| range = 150
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 3 ticks
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = Your voice binds chords into chains.
+| msg_cast_on_other = Someone  is surrounded by chains of music.
+| msg_wears_off = The musical chains fade.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Highpass Keep|High Keep]] | [[Justin Ryhmes]] | First Floor | (62,-218) }}
+}}
+| TableLocations = Highkeep
+| TableEra = Classic
+}}

@@ -1,0 +1,49 @@
+{{Classic Era}}
+{{Spellpagesmart|
+
+| spellname = Breath of the Dead
+| spellicon = 20
+| description = Allows your metabolism to function without oxygen, allowing you to survive without air. Consumes a handful of fish scales to cast.
+
+| classes = 
+
+* [[Shadow Knight]] - Level 45
+* [[Necromancer]] - Level 21
+
+| items_with_effect = 
+
+<ul><li> {{:Aqualung}}
+</li></ul>
+<ul><li> {{:Zombie Flesh Bracer}}
+</li></ul>
+| slots = 
+
+{{SpellSlotRow | 1 | Water Breathing(1) }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 45
+| range =  
+| casting_time = 2.50
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = Permanent
+| target_type = Self
+| spell_type = Beneficial
+| resist = Unresistable
+
+| other = 
+
+* '''Reagent:''' Fish Scales
+
+| msg_cast_on_you = You feel your heart stop beating.
+| msg_cast_on_other = Someone  stops breathing.
+| msg_wears_off = You resume breathing.
+
+| where_to_obtain = 
+
+<ul>
+<li>[[Necromancer#Spell Vendors|Necromancer Spell Vendors]]</li>
+<li>[[Shadow Knight#Spell Vendors|Shadow Knight Spell Vendors]]</li>
+</ul>
+}}

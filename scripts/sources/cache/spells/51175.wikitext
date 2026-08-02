@@ -1,0 +1,47 @@
+{{Spellpagesmart|
+
+| spellname = Solon's Bravura
+| spellicon = D
+| description = A bewitching melody that charms the target, allowing you to command it.
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Bard]] - Level 39
+
+| slots = 
+
+{{SpellSlotRowSmart | 1 | Charm up to level 51 | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 2 | Decrease Magic Resist by 5 (L39) to 8 (L60) | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 99 | Requires: 20 Mana | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} | HideFromMainPage = 1 }}
+
+| skill = [[Skill Wind | Wind]]
+
+| mana = 20
+| range = 200
+| casting_time = 3.00
+| fizzle_time = 0.00
+| recast_time = 0.00
+| duration = 18 seconds
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| other = 
+
+* '''Reagent:''' Wooden Flute
+
+| msg_cast_on_you = You are captivated by the bewitching tune.
+| msg_cast_on_other = Someone 's eyes glaze over.
+| msg_wears_off = You are no longer captivated.
+
+| where_to_obtain = 
+
+{{SpellWhereTable|
+{{SpellWhereRowB | [[Greater Faydark]] | [[Serilia Whistlewind]] | Kelethin Bard Guild | (-274,269) }}
+}}
+
+| TableLocations = Kelethin
+| TableEra = Kunark
+}}

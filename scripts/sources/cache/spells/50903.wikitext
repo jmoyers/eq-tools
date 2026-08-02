@@ -1,0 +1,33 @@
+{{Velious Era}}
+{{Spellpage|
+
+| spellname = Cloud of Fear
+| spellicon = G
+| description = This is a '''silence''', not a fear like the name would suggest. Cast by [[Lady Mirenilla]] and likely other ToV dragons as well.
+
+| classes = 
+
+This spell is cast by NPCs only.
+
+| slots = 
+
+{{SpellSlotRow | 2 | Silence }}
+{{SpellSlotRow | 3 | Decrease Hitpoints by 150 per tick }}
+
+| skill = 
+| mana = 0
+| range =  
+| casting_time = 0.00
+| fizzle_time = 0.00
+| recast_time = 12.00
+| duration = 1 ticks @L1 to 2 ticks @L2
+| target_type = PB AE
+| spell_type = Detrimental
+| resist = Magic (-100)
+
+| msg_cast_on_you = Your mind is wracked by fear.
+| msg_cast_on_other = Someone  looks very afraid.
+| msg_wears_off = You are no longer afraid.
+}}
+
+[[Category:NPC Only Spells]]

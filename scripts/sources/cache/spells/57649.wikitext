@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Spiritual Light
+| spellicon = 72
+| description = Envelops your target in an aura of spiritual light, increasing their mana, endurance and hit point regeneration.
+
+| Table = {{{Table|0}}}
+| TableLevel = {{{TableLevel|}}}
+
+| classes = 
+
+* [[Beastlord]] - Level 41
+
+| items_with_effect = 
+| slots = 
+
+{{SpellSlotRowSmart | 5 | Increase Mana by 3 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 8 | Increase Hit Points by 3 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+{{SpellSlotRowSmart | 9 | Increase Endurance by 3 per tick | simple = {{#ifeq:{{{Table|0}}}|0|0|1}} }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 200
+| casting_time = 5.00
+| fizzle_time = 1.50
+| recast_time = 1.50
+| duration = 45 minutes
+| target_type = Group
+| spell_type = Regen
+| resist = Unresistable
+
+| msg_cast_on_you = An aura of spiritual light envelops you.
+| msg_cast_on_other = Someone is enveloped by an aura of spiritual light.
+| msg_wears_off = The aura of light fades.
+
+| where_to_obtain = <ul><li>[[Beastlord#Spell Vendors|Beastlord Spell Vendors]]</li></ul>
+
+}}

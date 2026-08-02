@@ -1,0 +1,38 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Feedback
+| spellicon = M
+| description = Wraps your target in chaotic energy that damages anything that attacks them.
+
+| classes = * [[Enchanter]] - Level 25
+| items_with_effect = 
+
+<ul><li> {{:Earring of Blazing Energy}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 1 | Increase Damage Shield by 11 }}
+
+| skill = [[Skill Abjuration | Abjuration]]
+
+| mana = 75
+| range = 100
+| casting_time = 4.00
+| fizzle_time = 2.25
+| recast_time = 6.00
+| duration = 15 Min
+| target_type = Single Friendly (or Self)
+| spell_type = Beneficial
+| resist = Fire (0)
+
+| other = 
+
+| msg_cast_on_you = You are enveloped in blazing energy.
+| msg_cast_on_other = Someone  is enveloped in blazing energy.
+| msg_wears_off = The energy flames die down.
+
+| where_to_obtain = 
+
+}}

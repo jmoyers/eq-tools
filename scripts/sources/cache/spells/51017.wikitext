@@ -1,0 +1,37 @@
+{{Classic Era}}
+{{Spellpage|
+
+| spellname = Shiftless Deeds
+| spellicon = A
+| description = Constricts your target's muscles, causing their attack speed to slow for 3 min 30s.
+| classes = * [[Enchanter]] - Level 41
+| items_with_effect = 
+
+<ul><li> {{:Slowstone Amber}}
+</li><li> {{:Writ of Di`zok}}
+</li></ul>
+
+| slots = 
+
+{{SpellSlotRow | 2 | Decrease Attack Speed by 49% (L44) to 65% (L60) }}
+{{SpellSlotRow | 3 | Increase Disease Counter by 12 }}
+
+| skill = [[Skill Alteration | Alteration]]
+
+| mana = 200
+| range = 250
+| casting_time = 6.00
+| fizzle_time = 2.25
+| recast_time = 1.50
+| duration = 2 Min 30 Sec
+| target_type = Single
+| spell_type = Detrimental
+| resist = Magic (0)
+
+| msg_cast_on_you = You slow down.
+| msg_cast_on_other = Someone  slows down.
+| msg_wears_off = Your speed returns.
+
+| where_to_obtain = 
+
+}}
