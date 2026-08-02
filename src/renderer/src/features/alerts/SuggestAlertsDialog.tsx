@@ -22,7 +22,7 @@
 // the shared `suggest:illusion:fade`). An already-created suggestion renders as a checked,
 // disabled chip so re-opening the wizard shows what's done.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import {
   Box,
   Button,
@@ -80,14 +80,21 @@ export default function SuggestAlertsDialog({
     return () => clearTimeout(t)
   }, [open])
 
+  // Typing echoes immediately; filtering the 1,600+-spell catalog + re-rendering its
+  // rows consumes a DEFERRED query so a keystroke never blocks (Task #41).
+  const deferredQuery = useDeferredValue(query)
+
+  // Precompute a lowercase search key ONCE per catalog load (not per keystroke).
+  const keyed = useMemo(
+    () => (catalog ? catalog.entries.map((e) => ({ e, key: e.name.toLowerCase() })) : []),
+    [catalog]
+  )
+
   const filtered = useMemo(() => {
-    if (!catalog) return []
-    const q = query.trim().toLowerCase()
-    const rows = q
-      ? catalog.entries.filter((e) => e.name.toLowerCase().includes(q))
-      : catalog.entries
-    return rows.slice(0, MAX_ROWS)
-  }, [catalog, query])
+    const q = deferredQuery.trim().toLowerCase()
+    const rows = q ? keyed.filter((r) => r.key.includes(q)) : keyed
+    return rows.slice(0, MAX_ROWS).map((r) => r.e)
+  }, [keyed, deferredQuery])
 
   const create = useCallback(
     async (s: Suggestion) => {

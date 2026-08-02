@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import {
   Accordion,
   AccordionDetails,
@@ -37,6 +37,9 @@ import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 
 type SortKey = 'closest' | 'least-missing' | 'class'
+
+// How many Accordions to render before the "show more" cap kicks in.
+const PAGE = 40
 
 const SELECTED_CLASSES_KEY = 'eq.selectedClasses'
 
@@ -84,6 +87,9 @@ export default function PoskyView(): JSX.Element {
   const [hideNoItems, setHideNoItems] = useState(true)
   const [favoritesOnly, setFavoritesOnly] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
+  // Accordions are variable-height so we cap+paginate rather than window them; a
+  // keystroke never re-renders more than PAGE quests at once.
+  const [visibleCount, setVisibleCount] = useState(PAGE)
 
   const questHasFavorite = (q: QuestProgress): boolean => q.items.some((it) => isFavorite(it.name))
 
@@ -92,8 +98,12 @@ export default function PoskyView(): JSX.Element {
     localStorage.setItem(SELECTED_CLASSES_KEY, JSON.stringify(selectedClasses))
   }, [selectedClasses])
 
+  // Typing echoes immediately; the (accordion-rebuilding) filter consumes a deferred
+  // copy so a keystroke never blocks on re-rendering dozens of Accordions (Task #41).
+  const deferredQuery = useDeferredValue(query)
+
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
+    const q = deferredQuery.trim().toLowerCase()
     let list = quests
     if (selectedClasses.length) list = list.filter((x) => selectedClasses.includes(x.className))
     if (hideCompleted) list = list.filter((x) => !x.completed)
@@ -125,7 +135,12 @@ export default function PoskyView(): JSX.Element {
     sorted.sort((a, b) => Number(pinned(b)) - Number(pinned(a)))
     return sorted
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quests, selectedClasses, query, sort, hideCompleted, hideNoItems, favoritesOnly, isFavorite])
+  }, [quests, selectedClasses, deferredQuery, sort, hideCompleted, hideNoItems, favoritesOnly, isFavorite])
+
+  // Reset the page cap whenever the filtered set changes (a new search shows from top).
+  useEffect(() => {
+    setVisibleCount(PAGE)
+  }, [filtered])
 
   const onReload = async (): Promise<void> => setToast(await reloadInventory())
 
@@ -227,7 +242,7 @@ export default function PoskyView(): JSX.Element {
       )}
 
       <Box sx={{ flexGrow: 1, overflow: 'auto' }}>
-        {filtered.map((q) => (
+        {filtered.slice(0, visibleCount).map((q) => (
           <Accordion key={q.key} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Stack spacing={0.75} sx={{ width: '100%', pr: 2 }}>
@@ -354,6 +369,13 @@ export default function PoskyView(): JSX.Element {
             </AccordionDetails>
           </Accordion>
         ))}
+        {filtered.length > visibleCount && (
+          <Box sx={{ textAlign: 'center', py: 1.5 }}>
+            <Button variant="outlined" size="small" onClick={() => setVisibleCount((n) => n + PAGE)}>
+              Show more ({filtered.length - visibleCount} more)
+            </Button>
+          </Box>
+        )}
       </Box>
 
       <Snackbar

@@ -17,6 +17,24 @@ encounter history.
 - **Game log:** `C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest Legends\Logs\eqlog_<Char>_<server>.txt`.
   Active char during development: `Primitive` on `freeport`.
 
+## UI conventions
+
+- **Non-blocking search pattern (Task #41).** Every filterable surface (loot, posky,
+  suggest-alerts, sound-packs) follows the same recipe so typing never blocks the main
+  thread — these surfaces are RENDER-bound, not compute-bound (filtering 3.5k loot rows
+  is <1ms), so NO worker/DB is used; the cost is mounting MUI rows. (1) The input echoes
+  IMMEDIATELY from local state; the filter consumes a **`useDeferredValue`** copy of the
+  query (React renders the filtered result at low priority). (2) Searchable text is
+  lowercased into a cached **`searchKey` ONCE per data change** (a `useMemo` keyed on the
+  source array), never per keystroke — so the filter is a plain `.includes`. (3) Long
+  dense fixed-height lists are **windowed** via `src/renderer/src/lib/useWindowedRows.ts`
+  (a ~90-line dependency-free hook: container scrollTop → row slice + top/bottom spacer;
+  for a `<table>`, spacers are `<tr>` with a height-set full-colspan `<td>`, and rows are
+  pinned to `ROW_HEIGHT`). Variable-height surfaces (PoskyView's Accordions) **cap +
+  paginate** ("Show more") instead of windowing. Row components are `React.memo`'d with
+  stable props. Helpers: `lib/search.ts` (`normalizeQuery`, `withSearchKey`),
+  `lib/useWindowedRows.ts`. Follow this for any new searchable/large list.
+
 ## Toolchain gotchas (this machine)
 
 - **Node/npm/git are not on PATH** in fresh harness shells (the parent env is

@@ -8,7 +8,7 @@
 // caches (so the pack shows up in the alert sound pickers immediately) and notify
 // the parent to refresh its pack list.
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import {
   Alert,
   Box,
@@ -230,17 +230,26 @@ export default function SoundPacksDialog({
     setPlayingKey(ok ? k : null)
   }, [playingKey])
 
+  // Typing echoes immediately; filtering + re-rendering the pack list consumes a
+  // DEFERRED query so a keystroke never blocks (Task #41).
+  const deferredSearch = useDeferredValue(search)
+
+  // Precompute one lowercase search key per pack ONCE per pack-list change, so the
+  // per-keystroke filter is a single substring test (not 4 lowercasings × 350 packs).
+  const keyed = useMemo(
+    () =>
+      packs.map((p) => ({
+        p,
+        key: [p.display_name, p.name, p.description ?? '', p.categories.join(' ')].join(' ').toLowerCase()
+      })),
+    [packs]
+  )
+
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase()
+    const q = deferredSearch.trim().toLowerCase()
     if (!q) return packs
-    return packs.filter(
-      (p) =>
-        p.display_name.toLowerCase().includes(q) ||
-        p.name.toLowerCase().includes(q) ||
-        (p.description ?? '').toLowerCase().includes(q) ||
-        p.categories.some((c) => c.toLowerCase().includes(q))
-    )
-  }, [packs, search])
+    return keyed.filter((r) => r.key.includes(q)).map((r) => r.p)
+  }, [keyed, packs, deferredSearch])
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
