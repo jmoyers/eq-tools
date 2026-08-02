@@ -1,21 +1,14 @@
 import { useEffect, useState } from 'react'
 import {
-  AppBar,
   Box,
-  Chip,
   CssBaseline,
   Drawer,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
-  MenuItem,
-  Select,
   Snackbar,
-  Alert,
-  Toolbar,
-  Typography
+  Alert
 } from '@mui/material'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
@@ -23,11 +16,12 @@ import Inventory2Icon from '@mui/icons-material/Inventory2'
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
-import CircleIcon from '@mui/icons-material/Circle'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
 import type { CharacterRef } from '@shared/types'
+import TitleBar from './components/TitleBar'
+import UpdateToast, { UpdateChannelSelector } from './components/UpdateToast'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import InventoryView from './features/inventory/InventoryView'
@@ -54,17 +48,6 @@ const KNOWN_VIEWS: View[] = ['posky', 'inventory', 'loot', 'leveling', 'bosses',
 function loadView(): View {
   const v = localStorage.getItem(VIEW_KEY)
   return v && (KNOWN_VIEWS as string[]).includes(v) ? (v as View) : DEFAULT_VIEW
-}
-
-function lastPlayed(ms?: number): string {
-  if (!ms) return ''
-  const secs = Math.max(0, (Date.now() - ms) / 1000)
-  if (secs < 90) return 'just now'
-  const mins = secs / 60
-  if (mins < 90) return `${Math.round(mins)}m ago`
-  const hrs = mins / 60
-  if (hrs < 36) return `${Math.round(hrs)}h ago`
-  return `${Math.round(hrs / 24)}d ago`
 }
 
 export default function App(): JSX.Element {
@@ -125,123 +108,113 @@ export default function App(): JSX.Element {
   const viewKey = `${character?.logPath ?? 'none'}#${rebuild}`
 
   return (
-    <Box sx={{ display: 'flex', height: '100vh' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
       <CssBaseline />
-      <AppBar position="fixed" sx={{ zIndex: (t) => t.zIndex.drawer + 1 }} color="default" elevation={0}>
-        <Toolbar variant="dense" sx={{ gap: 2 }}>
-          <Typography variant="h6" sx={{ color: 'primary.main' }}>
-            EQ Legends Companion
-          </Typography>
-          <Box sx={{ flexGrow: 1 }} />
-          {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
-          {characters.length > 0 ? (
-            <Select
-              size="small"
-              value={character?.logPath ?? ''}
-              onChange={(e) => void onSelectCharacter(e.target.value)}
-              sx={{ minWidth: 220 }}
-              renderValue={(v) => {
-                const c = characters.find((x) => x.logPath === v)
-                return c ? `${c.name} · ${c.server}` : 'Select character'
-              }}
-            >
-              <ListSubheader>Characters — most recently played</ListSubheader>
-              {characters.map((c) => (
-                <MenuItem key={c.logPath} value={c.logPath}>
-                  <Box>
-                    <Typography variant="body2">
-                      {c.name} · {c.server}
-                    </Typography>
-                    <Typography variant="caption" color="text.secondary">
-                      last played {lastPlayed(c.lastPlayed)}
-                    </Typography>
-                  </Box>
-                </MenuItem>
-              ))}
-            </Select>
-          ) : (
-            <Chip size="small" color="warning" label="No log detected" variant="outlined" />
-          )}
-        </Toolbar>
-      </AppBar>
 
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: DRAWER_WIDTH,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': { width: DRAWER_WIDTH, boxSizing: 'border-box' }
-        }}
-      >
-        <Toolbar variant="dense" />
-        <List>
-          <ListItemButton selected={view === 'posky'} onClick={() => setView('posky')}>
-            <ListItemIcon>
-              <ShieldMoonIcon />
-            </ListItemIcon>
-            <ListItemText primary="Plane of Sky" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'inventory'} onClick={() => setView('inventory')}>
-            <ListItemIcon>
-              <Inventory2Icon />
-            </ListItemIcon>
-            <ListItemText primary="Inventory" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
-            <ListItemIcon>
-              <ReceiptLongIcon />
-            </ListItemIcon>
-            <ListItemText primary="Loot" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
-            <ListItemIcon>
-              <EmojiEventsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Raid Targets" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
-            <ListItemIcon>
-              <TrendingUpIcon />
-            </ListItemIcon>
-            <ListItemText primary="Leveling" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
-            <ListItemIcon>
-              <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Combat" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
-            <ListItemIcon>
-              <AutoFixHighIcon />
-            </ListItemIcon>
-            <ListItemText primary="Buffs" />
-          </ListItemButton>
-          <ListItemButton selected={view === 'alerts'} onClick={() => setView('alerts')}>
-            <ListItemIcon>
-              <NotificationsActiveIcon />
-            </ListItemIcon>
-            <ListItemText primary="Alerts" />
-          </ListItemButton>
-        </List>
-      </Drawer>
+      {/* The single frameless title bar: brand + live dot + character selector +
+          window min/max/close buttons. Replaces the OS chrome AND the old AppBar. */}
+      <TitleBar
+        live={live}
+        character={character}
+        characters={characters}
+        onSelectCharacter={(logPath) => void onSelectCharacter(logPath)}
+      />
 
-      <Box component="main" sx={{ flexGrow: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-        <Toolbar variant="dense" />
-        <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-          {view === 'posky' && <PoskyView key={viewKey} />}
-          {view === 'inventory' && <InventoryView key={viewKey} />}
-          {view === 'loot' && <LootView key={viewKey} />}
-          {view === 'bosses' && <BossView key={viewKey} />}
-          {view === 'leveling' && <LevelingView key={viewKey} />}
-          {view === 'combat' && <CombatView key={viewKey} />}
-          {view === 'buffs' && <BuffsView key={viewKey} />}
-          {view === 'alerts' && <AlertsView key={viewKey} />}
+      {/* Everything below the bar: nav drawer + main content, side by side. */}
+      <Box sx={{ display: 'flex', flexGrow: 1, minHeight: 0 }}>
+        <Drawer
+          variant="permanent"
+          sx={{
+            width: DRAWER_WIDTH,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: DRAWER_WIDTH,
+              boxSizing: 'border-box',
+              // Frameless: the drawer is a normal in-flow child now (no fixed OS bar
+              // above it), so it fills the space under the title bar. `position:
+              // relative` + `height: 100%` keeps it inside the flex row.
+              position: 'relative',
+              height: '100%',
+              borderTop: 'none'
+            }
+          }}
+        >
+          <List>
+            <ListItemButton selected={view === 'posky'} onClick={() => setView('posky')}>
+              <ListItemIcon>
+                <ShieldMoonIcon />
+              </ListItemIcon>
+              <ListItemText primary="Plane of Sky" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'inventory'} onClick={() => setView('inventory')}>
+              <ListItemIcon>
+                <Inventory2Icon />
+              </ListItemIcon>
+              <ListItemText primary="Inventory" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
+              <ListItemIcon>
+                <ReceiptLongIcon />
+              </ListItemIcon>
+              <ListItemText primary="Loot" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
+              <ListItemIcon>
+                <EmojiEventsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Raid Targets" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
+              <ListItemIcon>
+                <TrendingUpIcon />
+              </ListItemIcon>
+              <ListItemText primary="Leveling" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
+              <ListItemIcon>
+                <BarChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Combat" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
+              <ListItemIcon>
+                <AutoFixHighIcon />
+              </ListItemIcon>
+              <ListItemText primary="Buffs" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'alerts'} onClick={() => setView('alerts')}>
+              <ListItemIcon>
+                <NotificationsActiveIcon />
+              </ListItemIcon>
+              <ListItemText primary="Alerts" />
+            </ListItemButton>
+          </List>
+          <Box sx={{ mt: 'auto', p: 1.5, borderTop: 1, borderColor: 'divider' }}>
+            <UpdateChannelSelector />
+          </Box>
+        </Drawer>
+
+        <Box
+          component="main"
+          sx={{ flexGrow: 1, minWidth: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+        >
+          <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
+            {view === 'posky' && <PoskyView key={viewKey} />}
+            {view === 'inventory' && <InventoryView key={viewKey} />}
+            {view === 'loot' && <LootView key={viewKey} />}
+            {view === 'bosses' && <BossView key={viewKey} />}
+            {view === 'leveling' && <LevelingView key={viewKey} />}
+            {view === 'combat' && <CombatView key={viewKey} />}
+            {view === 'buffs' && <BuffsView key={viewKey} />}
+            {view === 'alerts' && <AlertsView key={viewKey} />}
+          </Box>
         </Box>
       </Box>
 
       {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
       <AlertPlayer />
+      {/* Always-mounted: "update ready — restart" toast (no-op in dev). */}
+      <UpdateToast />
 
       <Snackbar
         open={!!defeatToast}

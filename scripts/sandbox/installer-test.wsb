@@ -1,0 +1,43 @@
+<Configuration>
+  <!--
+    Windows Sandbox harness for a CLEAN-MACHINE installer test (Task #25).
+
+    Requires Windows Sandbox (Windows 11 Pro/Enterprise): enable once with
+      Enable-WindowsOptionalFeature -Online -FeatureName 'Containers-DisposableClientVM' -All
+    then reboot. (Not currently enabled on this dev machine — this harness is
+    ready-to-run once it is.)
+
+    What it does: maps this repo's release/ folder read-only into the sandbox and
+    a results/ folder read-write, then on logon runs installer-test.ps1 which
+    silent-installs the newest eq-tools-Setup-*.exe, verifies the install path +
+    Start-menu shortcut + that the app process starts, and writes PASS/FAIL +
+    details to results\result.txt. The sandbox is disposable — nothing touches
+    the host except the mapped results file.
+
+    Run:  double-click this .wsb (or `WindowsSandbox scripts\sandbox\installer-test.wsb`).
+    Read: scripts\sandbox\results\result.txt after it finishes.
+
+    NOTE: HostFolder paths must be ABSOLUTE. They're written for this repo's
+    location (C:\Users\jmoye\eq-tools); adjust if the repo moves.
+  -->
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\Users\jmoye\eq-tools\release</HostFolder>
+      <SandboxFolder>C:\release</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Users\jmoye\eq-tools\scripts\sandbox</HostFolder>
+      <SandboxFolder>C:\harness</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Users\jmoye\eq-tools\scripts\sandbox\results</HostFolder>
+      <SandboxFolder>C:\results</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>powershell.exe -ExecutionPolicy Bypass -NoProfile -File C:\harness\installer-test.ps1</Command>
+  </LogonCommand>
+</Configuration>

@@ -12,6 +12,9 @@
     "start": "electron-vite dev",
     "scrape:posky": "tsx scripts/scrape-posky.ts",
     "scrape:bosses": "tsx scripts/scrape-bosses.ts",
+    "fetch:packs": "tsx scripts/fetch-packs.mts",
+    "gen:icon": "tsx scripts/gen-icon.mts",
+    "gen:sounds": "tsx scripts/gen-sounds.mts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",
@@ -26,6 +29,7 @@
     "@mui/x-data-grid": "^7.22.2",
     "chokidar": "^4.0.1",
     "electron-store": "^8.2.0",
+    "electron-updater": "^6.8.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

@@ -44,6 +44,23 @@ export const IPC = {
   listSoundPacks: 'sounds:listPacks',
   getSoundData: 'sounds:getData',
 
+  // ---- frameless window controls (Task #23) ----
+  // renderer -> main: title-bar buttons drive the (frameless) native window.
+  windowMinimize: 'window:minimize',
+  windowToggleMaximize: 'window:toggleMaximize',
+  windowClose: 'window:close',
+  // main -> renderer: maximize state changed (bool) so the max/restore icon swaps.
+  onWindowMaximized: 'window:maximized',
+
+  // ---- auto-update (Task #27) ----
+  // main -> renderer: push update lifecycle {state, version?, percent?, message?}.
+  onUpdateStatus: 'update:status',
+  // renderer -> main: apply the downloaded update now (quit + install + relaunch).
+  installUpdate: 'update:install',
+  // renderer <-> main: read/select the release channel ('main' | 'stable').
+  getUpdateChannel: 'update:getChannel',
+  setUpdateChannel: 'update:setChannel',
+
   // ---- misc pushes ----
   onLine: 'log:line',
   onCharacter: 'log:character',

@@ -401,3 +401,23 @@ export interface ProgressState {
   /** metadata about the last inventory load */
   inventorySource?: { path: string; loadedAt: string }
 }
+
+// ----- Auto-update (Task #27) -----
+
+/**
+ * Release channel the auto-updater tracks:
+ * - 'main'   : bleeding edge — every push to main publishes a prerelease here
+ * - 'stable' : only tagged `v*` releases (the `latest` electron-updater channel)
+ */
+export type UpdateChannel = 'main' | 'stable'
+
+/**
+ * Update lifecycle pushed over `update:status` (main -> renderer). `percent` is
+ * present while downloading; `version` once known; `message` on error.
+ */
+export interface UpdateStatus {
+  state: 'idle' | 'checking' | 'available' | 'downloading' | 'ready' | 'error'
+  version?: string
+  percent?: number
+  message?: string
+}

@@ -1,5 +1,5 @@
 import Store from 'electron-store'
-import type { AlertDef, AlertPrefs, HeldCounts, ProgressState } from '../shared/types'
+import type { AlertDef, AlertPrefs, HeldCounts, ProgressState, UpdateChannel } from '../shared/types'
 
 const emptyProgress: ProgressState = {
   inventory: {},
@@ -25,6 +25,8 @@ interface StoreShape {
   alerts?: AlertDef[]
   /** alerts extension: global sound preferences */
   alertPrefs?: AlertPrefs
+  /** auto-update release channel (Task #27): 'main' (bleeding edge) | 'stable' */
+  updateChannel?: UpdateChannel
 }
 
 const store = new Store<StoreShape>({
@@ -77,6 +79,20 @@ export function getActiveLogPath(): string | undefined {
 
 export function setActiveLogPath(logPath: string): void {
   store.set('activeLogPath', logPath)
+}
+
+// ----- Auto-update channel (Task #27) -----
+
+/** Default channel: 'main' — the bleeding-edge stream CI publishes on every push. */
+export function getUpdateChannel(): UpdateChannel {
+  const c = store.get('updateChannel')
+  return c === 'stable' ? 'stable' : 'main'
+}
+
+export function setUpdateChannel(channel: UpdateChannel): UpdateChannel {
+  const next: UpdateChannel = channel === 'stable' ? 'stable' : 'main'
+  store.set('updateChannel', next)
+  return next
 }
 
 // ----- Alerts extension (Task #18) -----

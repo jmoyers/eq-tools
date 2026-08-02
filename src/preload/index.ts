@@ -13,10 +13,12 @@ import type {
   SoundPack
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
+import type { UpdateChannel, UpdateStatus } from '../shared/types'
 
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack }
+export type { UpdateChannel, UpdateStatus }
 
 export interface ReloadInventoryResult {
   ok: boolean
@@ -113,6 +115,32 @@ const api = {
     const listener = (): void => cb()
     ipcRenderer.on(IPC.onCombatActivity, listener)
     return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
+  },
+
+  // ---- auto-update (Task #27) ----
+  /** Subscribe to update lifecycle pushes (checking/available/downloading/ready/error). */
+  onUpdateStatus: (cb: (s: UpdateStatus) => void): (() => void) => {
+    const listener = (_e: unknown, s: UpdateStatus): void => cb(s)
+    ipcRenderer.on(IPC.onUpdateStatus, listener)
+    return () => ipcRenderer.removeListener(IPC.onUpdateStatus, listener)
+  },
+  /** Apply the downloaded update now (quit + install + relaunch). */
+  installUpdate: (): Promise<void> => ipcRenderer.invoke(IPC.installUpdate),
+  /** Read the current release channel. */
+  getUpdateChannel: (): Promise<UpdateChannel> => ipcRenderer.invoke(IPC.getUpdateChannel),
+  /** Select a release channel (re-checks immediately). Returns the applied channel. */
+  setUpdateChannel: (channel: UpdateChannel): Promise<UpdateChannel> =>
+    ipcRenderer.invoke(IPC.setUpdateChannel, channel),
+
+  // ---- frameless window controls (Task #23) ----
+  minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),
+  toggleMaximizeWindow: (): void => ipcRenderer.send(IPC.windowToggleMaximize),
+  closeWindow: (): void => ipcRenderer.send(IPC.windowClose),
+  /** Subscribe to maximize/unmaximize so the title bar can swap the max/restore icon. */
+  onWindowMaximized: (cb: (maximized: boolean) => void): (() => void) => {
+    const listener = (_e: unknown, maximized: boolean): void => cb(maximized)
+    ipcRenderer.on(IPC.onWindowMaximized, listener)
+    return () => ipcRenderer.removeListener(IPC.onWindowMaximized, listener)
   },
 
   /**

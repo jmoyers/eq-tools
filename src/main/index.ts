@@ -20,6 +20,7 @@ import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import type { ModuleDelta } from './modules/types'
 import { getSoundData, listPacks } from './sounds'
+import { initUpdater } from './updater'
 import {
   deleteAlert,
   getActiveLogPath,
@@ -134,6 +135,11 @@ function createWindow(): void {
     minWidth: 900,
     minHeight: 600,
     show: false,
+    // Frameless (Task #23): the OS chrome is replaced by an in-app React title bar
+    // (see App.tsx / TitleBar). Windows still gives us native resize edges and
+    // native drag/double-click-maximize via -webkit-app-region on the bar. Keep
+    // backgroundColor + min sizes + bounds so the rest of the window UX is intact.
+    frame: false,
     title: 'EQ Legends Companion',
     backgroundColor: '#0f1115',
     webPreferences: {
@@ -144,6 +150,18 @@ function createWindow(): void {
   })
 
   mainWindow.on('ready-to-show', () => mainWindow?.show())
+
+  // Frameless title bar (Task #23): push maximize state so the React max/restore
+  // button can swap its icon. Sent on every transition + once at first paint.
+  const pushMaximized = (): void => {
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.webContents.send(IPC.onWindowMaximized, mainWindow.isMaximized())
+    }
+  }
+  mainWindow.on('maximize', pushMaximized)
+  mainWindow.on('unmaximize', pushMaximized)
+  // Give the renderer its initial state once the page is ready to receive it.
+  mainWindow.webContents.on('did-finish-load', pushMaximized)
 
   // --- webContents error capture (Task #13) ---
   // Each of these would otherwise leave a blank window with no console trace.
@@ -394,6 +412,18 @@ function registerIpc(): void {
     getSoundData(packId, soundId)
   )
 
+  // ---- frameless window controls (Task #23) ----
+  // The React title bar (App.tsx) drives the native window: these mirror the
+  // OS min/max/close chrome we removed with `frame: false`. `ipcMain.on` matches
+  // the preload's fire-and-forget `send`.
+  ipcMain.on(IPC.windowMinimize, () => mainWindow?.minimize())
+  ipcMain.on(IPC.windowToggleMaximize, () => {
+    if (!mainWindow) return
+    if (mainWindow.isMaximized()) mainWindow.unmaximize()
+    else mainWindow.maximize()
+  })
+  ipcMain.on(IPC.windowClose, () => mainWindow?.close())
+
   // Fire-and-forget renderer error reports (window.onerror / unhandledrejection /
   // React ErrorBoundary). `ipcMain.on` (not handle) matches the preload's `send`.
   ipcMain.on(IPC.reportError, (_e, report: { message: string; stack?: string; source: string }) => {
@@ -402,16 +432,35 @@ function registerIpc(): void {
   })
 }
 
-app.whenReady().then(() => {
-  console.log(`[eq-tools] Error log: ${errorLogPath()}`)
-  registerIpc()
-  createWindow()
-  void startTailing()
-
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+// Single-instance lock (Task #23): a second launch (e.g. re-running the installed
+// app, or an auto-update restart) must not spin up a second window tailing the same
+// log. If we don't get the lock, quit immediately; the primary instance receives a
+// `second-instance` event and focuses/restores its existing window instead.
+const gotSingleInstanceLock = app.requestSingleInstanceLock()
+if (!gotSingleInstanceLock) {
+  app.quit()
+} else {
+  app.on('second-instance', () => {
+    if (!mainWindow) return
+    if (mainWindow.isMinimized()) mainWindow.restore()
+    mainWindow.show()
+    mainWindow.focus()
   })
-})
+
+  app.whenReady().then(() => {
+    console.log(`[eq-tools] Error log: ${errorLogPath()}`)
+    registerIpc()
+    createWindow()
+    void startTailing()
+    // Auto-update (Task #27): checks GitHub Releases on the selected channel;
+    // no-ops in dev. getMainWindow is lazy so status pushes hit the live window.
+    initUpdater(() => mainWindow)
+
+    app.on('activate', () => {
+      if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+  })
+}
 
 app.on('window-all-closed', () => {
   void tailer?.stop()

@@ -1,0 +1,1 @@
+# installer-test.ps1 writes result.txt here (mapped read-write into the sandbox).

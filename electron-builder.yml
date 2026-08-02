@@ -1,6 +1,6 @@
 appId: com.jmoyers.eqtools
 productName: EQ Legends Companion
-copyright: Copyright © 2026 jmoyers
+copyright: Copyright © 2026 Josh Moyers
 
 directories:
   buildResources: build
@@ -17,23 +17,37 @@ files:
 asarUnpack:
   - resources/**
 
+# Auto-update + release hosting: electron-updater pulls from GitHub Releases of
+# this repo. The CI workflows (.github/workflows) publish here; the app reads
+# latest*.yml from the same owner/repo. `channel` is per-release (main vs latest).
+publish:
+  provider: github
+  owner: jmoyers
+  repo: eq-tools
+
 win:
   target:
     - target: nsis
       arch:
         - x64
-  # We don't code-sign; skipping sign+rcedit avoids the winCodeSign toolchain,
-  # which can't extract on Windows without symlink privilege (Developer Mode).
-  signAndEditExecutable: false
-  # Provide build/icon.ico to brand the app; a default icon is used otherwise.
+  # Brand the exe + installer with our generated mark (scripts/gen-icon.mts).
+  icon: build/icon.ico
+  # We sign+edit the exe so it carries the icon + version metadata (rcedit). This
+  # needs winCodeSign extracted into the electron-builder cache; on Windows that
+  # requires either Developer Mode (symlink privilege) OR the manual cache-seed
+  # workaround (see scripts/seed-wincodesign.ps1). The exe is still UNSIGNED — we
+  # have no code-signing cert, so SmartScreen will warn on first run (see README).
+  signAndEditExecutable: true
 
-# One-click installer: double-click, it installs and launches. Friendly for
-# distributing to friends who don't want an install wizard.
+# One-click installer (Discord model): double-click installs per-user under
+# %LOCALAPPDATA%\Programs (no UAC prompt), then launches. Friendly for friends
+# who don't want an install wizard. Uninstall keeps app data (settings/logs).
 nsis:
   oneClick: true
   perMachine: false
   runAfterFinish: true
+  deleteAppDataOnUninstall: false
   createDesktopShortcut: true
   createStartMenuShortcut: true
   shortcutName: EQ Legends Companion
-  artifactName: ${productName}-Setup-${version}.${ext}
+  artifactName: eq-tools-Setup-${version}.${ext}

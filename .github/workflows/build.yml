@@ -1,0 +1,98 @@
+# Build + publish the Windows installer (Tasks #26/#27).
+#
+# TWO TRIGGERS, TWO CHANNELS — one job, branched by ref:
+#
+#   push to `main`      → channel 'main'   : a GitHub *prerelease* on every push.
+#                         Version is stamped to `<pkg>-main.<run_number>` (a valid
+#                         semver prerelease) so electron-updater's 'main' channel
+#                         sees each build as newer. Users on the default 'main'
+#                         channel auto-update to the latest push.
+#
+#   push tag `v*`       → channel 'latest' : a full (non-prerelease) GitHub release,
+#                         version = the tag (no suffix). Users on 'stable' get these.
+#
+# electron-builder publishes to this repo's Releases via GITHUB_TOKEN (the publish
+# block in electron-builder.yml points at jmoyers/eq-tools). No extra secrets — the
+# app is UNSIGNED (no code-signing cert configured), which is intentional for now.
+#
+# The `channel` electron-builder writes into latest*.yml is controlled by
+# EP_PRE_RELEASE + the generateUpdatesFilesForAllChannels/nsis `channel` — we set it
+# explicitly per branch below via the `--config` overrides.
+
+name: build
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write # needed to create/update GitHub Releases
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      # --- MAIN CHANNEL (push to main): stamp a prerelease version + publish ---
+      # electron-updater needs a semver-newer version each push. We rewrite
+      # package.json's version to `<base>-main.<run_number>` in CI ONLY (never
+      # committed) and publish on the 'main' channel as a GitHub prerelease.
+      - name: Stamp main-channel prerelease version
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        run: |
+          $pkg = Get-Content package.json -Raw | ConvertFrom-Json
+          $base = $pkg.version -replace '-.*$', ''
+          $stamped = "$base-main.${{ github.run_number }}"
+          $pkg.version = $stamped
+          $pkg | ConvertTo-Json -Depth 100 | Set-Content package.json -Encoding utf8
+          Write-Host "Stamped version: $stamped"
+
+      - name: Build + publish (main channel prerelease)
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # electron-builder reads GH_TOKEN for the github publisher.
+          EP_PRE_RELEASE: 'true'
+        run: |
+          npm run build
+          npx electron-builder --win --publish always --config.nsis.artifactName='eq-tools-Setup-${version}.${ext}' --config.publish.channel=main
+
+      # --- STABLE CHANNEL (tag v*): full release on the 'latest' channel ---
+      - name: Build + publish (stable / tagged release)
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run build
+          # releaseType=release → a full (non-draft, non-prerelease) GitHub Release.
+          # Without it electron-builder defaults to a draft; we want it live for the
+          # 'latest' update channel. The tag itself is the version (no suffix).
+          npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=release
+
+      - name: Upload installer artifact (CI record)
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer
+          path: |
+            release/**/*.exe
+            release/**/*.yml
+          if-no-files-found: warn

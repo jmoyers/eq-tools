@@ -10,3 +10,7 @@ devlog.txt
 # downloaded sound packs (CC-BY-NC, fetched from PeonPing/og-packs — see scripts)
 resources/soundpacks/peon/
 resources/soundpacks/sc_marine/
+
+# clean-machine sandbox harness writes results here; keep the folder, not the output
+scripts/sandbox/results/*
+!scripts/sandbox/results/.gitkeep
