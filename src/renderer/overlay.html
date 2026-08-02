@@ -24,6 +24,31 @@
         width: 100vw;
         height: 100vh;
       }
+      /* Themed scrollbars — same treatment as the main app (theme.ts
+         MuiCssBaseline); the overlay entry has no CssBaseline, so plain CSS. */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(217, 178, 95, 0.35) transparent;
+      }
+      *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.16);
+        border-radius: 8px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+      }
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      *::-webkit-scrollbar-corner {
+        background: transparent;
+      }
     </style>
   </head>
   <body>
