@@ -122,8 +122,8 @@ export function setEqInstallDir(dir: string | undefined): void {
 
 /** Per-kind defaults: the 'overall' window starts a touch taller (it holds a zone selector). */
 const DEFAULT_OVERLAY_CONFIG: Record<OverlayKind, OverlayConfig> = {
-  fight: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined },
-  overall: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined }
+  fight: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null },
+  overall: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null }
 }
 
 /** Read a kind's overlay config, filling missing fields with the kind's defaults. Migrates the
@@ -146,6 +146,9 @@ export function setOverlayConfig(kind: OverlayKind, patch: Partial<OverlayConfig
   // Clamp the numeric fields defensively (the slider / topN come from the renderer).
   next.bgAlpha = Math.max(0, Math.min(1, next.bgAlpha))
   next.topN = next.topN >= 10 ? 10 : 5
+  // The drill is remembered UI state from the overlay renderer — normalize anything malformed
+  // (and `undefined`) down to level 1 so the stored shape stays exactly `{entityId} | null`.
+  next.drill = next.drill && typeof next.drill.entityId === 'string' ? { entityId: next.drill.entityId } : null
   const all = store.get('overlays') ?? {}
   all[kind] = next
   store.set('overlays', all)

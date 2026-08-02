@@ -8,11 +8,19 @@ export type { LootDisposition }
  * The two spawnable overlay window KINDS (Task #54 — overlay v2):
  *   - 'fight'   : the CURRENT-fight meter + a FIGHT selector (recent encounters).
  *   - 'overall' : the ZONE meter + a ZONE-session selector.
- * Each kind has its own independently-persisted OverlayConfig (bounds/alpha/lock/topN) and can
- * be open simultaneously. IPC channels + the store are keyed by this.
+ * Each kind has its own independently-persisted OverlayConfig (bounds/alpha/lock/topN/drill) and
+ * can be open simultaneously. IPC channels + the store are keyed by this.
  */
 export type OverlayKind = 'fight' | 'overall'
 export const OVERLAY_KINDS: OverlayKind[] = ['fight', 'overall']
+
+/**
+ * The overlay meter's mini drill-down (Task #54): which entity's flat skill/spell list is on
+ * screen. `null` (or absent) = level 1, the entity bars.
+ */
+export interface OverlayDrill {
+  entityId: string
+}
 
 /**
  * Persisted config for one floating overlay DPS-meter window (Task #52; keyed by kind in
@@ -29,6 +37,15 @@ export interface OverlayConfig {
   topN: number
   /** Persisted window bounds so position + size survive a restart. */
   bounds?: { x: number; y: number; width: number; height: number }
+  /**
+   * Persisted mini drill-down: the entity whose flat skill list is showing, or null for the
+   * entity bars. Remembered state, not a preference — a drill survives a restart exactly like
+   * position does. A stale id (per-session `pet:<instanceId>` ids don't survive a restart; the
+   * fight changed; 'you' is briefly absent between fights) renders level 1 WITHOUT clearing the
+   * stored value, so the drill re-applies the moment the entity reappears. Only an explicit
+   * back/undrill (or picking a different fight/zone session) clears it.
+   */
+  drill?: OverlayDrill | null
 }
 
 /** One EverQuest character whose log we watch. */

@@ -1,9 +1,9 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
-import type { OverlayConfig, OverlayKind } from '../shared/types'
+import type { OverlayConfig, OverlayDrill, OverlayKind } from '../shared/types'
 
-export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayKind }
+export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayDrill, OverlayKind }
 
 /**
  * Minimal preload for a floating overlay DPS-meter window (Task #52; per-kind in Task #54).
@@ -40,9 +40,17 @@ const overlayApi = {
     return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
   },
 
-  /** Read this kind's persisted overlay config (locked / bgAlpha / topN / bounds). */
+  /**
+   * Read this kind's persisted overlay config (locked / bgAlpha / topN / bounds / drill).
+   * The overlay hydrates from this on mount — including the mini drill-down, so a meter that
+   * was left drilled into an entity comes back drilled after a restart.
+   */
   getConfig: (): Promise<OverlayConfig> => ipcRenderer.invoke(IPC.overlayGetConfig, KIND),
-  /** Persist a partial config for this kind; returns the merged value. */
+  /**
+   * Persist a partial config for this kind; returns the merged value. Same path for every
+   * remembered field: alpha/topN/lock from the footer controls, bounds from main, and the
+   * drill-down (rare, so written immediately rather than debounced).
+   */
   setConfig: (patch: Partial<OverlayConfig>): Promise<OverlayConfig> =>
     ipcRenderer.invoke(IPC.overlaySetConfig, KIND, patch),
   /** Subscribe to config changes pushed from main; ignores pushes for the other kind. */

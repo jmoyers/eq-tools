@@ -296,8 +296,10 @@ first-run provisioning.
   URL; each has its own persisted config (`store overlays.<kind>`) and can run
   simultaneously. All overlay IPC channels take the kind as their first arg;
   `onOverlayState` payload is `{kind, open}`. Interactive mode adds a dense
-  selector + a mini drill-down (bar→category→skill, back-chevron); locked mode
-  stays fully click-through (no drilling).
+  selector + a mini drill-down (bar→flat skill list, back-chevron); locked mode
+  stays fully click-through but RENDERS the persisted drill read-only. The
+  drill persists per kind in `overlays.<kind>.drill` (config IS the drill
+  state — no renderer mirror; stale ids render level 1 without clearing).
 
 ## Known open items
 

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import type { OverlayConfig, OverlayKind } from '@shared/types'
+import type { OverlayConfig, OverlayDrill, OverlayKind } from '@shared/types'
 import type { DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
 import { useOverlayCombat } from './useOverlayCombat'
@@ -93,12 +93,15 @@ function Bar({
   )
 }
 
-// Mini drill-down (Task #54): interactive-only. null = level 1 (entities); {entityId} = level 2,
-// ONE flat ranked skill/spell list across every category (color = category, no legend — the
-// overlay is too dense for one). Same data + flattening as the main view.
-interface Drill {
-  entityId: string
-}
+// Mini drill-down (Task #54): null = level 1 (entities); {entityId} = level 2, ONE flat ranked
+// skill/spell list across every category (color = category, no legend — the overlay is too dense
+// for one). Same data + flattening as the main view.
+//
+// The drill lives in the PERSISTED config (`overlays.<kind>.drill`), not component state, so it
+// survives a restart exactly like window position does — the user plays pinned with a "damage by
+// type" breakdown up and expects to find it there again. Locked mode RENDERS it (read-only,
+// static crumb, zero affordances, still fully click-through); only interactive mode can change it.
+type Drill = OverlayDrill
 
 /** A skill row tagged with the category it was rolled up under (the color key). */
 type FlatSkill = SkillView & { category: DamageCategory }
@@ -112,7 +115,8 @@ function flattenSkills(e: SourceView): FlatSkill[] {
   return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
 }
 
-/** The bar body: entities → flat skill list, driven by the drill state. */
+/** The bar body: entities → flat skill list, driven by the drill state.
+ *  `setDrill` is null in locked mode: the same levels render, minus every affordance. */
 function MeterBars({
   seg,
   topN,
@@ -123,11 +127,13 @@ function MeterBars({
   seg: SegmentView | undefined
   topN: number
   drill: Drill | null
-  setDrill: (d: Drill | null) => void
+  setDrill: ((d: Drill | null) => void) | null
   live: boolean
 }): JSX.Element {
   const rows = useMemo(() => (seg?.entities ?? []).slice(0, topN), [seg, topN])
-  // A stale drill (entity gone after a fight change) simply falls back to level 1.
+  // A stale drill falls back to level 1 for THIS render only — the persisted value is untouched,
+  // so a restored `pet:<instanceId>` from a past session, a fight that moved on, or a 'you' that
+  // blinks out between fights all re-drill silently the moment the entity is back in the segment.
   const drilled = drill && seg ? seg.entities.find((e) => e.id === drill.entityId) : undefined
 
   if (!seg || (!drilled && rows.length === 0)) {
@@ -141,7 +147,7 @@ function MeterBars({
   // Level 2: one flat, category-colored skill/spell list for the entity.
   if (drilled) {
     return (
-      <MeterCrumb name={drilled.name} onBack={() => setDrill(null)}>
+      <MeterCrumb name={drilled.name} onBack={setDrill ? () => setDrill(null) : null}>
         {flattenSkills(drilled).map((s) => (
           <Bar
             key={`${s.category}|${s.name}`}
@@ -172,38 +178,39 @@ function MeterBars({
             </>
           }
           right={`${formatRate(e.dps)} · ${fmt(e.total)}`}
-          onClick={() => setDrill({ entityId: e.id })}
+          onClick={setDrill ? () => setDrill({ entityId: e.id }) : undefined}
         />
       ))}
     </>
   )
 }
 
-/** A back-chevron crumb header for the drill-down levels. */
+/** A crumb header for the drill-down level: a back chevron when interactive, and the SAME row as
+ *  static text when `onBack` is null (locked mode — the drill still shows, nothing is clickable). */
 function MeterCrumb({
   name,
   onBack,
   children
 }: {
   name: string
-  onBack: () => void
+  onBack: (() => void) | null
   children: React.ReactNode
 }): JSX.Element {
   return (
     <div>
       <div
-        onClick={onBack}
+        onClick={onBack ?? undefined}
         style={{
           display: 'flex',
           alignItems: 'center',
           gap: 4,
-          cursor: 'pointer',
+          cursor: onBack ? 'pointer' : 'default',
           fontSize: 11,
           color: 'rgba(255,255,255,0.7)',
           marginBottom: 3
         }}
       >
-        <span style={{ fontSize: 13 }}>‹</span>
+        <span style={{ fontSize: 13 }}>{onBack ? '‹' : '·'}</span>
         <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{name}</span>
       </div>
       {children}
@@ -218,24 +225,24 @@ export default function OverlayMeter(): JSX.Element {
   const [cfg, setCfg] = useState<OverlayConfig | null>(null)
   // Selection: for 'fight' → LIVE or a finalized fight id; for 'overall' → 'zone' or a zs<n>.
   const [selection, setSelection] = useState<string>(kind === 'fight' ? LIVE : 'zone')
-  const [drill, setDrill] = useState<Drill | null>(null)
   const [hovering, setHovering] = useState(false)
   const hoveringRef = useRef(false)
 
   const combinePets = kind === 'fight'
   const snap = useOverlayCombat(selection === LIVE ? undefined : selection, combinePets)
 
+  // Hydrate from the persisted config (position, alpha, topN, lock AND the drill-down) and stay
+  // subscribed to main's echo. The first snapshot renders against whatever this resolves to.
   useEffect(() => {
     void window.eqOverlay.getConfig().then(setCfg)
     return window.eqOverlay.onConfig(setCfg)
   }, [])
 
-  // Reset drill when the selection changes (a drill is per-segment).
-  useEffect(() => setDrill(null), [selection])
-
   const locked = cfg?.locked ?? false
   const bgAlpha = cfg?.bgAlpha ?? 0.72
   const topN = cfg?.topN ?? 5
+  // Config IS the drill state — no local mirror to drift, and every change is already persisted.
+  const drill = cfg?.drill ?? null
   const now = Date.now()
 
   const seg = snap?.selected ?? undefined
@@ -254,6 +261,19 @@ export default function OverlayMeter(): JSX.Element {
   const patch = (p: Partial<OverlayConfig>): void => {
     setCfg((c) => (c ? { ...c, ...p } : c))
     void window.eqOverlay.setConfig(p)
+  }
+
+  // Drill/undrill writes straight through to the store — immediate, not debounced like bounds:
+  // it's a rare, deliberate click. `patch` applies it locally first so the bars swap this frame.
+  const setDrill = (d: Drill | null): void => patch({ drill: d })
+
+  /** A drill is per-segment: picking a different fight / zone session undrills. This lives on the
+   *  selector's change handler, NOT in an effect keyed on `selection` — an effect fires on mount
+   *  (twice, under StrictMode) and would clear the drill we just hydrated. Only genuine user
+   *  actions — this and the back chevron — ever clear the stored value. */
+  const selectSegment = (id: string): void => {
+    setSelection(id)
+    setDrill(null)
   }
 
   const toggleLock = (): void => {
@@ -360,7 +380,7 @@ export default function OverlayMeter(): JSX.Element {
         <div style={{ ...noDrag, padding: '4px 8px 2px', flexShrink: 0 }}>
           <select
             value={selection}
-            onChange={(e) => setSelection(e.target.value)}
+            onChange={(e) => selectSegment(e.target.value)}
             style={{
               width: '100%',
               background: 'rgba(0,0,0,0.35)',
@@ -394,15 +414,11 @@ export default function OverlayMeter(): JSX.Element {
         </div>
       )}
 
-      {/* Bars + mini drill-down (drilling only in interactive mode; locked keeps click-through). */}
+      {/* Bars + mini drill-down. Locked mode RENDERS the remembered drill (the pinned "damage by
+          type" breakdown the user plays with) but hands MeterBars no setter, so there are no
+          click targets, no pointer cursors and no back chevron — the window stays click-through. */}
       <div style={{ flexGrow: 1, overflow: 'auto', padding: '4px 6px' }}>
-        <MeterBars
-          seg={seg}
-          topN={topN}
-          drill={locked ? null : drill}
-          setDrill={locked ? () => {} : setDrill}
-          live={live}
-        />
+        <MeterBars seg={seg} topN={topN} drill={drill} setDrill={locked ? null : setDrill} live={live} />
       </div>
 
       {/* Footer controls — interactive mode only: bg-alpha slider + top-N toggle. */}
