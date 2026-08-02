@@ -8,6 +8,7 @@ import type {
   ProgressState,
   UpdateChannel
 } from '../shared/types'
+import { DEFAULT_ALERT_PACK_ID, DEFAULT_ALERT_SOUNDS } from './data/defaultPacks'
 
 const emptyProgress: ProgressState = {
   inventory: {},
@@ -183,9 +184,9 @@ const SEED_ALERTS: AlertDef[] = [
     name: 'Charm break',
     enabled: true,
     trigger: { type: 'event', kind: 'uncharm' },
-    // peon "Me not that kind of orc!" — urgent/indignant, good attention-grab for
-    // suddenly losing your charmed pet (Task #21; imported CC-BY-NC-4.0 peon pack).
-    sound: { packId: 'peon', soundId: 'error-notthatorc' },
+    // "I find myself... requiring your attention." — the calm-but-pointed read lands
+    // better than a joke sting for suddenly losing your charmed pet (Task #21).
+    sound: { packId: DEFAULT_ALERT_PACK_ID, soundId: DEFAULT_ALERT_SOUNDS.charmBreak },
     note: 'Seeded default — fires when a charm spell wears off (you lose your pet).'
   },
   {
@@ -193,7 +194,8 @@ const SEED_ALERTS: AlertDef[] = [
     name: 'Raid target defeated',
     enabled: true,
     trigger: { type: 'app', signal: 'bossDefeat' },
-    sound: { packId: 'default', soundId: 'victory' },
+    // "The matter is settled."
+    sound: { packId: DEFAULT_ALERT_PACK_ID, soundId: DEFAULT_ALERT_SOUNDS.bossDefeat },
     note: 'Seeded default — fires the same moment boss confetti does.'
   },
   {
@@ -205,7 +207,8 @@ const SEED_ALERTS: AlertDef[] = [
     // app signal, fired exactly where the quest-complete confetti + snackbar do
     // (Task #46). Never fires on load/hydration or manual checkbox completion.
     trigger: { type: 'app', signal: 'questComplete' },
-    sound: { packId: 'default', soundId: 'victory' },
+    // "It is done."
+    sound: { packId: DEFAULT_ALERT_PACK_ID, soundId: DEFAULT_ALERT_SOUNDS.questComplete },
     note: 'Seeded default — fires the same moment a Sky quest turn-in celebration does.'
   }
 ]

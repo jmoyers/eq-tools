@@ -1,0 +1,348 @@
+{
+  "cesp_version": "1.0",
+  "name": "alan-rickman",
+  "display_name": "Alan Rickman",
+  "version": "1.1.2",
+  "description": "Claudette notification sounds, voiced in the manner of the late Alan Rickman. Slow. Deliberate. Faintly amused.",
+  "author": {
+    "name": "Doomspork",
+    "github": "doomspork"
+  },
+  "license": "CC-BY-4.0",
+  "language": "en",
+  "homepage": "https://github.com/utensils/openpeon-alan-rickman-soundpack",
+  "tags": [
+    "tts",
+    "ai-voice",
+    "alan-rickman",
+    "claudette",
+    "spoken-word"
+  ],
+  "categories": {
+    "input.required": {
+      "sounds": [
+        {
+          "file": "sounds/input_required_01.mp3",
+          "label": "A moment of your time, if you'd be so kind.",
+          "sha256": "4db75f068b1d31ce95adb26f432bf2828acaf20046329c48baadc268b37618c8"
+        },
+        {
+          "file": "sounds/input_required_02.mp3",
+          "label": "I find myself... requiring your attention.",
+          "sha256": "64e2e022652c7e2360dffca4ced967111985025a2877b8c282c3b4e618a6f184"
+        },
+        {
+          "file": "sounds/input_required_03.mp3",
+          "label": "Forgive the interruption. There is a matter.",
+          "sha256": "c2d730e33bd423556d885f712ceee2eb124457c3a430e50f45876118168167dc"
+        },
+        {
+          "file": "sounds/input_required_04.mp3",
+          "label": "Your input would be most welcome. Whenever you're ready.",
+          "sha256": "3b6ef32490050c5a18d48c26a3154468023a2a1e36023860456d5bf56968b6d9"
+        },
+        {
+          "file": "sounds/input_required_05.mp3",
+          "label": "Tell me — and do be specific.",
+          "sha256": "2a756917b8aa47cf159c64bd16fdb9e04f3d6eabbbc129ba4af1c9a8f92e60aa"
+        },
+        {
+          "file": "sounds/input_required_06.mp3",
+          "label": "There is something I must ask. Indulge me.",
+          "sha256": "cc1233758321424c03e114720903278c8dc9b296369010c6bf247f67c369f31d"
+        },
+        {
+          "file": "sounds/input_required_07.mp3",
+          "label": "A small clarification, if you would.",
+          "sha256": "9323ca26b528dd2b47c2a1846826d0186fc24ebd38ac18f88bb2316b82a846ab"
+        },
+        {
+          "file": "sounds/input_required_08.mp3",
+          "label": "Pause, please. I have need of you.",
+          "sha256": "d6e582dc287d6dc338508fdd229131cb750f3ba57ca8b9194ded62ec5ec69d51"
+        },
+        {
+          "file": "sounds/input_required_09.mp3",
+          "label": "Before we proceed... a question.",
+          "sha256": "e4c4715bbef067534833e098ed2df334cf0bd556e3e6453cb0ce0ece2eea9e71"
+        },
+        {
+          "file": "sounds/input_required_10.mp3",
+          "label": "Your attention, briefly. If it isn't too much trouble.",
+          "sha256": "1db85be09d6d577b51751740c335686d3477a1d692e259eb5a238dc1cc129007"
+        }
+      ]
+    },
+    "task.acknowledge": {
+      "sounds": [
+        {
+          "file": "sounds/task_acknowledge_01.mp3",
+          "label": "I have devised a plan. Do let me know what you think.",
+          "sha256": "8e4f346884c02d7129f0c0d92d878b6dd3477877e62591f6607e54f1c6c239f5"
+        },
+        {
+          "file": "sounds/task_acknowledge_02.mp3",
+          "label": "A strategy, drafted for your consideration.",
+          "sha256": "a5e2e036139e3dd596fd1226c2362e12192daf74ebd3b4c436dddc78d9b4c7c1"
+        },
+        {
+          "file": "sounds/task_acknowledge_03.mp3",
+          "label": "The arrangements have been made. Awaiting your approval.",
+          "sha256": "a33d14886d3aa3cde2582918ba7da51890478adf76ff441871fc862376257456"
+        },
+        {
+          "file": "sounds/task_acknowledge_04.mp3",
+          "label": "I've taken the liberty of preparing something. Have a look.",
+          "sha256": "a7b9cbaa23ea403376ad30ffda390d317989ac76002197678a61e07790e8f030"
+        },
+        {
+          "file": "sounds/task_acknowledge_05.mp3",
+          "label": "Consider this my opening move.",
+          "sha256": "54023b8e021489723879389496ce49122f1a53425df313a90f683633ccc53501"
+        },
+        {
+          "file": "sounds/task_acknowledge_06.mp3",
+          "label": "A modest proposal. For your scrutiny.",
+          "sha256": "a3bb11fc5eb1df40f0fc70eb7e85e3e32bd3085bc8d6c72c6062f5ba312ac21a"
+        },
+        {
+          "file": "sounds/task_acknowledge_07.mp3",
+          "label": "Behold — the plan. Such as it is.",
+          "sha256": "83ab35c44c3fe2908b95c420a24c8ba0f92d8e754f6c789eaab20f1fcf3b49a1"
+        },
+        {
+          "file": "sounds/task_acknowledge_08.mp3",
+          "label": "I've sketched the path forward. Tell me where I've erred.",
+          "sha256": "f6c4459bdea3057fa49f48e68f7aa1983ab6d40272ff19cff4a99bff06f32fb1"
+        },
+        {
+          "file": "sounds/task_acknowledge_09.mp3",
+          "label": "Here lies my approach. Approve, or do not.",
+          "sha256": "be0b83a7f6ea639032506a448cd0a484a8f742ce710f66f476a4cfb0379678c8"
+        },
+        {
+          "file": "sounds/task_acknowledge_10.mp3",
+          "label": "The blueprint is yours. Examine it at your leisure.",
+          "sha256": "a95e2261707d2a4b191a6d37e5f92df0b42a300f3f98021c63c64d088bc93de0"
+        }
+      ]
+    },
+    "task.complete": {
+      "sounds": [
+        {
+          "file": "sounds/task_complete_01.mp3",
+          "label": "It is done.",
+          "sha256": "211838a6b5dcdcc0b475b0a72c33aa148528033860344e71fa3b2f6866b9b825"
+        },
+        {
+          "file": "sounds/task_complete_02.mp3",
+          "label": "Finished. As promised.",
+          "sha256": "9b5995a85aad1c286ad00e5c7ef7795d69a8eb3a9475a6dc355673f1fe4303f7"
+        },
+        {
+          "file": "sounds/task_complete_03.mp3",
+          "label": "Complete. Returning the floor to you.",
+          "sha256": "62d0ff605628407738e3f10bba3b0a5ededf26f7a8bc307e883d667ebf64e34f"
+        },
+        {
+          "file": "sounds/task_complete_04.mp3",
+          "label": "There. That wasn't so terrible, was it?",
+          "sha256": "712129fc036ba73f3546612f05f986ad02ddf033d93a35afb7c6b2adb6c27d76"
+        },
+        {
+          "file": "sounds/task_complete_05.mp3",
+          "label": "Concluded. Without incident.",
+          "sha256": "5556e1e66eb5f66c074c5a7c22b5ab8c44f17011d2edf6e36737073aa161f30d"
+        },
+        {
+          "file": "sounds/task_complete_06.mp3",
+          "label": "Done. And rather well, if I say so myself.",
+          "sha256": "8c1ee61233b97301a116752c8fbc41fc222671adc8e7b8cc6dd0edfe01783346"
+        },
+        {
+          "file": "sounds/task_complete_07.mp3",
+          "label": "The matter is settled.",
+          "sha256": "a094f5b5e358a6b6d6427b135141fcb7eb5927aa2ac5e6cfbfe9cfca13be97e5"
+        },
+        {
+          "file": "sounds/task_complete_08.mp3",
+          "label": "Finished. You may resume breathing.",
+          "sha256": "b1094a542a47d420439600873f88fb08e596b2034fb206d2db6c668080b5dab3"
+        },
+        {
+          "file": "sounds/task_complete_09.mp3",
+          "label": "Complete. The world, somehow, still turns.",
+          "sha256": "09cbbb5a9c7af9de11f97691ed1d20ff3a6c41f5d569188ecc141ae0e3ce4543"
+        },
+        {
+          "file": "sounds/task_complete_10.mp3",
+          "label": "There. Tied with a neat little bow.",
+          "sha256": "b677467f79e2a9b30f69ecefa295d0a70c0f5dc8d00db2881797d6f8a7401747"
+        }
+      ]
+    },
+    "task.error": {
+      "sounds": [
+        {
+          "file": "sounds/task_error_01.mp3",
+          "label": "We have encountered... a complication.",
+          "sha256": "d1ce8c6c9c785a9b26578fe701677892e10cb8ec453ffa3dbcb4d5f488e07577"
+        },
+        {
+          "file": "sounds/task_error_02.mp3",
+          "label": "Something has gone rather sideways, I'm afraid.",
+          "sha256": "c54a45b3ed7e8ee5cb0e6d89f806bf643a51b17679a427cdcb7b0a943668e3e9"
+        },
+        {
+          "file": "sounds/task_error_03.mp3",
+          "label": "An obstacle. Most inconvenient.",
+          "sha256": "4646f84aae5ce6cfd556748b8abbb2a84a33ded35f5ce2c8505aa3824105acd8"
+        },
+        {
+          "file": "sounds/task_error_04.mp3",
+          "label": "I regret to inform you — it did not go to plan.",
+          "sha256": "88c236e67bfb4e092ffb16353ba992e84eed33bd77d261cb1b10e37afadd7f77"
+        },
+        {
+          "file": "sounds/task_error_05.mp3",
+          "label": "Things have... not gone as intended.",
+          "sha256": "b9c25a275ebdc35ba0cf9b142ffe9c9d510389477bb650c7bc7d93cf18c31de2"
+        },
+        {
+          "file": "sounds/task_error_06.mp3",
+          "label": "A misstep. Distinctly my own.",
+          "sha256": "7d2517c44bfa34bfb1d8fe5891aecd27c67b4a0b5f8588f7f42c08900bce7eb0"
+        },
+        {
+          "file": "sounds/task_error_07.mp3",
+          "label": "Disaster, in miniature. Your assistance, please.",
+          "sha256": "e180705ad6916f59f1462a05b8a38061e7b965473f1b8fe2b73a988648b2801d"
+        },
+        {
+          "file": "sounds/task_error_08.mp3",
+          "label": "It has all gone rather pear-shaped.",
+          "sha256": "a2b62d334e55f4534ce45cbcafff0acb9e18aec5fd8b7c886517dbe5b47cf99c"
+        },
+        {
+          "file": "sounds/task_error_09.mp3",
+          "label": "An error. Singularly unhelpful.",
+          "sha256": "577414c9382a301052e2dec73223bb04c51c2a015997495a4b78e6d7de2cf681"
+        },
+        {
+          "file": "sounds/task_error_10.mp3",
+          "label": "Something has broken. Tediously so.",
+          "sha256": "a7e8fe5f31a532b977ede48e6317f62a48aebd6de80832cc80c1d6d15c4fc1b7"
+        }
+      ]
+    },
+    "session.start": {
+      "sounds": [
+        {
+          "file": "sounds/session_start_01.mp3",
+          "label": "At your service.",
+          "sha256": "5625c4755f7f1ed439a61e85fba71d9d6788e38dfc60d96427a7cb169a6cab97"
+        },
+        {
+          "file": "sounds/session_start_02.mp3",
+          "label": "Shall we begin?",
+          "sha256": "ee51cb612e1090363020d8a56be309918c54699fed1492ad8e2789140563ab2a"
+        },
+        {
+          "file": "sounds/session_start_03.mp3",
+          "label": "I am, as ever, ready.",
+          "sha256": "03740e9b743362706b4d487d395dee08fad91338f21cd78102c52b1f4608bf75"
+        },
+        {
+          "file": "sounds/session_start_04.mp3",
+          "label": "Speak. I'm listening.",
+          "sha256": "82d036a24b2d823a7849b2c000d2ab487a7038fcbec044a136467bad9109d31f"
+        },
+        {
+          "file": "sounds/session_start_05.mp3",
+          "label": "Here I am. Once more.",
+          "sha256": "864c16cd9541eb88d39a770b65f66f2494c9c82c70db704ecdc67a8f70b3f813"
+        },
+        {
+          "file": "sounds/session_start_06.mp3",
+          "label": "And so we begin again.",
+          "sha256": "8b292945db5898577a0af05bfc9f617a20dd623850a90093ba2b183ba50ae1c6"
+        },
+        {
+          "file": "sounds/session_start_07.mp3",
+          "label": "Pleasantries dispensed with — what is it?",
+          "sha256": "0dad8d33e8b33a2535e381e1a1a39823a1cf6837ce219af2c0027ce051af58da"
+        },
+        {
+          "file": "sounds/session_start_08.mp3",
+          "label": "A new day. A new task. Presumably.",
+          "sha256": "861862fb14b73b66c9718890f63fd40de795a5a8074e0c4580688510aef1ab48"
+        },
+        {
+          "file": "sounds/session_start_09.mp3",
+          "label": "Awaiting instruction. As one does.",
+          "sha256": "a29992295c2f783e613dc4fa3e9b82b7a6afa49ee86465e90d70307838ef9f6a"
+        },
+        {
+          "file": "sounds/session_start_10.mp3",
+          "label": "I am here. The rest is up to you.",
+          "sha256": "7d5e485cb5aec292362d028ac82b7853a0f80235cd977a06b0785a13ce27e579"
+        }
+      ]
+    },
+    "resource.limit": {
+      "sounds": [
+        {
+          "file": "sounds/resource_limit_01.mp3",
+          "label": "We have, alas, reached our limit.",
+          "sha256": "86b614365cf723b8344e6cf248b860377d0e168e9d2b5ca21f5fdd4e7ee5dca4"
+        },
+        {
+          "file": "sounds/resource_limit_02.mp3",
+          "label": "Even I have my boundaries.",
+          "sha256": "b92191229ed7cfd84f9851f079af9ffe7de22a9dfee8d274c07b64cf47329006"
+        },
+        {
+          "file": "sounds/resource_limit_03.mp3",
+          "label": "That, I'm afraid, is all I can offer for the moment.",
+          "sha256": "468d664637fdcf9c51aaa314f3478b01009498c1776aabc72cec3a73d96702a5"
+        },
+        {
+          "file": "sounds/resource_limit_04.mp3",
+          "label": "The well, regrettably, has run dry.",
+          "sha256": "d1c4e432ed08a26e8127a6b3088cc3fbd505b4a7b87a94814742b544b75c98b4"
+        },
+        {
+          "file": "sounds/resource_limit_05.mp3",
+          "label": "I have, regrettably, run out of road.",
+          "sha256": "071370a0d69202660dbdd04539cf0c0079cd141577d6bf5785d3f577a76026f1"
+        },
+        {
+          "file": "sounds/resource_limit_06.mp3",
+          "label": "The ceiling, I'm afraid, has been reached.",
+          "sha256": "c488038a13f3e5f8ad8dd85c1e30d90e212559a9c5b447ed51e9bc17f66ba872"
+        },
+        {
+          "file": "sounds/resource_limit_07.mp3",
+          "label": "No further. Not today.",
+          "sha256": "940635ae3e7300c3a6bda95ecf784456cbf09f5d83e3994d96b34af8a4af3d5c"
+        },
+        {
+          "file": "sounds/resource_limit_08.mp3",
+          "label": "We have exhausted our allotment.",
+          "sha256": "c9699aa0e242a916f3b1cef97f4befb3d6471749161f882894523f5cea16b5b6"
+        },
+        {
+          "file": "sounds/resource_limit_09.mp3",
+          "label": "That, as they say, is that.",
+          "sha256": "912272bc991822c5955df155d55f841596db61bf945826f7378a2c60d46991b3"
+        },
+        {
+          "file": "sounds/resource_limit_10.mp3",
+          "label": "The threshold. Crossed. Reluctantly halted.",
+          "sha256": "93ed987403e8dd595f2703dbea0052f77efa770353feed8daf9ca7c86358d166"
+        }
+      ]
+    }
+  },
+  "category_aliases": {}
+}

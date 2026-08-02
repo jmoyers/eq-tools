@@ -1,95 +1,93 @@
-// provisionPacks.ts — self-provisioning of the shipped voice packs (Task #39).
+// provisionPacks.ts — self-provisioning of the shipped voice pack (Task #39).
 //
-// The imported CC-BY-NC voice packs (peon, sc_marine) are gitignored, so a CI-built
-// installer ships WITHOUT them — a fresh install would then have a seeded charm-break
-// alert pointing at a missing `peon/error-notthatorc` sound. To make "processing happen
-// by itself", at startup we check listPacks() for each shipped default id and, for any
-// that's missing, silently download it from the same og-packs source into
-// <userData>/soundpacks/<id>/ using the SAME CESP→manifest conversion + fixed id map the
-// dev fetch-packs script uses (so the soundIds match and the seeded alert resolves).
+// The shipped audio is gitignored, so a CI-built installer ships WITHOUT it — a fresh
+// install would then have seeded alerts pointing at missing sounds. At startup we check
+// listPacks() for each shipped default id and, for any that's missing, silently install
+// it into <userData>/soundpacks/<id>/ through the SAME installPack path the in-app
+// registry browser uses (release tarball at a pinned tag → CESP→manifest conversion), so
+// the soundIds match a user-initiated install exactly and the seeded alerts resolve.
+//
+// ADDITIVE ONLY: packs already on disk are never touched, re-downloaded, or removed —
+// only ids missing from listPacks() are fetched. A user who installed the old peon /
+// sc_marine / default packs keeps them (and any alert pointing at them keeps playing).
+//
+// ETIQUETTE (AGENTS.md "Scraper etiquette" LAW): idempotent (an installed pack skips the
+// network entirely), ONE request per missing pack (the release tarball — not 60 file
+// GETs), pinned to an immutable tag, spaced by a delay when more than one pack is
+// missing, and retried with exponential backoff on failure. A run that fails entirely
+// just retries next startup.
 //
 // Non-blocking, best-effort, silent: called after the window is up. Errors go to the
-// error log only (never the UI) and simply retry next startup. On success we invalidate
-// the renderer's sound caches + re-list packs the same way a registry install does, so a
-// provisioned pack becomes selectable/playable live without a restart.
+// error log only (never the UI). On success we invalidate the renderer's sound caches +
+// re-list packs the same way a registry install does, so a provisioned pack becomes
+// selectable/playable live without a restart.
 
-import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { logError } from './errorLog'
-import { cespToManifestSounds, listPacks, packBasename, userPacksRoot, type CespManifest } from './sounds'
-import { DEFAULT_PACK_IDS, OG_PACKS_BASE, PACK_ID_MAP, PACK_NAME } from './data/defaultPacks'
-import type { SoundPackManifest } from '../shared/types'
+import { listPacks, userPacksRoot } from './sounds'
+import { installPack } from './packRegistry'
+import { DEFAULT_PACKS, REQUIRED_SOUND_IDS } from './data/defaultPacks'
+import type { RegistryPack, SoundPackManifest } from '../shared/types'
 
-/** GET a URL as bytes (throws on non-2xx). Uses the global fetch (Node ≥18 / Electron). */
-async function fetchBytes(url: string): Promise<Buffer> {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`GET ${url} → ${res.status} ${res.statusText}`)
-  return Buffer.from(await res.arrayBuffer())
-}
+/** Attempts per pack before giving up until the next startup. */
+const MAX_ATTEMPTS = 3
+/** Base backoff between attempts (doubled each retry). */
+const RETRY_BASE_MS = 2_000
+/** Spacing between packs when more than one is missing. */
+const BETWEEN_PACKS_MS = 1_000
 
-async function fetchText(url: string): Promise<string> {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`GET ${url} → ${res.status} ${res.statusText}`)
-  return res.text()
-}
+const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
 /**
- * Download one default pack from og-packs into <userData>/soundpacks/<id>/, converting
- * its CESP openpeon.json into our manifest with the pack's FIXED id map. Staged into a
- * `.installing` sibling and atomically renamed so a mid-download failure never leaves a
- * half-written pack shadowing anything. Returns true on success.
+ * Post-install sanity check: the ids the shipped alert defs reference must exist in the
+ * installed manifest. A mismatch means the upstream pack changed shape under its tag (or
+ * our derivation drifted) — log it to file so it's caught here rather than as a silently
+ * mute alert. The pack is left in place either way; a partial mismatch still gives the
+ * user a working pack in the picker.
  */
-async function provisionPack(packId: string, packsRoot: string): Promise<boolean> {
-  const idMap = PACK_ID_MAP[packId]
-  if (!idMap) return false
+function verifyRequiredSounds(packsRoot: string, packId: string): void {
+  try {
+    const manifestPath = join(packsRoot, packId, 'manifest.json')
+    if (!existsSync(manifestPath)) return
+    const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as SoundPackManifest
+    const missing = REQUIRED_SOUND_IDS.filter((id) => !manifest.sounds?.[id])
+    if (missing.length > 0) {
+      logError('main:provisionPacks', {
+        message: `'${packId}' installed but is missing sounds the shipped alerts reference`,
+        missing
+      })
+    }
+  } catch (err) {
+    logError('main:provisionPacks', { message: `verify of '${packId}' failed`, err })
+  }
+}
 
-  const cesp = JSON.parse(await fetchText(`${OG_PACKS_BASE}/${packId}/openpeon.json`)) as CespManifest
-
-  // Same conversion the CLI + registry installer use, keyed by the pack's fixed id map so
-  // the produced soundIds byte-match the committed manifest (seeded alerts depend on them).
-  const manifestSounds = cespToManifestSounds(cesp, (_category, file) => idMap[packBasename(file)] ?? null)
-  if (Object.keys(manifestSounds).length === 0) throw new Error(`${packId}: no sounds after conversion`)
-
-  const packDir = join(packsRoot, packId)
-  const stageDir = `${packDir}.installing`
-  if (existsSync(stageDir)) rmSync(stageDir, { recursive: true, force: true })
-  mkdirSync(join(stageDir, 'sounds'), { recursive: true })
-
-  // Download only the mapped source files (skip anything without a stable id).
-  let wrote = 0
-  for (const group of Object.values(cesp.categories ?? {})) {
-    const sounds = Array.isArray(group) ? [] : (group.sounds ?? [])
-    for (const s of sounds) {
-      if (!s || typeof s.file !== 'string') continue
-      const name = packBasename(s.file)
-      if (!idMap[name]) continue
-      const bytes = await fetchBytes(`${OG_PACKS_BASE}/${packId}/${s.file}`)
-      writeFileSync(join(stageDir, 'sounds', name), bytes)
-      wrote++
+/** Install one default pack, retrying with exponential backoff. True on success. */
+async function provisionPack(pack: RegistryPack, packsRoot: string): Promise<boolean> {
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      // Progress is swallowed: provisioning is invisible by design (no UI surface).
+      await installPack(pack, () => {}, packsRoot)
+      verifyRequiredSounds(packsRoot, pack.name)
+      return true
+    } catch (err) {
+      const last = attempt === MAX_ATTEMPTS
+      logError('main:provisionPacks', {
+        message: `provisioning '${pack.name}' failed (attempt ${attempt}/${MAX_ATTEMPTS})${last ? '' : ' — backing off'}`,
+        err
+      })
+      if (last) return false
+      await sleep(RETRY_BASE_MS * 2 ** (attempt - 1))
     }
   }
-  if (wrote === 0) {
-    rmSync(stageDir, { recursive: true, force: true })
-    throw new Error(`${packId}: no audio files downloaded`)
-  }
-
-  const manifest: SoundPackManifest = {
-    id: packId,
-    name: PACK_NAME[packId] ?? cesp.display_name ?? packId,
-    license: cesp.license ?? 'CC-BY-NC-4.0',
-    sounds: manifestSounds
-  }
-  writeFileSync(join(stageDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8')
-
-  if (existsSync(packDir)) rmSync(packDir, { recursive: true, force: true })
-  renameSync(stageDir, packDir)
-  return true
+  return false
 }
 
 /**
  * Ensure every shipped default pack is present. For each id NOT already surfaced by
- * listPacks() (bundled or user), download it in the background. Best-effort: a failure
- * on one pack is logged and skipped; the next startup retries. Resolves to the number of
+ * listPacks() (bundled or user), install it in the background. Best-effort: a failure on
+ * one pack is logged and skipped; the next startup retries. Resolves to the number of
  * packs newly provisioned so the caller can refresh sound caches only when something
  * actually changed.
  */
@@ -99,8 +97,6 @@ export async function provisionDefaultPacks(opts?: {
   /** Override which pack ids count as already-present (defaults to listPacks()). For the harness. */
   installedIds?: Set<string>
 }): Promise<number> {
-  const packsRoot = opts?.packsRoot ?? userPacksRoot()
-
   let installed: Set<string>
   if (opts?.installedIds) {
     installed = opts.installedIds
@@ -113,17 +109,17 @@ export async function provisionDefaultPacks(opts?: {
     }
   }
 
-  const missing = DEFAULT_PACK_IDS.filter((id) => !installed.has(id))
+  const missing = DEFAULT_PACKS.filter((p) => !installed.has(p.name))
   if (missing.length === 0) return 0
 
+  // Resolve the target root only once we know we'll write (keeps the no-op path from
+  // touching electron's userData at all).
+  const packsRoot = opts?.packsRoot ?? userPacksRoot()
+
   let count = 0
-  for (const id of missing) {
-    try {
-      if (await provisionPack(id, packsRoot)) count++
-    } catch (err) {
-      // Silent by design — never surface to the UI; retry next startup.
-      logError('main:provisionPacks', { message: `provisioning '${id}' failed`, err })
-    }
+  for (const [i, pack] of missing.entries()) {
+    if (i > 0) await sleep(BETWEEN_PACKS_MS)
+    if (await provisionPack(pack, packsRoot)) count++
   }
   return count
 }

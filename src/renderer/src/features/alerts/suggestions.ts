@@ -36,14 +36,29 @@ export const SUGGEST_TEMPLATES: Record<
     chip: 'When it wears off (you or your pet)',
     kind: 'buffExpired',
     verb: 'wears off',
-    sound: 'warning',
+    // "A moment of your time, if you'd be so kind."
+    sound: 'input-required-input-required-01',
     where: (name) => ({ spell: name })
   },
   // Beneficial: JUST the pet/named-target fade side (target-only), for users who want to
   // separate it from the self-side. Uses the raw buffFade the parser already emits.
-  fade: { chip: 'When it fades on pet/target only', kind: 'buffFade', verb: 'fades', sound: 'chime', where: (name) => ({ spell: name }) },
+  // "That, as they say, is that."
+  fade: {
+    chip: 'When it fades on pet/target only',
+    kind: 'buffFade',
+    verb: 'fades',
+    sound: 'resource-limit-resource-limit-09',
+    where: (name) => ({ spell: name })
+  },
   // Detrimental + cast-on-other: the debuff landing on a target.
-  lands: { chip: 'When it lands on a target', kind: 'buffApply', verb: 'lands', sound: 'chime', where: (name) => ({ spell: name }) }
+  // "Consider this my opening move."
+  lands: {
+    chip: 'When it lands on a target',
+    kind: 'buffApply',
+    verb: 'lands',
+    sound: 'task-acknowledge-task-acknowledge-05',
+    where: (name) => ({ spell: name })
+  }
 }
 
 /** A concrete suggestion: the template it came from + the exact AlertDef it authors. */
@@ -52,8 +67,13 @@ export interface Suggestion {
   def: AlertDef
 }
 
-/** The default sound pack the seeded built-ins use (see store.ts). */
-const DEFAULT_PACK = 'default'
+/**
+ * The default sound pack the seeded built-ins use. Mirrors DEFAULT_ALERT_PACK_ID /
+ * DEFAULT_ALERT_SOUNDS in src/main/data/defaultPacks.ts — repeated as literals because
+ * the renderer bundle can't import from src/main. Keep the two in sync (the ids there
+ * carry the spoken line each one is).
+ */
+const DEFAULT_PACK = 'alan-rickman'
 /** Default cooldown for a suggested alert (ms). */
 const DEFAULT_COOLDOWN_MS = 3000
 
@@ -94,7 +114,8 @@ export function illusionSuggestion(): Suggestion {
       name: 'Illusion fades',
       enabled: true,
       trigger: { type: 'event', kind: 'illusionFade' },
-      sound: { packId: DEFAULT_PACK, soundId: 'warning' },
+      // "It has all gone rather pear-shaped."
+      sound: { packId: DEFAULT_PACK, soundId: 'task-error-task-error-08' },
       cooldownMs: DEFAULT_COOLDOWN_MS,
       note: 'Suggested alert (Task #38) — fires when your illusion clicks/wears off.'
     }

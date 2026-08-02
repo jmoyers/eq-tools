@@ -107,9 +107,11 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   primitives (event kind + `where` match, raw regex, app signal) or
   composites `{any|all}` (same-event semantics only). Module evaluates
   live-only with cooldowns; renderer plays sounds. Sound packs live in
-  `resources/soundpacks` + userData; gitignored defaults SELF-PROVISION
-  from og-packs at startup. App signals (bossDefeat, questComplete) fire
-  from single always-mounted detectors.
+  `resources/soundpacks` + userData; the ONE shipped default (Alan Rickman,
+  `src/main/data/defaultPacks.ts`) is gitignored audio and SELF-PROVISIONS
+  at startup from its pinned registry tag — seeded + suggested alert defs
+  reference its derived soundIds. App signals (bossDefeat, questComplete)
+  fire from single always-mounted detectors.
 
 ## World-model laws (hard-won; do not relearn these)
 
@@ -228,8 +230,13 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 - Item knowledge: `itemLookup.ts` — local-first (posky) → wiki
   `{{Itempage}}` (`statsblock` flags / `relatedquests` / `notes`), userData
   cache with negative caching, live-loot background prefetch.
-- Sound packs: og-packs registry (index: peonping.github.io/registry);
-  bundled defaults are GITIGNORED (CC-BY-NC game audio), self-provisioned.
+- Sound packs: og-packs registry (index: peonping.github.io/registry) —
+  browse/install any of ~350 packs in-app. The single shipped default
+  (`alan-rickman`, pinned tag) is GITIGNORED audio, self-provisioned via the
+  same installPack path (one tarball GET, retried with backoff, additive:
+  never removes or re-downloads an installed pack). The old peon/sc_marine/
+  default packs are no longer provisioned but remain registry-installable,
+  and any alert still pointing at them keeps working if they're on disk.
 
 ## UI conventions
 
@@ -294,8 +301,8 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   latest); check at +10s then 30min; toast → quitAndInstall(silent,
   relaunch); dev-guarded on `app.isPackaged` EXCEPT channel IPC (settings
   UI needs it in dev). Single-instance lock makes the relaunch clean.
-- First-run self-sufficiency: default sound packs self-provision from
-  og-packs (they're gitignored, so installers ship without them); spell
+- First-run self-sufficiency: the default sound pack self-provisions from
+  its pinned registry tag (gitignored, so installers ship without it); spell
   DB/overlay baseline are inlined in the main bundle; EQ dir resolves via
   env → registry → drive-sweep with the Settings-gear override; zero logs
   anywhere → quiet empty state, never an error.

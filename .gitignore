@@ -1,5 +1,6 @@
 node_modules/
 out/
+out-e2e/
 dist/
 release/
 .DS_Store
@@ -7,9 +8,15 @@ release/
 .vite/
 devlog.txt
 
-# downloaded sound packs (CC-BY-NC, fetched from PeonPing/og-packs — see scripts)
+# downloaded sound packs (audio binaries — `npm run fetch:packs` restores them; the app
+# also self-provisions the default pack at runtime). peon/sc_marine are no longer shipped
+# defaults but stay ignored so an existing dev's local copies never get committed.
+resources/soundpacks/alan-rickman/
 resources/soundpacks/peon/
 resources/soundpacks/sc_marine/
+
+# headless Electron e2e harness dumps DOM/screenshots here on a failed assertion
+tests/e2e/artifacts/
 
 # clean-machine sandbox harness writes results here; keep the folder, not the output
 scripts/sandbox/results/*
