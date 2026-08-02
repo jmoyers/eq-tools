@@ -20,7 +20,14 @@ import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import type { ModuleDelta } from './modules/types'
 import { getSoundData, listPacks } from './sounds'
-import { fetchRegistry, installPack, uninstallPack } from './packRegistry'
+import {
+  fetchPackSounds,
+  fetchPreviewSound,
+  fetchRegistry,
+  findRegistryPack,
+  installPack,
+  uninstallPack
+} from './packRegistry'
 import { initUpdater } from './updater'
 import {
   deleteAlert,
@@ -43,6 +50,10 @@ let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
 let inventoryWatcher: FSWatcher | null = null
+// Wall-clock heartbeat (Task #30): drives module onTick so real-time deadlines (the
+// buffs 15s cast-landing timeout) fire even when the log is idle. Started once the
+// live tail is running (never during replay), cleared on quit / character switch.
+let tickTimer: ReturnType<typeof setInterval> | null = null
 
 // --- JS error capture harness (Task #13) ---
 // Install process-level guards as early as possible so a crash during startup is
@@ -301,6 +312,14 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   tailer.on('error', (err) => console.error('[eq-tools] tailer error', err))
   void tailer.start()
 
+  // Start the wall-clock heartbeat now that the LIVE tail is running (the scan has
+  // completed). registry.tick advances each module's onTick then flushes deltas only
+  // when dirty — so an idle log still confirms a pending buff cast, and a stale cast
+  // scanned from the log lands on the first tick (now ≫ its beganTs). Clear any prior
+  // timer first (a character switch re-enters startTailing).
+  if (tickTimer) clearInterval(tickTimer)
+  tickTimer = setInterval(() => registry.tick(Date.now()), 1000)
+
   // Watch this character's inventory export so a fresh /outputfile auto-reloads.
   startInventoryWatch(ref)
 
@@ -436,6 +455,17 @@ function registerIpc(): void {
     const ok = uninstallPack(name)
     return ok ? { ok: true as const } : { ok: false as const, error: 'pack not found or not removable' }
   })
+  // Preview a registry pack BEFORE install (Task #31): list its sounds / stream one.
+  ipcMain.handle(IPC.packsPreviewList, async (_e, name: string) => {
+    const pack = await findRegistryPack(name)
+    if (!pack) return { sounds: [], error: `pack '${name}' not in registry` }
+    return fetchPackSounds(pack)
+  })
+  ipcMain.handle(IPC.packsPreviewSound, async (_e, name: string, file: string) => {
+    const pack = await findRegistryPack(name)
+    if (!pack) return null
+    return fetchPreviewSound(pack, file)
+  })
 
   // ---- frameless window controls (Task #23) ----
   // The React title bar (App.tsx) drives the native window: these mirror the
@@ -490,5 +520,7 @@ if (!gotSingleInstanceLock) {
 app.on('window-all-closed', () => {
   void tailer?.stop()
   void inventoryWatcher?.close()
+  if (tickTimer) clearInterval(tickTimer)
+  tickTimer = null
   if (process.platform !== 'darwin') app.quit()
 })

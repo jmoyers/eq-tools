@@ -25,3 +25,13 @@ export function remainingFraction(elapsedMs: number, estimatedMs: number): numbe
   const frac = 1 - elapsedMs / estimatedMs
   return frac < 0 ? 0 : frac > 1 ? 1 : frac
 }
+
+/**
+ * True when a buff has run past its expected window (Task #30): elapsed exceeds the
+ * p75 of observed durations, with at least 2 samples backing the estimate. Used to
+ * flip the remaining-time from a (would-be-negative) countdown to a subtle "overdue"
+ * hint. `p75`/`n` come straight off the ActiveBuff; null p75 or n<2 → not overdue.
+ */
+export function isOverdue(elapsedMs: number, p75: number | null, n: number): boolean {
+  return p75 != null && n >= 2 && elapsedMs > p75
+}

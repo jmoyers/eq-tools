@@ -342,6 +342,14 @@ export interface ActiveBuff {
   n: number
   /** 'pet' when the buff is on the player's pet, undefined for self. */
   target?: string
+  /**
+   * True while this is an OPTIMISTIC (not-yet-confirmed) landing (Task #30): shown
+   * the instant `castBegin` fires so a buff is visible immediately, before the 15s
+   * land timeout / next-cast / fade confirms it. A fizzle/interrupt retracts a
+   * provisional entry; confirmation clears the flag. The UI dims provisional rows
+   * and shows a subtle "casting…" hint.
+   */
+  provisional?: boolean
 }
 
 /** buffs module snapshot: live active buffs + mined per-spell stats. */
@@ -434,6 +442,29 @@ export interface PackInstallProgress {
 /** Reply of packs:install / packs:uninstall. */
 export interface PackMutationResult {
   ok: boolean
+  error?: string
+}
+
+// ----- Registry pack PREVIEW (Task #31) -----
+//
+// Before installing, the registry browser can preview a pack's sounds: fetch the
+// pack's CESP openpeon.json off GitHub raw, list its sounds, and stream a single
+// audio file's bytes on demand — all without writing anything to disk.
+
+/** One previewable sound within an un-installed registry pack. */
+export interface PackPreviewSound {
+  /** stable id derived the same way an install would (category + basename). */
+  soundId: string
+  /** human label (category prefix + CESP label), matching the installed picker. */
+  label: string
+  /** the source-relative audio path (e.g. "sounds/ab_add_player_01.mp3"). */
+  file: string
+}
+
+/** Reply of packs:previewList — a pack's sounds without installing it. */
+export interface PackPreviewList {
+  sounds: PackPreviewSound[]
+  /** present when the manifest couldn't be fetched/parsed. */
   error?: string
 }
 

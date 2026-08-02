@@ -10,6 +10,7 @@ import type {
   ModuleSnapshot,
   PackInstallProgress,
   PackMutationResult,
+  PackPreviewList,
   ProgressState,
   RegistryListResult,
   SoundData,
@@ -21,7 +22,7 @@ import type { UpdateChannel, UpdateStatus } from '../shared/types'
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack }
-export type { PackInstallProgress, PackMutationResult, RegistryListResult }
+export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { UpdateChannel, UpdateStatus }
 
 export interface ReloadInventoryResult {
@@ -94,6 +95,12 @@ const api = {
   /** Uninstall a user-installed pack by name. */
   uninstallPack: (name: string): Promise<PackMutationResult> =>
     ipcRenderer.invoke(IPC.packsUninstall, name),
+  /** Preview a registry pack's sounds BEFORE install (fetched off GitHub raw). */
+  previewPackSounds: (name: string): Promise<PackPreviewList> =>
+    ipcRenderer.invoke(IPC.packsPreviewList, name),
+  /** Fetch one preview audio file's bytes for a registry pack (null on failure). */
+  previewPackSound: (name: string, file: string): Promise<SoundData | null> =>
+    ipcRenderer.invoke(IPC.packsPreviewSound, name, file),
   /** Subscribe to install progress pushes. */
   onPackProgress: (cb: (p: PackInstallProgress) => void): (() => void) => {
     const listener = (_e: unknown, p: PackInstallProgress): void => cb(p)

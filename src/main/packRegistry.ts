@@ -35,9 +35,12 @@ import {
 } from './sounds'
 import type {
   PackInstallProgress,
+  PackPreviewList,
+  PackPreviewSound,
   RegistryListResult,
   RegistryPack,
   RegistryPackView,
+  SoundData,
   SoundPackManifest
 } from '../shared/types'
 
@@ -45,6 +48,12 @@ const REGISTRY_URL = 'https://peonping.github.io/registry/index.json'
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000 // 24h
 const MAX_REDIRECTS = 5
 const MAX_DOWNLOAD_BYTES = 100 * 1024 * 1024 // 100MB sanity cap
+const PREVIEW_CACHE_MAX = 20 // LRU cap for previewed audio bytes
+const AUDIO_MIME: Record<string, string> = {
+  '.wav': 'audio/wav',
+  '.mp3': 'audio/mpeg',
+  '.ogg': 'audio/ogg'
+}
 
 interface RegistryIndex {
   version?: number
@@ -232,6 +241,121 @@ function installedIds(): Set<string> {
 function annotate(packs: RegistryPack[]): RegistryPackView[] {
   const installed = installedIds()
   return packs.map((p) => ({ ...p, installed: installed.has(p.name) }))
+}
+
+// ---- preview (list sounds + stream one file, no install) ----------------------
+//
+// Both read the pack straight off GitHub raw at the release tag. The raw form
+// `https://raw.githubusercontent.com/{repo}/{ref}/{path}` works for TAG refs (verified
+// against a real pack), so we use it directly rather than the `refs/tags/{ref}` form.
+// The manifest listing is cached per pack for the session; previewed audio bytes use
+// a small LRU (previews are one-off and can be large-ish).
+
+/** raw.githubusercontent base for a pack's release tree (no trailing slash). */
+function rawBase(pack: RegistryPack): string {
+  const sub = pack.source_path && pack.source_path !== '.' ? pack.source_path.replace(/\\/g, '/').replace(/^\/|\/$/g, '') : ''
+  const root = `https://raw.githubusercontent.com/${pack.source_repo}/${pack.source_ref}`
+  return sub ? `${root}/${sub}` : root
+}
+
+// Manifest listings cached per pack for the whole session (packs are immutable at a tag).
+const previewListCache = new Map<string, PackPreviewSound[]>()
+// Previewed audio bytes as a small LRU (Map preserves insertion order → evict oldest).
+const previewSoundCache = new Map<string, SoundData>()
+
+function lruGet(cacheKey: string): SoundData | undefined {
+  const hit = previewSoundCache.get(cacheKey)
+  if (hit) {
+    previewSoundCache.delete(cacheKey)
+    previewSoundCache.set(cacheKey, hit) // bump to most-recent
+  }
+  return hit
+}
+
+function lruSet(cacheKey: string, data: SoundData): void {
+  previewSoundCache.set(cacheKey, data)
+  while (previewSoundCache.size > PREVIEW_CACHE_MAX) {
+    const oldest = previewSoundCache.keys().next().value
+    if (oldest === undefined) break
+    previewSoundCache.delete(oldest)
+  }
+}
+
+/**
+ * List a registry pack's sounds WITHOUT installing it: fetch its CESP openpeon.json
+ * off GitHub raw at the release tag, run the same CESP→manifest conversion the
+ * installer uses (so soundIds + labels match a real install), and return the file
+ * path for each (relative to the raw base, e.g. "sounds/foo.mp3"). Cached per pack.
+ */
+export async function fetchPackSounds(pack: RegistryPack): Promise<PackPreviewList> {
+  const cached = previewListCache.get(pack.name)
+  if (cached) return { sounds: cached }
+  try {
+    const body = await httpGetBuffer(`${rawBase(pack)}/openpeon.json`)
+    const cesp = JSON.parse(body.toString('utf8')) as CespManifest
+    // Run the SAME CESP→manifest conversion the installer uses so soundIds + labels
+    // match a real install exactly. As each soundId is derived, capture its ORIGINAL
+    // CESP file path (which may already carry a `sounds/` prefix, e.g.
+    // "sounds/foo.mp3") — that's the path to fetch relative to the raw base. The
+    // converted manifest stores file as `sounds/<basename>`, so we keep the source
+    // path separately here.
+    const taken = new Set<string>()
+    const idToFile = new Map<string, string>()
+    const manifestSounds = cespToManifestSounds(cesp, (category, file) => {
+      const id = deriveSoundId(category, file, taken)
+      idToFile.set(id, file)
+      return id
+    })
+    const sounds: PackPreviewSound[] = Object.entries(manifestSounds).map(([soundId, s]) => ({
+      soundId,
+      label: s.label,
+      file: idToFile.get(soundId) ?? s.file
+    }))
+    previewListCache.set(pack.name, sounds)
+    return { sounds }
+  } catch (err) {
+    logError('main:packRegistry', { message: `preview list for '${pack.name}' failed`, err })
+    return { sounds: [], error: err instanceof Error ? err.message : String(err) }
+  }
+}
+
+/**
+ * Fetch a single preview audio file's bytes off GitHub raw (same base URL + the
+ * manifest's file path). Returns { mime, dataBase64 } like getSoundData so the
+ * renderer builds a Blob URL. LRU-cached. `file` is validated against the pack's
+ * preview listing to prevent fetching arbitrary repo paths.
+ */
+export async function fetchPreviewSound(pack: RegistryPack, file: string): Promise<SoundData | null> {
+  const listing = await fetchPackSounds(pack)
+  if (!listing.sounds.some((s) => s.file === file)) return null
+
+  const cacheKey = `${pack.name}::${file}`
+  const cached = lruGet(cacheKey)
+  if (cached) return cached
+
+  const ext = file.slice(file.lastIndexOf('.')).toLowerCase()
+  const mime = AUDIO_MIME[ext]
+  if (!mime) return null
+
+  // Path is one of the manifest's own file entries; still normalize + strip any
+  // traversal defensively before joining onto the raw base.
+  const safeRel = file.replace(/\\/g, '/').replace(/^\/+/, '')
+  if (safeRel.split('/').includes('..')) return null
+  try {
+    const buf = await httpGetBuffer(`${rawBase(pack)}/${safeRel}`)
+    const data: SoundData = { mime, dataBase64: buf.toString('base64') }
+    lruSet(cacheKey, data)
+    return data
+  } catch (err) {
+    logError('main:packRegistry', { message: `preview sound '${file}' for '${pack.name}' failed`, err })
+    return null
+  }
+}
+
+/** Resolve a registry pack by name (from the cached/live index). Null if unknown. */
+export async function findRegistryPack(name: string): Promise<RegistryPack | null> {
+  const reg = await fetchRegistry(false)
+  return reg.packs.find((p) => p.name === name) ?? null
 }
 
 // ---- install / uninstall ------------------------------------------------------

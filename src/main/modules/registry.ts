@@ -64,6 +64,18 @@ export class ModuleRegistry {
     return this.byId.get(id)?.snapshot() ?? null
   }
 
+  /**
+   * Wall-clock heartbeat (Task #30). Advance every module's optional onTick, then
+   * run the SAME flush path as live events (deltas push only when a module went
+   * dirty). Called ~1×/sec from index.ts with Date.now() while the live tail runs —
+   * never during historical replay — so real-time deadlines (buffs' 15s land
+   * timeout) fire even when the log is idle.
+   */
+  tick(nowMs: number): void {
+    for (const mod of this.modules) mod.onTick?.(nowMs)
+    this.doFlush()
+  }
+
   /** Flush every module now (used to push a character-switch immediately). */
   flushNow(): void {
     if (this.flushTimer) {

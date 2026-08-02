@@ -58,3 +58,82 @@ export async function playSound(packId: string, soundId: string, volume: number)
     // Autoplay/user-gesture policies can reject the first play; nothing to do.
   }
 }
+
+// ----- registry PREVIEW playback (Task #31) -----
+//
+// Preview an UN-installed registry pack's audio: bytes are fetched over the
+// `packs:previewSound` IPC (off GitHub raw, main-side LRU) and turned into a Blob
+// URL cached keyed by packName/file. Unlike installed-sound URLs (kept for the app
+// lifetime), preview URLs are tied to the dialog: `revokePreviewCache()` drops them
+// all when the registry dialog closes. Only one preview plays at a time.
+
+const previewCache = new Map<string, Promise<string | null>>()
+let previewAudio: HTMLAudioElement | null = null
+
+function previewKey(packName: string, file: string): string {
+  return `${packName}::${file}`
+}
+
+/** Resolve a Blob URL for a registry pack's preview file (cached). Null on failure. */
+function getPreviewUrl(packName: string, file: string): Promise<string | null> {
+  const k = previewKey(packName, file)
+  const hit = previewCache.get(k)
+  if (hit) return hit
+  const p = window.eq
+    .previewPackSound(packName, file)
+    .then((data) => {
+      if (!data) return null
+      const bytes = Uint8Array.from(atob(data.dataBase64), (c) => c.charCodeAt(0))
+      return URL.createObjectURL(new Blob([bytes], { type: data.mime }))
+    })
+    .catch(() => null)
+  previewCache.set(k, p)
+  return p
+}
+
+/**
+ * Play a registry pack's preview sound at `volume` (0..1). Stops any preview
+ * already playing (only one at a time). Resolves once the fetch + play kicks off;
+ * returns false if the sound couldn't be loaded.
+ */
+export async function playPreviewSound(
+  packName: string,
+  file: string,
+  volume: number
+): Promise<boolean> {
+  const url = await getPreviewUrl(packName, file)
+  if (!url) return false
+  stopPreview()
+  const audio = new Audio(url)
+  audio.volume = Math.max(0, Math.min(1, volume))
+  previewAudio = audio
+  try {
+    await audio.play()
+  } catch {
+    // Autoplay/user-gesture policies can reject; nothing to do.
+  }
+  return true
+}
+
+/** Stop the currently-playing preview (if any). */
+export function stopPreview(): void {
+  if (previewAudio) {
+    previewAudio.pause()
+    previewAudio.currentTime = 0
+    previewAudio = null
+  }
+}
+
+/**
+ * Drop all cached preview Blob URLs (revoking them) and stop playback. Call when the
+ * registry dialog closes so preview bytes don't leak for the app's lifetime.
+ */
+export function revokePreviewCache(): void {
+  stopPreview()
+  for (const p of previewCache.values()) {
+    void p.then((url) => {
+      if (url) URL.revokeObjectURL(url)
+    })
+  }
+  previewCache.clear()
+}

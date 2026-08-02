@@ -421,9 +421,17 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     if (m) {
       // A charm spell wearing off retires the pet (uncharm). A MEZ/ROOT spell wearing
       // off is instead a CC keep-alive refresh — the mob was held right up to now.
-      // Anything else (buffs/debuffs/pacify) is not lifecycle and falls through.
+      // Charm/cc precedence is UNCHANGED (regression-gated).
       if (cfg.charmSpell.test(m[1])) return { kind: 'uncharm', seq, ts, raw, mob: norm(m[2]) }
       if (cfg.ccSpell.test(m[1])) return { kind: 'cc', seq, ts, raw, mob: norm(m[2]), spell: m[1].trim(), refresh: true }
+      // NAMED-TARGET buff fade (Task #30): a NON-charm, NON-cc spell wearing off OF a
+      // named target is a real buff the player cast on that target (e.g. a pet buff
+      // cast on the charmed mob by name: "Your Swift Like the Wind spell has worn off
+      // of an ice giant."). Previously this fell through and emitted NOTHING, so the
+      // Buffs tab missed every named-target fade. The raw target name is carried on
+      // `target` (can be a mob name); the buffs miner keys samples per spell — see
+      // buffs.ts (per-spell-per-target pairing is a known v1 simplification).
+      return { kind: 'buffFade', seq, ts, raw, spell: m[1].trim(), target: norm(m[2]) }
     }
   } else if (text.includes('worn off.')) {
     // TARGETLESS worn-off — the player's own buff (self or pet) expired. This is the

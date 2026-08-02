@@ -53,6 +53,11 @@ export const IPC = {
   packsUninstall: 'packs:uninstall',
   // main -> renderer: install progress {name, phase, percent?, message?}.
   onPackProgress: 'packs:progress',
+  // renderer -> main: preview a registry pack BEFORE install (Task #31).
+  // list a pack's sounds (name -> PackPreviewList) …
+  packsPreviewList: 'packs:previewList',
+  // … and stream a single preview audio file's bytes (name, file -> SoundData).
+  packsPreviewSound: 'packs:previewSound',
 
   // ---- frameless window controls (Task #23) ----
   // renderer -> main: title-bar buttons drive the (frameless) native window.

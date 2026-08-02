@@ -197,18 +197,57 @@ zero-regression on charm/cc/uncharm/death):
 - `playerDeath { killer? }` — `You have been slain by <X>!` (distinct from the
   third-person SLAIN_BY `<mob> has been slain by <x>!`, which needs `has`, not `have`).
 
-**Model:** `castBegin(S)` → pending; a fizzle/interrupt of S clears it; otherwise the
-cast is treated as LANDED when the next `castBegin` arrives OR 15s of log-time elapse
-(cast times are unknown — this is the documented approximation; the landed timestamp
-is the cast-BEGIN ts, since cast seconds are negligible vs minute-scale durations).
-Each landed cast pairs with the NEXT `buffFade` of S → a duration sample. CENSORED (no
-sample) on recast-before-fade (a refresh — restart the timer) or `playerDeath`-before-
-fade (death strips buffs + clears all active). **Zone lines do NOT clear buffs** (EQ
-buffs persist through zoning). Per-spell stats = n / median / p25 / p75 / min / max.
-The honest **buff discriminator**: only spells that have EVER produced a `buffFade` are
-treated as buffs — nukes/mez/charm emit `castBegin` too but never self-fade, so they're
-excluded. Snapshot `{ active: ActiveBuff[], stats: {spell: BuffStat} }`; the module
-ships its whole (small) snapshot as each delta.
+**Mining model (unchanged, byte-for-byte, since Task #30):** `castBegin(S)` → pending;
+a fizzle/interrupt of S clears it; otherwise the cast is treated as LANDED (for MINING)
+when the next `castBegin` arrives OR 15s of log-time elapse (cast times are unknown —
+the documented approximation; landed ts is the cast-BEGIN ts, cast seconds being
+negligible vs minute-scale durations). Each landed cast pairs with the NEXT `buffFade`
+of S → a duration sample. CENSORED (no sample) on recast-before-fade (a refresh —
+restart the timer) or `playerDeath`-before-fade (death strips buffs + clears all
+active). **Zone lines do NOT clear buffs** (EQ buffs persist through zoning). Per-spell
+stats = n / median / p25 / p75 / min / max. The honest **buff discriminator**: only
+spells that have EVER produced a `buffFade` are buffs — nukes/mez/charm emit `castBegin`
+too but never fade, so they're excluded. Snapshot `{ active: ActiveBuff[], stats:
+{spell: BuffStat} }`; the module ships its whole (small) snapshot as each delta.
+
+**Optimistic landing + retraction (Task #30 — the latency fix).** The DISPLAY (`active`
+map) no longer waits for the 15s confirmation. On `castBegin(S)`: if S already has a
+CONFIRMED active entry, keep it and STAGE the refresh (don't move `startedTs` until
+confirmed — so a refresh that fizzles leaves the prior buff intact); else if S ∈
+`everFaded`, create a PROVISIONAL active entry (`provisional:true`, `startedTs=beganTs`)
+immediately. A `castFizzle`/`castInterrupted` of S drops the provisional / abandons the
+staged refresh. CONFIRMATION is exactly the mining land (next-cast / +15s / fade) — it
+clears `provisional` and applies a staged refresh's `startedTs`. Mining semantics
+(`open`/`samples`) are UNTOUCHED, so duration samples are identical (regression-gated:
+with named-fades stripped, the new logic reproduces the pre-change stats byte-for-byte).
+`ActiveBuff.provisional?` is additive; BuffsView dims provisional rows (dashed border +
+"casting…" chip) until confirm.
+
+**Wall-clock tick (Task #30 — the idle fix).** `EqModule.onTick?(nowMs)` is an optional
+heartbeat; `ModuleRegistry.tick(nowMs)` calls every module's onTick then runs the normal
+flush path (deltas only when dirty). `index.ts` starts a 1s `setInterval(registry.tick,
+Date.now())` once the LIVE tail is running (never during replay), cleared on quit /
+character switch. `BuffsModule.onTick` runs `maybeLandPendingByTime(now)`, so the 15s
+confirmation fires in real time while the log is idle (standing still after a self-cast
+now shows the buff, then confirms ~15s later). Log ts and `Date.now()` share the local
+clock. **Restart currency:** after a scan, a stale pending cast from minutes ago (`now ≫
+beganTs`) confirms on the FIRST live tick; a cast in the final 15s of the scanned log
+appears provisionally in the snapshot immediately after scan.
+
+**Named-target buff fades (Task #30 — the coverage fix).** In the parser worn-off
+handler, a `Your <Spell> spell has worn off of <target>.` line whose spell is NEITHER a
+charm NOR a cc spell now emits `buffFade { spell, target:<raw name> }` (previously it
+fell through to `unknown` — hundreds of pet-buff fades on the charmed mob, e.g. "Swift
+Like the Wind … worn off of an ice giant", were dropped). Charm→uncharm and cc→refresh
+precedence is unchanged and regression-gated (charm/cc/uncharm counts identical on a
+frozen log). The miner keys samples PER SPELL (per-spell-per-target pairing is a known
+v1 simplification), so named-target fades feed the same buckets as self/pet fades.
+`fadeTarget` can now hold a mob name; BuffsView shows self/'pet'/named-target chips.
+(Frozen-log numbers when this landed: +563 named fades, buffFade 409→972.)
+
+**Overdue display (Task #30):** BuffsView shows "overdue · any moment" (warning color)
+instead of a bottomed-out countdown once elapsed > p75 with n≥2 (`isOverdue` in
+buffs/format.ts).
 
 **BuffsView** (`features/buffs/BuffsView.tsx`, "Buffs" nav tab, AutoFixHigh icon) shows
 active buffs with a live elapsed/estimated-remaining bar (indeterminate + "unknown
@@ -220,8 +259,11 @@ stats table sorted by n. Live via `useModule('buffs', …)`.
 moment a long class buff drops (the BuffsView caption points users at this). All five
 new kinds are in `LogEventKind`, so any is alert-targetable.
 
-**Out of scope (v1):** an overlay window (later phase); and self-buffs never yet
-observed fading only appear once their first fade is seen.
+**Out of scope (still):** an overlay window (later phase); a spell never yet observed
+fading still won't show as active until its first fade classifies it as a buff (the
+`everFaded` gate — a provisional entry is only created for known buffs); and duration
+samples are keyed per spell, not per (spell,target), so a buff on two named targets
+shares one bucket.
 
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in

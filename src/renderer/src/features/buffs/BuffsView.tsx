@@ -16,7 +16,7 @@ import {
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import type { ActiveBuff, BuffStat, BuffsDelta, BuffsSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
-import { fmtDuration, remainingFraction } from './format'
+import { fmtDuration, remainingFraction, isOverdue } from './format'
 
 // Stable empty reference so hooks don't churn before hydration.
 const EMPTY_BUFFS: BuffsSnap = { active: [], stats: {} }
@@ -34,15 +34,47 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
   // ± spread from the p25/p75 IQR around the estimate.
   const spread =
     buff.p25 != null && buff.p75 != null ? (buff.p75 - buff.p25) / 2 : null
+  // Overdue (Task #30): run past the p75 window (n≥2) → show "any moment" instead of
+  // a bottomed-out countdown.
+  const overdue = isOverdue(elapsed, buff.p75, buff.n)
+  // Provisional (Task #30): shown optimistically the instant we saw the cast begin,
+  // before the land timeout confirms it. Dim the row + show a "casting…" hint.
+  const provisional = buff.provisional === true
 
   return (
-    <Paper variant="outlined" sx={{ p: 1.25, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+    <Paper
+      variant="outlined"
+      sx={{
+        p: 1.25,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 0.5,
+        opacity: provisional ? 0.6 : 1,
+        borderStyle: provisional ? 'dashed' : 'solid'
+      }}
+    >
       <Stack direction="row" alignItems="baseline" spacing={1}>
         <Typography variant="body2" sx={{ fontWeight: 600 }}>
           {buff.spell}
         </Typography>
-        {buff.target === 'pet' && (
+        {buff.target === 'pet' ? (
           <Chip size="small" label="pet" variant="outlined" sx={{ height: 18, fontSize: 11 }} />
+        ) : buff.target ? (
+          <Chip
+            size="small"
+            label={buff.target}
+            variant="outlined"
+            sx={{ height: 18, fontSize: 11, maxWidth: 120, '& .MuiChip-label': { px: 0.75 } }}
+          />
+        ) : null}
+        {provisional && (
+          <Chip
+            size="small"
+            label="casting…"
+            variant="outlined"
+            color="info"
+            sx={{ height: 18, fontSize: 11 }}
+          />
         )}
         <Box sx={{ flexGrow: 1 }} />
         <Typography variant="caption" color="text.secondary">
@@ -58,16 +90,18 @@ function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Elemen
             sx={{
               height: 8,
               borderRadius: 1,
-              // Fade toward warning as the estimated window empties.
+              // Fade toward warning as the estimated window empties / runs overdue.
               '& .MuiLinearProgress-bar': {
-                bgcolor: (frac as number) < 0.2 ? 'warning.main' : 'primary.main'
+                bgcolor: overdue || (frac as number) < 0.2 ? 'warning.main' : 'primary.main'
               }
             }}
           />
           <Stack direction="row" justifyContent="space-between">
-            <Typography variant="caption" color="text.secondary">
-              ~{fmtDuration(remaining as number)} left
-              {spread != null && spread > 1000 ? ` (± ${fmtDuration(spread)})` : ''}
+            <Typography variant="caption" color={overdue ? 'warning.main' : 'text.secondary'}>
+              {overdue
+                ? 'overdue · any moment'
+                : `~${fmtDuration(remaining as number)} left`}
+              {!overdue && spread != null && spread > 1000 ? ` (± ${fmtDuration(spread)})` : ''}
             </Typography>
             <Typography variant="caption" color="text.disabled">
               n={buff.n}

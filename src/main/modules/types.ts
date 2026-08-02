@@ -33,6 +33,16 @@ export interface EqModule<Snap = unknown, Delta = unknown> {
   reset(): void
   /** Fold one event. `live` gates nothing here — the registry gates the push. */
   onEvent(ev: LogEvent, live: boolean): void
+  /**
+   * Optional wall-clock heartbeat (Task #30). The registry calls this ~1×/sec with
+   * `Date.now()` while the LIVE tail is running (never during replay), so a module
+   * with a real-time deadline (e.g. buffs' 15s cast-landing timeout) can advance it
+   * even when the log is idle and no events arrive. Log timestamps and Date.now()
+   * share the local clock, so mixing them is safe. Mutate state + set the dirty flag
+   * as usual; the registry runs the same flush path afterward and only pushes deltas
+   * when something changed.
+   */
+  onTick?(nowMs: number): void
   /** Full current state for hydration, plus the last seq folded in. */
   snapshot(): { seq: number; state: Snap }
   /** Everything since the last flush, or null if nothing changed. */
