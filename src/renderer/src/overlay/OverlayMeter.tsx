@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { OverlayConfig, OverlayKind } from '@shared/types'
-import type { CategoryView, DamageCategory, SegmentView, SourceView } from '@shared/combat'
-import { CATEGORY_LABEL } from '@shared/combat'
+import type { DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
 import { useOverlayCombat } from './useOverlayCombat'
 
@@ -42,7 +41,8 @@ function Bar({
   rank,
   label,
   right,
-  onClick
+  onClick,
+  accent
 }: {
   color: string
   pct: number
@@ -50,6 +50,8 @@ function Bar({
   label: React.ReactNode
   right: string
   onClick?: () => void
+  /** Full-height left stripe — keeps a skill row's category readable at any bar width. */
+  accent?: string
 }): JSX.Element {
   return (
     <div
@@ -65,13 +67,14 @@ function Bar({
       }}
     >
       <div style={{ position: 'absolute', inset: 0, width: `${Math.max(2, pct)}%`, background: color, opacity: 0.55 }} />
+      {accent && <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, background: accent }} />}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           display: 'flex',
           alignItems: 'center',
-          padding: '0 6px',
+          padding: accent ? '0 6px 0 9px' : '0 6px',
           gap: 6,
           fontSize: 11,
           lineHeight: 1,
@@ -90,14 +93,26 @@ function Bar({
   )
 }
 
-// Mini drill-down (Task #54): interactive-only. null = level 1 (entities); {entityId} = level 2
-// (categories); {entityId, category} = level 3 (per-skill). Same data as the main view.
+// Mini drill-down (Task #54): interactive-only. null = level 1 (entities); {entityId} = level 2,
+// ONE flat ranked skill/spell list across every category (color = category, no legend — the
+// overlay is too dense for one). Same data + flattening as the main view.
 interface Drill {
   entityId: string
-  category?: DamageCategory
 }
 
-/** The bar body: entities → categories → skills, driven by the drill state. */
+/** A skill row tagged with the category it was rolled up under (the color key). */
+type FlatSkill = SkillView & { category: DamageCategory }
+
+/** Flatten a source's per-category skills into one damage-desc list, re-basing the bar pct
+ *  on the global max (the engine's pct is relative to each skill's own category max). */
+function flattenSkills(e: SourceView): FlatSkill[] {
+  const rows: FlatSkill[] = e.categories.flatMap((c) => c.skills.map((s) => ({ ...s, category: c.category })))
+  rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
+  const max = Math.max(1, ...rows.map((r) => r.total))
+  return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
+}
+
+/** The bar body: entities → flat skill list, driven by the drill state. */
 function MeterBars({
   seg,
   topN,
@@ -112,12 +127,10 @@ function MeterBars({
   live: boolean
 }): JSX.Element {
   const rows = useMemo(() => (seg?.entities ?? []).slice(0, topN), [seg, topN])
+  // A stale drill (entity gone after a fight change) simply falls back to level 1.
   const drilled = drill && seg ? seg.entities.find((e) => e.id === drill.entityId) : undefined
-  const drilledCat: CategoryView | undefined =
-    drilled && drill?.category ? drilled.categories.find((c) => c.category === drill.category) : undefined
-  const effective = drilled ? drill : null
 
-  if (!seg || (!effective && rows.length === 0)) {
+  if (!seg || (!drilled && rows.length === 0)) {
     return (
       <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', padding: '8px 2px' }}>
         {live ? 'Engaging…' : 'Waiting for combat…'}
@@ -125,36 +138,18 @@ function MeterBars({
     )
   }
 
-  // Level 3: skills within a category.
-  if (effective && drilled && drilledCat) {
-    const color = CAT_COLOR[drilledCat.category]
+  // Level 2: one flat, category-colored skill/spell list for the entity.
+  if (drilled) {
     return (
-      <MeterCrumb name={`${drilled.name} › ${CATEGORY_LABEL[drilledCat.category]}`} onBack={() => setDrill({ entityId: drilled.id })}>
-        {drilledCat.skills.map((s) => (
+      <MeterCrumb name={drilled.name} onBack={() => setDrill(null)}>
+        {flattenSkills(drilled).map((s) => (
           <Bar
-            key={s.name}
-            color={color}
+            key={`${s.category}|${s.name}`}
+            color={CAT_COLOR[s.category]}
+            accent={CAT_COLOR[s.category]}
             pct={s.pct}
             label={s.name}
             right={s.hits > 0 ? `${fmt(s.total)} · ${s.hits}` : `${s.resists ?? 0} resist`}
-          />
-        ))}
-      </MeterCrumb>
-    )
-  }
-
-  // Level 2: categories within an entity.
-  if (effective && drilled) {
-    return (
-      <MeterCrumb name={drilled.name} onBack={() => setDrill(null)}>
-        {drilled.categories.map((c) => (
-          <Bar
-            key={c.category}
-            color={CAT_COLOR[c.category]}
-            pct={c.pct}
-            label={CATEGORY_LABEL[c.category]}
-            right={`${fmt(c.total)} · ${c.hits}`}
-            onClick={() => setDrill({ entityId: drilled.id, category: c.category })}
           />
         ))}
       </MeterCrumb>

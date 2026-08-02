@@ -24,7 +24,7 @@ import { LIVE, useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { formatDate, formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import type { CategoryView, ClassifiedLine, DamageCategory, SegmentView, SourceView } from '@shared/combat'
+import type { ClassifiedLine, DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 
 const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
@@ -76,7 +76,8 @@ function Bar({
   rank,
   name,
   right,
-  onClick
+  onClick,
+  accent
 }: {
   color: string
   pct: number
@@ -84,6 +85,8 @@ function Bar({
   name: ReactNode
   right: string
   onClick?: () => void
+  /** Full-height left stripe — keeps a row's category readable even when its fill is 2% wide. */
+  accent?: string
 }): JSX.Element {
   return (
     <Box
@@ -99,7 +102,13 @@ function Bar({
       }}
     >
       <Box sx={{ position: 'absolute', inset: 0, width: `${Math.max(2, pct)}%`, bgcolor: color, opacity: 0.5 }} />
-      <Stack direction="row" alignItems="center" sx={{ position: 'absolute', inset: 0, px: 0.75 }} spacing={0.75}>
+      {accent && <Box sx={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 3, bgcolor: accent }} />}
+      <Stack
+        direction="row"
+        alignItems="center"
+        sx={{ position: 'absolute', inset: 0, pl: accent ? '9px' : 0.75, pr: 0.75 }}
+        spacing={0.75}
+      >
         {rank != null && (
           <Typography variant="caption" sx={{ color: 'text.secondary', width: 16, textAlign: 'right' }}>
             {rank}
@@ -136,8 +145,8 @@ const EntityRow = memo(function EntityRow({
   rank: number
   onDrill?: () => void
 }): JSX.Element {
-  // Fallback inline expand (level-3 skills) for the incoming view, which has no
-  // drill-down; the outgoing view uses onDrill (category breakdown) instead.
+  // Fallback inline expand (the same flat, category-colored skill list) for the incoming
+  // view, which has no drill-down; the outgoing view uses onDrill instead.
   const [open, setOpen] = useState(false)
   const crit = e.critPct >= 1 ? ` · ${Math.round(e.critPct)}% crit` : ''
   // hit% only meaningful when swings were avoided (melee sources); hide at 100%.
@@ -193,10 +202,11 @@ const EntityRow = memo(function EntityRow({
       {!onDrill && (
         <Collapse in={open}>
           <Box sx={{ pl: 3, pr: 0.5, py: 0.5 }}>
-            {e.skills.map((s) => (
+            {flattenSkills(e).map((s) => (
               <Bar
-                key={s.name}
-                color={KIND_COLOR[e.kind] ?? '#888'}
+                key={`${s.category}|${s.name}`}
+                color={CAT_COLOR[s.category]}
+                accent={CAT_COLOR[s.category]}
                 pct={s.pct}
                 name={s.name}
                 right={`${fmt(s.total)} · ${s.hits} hits${
@@ -242,7 +252,7 @@ function IncomingHeals({ seg }: { seg: SegmentView }): JSX.Element | null {
   )
 }
 
-// Category bar colors for the drill-down level-2/level-3 views.
+// Category colors — the drill-down's ONLY grouping cue now that the category nav level is gone.
 const CAT_COLOR: Record<DamageCategory, string> = {
   melee: '#d9b25f',
   slay: '#e8d48a',
@@ -253,91 +263,151 @@ const CAT_COLOR: Record<DamageCategory, string> = {
 // Red-tint for resist/miss rate badges (matches the timeline's hollow marks).
 const RESIST_COLOR = '#e05663'
 
-// Drill-down selection: undefined = level 1 (entities); {entityId} = level 2
-// (category breakdown); {entityId, category} = level 3 (per-skill/spell). Selection is
-// renderer-side; data comes from the snapshot's SourceView.categories (extended in the
-// engine). Esc / Back / breadcrumb ascend a level.
+// Drill-down selection: null = level 1 (entities); {entityId} = level 2, ONE flat ranked list
+// of every skill/spell that entity landed, across all taxonomy categories. The category is a
+// COLOR (bar fill + left stripe + legend), not a nav level — the old source→category→skill
+// path buried single-skill categories behind an extra click. Esc / Back / breadcrumb → level 1.
 interface Drill {
   entityId: string
-  category?: DamageCategory
 }
 
-/** Level-3: per-skill/spell bars within a chosen category (hits/crits/max/resist). */
-function CategorySkillBars({ cat }: { cat: CategoryView }): JSX.Element {
-  const color = CAT_COLOR[cat.category]
-  return (
-    <Box>
-      {cat.skills.map((s) => {
-        const resists = s.resists ?? 0
-        const casts = s.hits + resists
-        // A spell/dot lane can carry resists (Task #51 v2). Show a resist-rate badge and,
-        // for a lane that only ever resisted (0 hits), a resist-only right-hand summary.
-        return (
-          <Bar
-            key={s.name}
-            color={color}
-            pct={s.pct}
-            name={
-              <>
-                {s.name}
-                {resists > 0 && (
-                  <Tooltip title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round((s.hits / casts) * 100)}% landed`}>
-                    <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
-                      {Math.round((resists / casts) * 100)}% resist
-                    </Typography>
-                  </Tooltip>
-                )}
-              </>
-            }
-            right={
-              s.hits > 0
-                ? `${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`
-                : `${resists} resisted · 0 landed`
-            }
-          />
-        )
-      })}
-    </Box>
-  )
+/** A skill row tagged with the category it was rolled up under (the color key). */
+type FlatSkill = SkillView & { category: DamageCategory }
+
+/**
+ * Flatten a source's per-category skill lists into ONE list ranked by damage desc, and
+ * re-base each row's bar pct on the global max (the engine's `pct` is relative to the
+ * skill's own category max, which would make small categories render full-width here).
+ */
+function flattenSkills(e: SourceView): FlatSkill[] {
+  const rows: FlatSkill[] = e.categories.flatMap((c) => c.skills.map((s) => ({ ...s, category: c.category })))
+  rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
+  const max = Math.max(1, ...rows.map((r) => r.total))
+  return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
 }
 
-/** Level-2: category breakdown bars for one entity; clicking a bar drills to level 3. */
-function EntityCategoryBars({
+/**
+ * The compact category legend above the flat list: swatch + label + total, carrying the
+ * category-level badges (crit%, resist%) that used to live on the removed category bars.
+ * Chips double as filters — click to isolate one category, click again to clear.
+ */
+function CategoryLegend({
   e,
-  onPick
+  active,
+  onToggle
 }: {
   e: SourceView
-  onPick: (cat: DamageCategory) => void
-}): JSX.Element {
-  const rounds = e.rounds
+  active: DamageCategory | null
+  onToggle: (c: DamageCategory) => void
+}): JSX.Element | null {
+  if (e.categories.length === 0) return null
   return (
-    <Box>
-      {e.categories.map((c) => (
-        <Bar
-          key={c.category}
-          color={CAT_COLOR[c.category]}
-          pct={c.pct}
-          onClick={() => onPick(c.category)}
-          name={
-            <>
-              {CATEGORY_LABEL[c.category]}
+    <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ mb: 0.75 }}>
+      {e.categories.map((c) => {
+        const on = active === c.category
+        return (
+          <Tooltip
+            key={c.category}
+            title={`${CATEGORY_LABEL[c.category]}: ${fmt(c.total)} over ${c.hits} hits · max ${fmt(c.max)} — click to ${
+              on ? 'show all categories' : 'show only this category'
+            }`}
+          >
+            <Box
+              onClick={() => onToggle(c.category)}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 0.5,
+                px: 0.75,
+                py: '2px',
+                borderRadius: 999,
+                cursor: 'pointer',
+                userSelect: 'none',
+                border: '1px solid',
+                borderColor: on ? CAT_COLOR[c.category] : 'divider',
+                bgcolor: on ? `${CAT_COLOR[c.category]}22` : 'transparent',
+                opacity: active && !on ? 0.45 : 1,
+                '&:hover': { borderColor: CAT_COLOR[c.category] }
+              }}
+            >
+              <Box sx={{ width: 8, height: 8, borderRadius: '2px', bgcolor: CAT_COLOR[c.category], flexShrink: 0 }} />
+              <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                {CATEGORY_LABEL[c.category]}
+              </Typography>
+              <Typography variant="caption" color="text.secondary">
+                {fmt(c.total)}
+              </Typography>
               {c.critPct >= 1 && (
-                <Typography component="span" variant="caption" sx={{ ml: 0.5, color: 'text.secondary' }}>
+                <Typography component="span" variant="caption" sx={{ color: 'text.secondary' }}>
                   {Math.round(c.critPct)}% crit
                 </Typography>
               )}
               {c.resists > 0 && (
-                <Tooltip title={`${c.resists} resisted of ${c.hits + c.resists} casts — ${Math.round(c.resistPct)}% resisted`}>
-                  <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
-                    {Math.round(c.resistPct)}% resist
-                  </Typography>
-                </Tooltip>
+                <Typography component="span" variant="caption" sx={{ color: RESIST_COLOR }}>
+                  {Math.round(c.resistPct)}% resist
+                </Typography>
               )}
-            </>
-          }
-          right={`${fmt(c.total)} · ${c.hits} hits · max ${fmt(c.max)}`}
-        />
+            </Box>
+          </Tooltip>
+        )
+      })}
+    </Stack>
+  )
+}
+
+/** One flat skill/spell row, colored by its parent category (fill + left stripe). */
+function SkillBar({ s }: { s: FlatSkill }): JSX.Element {
+  const color = CAT_COLOR[s.category]
+  const resists = s.resists ?? 0
+  const casts = s.hits + resists
+  // A spell/dot lane can carry resists (Task #51 v2). Show a resist-rate badge and,
+  // for a lane that only ever resisted (0 hits), a resist-only right-hand summary.
+  return (
+    <Bar
+      color={color}
+      accent={color}
+      pct={s.pct}
+      name={
+        <>
+          {s.name}
+          {resists > 0 && (
+            <Tooltip title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round((s.hits / casts) * 100)}% landed`}>
+              <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
+                {Math.round((resists / casts) * 100)}% resist
+              </Typography>
+            </Tooltip>
+          )}
+        </>
+      }
+      right={
+        s.hits > 0
+          ? `${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`
+          : `${resists} resisted · 0 landed`
+      }
+    />
+  )
+}
+
+/**
+ * Level-2 (the only drill level): the category legend + ONE flat ranked list of every
+ * skill/spell this entity landed. The melee-rounds heuristic footer rides along.
+ */
+function EntitySkillBars({ e }: { e: SourceView }): JSX.Element {
+  const [filter, setFilter] = useState<DamageCategory | null>(null)
+  const rounds = e.rounds
+  const all = flattenSkills(e)
+  const rows = filter ? all.filter((s) => s.category === filter) : all
+  return (
+    <Box>
+      <CategoryLegend e={e} active={filter} onToggle={(c) => setFilter((f) => (f === c ? null : c))} />
+      {rows.map((s) => (
+        <SkillBar key={`${s.category}|${s.name}`} s={s} />
       ))}
+      {rows.length === 0 && (
+        <Typography variant="caption" color="text.secondary">
+          No skill breakdown for this source.
+        </Typography>
+      )}
       {rounds && (rounds.multiHitRounds > 0 || rounds.maxHitsInRound > 1) && (
         <Tooltip
           title={`Heuristic: EQ never logs double/triple attack, so a "round" here is same-second, same-skill melee/slay hits — a cluster proxy, not a certainty. Main-hand vs off-hand is not distinguishable. Distribution (hits→rounds): ${rounds.histogram
@@ -371,12 +441,9 @@ function SegmentBody({
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
   const dps = mode === 'out' ? seg.outDps : seg.inDps
 
+  // If a stale drill points at an entity no longer present (fight changed), fall back to
+  // level 1 — `drilledEntity` undefined is the only stale case now.
   const drilledEntity = drill ? rows.find((r) => r.id === drill.entityId) : undefined
-  const drilledCat =
-    drilledEntity && drill?.category ? drilledEntity.categories.find((c) => c.category === drill.category) : undefined
-  // If a stale drill points at an entity/category no longer present (fight changed),
-  // fall back to level 1 by treating the drill as null for rendering.
-  const effectiveDrill = drilledEntity ? drill : null
 
   return (
     <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
@@ -417,15 +484,13 @@ function SegmentBody({
         </Typography>
       </Stack>
 
-      {/* Drill-down breadcrumb + Back (levels 2/3). Level 1 shows no breadcrumb. */}
-      {effectiveDrill && drilledEntity && (
+      {/* Drill-down breadcrumb + Back. Two levels only: entity list ↔ flat skill list. */}
+      {drilledEntity && (
         <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75 }}>
           <Button
             size="small"
             startIcon={<ArrowBackIcon sx={{ fontSize: 16 }} />}
-            onClick={() =>
-              setDrill(effectiveDrill.category ? { entityId: effectiveDrill.entityId } : null)
-            }
+            onClick={() => setDrill(null)}
             sx={{ minWidth: 0, py: 0 }}
           >
             Back
@@ -434,26 +499,15 @@ function SegmentBody({
             <Link component="button" underline="hover" color="inherit" onClick={() => setDrill(null)} sx={{ fontSize: 12 }}>
               All
             </Link>
-            <Link
-              component="button"
-              underline="hover"
-              color={effectiveDrill.category ? 'inherit' : 'text.primary'}
-              onClick={() => setDrill({ entityId: effectiveDrill.entityId })}
-              sx={{ fontSize: 12 }}
-            >
+            <Typography variant="caption" color="text.primary">
               {drilledEntity.name}
-            </Link>
-            {effectiveDrill.category && (
-              <Typography variant="caption" color="text.primary">
-                {CATEGORY_LABEL[effectiveDrill.category]}
-              </Typography>
-            )}
+            </Typography>
           </Breadcrumbs>
         </Stack>
       )}
 
       <Box sx={{ overflow: 'auto', flexGrow: 1 }}>
-        {!effectiveDrill &&
+        {!drilledEntity &&
           (rows.length ? (
             rows.map((e, i) => (
               <EntityRow
@@ -469,12 +523,10 @@ function SegmentBody({
             </Typography>
           ))}
 
-        {effectiveDrill && drilledEntity && !effectiveDrill.category && (
-          <EntityCategoryBars e={drilledEntity} onPick={(cat) => setDrill({ entityId: drilledEntity.id, category: cat })} />
-        )}
-        {effectiveDrill && drilledCat && <CategorySkillBars cat={drilledCat} />}
+        {/* Keyed by entity so switching sources resets the legend's category filter. */}
+        {drilledEntity && <EntitySkillBars key={drilledEntity.id} e={drilledEntity} />}
 
-        {mode === 'in' && !effectiveDrill && <IncomingHeals seg={seg} />}
+        {mode === 'in' && !drilledEntity && <IncomingHeals seg={seg} />}
       </Box>
     </Paper>
   )
@@ -609,12 +661,12 @@ export default function CombatView(): JSX.Element {
   const [view, setView] = useState<'bars' | 'timeline'>('bars')
   const [drill, setDrill] = useState<Drill | null>(null)
 
-  // Esc ascends one drill level (level3→level2→level1), matching Back/breadcrumb.
+  // Esc leaves the drill-down (there is only one level below the entity list now).
   useEffect(() => {
     if (view !== 'bars') return
     const onKey = (ev: KeyboardEvent): void => {
       if (ev.key !== 'Escape' || !drill) return
-      setDrill(drill.category ? { entityId: drill.entityId } : null)
+      setDrill(null)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
