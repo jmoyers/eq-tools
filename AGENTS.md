@@ -174,6 +174,32 @@ This is the reference implementation of the extension contract for future agents
   add/EDIT — every alert incl. built-ins opens in it (name, trigger type/kind/where,
   raw regex with live validation, sound, volume, cooldown); built-ins are just
   stored defs with stable ids, no special casing.
+- **Suggested-alerts wizard (Task #38).** A one-click "Suggest…" button in AlertsView's
+  toolbar opens `features/alerts/SuggestAlertsDialog.tsx` — a search-to-select wizard that
+  turns the spell DB into ready-made alerts. Main serves a slim catalog over **`spells:catalog`**
+  (`IPC.spellsCatalog` → `window.eq.getSpellCatalog()`): `buildSpellCatalog(db, usage)` in
+  `data/spellDb.ts` joins the EFFECTIVE DB (spells.json + overlay corrections, already applied
+  at startup) with LIVE per-spell usage read READ-ONLY off the buffs module's snapshot
+  (`registry.get('buffs')?.snapshot().state.stats[key].n` = land→fade sample count). Each
+  `SpellCatalogEntry` = {key, name, spellType, illusion, templates, usageCount}; sorted
+  frequent-first then alphabetical. A spell only earns a template flag when the DB has the
+  field the parser needs for that template's event to actually fire (validated in a throwaway
+  harness against the AlertsModule matcher + logEvents.ts):
+  - **wearsOff** (Beneficial + `msgWearsOff`) → `{event, buffWearOff, where:{spell:<name>}}`
+  - **fade** (Beneficial) → `{event, buffFade, where:{spell:<name>}}` (pet/named-target fades)
+  - **lands** (Detrimental + `msgCastOnOther`) → `{event, buffApply, where:{spell:<name>}}`
+  - **illusion** (any illusion spell) → a SINGLE shared `{event, illusionFade}` suggestion
+    (the `Your illusion fades.` line names no spell — deduped, not per-spell).
+  Clicking a template chip calls `saveAlert` immediately → an "Alert created — <name>"
+  snackbar with **Undo** (`deleteAlert`); no multi-step form. Default sound by template
+  (wears-off/illusion→`default/warning`, fade/lands→`default/chime`), `cooldownMs` 3000, name
+  auto-generated ("Clarity wears off"). **ID CONVENTION (the idempotency key):
+  `suggest:<spellKey>:<template>`** (spellKey = canonical rank-stripped lowercased key;
+  template ∈ `wearsOff|fade|lands`); illusion is the shared `suggest:illusion:fade`. An
+  already-created suggestion renders as a checked/disabled chip (match by that id against the
+  live alert list). The def-building + id convention live in `features/alerts/suggestions.ts`
+  (single source of truth). Frozen-DB numbers: 1805 DB spells → 1645 suggestable (532 wearsOff,
+  1016 fade, 629 lands, 45 illusions). Additive only — the existing alerts CRUD/UI is untouched.
 
 ### The Buffs extension (Task #19) — a log-mined buff-duration model
 

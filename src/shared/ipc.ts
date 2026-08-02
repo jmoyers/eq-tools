@@ -43,6 +43,9 @@ export const IPC = {
   // sound packs (discovery + audio bytes)
   listSoundPacks: 'sounds:listPacks',
   getSoundData: 'sounds:getData',
+  // suggested-alerts wizard (Task #38): a slim, searchable spell catalog derived from
+  // the scraped spell DB + live per-spell usage from the buffs module's snapshot.
+  spellsCatalog: 'spells:catalog',
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   // renderer -> main: list registry packs annotated with installed flags.

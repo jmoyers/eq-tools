@@ -24,7 +24,7 @@
 // config path (installSpellDb → getParserConfig().spellDb), preserving parser purity: a
 // profile with no DB installed emits none of the new events and works exactly as before.
 
-import type { SpellDbFile, SpellEntry } from '../../shared/types'
+import type { SpellCatalog, SpellCatalogEntry, SpellDbFile, SpellEntry } from '../../shared/types'
 // Import the committed catalog directly so it's BUNDLED into the main build (electron-vite
 // inlines JSON imports). A readFileSync from a path relative to import.meta.url would look
 // beside out/main/index.js in production, where the JSON isn't copied — so import it.
@@ -107,6 +107,49 @@ export function buildSpellDb(spells: SpellEntry[]): SpellDb {
     }
   }
   return { byKey, castOnYou, wearsOff, castOnOtherSuffix: castOnOtherSuffixMap, spells }
+}
+
+/**
+ * Build the slim, searchable spell catalog for the suggested-alerts wizard (Task #38).
+ * Derived from the effective DB (spells.json + overlay corrections already applied to `db`),
+ * with per-spell live usage folded in from `usage` (the buffs module's snapshot stats `n`,
+ * keyed by canonical spell key).
+ *
+ * A spell earns a template flag ONLY when the DB has the field the parser needs for that
+ * template's event to fire — so the wizard never offers an alert that can't actually trigger:
+ *   - wearsOff : Beneficial AND msgWearsOff present → buffWearOff{spell} fires.
+ *   - fade     : Beneficial (any) → buffFade{spell} fires (pet/named-target fades).
+ *   - lands    : Detrimental AND msgCastOnOther present → buffApply{spell} fires (cast-on-other).
+ * Illusion spells additionally get the shared illusion-fade suggestion (deduped in the UI).
+ * A spell with NO template and no illusion flag is dropped (nothing to suggest for it).
+ */
+export function buildSpellCatalog(db: SpellDb, usage: Map<string, number>): SpellCatalog {
+  const entries: SpellCatalogEntry[] = []
+  let hasIllusions = false
+  for (const [key, s] of db.byKey) {
+    const beneficial = s.spellType === 'Beneficial'
+    const detrimental = s.spellType === 'Detrimental'
+    const templates = {
+      wearsOff: beneficial && !!s.msgWearsOff,
+      fade: beneficial,
+      lands: detrimental && !!s.msgCastOnOther
+    }
+    if (s.illusion) hasIllusions = true
+    // Nothing to suggest for a spell with no template and not an illusion — skip it.
+    if (!templates.wearsOff && !templates.fade && !templates.lands && !s.illusion) continue
+    entries.push({
+      key,
+      name: s.name,
+      spellType: s.spellType,
+      illusion: s.illusion,
+      templates,
+      usageCount: usage.get(key) ?? 0
+    })
+  }
+  // Sort frequent-first (usage desc), then alphabetical — the wizard's default order.
+  entries.sort((a, b) => b.usageCount - a.usageCount || a.name.localeCompare(b.name))
+  const withUsage = entries.reduce((n, e) => n + (e.usageCount > 0 ? 1 : 0), 0)
+  return { entries, total: db.byKey.size, withUsage, hasIllusions }
 }
 
 let cached: SpellDb | null = null

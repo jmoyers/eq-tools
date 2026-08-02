@@ -51,6 +51,7 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
 import HistoryIcon from '@mui/icons-material/History'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import type {
   AlertDef,
   AlertFireRecord,
@@ -65,6 +66,7 @@ import type {
 import { useModule } from '../../lib/useModule'
 import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
 import SoundPacksDialog from './SoundPacksDialog'
+import SuggestAlertsDialog from './SuggestAlertsDialog'
 
 // The LogEvent kinds an 'event' trigger can select (mirrors logEvents.ts).
 const EVENT_KINDS: LogEventKind[] = [
@@ -472,6 +474,7 @@ export default function AlertsView(): JSX.Element {
   const [confirmReset, setConfirmReset] = useState(false)
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
   const [packsDialogOpen, setPacksDialogOpen] = useState(false)
+  const [suggestOpen, setSuggestOpen] = useState(false)
 
   // Live recent-fires history from the alerts module (single source of truth).
   const snap = useModule<AlertsSnap, AlertsDelta>('alerts', applyAlertsDelta)
@@ -550,6 +553,10 @@ export default function AlertsView(): JSX.Element {
     [packs]
   )
 
+  // ids of alerts that already exist — the Suggest wizard renders those suggestions as
+  // checked/disabled (match by the stable `suggest:<key>:<template>` id convention).
+  const existingIds = useMemo(() => new Set(alerts.map((a) => a.id)), [alerts])
+
   const openAdd = (): void => {
     setEditTarget(null)
     setDialogOpen(true)
@@ -611,6 +618,14 @@ export default function AlertsView(): JSX.Element {
             onClick={() => setConfirmReset(true)}
           >
             Reset to defaults
+          </Button>
+          <Button
+            startIcon={<AutoAwesomeIcon />}
+            variant="outlined"
+            size="small"
+            onClick={() => setSuggestOpen(true)}
+          >
+            Suggest…
           </Button>
           <Button startIcon={<AddIcon />} variant="contained" size="small" onClick={openAdd}>
             Add alert
@@ -739,6 +754,14 @@ export default function AlertsView(): JSX.Element {
         open={packsDialogOpen}
         onClose={() => setPacksDialogOpen(false)}
         onInstalledChange={() => void refreshPacks()}
+      />
+
+      <SuggestAlertsDialog
+        open={suggestOpen}
+        existingIds={existingIds}
+        onClose={() => setSuggestOpen(false)}
+        onCreate={persistAlerts}
+        onDelete={removeAlert}
       />
 
       <Dialog open={confirmReset} onClose={() => setConfirmReset(false)} maxWidth="xs">

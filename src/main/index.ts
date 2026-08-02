@@ -7,7 +7,7 @@ import { characterId, listCharacters, parseLogName, resolveActiveCharacter } fro
 import { Tailer } from './log/Tailer'
 import { parseEvent, parseLine } from './log/parser'
 import { installSpellDb } from './log/rulesets'
-import { loadSpellDb, applyOverlayCorrections } from './data/spellDb'
+import { loadSpellDb, applyOverlayCorrections, buildSpellCatalog } from './data/spellDb'
 import { MessageOverlayMiner } from './data/messageOverlay'
 import { baselineOverlay, loadUserOverlay, saveUserOverlay } from './data/overlayPersistence'
 import { LogBus } from './log/bus'
@@ -48,7 +48,13 @@ import {
   setQuestComplete,
   setWindowBounds
 } from './store'
-import type { AlertDef, AlertPrefs, CharacterRef, PackInstallProgress } from '../shared/types'
+import type {
+  AlertDef,
+  AlertPrefs,
+  BuffsSnap,
+  CharacterRef,
+  PackInstallProgress
+} from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
@@ -466,6 +472,18 @@ function registerIpc(): void {
   ipcMain.handle(IPC.getSoundData, (_e, packId: string, soundId: string) =>
     getSoundData(packId, soundId)
   )
+
+  // ---- suggested-alerts wizard (Task #38) ----
+  // Return the slim, searchable spell catalog: the effective DB (spells.json + overlay
+  // corrections applied at startup) joined with live per-spell usage read straight off the
+  // buffs module's snapshot stats (`n` = observed land→fade samples). Read-only w.r.t. the
+  // buffs module — we never mutate it.
+  ipcMain.handle(IPC.spellsCatalog, () => {
+    const usage = new Map<string, number>()
+    const snap = registry.get('buffs')?.snapshot()?.state as BuffsSnap | undefined
+    if (snap) for (const [key, stat] of Object.entries(snap.stats)) usage.set(key, stat.n)
+    return buildSpellCatalog(spellDb, usage)
+  })
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   ipcMain.handle(IPC.packsRegistry, (_e, force?: boolean) => fetchRegistry(force ?? false))

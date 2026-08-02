@@ -14,14 +14,15 @@ import type {
   ProgressState,
   RegistryListResult,
   SoundData,
-  SoundPack
+  SoundPack,
+  SpellCatalog
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 import type { UpdateChannel, UpdateStatus } from '../shared/types'
 
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
-export type { AlertDef, AlertPrefs, SoundData, SoundPack }
+export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { UpdateChannel, UpdateStatus }
 
@@ -84,6 +85,8 @@ const api = {
   listSoundPacks: (): Promise<SoundPack[]> => ipcRenderer.invoke(IPC.listSoundPacks),
   getSoundData: (packId: string, soundId: string): Promise<SoundData | null> =>
     ipcRenderer.invoke(IPC.getSoundData, packId, soundId),
+  /** Suggested-alerts wizard (Task #38): the searchable spell catalog + live usage. */
+  getSpellCatalog: (): Promise<SpellCatalog> => ipcRenderer.invoke(IPC.spellsCatalog),
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   /** List registry packs (installed-flag reconciled). `force` bypasses the 24h cache. */

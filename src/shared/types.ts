@@ -540,6 +540,53 @@ export interface SpellDbFile {
   spells: SpellEntry[]
 }
 
+// ----- Suggested-alerts wizard (Task #38) -----
+//
+// A slim, searchable catalog derived from spells.json + live usage. For each spell the
+// renderer needs just enough to (a) filter/sort (name, buff/debuff, illusion, usageCount)
+// and (b) know which one-click alert TEMPLATES the spell database can actually support —
+// each template maps to a LogEvent kind that can genuinely fire (validated against
+// logEvents.ts + the AlertsModule matcher). Built in main from the effective DB; usage is
+// folded in from the buffs module's snapshot stats (per-spell sample count `n`).
+
+/** Which suggested-alert templates a spell supports (a template is offered only when its
+ *  trigger can actually fire — gated by the DB fields the parser needs). */
+export interface SpellTemplateFlags {
+  /** Beneficial + has a wears-off message → "wears off you" (kind: buffWearOff). */
+  wearsOff: boolean
+  /** Beneficial → "fades on your pet/target" (kind: buffFade). */
+  fade: boolean
+  /** Detrimental + has a cast-on-other message → "lands on a target" (kind: buffApply). */
+  lands: boolean
+}
+
+/** One catalog row: a spell the wizard can build alerts for. */
+export interface SpellCatalogEntry {
+  /** Canonical (lowercased, rank-stripped) key — the stable id for suggestion ids. */
+  key: string
+  /** Display name (DB casing). */
+  name: string
+  /** 'Beneficial' | 'Detrimental' | undefined (unknown). */
+  spellType?: string
+  /** True when the spell is an Illusion (offered the shared illusion-fade suggestion). */
+  illusion: boolean
+  /** Which one-click alert templates this spell supports. */
+  templates: SpellTemplateFlags
+  /** How often the buffs model has observed this spell (land→fade sample count `n`); 0 = never. */
+  usageCount: number
+}
+
+/** Reply of `spells:catalog`: the catalog + summary stats for the wizard header. */
+export interface SpellCatalog {
+  entries: SpellCatalogEntry[]
+  /** Total spells in the DB. */
+  total: number
+  /** How many entries have usageCount > 0 (the "frequent" set). */
+  withUsage: number
+  /** Whether ANY illusion spell exists (the shared illusion-fade suggestion is offerable). */
+  hasIllusions: boolean
+}
+
 /** A discovered sound within a pack manifest. */
 export interface PackSound {
   /** relative file name inside the pack dir (e.g. "victory.wav") */
