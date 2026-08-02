@@ -783,6 +783,59 @@ together, and it should build good sane defaults that help you with both by defa
 - Per-character state (progress, inventory, completed quests) is keyed by
   `name_server` in `electron-store`. Window bounds are persisted too.
 
+### Floating overlay DPS meter (Task #52) — the second window
+
+A transparent, frameless, always-on-top **second BrowserWindow** that floats a compact
+DPS meter over the game. It is NOT a registered module and NOT part of the main React
+tree — it's an independent window with its own HTML entry, preload, and React root.
+
+- **No native helper app is needed.** EQ Legends runs **windowed/borderless**, where an
+  Electron overlay composites cleanly: `BrowserWindow { transparent:true, frame:false }`
+  + `setAlwaysOnTop(true, 'screen-saver')` + `setIgnoreMouseEvents(true, {forward:true})`
+  for click-through covers everything eqlogparser's WPF overlay does. **CAVEAT — the ONE
+  case it can't cover: true fullscreen-EXCLUSIVE.** A DX-exclusive-fullscreen game owns
+  the swap chain and NO desktop-composited overlay (Electron, WPF, or otherwise) can draw
+  over it — only borderless/windowed. EQL's default is windowed/borderless, so this is a
+  non-issue in practice; just don't promise overlays over exclusive-fullscreen.
+- **Escape hatch (for the record):** if a future target ever needs exclusive-fullscreen or
+  lower-latency drawing, feed a NATIVE overlay (a tiny separate process — e.g. a DX overlay
+  or a Rust/win32 app) the SAME data this window reads: the `combat:snapshot` IPC. Nothing
+  about the engine assumes the consumer is Electron. That path was explicitly deemed
+  unnecessary for the windowed/borderless target and not built.
+- **Build wiring (electron-vite multi-entry):** a SECOND renderer input `overlay.html`
+  (`src/renderer/overlay.html` → `src/renderer/src/overlay/main.tsx`) and a SECOND preload
+  `overlay` (`src/preload/overlay.ts`) are added to `electron.vite.config.ts` rollup
+  inputs. Build emits `out/renderer/overlay.html` + `out/preload/overlay.js`. No
+  electron-builder.yml change — `files: out/**` already ships both. The overlay renderer is
+  intentionally **MUI-free** (plain divs + inline styles, ~11 kB bundle) so the second
+  window stays cheap to paint on top of the game.
+- **Minimal preload surface (`window.eqOverlay`, NOT `window.eq`).** The overlay only needs
+  to READ combat + drive its own window: `getCombatSnapshot`/`onCombatActivity` (reuses the
+  main app's `combat:snapshot`/`combat:activity` transport verbatim — same engine, same
+  polling pattern as `useCombat`, extracted into `src/renderer/src/overlay/useOverlayCombat.ts`
+  which polls `{combinePets:true, maxSegments:1}` for the current fight only), plus
+  `getConfig`/`setConfig`/`onConfig`, `setLocked`, `setIgnoreMouse`, `close`. A lean second
+  bridge keeps the overlay window's blast radius small. Its global type is
+  `src/preload/overlay.d.ts` (added to tsconfig.web include).
+- **Two interaction modes** (persisted in `OverlayConfig.locked`, shared/types.ts):
+  - *interactive* — focusable window, header is a `-webkit-app-region: drag` handle,
+    native resize edges, close button + a bg-alpha slider + top-N (5/10) toggle visible.
+  - *locked (click-through)* — `setIgnoreMouseEvents(true, {forward:true})` +
+    `setFocusable(false)` so clicks reach the game and the overlay NEVER steals focus. A
+    renderer hover sensor (`onMouseEnter`/`Leave`, which still fire because `forward:true`
+    keeps mouse-move flowing) flips `setIgnoreMouse(false)` so the hover-revealed pin button
+    is clickable, then back to pass-through on leave. Opened via `showInactive()` +
+    re-asserted `setAlwaysOnTop('screen-saver')`.
+- **Config + lifecycle** (`store.ts` `overlay` key, `getOverlayConfig`/`setOverlayConfig`
+  merge-patch): `{open, locked, bgAlpha, topN, bounds}`. Position+size persist on
+  moved/resized like the main window. **open-state persists** so the overlay restores on
+  launch (`if (getOverlayConfig().open) createOverlayWindow()` after `createWindow`). It's
+  an accessory of the main window: the main window's `close` handler `destroy()`s the
+  overlay (without flipping persisted `open`) so it can't keep the app alive alone, and it
+  survives main-window MINIMIZE (the whole point). Toggle from the main app's **TitleBar
+  "Overlay" button** (`window.eq.toggleOverlay()` → `overlay:toggle`); `overlay:state`
+  pushes keep the button in sync when the overlay closes itself.
+
 ## EQ Legends log formats (validated against the real log)
 
 - Timestamp: `[Sat Aug 01 13:00:28 2026] <message>`.
@@ -875,34 +928,43 @@ together, and it should build good sane defaults that help you with both by defa
     cumulative GAIN lines (relabeled "AA gained over time" with a caption) — it honestly
     runs AHEAD of the earned headline because it includes refund re-grants; no clever
     refund inference is attempted (simpler + honest per the user).**
-  - **Character epochs (Task #49) — the BETA-WIPE story (grep this for future same-name+server
-    cases).** EQ names its log `eqlog_<Char>_<server>.txt`, so a character DELETED and
-    RECREATED with the SAME name on the SAME server **reuses the SAME log file**. On this real
-    log a BETA character reached level 26 (Jul 19) / 30 (Jul 20), was **wiped at launch**, and
-    the file CONTINUES with `Welcome to EverQuest Legends!` logins then a `You have gained a
-    level! Welcome to level 2!` on **Jul 28 12:32:09 (real line 172394)**, re-leveling 2→3→…→50
-    as a fresh character. Everything before that boundary belongs to the **dead beta character**
-    and CONTAMINATES every character-scoped tally: AA (dashboard read a contaminated 219-220
-    allocated vs the in-game **206**), loot, kills, turn-ins, and Plane-of-Sky quest completions.
-    (The Jul-28 "respec" the Task #48 AA model saw was this CROSS-EPOCH contamination, not a real
-    respec.) The fix:
-    - **Detection** (`src/main/log/epochDetector.ts`, a tiny stateful `EpochDetector`): a `level`
-      event whose new level is a DECISIVE regression vs the highest level seen this epoch — **new
-      level ≤ 3 OR a drop of > 5 levels** — is a rebirth. Classic EQ death-deleveling loses at most
-      a level or two, so a SMALL regression is TOLERATED without a reset (the real log's duplicate
-      `Welcome to level 11!` on Jul 28 is NOT a regression — 11 is not below 11). The whole log
-      implicitly starts in epoch 0. **NOT the `Welcome to EverQuest Legends!` line** — that prints
-      on EVERY login (14× in the real log), so it's not an epoch signal; the level regression is
-      the one unambiguous rebirth fingerprint.
-    - **Emission**: `index.ts` subscribes the detector to the bus LAST and, on a regression, hands
-      a derived **`epoch { reason:'level-regression', level }`** event back onto the SAME bus via
-      **`bus.emitDerived`** (the Task #47 derived-events path — the natural fit). No feedback loop
-      (the detector ignores the `epoch` kind); `live` is inherited so a replayed rebirth stays
-      `live:false`. **Delivery ORDER**: a derived event drains AFTER the primary reaches every
-      listener, so the `level` line that TRIPS the epoch is folded THEN the reset fires — the
-      post-epoch leveling timeline starts at the NEXT ding (the boundary `level 2` entry is dropped
-      as the boundary marker). This is intentional and harmless; the **AA identity is unaffected**
-      (the level line carries no AA).
+  - **Character epochs (Task #49; anchor REPLACED Task #50) — the BETA-WIPE story (grep this for
+    future same-name+server cases).** EQ names its log `eqlog_<Char>_<server>.txt`, so a character
+    DELETED and RECREATED with the SAME name on the SAME server **reuses the SAME log file**. On
+    this real log a BETA character reached level 26 (Jul 19) / 30 (Jul 20), was **wiped at
+    launch**, and the file CONTINUES with `Welcome to EverQuest Legends!` logins then a `You have
+    gained a level! Welcome to level 2!` on **Jul 28 12:32:09 (real line 172394)**, re-leveling
+    2→3→…→50 as a fresh character. Everything before **launch** belongs to the **dead beta
+    character** and CONTAMINATES every character-scoped tally: AA (dashboard read a contaminated
+    219-225 allocated vs the in-game ~206-212), loot, kills, turn-ins, and Plane-of-Sky quest
+    completions. (The Jul-28 "respec" the Task #48 AA model saw was this CROSS-EPOCH
+    contamination, not a real respec.) The fix:
+    - **Detection — LAUNCH-DATE anchor** (`src/main/log/epochDetector.ts`, a tiny stateful
+      `EpochDetector`): the epoch fires ONCE at the **first event with `ts >= 2026-07-28 00:00
+      LOCAL`** — the EverQuest Legends OFFICIAL LAUNCH (`LAUNCH_MS` constant, sources in the file
+      header: massivelyop / monstervine launch coverage; corroborated by the log's own Jul 28
+      12:21:25 launch login + 12:32 first level-up). The date applies PER-LOG, so a pre-launch beta
+      log on another server never fires (its whole span is one epoch — correct). **The old
+      LEVEL-REGRESSION heuristic was REMOVED as UNSAFE (Task #50, user correction):** EQ Legends
+      LOADOUT SWAPS legitimately change your character level ("when you switch loadouts, it uses the
+      level of your loadout" — in-log chat evidence; there is NO explicit swap log line, verified),
+      so a decisive downward level jump is NOT a reliable rebirth fingerprint — and on the LIVE log
+      a real loadout swap now trips the old regression detector a SECOND time (epochCount 2,
+      catastrophically resetting the current character to allocated=6). The launch DATE is
+      unambiguous, needs no heuristic threshold, and can't be confused with in-game mechanics. **NOT
+      the `Welcome to EverQuest Legends!` line either** — that prints on EVERY login (14× in the
+      real log). **LOCAL time** is intentional: the parser turns EQ's timestamp into millis via
+      `Date.parse` (local), and `LAUNCH_MS` is derived with `new Date(y,m,d,…)` (also local), so
+      both sides share the machine clock.
+    - **Emission**: `index.ts` subscribes the detector to the bus LAST and, at the first
+      at/after-launch event, hands a derived **`epoch { reason:'launch' }`** event back onto the
+      SAME bus via **`bus.emitDerived`** (the Task #47 derived-events path — the natural fit). No
+      feedback loop (the detector ignores the `epoch` kind — belt-and-suspenders with the
+      subscription's own guard); `live` is inherited so a replayed boundary stays `live:false`.
+      **Delivery ORDER**: a derived event drains AFTER the primary reaches every listener, so the
+      first post-launch event is folded THEN the reset fires — harmless boundary-marker semantics
+      (if it's a `level 2` line, the post-epoch leveling timeline starts at the NEXT ding; the AA
+      identity is unaffected — the level line carries no AA).
     - **Module reset matrix** (each character-scoped module handles `kind:'epoch'` in `onEvent`):
       **leveling** clears levels/aaGains/aaSpends; **loot** clears the history (keeps `zone` —
       world state); **turnins** clears turn-ins + any half-formed offer; **kills** clears the
@@ -920,20 +982,29 @@ together, and it should build good sane defaults that help you with both by defa
       manual-vs-auto provenance, so the two are INDISTINGUISHABLE in the store. We deliberately do
       **NOT** clear it on epoch: auto-completions re-derive from the now-epoch-anchored turnins
       module (a completion whose turn-in survives post-epoch stays; the effect only ADDS), and a
-      clear-all would irreversibly destroy MANUAL completions. On THIS log it's moot — the 5 beta
-      turn-ins are Gloomingdeep tutorial (Doug / Dead Doug), which match NO Plane-of-Sky quest, so
-      quest auto-complete was never contaminated; the store's two `Paladin Test` completions are
-      the CURRENT character's real quests (from post-epoch turn-ins). If a future same-name case DID
-      persist a contaminated auto-completion, the safe path is to clear only entries whose turn-in
-      evidence no longer exists post-epoch — deferred until a case actually needs it.
-    - **Contamination table (full-log replay, magnitudes drift as the LIVE log grows — assert
-      DIRECTION + `allocated`):** AA allocated **219→206** (the in-game number; earned=allocated+
-      unspent, Σ gains == earned post-epoch = zero cross-epoch refund churn), loot **~3.9k→~3.4k**,
-      kills **~4.7k→~3.9k**, turn-ins **8→3**. Pinned by `tests/epochWindows.test.mts` (a
-      hand-verified golden window on `fixtures/epoch-beta-wipe.log` — 12 verbatim real lines across
-      the boundary — plus a full-log tripwire asserting `allocated==206`, the identity, and the
-      contamination direction; the aaAccounting full-log test's stale frozen numbers were relaxed
-      to the stable `allocated` since the live log drifts unspent/gains).
+      clear-all would irreversibly destroy MANUAL completions. On THIS log it's moot — under the
+      LAUNCH-DATE anchor the Jul-28 Gloomingdeep tutorial turn-ins (Doug / Dead Doug / Old Doug /
+      Kor Master Ralg, 12:25-12:29 — AFTER the 00:00 boundary) are the CURRENT character's tutorial
+      and correctly KEPT (the old level-2 anchor wrongly cut them); they match NO Plane-of-Sky
+      quest, so quest auto-complete is unaffected either way. If a future same-name case DID persist
+      a contaminated auto-completion, the safe path is to clear only entries whose turn-in evidence
+      no longer exists post-epoch — deferred until a case actually needs it.
+    - **Contamination (full-log replay; ALL magnitudes drift as the LIVE log grows AND the user
+      buys AA — assert INVARIANTS, not frozen numbers).** The load-bearing invariant is the
+      **refund-proof identity**: post-epoch there is ZERO cross-epoch re-buy churn, so `Σ gains ==
+      earned == allocated + unspent` (the contaminated replay violates it — its Σ gains
+      double-counts the beta re-buys the AA model mistook for a respec). Plus contamination
+      DIRECTION (post-epoch < contaminated) for AA allocated (e.g. 225→212 at time of writing —
+      **not the stale Task #49 "206"; the user has since bought ~6 more AA, so a hardcoded absolute
+      is wrong**), loot, kills. Turn-ins are **anchor-invariant** here (all are post-launch current-
+      character activity — the launch anchor neither adds nor drops any; the old "8→3" was an
+      artifact of the wrong level-2 anchor cutting the tutorial). Pinned by
+      `tests/epochWindows.test.mts` (a hand-verified golden window on `fixtures/epoch-beta-wipe.log`
+      — 12 real lines across the boundary, the beta loot re-dated to Jul 20 so it sits pre-launch —
+      plus a full-log tripwire asserting `epochCount==1`, the refund-proof identity, and the
+      contamination direction). **NOTE (pre-existing, not this task):** `tests/aaAccounting.test.mts`
+      hardcodes a contaminated `allocated==219` that has drifted to 225 as the user played — it fails
+      on the live log independent of the epoch anchor; its owner should relax it to an invariant.
 - **Combat** (see `src/main/combat/parse.ts`):
   - Melee: `<A> <verb> <B> for N points of damage.` + optional `(Critical)` /
     `(Riposte)` / `(Slay Undead)` / `(Finishing Blow)` modifier. Verbs conjugate:
@@ -1010,6 +1081,86 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
   live processing log; `looksDamage()` flags damage-shaped lines it *couldn't*
   parse so misses are visible via the "show unparsed" toggle.
 
+### Combat drill-down, damage taxonomy, timeline, stances (Task #51)
+
+The WarcraftLogs-style Analyze surface: a taxonomy dimension on every damage event, a
+click-through bar drill-down, a per-encounter timeline, and stance/invocation tracking.
+All ADDITIVE — the taxonomy is a new dimension over existing totals (proven by a tripwire),
+so no frozen damage total moved. Files: `src/main/combat/taxonomy.ts` (new, pure), engine +
+`shared/combat.ts` (additive views), parser (additive events), `features/combat/*`.
+
+- **Damage taxonomy — `src/main/combat/taxonomy.ts`.** Parse-time categorization by SOURCE
+  MECHANIC. `DamageCategory = 'melee' | 'slay' | 'spell' | 'dot' | 'ds'` (a superset over
+  the parser's `dtype`): **Slay Undead is its OWN category** per the user (a melee swing
+  carrying the `(Slay Undead)` proc re-categorizes from 'melee' to 'slay'); every other
+  dtype maps 1:1. `parseModifiers()` splits the trailing paren into its space-separated
+  token set — because a modifier COMPOUNDS (real log: `(Riposte Critical)` 94×,
+  `(Riposte Slay Undead)` 8×, `(Riposte Rampage)` 9×). `crit` is centralized as the
+  presence of "Critical"; the three two-word procs (Slay Undead / Finishing Blow /
+  Crippling Blow) are recombined before the space-split. VERIFIED full-log paren-modifier
+  set: Critical 16534, Riposte 11002, Slay Undead 1258, Finishing Blow 376, Rampage 208,
+  Flurry 125, Crippling Blow 4, Strikethrough 1 (+ Riposte-compounds). The parser stamps
+  additive `category` + `modifiers[]` on `DamageEventE` (byte-compat: fields are optional;
+  the engine derives a fallback if absent). Full-log outgoing category totals (zone):
+  melee 97180 / spell 4956 / slay 2872 — and **category sum == source total EXACTLY**
+  (the tripwire, asserted per-source in `tests/combatTaxonomyWindows.test.mts`).
+  - **HONEST non-distinguishables (do NOT invent these):**
+    - **main-hand vs off-hand** — the melee line names no hand. Not derivable. Not modeled.
+    - **double/triple/multi-attack** — NEVER logged explicitly. Exposed as a HEURISTIC
+      "melee rounds" stat (`RoundsView`): a "round" = a source's melee/slay hits sharing the
+      same whole-SECOND bucket + skill; surfaced as a hits-per-round histogram + avg +
+      multi-hit count, labeled in the UI tooltip as a cluster proxy, never a fabricated
+      double-attack flag. (Full-log You: 1784 rounds, avg 1.16 hits/round, up to 4/round.)
+    - **environmental damage** (fall/lava/drown) — a full sweep found ZERO real self-damage
+      lines of that shape in this log family, so it's deliberately NOT in the taxonomy.
+  - **Engine aggregation.** `SourceStat` gained `byCategory: Map<DamageCategory,CategoryStat>`
+    (each category holds its own per-skill breakdown, capped at 12 — same cap as top-level
+    skills) + a `rounds` accumulator. `combinePets` merges both (per-category skills are
+    pet-name-namespaced like the top-level merge). Exposed as `SourceView.categories`
+    (ordered by `CATEGORY_ORDER`) + `SourceView.rounds?`.
+- **Drill-down UI (`CombatView.tsx`).** Three levels, renderer-side selection state
+  (`Drill = {entityId, category?}`): L1 entity bars → click drills to L2 category bars
+  (melee/slay/spell/dot/ds, same dense pct-fill styling) → click drills to L3 per-skill/
+  per-spell bars (hits/crits/max). **Breadcrumb (All › entity › category) + a Back button +
+  Esc** all ascend one level; the drill resets on fight/mode change and is guarded against a
+  stale entity/category (falls back to L1). Only the OUTGOING view drills (incoming keeps the
+  old inline skill-collapse). Group-member (non-you/pet) sources are still out of scope —
+  drill-down covers You + pets + incoming; **per-group-member tracking is FUTURE scope** (the
+  engine's `classify()` ignores non-you/pet attackers; do NOT half-implement it).
+- **Timeline (`CombatTimeline.tsx` + engine `buildTimeline`).** A `Bars/Timeline` toggle in
+  the header. X = encounter time, Y = one lane per skill/spell (left-axis labels, grouped by
+  category then total), SVG ticks at each event (crit = taller/wider), stance + invocation
+  spans PINNED above the lanes, hover tooltip (ability · amount · modifiers · time). Scoped
+  to the SELECTED encounter. **Per-encounter event ring:** each `Encounter` keeps a capped
+  (`TIMELINE_CAP` 5k, drop-oldest) ring of attributed instants; at finalize the ring is
+  DROPPED for encounters older than `TIMELINE_HISTORY_CAP` (60) so a whole-session replay
+  stays flat. The snapshot builds a timeline only when `SnapshotOpts.timeline` is set (heavier
+  payload; `useCombat` fetches it only in Timeline mode); zone selection + evicted encounters
+  return `timeline:null`; over `TIMELINE_BUDGET` (2k) events it uniform-stride downsamples and
+  flags `downsampled` (lane totals still use every event). **Perf (full-log replay, 2026-08-02):**
+  parse+ingest ~2.2s; timeline snapshot <1ms (148 events / 11 lanes typical); across 2123
+  finalized fights only 60 keep a ring (~5730 total retained events, <1MB) — the RSS delta is
+  dominated by the 68MB log string, NOT the timeline ring.
+- **Stances (`stanceChange`/`invocationChange` parser events, additive).** VERIFIED two
+  mutually-exclusive combat-modifier groups. The COMMIT line names the choice; the "You begin
+  to change your <group>." flavor (594 stance / 2339 invocation) carries no name and is NOT
+  emitted. **9 stances** (defensive 210, offensive 176, balanced 59, mage hunter 43, evasive
+  36, striker 35, berserker 22, channeler 11, ranged 1) and **9 invocations** (inversion 937,
+  overchannel 487, recovery 450, spellblade 263, divine 134, inviolable 19, empowering 15,
+  **arcane mastery** 14, unyielding 5) — the sweep found MORE than the brief's 5+5 (arcane
+  mastery is a two-word name a single-word grep misses; the `.+?` capture is deliberately
+  name-permissive so a 10th still parses). The engine tracks the current session pair
+  (survives zones/epoch — a stance is not zone-scoped; cleared on `reset()`), exposes it as
+  `CombatSnapshot.stance` (two chips near the meter header), and opens/closes timeline spans on
+  the current encounter as it changes. **FUTURE: per-stance damage segmentation** (which stance
+  was active during which damage) — note only, not built.
+- **Golden window + tripwires** (`tests/combatTaxonomyWindows.test.mts`): the real Jul-19
+  15:50 Gynok Moltor fight (defensive stance + recovery invocation, undead → Slay Undead proc,
+  claimed pet Gibober) pins the hand-verified You taxonomy (melee 119 / slay 75 / spell 184 =
+  378, category sum EXACT) + stance state + timeline spans; full-log tripwires assert the
+  category-sum identity per source, the 9+9 stance/invocation sweep, and the timeline ring
+  memory bound. All `npm test` green.
+
 ## Data sources & scrapers (offline, committed output)
 
 - Quest data: `npm run scrape:posky` → `src/renderer/src/data/eqlegends/posky.json`.
@@ -1061,6 +1212,60 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
     confetti/sound on load.
 - Profiles (`src/shared/profiles.ts`) namespace data by server so a P99 backend
   can be added later.
+
+### Item knowledge — "what's this lore/quest item for" (Task #53)
+
+Answers, per looted item, whether it's a LORE item and which quests it's used in (the
+"you grabbed a coin off the ground, what's it for" question). **Acquisition-line sweep
+(verified against the real freeport log):** ground pickups log NOTHING, and there is NO
+`You have received <item>` / "hands you" / "as a reward" item line — the **loot family is
+the ONLY item-into-inventory line** (`You receive …` is coin-only: corpse coin + vendor
+sale). So this feature keys entirely off `loot` events (dashed + all `You looted …`
+disposition variants).
+
+- **Service:** `src/main/itemLookup.ts` (`lookupItem(name)`) + the PURE parser
+  `src/main/itemLookupParse.ts` (split out so it imports with NO electron dep — unit-tested
+  in `tests/itemLookup.test.mts`). **LOCAL-FIRST:** the scraped `posky.json` is indexed by
+  normalized item name → its Sky quests (+ giver), checked BEFORE any network so a known Sky
+  item answers instantly/offline. Then a **cached, politely-serialized wiki lookup** (search
+  → `action=parse&prop=wikitext`, single in-flight queue + 150ms spacing, mirrors the
+  posky/spell scrapers). Wiki + local associations are merged (de-duped: posky labels a quest
+  `"Class · Quest Name"` where the name often already carries the class, so dedup strips a
+  leading `"Class · "` and folds when one normalized name contains the other).
+- **Wiki item-page STRUCTURE (learned from real pages — Coin of Tash, Sphinx Claw, Nebulous
+  Sapphire, Water Flask, Bone Chips, Golden Earring):** every item page is a single
+  `{{Itempage}}` template. Fields the parser reads: **`|statsblock`** = the flags+stats text
+  block whose FIRST line(s) carry `MAGIC ITEM  LORE ITEM  NO DROP  QUEST ITEM` (space-separated
+  text flags; `<br>`-joined) → LORE detected by the `LORE ITEM` substring, QUEST by `QUEST ITEM`
+  OR any related quest; **`|relatedquests`** = a `* [[Page|Label]]` / `* [[Page]]` bullet list
+  (the quest associations — the label after `|` is the display name, the page before it links);
+  **`|notes`** = freeform prose → a one-line summary; `|dropsfrom` = zone + `* [[Mob]]` list
+  (not parsed here — the loot module already sources mobs). NB even non-lore items (Water Flask)
+  carry `relatedquests`, so the feature answers "what's it for" broadly, not just Sky.
+- **The 42-tash example (RESEARCHED, it works):** the quest is **`Coin of Tash (Tashania spell)`**
+  (Enchanter, giver Romar Sunto in the Temple of Solusek Ro — the level-44 Tashania spell). You
+  collect 10 lettered coins from city pools worldwide → combine into a **`Coin of Tash`** →
+  turn-in chain yields `Glowing`/`Gleaming`/`Radiant Coin of Tash`. All four coin items resolve on
+  the wiki with `LORE ITEM` (+ `QUEST ITEM` on the later ones) and a `relatedquests` link back to
+  the quest — so picking up any coin surfaces the Tashania association. (These are classic-world
+  items, NOT in posky.json, which is Plane-of-Sky-only — proving the wiki path, not just local.)
+- **Cache:** versioned JSON in `<userData>/item-knowledge-cache.json` (`CACHE_VERSION`).
+  Positive results never expire (lore/quest data is static); **negatives cached 7 days**,
+  **offline misses 30 min** (retry soon). `resolvePage` distinguishes a network failure
+  (offline) from a genuine zero-hit search (a real negative) so the two get the right TTL.
+- **Prefetch:** `index.ts` subscribes the bus and calls `prefetchItem(item)` on **LIVE loot
+  only** (never the historical scan — that'd fire thousands), warming the cache so the click is
+  instant. Throttled by the shared queue + cache. **IPC:** `items:lookup(name)` →
+  `ItemKnowledge` (`window.eq.lookupItem`); `lookupItem` never rejects (degrades to a
+  cached-negative/offline record that still carries local posky).
+- **UI:** `ItemDetailDialog` gains a "What it's for" section (LORE badge, quest chips with giver,
+  wiki summary, source attribution; quiet loading/offline states). `LootView` rows extend the
+  existing PoSky flag with a subtle LORE/quest badge for any wiki-known quest item
+  (`useNotablePickups.ts` lazily probes the last ~40 distinct looted items, memoized so it never
+  storms main), plus a dense dismissable **"Notable pickups"** strip. **DEVIATION (honest):** the
+  quest chips are informational — LootView does NOT cross-navigate to a Posky tab filter today
+  (the current PoSky flag is also just a visual badge; App.tsx nav is a plain `view` string and
+  cross-tab filter plumbing is out of this task's file scope).
 
 ## Dev workflow
 

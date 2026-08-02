@@ -20,6 +20,7 @@ import { DEFAULT_PROFILE } from '../../shared/profiles'
 import type { DamageType } from '../../shared/combat'
 import type { LogEvent, MissType } from '../../shared/logEvents'
 import { getParserConfig, type ParserConfig } from './rulesets'
+import { parseModifiers, hasCritical, damageCategory } from '../combat/taxonomy'
 
 // ----- line prefix + timestamp (unchanged from the old parse.ts) -----
 
@@ -205,6 +206,21 @@ const PLAYER_DEATH_RE = /^You have been slain by (.+?)!$/
 // begin casting" lines) — the buffs module uses it as context to mark those applies
 // confident. Any activated AA matches; consumers filter by name.
 const AA_ACTIVATE_RE = /^You activate (.+?)\.$/
+
+// ----- combat stances + invocations (Task #51) -----
+// EQ Legends has two mutually-exclusive combat-modifier groups. The COMMIT line names
+// the chosen one; the "You begin to change your <group>." lines are pre-commit flavor
+// (594 stance / 2339 invocation) and are deliberately NOT emitted (they carry no name).
+//   STANCE (9 verified, full-log counts): defensive 210, offensive 176, balanced 59,
+//                mage hunter 43, evasive 36, striker 35, berserker 22, channeler 11,
+//                ranged 1. Regex is name-permissive (.+?) so a 10th stance still parses.
+//   INVOCATION (9 verified): inversion 937, overchannel 487, recovery 450, spellblade
+//                263, divine 134, inviolable 19, empowering 15, arcane mastery 14,
+//                unyielding 5. (The brief listed 5; the sweep found 9 — "arcane mastery"
+//                is a two-word name a single-word grep misses, so the .+? capture matters.)
+// The article ("a"/"an") is dropped from the stance name; names are lowercased.
+const STANCE_RE = /^You assume an? (.+?) stance\.$/
+const INVOCATION_RE = /^You begin reciting the (.+?) invocation\.$/
 
 // ----- spell-landing emotes (Task #33): the cast-target discriminator -----
 // EQ prints a short flavor line the instant a buff lands. Two forms:
@@ -399,11 +415,12 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
       m = SPELL_RE.exec(text)
       if (m) {
         const modifier = m[6]
+        const mods = parseModifiers(modifier)
         return {
           kind: 'damage', seq, ts, raw,
           attacker: norm(m[1]), target: norm(m[2]), amount: Number(m[3]),
           dtype: 'spell', dclass: m[4], skill: m[5].trim(),
-          crit: /critical/i.test(modifier ?? ''), modifier
+          crit: hasCritical(mods), modifier, modifiers: mods, category: damageCategory('spell', mods)
         }
       }
       // Melee.
@@ -411,11 +428,12 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
       if (m) {
         const verbM = MELEE_VERB_RE.exec(text)
         const modifier = m[4]
+        const mods = parseModifiers(modifier)
         return {
           kind: 'damage', seq, ts, raw,
           attacker: norm(m[1]), target: norm(m[2]), amount: Number(m[3]),
           dtype: 'melee', skill: meleeSkill(verbM ? verbM[1] : 'hit'),
-          crit: /critical/i.test(modifier ?? ''), modifier
+          crit: hasCritical(mods), modifier, modifiers: mods, category: damageCategory('melee', mods)
         }
       }
     }
@@ -442,14 +460,16 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
         // "from <Spell>" with no "by <caster>" and not "your" → someone else's DoT
         // whose caster the game didn't name; fall through to the caster-less form.
         if (attacker !== null) {
-          return { kind: 'damage', seq, ts, raw, attacker, target, amount, dtype: 'dot', skill: skill.trim(), crit, modifier: m[4] }
+          const mods = parseModifiers(m[4])
+          return { kind: 'damage', seq, ts, raw, attacker, target, amount, dtype: 'dot', skill: skill.trim(), crit, modifier: m[4], modifiers: mods, category: 'dot' }
         }
       }
       // Caster-less DoT: "<B> has taken N damage by <Spell>." → attacker:null.
       m = DOT_NOCASTER_RE.exec(text)
       if (m) {
         const crit = /critical/i.test(m[4] ?? '')
-        return { kind: 'damage', seq, ts, raw, attacker: null, target: norm(m[1]), amount: Number(m[2]), dtype: 'dot', skill: m[3].trim(), crit, modifier: m[4] }
+        const mods = parseModifiers(m[4])
+        return { kind: 'damage', seq, ts, raw, attacker: null, target: norm(m[1]), amount: Number(m[2]), dtype: 'dot', skill: m[3].trim(), crit, modifier: m[4], modifiers: mods, category: 'dot' }
       }
     }
   }
@@ -613,6 +633,19 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     if (m) return { kind: 'aaActivate', seq, ts, raw, name: m[1].trim() }
   }
 
+  // --- combat stance change (Task #51): "You assume a <stance> stance." ---
+  if (text.startsWith('You assume ')) {
+    const m = STANCE_RE.exec(text)
+    if (m) return { kind: 'stanceChange', seq, ts, raw, stance: m[1].trim().toLowerCase() }
+  }
+  // --- invocation change (Task #51): "You begin reciting the <name> invocation." ---
+  // (Gated on the specific prefix so it never touches the "You begin casting/singing"
+  // cast-lifecycle lines already handled above.)
+  if (text.startsWith('You begin reciting ')) {
+    const m = INVOCATION_RE.exec(text)
+    if (m) return { kind: 'invocationChange', seq, ts, raw, invocation: m[1].trim().toLowerCase() }
+  }
+
   // --- illusion click-off (Task #36): "Your illusion fades." ---
   // The shared removal line for EVERY illusion-flagged spell (Illusion: <race>, Boon of
   // the Garou, …) — the DB lists it as msg_wears_off for 27 distinct spells, so it can't
@@ -748,5 +781,6 @@ function dmg(
   attacker: string | null, target: string, amount: number,
   dtype: DamageType, skill: string, crit: boolean
 ): LogEvent {
-  return { kind: 'damage', seq, ts, raw, attacker, target, amount, dtype, skill, crit }
+  // DS lines carry no paren modifier; category maps 1:1 from dtype (never 'slay').
+  return { kind: 'damage', seq, ts, raw, attacker, target, amount, dtype, skill, crit, category: damageCategory(dtype, []) }
 }

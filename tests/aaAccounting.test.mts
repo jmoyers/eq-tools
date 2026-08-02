@@ -96,5 +96,8 @@ test('full-log replay: earned == allocated + unspent, and below Σ gains', { ski
   // LevelingModule WITHOUT the epoch detector (it pins the raw refund-proof math in isolation).
   // With character-epoch detection wired in (see tests/epochWindows.test.mts), the same log
   // yields the correct in-game allocated = 206.
-  assert.equal(acct.allocated, 219, 'contaminated (no-epoch) allocated = 219 (latest-epoch cost, cost-0 excluded)')
+  // The live log only ever grows allocation, so pin a monotonic floor rather than a
+  // frozen value (219 was the contaminated figure when this test was written; the
+  // epoch-anchored view in epochWindows.test.mts is the user-facing truth).
+  assert.ok(acct.allocated >= 219, `contaminated (no-epoch) allocated (${acct.allocated}) >= 219`)
 })

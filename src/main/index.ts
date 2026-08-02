@@ -25,6 +25,7 @@ import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import type { ModuleDelta } from './modules/types'
 import { getSoundData, listPacks } from './sounds'
+import { lookupItem, prefetchItem } from './itemLookup'
 import { provisionDefaultPacks } from './provisionPacks'
 import {
   fetchPackSounds,
@@ -40,6 +41,7 @@ import {
   getActiveLogPath,
   getAlertPrefs,
   getAlerts,
+  getOverlayConfig,
   getProgress,
   getWindowBounds,
   resetAlerts,
@@ -47,6 +49,7 @@ import {
   setActiveLogPath,
   setAlertPrefs,
   setInventory,
+  setOverlayConfig,
   setQuestComplete,
   setWindowBounds
 } from './store'
@@ -55,10 +58,14 @@ import type {
   AlertPrefs,
   BuffsSnap,
   CharacterRef,
+  OverlayConfig,
   PackInstallProgress
 } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
+// The floating DPS-meter overlay (Task #52): a separate transparent, frameless,
+// always-on-top window created on demand. Null when closed.
+let overlayWindow: BrowserWindow | null = null
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
 let inventoryWatcher: FSWatcher | null = null
@@ -89,13 +96,15 @@ process.on('unhandledRejection', (reason) => {
 const bus = new LogBus()
 let seq = 0
 const combat = new CombatEngine()
-// Character-epoch detection (Task #49): a decisive level REGRESSION (new ≤3 or drop >5) is
-// the fingerprint of a same-name+server character being WIPED + recreated (they reuse the
-// same log file — see epochDetector.ts's beta-wipe story). On detection we hand a derived
-// `epoch` event back onto the SAME bus (the Task #47 emitDerived path), which every
-// character-scoped module resets on, so post-scan tallies (AA/loot/kills/turn-ins/quests)
-// reflect ONLY the current character. Fires mid-replay during a rescan, so epochs apply
-// historically for free; a live wipe works identically.
+// Character-epoch detection (Task #49; anchor replaced in Task #50): the OFFICIAL LAUNCH
+// (2026-07-28 00:00 local) is the boundary of a same-name+server character being WIPED +
+// recreated at launch (they reuse the same log file — see epochDetector.ts's beta-wipe
+// story). The first at/after-launch event hands a derived `epoch` event back onto the SAME
+// bus (the Task #47 emitDerived path), which every character-scoped module resets on, so
+// post-scan tallies (AA/loot/kills/turn-ins/quests) reflect ONLY the current character.
+// Fires mid-replay during a rescan, so epochs apply historically for free; a live crossing
+// works identically. (The old level-regression heuristic was removed — EQ Legends loadout
+// swaps legitimately change level, so a level drop is NOT a reliable rebirth signal.)
 const epoch = new EpochDetector()
 
 // The extension framework. Modules own their slice of log-derived state and push
@@ -158,18 +167,27 @@ registry.register(buffsModule)
 // registration-order drift). Registry first, then combat — same order as before.
 registry.attach(bus)
 bus.subscribe((ev, live) => combat.ingestEvent(ev, live))
-// Epoch detection subscription (Task #49). Runs LAST so it observes the `level` event after
-// the modules/combat have folded it, then queues a derived `epoch` event via emitDerived;
-// the bus delivers that to EVERY listener (registry modules + combat) after the level event
-// finishes — the modules reset their live folded state on it. Ignore the derived epoch event
-// itself here (only the primary `level` line can trip a regression) so no feedback loop is
-// possible, matching the buffs→buffExpired contract.
+// Item-knowledge prefetch (Task #53): when a LIVE loot event arrives, warm the
+// "what's this for" cache in the background (throttled by itemLookup's serialized queue
+// + persistent cache) so the answer is ready by the time the user clicks the item. LIVE
+// only — the historical scan (live:false) would otherwise fire thousands of lookups; the
+// cache/local-posky path covers those instantly on demand.
+bus.subscribe((ev, live) => {
+  if (live && ev.kind === 'loot' && ev.item) prefetchItem(ev.item)
+})
+// Epoch detection subscription (Task #49; launch-anchored in Task #50). Runs LAST so it
+// observes each event after the modules/combat have folded it, then at the first at/after-
+// launch event queues a derived `epoch` event via emitDerived; the bus delivers that to
+// EVERY listener (registry modules + combat) after the primary event finishes — the modules
+// reset their live folded state on it. Ignore the derived epoch event itself here (the
+// detector already ignores it internally too) so no feedback loop is possible, matching the
+// buffs→buffExpired contract.
 bus.subscribe((ev, live) => {
   if (ev.kind === 'epoch') return
   const epochEv = epoch.observe(ev)
   if (epochEv) {
     console.log(
-      `[eq-tools] Character epoch boundary detected at ${new Date(epochEv.ts).toISOString()} (level→${epochEv.level}): resetting character-scoped modules. Everything before this belongs to a prior same-name character (see epochDetector.ts).`
+      `[eq-tools] Character epoch boundary detected at ${new Date(epochEv.ts).toISOString()} (official launch): resetting character-scoped modules. Everything before this belongs to a prior same-name character wiped at launch (see epochDetector.ts).`
     )
     bus.emitDerived(epochEv, live)
     // A LIVE wipe (rare — deleting + recreating your character while the app tails) shrinks
@@ -307,6 +325,18 @@ function createWindow(): void {
   mainWindow.on('resized', saveBounds)
   mainWindow.on('close', saveBounds)
 
+  // The overlay (Task #52) is an accessory of the main window: tear it down when the
+  // main window closes so it can't keep the app alive on its own. Its persisted
+  // open-state is left intact (open:true) so the next launch restores it — we skip
+  // the 'closed' handler that would otherwise flip open:false.
+  mainWindow.on('close', () => {
+    if (overlayWindow && !overlayWindow.isDestroyed()) {
+      overlayWindow.removeAllListeners('closed')
+      overlayWindow.destroy()
+      overlayWindow = null
+    }
+  })
+
   mainWindow.webContents.setWindowOpenHandler((details) => {
     void shell.openExternal(details.url)
     return { action: 'deny' }
@@ -318,6 +348,125 @@ function createWindow(): void {
   } else {
     void mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
   }
+}
+
+// ---- Floating overlay DPS meter (Task #52) ----
+//
+// A separate BrowserWindow that sits transparent + always-on-top over the game.
+// EQ Legends runs windowed/borderless, where an always-on-top overlay composites
+// fine (see AGENTS.md; fullscreen-EXCLUSIVE would defeat it, but that's not the
+// default). No native helper app is needed — Electron's transparent/frameless +
+// setAlwaysOnTop('screen-saver') + setIgnoreMouseEvents(forward) covers it.
+//
+// Two interaction modes, persisted in `overlay.locked`:
+//   - interactive: normal focusable window, -webkit-app-region drag on the header,
+//     resize edges, close/config controls visible.
+//   - locked (click-through): mouse events pass through to the game via
+//     setIgnoreMouseEvents(true, {forward:true}); the renderer's hover sensor toggles
+//     capture back on (forward keeps mouse-move events flowing so hover still fires)
+//     so the hover-revealed pin button stays clickable. Never steals focus.
+
+/** Apply the locked/interactive mouse + focus behavior to the overlay window. */
+function applyOverlayLocked(locked: boolean): void {
+  if (!overlayWindow || overlayWindow.isDestroyed()) return
+  if (locked) {
+    // Pass clicks through to the game; forward:true keeps mouse-move events so the
+    // renderer's hover sensor can re-enable capture over the pin button.
+    overlayWindow.setIgnoreMouseEvents(true, { forward: true })
+    overlayWindow.setFocusable(false)
+  } else {
+    overlayWindow.setIgnoreMouseEvents(false)
+    overlayWindow.setFocusable(true)
+  }
+}
+
+function createOverlayWindow(): void {
+  if (overlayWindow && !overlayWindow.isDestroyed()) {
+    overlayWindow.show()
+    return
+  }
+  const cfg = getOverlayConfig()
+  overlayWindow = new BrowserWindow({
+    ...(cfg.bounds ?? { width: 320, height: 200 }),
+    minWidth: 200,
+    minHeight: 90,
+    maxWidth: 640,
+    maxHeight: 720,
+    show: false,
+    frame: false,
+    transparent: true,
+    resizable: true,
+    // Never take focus from the game when it appears (locked mode). We also avoid
+    // adding it to the taskbar — it's an accessory of the main app.
+    skipTaskbar: true,
+    // A transparent window can't have a native background; element rgba does the
+    // translucency (per-element alpha beats window-level setOpacity).
+    backgroundColor: '#00000000',
+    hasShadow: false,
+    title: 'DPS Overlay',
+    webPreferences: {
+      preload: join(__dirname, '../preload/overlay.js'),
+      sandbox: false,
+      contextIsolation: true
+    }
+  })
+
+  // Always-on-top at the screen-saver level so it floats above ordinary windows
+  // (and the borderless game). Re-assert after show for reliability on Windows.
+  overlayWindow.setAlwaysOnTop(true, 'screen-saver')
+
+  const wc = overlayWindow.webContents
+  wc.on('preload-error', (_e, preloadPath, error) =>
+    logError('overlay:preload-error', { preloadPath, error })
+  )
+  wc.on('console-message', (_e, level, message, line, sourceId) => {
+    if (level < 2) return
+    logError('overlay:console', { level, message, source: `${sourceId}:${line}` })
+  })
+
+  overlayWindow.on('ready-to-show', () => {
+    if (!overlayWindow) return
+    // showInactive so opening the overlay never steals focus from the game.
+    overlayWindow.showInactive()
+    overlayWindow.setAlwaysOnTop(true, 'screen-saver')
+    applyOverlayLocked(getOverlayConfig().locked)
+  })
+
+  // Persist position + size so the overlay restores where the user left it.
+  const saveOverlayBounds = (): void => {
+    if (overlayWindow && !overlayWindow.isDestroyed()) {
+      setOverlayConfig({ bounds: overlayWindow.getBounds() })
+    }
+  }
+  overlayWindow.on('moved', saveOverlayBounds)
+  overlayWindow.on('resized', saveOverlayBounds)
+
+  overlayWindow.on('closed', () => {
+    overlayWindow = null
+    setOverlayConfig({ open: false })
+    // Tell the main app so the TitleBar toggle reflects the closed state.
+    mainWindow?.webContents.send(IPC.onOverlayState, false)
+  })
+
+  const rendererUrl = process.env['ELECTRON_RENDERER_URL']
+  if (rendererUrl) {
+    void overlayWindow.loadURL(`${rendererUrl}/overlay.html`)
+  } else {
+    void overlayWindow.loadFile(join(__dirname, '../renderer/overlay.html'))
+  }
+}
+
+/** Open/close the overlay and persist + broadcast the new open-state. Returns it. */
+function setOverlayOpen(open: boolean): boolean {
+  if (open) {
+    createOverlayWindow()
+  } else if (overlayWindow && !overlayWindow.isDestroyed()) {
+    overlayWindow.close() // 'closed' handler resets state + persists open:false
+  }
+  const isOpen = !!(overlayWindow && !overlayWindow.isDestroyed())
+  setOverlayConfig({ open: isOpen })
+  mainWindow?.webContents.send(IPC.onOverlayState, isOpen)
+  return isOpen
 }
 
 /** Resolve which character to track on launch: last selected, else most recent. */
@@ -533,6 +682,12 @@ function registerIpc(): void {
     return buildSpellCatalog(spellDb, usage, lastSeen)
   })
 
+  // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
+  // Local posky-first, then a cached, politely-throttled wiki lookup. lookupItem never
+  // rejects (degrades to a cached negative/offline record that still carries local posky
+  // associations), so a failure here never leaves the renderer hanging.
+  ipcMain.handle(IPC.itemsLookup, (_e, name: string) => lookupItem(name))
+
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   ipcMain.handle(IPC.packsRegistry, (_e, force?: boolean) => fetchRegistry(force ?? false))
   ipcMain.handle(IPC.packsInstall, async (_e, name: string) => {
@@ -580,6 +735,36 @@ function registerIpc(): void {
   })
   ipcMain.on(IPC.windowClose, () => mainWindow?.close())
 
+  // ---- floating overlay DPS meter (Task #52) ----
+  // Toggle from the main app's TitleBar; returns the resulting open-state.
+  ipcMain.handle(IPC.overlayToggle, () => {
+    const isOpen = !!(overlayWindow && !overlayWindow.isDestroyed())
+    return setOverlayOpen(!isOpen)
+  })
+  ipcMain.handle(IPC.overlayGetState, () => !!(overlayWindow && !overlayWindow.isDestroyed()))
+  ipcMain.handle(IPC.overlayGetConfig, () => getOverlayConfig())
+  ipcMain.handle(IPC.overlaySetConfig, (_e, patch: Partial<OverlayConfig>) => {
+    const next = setOverlayConfig(patch ?? {})
+    // Echo the merged config to the overlay so its UI stays in sync if the change
+    // originated elsewhere (currently only the overlay writes, but this keeps the
+    // contract honest and cheap).
+    overlayWindow?.webContents.send(IPC.onOverlayConfig, next)
+    return next
+  })
+  // Locked (click-through) vs interactive. Persist + apply to the live window.
+  ipcMain.on(IPC.overlaySetLocked, (_e, locked: boolean) => {
+    setOverlayConfig({ locked: !!locked })
+    applyOverlayLocked(!!locked)
+  })
+  // Fine-grained pass-through toggle from the overlay's hover sensor (locked mode).
+  // forward:true so mouse-move keeps flowing and the sensor can flip capture back.
+  ipcMain.on(IPC.overlaySetIgnoreMouse, (_e, ignore: boolean) => {
+    if (!overlayWindow || overlayWindow.isDestroyed()) return
+    if (ignore) overlayWindow.setIgnoreMouseEvents(true, { forward: true })
+    else overlayWindow.setIgnoreMouseEvents(false)
+  })
+  ipcMain.on(IPC.overlayClose, () => setOverlayOpen(false))
+
   // Fire-and-forget renderer error reports (window.onerror / unhandledrejection /
   // React ErrorBoundary). `ipcMain.on` (not handle) matches the preload's `send`.
   ipcMain.on(IPC.reportError, (_e, report: { message: string; stack?: string; source: string }) => {
@@ -622,6 +807,10 @@ if (!gotSingleInstanceLock) {
     // Auto-update (Task #27): checks GitHub Releases on the selected channel;
     // no-ops in dev. getMainWindow is lazy so status pushes hit the live window.
     initUpdater(() => mainWindow)
+
+    // Restore the floating overlay (Task #52) if it was open when the app last quit.
+    // Deferred so the main window's did-finish-load can send its initial state first.
+    if (getOverlayConfig().open) createOverlayWindow()
 
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()

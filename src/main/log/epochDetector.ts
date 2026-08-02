@@ -1,4 +1,4 @@
-// Character-epoch detection (Task #49).
+// Character-epoch detection (Task #49; ANCHOR REPLACED in Task #50).
 //
 // THE BETA-WIPE STORY (grep-able for future same-name+server cases). EQ Legends names its
 // log file `eqlog_<Char>_<server>.txt` — so a character that is DELETED and RECREATED with
@@ -15,62 +15,77 @@
 // refund churn (the Jul-28 "respec" the earlier AA model saw was cross-epoch contamination,
 // not a respec).
 //
-// THE DETECTION. A `level` event whose new level is DECISIVELY below the highest level seen
-// this epoch marks a rebirth:
-//   • new level ≤ 3, OR
-//   • a drop of MORE than 5 levels below the epoch high.
-// Classic EQ death-deleveling loses at most a level or two around an XP threshold, so a
-// SMALL regression is tolerated WITHOUT an epoch reset (e.g. the real log's duplicate
-// `Welcome to level 11!` after XP loss at Jul 28 16:46 — 11 is not < 11, no drop, ignored).
-// Only a decisive drop is a rebirth. The whole log implicitly starts in epoch 0; the first
-// level-up (17 on this log) only RAISES the high, so it never trips.
+// THE DETECTION — anchored at the OFFICIAL LAUNCH, not a heuristic (Task #50, USER CORRECTION).
+// The epoch fires once at the FIRST event whose timestamp is at/after the launch instant
+// 2026-07-28 00:00 LOCAL. Everything before that instant is the dead beta character; the
+// current character's life begins at launch. The first post-launch login on this log is
+// Jul 28 12:21:25 and the first current-character level-up is 12:32 — both land on the
+// correct side of the boundary. Pre-launch beta logs on OTHER servers are unaffected: the
+// date anchor applies per-log, and any log with no post-launch event simply never fires
+// (its whole span is one epoch), which is correct.
+//
+// WHY NOT the old LEVEL-REGRESSION trigger? It was UNSAFE. In EQ Legends, swapping LOADOUTS
+// legitimately changes your character level ("when you switch loadouts, it uses the level of
+// your loadout" — in-log chat evidence; there is NO explicit swap log line, verified), so a
+// decisive downward level jump is NOT a reliable rebirth fingerprint — a loadout swap to a
+// low-level loadout would falsely trip an epoch and wipe the current character's tallies. The
+// launch DATE is the strictly better anchor the user mandated: it is unambiguous, needs no
+// heuristic threshold, and can't be confused with in-game mechanics. The regression trigger
+// is therefore REMOVED entirely (not merely disabled).
 //
 // WHY NOT the `Welcome to EverQuest Legends!` login line? It prints on EVERY login (14× in
-// the real log — every session start), so it is NOT an epoch signal. The decisive
-// level-regression is the one unambiguous rebirth fingerprint.
+// the real log — every session start), so it is NOT an epoch signal.
 //
-// WHERE THIS RUNS. index.ts subscribes this to the bus alongside the other consumers and,
-// on a detected regression, hands an `EpochEvent` back onto the SAME bus via emitDerived —
-// the Task #47 derived-events path. The event is delivered to every consumer AFTER the
-// current `level` event finishes, so the modules see the level THEN reset (order is
-// harmless: the level module resets its own list on the epoch anyway). `live` is inherited
-// from the primary event, so a replayed rebirth stays live:false.
+// SOURCES for the launch date (2026-07-28):
+//   • massivelyop.com — EverQuest Legends launch coverage (Jul 28, 2026).
+//   • monstervine.com — EverQuest Legends launch coverage (Jul 28, 2026).
+//   • The user's own log corroborates: the launch-day login is Jul 28 12:21:25 and the first
+//     current-character `Welcome to level 2!` is Jul 28 12:32:09.
+//
+// WHERE THIS RUNS. index.ts subscribes this to the bus alongside the other consumers and, at
+// the first at/after-launch event, hands an `EpochEvent` back onto the SAME bus via
+// emitDerived — the Task #47 derived-events path. The event is delivered to every consumer
+// AFTER the current primary event finishes, so the modules see the event THEN reset. `live`
+// is inherited from the primary event, so a replayed boundary stays live:false.
 
 import type { LogEvent, EpochEvent } from '../../shared/logEvents'
 
-/** New level ≤ this is always a rebirth (a fresh character starts at 1). */
-const REBIRTH_LEVEL_CEILING = 3
-/** A drop of MORE than this many levels below the epoch high is a rebirth. */
-const MAX_TOLERATED_REGRESSION = 5
+/**
+ * The EverQuest Legends OFFICIAL LAUNCH instant, 2026-07-28 00:00 LOCAL time. Character epochs
+ * anchor here: every event at/after this instant belongs to the current (post-launch)
+ * character; everything before is a WIPED pre-launch beta character sharing the same log file.
+ *
+ * LOCAL time is intentional and correct: the parser turns EQ's `Sat Jul 28 12:21:25 2026`
+ * prefix into epoch millis via `Date.parse("Jul 28 2026 12:21:25")`, which the JS engine
+ * interprets in the machine's LOCAL zone. Deriving the anchor with `new Date(y,m,d,…)` (also
+ * local) keeps both sides on the same clock, so the comparison is zone-consistent on any
+ * machine. Month is 0-indexed → 6 = July.
+ */
+export const LAUNCH_MS = new Date(2026, 6, 28, 0, 0, 0, 0).getTime()
 
 /**
- * Stateful, single-character epoch detector. Feed it every LogEvent (in stream order); when a
- * `level` event is a decisive regression it returns the synthesized `EpochEvent` to emit
- * (else null). Reset per character (re)load — the detector's high resets with the log.
+ * Stateful, single-character epoch detector. Feed it every LogEvent (in stream order); the
+ * FIRST event whose ts is at/after {@link LAUNCH_MS} returns the synthesized `EpochEvent` to
+ * emit (once), else null. Reset per character (re)load.
  */
 export class EpochDetector {
-  /** Highest level observed in the CURRENT epoch (0 = none yet / start of log). */
-  private high = 0
+  /** True once the launch-boundary epoch has fired for this log (fires at most once). */
+  private fired = false
 
   reset(): void {
-    this.high = 0
+    this.fired = false
   }
 
   /**
-   * Observe one event. Returns an EpochEvent to emit (carrying the primary event's seq/ts) on
-   * a decisive level regression, else null. Non-level events are ignored.
+   * Observe one event. Returns an EpochEvent to emit (carrying the primary event's seq/ts) at
+   * the FIRST event at/after the official launch instant, else null. Fires at most once per
+   * log. Events with an unparseable ts (0) never trip it.
    */
   observe(ev: LogEvent): EpochEvent | null {
-    if (ev.kind !== 'level') return null
-    const level = ev.level
-    const isRegression = level < this.high
-    const decisive = level <= REBIRTH_LEVEL_CEILING || this.high - level > MAX_TOLERATED_REGRESSION
-    if (isRegression && decisive) {
-      // Rebirth: the new epoch's high starts at this (post-rebirth) level.
-      this.high = level
-      return { kind: 'epoch', reason: 'level-regression', level, seq: ev.seq, ts: ev.ts, raw: ev.raw }
-    }
-    if (level > this.high) this.high = level
-    return null
+    if (ev.kind === 'epoch') return null
+    if (this.fired) return null
+    if (ev.ts < LAUNCH_MS) return null
+    this.fired = true
+    return { kind: 'epoch', reason: 'launch', seq: ev.seq, ts: ev.ts, raw: ev.raw }
   }
 }

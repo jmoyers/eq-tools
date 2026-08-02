@@ -74,6 +74,31 @@ export const IPC = {
   // main -> renderer: maximize state changed (bool) so the max/restore icon swaps.
   onWindowMaximized: 'window:maximized',
 
+  // ---- floating overlay DPS meter (Task #52) ----
+  // renderer(main app) -> main: toggle the overlay window open/closed.
+  overlayToggle: 'overlay:toggle',
+  // renderer(main app) -> main: query whether the overlay is currently open (bool).
+  overlayGetState: 'overlay:getState',
+  // main -> renderer(main app): overlay open-state changed (bool), so the TitleBar
+  // toggle button reflects reality (also fires when the overlay closes itself).
+  onOverlayState: 'overlay:state',
+  // renderer(overlay) -> main: set click-through (locked) vs interactive. When locked,
+  // mouse events pass through to the game except over hover-sensor regions the overlay
+  // re-enables via forward:true. Payload: boolean `locked`.
+  overlaySetLocked: 'overlay:setLocked',
+  // renderer(overlay) -> main: fine-grained mouse-event pass-through toggle used by the
+  // hover sensor while locked (true = ignore/pass through, false = capture). Payload bool.
+  overlaySetIgnoreMouse: 'overlay:setIgnoreMouse',
+  // renderer(overlay) -> main: close the overlay from its own close button.
+  overlayClose: 'overlay:close',
+  // renderer(overlay) -> main: read persisted overlay config (locked, bgAlpha, topN).
+  overlayGetConfig: 'overlay:getConfig',
+  // renderer(overlay) -> main: persist overlay config (partial merge).
+  overlaySetConfig: 'overlay:setConfig',
+  // main -> renderer(overlay): the persisted config changed (e.g. locked toggled from
+  // main). Lets the overlay UI stay in sync. Payload: OverlayConfig.
+  onOverlayConfig: 'overlay:config',
+
   // ---- auto-update (Task #27) ----
   // main -> renderer: push update lifecycle {state, version?, percent?, message?}.
   onUpdateStatus: 'update:status',
@@ -82,6 +107,11 @@ export const IPC = {
   // renderer <-> main: read/select the release channel ('main' | 'stable').
   getUpdateChannel: 'update:getChannel',
   setUpdateChannel: 'update:setChannel',
+
+  // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
+  // renderer -> main: look up an item's lore/quest knowledge (local posky-first, then a
+  // cached, politely-throttled wiki lookup). Returns ItemKnowledge.
+  itemsLookup: 'items:lookup',
 
   // ---- misc pushes ----
   onLine: 'log:line',

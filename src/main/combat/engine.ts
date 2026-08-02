@@ -39,18 +39,26 @@
 
 import { idKey } from '../log/parser'
 import { WorldModel } from './world'
+import { damageCategory } from './taxonomy'
 import type { LogEvent, MissType } from '../../shared/logEvents'
-import type { DamageType } from '../../shared/combat'
+import type { DamageCategory, DamageType } from '../../shared/combat'
+import { CATEGORY_ORDER } from '../../shared/combat'
 import type {
+  CategoryView,
   ClassifiedLine,
   CombatSnapshot,
   HealerView,
   MissBreakdown,
+  RoundsView,
   SegmentSummary,
   SegmentView,
   SnapshotOpts,
   SourceKind,
-  SourceView
+  SourceView,
+  StanceSpan,
+  StanceState,
+  TimelineEvent,
+  TimelineView
 } from '../../shared/combat'
 
 /**
@@ -68,6 +76,11 @@ interface DamageEvent {
   skill: string
   crit: boolean
   modifier?: string
+  /** Taxonomy category (Task #51). Derived from dtype+modifiers if the event omits it
+   *  (older events / synthesized miss probes), so aggregation always has a category. */
+  category: DamageCategory
+  /** Parsed paren-modifier tokens (Task #51), e.g. ["Riposte","Critical"]. */
+  modifiers: string[]
 }
 
 interface SkillStat {
@@ -77,6 +90,29 @@ interface SkillStat {
   crits: number
   max: number
   misses: number
+}
+
+/** Per-category rollup within a source (Task #51 drill-down level 2). Holds the
+ *  category total + its own per-skill/per-spell breakdown (level 3). */
+interface CategoryStat {
+  category: DamageCategory
+  total: number
+  hits: number
+  crits: number
+  max: number
+  bySkill: Map<string, SkillStat>
+}
+
+/** Multi-attack "rounds" heuristic accumulator (Task #51). A round = the set of a
+ *  source's melee/slay hits sharing the same 1-second bucket (floor(ts/1000)) with the
+ *  same skill; roundsByHits[k] counts rounds that landed exactly k hits. The log does
+ *  NOT record double/triple attack, so this is an HONEST cluster heuristic, never a
+ *  fabricated multi-attack flag. Off-hand vs main-hand is not distinguishable. */
+interface RoundsAccum {
+  /** key = `${skillLower}|${floor(ts/1000)}` → hit count in that bucket (in progress). */
+  bucket: Map<string, number>
+  /** finalized rounds: index = hits-1, value = count of rounds with that many hits. */
+  hist: number[]
 }
 function newMissBreakdown(): MissBreakdown {
   return { miss: 0, dodge: 0, parry: 0, riposte: 0, block: 0, absorb: 0 }
@@ -93,10 +129,42 @@ interface SourceStat {
   misses: number
   miss: MissBreakdown
   bySkill: Map<string, SkillStat>
+  /** Per-category rollup (Task #51 drill-down level 2 + 3). */
+  byCategory: Map<DamageCategory, CategoryStat>
+  /** Melee-rounds heuristic accumulator (Task #51). */
+  rounds: RoundsAccum
 }
 
 function newSkill(name: string): SkillStat {
   return { name, total: 0, hits: 0, crits: 0, max: 0, misses: 0 }
+}
+
+function newCategory(category: DamageCategory): CategoryStat {
+  return { category, total: 0, hits: 0, crits: 0, max: 0, bySkill: new Map() }
+}
+
+function newRounds(): RoundsAccum {
+  return { bucket: new Map(), hist: [] }
+}
+
+/** Fold a melee/slay hit into the rounds heuristic: bump the (skill, second) bucket. */
+function accrueRound(r: RoundsAccum, skill: string, ts: number): void {
+  const key = `${skill.toLowerCase()}|${Math.floor(ts / 1000)}`
+  r.bucket.set(key, (r.bucket.get(key) ?? 0) + 1)
+}
+
+/** Collapse the in-progress buckets into the hits-per-round histogram. Idempotent-ish:
+ *  we rebuild `hist` from the current bucket map each time (buckets are the source of
+ *  truth), so calling it at snapshot/finalize is safe and cheap (buckets ≈ #seconds). */
+function finalizeRounds(r: RoundsAccum): number[] {
+  const hist: number[] = []
+  for (const hits of r.bucket.values()) {
+    const idx = Math.max(0, hits - 1)
+    hist[idx] = (hist[idx] ?? 0) + 1
+  }
+  for (let i = 0; i < hist.length; i++) if (hist[i] == null) hist[i] = 0
+  r.hist = hist
+  return hist
 }
 
 function addToSource(src: SourceStat, ev: DamageEvent, ambiguous: boolean): void {
@@ -113,6 +181,27 @@ function addToSource(src: SourceStat, ev: DamageEvent, ambiguous: boolean): void
   if (ev.crit) s.crits += 1
   s.max = Math.max(s.max, ev.amount)
   src.bySkill.set(ev.skill, s)
+
+  // Category rollup (drill-down level 2/3): same skill breakdown, but partitioned by
+  // taxonomy category so a source can be opened into melee/slay/spell/dot/ds.
+  const c = src.byCategory.get(ev.category) ?? newCategory(ev.category)
+  c.total += ev.amount
+  c.hits += 1
+  if (ev.crit) c.crits += 1
+  c.max = Math.max(c.max, ev.amount)
+  const cs = c.bySkill.get(ev.skill) ?? newSkill(ev.skill)
+  cs.total += ev.amount
+  cs.hits += 1
+  if (ev.crit) cs.crits += 1
+  cs.max = Math.max(cs.max, ev.amount)
+  c.bySkill.set(ev.skill, cs)
+  src.byCategory.set(ev.category, c)
+
+  // Melee-rounds heuristic: only melee/slay swings cluster into "rounds" (spells/dots
+  // are single applications). Bucket by (skill, whole-second).
+  if (ev.category === 'melee' || ev.category === 'slay') {
+    accrueRound(src.rounds, ev.skill, ev.ts)
+  }
 }
 
 /** Fold a miss (avoided swing) into a source's accuracy stats. */
@@ -125,7 +214,10 @@ function addMissToSource(src: SourceStat, mtype: MissType, skill: string): void 
 }
 
 function newSource(name: string, kind: SourceKind): SourceStat {
-  return { name, kind, total: 0, hits: 0, crits: 0, ambiguousHits: 0, ambiguousTotal: 0, misses: 0, miss: newMissBreakdown(), bySkill: new Map() }
+  return {
+    name, kind, total: 0, hits: 0, crits: 0, ambiguousHits: 0, ambiguousTotal: 0,
+    misses: 0, miss: newMissBreakdown(), bySkill: new Map(), byCategory: new Map(), rounds: newRounds()
+  }
 }
 
 class Agg {
@@ -204,6 +296,35 @@ interface Encounter {
    *  — recomputing it for all ~1,400 history entries on every snapshot() (2×+/sec)
    *  was the dominant snapshot cost (Task #17). */
   summary?: SegmentSummary
+  /**
+   * Per-encounter TIMELINE event ring (Task #51). Each attributed damage/miss instant is
+   * appended here (absolute ts) for the timeline view; capped at TIMELINE_CAP (drop-
+   * oldest) so a marathon charm-grind fight can't grow unbounded. Only retained for
+   * encounters in the recent-history window (see TIMELINE_HISTORY_CAP) — older finalized
+   * encounters have their ring dropped at finalize to keep the RSS delta small. */
+  events: TimelineRaw[]
+  /** Stance/invocation spans that overlapped this encounter (Task #51 pinned rows).
+   *  Recorded as they change while the encounter is open (absolute ts). */
+  stanceSpans: StanceRaw[]
+}
+
+/** Internal raw timeline record (absolute ts; converted to relative at snapshot). */
+interface TimelineRaw {
+  ts: number
+  lane: string
+  category: DamageCategory
+  amount: number
+  crit: boolean
+  modifiers?: string[]
+  kind: SourceKind
+}
+
+/** Internal raw stance/invocation span (absolute ts). `end` is undefined while active. */
+interface StanceRaw {
+  group: 'stance' | 'invocation'
+  name: string
+  start: number
+  end?: number
 }
 
 // Encounter closure (Task #20 — death-closed segmentation, replacing the old
@@ -226,6 +347,20 @@ const FALLBACK_IDLE_MS = 60_000
 const CC_HOLD_MS = 120_000
 const ACTIVE_MS = 3_000
 const RECENT_CAP = 300
+
+// Timeline (Task #51):
+//   TIMELINE_CAP          — per-encounter event ring size (drop-oldest). 5k covers a very
+//                           long fight; measured RSS impact on a full-log replay is small
+//                           (see AGENTS.md perf numbers) because only recent encounters
+//                           retain their ring.
+//   TIMELINE_HISTORY_CAP  — how many finalized encounters keep their event ring after
+//                           finalize. Older ones drop the ring (timeline only for recent /
+//                           live fights) so the whole-session RSS delta stays bounded.
+//   TIMELINE_BUDGET       — max events serialized into a single TimelineView; above this
+//                           the engine downsamples (uniform stride) and flags it.
+const TIMELINE_CAP = 5_000
+const TIMELINE_HISTORY_CAP = 60
+const TIMELINE_BUDGET = 2_000
 
 /** How a damage event `A → B` is attributed given the charmed set. */
 export type Attribution =
@@ -302,6 +437,12 @@ export class CombatEngine {
   /** ts of the last encounter-relevant activity (attributed damage OR a CC event).
    *  Drives the FALLBACK_IDLE_MS closure independent of the damage timeline. */
   private lastActivityTs = 0
+  /** Current combat-modifier pair (Task #51): the last stance/invocation the player
+   *  committed to, with the ts of that change. Session-scoped (survives zones/epoch —
+   *  a stance is not tied to a zone); reset() clears it. Exposed in the snapshot and
+   *  used to open/close timeline stance spans on the current encounter. */
+  private stance?: { name: string; ts: number }
+  private invocation?: { name: string; ts: number }
 
   /** Enable classification logging (after the historical scan, for the live tail). */
   setLive(): void {
@@ -333,6 +474,8 @@ export class CombatEngine {
     this.recent = []
     this.recording = false
     this.lastActivityTs = 0
+    this.stance = undefined
+    this.invocation = undefined
   }
 
   private log(ts: number, cat: string, role: ClassifiedLine['role'], text: string): void {
@@ -444,9 +587,14 @@ export class CombatEngine {
         // Close any pending encounter at this ts BEFORE routing, so attributed damage
         // after a closure starts a fresh encounter rather than reviving the old one.
         this.evalClosure(ev.ts)
+        const modifiers = ev.modifiers ?? []
         const d: DamageEvent = {
           ts: ev.ts, attacker: ev.attacker, target: ev.target, amount: ev.amount,
-          dtype: ev.dtype, dclass: ev.dclass, skill: ev.skill, crit: ev.crit, modifier: ev.modifier
+          dtype: ev.dtype, dclass: ev.dclass, skill: ev.skill, crit: ev.crit, modifier: ev.modifier,
+          // Prefer the parse-time category; derive as a fallback so pre-#51 events (or
+          // any path that omits it) still aggregate under the right axis.
+          category: ev.category ?? damageCategory(ev.dtype, modifiers),
+          modifiers
         }
         this.route(d)
         return
@@ -458,8 +606,36 @@ export class CombatEngine {
       case 'miss':
         this.routeMiss(ev.ts, ev.attacker, ev.target, ev.mtype)
         return
+      case 'stanceChange':
+        this.applyStance('stance', ev.stance, ev.ts)
+        this.log(ev.ts, 'stance', 'info', `▸ stance: ${ev.stance}`)
+        return
+      case 'invocationChange':
+        this.applyStance('invocation', ev.invocation, ev.ts)
+        this.log(ev.ts, 'invocation', 'info', `▸ invocation: ${ev.invocation}`)
+        return
       default:
         return
+    }
+  }
+
+  /**
+   * Apply a stance/invocation change (Task #51). Updates the current pair and, if an
+   * encounter is open, closes the prior span at this ts and opens a new one for the
+   * timeline's pinned rows. A no-op change (same name) is ignored so the timeline doesn't
+   * accrue zero-width spans from re-asserts.
+   */
+  private applyStance(group: 'stance' | 'invocation', name: string, ts: number): void {
+    const cur = group === 'stance' ? this.stance : this.invocation
+    if (cur?.name === name) return
+    if (group === 'stance') this.stance = { name, ts }
+    else this.invocation = { name, ts }
+    // Reflect the change on the open encounter's span list (if any).
+    const enc = this.current
+    if (enc) {
+      const prev = [...enc.stanceSpans].reverse().find((s) => s.group === group && s.end === undefined)
+      if (prev) prev.end = ts
+      enc.stanceSpans.push({ group, name, start: ts })
     }
   }
 
@@ -500,6 +676,11 @@ export class CombatEngine {
       this.zoneAgg.addInc(id, name, ev)
       enc.engaged.add(id)
       enc.engagedSeen.set(id, ev.ts)
+      // Timeline: an incoming instant lanes under the attacker's skill (its own row).
+      this.pushTimeline(enc, {
+        ts: ev.ts, lane: ev.skill, category: ev.category, amount: ev.amount,
+        crit: ev.crit, modifiers: ev.modifiers, kind: 'enemy'
+      })
       this.log(ev.ts, ev.dtype, 'enemy', `${name} → You  ${ev.amount}${critMark}  ${ev.skill}`)
       return
     }
@@ -533,6 +714,11 @@ export class CombatEngine {
     this.zoneAgg.bumpTarget(tgtId, tgtName, ev.amount)
     enc.engaged.add(tgtId)
     enc.engagedSeen.set(tgtId, ev.ts)
+    // Timeline: an outgoing instant lanes under the skill/spell name.
+    this.pushTimeline(enc, {
+      ts: ev.ts, lane: ev.skill, category: ev.category, amount: ev.amount,
+      crit: ev.crit, modifiers: ev.modifiers, kind
+    })
     const cat = ambiguous ? 'ambiguous' : ev.dtype
     const mark = ambiguous ? '~' : critMark
     this.log(ev.ts, cat, kind, `${name} → ${tgtName}  ${ev.amount}${mark}  ${ev.skill}`)
@@ -545,7 +731,8 @@ export class CombatEngine {
    */
   private routeMiss(ts: number, attacker: string, target: string, mtype: MissType): void {
     const probe: DamageEvent = {
-      ts, attacker, target, amount: 0, dtype: 'melee', skill: 'Melee', crit: false
+      ts, attacker, target, amount: 0, dtype: 'melee', skill: 'Melee', crit: false,
+      category: 'melee', modifiers: []
     }
     const at = classify(probe, this.charmed)
     if (at.kind === 'ignore') return
@@ -648,12 +835,25 @@ export class CombatEngine {
     // Closure is decided by evalClosure() (death-linger / CC-hold / fallback), which
     // ingestEvent runs before routing. Here we only lazily open a new encounter.
     if (!this.current) {
+      const spans: StanceRaw[] = []
+      // Seed the timeline's pinned rows with whatever stance/invocation is already active
+      // at the moment the fight opens (so a fight inherits the standing modifiers).
+      if (this.stance) spans.push({ group: 'stance', name: this.stance.name, start: ts })
+      if (this.invocation) spans.push({ group: 'invocation', name: this.invocation.name, start: ts })
       this.current = {
         id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts,
-        agg: new Agg(), engaged: new Set(), engagedSeen: new Map(), activeMs: 0, ccActiveUntil: new Map()
+        agg: new Agg(), engaged: new Set(), engagedSeen: new Map(), activeMs: 0,
+        ccActiveUntil: new Map(), events: [], stanceSpans: spans
       }
     }
     return this.current
+  }
+
+  /** Append one instant to the current encounter's timeline ring (Task #51), capped
+   *  drop-oldest at TIMELINE_CAP. Called from route()/routeMiss for attributed events. */
+  private pushTimeline(enc: Encounter, rec: TimelineRaw): void {
+    enc.events.push(rec)
+    if (enc.events.length > TIMELINE_CAP) enc.events.shift()
   }
 
   /**
@@ -718,6 +918,8 @@ export class CombatEngine {
     if (!this.current) return
     const enc = this.current
     this.current = null
+    // Close any open stance/invocation spans at the fight's end (Task #51).
+    for (const s of enc.stanceSpans) if (s.end === undefined) s.end = enc.lastTs
     // Drop empty encounters: a CC application (or a lone miss) can open an encounter
     // that never accrues any attributed damage — e.g. a mez lands and the mob is
     // then killed by someone else. Don't pollute history/zone with a 0-damage shell.
@@ -729,6 +931,15 @@ export class CombatEngine {
     // so 0 is a safe sentinel. Reused on every snapshot() thereafter.
     enc.summary = this.encSummary(enc, 'fight', 0)
     this.history.push(enc)
+    // Timeline memory bound (Task #51): keep the event ring only for the most recent
+    // TIMELINE_HISTORY_CAP finalized encounters; drop older rings so the whole-session
+    // RSS delta stays flat on a full-log replay (thousands of fights). The aggregate
+    // summary/agg is untouched — only the raw per-event ring is released.
+    const dropIdx = this.history.length - 1 - TIMELINE_HISTORY_CAP
+    if (dropIdx >= 0) {
+      const old = this.history[dropIdx]
+      if (old.events.length) old.events = []
+    }
   }
 
   snapshot(now: number, opts: SnapshotOpts = {}): CombatSnapshot {
@@ -766,7 +977,83 @@ export class CombatEngine {
     const selected = this.buildSelected(selectedId, now, combinePets)
 
     const recent = (opts.showUnparsed ? this.recent : this.recent.filter((r) => r.cat !== 'unparsed')).slice(-150)
-    return { selectedId, selected, segments, inCombat, zone: this.zone, charmed: [...this.charmed], recent }
+    const stance: StanceState = {
+      stance: this.stance?.name,
+      stanceTs: this.stance?.ts,
+      invocation: this.invocation?.name,
+      invocationTs: this.invocation?.ts
+    }
+    const timeline = opts.timeline ? this.buildTimeline(selectedId, now) : undefined
+    return {
+      selectedId, selected, segments, inCombat, zone: this.zone,
+      charmed: [...this.charmed], recent, stance, timeline
+    }
+  }
+
+  /**
+   * Build the selected encounter's timeline view (Task #51). Returns null for the zone
+   * selection (no single-fight timeline) or an encounter whose event ring was evicted
+   * (older than TIMELINE_HISTORY_CAP). Converts absolute ts → ms-since-start, downsamples
+   * with a uniform stride when over TIMELINE_BUDGET, and derives the Y-axis lanes (grouped
+   * by category, then total desc) + the pinned stance/invocation spans.
+   */
+  private buildTimeline(id: string, now: number): TimelineView | null {
+    if (id === 'zone') return null
+    const e = this.current?.id === id ? this.current : this.history.find((h) => h.id === id)
+    if (!e) return null
+    // An evicted finalized encounter carries no ring — no timeline available.
+    if (e.events.length === 0 && e !== this.current) return null
+    const start = e.startTs
+    const isCurrent = this.current?.id === id
+    const endTs = isCurrent ? Math.max(e.lastTs, now) : e.lastTs
+    const durationMs = Math.max(1, endTs - start)
+
+    const raw = e.events
+    const rawCount = raw.length
+    // Uniform-stride downsample when over budget (keeps the temporal shape; a dense
+    // charm-grind fight is capped so the payload/render stays cheap).
+    const stride = rawCount > TIMELINE_BUDGET ? Math.ceil(rawCount / TIMELINE_BUDGET) : 1
+    const events: TimelineEvent[] = []
+    const laneAgg = new Map<string, { category: DamageCategory; total: number; kind: SourceKind }>()
+    for (let i = 0; i < rawCount; i++) {
+      const r = raw[i]
+      // Lane aggregation uses EVERY event (not just sampled ones) so a lane's total and
+      // ordering are accurate even when the plotted instants are downsampled.
+      const la = laneAgg.get(r.lane) ?? { category: r.category, total: 0, kind: r.kind }
+      la.total += r.amount
+      laneAgg.set(r.lane, la)
+      if (i % stride !== 0) continue
+      events.push({
+        t: Math.max(0, r.ts - start),
+        lane: r.lane,
+        category: r.category,
+        amount: r.amount,
+        crit: r.crit,
+        modifiers: r.modifiers && r.modifiers.length ? r.modifiers : undefined,
+        kind: r.kind
+      })
+    }
+    const lanes = [...laneAgg.entries()]
+      .map(([lane, v]) => ({ lane, category: v.category, total: v.total, kind: v.kind }))
+      .sort((a, b) =>
+        CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category) || b.total - a.total
+      )
+    const stanceSpans: StanceSpan[] = e.stanceSpans.map((s) => ({
+      group: s.group,
+      name: s.name,
+      start: Math.max(0, s.start - start),
+      end: Math.max(0, (s.end ?? endTs) - start)
+    }))
+    return {
+      id: e.id,
+      name: encounterName(e),
+      durationMs,
+      lanes,
+      events,
+      stanceSpans,
+      downsampled: stride > 1,
+      rawCount
+    }
   }
 
   private encSummary(e: Encounter, kind: 'fight' | 'current', now: number): SegmentSummary {
@@ -915,6 +1202,33 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
           you.bySkill.set(key, { ...sk, name: key })
         }
       }
+      // Merge category rollups too (namespacing the per-category skill by the pet name,
+      // matching the top-level bySkill merge above) so drill-down still works combined.
+      for (const [cat, cstat] of s.byCategory) {
+        const yc = you.byCategory.get(cat) ?? newCategory(cat)
+        yc.total += cstat.total
+        yc.hits += cstat.hits
+        yc.crits += cstat.crits
+        yc.max = Math.max(yc.max, cstat.max)
+        for (const [k, sk] of cstat.bySkill) {
+          const key = `${s.name}: ${k}`
+          const prev = yc.bySkill.get(key)
+          if (prev) {
+            prev.total += sk.total
+            prev.hits += sk.hits
+            prev.crits += sk.crits
+            prev.max = Math.max(prev.max, sk.max)
+          } else {
+            yc.bySkill.set(key, { ...sk, name: key })
+          }
+        }
+        you.byCategory.set(cat, yc)
+      }
+      // Merge rounds buckets (union of both sources' second-buckets — keeps the
+      // per-second hit clustering coherent when pets fold into You).
+      for (const [bk, cnt] of s.rounds.bucket) {
+        you.rounds.bucket.set(bk, (you.rounds.bucket.get(bk) ?? 0) + cnt)
+      }
       merged.set('you', you)
     } else {
       merged.set(id, s)
@@ -944,10 +1258,62 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
         skills: [...s.bySkill.values()]
           .sort((a, b) => b.total - a.total)
           .slice(0, 12)
-          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses }))
+          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses })),
+        categories: categoryViews(s.byCategory),
+        rounds: roundsView(s.rounds)
       }
     })
     .sort((a, b) => b.total - a.total)
+}
+
+/**
+ * Build the per-category drill-down views (Task #51 level 2 + 3) for a source. Ordered
+ * by CATEGORY_ORDER (stable UI ordering: melee, slay, spell, dot, ds); each carries its
+ * own per-skill breakdown capped at 12 (same cap as the top-level skills — small payload).
+ */
+function categoryViews(byCat: Map<DamageCategory, CategoryStat>): CategoryView[] {
+  const catMax = Math.max(1, ...[...byCat.values()].map((c) => c.total))
+  return [...byCat.values()]
+    .sort((a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category))
+    .map((c) => {
+      const skMax = Math.max(1, ...[...c.bySkill.values()].map((k) => k.total))
+      return {
+        category: c.category,
+        total: c.total,
+        pct: (c.total / catMax) * 100,
+        hits: c.hits,
+        crits: c.crits,
+        critPct: c.hits ? (c.crits / c.hits) * 100 : 0,
+        max: c.max,
+        skills: [...c.bySkill.values()]
+          .sort((a, b) => b.total - a.total)
+          .slice(0, 12)
+          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses }))
+      }
+    })
+}
+
+/**
+ * Build the melee-rounds heuristic view (Task #51). Collapses the (skill, second)
+ * buckets into a hits-per-round histogram and summary. HONEST framing: the log never
+ * records double/triple attack, so this counts hits landed in the same second — a
+ * cluster proxy, exposed as a distribution, not a fabricated multi-attack certainty.
+ */
+function roundsView(r: RoundsAccum): RoundsView | undefined {
+  const hist = finalizeRounds(r)
+  const totalRounds = hist.reduce((s, n) => s + n, 0)
+  if (totalRounds === 0) return undefined
+  const totalHits = hist.reduce((s, n, i) => s + n * (i + 1), 0)
+  const maxHits = hist.length
+  const multi = hist.reduce((s, n, i) => (i >= 1 ? s + n : s), 0) // rounds with 2+ hits
+  return {
+    totalRounds,
+    avgHitsPerRound: totalHits / totalRounds,
+    maxHitsInRound: maxHits,
+    multiHitRounds: multi,
+    // histogram[k-1] = rounds that landed exactly k hits.
+    histogram: hist
+  }
 }
 
 const MISS_KEYS: MissType[] = ['miss', 'dodge', 'parry', 'riposte', 'block', 'absorb']

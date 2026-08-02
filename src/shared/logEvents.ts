@@ -5,7 +5,7 @@
 // engine, the coming world model) subscribes to the stream instead of running its
 // own regexes. Keep this pure and serializable — no behavior, just data.
 
-import type { DamageType } from './combat'
+import type { DamageType, DamageCategory } from './combat'
 
 /** Fields present on every event: a monotonic sequence, timestamp, and the raw line. */
 export interface LogEventBase {
@@ -118,7 +118,21 @@ export interface DamageEventE extends LogEventBase {
   dclass?: string
   skill: string
   crit: boolean
+  /** Raw trailing paren modifier, verbatim ("Riposte Critical"). Kept for provenance. */
   modifier?: string
+  /**
+   * Taxonomy dimension (Task #51), additive over dtype: 'melee' | 'slay' | 'spell' |
+   * 'dot' | 'ds'. A melee swing with a Slay Undead proc is 'slay' (its own category
+   * per the user); every other dtype maps 1:1. Computed at parse time via
+   * combat/taxonomy.ts. Optional so pre-#51 profiles/tests stay byte-compatible.
+   */
+  category?: DamageCategory
+  /**
+   * Parsed paren-modifier tokens (Task #51): ["Riposte","Critical"], ["Slay Undead"],
+   * etc. Empty/omitted when the line has no modifier. `crit` is derived from the
+   * presence of "Critical" here.
+   */
+  modifiers?: string[]
 }
 
 /**
@@ -395,29 +409,57 @@ export interface BuffExpiredEvent extends LogEventBase {
 }
 
 /**
- * A DERIVED character-EPOCH boundary (Task #49). NOT a parsed line: it is SYNTHESIZED
- * by the feeder (index.ts bus subscription) and handed back onto the SAME bus via
- * `emitDerived` when it observes a decisive level REGRESSION — the fingerprint of a
- * character REBIRTH (a same-name+server character wiped/recreated, which reuses the SAME
- * log file). The user's real case: a BETA character reached level 26/30 (Jul 19-20), was
- * WIPED at launch, and the log continues with `Welcome to EverQuest Legends!` then a
- * `Welcome to level 2!` re-level on Jul 28 — everything before that boundary belongs to a
- * DEAD character and contaminates AA / loot / kills / turn-ins / quest counts.
+ * A DERIVED character-EPOCH boundary (Task #49; anchor REPLACED in Task #50). NOT a parsed
+ * line: it is SYNTHESIZED by the feeder (index.ts bus subscription) and handed back onto the
+ * SAME bus via `emitDerived` at the OFFICIAL LAUNCH boundary — the fingerprint of a character
+ * REBIRTH (a same-name+server character wiped/recreated at launch, which reuses the SAME log
+ * file). The user's real case: a BETA character reached level 26/30 (Jul 19-20), was WIPED at
+ * launch, and the log continues with `Welcome to EverQuest Legends!` then a `Welcome to level
+ * 2!` re-level on Jul 28 — everything before that boundary belongs to a DEAD character and
+ * contaminates AA / loot / kills / turn-ins / quest counts.
  *
- * DETECTION (in the feeder, where level events stream): a `level` event whose new level is
- * DECISIVELY below the highest level seen this epoch — new level ≤ 3 OR a drop of > 5
- * levels. Classic EQ death-deleveling loses at most a level or two around XP thresholds, so
- * a small regression (e.g. a duplicate `level 11` after XP loss) is TOLERATED without an
- * epoch reset; only a decisive drop is a rebirth. The whole log implicitly starts in epoch 0.
+ * DETECTION (in the feeder): the FIRST event whose timestamp is at/after the official launch
+ * instant 2026-07-28 00:00 LOCAL (see epochDetector.ts `LAUNCH_MS`). The launch DATE replaced
+ * the old level-regression heuristic, which was UNSAFE: EQ Legends loadout swaps legitimately
+ * change character level, so a decisive downward level jump is not a reliable rebirth signal.
+ * The date is unambiguous and can't be confused with in-game mechanics.
  *
  * On this event, character-scoped modules RESET their live folded state (see modules/*),
- * so post-scan state reflects ONLY the current character. `reason` documents the trigger;
- * `level` is the new (post-rebirth) level that tripped it.
+ * so post-scan state reflects ONLY the current character. `reason` documents the trigger.
  */
 export interface EpochEvent extends LogEventBase {
   kind: 'epoch'
-  reason: 'level-regression'
-  level: number
+  reason: 'launch'
+}
+
+/**
+ * The player changed their combat STANCE (Task #51). EQ Legends has two mutually-
+ * exclusive combat-modifier groups; this is the melee/general one. The commit line is
+ * `You assume a <stance> stance.` (`You begin to change your stance.` is the pre-commit
+ * flavor and is NOT emitted — 594 of those vs the assume lines that name the stance).
+ * VERIFIED stances (full-log sweep): defensive, offensive, balanced, mage hunter,
+ * evasive, striker, berserker, channeler, ranged (9 total — MORE than the 5 the task
+ * brief listed; swept, not assumed). `stance` is the lowercased canonical name; the
+ * regex is name-permissive so a 10th stance still parses.
+ */
+export interface StanceChangeEvent extends LogEventBase {
+  kind: 'stanceChange'
+  stance: string
+}
+
+/**
+ * The player changed their INVOCATION (Task #51) — the second mutually-exclusive
+ * combat-modifier group (a caster/mixed self-buff recited into an active slot). Commit
+ * line: `You begin reciting the <invocation> invocation.` (`You begin to change your
+ * invocation.` is pre-commit flavor, NOT emitted — 2339 of those). VERIFIED invocations
+ * (full-log sweep): inversion, overchannel, recovery, spellblade, divine, inviolable,
+ * empowering, arcane mastery, unyielding (9 total — MORE than the 5 the brief listed;
+ * "arcane mastery" is a two-word name a single-word grep misses). `invocation` is the
+ * lowercased canonical name.
+ */
+export interface InvocationChangeEvent extends LogEventBase {
+  kind: 'invocationChange'
+  invocation: string
 }
 
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
@@ -454,4 +496,6 @@ export type LogEvent =
   | IllusionFadeEvent
   | BuffExpiredEvent
   | EpochEvent
+  | StanceChangeEvent
+  | InvocationChangeEvent
   | UnknownEvent

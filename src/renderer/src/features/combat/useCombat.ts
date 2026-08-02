@@ -20,6 +20,9 @@ export interface UseCombat {
   maxSegments: number
   /** bump the cap by another page of fights (Load more) */
   loadMore: () => void
+  /** when true, the snapshot includes the selected encounter's timeline (Task #51). */
+  wantTimeline: boolean
+  setWantTimeline: (v: boolean) => void
 }
 
 /**
@@ -36,6 +39,7 @@ export function useCombat(): UseCombat {
   const [showUnparsed, setShowUnparsed] = useState(false)
   const [selection, setSelection] = useState<string>(LIVE)
   const [maxSegments, setMaxSegments] = useState(DEFAULT_MAX_SEGMENTS)
+  const [wantTimeline, setWantTimeline] = useState(false)
   const [snap, setSnap] = useState<CombatSnapshot | null>(null)
 
   useEffect(() => {
@@ -45,7 +49,8 @@ export function useCombat(): UseCombat {
         combinePets,
         selectedId: selection === LIVE ? undefined : selection,
         showUnparsed,
-        maxSegments
+        maxSegments,
+        timeline: wantTimeline
       })
       if (alive) setSnap(s)
     }
@@ -57,7 +62,7 @@ export function useCombat(): UseCombat {
       off()
       clearInterval(iv)
     }
-  }, [combinePets, selection, showUnparsed, maxSegments])
+  }, [combinePets, selection, showUnparsed, maxSegments, wantTimeline])
 
   const loadMore = (): void => setMaxSegments((n) => n + DEFAULT_MAX_SEGMENTS)
 
@@ -70,6 +75,8 @@ export function useCombat(): UseCombat {
     selection,
     setSelection,
     maxSegments,
-    loadMore
+    loadMore,
+    wantTimeline,
+    setWantTimeline
   }
 }

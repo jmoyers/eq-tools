@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Box,
   Chip,
+  CircularProgress,
   Dialog,
   DialogContent,
   DialogTitle,
@@ -12,8 +13,125 @@ import {
   Typography
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import type { LootEvent } from '@shared/types'
+import AutoStoriesIcon from '@mui/icons-material/AutoStories'
+import type { ItemKnowledge, LootEvent } from '@shared/types'
 import { formatDate } from '../../lib/formatDate'
+
+/**
+ * "What it's for" knowledge (Task #53): fetch this item's lore/quest knowledge when the
+ * dialog opens. Local-posky-first + cached in main, so a known item resolves instantly;
+ * a fresh wiki lookup shows a quiet loading state. Never throws (main degrades to a
+ * cached-negative / offline record). Re-runs when the item changes.
+ */
+function useItemKnowledge(item: string, open: boolean): { data: ItemKnowledge | null; loading: boolean } {
+  const [data, setData] = useState<ItemKnowledge | null>(null)
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    if (!open) return
+    let alive = true
+    setData(null)
+    setLoading(true)
+    void window.eq
+      .lookupItem(item)
+      .then((k) => {
+        if (alive) setData(k)
+      })
+      .catch(() => {
+        /* main never rejects; guard anyway */
+      })
+      .finally(() => {
+        if (alive) setLoading(false)
+      })
+    return () => {
+      alive = false
+    }
+  }, [item, open])
+  return { data, loading }
+}
+
+/**
+ * The "What it's for" card: lore badge, quest chips (with giver when known), a wiki
+ * summary line, and source attribution. Quiet loading/offline/empty states — no
+ * narration. Rendered only when there's something to say (or while loading).
+ */
+function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loading: boolean }): JSX.Element | null {
+  if (loading && !data) {
+    return (
+      <Box sx={{ mb: 2 }}>
+        <Divider sx={{ mb: 1.5 }} />
+        <Stack direction="row" spacing={1} alignItems="center" sx={{ color: 'text.secondary' }}>
+          <CircularProgress size={14} />
+          <Typography variant="caption">Looking up what this is for…</Typography>
+        </Stack>
+      </Box>
+    )
+  }
+  if (!data) return null
+
+  const hasSomething = data.lore || data.quest || data.questUses.length > 0 || !!data.summary
+  // Nothing notable AND we successfully checked the wiki — stay silent (don't add noise
+  // to ordinary vendor trash). If it was offline/notFound with no local data, also silent.
+  if (!hasSomething) return null
+
+  const wikiUrl = data.page
+    ? `https://eqlwiki.com/wiki/${encodeURIComponent(data.page.replace(/ /g, '_'))}`
+    : undefined
+
+  return (
+    <Box sx={{ mb: 2 }}>
+      <Divider sx={{ mb: 1.5 }} />
+      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+        <AutoStoriesIcon fontSize="small" sx={{ color: 'secondary.main' }} />
+        <Typography variant="subtitle2">What it&apos;s for</Typography>
+        {data.lore && <Chip size="small" color="warning" variant="outlined" label="LORE" sx={{ height: 20 }} />}
+        {data.offline && (
+          <Typography variant="caption" color="text.disabled">
+            (offline — showing what&apos;s known locally)
+          </Typography>
+        )}
+      </Stack>
+
+      {data.summary && (
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+          {data.summary}
+        </Typography>
+      )}
+
+      {data.questUses.length > 0 ? (
+        <Box>
+          <Typography variant="caption" color="text.secondary">
+            Used in {data.questUses.length === 1 ? 'quest' : 'quests'}:
+          </Typography>
+          <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap sx={{ mt: 0.5 }}>
+            {data.questUses.map((u) => (
+              <Chip
+                key={`${u.source}:${u.quest}`}
+                size="small"
+                variant="outlined"
+                color={u.source === 'posky' ? 'primary' : 'default'}
+                label={u.giver ? `${u.quest} · ${u.giver}` : u.quest}
+                sx={{ height: 22 }}
+              />
+            ))}
+          </Stack>
+        </Box>
+      ) : (
+        data.quest && (
+          <Typography variant="caption" color="text.secondary">
+            Flagged as a quest item on the wiki (no specific quest association found).
+          </Typography>
+        )
+      )}
+
+      {wikiUrl && (
+        <Typography variant="caption" color="text.disabled" display="block" sx={{ mt: 1 }}>
+          Source: <a href={wikiUrl} target="_blank" rel="noreferrer" style={{ color: 'inherit' }}>eqlwiki.com</a>
+          {data.questUses.some((u) => u.source === 'posky') && ' + Plane of Sky dataset'}
+        </Typography>
+      )}
+    </Box>
+  )
+}
 
 function StatCard({ label, value, hint }: { label: string; value: string; hint?: string }): JSX.Element {
   return (
@@ -144,6 +262,7 @@ export function ItemDetailDialog({
   const total = events.length
   const maxSource = agg.sources[0]?.count ?? 1
   const maxZone = agg.zones[0]?.count ?? 1
+  const knowledge = useItemKnowledge(item, open)
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
@@ -163,7 +282,11 @@ export function ItemDetailDialog({
           <StatCard label="Zones seen" value={String(agg.zones.length)} />
         </Stack>
 
-        {stats && (
+        {/* "What it's for" (Task #53) — lore/quest knowledge. Local posky + cached wiki. */}
+        <KnowledgeSection data={knowledge.data} loading={knowledge.loading} />
+
+        {/* Stat block: posky's scraped block when we have it, else the wiki item page's. */}
+        {(stats || knowledge.data?.statsBlock) && (
           <Paper
             variant="outlined"
             sx={{
@@ -176,7 +299,7 @@ export function ItemDetailDialog({
               bgcolor: '#12131c'
             }}
           >
-            {stats}
+            {stats ?? knowledge.data?.statsBlock}
           </Paper>
         )}
 

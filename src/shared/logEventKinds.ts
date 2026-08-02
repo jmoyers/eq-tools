@@ -39,6 +39,8 @@ export const ALL_LOG_EVENT_KINDS = [
   'illusionFade',
   'buffExpired',
   'spellEmote',
+  'stanceChange',
+  'invocationChange',
   'epoch',
   'unknown'
 ] as const satisfies readonly LogEventKind[]

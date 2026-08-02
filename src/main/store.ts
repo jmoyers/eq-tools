@@ -1,5 +1,12 @@
 import Store from 'electron-store'
-import type { AlertDef, AlertPrefs, HeldCounts, ProgressState, UpdateChannel } from '../shared/types'
+import type {
+  AlertDef,
+  AlertPrefs,
+  HeldCounts,
+  OverlayConfig,
+  ProgressState,
+  UpdateChannel
+} from '../shared/types'
 
 const emptyProgress: ProgressState = {
   inventory: {},
@@ -27,6 +34,8 @@ interface StoreShape {
   alertPrefs?: AlertPrefs
   /** auto-update release channel (Task #27): 'main' (bleeding edge) | 'stable' */
   updateChannel?: UpdateChannel
+  /** floating overlay DPS meter config (Task #52) */
+  overlay?: OverlayConfig
 }
 
 const store = new Store<StoreShape>({
@@ -79,6 +88,31 @@ export function getActiveLogPath(): string | undefined {
 
 export function setActiveLogPath(logPath: string): void {
   store.set('activeLogPath', logPath)
+}
+
+// ----- Floating overlay DPS meter (Task #52) -----
+
+const DEFAULT_OVERLAY_CONFIG: OverlayConfig = {
+  open: false,
+  locked: false,
+  bgAlpha: 0.72,
+  topN: 5,
+  bounds: undefined
+}
+
+/** Read the overlay config, filling in any missing field with a sane default. */
+export function getOverlayConfig(): OverlayConfig {
+  return { ...DEFAULT_OVERLAY_CONFIG, ...(store.get('overlay') ?? {}) }
+}
+
+/** Merge-patch the overlay config (only the provided keys change). Returns the merged value. */
+export function setOverlayConfig(patch: Partial<OverlayConfig>): OverlayConfig {
+  const next: OverlayConfig = { ...getOverlayConfig(), ...patch }
+  // Clamp the numeric fields defensively (the slider / topN come from the renderer).
+  next.bgAlpha = Math.max(0, Math.min(1, next.bgAlpha))
+  next.topN = next.topN >= 10 ? 10 : 5
+  store.set('overlay', next)
+  return next
 }
 
 // ----- Auto-update channel (Task #27) -----

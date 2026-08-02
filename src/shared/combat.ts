@@ -4,6 +4,24 @@
 export type SourceKind = 'you' | 'pet' | 'enemy'
 export type DamageType = 'melee' | 'spell' | 'dot' | 'ds'
 
+/**
+ * Damage TAXONOMY category (Task #51), a superset dimension over DamageType: the
+ * Slay Undead melee proc is split into its own 'slay' category per the user; every
+ * other dtype maps 1:1. Computed at parse time (src/main/combat/taxonomy.ts) and
+ * rolled into per-source category aggregates by the engine for the drill-down UI.
+ */
+export type DamageCategory = 'melee' | 'slay' | 'spell' | 'dot' | 'ds'
+
+/** Display label + fixed ordering for each taxonomy category (UI + tests). */
+export const CATEGORY_LABEL: Record<DamageCategory, string> = {
+  melee: 'Melee',
+  slay: 'Slay Undead',
+  spell: 'Direct spells',
+  dot: 'DoTs',
+  ds: 'Damage shield'
+}
+export const CATEGORY_ORDER: DamageCategory[] = ['melee', 'slay', 'spell', 'dot', 'ds']
+
 export interface SkillView {
   name: string
   total: number
@@ -23,6 +41,39 @@ export interface MissBreakdown {
   riposte: number
   block: number
   absorb: number
+}
+
+/** A taxonomy-category rollup within a source (Task #51 drill-down level 2). Carries
+ *  its own per-skill/per-spell breakdown (level 3). */
+export interface CategoryView {
+  category: DamageCategory
+  total: number
+  /** pct of the source's largest category (for the level-2 bar fill). */
+  pct: number
+  hits: number
+  crits: number
+  critPct: number
+  max: number
+  /** per-skill/per-spell breakdown within this category (capped at 12). */
+  skills: SkillView[]
+}
+
+/**
+ * The melee-"rounds" heuristic (Task #51). The log does NOT record double/triple
+ * attack, so a "round" is the HONEST proxy: a source's melee/slay hits sharing the same
+ * whole second (and skill). This is a cluster distribution, NOT a fabricated multi-attack
+ * flag; main-hand vs off-hand is also not distinguishable in the log. Present only for
+ * sources that landed melee/slay hits.
+ */
+export interface RoundsView {
+  /** number of (skill, second) buckets observed. */
+  totalRounds: number
+  avgHitsPerRound: number
+  maxHitsInRound: number
+  /** rounds that landed 2+ hits in the same second (multi-attack candidates). */
+  multiHitRounds: number
+  /** histogram[k-1] = count of rounds that landed exactly k hits. */
+  histogram: number[]
 }
 
 export interface SourceView {
@@ -47,6 +98,10 @@ export interface SourceView {
   /** Avoided-swing breakdown by outcome (for tooltip / expanded row). */
   missBreakdown: MissBreakdown
   skills: SkillView[]
+  /** Per-category rollup (Task #51 drill-down level 2 → 3). Ordered by CATEGORY_ORDER. */
+  categories: CategoryView[]
+  /** Melee-rounds heuristic (Task #51); undefined for sources with no melee/slay hits. */
+  rounds?: RoundsView
 }
 
 export interface SegmentView {
@@ -110,6 +165,78 @@ export interface ClassifiedLine {
   text: string
 }
 
+/** The player's current combat-modifier pair (Task #51). Two mutually-exclusive groups
+ *  the parser tracks: a melee/general STANCE and a caster INVOCATION. Either may be
+ *  undefined if never observed this session. Shown as two chips near the meter header. */
+export interface StanceState {
+  /** current stance name (lowercased canonical), or undefined if none seen yet. */
+  stance?: string
+  /** ts of the last stance change. */
+  stanceTs?: number
+  /** current invocation name, or undefined. */
+  invocation?: string
+  /** ts of the last invocation change. */
+  invocationTs?: number
+}
+
+/**
+ * One event on the selected-encounter TIMELINE (Task #51). A timestamped, categorized
+ * instant used to render the WarcraftLogs-style timeline (skills on the Y axis, time on
+ * X). Kept small + capped (the engine downsamples an encounter's ring when it exceeds a
+ * budget). `t` is ms since the encounter start (so the renderer needn't know absolute ts).
+ */
+export interface TimelineEvent {
+  /** ms since encounter start. */
+  t: number
+  /** row label = the skill/spell/element name (the Y-axis lane). */
+  lane: string
+  /** taxonomy category (drives color + which section the lane sorts into). */
+  category: DamageCategory
+  /** damage amount (0 for a miss tick). */
+  amount: number
+  /** true when this instant was a crit. */
+  crit: boolean
+  /** parsed modifiers (Riposte/Finishing Blow/…) for the tooltip. */
+  modifiers?: string[]
+  /** 'you' | 'pet' | 'enemy' — who produced it (color/opacity hint). */
+  kind: SourceKind
+}
+
+/** A span during which a stance/invocation was active (Task #51 timeline pinned rows). */
+export interface StanceSpan {
+  /** 'stance' | 'invocation' — which pinned lane. */
+  group: 'stance' | 'invocation'
+  /** the stance/invocation name. */
+  name: string
+  /** ms since encounter start when it became active (clamped to ≥0). */
+  start: number
+  /** ms since encounter start when it ended (the encounter end if still active). */
+  end: number
+}
+
+/**
+ * The selected encounter's event timeline (Task #51). Returned only when
+ * SnapshotOpts.timeline is set (payload is heavier than the bar view). Capped +
+ * downsampled per the engine's budget; `downsampled` flags when events were dropped.
+ */
+export interface TimelineView {
+  /** the encounter id this timeline is for. */
+  id: string
+  name: string
+  /** encounter duration in ms (X-axis extent). */
+  durationMs: number
+  /** ordered lane labels (Y axis), grouped by category then by total desc. */
+  lanes: Array<{ lane: string; category: DamageCategory; total: number; kind: SourceKind }>
+  /** timestamped instants (relative ms). */
+  events: TimelineEvent[]
+  /** pinned stance/invocation spans (rendered above the skill lanes). */
+  stanceSpans: StanceSpan[]
+  /** true when the raw event count exceeded the budget and was downsampled. */
+  downsampled: boolean
+  /** raw event count before any downsampling (for the "showing N of M" note). */
+  rawCount: number
+}
+
 export interface CombatSnapshot {
   selectedId: string
   selected: SegmentView | null
@@ -120,6 +247,10 @@ export interface CombatSnapshot {
   charmed: string[]
   /** recent classified lines, oldest→newest */
   recent: ClassifiedLine[]
+  /** current stance + invocation pair (Task #51). */
+  stance: StanceState
+  /** the selected encounter's timeline — present only when SnapshotOpts.timeline is set. */
+  timeline?: TimelineView | null
 }
 
 export interface SnapshotOpts {
@@ -134,4 +265,12 @@ export interface SnapshotOpts {
    * still fully resolvable via `selected` (built separately). Raise to load more.
    */
   maxSegments?: number
+  /**
+   * When true (Task #51), include the SELECTED encounter's event timeline in the
+   * snapshot (`timeline`). Off by default — the timeline payload is heavier than the bar
+   * view, so it's only fetched when the CombatView is in Timeline mode. Only the current
+   * live encounter and finalized encounters within the engine's per-encounter event ring
+   * carry a timeline; older/evicted encounters return `timeline:null`.
+   */
+  timeline?: boolean
 }

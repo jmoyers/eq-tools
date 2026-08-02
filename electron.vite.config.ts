@@ -15,7 +15,13 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()],
     build: {
       rollupOptions: {
-        input: { index: resolve(__dirname, 'src/preload/index.ts') }
+        // Two preloads: the full app bridge (index) and a minimal overlay bridge
+        // (overlay) that exposes only the combat snapshot + overlay window controls
+        // (Task #52). electron-vite emits both to out/preload/{index,overlay}.js.
+        input: {
+          index: resolve(__dirname, 'src/preload/index.ts'),
+          overlay: resolve(__dirname, 'src/preload/overlay.ts')
+        }
       }
     }
   },
@@ -30,7 +36,12 @@ export default defineConfig({
     plugins: [react()],
     build: {
       rollupOptions: {
-        input: { index: resolve(__dirname, 'src/renderer/index.html') }
+        // Two HTML entries: the main app (index) and the floating overlay meter
+        // (overlay, Task #52). electron-vite emits out/renderer/{index,overlay}.html.
+        input: {
+          index: resolve(__dirname, 'src/renderer/index.html'),
+          overlay: resolve(__dirname, 'src/renderer/overlay.html')
+        }
       }
     }
   }

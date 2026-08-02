@@ -5,6 +5,8 @@ import MinimizeIcon from '@mui/icons-material/Remove'
 import CropSquareIcon from '@mui/icons-material/CropSquare'
 import FilterNoneIcon from '@mui/icons-material/FilterNone'
 import CloseIcon from '@mui/icons-material/Close'
+import PictureInPictureAltIcon from '@mui/icons-material/PictureInPictureAlt'
+import Tooltip from '@mui/material/Tooltip'
 import type { CharacterRef } from '@shared/types'
 
 /**
@@ -93,8 +95,15 @@ export default function TitleBar({
   onSelectCharacter
 }: TitleBarProps): JSX.Element {
   const [maximized, setMaximized] = useState(false)
+  // Overlay open-state (Task #52): reflected on the toggle button, kept in sync with
+  // pushes so it updates if the overlay closes itself (its own close button).
+  const [overlayOpen, setOverlayOpen] = useState(false)
 
   useEffect(() => window.eq.onWindowMaximized(setMaximized), [])
+  useEffect(() => {
+    void window.eq.getOverlayState().then(setOverlayOpen)
+    return window.eq.onOverlayState(setOverlayOpen)
+  }, [])
 
   // Double-click on the drag region toggles maximize (native-ish behavior). We
   // guard against double-clicks that originate on an interactive child by only
@@ -131,6 +140,43 @@ export default function TitleBar({
       <Box sx={{ flexGrow: 1 }} />
 
       {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
+
+      {/* Floating DPS overlay toggle (Task #52). Active-state tinted so the user can
+          see the overlay is open even when it's off-screen / behind the game. */}
+      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center' }}>
+        <Tooltip title={overlayOpen ? 'Hide floating DPS overlay' : 'Show floating DPS overlay'}>
+          <Box
+            component="button"
+            type="button"
+            aria-label="Toggle DPS overlay"
+            aria-pressed={overlayOpen}
+            onClick={() => void window.eq.toggleOverlay()}
+            sx={{
+              WebkitAppRegion: 'no-drag',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 0.5,
+              height: 26,
+              px: 1,
+              borderRadius: 1,
+              border: '1px solid',
+              borderColor: overlayOpen ? 'primary.main' : 'divider',
+              bgcolor: overlayOpen ? 'rgba(217,178,95,0.14)' : 'transparent',
+              color: overlayOpen ? 'primary.main' : 'text.secondary',
+              cursor: 'pointer',
+              outline: 'none',
+              transition: 'background-color 120ms, color 120ms, border-color 120ms',
+              '& svg': { fontSize: 16 },
+              '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
+            }}
+          >
+            <PictureInPictureAltIcon />
+            <Typography variant="caption" sx={{ fontWeight: 600 }}>
+              Overlay
+            </Typography>
+          </Box>
+        </Tooltip>
+      </Box>
 
       {/* Interactive controls opt out of the drag region. */}
       <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 1 }}>

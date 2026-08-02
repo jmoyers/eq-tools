@@ -2,9 +2,12 @@ import { memo, useEffect, useRef, useState, type ReactNode } from 'react'
 import {
   Alert,
   Box,
+  Breadcrumbs,
+  Button,
   Chip,
   Collapse,
   FormControlLabel,
+  Link,
   MenuItem,
   Paper,
   Select,
@@ -15,11 +18,14 @@ import {
   Tooltip,
   Typography
 } from '@mui/material'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
 import PetsIcon from '@mui/icons-material/Pets'
 import { LIVE, useCombat } from './useCombat'
+import { CombatTimeline } from './CombatTimeline'
 import { formatTime } from '../../lib/formatDate'
-import type { ClassifiedLine, SegmentView, SourceView } from '@shared/combat'
+import type { CategoryView, ClassifiedLine, DamageCategory, SegmentView, SourceView } from '@shared/combat'
+import { CATEGORY_LABEL } from '@shared/combat'
 
 const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 const ROLE_COLOR: Record<string, string> = {
@@ -100,7 +106,17 @@ function missSummary(m: SourceView['missBreakdown']): string {
   return parts.join(' · ') || 'none'
 }
 
-const EntityRow = memo(function EntityRow({ e, rank }: { e: SourceView; rank: number }): JSX.Element {
+const EntityRow = memo(function EntityRow({
+  e,
+  rank,
+  onDrill
+}: {
+  e: SourceView
+  rank: number
+  onDrill?: () => void
+}): JSX.Element {
+  // Fallback inline expand (level-3 skills) for the incoming view, which has no
+  // drill-down; the outgoing view uses onDrill (category breakdown) instead.
   const [open, setOpen] = useState(false)
   const crit = e.critPct >= 1 ? ` · ${Math.round(e.critPct)}% crit` : ''
   // hit% only meaningful when swings were avoided (melee sources); hide at 100%.
@@ -113,13 +129,14 @@ const EntityRow = memo(function EntityRow({ e, rank }: { e: SourceView; rank: nu
         </Typography>
       </Tooltip>
     ) : null
+  const onClick = onDrill ?? (e.skills.length ? () => setOpen((o) => !o) : undefined)
   return (
     <Box>
       <Bar
         color={KIND_COLOR[e.kind] ?? '#888'}
         pct={e.pct}
         rank={rank}
-        onClick={e.skills.length ? () => setOpen((o) => !o) : undefined}
+        onClick={onClick}
         name={
           <>
             {e.name}
@@ -142,21 +159,23 @@ const EntityRow = memo(function EntityRow({ e, rank }: { e: SourceView; rank: nu
         }
         right={`${fmt(e.total)} · ${fmt(e.dps)}/s${crit}`}
       />
-      <Collapse in={open}>
-        <Box sx={{ pl: 3, pr: 0.5, py: 0.5 }}>
-          {e.skills.map((s) => (
-            <Bar
-              key={s.name}
-              color={KIND_COLOR[e.kind] ?? '#888'}
-              pct={s.pct}
-              name={s.name}
-              right={`${fmt(s.total)} · ${s.hits} hits${
-                s.misses ? ` · ${Math.round((s.hits / (s.hits + s.misses)) * 100)}% hit` : ''
-              }${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
-            />
-          ))}
-        </Box>
-      </Collapse>
+      {!onDrill && (
+        <Collapse in={open}>
+          <Box sx={{ pl: 3, pr: 0.5, py: 0.5 }}>
+            {e.skills.map((s) => (
+              <Bar
+                key={s.name}
+                color={KIND_COLOR[e.kind] ?? '#888'}
+                pct={s.pct}
+                name={s.name}
+                right={`${fmt(s.total)} · ${s.hits} hits${
+                  s.misses ? ` · ${Math.round((s.hits / (s.hits + s.misses)) * 100)}% hit` : ''
+                }${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
+              />
+            ))}
+          </Box>
+        </Collapse>
+      )}
     </Box>
   )
 },
@@ -169,10 +188,10 @@ const EntityRow = memo(function EntityRow({ e, rank }: { e: SourceView; rank: nu
 sourceViewEqual)
 
 function sourceViewEqual(
-  prev: { e: SourceView; rank: number },
-  next: { e: SourceView; rank: number }
+  prev: { e: SourceView; rank: number; onDrill?: () => void },
+  next: { e: SourceView; rank: number; onDrill?: () => void }
 ): boolean {
-  return prev.rank === next.rank && JSON.stringify(prev.e) === JSON.stringify(next.e)
+  return prev.rank === next.rank && !!prev.onDrill === !!next.onDrill && JSON.stringify(prev.e) === JSON.stringify(next.e)
 }
 
 function IncomingHeals({ seg }: { seg: SegmentView }): JSX.Element | null {
@@ -192,10 +211,112 @@ function IncomingHeals({ seg }: { seg: SegmentView }): JSX.Element | null {
   )
 }
 
-function SegmentBody({ seg, mode }: { seg: SegmentView; mode: 'out' | 'in' }): JSX.Element {
+// Category bar colors for the drill-down level-2/level-3 views.
+const CAT_COLOR: Record<DamageCategory, string> = {
+  melee: '#d9b25f',
+  slay: '#e8d48a',
+  spell: '#a98fe0',
+  dot: '#6fb3d2',
+  ds: '#cf6679'
+}
+
+// Drill-down selection: undefined = level 1 (entities); {entityId} = level 2
+// (category breakdown); {entityId, category} = level 3 (per-skill/spell). Selection is
+// renderer-side; data comes from the snapshot's SourceView.categories (extended in the
+// engine). Esc / Back / breadcrumb ascend a level.
+interface Drill {
+  entityId: string
+  category?: DamageCategory
+}
+
+/** Level-3: per-skill/spell bars within a chosen category (hits/crits/max). */
+function CategorySkillBars({ cat }: { cat: CategoryView }): JSX.Element {
+  const color = CAT_COLOR[cat.category]
+  return (
+    <Box>
+      {cat.skills.map((s) => (
+        <Bar
+          key={s.name}
+          color={color}
+          pct={s.pct}
+          name={s.name}
+          right={`${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
+        />
+      ))}
+    </Box>
+  )
+}
+
+/** Level-2: category breakdown bars for one entity; clicking a bar drills to level 3. */
+function EntityCategoryBars({
+  e,
+  onPick
+}: {
+  e: SourceView
+  onPick: (cat: DamageCategory) => void
+}): JSX.Element {
+  const rounds = e.rounds
+  return (
+    <Box>
+      {e.categories.map((c) => (
+        <Bar
+          key={c.category}
+          color={CAT_COLOR[c.category]}
+          pct={c.pct}
+          onClick={() => onPick(c.category)}
+          name={
+            <>
+              {CATEGORY_LABEL[c.category]}
+              {c.critPct >= 1 && (
+                <Typography component="span" variant="caption" sx={{ ml: 0.5, color: 'text.secondary' }}>
+                  {Math.round(c.critPct)}% crit
+                </Typography>
+              )}
+            </>
+          }
+          right={`${fmt(c.total)} · ${c.hits} hits · max ${fmt(c.max)}`}
+        />
+      ))}
+      {rounds && (rounds.multiHitRounds > 0 || rounds.maxHitsInRound > 1) && (
+        <Tooltip
+          title={`Heuristic: EQ never logs double/triple attack, so a "round" here is same-second, same-skill melee/slay hits — a cluster proxy, not a certainty. Main-hand vs off-hand is not distinguishable. Distribution (hits→rounds): ${rounds.histogram
+            .map((n, i) => `${i + 1}:${n}`)
+            .join('  ')}`}
+        >
+          <Box sx={{ mt: 1, pt: 1, borderTop: '1px solid', borderColor: 'divider' }}>
+            <Typography variant="caption" color="text.secondary">
+              Melee rounds: {rounds.totalRounds} · avg {rounds.avgHitsPerRound.toFixed(2)} hits/round · {rounds.multiHitRounds} multi-hit · up to{' '}
+              {rounds.maxHitsInRound}/round
+            </Typography>
+          </Box>
+        </Tooltip>
+      )}
+    </Box>
+  )
+}
+
+function SegmentBody({
+  seg,
+  mode,
+  drill,
+  setDrill
+}: {
+  seg: SegmentView
+  mode: 'out' | 'in'
+  drill: Drill | null
+  setDrill: (d: Drill | null) => void
+}): JSX.Element {
   const rows = mode === 'out' ? seg.entities : seg.incoming
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
   const dps = mode === 'out' ? seg.outDps : seg.inDps
+
+  const drilledEntity = drill ? rows.find((r) => r.id === drill.entityId) : undefined
+  const drilledCat =
+    drilledEntity && drill?.category ? drilledEntity.categories.find((c) => c.category === drill.category) : undefined
+  // If a stale drill points at an entity/category no longer present (fight changed),
+  // fall back to level 1 by treating the drill as null for rendering.
+  const effectiveDrill = drilledEntity ? drill : null
+
   return (
     <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
       <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: 1 }}>
@@ -234,15 +355,65 @@ function SegmentBody({ seg, mode }: { seg: SegmentView; mode: 'out' | 'in' }): J
           </Typography>
         </Typography>
       </Stack>
+
+      {/* Drill-down breadcrumb + Back (levels 2/3). Level 1 shows no breadcrumb. */}
+      {effectiveDrill && drilledEntity && (
+        <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75 }}>
+          <Button
+            size="small"
+            startIcon={<ArrowBackIcon sx={{ fontSize: 16 }} />}
+            onClick={() =>
+              setDrill(effectiveDrill.category ? { entityId: effectiveDrill.entityId } : null)
+            }
+            sx={{ minWidth: 0, py: 0 }}
+          >
+            Back
+          </Button>
+          <Breadcrumbs separator="›" sx={{ fontSize: 12 }}>
+            <Link component="button" underline="hover" color="inherit" onClick={() => setDrill(null)} sx={{ fontSize: 12 }}>
+              All
+            </Link>
+            <Link
+              component="button"
+              underline="hover"
+              color={effectiveDrill.category ? 'inherit' : 'text.primary'}
+              onClick={() => setDrill({ entityId: effectiveDrill.entityId })}
+              sx={{ fontSize: 12 }}
+            >
+              {drilledEntity.name}
+            </Link>
+            {effectiveDrill.category && (
+              <Typography variant="caption" color="text.primary">
+                {CATEGORY_LABEL[effectiveDrill.category]}
+              </Typography>
+            )}
+          </Breadcrumbs>
+        </Stack>
+      )}
+
       <Box sx={{ overflow: 'auto', flexGrow: 1 }}>
-        {rows.length ? (
-          rows.map((e, i) => <EntityRow key={e.id} e={e} rank={i + 1} />)
-        ) : (
-          <Typography variant="caption" color="text.secondary">
-            {mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.'}
-          </Typography>
+        {!effectiveDrill &&
+          (rows.length ? (
+            rows.map((e, i) => (
+              <EntityRow
+                key={e.id}
+                e={e}
+                rank={i + 1}
+                onDrill={mode === 'out' ? () => setDrill({ entityId: e.id }) : undefined}
+              />
+            ))
+          ) : (
+            <Typography variant="caption" color="text.secondary">
+              {mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.'}
+            </Typography>
+          ))}
+
+        {effectiveDrill && drilledEntity && !effectiveDrill.category && (
+          <EntityCategoryBars e={drilledEntity} onPick={(cat) => setDrill({ entityId: drilledEntity.id, category: cat })} />
         )}
-        {mode === 'in' && <IncomingHeals seg={seg} />}
+        {effectiveDrill && drilledCat && <CategorySkillBars cat={drilledCat} />}
+
+        {mode === 'in' && !effectiveDrill && <IncomingHeals seg={seg} />}
       </Box>
     </Paper>
   )
@@ -306,10 +477,69 @@ function ProcessingLog({
   )
 }
 
+/** Two chips near the header showing the current stance + invocation (Task #51). */
+function StanceChips({ stance }: { stance: NonNullable<CombatSnapshotStance> }): JSX.Element | null {
+  if (!stance.stance && !stance.invocation) return null
+  return (
+    <>
+      {stance.stance && (
+        <Tooltip title="Current combat stance (melee/general modifier)">
+          <Chip
+            size="small"
+            label={`stance: ${stance.stance}`}
+            variant="outlined"
+            sx={{ color: '#d9b25f', borderColor: 'rgba(217,178,95,0.5)', textTransform: 'capitalize' }}
+          />
+        </Tooltip>
+      )}
+      {stance.invocation && (
+        <Tooltip title="Current invocation (caster modifier)">
+          <Chip
+            size="small"
+            label={`inv: ${stance.invocation}`}
+            variant="outlined"
+            sx={{ color: '#a98fe0', borderColor: 'rgba(169,143,224,0.5)', textTransform: 'capitalize' }}
+          />
+        </Tooltip>
+      )}
+    </>
+  )
+}
+type CombatSnapshotStance = NonNullable<ReturnType<typeof useCombat>['snap']>['stance']
+
 export default function CombatView(): JSX.Element {
-  const { snap, combinePets, setCombinePets, showUnparsed, setShowUnparsed, selection, setSelection, maxSegments, loadMore } =
-    useCombat()
+  const {
+    snap,
+    combinePets,
+    setCombinePets,
+    showUnparsed,
+    setShowUnparsed,
+    selection,
+    setSelection,
+    maxSegments,
+    loadMore,
+    wantTimeline,
+    setWantTimeline
+  } = useCombat()
   const [mode, setMode] = useState<'out' | 'in'>('out')
+  const [view, setView] = useState<'bars' | 'timeline'>('bars')
+  const [drill, setDrill] = useState<Drill | null>(null)
+
+  // Esc ascends one drill level (level3→level2→level1), matching Back/breadcrumb.
+  useEffect(() => {
+    if (view !== 'bars') return
+    const onKey = (ev: KeyboardEvent): void => {
+      if (ev.key !== 'Escape' || !drill) return
+      setDrill(drill.category ? { entityId: drill.entityId } : null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [view, drill])
+
+  // Reset the drill when the selected fight / mode changes (a drill is per-fight).
+  useEffect(() => setDrill(null), [selection, mode])
+  // Fetch the timeline payload only while the Timeline view is active.
+  useEffect(() => setWantTimeline(view === 'timeline'), [view, setWantTimeline])
 
   const history = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
   const zone = (snap?.segments ?? []).find((s) => s.kind === 'zone')
@@ -352,15 +582,22 @@ export default function CombatView(): JSX.Element {
             </MenuItem>
           )}
         </Select>
-        <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_e, v) => v && setMode(v)}>
-          <ToggleButton value="out">Outgoing</ToggleButton>
-          <ToggleButton value="in">Incoming</ToggleButton>
+        <ToggleButtonGroup size="small" exclusive value={view} onChange={(_e, v) => v && setView(v)}>
+          <ToggleButton value="bars">Bars</ToggleButton>
+          <ToggleButton value="timeline">Timeline</ToggleButton>
         </ToggleButtonGroup>
+        {view === 'bars' && (
+          <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_e, v) => v && setMode(v)}>
+            <ToggleButton value="out">Outgoing</ToggleButton>
+            <ToggleButton value="in">Incoming</ToggleButton>
+          </ToggleButtonGroup>
+        )}
         <FormControlLabel
           control={<Switch size="small" checked={combinePets} onChange={(e) => setCombinePets(e.target.checked)} />}
           label="Combine pets"
         />
         <Box sx={{ flexGrow: 1 }} />
+        {snap?.stance && <StanceChips stance={snap.stance} />}
         {snap && snap.charmed.length > 0 && (
           <Tooltip title={`Charmed pets: ${snap.charmed.join(', ')}`}>
             <Chip
@@ -382,8 +619,19 @@ export default function CombatView(): JSX.Element {
         )}
       </Stack>
 
-      {snap?.selected ? (
-        <SegmentBody seg={snap.selected} mode={mode} />
+      {view === 'timeline' ? (
+        snap?.timeline ? (
+          <CombatTimeline tl={snap.timeline} />
+        ) : (
+          <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>
+            <Typography color="text.secondary">
+              No timeline for this selection — pick a recent fight (the timeline is kept only for the live and most
+              recent encounters; the zone aggregate has no single-fight timeline).
+            </Typography>
+          </Paper>
+        )
+      ) : snap?.selected ? (
+        <SegmentBody seg={snap.selected} mode={mode} drill={drill} setDrill={setDrill} />
       ) : (
         <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>
           <Typography color="text.secondary">No combat yet — engage something and it&apos;ll appear here live.</Typography>
@@ -393,7 +641,8 @@ export default function CombatView(): JSX.Element {
       <ProcessingLog lines={snap?.recent ?? []} showUnparsed={showUnparsed} setShowUnparsed={setShowUnparsed} />
 
       <Alert severity="info" sx={{ py: 0 }}>
-        <strong>act</strong> is active-time DPS — damage per second of actual combat time, excluding idle gaps.
+        <strong>act</strong> is active-time DPS — damage per second of actual combat time, excluding idle gaps. Click an
+        entity bar to drill into its damage taxonomy (categories → skills); Esc or Back ascends.
       </Alert>
     </Stack>
   )

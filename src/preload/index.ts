@@ -4,6 +4,7 @@ import type {
   AlertDef,
   AlertPrefs,
   CharacterRef,
+  ItemKnowledge,
   LogLine,
   LootEvent,
   ModuleDelta,
@@ -22,7 +23,7 @@ import type { UpdateChannel, UpdateStatus } from '../shared/types'
 
 export type { CharacterRef, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
-export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog }
+export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { UpdateChannel, UpdateStatus }
 
@@ -93,6 +94,11 @@ const api = {
   },
   /** Suggested-alerts wizard (Task #38): the searchable spell catalog + live usage. */
   getSpellCatalog: (): Promise<SpellCatalog> => ipcRenderer.invoke(IPC.spellsCatalog),
+
+  /** Item knowledge (Task #53): "what's this lore/quest item for" — local posky-first,
+   *  then a cached, politely-throttled wiki lookup. Never rejects (degrades to a
+   *  cached-negative/offline record that still carries local posky associations). */
+  lookupItem: (name: string): Promise<ItemKnowledge> => ipcRenderer.invoke(IPC.itemsLookup, name),
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   /** List registry packs (installed-flag reconciled). `force` bypasses the 24h cache. */
@@ -168,6 +174,18 @@ const api = {
   /** Select a release channel (re-checks immediately). Returns the applied channel. */
   setUpdateChannel: (channel: UpdateChannel): Promise<UpdateChannel> =>
     ipcRenderer.invoke(IPC.setUpdateChannel, channel),
+
+  // ---- floating overlay DPS meter (Task #52) ----
+  /** Toggle the overlay window; resolves to the resulting open-state. */
+  toggleOverlay: (): Promise<boolean> => ipcRenderer.invoke(IPC.overlayToggle),
+  /** Read whether the overlay is currently open. */
+  getOverlayState: (): Promise<boolean> => ipcRenderer.invoke(IPC.overlayGetState),
+  /** Subscribe to overlay open-state changes (so the toggle button stays in sync). */
+  onOverlayState: (cb: (open: boolean) => void): (() => void) => {
+    const listener = (_e: unknown, open: boolean): void => cb(open)
+    ipcRenderer.on(IPC.onOverlayState, listener)
+    return () => ipcRenderer.removeListener(IPC.onOverlayState, listener)
+  },
 
   // ---- frameless window controls (Task #23) ----
   minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),

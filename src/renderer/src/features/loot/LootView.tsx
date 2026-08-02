@@ -12,9 +12,12 @@ import {
   TableHead,
   TableRow,
   TextField,
+  Tooltip,
   Typography
 } from '@mui/material'
-import type { LootDelta, LootDisposition, LootEvent, LootSnap } from '@shared/types'
+import CloseIcon from '@mui/icons-material/Close'
+import AutoStoriesIcon from '@mui/icons-material/AutoStories'
+import type { ItemKnowledge, LootDelta, LootDisposition, LootEvent, LootSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
@@ -24,6 +27,7 @@ import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 import { ItemDetailDialog } from './ItemDetailDialog'
+import { useNotablePickups, type NotablePickup } from './useNotablePickups'
 
 const posky = getPoskyData()
 
@@ -78,6 +82,34 @@ function isQuestItem(name: string): boolean {
   return questItemNames.has(itemCountKey(name))
 }
 
+// A subtle indicator for an item the wiki knows is LORE or quest-relevant (Task #53),
+// EXTENDING the local PoSky flag to any wiki-known quest item. Shown only when the async
+// knowledge probe has resolved AND flags it; ordinary items render nothing (no noise).
+// The PoSky chip already covers Sky items, so suppress a redundant "quest" badge there.
+function KnowledgeBadge({ knowledge, isPosky }: { knowledge?: ItemKnowledge; isPosky: boolean }): JSX.Element | null {
+  if (!knowledge) return null
+  const showQuest = (knowledge.quest || knowledge.questUses.length > 0) && !isPosky
+  if (!knowledge.lore && !showQuest) return null
+  const title =
+    knowledge.questUses.length > 0
+      ? `Used in: ${knowledge.questUses.map((u) => u.quest).join(', ')}`
+      : knowledge.lore
+        ? 'Lore item'
+        : 'Quest item'
+  return (
+    <Tooltip title={title}>
+      <Stack direction="row" spacing={0.5} alignItems="center" component="span">
+        {knowledge.lore && (
+          <Chip size="small" color="warning" variant="outlined" label="LORE" sx={{ height: 18, fontSize: 10 }} />
+        )}
+        {showQuest && (
+          <Chip size="small" color="secondary" variant="outlined" label="quest" sx={{ height: 18, fontSize: 10 }} />
+        )}
+      </Stack>
+    </Tooltip>
+  )
+}
+
 interface GroupRow {
   item: string
   count: number
@@ -87,19 +119,74 @@ interface GroupRow {
   disposition?: LootDisposition
 }
 
+// "Notable pickups" strip (Task #53): the last few looted items that are lore- or
+// quest-relevant. Dense, dismissable, no narration — a quiet "hey, that coin you grabbed
+// is for the Tashania spell quest". Clicking a chip opens that item's detail dialog.
+function NotablePickupsStrip({
+  notable,
+  onSelect,
+  onDismiss
+}: {
+  notable: NotablePickup[]
+  onSelect: (item: string) => void
+  onDismiss: (key: string) => void
+}): JSX.Element | null {
+  if (notable.length === 0) return null
+  return (
+    <Box
+      sx={{
+        p: 1,
+        border: 1,
+        borderColor: 'divider',
+        borderRadius: 1,
+        bgcolor: 'action.hover'
+      }}
+    >
+      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
+        <AutoStoriesIcon fontSize="small" sx={{ color: 'secondary.main' }} />
+        <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
+          Notable pickups
+        </Typography>
+        {notable.slice(0, 8).map((n) => {
+          const uses = n.knowledge.questUses
+          const label = uses.length > 0 ? `${n.item} → ${uses[0].quest}` : n.item
+          const key = itemCountKey(n.item)
+          return (
+            <Chip
+              key={key}
+              size="small"
+              variant="outlined"
+              color={n.knowledge.lore ? 'warning' : 'secondary'}
+              icon={n.knowledge.lore ? <AutoStoriesIcon /> : undefined}
+              label={label}
+              onClick={() => onSelect(n.item)}
+              onDelete={() => onDismiss(key)}
+              deleteIcon={<CloseIcon />}
+              sx={{ maxWidth: 320 }}
+            />
+          )
+        })}
+      </Stack>
+    </Box>
+  )
+}
+
 // Memoized rows (React.memo + stable props) so a re-render that doesn't touch a
 // given row's data skips it entirely (precedent: #17's combat work).
 const GroupedRow = memo(function GroupedRow({
   g,
   favorited,
+  knowledge,
   onToggleFavorite,
   onSelect
 }: {
   g: GroupRow
   favorited: boolean
+  knowledge?: ItemKnowledge
   onToggleFavorite: (name: string) => void
   onSelect: (item: string) => void
 }): JSX.Element {
+  const posky = isQuestItem(g.item)
   return (
     <TableRow
       hover
@@ -112,7 +199,8 @@ const GroupedRow = memo(function GroupedRow({
       <TableCell>
         <Stack direction="row" spacing={1} alignItems="center">
           <span>{g.item}</span>
-          {isQuestItem(g.item) && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
+          {posky && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
+          <KnowledgeBadge knowledge={knowledge} isPosky={posky} />
           <DispositionChip disposition={g.disposition} />
         </Stack>
       </TableCell>
@@ -129,14 +217,17 @@ const GroupedRow = memo(function GroupedRow({
 const FlatRow = memo(function FlatRow({
   e,
   favorited,
+  knowledge,
   onToggleFavorite,
   onSelect
 }: {
   e: LootEvent
   favorited: boolean
+  knowledge?: ItemKnowledge
   onToggleFavorite: (name: string) => void
   onSelect: (item: string) => void
 }): JSX.Element {
+  const posky = isQuestItem(e.item)
   return (
     <TableRow
       hover
@@ -150,7 +241,8 @@ const FlatRow = memo(function FlatRow({
       <TableCell>
         <Stack direction="row" spacing={1} alignItems="center">
           <span>{e.count && e.count > 1 ? `${e.count} × ${e.item}` : e.item}</span>
-          {isQuestItem(e.item) && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
+          {posky && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
+          <KnowledgeBadge knowledge={knowledge} isPosky={posky} />
           <DispositionChip disposition={e.disposition} />
           {e.disposition === 'combined' && e.created && (
             <Typography variant="caption" color="text.secondary">
@@ -172,6 +264,11 @@ export default function LootView(): JSX.Element {
   const [groupByItem, setGroupByItem] = useState(true)
   const [questOnly, setQuestOnly] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
+  // "Notable pickups" (Task #53): probe the most-recent distinct looted items for
+  // lore/quest knowledge (main: local-posky-first + cached wiki). Dismissed keys hide
+  // from the strip. `byKey` also feeds the per-row LORE/quest indicator.
+  const [dismissed, setDismissed] = useState<Set<string>>(new Set())
+  const { byKey: knowledgeByKey, notable } = useNotablePickups(history, dismissed)
 
   // Typing echoes IMMEDIATELY (local `query` state); the filter consumes a DEFERRED
   // copy so a keystroke never blocks on the filter + re-render (Task #41).
@@ -260,6 +357,12 @@ export default function LootView(): JSX.Element {
         </Typography>
       </Stack>
 
+      <NotablePickupsStrip
+        notable={notable}
+        onSelect={setSelected}
+        onDismiss={(key) => setDismissed((prev) => new Set(prev).add(key))}
+      />
+
       {history.length === 0 && (
         <Alert severity="info">
           No loot parsed yet. Loot something in-game (or check your log path) — every{' '}
@@ -295,6 +398,7 @@ export default function LootView(): JSX.Element {
                   key={g.item}
                   g={g}
                   favorited={isFavorite(g.item)}
+                  knowledge={knowledgeByKey.get(itemCountKey(g.item))}
                   onToggleFavorite={toggleFavorite}
                   onSelect={setSelected}
                 />
@@ -328,6 +432,7 @@ export default function LootView(): JSX.Element {
                   key={`${e.ts}-${e.item}-${win.start + i}`}
                   e={e}
                   favorited={isFavorite(e.item)}
+                  knowledge={knowledgeByKey.get(itemCountKey(e.item))}
                   onToggleFavorite={toggleFavorite}
                   onSelect={setSelected}
                 />

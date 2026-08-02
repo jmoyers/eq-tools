@@ -4,6 +4,23 @@ import type { LootDisposition } from './logEvents'
 
 export type { LootDisposition }
 
+/**
+ * Persisted config for the floating overlay DPS meter (Task #52). Stored in
+ * electron-store under `overlay` (alongside window bounds). Small + JSON-serializable.
+ */
+export interface OverlayConfig {
+  /** Was the overlay open when the app last quit? Restored on launch. */
+  open: boolean
+  /** Locked = click-through (mouse passes to the game); unlocked = interactive. */
+  locked: boolean
+  /** Background translucency, 0..1 (alpha of the dark panel fill). */
+  bgAlpha: number
+  /** How many source bars to show (5 or 10). */
+  topN: number
+  /** Persisted window bounds so position + size survive a restart. */
+  bounds?: { x: number; y: number; width: number; height: number }
+}
+
 /** One EverQuest character whose log we watch. */
 export interface CharacterRef {
   name: string
@@ -139,6 +156,44 @@ export interface PoskyData {
   quests: PoskyQuest[]
 }
 
+// ----- Item knowledge ("what's this lore/quest item for", Task #53) -----
+
+/** One quest an item is used in (or given by), as learned from the wiki / posky. */
+export interface ItemQuestUse {
+  /** quest display name (e.g. "Paladin Test of Love", "Coin of Tash (Tashania spell)") */
+  quest: string
+  /** wiki page title to resolve the quest (for future linking); may equal `quest` */
+  page?: string
+  /** where this association came from: the local posky dataset or the wiki */
+  source: 'posky' | 'wiki'
+  /** quest-giver NPC, when known (posky only) */
+  giver?: string
+}
+
+/** The "what's this item for" knowledge card for a single item name. */
+export interface ItemKnowledge {
+  /** the item name looked up (as requested; display name, not normalized) */
+  name: string
+  /** the wiki page title actually resolved (may differ via redirect/search) */
+  page?: string
+  /** LORE ITEM flag (only one may be held at a time) */
+  lore: boolean
+  /** QUEST ITEM flag OR any related-quest association (a quest/collectible piece) */
+  quest: boolean
+  /** quests this item is required by / used in */
+  questUses: ItemQuestUse[]
+  /** one-line freeform summary (from the wiki `notes` field), trimmed */
+  summary?: string
+  /** the raw stat/flag block text from the item page (LORE/NO DROP/slot/…) */
+  statsBlock?: string
+  /** whether this result was served from cache (vs a fresh network lookup) */
+  cached: boolean
+  /** true when the wiki lookup was attempted but found no page (negative result) */
+  notFound?: boolean
+  /** true when the wiki was unreachable (offline) — local posky data may still apply */
+  offline?: boolean
+}
+
 // ----- Raid targets (bosses) -----
 
 export interface RaidTarget {
@@ -246,6 +301,8 @@ export type LogEventKind =
   | 'illusionFade'
   | 'buffExpired'
   | 'epoch'
+  | 'stanceChange'
+  | 'invocationChange'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */
