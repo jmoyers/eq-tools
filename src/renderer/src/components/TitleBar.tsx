@@ -6,6 +6,7 @@ import CropSquareIcon from '@mui/icons-material/CropSquare'
 import FilterNoneIcon from '@mui/icons-material/FilterNone'
 import CloseIcon from '@mui/icons-material/Close'
 import PictureInPictureAltIcon from '@mui/icons-material/PictureInPictureAlt'
+import SettingsIcon from '@mui/icons-material/Settings'
 import Tooltip from '@mui/material/Tooltip'
 import type { CharacterRef } from '@shared/types'
 
@@ -86,13 +87,16 @@ export interface TitleBarProps {
   character: CharacterRef | null
   characters: CharacterRef[]
   onSelectCharacter: (logPath: string) => void
+  /** Open the compact Settings dialog (EQ install-dir discovery/override). */
+  onOpenSettings: () => void
 }
 
 export default function TitleBar({
   live,
   character,
   characters,
-  onSelectCharacter
+  onSelectCharacter,
+  onOpenSettings
 }: TitleBarProps): JSX.Element {
   const [maximized, setMaximized] = useState(false)
   // Overlay open-state (Task #52): reflected on the toggle button, kept in sync with
@@ -210,6 +214,38 @@ export default function TitleBar({
         ) : (
           <Chip size="small" color="warning" label="No log detected" variant="outlined" />
         )}
+      </Box>
+
+      {/* Settings gear (EQ install-dir discovery/override). */}
+      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 0.5 }}>
+        <Tooltip title="Settings">
+          <Box
+            component="button"
+            type="button"
+            aria-label="Open settings"
+            onClick={onOpenSettings}
+            sx={{
+              WebkitAppRegion: 'no-drag',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: 28,
+              width: 28,
+              p: 0,
+              borderRadius: 1,
+              border: 'none',
+              background: 'transparent',
+              color: 'text.secondary',
+              cursor: 'pointer',
+              outline: 'none',
+              transition: 'background-color 120ms, color 120ms',
+              '& svg': { fontSize: 18 },
+              '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
+            }}
+          >
+            <SettingsIcon />
+          </Box>
+        </Tooltip>
       </Box>
 
       {/* Window controls (far right). */}

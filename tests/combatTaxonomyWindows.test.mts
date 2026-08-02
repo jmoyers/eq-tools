@@ -138,6 +138,123 @@ test('W-tax1: the timeline pins the stance + invocation spans and lanes the skil
   assert.ok(!tl!.downsampled, 'a tiny fight is not downsampled')
 })
 
+// ============================================================================
+// Task #51 v2 — miss/resist as first-class timeline events + drill-down rates.
+//
+// Golden window: the real Jul 30 21:55:30–37 fight vs "Initiate Sirlis" (Primitive
+// mezzing an adjacent "A revenant" that RESISTS Mesmerization III — a rank-suffixed
+// spell). The leading slash (21:55:30, real) opens the encounter BEFORE the mez lands —
+// faithful to the log (You were already meleeing Sirlis; see AGENTS.md). Hand-verified
+// You-outgoing from the raw lines below:
+//   melee HITS:   slash 83 (Riposte Critical → crit) + kick 106 + kick 106 + smite 2
+//                 = 297 (4 hits, 1 crit)
+//   melee MISSES: 9 whiffs (slash/bash/bash/kick/claw/slash/slash/claw/strike, all 'miss')
+//   spell HITS:   Condemnation of Nife 243 + Smiting Strike 165 = 408 (2 hits)
+//   RESIST:       "A revenant resisted your Mesmerization III!" = 1 resist, lane
+//                 "Mesmerization III" (rank suffix preserved in the display lane).
+//   You total damage = 705 (unchanged by the resist — the tripwire). melee hitPct =
+//   4/(4+9) ≈ 30.8%. spell resistPct = 1/(2+1) = 33.3%.
+// ============================================================================
+const RESIST_WINDOW: string[] = [
+  '[Thu Jul 30 21:55:30 2026] You slash Initiate Sirlis for 83 points of damage. (Riposte Critical)',
+  '[Thu Jul 30 21:55:32 2026] You begin casting Mesmerization III.',
+  '[Thu Jul 30 21:55:33 2026] A revenant resisted your Mesmerization III!',
+  '[Thu Jul 30 21:55:33 2026] You try to slash Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:33 2026] You try to bash Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:33 2026] You try to bash Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:34 2026] You kick Initiate Sirlis for 106 points of damage.',
+  '[Thu Jul 30 21:55:34 2026] You kick Initiate Sirlis for 106 points of damage.',
+  '[Thu Jul 30 21:55:34 2026] You try to kick Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:34 2026] You try to claw Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:35 2026] You hit Initiate Sirlis for 243 points of magic damage by Condemnation of Nife.',
+  '[Thu Jul 30 21:55:35 2026] You try to slash Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:35 2026] You try to slash Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:37 2026] You try to claw Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:37 2026] You try to strike Initiate Sirlis, but miss!',
+  '[Thu Jul 30 21:55:37 2026] You smite Initiate Sirlis for 2 points of damage.',
+  '[Thu Jul 30 21:55:37 2026] You hit Initiate Sirlis for 165 points of magic damage by Smiting Strike.'
+]
+
+function replayResist(): { eng: CombatEngine; lastTs: number } {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  let seq = 0
+  let lastTs = 0
+  for (const raw of RESIST_WINDOW) {
+    const ev = parseEvent(raw, seq++)
+    if (ev) {
+      eng.ingestEvent(ev, false)
+      lastTs = ev.ts
+    }
+  }
+  return { eng, lastTs }
+}
+
+test('parser: the three resist shapes (yours / caster / incoming) with rank suffix', () => {
+  const yours = parseEvent('[Thu Jul 30 21:55:33 2026] A revenant resisted your Mesmerization III!', 0)
+  assert.equal(yours?.kind, 'resist')
+  assert.deepEqual(
+    yours?.kind === 'resist' ? { caster: yours.caster, target: yours.target, spell: yours.spell, incoming: yours.incoming } : null,
+    { caster: 'you', target: 'A revenant', spell: 'Mesmerization III', incoming: false }
+  )
+  // A spell name that itself contains "'s" must NOT be mis-split as a caster possessive.
+  const denon = parseEvent("[Thu Jul 30 21:55:33 2026] A willowisp resisted your Denon's Disruptive Discord!", 0)
+  assert.equal(denon?.kind === 'resist' && denon.spell, "Denon's Disruptive Discord")
+  assert.equal(denon?.kind === 'resist' && denon.caster, 'you')
+  const caster = parseEvent("[Thu Jul 30 21:55:33 2026] A hardened skeleton resisted Giber's Disease Cloud!", 0)
+  assert.equal(caster?.kind === 'resist' && caster.caster, 'Giber')
+  assert.equal(caster?.kind === 'resist' && caster.incoming, false)
+  const incoming = parseEvent("[Thu Jul 30 21:55:33 2026] You resist a ghoul's Ghoul Root!", 0)
+  assert.equal(incoming?.kind, 'resist')
+  assert.equal(incoming?.kind === 'resist' && incoming.incoming, true)
+  assert.equal(incoming?.kind === 'resist' && incoming.target, 'You')
+})
+
+test('W-res1: resist is a lane + a rate, and does NOT move the damage total (tripwire)', () => {
+  const { eng, lastTs } = replayResist()
+  const snap = eng.snapshot(lastTs + 6000, {})
+  const you = snap.selected!.entities.find((e) => e.id === 'you')!
+  // Damage total is byte-identical to the sum of landed hits (resist adds nothing).
+  assert.equal(you.total, 705, 'You total damage unchanged by the resist')
+  const catSum = you.categories.reduce((s, c) => s + c.total, 0)
+  assert.equal(catSum, you.total, 'category sum == total (resist carries no amount)')
+  // Source-level resist rate: 1 resist / (2 spell casts landed + 1 resist) = 33.3%.
+  assert.equal(you.resists, 1)
+  assert.ok(Math.abs(you.resistPct - (1 / 3) * 100) < 0.01, `resistPct ~33.3 (got ${you.resistPct})`)
+  // Accuracy: hitPct = hits / (hits + misses) over ALL landed hits (6: 4 melee + 2 spell)
+  // vs 9 avoided swings = 6/15 = 40% (the pre-existing hitPct semantics — spell hits count
+  // toward the denominator; the per-category melee row is where a pure melee rate lives).
+  assert.equal(you.misses, 9)
+  assert.equal(you.missBreakdown.miss, 9)
+  assert.equal(Math.round(you.hitPct), 40)
+  // The spell CATEGORY carries the resist; the resisted spell appears as its own lane
+  // with 0 hits + 1 resist (an always-resisted spell still shows a row).
+  const spell = you.categories.find((c) => c.category === 'spell')!
+  assert.equal(spell.resists, 1)
+  assert.ok(Math.abs(spell.resistPct - (1 / 3) * 100) < 0.01)
+  const mez = spell.skills.find((s) => s.name === 'Mesmerization III')
+  assert.ok(mez, 'the resisted mez is a lane in the spell category')
+  assert.equal(mez!.hits, 0)
+  assert.equal(mez!.resists, 1)
+})
+
+test('W-res1: the timeline carries a resist tick + a miss tick, each attributed', () => {
+  const { eng, lastTs } = replayResist()
+  const snap = eng.snapshot(lastTs + 6000, { timeline: true })
+  const tl = snap.timeline!
+  const resistTicks = tl.events.filter((e) => e.outcome === 'resist')
+  const missTicks = tl.events.filter((e) => e.outcome === 'miss')
+  assert.equal(resistTicks.length, 1, 'one resist tick')
+  assert.equal(resistTicks[0].lane, 'Mesmerization III', 'resist lands in the mez lane')
+  assert.equal(resistTicks[0].amount, 0)
+  assert.equal(resistTicks[0].target, 'A revenant')
+  assert.equal(resistTicks[0].kind, 'you')
+  assert.equal(missTicks.length, 9, 'nine melee miss ticks')
+  assert.ok(missTicks.every((m) => m.lane === 'Melee' && m.amount === 0))
+  // The mez lane exists in the Y-axis lanes even though it only ever resisted.
+  assert.ok(tl.lanes.some((l) => l.lane === 'Mesmerization III'))
+})
+
 // ---- full-log tripwires (skipped when the real log is absent) ----
 
 test('full-log: category totals sum EXACTLY to source totals (the taxonomy tripwire)', { skip: !existsSync(FULL_LOG) }, () => {
@@ -157,6 +274,31 @@ test('full-log: category totals sum EXACTLY to source totals (the taxonomy tripw
   for (const e of snap.selected!.incoming) {
     const catSum = e.categories.reduce((s, c) => s + c.total, 0)
     assert.equal(catSum, e.total, `incoming ${e.name}: category sum == total`)
+  }
+})
+
+test('full-log: resist events parse in bulk AND never move a damage total (the v2 tripwire)', { skip: !existsSync(FULL_LOG) }, () => {
+  const lines = readFileSync(FULL_LOG, 'utf8').split(/\r?\n/)
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  let seq = 0
+  let parsedResists = 0
+  for (const raw of lines) {
+    const ev = parseEvent(raw, seq++)
+    if (!ev) continue
+    if (ev.kind === 'resist') parsedResists++
+    eng.ingestEvent(ev, false)
+  }
+  // The parser recognizes the full resist family (>5k in this log family). Reported split
+  // (you / pet / other / incoming) is in AGENTS.md; here we just assert bulk recognition and
+  // that NO resist ever contaminated a damage total (the zone aggregate's category sums).
+  assert.ok(parsedResists > 5000, `bulk resist recognition (got ${parsedResists})`)
+  const snap = eng.snapshot(Date.now(), { selectedId: 'zone' })
+  for (const e of [...snap.selected!.entities, ...snap.selected!.incoming]) {
+    const catSum = e.categories.reduce((s, c) => s + c.total, 0)
+    assert.equal(catSum, e.total, `${e.name}: resists left the damage total byte-identical`)
+    // resistPct is a rate over casts, never negative / >100.
+    assert.ok(e.resistPct >= 0 && e.resistPct <= 100)
   }
 })
 

@@ -272,6 +272,22 @@ const MISS_RE = new RegExp(
     '!(?: \\([A-Za-z]+\\))?$'
 )
 
+// ----- spell resist (NEW, Task #51 timeline v2) -----
+// A detrimental spell fully resisted — the caster-side analogue of a melee miss.
+// VERIFIED shapes (full-log sweep, 2026-08-02):
+//   "<target> resisted your <Spell>!"          → you cast it (caster = 'you')
+//   "<target> resisted <caster>'s <Spell>!"    → a named caster (pet or mob)
+//   "You resist[ed] <caster>'s <Spell>!"       → INCOMING, you resisted a mob's spell
+// The spell may carry a trailing rank ("Mesmerization III"); we keep the display form and
+// let the engine rank-normalize. NB the "your" and "<caster>'s" forms OVERLAP when the
+// spell name itself contains "'s" (e.g. "Denon's Disruptive Discord"), so we test the
+// possessive-YOUR form FIRST and only then the named-caster form (712 such lines in the
+// real log). The incoming "You resist" form is tested before either outgoing form.
+// The gate below also excludes the "…unresistable damage…" line family (a damage line).
+const RESIST_YOURS_RE = /^(.+?) resisted your (.+?)!$/
+const RESIST_CASTER_RE = /^(.+?) resisted (.+?)'s (.+?)!$/
+const RESIST_INCOMING_RE = /^You resist(?:ed)? (.+?)'s (.+?)!$/
+
 // ----- name normalization (verbatim from combat/parse.ts) -----
 
 function norm(name: string): string {
@@ -390,6 +406,25 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
         target = norm(m[2])
       }
       return { kind: 'miss', seq, ts, raw, attacker, target, mtype }
+    }
+  }
+
+  // --- spell resists (NEW, Task #51 timeline v2) — the caster-side "miss". ---
+  // Gate: the word "resist" is present AND this is a resist EMOTE line (not a
+  // "…unresistable damage…" damage line, which carries "points of" and is handled by
+  // the damage battery below). Every real resist emote line ends in "!" and contains
+  // "resisted"/"resist". Check the incoming "You resist…" form first, then the
+  // possessive-"your" outgoing form (BEFORE the named-caster form, because a spell name
+  // may itself contain "'s" — e.g. "Denon's Disruptive Discord").
+  if (text.includes('resist') && !text.includes('points of') && text.endsWith('!')) {
+    if (text.startsWith('You resist')) {
+      const m = RESIST_INCOMING_RE.exec(text)
+      if (m) return { kind: 'resist', seq, ts, raw, caster: norm(m[1]), target: 'You', spell: m[2].trim(), incoming: true }
+    } else {
+      let m = RESIST_YOURS_RE.exec(text)
+      if (m) return { kind: 'resist', seq, ts, raw, caster: 'you', target: norm(m[1]), spell: m[2].trim(), incoming: false }
+      m = RESIST_CASTER_RE.exec(text)
+      if (m) return { kind: 'resist', seq, ts, raw, caster: norm(m[2]), target: norm(m[1]), spell: m[3].trim(), incoming: false }
     }
   }
 

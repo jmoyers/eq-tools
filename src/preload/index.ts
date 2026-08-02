@@ -4,6 +4,8 @@ import type {
   AlertDef,
   AlertPrefs,
   CharacterRef,
+  EqConfig,
+  EqConfigResult,
   ItemKnowledge,
   LogLine,
   LootEvent,
@@ -21,7 +23,7 @@ import type {
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 import type { UpdateChannel, UpdateStatus } from '../shared/types'
 
-export type { CharacterRef, LogLine, LootEvent, ProgressState }
+export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
@@ -59,6 +61,23 @@ const api = {
   listCharacters: (): Promise<CharacterRef[]> => ipcRenderer.invoke(IPC.listCharacters),
   setCharacter: (logPath: string): Promise<SetCharacterResult> =>
     ipcRenderer.invoke(IPC.setCharacter, logPath),
+
+  // ---- EQ install-dir discovery + override (Settings gear) ----
+  /** Read the effective EQ config: install root, how it resolved, log count. */
+  getEqConfig: (): Promise<EqConfig> => ipcRenderer.invoke(IPC.getEqConfig),
+  /** Open the OS folder-picker; on a pick, persist the override + re-scan. */
+  pickEqDir: (): Promise<EqConfigResult> => ipcRenderer.invoke(IPC.pickEqDir),
+  /** Set the override to an explicit dir (undefined/'' reverts to auto-detect). */
+  setEqDir: (dir: string | undefined): Promise<EqConfig> =>
+    ipcRenderer.invoke(IPC.setEqDir, dir),
+  /** Clear the override → revert to auto-discovery. Returns the re-resolved config. */
+  resetEqDir: (): Promise<EqConfig> => ipcRenderer.invoke(IPC.resetEqDir),
+  /** Subscribe to "effective EQ config changed" pushes (override applied/cleared). */
+  onEqConfigChanged: (cb: (c: EqConfig) => void): (() => void) => {
+    const listener = (_e: unknown, c: EqConfig): void => cb(c)
+    ipcRenderer.on(IPC.onEqConfigChanged, listener)
+    return () => ipcRenderer.removeListener(IPC.onEqConfigChanged, listener)
+  },
   getProgress: (): Promise<ProgressState> => ipcRenderer.invoke(IPC.getProgress),
   reloadInventory: (): Promise<ReloadInventoryResult> => ipcRenderer.invoke(IPC.reloadInventory),
   setQuestComplete: (questKey: string, complete: boolean): Promise<ProgressState> =>

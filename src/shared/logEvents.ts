@@ -163,6 +163,31 @@ export interface MissEvent extends LogEventBase {
   mtype: MissType
 }
 
+/**
+ * A SPELL RESIST (Task #51 timeline v2) — a detrimental spell fully resisted by its
+ * target, the caster-side analogue of a melee miss. Three VERIFIED shapes in the real
+ * log (eqlog_Primitive_freeport.txt sweep, 2026-08-02):
+ *   `<target> resisted your <Spell>!`            → caster = 'you'
+ *   `<target> resisted <caster>'s <Spell>!`      → caster = <caster> name (a pet or mob)
+ *   `You resist[ed] <caster>'s <Spell>!`         → INCOMING: you resisted a mob's spell
+ * The spell display name may carry a rank suffix ("Mesmerization III"); `spell` keeps the
+ * DISPLAY form (rank preserved) and the engine rank-normalizes with spellCanonKey for lane
+ * / attribution keys, mirroring the buffs model convention. `target` is the entity the
+ * spell was cast ON (the incoming form's target is 'You'). Additive — with no consumer this
+ * never affects damage totals (it carries no amount).
+ */
+export interface ResistEvent extends LogEventBase {
+  kind: 'resist'
+  /** who cast the resisted spell: 'you' | a caster name (pet/mob). */
+  caster: string
+  /** the entity that resisted (the spell's target). 'You' for the incoming form. */
+  target: string
+  /** the resisted spell, DISPLAY form (rank suffix preserved). */
+  spell: string
+  /** true for the incoming `You resist <mob>'s <Spell>` form (you were the resister). */
+  incoming: boolean
+}
+
 /** `<mob> has been charmed.` — pet on (only the charmer sees this). */
 export interface CharmEvent extends LogEventBase {
   kind: 'charm'
@@ -480,6 +505,7 @@ export type LogEvent =
   | DamageEventE
   | HealEvent
   | MissEvent
+  | ResistEvent
   | CharmEvent
   | UncharmEvent
   | CcEvent

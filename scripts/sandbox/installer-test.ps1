@@ -5,6 +5,14 @@
 #
 # The sandbox is a pristine Windows with none of our build tooling — this proves the
 # installer stands alone (no Node, no dev instance, no prior install).
+#
+# FRESH-MACHINE CONFIG NOTE: the sandbox also has NO EverQuest install and NO EQ logs,
+# so this doubles as the fresh-machine config check — EQ install-dir discovery finds
+# nothing, and the app MUST still launch cleanly (step 5 asserts the process stays
+# alive). The user then sets the install folder via the in-app Settings gear
+# (SettingsDialog → eqconfig:pick, persisted as electron-store `eqInstallDir`); there
+# is no install-time log/config prompt to assert here. See AGENTS.md "EQ install-dir
+# discovery + manual override".
 
 $ErrorActionPreference = 'Continue'
 $result = 'C:\results\result.txt'

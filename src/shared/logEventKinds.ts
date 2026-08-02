@@ -26,6 +26,7 @@ export const ALL_LOG_EVENT_KINDS = [
   'damage',
   'heal',
   'miss',
+  'resist',
   'charm',
   'uncharm',
   'cc',

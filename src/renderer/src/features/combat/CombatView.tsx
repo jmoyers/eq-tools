@@ -1,6 +1,5 @@
 import { memo, useEffect, useRef, useState, type ReactNode } from 'react'
 import {
-  Alert,
   Box,
   Breadcrumbs,
   Button,
@@ -129,6 +128,15 @@ const EntityRow = memo(function EntityRow({
         </Typography>
       </Tooltip>
     ) : null
+  // Spell-resist rate badge (Task #51 v2) — resists / (spell+dot casts + resists).
+  const resistBadge =
+    e.resists > 0 ? (
+      <Tooltip title={`${e.resists} of your detrimental spells were resisted — ${Math.round(e.resistPct)}% resist rate (resists ÷ spell casts).`}>
+        <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
+          {Math.round(e.resistPct)}% resist
+        </Typography>
+      </Tooltip>
+    ) : null
   const onClick = onDrill ?? (e.skills.length ? () => setOpen((o) => !o) : undefined)
   return (
     <Box>
@@ -155,6 +163,7 @@ const EntityRow = memo(function EntityRow({
               </Tooltip>
             )}
             {hitBadge}
+            {resistBadge}
           </>
         }
         right={`${fmt(e.total)} · ${fmt(e.dps)}/s${crit}`}
@@ -219,6 +228,8 @@ const CAT_COLOR: Record<DamageCategory, string> = {
   dot: '#6fb3d2',
   ds: '#cf6679'
 }
+// Red-tint for resist/miss rate badges (matches the timeline's hollow marks).
+const RESIST_COLOR = '#e05663'
 
 // Drill-down selection: undefined = level 1 (entities); {entityId} = level 2
 // (category breakdown); {entityId, category} = level 3 (per-skill/spell). Selection is
@@ -229,20 +240,41 @@ interface Drill {
   category?: DamageCategory
 }
 
-/** Level-3: per-skill/spell bars within a chosen category (hits/crits/max). */
+/** Level-3: per-skill/spell bars within a chosen category (hits/crits/max/resist). */
 function CategorySkillBars({ cat }: { cat: CategoryView }): JSX.Element {
   const color = CAT_COLOR[cat.category]
   return (
     <Box>
-      {cat.skills.map((s) => (
-        <Bar
-          key={s.name}
-          color={color}
-          pct={s.pct}
-          name={s.name}
-          right={`${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`}
-        />
-      ))}
+      {cat.skills.map((s) => {
+        const resists = s.resists ?? 0
+        const casts = s.hits + resists
+        // A spell/dot lane can carry resists (Task #51 v2). Show a resist-rate badge and,
+        // for a lane that only ever resisted (0 hits), a resist-only right-hand summary.
+        return (
+          <Bar
+            key={s.name}
+            color={color}
+            pct={s.pct}
+            name={
+              <>
+                {s.name}
+                {resists > 0 && (
+                  <Tooltip title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round((s.hits / casts) * 100)}% landed`}>
+                    <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
+                      {Math.round((resists / casts) * 100)}% resist
+                    </Typography>
+                  </Tooltip>
+                )}
+              </>
+            }
+            right={
+              s.hits > 0
+                ? `${fmt(s.total)} · ${s.hits} hits${s.crits ? ` · ${s.crits} crit` : ''} · max ${fmt(s.max)}`
+                : `${resists} resisted · 0 landed`
+            }
+          />
+        )
+      })}
     </Box>
   )
 }
@@ -271,6 +303,13 @@ function EntityCategoryBars({
                 <Typography component="span" variant="caption" sx={{ ml: 0.5, color: 'text.secondary' }}>
                   {Math.round(c.critPct)}% crit
                 </Typography>
+              )}
+              {c.resists > 0 && (
+                <Tooltip title={`${c.resists} resisted of ${c.hits + c.resists} casts — ${Math.round(c.resistPct)}% resisted`}>
+                  <Typography component="span" variant="caption" sx={{ ml: 0.5, color: RESIST_COLOR }}>
+                    {Math.round(c.resistPct)}% resist
+                  </Typography>
+                </Tooltip>
               )}
             </>
           }
@@ -639,11 +678,6 @@ export default function CombatView(): JSX.Element {
       )}
 
       <ProcessingLog lines={snap?.recent ?? []} showUnparsed={showUnparsed} setShowUnparsed={setShowUnparsed} />
-
-      <Alert severity="info" sx={{ py: 0 }}>
-        <strong>act</strong> is active-time DPS — damage per second of actual combat time, excluding idle gaps. Click an
-        entity bar to drill into its damage taxonomy (categories → skills); Esc or Back ascends.
-      </Alert>
     </Stack>
   )
 }

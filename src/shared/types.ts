@@ -30,6 +30,28 @@ export interface CharacterRef {
   lastPlayed?: number
 }
 
+/**
+ * The effective EQ install-dir configuration surfaced to the Settings UI. `root`
+ * is the directory in use (override ?? auto-discovery ?? default); `source` says
+ * how it was chosen; `characterCount` is how many `eqlog_*.txt` logs were found
+ * under `<root>\Logs` (0 ⇒ show the empty-state prompt).
+ */
+export interface EqConfig {
+  root: string
+  logsDir: string
+  source: 'manual' | 'auto' | 'default'
+  characterCount: number
+  /** Whether a manual override is currently persisted (vs auto-detecting). */
+  overridden: boolean
+}
+
+/** Result of picking/validating an EQ install dir from the Settings folder-picker. */
+export interface EqConfigResult {
+  /** false when the user cancelled the OS folder dialog. */
+  ok: boolean
+  config: EqConfig
+}
+
 /** A single parsed log line. */
 export interface LogLine {
   /** epoch millis from the bracketed timestamp */
@@ -285,6 +307,7 @@ export type LogEventKind =
   | 'damage'
   | 'heal'
   | 'miss'
+  | 'resist'
   | 'charm'
   | 'uncharm'
   | 'cc'

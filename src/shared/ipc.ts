@@ -22,6 +22,19 @@ export const IPC = {
   listCharacters: 'character:list',
   setCharacter: 'character:set',
 
+  // ---- EQ install-dir discovery + override (Settings gear) ----
+  // renderer -> main: read the effective EQ config (root + how it resolved + log count).
+  getEqConfig: 'eqconfig:get',
+  // renderer -> main: open the OS folder-picker; on pick, persist the override + re-list.
+  pickEqDir: 'eqconfig:pick',
+  // renderer -> main: set the override to an explicit dir (undefined/'' ⇒ auto-detect).
+  setEqDir: 'eqconfig:set',
+  // renderer -> main: clear the override (revert to auto-discovery).
+  resetEqDir: 'eqconfig:reset',
+  // main -> renderer: the effective EQ config changed (override applied/cleared),
+  // so the Settings dialog + any config-derived UI refresh.
+  onEqConfigChanged: 'eqconfig:changed',
+
   // ---- combat (its own snapshot transport — see modules/types.ts) ----
   getCombatSnapshot: 'combat:snapshot',
   onCombatActivity: 'combat:activity',

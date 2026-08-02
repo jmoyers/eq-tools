@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   Box,
+  Button,
   CssBaseline,
   Drawer,
   List,
@@ -8,8 +9,11 @@ import {
   ListItemIcon,
   ListItemText,
   Snackbar,
-  Alert
+  Alert,
+  Typography
 } from '@mui/material'
+import SettingsIcon from '@mui/icons-material/Settings'
+import TravelExploreIcon from '@mui/icons-material/TravelExplore'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import Inventory2Icon from '@mui/icons-material/Inventory2'
@@ -21,6 +25,7 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
+import SettingsDialog from './components/SettingsDialog'
 import UpdateToast, { UpdateChannelSelector } from './components/UpdateToast'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
@@ -51,11 +56,47 @@ function loadView(): View {
   return v && (KNOWN_VIEWS as string[]).includes(v) ? (v as View) : DEFAULT_VIEW
 }
 
+/**
+ * Fresh-machine empty state: no eqlog_*.txt were found in the (auto-detected or
+ * overridden) EQ folder. Quiet + actionable — points the user at the Settings gear
+ * to set the install folder, rather than showing empty/erroring feature views.
+ */
+function NoLogsEmptyState({ onOpenSettings }: { onOpenSettings: () => void }): JSX.Element {
+  return (
+    <Box
+      sx={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        gap: 1.5,
+        color: 'text.secondary'
+      }}
+    >
+      <TravelExploreIcon sx={{ fontSize: 48, opacity: 0.6 }} />
+      <Typography variant="h6" color="text.primary">
+        No EverQuest logs found yet
+      </Typography>
+      <Typography variant="body2" sx={{ maxWidth: 440 }}>
+        We looked for your EverQuest Legends install automatically but didn&apos;t find any
+        character logs. Make sure logging is on in-game (type <code>/log on</code>), or point us
+        at your install folder.
+      </Typography>
+      <Button variant="contained" startIcon={<SettingsIcon />} onClick={onOpenSettings} sx={{ mt: 1 }}>
+        Open settings
+      </Button>
+    </Box>
+  )
+}
+
 export default function App(): JSX.Element {
   const [view, setView] = useState<View>(loadView)
   const [character, setCharacter] = useState<CharacterRef | null>(null)
   const [characters, setCharacters] = useState<CharacterRef[]>([])
   const [live, setLive] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
   // App-wide "raid target defeated" toast — fires on any tab.
   const [defeatToast, setDefeatToast] = useState<TargetStatus | null>(null)
   // App-wide "quest complete" toast — fires on any tab the instant a Sky turn-in
@@ -109,9 +150,16 @@ export default function App(): JSX.Element {
       setLive(false)
       setRebuild((n) => n + 1)
     })
+    // The EQ install dir changed (Settings override applied/cleared): re-list the
+    // characters so the TitleBar selector reflects the new folder. Main separately
+    // pushes onCharacter if the active tail moved.
+    const offEqConfig = window.eq.onEqConfigChanged(() => {
+      void window.eq.listCharacters().then(setCharacters)
+    })
     return () => {
       offDelta()
       offChar()
+      offEqConfig()
     }
   }, [])
 
@@ -136,6 +184,7 @@ export default function App(): JSX.Element {
         character={character}
         characters={characters}
         onSelectCharacter={(logPath) => void onSelectCharacter(logPath)}
+        onOpenSettings={() => setSettingsOpen(true)}
       />
 
       {/* Everything below the bar: nav drawer + main content, side by side. */}
@@ -217,17 +266,26 @@ export default function App(): JSX.Element {
           sx={{ flexGrow: 1, minWidth: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
         >
           <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-            {view === 'posky' && <PoskyView key={viewKey} />}
-            {view === 'inventory' && <InventoryView key={viewKey} />}
-            {view === 'loot' && <LootView key={viewKey} />}
-            {view === 'bosses' && <BossView key={viewKey} />}
-            {view === 'leveling' && <LevelingView key={viewKey} />}
-            {view === 'combat' && <CombatView key={viewKey} />}
-            {view === 'buffs' && <BuffsView key={viewKey} />}
-            {view === 'alerts' && <AlertsView key={viewKey} />}
+            {characters.length === 0 ? (
+              <NoLogsEmptyState onOpenSettings={() => setSettingsOpen(true)} />
+            ) : (
+              <>
+                {view === 'posky' && <PoskyView key={viewKey} />}
+                {view === 'inventory' && <InventoryView key={viewKey} />}
+                {view === 'loot' && <LootView key={viewKey} />}
+                {view === 'bosses' && <BossView key={viewKey} />}
+                {view === 'leveling' && <LevelingView key={viewKey} />}
+                {view === 'combat' && <CombatView key={viewKey} />}
+                {view === 'buffs' && <BuffsView key={viewKey} />}
+                {view === 'alerts' && <AlertsView key={viewKey} />}
+              </>
+            )}
           </Box>
         </Box>
       </Box>
+
+      {/* Settings dialog (EQ install-dir discovery/override), opened from the gear. */}
+      <SettingsDialog open={settingsOpen} onClose={() => setSettingsOpen(false)} />
 
       {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
       <AlertPlayer />

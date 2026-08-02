@@ -52,6 +52,7 @@ import type {
   RoundsView,
   SegmentSummary,
   SegmentView,
+  SkillView,
   SnapshotOpts,
   SourceKind,
   SourceView,
@@ -90,6 +91,8 @@ interface SkillStat {
   crits: number
   max: number
   misses: number
+  /** Spell resists on this spell/dot lane (Task #51 v2). */
+  resists: number
 }
 
 /** Per-category rollup within a source (Task #51 drill-down level 2). Holds the
@@ -100,6 +103,8 @@ interface CategoryStat {
   hits: number
   crits: number
   max: number
+  /** Spell resists rolled into this category (spell/dot only; Task #51 v2). */
+  resists: number
   bySkill: Map<string, SkillStat>
 }
 
@@ -128,6 +133,8 @@ interface SourceStat {
   /** Avoided swings by this source, all outcomes. */
   misses: number
   miss: MissBreakdown
+  /** Spell resists against this source's detrimental spells (Task #51 v2). */
+  resists: number
   bySkill: Map<string, SkillStat>
   /** Per-category rollup (Task #51 drill-down level 2 + 3). */
   byCategory: Map<DamageCategory, CategoryStat>
@@ -136,11 +143,11 @@ interface SourceStat {
 }
 
 function newSkill(name: string): SkillStat {
-  return { name, total: 0, hits: 0, crits: 0, max: 0, misses: 0 }
+  return { name, total: 0, hits: 0, crits: 0, max: 0, misses: 0, resists: 0 }
 }
 
 function newCategory(category: DamageCategory): CategoryStat {
-  return { category, total: 0, hits: 0, crits: 0, max: 0, bySkill: new Map() }
+  return { category, total: 0, hits: 0, crits: 0, max: 0, resists: 0, bySkill: new Map() }
 }
 
 function newRounds(): RoundsAccum {
@@ -213,10 +220,31 @@ function addMissToSource(src: SourceStat, mtype: MissType, skill: string): void 
   src.bySkill.set(skill, s)
 }
 
+/**
+ * Fold a spell RESIST into a source's stats (Task #51 v2). A resist is the caster-side
+ * analogue of a miss: it attaches to the resisted spell's lane (`spell`, display name) in
+ * the given taxonomy category (spell/dot). It carries no damage, so only the resist
+ * COUNTERS move — the source's damage total is byte-for-byte unchanged (the tripwire).
+ * The lane is created lazily if the source hasn't landed that spell yet, so a spell that
+ * was ALWAYS resisted still shows a row (0 hits / N resists → 0% land).
+ */
+function addResistToSource(src: SourceStat, spell: string, category: DamageCategory): void {
+  src.resists += 1
+  const s = src.bySkill.get(spell) ?? newSkill(spell)
+  s.resists += 1
+  src.bySkill.set(spell, s)
+  const c = src.byCategory.get(category) ?? newCategory(category)
+  c.resists += 1
+  const cs = c.bySkill.get(spell) ?? newSkill(spell)
+  cs.resists += 1
+  c.bySkill.set(spell, cs)
+  src.byCategory.set(category, c)
+}
+
 function newSource(name: string, kind: SourceKind): SourceStat {
   return {
     name, kind, total: 0, hits: 0, crits: 0, ambiguousHits: 0, ambiguousTotal: 0,
-    misses: 0, miss: newMissBreakdown(), bySkill: new Map(), byCategory: new Map(), rounds: newRounds()
+    misses: 0, miss: newMissBreakdown(), resists: 0, bySkill: new Map(), byCategory: new Map(), rounds: newRounds()
   }
 }
 
@@ -249,6 +277,17 @@ class Agg {
   addIncMiss(id: string, name: string, mtype: MissType, skill: string): void {
     const s = this.inc.get(id) ?? newSource(name, 'enemy')
     addMissToSource(s, mtype, skill)
+    this.inc.set(id, s)
+  }
+  addOutResist(id: string, name: string, kind: SourceKind, spell: string, category: DamageCategory): void {
+    const s = this.out.get(id) ?? newSource(name, kind)
+    if (s.name !== name) s.name = name
+    addResistToSource(s, spell, category)
+    this.out.set(id, s)
+  }
+  addIncResist(id: string, name: string, spell: string, category: DamageCategory): void {
+    const s = this.inc.get(id) ?? newSource(name, 'enemy')
+    addResistToSource(s, spell, category)
     this.inc.set(id, s)
   }
   addEnemyHeal(id: string, name: string, amount: number): void {
@@ -317,6 +356,12 @@ interface TimelineRaw {
   crit: boolean
   modifiers?: string[]
   kind: SourceKind
+  /** 'miss' | 'resist' for avoided/resisted instants (Task #51 v2); absent = a landed hit. */
+  outcome?: 'hit' | 'miss' | 'resist'
+  /** miss subtype (dodge/parry/…) or 'resisted', for the tooltip. */
+  detail?: string
+  /** target/defender name, for the tooltip. */
+  target?: string
 }
 
 /** Internal raw stance/invocation span (absolute ts). `end` is undefined while active. */
@@ -349,16 +394,21 @@ const ACTIVE_MS = 3_000
 const RECENT_CAP = 300
 
 // Timeline (Task #51):
-//   TIMELINE_CAP          — per-encounter event ring size (drop-oldest). 5k covers a very
-//                           long fight; measured RSS impact on a full-log replay is small
-//                           (see AGENTS.md perf numbers) because only recent encounters
-//                           retain their ring.
+//   TIMELINE_CAP          — per-encounter event ring size (drop-oldest). Bumped 5k→8k for
+//                           Task #51 v2: miss AND resist ticks now enter the ring (misses
+//                           are ~70% of combat lines), so the densest fight's instant count
+//                           roughly doubled. Full-log measurement (2026-08-02): exactly ONE
+//                           marathon charm-grind fight exceeds 5k, peaking at 5259 instants;
+//                           8k captures it with ZERO drop-oldest at trivial cost (only ≤60
+//                           rings are ever retained — see TIMELINE_HISTORY_CAP — so the
+//                           whole-session RSS delta stays well under 1MB, dominated by the
+//                           68MB log string, not the ring).
 //   TIMELINE_HISTORY_CAP  — how many finalized encounters keep their event ring after
 //                           finalize. Older ones drop the ring (timeline only for recent /
 //                           live fights) so the whole-session RSS delta stays bounded.
 //   TIMELINE_BUDGET       — max events serialized into a single TimelineView; above this
 //                           the engine downsamples (uniform stride) and flags it.
-const TIMELINE_CAP = 5_000
+const TIMELINE_CAP = 8_000
 const TIMELINE_HISTORY_CAP = 60
 const TIMELINE_BUDGET = 2_000
 
@@ -606,6 +656,9 @@ export class CombatEngine {
       case 'miss':
         this.routeMiss(ev.ts, ev.attacker, ev.target, ev.mtype)
         return
+      case 'resist':
+        this.routeResist(ev.ts, ev.caster, ev.target, ev.spell, ev.incoming)
+        return
       case 'stanceChange':
         this.applyStance('stance', ev.stance, ev.ts)
         this.log(ev.ts, 'stance', 'info', `▸ stance: ${ev.stance}`)
@@ -764,7 +817,76 @@ export class CombatEngine {
     }
     enc?.agg.addOutMiss(id, name, kind, mtype, 'Melee')
     this.zoneAgg.addOutMiss(id, name, kind, mtype, 'Melee')
+    // Timeline: a miss tick lanes under "Melee" (hollow/red mark in the renderer).
+    if (enc) this.pushTimeline(enc, {
+      ts, lane: 'Melee', category: 'melee', amount: 0, crit: false, kind,
+      outcome: 'miss', detail: mtype, target: kind === 'you' || kind === 'pet' ? target : 'You'
+    })
     this.log(ts, 'miss', kind, `${name} ✕ ${target} (${mtype})`)
+  }
+
+  /**
+   * Consume a spell RESIST (Task #51 v2) — the caster-side analogue of a miss. Attribution:
+   *   caster='you'  → outgoing 'you'.
+   *   caster=<name> that resolves to one of our pets → outgoing pet.
+   *   incoming (You resisted a mob's spell) → incoming, attributed to the mob (the caster).
+   *   any other caster (a hostile mob's spell resisted by another mob) → IGNORED, mirroring
+   *     classify()'s rule that non-you/pet attackers are out of scope for the meter.
+   * The resisted spell is rank-normalized (spellCanonKey) ONLY for the lane display we keep;
+   * we lane by the DISPLAY spell name so the resist tick lands in the same lane as landed
+   * casts of that spell. Resists carry no damage → damage totals are untouched (tripwire).
+   */
+  private routeResist(ts: number, caster: string, target: string, spell: string, incoming: boolean): void {
+    // Resisted detrimental spells are direct spells in the taxonomy (no melee/ds). A DoT
+    // that's resisted is rare; we categorize all resists as 'spell' (the detrimental axis)
+    // so they sort into the spell lanes — they carry no amount, so category totals are
+    // unaffected. The lane is the display spell name.
+    const category: DamageCategory = 'spell'
+    // Attach to the in-progress fight if fresh (per-fight resist rate), else zone only —
+    // mirrors routeMiss. A resist does not open/extend/close an encounter.
+    const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+
+    if (incoming) {
+      // You resisted a mob's spell — attribute to the mob (incoming caster).
+      const attInst = this.world.resolve(caster, ts)
+      const id = attInst.instanceId
+      const name = this.world.label(attInst)
+      enc?.agg.addIncResist(id, name, spell, category)
+      this.zoneAgg.addIncResist(id, name, spell, category)
+      if (enc) this.pushTimeline(enc, {
+        ts, lane: spell, category, amount: 0, crit: false, kind: 'enemy',
+        outcome: 'resist', detail: 'resisted', target: 'You'
+      })
+      this.log(ts, 'resist', 'info', `You resisted ${name}'s ${spell}`)
+      return
+    }
+
+    const casterKey = idKey(caster)
+    const isYou = casterKey === 'you'
+    const isPet = !isYou && this.charmed.has(casterKey)
+    if (!isYou && !isPet) {
+      // A hostile mob's spell resisted by another mob — out of scope for the meter.
+      this.log(ts, 'resist', 'dropped', `${caster}'s ${spell} resisted by ${target}`)
+      return
+    }
+    let id: string
+    let name: string
+    const kind: SourceKind = isYou ? 'you' : 'pet'
+    if (isYou) {
+      id = 'you'
+      name = 'You'
+    } else {
+      const petInst = this.world.petInstance(caster) ?? this.world.resolve(caster, ts, true)
+      id = `pet:${petInst.instanceId}`
+      name = this.world.label(petInst)
+    }
+    enc?.agg.addOutResist(id, name, kind, spell, category)
+    this.zoneAgg.addOutResist(id, name, kind, spell, category)
+    if (enc) this.pushTimeline(enc, {
+      ts, lane: spell, category, amount: 0, crit: false, kind,
+      outcome: 'resist', detail: 'resisted', target
+    })
+    this.log(ts, 'resist', kind, `${name}'s ${spell} resisted by ${target}`)
   }
 
   /**
@@ -1030,7 +1152,10 @@ export class CombatEngine {
         amount: r.amount,
         crit: r.crit,
         modifiers: r.modifiers && r.modifiers.length ? r.modifiers : undefined,
-        kind: r.kind
+        kind: r.kind,
+        ...(r.outcome && r.outcome !== 'hit' ? { outcome: r.outcome } : {}),
+        ...(r.detail ? { detail: r.detail } : {}),
+        ...(r.target ? { target: r.target } : {})
       })
     }
     const lanes = [...laneAgg.entries()]
@@ -1188,6 +1313,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
       you.ambiguousHits += s.ambiguousHits
       you.ambiguousTotal += s.ambiguousTotal
       you.misses += s.misses
+      you.resists += s.resists
       for (const k of MISS_KEYS) you.miss[k] += s.miss[k]
       for (const [k, sk] of s.bySkill) {
         const key = `${s.name}: ${k}`
@@ -1197,6 +1323,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
           prev.hits += sk.hits
           prev.crits += sk.crits
           prev.misses += sk.misses
+          prev.resists += sk.resists
           prev.max = Math.max(prev.max, sk.max)
         } else {
           you.bySkill.set(key, { ...sk, name: key })
@@ -1209,6 +1336,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
         yc.total += cstat.total
         yc.hits += cstat.hits
         yc.crits += cstat.crits
+        yc.resists += cstat.resists
         yc.max = Math.max(yc.max, cstat.max)
         for (const [k, sk] of cstat.bySkill) {
           const key = `${s.name}: ${k}`
@@ -1217,6 +1345,7 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
             prev.total += sk.total
             prev.hits += sk.hits
             prev.crits += sk.crits
+            prev.resists += sk.resists
             prev.max = Math.max(prev.max, sk.max)
           } else {
             yc.bySkill.set(key, { ...sk, name: key })
@@ -1240,6 +1369,10 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
     .map(([id, s]) => {
       const skMax = Math.max(1, ...[...s.bySkill.values()].map((k) => k.total))
       const swings = s.hits + s.misses
+      // Resist rate is over CAST attempts of detrimental spells: landed spell/dot hits +
+      // resists. Melee/slay/ds hits can't be resisted, so they're excluded from the base.
+      const spellHits = (s.byCategory.get('spell')?.hits ?? 0) + (s.byCategory.get('dot')?.hits ?? 0)
+      const casts = spellHits + s.resists
       return {
         id,
         name: s.name,
@@ -1255,10 +1388,12 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
         misses: s.misses,
         hitPct: swings ? (s.hits / swings) * 100 : 100,
         missBreakdown: { ...s.miss },
+        resists: s.resists,
+        resistPct: casts ? (s.resists / casts) * 100 : 0,
         skills: [...s.bySkill.values()]
           .sort((a, b) => b.total - a.total)
           .slice(0, 12)
-          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses })),
+          .map(skillView(skMax)),
         categories: categoryViews(s.byCategory),
         rounds: roundsView(s.rounds)
       }
@@ -1271,12 +1406,29 @@ function sourceViews(map: Map<string, SourceStat>, durationSec: number, combineP
  * by CATEGORY_ORDER (stable UI ordering: melee, slay, spell, dot, ds); each carries its
  * own per-skill breakdown capped at 12 (same cap as the top-level skills — small payload).
  */
+/** Build a SkillView mapper closed over the category/source's max-total (for the bar pct).
+ *  `misses` is always emitted (unchanged from pre-#51v2); `resists` is added additively
+ *  and only present when non-zero so damage-only skill rows keep their exact prior shape. */
+function skillView(skMax: number): (k: SkillStat) => SkillView {
+  return (k) => ({
+    name: k.name,
+    total: k.total,
+    pct: (k.total / skMax) * 100,
+    hits: k.hits,
+    crits: k.crits,
+    max: k.max,
+    misses: k.misses,
+    ...(k.resists ? { resists: k.resists } : {})
+  })
+}
+
 function categoryViews(byCat: Map<DamageCategory, CategoryStat>): CategoryView[] {
   const catMax = Math.max(1, ...[...byCat.values()].map((c) => c.total))
   return [...byCat.values()]
     .sort((a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category))
     .map((c) => {
       const skMax = Math.max(1, ...[...c.bySkill.values()].map((k) => k.total))
+      const casts = c.hits + c.resists
       return {
         category: c.category,
         total: c.total,
@@ -1285,10 +1437,12 @@ function categoryViews(byCat: Map<DamageCategory, CategoryStat>): CategoryView[]
         crits: c.crits,
         critPct: c.hits ? (c.crits / c.hits) * 100 : 0,
         max: c.max,
+        resists: c.resists,
+        resistPct: casts ? (c.resists / casts) * 100 : 0,
         skills: [...c.bySkill.values()]
           .sort((a, b) => b.total - a.total)
           .slice(0, 12)
-          .map((k) => ({ name: k.name, total: k.total, pct: (k.total / skMax) * 100, hits: k.hits, crits: k.crits, max: k.max, misses: k.misses }))
+          .map(skillView(skMax))
       }
     })
 }

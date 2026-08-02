@@ -31,6 +31,8 @@ export interface SkillView {
   max: number
   /** Avoided swings for this skill (miss/dodge/parry/riposte/block/absorb). */
   misses?: number
+  /** Spell resists for this spell/dot lane (Task #51 v2). resist rate = resists/(hits+resists). */
+  resists?: number
 }
 
 /** Breakdown of avoided swings by outcome (for hit% + defensive tooltip). */
@@ -54,6 +56,10 @@ export interface CategoryView {
   crits: number
   critPct: number
   max: number
+  /** Spell resists within this category (spell/dot only; Task #51 v2). 0 for melee/slay/ds. */
+  resists: number
+  /** resists / (hits + resists) as a percentage; 0 when nothing was cast. */
+  resistPct: number
   /** per-skill/per-spell breakdown within this category (capped at 12). */
   skills: SkillView[]
 }
@@ -97,6 +103,10 @@ export interface SourceView {
   hitPct: number
   /** Avoided-swing breakdown by outcome (for tooltip / expanded row). */
   missBreakdown: MissBreakdown
+  /** Total spell resists against this source's detrimental spells (Task #51 v2). */
+  resists: number
+  /** resists / (spell+dot hits + resists) as a percentage; 0 when no spells cast. */
+  resistPct: number
   skills: SkillView[]
   /** Per-category rollup (Task #51 drill-down level 2 → 3). Ordered by CATEGORY_ORDER. */
   categories: CategoryView[]
@@ -192,7 +202,7 @@ export interface TimelineEvent {
   lane: string
   /** taxonomy category (drives color + which section the lane sorts into). */
   category: DamageCategory
-  /** damage amount (0 for a miss tick). */
+  /** damage amount (0 for a miss/resist tick). */
   amount: number
   /** true when this instant was a crit. */
   crit: boolean
@@ -200,6 +210,16 @@ export interface TimelineEvent {
   modifiers?: string[]
   /** 'you' | 'pet' | 'enemy' — who produced it (color/opacity hint). */
   kind: SourceKind
+  /**
+   * Event flavor (Task #51 v2). 'hit' = landed damage (default). 'miss' = an avoided
+   * melee swing (dodge/parry/riposte/block/absorb/miss). 'resist' = a fully-resisted
+   * spell. Miss/resist ticks render as hollow/red-tinted marks in the ability's lane.
+   */
+  outcome?: 'hit' | 'miss' | 'resist'
+  /** the specific miss outcome (dodge/parry/…) or resist detail, for the tooltip. */
+  detail?: string
+  /** the target / defender name, for the tooltip. */
+  target?: string
 }
 
 /** A span during which a stance/invocation was active (Task #51 timeline pinned rows). */

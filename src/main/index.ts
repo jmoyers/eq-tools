@@ -1,9 +1,16 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, dialog, ipcMain } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
+import { existsSync } from 'fs'
 import { join } from 'path'
 import { IPC } from '../shared/ipc'
 import { errorLogPath, logError } from './errorLog'
-import { characterId, listCharacters, parseLogName, resolveActiveCharacter } from './log/config'
+import {
+  characterId,
+  listCharacters,
+  parseLogName,
+  resolveActiveCharacter,
+  resolveEqDir
+} from './log/config'
 import { Tailer } from './log/Tailer'
 import { parseEvent, parseLine } from './log/parser'
 import { installSpellDb } from './log/rulesets'
@@ -41,6 +48,7 @@ import {
   getActiveLogPath,
   getAlertPrefs,
   getAlerts,
+  getEqInstallDir,
   getOverlayConfig,
   getProgress,
   getWindowBounds,
@@ -48,6 +56,7 @@ import {
   saveAlert,
   setActiveLogPath,
   setAlertPrefs,
+  setEqInstallDir,
   setInventory,
   setOverlayConfig,
   setQuestComplete,
@@ -58,6 +67,7 @@ import type {
   AlertPrefs,
   BuffsSnap,
   CharacterRef,
+  EqConfig,
   OverlayConfig,
   PackInstallProgress
 } from '../shared/types'
@@ -479,6 +489,54 @@ function resolveInitialCharacter(): CharacterRef | null {
   return resolveActiveCharacter()
 }
 
+/** Build the EqConfig payload the Settings UI reads (effective dir + how it resolved). */
+function buildEqConfig(): EqConfig {
+  const r = resolveEqDir()
+  return {
+    root: r.root,
+    logsDir: r.logsDir,
+    source: r.source,
+    characterCount: r.characterCount,
+    overridden: getEqInstallDir() !== undefined
+  }
+}
+
+/**
+ * Apply a change to the effective EQ install dir (override set/cleared). Re-lists
+ * characters and, if the currently-tailed character's log no longer exists under
+ * the new dir, retails the most-recent character there (or clears if none). A
+ * no-op re-tail is avoided when the active log is still valid, so a settings save
+ * that didn't actually move the dir never disrupts an in-flight tail.
+ */
+async function applyEqDirChange(): Promise<EqConfig> {
+  const config = buildEqConfig()
+  // Refresh the character selector everywhere.
+  const chars = listCharacters()
+  mainWindow?.webContents.send(IPC.onEqConfigChanged, config)
+
+  const activeStillValid = character != null && existsSync(character.logPath)
+  if (activeStillValid) return config // don't disturb a healthy tail
+
+  // The active log vanished (dir moved) or we had none: pick the best character
+  // under the new dir and re-tail, or gracefully idle if the dir has no logs.
+  const next = resolveActiveCharacter() ?? chars[0] ?? null
+  if (next) {
+    await tailCharacter(next)
+  } else {
+    // Fresh/empty dir: stop tailing and tell the renderer there's no character,
+    // so views show the quiet empty state instead of stale data.
+    await tailer?.stop()
+    tailer = null
+    if (tickTimer) clearInterval(tickTimer)
+    tickTimer = null
+    void inventoryWatcher?.close()
+    inventoryWatcher = null
+    character = null
+    mainWindow?.webContents.send(IPC.onCharacter, null)
+  }
+  return config
+}
+
 /** Point the tailer + loot history at a character (used at startup and on switch). */
 async function tailCharacter(ref: CharacterRef): Promise<void> {
   await tailer?.stop()
@@ -608,6 +666,39 @@ function registerIpc(): void {
     if (!ref) return { ok: false as const, error: 'Character log not found.' }
     await tailCharacter(ref)
     return { ok: true as const, character: ref }
+  })
+
+  // ---- EQ install-dir discovery + override (Settings gear) ----
+  ipcMain.handle(IPC.getEqConfig, () => buildEqConfig())
+  // Open the OS folder-picker rooted at the current effective dir; on a pick,
+  // persist the override + re-scan/re-tail. Cancel leaves everything untouched.
+  ipcMain.handle(IPC.pickEqDir, async () => {
+    const current = resolveEqDir()
+    const opts = {
+      title: 'Select your EverQuest Legends install folder',
+      defaultPath: existsSync(current.root) ? current.root : undefined,
+      properties: ['openDirectory' as const]
+    }
+    // Parent the dialog to the main window (modal) when we have one.
+    const res = mainWindow
+      ? await dialog.showOpenDialog(mainWindow, opts)
+      : await dialog.showOpenDialog(opts)
+    if (res.canceled || res.filePaths.length === 0) {
+      return { ok: false as const, config: buildEqConfig() }
+    }
+    setEqInstallDir(res.filePaths[0])
+    const config = await applyEqDirChange()
+    return { ok: true as const, config }
+  })
+  // Set the override to an explicit dir (undefined/'' ⇒ revert to auto-detect).
+  ipcMain.handle(IPC.setEqDir, async (_e, dir: string | undefined) => {
+    setEqInstallDir(dir)
+    return applyEqDirChange()
+  })
+  // Clear the override → auto-discovery.
+  ipcMain.handle(IPC.resetEqDir, async () => {
+    setEqInstallDir(undefined)
+    return applyEqDirChange()
   })
   ipcMain.handle(IPC.getProgress, () => getProgress(activeCharId()))
   ipcMain.handle(IPC.reloadInventory, () => {

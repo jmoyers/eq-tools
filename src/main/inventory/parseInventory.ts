@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'fs'
 import { join } from 'path'
-import { EQ_ROOT } from '../log/config'
+import { effectiveEqRoot } from '../log/config'
 import type { HeldCounts } from '../../shared/types'
 
 /**
@@ -36,12 +36,13 @@ export interface InventoryLoadResult {
 
 /** Find the newest "*-Inventory.txt" for the given character (or any). */
 export function findInventoryFile(characterName?: string): string | null {
-  if (!existsSync(EQ_ROOT)) return null
+  const eqRoot = effectiveEqRoot()
+  if (!existsSync(eqRoot)) return null
   const preferred = characterName ? `${characterName}-Inventory.txt`.toLowerCase() : null
 
-  const files = readdirSync(EQ_ROOT)
+  const files = readdirSync(eqRoot)
     .filter((f) => /-Inventory\.txt$/i.test(f))
-    .map((f) => ({ f, full: join(EQ_ROOT, f), mtime: statSync(join(EQ_ROOT, f)).mtimeMs }))
+    .map((f) => ({ f, full: join(eqRoot, f), mtime: statSync(join(eqRoot, f)).mtimeMs }))
     .sort((a, b) => b.mtime - a.mtime)
 
   if (files.length === 0) return null

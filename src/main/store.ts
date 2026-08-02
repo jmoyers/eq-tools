@@ -26,6 +26,12 @@ interface StoreShape {
   byCharacter: Record<string, ProgressState>
   /** last selected character's log path */
   activeLogPath?: string
+  /**
+   * Manual EQ install-dir override (Settings gear). When set + non-empty it wins
+   * over auto-discovery; cleared/undefined ⇒ the app auto-detects the install.
+   * See src/main/log/config.ts `resolveEqDir`.
+   */
+  eqInstallDir?: string
   /** last window position + size */
   windowBounds?: WindowBounds
   /** alerts extension: the user's alert definitions (Task #18) */
@@ -88,6 +94,24 @@ export function getActiveLogPath(): string | undefined {
 
 export function setActiveLogPath(logPath: string): void {
   store.set('activeLogPath', logPath)
+}
+
+// ----- EQ install-dir override (auto-discovery override) -----
+
+/**
+ * The manual EQ install-dir override, or undefined when unset (⇒ auto-detect).
+ * An empty/whitespace string is treated as unset so "clear the field" reverts to
+ * auto-discovery. Consumed by src/main/log/config.ts `resolveEqDir`.
+ */
+export function getEqInstallDir(): string | undefined {
+  const v = store.get('eqInstallDir')
+  return v && v.trim() ? v : undefined
+}
+
+/** Set (or clear, with undefined/'') the manual EQ install-dir override. */
+export function setEqInstallDir(dir: string | undefined): void {
+  if (dir && dir.trim()) store.set('eqInstallDir', dir)
+  else store.delete('eqInstallDir')
 }
 
 // ----- Floating overlay DPS meter (Task #52) -----
