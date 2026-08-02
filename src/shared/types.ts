@@ -1,8 +1,10 @@
 // Types shared across the main process, preload bridge, and renderer.
 
 import type { LootDisposition } from './logEvents'
+import type { ItemStatBlock } from './itemStats'
 
 export type { LootDisposition }
+export type { ItemStatBlock }
 
 /**
  * The two spawnable overlay window KINDS (Task #54 — overlay v2):
@@ -235,6 +237,15 @@ export interface ItemKnowledge {
   summary?: string
   /** the raw stat/flag block text from the item page (LORE/NO DROP/slot/…) */
   statsBlock?: string
+  /**
+   * The same stat block parsed into the in-game item WINDOW's structure (flags, slot,
+   * class/race, attributes, saves, effects) so the UI can draw it with the game's
+   * hierarchy instead of dumping monospace text. Base/wiki data only — it carries no
+   * tier or exaltation-socket state, because item pages don't have any.
+   */
+  stats?: ItemStatBlock
+  /** wiki icon id (`lucy_img_ID`) → File:Item <id>.png on eqlwiki */
+  iconId?: number
   /** whether this result was served from cache (vs a fresh network lookup) */
   cached: boolean
   /** true when the wiki lookup was attempted but found no page (negative result) */

@@ -16,6 +16,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import type { ItemKnowledge, LootEvent } from '@shared/types'
 import { formatDate } from '../../lib/formatDate'
+import { EQ_ITEM_COLORS, ItemWindow } from '../../lib/ItemWindow'
 
 /**
  * "What it's for" knowledge (Task #53): fetch this item's lore/quest knowledge when the
@@ -50,15 +51,15 @@ function useItemKnowledge(item: string, open: boolean): { data: ItemKnowledge | 
 }
 
 /**
- * The "What it's for" card: lore badge, quest chips (with giver when known), a wiki
- * summary line, and source attribution. Quiet loading/offline/empty states — no
- * narration. Rendered only when there's something to say (or while loading).
+ * The "What it's for" card: quest chips (with giver when known) and source attribution.
+ * Quiet loading/offline/empty states — no narration. Rendered only when there's something
+ * to say (or while loading). The item's own stats/lore live in the game-style item window
+ * above; this block is only what OUR sources add on top of it.
  */
 function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loading: boolean }): JSX.Element | null {
   if (loading && !data) {
     return (
       <Box sx={{ mb: 2 }}>
-        <Divider sx={{ mb: 1.5 }} />
         <Stack direction="row" spacing={1} alignItems="center" sx={{ color: 'text.secondary' }}>
           <CircularProgress size={14} />
           <Typography variant="caption">Looking up what this is for…</Typography>
@@ -68,7 +69,7 @@ function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loadi
   }
   if (!data) return null
 
-  const hasSomething = data.lore || data.quest || data.questUses.length > 0 || !!data.summary
+  const hasSomething = data.lore || data.quest || data.questUses.length > 0
   // Nothing notable AND we successfully checked the wiki — stay silent (don't add noise
   // to ordinary vendor trash). If it was offline/notFound with no local data, also silent.
   if (!hasSomething) return null
@@ -79,23 +80,15 @@ function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loadi
 
   return (
     <Box sx={{ mb: 2 }}>
-      <Divider sx={{ mb: 1.5 }} />
       <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
         <AutoStoriesIcon fontSize="small" sx={{ color: 'secondary.main' }} />
         <Typography variant="subtitle2">What it&apos;s for</Typography>
-        {data.lore && <Chip size="small" color="warning" variant="outlined" label="LORE" sx={{ height: 20 }} />}
         {data.offline && (
           <Typography variant="caption" color="text.disabled">
             (offline — showing what&apos;s known locally)
           </Typography>
         )}
       </Stack>
-
-      {data.summary && (
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-          {data.summary}
-        </Typography>
-      )}
 
       {data.questUses.length > 0 ? (
         <Box>
@@ -268,7 +261,9 @@ export function ItemDetailDialog({
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle sx={{ pr: 6 }}>
         <Stack direction="row" spacing={1} alignItems="center">
-          <span>{item}</span>
+          <Box component="span" sx={{ color: EQ_ITEM_COLORS.name }}>
+            {item}
+          </Box>
           {isQuestItem && <Chip size="small" color="primary" variant="outlined" label="Plane of Sky" />}
         </Stack>
         <IconButton onClick={onClose} sx={{ position: 'absolute', right: 8, top: 8 }}>
@@ -276,59 +271,69 @@ export function ItemDetailDialog({
         </IconButton>
       </DialogTitle>
       <DialogContent dividers>
-        <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
-          <StatCard label="Times looted" value={String(total)} />
-          <StatCard label="Distinct mobs" value={String(agg.sources.length)} />
-          <StatCard label="Zones seen" value={String(agg.zones.length)} />
-        </Stack>
-
-        {/* "What it's for" (Task #53) — lore/quest knowledge. Local posky + cached wiki. */}
-        <KnowledgeSection data={knowledge.data} loading={knowledge.loading} />
-
-        {/* Stat block: posky's scraped block when we have it, else the wiki item page's. */}
-        {(stats || knowledge.data?.statsBlock) && (
-          <Paper
-            variant="outlined"
-            sx={{
-              p: 1.5,
-              mb: 2,
-              fontFamily: '"Consolas","Courier New",monospace',
-              fontSize: 12,
-              whiteSpace: 'pre-line',
-              color: '#e9e2c9',
-              bgcolor: '#12131c'
-            }}
-          >
-            {stats ?? knowledge.data?.statsBlock}
-          </Paper>
-        )}
-
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="subtitle2" gutterBottom>
-              Dropped by <Typography component="span" variant="caption" color="text.secondary">(times seen)</Typography>
-            </Typography>
-            {agg.sources.length === 0 && <Typography variant="caption">No source recorded.</Typography>}
-            {agg.sources.map((s) => (
-              <Bar key={s.name} label={s.name} value={s.count} max={maxSource} right={`${s.count}× seen`} />
-            ))}
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={2.5} alignItems="flex-start">
+          {/* The item as the GAME shows it: wiki base data, drawn in the item-window
+              language. `stats` (posky's scraped block) is the offline fallback when the
+              wiki lookup hasn't structured one yet. */}
+          <Box sx={{ width: { xs: '100%', md: 340 }, flexShrink: 0 }}>
+            <ItemWindow
+              name={item}
+              stats={knowledge.data?.stats}
+              rawStats={stats ?? knowledge.data?.statsBlock}
+              iconId={knowledge.data?.iconId}
+              flavor={knowledge.data?.summary}
+            />
+            {knowledge.loading && !knowledge.data && (
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ mt: 1, color: 'text.secondary' }}>
+                <CircularProgress size={14} />
+                <Typography variant="caption">Looking up this item…</Typography>
+              </Stack>
+            )}
           </Box>
-          <Box sx={{ flex: 1 }}>
+
+          {/* Everything BELOW/BESIDE the game block is OUR knowledge — what the live log
+              and the local dataset add that the in-game window can't tell you. */}
+          <Box sx={{ flex: 1, minWidth: 0, width: '100%' }}>
+            <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
+              <StatCard label="Times looted" value={String(total)} />
+              <StatCard label="Distinct mobs" value={String(agg.sources.length)} />
+              <StatCard label="Zones seen" value={String(agg.zones.length)} />
+            </Stack>
+
+            {/* "What it's for" (Task #53) — quest knowledge. Local posky + cached wiki. */}
+            <KnowledgeSection data={knowledge.data} loading={knowledge.loading} />
+
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3}>
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="subtitle2" gutterBottom>
+                  Dropped by{' '}
+                  <Typography component="span" variant="caption" color="text.secondary">
+                    (times seen)
+                  </Typography>
+                </Typography>
+                {agg.sources.length === 0 && <Typography variant="caption">No source recorded.</Typography>}
+                {agg.sources.map((s) => (
+                  <Bar key={s.name} label={s.name} value={s.count} max={maxSource} right={`${s.count}× seen`} />
+                ))}
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <Typography variant="subtitle2" gutterBottom>
+                  Seen in zones
+                </Typography>
+                {agg.zones.length === 0 && <Typography variant="caption">No zone recorded.</Typography>}
+                {agg.zones.map((z) => (
+                  <Bar key={z.name} label={z.name} value={z.count} max={maxZone} right={`${z.count}×`} />
+                ))}
+              </Box>
+            </Stack>
+
+            <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle2" gutterBottom>
-              Seen in zones
+              Looted over time
             </Typography>
-            {agg.zones.length === 0 && <Typography variant="caption">No zone recorded.</Typography>}
-            {agg.zones.map((z) => (
-              <Bar key={z.name} label={z.name} value={z.count} max={maxZone} right={`${z.count}×`} />
-            ))}
+            <Timeline events={events} />
           </Box>
         </Stack>
-
-        <Divider sx={{ my: 2 }} />
-        <Typography variant="subtitle2" gutterBottom>
-          Looted over time
-        </Typography>
-        <Timeline events={events} />
       </DialogContent>
     </Dialog>
   )

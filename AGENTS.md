@@ -29,6 +29,19 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   log span (`tests/fixtures/*.log` via `tests/extract-*.mjs`), hand-read it,
   write the expected state, fix until green. Priming fixtures warm learned
   state (classifier/overlay) the way a full replay would.
+- **Headless app test** (`npm run test:e2e`, playwright-core `_electron`): drives
+  the REAL app end-to-end against the live log and asserts what the user SEES
+  (`tests/e2e/combat-dashboard.e2e.mts`). Use it for anything a fixture replay
+  can't see — layout, mount/empty states, hydration. `EQ_E2E=1` (src/main/e2e.ts)
+  is the whole test mode: NO window is ever shown (main window is already
+  `show:false`; overlays skip `showInactive`), the single-instance lock is
+  skipped (runs beside the user's dev app), and `userData` moves to a temp dir
+  before electron-store loads — so it's invisible while the user plays. Builds
+  into `out-e2e/` (ABSOLUTE `--outDir`: a relative one resolves against each
+  section's root and buries the renderer in `src/renderer/`) so it never races
+  the dev watcher's `out/`. Assertions are floors/identities; DOM + screenshot
+  land in `tests/e2e/artifacts/` on failure (hidden-window screenshots are
+  best-effort — an idle window may not composite).
 - **Frozen numbers rot**: the live log grows, so full-log assertions must be
   identities (`earned == allocated + unspent`), monotonic floors, or
   anchor-independent invariants — never `== <today's count>`.
@@ -200,6 +213,13 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 
 ## Data sources
 
+- **Scraper etiquette (LAW)**: every scraping script must run at a
+  respectful rate limit (delay between requests), honor backoffs
+  (429/5xx → exponential retry, obey Retry-After), and be re-runnable +
+  idempotent (cache hits skip the network; partial runs resume, never
+  duplicate output). Applies to scripts/scrape-*, itemLookup, and any
+  future fetcher.
+
 - eqlwiki.com MediaWiki API (helper: `scripts/sources/eqlegends.ts`).
   Scrapers (output committed): `scrape:posky` (quest-item cells: iterate
   `<li>` items — `<br>`-splitting once dropped trailing unhinted items),
@@ -226,6 +246,22 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   NO `/s` anywhere (Task #54 sweep). Dates/times through `lib/formatDate`
   (user-local; never UTC or epoch-day math). Tier chips via `lib/tierChip`
   (dark fg on tier bg, WCAG AA).
+- **A growing list lives in a FIXED-height scroll box.** The combat log was
+  `flex: 0 0 auto` + `minHeight`, so it sized to its 150-line content, couldn't
+  shrink, and squeezed the whole dashboard to 0px (the tab read as "just a
+  scrolling combat log"; the app's content area is `overflow:auto`, so
+  `height:100%` clamps nothing). Any append-only panel gets an explicit height +
+  its own `overflow:auto`; the panel that must survive gets `flexGrow:1` +
+  `minHeight:0`. Verified by the headless e2e harness, which measures it.
+- **Hydration is a state, and the UI must show it.** During the startup replay
+  every snapshot describes the PAST (an hours-old fight is `current`).
+  `CombatSnapshot.hydrating` (engine: true until `setLive()`) gates a quiet
+  "Reading log…" placeholder in CombatView + the overlay meter — never a
+  churning fake-live meter. Task #56.
+- **A dashboard is never empty while data exists.** "Current fight (live)" =
+  the open fight, else the live ZONE session (`liveFallback`, labeled "No active
+  fight — showing <zone> overall"). It NEVER falls back to the last finished
+  fight — that presented a closed encounter as the current one.
 - Celebrations (confetti/sound) fire EXACTLY ONCE on live transitions;
   hydration seeds a silent baseline; manual actions never celebrate.
 
@@ -307,5 +343,10 @@ first-run provisioning.
   app registration + repo secrets.
 - Windows Sandbox: WORKING (validated 2026-08-02, 7/7 PASS incl. clean
   uninstall) — the .wsb harness is the standard pre-ship clean-machine gate.
+- Startup could be TAIL-FIRST: attach the live tail immediately, then backfill
+  history BACKWARDS into the model, so the meter is live in ~0s and deepens as
+  the replay lands (today: ~6s of `hydrating` on this log, then live). Needs
+  order-independent folding in every module — a real architecture change, not
+  yet attempted. The `hydrating` flag makes today's replay honest meanwhile.
 - Not yet parsed: Dragon Hoard / tradeskill depot / combine loot lines.
   Group-member combat tracking: future scope.
