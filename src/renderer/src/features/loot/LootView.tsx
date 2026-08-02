@@ -19,6 +19,7 @@ import { useModule } from '../../lib/useModule'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
 import { itemCountKey } from '../../lib/itemName'
+import { formatDateTime } from '../../lib/formatDate'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
@@ -52,9 +53,7 @@ const EMPTY_LOOT: LootEvent[] = []
 type KeyedLoot = LootEvent & { itemKey: string }
 
 function fmtTime(ts: number): string {
-  if (!ts) return ''
-  const d = new Date(ts)
-  return d.toLocaleString([], { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+  return formatDateTime(ts, { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
 
 const applyLootDelta = (state: LootSnap, delta: LootDelta): LootSnap => [...state, ...delta.appended]

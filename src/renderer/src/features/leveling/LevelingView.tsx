@@ -5,6 +5,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
 import type { AASpendEvent, LevelingDelta, LevelingSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
+import { formatDate } from '../../lib/formatDate'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -297,7 +298,7 @@ export default function LevelingView(): JSX.Element {
                     {f.detail}
                   </Typography>
                   <Typography variant="caption" color="text.disabled" noWrap>
-                    {new Date(f.ts).toLocaleDateString()}
+                    {formatDate(f.ts)}
                   </Typography>
                 </Stack>
               ))}

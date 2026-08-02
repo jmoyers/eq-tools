@@ -64,6 +64,7 @@ import type {
   SoundPack
 } from '@shared/types'
 import { useModule } from '../../lib/useModule'
+import { formatTime } from '../../lib/formatDate'
 import { onAlertStoreChange, playAlertNow, refreshAlertStore } from './player'
 import SoundPacksDialog from './SoundPacksDialog'
 import SuggestAlertsDialog from './SuggestAlertsDialog'
@@ -443,7 +444,7 @@ function RecentFires({ fires }: { fires: AlertFireRecord[] }): JSX.Element {
           }}
         >
           <Box component="span" sx={{ color: 'text.disabled', whiteSpace: 'nowrap' }}>
-            {new Date(f.ts).toLocaleTimeString()}
+            {formatTime(f.ts, { hour12: true })}
           </Box>
           <Box component="span" sx={{ wordBreak: 'break-all' }}>
             {f.matchedText || '(no matched text)'}

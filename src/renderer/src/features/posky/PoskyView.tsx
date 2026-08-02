@@ -30,9 +30,12 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
+import LinkIcon from '@mui/icons-material/Link'
 import type { CountSource } from '@shared/types'
 import { useProgress, type QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
+import { formatDateTime } from '../../lib/formatDate'
+import { sharingQuestLabel, type SharedItem } from './sharedItems'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 
@@ -76,9 +79,63 @@ function ProgressBar({ q }: { q: QuestProgress }): JSX.Element {
   )
 }
 
+// "Shared items with" (Task #44): a compact, dense section listing each of this
+// quest's required items that ANOTHER Plane of Sky quest also needs — so before
+// turning in you can see who else is contending for a drop. Currency (Wind Runes) is
+// excluded upstream in the derivation.
+function SharedItemsSection({
+  shared,
+  ambiguousNames,
+  onSelectQuest
+}: {
+  shared: SharedItem[]
+  ambiguousNames: Set<string>
+  onSelectQuest: (name: string) => void
+}): JSX.Element {
+  return (
+    <Box sx={{ mb: 1 }}>
+      <Stack direction="row" spacing={0.75} alignItems="center" sx={{ mb: 0.5 }}>
+        <LinkIcon sx={{ fontSize: 15, color: 'text.secondary' }} />
+        <Typography variant="caption" color="text.secondary">
+          Shared items — other Sky quests contending for these drops
+        </Typography>
+      </Stack>
+      <Stack spacing={0.5}>
+        {shared.map((si) => (
+          <Stack key={si.key} direction="row" spacing={0.75} alignItems="center" flexWrap="wrap" useFlexGap>
+            <Typography variant="caption" sx={{ fontWeight: 600, minWidth: 150 }}>
+              {si.name}
+            </Typography>
+            {si.quests.map((sq) => (
+              <Chip
+                key={sq.key}
+                size="small"
+                variant="outlined"
+                color="info"
+                label={sharingQuestLabel(sq, ambiguousNames)}
+                onClick={() => onSelectQuest(sq.name)}
+                sx={{ height: 20, fontSize: 11 }}
+              />
+            ))}
+          </Stack>
+        ))}
+      </Stack>
+    </Box>
+  )
+}
+
 export default function PoskyView(): JSX.Element {
-  const { quests, classes, countSource, setCountSource, reloadInventory, setQuestComplete, inventoryInfo } =
-    useProgress()
+  const {
+    quests,
+    classes,
+    countSource,
+    setCountSource,
+    reloadInventory,
+    setQuestComplete,
+    inventoryInfo,
+    sharedItems,
+    ambiguousQuestNames
+  } = useProgress()
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
   const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
@@ -236,13 +293,15 @@ export default function PoskyView(): JSX.Element {
           {countSource === 'log' ? 'looted log' : countSource === 'inventory' ? 'inventory export' : 'log + inventory'}
           {countSource !== 'log' &&
             (inventoryInfo
-              ? ` · inventory loaded ${new Date(inventoryInfo.loadedAt).toLocaleString()}`
+              ? ` · inventory loaded ${formatDateTime(new Date(inventoryInfo.loadedAt).getTime())}`
               : ' · no inventory loaded yet')}
         </Typography>
       )}
 
       <Box sx={{ flexGrow: 1, overflow: 'auto' }}>
-        {filtered.slice(0, visibleCount).map((q) => (
+        {filtered.slice(0, visibleCount).map((q) => {
+          const shared = sharedItems.get(q.key) ?? []
+          return (
           <Accordion key={q.key} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Stack spacing={0.75} sx={{ width: '100%', pr: 2 }}>
@@ -264,6 +323,20 @@ export default function PoskyView(): JSX.Element {
                     )}
                   </Box>
                   <Box sx={{ flexGrow: 1 }} />
+                  {shared.length > 0 && (
+                    <Tooltip
+                      title={`Shares ${shared.length} item${shared.length === 1 ? '' : 's'} with other Sky quests — expand for details`}
+                    >
+                      <Chip
+                        size="small"
+                        variant="outlined"
+                        color="info"
+                        icon={<LinkIcon />}
+                        label={shared.length}
+                        sx={{ height: 20, fontSize: 11, '& .MuiChip-icon': { fontSize: 14 } }}
+                      />
+                    </Tooltip>
+                  )}
                   {q.completed ? (
                     <Chip size="small" color="success" variant="outlined" label="Turned in" />
                   ) : (
@@ -333,6 +406,13 @@ export default function PoskyView(): JSX.Element {
                   {q.rewardStats}
                 </Typography>
               )}
+              {shared.length > 0 && (
+                <SharedItemsSection
+                  shared={shared}
+                  ambiguousNames={ambiguousQuestNames}
+                  onSelectQuest={(name) => setQuery(name)}
+                />
+              )}
               <Table size="small">
                 <TableHead>
                   <TableRow>
@@ -368,7 +448,8 @@ export default function PoskyView(): JSX.Element {
               </Table>
             </AccordionDetails>
           </Accordion>
-        ))}
+          )
+        })}
         {filtered.length > visibleCount && (
           <Box sx={{ textAlign: 'center', py: 1.5 }}>
             <Button variant="outlined" size="small" onClick={() => setVisibleCount((n) => n + PAGE)}>

@@ -15,6 +15,7 @@ import { itemCountKey, normalizeItemName } from '../../lib/itemName'
 import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
+import { ambiguousQuestNames, computeSharedItems, type SharedItemsMap } from './sharedItems'
 
 const applyLootDelta = (s: LootSnap, d: LootDelta): LootSnap => [...s, ...d.appended]
 const applyTurnInDelta = (s: TurnInSnap, d: TurnInDelta): TurnInSnap => [...s, ...d.appended]
@@ -22,6 +23,12 @@ const EMPTY_LOOT: LootEvent[] = []
 const EMPTY_TURNINS: TurnInEvent[] = []
 
 const posky = getPoskyData()
+
+// "Shared items with" (Task #44): which OTHER quests contend for each quest's
+// required items (normalized, Wind Runes excluded). The quest set is static bundled
+// data, so this is derived ONCE at module load, not per render.
+const sharedItemsMap: SharedItemsMap = computeSharedItems(posky.quests)
+const ambiguousNames = ambiguousQuestNames(posky.quests)
 
 const COUNT_SOURCE_KEY = 'eq.countSource'
 
@@ -122,6 +129,10 @@ export interface UseProgress {
   reloadInventory: () => Promise<string>
   setQuestComplete: (key: string, complete: boolean) => Promise<void>
   inventoryInfo: ProgressState['inventorySource']
+  /** questKey → contested items (other quests sharing each required item). */
+  sharedItems: SharedItemsMap
+  /** quest names that occur under >1 class (chips class-prefix only these). */
+  ambiguousQuestNames: Set<string>
 }
 
 export function useProgress(): UseProgress {
@@ -249,6 +260,8 @@ export function useProgress(): UseProgress {
     setCountSource,
     reloadInventory,
     setQuestComplete,
-    inventoryInfo: progress?.inventorySource
+    inventoryInfo: progress?.inventorySource,
+    sharedItems: sharedItemsMap,
+    ambiguousQuestNames: ambiguousNames
   }
 }

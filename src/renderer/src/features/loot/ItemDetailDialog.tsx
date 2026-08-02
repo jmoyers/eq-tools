@@ -13,6 +13,7 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import type { LootEvent } from '@shared/types'
+import { formatDate } from '../../lib/formatDate'
 
 function StatCard({ label, value, hint }: { label: string; value: string; hint?: string }): JSX.Element {
   return (
@@ -79,7 +80,7 @@ function Timeline({ events }: { events: LootEvent[] }): JSX.Element {
   const W = 640
   const H = 60
   const bw = W / bins.counts.length
-  const fmt = (ms: number): string => new Date(ms).toLocaleDateString()
+  const fmt = (ms: number): string => formatDate(ms)
   return (
     <Box>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">

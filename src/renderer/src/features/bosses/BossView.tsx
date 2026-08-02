@@ -18,10 +18,8 @@ import { getBossData } from '../../data'
 import { useBossKills } from './useBossKills'
 import type { TargetStatus } from './bossStatus'
 import Confetti from './Confetti'
-
-const TIER_SHORT = ['D0', 'D1', 'D2', 'D3', 'D4']
-const TIER_LONG = ['D0 · base', 'D1 · Awakened', 'D2 · Adaptive', 'D3 · Fused', 'D4 · Refined']
-const TIER_COLOR = ['#7a7a7a', '#5fbf72', '#6fb3d2', '#b07fd0', '#e0a94a']
+import { tierStyle } from '../../lib/tierChip'
+import { formatDate, formatDateTime } from '../../lib/formatDate'
 
 // EQL raid progression order.
 const CATEGORY_ORDER = ['Open World', 'Plane of Fear', 'Plane of Hate', 'Plane of Sky']
@@ -87,7 +85,8 @@ function BossImage({
 
 function TargetCard({ s, compact, flash }: { s: TargetStatus; compact: boolean; flash?: boolean }): JSX.Element {
   const imgH = compact ? 70 : 120
-  const tierColor = TIER_COLOR[s.bestTier]
+  const tier = tierStyle(s.bestTier)
+  const tierColor = tier.bg
   return (
     <Paper
       variant="outlined"
@@ -116,8 +115,8 @@ function TargetCard({ s, compact, flash }: { s: TargetStatus; compact: boolean; 
             width: 20,
             height: 20,
             borderRadius: '50%',
-            bgcolor: tierColor,
-            color: '#fff',
+            bgcolor: tier.bg,
+            color: tier.fg,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -129,17 +128,17 @@ function TargetCard({ s, compact, flash }: { s: TargetStatus; compact: boolean; 
       )}
       <Box sx={{ position: 'relative' }}>
         <BossImage target={s.target} height={imgH} dim={!s.killed} />
-        <Tooltip title={s.killed ? TIER_LONG[s.bestTier] : 'Not defeated'}>
+        <Tooltip title={s.killed ? tier.long : 'Not defeated'}>
           <Chip
             size="small"
-            label={s.killed ? TIER_SHORT[s.bestTier] : 'not defeated'}
+            label={s.killed ? tier.label : 'not defeated'}
             sx={{
               position: 'absolute',
               top: 4,
               right: 4,
               height: 20,
-              bgcolor: s.killed ? tierColor : 'rgba(0,0,0,0.65)',
-              color: '#fff',
+              bgcolor: s.killed ? tier.bg : 'rgba(0,0,0,0.65)',
+              color: s.killed ? tier.fg : '#fff',
               fontWeight: 700,
               fontSize: 11,
               '& .MuiChip-label': { px: 0.75 }
@@ -162,10 +161,18 @@ function TargetCard({ s, compact, flash }: { s: TargetStatus; compact: boolean; 
           </Typography>
         )}
         {s.killed ? (
-          <Typography variant="caption" color="text.secondary" noWrap display="block">
-            {new Date(s.firstTs).toLocaleDateString()}
-            {!compact && ` · ${s.count} kill${s.count === 1 ? '' : 's'}`}
-          </Typography>
+          <Tooltip
+            title={
+              s.firstTs && s.firstTs !== s.lastTs
+                ? `First ${formatDateTime(s.firstTs)} · Last ${formatDateTime(s.lastTs)}`
+                : `Defeated ${formatDateTime(s.lastTs || s.firstTs)}`
+            }
+          >
+            <Typography variant="caption" color="text.secondary" noWrap display="block">
+              {formatDate(s.lastTs || s.firstTs)}
+              {!compact && ` · ${s.count} kill${s.count === 1 ? '' : 's'}`}
+            </Typography>
+          </Tooltip>
         ) : (
           !compact && (
             <Typography variant="caption" color="text.disabled" display="block">

@@ -18,6 +18,7 @@ import {
 import CircleIcon from '@mui/icons-material/Circle'
 import PetsIcon from '@mui/icons-material/Pets'
 import { LIVE, useCombat } from './useCombat'
+import { formatTime } from '../../lib/formatDate'
 import type { ClassifiedLine, SegmentView, SourceView } from '@shared/combat'
 
 const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
@@ -39,7 +40,7 @@ function fmtDur(sec: number): string {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 }
 function fmtClock(ts: number): string {
-  return new Date(ts).toLocaleTimeString([], { hour12: false })
+  return formatTime(ts)
 }
 
 function Bar({

@@ -21,6 +21,7 @@ import type { CountSource } from '@shared/types'
 import { useProgress } from '../posky/useProgress'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
+import { formatDateTime, formatTime } from '../../lib/formatDate'
 
 const MAX_ROWS = 600
 
@@ -99,10 +100,12 @@ export default function InventoryView(): JSX.Element {
       <Typography variant="body2" color="text.secondary">
         {totals.items.toLocaleString()} distinct items · {totals.net.toLocaleString()} net held ·{' '}
         {totals.consumed.toLocaleString()} consumed by turn-ins
-        {inventoryInfo ? ` · export loaded ${new Date(inventoryInfo.loadedAt).toLocaleString()}` : ' · no export loaded'}
+        {inventoryInfo
+          ? ` · export loaded ${formatDateTime(new Date(inventoryInfo.loadedAt).getTime())}`
+          : ' · no export loaded'}
         {autoUpdatedAt && (
           <Typography component="span" variant="body2" sx={{ color: 'success.main' }}>
-            {' '}· auto-updated {new Date(autoUpdatedAt).toLocaleTimeString()}
+            {' '}· auto-updated {formatTime(autoUpdatedAt)}
           </Typography>
         )}
       </Typography>
