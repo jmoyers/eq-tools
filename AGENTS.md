@@ -303,7 +303,7 @@ first-run provisioning.
 
 - Azure signing: waiting on Microsoft identity validation → cert profile +
   app registration + repo secrets.
-- Windows Sandbox: feature re-staged; materializes next reboot → run the
-  .wsb harness against a FRESH installer build.
+- Windows Sandbox: WORKING (validated 2026-08-02, 7/7 PASS incl. clean
+  uninstall) — the .wsb harness is the standard pre-ship clean-machine gate.
 - Not yet parsed: Dragon Hoard / tradeskill depot / combine loot lines.
   Group-member combat tracking: future scope.
