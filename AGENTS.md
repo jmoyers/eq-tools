@@ -131,11 +131,20 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    invent): main/off-hand; double/triple attack (same-second rounds
    heuristic only); ground pickups (NO line exists — the loot family is the
    only item-acquisition line); self-buff fades (only wears-off emotes);
-   mob HP (fight names use "most damage absorbed", a labeled proxy).
+   mob HP. Fight NAMING (Task #54): a LIVE fight is named after the CURRENT
+   target (most recent outgoing target — the mob in front of you); on FINALIZE
+   it switches to the LARGEST target ("most damage absorbed", a labeled proxy).
+   Both keep the '+N' others suffix. `encounterName(e, live)`.
 7. **Encounters close on evidence**: all engaged instances dead (+~5s
    linger); live CC (mez lines) holds fights open indefinitely; ~60s idle
    fallback for fled mobs. DPS = damage/(lastHit−firstHit); active-time
-   DPS is the secondary stat.
+   DPS is the secondary stat. A zone change FINALIZES the live zone aggregate
+   into a capped HISTORY (Task #54; last 20 sessions — frozen agg + timing +
+   memoized summary, NO per-event rings, ~0.6MB full-log) instead of discarding
+   it, so a past zone's overall meter stays selectable; the snapshot exposes
+   `zoneSessions` (live first, id 'zone'; finalized 'zs<n>') and buildSelected
+   accepts a session id. Selector rows (main + overlay) carry disambiguation
+   timing: start clock (formatDate) · coarse live-updating age · duration.
 8. **Miss/resist are first-class, damage-free** (Task #51 v2): a miss
    (avoided melee swing) and a resist (fully-resisted spell) attach to the
    fresh encounter + zone aggregate with the SAME attribution as damage
@@ -211,9 +220,12 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   `searchKey` computed once per data change; long fixed-height lists
   windowed via `lib/useWindowedRows`, variable-height cap+paginate. These
   surfaces are RENDER-bound (<1ms compute) — no workers/DBs.
-- Formatting: `21.7k dps` / `2.3M dps` (word after number, k/M scaling).
-  Dates/times through `lib/formatDate` (user-local; never UTC or epoch-day
-  math). Tier chips via `lib/tierChip` (dark fg on tier bg, WCAG AA).
+- Formatting: rates `21.7k dps` / `2.3M dps` (word 'dps' after number, k/M
+  scaling); totals keep k/M with NO unit word. ONE source: `lib/formatRate`
+  (`formatRate`/`formatNum`) — every meter/overlay/drill-down/tooltip uses it,
+  NO `/s` anywhere (Task #54 sweep). Dates/times through `lib/formatDate`
+  (user-local; never UTC or epoch-day math). Tier chips via `lib/tierChip`
+  (dark fg on tier bg, WCAG AA).
 - Celebrations (confetti/sound) fire EXACTLY ONCE on live transitions;
   hydration seeds a silent baseline; manual actions never celebrate.
 
@@ -234,7 +246,14 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   discovery, Settings-gear override, ONE resolver.
 - Overlay: Electron suffices for windowed/borderless EQ; exclusive
   fullscreen cannot be overlaid by anything (native-helper escape hatch:
-  feed it the same snapshot IPC).
+  feed it the same snapshot IPC). Two spawnable KINDS (Task #54) — 'fight'
+  (current-fight meter + FIGHT selector) and 'overall' (zone meter + ZONE-
+  session selector) — one overlay.html bundle, kind read from `?kind=` on the
+  URL; each has its own persisted config (`store overlays.<kind>`) and can run
+  simultaneously. All overlay IPC channels take the kind as their first arg;
+  `onOverlayState` payload is `{kind, open}`. Interactive mode adds a dense
+  selector + a mini drill-down (bar→category→skill, back-chevron); locked mode
+  stays fully click-through (no drilling).
 
 ## Known open items
 

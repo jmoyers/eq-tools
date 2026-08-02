@@ -21,7 +21,7 @@ import type {
   SpellCatalog
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
-import type { UpdateChannel, UpdateStatus } from '../shared/types'
+import type { OverlayKind, UpdateChannel, UpdateStatus } from '../shared/types'
 
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
@@ -194,14 +194,14 @@ const api = {
   setUpdateChannel: (channel: UpdateChannel): Promise<UpdateChannel> =>
     ipcRenderer.invoke(IPC.setUpdateChannel, channel),
 
-  // ---- floating overlay DPS meter (Task #52) ----
-  /** Toggle the overlay window; resolves to the resulting open-state. */
-  toggleOverlay: (): Promise<boolean> => ipcRenderer.invoke(IPC.overlayToggle),
-  /** Read whether the overlay is currently open. */
-  getOverlayState: (): Promise<boolean> => ipcRenderer.invoke(IPC.overlayGetState),
-  /** Subscribe to overlay open-state changes (so the toggle button stays in sync). */
-  onOverlayState: (cb: (open: boolean) => void): (() => void) => {
-    const listener = (_e: unknown, open: boolean): void => cb(open)
+  // ---- floating overlay DPS meters (Task #52; per-kind in Task #54) ----
+  /** Toggle a kind's overlay window; resolves to the resulting open-state. */
+  toggleOverlay: (kind: OverlayKind): Promise<boolean> => ipcRenderer.invoke(IPC.overlayToggle, kind),
+  /** Read the open-state map for all overlay kinds. */
+  getOverlayState: (): Promise<Record<OverlayKind, boolean>> => ipcRenderer.invoke(IPC.overlayGetState),
+  /** Subscribe to overlay open-state changes (so the TitleBar menu stays in sync). Payload {kind, open}. */
+  onOverlayState: (cb: (s: { kind: OverlayKind; open: boolean }) => void): (() => void) => {
+    const listener = (_e: unknown, s: { kind: OverlayKind; open: boolean }): void => cb(s)
     ipcRenderer.on(IPC.onOverlayState, listener)
     return () => ipcRenderer.removeListener(IPC.onOverlayState, listener)
   },

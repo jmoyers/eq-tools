@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
-import { Box, Chip, ListSubheader, MenuItem, Select, Typography } from '@mui/material'
+import { useEffect, useRef, useState } from 'react'
+import { Box, Checkbox, Chip, ListItemText, ListSubheader, Menu, MenuItem, Select, Typography } from '@mui/material'
 import CircleIcon from '@mui/icons-material/Circle'
 import MinimizeIcon from '@mui/icons-material/Remove'
 import CropSquareIcon from '@mui/icons-material/CropSquare'
 import FilterNoneIcon from '@mui/icons-material/FilterNone'
 import CloseIcon from '@mui/icons-material/Close'
 import PictureInPictureAltIcon from '@mui/icons-material/PictureInPictureAlt'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Tooltip from '@mui/material/Tooltip'
-import type { CharacterRef } from '@shared/types'
+import type { CharacterRef, OverlayKind } from '@shared/types'
 
 /**
  * Frameless window title bar (Task #23). Replaces BOTH the OS chrome and the old
@@ -99,15 +100,23 @@ export default function TitleBar({
   onOpenSettings
 }: TitleBarProps): JSX.Element {
   const [maximized, setMaximized] = useState(false)
-  // Overlay open-state (Task #52): reflected on the toggle button, kept in sync with
-  // pushes so it updates if the overlay closes itself (its own close button).
-  const [overlayOpen, setOverlayOpen] = useState(false)
+  // Per-kind overlay open-state (Task #52; two kinds in Task #54): reflected on the compact
+  // Overlay menu, kept in sync with pushes so it updates if an overlay closes itself.
+  const [overlayState, setOverlayState] = useState<Record<OverlayKind, boolean>>({
+    fight: false,
+    overall: false
+  })
+  const [overlayMenuAnchor, setOverlayMenuAnchor] = useState<HTMLElement | null>(null)
+  const overlayBtnRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => window.eq.onWindowMaximized(setMaximized), [])
   useEffect(() => {
-    void window.eq.getOverlayState().then(setOverlayOpen)
-    return window.eq.onOverlayState(setOverlayOpen)
+    void window.eq.getOverlayState().then(setOverlayState)
+    return window.eq.onOverlayState(({ kind, open }) =>
+      setOverlayState((s) => ({ ...s, [kind]: open }))
+    )
   }, [])
+  const anyOverlayOpen = overlayState.fight || overlayState.overall
 
   // Double-click on the drag region toggles maximize (native-ish behavior). We
   // guard against double-clicks that originate on an interactive child by only
@@ -145,28 +154,31 @@ export default function TitleBar({
 
       {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
 
-      {/* Floating DPS overlay toggle (Task #52). Active-state tinted so the user can
-          see the overlay is open even when it's off-screen / behind the game. */}
+      {/* Floating DPS overlay menu (Task #52; two kinds in Task #54). A compact menu toggles the
+          'fight' and 'overall' overlay windows independently; the button is active-tinted when
+          either is open so the user knows an overlay is live even off-screen / behind the game. */}
       <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center' }}>
-        <Tooltip title={overlayOpen ? 'Hide floating DPS overlay' : 'Show floating DPS overlay'}>
+        <Tooltip title="Floating DPS overlays">
           <Box
             component="button"
             type="button"
-            aria-label="Toggle DPS overlay"
-            aria-pressed={overlayOpen}
-            onClick={() => void window.eq.toggleOverlay()}
+            ref={overlayBtnRef}
+            aria-label="Floating DPS overlays"
+            aria-haspopup="true"
+            aria-expanded={overlayMenuAnchor != null}
+            onClick={() => setOverlayMenuAnchor(overlayBtnRef.current)}
             sx={{
               WebkitAppRegion: 'no-drag',
               display: 'flex',
               alignItems: 'center',
-              gap: 0.5,
+              gap: 0.25,
               height: 26,
               px: 1,
               borderRadius: 1,
               border: '1px solid',
-              borderColor: overlayOpen ? 'primary.main' : 'divider',
-              bgcolor: overlayOpen ? 'rgba(217,178,95,0.14)' : 'transparent',
-              color: overlayOpen ? 'primary.main' : 'text.secondary',
+              borderColor: anyOverlayOpen ? 'primary.main' : 'divider',
+              bgcolor: anyOverlayOpen ? 'rgba(217,178,95,0.14)' : 'transparent',
+              color: anyOverlayOpen ? 'primary.main' : 'text.secondary',
               cursor: 'pointer',
               outline: 'none',
               transition: 'background-color 120ms, color 120ms, border-color 120ms',
@@ -178,8 +190,25 @@ export default function TitleBar({
             <Typography variant="caption" sx={{ fontWeight: 600 }}>
               Overlay
             </Typography>
+            <ArrowDropDownIcon />
           </Box>
         </Tooltip>
+        <Menu
+          anchorEl={overlayMenuAnchor}
+          open={overlayMenuAnchor != null}
+          onClose={() => setOverlayMenuAnchor(null)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        >
+          <MenuItem dense onClick={() => void window.eq.toggleOverlay('fight')}>
+            <Checkbox size="small" edge="start" checked={overlayState.fight} tabIndex={-1} disableRipple />
+            <ListItemText primary="Fight meter" secondary="Current fight + fight selector" />
+          </MenuItem>
+          <MenuItem dense onClick={() => void window.eq.toggleOverlay('overall')}>
+            <Checkbox size="small" edge="start" checked={overlayState.overall} tabIndex={-1} disableRipple />
+            <ListItemText primary="Zone meter" secondary="Zone total + zone selector" />
+          </MenuItem>
+        </Menu>
       </Box>
 
       {/* Interactive controls opt out of the drag region. */}

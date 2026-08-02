@@ -51,7 +51,6 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
 import HistoryIcon from '@mui/icons-material/History'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import type {
   AlertDef,
   AlertFireRecord,
@@ -778,17 +777,6 @@ export default function AlertsView(): JSX.Element {
           >
             Reset to defaults
           </Button>
-          <Button
-            startIcon={<AutoAwesomeIcon />}
-            variant="outlined"
-            size="small"
-            onClick={() => setSuggestOpen(true)}
-          >
-            Suggest…
-          </Button>
-          <Button startIcon={<AddIcon />} variant="contained" size="small" onClick={openAdd}>
-            Add alert
-          </Button>
         </Stack>
       </Paper>
 
@@ -883,6 +871,17 @@ export default function AlertsView(): JSX.Element {
               </Paper>
             )
           })}
+
+          {/* Single add flow (Task #54): 'Add from suggestion' sits BELOW the last alert and opens
+              the suggestion picker, which itself carries a 'create manually' escape hatch. */}
+          <Button
+            startIcon={<AddIcon />}
+            variant="outlined"
+            onClick={() => setSuggestOpen(true)}
+            sx={{ alignSelf: 'flex-start', mt: 0.5 }}
+          >
+            Add from suggestion…
+          </Button>
         </Stack>
       </Box>
 
@@ -909,6 +908,11 @@ export default function AlertsView(): JSX.Element {
         onClose={() => setSuggestOpen(false)}
         onCreate={persistAlerts}
         onDelete={removeAlert}
+        onCreateManually={() => {
+          // Escape hatch: close the picker and open the blank manual editor.
+          setSuggestOpen(false)
+          openAdd()
+        }}
       />
 
       <Dialog open={confirmReset} onClose={() => setConfirmReset(false)} maxWidth="xs">

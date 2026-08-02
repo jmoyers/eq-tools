@@ -69,13 +69,16 @@ import type {
   CharacterRef,
   EqConfig,
   OverlayConfig,
+  OverlayKind,
   PackInstallProgress
 } from '../shared/types'
+import { OVERLAY_KINDS } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
-// The floating DPS-meter overlay (Task #52): a separate transparent, frameless,
-// always-on-top window created on demand. Null when closed.
-let overlayWindow: BrowserWindow | null = null
+// The floating DPS-meter overlays (Task #52; two kinds in Task #54): separate transparent,
+// frameless, always-on-top windows created on demand — one 'fight' (current-fight meter), one
+// 'overall' (zone meter). Both can be open at once. Null when the given kind is closed.
+const overlayWindows: Record<OverlayKind, BrowserWindow | null> = { fight: null, overall: null }
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
 let inventoryWatcher: FSWatcher | null = null
@@ -340,10 +343,13 @@ function createWindow(): void {
   // open-state is left intact (open:true) so the next launch restores it — we skip
   // the 'closed' handler that would otherwise flip open:false.
   mainWindow.on('close', () => {
-    if (overlayWindow && !overlayWindow.isDestroyed()) {
-      overlayWindow.removeAllListeners('closed')
-      overlayWindow.destroy()
-      overlayWindow = null
+    for (const kind of OVERLAY_KINDS) {
+      const w = overlayWindows[kind]
+      if (w && !w.isDestroyed()) {
+        w.removeAllListeners('closed')
+        w.destroy()
+        overlayWindows[kind] = null
+      }
     }
   })
 
@@ -360,48 +366,61 @@ function createWindow(): void {
   }
 }
 
-// ---- Floating overlay DPS meter (Task #52) ----
+// ---- Floating overlay DPS meters (Task #52; two kinds in Task #54) ----
 //
-// A separate BrowserWindow that sits transparent + always-on-top over the game.
-// EQ Legends runs windowed/borderless, where an always-on-top overlay composites
-// fine (see AGENTS.md; fullscreen-EXCLUSIVE would defeat it, but that's not the
-// default). No native helper app is needed — Electron's transparent/frameless +
-// setAlwaysOnTop('screen-saver') + setIgnoreMouseEvents(forward) covers it.
+// Separate BrowserWindows that sit transparent + always-on-top over the game. EQ Legends runs
+// windowed/borderless, where an always-on-top overlay composites fine (see AGENTS.md;
+// fullscreen-EXCLUSIVE would defeat it, but that's not the default). No native helper app is
+// needed — Electron's transparent/frameless + setAlwaysOnTop('screen-saver') +
+// setIgnoreMouseEvents(forward) covers it.
 //
-// Two interaction modes, persisted in `overlay.locked`:
-//   - interactive: normal focusable window, -webkit-app-region drag on the header,
-//     resize edges, close/config controls visible.
+// Two KINDS (Task #54), each an independent window with its own persisted config:
+//   - 'fight'   : current-fight meter + FIGHT selector.
+//   - 'overall' : zone meter + ZONE-session selector.
+// Both can be open simultaneously. The overlay renderer reads its kind from the ?kind= query on
+// its URL so a single overlay.html bundle serves both windows.
+//
+// Two interaction modes per window, persisted in that kind's `locked`:
+//   - interactive: normal focusable window, -webkit-app-region drag on the header, resize
+//     edges, close/config controls + selector + drill-down visible.
 //   - locked (click-through): mouse events pass through to the game via
-//     setIgnoreMouseEvents(true, {forward:true}); the renderer's hover sensor toggles
-//     capture back on (forward keeps mouse-move events flowing so hover still fires)
-//     so the hover-revealed pin button stays clickable. Never steals focus.
+//     setIgnoreMouseEvents(true, {forward:true}); the renderer's hover sensor toggles capture
+//     back on so the hover-revealed pin stays clickable. Never steals focus. No drilling.
 
-/** Apply the locked/interactive mouse + focus behavior to the overlay window. */
-function applyOverlayLocked(locked: boolean): void {
-  if (!overlayWindow || overlayWindow.isDestroyed()) return
+/** Apply the locked/interactive mouse + focus behavior to a kind's overlay window. */
+function applyOverlayLocked(kind: OverlayKind, locked: boolean): void {
+  const w = overlayWindows[kind]
+  if (!w || w.isDestroyed()) return
   if (locked) {
     // Pass clicks through to the game; forward:true keeps mouse-move events so the
     // renderer's hover sensor can re-enable capture over the pin button.
-    overlayWindow.setIgnoreMouseEvents(true, { forward: true })
-    overlayWindow.setFocusable(false)
+    w.setIgnoreMouseEvents(true, { forward: true })
+    w.setFocusable(false)
   } else {
-    overlayWindow.setIgnoreMouseEvents(false)
-    overlayWindow.setFocusable(true)
+    w.setIgnoreMouseEvents(false)
+    w.setFocusable(true)
   }
 }
 
-function createOverlayWindow(): void {
-  if (overlayWindow && !overlayWindow.isDestroyed()) {
-    overlayWindow.show()
+/** Default window size per kind (the 'overall' window is a touch taller for its zone selector). */
+const OVERLAY_DEFAULT_SIZE: Record<OverlayKind, { width: number; height: number }> = {
+  fight: { width: 320, height: 220 },
+  overall: { width: 340, height: 240 }
+}
+
+function createOverlayWindow(kind: OverlayKind): void {
+  const existing = overlayWindows[kind]
+  if (existing && !existing.isDestroyed()) {
+    existing.show()
     return
   }
-  const cfg = getOverlayConfig()
-  overlayWindow = new BrowserWindow({
-    ...(cfg.bounds ?? { width: 320, height: 200 }),
+  const cfg = getOverlayConfig(kind)
+  const w = new BrowserWindow({
+    ...(cfg.bounds ?? OVERLAY_DEFAULT_SIZE[kind]),
     minWidth: 200,
     minHeight: 90,
-    maxWidth: 640,
-    maxHeight: 720,
+    maxWidth: 720,
+    maxHeight: 820,
     show: false,
     frame: false,
     transparent: true,
@@ -413,19 +432,20 @@ function createOverlayWindow(): void {
     // translucency (per-element alpha beats window-level setOpacity).
     backgroundColor: '#00000000',
     hasShadow: false,
-    title: 'DPS Overlay',
+    title: kind === 'fight' ? 'Fight Overlay' : 'Zone Overlay',
     webPreferences: {
       preload: join(__dirname, '../preload/overlay.js'),
       sandbox: false,
       contextIsolation: true
     }
   })
+  overlayWindows[kind] = w
 
   // Always-on-top at the screen-saver level so it floats above ordinary windows
   // (and the borderless game). Re-assert after show for reliability on Windows.
-  overlayWindow.setAlwaysOnTop(true, 'screen-saver')
+  w.setAlwaysOnTop(true, 'screen-saver')
 
-  const wc = overlayWindow.webContents
+  const wc = w.webContents
   wc.on('preload-error', (_e, preloadPath, error) =>
     logError('overlay:preload-error', { preloadPath, error })
   )
@@ -434,49 +454,56 @@ function createOverlayWindow(): void {
     logError('overlay:console', { level, message, source: `${sourceId}:${line}` })
   })
 
-  overlayWindow.on('ready-to-show', () => {
-    if (!overlayWindow) return
+  w.on('ready-to-show', () => {
     // showInactive so opening the overlay never steals focus from the game.
-    overlayWindow.showInactive()
-    overlayWindow.setAlwaysOnTop(true, 'screen-saver')
-    applyOverlayLocked(getOverlayConfig().locked)
+    w.showInactive()
+    w.setAlwaysOnTop(true, 'screen-saver')
+    applyOverlayLocked(kind, getOverlayConfig(kind).locked)
   })
 
   // Persist position + size so the overlay restores where the user left it.
   const saveOverlayBounds = (): void => {
-    if (overlayWindow && !overlayWindow.isDestroyed()) {
-      setOverlayConfig({ bounds: overlayWindow.getBounds() })
-    }
+    if (!w.isDestroyed()) setOverlayConfig(kind, { bounds: w.getBounds() })
   }
-  overlayWindow.on('moved', saveOverlayBounds)
-  overlayWindow.on('resized', saveOverlayBounds)
+  w.on('moved', saveOverlayBounds)
+  w.on('resized', saveOverlayBounds)
 
-  overlayWindow.on('closed', () => {
-    overlayWindow = null
-    setOverlayConfig({ open: false })
-    // Tell the main app so the TitleBar toggle reflects the closed state.
-    mainWindow?.webContents.send(IPC.onOverlayState, false)
+  w.on('closed', () => {
+    overlayWindows[kind] = null
+    setOverlayConfig(kind, { open: false })
+    // Tell the main app so the TitleBar overlay menu reflects the closed state.
+    mainWindow?.webContents.send(IPC.onOverlayState, { kind, open: false })
   })
 
   const rendererUrl = process.env['ELECTRON_RENDERER_URL']
   if (rendererUrl) {
-    void overlayWindow.loadURL(`${rendererUrl}/overlay.html`)
+    void w.loadURL(`${rendererUrl}/overlay.html?kind=${kind}`)
   } else {
-    void overlayWindow.loadFile(join(__dirname, '../renderer/overlay.html'))
+    void w.loadFile(join(__dirname, '../renderer/overlay.html'), { search: `kind=${kind}` })
   }
 }
 
-/** Open/close the overlay and persist + broadcast the new open-state. Returns it. */
-function setOverlayOpen(open: boolean): boolean {
+/** Open/close a kind's overlay and persist + broadcast its new open-state. Returns it. */
+function setOverlayOpen(kind: OverlayKind, open: boolean): boolean {
+  const w = overlayWindows[kind]
   if (open) {
-    createOverlayWindow()
-  } else if (overlayWindow && !overlayWindow.isDestroyed()) {
-    overlayWindow.close() // 'closed' handler resets state + persists open:false
+    createOverlayWindow(kind)
+  } else if (w && !w.isDestroyed()) {
+    w.close() // 'closed' handler resets state + persists open:false + broadcasts
   }
-  const isOpen = !!(overlayWindow && !overlayWindow.isDestroyed())
-  setOverlayConfig({ open: isOpen })
-  mainWindow?.webContents.send(IPC.onOverlayState, isOpen)
+  const isOpen = !!(overlayWindows[kind] && !overlayWindows[kind]!.isDestroyed())
+  setOverlayConfig(kind, { open: isOpen })
+  mainWindow?.webContents.send(IPC.onOverlayState, { kind, open: isOpen })
   return isOpen
+}
+
+/** Current open-state map across all overlay kinds (for the TitleBar menu). */
+function overlayStateMap(): Record<OverlayKind, boolean> {
+  const out = { fight: false, overall: false } as Record<OverlayKind, boolean>
+  for (const kind of OVERLAY_KINDS) {
+    out[kind] = !!(overlayWindows[kind] && !overlayWindows[kind]!.isDestroyed())
+  }
+  return out
 }
 
 /** Resolve which character to track on launch: last selected, else most recent. */
@@ -826,35 +853,35 @@ function registerIpc(): void {
   })
   ipcMain.on(IPC.windowClose, () => mainWindow?.close())
 
-  // ---- floating overlay DPS meter (Task #52) ----
-  // Toggle from the main app's TitleBar; returns the resulting open-state.
-  ipcMain.handle(IPC.overlayToggle, () => {
-    const isOpen = !!(overlayWindow && !overlayWindow.isDestroyed())
-    return setOverlayOpen(!isOpen)
+  // ---- floating overlay DPS meters (Task #52; per-kind in Task #54) ----
+  // Toggle a kind from the main app's TitleBar menu; returns the resulting open-state.
+  ipcMain.handle(IPC.overlayToggle, (_e, kind: OverlayKind) => {
+    const isOpen = !!(overlayWindows[kind] && !overlayWindows[kind]!.isDestroyed())
+    return setOverlayOpen(kind, !isOpen)
   })
-  ipcMain.handle(IPC.overlayGetState, () => !!(overlayWindow && !overlayWindow.isDestroyed()))
-  ipcMain.handle(IPC.overlayGetConfig, () => getOverlayConfig())
-  ipcMain.handle(IPC.overlaySetConfig, (_e, patch: Partial<OverlayConfig>) => {
-    const next = setOverlayConfig(patch ?? {})
-    // Echo the merged config to the overlay so its UI stays in sync if the change
-    // originated elsewhere (currently only the overlay writes, but this keeps the
-    // contract honest and cheap).
-    overlayWindow?.webContents.send(IPC.onOverlayConfig, next)
+  ipcMain.handle(IPC.overlayGetState, () => overlayStateMap())
+  ipcMain.handle(IPC.overlayGetConfig, (_e, kind: OverlayKind) => getOverlayConfig(kind))
+  ipcMain.handle(IPC.overlaySetConfig, (_e, kind: OverlayKind, patch: Partial<OverlayConfig>) => {
+    const next = setOverlayConfig(kind, patch ?? {})
+    // Echo the merged config to that kind's overlay window so its UI stays in sync if the change
+    // originated elsewhere (keeps the contract honest and cheap).
+    overlayWindows[kind]?.webContents.send(IPC.onOverlayConfig, { kind, config: next })
     return next
   })
   // Locked (click-through) vs interactive. Persist + apply to the live window.
-  ipcMain.on(IPC.overlaySetLocked, (_e, locked: boolean) => {
-    setOverlayConfig({ locked: !!locked })
-    applyOverlayLocked(!!locked)
+  ipcMain.on(IPC.overlaySetLocked, (_e, kind: OverlayKind, locked: boolean) => {
+    setOverlayConfig(kind, { locked: !!locked })
+    applyOverlayLocked(kind, !!locked)
   })
   // Fine-grained pass-through toggle from the overlay's hover sensor (locked mode).
   // forward:true so mouse-move keeps flowing and the sensor can flip capture back.
-  ipcMain.on(IPC.overlaySetIgnoreMouse, (_e, ignore: boolean) => {
-    if (!overlayWindow || overlayWindow.isDestroyed()) return
-    if (ignore) overlayWindow.setIgnoreMouseEvents(true, { forward: true })
-    else overlayWindow.setIgnoreMouseEvents(false)
+  ipcMain.on(IPC.overlaySetIgnoreMouse, (_e, kind: OverlayKind, ignore: boolean) => {
+    const w = overlayWindows[kind]
+    if (!w || w.isDestroyed()) return
+    if (ignore) w.setIgnoreMouseEvents(true, { forward: true })
+    else w.setIgnoreMouseEvents(false)
   })
-  ipcMain.on(IPC.overlayClose, () => setOverlayOpen(false))
+  ipcMain.on(IPC.overlayClose, (_e, kind: OverlayKind) => setOverlayOpen(kind, false))
 
   // Fire-and-forget renderer error reports (window.onerror / unhandledrejection /
   // React ErrorBoundary). `ipcMain.on` (not handle) matches the preload's `send`.
@@ -899,9 +926,11 @@ if (!gotSingleInstanceLock) {
     // no-ops in dev. getMainWindow is lazy so status pushes hit the live window.
     initUpdater(() => mainWindow)
 
-    // Restore the floating overlay (Task #52) if it was open when the app last quit.
-    // Deferred so the main window's did-finish-load can send its initial state first.
-    if (getOverlayConfig().open) createOverlayWindow()
+    // Restore any floating overlay (Task #52; per-kind in Task #54) that was open when the app
+    // last quit. Deferred so the main window's did-finish-load sends its initial state first.
+    for (const kind of OVERLAY_KINDS) {
+      if (getOverlayConfig(kind).open) createOverlayWindow(kind)
+    }
 
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()

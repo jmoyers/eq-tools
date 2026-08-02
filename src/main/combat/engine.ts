@@ -59,7 +59,8 @@ import type {
   StanceSpan,
   StanceState,
   TimelineEvent,
-  TimelineView
+  TimelineView,
+  ZoneSessionSummary
 } from '../../shared/combat'
 
 /**
@@ -308,6 +309,28 @@ class Agg {
   }
 }
 
+/**
+ * A finalized ZONE SESSION (Task #54). When the player zones, the live zoneAgg is frozen into
+ * one of these (kept in a capped ring) instead of being discarded, so a past zone's overall
+ * meter is still selectable. Holds the frozen Agg + timing + accumulated durations, plus a
+ * memoized summary (computed once at finalize — the aggregate is immutable thereafter, mirroring
+ * the Encounter.summary cached-summary pattern).
+ */
+interface ZoneSession {
+  id: string
+  zone: string
+  agg: Agg
+  /** first/last attributed-damage ts (0 if the session saw no damage — those are dropped). */
+  startTs: number
+  lastTs: number
+  /** Σ finalized-encounter wall durations (ms) — the DPS denominator, matching the live path. */
+  finalizedMs: number
+  /** Σ finalized-encounter activeMs. */
+  activeMs: number
+  /** Memoized summary fields (the aggregate is frozen at finalize). */
+  summary: ZoneSessionSummary
+}
+
 interface Encounter {
   id: string
   zone?: string
@@ -345,6 +368,11 @@ interface Encounter {
   /** Stance/invocation spans that overlapped this encounter (Task #51 pinned rows).
    *  Recorded as they change while the encounter is open (absolute ts). */
   stanceSpans: StanceRaw[]
+  /** Display name of the MOST RECENT outgoing-damage target (You or pet → mob), for the
+   *  LIVE encounter name (Task #54): while a fight is open its name tracks whatever you're
+   *  currently swinging at. On FINALIZE the name switches to the largest target (most damage
+   *  absorbed) via encounterName(). undefined until the first outgoing hit lands. */
+  lastOutTarget?: string
 }
 
 /** Internal raw timeline record (absolute ts; converted to relative at snapshot). */
@@ -392,6 +420,10 @@ const FALLBACK_IDLE_MS = 60_000
 const CC_HOLD_MS = 120_000
 const ACTIVE_MS = 3_000
 const RECENT_CAP = 300
+// Zone-session history cap (Task #54): how many FINALIZED zone sessions to retain (the live one
+// is separate). Each holds only frozen aggregate maps + a small summary — no per-event rings — so
+// 20 sessions is a trivial footprint (see the finalize note + the task report).
+const ZONE_HISTORY_CAP = 20
 
 // Timeline (Task #51):
 //   TIMELINE_CAP          — per-encounter event ring size (drop-oldest). Bumped 5k→8k for
@@ -482,6 +514,14 @@ export class CombatEngine {
   private zoneFinalizedMs = 0
   /** Sum of finalized encounters' activeMs this zone (for the zone active-DPS). */
   private zoneActiveMs = 0
+  /** First/last attributed-damage ts in the LIVE zone session (0 = none yet). Task #54: drives
+   *  the zone-session disambiguation timing (start clock + relative age + span). */
+  private zoneStartTs = 0
+  private zoneLastTs = 0
+  /** Capped finalized-zone-session history (Task #54). Each entry keeps its FROZEN Agg + timing +
+   *  a memoized SegmentView-less summary; the live zoneAgg is NOT in here. Newest last. */
+  private zoneHistory: ZoneSession[] = []
+  private zoneSeq = 0
   private recent: ClassifiedLine[] = []
   private recording = false
   /** ts of the last encounter-relevant activity (attributed damage OR a CC event).
@@ -521,6 +561,10 @@ export class CombatEngine {
     this.zoneAgg = new Agg()
     this.zoneFinalizedMs = 0
     this.zoneActiveMs = 0
+    this.zoneStartTs = 0
+    this.zoneLastTs = 0
+    this.zoneHistory = []
+    this.zoneSeq = 0
     this.recent = []
     this.recording = false
     this.lastActivityTs = 0
@@ -561,10 +605,16 @@ export class CombatEngine {
       }
       case 'zone': {
         this.finalizeCurrent()
+        // Freeze the just-left zone's aggregate into the capped history (Task #54) BEFORE
+        // resetting, so its overall meter stays selectable. A zone session with no attributed
+        // damage is dropped (nothing to show), matching the empty-encounter drop rule.
+        this.finalizeZoneSession()
         this.zone = ev.zone
         this.zoneAgg = new Agg()
         this.zoneFinalizedMs = 0
         this.zoneActiveMs = 0
+        this.zoneStartTs = 0
+        this.zoneLastTs = 0
         // Charm cannot survive a zone transition, and hostile mobs don't follow —
         // both are retired. SUMMONED class pets DO persist across zones (real-log
         // verified), so world.zone() returns the survivors and we rebuild the fast
@@ -717,6 +767,10 @@ export class CombatEngine {
     enc.prevDamageTs = ev.ts
     enc.lastTs = ev.ts
     this.lastActivityTs = ev.ts
+    // Zone-session timing (Task #54): first/last attributed damage in this zone session, for the
+    // zone-session summary's disambiguation timing (start clock + relative age + span).
+    if (this.zoneStartTs === 0) this.zoneStartTs = ev.ts
+    this.zoneLastTs = ev.ts
 
     const critMark = ev.crit ? '*' : ''
     if (at.kind === 'incoming') {
@@ -767,6 +821,10 @@ export class CombatEngine {
     this.zoneAgg.bumpTarget(tgtId, tgtName, ev.amount)
     enc.engaged.add(tgtId)
     enc.engagedSeen.set(tgtId, ev.ts)
+    // LIVE-name tracking (Task #54): the current fight is named after whatever you're
+    // presently swinging at (most recent outgoing target). Finalize switches to the
+    // largest target (encounterName()); until then this drives the live label.
+    enc.lastOutTarget = tgtName
     // Timeline: an outgoing instant lanes under the skill/spell name.
     this.pushTimeline(enc, {
       ts: ev.ts, lane: ev.skill, category: ev.category, amount: ev.amount,
@@ -1064,6 +1122,63 @@ export class CombatEngine {
     }
   }
 
+  /**
+   * Freeze the LIVE zone aggregate into the capped history (Task #54), called on a zone change
+   * (and epoch) before the aggregate is reset. Drops a zone session that saw no attributed damage
+   * (nothing to select). The aggregate is immutable once pushed, so we compute + memoize its
+   * summary here (mirroring finalizeCurrent's cached-summary pattern) — snapshot() never rebuilds
+   * it. Also finalizes any still-open current encounter's duration into the session totals via the
+   * caller ordering (finalizeCurrent runs first in the zone handler).
+   */
+  private finalizeZoneSession(): void {
+    if (this.zoneAgg.out.size === 0 && this.zoneAgg.inc.size === 0) return
+    const id = `zs${++this.zoneSeq}`
+    const zone = this.zone ?? 'Session'
+    const total = sumMap(this.zoneAgg.out)
+    const durSec = Math.max(1, this.zoneFinalizedMs / 1000)
+    const session: ZoneSession = {
+      id,
+      zone,
+      agg: this.zoneAgg,
+      startTs: this.zoneStartTs,
+      lastTs: this.zoneLastTs,
+      finalizedMs: this.zoneFinalizedMs,
+      activeMs: this.zoneActiveMs,
+      summary: {
+        id,
+        zone,
+        startTs: this.zoneStartTs,
+        endTs: this.zoneLastTs,
+        total,
+        dps: total / durSec,
+        live: false
+      }
+    }
+    this.zoneHistory.push(session)
+    if (this.zoneHistory.length > ZONE_HISTORY_CAP) this.zoneHistory.shift()
+  }
+
+  /**
+   * The zone-session list for the snapshot (Task #54): the LIVE session first (id 'zone'), then the
+   * finalized history newest-first. The live entry's timing/total is computed fresh; the finalized
+   * ones reuse their memoized summaries.
+   */
+  private zoneSessionSummaries(): ZoneSessionSummary[] {
+    const liveTotal = sumMap(this.zoneAgg.out)
+    const liveDur = this.zoneDurationSec()
+    const live: ZoneSessionSummary = {
+      id: 'zone',
+      zone: this.zone ?? 'Session',
+      startTs: this.zoneStartTs,
+      endTs: 0,
+      total: liveTotal,
+      dps: liveTotal / liveDur,
+      live: true
+    }
+    const finalized = [...this.zoneHistory].reverse().map((s) => s.summary)
+    return [live, ...finalized]
+  }
+
   snapshot(now: number, opts: SnapshotOpts = {}): CombatSnapshot {
     // Encounters can close purely from elapsed time (death-linger / fallback). A
     // snapshot may be the first observation after that threshold, so evaluate the
@@ -1094,7 +1209,8 @@ export class CombatEngine {
     const selectableId =
       opts.selectedId === 'zone' ||
       this.current?.id === opts.selectedId ||
-      this.history.some((h) => h.id === opts.selectedId)
+      this.history.some((h) => h.id === opts.selectedId) ||
+      this.zoneHistory.some((z) => z.id === opts.selectedId)
     const selectedId = opts.selectedId && selectableId ? opts.selectedId : defaultId
     const selected = this.buildSelected(selectedId, now, combinePets)
 
@@ -1108,7 +1224,8 @@ export class CombatEngine {
     const timeline = opts.timeline ? this.buildTimeline(selectedId, now) : undefined
     return {
       selectedId, selected, segments, inCombat, zone: this.zone,
-      charmed: [...this.charmed], recent, stance, timeline
+      charmed: [...this.charmed], recent, stance, timeline,
+      zoneSessions: this.zoneSessionSummaries()
     }
   }
 
@@ -1171,7 +1288,7 @@ export class CombatEngine {
     }))
     return {
       id: e.id,
-      name: encounterName(e),
+      name: encounterName(e, isCurrent),
       durationMs,
       lanes,
       events,
@@ -1188,7 +1305,7 @@ export class CombatEngine {
     return {
       id: e.id,
       kind,
-      name: encounterName(e),
+      name: encounterName(e, kind === 'current'),
       durationSec: dur,
       total,
       dps: total / dur,
@@ -1234,12 +1351,20 @@ export class CombatEngine {
       const zDur = this.zoneDurationSec()
       return this.buildView('zone', 'zone', `${this.zone ?? 'Session'} — overall`, this.zone, this.zoneAgg, zDur, Math.min(zDur, this.zoneActiveSec()), false, combinePets)
     }
+    // A finalized zone SESSION (Task #54): rebuild its full breakdown from the frozen aggregate.
+    const zs = this.zoneHistory.find((z) => z.id === id)
+    if (zs) {
+      const zDur = Math.max(1, zs.finalizedMs / 1000)
+      const zActive = Math.min(zDur, zs.activeMs / 1000)
+      return this.buildView(zs.id, 'zone', `${zs.zone} — overall`, zs.zone, zs.agg, zDur, zActive, false, combinePets)
+    }
     const e = this.current?.id === id ? this.current : this.history.find((h) => h.id === id)
     if (!e) return null
     const dur = Math.max(1, (e.lastTs - e.startTs) / 1000)
     const activeSec = Math.min(dur, e.activeMs / 1000)
-    const active = this.current?.id === id && now - e.lastTs < ACTIVE_MS
-    return this.buildView(e.id, 'fight', encounterName(e), e.zone, e.agg, dur, activeSec, active, combinePets)
+    const isCurrent = this.current?.id === id
+    const active = isCurrent && now - e.lastTs < ACTIVE_MS
+    return this.buildView(e.id, 'fight', encounterName(e, isCurrent), e.zone, e.agg, dur, activeSec, active, combinePets)
   }
 
   private buildView(
@@ -1294,11 +1419,24 @@ function sumMap(m: Map<string, SourceStat>): number {
   return t
 }
 
-function encounterName(e: Encounter): string {
-  const sorted = [...e.agg.targets.values()].sort((a, b) => b.amount - a.amount)
-  if (sorted.length === 0) return 'Combat'
-  const top = sorted[0].name
-  return sorted.length > 1 ? `${top} +${sorted.length - 1}` : top
+/**
+ * The name of an encounter (Task #54). Two modes:
+ *   - `live=false` (FINALIZED / any non-current view): named after the LARGEST target —
+ *     the mob that absorbed the most damage. The log has no HP, so "most damage absorbed"
+ *     is a LABELED proxy for "the thing we were killing" (AGENTS.md world-model law 6).
+ *   - `live=true` (the CURRENT open fight): named after whatever you're presently swinging
+ *     at (the most-recent outgoing target), so a live pull is labeled by the mob in front of
+ *     you, not retroactively by whichever twin ended up taking the most damage.
+ * Both keep the '+N others' suffix counting the OTHER distinct engaged targets.
+ */
+function encounterName(e: Encounter, live = false): string {
+  const targets = [...e.agg.targets.values()]
+  if (targets.length === 0) return 'Combat'
+  const others = targets.length - 1
+  const suffix = others > 0 ? ` +${others}` : ''
+  if (live && e.lastOutTarget) return `${e.lastOutTarget}${suffix}`
+  const top = [...targets].sort((a, b) => b.amount - a.amount)[0].name
+  return `${top}${suffix}`
 }
 
 function sourceViews(map: Map<string, SourceStat>, durationSec: number, combinePets: boolean): SourceView[] {

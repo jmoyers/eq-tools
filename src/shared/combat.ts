@@ -257,6 +257,30 @@ export interface TimelineView {
   rawCount: number
 }
 
+/**
+ * One finalized-or-live ZONE SESSION (Task #54). Instead of discarding the zone aggregate on
+ * every zone change, the engine FINALIZES it into a capped history so you can re-select a past
+ * zone's overall meter. The live zone session is always index 0 (id 'zone'); finalized ones get
+ * stable ids ('zs<n>'). Carries just the summary fields the selector needs; the full breakdown
+ * is rebuilt on demand via buildSelected(id).
+ */
+export interface ZoneSessionSummary {
+  /** 'zone' for the live session, else 'zs<n>' for a finalized one. */
+  id: string
+  /** zone display name (raw). */
+  zone: string
+  /** epoch ms of the first attributed damage in this zone session (0 if none / live-unstarted). */
+  startTs: number
+  /** epoch ms of the last attributed damage; 0 for the still-live session. */
+  endTs: number
+  /** total outgoing damage this zone session. */
+  total: number
+  /** wall-clock DPS over the session's combat span. */
+  dps: number
+  /** true for the currently-active (live) zone session. */
+  live: boolean
+}
+
 export interface CombatSnapshot {
   selectedId: string
   selected: SegmentView | null
@@ -271,6 +295,9 @@ export interface CombatSnapshot {
   stance: StanceState
   /** the selected encounter's timeline — present only when SnapshotOpts.timeline is set. */
   timeline?: TimelineView | null
+  /** zone-session list (Task #54): the live zone + capped finalized-zone history, newest-first
+   *  after the live one. Drives the ZONE selector in the main view + the 'overall' overlay. */
+  zoneSessions: ZoneSessionSummary[]
 }
 
 export interface SnapshotOpts {

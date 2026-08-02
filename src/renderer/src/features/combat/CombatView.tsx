@@ -7,6 +7,7 @@ import {
   Collapse,
   FormControlLabel,
   Link,
+  ListSubheader,
   MenuItem,
   Paper,
   Select,
@@ -22,7 +23,8 @@ import CircleIcon from '@mui/icons-material/Circle'
 import PetsIcon from '@mui/icons-material/Pets'
 import { LIVE, useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
-import { formatTime } from '../../lib/formatDate'
+import { formatDate, formatTime } from '../../lib/formatDate'
+import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { CategoryView, ClassifiedLine, DamageCategory, SegmentView, SourceView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 
@@ -35,17 +37,38 @@ const ROLE_COLOR: Record<string, string> = {
   dropped: '#e0554f'
 }
 
-function fmt(n: number): string {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M'
-  if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K'
-  return String(Math.round(n))
-}
 function fmtDur(sec: number): string {
   const s = Math.max(0, Math.round(sec))
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 }
 function fmtClock(ts: number): string {
   return formatTime(ts)
+}
+
+/**
+ * Coarse, live-updating relative age for the fight/zone selector rows (Task #54
+ * disambiguation timing): 'just now' / '2m ago' / '3h ago' / '2d ago'. Kept intentionally
+ * coarse so five same-named giant pulls are tellable apart by start clock + age + duration.
+ */
+function relativeAge(ts: number, now: number): string {
+  if (!ts) return ''
+  const secs = Math.max(0, (now - ts) / 1000)
+  if (secs < 45) return 'just now'
+  const mins = secs / 60
+  if (mins < 60) return `${Math.round(mins)}m ago`
+  const hrs = mins / 60
+  if (hrs < 36) return `${Math.round(hrs)}h ago`
+  return `${Math.round(hrs / 24)}d ago`
+}
+
+/** The disambiguation timing suffix for a selector row: 'start clock · age · duration'. */
+function timingLabel(startTs: number, durationSec: number, now: number): string {
+  const bits: string[] = []
+  if (startTs) bits.push(`${formatDate(startTs)} ${formatTime(startTs)}`)
+  const age = relativeAge(startTs, now)
+  if (age) bits.push(age)
+  bits.push(fmtDur(durationSec))
+  return bits.join(' · ')
 }
 
 function Bar({
@@ -166,7 +189,7 @@ const EntityRow = memo(function EntityRow({
             {resistBadge}
           </>
         }
-        right={`${fmt(e.total)} · ${fmt(e.dps)}/s${crit}`}
+        right={`${fmt(e.total)} · ${formatRate(e.dps)}${crit}`}
       />
       {!onDrill && (
         <Collapse in={open}>
@@ -364,17 +387,17 @@ function SegmentBody({
           {seg.active && <CircleIcon sx={{ fontSize: 10, color: 'success.main', ml: 1, verticalAlign: 'middle' }} />}
         </Typography>
         <Typography variant="body2" sx={{ color: mode === 'out' ? 'primary.main' : KIND_COLOR.enemy }}>
-          {fmt(dps)}/s{' '}
+          {formatRate(dps)}{' '}
           {mode === 'out' && seg.activeSec > 0 && seg.activeSec < seg.durationSec && (
             <Tooltip
               title={`Active-time DPS: damage ÷ ${fmtDur(
                 seg.activeSec
-              )} of actual combat time (gaps between hits capped at 3s each). Wall-clock DPS (${fmt(
+              )} of actual combat time (gaps between hits capped at 3s each). Wall-clock DPS (${formatRate(
                 seg.outDps
-              )}/s) divides by the full ${fmtDur(seg.durationSec)} fight length.`}
+              )}) divides by the full ${fmtDur(seg.durationSec)} fight length.`}
             >
               <Typography component="span" variant="caption" sx={{ color: 'text.secondary', mr: 0.25 }}>
-                (act {fmt(seg.activeDps)}/s)
+                (act {formatRate(seg.activeDps)})
               </Typography>
             </Tooltip>
           )}
@@ -516,6 +539,29 @@ function ProcessingLog({
   )
 }
 
+/**
+ * A dense selector row (Task #54): fight/zone name + rate on the top line, disambiguation
+ * timing (start clock · relative age · duration) on a small second line — so five same-named
+ * giant pulls are tellable apart at a glance.
+ */
+function SelectorRow({ name, rate, timing }: { name: string; rate: string; timing: string }): JSX.Element {
+  return (
+    <Box sx={{ minWidth: 0, py: 0.25 }}>
+      <Stack direction="row" spacing={0.75} alignItems="baseline">
+        <Typography variant="body2" noWrap sx={{ fontWeight: 600, flexGrow: 1, minWidth: 0 }}>
+          {name}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'nowrap' }}>
+          {rate}
+        </Typography>
+      </Stack>
+      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', opacity: 0.85 }}>
+        {timing}
+      </Typography>
+    </Box>
+  )
+}
+
 /** Two chips near the header showing the current stance + invocation (Task #51). */
 function StanceChips({ stance }: { stance: NonNullable<CombatSnapshotStance> }): JSX.Element | null {
   if (!stance.stance && !stance.invocation) return null
@@ -581,10 +627,13 @@ export default function CombatView(): JSX.Element {
   useEffect(() => setWantTimeline(view === 'timeline'), [view, setWantTimeline])
 
   const history = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
-  const zone = (snap?.segments ?? []).find((s) => s.kind === 'zone')
+  const zoneSessions = snap?.zoneSessions ?? []
   // The segment payload is capped at `maxSegments` finalized fights (newest-first).
   // Offer a "Load more" when the cap is likely truncating history.
   const capped = history.length >= maxSegments
+  // A single `now` for the whole render so all the relative-age labels agree; it advances
+  // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
+  const now = Date.now()
 
   return (
     <Stack spacing={1.5} sx={{ height: '100%' }}>
@@ -597,22 +646,23 @@ export default function CombatView(): JSX.Element {
             if (v === '__loadmore__') loadMore()
             else setSelection(v)
           }}
-          sx={{ minWidth: 240 }}
+          sx={{ minWidth: 320 }}
+          MenuProps={{ PaperProps: { sx: { maxHeight: 480 } } }}
         >
           <MenuItem value={LIVE}>▶ Current fight (live)</MenuItem>
-          {zone && (
-            <MenuItem value="zone">
-              ◆ {zone.name} · {fmtDur(zone.durationSec)}
+          <ListSubheader sx={{ lineHeight: '28px' }}>Fights</ListSubheader>
+          {history.length === 0 && (
+            <MenuItem value="__none__" disabled>
+              No finalized fights yet
             </MenuItem>
           )}
           {history.map((s) => (
             <MenuItem key={s.id} value={s.id}>
-              {s.name} · {fmtDur(s.durationSec)} · {fmt(s.dps)}/s
-              {s.activeSec > 0 && s.activeSec < s.durationSec && (
-                <Typography component="span" variant="caption" sx={{ color: 'text.secondary', ml: 0.5 }}>
-                  (act {fmt(s.activeDps)}/s)
-                </Typography>
-              )}
+              <SelectorRow
+                name={s.name}
+                rate={formatRate(s.dps)}
+                timing={timingLabel(s.startTs, s.durationSec, now)}
+              />
             </MenuItem>
           ))}
           {capped && (
@@ -620,6 +670,20 @@ export default function CombatView(): JSX.Element {
               Load more fights…
             </MenuItem>
           )}
+          <ListSubheader sx={{ lineHeight: '28px' }}>Zone sessions</ListSubheader>
+          {zoneSessions.map((z) => (
+            <MenuItem key={z.id} value={z.id}>
+              <SelectorRow
+                name={`${z.live ? '◆ ' : ''}${z.zone} — overall`}
+                rate={formatRate(z.dps)}
+                timing={
+                  z.live
+                    ? 'live'
+                    : timingLabel(z.startTs, Math.max(1, (z.endTs - z.startTs) / 1000), now)
+                }
+              />
+            </MenuItem>
+          ))}
         </Select>
         <ToggleButtonGroup size="small" exclusive value={view} onChange={(_e, v) => v && setView(v)}>
           <ToggleButton value="bars">Bars</ToggleButton>

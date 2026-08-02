@@ -5,8 +5,18 @@ import type { LootDisposition } from './logEvents'
 export type { LootDisposition }
 
 /**
- * Persisted config for the floating overlay DPS meter (Task #52). Stored in
- * electron-store under `overlay` (alongside window bounds). Small + JSON-serializable.
+ * The two spawnable overlay window KINDS (Task #54 — overlay v2):
+ *   - 'fight'   : the CURRENT-fight meter + a FIGHT selector (recent encounters).
+ *   - 'overall' : the ZONE meter + a ZONE-session selector.
+ * Each kind has its own independently-persisted OverlayConfig (bounds/alpha/lock/topN) and can
+ * be open simultaneously. IPC channels + the store are keyed by this.
+ */
+export type OverlayKind = 'fight' | 'overall'
+export const OVERLAY_KINDS: OverlayKind[] = ['fight', 'overall']
+
+/**
+ * Persisted config for one floating overlay DPS-meter window (Task #52; keyed by kind in
+ * Task #54). Stored in electron-store under `overlays.<kind>`. Small + JSON-serializable.
  */
 export interface OverlayConfig {
   /** Was the overlay open when the app last quit? Restored on launch. */

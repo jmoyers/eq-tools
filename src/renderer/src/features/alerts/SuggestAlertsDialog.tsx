@@ -44,6 +44,7 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import SearchIcon from '@mui/icons-material/Search'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import EditNoteIcon from '@mui/icons-material/EditNote'
 import type { AlertDef, SpellCatalog, SpellCatalogEntry } from '@shared/types'
 import {
   SUGGEST_TEMPLATES,
@@ -72,7 +73,8 @@ export default function SuggestAlertsDialog({
   existingIds,
   onClose,
   onCreate,
-  onDelete
+  onDelete,
+  onCreateManually
 }: {
   open: boolean
   /** ids of alerts that already exist — for the checked/disabled state. */
@@ -82,6 +84,8 @@ export default function SuggestAlertsDialog({
   onCreate: (def: AlertDef) => Promise<void>
   /** Delete an alert by id (the Undo path). */
   onDelete: (id: string) => Promise<void>
+  /** The 'create manually' escape hatch (Task #54): close the picker + open the blank editor. */
+  onCreateManually: () => void
 }): JSX.Element {
   const [catalog, setCatalog] = useState<SpellCatalog | null>(null)
   const [query, setQuery] = useState('')
@@ -134,13 +138,20 @@ export default function SuggestAlertsDialog({
       <DialogTitle sx={{ pb: 1 }}>
         <Stack direction="row" spacing={1} alignItems="center">
           <AutoAwesomeIcon fontSize="small" color="primary" />
-          <span>Suggest alerts</span>
+          <span>Add an alert</span>
           {catalog && (
             <Typography variant="caption" color="text.secondary" sx={{ ml: 1 }}>
               {catalog.total} spells · {catalog.withUsage} you&apos;ve used
             </Typography>
           )}
+          <Box sx={{ flexGrow: 1 }} />
+          <Button size="small" variant="outlined" startIcon={<EditNoteIcon />} onClick={onCreateManually}>
+            Create manually
+          </Button>
         </Stack>
+        <Typography variant="caption" color="text.secondary">
+          Pick a suggested alert below, or create one manually for full control.
+        </Typography>
       </DialogTitle>
       <DialogContent>
         <Stack spacing={1.5}>

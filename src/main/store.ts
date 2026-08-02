@@ -4,6 +4,7 @@ import type {
   AlertPrefs,
   HeldCounts,
   OverlayConfig,
+  OverlayKind,
   ProgressState,
   UpdateChannel
 } from '../shared/types'
@@ -40,8 +41,11 @@ interface StoreShape {
   alertPrefs?: AlertPrefs
   /** auto-update release channel (Task #27): 'main' (bleeding edge) | 'stable' */
   updateChannel?: UpdateChannel
-  /** floating overlay DPS meter config (Task #52) */
+  /** floating overlay DPS meter config (Task #52) — LEGACY flat key, migrated into
+   *  `overlays.fight` on first read (Task #54 made the overlay per-kind). */
   overlay?: OverlayConfig
+  /** per-kind floating overlay configs (Task #54): 'fight' + 'overall' windows. */
+  overlays?: Partial<Record<OverlayKind, OverlayConfig>>
 }
 
 const store = new Store<StoreShape>({
@@ -114,28 +118,37 @@ export function setEqInstallDir(dir: string | undefined): void {
   else store.delete('eqInstallDir')
 }
 
-// ----- Floating overlay DPS meter (Task #52) -----
+// ----- Floating overlay DPS meter (Task #52; per-kind in Task #54) -----
 
-const DEFAULT_OVERLAY_CONFIG: OverlayConfig = {
-  open: false,
-  locked: false,
-  bgAlpha: 0.72,
-  topN: 5,
-  bounds: undefined
+/** Per-kind defaults: the 'overall' window starts a touch taller (it holds a zone selector). */
+const DEFAULT_OVERLAY_CONFIG: Record<OverlayKind, OverlayConfig> = {
+  fight: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined },
+  overall: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined }
 }
 
-/** Read the overlay config, filling in any missing field with a sane default. */
-export function getOverlayConfig(): OverlayConfig {
-  return { ...DEFAULT_OVERLAY_CONFIG, ...(store.get('overlay') ?? {}) }
+/** Read a kind's overlay config, filling missing fields with the kind's defaults. Migrates the
+ *  legacy flat `overlay` key into `overlays.fight` once (Task #54). */
+export function getOverlayConfig(kind: OverlayKind): OverlayConfig {
+  const all = store.get('overlays') ?? {}
+  // One-time migration: fold a pre-Task-#54 flat overlay config into the 'fight' slot.
+  const legacy = store.get('overlay')
+  if (legacy && !all.fight) {
+    all.fight = legacy
+    store.set('overlays', all)
+    store.delete('overlay')
+  }
+  return { ...DEFAULT_OVERLAY_CONFIG[kind], ...(all[kind] ?? {}) }
 }
 
-/** Merge-patch the overlay config (only the provided keys change). Returns the merged value. */
-export function setOverlayConfig(patch: Partial<OverlayConfig>): OverlayConfig {
-  const next: OverlayConfig = { ...getOverlayConfig(), ...patch }
+/** Merge-patch a kind's overlay config (only the provided keys change). Returns the merged value. */
+export function setOverlayConfig(kind: OverlayKind, patch: Partial<OverlayConfig>): OverlayConfig {
+  const next: OverlayConfig = { ...getOverlayConfig(kind), ...patch }
   // Clamp the numeric fields defensively (the slider / topN come from the renderer).
   next.bgAlpha = Math.max(0, Math.min(1, next.bgAlpha))
   next.topN = next.topN >= 10 ? 10 : 5
-  store.set('overlay', next)
+  const all = store.get('overlays') ?? {}
+  all[kind] = next
+  store.set('overlays', all)
   return next
 }
 

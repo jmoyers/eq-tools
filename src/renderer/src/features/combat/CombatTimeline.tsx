@@ -5,6 +5,7 @@ import RemoveIcon from '@mui/icons-material/Remove'
 import FitScreenIcon from '@mui/icons-material/FitScreen'
 import type { DamageCategory, TimelineEvent, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
+import { formatNum as fmt } from '../../lib/formatRate'
 
 // Dense, dark, WarcraftLogs-style timeline (Task #51 v2): X = encounter time, Y = one row
 // per skill/spell (left-axis labels), ticks where events occurred. Stance/invocation spans
@@ -30,13 +31,22 @@ const CAT_COLOR: Record<DamageCategory, string> = {
 const KIND_OPACITY: Record<string, number> = { you: 1, pet: 0.75, enemy: 0.5 }
 const RESIST_COLOR = '#e05663' // red-tinted mark for miss/resist ticks
 
-const LANE_H = 18
-const LABEL_W = 132
+// Timeline sizing (Task #54): the chart FILLS its container. Width comes from a ResizeObserver on
+// the scroll box; lane height grows to use the available vertical space (min MIN_LANE_H for
+// readability, up to MAX_LANE_H) and only scrolls when lanes×min exceeds the container. Fonts/ticks
+// scale with lane height so the chart reads as the hero of the view at large sizes.
+const MIN_LANE_H = 22
+const MAX_LANE_H = 40
 const PIN_H = 16
 const PAD = 8
-const PLOT_W = 640
+const MIN_PLOT_W = 320
 const MIN_SPAN_MS = 500 // deepest zoom: half a second across the plot
 const ZOOM_STEP = 1.35 // per wheel notch / button click
+
+/** Left-axis label gutter width + font size, scaled up a touch at larger lane heights. */
+function labelGutter(laneH: number): number {
+  return laneH >= 32 ? 168 : laneH >= 26 ? 148 : 132
+}
 
 function fmtDur(ms: number): string {
   const s = Math.max(0, Math.round(ms / 1000))
@@ -49,12 +59,6 @@ function fmtClock(ms: number): string {
   const rem = s - m * 60
   return `${m}:${rem.toFixed(rem < 10 ? 1 : 0).padStart(rem < 10 ? 4 : 2, '0')}`
 }
-function fmt(n: number): string {
-  if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M'
-  if (n >= 1_000) return (n / 1_000).toFixed(1) + 'K'
-  return String(Math.round(n))
-}
-
 interface Hover {
   x: number
   y: number
@@ -94,6 +98,20 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
   const [view, setView] = useState<ViewWin>(fullView)
   const svgRef = useRef<SVGSVGElement>(null)
   const dragRef = useRef<{ x: number; start: number; end: number } | null>(null)
+  // Measure the scroll container (Task #54): the SVG width fills it, and lane height grows to use
+  // the available vertical space. A ResizeObserver keeps it responsive to window/pane resizes.
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const [wrap, setWrap] = useState({ w: 900, h: 400 })
+  useEffect(() => {
+    const el = wrapRef.current
+    if (!el) return
+    const ro = new ResizeObserver((entries) => {
+      const cr = entries[0]?.contentRect
+      if (cr) setWrap({ w: Math.max(MIN_PLOT_W + 140, cr.width), h: Math.max(120, cr.height) })
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   // Reset to fit whenever the selected encounter changes (id or duration).
   useEffect(() => setView({ start: 0, end: dur }), [tl.id, dur])
@@ -116,16 +134,32 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
   }, [tl.stanceSpans])
 
   const pinBlockH = pinRows.length * (PIN_H + 2)
-  const plotH = tl.lanes.length * LANE_H
-  const totalH = pinBlockH + (pinBlockH ? 6 : 0) + plotH + 22 // +axis
+  const pinGap = pinBlockH ? 6 : 0
+  const AXIS_H = 22
+  const laneCount = Math.max(1, tl.lanes.length)
+  // Grow lane height to fill the vertical space left after pins + axis; clamp to [MIN,MAX].
+  // Below MIN (many lanes) the chart exceeds the container and the wrapper scrolls.
+  const availLaneH = wrap.h - pinBlockH - pinGap - AXIS_H
+  const LANE_H = Math.max(MIN_LANE_H, Math.min(MAX_LANE_H, Math.floor(availLaneH / laneCount)))
+  const LABEL_W = labelGutter(LANE_H)
+  const PLOT_W = Math.max(MIN_PLOT_W, wrap.w - LABEL_W - PAD * 2)
+  // Font sizes scale with lane height so ticks + labels read well when the chart is the hero.
+  const labelFont = LANE_H >= 32 ? 13 : LANE_H >= 26 ? 12 : 10
+  const axisFont = LANE_H >= 32 ? 12 : 10
+  // Max lane-label chars before ellipsis, scaled to the (wider) gutter at larger sizes.
+  const labelMax = LABEL_W >= 168 ? 26 : LABEL_W >= 148 ? 23 : 20
+  // Damage-tick base width scales slightly with lane height so ticks stay visible when big.
+  const tickW = LANE_H >= 32 ? 3 : 2
+  const plotH = laneCount * LANE_H
+  const totalH = pinBlockH + pinGap + plotH + AXIS_H
 
   // Map an encounter-relative ms `t` to a pixel X within the plot, given the view window.
   const xOf = useCallback(
     (t: number): number => LABEL_W + ((t - view.start) / span) * PLOT_W,
-    [view.start, span]
+    [view.start, span, LABEL_W, PLOT_W]
   )
   // Inverse: pixel X (relative to the plot's left edge = LABEL_W) → encounter ms.
-  const tOfPx = useCallback((px: number): number => view.start + (px / PLOT_W) * span, [view.start, span])
+  const tOfPx = useCallback((px: number): number => view.start + (px / PLOT_W) * span, [view.start, span, PLOT_W])
 
   // Clamp a candidate window to the encounter bounds, preserving its span where possible.
   const clampView = useCallback(
@@ -184,7 +218,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
       zoomAround(anchor, factor)
       ev.preventDefault()
     },
-    [tOfPx, zoomAround, clampView]
+    [tOfPx, zoomAround, clampView, LABEL_W, PLOT_W]
   )
 
   // Attach the wheel handler NATIVELY as a NON-PASSIVE listener — React's onWheel is passive
@@ -207,7 +241,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
       dragRef.current = { x: ev.clientX, start: view.start, end: view.end }
       svgRef.current?.setPointerCapture(ev.pointerId)
     },
-    [view.start, view.end]
+    [view.start, view.end, LABEL_W]
   )
   const onPointerMove = useCallback(
     (ev: React.PointerEvent<SVGSVGElement>) => {
@@ -217,7 +251,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
       const dtMs = -(dxPx / PLOT_W) * (d.end - d.start)
       setView(clampView(d.start + dtMs, d.end + dtMs))
     },
-    [clampView]
+    [clampView, PLOT_W]
   )
   const onPointerUp = useCallback((ev: React.PointerEvent<SVGSVGElement>) => {
     dragRef.current = null
@@ -275,7 +309,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
           </MuiTooltip>
         </Stack>
       </Stack>
-      <Box sx={{ overflow: 'auto', flexGrow: 1, position: 'relative' }}>
+      <Box ref={wrapRef} sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, position: 'relative' }}>
         <svg
           ref={svgRef}
           width={LABEL_W + PLOT_W + PAD}
@@ -349,9 +383,9 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
               return (
                 <g key={l.lane}>
                   <rect x={LABEL_W} y={y} width={PLOT_W} height={LANE_H} fill={i % 2 ? 'rgba(255,255,255,0.02)' : 'transparent'} />
-                  <text x={LABEL_W - 6} y={y + LANE_H - 5} fontSize={10} textAnchor="end" fill="#c8c8c8">
+                  <text x={LABEL_W - 6} y={y + LANE_H / 2 + labelFont / 2 - 2} fontSize={labelFont} textAnchor="end" fill="#c8c8c8">
                     <title>{`${CATEGORY_LABEL[l.category]} · ${fmt(l.total)} total`}</title>
-                    {l.lane.length > 20 ? l.lane.slice(0, 19) + '…' : l.lane}
+                    {l.lane.length > labelMax ? l.lane.slice(0, labelMax - 1) + '…' : l.lane}
                   </text>
                   <rect x={LABEL_W - 3} y={y + 3} width={2} height={LANE_H - 6} fill={CAT_COLOR[l.category]} opacity={0.8} />
                 </g>
@@ -406,7 +440,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
                       key={i}
                       x={x}
                       y={y + (LANE_H - h) / 2}
-                      width={e.crit ? 3 : 2}
+                      width={e.crit ? tickW + 1 : tickW}
                       height={h}
                       fill={CAT_COLOR[e.category]}
                       opacity={KIND_OPACITY[e.kind] ?? 0.7}
@@ -422,7 +456,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
           <g transform={`translate(0, ${pinBlockH + (pinBlockH ? 6 : 0) + plotH})`}>
             <line x1={LABEL_W} y1={2} x2={LABEL_W + PLOT_W} y2={2} stroke="rgba(255,255,255,0.15)" />
             {ticks.map((t, i) => (
-              <text key={i} x={xOf(t)} y={16} fontSize={9} textAnchor="middle" fill="#9aa0aa">
+              <text key={i} x={xOf(t)} y={16} fontSize={axisFont} textAnchor="middle" fill="#9aa0aa">
                 {zoomedIn ? fmtClock(t) : fmtDur(t)}
               </text>
             ))}

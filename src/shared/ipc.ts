@@ -87,29 +87,29 @@ export const IPC = {
   // main -> renderer: maximize state changed (bool) so the max/restore icon swaps.
   onWindowMaximized: 'window:maximized',
 
-  // ---- floating overlay DPS meter (Task #52) ----
-  // renderer(main app) -> main: toggle the overlay window open/closed.
+  // ---- floating overlay DPS meter (Task #52; per-kind windows in Task #54) ----
+  // All overlay channels carry an OverlayKind ('fight' | 'overall') as their first arg so the
+  // two independent overlay windows are addressed separately.
+  // renderer(main app) -> main: toggle a kind's overlay window open/closed. Arg: kind.
   overlayToggle: 'overlay:toggle',
-  // renderer(main app) -> main: query whether the overlay is currently open (bool).
+  // renderer(main app) -> main: query the open-state map for all kinds. Returns Record<kind,bool>.
   overlayGetState: 'overlay:getState',
-  // main -> renderer(main app): overlay open-state changed (bool), so the TitleBar
-  // toggle button reflects reality (also fires when the overlay closes itself).
+  // main -> renderer(main app): a kind's open-state changed. Payload: {kind, open}. Keeps the
+  // TitleBar overlay menu in sync (also fires when an overlay closes itself).
   onOverlayState: 'overlay:state',
-  // renderer(overlay) -> main: set click-through (locked) vs interactive. When locked,
-  // mouse events pass through to the game except over hover-sensor regions the overlay
-  // re-enables via forward:true. Payload: boolean `locked`.
+  // renderer(overlay) -> main: set click-through (locked) vs interactive. Args: kind, locked.
   overlaySetLocked: 'overlay:setLocked',
   // renderer(overlay) -> main: fine-grained mouse-event pass-through toggle used by the
-  // hover sensor while locked (true = ignore/pass through, false = capture). Payload bool.
+  // hover sensor while locked. Args: kind, ignore (true = pass through, false = capture).
   overlaySetIgnoreMouse: 'overlay:setIgnoreMouse',
-  // renderer(overlay) -> main: close the overlay from its own close button.
+  // renderer(overlay) -> main: close the overlay from its own close button. Arg: kind.
   overlayClose: 'overlay:close',
-  // renderer(overlay) -> main: read persisted overlay config (locked, bgAlpha, topN).
+  // renderer(overlay) -> main: read a kind's persisted config. Arg: kind. Returns OverlayConfig.
   overlayGetConfig: 'overlay:getConfig',
-  // renderer(overlay) -> main: persist overlay config (partial merge).
+  // renderer(overlay) -> main: persist a kind's config (partial merge). Args: kind, patch.
   overlaySetConfig: 'overlay:setConfig',
-  // main -> renderer(overlay): the persisted config changed (e.g. locked toggled from
-  // main). Lets the overlay UI stay in sync. Payload: OverlayConfig.
+  // main -> renderer(overlay): the persisted config changed. Payload: {kind, config}. The overlay
+  // ignores pushes that aren't its own kind.
   onOverlayConfig: 'overlay:config',
 
   // ---- auto-update (Task #27) ----
