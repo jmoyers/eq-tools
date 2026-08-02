@@ -27,8 +27,11 @@
 //
 // Encounter segmentation (Task #20 — death-closed, replacing the old idle-gap
 // rule). A fight CLOSES when either:
-//   - every engaged hostile instance is retired (dead/zoned) AND LINGER_MS passes
-//     with no new attributed damage → crisp pull boundaries from the death timeline;
+//   - every engaged hostile instance is GONE (retired = dead/zoned; or still alive but
+//     with no PRESENCE evidence for PRESENCE_GONE_MS) AND LINGER_MS passes with no new
+//     attributed damage → crisp pull boundaries from the death timeline. A multi-mob
+//     pull is therefore ONE encounter: killing one add cannot close it while another is
+//     demonstrably still swinging/casting/being healed (Task #55).
 //   - OR no attributed damage AND no CC event for FALLBACK_IDLE_MS (fled/deagro).
 // A CC (mez/root) application or refresh HOLDS the encounter open regardless of
 // damage gaps while the CC'd instance is alive (the mez-and-wait case). Pet swap
@@ -343,11 +346,13 @@ interface Encounter {
   lastTs: number
   agg: Agg
   engaged: Set<string>
-  /** instanceId → ts it was last involved in attributed damage (as our target or as
-   *  an incoming attacker). Drives the "gone" staleness in death-close: a hostile
-   *  that stopped being fought and never got a death line is treated as gone once it
-   *  has been idle for LINGER_MS, so a pull that ends with a mob fleeing still closes
-   *  crisply instead of waiting out the 60s fallback. */
+  /** instanceId → ts we last saw ANY evidence this instance is still in the fight.
+   *  This is the PRESENCE (liveness) axis, deliberately distinct from the damage
+   *  timeline: landed damage refreshes it, but so do misses (either direction),
+   *  resists, CC, and heals involving the instance — a mob that whiffs for eight
+   *  seconds, or spends them casting, is emphatically still here. It drives ONLY the
+   *  "gone" staleness in evalClosure (see PRESENCE_GONE_MS); it never feeds
+   *  firstHit/lastHit/DPS/activeMs, which stay damage-driven (AGENTS.md law 8). */
   engagedSeen: Map<string, number>
   /** Active-combat time accumulator (ms): on each attributed damage hit we add
    *  min(ts - prevDamageTs, ACTIVE_MS). First hit adds 0. See ACTIVE_MS. */
@@ -406,16 +411,39 @@ interface StanceRaw {
 }
 
 // Encounter closure (Task #20 — death-closed segmentation, replacing the old
-// SEGMENT_GAP_MS idle rule):
-//   LINGER_MS   — after every engaged hostile instance is retired (dead/zoned),
-//                 wait this long with no new attributed damage before finalizing at
-//                 the last damage ts. Crisp pull boundaries come from the death
-//                 timeline; the linger absorbs the trailing DoT tick / cleanup swing.
+// SEGMENT_GAP_MS idle rule). Two INDEPENDENT axes decide it, and conflating them was
+// the multi-mob-pull split bug (Task #55):
+//
+//   TIMING axis (damage only) — LINGER_MS is measured against the encounter's last
+//                 ATTRIBUTED DAMAGE. After every engaged hostile instance is gone,
+//                 wait this long with no new damage before finalizing at the last
+//                 damage ts: the linger absorbs the trailing DoT tick / cleanup swing.
+//                 Nothing else may touch this clock — firstHit/lastHit/DPS/activeMs
+//                 are damage-derived (AGENTS.md law 8).
+//   PRESENCE axis (any evidence) — whether an engaged instance is still IN the fight,
+//                 tracked per instance in Encounter.engagedSeen and refreshed by any
+//                 observation of it: landed damage, misses in either direction,
+//                 resists, CC, and heals it gives or receives. Presence never opens or
+//                 extends an encounter; it only vetoes closing one.
+//
+//   PRESENCE_GONE_MS — how long a LIVE (not retired) engaged instance must go without
+//                 ANY presence evidence before the death-close treats it as gone. A
+//                 RETIRED instance is gone immediately (its death is the evidence; the
+//                 LINGER_MS damage window still covers trailing hits), so this window
+//                 only governs mobs that are still alive and simply quiet. It is
+//                 deliberately 4× LINGER_MS because real fights go quiet for many
+//                 seconds at a time: miss/dodge/parry streaks land nothing, mob cast
+//                 phases (Stun/Root/Healing) produce no swings at all, a player stun
+//                 stops YOUR damage, and the log flushes in multi-second batches while
+//                 the closure is also evaluated against the WALL clock from
+//                 snapshot(now). A genuinely fled mob still closes at
+//                 FALLBACK_IDLE_MS — 3× sooner than it would if we waited that out.
 //   FALLBACK_IDLE_MS — if there's no attributed damage AND no CC event for this long
 //                 while instances remain engaged-but-not-retired (mob fled/deagroed,
 //                 the log never reports a death), close anyway.
 //   ACTIVE_MS   — per-hit active-time cap AND the "in combat" freshness window.
 const LINGER_MS = 5_000
+const PRESENCE_GONE_MS = 20_000
 const FALLBACK_IDLE_MS = 60_000
 // How long a single CC application/refresh keeps an instance "held" (alive for
 // closure) without further evidence. A live mez is re-applied well within this, and
@@ -856,10 +884,14 @@ export class CombatEngine {
     // presently swinging at (most recent outgoing target). Finalize switches to the
     // largest target (encounterName()); until then this drives the live label.
     enc.lastOutTarget = tgtName
-    // Timeline: an outgoing instant lanes under the skill/spell name.
+    // Timeline: an outgoing instant lanes under the skill/spell name. `target` carries the
+    // INSTANCE-RESOLVED defender label (same value bumpTarget aggregates under, so twins stay
+    // distinct) — it drives the tooltip AND the dashboard's per-mob breakdown, which needs
+    // per-event defenders to answer "what did I land on THIS mob". Miss/resist ticks already
+    // carried it; damage ticks did not, which made per-mob damage underivable renderer-side.
     this.pushTimeline(enc, {
       ts: ev.ts, lane: ev.skill, category: ev.category, amount: ev.amount,
-      crit: ev.crit, modifiers: ev.modifiers, kind
+      crit: ev.crit, modifiers: ev.modifiers, kind, target: tgtName
     })
     const cat = ambiguous ? 'ambiguous' : ev.dtype
     const mark = ambiguous ? '~' : critMark
@@ -878,10 +910,14 @@ export class CombatEngine {
     }
     const at = classify(probe, this.petNames)
     if (at.kind === 'ignore') return
-    // A miss doesn't extend or close an encounter (closure is death/CC/fallback
-    // driven), but it attaches to the in-progress fight if one is fresh (so hit% is
-    // per-fight). Otherwise it still counts toward the zone aggregate.
+    // A miss doesn't open or extend an encounter (closure is death/CC/fallback driven),
+    // but it attaches to the in-progress fight if one is fresh (so hit% is per-fight).
+    // Otherwise it still counts toward the zone aggregate.
     const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+    // PRESENCE (Task #55): a swing exchanged with an already-engaged mob proves it's
+    // still in the fight even though nothing landed — the mob on an incoming miss, the
+    // mob we whiffed at on an outgoing one. Liveness only; no damage timing moves.
+    this.notePresence(at.kind === 'incoming' ? attacker : target, ts)
 
     if (at.kind === 'incoming') {
       const attInst = this.world.resolve(attacker, ts)
@@ -934,6 +970,15 @@ export class CombatEngine {
     // Attach to the in-progress fight if fresh (per-fight resist rate), else zone only —
     // mirrors routeMiss. A resist does not open/extend/close an encounter.
     const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+    // PRESENCE (Task #55): a resist names a live caster and a live resister. Refresh
+    // whichever side is a HOSTILE we're already engaged with — the caster on an incoming
+    // resist (the mob just cast at us), the target on our own resisted cast (the mob is
+    // standing there shrugging it off). notePresence ignores anything not engaged, so the
+    // you/pet side is a no-op — as is the third-party (mob-vs-mob) shape below, UNLESS
+    // the resisting mob happens to be one of ours, in which case its presence is real
+    // evidence even though the resist itself is dropped from the stats. Liveness only;
+    // no damage timing moves.
+    this.notePresence(incoming ? caster : target, ts)
 
     if (incoming) {
       // You resisted a mob's spell — attribute to the mob (incoming caster).
@@ -1026,7 +1071,47 @@ export class CombatEngine {
     if (enc && enc.engaged.has(inst.instanceId)) {
       enc.agg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
       this.zoneAgg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
+      // PRESENCE (Task #55): a heal on an engaged hostile proves BOTH ends are still in
+      // the fight — the mob receiving it, and (when a second mob cast it) the healer. The
+      // real case this came from: "Baron Telyx V`Zher healed Soldier of V`Zher for 175" —
+      // the Baron had landed nothing for seconds while healing his friend, and the old
+      // damage-only liveness rule had already written him off. Liveness only; no damage
+      // timing moves (enemy healing is an annotation, never damage).
+      this.notePresenceId(enc, inst.instanceId, ts)
+      if (healer) this.notePresence(healer, ts)
     }
+  }
+
+  /**
+   * PRESENCE refresh (Task #55) — record that `name` is still in the current fight as of
+   * `ts`. This is the liveness axis ONLY: it moves nothing on the damage timeline
+   * (enc.lastTs / prevDamageTs / activeMs / lastActivityTs are untouched), so DPS
+   * denominators and the fled-mob FALLBACK_IDLE_MS clock are unaffected (AGENTS.md law 8).
+   *
+   * Deliberately conservative in both directions:
+   *   - it never ENGAGES anything: only instances ALREADY in enc.engaged are refreshed,
+   *     so a miss/resist still cannot open or join an encounter;
+   *   - it never resolves/creates a world instance (it matches the engaged instanceIds
+   *     "<nameKey>#gen" by name prefix), so a whiff at a mob we've never damaged has no
+   *     side effect on the world model at all.
+   * Name-level matching refreshes every engaged twin sharing the name — the log cannot
+   * tell twins apart on a miss line, and a retired twin is "gone" via isRetired anyway.
+   */
+  private notePresence(name: string, ts: number): void {
+    const enc = this.current
+    if (!enc) return
+    const key = idKey(name)
+    for (const id of enc.engaged) {
+      const hash = id.lastIndexOf('#')
+      if (hash > 0 && id.slice(0, hash) === key) this.notePresenceId(enc, id, ts)
+    }
+  }
+
+  /** Presence refresh for an already-resolved engaged instanceId (see notePresence). */
+  private notePresenceId(enc: Encounter, instanceId: string, ts: number): void {
+    if (!enc.engaged.has(instanceId)) return
+    const prev = enc.engagedSeen.get(instanceId)
+    if (prev === undefined || ts > prev) enc.engagedSeen.set(instanceId, ts)
   }
 
   /** True if `nameKey` currently resolves to an engaged hostile instance. */
@@ -1077,8 +1162,9 @@ export class CombatEngine {
    * Rules:
    *  - CC-hold: if any engaged instance is still CC-held (ccActiveUntil > now), keep
    *    OPEN regardless of gaps (the mez-and-wait case).
-   *  - Death-close: once every engaged hostile instance is retired (dead/zoned) and
-   *    LINGER_MS has passed since the last damage, finalize.
+   *  - Death-close: once every engaged hostile instance is GONE — retired (dead/zoned),
+   *    or alive but unseen for PRESENCE_GONE_MS — and LINGER_MS has passed since the last
+   *    attributed DAMAGE, finalize.
    *  - Fallback: if no attributed damage AND no CC for FALLBACK_IDLE_MS (fled/deagro,
    *    no death logged), finalize.
    */
@@ -1091,20 +1177,26 @@ export class CombatEngine {
       if (until > now) return
     }
 
-    // Is every engaged HOSTILE instance gone? A hostile is "gone" if it's retired
-    // (dead/zoned) OR it has been idle (no attributed damage involving it) for at
-    // least LINGER_MS — a mob the pet stopped fighting that never got a death line
-    // (fled/deaggroed) shouldn't pin the pull open past the linger. A live charmed
-    // pet is never a mob we're killing, so it's excluded — otherwise the pet (which
-    // never dies) would pin every charm-grind encounter open forever. CC'd instances
-    // had their unexpired hold checked above.
+    // Is every engaged HOSTILE instance gone? Two different standards, because the
+    // evidence is different (Task #55 — this split is the multi-mob-pull fix):
+    //   RETIRED (dead/zoned) → gone immediately. The death line IS the evidence; the
+    //     sinceDamage >= LINGER_MS check below still covers its trailing damage.
+    //   LIVE → gone only after PRESENCE_GONE_MS with no presence evidence at all (see
+    //     engagedSeen: damage, misses, resists, CC, heals). The old rule reused
+    //     LINGER_MS here and counted only DAMAGE as evidence, so a second mob that was
+    //     merely missing (or casting, or being out-damaged by its friend) looked dead
+    //     after 5s — and the moment its friend actually died, the whole pull finalized
+    //     and the survivor's remaining fight became a bogus second encounter.
+    // A live charmed pet is never a mob we're killing, so it's excluded — otherwise the
+    // pet (which never dies) would pin every charm-grind encounter open forever. CC'd
+    // instances had their unexpired hold checked above.
     let hostiles = 0
     let allGone = true
     for (const id of enc.engaged) {
       if (this.world.isLivePet(id)) continue
       hostiles++
       const seen = enc.engagedSeen.get(id) ?? enc.lastTs
-      const gone = this.world.isRetired(id) || now - seen >= LINGER_MS
+      const gone = this.world.isRetired(id) || now - seen >= PRESENCE_GONE_MS
       if (!gone) {
         allGone = false
         break
