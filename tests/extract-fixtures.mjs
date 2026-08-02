@@ -50,7 +50,11 @@ const KEEP = [
   // Tashani cast-on-other message (Task #37 W13): "<Target> glances nervously about." — the
   // msg_cast_on_other of Tashani (INT/resist debuff). Binds a debuff instance to the charmed
   // ice giant BY MESSAGE, so we can assert it SURVIVES the charm break → re-charm.
-  /glances nervously about\.$/
+  /glances nervously about\.$/,
+  // Symbol cast-on-other landing (Task #45 W17): "<Target> is cloaked in a shimmer of glowing
+  // symbols." — the msg_cast_on_other of the cleric Symbols. A NEARBY caster's Symbol landing
+  // on the user's fight target; with own-cast gating it must NOT bind as the user's buff.
+  /is cloaked in a shimmer of glowing symbols\.$/
 ]
 function keep(line) {
   if (!line.startsWith('[')) return false
@@ -178,6 +182,26 @@ spliceFixture(
   ['[Sat Aug 01 19:55:54 2026] an ice giant has been slain by a frost giant!'],
   'w13b-charm-break-death-recharm.log'
 )
+
+// ── Task #45 windows ──
+// W16 SHARED WEARS-OFF (self haste). The user cast Quickness on self at 19:48:16 (239516) →
+// "You feel much faster." (239517); a later "Your speed returns to normal." 19:52:29 (239943)
+// must remove the active SELF haste. "Your speed returns to normal." is the shared
+// msg_wears_off of 9 haste spells (first candidate is Aanya's Quickening, which is NOT what's
+// active) — the DEFECT was removing only the first candidate, so self Quickness never cleared.
+// Assert: Quickness active mid-window, GONE after the speed-returns line.
+slice(239510, 239945, 'w16-shared-wearsoff-speed.log')
+// W17 OWN-CAST GATING (a stranger's Symbol on the user's fight target). The user is fighting
+// with a group; a nearby Teir`Dal priestess casts Symbol of Ryltan on Kahaptra Z`Taj — the
+// user's engaged mob — printing "Kahaptra Z`Taj is cloaked in a shimmer of glowing symbols."
+// 16:19:58 (45831) with NO own castBegin of any Symbol. The user reported this landing on
+// their buff list. Assert: NO Symbol appears in the active set (own-cast gate skips it).
+slice(45810, 45835, 'w17-own-cast-gating.log')
+// W17 priming: a real earlier own Symbol of Pinzarn self-cast + heal-apply span (the Aug 1
+// Quick Buff burst, 962955..963016) warms cast history + everFaded for Symbol so the gate has
+// a REALISTIC prior (a stranger's Symbol still doesn't attribute because the own cast is far
+// outside the landing window — proving the gate is recency-based, not "ever cast it once").
+slice(962955, 963020, 'w17-priming.log')
 
 // ── Priming fixtures (Task #33): a real earlier excerpt that establishes learned state
 // (everFaded / spell class / recognized landing emotes) BEFORE a golden window, mirroring

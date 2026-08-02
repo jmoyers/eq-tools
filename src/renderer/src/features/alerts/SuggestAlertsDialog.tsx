@@ -6,8 +6,9 @@
 //
 // So this dialog:
 //   - loads a slim spell CATALOG from main (spells.json + live usage from the buffs model),
-//   - lists spells frequent-first (a usage badge) then alphabetical, filtered by a fuzzy-ish
-//     substring search box,
+//   - lists spells RECENCY-first (Task #45 — used spells sorted by when you last saw them,
+//     most recent at the top; tie-broken by usage), a usage badge, then the never-used
+//     alphabetical tail, filtered by a fuzzy-ish substring search box,
 //   - each row shows the spell name, a buff/debuff chip (+ illusion), and small one-click
 //     TEMPLATE chips — each chip authors the EXACT alert whose trigger the spell DB can
 //     actually fire (validated against logEvents.ts + the AlertsModule matcher):
@@ -49,6 +50,19 @@ import {
 } from './suggestions'
 
 const MAX_ROWS = 200
+
+/** Coarse relative-time label for the usage tooltip's "last seen" (Task #45 recency hint). */
+function relativeTime(ms: number): string {
+  const diff = Date.now() - ms
+  if (diff < 0) return 'just now'
+  const min = Math.round(diff / 60_000)
+  if (min < 1) return 'just now'
+  if (min < 60) return `${min}m ago`
+  const hr = Math.round(min / 60)
+  if (hr < 24) return `${hr}h ago`
+  const d = Math.round(hr / 24)
+  return `${d}d ago`
+}
 
 export default function SuggestAlertsDialog({
   open,
@@ -238,7 +252,13 @@ function SpellRow({
         <Chip size="small" label="illusion" variant="outlined" sx={{ height: 20 }} />
       )}
       {entry.usageCount > 0 && (
-        <Tooltip title={`Observed ${entry.usageCount}× in your log`}>
+        <Tooltip
+          title={
+            entry.lastSeenMs
+              ? `Observed ${entry.usageCount}× · last seen ${relativeTime(entry.lastSeenMs)}`
+              : `Observed ${entry.usageCount}× in your log`
+          }
+        >
           <Chip
             size="small"
             color="primary"

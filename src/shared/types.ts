@@ -368,6 +368,12 @@ export interface BuffStat {
   estimateMs?: number | null
   /** Where `estimateMs` came from: 'db' | 'observed'. */
   estimatorSource?: 'db' | 'observed'
+  /**
+   * The newest event ts (ms epoch) this spell was seen — the last castBegin / apply / fade
+   * involving it (Task #45). The RECENCY signal the suggested-alerts wizard sorts by (recent
+   * spells over merely-frequent ones). Absent when the spell was never seen live.
+   */
+  lastSeenMs?: number | null
 }
 
 /** A currently-active (landed, not yet faded) buff INSTANCE = (spell, target entity). */
@@ -580,6 +586,12 @@ export interface SpellCatalogEntry {
   templates: SpellTemplateFlags
   /** How often the buffs model has observed this spell (land→fade sample count `n`); 0 = never. */
   usageCount: number
+  /**
+   * Newest event ts (ms epoch) this spell was seen live (last cast/apply/fade), or null when
+   * never seen (Task #45). The wizard sorts USED spells by this DESC (recency over
+   * frequency), tie-breaking on usageCount, then the never-used alphabetical tail.
+   */
+  lastSeenMs?: number | null
 }
 
 /** Reply of `spells:catalog`: the catalog + summary stats for the wizard header. */

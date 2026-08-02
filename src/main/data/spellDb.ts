@@ -123,7 +123,11 @@ export function buildSpellDb(spells: SpellEntry[]): SpellDb {
  * Illusion spells additionally get the shared illusion-fade suggestion (deduped in the UI).
  * A spell with NO template and no illusion flag is dropped (nothing to suggest for it).
  */
-export function buildSpellCatalog(db: SpellDb, usage: Map<string, number>): SpellCatalog {
+export function buildSpellCatalog(
+  db: SpellDb,
+  usage: Map<string, number>,
+  lastSeen?: Map<string, number>
+): SpellCatalog {
   const entries: SpellCatalogEntry[] = []
   let hasIllusions = false
   for (const [key, s] of db.byKey) {
@@ -143,11 +147,27 @@ export function buildSpellCatalog(db: SpellDb, usage: Map<string, number>): Spel
       spellType: s.spellType,
       illusion: s.illusion,
       templates,
-      usageCount: usage.get(key) ?? 0
+      usageCount: usage.get(key) ?? 0,
+      lastSeenMs: lastSeen?.get(key) ?? null
     })
   }
-  // Sort frequent-first (usage desc), then alphabetical — the wizard's default order.
-  entries.sort((a, b) => b.usageCount - a.usageCount || a.name.localeCompare(b.name))
+  // Sort (Task #45 — the user's directive: recency over frequency). USED spells (those the
+  // buffs model has observed) sort first by lastSeenMs DESC (most recently seen at the top),
+  // tie-breaking on usageCount DESC, then name. The never-used spells form an alphabetical
+  // tail after all used ones. A used spell missing a lastSeenMs (shouldn't happen — usage
+  // implies a fade) is treated as least-recent among used so it never jumps the tail.
+  entries.sort((a, b) => {
+    const aUsed = a.usageCount > 0
+    const bUsed = b.usageCount > 0
+    if (aUsed !== bUsed) return aUsed ? -1 : 1
+    if (aUsed && bUsed) {
+      const at = a.lastSeenMs ?? 0
+      const bt = b.lastSeenMs ?? 0
+      if (at !== bt) return bt - at // more recent first
+      if (a.usageCount !== b.usageCount) return b.usageCount - a.usageCount
+    }
+    return a.name.localeCompare(b.name)
+  })
   const withUsage = entries.reduce((n, e) => n + (e.usageCount > 0 ? 1 : 0), 0)
   return { entries, total: db.byKey.size, withUsage, hasIllusions }
 }

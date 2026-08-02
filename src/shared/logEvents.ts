@@ -310,7 +310,16 @@ export interface BuffApplyEvent extends LogEventBase {
  */
 export interface BuffWearOffEvent extends LogEventBase {
   kind: 'buffWearOff'
+  /** Best-effort first candidate (display casing). Prefer `candidates` — the message may be shared. */
   spell: string
+  /**
+   * ALL spells whose `msg_wears_off` equals this line (Task #45). Many families share a
+   * wears-off message (9 haste spells share "Your speed returns to normal.", 13 share
+   * "Your strength fades.", …), so the message alone can't name which one faded. The buffs
+   * module resolves against the player's ACTIVE self buffs — EQ stacking rules keep at most
+   * one candidate of a family active at a time, so the active set names the real spell.
+   */
+  candidates: string[]
   target: 'self'
 }
 

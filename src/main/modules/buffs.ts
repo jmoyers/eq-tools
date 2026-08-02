@@ -99,6 +99,15 @@ const QUICK_BUFF = 'quick buff'
 /** How long after a Quick Buff activation its burst applies are attributed to it. */
 const QUICK_BUFF_WINDOW_MS = 5_000
 
+/**
+ * OWN-CAST landing window (Task #45). A message-driven apply (buffApply) is attributed to the
+ * player only when their OWN castBegin of that spell landed within this window before the
+ * emote — mirrors the emote-mining window. Cast times run up to ~8s (Swift is 8s) plus the
+ * short travel to the landing line, so a slightly generous window avoids dropping real
+ * self/pet casts while still rejecting a stranger's buff (no own castBegin at all).
+ */
+const OWN_CAST_WINDOW_MS = 10_000
+
 /** The AA that makes self-cast illusion buffs PERMANENT (Task #34). */
 const PERMANENT_ILLUSION = 'permanent illusion'
 
@@ -205,6 +214,13 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   private permanentIllusionOwnedTs?: number
   /** Recently-cast spell keys → last cast ts (Task #34), for ambiguous-message resolution. */
   private castHistory = new Map<string, number>()
+  /**
+   * Per-spell LAST-SEEN event ts (Task #45): the newest castBegin / apply / fade involving
+   * the spell — the cheapest consistent recency signal. Feeds the suggested-alerts wizard's
+   * recency sort (recent spells sort to the top over merely-frequent ones). Keyed by
+   * canonical spell key; survives session gaps like the other learned maps.
+   */
+  private lastSeen = new Map<string, number>()
 
   /**
    * The observed-message overlay miner (Task #36). Mines (message, spell) associations from
@@ -226,6 +242,12 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   /** Serialize the current learned overlay (for debounced persistence in index.ts). */
   overlaySnapshot(): MessageOverlay {
     return this.miner.build()
+  }
+
+  /** Record the newest ts a spell was seen (cast/apply/fade) — the recency signal (Task #45). */
+  private touchLastSeen(key: string, ts: number): void {
+    const prev = this.lastSeen.get(key)
+    if (prev == null || ts > prev) this.lastSeen.set(key, ts)
   }
 
   /** Authoritative DB duration (ms) for a spell key, or null when unknown. */
@@ -331,6 +353,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.quickBuffTs = 0
     this.permanentIllusionOwnedTs = undefined
     this.castHistory = new Map()
+    this.lastSeen = new Map()
     this.charmedKey = undefined
     this.charmedDisplay = undefined
     this.brokenCharmKey = undefined
@@ -421,6 +444,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         this.landPending(ev.ts)
         const key = spellKey(ev.spell)
         this.castHistory.set(key, ev.ts)
+        this.touchLastSeen(key, ev.ts)
         // Optimistic display: bind the provisional to the entity this cast most likely
         // targets NOW (self, live pet, or the inferred hostile target for a debuff).
         const disp = this.inferCastDisposition(key, undefined)
@@ -460,14 +484,29 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         break
       }
       case 'buffApply': {
+        // OWN-CAST GATING (Task #45, the user's rule: "if something isn't cast by me — we
+        // shouldn't track it"). Cast-on-other landing emotes (a nearby player's Symbol
+        // landing on the mob you're fighting) don't name the caster, so without this gate a
+        // STRANGER's buff binds as ours. Require attribution to the player's OWN casting:
+        // an own castBegin of the resolved spell within the landing window, OR a Quick Buff
+        // activation burst (which applies many spells with no castBegin). No own-cast
+        // context → skip the apply entirely (never guess a stranger's buff).
         const r = this.resolveCandidate(ev.candidates)
-        if (r) this.applyMessageBuff(r.name, ev.target, ev.ts, r.illusion, r.durationMs)
+        if (r && this.ownCastAttributed(spellKey(r.name), ev.ts)) {
+          this.applyMessageBuff(r.name, ev.target, ev.ts, r.illusion, r.durationMs)
+        }
         break
       }
       case 'buffWearOff': {
         // Authoritative, message-driven expiry. The wears-off emote prints to the buff
         // HOLDER (the player), so it clears the SELF instance of this spell (Task #34/#35).
-        this.removeAuthoritative(spellKey(ev.spell), SELF_KEY, ev.ts)
+        // MANY spells share a wears-off message (Task #45): resolve against the ACTIVE self
+        // set. EQ stacking keeps at most one candidate of a family active, so exactly one
+        // matches the common case; if several somehow match, remove ALL (they share the
+        // line — be honest). None active → no-op. Removing by only the first candidate (the
+        // old code) MISSED the actually-active buff (e.g. self Quickness/Swift never cleared
+        // because the first candidate "Aanya's Quickening" was never the active one).
+        this.removeSharedWearOff(ev.candidates, SELF_KEY, ev.ts)
         break
       }
       case 'illusionFade': {
@@ -680,6 +719,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     // not the player's own buff. Skip it (the bar shows only the player's beneficial buffs).
     if (target === 'self' && this.classOf(key) === 'debuff') return
     this.everFaded.add(key)
+    this.touchLastSeen(key, ts)
     if (this.pending && this.pending.key === key) this.pending = null
 
     const self = target === 'self'
@@ -717,6 +757,25 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     // prior illusion active on it (self OR pet). Only one illusion per entity at a time.
     if (illusion) this.clearIllusionsOn(eKey, iKey)
     this.dirty = true
+  }
+
+  /**
+   * OWN-CAST attribution gate (Task #45). True when this apply can be attributed to the
+   * player's OWN casting, so it's a buff WE put up (on self, our pet, or a mob we're
+   * debuffing) — not a stranger's buff that happened to land on an entity near us:
+   *   (a) an own `castBegin` of this spell within OWN_CAST_WINDOW_MS before the emote
+   *       (castHistory records the last own cast ts per spell key), OR
+   *   (b) an active Quick Buff burst (aaActivate 'Quick Buff' within QUICK_BUFF_WINDOW_MS) —
+   *       a burst applies MANY spells with NO castBegin, so its window whitelists those.
+   * No own-cast context → false → the apply is skipped (the user's strict rule).
+   */
+  private ownCastAttributed(key: string, ts: number): boolean {
+    const lastCast = this.castHistory.get(key)
+    if (lastCast != null && ts >= lastCast && ts - lastCast <= OWN_CAST_WINDOW_MS) return true
+    if (this.quickBuffTs > 0 && ts >= this.quickBuffTs && ts - this.quickBuffTs <= QUICK_BUFF_WINDOW_MS) {
+      return true
+    }
+    return false
   }
 
   /** Resolve an ambiguous landing-message apply (Task #34) to the candidate the player cast. */
@@ -759,6 +818,30 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     const spell = this.active.get(iKey)?.spell ?? this.samples.get(key)?.spell ?? key
     this.everFaded.add(key)
     this.recordFade(key, entityKey, spell, ts)
+  }
+
+  /**
+   * SHARED wears-off resolution (Task #45). A wears-off line whose message maps to MULTIPLE
+   * candidate spells (haste/strength/armor families) removes whichever matching ACTIVE self
+   * buff(s) exist — resolve against the active set, don't guess a single spell:
+   *   • exactly ONE candidate active → remove it (the common case; EQ stacking keeps one
+   *     member of a family up at a time);
+   *   • MULTIPLE candidates active → remove ALL of them (they honestly share this message);
+   *   • NONE active → no-op (nothing to remove — don't fabricate a fade sample).
+   * Each removal is AUTHORITATIVE (pairs a duration sample + clears the instance).
+   */
+  private removeSharedWearOff(candidateNames: string[], entityKey: string, ts: number): void {
+    const cands = new Set(candidateNames.map(spellKey))
+    // Find the candidates that actually have an ACTIVE instance on this entity.
+    const matched: string[] = []
+    for (const [ik, a] of this.active) {
+      if (this.instanceEntityKey(ik) !== entityKey) continue
+      const k = spellKey(a.spell)
+      if (cands.has(k) && !matched.includes(k)) matched.push(k)
+    }
+    for (const k of matched) this.removeAuthoritative(k, entityKey, ts)
+    // NONE active → intentional no-op: a wears-off for a buff we never tracked (e.g. cast by
+    // someone else, or already swept) must not create a phantom fade sample.
   }
 
   /**
@@ -815,6 +898,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
    * prefer the SAME-entity instance, then the oldest matching open cast.
    */
   private recordFade(key: string, entityKey: string, spell: string, fadeTs: number): void {
+    this.touchLastSeen(key, fadeTs)
     const iKey = instanceKey(key, entityKey)
     let openKey: string | undefined
     if (this.open.has(iKey)) {
@@ -1044,7 +1128,8 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       maxMs: sorted[sorted.length - 1],
       dbDurationMs: this.dbDurationFor(key),
       estimateMs: est.ms,
-      estimatorSource: est.source
+      estimatorSource: est.source,
+      lastSeenMs: this.lastSeen.get(key) ?? null
     }
   }
 
@@ -1166,7 +1251,8 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
           maxMs: null,
           dbDurationMs: dbMs,
           estimateMs: dbMs,
-          estimatorSource: dbMs != null ? 'db' : undefined
+          estimatorSource: dbMs != null ? 'db' : undefined,
+          lastSeenMs: this.lastSeen.get(key) ?? null
         }
       }
     }

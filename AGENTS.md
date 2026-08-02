@@ -634,6 +634,63 @@ SAME entity.
   broken-charm slot (a buff on a broken-charm entity is not a retired-entity leak; it's cleared by
   death/zone/succession). All W1–W12 stay green.
 
+**Three user refinements (Task #45) — recency sort, shared wears-off, own-cast gating.** Three
+independent user reports, three fixes to the buffs model + suggest wizard. `tests/
+refinementWindows.test.mts` (+5 → 40 total); all prior windows stay green.
+
+- **Recency over frequency in the suggest wizard (#1).** The user: "sort more recent spells
+  towards the top vs. more frequent." The buffs module now tracks a per-spell **`lastSeen`** map
+  (`touchLastSeen` on every castBegin / message apply / fade — the cheapest consistent recency
+  signal), surfaced as **`BuffStat.lastSeenMs`** (additive). The catalog join (`index.ts`
+  `spells:catalog`) reads it alongside `n` and passes a `lastSeen` map to **`buildSpellCatalog(db,
+  usage, lastSeen)`**; **`SpellCatalogEntry.lastSeenMs`** (additive) carries it to the renderer.
+  New sort: USED spells (usageCount>0) first, ordered by **lastSeenMs DESC** (recency), tie-broken
+  by usageCount DESC, then name; the never-used spells form the alphabetical tail after ALL used
+  ones. `SuggestAlertsDialog` keeps the usage badge and adds a "last seen <rel>" line to its
+  tooltip (`relativeTime`). Demonstrated: OLD top-5 led with the most-frequent stale spells
+  (Tashani 76×, Quickness 64× last seen days earlier); NEW top-5 leads with the most-recently-seen
+  (Swift/Boon/Group Resist/Clarity — all last seen at end-of-log). W18/W18b pin it.
+
+- **Shared wears-off messages (#2).** The user: self haste (Swift/Quickness) wore off as `Your
+  speed returns to normal.` and the bar never cleared it. THE DEFECT: the parser emitted
+  `buffWearOff { spell: wornCands[0].name }` — only the FIRST candidate — and the module did an
+  EXACT single-instance lookup (`removeAuthoritative(spellKey(ev.spell), self)`). But that message
+  is the shared `msg_wears_off` of **9 haste spells** (first alphabetical candidate = `Aanya's
+  Quickening`, which is never what's active), so the active Quickness/Swift instance was MISSED and
+  stuck forever. There are **123 multi-spell wears-off groups** in spells.json (haste 9, strength
+  13, `Your skin returns to normal.` armor 28, `The mystic symbol fades.` symbols 6, etc.; the
+  27-way `Your illusion fades.` is handled separately as `illusionFade`, Task #36). THE FIX: the
+  parser now carries the FULL **`candidates: string[]`** on `buffWearOff` (additive to the event),
+  and the module's **`removeSharedWearOff(candidates, self, ts)`** RESOLVES AGAINST THE ACTIVE
+  SELF SET — exactly one candidate active → remove it (the common case; EQ stacking keeps one
+  family member up); multiple active → remove all (they honestly share the message); none active →
+  no-op (never fabricate a phantom fade). W16 pins the self-Quickness case.
+
+- **Own-cast gating (#3).** The user: "if something isn't cast by me — we shouldn't track it.
+  something buffed a mob near me… with symbol and it's on the list." Cast-on-other landing emotes
+  (`<mob> is cloaked in a shimmer of glowing symbols.`) name the TARGET, never the caster, so a
+  NEARBY player's Symbol landing on the user's fight target bound as the user's buff. Worse, the
+  ambiguous-message resolver used the SESSION-WIDE `castHistory`, so ANY later stranger Symbol
+  resolved to the user's hours-old own Pinzarn cast and bound. THE FIX: **ALL message-driven
+  applies now require own-cast attribution** — `buffApply` calls **`ownCastAttributed(key, ts)`**
+  before applying: true only when an OWN `castBegin` of that spell landed within
+  **`OWN_CAST_WINDOW_MS` (10s)** before the emote, OR a Quick Buff burst is active (the burst
+  applies many spells with NO castBegin, so its `QUICK_BUFF_WINDOW_MS` window whitelists them — the
+  existing behavior). No own-cast context → the apply is SKIPPED entirely (never guess a stranger's
+  buff). The self-heal-by-buff path (`You healed <you> … by <S>.`, healer=you) stays ungated (it's
+  inherently own-cast). The castBegin optimistic/landPending paths are own casts by definition.
+  Full-log replay diff: final active list **16 → 3** — every stranger-cast buff on another entity
+  vanished (`Symbol of Pinzarn`/`Resolution`/`Valor` on other players Holwin/Cilin Spellsinger/
+  Bzzazzt and on mobs an undine spirit/a greater sphinx). The remaining 3 are the true end-of-log
+  state: self **Valor** + self **Symbol of Pinzarn** (both DB-timed, still within duration at the
+  23:59:42 log end) + the debuff **Shiftless Deeds** on Bzzazzt (own cast). Self buffs that used to
+  show (Clarity/Group Resist/Swift) correctly WORE OFF before log end (Clarity @23:54:33, Group
+  Resist @23:55:27, Swift @23:37:02 — the #2 fix). W17 pins the stranger-Symbol skip; W17b pins
+  that the user's own Quick Buff burst buffs (incl. Symbol) still track. NB a buff the user casts
+  on a groupmate DURING their own burst (e.g. `Bzzazzt feels much faster.`) is legitimately
+  attributed (own cast) and tracked on that entity — the user's complaint was STRANGER casts, not
+  the user buffing others.
+
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
   the renderer and **missed any charm that happened before the app opened** — the

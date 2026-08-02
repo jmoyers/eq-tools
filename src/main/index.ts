@@ -481,9 +481,14 @@ function registerIpc(): void {
   // buffs module — we never mutate it.
   ipcMain.handle(IPC.spellsCatalog, () => {
     const usage = new Map<string, number>()
+    const lastSeen = new Map<string, number>()
     const snap = registry.get('buffs')?.snapshot()?.state as BuffsSnap | undefined
-    if (snap) for (const [key, stat] of Object.entries(snap.stats)) usage.set(key, stat.n)
-    return buildSpellCatalog(spellDb, usage)
+    if (snap)
+      for (const [key, stat] of Object.entries(snap.stats)) {
+        usage.set(key, stat.n)
+        if (stat.lastSeenMs != null) lastSeen.set(key, stat.lastSeenMs)
+      }
+    return buildSpellCatalog(spellDb, usage, lastSeen)
   })
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----

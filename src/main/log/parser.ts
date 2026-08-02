@@ -624,11 +624,22 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     const selfCands = db.castOnYou.get(text)
     if (selfCands && selfCands.length) return buffApplyEvent(seq, ts, raw, 'self', selfCands)
     // Buff fade: msg_wears_off match → buffWearOff { self }. Message-driven expiry is
-    // favored over estimate-based removal (the user directive). We carry the first
-    // candidate's name (the module removes by the ACTIVE buff sharing the message anyway).
+    // favored over estimate-based removal (the user directive). MANY spells share a
+    // wears-off message ("Your speed returns to normal." = 9 haste spells, "Your strength
+    // fades." = 13, …), so we carry the FULL candidate list (Task #45): the buffs module
+    // resolves against the player's ACTIVE self buffs (EQ stacking ⇒ one candidate active at
+    // a time). Removing by only the first candidate MISSED the actually-active buff.
     const wornCands = db.wearsOff.get(text)
     if (wornCands && wornCands.length) {
-      return { kind: 'buffWearOff', seq, ts, raw, spell: wornCands[0].name, target: 'self' }
+      return {
+        kind: 'buffWearOff',
+        seq,
+        ts,
+        raw,
+        spell: wornCands[0].name,
+        candidates: wornCands.map((s) => s.name),
+        target: 'self'
+      }
     }
     // Cast-on-other: the log names the target ("a froglok looks tranquil."), so match by
     // the invariant SUFFIX the wiki records as "Someone looks tranquil." → "looks
