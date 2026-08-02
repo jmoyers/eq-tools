@@ -776,10 +776,26 @@ transition per ingested line (documented at the top of `engine.ts`). Rules:
   data dir — the parser in MAIN needs it; imported+inlined by spellDb.ts). Source: every
   `Template:Spellpage` wiki page. See the Task #34 buffs notes above.
 - Raid targets: `npm run scrape:bosses` → `.../eqlegends/bosses.json`. Roster is
-  **classic-only** (no Kunark/Velious). Portraits come from the **Project 1999
-  wiki** (`Npc_*` images, best classic art) with eqlwiki fallback; Cazic uses the
-  `Cazic Thule (God)` P99 page. Images are hotlinked (CSP allows `https:`);
-  `onError` falls back to an initials placeholder.
+  **classic-only** (no Kunark/Velious). It's a **curated `TARGETS` list** in
+  `scripts/scrape-bosses.ts` (the scraper only fetches portraits per row — it does
+  NOT parse the wiki's boss tables), so adding a target = editing that array.
+  Portraits come from the **Project 1999 wiki** (`Npc_*` images, best classic art)
+  with eqlwiki fallback; Cazic uses the `Cazic Thule (God)` P99 page. Images are
+  hotlinked (CSP allows `https:`); `onError` falls back to an initials placeholder.
+  - **Plane of Sky Efreeti Cycle (Task #43).** The Sky roster continues PAST the
+    Eye of Veeshan (Island 8) with the wiki's "Efreeti Cycle" spawn chain: Noble
+    Dojorn (Island 1.5, "first kill") → **Overseer of Air** (spawns Island 4,
+    "second boss") → **the Hand of Veeshan** (spawns Island 8, final). Overseer and
+    the Hand were originally missing (the wiki lists them as spawn-chain "Other:"
+    entries, not main island bosses). Both are real log kills. The Hand's log name
+    carries a leading article ("The Hand of Veeshan" on slain-by lines, "the Hand
+    of Veeshan" mid-sentence) — `bossStatus.matchKey` strips a single leading
+    a/an/the, so both fold to `hand of veeshan` and match (no bossStatus change
+    needed). NB "Efreeti Lord Djarn" is a *Nagafen's Lair* named (per its wiki
+    page), NOT part of the Sky cycle — deliberately excluded from the Sky roster.
+    Retro confetti is not a concern: the historical kill baseline is seeded
+    silently on first snapshot, so newly-added defeated targets don't fire
+    confetti/sound on load.
 - Profiles (`src/shared/profiles.ts`) namespace data by server so a P99 backend
   can be added later.
 

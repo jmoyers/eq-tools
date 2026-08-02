@@ -69,7 +69,20 @@ const TARGETS: Curated[] = [
   { name: 'The Spiroc Lord', category: 'Plane of Sky', page: 'Spiroc Lord', match: ['The Spiroc Lord'], zone: 'Plane of Sky — Island 5' },
   { name: 'Bazzt Zzzt', category: 'Plane of Sky', match: ['Bazzt Zzzt'], zone: 'Plane of Sky — Island 6' },
   { name: 'Sister of the Spire', category: 'Plane of Sky', match: ['Sister of the Spire'], zone: 'Plane of Sky — Island 7' },
-  { name: 'Eye of Veeshan', category: 'Plane of Sky', match: ['Eye of Veeshan'], zone: 'Plane of Sky — Island 8' }
+  { name: 'Eye of Veeshan', category: 'Plane of Sky', match: ['Eye of Veeshan'], zone: 'Plane of Sky — Island 8' },
+
+  // Plane of Sky — the Efreeti Cycle (a spawn chain that FOLLOWS Eye in the
+  // wiki's boss listing). Noble Dojorn (Island 1.5, above) is the "first kill in
+  // the Efreeti Cycle"; killing him spawns the Overseer of Air (the wiki's
+  // "second boss in the Efreeti Cycle", up on Island 4), whose death spawns the
+  // Hand of Veeshan back on Island 8 (the final Efreeti-Cycle kill, sharing the
+  // island with the Eye). These were missing from the roster — the log shows
+  // both killed ('Overseer of Air has been slain by …', 'The Hand of Veeshan has
+  // been slain by …'). The Hand's log name carries a leading 'the'/'The'
+  // (lowercase mid-sentence, capitalized on the slain-by line) — bossStatus's
+  // matchKey strips a single leading article, so 'hand of veeshan' matches both.
+  { name: 'Overseer of Air', category: 'Plane of Sky', match: ['Overseer of Air'], zone: 'Plane of Sky — Efreeti Cycle (Island 4)' },
+  { name: 'The Hand of Veeshan', category: 'Plane of Sky', page: 'The Hand of Veeshan', match: ['The Hand of Veeshan', 'the Hand of Veeshan'], zone: 'Plane of Sky — Efreeti Cycle (Island 8)' }
 ]
 
 async function pageHtml(apiBase: string, page: string): Promise<string | undefined> {

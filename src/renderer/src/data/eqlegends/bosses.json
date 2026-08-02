@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-08-01T22:08:12.210Z",
+  "scrapedAt": "2026-08-02T06:37:16.108Z",
   "targets": [
     {
       "name": "Lord Nagafen",
@@ -262,6 +262,25 @@
       ],
       "zone": "Plane of Sky — Island 8",
       "image": "https://wiki.project1999.com/images/thumb/Npc_eye_of_veeshan.png/200px-Npc_eye_of_veeshan.png"
+    },
+    {
+      "name": "Overseer of Air",
+      "category": "Plane of Sky",
+      "match": [
+        "Overseer of Air"
+      ],
+      "zone": "Plane of Sky — Efreeti Cycle (Island 4)",
+      "image": "https://wiki.project1999.com/images/thumb/Npc_overseer_of_air.png/200px-Npc_overseer_of_air.png"
+    },
+    {
+      "name": "The Hand of Veeshan",
+      "category": "Plane of Sky",
+      "match": [
+        "The Hand of Veeshan",
+        "the Hand of Veeshan"
+      ],
+      "zone": "Plane of Sky — Efreeti Cycle (Island 8)",
+      "image": "https://wiki.project1999.com/images/thumb/Npc_the_hand_of_veeshan.png/200px-Npc_the_hand_of_veeshan.png"
     }
   ]
 }
