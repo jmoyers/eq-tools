@@ -154,16 +154,15 @@ export function setOverlayConfig(kind: OverlayKind, patch: Partial<OverlayConfig
 
 // ----- Auto-update channel (Task #27) -----
 
-/** Default channel: 'main' — the bleeding-edge stream CI publishes on every push. */
+/**
+ * Default channel: 'main' — the bleeding-edge stream CI publishes on every push.
+ *
+ * Task #55 removed channel SELECTION from the UI (there is no setter and no IPC any
+ * more); this read stays so an install that picked 'stable' before keeps its feed.
+ */
 export function getUpdateChannel(): UpdateChannel {
   const c = store.get('updateChannel')
   return c === 'stable' ? 'stable' : 'main'
-}
-
-export function setUpdateChannel(channel: UpdateChannel): UpdateChannel {
-  const next: UpdateChannel = channel === 'stable' ? 'stable' : 'main'
-  store.set('updateChannel', next)
-  return next
 }
 
 // ----- Alerts extension (Task #18) -----

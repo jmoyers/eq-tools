@@ -21,13 +21,13 @@ import type {
   SpellCatalog
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
-import type { OverlayKind, UpdateChannel, UpdateStatus } from '../shared/types'
+import type { OverlayKind, UpdateStatus } from '../shared/types'
 
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
-export type { UpdateChannel, UpdateStatus }
+export type { UpdateStatus }
 
 export interface ReloadInventoryResult {
   ok: boolean
@@ -179,20 +179,21 @@ const api = {
     return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
   },
 
-  // ---- auto-update (Task #27) ----
+  // ---- auto-update (Task #27; reworked in Task #55) ----
   /** Subscribe to update lifecycle pushes (checking/available/downloading/ready/error). */
   onUpdateStatus: (cb: (s: UpdateStatus) => void): (() => void) => {
     const listener = (_e: unknown, s: UpdateStatus): void => cb(s)
     ipcRenderer.on(IPC.onUpdateStatus, listener)
     return () => ipcRenderer.removeListener(IPC.onUpdateStatus, listener)
   },
+  /** Pull the last update status (pushes only reach renderers mounted at the time). */
+  getUpdateStatus: (): Promise<UpdateStatus> => ipcRenderer.invoke(IPC.getUpdateStatus),
+  /** Run an update check now; resolves to the resulting status (idle no-op in dev). */
+  checkForUpdates: (): Promise<UpdateStatus> => ipcRenderer.invoke(IPC.checkForUpdates),
   /** Apply the downloaded update now (quit + install + relaunch). */
   installUpdate: (): Promise<void> => ipcRenderer.invoke(IPC.installUpdate),
-  /** Read the current release channel. */
-  getUpdateChannel: (): Promise<UpdateChannel> => ipcRenderer.invoke(IPC.getUpdateChannel),
-  /** Select a release channel (re-checks immediately). Returns the applied channel. */
-  setUpdateChannel: (channel: UpdateChannel): Promise<UpdateChannel> =>
-    ipcRenderer.invoke(IPC.setUpdateChannel, channel),
+  /** The running app's version (app.getVersion()). */
+  getAppVersion: (): Promise<string> => ipcRenderer.invoke(IPC.getAppVersion),
 
   // ---- floating overlay DPS meters (Task #52; per-kind in Task #54) ----
   /** Toggle a kind's overlay window; resolves to the resulting open-state. */

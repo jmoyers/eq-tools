@@ -1,9 +1,12 @@
-import { memo, useDeferredValue, useMemo, useRef, useState } from 'react'
+import { memo, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import {
   Alert,
   Box,
   Chip,
   FormControlLabel,
+  IconButton,
+  MenuItem,
+  Snackbar,
   Stack,
   Switch,
   Table,
@@ -17,15 +20,17 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
-import type { ItemKnowledge, LootDelta, LootDisposition, LootEvent, LootSnap } from '@shared/types'
-import { useModule } from '../../lib/useModule'
+import RefreshIcon from '@mui/icons-material/Refresh'
+import type { CountSource, ItemKnowledge, LootDisposition, LootEvent } from '@shared/types'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
 import { itemCountKey } from '../../lib/itemName'
-import { formatDateTime } from '../../lib/formatDate'
+import { formatDateTime, formatTime } from '../../lib/formatDate'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
+import { useProgress } from '../posky/useProgress'
+import type { InventoryRow } from '../inventory/reconcile'
 import { ItemDetailDialog } from './ItemDetailDialog'
 import { useNotablePickups, type NotablePickup } from './useNotablePickups'
 
@@ -48,19 +53,17 @@ for (const qz of posky.quests) {
 // Fixed dense-row height (px) for the windowed tables (MUI Table size="small").
 const ROW_HEIGHT = 37
 
-// Stable empty reference so useMemo deps don't churn before hydration.
-const EMPTY_LOOT: LootEvent[] = []
-
-// A loot event with a precomputed lowercase item key — computed ONCE per history
-// change so the per-keystroke filter is a plain substring test (never re-lowercasing
-// thousands of rows on every character typed).
-type KeyedLoot = LootEvent & { itemKey: string }
+// A loot event with two precomputed keys — computed ONCE per history change so the
+// per-keystroke filter is a plain substring test (never re-lowercasing thousands of rows
+// on every character typed).
+//   itemKey  — raw lowercase; the GROUPING identity, so `Sphinx Claw +1` keeps its own row.
+//   countKey — `+N`-stripped counting key (Task #42); the join key onto quest items and
+//              onto the reconciled inventory rows, which are keyed the same way.
+type KeyedLoot = LootEvent & { itemKey: string; countKey: string }
 
 function fmtTime(ts: number): string {
   return formatDateTime(ts, { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
-
-const applyLootDelta = (state: LootSnap, delta: LootDelta): LootSnap => [...state, ...delta.appended]
 
 // A subtle disposition chip (Tasks #40/#47): where a looted-and-routed item went.
 // Dense, low-emphasis — no chip for ordinary kept loot. Kept storage (currency/hoard/
@@ -110,13 +113,46 @@ function KnowledgeBadge({ knowledge, isPosky }: { knowledge?: ItemKnowledge; isP
   )
 }
 
+/**
+ * The "In inventory" cell — an ESTIMATE, never a fact (world-model law 1). The number is
+ * the reconciled net held count (inventory/reconcile.ts): the active count source (looted
+ * log and/or the last `/outputfile inventory` export) minus everything consumed by a
+ * turned-in quest. The log cannot see bank deposits, destroys, trades or vendor sales that
+ * happen off-camera, so it renders as a `~` chip like every other inferred value, with the
+ * inputs spelled out in the tooltip. `+N` upgrade variants pool onto the base counting key,
+ * so a `Sphinx Claw` row and a `Sphinx Claw +1` row show the same pooled estimate.
+ */
+const InventoryEstimate = memo(function InventoryEstimate({ inv }: { inv?: InventoryRow }): JSX.Element {
+  if (!inv || inv.net <= 0) return <Box component="span" sx={{ color: 'text.disabled' }}>—</Box>
+  const parts: string[] = [`${inv.log} looted`]
+  if (inv.inv > 0) parts.push(`${inv.inv} in the inventory export`)
+  if (inv.consumed > 0) parts.push(`${inv.consumed} turned in (${inv.consumedBy.join(', ')})`)
+  return (
+    <Tooltip title={`Estimate — ${parts.join(' · ')}`}>
+      <Chip
+        size="small"
+        variant="outlined"
+        label={`~${inv.net}`}
+        sx={{ height: 18, fontSize: 11, cursor: 'help', color: 'text.secondary' }}
+      />
+    </Tooltip>
+  )
+})
+
 interface GroupRow {
+  /** Stable React key — the raw lowercase item name, or `inv:<countKey>` for an
+   *  inventory-only row (which has no loot history to group). */
+  key: string
+  /** Normalized counting key — the join onto the reconciled inventory rows. */
+  countKey: string
   item: string
   count: number
   last: number
   topSource?: string
   zoneCount: number
   disposition?: LootDisposition
+  /** Held per the inventory export but never looted this epoch — no loot columns. */
+  invOnly?: boolean
 }
 
 // "Notable pickups" strip (Task #53): the last few looted items that are lore- or
@@ -177,12 +213,14 @@ const GroupedRow = memo(function GroupedRow({
   g,
   favorited,
   knowledge,
+  inv,
   onToggleFavorite,
   onSelect
 }: {
   g: GroupRow
   favorited: boolean
   knowledge?: ItemKnowledge
+  inv?: InventoryRow
   onToggleFavorite: (name: string) => void
   onSelect: (item: string) => void
 }): JSX.Element {
@@ -190,7 +228,7 @@ const GroupedRow = memo(function GroupedRow({
   return (
     <TableRow
       hover
-      sx={{ cursor: 'pointer', height: ROW_HEIGHT, '& td': { py: 0 } }}
+      sx={{ cursor: 'pointer', height: ROW_HEIGHT, '& td': { py: 0 }, opacity: g.invOnly ? 0.7 : 1 }}
       onClick={() => onSelect(g.item)}
     >
       <TableCell padding="checkbox">
@@ -204,12 +242,17 @@ const GroupedRow = memo(function GroupedRow({
           <DispositionChip disposition={g.disposition} />
         </Stack>
       </TableCell>
-      <TableCell align="right">{g.count}</TableCell>
+      <TableCell align="right" sx={g.invOnly ? { color: 'text.disabled' } : undefined}>
+        {g.invOnly ? '—' : g.count}
+      </TableCell>
+      <TableCell align="right">
+        <InventoryEstimate inv={inv} />
+      </TableCell>
       <TableCell sx={{ color: 'text.secondary' }}>{g.topSource ?? '—'}</TableCell>
       <TableCell align="right" sx={{ color: 'text.secondary' }}>
         {g.zoneCount || '—'}
       </TableCell>
-      <TableCell sx={{ color: 'text.secondary' }}>{fmtTime(g.last)}</TableCell>
+      <TableCell sx={{ color: 'text.secondary' }}>{g.invOnly ? '—' : fmtTime(g.last)}</TableCell>
     </TableRow>
   )
 })
@@ -259,31 +302,69 @@ const FlatRow = memo(function FlatRow({
 
 export default function LootView(): JSX.Element {
   const { isFavorite, toggle: toggleFavorite } = useFavorites()
-  const history = useModule<LootSnap, LootDelta>('loot', applyLootDelta) ?? EMPTY_LOOT
+  // ONE subscription to the loot module: useProgress already owns it (and needs it for the
+  // reconcile), so the merged view reads its history from there rather than holding a
+  // second copy of the full loot snapshot.
+  const {
+    lootHistory: history,
+    inventoryRows,
+    countSource,
+    setCountSource,
+    reloadInventory,
+    inventoryInfo
+  } = useProgress()
   const [query, setQuery] = useState('')
   const [groupByItem, setGroupByItem] = useState(true)
   const [questOnly, setQuestOnly] = useState(false)
+  const [showInventoryOnly, setShowInventoryOnly] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
+  const [toast, setToast] = useState<string | null>(null)
+  // When main auto-reloads the *-Inventory.txt (chokidar watch), surface it quietly.
+  const [autoUpdatedAt, setAutoUpdatedAt] = useState<number | null>(null)
   // "Notable pickups" (Task #53): probe the most-recent distinct looted items for
   // lore/quest knowledge (main: local-posky-first + cached wiki). Dismissed keys hide
   // from the strip. `byKey` also feeds the per-row LORE/quest indicator.
   const [dismissed, setDismissed] = useState<Set<string>>(new Set())
   const { byKey: knowledgeByKey, notable } = useNotablePickups(history, dismissed)
 
+  useEffect(() => {
+    const off = window.eq.onInventoryReload(() => setAutoUpdatedAt(Date.now()))
+    return off
+  }, [])
+
+  const onReload = async (): Promise<void> => setToast(await reloadInventory())
+
   // Typing echoes IMMEDIATELY (local `query` state); the filter consumes a DEFERRED
   // copy so a keystroke never blocks on the filter + re-render (Task #41).
   const deferredQuery = useDeferredValue(query)
   const q = normalizeQuery(deferredQuery)
 
-  // Precompute a lowercase item key ONCE per history change (not per keystroke).
+  // Precompute the lowercase + counting keys ONCE per history change (not per keystroke).
   const keyed = useMemo<KeyedLoot[]>(
-    () => history.map((e) => ({ ...e, itemKey: e.item.toLowerCase() })),
+    () => history.map((e) => ({ ...e, itemKey: e.item.toLowerCase(), countKey: itemCountKey(e.item) })),
     [history]
+  )
+
+  // countKey → reconciled inventory row, rebuilt ONCE per inventory change so the estimate
+  // lookup stays O(1) per rendered row (the table is windowed; never scan per row).
+  const invByKey = useMemo(() => {
+    const m = new Map<string, InventoryRow>()
+    for (const r of inventoryRows) m.set(r.key, r)
+    return m
+  }, [inventoryRows])
+
+  // Every counting key that appears in loot history, so "inventory-only" means exactly
+  // "held per the export but never looted this epoch".
+  const lootCountKeys = useMemo(() => new Set(keyed.map((e) => e.countKey)), [keyed])
+
+  const invOnlySource = useMemo(
+    () => inventoryRows.filter((r) => r.net > 0 && !lootCountKeys.has(r.key)),
+    [inventoryRows, lootCountKeys]
   )
 
   const events = useMemo(() => {
     let list: KeyedLoot[] = keyed
-    if (questOnly) list = list.filter((e) => questItemNames.has(e.itemKey))
+    if (questOnly) list = list.filter((e) => questItemNames.has(e.countKey))
     if (q) list = list.filter((e) => e.itemKey.includes(q))
     return [...list].reverse() // most recent first
   }, [keyed, q, questOnly])
@@ -291,6 +372,7 @@ export default function LootView(): JSX.Element {
   const grouped = useMemo(() => {
     interface Group {
       item: string
+      countKey: string
       count: number
       last: number
       sources: Map<string, number>
@@ -303,7 +385,15 @@ export default function LootView(): JSX.Element {
       const key = e.itemKey
       let cur = map.get(key)
       if (!cur) {
-        cur = { item: e.item, count: 0, last: 0, sources: new Map(), zones: new Set(), dispositions: new Set() }
+        cur = {
+          item: e.item,
+          countKey: e.countKey,
+          count: 0,
+          last: 0,
+          sources: new Map(),
+          zones: new Set(),
+          dispositions: new Set()
+        }
         map.set(key, cur)
       }
       // Stacked loots count their stack size (Task #47): "2 Bone Chips" is two items.
@@ -313,12 +403,21 @@ export default function LootView(): JSX.Element {
       if (e.zone) cur.zones.add(e.zone)
       cur.dispositions.add(e.disposition)
     }
-    const list = [...map.values()].map((g) => {
+    const list: GroupRow[] = [...map.entries()].map(([key, g]) => {
       const topSource = [...g.sources.entries()].sort((a, b) => b[1] - a[1])[0]?.[0]
       // The group's dominant disposition — shown only when ALL of its rows share one, so a
       // mixed item (some kept, some sold) stays unlabeled rather than mislabeled.
       const disposition = g.dispositions.size === 1 ? [...g.dispositions][0] : undefined
-      return { item: g.item, count: g.count, last: g.last, topSource, zoneCount: g.zones.size, disposition }
+      return {
+        key,
+        countKey: g.countKey,
+        item: g.item,
+        count: g.count,
+        last: g.last,
+        topSource,
+        zoneCount: g.zones.size,
+        disposition
+      }
     })
     list.sort((a, b) => b.count - a.count || b.last - a.last)
     // Pin favorites to the top (stable).
@@ -326,10 +425,36 @@ export default function LootView(): JSX.Element {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [events, isFavorite])
 
+  // Opt-in tail of items the inventory export knows about but that were never looted this
+  // epoch (bank stock, pre-epoch gear). Kept OUT of the default view so the Loot table
+  // stays a loot table; the chip says how many are hiding. Already net-desc from reconcile.
+  const invOnlyRows = useMemo<GroupRow[]>(() => {
+    if (!showInventoryOnly) return []
+    let list = invOnlySource
+    if (questOnly) list = list.filter((r) => questItemNames.has(r.key))
+    if (q) list = list.filter((r) => r.name.toLowerCase().includes(q))
+    const rows: GroupRow[] = list.map((r) => ({
+      key: `inv:${r.key}`,
+      countKey: r.key,
+      item: r.name,
+      count: 0,
+      last: 0,
+      zoneCount: 0,
+      invOnly: true
+    }))
+    return rows.sort((a, b) => Number(isFavorite(b.item)) - Number(isFavorite(a.item)))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showInventoryOnly, invOnlySource, questOnly, q, isFavorite])
+
+  const groupRows = useMemo(
+    () => (invOnlyRows.length === 0 ? grouped : [...grouped, ...invOnlyRows]),
+    [grouped, invOnlyRows]
+  )
+
   const scrollRef = useRef<HTMLDivElement>(null)
   // Window whichever list is active — only the rows intersecting the viewport are
   // mounted, so a filter keystroke never mounts hundreds of MUI rows synchronously.
-  const rowCount = groupByItem ? grouped.length : events.length
+  const rowCount = groupByItem ? groupRows.length : events.length
   const win = useWindowedRows({ count: rowCount, rowHeight: ROW_HEIGHT, scrollRef })
 
   return (
@@ -350,12 +475,51 @@ export default function LootView(): JSX.Element {
           control={<Switch checked={questOnly} onChange={(e) => setQuestOnly(e.target.checked)} />}
           label="Only Plane of Sky items"
         />
+        {groupByItem && invOnlySource.length > 0 && (
+          <Tooltip title="Items your inventory export holds that you haven't looted this epoch — appended below the looted rows.">
+            <Chip
+              size="small"
+              variant={showInventoryOnly ? 'filled' : 'outlined'}
+              color={showInventoryOnly ? 'primary' : 'default'}
+              label={`+${invOnlySource.length.toLocaleString()} in inventory only`}
+              onClick={() => setShowInventoryOnly((v) => !v)}
+            />
+          </Tooltip>
+        )}
         <Box sx={{ flexGrow: 1 }} />
-        <Typography variant="body2" color="text.secondary">
-          {history.length.toLocaleString()} loot events · {grouped.length.toLocaleString()} unique items · click a
-          row for mob/zone/drop-rate breakdown
-        </Typography>
+        <Tooltip title="Which source feeds the 'In inventory' estimate (and Plane of Sky progress). Log = everything you've looted; Inventory = your last /outputfile dump; Both = the higher.">
+          <TextField
+            select
+            size="small"
+            label="Count from"
+            value={countSource}
+            onChange={(e) => setCountSource(e.target.value as CountSource)}
+            sx={{ minWidth: 150 }}
+          >
+            <MenuItem value="log">Log (looted)</MenuItem>
+            <MenuItem value="inventory">Inventory export</MenuItem>
+            <MenuItem value="both">Both (max)</MenuItem>
+          </TextField>
+        </Tooltip>
+        <Tooltip title="Run /outputfile inventory in-game, then reload">
+          <IconButton size="small" onClick={onReload}>
+            <RefreshIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
       </Stack>
+
+      <Typography variant="body2" color="text.secondary">
+        {history.length.toLocaleString()} loot events · {grouped.length.toLocaleString()} unique items · click a
+        row for mob/zone/drop-rate breakdown ·{' '}
+        {inventoryInfo
+          ? `inventory export ${formatDateTime(new Date(inventoryInfo.loadedAt).getTime())}`
+          : 'no inventory export loaded'}
+        {autoUpdatedAt && (
+          <Typography component="span" variant="body2" sx={{ color: 'success.main' }}>
+            {' '}· auto-updated {formatTime(autoUpdatedAt)}
+          </Typography>
+        )}
+      </Typography>
 
       <NotablePickupsStrip
         notable={notable}
@@ -382,6 +546,9 @@ export default function LootView(): JSX.Element {
                 <TableCell padding="checkbox" />
                 <TableCell>Item</TableCell>
                 <TableCell align="right">Times looted</TableCell>
+                <Tooltip title="Estimated count still on you: the active count source minus anything consumed by a turned-in quest. Inferred, not observed — the log never sees bank deposits, trades or destroys.">
+                  <TableCell align="right">In inventory</TableCell>
+                </Tooltip>
                 <TableCell>Top source</TableCell>
                 <TableCell align="right">Zones</TableCell>
                 <TableCell>Last looted</TableCell>
@@ -390,22 +557,23 @@ export default function LootView(): JSX.Element {
             <TableBody>
               {win.topPad > 0 && (
                 <TableRow style={{ height: win.topPad }}>
-                  <TableCell colSpan={6} sx={{ p: 0, border: 0 }} />
+                  <TableCell colSpan={7} sx={{ p: 0, border: 0 }} />
                 </TableRow>
               )}
-              {grouped.slice(win.start, win.end).map((g) => (
+              {groupRows.slice(win.start, win.end).map((g) => (
                 <GroupedRow
-                  key={g.item}
+                  key={g.key}
                   g={g}
                   favorited={isFavorite(g.item)}
-                  knowledge={knowledgeByKey.get(itemCountKey(g.item))}
+                  knowledge={knowledgeByKey.get(g.countKey)}
+                  inv={invByKey.get(g.countKey)}
                   onToggleFavorite={toggleFavorite}
                   onSelect={setSelected}
                 />
               ))}
               {win.bottomPad > 0 && (
                 <TableRow style={{ height: win.bottomPad }}>
-                  <TableCell colSpan={6} sx={{ p: 0, border: 0 }} />
+                  <TableCell colSpan={7} sx={{ p: 0, border: 0 }} />
                 </TableRow>
               )}
             </TableBody>
@@ -432,7 +600,7 @@ export default function LootView(): JSX.Element {
                   key={`${e.ts}-${e.item}-${win.start + i}`}
                   e={e}
                   favorited={isFavorite(e.item)}
-                  knowledge={knowledgeByKey.get(itemCountKey(e.item))}
+                  knowledge={knowledgeByKey.get(e.countKey)}
                   onToggleFavorite={toggleFavorite}
                   onSelect={setSelected}
                 />
@@ -457,6 +625,14 @@ export default function LootView(): JSX.Element {
           isQuestItem={questItemNames.has(itemCountKey(selected))}
         />
       )}
+
+      <Snackbar
+        open={!!toast}
+        autoHideDuration={4000}
+        onClose={() => setToast(null)}
+        message={toast ?? ''}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      />
     </Stack>
   )
 }

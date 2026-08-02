@@ -867,16 +867,24 @@ export interface ProgressState {
  * Release channel the auto-updater tracks:
  * - 'main'   : bleeding edge — every push to main publishes a prerelease here
  * - 'stable' : only tagged `v*` releases (the `latest` electron-updater channel)
+ *
+ * No longer user-selectable (Task #55): the stored value is read internally so
+ * existing installs keep their feed; new installs default to 'main'.
  */
 export type UpdateChannel = 'main' | 'stable'
 
 /**
- * Update lifecycle pushed over `update:status` (main -> renderer). `percent` is
- * present while downloading; `version` once known; `message` on error.
+ * Update lifecycle pushed over `update:status` (main -> renderer) AND returned by
+ * the `update:getStatus` pull (a late-mounting Preferences view would otherwise
+ * miss every push). `percent` is present while downloading; `version` once known;
+ * `message` on error; `checkedAt` is epoch millis of the last COMPLETED check
+ * (not-available / available / error all count) and rides along on every
+ * subsequent status so "Last checked" never blanks mid-download.
  */
 export interface UpdateStatus {
   state: 'idle' | 'checking' | 'available' | 'downloading' | 'ready' | 'error'
   version?: string
   percent?: number
   message?: string
+  checkedAt?: number
 }

@@ -12,7 +12,7 @@
 #                         version = the tag (no suffix). Users on 'stable' get these.
 #
 # electron-builder publishes to this repo's Releases via GITHUB_TOKEN (the publish
-# block in electron-builder.yml points at jmoyers/eq-tools). No extra secrets — the
+# block in electron-builder.yml points at jmoyers/everquest-companion). No extra secrets — the
 # app is UNSIGNED (no code-signing cert configured), which is intentional for now.
 #
 # The `channel` electron-builder writes into latest*.yml is controlled by

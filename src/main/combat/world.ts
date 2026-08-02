@@ -425,8 +425,21 @@ export class WorldModel {
     return !!inst && !inst.retired && inst.charmed
   }
 
-  /** Currently-charmed pet instances (for snapshot.charmed). */
+  /**
+   * The GENUINELY-CHARMED live pets — mobs bound by a `<mob> has been charmed.` line.
+   * A summoned class pet (bound by its owner-only "… Master." claim tell) is a pet but is
+   * NOT charmed, so it is excluded here by petKind. This is the ONLY honest source for a
+   * charm roster; the engine's petNames set is attribution-only and contains both kinds.
+   */
   charmedInstances(): Instance[] {
+    const out: Instance[] = []
+    for (const list of this.byName.values())
+      for (const i of list) if (!i.retired && i.charmed && i.petKind === 'charmed') out.push(i)
+    return out
+  }
+
+  /** All live pets, charmed AND summoned (the attribution roster). */
+  petInstances(): Instance[] {
     const out: Instance[] = []
     for (const list of this.byName.values()) for (const i of list) if (!i.retired && i.charmed) out.push(i)
     return out

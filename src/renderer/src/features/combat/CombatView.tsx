@@ -20,7 +20,6 @@ import {
 } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
-import PetsIcon from '@mui/icons-material/Pets'
 import { LIVE, useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { formatDate, formatTime } from '../../lib/formatDate'
@@ -701,17 +700,6 @@ export default function CombatView(): JSX.Element {
         />
         <Box sx={{ flexGrow: 1 }} />
         {snap?.stance && <StanceChips stance={snap.stance} />}
-        {snap && snap.charmed.length > 0 && (
-          <Tooltip title={`Charmed pets: ${snap.charmed.join(', ')}`}>
-            <Chip
-              size="small"
-              icon={<PetsIcon sx={{ fontSize: 14 }} />}
-              label={`${snap.charmed.length} charmed`}
-              variant="outlined"
-              sx={{ color: KIND_COLOR.pet, borderColor: KIND_COLOR.pet }}
-            />
-          </Tooltip>
-        )}
         {snap?.inCombat && (
           <Chip
             size="small"

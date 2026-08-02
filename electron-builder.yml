@@ -23,7 +23,7 @@ asarUnpack:
 publish:
   provider: github
   owner: jmoyers
-  repo: eq-tools
+  repo: everquest-companion
 
 win:
   target:

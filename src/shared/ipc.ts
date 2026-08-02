@@ -112,14 +112,19 @@ export const IPC = {
   // ignores pushes that aren't its own kind.
   onOverlayConfig: 'overlay:config',
 
-  // ---- auto-update (Task #27) ----
-  // main -> renderer: push update lifecycle {state, version?, percent?, message?}.
+  // ---- auto-update (Task #27; reworked in Task #55) ----
+  // main -> renderer: push update lifecycle {state, version?, percent?, message?, checkedAt?}.
   onUpdateStatus: 'update:status',
+  // renderer -> main: PULL the last status. The push above only reaches renderers that
+  // were mounted at the transition; Preferences mounts late, so it hydrates from here.
+  getUpdateStatus: 'update:getStatus',
+  // renderer -> main: run a check now ("Check for updates"). Resolves to the resulting
+  // status; a no-op idle status in dev.
+  checkForUpdates: 'update:checkNow',
   // renderer -> main: apply the downloaded update now (quit + install + relaunch).
   installUpdate: 'update:install',
-  // renderer <-> main: read/select the release channel ('main' | 'stable').
-  getUpdateChannel: 'update:getChannel',
-  setUpdateChannel: 'update:setChannel',
+  // renderer -> main: the running app's version (app.getVersion()), shown in Preferences.
+  getAppVersion: 'app:getVersion',
 
   // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
   // renderer -> main: look up an item's lore/quest knowledge (local posky-first, then a

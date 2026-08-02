@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import {
   Box,
   Button,
+  Chip,
   CssBaseline,
+  Divider,
   Drawer,
   List,
   ListItemButton,
@@ -16,7 +18,6 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import TravelExploreIcon from '@mui/icons-material/TravelExplore'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import BarChartIcon from '@mui/icons-material/BarChart'
-import Inventory2Icon from '@mui/icons-material/Inventory2'
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
@@ -25,16 +26,15 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
-import SettingsDialog from './components/SettingsDialog'
-import UpdateToast, { UpdateChannelSelector } from './components/UpdateToast'
+import UpdateToast from './components/UpdateToast'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
-import InventoryView from './features/inventory/InventoryView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
 import CombatView from './features/combat/CombatView'
 import AlertsView from './features/alerts/AlertsView'
 import BuffsView from './features/buffs/BuffsView'
+import PreferencesView from './features/preferences/PreferencesView'
 import AlertPlayer, { fireAppSignal } from './features/alerts/player'
 import { getBossData } from './data'
 import { useBossKills } from './features/bosses/useBossKills'
@@ -45,23 +45,43 @@ const bossData = getBossData()
 
 const DRAWER_WIDTH = 220
 
-type View = 'posky' | 'inventory' | 'loot' | 'leveling' | 'bosses' | 'combat' | 'alerts' | 'buffs'
+type View =
+  | 'combat'
+  | 'bosses'
+  | 'posky'
+  | 'alerts'
+  | 'leveling'
+  | 'loot'
+  | 'buffs'
+  | 'preferences'
 
 const VIEW_KEY = 'eq.view'
-const DEFAULT_VIEW: View = 'posky'
-const KNOWN_VIEWS: View[] = ['posky', 'inventory', 'loot', 'leveling', 'bosses', 'combat', 'alerts', 'buffs']
+const DEFAULT_VIEW: View = 'combat'
+const KNOWN_VIEWS: View[] = [
+  'combat',
+  'bosses',
+  'posky',
+  'alerts',
+  'leveling',
+  'loot',
+  'buffs',
+  'preferences'
+]
 
 function loadView(): View {
   const v = localStorage.getItem(VIEW_KEY)
+  // The Inventory feature was folded into Loot (Task #55) — land those users on Loot
+  // instead of silently bouncing them to the default view.
+  if (v === 'inventory') return 'loot'
   return v && (KNOWN_VIEWS as string[]).includes(v) ? (v as View) : DEFAULT_VIEW
 }
 
 /**
  * Fresh-machine empty state: no eqlog_*.txt were found in the (auto-detected or
- * overridden) EQ folder. Quiet + actionable — points the user at the Settings gear
+ * overridden) EQ folder. Quiet + actionable — points the user at Preferences > Game
  * to set the install folder, rather than showing empty/erroring feature views.
  */
-function NoLogsEmptyState({ onOpenSettings }: { onOpenSettings: () => void }): JSX.Element {
+function NoLogsEmptyState({ onOpenPreferences }: { onOpenPreferences: () => void }): JSX.Element {
   return (
     <Box
       sx={{
@@ -84,8 +104,13 @@ function NoLogsEmptyState({ onOpenSettings }: { onOpenSettings: () => void }): J
         character logs. Make sure logging is on in-game (type <code>/log on</code>), or point us
         at your install folder.
       </Typography>
-      <Button variant="contained" startIcon={<SettingsIcon />} onClick={onOpenSettings} sx={{ mt: 1 }}>
-        Open settings
+      <Button
+        variant="contained"
+        startIcon={<SettingsIcon />}
+        onClick={onOpenPreferences}
+        sx={{ mt: 1 }}
+      >
+        Open preferences
       </Button>
     </Box>
   )
@@ -96,7 +121,6 @@ export default function App(): JSX.Element {
   const [character, setCharacter] = useState<CharacterRef | null>(null)
   const [characters, setCharacters] = useState<CharacterRef[]>([])
   const [live, setLive] = useState(false)
-  const [settingsOpen, setSettingsOpen] = useState(false)
   // App-wide "raid target defeated" toast — fires on any tab.
   const [defeatToast, setDefeatToast] = useState<TargetStatus | null>(null)
   // App-wide "quest complete" toast — fires on any tab the instant a Sky turn-in
@@ -184,7 +208,7 @@ export default function App(): JSX.Element {
         character={character}
         characters={characters}
         onSelectCharacter={(logPath) => void onSelectCharacter(logPath)}
-        onOpenSettings={() => setSettingsOpen(true)}
+        onOpenPreferences={() => setView('preferences')}
       />
 
       {/* Everything below the bar: nav drawer + main content, side by side. */}
@@ -207,23 +231,11 @@ export default function App(): JSX.Element {
           }}
         >
           <List>
-            <ListItemButton selected={view === 'posky'} onClick={() => setView('posky')}>
+            <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
               <ListItemIcon>
-                <ShieldMoonIcon />
+                <BarChartIcon />
               </ListItemIcon>
-              <ListItemText primary="Plane of Sky" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'inventory'} onClick={() => setView('inventory')}>
-              <ListItemIcon>
-                <Inventory2Icon />
-              </ListItemIcon>
-              <ListItemText primary="Inventory" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
-              <ListItemIcon>
-                <ReceiptLongIcon />
-              </ListItemIcon>
-              <ListItemText primary="Loot" />
+              <ListItemText primary="Combat" />
             </ListItemButton>
             <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
               <ListItemIcon>
@@ -231,23 +243,11 @@ export default function App(): JSX.Element {
               </ListItemIcon>
               <ListItemText primary="Raid Targets" />
             </ListItemButton>
-            <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
+            <ListItemButton selected={view === 'posky'} onClick={() => setView('posky')}>
               <ListItemIcon>
-                <TrendingUpIcon />
+                <ShieldMoonIcon />
               </ListItemIcon>
-              <ListItemText primary="Leveling" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
-              <ListItemIcon>
-                <BarChartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Combat" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
-              <ListItemIcon>
-                <AutoFixHighIcon />
-              </ListItemIcon>
-              <ListItemText primary="Buffs" />
+              <ListItemText primary="Plane of Sky" />
             </ListItemButton>
             <ListItemButton selected={view === 'alerts'} onClick={() => setView('alerts')}>
               <ListItemIcon>
@@ -255,9 +255,47 @@ export default function App(): JSX.Element {
               </ListItemIcon>
               <ListItemText primary="Alerts" />
             </ListItemButton>
+            <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
+              <ListItemIcon>
+                <TrendingUpIcon />
+              </ListItemIcon>
+              <ListItemText primary="Leveling" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
+              <ListItemIcon>
+                <ReceiptLongIcon />
+              </ListItemIcon>
+              <ListItemText primary="Loot" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
+              <ListItemIcon>
+                <AutoFixHighIcon />
+              </ListItemIcon>
+              <ListItemText primary="Buffs" />
+              {/* State, not process: this tab is unfinished, and the chip says so. */}
+              <Chip
+                size="small"
+                label="in dev"
+                variant="outlined"
+                sx={{ height: 18, fontSize: 10, color: 'text.secondary', '& .MuiChip-label': { px: 0.75 } }}
+              />
+            </ListItemButton>
           </List>
-          <Box sx={{ mt: 'auto', p: 1.5, borderTop: 1, borderColor: 'divider' }}>
-            <UpdateChannelSelector />
+
+          {/* Bottom-aligned Preferences (Task #55) — replaces the old update-channel block. */}
+          <Box sx={{ mt: 'auto' }}>
+            <Divider />
+            <List disablePadding>
+              <ListItemButton
+                selected={view === 'preferences'}
+                onClick={() => setView('preferences')}
+              >
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Preferences" />
+              </ListItemButton>
+            </List>
           </Box>
         </Drawer>
 
@@ -266,12 +304,15 @@ export default function App(): JSX.Element {
           sx={{ flexGrow: 1, minWidth: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
         >
           <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-            {characters.length === 0 ? (
-              <NoLogsEmptyState onOpenSettings={() => setSettingsOpen(true)} />
+            {/* Preferences renders even with zero characters — it's how a user fixes the
+                install path, so the fresh-machine empty state must never hide it. */}
+            {view === 'preferences' ? (
+              <PreferencesView />
+            ) : characters.length === 0 ? (
+              <NoLogsEmptyState onOpenPreferences={() => setView('preferences')} />
             ) : (
               <>
                 {view === 'posky' && <PoskyView key={viewKey} />}
-                {view === 'inventory' && <InventoryView key={viewKey} />}
                 {view === 'loot' && <LootView key={viewKey} />}
                 {view === 'bosses' && <BossView key={viewKey} />}
                 {view === 'leveling' && <LevelingView key={viewKey} />}
@@ -284,12 +325,9 @@ export default function App(): JSX.Element {
         </Box>
       </Box>
 
-      {/* Settings dialog (EQ install-dir discovery/override), opened from the gear. */}
-      <SettingsDialog open={settingsOpen} onClose={() => setSettingsOpen(false)} />
-
       {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
       <AlertPlayer />
-      {/* Always-mounted: "update ready — restart" toast (no-op in dev). */}
+      {/* Always-mounted: "update ready — relaunch to update" toast (no-op in dev). */}
       <UpdateToast />
 
       <Snackbar

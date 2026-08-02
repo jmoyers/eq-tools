@@ -1,22 +1,27 @@
 // The combat engine: a formal state machine over the log stream.
 //
 // State it maintains:
-//   charmed:  Set<mobName>        — your active charmed pets (name-keyed)
+//   petNames: Set<name>           — names of your ACTIVE pets, charmed OR summoned
+//                                   (name-keyed). This is purely an ATTRIBUTION set —
+//                                   it is NOT a charm roster. The world model owns the
+//                                   charmed/summoned distinction (Instance.petKind).
 //   zone:     string              — current zone (resets the overall aggregate)
 //   current:  Encounter | null    — the in-progress/most-recent fight
 //   history:  Encounter[]         — finalized fights
 //   zoneAgg:  Agg                 — damage aggregated for the whole zone
 //
 // Transitions (one per ingested line):
-//   zone   → finalize current, reset zoneAgg
-//   charm  → charmed.add(mob)     (message only the charmer sees ⇒ it's yours)
-//   uncharm/death(charm spell/mob death) → charmed.delete(mob)
+//   zone     → finalize current, reset zoneAgg
+//   charm    → petNames.add(mob)  (`<mob> has been charmed.` — only the charmer sees it)
+//   petClaim → petNames.add(name) (`<Name> told you, '… Master.'` — the ONLY binding
+//              signal for a random-named SUMMONED class pet; charmed mobs send it too)
+//   uncharm/death(charm spell/mob death) → petNames.delete(mob)
 //   cc     → mark the mob's instance engaged + CC-held (mez/root keep-alive)
 //   damage → route to current encounter + zoneAgg (see route())
 //
 // Attribution rule (damage `A → B` for N):
 //   A = You            → your outgoing
-//   A ∈ charmed        → your pet's outgoing (unless B is friendly)
+//   A ∈ petNames       → your pet's outgoing (unless B is friendly)
 //   B = You            → incoming
 //   otherwise          → not your fight (ignored)
 //
@@ -444,7 +449,7 @@ const TIMELINE_CAP = 8_000
 const TIMELINE_HISTORY_CAP = 60
 const TIMELINE_BUDGET = 2_000
 
-/** How a damage event `A → B` is attributed given the charmed set. */
+/** How a damage event `A → B` is attributed given the pet-name set. */
 export type Attribution =
   | { kind: 'out-you' }
   | { kind: 'out-pet'; petKey: string; petName: string; ambiguous: boolean }
@@ -453,31 +458,33 @@ export type Attribution =
 
 /**
  * Pure attribution decision — the whole point is same-name twin handling.
- * `charmed` is a Set of canonical (lowercased) keys.
+ * `petNames` is a Set of canonical (lowercased) keys for ALL of your live pets,
+ * charmed AND summoned: both attribute identically (as "your pet"), so this
+ * function never needs to know which kind it is.
  *
  * Rules (decided with the user):
- *   You → charmed-name : ALWAYS outgoing to a hostile twin (never dropped as FF).
- *   charmed-name → You : ALWAYS incoming.
- *   charmed-name → same-name (A==B, charmed) : pet outgoing, but AMBIGUOUS
+ *   You → pet-name : ALWAYS outgoing to a hostile twin (never dropped as FF).
+ *   pet-name → You : ALWAYS incoming.
+ *   pet-name → same-name (A==B, pet) : pet outgoing, but AMBIGUOUS
  *     (could be your pet hitting a hostile twin, or a hostile twin hitting your
  *      pet) — attribute to the pet and flag it.
- *   charmed-name → other : pet outgoing (existing rule).
+ *   pet-name → other : pet outgoing (existing rule).
  *   You → other : outgoing.  other → You : incoming.  else ignore.
  */
-export function classify(ev: DamageEvent, charmed: ReadonlySet<string>): Attribution {
+export function classify(ev: DamageEvent, petNames: ReadonlySet<string>): Attribution {
   const aKey = idKey(ev.attacker)
   const bKey = idKey(ev.target)
   const aYou = aKey === 'you'
   const bYou = bKey === 'you'
-  const aPet = !aYou && charmed.has(aKey)
-  const bPet = !bYou && charmed.has(bKey)
+  const aPet = !aYou && petNames.has(aKey)
+  const bPet = !bYou && petNames.has(bKey)
 
   if (aYou) {
-    // You → anything (including a charmed name = a hostile twin) is outgoing.
+    // You → anything (including a pet name = a hostile twin) is outgoing.
     return bYou ? { kind: 'ignore' } : { kind: 'out-you' }
   }
   if (aPet) {
-    // Charmed pet is the attacker.
+    // Your pet is the attacker.
     if (bYou) return { kind: 'incoming' } // pet-name → You is always incoming
     const ambiguous = aKey === bKey // same-name twin: can't tell pet from twin
     return { kind: 'out-pet', petKey: aKey, petName: ev.attacker, ambiguous }
@@ -490,16 +497,19 @@ export function classify(ev: DamageEvent, charmed: ReadonlySet<string>): Attribu
 }
 
 export class CombatEngine {
-  /** Canonical charmed name keys — kept in lockstep with the WorldModel's charmed
-   *  instances so the pure classify() (which only needs name membership) is
-   *  unchanged. The world model owns instance identity; this is a fast lookup. */
-  private charmed = new Set<string>()
+  /** Canonical name keys of your LIVE PETS — charmed AND summoned alike. Kept in
+   *  lockstep with the WorldModel's pet instances so the pure classify() (which only
+   *  needs name membership) stays cheap. This is an ATTRIBUTION set, NOT a charm
+   *  roster: a summoned class pet (Vebarn, Garer…) belongs here exactly as much as a
+   *  charmed mob does, because both attribute as "your pet". The charmed/summoned
+   *  distinction lives on WorldModel Instance.petKind — see world.charmedInstances(). */
+  private petNames = new Set<string>()
   private world = new WorldModel()
   /** The player's own proper name key (e.g. "primitive"). Normally INJECTED by
    *  index.ts via setPlayerName() (it knows the character from the tail ref). As a
    *  cheap fallback (guards a mis-parsed injected name) it can also be LEARNED from
    *  heal lines: EQ writes self-heals as "You healed <PlayerName> for N", so a heal
-   *  whose healer is You and whose target is neither a charmed pet nor an engaged
+   *  whose healer is You and whose target is neither one of your pets nor an engaged
    *  hostile reveals the player's name. An injected name always wins over a learned
    *  one. Once known, heals targeting that name count as incoming. */
   private playerKey?: string
@@ -540,6 +550,23 @@ export class CombatEngine {
   }
 
   /**
+   * Display names of your GENUINELY-CHARMED live pets (mobs bound by a
+   * `<mob> has been charmed.` line). SUMMONED class pets are deliberately excluded —
+   * they are pets, not charms. Deliberately NOT in the snapshot: no UI needs a charm
+   * roster today, and the old snapshot field lied (it was the attribution set). This is
+   * the ONLY correct door for one; never reconstruct it from petNames.
+   */
+  charmedPetNames(): string[] {
+    return this.world.charmedInstances().map((i) => i.display)
+  }
+
+  /** Display names of ALL your live pets — charmed AND summoned. This is what the DPS
+   *  meter attributes to (both kinds produce `kind: 'pet'` source rows). */
+  petDisplayNames(): string[] {
+    return this.world.petInstances().map((i) => i.display)
+  }
+
+  /**
    * Inject the player's own character name (from index.ts's tail ref). This is the
    * authoritative source: called before the scan replay and again on a character
    * switch after reset(). Keyed canonically so it matches the idKey() the heal path
@@ -551,7 +578,7 @@ export class CombatEngine {
   }
 
   reset(): void {
-    this.charmed.clear()
+    this.petNames.clear()
     this.world.reset()
     this.playerKey = undefined
     this.playerKeyInjected = false
@@ -599,7 +626,7 @@ export class CombatEngine {
         // safety (a zone line after the rebirth login would clear it anyway; this makes the
         // boundary explicit and independent of that ordering).
         this.finalizeCurrent()
-        this.charmed = new Set()
+        this.petNames = new Set()
         this.world.reset()
         return
       }
@@ -617,31 +644,35 @@ export class CombatEngine {
         this.zoneLastTs = 0
         // Charm cannot survive a zone transition, and hostile mobs don't follow —
         // both are retired. SUMMONED class pets DO persist across zones (real-log
-        // verified), so world.zone() returns the survivors and we rebuild the fast
-        // charmed name-set from them (dropping stale charmed/hostile names).
+        // verified), so world.zone() returns the survivors (summoned pets only) and we
+        // rebuild the fast pet-name set from them — which keeps a summoned pet fully
+        // attributable after zoning while dropping stale charmed/hostile names.
         const survivors = this.world.zone(ev.ts)
-        this.charmed = new Set(survivors.map((i) => i.nameKey))
+        this.petNames = new Set(survivors.map((i) => i.nameKey))
         this.log(ev.ts, 'zone', 'info', `▸ entered ${ev.zone}`)
         return
       }
       case 'charm': {
         const inst = this.world.charm(ev.mob, ev.ts)
-        this.charmed.add(idKey(ev.mob))
+        this.petNames.add(idKey(ev.mob))
         this.log(ev.ts, 'charm', 'info', `⚡ charmed ${this.world.label(inst)} [${inst.instanceId}]`)
         return
       }
       case 'petClaim': {
         // A pet addressed you as master → the named entity is your pet. Bind it as
-        // a summoned pet (idempotent; charmed pets that also tell you this stay
-        // charmed). This is the ONLY binding signal for random-named class pets.
+        // a SUMMONED pet (idempotent; a charmed mob sends this tell too — the real log
+        // shows both — and world.claim() leaves an already-charmed instance's petKind
+        // alone, so a charmed pet is never reclassified as summoned). This is the ONLY
+        // binding signal for random-named class pets. It adds the name to the
+        // ATTRIBUTION set only — a summoned pet is NEVER a charmed pet.
         const inst = this.world.claim(ev.name, ev.ts)
-        this.charmed.add(idKey(ev.name))
-        this.log(ev.ts, 'charm', 'info', `⚡ pet claim ${this.world.label(inst)} [${inst.instanceId}]`)
+        this.petNames.add(idKey(ev.name))
+        this.log(ev.ts, 'pet', 'info', `⚡ pet claim ${this.world.label(inst)} [${inst.instanceId}]`)
         return
       }
       case 'uncharm': {
         this.world.uncharm(ev.mob, ev.ts)
-        this.charmed.delete(idKey(ev.mob))
+        this.petNames.delete(idKey(ev.mob))
         this.log(ev.ts, 'uncharm', 'info', `✕ charm broke: ${ev.mob}`)
         return
       }
@@ -666,9 +697,9 @@ export class CombatEngine {
         const key = idKey(ev.name)
         const killerKey = ev.bySelf ? 'you' : ev.killer ? idKey(ev.killer) : undefined
         const res = this.world.death(ev.name, ev.ts, killerKey)
-        // Keep the fast charmed-name set in lockstep: only drop the name from the
-        // set when NO charmed instance of it remains live.
-        if (!this.world.petInstance(ev.name)) this.charmed.delete(key)
+        // Keep the fast pet-name set in lockstep: only drop the name from the
+        // set when NO pet instance of it remains live.
+        if (!this.world.petInstance(ev.name)) this.petNames.delete(key)
         // The retired instance stays in `engaged` (so an in-fight heal on the corpse
         // still counts) — closure consults world.isRetired(), not set membership.
         // Clear any CC hold on the dead instance so it can't keep the fight open.
@@ -744,13 +775,13 @@ export class CombatEngine {
 
   private route(ev: DamageEvent): void {
     if (ev.amount <= 0) return
-    const at = classify(ev, this.charmed)
+    const at = classify(ev, this.petNames)
     if (at.kind === 'ignore') return
 
-    // Twin evidence: You→charmed-name or same-name→same-name proves a hostile twin
+    // Twin evidence: You→pet-name or same-name→same-name proves a hostile twin
     // co-exists with the pet; ensure the world model has a second instance so the
     // pet and the hostile twin resolve to distinct identities.
-    if (at.kind === 'out-you' && this.charmed.has(idKey(ev.target))) {
+    if (at.kind === 'out-you' && this.petNames.has(idKey(ev.target))) {
       this.world.noteTwinEvidence(ev.target, ev.ts)
     }
     if (at.kind === 'out-pet' && at.ambiguous) {
@@ -801,7 +832,7 @@ export class CombatEngine {
       id = 'you'
       name = 'You'
     } else {
-      // Resolve the pet to its charmed instance so twin pets are distinct.
+      // Resolve the pet to its pet instance so twin pets are distinct.
       const petInst = this.world.petInstance(ev.attacker) ?? this.world.resolve(ev.attacker, ev.ts, true)
       id = `pet:${petInst.instanceId}`
       name = this.world.label(petInst)
@@ -845,7 +876,7 @@ export class CombatEngine {
       ts, attacker, target, amount: 0, dtype: 'melee', skill: 'Melee', crit: false,
       category: 'melee', modifiers: []
     }
-    const at = classify(probe, this.charmed)
+    const at = classify(probe, this.petNames)
     if (at.kind === 'ignore') return
     // A miss doesn't extend or close an encounter (closure is death/CC/fallback
     // driven), but it attaches to the in-progress fight if one is fresh (so hit% is
@@ -921,7 +952,7 @@ export class CombatEngine {
 
     const casterKey = idKey(caster)
     const isYou = casterKey === 'you'
-    const isPet = !isYou && this.charmed.has(casterKey)
+    const isPet = !isYou && this.petNames.has(casterKey)
     if (!isYou && !isPet) {
       // A hostile mob's spell resisted by another mob — out of scope for the meter.
       this.log(ts, 'resist', 'dropped', `${caster}'s ${spell} resisted by ${target}`)
@@ -960,7 +991,7 @@ export class CombatEngine {
     const tKey = idKey(target)
     const healerKey = healer ? idKey(healer) : null
     const isYouTgt = tKey === 'you'
-    const isPetTgt = !isYouTgt && this.charmed.has(tKey)
+    const isPetTgt = !isYouTgt && this.petNames.has(tKey)
     const engagedHostile = this.isEngagedHostile(tKey)
 
     // Learn the player's proper name as a FALLBACK only (injected name wins):
@@ -1224,7 +1255,7 @@ export class CombatEngine {
     const timeline = opts.timeline ? this.buildTimeline(selectedId, now) : undefined
     return {
       selectedId, selected, segments, inCombat, zone: this.zone,
-      charmed: [...this.charmed], recent, stance, timeline,
+      recent, stance, timeline,
       zoneSessions: this.zoneSessionSummaries()
     }
   }

@@ -22,7 +22,7 @@ memory reading, just the log EQ already writes.
 
 ## Download & install
 
-Grab the latest installer from the [**Releases**](https://github.com/jmoyers/eq-tools/releases)
+Grab the latest installer from the [**Releases**](https://github.com/jmoyers/everquest-companion/releases)
 page: `eq-tools-Setup-<version>.exe`. It's a **one-click, per-user installer** (like
 Discord) — double-click and it installs under your user profile and launches. No
 admin prompt, no wizard. It adds a Start-menu + desktop shortcut ("EQ Legends

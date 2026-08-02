@@ -168,7 +168,9 @@ export interface SegmentSummary {
 /** One line as the engine classified it, for the live processing log. */
 export interface ClassifiedLine {
   ts: number
-  /** melee | spell | dot | ds | charm | uncharm | death | zone | unparsed */
+  /** melee | spell | dot | ds | charm | pet | uncharm | death | zone | unparsed
+   *  ('charm' = a `<mob> has been charmed.` line; 'pet' = a SUMMONED pet's
+   *  owner-only "… Master." claim tell — the two are never conflated). */
   cat: string
   /** who it was attributed to */
   role: 'you' | 'pet' | 'enemy' | 'info' | 'dropped'
@@ -287,8 +289,12 @@ export interface CombatSnapshot {
   segments: SegmentSummary[]
   inCombat: boolean
   zone?: string
-  /** currently-charmed pet names (for visibility) */
-  charmed: string[]
+  // NOTE: there is deliberately NO pet/charm roster here. The engine's pet-name set is an
+  // ATTRIBUTION set (charmed AND summoned pets both attribute as "your pet"), so exposing it
+  // as "charmed" mislabelled every summoned class pet. Pets are already visible where they
+  // matter — as `kind: 'pet'` source rows on the meter. If a genuinely-charmed roster is ever
+  // needed, derive it from the world model (Instance.petKind === 'charmed'), never from the
+  // attribution set.
   /** recent classified lines, oldest→newest */
   recent: ClassifiedLine[]
   /** current stance + invocation pair (Task #51). */

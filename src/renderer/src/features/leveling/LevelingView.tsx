@@ -7,6 +7,15 @@ import type { AASpendEvent, LevelingDelta, LevelingSnap } from '@shared/types'
 import { computeAAAccounting } from '@shared/aa'
 import { useModule } from '../../lib/useModule'
 import { formatDate } from '../../lib/formatDate'
+import {
+  buildLevelSegments,
+  latestLevel,
+  levelFeedEntries,
+  peakLevel,
+  sortLevels,
+  swapCount,
+  type LevelSegment
+} from './levelSeries'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -80,21 +89,124 @@ function AreaChart({ points, color }: { points: { ts: number; y: number }[]; col
   )
 }
 
+const SWAP_COLOR = '#8fa3b8'
+
+/**
+ * Level over time, drawn HONESTLY (see ./levelSeries.ts for the world model).
+ *
+ * A level is a step function: it holds until the next ding, so the line is step-AFTER —
+ * never a diagonal that implies you were level 43.6 on Thursday afternoon. A loadout swap
+ * drops the reported level with NO log line, so the segments are drawn DISJOINT: the
+ * pre-swap segment runs flat to the swap boundary, a dashed rule marks the boundary, and
+ * the new segment starts at its first observed ding. Nothing is drawn descending, because
+ * nothing descending was ever observed — you did not lose levels, you changed classes.
+ * Cheap inline SVG (these surfaces are render-bound; no chart libs).
+ */
+function LevelStepChart({ segments, color }: { segments: LevelSegment[]; color: string }): JSX.Element | null {
+  const all = segments.flatMap((s) => s.points)
+  if (all.length < 2) return null
+  const W = 720
+  const H = 150
+  const padX = 8
+  const padTop = 14
+  const padBottom = 8
+  const t0 = all[0].ts
+  const tLast = all[all.length - 1].ts
+  const span = Math.max(1, tLast - t0)
+  // Trailing flat run so the CURRENT level reads as a plateau, not a bare endpoint.
+  const t1 = tLast + span * 0.04
+  const hi = all.reduce((m, p) => Math.max(m, p.level), all[0].level)
+  const lo = all.reduce((m, p) => Math.min(m, p.level), all[0].level)
+  // Baseline one level under the lowest observed ding: the fill follows the steps rather
+  // than reaching an arbitrary zero, so a low post-swap segment doesn't look like a crater.
+  const base = lo - 1
+  const x = (t: number): number => padX + ((t - t0) / (t1 - t0)) * (W - 2 * padX)
+  const y = (v: number): number => H - padBottom - ((v - base) / Math.max(1, hi - base)) * (H - padTop - padBottom)
+  const floor = H - padBottom
+
+  const drawn = segments.map((seg, i) => {
+    const end = i + 1 < segments.length ? segments[i + 1].points[0].ts : t1
+    const pts: string[] = []
+    let py = y(seg.points[0].level)
+    for (const p of seg.points) {
+      const px = x(p.ts)
+      if (pts.length) pts.push(`${px.toFixed(1)},${py.toFixed(1)}`) // hold the old level…
+      py = y(p.level)
+      pts.push(`${px.toFixed(1)},${py.toFixed(1)}`) // …then step up at the ding
+    }
+    pts.push(`${x(end).toFixed(1)},${py.toFixed(1)}`)
+    const x0 = x(seg.points[0].ts)
+    return {
+      line: pts.join(' '),
+      area: `${x0.toFixed(1)},${floor} ${pts.join(' ')} ${x(end).toFixed(1)},${floor}`,
+      startX: x0,
+      startY: y(seg.points[0].level),
+      afterSwap: seg.afterSwap
+    }
+  })
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
+      {drawn.map((d, i) => (
+        <g key={i}>
+          <polygon points={d.area} fill={color} opacity={0.12} />
+          <polyline points={d.line} fill="none" stroke={color} strokeWidth={2} />
+        </g>
+      ))}
+      {drawn.map((d, i) =>
+        d.afterSwap ? (
+          <g key={`s${i}`}>
+            <line
+              x1={d.startX}
+              y1={padTop - 6}
+              x2={d.startX}
+              y2={floor}
+              stroke={SWAP_COLOR}
+              strokeWidth={1}
+              strokeDasharray="3 4"
+              opacity={0.9}
+            />
+            <circle cx={d.startX} cy={d.startY} r={3.5} fill="none" stroke={SWAP_COLOR} strokeWidth={1.5} />
+          </g>
+        ) : null
+      )}
+      <text x={padX} y={padTop} fill={color} fontSize={10} opacity={0.7}>
+        {hi}
+      </text>
+      <text x={padX} y={floor - 2} fill={color} fontSize={10} opacity={0.7}>
+        {lo}
+      </text>
+    </svg>
+  )
+}
+
 interface FeedItem {
   ts: number
-  kind: 'level' | 'aa'
+  kind: 'level' | 'aa' | 'swap'
   label: string
   detail: string
+}
+
+const FEED_COLOR: Record<FeedItem['kind'], string> = {
+  level: '#d9b25f',
+  aa: '#6fb3d2',
+  swap: SWAP_COLOR
 }
 
 export default function LevelingView(): JSX.Element {
   const state = useModule<LevelingSnap, LevelingDelta>('leveling', applyLevelingDelta) ?? EMPTY_LEVELING
   const { levels, aaGains: aas, aaSpends: spends } = state
 
-  const sortedLevels = useMemo(() => [...levels].sort((a, b) => a.ts - b.ts), [levels])
+  const sortedLevels = useMemo(() => sortLevels(levels), [levels])
   const sortedAAs = useMemo(() => [...aas].sort((a, b) => a.ts - b.ts), [aas])
 
-  const currentLevel = sortedLevels.length ? Math.max(...sortedLevels.map((l) => l.level)) : null
+  // CURRENT level is the LATEST reported one, never max(). You level three classes at once
+  // and a loadout swap re-reports the level of the new (lowest) class — so the peak belongs
+  // to a class that may no longer be in the loadout. It's surfaced separately as "peak".
+  const levelSegments = useMemo(() => buildLevelSegments(sortedLevels), [sortedLevels])
+  const currentLevel = latestLevel(sortedLevels)
+  const peak = peakLevel(sortedLevels)
+  const swaps = swapCount(levelSegments)
 
   // Refund-proof AA accounting (Task #48). The headline is NOT Σ gains — a respec
   // refunds points with no log line, they re-enter as fresh gain lines, so Σ gains
@@ -129,14 +241,18 @@ export default function LevelingView(): JSX.Element {
     return sortedAAs.map((a) => ({ ts: a.ts, y: (sum += a.amount) }))
   }, [sortedAAs])
 
-  const levelSeries = useMemo(() => sortedLevels.map((l) => ({ ts: l.ts, y: l.level })), [sortedLevels])
-
   const feed = useMemo<FeedItem[]>(() => {
     const items: FeedItem[] = []
-    for (let i = 0; i < sortedLevels.length; i++) {
-      const l = sortedLevels[i]
-      const delta = i > 0 ? l.ts - sortedLevels[i - 1].ts : 0
-      items.push({ ts: l.ts, kind: 'level', label: `Level ${l.level}`, detail: i > 0 ? `+${fmtDelta(delta)}` : '' })
+    for (const e of levelFeedEntries(sortedLevels)) {
+      // A post-swap ding is the first level of a NEW loadout: the elapsed time back to the
+      // previous ding spans the (unlogged) swap, so it is not a "time to level" — showing
+      // `+38.9h` there would be fabricated. Label the swap instead.
+      items.push({
+        ts: e.ts,
+        kind: e.afterSwap ? 'swap' : 'level',
+        label: e.afterSwap ? `Level ${e.level} (class swap)` : `Level ${e.level}`,
+        detail: e.afterSwap ? 'new loadout — level re-reported' : e.sinceMs != null ? `+${fmtDelta(e.sinceMs)}` : ''
+      })
     }
     for (const a of sortedAAs) {
       items.push({ ts: a.ts, kind: 'aa', label: `+${a.amount} AA`, detail: `${a.nowHave} unspent` })
@@ -153,7 +269,12 @@ export default function LevelingView(): JSX.Element {
           icon={<MilitaryTechIcon fontSize="large" />}
           value={currentLevel != null ? String(currentLevel) : '—'}
           label="Character level"
-          sub={sortedLevels.length ? `${sortedLevels.length} level-ups logged` : 'no level-ups in log'}
+          sub={
+            sortedLevels.length
+              ? `${sortedLevels.length} level-ups logged` +
+                (swaps > 0 ? ` · peak ${peak} · ${swaps} class swap${swaps === 1 ? '' : 's'}` : '')
+              : 'no level-ups in log'
+          }
           accent="#d9b25f"
         />
         <HeroCard
@@ -196,12 +317,23 @@ export default function LevelingView(): JSX.Element {
                 <AreaChart points={aaCumulative} color="#6fb3d2" />
               </Paper>
             )}
-            {levelSeries.length >= 2 && (
+            {sortedLevels.length >= 2 && (
               <Paper variant="outlined" sx={{ p: 2 }}>
-                <Typography variant="subtitle2" gutterBottom>
-                  Level over time
+                <Typography variant="subtitle2">Level over time</Typography>
+                <Typography variant="caption" color="text.secondary" gutterBottom display="block">
+                  {swaps > 0 ? (
+                    <>
+                      steps hold until the next ding; a{' '}
+                      <Box component="span" sx={{ color: SWAP_COLOR }}>
+                        dashed break
+                      </Box>{' '}
+                      is a class swap — the level is re-reported for the new loadout, not lost
+                    </>
+                  ) : (
+                    'steps hold until the next ding'
+                  )}
                 </Typography>
-                <AreaChart points={levelSeries} color="#d9b25f" />
+                <LevelStepChart segments={levelSegments} color="#d9b25f" />
               </Paper>
             )}
           </Stack>
@@ -268,8 +400,8 @@ export default function LevelingView(): JSX.Element {
                     label={f.label}
                     sx={{
                       height: 20,
-                      bgcolor: f.kind === 'level' ? '#d9b25f22' : '#6fb3d222',
-                      color: f.kind === 'level' ? '#d9b25f' : '#6fb3d2',
+                      bgcolor: `${FEED_COLOR[f.kind]}22`,
+                      color: FEED_COLOR[f.kind],
                       fontWeight: 700,
                       minWidth: 68
                     }}

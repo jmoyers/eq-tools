@@ -88,8 +88,8 @@ export interface TitleBarProps {
   character: CharacterRef | null
   characters: CharacterRef[]
   onSelectCharacter: (logPath: string) => void
-  /** Open the compact Settings dialog (EQ install-dir discovery/override). */
-  onOpenSettings: () => void
+  /** Navigate to the Preferences view (EQ install folder, updates) — Task #55. */
+  onOpenPreferences: () => void
 }
 
 export default function TitleBar({
@@ -97,7 +97,7 @@ export default function TitleBar({
   character,
   characters,
   onSelectCharacter,
-  onOpenSettings
+  onOpenPreferences
 }: TitleBarProps): JSX.Element {
   const [maximized, setMaximized] = useState(false)
   // Per-kind overlay open-state (Task #52; two kinds in Task #54): reflected on the compact
@@ -245,14 +245,14 @@ export default function TitleBar({
         )}
       </Box>
 
-      {/* Settings gear (EQ install-dir discovery/override). */}
+      {/* Preferences gear — opens the Preferences view (EQ folder, updates). */}
       <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 0.5 }}>
-        <Tooltip title="Settings">
+        <Tooltip title="Preferences">
           <Box
             component="button"
             type="button"
-            aria-label="Open settings"
-            onClick={onOpenSettings}
+            aria-label="Open preferences"
+            onClick={onOpenPreferences}
             sx={{
               WebkitAppRegion: 'no-drag',
               display: 'flex',
