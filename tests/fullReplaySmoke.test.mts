@@ -31,6 +31,10 @@ test('full-log replay: final active list has no stale or retired-entity bindings
   // retired entity. A pet is live between its charm/claim and the next uncharm/zone/
   // succession/death (mirrors the module's own entity rules, independently derived here).
   let charmedKey: string | undefined
+  // A charm that BROKE but whose entity is not yet retired (Task #37): the mob keeps its
+  // identity + buffs through the break (disposition, not identity), so a buff still bound to it
+  // is NOT a retired-entity leak. It's cleared by a death of that name, a zone, or succession.
+  let brokenCharmKey: string | undefined
   let summonedKey: string | undefined
   const idKey = (s: string) => s.trim().toLowerCase()
   for (const raw of lines) {
@@ -39,20 +43,37 @@ test('full-log replay: final active list has no stale or retired-entity bindings
     mod.onEvent(ev)
     if (ev.ts > lastTs) lastTs = ev.ts
     switch (ev.kind) {
-      case 'charm':
-        charmedKey = idKey(ev.mob)
-        summonedKey = undefined // single-pet: a charm supersedes a summoned pet
+      case 'charm': {
+        const k = idKey(ev.mob)
+        // Re-charming the same (possibly broken) name is the SAME entity — not succession.
+        if (k !== charmedKey && k !== brokenCharmKey) summonedKey = undefined
+        charmedKey = k
+        brokenCharmKey = undefined
         break
+      }
       case 'petClaim': {
         const k = idKey(ev.name)
-        if (k !== charmedKey) { summonedKey = k; charmedKey = undefined }
+        if (k !== charmedKey && k !== brokenCharmKey) {
+          summonedKey = k
+          charmedKey = undefined
+          brokenCharmKey = undefined
+        }
         break
       }
       case 'uncharm':
-        if (charmedKey === idKey(ev.mob)) charmedKey = undefined
+        // Charm break moves the entity to the broken-charm slot (still valid, buffs intact).
+        if (charmedKey === idKey(ev.mob)) {
+          brokenCharmKey = charmedKey
+          charmedKey = undefined
+        }
+        break
+      case 'death':
+        // A death of the broken-charm name retires it (rule #3): buffs on it are then leaks.
+        if (idKey(ev.name) === brokenCharmKey) brokenCharmKey = undefined
         break
       case 'zone':
         charmedKey = undefined // charmed pet left behind (summoned follows)
+        brokenCharmKey = undefined // a broken-charm entity is left behind too
         break
     }
   }
@@ -76,8 +97,8 @@ test('full-log replay: final active list has no stale or retired-entity bindings
     if (!a.target || a.target === 'pet') continue
     const t = idKey(a.target)
     assert.ok(
-      t === charmedKey || t === summonedKey,
-      `pet buff "${a.spell}" bound to "${a.target}" which is not the current pet (charmed=${charmedKey} summoned=${summonedKey})`
+      t === charmedKey || t === summonedKey || t === brokenCharmKey,
+      `pet buff "${a.spell}" bound to "${a.target}" which is not the current or broken-charm pet (charmed=${charmedKey} broken=${brokenCharmKey} summoned=${summonedKey})`
     )
   }
 

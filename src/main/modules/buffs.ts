@@ -296,6 +296,17 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
   // ── entity state (the who/what) — a tiny parallel to the combat WorldModel ──
   private charmedKey?: string
   private charmedDisplay?: string
+  /**
+   * A charm that just BROKE but whose entity is NOT yet retired (Task #37). Charm/uncharm
+   * changes an entity's DISPOSITION, never its identity: when Allure/Charm wears off, the mob
+   * KEEPS its buffs and is merely hostile-capable for a few seconds until you re-charm it. We
+   * remember its key/display here so a re-charm of the SAME name (with no intervening death or
+   * zone of that name) reconnects to the SAME entity — its buffs never having been censored.
+   * A death or zone of that name in the meantime retires it (clears this), so the next charm
+   * of that name is a genuinely new entity.
+   */
+  private brokenCharmKey?: string
+  private brokenCharmDisplay?: string
   private summonedKey?: string
   private summonedDisplay?: string
   /** The pet's CURRENT hostile fight target (canonical key + display), if cheaply known. */
@@ -322,6 +333,8 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.castHistory = new Map()
     this.charmedKey = undefined
     this.charmedDisplay = undefined
+    this.brokenCharmKey = undefined
+    this.brokenCharmDisplay = undefined
     this.summonedKey = undefined
     this.summonedDisplay = undefined
     this.petTargetKey = undefined
@@ -330,9 +343,14 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.dirty = false
   }
 
-  /** Current pet identities, for the shared classifyFadeTarget helper. */
+  /**
+   * Current pet identities, for the shared classifyFadeTarget helper. During a charm-break
+   * hostile window (Task #37) the ex-pet is still the SAME entity, so its name is classified as
+   * the (charmed) pet — a buff fading on it in that 7s window is the pet's buff fading, NOT a
+   * hostile debuff. `charmedKey` falls back to the broken-charm key while the charm is down.
+   */
   private petState(): { charmedKey?: string; summonedKey?: string } {
-    return { charmedKey: this.charmedKey, summonedKey: this.summonedKey }
+    return { charmedKey: this.charmedKey ?? this.brokenCharmKey, summonedKey: this.summonedKey }
   }
 
   /** The current pet's canonical entity key (summoned preferred, else charmed), or undefined. */
@@ -510,27 +528,57 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       // ── entity lifecycle (the who/what state) ──
       case 'charm': {
         const newKey = idKey(ev.mob)
-        // SINGLE-PET INVARIANT: one pet at a time. A new charm retires the prior pet.
-        if (this.charmedKey && this.charmedKey !== newKey) this.retireEntity(this.charmedKey, ev.ts)
-        if (this.summonedKey) this.retireEntity(this.summonedKey, ev.ts)
+        // DISPOSITION, NOT IDENTITY (Task #37): re-charming the SAME name after a charm break
+        // (with no intervening death/zone of that name) is the SAME entity — its buffs are
+        // still active on it and it must NOT trigger single-pet succession against itself.
+        // A break→re-charm cycle is the common case (seconds apart) and preserves everything.
+        const sameAsBroken = this.brokenCharmKey === newKey
+        const sameAsCharmed = this.charmedKey === newKey
+        if (!sameAsBroken && !sameAsCharmed) {
+          // SINGLE-PET INVARIANT: charming a DIFFERENT entity retires the prior pet(s) —
+          // including a broken-charm entity that we never re-charmed (you moved on to a new
+          // mob, so the old one really is left behind).
+          if (this.charmedKey) this.retireEntity(this.charmedKey, ev.ts)
+          if (this.brokenCharmKey) this.retireEntity(this.brokenCharmKey, ev.ts)
+          if (this.summonedKey) this.retireEntity(this.summonedKey, ev.ts)
+          this.petTargetKey = undefined
+          this.petTargetDisplay = undefined
+        }
+        // Re-bind (or bind) the charmed entity. If this reconnects a broken charm, its buff
+        // instances were never censored, so they remain active on it.
         this.charmedKey = newKey
         this.charmedDisplay = ev.mob
-        this.petTargetKey = undefined
-        this.petTargetDisplay = undefined
+        this.brokenCharmKey = undefined
+        this.brokenCharmDisplay = undefined
         break
       }
       case 'petClaim': {
         const key = idKey(ev.name)
-        if (key !== this.charmedKey && key !== this.summonedKey) {
+        if (key !== this.charmedKey && key !== this.summonedKey && key !== this.brokenCharmKey) {
+          // Single-pet succession: claiming a DIFFERENT pet retires the prior pet(s), including
+          // a broken-charm entity you never re-charmed (Task #37) — you've moved to a new pet.
           if (this.summonedKey) this.retireEntity(this.summonedKey, ev.ts)
           if (this.charmedKey) this.retireEntity(this.charmedKey, ev.ts)
+          if (this.brokenCharmKey) this.retireEntity(this.brokenCharmKey, ev.ts)
           this.summonedKey = key
           this.summonedDisplay = ev.name
         }
         break
       }
       case 'uncharm': {
-        if (this.charmedKey === idKey(ev.mob)) this.retireEntity(this.charmedKey, ev.ts)
+        // CHARM BREAK = DISPOSITION CHANGE, NOT RETIREMENT (Task #37). The mob KEEPS its
+        // identity and every buff instance — it's simply hostile-capable now until you
+        // re-charm it (the common break→re-charm cycle, seconds apart). We do NOT censor or
+        // retire here (the old code called retireEntity, which RESET the pet's buffs — the
+        // user-reported bug). Move it to the broken-charm slot so a re-charm of the SAME name
+        // reconnects to it with buffs intact; a death or zone of that name in the meantime
+        // retires it via the existing paths (making the next charm a genuinely new entity).
+        if (this.charmedKey === idKey(ev.mob)) {
+          this.brokenCharmKey = this.charmedKey
+          this.brokenCharmDisplay = this.charmedDisplay
+          this.charmedKey = undefined
+          this.charmedDisplay = undefined
+        }
         break
       }
       case 'cc': {
@@ -542,6 +590,7 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         const key = idKey(ev.name)
         const isSummoned = key === this.summonedKey
         const isCharmed = key === this.charmedKey
+        const isBrokenCharm = key === this.brokenCharmKey
         if (isSummoned) {
           const killerIsYou = ev.bySelf || idKey(ev.killer ?? '') === 'you'
           if (!killerIsYou) this.retireEntity(this.summonedKey!, ev.ts)
@@ -551,6 +600,13 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
           if (charmedPetDiesOnDeathLine({ killerIsYou, killerSameName })) {
             this.retireEntity(this.charmedKey!, ev.ts)
           }
+        } else if (isBrokenCharm) {
+          // A death naming the broken-charm entity (Task #37): the ex-pet is now a hostile mob
+          // you're likely killing, so THIS death genuinely retires it — censoring its buffs so
+          // the next charm of that name binds a fresh entity (rule #3). It's fully retired now,
+          // not conservatively kept: charm no longer protects it (the twin-ambiguity that made
+          // us keep a LIVE charmed pet doesn't apply once the charm has broken).
+          this.retireEntity(this.brokenCharmKey!, ev.ts)
         } else {
           // A plain hostile death censors any open/active instance bound to it.
           this.retireEntity(key, ev.ts, { hostileOnly: true })
@@ -793,6 +849,8 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     this.pending = null
     this.charmedKey = undefined
     this.charmedDisplay = undefined
+    this.brokenCharmKey = undefined
+    this.brokenCharmDisplay = undefined
     this.summonedKey = undefined
     this.summonedDisplay = undefined
     this.petTargetKey = undefined
@@ -875,10 +933,14 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
         changed = true
       }
     }
-    // Clear the entity from pet state if it was a pet.
+    // Clear the entity from pet state if it was a pet (charmed / broken-charm / summoned).
     if (entityKey === this.charmedKey) {
       this.charmedKey = undefined
       this.charmedDisplay = undefined
+    }
+    if (entityKey === this.brokenCharmKey) {
+      this.brokenCharmKey = undefined
+      this.brokenCharmDisplay = undefined
     }
     if (entityKey === this.summonedKey) {
       this.summonedKey = undefined
@@ -922,6 +984,14 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
     if (this.charmedKey) {
       this.charmedKey = undefined
       this.charmedDisplay = undefined
+      changed = true
+    }
+    // A broken-charm entity is ALSO left behind on a zone (Task #37) — it's still bound to its
+    // key, so its actives were censored by the 'charmed'-disposition sweep above; drop its
+    // state so a later charm of that name is a fresh entity (rule #3, the zone-between case).
+    if (this.brokenCharmKey) {
+      this.brokenCharmKey = undefined
+      this.brokenCharmDisplay = undefined
       changed = true
     }
     this.petTargetKey = undefined

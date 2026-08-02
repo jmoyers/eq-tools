@@ -528,6 +528,44 @@ line and `You feel different.` resolved to different illusion candidates as inde
   landing line recorded CONTRADICTS-WIKI (Pinzarn shares the inaccuracy but is cast-begun once;
   Transal is the repeatable proof). All W1–W10 stay green.
 
+**Charm break preserves the entity + its buffs (Task #37) — DISPOSITION, NOT IDENTITY.** The user
+reported that when a charmed pet's charm broke and they re-charmed it, the model RESET the pet's
+buffs — but in reality the mob keeps its buffs through a charm break. The PRINCIPLE (now the
+governing rule for charm/uncharm in the entity model): **charm/uncharm changes an entity's
+DISPOSITION (hostile-capable vs your pet), never its IDENTITY.** Re-charming the same mob is the
+SAME entity.
+
+- **THE DEFECT** was `modules/buffs.ts`, the `uncharm` handler: it called
+  `retireEntity(this.charmedKey, …)`, which censors every open cast + active INSTANCE bound to the
+  pet's key. So a break→re-charm cycle (the common charm-grind pattern, seconds apart) RESET the
+  pet's buffs. Full-log proof: pre-fix the final break at 22:37:53 censored all four pet buffs on
+  `a sprited harpie` (final active 8, self-only); post-fix they persist (final active 11).
+- **The fix — a broken-charm slot.** On `uncharm`, the entity is NOT retired: it moves to
+  `brokenCharmKey`/`brokenCharmDisplay` (charm down, buffs intact, hostile-capable). A re-charm of
+  the SAME name reconnects it (its buffs never censored) and does NOT trigger single-pet succession
+  against itself. The break→re-charm cycle preserves everything. `petState()` falls back to the
+  broken-charm key during the hostile window, so a fade landing on the ex-pet in that window is the
+  pet's buff fading, not a hostile debuff.
+- **Retirement now happens ONLY on death / zone / succession** (rule #3, the other side of the
+  principle): a `death` naming the broken-charm entity retires it (once the charm is down it's a
+  hostile mob you're killing — unlike a LIVE charmed pet, no twin-ambiguity conservatism); a `zone`
+  leaves it behind; a `charm`/`petClaim` of a DIFFERENT name is succession and retires it. After any
+  of those, a later charm of that name binds a genuinely NEW entity with no carried buffs. All the
+  broken-charm state is cleared by `retireEntity` / `onZone` / `clearAllForGap` / `reset`.
+- **Succession compares IDENTITY, not "every charm event"** (rule #4): the `charm` handler only
+  retires the prior pet when the new name differs from BOTH `charmedKey` and `brokenCharmKey` — a
+  re-charm of the same entity must not retire itself.
+- **Golden windows** (`tests/charmBreakWindows.test.mts`, +3 → 18 total): **W13** the real
+  19:54:56→19:55:59 ice-giant span — Tashani (a debuff bound to `an ice giant` by its cast-on-other
+  "…glances nervously about." message) is active before the break, STILL active through the 7s
+  hostile window, and STILL active after the re-charm (same entity, no censoring). **W13b** the same
+  span SYNTHESIZED with one real-format death line spliced between the break and the re-charm
+  (`an ice giant has been slain by a frost giant!`) — the death censors Tashani, so the re-charm
+  binds a NEW entity with no buffs (the contrast). **W13c** a break followed by charming a DIFFERENT
+  mob still retires the ex-pet (succession unchanged). The `fullReplaySmoke` invariant #2 gained a
+  broken-charm slot (a buff on a broken-charm entity is not a retired-entity leak; it's cleared by
+  death/zone/succession). All W1–W12 stay green.
+
 - The **combat engine lives in main** and is fed the full scan + live tail. The UI
   (`useCombat`) just polls `getCombatSnapshot(opts)` ~2×/sec. Earlier it lived in
   the renderer and **missed any charm that happened before the app opened** — the
