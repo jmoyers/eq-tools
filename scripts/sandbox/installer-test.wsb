@@ -18,21 +18,21 @@
     Read: scripts\sandbox\results\result.txt after it finishes.
 
     NOTE: HostFolder paths must be ABSOLUTE. They're written for this repo's
-    location (C:\Users\jmoye\eq-tools); adjust if the repo moves.
+    location (C:\Users\jmoye\everquest-companion); adjust if the repo moves.
   -->
   <MappedFolders>
     <MappedFolder>
-      <HostFolder>C:\Users\jmoye\eq-tools\release</HostFolder>
+      <HostFolder>C:\Users\jmoye\everquest-companion\release</HostFolder>
       <SandboxFolder>C:\release</SandboxFolder>
       <ReadOnly>true</ReadOnly>
     </MappedFolder>
     <MappedFolder>
-      <HostFolder>C:\Users\jmoye\eq-tools\scripts\sandbox</HostFolder>
+      <HostFolder>C:\Users\jmoye\everquest-companion\scripts\sandbox</HostFolder>
       <SandboxFolder>C:\harness</SandboxFolder>
       <ReadOnly>true</ReadOnly>
     </MappedFolder>
     <MappedFolder>
-      <HostFolder>C:\Users\jmoye\eq-tools\scripts\sandbox\results</HostFolder>
+      <HostFolder>C:\Users\jmoye\everquest-companion\scripts\sandbox\results</HostFolder>
       <SandboxFolder>C:\results</SandboxFolder>
       <ReadOnly>false</ReadOnly>
     </MappedFolder>

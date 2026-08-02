@@ -12,7 +12,7 @@ sounds, a Details-style DPS meter with drill-down/timeline, and floating
 overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
 `src/shared`, `tests/`, `scripts/`.
 
-- Repo: `C:\Users\jmoye\eq-tools` (public: github.com/jmoyers/everquest-companion).
+- Repo: `C:\Users\jmoye\everquest-companion` (public: github.com/jmoyers/everquest-companion).
 - Game log: `C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest
   Legends\Logs\eqlog_<Char>_<server>.txt` — but the path is auto-discovered +
   Settings-overridable now; NEVER hardcode, route through

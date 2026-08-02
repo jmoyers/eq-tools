@@ -55,7 +55,7 @@ WindowsSandbox scripts\sandbox\installer-test.wsb
 ```
 
 Host paths in the `.wsb` are absolute and assume the repo lives at
-`C:\Users\jmoye\eq-tools` — adjust if it moves.
+`C:\Users\jmoye\everquest-companion` — adjust if it moves.
 
 ### Windows containers — file-level verification (`scripts/docker/`)
 
