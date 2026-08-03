@@ -18,3 +18,9 @@ export function formatNum(n: number): string {
 export function formatRate(n: number): string {
   return `${formatNum(n)} dps`
 }
+
+/** A HEALING rate (Task #59), same shape as formatRate with the word 'hps': '1.2k hps'. Lives
+ *  here so the healing overlays never grow a second, divergent number formatter. */
+export function formatHealRate(n: number): string {
+  return `${formatNum(n)} hps`
+}

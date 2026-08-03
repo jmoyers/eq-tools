@@ -49,6 +49,13 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      # Unit + golden-window tests. NOTE: tests/fixtures/*.log are gitignored
+      # (blanket `*.log`), so fixture-backed golden windows SKIP here and run
+      # only on a machine with the real game log. What runs in CI is the
+      # log-independent suite — real coverage, but not the full law.
+      - name: Test
+        run: npm test
+
       # --- MAIN CHANNEL (push to main): stamp a prerelease version + publish ---
       # electron-updater needs a semver-newer version each push. We rewrite
       # package.json's version to `<base>-main.<run_number>` in CI ONLY (never

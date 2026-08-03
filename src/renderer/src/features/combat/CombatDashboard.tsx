@@ -123,14 +123,16 @@ export function DpsChartCard({
   ) : undefined
 
   return (
-    <DashCard title="DPS over time" right={right} minHeight={172}>
+    <DashCard title="DPS over time" right={right} fill testId="dash-panel">
       {!tl ? (
         <QuietNote>{ringlessText(ringless)}</QuietNote>
       ) : !chart || !series ? (
         <QuietNote>No damage recorded yet — the curve starts with the first hit.</QuietNote>
       ) : (
         <>
-          <Box sx={{ position: 'relative' }}>
+          {/* flexShrink 0 on every strip: in a short grid cell the card body scrolls, it never
+              squashes the curve into an unreadable sliver. */}
+          <Box sx={{ position: 'relative', flexShrink: 0 }}>
             <svg
               viewBox={`0 0 ${CHART_W} ${CHART_H}`}
               width="100%"
@@ -175,14 +177,21 @@ export function DpsChartCard({
               {formatRate(chart.yMax)}
             </Typography>
           </Box>
-          <Stack direction="row" justifyContent="space-between" sx={{ mt: 0.25 }}>
+          <Stack direction="row" justifyContent="space-between" sx={{ mt: 0.25, flexShrink: 0 }}>
             {[0, 1, 2, 3].map((k) => (
               <Typography key={k} variant="caption" color="text.disabled">
                 {fmtDur((chart.startMs + ((chart.endMs - chart.startMs) * k) / 3) / 1000)}
               </Typography>
             ))}
           </Stack>
-          <Stack direction="row" spacing={1.25} alignItems="center" sx={{ mt: 0.25 }} flexWrap="wrap" useFlexGap>
+          <Stack
+            direction="row"
+            spacing={1.25}
+            alignItems="center"
+            sx={{ mt: 0.25, flexShrink: 0 }}
+            flexWrap="wrap"
+            useFlexGap
+          >
             <Legend color={OUT_COLOR} label="you + pet" />
             {series.hasPet && <Legend color={PET_COLOR} label="pet" />}
             {series.hasInc && <Legend color={INC_COLOR} label="incoming" />}
@@ -227,8 +236,11 @@ export function BreakdownPreviewCard({
   onOpen: () => void
 }): JSX.Element {
   const slices = useMemo(() => (source ? composition(source) : []), [source])
-  const top = useMemo(() => (source ? flattenSkills(source).slice(0, PREVIEW_SKILLS) : []), [source])
-  const more = source ? Math.max(0, source.categories.reduce((n, c) => n + c.skills.length, 0) - top.length) : 0
+  // Same grouped flat list the drill shows (slay merged into one row), so the preview and the
+  // level-2 list can never disagree about how many rows exist.
+  const all = useMemo(() => (source ? flattenSkills(source) : []), [source])
+  const top = all.slice(0, PREVIEW_SKILLS)
+  const more = Math.max(0, all.length - top.length)
 
   return (
     <DashCard
@@ -240,7 +252,8 @@ export function BreakdownPreviewCard({
           </Typography>
         ) : undefined
       }
-      minHeight={150}
+      fill
+      testId="dash-panel"
     >
       {!source || slices.length === 0 ? (
         <QuietNote>No damage from this source yet.</QuietNote>
@@ -320,8 +333,8 @@ export function MobDamageCard({
           </Typography>
         ) : undefined
       }
-      grow
-      minHeight={140}
+      fill
+      testId="dash-panel"
     >
       {!tl ? (
         <QuietNote>{ringlessText(ringless)}</QuietNote>

@@ -12,6 +12,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import type { ItemKnowledge, LootEvent } from '@shared/types'
+import { isNotableKnowledge } from '@shared/itemKnowledge'
 import { itemCountKey } from '../../lib/itemName'
 
 /** How many most-recent distinct looted items to probe for notability. */
@@ -32,10 +33,15 @@ export interface NotableState {
   notable: NotablePickup[]
 }
 
-/** Is a knowledge record "notable" (worth flagging / listing)? */
-export function isNotable(k: ItemKnowledge): boolean {
-  return k.lore || k.quest || k.questUses.length > 0
-}
+/**
+ * Is a knowledge record "notable" (worth flagging / listing)?
+ *
+ * The rule itself moved to shared/itemKnowledge.ts (Task #59) because the main-side event-feed
+ * module applies the SAME test to decide whether a live loot becomes an event-log row — one
+ * definition means the strip and the feed can never disagree. Re-exported here so every
+ * existing caller keeps its import.
+ */
+export const isNotable = isNotableKnowledge
 
 /**
  * Probe the most-recent distinct looted items for lore/quest knowledge. `history` is the

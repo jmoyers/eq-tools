@@ -1,7 +1,15 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import { IPC } from '../shared/ipc'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
-import type { OverlayConfig, OverlayDrill, OverlayKind } from '../shared/types'
+import type {
+  ItemKnowledge,
+  ModuleDelta,
+  ModuleSnapshot,
+  OverlayConfig,
+  OverlayDrill,
+  OverlayKind
+} from '../shared/types'
+import { OVERLAY_KINDS } from '../shared/types'
 
 export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayDrill, OverlayKind }
 
@@ -13,14 +21,17 @@ export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayDrill, Overlay
  * window (click-through, close, config persistence). A lean surface keeps the overlay window's
  * blast radius small. Exposed as `window.eqOverlay`.
  *
- * KIND: each overlay window is launched with a `?kind=fight|overall` query so one overlay.html
- * bundle serves both windows. The preload reads it here and threads it into every kind-scoped
+ * KIND: each overlay window is launched with a `?kind=<OverlayKind>` query so one overlay.html
+ * bundle serves every window. The preload reads it here and threads it into every kind-scoped
  * IPC call so the renderer never has to; `window.eqOverlay.kind` is also exposed for the UI.
+ * Validated against OVERLAY_KINDS so an unknown/absent query can only ever fall back to 'fight'
+ * (never leak a bogus kind into the store's per-kind config).
  */
 function readKind(): OverlayKind {
   try {
     const k = new URLSearchParams(window.location.search).get('kind')
-    return k === 'overall' ? 'overall' : 'fight'
+    if (k && (OVERLAY_KINDS as string[]).includes(k)) return k as OverlayKind
+    return 'fight'
   } catch {
     return 'fight'
   }
@@ -28,7 +39,7 @@ function readKind(): OverlayKind {
 const KIND: OverlayKind = readKind()
 
 const overlayApi = {
-  /** This overlay window's kind ('fight' | 'overall'). */
+  /** This overlay window's kind ('fight' | 'overall' | 'events'). */
   kind: KIND,
   /** Fetch a fresh combat snapshot (same engine + IPC the main app polls). */
   getCombatSnapshot: (opts: SnapshotOpts): Promise<CombatSnapshot> =>
@@ -39,6 +50,21 @@ const overlayApi = {
     ipcRenderer.on(IPC.onCombatActivity, listener)
     return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
   },
+
+  // ---- module transport (Task #59: the 'events' overlay reads the eventFeed module) ----
+  // The SAME hydrate-then-ride-deltas transport the main app uses, exposed here so an overlay
+  // window can consume a module directly instead of inventing a second channel.
+  /** Hydrate a module's full state (`module:getSnapshot`). Null when the id is unknown. */
+  getModuleSnapshot: <S>(id: string): Promise<ModuleSnapshot<S> | null> =>
+    ipcRenderer.invoke(IPC.getModuleSnapshot, id),
+  /** Subscribe to `module:delta` pushes (all modules; the caller filters by moduleId). */
+  onModuleDelta: <D>(cb: (d: ModuleDelta<D>) => void): (() => void) => {
+    const listener = (_e: unknown, d: ModuleDelta<D>): void => cb(d)
+    ipcRenderer.on(IPC.onModuleDelta, listener)
+    return () => ipcRenderer.removeListener(IPC.onModuleDelta, listener)
+  },
+  /** Item knowledge for the feed's hover card — cache-first in main, never rejects. */
+  lookupItem: (name: string): Promise<ItemKnowledge> => ipcRenderer.invoke(IPC.itemsLookup, name),
 
   /**
    * Read this kind's persisted overlay config (locked / bgAlpha / topN / bounds / drill).

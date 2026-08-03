@@ -69,3 +69,30 @@ slice(991860, 992222, 'w24-multi-mob-no-split.log')
 //   16:52:38–16:53:22  THE REPORTED FIGHT: exactly two widow instances, gens 7 and 8,
 //                      with 56 outgoing misses (4 of them frenzy) to distribute.
 slice(1006240, 1007109, 'w25-per-mob-miss-ghosts.log')
+
+// ---------------------------------------------------------------------------
+// HEALING + ABSORPTION windows (Task #59). Three compact real spans, each cut to isolate one
+// family the healing meter has to get right. All three are Befallen (Sun Aug 02) and Freeport
+// (Sun Aug 02) fights from the user's own session.
+// ---------------------------------------------------------------------------
+
+// W26 CRITICAL HEALS (Sun Aug 02 17:10:51 → 17:11:39, raw 1011100..1011400). A ghoul-knight
+// grind with four self-heals, ONE of which carries the trailing `(Critical)` modifier that the
+// old `\.$`-anchored HEAL_RE rejected outright — 233 real heals were silently dropped log-wide.
+// Two rune grants ride along, so the same window also proves absorption stays OUT of healing.
+slice(1011100, 1011400, 'w26-healing-crit.log')
+
+// W27 OVERHEAL + ABSORBED SWING (Sun Aug 02 17:13:50 → 17:14:49, raw 1011923..1012345). The
+// overheal form is here verbatim — `You healed Primitive for 1351 (5968) hit points by Lay on
+// Hands VI.` — alongside four plain heals (raw == effective ⇒ zero waste), eleven rune grants,
+// and the one line in the span where YOUR rune eats a swing outright
+// (`… but YOUR magical skin absorbs the blow! (Riposte)`), which carries NO amount.
+slice(1011923, 1012345, 'w27-healing-overheal-absorb.log')
+
+// W28 ENEMY COUNTER-HEALING + ABSORBED DAMAGE SHIELDS (Sun Aug 02 15:55:20 → 15:55:42, raw
+// 997999..998129). A Teir`Dal ranger fight where the mob SELF-HEALS mid-fight
+// (`a Teir`Dal ranger healed herself for 64 hit points by Skin like Rock.`) — counter-healing
+// that undid our damage and must rank on its own ledger, never in "who kept me alive". The
+// ranger also runs a thorns damage shield, so the span carries the third absorption family:
+// `YOUR magical skin absorbs the damage of a Teir`Dal ranger's thorns.` (count-only).
+slice(997999, 998129, 'w28-healing-enemy-thorns.log')

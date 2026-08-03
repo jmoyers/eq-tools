@@ -19,6 +19,67 @@ import type { DamageCategory, SkillView, SourceView, TimelineView } from '@share
 export type FlatSkill = SkillView & { category: DamageCategory }
 
 /**
+ * A row of the flat level-2 list. Identical to a FlatSkill except that a GROUP row also carries
+ * the per-skill rows it stands for (`children`) — today only the Slay Undead aggregate does.
+ * Consumers that just render a bar can ignore `children` entirely; the ones that expand a row
+ * use it as the inline breakdown.
+ */
+export type SkillRow = FlatSkill & { children?: FlatSkill[] }
+
+/**
+ * Label for the aggregated slay row. Mirrors `CATEGORY_LABEL.slay` in @shared/combat, spelled
+ * literally because this module is imported by node tests (tests/combatPerMobGhosts.test.mts),
+ * which run without the renderer's `@shared` alias — a VALUE import here would break them.
+ */
+const SLAY_LABEL = 'Slay Undead'
+
+/**
+ * Collapse every `slay`-category row into ONE "Slay Undead" aggregate.
+ *
+ * WHY: a Slay Undead proc is a normal weapon swing that carries the proc, so the flatten names
+ * it after the weapon verb — "Melee", "Backstab", "Bash", "Kick" — and the flat list grew a run
+ * of near-duplicate ivory rows that are all the same THING (the paladin proc) seen through
+ * different weapons. The user reads them as one ability, so the list shows one row; the weapon
+ * split is one click down, inside the row's own expansion (no new nav level).
+ *
+ * Aggregation is a plain sum over counts/damage with `max` = the largest single proc across all
+ * weapons and `min` = the smallest LANDED one (0/absent minima are skipped — a resist/miss-only
+ * lane carries no amount and must never pull the group minimum to 0). Rows are re-sorted and
+ * every bar pct re-based on the new global max, since the merged row is usually the biggest one.
+ *
+ * A single slay skill is left EXACTLY as it is: a group of one is a wrapper around nothing, and
+ * the per-weapon row ("Backstab · Slay Undead") is strictly more informative than a "Slay Undead"
+ * row whose only child repeats it.
+ */
+export function groupSlay(rows: SkillRow[]): SkillRow[] {
+  const slay = rows.filter((r) => r.category === 'slay')
+  if (slay.length < 2) return rows
+  const children = [...slay].sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
+  const sum = (pick: (s: FlatSkill) => number): number => children.reduce((n, s) => n + pick(s), 0)
+  const minima = children.map((s) => s.min ?? 0).filter((m) => m > 0)
+  const childMax = Math.max(1, ...children.map((s) => s.total))
+  const group: SkillRow = {
+    name: SLAY_LABEL,
+    category: 'slay',
+    total: sum((s) => s.total),
+    pct: 0,
+    hits: sum((s) => s.hits),
+    crits: sum((s) => s.crits),
+    max: Math.max(0, ...children.map((s) => s.max)),
+    min: minima.length > 0 ? Math.min(...minima) : undefined,
+    misses: sum((s) => s.misses ?? 0),
+    resists: sum((s) => s.resists ?? 0),
+    // Children bar widths are relative to the LARGEST slay skill, so the nested list reads as
+    // its own ranking rather than as slivers of the parent's width.
+    children: children.map((s) => ({ ...s, pct: (s.total / childMax) * 100 }))
+  }
+  const out: SkillRow[] = [...rows.filter((r) => r.category !== 'slay'), group]
+  out.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
+  const max = Math.max(1, ...out.map((r) => r.total))
+  return out.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
+}
+
+/**
  * Drill-down selection (union). `entity` = the level-2 flat skill list for one source
  * (the existing meter drill). `target` = the level-2 flat skill list for everything you
  * and your pet landed on ONE mob (driven by the Damage-by-mob panel). They are mutually
@@ -31,12 +92,15 @@ export type Drill = { kind: 'entity'; entityId: string } | { kind: 'target'; tar
  * Flatten a source's per-category skill lists into ONE list ranked by damage desc, and
  * re-base each row's bar pct on the global max (the engine's `pct` is relative to the
  * skill's own category max, which would make small categories render full-width here).
+ * The slay rows then collapse into a single grouped row (`groupSlay`) — the ONE place the
+ * flat list departs from "one row per engine skill", so every surface that renders this
+ * list (meter drill, overlay drill, breakdown preview) groups identically.
  */
-export function flattenSkills(e: SourceView): FlatSkill[] {
+export function flattenSkills(e: SourceView): SkillRow[] {
   const rows: FlatSkill[] = e.categories.flatMap((c) => c.skills.map((s) => ({ ...s, category: c.category })))
   rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
   const max = Math.max(1, ...rows.map((r) => r.total))
-  return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
+  return groupSlay(rows.map((r) => ({ ...r, pct: (r.total / max) * 100 })))
 }
 
 /** Sampling factor for a (possibly downsampled) timeline: 1 when every event is present. */
@@ -210,8 +274,8 @@ export function groupByTarget(tl: TimelineView): MobBreakdown {
 }
 
 export interface TargetDetail {
-  /** flat, ranked skill/spell rows for the damage landed on this one mob. */
-  rows: FlatSkill[]
+  /** flat, ranked skill/spell rows for the damage landed on this one mob (slay grouped). */
+  rows: SkillRow[]
   total: number
   hits: number
   crits: number
@@ -277,7 +341,11 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
   const max = Math.max(1, ...rows.map((r) => r.total))
   for (const r of rows) r.pct = (r.total / max) * 100
   return {
-    rows,
+    // Same slay grouping as the source drill — the per-mob list is the same flat list, filtered
+    // to one defender, so it must not regrow the per-weapon slay duplicates. Grouping runs AFTER
+    // the sample scaling above, so a downsampled ring's group sums the same estimates its
+    // children show (all of them wear the panel's `~`).
+    rows: groupSlay(rows),
     total: total * scale,
     hits: Math.round(hits * scale),
     crits: Math.round(crits * scale),

@@ -327,8 +327,23 @@ function SegmentBody({
   const crumb = drilledEntity?.name ?? (targetDetail ? targetName : null)
 
   return (
-    <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-      <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: 1 }}>
+    // Grid-cell sizing, exactly like DashCard's `fill`: 100% of the cell, zero intrinsic
+    // height (so a `minmax(0, 1fr)` row can shrink it), everything below the header scrolls
+    // internally. The meter must never be what makes the dashboard taller than its box.
+    <Paper
+      variant="outlined"
+      data-testid="dash-panel"
+      sx={{
+        p: 1.5,
+        height: '100%',
+        minWidth: 0,
+        minHeight: 0,
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
+      <Stack direction="row" justifyContent="space-between" alignItems="baseline" sx={{ mb: 1, flexShrink: 0 }}>
         <Typography variant="subtitle1" noWrap>
           {seg.name}
           {seg.active && <CircleIcon sx={{ fontSize: 10, color: 'success.main', ml: 1, verticalAlign: 'middle' }} />}
@@ -371,7 +386,7 @@ function SegmentBody({
           data-testid="live-fallback"
           variant="caption"
           color="text.secondary"
-          sx={{ display: 'block', mt: -0.75, mb: 0.75 }}
+          sx={{ display: 'block', mt: -0.75, mb: 0.75, flexShrink: 0 }}
         >
           {fallbackNote}
         </Typography>
@@ -379,7 +394,7 @@ function SegmentBody({
 
       {/* Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */}
       {crumb && (
-        <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75 }}>
+        <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75, flexShrink: 0 }}>
           <Button
             size="small"
             startIcon={<ArrowBackIcon sx={{ fontSize: 16 }} />}
@@ -399,7 +414,7 @@ function SegmentBody({
         </Stack>
       )}
 
-      <Box sx={{ overflow: 'auto', flexGrow: 1 }}>
+      <Box data-testid="meter-body" sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0 }}>
         {!crumb &&
           (rows.length ? (
             rows.map((e, i) => (
@@ -750,47 +765,40 @@ export default function CombatView(): JSX.Element {
           </Paper>
         )
       ) : seg ? (
-        // Dashboard: the source meter anchors the left column; the event-derived panels
-        // stack down the right. Columns collapse to a single scrolling column when narrow.
+        // Dashboard: FOUR EQUAL panels in a 2x2 grid — source meter, DPS over time, breakdown
+        // preview, damage by mob. `minmax(0, 1fr)` on both axes is the load-bearing bit: it lets
+        // every track shrink below its content, so no panel can dictate the grid's size (the old
+        // flex rail gave the meter a 1.5x column and squeezed the other three into a strip, and
+        // an intrinsic-size track is exactly how a growing panel used to push the page taller).
+        // Each cell is a `fill` panel: 100% of the cell, its own internal `overflow: auto`.
+        // At md the region is `overflow: hidden` and sized by flexGrow between the header and the
+        // fixed-height combat log — so the view still has NO page-level scroll (Task #56).
+        // Below md it collapses to ONE column of comfortably-tall panels and the region scrolls.
         <Box
           data-testid="combat-dashboard"
           sx={{
-            display: 'flex',
+            display: 'grid',
             gap: 1.5,
             flexGrow: 1,
             minHeight: 0,
-            overflow: 'auto',
-            flexDirection: { xs: 'column', md: 'row' }
+            minWidth: 0,
+            overflow: { xs: 'auto', md: 'hidden' },
+            gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' },
+            gridTemplateRows: { xs: 'none', md: 'repeat(2, minmax(0, 1fr))' },
+            // xs rows are a DEFINITE height on purpose: `auto` would let the meter's row list
+            // size the track (an append-only panel sizing its own box is the Task #56 bug), so
+            // each stacked panel gets a comfortable fixed box and scrolls inside it.
+            gridAutoRows: { xs: '320px', md: 'minmax(0, 1fr)' },
+            '& > *': { minWidth: 0, minHeight: 0 }
           }}
         >
-          <Box
-            sx={{
-              flex: { md: '1.5 1 0' },
-              minWidth: 0,
-              minHeight: { xs: 300, md: 0 },
-              display: 'flex',
-              flexDirection: 'column'
-            }}
-          >
-            <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} fallbackNote={fallbackNote} />
-          </Box>
-          <Box
-            sx={{
-              flex: { md: '1 1 0' },
-              minWidth: 0,
-              minHeight: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 1.5
-            }}
-          >
-            <DpsChartCard tl={tl} live={live} ringless={ringless} />
-            <BreakdownPreviewCard
-              source={previewSource}
-              onOpen={() => previewSource && setDrill({ kind: 'entity', entityId: previewSource.id })}
-            />
-            <MobDamageCard tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
-          </Box>
+          <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} fallbackNote={fallbackNote} />
+          <DpsChartCard tl={tl} live={live} ringless={ringless} />
+          <BreakdownPreviewCard
+            source={previewSource}
+            onOpen={() => previewSource && setDrill({ kind: 'entity', entityId: previewSource.id })}
+          />
+          <MobDamageCard tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
         </Box>
       ) : (
         <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>

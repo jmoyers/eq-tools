@@ -3,7 +3,7 @@
 // (module-level) further down this import list.
 import { CHANNEL, USER_DATA } from './channel'
 import { E2E } from './e2e'
-import { app, shell, BrowserWindow, dialog, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, dialog, ipcMain, screen } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
 import { existsSync } from 'fs'
 import { join } from 'path'
@@ -35,9 +35,11 @@ import { LevelingModule } from './modules/leveling'
 import { CharacterModule } from './modules/character'
 import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
+import { EventFeedModule } from './modules/eventFeed'
 import type { ModuleDelta } from './modules/types'
+import { defaultOverlayBounds, overlayDefaultSize } from './overlayLayout'
 import { getSoundData, listPacks } from './sounds'
-import { lookupItem, prefetchItem } from './itemLookup'
+import { lookupItem } from './itemLookup'
 import { provisionDefaultPacks } from './provisionPacks'
 import {
   fetchPackSounds,
@@ -70,9 +72,11 @@ import {
 import type {
   AlertDef,
   AlertPrefs,
+  AlertsDelta,
   BuffsSnap,
   CharacterRef,
   EqConfig,
+  FeedReport,
   OverlayConfig,
   OverlayKind,
   PackInstallProgress
@@ -80,10 +84,14 @@ import type {
 import { OVERLAY_KINDS } from '../shared/types'
 
 let mainWindow: BrowserWindow | null = null
-// The floating DPS-meter overlays (Task #52; two kinds in Task #54): separate transparent,
-// frameless, always-on-top windows created on demand — one 'fight' (current-fight meter), one
-// 'overall' (zone meter). Both can be open at once. Null when the given kind is closed.
-const overlayWindows: Record<OverlayKind, BrowserWindow | null> = { fight: null, overall: null }
+// The floating overlays (Task #52; kinds in Task #54, more in Task #59): separate transparent,
+// frameless, always-on-top windows created on demand — the damage meters, the healing meters and
+// the event log. Any combination can be open at once. Null when that kind is closed. Built from
+// OVERLAY_KINDS so adding a kind never means editing a literal here.
+const overlayWindows = Object.fromEntries(OVERLAY_KINDS.map((k) => [k, null])) as Record<
+  OverlayKind,
+  BrowserWindow | null
+>
 let tailer: Tailer | null = null
 let character: CharacterRef | null = null
 let inventoryWatcher: FSWatcher | null = null
@@ -129,7 +137,17 @@ const epoch = new EpochDetector()
 // deltas to the renderer over the generic `module:delta` channel. Registration
 // order = bus delivery order.
 const registry = new ModuleRegistry({
-  emitDelta: (delta: ModuleDelta) => mainWindow?.webContents.send(IPC.onModuleDelta, delta)
+  emitDelta: (delta: ModuleDelta) => {
+    mainWindow?.webContents.send(IPC.onModuleDelta, delta)
+    // Task #59: alert fires are ALSO event-log rows. Folding them here (rather than teaching
+    // AlertsModule about the feed) keeps the alerts module untouched, and because eventFeed is
+    // registered LAST the row it appends is picked up by the same flush pass.
+    feedAlertDelta(delta)
+    // The 'events' overlay is a second consumer of the module transport (it hydrates the
+    // eventFeed module and rides its deltas), so deltas must reach that window too.
+    const evOverlay = overlayWindows.events
+    if (evOverlay && !evOverlay.isDestroyed()) evOverlay.webContents.send(IPC.onModuleDelta, delta)
+  }
 })
 const lootModule = new LootModule()
 const turnInsModule = new TurnInsModule()
@@ -172,6 +190,24 @@ const buffsModule = new BuffsModule(spellDb, [baselineOverlay(), loadUserOverlay
 // kind for both sides. bus.emitDerived queues it until the current primary event finishes
 // delivering — no re-entrancy, no feedback loop (buffs ignores buffExpired).
 buffsModule.setDerivedEmitter((ev, live) => bus.emitDerived(ev, live))
+// The event-log feed (Task #59): the live "things worth noticing" ring behind the 'events'
+// overlay — alert fires, NOTABLE loot, quest completions. It resolves loot notability through
+// the SAME cache-first lookupItem the loot tab uses (which also warms the cache, so this
+// replaces the old bare prefetch subscription below). Registered LAST so a row appended while
+// an earlier module's delta is being emitted still flushes in that pass.
+const eventFeedModule = new EventFeedModule({ lookupItem })
+
+/** Fold an `alerts` module delta into the event feed (alert id → its display name). */
+function feedAlertDelta(delta: ModuleDelta): void {
+  if (delta.moduleId !== 'alerts') return
+  const { fired } = delta.delta as AlertsDelta
+  if (!fired?.length) return
+  const defs = alertsModule.snapshot().state.defs
+  for (const f of fired) {
+    const def = defs.find((d) => d.id === f.alertId)
+    eventFeedModule.noteAlertFire(def?.name ?? f.alertId, f.matchedText, f.ts)
+  }
+}
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)
@@ -179,6 +215,7 @@ registry.register(levelingModule)
 registry.register(characterModule)
 registry.register(alertsModule)
 registry.register(buffsModule)
+registry.register(eventFeedModule)
 // Subscribe consumers to the bus ONCE, at startup. The bus persists across
 // character switches; on a switch we reset() each consumer rather than tearing
 // down and re-subscribing (the old bus.clear() churned subscriptions and risked
@@ -190,9 +227,11 @@ bus.subscribe((ev, live) => combat.ingestEvent(ev, live))
 // + persistent cache) so the answer is ready by the time the user clicks the item. LIVE
 // only — the historical scan (live:false) would otherwise fire thousands of lookups; the
 // cache/local-posky path covers those instantly on demand.
-bus.subscribe((ev, live) => {
-  if (live && ev.kind === 'loot' && ev.item) prefetchItem(ev.item)
-})
+//
+// Task #59 folded this INTO the event-feed module: its live-loot notability probe calls the
+// same cache-first `lookupItem`, so the cache is warmed exactly as before with ONE request
+// per item (the module also de-dupes concurrent probes of the same name, which the bare
+// prefetch did not). A second subscription here would double-request every uncached loot.
 // Epoch detection subscription (Task #49; launch-anchored in Task #50). Runs LAST so it
 // observes each event after the modules/combat have folded it, then at the first at/after-
 // launch event queues a derived `epoch` event via emitDerived; the bus delivers that to
@@ -383,11 +422,13 @@ function createWindow(): void {
 // needed — Electron's transparent/frameless + setAlwaysOnTop('screen-saver') +
 // setIgnoreMouseEvents(forward) covers it.
 //
-// Two KINDS (Task #54), each an independent window with its own persisted config:
+// Three KINDS (Task #54; 'events' in Task #59), each an independent window with its own
+// persisted config:
 //   - 'fight'   : current-fight meter + FIGHT selector.
 //   - 'overall' : zone meter + ZONE-session selector.
-// Both can be open simultaneously. The overlay renderer reads its kind from the ?kind= query on
-// its URL so a single overlay.html bundle serves both windows.
+//   - 'events'  : the live event log (alerts / notable loot / quest completions).
+// All can be open simultaneously. The overlay renderer reads its kind from the ?kind= query on
+// its URL so a single overlay.html bundle serves every window.
 //
 // Two interaction modes per window, persisted in that kind's `locked`:
 //   - interactive: normal focusable window, -webkit-app-region drag on the header, resize
@@ -411,10 +452,15 @@ function applyOverlayLocked(kind: OverlayKind, locked: boolean): void {
   }
 }
 
-/** Default window size per kind (the 'overall' window is a touch taller for its zone selector). */
-const OVERLAY_DEFAULT_SIZE: Record<OverlayKind, { width: number; height: number }> = {
-  fight: { width: 320, height: 220 },
-  overall: { width: 340, height: 240 }
+/** Per-kind title (the OS window title; never user-visible on a frameless overlay, but it is
+ *  what shows up in a window list / crash report). Partial + fallback so a new kind can't
+ *  break the build here. */
+const OVERLAY_TITLE: Partial<Record<OverlayKind, string>> = {
+  fight: 'Fight Overlay',
+  overall: 'Zone Overlay',
+  events: 'Event Log Overlay',
+  'heal-fight': 'Fight Healing Overlay',
+  'heal-overall': 'Zone Healing Overlay'
 }
 
 function createOverlayWindow(kind: OverlayKind): void {
@@ -424,8 +470,19 @@ function createOverlayWindow(kind: OverlayKind): void {
     return
   }
   const cfg = getOverlayConfig(kind)
+  // Persisted bounds ALWAYS win; a first open is placed by the shared layout (bottom-right,
+  // stacked per kind — overlayLayout.ts) so two overlays never open exactly on top of each other.
+  const placed =
+    cfg.bounds ??
+    (() => {
+      try {
+        return defaultOverlayBounds(kind, screen.getPrimaryDisplay().workArea)
+      } catch {
+        return overlayDefaultSize(kind) // no display info (headless/e2e) — size only
+      }
+    })()
   const w = new BrowserWindow({
-    ...(cfg.bounds ?? OVERLAY_DEFAULT_SIZE[kind]),
+    ...placed,
     minWidth: 200,
     minHeight: 90,
     maxWidth: 720,
@@ -441,7 +498,7 @@ function createOverlayWindow(kind: OverlayKind): void {
     // translucency (per-element alpha beats window-level setOpacity).
     backgroundColor: '#00000000',
     hasShadow: false,
-    title: kind === 'fight' ? 'Fight Overlay' : 'Zone Overlay',
+    title: OVERLAY_TITLE[kind],
     webPreferences: {
       preload: join(__dirname, '../preload/overlay.js'),
       sandbox: false,
@@ -461,6 +518,14 @@ function createOverlayWindow(kind: OverlayKind): void {
   wc.on('console-message', (_e, level, message, line, sourceId) => {
     if (level < 2) return
     logError('overlay:console', { level, message, source: `${sourceId}:${line}` })
+  })
+
+  // External links (the event log's wiki links, Task #59) open in the user's DEFAULT BROWSER —
+  // the overlay window itself must NEVER navigate away from overlay.html. Same handler the main
+  // window uses, so `<a target="_blank">` is the one link idiom across the app.
+  wc.setWindowOpenHandler((details) => {
+    void shell.openExternal(details.url)
+    return { action: 'deny' }
   })
 
   w.on('ready-to-show', () => {
@@ -510,7 +575,7 @@ function setOverlayOpen(kind: OverlayKind, open: boolean): boolean {
 
 /** Current open-state map across all overlay kinds (for the TitleBar menu). */
 function overlayStateMap(): Record<OverlayKind, boolean> {
-  const out = { fight: false, overall: false } as Record<OverlayKind, boolean>
+  const out = {} as Record<OverlayKind, boolean>
   for (const kind of OVERLAY_KINDS) {
     out[kind] = !!(overlayWindows[kind] && !overlayWindows[kind]!.isDestroyed())
   }
@@ -785,6 +850,19 @@ function registerIpc(): void {
   ipcMain.on(IPC.appFired, (_e, payload: { alertId: string; context: string }) => {
     if (!payload?.alertId) return
     alertsModule.appFired(payload.alertId, payload.context ?? '')
+    // The alerts delta this flush emits is folded into the event feed by feedAlertDelta (the
+    // registry host), so an app-signal fire (bossDefeat / questComplete) shows up in the
+    // event log exactly like a main-side event/raw fire. eventFeed is registered after
+    // alerts, so the resulting feed row rides out on this same flush.
+    registry.flushNow()
+  })
+  // ---- event feed (Task #59): renderer-detected events ----
+  // Only the renderer's posky/turn-in machinery can see a Sky quest complete, so it reports
+  // completions here. Main owns the ring + ids; flushNow pushes the row straight out to the
+  // 'events' overlay instead of waiting on the next log event / 1s tick.
+  ipcMain.on(IPC.feedReport, (_e, report: FeedReport) => {
+    if (!report?.title) return
+    eventFeedModule.report(report)
     registry.flushNow()
   })
   ipcMain.handle(IPC.getAlertPrefs, () => getAlertPrefs())

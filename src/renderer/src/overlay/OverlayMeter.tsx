@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { OverlayConfig, OverlayDrill, OverlayKind } from '@shared/types'
-import type { DamageCategory, SegmentView, SkillView, SourceView } from '@shared/combat'
+import type { DamageCategory, SegmentView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
+import { flattenSkills, type FlatSkill, type SkillRow } from '../features/combat/dashboardData'
 import { useOverlayCombat } from './useOverlayCombat'
 
 // Palette (matches the app's combat colors; the overlay has no MUI theme).
@@ -113,17 +114,10 @@ function Bar({
 // static crumb, zero affordances, still fully click-through); only interactive mode can change it.
 type Drill = OverlayDrill
 
-/** A skill row tagged with the category it was rolled up under (the color key). */
-type FlatSkill = SkillView & { category: DamageCategory }
-
-/** Flatten a source's per-category skills into one damage-desc list, re-basing the bar pct
- *  on the global max (the engine's pct is relative to each skill's own category max). */
-function flattenSkills(e: SourceView): FlatSkill[] {
-  const rows: FlatSkill[] = e.categories.flatMap((c) => c.skills.map((s) => ({ ...s, category: c.category })))
-  rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
-  const max = Math.max(1, ...rows.map((r) => r.total))
-  return rows.map((r) => ({ ...r, pct: (r.total / max) * 100 }))
-}
+// Flattening + the Slay Undead grouping come from the app's dashboardData — it is pure TS (no
+// React, no MUI), which is the only reason the overlay duplicates anything at all — the copies
+// here (colors, bar chrome) exist to stay MUI-free, not to fork the DATA shaping. One flatten
+// means the overlay's drill can never rank or group rows differently from the main view.
 
 /**
  * The overlay's per-skill stat run, embedded INSIDE the bar after the name — identical form to
@@ -146,13 +140,9 @@ function skillStat(s: FlatSkill): string {
   return parts.join(' · ')
 }
 
-/**
- * The overlay's stand-in for the main view's expanded per-ability readout: the same figures,
- * fully labeled, as the row's hover title (interactive mode — a locked overlay is
- * click-through, so it neither hovers nor could collapse an inline expansion).
- */
-function skillTitle(s: FlatSkill, catLabel: string): string {
-  if (s.hits === 0) return `${s.name} (${catLabel}) — 0 landed · ${s.resists ?? 0} resisted`
+/** The labeled stat run for one row, shared by the row title and its children lines. */
+function skillFacts(s: FlatSkill): string {
+  if (s.hits === 0) return `0 landed · ${s.resists ?? 0} resisted`
   const misses = s.misses ?? 0
   const swings = s.hits + misses
   const resists = s.resists ?? 0
@@ -167,7 +157,23 @@ function skillTitle(s: FlatSkill, catLabel: string): string {
   if (resists > 0) bits.push(`${resists} resisted of ${casts} casts (${Math.round((resists / casts) * 100)}%)`)
   const min = s.min ?? 0
   bits.push(min > 0 && min !== s.max ? `damage range ${fmt(min)} - ${fmt(s.max)}` : `damage range ${fmt(s.max)}`)
-  return `${s.name} (${catLabel}) — ${bits.join(' · ')}`
+  return bits.join(' · ')
+}
+
+/**
+ * The overlay's stand-in for the main view's expanded per-ability readout: the same figures,
+ * fully labeled, as the row's hover title (interactive mode — a locked overlay is
+ * click-through, so it neither hovers nor could collapse an inline expansion).
+ * For the GROUPED Slay Undead row this title also carries what the main view puts in the
+ * expansion — the per-weapon-skill split, one labeled line each. The overlay's 18px rows have
+ * no room for an inline breakdown and locked mode could never collapse one, so the hover title
+ * is where that detail lives here.
+ */
+function skillTitle(s: SkillRow, catLabel: string): string {
+  const head = `${s.name} (${catLabel}) — ${skillFacts(s)}`
+  if (!s.children || s.children.length === 0) return head
+  const lines = s.children.map((c) => `  ${c.name} — ${skillFacts(c)}`)
+  return `${head}\nBy skill:\n${lines.join('\n')}`
 }
 
 /** The bar body: entities → flat skill list, driven by the drill state.
@@ -212,11 +218,19 @@ function MeterBars({
             label={
               <>
                 {s.name}
-                {/* A Slay Undead proc flattens into a row named after its weapon skill, so
+                {/* A lone Slay Undead proc flattens into a row named after its weapon skill, so
                     without this tag it is a duplicate of the plain melee row. The category has
-                    to be readable from the ROW; the overlay has no legend to fall back on. */}
-                {s.category === 'slay' && (
+                    to be readable from the ROW; the overlay has no legend to fall back on.
+                    A GROUP row is already named "Slay Undead" — tagging it would stutter — and
+                    instead says how many weapon skills it merges; the split is in its title. */}
+                {s.category === 'slay' && !s.children && (
                   <span style={{ color: CAT_COLOR.slay, fontWeight: 600 }}> · Slay Undead</span>
+                )}
+                {s.children && s.children.length > 0 && (
+                  <span style={{ color: 'rgba(255,255,255,0.62)', fontWeight: 400 }}>
+                    {' '}
+                    · {s.children.length} skills
+                  </span>
                 )}
                 {/* Labeled stats ride inside the bar, dimmed against the name; the right end
                     of every row stays the total alone so the list scans as a ranking. */}

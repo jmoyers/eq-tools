@@ -157,6 +157,100 @@ function countOf(page: Page, selector: string): Promise<number> {
   return page.evaluate((sel) => document.querySelectorAll(sel).length, selector)
 }
 
+interface PanelRect {
+  w: number
+  h: number
+  x: number
+  y: number
+  /** Does this panel's own body overflow its box WITHOUT a scroller? (content would be clipped) */
+  clipped: boolean
+}
+
+/** Every dashboard panel's box, in DOM order (meter, DPS, breakdown, mobs). */
+function panelRects(page: Page): Promise<PanelRect[]> {
+  return page.evaluate(() =>
+    [...document.querySelectorAll('[data-testid="dash-panel"]')].map((el) => {
+      const r = el.getBoundingClientRect()
+      // The panel's body is the last element child (header Stack is first). A `fill` panel must
+      // scroll it internally, so overflowing content is only OK when the box is a scroller.
+      const body = el.lastElementChild as HTMLElement | null
+      const style = body ? getComputedStyle(body) : null
+      const scrolls = !!style && (style.overflowY === 'auto' || style.overflowY === 'scroll')
+      return {
+        w: Math.round(r.width),
+        h: Math.round(r.height),
+        x: Math.round(r.x),
+        y: Math.round(r.y),
+        clipped: !!body && body.scrollHeight > body.clientHeight + 1 && !scrolls
+      }
+    })
+  )
+}
+
+/** How far the app's scrolling content area overflows its viewport box (0 = no page scroll). */
+function pageOverflow(page: Page): Promise<{ doc: number; content: number }> {
+  return page.evaluate(() => {
+    const content = document.querySelector('main')?.firstElementChild as HTMLElement | null
+    return {
+      doc: Math.max(0, document.documentElement.scrollHeight - document.documentElement.clientHeight),
+      // -1 = the content area wasn't found; that's a FAIL, not a silent pass.
+      content: content ? Math.max(0, content.scrollHeight - content.clientHeight) : -1
+    }
+  })
+}
+
+/** Same measurement, for the single-column (narrow) layout. */
+function narrowPanelCheck(page: Page): Promise<{ cols: number; minH: number; scrolls: boolean }> {
+  return page.evaluate(() => {
+    const p = [...document.querySelectorAll('[data-testid="dash-panel"]')].map((el) => el.getBoundingClientRect())
+    const grid = document.querySelector('[data-testid="combat-dashboard"]') as HTMLElement | null
+    return {
+      cols: new Set(p.map((r) => Math.round(r.x))).size,
+      minH: p.length ? Math.round(Math.min(...p.map((r) => r.height))) : 0,
+      scrolls: !!grid && grid.scrollHeight > grid.clientHeight + 1 && getComputedStyle(grid).overflowY === 'auto'
+    }
+  })
+}
+
+/**
+ * The 2x2 GRID assertions. The four dashboard panels (source meter, DPS over time, breakdown
+ * preview, damage by mob) must be four EQUAL cells — equal width AND equal height — none
+ * collapsed, none clipping its content, and the grid must never make the page scroll.
+ * Run more than once per session (quiet log, busy log, explicit fight pick) because the whole
+ * point is that panel CONTENT growth can't move the layout.
+ */
+async function checkGrid(page: Page, tag: string): Promise<void> {
+  const p = await panelRects(page)
+  const dims = p.map((r) => `${r.w}×${r.h}`).join(', ')
+  if (!check(`[${tag}] the dashboard is a 2x2 grid of four panels`, p.length === 4, `${p.length} panels: ${dims}`)) return
+
+  const ws = p.map((r) => r.w)
+  const hs = p.map((r) => r.h)
+  const spread = (v: number[]): number => Math.max(...v) - Math.min(...v)
+  // 1fr tracks are exactly equal; allow a couple of px for sub-pixel rounding + borders.
+  const TOL = 4
+
+  check(`[${tag}] all four panels have equal width`, spread(ws) <= TOL, `${ws.join(' / ')} px (spread ${spread(ws)})`)
+  check(`[${tag}] all four panels have equal height`, spread(hs) <= TOL, `${hs.join(' / ')} px (spread ${spread(hs)})`)
+  check(`[${tag}] no panel is collapsed to nothing`, Math.min(...hs) >= 80 && Math.min(...ws) >= 80, dims)
+
+  // Two distinct columns and two distinct rows — a 4x1 or 1x4 with equal cells would otherwise
+  // sneak past the equality checks above.
+  const cols = new Set(p.map((r) => r.x))
+  const rows = new Set(p.map((r) => r.y))
+  check(`[${tag}] the panels sit in 2 columns × 2 rows`, cols.size === 2 && rows.size === 2, `x=${[...cols].join(',')} y=${[...rows].join(',')}`)
+
+  const clipped = p.filter((r) => r.clipped).length
+  check(`[${tag}] every panel scrolls its own content (nothing is clipped)`, clipped === 0, `${clipped} clipping`)
+
+  const over = await pageOverflow(page)
+  check(
+    `[${tag}] the view does not scroll the page (the grid never grows it)`,
+    over.doc === 0 && over.content === 0,
+    `document +${over.doc}px · content area +${over.content}px`
+  )
+}
+
 /** Visible text of the Combat view — cheap way to assert card titles exist. */
 function combatText(page: Page): Promise<string> {
   return page.evaluate(() => document.body.innerText ?? '')
@@ -265,6 +359,10 @@ async function main(): Promise<void> {
     check('the "DPS over time" card is present', text.includes('dps over time'))
     check('the "Damage by mob" card is present', text.includes('damage by mob'))
 
+    // 4b. THE LAYOUT: four EQUAL panels in a 2x2 grid. The rail layout this replaced gave the
+    //     source meter a 1.5x-wide column and squeezed the other three into a narrow strip.
+    await checkGrid(page, 'quiet')
+
     // 5. The selector is backed by real history: fights + zone sessions.
     const fights = snap.segments.filter((s) => s.kind === 'fight').length
     check('the selector has finalized fights', fights >= 1, `${fights} fights`)
@@ -321,6 +419,8 @@ async function main(): Promise<void> {
         log2 ? `${log2.h}px` : 'absent'
       }`
     )
+    // …and the 2x2 grid is still exactly that: growing panel content scrolls INSIDE its cell.
+    await checkGrid(page, 'busy log')
 
     // 10. Drive the SELECTOR for real and land on the newest finalized fight. History always
     //     carries damage (the engine drops 0-damage encounters), so this is the unconditional
@@ -352,9 +452,48 @@ async function main(): Promise<void> {
       )
       const dash3 = await rectOf(page, '[data-testid="combat-dashboard"]')
       check('…in a dashboard that still has height', !!dash3 && dash3.h >= 200, dash3 ? `${dash3.h}px` : 'absent')
+      // A finalized fight is the DENSEST case (full source list, full mob list, full ring).
+      await checkGrid(page, 'picked fight')
     } else {
       check('the log has at least one finalized fight to select', false, 'no fights in history')
     }
+
+    // 11. FIRST, the narrowest window a USER can actually make: the main window's
+    //     `minWidth: 900` (src/main/index.ts). The 2x2 must survive it intact — that is the
+    //     real-world worst case, and it is also exactly MUI's `md` boundary, so the
+    //     single-column branch below can only be reached by lifting the minimum.
+    const win = await app.browserWindow(page)
+    const wide = await win.evaluate((w) => w.getBounds())
+    await win.evaluate((w, b) => w.setBounds({ ...b, width: 900 }), wide)
+    await sleep(1200)
+    await checkGrid(page, 'min window width (900)')
+
+    // 12. RESPONSIVE: below md the grid collapses to ONE column of comfortably tall panels and
+    //     the REGION scrolls (the page still must not). Unreachable through the UI today
+    //     (minWidth 900 === the md breakpoint), so the test lifts the minimum to exercise the
+    //     CSS — if the window minimum or the drawer ever changes, this path is already correct.
+    await win.evaluate((w, b) => {
+      w.setMinimumSize(400, 400)
+      w.setBounds({ ...b, width: 720 })
+    }, wide)
+    await sleep(1200)
+    const narrow = await narrowPanelCheck(page)
+    check('narrow: the grid collapses to a single column', narrow.cols === 1, `${narrow.cols} column(s)`)
+    check('narrow: each stacked panel keeps a usable height', narrow.minH >= 250, `shortest ${narrow.minH}px`)
+    check('narrow: the dashboard REGION is the scroller', narrow.scrolls, `region scrolls=${narrow.scrolls}`)
+    const narrowOver = await pageOverflow(page)
+    check(
+      'narrow: …and the PAGE still does not scroll',
+      narrowOver.doc === 0 && narrowOver.content === 0,
+      `document +${narrowOver.doc}px · content +${narrowOver.content}px`
+    )
+    // Back to the wide layout — and it must come back as a clean 2x2.
+    await win.evaluate((w, b) => {
+      w.setMinimumSize(900, 600)
+      w.setBounds(b)
+    }, wide)
+    await sleep(1200)
+    await checkGrid(page, 'restored wide')
 
     check('no renderer console errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '))
 

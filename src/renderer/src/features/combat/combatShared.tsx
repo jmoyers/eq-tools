@@ -7,7 +7,7 @@ import { Box, Collapse, Paper, Stack, Tooltip, Typography } from '@mui/material'
 import type { DamageCategory } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
-import type { FlatSkill } from './dashboardData'
+import type { FlatSkill, SkillRow } from './dashboardData'
 
 export const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 
@@ -100,9 +100,19 @@ export function Bar({
  * its stripe. Only 'slay' needs it: the flatten renders a Slay Undead proc under its weapon
  * skill ("Melee"/"Backstab"), so it arrived as a DUPLICATE of the plain melee row separable
  * only by a 3px stripe. Every other category's lane names are already unambiguous.
+ * Two rows skip the tag: the GROUPED aggregate (already named "Slay Undead" — tagging it
+ * would stutter) and its children (`plain`), whose parent row already says it.
  */
-export function SkillName({ name, category }: { name: string; category: DamageCategory }): JSX.Element {
-  if (category !== 'slay') return <>{name}</>
+export function SkillName({
+  name,
+  category,
+  plain
+}: {
+  name: string
+  category: DamageCategory
+  plain?: boolean
+}): JSX.Element {
+  if (category !== 'slay' || plain || name === CATEGORY_LABEL.slay) return <>{name}</>
   return (
     <>
       {name}
@@ -171,8 +181,18 @@ function StatItem({ label, value, color }: { label: string; value: string; color
  * average and never presented as an observed hit).
  * `a` carries the `~` sample-estimate marker through; the observed range is never prefixed
  * (a sampled max is a lower bound, a sampled min an upper bound — the panel's chip says so).
+ * `after` rides INSIDE the same block, under the figures — the grouped Slay Undead row uses it
+ * for its per-weapon child rows, so one click gives both the group's stats and its split.
  */
-function SkillReadout({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX.Element {
+function SkillReadout({
+  s,
+  approx,
+  after
+}: {
+  s: FlatSkill
+  approx?: boolean
+  after?: ReactNode
+}): JSX.Element {
   const a = approx ? '~' : ''
   const misses = s.misses ?? 0
   const resists = s.resists ?? 0
@@ -221,6 +241,37 @@ function SkillReadout({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX.El
           <StatItem label="Damage range" value={min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : `${fmt(s.max)}`} />
         )}
       </Stack>
+      {after}
+    </Box>
+  )
+}
+
+/**
+ * The grouped row's child list: the same bars, one per weapon skill the proc fired from, inside
+ * the parent's expansion. Each child is a full SkillBar, so it keeps its embedded stats AND its
+ * own click-to-expand readout — the interaction is the identical one users already know, just
+ * nested; no third nav level and no breadcrumb change.
+ */
+function SkillChildren({ rows, approx }: { rows: FlatSkill[]; approx?: boolean }): JSX.Element {
+  return (
+    <Box sx={{ mt: 1 }}>
+      <Typography
+        variant="caption"
+        sx={{
+          display: 'block',
+          fontSize: 9,
+          lineHeight: 1.4,
+          letterSpacing: '0.06em',
+          textTransform: 'uppercase',
+          color: 'text.disabled',
+          mb: 0.5
+        }}
+      >
+        By skill
+      </Typography>
+      {rows.map((c) => (
+        <SkillBar key={`${c.category}|${c.name}`} s={c} approx={approx} nested />
+      ))}
     </Box>
   )
 }
@@ -242,8 +293,11 @@ function InlineStats({ children }: { children: ReactNode }): JSX.Element {
  * as a ranked list at a glance.
  * `approx` prefixes the derived numbers with `~` — used by the mob-filtered list when the
  * encounter's event ring was downsampled (the numbers are then sample estimates).
+ * A GROUPED row (`s.children` — today only the Slay Undead aggregate) renders exactly like any
+ * other row; the difference is only in what its expansion holds. `nested` marks a child of such
+ * a group: its parent already names the proc, so the row drops the `· Slay Undead` tag.
  */
-export function SkillBar({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX.Element {
+export function SkillBar({ s, approx, nested }: { s: SkillRow; approx?: boolean; nested?: boolean }): JSX.Element {
   // Click expands the full per-ability readout in place (the same inline-Collapse pattern the
   // incoming meter rows use) — no extra nav level, so the flat ranked list never moves.
   const [open, setOpen] = useState(false)
@@ -263,7 +317,7 @@ export function SkillBar({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX
         onClick={() => setOpen((o) => !o)}
         name={
           <>
-            <SkillName name={s.name} category={s.category} />
+            <SkillName name={s.name} category={s.category} plain={nested} />
             {resists > 0 && casts > 0 && (
               <Tooltip
                 title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round(
@@ -277,13 +331,20 @@ export function SkillBar({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX
             )}
             <InlineStats>
               {s.hits > 0 ? skillStatText(s, a) : `0 landed · ${a}${resists} resisted`}
+              {/* A group row says how many skills it stands for, so the merge is visible from the
+                  row itself and the expansion is obviously worth a click. */}
+              {s.children && s.children.length > 0 ? ` · ${s.children.length} skills` : ''}
             </InlineStats>
           </>
         }
         right={`${a}${fmt(s.total)}`}
       />
       <Collapse in={open} unmountOnExit>
-        <SkillReadout s={s} approx={approx} />
+        <SkillReadout
+          s={s}
+          approx={approx}
+          after={s.children && s.children.length > 0 ? <SkillChildren rows={s.children} approx={approx} /> : undefined}
+        />
       </Collapse>
     </Box>
   )
@@ -292,45 +353,60 @@ export function SkillBar({ s, approx }: { s: FlatSkill; approx?: boolean }): JSX
 /**
  * Dashboard card chrome: dense uppercase caption on the left, a free-form status slot on
  * the right, body fills the rest. Matches the app's outlined-Paper card style.
+ *
+ * TWO sizing modes, and a card must pick exactly one — a card NEVER sizes itself to its
+ * content, because a content-sized card in a shared box silently steals the whole box from
+ * its shrinkable siblings (that is precisely how the combat log once ate the dashboard):
+ *  - `fill`   — the card takes 100% of whatever box it was given (a 2x2 grid CELL) and
+ *               contributes NO intrinsic height. Its body scrolls internally, so a cramped
+ *               cell clips nothing and cannot push the grid past the viewport.
+ *  - `height` — FIXED px height, for a body that is an ever-growing append-only ring.
  */
 export function DashCard({
   title,
   right,
   children,
-  grow,
-  minHeight,
-  height
+  fill,
+  height,
+  testId
 }: {
   title: string
   right?: ReactNode
   children: ReactNode
-  /** let the card absorb leftover column height (its body scrolls). */
-  grow?: boolean
-  minHeight?: number
   /**
-   * FIXED card height (`flex: 0 0 <height>px`) — for a card whose body is an ever-growing
-   * append-only ring. Without it such a card sizes to its CONTENT (`flex: 0 0 auto` can
-   * neither grow nor shrink), so it silently steals the whole column from its shrinkable
-   * siblings — which is exactly how the combat log ate the dashboard. Wins over minHeight.
+   * Grid-cell mode: `height: 100%` + `minHeight: 0` let a `minmax(0, 1fr)` track shrink the
+   * card freely, and the body gets its own `overflow: auto` so content scrolls INSIDE the cell
+   * instead of growing it.
    */
+  fill?: boolean
+  /** FIXED card height (`flex: 0 0 <height>px`) — the combat log's ring. */
   height?: number
+  /** Marks the card as one of the dashboard's measurable panels (e2e layout assertions). */
+  testId?: string
 }): JSX.Element {
   return (
     <Paper
       variant="outlined"
+      data-testid={testId}
       sx={{
         p: 1.25,
         display: 'flex',
         flexDirection: 'column',
         minWidth: 0,
-        ...(grow
-          ? { flex: '1 1 0', minHeight: minHeight ?? 0 }
+        ...(fill
+          ? { height: '100%', minHeight: 0, overflow: 'hidden' }
           : height != null
             ? { flex: `0 0 ${height}px`, minHeight: 0, maxHeight: height }
-            : { flex: '0 0 auto', minHeight })
+            : { flex: '0 0 auto' })
       }}
     >
-      <Stack direction="row" justifyContent="space-between" alignItems="baseline" spacing={1} sx={{ mb: 0.75 }}>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="baseline"
+        spacing={1}
+        sx={{ mb: 0.75, flexShrink: 0 }}
+      >
         <Typography
           variant="caption"
           noWrap
@@ -340,7 +416,18 @@ export function DashCard({
         </Typography>
         {right}
       </Stack>
-      <Box sx={{ minWidth: 0, minHeight: 0, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>{children}</Box>
+      <Box
+        sx={{
+          minWidth: 0,
+          minHeight: 0,
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          ...(fill ? { overflow: 'auto' } : null)
+        }}
+      >
+        {children}
+      </Box>
     </Paper>
   )
 }

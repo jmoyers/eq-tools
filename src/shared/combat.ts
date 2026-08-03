@@ -146,6 +146,12 @@ export interface SegmentView {
   incomingHealTotal: number
   /** Top healers of You/your pets, sorted desc by amount. */
   incomingHealers: HealerView[]
+  /**
+   * The HEALING meter for this segment (Task #59) — the full per-healer / per-spell breakdown
+   * plus the absorption lanes, built from the SAME aggregate as the damage bars so the healing
+   * overlays inherit fight/zone-session selection for free.
+   */
+  healing: HealingView
 }
 
 /** A source of incoming healing (to You / your pet), for the incoming section. */
@@ -153,6 +159,115 @@ export interface HealerView {
   name: string
   total: number
   count: number
+}
+
+// ---------------------------------------------------------------------------
+// HEALING model (Task #59)
+//
+// What the log actually supports (verified sweep of eqlog_Primitive_freeport.txt, 2026-08-02):
+//   - 16,680 `<healer> healed <target> for N[ (M)] hit points[ by <Spell>].` lines. 16,198 name a
+//     spell; the rest are spell-less. 233 additionally carry a trailing `(Critical)`.
+//   - The `(M)` form IS the overheal record: M is the RAW heal, N the EFFECTIVE one, and EQ omits
+//     the parens whenever nothing was wasted (3,016 paren lines, N < M on every single one). So
+//     `overheal = M − N` is DERIVED, never guessed, and it is 0 by construction on a plain line.
+//     1,857 of those landed on a full health bar (N = 0) — a fully-wasted cast.
+//   - HoTs are NOT distinguishable. There is no `healed over time` / `regeneration` line family
+//     anywhere in the log; a regen tick (e.g. Blessing of the Squire, 706 lines of "healed
+//     himself for 2") is byte-identical in shape to a direct heal. So this model does NOT split
+//     direct vs HoT — it would be an invention (AGENTS.md world-model law 6).
+//   - Overheal is only knowable per-line. A healer's `overheal` therefore sums only the ticks
+//     whose line carried the raw amount; it is a FLOOR, never a rate over unknown ticks.
+// ---------------------------------------------------------------------------
+
+/** Who a heal came from. Deliberately its own union — a healing meter has an ALLY lane that the
+ *  damage model's SourceKind ('you'|'pet'|'enemy') has no room for. */
+export type HealSourceKind = 'you' | 'pet' | 'other' | 'enemy'
+
+/** One spell lane inside a healer's drill-down. */
+export interface HealSpellView {
+  /** Display spell name, or 'Unspecified' when the line named no spell. */
+  name: string
+  /** Effective healing (what actually landed on a health bar). */
+  total: number
+  /** pct of the healer's largest spell lane (drives the bar fill). */
+  pct: number
+  /** Number of heal lines on this lane (HoT ticks included — the log cannot separate them). */
+  count: number
+  /** Critical heals on this lane. */
+  crits: number
+  /** Largest single EFFECTIVE heal. */
+  max: number
+  /** Smallest EFFECTIVE heal. Absent when every tick landed for the same amount. */
+  min?: number
+  /**
+   * Wasted healing summed from the `(M)` lines only: Σ(raw − effective). A plain line contributes
+   * 0 because EQ omits the parens exactly when nothing was wasted. A FLOOR, not an estimate.
+   */
+  overheal: number
+  /** Ticks that landed entirely on a full health bar (effective 0). */
+  fullOverheal: number
+}
+
+/** One healer row on the meter (level 1), with its per-spell breakdown (level 2). */
+export interface HealSourceView {
+  /** Stable row id: 'you' | 'heal:<healerKey>'. */
+  id: string
+  name: string
+  kind: HealSourceKind
+  /** Effective healing done by this healer within the segment's scope. */
+  total: number
+  /** total ÷ segment duration — healing per second. */
+  hps: number
+  /** pct of the largest healer's total (bar fill). */
+  pct: number
+  count: number
+  crits: number
+  critPct: number
+  max: number
+  min?: number
+  overheal: number
+  /** overheal ÷ (total + overheal) as a percentage; 0 when no `(M)` line was ever seen. */
+  overhealPct: number
+  fullOverheal: number
+  spells: HealSpellView[]
+}
+
+/**
+ * ABSORPTION lanes — mitigation, NOT healing. Kept in its own object (and rendered in its own
+ * labeled section) so nothing here is ever summed into a healing total: a rune prevents damage,
+ * it does not restore hit points, and two of the three families carry NO amount at all.
+ */
+export interface MitigationView {
+  /** Σ of `You gain a rune for N points of absorption.` — absorption GRANTED. The log never
+   *  records how much of a rune was actually consumed, so this is not "damage prevented". */
+  runeTotal: number
+  runeCount: number
+  runeMax: number
+  /** Smallest rune grant; absent when none were seen. */
+  runeMin?: number
+  /** `… but YOUR magical skin absorbs the blow!` — swings fully absorbed. COUNT ONLY: the log
+   *  carries no amount for these, so the UI must show a count and never a fabricated total. */
+  absorbedSwings: number
+  /** `YOUR magical skin absorbs the damage of <mob>'s thorns.` — incoming damage-shield ticks
+   *  absorbed. COUNT ONLY, same rule. */
+  absorbedDamageShields: number
+}
+
+/** The healing meter for one segment. */
+export interface HealingView {
+  /** Healers of You / your pets, ranked by effective healing desc. */
+  healers: HealSourceView[]
+  /** Σ healers[].total. */
+  total: number
+  /** total ÷ segment duration. */
+  hps: number
+  /** Σ healers[].overheal (a floor — see HealSpellView.overheal). */
+  overheal: number
+  /** Healers of engaged HOSTILE instances (counter-healing that undid your damage). */
+  enemyHealers: HealSourceView[]
+  /** Σ enemyHealers[].total. Matches SegmentView.enemyHealTotal. */
+  enemyTotal: number
+  mitigation: MitigationView
 }
 
 export interface SegmentSummary {

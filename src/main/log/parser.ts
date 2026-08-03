@@ -253,7 +253,31 @@ const EMOTE_PET_RE =
 //     raw/overheal amount in parens — ~2.7k lines the old amount-only regex missed).
 // `amount` is always the FIRST number (effective heal); the parenthesized raw amount
 // is captured separately as `rawAmount`. Singular "hit point" is tolerated too.
-const HEAL_RE = /^(.+?) healed (.+?) for (\d+)(?: \((\d+)\))? hit points?(?: by (.+?))?\.$/
+//
+// CRITICAL HEALS (Task #59): heal lines carry the damage family's trailing paren modifier —
+// "… by Superior Healing. (Critical)" — AFTER the sentence period, so the old `\.$` anchor
+// REJECTED all 233 of them and the model silently lost those heals (nine distinct spells,
+// including the biggest single-hit heals in the log). The optional trailing group fixes that;
+// a full-log sweep (2026-08-02) confirms `(Critical)` is the ONLY modifier a heal ever carries.
+// Spell names contain no '.', so the lazy spell capture can never swallow the period.
+const HEAL_RE =
+  /^(.+?) healed (.+?) for (\d+)(?: \((\d+)\))? hit points?(?: by (.+?))?\.(?: \(([A-Za-z][A-Za-z ]*)\))?$/
+
+// ----- absorption / mitigation (Task #59) — damage PREVENTED, never hit points restored -----
+// Three VERIFIED self-form families (see MitigationEvent in shared/logEvents.ts for the counts):
+//   `You gain a rune for 12 points of absorption.`                       → 'rune' (has an amount)
+//   `<mob> tries to bash YOU, but YOUR magical skin absorbs the blow!`   → 'absorbSwing' (COUNT)
+//   `YOUR magical skin absorbs the damage of <mob>'s thorns.`            → 'absorbDamageShield'
+// The blow form is matched ONLY AFTER MISS_RE has been given the line (see classify): the
+// possessive third-person twin (`… a revenant's magical skin absorbs the blow!`) is a MOB's rune
+// and already belongs to the miss family, and a pending fix to MISS_RE's absorb alternative may
+// claim the "YOUR" form too — this branch is deliberately downstream so that fix wins without a
+// merge conflict, and the engine counts absorbed swings from BOTH events (a line produces exactly
+// one event, so the two paths can never double-count).
+const RUNE_GAIN_RE = /^You gain a rune for (\d+) points? of absorption\.$/
+const SKIN_ABSORB_BLOW_RE =
+  /^(.+?) tr(?:y|ies) to \w+ (?:on )?YOU, but YOUR magical skin absorbs the blow!(?: \([A-Za-z ]+\))?$/
+const SKIN_ABSORB_DS_RE = /^YOUR magical skin absorbs the damage of (.+?)'s .+\.$/
 
 // ----- miss (NEW): "<A> tr(y|ies) to <verb> <B>, but <outcome>!" -----
 // Outcome disambiguates the miss type:
@@ -418,6 +442,25 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
       }
       return { kind: 'miss', seq, ts, raw, attacker, target, mtype }
     }
+    // MISS_RE declined the line. The SELF rune-absorb form ("… but YOUR magical skin absorbs
+    // the blow!") is the one real family it currently rejects — its absorb alternative only
+    // matches the possessive third-person twin ("… a revenant's magical skin …"). Claim it for
+    // the mitigation lane HERE, downstream of MISS_RE, so a fix that teaches MISS_RE the "YOUR"
+    // form takes precedence automatically. Task #59.
+    const a = SKIN_ABSORB_BLOW_RE.exec(text)
+    if (a) return { kind: 'mitigation', seq, ts, raw, mtype: 'absorbSwing', source: norm(a[1]) }
+  }
+
+  // --- absorption / mitigation (Task #59): rune grants + absorbed damage-shield ticks. ---
+  // Checked BEFORE the damage battery: the rune line contains "points of", which is that
+  // battery's gate, and it must never be mistaken for a damage line.
+  if (text.startsWith('You gain a rune for ')) {
+    const m = RUNE_GAIN_RE.exec(text)
+    if (m) return { kind: 'mitigation', seq, ts, raw, mtype: 'rune', amount: Number(m[1]) }
+  }
+  if (text.startsWith('YOUR magical skin absorbs the damage of ')) {
+    const m = SKIN_ABSORB_DS_RE.exec(text)
+    if (m) return { kind: 'mitigation', seq, ts, raw, mtype: 'absorbDamageShield', source: norm(m[1]) }
   }
 
   // --- spell resists (NEW, Task #51 timeline v2) — the caster-side "miss". ---
@@ -534,7 +577,8 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
         amount: Number(m[3]),
         rawAmount: m[4] ? Number(m[4]) : undefined,
         spell: m[5]?.trim() || undefined,
-        healer
+        healer,
+        crit: /critical/i.test(m[6] ?? '')
       }
     }
   }

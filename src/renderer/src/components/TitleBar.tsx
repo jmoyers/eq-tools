@@ -10,6 +10,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Tooltip from '@mui/material/Tooltip'
 import type { CharacterRef, OverlayKind } from '@shared/types'
+import { OVERLAY_KINDS } from '@shared/types'
 
 /**
  * Frameless window title bar (Task #23). Replaces BOTH the OS chrome and the old
@@ -100,12 +101,12 @@ export default function TitleBar({
   onOpenPreferences
 }: TitleBarProps): JSX.Element {
   const [maximized, setMaximized] = useState(false)
-  // Per-kind overlay open-state (Task #52; two kinds in Task #54): reflected on the compact
-  // Overlay menu, kept in sync with pushes so it updates if an overlay closes itself.
-  const [overlayState, setOverlayState] = useState<Record<OverlayKind, boolean>>({
-    fight: false,
-    overall: false
-  })
+  // Per-kind overlay open-state (Task #52; kinds in Task #54/#59): reflected on the compact
+  // Overlay menu, kept in sync with pushes so it updates if an overlay closes itself. Seeded
+  // from OVERLAY_KINDS so adding a kind needs no edit here.
+  const [overlayState, setOverlayState] = useState<Record<OverlayKind, boolean>>(
+    () => Object.fromEntries(OVERLAY_KINDS.map((k) => [k, false])) as Record<OverlayKind, boolean>
+  )
   const [overlayMenuAnchor, setOverlayMenuAnchor] = useState<HTMLElement | null>(null)
   const overlayBtnRef = useRef<HTMLButtonElement>(null)
 
@@ -116,7 +117,7 @@ export default function TitleBar({
       setOverlayState((s) => ({ ...s, [kind]: open }))
     )
   }, [])
-  const anyOverlayOpen = overlayState.fight || overlayState.overall
+  const anyOverlayOpen = Object.values(overlayState).some(Boolean)
 
   // Double-click on the drag region toggles maximize (native-ish behavior). We
   // guard against double-clicks that originate on an interactive child by only
@@ -207,6 +208,23 @@ export default function TitleBar({
           <MenuItem dense onClick={() => void window.eq.toggleOverlay('overall')}>
             <Checkbox size="small" edge="start" checked={overlayState.overall} tabIndex={-1} disableRipple />
             <ListItemText primary="Zone meter" secondary="Zone total + zone selector" />
+          </MenuItem>
+          {/* Task #59: the HEALING pair — siblings of the damage meters above, same per-kind
+              machinery (persisted config, position, lock, drill) and the same fight vs
+              zone-session selection semantics. */}
+          <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-fight')}>
+            <Checkbox size="small" edge="start" checked={overlayState['heal-fight']} tabIndex={-1} disableRipple />
+            <ListItemText primary="Fight healing" secondary="Healing + absorption, current fight" />
+          </MenuItem>
+          <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-overall')}>
+            <Checkbox size="small" edge="start" checked={overlayState['heal-overall']} tabIndex={-1} disableRipple />
+            <ListItemText primary="Zone healing" secondary="Healing + absorption, zone total" />
+          </MenuItem>
+          {/* Task #59: the event log — a non-meter overlay kind driven by the same
+              per-kind machinery (persisted config, position, lock). */}
+          <MenuItem dense onClick={() => void window.eq.toggleOverlay('events')}>
+            <Checkbox size="small" edge="start" checked={overlayState.events} tabIndex={-1} disableRipple />
+            <ListItemText primary="Event log" secondary="Alerts, notable loot, quest completions" />
           </MenuItem>
         </Menu>
       </Box>

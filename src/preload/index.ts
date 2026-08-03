@@ -6,6 +6,7 @@ import type {
   CharacterRef,
   EqConfig,
   EqConfigResult,
+  FeedReport,
   ItemKnowledge,
   LogLine,
   LootEvent,
@@ -118,6 +119,11 @@ const api = {
    *  then a cached, politely-throttled wiki lookup. Never rejects (degrades to a
    *  cached-negative/offline record that still carries local posky associations). */
   lookupItem: (name: string): Promise<ItemKnowledge> => ipcRenderer.invoke(IPC.itemsLookup, name),
+
+  /** Report a renderer-detected event into the live event feed (Task #59) — today only quest
+   *  completions, which only the renderer's posky/turn-in detector can see. Fire-and-forget;
+   *  main owns the capped ring and pushes it on to the 'events' overlay. */
+  reportFeedEvent: (report: FeedReport): void => ipcRenderer.send(IPC.feedReport, report),
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   /** List registry packs (installed-flag reconciled). `force` bypasses the 24h cache. */

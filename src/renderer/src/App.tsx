@@ -40,6 +40,7 @@ import { getBossData } from './data'
 import { useBossKills } from './features/bosses/useBossKills'
 import type { TargetStatus } from './features/bosses/bossStatus'
 import { useProgress } from './features/posky/useProgress'
+import { skyQuestPage } from '@shared/wiki'
 
 const bossData = getBossData()
 
@@ -149,10 +150,25 @@ export default function App(): JSX.Element {
   // the 'questComplete' app signal (sound) + the app-wide snackbar; PoskyView's own
   // useProgress additionally bursts confetti when that tab is open. fireAppSignal applies
   // the alert cooldown, so PoskyView's detector firing in the same tick can't double-play.
+  // It is also the ONE place a quest completion is reported into the live event feed (Task #59) —
+  // only the renderer can match turn-ins against the posky dataset, so main can't detect this
+  // itself. The report carries the QUEST link (the class's Plane of Sky Tests wiki page — there
+  // are no per-quest pages) and, when the dataset names one, the reward item for the event
+  // overlay's hover card. A quest with no known reward reports none: no fabricated item (law 1).
   useProgress({
     onQuestComplete: (q) => {
       setQuestToast(q.name)
       fireAppSignal('questComplete', q.name)
+      window.eq.reportFeedEvent({
+        kind: 'quest',
+        ts: Date.now(),
+        title: q.name,
+        detail: q.giver ? `turned in to ${q.giver}` : q.className,
+        page: skyQuestPage(q.className),
+        reward: q.reward
+          ? { item: q.reward, page: q.rewardPage, stats: q.rewardStats }
+          : undefined
+      })
     }
   })
 

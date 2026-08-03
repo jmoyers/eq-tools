@@ -7,14 +7,29 @@ export type { LootDisposition }
 export type { ItemStatBlock }
 
 /**
- * The two spawnable overlay window KINDS (Task #54 — overlay v2):
+ * The spawnable overlay window KINDS (Task #54 — overlay v2; 'events' added in Task #59):
  *   - 'fight'   : the CURRENT-fight meter + a FIGHT selector (recent encounters).
  *   - 'overall' : the ZONE meter + a ZONE-session selector.
+ *   - 'events'  : the EVENT LOG — a live reverse-chronological feed of alerts firing,
+ *                 notable loot, and quest completions (see FeedEvent below).
+ *   - 'heal-fight' / 'heal-overall' (Task #59): the HEALING pair — the same two selection
+ *                 semantics as the damage pair ('heal-fight' = current encounter, 'heal-overall'
+ *                 = zone session), rendering `SegmentView.healing` instead of the damage bars.
  * Each kind has its own independently-persisted OverlayConfig (bounds/alpha/lock/topN/drill) and
  * can be open simultaneously. IPC channels + the store are keyed by this.
  */
-export type OverlayKind = 'fight' | 'overall'
-export const OVERLAY_KINDS: OverlayKind[] = ['fight', 'overall']
+export type OverlayKind = 'fight' | 'overall' | 'events' | 'heal-fight' | 'heal-overall'
+export const OVERLAY_KINDS: OverlayKind[] = ['fight', 'overall', 'events', 'heal-fight', 'heal-overall']
+
+/** True for the two HEALING overlay kinds (they render HealMeter, not OverlayMeter). */
+export function isHealOverlayKind(kind: OverlayKind): boolean {
+  return kind === 'heal-fight' || kind === 'heal-overall'
+}
+
+/** True for the kinds whose selector lists FIGHTS (the others list zone sessions). */
+export function isFightOverlayKind(kind: OverlayKind): boolean {
+  return kind === 'fight' || kind === 'heal-fight'
+}
 
 /**
  * The overlay meter's mini drill-down (Task #54): which entity's flat skill/spell list is on
@@ -324,6 +339,69 @@ export interface CharacterSnap {
 }
 export type CharacterDelta = Partial<CharacterSnap>
 
+// ----- Event feed / event-log overlay (Task #59) -----
+//
+// A capped, LIVE-ONLY stream of "things worth noticing" — what the 'events' overlay renders in
+// reverse-chronological order. The feed module (main/modules/eventFeed.ts) is the single source
+// of truth; it is fed from three places, all of them already-existing detectors:
+//   'alert' — the alerts module fired (main-side event/raw triggers) or the renderer routed an
+//             'app'-signal fire through alerts:appFired.
+//   'loot'  — a LIVE loot line whose item resolved (itemLookup, cache-first) to a NOTABLE
+//             record (lore / quest / used by a quest). Same predicate as the loot tab's
+//             "notable pickups" strip (shared/itemKnowledge.ts).
+//   'quest' — a Sky quest completed live (the renderer's useProgress turn-in detector, reported
+//             over `feed:report`).
+//
+// HONESTY (world-model law 1): every field here is either observed or scraped. `reward` exists
+// only when the quest dataset actually names a reward item — an unknown reward shows NO item
+// hover rather than a fabricated one, and `page` is absent when no wiki page is known.
+
+export type FeedEventKind = 'alert' | 'loot' | 'quest'
+
+/** The item a quest awards, when the quest data actually names one. */
+export interface FeedReward {
+  /** reward item display name */
+  item: string
+  /** wiki page title for the reward item (for the hover card's link), when known */
+  page?: string
+  /** EQ-style stat blob from the scraped quest data — renders offline, before any lookup */
+  stats?: string
+}
+
+/** One entry in the live event feed. */
+export interface FeedEvent {
+  /** stable id (monotonic, per session) — the React key + dedupe handle */
+  id: string
+  kind: FeedEventKind
+  /** epoch millis of the underlying log line / signal */
+  ts: number
+  /** headline: the alert name, the item name, or the quest name */
+  title: string
+  /** supporting line: what triggered the alert, the source mob, the quest's class */
+  detail?: string
+  /** wiki page TITLE this row links to (quest page for quests, item page for loot) */
+  page?: string
+  /** for a quest that awards an item: what you got. Absent when the data doesn't say. */
+  reward?: FeedReward
+}
+
+/** eventFeed module. Delta = feed entries appended since the last flush. */
+export type FeedSnap = FeedEvent[]
+export type FeedDelta = { appended: FeedEvent[] }
+
+/**
+ * What the RENDERER may report into the feed over `feed:report` (main owns ids + the ring).
+ * Today: quest completions, which only the renderer's posky/turn-in machinery can detect.
+ */
+export interface FeedReport {
+  kind: 'quest'
+  ts: number
+  title: string
+  detail?: string
+  page?: string
+  reward?: FeedReward
+}
+
 // ----- Alerts extension (Task #18) -----
 //
 // An alert = a trigger (matched against the live LogEvent stream, a raw log line,
@@ -344,6 +422,7 @@ export type LogEventKind =
   | 'death'
   | 'damage'
   | 'heal'
+  | 'mitigation'
   | 'miss'
   | 'resist'
   | 'charm'

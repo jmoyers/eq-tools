@@ -135,10 +135,17 @@ export function setEqInstallDir(dir: string | undefined): void {
 
 // ----- Floating overlay DPS meter (Task #52; per-kind in Task #54) -----
 
-/** Per-kind defaults: the 'overall' window starts a touch taller (it holds a zone selector). */
+/** Per-kind defaults. Sizes/positions live in overlayLayout.ts; `bounds` stays undefined here so
+ *  a first open is placed by that layout and every later open uses what the user left. */
 const DEFAULT_OVERLAY_CONFIG: Record<OverlayKind, OverlayConfig> = {
   fight: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null },
-  overall: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null }
+  overall: { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null },
+  // 'events' (Task #59): topN is the feed's visible-row budget rather than a bar count.
+  events: { open: false, locked: false, bgAlpha: 0.72, topN: 10, bounds: undefined, drill: null },
+  // The HEALING pair (Task #59). Same knobs as the damage meters — a solo player usually has a
+  // single healer row, so 5 is plenty and the interesting depth is one drill down.
+  'heal-fight': { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null },
+  'heal-overall': { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null }
 }
 
 /** Read a kind's overlay config, filling missing fields with the kind's defaults. Migrates the

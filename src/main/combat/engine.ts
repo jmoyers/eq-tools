@@ -48,13 +48,15 @@
 import { idKey } from '../log/parser'
 import { WorldModel } from './world'
 import { damageCategory } from './taxonomy'
-import type { LogEvent, MissType } from '../../shared/logEvents'
+import { HealAccum, buildHealingView } from './healing'
+import type { LogEvent, MissType, MitigationEvent } from '../../shared/logEvents'
 import type { DamageCategory, DamageType } from '../../shared/combat'
 import { CATEGORY_ORDER } from '../../shared/combat'
 import type {
   CategoryView,
   ClassifiedLine,
   CombatSnapshot,
+  HealSourceKind,
   HealerView,
   MissBreakdown,
   RoundsView,
@@ -286,6 +288,12 @@ class Agg {
   enemyHeal = new Map<string, { name: string; amount: number }>()
   /** Healing received by You / your pets: healerKey → { name, total, count }. */
   incHeal = new Map<string, { name: string; amount: number; count: number }>()
+  /** The meter-grade HEALING + ABSORPTION ledger (Task #59). Lives on the SAME aggregate as the
+   *  damage bars, so the healing overlays inherit fight / zone-session selection, the finalized
+   *  zone-session freeze and the encounter history without any parallel machinery. Deliberately
+   *  ADDITIVE: `enemyHeal`/`incHeal` above are untouched, so every existing damage/heal total
+   *  (and the enemyHealTotal annotation) stays byte-identical. */
+  heal = new HealAccum()
   addOut(id: string, name: string, kind: SourceKind, ev: DamageEvent, ambiguous = false): void {
     const s = this.out.get(id) ?? newSource(name, kind)
     if (s.name !== name) s.name = name
@@ -795,8 +803,21 @@ export class CombatEngine {
         return
       }
       case 'heal':
-        this.routeHeal(ev.ts, ev.healer ?? null, ev.target, ev.amount, ev.spell)
+        this.routeHeal(ev.ts, ev.healer ?? null, ev.target, ev.amount, ev.spell, ev.rawAmount, ev.crit)
         this.log(ev.ts, 'heal', 'info', `+ ${ev.healer ?? '?'} → ${ev.target} ${ev.amount}${ev.spell ? ` (${ev.spell})` : ''}`)
+        return
+      case 'mitigation':
+        this.routeMitigation(ev)
+        this.log(
+          ev.ts,
+          'mitigation',
+          'info',
+          ev.mtype === 'rune'
+            ? `⛊ rune +${ev.amount} absorption`
+            : ev.mtype === 'absorbSwing'
+              ? `⛊ absorbed ${ev.source ?? '?'}'s blow`
+              : `⛊ absorbed ${ev.source ?? '?'}'s damage shield`
+        )
         return
       case 'miss':
         this.routeMiss(ev.ts, ev.attacker, ev.target, ev.mtype)
@@ -961,6 +982,16 @@ export class CombatEngine {
       const name = this.world.label(attInst)
       enc?.agg.addIncMiss(id, name, mtype, 'Melee')
       this.zoneAgg.addIncMiss(id, name, mtype, 'Melee')
+      // ABSORPTION (Task #59): an incoming swing absorbed by YOUR rune is also a mitigation
+      // instant. `incoming` means the defender is YOU (a swing at your pet classifies as
+      // 'ignore'), so this can't pick up a pet's or a mob's own rune. It is the SECOND source
+      // for the same line family the parser's 'absorbSwing' mitigation event covers: whichever
+      // of MISS_RE / SKIN_ABSORB_BLOW_RE claims the line, exactly ONE event is emitted, so the
+      // two paths can never double-count — and the count survives the pending MISS_RE fix.
+      if (mtype === 'absorb') {
+        enc?.agg.heal.addAbsorbedSwing()
+        this.zoneAgg.heal.addAbsorbedSwing()
+      }
       this.log(ts, 'miss', 'enemy', `${name} ✕ You (${mtype})`)
       return
     }
@@ -1092,15 +1123,32 @@ export class CombatEngine {
   }
 
   /**
-   * Consume a heal. Two things matter for combat stats:
+   * Consume a heal. Three things matter for combat stats:
    *   - target is an engaged HOSTILE instance → count as "enemy healing" (it undoes
    *     our damage; effective-DPS context per encounter + zone).
    *   - target is You or one of your pets → count as incoming healing (with top
    *     healers).
-   * Other heals (party members, unrelated NPCs) are ignored for aggregation.
+   *   - EITHER of those also folds into the meter-grade HEALING ledger (Task #59):
+   *     per healer, per spell, with crit / min / max / derived overheal.
+   * Other heals (party members healing each other, unrelated NPCs) are ignored for
+   * aggregation — the log gives no faction for an arbitrary name.
+   *
+   * ZERO-EFFECTIVE heals (`… for 0 (2) hit points …`, 1,857 in the real log) are the overheal
+   * evidence, so the healing ledger takes them; the pre-existing `enemyHeal`/`incHeal` maps keep
+   * their original `amount <= 0` gate so their totals AND their healer lists stay byte-identical.
    */
-  private routeHeal(ts: number, healer: string | null, target: string, amount: number, _spell?: string): void {
-    if (amount <= 0) return
+  private routeHeal(
+    ts: number,
+    healer: string | null,
+    target: string,
+    amount: number,
+    spell?: string,
+    rawAmount?: number,
+    crit?: boolean
+  ): void {
+    if (amount < 0) return
+    const positive = amount > 0
+    const heal = { amount, rawAmount, spell, crit }
     const tKey = idKey(target)
     const healerKey = healer ? idKey(healer) : null
     const isYouTgt = tKey === 'you'
@@ -1128,8 +1176,17 @@ export class CombatEngine {
       const enc = this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
       const hk = healerKey ?? 'unknown'
       const healerName = healer ?? 'Unknown'
-      enc?.agg.addIncHeal(hk, healerName, amount)
-      this.zoneAgg.addIncHeal(hk, healerName, amount)
+      if (positive) {
+        enc?.agg.addIncHeal(hk, healerName, amount)
+        this.zoneAgg.addIncHeal(hk, healerName, amount)
+      }
+      // Healing ledger: rank by HEALER. Row id 'you' for self-heals keeps the healing meter's
+      // primary row keyed the same way the damage meter's is.
+      const kind: HealSourceKind =
+        hk === 'you' ? 'you' : this.petNames.has(hk) ? 'pet' : 'other'
+      const id = hk === 'you' ? 'you' : `heal:${hk}`
+      enc?.agg.heal.addFriendly(id, healerName, kind, heal)
+      this.zoneAgg.heal.addFriendly(id, healerName, kind, heal)
       return
     }
 
@@ -1137,8 +1194,15 @@ export class CombatEngine {
     const inst = this.world.resolve(target, ts)
     const enc = this.current
     if (enc && enc.engaged.has(inst.instanceId)) {
-      enc.agg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
-      this.zoneAgg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
+      if (positive) {
+        enc.agg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
+        this.zoneAgg.addEnemyHeal(inst.instanceId, this.world.label(inst), amount)
+      }
+      // Counter-healing ledger, ranked by the HEALER (a mob healing itself is its own row).
+      const hk = healerKey ?? 'unknown'
+      const healerName = healer ?? 'Unknown'
+      enc.agg.heal.addHostile(`heal:${hk}`, healerName, heal)
+      this.zoneAgg.heal.addHostile(`heal:${hk}`, healerName, heal)
       // PRESENCE (Task #55): a heal on an engaged hostile proves BOTH ends are still in
       // the fight — the mob receiving it, and (when a second mob cast it) the healer. The
       // real case this came from: "Baron Telyx V`Zher healed Soldier of V`Zher for 175" —
@@ -1148,6 +1212,30 @@ export class CombatEngine {
       this.notePresenceId(enc, inst.instanceId, ts)
       if (healer) this.notePresence(healer, ts)
     }
+  }
+
+  /**
+   * Consume an ABSORPTION / MITIGATION line (Task #59) — damage prevented, not hit points
+   * restored, so it never touches a healing or damage total. Folded into the current encounter
+   * (when one is open and still fresh) and the zone aggregate, exactly like an incoming heal.
+   *
+   * These lines NEVER open, join or extend an encounter and never move the damage timeline —
+   * the same rule miss/resist follow (AGENTS.md world-model law 8). A rune ticking while you
+   * stand around out of combat belongs to the zone lane and nowhere else.
+   */
+  private routeMitigation(ev: MitigationEvent): void {
+    const enc =
+      this.current && ev.ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+    const apply = (a: { heal: HealAccum }): void => {
+      if (ev.mtype === 'rune') {
+        // Defensive: the amount is required by the regex, but keep the ledger clean if a future
+        // shape ever omits it — a rune with no amount is a count we cannot value.
+        if (ev.amount != null && ev.amount > 0) a.heal.addRune(ev.amount)
+      } else if (ev.mtype === 'absorbSwing') a.heal.addAbsorbedSwing()
+      else a.heal.addAbsorbedDamageShield()
+    }
+    if (enc) apply(enc.agg)
+    apply(this.zoneAgg)
   }
 
   /**
@@ -1604,7 +1692,8 @@ export class CombatEngine {
       incoming,
       enemyHealTotal: sumHeal(agg.enemyHeal),
       incomingHealTotal: incomingHealers.reduce((s, h) => s + h.total, 0),
-      incomingHealers
+      incomingHealers,
+      healing: buildHealingView(agg.heal, durationSec)
     }
   }
 }

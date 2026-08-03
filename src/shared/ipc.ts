@@ -126,6 +126,13 @@ export const IPC = {
   // renderer -> main: the running app's version (app.getVersion()), shown in Preferences.
   getAppVersion: 'app:getVersion',
 
+  // ---- event feed / 'events' overlay (Task #59) ----
+  // renderer(main app) -> main: report a renderer-DETECTED feed event (today: a Sky quest
+  // completed live — only the renderer's posky/turn-in machinery can see that). Main owns the
+  // ring + ids; the entry then reaches the overlay over the ordinary module transport.
+  // Payload: FeedReport. Fire-and-forget.
+  feedReport: 'feed:report',
+
   // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
   // renderer -> main: look up an item's lore/quest knowledge (local posky-first, then a
   // cached, politely-throttled wiki lookup). Returns ItemKnowledge.

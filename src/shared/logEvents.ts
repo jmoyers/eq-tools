@@ -148,6 +148,44 @@ export interface HealEvent extends LogEventBase {
   rawAmount?: number
   spell?: string
   healer?: string
+  /**
+   * A CRITICAL heal (Task #59). Heal lines carry the same trailing paren modifier the damage
+   * family does — `… by Superior Healing. (Critical)` — AFTER the sentence period. The original
+   * `\.$`-anchored regex rejected every one of them, silently dropping 233 real heals from the
+   * model (all nine distinct spells that can crit). Verified full-log sweep 2026-08-02:
+   * `(Critical)` is the ONLY modifier a heal line has ever carried.
+   */
+  crit?: boolean
+}
+
+/**
+ * ABSORPTION / MITIGATION families (Task #59) — damage PREVENTED, never hit points restored.
+ * Deliberately a separate event kind from `heal`: folding these into healing would inflate a
+ * healing meter with numbers that never touched the health bar.
+ *
+ * VERIFIED shapes (full-log sweep of eqlog_Primitive_freeport.txt, 2026-08-02):
+ *   'rune'               `You gain a rune for 12 points of absorption.`  (1,016 lines; the
+ *                        user's berserker rune AA. The amount is absorption GRANTED — the log
+ *                        never says how much of it was actually consumed.)
+ *   'absorbSwing'        `<mob> tries to bash YOU, but YOUR magical skin absorbs the blow!`
+ *                        (362 lines, incl. a trailing ` (Riposte)` variant). COUNT ONLY — the
+ *                        log carries NO amount for an absorbed swing, so never synthesize one.
+ *   'absorbDamageShield' `YOUR magical skin absorbs the damage of <mob>'s thorns.` (235 lines)
+ *                        — an incoming damage-shield tick absorbed. COUNT ONLY, same rule.
+ *
+ * Only the SELF ("YOUR"/"You") forms are emitted here. The possessive third-person twin
+ * (`… but a revenant's magical skin absorbs the blow!`, 1,426 lines) is a MOB's rune and
+ * belongs to the miss family (mtype 'absorb'), not to your mitigation lane.
+ */
+export type MitigationType = 'rune' | 'absorbSwing' | 'absorbDamageShield'
+
+export interface MitigationEvent extends LogEventBase {
+  kind: 'mitigation'
+  mtype: MitigationType
+  /** Absorption points granted — 'rune' ONLY. Absent for the count-only families. */
+  amount?: number
+  /** The attacker whose blow / damage shield was absorbed ('absorb*' only). */
+  source?: string
 }
 
 export type MissType = 'miss' | 'dodge' | 'parry' | 'riposte' | 'block' | 'absorb'
@@ -504,6 +542,7 @@ export type LogEvent =
   | DeathEvent
   | DamageEventE
   | HealEvent
+  | MitigationEvent
   | MissEvent
   | ResistEvent
   | CharmEvent
