@@ -286,6 +286,44 @@ export interface ItemQuestUse {
   zone?: string
 }
 
+/**
+ * One tradeskill recipe that CONSUMES this item as an ingredient (item page `|recipes`).
+ * This is the answer for the large family of items whose stats block says QUEST ITEM but
+ * which appear in no quest anywhere on the wiki: they are tradeskill components.
+ */
+export interface ItemRecipeUse {
+  /** the recipe / result item name ("Gnome Kabobs") */
+  recipe: string
+  /** wiki page title, when the link was piped and differs from the label */
+  page?: string
+  /** the tradeskill it sits under ("Baking"), when the field grouped it */
+  tradeskill?: string
+  /** trivial level, when the line states one */
+  trivial?: number
+}
+
+/** One ingredient line of a recipe that PRODUCES this item. */
+export interface ItemCraftIngredient {
+  name: string
+  /** how many the combine consumes, when stated */
+  qty?: number
+  /** where the ingredient comes from, verbatim ("Bought", "Dropped", "Crafted", …) */
+  sources?: string[]
+}
+
+/** One way this item is itself player-crafted (item page `|playercrafted`). */
+export interface ItemCraftRecipe {
+  /** "Baking", "Blacksmithing", "Pottery" … */
+  tradeskill?: string
+  trivial?: number
+  /** the combine container ("Oven", "Forge", "Kiln") */
+  container?: string
+  /** what the combine yields — normally this item */
+  yieldItem?: string
+  yieldQty?: number
+  ingredients: ItemCraftIngredient[]
+}
+
 /** The "what's this item for" knowledge card for a single item name. */
 export interface ItemKnowledge {
   /** the item name looked up (as requested; display name, not normalized) */
@@ -311,6 +349,16 @@ export interface ItemKnowledge {
   stats?: ItemStatBlock
   /** wiki icon id (`lucy_img_ID`) → File:Item <id>.png on eqlwiki */
   iconId?: number
+  /** tradeskill recipes that USE this item as an ingredient (`|recipes`) */
+  recipes?: ItemRecipeUse[]
+  /** prose fallback when `|recipes` wasn't a parseable bullet list */
+  recipesNote?: string
+  /** true ONLY when a structured `|playercrafted` recipe was read (never inferred) */
+  playerCrafted?: boolean
+  /** how this item is made — one entry per craft recipe (`|playercrafted`) */
+  craftedBy?: ItemCraftRecipe[]
+  /** prose fallback when `|playercrafted` wasn't a structured recipe ("Non-Tradeskill (Quest)") */
+  craftedNote?: string
   /** whether this result was served from cache (vs a fresh network lookup) */
   cached: boolean
   /** true when the wiki lookup was attempted but found no page (negative result) */

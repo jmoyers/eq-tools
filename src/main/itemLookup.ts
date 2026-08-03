@@ -49,7 +49,13 @@ const UA = 'everquest-companion/0.1 (personal quest tracker)'
 // expire, so every item cached before the catalog existed would otherwise keep serving its
 // stale zero-quest answer for the item-page fields. A version mismatch drops the whole file
 // (loadCache), so the next lookup re-merges against the new index.
-const CACHE_VERSION = 2
+//
+// Bumped to 3 when the item page's TRADESKILL fields joined the parse (`|recipes` — the
+// recipes that CONSUME this item — and `|playercrafted`). Same reasoning: the cache stores
+// the merged record and positives never expire, so every item cached under v2 would keep
+// serving a recipe-less answer and a QUEST-ITEM-flagged tradeskill component (Gnome Meat,
+// Troll Parts, Spider Legs) would stay unexplained forever.
+const CACHE_VERSION = 3
 const NEG_TTL_MS = 7 * 24 * 60 * 60 * 1000 // negative results: retry after 7 days
 const OFFLINE_TTL_MS = 30 * 60 * 1000 // offline misses: retry after 30 min
 const REQUEST_SPACING_MS = 150 // polite inter-request delay (wiki)

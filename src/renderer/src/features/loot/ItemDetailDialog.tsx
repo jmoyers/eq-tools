@@ -15,6 +15,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import type { ItemKnowledge, LootEvent } from '@shared/types'
+import { craftedByLabel, recipeUseLabel } from '@shared/itemKnowledge'
 import { wikiPageUrl } from '@shared/wiki'
 import { formatDate } from '../../lib/formatDate'
 import { EQ_ITEM_COLORS } from '../../lib/ItemWindow'
@@ -53,10 +54,11 @@ function useItemKnowledge(item: string, open: boolean): { data: ItemKnowledge | 
 }
 
 /**
- * The "What it's for" card: quest chips (with giver when known) and source attribution.
- * Quiet loading/offline/empty states — no narration. Rendered only when there's something
- * to say (or while loading). The item's own stats/lore live in the game-style item window
- * above; this block is only what OUR sources add on top of it.
+ * The "What it's for" card: quest chips (with giver when known), the tradeskill recipes
+ * that consume the item, and source attribution. Quiet loading/offline/empty states — no
+ * narration. Rendered only when there's something to say (or while loading). The item's own
+ * stats/lore live in the game-style item window above; this block is only what OUR sources
+ * add on top of it.
  */
 function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loading: boolean }): JSX.Element | null {
   if (loading && !data) {
@@ -71,7 +73,13 @@ function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loadi
   }
   if (!data) return null
 
-  const hasSomething = data.lore || data.quest || data.questUses.length > 0
+  // Tradeskill knowledge (Task #61): a QUEST ITEM flag with no quest anywhere means the
+  // item is a recipe COMPONENT, and `|recipes` says which. That's a real answer, so it
+  // opens the card on its own even for an item nothing flags.
+  const recipes = data.recipes ?? []
+  const crafted = craftedByLabel(data)
+  const hasSomething =
+    data.lore || data.quest || data.questUses.length > 0 || recipes.length > 0 || !!crafted
   // Nothing notable AND we successfully checked the wiki — stay silent (don't add noise
   // to ordinary vendor trash). If it was offline/notFound with no local data, also silent.
   if (!hasSomething) return null
@@ -112,11 +120,45 @@ function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loadi
           </Stack>
         </Box>
       ) : (
-        data.quest && (
+        // Only say "flagged but unexplained" when we genuinely have nothing else — the
+        // recipe list below explains most QUEST-ITEM-flagged components.
+        data.quest &&
+        recipes.length === 0 &&
+        !crafted && (
           <Typography variant="caption" color="text.secondary">
             Flagged as a quest item on the wiki (no specific quest association found).
           </Typography>
         )
+      )}
+
+      {recipes.length > 0 && (
+        <Box sx={{ mt: data.questUses.length > 0 ? 1 : 0 }}>
+          <Typography variant="caption" color="text.secondary">
+            Used in {recipes.length === 1 ? 'recipe' : 'recipes'}:
+          </Typography>
+          <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap sx={{ mt: 0.5 }}>
+            {recipes.map((r) => (
+              <Chip
+                key={`${r.tradeskill ?? ''}:${r.recipe}`}
+                size="small"
+                variant="outlined"
+                label={recipeUseLabel(r)}
+                sx={{ height: 22 }}
+              />
+            ))}
+          </Stack>
+        </Box>
+      )}
+      {data.recipesNote && recipes.length === 0 && (
+        <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1 }}>
+          Used in: {data.recipesNote}
+        </Typography>
+      )}
+
+      {crafted && (
+        <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 1 }}>
+          Crafted: {crafted}
+        </Typography>
       )}
 
       {wikiUrl && (

@@ -22,6 +22,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import type { CountSource, ItemKnowledge, LootDisposition, LootEvent } from '@shared/types'
+import { recipeUseLabel } from '@shared/itemKnowledge'
 import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
 import { itemCountKey } from '../../lib/itemName'
@@ -89,13 +90,22 @@ function isQuestItem(name: string): boolean {
 // EXTENDING the local PoSky flag to any wiki-known quest item. Shown only when the async
 // knowledge probe has resolved AND flags it; ordinary items render nothing (no noise).
 // The PoSky chip already covers Sky items, so suppress a redundant "quest" badge there.
+//
+// Task #61: an item whose stats block says QUEST ITEM but which no quest anywhere uses is a
+// TRADESKILL component (Gnome Meat → Gnome Kabobs). Those get a `tradeskill` chip naming
+// the recipes instead of a "quest" chip that leads nowhere.
 function KnowledgeBadge({ knowledge, isPosky }: { knowledge?: ItemKnowledge; isPosky: boolean }): JSX.Element | null {
   if (!knowledge) return null
-  const showQuest = (knowledge.quest || knowledge.questUses.length > 0) && !isPosky
-  if (!knowledge.lore && !showQuest) return null
-  const title =
-    knowledge.questUses.length > 0
-      ? `Used in: ${knowledge.questUses.map((u) => u.quest).join(', ')}`
+  const recipes = knowledge.recipes ?? []
+  const hasQuests = knowledge.questUses.length > 0
+  const tradeskillOnly = recipes.length > 0 && !hasQuests
+  const showQuest = (knowledge.quest || hasQuests) && !isPosky && !tradeskillOnly
+  const showTradeskill = tradeskillOnly && !isPosky
+  if (!knowledge.lore && !showQuest && !showTradeskill) return null
+  const title = hasQuests
+    ? `Used in: ${knowledge.questUses.map((u) => u.quest).join(', ')}`
+    : showTradeskill
+      ? `Used in: ${recipes.map(recipeUseLabel).join(', ')}`
       : knowledge.lore
         ? 'Lore item'
         : 'Quest item'
@@ -107,6 +117,9 @@ function KnowledgeBadge({ knowledge, isPosky }: { knowledge?: ItemKnowledge; isP
         )}
         {showQuest && (
           <Chip size="small" color="secondary" variant="outlined" label="quest" sx={{ height: 18, fontSize: 10 }} />
+        )}
+        {showTradeskill && (
+          <Chip size="small" color="info" variant="outlined" label="tradeskill" sx={{ height: 18, fontSize: 10 }} />
         )}
       </Stack>
     </Tooltip>
@@ -185,7 +198,14 @@ function NotablePickupsStrip({
         </Typography>
         {notable.slice(0, 8).map((n) => {
           const uses = n.knowledge.questUses
-          const label = uses.length > 0 ? `${n.item} → ${uses[0].quest}` : n.item
+          // Nothing quest-side? A recipe that consumes it is the honest "what for" (Task #61).
+          const firstRecipe = n.knowledge.recipes?.[0]
+          const label =
+            uses.length > 0
+              ? `${n.item} → ${uses[0].quest}`
+              : firstRecipe
+                ? `${n.item} → ${recipeUseLabel(firstRecipe)}`
+                : n.item
           const key = itemCountKey(n.item)
           return (
             <Chip
