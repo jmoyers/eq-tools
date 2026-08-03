@@ -52,6 +52,7 @@ import BarChartIcon from '@mui/icons-material/BarChart'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
+import { ClassComboSetting } from '../profiles/ClassComboPanel'
 import { useCombinePetRow } from '../combat/useCombatPrefs'
 import { UpdateSetting, VersionSetting, useUpdateStatus } from './UpdateSetting'
 import type { EqConfig, UpdateStatus } from '@shared/types'
@@ -284,6 +285,12 @@ function buildSections(version: string, status: UpdateStatus): PrefSection[] {
           label: 'Import settings',
           keywords: 'share import paste restore string bundle profile receive add merge file',
           content: <ImportSettingsSetting />
+        },
+        {
+          id: 'class-combo',
+          label: 'Class loadout history',
+          keywords: 'class combo loadout classes swap paladin rogue berserker who correction slot',
+          content: <ClassComboSetting />
         }
       ]
     },

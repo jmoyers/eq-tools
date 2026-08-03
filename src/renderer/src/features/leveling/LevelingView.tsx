@@ -30,6 +30,8 @@ import { chartDomain, mergeZoneBands, zoneLegend, type ZoneLegend } from './zone
 import { useChartSelection } from './useChartSelection'
 import { EMPTY_PROGRESSION, applyProgressionDelta } from './progressionDelta'
 import { RangeStatsPanel } from './RangeStatsPanel'
+import { comboSource } from './comboAdapter'
+import { useComboIntervals } from '../profiles/ClassComboData'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -345,7 +347,13 @@ function useLevelingCharts(prog: ProgressionSnap, levels: readonly LevelPoint[],
   const legend = useMemo(() => zoneLegend(bands), [bands])
   const { sel, draft, dragging, clear, onPointerDown, onPointerMove, onPointerUp, onPointerCancel } =
     useChartSelection(scale)
-  const stats = useMemo(() => (sel ? rangeStats({ snap: prog, range: sel }) : null), [sel, prog])
+  // The combo seam (progressionStats §ComboSource). `rangeStats` declared the SHAPE it needs and
+  // never imports the combo module, so the adapter beside this file is what reconciles the two
+  // `ComboInterval` types — and passing it here is the whole reason the range panel's combo chip
+  // has anything to print.
+  const intervals = useComboIntervals()
+  const combo = useMemo(() => comboSource(intervals), [intervals])
+  const stats = useMemo(() => (sel ? rangeStats({ snap: prog, range: sel, combo }) : null), [sel, prog, combo])
   // Rebuilt narrow, NOT the whole SelectionApi: the charts spread this straight onto a DOM
   // element, so anything else on the object would land there as an unknown attribute.
   const pointer = { onPointerDown, onPointerMove, onPointerUp, onPointerCancel }

@@ -23,10 +23,12 @@ import type { JSX } from 'react'
 import { Box, CircularProgress, Paper, Skeleton, Stack, Typography } from '@mui/material'
 import type { CombatFocus } from '../combat/combatFocus'
 import type { MobTarget } from '../mobs/mobTarget'
+import { ComboCard } from './ComboCard'
 import { DpsCard } from './DpsCard'
 import { DpsCurveCard } from './DpsCurveCard'
 import { CurrentMobCard } from './CurrentMobCard'
 import { LevelingCard } from './LevelingCard'
+import { useComboSnap } from '../profiles/ClassComboData'
 import { RecentDropsCard } from './RecentDropsCard'
 import { ZoneStrip } from './ZoneStrip'
 import { useCurrentMob } from './useCurrentMob'
@@ -82,6 +84,9 @@ export default function OverviewView({
   // Its own module, its own hook: the leveling card asks for what it needs, exactly like every
   // other card here, so nothing about it touches the combat snapshot.
   const leveling = useOverviewLeveling()
+  // Same rule again: its own module, its own hook. The combo card reads the class-combo module
+  // directly and nothing about it touches the combat snapshot.
+  const combo = useComboSnap()
   const hydrating = snap?.hydrating ?? true
 
   return (
@@ -114,6 +119,9 @@ export default function OverviewView({
             {/* Gated with the NOW row for the same reason the others are: its window is "the last
                 hour of the log", and mid-replay that hour is an arbitrary point in your past. */}
             <LevelingCard state={leveling} onOpenLeveling={onOpenLeveling} />
+            {/* Gated with the NOW row for the same reason: mid-replay the "current" interval is
+                wherever the fold has reached, which is an arbitrary point in your past. */}
+            <ComboCard snap={combo} />
             {/* Full width, directly under the NOW row and gated with it: the curve describes the
                 SAME fight the DPS card above names, so showing it while the replay still calls an
                 hours-old fight `current` would be the same lie the gate exists to prevent. */}
