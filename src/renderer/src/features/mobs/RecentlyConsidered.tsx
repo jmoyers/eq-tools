@@ -11,13 +11,25 @@
 // fixed-height scroll box"), so a long session can never push the rest of the tab below the
 // fold. It also renders NOTHING at all until something has been conned, so a player who never
 // uses /con pays no vertical space for it.
+//
+// WHAT A CON IS FOR, HERE (owner decision, 2026-08-03). The con's DIFFICULTY verdict — "suicide",
+// "might win", "safe" — is ephemeral: it is a statement about the gap between your level and the
+// mob's ON THE DAY YOU CONNED IT, and it is wrong the moment you ding. The DURABLE facts the con
+// line carried are the mob's NAME and its LEVEL; the difficulty clause is just the conduit that
+// delivered them. So the row shows name + level + when you conned it, and the classification is
+// no longer rendered at all (the module still captures it — this is a display decision, not a
+// data-model one). The app's faction palette went with it: coloring a name by faction made the
+// strip read as a threat meter, which is exactly the ephemeral claim we stopped making.
+//
+// TYPOGRAPHY: these rows sit directly under the zone roster, so they use the SAME hierarchy as
+// MobResultRow — semibold body2 name, caption metadata, theme text colors only.
 
 import type { JSX } from 'react'
 import { Box, Chip, Paper, Stack, Tooltip, Typography } from '@mui/material'
 import type { ConsiderDelta, ConsiderRow, ConsiderSnap, KillMap } from '@shared/types'
-import { CONSIDER_FACTION_COLOR, CONSIDER_FACTION_LABEL, considerDifficultyShort } from '@shared/logEvents'
+import { CONSIDER_FACTION_LABEL } from '@shared/logEvents'
 import { KnownItemTooltip } from '../../lib/KnownItemTooltip'
-import { formatTime } from '../../lib/formatDate'
+import { formatAge, formatDateTime } from '../../lib/formatDate'
 import type { MobTarget } from './mobTarget'
 
 /** How many rows fit before the strip scrolls, and how many drops one row names. */
@@ -106,22 +118,24 @@ function DropsLine({ drops }: { drops: RowDrops }): JSX.Element | null {
 }
 
 /**
- * One considered mob. Everything shown came off the log line (name, rung, level, difficulty,
- * rare) except the drops, which arrive asynchronously from mobLookup — so a row is complete and
- * useful the instant it appears and only gets richer. Nothing renders for a source that said
- * nothing (law 1): no drops known ⇒ no drops line, not "no drops".
+ * One considered mob: name, LEVEL, and when you conned it. Everything shown came off the log
+ * line (name, level, rare) except the drops, which arrive asynchronously from mobLookup — so a
+ * row is complete and useful the instant it appears and only gets richer. Nothing renders for a
+ * source that said nothing (law 1): no drops known ⇒ no drops line, not "no drops".
+ *
+ * The faction rung survives only as hover text, where it is honest about being a hint rather
+ * than the row's headline; the difficulty verdict is not shown at all (see the file header).
  */
 function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRow) => void }): JSX.Element {
-  const color = CONSIDER_FACTION_COLOR[r.faction]
   const k = r.knowledge
   const drops = rowDrops(k)
   const quests = k?.quests ?? []
 
   return (
-    <Stack direction="row" spacing={0.75} alignItems="baseline" sx={{ py: 0.25, minWidth: 0 }}>
-      <Tooltip title={`${CONSIDER_FACTION_LABEL[r.faction]} · ${r.difficulty} — click to open its page`}>
+    <Stack direction="row" spacing={1} alignItems="baseline" sx={{ py: 0.25, minWidth: 0 }}>
+      <Tooltip title={`${CONSIDER_FACTION_LABEL[r.faction]} — click to open its page`}>
         <Typography
-          variant="caption"
+          variant="body2"
           role="button"
           tabIndex={0}
           onClick={() => onOpen(r)}
@@ -129,8 +143,7 @@ function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRo
             if (e.key === 'Enter' || e.key === ' ') onOpen(r)
           }}
           sx={{
-            color,
-            fontWeight: 700,
+            fontWeight: 600,
             flexShrink: 0,
             cursor: 'pointer',
             '&:hover': { textDecoration: 'underline' }
@@ -139,10 +152,11 @@ function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRo
           {r.mob}
         </Typography>
       </Tooltip>
-      <Typography variant="caption" color="text.secondary" sx={{ flexShrink: 0 }}>
-        {r.level != null && `Lvl ${r.level} · `}
-        {considerDifficultyShort(r.difficulty) ?? r.difficulty}
-      </Typography>
+      {r.level != null && (
+        <Typography variant="caption" color="text.secondary" sx={{ flexShrink: 0 }}>
+          Lvl {r.level}
+        </Typography>
+      )}
       {r.rare && (
         <Chip size="small" label="rare" sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }} />
       )}
@@ -159,10 +173,14 @@ function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRo
       )}
       <DropsLine drops={drops} />
       <Box sx={{ flexGrow: 1 }} />
-      <Typography variant="caption" color="text.disabled" sx={{ flexShrink: 0 }}>
-        {r.cons > 1 && `×${r.cons} · `}
-        {formatTime(r.ts)}
-      </Typography>
+      {/* WHEN, coarsely — "conned 12m ago" answers "was that this camp or this morning?" far
+          better than a wall clock does. The exact local time is one hover away. */}
+      <Tooltip title={formatDateTime(r.ts)}>
+        <Typography variant="caption" color="text.disabled" sx={{ flexShrink: 0 }}>
+          {r.cons > 1 && `×${r.cons} · `}
+          conned {formatAge(r.ts)}
+        </Typography>
+      </Tooltip>
     </Stack>
   )
 }
@@ -196,45 +214,7 @@ export function RecentlyConsidered({
   )
 }
 
-/**
- * MOST CONSIDERED — the same ring, asked a different question. "Recently" answers what you were
- * just doing; this answers what you keep coming back to, which in practice is the camp you are
- * actually working. Rows conned ONCE are excluded: a single con is a glance, not a pattern, and
- * including them would just re-print the recent list in a different order.
- */
-export function MostConsidered({
-  rows,
-  kills,
-  onOpen
-}: {
-  rows: ConsiderSnap
-  kills: KillMap
-  onOpen: (t: MobTarget) => void
-}): JSX.Element | null {
-  const repeats = rows.filter((r) => r.cons > 1).sort((a, b) => b.cons - a.cons || b.ts - a.ts)
-  if (repeats.length === 0) return null
-  return (
-    <Paper variant="outlined" sx={{ p: 1, flexShrink: 0 }}>
-      <Typography variant="subtitle2" sx={{ color: 'primary.main', mb: 0.75 }}>
-        Most considered
-      </Typography>
-      <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
-        {repeats.slice(0, 12).map((r) => (
-          <Chip
-            key={r.id}
-            size="small"
-            variant="outlined"
-            clickable
-            onClick={() => onOpen(considerTarget(r, kills))}
-            label={`${r.mob} ×${r.cons}`}
-            sx={{
-              height: 22,
-              color: CONSIDER_FACTION_COLOR[r.faction],
-              borderColor: CONSIDER_FACTION_COLOR[r.faction]
-            }}
-          />
-        ))}
-      </Stack>
-    </Paper>
-  )
-}
+// MOST CONSIDERED is DELETED (owner decision, 2026-08-03). It was the same ring asked "what do
+// you keep coming back to" and rendered as a chip cloud above the fold — a question nobody was
+// asking, occupying the space the zone roster now uses. The ring itself is unchanged; only this
+// second view of it is gone. See MobsView's header for the browse surface it made room for.

@@ -10,15 +10,23 @@
 // THE HIERARCHY, as shipped:
 //   Mobs (this view)                    the creature knowledge home
 //     ├── search                        the whole committed catalog, fuzzy, offline
+//     ├── In <zone>                     what lives WHERE YOU ARE  ← the default surface
 //     ├── Recently considered           what you've been sizing up  ← moved off Raid Targets
-//     ├── Most considered               what you keep coming back to (the camp you're working)
 //     └── MobPage                       THE detail surface, app-wide
 //   Raid Targets                        raid progression only — a roster + your kills; its
 //                                       cards now route HERE instead of opening their own modal.
 //
-// TWO STATES, one view: the BROWSE surface (search box + strips) and the DRILL page, with a
-// breadcrumb back — the same shape the combat tab uses for a fight drill-down, rather than a
-// second modal.
+// THE BROWSE SURFACE IS AN OVERVIEW OF WHERE YOU ARE. It used to open on "Recently considered"
+// + "Most considered" — two views of the same con ring, one of which ("what you keep coming back
+// to") answered a question nobody was asking while a "Most considered" chip cloud pushed
+// everything else down the page. What you actually want when you open this tab mid-session is
+// the bestiary of the room you are standing in, and then what you were just sizing up. So the
+// zone roster leads, in a fixed-height scroll box (AGENTS.md — a growing list never grows the
+// page), the con strip sits below it with its own bounded height, and "Most considered" is gone.
+//
+// TWO STATES, one view: the BROWSE surface (search box + zone roster + con strip) and the DRILL
+// page, with a breadcrumb back — the same shape the combat tab uses for a fight drill-down,
+// rather than a second modal.
 //
 // SEARCH is client-side and instant (AGENTS.md "Search"): the input echoes immediately, the
 // filter runs on a deferred value, and the catalog is an ES-imported JSON already bundled for
@@ -36,15 +44,29 @@ import {
 } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import PetsIcon from '@mui/icons-material/Pets'
-import type { ConsiderDelta, ConsiderSnap, KillMap, KillsDelta, MobEntry } from '@shared/types'
+import type {
+  CharacterDelta,
+  CharacterSnap,
+  ConsiderDelta,
+  ConsiderSnap,
+  KillMap,
+  KillsDelta,
+  MobEntry
+} from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { MobPage } from './MobPage'
-import { MostConsidered, RecentlyConsidered, applyConsiderDelta } from './RecentlyConsidered'
+import { RecentlyConsidered, applyConsiderDelta } from './RecentlyConsidered'
 import { MOB_CATALOG, searchMobs } from './mobSearch'
+import { mobsInZone } from './mobZone'
 import type { MobTarget } from './mobTarget'
 
 function applyKillsDelta(state: KillMap, delta: KillsDelta): KillMap {
   return { ...state, ...delta.changed }
+}
+
+/** The character module's delta is a partial merge (see main/modules/character.ts). */
+function applyCharacterDelta(state: CharacterSnap, delta: CharacterDelta): CharacterSnap {
+  return { ...state, ...delta }
 }
 
 /** ONE search result. The catalog row IS the row — level, zones and drop count, all local. */
@@ -111,6 +133,97 @@ function MobResultRow({
 }
 
 /**
+ * IN <ZONE> — the roster of the place you are standing in, lowest level first.
+ *
+ * The zone name is displayed RAW, exactly as the game printed it ("The Ruins of Old Paineel -
+ * Solo 4 (Refined)"), because that is what your client's zone line says and matching it is how
+ * you know the app is talking about where you are. The folding that turns it into catalog rows
+ * is mobZone's business, not the heading's.
+ *
+ * SIZE IS A CONTRACT: this is the panel that must survive, so it takes `flexGrow:1` +
+ * `minHeight:0` and owns its own `overflow:auto` (AGENTS.md — "a growing list lives in a
+ * FIXED-height scroll box"). Kael Drakkel is 343 rows; the page itself still never scrolls.
+ */
+function ZoneRoster({
+  zone,
+  rows,
+  kills,
+  onOpen
+}: {
+  zone: string
+  rows: MobEntry[]
+  kills: KillMap
+  onOpen: (t: MobTarget) => void
+}): JSX.Element {
+  return (
+    <Paper
+      variant="outlined"
+      data-testid="mobs-zone-roster"
+      sx={{ p: 1, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+    >
+      <Typography variant="subtitle2" sx={{ color: 'primary.main', flexShrink: 0 }}>
+        In {zone}{' '}
+        {rows.length > 0 && (
+          <Typography component="span" variant="caption" color="text.secondary">
+            — {rows.length} in the catalog
+          </Typography>
+        )}
+      </Typography>
+      {rows.length > 0 ? (
+        <Box sx={{ flexGrow: 1, minHeight: 0, overflow: 'auto' }}>
+          {rows.map((e) => (
+            <MobResultRow key={e.page} entry={e} kills={kills} onOpen={onOpen} />
+          ))}
+        </Box>
+      ) : (
+        // The catalog and the game don't always spell a place the same way (mobZone documents
+        // which ones). Say so plainly rather than showing an empty box or a guessed roster.
+        <Typography
+          data-testid="mobs-zone-empty"
+          variant="body2"
+          color="text.disabled"
+          sx={{ p: 1 }}
+        >
+          The catalog lists no mobs for {zone}.
+        </Typography>
+      )}
+    </Paper>
+  )
+}
+
+/**
+ * NO ZONE YET — the log hasn't printed a zone line this session, so there is nothing to be an
+ * overview OF. Rather than head a section with a blank, the roster is skipped entirely and this
+ * says what the tab will fill itself with once you play.
+ */
+function NoZoneYet({ hasConsidered }: { hasConsidered: boolean }): JSX.Element {
+  return (
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 1,
+        color: 'text.secondary',
+        textAlign: 'center'
+      }}
+    >
+      {!hasConsidered && <PetsIcon sx={{ fontSize: 44, opacity: 0.5 }} />}
+      <Typography variant="body2" sx={{ maxWidth: 460 }}>
+        {hasConsidered
+          ? 'Zone into somewhere and this becomes an overview of what lives there. Until then, search the catalog by name or zone.'
+          : `Your zone, cons and kills show up here as you play — a roster of whatever you're standing in. Meanwhile, search ${MOB_CATALOG.length.toLocaleString()} creatures by name or zone: levels, zones and full drop tables, all offline.`}
+      </Typography>
+      <Typography variant="caption" color="text.disabled">
+        Anything you <code>/con</code> in game shows up here too.
+      </Typography>
+    </Box>
+  )
+}
+
+/**
  * @param target             a mob to open on arrival (a deep link from the events overlay, or a
  *                           raid target card). Re-applied whenever `targetNonce` changes, so
  *                           asking for the SAME mob twice opens it twice instead of looking
@@ -135,6 +248,10 @@ export default function MobsView({
 
   const kills = useModule<KillMap, KillsDelta>('kills', applyKillsDelta) ?? {}
   const considered = useModule<ConsiderSnap, ConsiderDelta>('consider', applyConsiderDelta) ?? []
+  // WHERE YOU ARE. The character module carries the RAW display zone off the `zone` log event;
+  // it is undefined until the log prints one (a fresh log, or before the replay reaches a zone
+  // line), and that absence is a state this view renders — never a blank heading.
+  const zone = useModule<CharacterSnap, CharacterDelta>('character', applyCharacterDelta)?.zone
 
   // An inbound target (deep link / raid card) opens the page, then is consumed. Keyed on the
   // NONCE, not the target's identity: the same mob asked for twice must open twice.
@@ -147,6 +264,9 @@ export default function MobsView({
 
   const hits = useMemo(() => searchMobs(deferred), [deferred])
   const searching = deferred.trim().length > 0
+  // A filter over 7,866 rows — cheap (render-bound, AGENTS.md "Search"), but it only changes
+  // when you zone, so memoize on the zone string.
+  const zoneRows = useMemo(() => (zone ? mobsInZone(zone, MOB_CATALOG) : []), [zone])
 
   if (drill) {
     return (
@@ -191,31 +311,21 @@ export default function MobsView({
           )}
         </Paper>
       ) : (
+        // BROWSE = where you are, then what you were just sizing up. The roster leads and takes
+        // the leftover height; the con strip keeps its own bounded height below it. With no zone
+        // known there is nothing to lead WITH, so the strip (which renders nothing when empty)
+        // moves to the top and the invitation takes the space the roster would have had.
         <>
-          <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
-          <MostConsidered rows={considered} kills={kills} onOpen={setDrill} />
-          {considered.length === 0 && (
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 1,
-                color: 'text.secondary',
-                textAlign: 'center'
-              }}
-            >
-              <PetsIcon sx={{ fontSize: 44, opacity: 0.5 }} />
-              <Typography variant="body2" sx={{ maxWidth: 420 }}>
-                Search {MOB_CATALOG.length.toLocaleString()} creatures by name or zone — levels,
-                zones and full drop tables, all offline.
-              </Typography>
-              <Typography variant="caption" color="text.disabled">
-                Anything you <code>/con</code> in game shows up here too.
-              </Typography>
-            </Box>
+          {zone ? (
+            <>
+              <ZoneRoster zone={zone} rows={zoneRows} kills={kills} onOpen={setDrill} />
+              <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
+            </>
+          ) : (
+            <>
+              <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
+              <NoZoneYet hasConsidered={considered.length > 0} />
+            </>
           )}
         </>
       )}
