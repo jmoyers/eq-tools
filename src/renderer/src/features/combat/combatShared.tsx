@@ -441,11 +441,30 @@ export function QuietNote({ children }: { children: ReactNode }): JSX.Element {
   )
 }
 
-/** The `~ estimated` chip a panel wears when its numbers came from a downsampled ring. */
-export function ApproxChip({ shown, raw }: { shown: number; raw: number }): JSX.Element {
+/**
+ * The `~ estimated` chip a panel wears when its numbers came from an INEXACT event ring —
+ * downsampled (a uniform stride, so the numbers are scaled estimates), truncated (the ring
+ * dropped the fight's oldest instants, so the numbers are lower bounds), or both. `raw` is
+ * always the fight's TRUE instant count, so "N of M" never quotes the ring's own capacity as
+ * if it were the size of the fight. ONE chip for both losses on purpose: they have the same
+ * character (something is missing from the sample) and the same reading rule, so a second
+ * visual language would only make the user learn two.
+ */
+export function ApproxChip({
+  shown,
+  raw,
+  truncated
+}: {
+  shown: number
+  raw: number
+  truncated?: boolean
+}): JSX.Element {
+  const why = truncated
+    ? `This fight outgrew its event ring, so its OLDEST instants were dropped: ${shown} of ${raw} instants are still held. Numbers below (marked ~) cover only that retained window — read them as LOWER BOUNDS on the fight, not as its totals.`
+    : `This fight's event ring was downsampled: ${shown} of ${raw} instants were kept. Numbers below are scaled sample estimates (marked ~).`
   return (
     <Tooltip
-      title={`This fight's event ring was downsampled: ${shown} of ${raw} instants were kept. Numbers below are scaled sample estimates (marked ~); observed maxima are lower bounds and observed minima upper bounds (the true biggest/smallest hit may not be in the sample). The source meter's totals are exact.`}
+      title={`${why} Observed maxima are lower bounds and observed minima upper bounds (the true biggest/smallest hit may not be in the sample). The source meter's totals are exact.`}
     >
       <Typography variant="caption" sx={{ color: RESIST_COLOR, whiteSpace: 'nowrap' }}>
         ~ {shown} of {raw} events

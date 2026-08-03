@@ -6,6 +6,7 @@ import {
   Chip,
   CircularProgress,
   Collapse,
+  Divider,
   FormControlLabel,
   Link,
   MenuItem,
@@ -17,7 +18,9 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Tooltip,
-  Typography
+  Typography,
+  type SxProps,
+  type Theme
 } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
@@ -25,7 +28,7 @@ import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
 import { Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
-import { flattenSkills, scopeOptions, skillsForTarget, type Drill } from './dashboardData'
+import { flattenSkills, scopeOptions, skillsForTarget, type Drill, type ScopeOption } from './dashboardData'
 import { formatDate, formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
@@ -489,55 +492,126 @@ function ProcessingLog({
 /**
  * A dense selector row (Task #54): fight/zone name + rate on the top line, disambiguation
  * timing (start clock · relative age · duration) on a small second line — so five same-named
- * giant pulls are tellable apart at a glance.
+ * giant pulls are tellable apart at a glance. Used BOTH as a menu row and (via the Select's
+ * `renderValue`) as the closed trigger, so what you pick is exactly what you then read.
+ *
+ * The rate is the header's headline number, so it wears the accent color; the timing line is
+ * the dimmest text on screen. `live` gets the accent DOT the overlay's OverlaySelect uses —
+ * it replaced a '▶' glyph that read as a play button, i.e. as a control.
  */
-function SelectorRow({ name, rate, timing }: { name: string; rate: string; timing: string }): JSX.Element {
+function SelectorRow({
+  name,
+  rate,
+  timing,
+  live
+}: {
+  name: string
+  rate: string
+  timing: string
+  live?: boolean
+}): JSX.Element {
   return (
-    <Box sx={{ minWidth: 0, py: 0.25 }}>
-      <Stack direction="row" spacing={0.75} alignItems="baseline">
+    <Box sx={{ minWidth: 0, width: '100%', py: 0.25 }}>
+      <Stack direction="row" spacing={0.75} alignItems="center" sx={{ minWidth: 0 }}>
+        {live && (
+          <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: 'success.main', flexShrink: 0 }} />
+        )}
         <Typography variant="body2" noWrap sx={{ fontWeight: 600, flexGrow: 1, minWidth: 0 }}>
           {name}
         </Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'nowrap' }}>
+        <Typography
+          variant="caption"
+          sx={{ whiteSpace: 'nowrap', color: 'primary.main', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}
+        >
           {rate}
         </Typography>
       </Stack>
-      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', opacity: 0.85 }}>
+      <Typography variant="caption" noWrap sx={{ display: 'block', color: 'text.disabled', fontSize: 10.5 }}>
         {timing}
       </Typography>
     </Box>
   )
 }
 
-/** Two chips near the header showing the current stance + invocation (Task #51). */
-function StanceChips({ stance }: { stance: NonNullable<CombatSnapshotStance> }): JSX.Element | null {
+/**
+ * One of the two mutually-exclusive combat modifiers, as passive state (Task #51).
+ *
+ * NAMING: the log's two groups are a melee/general STANCE and a caster INVOCATION, and the
+ * model keeps exactly those names (`StanceState.stance` / `.invocation`, the timeline's pinned
+ * lanes, the parser). The DISPLAY drops the jargon — the categories read as strange next to a
+ * value like "Berserker" — and simply numbers the two slots: `1: Berserker`, `2: Inversion`.
+ * The slot number is a dim prefix; the VALUE carries the weight. The tooltip still names the
+ * underlying group, so nothing is hidden.
+ */
+function ModifierSlot({ slot, value, color }: { slot: 1 | 2; value: string; color: string }): JSX.Element {
+  return (
+    <Tooltip title={`Modifier ${slot} — ${slot === 1 ? 'combat stance' : 'invocation'}: ${value}`}>
+      <Stack direction="row" spacing={0.25} alignItems="baseline" sx={{ minWidth: 0 }} data-testid={`stance-slot-${slot}`}>
+        <Typography variant="caption" sx={{ fontSize: 10, color: 'text.disabled' }}>
+          {slot}:
+        </Typography>
+        <Typography variant="caption" noWrap sx={{ color, fontWeight: 600, textTransform: 'capitalize' }}>
+          {value}
+        </Typography>
+      </Stack>
+    </Tooltip>
+  )
+}
+
+/** The current stance + invocation pair, as two terse right-aligned slots. */
+function StanceReadout({ stance }: { stance: NonNullable<CombatSnapshotStance> }): JSX.Element | null {
   if (!stance.stance && !stance.invocation) return null
   return (
     <>
-      {stance.stance && (
-        <Tooltip title="Current combat stance (melee/general modifier)">
-          <Chip
-            size="small"
-            label={`stance: ${stance.stance}`}
-            variant="outlined"
-            sx={{ color: '#d9b25f', borderColor: 'rgba(217,178,95,0.5)', textTransform: 'capitalize' }}
-          />
-        </Tooltip>
-      )}
-      {stance.invocation && (
-        <Tooltip title="Current invocation (caster modifier)">
-          <Chip
-            size="small"
-            label={`inv: ${stance.invocation}`}
-            variant="outlined"
-            sx={{ color: '#a98fe0', borderColor: 'rgba(169,143,224,0.5)', textTransform: 'capitalize' }}
-          />
-        </Tooltip>
-      )}
+      {stance.stance && <ModifierSlot slot={1} value={stance.stance} color="#d9b25f" />}
+      {stance.invocation && <ModifierSlot slot={2} value={stance.invocation} color="#a98fe0" />}
     </>
   )
 }
 type CombatSnapshotStance = NonNullable<ReturnType<typeof useCombat>['snap']>['stance']
+
+/**
+ * Chrome for the header's segmented controls. All three used to be identical `small`
+ * ToggleButtonGroups sitting in a row, which is what made the bar read as a toolbar dump:
+ * three outlined boxes of equal weight, none of them obviously the important one. They are
+ * now one SHAPE (a low borderless pill track) at three different WEIGHTS, so the eye ranks
+ * them instead of scanning them:
+ *   - `primary` — the view switch (Dashboard/Timeline): accent-tinted selection.
+ *   - `quiet`   — the scope (Fight/Overall), which lives INSIDE the selector unit: a plain
+ *                 light wash, so it reads as part of that control rather than a peer of it.
+ *   - `text`    — the direction filter (Outgoing/Incoming): no track at all, just text that
+ *                 brightens when active. It filters what one panel lists; it is not a mode.
+ */
+function segmented(weight: 'primary' | 'quiet' | 'text'): SxProps<Theme> {
+  const selected =
+    weight === 'primary'
+      ? { bgcolor: 'rgba(217,178,95,0.18)', color: 'primary.main' }
+      : weight === 'quiet'
+        ? { bgcolor: 'rgba(255,255,255,0.10)', color: 'text.primary' }
+        : // no track behind the pair, so the ACTIVE one carries a faint wash of its own —
+        // colour + weight alone are too weak a signal at 11px.
+          { bgcolor: 'rgba(255,255,255,0.09)', color: 'text.primary' }
+  return {
+    flexShrink: 0,
+    ...(weight === 'text' ? null : { bgcolor: 'rgba(255,255,255,0.04)', borderRadius: 1, p: '2px' }),
+    '& .MuiToggleButtonGroup-grouped': {
+      border: 0,
+      borderRadius: '5px !important',
+      px: weight === 'text' ? 0.5 : 1,
+      py: '1px',
+      minHeight: 0,
+      fontSize: 11,
+      fontWeight: 600,
+      lineHeight: 1.7,
+      letterSpacing: 0,
+      textTransform: 'none',
+      color: weight === 'text' ? 'text.disabled' : 'text.secondary',
+      '&:hover': { bgcolor: 'rgba(255,255,255,0.05)' },
+      '&.Mui-selected': { ...selected, fontWeight: 700 },
+      '&.Mui-selected:hover': selected
+    }
+  }
+}
 
 /**
  * Stabilise the timeline's IDENTITY across snapshot ticks. Every poll rebuilds the payload,
@@ -631,6 +705,15 @@ export default function CombatView(): JSX.Element {
   // A single `now` for the whole render so all the relative-age labels agree; it advances
   // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
   const now = Date.now()
+  // The selector's rows by value, so the CLOSED trigger (`renderValue`) renders the very same
+  // row the menu does instead of a re-derived summary that could drift from it.
+  const byValue = new Map<string, ScopeOption>()
+  if (opts.head) byValue.set(opts.head.value, opts.head)
+  for (const o of opts.rest) byValue.set(o.value, o)
+  // The running zone session has no end yet, so it has no duration to disambiguate by — it just
+  // says 'live'. Every other row gets the full start clock · age · duration.
+  const rowTiming = (o: ScopeOption): string =>
+    o.live && scope === 'overall' ? 'live' : timingLabel(o.startTs, o.durationSec, now)
 
   // Startup replay in progress (Task #56): the engine is still folding history, so nothing in
   // this snapshot describes the present. `snap === null` (first fetch in flight) reads the same
@@ -656,91 +739,175 @@ export default function CombatView(): JSX.Element {
     // app's scrolling content area. Before Task #56 the unbounded log below did exactly that —
     // it grew past the viewport and pushed the dashboard to 0px, leaving "just a combat log".
     <Stack spacing={1.5} sx={{ height: '100%', minHeight: 0, overflow: 'hidden' }}>
-      <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
-        {/* SCOPE: an explicit choice, a sibling of the Dashboard/Timeline and Outgoing/Incoming
-            groups. Fight never becomes Overall on its own. */}
-        <ToggleButtonGroup
-          size="small"
-          exclusive
-          data-testid="scope-toggle"
-          value={scope}
-          onChange={(_e, v) => v && setScope(v)}
-        >
-          <ToggleButton value="fight">Fight</ToggleButton>
-          <ToggleButton value="overall">Overall</ToggleButton>
-        </ToggleButtonGroup>
-        <Select
-          size="small"
-          data-testid="segment-select"
-          // While hydrating, the fight list is a churning replay artifact — don't invite a
-          // pick from it (the value stays on the head row and the list settles the moment the
-          // tail runs).
-          disabled={hydrating}
-          value={opts.head ? selection : '__empty__'}
-          onChange={(e) => {
-            const v = e.target.value
-            if (v === '__loadmore__') loadMore()
-            else setSelection(v)
-          }}
-          sx={{ minWidth: 320 }}
-          MenuProps={{ PaperProps: { sx: { maxHeight: 480 } } }}
-        >
-          {/* Exactly ONE scope's rows are ever listed — the fight scope shows no zone sessions
-              and vice versa (dashboardData.scopeOptions is the single filter). */}
-          {!opts.head && (
-            <MenuItem value="__empty__" disabled>
-              {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
-            </MenuItem>
-          )}
-          {opts.head && (
-            <MenuItem value={opts.head.value}>
-              <SelectorRow
-                name={`${opts.head.live ? '▶ ' : ''}${opts.head.label}`}
-                rate={formatRate(opts.head.dps)}
-                timing={
-                  opts.head.live && scope === 'overall'
-                    ? 'live'
-                    : timingLabel(opts.head.startTs, opts.head.durationSec, now)
-                }
-              />
-            </MenuItem>
-          )}
-          {opts.rest.map((o) => (
-            <MenuItem key={o.value} value={o.value}>
-              <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={timingLabel(o.startTs, o.durationSec, now)} />
-            </MenuItem>
-          ))}
-          {capped && (
-            <MenuItem value="__loadmore__" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-              Load more fights…
-            </MenuItem>
-          )}
-        </Select>
-        <ToggleButtonGroup size="small" exclusive value={view} onChange={(_e, v) => v && setView(v)}>
-          <ToggleButton value="dash">Dashboard</ToggleButton>
-          <ToggleButton value="timeline">Timeline</ToggleButton>
-        </ToggleButtonGroup>
-        {view === 'dash' && (
-          <ToggleButtonGroup size="small" exclusive value={mode} onChange={(_e, v) => v && setMode(v)}>
-            <ToggleButton value="out">Outgoing</ToggleButton>
-            <ToggleButton value="in">Incoming</ToggleButton>
-          </ToggleButtonGroup>
-        )}
-        <FormControlLabel
-          control={<Switch size="small" checked={combinePets} onChange={(e) => setCombinePets(e.target.checked)} />}
-          label="Combine pets"
-        />
-        <Box sx={{ flexGrow: 1 }} />
-        {snap?.stance && <StanceChips stance={snap.stance} />}
-        {snap?.inCombat && (
-          <Chip
+      {/* ── HEADER ──────────────────────────────────────────────────────────────────────
+          ONE bar, three ranks — it used to be a flat row of five same-weight controls plus a
+          raw Switch, which read as a toolbar dump with no obvious subject.
+
+          1. WHAT you're looking at (primary): the scope + the selected fight/zone, fused into
+             a single bordered unit. Scope is not a peer of the view switch — it decides what
+             the selector may LIST, so it sits inside the selector's own affordance, and the
+             row shows the identity (name), the headline number (rate, accent) and the
+             disambiguation timing.
+          2. HOW you're looking at it (secondary): Dashboard/Timeline, the only other control
+             on the primary line, at accent weight but with no box of its own.
+          3. Filters + passive state (tertiary): a thin strip underneath — the direction
+             filter on the left, then right-aligned combine-pets and the read-only state
+             (modifier slots, in-combat). Small, dim, and out of the way.
+
+          The two lines are EXPLICIT rather than a wrapping row: at the 900px minimum window
+          (≈648px of content) everything cannot fit on one line, and a wrap point that moves
+          with the fight name is exactly the mess this replaces. */}
+      <Paper
+        variant="outlined"
+        data-testid="combat-header"
+        sx={{ flexShrink: 0, px: 1, py: 0.5, bgcolor: 'rgba(255,255,255,0.015)' }}
+      >
+        <Stack direction="row" spacing={1} alignItems="center" sx={{ minWidth: 0 }}>
+          {/* SCOPE: an explicit choice — Fight never becomes Overall on its own. */}
+          <ToggleButtonGroup
             size="small"
-            icon={<CircleIcon sx={{ fontSize: 10, color: 'success.main' }} />}
-            label="in combat"
-            variant="outlined"
-          />
-        )}
-      </Stack>
+            exclusive
+            data-testid="scope-toggle"
+            value={scope}
+            onChange={(_e, v) => v && setScope(v)}
+            sx={segmented('quiet')}
+          >
+            <ToggleButton value="fight">Fight</ToggleButton>
+            <ToggleButton value="overall">Overall</ToggleButton>
+          </ToggleButtonGroup>
+          <Divider orientation="vertical" flexItem sx={{ my: 0.5 }} />
+          <Select
+            size="small"
+            variant="standard"
+            disableUnderline
+            data-testid="segment-select"
+            // While hydrating, the fight list is a churning replay artifact — don't invite a
+            // pick from it (the value stays on the head row and the list settles the moment the
+            // tail runs).
+            disabled={hydrating}
+            value={opts.head ? selection : '__empty__'}
+            onChange={(e) => {
+              const v = e.target.value
+              if (v === '__loadmore__') loadMore()
+              else setSelection(v)
+            }}
+            // The closed trigger renders the SAME dense two-line row as the menu (no separate
+            // one-line summary that has to be re-derived and can drift).
+            renderValue={(v) => {
+              const o = byValue.get(v as string)
+              if (!o)
+                return (
+                  <Typography variant="body2" sx={{ color: 'text.disabled', py: 0.25 }}>
+                    {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
+                  </Typography>
+                )
+              return <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={rowTiming(o)} live={o.live} />
+            }}
+            sx={{
+              flexGrow: 1,
+              minWidth: 0,
+              borderRadius: 1,
+              '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
+              '& .MuiSelect-select': { py: 0.25, pl: 0.75, pr: '26px !important', whiteSpace: 'normal', minHeight: 0 }
+            }}
+            MenuProps={{ PaperProps: { sx: { maxHeight: 480, minWidth: 340 } } }}
+          >
+            {/* Exactly ONE scope's rows are ever listed — the fight scope shows no zone sessions
+                and vice versa (dashboardData.scopeOptions is the single filter). */}
+            {!opts.head && (
+              <MenuItem value="__empty__" disabled>
+                {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
+              </MenuItem>
+            )}
+            {opts.head && (
+              <MenuItem value={opts.head.value}>
+                <SelectorRow
+                  name={opts.head.label}
+                  rate={formatRate(opts.head.dps)}
+                  timing={rowTiming(opts.head)}
+                  live={opts.head.live}
+                />
+              </MenuItem>
+            )}
+            {opts.rest.map((o) => (
+              <MenuItem key={o.value} value={o.value}>
+                <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={rowTiming(o)} />
+              </MenuItem>
+            ))}
+            {capped && (
+              <MenuItem value="__loadmore__" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
+                Load more fights…
+              </MenuItem>
+            )}
+          </Select>
+          <Divider orientation="vertical" flexItem sx={{ my: 0.5 }} />
+          <ToggleButtonGroup
+            size="small"
+            exclusive
+            data-testid="view-toggle"
+            value={view}
+            onChange={(_e, v) => v && setView(v)}
+            sx={segmented('primary')}
+          >
+            <ToggleButton value="dash">Dashboard</ToggleButton>
+            <ToggleButton value="timeline">Timeline</ToggleButton>
+          </ToggleButtonGroup>
+        </Stack>
+
+        {/* Tertiary strip: filters left, passive state right. It wraps (rather than overflows)
+            if a very long modifier name ever meets a very narrow window. */}
+        <Stack
+          direction="row"
+          spacing={1}
+          rowGap={0.5}
+          alignItems="center"
+          flexWrap="wrap"
+          useFlexGap
+          sx={{ mt: 0.25, minWidth: 0 }}
+        >
+          {view === 'dash' && (
+            <Stack direction="row" spacing={0.5} alignItems="center">
+              <Typography variant="caption" sx={{ fontSize: 10, color: 'text.disabled' }}>
+                Damage
+              </Typography>
+              <ToggleButtonGroup
+                size="small"
+                exclusive
+                data-testid="direction-toggle"
+                value={mode}
+                onChange={(_e, v) => v && setMode(v)}
+                sx={segmented('text')}
+              >
+                <ToggleButton value="out">Outgoing</ToggleButton>
+                <ToggleButton value="in">Incoming</ToggleButton>
+              </ToggleButtonGroup>
+            </Stack>
+          )}
+          <Box sx={{ flexGrow: 1 }} />
+          <Tooltip title="Roll every pet's damage into its owner's row">
+            <FormControlLabel
+              control={
+                <Switch size="small" checked={combinePets} onChange={(e) => setCombinePets(e.target.checked)} />
+              }
+              label={
+                <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                  Combine pets
+                </Typography>
+              }
+              sx={{ m: 0 }}
+            />
+          </Tooltip>
+          {snap?.stance && <StanceReadout stance={snap.stance} />}
+          {snap?.inCombat && (
+            <Stack direction="row" spacing={0.5} alignItems="center">
+              <CircleIcon sx={{ fontSize: 8, color: 'success.main' }} />
+              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                in combat
+              </Typography>
+            </Stack>
+          )}
+        </Stack>
+      </Paper>
 
       {hydrating ? (
         <HydratingPanel />

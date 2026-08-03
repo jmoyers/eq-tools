@@ -81,7 +81,7 @@ const W26 = 'w26-healing-crit.log'
 const W27 = 'w27-healing-overheal-absorb.log'
 const W28 = 'w28-healing-enemy-thorns.log'
 
-/** `tests/fixtures/*.log` is gitignored (.gitignore `*.log`), so a clean checkout regenerates the
+/** `tests/fixtures/*.log` are COMMITTED (`.gitignore` negates them) and CI runs them; regenerate the
  *  slices with `node tests/extract-combat-fixtures.mjs "<eqlog path>"`. Same skip convention the
  *  other combat window tests use, so a machine without the real log runs the rest of the suite. */
 const have = (f: string): string | false =>
@@ -172,28 +172,11 @@ test('parser: a plain heal still parses unchanged, and a reflexive heal targets 
   assert.equal(reflexive.amount, 64)
 })
 
-test('parser: the three absorption families parse as `mitigation`, and only the rune has an amount', () => {
+test('parser: rune grants and absorbed damage shields parse as `mitigation`, and only the rune has an amount', () => {
   const rune = parseEvent('[Sun Aug 02 17:14:15 2026] You gain a rune for 23 points of absorption.', 1)
   assert.equal(rune?.kind, 'mitigation')
   assert.equal(rune.mtype, 'rune')
   assert.equal(rune.amount, 23)
-
-  // Trailing swing modifiers are tolerated and discarded, exactly like the miss family.
-  const swing = parseEvent(
-    '[Sun Aug 02 17:14:01 2026] A zol ghoul knight tries to hit YOU, but YOUR magical skin absorbs the blow! (Riposte)',
-    2
-  )
-  assert.equal(swing?.kind, 'mitigation')
-  assert.equal(swing.mtype, 'absorbSwing')
-  assert.equal(swing.amount, undefined, 'the log records NO amount for an absorbed swing')
-  assert.equal(swing.source, 'A zol ghoul knight')
-
-  const plainSwing = parseEvent(
-    '[Sun Aug 02 17:16:16 2026] A wan ghoul knight tries to hit YOU, but YOUR magical skin absorbs the blow!',
-    3
-  )
-  assert.equal(plainSwing?.kind, 'mitigation')
-  assert.equal(plainSwing.mtype, 'absorbSwing')
 
   const ds = parseEvent(
     "[Sun Aug 02 15:55:36 2026] YOUR magical skin absorbs the damage of a Teir`Dal ranger's thorns.",
@@ -203,6 +186,33 @@ test('parser: the three absorption families parse as `mitigation`, and only the 
   assert.equal(ds.mtype, 'absorbDamageShield')
   assert.equal(ds.amount, undefined, 'the log records NO amount for an absorbed damage shield')
   assert.equal(ds.source, 'a Teir`Dal ranger')
+})
+
+// The absorbed-SWING family moved lanes when MISS_RE learned the bare-`YOUR` alternative (see
+// absorbMissWindows.test.mts). It is now an incoming MISS with mtype 'absorb' — which is what it
+// always was, an avoided swing — instead of a `mitigation`/'absorbSwing' event. Nothing about the
+// healing meter changed: the engine counts absorbed swings off BOTH lanes, and a line still
+// produces EXACTLY ONE event, so `mitigation.absorbedSwings` is identical either way (W27 below
+// pins that at 1). This test is the shape tripwire for the handover.
+test('parser: an absorbed swing is an incoming MISS (mtype absorb), and still carries no amount', () => {
+  // Trailing swing modifiers are tolerated and discarded, exactly like the rest of the miss family.
+  const swing = parseEvent(
+    '[Sun Aug 02 17:14:01 2026] A zol ghoul knight tries to hit YOU, but YOUR magical skin absorbs the blow! (Riposte)',
+    2
+  )
+  assert.equal(swing?.kind, 'miss')
+  assert.equal(swing.mtype, 'absorb')
+  assert.equal(swing.attacker, 'A zol ghoul knight')
+  assert.equal(swing.target, 'You', 'YOUR skin ⇒ the defender is You')
+  assert.equal((swing as { amount?: number }).amount, undefined, 'the log records NO amount for an absorbed swing')
+
+  const plainSwing = parseEvent(
+    '[Sun Aug 02 17:16:16 2026] A wan ghoul knight tries to hit YOU, but YOUR magical skin absorbs the blow!',
+    3
+  )
+  assert.equal(plainSwing?.kind, 'miss')
+  assert.equal(plainSwing.mtype, 'absorb')
+  assert.equal(plainSwing.target, 'You')
 })
 
 test("parser: a MOB's own rune stays a miss (mtype absorb), never our mitigation", () => {

@@ -53,6 +53,13 @@ interface StoreShape {
   alertSoundMigration?: number
   /** auto-update release channel (Task #27): 'main' (bleeding edge) | 'stable' */
   updateChannel?: UpdateChannel
+  /**
+   * Epoch millis of the last COMPLETED update check (Task #60). Persisted so the
+   * left-nav "checked 2h ago" line is TRUTHFUL after a relaunch instead of
+   * resetting to "never" — with a 4h cadence, an in-memory-only stamp would read
+   * "never" for the first minute of every single launch.
+   */
+  updateLastCheckedAt?: number
   /** floating overlay DPS meter config (Task #52) — LEGACY flat key, migrated into
    *  `overlays.fight` on first read (Task #54 made the overlay per-kind). */
   overlay?: OverlayConfig
@@ -190,6 +197,21 @@ export function getUpdateChannel(): UpdateChannel {
   return c === 'stable' ? 'stable' : 'main'
 }
 
+/**
+ * Last completed update check (epoch millis), or undefined if we have never
+ * completed one. Read once at updater init so "checked …" survives a relaunch —
+ * including the relaunch our OWN apply-on-quit performs (Task #60).
+ */
+export function getUpdateLastCheckedAt(): number | undefined {
+  const ts = store.get('updateLastCheckedAt')
+  return typeof ts === 'number' && ts > 0 ? ts : undefined
+}
+
+/** Stamp a completed check. Called on every available/not-available/error verdict. */
+export function setUpdateLastCheckedAt(ts: number): void {
+  store.set('updateLastCheckedAt', ts)
+}
+
 // ----- Alerts extension (Task #18) -----
 
 const DEFAULT_ALERT_PREFS: AlertPrefs = { globalVolume: 0.7, muted: false }
@@ -267,6 +289,16 @@ export function getAlerts(): AlertDef[] {
     return SEED_ALERTS
   }
   return migrateStoredAlertSounds(existing)
+}
+
+/**
+ * Replace the whole alert list. Used by the ADDITIVE share-import path (src/main/share.ts),
+ * which computes the merged list — existing entries untouched at the head, imports appended
+ * — and writes it in one shot rather than N saveAlert() round-trips. Returns the list.
+ */
+export function saveAlerts(list: AlertDef[]): AlertDef[] {
+  store.set('alerts', list)
+  return list
 }
 
 /** Upsert an alert by id (insert if new, replace in place otherwise). Returns the list. */

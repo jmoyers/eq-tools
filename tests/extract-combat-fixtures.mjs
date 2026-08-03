@@ -86,3 +86,32 @@ slice(1011923, 1012345, 'w27-healing-overheal-absorb.log')
 // ranger also runs a thorns damage shield, so the span carries the third absorption family:
 // `YOUR magical skin absorbs the damage of a Teir`Dal ranger's thorns.` (count-only).
 slice(997999, 998129, 'w28-healing-enemy-thorns.log')
+
+// ---------------------------------------------------------------------------
+// W29 BOTH ABSORB SHAPES IN ONE WINDOW — the MISS_RE self-absorb fix.
+// ---------------------------------------------------------------------------
+//
+// MISS_RE's absorb alternative used to require a POSSESSIVE `<name>'s magical skin`, so the SELF
+// form (`<mob> tries to <verb> YOU, but YOUR magical skin absorbs the blow!`) never matched and
+// fell through to 'unknown'. Full-log sweep: 385 self-form lines dropped vs 1,428 possessive
+// lines parsed. Every dropped line is an INCOMING avoided swing, so the loss was a silent
+// undercount in the incoming miss aggregates (addIncMiss) and in defensive hit%.
+//
+// This span (Sun Aug 02 15:25:34 → 15:26:04, raw 990649..990795) is the tightest real window that
+// carries BOTH shapes back to back, so one replay proves the fix AND proves the possessive path
+// is untouched. It opens on `Auto attack is on.` five seconds after the previous fight's mob died
+// (raw 990644), so the first encounter here provably starts clean. It holds two back-to-back
+// PULLS, which the engine correctly keeps as ONE encounter (the second mob lands damage 4s after
+// the first dies — inside the death-linger, law 7):
+//   15:25:34–15:25:43  Kahaptra Z`Taj — a named mob running BOTH a rune and a thorns shield.
+//                      THREE possessive absorbs (`You try to slash Kahaptra Z`Taj, but Kahaptra
+//                      Z`Taj's magical skin absorbs the blow!`) = the mob's own rune eating OUR
+//                      swings, which must stay OUTGOING misses and must never be credited to our
+//                      mitigation. Four `YOUR magical skin absorbs the damage of …'s thorns.`
+//                      ticks ride along (the third absorption family, count-only).
+//   15:25:47–15:26:03  a Teir`Dal priest — TWO self absorbs (`A Teir`Dal priest tries to bash/
+//                      crush YOU, but YOUR magical skin absorbs the blow!` @15:25:57 and
+//                      @15:26:01), the previously-dropped lines, alongside three plain incoming
+//                      misses so the aggregate they belong in is populated either way.
+// The window ends on the loot line after the priest dies, one second before the next pull opens.
+slice(990649, 990795, 'w29-absorb-both-shapes.log')

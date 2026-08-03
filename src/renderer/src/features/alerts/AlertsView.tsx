@@ -51,6 +51,10 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp'
 import VolumeOffIcon from '@mui/icons-material/VolumeOff'
 import HistoryIcon from '@mui/icons-material/History'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
+import IosShareIcon from '@mui/icons-material/IosShare'
+import FileUploadIcon from '@mui/icons-material/FileUpload'
+import Snackbar from '@mui/material/Snackbar'
+import MuiAlert from '@mui/material/Alert'
 import type {
   AlertDef,
   AlertFireRecord,
@@ -71,6 +75,8 @@ import SoundPacksDialog from './SoundPacksDialog'
 import SuggestAlertsDialog from './SuggestAlertsDialog'
 import { invalidateSoundCaches } from './soundCache'
 import { DEFAULT_PACK_ID } from './suggestions'
+import ShareImportDialog from '../profiles/ShareImportDialog'
+import { copyText } from '../../lib/clipboard'
 
 // The LogEvent kinds an 'event' trigger can select. Derived from the LogEventKind union
 // (ALL_LOG_EVENT_KINDS is exhaustiveness-checked) so the picker can NEVER drift from the real
@@ -641,6 +647,10 @@ export default function AlertsView(): JSX.Element {
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
   const [packsDialogOpen, setPacksDialogOpen] = useState(false)
   const [suggestOpen, setSuggestOpen] = useState(false)
+  // Sharing (src/shared/profiles.ts): copy one/all alerts as a paste-safe EQC1- string, or
+  // import someone else's ADDITIVELY through the shared preview dialog.
+  const [importOpen, setImportOpen] = useState(false)
+  const [toast, setToast] = useState<{ severity: 'success' | 'warning'; text: string } | null>(null)
 
   // Live recent-fires history from the alerts module (single source of truth).
   const snap = useModule<AlertsSnap, AlertsDelta>('alerts', applyAlertsDelta)
@@ -714,6 +724,18 @@ export default function AlertsView(): JSX.Element {
     playAlertNow({ ...def, enabled: true })
   }, [])
 
+  /** Copy a share string for one alert (`ids:[id]`) or every alert (`ids` omitted). */
+  const copyShare = useCallback(async (ids?: string[]) => {
+    const text = await window.eq.exportAlertsShare(ids)
+    const ok = await copyText(text)
+    const what = ids?.length === 1 ? 'Alert' : 'All alerts'
+    setToast(
+      ok
+        ? { severity: 'success', text: `${what} copied — paste it to share (${text.length} chars).` }
+        : { severity: 'warning', text: 'Could not reach the clipboard.' }
+    )
+  }, [])
+
   const toggleExpanded = useCallback((id: string) => {
     setExpanded((prev) => {
       const next = new Set(prev)
@@ -784,6 +806,27 @@ export default function AlertsView(): JSX.Element {
             onClick={() => setPacksDialogOpen(true)}
           >
             Sound packs…
+          </Button>
+          <Tooltip title="Copy every alert as one share string">
+            <span>
+              <Button
+                startIcon={<IosShareIcon />}
+                variant="outlined"
+                size="small"
+                disabled={alerts.length === 0}
+                onClick={() => void copyShare()}
+              >
+                Copy all
+              </Button>
+            </span>
+          </Tooltip>
+          <Button
+            startIcon={<FileUploadIcon />}
+            variant="outlined"
+            size="small"
+            onClick={() => setImportOpen(true)}
+          >
+            Import…
           </Button>
           <Button
             startIcon={<RestartAltIcon />}
@@ -866,6 +909,11 @@ export default function AlertsView(): JSX.Element {
                       <PlayArrowIcon fontSize="small" />
                     </IconButton>
                   </Tooltip>
+                  <Tooltip title="Copy share string for this alert">
+                    <IconButton size="small" onClick={() => void copyShare([def.id])}>
+                      <IosShareIcon fontSize="small" />
+                    </IconButton>
+                  </Tooltip>
                   <Tooltip title="Edit">
                     <IconButton size="small" onClick={() => openEdit(def)}>
                       <EditIcon fontSize="small" />
@@ -931,6 +979,35 @@ export default function AlertsView(): JSX.Element {
           openAdd()
         }}
       />
+
+      <ShareImportDialog
+        open={importOpen}
+        scope="alerts"
+        onClose={() => setImportOpen(false)}
+        onApplied={(res) => {
+          void reload()
+          void refreshAlertStore()
+          setToast({
+            severity: res.ok ? 'success' : 'warning',
+            text: res.ok
+              ? res.added
+                ? `Added ${res.added} alert${res.added === 1 ? '' : 's'}${res.skipped ? `, skipped ${res.skipped} you already had` : ''}.`
+                : 'Nothing to add — you already have every alert in that string.'
+              : res.error ?? 'Import failed.'
+          })
+        }}
+      />
+
+      <Snackbar
+        open={!!toast}
+        autoHideDuration={5000}
+        onClose={() => setToast(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <MuiAlert severity={toast?.severity ?? 'success'} variant="filled" onClose={() => setToast(null)}>
+          {toast?.text}
+        </MuiAlert>
+      </Snackbar>
 
       <Dialog open={confirmReset} onClose={() => setConfirmReset(false)} maxWidth="xs">
         <DialogTitle>Reset alerts to defaults?</DialogTitle>

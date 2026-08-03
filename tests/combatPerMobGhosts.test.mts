@@ -137,7 +137,7 @@ test('the LANDED frenzy form was always clean — miss and hit now agree on the 
 
 // ── the engine half: the golden window ────────────────────────────────────────────────
 
-// Fixtures are gitignored (`*.log`) like every other window in tests/fixtures — regenerate
+// Fixtures are COMMITTED (`.gitignore` negates `tests/fixtures/*.log`) — regenerate
 // with `node tests/extract-combat-fixtures.mjs <path to eqlog_Primitive_freeport.txt>`.
 const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 const W25_PATH = join(FIXTURES, 'w25-per-mob-miss-ghosts.log')

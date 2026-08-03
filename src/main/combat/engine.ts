@@ -403,6 +403,13 @@ interface Encounter {
    * encounters in the recent-history window (see TIMELINE_HISTORY_CAP) — older finalized
    * encounters have their ring dropped at finalize to keep the RSS delta small. */
   events: TimelineRaw[]
+  /** TRUE count of every instant ever pushed into `events`, including ones the drop-oldest
+   *  cap has since evicted. ONE integer per encounter (never per-event bookkeeping) — it is
+   *  the only way a consumer can tell "the ring holds 8,000" from "the fight had 8,000":
+   *  once TIMELINE_CAP engages, `events.length` saturates and would silently understate the
+   *  fight. `eventsTotal > events.length` IS the truncation signal (TimelineView.truncated).
+   *  Nothing else reads it — no aggregate, total or attribution depends on it. */
+  eventsTotal: number
   /** Stance/invocation spans that overlapped this encounter (Task #51 pinned rows).
    *  Recorded as they change while the encounter is open (absolute ts). */
   stanceSpans: StanceRaw[]
@@ -495,7 +502,10 @@ const ZONE_HISTORY_CAP = 20
 //                           8k captures it with ZERO drop-oldest at trivial cost (only ≤60
 //                           rings are ever retained — see TIMELINE_HISTORY_CAP — so the
 //                           whole-session RSS delta stays well under 1MB, dominated by the
-//                           68MB log string, not the ring).
+//                           68MB log string, not the ring). If a denser fight ever DOES
+//                           overflow it, the loss is DECLARED, not silent: Encounter.
+//                           eventsTotal keeps the true count and TimelineView.truncated
+//                           tells the renderer its event-derived panels are lower bounds.
 //   TIMELINE_HISTORY_CAP  — how many finalized encounters keep their event ring after
 //                           finalize. Older ones drop the ring (timeline only for recent /
 //                           live fights) so the whole-session RSS delta stays bounded.
@@ -1297,16 +1307,21 @@ export class CombatEngine {
       this.current = {
         id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts,
         agg: new Agg(), engaged: new Set(), engagedSeen: new Map(), activeMs: 0,
-        ccActiveUntil: new Map(), events: [], stanceSpans: spans
+        ccActiveUntil: new Map(), events: [], eventsTotal: 0, stanceSpans: spans
       }
     }
     return this.current
   }
 
   /** Append one instant to the current encounter's timeline ring (Task #51), capped
-   *  drop-oldest at TIMELINE_CAP. Called from route()/routeMiss for attributed events. */
+   *  drop-oldest at TIMELINE_CAP. Called from route()/routeMiss for attributed events.
+   *  `eventsTotal` counts EVERY push, so a fight that outgrows the cap still knows its true
+   *  instant count and buildTimeline can declare the loss instead of reporting the ring
+   *  length as if it were the fight (law 1). The counter is display metadata only — no
+   *  aggregate, DPS or attribution reads it. */
   private pushTimeline(enc: Encounter, rec: TimelineRaw): void {
     enc.events.push(rec)
+    enc.eventsTotal++
     if (enc.events.length > TIMELINE_CAP) enc.events.shift()
   }
 
@@ -1526,6 +1541,10 @@ export class CombatEngine {
    * (older than TIMELINE_HISTORY_CAP). Converts absolute ts → ms-since-start, downsamples
    * with a uniform stride when over TIMELINE_BUDGET, and derives the Y-axis lanes (grouped
    * by category, then total desc) + the pinned stance/invocation spans.
+   *
+   * READ-ONLY over the encounter: it copies out of the ring and never mutates the ring, the
+   * aggregate or any counter — asking for a timeline can't move a point of damage (asserted
+   * by tests/combatRingTruncation.test.mts).
    */
   private buildTimeline(id: string, now: number): TimelineView | null {
     if (id === 'zone') return null
@@ -1540,6 +1559,15 @@ export class CombatEngine {
 
     const raw = e.events
     const rawCount = raw.length
+    // TRUNCATION (drop-oldest already engaged): the ring holds only the most recent
+    // TIMELINE_CAP instants of a longer fight. `rawCount` stays the ring occupancy — it is
+    // the population the stride samples, so it is the honest sampling denominator — while
+    // `totalCount` carries the fight's true instant count so the renderer can say "N of M"
+    // without understating M. Deliberately NOT folded into the sampling factor: scaling by
+    // totalCount/kept would extrapolate the discarded prefix from the retained tail, which
+    // is exactly the silent guess law 1 forbids.
+    const totalCount = Math.max(rawCount, e.eventsTotal)
+    const truncated = totalCount > rawCount
     // Uniform-stride downsample when over budget (keeps the temporal shape; a dense
     // charm-grind fight is capped so the payload/render stays cheap).
     const stride = rawCount > TIMELINE_BUDGET ? Math.ceil(rawCount / TIMELINE_BUDGET) : 1
@@ -1585,7 +1613,9 @@ export class CombatEngine {
       events,
       stanceSpans,
       downsampled: stride > 1,
-      rawCount
+      rawCount,
+      totalCount,
+      truncated
     }
   }
 

@@ -23,12 +23,22 @@ import type {
 } from '../shared/types'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 import type { OverlayKind, UpdateStatus } from '../shared/types'
+import type { ShareApplyResult, SharePreview } from '../shared/profiles'
+
+/** Reply of share:saveFile — the OS save dialog either wrote a file or was cancelled. */
+export interface ShareSaveResult {
+  ok: boolean
+  path?: string
+  canceled?: boolean
+  error?: string
+}
 
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { UpdateStatus }
+export type { ShareApplyResult, SharePreview }
 
 export interface ReloadInventoryResult {
   ok: boolean
@@ -124,6 +134,31 @@ const api = {
    *  completions, which only the renderer's posky/turn-in detector can see. Fire-and-forget;
    *  main owns the capped ring and pushes it on to the 'events' overlay. */
   reportFeedEvent: (report: FeedReport): void => ipcRenderer.send(IPC.feedReport, report),
+
+  // ---- settings / alert sharing ("profiles" — src/shared/profiles.ts) ----
+  // The renderer owns the localStorage half of a bundle, so it passes its whitelisted
+  // pref map (`ui`) into every call and writes back whatever apply returns.
+  /** Encode the GLOBAL settings bundle (whitelisted keys only) as one paste-safe line. */
+  exportSettingsShare: (ui: Record<string, string>): Promise<string> =>
+    ipcRenderer.invoke(IPC.shareExportSettings, ui),
+  /** Encode one alert (`ids:[id]`) or every alert (`ids` omitted) as one paste-safe line. */
+  exportAlertsShare: (ids?: string[]): Promise<string> =>
+    ipcRenderer.invoke(IPC.shareExportAlerts, ids),
+  /** Save an already-encoded share string to disk via the OS save dialog. */
+  saveShareFile: (text: string, suggestedName: string): Promise<ShareSaveResult> =>
+    ipcRenderer.invoke(IPC.shareSaveFile, text, suggestedName),
+  /** Open a share file via the OS picker and preview it (null when the user cancels). */
+  openShareFile: (ui: Record<string, string>): Promise<SharePreview | null> =>
+    ipcRenderer.invoke(IPC.shareOpenFile, ui),
+  /** Decode + plan a pasted string WITHOUT writing anything. Failures come back as prose. */
+  previewShare: (text: string, ui: Record<string, string>): Promise<SharePreview> =>
+    ipcRenderer.invoke(IPC.sharePreview, text, ui),
+  /** Apply a previewed string additively; returns the localStorage writes to perform. */
+  applyShare: (
+    text: string,
+    ui: Record<string, string>,
+    selection?: { alertIds?: string[]; scalarIds?: string[] }
+  ): Promise<ShareApplyResult> => ipcRenderer.invoke(IPC.shareApply, text, ui, selection),
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   /** List registry packs (installed-flag reconciled). `force` bypasses the 24h cache. */

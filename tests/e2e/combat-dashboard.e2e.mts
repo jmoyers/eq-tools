@@ -237,6 +237,81 @@ function narrowPanelCheck(page: Page): Promise<{ cols: number; minH: number; scr
   })
 }
 
+interface HeaderInfo {
+  h: number
+  w: number
+  /** how far the header's own content overflows it horizontally (0 = nothing is cut off) */
+  overflowX: number
+  /**
+   * Spread of the primary-line controls' vertical CENTERS. The controls have different
+   * heights (the selector is a two-line row, the toggles are single-line pills) and the row
+   * centers them, so their top edges legitimately differ by ~10px — centers are what agree
+   * on one line. A real wrap moves a control a whole row (≥30px).
+   */
+  primarySpread: number
+  /** which of the header's controls are mounted right now */
+  controls: string[]
+}
+
+/** The header bar's box + whether its primary line actually stayed one line. */
+function headerInfo(page: Page): Promise<HeaderInfo | null> {
+  return page.evaluate(() => {
+    const el = document.querySelector('[data-testid="combat-header"]') as HTMLElement | null
+    if (!el) return null
+    const r = el.getBoundingClientRect()
+    const ids = ['scope-toggle', 'segment-select', 'view-toggle', 'direction-toggle']
+    const present = ids.filter((id) => document.querySelector(`[data-testid="${id}"]`))
+    // The primary line is scope + selector + view switch; if the bar ever wraps under pressure,
+    // their centers stop agreeing. (The direction filter lives on the second line by design.)
+    const tops = ['scope-toggle', 'segment-select', 'view-toggle']
+      .map((id) => {
+        const r = document.querySelector(`[data-testid="${id}"]`)?.getBoundingClientRect()
+        return r ? r.top + r.height / 2 : undefined
+      })
+      .filter((t): t is number => typeof t === 'number')
+    return {
+      h: Math.round(r.height),
+      w: Math.round(r.width),
+      overflowX: Math.max(0, el.scrollWidth - el.clientWidth),
+      primarySpread: tops.length ? Math.round(Math.max(...tops) - Math.min(...tops)) : -1,
+      controls: present
+    }
+  })
+}
+
+/**
+ * The HEADER assertions. It is the tab's subject line — the fight/zone you're looking at, the
+ * view switch, and (on a quiet second line) the direction filter plus passive state. What can
+ * regress here is SIZE and WRAPPING: at the 900px minimum window there is only ~648px of
+ * content width, and the old flat row of five equal-weight controls wrapped into a
+ * three-line block whose wrap point moved with the fight name.
+ */
+async function checkHeader(page: Page, tag: string, expectDirection: boolean): Promise<void> {
+  const h = await headerInfo(page)
+  if (!check(`[${tag}] the combat header is rendered`, h !== null)) return
+  const info = h as HeaderInfo
+  check(
+    `[${tag}] the header stays a compact two-line bar`,
+    info.h >= 40 && info.h <= 110,
+    `${info.w}×${info.h}px · controls: ${info.controls.join(', ')}`
+  )
+  check(
+    `[${tag}] nothing in the header is cut off horizontally`,
+    info.overflowX === 0,
+    `+${info.overflowX}px`
+  )
+  check(
+    `[${tag}] scope + selector + view switch share one line (no wrapping mess)`,
+    info.primarySpread >= 0 && info.primarySpread <= 6,
+    `center spread ${info.primarySpread}px`
+  )
+  check(
+    `[${tag}] the direction filter is ${expectDirection ? 'present' : 'hidden (timeline view)'}`,
+    info.controls.includes('direction-toggle') === expectDirection,
+    info.controls.join(', ')
+  )
+}
+
 /**
  * The 2x2 GRID assertions. The four dashboard panels (source meter, DPS over time, breakdown
  * preview, damage by mob) must be four EQUAL cells — equal width AND equal height — none
@@ -285,7 +360,9 @@ async function dumpArtifacts(page: Page, tag: string): Promise<void> {
   mkdirSync(ARTIFACTS, { recursive: true })
   try {
     const html = await page.evaluate(() => {
-      const view = document.querySelector('[data-testid="segment-select"]')?.closest('.MuiStack-root')
+      // The whole Combat view (header bar + dashboard + log), not just the selector's row —
+      // the header is now its own bar, so its nearest Stack would dump only one line of it.
+      const view = document.querySelector('[data-testid="combat-header"]')?.parentElement
       return (view ?? document.body).outerHTML
     })
     writeFileSync(join(ARTIFACTS, `${tag}.html`), html, 'utf8')
@@ -388,6 +465,31 @@ async function main(): Promise<void> {
     //     source meter a 1.5x-wide column and squeezed the other three into a narrow strip.
     await checkGrid(page, 'quiet')
 
+    // 4c. THE HEADER: one compact bar, not a wrapped toolbar dump.
+    await checkHeader(page, 'quiet', true)
+    // Passive state: the two combat-modifier slots are numbered ("1: berserker"), never the
+    // old "stance:"/"inv:" category words. Either slot may be absent (never observed yet).
+    // textContent, not innerText: the slot is a flex row of two spans, so innerText would put a
+    // newline between the number and the value.
+    const slots = await page.evaluate(() =>
+      [1, 2].map((n) =>
+        (document.querySelector(`[data-testid="stance-slot-${n}"]`)?.textContent ?? '').replace(/\s+/g, ' ').trim()
+      )
+    )
+    if (slots.some((s) => s)) {
+      check(
+        'the combat-modifier slots read "<n>: <value>", not the old category jargon',
+        // a slot that exists must be "1: something" / "2: something", and neither may say
+        // "stance:" or "inv:" any more.
+        // (textContent has no separator between the two spans, so the space is optional)
+        slots.every((s, i) => !s || new RegExp(`^${i + 1}:\\s*\\S`).test(s)) &&
+          !slots.some((s) => /stance:|inv:/i.test(s)),
+        slots.filter(Boolean).join(' · ')
+      )
+    } else {
+      note('no stance/invocation observed yet — the modifier slots are correctly absent')
+    }
+
     // 5. The selector is backed by real history: fights + zone sessions.
     const fights = snap.segments.filter((s) => s.kind === 'fight').length
     check('the selector has finalized fights', fights >= 1, `${fights} fights`)
@@ -478,6 +580,19 @@ async function main(): Promise<void> {
     // …and the 2x2 grid is still exactly that: growing panel content scrolls INSIDE its cell.
     await checkGrid(page, 'busy log')
 
+    // 9b. The VIEW switch drives Dashboard ↔ Timeline, and the direction filter (which only
+    //     filters the dashboard's meter) goes with it.
+    await page.click('[data-testid="view-toggle"] button:nth-child(2)')
+    await sleep(800)
+    await checkHeader(page, 'timeline view', false)
+    check(
+      'switching to Timeline unmounts the dashboard grid',
+      (await countOf(page, '[data-testid="combat-dashboard"]')) === 0
+    )
+    await page.click('[data-testid="view-toggle"] button:nth-child(1)')
+    await sleep(800)
+    check('…and switching back restores the dashboard', (await countOf(page, '[data-testid="combat-dashboard"]')) === 1)
+
     // 10. Drive the SELECTOR for real and land on a finalized fight. History always carries
     //     damage (the engine drops 0-damage encounters), so this is the unconditional "the
     //     dashboard renders the log's data" assertion — independent of what the player happens
@@ -534,6 +649,7 @@ async function main(): Promise<void> {
     await win.evaluate((w, b) => w.setBounds({ ...b, width: 900 }), wide)
     await sleep(1200)
     await checkGrid(page, 'min window width (900)')
+    await checkHeader(page, 'min window width (900)', true)
 
     // 12. RESPONSIVE: below md the grid collapses to ONE column of comfortably tall panels and
     //     the REGION scrolls (the page still must not). Unreachable through the UI today
@@ -548,6 +664,7 @@ async function main(): Promise<void> {
     check('narrow: the grid collapses to a single column', narrow.cols === 1, `${narrow.cols} column(s)`)
     check('narrow: each stacked panel keeps a usable height', narrow.minH >= 250, `shortest ${narrow.minH}px`)
     check('narrow: the dashboard REGION is the scroller', narrow.scrolls, `region scrolls=${narrow.scrolls}`)
+    await checkHeader(page, 'narrow (720)', true)
     const narrowOver = await pageOverflow(page)
     check(
       'narrow: …and the PAGE still does not scroll',
@@ -561,6 +678,7 @@ async function main(): Promise<void> {
     }, wide)
     await sleep(1200)
     await checkGrid(page, 'restored wide')
+    await checkHeader(page, 'restored wide', true)
 
     check('no renderer console errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '))
 

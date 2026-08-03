@@ -280,7 +280,11 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): JSX.Element {
           <Typography variant="caption" color="text.secondary" sx={{ mr: 0.5 }}>
             {zoomedIn ? `${fmtDur(view.start)}–${fmtDur(view.end)} of ` : ''}
             {fmtDur(tl.durationMs)} · {tl.lanes.length} lanes ·{' '}
-            {tl.downsampled ? `${tl.events.length} of ${tl.rawCount} events` : `${tl.rawCount} events`}
+            {/* The count after "of" is the fight's TRUE instant count (totalCount), so a ring
+                that overflowed its drop-oldest cap reports what it LOST, not its own size. */}
+            {tl.downsampled || tl.truncated
+              ? `${tl.events.length} of ${tl.totalCount} events`
+              : `${tl.totalCount} events`}
           </Typography>
           <MuiTooltip title="Zoom out">
             <span>

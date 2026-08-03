@@ -10,8 +10,10 @@
 // labels match too, so typing "updates" shows that whole section.
 //
 // Sections:
-//   Game    — EverQuest install-folder discovery/override (effective path + how it
+//   Game     — EverQuest install-folder discovery/override (effective path + how it
 //             resolved + a folder picker + character-log validation).
+//   Profiles — export your GLOBAL settings as a paste-safe share string / file, and import
+//             someone else's ADDITIVELY (see src/shared/profiles.ts for the data model).
 //   Updates — app version, last-checked time, a manual check, background download
 //             progress, and the "Relaunch to update" action when one is waiting.
 
@@ -37,7 +39,10 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
+import IosShareIcon from '@mui/icons-material/IosShare'
+import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
 import type { EqConfig, UpdateStatus } from '@shared/types'
+import { updateChipState } from '@shared/update'
 import { formatDateTime } from '../../lib/formatDate'
 import { normalizeQuery } from '../../lib/search'
 
@@ -189,12 +194,16 @@ function VersionSetting({ version }: { version: string }): JSX.Element {
   )
 }
 
-function UpdateSetting({ status }: { status: UpdateStatus }): JSX.Element {
+function UpdateSetting({ status, version }: { status: UpdateStatus; version: string }): JSX.Element {
   const [checking, setChecking] = useState(false)
-  const chip = STATE_CHIP[status.state]
+  // Same pure mapping the left-nav chip uses, so the two surfaces can never
+  // disagree — in particular about the updated-away case (a 'ready' naming the
+  // build we are ALREADY running is stale and must not offer a relaunch).
+  const ui = updateChipState(status, version || undefined)
+  const chip = ui.kind === 'quiet' && status.state === 'ready' ? STATE_CHIP.idle : STATE_CHIP[status.state]
   const busy = checking || status.state === 'checking'
-  const ready = status.state === 'ready'
-  const downloading = status.state === 'downloading'
+  const ready = ui.kind === 'ready'
+  const downloading = ui.kind === 'downloading'
 
   const checkNow = useCallback(async () => {
     setChecking(true)
@@ -248,7 +257,7 @@ function UpdateSetting({ status }: { status: UpdateStatus }): JSX.Element {
             startIcon={<RestartAltIcon />}
             onClick={() => void window.eq.installUpdate()}
           >
-            Relaunch to update{status.version ? ` — v${status.version}` : ''}
+            Restart to update{ui.kind === 'ready' && ui.version ? ` — v${ui.version}` : ''}
           </Button>
         ) : (
           <Button
@@ -319,6 +328,25 @@ export default function PreferencesView(): JSX.Element {
         ]
       },
       {
+        id: 'profiles',
+        label: 'Profiles',
+        icon: <IosShareIcon fontSize="small" />,
+        items: [
+          {
+            id: 'export-settings',
+            label: 'Export your settings',
+            keywords: 'share export copy backup string bundle profile send give clipboard file',
+            content: <ExportSettingsSetting />
+          },
+          {
+            id: 'import-settings',
+            label: 'Import settings',
+            keywords: 'share import paste restore string bundle profile receive add merge file',
+            content: <ImportSettingsSetting />
+          }
+        ]
+      },
+      {
         id: 'updates',
         label: 'Updates',
         icon: <SystemUpdateAltIcon fontSize="small" />,
@@ -333,7 +361,7 @@ export default function PreferencesView(): JSX.Element {
             id: 'app-updates',
             label: 'App updates',
             keywords: 'update upgrade check relaunch restart install download automatic release',
-            content: <UpdateSetting status={status} />
+            content: <UpdateSetting status={status} version={version} />
           }
         ]
       }

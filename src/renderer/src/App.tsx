@@ -27,6 +27,7 @@ import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
 import UpdateToast from './components/UpdateToast'
+import UpdateChip from './components/UpdateChip'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import LevelingView from './features/leveling/LevelingView'
@@ -312,6 +313,11 @@ export default function App(): JSX.Element {
                 <ListItemText primary="Preferences" />
               </ListItemButton>
             </List>
+            {/* …and directly beneath it, the AMBIENT update affordance (Task #60):
+                a gold "Restart to update" chip when a build is downloaded and
+                staged, otherwise a muted "checked 2h ago" line. Never a nag —
+                ignoring it just means apply-on-quit does the work silently. */}
+            <UpdateChip />
           </Box>
         </Drawer>
 

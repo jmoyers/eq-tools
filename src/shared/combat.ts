@@ -414,8 +414,21 @@ export interface StanceSpan {
 
 /**
  * The selected encounter's event timeline (Task #51). Returned only when
- * SnapshotOpts.timeline is set (payload is heavier than the bar view). Capped +
- * downsampled per the engine's budget; `downsampled` flags when events were dropped.
+ * SnapshotOpts.timeline is set (payload is heavier than the bar view).
+ *
+ * TWO independent losses can stand between a fight and this view, and BOTH are declared
+ * here (law 1 — anything inferred/partial is LABELED, never silently understated):
+ *
+ *   downsampled — the retained ring was over the serialization budget, so only every
+ *                 Nth instant is carried. A uniform stride, so scaling by
+ *                 `rawCount / events.length` is an unbiased estimate OF THE RING.
+ *   truncated   — the per-encounter ring itself overflowed its drop-OLDEST cap, so the
+ *                 ring is only the most recent slice of the fight. This is NOT a
+ *                 uniform sample: everything derived from it is a LOWER BOUND on the
+ *                 whole fight and must never be extrapolated (see `totalCount`).
+ *
+ * Neither loss ever touches the engine's aggregates: the meter/`SegmentView` totals are
+ * folded on ingest, entirely independently of this ring.
  */
 export interface TimelineView {
   /** the encounter id this timeline is for. */
@@ -431,8 +444,28 @@ export interface TimelineView {
   stanceSpans: StanceSpan[]
   /** true when the raw event count exceeded the budget and was downsampled. */
   downsampled: boolean
-  /** raw event count before any downsampling (for the "showing N of M" note). */
+  /**
+   * How many instants the RING still held when this view was built — i.e. the population
+   * `events` was sampled from, and therefore the ONLY honest denominator of the sampling
+   * factor (`rawCount / events.length`). Deliberately NOT the fight's true instant count:
+   * using `totalCount` there would silently extrapolate the dropped-oldest prefix from the
+   * retained tail. Equals `totalCount` unless `truncated`.
+   */
   rawCount: number
+  /**
+   * The TRUE number of instants this encounter ever recorded, independent of ring
+   * occupancy (one counter per encounter, no per-event bookkeeping). This is the number a
+   * "showing N of M events" note must quote — quoting `rawCount` once the ring has
+   * overflowed understates the fight without saying so.
+   */
+  totalCount: number
+  /**
+   * true when the ring overflowed its drop-oldest cap and the fight's OLDEST instants were
+   * discarded (`totalCount > rawCount`). Every event-derived number is then a lower bound
+   * over the retained window, not an estimate of the whole fight; consumers label it with
+   * the same `~` + explainer treatment as `downsampled`.
+   */
+  truncated: boolean
 }
 
 /**

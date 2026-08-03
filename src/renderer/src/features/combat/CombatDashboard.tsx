@@ -8,7 +8,10 @@
 //
 // Honesty: panels fed by the per-event ring degrade to a quiet note when the selection has
 // no ring (finalized zone sessions), and wear a `~ N of M events` chip with `~`-prefixed
-// numbers when the ring was downsampled. The source meter's totals stay authoritative.
+// numbers whenever that ring is inexact — downsampled (scaled estimates) AND/OR truncated
+// by the drop-oldest cap (lower bounds over the retained window). Both losses get the SAME
+// treatment; only the chip's tooltip distinguishes them. The source meter's totals stay
+// authoritative in every case — they are folded on ingest and never read the ring.
 
 import { useMemo } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
@@ -28,6 +31,7 @@ import {
   fmtDur
 } from './combatShared'
 import {
+  approxNote,
   buildDpsSeries,
   composition,
   flattenSkills,
@@ -110,9 +114,12 @@ export function DpsChartCard({
   }, [series, live])
 
   const a = series?.estimated ? '~' : ''
+  // ONE chip for both event-ring losses (downsample and/or drop-oldest truncation): the note
+  // carries the TRUE instant count, so an overflowed ring can't advertise its own capacity.
+  const note = tl ? approxNote(tl) : null
   const right = tl && series && chart ? (
     <Stack direction="row" spacing={0.75} alignItems="baseline" sx={{ minWidth: 0 }}>
-      {tl.downsampled && <ApproxChip shown={tl.events.length} raw={tl.rawCount} />}
+      {note && <ApproxChip shown={note.shown} raw={note.of} truncated={note.truncated} />}
       <Tooltip title={`Peak ${Math.round(series.smoothMs / 1000)}s rolling outgoing rate in the visible window.`}>
         <Typography variant="caption" sx={{ color: OUT_COLOR, whiteSpace: 'nowrap' }}>
           {a}
@@ -380,7 +387,8 @@ export function MobDamageCard({
 /**
  * Everything you and your pet landed on ONE mob, as the same flat category-colored rows
  * the entity drill uses. Derived from the encounter's event ring, so it wears the `~`
- * labels whenever that ring was downsampled.
+ * labels whenever that ring is inexact — downsampled and/or truncated by the drop-oldest
+ * cap (`detail.estimated` covers both; the panel chip above says which).
  */
 export function TargetSkillBars({
   target,

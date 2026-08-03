@@ -138,6 +138,25 @@ export const IPC = {
   // cached, politely-throttled wiki lookup). Returns ItemKnowledge.
   itemsLookup: 'items:lookup',
 
+  // ---- settings / alert sharing ("profiles" — src/shared/profiles.ts) ----
+  // Every call carries the renderer's whitelisted localStorage prefs (UI_PREF_SPECS): main
+  // owns the electron-store half of a bundle, the renderer owns the localStorage half.
+  // renderer -> main: encode the GLOBAL settings bundle. Args: (uiPrefs). Returns the string.
+  shareExportSettings: 'share:exportSettings',
+  // renderer -> main: encode one alert (ids:[id]) or all of them (ids omitted/empty).
+  shareExportAlerts: 'share:exportAlerts',
+  // renderer -> main: save an already-encoded string to a file via the OS save dialog.
+  // Args: (text, suggestedName). Returns {ok, path?, canceled?}.
+  shareSaveFile: 'share:saveFile',
+  // renderer -> main: open a .eqshare/.txt via the OS picker and PREVIEW it. Args: (uiPrefs).
+  shareOpenFile: 'share:openFile',
+  // renderer -> main: decode + plan a pasted string WITHOUT writing anything. Args:
+  // (text, uiPrefs). Returns SharePreview (never throws; failures come back as prose).
+  sharePreview: 'share:preview',
+  // renderer -> main: apply a previewed string additively. Args: (text, uiPrefs, selection).
+  // Returns ShareApplyResult, incl. the localStorage writes the renderer must perform.
+  shareApply: 'share:apply',
+
   // ---- misc pushes ----
   onLine: 'log:line',
   onCharacter: 'log:character',

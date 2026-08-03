@@ -9,6 +9,13 @@
 //     unbiased estimator for uniform-stride sampling) and hand the caller `estimated`
 //     so every affected number renders with the `~` prefix. Observed maxima are NOT
 //     scaled — a sampled max is a lower bound, never inflated.
+//   - The ring itself is capped drop-OLDEST, so a long enough fight can outgrow it
+//     (`TimelineView.truncated`). That loss is NOT a uniform sample — it is a suffix of
+//     the fight — so it is deliberately NOT folded into the sampling factor: scaling by
+//     the true instant count would extrapolate the discarded prefix from the retained
+//     tail, i.e. invent damage. Instead every number keeps the same `~` + explainer
+//     treatment as a downsampled ring and reads as a LOWER BOUND over the retained
+//     window (`approxNote()` spells out which loss, or both, applies).
 //   - Finalized ZONE sessions keep no event ring at all (the snapshot's `timeline` is
 //     null). Callers degrade to a quiet note; these functions are simply not called.
 // The authoritative totals always remain the engine's SourceView bars.
@@ -110,10 +117,53 @@ export function flattenSkills(e: SourceView): SkillRow[] {
   return groupSlay(rows.map((r) => ({ ...r, pct: (r.total / max) * 100 })))
 }
 
-/** Sampling factor for a (possibly downsampled) timeline: 1 when every event is present. */
+/**
+ * Sampling factor for a (possibly downsampled) timeline: 1 when every retained event is
+ * present. The denominator is `rawCount` — what the RING held — and never `totalCount`:
+ * over the ring the stride is uniform (so this is unbiased), but the instants the ring
+ * dropped are a whole missing prefix, and inflating by them would be a guess, not an
+ * estimate. A truncated ring therefore keeps scale 1 and reports lower bounds.
+ */
 export function sampleScale(tl: TimelineView): number {
   if (!tl.downsampled || tl.events.length === 0) return 1
   return Math.max(1, tl.rawCount / tl.events.length)
+}
+
+/**
+ * Are this timeline's event-derived numbers inexact — i.e. must every one of them wear the
+ * `~` prefix and the panel wear the explainer chip? True for EITHER loss:
+ *   downsampled → the numbers are scaled sample estimates;
+ *   truncated   → the numbers cover only the fight's most recent instants (lower bounds).
+ * ONE predicate so a panel can never label one loss and silently swallow the other.
+ */
+export function isApproximate(tl: TimelineView): boolean {
+  return tl.downsampled || tl.truncated
+}
+
+/**
+ * What the panel's explainer chip must say, or null when the timeline is exact.
+ * `of` is the TRUE instant count (`totalCount`), so a truncated ring can never advertise
+ * its own capacity as if it were the size of the fight.
+ */
+export interface ApproxNote {
+  /** instants actually carried (and derived from). */
+  shown: number
+  /** instants the fight actually produced — what `shown` should be read against. */
+  of: number
+  /** a uniform-stride sample of the retained ring → numbers are scaled estimates. */
+  downsampled: boolean
+  /** the ring dropped the fight's oldest instants → numbers are lower bounds. */
+  truncated: boolean
+}
+
+export function approxNote(tl: TimelineView): ApproxNote | null {
+  if (!isApproximate(tl)) return null
+  return {
+    shown: tl.events.length,
+    of: tl.totalCount,
+    downsampled: tl.downsampled,
+    truncated: tl.truncated
+  }
 }
 
 // ── DPS over time ──────────────────────────────────────────────────────────────────
@@ -141,7 +191,8 @@ export interface DpsSeries {
   /** true when any damage at all landed in the window. */
   hasAny: boolean
   durationMs: number
-  /** true when the source events were downsampled → every rate here is an estimate. */
+  /** true when the source events were downsampled and/or truncated → every rate here is
+   *  inexact (a scaled estimate, a lower bound, or both — see `approxNote`). */
   estimated: boolean
 }
 
@@ -205,7 +256,9 @@ export function buildDpsSeries(tl: TimelineView): DpsSeries {
     hasInc,
     hasAny,
     durationMs,
-    estimated: scale > 1
+    // A truncated ring is inexact even at scale 1 (the curve simply has no data before the
+    // retained window starts), so the flag is the loss predicate, not the scale.
+    estimated: isApproximate(tl)
   }
 }
 
@@ -231,6 +284,7 @@ export interface MobBreakdown {
   rows: MobRow[]
   /** event-derived outgoing total across all mobs. */
   total: number
+  /** the ring was downsampled and/or truncated → every number above wears `~`. */
   estimated: boolean
 }
 
@@ -277,7 +331,7 @@ export function groupByTarget(tl: TimelineView): MobBreakdown {
     r.pct = (r.total / max) * 100
     r.share = total > 0 ? (r.total / total) * 100 : 0
   }
-  return { rows, total, estimated: scale > 1 }
+  return { rows, total, estimated: isApproximate(tl) }
 }
 
 export interface TargetDetail {
@@ -288,6 +342,7 @@ export interface TargetDetail {
   crits: number
   misses: number
   resists: number
+  /** the ring was downsampled and/or truncated → every number above wears `~`. */
   estimated: boolean
 }
 
@@ -298,7 +353,9 @@ export interface TargetDetail {
  * list keeps the row set short; the header labels the combination.
  * `max`/`min` are the largest/smallest single observed hits and are deliberately NOT scaled by
  * the sampling factor (a sampled max is a lower bound and a sampled min an upper bound;
- * scaling either would invent a hit that never landed).
+ * scaling either would invent a hit that never landed). A TRUNCATED ring has exactly the same
+ * character — the fight's dropped opening may hold a bigger hit than anything retained — which
+ * is why truncation reuses this labeling rather than a second visual language.
  */
 export function skillsForTarget(tl: TimelineView, target: string): TargetDetail {
   const scale = sampleScale(tl)
@@ -358,7 +415,7 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
     crits: Math.round(crits * scale),
     misses: Math.round(misses * scale),
     resists: Math.round(resists * scale),
-    estimated: scale > 1
+    estimated: isApproximate(tl)
   }
 }
 

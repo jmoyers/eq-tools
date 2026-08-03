@@ -130,7 +130,12 @@ test('the per-mob list groups slay the same way, over sample-scaled numbers', ()
     // downsampled 1-in-2 → every count/total is a scaled estimate; the group must sum the
     // SAME estimates its children display (the `~` chip explains the scaling to the user).
     downsampled: true,
-    rawCount: events.length * 2
+    rawCount: events.length * 2,
+    // The ring never overflowed here, so the true instant count IS the ring occupancy and
+    // the only loss is the (unbiased) stride. See combatRingTruncation.test.mts for the
+    // truncated case, where these two diverge.
+    totalCount: events.length * 2,
+    truncated: false
   }
 
   const detail = skillsForTarget(tl, 'a decaying skeleton')
