@@ -1,5 +1,8 @@
 import Store from 'electron-store'
-import { STORE_NAME } from './channel'
+import { join } from 'path'
+import { STORE_NAME, USER_DATA } from './channel'
+import { logError } from './errorLog'
+import { CURRENT_SCHEMA_VERSION, migrateStoreFile } from './storeMigrations'
 import type {
   AlertDef,
   AlertPrefs,
@@ -30,6 +33,12 @@ export interface WindowBounds {
 }
 
 interface StoreShape {
+  /**
+   * Schema version of THIS file (src/main/storeMigrations.ts). Absent ⇒ pre-framework ⇒ 1.
+   * Every persisted-shape change bumps CURRENT_SCHEMA_VERSION and ships a migration in the
+   * same commit — that is the whole contract behind "upgrades are clean, indefinitely".
+   */
+  schemaVersion?: number
   /** progress keyed by character id (name_server) */
   byCharacter: Record<string, ProgressState>
   /** last selected character's log path */
@@ -60,12 +69,27 @@ interface StoreShape {
    * "never" for the first minute of every single launch.
    */
   updateLastCheckedAt?: number
-  /** floating overlay DPS meter config (Task #52) — LEGACY flat key, migrated into
-   *  `overlays.fight` on first read (Task #54 made the overlay per-kind). */
+  /**
+   * RETIRED flat overlay config (Task #52). Task #54 made the overlay per-kind; schema
+   * migration 1→2 folds this into `overlays.fight` and deletes it. Declared, never read —
+   * the name stays reserved so nothing reuses it with different meaning.
+   */
   overlay?: OverlayConfig
   /** per-kind floating overlay configs (Task #54): 'fight' + 'overall' windows. */
   overlays?: Partial<Record<OverlayKind, OverlayConfig>>
 }
+
+/**
+ * SCHEMA MIGRATION, before anything reads the store — and before electron-store is even
+ * constructed, so no reader can observe a pre-migration shape. Order of the world at this
+ * point: channel.ts already chose `userData` and ran its one-time `eq-tools` seed (it is
+ * store.ts's own first import), so whatever file we find here is the one this build will
+ * use, whichever build wrote it. Never throws; see storeMigrations.ts for the failure policy.
+ */
+const schemaMigration = migrateStoreFile(join(USER_DATA, `${STORE_NAME}.json`), {
+  info: (message) => console.log(`[everquest-companion] ${message}`),
+  error: (message) => logError('main:storeSchema', message)
+})
 
 const store = new Store<StoreShape>({
   // File name follows the product (Task #58): `<userData>/everquest-companion-progress.json`.
@@ -74,6 +98,21 @@ const store = new Store<StoreShape>({
   name: STORE_NAME,
   defaults: { byCharacter: {}, activeLogPath: undefined, windowBounds: undefined }
 })
+
+// Stamp a store that the migrator could not stamp itself: a fresh install (no file existed,
+// so electron-store just created one from `defaults`) or a quarantined corrupt file. Gated on
+// `to === CURRENT`, which is FALSE for a partial migration (a failed step must run again next
+// launch) and for a store from a newer build (never version a downgrade backwards), and on
+// there being no read error (a file we could not read is a file we must not describe).
+if (schemaMigration.to === CURRENT_SCHEMA_VERSION && !schemaMigration.readError) {
+  try {
+    if (store.get('schemaVersion') !== CURRENT_SCHEMA_VERSION) {
+      store.set('schemaVersion', CURRENT_SCHEMA_VERSION)
+    }
+  } catch (err) {
+    logError('main:storeSchema', err)
+  }
+}
 
 export function getWindowBounds(): WindowBounds | undefined {
   return store.get('windowBounds')
@@ -155,17 +194,12 @@ const DEFAULT_OVERLAY_CONFIG: Record<OverlayKind, OverlayConfig> = {
   'heal-overall': { open: false, locked: false, bgAlpha: 0.72, topN: 5, bounds: undefined, drill: null }
 }
 
-/** Read a kind's overlay config, filling missing fields with the kind's defaults. Migrates the
- *  legacy flat `overlay` key into `overlays.fight` once (Task #54). */
+/** Read a kind's overlay config, filling missing fields with the kind's defaults.
+ *  The pre-Task-#54 flat `overlay` key used to be folded into `overlays.fight` HERE, on every
+ *  read; that fold is now schema migration 1→2 (storeMigrations.ts), which runs once at
+ *  startup — an ad-hoc fixup in a hot read path is exactly what the chain replaces. */
 export function getOverlayConfig(kind: OverlayKind): OverlayConfig {
   const all = store.get('overlays') ?? {}
-  // One-time migration: fold a pre-Task-#54 flat overlay config into the 'fight' slot.
-  const legacy = store.get('overlay')
-  if (legacy && !all.fight) {
-    all.fight = legacy
-    store.set('overlays', all)
-    store.delete('overlay')
-  }
   return { ...DEFAULT_OVERLAY_CONFIG[kind], ...(all[kind] ?? {}) }
 }
 

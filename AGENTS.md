@@ -363,6 +363,17 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   `Uninstall*.exe /S` + an immediate reinstall lets the detached tail delete the
   keys the reinstall just wrote. Never reinstall after an uninstall without
   POLLING for the install dir and the uninstall key to disappear.
+- **Uninstall asks before discarding user data.** `deleteAppDataOnUninstall`
+  stays `false`; the ONLY deletion path is `customUnInstall` in
+  `build/installer.nsh`, which prompts "Keep your settings and history?"
+  (Yes = default = keep) and only on No does `RMDir /r "$APPDATA\everquest-companion"`.
+  A `/S` uninstall NEVER prompts and ALWAYS preserves — that is the contract the
+  sandbox harness and every scripted uninstall rely on. It must never widen to
+  `%APPDATA%\eq-tools` (the pre-rename backup the one-time seed reads) or
+  `%APPDATA%\everquest-companion-dev` (the running dev app). Gotcha: `${Silent}`
+  is USELESS for that test — oneClick's `un.onInit` calls `SetSilent silent`
+  after its own confirm dialog, so the section always sees silent; detect the real
+  `/S` from `${GetParameters}`/`${GetOptions}` instead.
 - Exe branding: `signAndEditExecutable:true` needs the winCodeSign cache;
   its archive fails to extract on Windows without symlink privilege — run
   `scripts/seed-wincodesign.ps1` once per machine (extracts skipping two
@@ -432,6 +443,46 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   installer; their state carries over via the seed above. Documented for
   users in README ("Already have an `eq-tools-Setup` build installed?").
 
+### Settings migrations (persisted store schema)
+
+- **LAW: any commit that changes a persisted shape ships a migration in the
+  SAME commit.** Bump `CURRENT_SCHEMA_VERSION` in
+  `src/main/storeMigrations.ts`, append a step to `MIGRATIONS`, add a fixture.
+  That rule is the whole reason "an upgrade is clean, going back indefinitely"
+  can be true: a store written by ANY past build must load in today's build,
+  and auto-update means users jump many versions at once. `MIGRATIONS` is
+  APPEND-ONLY — never renumber, edit a shipped step, or delete one.
+- An explicit integer `schemaVersion` INSIDE the file, not app semver: CI
+  stamps versions from tags and dev runs unstamped, so electron-store's
+  semver-keyed `migrations` fire in surprising orders across channels. Absent
+  ⇒ 1 (every pre-framework store), and the chain runs 1→2→…→CURRENT.
+- Runs ONCE at startup from store.ts module scope, BEFORE `new Store()`, so no
+  reader ever sees a pre-migration shape — and after channel.ts's one-time
+  `eq-tools` seed (store.ts imports channel.ts first). Ad-hoc fixups in read
+  paths are the anti-pattern it replaces: the flat `overlay` →
+  `overlays.fight` fold moved out of `getOverlayConfig()` into migration 1→2.
+  (`alertSoundMigration` predates the framework and keeps its own stamp — its
+  "respect a user who re-points an alert" semantics aren't schema-shaped.)
+- Migration 1→2 is REAL work, not a dormant no-op: it also recovers the
+  top-level `progress` blob that commit 41831cc orphaned when it re-keyed
+  progress by character (salvaged under the reserved id
+  `legacy:pre-character` only when no real character exists — never guess an
+  owner) and drops the dead `liveLoot` map.
+- **Startup never dies here.** Unreadable ⇒ untouched, unstamped. Unparseable
+  ⇒ QUARANTINED to `<name>.corrupt.json` and start fresh (conf leaves
+  `clearInvalidConfig` false, so one truncated write otherwise throws on every
+  read forever). A step that throws ⇒ keep what succeeded, stamp the last
+  version that fully landed, retry next launch. Before the first write the
+  original bytes are copied to `<name>.v<from>.backup.json`, once per source
+  version (a later run never overwrites the pristine copy).
+- **Downgrade (file newer than the build)**: log, back up, and leave the file
+  ALONE — no down-migration, no reset, no stamping backwards. The old build
+  runs best-effort, which is safe because every reader defaults on a missing
+  key and electron-store rewrites the whole parsed object, so future keys
+  survive round-trips. Verified by `tests/storeMigrations.test.mts`, which
+  drives the pure runner + the file half with authored fixtures of the real
+  historical shapes (no Electron, never skips).
+
 ### Installer testing strategy (three tiers)
 
 1. **Local self-test** (any dev machine, no elevation): run the Setup exe
@@ -447,7 +498,7 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    process-start, AND asserts the fresh-machine experience (no EQ installed →
    app still boots to the zero-logs empty state), uninstalls, asserts files
    AND the uninstall key are gone, then writes PASS/FAIL to the mapped results
-   dir. 17 checks; `arp-*` names each ARP field individually so a failure says
+   dir. 19 checks; `arp-*` names each ARP field individually so a failure says
    exactly what was missing.
    **Invoke via `scripts/sandbox/run-installer-test.ps1`** (never the raw
    .wsb): it force-closes a stale VM (only ONE sandbox instance is allowed

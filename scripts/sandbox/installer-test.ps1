@@ -27,6 +27,9 @@
 #  * An NSIS uninstaller launched without `_?=` relaunches itself from %TEMP% and the
 #    original process exits IMMEDIATELY, so `Start-Process -Wait` does NOT mean the
 #    uninstall finished. Post-uninstall assertions poll instead of sleeping.
+#  * This harness only ever uninstalls with `/S`, which must ALWAYS preserve
+#    %APPDATA%\everquest-companion (steps 5b/6c). The interactive "Keep your settings and
+#    history?" prompt in build/installer.nsh is a MANUAL test - see 6c.
 
 $ErrorActionPreference = 'Continue'
 $result = 'C:\results\result.txt'
@@ -133,6 +136,21 @@ try {
     Start-Sleep -Seconds 2
   }
 
+  # 5b. Seed the userData dir with a marker so step 6c can prove a SILENT uninstall left
+  #     it alone. Launching the app above normally creates it; create it ourselves if not,
+  #     so the assertion is deterministic rather than dependent on how far startup got.
+  #     (build/installer.nsh's customUnInstall only deletes userData when a HUMAN answers
+  #     No to the keep-settings prompt; `/S` must never prompt and never delete. There is
+  #     deliberately NO automation of that MessageBox here - see the manual note at 6c.)
+  $userData = Join-Path $env:APPDATA 'everquest-companion'
+  $marker = Join-Path $userData 'sandbox-uninstall-marker.txt'
+  if (-not (Test-Path $userData)) {
+    Log "userData dir absent after launch - creating it for the preservation check"
+    New-Item -ItemType Directory -Path $userData -Force | Out-Null
+  }
+  Set-Content -Path $marker -Value 'a silent uninstall must not delete this' -ErrorAction SilentlyContinue
+  Check 'userdata-marker-written' (Test-Path $marker) $marker
+
   # 6. Silent uninstall + cleanup check. NSIS relaunches the uninstaller from %TEMP% and
   #    the process we waited on exits immediately, so poll for real completion (install
   #    dir gone AND the ARP entry - which the uninstaller deletes LAST - gone).
@@ -154,6 +172,30 @@ try {
     $arpAfter = Get-ArpEntry
     if ($null -eq $arpAfter) { Check 'uninstall-removed-arp-entry' $true }
     else { Check 'uninstall-removed-arp-entry' $false "orphaned key left behind: $($arpAfter._ArpKeyPath) (DisplayName='$($arpAfter.DisplayName)')" }
+
+    # 6c. ...but the user's settings/history must SURVIVE a silent uninstall. This is the
+    #     contract the keep-settings prompt is built on: `/S` never asks and never
+    #     deletes, so scripted uninstalls (and this harness) are non-destructive. Poll
+    #     first: the detached uninstaller tail could still be running when we look.
+    #     MANUAL TEST, not automated here: run the uninstaller WITHOUT /S (or from
+    #     Settings -> Apps) and answer No to "Keep your settings and history?" - the
+    #     userData dir must then be gone. Driving that MessageBox from the harness would
+    #     mean UI automation inside the VM, which is exactly the flakiness this suite
+    #     avoids; the silent half below is the part a script can prove.
+    #     The poll above stops at "ARP key gone", but the uninstaller deletes that key
+    #     BEFORE customUnInstall runs, so wait for the uninstaller PROCESS to be gone
+    #     too: NSIS's relaunched copy runs as Un_<x>.exe out of %TEMP%\~nsu*. (Do NOT
+    #     poll for that temp FOLDER instead - it outlives the process and the loop just
+    #     burns its whole budget.)
+    $unWaited = 0
+    for ($i = 0; $i -lt 30; $i++) {
+      $unWaited = $i
+      if (-not @(Get-Process -Name 'Un_*' -ErrorAction SilentlyContinue).Count) { break }
+      Start-Sleep -Seconds 1
+    }
+    Log "uninstaller process gone after ~$unWaited s"
+    Check 'silent-uninstall-preserved-userdata-dir' (Test-Path $userData) $userData
+    Check 'silent-uninstall-preserved-userdata-files' (Test-Path $marker) "(marker $marker)"
   }
   else {
     Check 'uninstaller-present' $false "$uninstaller missing - cannot test uninstall"

@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 99,
+	"byCharacter": {
+		"fixture_freeport": {
+			"inventory": {},
+			"completedQuests": [
+				"Enchanter::Sky Bracer"
+			]
+		}
+	},
+	"alertPrefs": {
+		"globalVolume": 0.9,
+		"muted": true
+	},
+	"aKeyFromTheFuture": {
+		"shapeThisBuildHasNeverHeardOf": [
+			1,
+			2,
+			3
+		]
+	}
+}

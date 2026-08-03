@@ -1,0 +1,19 @@
+{
+	"progress": {
+		"inventory": {
+			"sky quest turn-in token": 3,
+			"ancient stone talisman": 1
+		},
+		"liveLoot": {
+			"ancient stone talisman": 1
+		},
+		"completedQuests": [
+			"Enchanter::Sky Ring of Fire",
+			"Enchanter::Sky Bracer"
+		],
+		"inventorySource": {
+			"path": "C:\\Users\\Fixture\\Inventory.txt",
+			"loadedAt": "2026-08-01T18:00:00.000Z"
+		}
+	}
+}

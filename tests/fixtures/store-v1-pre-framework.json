@@ -1,0 +1,64 @@
+{
+	"byCharacter": {
+		"fixture_freeport": {
+			"inventory": {
+				"sky quest turn-in token": 2
+			},
+			"liveLoot": {
+				"a stale live-loot delta": 4
+			},
+			"completedQuests": [
+				"Enchanter::Sky Bracer"
+			],
+			"inventorySource": {
+				"path": "C:\\Users\\Fixture\\Inventory.txt",
+				"loadedAt": "2026-08-01T18:00:00.000Z"
+			}
+		}
+	},
+	"activeLogPath": "C:\\Fixture\\Logs\\eqlog_Fixture_freeport.txt",
+	"eqInstallDir": "C:\\Fixture\\EverQuest Legends",
+	"windowBounds": {
+		"x": 100,
+		"y": 80,
+		"width": 1400,
+		"height": 900
+	},
+	"alerts": [
+		{
+			"id": "charm-break",
+			"name": "Charm break",
+			"enabled": true,
+			"trigger": {
+				"type": "event",
+				"kind": "uncharm"
+			},
+			"sound": {
+				"packId": "alan-rickman",
+				"soundId": "alan-rickman/attention"
+			}
+		}
+	],
+	"alertPrefs": {
+		"globalVolume": 0.5,
+		"muted": false
+	},
+	"alertSoundMigration": 1,
+	"updateChannel": "stable",
+	"updateLastCheckedAt": 1785000000000,
+	"overlay": {
+		"open": true,
+		"locked": true,
+		"bgAlpha": 0.4,
+		"topN": 10,
+		"bounds": {
+			"x": 1500,
+			"y": 700,
+			"width": 380,
+			"height": 320
+		},
+		"drill": {
+			"entityId": "fixture"
+		}
+	}
+}
