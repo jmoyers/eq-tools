@@ -38,30 +38,43 @@
         width: 100vw;
         height: 100vh;
       }
-      /* Themed scrollbars — same treatment as the main app (theme.ts
-         MuiCssBaseline); the overlay entry has no CssBaseline, so plain CSS. */
-      * {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(217, 178, 95, 0.35) transparent;
-      }
+      /* Themed scrollbars — the SAME rules as the main app (theme.ts
+         MuiCssBaseline). This bundle is MUI-free by law, so there is no
+         CssBaseline to carry them and no way to import the theme's tokens;
+         the values are the resolved forms of `alpha(common.white, .22)` and
+         `alpha(primary.main, .55)` and must be updated together with theme.ts.
+
+         NOTE (this is the fix, and it reads like an omission if you don't know
+         the rule): there is deliberately NO `scrollbar-width` / `scrollbar-color`
+         here. In Blink those standard properties and the `::-webkit-scrollbar-*`
+         pseudo-elements are mutually exclusive — setting either one switches the
+         scroller to Chromium's native (Fluent) scrollbar and makes every rule
+         below dead code. That native bar paints edge-to-edge across its gutter,
+         which is what put the scrollbar hard against right-aligned content.
+         See the long comment in theme.ts. Do not add them back. */
       *::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
       }
       *::-webkit-scrollbar-track {
         background: transparent;
       }
+      /* Transparent border + content-box clip insets the visible thumb inside
+         the reserved gutter, so it sits off the content edge. */
       *::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.16);
-        border-radius: 8px;
-        border: 2px solid transparent;
-        background-clip: padding-box;
+        background-color: rgba(255, 255, 255, 0.22);
+        border-radius: 12px;
+        border: 3px solid transparent;
+        background-clip: content-box;
       }
       *::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(217, 178, 95, 0.55);
       }
       *::-webkit-scrollbar-corner {
         background: transparent;
+      }
+      *::-webkit-scrollbar-button {
+        display: none;
       }
     </style>
   </head>
