@@ -15,7 +15,7 @@ export type View =
   | 'preferences'
 
 export const VIEW_KEY = 'eq.view'
-export const DEFAULT_VIEW: View = 'combat'
+export const DEFAULT_VIEW: View = 'overview'
 
 // Every member of `View`. A view missing here is silently bounced to the default on the next
 // launch, so the two lists are edited together — always.

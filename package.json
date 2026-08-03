@@ -26,7 +26,7 @@
     "lint:measure": "tsx scripts/lint-report.mts --measure",
     "lint:ratchet": "tsx scripts/lint-report.mts --ratchet",
     "test": "node --import tsx --test tests/*.test.mts",
-    "test:e2e": "node --import tsx tests/e2e/combat-dashboard.e2e.mts",
+    "test:e2e": "node --import tsx tests/e2e/run-all.mts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
     "typecheck": "npm run typecheck:node && npm run typecheck:web",

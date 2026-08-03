@@ -550,7 +550,10 @@ async function main(): Promise<void> {
     })
     page.on('pageerror', (e) => consoleErrors.push(String(e)))
 
-    // The Combat tab is the default view and a fresh userData means no saved view.
+    // A fresh userData means no saved view, and the default is now OVERVIEW (wave 3) — so this
+    // spec navigates to its own subject first. `nav-combat` is on every nav row; the Overview
+    // tab's own assertions live in tests/e2e/overview.e2e.mts.
+    await page.click('[data-testid="nav-combat"]', { timeout: 60_000 })
     await page.waitForSelector('[data-testid="segment-select"]', { timeout: 60_000 })
 
     let snap = await stepHydration(page)
