@@ -158,3 +158,27 @@ export function fmtDelta(ms: number): string {
   if (hrs < 48) return `${hrs.toFixed(1)}h`
   return `${(hrs / 24).toFixed(1)}d`
 }
+
+/**
+ * The same feature's SPAN formatter: `2h 41m` / `38m` / `45s` / `3d 4h`.
+ *
+ * Why two, and why both live HERE. `fmtDelta` above answers "how long since the last ding" —
+ * one magnitude, one decimal (`2.7h`), which is the right shape for a feed line, a hover
+ * readout and a legend row, and it is pinned by tests/levelHover.test.mts. A range readout
+ * asks a different question — "how much time is IN this selection" — and `2.7h` there is a
+ * worse answer than `2h 41m`: the user picked the boundaries, so the panel owes them the
+ * minutes. Widening `fmtDelta` itself would silently restate every existing caption in the
+ * feature, so the pair sits in ONE file instead: this module is the leveling feature's
+ * duration home, and there is still no third formatter anywhere in it.
+ *
+ * Days roll over at 48h for the same reason `fmtDelta` does — a multi-day drag would
+ * otherwise read `169h 30m`.
+ */
+export function fmtDuration(ms: number): string {
+  const total = Math.max(0, Math.round(ms / 1000))
+  const hrs = Math.floor(total / 3600)
+  if (hrs >= 48) return `${Math.floor(hrs / 24)}d ${hrs % 24}h`
+  const mins = Math.floor((total % 3600) / 60)
+  if (hrs > 0) return `${hrs}h ${mins}m`
+  return mins > 0 ? `${mins}m` : `${total % 60}s`
+}

@@ -24,3 +24,34 @@ export function formatRate(n: number): string {
 export function formatHealRate(n: number): string {
   return `${formatNum(n)} hps`
 }
+
+/**
+ * SMALL rates — the leveling analytics ones (levels/hr, kills/hr) — are a DIFFERENT number
+ * shape from the combat ones, and deliberately do NOT go through `formatNum`.
+ *
+ * `formatNum` is built for damage: it k/M-scales above a thousand and ROUNDS TO AN INTEGER
+ * below it (`formatNum(1.42) === '1'`). A levels-per-hour rate lives almost entirely in the
+ * 0–10 band, so routing it through that would render every honest 1.42 as a flat '1' — the
+ * whole quantity, silently destroyed. So: two decimals under 10, one under 100, integer above
+ * (a three-digit kills/hr needs no fraction, and a rate that large only comes from a very
+ * short window anyway). They still live HERE rather than in the leveling feature, because the
+ * "ONE source" rule (AGENTS.md, Formatting) is about the file, not about the algorithm.
+ */
+function formatSmall(n: number): string {
+  if (!Number.isFinite(n)) return '—'
+  const v = Math.abs(n)
+  if (v >= 100) return n.toFixed(0)
+  if (v >= 10) return n.toFixed(1)
+  return n.toFixed(2)
+}
+
+/** A LEVELS-per-hour rate: '1.42 lvl/hr', '0.35 lvl/hr', '124 lvl/hr'. "Levels of progress",
+ *  never experience points — the log states a level-bar percentage and nothing else. */
+export function formatLevelRate(n: number): string {
+  return `${formatSmall(n)} lvl/hr`
+}
+
+/** A KILLS-per-hour rate: '38.5 kills/hr', '0.75 kills/hr', '240 kills/hr'. */
+export function formatKillRate(n: number): string {
+  return `${formatSmall(n)} kills/hr`
+}
