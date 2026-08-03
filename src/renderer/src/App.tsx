@@ -26,7 +26,6 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
-import UpdateToast from './components/UpdateToast'
 import UpdateChip from './components/UpdateChip'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
@@ -349,8 +348,6 @@ export default function App(): JSX.Element {
 
       {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
       <AlertPlayer />
-      {/* Always-mounted: "update ready — relaunch to update" toast (no-op in dev). */}
-      <UpdateToast />
 
       <Snackbar
         open={!!defeatToast}
