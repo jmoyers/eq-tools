@@ -38,6 +38,8 @@ import SuggestAlertsDialog from './SuggestAlertsDialog'
 import AlertDialog from './AlertDialog'
 import AlertList from './AlertList'
 import AlertsToolbar from './AlertsToolbar'
+import UpgradeOffers from './UpgradeOffers'
+import { useUpgradeOffers } from './lineIntel'
 import { useAlertsStore } from './useAlertsStore'
 import ShareImportDialog from '../profiles/ShareImportDialog'
 import { copyText } from '../../lib/clipboard'
@@ -145,9 +147,28 @@ function ConfirmResetDialog({
   )
 }
 
+/** The share/import toast, plus the one action that raises it (copy a share string). */
+function useShareToast(): {
+  toast: Toast | null
+  setToast: (t: Toast | null) => void
+  copyShare: (ids?: string[]) => Promise<void>
+} {
+  const [toast, setToast] = useState<Toast | null>(null)
+  /** Copy a share string for one alert (`ids:[id]`) or every alert (`ids` omitted). */
+  const copyShare = useCallback(async (ids?: string[]) => {
+    const text = await window.eq.exportAlertsShare(ids)
+    const ok = await copyText(text)
+    setToast(shareToast(ok, ids, text.length))
+  }, [])
+  return { toast, setToast, copyShare }
+}
+
 export default function AlertsView(): JSX.Element {
   const store = useAlertsStore()
-  const { alerts, prefs, sortedPacks, history, persistAlerts, removeAlert } = store
+  const { alerts, prefs, sortedPacks, history, spellLastCast, persistAlerts, removeAlert } = store
+
+  // Spell-line intelligence: alerts pinned to a rank the player has since outgrown.
+  const upgrades = useUpgradeOffers(alerts, spellLastCast)
 
   const edit = useEditDialog()
   const [confirmReset, setConfirmReset] = useState(false)
@@ -156,14 +177,7 @@ export default function AlertsView(): JSX.Element {
   // Sharing (src/shared/profiles.ts): copy one/all alerts as a paste-safe EQC1- string, or
   // import someone else's ADDITIVELY through the shared preview dialog.
   const [importOpen, setImportOpen] = useState(false)
-  const [toast, setToast] = useState<Toast | null>(null)
-
-  /** Copy a share string for one alert (`ids:[id]`) or every alert (`ids` omitted). */
-  const copyShare = useCallback(async (ids?: string[]) => {
-    const text = await window.eq.exportAlertsShare(ids)
-    const ok = await copyText(text)
-    setToast(shareToast(ok, ids, text.length))
-  }, [])
+  const { toast, setToast, copyShare } = useShareToast()
 
   const doReset = useCallback(async () => {
     await store.resetAlerts()
@@ -186,6 +200,16 @@ export default function AlertsView(): JSX.Element {
         onCopyAll={() => void copyShare()}
         onOpenImport={() => setImportOpen(true)}
         onReset={() => setConfirmReset(true)}
+      />
+
+      {/* Levelling intelligence: alerts pinned to a rank you have outgrown. Never applied
+          automatically — "Add alongside" (the default) keeps the old rank firing for the
+          loadout that still uses it; "Replace" is the deliberate re-point. */}
+      <UpgradeOffers
+        offers={upgrades.offers}
+        alerts={alerts}
+        onPersist={(def) => void persistAlerts(def)}
+        onDismiss={upgrades.dismiss}
       />
 
       {/* Alert list */}
@@ -227,6 +251,7 @@ export default function AlertsView(): JSX.Element {
         onClose={() => setSuggestOpen(false)}
         onCreate={persistAlerts}
         onDelete={removeAlert}
+        spellLastCast={spellLastCast}
         onCreateManually={() => {
           // Escape hatch: close the picker and open the blank manual editor.
           setSuggestOpen(false)

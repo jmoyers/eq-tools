@@ -36,6 +36,12 @@ import type {
 const DEFAULT_COOLDOWN_MS = 2000
 /** Max fires kept per alert in the recent-fires ring buffer (Task #22). */
 const HISTORY_CAP = 20
+/**
+ * Max distinct spell DISPLAY names kept in the rank recency map. A character's own cast
+ * vocabulary is well under 300 in the reference log; the cap is a bound, not a policy, and
+ * it evicts the least-recently-cast name so the map always describes what you use NOW.
+ */
+const SPELL_CAST_CAP = 400
 
 /**
  * Compile a matcher value into a predicate. A value wrapped in slashes (`/.../`)
@@ -141,6 +147,23 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
    * Persists across character switches so history isn't lost on a reload.
    */
   private history = new Map<string, AlertFireRecord[]>()
+  /**
+   * RANK-PRESERVING cast recency: spell DISPLAY name (suffix intact — "Mesmerization III") →
+   * the newest ts you were seen to begin casting it.
+   *
+   * WHY IT LIVES HERE. The buffs model's own `lastSeen` map is keyed by `spellCanonKey`, which
+   * STRIPS the rank — so it cannot answer "which rank am I actually using", the question the
+   * suggestions surface and the upgrade offers are built on. `castBegin` is the literal
+   * definition of "most recently cast" and is the ONE event family that keeps the rank
+   * (fizzle / interrupt / wears-off lines all drop it). Recording it here costs one map write
+   * per cast and adds no IPC: the alerts snapshot already flows to the renderer via useModule.
+   *
+   * Recorded for REPLAY events too (unlike firing, which is live-only) so the map is complete
+   * the moment the renderer hydrates.
+   */
+  private spellLastCast = new Map<string, number>()
+  /** Names whose recency advanced since the last flush (delta payload). */
+  private castPending = new Map<string, number>()
 
   /** Replace the live alert set (called by main after load + every save/delete). */
   setDefs(defs: AlertDef[]): void {
@@ -154,14 +177,39 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
 
   reset(): void {
     // Defs persist across character switches (they're user prefs, not log state);
-    // only the per-character firing bookkeeping resets.
+    // only the per-character firing bookkeeping resets. The cast-recency map IS character
+    // state (a different character casts different ranks), so it resets with it — the
+    // replay that follows repopulates it.
     this.seq = 0
     this.lastFire = new Map()
     this.pending = []
+    this.spellLastCast = new Map()
+    this.castPending = new Map()
+  }
+
+  /**
+   * Record a rank-preserving cast. Runs for replay events as well as live ones — the map
+   * describes the character, not the session, and the renderer must see it at hydration.
+   */
+  private noteCast(ev: LogEvent): void {
+    if (ev.kind !== 'castBegin') return
+    const name = ev.spell.trim()
+    if (!name) return
+    const prev = this.spellLastCast.get(name)
+    if (prev !== undefined && prev >= ev.ts) return
+    // Re-insert so Map iteration order stays least-recent-first for the eviction below.
+    this.spellLastCast.delete(name)
+    this.spellLastCast.set(name, ev.ts)
+    this.castPending.set(name, ev.ts)
+    if (this.spellLastCast.size > SPELL_CAST_CAP) {
+      const oldest = this.spellLastCast.keys().next()
+      if (!oldest.done) this.spellLastCast.delete(oldest.value)
+    }
   }
 
   onEvent(ev: LogEvent, live: boolean): void {
     this.seq = ev.seq
+    this.noteCast(ev)
     // Fire on LIVE events only — replay must never make a sound.
     if (!live) return
     for (const c of this.compiled) {
@@ -263,13 +311,24 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
   }
 
   snapshot(): { seq: number; state: AlertsSnap } {
-    return { seq: this.seq, state: { defs: this.defs(), history: this.historyObj() } }
+    return {
+      seq: this.seq,
+      state: {
+        defs: this.defs(),
+        history: this.historyObj(),
+        spellLastCast: Object.fromEntries(this.spellLastCast)
+      }
+    }
   }
 
   flushDelta(): { seq: number; delta: AlertsDelta } | null {
-    if (this.pending.length === 0) return null
+    // A flush is warranted by EITHER a fire or a cast-recency advance — the upgrade offers
+    // recompute off the latter, and they must not wait for an unrelated alert to fire.
+    if (this.pending.length === 0 && this.castPending.size === 0) return null
     const fired = this.pending
     this.pending = []
-    return { seq: this.seq, delta: { fired } }
+    const cast = [...this.castPending].map(([spell, ts]) => ({ spell, ts }))
+    this.castPending = new Map()
+    return { seq: this.seq, delta: cast.length > 0 ? { fired, cast } : { fired } }
   }
 }

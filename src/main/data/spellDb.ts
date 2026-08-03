@@ -25,6 +25,9 @@
 // profile with no DB installed emits none of the new events and works exactly as before.
 
 import type { SpellCatalog, SpellCatalogEntry, SpellDbFile, SpellEntry } from '../../shared/types'
+// Line/rank model + the level-keeping twin of spellClasses.ts's class parse (shared/, so the
+// renderer compiles against the SAME implementation the catalog was built with).
+import { parseSpellClassLevels, parseSpellRank } from '../../shared/spellLines'
 // Import the committed catalog directly so it's BUNDLED into the main build (electron-vite
 // inlines JSON imports). A readFileSync from a path relative to import.meta.url would look
 // beside out/main/index.js in production, where the JSON isn't copied — so import it.
@@ -123,12 +126,37 @@ export function buildSpellDb(spells: SpellEntry[]): SpellDb {
  * Illusion spells additionally get the shared illusion-fade suggestion (deduped in the UI).
  * A spell with NO template and no illusion flag is dropped (nothing to suggest for it).
  */
+/**
+ * Every DISPLAY name the DB holds for each LINE (rank-folded key), ascending by rank.
+ * `db.byKey` keeps only the FIRST entry per key, so the rank siblings ("Rune II".."Rune V")
+ * are otherwise invisible to the catalog. Only 42 of the ~1.9k spells have siblings at all —
+ * the log knows far more ranks than the wiki does, which is why the renderer unions this with
+ * the ranks it has actually observed cast (shared/spellLines.ts).
+ */
+function rankNamesByLine(db: SpellDb): Map<string, string[]> {
+  const byLine = new Map<string, { name: string; rank: number }[]>()
+  for (const s of db.spells) {
+    const key = canonKey(s.name)
+    const { rank } = parseSpellRank(s.name)
+    const list = byLine.get(key)
+    if (list) list.push({ name: s.name, rank })
+    else byLine.set(key, [{ name: s.name, rank }])
+  }
+  const out = new Map<string, string[]>()
+  for (const [key, list] of byLine) {
+    const names = [...new Set(list.sort((a, b) => a.rank - b.rank).map((r) => r.name))]
+    out.set(key, names)
+  }
+  return out
+}
+
 export function buildSpellCatalog(
   db: SpellDb,
   usage: Map<string, number>,
   lastSeen?: Map<string, number>
 ): SpellCatalog {
   const entries: SpellCatalogEntry[] = []
+  const rankNames = rankNamesByLine(db)
   let hasIllusions = false
   for (const [key, s] of db.byKey) {
     const beneficial = s.spellType === 'Beneficial'
@@ -148,7 +176,11 @@ export function buildSpellCatalog(
       illusion: s.illusion,
       templates,
       usageCount: usage.get(key) ?? 0,
-      lastSeenMs: lastSeen?.get(key) ?? null
+      lastSeenMs: lastSeen?.get(key) ?? null,
+      classLevels: parseSpellClassLevels(s.classes),
+      // Always present in practice (the map is built from the same spell list db.byKey is);
+      // the optional field absorbs the impossible miss without a branch.
+      rankNames: rankNames.get(key)
     })
   }
   // Sort (Task #45 — the user's directive: recency over frequency). USED spells (those the

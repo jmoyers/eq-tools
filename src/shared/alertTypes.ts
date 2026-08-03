@@ -146,9 +146,27 @@ export interface AlertFireRecord {
 export interface AlertsSnap {
   defs: AlertDef[]
   history: Record<string, AlertFireRecord[]>
+  /**
+   * RANK-PRESERVING cast recency (spell levelling intelligence): spell DISPLAY name with its
+   * roman-numeral rank intact ("Mesmerization III") → the newest ts you began casting it.
+   *
+   * The buffs model's per-spell `lastSeenMs` is keyed by `spellCanonKey`, which STRIPS the
+   * rank, so it cannot say which rank you are on; `castBegin` is the only event family that
+   * keeps the suffix. Populated during replay as well as live, so it is complete at hydration.
+   * Optional — a snapshot from a build before this existed simply has no ranks to offer.
+   */
+  spellLastCast?: Record<string, number>
+}
+/** One rank-preserving cast observed since the last flush. */
+export interface SpellCastRecency {
+  /** display name, rank suffix intact. */
+  spell: string
+  ts: number
 }
 export interface AlertsDelta {
   fired: FiredAlert[]
+  /** cast-recency entries that advanced since the last flush; merge by `spell`. */
+  cast?: SpellCastRecency[]
 }
 
 /** A discovered sound within a pack manifest. */

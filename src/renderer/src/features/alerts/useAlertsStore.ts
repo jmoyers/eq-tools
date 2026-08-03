@@ -19,21 +19,37 @@ import type {
   AlertPrefs,
   AlertsDelta,
   AlertsSnap,
-  SoundPack
+  SoundPack,
+  SpellCastRecency
 } from '@shared/types'
 import { useModule } from '../../lib/useModule'
 import { onAlertStoreChange, refreshAlertStore } from './player'
 import { invalidateSoundCaches } from './soundCache'
 
 function applyAlertsDelta(state: AlertsSnap, delta: AlertsDelta): AlertsSnap {
-  if (!delta.fired?.length) return state
-  const history = { ...state.history }
+  const next = delta.cast?.length ? applyCastRecency(state, delta.cast) : state
+  if (!delta.fired.length) return next
+  const history = { ...next.history }
   for (const f of delta.fired) {
     const arr = (history[f.alertId] ?? []).concat({ ts: f.ts, matchedText: f.matchedText })
     // Mirror the module's HISTORY_CAP of 20 so the renderer copy stays bounded.
     history[f.alertId] = arr.length > 20 ? arr.slice(arr.length - 20) : arr
   }
-  return { ...state, history }
+  return { ...next, history }
+}
+
+/**
+ * Merge rank-preserving cast recency ("Mesmerization III" → ts). This is what makes the
+ * upgrade offers recompute on a CAST rather than on a timer — the module flushes a delta the
+ * moment a new rank is seen, so nothing here polls.
+ */
+function applyCastRecency(state: AlertsSnap, cast: SpellCastRecency[]): AlertsSnap {
+  const spellLastCast = { ...state.spellLastCast }
+  for (const c of cast) {
+    const prev = spellLastCast[c.spell]
+    if (prev === undefined || c.ts > prev) spellLastCast[c.spell] = c.ts
+  }
+  return { ...state, spellLastCast }
 }
 
 export interface AlertsStore {
@@ -41,6 +57,11 @@ export interface AlertsStore {
   prefs: AlertPrefs
   sortedPacks: SoundPack[]
   history: Record<string, AlertFireRecord[]>
+  /**
+   * Rank-preserving cast recency from the alerts module ("Mesmerization III" → ts). Drives
+   * the "recently cast" ordering in the suggestions surface and the upgrade offers.
+   */
+  spellLastCast: Record<string, number>
   /** Re-read defs + prefs + packs from main. */
   reload: () => Promise<void>
   /** Re-list packs after a registry install/uninstall. */
@@ -63,6 +84,7 @@ export function useAlertsStore(): AlertsStore {
   // Live recent-fires history from the alerts module (single source of truth).
   const snap = useModule<AlertsSnap, AlertsDelta>('alerts', applyAlertsDelta)
   const history = snap?.history ?? {}
+  const spellLastCast = snap?.spellLastCast ?? {}
 
   const reload = useCallback(async () => {
     const [a, p, ps] = await Promise.all([
@@ -139,6 +161,7 @@ export function useAlertsStore(): AlertsStore {
     prefs,
     sortedPacks,
     history,
+    spellLastCast,
     reload,
     refreshPacks,
     persistAlerts,

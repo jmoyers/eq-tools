@@ -17,8 +17,21 @@
 // suggestion has no `where`.
 
 import type { AlertDef, LogEventKind, SpellCatalogEntry } from '@shared/types'
+import { spellIdFragment, type SpellRank } from '@shared/spellLines'
 
 export type TemplateKind = 'wearsOff' | 'fade' | 'lands'
+
+/**
+ * RANK-AWARE templates (spell levelling intelligence). Everything above is rank-LESS by
+ * construction: the fade / wears-off / landing lines the parser matches drop the roman-numeral
+ * suffix, so an alert on them survives every rank change untouched. Two families keep the
+ * suffix, and those are the ones worth pinning to a rank — and the ones the upgrade offers
+ * exist for:
+ *   castRank   `You begin casting Mesmerization III.`      → castBegin { spell }
+ *   resistRank `<mob> resisted your Mesmerization III!`     → resist { caster:'you', spell }
+ * Both shapes were verified against the real log (359 and 136 occurrences for that one rank).
+ */
+export type RankTemplateKind = 'castRank' | 'resistRank'
 
 /** UI + authoring metadata for each template. */
 export const SUGGEST_TEMPLATES: Record<
@@ -61,10 +74,33 @@ export const SUGGEST_TEMPLATES: Record<
   }
 }
 
+/** UI metadata for the two rank-pinned templates. `chip` takes the rank display name. */
+export const RANK_TEMPLATES: Record<
+  RankTemplateKind,
+  { chip: (rank: string) => string; kind: LogEventKind; verb: string; sound: string }
+> = {
+  castRank: {
+    chip: (rank) => `When you cast ${rank}`,
+    kind: 'castBegin',
+    verb: 'cast',
+    // "Consider this my opening move."
+    sound: 'task-acknowledge-task-acknowledge-05'
+  },
+  resistRank: {
+    chip: (rank) => `When ${rank} is resisted`,
+    kind: 'resist',
+    verb: 'resisted',
+    // a dry error read — it was shrugged off.
+    sound: 'task-error-task-error-01'
+  }
+}
+
 /** A concrete suggestion: the template it came from + the exact AlertDef it authors. */
 export interface Suggestion {
-  template: TemplateKind | 'illusion'
+  template: TemplateKind | RankTemplateKind | 'illusion'
   def: AlertDef
+  /** the rank display name a rank-pinned suggestion targets (absent for rank-less ones). */
+  rank?: string
 }
 
 /**
@@ -97,12 +133,51 @@ function buildDef(entry: SpellCatalogEntry, template: TemplateKind): AlertDef {
   }
 }
 
-/** All suggestions the spell DB supports for this catalog entry (excludes the shared illusion one). */
-export function suggestionsFor(entry: SpellCatalogEntry): Suggestion[] {
+/**
+ * Build the AlertDef for one (rank, rank-template) pair. The trigger pins the DISPLAY name
+ * with its suffix, which is exactly what makes the def go stale on a level-up — and exactly
+ * what `detectRankUpgrades` (shared/spellLines.ts) looks for.
+ */
+function buildRankDef(entry: SpellCatalogEntry, rank: string, template: RankTemplateKind): AlertDef {
+  const t = RANK_TEMPLATES[template]
+  // resist carries a caster field: pin it to YOUR casts so a pet's or a bystander's resist of
+  // the same spell never fires the alert (the parser sets caster='you' for your own — Task #51).
+  const where: Record<string, string> =
+    template === 'resistRank' ? { caster: 'you', spell: rank } : { spell: rank }
+  return {
+    id: `suggest:${entry.key}:${template}:${spellIdFragment(rank)}`,
+    name: `${rank} ${t.verb}`,
+    enabled: true,
+    trigger: { type: 'event', kind: t.kind, where },
+    sound: { packId: DEFAULT_PACK_ID, soundId: t.sound },
+    cooldownMs: DEFAULT_COOLDOWN_MS,
+    note: `Suggested alert — ${template} for ${rank}.`
+  }
+}
+
+/**
+ * All suggestions the spell DB supports for this catalog entry (excludes the shared illusion
+ * one). When a `rank` is supplied — the MOST RECENTLY CAST rank of the entry's line, per the
+ * owner's ordering rule — the two rank-pinned templates are offered as well.
+ */
+export function suggestionsFor(entry: SpellCatalogEntry, rank?: SpellRank | null): Suggestion[] {
   const out: Suggestion[] = []
   if (entry.templates.wearsOff) out.push({ template: 'wearsOff', def: buildDef(entry, 'wearsOff') })
   if (entry.templates.fade) out.push({ template: 'fade', def: buildDef(entry, 'fade') })
   if (entry.templates.lands) out.push({ template: 'lands', def: buildDef(entry, 'lands') })
+  // Rank-pinned chips are offered only for a rank we have actually SEEN cast: a rank the log
+  // has never printed cannot be confirmed to exist for this character, and an alert on a
+  // spelling we guessed would sit there silently forever.
+  if (rank?.lastCastMs != null) {
+    out.push({ template: 'castRank', rank: rank.name, def: buildRankDef(entry, rank.name, 'castRank') })
+    if (entry.spellType === 'Detrimental') {
+      out.push({
+        template: 'resistRank',
+        rank: rank.name,
+        def: buildRankDef(entry, rank.name, 'resistRank')
+      })
+    }
+  }
   return out
 }
 

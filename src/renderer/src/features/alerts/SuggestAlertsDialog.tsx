@@ -26,11 +26,19 @@
 // the shared `suggest:illusion:fade`). An already-created suggestion renders as a checked,
 // disabled chip so re-opening the wizard shows what's done.
 
-import { type JSX, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  type JSX,
+  type RefObject,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState
+} from 'react'
 import {
   Box,
   Button,
-  Chip,
   Dialog,
   DialogContent,
   DialogTitle,
@@ -38,35 +46,19 @@ import {
   Snackbar,
   Stack,
   TextField,
-  Tooltip,
   Typography
 } from '@mui/material'
-import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import SearchIcon from '@mui/icons-material/Search'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import EditNoteIcon from '@mui/icons-material/EditNote'
 import type { AlertDef, SpellCatalog, SpellCatalogEntry } from '@shared/types'
-import {
-  SUGGEST_TEMPLATES,
-  illusionSuggestion,
-  suggestionsFor,
-  type Suggestion
-} from './suggestions'
+import type { AlertGroup } from '@shared/alertGroups'
+import { illusionSuggestion, type Suggestion } from './suggestions'
+import AlertGroupsPanel from './AlertGroupsPanel'
+import SpellRow, { TemplateChip, type RowContext } from './SpellSuggestionRow'
+import { useResolvedClasses, useSpellLines } from './lineIntel'
 
 const MAX_ROWS = 200
-
-/** Coarse relative-time label for the usage tooltip's "last seen" (Task #45 recency hint). */
-function relativeTime(ms: number): string {
-  const diff = Date.now() - ms
-  if (diff < 0) return 'just now'
-  const min = Math.round(diff / 60_000)
-  if (min < 1) return 'just now'
-  if (min < 60) return `${min}m ago`
-  const hr = Math.round(min / 60)
-  if (hr < 24) return `${hr}h ago`
-  const d = Math.round(hr / 24)
-  return `${d}d ago`
-}
 
 /** Title row: what this dialog is, how big the catalog is, and the manual escape hatch. */
 function SuggestHeader({
@@ -128,19 +120,21 @@ function SpellResults({
   existingIds,
   onCreate,
   query,
-  loaded
+  loaded,
+  ctx
 }: {
   entries: SpellCatalogEntry[]
   existingIds: Set<string>
   onCreate: (s: Suggestion) => void
   query: string
   loaded: boolean
+  ctx: RowContext
 }): JSX.Element {
   return (
     <Box sx={{ maxHeight: 420, overflow: 'auto' }}>
       <Stack spacing={0.75}>
         {entries.map((e) => (
-          <SpellRow key={e.key} entry={e} existingIds={existingIds} onCreate={onCreate} />
+          <SpellRow key={e.key} entry={e} existingIds={existingIds} onCreate={onCreate} ctx={ctx} />
         ))}
         {loaded && entries.length === 0 && (
           <Typography variant="body2" color="text.secondary" sx={{ p: 1 }}>
@@ -149,6 +143,37 @@ function SpellResults({
         )}
       </Stack>
     </Box>
+  )
+}
+
+/** The search-to-select box. Typing echoes here; filtering consumes a deferred copy. */
+function SearchBox({
+  inputRef,
+  query,
+  onQuery
+}: {
+  inputRef: RefObject<HTMLInputElement | null>
+  query: string
+  onQuery: (v: string) => void
+}): JSX.Element {
+  return (
+    <TextField
+      inputRef={inputRef}
+      size="small"
+      fullWidth
+      placeholder="Search spells, debuffs, buffs…"
+      value={query}
+      onChange={(e) => onQuery(e.target.value)}
+      slotProps={{
+        input: {
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon fontSize="small" />
+            </InputAdornment>
+          )
+        }
+      }}
+    />
   )
 }
 
@@ -184,7 +209,8 @@ export default function SuggestAlertsDialog({
   onClose,
   onCreate,
   onDelete,
-  onCreateManually
+  onCreateManually,
+  spellLastCast
 }: {
   open: boolean
   /** ids of alerts that already exist — for the checked/disabled state. */
@@ -196,6 +222,8 @@ export default function SuggestAlertsDialog({
   onDelete: (id: string) => Promise<void>
   /** The 'create manually' escape hatch (Task #54): close the picker + open the blank editor. */
   onCreateManually: () => void
+  /** rank-preserving cast recency from the alerts module — picks each row's target rank. */
+  spellLastCast: Record<string, number>
 }): JSX.Element {
   const [catalog, setCatalog] = useState<SpellCatalog | null>(null)
   const [query, setQuery] = useState('')
@@ -235,6 +263,17 @@ export default function SuggestAlertsDialog({
     [onCreate]
   )
 
+  // One click on a ready-made SET writes every alert it is missing (never re-writes one the
+  // user already has), then reports the set — the Undo affordance stays per-click, so it
+  // removes the set's first alert; the alert list is the full editor for the rest.
+  const createGroup = useCallback(
+    async (group: AlertGroup, defs: AlertDef[]) => {
+      for (const def of defs) await onCreate(def)
+      if (defs[0]) setSnack({ name: `${group.title} (${defs.length})`, id: defs[0].id })
+    },
+    [onCreate]
+  )
+
   const undo = useCallback(async () => {
     if (!snack) return
     await onDelete(snack.id)
@@ -242,28 +281,19 @@ export default function SuggestAlertsDialog({
   }, [snack, onDelete])
 
   const illusion = catalog?.hasIllusions ? illusionSuggestion() : null
+  const lines = useSpellLines(catalog, spellLastCast)
+  const resolved = useResolvedClasses()
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
       <SuggestHeader catalog={catalog} onCreateManually={onCreateManually} />
       <DialogContent>
         <Stack spacing={1.5}>
-          <TextField
-            inputRef={searchRef}
-            size="small"
-            fullWidth
-            placeholder="Search spells, debuffs, buffs…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon fontSize="small" />
-                  </InputAdornment>
-                )
-              }
-            }}
+          <SearchBox inputRef={searchRef} query={query} onQuery={setQuery} />
+
+          <AlertGroupsPanel
+            existingIds={existingIds}
+            onCreate={(g, defs) => void createGroup(g, defs)}
           />
 
           {illusion && (
@@ -279,117 +309,12 @@ export default function SuggestAlertsDialog({
             onCreate={(s) => void create(s)}
             query={query}
             loaded={catalog != null}
+            ctx={{ lines, resolved }}
           />
         </Stack>
       </DialogContent>
 
       <CreatedSnackbar snack={snack} onClose={() => setSnack(null)} onUndo={() => void undo()} />
     </Dialog>
-  )
-}
-
-/** A single spell row: name, buff/debuff + illusion chips, template chips, usage badge. */
-function SpellRow({
-  entry,
-  existingIds,
-  onCreate
-}: {
-  entry: SpellCatalogEntry
-  existingIds: Set<string>
-  onCreate: (s: Suggestion) => void
-}): JSX.Element {
-  const isDebuff = entry.spellType === 'Detrimental'
-  const suggestions = suggestionsFor(entry)
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1,
-        flexWrap: 'wrap',
-        px: 1,
-        py: 0.5,
-        borderRadius: 1,
-        '&:hover': { bgcolor: 'action.hover' }
-      }}
-    >
-      <Box sx={{ minWidth: 190, display: 'flex', alignItems: 'center', gap: 0.75 }}>
-        <Typography variant="body2" sx={{ fontWeight: 600 }} noWrap>
-          {entry.name}
-        </Typography>
-      </Box>
-      <Chip
-        size="small"
-        label={isDebuff ? 'debuff' : 'buff'}
-        color={isDebuff ? 'error' : 'success'}
-        variant="outlined"
-        sx={{ height: 20 }}
-      />
-      {entry.illusion && (
-        <Chip size="small" label="illusion" variant="outlined" sx={{ height: 20 }} />
-      )}
-      {entry.usageCount > 0 && (
-        <Tooltip
-          title={
-            entry.lastSeenMs
-              ? `Observed ${entry.usageCount}× · last seen ${relativeTime(entry.lastSeenMs)}`
-              : `Observed ${entry.usageCount}× in your log`
-          }
-        >
-          <Chip
-            size="small"
-            color="primary"
-            label={`used ${entry.usageCount}×`}
-            sx={{ height: 20 }}
-          />
-        </Tooltip>
-      )}
-      <Box sx={{ flexGrow: 1 }} />
-      <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
-        {suggestions.map((s) => (
-          <TemplateChip
-            key={s.def.id}
-            label={s.template === 'illusion' ? 'When your illusion fades' : SUGGEST_TEMPLATES[s.template].chip}
-            created={existingIds.has(s.def.id)}
-            onClick={() => onCreate(s)}
-          />
-        ))}
-      </Stack>
-    </Box>
-  )
-}
-
-/** A one-click template chip; renders checked + disabled once the alert exists. */
-function TemplateChip({
-  label,
-  created,
-  onClick
-}: {
-  label: string
-  created: boolean
-  onClick: () => void
-}): JSX.Element {
-  if (created) {
-    return (
-      <Chip
-        size="small"
-        icon={<CheckCircleIcon />}
-        color="success"
-        variant="filled"
-        label={label}
-        disabled
-        sx={{ height: 24 }}
-      />
-    )
-  }
-  return (
-    <Chip
-      size="small"
-      variant="outlined"
-      clickable
-      onClick={onClick}
-      label={label}
-      sx={{ height: 24 }}
-    />
   )
 }

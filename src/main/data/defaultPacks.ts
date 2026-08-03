@@ -22,6 +22,10 @@
 // muting an alert.
 
 import type { AlertDef, AlertSoundRef, RegistryPack } from '../../shared/types'
+// The curated one-click alert GROUPS live in shared/ (the renderer authors them and cannot
+// import from src/main). Their sound ids are pulled in here so provisionPacks verifies THEM
+// too after an install — a group that quietly resolves to a missing file is a mute alert.
+import { GROUP_SOUND_IDS } from '../../shared/alertGroups'
 
 /** The default pack's id (== registry name == install dir == manifest id). */
 export const DEFAULT_ALERT_PACK_ID = 'alan-rickman'
@@ -77,8 +81,13 @@ export const DEFAULT_ALERT_SOUNDS = {
   illusionFade: 'task-error-task-error-08'
 } as const
 
-/** Every sound id the shipped defaults depend on (verified after provisioning). */
-export const REQUIRED_SOUND_IDS: string[] = [...new Set(Object.values(DEFAULT_ALERT_SOUNDS))]
+/**
+ * Every sound id the shipped defaults depend on (verified after provisioning) — the seeded
+ * alerts' lines PLUS every line the curated alert groups (shared/alertGroups.ts) point at.
+ */
+export const REQUIRED_SOUND_IDS: string[] = [
+  ...new Set([...Object.values(DEFAULT_ALERT_SOUNDS), ...GROUP_SOUND_IDS])
+]
 
 /** The packs the app provisions on startup if missing (one, today). */
 export const DEFAULT_PACKS: RegistryPack[] = [DEFAULT_PACK]

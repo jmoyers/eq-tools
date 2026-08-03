@@ -6,6 +6,8 @@
 // text is UNCHANGED and every name here is still exported from `shared/types` (which
 // re-exports this module), so no importer moved and no import path changed.
 
+import type { ClassAbbr } from './classCombo'
+
 // ----- Buffs extension (Task #19) -----
 //
 // A log-mined buff-duration model. The player's own casts are tracked as a small
@@ -291,6 +293,21 @@ export interface SpellCatalogEntry {
    * frequency), tie-breaking on usageCount, then the never-used alphabetical tail.
    */
   lastSeenMs?: number | null
+  /**
+   * SPELL-LINE INTELLIGENCE. `key` is already the rank-folded line key, so a catalog row IS a
+   * line; these two fields make that explicit.
+   *
+   * `classLevels` — the DB's per-class entry level for the LINE ("Enchanter 16"). The wiki DB
+   * has no per-RANK rows at all (only 42 of 1,926 spells form a multi-rank family), so this is
+   * never a level for a specific rank and the UI must not present it as one.
+   *
+   * `rankNames` — every DISPLAY name in this line that the DB knows, ascending by rank
+   * ("Rune I" … "Rune V"). The LOG knows more ranks than the DB does (it casts
+   * "Mesmerization III" where the DB has only "Mesmerization"), so the renderer unions these
+   * with the ranks observed in AlertsSnap.spellLastCast — see shared/spellLines.ts.
+   */
+  classLevels?: { cls: ClassAbbr; level: number }[]
+  rankNames?: string[]
 }
 
 /** Reply of `spells:catalog`: the catalog + summary stats for the wizard header. */
