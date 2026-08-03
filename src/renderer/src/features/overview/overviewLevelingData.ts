@@ -28,11 +28,41 @@
 //
 // VOCABULARY: "levels of progress", never "xp" (the log states a percentage of the CURRENT
 // level's bar and nothing else). Silence is "idle", never "AFK" — see `idleRuleCaption`.
+//
+// THE PROJECTION (owner request: "predict next level timing at the same level of activity")
+//
+//   The log NEVER states where you are in the level bar. It states a percentage PER GAIN, and
+//   nothing else — no total, no remainder, no bar position. So the only way to know how far
+//   into the current bar you are is to add up every stated percentage SINCE THE LAST DING, and
+//   that sum is trustworthy only when nothing is missing from it. Four things can make it
+//   untrustworthy, and each one KILLS the estimate rather than degrading it (law 1: anything
+//   inferred is labeled, and a projection built on a guessed bar position is not labelable —
+//   it is just wrong):
+//
+//     • no ding has been observed at all ⇒ there is no anchor to sum from;
+//     • an at-cap line (no percentage stated) landed since the ding ⇒ a hole in the sum;
+//     • the retention floor has risen past the ding ⇒ dropped samples, a hole in the sum;
+//     • the last hour states no pace at all ⇒ nothing to project with.
+//
+//   With all four clear the estimate is `remaining fraction / the last hour's WALL rate`. WALL,
+//   not active: the user asked when they will level, and they will experience that in wall
+//   time, including the same proportion of medding and looting the last hour already contained.
+//   The ACTIVE rate gates it (that is the honest "were you actually playing" signal) but the
+//   WALL rate divides. The tooltip states both assumptions verbatim, and the `~` is real: this
+//   is a projection of one hour forward, never a countdown to a known instant.
+//
+// THE COMPARISON is the same discipline applied backwards: time-per-level for the last few
+// dings, read off `levelTs`/`levelValue` — which are UNCAPPED, so unlike everything else here
+// they cannot be clipped. It NEVER crosses a run boundary. EQ Legends gives one level to a
+// three-class loadout and swapping a class in drops the level with NO log line of any kind, so
+// the span across that drop covers time the log cannot account for. `progressionStats` splits
+// runs on exactly that rule (a value below the previous one opens a new run) and so does this.
 
 import type { ProgressionSnap } from '@shared/types'
-import type { RangeStats } from '@shared/progressionStats'
+import type { RangeStats, ZoneRangeRow } from '@shared/progressionStats'
 import { IDLE_GAP_MS, rangeStats } from '../../../../shared/progressionStats'
 import { NONE, activeIdleText, idleRuleCaption } from '../leveling/rangeStatsRows'
+import { fmtDelta, fmtDuration } from '../leveling/levelChartGeometry'
 import { formatKillRate, formatLevelRate } from '../../lib/formatRate'
 import { formatTime } from '../../lib/formatDate'
 
@@ -88,6 +118,210 @@ export function currentLevel(snap: ProgressionSnap): number | null {
   return n > 0 ? snap.levelValue[n - 1] : null
 }
 
+// ---------------------------------------------------------------------------------------
+// NEXT-LEVEL PROJECTION
+// ---------------------------------------------------------------------------------------
+
+const MS_PER_HOUR = 3_600_000
+
+/** Beyond this the estimate is stated as a horizon, not a duration — see `etaText`. */
+export const ETA_ABSURD_MS = 24 * MS_PER_HOUR
+
+/** WHY there is no estimate. Each one is a hole in the evidence, and each is shown on hover. */
+export type EtaBlocked = 'no-ding' | 'unstated' | 'clipped' | 'overfull' | 'no-pace'
+
+/**
+ * Either a projection or the reason there isn't one. A UNION rather than a bag of nullables so
+ * the renderer cannot read `ms` without having proven `blocked === null` first.
+ */
+export type LevelEta =
+  | { blocked: EtaBlocked }
+  | { blocked: null; ms: number; toLevel: number; progress: number }
+
+/**
+ * Σ stated level-bar percentage for the samples STRICTLY AFTER `dingTs`, plus how many samples
+ * in that span stated none.
+ *
+ * Strictly after, on purpose: EQ timestamps are whole seconds, so the experience line that
+ * pushed you over sits in the SAME second as "You have gained a level!". Counting it would
+ * credit the previous bar's last gain to the new bar. The carry-over it represents is not in
+ * the log either way, so the estimate is deliberately the conservative one.
+ *
+ * Walks backwards from the tail: the span since the last ding is small, and the columns are
+ * ascending, so this stops the moment it passes the anchor.
+ */
+function statedSinceDing(snap: ProgressionSnap, dingTs: number): { equiv: number; unstated: number } {
+  let equiv = 0
+  let unstated = 0
+  for (let i = snap.expTs.length - 1; i >= 0 && snap.expTs[i] > dingTs; i--) {
+    if ((snap.expFlag[i] & 1) !== 0) unstated++
+    else equiv += snap.expPct[i] / 100
+  }
+  return { equiv, unstated }
+}
+
+/**
+ * The next-level estimate, or the reason there is none. `hour` is window A's stats — the same
+ * object the headline rate came from, so the number on the card and the number the projection
+ * used can never diverge.
+ */
+export function levelEta(snap: ProgressionSnap, hour: RangeStats): LevelEta {
+  const n = snap.levelTs.length
+  if (n === 0) return { blocked: 'no-ding' }
+  const dingTs = snap.levelTs[n - 1]
+  // The retention floor rose past the anchor ⇒ samples between the ding and the floor are gone
+  // and the sum below would silently under-count. (`levelTs` itself is uncapped; `expTs` is not.)
+  if (snap.windowStart > 0 && dingTs < snap.windowStart) return { blocked: 'clipped' }
+  const { equiv, unstated } = statedSinceDing(snap, dingTs)
+  if (unstated > 0) return { blocked: 'unstated' }
+  // More than a full bar's worth stated with no ding to show for it: the model and the log
+  // disagree, and the honest answer to "where am I in the bar" is that we do not know.
+  if (equiv >= 1) return { blocked: 'overfull' }
+  // The ACTIVE rate is the gate (null ⇒ no active time, or at cap); the WALL rate divides.
+  if (hour.levelsPerHourActive == null) return { blocked: 'no-pace' }
+  const pace = hour.levelsPerHourWall
+  if (pace == null || pace <= 0) return { blocked: 'no-pace' }
+  return { blocked: null, ms: ((1 - equiv) / pace) * MS_PER_HOUR, toLevel: snap.levelValue[n - 1] + 1, progress: equiv }
+}
+
+/** '~2h 10m to level 44', or the horizon phrase past a day. Null when the estimate is blocked. */
+function etaText(eta: LevelEta): string | null {
+  if (eta.blocked !== null) return null
+  if (eta.ms > ETA_ABSURD_MS) return `>1 day to level ${eta.toLevel} at this pace`
+  return `~${fmtDuration(eta.ms)} to level ${eta.toLevel}`
+}
+
+/** The reason there is no estimate, in the log's own terms — one per `EtaBlocked`. */
+const ETA_BLOCKED_TITLE: Record<EtaBlocked, string> = {
+  'no-ding':
+    'No level-up has been recorded yet, so how far into this level you are is unknown — the game states a percentage per gain and never your position in the bar.',
+  unstated:
+    'Experience lines since your last level-up stated no percentage, so progress into this level cannot be added up — unknown, not zero.',
+  clipped:
+    'The retained record no longer reaches back to your last level-up, so progress into this level cannot be added up.',
+  overfull:
+    'The percentages stated since your last level-up already exceed a full level, so your position in the bar is unknown.',
+  'no-pace': 'The last hour states no levels of progress, so there is no pace to project forward.'
+}
+
+/** ALWAYS a sentence: the assumptions when there is an estimate, the reason when there is not. */
+function etaTitleText(eta: LevelEta): string {
+  if (eta.blocked !== null) return ETA_BLOCKED_TITLE[eta.blocked]
+  return (
+    `${Math.round(eta.progress * 100)}% of level ${eta.toLevel - 1} stated since your last level-up, ` +
+    `projected forward at the last hour's pace — same mobs, same activity, and the same share of idle ` +
+    'time that hour already contained. An estimate from stated percentages, never a countdown.'
+  )
+}
+
+// ---------------------------------------------------------------------------------------
+// LEVEL HISTORY COMPARISON
+// ---------------------------------------------------------------------------------------
+
+/** How many recent levels the history line prints and the median is taken over. */
+export const HISTORY_MAX = 5
+
+/** How far off the median counts as "the same pace" — ±20%, symmetric in ratio. */
+export const PACE_BAND = 0.2
+
+/** One completed level: how long it took to go `fromLevel` → `toLevel`. */
+export interface LevelSpan {
+  fromLevel: number
+  toLevel: number
+  ms: number
+}
+
+/**
+ * Time-per-level for the last `max` completed levels of the CURRENT run, oldest first.
+ *
+ * Walks backwards and STOPS at the first pair that does not rise. A drop is a loadout swap (the
+ * level of the class you swapped in, reported by nothing) and the span across it covers hours
+ * the log cannot attribute; a repeat is not a level gained at all. Neither is a time-per-level,
+ * and neither may be bridged to reach an older run.
+ */
+export function recentLevelSpans(snap: ProgressionSnap, max: number = HISTORY_MAX): LevelSpan[] {
+  const spans: LevelSpan[] = []
+  for (let i = snap.levelTs.length - 1; i > 0 && spans.length < max; i--) {
+    const fromLevel = snap.levelValue[i - 1]
+    const toLevel = snap.levelValue[i]
+    if (toLevel <= fromLevel) break
+    spans.push({ fromLevel, toLevel, ms: snap.levelTs[i] - snap.levelTs[i - 1] })
+  }
+  return spans.reverse()
+}
+
+/** Middle value; the mean of the two middles on an even count. `values` is left untouched. */
+function median(values: readonly number[]): number {
+  const s = [...values].sort((a, b) => a - b)
+  const mid = s.length >> 1
+  return s.length % 2 === 1 ? s[mid] : (s[mid - 1] + s[mid]) / 2
+}
+
+/** How the last hour compares to the median of the recent levels. */
+export type PaceVerdict = 'ahead' | 'even' | 'behind'
+
+const VERDICT_TEXT: Record<PaceVerdict, string> = {
+  ahead: 'ahead of your recent pace',
+  even: 'about your recent pace',
+  behind: 'behind your recent pace'
+}
+
+/** Wall ms per level at a wall levels/hour rate, or null when there is no usable rate. */
+function msPerLevel(levelsPerHourWall: number | null): number | null {
+  return levelsPerHourWall != null && levelsPerHourWall > 0 ? MS_PER_HOUR / levelsPerHourWall : null
+}
+
+/**
+ * The verdict, or null. Null under TWO samples on purpose: one level is a sample size of one
+ * and a single unlucky camp would print a confident-looking judgement of your whole night. The
+ * comparison is wall-time against wall-time — the recent levels include everything you did
+ * during them, so the last hour has to as well.
+ */
+export function paceVerdict(spans: readonly LevelSpan[], levelsPerHourWall: number | null): PaceVerdict | null {
+  if (spans.length < 2) return null
+  const now = msPerLevel(levelsPerHourWall)
+  if (now == null) return null
+  const med = median(spans.map((s) => s.ms))
+  if (med <= 0) return null
+  if (now < med * (1 - PACE_BAND)) return 'ahead'
+  if (now > med / (1 - PACE_BAND)) return 'behind'
+  return 'even'
+}
+
+/** 'lvl 41→42 13.9h · 42→43 1.0h'. Null when this run holds no completed level. */
+function historyText(spans: readonly LevelSpan[]): string | null {
+  if (spans.length === 0) return null
+  return `lvl ${spans.map((s) => `${s.fromLevel}→${s.toLevel} ${fmtDelta(s.ms)}`).join(' · ')}`
+}
+
+/** The history line's tooltip: what the verdict was measured against, and the swap rule. */
+function historyTitleText(spans: readonly LevelSpan[], levelsPerHourWall: number | null): string {
+  if (spans.length === 0) return ''
+  const med = fmtDuration(median(spans.map((s) => s.ms)))
+  const n = spans.length
+  const base =
+    `Median ${med} per level over your last ${n} level${n === 1 ? '' : 's'}, wall time. ` +
+    'Never across a class swap — a swap re-reports your level with no log line, so the time either side of one is not comparable.'
+  const now = msPerLevel(levelsPerHourWall)
+  return now == null ? base : `${base} The last hour projects ${fmtDuration(now)} per level.`
+}
+
+/**
+ * The zone the last hour actually paid best in. Free: `rangeStats` already broke window A down
+ * per zone, so this is a scan of a list that exists. Null unless the hour genuinely spans two
+ * or more NAMED zones that each state a rate — with one camp there is no comparison to draw,
+ * and the deep per-zone table lives one click away in the Leveling tab.
+ */
+function zoneCompareText(zones: readonly ZoneRangeRow[]): string | null {
+  // `rangeStats` names the pre-first-zone remainder 'unknown'; it is a placeholder, not a camp.
+  const named = zones.filter(
+    (z): z is ZoneRangeRow & { levelsPerHourActive: number } => z.zone !== 'unknown' && z.levelsPerHourActive != null
+  )
+  if (named.length < 2) return null
+  const best = named.reduce((m, z) => (z.levelsPerHourActive > m.levelsPerHourActive ? z : m))
+  return `best this hour: ${best.zone} at ${formatLevelRate(best.levelsPerHourActive)}`
+}
+
 /** True when the window gained experience but the log stated no percentage for ANY of it. */
 function atCap(stats: RangeStats): boolean {
   return stats.expSamples > 0 && stats.expSamples === stats.expUnstated
@@ -115,6 +349,19 @@ export interface OverviewLevelingState {
   /** Window B, already worded: 'in <zone>: X lvl/hr · Y kills/hr since 13:04'. Null when the
    *  snapshot holds no zone interval. */
   zoneLine: string | null
+  /** 'best this hour: <zone> at X lvl/hr'. Null unless window A spans 2+ rated zones. */
+  zoneCompare: string | null
+  /** '~2h 10m to level 44' / '>1 day to level 44 at this pace'. Null when no honest estimate
+   *  exists — the card still shows an em-dash and `etaTitle` says which hole caused it. */
+  eta: string | null
+  /** ALWAYS a sentence: every assumption behind the estimate, or the reason there is none. */
+  etaTitle: string
+  /** 'lvl 41→42 13.9h · 42→43 1.0h' for the current run. Null when it holds no full level. */
+  history: string | null
+  /** 'ahead of your recent pace' / 'about' / 'behind'. Null under two recent levels. */
+  verdict: string | null
+  /** The history line's tooltip. '' when there is no history line to hang it on. */
+  historyTitle: string
   /** Latest reported level, or null (chip omitted). */
   level: number | null
   /** The idle rule, literally — a tooltip/caption on the number it explains, never a caption
@@ -134,6 +381,12 @@ function emptyState(): OverviewLevelingState {
     atCap: false,
     clipped: false,
     zoneLine: null,
+    zoneCompare: null,
+    eta: null,
+    etaTitle: ETA_BLOCKED_TITLE['no-ding'],
+    history: null,
+    verdict: null,
+    historyTitle: '',
     level: null,
     idleCaption: idleRuleCaption(IDLE_GAP_MS),
     kills: 0
@@ -149,14 +402,19 @@ function zoneLineText(stats: RangeStats, zone: string): string {
 }
 
 /**
- * The whole card, from the snapshot. TWO `rangeStats` calls and nothing else — memoize this on
- * snapshot identity and the card is free to re-render as often as the module pushes.
+ * The whole card, from the snapshot. STILL two `rangeStats` calls and nothing else — the
+ * projection reuses window A's own stats object and the comparison reads the uncapped level
+ * columns directly, so neither added a sweep. Memoize this on snapshot identity and the card is
+ * free to re-render as often as the module pushes.
  */
 export function overviewLeveling(snap: ProgressionSnap): OverviewLevelingState {
   const { hour, zone } = levelingWindows(snap)
   if (!hour) return emptyState()
   const a = rangeStats({ snap, range: hour })
   const b = zone ? rangeStats({ snap, range: zone }) : null
+  const eta = levelEta(snap, a)
+  const spans = recentLevelSpans(snap)
+  const verdict = paceVerdict(spans, a.levelsPerHourWall)
   return {
     empty: false,
     rate: rate(a.levelsPerHourActive, formatLevelRate),
@@ -165,6 +423,12 @@ export function overviewLeveling(snap: ProgressionSnap): OverviewLevelingState {
     atCap: atCap(a),
     clipped: a.clipped,
     zoneLine: b && zone ? zoneLineText(b, zone.zone) : null,
+    zoneCompare: zoneCompareText(a.zones),
+    eta: etaText(eta),
+    etaTitle: etaTitleText(eta),
+    history: historyText(spans),
+    verdict: verdict && VERDICT_TEXT[verdict],
+    historyTitle: historyTitleText(spans, a.levelsPerHourWall),
     level: currentLevel(snap),
     idleCaption: idleRuleCaption(a.idleThresholdMs),
     kills: a.kills

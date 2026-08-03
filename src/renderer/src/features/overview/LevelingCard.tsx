@@ -19,6 +19,17 @@
 // arithmetic of its own, which is what keeps those rules testable.
 //
 // The words are the feature's words: "levels of progress", never xp; "idle", never AFK.
+//
+// THE PROJECTION LINE IS ALWAYS THERE, and it is an em-dash when it has to be. "~2h 10m to
+// level 44" is the answer this card was asked for, so its absence must be visible and
+// explainable rather than a line that quietly does not render: the game states a percentage per
+// experience gain and never your position in the bar, so without an observed level-up — or with
+// an at-cap line anywhere since one — how far into the bar you are is genuinely unknown. Both
+// the estimate and the refusal carry the same tooltip slot, and it always says why.
+//
+// The `~` is not decoration. This projects ONE hour of your play forward and assumes it repeats:
+// same mobs, same camp, same share of medding. It is not a countdown to a known instant, and
+// past a day it stops pretending to minutes and says '>1 day at this pace'.
 
 import type { JSX } from 'react'
 import { Button, Chip, Stack, Tooltip, Typography } from '@mui/material'
@@ -76,6 +87,45 @@ function LevelingChips({ state }: { state: OverviewLevelingState }): JSX.Element
   )
 }
 
+/** What the estimate line reads when the evidence cannot support one. The tooltip says which
+ *  hole caused it — an em-dash is a real answer here, exactly as it is for the rate above. */
+const NO_ETA = '— no next-level estimate'
+
+/**
+ * The projection and the levels behind it: "~2h 10m to level 44", then "lvl 41→42 13.9h ·
+ * 42→43 1.0h · ahead of your recent pace". The history line is omitted entirely when this run
+ * holds no completed level — there is nothing to compare against and a placeholder would only
+ * claim otherwise.
+ */
+function LevelingProjection({ state }: { state: OverviewLevelingState }): JSX.Element {
+  return (
+    <>
+      <Tooltip title={state.etaTitle}>
+        <Typography
+          variant="body2"
+          color={state.eta ? 'text.primary' : 'text.secondary'}
+          data-testid="overview-leveling-eta"
+          sx={{ mt: 0.5, minWidth: 0 }}
+        >
+          {state.eta ?? NO_ETA}
+        </Typography>
+      </Tooltip>
+      {state.history && (
+        <Tooltip title={state.historyTitle}>
+          <Typography
+            variant="caption"
+            color="text.secondary"
+            data-testid="overview-leveling-history"
+            sx={{ minWidth: 0 }}
+          >
+            {state.verdict ? `${state.history} · ${state.verdict}` : state.history}
+          </Typography>
+        </Tooltip>
+      )}
+    </>
+  )
+}
+
 export function LevelingCard({ state, onOpenLeveling }: LevelingCardProps): JSX.Element {
   // The link down is offered even with nothing to show, for the same reason the DPS card offers
   // it: the one affordance this card exists for must not be the least reliable thing on it.
@@ -96,6 +146,7 @@ export function LevelingCard({ state, onOpenLeveling }: LevelingCardProps): JSX.
               {state.killRate} · {state.activity}
             </Typography>
           </Tooltip>
+          <LevelingProjection state={state} />
           {state.zoneLine && (
             <Typography
               variant="caption"
@@ -106,6 +157,18 @@ export function LevelingCard({ state, onOpenLeveling }: LevelingCardProps): JSX.
               sx={{ mt: 0.5, minWidth: 0 }}
             >
               {state.zoneLine}
+            </Typography>
+          )}
+          {state.zoneCompare && (
+            <Typography
+              variant="caption"
+              color="text.secondary"
+              data-testid="overview-leveling-zone-compare"
+              title={state.zoneCompare}
+              noWrap
+              sx={{ minWidth: 0 }}
+            >
+              {state.zoneCompare}
             </Typography>
           )}
         </>
