@@ -1,0 +1,3259 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ The Necromancer belongs to the dark brotherhood of the arcane arts, dabbling in death.<br> Through evil spells, he can animate dead bodies and skeletons to do his bidding, as well as cast spells to leach life from his victims.
+ - EverQuest manual
+
+=Description=
+[[File:C necromancer.gif|right]]
+'''Necromancers''' are masters of life and death, utilizing fire, magic, poison, and disease based spells to overwhelm their foes and assist their allies. Their choice to descend into necromancy has alienated them from most old-world civilizations, being killed on sight by most guards and shunned by many merchants. As such, the Necromancer is very independent; few support classes are able to offer anything that the Necromancer does not already have, and items and gear do not carry the same importance as they do for other classes.
+
+The Necromancer's power comes from a deep understanding of the powers of life and death which grant them a number of abilities, including the ability to mesmerize, snare, and fear their enemies, to transfer mana and health to their allies, and lastly, to assert their dominance over the undead with a number of efficient direct damage, charm, root, and lull spells. The Necromancer is classified as anti-natural and has some unique spells to attack animals and plant based mobs.
+
+Some highlights of the Necromancer include their powerful pets, the most efficient Damage over Time (DoT) spells of any class, along with their snare, fear, and root powers, Necromancers are very powerful soloers.  Their ability to charm an even more powerful undead pet at higher levels gives them yet another strong soloing option. Plus, they can combine their Fear and Feign Death powers to "split" individual mobs away from the group ... and of course, Feign Death itself provides a way to survive, even without a group, when things go wrong. Although these spells are slower, doing damage only once every 6 second "tick" for a period of time, they use up far less mana than faster "nukes."  DoT spells are significantly more mana efficient than DD (Direct Damage) spells.
+
+Necromancers also have access to one of the most powerful mana regenerating abilities in the game: the "Lich" line of spells. These grant a buff that slowly drains their HP (hit points), but in exchange it provides significantly faster mana regeneration, allowing for even more efficient soloing (while also being useful in other circumstances, as well). The line begins with [[Dark Pact]], and when it reaches [[Call of Bones]] the Necromancer's skin melts away, turning them into a skeleton.
+
+In groups, and especially on raids, Necromancers bring unique utility to the party such as twitching.
+
+== Class Highlights ==
+<ul>
+<li type=disc>'''DoTs and Feign Death:''' Not only can Necromancers deliver incredible damage by stacking various DoTs, they can do so without fear of taking aggro from the rest of the group through the use of Feign Death. However, if a group is killing too quickly, DoTs become an inefficient damage source. The Necromancers can switch to DD spells or utility which are both valuable.
+<ul>
+
+<li type=disc>'''Spells That Avoid Resists:''' Another unique attribute of some Necromancer DoT spells is that their Lifetap and Blood Boil spell lines have resistance modifiers that help them land even on highly resistant enemies.
+</ul>
+
+<li type=disc>'''Pulling/Splitting Mobs:''' While Necromancers are capable pullers, they rarely pull for groups or raids, both because of the long recast time on [[Feign Death]], and because of their inferior cloth armor (Bards, Shadow Knights, Monks, etc. can all pull while taking far more hits). As a result, Necromancers tend to use their splitting abilities far more to separate mobs when soloing.
+
+<li type=disc>'''Undead Specific Powers:''' Necromancers also utilize abilities to root, nuke, lull, and charm the undead. Although limited to undead targets, these spells are more mana efficient and harder to resist than their non-undead focused alternatives, which allow a Necromancer to solo even more efficiently when facing undead.  Also, when raiding, Necromancers can use charm on certain undead enemies to get a pet that deals far greater damage (although, due to level limits, not every undead mob can be charmed).
+
+<li type=disc>'''Pets:''' Necromancers a "primary pet class" and receive solid, summonable pets throughout their career. While Necromancer summons are as diverse as Mage summons, they remain solidly good. In addition, Necromancers can charm undead for very strong pets at high level. 
+
+Keep your melee gear around and keep the pet page well equipped.
+
+<li type=disc>'''Mana Sharing:''' Necromancers also have access to a line of spells commonly known as "twitch" spells (because in-game the Necromancer twitches when casting them, such as [[Rapacious Subversion]]). 
+ These spells are cast to give mana to another player, in essence transferring the Necromancer's mana to that player. In groups this can be handy in a pinch, and on raids Necromancers often become "mana batteries" for Clerics or other classes who need it (leaving the damage dealing to other classes since DoTs are inefficient on raids with many targets).
+
+<li type=disc>'''Mastery Over Death:''' Even at low levels a Necromancer can easily find any player's corpse, including their own.  At high levels a Necromancer can sacrifice other players, effectively "stealing their experience" and storing it in a gem.  By using these gems Necromancers can resurrect the dead, although this power is far more limited than that of [[Paladin]]s or [[Cleric]]s.  Because of their feign death powers, Necromancers can sometimes "save raids" by feigning death after the rest of the raid dies, and then using this ability to resurrect a [[Cleric]]. 
+
+<li type=disc>'''Independence:''' Necromancers are one of the most independent of all classes, being designed with a number of self-only spells that certain other casters can cast on others (eg. self-only invisibility and self-only evacuation), making it a prime choice for those that plan to solo the majority of their careers.  However, because of the wide variety of abilities (many not gained until higher levels), a Necromancer must constantly learn new ways to play their class.
+
+<li type=disc>'''Not Just Soloers:''' Despite being great soloers, Necromancers are also valuable in groups, and make excellent additions to raiding guilds.  They provide excellent DPS over long fights, can both heal and provide mana to others who need it (notably healers), and on occasion they can even ensure the recovery of a wiped raid.
+</ul>
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Necromancer || Heretic || Defiler || Warlock
+|}
+
+= Creation Guide =
+
+== Picking the right race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+| Race || Str || Sta || Agi || Dex || Wis || Int || Cha || Racial Traits
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60 || Dark Elvish (100), Dark Speech (100), Elder Elvish (44), Elvish (44), Hide (50)
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70 || Erudian (100)
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50 || Froglok (100), Swimming (125), Troll (32)
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60 || Dwarvish (44), Gnomish (100), Tinkering (50), Small
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75 ||
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55 || Dark Speech (100), Forage (50), Lizardman (100), Swimming (100), Innate Regen (see below)
+|-
+| style="text-align: left"| '''[[Necromancer]] Adds''' ||  ||  ||  || 15 ||  || 15 || ||
+|}
+
+Regeneration Rates
+
+All races have an innate HP regeneration, however Iksar and Trolls have an increased amount.  The table below is verified up to level 50.  Once higher levels are released we will need to verify this is still accurate.
+
+{| class="eoTable3 sortable" style="width: 0%;"
+|-
+!Level Range !! All other races !! Iksar/Troll
+|-
+!1 to 19 !! 2 !! 4
+|-
+!20 to 49 !! 3 !! 6
+|-
+!50 !! 4 !! 8
+|-
+!51 to 55 !! 5 !! 12
+|-
+!56 to 59 !! 6 !! 16
+|-
+!60 !! 7 !! 18
+|-
+|}
+
+== Impact from stats ==
+
+Necromancers are amazing in that they are pretty good even with low stats. A lot of their power is hard coded into their spells. The need for huge mana pools is less important for Necromancers than for Wizards, Mages or Clerics who do not have this advantage. After reading, you can decide for yourself, and unlike some classes, even dumping all your points into a poor stat will not break your Necromancer, as they are very self-sufficient.
+
+* '''Strength'''     - Main benefit is carrying more weight. Weight reduction bags solve this problem and no points are recommended to be spent here.
+* '''Stamina'''      - Affects your maximum [[Game_Mechanics#Hitpoint_Calculation|hit points]]. Necromancers get 2 hitpoints per point of Stamina at 50 and 2.4 at 60. Stamina is beneficial for Necromancers because they frequently go up and down in health in combat even if they are not being hit due to Lich and lifetaps.
+* '''Dexterity'''    - The rate of raising weapon skills and weapon procs (effects) going off. Necromancers are not a melee class, and beyond around level 8 you will almost entirely give it up.
+* '''Agility'''      - Agility adds to your avoidance. There is a movement penalty below 75 AGI, so you will want to put 5 points in this if you plan to roll an Erudite.
+* '''Wisdom'''       - Affects the learning of general and craft skills if higher than Intelligence, but does not improve necromancer spell casting.
+* '''Intelligence''' - The main caster stat for Necromancers. Adds to your maximum mana; at 60, it adds about 11 mana per point of INT, up to the soft cap of 200 INT, after which it adds 5. Intelligence affects the speed at which you learn spell skills, craft skills and general skills. This is a great stat, both for power and for convenience. Your skills will raise faster and you can cast more spells before having to meditate. Necromancers have incredibly fast mana regen, but more maximum mana will benefit you.
+* '''Charisma'''     - Will affect resists on undead only lulls beginning with Numb the Dead. Also affects vendor prices. It does not affect other parts of the necromancer kit.
+
+====Health vs. Mana====
+Due to the mechanics of Lich, passively reducing the Necromancer's health every tick in exchange for a boost in mana per tick, Necromancers have, in effect, two pools of mana; the mana they directly draw from spells, and their health pool acting as a mana battery, constantly being drained to provide more mana for the Necromancer's use. So how much health and how much mana should you have?
+
+We should begin by understanding that each of these have a certain advantage. A sizeable mana pool means that when you are coming out of an extended rest (meaning that you will be at full mana and health), you will be able to cast more spells in a small period of time. A sizable health pool means that while you are fighting and engaged in combat, the negative effects of Lich will not be as pressing, and you will have more wiggle room in which to use Lifetaps to restore your health.
+
+A great deal of this comes down to personal taste and your own playstyle. Following is a series of considerations that one should keep in mind when finding their "sweet spot" for a mana/health ratio. Just remember that both health and mana are effectively power to fuel your spells, but that each of them works differently: Mana is a readily available, immediately exploitable resource to cast your spells, while Health is not immediately available, but makes your life much easier and safer.
+
+===== Tips and Notes =====
+
+Obviously, when your HP is full (or very close) you want to focus on gaining Mana; Lifetapping would be wasteful. The same is true in reverse: Lich is wasteful when your Mana is full.
+
+When neither is full, your priorities should depend on two things: your "squishiness" (relative to the mob), and your pace.  If you are facing tougher foes (ie., feeling squishy) you'll want to keep your HP higher, as mana won't help if the mob gets some lucky hits in and kills you. At the same time, you'll also want to take into account whether you are facing a steady stream of individual mobs, or bursts of several. If you can't rely on having enough time for your Lich spell to provide more mana in-between fights, you may want to focus on keeping your mana higher in-between fights.
+
+However, all of this boils down to one simple goal. Never be full health, never be full mana.
+
+Regarding Charisma, it should be noted that your lull spells (such as [[Numb the Dead]] and [[Rest the Dead]]) use [[Statistics#Charisma_.28CHA.29|Charisma]] as part of their formulas, but most would agree it is not worth gearing for. This does not mean that it is worthless to do so, but it is worth considering if you are running into problems using these spells.
+
+As an aside; some may claim that the Necromancer's [[Screaming Terror]] Mesmerize or Charm spell lines are affected by Charisma. 
+
+== Religion ==
+
+Religion is not a huge concern to Necromancers as they are already hated.  As a necromancer primary your core choices will be Cazic-Thule, Innoruuk, or Bertoxxulous. If you take necromancer as a secondary class, your deity is instead restricted by your primary class choice. This allows you to get around some of the faction hits of being a necromancer, but be careful that you don't end up reverse KoS to necromancer trainers and spell vendors (see: any paladin)!
+
+Your race determines which deity you can pick; humans can notably choose between Innoruuk and Bertoxxulous, which allows you to start in Freeport or Qeynos respectively as a necromancer primary.
+
+*[[Deity_Specific_Items#Bertoxxulous|Bertoxxulous items]]
+*[[Deity_Specific_Items#Deity_Specific_Items#Cazic-Thule|Cazic-Thule items]]
+*[[Deity_Specific_Items#Innoruuk|Innoruuk items]]
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery Invocation
+| {{#section:Stances & Invocations|ArcaneMastery}}
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|}
+
+= Spells =
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|[[Clockwork Merchant (NG-2)]]
+|Necromancer Guild
+|(2096,-408)
+|-
+|[[East Freeport|'''East Freeport''']]
+|[[Mika Fugas]]
+|Necromancer Guild (Underground)
+|(-196,-264)
+|-
+|[[Neriak Third Gate|'''Neriak Third Gate''']]
+|[[Vissa D'Dbth]]
+|Necromancer Guild
+|(1319,-1236)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Heretic Mkoriku]]
+|Full Caster Spell Vendor Room
+|(143, -219)
+|-
+|'''[[Paineel]]'''
+|[[Danus Kelmun]]
+|Necromancer Guild
+|(692,856)
+|-
+|[[Qeynos Aqueducts|'''Qeynos Aqueducts''']]
+|[[Pakeg Aspet]]
+|Necromancer Guild
+|(310,-321)
+|-
+|[[Rathe Mountains|'''Rathe Mountains''']]
+|[[Scribe Noglleg]]
+|Evil Froglok Shrine
+|(-2053, 1933)
+|}
+
+For a comparison of the efficiency of spells by level see: [[Necromancer Spell Lines]] and [[Necromancer efficiency]].
+
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cavorting Bones
+|description=Skeleton Warrior, Level 1.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=15
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Coldlight
+|description=Summon an item that gives off light
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=15
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10291
+}}
+{{RadSpellRow2
+|name=Disease Cloud
+|description=Deals 5 direct damage + 1 damage per tick for 6 minutes damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=DoT
+|targ=Single
+|duration=6 Min
+|max=-5 Dmg<br>-1 HP/tick
+}}
+{{RadSpellRow2
+|name=Invisibility versus Undead
+|description=Single Target Invisibility versus Undead
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Lifetap
+|description=Drains 4 to 6 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=8
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=4-6 Dmg
+}}
+{{RadSpellRow2
+|name=Minor Shielding
+|description=Grants the caster +5 to +10 HP & +10 to +15 AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 Max HP<br>+3 AC
+}}
+{{RadSpellRow2
+|name=Reclaim Energy
+|description=Sacrifice your summoned pet for mana based on the pet's health
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=5
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Sense the Dead
+|description=Detects nearby undead
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Siphon Strength
+|description=Drain 5 to 10 STR from target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=5
+|kind=Taps
+|targ=Single
+|duration=6 Min
+|max=-10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fear
+|description=Single Target Fear for 3 ticks
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Numb the Dead
+|description=Lulls undead to reduce aggression.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Detrimental
+|targ=Undead
+|duration=2 Min
+|max=Calm (max L30)
+}}
+{{RadSpellRow2
+|name=True North
+|description=Turns caster to face North.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Cold
+|description=Increase cold resistance by 10 to 20.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+{{RadSpellRow2
+|name=Grim Aura
+|description=Increase caster's attack by 5 to 10.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 ATK
+}}
+{{RadSpellRow2
+|name=Lifespike
+|description=Drains 9 to 11 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=13
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=8-12 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Clinging Darkness
+|description=Deals 5 damage per tick for 2 to 8 ticks damage over time. Reduces movement speed by 24% to 30%.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=20
+|kind=DoT
+|targ=Single
+|duration=48 Sec
+|max=-8 HP/tick<br>Snare
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Teleport to your bind point
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Travel
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Leering Corpse
+|description=Skeleton Warrior, Level 3-5.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=40
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Poison Bolt
+|description=Deals 6 direct damage + 5 per tick for 2 to 7 ticks damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=18
+|kind=DoT
+|targ=Single
+|duration=24 Sec
+|max=-6 Dmg<br>-10 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Deadeye
+|description=See Invisibility and Infravision.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=35
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=
+}}
+{{RadSpellRow2
+|name=Shadow Step
+|description=Short range, random direction teleportation.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dark Empathy
+|description=Caster loses 30 health, and target gains 30 health.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Heal
+|targ=Single
+|duration=Instant
+|max=30 HP
+}}
+{{RadSpellRow2
+|name=Dark Pact
+|description=Lich. The caster loses 2 health per tick, and restores 2 mana per tick.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+2 Mana<br>-3 HP/tick
+}}
+{{RadSpellRow2
+|name=Ward Undead
+|description=Deals 35 to 41 damage to an undead target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=5
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=7-12 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Gather Shadows
+|description=Invisibility.
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=35
+|kind=Utility
+|targ=Self
+|duration=20 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Mend Bones
+|description=Heals the caster's pet for 33 to 50 HP.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=15
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=22-32 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+{{RadSpellRow2
+|name=Vampiric Embrace
+|description=Caster's melee attacks gain a chance to proc a lifetap.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=Procs: Vampiric Embrace
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bone Walk
+|description=Skeleton Warrior, Level 6-9.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=80
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Cancelling of Life
+|description=Covers your target in a shroud of anti-life, decreasing their ability to be healed by 20%, and does 11 damage every 6 seconds for 1 min damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=60
+|kind=DoT
+|targ=Single
+|duration=1 Min
+|max=-11 HP/tick
+}}
+{{RadSpellRow2
+|name=Impart Strength
+|description=Caster loses 10 STR, and target gains 10 STR for 6 minutes.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=15
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=6 Min
+|max=+10 STR
+}}
+{{RadSpellRow2
+|name=Lesser Shielding
+|description=Grants the caster +20 to +30 HP, and +6 to +9 AC.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Max HP<br>+7 AC<br>+10 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Leech
+|description=Drains the life from your target, doing 8 damage every six seconds for 54s. 1000% of the life-force taken is used to heal your wounds.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=72
+|kind=Taps
+|targ=Single
+|duration=54 Sec
+|max=-8 HP/tick
+}}
+{{RadSpellRow2
+|name=Sight Graft
+|description=Makes the caster view through the eyes of their summoned minion.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Pet
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Wave of Enfeeblement
+|description=Decreases STR of targets in range by 11 to 15 for 12 to 20 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=PB AE
+|duration=4 Min
+|max=-15 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Heat Blood
+|description=Deals 17 per tick for 6 to 10 ticks damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=88
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-43 HP/tick
+}}
+{{RadSpellRow2
+|name=Scent of Dusk
+|description=Decreases fire, poison and disease resist by 7 to 9.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-9 Fire Resist<br>-9 Poison Resist<br>-9 Disease Resist
+}}
+{{RadSpellRow2
+|name=Spook the Dead
+|description=Single target Fear for 1 to 3 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Detrimental
+|targ=Undead
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Increases the target's disease resistance by 19 to 20.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+{{RadSpellRow2
+|name=Engulfing Darkness
+|description=Deals 11 damage per tick for 10 ticks damage over time. Snares movement speed by 40%.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=60
+|kind=DoT
+|targ=Single
+|duration=1 Min
+|max=-11 HP/tick<br>Snare
+}}
+{{RadSpellRow2
+|name=Focus Death
+|description=Intensifies the power of your undead servant, increasing their strength, armor class, and attack speed.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=35
+|kind=Pet Buff
+|targ=Pet
+|duration=60 Min
+|max=+20 STR<br>+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Sets the caster's bind point to most locations, or the target's bind point in cities.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Convoke Shadow
+|description=Skeleton Warrior, Level 8-11.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Lifedraw
+|description=Drains 39 to 45 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=86
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=102-105 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cures a disease, removing 1 disease counter from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Heart Flutter
+|description=Deals 12 damage per tick for 8 to 12 ticks damage over time, also debuffs AC and Str
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=41
+|kind=DoT / Debuff
+|targ=Single
+|duration=36 Sec
+|max=-20 STR<br>-7 AC<br>-24 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shieldskin
+|description=Absorbs 27 to 55 damage. Consumes a [[Cat's Eye Agate]].
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=41
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Banshee Aura
+|description=Shield on the caster that deals 9 to 12 damage to attackers.  Requires a [[Pearl]]
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=
+}}
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Dispels magic effects from the target.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Infectious Cloud
+|description=Deals 20 direct damage + 5 damage per tick for 21 ticks damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=78
+|kind=DoT
+|targ=Targeted AE
+|duration=2 Min 6 Sec
+|max=-5 HP/tick<br>-20 Dmg
+}}
+{{RadSpellRow2
+|name=Voice Graft
+|description=Allows the caster to speak through their summoned minion.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Pet
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Feign Death
+|description=The caster appears dead to enemies, removing the necromancer from the enemy's hate list.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=60
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=+87 Invul
+}}
+{{RadSpellRow2
+|name=Form of Chilled Bone
+|description=Bestows upon your pet the form of a chilled skeleton. This effect lasts for 120 min.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=70
+|kind=Pet
+|targ=Pet
+|duration=120 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Hungry Earth
+|description=Roots target undead to the ground, dealing between 26 and 75 damage, and lasts 8 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Undead
+|duration=48 Sec
+|max=-26--60 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Restless Bones
+|description=Skeleton Warrior, Level 14-16.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=160
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shielding
+|description=Grants the caster +46 to +50 HP, +12 to +13 AC, and +13 Magic Resist.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+50 Max HP<br>+11 AC<br>+12 Magic Resist
+}}
+{{RadSpellRow2
+|name=Spirit Armor
+|description=Increases the target's armor by 11 to 13.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+11 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shackle of Bone
+|description=Surrounds an undead target in a shackle of bone, slowing their attack speed.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=80
+|kind=Detrimental
+|targ=Undead
+|duration=2 Min 30 Sec
+|max=-35% Atkspd
+}}
+{{RadSpellRow2
+|name=Shadow Compact
+|description=The caster loses 20 health per tick, and the target is healed for 20 damage per tick for 4 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Heal
+|targ=Single
+|duration=24 Sec
+|max=+20 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Allure of Death
+|description=Lich. The caster loses 5 health per tick, and restores 4 mana per tick.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+4 Mana<br>-6 HP/tick
+}}
+{{RadSpellRow2
+|name=Dominate Undead
+|description=Charms target undead creature to act as the caster's minion for 7 to 20 minutes. Breaks randomly.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Undead
+|duration=16 Min
+|max=Charm (max L32)
+}}
+{{RadSpellRow2
+|name=Negation of Life
+|description=Covers your target in a shroud of anti-life, decreasing their ability to be healed by 30%, and does 20 damage every 6 seconds for 1 min 30s damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=120
+|kind=DoT
+|targ=Single
+|duration=1 Min 30 Sec
+|max=-20 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expulse Undead
+|description=Deals 88 to 94 damage to an undead target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=36
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=99-106 Dmg
+}}
+{{RadSpellRow2
+|name=Shadow Vortex
+|description=Drains 9 to 12 AC from the target and gives it to the caster.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=Single
+|duration=6 Min
+|max=-10 AC
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrinks your pet, allowing it better mobility in tight quarters.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Animate Dead
+|description=Skeleton Warrior, Level 15-19. Dual Wield (19+)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Harmshield
+|description=Grants the caster immunity to damage for 18 seconds. Cannot attack or cast spells while immune.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=85
+|kind=Utility
+|targ=Self
+|duration=18 Sec
+|max=-20 Dmg
+}}
+{{RadSpellRow2
+|name=Siphon Life
+|description=Drains 65 to 75 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=115
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=140-150 Dmg
+}}
+{{RadSpellRow2
+|name=Word of Shadow
+|description=Deals 52 to 58 damage to all targets around the caster.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=85
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=52-58 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Breath of the Dead
+|description=Allows the caster to breathe underwater.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=
+}}
+{{RadSpellRow2
+|name=Rapacious Subvention
+|description=Twitch. Restores targets mana by 60 at the cost of 200 mana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Heal
+|targ=Single
+|duration=Instant
+|max=+60 Mana
+}}
+{{RadSpellRow2
+|name=Scent of Shadow
+|description=Decreases fire, poison and disease resist by 14 to 18.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-18 Fire Resist<br>-18 Poison Resist<br>-18 Disease Resist
+}}
+{{RadSpellRow2
+|name=Shock of Poison
+|description=Deals 146 to 160 damage to the target.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=99
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=171-200 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Leatherskin
+|description=Absorbs 71 to 118 damage. Consumes a [[bloodstone]].
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=83
+|kind=Utility
+|targ=Self
+|duration=54 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Screaming Terror
+|description=Mesmerizes the target with a chance to memory blur, for 3 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Shadow Sight
+|description=The caster gains ultravision.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Intensify Death
+|description=Increases the caster's minion's attack speed by 22% to 30%, STR by 26 to 33, and AC by 6 to 8.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Pet Buff
+|targ=Pet
+|duration=60 Min
+|max=+32 STR<br>+30% Atkspd<br>+6 AC
+}}
+{{RadSpellRow2
+|name=Rest the Dead
+|description=Lulls undead to reduce aggression.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Detrimental
+|targ=Undead
+|duration=3 Min
+|max=Calm (max L50)
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Haunting Corpse
+|description=Skeleton Warrior, Level 18-22.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=240
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Major Shielding
+|description=+69 to +75 HP, +16 to +18 AC, and +14 Magic Resist.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+75 Max HP<br>+15 AC<br>+14 Magic Resist
+}}
+{{RadSpellRow2
+|name=Resist Cold
+|description=Increase cold resistance by 39 to 40.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Panic the Dead
+|description=Single target Fear for 9 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Undead
+|duration=54 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Renew Bones
+|description=Heals the target minion for 154 to 175 health.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=64
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=121-175 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+{{RadSpellRow2
+|name=Spirit Tap
+|description=Drains 132 to 150 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=152
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=202-210 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dooming Darkness
+|description=Deals 20 damage per tick for 15 to 16 ticks damage over time. Snares movement speed by 49% to 60%.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=DoT
+|targ=Single
+|duration=1 Min 30 Sec
+|max=-20 HP/tick<br>Snare
+}}
+{{RadSpellRow2
+|name=Eternities Torment
+|description=Places an undead target in the torment of eternity, causing 30 damage every six seconds for 2 min 6s damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=140
+|kind=DoT
+|targ=Undead
+|duration=2 Min 6 Sec
+|max=-30 HP/tick
+}}
+{{RadSpellRow2
+|name=Word of Spirit
+|description=Deals 97 to 104 damage to all targets around the caster.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=133
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=91-104 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Boil Blood
+|description=Deals 24 per tick for 16 to 21 ticks damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=136
+|kind=DoT
+|targ=Single
+|duration=42 Sec
+|max=-67 HP/tick
+}}
+{{RadSpellRow2
+|name=Dismiss Undead
+|description=Deals 140 to 162 damage to an undead target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=63
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=196-211 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Summon Dead
+|description=Skeleton Warrior, Level 22-25.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=290
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Vampiric Curse
+|description=Deals 21 per tick for 9 ticks. Heals the caster for 21 per tick for 9 ticks. (3.5 DPS; 1.3 DPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+Vendor (Kunark)
+|mana=144
+|kind=Taps
+|targ=Single
+|duration=54 Sec
+|max=-21 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invoke Fear
+|description=Single Target Fear for 7 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Beguile Undead
+|description=Charms target undead creature to act as the caster's minion for 11 to 20 minutes. Breaks randomly.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=170
+|kind=Detrimental
+|targ=Undead
+|duration=16 Min
+|max=Charm (max L46)
+}}
+{{RadSpellRow2
+|name=Call of Bones
+|description=Lich. The caster loses 10 health per tick, and restores 8 mana per tick. Bleached Skeleton Illusion.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+8 Mana<br>-11 HP/tick
+}}
+{{RadSpellRow2
+|name=Resist Disease
+|description=Increases the target's disease resistance by 40.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Steelskin
+|description=Absorbs 168 to 230 damage. Consumes a [[jasper]].
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=149
+|kind=Utility
+|targ=Self
+|duration=72 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Surge of Enfeeblement
+|description=Decreases STR of targets in range by 22 to 30 for 100 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=PB AE
+|duration=6 Min
+|max=-30 STR
+}}
+{{RadSpellRow2
+|name=Torbas' Acid Blast
+|description=Deals 207 to 220 poison damage to the target.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=147
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=314-332 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Shielding
+|description=Grants the caster +94 to +100 HP, +21 to +30 AC, and +16 Magic Resist.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+100 Max HP<br>+18 AC<br>+16 Magic Resist
+}}
+{{RadSpellRow2
+|name=Invoke Shadow
+|description=Skeleton Warrior, Level 25-29.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=340
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Root
+|description=Root. Adheres the target's feet to the ground, preventing movement. Lasts 8 ticks. Breaks randomly, and on direct damage.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=48 Sec
+|max=Root
+}}
+{{RadSpellRow2
+|name=Venom of the Snake
+|description=Deals 40 direct + 59 damage per tick for 7 to 8 ticks damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=203
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-33 Dmg<br>-220 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Augment Death
+|description=Increases the caster's minion's attack speed by 49% to 55%, STR by 39 to 45, and AC by 10 to 12.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Pet
+|duration=60 Min
+|max=+45 STR<br>+55% Atkspd<br>+10 AC
+}}
+{{RadSpellRow2
+|name=Scourge
+|description=40 Direct + 24 per tick for 21 ticks damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=199
+|kind=DoT
+|targ=Single
+|duration=1 Min 12 Sec
+|max=-98 HP/tick<br>-58 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chilling Embrace
+|description=40 damage per tick for 16 ticks damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=NPC Drop.
+|mana=172
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-114 HP/tick
+}}
+{{RadSpellRow2
+|name=Counteract Disease
+|description=Cures a target's disease, removing 8 disease counters from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Disease
+}}
+{{RadSpellRow2
+|name=Word of Souls
+|description=147 to 155 damage to all targets around the caster.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=171
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=138-155 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cessation of Life
+|description=Covers your target in a shroud of anti-life, decreasing their ability to be healed by 35%, and does 72 damage every 6 seconds for 1 min 36s damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=300
+|kind=DoT
+|targ=Single
+|duration=1 Min 36 Sec
+|max=-72 HP/tick
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Dispels magic effects from the target.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Scent of Darkness
+|description=Decreases fire, poison and disease resist by 24 to 27.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-27 Fire Resist<br>-27 Poison Resist<br>-27 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expel Undead
+|description=261 to 273 damage to an undead target. (2.1 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=93
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=299-333 Dmg
+}}
+{{RadSpellRow2
+|name=Shackle of Spirit
+|description=Surrounds an undead target in a shackle of spirits, slowing their attack speed.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=175
+|kind=Detrimental
+|targ=Undead
+|duration=2 Min 30 Sec
+|max=-70% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dark Soul
+|description=Inflicts a dark curse upon your target, adding 8 curse counters and causing between 95 and 140 damage every six seconds for 30s damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=200
+|kind=DoT
+|targ=Single
+|duration=30 Sec
+|max=-140 HP/tick
+}}
+{{RadSpellRow2
+|name=Drain Spirit
+|description=Drains 207 to 226 health from the target. (1.1-1.2 DPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=213
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=314 Dmg
+}}
+{{RadSpellRow2
+|name=Malignant Dead
+|description=Skeleton Warrior, Level 29-33.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=390
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Asystole
+|description=Ticks for 69 damage for 10 ticks. Reduces the target's STR by 37 to 40, and the target's AC by 16 to 18 damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=98
+|kind=DoT
+|targ=Single
+|duration=42 Sec
+|max=-40 STR<br>-15 AC<br>-62 HP/tick
+}}
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summons your pet to your location.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Arch Shielding
+|description=+144 to +150 HP, +25 to +36 AC, and +20 Magic Resist.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+150 Max HP<br>+22 AC<br>+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Dead Man Floating
+|description=Grants the following undead traits to the target. Levitation. See Invisible. Water Breathing. Increases poison resist by 64 to 70.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=150
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+70 Poison Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ignite Bones
+|description=Deals 494 to 500 damage to the target. Applies a skeleton illusion to the target. (2.38dpm)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=210
+|kind=Damage
+|targ=Single
+|duration=12 Sec
+|max=-492--500 Dmg<br>Illusion<br>Stun 0.5s (max L55)
+}}
+{{RadSpellRow2
+|name=Incinerate Bones
+|description=Deals 494 to 500 damage to the target. (Chardok revamp drop) (2.38dpm)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=210
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=492-500 Dmg<br>Stun 1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Corporeal Empathy
+|description=The caster loses 215 health to heal the target for 215 instantly.
+|era={{Classic Short}}
+|school=Alteration
+|location=NPC Drop
+|mana=200
+|kind=Heal
+|targ=Single
+|duration=Instant
+|max=215 HP
+}}
+{{RadSpellRow2
+|name=Covetous Subversion
+|description=Twitch. Restores targets mana by 100 at the cost of 300 mana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Heal
+|targ=Single
+|duration=Instant
+|max=+100 Mana
+}}
+{{RadSpellRow2
+|name=Diamondskin
+|description=Absorbs 245 to 394 damage. Consumes a [[peridot]].
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=236
+|kind=Utility
+|targ=Self
+|duration=90 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bounce
+|description=Surrounds your body in a reflective aura, providing a chance for all incoming spells to rebound back against the caster.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Cackling Bones
+|description=Skeleton Warrior, Level 33-37.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=450
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Form of Bleached Bone
+|description=Bestows upon your pet the form of a bleached skeleton. This effect lasts for 120 min.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=70
+|kind=Pet
+|targ=Pet
+|duration=120 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Pact of Shadow
+|description=The caster loses 45 health per tick, and the target is healed for 81 health per tick for 4 ticks.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Heal
+|targ=Single
+|duration=24 Sec
+|max=+80 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Auspice
+|description=Drains the life from your target, doing 30 damage every six seconds for 54s. 1000% of the life-force taken is used to heal your wounds.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Taps
+|targ=Single
+|duration=54 Sec
+|max=-30 HP/tick
+}}
+{{RadSpellRow2
+|name=Dead Men Floating
+|description=Applies [[Dead Man Floating]] to the caster's entire group.
+|era={{Classic Short}}
+|school=Abjuration
+|location=NPC Drop.
+|mana=375
+|kind=Utility
+|targ=Group
+|duration=72 Min
+|max=+70 Poison Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Banish Undead
+|description=Deals 585 damage to an undead target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=118
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=442-468 Dmg
+}}
+{{RadSpellRow2
+|name=Insidious Retrogression
+|description=Pelts your target's body with spores, causing 500 damage and decreasing their movement rate, strength, and attack rating for 1 min 36s.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=210
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=-546--550 Dmg<br>Snare<br>-25 STR<br>-25 ATK
+}}
+{{RadSpellRow2
+|name=Paralyzing Earth
+|description=Root. Adheres the target's feet to the ground, preventing movement. Lasts 30 ticks. Breaks on direct damage.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=Root
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cajole Undead
+|description=Charms target undead creature (up to lvl 51) to act as the caster's minion for 15 to 19 minutes. Breaks randomly.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=245
+|kind=Detrimental
+|targ=Undead
+|duration=16 Min
+|max=Charm (max L51)
+}}
+{{RadSpellRow2
+|name=Cascading Darkness
+|description=Deals 72 damage per tick for 16 ticks damage over time. Reduces movement speed by 60%.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=300
+|kind=DoT
+|targ=Single
+|duration=1 Min 36 Sec
+|max=-72 HP/tick<br>Snare
+}}
+{{RadSpellRow2
+|name=Ignite Blood
+|description=Deals 56 per tick for 21 ticks damage over time.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=218
+|kind=DoT
+|targ=Single
+|duration=42 Sec
+|max=-125 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Drain Soul
+|description=Drains 332 to 338 health from the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=248
+|kind=Taps
+|targ=Lifetap
+|duration=Instant
+|max=394-400 Dmg
+}}
+{{RadSpellRow2
+|name=Invoke Death
+|description=Skeleton Warrior, Level 37-41.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=490
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Lich
+|description=Lich. The caster loses 22 health per tick, and restores 20 mana per tick. Bloody Skeleton Illusion.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+20 Mana<br>-22 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bond of Death
+|description=Deals 80 per tick for 9 ticks. Heals the caster for 80 per tick for 9 ticks. (2.0dpm..720hp total)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=360
+|kind=Taps
+|targ=Single
+|duration=54 Sec
+|max=-80 HP/tick
+}}
+{{RadSpellRow2
+|name=Torbas' Poison Blast
+|description=Strikes your target with a jet of poison, causing between 466 and 466 damage.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=186
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=466 Dmg
+}}
+{{RadSpellRow2
+|name=Ward of Calliav
+|description=Places the Ward of Calliav on your pet, absorbing up to 11747 damage from the next 1 melee strikes or direct damage spells that hit it.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=200
+|kind=Pet
+|targ=Pet
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Envenomed Bolt
+|description=Deals 110 direct damage, and then 146 damage per tick for 8 ticks damage over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=409
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-41 Dmg<br>-345 HP/tick
+}}
+{{RadSpellRow2
+|name=Improved Invisibility to Undead
+|description=Cloaks your body in a light aura, rendering you invisible to most undead creatures for 10 min.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=75
+|kind=Utility
+|targ=Self
+|duration=10 Min
+|max=
+}}
+</table>
+</div>
+
+= Necromancer AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Necromancer Class AAs}}
+
+= Pet Information =
+
+==== Focus Item ====
+
+The only pet focus item that Necromancers can obtain is the {{:Encyclopedia Necrotheurgia}}Similar to the Magician pet focus items, this focus item makes the pet larger in size.  It also provides a +1 level bonus to all summoned pets from spell levels 46-60. This allows for pets that can exceed the hit points, melee, and spell damage listed in the tables. The +1 level is added to the RNG of the level of pet you would have summoned. When you finish casting a pet spell, RNG will determine the level of pet you summoned in that pet's level range. If using the focus item for that pet, the pet's level will be RNG+1. Definitely acquire this tome to get its exaltation.
+
+ As an example, the Emissary of Thule pet has a level range of 43-47. When you cast that spell, at the end of the cast RNG determines the pet level to be level 47.
+ If you are using the focus item, it adds +1 to the RNG so the pet would be level 48.
+
+==== Notes ====
+
+<li>Abilities listed in the '''Pet Skills''' column apply to all subsequent pets, unless otherwise noted.</li>
+<br />
+{| class="eoTable2"
+! Spell
+! Player Level
+! Pet Level (Min-Max)
+! Pet Class
+! Pet ~HP
+! Melee Damage (Max)
+! Bash/Kick Damage (Max)
+! Backstab Damage (Max)
+! Lifetap Damage (Max)
+! Pet Skills
+! Appearance
+|-
+| [[Cavorting Bones]]
+| 1
+| 1-2
+| Warrior
+| 20-30
+| 8-10
+| -
+| -
+| -
+| -
+| rowspan=6 style="border:1px dotted gray"| [[File:Npc_skeleton_lrodd.png|75px]]
+|-
+| [[Leering Corpse]]
+| 4
+| 3-5
+| Warrior
+| 70-90
+| 8-12
+| -
+| - 
+| -
+| -
+|-
+| [[Bone Walk]]
+| 8
+| 7-9
+| Warrior
+| 180-200
+| 9-14
+| 7/12
+| -
+| -
+| Bash, Kick
+|-
+| [[Convoke Shadow]]
+| 12
+| 7-11
+| Warrior
+| 180-200
+| 11-16
+| 11/15
+| -
+| - 
+| Magic hit 11+
+|-
+| [[Restless Bones]]
+| 16
+| 12-16
+| Warrior
+| 260-300
+| 13-20
+| 13/16
+| -
+| - 
+| -
+|-
+| [[Animate Dead]]
+| 20
+| 15-19
+| Warrior
+| 325-375
+| 14-22
+| 14/16
+| -
+| - 
+| Double Attack, Dual Wield 19+ (requires weapons, or a torch) 
+|-
+| [[Haunting Corpse]]
+| 24
+| 18-22
+| Warrior
+| 650-700
+| 18-26
+| 15/17
+| -
+| - 
+| -
+| rowspan=8 style="border:1px dotted gray"| [[File:Npc_a_helot_skeleton.png|75px]]
+|-
+| [[Summon Dead]]
+| 29
+| 21-25
+| Warrior
+| 675-775
+| 20-28
+| 16/18
+| -
+| - 
+| -
+|-
+| [[Invoke Shadow]]
+| 34
+| 25-29
+| Warrior
+| 750-850
+| 23-32
+| 17/19
+| -
+| - 
+| -
+|-
+| [[Malignant Dead]]
+| 39
+| 29-33
+| Warrior
+| 800-1000
+| 31-39
+| 18/20
+| - 
+| -
+| Innate Dual Wield 33+ (Fists or weapons), Fast regen
+|-
+| [[Cackling Bones]]
+| 44
+| 33-37
+| Warrior
+| 1100-1400
+| 39-47
+| 20/22
+| - 
+| 11
+| Lifetap
+|-
+| [[Invoke Death]]<sup>1</sup>&Dagger;
+| 49
+| 37-41
+| Warrior
+| 1900-2300
+| 47-55
+| 22/24
+| - 
+| 42
+| -
+|-
+| [[Minion of Shadows]]<sup>1</sup>&Dagger;
+| 53
+| 40-44
+| Rogue
+| 1200-1400
+| 49-56 (59&dagger;)
+| -
+| 147-171 (177&dagger;)
+| 45
+| Backstab, no Bash/Kick
+|-
+| [[Servant of Bones]]<sup>1</sup>&dagger;
+| 56
+| 40-44 (45&dagger;)
+| Monk
+| 1400-1700
+| 52-59 (61&dagger;)
+| 65/69 (71&dagger;)
+| -
+| 45 (46&dagger;)
+| Flying Kick, no Bash
+|-
+| [[Emissary of Thule]]<sup>1</sup>&dagger;
+| 59
+| 43-47 (48&dagger;)
+| Warrior
+| 2700 (3300&dagger;)
+| 52-61 (62&dagger;)
+| 26
+| -
+| 44-48 (49&dagger;)
+| Immune to fear<sup>2</sup>
+| [[File:Spectres.png|75px]]
+|}
+<br />
+<hr />
+<sup>1</sup> The pet can be focused with {{:Encyclopedia Necrotheurgia}}.
+<sup>2</sup> This was implemented post-Velious, pre-Luclin. ([http://www.tski.co.jp/baldio/patch/20010911a.html ref])
+<br />
+&Dagger; Needs testing for the focus effect.
+<br />
+&dagger; Tested
+
+== Pet Names ==
+
+Gabaner, 
+Jasaner, 
+Konartik, 
+Lastik, 
+Vebtik, 
+Ventik, 
+Xobartik, 
+Xonarab,
+Zabekn, 
+Zeber, 
+Zibober,
+Kebaner
+
+=Skills=
+
+== Specialization ==
+
+{{#lsth:Skill Specialization|Necromancer}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 20
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+==Combat Skills==
+{| class="wikitable sortable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 100
+| 100
+|-
+| 1
+| No
+| [[Defense]]
+| 145
+| 145
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 100
+| 100
+|-
+| 1
+| No
+| [[Offense]]
+| 140
+| 140
+|-
+| 1
+| No
+|[[Skill Piercing|1 Hand Piercing]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Throwing]]
+| 75
+| 75
+|-
+| 20
+| No
+| [[Dodge]]
+| 75
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200</td>
+| 200</td>
+|}
+
+= Necromancer-Specific Quests =
+
+{{#lsth:Class Race Quest List|Necromancer}}
+
+= Gearing =
+
+Please keep in mind that gear listed here may not be exhaustive, but they do tend to include the most useful of each category. Also keep in mind that you want to strike a balance between HP and Mana to maximize your effectiveness. Remember that 1 INT = 10 mana (and it drops significantly after 200), and 1 STA = 2 health, and that the items listed are droppable only.
+
+'''NOTE''': Gear listed here is not listed as "Best In Slot." Due to the way HP and mana play off each other, the items you wear influence the value of other items you wear. In other words, Pre-Planar gear is not necessarily less useful than an item that is Planar, or Planar relative to Kunark. Pre-Planar Gear refers to items that one can acquire before reaching planar raiding. These are by and large your BoEs. Planar Gear refers to items that are earned from raiding, and for the most part (with the exception of some Sky items and a few raid boss drops) are BoP. Kunark is about Kunark era changes to gearing, and items that are found in Kunark content.
+
+Check [[:Category:Necromancer Equipment | Necromancer Equipment]] for the full list of gear usable by necromancers.
+
+See also the [[Detailed Necromancer Gear Guide]].
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Necromancer]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Necromancer]]}}{{Template: Navbox Classes}}

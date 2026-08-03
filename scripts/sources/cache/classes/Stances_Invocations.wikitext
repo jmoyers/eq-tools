@@ -1,0 +1,600 @@
+EverQuest Legends introduces melee Stances and magic Invocations that consume Endurance and/or Mana. Some Stances consume Endurance only when their effect prevents damage or adds bonus damage. Characters have one active Stance and one active Invocation at all time: Both default back to a "base" Stace/Invocation which provides quicker Endurance or Mana regeneration. 
+
+Characters gain all applicable Stances and Invocations at level 1. 
+
+Stances and Invocations have a 6 second reuse timer. 
+
+Stances reuse timers are separate from Invocation reuse timers.
+
+Stances and Invocations have largely replaced [[Disciplines]], but [[Rogue]] poisons are still covered on that page.
+
+== Stances ==
+Except for Balanced Stance, all stances require endurance when their effect activates.  This endurance cost is decreased by your [[Strategy]] skill.
+{| class="eoTable2 sortable"
+|+
+!Stance
+!Description
+!Classes
+|-
+|Balanced
+|<section begin="Balanced" />All incoming damage is reduced by 10% and your chance to hit is increased by 10%. Endurance regen excluding out of combat bonus regen is doubled. There is no endurance cost to upkeep this stance.<section end="Balanced" />
+|BER&nbsp;BRD&nbsp;BST<br>MNK&nbsp;PAL&nbsp;RNG<br>ROG&nbsp;SHD&nbsp;WAR
+|-
+|Berserker
+|<section begin="Berserker" />While this stance is active, attack speed and combat skill recharge rate is doubled and your chance to hit and combat skill damage is increased by 25%. Every point of damage dealt consumes half that amount in endurance, with a reduction based on your [[strategy]] skill. You also take 8.3% of outgoing damage to yourself. Bonus damage from critical hits and similar effects do not cost endurance.<section end="Berserker" />
+|BER
+|-
+|Channeler
+|<section begin="Channeler" />All incoming damage is reduced by 40% and your chance to successfully channel is increased. Half of the mitigated damage is charged to both mana and endurance, with a reduction based on your [[strategy]] skill.<section end="Channeler" />
+|CLR&nbsp;DRU&nbsp;ENC<br>MAG&nbsp;NEC&nbsp;SHM<br>WIZ
+|-
+|Defensive
+|<section begin="Defensive" />All incoming melee damage is reduced by 50% and incoming magical damage is reduced by 20%. Every point of damage reduced consumes an equal amount of endurance, with a reduction based on your [[strategy]] skill.<section end="Defensive" />
+|PAL&nbsp;SHD&nbsp;WAR
+|-
+|Evasive
+|<section begin="Evasive" />You have a 95% chance to evade all incoming attacks. Every point of damage evaded consumes 2 endurance, with a reduction based on your [[strategy]] skill. Evasion will fail if you have insufficient endurance, or while playing dead.<section end="Evasive" />
+|BRD&nbsp;MNK&nbsp;RNG<br>BST&nbsp;ROG
+|-
+|Mage Hunter
+|<section begin="MageHunter" />All incoming spell damage is reduced by 50% and incoming physical damage is reduced by 20%. Every point of damage reduced consumes an equal amount of endurance, with a reduction based on your [[strategy]] skill.<section end="MageHunter" />
+|BER&nbsp;PAL&nbsp;SHD
+|-
+|Offensive
+|<section begin="Offensive" />Outgoing melee damage is increased by 100% and your chance to hit is increased by 25%. Every point of bonus damage dealt consumes an equal amount of endurance, with a reduction based on your [[strategy]] skill.
+When below 25% endurance, the chance to hit bonus is reduced based on the remaining percent of endurance. 
+
+Bonus damage from critical hits and similar effects do not cost endurance. <section end="Offensive" />
+|BER&nbsp;BRD&nbsp;BST<br>MNK&nbsp;PAL&nbsp;RNG<br>ROG&nbsp;SHD&nbsp;WAR
+|-
+|Ranged
+|<section begin="Ranged" />Your range attack has no minimum distance, gains a 25% accuracy bonus, and can double and triple attack. Every point of damage consumes endurance, with a reduction based on your [[strategy]] skill.<section end="Ranged" />
+|BER&nbsp;MNK&nbsp;RNG<br>ROG
+|-
+|Striker
+|<section begin="Striker" />Outgoing weapon skill abilities deal 3x damage and non-weapon skill abilities deal 5x damage, and your chance to hit is increased by 25%. Every point of damage dealt consumes an equal amount of endurance, with a reduction based on your [[strategy]] skill.
+When below 25% endurance, the chance to hit bonus is reduced based on the remaining percent of endurance. Bonus damage from critical hits and similar effects do not cost endurance. <section end="Striker" />
+|BER&nbsp;MNK&nbsp;ROG<br>WAR
+|}
+
+=== Stances by Class ===
+{| class="eoTable2" style="width:100%; max-width:100%; margin:1rem 0; table-layout:fixed;"
+<div style="font-size:0.95rem; margin:0 0 0.75rem 0;"> 
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! '''Stance'''!!BER!!BRD!!BST!!CLR!!DRU!!ENC!!MAG!!MNK!!NEC!!PAL!!RNG!!ROG!!SHD!!SHM!!WAR!!WIZ
+|-
+| style="text-align: left"| '''Balanced'''    || O || O || O ||   ||   ||   ||   || O ||   || O || O || O || O ||   || O ||   
+|-
+| style="text-align: left"| '''Berserker'''   || O ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   
+|-
+| style="text-align: left"| '''Channeler'''   ||   ||   ||   || O || O || O || O ||   || O ||   ||   ||   ||   || O ||   || O
+|-
+| style="text-align: left"| '''Defensive'''   ||   ||   ||   ||   ||   ||   ||   ||   ||   || O ||   ||   || O ||   || O ||   
+|-
+| style="text-align: left"| '''Evasive'''     ||   || O || O ||   ||   ||   ||   || O ||   ||   || O || O ||   ||   ||   ||   
+|-
+| style="text-align: left"| '''Mage Hunter''' || O ||   ||   ||   ||   ||   ||   ||   ||   || O ||   ||   || O ||   ||   ||   
+|-
+| style="text-align: left"| '''Offensive'''   || O || O || O ||   ||   ||   ||   || O ||   || O || O || O || O ||   || O ||   
+|-
+| style="text-align: left"| '''Ranged'''      || O ||   ||   ||   ||   ||   ||   || O ||   ||   || O || O ||   ||   ||   ||   
+|-
+| style="text-align: left"| '''Striker'''     || O ||   ||   ||   ||   ||   ||   || O ||   ||   ||   || O ||   ||   || O ||   
+|}
+</div>
+|}
+
+== Invocations ==
+Invocations can be added to macros: ''/doability Divine Invocation''
+
+Some Invocations give bonuses based on the type of caster classes you are using.
+
+Intelligence Classes: ENC, MAG, NEC, WIZ
+
+Wisdom Classes: CLR, DRU, SHM
+
+Hybrid Classes: BST, BRD, RNG, PAL, SHD
+
+{| class="eoTable2 sortable"
+|+
+!Invocation
+!Description
+!Classes
+|-
+|Arcane Mastery
+|<section begin=ArcaneMastery />Spell cast and recovery times are reduced by 20% plus 10% per additional intelligence class. The mana cost of detrimental spells is reduced by 10% plus 5% per additional intelligence class.<section end=ArcaneMastery />
+|ENC&nbsp;MAG&nbsp;NEC<br>SHD&nbsp;WIZ
+|-
+|Divine
+|<section begin=Divine />Spending mana will heal the group member with the lowest hp percentage by that amount. 
+For every additional wisdom class, this will repeat with a heal for 33% of the mana spent.<section end=Divine />
+|BST&nbsp;CLR&nbsp;DRU<br>PAL&nbsp;RNG&nbsp;SHM
+|-
+|Empower
+|<section begin=Empower />Adds 20% plus 10% per additional non-hybrid casting class to Damage effects at the cost of 20% more mana.
+Adds 10% plus 5% per additional non-hybrid casting class to Healing effects at the cost of 10% more mana.<section end=Empower />
+|CLR&nbsp;DRU&nbsp;ENC<br>MAG&nbsp;NEC&nbsp;SHM<br>WIZ
+|-
+|Inversion
+|<section begin=Inversion />Shifts two-thirds of spell cast time into the global recovery time and 20% of the mana cost into half as much in endurance cost.<section end=Inversion />
+|BRD&nbsp;BST&nbsp;PAL<br>CLR&nbsp;DRU&nbsp;ENC<br>MAG&nbsp;NEC&nbsp;RNG<br>SHD&nbsp;SHM&nbsp;WIZ
+|-
+|Inviolable
+|<section begin=Inviolable />Cast spells are uninterruptible at the cost of 100% more mana and the same amount as endurance.<section end=Inviolable />
+|BRD&nbsp;WIZ
+|-
+|Over Channel
+|<section begin=OverChannel />Cast spells have a -150 resist adjust plus another -15 for every non-hybrid caster class at a cost of 10% of the mana cost in endurance.<section end=OverChannel />
+|BRD&nbsp;BST&nbsp;PAL<br>CLR&nbsp;DRU&nbsp;ENC<br>MAG&nbsp;NEC&nbsp;RNG<br>SHD&nbsp;SHM&nbsp;WIZ
+|-
+|Recovery
+|<section begin=Recovery />You regenerate mana twice as fast and spells have a 5% reduced mana cost.
+Out of combat regen bonus is not affected.
+While out of combat, the regeneration modifier of this invocation is active even if this invocation is not.<section end=Recovery />
+|BRD&nbsp;BST&nbsp;PAL<br>CLR&nbsp;DRU&nbsp;ENC<br>MAG&nbsp;NEC&nbsp;RNG<br>SHD&nbsp;SHM&nbsp;WIZ
+|-
+|Spellblade
+|<section begin=Spellblade />Treats the first spell-gem slot as a proc that consumes both mana and endurance on activation. 
+40% of the spells mana cost is paid as mana and 20% as endurance. 
+The spell must have a reuse time less than or equal to its cast time.<section end=Spellblade />
+|BST&nbsp;PAL&nbsp;RNG<br>SHD
+|-
+|Unyielding
+|<section begin=Unyielding />Health regen excluding out of combat bonus regen is doubled, with a 25% resistance increase to loss of control from fear, mez, and charm. There is no mana cost to upkeep this stance.<section end=Unyielding />
+|BER&nbsp;MNK&nbsp;ROG<br>WAR
+|}
+
+=== Invocations by Class ===
+{| class="eoTable2" style="width:100%; max-width:100%; margin:1rem 0; table-layout:fixed;"
+<div style="font-size:0.95rem; margin:0 0 0.75rem 0;"> 
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! '''Invocation'''                               !!BER!!BRD!!BST!!CLR!!DRU!!ENC!!MAG!!MNK!!NEC!!PAL!!RNG!!ROG!!SHD!!SHM!!WAR!!WIZ
+|-
+| style="text-align: left"| '''Arcane Mastery''' ||   ||   ||   ||   ||   || O || O ||   || O ||   ||   ||   ||   O|| ||   || O
+|-
+| style="text-align: left"| '''Divine'''         ||   ||   || O || O || O ||   ||   ||   ||   || O || O ||   ||   || O ||   ||  
+|-
+| style="text-align: left"| '''Empowering'''     ||   ||   ||   || O || O || O || O ||   || O ||   ||   ||   ||   || O ||   || O
+|-
+| style="text-align: left"| '''Inviolable'''     ||   || O ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   || O
+|-
+| style="text-align: left"| '''Inversion'''      ||   || O || O || O || O || O || O ||   || O || O || O ||   || O || O ||   || O
+|-
+| style="text-align: left"| '''Over Channel'''    ||   || O || O || O || O || O || O ||   || O || O || O ||   || O || O ||   || O
+|-
+| style="text-align: left"| '''Recovery'''       ||   || O || O || O || O || O || O ||   || O || O || O ||   || O || O ||   || O
+|-
+| style="text-align: left"| '''Spellblade'''     ||   ||   || O ||   ||   ||   ||   ||   ||   || O || O ||   || O ||   ||   ||  
+|-
+| style="text-align: left"| '''Unyielding'''     || O ||   ||   ||   ||   ||   ||   || O ||   ||   ||   || O ||   ||   || O ||  
+|}
+</div>
+|}
+
+== Pure Melee ==
+
+=== [[Berserker]] ===
+
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Berserker Stance
+| {{#lst:{{FULLPAGENAME}}|Berserker}}
+|-
+| Mage Hunter Stance
+| {{#lst:{{FULLPAGENAME}}|MageHunter}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Ranged Stance
+| {{#lst:{{FULLPAGENAME}}|Ranged}}
+|-
+| Striker Stance
+| {{#lst:{{FULLPAGENAME}}|Striker}}
+|}
+
+=== [[Monk]] ===
+
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Evasive Stance
+| {{#lst:{{FULLPAGENAME}}|Evasive}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Ranged Stance
+| {{#lst:{{FULLPAGENAME}}|Ranged}}
+|-
+| Striker Stance
+| {{#lst:{{FULLPAGENAME}}|Striker}}
+|}
+
+=== [[Rogue]] ===
+
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Evasive Stance
+| {{#lst:{{FULLPAGENAME}}|Evasive}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Striker Stance
+| {{#lst:{{FULLPAGENAME}}|Striker}}
+|-
+| Ranged Stance
+| {{#lst:{{FULLPAGENAME}}|Ranged}}
+|}
+
+=== [[Warrior]] ===
+
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Defensive Stance
+| {{#lst:{{FULLPAGENAME}}|Defensive}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Striker Stance
+| {{#lst:{{FULLPAGENAME}}|Striker}}
+|}
+
+== Hybrids ==
+
+=== [[Bard]] ===
+Bards '''MUST''' turn off songs in order to start Disciplines, failure to do so will result in the Discipline being cancelled but the cool-down will still activate.
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Evasive Stance
+| {{#lst:{{FULLPAGENAME}}|Evasive}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Inviolable Invocation
+| {{#lst:{{FULLPAGENAME}}|Inviolable}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Beastlord]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Evasive Stance
+| {{#lst:{{FULLPAGENAME}}|Evasive}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|-
+| Spellblade Invocation
+| {{#lst:{{FULLPAGENAME}}|Spellblade}}
+|}
+
+=== [[Paladin]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Defensive Stance
+| {{#lst:{{FULLPAGENAME}}|Defensive}}
+|-
+| Divine Invocation
+| {{#lst:{{FULLPAGENAME}}|Divine}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Mage Hunter Stance
+| {{#lst:{{FULLPAGENAME}}|MageHunter}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|-
+| Spellblade Invocation
+| {{#lst:{{FULLPAGENAME}}|Spellblade}}
+|}
+
+=== [[Ranger]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Divine Invocation
+| {{#lst:{{FULLPAGENAME}}|Divine}}
+|-
+| Evasive Stance
+| {{#lst:{{FULLPAGENAME}}|Evasive}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Ranged Stance
+| {{#lst:{{FULLPAGENAME}}|Ranged}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|-
+| Spellblade Invocation
+| {{#lst:{{FULLPAGENAME}}|Spellblade}}
+|}
+
+=== [[Shadow Knight]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery
+| {{#lst:{{FULLPAGENAME}}|ArcaneMastery}}
+|-
+| Balanced Stance
+| {{#lst:{{FULLPAGENAME}}|Balanced}}
+|-
+| Defensive Stance
+| {{#lst:{{FULLPAGENAME}}|Defensive}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Mage Hunter Stance
+| {{#lst:{{FULLPAGENAME}}|MageHunter}}
+|-
+| Offensive Stance
+| {{#lst:{{FULLPAGENAME}}|Offensive}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|-
+| Spellblade Invocation
+| {{#lst:{{FULLPAGENAME}}|Spellblade}}
+|}
+
+== Priests ==
+
+=== [[Cleric]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Divine Invocation
+| {{#lst:{{FULLPAGENAME}}|Divine}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Druid]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Divine Invocation
+| {{#lst:{{FULLPAGENAME}}|Divine}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Shaman]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Divine Invocation
+| {{#lst:{{FULLPAGENAME}}|Divine}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+== Pure Casters ==
+
+=== [[Necromancer]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery
+| {{#lst:{{FULLPAGENAME}}|ArcaneMastery}}
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Empowering Invocation
+|{{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Wizard]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery
+| {{#lst:{{FULLPAGENAME}}|ArcaneMastery}}
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Inviolable Invocation
+| {{#lst:{{FULLPAGENAME}}|Inviolable}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Magician]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery
+| {{#lst:{{FULLPAGENAME}}|ArcaneMastery}}
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Overchannel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+=== [[Enchanter]] ===
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Arcane Mastery
+| {{#lst:{{FULLPAGENAME}}|ArcaneMastery}}
+|-
+| Channeler Stance
+| {{#lst:{{FULLPAGENAME}}|Channeler}}
+|-
+| Empowering Invocation
+| {{#lst:{{FULLPAGENAME}}|Empower}}
+|-
+| Inversion Invocation
+| {{#lst:{{FULLPAGENAME}}|Inversion}}
+|-
+| Over Channel Invocation
+| {{#lst:{{FULLPAGENAME}}|OverChannel}}
+|-
+| Recovery Invocation
+| {{#lst:{{FULLPAGENAME}}|Recovery}}
+|}
+
+
+[[Category:Character]]

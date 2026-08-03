@@ -1,0 +1,1013 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ Falling somewhere between an assassin and a thief,<br> the Rogue belongs to the secretive class of Norrath.<br> She's quite skilled in weaponry, but prefers to make sudden attacks from behind. <br>Shadier skills include Pick Lock and Pick Pockets.
+ - EverQuest manual
+
+=Description=
+[[File:C rogue.gif|right]]
+Rogues are the stealthy thieves and vicious assassins that stalk the shadows of Norrath. Rogues are primarily a melee class, able to wear chain armor and use piercing, slashing and some blunt weapons.
+
+Rogues are sneaky fighters who always seek to take advantage of enemies by attacking from behind. Rogues can backstab enemies for extra damage, using poisoned weapons for added effect. Rogues can detect traps, pick locks and pockets, and fall safely from great heights.
+
+Rogues are known for their ability to sneak and hide. This allows them to move undetected by the living and undead, almost anywhere, exploring the dangers that lie ahead. Combined with rogue items that use illusions, rogues make excellent scouts.
+
+Rogues, being a specialist stealth class, compliments many class combinations and can contribute greatly to single target killing power. The rogue is a good choice for players who like to do heavy damage while walking the dangerous edge of stealthy dungeon exploration.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Rogue || Rake || Blackguard || Assassin
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at character creation, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their corresponding stat distribution.
+
+In Everquest Legends, choosing to add Rogue to your class combination (whether as your Primary Class or otherwise) grants the following stat modifiers:
+
+*+15 AGI
+*+15 DEX
+
+When selecting a race, key factors include its associated and opposed factions, as well as any racial benefits or penalties. Click the race's name to visit its detailed page for a full breakdown of these elements.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Barbarian]]''' || 103 || 95 || 82 || 70 || 70 || 60 || 55 
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|-
+| style="text-align: left"| '''[[Dwarf]]''' || 90 || 90 || 70 || 90 || 83 || 60 || 45
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60
+|-
+| style="text-align: left"| '''[[Half Elf]]''' || 70 || 70 || 90 || 85 || 60 || 75 || 75
+|-
+| style="text-align: left"| '''[[Halfling]]''' || 70 || 75 || 95 || 90 || 80 || 67 || 50
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Wood Elf]]''' || 65 || 65 || 95 || 80 || 80 || 75 || 75
+|-
+| style="text-align: left"| '''[[Rogue]] Adds''' ||  ||  || 15 || 15 ||  ||  || 
+|}
+
+== Impact from stats ==
+''See also: [[Statistics]]''
+
+Rogues have a bunch of skills and tools in their box and benefit from several stats. 
+
+*'''Strength''' - Adds to Maximum and Average melee damage, both for normal attack rounds and for Rogues signature skill Backstab. Also affects the rate at which you learn the offense skill. Effects your ability to carry gear and coins.
+*'''Stamina'''      - Affects your maximum Hit Points. Gives a small HP boost(roughly 1-2% of base hp for 25 point investment). 
+*'''Agility'''      - Helps you avoid physical damage and helps your defensive skills raise a little quicker.
+*'''Dexterity'''    - This stat is involved in how quickly you learn offensive melee skills and how often the magical effects of your weapons will activate.
+*'''Wisdom'''       - Affects the rate at which your general and craft skills raise if higher than your intelligence.
+*'''Intelligence''' - Affects the rate at which your general and craft skills raise if higher than your wisdom.
+*'''Charisma'''     - Affects the amount you pay to npc merchants for their wares, and how much they pay you for yours. There is a relationship between faction and charisma in prices and there is a cap.
+
+== Religion ==
+
+Generally speaking being agnostic is a fairly safe bet in Everquest.  Religion serves only to get you into trouble in many situations. Following a religion will at worst get you killed in some areas, but generally you can avoid these.  Following [[Innoruuk]] is probably the most dangerous religion as they have the most places in the game where they are Kill on Sight.
+
+The disadvantage of agnosticism is that some items and quests can only be done by followers of certain religions.  As you can see from the [[:Category:Bristlebane Worshiper Equipment|Bristlebane Equipment]] page, Bristlebane has only a few tradeskilled items, while the [[:Category:Brell Serilis Worshiper Equipment|Brell Serilis Equipment]] page similarly shows only tradeskill items plus one Rogue-usable weapon, {{:Stormguard Battle Hammer of Brell}}.  You can find other deities items from [[:Category:Deity Worshiper Equipment]].
+
+If you plan to use illusion masks, you should go Agnostic for the same reason Enchanters do: NPCs can "see" your religion. It's very important to notice though that illusions and religion only partially change their reaction (/con) regarding NPCs individually, they don't modify the amount of points a player has with a given faction, which are required to unlock different character races. For detailed information: [[Game_Mechanics#Faction System and Levels|Faction System and Levels]].
+
+=Skills=
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! Skill Name
+! Level Obtained
+! Must Train
+! Max until 50
+! Max after 50
+|-
+| [[Skill_1H_Blunt|1H Blunt]]
+| 1
+| No
+| 200
+| 250
+|-
+| [[Skill 1H Slash|1H Slash]]
+| 1
+| No
+| 200
+| 250
+|-
+| [[Skill Piercing|1H Piercing]] ***
+| 1
+| No
+| 210
+| 250
+|-
+| [[Skill_Archery|Archery]]
+| 1
+| No
+| 200
+| 240
+|-
+| [[Skill_Hand_to_Hand|Hand to Hand]]
+| 1
+| No
+| 100
+| 100
+|-
+| [[Skill_Throwing|Throwing]] **
+| 1
+| No
+| 220
+| 250
+|-
+| [[Skill_Backstab|Backstab]]
+| 1
+| No
+| 200
+| 225
+|-
+| [[Skill_Dual_Wield|Dual Wield]] *
+| 1
+| No
+| 210
+| 245
+|-
+| [[Skill_Defense|Defense]]
+| 1
+| No
+| 200
+| 252
+|-
+| [[Skill_Offense|Offense]]
+| 1
+| No
+| 210
+| 252
+|-
+| [[Skill_Dodge|Dodge]]
+| 5
+| No
+| 150
+| 210
+|-
+| [[Skill_Disarm|Disarm]]
+| 10
+| No
+| 200
+| 200
+|-
+| [[Skill_Parry|Parry]]
+| 10
+| No
+| 200
+| 230
+|-
+| [[Skill_Instill_Doubt|Intimidation]]
+| 11
+| No
+| 200
+| 200
+|-
+| [[Skill_Double_Attack|Double Attack]]
+| 16
+| No
+| 200
+| 240
+|-
+| [[Skill_Riposte|Riposte]]
+| 25
+| No
+| 200
+| 225
+|}
+: * Dual Wield does '''not''' cap at (5 x level) + 5 like other combat skills and instead caps at (6 x level) + 5 - Thus, a level 20 rogue can hit 125 in the skill (as opposed to 105 in other combat skills) and will hit the cap of 210 pre 50, and begin to raise again starting at 51.
+: ** Rogues can score a critical hit with throwing weapons starting at level 12.
+: ** Rogues can score a deadly strike (if thrown from behind the target) with throwing weapons
+: *** Rogues have a higher skill cap on Piercing while leveling.
+
+==Miscellaneous Skills==
+
+{| class="eoTable2 sortable"
+! Skill Name
+! Level Obtained
+! Must Train
+! Max until 50
+! Max after 50
+|-
+| [[Skill_Sneak|Sneak]]
+| 1
+| No
+| 200
+| 200
+|-
+| [[Skill_Hide|Hide]]
+| 3
+| No
+| 200
+| 200
+|-
+| [[Skill_Pick_Lock|Pick Lock]]
+| 5
+| No
+| 200
+| 210 (+1/level after 50)
+|-
+| [[Skill_Pick_Pocket|Pick Pocket]]
+| 7
+| No
+| 200
+| 200
+|-
+| [[Skill_Safe_Fall|Safe Fall]]
+| 10
+| No
+| 94
+| 94
+|-
+| [[Skill_Sense_Traps|Sense Traps]]
+| 10
+| No
+| 200
+| 200
+|-
+| [[Skill_Disarm_Trap|Disarm Traps]]
+| 15
+| No
+| 200
+| 200
+|-
+| [[Athletics]]
+| 1
+| No
+| ?
+| ?
+|-
+| [[Strategy]]
+| 1
+| No
+| ?
+| ?
+|-
+| [[Skill_Alcohol_Tolerance|Alcohol Tolerance]]
+| 1
+| No
+| 235
+| 252
+|-
+| [[Skill_Begging|Begging]]
+| 1
+| No
+| 200
+| 200
+|-
+| [[Skill_Bind_Wound|Bind Wound]]
+| 1
+| No
+| 175
+| 210
+|-
+| [[Skill_Fishing|Fishing]]
+| 1
+| No
+| 200
+| 200
+|-
+| [[Skill_Sense_Heading|Sense Heading]]
+| 1
+| No
+| 200
+| 200
+|-
+| [[Skill_Swimming|Swimming]]
+| 1
+| No
+| 200
+| 200
+|}
+
+* Various [[Tradeskills]]
+* Picklocks goes up 1 point per level after 50
+* If you try to train [[Skill_Disarm_Trap|Disarm Trap]] before 21 it will waste a training point. The same occurs with [[Skill Pick Lock|Pick Lock]] when trained at 5, but the point is returned upon leveling to 6..
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Striker Stance
+| {{#section:Stances & Invocations|Striker}}
+|-
+| Evasive Stance
+| {{#section:Stances & Invocations|Evasive}}
+|-
+| Ranged Stance
+| {{#section:Stances & Invocations|Ranged}}
+|}
+
+= Disciplines =
+''See also: [[Disciplines]]''
+
+==Poisons==
+In Everquest Legends, Rogues can imbue their attacks with poisons:
+
+*Each melee attack has a chance to apply the rogue's chosen poison.''<<does that include melee special attacks like slam? spellblade? backstab?>>''
+*Poisons apply globally to all melee and but not ranged attacks, not on a per-weapon basis.
+*Only one utility poison can be active at a time, but all other combat poisons can be active simultaneously, unless otherwise noted on their respective descriptions.
+*Once applied poisons last until class swap or character death.
+*Coating a weapon in poison takes 2.5sec.
+*Poison Strikes are checked against the target's Poison Resistance, and aren't reflectable.
+
+
+{| class="eoTable2 sortable"
+! Poison
+! Level Obtained
+! Type
+! Description
+! Duration
+! Reuse Time
+|-
+| Blood Siphon Venom
+| 1
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span>
+| Coats your weapon in Blood Siphon Venom, giving you a chance to trigger Blood Siphon Strike on striking. This is considered a Combat Poison, and stacks with all other combat poisons, except Blood Draw Venom, which replaces this ability. (DoT Proc with Health Leech)
+| Permanent
+| 5 Sec
+|-
+| Asp Venom
+| 2
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span>
+| Coats your weapon in Asp Venom, giving you a chance to trigger Asp Venom Strike on striking. This is considered a Combat Poison, and stacks with other all other combat poisons, except Cobra Venom, which replaces this. (Direct Damage Proc)
+| Permanent
+| 5 Sec
+|-
+| Weakening Poison
+| 4
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span>
+| Coats your weapon in Weakening Poison, giving you a chance to trigger Weakening Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Melee Attack Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Hobbling Posion
+| 5
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Hobbling Poison, giving you a chance to trigger Hobbling Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Movement Speed Decrease - Snare Proc)
+| Permanent
+| 5 Sec
+|-
+| Concussive Poison
+| 7
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Concussive Poison, giving you a chance to trigger Concussive Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Interrupt with Pushback Proc)
+| Permanent
+| 5 Sec
+|-
+| Befuddling Poison
+| 9
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Befuddling Poison, giving you a chance to trigger Befuddling Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Mana Drain Proc)
+| Permanent
+| 5 Sec
+|-
+| Grounding Poison
+| 11
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Befuddling Poison, giving you a chance to trigger Grounding Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Root Proc)
+| Permanent
+| 5 Sec
+|-
+| Stunning Venom
+| 15
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span></span> 
+| Coats your weapon in Stunning Poison, giving you a chance to trigger Stunning Strike on striking. This is considered a Combat Poison, and stacks with all other combat poisons. (Stun Proc)
+| Permanent
+| 5 Sec
+|-
+| Clumsiness Poison
+| 18
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Clumsiness Poison, giving you a chance to trigger Clumsiness Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Sepll Cast Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Banishing Poison
+| 20
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in Banishing Poison, giving you a chance to trigger Banishing Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Dispel Proc)
+| Permanent
+| 5 Sec
+|-
+| Fettering Poison
+| 23
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Fettering Poison, giving you a change to trigger Grounding Strike and Hobbling Strike on striking.  This is considered a utility poison, only one of which may be active at a time. (Root Proc & Movement Speed Decrease - Snare Proc)
+| Permanent
+| 5 Sec
+|-
+| Binding Poison
+| 25
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Binding Poison, giving you a chance to trigger Weakening Strike and Hobbling Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Melee Attack Slow Proc & Movement Speed Decrease - Snare Proc)
+| Permanent
+| 5 Sec
+|-
+| Neurotoxic Poison
+| 28
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Neurotoxic Poison, giving you a chance to trigger Befuddling Strike and Weakening Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Mana Drain Proc & Melee Attack Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Mind Break Poison
+| 30
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Mind Break Poison, giving you a chance to trigger Concussive Strike and Clumsiness Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Interrupt with Pushback Proc & Spell Cast Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Thought Drain Poison
+| 33
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Thought Drain Poison, giving you a chance to trigger Befuddling Strike and Clumnsiness Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Mana Drain Proc & Spell Cast Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Antimagic Poison
+| 36
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in an Antimagic Poison, giving you a chance to trigger Concussive Strike and Banishing Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Interrupt with Pushback Proc & Dispel Proc)
+| Permanent
+| 5 Sec
+|-
+| Mage Bane Poison
+| 39
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Mage Bane Poison, giving you a chance to trigger Befuddling Strike and Banishing Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Mana Drain Proc & Dispel Proc)
+| Permanent
+| 5 Sec
+|-
+| Paralytic Poison
+| 42
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> 
+| Coats your weapon in a Paralytic Poison, giving you a chance to trigger Weakening Strike and Clumsiness Strike on striking. This is considered a utility Poison, only one of which may be active at a time. (Melee Attack Slow Proc & Spell Cast Slow Proc)
+| Permanent
+| 5 Sec
+|-
+| Blood Draw Venom
+| 46
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span></span> 
+| Coats your weapon in a Blood Draw Venom, giving you a chance to trigger Blood Draw Strike on striking. This is considered a Combat Poison, and stacks with all other combat poisons, except Blood Siphon Poison, which this ability replaces. (DoT Proc with Health Leech Proc)
+| Permanent
+| 5 Sec
+|-
+| Cobra Venom
+| 46
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span></span> 
+| Coats your weapon in Cobra Venom, giving you a chance to trigger Cobra Venom Strike on striking. This is considered a Combat Poison, and stacks with all other combat poisons, excluding Asp Venom, which this replaces. (Direct Damage Proc)
+| Permanent
+| 5 Sec
+|-
+|}
+
+===Poison Effects===
+<div id="Poison Effects">
+====Level 1====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blood Siphon Strike
+|description=Drains the life from your target, doing 56 damage every six seconds for 0:00:36, and healing your wounds for the same amount. Starting at level 46, additionally deals 100 damage when the spell lands.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=0:06
+|max=-56 HP (Poison) per tick
+}}
+</table>
+
+====Level 2====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Asp Venom Strike
+|description=Deals 62 points of poison damage to your target.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=-62 HP (Poison)
+}}
+</table>
+
+====Level 4====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Weakening Strike
+|description=weakens your targets limbs, slowing their attack rate for 0:03:30.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=2:42
+|max=-35% Attack Speed
+}}
+</table>
+
+====Level 5====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Hobbling Strike
+|description=Cuts circulation to your target's legs, slowing their movement speed for up to 0:03:00.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=3:00
+|max=-50% movement speed decrease
+}}
+</table>
+
+====Level 7====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Concussive Strike
+|description=Causes your opponent to twitch violently, interrupting spell casting 75% of the time.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max= Pushback: 2
+}}
+</table>
+
+====Level 9====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Befuddling Strike
+|description=Causes your opponent to clutch their head, draining their mana by 110.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max= -110 MP
+}}
+</table>
+
+====Level 11====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Grounding Strike
+|description=Blocks the nerves to your opponent's legs, rooting them for up to 0:01:00.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=1:00
+|max=
+}}
+</table>
+
+====Level 15====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Stunning Strike
+|description=Injects a paralytic agent, stunning your opponent. This effect works on creatures up to level 50.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max= Pushback: 1; Stun for 3s up to level 50
+}}
+</table>
+
+====Level 18====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Clumsiness Strike
+|description=Slows your target's hands, slowing their spell casting speed for 0:03:30.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=2:18
+|max=Spell Cast Slow for 0:03:30
+}}
+</table>
+
+====Level 20====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Banishing Strike
+|description=Removes a magical effect from your opponent.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+
+====Level 46====
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blood Draw Strike
+|description=Drains the life from your target, doing XX damage every six seconds for 0:00:36, and healing your wounds for the same amount.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Detrimental
+|targ=Single
+|duration=0:06
+|max=-XX HP (Poison) per tick
+}}
+{{RadSpellRow2
+|name=Cobra Venom Strike
+|description=Deals XX points of poison damage to your target.
+|era={{Classic Short}}
+|school=Poison
+|location=-
+|mana=-
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=-XX HP (Poison)
+}}
+</table>
+
+</div>
+
+==Stances==
+''See also: [[Disciplines#Stances|Stances]]''
+
+At any given time, a character can have one stance and one invocation active simultaneously. Swapping either one is possible, but each is subject to its own reuse time.
+
+{| class="eoTable2 mw-collapsible mw-collapsed" style="width:100%; max-width:100%; margin:1rem 0;"
+! style="text-align:left;" | <span class="mw-collapsible-toggle eql-spell-lazy-heading" title="Rogue Stances" style="display:block; float:none !important; width:100%; cursor:pointer; font-family:Georgia,'Times New Roman',serif; color:#d8b75c; font-size:1.25rem; font-weight:700; letter-spacing:0.04em;">Rogue Stances<div style="font-size:0.75rem;font-weight:400; margin:0 0 0.75rem 0;">''Click to Expand or Collapse''</div></span>
+|-
+| style="padding:0.75rem;" |
+<div style="font-size:0.95rem; margin:0 0 0.75rem 0;">
+{| class="eoTable2 sortable" style="width:100%; table-layout:auto;"
+|-
+! style="width:15%; white-space:normal;" | Stance
+! style="width:75%; white-space:normal; word-wrap:break-word;" | Description
+! style="width:10%; white-space:normal;" | Reuse Time
+|-
+| Balanced
+| style="white-space:normal; word-wrap:break-word;" | While this stance is active, all incoming damage is reduced by 10% and your chance to hit is increased by 10%. Endurance regen excluding out of combat bonus regen is doubled. There is no endurance cost to upkeep this stance.
+| 6 seconds
+|-
+| Evasive
+| style="white-space:normal; word-wrap:break-word;" | You have a 95% chance to evade all incoming attacks. Every point of damage evaded consumes 2 endurance, with a reduction based on your strategy skill. Evasion will fail if you have insufficient endurance, or while playing dead.
+| 6 seconds
+|-
+| Offensive
+| style="white-space:normal; word-wrap:break-word;" | Outgoing melee damage is increased by 100% and your chance to hit is increased by 25%. Every point of bonus damage dealt consumes an equal amount of endurance, with a reduction based on your strategy skill. When below 25% endurance, the chance to hit bonus is reduced based on the remaining percent of endurance. Bonus damage from critical hits and similar effects do not cost endurance.
+| 6 seconds
+|-
+| Ranged
+| style="white-space:normal; word-wrap:break-word;" | Your range attack has no minimum distance, gains a 25% accuracy bonus, and can double and triple attack. Every point of damage consumes endurance, with a reduction based on your strategy skill.
+| 6 seconds
+|-
+| Striker
+| style="white-space:normal; word-wrap:break-word;" | Outgoing weapon skill abilities deal 3x damage and non-weapon skill abilities deal 5x damage, and your chance to hit is increased by 25%. Every point of damage dealt consumes an equal amount of endurance, with a reduction based on your strategy skill. When below 25% endurance, the chance to hit bonus is reduced based on the remaining percent of endurance. Bonus damage from critical hits and similar effects do not cost endurance.
+| 6 seconds
+|}
+</div>
+|}
+
+==Invocations==
+''See also: [[Disciplines#Invocations|Invocations]]''
+
+At any given time, a character can have one stance and one invocation active simultaneously. Swapping either one is possible, but each is subject to its own reuse time.
+
+{| class="eoTable2 mw-collapsible mw-collapsed" style="width:100%; max-width:100%; margin:1rem 0;"
+! style="text-align:left;" | <span class="mw-collapsible-toggle eql-spell-lazy-heading" title="Rogue Stances" style="display:block; float:none !important; width:100%; cursor:pointer; font-family:Georgia,'Times New Roman',serif; color:#d8b75c; font-size:1.25rem; font-weight:700; letter-spacing:0.04em;">Rogue Invocations<div style="font-size:0.75rem;font-weight:400; margin:0 0 0.75rem 0;">''Click to Expand or Collapse''</div></span>
+|-
+| style="padding:0.75rem;" |
+<div style="font-size:0.95rem; margin:0 0 0.75rem 0;">
+{| class="eoTable2 sortable" style="width:100%; table-layout:auto;"
+|-
+! style="width:15%; white-space:normal;" | Invocation
+! style="width:75%; white-space:normal; word-wrap:break-word;" | Description
+! style="width:10%; white-space:normal;" | Reuse Time
+|-
+| Unyielding
+| style="white-space:normal; word-wrap:break-word;" | Health regen excluding out of combat bonus regen is doubled, with a 25% resistance increase to loss of control from fear, mez, and charm. There is no mana cost to upkeep this stance.
+| 6 seconds
+|-
+|}
+</div>
+|}
+
+= Rogue AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Rogue Class AAs}}
+
+=Rogue Specific Mechanics=
+
+==Backstab==
+
+For melee combat and backstab damage calculation, dual wield and proc rates please see: [[Game_Mechanics|Game Mechanics]]
+
+In Everquest Legends rogues receive the Chaotic Stab Alternate Advancement for free at level 1 that allows backstab from any position.
+
+To perform backstab the character must have a piercing weapon equipped on his primary/secondary or on one of the <ANY> slots.<br>
+''<what about a spear equipped on the ranged slot?><br>''
+''<if he has a piercing weapon equipped on main hand with better ratio and a piercing weapon with higher backstab bonus on the secondary or any slot which one will be used for backstab?><br>''
+''<what is the cooldown on backstab?><br>''
+
+==Evade==
+'''Evade''' is a special rogue-only mechanic that allows in combat use of the hide skill to reduce their agro by lowering their position on the hate lists of mobs that are agro to them. To perform an evasion, the rogue must turn off auto-attack, then use the hide skill. The easiest way to incorporate this into combat is to make a hotkey that does the following (assuming Hide is set to Ability 1):
+
+ /attack off
+ /doability 1
+ /attack on
+
+When attempting to evade, you will receive one of the following two messages to indicate success or failure:<BR>
+*"You have momentarily ducked away from the main combat." (Success, generally ~65% of the time)<BR>
+*"Your attempts at ducking clear of combat fail." (Fail)<BR>
+
+==Level 50+ Rogue Traits==
+''Not currently implemented in EQ Legends:''  
+*Level 51 - Minimum Backstab Damage (76 and increases each level | 1.5 x level, rounded down)  
+*Level 55 - Double Backstab Chance, Sneak Speed starts to increase   
+*Level 57 - Bind Wound Cap Increased to 70% health once 201+ skill attained.  
+*Level 60 - Chance to Assassinate level 46 and below Humanoids when using Backstab or Thrown, Sneak Speed maxed out
+
+= Rogue-Specific Quests =
+
+Classic:
+*[[Scouts Leggings]]**
+
+{{:Class_Race_Quest_List/Rogue}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Rogue Equipment | Rogue Equipment]] for the full list of gear usable by rogues.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Rogue]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Rogue]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Rogue]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Rogue]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Rogue]]}}
+
+= FAQ =
+
+'''Q:	Which weapon-skills should I practice / train?'''
+
+A:	Piercing... Rogues can use a range of one-handed weapons and even a few two-handed ones, but piercing is the rogue's trademark weapon-skill because that's what you need to have in your primary hand if you want to back-stab. What a rogue holds in their off hand is a matter of personal preference, but every rogue should keep their piercing skill in practice. 
+
+
+'''Q:	What is the evade skill I've heard about and why can't I train it?'''
+
+A:	Evasion is not a skill in the normal sense of the word, it's a trick that rogues can manage by using hide to lower their aggro in combat. A rogue simply exits combat and presses their hot-key for the [[Skill Hide|Hide]] skill. Most rogues set up a hot-key macro to do this.
+
+Evade does not completely remove aggro, and it does not work when soloing (see [http://www.project1999.com/forums/showthread.php?p=1827512#post1827512 this thread]).
+
+Evade was added February 17, 2000 with the {{Era | Paineel}} Era [https://wiki.project1999.com/Patch_notes#Rogue_Enhancements] [https://www.project1999.com/forums/showthread.php?t=336261]
+
+
+'''Q:	How does stealth work?'''
+
+A:	The simple version? Stand very still, press [[hide]] to hide yourself from view and then press [[sneak]]. Unlike other classes, rogues are told if they succeeded or not. If both skills worked, you are now invisible to 99% of mobs on the server as though someone had cast [[Invisibility]] and [[Invisibility versus Undead]] on you. You'll also walk slowly, but that's a small price to pay for the most reliable and effective form of invisibility in the game (your strafe speed will not be affected). <br />
+Some creatures can see through the [[Skill Hide|Hide]] skill, most of them rogues, so you should still be careful, but many a low-level rogue has wandered into [[Lower Guk]] or [[Chardok]] unseen.
+
+
+'''Q:	What are these masks people keep talking about?'''
+
+A:	There are four masks in the game which allow a rogue or bard to disguise themselves as a member of another race; these masks give minor stat boosts and can be clicked from the inventory:
+<ul><li>  {{:Guise of the Coercer}} (High Elf)
+</li><li> {{:Mask of Deception}} (Dark Elf)
+</li><li> {{:Iksar Hide Mask}} (Iksar)
+</li><li> {{:Mask of Obtenebration}} (Erudite)
+</li></ul>
+
+There are also three masks which were added later in the Velious era or were available for only a brief period:
+<ul><li> {{:Flayed Barbarian Hide Mask}} (Barbarian)
+</li><li> {{:Desiccated Halfling Mask}} (Halfling)
+</li><li> {{:Mask of Tinkering}} (Gnome)
+</li></ul>
+
+
+'''Q:	Where do I buy poisons?'''
+
+A:	You can't. Some poisons are given as rewards for quests, others can be looted from a very small number of NPCs, but the normal way to acquire poisons (once you are level 18 and able to use them) is to make them yourself from a variety of rare and dangerous compounds. You'll want to take a look at the [[Skill Make Poison|Make Poison]] page for more information on that.
+
+
+'''Q:	Where do I buy poison-making supplies?'''
+
+A:	Unfortunately, unlike most normal tradeskills, the poison-making vendors do not frequent any of the starting cities. In fact, with the exception of a vendor named Toxdil in the tunnels under Freeport, there is no old-world city with a poison vendor. Here is the current list of every known vendor selling poison-making supplies.
+{{ItemWhereTable|
+{{ItemWhereRow   | [[Dagnor's Cauldron]]             | [[Conium Darkblade]]          |               | (-236, -826) }}
+{{ItemWhereRow   | [[Firiona Vie]]                   | [[Brak Daggermist]]           |               | (-3608, 2359) }}
+{{ItemWhereRow   | [[Freeport|West Freeport]]        | [[Toxdil]]                    |               | (623, 200) }}
+{{ItemWhereRow   | [[Lake of Ill Omen]]              | [[Nubs Blackgranite]]         |               | (-2517, -2920) }}
+{{ItemWhereRow   | [[Western Plains of Karana]]      | [[Gindlin Toxfodder]]         |               | (-2986, -13398) }}
+}}
+
+
+'''Q:	Are [[Poison Vial]]s and [[Suspension]]s meant to be that expensive?'''
+
+A:	Yes, you really will be spending over 2pp just on vials and suspensions. That's why so many rogues learn how to [[Unfired Poison Vial|make their own]].
+
+
+'''Q:	Does Dexterity increase my hit rate?'''
+
+A:      Dexterity has been shown to increase hit rate in PVP, but there is no evidence it increases hit rate in PVE.
+
+{{Template: Navbox Classes}}

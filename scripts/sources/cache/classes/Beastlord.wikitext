@@ -1,0 +1,2207 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+ A Beastlord is a savage hybrid who combines melee combat, spiritual magic, and a loyal warder companion.
+ - EQLegends
+= Description =
+[[File:C_beastlord.gif|right]]
+Beastlords are a hybrid melee and spellcasting class that fight alongside a permanent animal companion. They combine respectable melee damage, utility magic, and pet support into a flexible role that can adapt to many situations.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+|Beastlord || Primalist || Animist || Feral Lord
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Barbarian]]''' || 103 || 95 || 82 || 70 || 70 || 60 || 55 
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55
+
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Ogre]]''' || 130 || 127 || 70 || 70 || 67 || 60 || 37
+|-
+| style="text-align: left"| '''[[Troll]]''' || 108 || 114 || 83 || 75 || 60 || 52 || 40
+|-
+| style="text-align: left"| '''[[Beastlord]] Adds''' ||  || 10 || 5 ||  || 10 ||  || 5
+|}
+
+== Your Race & Warder ==
+{| class="wikitable"
+! Race
+! Warder
+|-
+| [[Barbarian]]  
+| [[:File:Barbarian_Warder_WhiteWolf.png|White Wolf]]
+|-
+| [[Dark Elf]] 
+| [[:File:DarkElf_Warder_Spider.png|Spider]]
+|-
+| [[Dwarf]] 
+| [[:File:Dwarf_Warder_Skunk.png|Skunk]]
+|-
+| [[Erudite]] 
+| [[:File:Erudite_Warder_Snake.png|Snake]]
+|-
+| [[Froglok]]  
+| [[:File:Froglok_Warder_Leech.png|Leech]]
+|-
+| [[Gnome]] 
+| [[:File:Gnome_Warder_Rat.png|Rat]] (Currently - 5.15.26) / Clockwork Spider (Launch)
+|-
+| [[Half Elf]] 
+| [[:File:HalfElf_Warder_Puma.png|Puma]]
+|-
+| [[Halfling]] 
+| [[:File:Halfling_Warder_FireBeetle.png|Fire Beetle]]
+|-
+| [[High Elf]] 
+| [[:File:HighElf_Warder_Wisp.png|Wisp]]
+|-
+| [[Human]] 
+| [[:File:Human_Warder_Lion.png|Lion]]
+|- 
+| [[Iksar]] 
+| [[:File:Iksar_Warder_ScaledWolf.png|Scaled Wolf]]
+|-
+| [[Kerran]] 
+| [[:File:Kerran_Warder_Tiger.png|Tiger]]
+|-
+| [[Ogre]] 
+| [[:File:Ogre_Warder_WhiteBear.png|Bear]]
+|-
+| [[Troll]] 
+| [[:File:Troll_Warder_Alligator.png|Alligator]]
+|-
+| [[Wood Elf]] 
+| [[:File:WoodElf_Warder_Treant.png|Treant]]
+|} 
+
+Special thanks to Gigglemage, Moth, and Secrets for this information.
+
+== Impact from stats ==
+Prioritize Strength, Stamina, and Wisdom based on whether you want to emphasize melee performance, survivability, or spellcasting utility.
+
+= Warder Companion =
+The Beastlord’s warder is a permanent pet that fights alongside its master and is a core part of the class’s power in both solo and group play.
+
+= Skills =
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! scope="col" | '''Level'''
+! scope="col" | '''Skill'''
+! scope="col" | '''Trained'''
+! scope="col" | '''Pre 50 Cap'''
+! scope="col" | '''Post 50 Cap'''
+|-
+|1
+|[[1 Hand Blunt]]
+|No
+|250
+|250
+|-
+
+|1
+|[[Skill Piercing|1 Hand Piercing]]
+|No
+|250
+|250
+|-
+
+|1
+|[[2 Hand Blunt]]
+|No
+|250
+|250
+|-
+
+|1
+|[[Hand to Hand]]
+|No
+|250
+|250
+|-
+
+|1
+|[[Bind Wound]]
+|No
+|200
+|210
+|-
+
+|1
+|[[Defense]]
+|No
+|220
+|220
+|-
+
+
+|1
+|[[Dual Wield]]
+|No
+|210
+|210
+|-
+
+|1
+|[[Offense]]
+|No
+|200
+|200
+|-
+
+|1
+|[[Throwing]]
+|No
+|250
+|250
+|-
+
+|1
+|[[Kick]]
+|No
+|180
+|245
+|-
+
+|5
+|[[Dodge]]
+|No
+|230
+|230
+|-
+
+|20
+|[[Block]]
+|No
+|155
+|155
+|-
+
+|30
+|[[Riposte]]
+|No
+|105
+|105
+|}
+
+==Casting Skills==
+
+{| class="eoTable2"
+! scope="col" | '''Level'''
+! scope="col" | '''Skill'''
+! scope="col" | '''Trained'''
+! scope="col" | '''Pre 50 Cap'''
+! scope="col" | '''Post 50 Cap'''
+|-
+
+|1
+|[[Abjuration]]
+|No
+|235
+|235
+|-
+
+|1
+|[[Alteration]]
+|No
+|235
+|235
+|-
+
+|1
+|[[Channeling]]
+|No
+|200
+|215
+|-
+
+|1
+|[[Conjuration]]
+|No
+|235
+|235
+|-
+
+|1
+|[[Divination]]
+|No
+|235
+|235
+|-
+
+|1
+|[[Evocation]]
+|No
+|235
+|235
+|-
+
+|1
+|[[Meditate]]
+|No
+|185
+|226
+|-
+
+|20
+|[[Specialization]]
+|No
+|200
+|200
+|}
+
+==Miscellaneous Skills==
+
+{| class="eoTable2"
+! Skill Name
+! Level Obtained
+! Trained
+! Max
+|-
+| [[Athletics]]
+| 1
+| No
+| ?
+|-
+| [[Strategy]]
+| 1
+| No
+| ?
+|-
+| [[Skill_Alcohol_Tolerance|Alcohol Tolerance]]
+| 1
+| No
+| 255
+|-
+| [[Skill_Begging|Begging]]
+| 1
+| No
+| 255?
+|-
+| [[Skill_Bind_Wound|Bind Wound]]
+| 1
+| No
+| 210
+|-
+| [[Skill_Sense_Heading|Sense Heading]]
+| 1
+| No
+| 200
+|-
+| [[Skill_Swimming|Swimming]]
+| 1
+| No
+| 200
+|}
+
+= Stances & Invocations =
+
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Evasive Stance
+| {{#section:Stances & Invocations|Evasive}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Spellblade Invocation
+| {{#section:Stances & Invocations|Spellblade}}
+|-
+|Divine Invocation
+|Spending mana will heal the group member with the lowest hp percentage by that amount.
+For every additional wisdom class, this will repeat with a heal for 33% of the mana spent.
+|}
+= Spells =
+Beastlords use a mix of buffs, heals, slows, and utility spells to support themselves, their warder, and their group.
+
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Grobb]]'''
+|[[Tracab]]
+|Beastlord Guild
+|(367, -402)
+|-
+|'''[[Halas]]'''
+|[[Shenigan Mc'Macky]]
+|Beastlord Guild
+|(653, 234)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Elder Jantiz]]
+|Hybrid Spell Vendor Room
+|(240, -128)
+|-
+|'''[[Oggok]]'''
+|[[Brogdog]]
+|Beastlord Guild
+|(269, -1068)
+|}
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Healing
+|description=Increase Mends minor wounds, healing 20 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=10
+|kind=Healing
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=12-20 HP
+}}
+{{RadSpellRow2
+|name=Wild Spirit
+|description=Summon Pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=12
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sense Animals
+|description=Sense Animals
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Cold
+|description=Increase Cold Resist
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cleanses your target's immune system, curing minor diseases.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Tame Spirit
+|description=summon Pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=25
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flash of Light
+|description=Creates a bright flash of light, temporarily blinding your target.
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=12
+|kind=Detrimental
+|targ=Single
+|duration=12 Sec
+|max=-5 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Inner Fire
+|description=Increases your target's inner strength, providing increased hit points and armor class
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+2 AC<br>+20 Max HP<br>11-20 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Sharik
+|description=Summon Warder
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Fire
+|description=Increase Fire Resist
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Sharik's Replenishing
+|description=Restores your warder's health, as well as curing them of diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=26
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=50-55 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Scale Skin
+|description=Causes your target to grow hard scales around their body, increasing their armor class for %z. Consumes snake scales when cast.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fleeting Fury
+|description=Fills your target with a fleeting fury, increasing their strength, dexterity, and armor class
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=18 Sec
+|max=+15 STR<br>+5 AC<br>+20 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blast of Frost
+|description=Blasts your target with frost
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=40
+|kind=DD Cold
+|targ=Single
+|duration=Instant
+|max=71 Dmg<br>Stun 0.1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Poison
+|description=Removes toxin from your target's system, curing them of minor poisons.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=20
+|kind=Cure Poison
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Poison
+}}
+{{RadSpellRow2
+|name=Spirit of Lightning
+|description=Fills your warder with the power of a great spirit, increasing their dexterity by 75
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=50
+|kind=Pet Proc
+|targ=Pet
+|duration=40 Min
+|max=Procs: Spirit of Lightning Strike<br>+75 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Light Healing
+|description=Mends light wounds, healing between 35 and 65 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=28
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=47-65 HP
+}}
+{{RadSpellRow2
+|name=Sicken
+|description=Sickens your target with a fever, causing #3 damage initially and #2 damage every six seconds for %z
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=11
+|kind=DOT Disease
+|targ=Single
+|duration=1 Min 24 Sec
+|max=-11 HP/tick<br>-8 Dmg
+}}
+{{RadSpellRow2
+|name=Strengthen
+|description=Increases your target's strength by 10
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Keshuval's Rejuvenation
+|description=Restores your warder's health, as well as curing them of diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=61
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=127-149 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+{{RadSpellRow2
+|name=Spirit of Khaliz
+|description=Summons a feral warder to aid you in battle.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=75
+|kind=Pet Summon
+|targ=Self
+|duration=Instant
+|max=Summon
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Serpent Sight
+|description=Fills your target's eyes with the sight of the serpent, granting them improved night vision.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=30
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=Infravision  27m
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Bear
+|description=Fills your target with the spirit of the bear, increasing their stamina for 36 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+15 STA
+}}
+{{RadSpellRow2
+|name=Summon Drink
+|description=Focuses mana into a globe of pure drinking water.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=10
+|kind=Summon Item
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Poison
+|description=Surrounds your target with an aura of protection, warding away poison
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Poison Resist
+}}
+{{RadSpellRow2
+|name=Spirit of the Blizzard
+|description=Fills your warder with the power of a great spirit, increasing their dexterity by 75
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=60
+|kind=Pet Proc
+|targ=Pet
+|duration=42 Min
+|max=Procs: Spirit of Blizzard Strike<br>+75 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Tainted Breath
+|description=Fills your target's blood with poison,
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=58
+|kind=Dot
+|targ=Single
+|duration=42 Sec
+|max=-10 Dmg<br>-22 HP/tick
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrinks your pet, allowing it better mobility in tight quarters.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=50
+|kind=Buff
+|targ=Pet
+|duration=Instant
+|max=Decrease Pet Size by 50%
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Drowsy
+|description=Inflicts your target with a drowsy fever, slowing their attack rate for 25%
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=20
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-25% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Keshuval
+|description=You summon a warder to your aid.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=100
+|kind=Pet Summon
+|targ=Self
+|duration=Instant
+|max=Summon Warder
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Surrounds your target with an aura of protection, warding away disease for 27m
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Frost Dagger
+|description=Hurls a frost dagger at your target, causing between 136 and 136 damage. Targets up to level 55 will be momentarily stunned, interrupting their spellcasting.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=68
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=136 Dmg<br>Stun 0.1s (max L55)
+}}
+{{RadSpellRow2
+|name=Shrink
+|description=Shrinks your target, allowing them greater mobility in tight quarters.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=50
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=Decrease Player Size by 34%
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Healing
+|description=Mends moderate wounds, healing between 95 and 175 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=65
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=135-175 HP
+}}
+{{RadSpellRow2
+|name=Spirit of Wolf
+|description=Infuses your target with the spirit of the wolf, increasing their movement speed for 36 min.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=40
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enduring Breath
+|description=Magically fills your lungs with air, removing your need to breathe for 27m.  Consumes a handful of fish.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=35
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=Enduring Breath
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit Strike
+|description=Creates a rift of bitter cold, causing 78 damage to your target.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=44
+|kind=DD Cold
+|targ=Single
+|duration=Instant
+|max=72-78 Dmg
+}}
+{{RadSpellRow2
+|name=Turtle Skin
+|description=Causes your target's skin to grow as hard as a turtle's shell, increasing their armor class for 36 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+8 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Herikol's Soothing
+|description=Restores your warder's health, as well as curing them of diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=108
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=274-298 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit Strength
+|description=Fills your target's body with spiritual power, increasing their strength for 36m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+18 STR
+}}
+{{RadSpellRow2
+|name=Spirit of Inferno
+|description=Fills your warder with the power of a great spirit, increasing their dexterity by 75
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=70
+|kind=Pet Proc
+|targ=Pet
+|duration=44 Min
+|max=Procs: Spirit of Inferno Strike<br>+75 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit Sight
+|description=Allows your target to perceive the spirit realm, causing normally invisible creatures to become visible to their eyes.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=20
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=See Invisible
+}}
+{{RadSpellRow2
+|name=Summon Food
+|description=Focuses mana into an edible loaf of black bread.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=10
+|kind=Summon Item
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Herikol
+|description=Summons a feral warder to aid you in battle.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Pet Summon
+|targ=Self
+|duration=Instant
+|max=Summon Warder
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summons your pet to your current location.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Levitate
+|description=Forms a cloud of dense air around your feet, allowing you to float slightly off the ground for up to 20m 30s
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=Consumes a bat wing when cast.
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ice Spear
+|description=Strikes your target with an ice spear upto 207
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=97
+|kind=DD Cold
+|targ=Single
+|duration=Instant
+|max=207 Dmg<br>Stun 0.1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Magic
+|description=Surrounds your target with an aura of protection, warding away magic for 27m
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Greater Healing
+|description=Mends major wounds.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=115
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=280-350 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Cancels magical enchantments affecting your target.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=30
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=Dispel (1)
+}}
+{{RadSpellRow2
+|name=Envenomed Breath
+|description=Fills your target's blood with poison.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=173
+|kind=DOT Poison
+|targ=Single
+|duration=42 Sec
+|max=-21 Dmg<br>-90 HP/tick
+}}
+{{RadSpellRow2
+|name=Languid Pace
+|description=Slows your target's attack speed.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=50
+|kind=Slow
+|targ=Single
+|duration=3min 30s
+|max=-30%
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Yekan's Recovery
+|description=Restores your warder's health as well as curing them of diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=159
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=345-401 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Ox
+|description=Fills your target with the sprit of the ox, increasing their stamina for 45m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+23 STA
+}}
+{{RadSpellRow2
+|name=Yekan's Quickening
+|description=Fills your warder with the quickening of Yekan, increasing their attack speed, strength, armor class, and attack rating
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=200
+|kind=Pet Haste
+|targ=Pet
+|duration=60 Min
+|max=+45 STR<br>+60% Atkspd<br>+20 ATK<br>+10 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Monkey
+|description=Fills your target with the spirit of the monkey, increasing their dexterity for 36m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+20 DEX
+}}
+{{RadSpellRow2
+|name=Spirit of the Scorpion
+|description=Fills your warder with the power of a great spirit, increasing their dexterity for 46m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=80
+|kind=Pet Proc
+|targ=Pet
+|duration=46 Min
+|max=Procs: Spirit of Scorpion Strike<br>+75 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Yekan
+|description=You summon a warder to your aid.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=200
+|kind=Pet Summon
+|targ=Self
+|duration=Instant
+|max=Summon Warder
+}}
+{{RadSpellRow2
+|name=Spirit of the Shrew
+|description=Infuses your target with the spirit of the shrew, granting greatly improved night vision and increased movement speed for 36m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Malaria
+|description=Infects your target with a deadly plague of malaria, causing up to 93 damage every six seconds for 72sec   INSTANT CAST
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=173
+|kind=DOT Disease
+|targ=Single
+|duration=1 Min 12 Sec
+|max=-73 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Raging Strength
+|description=Fills your target's body with raging power, increasing their strength for 45m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+26 STR
+}}
+{{RadSpellRow2
+|name=Spiritual Light
+|description=Envelops your target in an aura of spiritual light, increasing their mana, endurance and hit point regeneration for 45m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=200
+|kind=HP/END/MANA Regen
+|targ=Group
+|duration=45 Min
+|max=+3 Mana<br>+3 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spiritual Brawn
+|description=Fills your target with spiritual brawn, increasing their hit points and attack rating for 72m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=75
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+10 ATK<br>+75 Max HP
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invisibility
+|description=Cloaks your target in a mystic veil, making them invisible to many creatures.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Listless Power
+|description=Saps your target's power, decreasing their agility, strength, and armor class for 6m 30s
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=90
+|kind=Weaken
+|targ=Single
+|duration=5 Min
+|max=-35 AGI<br>-35 STR<br>-15 AC
+}}
+{{RadSpellRow2
+|name=Pack Shrew
+|description=Infuses your group with the spirit of the shrew, granting greatly improved night vision and increased movement speed for 30%. This spell also functions indoors.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=320
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Counteract Disease
+|description=Cleanses your target's immune system, curing them of moderate diseases.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Disease
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Kashek
+|description=You summon a warder to your aid.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=250
+|kind=Pet Summon
+|targ=Self
+|duration=Instant
+|max=Summon Warder:
+}}
+{{RadSpellRow2
+|name=Spirit of Vermin
+|description=Fills your warder with the power of a great spirit, increasing their dexterity for 48m
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=90
+|kind=Pet Proc
+|targ=Pet
+|duration=48 Min
+|max=Procs: Spirit of Vermin Strike<br>+75 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Frenzy
+|description=Sends you into a frenzy, increasing your strength, dexterity, and armor class for up to 20m
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=35
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+8 AC<br>+25 AGI<br>+27 STR<br>+25 DEX
+}}
+{{RadSpellRow2
+|name=Frost Shard
+|description=Strikes your target with a frost shard, upto 281
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=119
+|kind=DD Cold
+|targ=Single
+|duration=Instant
+|max=281 Dmg<br>Stun 0.1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Protect
+|description=Places a spiritual protection on your target, increasing their armor class for 36m
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=75
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+11 AC
+}}
+{{RadSpellRow2
+|name=Spirit Salve
+|description=Mends your target's wounds, healing up to 456
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=181
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=446-456 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Vigor of Zehkes
+|description=Restores your warder's health as well as curing them of diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=206
+|kind=Pet Heal
+|targ=Pet
+|duration=Instant
+|max=671 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+{{RadSpellRow2
+|name=Ward of Calliav
+|description=Places the Ward of Calliav on your pet, absorbing up to 11747 damage from the next #1 melee strikes or direct damage spells that hit it.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=200
+|kind=Pet Buff
+|targ=Pet
+|duration=36 Min
+|max=Absorb 1 Hits or Spells, Max per Hit: 11747
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sha's Lethargy
+|description=Causes your target to fall into a lethargic state, slowing their attack speed for 3m 30s
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=45
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-40% Atkspd
+}}
+</table>
+</div>
+
+= Beastlord AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Beastlord Class AAs}}
+
+= Beastlord-Specific Quests =
+{{#lsth:Class Race Quest List|Beastlord}}
+
+= Gearing =
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page. See also [[Equipping a Beastlord]].
+
+Check [[:Category:Beastlord Equipment|Beastlord Equipment]] for the full list of gear usable by Beastlords.
+
+== Pre-Planar ==
+{{#lsth:Players:Pre Planar Gear|[[Beastlord]]}}
+
+== Planar ==
+{{#lsth:Players:Planar Gear|[[Beastlord]]}}
+
+== Kunark ==
+{{#lsth:Players:Kunark Gear|[[Beastlord]]}}
+
+== Velious Pre-Raid/Group ==
+{{#lsth:Players:Velious Pre-Raid Gear|[[Beastlord]]}}
+
+== Velious Raiding ==
+{{#lsth:Players:Velious Raiding Gear|[[Beastlord]]}}
+
+= FAQ =
+{{Navbox Classes}}

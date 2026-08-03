@@ -1,0 +1,2054 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ The antithesis of a Paladin, a Shadow Knight derives power from the evil gods he serves.<br> He's part Warrior, part Necromancer and has the innate ability to <i>Harm Touch.</i> 
+ - EverQuest manual
+
+=Description=
+[[File:C shadowknight.gif|right]]
+'''Shadow Knights''' are unholy warriors that use fear, pain and disease to attack all that is good in the world. Shadow Knights are a plate-wearing melee class able to wield many kinds of weapons and dark spells.
+
+The Shadow Knight is considered by many as the opposite to a Paladin, while in some ways this is true, on Norrath they aren't the traditional evil Black Knight to the Good White Knight. The races that are capable of producing Shadow Knights are not all innately evil, even Humans are known to become them. In a similar fashion to a Paladin, Shadow Knights have to be dedicated to their deity, whether this dedication is because of a desire to serve or to gain in power and wealth is debatable. What is true for certain is none of the deities Shadow Knights follow could be thought of as good and will usually be classed as evil.
+
+Shadow Knights have many of the skills and undertake similar training to that of a Warrior, complemented with an impressive spell casting ability in Necromantic magic. They are one of the most respected and feared professions and as individuals are formidable opponents, even inexperienced Shadow Knights have completed tough and painful tasks, proving their worth enough to be trained. The Iksar especially give difficult tasks to their young apprentices, many of whom will never make it beyond their apprentice status. They are taught to fight without fear or mercy and not to question their masters, at least not until they can defeat them and give commands of their own.
+
+Shadow Knights have no qualms about their method of defeating an opponent, including leaching their health and strength to enhance their own. Among the dark spells available to them, Shadow Knights can cause an enemy to run in fear and then slow their movement, catching up and striking them repeatedly where their armor is most vulnerable. This isn't to say Shadow Knights avoid direct combat as they are powerful duelists, often using weapons imbued with cruelty. They are among the most dangerous enemies that an adventurer could encounter and as an ally need to be respected and dealt with carefully, Shadow Knights have a reputation for being quick to anger and easy to annoy and not always making their distaste known until it maybe fatal for the party responsible.
+
+
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Lvl 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Shadow Knight || Reaver || Revenant || Grave Lord
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55
+|-
+| style="text-align: left"| '''[[Ogre]]''' || 130 || 127 || 70 || 70 || 67 || 60 || 37
+|-
+| style="text-align: left"| '''[[Troll]]''' || 108 || 114 || 83 || 75 || 60 || 52 || 40
+|-
+| style="text-align: left"| '''Shadow Knight adds''' || 10 || 5 ||  ||  ||  || 10 || 5
+|}
+
+== Impact from stats ==
+
+Shadow Knights need to balance the difficulty of good melee ability with a reasonable mana pool. 
+
+== Religion ==
+
+Religion is not of a huge concern to Shadow Knights as they are already hated.  Most choose to worship [[Innoruuk]] the Prince of Hate, as it ties in well their role.  The other choices are [[Cazic-Thule]], or rarely [[Bertoxxulous]] or [[Rallos Zek]].  Shadow Knights cannot be agnostic, as their dark powers are directly linked to their study or worship of their deity and the dead.
+
+* {{Class And Religion Gear Search|Shadow Knight|Bertoxxulous}} [[Deity_Specific_Items#Bertoxxulous|Bertoxxulous item list]]
+* {{Class And Religion Gear Search|Shadow Knight|Cazic Thule}} [[Deity_Specific_Items#Cazic-Thule|Cazic-Thule item list]]
+* {{Class And Religion Gear Search|Shadow Knight|Innoruuk}} [[Deity_Specific_Items#Innoruuk|Innoruuk item list]]
+* {{Class And Religion Gear Search|Shadow Knight|Rallos Zek}} [[Deity_Specific_Items_Continued#Rallos_Zek|Rallo Zek item list]]
+
+
+==Regeneration Rates==
+Confirmed up to level 50.
+
+{| class="eoTable3 sortable" style="width: 0%;"
+|-
+!Level Range !! Normal Regen !! Iksar/Troll Regen
+|-
+!1 to 19 !! 2 !! 4
+|-
+!20 to 49 !! 3 !! 6
+|-
+!50 !! 4 !! 8
+|-
+!51 to 55 !! 5 !! 12
+|-
+!56 to 59 !! 6 !! 16
+|-
+!60 !! 7 !! 18
+|-
+|}
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Defensive Stance
+| {{#section:Stances & Invocations|Defensive}}
+|-
+| Mage Hunter Stance
+| {{#section:Stances & Invocations|MageHunter}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Arcane Mastery Invocation
+| {{#section:Stances & Invocations|ArcaneMastery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Spellblade Invocation
+| {{#section:Stances & Invocations|Spellblade}}
+|}
+
+=Spells=
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|'''[[Grobb]]'''
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|[[Freeport|'''Freeport (East)''']]
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|[[Neriak|'''Neriak Third Gate''']]
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|[[New Sebilis Expedition]]
+|[[Crusader Silulika]]
+|Hybrid Spell Vendor Room
+|(240, -69)
+|-
+|'''[[Oggok]]'''
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|'''[[Paineel]]'''
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|[[Qeynos Aqueducts|'''Qeynos Aqueducts''']]
+|???
+|Shadow Knight Guild
+|(???, ???)
+|-
+|[[Rathe Mountains|'''Rathe Mountains''']]
+|[[Scribe Vordangl]]
+|Evil Froglok Shrine
+|(-1770, 2152)
+|}
+
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lifetap
+|description=Transfer life from target to caster (3.33 DPS)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=8
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=4-6 Dmg
+}}
+{{RadSpellRow2
+|name=Spike of Disease
+|description=Single Target Disease DD (max: 15)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=9
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=15 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sense the Dead
+|description=Locate Nearest Undead Creature
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Sense
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invisibility versus Undead
+|description=Invisibility to the Undead
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Disease Cloud
+|description=Single Target Disease DoT (max: 64)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=10
+|kind=DoT
+|targ=Single
+|duration=6 Min
+|max=-5 Dmg<br>-1 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Siphon Strength
+|description=Transfer strength from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=5
+|kind=Power Tap
+|targ=Single
+|duration=6 Min
+|max=-10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Leering Corpse
+|description=Summons a Skeleton Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Pet lvl 3-5
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lifespike
+|description=Lifetap (6.3 DPS)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=13
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=8-12 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Despair
+|description=Steals hope from your target, decreasing their attack rating for 7 min 30s.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=12
+|kind=Taps
+|targ=Single
+|duration=6 Min
+|max=-5 ATK
+}}
+{{RadSpellRow2
+|name=Numb the Dead
+|description=Frenzy Range Reducer
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Detrimental
+|targ=Undead
+|duration=2 Min
+|max=Calm (max L30)
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Cold
+|description=Cold Resistance Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Clinging Darkness
+|description=Snare DoT
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=20
+|kind=Snare DoT
+|targ=Single
+|duration=48 Sec
+|max=-8 HP/tick<br>Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fear
+|description=Fear Spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Fear
+|targ=Single
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shadow Step
+|description=Self Only Random Teleport
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Teleport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bone Walk
+|description=Summons a skeleton pet.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Pet level 6-7
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lifedraw
+|description=Lifetap Spell (18.4 DPS)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=86
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=102-105 Dmg
+}}
+{{RadSpellRow2
+|name=Scream of Hate
+|description=Lower target's attack rating, increase yours
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=85
+|kind=Power Tap
+|targ=Single
+|duration=10 Min
+|max=-8 ATK
+}}
+{{RadSpellRow2
+|name=Vampiric Embrace
+|description=Add single-target lifetap proc
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=30
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=Procs: Vampiric Embrace
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Grim Aura
+|description=Increase attack rating
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogrant Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Deadeye
+|description=See Invisible, Infravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancelling of Life
+|description=Debuff target's healing received by 20%, 11 damage/tick
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=60
+|kind=Heal debuff, DoT
+|targ=Single
+|duration=1 Min
+|max=-11 HP/tick
+}}
+{{RadSpellRow2
+|name=Ward Undead
+|description=Undead Only DD
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=5
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=7-12 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cure minor diseases
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrink your pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Engulfing Darkness
+|description=Snare DoT (Max: 110dmg; 1.83 DPS; 2.02 DPM)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=60
+|kind=Snare DoT
+|targ=Single
+|duration=1 Min
+|max=-11 HP/tick<br>Snare
+}}
+{{RadSpellRow2
+|name=Spook the Dead
+|description=Undead only fear
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Fear
+|targ=Undead
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dark Empathy
+|description=Transfer life from caster to target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Heal
+|targ=Single
+|duration=Instant
+|max=30 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Convoke Shadow
+|description=Summons a skeleton pet.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Lvl 9-11 Pet
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Scream of Pain
+|description=Lower target's armor class, increase yours
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Power Tap
+|targ=Single
+|duration=10 Min
+|max=-5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Feign Death
+|description=Fake Death
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=+87 Invul
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Disease Resistance Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Wave of Enfeeblement
+|description=Point Blank AE Strength Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Debuff
+|targ=PB AE
+|duration=4 Min
+|max=-15 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Heat Blood
+|description=Fire Based DoT (Max: 170; 2.36 DPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=88
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-43 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Strengthen Death
+|description=Pet Only Melee Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Pet
+|duration=60 Min
+|max=+5 STR<br>+20% Atkspd<br>+1 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Gather Shadows
+|description=Self Only Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Self
+|duration=20 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Restless Bones
+|description=Summon Skeleton Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=160
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=lvl 12-16 Pet
+}}
+{{RadSpellRow2
+|name=Siphon Life
+|description=Steal life from target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=140-150 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Negation of Life
+|description=Debuff target's healing received by 30%, 20 damage/tick
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=DoT
+|targ=Single
+|duration=1 Min 30 Sec
+|max=-20 HP/tick
+}}
+{{RadSpellRow2
+|name=Shieldskin
+|description=Absorb damage
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=41
+|kind=Rune
+|targ=Self
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dark Temptation
+|description=Increase attack rating, lower health regen
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+25 ATK<br>-3 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Terror of Darkness
+|description=Taunt
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Taunt
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spear of Disease
+|description=Single target disease damage
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=118
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=251 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resist Cold
+|description=Cold Resistance Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly
+|duration=36 Min
+|max=+40 Cold Resist
+}}
+{{RadSpellRow2
+|name=Shroud of Hate
+|description=Transfer ATK from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=10 Min
+|max=-20 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes magical effects
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=2 Effects
+}}
+{{RadSpellRow2
+|name=Heart Flutter
+|description=STR & AC Debuff and Disease DoT
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=41
+|kind=Debuff/DoT
+|targ=Single
+|duration=36 Sec
+|max=-20 STR<br>-7 AC<br>-24 HP/tick
+}}
+{{RadSpellRow2
+|name=Spirit Tap
+|description=Transfer life from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=152
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=202-210 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Scream of Death
+|description=Add point blank area of effect lifetap proc
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=Procs: Scream of Death Strike
+}}
+{{RadSpellRow2
+|name=Shadow Vortex
+|description=Transfer AC from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Power Tap
+|targ=Single
+|duration=6 Min
+|max=-10 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Animate Dead
+|description=Summons a Skeleton Pet. Lvl 19 pet can dual wield with weapons
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Pet lvl 15-19
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expulse Undead
+|description=Undead Only Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=36
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=99-106 Dmg
+}}
+{{RadSpellRow2
+|name=Voice of Darkness
+|description=Imbues your target's voice with the power of darkness, causing creatures to take more notice of their attacks for 10 min.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Single Friendly
+|duration=10 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shadow Sight
+|description=Self Only Ultravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blood of Pain
+|description=Single target poison damage over time
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=172
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-65 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Terror of Shadows
+|description=Fills your target's mind with shadowed terror, inciting hatred.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Taunt
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invoke Fear
+|description=Causes target to flee
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Fear
+|targ=Single
+|duration=42 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dooming Darkness
+|description=Slows target and deals damage
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Snare DoT
+|targ=Single
+|duration=1 Min 30 Sec
+|max=-20 HP/tick<br>Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Breath of the Dead
+|description=Water Breathing
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=
+}}
+{{RadSpellRow2
+|name=Word of Spirit
+|description=Point Blank Area Magical Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=133
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=91-104 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Summon Dead
+|description=Summons a Skeleton Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=290
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Pet lvl 22-25
+}}
+{{RadSpellRow2
+|name=Voice of Shadows
+|description=Imbues your target's voice with the power of shadows, causing creatures to take more notice of their attacks for 10 min.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single Friendly
+|duration=10 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Life Leech
+|description=Transfer life from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=[[The Etched Stone|Quest]]
+|mana=181
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=250 Dmg
+}}
+{{RadSpellRow2
+|name=Scythe of Darkness
+|description=Single target undead-only damage
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=112
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=346 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spear of Pain
+|description=Single target disease damage
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=138
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=325 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dismiss Undead
+|description=Undead Only Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=63
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=196-211 Dmg
+}}
+{{RadSpellRow2
+|name=Drain Spirit
+|description=Transfer life from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=213
+|kind=Lifetap
+|targ=Single
+|duration=Instant
+|max=314 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Harmshield
+|description=18 second invulnerability
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=85
+|kind=Utility
+|targ=Self
+|duration=18 Sec
+|max=-20 Dmg
+}}
+{{RadSpellRow2
+|name=Shroud of Pain
+|description=Transfer AC from target to caster
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Power Tap
+|targ=Single
+|duration=10 Min
+|max=-12 AC
+}}
+</table>
+</div>
+
+= Alternate Advancement =
+{{#lsth:Alternate Advancement|Shadow Knight Class AAs}}
+
+= Pet Guide =
+
+{{#lsth:Pet Guide|[[Shadow Knight]] Pets}}
+
+= Skills =
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! Level || Skill || Cap Until 50 || Cap Above 50 || Feb 21, 2001 || Oct 8, 2001
+|-
+|1 || [[1 Hand Blunt]] || 200 || 225
+|-
+|1 || [[Skill Piercing|1 Hand Piercing]]|| 200 || 210
+|-
+|1 || [[1 Hand Slashing]] || 200 || 225
+|-
+|1 || [[2 Hand Blunt]] || 200 || 225
+|-
+|1 || [[2H Piercing|2 Hand Piercing]] || 200? || 225?
+|-
+|1 || [[2 Hand Slashing]] || 200 || 225
+|-
+|1 || [[Archery]] || 75 || 75
+|-
+|1 || [[Throwing]] || 200? || 200?
+|-
+|1 || [[Bash]] || 175 || 200
+|-
+|1 || [[Defense]] || 210 || 230 || 252
+|-
+|1 || [[Hand to Hand]] || 75 || 100
+|-
+|1 || [[Harm Touch]] * || 200 || 200
+|-
+|1 || [[Offense]] || 200 || 225
+|-
+|1 || [[Taunt]] || 180 || 180 || || 220
+|-
+|10 || [[Disarm]] || 70 || 70
+|-
+|10 || [[Dodge]] || 125 || 155
+|-
+|15 || [[Parry]] || 175 || 205
+|-
+|20 || [[Double Attack]] || 200 || 235
+|-
+|20 || [[Riposte]] || 175 || 200
+|}
+
+: * Harm Touch is now an Ability, not a Skill <small>(kept here since there isn't an Abilities section)</small>
+
+==Casting Skills==
+
+{| class="eoTable2"
+! Level || Trained || Skill || Cap Until 50 || Cap Above 50
+|-
+|1 || No || Abjuration || 235 || 235
+|-
+|1 || No || Alteration || 235 || 235
+|-
+|1 || No || Channelling || 200 || 220
+|-
+|1 || No || Conjuration || 235 || 235
+|-
+|1 || No || Divination || 235 || 235
+|-
+|1 || No || Evocation || 235 || 235
+|-
+|1 || No || Meditate || 185 || 235
+|}
+
+==Miscellaneous Skills==
+
+{| class="eoTable2"
+! Level || Trained || Skill || Cap Until 50 || Cap Above 50
+|-
+|1 || No || Athletics || ? || ?
+|-
+|1 || No || Strategy || ? || ?
+|-
+|1 || No || Beg || 200 || 200
+|-
+|1 || No || Bind Wound || 100 || 200
+|-
+|1 || No || Fishing || 200 || 200
+|-
+|1 || No || Sense Heading || 200 || 200
+|-
+|1 || No || Swimming || 200 || 200
+|-
+|35 || No || Hide || 75 || 75
+|}
+
+* Various [[Tradeskills]]
+
+= Shadow knight-Specific Quests =
+
+{{#lsth:Class Race Quest List|Shadow Knight}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Shadow Knight Equipment | Shadow Knight Equipment]] for the full list of gear usable by Shadow Knights.
+
+The gear list starts with Best in slot and then moves down.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Shadow Knight]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Shadow Knight]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Shadow Knight]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Shadow Knight]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Shadow Knight]]}}
+
+== Iksar ==
+
+Iksar specific due to plate restrictions, covers all eras, from good starting gear to best in slot.
+<ul>
+<li>'''Ears'''      - {{:Black Sapphire Electrum Earring}}, {{:Fingerbone Hoop}}, {{:Earring of Essence}}, {{:Head of the Valiant}}, {{:Yunnb's Earring}}</li>
+<li>'''Fingers'''   - {{:Platinum Fire Wedding Ring}}, {{:Djarns Amethyst Ring}}, {{:Gem Encrusted Ring}}, {{:Band of Eternal Flame}}, {{:Crimson Ring of the Djinni}}</li>
+<li>'''Neck'''      - {{:Glowing Bone Collar}}, {{:Amulet of the Sphinx Eye}}, {{:Necklace of Superiority}}</li>
+<li>'''Head'''      - {{:Dreadscale Helm}}, {{:Kylong War Helm}}, {{:Blazing Helm of Fennin Ro}}, {{:Crown of Rile}}</li>
+<li>'''Face'''      - {{:Dreadscale Mask}}, {{:Sarnak-Hide Mask}}, {{:Targishin's Bone Mask}}, {{:Enshrouded Veil}}</li>
+<li>'''Chest'''     - {{:Dreadscale Breastplate}}, {{:Tree Weave}}, {{:Fungus Covered Scale Tunic}}, {{:Will of Innoruuk}}</li>
+<li>'''Arms'''      - {{:Dreadscale Vambraces}}, {{:Sleeves of the Ancients}}, {{:Sebilite Scale Vambraces}}</li>
+<li>'''Back'''      - {{:Hooded Black Cloak}}, {{:Hierophant's Cloak}}, {{:Cloak of Flames}}, {{:Cloak of Piety}}</li>
+<li>'''Waist'''     - {{:Thick Banded Belt}}, {{:Flowing Black Silk Sash}}, {{:Sash of the Dragonborn}}, {{:Runebranded Girdle}}, {{:Pegasus-Hide Belt}}</li>
+<li>'''Shoulders''' - {{:Tattered Mantle}}, {{:Grim Pauldrons}}, {{:Pearlescent Pauldrons}}</li>
+<li>'''Wrists'''    - {{:Dreadscale Bracer}}, {{:Bracer of Scavenging}}, {{:Dark Rust Bracer}}</li>
+<li>'''Legs'''      - {{:Dreadscale Greaves}}, {{:Dark Scale Greaves}}, {{:Sebilite Scale Leggings}}</li>
+<li>'''Hands'''     - {{:Dreadscale Gauntlets}}, {{:Jarsath Scale Gauntlets}}, {{:Gauntlets of Fiery Might}}</li>
+<li>'''Feet'''      - {{:Dreadscale Boots}}, {{:Sebilite Scale Boots}}, {{:Blazing Boots of Fennin Ro}}</li>
+
+<li>'''Primary'''   - {{:Sword of Skyfire}}, {{:Lord of Pain's Khukri}}, {{:Mace of the Shadowed Soul}}, {{:Noctivagant Blade}},{{:Khyldorn the Blood Drinker}},{{:Greenmist}},{{:Innoruuk's Curse}}</li>
+<li>'''Secondary''' - {{:Sarnak Battle Shield}}, {{:Ashenbone Shield}}, {{:Atramentous Shield}}</li>
+<li>'''Range'''     - {{:Idol of the Thorned}}, {{:Stone of Morid}}</li>
+</ul>
+
+{{Template: Navbox Classes}}

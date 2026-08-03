@@ -1,0 +1,3319 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+ 
+ A Cleric is a holy woman born with the power to heal, and, to a lesser extent, call upon the wrath of her deity to smite her foes.<br> Prayer is how the Cleric gains her ability.
+ - EverQuest Manual
+
+=Description=
+[[File:C cleric.gif|right]]
+Clerics dedicate their lives to the gods of Norrath, gaining magical powers in exchange for their faith and service. Clerics are primarily a magic-using class, with the ability to wear plate armor and wield blunt weapons.
+
+Clerics gain powerful healing and enhancement spells, greatly increasing the health and defenses of their group, while keeping them healed in the most dangerous battles. While other priest classes have healing spells, no one can match up with the power and efficiency of clerical healing.
+
+Clerics are potent enemies of the undead, able to channel their holy fervor into highly destructive banishment spells. Resurrection is also the domain of the cleric, allowing them to bring their fallen companions back from the dead without the normal penalties for death.
+
+With a few exceptions, clerics are dependent on being part of a group. But they are highly desirable group members. An experienced cleric is a great benefit to any group and is an excellent choice for the social player.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Cleric || Vicar || Templar || High Priest
+|}
+
+=Creation Guide=
+
+==Picking the Right Race==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|-
+| style="text-align: left"| '''[[Dwarf]]''' || 90 || 90 || 70 || 90 || 83 || 60 || 45
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60
+|-
+| style="text-align: left"| '''[[Halfling]]''' || 70 || 75 || 95 || 90 || 80 || 67 || 50
+|-
+| style="text-align: left"| '''[[High Elf]]''' || 55 || 65 || 85 || 70 || 95 || 92 || 80
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Cleric]] Adds''' || 5 || 10 ||  ||  || 15 ||  || 
+|}
+
+== Notable Racial Distinctions ==
+<ul>
+  <li>'''Dark Elves:''' [[Dark Elf|Dark Elves]] tie for second-best wisdom and can [[hide]], which is useful since Clerics can't cast [[Invisibility]].  However, because all good races start out hating them they can only use evil-aligned vendors until they improve their faction with each good city they visit.
+     <ul>
+     <li>[[Dark Elf|Dark Elves]] can only worship [[Innoruuk]], and can get the {{:Regent Symbol of Innoruuk}} and other {{Class And Religion Gear Search|Cleric|Innoruuk}}</li>
+     </ul>
+  </li>
+  <li>'''Dwarves:''' [[Dwarf|Dwarves]] are tied for second-best wisdom and have a unique "barrel roll" animation (with no in-game benefit). They also have the highest strength and stamina scores which helps with carrying capacity and more hit points respectively.
+     <ul>
+     <li>[[Dwarf|Dwarves]] can only worship [[Brell Serilis]], and can get the {{:Disciple Symbol of Brell Serilis}} and other  {{Class And Religion Gear Search|Cleric|Brell Serilis}}</li>
+     </ul>
+  </li>
+  <li>'''Erudite:''' [[Erudite|Erudites]] are tied for second-best wisdom and have poor night vision. All Erudite Clerics can wear the {{:Fright Forged Helm}}, which grants infravision, but only [[Cazic Thule]] worshippers can easily get the faction for it.
+     <ul>
+     <li>[[Cazic-Thule]] Worshipers can get the {{:Disciple Symbol of Cazic Thule}} and other {{Class And Religion Gear Search|Cleric|Cazic Thule}}</li>
+     <li>[[Prexus]] Worshipers do not get a symbol quest but can wear a few {{Class And Religion Gear Search|Cleric|Prexus}}</li>
+     <li>[[Quellious]] Worshipers can get the {{:Regent Symbol of Quellious}} and other {{Class And Religion Gear Search|Cleric|Quellious}}</li>
+     </ul>
+  </li>
+  <li>'''Gnomes:''' [[Gnome]]s have the lowest wisdom, but their small size is an advantage in dungeons, and they can learn [[Tinkering]], allowing them to make (Cleric-wearable) [[Clockwork Watchman Armor]].
+     <ul>
+     <li>[[Bristlebane]]-worshipers can get {{Class And Religion Gear Search|Cleric|Bristlebane}}</li>
+     <li>[[Brell Serilis]]-worshipers can get the {{:Disciple Symbol of Brell Serilis}} and other {{Class And Religion Gear Search|Cleric|Brell Serilis}}</li>
+     <li>[[Bertoxxulous]]-worshipers can get the {{:Initiate Symbol of Bertoxxulous}} and other {{Class And Religion Gear Search|Cleric|Bertoxxulous}}</li>
+     </ul>
+  </li>
+  <li>'''Halflings:''' [[Halfling]] can both [[hide]] and [[sneak]] (very useful since Clerics can't cast [[Invisibility]]), but consume food faster.
+     <ul>
+     <li>[[Halfling]]s can only worship [[Bristlebane]] and don't get a symbol quest, but can wear other {{Class And Religion Gear Search|Cleric|Bristlebane}}</li>
+     </ul>
+  </li>
+  <li>'''High Elves:''' [[High Elf|High Elves]] have the highest wisdom.
+     <ul>
+     <li>[[High Elf|High Elves]] can only worship [[Tunare]], and can get the {{:Warden Symbol of Tunare}}, {{:Symbol of Tunarian Worship}} and other {{Class And Religion Gear Search|Cleric|Tunare}}</li>
+     </ul>
+  </li>
+  <li>'''Humans:''' [[Human]]s have poor night vision. All Human Clerics can wear (but harder to get faction as a good religion) the {{:Fright Forged Helm}} which grants infravision.
+     <ul>
+     <li>[[Bertoxxulous]]-worshipers can get the {{:Initiate Symbol of Bertoxxulous}} and other {{Class And Religion Gear Search|Cleric|Bertoxxulous}}.</li>
+     <li>[[Innoruuk]]-worshipers can get the {{:Regent Symbol of Innoruuk}} and other {{Class And Religion Gear Search|Cleric|Innoruuk}}.  Also their faction lets them complete quests for {{:Dread Forged Shield}}, {{:Fright Forged Helm}} (an [[Advanced_Techniques_Guide#Resetting_Spell_Refresh_Timers_With_Instant-Click_Items|instant-clickie]] that gives [[See Invisible|See Invis]] and [[Infravision]]), and {{:Terror Forged Mask}}, which are difficult for other religions.</li>
+     <li>[[Karana]] No special items or symbols besides ({{Class And Religion Gear Search|Cleric|Karana}})</li>
+     <li>[[Erollisi Marr]]  No special items or symbols besides ({{Class And Religion Gear Search|Cleric|Erollisi Marr}})</li>
+     <li>[[Mithaniel Marr]]  No special items or symbols besides ({{Class And Religion Gear Search|Cleric|Mithaniel Marr}})</li>
+     <li>[[Rodcet Nife]]  No special items or symbols besides ({{Class And Religion Gear Search|Cleric|Rodcet Nife}})</li>
+     </ul>
+  </li>
+</ul>
+
+==Statistics==
+
+This section should be removed/deleted.
+
+== Impact from stats ==
+[[Wisdom]] is the primary ability score for Clerics because it provides extra mana, and mana controls how many heals a Cleric can cast before needing to meditate.  [[Charisma]], [[Stamina]], and [[Strength]] are also important to a much lesser degree: [[Strength]] helps Clerics carry their heavy plate armor, [[Stamina]] helps them survive by giving them extra hit points, and [[Charisma]] affects the success of their [[Lull]] spell line.
+
+Note: There is also a school of thought that, since Wisdom gear is cheap and easy to get, (and lots of it) that it is better to put 25 points in Charisma, instead of Wisdom, in order to lessen critical fails on the Lull line of spells, which tends to kill the group's healer/rezzer.
+
+==Religion==
+
+Clerics cannot be agnostic and are forced to choose a religion.  This does not create too many difficulties, except for Dark Elves.  The worship of evil gods can lead to some problems in some zones, but these can easily be avoided.   Choose a god which you think will tie in well with the nature of your character.
+
+The benefits of each religion are summarized above, and you may also want to consider looking at the [http://wiki.project1999.com/index.php/Class_Race_Quest_List#Deity_Specific_Quests deity-specific quests] before picking a deity.
+
+For a full list of all Deity items check out [[Deity_Specific_Items|Deity Specific Items]].
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Divine Invocation
+| {{#section:Stances & Invocations|Divine}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|}
+
+=Spells=
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|[[Clockwork Merchant (CG-1)]]
+|Cleric Guild
+|(1238,-548)
+|-
+|'''[[Erudin]]'''
+|[[Syra Printell]]
+|Cleric Guild
+|(-735,-47)
+|-
+|[[Neriak Third Gate|'''Neriak Third Gate''']]
+|[[Trik N'Tan]]
+|Cleric Guild
+|(413,-762)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Apostate Cakazu]]
+|Full Caster Spell Vendor Room
+|(96, -162)
+|-
+|'''[[North Freeport]]'''
+|[[Direlee Furme]]
+|Cleric Guild (2nd Floor)
+|(103,388)
+|-
+|[[North Kaladim|'''North Kaladim''']]
+|[[Gralpa Axeheft]]
+|Cleric Guild
+|(773,115)
+|-
+|[[Northern Felwithe|'''Northern Felwithe''']]
+|[[Wellin Brookleap]]
+|Cleric Guild
+|(24,-456)
+|-
+|'''[[Rathe Mountains]]'''
+|[[Scribe Gokk]]
+|Spellcaster Tent
+|(-1722, 337)
+|-
+|'''[[Rivervale]]'''
+|[[Gilth Harvester]]
+|Cleric Guild
+|(-210,-351)
+|-
+|'''[[South Qeynos]]'''
+|[[Bogen Chazel]]
+|Cleric Guild
+|(-260,-516)
+|}
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Courage
+|description=Increases HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=12
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+3 AC<br>+20 Max HP<br>11-20 HP
+}}
+{{RadSpellRow2
+|name=Cure Poison
+|description=Cures target of poison effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Poison
+}}
+{{RadSpellRow2
+|name=Divine Aura
+|description=Self-only 18-second invulnerability
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=18 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Flash of Light
+|description=Blinds target
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=12
+|kind=Detrimental
+|targ=Single
+|duration=12 Sec
+|max=-5 ATK
+}}
+{{RadSpellRow2
+|name=Holy Armor
+|description=Increases AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+5 AC
+}}
+{{RadSpellRow2
+|name=Lull
+|description=Reduces target's aggression
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=10
+|kind=Detrimental
+|targ=Single
+|duration=2 Min
+|max=Calm (max L30)
+}}
+{{RadSpellRow2
+|name=Minor Healing
+|description=Healing spell - Increase Hitpoints by 10 (L1, 1.0 HPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=10
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=12-20 HP
+}}
+{{RadSpellRow2
+|name=Spook the Dead
+|description=Undead fear spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=10
+|kind=Detrimental
+|targ=Undead
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Strike
+|description=Direct damage spell (6-8 damage; 0.5-0.667DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=7
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=8-10 Dmg
+}}
+{{RadSpellRow2
+|name=True North
+|description=Faces you to the north
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor.
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Yaulp
+|description=Self-only combat buff spell
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=1
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 STR<br>+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Reckless Strength
+|description=Temporarily increases strength
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=3 Min
+|max=+20 STR
+}}
+{{RadSpellRow2
+|name=Stun
+|description=Stuns target (4.0 seconds)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=35
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 4s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Blindness
+|description=Cures target of blindness effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=20
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Drink
+|description=Summons a water source
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cures target of disease effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Light Healing
+|description=Healing spell - Increase Hitpoints by 26 (L5, 1.04 HPM) to 33 (L18, 1.32 HPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=28
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=47-65 HP
+}}
+{{RadSpellRow2
+|name=Ward Undead
+|description=Damage to undead creatures (35-41 damage; 1.167-1.367DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=5
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=7-12 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Furor
+|description=Direct damage spell (16-19 damage; 0.8-0.95DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=19
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=25-33 Dmg
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Returns you to your bind point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=70
+|kind=Travel
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Soothe
+|description=Reduces target's aggression
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=2 Min 30 Sec
+|max=Calm (max L40)
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Poison
+|description=Increases poison resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Poison Resist
+}}
+{{RadSpellRow2
+|name=Fear
+|description=Causes target to flee
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=40
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Sanctuary
+|description=Creates a watchful ward at a location you choose, which will alert you to movement in the area every 2 seconds for up to %i seconds.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=25
+|kind=Utility
+|targ=Free Target AE
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Center
+|description=Increases HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+5 AC<br>+85 Max HP<br>42-85 HP
+}}
+{{RadSpellRow2
+|name=Hammer of Wrath
+|description=Summons a [[Summoned: Hammer of Wrath]]
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6307
+}}
+{{RadSpellRow2
+|name=Root
+|description=Root, stops target's movement
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=48 Sec
+|max=Root
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blessing of the Page
+|description=Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 1.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=175
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=30 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Echo of Health
+|description=Fills your target's body with an echo of health, immediately healing between 30 and 50 hit points, then healing twice more for between 12 and 20 hit points every 6 seconds for 6s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=35
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=6 Sec
+|max=50 HP
+}}
+{{RadSpellRow2
+|name=Endure Fire
+|description=Increases fire resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Remove Minor Curse
+|description=Cleanses your target's soul, removing minor curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=25
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 2 Curse
+}}
+{{RadSpellRow2
+|name=Summon Food
+|description=Summons a food source
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sense the Dead
+|description=Detects undead creatures
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor.
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Word of Pain
+|description=Point blank AE DD (max: 29)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=47
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=24-29 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Sets bind point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Healing
+|description=Healing spell - Increase Hitpoints by 84 (L14, 1.4 HPM) to 100 (L30, 1.66 HPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=65
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=135-175 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Increases disease resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+{{RadSpellRow2
+|name=Invisibility versus Undead
+|description=Invisibility to undead creatures
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor.
+|mana=40
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Symbol of Transal
+|description=Increases Max HP and Heals for 34 (L14) to 73 (L21). Requires a [[Cat's Eye Agate]] to cast.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=55
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Halo of Light
+|description=Summons a [[Summoned: Halo of Light]]
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10290
+}}
+{{RadSpellRow2
+|name=Reanimation
+|description=Revives a slain ally. It takes some time for the recently revived to fully recover.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=150
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Sense Summoned
+|description=Targets nearest summoned creature
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor.
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes a magical effect
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Endure Cold
+|description=Increases cold resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+{{RadSpellRow2
+|name=Expulse Undead
+|description=Damage to undead creatures (88-94 damage; 1.467-1.567DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=36
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=99-106 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Echoing Light
+|description=Fills your target's body with an echo of light, immediately healing between 75 and 140 hit points, then healing twice more for between 30 and 55 hit points every 6 seconds for 6s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=85
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=6 Sec
+|max=117-140 HP
+}}
+{{RadSpellRow2
+|name=Smite
+|description=Direct damage spell (74-83 damage; 1.057-1.186DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=43
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=74-88 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blessing of Piety
+|description=Bestows your target with a divine blessing, allowing them to cast spells faster for 40 min. This blessing works on spells up to level 39.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=100
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=40 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Calm
+|description=Reduces target's aggression
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L50)
+}}
+{{RadSpellRow2
+|name=Spirit Armor
+|description=Increases AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=75
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+11 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blessing of the Squire
+|description=Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 2.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=350
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=40 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Endure Magic
+|description=Increases magic resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Holy Might
+|description=Stun (6.0 seconds) and DD spell (29-60 damage; 0.48-1.0DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=60
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 6s (max L55)<br>26-60 Dmg
+}}
+{{RadSpellRow2
+|name=Yaulp II
+|description=Self-only combat spell
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=1
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+20 STR<br>+7 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Daring
+|description=Increases HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+7 AC<br>+115 Max HP<br>82-115 HP
+}}
+{{RadSpellRow2
+|name=Ward Summoned
+|description=DD to summoned creatures
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=6
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=6-14 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Reconstitution
+|description=Revives a slain ally, restoring 10% of their lost experience. It takes some time for the recently revived to fully recover.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=250
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Celestial Remedy
+|description=Fills your target's body with celestial light, healing between 54 and 65 hit points every 6 seconds for 24s.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=75
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=+35 HoT
+}}
+{{RadSpellRow2
+|name=Word of Shadow
+|description=Point blank AE DD (max: 58)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=85
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=52-58 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Healing
+|description=Healing spell - Increase Hitpoints by 288 (L24, 1.92 HPM) to 300 (L30, 2.00 HPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=115
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=280-350 HP
+}}
+{{RadSpellRow2
+|name=Hammer of Striking
+|description=Summons a [[Summoned: Hammer of Striking]]
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=100
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6309
+}}
+{{RadSpellRow2
+|name=Ward of Vie
+|description=Places the Ward of Vie on your target, absorbing a portion of incoming melee damage. This spell absorbs a set amount of damage before dissipating.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=150
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Inspire Fear
+|description=Causes target to flee
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=80
+|kind=Detrimental
+|targ=Single
+|duration=30 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Symbol of Ryltan
+|description=Increases Max HP and Heals for 94 (L24) to 158 (L31). Requires a [[Bloodstone]] to cast.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=111
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Wave of Fear
+|description=Point blank AE fear spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=90
+|kind=Detrimental
+|targ=PB AE
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bravery
+|description=Heals for and Increases HP by 114 (L24) to 140 (L50) and AC by 9 (L24) to 10 (L30).
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=70
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+8 AC<br>+140 Max HP<br>112-140 HP
+}}
+{{RadSpellRow2
+|name=Counteract Poison
+|description=Cures target of poison effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Poison
+}}
+{{RadSpellRow2
+|name=Reparation
+|description=Revives a slain ally, restoring 20% of their lost experience. It takes some time for the recently revived to fully recover.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=350
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dismiss Undead
+|description=Damage to undead creatures (140-162 damage; 1.556-1.8DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=63
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=196-211 Dmg
+}}
+{{RadSpellRow2
+|name=Remove Lesser Curse
+|description=Cleanses your target's soul, removing lesser curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Renewing Echo
+|description=Fills your target's body with a renewing echo, immediately healing between 115 and 280 hit points, then healing twice more for between 45 and 110 hit points every 6 seconds for 6s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=6 Sec
+|max=187-265 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Guard
+|description=Increases AC (19 AC)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+16 AC
+}}
+{{RadSpellRow2
+|name=Sermon of the Righteous
+|description=Bathes your target with holy light, causing between 44 and 79 damage to undead every 6 seconds for 30s.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=78
+|kind=Damage Over Time
+|targ=Undead
+|duration=30 Sec
+|max=-79 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Panic the Dead
+|description=Undead fear spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=50
+|kind=Detrimental
+|targ=Undead
+|duration=54 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Word of Spirit
+|description=Point blank AE DD (max: 104)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=133
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=91-104 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expulse Summoned
+|description=DD to summoned creatures
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=41
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=113-122 Dmg
+}}
+{{RadSpellRow2
+|name=Instill
+|description=Causes the earth to adhere to your target's feet, preventing them from moving for up to 1 min 36s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=Root
+}}
+{{RadSpellRow2
+|name=Revive
+|description=Resurrects a player (restores 0% experience)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=450
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Abundant Drink
+|description=Summons 4 water sources
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=25
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+{{RadSpellRow2
+|name=Counteract Disease
+|description=Cures target of disease effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Disease
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Celestial Health
+|description=Fills your target's body with celestial health, healing between 115 and 115 hit points every 6 seconds for 24s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=155
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=+115 HoT
+}}
+{{RadSpellRow2
+|name=Divine Barrier
+|description=Self-only 18-second invulnerability and HP regen
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=18 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Imbue Amber
+|description=Creates an [[Imbued Amber]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Paineel, Cabilis.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22502
+}}
+{{RadSpellRow2
+|name=Imbue Black Pearl
+|description=Creates an [[Imbued Black Pearl]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Erudin.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22548
+}}
+{{RadSpellRow2
+|name=Imbue Black Sapphire
+|description=Creates an [[Imbued Black Sapphire]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Q.Cats.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22551
+}}
+{{RadSpellRow2
+|name=Imbue Diamond
+|description=Creates an [[Imbued Diamond]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Freeport.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22549
+}}
+{{RadSpellRow2
+|name=Imbue Emerald
+|description=Creates an [[Imbued Emerald]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Felwithe.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22507
+}}
+{{RadSpellRow2
+|name=Imbue Opal
+|description=Creates an [[Imbued Opal]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Qeynos.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22560
+}}
+{{RadSpellRow2
+|name=Imbue Peridot
+|description=Creates an [[Imbued Peridot]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22554
+}}
+{{RadSpellRow2
+|name=Imbue Plains Pebble
+|description=Creates an [[Imbued Plains Pebble]]
+|era={{Classic Short}}
+|school=Alteration
+|location=N.Karana.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22553
+}}
+{{RadSpellRow2
+|name=Imbue Rose Quartz
+|description=Creates an [[Imbued Star Rose Quartz]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Freeport.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22550
+}}
+{{RadSpellRow2
+|name=Imbue Ruby
+|description=Creates an [[Imbued Ruby]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22506
+}}
+{{RadSpellRow2
+|name=Imbue Sapphire
+|description=Creates an [[Imbued Sapphire]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Neriak.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22508
+}}
+{{RadSpellRow2
+|name=Imbue Topaz
+|description=Creates an [[Imbued Topaz]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Erudin.
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22555
+}}
+{{RadSpellRow2
+|name=Mass Imbue Amber
+|description=Focuses the power of Cazic-Thule into five pieces of amber. Consumes five ambers when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22502
+}}
+{{RadSpellRow2
+|name=Mass Imbue Black Pearl
+|description=Focuses the power of Prexus into five black pearls. Consumes five black pearls when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22548
+}}
+{{RadSpellRow2
+|name=Mass Imbue Black Sapphire
+|description=Focuses the power of Bertoxxulous into five black sapphires. Consumes five black sapphires when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22551
+}}
+{{RadSpellRow2
+|name=Mass Imbue Diamond
+|description=Focuses the power of Mithaniel Marr into five diamonds. Consumes five diamonds when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22549
+}}
+{{RadSpellRow2
+|name=Mass Imbue Emerald
+|description=Focuses the power of Tunare into five emeralds. Consumes five emeralds when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22507
+}}
+{{RadSpellRow2
+|name=Mass Imbue Opal
+|description=Focuses the power of Rodcet Nife into five opals. Consumes five opals when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22560
+}}
+{{RadSpellRow2
+|name=Mass Imbue Peridot
+|description=Focuses the power of Bristlebane into five peridots. Consumes five peridots when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22554
+}}
+{{RadSpellRow2
+|name=Mass Imbue Plains Pebble
+|description=Focuses the power of Karana into five plains pebbles. Consumes five plains pebbles when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22553
+}}
+{{RadSpellRow2
+|name=Mass Imbue Rose Quartz
+|description=Focuses the power of Erollisi Marr into five pieces of star rose quartz. Consumes five star rose quartz when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22550
+}}
+{{RadSpellRow2
+|name=Mass Imbue Ruby
+|description=Focuses the power of Brell Serilis into five rubies. Consumes five rubies when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22506
+}}
+{{RadSpellRow2
+|name=Mass Imbue Sapphire
+|description=Focuses the power of Innoruuk into five sapphires. Consumes five sapphires when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22508
+}}
+{{RadSpellRow2
+|name=Mass Imbue Topaz
+|description=Focuses the power of Quellious into five topaz. Consumes five topaz when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22555
+}}
+{{RadSpellRow2
+|name=Wrath
+|description=Direct damage spell (198-218 damage; 1.366-1.503 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=77
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=148-176 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resist Poison
+|description=Increases poison resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Poison Resist
+}}
+{{RadSpellRow2
+|name=Superior Healing
+|description=Healing spell - Increase Hitpoints by 565 (L34, 2.26 HPM) to 583 (L40, 2.33 HPM)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=185
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=500-600 HP
+}}
+{{RadSpellRow2
+|name=Word of Health
+|description=AE healing spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=302
+|kind=Heal
+|targ=Group
+|duration=Instant
+|max=380-485 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Force
+|description=Stun (6.0 seconds) and DD spell
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=90
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 6s (max L58)<br>71-90 Dmg
+}}
+{{RadSpellRow2
+|name=Frenzied Strength
+|description=Temporarily increases strength
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=90
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=3 Min
+|max=+40 STR
+}}
+{{RadSpellRow2
+|name=Symbol of Pinzarn
+|description=Increases Current and Max HP by 224 (L34) to 307 (L41)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=200
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Atone
+|description=Wipes target's hate list
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Renewal
+|description=Revives a slain ally, restoring 50% of their lost experience. It takes some time for the recently revived to fully recover.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=550
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Valor
+|description=Increases HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=90
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+11 AC<br>+200 Max HP<br>164-200 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Abundant Food
+|description=Summons 4 food sources
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=25
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+{{RadSpellRow2
+|name=Expel Undead
+|description=Damage to Undead spell (261-273 damage; 2-2.1DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=93
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=299-333 Dmg
+}}
+{{RadSpellRow2
+|name=Resist Fire
+|description=Increases fire resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Armor of Protection
+|description=Increases own HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=110
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+225 Max HP<br>+12 AC<br>202-225 HP
+}}
+{{RadSpellRow2
+|name=Blessing of the Knight
+|description=Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 4.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=750
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=50 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Blinding Luminance
+|description=Blinds target
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor.
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=24 Sec
+|max=-5 ATK
+}}
+{{RadSpellRow2
+|name=Celestial Echo
+|description=Fills your target's body with a celestial echo, immediately healing between 160 and 480 hit points, then healing twice more for between 65 and 190 hit points every 6 seconds for 6s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=245
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=6 Sec
+|max=262-310 HP
+}}
+{{RadSpellRow2
+|name=Tremor
+|description=Point blank AE DD (max: 122)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=200
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=106-122 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Armor of Faith
+|description=Increases AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=150
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+21 AC
+}}
+{{RadSpellRow2
+|name=Blessing of Faith
+|description=Bestows your target with a divine blessing, allowing them to cast spells faster for 40 min. This blessing works on spells up to level 61.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=200
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=40 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invoke Fear
+|description=Causes target to flee
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Pacify
+|description=Reduces target's aggression
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L55)
+}}
+{{RadSpellRow2
+|name=Resist Disease
+|description=Increases disease resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dismiss Summoned
+|description=DD to summoned creatures (1.8 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=73
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=226-244 Dmg
+}}
+{{RadSpellRow2
+|name=Resuscitate
+|description=Resurrects a player (restores 50% experience)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=650
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Turning of the Unnatural
+|description=Damage over time to undead creatures (400 HP over 1.6 minutes; 2.5 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=NPC Drop.
+|mana=144
+|kind=Damage Over Time
+|targ=Undead
+|duration=30 Sec
+|max=-120 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Removes magical effects
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Remove Curse
+|description=Cleanses your target's soul, removing minor curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+{{RadSpellRow2
+|name=Resist Cold
+|description=Increases cold resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Promised Renewal
+|description=Imbues your target with life after 0:00:18, healing for 5000.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=915
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=12 Sec
+|max=5000
+}}
+{{RadSpellRow2
+|name=Sacred Word
+|description=A forbidden word that causes between 40 and 90 damage to %T enemies in an area around your target and stuns them up to level 55 for 6000 seconds.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=120
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=Stun 6s (max L55)<br>79-90 Dmg
+}}
+{{RadSpellRow2
+|name=Word of Souls
+|description=Point blank AE DD spell Dealing 138-155 damage (0.8-0.91 DPM per mob)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=171
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=138-155 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Guard of Vie
+|description=Places the Guard of Vie on your target, absorbing a portion of incoming melee damage. This spell absorbs a set amount of damage before dissipating.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=175
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Hammer of Requital
+|description=Summons a {{:Summoned: Hammer of Requital}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor.
+|mana=150
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6313
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Symbol of Naltron
+|description=Increases HP, 406 to 525hp
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=315
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Yaulp III
+|description=Self-only combat buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=1
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 STR<br>+10 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resolution
+|description=Increases HP and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=110
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+13 AC<br>+250 Max HP<br>226-250 HP
+}}
+{{RadSpellRow2
+|name=Restoration
+|description=Revives a slain ally, restoring 75% of their lost experience. It takes some time for the recently revived to fully recover.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=700
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Banish Undead
+|description=Undead DD spell (585 damage; 2.6 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=118
+|kind=Damage
+|targ=Undead
+|duration=Instant
+|max=442-468 Dmg
+}}
+{{RadSpellRow2
+|name=Resist Magic
+|description=Increases magic resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=85
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Magic Resist
+}}
+{{RadSpellRow2
+|name=Sacred Echo
+|description=Fills your target's body with a sacred echo, immediately healing between 495 and 640 hit points, then healing twice more for between 195 and 260 hit points every 6 seconds for 6s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=6 Sec
+|max=624-640 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Celestial Healing
+|description=Heal over time (720 HP over 24 seconds; 3.2 HPM; 30 HPS)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=200
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=+180 HoT
+}}
+{{RadSpellRow2
+|name=Earthquake
+|description=AE DD spell Dealing 214-246 damage (0.570-0.656 DPM per mob)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=375
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=214-246 Dmg
+}}
+{{RadSpellRow2
+|name=Retribution
+|description=Direct damage spell (496-516 damage; 2.067-2.15 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=144
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=372-390 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Healing Light
+|description=Mends your target's wounds, healing between 620 and 801 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=238
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=800-801 HP
+}}
+{{RadSpellRow2
+|name=Shield of Words
+|description=Increases AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor.
+|mana=300
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+26 AC
+}}
+{{RadSpellRow2
+|name=Word of Healing
+|description=AE healing spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=425
+|kind=Heal
+|targ=Group
+|duration=Instant
+|max=658-708 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Immobilize
+|description=Root. Stops target's movement
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=80
+|kind=Detrimental
+|targ=Single
+|duration=1 Min
+|max=Root
+}}
+{{RadSpellRow2
+|name=Sound of Force
+|description=220 DD + 8 second stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=120
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 8s (max L55)<br>220 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expel Summoned
+|description=DD to summoned creatures (2.1 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=108
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=243-309 Dmg
+}}
+{{RadSpellRow2
+|name=Resurrection
+|description=Resurrects a player (restores 90% experience)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=700
+|kind=Heal
+|targ=Corpse
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Abolish Poison
+|description=Removes poison effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=100
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 36 Poison
+}}
+{{RadSpellRow2
+|name=Blessing of the Lord Commander
+|description=Covers your targets hands in a glowing aura that causes their strikes against enemies to heal them for 6.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=1250
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=60 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Improved Invisibility to Undead
+|description=Cloaks your body in a light aura, rendering you invisible to most undead creatures for 10 min.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=75
+|kind=Utility
+|targ=Self
+|duration=10 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Armor of the Faithful
+|description=Places mystic armor of protection around you, increasing your hit points and armor class.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=200
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+255 Max HP<br>+18 AC<br>252-255 HP
+}}
+{{RadSpellRow2
+|name=Word Divine
+|description=Point blank AE DD spell (339 Damage)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=304
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=339 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ward of the Divine
+|description=Places the Ward of Retribution around your body. This ward will periodically strike out at any creature that attacks you. This effect will fade after 120 strikes.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=277
+|kind=Utility
+|targ=Self
+|duration=20 Min
+|max=
+}}
+</table>
+</div>
+
+= Cleric AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Cleric Class AAs}}
+
+=Skills=
+
+==Specialization==
+
+{{#lsth:Skill Specialization|Cleric}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 30
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+==Combat Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 175
+| 175
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 175
+| 175
+|-
+|1
+|No
+|[[Throwing]]
+|200?
+|200?
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 200
+| 210
+|-
+| 1
+| No
+| [[Defense]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 75
+| 80
+|-
+| 1
+| No
+| [[Offense]]
+| 200
+| 200
+|-
+| 15
+| Yes
+| [[Dodge]]
+| 75
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200
+| 200
+|}
+
+= Cleric-Specific Quests =
+
+{{#lsth:Class Race Quest List|Cleric}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Cleric Equipment | Cleric Equipment]] for the full list of gear usable by clerics.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Cleric]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Cleric]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Cleric]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Cleric]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Cleric]]}}
+
+=FAQ=
+'''Q:	What do you specialize in if you are a Cleric?'''
+
+A:	Depends greatly on the cleric, however the cleric is generally the primary healer in groups and since healing uses the alteration skill, this is the most common specialization.
+
+'''Q:	What are the timelimits for a corpse to stay online before it disappears, and is there a differant time length between whether you are logged on or off?'''
+
+A:	Corpses will last one week, regardless of if the player is online or not. Resurrections cannot be performed after 3 hours online gameplay.
+
+'''Q:	When does a cleric get to meditate?'''
+
+A:	Clerics can begin meditating at level eight. The character needs to put a practice point in at their guild for it to go into effect.
+
+'''Q:	I just memmed my Level 1 Divine Aura spell but it's still greyed out. What gives? Am I doing something wrong?'''
+
+A:	Divine Aura can only be used once every fifteen minutes. Once you have memmed the spell you must wait 15 minutes before you can use it. When the gem appears normally it can be cast.
+
+'''Q:	Do the symbol buffs increase in effect when levels are gained and does level effect duration?'''
+
+A:	Yes, on both questions.
+
+'''Q:	Why does a cleric who is a priest to a deity/god not get any special 'ability' or even looks depending on thier deity/God?'''
+
+A:	Religion serves only a few small purposes in EverQuest. For Clerics it can effect if they are like or dislike by other temple factions. It can also affect which imbue spells they can use.
+
+'''Q:	If the cleric is considered "The Primary Healer" why don't they get the summon bandages spell. They can summon water, food, and hammers, why not bandages.'''
+
+A:	Good Question. Their God's must only believe in pure healing as opposed to rudimentary measures like band-aids.
+
+'''Q:	Why are Clerics robbed of any type of an invisibility spell? We seem to be the only caster type, whether pure or hybrid, that lack this ability.'''
+
+A:	Your priestly abilities only allows you to cloak yourselves from the undead. It's simply the way it is.
+
+'''Q:	Why is it when I cast divine barrier I can still be stunned? Apparently my god is powerful enough to protect my from any amount of damage. Yet isn't quite strong enough to keep me from being knocked loopy. Is there a actual reason for this or just an oversight in the programing?'''
+
+A:	Being stunned is just something which is not protected by the divine barrier. There is no other explanation except that it is just the way things are. (Divine Barrier also does not protect you from DoT's)
+
+'''Q:	What are the imbued line of spells used for? What trade skill are they used for?'''
+
+A:	The imbued line of spells is for enchanting items made through tradeskills. Only one spell can be used for each deity however. Currently [[Blacksmithing]], [[Jewelcrafting]], and [[Pottery#Deity_Idols|Pottery Idols]] utilize the imbued stones created with the spells.
+
+'''Q:	I heard something about clerics getting more efficient heals or +% to the amount they heal compared to other classes, is this true or are all heals equivalent whether cast by a cleric/druid/shaman/etc?'''
+
+A: Clerics gain additional healing spells that are more efficient for the dmg healed to mana spent ratio. Also, a cleric's specialization will help cut down on the amount of mana used for various healing spells.  Finally, Clerics appear to have more powerful versions of heals that they share with other classes - a Greater Healing spell cast by a Druid or Shaman, for example, will max out at 270 HP, but cast by a Cleric this same spell will heal up to 300 HP. 
+
+{{Template: Navbox Classes}}

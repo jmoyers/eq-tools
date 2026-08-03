@@ -1,0 +1,3833 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ The primary focus of this art can be summed up by the name of the arcane order to which it belongs - enchantment. Spells are crafted to enchant <br>people, places and things. An Enchanter can charm beings and make them fight for a new master, or magically enhance the capabilities of a <br>sword-welding(sic) warrior. She even has some proficiency in offensive spells.
+ - EverQuest manual
+
+=Description=
+[[File:C enchanter.gif|right]]
+Enchanters are the most subtle of spell casters, with little focus on doing damage directly but tremendous impact on the world around them. Enchanters are primarily a magic-using class, with the ability to wear cloth armor and wield blunt weapons and daggers.
+
+Enchanters specialize on improving the minds of their allies, with unmatched mana regeneration spells and mental enhancements. Haste spells are also the domain of the enchanter, providing incredible boosts in attack speed for members of their group. Enchanters have many powers of illusion as well, allowing them to take the form of many different creatures and races.
+
+In battle, enchanters are able to bring order to chaotic situations, often saving their group in a fight that would otherwise be lost. Enchanters possess the ability to mesmerize their enemies, temporarily removing them from a battle. Attack slowing spells are also a specialty, dramatically lowering the speed of a monster's attacks for a period of time. In many situations, enchanters can call upon powerful charm spells to subjugate the mind of a monster and command it to do the enchanter's bidding.
+
+Enchanters are a powerful class, but often rely upon a group to reach their full potential. Experienced enchanters thrive in chaotic situations where they can make the most of their offensive abilities. The enchanter is a good choice for players who enjoy playing in groups and like to take charge of challenging situations.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Enchanter || Illusionist || Beguiler || Phantasmist
+|}
+
+=Creation Guide=
+
+==Picking the right race==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+| Race || Str || Sta || Agi || Dex || Wis || Int || Cha || Racial Traits
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60 || Dark Elvish (100), Dark Speech (100), Elder Elvish (44), Elvish (44), Hide (50)
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70 || Erudian (100)
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60 || Dwarvish (44), Gnomish (100), Tinkering (50), Small
+|-
+| style="text-align: left"| '''[[High Elf]]''' || 55 || 65 || 85 || 70 || 95 || 92 || 80 || Dark Elvish (41), Elder Elvish (41), Elvish (100)
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75 ||
+|-
+| style="text-align: left"| '''Enchanter Adds''' ||  ||  ||  ||  ||  || 15 || 15 ||
+|}
+
+==Attribute Points==
+*'''Strength''' - Mainly effects carry capacity for coin and loot for Enchanters. Also effects Maximum and average melee damage.
+*'''Stamina''' - Adds to Maximum Hit Points.   
+*'''Dexterity''' - Quickens the speed of learning weapon skills and the rate at which magic weapon effects proc while in melee. 
+*'''Agility''' - Effects your chance to avoid being hit and to avoid taking high hits while enemies are meleeing you. 
+*'''Wisdom''' - Quickens the rate at which you learn general and craft skills if higher than Intelligence, which it should never be.
+*'''Intelligence''' - Raises maximum mana gained per level and the rate at which you learn spell skills. Quickens the rate at which you learn general and craft skills if higher than Wisdom. 
+*'''Charisma''' - Determines the effectiveness of 4 spell lines for enchanters: Charm, Lull, Memory Blur, and Mesmerize. Affects the chance for Memory Blur to actually work, especially on higher level targets. Lowers the enemy resist rate of Mesmerize. Extends the duration of Charms by making it harder for targets to break free once charmed. And reduces the chance of lull spells critically failing, aggroing the mob you intended to calm.
+
+==Religion==
+Enchanters should, unless they are role-playing, always choose to be agnostic.  In some areas your illusion will not be enough to keep you alive.  In some areas you will still be Kill on Sight for any number of reasons, though these are very few indeed.  If you choose to be agnostic you virtually eliminate the risk of being murdered on a religious background.  It may however exclude you from partaking in certain quests at stages during the game (such as [[The Ancient Tomes]] in the [[Velious]] era) or from using some items if you have no religion.  In many ways the religion system in Everquest is unfathomed, serving only as an overriding faction system.
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Arcane Mastery Invocation
+| {{#section:Stances & Invocations|ArcaneMastery}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|}
+
+=Spells=
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|[[Clockwork Merchant (LG-7)]]
+|Library
+|(1093,-977)
+|-
+|[[Erudin|'''Erudin Palace''']]
+|[[Vellenon Harrance]]
+|Enchanter Guild (Second Floor)
+|(507,727)
+|-
+|[[Felwithe|'''Felwithe (South)''']]
+|[[Xista Finder]]
+|Enchanter Guild
+|(527, -800)
+|-
+|[[Freeport|'''Freeport (West)''']]
+|[[Remon Zarga]]
+|Caster Guild (First Floor)
+|(138,-712)
+|-
+|[[Neriak|'''Neriak Commons''']]
+|[[Lizza D'Unnar]]
+|Caster Guild (Basement)
+|(165,-192)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Manipulator Chasartiz]]
+|Full Caster Spell Vendor Room
+|(86,-117)
+|-
+|[[Qeynos|'''Qeynos (South)''']]
+|[[Chalios Bensted]]
+|Caster Guild
+|(324,-618)
+|}
+<div id="spells_level_1">
+
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lull
+|description=Single Target Frenzy Range Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=10
+|kind=Detrimental
+|targ=Single
+|duration=2 Min
+|max=Calm (max L30)
+}}
+{{RadSpellRow2
+|name=Minor Illusion
+|description=Self Only Morph to Object
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>Snare
+}}
+{{RadSpellRow2
+|name=Minor Shielding
+|description=Self Only HP and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 Max HP<br>+3 AC
+}}
+{{RadSpellRow2
+|name=Pendril's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=12
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Reclaim Energy
+|description=Regain Mana From Your Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=5
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shallow Breath
+|description=Single Target Magical Damage with Debuff (5 damage)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=7
+|kind=Detrimental
+|targ=Single
+|duration=12 Sec
+|max=-3--5 Dmg<br>-5 STR<br>-5 AGI
+}}
+{{RadSpellRow2
+|name=Strengthen
+|description=Single Target Strength Buff (Max: 10)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+10 STR
+}}
+{{RadSpellRow2
+|name=Taper Enchantment
+|description=Single Target Magic Effect Duration Debuffer
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=5
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=True North
+|description=Self Only Navigation Spell
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Weaken
+|description=Single Target Strength Debuff (Max: 15)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=8
+|kind=Detrimental
+|targ=Single
+|duration=6 Min
+|max=-15 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Human
+|description=Self Only Morph to Human
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Juli's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=24
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Mesmerize
+|description=Single Target Mesmerize Spell (24 Secs)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=15
+|kind=Detrimental
+|targ=Single
+|duration=24 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Tashina
+|description=Magic Resist debuff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-13 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Color Flux
+|description=Stuns all Targets Around Caster (4 Secs)
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=20
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=Stun 4s (max L55)
+}}
+{{RadSpellRow2
+|name=Fear
+|description=Single Target Fear Spell (18 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Haze
+|description=Single Target AC Buff (Max: 5)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+3 AC
+}}
+{{RadSpellRow2
+|name=Illusion: Half-Elf
+|description=Self Only Morph to Half Elf
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enfeeblement
+|description=Single Target Melee Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Detrimental
+|targ=Single
+|duration=6 Min
+|max=-20 STR<br>-2 AC
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Return to Your Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=70
+|kind=Travel
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Invisibility
+|description=Single Target Invisibility Spell
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Suffocating Sphere
+|description=Single Target Magical Damage over Time with Debuff (34 damage total)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=38
+|kind=Damage Over Time
+|targ=Single
+|duration=42 Sec
+|max=-13 Dmg<br>-6 STR<br>-6 AGI<br>-10 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Eye of Confusion
+|description=Single Target Blind Spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Illusion: Wood Elf
+|description=Self Only Morph to Wood Elf
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Sentinel
+|description=Area Surveillance Spell
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=25
+|kind=Utility
+|targ=Free Target AE
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lesser Shielding
+|description=Self Only HP, MR, and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Max HP<br>+7 AC<br>+10 Magic Resist
+}}
+{{RadSpellRow2
+|name=Root
+|description=Single Target Fast Root Spell (Max: 48 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=48 Sec
+|max=Root
+}}
+{{RadSpellRow2
+|name=See Invisible
+|description=Single Target Vision Enhancer
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=25
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Soothe
+|description=Single Target Frenzy Range Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=2 Min 30 Sec
+|max=Calm (max L40)
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Single Target Magic Effect Debuffer (Dispell)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Chaotic Feedback
+|description=Single Target Magical Direct Damage (Max: 48)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=16
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=28-32 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Enchant Clay
+|description=Create 1 [[Large Block of Magic Clay]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16896
+}}
+{{RadSpellRow2
+|name=Enchant Silver
+|description=Create 1 [[Enchanted Silver Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16504
+}}
+{{RadSpellRow2
+|name=Mass Enchant Silver
+|description=Create 5 [[Enchanted Silver Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=180
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16504
+}}
+{{RadSpellRow2
+|name=Mircyl's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=45
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alliance
+|description=Self Only NPC Faction Boost
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Bind Sight
+|description=See through the targets eyes
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=15
+|kind=Utility
+|targ=Single
+|duration=11 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Illusion: Gnome
+|description=Self Only Morph to Gnome
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Mass Enchant Clay
+|description=Create 5 [[Large Block of Magic Clay]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=180
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16896
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ebbing Strength
+|description=Single Target Strength Debuff (Max: 25)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Detrimental
+|targ=Single
+|duration=6 Min
+|max=-25 STR
+}}
+{{RadSpellRow2
+|name=Kilan's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=65
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Languid Pace
+|description=Single Target Slowing Spell (Max: 30%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-30% Atkspd
+}}
+{{RadSpellRow2
+|name=Whirl Till You Hurl
+|description=Single Target Distance Stun (Max: 12 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=55
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Dark Elf
+|description=Self Only Morph to Dark Elf
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Memory Blur
+|description=Single Target Memory Blur
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Mist
+|description=Single Target AC Buff (Max: 8)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+6 AC
+}}
+{{RadSpellRow2
+|name=Serpent Sight
+|description=Single Target Infravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Charm
+|description=Charm (Level 25 Cap)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=16 Min
+|max=Charm (max L25)
+}}
+{{RadSpellRow2
+|name=Choke
+|description=Single Target Magical Debuff DoT (Max: 80)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=73
+|kind=Damage Over Time
+|targ=Single
+|duration=48 Sec
+|max=-32--35 Dmg<br>-10 STR<br>-10 AGI<br>-22 HP/tick
+}}
+{{RadSpellRow2
+|name=Illusion: High Elf
+|description=Self Only Morph to High Elf
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Intellectual Advancement
+|description=Reduce fizzle rate
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Mass Thicken Mana
+|description=Create 5 [[Vial of Viscous Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10250
+}}
+{{RadSpellRow2
+|name=Thicken Mana
+|description=Create 1 [[Vial of Viscous Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10250
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Set a New Home Point for Target
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Enduring Breath
+|description=Allows Breathing Underwater.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Illusion: Erudite
+|description=Self Only Morph to Erudite
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Illusion: Halfling
+|description=Self Only Morph to Halfling
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enthrall
+|description=Single Target Mesmerize Spell (48 Secs)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=45
+|kind=Detrimental
+|targ=Single
+|duration=48 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Illusion: Dwarf
+|description=Self Only Morph to Dwarf
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Rune I
+|description=Single Target Damage Absorber (Max: 55)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=41
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Breeze
+|description=Single Target Mana Regeneration Increase (2pts/tick)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=35
+|kind=Regen
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+6 Mana
+}}
+{{RadSpellRow2
+|name=Enchant Electrum
+|description=Create 1 [[Enchanted Electrum Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16505
+}}
+{{RadSpellRow2
+|name=Invisibility versus Undead
+|description=Single Target Undead Invisibility Buff
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Mass Enchant Electrum
+|description=Create 5 [[Enchanted Electrum Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16505
+}}
+{{RadSpellRow2
+|name=Shalee's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=85
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Barbarian
+|description=Self Only Morph to Barbarian
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Illusion: Tree
+|description=Self Only Morph to Tree
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>Root
+}}
+{{RadSpellRow2
+|name=Levitate
+|description=Single Target Levitation Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Quickness
+|description=Single Target Haste Spell (Max: 30%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=80
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=11 Min
+|max=+30% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chase the Moon
+|description=Single Target Fear Spell (36 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Detrimental
+|targ=Single
+|duration=36 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Disempower
+|description=Single Target Melee Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Detrimental
+|targ=Single
+|duration=2 Min
+|max=-20 STA<br>-15 STR<br>-7 AC
+}}
+{{RadSpellRow2
+|name=Mesmerization
+|description=Area Effect Mesmerize(24 Secs)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=60
+|kind=Detrimental
+|targ=Targeted AE
+|duration=24 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Sanity Warp
+|description=Single Target Magical Direct Damage (Max: 95)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=38
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=81-87 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Shielding
+|description=Self Only HP, MR, and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+50 Max HP<br>+11 AC<br>+12 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cloud
+|description=Single Target AC Buff (Max: 11)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+8 AC
+}}
+{{RadSpellRow2
+|name=Endure Magic
+|description=Single Target Magic Resist Buff (Max: 20)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Illusion: Ogre
+|description=Self Only Morph to Ogre
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Intellectual Superiority
+|description=Reduce fizzle rate
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Sisna's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=105
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Calm
+|description=Single Target Frenzy Reduction
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L50)
+}}
+{{RadSpellRow2
+|name=Illusion: Troll
+|description=Self Only Morph to Troll & HP Regen Buff (1hp/tick)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>+1 HP/tick
+}}
+{{RadSpellRow2
+|name=Sympathetic Aura
+|description=Single Target Charisma Buff (Max: 18)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+18 CHA
+}}
+{{RadSpellRow2
+|name=Tashani
+|description=Single Target Unresistable Magic Resistance Debuffer (Max: 23)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-23 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Berserker Strength
+|description=Single Target Melee Buff with Damage Absorb (Max: 50)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=3 Min
+|max=+25 STR<br>-15 AGI
+}}
+{{RadSpellRow2
+|name=Crystallize Mana
+|description=Create 1 [[Vial of Cloudy Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10251
+}}
+{{RadSpellRow2
+|name=Feckless Might
+|description=Single Target Strength Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Detrimental
+|targ=Single
+|duration=5 Min
+|max=-30 STR
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrink your pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Benevolence
+|description=Self Only NPC Faction Boost
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Color Shift
+|description=Stuns all Targets Around Caster (6 Secs)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=Stun 6s (max L55)
+}}
+{{RadSpellRow2
+|name=Illusion: Iksar
+|description=Self Only Morph to Iksar & HP Regen Buff (1hp/tick)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>+1 HP/tick
+}}
+{{RadSpellRow2
+|name=Mass Crystallize Mana
+|description=Create 5 [[Vial of Cloudy Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10251
+}}
+{{RadSpellRow2
+|name=Shifting Sight
+|description=See through the targets eyes with Infravision.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alacrity
+|description=Single Target Haste Spell (Max: 40%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=11 Min
+|max=+40% Atkspd
+}}
+{{RadSpellRow2
+|name=Chaos Flux
+|description=Single Target Magical Direct Damage (Max: 150)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=67
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=152-175 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Illusion: Earth Elemental
+|description=Self Only Morph to Earth Elemental & Strength Buff (Max: 10)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>+10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Rune II
+|description=Single Target Damage Absorber (Max: 118)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=83
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Sagar's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=130
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Strip Enchantment
+|description=Single Target Magic Buff Remover (Max: 4)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=70
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Beguile
+|description=Charm (Level 37 Cap)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Detrimental
+|targ=Single
+|duration=16 Min
+|max=Charm (max L37)
+}}
+{{RadSpellRow2
+|name=Major Shielding
+|description=Self Only HP, MR, and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+75 Max HP<br>+15 AC<br>+14 Magic Resist
+}}
+{{RadSpellRow2
+|name=Tepid Deeds
+|description=Single Target Slowing Spell (Max: 50%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-50% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enchant Gold
+|description=Create 1 [[Enchanted Gold Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16506
+}}
+{{RadSpellRow2
+|name=Illusion: Skeleton
+|description=Self Only Morph to Skeleton
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Mass Enchant Gold
+|description=Create 5 [[Enchanted Gold Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=450
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16506
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Feedback
+|description=Single Target Damage Shield (11 Dmg)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Instill
+|description=Root, up to 1 min 36s
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=Root
+}}
+{{RadSpellRow2
+|name=Listless Power
+|description=Single Target Melee Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=90
+|kind=Detrimental
+|targ=Single
+|duration=5 Min
+|max=-35 AGI<br>-35 STR<br>-15 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Clarity
+|description=Single Target Mana Regeneration Buff( 4 - 7 )
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Regen
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+9 Mana
+}}
+{{RadSpellRow2
+|name=Curse of the Simple Mind
+|description=Single Target Wisdom and Intelligence Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Detrimental
+|targ=Single
+|duration=6 Min
+|max=-8 INT
+}}
+{{RadSpellRow2
+|name=Haunting Visage
+|description=Cloaks your target in a haunting visage, drawing more attention to any action they take.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Suffocate
+|description=Single Target Magical Debuff DoT (Max: 263)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Damage Over Time
+|targ=Single
+|duration=48 Sec
+|max=-81--86 Dmg<br>-20 STR<br>-20 AGI<br>-42 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Clarify Mana
+|description=Create 1 [[Vial of Clear Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10252
+}}
+{{RadSpellRow2
+|name=Obscure
+|description=Single Target AC Buff (Max: 14)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+11 AC
+}}
+{{RadSpellRow2
+|name=Ultravision
+|description=Single Target Ultravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=55
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Augmentation
+|description=Single Target Super Melee Buff (agi+30, ac+9, haste+28%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=90
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+27% Atkspd<br>+30 AGI<br>+7 AC
+}}
+{{RadSpellRow2
+|name=Dyn's Dizzying Draught
+|description=Single Target Distance Stun (Max: 12 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Damage
+|targ=Single
+|duration=12 Sec
+|max=-12 AC<br>-50 Mana<br>-50 AGI
+}}
+{{RadSpellRow2
+|name=Illusion: Water Elemental
+|description=Self Only Morph to Water Elemtal & Enduring Breath
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Single Target Magic Effect Debuffer (Dispell)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Air Elemental
+|description=Self Only Morph to Air Elemental & Levitate
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Mass Clarify Mana
+|description=Create 5 [[Vial of Clear Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=900
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10252
+}}
+{{RadSpellRow2
+|name=Uleen's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=150
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ward of Alendar
+|description=Absorb spell damage
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=150
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Entrance
+|description=Single Target Mesmerize Spell (72 Secs)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=75
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 12 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Entrancing Lights
+|description=Point Blank Area of Effect mesmerize. Level 55 cap.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=75
+|kind=Detrimental
+|targ=PB AE
+|duration=6 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Mana Sieve
+|description=Single Target Mana Reducer
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=-310 Mana
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Boltran's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=175
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Greater Shielding
+|description=Self Only HP, MR, and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+100 Max HP<br>+18 AC<br>+16 Magic Resist
+}}
+{{RadSpellRow2
+|name=Radiant Visage
+|description=Single Target Charisma Buff (Max: 30)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=65
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+30 CHA
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Anarchy
+|description=Single Target Magical Direct Damage (Max: 288)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=99
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=264-275 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Cast Sight
+|description=See Through Targets Eyes with Ultravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=45
+|kind=Utility
+|targ=Single
+|duration=150 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Enchant Platinum
+|description=Create 1 [[Enchanted Platinum Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16507
+}}
+{{RadSpellRow2
+|name=Mass Enchant Platinum
+|description=Create 5 [[Enchanted Platinum Bar]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=675
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #16507
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Fire Elemental
+|description=Self Only Morph to Fire Elemental & Damage Shield (Max: 16)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=70
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Rune III
+|description=Single Target Damage Absorber (Max: 230)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=149
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Gift of Magic
+|description=Single Target Mana Buff (Max: 50)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=60 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Insipid Weakness
+|description=Single Target Strength Debuff (Max: 51)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=-51 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Insight
+|description=Single Target Wisdom and Intelligence Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=125
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=40 Min
+|max=+1 WIS
+}}
+{{RadSpellRow2
+|name=Invoke Fear
+|description=Single Target Fear Spell (42 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Pacify
+|description=Single Target Frenzy Reduction
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Calming Visage
+|description=Cloaks your target in a calming visage, diverting attention from any action they take.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Gravity Flux
+|description=Area Effect Direct Damage Spell (Max: 330)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=337
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=242-270 Dmg
+}}
+{{RadSpellRow2
+|name=Mind Wipe
+|description=Area Memory Blur
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Targeted AE
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Aanya's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Cajoling Whispers
+|description=Charm (Level 46 Cap)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=195
+|kind=Detrimental
+|targ=Single
+|duration=16 Min
+|max=Charm (max L46)
+}}
+{{RadSpellRow2
+|name=Illusion: Dry Bone
+|description=Self Only Morph to Drybone & Fire Resist Buff (Max: 25)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=70
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>+25 Fire Resist
+}}
+{{RadSpellRow2
+|name=Resist Magic
+|description=Single Target Magic Resist Buff (Max: 40)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=85
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Magic Resist
+}}
+{{RadSpellRow2
+|name=Shade
+|description=Single Target AC Buff (Max: 17)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+13 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Distill Mana
+|description=Create 1 [[Vial of Distilled Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=400
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10253
+}}
+{{RadSpellRow2
+|name=Illusion: Spirit Wolf
+|description=Self Only Morph to Wolf & ATK (15), Cold Resist (10)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=70
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>+15 ATK<br>+10 Cold Resist
+}}
+{{RadSpellRow2
+|name=Rampage
+|description=Single Target Melee Buff with Damage Absorb (Max: 90)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=90
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=5 Min
+|max=+35 STR<br>-20 AGI
+}}
+{{RadSpellRow2
+|name=Wandering Mind
+|description=Mana Tap over time (Max: 120 Mana)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=5
+|kind=Detrimental
+|targ=Single
+|duration=2 Min
+|max=-6 Mana/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Celerity
+|description=Single Target Haste Spell (Max: 50%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=185
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+50% Atkspd
+}}
+{{RadSpellRow2
+|name=Immobilize
+|description=Single Target Fast Root Spell (Max: 60 Secs)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Detrimental
+|targ=Single
+|duration=1 Min
+|max=Root
+}}
+{{RadSpellRow2
+|name=Mass Distill Mana
+|description=Create 5 [[Vial of Distilled Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=1200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10253
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Arch Shielding
+|description=Self Only HP, MR, and AC Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+150 Max HP<br>+22 AC<br>+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Boon of the Garou
+|description=Single Target Werewolf Form +Dex +LifeTap
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Target Group Member or Self
+|duration=Instant
+|max=Illusion<br>Procs: Lifetap Strike<br>+30 ATK<br>+100 DEX
+}}
+{{RadSpellRow2
+|name=Incapacitate
+|description=Single Target Melee Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Detrimental
+|targ=Single
+|duration=5 Min
+|max=-55 AGI<br>-55 STR<br>-20 AC
+}}
+{{RadSpellRow2
+|name=Rune IV
+|description=Single Target Damage Absorber (Max: 394)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=236
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=90 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Brilliance
+|description=Single Target Intelligence Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=125
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=40 Min
+|max=+1 WIS
+}}
+{{RadSpellRow2
+|name=Shiftless Deeds
+|description=Single Target Slowing Spell (Max: 65%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Detrimental
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-65% Atkspd
+}}
+{{RadSpellRow2
+|name=Tashania
+|description=Single Target Unresistable Magic Resistance Debuffer (Max: 33)
+|era={{Classic Short}}
+|school=Abjuration
+|location=[[Coin of Tash (Tashania){{!}}Quest]]
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-33 Magic Resist
+}}
+{{RadSpellRow2
+|name=Yegoreff's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=250
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Boon of the Clear Mind
+|description=Group Clarity
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=175
+|kind=Regen
+|targ=Group
+|duration=27 Min
+|max=+1 Mana
+}}
+{{RadSpellRow2
+|name=Illusion: Werewolf
+|description=Self Only Morph to Werewolf and Major Melee Buff
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=90
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Pillage Enchantment
+|description=Single Target Magic Buff Remover (Max: 4) Dispell
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=70
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Weakness
+|description=Single Target Strength Debuff (Max: 65)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=-65 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bounce
+|description=Reflect spell chance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Color Skew
+|description=Stuns all Targets Around Caster (8 Secs)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=60
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=Stun 8s (max L55)
+}}
+{{RadSpellRow2
+|name=Discordant Mind
+|description=Single Target Magical Direct Damage (Max: 528)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=126
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=387 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summon Your Pet to Your Location
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Guard of Alendar
+|description=Absorb spell damage
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=175
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Illusion: Scaled Wolf
+|description=Scaled Wolf illusion
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Utility
+|targ=Self
+|duration=72 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Leviathan Eyes
+|description=Water breathing, night vision, see invisible
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Illusion: Imp
+|description=Self only Imp illusion, levitation
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=110
+|kind=Utility
+|targ=Self
+|duration=36 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Paralyzing Earth
+|description=Single Target Root Spell (Max: 3 Mins)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=Root
+}}
+{{RadSpellRow2
+|name=Purify Mana
+|description=Create 1 [[Vial of Purified Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=500
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10254
+}}
+{{RadSpellRow2
+|name=Reoccurring Amnesia
+|description=Persistent Memory Blur
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=24 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Adorning Grace
+|description=Single Target Charisma Buff (Max: 40)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=110
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+40 CHA
+}}
+{{RadSpellRow2
+|name=Allure
+|description=Charm (Level 51 Cap)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=245
+|kind=Detrimental
+|targ=Single
+|duration=16 Min
+|max=Charm (max L51)
+}}
+{{RadSpellRow2
+|name=Blanket of Forgetfulness
+|description=Area Memory Blur
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=175
+|kind=Detrimental
+|targ=Targeted AE
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Berserker Spirit
+|description=Single Target Melee Buff with Damage Absorb (Max: 200)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=5 Min
+|max=+40 STR<br>-20 AGI
+}}
+{{RadSpellRow2
+|name=Dazzle
+|description=Single Target Mesmerize Spell (96 Secs)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=110
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=Mez (max L55)
+}}
+{{RadSpellRow2
+|name=Gasping Embrace
+|description=Single Target Magical Debuff DoT (710 Dmg)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Damage Over Time
+|targ=Single
+|duration=48 Sec
+|max=-113 Dmg<br>-30 STR<br>-30 AGI<br>-89 HP/tick
+}}
+{{RadSpellRow2
+|name=Mass Purify Mana
+|description=Create 5 [[Vial of Purified Mana]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=1500
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10254
+}}
+{{RadSpellRow2
+|name=Swift Like the Wind
+|description=Single Target Haste Spell (60%)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=250
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+60% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Group Resist Magic
+|description=Group Magical Resistance Buff (Max: 55)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=+55 Magic Resist
+}}
+{{RadSpellRow2
+|name=Kintaz's Animation
+|description=Summon an Animation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=300
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shadow
+|description=Single Target AC Buff (Max: 20)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=70
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=90 Min
+|max=+16 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Collaboration
+|description=Self Only NPC Faction Boost
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Improved Invisibility
+|description=Self Only Fixed Duration Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=75
+|kind=Utility
+|targ=Self
+|duration=10 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Theft of Thought
+|description=Single Target Mana Tap (Max: 400)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Detrimental
+|targ=Lifetap
+|duration=Instant
+|max=-340 Mana
+}}
+</table>
+</div>
+
+= Enchanter AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Enchanter Class AAs}}
+
+=Skills=
+==Specialization==
+
+{{#lsth:Skill Specialization|Enchanter}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 20
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+==Combat Skills==
+{| class="wikitable sortable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 100
+| 100
+|-
+| 1
+| No
+| [[Defense]]
+| 145
+| 145
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 100
+| 135
+|-
+| 1
+| No
+| [[Offense]]
+| 140
+| 140
+|-
+| 1
+| No
+|[[Skill Piercing|1 Hand Piercing]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Throwing]]
+| 75
+| 75
+|-
+| 20
+| No
+| [[Dodge]]
+| 75
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200</td>
+| 200</td>
+|}
+
+=Spell Information=
+== Pet Information ==
+
+{{#lsth:Pet Guide|[[Enchanter]] Pets}}
+
+== Illusion Spells ==
+
+{| class="sortable"
+! Spell Name
+! Spell Level
+! Benefits
+! Era
+|-
+| [[Boon of the Garou]] 
+| 44
+| 5-35 Lifetap Proc (L1-L60), +30 ATK, +100 DEX
+| {{Classic Short}}
+|-
+| [[Illusion: Werewolf]]
+| 44
+| +45-91 ATK (L44-L60), 40% Haste, +30 STR
+| {{Classic Short}}
+|-
+| [[Illusion: Spirit Wolf]] 
+| 39
+| +15 ATK, +10 CR
+| {{Classic Short}}
+|-
+| [[Illusion: Dry Bone]] 
+| 39
+| +25 FR
+| {{Classic Short}}
+|-
+| [[Illusion: Fire Elemental]] 
+| 34
+| +9-17 Damage Shield (L34-L65) 
+| {{Classic Short}}
+|-
+| [[Illusion: Air Elemental]] 
+| 29
+| Levitate
+| {{Classic Short}}
+|-
+| [[Illusion: Water Elemental]] 
+| 29
+| Water Breathing
+| {{Classic Short}}
+|-
+| [[Illusion: Earth Elemental]] 
+| 24
+| +10 STR
+| {{Classic Short}}
+|-
+| [[Illusion: Skeleton]] 
+| 24
+|
+| {{Classic Short}}
+|-
+| [[Illusion: Iksar]] 
+| 20
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Ogre]] 
+| 20
+| [[Infravision]], Racial [[Slam]]
+| {{Classic Short}}
+|-
+| [[Illusion: Troll]] 
+| 20
+| +1 HP regen, [[Infravision]], Racial [[Slam]]
+| {{Classic Short}}
+|-
+| [[Illusion: Barbarian]] 
+| 16
+| Racial [[Slam]]
+| {{Classic Short}}
+|-
+| [[Illusion: Dwarf]] 
+| 16
+| [[https://wiki.project1999.com/Character_Races#Barrel_Roll Barrel Roll]], [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Tree]] 
+| 16
+| Root
+| {{Classic Short}}
+|-
+| [[Illusion: Dark Elf]] 
+| 12
+| [[Ultravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Erudite]] 
+| 12
+|
+| {{Classic Short}}
+|-
+| [[Illusion: Halfling]] 
+| 12
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: High Elf]] 
+| 12
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Gnome]] 
+| 8
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Wood Elf]] 
+| 8
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Half-Elf]] 
+| 4
+| [[Infravision]]
+| {{Classic Short}}
+|-
+| [[Illusion: Human]] 
+| 4
+|
+| {{Classic Short}}
+|-
+| [[Minor Illusion]] 
+| 1
+| Almost root.
+| {{Classic Short}}
+|}
+
+== Mesmerization Spells ==
+This table describes which mesmerization spells can be overwritten by which others.
+
+<table cellpadding='5' cellborder='0' cellspacing='0' width='45%'>
+    <tr>
+        <td align="left" width="20%"><b>&nbsp;&nbsp;This &nbsp;&nbsp;&nbsp; Overwrites<br/>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this -&gt;<br/>&nbsp;&nbsp;&nbsp; v</b></td>
+		<td align="center" width="10%"><b>Mesmerize</b></td>
+		<td align="center" width="10%"><b>Enthrall</b></td>
+		<td align="center" width="10%"><b>Entrance</b></td>
+		<td align="center" width="10%"><b>Dazzle</b></td>
+        <td align="center" width="10%"><b>Glamour of Kintaz</b></td>
+        <td align="center" width="10%"><b>Rapture</b></td>
+        <td align="center" width="10%"><b>Mesmerization</b></td>
+        <td align="center" width="10%"><b>Fascination</b></td>
+	</tr>
+
+	<tr><td align="center" width="20%"><b>Mesmerize</b></td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">Yes</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Enthrall</b></td>
+		<td align="center" width="10%">No</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Entrance</b></td>
+		<td align="center" width="10%">No</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Dazzle</b></td>
+		<td align="center" width="10%">No</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">No</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Glamour of Kintaz</b></td>
+		<td align="center" width="10%">!</td>
+		<td align="center" width="10%">!</td>
+		<td align="center" width="10%">!</td>
+		<td align="center" width="10%">!</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">!</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Rapture</b></td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">Yes</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Mesmerization</b></td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">Yes</td>
+	</tr>
+    
+	<tr><td align="center" width="20%"><b>Fascination</b></td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+		<td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">!</td>
+        <td align="center" width="10%">No</td>
+        <td align="center" width="10%">Yes</td>
+        <td align="center" width="10%">Yes</td>
+	</tr>
+</table>
+Note that Glamour of Kintaz interacts strangely with every other spell. It lands, but does not extend the mez duration, and also breaks mez when it wears off itself. The memblur component, however, seems to take effect as normal.
+This behavior has been reported as a bug here: [https://www.project1999.com/forums/showthread.php?t=301767].
+
+== Mesmerization Spell Info ==
+
+*Efficiency is calculated in "seconds mezed per mana spent". Therefore higher is better. TC = target_count
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Name !! Level !! Mana !! MR Check !! Max Ticks !! Max Seconds !! Cast Time !! Recast Time !! Blur Chance !! Target !! Efficiency !! Max Target Level
+|-
+| '''Mesmerize''' || 2 || 20 || 0 || 4 || 24 || 2.50 || 2.25 || 1% || Single || 1.2 || 55
+|-
+| '''Enthrall''' || 16 || 50 || 0 || 8 || 48 || 2.50 || 2.50 || 1% || Single || 0.96 || 55
+|-
+| '''Mesmerization''' || 16 || 70 || 0 || 4 || 24 || 3.00 || 2.25 || 1% || AE || 1.2 * TC || 55
+|-
+| '''Entrancing Lights''' || 30 || 75 || 0 || 1 || 6 || 1.50 || 12.00 || ? || PB AE || 0.08 * TC || 55
+|-
+| '''Entrance''' || 30 || 85 || 0 || 12 || 72 || 2.50 || 3.75 || 1% || Single || 0.85 || 55
+|-
+| '''Dazzle''' || 49 || 125 || 0 || 16 || 96 || 2.50 || 5.00 || 1% || Single || 0.77 || 55
+|-
+| '''Fascination''' || 52 || 200 || -10 || 6 || 36 || 3.00 || 2.25 || 1% || AE || 0.18 * TC || 55
+|-
+| '''Glamour''' || 54 || 275 || 0 || 5 || 30 || 2.50 || 2.25 || 30% || Single || 0.11 || 57
+|-
+| '''Rapture''' || 59 || 425 || -1000 || 4 || 24 || 2.50 || 24.00 || 40% || Single || 0.06 || 61
+|}
+
+== Charm Spell Info ==
+
+*Efficiency is calculated in "seconds charmed per mana spent". Therefore higher is better. TC = target_count
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Name !! Level !! Mana !! MR Check !! Max Ticks !! Max Seconds !! Cast Time !! Recast Time !! Efficiency !! Max Target Level
+|-
+| '''Charm''' || 12 || 60 || 0 || 205 || 1230 || 2.40 || 2.25 || 20.5 || 25
+|-
+| '''Beguile''' || 24 || 120 || 0 || 205 || 1230 || 3.50 || 2.25 || 10.25 || 37
+|-
+| '''Cajoling Whispers''' || 39|| 195 || 0 || 205 || 1230 || 5.50 || 2.25 || 6.3 || 46
+|-
+| '''Allure''' || 49 || 245 || 0 || 190 || 1140 || 6.00 || 2.25 || 4.65 || 51
+|-
+| '''Boltran's Agacerie''' || 53 || 400 || 0 || 70 || 420 || 4.00 || 0.00 || 1.05 || 53
+|-
+| '''Dictate''' || 60 || 750 || -1000 || 8 || 48 || 5.00 || 2.25 || 1.2 || 58
+|}
+
+= Enchanter-Specific Quests =
+
+{{#lsth:Class Race Quest List|Enchanter}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Enchanter Equipment | Enchanter Equipment]] for the full list of gear usable by enchanters.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Enchanter]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Enchanter]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Enchanter]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Enchanter]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Enchanter]]}}
+
+= FAQ =
+
+'''Q:	What effect does my pet (charmed mob or animation) have on experience gain?'''
+
+A:	None if you are in a group. In solo play, the pet will take away 50% of the experience gained from a particular mob if, and only if, it did substantially more damage to this mob than you. For details see [[Pet Guide#Pets and Experience|Pets and Experience]]. There are ways to avoid this penalty; for detailed strategies check the Enchanter class guides, for example [[Spaid's_Solo_Guide]].
+
+
+'''Q: Where can I get Tiny Daggers?
+
+A: All cities have an Adventure Merchant that you can find using the Find Tool (default key: F). If your starting zone covers several areas (IE, Neriak), make sure to check each area to see where your Adventure Merchant is. That NPC will sell Tiny Daggers.
+
+{{Template: Navbox Classes}}

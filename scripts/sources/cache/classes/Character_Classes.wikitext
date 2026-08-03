@@ -1,0 +1,92 @@
+__NOTOC__
+
+<div style="color:#d6d6c0;">
+
+{| style="width:100%; border:1px solid #4b4a2f; background:#0d1118; margin:0 0 18px 0;"
+| style="padding:22px 24px; vertical-align:top; color:#e2e2cf;" |
+<div style="font-family:Georgia,serif; font-size:220%; font-weight:bold; letter-spacing:3px; color:#d8ca72; text-align:center; margin-bottom:10px;">CHARACTER CLASSES</div>
+
+<div style="font-size:110%; line-height:1.6; max-width:900px; margin:0 auto; text-align:center;">
+There are '''sixteen total classes''' in EverQuest Legends. Each class belongs to one of four archetypes: '''casters''', '''priests''', '''melee''', and '''hybrids'''.
+</div>
+
+<div style="font-size:105%; line-height:1.6; max-width:900px; margin:10px auto 0 auto; text-align:center; color:#d6d6c0;">
+There are no experience penalties for any specific class. EverQuest Legends also allows players to mix classes, creating custom class combinations and trio builds.
+</div>
+<br><br>
+<div style="text-align:center; margin-top:16px;">
+<span style="display:inline-block; border:1px solid #706b3d; background:#151b24; padding:10px 18px; font-family:Georgia,serif; font-size:120%; font-weight:bold; letter-spacing:1px;">
+[[Class_Guides|<span style="color:#d8ca72;">View Build Guides</span>]]
+</span>
+</div>
+| style="width:360px; padding:18px; text-align:center; vertical-align:middle;" |
+[[File:Firionaboxart.webp|340x340px]]
+|}
+
+<!-- ARCHETYPES USING GRID SYSTEM -->
+<div style="display: grid; grid-template-rows: 1fr auto; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8em), 1fr)); grid-gap: 0.7rem;">
+
+<!-- CASTERS -->
+<div style="grid-column: auto / span 3; border: 1px solid #4b4a2f; background: #10151d; padding: 0 1rem 1rem; color: #d6d6c0;">
+<h2>CASTERS</h2>
+<p>Casters specialize in spell damage, control, pets, utility, mana tools, and magical burst.</p>
+<ul style="margin: 0;">
+<li>[[Enchanter|<span style="color:#b9c8ff;">Enchanter</span>]] (ENC)</li>
+<li>[[Magician|<span style="color:#b9c8ff;">Magician</span>]] (MAG)</li>
+<li>[[Necromancer|<span style="color:#b9c8ff;">Necromancer</span>]] (NEC)</li>
+<li>[[Wizard|<span style="color:#b9c8ff;">Wizard</span>]] (WIZ)</li>
+</ul>
+</div>
+
+<!-- PRIESTS -->
+<div style="grid-column: auto / span 3; border: 1px solid #4b4a2f; background: #10151d; padding: 0 1rem 1rem; color: #d6d6c0;">
+<h2>PRIESTS</h2>
+<p>Priests provide healing, buffs, debuffs, recovery tools, utility, and group support.</p>
+<ul style="margin: 0;">
+<li>[[Cleric|<span style="color:#b9c8ff;">Cleric</span>]] (CLR)</li>
+<li>[[Druid|<span style="color:#b9c8ff;">Druid</span>]] (DRU)</li>
+<li>[[Shaman|<span style="color:#b9c8ff;">Shaman</span>]] (SHM)</li>
+</ul>
+</div>
+
+<!-- MELEE -->
+<div style="grid-column: auto / span 3; border: 1px solid #4b4a2f; background: #10151d; padding: 0 1rem 1rem; color: #d6d6c0;">
+<h2>MELEE</h2>
+<p>Melee classes focus on weapon-based combat, sustained damage, pulling, disciplines, positioning, and direct physical pressure.</p>
+<ul style="margin: 0;">
+<li>[[Berserker|<span style="color:#b9c8ff;">Berserker</span>]] (BER)</li>
+<li>[[Monk|<span style="color:#b9c8ff;">Monk</span>]] (MNK)</li>
+<li>[[Rogue|<span style="color:#b9c8ff;">Rogue</span>]] (ROG)</li>
+<li>[[Warrior|<span style="color:#b9c8ff;">Warrior</span>]] (WAR)</li>
+</ul>
+</div>
+
+<!-- HYBRIDS -->
+<div style="grid-column: auto / span 3; border: 1px solid #4b4a2f; background: #10151d; padding: 0 1rem 1rem; color: #d6d6c0;">
+<h2>HYBRIDS</h2>
+<p>Hybrids blend martial combat with magic, songs, pets, utility, tanking tools, tracking, and specialized group support.</p>
+<ul style="margin: 0;">
+<li>[[Bard|<span style="color:#b9c8ff;">Bard</span>]] (BRD)</li>
+<li>[[Beastlord|<span style="color:#b9c8ff;">Beastlord</span>]] (BST)</li>
+<li>[[Paladin|<span style="color:#b9c8ff;">Paladin</span>]] (PAL)</li>
+<li>[[Ranger|<span style="color:#b9c8ff;">Ranger</span>]] (RNG)</li>
+<li>[[Shadow Knight|<span style="color:#b9c8ff;">Shadow Knight</span>]] (SHD)</li>
+</ul>
+</div>
+
+</div>
+<!-- END ARCHETYPES USING GRID SYSTEM -->
+
+{| style="width:100%; border:1px solid #4b4a2f; background:#10151d; margin: 0.8em 0 18px 0;"
+| style="padding:16px 20px; color:#e2e2cf;" |
+<div style="font-family:Georgia,serif; font-size:145%; font-weight:bold; letter-spacing:2px; color:#d8ca72; border-bottom:2px solid #706b3d; padding-bottom:5px; margin-bottom:12px;">CLASS MIXING</div>
+
+EverQuest Legends allows class combinations, giving players more flexibility than a traditional single-class setup. 
+
+For practical examples, recommended trios, strengths, weaknesses, and progression advice, see the [[Build_Guides|<span style="color:#b9c8ff;">Build Guides</span>]] page.
+|}
+
+</div>
+
+
+[[Category:Character]]

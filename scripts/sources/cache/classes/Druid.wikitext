@@ -1,0 +1,3684 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ A Druid is the master of the outdoors and befriends all flora and fauna. <br>Creatures rarely ever attack him unless he attacks first.<br> He is a clerical spellcaster who focuses on all things natural, <br>allowing him to call upon Nature for aid and defense.
+ - EverQuest manual
+
+=Description=
+[[File:C druid.gif|right]]
+Druids are disciples of the wilds, following the teachings of the Norrathian gods of nature. Druids are primarily a magic-using class, with the ability to wear leather armor and wield blunt weapons and scimitars.
+
+Druidic magic takes many forms, allowing the druid to fill a wide variety of roles when in a group or adventuring alone. Druids possess fair healing abilities, powerful health regenerative spells, valuable enhancements that improve the health and armor of their group, and at max level considerable mana regenerative spells.
+
+Offensively, druids are versatile. They have access to fire and cold-based damage spells, a selection of disease and swarm spells that damage their enemies over time, powerful banishment spells focused upon unnaturally summoned creatures, and spells to charm animals. Druids also gain some of the best transport spells (often referred to as travel spells), including the ability to speed up their group's movement and transport their group to distant regions.
+
+Druids are a well-rounded class, prospering in both solo and grouped situations. An experienced druid is able to adventure alone, but is equally at home in a group. The druid is an excellent class for players who enjoy a variety of play styles and options. Druids make one of the best starting characters in EQ due to their amazing ability to make money via transports, item farming, versatility, ease of travel, and quad killing giants.
+
+Druid tracking is capped at 20 at launch, and raised to 50 come Plane of Sky patch. It is later raised to 125, months after Velious release. [https://www.project1999.com/forums/showthread.php?t=346714] [https://www.project1999.com/forums/showthread.php?t=337046]
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Druid || Wanderer || Preserver || Hierophant
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Half Elf]]''' || 70 || 70 || 90 || 85 || 60 || 75 || 75
+|-
+| style="text-align: left"| '''[[Halfling]]''' || 70 || 75 || 95 || 90 || 80 || 67 || 50
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Wood Elf]]''' || 65 || 65 || 95 || 80 || 80 || 75 || 75
+|-
+| style="text-align: left"| '''[[Druid]] Adds''' ||  || 15 ||  ||  || 15 ||  || 
+|}
+
+== Starting Statistics ==
+This section should be deleted/removed
+
+== Impact from stats ==
+
+Wisdom is the best attribute for Druids and recommended for new players. 
+
+== Religion ==
+
+All Wood Elf druids must worship Tunare, while all Halflings must worship Karana.  Half-Elves and Humans can choose between the two.
+
+Both Tunare and Karana have deity-specific tailored armor that is useful for skilling tailoring to 200 or beyond. Velious has several Tunare-only quests. Both deities are good and will be KOS in most evil places.
+
+<table>
+<tr><th>[[Karana]]</th><th>[[Tunare]]</th></tr>
+<tr>
+<td>
+<ul>
+<li>Halfling-only: Imbued Vale Armor ([[Cultural Tradeskills: Halfling]])
+<li>All races: {{:Idol of Karana}}
+<li>[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Druid+Equipment&wpInCategory2=Karana_Worshiper_Equipment All Karana/Druid Items]
+</ul>
+</td>
+<td>
+<ul>
+<li>Elven ([[High Elf| High]]/[[Wood Elf| Wood]]/[[Half Elf| Half]]): Imbued Elven Chain ([[Cultural Tradeskills: High Elf]])
+<li>All races (except halfling): {{:Gloves of Earthcrafting}}, {{:Idol of Tunare}}, and {{:Warden Symbol of Tunare}}
+<li>[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Druid+Equipment&wpInCategory2=Tunare_Worshiper_Equipment All Tunare/Druid Items]
+</ul>
+</td>
+</table>
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Divine Invocation
+| {{#section:Stances & Invocations|Divine}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|}
+
+
+=Spells=
+
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Greater Faydark]]'''
+|[[Uleen Laughingwater]]
+|Druid Guild
+|(-639, 237)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Wanderer Rakshaazi]]
+|Full Caster Spell Vendor Room
+|(116, -155)
+|-
+|'''[[Rivervale]]'''
+|[[Ilscent Tagglefoot]]
+|Druid Guild
+|(-31, -418)
+|-
+|'''[[Surefall Glade]]'''
+|[[Qomber Roblen]]
+|Druid Guild
+|(-106, 260)
+|-
+|[[West Commonlands]]
+|[[Slea Pinewhisper]]
+|Druid Ring
+|(450, 1384)
+|}
+
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Flame
+|description=Fire based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=4
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=3-5 Dmg
+}}
+{{RadSpellRow2
+|name=Dance of the Fireflies
+|description=Creates a {{:Summoned:_Firefly_Globe}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10295
+}}
+{{RadSpellRow2
+|name=Endure Fire
+|description=Fire Resist Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Flame Lick
+|description=Fire Damage over time with AC Debuff. Requires {{:Fire Beetle Eye}}
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=12
+|kind=DoT/Debuff
+|targ=Single
+|duration=36 Sec
+|max=-17 HP/tick<br>-3 AC
+}}
+{{RadSpellRow2
+|name=Lull Animal
+|description=Aggression Range Debuff vs Animals
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Beneficial
+|targ=Animal
+|duration=2 Min
+|max=Calm (max L30)
+}}
+{{RadSpellRow2
+|name=Minor Healing
+|description=Healing Spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=10
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=12-20 HP
+}}
+{{RadSpellRow2
+|name=Panic Animal
+|description=Forces an animal to run away in terror
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Fear
+|targ=Animal
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Sense Animals
+|description=Makes the caster face the closest Animal
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Skin like Wood
+|description=AC and Max HP Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+3 AC<br>+20 Max HP
+}}
+{{RadSpellRow2
+|name=Snare
+|description=Movement Speed Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=15
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=Snare
+}}
+{{RadSpellRow2
+|name=Tangling Weeds
+|description=Entangles your target's feet with magical roots, slowing their movement speed for up to 18s.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=15
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Grasping Roots
+|description=Direct Damage with Root
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=35
+|kind=Damage/Root
+|targ=Single
+|duration=48 Sec
+|max=-10 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Ward Summoned
+|description=Direct Damage vs Summoned
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=6
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=6-14 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Fire
+|description=Creates a ball of fire that burns your target, doing 14 damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted
+|mana=7
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=11-14 Dmg
+}}
+{{RadSpellRow2
+|name=Whirling Wind
+|description=Direct Damage with Stun (Outdoor Only)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=7
+|kind=Damage/Stun
+|targ=Single
+|duration=Instant
+|max=9-13 Dmg<br>Stun 1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Budding Heal
+|description=Seeds your target with healing energy, healing for 11 every 6 seconds for 24 seconds and then healing for 18.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Camouflage
+|description=Invisibility (Outdoor Only)
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=15
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cures the target of disease effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Invoke Lightning
+|description=Area Effect Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=32
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=20-25 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Poison
+|description=Cures the target of poison effects
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Poison
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Returns caster to their Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=70
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Harmony
+|description=Area Calm (Unresistable)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=25
+|kind=Beneficial
+|targ=Targeted AE
+|duration=2 Min
+|max=Calm (max L40)
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enduring Breath
+|description=Allows breathing underwater. Consumes [[Fish Scales]].
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Firefist
+|description=Increases caster's ATK
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=30
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+10 ATK
+}}
+{{RadSpellRow2
+|name=Treeform
+|description=Turns the caster into a tree, rooting them
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Beneficial
+|targ=Self
+|duration=36 Min
+|max=Illusion<br>Root<br>-10 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shield of Thistles
+|description=Damage Shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=40
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=6 Dmg (@L12)
+}}
+{{RadSpellRow2
+|name=Strength of Earth
+|description=Increase strength of the target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+15 STR
+}}
+{{RadSpellRow2
+|name=Thistlecoat
+|description=Self-only damage shield and AC buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ignite
+|description=Fire based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=21
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=38-46 Dmg
+}}
+{{RadSpellRow2
+|name=Invisibility versus Animals
+|description=Invisibility to Animals
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Remove Minor Curse
+|description=Cleanses your target's soul, removing minor curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 2 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Cold
+|description=Adds to cold resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+{{RadSpellRow2
+|name=Light Healing
+|description=Single Target Heal
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=28
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=47-65 HP
+}}
+{{RadSpellRow2
+|name=Protection of Wood
+|description=Hardens the skin of your group, increasing their hit points and armor class for 27 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Group
+|duration=27 Min
+|max=+3 AC<br>+20 Max HP
+}}
+{{RadSpellRow2
+|name=Starshine
+|description=Summons a {{:Summoned: Globe of Stars}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10293
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Wolf
+|description=Increases movement rate of the target
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=40
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Sprouting Heal
+|description=Seeds your target with healing energy, healing for 30 every 6 seconds for 24 seconds and then healing for 100.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Stinging Swarm
+|description=Magic-based Damage over Time
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=71
+|kind=DoT
+|targ=Single
+|duration=54 Sec
+|max=-42 HP/tick
+}}
+{{RadSpellRow2
+|name=Summon Drink
+|description=Summons {{:Summoned: Globe of Water}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Halo of Light
+|description=Summons a {{:Summoned: Halo of Light}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10290
+}}
+{{RadSpellRow2
+|name=Summon Food
+|description=Summons {{:Summoned: Black Bread}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Set a new Home Point for Target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Cascade of Hail
+|description=Cold based Area Rain
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=62
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=27 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Befriend Animal
+|description=Cause animal to become a temporary pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=70
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L24)
+}}
+{{RadSpellRow2
+|name=Expulse Summoned
+|description=Direct Damage vs. Summoned
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=41
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=113-122 Dmg
+}}
+{{RadSpellRow2
+|name=See Invisible
+|description=Allows the Target to see invisible creatures
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=25
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Levitate
+|description=Causes the Target to levitate. Consumes [[Bat Wing]].
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Skin like Rock
+|description=Increases target's hitpoints and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+6 AC<br>+90 Max HP<br>54-90 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Calm Animal
+|description=Decreases an animal's aggro range
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Beneficial
+|targ=Animal
+|duration=42 Sec
+|max=Calm (max L50)
+}}
+{{RadSpellRow2
+|name=Ring of North Karana
+|description=Opens a mystical portal that transports you to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ring of Surefall Glade
+|description=Opens a mystical portal that transports you to Surefall Glade
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Terrorize Animal
+|description=Makes an animal run away in terror
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Fear
+|targ=Animal
+|duration=54 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Careless Lightning
+|description=Magic based direct damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogrant Vendor
+|mana=37
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=96-105 Dmg
+}}
+{{RadSpellRow2
+|name=Dizzying Wind
+|description=Damage with Stun
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=81-95 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Ring of Butcherblock
+|description=Opens a mystical portal that transports you to the Butcherblock Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Barbcoat
+|description=Self only AC and damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+10 AC
+}}
+{{RadSpellRow2
+|name=Ring of Toxxulia
+|description=Transports you to Toxxulia Forest
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ring of West Commons
+|description=Opens a mystical portal that transports you to the Western Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shield of Barbs
+|description=Gives the target a damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=60
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+9 Damage Shield
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrinks your pet, allowing it better mobility in tight quarters.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=50
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes a single magical effect
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=Cancel Magic (1)
+}}
+{{RadSpellRow2
+|name=Feral Spirit
+|description=Increase pets attack speed and stats
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=50
+|kind=Beneficial
+|targ=Pet
+|duration=60 Min
+|max=+20 STR<br>+20% Atkspd<br>+10 AC
+}}
+{{RadSpellRow2
+|name=Lesser Succor
+|description=Opens a mystical portal that transports your group to a relatively safe location in the current zone. The chaotic nature of the portal drains mana from anyone who passes through it.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=150
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=-300 Mana
+}}
+{{RadSpellRow2
+|name=Superior Camouflage
+|description=Grants Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=24 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Increase resistance to Disease
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+{{RadSpellRow2
+|name=Endure Poison
+|description=Increase resistance to Poison
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Poison Resist
+}}
+{{RadSpellRow2
+|name=Healing
+|description=Restores HP
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=65
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=135-175 HP
+}}
+{{RadSpellRow2
+|name=Protection of Rock
+|description=Hardens the skin of your group, increasing their hit points and armor class for 27 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=150
+|kind=Buff
+|targ=Group
+|duration=27 Min
+|max=+6 AC<br>+90 Max HP<br>59-90 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flowering Heal
+|description=Seeds your target with healing energy, healing for 60 every 6 seconds for 24 seconds and then healing for 197.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=130
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Resist Fire
+|description=Increases resistance to Fire
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Fire Resist
+}}
+{{RadSpellRow2
+|name=Ring of South Ro
+|description=Opens a mystical portal that transports you to the Southern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ring of Stonebrunt
+|description=Opens a mystical portal that transports you to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Wolf Form
+|description=Outdoors only: Transform into a wolf, increasing Movement Speed and ATK
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=60
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=Illusion<br>Run Speed<br>+30 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ensnaring Roots
+|description=Direct Damage with Root
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=-31--60 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Ring of Steamfont
+|description=Transports you to Steamfont
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Spirit of Cheetah
+|description=Short Duration Extreme Movement Speed Increase
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Beneficial
+|targ=Self
+|duration=48 Sec
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Tremor
+|description=Point-Blank Area Effect Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=200
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=106-122 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Pogonip
+|description=Area Effect Cold based Rain spell
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=125
+|kind=Rain Dmg
+|targ=Targeted AE
+|duration=Instant
+|max=62 Dmg
+}}
+{{RadSpellRow2
+|name=Ring of Feerrott
+|description=Transports you to the Feerott
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ring of Lavastorm
+|description=Transports you to Lavastorm
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Sunbeam
+|description=Area Effect Blindness
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Detrimental
+|targ=Targeted AE
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Charm Animals
+|description=Charm an animal up to Level 33
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L33)
+}}
+{{RadSpellRow2
+|name=Dismiss Summoned
+|description=Direct Damage vs Summoned
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=73
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=226-244 Dmg
+}}
+{{RadSpellRow2
+|name=Remove Lesser Curse
+|description=Cleanses your target's soul, removing lesser curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Creeping Crud
+|description=Magic based Damage over Time
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=167
+|kind=DoT
+|targ=Single
+|duration=48 Sec
+|max=-85 HP/tick
+}}
+{{RadSpellRow2
+|name=Skin like Steel
+|description=Increase Hitpoints and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+8 AC<br>+100 Max HP<br>74-100 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Butcherblock
+|description=Opens a mystical portal that transports your group to the Butcherblock Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Circle of North Karana
+|description=Opens a mystical portal that transports your group to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Circle of Toxxulia
+|description=Transports your group to Toxxulia Forest
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Immolate
+|description=Fire Damage over Time with Debuff
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=72
+|kind=DoT
+|targ=Single
+|duration=48 Sec
+|max=-67 HP/tick<br>-11 AC
+}}
+{{RadSpellRow2
+|name=Ring of Misty Thicket
+|description=Opens a mystical portal that transports you to the Misty Thicket.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Surefall Glade
+|description=Transports your group to Surefall Glade
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ensnare
+|description=Reduces movement rate of the target by 56%
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=Snare
+}}
+{{RadSpellRow2
+|name=Scale of Wolf
+|description=Fragile movement speed increase
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Beneficial
+|targ=Target Group Member or Self
+|duration=45 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Succor: East Karana
+|description=Opens a mystical portal that transports your group to the Eastern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bramblecoat
+|description=Self Only AC and Damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+15 AC
+}}
+{{RadSpellRow2
+|name=Circle of West Commons
+|description=Opens a mystical portal that transports your group to the Western Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Protection of Steel
+|description=Hardens the skin of your group, increasing their hit points and armor class for 36 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=250
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=+8 AC<br>+100 Max HP<br>77-100 HP
+}}
+{{RadSpellRow2
+|name=Shield of Brambles
+|description=Gives the target a damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+12 Damage Shield
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Beguile Plants
+|description=Charm a plant up to level 25
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=170
+|kind=Charm
+|targ=Plant
+|duration=16 Min
+|max=Charm (max L25)
+}}
+{{RadSpellRow2
+|name=Circle of Stonebrunt
+|description=Opens a mystical portal that transports your group to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Combust
+|description=Fire based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=85
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=156-182 Dmg
+}}
+{{RadSpellRow2
+|name=Counteract Disease
+|description=Upgraded Cure Disease
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Disease
+}}
+{{RadSpellRow2
+|name=Counteract Poison
+|description=Upgraded Poison Cure
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Poison
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Healing
+|description=Restores HP to target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=280-350 HP
+}}
+{{RadSpellRow2
+|name=Harmony of Nature
+|description=Calms the savage spirit of almost any creature, making them less likely to attack. This spell works on creatures up to level 65, and only works outdoors.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L65)
+}}
+{{RadSpellRow2
+|name=Imbue Emerald
+|description=Imbue an Emerald (Deity: [[Tunare]])
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=Summon Item #22507
+}}
+{{RadSpellRow2
+|name=Imbue Plains Pebble
+|description=Imbue a Foraged Plains Pebble (Deity: [[Karana]])
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=Summon Item #22553
+}}
+{{RadSpellRow2
+|name=Mass Imbue Emerald
+|description=Focuses the power of Tunare into five emeralds. Consumes five emeralds when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22507
+}}
+{{RadSpellRow2
+|name=Mass Imbue Plains Pebble
+|description=Focuses the power of Karana into five plains pebbles. Consumes five plains pebbles when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22553
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blooming Heal
+|description=Seeds your target with healing energy, healing for 90 every 6 seconds for 24 seconds and then healing for 300.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=195
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Circle of Lavastorm
+|description=Transports your group to Lavastorm
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Fury of Air
+|description=Magic Based Direct Damage with Stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=85
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=170 Dmg<br>Stun 2.5s (max L55)
+}}
+{{RadSpellRow2
+|name=Greater Wolf Form
+|description=Turn into a wolf, increasing movement speed and ATK
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=90
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=Illusion<br>Run Speed<br>+40 ATK
+}}
+{{RadSpellRow2
+|name=Resist Cold
+|description=Increase resistance to Cold
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Cold Resist
+}}
+{{RadSpellRow2
+|name=Spirit of the Shrew
+|description=Infuses your target with the spirit of the shrew, granting greatly improved night vision and increased movement speed for 36 min. This spell also functions indoors.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Steamfont
+|description=Transports your group to Steamfont
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Earthquake
+|description=Area Effect Point Blank Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=375
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=214-246 Dmg
+}}
+{{RadSpellRow2
+|name=Lightning Strike
+|description=Outdoor only Area effect Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=149
+|kind=AE DD (quad)
+|targ=Targeted AE
+|duration=Instant
+|max=163-184 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Feerrott
+|description=Transports your group to the Feerott
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Circle of South Ro
+|description=Opens a mystical portal that transports your group to the Southern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Drones of Doom
+|description=Magic based Damage over Time
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=287
+|kind=DoT
+|targ=Single
+|duration=48 Sec
+|max=-156 HP/tick
+}}
+{{RadSpellRow2
+|name=Succor: Butcherblock
+|description=Opens a mystical portal that transports your group to the Butcherblock Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Zephyr: Toxxulia
+|description=Opens a mystical portal that teleports your target to Toxxulia Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Beguile Animals
+|description=Charm an animal up to level 43
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=170
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L43)
+}}
+{{RadSpellRow2
+|name=Expel Summoned
+|description=Direct Damage vs Summoned
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=108
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=243-309 Dmg
+}}
+{{RadSpellRow2
+|name=Zephyr: Butcherblock
+|description=Opens a mystical portal that teleports your target to the Butcherblock Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Magic
+|description=Increase resistance to Magic
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Healing Water
+|description=Conjures healing water from the ground, healing 425 damage to your target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=345-425 HP
+}}
+{{RadSpellRow2
+|name=Regeneration
+|description=Increases regeneration of the target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+5 HP Regen
+}}
+{{RadSpellRow2
+|name=Strength of Stone
+|description=Increase strength buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=65
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+25 STR
+}}
+{{RadSpellRow2
+|name=Zephyr: North Karana
+|description=Opens a mystical portal that teleports your target to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Pack Shrew
+|description=Infuses your group with the spirit of the shrew, granting greatly improved night vision and increased movement speed for 36 min. This spell also functions indoors.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=320
+|kind=Utility
+|targ=Group
+|duration=36 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Pack Spirit
+|description=Increases movement rate of the group
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Beneficial
+|targ=Group
+|duration=36 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Share Wolf Form
+|description=Outdoor only transform group into wolves
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Beneficial
+|targ=Group
+|duration=36 Min
+|max=Illusion<br>Run Speed<br>+30 ATK
+}}
+{{RadSpellRow2
+|name=Zephyr: Stonebrunt
+|description=Opens a mystical portal that teleports your target to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Zephyr: Surefall Glade
+|description=Opens a mystical portal that teleports your target to Surefall Glade.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Zephyr: West Commons
+|description=Opens a mystical portal that teleports your target to the Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Misty Thicket
+|description=Opens a mystical portal that transports your group to the Misty Thicket.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Enveloping Roots
+|description=Direct Damage with Root
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Detrimental
+|targ=Single
+|duration=1 Min
+|max=-82--110 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Skin like Diamond
+|description=Increases targets hitpoints and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+11 AC<br>+200 Max HP<br>172-200 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Avalanche
+|description=Cold based Area 'Rain' spell
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=200
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=125 Dmg
+}}
+{{RadSpellRow2
+|name=Shield of Spikes
+|description=Gives the target a damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+17 Damage Shield
+}}
+{{RadSpellRow2
+|name=Spikecoat
+|description=Self Only AC and Damage shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=110
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+21 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Firestrike
+|description=Fire based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=138
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=402-422 Dmg
+}}
+{{RadSpellRow2
+|name=Remove Curse
+|description=Cleanses your target's soul, removing minor curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=UNKNOWN
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+{{RadSpellRow2
+|name=Succor: South Ro
+|description=Opens a mystical portal that transports your group to the Southern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Nature's Renewal
+|description=Mends your target's wounds, healing between 317 and 447 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=173
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=434-447 HP
+}}
+{{RadSpellRow2
+|name=Pack Regeneration
+|description=Group Regeneration buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Heal
+|targ=Group
+|duration=11 Min
+|max=+5 HP Regen
+}}
+{{RadSpellRow2
+|name=Protection of Diamond
+|description=Hardens the skin of your group, increasing their hit points and armor class for 54 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=450
+|kind=Buff
+|targ=Group
+|duration=54 Min
+|max=+11 AC<br>+200 Max HP<br>178-200 HP
+}}
+{{RadSpellRow2
+|name=Zephyr: Feerrott
+|description=Opens a mystical portal that teleports your target to the Feerrott.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Zephyr: Steamfont
+|description=Opens a mystical portal that teleports your target to Steamfont Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blossoming Heal
+|description=Seeds your target with healing energy, healing for 120 every 6 seconds for 24 seconds and then healing for 390.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=250
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Drifting Death
+|description=Magic based Damage over Time
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=370
+|kind=DoT
+|targ=Single
+|duration=54 Sec
+|max=-195 HP/tick
+}}
+{{RadSpellRow2
+|name=Form of the Great Wolf
+|description=Turns the caster into a wolf increasing movement rate, ATK and granting Ultravision
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=135
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Zephyr: South Ro
+|description=Opens a mystical portal that teleports your target to the South Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Savage Spirit
+|description=Increases pets attack speed and stats
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Beneficial
+|targ=Pet
+|duration=60 Min
+|max=+45 STR<br>+70% Atkspd<br>+13 AC
+}}
+{{RadSpellRow2
+|name=Succor: Lavastorm
+|description=Evacuates the group to Lavastorm
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summons your pet to your current location.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chloroplast
+|description=Increase target's HP Regen
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+10 HP Regen
+}}
+{{RadSpellRow2
+|name=Fixation of Ro
+|description=Single Target AC & ATK Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=10 Min
+|max=-55 ATK<br>-13 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Allure of the Wild
+|description=Charm animal into pet
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=220
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L49)
+}}
+{{RadSpellRow2
+|name=Banish Summoned
+|description=Direct Damage vs Summoned
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=136
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=529-540 Dmg
+}}
+{{RadSpellRow2
+|name=Dustdevil
+|description=Ignites your target's skin, doing between 582 and 582 damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=162
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=582 Dmg
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Single Target Magic Effect Debuffer
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=Cancel Magic(4)
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resist Disease
+|description=Increases resistance to disease
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Disease Resist
+}}
+{{RadSpellRow2
+|name=Resist Poison
+|description=Increases resistance to Poison
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Poison Resist
+}}
+{{RadSpellRow2
+|name=Storm Strength
+|description=Increases strength of the target
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=85
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+35 STR
+}}
+{{RadSpellRow2
+|name=Superior Healing
+|description=Restore target health. lvl 53 pre-Velious
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=185
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=500-600 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Engulfing Roots
+|description=Direct Damage with Root
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=3 Min
+|max=-145--160 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Pack Chloroplast
+|description=Increase regeneration of the group
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=400
+|kind=Heal
+|targ=Group
+|duration=11 Min
+|max=+10 HP Regen
+}}
+{{RadSpellRow2
+|name=Share Form of the Great Wolf
+|description=Fills your group with the spirit of the wild, allowing them to take the form a wolf for 360 min and granting *100%N.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=350
+|kind=Utility
+|targ=Group
+|duration=360 Min
+|max=Illusion
+}}
+{{RadSpellRow2
+|name=Zephyr: Misty Thicket
+|description=Opens a mystical portal that teleports your target to Misty Thicket.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lightning Blast
+|description=Outdoor Only Area effect Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=234
+|kind=AE DD
+|targ=Targeted AE
+|duration=Instant
+|max=477 Dmg
+}}
+{{RadSpellRow2
+|name=Skin like Nature
+|description=Increases targets hitpoints, AC and Regen
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=300
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+13 AC<br>+250 Max HP<br>242-250 HP<br>+2 HP/tick
+}}
+{{RadSpellRow2
+|name=Succor: North Karana
+|description=Opens a mystical portal that transports your group to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ice
+|description=Cold Direct Damage and Fire Resist Debuff
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=142
+|kind=Damage
+|targ=Single
+|duration=18 Sec
+|max=-511--520 Dmg
+}}
+{{RadSpellRow2
+|name=Shield of Thorns
+|description=Surrounds your target in a shield of thorns that cause damage to anything that strikes them for 15 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Thorncoat
+|description=Self only Damage shield and AC
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=175
+|kind=Beneficial
+|targ=Self
+|duration=Permanent
+|max=+26 AC
+}}
+{{RadSpellRow2
+|name=Zephyr: Lavastorm
+|description=Opens a mystical portal that teleports your target to the Lavastorm Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Efflorescing Heal
+|description=Seeds your target with healing energy, healing for 150 every 6 seconds for 24 seconds and then healing for 450.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=255
+|kind=Duration Heals
+|targ=Single Friendly (or Self)
+|duration=24 Sec
+|max=-
+}}
+{{RadSpellRow2
+|name=Fire
+|description=Area effect Fire damage and cold resist debuff
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=260
+|kind=AE DD
+|targ=Targeted AE
+|duration=12 Sec
+|max=-392 Dmg<br>-50 Cold Resist
+}}
+{{RadSpellRow2
+|name=Improved Superior Camouflage
+|description=Self Only Fixed Duration Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=75
+|kind=Beneficial
+|targ=Self
+|duration=10 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Starfire
+|description=Fire based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=186
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=634 Dmg
+}}
+{{RadSpellRow2
+|name=Upheaval
+|description=Area effect Point blank Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=625
+|kind=AE DD
+|targ=PB AE
+|duration=Instant
+|max=618-638 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Forest's Renewal
+|description=Mends your target's wounds, healing between 490 and 671 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=233
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=671 HP
+}}
+{{RadSpellRow2
+|name=Legacy of Spike
+|description=Group Damage Shield
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=300
+|kind=Beneficial
+|targ=Group
+|duration=15 Min
+|max=+24 Damage Shield
+}}
+{{RadSpellRow2
+|name=Protection of Nature
+|description=Hardens the skin of your group, increasing their hit points and armor class for 72 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=700
+|kind=Buff
+|targ=Group
+|duration=72 Min
+|max=+13 AC<br>+250 Max HP<br>248-250 HP<br>+2 HP/tick
+}}
+{{RadSpellRow2
+|name=Resist Magic
+|description=Increases resistance to Magic
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=85
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Magic Resist
+}}
+{{RadSpellRow2
+|name=Vengeance of the Wild
+|description=Inflicts the vengeance of the wild on your target, causing between 72 and 131 damage every six seconds for 30s Damage over Time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=180
+|kind=DoT
+|targ=Single
+|duration=30 Sec
+|max=-122 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Everlasting Breath
+|description=Fills your lungs with magical breath, removing your necessity for air for 27 min.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=55
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Levitation
+|description=Forms a cloud of dense air around your feet, allowing you to float slightly off the ground for 20 min 30s.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+</table>
+</div>
+
+= Druid AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Druid Class AAs}}
+
+= Pet Guide =
+
+== Pet Information ==
+
+{{#lsth:Pet Guide|[[Druid]] Pets}}
+
+= Skills =
+
+== Specialization ==
+
+{{#lsth:Skill Specialization|Druid}}
+
+== Casting Skills ==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 30
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+== Combat Skills ==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 175
+| 175
+|-
+| 1
+| No
+| [[1 Hand Slashing]]
+| 175
+| 175
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 175
+| 175
+|-
+| 1
+| No
+| [[Throwing]]
+| 200?
+| 200?
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 200
+| 210
+|-
+| 1
+| No
+| [[Defense]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 135
+| 135
+|-
+| 1
+| No
+| [[Offense]]
+| 200
+| 200
+|-
+| 15
+| Yes
+| [[Dodge]]
+| 75
+| 75
+|}
+
+== Miscellaneous Skills ==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 235
+| 255
+|-
+| 1
+| No
+| [[Begging]]
+| 200
+| 255
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| Yes
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200
+| 200
+|-
+| 1
+| Yes
+| [[Forage]]
+| 200
+| 200
+|-
+| 20
+| Yes
+| [[Tracking]]
+| 20
+| 125
+|}
+
+= Druid-Specific Quests =
+
+{{#lsth:Class Race Quest List|Druid}}
+
+= Gearing =
+
+See [[:Category:Druid Equipment | Druid Equipment]] for the full list of Druid gear.  See also [[Equipping a Druid]].
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Druid]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Druid]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Druid]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Druid]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Druid]]}}
+
+= FAQ =
+
+'''Q:	What should I use at lower levels for a weapon? 1HS, 1HB or 2HB?'''
+
+A:	1H* is definitely the way to go. Slash or blunt is a preference,(I use blunt personally), but you generally want to stick with the 1H weapons, to keep your other hand free for a +WIS held item, such as; [[Testament of Vanear]] [+10WIS], [[Charred Guardian Shield]] [+9WIS], or [[Paw of Opolla]] [+9WIS].
+
+
+'''Q:	What is the difference between teleport and transport, EQLegends uses both terms?
+
+A:	In EQ Legends, "teleport" and "transport" seemingly have distinct meanings for Druids: a teleport sends another player to a destination while the Druid stays behind, whereas a transport is any spell where the caster travels—either alone or with others—making Zephyr spells teleports and Rings/Circles 'transports'. Despite the differences in terminology, all of these spells are still grouped under the broader transport category in the spell lists, and then further organized by continent, plane, or destination type. Conversely, Wizard spells use the description teleport or evacuate and never transport (even though their teleport spells are technically categorized as Transport spells).
+ 
+
+'''Q:	At what level do druids learn their teleporting spells?'''
+
+A:	The Self-Only teleport (catgorized as 'transport') spells, or "rings", Are first gained at level 19. The first set allow you to port to : North Karana, West Commonlands, Tox. Forest, Butcherblock Mountains. At level 24, you recieve self only ports to: Steamfont Mountains, Lavastorm Mountains, The Feerrott, South Ro Desert. At Level 29, you recieve the last self only port, to Misty Thicket. The group transport spells, or "circles", are first gained at level 29. You recieve them in the same order as the self only ports,
+with the addition of Circle of the Combines, (Dreadlands) at 34, and Wind of the North(Skyfire Mountains) at 39, along with Wind of the South(Emerald Jungle), also at 39.
+ 
+
+'''Q:	What am I? What role do I play? I don't know if we are casters with good ATK and AC or casting tanks with low AC and poor attack, and no disciplines.'''
+
+A:	A druid is a caster who at low level (under 20) can melee decently.
+
+The AC is good but the ATK power never gets anywhere near a Tank/Hybrid's. All the melee types get double attack and/or dual wield, whereas we, don't. After level 20 you are a caster. Use your Damage over Time spells, Direct Damage spells, Healing, Snare, and Damage Shields. You are a utility caster who can do almost anything average but nothing very well; That is the bane of the druid but hey, druids get teleports too.
+ 
+
+'''Q:	How do I know how much Mana Wisdom gives me? 
+
+A:	As a druid you gain .21 more Mana per Wisdom(MpW for short) for every level you have when at or below 200 wisdom. This means that when you are level 10 you get 2.1 MpW and it continues on in a similar pattern for Wisdom totals of 200 or less: 4.2 MpW @ lvl 20, 6.3 MpW @ lvl 30, 8.4 MpW @ lvl 40, 10.5 MpW @ lvl 50, 12.6 MpW @ lvl 60. The exact formula for wisdom of 200 or less is (WIS+10)*level/5. The formula for calculating above Mana at more than 200 wisdom is ( [ 11250 * level ] + [ 33 * WIS * level ] ) / 425.
+[[File:MpW_druid.png|600px|thumb|A graph breaking down the MpW granted for druids by level.]]
+
+'''Q:	What is better for my level, + Mana or + Wisdom?
+
+A:	Basically, using the above math as a basis, below lvl 25 +Mana will give you stronger returns and have the benefit of being less expensive generally. Once you start leveling into your mid to late 20's the scaling factor of Wisdom will give you much stronger returns. This of course continues until lvl 60, but anything with +Mana in an empty/non-magic equipped slot is definitely a gain.
+
+
+'''Q:	Druids get Meditate right? What level?'''
+
+A:	Druids learn the meditate skill at level 8, along with all the other priest classes.
+
+
+'''Q:	In the guide you state that most of a druids best spells are restricted to outdoor areas. Does this mean druids are not wanted in high level dungeon groups? or are worthless in any indoor area?'''
+
+A:	Not at all! Druids can be, and are a valuable part of any dungeon group, especially at higher levels.
+
+At level 39, you really come into your own, as you get your first "pack" spells.(Regen, SoW, Wolf Form). You also get a great damage shield, which hits for 15 points to start, and Skin like Diamond, a great HP/AC buff. While, it is true that our powers are somewhat watered down indoors, we still play a valuable backup healer, buffer, and have those nifty Evac spells everyone just loves.
+ 
+
+'''Q:	Do druids begin the game with any spells? If so, which?'''
+
+A:	Druids begin the game with a club and two spells; Skin like Wood and Minor Healing. There are several other level 1 spells which can be bought seperately, and are viewable [[#spells level 1|here]].
+ 
+'''Q:	What do I do with no drop items that I forage or items that appear not to be edible that I forage?'''
+
+A:	Not all nodrop foraged items have quests etc related to them at this point, although there are many that are said to belong to quests. You can save them in case a quest is discovered or destroy them.
+ 
+'''Q:	Is druid a pure caster?'''
+
+A:	No. A druid is part of the "Priest" line of classes. Our brethren are Shaman and Clerics. We use WIS as our mana base, are able to don better armor. The only downfall to this, is that we learn skills at a later level than the pure casters, and our magic is generally more of a "utility" base.
+
+
+'''Q:	Where are the druid guild halls located?'''
+
+A:	We have 3 guild halls availible to us. They are located in : [[Surefall Glade]], [[Kelethin]], and [[Rivervale]]. Additionally, if you are careful with your [[Unkempt Druids]] faction, [[Jale Phlintoes]] can be spawned in South Karana to serve as a druid trainer by telling [[a hermit]] that "I wish to join the Unkempt."
+
+'''Q:   Which Druid Rings are guarded?'''
+
+A:      It is useful to know when Transporting evil races and very low level characters, add a [[Superior Camouflage]] to the mix before departure.
+
+* [[Ring of Toxxulia]] -		No guards; low-level kobolds path nearby and can aggro sitting players.
+* [[Ring of Commons]] -		Two lvl 35-40 Druid Guards
+* [[Ring of Karana]] -		Bunch of lvl 25-30 Druid Guards and Treants
+* [[Succor: East]] ([[East Karana]]) -	Succor spell. lvl 23-30 druids with animal mobs pathing by that are hostile to *everyone*. Don't sit down near them, even if you're a druid or a ranger, or the druids will assist the animals.
+* [[Ring of Butcher]] -		Empty
+* [[Ring of Feerrott]] -		Empty
+* [[Ring of Misty]] -		Empty of immediate port in aggro, but Ella Foodcrafter roams nearby and there are two level 30ish druid NPCs on the opposite side of the stone ring from where you port in.
+* [[Ring of Ro]] -		No guards; low-level coyotes can path nearby.
+* [[Ring of Steamfont]] -	Empty
+* [[Ring of Lavastorm]]	-	No guards; the occasional fire imp paths nearby
+* [[Ring of the Combines]] - Empty
+* [[Wind of the North]] ([[Skyfire Mountains]]) - Various mobs path through the port location periodically, so it is sometimes guarded
+* [[Wind of the South]] ([[Emerald Jungle]]) - Various mobs (rarely) path through the port location periodically, so it is sometimes guarded
+* [[Ring of Iceclad]] - No guards; wildlife can path nearby.
+* [[Circle of Great Divide]] - a young shardwurm Paths through landing, requires tooth
+* [[Circle of Wakening Lands]] - [[Wuoshi]] (on Velious Dragon Faction), requires tooth
+* [[Circle of Cobalt Scar]] - Cobalt Drakes / Azurake Paths through landing (CoV faction), requires tooth
+{{Template: Navbox Classes}}

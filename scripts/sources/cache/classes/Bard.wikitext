@@ -1,0 +1,2236 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ The Bard has the unusual ability to play magical songs, whose supernatural effects last as long as the Bard continues to sing.<br> He has some passing knowledge of the Warrior ways (self-defense), but his main focus is always his art.
+ - EverQuest manual
+
+=Description=
+
+[[File:C bard.gif|right]]
+Bards are jack-of-all-trades adventurers who use songs to create a wide variety of magical effects. Though they often use melee weapons, bards are primarily a magic-using class, with the ability to wear plate armor and wield many different types of weapons and instruments.
+
+Bards can do a little bit of everything. Their songs can regenerate health and mana, increase attack speed and accuracy, momentarily charm angry enemies, help friends resist many types of damage and even directly damage enemies. Bards are perhaps best known, however, for their ability to greatly increase the foot speed of their group.
+
+Bards have the unique ability to create multiple effects at once. By weaving different songs together, a bard can customize effects to any situation. This makes nimble fingers and quick thinking a must for those who want to play a bard.
+
+Bards do well both alone and in groups. With the right combination of songs, they can adapt to many different challenges. The bard is a great class for players who enjoy a wide variety of play options but are quick to adapt to a changing situation.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Bard || Minstrel || Troubadour || Virtuoso
+|}
+
+=Creation Guide=
+==Picking the Right Race==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Half Elf]]''' || 70 || 70 || 90 || 85 || 60 || 75 || 75
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Wood Elf]]''' || 65 || 65 || 95 || 80 || 80 || 75 || 75
+|-
+| style="text-align: left"| '''Bard Adds''' || 5 ||  ||  || 10 ||  ||  || 15
+|}
+
+== Impact from stats ==
+
+Bards have perhaps, the most number of useful stats of any class. Some have a bit more value than others though.
+
+*'''Strength'''     - Affects maximum and average melee damage and also the bard's ability to carry armor and treasure. Bard armor can be heavy and they do melee, albeit not all the time.
+*'''Stamina'''      - Affects your total hitpoints. Players receive very small benefits from stamina at lower level, which scales up as you level up.
+*'''Agility'''       - Affects how often melee attacks miss the bard, and lowers the average hit taken. A little.
+*'''Dexterity'''     - Affects how often weapons proc, how quickly you learn melee skills and reduces the chance to miss a note, bringing your song to a close (song fizzle). 
+*'''Wisdom'''        - Affects the speed of general and craft skill gains if higher than Intelligence.
+*'''Intelligence'''  - Affects the speed of general and craft skill gains if higher than Wisdom. Increases the size of the bard's mana pool. Only two songs, [[Solon's Bewitching Bravura]] and [[Denon's Desperate Dirge]], require mana to cast.
+*'''Charisma'''      - Affects bard lull. Cha does not affect Mesmerize and charm abilities on cast but does affect tick checks (every 6 seconds). However, all songs are on fixed duration (unless it breaks early), meaning duration can never increase past the song's tick-limit. [[Kelin's Lugubrious Lament]] (lull) is a fantastic pulling tool, and charm will also be frequently used by a skilled Bard.
+
+==Religion==
+
+Generally speaking being agnostic is a fairly safe bet in Everquest.  Religion serves only to get you into trouble in many situations.  The disadvantage to doing this is that some items and some quests can only be done by followers of certain religions.  Following a religion will at worst get you killed in some areas, but generally you can avoid these.  In the end it will not make an enormous difference to your character which Deity you choose..
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Evasive Stance
+| {{#section:Stances & Invocations|Evasive}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Inviolable Invocation
+| {{#section:Stances & Invocations|Inviolable}}
+|}
+
+= Songs =
+==Song Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|[[Greater Faydark]]
+|[[Beleth Streamfoot]]
+|Kelethin Bard Guild
+|(-237, 235)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Orator Zikorisy]]
+|Hybrid Spell Vendor Room
+|(207, -145)
+|-
+|[[North Freeport]]
+|[[Inisis Trimpet]]
+|Bard Guild
+|(-119, 576)
+|-
+|[[South Qeynos]]
+|[[Chalea Volesga]]
+|Bard Guild
+|(515, -132)
+|}
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chant of Battle
+|description=Party: Increase STR, DEX, AC
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+4 AC<br>+17 STR<br>+17 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chords of Dissonance
+|description=PBAoE: DoT
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=PB AE
+|duration=12 Sec
+|max=-14 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Jaxan's Jig o' Vigor
+|description=Fills your group with an invigorating rhythm that increases endurance regeneration.
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Regen
+|targ=Group
+|duration=18 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Selo's Accelerando
+|description=Party: Increase Movement Speed
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Hymn of Restoration
+|description=Party: Increase HP Regeneration
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Regen
+|targ=Group
+|duration=12 Sec
+|max=1 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Jonthan's Whistling Warsong
+|description=Self: Increase STR, AC, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=+25% Atkspd<br>+7 AC<br>+30 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Kelin's Lugubrious Lament
+|description=Target: Lull
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=30 Sec
+|max=Calm (max L60)
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elemental Rhythms
+|description=Party: Increase AC, MR, FR, CR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+30 Magic Resist<br>+30 Cold Resist<br>+30 Fire Resist<br>+4 AC
+}}
+{{RadSpellRow2
+|name=Magical Monologue
+|description=A simple tune that adds a magical quality to your group's weapons, allowing them to harm creatures that would otherwise be invulnerable.
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Self
+|duration=18 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Anthem de Arms
+|description=Party: Increase STR, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+10% Atkspd<br>+30 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cinda's Charismatic Carillon
+|description=Target: Improve Faction
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Single
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Brusco's Boastful Bellow
+|description=Target: DD and Interrupt Casting
+|era={{Classic Short}}
+|school=Singing
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=7-26 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Purifying Rhythms
+|description=Party: Increase AC, MR, PR, DR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+30 Magic Resist<br>+30 Poison Resist<br>+30 Disease Resist<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Kelin's Lucid Lullaby
+|description=Target: Mesmerize (up to level 30)
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Mez (max L30)
+}}
+{{RadSpellRow2
+|name=Song of Sustenance
+|description=Food/Water
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=1 Min 30 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Tarew's Aquatic Ayre
+|description=Party: Enduring Breath
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=24 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Guardian Rhythms
+|description=Party: Increase AC, MR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+7 AC<br>+30 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Denon's Disruptive Discord
+|description=PBAoE: DoT, Decrease AC
+|era={{Classic Short}}
+|school=Brass Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=PB AE
+|duration=12 Sec
+|max=-16 HP/tick<br>-12 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shauri's Sonorous Clouding
+|description=Party: Invisibility, See Invisible
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=18 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cassindra's Chant of Clarity
+|description=Party: Increase Mana Regeneration
+|era={{Classic Short}}
+|school=Singing
+|location=Autogranted<br>East Commons
+|mana=0
+|kind=Regen
+|targ=Group
+|duration=12 Sec
+|max=+2 Mana
+}}
+{{RadSpellRow2
+|name=Largo's Melodic Binding
+|description=PBAoE: Decrease AC, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Autogranted<br>Vendor
+|mana=0
+|kind=Detrimental
+|targ=PB AE
+|duration=12 Sec
+|max=-35% Atkspd<br>-7 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Melanie's Mellifluous Motion
+|description=Party: Short Range Teleport
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alenia's Disenchanting Melody
+|description=Party: Remove Buffs (Dispel)
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Selo's Consonant Chain
+|description=Target: Decrease Movement Speed, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=12 Sec
+|max=Snare<br>-40% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lyssa's Veracious Concord
+|description=Party: See Invisibility, Ultravision
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Psalm of Warmth
+|description=Party: Increase CR, Damage Shield
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor, Erudin
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+60 Cold Resist<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Angstlich's Appalling Screech
+|description=PBAoE: Fear
+|era={{Classic Short}}
+|school=Brass Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=PB AE
+|duration=12 Sec
+|max=Fear (max L52)
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Solon's Song of the Sirens
+|description=Target: Charm NPC, Decrease MR
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Charm (max L37)
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Crission's Pixie Strike
+|description=Target: Mesmerize, Decrease MR (up to level 45)
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Mez (max L45)
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Psalm of Vitality
+|description=Party: Increase AC, DR
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+60 Disease Resist<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Amplification
+|description=Increase Singing Skill
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Self
+|duration=30 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Fufil's Curtailing Chant
+|description=Target: DoT, Decrease MR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=Single
+|duration=12 Sec
+|max=1-40 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Agilmente's Aria of Eagles
+|description=Party: Levitate
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=18 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cassindra's Chorus of Clarity
+|description=Party: Increase Mana Restoration
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Regen
+|targ=Group
+|duration=12 Sec
+|max=+1 Mana
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Psalm of Cooling
+|description=Party: Increase FR, Damage Shield, Ultravision
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+60 Fire Resist<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cantata of Soothing
+|description=A light cantata that regenerates the health, mana, and endurance of your entire group.
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=
+|mana=0
+|kind=Regen
+|targ=Group
+|duration=12 Sec
+|max=+4 HP/tick<br>+5 Mana
+}}
+{{RadSpellRow2
+|name=Lyssa's Solidarity of Vision
+|description=Target: Bind Sight
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Single
+|duration=24 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Denon's Dissension
+|description=PBAoE: Decrease Mana
+|era={{Classic Short}}
+|school=Brass Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=PB AE
+|duration=Instant
+|max=-30 Mana
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Vilia's Verses of Celerity
+|description=Party: Increase AC, AGI, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+20% Atkspd<br>+30 AGI<br>+6 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Psalm of Purity
+|description=Party: Increase AC, PR
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+60 Poison Resist<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Tuyen's Chant of Flame
+|description=Target: DoT, Decrease FR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=Single
+|duration=12 Sec
+|max=-26 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Katta's Song of Sword Dancing
+|description=Add Proc: Blade Dance, Increase DEX
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=18 Sec
+|max=Procs: Blade Dance
+}}
+{{RadSpellRow2
+|name=Solon's Bewitching Bravura
+|description=A bewitching melody that charms the target, allowing you to command it.
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=1 Min
+|max=Charm (max L51)
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sionachie's Dreams
+|description=Target: Mesmerize
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Mez (max L53)
+}}
+{{RadSpellRow2
+|name=Syvelian's Anti-Magic Aria
+|description=Target: Remove Buffs (Dispel)
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Psalm of Mystic Shielding
+|description=Party: Increase HP Regeneration, Absorb Magic Damage, AC, MR
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+60 Magic Resist<br>+5 HP/tick<br>+4 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=McVaxius' Berserker Crescendo
+|description=Party: Increase STR, AC, Attack Speed
+|era={{Classic Short}}
+|school=Brass Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+20% Atkspd<br>+6 AC
+}}
+{{RadSpellRow2
+|name=Tuyen's Chant of Disease
+|description=Target: Disease Based Dot
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=Single
+|duration=12 Sec
+|max=-26 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Denon's Desperate Dirge
+|description=Target: AoE DD
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=800
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=315-635 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cassindra's Elegy
+|description=Party: Increase WIS, INT
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Buff
+|targ=Group
+|duration=12 Sec
+|max=+1 INT
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Aria of Asceticism
+|description=Decrease Poison and Disease counters
+|era={{Classic Short}}
+|school=Wind Instruments
+|location=Vendor
+|mana=0
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 2 Poison
+}}
+{{RadSpellRow2
+|name=Jonthan's Provocation
+|description=Self: Increase STR, ATK, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=+50% Atkspd<br>+14 STR<br>+14 ATK
+}}
+{{RadSpellRow2
+|name=Rizlona's Embers
+|description=Group: Increase party spell damage
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Tuyen's Chant of Frost
+|description=Target: DoT, Decrease CR
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=Single
+|duration=12 Sec
+|max=-26 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Niv's Melody of Preservation
+|description=Party: Increase STR, HP Regeneration, Absorb Magic Damage
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Selo's Chords of Cessation
+|description=PBAoE: DoT, Decrease Attack Speed
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=Vendor
+|mana=0
+|kind=Detrimental
+|targ=PB AE
+|duration=12 Sec
+|max=-27 HP/tick<br>-25% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Selo's Accelerating Chorus
+|description=The rapid pace of this song fills your feet with speed, increasing the movement rate of your group for 2 min 30s.
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=2 Min 30 Sec
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Shield of Songs
+|description=This song wraps an aura of protection around your group that absorbs damage .
+|era={{Classic Short}}
+|school=Stringed Instruments
+|location=
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Melody of Ervaj
+|description=Party: Increase AC, Attack Speed
+|era={{Classic Short}}
+|school=Brass Instruments
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Tuyen's Chant of Poison
+|description=Target: Poison Dot
+|era={{Classic Short}}
+|school=Percussion Instruments
+|location=Vendor
+|mana=0
+|kind=Damage Over Time
+|targ=Single
+|duration=12 Sec
+|max=-26 HP/tick
+}}
+{{RadSpellRow2
+|name=Verses of Victory
+|description=Party: Increase STR, AGI, Attack Speed
+|era={{Classic Short}}
+|school=Singing
+|location=Vendor
+|mana=0
+|kind=Utility
+|targ=Group
+|duration=12 Sec
+|max=+30% Atkspd<br>+30 AGI<br>+12 AC<br>+30 STR
+}}
+</table>
+</div>
+
+= Bard AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Bard Class AAs}}
+
+= Skills =
+==Combat Skills==
+{| class="eoTable2 sortable"
+!Level
+!Trained
+!Skill
+!Cap Until 50
+!Cap Above 50
+!Feb 21, 2001
+!Oct 8, 2001 
+|-
+|1
+|No
+|[[1 Hand Blunt]]
+|200
+|225
+|
+|250
+|-
+|1
+|No
+|[[Skill Piercing|1 Hand Piercing]]
+|200
+|250
+|
+|250
+|-
+|1
+|No
+|[[1 Hand Slashing]]
+|200
+|225
+|
+|250
+|-
+|1
+|No
+|[[Throwing]]
+|200?
+|200?
+|
+|
+|-
+|1
+|No
+|[[Bind Wound]]
+|100
+|200
+|
+|
+|-
+|1
+|No
+|[[Defense]]
+|210
+|252
+|252
+|
+|-
+|1
+|No  
+|[[Dual Wield]]
+|210
+|210
+|245 [https://project1999.com/forums/showthread.php?t=410915]
+|
+|-
+|1
+|No
+|[[Hand to Hand]]
+|100
+|100
+|
+|
+|-
+|1
+|No
+|[[Offense]]
+|200
+|215
+|
+|252
+|-
+|1
+|No  
+|[[Throwing]]
+|113
+|113
+|
+|
+|-
+|10
+|No  
+|[[Dodge]]
+|125
+|155
+|
+|
+|-
+|16
+|No  
+|[[Skill Intimidation|Intimidation]]
+|100
+|100
+|
+|
+|-
+|25
+|No  
+|[[Parry]]
+|UNK
+|185
+|
+|185
+|-
+|30
+|No  
+|[[Riposte]]
+|UNK
+|75
+|
+|
+|}
+
+==Musical Skills==
+{| class="eoTable2"
+!Level
+!Trained
+!Skill
+!Cap Until 50
+!Cap Above 50
+|-
+|1
+|No
+|[[Skill Singing|Singing]]
+|235
+|235
+|-
+|1
+||No
+|[[Skill Percussion|Percussion]]
+|235
+|235
+|-
+|1
+||No
+|[[Skill Stringed Instruments|String]]
+|235
+|235
+|-
+|1
+||No
+|[[Skill Brass|Brass]]
+|235
+|235
+|-
+|1
+|No
+|[[Skill Wind Instruments|Wind]]
+|235
+|235
+|}
+
+==Casting Skills==
+{| class="eoTable2"
+!Level
+!Trained
+!Skill
+!Cap Until 50
+!Cap Above 50
+|-
+|10
+|No
+|[[Meditate]]
+|1
+|1
+|}
+
+==Miscellaneous Skills==
+{| class="eoTable2 sortable"
+!Level
+!Trained
+!Skill
+!Cap Until 50
+!Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+|1
+|No
+|[[Alcohol Tolerance]]
+|255
+|255
+|-
+|1
+|No
+|[[Beg]]
+|200+
+|237+
+|-
+|1
+|No
+|[[Fishing]]
+|200
+|200
+|-
+|1
+|No
+|[[Sense Heading]]
+|200
+|200
+|-
+|1
+|No  
+|[[Swimming]]
+|200
+|200
+|-
+|10
+|No
+|[[Pick Lock]]
+|100
+|100
+|-
+|12
+|No
+|[[Forage]]
+|55
+|55
+|-
+|15
+|No
+|[[Sense Traps]]
+|75
+|75
+|-
+|15
+|No
+|[[Track]]
+|100
+|100
+|-
+|17
+|No
+|[[Sneak]]
+|75
+|75
+|-
+|20
+|No
+|[[Disarm Traps]]
+|100
+|100
+|-
+|20
+|No
+|[[Skill Safe Fall|Safe Fall]]
+|40
+|40
+|-
+|25
+|No
+|[[Hide]]
+|40 (Woodelf 50)
+|40
+|}
+
+= Disciplines =
+Bard disciplines were introduced with the Velious expansion; they offer short term advantages with a long re-use: These are most useful in dragon/boss encounters.
+
+(Alt-C to access){{#lsth:Disciplines|[[Bard]]}}
+
+Messages for activation and ending
+
+Resistant Discipline: Starting: You channel your will into magical resistance. / Ending: Your resistance fades.
+
+Fearless Discipline: Starting: Your will drives fear from your mind. / Ending: The specter of fear returns to your mind.
+
+Deftdance Discipline: Starting: You prance about nimbly. / Ending: Your movements return to normal.
+
+Puretone Discipline: Starting: Your voice becomes perfectly melodious. / Ending: Your voice loses its perfection.
+
+= Bard-Specific Quests =
+{{:Class_Race_Quest_List/Bard}}
+
+= Gearing =
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Bard Equipment|Bard Equipment]] for the full list of gear usable by Bards.
+
+IMPORTANT - The "best" gear for a bard varies widely depending on what the bard is doing. The best drum and the best lute a bard can afford are the two single most important items a bard will ever need.
+
+RAIDS - Almost all the time, a bard is best served in raids by wearing gear with the appropriate resists in every equipment slot possible. Bards provide HUGE resist boosts (and sometimes other songs) to their whole group, so it is crucial that the bard never be killed or feared by AE and expose his groupmates to the same. Most raid encounters require magic resist.
+
+GROUPS - In experience groups, bards usually will be meleeing while singing 3+ different songs as needed. Different groups will need different songs (won't need haste when there is an enchanter, etc.). When doing this bards are probably best off in str, dex, hp, and ac gear. When a bard is pulling or doing CC, magic resist can be very helpful to avoid snare/root/blind/stun, and charisma can be important to helping with the success of lull.
+
+SOLO - If a bard is AE kiting, getting hit probably means you are going to die no matter what gear you're wearing. Resist gear, especially magic resist, can help protect a bard from a death while pulling or if he accidentally picks up a caster and doesn't notice. When fear kiting, a bard again will want str, dex, hp, and AC gear (and perhaps charisma gear for lulls).
+
+Consequently bards end up with multiple backpacks full of different gear they may need in any different situation. Tweaking which pieces of resist gear you wear in a fight where multiple resists are needed (for example, on Talendor) depends on how high your main resist (MR) can get. If you are at 400 MR at level 60 with buffs/gear/songs, you may consider swapping in great FR pieces in a few slots to bump up your FR without significantly increasing your chance of being feared.
+
+Keep these things in mind when looking at the gear lists below, which are generally set up for a grouping or soloing bard.
+
+== Instrument Progression ==
+Thanks to Grimmly Fireforge for first compiling this instrument progression list.
+
+For direct comparisons, see [[Bard Instruments|Bard Instruments]].
+
+=== Vendor: ===
+<ul><li> Percussion: {{:Hand Drum}}
+</li><li> Strings: {{:Mandolin}}, {{:Lute}}
+</li><li> Woodwind: {{:Wooden Flute}}
+</li><li> Brass: {{:Horn}}
+</li></ul>
+
+=== Entry level: ===
+<ul><li> Percussion: {{:Mistmoore Battle Drums}}
+</li><li> Strings: {{:Gypsy Lute}}, {{:Lute of the Gypsy Princess}}
+</li><li> Woodwind: {{:Minotaur Horn}}, {{:Scorpion Pincer}}
+</li><li> Brass: {{:Horn}}, {{:Conch Shell Horn}}
+</li></ul>
+
+=== Intermediate: ===
+<ul><li> Percussion: {{:Sharkskin Drum}}, {{:Nostrolo Tambourine}}
+</li><li> Strings: {{:Gypsy Lute}}, {{:Lute of the Gypsy Princess}}
+</li><li> Woodwind: {{:Brahhms Horn}}, {{:Unicorn Horn}}, {{:Faun Flute}}
+</li><li> Brass: {{:Horn}}, {{:Conch Shell Horn}}
+</li></ul>
+
+=== High End: ===
+<ul><li> Percussion: {{:Walrus Skin Drum}}, {{:Selo`s Drums of the March}}
+</li><li> Strings: {{:Kelin`s Seven Stringed Lute}}
+</li><li> Woodwind: {{:Lyssa`s Darkwood Piccolo}}
+</li><li> Brass: {{:McVaxius' Horn of War}}
+</li></ul>
+
+=== Kunark High End: ===
+<ul><li> Percussion: {{:Selo`s Drums of the March}}
+</li><li> Strings: {{:Lyran's Mystical Lute}}
+</li><li> Woodwind: {{:Ervaj's Flute of Flight}}
+</li><li> Brass: {{:Denon's Horn of Disaster}}
+</li><li> All: {{:Singing Short Sword}} (Epic)
+</li></ul>
+
+=== Velious High End: ===
+<ul><li> Percussion: {{:Drums of the Beast}}
+</li><li> Strings: {{:Lyran's Mystical Lute}}, {{:Lute of the Howler}}
+</li><li> Woodwind: {{:Flute of the Sacred Glade}}
+</li><li> Brass: {{:Immaculate Shell Horn}}, {{:Verlekarnorm's Horn of Disaster}}
+</li><li> All: {{:Singing Short Sword}} (Epic)
+</li></ul>
+
+== Armor/Weapons ==
+
+=== Pre-Planar ===
+
+{{#lsth:Players:Pre Planar Gear|[[Bard]]}}
+
+=== Planar ===
+
+{{#lsth:Players:Planar Gear|[[Bard]]}}
+
+=== Kunark ===
+
+{{#lsth:Players:Kunark Gear|[[Bard]]}}
+
+=== Velious Pre-Raid/Group ===
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Bard]]}}
+
+=== Velious Raiding ===
+
+{{#lsth:Players:Velious Raiding Gear|[[Bard]]}}
+
+= FAQ =
+
+'''Q:	I'm level 5 and just gained the Percussion skill. Why can't I equip my drum?'''
+
+A:	You need to have both hands free to use an instrument, even when it's one-handed. This means that you cannot have a weapon and your drum equipped at the same time, for example.
+ 
+
+'''Q:	I've heard that Shauri's Sonorous Clouding eventually (at higher skill levels) acts as invisibility to undead as well. Is this true?'''
+
+A:	No, this is not necessarily true; however, it will work on some undead mobs, but these are few and far between. Shauri's Sonorous Clouding will never work as a reliable Invisibility to Undead.
+ 
+
+'''Q:	Is there a way to hot key a bards instruments so you dont have to go into the Persona screen to switch them?'''
+
+A:	Yes. First, get three open inventory slots (With no bags on those slots). Have your weapons equipped, and put two instruments in the empty inventory slots. Leave one of the slots empty. Now, go to a free hotkey page. An easy way to do this is by pressing shift+6, which will take you to the sixth page. Move your mouse pointer to the "Melee 1" slot in your inventory screen. Click and hold over the slot until the button pops up and is on your cursor. Drag the cursor over to the first hotkey slot in the bottom left of your screen. Position the cursor so the top left of the button is in the middle of the hotkey slot, and click your mouse once to set that slot to Melee 1. Repeat this process for Melee 2, the two instrument inventory slots, and the empty inventory slot. You will now be able to switch easily between weapons and instruments, without going to the Persona screen.
+
+
+'''Q:	Why can't I improve my brass skill with a Minotaur Horn?'''
+
+A:	The Minotaur Horn is actually a wind instrument.
+
+
+'''Q:	What is "Twisting" and how is it done?'''
+
+A:	Twisting, or Weaving, is the act of maintaining two or more song effects at one time. Here is how it is done: Start singing a song. After approximately 3 seconds, the song message will show, i.e. "Your feet move faster." At this time, immediately stop the song (DO NOT cancel the buff by clicking on the icon in your Effects pane; instead, click anywhere in the memorized spells pane or type /stopsong), and start another one. After another three seconds, you will get that spell message. Then you stop that song, and either begin song one again, or if you are quick enough, start a third song before repeating the rotation. Using this method, you can have three song effects on at all times, and with a near perfect connection, sometimes almost four songs. As you grow used to the timing, you will be able to stop your song even before the message for it pops up, and still get the effects from the song.
+
+[[Macro|Macros]] make twisting easier.  Here is a sample macro you can use to get you started.
+
+:/stopsong
+:/pause 29, /cast 1
+:/stopsong
+:/cast 2
+
+However in light that if you have two macros, one for song 1 and song 2, and one macro for song 3 and song 4. If you get a fizzle, or press one macro while the other macro is running, the macros end up over-running each other and stopping songs that are currently in progress. For this reason, most bards opt for one song per macro - Especially as you get higher in levels and start crowd controlling as the number of mobs under MEZ changes, the song rotation changes. This is also true when faced with magic/fire/cold mobs followed by magic/poison/disease mobs, changing the rotation based on the spells the creatures are casting since fire/cold song does not stack with poison/disease song.
+
+To get around missed notes, you can still make single song macros. This doesn't seem like much, but it reduces keystrokes in half since you single tap each macro, instead of double tapping spell gem shortcuts. To make this work, you should bind a key to StopSpellCasting and use it to stop all songs, or add a /stopsong macro on a hotkey:
+
+:/st
+:/cast X
+
+One disadvantage over using this /stopcasting macro is that it will not allow you to stop a song until it has completed more than 75% of the casting timer. Binding a Key to StopCasting allows you to stop a song from any point on the cast bar.
+
+
+'''Q:	At what levels do my songs get better?'''
+
+A:	Many bard songs get more powerful as you level. Exactly how often the song gets better is dependent on that particular song. For example, Hymn of Restoration gets better every sixth level, and Brusco's Boastful Bellow gets better every other level.
+ 
+
+'''Q:	Some players claim that Jaxon's Jig of Vigor, the level 3 song, increases mana regeneration for casters grouped with the singing bard. Is this true?'''
+
+A:	No, this is not true. The song will, at times, cause it to appear that the caster is gaining additional mana, but this is actually a bug caused by a speed up in the client refresh rate.
+
+ 
+'''Q:	I have a very high charisma. What songs will this help with?'''
+
+A:	Charisma will help with the bard's charm and lull songs, specifically: [[Kelin's Lugubrious Lament]], [[Solon's Song of the Sirens]], and [[Solon's Bewitching Bravura]]. Charisma reduces the resist rate on lull, and reduces the chance for charm to break early. Charisma does not affect resist rates for charm or mesmerize spells.
+ 
+
+'''Q:	Why are the effects of Singing Steel armor the same as or worse than abilities already granted to bards when other classes get useful effects or "new abilies" from theirs?'''
+
+A:	Part of the reason for this is the fact that bards can cast spells while running. This means that while casting a spell from an object, there is nothing that can interrupt the bard's casting. For this reason, many potentially useful spell effects could be overpowering for a bard.
+ 
+
+'''Q:	I have heard rumors that the bards charming song can charm pets. Are these rumors true?'''
+
+A:	In a duel with a pet caster they can, but otherwise no.
+ 
+
+'''Q:	Does Selo's stack with J.Boots or Spirit of Wolf/Spirit of Scale?'''
+
+A:	Yes and no.  While Selo's and another run speed buff can both be in effect at the same time, you will only get the speed benefit of the faster of the two, not both. While they are stacked, you will get the benefit of only the best (Selo's) but if Selo's ends, you will go back to SoW/jboots speed. This still makes SoW or jboots a good backup for you or your group in case you get stunned or a party member goes out of song range.
+ 
+
+'''Q:	Does the Hymn of Restoration cause a druid's regen spell to wear off quicker? A druid told me that the Hymn's effects stacked with his regen spell but that when the song stopped playing his regen spell was taken off as well.'''
+
+A:	No, Hymn of Restoration will not decrease the duration of other regeneration spells, such as Regeneration/Chloroplast/Regrowth.
+ 
+
+'''Q:	Looking at the Creation Guide for the Bard, I noticed that they get a lot of skills at Level 1. A lot of those skills are not available to me, particularly in the area of languages. How can I learn these?'''
+
+A:	You don't have all languages available to train at your guild at level 1. As you progress in levels, more languages become available to practice. But, you can also learn languages by grouping with someone with the specific language you want to learn, and has a high skill in it. If they talk enough, your skill improves. You don't have to add a practice point in a language to be able to learn it.
+ 
+
+'''Q:	Is it true the level 5 speed song gets faster every five levels?'''
+
+A:	Actually, Selo's Accelerando gets faster with every level.
+ 
+
+'''Q:	Where can I find a wind instrument for some of my songs?'''
+
+A:	You should be able to buy a Flute and/or a Minotaur Horn at any standard bard guild. Both of these will work as a wind instrument.
+
+
+'''Q:	What role do bards play in a group?'''
+
+A:	
+* Bards can tank using Snare/Slow song to hold aggro if they have a decent healer (Stat priority STA > AC > DEX)
+* Bards can pull using Lulls, Mezzes, Snares and Charm to split rooms (Stat priority CHA > DEX)
+* Bards can help keep groups active by twisting HP Regen, Mana Song, Haste (if no haster in group or they're bad at maintaining it) and DS to increase DPS
+* At higher levels, Bards can still tank. You will need to twist high aggro songs like snare/slow and chants and will likely need shaman slows, in addition to good tank armor, to mitigate incoming damage. (Stat priority AC > STA > AGI)
+
+Help on multi pulls by charming extra mobs and utilizing them as extra DPS and re-charm or mez when charm breaks. (Let enchanter know you're doing this if there is a chanter grouping with you. Some get salty when you charm and they "waste" mana mezzing it...)
+
+If you already have a tank tanking, a monk pulling and an enchanter mezzing, basically keep songs going that help the group conserve mana and increase DPS (HP Regen, Mana Regen, DS, ATK songs, Resist songs if caster mobs pulled). In a group like this where you aren't tank, puller or CC, basically you just fill in as needed. Either when one AFKs or dies or on large pulls/trains.
+
+AE Mez has a level cap of about lv30 mobs, when you get to level 28 start using single target mez which lasts 3 times longer.
+
+Pro bards charm annoying Mage/Necromancer/Enchanter mobs because it instantly kills their pet.
+
+Your song setup will change as required based on your group but you'll likely always want:
+
+HP Regen
+Mana Song
+Single Mez
+Charm
+Snare/Slow
+
+
+'''Q:	Why is my Bard's mana not regenerating as expected with Clarity or my mana regen songs?'''
+
+A:	Spells and songs which regenerate mana have no effect on a Bard's mana regeneration because a Bard's mana isn't really the same resource as a spell caster's mana, it's just called mana and displayed the same. A Bard is limited to Bard-mana regeneration at 1/tick standing or 2/tick sitting.
+
+If thirsty, Bard-mana will not regenerate, but this becomes an issue only at level 39 (for the song [[Solon's Bewitching Bravura]]; and later, the level 43 song [[Denon's Desperate Dirge]]). In other words, until level 39 a Bard could go thirsty and suffer no disability.
+
+
+{{Template: Navbox Classes}}

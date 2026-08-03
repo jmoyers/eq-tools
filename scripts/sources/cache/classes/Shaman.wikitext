@@ -1,0 +1,3547 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ Similar to a Cleric, but closer to a tribal witch doctor, the Shaman <br>can be found amongst the more primitive races.<br> Her primary focus is healing, but she can employ many augmentation <br>and offensive spells as well.  
+ - EverQuest manual
+
+=Description=
+[[File:C shaman.gif|right]]
+The Shaman is well-rounded, offering powerful offensive and defensive spells as well as buffs.  
+
+Shamans also have powerful dots that cause Poison, Disease and Magic damage. They also have Direct Damage spells which deal Cold and Poison damage, along with a single Fire based nuke gained at level 1. 
+
+Shamans have the most powerful slowing spells and resistance debuffs in the game.  This greatly reduces the damage output of the enemy and also assists the entire party, making it easier for everyone to land their spells on the target.
+
+Shaman buffs are fantastic, they are able to increase all statistics except for Wisdom and Intelligence. They also have spells to increase your HP and AC, SoW to help you run faster, Haste to help you swing your weapons faster as well as utility spells like levitate, invisibility and their capstone spell Spirit of the Puma.
+
+Not only do Shamans have buffs, dots and nukes but they also have heals, heals over time and cures to remove debuffs that are on you. It is very helpful having a Cure for Disease since all the slows NPCs will cast on you are disease based.
+
+Shamans can use a lot of the one- or two-handed blunt weapons in the game and have a selection of piercing weapons at their disposal as well.
+{{Classic Era}}
+Shamans have access to a permanent pet that you can equip with armor and weapons. You can also upgrade your pets with Motes of Potential, making them higher level along with other bonuses like more HP. Shaman's have charm but it only works on animals up to level 33. 
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Shaman || Mystic || Luminary || Oracle
+|}
+
+= Creation Guide =
+
+==Picking the Right Race==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Barbarian]]''' || 103 || 95 || 82 || 70 || 70 || 60 || 55 
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55
+
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Ogre]]''' || 130 || 127 || 70 || 70 || 67 || 60 || 37
+|-
+| style="text-align: left"| '''[[Troll]]''' || 108 || 114 || 83 || 75 || 60 || 52 || 40
+|-
+| style="text-align: left"| '''[[Shaman]] Adds''' ||  || 10 ||  ||  || 15 ||  || 5
+|}
+
+== Impact from stats ==
+
+There are different play styles for a shaman, but the two most important stats for all Shaman will be Stamina and Wisdom.  
+
+Whether a shaman should focus on Stamina or Wisdom more is a matter of some debate.  Stamina adds to HP, and since Shaman can convert HP to Mana with their Cannibalize spell line it also (in some sense) adds to Mana. However, while Wisdom only adds to Mana, it adds far more point for point than Stamina. Shaman can buff their Stamina, but cannot buff wisdom.
+==Religion==
+
+Shamans have little choice when it comes to religion. Barbarians must follow [[The Tribunal]], and are the only choice that starts with good aligned faction and easy access to most of the main cities on Antonica, Faydwer, and Odus. Trolls are the only race with a choice of diety, being able to choose between [[Cazic-Thule]] or [[Innoruuk]], both of which are evil aligned factions.  Ogres must follow [[Rallos Zek]], which will place them with the evil aligned factions of Antonica, and gives them a boost with the [[Kromzek]] and [[Kromrif]] giants of Velious. Iksar must follow [[Cazic-Thule]] and will start off being attacked on sight in almost every city, even by other followers of Cazic-Thule.
+
+Troll Shaman that choose to worship Innoruuk have the benefit of being able to quest for {{:Regent Symbol of Innoruuk}} which gives them a low level snare effect (slowing a monsters movement speed) not available to other race/religion combinations.
+
+To see all deity-specific gear for each Shaman deity, consult the following:
+* {{Class And Religion Gear Search|Shaman|Cazic Thule}} [[Deity_Specific_Items#Cazic-Thule|Cazic Thule item list]]
+* {{Class And Religion Gear Search|Shaman|Innoruuk}} [[Deity_Specific_Items#Innoruuk|Innoruuk item list]]
+* {{Class And Religion Gear Search|Shaman|The Tribunal}} [[Deity_Specific_Items_Continued#The_Tribunal|The Tribunal item list]]
+* [[Deity_Specific_Items_Continued#Rallos_Zek|Rallos Zek item list]]
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Divine Invocation
+| {{#section:Stances & Invocations|Divine}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|}
+
+= Spells =
+
+Shamans are masters of natural magic that inflicts poison, disease, cold and magic damage upon their enemies. They also have the ability to vastly empower their allies with Haste or destructively weaken their foes with Slow and Malo.
+
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Grobb]]'''
+|[[Tokun - Troll]]
+|Shaman Guild
+|(350, -400)
+|-
+|'''[[Halas]]'''
+|[[Corak]]
+|Shaman Guild
+|(313, 424)
+|-
+|'''[[Kerra Island]]'''
+|???
+|Shaman Guild
+|(???, ???)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Elder Jantiz]]
+|Full Caster Vendor Room
+|(240, -128)
+|-
+|'''[[Oggok]]'''
+|[[Tokun - Ogre]]
+|Shaman Guild
+|(632, 1091)
+|-
+|'''[[Rathe Mountains]]'''
+|[[Scribe Garp]]
+|Shaman Guild
+|(-1656, 375)
+|}
+NOTE: Spells with ? may be removed need to be confirmed!!!
+The spell list below was last updated for EQL on 5/19/26.
+<div id="spells_level_1">
+
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Flame
+|description=Fire direct damage in 1.5 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=4
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=3-5 Dmg
+}}
+{{RadSpellRow2
+|name=Cure Disease
+|description=Cures weak diseases in 2 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Dexterous Aura
+|description=+DEX for 27 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+10 DEX
+}}
+{{RadSpellRow2
+|name=Endure Cold
+|description=+Cold Resist for 27 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+{{RadSpellRow2
+|name=Flash of Light
+|description=Blind and -ATK for 12 sec (high aggro)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=12
+|kind=Debuff
+|targ=Single
+|duration=12 Sec
+|max=-5 ATK
+}}
+{{RadSpellRow2
+|name=Inner Fire
+|description=+AC/Max HP for 27 min or efficient heal
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+2 AC<br>+20 Max HP<br>11-20 HP
+}}
+{{RadSpellRow2
+|name=Minor Healing
+|description=Heal target in 1 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=12-20 HP
+}}
+{{RadSpellRow2
+|name=Strengthen
+|description=+STR for 27 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+10 STR
+}}
+{{RadSpellRow2
+|name=True North
+|description=Face north (or level Divination cheaply)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Poison
+|description=Cures weak poisons in 2 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Poison
+}}
+{{RadSpellRow2
+|name=Spirit Pouch
+|description=Summon 1 temporary 4-slot 100% weight reduction bag which disappears ~15 minutes after leaving game; all contents are lost as well
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=Summon Item #17303
+}}
+{{RadSpellRow2
+|name=Summon Drink
+|description=Summon 1 temporary drink
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Feet like Cat
+|description=+AGI for 36 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+18 AGI
+}}
+{{RadSpellRow2
+|name=Scale Skin
+|description=+AC for 27 min (requires [[Snake Scales]])
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fleeting Fury
+|description=+STR/DEX/AC for 12-18 sec
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=18 Sec
+|max=+15 STR<br>+5 AC<br>+20 DEX
+}}
+{{RadSpellRow2
+|name=Frost Rift
+|description=Cold direct damage in 1.75 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=19
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=26-29 Dmg
+}}
+{{RadSpellRow2
+|name=Sicken
+|description=Disease damage over time for 90-126 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=11
+|kind=DoT
+|targ=Single
+|duration=1 Min 24 Sec
+|max=-11 HP/tick<br>-8 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Drowsy
+|description=-Attack Speed for 12-174 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=20
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-25% Atkspd
+}}
+{{RadSpellRow2
+|name=Endure Fire
+|description=+Fire Resist for 27 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Return to your Bind Point in 5 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Teleport
+|targ=Self
+|duration=Instant
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Serpent Sight
+|description=+Infravision for 27 min
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Spirit of Bear
+|description=+STA for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+15 STA
+}}
+{{RadSpellRow2
+|name=Summon Food
+|description=Summon 1 temporary food
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Blindness
+|description=Cures blindness in 2 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=-
+}}
+{{RadSpellRow2
+|name=Sense Animals
+|description=Face the closest Animal
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=-
+}}
+{{RadSpellRow2
+|name=Spirit Sight
+|description=+See Invisible for 27 min
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Disease
+|description=Surrounds your target with an aura of protection, warding away disease for 27 min.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Disease Resist
+}}
+{{RadSpellRow2
+|name=Tainted Breath
+|description=Poison damage over time for 42 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=58
+|kind=DoT
+|targ=Single
+|duration=42 Sec
+|max=-10 Dmg<br>-22 HP/tick
+}}
+{{RadSpellRow2
+|name=Talisman of the Beast
+|description=Increase Strength by 10
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Group
+|duration=27 Min
+|max=+10 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Light Healing
+|description=Heal target in 2 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=28
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=47-65 HP
+}}
+{{RadSpellRow2
+|name=Remove Minor Curse
+|description=Decrease Curse Counter by 2
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=25
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 2 Curse
+}}
+{{RadSpellRow2
+|name=Spirit of Wolf
+|description=+Run Speed for 36 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invisibility versus Animals
+|description=Become invisible to Animals for 27-36 min (may fade earlier)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Levitate
+|description=Levitate and suffer no fall damage for 5.2-19 min (requires [[Bat Wing]])
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Spirit of Snake
+|description=+CHA for 36 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+15 CHA
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Strength
+|description=+STR/DEX/AC for 18 sec
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=15
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=18 Sec
+|max=+20 STR<br>+6 AC<br>+20 DEX
+}}
+{{RadSpellRow2
+|name=Endure Poison
+|description=+Poison Resist for 27 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Poison Resist
+}}
+{{RadSpellRow2
+|name=Turtle Skin
+|description=+AC for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+8 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Disempower
+|description=-STR/STA/AC for 84-120 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Debuff
+|targ=Single
+|duration=2 Min
+|max=-20 STA<br>-15 STR<br>-7 AC
+}}
+{{RadSpellRow2
+|name=Enduring Breath
+|description=Breathe underwater for 27 min (requires [[Fish Scales]])
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Root
+|description=Causes the earth to adhere to your target's feet, preventing them from moving.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=48 Sec
+|max=Root
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Walking Sleep
+|description=-Attack Speed for 42-180 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-35% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Change Bind Point to current location; must be in party, cannot bind others outside of towns.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=-
+}}
+{{RadSpellRow2
+|name=Snails Healing
+|description=Imbues your target with the health of a snail spirit, healing 60 hit points every 6 seconds for 24s, but vastly decreasing their movement rate.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Heal Over Time
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=Snare
+}}
+{{RadSpellRow2
+|name=Spirit Strike
+|description=Cold direct damage in 2.45 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=44
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=72-78 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Infectious Cloud
+|description=AOE 20DD + 5/tic damage over time for 126 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=78
+|kind=DoT
+|targ=Targeted AE
+|duration=2 Min 6 Sec
+|max=-5 HP/tick<br>-20 Dmg
+}}
+{{RadSpellRow2
+|name=Shrink
+|description=Shrink target's character model and hitbox (castable indoors only)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=Casts to minimum size:<br>0 for gnome<br>1 for small/medium<br>2 for large<br>3 for pets
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Frenzy
+|description=+AC/AGI/STR/DEX
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+8 AC<br>+25 AGI<br>+27 STR<br>+25 DEX
+}}
+{{RadSpellRow2
+|name=Grow
+|description=Increases the size of your target, causing them to appear more imposing.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=50
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Impassivity
+|description=Places your target into a stoic state, healing 60 hit points every 6 seconds for 24s, but vastly decreasing their attack rate.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Heal Over Time
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=-30% Atkspd
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Decrease Pet Size by 50%
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Pet
+|duration=Instant
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Insidious Fever
+|description=-Disease Resist for 4.8-12 min
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=30
+|kind=Debuff
+|targ=Single
+|duration=11 Min
+|max=-35 Disease Resist
+}}
+{{RadSpellRow2
+|name=Vision
+|description=See through target's eyes with Ultravision and +30% magnification for 5-12 min
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Single
+|duration=11 Min
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Malaise
+|description=-Fire, Cold, Magic, and Poison Resists for 4.8-12 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Debuff
+|targ=Single
+|duration=11 Min
+|max=-20 Cold Resist<br>-20 Magic Resist<br>-20 Poison Resist<br>-20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Spirit Strength
+|description=+STR for 36 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+18 STR
+}}
+{{RadSpellRow2
+|name=Spirit of Cat
+|description=+AGI for 45 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+27 AGI
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Affliction
+|description=30DD + 6/tick damage over time for 126 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted Vendor
+|mana=71
+|kind=DoT
+|targ=Single
+|duration=1 Min 24 Sec
+|max=-38 HP/tick<br>-42 Dmg
+}}
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Attempts to remove one weak spell in 3.5 sec
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Dispel
+|targ=Single
+|duration=Instant
+|max=-1 spell counter
+}}
+{{RadSpellRow2
+|name=Endure Magic
+|description=+Magic Resist for 27 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Healing
+|description=Mends moderate wounds, healing between 95 and 175 hit points.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=65
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=135-175 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Creeping Vision
+|description=Magnify vision for 1 min (decreases over time)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Self
+|duration=1 Min
+|max=+88-100% Magnify
+}}
+{{RadSpellRow2
+|name=Protect
+|description=+AC for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+11 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of Cheetah
+|description=+Run Speed for 48 sec (10 min cooldown)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Self
+|duration=48 Sec
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Spirit of Monkey
+|description=+DEX for 36 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+20 DEX
+}}
+{{RadSpellRow2
+|name=Spirit of Ox
+|description=+STA for 45 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+23 STA
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Counteract Disease
+|description=Cures modereate diseases in 4 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Disease
+}}
+{{RadSpellRow2
+|name=Poison Storm
+|description=Poison rain damage in 3.5 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=125
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=60 Dmg
+}}
+{{RadSpellRow2
+|name=Scale of Wolf
+|description=+Run Speed for 45 min (fades when you attack or cast)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Target Group Member or Self
+|duration=45 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cannibalize
+|description=Convert your HP to Mana in 1.25 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=0
+|kind=Mana
+|targ=Self
+|duration=Instant
+|max=50 Dmg
+}}
+{{RadSpellRow2
+|name=Frost Strike
+|description=Cold direct damage in 3.1 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=78
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=142-156 Dmg
+}}
+{{RadSpellRow2
+|name=Regeneration
+|description=+HP Regen for 8.2-19 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+5 HP Regen
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Envenomed Breath
+|description=30DD + 27/tic damage over time for 42 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=173
+|kind=DoT
+|targ=Single
+|duration=42 Sec
+|max=-21 Dmg<br>-90 HP/tick
+}}
+{{RadSpellRow2
+|name=Remove Lesser Curse
+|description=Decrease Curse Counter by 4
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+{{RadSpellRow2
+|name=Resist Cold
+|description=+Cold Resist for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Befriend Animal
+|description=Charm Animals up to Level 24 (random duration)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=70
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L24)
+}}
+{{RadSpellRow2
+|name=Form of the Bear
+|description=+HP Regen/WIS/Illusion: Bear for 2.4 hours
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Self
+|duration=144 Min
+|max=Illusion<br>+1 HP/tick
+}}
+{{RadSpellRow2
+|name=Rising Dexterity
+|description=Increase Dexterity by 30 for 45m
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+30 DEX
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Counteract Poison
+|description=Cures moderate poisons in 4 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 8 Poison
+}}
+{{RadSpellRow2
+|name=Quickness
+|description=Grants your target quickened movement, increasing their attack speed for 11 min.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=11 Min
+|max=+30% Atkspd
+}}
+{{RadSpellRow2
+|name=Ultravision
+|description=Gain Ultravision for 36 min
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=55
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=-
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Invisibility
+|description=Cloaks your target in a mystic veil, making them invisible to many creatures.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Resist Fire
+|description=+Fire Resist for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Fire Resist
+}}
+{{RadSpellRow2
+|name=Tagar's Insects
+|description=-Attack Speed for 84-180 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=125
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-50% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alluring Aura
+|description=+CHA for 45 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+23 CHA
+}}
+{{RadSpellRow2
+|name=Raging Strength
+|description=+STR for 45 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+26 STR
+}}
+{{RadSpellRow2
+|name=Tortoises Healing
+|description=Imbues your target with the health of a tortoise spirit, healing 120 hit points every 6 seconds for 24s, but vastly decreasing their movement rate.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=155
+|kind=Heal Over Time
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Healing
+|description=Heal target in 3.75 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=280-350 HP
+}}
+{{RadSpellRow2
+|name=Imbue Amber
+|description=Turn [[Amber]] into [[Imbued Amber]] (requires worshipper of Cazic Thule)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22502
+}}
+{{RadSpellRow2
+|name=Imbue Diamond
+|description=Turn [[Diamond]] into [[Imbued Diamond]] (requires worshipper of Mithanial)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22549
+}}
+{{RadSpellRow2
+|name=Imbue Ivory
+|description=Turn [[Ivory]] into [[Imbued Ivory]] (requires worshipper of The Tribunal)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=225
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22501
+}}
+{{RadSpellRow2
+|name=Imbue Jade
+|description=Turn [[Jade]] into [[Imbued Jade]] (requires worshipper of Rallos Zek)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22500
+}}
+{{RadSpellRow2
+|name=Imbue Sapphire
+|description=Turn [[Sapphire]] into [[Imbued Sapphire]]  (requires worshipper of Innoruuk)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22508
+}}
+{{RadSpellRow2
+|name=Listless Power
+|description=-STR/AGI/AC for 2.9-6.5 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=90
+|kind=Debuff
+|targ=Single
+|duration=5 Min
+|max=-35 AGI<br>-35 STR<br>-15 AC
+}}
+{{RadSpellRow2
+|name=Mass Imbue Amber
+|description=Turn [[Amber]] into [[Imbued Amber]] x5 (requires worshipper of Cazic Thule)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22502
+}}
+{{RadSpellRow2
+|name=Mass Imbue Diamond
+|description=Turn [[Diamond]] into [[Imbued Diamond]] x5 (requires worshipper of  	Mithanial)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22549
+}}
+{{RadSpellRow2
+|name=Mass Imbue Ivory
+|description=Turn [[Ivory]] into [[Imbued Ivory]] x5 (requires worshipper of The Tribunal)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=675
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22501
+}}
+{{RadSpellRow2
+|name=Mass Imbue Jade
+|description=Turn [[Jade]] into [[Imbued Jade]] X5 (requires worshipper of Rallos Zek)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22500
+}}
+{{RadSpellRow2
+|name=Mass Imbue Sapphire
+|description=Turn [[Sapphire]] into [[Imbued Sapphire]] x5 (requires worshipper of Innoruuk)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=600
+|kind=Tradeskill
+|targ=Self
+|duration=Instant
+|max=Summon Item #22508
+}}
+{{RadSpellRow2
+|name=Spirit of the Shrew
+|description=Ultravision Increase Movement Speed by 30% 36m
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fury
+|description=+AC/AGI/STR/DEX
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+12 AC<br>+35 AGI<br>+35 STR<br>+35 DEX
+}}
+{{RadSpellRow2
+|name=Health
+|description=+STA for 54 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+31 STA
+}}
+{{RadSpellRow2
+|name=Nonchalance
+|description=Places your target into a nonchalant state, healing 120 hit points every 6 seconds for 24s, but vastly decreasing their attack rate. (30% melee slow)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=155
+|kind=Heal Over Time
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=-30% Atkspd
+}}
+{{RadSpellRow2
+|name=Resist Disease
+|description=+Disease Resist for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Disease Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Nimble
+|description=+AGI for 54 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+36 AGI
+}}
+{{RadSpellRow2
+|name=Scourge
+|description=40DD + 24/tic damage over time for 126 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=199
+|kind=DoT
+|targ=Single
+|duration=1 Min 12 Sec
+|max=-98 HP/tick<br>-58 Dmg
+}}
+{{RadSpellRow2
+|name=Shifting Shield
+|description=+AC for 45 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=45 Min
+|max=+15 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Charm Animals
+|description=Charm Animals up to Level 33 for 8.2-18 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Charm
+|targ=Animal
+|duration=16 Min
+|max=Charm (max L33)
+}}
+{{RadSpellRow2
+|name=Companion Spirit
+|description=Summon a L22-L26 wolf pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=350
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=850 HP<br>30 melee<br>18 kick
+}}
+{{RadSpellRow2
+|name=Malaisement
+|description=-Fire, Cold, Magic, and Poison Resists for 7.8-12 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Debuff
+|targ=Single
+|duration=11 Min
+|max=-40 Cold Resist<br>-40 Magic Resist<br>-40 Poison Resist<br>-40 Fire Resist
+}}
+{{RadSpellRow2
+|name=Talisman of Tnarg
+|description=+Max HP for 72 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=125
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+150 Max HP<br>132-150 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Instill
+|description=Root target in place
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Root
+|targ=Single
+|duration=1 Min 36 Sec
+|max=Root
+}}
+{{RadSpellRow2
+|name=Winter's Roar
+|description=Cold direct damage in 4 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=116
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=236-246 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Curse
+|description=Increase Curse Counter by 4, 148 damage over time for 24 seconds
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=212
+|kind=Damage
+|targ=Single
+|duration=30 Sec
+|max=-148 HP/tick
+}}
+{{RadSpellRow2
+|name=Pack Shrew
+|description=Ultravision Increase Movement Speed by 30% 36m
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=320
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Shock of the Tainted
+|description=Poison direct damage in 3.9 sec
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=131
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=248-254 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resist Poison
+|description=+Poison Resist for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Poison Resist
+}}
+{{RadSpellRow2
+|name=Tumultuous Strength
+|description=+STR for 46 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Buff
+|targ=Group
+|duration=46 Min
+|max=+34 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Assiduous Vision
+|description=See through target's eyes with Ultravision and +30% magnification for 2+ hours
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=150 Min
+|max=-
+}}
+{{RadSpellRow2
+|name=Gale of Poison
+|description=Poison rain damage in 5 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=200
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=122 Dmg
+}}
+{{RadSpellRow2
+|name=Spirit of Bih`Li
+|description=Increase Movement Speed by 55% Increase Attack by 15
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=120
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=Run Speed<br>+15 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Glamour
+|description=+CHA for 54 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+32 CHA
+}}
+{{RadSpellRow2
+|name=Venom of the Snake
+|description=40 DD + 59/tic damage over time for 42 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=203
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-33 Dmg<br>-220 HP/tick
+}}
+{{RadSpellRow2
+|name=Vigilant Spirit
+|description=Summon a L24-L28 wolf pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=400
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=900 HP<br>35 melee<br>19 kick
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Insidious Malady
+|description=-Disease Resist for 8.8-12 min
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=60
+|kind=Debuff
+|targ=Single
+|duration=11 Min
+|max=-60 Disease Resist
+}}
+{{RadSpellRow2
+|name=Remove Curse
+|description=Cleanses your target's soul, removing minor curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=75
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 4 Curse
+}}
+{{RadSpellRow2
+|name=Togor's Insects
+|description=-Attack Speed for 114-180 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=175
+|kind=Slow
+|targ=Single
+|duration=2 Min 30 Sec
+|max=-70% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blinding Luminance
+|description=Blind and -ATK for 24 sec (high aggro)
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=50
+|kind=Debuff
+|targ=Single
+|duration=24 Sec
+|max=-5 ATK
+}}
+{{RadSpellRow2
+|name=Chloroplast
+|description=+HP and End Regen for 12.7-19 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=+10 HP/End Regen
+}}
+{{RadSpellRow2
+|name=Deftness
+|description=+DEX for 54 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+40 DEX
+}}
+{{RadSpellRow2
+|name=Furious Strength
+|description=+STR for 54 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=54 Min
+|max=+34 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit Salve
+|description=Heal for 456
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=181
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=446-456 HP
+}}
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summon your Pet to your location in 5 sec
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=-
+}}
+{{RadSpellRow2
+|name=Talisman of Altuna
+|description=+Max HP for 72 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=250
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+250 Max HP<br>230-250 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Agility
+|description=+AGI for 63 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+45 AGI
+}}
+{{RadSpellRow2
+|name=Guardian Spirit
+|description=Summon a L28-L32 wolf pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=450
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=1,200 HP<br>43 melee<br>21 kick
+}}
+{{RadSpellRow2
+|name=Incapacitate
+|description=-STR/AGI/AC for 4.4-6 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Debuff
+|targ=Single
+|duration=5 Min
+|max=-55 AGI<br>-55 STR<br>-20 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alacrity
+|description=Grants your target quickened movement, increasing their attack speed for 11 min.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=11 Min
+|max=+40% Atkspd
+}}
+{{RadSpellRow2
+|name=Blast of Poison
+|description=Poison direct damage in 4.5 sec
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=167
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=346-360 Dmg
+}}
+{{RadSpellRow2
+|name=Guardian
+|description=+AC for 63 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=150
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+20 AC
+}}
+{{RadSpellRow2
+|name=Slugs Healing
+|description=Imbues your target with the health of a slug spirit, healing 200 hit points every 6 seconds for 24s, but vastly decreasing their movement rate.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=180
+|kind=Heal Over Time
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Odium
+|description=Decrease Current Hit Points by 325 per Tick for 5 ticks, Increase Curse Counter by 8
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=409
+|kind=DOT
+|targ=Single
+|duration=30 Sec
+|max=-317 HP/tick
+}}
+{{RadSpellRow2
+|name=Resist Magic
+|description=Increase Magic Resist by 40
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=85
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Magic Resist
+}}
+{{RadSpellRow2
+|name=Stamina
+|description=Fills your target with pure endurance, increasing their stamina for 63 min.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+40 STA
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blizzard Blast
+|description=Cold direct damage in 5.3 sec
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=147
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=332-346 Dmg
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Attempts to remove two spells in 4.5 sec
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Dispel
+|targ=Single
+|duration=Instant
+|max=-4 spell counters x2
+}}
+{{RadSpellRow2
+|name=Stoicism
+|description=Increase Current Hit Points by 200 per Tick for 4, Decrease Movement Speed by 100%,  Decrease Melee Haste by 30%
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=180
+|kind=Heal
+|targ=Target Group Member or Self
+|duration=24 Sec
+|max=-30% Atkspd
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Frenzied Spirit
+|description=Summon a L32-L36 wolf pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=500
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Rage
+|description=+AC/AGI/STR/DEX
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+15 AC<br>+52 AGI<br>+51 STR<br>+52 DEX
+}}
+{{RadSpellRow2
+|name=Superior Healing
+|description=Heal target in 4.5 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=185
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=500-600 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Harnessing of Spirit
+|description=Increase Max HP by 251, Increase Current HP by 251, Increase Str by 67, Increase Dex by 50, 72min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=425
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+251 Max HP<br>243-251 HP<br>+67 STR<br>+50 DEX
+}}
+{{RadSpellRow2
+|name=Strength
+|description=+STR for 63 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+67 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Charisma
+|description=+CHA for 63 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+40 CHA
+}}
+{{RadSpellRow2
+|name=Shock of Venom
+|description=Decrease Current Hit Points by 535
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=227
+|kind=Direct Damage
+|targ=Single
+|duration=Instant
+|max=494-500 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Abolish Disease
+|description=Cures strong diseases in 6 sec
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Cure
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 36 Disease
+}}
+{{RadSpellRow2
+|name=Dexterity
+|description=+DEX for 63 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=63 Min
+|max=+50 DEX
+}}
+{{RadSpellRow2
+|name=Malosi
+|description=-Fire, Cold, Magic, and Poison Resists for 10.8-12 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=175
+|kind=Debuff
+|targ=Single
+|duration=11 Min
+|max=-60 Cold Resist<br>-60 Magic Resist<br>-60 Poison Resist<br>-60 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Envenomed Bolt
+|description=Poison damage over time 48 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=409
+|kind=DoT
+|targ=Single
+|duration=36 Sec
+|max=-41 Dmg<br>-345 HP/tick
+}}
+{{RadSpellRow2
+|name=Infusion of Spirit
+|description=Increase Str by 50, Increase Dex by 55, Increase Sta by 45
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=72 Min
+|max=+50 STR<br>+55 DEX<br>+45 STA
+}}
+{{RadSpellRow2
+|name=Plague
+|description=Disease damage over time over 132 seconds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=308
+|kind=DoT
+|targ=Single
+|duration=1 Min 18 Sec
+|max=-147 HP/tick<br>-144 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Kragg's Salve
+|description=Increase Current Hit Points by 688
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=244
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=688 HP
+}}
+{{RadSpellRow2
+|name=Spirit Quickening
+|description=+STR/AC/Attack Speed for 6-7 min
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Pet
+|duration=60 Min
+|max=+30 STR<br>+20% Atkspd<br>+16 AC
+}}
+{{RadSpellRow2
+|name=Spirit of the Puma
+|description=Add Melee Proc: Puma Maw (154 dd) with 400% Rate Mod, 60s
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=212
+|kind=Buff/Proc
+|targ=Target Group Member or Self
+|duration=1 Min
+|max=Procs: Puma Maw
+}}
+{{RadSpellRow2
+|name=Talisman of Jasinth
+|description=+Disease Resist for 36 min
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=150
+|kind=Buff
+|targ=Group
+|duration=36 Min
+|max=+45 Disease Resist
+}}
+</table>
+</div>
+
+= Shaman AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Shaman Class AAs}}
+
+= Pet Information =
+
+{{#lsth:Pet Guide|[[Shaman]] Pets}}
+
+=Skills=
+
+==Specialization==
+
+{{#lsth:Skill Specialization|Shaman}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235 (Level+1)*5
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235 (Level+1)*5
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235 (Level+1)*5
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235 (Level+1)*5
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235 (Level+1)*5
+| 235
+|-
+| 1
+| No
+| [[Meditate]]
+| 235 (Level+1)*5
+| 252
+|-
+| 30
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+*Specialization can be trained up to 20 for 1 point but will level without training.
+
+==Combat Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 200 (Level+1)*4
+| 200
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 200 (Level+1)*4
+| 200
+|-
+| 1
+| No
+| [[Throwing]]
+| 200?
+| 200?
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 200
+| 210
+|-
+| 1
+| No
+| [[Defense]]
+| 200 Level*5
+| 200
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 75
+| 75
+|-
+| 1
+| No
+| [[Offense]]
+| 200 Level*5
+| 200
+|-
+| 15
+| Yes
+| [[Dodge]]
+| 75 (Not Level Limited)
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Athletics]]
+| ?
+| ?
+|-
+| 1
+| No
+| [[Strategy]]
+| ?
+| ?
+|-
+| 1
+| No
+| [[Alchemy]]
+| 130
+| 170
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 235
+| 255
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200
+| 200
+|-
+| 16
+| No
+| [[Forage]]
+| 40
+| 40
+|}
+
+= Shaman-Specific Quests =
+
+{{#lsth:Class Race Quest List|Shaman}}
+
+= All Shaman Gear =
+* [[:Category:Shaman_Equipment | All Slots]]
+* [[Special:ClassSlotEquip/Shaman/Ear/AllItems |Ears]]
+* [[Special:ClassSlotEquip/Shaman/Fingers/AllItems |Fingers]]
+* [[Special:ClassSlotEquip/Shaman/Neck/AllItems |Neck]]
+* [[Special:ClassSlotEquip/Shaman/Head/AllItems |Head]]
+* [[Special:ClassSlotEquip/Shaman/Face/AllItems |Face]]
+* [[Special:ClassSlotEquip/Shaman/Chest/AllItems |Chest]]
+* [[Special:ClassSlotEquip/Shaman/Arms/AllItems |Arms]]
+* [[Special:ClassSlotEquip/Shaman/Back/AllItems |Back]]
+* [[Special:ClassSlotEquip/Shaman/Waist/AllItems |Waist]]
+* [[Special:ClassSlotEquip/Shaman/Shoulders/AllItems |Shoulders]]
+* [[Special:ClassSlotEquip/Shaman/Wrist/AllItems |Wrists]]
+* [[Special:ClassSlotEquip/Shaman/Legs/AllItems |Legs]]
+* [[Special:ClassSlotEquip/Shaman/Hands/AllItems |Hands]]
+* [[Special:ClassSlotEquip/Shaman/Feet/AllItems |Feet]]
+* [[Special:ClassSlotEquip/Shaman/Primary/AllItems |Primary]]
+* [[Special:ClassSlotEquip/Shaman/Secondary/AllItems |Secondary]]
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page. See also [[Equipping a Shaman]].
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Shaman]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Shaman]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Shaman]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Shaman]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Shaman]]}}
+
+= FAQ =
+
+== What is a GCD resetter? ==
+
+Please see here: https://wiki.project1999.com/Advanced_Techniques_Guide#Resetting_Spell_Refresh_Timers_With_Instant-Click_Items
+
+== What's the difference between the ranks of Cannibalize? ==
+
+Short answer: Amount of HP converted to Mana per second.
+
+Long answer: Each rank has slightly different ratios of HP/Mana. This might seem important, but it's not.
+
+- Cannibalize:     (L24) 0.4   - (L60) 0.56
+
+- Cannibalize II:  (L39) 0.448 - (L60) 0.538
+
+- Cannibalize III: (L54) 0.486 - (L60) 0.513
+
+- Cannibalize IV:  (L58) 0.547 - (L60) 0.554
+
+The reason you're casting cannibalize is to save time from sitting and meditating. Even though canni1 has a 0.006 better ratio than canni4, you have to cast it 3 times to consume as much health and get that slight mana advantage. Canni4 takes twice as long to cast as the other ranks (2.5 sec vs. 1.25 sec), so 2 casts of canni4 is equivalent to 4 casts of canni1. You get back 112 mana from canni1 in that period of time and 164 mana from canni4 in the same. In other words, you can get mana back 1.5x as fast with canni4 as with canni1, ratio be damned.
+
+== Which rank of Cannibalize should I be using? ==
+
+The highest level you have access to.
+
+I would argue that you shoud avoid Canni 3 and use a GCD to fast canni between 1 and 2.
+
+== What is Canni-dancing? ==
+
+First, a few definitions:
+
+- A server tick occurs every 6 seconds. Damage/heal over time spells, mob proximity aggro checks, and health/mana regen all occur on the server tick.
+
+- [[Meditate]] is the skill that increases your mana regen rate during ticks.
+
+- Cannibalize is your line of spells that lets you convert HP into mana
+
+Canni-dancing is when you cast canni and sit down to let the server tick restore your mana, then stand up and recast canni once or twice between the tick, and repeat. The reason this works is because the only time that matters for receiving mana regen from meditating is the exact moment the server tick occurs. You don't need to be sitting for all 6 seconds, only the final moment. The idea behind canni-dancing is that you can convert HP into mana with cannibalize between server ticks and then gain the natural bump of hp/mana from the server tick. It's a finicky process that takes some time to get used to, and it's a good idea to have a [[Spyglass]] or something that lets reset your GCD (global cooldown).
+
+These GCD resetters can be used immediately after a cast to bypass the global cooldown period and instantly allow you to begin casting another spell. Everquest has a buggy exception that spells placed in the first spell slot will have their gem refresh instantly when using a GCD reset. For this reason, Shamans universally have GCD trinkets and Cannibalize permanently in slot 1. However, when resetting your GCD the spell in the first slot is not actually having its timer truly refreshed; for instance, you can't chain cast [[Avatar]] (or any other suitably long recast time spell) with this effect. Almost all spells in Everquest have a default recast timer of 2.25 seconds, which includes the time it takes to cast the spell. If you cast a spell that takes longer than 2.25 seconds to cast, you can recast it instantly while it's in slot 1. Cannibalize 1, 2, and 3 all have a cast time of 1.25 seconds and a recast time of 2.25 seconds. This means that if you reset the GCD and try to cast them within 1 second of doing so, you'll be met with a "Spell recast time not yet met" error message and the spell will fail. You need to build up a sense of the tempo needed to recast to avoid this. It can help if in third person to time your next cast to a point in your character's animation. For Male Barbarian, one can wait until he presses his hands forward and slides a foot back to cast my next Cannibalize. 
+
+Of note, when you pop the trinket does not matter for the spell recast time error. You can use the trinket immediately when the first cast bar has completed, or a fraction of a second before your second cast.
+
+I recommend that you bind your GCD instant recast item to your command bar (hold click on the item and place it on the bar), bind that point in the bar to an easy hotkey that is near your other spell casts, AND make that bind the same as your sit stand action. In my setup, (Q) is the refresh and (E) is spell slot one. This makes GCD pumping Cannibalize very ergonomic as well as stringing other spells together. (X) is sit but ALSO is an alternate command to the (Q) slot. As a result, when sitting the GCD item is automatically engaged.
+
+It is possible with the GCD trinket to fit in two Cannibalizes in the span of one server tick. This is incredibly tight: the server can have lag between the expected tick and confirmation which will look like jitter in your numbers; and getting the Spell Recast error timing down takes some work. Learning this skill though will greatly decrease how long you need to focus on blowing off your HP toward mana during down phases. Linking sitting or standing to the refresh can make this easier, but the actions necessary are: server tick -> cannibalize -> refresh -> cannibalize -> refresh -> sit.  The refresh before sitting could also be done after standing, but you will need two refreshes and two cannibalizes in the cycle to make it all fit.
+
+== Should I be Canni-dancing? ==
+
+Short answer: Perfect efficiency is first to never hit 100% hp, and secondly to hit every med tick.
+
+The greater your standing mana regeneration the less med ticks will matter.  The greater your standing hp regeneration the more med ticks will matter.  Ultimately though you will be looking at ~7-20% difference in mana generated over time in hitting your ticks.  It is ultimately up to you if the increased micro and attention is worth the bonus.  It could mean the critical difference in what camps you can keep fully broken, though.
+
+This can be either a single cannibalize between ticks or with GCD doubling between ticks if you're skilled and the server ticks are not laggy. Both those methods are the same efficiency over time, but the second method takes less of your attention. 
+
+The exception is a life or death situation where you need the mana NOW!  In most cases if you have a GCD cooldown clickie you are likely best off rapid firing cannibalize without sitting.  You sacrifice efficiency for throughput.
+
+I say "likely" because absolutely perfect double cannibalize between ticks has only about a half second of actual sitting in the 6 second cycle.  The reason this isn't a practical reality is it is very hard to keep calm and hit the complex timings in a life and death situation and to factor that rhythm into your other actions.
+
+After Torpor it becomes more of a race to blow off HP that is overflowing (never hit 100% hp rule).  The same is applied to when you are being heavily boosted in HP by Cleric Heal over Time spells, Necro Shadow Pacts, or a healer who's just blowing off their full mana bar into your hp pool.
+
+Long answer: 
+
+The factors under consideration here are:
+
+1. How much HP you gain per tick standing versus sitting.
+1b. How much mana is that HP worth when cannibalized?
+
+2. How much mana you gain per tick standing versus sitting.
+
+First, let's talk about HP per tick.
+
+HP Regen is affected by three things: your race, your buffs, and your gear. Trolls/iksar will regen approximately twice as much HP as their ogre/barbarian counterparts while sitting/standing. If you have access to [[Regeneration]], [[Chloroplast]], or [[Regrowth]] buffs, that will add another 5, 10, or 15 HP per tick. And finally, if you are wearing something like a [[Ceremonial Iksar Chestplate]] or a [[Fungus Covered Scale Tunic]] you will gain an additional 5 or 15 HP per tick.
+
+However, your buffs and your gear will provide a static amount of HP per tick. It doesn't matter if you're sitting or standing.  The only factor that impacts sitting hp is your race. When you first get cannibalize at level 24, the amount of additional HP you get back from sitting over standing is +1 for ogre/barbarian and +3 for troll/iksar. At level 60, the difference between sitting and standing is +3 for ogre/barbarian and +6 for troll/iksar.
+
+As a result, hp gain while sitting is a trivial part of this equation.
+
+Next, let's look at mana per tick.
+
+Only buffs and gear can increase your mana regen while standing. There is one thing, however, that affects sitting mana regeneration and that is your [[Meditate]] skill level.
+
+By the time you're level 24 and get your first rank of Cannibalize, your mana regen when meditating is 11 per tick. You always have 1 tick of natural mana regen and a meditate skill level of 120 gives you +10 mana when sitting. At level 60, your mana regen when meditating is 22 per tick (1 + 21 from meditate).
+
+Finally, let's look at the cannibalize spells. I'm going to compare their values based on the levels you get them and not their theoretical cap at 60 because you should be upgrading to the next rank when you get it.
+
+Canni1 -  50hp / 20mana = 0.4 mana per hp
+
+Canni2 -  67hp / 30mana = 0.44 mana per hp
+
+Canni3 -  74hp / 36mana = 0.48 mana per hp
+
+Canni4 - 148hp / 82mana = 0.55 mana per hp (twice as long to cast)
+
+EXAMPLE:
+
+For this test I used a level 52 Barbarian Shaman using a middle of the road Chloroplast regeneration effect with no buffs or gear that impact mana or health regeneration rates.  The test started at full HP (1320) and a zero percentage mana pool (max 1835).  Cannibalize 2 was used.
+
+It is hard to establish what "finished" is in the test, but I'd consistently blow off hp into cannibalize until 60% hp, then let it return to 90 before once again going back down to 60 once again.  When reaching full mana, the timer was stopped and HP values recorded.  HP below 100% is then valued as a mana debt for calculation of mana per second gained.
+
+Imperfections are accepted.  Some fizzles occur.  There are rare GCD timings (<10%) that were done too quickly and resulted in an error.  There were very rare ticks missed slightly.
+
+This is based off of the conversion rate for Cannibalize at level 52.
+
+TEST 1: Chain Cannibalize with no GCD trinket and no sitting during cannibalize chaining.
+
+Result:
+
+Full mana at 7:05 with 520 HP missing (240 mana)
+1,595 mana generated in 425 seconds = 
+3.75 mana / sec
+
+Notes
+If sitting is 19 mana a tick at this level, just sitting would have meant 1,345 mana generated over the duration.  Cannibalize increased efficiency but not intensely so.
+
+TEST 2:
+Chain Cannibalize with GCD trinket with no sitting to hit med ticks.
+
+Result:
+
+Full mana at 6:43 with 550 HP missing (254 mana)
+1581 mana generated in 403 seconds = 
+3.92 mana / sec
+
+Notes
+Faster casting of Cannibalize resulted in less ticks missed in total, which explains the gap between test 1 and test 2.  
+
+TEST 3: Single cannibalize in between med ticks.
+
+Result
+
+Full mana at 6:38 with 349 HP missing (161 mana)
+1674 mana generated in 398 seconds = 
+4.20 mana / sec
+
+FINDINGS:
+Faster cannibilizing with GCD minimized the effects of missing med ticks.  Cannibalizing and hitting every med tick while avoiding hitting full hp resulted in 112% efficiency of the worst method.
+
+TEST GROUP 2
+Lvl 52 Barb with Iksar Chestplate and Regrowth.
+
+TEST 1: GCD Canni with no ticks
+
+Full mana at 5:30 with 595 HP missing (275 mana)
+1509 mana generated in 330 seconds =
+4.57 mana / sec
+
+TEST 2: Canni between ticks
+
+Full mana at 5:08 with 467 HP missing (216 mana)
+1,568 mana generated in 308 seconds =
+5.09 mana / sec
+
+FINDINGS:
+Method 1 resulted in 110% performance over Method 2 in this case.  With the similar pair in the first test setup (test 2 and 3) that gap was 106.6%.  This is a proof for larger HP regen making hitting ticks MORE important, not less.
+
+== Who should receive my buffs while grouping? ==
+
+'''STR'''
+
+Who: Any character or pet that is doing melee damage. 
+
+Why: STR increases your max damage and your chance to hit for max damage.
+
+'''STA'''
+
+Who: Everybody, if you can spare the mana.
+
+Why: STA directly increases your max HP and it's always good to be able to take an extra hit.
+
+'''AGI'''
+
+Who: Tanks only, and even then only if you feel like it.
+
+Why: AGI was originally supposed to decrease your chance to be hit, but it's bugged (as classic behavior) and only provides a small decrease to the damage you take instead.
+
+'''DEX'''
+
+Who: Warriors, anybody with proc weapons, bards, and any pet with a proc (you can also throw it on any enterprising rangers who want to deal bow damage).
+
+Why: DEX is mostly about increasing proc chance, but warriors and rangers get increased chance to crit with melee and ranged respectively from it. Bards have a reduced chance to futz their songs too.
+
+'''CHA'''
+
+Who: Enchanters, bards, and anybody casting the pacify line of spells (druid/ranger Harmony does not have a critical failure chance).
+
+Why: Enchanter charm break chances are affected by their CHA, and while they can also buff it yours will mostly be better than theirs. Bards also benefit from it. On clerics/paladins/necros/SKs, CHA decreases the chance that a resisted pacify spell will cause the mob to aggro (don't make your poor necro/SK do this).
+
+'''Haste'''
+
+Who: Tanks (but warriors especially), any melee DPS (though most pets are covered by their caster's pet haste spells). Don't bother if there's an enchanter in the group, theirs is usually better.
+
+Why: Warrior aggro is mostly generated through their normal weapon swings. Aside from procs, haste is the only way to increase their aggro generation. For everybody else, it's easy damage.
+
+'''SoW'''
+
+Everybody if you're outdoors and you don't have a druid (make them [[Pack Spirit]] instead and save you some mana).
+
+'''Regen'''
+
+Who: Tanks, necros, and yourself. Everybody else doesn't get the most benefit from it.
+
+Why: Regen is really an extremely long heal over time when you think about it. You want it to get the most benefit possible, so you want to cast it on targets that are consistently below max HP. That means you (cannibalizing), necros (lich), and tanks (tanking). It's not going to save anybody else in a pinch, but it will save you a bunch of mana healing folks in the long run.
+
+'''AC'''
+
+Who: Tanks, but only if there's not a cleric or a higher level paladin with you. Theirs is better.
+
+Why: The only benefit these spells provide is reducing the amount of damage you receive when hit. It doesn't make sense to apply this to targets that aren't consistently getting hit.
+
+'''HP'''
+
+Who: Everybody but pure casters, if you can spare the mana.
+
+Why: Same reasoning as STA above; it's a good idea to give folks some extra hits to prevent needing to rez someone (and you're not in a position to be doing that). The Shielding line of spells for pure casters doesn't stack with it and gives them other benefits, so they'll frequently stick with that.
+
+'''Resists'''
+
+Who: It really depends on what you're dealing with, but it's never a bad idea to throw [[Resist Magic]] on the tank.
+
+Why: Wizard mobs casting AoEs? You might want to throw up a magic or a fire resist on everybody in the party. Fighting tons of shaman/necro mobs? Might as well put poison and disease resist on the tank. It's not a lot of damage reduction overall, but it does pay for itself in partial and full resists.
+
+'''Acumen?'''
+
+Who: Surprisingly useful at 50+ for throwing on warriors.
+
+Why: It increases their endurance regeneration by a smidge and lets them roll Defensive without having to wait for their endurance to catch up. Plus the see invis and ultravision doesn't hurt.
+
+== Who should receive my buffs while raiding? ==
+
+'''STR'''
+
+Who: Melee DPS characters/pets with <=188 STR with FoS. Tanks don't need it; STR does not increase aggro generation. Aggro is only generated on weapon swing and is independent of the amount of damage dealt by the hit.
+
+How: Cast [[Maniacal Strength]] first and [[Focus of Spirit]] second. 
+
+'''STA'''
+
+Who: Everybody, if you can spare the mana.
+
+How: Ideally you've got a [[Wolf Caller's Breastplate]] or something equivalent so you can cast [[Riotous Health]] mana free.
+
+'''AGI'''
+
+Who: Nobody. Tanks receive a small benefit from it, but the AC isn't meaningful against larger raid targets, and they simply can't spare the buff slots out of their limited 15.
+
+'''DEX'''
+
+Who: Warriors, anybody with proc weapons, bards, and any pet with a proc (you can also throw it on any enterprising rangers who want to deal bow damage).
+
+How: Cast [[Mortal Deftness]] first (and [[Maniacal Strength]] if they need the STR) and then [[Focus of Spirit]] after. 
+
+'''CHA'''
+
+Who: Enchanters are really the only class that might possibly need this in a raiding environment, especially for something like Statue/AoW/CT where pet damage isn't negligible.
+
+How: Cast [[Unfailing Reverence]].
+
+'''Haste'''
+
+Who: Tanks (but warriors especially), any melee DPS (though most pets are covered by their caster's pet haste spells). You really shouldn't need to be casting this though. Enchanters with their [[Visions of Grandeur]], [[Wonderous Rapidity]], or [[Speed of the Shissar]] are all superior choices to your [[Celerity]]. 
+
+How: Politely ask the player to find an enchanter to buff them. Barring that, cast [[Celerity]].
+
+'''SoW'''
+
+Make druids do this with [[Pack Spirit]].
+
+'''Regen'''
+
+Make druids do this with [[Regrowth of the Grove]]. What else are they going to do, spend all of their mana casting [[Protection of the Glades]]? They should get a [[Woven Grass Chestguard]] and stop complaining.
+
+'''AC'''
+
+Not your job.
+
+'''HP'''
+
+Who: Anybody with enough brains to whisper you, which will be most melee.
+
+How: Cast [[Focus of Spirit]], but keep in mind it doesn't stack with the pure caster Shielding spell line (sometimes necros will ask for it and forget to click their buff off and make you sad for wasting 500 mana and 13 seconds of your life). Also, make sure you've already casted [[Maniacal Strength]] and/or [[Mortal Deftness]] on your target before you cast FoS, because once they've got FoS on the other two won't land. Casting STR/DEX first and then FoSing does not overwrite them. Everquest!
+
+'''Resists'''
+
+Who: The entire raid for the following fights: Severilous (poison), Trakanon (poison), Zlandicar (disease), Wuoshi (poison), Zlexak (disease), and probably some more I'm missing.
+
+How: Talisman of Shadoo (poison) and Talisman of Jacinth (disease). Druids should be in charge of fire and cold and enchanters should be in charge of magic.
+
+== How should I buff newbs? ==
+
+Due to the level limitations on receiving high level buffs, the standard package looks like:
+
+[[Strength]], [[Stamina]], [[Agility]], [[Talisman of the Raptor]] (use /tgb on, target yourself, cast the spell, then use a hotkey to "target nearest player" to get around the level limits), [[Talisman of Altuna]], [[Guardian]], [[Ultravision]] (for the non-dark elves), [[Spirit of Wolf]], [[Chloroplast]], and [[Alacrity]].
+
+For pets, it's entirely different because they aren't affected by those level limits. If you feel like going crazy, give them [[Maniacal Strength]], [[Mortal Deftness]], [[Focus of Spirit]], [[Scale of Wolf]] (doesn't fade from pets when they attack like it does from players), [[Deliriously Nimble]] (why not), [[Riotous Health]], [[Shroud of the Spirits]], [[Regrowth]], and [[Celerity]].
+
+{{Template: Navbox Classes}}

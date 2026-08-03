@@ -1,0 +1,263 @@
+__TOC__
+</div>
+
+ A Berserker is a savage melee damage dealer who specializes in overwhelming enemies with brutal two-handed weapons and furious combat techniques.
+ - EQLegends
+
+=Description=
+[[File:C berserker.gif|right]]
+
+Berserkers are a pure melee class focused on dealing heavy damage through aggressive combat abilities, powerful strikes, and thrown weapons.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Berserker || Bloodreaver || Ravager || Destroyer
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Barbarian]]''' || 103 || 95 || 82 || 70 || 70 || 60 || 55 
+|-
+| style="text-align: left"| '''[[Dwarf]]''' || 90 || 90 || 70 || 90 || 83 || 60 || 45
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Ogre]]''' || 130 || 127 || 70 || 70 || 67 || 60 || 37
+|-
+| style="text-align: left"| '''[[Troll]]''' || 108 || 114 || 83 || 75 || 60 || 52 || 40
+|-
+| style="text-align: left"| '''[[Berserker]] Adds''' || 15 || 5 ||  || 10 ||  ||  || 
+|}
+
+== Starting Statistics ==
+
+This section should be deleted
+
+== Suggested Starting Statistics ==
+
+Prioritize Strength and Stamina, with Dexterity also worth considering depending on gearing goals
+
+= Berserker AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Berserker Class AAs}}
+
+=Skills=
+
+== Frenzy ==
+
+Frenzy is a signature Berserker attack that delivers rapid strikes and is central to the class’s damage output.
+
+== Rage and Combat Techniques ==
+
+Berserkers rely on aggressive offensive disciplines and abilities to maximize damage at close range.
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! scope="col" | '''Level'''
+! scope="col" | '''Skill'''
+! scope="col" | '''Trained'''
+! scope="col" | '''Pre 50 Cap'''
+! scope="col" | '''Post 50 Cap'''
+|-
+| 1
+| [[Frenzy]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 1
+| [[Throwing]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 10
+| [[Disarm]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 10
+| [[Dodge]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 15
+| [[Parry]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 20
+| [[Block]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 20
+| [[Double Attack]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 25
+| [[Riposte]]
+|No
+| [Cap]
+| [Cap]
+|-
+| 46
+| [[Skill Triple Attack|Triple Attack]]
+|No
+| [Cap]
+| [Cap]
+|}
+
+==Combat Disciplines==
+
+{| class="eoTable2"
+! Level
+! Discipline
+! Endurance Cost
+! Description
+! Duration
+! Reuse Time
+|-
+| 14
+| Tendon Slice
+| 75
+| Take a swipe at your opponents legs, causing slower movement speed for a short time.
+| 1:00
+| 12 sec (timer 16)
+|-
+| 20
+| Skull Bash
+| 125
+| Aims a weapon blow at your opponents head, briefly stunning them.
+| Instant
+| 12 sec (timer 16)
+|}
+
+
+==Miscellaneous Skills==
+
+{| class="eoTable2"
+! Skill Name
+! Level Obtained
+! Trained
+! Max
+|-
+| [[Athletics]]
+| 1
+| No
+| ?
+|-
+| [[Strategy]]
+| 1
+| No
+| ?
+|-
+| [[Skill_Alcohol_Tolerance|Alcohol Tolerance]]
+| 1
+| No
+| 255
+|-
+| [[Skill_Begging|Begging]]
+| 1
+| No
+| 255?
+|-
+| [[Skill_Bind_Wound|Bind Wound]]
+| 1
+| No
+| 210
+|-
+| [[Skill_Sense_Heading|Sense Heading]]
+| 1
+| No
+| 200
+|-
+| [[Skill_Swimming|Swimming]]
+| 1
+| No
+| 200
+|}
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Striker Stance
+| {{#section:Stances & Invocations|Striker}}
+|-
+| Mage Hunter Stance
+| {{#section:Stances & Invocations|MageHunter}}
+|-
+| Ranged Stance
+| {{#section:Stances & Invocations|Ranged}}
+|-
+| Berserker Stance
+| {{#section:Stances & Invocations|Berserker}}
+|}
+
+= Berserker-Specific Quests =
+
+{{#lsth:Class Race Quest List|Berserker}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page. See also [[Equipping a Berserker]].
+
+Check [[:Category:Berserker Equipment|Berserker Equipment]] for the full list of gear usable by Berserkers.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Berserker]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Berserker]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Berserker]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Berserker]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Berserker]]}}
+
+= FAQ =
+
+{{Navbox Classes}}
+```

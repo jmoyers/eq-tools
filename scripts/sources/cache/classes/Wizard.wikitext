@@ -1,0 +1,3118 @@
+<div style="float:left;margin-right:20px;">__TOC__</div>
+
+ The Wizard is a seeker of knowledge, and her life is spent focusing on this goal.
+ She uses powerful spells to see things from afar and transport them between places.
+ A thirst for arcane knowledge has made her a master of magical translocation, 
+ as well as an offensive force of destruction. <br>- EverQuest Manual
+
+=Description=
+[[File:C wizard.gif|right]]
+Wizards dedicate their lives to learning the powers of fire, ice, and magic; channeling their knowledge into ever more destructive spells to unleash upon their enemies. Wizards are primarily a magic-using class, with the ability to wear cloth armor and wield blunt weapons and daggers.
+
+Wizards are the most single-minded of spell casters, with the majority of their spells dedicated to delivering massive amounts of damage as rapidly as possible. To aid in their constant search for power, wizards have also perfected the art of teleportation - allowing them to instantly transport themselves and their allies to the most remote corners of Norrath and beyond.
+
+Wizards are a tightly focused class, gaining the greatest ability to deal magical damage in exchange for limited variety in their spell selection. Wizards are capable adventurers solo once they are able to quad kite at level 29. Wizard generally get left out of groups among min maxers due to Wizards suffering mana issues with fast killing groups. Ironically the worse a group is the more a Wizard excels, since they are able to meditate more often and therefore contribute. Play Wizard if you value burst damage and prefer to solo and/or raid.
+
+=== Class Titles ===
+{| class="eoTable1" style="width:30%;"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Wizard || Channeler || Evoker|| Sorcerer
+|}
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60
+|-
+| style="text-align: left"| '''[[High Elf]]''' || 55 || 65 || 85 || 70 || 95 || 92 || 80
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Wizard]] Adds''' ||  || 15 ||  ||  ||  || 15 || 
+|}
+
+== Religion ==
+
+Generally speaking being agnostic is a fairly safe bet in Everquest.  Religion serves only to get you into trouble in many situations.  The disadvantage to doing this is that some items and some quests can only be done by followers of certain religions.  Following a religion will at worst get you killed in some areas, but generally you can avoid these.  Following [[Innoruuk]] is probably the most dangerous religion as they have the most places in the game where they are Kill on Sight.  In the end it will not make an enormous difference to your character which Deity you choose.
+
+<table border="0" cellpadding="0" cellspacing="15">
+<tr><td style="vertical-align:top;">
+
+<big>'''Solusek Ro'''</big>
+
+[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Wizard+Equipment&wpInCategory2=Solusek_Ro_Worshiper_Equipment All Solusek Ro/Wizard Items]
+
+<DynamicPageList>
+category=Wizard Equipment
+category=Solusek Ro Worshiper Equipment
+</DynamicPageList>
+
+</td><td style="vertical-align:top;">
+
+<big>'''Bertoxxulous'''</big>
+
+[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Wizard+Equipment&wpInCategory2=Bertoxxulous_Worshiper_Equipment All Bertoxxulous/Wizard Items]
+
+<DynamicPageList>
+category=Wizard Equipment
+category=Bertoxxulous Worshiper Equipment
+</DynamicPageList>
+
+
+</td><td style="vertical-align:top;">
+
+<big>'''Innoruuk'''</big>
+
+[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Wizard+Equipment&wpInCategory2=Innoruuk_Worshiper_Equipment All Innoruuk/Wizard Items]
+
+<DynamicPageList>
+category=Wizard Equipment
+category=Innoruuk Worshiper Equipment
+</DynamicPageList>
+
+</td><td style="vertical-align:top;">
+
+<big>'''Tunare'''</big>
+
+[http://wiki.project1999.com/Special:MultiCategorySearch?wpInCategory1=Wizard+Equipment&wpInCategory2=Tunare_Worshiper_Equipment All Tunare/Wizard Items]
+
+<DynamicPageList>
+category=Wizard Equipment
+category=Tunare Worshiper Equipment
+</DynamicPageList>
+
+</td></tr></table>
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Arcane Mastery Invocation
+| {{#section:Stances & Invocations|ArcaneMastery}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Inviolable Invocation
+| {{#section:Stances & Invocations|Inviolable}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|}
+
+=Spells=
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|[[Clockwork Merchant (LG-8)]]
+|Library
+|(1060,-977)
+|-
+|[[Erudin Palace|'''Erudin Palace''']]
+|[[Gissa Brist]]
+|Wizard Guild (Second Floor)
+|(894,742)
+|-
+|[[Neriak Commons|'''Neriak Commons''']]
+|[[Mak Ixtaz]]
+|Caster Guild (Basement)
+|(171,-893)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Defector Jabitzu]]
+|Full Caster Spell Vendor Room
+|(146, -91)
+|-
+|[[South Qeynos|'''South Qeynos''']]
+|[[Rosdaria Sepria]]
+|Caster Guild
+|(327,-686)
+|-
+|[[Southern Felwithe|'''Southern Felwithe''']]
+|[[Celent Newmist]]
+|Wizard Guild
+|(449,-341)
+|-
+|[[Rathe Mountains|'''Rathe Mountains''']]
+|[[Scribe Yoss]]
+|Spellcaster Tent
+|(-1667, 369)
+|-
+|[[West Freeport|'''West Freeport''']]
+|[[Mirpa Arana]]
+|Caster Guild (Top Floor)
+|(140,-79)
+|}
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blast of Cold
+|description=Covers your target in a thin layer of frost, causing between 10 and 18 damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=8
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=11-18 Dmg
+}}
+{{RadSpellRow2
+|name=Frost Bolt
+|description=Cold Projectile Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=6
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=9-14 Dmg
+}}
+{{RadSpellRow2
+|name=Minor Shielding
+|description=Self Only AC and HP Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 Max HP<br>+3 AC
+}}
+{{RadSpellRow2
+|name=Numbing Cold
+|description=Point Blank Area Effect Cold DD
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=6
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=14 Dmg
+}}
+{{RadSpellRow2
+|name=Sphere of Light
+|description=Summons a globe that provides dim light
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10292
+}}
+{{RadSpellRow2
+|name=True North
+|description=Self Only Navigation Spell
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Glimpse
+|description=Self Only Vision Magnification
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Buff
+|targ=Self
+|duration=12 Sec
+|max=55%
+}}
+{{RadSpellRow2
+|name=O`Keil's Radiation
+|description=Surrounds your target in radiating flame that damages any creature that strikes them.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=15
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=3 Min
+|max=+10 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fade
+|description=Self Only Short Distance Teleport
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Utility Beneficial
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Root
+|description=Fast Root
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=30
+|kind=Utility
+|targ=Single
+|duration=48 Sec
+|max=Root
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Gate
+|description=Returns Caster to Their Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=70
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=See Invisible
+|description=Allows the Target to See Invisible Creatures
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=25
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=27 Minute Duration
+}}
+{{RadSpellRow2
+|name=Shock of Fire
+|description=Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=10
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=14-20 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fingers of Fire
+|description=PBAOE Fire Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=47
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=19-28 Dmg
+}}
+{{RadSpellRow2
+|name=Fire Bolt
+|description=Fire Projectile
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=28
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=45-65 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Icestrike
+|description=3 Waves of 16 Cold Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=15
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=16 Dmg
+}}
+{{RadSpellRow2
+|name=Lesser Shielding
+|description=Self Only AC and HP Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Max HP<br>+7 AC<br>+10 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sense Summoned
+|description=Caster targets the nearest summoned creature
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Shadow Step
+|description=Self Only Random Teleport
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Utility Beneficial
+|targ=Self
+|duration=Instant
+|max=&nbsp;
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Column of Frost
+|description=First Quad kiting spell
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=39
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=27-31 Dmg
+}}
+{{RadSpellRow2
+|name=Eye of Zomm
+|description=Summon an Eye for Scouting
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=30
+|kind=Summon
+|targ=Self
+|duration=30 Sec
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Shock of Ice
+|description=Cold DD
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=23
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=46-58 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Halo of Light
+|description=Self Only Headband Lightsource
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10290
+}}
+{{RadSpellRow2
+|name=Resistant Skin
+|description=Increase Disease and Poison Resistance
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=35
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+15 Disease Resist<br>+15 Poison Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=O`Keil's Embers
+|description=Surrounds your target in flaming embers that damages any creature that strikes them.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=35
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=3 Min
+|max=+10 Fire Resist
+}}
+{{RadSpellRow2
+|name=Shock of Lightning
+|description=Magic Direct Damage With Small Pushback
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=50
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=74-83 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes a Single Magical Effect
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=30
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Gaze
+|description=Self Only Vision Magnification
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=15
+|kind=Buff
+|targ=Self
+|duration=2 Min 30 Sec
+|max=50% Enhanced
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Set a New Home Point for Target
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=100
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Firestorm
+|description=28 dmg per wave for 3 waves.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=34
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=41 Dmg
+}}
+{{RadSpellRow2
+|name=Frost Spiral of Al'Kabor
+|description=Creates a frost spiral that causes between 36 and 44 damage to up to %T creatures in a small area around your target.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=100
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=42-44 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shieldskin
+|description=Self Buff Damage Absorber
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=41
+|kind=Buff
+|targ=Self
+|duration=36 Min
+|max=55 Dmg Absorb (1.34 HPM)
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Project Lightning
+|description=Area Effect Magic Point Blank Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted
+|mana=85
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=55-62 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flame Shock
+|description=Single Target Fire Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=65
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=145-175 Dmg
+}}
+{{RadSpellRow2
+|name=Pillar of Fire
+|description=Quad kiting spell. Targeted Area Effect Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=84
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=66-76 Dmg
+}}
+{{RadSpellRow2
+|name=Shielding
+|description=Self Only AC, HP, and MR Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+50 Max HP<br>+11 AC<br>+12 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Sight
+|description=See through the targets eyes
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=15
+|kind=Beneficial
+|targ=Single
+|duration=11 Min
+|max=14 Minute Duration
+}}
+{{RadSpellRow2
+|name=Heat Sight
+|description=Grants Caster Improved Darkvision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Self
+|duration=27 Min
+|max=27 Minute Duration
+}}
+{{RadSpellRow2
+|name=Invisibility
+|description=Single Target Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=Up to 20 minute duration (random)
+}}
+{{RadSpellRow2
+|name=Lightning Bolt
+|description=Single Target Magic Based Bolt
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=53
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=130-157 Dmg<br>Stun 1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Force Snap
+|description=Strikes your target with a burst of intense force, causing between 150 and 252 damage and stunning targets up to level 55 for 1 second.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted
+|mana=69
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=218-252 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Instill
+|description=Causes the earth to adhere to your target's feet, preventing them from moving for up to 1 min 36s.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=Root
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Fire Spiral of Al'Kabor
+|description=Creates a fire spiral that causes between 51 and 76 damage to up to %T creatures in a small area around your target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted
+|mana=150
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=69-76 Dmg
+}}
+{{RadSpellRow2
+|name=Garrison's Mighty Mana Shock
+|description=Strikes your target with pure energy, causing between 200 and 333 damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=105
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=272-333 Dmg
+}}
+{{RadSpellRow2
+|name=Lesser Evacuate
+|description=Teleports your group to a relatively safe place in the current zone, but also drains significant mana from everyone in the group.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=150
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=-300 Mana
+}}
+{{RadSpellRow2
+|name=North Karana Gate
+|description=Opens an arcane portal that teleports you to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Sight
+|description=Magnifies Caster's View and Provides Improved Darkvision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=20
+|kind=Buff
+|targ=Self
+|duration=2 Min 30 Sec
+|max=40% Magnification
+}}
+{{RadSpellRow2
+|name=Tishan's Clash
+|description=Single Target Magical Direct Damage and Stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=65
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 5s (max L55)<br>29-50 Dmg
+}}
+{{RadSpellRow2
+|name=Toxxulia Gate
+|description=Opens an arcane portal that teleports you to Toxxulia forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elemental Shield
+|description=Self Only Fire and Cold Resistance Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+15 Cold Resist<br>+15 Fire Resist
+}}
+{{RadSpellRow2
+|name=Greater Faydark Gate
+|description=Opens an arcane portal that teleports you to the Greater Faydark.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Leatherskin
+|description=Self Only Damage Absorption. Consumes a [[Bloodstone]] to cast.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=83
+|kind=Buff
+|targ=Self
+|duration=54 Min
+|max=118 Absorption (1.42 HPM)
+}}
+{{RadSpellRow2
+|name=Stonebrunt Gate
+|description=Opens an arcane portal that teleports you to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=West Commons Gate
+|description=Opens an arcane portal that teleports you to the Western Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Levitate
+|description=Causes Target to Levitate. Consumes [[Bat Wing]].
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Buff
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Nektulos Gate
+|description=Opens an arcane portal that teleports you to Nektulos Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=North Ro Gate
+|description=Opens an arcane portal that teleports you to the Northern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cazic Temple Gate
+|description=Opens an arcane portal that teleports you to the Temple of Cazic-Thule.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Lightning Storm
+|description=AOE Rain Magic Damage. 3 Waves of 75 Magic Damage Each.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=80
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=115 Dmg
+}}
+{{RadSpellRow2
+|name=Major Shielding
+|description=Self Only AC, HP, and MR Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+75 Max HP<br>+15 AC<br>+14 Magic Resist
+}}
+{{RadSpellRow2
+|name=West Karana Gate
+|description=Opens an arcane portal that teleports you to the Western Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=150
+|kind=Transport
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cast Force
+|description=Point Blank Area Effect Magic Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=123
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=90-101 Dmg
+}}
+{{RadSpellRow2
+|name=Column of Lightning
+|description=Quad Kiting Area Effect Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=130
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=128-136 Dmg
+}}
+{{RadSpellRow2
+|name=Frost Shock
+|description=Single Target Cold Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=93
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=276-314 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Familiar
+|description=Summons an imp familiar that grants you increased resistances, as well as reducing fizzle rates.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=290
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=North Karana Portal
+|description=Opens an arcane portal that teleports your entire group to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=O`Keil's Levity
+|description=Surrounds you in a cloud of searing steam that damages anything that strikes you, as well as allowing you the benefits of levitation.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=150
+|kind=Utility
+|targ=Self
+|duration=Permanent
+|max=+30 Fire Resist
+}}
+{{RadSpellRow2
+|name=Yonder
+|description=Personal short distance teleport
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=15
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=&nbsp;
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Energy Storm
+|description=Area Effect Magical Rain Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=148
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=238 Dmg
+}}
+{{RadSpellRow2
+|name=Evacuate: North Karana
+|description=Evacuates your group to the Northern Plains of Karana. While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Imbue Fire Opal
+|description=Create an Imbued Fire Opal
+|era={{Classic Short}}
+|school=Alteration
+|location=Nagafen's Lair
+|mana=200
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=Summon Item #22552
+}}
+{{RadSpellRow2
+|name=Inferno Shock
+|description=Single Target Fire Based Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=185
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=430-550 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bonds of Force
+|description=Area Effect Snare Spell. Hits 4 mobs max
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Utility
+|targ=Targeted AE
+|duration=2 Min
+|max=Snare
+}}
+{{RadSpellRow2
+|name=Greater Faydark Portal
+|description=Opens an arcane portal that teleports your entire group to the Greater Faydark.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Stonebrunt Portal
+|description=Opens an arcane portal that teleports your entire group to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Mass Imbue Fire Opal
+|description=Focuses the power of Solusek Ro into five fire opals. Consumes five fire opals when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=600
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22552
+}}
+{{RadSpellRow2
+|name=Shock Spiral of Al'Kabor
+|description=Creates an energy spiral that causes between 83 and 118 damage to up to %T creatures in a small area around your target.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=200
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=111-118 Dmg
+}}
+{{RadSpellRow2
+|name=Thunder Strike
+|description=Single target Magical Dmg (Max: 263) and stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=150
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=263 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Toxxulia Portal
+|description=Opens an arcane portal that teleports your entire group to Toxxulia Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Magnify
+|description=Self Only Zoom and Greatly Improved Darkvision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=2 Min 30 Sec
+|max=&nbsp;
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Steelskin
+|description=Protects Self from Damage
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=149
+|kind=Buff
+|targ=Self
+|duration=72 Min
+|max=230 Absorption (1.77 HPM)
+}}
+{{RadSpellRow2
+|name=Thunderclap
+|description=Point Blank Area Effect Lightning Damage and Stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=175
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=210-232 Dmg<br>Stun 1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Circle of Force
+|description=Targeted AE (1.23 DPM / Target)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=175
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=193-216 Dmg
+}}
+{{RadSpellRow2
+|name=O`Keil's Flickering Flame
+|description=Surrounds your target in flickering flames that damages any creatures that strikes them.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=115
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=5 Min
+|max=+10 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Evacuate: Greater Faydark
+|description=Evacuates your group to the Greater Faydark. While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Harvest
+|description=Self Only Mana Boost (Max: 301)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=1
+|kind=Beneficial
+|targ=Self
+|duration=Instant
+|max=+251 Mana<br>Stun 5s (max L255)
+}}
+{{RadSpellRow2
+|name=Lava Storm
+|description=Area Effect Fire Rain Damage (Max: 128)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=234
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=401 Dmg
+}}
+{{RadSpellRow2
+|name=Nektulos Portal
+|description=Opens an arcane portal that teleports your entire group to Nektulos Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cazic Temple Portal
+|description=Opens an arcane portal that teleports your entire group to the Temple of Cazic-Thule.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Greater Shielding
+|description=Self Only AC, HP and MR,
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+100 Max HP<br>+18 AC<br>+16 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ice Shock
+|description=Single Target Cold Direct Damage (Max: 320)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=150
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=410-490 Dmg
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Single Target Magic Effect Debuffer
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=&nbsp;
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elnerick's Entombment of Ice
+|description=Surrounds your target's feet in thick ice, causing between 225 and 378 damage, and preventing them from moving.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=225
+|kind=Detrimental
+|targ=Single
+|duration=24 Sec
+|max=-295--325 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Force Spiral of Al'Kabor
+|description=Creates an energy spiral that causes between 127 and 172 damage to up to %T creatures who are up to level 55 for 1000 second in a small area around your target.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=250
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=162-172 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Translocate: North Karana
+|description=Opens an arcane portal that teleports your target to the Northern Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Translocate: Stonebrunt
+|description=Opens an arcane portal that teleports your target to the Stonebrunt Mountains.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=West Commons Portal
+|description=Opens an arcane portal that teleports your entire group to the Western Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=North Ro Portal
+|description=Opens an arcane portal that teleports your entire group to the Northern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Translocate: Greater Faydark
+|description=Opens an arcane portal that teleports your target to the Greater Faydark.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Concussion
+|description=Single Target Hate Reducer
+|era={{Classic Short}}
+|school=Alteration
+|location=Quest
+|mana=25
+|kind=Beneficial
+|targ=Single
+|duration=Instant
+|max=400 Hate Reduction
+}}
+{{RadSpellRow2
+|name=Lightning Shock
+|description=Single Target Magic Based DD (Max: 405)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=168
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=570 Dmg
+}}
+{{RadSpellRow2
+|name=Translocate: Toxxulia
+|description=Opens an arcane portal that teleports your target to Toxxulia Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=West Karana Portal
+|description=Opens an arcane portal that teleports your entire group to the Western Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Chill Sight
+|description=Grants Caster Vastly Improved Darkvision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=75
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Evacuate: South Ro
+|description=Evacuates your group to the Southern Desert of Ro. While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shifting Sight
+|description=See through the targets eyes with Infravision
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=30
+|kind=Beneficial
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=19 Minute Duration
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Immobilize
+|description=Single Target Root Spell
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Root
+|targ=Single
+|duration=1 Min
+|max=Root
+}}
+{{RadSpellRow2
+|name=Invisibility to Undead
+|description=Self Only Invisibility Against Undead NPC's
+|era={{Classic Short}}
+|school=Divination
+|location=NPC Drop
+|mana=100
+|kind=Buff
+|targ=Self
+|duration=5 Min
+|max=5 Minute Duration
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Diamondskin
+|description=Self Only Damage Absorption
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=236
+|kind=Buff
+|targ=Self
+|duration=90 Min
+|max=394 Absorption (1.67 HPM)
+}}
+{{RadSpellRow2
+|name=Translocate: West Commons
+|description=Opens an arcane portal that teleports your target to the Western Commonlands.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Vision Shift
+|description=Focuses your target's vision, allowing them to see otherwise invisible creatures, as well as allowing improved night vision.
+|era={{Classic Short}}
+|school=Divination
+|location=
+|mana=50
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=60 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Force Strike
+|description=Magical Direct Damage and Interrupt Stun
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=200
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=530-575 Dmg<br>Stun 1s (max L55)
+}}
+{{RadSpellRow2
+|name=Frost Storm
+|description=Area Effect Rain Cold Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=271
+|kind=Rain DD
+|targ=Targeted AE
+|duration=Instant
+|max=512 Dmg
+}}
+{{RadSpellRow2
+|name=Translocate: Nektulos
+|description=Opens an arcane portal that teleports your target to Nektulos Forest.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elemental Armor
+|description=Self Only Cold and Fire Resistance Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Cold Resist<br>+30 Fire Resist
+}}
+{{RadSpellRow2
+|name=Evacuate: Nektulos
+|description=Evacuates your group to the Nektulos Forest. While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Greater Mass Imbue Fire Opal
+|description=Focuses the power of Solusek Ro into twenty fire opals. Consumes twenty fire opals when cast.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=2400
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #22552
+}}
+{{RadSpellRow2
+|name=Translocate: West Karana
+|description=Opens an arcane portal that teleports your target to the Western Plains of Karana.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Conflagration
+|description=Single Target Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=250
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=900 Dmg
+}}
+{{RadSpellRow2
+|name=Gravity Flux
+|description=Ranged Area Effect Direct Damage and Vertical Launch
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=337
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=242-270 Dmg
+}}
+{{RadSpellRow2
+|name=Translocate: North Ro
+|description=Opens an arcane portal that teleports your target to the Northern Desert of Ro.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Arch Shielding
+|description=Self Only AC, HP, and MR Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+150 Max HP<br>+22 AC<br>+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Bounce
+|description=Surrounds your body in a reflective aura, providing a chance for all incoming spells to rebound back against the caster.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Enticement of Flame
+|description=Single Target Low Resistance Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=NPC Drop
+|mana=202
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=482-500 Dmg
+}}
+{{RadSpellRow2
+|name=Mana Ignition
+|description=Ignites the raw mana between you and your target, causing 400 damage and knocking the target, and yourself, back. This damage is incredibly difficult to resist.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=200
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=400 Dmg
+}}
+{{RadSpellRow2
+|name=Translocate: Cazic Temple
+|description=Opens an arcane portal that teleports your target to the Temple of Cazic-Thule.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=225
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lesser Familiar
+|description=Summons an imp familiar that grants you increased resistances, the ability to see invisible creatures, as well as a reduced fizzle rate.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=490
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=+1 Mana
+}}
+{{RadSpellRow2
+|name=Supernova
+|description=Area Effect Point Blank Fire Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=875
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=854 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Alter Plane: Hate
+|description=Group Teleport to the [[Plane of Hate]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=&nbsp;
+}}
+{{RadSpellRow2
+|name=Alter Plane: Sky
+|description=Group Teleport to [[Plane of Sky]]
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=&nbsp;
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Evacuate: West Karana
+|description=Evacuates your group to the Western Plains of Karana. While faster casting than normal portal spells, it is more likely to leave one or more of your group members behind.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=300
+|kind=Transport
+|targ=Group
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Markar's Clash
+|description=Stuns target for a long period of time and does damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=200
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=Stun 8s (max L55)<br>200 Dmg
+}}
+{{RadSpellRow2
+|name=Rend
+|description=Magic Based Direct Damage Spell
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=227
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=855 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Paralyzing Earth
+|description=Single Target Root Spell
+|era={{Classic Short}}
+|school=Alteration
+|location=[[Firiona Vie]] [[Overthere]]
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=3 Min
+|max=Root
+}}
+{{RadSpellRow2
+|name=Wrath of Al'Kabor
+|description=Creates a freezing ice storm that causes 448 damage to up to %T creatures and stuns them up to level 55 for 1000 second.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=500
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=448 Dmg<br>Stun 1s (max L55)
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ice Comet
+|description=Single Target Cold Direct Damage
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=203
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=808 Dmg
+}}
+{{RadSpellRow2
+|name=Ward of Calrena
+|description=Places the ward of Calrena on your target, absorbing a portion of incoming spell damage. This spell absorbs a set amount of damage before dissipating. Consumes a jasper when cast.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=175
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Levitation
+|description=Forms a cloud of dense air around your feet, allowing you to float slightly off the ground for 20 min 30s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=60
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Mana Detonation
+|description=Detonate the raw mana between you and your target, causing 800 damage and violently knocking the target, and yourself, back. This damage is incredibly difficult to resist.
+|era={{Classic Short}}
+|school=Evocation
+|location=
+|mana=400
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=800 Dmg
+}}
+{{RadSpellRow2
+|name=Translocate
+|description=Teleports Target to Their Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=NPC Drop
+|mana=200
+|kind=Transport
+|targ=Single
+|duration=Instant
+|max=&nbsp;
+}}
+</table>
+</div>
+
+= Wizard AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Wizard Class AAs}}
+
+=Skills=
+
+==Specialization==
+
+{{#lsth:Skill Specialization|Wizard}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 4
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 20
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+==Combat Skills==
+{| class="wikitable sortable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 100
+| 100
+|-
+| 1
+| No
+| [[Defense]]
+| 145
+| 145
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Offense]]
+| 140
+| 140
+|-
+| 1
+| No
+|[[Skill Piercing|1 Hand Piercing]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Throwing]]
+| 75
+| 75
+|-
+| 20
+| Yes
+| [[Dodge]]
+| 75
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 200
+| 252
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200</td>
+| 200</td>
+|}
+
+== Velious Quests ==
+
+{| class="eoTable2"
+!  align="center" width="10%" | <b>Quest</b>
+!  align="center" width="10%" | <b>Reward</b>
+|-  bgcolor="#efefef"
+| <b>[[Wizard Thurgadin Armor Quests]]</b>
+| {{#lsth:Wizard Thurgadin Armor Quests|Reward}}
+|- 
+| [[Wizard Kael Armor Quests]]
+| {{#lsth:Wizard Kael Armor Quests|Reward}}
+|-  bgcolor="#efefef"
+| [[Wizard Skyshrine Armor Quests]]
+| {{#lsth:Wizard Skyshrine Armor Quests|Reward}}
+|}
+
+== Other Quests ==
+{| class="eoTable2"
+!  align="center" width="10%" | <b>Quest</b>
+!  align="center" width="10%" | <b>Reward</b>
+|-  bgcolor="#efefef"
+| [[Hollow Skull Quest]]
+| {{:Jeweled Skull}}
+|- 
+| [[The Family Chest Straps]]
+| {{:Flayed Coldain-Skin Leggings}}
+|-  bgcolor="#efefef"
+| [[Ice Goblin Beads]]
+| {{:Servant's Staff}}
+|- 
+| [[Skunk Hunting]]
+| Various spells as a reward such as [[Gate]]
+|}
+
+= Gearing =
+
+For Wizard gear suggestions by era, see [[Players:Gear|Gear Reference]] page.  For notable/key Wizard equipment, see [[Equipping a Wizard]]. Finally, see[[:Category:Wizard Equipment|Wizard Equipment]] for the full list of all gear usable by Wizards.
+
+For better or worse, wizards just don't benefit from gear as much as melee dps classes. While melee characters can easily boost their dps by equipping an improved ratio weapon or a worn haste item, wizards cannot boost their spell damage. The best we can usually hope for is improving total mana (for total burst damage), total hitpoints (for raw survivability) and total resists (for resisting aoes in raid situations and nukes/debuffs while leveling). There are a few exceptions to this rule, however, in the form of mana-free nuke clickies and items that improve mana regen.
+
+Mana-free nuke clickies will make the single largest difference in a wizard's effectiveness. These items come in three tiers:
+
+Tier 1 includes [[Solist's Robe of Invocation]], [[Vermilion Robe of Torrefaction]] and [[Shissar Elementalist's Staff]]. These are high-end raid drops that can dramatically improve a wizard's long-term sustained dps.
+
+Tier 2 includes Velious armor quest robes (such as [[Sage's Robe]]) and the [[Vermilion Orb of Torrefaction]]. While these are less useful than the Tier 1 clickies, they are still useful for finishing off fleeing mobs. The [[Sage's Robe]] has a very long cast time, but is very hard to resist. It can also be clicked as early as level 1 and makes for a very strong power-leveling item.
+
+Tier 3 includes [[Solist's Icy Wand]]. This item is particularly useful before level 20 and can be used to conserve mana on fleeing mobs for many levels afterward. However, this item will not see much usage at higher levels.
+
+=== Mana Free Nuke Clickies ===
+{| class="eoTable2 sortable"
+! Item
+! Level 
+! Type
+! Res Adj
+! Damage/Cast Time
+! DPS
+!Era
+|-
+| {{:Solist's Robe of Invocation}}
+| 50
+| Magic
+| 0
+| 784dmg/14s
+| 56
+|{{HoleVP Era Inline}}
+|-
+| {{:Vermilion Robe of Torrefaction}}
+| 40
+| Fire
+| -10
+| 625dmg/15s
+| 41.5
+|{{Velious Era Inline}}
+|-
+| {{:Shissar Elementalist`s Cane}}
+| 50
+| Fire
+| -300
+| 400dmg/13.5s
+| 30
+|{{Velious Era Inline}}
+|-
+| {{:Shissar Elementalist's Staff}}
+| 50
+| Fire
+| -300
+| 400dmg/13.5s
+| 30
+|{{HoleVP Era Inline}}
+|-
+| {{:Vermilion Orb of Torrefaction}}
+| 40
+| Fire
+| 0
+| 250dmg/10s
+| 25
+|{{Velious Era Inline}}
+|-
+| {{:Robe of Icicles}} ([[Wizard_Skyshrine_Armor_Quests|Skyshrine]])
+| 1
+| Fire
+| -100
+| 360dmg/24s
+| 15
+|{{Velious Era Inline}}
+|-
+| {{:Robe of the Invoker}} ([[Wizard_Kael_Armor_Quests|Kael]])
+| 50
+| Fire
+| -100
+| 360dmg/25s
+| 14.4
+|{{Velious Era Inline}}
+|-
+| {{:Sage's Robe}} ([[Wizard_Thurgadin_Armor_Quests|Thurgadin]])
+| 1
+| Fire
+| -100
+| 360dmg/28s
+| 12.9
+|{{Velious Era Inline}}
+|-
+| {{:Sorcerer's Robe}}
+| 1
+| Fire
+| -100
+| 360dmg/28s
+| 12.9
+|{{Velious Era Inline}}
+|-
+| {{:Solist's Icy Wand}}
+| 12
+| Cold
+| 0
+| 38dmg/5s
+| 7.6
+|{{Kunark Era Inline}}
+|-
+| {{:Gloves of Fire}}
+| 1
+| Fire
+| 0
+| 28dmg/5s per target (PBAOE)
+| 5.6
+|{{Kunark Era Inline}}
+|}
+
+Mana regen improvement items include items with a worn Flowing Thought (FT) effect that increases passive mana regen (such as [[White Dragonscale Boots]]) and hitpoint to mana conversion clickies. 
+
+Generally, FT items come from cutting-edge raid encounters and will be among a wizard's final best-in-slot upgrades. 
+
+Hitpoint to mana conversion items (specifically the [[Manastone]] and [[Manna Robe]]) can provide 20 mana in exchange for 60 hps. Because wizards cannot heal themselves and generally don't have many hps, the mana conversion effect isn't very useful on its own. However, because mana conversion will eat away at a rune before damaging hps, these items pair very well with the 800 hp rune from the wizard epic [[Staff of the Four]]. As long as the epic rune is intact, a wizard can gain "free" mana from these items. 
+
+The [[Manastone]] is instant-cast, but can only be used in classic zones. Because it no longer drops, it is also very rare and very expensive to buy from another player. The [[Manna Robe]] can be used anywhere, but has a 3-second cast time. It still drops rarely from [[Trakanon]], and is a very useful item for a wizard who doesn't mind lots of clicking.
+
+It is worth noting that the [[Staff of the Four]] clicky effect also provides +3 mana regen that stacks with enchanter and druid mana regen spells.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Wizard]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Wizard]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Wizard]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Wizard]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Wizard]]}}
+
+{{Navbox Classes}}

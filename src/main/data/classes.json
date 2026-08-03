@@ -1,0 +1,986 @@
+{
+  "scrapedAt": "2026-08-03T22:05:19.738Z",
+  "names": {
+    "BER": "Berserker",
+    "BRD": "Bard",
+    "BST": "Beastlord",
+    "CLR": "Cleric",
+    "DRU": "Druid",
+    "ENC": "Enchanter",
+    "MAG": "Magician",
+    "MNK": "Monk",
+    "NEC": "Necromancer",
+    "PAL": "Paladin",
+    "RNG": "Ranger",
+    "ROG": "Rogue",
+    "SHD": "Shadow Knight",
+    "SHM": "Shaman",
+    "WAR": "Warrior",
+    "WIZ": "Wizard"
+  },
+  "stances": {
+    "balanced": [
+      "BER",
+      "BRD",
+      "BST",
+      "MNK",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "berserker": [
+      "BER"
+    ],
+    "channeler": [
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "SHM",
+      "WIZ"
+    ],
+    "defensive": [
+      "PAL",
+      "SHD",
+      "WAR"
+    ],
+    "evasive": [
+      "BRD",
+      "BST",
+      "MNK",
+      "RNG",
+      "ROG"
+    ],
+    "mage hunter": [
+      "BER",
+      "PAL",
+      "SHD"
+    ],
+    "offensive": [
+      "BER",
+      "BRD",
+      "BST",
+      "MNK",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "ranged": [
+      "BER",
+      "MNK",
+      "RNG",
+      "ROG"
+    ],
+    "striker": [
+      "BER",
+      "MNK",
+      "ROG",
+      "WAR"
+    ]
+  },
+  "invocations": {
+    "arcane mastery": [
+      "ENC",
+      "MAG",
+      "NEC",
+      "SHD",
+      "WIZ"
+    ],
+    "divine": [
+      "BST",
+      "CLR",
+      "DRU",
+      "PAL",
+      "RNG",
+      "SHM"
+    ],
+    "empowering": [
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "SHM",
+      "WIZ"
+    ],
+    "inversion": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHD",
+      "SHM",
+      "WIZ"
+    ],
+    "inviolable": [
+      "BRD",
+      "WIZ"
+    ],
+    "overchannel": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHD",
+      "SHM",
+      "WIZ"
+    ],
+    "recovery": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHD",
+      "SHM",
+      "WIZ"
+    ],
+    "spellblade": [
+      "BST",
+      "PAL",
+      "RNG",
+      "SHD"
+    ],
+    "unyielding": [
+      "BER",
+      "MNK",
+      "ROG",
+      "WAR"
+    ]
+  },
+  "skills": {
+    "1H Blunt": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "1H Piercing": [
+      "BRD",
+      "BST",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR",
+      "WIZ"
+    ],
+    "1H Slashing": [
+      "BRD",
+      "DRU",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "2H Blunt": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "2H Piercing": [
+      "RNG",
+      "SHD",
+      "WAR"
+    ],
+    "2H Slashing": [
+      "PAL",
+      "RNG",
+      "SHD",
+      "WAR"
+    ],
+    "Abjuration": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Alchemy": [
+      "SHM"
+    ],
+    "Alcohol Tolerance": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Alteration": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Archery": [
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "Athletics": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Backstab": [
+      "ROG"
+    ],
+    "Bash": [
+      "PAL",
+      "SHD",
+      "WAR"
+    ],
+    "Begging": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Bind Wound": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Block": [
+      "BER",
+      "BST",
+      "MNK",
+      "RNG",
+      "WAR"
+    ],
+    "Brass Instruments": [
+      "BRD"
+    ],
+    "Channeling": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Cleave": [
+      "WAR"
+    ],
+    "Conjuration": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Defense": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Disarm": [
+      "BER",
+      "MNK",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "Disarm Traps": [
+      "BRD",
+      "ROG"
+    ],
+    "Divination": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Dodge": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Double Attack": [
+      "BER",
+      "MNK",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "Dragon Punch": [
+      "MNK"
+    ],
+    "Dual Wield": [
+      "BRD",
+      "BST",
+      "MNK",
+      "RNG",
+      "ROG",
+      "WAR"
+    ],
+    "Eagle Strike": [
+      "MNK"
+    ],
+    "Evocation": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Feign Death": [
+      "MNK"
+    ],
+    "Fishing": [
+      "BRD",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WIZ"
+    ],
+    "Flying Kick": [
+      "MNK"
+    ],
+    "Forage": [
+      "BRD",
+      "DRU",
+      "MNK",
+      "RNG",
+      "SHM"
+    ],
+    "Frenzy": [
+      "BER"
+    ],
+    "Hand to Hand": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Harm Touch": [
+      "SHD"
+    ],
+    "Hide": [
+      "BRD",
+      "RNG",
+      "ROG"
+    ],
+    "Intimidation": [
+      "BRD",
+      "MNK",
+      "ROG"
+    ],
+    "Kick": [
+      "BST",
+      "MNK",
+      "RNG",
+      "WAR"
+    ],
+    "Lay on Hands": [
+      "PAL"
+    ],
+    "Meditate": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "PAL",
+      "RNG",
+      "SHM",
+      "WIZ"
+    ],
+    "Mend": [
+      "MNK"
+    ],
+    "Offense": [
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Parry": [
+      "BER",
+      "BRD",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "Percussion Instruments": [
+      "BRD"
+    ],
+    "Pick Lock": [
+      "BRD",
+      "ROG"
+    ],
+    "Pick Pockets": [
+      "ROG"
+    ],
+    "Riposte": [
+      "BER",
+      "BRD",
+      "BST",
+      "MNK",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "WAR"
+    ],
+    "Round Kick": [
+      "MNK"
+    ],
+    "Safe Fall": [
+      "BRD",
+      "MNK",
+      "ROG"
+    ],
+    "Sense Heading": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Sense Traps": [
+      "BRD",
+      "ROG"
+    ],
+    "Singing": [
+      "BRD"
+    ],
+    "Slam": [
+      "WAR"
+    ],
+    "Smite": [
+      "PAL"
+    ],
+    "Sneak": [
+      "BRD",
+      "MNK",
+      "RNG",
+      "ROG"
+    ],
+    "Specialization": [
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "NEC",
+      "SHM",
+      "WIZ"
+    ],
+    "Strategy": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Stringed Instruments": [
+      "BRD"
+    ],
+    "Swimming": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Tail Rake": [
+      "MNK"
+    ],
+    "Taunt": [
+      "PAL",
+      "RNG",
+      "SHD",
+      "WAR"
+    ],
+    "Throwing": [
+      "BER",
+      "BRD",
+      "BST",
+      "CLR",
+      "DRU",
+      "ENC",
+      "MAG",
+      "MNK",
+      "NEC",
+      "PAL",
+      "RNG",
+      "ROG",
+      "SHD",
+      "SHM",
+      "WAR",
+      "WIZ"
+    ],
+    "Tiger Claw": [
+      "MNK"
+    ],
+    "Tracking": [
+      "BRD",
+      "DRU",
+      "RNG"
+    ],
+    "Triple Attack": [
+      "BER",
+      "MNK",
+      "RNG",
+      "WAR"
+    ],
+    "Wind Instruments": [
+      "BRD"
+    ]
+  },
+  "abilities": {
+    "Abyssal Steed": [
+      "SHD"
+    ],
+    "Act of Valor": [
+      "PAL"
+    ],
+    "Area Taunt": [
+      "WAR"
+    ],
+    "Banestrike": [
+      "WIZ"
+    ],
+    "Bestow Divine Aura": [
+      "CLR"
+    ],
+    "Blood Rune": [
+      "BER"
+    ],
+    "Cannibalization": [
+      "SHM"
+    ],
+    "Chaotic Stab": [
+      "ROG"
+    ],
+    "Companion's Fury": [
+      "MAG"
+    ],
+    "Conjurer's Efficiency": [
+      "MAG"
+    ],
+    "Dead Mesmerization": [
+      "NEC"
+    ],
+    "Divine Stun": [
+      "PAL"
+    ],
+    "Dragon Force": [
+      "MNK"
+    ],
+    "Elemental Form": [
+      "MAG"
+    ],
+    "Enhanced Root": [
+      "DRU"
+    ],
+    "Escape": [
+      "ROG"
+    ],
+    "Fear Storm": [
+      "NEC"
+    ],
+    "Flesh to Bone": [
+      "NEC"
+    ],
+    "Frenzy of Spirit": [
+      "BST"
+    ],
+    "Harm Touch": [
+      "SHD"
+    ],
+    "Heroic Leap": [
+      "WAR"
+    ],
+    "Hobble of Spirits": [
+      "BST"
+    ],
+    "Holy Steed": [
+      "PAL"
+    ],
+    "Hunter's Attack Power": [
+      "RNG"
+    ],
+    "Improved Familiar": [
+      "WIZ"
+    ],
+    "Improved Mend": [
+      "MNK"
+    ],
+    "Innate Called Shot": [
+      "RNG"
+    ],
+    "Innate Fighters Tenacity": [
+      "WAR"
+    ],
+    "Innate Power Strike": [
+      "BER"
+    ],
+    "Innate Sneakiness": [
+      "ROG"
+    ],
+    "Instrument Mastery": [
+      "BRD"
+    ],
+    "Jam Fest": [
+      "BRD"
+    ],
+    "Lay on Hands": [
+      "PAL"
+    ],
+    "Leech Touch": [
+      "SHD"
+    ],
+    "Life Burn": [
+      "NEC"
+    ],
+    "Mana Burn": [
+      "WIZ"
+    ],
+    "Paragon of Spirit": [
+      "BST"
+    ],
+    "Playing Possum": [
+      "BST"
+    ],
+    "Purge Poison": [
+      "ROG"
+    ],
+    "Purify Body": [
+      "MNK"
+    ],
+    "Purify Soul": [
+      "CLR"
+    ],
+    "Quick Evacuation": [
+      "DRU",
+      "WIZ"
+    ],
+    "Rapid Feign": [
+      "MNK"
+    ],
+    "Reaching Notes": [
+      "BRD"
+    ],
+    "Scribble Notes": [
+      "BRD"
+    ],
+    "Shroud of Stealth": [
+      "ROG"
+    ],
+    "Singing Mastery": [
+      "BRD"
+    ],
+    "Slay Undead": [
+      "PAL"
+    ],
+    "Soul Abrasion": [
+      "SHD"
+    ],
+    "Strong Root": [
+      "WIZ"
+    ],
+    "Symphonic Aura": [
+      "BRD"
+    ],
+    "Tireless Spirit": [
+      "BER"
+    ],
+    "Tricksters Misdirection": [
+      "ENC"
+    ],
+    "Turn Summoned": [
+      "MAG"
+    ],
+    "Turn Undead": [
+      "CLR"
+    ],
+    "Unbound Affliction": [
+      "NEC"
+    ],
+    "Unbound Alacrity": [
+      "MNK"
+    ],
+    "Unbound Boon": [
+      "CLR"
+    ],
+    "Unbound Cascade": [
+      "SHM"
+    ],
+    "Unbound Clarity": [
+      "ENC"
+    ],
+    "Unbound Companion": [
+      "MAG"
+    ],
+    "Unbound Destruction": [
+      "WIZ"
+    ],
+    "Unbound Drain": [
+      "SHD"
+    ],
+    "Unbound Ferocity": [
+      "BST"
+    ],
+    "Unbound Fury": [
+      "BER"
+    ],
+    "Unbound Lethality": [
+      "ROG"
+    ],
+    "Unbound Life": [
+      "PAL"
+    ],
+    "Unbound Nature": [
+      "DRU"
+    ],
+    "Unbound Versatility": [
+      "BRD"
+    ],
+    "Unbound Wrath": [
+      "WAR"
+    ],
+    "Unbounded Strikethrough": [
+      "RNG"
+    ],
+    "Unholy Steed": [
+      "SHD"
+    ],
+    "Valiant Steed": [
+      "PAL"
+    ],
+    "War Cry": [
+      "WAR"
+    ],
+    "Warrior's Endurance": [
+      "WAR"
+    ],
+    "Weapon Mastery of the Scout": [
+      "RNG"
+    ]
+  },
+  "disputed": [
+    "invocation 'divine': prose BST CLR DRU PAL RNG SHM vs the per-class sections CLR DRU PAL RNG SHM — prose wins",
+    "invocation 'empowering': the prose row is headed \"Empower\"; keyed on the client string",
+    "invocation 'overchannel': the wiki writes \"Over Channel\" (\"Overchannel\" in the Magician table); keyed on the client string",
+    "invocation 'unyielding': the per-class sections has no row; prose says BER MNK ROG WAR — prose wins",
+    "skill 'Feign Death': also a Template:Spellpage spell name with a DIFFERENT class set — resolve skill-ups against skills[] and casts against spells.json; never union them",
+    "skill 'Frenzy': also a Template:Spellpage spell name with a DIFFERENT class set — resolve skill-ups against skills[] and casts against spells.json; never union them",
+    "skill 'Smite': also a Template:Spellpage spell name with a DIFFERENT class set — resolve skill-ups against skills[] and casts against spells.json; never union them",
+    "skill 'Specialize <school>': the class pages list one row, \"Specialization\", and transclude the five per-school skills the client actually prints — so 1,251 Specialize skill-ups in the real log resolve to no class"
+  ]
+}

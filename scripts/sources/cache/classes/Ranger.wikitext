@@ -1,0 +1,2115 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ The Ranger is a hybrid mix between a Warrior and a Druid, sharing the skills of both. They're most at home in the great outdoors.
+ - EverQuest manual
+
+=Description=
+[[File:C ranger.gif|right]]
+The ranger is an offensive class that focuses on solid and reliable melee damage while bringing out unique archery based skills with best-in-class utility. 
+
+Rangers are a lightly armored offensive class which focuses more on delivering damage than tanking.  In terms of combat skills they can use all types of weapons and get dual wield, double attack, triple attack, and kick. They have higher offensive skill caps than any other hybrid class. This, combined with innate attack spells means that rangers will have better and more consistent damage output for comparable equipment. Additionally, rangers are one of only two classes that can do critical blows with archery as a default. All rangers deal double damage with archery to standing targets that are not rooted. Additionally, ranged stance allows for use of archery in short range. Finally, rangers also have fast casting, cooldown controlled nukes that are great for fast-paced play.   
+
+In terms of defenses, rangers also get a number of defensive skills including dodge, parry, riposte, block, and disarm. However, they are lower in a number of defensive skill areas.  They have a lower skill cap compared to Warriors, and slightly below the Paladin and Shadow Knight class as well. As light tanks with some of the best aggro inducing abilities in the game they can but should not be left to tank for significant periods. They have no skill to reduce the monsters hate for them until the level 50 in the form of the spell [[Jolt]]. Indeed, until you have Jolt rangers will need to use snares, roots, or evasive to get out of sticky situations.   
+
+Rangers get the highest tracking skill in the game, which helps to find people or enemies within the area. This is particularly useful in the large outdoor zones, and can be used to track corpses of members of your group. Additionally, rangers have a high cap on forage which will all but guarantee you always have food and water to survive on.  
+
+In terms of magic Rangers get a range of nice utility spells.  They receive both [[Spirit of Wolf]] and [[Force of Nature]] for run speed and a significant ATK bonus. They also get [[Harmony of Nature]] to reduce monster agro ranges and this enables them to single pull out of a group.  They have both healing spells and damage shields (the latter of which inflicts unresistable damage).  This is coupled with a solid series of HP and AC increasing buffs, as well as some minor stat buffs.  Damage wise they receive both direct damage and damage over time spells.  They can also snare and root mobs. Despite their magical power they do not have the ability to bind or gate. You can view the full ranger spell list on the chart below.
+
+If you are looking for a class pick with solid and dependable damage output, the best tracking in the game, and a little bit of magic to spice things up this class could be the one for you. You will be able to deal damage, spot heal, and act as a light tank in group content.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Ranger || Pathfinder || Outrider || Warder
+|}
+
+=Loadout Synergies=
+Everquest Legends allows for lots of synergies when picking a class loadout. Consider the following choices based on how you want to play the game:
+
+==Ranger as Primary Class==
+
+Thematically, choosing ranger as your primary class means you are going to be picking a class that has ''range control''. You can fight in close range, you can fight at long range, you can root and/or snare enemies, you can increase your own movement speed; this means that the ranger primaries will always have mobility. To make sure you always have runway, pick extra classes that give you distractions like pets. You will gain more distance control with a pet class like magician, necromancer, or beastlord.
+
+Double down on archery by picking additional ranged combat classes like wizard, druid, magician, necromancer, or enchanter. Your goal is to weave spell and arrow into a pure stream of damage.
+
+To improve melee damage, add berserker, monk, or rogue. 
+
+==Ranger as Extra Class==
+
+Ranger brings unique ranged attack options for any other distance fighter; archery gives you a no-mana alternative to burning your mana bar. This means you have intrinsic synergy with most offensive casters (wizard, necromancer, mage, enchanter, and yes! even druid). Archery is a beautiful filler for any caster that would otherwise be meditating for mana in combat.
+
+Most ranged classes also lack close range escapes and ranger's evasive stance gives you an extra survival tool. Even classes that can FD will appreciate being able to dodge almost all attacks for a few seconds when agro gets pulled.
+
+When using ranger as an extra class you'll find that it shines brightest when fighting mobs with high mitigation thanks to strikethrough and improved attack power. Additionally, rangers have good itemization for melee loadouts and can bring unique items that they otherwise might not have access to like [[Dark Cloak of the Sky]].
+
+Tanks can benefit from adding ranger thanks to gaining access to evasive stance, strikethrough (which prevents riposte) and high-threat generating spells like [[Snare]], as well as AC and damage shield lines.
+
+=Creation Guide=
+
+==Core Races==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for ranger as a primary class, as well as their stat line. You can take ranger as an extra class with any race.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Half Elf]]''' || 70 || 70 || 90 || 85 || 60 || 75 || 75
+|-
+| style="text-align: left"| '''[[Halfling]]''' || 70 || 75 || 95 || 90 || 80 || 67 || 50
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Wood Elf]]''' || 65 || 65 || 95 || 80 || 80 || 75 || 75
+|-
+<!-- | style="text-align: left;" | '''[[Dark Elf]]''' (Store Only?) || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|- -->
+| style="text-align: left"| '''[[Ranger]] Adds''' || 5 || 10 || 10 ||  || 5 ||  || 
+|}
+
+==Religious Considerations==
+
+Religion does have a few impacts upon the Ranger class.  Rangers that also do fletching (which is *highly* recommended) will want to match their deity choices to the tradeskill source they intend to use; fletchers of Karana will get the ability to craft special bows and Steel Champion arrows from vendors in Surefall Glade, and rangers of Tunare will get the ability to craft special bows and Mithril Champion arrows from vendors in Greater Faydark. If your current unlocked deities does not include Karana or Tunare, consider unlocking one or both in order to use the best arrows that can be fletched.
+
+Note if you choose ranger as an extra class you may be locked out of the absolute best arrows that can be made until you unlock the appropriate deities; thankfully, there are good enough options you will perform well enough.
+
+OUT OF ERA: Historically, Tunare had quested items that appeared as well for rangers once Velious unlocked. This is not a factor you should consider for rangers in Everquest Legends.
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Evasive Stance
+| {{#section:Stances & Invocations|Evasive}}
+|-
+| Ranged Stance
+| {{#section:Stances & Invocations|Ranged}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Over Channel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Spellblade Invocation
+| {{#section:Stances & Invocations|Spellblade}}
+|-
+| Divine Invocation
+| {{#section:Stances & Invocations|Divine}}
+|}
+
+=Spells=
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Greater Faydark]]'''
+|[[Cerila Windrider]]
+|Ranger Guild
+|(-427, 476)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Outrider Zarulm]]
+|Vendor rooms
+|(204, -84)
+|-
+|[[Neriak Commons|'''Neriak Commons''']]
+|[[Draven S`Koril]]
+|Outside Forge House
+|(~,~)
+|-
+|'''[[Surefall Glade]]'''
+|[[Raken]]
+|Ranger Guild
+|(105, -93)
+|}
+
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Healing
+|description=Heals minor wounds.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=10
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=12-20 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Glimpse
+|description=Allows you to see far off locations.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility Beneficial
+|targ=Self
+|duration=12 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flame Lick
+|description=Deals damage over time and reduces AC.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=12
+|kind=Damage Over Time
+|targ=Single
+|duration=36 Sec
+|max=-17 HP/tick<br>-3 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lull Animal
+|description=Calms animals up to level 30, reducing their agro radius.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Utility Detrimental
+|targ=Animal
+|duration=2 Min
+|max=Calm (max L30)
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Tangling Weeds
+|description=Slightly snares the enemy for a short duration.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=15
+|kind=Utility Detrimental
+|targ=Single
+|duration=18 Sec
+|max=Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Snare
+|description=Snares the enemy for a short duration.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=15
+|kind=Utility Detrimental
+|targ=Single
+|duration=3 Min
+|max=Snare
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Skin like Wood
+|description=Improves HP and AC by a minor amount.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=HP Buffs
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+3 AC<br>+20 Max HP
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Fire
+|description=Increases resistance to fire damage.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Statistic Buffs
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dance of the Fireflies
+|description=Summons a minor light source.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Create Item
+|targ=Self
+|duration=Instant
+|max=Summon Item #10295
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Hawk Eye
+|description=Increases accuracy with a bow by 10%.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=125
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Feet like Cat
+|description=Increases agility.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=40
+|kind=Statistic Buffs
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+18 AGI
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Poison
+|description=Removes poison counters from active poisons on the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Poison
+}}
+{{RadSpellRow2
+|name=Thistlecoat
+|description=Increases AC and damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted Vendor
+|mana=25
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=+5 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Fire
+|description=Deals fire damage to a target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=7
+|kind=Direct Damage
+|targ=Single
+|duration=Instant
+|max=11-14 Dmg
+}}
+{{RadSpellRow2
+|name=Camouflage
+|description=Makes your target invisible.
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted Vendor
+|mana=15
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Grasping Roots
+|description=Roots your target in place.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=35
+|kind=Utility Detrimental
+|targ=Single
+|duration=48 Sec
+|max=-10 Dmg<br>Root
+}}
+{{RadSpellRow2
+|name=Invoke Lightning
+|description=Strikes multiple targets for magic damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=32
+|kind=Direct Damage
+|targ=Targeted AE
+|duration=Instant
+|max=20-25 Dmg
+}}
+{{RadSpellRow2
+|name=Searing Arrow
+|description=Strikes a single target with a searing arrow, dealing 58 damage instantly and 29 damage 6 seconds later.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=35
+|kind=Direct Damage
+|targ=Single
+|duration=6 Sec
+|max=-58 Dmg<br>-29 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Light Healing
+|description=Heals light wounds.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted Vendor
+|mana=28
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=47-65 HP
+}}
+{{RadSpellRow2
+|name=Panic Animal
+|description=Causes an animal up to level 52 to run in fear.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=10
+|kind=Utility Detrimental
+|targ=Animal
+|duration=18 Sec
+|max=Fear (max L52)
+}}
+{{RadSpellRow2
+|name=Ward Summoned
+|description=Deals damage to summoned creatures.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=6
+|kind=Direct Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=6-14 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Sight
+|description=Binds your sight to the target, seeing what they see.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=15
+|kind=Utility Beneficial
+|targ=Single
+|duration=11 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Firefist
+|description=Increases attack power by a minor amount.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=30
+|kind=Statistic Buffs
+|targ=Self
+|duration=Permanent
+|max=+10 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Endure Cold
+|description=Increases resistance to cold damage.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=20
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+20 Cold Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ignite
+|description=Deals fire damage to a target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendorr
+|mana=21
+|kind=Direct Damage
+|targ=Single
+|duration=Instant
+|max=38-46 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Enduring Breath
+|description=Allows you to breathe underwater.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=35
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Skin like Rock
+|description=Improves HP and AC by a light amount.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=HP Buffs
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+6 AC<br>+90 Max HP<br>54-90 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cure Disease
+|description=Removes disease counters from active diseases on the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=20
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Cure 1 Disease
+}}
+{{RadSpellRow2
+|name=Harmony
+|description=Reduces the agro radius of all creatures around the target, up to level 40.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Utility Detrimental
+|targ=Targeted AE
+|duration=2 Min
+|max=Calm (max L40)
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shield of Thistles
+|description=Grants a damage shield to the target.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Stinging Swarm
+|description=Summons a cloud of bees to damage the target over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=71
+|kind=Damage Over Time
+|targ=Single
+|duration=54 Sec
+|max=-42 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flaming Arrow
+|description=Hurls a burning arrow at your target, dealing 102 damage instantly and 51 damage 6 seconds later.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=55
+|kind=Direct Damage
+|targ=Single
+|duration=6 Sec
+|max=-102 Dmg<br>-51 HP/tick
+}}
+{{RadSpellRow2
+|name=Strength of Earth
+|description=Increases strength.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Statistic Buffs
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=+15 STR
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Eyes of the Cat
+|description=Grants infravision, the ability to see in the dark.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=35
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Healing
+|description=Heals the target for a moderate amount.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=65
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=135-175 HP
+}}
+{{RadSpellRow2
+|name=Spirit of Wolf
+|description=Increases movement speed.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=40
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Riftwind's Protection
+|description=Increases AC and provides a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=40
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=60 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Barbcoat
+|description=Increases AC and provides a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=+10 AC
+}}
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes beneficial effects from the target.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Utility Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Calm Animal
+|description=Reduces the agro radius of animals up to level 50.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=45
+|kind=Utility Detrimental
+|targ=Animal
+|duration=42 Sec
+|max=Calm (max L50)
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=See Invisible
+|description=Allows you to see invisible creatures.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=25
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dismiss Summoned
+|description=Deals damage to summoned creatures.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=73
+|kind=Direct Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=226-244 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bramblecoat
+|description=Increases AC and provides a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=75
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=+15 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Levitate
+|description=Allows target to float.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=30
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=16 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burning Arrow
+|description=Hurls a burning arrow at your target, dealing 155 damage instantly and 78 damage 6 seconds later.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=85
+|kind=Direct Damage
+|targ=Single
+|duration=6 Sec
+|max=-155 Dmg<br>-78 HP/tick
+}}
+{{RadSpellRow2
+|name=Call of Sky
+|description=Imparts power to your weapons, causing them to occasionally strike with additional power and stun.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=50
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=Procs: Call of Sky Strike
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Careless Lightning
+|description=Strikes multiple targets for magic damage.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=37
+|kind=Direct Damage
+|targ=Single
+|duration=Instant
+|max=96-105 Dmg
+}}
+{{RadSpellRow2
+|name=Nature's Precision
+|description=Increases attack power.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=50
+|kind=Statistic Buffs
+|targ=Self
+|duration=Permanent
+|max=+15 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Healing
+|description=Heals for a great amount.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=115
+|kind=Heal
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=280-350 HP
+}}
+{{RadSpellRow2
+|name=Skin like Steel
+|description=Increases AC and HP.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=HP Buffs
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+8 AC<br>+100 Max HP<br>74-100 HP
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Harmony of Nature
+|description=Calms the savage spirit of almost any creature, making them less likely to attack. This spell works on creatures up to level 65, and only works outdoors.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=42 Sec
+|max=Calm (max L65)
+}}
+</table>
+</div>
+
+<div id="spells_level_40">
+==Level 40==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Swarm of Pain
+|description=Summons a swarm of painful insects to deal damage to your target over time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=167
+|kind=Damage Over Time
+|targ=Single
+|duration=1 Min
+|max=-56 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spirit of the Shrew
+|description=Provides movement speed increase and ultravision.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=80
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Spikecoat
+|description=Increases AC and provides a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=110
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=+21 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shield of Brambles
+|description=Provides a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Immolate
+|description=Deals fire damage over time.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=72
+|kind=Damage Over Time
+|targ=Single
+|duration=48 Sec
+|max=-67 HP/tick<br>-11 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Ensnaring Roots
+|description=Roots target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Utility Detrimental
+|targ=Single
+|duration=1 Min 36 Sec
+|max=-31--60 Dmg<br>Root
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Resist Fire
+|description=Increases your resistance to fire damage.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Statistic Buffs
+|targ=Single Friendly (or Self)
+|duration=36 Min
+|max=+40 Fire Resist
+}}
+{{RadSpellRow2
+|name=Scorching Arrow
+|description=Hurls a scorching arrow at your target, dealing 210 damage instantly and 105 damage 6 seconds later.
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=100
+|kind=Direct Damage
+|targ=Single
+|duration=6 Sec
+|max=-210 Dmg<br>-105 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Superior Camouflage
+|description=Grants longer lasting invisibility.
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=40
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=24 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Call of Earth
+|description=Increases AC and grants a damage shield.
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Utility Beneficial
+|targ=Single Friendly (or Self)
+|duration=60 Min
+|max=+20 AC
+}}
+{{RadSpellRow2
+|name=Wolf Form
+|description=Grants the form of a wolf, increasing movement speed, attack, and adjusting faction.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=Illusion<br>Run Speed<br>+30 ATK
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Call of Flame
+|description=Inflicts fire damage to the target.
+|era={{Classic Short}}
+|school=Evocation
+|location=Quest
+|mana=106
+|kind=Direct Damage
+|targ=Single
+|duration=Instant
+|max=300 Dmg
+}}
+{{RadSpellRow2
+|name=Pack Shrew
+|description=Grants movement speed and ultravision to your group.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=320
+|kind=Utility Beneficial
+|targ=Group
+|duration=36 Min
+|max=Run Speed
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Force of Nature
+|description=Increases health regeneration, damage shield, and attack.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=100
+|kind=Utility Beneficial
+|targ=Self
+|duration=Permanent
+|max=+20 ATK
+}}
+{{RadSpellRow2
+|name=Jolt
+|description=Reduces your agro on the target.
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Utility Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+= Ranger AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Ranger Class AAs}}
+
+= Disciplines & Abilities =
+
+{| class="wikitable"
+! Level
+! Skill
+! Effect
+|-
+| 20
+| Disrupting Shot
+| Deals 15 damage and interrupts target's spellcasting. Requires a bow to use.
+|}
+
+
+= Skills =
+== Combat Skills ==
+
+{| class="wikitable sortable"
+! Level
+! Skill
+! Cap at 50
+|-
+| 1
+| [[1 Hand Blunt]]
+|250
+|-
+| 1
+| [[Piercing|1 Hand Piercing]]
+|250
+|-
+| 1
+| [[1 Hand Slashing]]
+|250
+|-
+| 1
+| [[2 Hand Blunt]]
+|250
+|-
+| 1
+| [[2H Piercing|2 Hand Piercing]]
+|250
+|-
+| 1
+| [[2 Hand Slashing]]
+|250
+|-
+| 1
+| [[Archery]]
+|270
+|-
+| 1
+| [[Defense]]
+|220
+|-
+|1
+| [[Dual Wield]]
+|210
+|-
+| 1
+| [[Hand to Hand]]
+|210
+|-
+| 1
+| [[Kick]]
+|
+|-
+| 1
+| [[Offense]]
+|210
+|-
+|1
+| [[Taunt]]
+|170
+|-
+| 1
+| [[Throwing]]
+|250
+|-
+| 1
+| [[Strategy]]
+|
+|-
+| 10
+| [[Disarm]]
+| ?
+|-
+| 10 
+| [[Dodge]]
+|205
+|-
+| 10
+| [[Parry]]
+|205
+|-
+| 15
+| [[Block]]
+|180
+|-
+| 20
+| [[Double Attack]]
+|225
+|-
+| 20
+| [[Riposte]]
+|155
+|-
+| 46
+| [[Skill Triple Attack|Triple Attack]]
+|100
+|}
+
+== Casting Skills ==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|}
+
+== Miscellaneous Skills ==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Athletics]]
+| ?
+| ?
+|-
+| 1
+| No
+| [[Strategy]]
+| ?
+| ?
+|-	
+| 1
+| No
+| [[Sneak]]
+| 75
+| 75
+|-
+| 1
+| No
+| [[Track]]
+| 200
+| 200
+|-
+| 3
+| No
+| [[Forage]]
+| 200
+| 200
+|-
+| 3
+| No
+| [[Hide]]
+| 75
+| 75
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 255
+| 255
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200
+| 200
+|}
+
+= Ranger-Specific Quests =
+
+{{:Class_Race_Quest_List/Ranger}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Ranger Equipment | Ranger Equipment]] for the full list of gear usable by rangers.  See also [[Equipping a Ranger]]
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Ranger]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Ranger]]}}
+
+=FAQ=
+'''Q:	What stances does a ranger get?'''
+
+A:	Rangers get balanced stance, offensive stance, evasive stance, and ranged stance.
+
+'''Q:	What invocations does a ranger get?'''
+
+A:	Rangers get divine, inversion, recovery, overchannel, and spellblade invocations.
+
+'''Q:	Does a ranger ever get to critical hit? I am able to critical with the bow occasionally, but never with my 1hs/2hs.'''
+
+A:	Yes, it may not be available at level 1, but certainly by level 10 rangers can get melee critical hits without any AAs.
+
+'''Q:	What level do you suggest doing the ivy etched armor quest? And how difficult is it?'''
+
+A:	There are different Ivy Etched armor quests, each with different level NPC's you have to fight in order to obtain the items needed. The easiest and lowest level Ivy quest being the bracers, (which you can be complete easily in your 20's in a group), and hardest being the tunic/leggings, (which can be done solo in your 40's).
+
+
+'''Q:	Do Rangers get the ability to summon animals?'''
+
+A:	Unless you have an item that has the effect of summoning an animal, nope.
+ 
+
+'''Q:	What does increasing your level in tracking do?'''
+
+A:	It increases the range of your tracking, allowing you to find farther away mobs and improving visibility on your minimap.
+
+'''Q:	How do I make the best of archery?'''
+
+A:	 Ranger archery in Everquest Legends is best utilized through the ranged stance. It removes the minimum range restriction on your bow and allows you to double and triple shot with bows while in the stance. This means you can function somewhat in melee while using the bow, but more importantly gives you great synergy with caster classes by giving you a damage method not reliant on mana.	
+
+'''Q:	Do rangers ever learn to track their corpse or the corpse of other player characters?'''	
+
+A:	You can track other character corpses only if they are in your group, and they have died while your in the same zone. Their corpse will stay on your tracking until they zone back in.
+ 
+'''Q:	What cities are the ranger guilds located? Are the guilds the only place a ranger can go to practice and buy spells?'''
+
+A:	Surefall Glade, Neriak, Rivervale, New Sebilis Expedition, and Kelethin are the current cities (July 2026) a ranger can practice with a guild trainer. There are also spell vendors in those zones. A single trainer named [[Morin Shadowbane]] is also available in Kithicor Woods, but no spell vendors.  A large portion of ranger spells are also druid spells, which are available throughout Norrath at druid guilds and rings.
+
+'''Q:	How does a ranger make arrows and at what level are they effective?'''
+
+A:	You first need a fletching kit, a point, shaft, nock, and fletching skill. Put one of each component into the fletching kit, hit combine and hope that it works. You can merge your arrows up until they reach +10 like any other item. Keep in mind that crafted items are harder to get higher copies of, and thus you may need to plan on making 1024 arrows just to reach +10 of your desired arrow. Check out [[Fletching]] for more information.
+
+'''Q:	Would a Ranger get less experience if they are in Wolf Form?'''
+
+A:	Nope, experience stays the same.
+
+{{Template: Navbox Classes}}

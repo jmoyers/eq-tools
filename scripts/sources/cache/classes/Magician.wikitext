@@ -1,0 +1,3427 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ Magicians are the summoners of the arcane arts, and wield the power to call forth everything from a loaf of bread to a huge Fire Elemental<br> to fight for them. While not as adept at offensive spells as the Wizards, Magicians still wield considerable power in this area as well.
+ - EverQuest manual
+
+= Description =
+[[File:C magician.gif|right]]
+Magicians are master summoners, able to call elemental pets to do their bidding and to conjure useful items from thin air. Magicians are primarily a magic-using class, with the ability to wear cloth armor and wield blunt weapons and daggers.
+
+Elemental pets are at the heart of a magician's offensive strategy, and typically accompany a magician in all his adventures. This pet provides protection for its master, along with powerful attacks and special abilities. Magicians have a large selection of fire and magic-based damage spells, allowing them to mount a damaging magical assault in support of their elemental pet.
+
+Magicians have a wide range of summoning spells, allowing them to conjure such diverse items as food, weapons, armor, and magical jewelry. In battle, the magician can encase his entire group in a shield of fire, damaging any opponent that strikes them. Magicians also have spells that lower a monster's resistance to magic, allowing spells to damage them more easily.
+
+Magicians are a very focused class, sacrificing some diversity for power in their area of expertise. Magicians are able to adventure solo, but also provide value in a group situation. The magician is a good choice for players who enjoy managing a powerful pet and using a tightly focused spell selection.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Magician || Elementalist || Conjurer || Arch Mage
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+| Race || Str || Sta || Agi || Dex || Wis || Int || Cha || Racial Traits
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60 || Dark Elvish (100), Dark Speech (100), Elder Elvish (44), Elvish (44), Hide (50)
+|-
+| style="text-align: left"| '''[[Erudite]]''' || 60 || 70 || 70 || 70 || 83 || 107 || 70 || Erudian (100)
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60 || Dwarvish (44), Gnomish (100), Tinkering (50), Small
+|-
+| style="text-align: left"| '''[[High Elf]]''' || 55 || 65 || 85 || 70 || 95 || 92 || 80 || Dark Elvish (41), Elder Elvish (41), Elvish (100)
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75 ||
+|-
+| style="text-align: left"| '''[[Magician]] Adds''' ||  || 15 ||  ||  ||  || 15 || ||
+|}
+
+== Impact from stats ==
+
+Mages are fairly simple to gear for as there is basically only one primary stat.
+
+*'''Strength'''       - For Magicians this is mostly carry weight for loot. Mages are the least strength dependant class in the game. They don't melee past the very first few levels and they have a way easier time time carrying loot with their weightless and 100% weight reducing bags that they can summon.
+*'''Stamina'''        - Gives a minor increase in maximum Hit Points. Magicians should very rarely get hit, so it's not as useful to them even in min/maxing.
+*'''Dexterity'''      - Mainly involved in raising weapon skills and proccing weapon effects.
+*'''Agility'''        - Adds to your ability to avoiding being struck with physical attacks and lowers the damage you take from physical attacks on average. If Erudite is your race choice know that agility less than 75 isn't just poor, it's penalized, consider putting 5 points in to remove the penalty.
+*'''Wisdom'''         - Stat used to calculate how fast you learn general and craft skills if it is higher than your Intelligence.
+*'''Intelligence'''   - Influences how much maximum mana you gain per level and the rate at which you learn spell skills. Used to calculate how fast you learn general and craft skills if higher than Wisdom. Your maximum mana dictates how many spells you can cast before you are forced to rest.
+*'''Charisma'''       - Influences the price you pay to vendors for their goods, and the price they pay you for your goods. How well liked you are by the faction the merchant belongs to factors into this.
+== Religion ==
+
+Generally speaking being agnostic is a fairly safe bet in Everquest. Follower of [[Tunare]] can quest for [[Chord of Vines]].
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Channeler Stance
+| {{#section:Stances & Invocations|Channeler}}
+|-
+| Arcane Mastery Invocation
+| {{#section:Stances & Invocations|ArcaneMastery}}
+|-
+| Empowering Invocation
+| {{#section:Stances & Invocations|Empower}}
+|-
+| Inversion Invocation
+| {{#section:Stances & Invocations|Inversion}}
+|-
+| Overchannel Invocation
+| {{#section:Stances & Invocations|OverChannel}}
+|-
+| Recovery Invocation
+| {{#section:Stances & Invocations|Recovery}}
+|}
+
+= Spell Guide =
+
+== Spell Types ==
+=== Pets ===
+The magician's bread and butter.  Each tier of pet summoning spells has 4 types; one for each elemental magic.  Massive amounts of information on each of the types can be found below the list of spells.
+
+=== Single Target Direct Damage ===
+Pretty self-explanatory.  While magicians don't get the efficiency or elemental array of direct damage attacks that wizards do, what they do get is comparable until the wizard lure line of spells.  Magicians have two types of direct damage spells: fire-based and magic-based.  Interestingly, the magic-based damage spells use Conjuration, while the fire-based ones use Evocation.
+
+=== Projectile Direct Damage ===
+Projectile, or 'Bolt' spells cast a ball (of fire, in the magicians case) that travels fairly quickly from the caster to the target.  These tend to do more damage, have longer range (the base range of a bolt is 300' whereas the standard range for DDs is 200'), and have better efficiency than similar level non-projectile DD spells, but the bolt type of spell has its drawbacks as well.  First, bolts can be "lost" if the region has a lot of elevation changes.  It is best to make sure you are at the same elevation as the mob with no intervening terrain features.  If the surrounding area does not allow for that, having a decent distance and higher elevation helps the spell land (and it also looks great to have your lava bolt drop like a bomb).  The second drawback is that the bolt can and will hit mobs that are directly in between you and the mob you are aiming at (this is not true anymore on EQ live and therefore probably on EQL).  
+
+=== Target-Based Area of Effect ===
+Mages have two types of target-based AoE fire spells: "columns" and "rains". PBAoE spells will hit up to 8 targets. Targeted AoE will hit up to 4 targets.
+
+=== Player-Based Area of Effect ===
+In EQL, players who cast AOE spells do not hurt themselves, their party, their pet, other NPCs that are not in combat such as guards, and it does not break mez. They will also deal the killing blow if targets get low enough on health. AOE damage spells are limited to hitting 8 targets max.
+
+=== Damage Shields ===
+A magician's damage shield is one of the best in the game, second only to a Bard with the appropriate instrument (and your pre-50+ Fire or Epic pet's innate DS).  Although it is fire-based, it is unresistable, and depending on what you or your group are fighting, can be the #1 source of damage in a battle.  There are not many situations a magician will find themselves in where casting a DS will NOT be worth it.
+
+=== Malo Line ===
+Magicians and Shamans have a debuff line of spells that lower the Cold, Fire, Magic, and Poison resists of whatever it's cast on.  Magicians get these spells a few levels after Shamans, but the spells themselves are identical except for the last one in the line.  Shamans get the unresistable Malo (-45) and Magicians get the somewhat less powerful unresistable Mala (-35).  Both of these have a lower resist debuff, a longer casting time and a higher mana cost than the highest resistable counterpart (at -60).  Note that, aside from those last two, the spells themselves do not have a negative resist modifier, so can be hard to land on higher level mobs.  In a group situation with an Enchanter, the Tash line is often used first to help the Malo line land and together can help anyone land their spells more effectively.
+
+=== Summoned Items ===
+While the number of different items magicians can summon is immense (it is their primary class identifier, after all...), all summoned items are NO RENT.  In other words, they will not persist when you log out.  To prevent the loss of items (especially in summoned bags) due to link death, there is a ~15 minute grace period, but if you plan on logging for the night, do NOT forget to unload your summoned bags! However, a summoned weapon or armor part (starting in Luclin era, magicians can summon tradable armor and focus jewelry) given to a pet stays permanently on the pet until it dies or the pet owner forces his pet to destroy it.
+
+{| class="wikitable sortable"
+|-
+! Level
+! Item
+! Slot
+! Effect
+|-
+| 4
+| [[Summoned:_Wisp_Stone]]
+| Bag or Primary or Secondary
+| Light Source
+|-
+| 8
+| [[Summoned:_Staff_of_Tracing]]
+| Primary and Secondary
+| Bolt and reduced stamina loss
+|-
+| 16
+| [[Summoned:_Staff_of_Warding]]
+| Primary and Secondary
+| 50% Sight Magnification x5
+|-
+| 16
+| [[Summoned:_Heatstone]]
+| Neck or Primary or Secondary
+| Worn Infravision
+|-
+| 20
+| [[Summoned:_Waterstone]]
+| Bag
+| Enduring Breath
+|-
+| 24
+| [[Summoned:_Staff_of_Runes]]
+| Primary and Secondary
+| Cancel Magic
+|-
+| 29
+| [[Summoned:_Coldstone]]
+| Neck, Primary, Secondary, or Ammo 
+| Worn Ultravision
+|-
+| 34
+| [[Summoned:_Staff_of_Symbols]]
+| Primary
+| See Invis x4
+|-
+| 34
+| [[Summoned:_Shard_of_the_Core]]
+| Range
+| Worn Ultravision, +15CR, +15PR 
+|-
+| 39
+| [[Summoned:_Ring_of_Levitation]]
+| Bag or Finger
+| Levitation x2
+|-
+| 44
+| [[Summoned:_Modulating_Rod]]
+| Primary, Secondary, or Bag
+| 225 HP to 150 Mana
+|-
+| 56
+| [[Summoned:_Muzzle_of_Mardu]]
+| Pet Face
+| 11% Worn Haste
+|}
+
+=== Summoned Weapons ===
+While being NO RENT (see above), all summoned weapons are magic and can cause damage to mobs that require magic weapons, like ghouls and wisps.  Once magicians get a decent main hand weapon for themselves, though, most summoned weapons are relegated to pet use only.  Weapons can be given to pets at the lowest levels to make sure they can damage monsters that are immune to mundane weaponry, just like for yourself (or group-mates).  Also, at low levels, and before pets get dual wield, the summoned 2H staves' damage will be a bit higher than the pet's innate melee damage. Once pets get the innate ability to damage magical creatures, weapons can be used to allow them to dual wield. There is an argument to be made for giving them the Spear of Warding and a Dagger of Symbols for the resists, but +5 is not a lot.  It certainly would be rarely worth it if you are under any sort of time pressure to get ready.
+
+
+{| class="wikitable sortable"
+|-
+! Level
+! Item
+! Skill
+! DMG/DLY
+! Effect/Resists
+|-
+| 1
+| [[Summoned:_Dagger]]
+| Piercing
+| 3/21
+| 
+|-
+| 8
+| [[Summoned:_Staff_of_Tracing]]
+| 2HB
+| 7/40
+| Bolt and reduced stamina loss x2
+|-
+| 12
+| [[Summoned:_Snake_Fang]]
+| Piercing
+| 5/26
+| 
+|-
+| 16
+| [[Summoned:_Staff_of_Warding]]
+| 2HB
+| 8/38
+| 50% Sight Magnification x5
+|-
+| 16
+| [[Summoned:_Throwing_Dagger]]
+| Throwing
+| 6/36
+| Range 55
+|-
+| 20
+| [[Summoned:_Spear_of_Warding]]
+| Piercing
+| 6/27
+| +5 FR, +5 CR
+|-
+| 20
+| [[Summoned:_Arrow]] x20
+| Archery
+| 3
+| Range 50
+|-
+| 24
+| [[Summoned:_Staff_of_Runes]]
+| 2HB
+| 9/36
+| Cancel Magic
+|-
+| 29
+| [[Summoned:_Sword_of_Runes]]
+| 1HS
+| 7/27
+| [[Ward Summoned]] Proc
+|-
+| 34
+| [[Summoned:_Staff_of_Symbols]]
+| 2HB
+| 10/34
+| See Invis x4
+|-
+| 39
+| [[Summoned:_Dagger_of_Symbols]]
+| Piercing
+| 5/20
+| +5DR, +5PR, +5MR
+|-
+| 44
+| [[Summoned:_Modulating_Rod]]
+| 1HB
+| 8/26
+| 225 HP to 150 Mana
+|-
+| 53
+| [[Summoned:_Arrow_of_Marr]] x60
+| Archery
+| 3
+| Range 75
+|-
+| 54
+| [[Summoned:_Knife_of_Luclin]] x60
+| Throwing
+| 10/33
+| Range 75
+|-
+| 55
+| [[Summoned:_Shuriken_of_Quellious]] x60
+| Throwing
+| 10/33
+| Range 75
+|}
+
+=== Summoning Stacks of Items ===
+Spells that summon multiple items in a stack (namely: bandages and food/drink from the level 20 spells) summon an amount that scales up with level.  At a certain point, you will always summon a full stack of 20.
+
+
+{| class="wikitable sortable"
+|-
+! Level
+! Spell
+! Items
+|-
+| 1
+| [[Summon_Drink]]
+| [[Summoned:_Globe_of_Water]]
+|-
+| 1
+| [[Summon_Food]]
+| [[Summoned:_Black_Bread]]
+|-
+| 4
+| [[Summon_Bandages]]
+| [[Summoned:_Bandages]] x20
+|-
+| 8
+| [[Dimensional_Pocket]]
+| 4-slot bag
+|-
+| 16
+| [[Summon_Throwing_Dagger]]
+| [[Summoned:_Throwing_Dagger]] x20
+|-
+| 20
+| [[Summon_Arrows]]
+| [[Summoned:_Arrow]] x20
+|-
+| 24
+| [[Cornucopia]]
+| [[Summoned:_Black_Bread]] x20
+|-
+| 24
+| [[Everfount]]
+| [[Summoned:_Globe_of_Water]] x20
+|-
+| 34
+| [[Dimensional_Hole]]
+| 6-slot bag
+|-
+| 51
+| [[Gift_of_Xev]]
+| 10-slot bag, water x20, food x20, bandages x20
+|-
+| 52
+| [[Bristlebane%27s_Bundle]]
+| Ale, Cake, spinning bottle, a firework
+|}
+
+= Spells =
+==Spell Vendors==
+Starting Cities can have multiple vendors for class spells - they all sell the same spells. To keep the list manageable, only one is listed in each zone even though there are more nearby selling the same spells.
+{| class="wikitable"
+|+
+!Zone
+!Name
+!Area
+!Loc
+|-
+|'''[[Ak'Anon]]'''
+|[[Clockwork Merchant (LG-17)]]
+|Library
+|(1105,-1022)
+|-
+|[[Erudin Palace|'''Erudin Palace''']]
+|[[Killi Frillep]]
+|Magician Guild (Second Floor)
+|(695,919)
+|-
+|[[Neriak Commons|'''Neriak Commons''']]
+|[[Cizzar J'Axx]]
+|Caster Guild (Basement)
+|(135,-921)
+|-
+|[[New Sebilis Expedition|'''New Sebilis Expedition''']]
+|[[Conjuror Matranak]]
+|Full Caster Spell Vendor Room
+|(86,-198)
+|-
+|[[South Qeynos|'''South Qeynos''']]
+|[[Tsuden Korinte]]
+|Caster Guild
+|(322,-595)
+|-
+|[[Southern Felwithe|'''Southern Felwithe''']]
+|[[Vellera Wintergreen]]
+|Magician Guild
+|(715,-526)
+|-
+|[[West Freeport|'''West Freeport''']]
+|[[Trepo Merrop]]
+|Caster Guild (Third Floor)
+|(133,-762)
+|}
+'''NOTE:''' See the following page for a more detailed comparison of the [[Magician Offensive Spell Lines]].
+
+<div id="spells_level_1">
+==Level 1==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burst of Flame
+|description=Single Target Fire-based Direct Damage (DD) (Max: 5)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted Vendor
+|mana=4
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=3-5 Dmg
+}}
+{{RadSpellRow2
+|name=Fire Flux
+|description=Area of Effect (AE) Fire-based Point Blank (PB) Direct Damage (DD) (Max: 12)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=23
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=8-12 Dmg
+}}
+{{RadSpellRow2
+|name=Flare
+|description=Casts a flame that will travel directly ahead of you
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=3
+|kind=Utility
+|targ=Bolt
+|duration=Instant
+|max=-1 STA Regen
+}}
+{{RadSpellRow2
+|name=Minor Shielding
+|description=Self Only Hit Points (HP) and Armor Class (AC) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=10
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+10 Max HP<br>+3 AC
+}}
+{{RadSpellRow2
+|name=Reclaim Energy
+|description=Kills pet and gives you mana
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=5
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Dagger
+|description=Summons 1 {{:Summoned: Dagger}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #7305
+}}
+{{RadSpellRow2
+|name=Summon Drink
+|description=Summons 1 {{:Summoned: Globe of Water}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+{{RadSpellRow2
+|name=Summon Food
+|description=Summons 1 {{:Summoned: Black Bread}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=10
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+{{RadSpellRow2
+|name=True North
+|description=Turns player to the North
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_2">
+==Level 2==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementalkin: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Bandages
+|description=Summons 20 {{:Summoned: Bandages}} for binding wounds
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=15
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13081
+}}
+{{RadSpellRow2
+|name=Summon Brass Choker
+|description=Focuses mana into the form of a brass choker that sometimes allows you to cast a spell without consuming any reagents. This item works on spells up to level 12.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23500
+}}
+</table>
+</div>
+
+<div id="spells_level_3">
+==Level 3==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementalkin: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Sense Summoned
+|description=Points you in the direction of  the nearest summoned creature in the zone
+|era={{Classic Short}}
+|school=Divination
+|location=Vendor
+|mana=5
+|kind=Utility
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Wisp
+|description=Summons 1 {{:Summoned: Wisp Stone}} as a light source
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=30
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10294
+}}
+</table>
+</div>
+
+<div id="spells_level_4">
+==Level 4==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burn
+|description=Single Target Fire-based Direct Damage (DD) (Max: 14)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=7
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=13-14 Dmg
+}}
+{{RadSpellRow2
+|name=Elementalkin: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Gate
+|description=Returns you to your Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=70
+|kind=Travel
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_5">
+==Level 5==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementalkin: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Flame Bolt
+|description=Single Target Fire-based Projectile Direct Damage (Fire DD) (Max: 47/1.18 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=25
+|kind=Damage
+|targ=Bolt
+|duration=Instant
+|max=45-55 Dmg
+}}
+{{RadSpellRow2
+|name=Lesser Shielding
+|description=Self Only Hit Point (HP), Magic Resist (MR), and Armor Class (AC) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=25
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Max HP<br>+7 AC<br>+10 Magic Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_6">
+==Level 6==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dimensional Pocket
+|description=Summons a {{:Summoned: Dimensional Pocket}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #17304
+}}
+{{RadSpellRow2
+|name=Elementaling: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=80
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Eye of Zomm
+|description=Summons a small eye you can control and see with
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=30
+|kind=Utility
+|targ=Self
+|duration=30 Sec
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_7">
+==Level 7==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementaling: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=80
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Renew Elements
+|description=Pet Only Heal (Max: 50)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=15
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=22-32 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+{{RadSpellRow2
+|name=Shield of Fire
+|description=Single Target Damage Shield (DS) and Fire Resist (FR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=40
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+10 Fire Resist
+}}
+{{RadSpellRow2
+|name=Shock of Blades
+|description=Single Target Magical Direct Damage (DD) (Max: 35/1.17 DPM)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=18
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=37-42 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_8">
+==Level 8==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementaling: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=80
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Invisibility
+|description=Single Target Invisibility
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=30
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=20 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Staff of Tracing
+|description=Summons 1 {{:Summoned: Staff of Tracing}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=20
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6330
+}}
+{{RadSpellRow2
+|name=Summon Linen Mantle
+|description=Focuses mana into the form of a linen mantle that allows many of your beneficial spells to last a longer period of time. This item works on spells up to level sixteen.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23503
+}}
+</table>
+</div>
+
+<div id="spells_level_9">
+==Level 9==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elementaling: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=80
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Fang
+|description=Summons 1 {{:Summoned: Snake Fang}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #7313
+}}
+{{RadSpellRow2
+|name=Ward Summoned
+|description=Single Target Direct Damage (DD) vs Summoned (Max: 14)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=6
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=6-14 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_10">
+==Level 10==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cancel Magic
+|description=Removes a magical effect from your target
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=30
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Elemental: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=120
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Rain of Blades
+|description=Area of Effect (AE) spell that hits your target(s) with 3 waves (Max: 26)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=62
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=26 Dmg
+}}
+{{RadSpellRow2
+|name=Summon Tarnished Bauble
+|description=Focuses mana into the form of a tarnished bauble that sometimes allows you to cast a spell for a reduced mana cost. This item works on spells up to level twenty-four.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23512
+}}
+</table>
+</div>
+
+<div id="spells_level_11">
+==Level 11==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burnout
+|description=Pet Only 15-min Strength (STR) and Haste buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=35
+|kind=Pet
+|targ=Pet
+|duration=60 Min
+|max=+15 STR<br>+6 AC
+}}
+{{RadSpellRow2
+|name=Elemental: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Elemental Defender
+|description=Focuses mana into the form of an elemental defender.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #3427
+}}
+</table>
+</div>
+
+<div id="spells_level_12">
+==Level 12==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bind Affinity
+|description=Single Target new Bind Point
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=100
+|kind=Utility
+|targ=Single
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Column of Fire
+|description=Area of Effect (AE) Fire-based Direct Damage (DD) around target
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=65
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=49-51 Dmg
+}}
+{{RadSpellRow2
+|name=Elemental: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_13">
+==Level 13==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elemental: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=120
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Phantom Leather
+|description=Self Only Armor Class (AC) and Hit Point (HP) Regeneration Buff (+1/tick) (Consumes [[Cat's Eye Agate]] when cast)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=60
+|kind=Regen
+|targ=Self
+|duration=Permanent
+|max=+1 HP/tick<br>+7 AC
+}}
+</table>
+</div>
+
+<div id="spells_level_14">
+==Level 14==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Summoning: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Autogranted<br>Vendor
+|mana=160
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Staff of Warding
+|description=Summons 1 {{:Summoned: Staff of Warding}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6331
+}}
+</table>
+</div>
+
+<div id="spells_level_15">
+==Level 15==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Summoning: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=160
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shock of Flame
+|description=Single Target Fire-based Direct Damage (DD) (Max: 97/1.37 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=48
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=115-122 Dmg
+}}
+{{RadSpellRow2
+|name=Summon Heatstone
+|description=Summons 1 {{:Summoned: Heatstone}} for light and Infravision
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10310
+}}
+{{RadSpellRow2
+|name=Summon Throwing Dagger
+|description=Summons 20 {{:Summoned: Throwing Dagger}}s
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=20
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #8317
+}}
+</table>
+</div>
+
+<div id="spells_level_16">
+==Level 16==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Summoning: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=160
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=See Invisible
+|description=Single Target Vision Enhancer
+|era={{Classic Short}}
+|school=Divination
+|location=Autogranted<br>Vendor
+|mana=25
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=27 Min
+|max=
+}}
+{{RadSpellRow2
+|name=Shielding
+|description=Self Only Hit Point (HP), Magic Resist (MR), and Armor Class (AC) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+50 Max HP<br>+11 AC<br>+12 Magic Resist
+}}
+{{RadSpellRow2
+|name=Summon Tiny Ring
+|description=Focuses mana into the form of a tiny ring that allows you to cast many spells faster. This item works on spells up to level twenty-four.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23509
+}}
+</table>
+</div>
+
+<div id="spells_level_17">
+==Level 17==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Summoning: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=160
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Rain of Fire
+|description=Area of Effect (AE) Fire-based spell that hits your target with 3 waves (Max: 56)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendorr
+|mana=125
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=75 Dmg
+}}
+{{RadSpellRow2
+|name=Summon Phantom Leather
+|description=Focuses mana into the form of a pack of phantom leather armor.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=100
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #17310
+}}
+{{RadSpellRow2
+|name=Summon Waterstone
+|description=Summons 1 {{:Summoned: Waterstone}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10342
+}}
+</table>
+</div>
+
+<div id="spells_level_18">
+==Level 18==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bolt of Flame
+|description=Single Target Fire-based Projectile Direct Damage (DD) (Max: 156/1.49 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Autogranted<br>Vendor
+|mana=102
+|kind=Damage
+|targ=Bolt
+|duration=Instant
+|max=261-297 Dmg
+}}
+{{RadSpellRow2
+|name=Expulse Summoned
+|description=Single Target Direct Damage (DD) vs Summoned (Max: 94)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=41
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=113-122 Dmg
+}}
+{{RadSpellRow2
+|name=Lesser Summoning: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Renew Summoning
+|description=Pet Only Heal (Max: 220)
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=36
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=75-87 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_19">
+==Level 19==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Elemental Shield
+|description=Self Only Fire Resist (FR) and Cold Resist (CR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+15 Cold Resist<br>+15 Fire Resist
+}}
+{{RadSpellRow2
+|name=Lesser Summoning: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Shield of Flame
+|description=Single Target Fire-based Damage Shield (DS) (Max: 9)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Autogranted<br>Vendor
+|mana=60
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+15 Fire Resist
+}}
+{{RadSpellRow2
+|name=Tiny Companion
+|description=Shrinks your pet, allowing it better mobility in tight quarters.
+|era={{Classic Short}}
+|school=Alteration
+|location=Autogranted<br>Vendor
+|mana=50
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_20">
+==Level 20==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lesser Summoning: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Spear of Warding
+|description=Summons 1 {{:Summoned: Spear of Warding}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=60
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #7309
+}}
+{{RadSpellRow2
+|name=Summon Arrows
+|description=Summons 20 {{:Summoned: Arrow}}s
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=30
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #8316
+}}
+{{RadSpellRow2
+|name=Summon Jade Bracelet
+|description=Focuses mana into the form of a jade bracelet that increases the damage of many spells. This item works on spells up to level thirty-four.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23506
+}}
+{{RadSpellRow2
+|name=Summon Wooden Bracelet
+|description=Focuses mana into the form of a wooden bracelet that increases the damage of many affliction spells. This item works on spells up to level twenty.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #59561
+}}
+</table>
+</div>
+
+<div id="spells_level_21">
+==Level 21==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cornucopia
+|description=Summons 20 {{:Summoned: Black Bread}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=25
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13078
+}}
+{{RadSpellRow2
+|name=Lesser Summoning: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor (OoT)
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Silver Choker
+|description=Focuses mana into the form of a silver choker that sometimes allows you to cast a spell without consuming any reagents. This item works on spells up to level twenty-four.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23501
+}}
+</table>
+</div>
+
+<div id="spells_level_22">
+==Level 22==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Everfount
+|description=Summons 20 {{:Summoned: Globe of Water}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=25
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #13079
+}}
+{{RadSpellRow2
+|name=Flame Flux
+|description=Area of Effect (AE) Fire-based Point Blank (PB) Direct Damage (DD) (Max: 96)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=123
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=89-96 Dmg
+}}
+{{RadSpellRow2
+|name=Malaise
+|description=Single Target Fire Resist (FR), Magic Resist (MR), Cold Resist (CR), and Poison Resist (PR) Debuff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=60
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-20 Cold Resist<br>-20 Magic Resist<br>-20 Poison Resist<br>-20 Fire Resist
+}}
+{{RadSpellRow2
+|name=Summoning: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=240
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_23">
+==Level 23==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shock of Spikes
+|description=Magic-based Direct Damage (DD) (Max: 176/1.6 DPM)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=75
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=196-227 Dmg
+}}
+{{RadSpellRow2
+|name=Summoning: Fire
+|description=Summons a Fire Elemental
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=240
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_24">
+==Level 24==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Major Shielding
+|description=Self Only Hit Point (HP), Armor Class (AC), and Magic Resist (MR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+75 Max HP<br>+15 AC<br>+14 Magic Resist
+}}
+{{RadSpellRow2
+|name=Staff of Runes
+|description=Summons 1 {{:Summoned: Staff of Runes}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=60
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6332
+}}
+{{RadSpellRow2
+|name=Summoning: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=240
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_25">
+==Level 25==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dismiss Summoned
+|description=Single Target Direct Damage (DD) vs Summoned (Max: 162/1.8 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=73
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=226-244 Dmg
+}}
+{{RadSpellRow2
+|name=Phantom Chain
+|description=Self Only Armor Class (AC) and Hit Point (HP) Regeneration (+2/tick) (Consumes [[Cat's Eye Agate]] x2 when cast)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Regen
+|targ=Self
+|duration=Permanent
+|max=+2 HP/tick<br>+11 AC
+}}
+{{RadSpellRow2
+|name=Summon Phantom Chain
+|description=Focuses mana into the form of a pack of phantom chain mail.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=200
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #17310
+}}
+{{RadSpellRow2
+|name=Summoning: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=240
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_26">
+==Level 26==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Summoning: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Rain of Spikes
+|description=Area of Effect (AE) spell hits your target with 3 waves (Max: 91)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=162
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=91 Dmg
+}}
+{{RadSpellRow2
+|name=Sword of Runes
+|description=Summons {{:Summoned: Sword of Runes}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=75
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #5319
+}}
+</table>
+</div>
+
+<div id="spells_level_27">
+==Level 27==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expedience
+|description=Outdoor Only Pet Movement Speed Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=E. Com.
+|mana=45
+|kind=Pet
+|targ=Pet
+|duration=12 Min
+|max=Run Speed
+}}
+{{RadSpellRow2
+|name=Greater Summoning: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Leather Mantle
+|description=Focuses mana into the form of a leather mantle that allows many of your beneficial spells to last a longer period of time.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23504
+}}
+</table>
+</div>
+
+<div id="spells_level_28">
+==Level 28==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Expel Summoned
+|description=Single Target Direct Damage (DD) vs Summoned (Max: 273)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=108
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=243-309 Dmg
+}}
+{{RadSpellRow2
+|name=Greater Summoning: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Inferno Shield
+|description=Single Target Damage Shield (DS) & Fire Resist (FR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=80
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+20 Fire Resist
+}}
+</table>
+</div>
+
+<div id="spells_level_29">
+==Level 29==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burnout II
+|description=Pet only Strength (STR) and Haste Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=75
+|kind=Pet
+|targ=Pet
+|duration=60 Min
+|max=+45 STR<br>+35% Atkspd<br>+7 AC
+}}
+{{RadSpellRow2
+|name=Greater Summoning: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Coldstone
+|description=Summons 1 {{:Summoned: Coldstone}} that gives Ultravision and 5 Armor Class (AC)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=40
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10323
+}}
+</table>
+</div>
+
+<div id="spells_level_30">
+==Level 30==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dimensional Hole
+|description=Summons 1 {{:Dimensional Hole (Item)}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor: Ak'Anon, Erudin, Neriak
+|mana=60
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #17305
+}}
+{{RadSpellRow2
+|name=Monster Summoning I
+|description=Summon a Monster Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Shiny Bauble
+|description=Focuses mana into the form of a shiny bauble that sometimes allows you to cast a spell for a reduced mana cost. This item works on spells up to level fifty.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23513
+}}
+</table>
+</div>
+
+<div id="spells_level_31">
+==Level 31==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Blaze
+|description=Single Target Fire-based Direct Damage (DD) (Max: 295/1.9 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=136
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=418 Dmg
+}}
+{{RadSpellRow2
+|name=Minor Conjuration: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Shard of the Core
+|description=Summons 1 {{:Summoned: Shard of the Core}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=NPC Drop
+|mana=50
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #30275
+}}
+</table>
+</div>
+
+<div id="spells_level_32">
+==Level 32==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Shielding
+|description=Self Only Hit Point (HP), Magic Resist (MR), and Armor Class (AC) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+100 Max HP<br>+18 AC<br>+16 Magic Resist
+}}
+{{RadSpellRow2
+|name=Minor Conjuration: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Nullify Magic
+|description=Removes a magical effect from your target
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=50
+|kind=Detrimental
+|targ=Single
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_33">
+==Level 33==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Cinder Bolt
+|description=Fire Projectile Direct Damage (DD) (Max: 333/1.9 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=165
+|kind=Damage
+|targ=Bolt
+|duration=Instant
+|max=499-510 Dmg
+}}
+{{RadSpellRow2
+|name=Minor Conjuration: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Staff of Symbols
+|description=Summons 1 {{:Summoned: Staff of Symbols}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #6333
+}}
+</table>
+</div>
+
+<div id="spells_level_34">
+==Level 34==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Minor Conjuration: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Refresh Summoning
+|description=Renews the health of your elemental pet, healing between 43 and 175 damage, and curing their diseases, poisons, and curses.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=93
+|kind=Pet
+|targ=Pet
+|duration=Instant
+|max=145-175 HP<br>Cure 10 Disease<br>Cure 10 Poison<br>Cure 10 Curse
+}}
+</table>
+</div>
+
+<div id="spells_level_35">
+==Level 35==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Dagger of Symbols
+|description=Summons 1 {{:Summoned: Dagger of Symbols}}
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=100
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #7310
+}}
+{{RadSpellRow2
+|name=Rain of Lava
+|description=Area of Effect Fire-based spell that hits your target with 3 waves
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=250
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=172 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_36">
+==Level 36==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lesser Conjuration: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Companion
+|description=Summon your Pet to Your Location
+|era={{Classic Short}}
+|school=Conjuration
+|location=E. Com.
+|mana=50
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_37">
+==Level 37==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Lesser Conjuration: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Ring of Flight
+|description=Summons 1 {{:Summoned: Ring of Levitation}} that gives levitation
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=100
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #10405
+}}
+{{RadSpellRow2
+|name=Summon Twisted Ring
+|description=Focuses mana into the form of a twisted ring allows you to cast many spells faster. This item works on spells up to level fifty.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23510
+}}
+</table>
+</div>
+
+<div id="spells_level_38">
+==Level 38==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Barrier of Combustion
+|description=Single Target Damage Shield (DS 18-20) & Fire Resist (FR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+22 Fire Resist
+}}
+{{RadSpellRow2
+|name=Lesser Conjuration: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Phantom Plate
+|description=Focuses mana into the form of a pack of phantom plate armor.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=300
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #17310
+}}
+</table>
+</div>
+
+<div id="spells_level_39">
+==Level 39==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Flame Arc
+|description=Area of Effect (AE) Point Blank (PB) Fire Direct Damage (DD) (Max: 181)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=199
+|kind=Damage
+|targ=PB AE
+|duration=Instant
+|max=171-181 Dmg
+}}
+{{RadSpellRow2
+|name=Lesser Conjuration: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_41">
+==Level 41==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Conjuration: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Elemental Armor
+|description=Self Only Cold Resist (CR) and Fire Resist (FR) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=100
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+30 Cold Resist<br>+30 Fire Resist
+}}
+{{RadSpellRow2
+|name=Phantom Plate
+|description=Self Only Hit Point Regeneration (+3/tick) and Armor Class (AC) Buff (Consumes [[Cat's Eye Agate]] x3 when cast)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Regen
+|targ=Self
+|duration=Permanent
+|max=+3 HP/tick<br>+15 AC
+}}
+{{RadSpellRow2
+|name=Shock of Swords
+|description=Single Target Magic-based Direct Damage (DD) (Max: 600/2.4 DPM)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=162
+|kind=Damage
+|targ=Single
+|duration=Instant
+|max=584 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_42">
+==Level 42==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Bounce
+|description=Surrounds your body in a reflective aura, providing a chance for all incoming spells to rebound back against the caster.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=100
+|kind=Utility
+|targ=Self
+|duration=12 Sec
+|max=
+}}
+{{RadSpellRow2
+|name=Conjuration: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Opal Bracelet
+|description=Focuses mana into the form of an opal bracelet that increases the damage of many spells. This item works on spells up to level 52.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23507
+}}
+{{RadSpellRow2
+|name=Summon: Orb of Exploration
+|description=Focuses mana into an orb of exploration which provides greatly improved night vision and the ability to see normally invisible creatures.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=50
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #59569
+}}
+</table>
+</div>
+
+<div id="spells_level_43">
+==Level 43==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Arch Shielding
+|description=Self Only Hit Point (HP), Magic Resist (MR), and Armor Class (AC) Buff
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=200
+|kind=Buff
+|targ=Self
+|duration=Permanent
+|max=+150 Max HP<br>+22 AC<br>+20 Magic Resist
+}}
+{{RadSpellRow2
+|name=Conjuration: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Elemental Maelstrom
+|description=Single Target Magic-based Damage over Time (DoT) (Max: 600)
+|era={{Classic Short}}
+|school=Evocation
+|location=NPC Drop
+|mana=87
+|kind=Damage Over Time
+|targ=Single
+|duration=30 Sec
+|max=-250 Dmg<br>-69 HP/tick
+}}
+</table>
+</div>
+
+<div id="spells_level_44">
+==Level 44==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Conjuration: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Malaisement
+|description=Single Target Fire Resist (FR), Cold Resist (CR), Magic Resist (MR), and Poison Resist (PR) Debuff (Max: 40)
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor.
+|mana=100
+|kind=Detrimental
+|targ=Single
+|duration=11 Min
+|max=-40 Cold Resist<br>-40 Magic Resist<br>-40 Poison Resist<br>-40 Fire Resist
+}}
+{{RadSpellRow2
+|name=Modulating Rod
+|description=Summons 1 {{:Summoned: Modulating Rod}} that can convert Hit Points (HP) to Mana (225 HP to 150 Mana)
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Summon
+|targ=Single Friendly (or Self)
+|duration=Instant
+|max=Summon Item #6346
+}}
+{{RadSpellRow2
+|name=Primal Remedy
+|description=Renews the health of your elemental pet, healing between 120 and 120 damage every 6 seconds for 30s.
+|era={{Classic Short}}
+|school=Alteration
+|location=
+|mana=200
+|kind=Pet
+|targ=Pet
+|duration=30 Sec
+|max=+120 HoT
+}}
+{{RadSpellRow2
+|name=Summon Stone Bracelet
+|description=Focuses mana into the form of a stone bracelet that increases the damage of many affliction spells. This item works on spells up to level forty four.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=80
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #59562
+}}
+</table>
+</div>
+
+<div id="spells_level_45">
+==Level 45==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Shield of Lava
+|description=Single Target Damage Shield (DS) & Fire Resist (FR) Buff (Max: 25)
+|era={{Classic Short}}
+|school=Abjuration
+|location=Vendor
+|mana=120
+|kind=Utility
+|targ=Single Friendly (or Self)
+|duration=15 Min
+|max=+25 Fire Resist
+}}
+{{RadSpellRow2
+|name=Summon Orb
+|description=Mage Epic: Summons 1 {{:Orb of Mastery}} that can summon a pet at level 46
+|era={{Classic Short}}
+|school=Conjuration
+|location=Quest
+|mana=500
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #28034
+}}
+</table>
+</div>
+
+<div id="spells_level_46">
+==Level 46==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Conjuration: Earth
+|description=Summons an Earth Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Ward of Calliav
+|description=Places the Ward of Calliav on your pet, absorbing up to 11747 damage from the next 1 melee strikes or direct damage spells that hit it.
+|era={{Classic Short}}
+|school=Abjuration
+|location=
+|mana=200
+|kind=Pet
+|targ=Pet
+|duration=36 Min
+|max=
+}}
+</table>
+</div>
+
+<div id="spells_level_47">
+==Level 47==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Burnout III
+|description=Pet Only Armor Class (AC), Strength (STR) and Haste Buff
+|era={{Classic Short}}
+|school=Alteration
+|location=Vendor
+|mana=150
+|kind=Pet
+|targ=Pet
+|duration=60 Min
+|max=+50 STR<br>+60% Atkspd<br>+11 AC
+}}
+{{RadSpellRow2
+|name=Greater Conjuration: Fire
+|description=Summons a Fire Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Lava Bolt
+|description=Single Target Fire-based Projectile Direct Damage (DD) (Max: 810, 2.7 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=238
+|kind=Damage
+|targ=Bolt
+|duration=Instant
+|max=817 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_48">
+==Level 48==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Banish Summoned
+|description=Single Target Direct Damage (DD) vs Summoned (Max: 585, 2.6 DPM)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor
+|mana=136
+|kind=Damage
+|targ=Construct/Elemental
+|duration=Instant
+|max=529-540 Dmg
+}}
+{{RadSpellRow2
+|name=Greater Conjuration: Air
+|description=Summons an Air Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Elemental Blanket
+|description=Focuses mana into the form of an elemental blanket.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=220
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #20075
+}}
+</table>
+</div>
+
+<div id="spells_level_49">
+==Level 49==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Greater Conjuration: Water
+|description=Summons a Water Elemental Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=Vendor
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Rain of Swords
+|description=Area of Effect (AE) Magic-based Direct Damage (DD) that hits your target(s) with 3 waves (Max: 324 per Wave)
+|era={{Classic Short}}
+|school=Evocation
+|location=Vendor.
+|mana=375
+|kind=Damage
+|targ=Targeted AE
+|duration=Instant
+|max=324 Dmg
+}}
+</table>
+</div>
+
+<div id="spells_level_50">
+==Level 50==
+<table class="eoTable2 " style="width:100%;">
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Target</th>
+      <th>Mana</th>
+      <th>Max Effect</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Location</th>
+      <th>Era</th>
+    </tr>
+{{RadSpellRow2
+|name=Monster Summoning II
+|description=Summons a Monster Pet
+|era={{Classic Short}}
+|school=Conjuration
+|location=NPC Drop
+|mana=200
+|kind=Pet
+|targ=Self
+|duration=Instant
+|max=
+}}
+{{RadSpellRow2
+|name=Summon Golden Choker
+|description=Focuses mana into the form of a gold choker that sometimes allows you to cast a spell without consuming any reagents. This item works on spells up to level sixty.
+|era={{Classic Short}}
+|school=Conjuration
+|location=
+|mana=160
+|kind=Summon
+|targ=Self
+|duration=Instant
+|max=Summon Item #23502
+}}
+</table>
+</div>
+
+= Magician AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Magician Class AAs}}
+
+=Skills=
+
+== Pet Information ==
+
+{{#lsth:Pet Guide|[[Magician]] Pets}}
+
+==Specialization==
+
+{{#lsth:Skill Specialization|Magician}}
+
+==Casting Skills==
+
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[Abjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Alteration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Channelling]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Conjuration]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Divination]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Evocation]]
+| 235
+| 235
+|-
+| 1
+| No
+| [[Meditate]]
+| 235
+| 252
+|-
+| 20
+| No
+| [[Specialization]]
+| 200
+| 200
+|}
+
+==Combat Skills==
+{| class="wikitable sortable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+| 1
+| No
+| [[1 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[2 Hand Blunt]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Bind Wound]]
+| 100
+| 100
+|-
+| 1
+| No
+| [[Defense]]
+| 145
+| 145
+|-
+| 1
+| No
+| [[Hand to Hand]]
+| 75
+| 75
+|-
+| 1
+| No
+| [[Offense]]
+| 140
+| 140
+|-
+| 1
+| No
+|[[Skill Piercing|1 Hand Piercing]]
+| 110
+| 110
+|-
+| 1
+| No
+| [[Throwing]]
+| 75
+| 75
+|-
+| 20
+| Yes
+| [[Dodge]]
+| 75
+| 75
+|}
+
+==Miscellaneous Skills==
+{| class="wikitable"
+! Level
+! Trained
+! Skill
+! Cap Until 50
+! Cap Above 50
+|-
+|1
+|No
+|[[Athletics]]
+|?
+|?
+|-
+|1
+|No
+|[[Strategy]]
+|?
+|?
+|-
+| 1
+| No
+| [[Alcohol Tolerance]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Beg]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Fishing]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Sense Heading]]
+| 200
+| 200
+|-
+| 1
+| No
+| [[Swimming]]
+| 200</td>
+| 200</td>
+|}
+
+= Magician-Specific Quests =
+
+{{#lsth:Class Race Quest List|Magician}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Magician Equipment | Magician Equipment]] for the full list of gear usable by magicians.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Magician]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Magician]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Magician]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Magician]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Magician]]}}
+
+
+                                                          Magician Armor Comparison (Velious Quest Armor)
+
+
+''' Magician Armor Comparison (Velious Quest Armor) ''' <span id="magician_armor_comparison"></span>
+
+{| class="eoTable2"
+!
+! AC
+! STR
+! STA
+! AGI
+! DEX
+! WIS
+! INT
+! CHA
+! HP
+! Mana
+! SvM
+! SvF
+! SvC
+! SvP
+! SvD
+|-
+| Thurgadin
+| 45 || 0 || 26 || 14 || 0 || 0 || 42 || 0 || 110 || 160 || 19 || 15 || 13 || 13 || 11
+|-
+| Kael
+| 58 || 0 || 27 || 15 || 0 || 0 || 53 || 0 || 140 || 210 || 29 || 23 || 16 || 18 || 23
+|-
+| Skyshrine
+| 45 || 4 || 36 || 16 || 1 || 1 || 49 || 1 || 265 || 285 || 28 || 20 || 27 || 21 || 24
+|-
+| Mischief - 1 Bracer
+| 74 || 14 || 51 || 24 || 6 || 10 || 46 || 3 || 190 || 240 || 25 || 50 || 50 || 25 || 25
+|}
+
+
+{{Template: Navbox Classes}}

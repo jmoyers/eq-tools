@@ -1,0 +1,419 @@
+<div style="float:left;margin-right:20px;">
+__TOC__
+</div>
+
+ A Warrior is a master of armed combat, in all of its forms. He's at home on the battlefield, and is trained to take as much punishment as he doles out.<br> By nature, Warriors have more health points than any other class. 
+ - EverQuest manual
+ 
+=Description=
+[[File:C warrior.gif|right]]
+
+Warriors are the masters of armed combat and defense, taking the point in battles and going head-to-head with the most dangerous creatures of Norrath. Warriors are a melee class with the ability to wear plate armor and wield all types of weapons.
+
+Warriors build their strength and stamina to unheard of levels, making them far hardier than any other class. When combined with their heavy armor and excellent defensive skills, warriors are unmatched in their ability to survive the most brutal battles. Warriors train themselves in the skills of combat, mastering the use of all weapons and tactics. Warriors also learn to taunt their opponents, making themselves the focus of all their enemies' attacks, allowing the less resilient members of their group to remain safe from harm.
+
+Warriors are often the cornerstone of a good group, providing a strong defense while also dealing heavy damage to their enemies. Warriors fare poorly when adventuring alone, and are an excellent choice for those who enjoy grouping and taking the front line in battle.
+
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Warrior || Champion || Myrmidon || Warlord
+|}
+
+= Creation Guide =
+
+== Picking the Right Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Barbarian]]''' || 103 || 95 || 82 || 70 || 70 || 60 || 55 
+|-
+| style="text-align: left"| '''[[Dark Elf]]''' || 60 || 65 || 90 || 75 || 83 || 99 || 60
+|-
+| style="text-align: left"| '''[[Dwarf]]''' || 90 || 90 || 70 || 90 || 83 || 60 || 45
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 80 || 95 || 105 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Gnome]]''' || 60 || 70 || 85 || 85 || 67 || 98 || 60
+|-
+| style="text-align: left"| '''[[Half Elf]]''' || 70 || 70 || 90 || 85 || 60 || 75 || 75
+|-
+| style="text-align: left"| '''[[Halfling]]''' || 70 || 75 || 95 || 90 || 80 || 67 || 50
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55
+|-
+| style="text-align: left"| '''[[Kerra]]''' || TBD || TBD || TBD || TBD || TBD || TBD || TBD
+|-
+| style="text-align: left"| '''[[Ogre]]''' || 130 || 127 || 70 || 70 || 67 || 60 || 37
+|-
+| style="text-align: left"| '''[[Troll]]''' || 108 || 114 || 83 || 75 || 60 || 52 || 40
+|-
+| style="text-align: left"| '''[[Wood Elf]]''' || 65 || 65 || 95 || 80 || 80 || 75 || 75
+|-
+| style="text-align: left"| '''[[Warrior]] Adds''' || 10 || 15 || 5 ||  ||  ||  || 
+|}
+
+== Impact from stats ==
+
+A warrior's primary focus is on being able to withstand as much damage as possible, with a secondary focus on dealing damage. Therefore, stamina and agility are important for hit points and avoidance respectively, while strength is also vital both for dealing higher melee damage and being able to carry the full weight of the heavy plate armor and weapons warriors often wield.
+
+== As a primary class ==
+
+The warrior makes for a solid foundation to any build, offering the largest hit point pool of any class, high damage mitigation, and respectable melee damage output. Having warrior as your primary class ensures you'll be able to wear the heaviest armor and wield almost any weapon you might find, and also gives you an edge when it comes to survivability.
+
+However, as warriors do not have any mana, the class doesn't contribute to your maximum mana pool, meaning you'll find yourself running dry on mana more quickly than someone using a caster or hybrid class as their primary class. The warrior class also brings very little to the table outside of melee damage and durability, leaving you at a slight disadvantage against opponents that are highly resistant or immune to physical attacks.
+
+
+== Religion ==
+
+Generally speaking being Agnostic is a fairly safe bet in Everquest.  Religion serves only to get you into trouble in many situations.  The disadvantage to doing this is that some items, '''such as deity-specific Cultural armor sets''', and some quests can only be done by followers of certain religions.  Following a religion will at worst get you killed in some areas, but generally you can avoid these.  Following [[Innoruuk]] is probably the most dangerous religion as they have the most places in the game where they are Kill on Sight.  In the end it will not make an enormous difference to your character which Deity you choose.
+
+* {{Class And Religion Gear Search|Warrior|Cazic Thule}}
+* {{Class And Religion Gear Search|Warrior|Innoruuk}}
+* {{Class And Religion Gear Search|Warrior|Rallos Zek}}
+
+=Skills=
+
+==Berserker Frenzy (Warrior Ability)==
+
+Going into a berserker frenzy is an innate, passive ability of the warrior class that is present from level 1 onward.  Anytime a player character warrior's health falls too low, their enters a berserker frenzy, converting all of their critical hits into crippling blows, which do more damage and have a chance to stun the enemy.
+
+A warrior will go berserk when falling below 40% health and will remain berserk permanently until his or her health reaches 45%.
+
+While berserk, the warrior will score a crippling blow whenever they would normally have scored a critical hit (crippling blows cause stun and do more damage than a critical hit).  The run speed penalty for low health characters is also mitigated for berserk warriors.
+
+Going berserk is accompanied by the message, "Soandso goes into a berserker frenzy!" which will appear in the chat boxes of both the warrior and another other nearby players.  "Soandso is no longer berserk" signals the end of the effect.
+
+Berserking is a hard-coded mechanic of the class and stacks with all buffs, disciplines, etc.
+
+==Magic Resistance==
+
+Warriors will gain a progressively stronger resistance to magic as they level, at a rate of +1 MR every 2 levels.
+
+==Primary Hand Damage Bonuses==
+
+This is the same for all melee classes, but listed here for reference. See the Combat section of [[Game Mechanics]] for more information.
+
+Level 28: 1
+
+Level 31: 2
+
+Level 34: 3
+
+Level 37: 4
+
+Level 40: 5
+
+Level 43: 6
+
+Level 46: 7
+
+Level 49: 8
+
+Level 52: 9
+
+Level 55: 10
+
+Level 58: 11
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! scope="col" | '''Level'''
+! scope="col" | '''Skill'''
+! scope="col" | '''Trained'''
+! scope="col" | '''Pre 50 Cap'''
+! scope="col" | '''Post 50 Cap'''
+|-
+|1
+|[[1 Hand Blunt]]
+|No
+|200
+|250
+|-
+
+|1
+|[[Skill Piercing|1 Hand Piercing]]
+|No
+|200
+|240
+|-
+
+|1
+|[[1 Hand Slashing]]
+|No
+|200
+|250
+|-
+
+|1
+|[[2 Hand Blunt]]
+|No
+|200
+|250
+|-
+
+|1
+|[[2H Piercing|2 Hand Piercing]]
+|No
+|200?
+|250?
+|-
+
+|1
+|[[2 Hand Slashing]]
+|No
+|200
+|250
+|-
+
+|1
+|[[Archery]]
+|No
+|200
+|240
+|-
+
+|1
+|[[Bash]]
+|No
+|200
+|240
+|-
+
+|1
+|[[Bind Wound]]
+|No
+|175
+|210
+|-
+
+|1
+|[[Defense]]
+|No
+|210
+|252
+|-
+
+|1
+|[[Dual Wield]]
+|No
+|210
+|240
+|-
+
+|1
+|[[Hand to Hand]]
+|No
+|100
+|100
+|-
+
+|1
+|[[Kick]]
+|No
+|149
+|210
+|-
+
+|1
+|[[Offense]]
+|No
+|210
+|252
+|-
+
+|1
+|[[Slam]]
+|No
+|220
+|240
+|-
+
+|1
+|[[Taunt]]
+|No
+|200
+|230*
+|-
+
+|1
+|[[Throwing]]
+|No
+|113
+|200
+|-
+
+|5
+|[[Skill_Cleave|Cleave]]
+|No
+|200
+|
+|-
+
+|5
+|[[Dodge]]
+|No
+|140
+|175
+|-
+
+|5
+|[[Parry]]
+|No
+|200
+|230
+|-
+
+|10
+|[[Disarm]]
+|No
+|200
+|200
+|-
+
+|15
+|[[Block]]
+|No
+|180
+|
+|-
+
+|15
+|[[Double Attack]]
+|No
+|205
+|245
+|-
+
+|15
+|[[Riposte]]
+|No
+|200
+|225
+|-
+
+|46
+|[[Skill_Triple_Attack|Triple Attack]]
+|No
+|100
+|
+|}
+<nowiki>*</nowiki>200 before Oct 8, 2001
+
+==Miscellaneous Skills==
+
+{| class="eoTable2"
+! Skill Name
+! Level Obtained
+! Trained
+! Max
+|-
+| [[Athletics]]
+| 1
+| No
+| ?
+|-
+| [[Strategy]]
+| 1
+| No
+| ?
+|-
+| [[Skill_Alcohol_Tolerance|Alcohol Tolerance]]
+| 1
+| No
+| 255
+|-
+| [[Skill_Begging|Begging]]
+| 1
+| No
+| 255?
+|-
+| [[Skill_Bind_Wound|Bind Wound]]
+| 1
+| No
+| 210
+|-
+| [[Skill_Sense_Heading|Sense Heading]]
+| 1
+| No
+| 200
+|-
+| [[Skill_Swimming|Swimming]]
+| 1
+| No
+| 200
+|}
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Striker Stance
+| {{#section:Stances & Invocations|Striker}}
+|-
+| Defensive Stance
+| {{#section:Stances & Invocations|Defensive}}
+|}
+
+= Warrior AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Warrior Class AAs}}
+
+= Warrior-Specific Quests =
+
+{{#lsth:Class Race Quest List|Warrior}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.  See also [[Equipping a Warrior]].
+
+Check [[:Category:Warrior Equipment|Warrior Equipment]] for the full list of gear usable by warriors.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Warrior]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Warrior]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Warrior]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Warrior]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Warrior]]}}
+
+= FAQ =
+
+
+{{Navbox Classes}}

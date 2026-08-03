@@ -1,0 +1,568 @@
+<div style="float:left;margin-right:20px;">__TOC__</div>
+
+ The Monk is dedicated to honing his body into a pure weapon, shunning most weapons and forms of armor.<br> She's very religious as well, and the gods are known to bless Monks by magically enhancing their attacks.
+ - EverQuest manual
+
+=Description=
+[[File:C Monk.gif|right]]
+Monks devote their energies to the pursuit of physical perfection, shaping their very bodies into deadly machines and building strength with pure will. They are renowned fighters with bodies of steel, frightening even the strongest of opponents. Monks are a melee class with the ability to wear leather armor, wield blunt weapons, and use unarmed combat styles.
+
+Monks forego heavy armor and almost all weapons in order to hone themselves into masters of combat, using their fists and a stout staff to make their mark upon Norrath. Monks learn many special attacks to enhance their damage dealing abilities, including the dragon punch and the legendary flying kick.
+
+In their martial studies monks also learn other useful skills, including the ability to move silently and fall safely from great heights. Experienced monks also learn to feign death, slowing their body's functions enough to fool most observers into believing them dead - this trick often allows the monk to escape dangerous situations as monsters wander off, thinking the monk defeated.
+
+Monks are a specialist class, focusing on physical combat to the exclusion of all else. Monks provide a powerful ally in a group, though it's not unusual to see a monk adventuring alone. The monk is a good choice for players who enjoy a strong offensive role in combat and leading groups in their dungeon adventures.
+
+=== Class Titles ===
+
+In the original [[Kunark]] expansion, classes would gain new titles at levels over 50. In EverQuest Legends, these titles are not available, and it is unknown how they will be presented. While they may be available with future level cap increases, they are included here only for posterity:
+
+{| class="eoTable2"
+! Level 1-50
+! Level 51-54
+! Level 55-59
+! Level 60
+|- style="text-align: center;"
+| Monk || Disciple || Master || Grandmaster
+|}
+
+= Creation Guide =
+
+== Picking a Race ==
+
+When creating a character you must first select your primary race.  This race will be locked in at level 11, and can't be changed until you unlock other races.  Below are the race options for this class, as well as their stat line.
+
+When selecting a race, a big consideration is the factions it is associate with and opposed to.  There may also be some racial benefits or penalties to consider as well.  Clicking on the name of the race will take you to the detailed race pages where these are defined in detail.
+
+{| class="eoTable2 sortable" style="text-align:center"
+|-
+! Race !! Str !! Sta !! Agi !! Dex !! Wis !! Int !! Cha
+|-
+| style="text-align: left"| '''[[Froglok]]''' || 70 || 80 || 100 || 100 || 75 || 75 || 50
+|-
+| style="text-align: left"| '''[[Human]]''' || 75 || 75 || 75 || 75 || 75 || 75 || 75
+|-
+| style="text-align: left"| '''[[Iksar]]''' || 70 || 70 || 90 || 85 || 80 || 75 || 55
+|-
+| style="text-align: left"| '''[[Monk]] Adds''' || 5 || 5 || 10 || 10 ||  ||  || 
+|}
+
+== Impact from stats ==
+
+Monks have a number of stats that they benefit from. Strength would be the main focus for DPS and Stamina for pulling or raid min/maxing. 
+
+*'''Strength'''     - Affects maximum and average melee damage, both from auto attacks and from special attacks like flying kick. In short, higher strength is more damage from your monk over time.
+*'''Stamina'''      - Affects your maximum Hit Points. This stat has a small impact on HP totals, but some like as much as possible. 
+*'''Agility'''      - Affects how often you are struck by enemies, and lowers the average damage you take from enemy hits. The impact is generally agreed to be small.  
+*'''Dexterity'''    - Effects the speed at which you learn weapon skills and the rate at which your magic weapon effects go off a little.  
+*'''Wisdom'''       - Affects how quickly you raise general and craft skills if higher than Intelligence. 
+*'''Intelligence''' - Affects how quickly you raise general and craft skills if higher than Wisdom.        
+*'''Charisma'''     - Affects the prices you pay for vendor goods, and the prices they pay for your goods, a little. Your reputation with a particular vendor factors into this somewhat and there is a cap.
+
+Monks get little choice of religion. Iksars must choose Cazic-Thule.  Humans have the ability to be agnostic or to follow Quellious.  This choice will have only a slight impact on your faction: in general agnostics will be slightly better received in most places, but Quellious followers will better received by the (few) other Quellious worshippers, but both will be welcome in all good cities and killed on sight in evil ones.
+
+Your choice of religion will determine your starting city: agnostic Monks begin in Qeynos, while Monks who follow Quellious will start in Freeport.  Also Quellious worshippers can use a (''very limited'') extra set of equipment that agnostics can't: {{Class And Religion Gear Search|Monk|Quellious}}.  The two best such items are {{:Idol of Quellious}} and {{:Imbued Platinum Topaz Necklace}}, and neither is very good for Monks, so this gear is largely meaningless.
+
+= Monk AAs =
+All AAs are available at [[Alternate Advancement]], the class AAs listed here are updated automatically from there.
+{{#lsth:Alternate Advancement|Monk Class AAs}}
+
+=Skills=
+
+==Combat Skills==
+
+{| class="eoTable2 sortable"
+! Skill Name
+! Level Obtained
+! Trained
+! Max until 50
+! Max after 50
+|-
+| [[Skill_1H_Blunt|1H Blunt]]
+| 1
+| No
+| 270
+| 270
+|-
+| [[Skill_2H_Blunt|2H Blunt]]
+| 1
+| No
+| 270
+| 270
+|-
+| [[Skill_Defense|Defense]]
+| 1
+| No
+| 225
+| 252
+|-
+| [[Skill_Hand_to_Hand|Hand to Hand]]
+| 1
+| No
+| 270
+| 270
+|-
+| [[Skill_Offense|Offense]]
+| 1
+| No
+| 230
+| 252
+|-
+| [[Skill_Dodge|Dodge]]
+| 1
+| No
+| 250
+| 250
+|-
+| [[Skill_Dual_Wield|Dual Wield]]
+| 1
+| No
+| 252
+| 252
+|-
+| [[Skill_Kick|Kick]]
+| 1
+| No
+| 255
+| 255
+|-
+| [[Skill_Mend|Mend]]
+| 1
+| No
+| 200
+| 200
+|-
+| [[Skill_Throwing|Throwing]]
+| 1
+| No
+| 250
+| 250
+|-
+| [[Skill_Round_Kick|Round Kick]]
+| 5
+| No
+| 255
+| 255
+|-
+| [[Skill_Intimidation|Intimidation]]
+| 6
+| No
+| 225
+| 225
+|-
+| [[Skill_Disarm|Disarm]]
+| 10
+| No
+| 255
+| 255
+|-
+| [[Skill_Tiger_Claw|Tiger Claw]]
+| 10
+| No
+| 255
+| 255
+|-
+| [[Skill_Block|Block]] 
+| 10
+| No
+| 205
+| 225
+|-
+| [[Skill_Double_Attack|Double Attack]]
+| 15
+| No
+| 240
+| 250
+|-
+| [[Skill_Feign_Death|Feign Death]]
+| 17
+| No
+| 200
+| 200
+|-
+| [[Skill_Eagle_Strike|Eagle Strike]]
+| 20
+| No
+| 255
+| 255
+|-
+| [[Skill_Riposte|Riposte]]
+| 20
+| No
+| 155
+| 225
+|-
+| [[Skill_Dragon_Punch|Dragon Punch]] / [[Skill_Tail_Rake|Tail Rake]]
+| 25
+| No
+| 255
+| 255
+|-
+| [[Skill_Flying_Kick|Flying Kick]]
+| 30
+| No
+| 255
+| 255
+|-
+| [[Skill_Triple_Attack|Triple Attack]]
+| 46
+| No
+| 100
+| 100
+|}
+
+== Miscellaneous Skills ==
+
+{| class="eoTable2"
+! Skill Name
+! Level Obtained
+! Trained
+! Max
+|-
+| [[Athletics]]
+| 1
+| No
+| ?
+|-
+| [[Strategy]]
+| 1
+| No
+| ?
+|-
+| [[Skill_Alcohol_Tolerance|Alcohol Tolerance]]
+| 1
+| No
+| 275
+|-
+| [[Skill_Begging|Begging]]
+| 1
+| No
+| 250
+|-
+| [[Skill_Bind_Wound|Bind Wound]]
+| 1
+| No
+| 275
+|-
+| [[Skill_Fishing|Fishing]]
+| 1
+| No
+| 200
+|-
+| [[Skill_Forage|Forage]] (Iksar Only)
+| 1
+| No
+| 50
+|-
+| [[Skill_Safe_Fall|Safe Fall]]
+| 1
+| No
+| 255
+|-
+| [[Skill_Sense_Heading|Sense Heading]]
+| 1
+| No
+| 200
+|-
+| [[Skill_Sneak|Sneak]]
+| 1
+| No
+| 113
+|-
+| [[Skill_Swimming|Swimming]]
+| 1
+| No
+| 250
+|}
+
+= Stances & Invocations =
+{| class="eoTable2"
+! Name
+! Description
+|-
+| Balanced Stance
+| {{#section:Stances & Invocations|Balanced}}
+|-
+| Offensive Stance
+| {{#section:Stances & Invocations|Offensive}}
+|-
+| Striker Stance
+| {{#section:Stances & Invocations|Striker}}
+|-
+| Evasive Stance
+| {{#section:Stances & Invocations|Evasive}}
+|-
+| Ranged Stance
+| {{#section:Stances & Invocations|Ranged}}
+|}
+
+== Disciplines ==
+
+''See also: [[Disciplines]]''
+
+* Disciplines all run off the same cooldown timer currently.  They were not changed to separate timers until many expansions later on live.  What this means is if you use Stonestance Discipline (4 min timer at lvl 60), all Disciplines will be unavailable until that 4 minutes are up.
+
+* The Reuse timers in the "Ability" window for disciplines show the reuse time at the level at which you obtain that discipline. These reuse timers will decrease as you gain levels. See table below.
+
+* Reuse timers for disciplines changes as you gain levels. For example, Voiddance refreshes at 60 minutes at lvl 54, but it decreases to 54 minutes at lvl 60.
+
+* The Duration times in the "Ability" window for disciplines are not all correct. See table below for accurate times.
+
+*(Alt-C to access) 
+
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time <br>(starting)
+! Reuse Time <br>(at 60)
+! Jan 09, 2001
+|- 
+| Resistant Discipline
+| 30
+| Grants +3 to all Resistances increasing to +10 at 50th level
+| 1 Min
+| 60 Min
+| 30 Min
+| Duration increased to 5 minutes.
+|- 
+| Fearless Discipline
+| 40
+| Immunity to "Fear" and all spells that cause "fear"
+| 11 Sec
+| 60 Min
+| 40 Min
+|-
+| Stonestance Discipline
+| 51
+| Joins your body with the strength of the earth, causing you to take greatly decreased melee damage. [60% reduction] Use this skill routinely while tanking or pulling.
+| 12 Sec
+| 12 Min
+| 4 Min
+|-
+| Thunderkick Discipline
+| 52
+| Focuses energy into your feet, allowing you to perform an especially powerful [[Flying Kick]].
+| Next Flying Kick or 3 min
+| 9 Min
+| 4 Min
+|-
+| Whirlwind Discipline
+| 53
+| Heightens your combat instincts, allowing you to [[Riposte]] every attack made on you from the front. Use this skill in dire situations while tanking.
+| 9 Sec
+| 60 Min
+| 53 Min
+|-
+| Voiddance Discipline
+| 54
+| Focuses your combat reflexes, allowing you to avoid all melee attacks made on you from any angle. Use this skill in dire situations while pulling or escaping.
+| 8 Sec
+| 60 Min
+| 54 Min
+|-
+| Innerflame Discipline
+| 56
+| Fills your body with energy, causing your attacks to do greatly improved damage. [100% increase] Use this skill in dire situations while DPSing.
+| 12 Sec
+| 30 Min
+| 26 Min
+|-
+| Hundred Fists Discipline
+| 57
+| Increases your hands speed, allowing you an increased attack rate and damage. Never use this skill, use the superior Inner Flame instead.
+| 15 Sec
+| 30 Min
+| ?? Min
+|-
+| Silentfist Discipline
+| 59
+| Focuses your rage into your hands, allowing you to perform an especially powerful [[Dragon Punch]].
+| Next Dragon Punch or 3 min
+| 9 Min
+| 8 Min
+|-
+| Ashenhand Discipline
+| 60
+| Focuses energy into your hands, allowing you to perform an especially powerful [[Eagle Strike]].
+| Next Eagle Strike or 3 min
+| 72 Min
+| 72 Min
+|-
+|}
+
+= Regeneration Rates =
+
+Your monk will gain the following amount of HP every 6 seconds at various levels depending on whether you are sitting, feigning death, or standing.
+{| class="eoTable2"
+! Level Range
+! Human Regen
+! Iksar Regen
+|-
+| Level 1-19
+| 2 sitting, 1 FD, 1 standing
+| 4 sitting, 2 FD, 2 standing
+|-
+| Level 20-49
+| 3 sitting, 1 FD, 1 standing
+| 6 sitting, 2 FD, 2 standing
+|-
+| Level 50
+| 4 sitting, 1 FD, 1 standing
+| 8 sitting, 2 FD, 2 standing
+|-
+| Level 51-55
+| 5 sitting, 3 FD, 2 standing
+| 12 sitting, 8 FD, 6 standing
+|-
+| Level 56-59
+| 6 sitting, 4 FD, 3 standing
+| 16 sitting, 12 FD, 10 standing
+|-
+| Level 60
+| 7 sitting, 5 FD, 4 standing
+| 18 sitting, 14 FD, 12 standing
+|-
+|}
+
+= Hand to Hand Damage/Delay =
+
+<span style="color:red; font-size:150%;">'''This is not yet confirmed for EverQuest Legends.'''</span>
+
+Your fists progress with level as ''weapons'' with increasingly better damage/delay ratios.
+
+{| class="eoTable2"
+! Level Range
+! Human Ratio
+! Iksar Ratio
+|-
+| Level 1-4
+| 4/36 (0.111)
+| 4/36 (0.111)
+|-
+| Level 5-9
+| 5/36 (0.139)
+| 5/36 (0.139)
+|-
+| Level 10-14
+| 6/36 (0.167)
+| 6/36 (0.167)
+|-
+| Level 15-19
+| 7/36 (0.194)
+| 7/36 (0.194)
+|-
+| Level 20-24
+| 8/36 (0.222)
+| 8/36 (0.222)
+|-
+| Level 25-29
+| 9/35 (0.257)
+| 9/36 (0.25)
+|-
+| Level 30-34
+| 10/34 (0.294)
+| 10/35 (0.286)
+|-
+| Level 35-39
+| 11/33 (0.333)
+| 11/34 (0.324)
+|-
+| Level 40-44
+| 12/32 (0.375)
+| 12/33 (0.364)
+|-
+| Level 45-49
+| 13/31 (0.419)
+| 13/32 (0.406)
+|-
+| Level 50
+| 14/30 (0.467)
+| 14/31 (0.452)
+|}
+
+== Primary Hand Damage Bonuses ==
+
+<span style="color:red; font-size:150%;">'''This is not yet confirmed for EverQuest Legends.'''</span>
+
+This is the same for all melee classes, but listed here for reference. See the Combat section of [[Game Mechanics]] for more information.
+
+* Level 28: 1
+* Level 31: 2
+* Level 34: 3
+* Level 37: 4
+* Level 40: 5
+* Level 43: 6
+* Level 46: 7
+* Level 49: 8
+* Level 52: 9
+* Level 55: 10
+* Level 58: 11
+
+= Weight Penalty Guide =
+Unsure if weight limits exist on Legends. They were as follows:
+{| class="eoTable2"
+! Level Range
+! Weight Limit
+|-
+| Level 1–14
+| 14.9
+|-
+| Level 15–29
+| 15.9
+|-
+| Level 30–44
+| 16.9
+|-
+| Level 45–50
+| 17.9
+|-
+| Level 51–54
+| 18.9
+|-
+| Level 55–59
+| 20.9
+|-
+| Level 60
+| 24.9
+|-
+|}
+
+= Monk-Specific Quests =
+
+{{#lsth:Class Race Quest List|Monk}}
+
+= Gearing =
+
+Class specific gear suggestions are cross listed on the [[Players:Gear|Gear Reference]] page.
+
+Check [[:Category:Monk Equipment | Monk Equipment]] for the full list of gear usable by monks.
+
+== Pre-Planar ==
+
+{{#lsth:Players:Pre Planar Gear|[[Monk]]}}
+
+== Planar ==
+
+{{#lsth:Players:Planar Gear|[[Monk]]}}
+
+== Kunark ==
+
+{{#lsth:Players:Kunark Gear|[[Monk]]}}
+
+== Velious Pre-Raid/Group ==
+
+{{#lsth:Players:Velious Pre-Raid Gear|[[Monk]]}}
+
+== Velious Raiding ==
+
+{{#lsth:Players:Velious Raiding Gear|[[Monk]]}}
+
+= FAQ =
+
+'''Q: My Feign Death isn't giving me an error message (Soandso has fallen to the ground), but the agro isn't dropping.'''
+
+A: You need to make sure you stop auto attacking before using FD. A macro with "/attack off" in the first line and your Feign Death with "/doability #" in the second line will do this for you! If something begins casting on you before you flop, it will continue to cast, and when it lands it and everything else will begin attacking you again.
+
+{{Template: Navbox Classes}}

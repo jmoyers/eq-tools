@@ -1,0 +1,565 @@
+Disciplines are an additional ability that classes gain to assist in combat.
+
+Rogues were the first to receive disciplines, in the form of poison disciplines. Rogue poisons are auto-granted between levels 1 and 20. Combat poisons can stack with each other, but only one utility poison can be active at a time.
+
+To open your discipline window press Alt+C. (Note: Buttons copied from the discipline window will disappear when you log. To make a permanent button, make a macro with the text "/disc discname", like "/disc defensive").
+
+=== Reuse Timer Reductions ===
+For each level gained after a discipline has been unlocked that discipline's reuse timer will be reduced by a minute.
+
+For example, Evasive is gained by warriors at level 52 with a 3 minute duration and a 15 minute reuse timer. After eight levels, at level 60, the reuse timer is reduced to just 7 minutes. This means the level 60 warrior can spend up to 3 minutes under the effects evasive for every 4 minutes not.
+
+Permanent stances and rogue poison disciplines have a 5 second reuse timer unless otherwise noted.
+
+== Disciplines by Class ==
+As of right now, only Rogue poison disciplines are on Legends. The rest may be added at a later date.
+
+== Pure Melee ==
+
+=== [[Monk]] ===
+
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|- 
+| <s>Resistant Discipline</s>
+| <s>30</s>
+| <s>Grants +3 to all resistances increasing to +10 at 50th level</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|- 
+| <s>Fearless Discipline</s>
+| <s>40</s>
+| <s>Immunity to "Fear" and all spells that cause "fear"</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Stonestance Discipline</s>
+| <s>51</s>
+| <s>Joins your body with the strength of the earth, causing you to take greatly decreased melee damage [60% reduction]</s>
+| <s>12 Sec</s>
+| <s>6 Min</s>
+|-
+| <s>Thunderkick Discipline</s>
+| <s>52</s>
+| <s>Focuses energy into your feet, allowing you to perform an especially powerful [[Flying Kick]].</s>
+| <s>Next Flying Kick</s>
+| <s>4 Min</s>
+|-
+| <s>Whirlwind Discipline</s>
+| <s>53</s>
+| <s>Heightens your combat instincts, allowing you to [[Riposte]] every attack.</s>
+| <s>9 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Voiddance Discipline</s>
+| <s>54</s>
+| <s>Focuses your combat reflexes, allowing you to avoid melee attacks.</s>
+| <s>8 Sec</s>
+| <s>55 Min</s>
+|-
+| <s>Inner Flame Discipline</s>
+| <s>56</s>
+| <s>Fills your body with energy, causing your attacks to do greatly improved damage. [100% increase]</s>
+| <s>12 Sec</s>
+| <s>26 Min</s>
+|-
+| <s>Hundred Fists Discipline</s>
+| <s>57</s>
+| <s>Increases your hands speed, allowing you an increased attack rate and damage.</s>
+| <s>15 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Silentfist Discipline</s>
+| <s>59</s>
+| <s>Focuses your rage into your hands, allowing you to perform an especially powerful [[Dragon Punch]].</s>
+| <s>Next Dragon Punch</s>
+| <s>9 Min</s>
+|-
+| <s>Ashenhand Discipline</s>
+| <s>60</s>
+| <s>Focuses energy into your hands, allowing you to perform an especially powerful [[Eagle Strike]].</s>
+| <s>Next Eagle Strike</s>
+| <s>72 Min</s>
+|-
+|}
+
+=== [[Rogue]] ===
+
+Note: Combat poisons can stack with other combat poisons, are single target and instantly cast. Only one utility poison can be active at a time.
+
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span> Blood Siphon Strike
+| 1
+|Drains the life from your target, doing 56 damage every six seconds for 00:00:36, and healing your wounds for the same amount, effect Duration: 6 seconds.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span> Asp Venom Strike
+| 2
+| Deals 62 points of poison damage to your target.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Weakening Strike
+| 4
+| Weakens your targets limbs, slowing their attack rate for 0:03:30, effect duration 24 seconds.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Hobbling Strike
+| 5
+| Snare. Cut's circulation to your target's legs, slowing their movement speed for up to 0:03:00, effect duration 48 seconds.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Concussive Strike
+| 7
+| Causes your opponent to twitch violently, interrupting spell casting 75% of the time, pushback 2.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Befuddling Strike
+| 9
+| Causes your opponent to clutch their head, draining their mana by 110.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Grounding Strike
+| 11
+| Blocks the nerves to your opponent's legs, rooting them for up to 0:01:00.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dff3d8; color:#174d16; border:1px solid #7fb06d; padding:2px 6px; font-weight:bold;">Combat</span> Stunning Strike
+| 15
+| Injects a paralytic agent, stunning your opponent. This effect works on creatures up to level 50. Pushback 1.
+| Permanent
+| 5 Sec
+|-
+| <span style="background:#dbeafe; color:#153e75; border:1px solid #7aa6d9; padding:2px 6px; font-weight:bold;">Utility</span> Banishing Poison
+| 20
+| Dispel. Only one utility poison can be active at a time.
+| Permanent
+| 5 Sec
+|-
+| <s>Resistant Discipline</s>
+| <s>30</s>
+| <s>Grants +3 to all resistances increasing to +10 at 50th level</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>40</s>
+| <s>Immunity to "Fear" and all spells that cause "fear"</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Counterattack Discipline</s>
+| <s>53</s>
+| <s>Allows you to perfectly time your counter attacks, riposting every incoming blow.</s>
+| <s>9 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Deadeye Discipline</s>
+| <s>54</s>
+| <s>Focuses your vision on you opponent, vastly increasing your hit rate.</s>
+| <s>18 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Nimble Discipline</s>
+| <s>55</s>
+| <s>Increases your combat reflexes, allowing you to avoid most attacks.</s>
+| <s>12 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Kinesthetics Discipline</s>
+| <s>57</s>
+| <s>Increases your combat sense, allowing you to dual wield and double attack every round.</s>
+| <s>18 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Blinding Speed Discipline</s>
+| <s>58</s>
+| <s>Focuses energy into your arms, increasing your attack speed.</s>
+| <s>18 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Duelist Discipline</s>
+| <s>59</s>
+| <s>Increase the damage done by all of your melee attacks. [100% increase]</s>
+| <s>12 Sec</s>
+| <s>30 Min</s>
+|-
+|}
+
+=== [[Berserker]] ===
+
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>30</s>
+| <s>Grants +3 to all resistances increasing to +10 at 50th level</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>40</s>
+| <s>Immunity to "Fear" and all spells that cause "fear"</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+|}
+
+=== [[Warrior]] ===
+
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>30</s>
+| <s>Grants +20 to all resistances</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>40</s>
+| <s>Immunity to "Fear" and all spells that cause "fear"</s>
+| <s>12 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Evasive Discipline</s>
+| <s>52</s>
+| <s>Increases your chance to avoid attacks by 50% (this means it is dependent on how often the opponent will already miss, making the discipline stronger against opponents lower level than you). Is also supposed to decrease your hit rate by 25% but this needs to be verified.</s>
+| <s>3 Min</s>
+| <s>15 Min @L52 to 7 Min @L60</s>
+|-
+| <s>Charge Discipline</s>
+| <s>53</s>
+| <s>Increases your chances to hit with any melee attack.</s>
+| <s>14 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Mighty Strike Discipline</s>
+| <s>54</s>
+| <s>Fills your arms with rage, causing every attack to land as a critical hit.</s>
+| <s>10 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Defensive Discipline</s>
+| <s>55</s>
+| <s>Causes the damage interval of opponents to be reduced by 50% (aka, the damage difference between their minimum hit and maximum hit is cut in half. This generally results in a damage reduction of nearly 40% against raid targets, but for targets whose maximum hit isn't much higher than their minimum hit, such as [[Treah Greenroot]], this disc doesn't do much). Is also supposed to lower your damage output by 35% but this needs to be verified.</s>
+| <s>3 Min</s>
+| <s>15 Min @L55 to 10 Min @L60</s>
+|-
+| <s>Furious Discipline</s>
+| <s>56</s>
+| <s>Allows you to perfectly time your counter attacks, riposting every incoming blow.</s>
+| <s>9 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Precision Discipline</s>
+| <s>57</s>
+| <s>Places you in a precise combat stance that increases your hit rate (should be a 50% increase to skillcheck chance), but also lowers your chance of avoiding attacks.</s>
+| <s>3 Min</s>
+| <s>30 Min @L57 to 27 Min @L60</s>
+|-
+| <s>Felstrike Discipline</s>
+| <s>58</s>
+| <s>Fills you with acute rage, increasing the damage done by your attacks.</s>
+| <s>12 Sec</s>
+| <s>30 Min</s>
+|-
+| <s>Fortitude Discipline</s>
+| <s>59</s>
+| <s>Heightens your combat reflexes, increasing your chance of evading attacks.</s>
+| <s>8 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Aggressive Discipline</s>
+| <s>60</s>
+| <s>Places you in an aggressive combat stance that increases your damage output by 30%, but also causes you to take more damage.</s>
+| <s>3 Min</s>
+| <s>27 Min</s>
+|-
+|}
+
+== Hybrids ==
+
+=== [[Bard]] ===
+Bards '''MUST''' turn off songs in order to start Disciplines, failure to do so will result in the Discipline being cancelled but the cool-down will still activate.
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>51</s>
+| <s>+10 to all resistances. The reuse time for this discipline will decrease as you level.</s>
+| <s>5 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>54</s>
+| <s>Immunity to "Fear" and all spells that cause "fear". The reuse time for this discipline will decrease as you level.</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Deftdance Discipline</s>
+| <s>55</s>
+| <s>Auto dodge attacks from the front and auto dual-wield.</s>
+| <s>15 Sec</s>
+| <s>72 Min</s>
+|-
+| <s>Puretone Discipline</s>
+| <s>60</s>
+| <s>Makes it as if you are wielding the best instrument of every type, whether or not you are actually wielding an instrument.  Increases to 28 modifier, and does work on singing mod.</s>
+| <s>4 Min</s>
+| <s>72 Min</s>
+|}
+
+=== [[Beastlord]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Paladin]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>51</s>
+| <s>+10 to all resistances. The reuse time for this discipline will decrease as you level.</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>54</s>
+| <s>Immunity to "Fear" and all spells that cause "fear". The reuse time for this discipline will decrease as you level.</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Holyforge Discipline</s>
+| <s>55</s>
+| <s>Critical Hits versus everything and Crippling Blows versus undead with an increased probability of going off.</s>
+| <s>2 Min</s>
+| <s>72 Min</s>
+|-
+| <s>Sanctification Discipline</s>
+| <s>60</s>
+| <s>100% Spell resistance. You will resist all spells that are not unresistable.</s>
+| <s>10 Sec</s>
+| <s>72 Min</s>
+|}
+
+=== [[Ranger]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>51</s>
+| <s>+10 to all resistances. The reuse time for this discipline will decrease as you level.</s>
+| <s>1 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>54</s>
+| <s>Immunity to "Fear" and all spells that cause "fear". The reuse time for this discipline will decrease as you level.</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Trueshot Discipline</s>
+| <s>55</s>
+| <s>Imbues your bow with energy, increase the damage done by each shot [105%] and improving your accuracy. [Increases Archery Skill Check by 12%]</s>
+| <s>2 Min</s>
+| <s>72 Min</s>
+|-
+| <s>Weapon Shield Discipline</s>
+| <s>60</s>
+| <s>Focuses your combat reflexes, allowing you to parry most melee attacks. Parries all melee attacks from the front.</s>
+| <s>15 Sec</s>
+| <s>72 Min</s>
+|}
+
+=== [[Shadow Knight]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+| <s>Resistant Discipline</s>
+| <s>51</s>
+| <s>+10 to all resistances. The reuse time for this discipline will decrease as you level.</s>
+| <s>5 Min</s>
+| <s>60 Min</s>
+|-
+| <s>Fearless Discipline</s>
+| <s>54</s>
+| <s>Immunity to "Fear" and all spells that cause "fear". The reuse time for this discipline will decrease as you level.</s>
+| <s>11 Sec</s>
+| <s>60 Min</s>
+|-
+| <s>Unholy Aura Discipline</s>
+| <s>55</s>
+| <s>25% increase to damage done by [[Harm Touch]] in addition to making it nearly un-resistable.</s>
+| <s>Next [[Harm Touch]]</s>
+| <s>72 Min</s>
+|-
+| <s>Leechcurse Discipline</s>
+| <s>60</s>
+| <s>Heal self for every point of melee damage dealt while discipline is active.</s>
+| <s>20 Seconds</s>
+| <s>72 Min</s>
+|}
+
+== Priests ==
+
+=== [[Cleric]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Druid]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Shaman]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+== Pure Casters ==
+
+=== [[Necromancer]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Wizard]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Magician]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+=== [[Enchanter]] ===
+{| class="eoTable2"
+! Discipline Name
+! Level Obtained
+! Description
+! Duration
+! Reuse Time
+|-
+|
+|
+|
+|
+|
+|}
+
+
+[[Category:Character]]
