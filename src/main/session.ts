@@ -22,6 +22,7 @@ import {
 } from './log/config'
 import { Tailer } from './log/Tailer'
 import { parseEvent, parseLine } from './log/parser'
+import { installCharacterName } from './log/rulesets'
 import { scanLog } from './log/scanHistory'
 import { saveUserOverlay } from './data/overlayPersistence'
 import { findInventoryFile, loadInventory } from './inventory/parseInventory'
@@ -145,6 +146,9 @@ export async function applyEqDirChange(): Promise<EqConfig> {
     void inventoryWatcher?.close()
     inventoryWatcher = null
     character = null
+    // No character ⇒ no self-`/who` row is identifiable. Clear the name rather than let a
+    // stale one attribute the next log's rows to the character we just stopped tailing.
+    installCharacterName(undefined)
     sendToMain(IPC.onCharacter, null)
   }
   return config
@@ -162,6 +166,11 @@ function resetWorldFor(ref: CharacterRef): void {
   registry.reset()
   epoch.reset()
   characterModule.setCharacter(ref)
+  // Tell the PARSER whose log this is (class-combo inference Wave 1). A `/who` prints every
+  // stranger in the zone in the same grammar as the player's own row, so the self-`/who` rule
+  // can only fire once it knows the name — and it must learn it here, before the scan replay,
+  // never from a constant. Same injection path as installSpellDb.
+  installCharacterName(ref.name)
   combat.reset()
   // Inject the player's own name (we know it from the ref) BEFORE the scan replay,
   // so incoming self-heals ("You healed <Name> for N") attribute from the first

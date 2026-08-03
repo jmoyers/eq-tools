@@ -44,6 +44,7 @@ import {
   classifyStance,
   classifyWornOff
 } from './parseCasts'
+import { classifySelfWho, classifySkillUp } from './parseWho'
 import {
   classifyAa,
   classifyConsider,
@@ -116,6 +117,13 @@ const CLASSIFIERS: readonly Classifier[] = [
   classifyAa,
   classifyAaActivate,
   classifyStance,
+  // CLASS EVIDENCE (class-combo inference Wave 1). Both are gated on a substring probe and
+  // both were MEASURED to claim only lines that previously produced `{kind:'unknown'}` (all
+  // 421 /who rows, all 10,216 skill-ups). They sit beside the stance/invocation rule because
+  // that is the same evidence family — what the character can DO tells you what it IS — and
+  // ahead of the DB-driven buff matchers, which no /who or skill-up line can reach anyway.
+  classifySelfWho,
+  classifySkillUp,
   classifyIllusionFade,
   classifyPoisonCoat,
   classifyPoisonProc,

@@ -22,6 +22,15 @@ export interface ParserConfig {
    */
   spellDb?: SpellDb
   /**
+   * The TAILED character's name (Wave 1 of docs/plans/class-combo-inference.md). The self-`/who`
+   * rule needs it because a `/who` lists every stranger in the zone in the SAME grammar as the
+   * player's own row — the name is the only thing that tells them apart, and it must come from
+   * the session (session.ts `resetWorldFor`), never from a constant. ABSENT by default, and the
+   * rule declines every line while it is absent: with no character installed we cannot know
+   * whose loadout a row states, and guessing would hand a stranger's classes to the player.
+   */
+  characterName?: string
+  /**
    * Matches the spell name from "Your <spell> spell has worn off of <mob>." to
    * decide whether it un-charms a pet. True charm spells only — MEZ spells also
    * wear off but must NOT uncharm. Stems audited against real worn-off lines.
@@ -69,4 +78,21 @@ export function installSpellDb(db: SpellDb | undefined, profileId?: string): voi
   }
   for (const cfg of Object.values(PARSER_CONFIGS)) cfg.spellDb = db
   classic.spellDb = db
+}
+
+/**
+ * Inject the TAILED character's name into the parser config, enabling the self-`/who` rule
+ * (Wave 1 of docs/plans/class-combo-inference.md). Called from session.ts on every character
+ * (re)tail, BEFORE the replay, so the very first `/who` row in the scan is attributed
+ * correctly. Same injection path as installSpellDb — the parser stays pure and never reaches
+ * for the session. Pass undefined to clear (no character ⇒ no self row can be identified).
+ */
+export function installCharacterName(name: string | undefined, profileId?: string): void {
+  if (profileId) {
+    const cfg = PARSER_CONFIGS[profileId]
+    if (cfg) cfg.characterName = name
+    return
+  }
+  for (const cfg of Object.values(PARSER_CONFIGS)) cfg.characterName = name
+  classic.characterName = name
 }

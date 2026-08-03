@@ -81,6 +81,20 @@ function body(line) {
 }
 
 /**
+ * The user's OWN `/who` row — kept, because it is their identity to publish and the ONLY line
+ * in the log that states the class loadout (the class-combo model's single Tier-A observation).
+ *
+ * The optional `* RIP *` / ` AFK ` prefixes mirror what the RUNTIME rule accepts
+ * (src/main/log/parseWho.ts): this character has printed neither yet, but a scrub that drops a
+ * row the parser would have claimed silently deletes evidence from a future fixture. The
+ * trailing `\b` already covers the corpse row's `Primitive's corpse`. The NAME is still the
+ * whole guard — every stranger's row falls through to the /who DROP rule below.
+ */
+const SELF_WHO_RE = new RegExp(
+  `^\\s*(?:\\* RIP \\*\\s*)?(?:AFK\\s+)?\\[\\d+ [A-Z]{3}(?:/[A-Z]{3})*\\] ${SELF_NAME}\\b`
+)
+
+/**
  * True when the line is third-party chat/social and must be dropped from a committed fixture.
  * The pet-claim carve-out and the user's own /who row are checked FIRST.
  */
@@ -88,7 +102,7 @@ export function isThirdPartyChat(line) {
   if (PET_CLAIM_RE.test(line)) return false
   const b = body(line)
   // the user's own /who row (`[50 PAL/MNK/ENC] Primitive (Dark Elf) ...`) is their own identity
-  if (new RegExp(`^\\[\\d+ [A-Z]{3}(?:/[A-Z]{3})*\\] ${SELF_NAME}\\b`).test(b)) return false
+  if (SELF_WHO_RE.test(b)) return false
   return DROP.some((re) => re.test(b))
 }
 

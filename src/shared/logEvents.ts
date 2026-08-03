@@ -555,6 +555,73 @@ export interface InvocationChangeEvent extends LogEventBase {
 }
 
 /**
+ * The character's OWN `/who` row — the ONLY line in the game that states the class loadout
+ * (docs/plans/class-combo-inference.md § 2/A1). EQ Legends runs up to THREE classes at once
+ * and never logs a swap, so this row is the single Tier-A observation the combo model can
+ * anchor on; everything else is inference.
+ *
+ * VERIFIED shape (full-log sweep of eqlog_Primitive_freeport.txt, 2026-08-03 — 421 `/who`
+ * rows, 11 of them the character's own):
+ *
+ *   [50 PAL/MNK/ENC] Primitive (Dark Elf)  ZONE: East Freeport (freporte)··
+ *   [7 CLR/BER] Primitive (Froglok)  ZONE: West Commonlands (commons)··
+ *
+ * Every row ends in TWO trailing spaces, and the general `/who` grammar carries three more
+ * variants this character has not printed yet but the matcher tolerates anyway (refusing one
+ * would silently drop the only loadout statement in the log):
+ *   guild tag   `[9 WAR/MAG] Name (Ogre) <Gothic Circle> ZONE: …`  (ONE space before ZONE)
+ *   AFK          ` AFK [4 WAR/ENC] Name (Human)  ZONE: …`
+ *   corpse       `* RIP *[3 MNK/BER] Name's corpse (Iksar)  ZONE: …`
+ * `[ANONYMOUS] Name` states no classes at all and is NOT this event.
+ *
+ * SELF ONLY, and that is a load-bearing guard, not a filter: a `/who` prints every stranger
+ * in the zone, so the rule matches ONLY the tailed character's name (ParserConfig.characterName,
+ * injected per session — never a constant). With no character installed the rule declines
+ * every line, so a third party's row can never be mistaken for the player's loadout.
+ *
+ * `classes` is the row's own arity — 2 before the tertiary slot unlocks at level 10, 3 after —
+ * so the row is ground truth about cardinality as well as membership. `level` is the DISPLAYED
+ * level, which is the MINIMUM of the loadout's class levels; a drop is a legitimate swap, never
+ * a rebirth (see epochDetector.ts).
+ */
+export interface SelfWhoEvent extends LogEventBase {
+  kind: 'selfWho'
+  /** the bracketed level — min(class levels), not any one class's level. */
+  level: number
+  /** the /who class codes in row order, e.g. ['PAL','MNK','ENC']. Length 2 or 3. */
+  classes: string[]
+  /** the race in parens, verbatim ('Dark Elf'). Illusions change it — NOT combo evidence. */
+  race?: string
+  /** the zone display name with the trailing `(shortname)` id dropped ('East Freeport'). */
+  zone?: string
+}
+
+/**
+ * `You have become better at <Skill>! (<n>)` — a skill tick (design § 2/B3). The ONLY
+ * evidence family that can see the four classes with (almost) no spells: BER, MNK and WAR
+ * have ZERO spells and ROG has nine, so cast evidence is structurally blind to them and a
+ * skill-up is all the log ever says.
+ *
+ * FULL-LOG SWEEP (2026-08-03, 1.12M lines): 10,216 lines across 54 distinct skills, EVERY one
+ * of which previously fell through to `{kind:'unknown'}`, and EVERY one carrying the trailing
+ * `(<n>)` — the new skill value. `value` is nevertheless optional so a value-less shape stays
+ * expressible without a breaking change, and the matcher accepts it.
+ *
+ * `skill` is the string EXACTLY as the CLIENT prints it — `1H Slashing`, `Channeling`,
+ * `Stringed Instruments` — which is NOT how the wiki spells several of them (`1 Hand
+ * Slashing`, `Channelling`, `String`). classes.json's `skills` table is keyed by the client
+ * name and carries the alias mapping; the event must never pre-translate, or the table's key
+ * and the log's word would drift apart.
+ */
+export interface SkillUpEvent extends LogEventBase {
+  kind: 'skillUp'
+  /** client spelling, verbatim ('Flying Kick', '1H Piercing'). */
+  skill: string
+  /** the new skill value from the trailing `(n)`; absent when the line printed none. */
+  value?: number
+}
+
+/**
  * ITEM UPGRADE (merge) — `You have successfully merged two items together to create a new
  * item: <Name>` (236× in the real log). The mechanic (eqlwiki "Item Upgrade System", quoted
  * in main/itemLookupParse.ts): merging consumes a second copy — or a Mote of Potential — to
@@ -841,6 +908,8 @@ export type LogEvent =
   | EpochEvent
   | StanceChangeEvent
   | InvocationChangeEvent
+  | SelfWhoEvent
+  | SkillUpEvent
   | ItemMergeEvent
   | ItemMergeFailedEvent
   | ConsiderEvent
