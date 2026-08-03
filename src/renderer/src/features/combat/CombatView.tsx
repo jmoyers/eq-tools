@@ -9,9 +9,7 @@ import {
   Divider,
   FormControlLabel,
   Link,
-  MenuItem,
   Paper,
-  Select,
   Skeleton,
   Stack,
   Switch,
@@ -28,8 +26,9 @@ import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
 import { Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
-import { flattenSkills, scopeOptions, skillsForTarget, type Drill, type ScopeOption } from './dashboardData'
-import { formatDate, formatTime } from '../../lib/formatDate'
+import { FightPicker } from './FightPicker'
+import { flattenSkills, scopeOptions, skillsForTarget, type Drill } from './dashboardData'
+import { formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
@@ -44,32 +43,6 @@ const ROLE_COLOR: Record<string, string> = {
 
 function fmtClock(ts: number): string {
   return formatTime(ts)
-}
-
-/**
- * Coarse, live-updating relative age for the fight/zone selector rows (Task #54
- * disambiguation timing): 'just now' / '2m ago' / '3h ago' / '2d ago'. Kept intentionally
- * coarse so five same-named giant pulls are tellable apart by start clock + age + duration.
- */
-function relativeAge(ts: number, now: number): string {
-  if (!ts) return ''
-  const secs = Math.max(0, (now - ts) / 1000)
-  if (secs < 45) return 'just now'
-  const mins = secs / 60
-  if (mins < 60) return `${Math.round(mins)}m ago`
-  const hrs = mins / 60
-  if (hrs < 36) return `${Math.round(hrs)}h ago`
-  return `${Math.round(hrs / 24)}d ago`
-}
-
-/** The disambiguation timing suffix for a selector row: 'start clock · age · duration'. */
-function timingLabel(startTs: number, durationSec: number, now: number): string {
-  const bits: string[] = []
-  if (startTs) bits.push(`${formatDate(startTs)} ${formatTime(startTs)}`)
-  const age = relativeAge(startTs, now)
-  if (age) bits.push(age)
-  bits.push(fmtDur(durationSec))
-  return bits.join(' · ')
 }
 
 function missSummary(m: SourceView['missBreakdown']): string {
@@ -490,59 +463,6 @@ function ProcessingLog({
 }
 
 /**
- * A dense selector row (Task #54): fight/zone name + rate on the top line, disambiguation
- * timing (start clock · relative age · duration) on a small second line — so five same-named
- * giant pulls are tellable apart at a glance. Used BOTH as a menu row and (via the Select's
- * `renderValue`) as the closed trigger, so what you pick is exactly what you then read.
- *
- * `hideRate` is the one place the two uses diverge, and only because the SUBJECT line now ends
- * in a headline stat block: inside the MENU the rate is load-bearing (it is how you compare one
- * pull against another before picking), but on the CLOSED trigger it would print the selected
- * fight's dps twice in the same bar, a few hundred pixels apart. The headline owns that number;
- * the trigger keeps identity + timing.
- *
- * The timing line is the dimmest text on screen. `live` gets the accent DOT the overlay's
- * OverlaySelect uses — it replaced a '▶' glyph that read as a play button, i.e. as a control.
- */
-function SelectorRow({
-  name,
-  rate,
-  timing,
-  live,
-  hideRate
-}: {
-  name: string
-  rate: string
-  timing: string
-  live?: boolean
-  hideRate?: boolean
-}): JSX.Element {
-  return (
-    <Box sx={{ minWidth: 0, width: '100%', py: 0.25 }}>
-      <Stack direction="row" spacing={0.75} alignItems="center" sx={{ minWidth: 0 }}>
-        {live && (
-          <Box sx={{ width: 6, height: 6, borderRadius: '50%', bgcolor: 'success.main', flexShrink: 0 }} />
-        )}
-        <Typography variant="body2" noWrap sx={{ fontWeight: 600, flexGrow: 1, minWidth: 0 }}>
-          {name}
-        </Typography>
-        {!hideRate && (
-          <Typography
-            variant="caption"
-            sx={{ whiteSpace: 'nowrap', color: 'primary.main', fontWeight: 600, fontVariantNumeric: 'tabular-nums' }}
-          >
-            {rate}
-          </Typography>
-        )}
-      </Stack>
-      <Typography variant="caption" noWrap sx={{ display: 'block', color: 'text.disabled', fontSize: 10.5 }}>
-        {timing}
-      </Typography>
-    </Box>
-  )
-}
-
-/**
  * One of the two mutually-exclusive combat modifiers, as passive state (Task #51).
  *
  * NAMING: the log's two groups are a melee/general STANCE and a caster INVOCATION, and the
@@ -720,6 +640,11 @@ export default function CombatView(): JSX.Element {
     if (view !== 'dash') return
     const onKey = (ev: KeyboardEvent): void => {
       if (ev.key !== 'Escape' || !drill) return
+      // Esc belongs to the innermost open thing. The fight picker owns it while its popover is
+      // up (that is how you dismiss the search), so leaving the drill alone here is what keeps
+      // one keypress from doing two things at once. The popover is portalled to <body>, so a
+      // React-level stopPropagation in the picker could never reach this window listener.
+      if (document.querySelector('[data-testid="fight-picker"]')) return
       setDrill(null)
     }
     window.addEventListener('keydown', onKey)
@@ -739,15 +664,6 @@ export default function CombatView(): JSX.Element {
   // A single `now` for the whole render so all the relative-age labels agree; it advances
   // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
   const now = Date.now()
-  // The selector's rows by value, so the CLOSED trigger (`renderValue`) renders the very same
-  // row the menu does instead of a re-derived summary that could drift from it.
-  const byValue = new Map<string, ScopeOption>()
-  if (opts.head) byValue.set(opts.head.value, opts.head)
-  for (const o of opts.rest) byValue.set(o.value, o)
-  // The running zone session has no end yet, so it has no duration to disambiguate by — it just
-  // says 'live'. Every other row gets the full start clock · age · duration.
-  const rowTiming = (o: ScopeOption): string =>
-    o.live && scope === 'overall' ? 'live' : timingLabel(o.startTs, o.durationSec, now)
 
   // Startup replay in progress (Task #56): the engine is still folding history, so nothing in
   // this snapshot describes the present. `snap === null` (first fetch in flight) reads the same
@@ -852,73 +768,24 @@ export default function CombatView(): JSX.Element {
               <ToggleButton value="fight">Fight</ToggleButton>
               <ToggleButton value="overall">Overall</ToggleButton>
             </ToggleButtonGroup>
-            <Select
-              size="small"
-              variant="standard"
-              disableUnderline
-              data-testid="segment-select"
+            {/* The encounter selector. Exactly ONE scope's rows are ever listed — the fight scope
+                shows no zone sessions and vice versa (dashboardData.scopeOptions is the single
+                filter) — and the open list is FROZEN against live snapshot ticks so a fight
+                finalizing mid-pull can't move the row under your pointer. See FightPicker's
+                header for the freeze + stale-response semantics. */}
+            <FightPicker
+              opts={opts}
+              scope={scope}
+              selection={selection}
+              onSelect={setSelection}
+              onLoadMore={loadMore}
+              capped={capped}
               // While hydrating, the fight list is a churning replay artifact — don't invite a
               // pick from it (the value stays on the head row and the list settles the moment the
               // tail runs).
               disabled={hydrating}
-              value={opts.head ? selection : '__empty__'}
-              onChange={(e) => {
-                const v = e.target.value
-                if (v === '__loadmore__') loadMore()
-                else setSelection(v)
-              }}
-              // The closed trigger renders the SAME dense two-line row as the menu (no separate
-              // one-line summary that has to be re-derived and can drift) — minus the rate, which
-              // the headline stat at the end of this line now owns.
-              renderValue={(v) => {
-                const o = byValue.get(v as string)
-                if (!o)
-                  return (
-                    <Typography variant="body2" sx={{ color: 'text.disabled', py: 0.25 }}>
-                      {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
-                    </Typography>
-                  )
-                return (
-                  <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={rowTiming(o)} live={o.live} hideRate />
-                )
-              }}
-              sx={{
-                minWidth: 0,
-                flexShrink: 1,
-                borderRadius: 1,
-                '&:hover': { bgcolor: 'rgba(255,255,255,0.04)' },
-                '& .MuiSelect-select': { py: 0.25, pl: 0.75, pr: '24px !important', whiteSpace: 'normal', minHeight: 0 }
-              }}
-              MenuProps={{ PaperProps: { sx: { maxHeight: 480, minWidth: 340 } } }}
-            >
-              {/* Exactly ONE scope's rows are ever listed — the fight scope shows no zone sessions
-                  and vice versa (dashboardData.scopeOptions is the single filter). */}
-              {!opts.head && (
-                <MenuItem value="__empty__" disabled>
-                  {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
-                </MenuItem>
-              )}
-              {opts.head && (
-                <MenuItem value={opts.head.value}>
-                  <SelectorRow
-                    name={opts.head.label}
-                    rate={formatRate(opts.head.dps)}
-                    timing={rowTiming(opts.head)}
-                    live={opts.head.live}
-                  />
-                </MenuItem>
-              )}
-              {opts.rest.map((o) => (
-                <MenuItem key={o.value} value={o.value}>
-                  <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={rowTiming(o)} />
-                </MenuItem>
-              ))}
-              {capped && (
-                <MenuItem value="__loadmore__" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-                  Load more fights…
-                </MenuItem>
-              )}
-            </Select>
+              now={now}
+            />
           </Stack>
 
           <Box sx={{ flexGrow: 1, minWidth: 8 }} />

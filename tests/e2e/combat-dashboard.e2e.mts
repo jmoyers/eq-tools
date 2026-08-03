@@ -167,20 +167,43 @@ function selectorText(page: Page): Promise<string> {
 }
 
 /**
- * Open the segment dropdown, collect every selectable row's value, close it again.
- * Housekeeping rows ('Load more', the empty placeholder) are not segments and are dropped —
- * what this asserts is which SCOPE's ids are offered.
+ * Open the fight picker and LEAVE it open. The trigger keeps its `segment-select` id (the
+ * popover it opens is a different component now — Task #61's FightPicker — but the control the
+ * user clicks, and everything asserted about its closed text, is unchanged).
  */
-async function openSelectorValues(page: Page): Promise<string[]> {
+async function openPicker(page: Page): Promise<void> {
   await page.click('[data-testid="segment-select"]')
+  await page.waitForSelector('[data-testid="fight-picker"]', { timeout: 15_000 })
   await page.waitForSelector('li[data-value]', { timeout: 15_000 })
-  const values = await page.evaluate(() =>
-    [...document.querySelectorAll('li[data-value]')].map((el) => el.getAttribute('data-value') ?? '')
-  )
+}
+
+async function closePicker(page: Page): Promise<void> {
   await page.keyboard.press('Escape')
   await sleep(400)
+}
+
+/**
+ * Every SELECTABLE row's value, in list order. Housekeeping rows ('Load more…', the empty
+ * placeholder, the "+N more" search footer) deliberately carry no `data-value`, so this reads
+ * exactly the set of segments the list is offering.
+ */
+function listedValues(page: Page): Promise<string[]> {
+  return page.evaluate(() =>
+    [...document.querySelectorAll('li[data-value]')].map((el) => el.getAttribute('data-value') ?? '')
+  )
+}
+
+/**
+ * Open the picker, collect every selectable row's value, close it again — what this asserts is
+ * which SCOPE's ids are offered.
+ */
+async function openSelectorValues(page: Page): Promise<string[]> {
+  await openPicker(page)
+  const values = await listedValues(page)
+  await closePicker(page)
   // The head row's '__live__' sentinel IS a segment row (it re-resolves to the current/last
-  // fight); only the housekeeping rows are dropped.
+  // fight); only the housekeeping rows are dropped (they carry no data-value at all today, so
+  // this filter is belt-and-braces).
   return values.filter((v) => v && v !== '__loadmore__' && v !== '__empty__')
 }
 
@@ -733,7 +756,7 @@ async function main(): Promise<void> {
     const pickId = listed.find((v) => v !== '__live__')
     const newestFight = snap.segments.find((s) => s.id === pickId)
     if (newestFight) {
-      await page.click('[data-testid="segment-select"]')
+      await openPicker(page)
       await page.click(`li[data-value="${newestFight.id}"]`, { timeout: 15_000 })
       // Verify from the DOM, not from our own snapshot call: `getCombatSnapshot({})` resolves
       // OUR (live) selection, not the renderer's — only the rendered view knows what's picked.
@@ -767,6 +790,110 @@ async function main(): Promise<void> {
         false,
         `listed: ${listed.join(', ') || 'none'}`
       )
+    }
+
+    // 10b. FROZEN WHILE OPEN (Task #61, the churn fix). The snapshot ticks ~4x/sec while the
+    //      user is fighting, and every tick rebuilds the option rows: a fight finalizes, the head
+    //      row relabels itself from "Current fight (live)" to "Last fight — …", the old head drops
+    //      into the history under its own id, and every row below shifts down one. That is what
+    //      "it gets all confused as it's switching" was. The contract now is that the OPEN list is
+    //      a snapshot taken at open time — no reorder, no insert, no removal — so what is under
+    //      your pointer stays under your pointer.
+    //
+    //      This can only PROVE anything while the log is actually moving (a quiet log churns
+    //      nothing, so an unchanged list is vacuous), hence: assert when busy, note when quiet —
+    //      the same convention step 8 uses for the live tail.
+    await openPicker(page)
+    const frozenBefore = await listedValues(page)
+    const churnA = await snapshot(page)
+    await sleep(3000)
+    const frozenAfter = await listedValues(page)
+    const churnB = await snapshot(page)
+    // "Busy" = the engine's own view of the world moved underneath the open list: a fight is
+    // open, the fight count changed, or the selected segment's damage grew.
+    const busy =
+      !!churnB.segments.find((s) => s.kind === 'current') ||
+      churnA.segments.length !== churnB.segments.length ||
+      (churnA.selected?.outTotal ?? 0) !== (churnB.selected?.outTotal ?? 0)
+    const sameList =
+      frozenBefore.length === frozenAfter.length && frozenBefore.every((v, i) => v === frozenAfter[i])
+    if (busy) {
+      check(
+        'the OPEN fight list is frozen — 3s of live ticks change neither its rows nor their order',
+        sameList,
+        `${frozenBefore.length} rows → ${frozenAfter.length} rows${sameList ? '' : ` (was ${frozenBefore.slice(0, 4).join(',')} · now ${frozenAfter.slice(0, 4).join(',')})`}`
+      )
+    } else {
+      note(
+        `the log was quiet across the 3s freeze window (${frozenBefore.length} rows, unchanged) — nothing could have churned, so the freeze is not asserted this run`
+      )
+    }
+    await closePicker(page)
+
+    // 10c. SEARCH (Task #61). The snapshot only carries the newest `maxSegments` fights, so
+    //      "look up my fights from earlier this week" used to mean paging "Load more" repeatedly.
+    //      A non-empty query goes to the engine's ALL-TIME corpus instead. Query a name we KNOW
+    //      is in the log (pulled from the snapshot), assert the row surfaces, and select it.
+    const searchable = snap.segments.find((s) => s.kind === 'fight' && s.name && s.total > 0)
+    if (searchable) {
+      // A multi-mob pull's name ends in a '+N' (sometimes '+N others') suffix — that is the
+      // fight's SHAPE, not something a user would type at a search box, so it comes off. The
+      // twin disambiguator ('(177)') deliberately stays: it is part of the mob's name here.
+      const q = searchable.name.replace(/\s*\+\s*\d+(\s+others?)?\s*$/i, '').trim()
+      await openPicker(page)
+      await page.fill('[data-testid="fight-search"]', q)
+      // debounce (120ms) + one IPC round-trip over the whole corpus (~0.3ms of scoring).
+      await sleep(1200)
+      const hits = await listedValues(page)
+      check(`searching the fight history for "${q}" returns hits`, hits.length >= 1, `${hits.length} rows`)
+      if (hits.length >= 1) {
+        // Ranking is score desc then RECENCY desc, and this fight is one of the newest in the
+        // log, so it should be on the first page of its own name's matches.
+        check(
+          '…including the fight the query was taken from',
+          hits.includes(searchable.id),
+          `${searchable.id} in ${hits.slice(0, 4).join(', ')}${hits.length > 4 ? ', …' : ''}`
+        )
+        const pick = hits.includes(searchable.id) ? searchable.id : hits[0]
+        // Read the row's own name rather than trusting the snapshot's: whichever row we end up
+        // clicking, the dashboard must then show THAT fight.
+        const pickName = await page.evaluate((v) => {
+          const el = document.querySelector(`li[data-value="${v}"]`) as HTMLElement | null
+          return (el?.innerText ?? '').split('\n')[0].trim()
+        }, pick)
+        await page.click(`li[data-value="${pick}"]`, { timeout: 15_000 })
+        const tSearch = Date.now()
+        let searchShown = ''
+        while (Date.now() - tSearch < 10_000) {
+          searchShown = await combatText(page)
+          if (pickName && searchShown.includes(pickName)) break
+          await sleep(300)
+        }
+        check(
+          'selecting a search hit renders that fight',
+          !!pickName && searchShown.includes(pickName),
+          pickName || 'row had no name'
+        )
+        check(
+          '…and its dashboard renders source rows',
+          (await countOf(page, '[data-testid="meter-row"]')) >= 1,
+          `${await countOf(page, '[data-testid="meter-row"]')} rows`
+        )
+        // The picker closed on selection, and clearing the query must restore the browse list.
+        check('…and the picker closed on selection', (await countOf(page, '[data-testid="fight-picker"]')) === 0)
+      } else {
+        await closePicker(page)
+      }
+      // A query that matches nothing is a quiet empty state, never an error or a full list.
+      await openPicker(page)
+      await page.fill('[data-testid="fight-search"]', 'zzzzqqq no such mob zzzz')
+      await sleep(1200)
+      const misses = await listedValues(page)
+      check('a query that matches nothing lists nothing (it never falls back to the full list)', misses.length === 0, `${misses.length} rows`)
+      await closePicker(page)
+      await checkGrid(page, 'after search')
+    } else {
+      note('no finalized fight with damage in the snapshot — the search assertions need one')
     }
 
     // 11. FIRST, the narrowest window a USER can actually make: the main window's
