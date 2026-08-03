@@ -35,9 +35,10 @@ import { installSpellDb } from '../src/main/log/rulesets'
 import { CombatEngine } from '../src/main/combat/engine'
 import {
   MIN_ACTIVE_SEC,
-  MIN_INACTIVE_SWINGS,
+  MIN_EXPECTED_INACTIVE_PROCS,
   MIN_SWINGS,
   concentrationOf,
+  expectedInactiveProcs,
   linkStrength,
   procRate
 } from '../src/main/combat/procWindows'
@@ -230,21 +231,27 @@ test('W39: EXCLUSIVE is earned by the inactive arm, not by the ratio', { skip: m
   assert.equal(swingsOf(segment(eng, lastTs, 'zone')), inside + outside)
 
   // THE MEASUREMENT: 14 firings inside the span, 0 outside, against 225 swings of real
-  // opportunity outside it. 225 clears MIN_INACTIVE_SWINGS by 25 — thin, and deliberately so:
-  // this is the only 'exclusive' link in any fixture here, and it is one bad window from not
-  // being one. The strength comes from the EXPOSURE, never from the concentration.
-  assert.equal(MIN_INACTIVE_SWINGS, 200)
+  // opportunity outside it. At the lane's OWN observed rate (14 / 406 = 3.4 per 100 swings)
+  // those 225 swings predict ~7.8 firings, so a zero there is a genuine measurement — the
+  // strength comes from the EXPOSURE-AT-THIS-RATE, never from the concentration.
+  assert.equal(MIN_EXPECTED_INACTIVE_PROCS, 3)
   assert.equal(concentrationOf(14, 0), 1)
-  assert.equal(linkStrength({ withCount: 14, withoutCount: 0, inactiveSwings: outside }), 'exclusive')
-  // Same lane, same ratio, a thinner inactive arm ⇒ 'inconclusive'. The gate is the point.
-  assert.equal(linkStrength({ withCount: 14, withoutCount: 0, inactiveSwings: 199 }), 'inconclusive')
+  const blade = { withCount: 14, withoutCount: 0, activeSwings: inside, inactiveSwings: outside }
+  assert.ok(Math.abs(expectedInactiveProcs(blade) - 7.759) < 0.01)
+  assert.equal(linkStrength(blade), 'exclusive')
+  // Same lane, same ratio, an inactive arm thin enough to predict under three ⇒ 'inconclusive'.
+  // The knife edge is exact: 87 × 14 / 406 = 3.000 firings expected, 86 falls to 2.966.
+  assert.equal(expectedInactiveProcs({ ...blade, inactiveSwings: 87 }), 3)
+  assert.equal(linkStrength({ ...blade, inactiveSwings: 87 }), 'exclusive')
+  assert.equal(linkStrength({ ...blade, inactiveSwings: 86 }), 'inconclusive')
 
   // The other three lanes in the SAME window are lopsided but NOT exclusive, so one fixture
   // proves the classifier separates them. Smiting Strike 13/7 and Lifetap Strike 9/3 fire on
   // both sides; Condemnation of Nife fires 6 times and never once under spellblade.
-  assert.equal(linkStrength({ withCount: 13, withoutCount: 7, inactiveSwings: outside }), 'weak')
-  assert.equal(linkStrength({ withCount: 9, withoutCount: 3, inactiveSwings: outside }), 'weak')
-  assert.equal(linkStrength({ withCount: 0, withoutCount: 6, inactiveSwings: outside }), 'weak')
+  const arm = { activeSwings: inside, inactiveSwings: outside }
+  assert.equal(linkStrength({ withCount: 13, withoutCount: 7, ...arm }), 'weak')
+  assert.equal(linkStrength({ withCount: 9, withoutCount: 3, ...arm }), 'weak')
+  assert.equal(linkStrength({ withCount: 0, withoutCount: 6, ...arm }), 'weak')
   assert.equal(concentrationOf(0, 6), 0)
   assert.ok(concentrationOf(9, 3) < 0.8) // 0.75 — just under the 'correlated' line
 })
@@ -308,14 +315,25 @@ test('W40: 904 swings with the aura up, 36 without — and that is the whole fin
   // procs happened with the aura up and none without — a 100% concentration — yet the verdict
   // is 'inconclusive', because 36 swings is not a control group. This assertion is the reason
   // the fixture exists: nobody may later "improve" it into 'exclusive'.
+  const activeSwings = 904
   assert.equal(concentrationOf(4, 0), 1)
-  assert.equal(linkStrength({ withCount: 4, withoutCount: 0, inactiveSwings }), 'inconclusive')
-  assert.ok(inactiveSwings < MIN_INACTIVE_SWINGS)
+  const nife = { withCount: 4, withoutCount: 0, activeSwings, inactiveSwings }
+  // 4 procs in 904 swings is 0.44 per 100; 36 inactive swings predict 0.16 firings. Seeing zero
+  // is not a finding.
+  assert.ok(expectedInactiveProcs(nife) < 0.2)
+  assert.equal(linkStrength(nife), 'inconclusive')
 
   // Smiting Strike fires 27 times up and ONCE down (19:26:35, before the aura), which proves it
-  // is not aura-granted — and it too is unclassifiable here, for the same reason.
+  // is not aura-granted — and it too is unclassifiable here, for the same reason. Note the
+  // number the RATE-AWARE gate exposes and a flat swing floor could not: 27/904 predicts 1.075
+  // firings in 36 inactive swings, and exactly ONE was seen. That is the null hypothesis
+  // matching itself to two decimal places, dressed up as a 0.96 concentration.
   assert.deepEqual(laneOf(z, 'Smiting Strike'), { hits: 28, total: 2464 })
-  assert.equal(linkStrength({ withCount: 27, withoutCount: 1, inactiveSwings }), 'inconclusive')
+  const smite = { withCount: 27, withoutCount: 1, activeSwings, inactiveSwings }
+  assert.ok(Math.abs(expectedInactiveProcs(smite) - 1.075) < 0.01)
+  assert.ok(concentrationOf(27, 1) > 0.96)
+  assert.equal(linkStrength(smite), 'inconclusive')
+  assert.ok(expectedInactiveProcs(smite) < MIN_EXPECTED_INACTIVE_PROCS)
 })
 
 test('W40: the sample floors, on a 5-second pull and a 13-second one', { skip: missing(W40) }, () => {

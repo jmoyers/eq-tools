@@ -22,7 +22,16 @@
 // keeps the meter's meaning and the UI states it. `per100Swings` exists precisely because it
 // has no such ambiguity.
 
-import type { ProcLink, ProcRateView } from '../../shared/procAnalytics'
+import { stateKeyOf } from './stateTimeline'
+import type {
+  AttributionReport,
+  EffectAttribution,
+  MarginalEstimate,
+  ProcLink,
+  ProcRateView,
+  StateKind,
+  StateSpan
+} from '../../shared/procAnalytics'
 
 // ---------------------------------------------------------------------------------------
 // Sample floors. Below each of these a number is ABSENT, never 0.
@@ -33,28 +42,43 @@ export const MIN_ACTIVE_SEC = 10
 /** Below this many logged swings, `per100Swings` is absent. */
 export const MIN_SWINGS = 20
 /**
- * Below this much INACTIVE-side swing exposure, a `ProcLink` is 'inconclusive' and can never be
- * 'exclusive' — "it never fired without it" is only evidence when there was a meaningful chance
- * to fire without it.
+ * THE RATE-AWARE EXPOSURE GATE, and the number is a count of PROCS, not of swings.
  *
- * ⚠ THE PLAN CONTRADICTS ITSELF HERE, and the contradiction is left visible rather than
- * silently resolved (changing a measured threshold is the integrator's call, never an
- * executor's). docs/plans/proc-analytics.md fixes this constant at 200 (§4.3) but ALSO states
- * that Instrument of Nife — 289 inactive swings against 261,505 active ones — must come out
- * 'inconclusive' (§2.1 ProcLink, §0.3). 289 > 200, so as specified it comes out 'exclusive'.
+ * ⚠ THIS REPLACES THE PLAN'S `MIN_INACTIVE_SWINGS = 200` (§4.3), which contradicted the plan's
+ * own narrative and was shipped in wave 1 with the contradiction written down rather than
+ * silently resolved. docs/plans/proc-analytics.md fixed a FLAT floor of 200 inactive swings
+ * while ALSO stating that Instrument of Nife — 289 inactive swings against 261,505 active ones
+ * — must come out 'inconclusive' (§0.3, §2.1). 289 > 200, so as specified it came out
+ * 'exclusive': the exact claim the plan spent a section refusing to make.
  *
- * Both readings cannot hold. The narrative is the sounder one: at that lane's own observed rate
- * (1,084 procs / 261,505 swings ≈ 0.41 per 100), 289 inactive swings predict about ONE proc, so
- * seeing zero is barely evidence at all. Two ways to make the code say that — raise the floor,
- * or make it RATE-AWARE (require the inactive exposure to predict some minimum number of procs
- * at the lane's observed rate, which needs the active-side swing count in `LinkInput`). The
- * second is the principled one and is a design decision, so neither is taken here.
+ * A flat swing floor cannot express the judgement, because the judgement is not about swings at
+ * all. "It never fired without it" is evidence only in proportion to how many firings the
+ * inactive arm SHOULD have produced. So the gate is the lane's OWN observed rate, projected
+ * onto the inactive exposure:
  *
- * TIER B IS UNAFFECTED and already reaches the right verdict for Nife by a different route:
- * 289 swings cannot fill 20 eligible 60-second windows, so the counterfactual reports
- * 'insufficient-sample' regardless of what this floor says.
+ *     expected = inactiveSwings × (withCount / activeSwings)
+ *
+ * and the link may leave 'inconclusive' only when that expectation reaches this many procs. On
+ * the real log the two named cases separate cleanly and for the right reason:
+ *
+ *   Instrument of Nife  1,084 procs / 261,505 active swings = 0.41 per 100 swings.
+ *                       289 inactive swings ⇒ ~1.2 expected procs. Seeing zero is barely
+ *                       evidence at all ⇒ 'inconclusive'. (A flat 200-swing floor said
+ *                       'exclusive'.)
+ *   Spellblade (w39)    14 procs / 406 active swings = 3.4 per 100 swings.
+ *                       225 inactive swings ⇒ ~7.8 expected procs. Seeing zero is a real
+ *                       measurement ⇒ 'exclusive'.
+ *
+ * Three, not five or ten: below three expected firings a null result is ordinary luck (at
+ * λ = 3 a Poisson zero still happens 5% of the time — which is about as far as an
+ * observational co-occurrence count deserves to be pushed), and raising it further would
+ * silence the one genuine exclusivity this log contains.
+ *
+ * TIER B IS INDEPENDENT of this and reaches the same verdict for Nife by a different route: 289
+ * swings cannot fill 20 eligible 60-second windows, so the counterfactual reports
+ * 'insufficient-sample' whatever this gate says.
  */
-export const MIN_INACTIVE_SWINGS = 200
+export const MIN_EXPECTED_INACTIVE_PROCS = 3
 
 // ---------------------------------------------------------------------------------------
 // The window ledger
@@ -200,7 +224,14 @@ export interface WindowArms {
  *      window containing a switch is DISCARDED, not split: the boundary is the confound.
  *   2. VOLUME — `swings >= MIN_WINDOW_SWINGS` and `activeMs >= MIN_WINDOW_ACTIVE_MS`.
  *
- * `stateKey` is `<kind>:<key>`; `group` is the exclusivity group that state commits under.
+ * `stateKey` is `<kind>:<key>`; `group` is the exclusivity group that state commits under, and
+ * it is matched as a PREFIX. Exact match is the normal case ('stance', 'invocation',
+ * `buff:<key>`); the prefix exists for COATS, whose exclusivity groups are 'coat:utility' and
+ * `coat:combat:<venom>` and whose projected `StateSpan` cannot say which of the two it was
+ * (law 6 — the dry line names a family, never a venom). So a coat study reads `'coat:'` and any
+ * coat commit disqualifies the minute: it discards MORE windows than a per-venom rule would,
+ * which is the safe direction for a purity gate.
+ *
  * This function makes no comparison and reaches no verdict — it only hands back the two
  * populations and how many windows survived.
  */
@@ -211,13 +242,31 @@ export function partitionWindows(
 ): WindowArms {
   const arms: WindowArms = { active: [], inactive: [], total: windows.length, eligible: 0 }
   for (const w of windows) {
-    if (w.transitionGroups.has(group)) continue
+    if (impureFor(w, group)) continue
     if (w.swings < MIN_WINDOW_SWINGS || w.activeMs < MIN_WINDOW_ACTIVE_MS) continue
     arms.eligible++
     if (w.stateKeys.has(stateKey)) arms.active.push(w)
     else arms.inactive.push(w)
   }
   return arms
+}
+
+/** True when a commit of `group` (prefix-matched — see partitionWindows) landed in this minute. */
+function impureFor(w: ProcWindow, group: string): boolean {
+  for (const g of w.transitionGroups) {
+    if (g.startsWith(group)) return true
+  }
+  return false
+}
+
+/** Windows that clear the VOLUME gates alone. State-independent, so it is the honest
+ *  denominator for `AttributionReport.windowsEligible` — purity is decided per state. */
+export function volumeEligible(windows: readonly ProcWindow[]): number {
+  let n = 0
+  for (const w of windows) {
+    if (w.swings >= MIN_WINDOW_SWINGS && w.activeMs >= MIN_WINDOW_ACTIVE_MS) n++
+  }
+  return n
 }
 
 // ---------------------------------------------------------------------------------------
@@ -250,21 +299,48 @@ export function procRate(i: RateInput): ProcRateView {
   return view
 }
 
-/** Co-occurrence counts + the inactive-side exposure. */
+/** Co-occurrence counts + BOTH swing exposures. The active-side count is what turns the gate
+ *  from a flat swing floor into the lane's own observed rate — see MIN_EXPECTED_INACTIVE_PROCS. */
 export interface LinkInput {
   withCount: number
   withoutCount: number
+  /** YOUR swing attempts logged while the state was ACTIVE. The denominator of the lane's own
+   *  proc rate, and the only reason this classifier can tell a rare proc from a common one. */
+  activeSwings: number
+  /** YOUR swing attempts logged while the state was INACTIVE. The exposure the claim rests on. */
   inactiveSwings: number
 }
 
 /**
- * Classify a `ProcLink`. THE DEFAULT IS 'inconclusive', and that is the point: a lane that
- * never fired without a state is only evidence when there were swings without that state to
- * fire on. Concentration alone can never reach 'exclusive'.
+ * How many firings the INACTIVE arm was worth, in procs.
+ *
+ * `max` of two estimates, and neither may be dropped:
+ *   - what the arm ACTUALLY produced (`withoutCount`). Direct observation beats any model: a
+ *     lane that fired six times without the state has demonstrably been sampled without it,
+ *     whatever the active arm's rate would have predicted.
+ *   - what the active arm's own rate PREDICTS for that many swings. This is the only estimate
+ *     available in the case that matters — `withoutCount === 0`, where the whole question is
+ *     whether the zero means anything.
+ *
+ * With `withCount === 0` the rate is 0 and the first term carries it, which is correct: a lane
+ * that only ever fired WITHOUT the state is not evidence about the state's exposure, it is
+ * evidence against the state entirely.
+ */
+export function expectedInactiveProcs(i: LinkInput): number {
+  const rate = i.activeSwings > 0 ? i.withCount / i.activeSwings : 0
+  return Math.max(i.withoutCount, i.inactiveSwings * rate)
+}
+
+/**
+ * Classify a `ProcLink`. THE DEFAULT IS 'inconclusive', and that is the point: a lane that never
+ * fired without a state is only evidence when the inactive arm had a real chance to produce
+ * firings. Concentration alone can never reach 'exclusive' — a 100% concentration measured
+ * against 36 swings of exposure (the w40 Instrument of Nife case) is not a measurement.
  */
 export function linkStrength(i: LinkInput): ProcLink['strength'] {
   const total = i.withCount + i.withoutCount
-  if (total === 0 || i.inactiveSwings < MIN_INACTIVE_SWINGS) return 'inconclusive'
+  if (total === 0) return 'inconclusive'
+  if (expectedInactiveProcs(i) < MIN_EXPECTED_INACTIVE_PROCS) return 'inconclusive'
   if (i.withoutCount === 0) return 'exclusive'
   return i.withCount / total >= 0.8 ? 'correlated' : 'weak'
 }
@@ -274,4 +350,266 @@ export function linkStrength(i: LinkInput): ProcLink['strength'] {
 export function concentrationOf(withCount: number, withoutCount: number): number {
   const total = withCount + withoutCount
   return total === 0 ? 0 : withCount / total
+}
+
+// ---------------------------------------------------------------------------------------
+// TIER B — the matched-window counterfactual (§5)
+//
+// MEDIANS, NEVER MEANS (law 5). One eight-minute boss window must not set the headline, and a
+// mean over uncontrolled EQ content is exactly the aggregate that lies. Every arm reports its
+// median, its IQR and its own n, and the two arms are never pooled.
+//
+// CONFOUNDS ARE DECLARED, NEVER CORRECTED (§5.4). Regression-adjusting an observational
+// comparison over content nobody randomised would manufacture confidence the data cannot
+// support. The list is printed beside the number, and the two confounds this ledger CANNOT test
+// are declared as untested rather than omitted — an omitted check reads as a passed one.
+// ---------------------------------------------------------------------------------------
+
+/** A co-state is declared a confound when its active fraction differs between the arms by more
+ *  than this (§5.4: "differs by >20 percentage points"). */
+export const CO_STATE_GAP = 0.2
+
+/** The §5.5 sentence, verbatim, for every effect with no per-hit marker — which per the wiki is
+ *  17 of the 18 stances and invocations. It rides the row whatever the verdict is: an 'estimate'
+ *  for a stance is still an estimate ABOUT something the log never marks. */
+export const NO_PER_HIT_MARKER_NOTE =
+  'A stance that boosts base melee has no per-hit marker in the log. Nothing distinguishes a ' +
+  'swing under Offensive from a swing under Balanced except the swing’s number — and ' +
+  'the mob, your level and your gear all changed too. The window comparison is the closest ' +
+  'honest answer, and it is an estimate.'
+
+/** Neither is recorded in the minute ledger, so neither can be tested. DECLARED, because a
+ *  confound list that silently omits the checks it could not run reads as a clean bill. */
+export const UNTESTED_CONFOUNDS =
+  'not tested — level drift and mob mix are not carried in the minute ledger'
+
+/** The exclusivity group a projected `StateSpan` commits under. Coats collapse to the family
+ *  prefix: the shared span shape cannot say utility from combat (see partitionWindows). */
+export function groupOf(kind: StateKind, key: string): string {
+  if (kind === 'stance' || kind === 'invocation') return kind
+  if (kind === 'coat') return 'coat:'
+  return `buff:${key}`
+}
+
+/** Linear-interpolated quantile (the PERCENTILE.INC / type-7 definition) over an ASCENDING
+ *  array. One definition, stated, so the IQR the UI prints is reproducible. */
+function quantile(sorted: readonly number[], p: number): number {
+  if (sorted.length === 0) return 0
+  const idx = p * (sorted.length - 1)
+  const lo = Math.floor(idx)
+  const hi = Math.ceil(idx)
+  return lo === hi ? sorted[lo] : sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo)
+}
+
+/** The three per-window statistics of one arm, each sorted ascending. Kept SEPARATE on purpose
+ *  (§2.1 MarginalEstimate): on the real log spellblade moves proc damage ~40% while leaving
+ *  damage-per-swing flat, and one blended headline would hide the entire mechanism. */
+interface ArmSeries {
+  dps: number[]
+  procDps: number[]
+  perSwing: number[]
+}
+
+function seriesOf(ws: readonly ProcWindow[]): ArmSeries {
+  const s: ArmSeries = { dps: [], procDps: [], perSwing: [] }
+  for (const w of ws) {
+    const sec = w.activeMs / 1000
+    if (sec > 0) {
+      s.dps.push(w.outDamage / sec)
+      s.procDps.push(w.procDamage / sec)
+    }
+    if (w.swings > 0) s.perSwing.push(w.outDamage / w.swings)
+  }
+  s.dps.sort((a, b) => a - b)
+  s.procDps.sort((a, b) => a - b)
+  s.perSwing.sort((a, b) => a - b)
+  return s
+}
+
+/** The matched-window comparison. Both arms' n's ride along: a delta with one n hidden is a
+ *  precision claim, and the renderer needs both to draw the estimate as a RANGE. */
+export function marginalOf(arms: WindowArms): MarginalEstimate {
+  const a = seriesOf(arms.active)
+  const i = seriesOf(arms.inactive)
+  const medA = quantile(a.dps, 0.5)
+  const medI = quantile(i.dps, 0.5)
+  return {
+    nActive: arms.active.length,
+    nInactive: arms.inactive.length,
+    medDpsActive: medA,
+    medDpsInactive: medI,
+    iqrActive: [quantile(a.dps, 0.25), quantile(a.dps, 0.75)],
+    iqrInactive: [quantile(i.dps, 0.25), quantile(i.dps, 0.75)],
+    deltaDps: medA - medI,
+    deltaPct: medI > 0 ? ((medA - medI) / medI) * 100 : 0,
+    medProcDpsActive: quantile(a.procDps, 0.5),
+    medProcDpsInactive: quantile(i.procDps, 0.5),
+    medDmgPerSwingActive: quantile(a.perSwing, 0.5),
+    medDmgPerSwingInactive: quantile(i.perSwing, 0.5)
+  }
+}
+
+const pct = (f: number): string => `${Math.round(f * 100)}%`
+
+function fractionActive(ws: readonly ProcWindow[], key: string): number {
+  if (ws.length === 0) return 0
+  let n = 0
+  for (const w of ws) {
+    if (w.stateKeys.has(key)) n++
+  }
+  return n / ws.length
+}
+
+/** Every OTHER tracked state whose presence differs materially between the arms. This is the
+ *  one confound the ledger can actually measure, and it is the one that matters most: a
+ *  "spellblade adds 90 dps" that is really "you happened to be in offensive stance for those
+ *  minutes" is the failure mode this list exists to expose. */
+function coStateConfounds(arms: WindowArms, selfKey: string): string[] {
+  const keys = new Set<string>()
+  for (const w of [...arms.active, ...arms.inactive]) {
+    for (const k of w.stateKeys) keys.add(k)
+  }
+  keys.delete(selfKey)
+  const out: string[] = []
+  for (const k of [...keys].sort()) {
+    const fa = fractionActive(arms.active, k)
+    const fi = fractionActive(arms.inactive, k)
+    if (Math.abs(fa - fi) <= CO_STATE_GAP) continue
+    out.push(`co-state — ${k} was active in ${pct(fa)} of active windows but ${pct(fi)} of inactive ones`)
+  }
+  return out
+}
+
+/** True when the arms are temporally separated — every window of one precedes every window of
+ *  the other. Gear, level and content all drift with time, so a separated comparison is a
+ *  before/after, not a controlled one. */
+function separated(a: readonly ProcWindow[], b: readonly ProcWindow[]): boolean {
+  if (a.length === 0 || b.length === 0) return false
+  const aMin = Math.min(...a.map((w) => w.minute))
+  const aMax = Math.max(...a.map((w) => w.minute))
+  const bMin = Math.min(...b.map((w) => w.minute))
+  const bMax = Math.max(...b.map((w) => w.minute))
+  return aMax < bMin || bMax < aMin
+}
+
+/**
+ * The declared confound list (§5.4). NOTHING here adjusts a number.
+ *
+ * `zone-mix` is deliberately absent and its absence is not an oversight: the ledger lives on the
+ * `Agg`, and a zone change starts a new `Agg`, so every window in a report is from ONE zone by
+ * construction. The two confounds the ledger genuinely cannot see (level drift, mob mix) are
+ * declared as UNTESTED instead — see UNTESTED_CONFOUNDS.
+ */
+export function declareConfounds(arms: WindowArms, selfKey: string): string[] {
+  const out = coStateConfounds(arms, selfKey)
+  if (separated(arms.active, arms.inactive)) {
+    out.push('not-interleaved — the two arms do not overlap in time; gear, level and content all drift with it')
+  }
+  out.push(UNTESTED_CONFOUNDS)
+  return out
+}
+
+/** One effect to attribute: a state observed in this session, plus the ledger to test it in. */
+export interface EffectInput {
+  kind: StateKind
+  key: string
+  name: string
+  windows: readonly ProcWindow[]
+}
+
+/** No direct (Tier-A) roll-up is claimable for a STATE today — see the note in
+ *  `attributeEffect`. The per-LANE Tier-A numbers are exact and live in `ProcsView.lanes`.
+ *  A fresh object every call: `lanes` is the audit list, and one shared array across every
+ *  effect in every report is a mutation waiting to happen. */
+const noDirect = (): EffectAttribution['direct'] => ({
+  damage: 0,
+  heal: 0,
+  hits: 0,
+  dpsContribution: 0,
+  lanes: []
+})
+
+/** Kept SHORT on purpose: it rides every effect row of a 4×/sec snapshot, and a paragraph
+ *  repeated twenty-five times is payload, not honesty. */
+const DIRECT_NOTE = 'No lane is attributed to this state; the exact per-lane numbers are in the lane list.'
+
+/**
+ * One state's counterfactual verdict.
+ *
+ * THE FOUR VERDICTS, and none may be rendered as another:
+ *   'estimate'            — both arms cleared MIN_ARM_WINDOWS. `marginal` present, confounds
+ *                           declared beside it, and the renderer draws it as a RANGE.
+ *   'insufficient-sample' — a real contrast exists (both arms have eligible windows) but at
+ *                           least one is short. The note says WHICH arm and by how much.
+ *   'not-observable'      — one arm is structurally empty: the state was on in every eligible
+ *                           minute, or off in every one. No comparison is possible at all. This
+ *                           is Instrument of Nife's answer, and it is the RESULT, not a defect.
+ *   'measured'            — reserved for a state with an exclusive proc lane behind it. NOT
+ *                           reachable in this wave: see DIRECT_NOTE.
+ */
+export function attributeEffect(i: EffectInput): EffectAttribution {
+  const stateKey = stateKeyOf(i.kind, i.key)
+  const arms = partitionWindows(i.windows, stateKey, groupOf(i.kind, i.key))
+  const nA = arms.active.length
+  const nI = arms.inactive.length
+  const base = { kind: i.kind, key: i.key, name: i.name, direct: noDirect() }
+  const marker = i.kind === 'stance' || i.kind === 'invocation' ? ` ${NO_PER_HIT_MARKER_NOTE}` : ''
+  if (nA >= MIN_ARM_WINDOWS && nI >= MIN_ARM_WINDOWS) {
+    return {
+      ...base,
+      verdict: 'estimate',
+      marginal: marginalOf(arms),
+      confounds: declareConfounds(arms, stateKey),
+      note: `${DIRECT_NOTE}${marker}`
+    }
+  }
+  return { ...base, verdict: shortVerdict(nA, nI), confounds: [], note: `${shortNote(nA, nI)} ${DIRECT_NOTE}${marker}` }
+}
+
+function shortVerdict(nA: number, nI: number): EffectAttribution['verdict'] {
+  return nA > 0 && nI > 0 ? 'insufficient-sample' : 'not-observable'
+}
+
+/** Says which arm is short and by how much — never a bare "not enough data". */
+function shortNote(nA: number, nI: number): string {
+  if (nA === 0 && nI === 0) return 'No minute of this session cleared the volume gates, so no comparison was attempted.'
+  if (nA === 0) return `This state was never active in an eligible minute (${nI} inactive windows). No comparison is possible.`
+  if (nI === 0) return `This state was active in every one of the ${nA} eligible minutes. No comparison is possible — there is no control group.`
+  const shortArm = nA < nI ? 'active' : 'inactive'
+  const have = Math.min(nA, nI)
+  return `The ${shortArm} arm has ${have} eligible 60-second windows; ${MIN_ARM_WINDOWS} are needed (${nA} active / ${nI} inactive).`
+}
+
+const KIND_ORDER: StateKind[] = ['buff', 'invocation', 'stance', 'coat']
+
+/** Everything the report needs. The state list is the SPANS of this segment, so the report
+ *  covers exactly the states this session actually saw — none omitted, none invented. */
+export interface ReportInput {
+  sessionId: string
+  windows: readonly ProcWindow[]
+  states: readonly StateSpan[]
+}
+
+/**
+ * The Tier-B report for one zone session. EVERY state observed gets a row, including — and
+ * especially — the ones whose honest answer is "no comparison is possible": omitting them would
+ * leave the UI looking like the feature simply had nothing to say about stances, when what it
+ * has to say is that the log never marks them.
+ */
+export function buildAttributionReport(i: ReportInput): AttributionReport {
+  const seen = new Map<string, StateSpan>()
+  for (const s of i.states) {
+    const k = stateKeyOf(s.kind, s.key)
+    if (!seen.has(k)) seen.set(k, s)
+  }
+  const effects = [...seen.values()]
+    .map((s) => attributeEffect({ kind: s.kind, key: s.key, name: s.name, windows: i.windows }))
+    .sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind) || a.name.localeCompare(b.name))
+  return {
+    sessionId: i.sessionId,
+    windowSec: WINDOW_MS / 1000,
+    windowsTotal: i.windows.length,
+    windowsEligible: volumeEligible(i.windows),
+    effects
+  }
 }

@@ -8,17 +8,15 @@
 import { sourceViews } from './sourceViews'
 import { sumHeal } from './aggregate'
 import { buildHealingView } from './healing'
+import { buildProcsView } from './procViews'
 import { zoneActiveSec, zoneDurationSec } from './lifecycle'
 import { ACTIVE_MS, TIMELINE_BUDGET, encounterName, type Encounter, type TimelineRaw } from './encounter'
 import { CATEGORY_ORDER } from '../../shared/combat'
-import { isSlowCapable } from '../../shared/poisons'
 import type { Agg } from './aggregate'
 import type { EngineState } from './state'
 import type {
   DamageCategory,
   HealerView,
-  ProcLane,
-  ProcsView,
   SegmentView,
   SourceKind,
   StanceSpan,
@@ -38,6 +36,13 @@ interface ViewSpec {
   durationSec: number
   activeSec: number
   active: boolean
+  /** Engine state, for the SESSION-level active-state timeline the proc view clips its spans
+   *  from. Read-only here, like everything else in this module. */
+  st: EngineState
+  /** Segment span in absolute ms (first/last attributed damage). The proc view clips the state
+   *  spans to it; a segment that saw no damage carries 0/0 and reports no spans. */
+  startTs: number
+  endTs: number
   /** Present only for a FIGHT — see buildProcsView. */
   enc?: Encounter
 }
@@ -47,7 +52,8 @@ export function buildSelected(st: EngineState, id: string, now: number, combineP
     const zDur = zoneDurationSec(st)
     return buildView({
       id: 'zone', kind: 'zone', name: `${st.zone ?? 'Session'} — overall`, zone: st.zone,
-      agg: st.zoneAgg, durationSec: zDur, activeSec: Math.min(zDur, zoneActiveSec(st)), active: false
+      agg: st.zoneAgg, durationSec: zDur, activeSec: Math.min(zDur, zoneActiveSec(st)), active: false,
+      st, startTs: st.zoneStartTs, endTs: st.zoneLastTs
     }, combinePets)
   }
   // A finalized zone SESSION (Task #54): rebuild its full breakdown from the frozen aggregate.
@@ -57,7 +63,8 @@ export function buildSelected(st: EngineState, id: string, now: number, combineP
     const zActive = Math.min(zDur, zs.activeMs / 1000)
     return buildView({
       id: zs.id, kind: 'zone', name: `${zs.zone} — overall`, zone: zs.zone,
-      agg: zs.agg, durationSec: zDur, activeSec: zActive, active: false
+      agg: zs.agg, durationSec: zDur, activeSec: zActive, active: false,
+      st, startTs: zs.startTs, endTs: zs.lastTs
     }, combinePets)
   }
   const e = st.current?.id === id ? st.current : st.history.find((h) => h.id === id)
@@ -68,49 +75,9 @@ export function buildSelected(st: EngineState, id: string, now: number, combineP
   const active = isCurrent && now - e.lastTs < ACTIVE_MS
   return buildView({
     id: e.id, kind: 'fight', name: encounterName(e, isCurrent), zone: e.zone,
-    agg: e.agg, durationSec: dur, activeSec, active, enc: e
+    agg: e.agg, durationSec: dur, activeSec, active, enc: e,
+    st, startTs: e.startTs, endTs: e.lastTs
   }, combinePets)
-}
-
-/**
- * The per-segment proc ledger (Task #64), built entirely from the frozen aggregate.
- *
- * `enc` is present only for a FIGHT: coats-at-engage and the engage-relative timings are
- * questions about one pull's opening instant, and a zone session (many pulls, many coat
- * swaps) has no such instant. So a zone view reports the counts — procs, poison damage,
- * effects, stance switches — and honestly reports no `slowLandMs` and no `slowExpected`,
- * rather than measuring from an arbitrary zero.
- */
-function buildProcsView(agg: Agg, enc?: Encounter): ProcsView {
-  const p = agg.procs
-  const byCount = (a: ProcLane, b: ProcLane): number => b.count - a.count || a.name.localeCompare(b.name)
-  const strikes: ProcLane[] = [...p.strikes.values()]
-    .map((s) => ({ name: s.name, count: s.count, ...(s.ambiguous ? { ambiguous: true } : {}) }))
-    .sort(byCount)
-  const poisonDamage: ProcLane[] = [...p.poisonDamage.values()]
-    .map((s) => ({ name: s.name, count: s.count, total: s.total }))
-    .sort((a, b) => (b.total ?? 0) - (a.total ?? 0) || a.name.localeCompare(b.name))
-  const dispels: ProcLane[] = [...p.dispels.values()]
-    .map((s) => ({ name: s.name, count: s.count, ambiguous: true }))
-    .sort(byCount)
-  const coatAtEngage = enc?.coatAtEngage
-  const start = enc?.startTs ?? 0
-  return {
-    coatAtEngage: coatAtEngage ? { ...coatAtEngage } : undefined,
-    combatAtEngage: enc ? enc.combatAtEngage.map((c) => ({ ...c })) : [],
-    slowExpected: !!coatAtEngage && isSlowCapable(coatAtEngage.poison),
-    coats: enc ? p.coats.map((c) => ({ poison: c.poison, tMs: Math.max(0, c.ts - start) })) : [],
-    strikes,
-    strikeCount: strikes.reduce((s, l) => s + l.count, 0),
-    slowLands: p.slowLands,
-    ...(enc && p.firstSlowTs > 0 ? { slowLandMs: Math.max(0, p.firstSlowTs - start) } : {}),
-    poisonDamage,
-    poisonDamageTotal: poisonDamage.reduce((s, l) => s + (l.total ?? 0), 0),
-    dispels,
-    dispelCount: dispels.reduce((s, l) => s + l.count, 0),
-    stanceSwitches: p.stanceSwitches,
-    invocationSwitches: p.invocationSwitches
-  }
 }
 
 function buildView(spec: ViewSpec, combinePets: boolean): SegmentView {
@@ -141,7 +108,10 @@ function buildView(spec: ViewSpec, combinePets: boolean): SegmentView {
     incomingHealTotal: incomingHealers.reduce((s, h) => s + h.total, 0),
     incomingHealers,
     healing: buildHealingView(agg.heal, durationSec),
-    procs: buildProcsView(agg, spec.enc)
+    procs: buildProcsView({
+      st: spec.st, agg, id: spec.id, kind: spec.kind, durationSec, activeSec,
+      startTs: spec.startTs, endTs: spec.endTs, enc: spec.enc
+    })
   }
 }
 
