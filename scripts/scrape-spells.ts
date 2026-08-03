@@ -23,7 +23,7 @@ import { fileURLToPath } from 'url'
 import type { SpellDbFile, SpellEntry } from '../src/shared/types'
 
 const API = 'https://eqlwiki.com/api.php'
-const UA = 'eq-tools-scraper/0.1 (personal buff tracker)'
+const UA = 'everquest-companion/0.1 (personal buff tracker)'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const CACHE_DIR = resolve(HERE, 'sources/cache/spells')

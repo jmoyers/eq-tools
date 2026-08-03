@@ -62,7 +62,7 @@ export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
   if (!app.isPackaged) {
     ipcMain.handle(IPC.installUpdate, () => {})
     ipcMain.handle(IPC.checkForUpdates, () => lastStatus)
-    console.log('[eq-tools] Auto-update disabled (dev / not packaged).')
+    console.log('[everquest-companion] Auto-update disabled (dev / not packaged).')
     return
   }
 

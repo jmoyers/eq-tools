@@ -98,7 +98,7 @@ jobs:
           } else {
             Write-Host "Code signing: skipped (no Azure secrets configured)."
           }
-          npx electron-builder --win --publish always --config.nsis.artifactName='eq-tools-Setup-${version}.${ext}' --config.publish.channel=main @signArgs
+          npx electron-builder --win --publish always --config.nsis.artifactName='everquest-companion-Setup-${version}.${ext}' --config.publish.channel=main @signArgs
 
       # --- STABLE CHANNEL (tag v*): full release on the 'latest' channel ---
       - name: Build + publish (stable / tagged release)

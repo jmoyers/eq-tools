@@ -37,7 +37,7 @@ export { normalizeItemName, parseItemWikitext }
 import poskyJson from '../renderer/src/data/eqlegends/posky.json'
 
 const API = 'https://eqlwiki.com/api.php'
-const UA = 'eq-tools-scraper/0.1 (personal quest tracker)'
+const UA = 'everquest-companion/0.1 (personal quest tracker)'
 
 const CACHE_VERSION = 1
 const NEG_TTL_MS = 7 * 24 * 60 * 60 * 1000 // negative results: retry after 7 days

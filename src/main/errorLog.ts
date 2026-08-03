@@ -11,12 +11,12 @@ import { join } from 'path'
  * Writes to BOTH sinks:
  *   (a) `<userData>/errors.log` — a durable file agents/devs can read after the
  *       fact (truncated at ~1MB to stay small; we keep it dead simple).
- *   (b) `console.error` with the grep-able `[eq-tools:error]` prefix so the
+ *   (b) `console.error` with the grep-able `[everquest-companion:error]` prefix so the
  *       `electron-vite dev --watch` stdout captures it live for agents.
  */
 
 const MAX_LOG_BYTES = 1_000_000 // ~1MB — rotate by truncation past this.
-const PREFIX = '[eq-tools:error]'
+const PREFIX = '[everquest-companion:error]'
 
 let cachedPath: string | null = null
 

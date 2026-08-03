@@ -24,15 +24,15 @@ function Check($name, $ok, $detail = '') {
   else { Log "FAIL  $name $detail"; $script:pass = $false }
 }
 
-Log "=== eq-tools installer clean-machine test ==="
+Log "=== everquest-companion installer clean-machine test ==="
 Log "time: $(Get-Date -Format o)"
 Log "host: $env:COMPUTERNAME (sandbox)"
 
 # 1. Find the newest installer in the mapped read-only release folder.
-$setup = Get-ChildItem -Path 'C:\release' -Recurse -Filter 'eq-tools-Setup-*.exe' -ErrorAction SilentlyContinue |
+$setup = Get-ChildItem -Path 'C:\release' -Recurse -Filter 'everquest-companion-Setup-*.exe' -ErrorAction SilentlyContinue |
   Sort-Object LastWriteTime -Descending | Select-Object -First 1
 if (-not $setup) {
-  Check 'installer-present' $false 'no eq-tools-Setup-*.exe under C:\release'
+  Check 'installer-present' $false 'no everquest-companion-Setup-*.exe under C:\release'
   Set-Content -Path $result -Value ($lines -join "`r`n")
   exit 1
 }
@@ -44,7 +44,7 @@ Check 'installer-exit-0' ($p.ExitCode -eq 0) "(exit $($p.ExitCode))"
 Start-Sleep -Seconds 3
 
 # 3. Verify install path + key files (per-user under %LOCALAPPDATA%\Programs).
-$installDir = Join-Path $env:LOCALAPPDATA 'Programs\eq-tools'
+$installDir = Join-Path $env:LOCALAPPDATA 'Programs\everquest-companion'
 $exe = Join-Path $installDir 'EQ Legends Companion.exe'
 Check 'install-dir-exists' (Test-Path $installDir) $installDir
 Check 'app-exe-exists' (Test-Path $exe)

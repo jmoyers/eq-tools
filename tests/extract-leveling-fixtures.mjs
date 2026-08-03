@@ -6,6 +6,12 @@
 //
 // Usage: node tests/extract-leveling-fixtures.mjs "<path to eqlog_Primitive_freeport.txt>"
 import { readFileSync, writeFileSync } from 'fs'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
+
+// Fixtures resolve RELATIVE to this file — the repo moved once and these extractors kept
+// writing into the old absolute path. Never hardcode a repo path here again.
+const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 const LOG = process.argv[2]
 const lines = readFileSync(LOG, 'utf8').split(/\r?\n/)
 
@@ -22,7 +28,7 @@ const keep = (l) => l.startsWith('[') && KEEP.some((re) => re.test(l))
 function slice(fromLine, toLine, out) {
   const seg = []
   for (let i = fromLine - 1; i < toLine && i < lines.length; i++) if (keep(lines[i])) seg.push(lines[i])
-  writeFileSync(`C:/Users/jmoye/eq-tools/tests/fixtures/${out}`, seg.join('\n') + '\n')
+  writeFileSync(join(FIXTURES, out), seg.join('\n') + '\n')
   console.log(`${out}: ${seg.length} lines (from raw ${toLine - fromLine + 1})`)
 }
 

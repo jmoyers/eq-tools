@@ -5,11 +5,11 @@
 
 $ErrorActionPreference = 'Stop'
 
-Write-Host '=== eq-tools installer file-level verification (Server Core) ==='
+Write-Host '=== everquest-companion installer file-level verification (Server Core) ==='
 
-$setup = Get-ChildItem -Path 'C:\test\release' -Recurse -Filter 'eq-tools-Setup-*.exe' |
+$setup = Get-ChildItem -Path 'C:\test\release' -Recurse -Filter 'everquest-companion-Setup-*.exe' |
   Sort-Object LastWriteTime -Descending | Select-Object -First 1
-if (-not $setup) { throw 'No eq-tools-Setup-*.exe found under C:\test\release' }
+if (-not $setup) { throw 'No everquest-companion-Setup-*.exe found under C:\test\release' }
 Write-Host "installer: $($setup.FullName)"
 
 # Silent install.
@@ -17,7 +17,7 @@ $p = Start-Process -FilePath $setup.FullName -ArgumentList '/S' -PassThru -Wait
 if ($p.ExitCode -ne 0) { throw "installer exited $($p.ExitCode)" }
 Start-Sleep -Seconds 3
 
-$installDir = Join-Path $env:LOCALAPPDATA 'Programs\eq-tools'
+$installDir = Join-Path $env:LOCALAPPDATA 'Programs\everquest-companion'
 $exe = Join-Path $installDir 'EQ Legends Companion.exe'
 $uninstaller = Join-Path $installDir 'Uninstall EQ Legends Companion.exe'
 

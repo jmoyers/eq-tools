@@ -14,8 +14,8 @@
 # dev machine — this harness is ready-to-run once Windows containers are available.
 #
 # Build context = repo root, so release/ is available. Build + run:
-#   docker build -f scripts/docker/Dockerfile -t eqtools-installer-test .
-#   docker run --rm eqtools-installer-test
+#   docker build -f scripts/docker/Dockerfile -t everquest-companion-installer-test .
+#   docker run --rm everquest-companion-installer-test
 # A non-zero exit = verification failed (the RUN step throws).
 
 # Pin a Server Core tag matching your host build (ltsc2022 for Win11/Server 2022).
@@ -33,4 +33,4 @@ RUN powershell -ExecutionPolicy Bypass -NoProfile -File C:/test/verify.ps1
 
 # If the RUN above succeeded, the image built = the installer passed file-level
 # verification. `docker run` just re-echoes the result for a live run.
-CMD ["powershell", "-NoProfile", "-Command", "Write-Host 'eq-tools installer file-level verification: image built OK (see build log for PASS lines).'"]
+CMD ["powershell", "-NoProfile", "-Command", "Write-Host 'everquest-companion installer file-level verification: image built OK (see build log for PASS lines).'"]

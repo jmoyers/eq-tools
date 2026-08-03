@@ -11,7 +11,7 @@ import type { PoskyData, PoskyItem, PoskyQuest } from '../../src/shared/types'
 import type { QuestSource } from './types'
 
 const API = 'https://eqlwiki.com/api.php'
-const UA = 'eq-tools-scraper/0.1 (personal quest tracker)'
+const UA = 'everquest-companion/0.1 (personal quest tracker)'
 
 const CLASSES = [
   'Bard',

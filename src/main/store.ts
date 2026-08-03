@@ -1,4 +1,5 @@
 import Store from 'electron-store'
+import { STORE_NAME } from './channel'
 import type {
   AlertDef,
   AlertPrefs,
@@ -60,7 +61,10 @@ interface StoreShape {
 }
 
 const store = new Store<StoreShape>({
-  name: 'eq-tools-progress',
+  // File name follows the product (Task #58): `<userData>/everquest-companion-progress.json`.
+  // The pre-rename `eq-tools-progress.json` is copied+renamed into this channel's userData
+  // on its first launch — see channel.ts `seedFromLegacy`.
+  name: STORE_NAME,
   defaults: { byCharacter: {}, activeLogPath: undefined, windowBounds: undefined }
 })
 

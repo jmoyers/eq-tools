@@ -1,5 +1,5 @@
 {
-  "name": "eq-tools",
+  "name": "everquest-companion",
   "version": "0.1.0",
   "description": "EverQuest Legends companion — real-time log analysis and Plane of Sky quest tracking",
   "main": "./out/main/index.js",

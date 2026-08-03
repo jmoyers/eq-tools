@@ -14,7 +14,7 @@ import type { BossData, RaidTarget } from '../src/shared/types'
 
 const EQL = 'https://eqlwiki.com'
 const P99 = 'https://wiki.project1999.com'
-const UA = 'Mozilla/5.0 eq-tools-bosses/0.2 (personal raid tracker)'
+const UA = 'Mozilla/5.0 everquest-companion/0.2 (personal raid tracker)'
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
 interface Curated {

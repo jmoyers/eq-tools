@@ -9,7 +9,7 @@
 
     What it does: maps this repo's release/ folder read-only into the sandbox and
     a results/ folder read-write, then on logon runs installer-test.ps1 which
-    silent-installs the newest eq-tools-Setup-*.exe, verifies the install path +
+    silent-installs the newest everquest-companion-Setup-*.exe, verifies the install path +
     Start-menu shortcut + that the app process starts, and writes PASS/FAIL +
     details to results\result.txt. The sandbox is disposable — nothing touches
     the host except the mapped results file.

@@ -41,7 +41,7 @@ per the notes below, then run).
 
 `installer-test.wsb` maps `release/` read-only + a `results/` folder read-write into
 a disposable sandbox, and on logon runs `installer-test.ps1`, which silent-installs
-the newest `eq-tools-Setup-*.exe`, verifies the install path + Start-menu shortcut +
+the newest `everquest-companion-Setup-*.exe`, verifies the install path + Start-menu shortcut +
 that the **app window process starts**, silent-uninstalls, checks cleanup, and writes
 `PASS`/`FAIL` + details to `scripts/sandbox/results/result.txt`.
 
@@ -64,8 +64,8 @@ GUI). A failed check throws so `docker build` fails.
 
 ```powershell
 # requires Windows containers (Docker Desktop → Switch to Windows containers)
-docker build -f scripts/docker/Dockerfile -t eqtools-installer-test .
-docker run --rm eqtools-installer-test
+docker build -f scripts/docker/Dockerfile -t everquest-companion-installer-test .
+docker run --rm everquest-companion-installer-test
 ```
 
 ## CI (`.github/workflows/build.yml`)

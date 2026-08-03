@@ -1,5 +1,7 @@
-// FIRST import on purpose: in EQ_E2E mode this re-points `userData` at a fresh temp dir
-// before electron-store is constructed (module-level) further down this import list.
+// FIRST import on purpose: channel.ts picks this process's `userData` dir (prod / dev /
+// e2e — Task #58) and runs the one-time state seed, before electron-store is constructed
+// (module-level) further down this import list.
+import { CHANNEL, USER_DATA } from './channel'
 import { E2E } from './e2e'
 import { app, shell, BrowserWindow, dialog, ipcMain } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
@@ -153,10 +155,10 @@ const spellDb = loadSpellDb()
   seedMiner.merge(baselineOverlay())
   seedMiner.merge(loadUserOverlay())
   const n = applyOverlayCorrections(spellDb, seedMiner.deriveLandingCorrections())
-  console.log(`[eq-tools] Message overlay: applied ${n} cast-message corrections over the wiki DB.`)
+  console.log(`[everquest-companion] Message overlay: applied ${n} cast-message corrections over the wiki DB.`)
 }
 installSpellDb(spellDb)
-console.log(`[eq-tools] Spell DB: ${spellDb.spells.length} spells (${spellDb.castOnYou.size} unique cast-on-you msgs).`)
+console.log(`[everquest-companion] Spell DB: ${spellDb.spells.length} spells (${spellDb.castOnYou.size} unique cast-on-you msgs).`)
 // The buffs extension (Task #19; message-driven model Task #34): tracks the player's own
 // buffs from precise message applies + cast-timing mining, serving live actives + stats.
 // Task #36: seed the observed-message overlay miner with the committed baseline + the user's
@@ -203,7 +205,7 @@ bus.subscribe((ev, live) => {
   const epochEv = epoch.observe(ev)
   if (epochEv) {
     console.log(
-      `[eq-tools] Character epoch boundary detected at ${new Date(epochEv.ts).toISOString()} (official launch): resetting character-scoped modules. Everything before this belongs to a prior same-name character wiped at launch (see epochDetector.ts).`
+      `[everquest-companion] Character epoch boundary detected at ${new Date(epochEv.ts).toISOString()} (official launch): resetting character-scoped modules. Everything before this belongs to a prior same-name character wiped at launch (see epochDetector.ts).`
     )
     bus.emitDerived(epochEv, live)
     // A LIVE wipe (rare — deleting + recreating your character while the app tails) shrinks
@@ -579,7 +581,7 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   tailer = null
   character = ref
   setActiveLogPath(ref.logPath)
-  console.log(`[eq-tools] Tailing ${ref.name}@${ref.server}: ${ref.logPath}`)
+  console.log(`[everquest-companion] Tailing ${ref.name}@${ref.server}: ${ref.logPath}`)
 
   // Rebuild the canonical event stream for this character from scratch: one bus,
   // one seq counter, both feeders (scan + tail). Consumers stay subscribed (see
@@ -606,7 +608,7 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
   const killState = killsModule.snapshot().state
   const lvlState = levelingModule.snapshot().state
   console.log(
-    `[eq-tools] Loaded ${lootState.length} loot, ${turnInsModule.snapshot().state.length} turn-ins, ${
+    `[everquest-companion] Loaded ${lootState.length} loot, ${turnInsModule.snapshot().state.length} turn-ins, ${
       Object.keys(killState).length
     } mobs, ${lvlState.levels.length} level-ups, ${lvlState.aaGains.length} AA gains, ${lvlState.aaSpends.length} AA buys.`
   )
@@ -626,7 +628,7 @@ async function tailCharacter(ref: CharacterRef): Promise<void> {
     }
     notifyCombatActivity() // FIX 4: throttled push so the meter refreshes sub-second
   })
-  tailer.on('error', (err) => console.error('[eq-tools] tailer error', err))
+  tailer.on('error', (err) => console.error('[everquest-companion] tailer error', err))
   void tailer.start()
 
   // Start the wall-clock heartbeat now that the LIVE tail is running (the scan has
@@ -678,17 +680,17 @@ function startInventoryWatch(ref: CharacterRef): void {
     const res = loadInventory(character.name)
     if (!res) return
     setInventory(activeCharId(), res.counts, { path: res.path, loadedAt: res.loadedAt })
-    console.log(`[eq-tools] Inventory auto-reloaded: ${res.path}`)
+    console.log(`[everquest-companion] Inventory auto-reloaded: ${res.path}`)
     mainWindow?.webContents.send(IPC.onInventoryReload, { path: res.path, loadedAt: res.loadedAt })
     mainWindow?.webContents.send(IPC.onProgress, getProgress(activeCharId()))
   })
-  inventoryWatcher.on('error', (err) => console.error('[eq-tools] inventory watch error', err))
+  inventoryWatcher.on('error', (err) => console.error('[everquest-companion] inventory watch error', err))
 }
 
 async function startTailing(): Promise<void> {
   const ref = resolveInitialCharacter()
   if (!ref) {
-    console.warn('[eq-tools] No EQ log found; log tailing disabled.')
+    console.warn('[everquest-companion] No EQ log found; log tailing disabled.')
     return
   }
   await tailCharacter(ref)
@@ -904,6 +906,9 @@ function registerIpc(): void {
 // app, or an auto-update restart) must not spin up a second window tailing the same
 // log. If we don't get the lock, quit immediately; the primary instance receives a
 // `second-instance` event and focuses/restores its existing window instead.
+// The lock is PER CHANNEL, for free: Chromium keys it off the user-data dir, which
+// channel.ts has already made distinct per channel — so the installed app and the dev
+// app each hold their own lock and run side by side (Task #58).
 // E2E: skip the lock entirely (never request it), so a headless test instance can run
 // alongside the user's dev app instead of quitting — and can't steal its focus either.
 const gotSingleInstanceLock = E2E || app.requestSingleInstanceLock()
@@ -918,7 +923,9 @@ if (!gotSingleInstanceLock) {
   })
 
   app.whenReady().then(() => {
-    console.log(`[eq-tools] Error log: ${errorLogPath()}`)
+    console.log(
+      `[everquest-companion] Channel '${CHANNEL}' — userData ${USER_DATA}, error log ${errorLogPath()}`
+    )
     registerIpc()
     createWindow()
     void startTailing()

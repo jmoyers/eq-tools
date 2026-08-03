@@ -1,4 +1,4 @@
-appId: com.jmoyers.eqtools
+appId: com.jmoyers.everquest-companion
 productName: EQ Legends Companion
 copyright: Copyright © 2026 Josh Moyers
 
@@ -50,4 +50,4 @@ nsis:
   createDesktopShortcut: true
   createStartMenuShortcut: true
   shortcutName: EQ Legends Companion
-  artifactName: eq-tools-Setup-${version}.${ext}
+  artifactName: everquest-companion-Setup-${version}.${ext}

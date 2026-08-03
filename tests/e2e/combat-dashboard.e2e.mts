@@ -11,8 +11,9 @@
  * which (a) never calls show()/showInactive() on ANY window — the main window is already
  * created with `show:false`, so it is created, laid out and rendered offscreen but never
  * mapped or focused; (b) skips the single-instance lock so this instance runs happily beside
- * the user's dev app instead of quitting; (c) re-points `userData` at a throwaway temp dir so
- * the real store / errors.log are untouched. The user can keep playing while this runs.
+ * the user's dev app instead of quitting; (c) selects the 'e2e' channel in src/main/channel.ts,
+ * which points `userData` at a throwaway temp dir (never seeded from the user's state) so the
+ * real store / errors.log are untouched. The user can keep playing while this runs.
  * Layout still happens in a hidden window, which is exactly what we measure.
  *
  * WHAT IT ASSERTS: hydration completes (replay → live tail), then, against whatever the real
@@ -46,7 +47,7 @@ const OUT_DIR = join(ROOT, 'out-e2e')
 const MAIN_ENTRY = join(OUT_DIR, 'main', 'index.js')
 /** Throwaway `userData` for the app under test — wiped per run, so every run starts fresh
  *  (default view, no saved character, no overlays) and the real store is never opened. */
-const USER_DATA = join(tmpdir(), 'eq-tools-e2e-userdata')
+const USER_DATA = join(tmpdir(), 'everquest-companion-e2e-userdata')
 
 /** A full-log scan of a months-old live log takes a while; be generous, fail loudly. */
 const HYDRATE_TIMEOUT_MS = 300_000

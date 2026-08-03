@@ -23,10 +23,19 @@ memory reading, just the log EQ already writes.
 ## Download & install
 
 Grab the latest installer from the [**Releases**](https://github.com/jmoyers/everquest-companion/releases)
-page: `eq-tools-Setup-<version>.exe`. It's a **one-click, per-user installer** (like
+page: `everquest-companion-Setup-<version>.exe`. It's a **one-click, per-user installer** (like
 Discord) — double-click and it installs under your user profile and launches. No
 admin prompt, no wizard. It adds a Start-menu + desktop shortcut ("EQ Legends
 Companion").
+
+### Already have an `eq-tools-Setup` build installed?
+
+The app was renamed from `eq-tools` to `everquest-companion`, which Windows treats as a
+different app — the new installer will NOT replace the old one, and the old install will
+never auto-update again. Uninstall **eq-tools** once from Settings → Apps (or run its
+`Uninstall EQ Legends Companion.exe`), then run the new installer. Your settings, alerts,
+sound packs and caches are carried over automatically on first launch (the old
+`%AppData%\eq-tools` folder is left in place, untouched, as a backup).
 
 ### "Windows protected your PC" — this is expected
 
@@ -102,7 +111,7 @@ install ~350 more packs from within the app (Alerts → **Sound packs…**).
 **Custom sounds.** Drop your own pack into `<userData>/soundpacks/<id>/` — a folder
 with a `manifest.json` (`{ id, name, sounds: { <soundId>: { file, label } } }`) plus
 `.wav`/`.mp3`/`.ogg` files — and it appears in the alert sound pickers. On Windows
-`<userData>` is `%AppData%\eq-tools`. For example, add your own Final Fantasy fanfare
+`<userData>` is `%AppData%\everquest-companion`. For example, add your own Final Fantasy fanfare
 as `victory.mp3` and select it for the raid-defeat alert.
 
 For a source build, `npm run fetch:packs` downloads the same pack into

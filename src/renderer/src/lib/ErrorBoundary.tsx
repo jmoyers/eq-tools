@@ -43,7 +43,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
     }
     // Also hit the console so main's console-message forwarder picks it up.
     // eslint-disable-next-line no-console
-    console.error('[eq-tools] ErrorBoundary caught:', error, info?.componentStack)
+    console.error('[everquest-companion] ErrorBoundary caught:', error, info?.componentStack)
   }
 
   render(): React.ReactNode {

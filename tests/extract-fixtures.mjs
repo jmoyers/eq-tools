@@ -3,6 +3,12 @@
 // stay small and reviewable but replay is faithful. Re-runnable if the log grows
 // (line numbers are captured in the golden test comments; re-locate if needed).
 import { readFileSync, writeFileSync } from 'fs'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
+
+// Fixtures resolve RELATIVE to this file — the repo moved once and these extractors kept
+// writing into the old absolute path. Never hardcode a repo path here again.
+const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 const LOG = process.argv[2]
 const lines = readFileSync(LOG, 'utf8').split(/\r?\n/)
 
@@ -66,7 +72,7 @@ function slice(fromLine, toLine, out) {
   for (let i = fromLine - 1; i < toLine && i < lines.length; i++) {
     if (keep(lines[i])) seg.push(lines[i])
   }
-  writeFileSync(`C:/Users/jmoye/eq-tools/tests/fixtures/${out}`, seg.join('\n') + '\n')
+  writeFileSync(join(FIXTURES, out), seg.join('\n') + '\n')
   console.log(`${out}: ${seg.length} lines (from raw ${toLine - fromLine + 1})`)
 }
 
@@ -74,7 +80,7 @@ function slice(fromLine, toLine, out) {
 // matches `afterRe` (Task #37 W13b). Used to synthesize a contrast case from a real span —
 // e.g. inject a real-format death between a charm break and re-charm.
 function spliceFixture(srcName, afterRe, inject, out) {
-  const src = readFileSync(`C:/Users/jmoye/eq-tools/tests/fixtures/${srcName}`, 'utf8')
+  const src = readFileSync(join(FIXTURES, srcName), 'utf8')
     .split(/\r?\n/)
     .filter((l) => l.length > 0)
   const seg = []
@@ -86,7 +92,7 @@ function spliceFixture(srcName, afterRe, inject, out) {
       done = true
     }
   }
-  writeFileSync(`C:/Users/jmoye/eq-tools/tests/fixtures/${out}`, seg.join('\n') + '\n')
+  writeFileSync(join(FIXTURES, out), seg.join('\n') + '\n')
   console.log(`${out}: ${seg.length} lines (spliced from ${srcName})`)
 }
 

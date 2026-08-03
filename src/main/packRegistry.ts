@@ -96,7 +96,7 @@ function httpGetBuffer(
   redirects = 0
 ): Promise<Buffer> {
   return new Promise((resolvePromise, reject) => {
-    const req = httpsGet(url, { headers: { 'User-Agent': 'eq-tools' } }, (res) => {
+    const req = httpsGet(url, { headers: { 'User-Agent': 'everquest-companion' } }, (res) => {
       const status = res.statusCode ?? 0
       if (status >= 300 && status < 400 && res.headers.location) {
         res.resume() // drain
