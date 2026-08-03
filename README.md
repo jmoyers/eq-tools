@@ -1,138 +1,98 @@
 # EQ Legends Companion
 
-A desktop companion app for **EverQuest Legends** that reads your combat log in real
-time and turns it into live, useful views: a Plane of Sky class-quest tracker, loot
-history, inventory reconciliation, per-character leveling + AA tracking, raid-target
-(boss) progress, a Details-style DPS meter with encounter history, and a triggered
-sound-alert system. It watches your `eqlog_*` file as you play — no add-ons, no
-memory reading, just the log EQ already writes.
+A Windows desktop companion for **EverQuest Legends**. It reads the log file the game
+already writes and turns it into live, useful views — a DPS meter, floating overlays,
+quest and loot tracking, alerts.
 
-- **Characters** — auto-detects every `eqlog_*` file; switch characters and the app
-  re-reads that log and keeps per-character progress.
-- **Plane of Sky** — all 16 classes' quests with per-item "have / need" chips, item
-  stat popovers, class filter, and sort by closest-to-done.
-- **Loot / Turn-ins / Inventory** — real-time looted-item history, quest turn-in
-  tracking, and a reconciliation view (looted vs. exported vs. turned-in vs. net).
-- **Combat** — a live DPS meter fed by the full log scan + tail, with death-closed
-  encounter segmentation, active-time DPS, and charmed-pet attribution.
-- **Buffs** — a log-mined per-spell buff-duration model with live remaining-time bars.
-- **Alerts** — play a sound when something happens in the log (charm break, a buff
-  fading, a raid target defeated, or any log event / regex you author). Ships with
-  original tones plus optional imported voice packs.
+**It only reads your log.** Nothing is injected into EverQuest, no game files are
+touched, no memory is read, and nothing is automated or played for you. If you turned
+off logging, the app simply has nothing to show.
 
-## Download & install
+## What it does
 
-Grab the latest installer from the [**Releases**](https://github.com/jmoyers/everquest-companion/releases)
-page: `everquest-companion-Setup-<version>.exe`. It's a **one-click, per-user installer** (like
-Discord) — double-click and it installs under your user profile and launches. No
-admin prompt, no wizard. It adds a Start-menu + desktop shortcut ("EQ Legends
-Companion").
+- **Live DPS meter** — per-fight and per-zone numbers with fight history, drill-down
+  into each attack and spell, and a timeline of the pull.
+- **Floating overlays** — small always-on-top meters you can leave on top of the game:
+  damage or healing, scoped to the current fight or the whole zone. Lock one and it
+  becomes click-through.
+- **Plane of Sky tracker** — every class's Test quests with "have / need" chips per
+  item, item stats on hover, and sorting by closest-to-done.
+- **Loot + item knowledge** — a running history of what you looted, and what each item
+  is actually *for*: which quests use it, what it turns in for, which recipes consume it.
+- **Leveling & AA** — XP and AA progress per character, with history.
+- **Raid targets** — which named/raid mobs you've killed and when.
+- **Buff timers** — remaining time on buffs, learned from the log *(early — still rough)*.
+- **Sound alerts** — play a sound when something happens: a charm break, a buff fading,
+  a raid target dying, or any log line you write a rule for. Voice packs included.
 
-### Already have an `eq-tools-Setup` build installed?
+Everything is per-character; switch characters and the app re-reads that log.
 
-The app was renamed from `eq-tools` to `everquest-companion`, which Windows treats as a
-different app — the new installer will NOT replace the old one, and the old install will
-never auto-update again. Uninstall **eq-tools** once from Settings → Apps (or run its
-`Uninstall EQ Legends Companion.exe`), then run the new installer. Your settings, alerts,
-sound packs and caches are carried over automatically on first launch (the old
-`%AppData%\eq-tools` folder is left in place, untouched, as a backup).
+## Getting started
+
+1. Download `everquest-companion-Setup-<version>.exe` from the
+   [**Releases**](https://github.com/jmoyers/everquest-companion/releases) page.
+2. Run it. It's a one-click, per-user install (like Discord) — no admin prompt, no
+   wizard. It adds a Start-menu and desktop shortcut.
+3. In EverQuest, type `/log on`.
+
+The app finds your log automatically — usually
+`C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest Legends\Logs\`. If your
+install lives somewhere else, point it at the right folder in **Settings**.
+
+Overlays sit on top of the game in **windowed** or **borderless** mode. Exclusive
+fullscreen can't be overlaid by anything, so use borderless if you want them.
 
 ### "Windows protected your PC" — this is expected
 
-The app is **not code-signed** (a code-signing certificate costs money and is on the
-to-do list), so Windows SmartScreen shows a blue warning the first time you run the
+The app is **not code-signed** yet (a certificate costs money and is on the to-do
+list), so Windows SmartScreen shows a blue warning the first time you run the
 installer. It's safe to proceed:
 
 1. On the "Windows protected your PC" dialog, click **More info**.
 2. Click **Run anyway**.
 
-You only see this once. (Signing would remove the prompt; until then, this is the
-normal experience for unsigned open-source Windows apps.)
+You only see this once.
 
-### Enable logging in EverQuest
+### Already have an old `eq-tools` install?
 
-The app needs your combat log. In-game, type `/log on`. The app auto-detects logs at:
+The app was renamed from `eq-tools` to `everquest-companion`, which Windows treats as a
+different app — the new installer will *not* replace the old one, and the old install
+will never auto-update again. Uninstall **eq-tools** once from Settings → Apps, then run
+the new installer. Your settings, alerts and sound packs carry over automatically on
+first launch (the old folder is left in place, untouched, as a backup).
 
-```
-C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest Legends\Logs\eqlog_<Char>_<server>.txt
-```
+## Updates
 
-## Automatic updates
+The app updates itself in the background from GitHub Releases. When a new version has
+downloaded, an **"Update ready"** notice appears with a **Restart** button — click it to
+apply now, or it installs the next time you quit.
 
-The app updates itself in the background from GitHub Releases. When an update finishes
-downloading, a small **"Update ready — vX.Y.Z"** snackbar appears with a **Restart**
-button; click it to apply and relaunch (or it installs on next quit). Two channels:
+## Make it yours
 
-- **Main** (default) — the latest build, published on every push. You get fixes and
-  features as soon as they land.
-- **Stable** — only tagged releases. Fewer updates, more baked.
+- **Sound & voice packs.** Alert sounds come from packs. One voice pack ships with the
+  app and installs itself on first launch, and you can browse and install ~350 more from
+  inside the app (**Alerts → Sound packs…**). To add your own: drop a folder into
+  `%AppData%\everquest-companion\soundpacks\<your-pack>\` containing your `.wav`/`.mp3`/`.ogg`
+  files and a small `manifest.json` naming them — it shows up in every sound picker. Want
+  your own Final Fantasy fanfare on a raid kill? That's the whole job.
+- **Share alerts.** Any alert (or all of them at once) copies to a short paste-safe
+  string. Drop it in guild chat or Discord; whoever pastes it back in gets a preview
+  before anything is added. Imports only ever *add* — they never overwrite your alerts.
+- **Share your setup.** Export your whole settings bundle — alerts, volume, overlay
+  look, view preferences, favorites — as one string or a file. It carries no file paths,
+  no window positions, and no character progress.
 
-Switch channels in the app's settings (the channel selector).
+## Development
 
-## Building from source
-
-```bash
-npm install
-npm run fetch:packs   # optional: bundle the CC-BY-NC voice packs (auto-provisioned at runtime otherwise — see below)
-npm run dev           # launch with hot reload
-npm run build         # production bundle into out/
-npm run dist          # build the one-click Windows installer into release/
-npm run typecheck     # type-check main, preload, renderer, scripts
-```
-
-The installer build (`npm run dist`) writes the icon + version metadata into the exe
-via electron-builder's winCodeSign toolchain. On Windows that toolchain can fail to
-extract without symlink privilege — if `npm run dist` loops on a "Cannot create
-symbolic link" error, run the one-time workaround first:
-
-```powershell
-./scripts/seed-wincodesign.ps1   # seeds the winCodeSign cache (see scripts/README.md)
-npm run dist
-```
-
-(Or enable Windows **Developer Mode** so electron-builder can extract it itself.)
-
-Clean-machine installer test harnesses (Windows Sandbox + Windows containers) live in
-`scripts/sandbox` and `scripts/docker` — see [`scripts/README.md`](scripts/README.md).
-
-### Sound packs
-
-Alert sounds come from **sound packs**. The app ships exactly one: **Alan Rickman**
-(`alan-rickman`) — spoken-word notification lines from
-[utensils/openpeon-alan-rickman-soundpack](https://github.com/utensils/openpeon-alan-rickman-soundpack),
-licensed **CC-BY-4.0**; attribution and license live in the pack's `manifest.json`. It
-is the default selection in every alert sound picker.
-
-You don't have to do anything to get it: **the app downloads the pack automatically on
-first launch** (silently, in the background) if it isn't already installed, so the
-seeded alerts have their sounds even on a fresh install. You can also browse and
-install ~350 more packs from within the app (Alerts → **Sound packs…**).
-
-**Custom sounds.** Drop your own pack into `<userData>/soundpacks/<id>/` — a folder
-with a `manifest.json` (`{ id, name, sounds: { <soundId>: { file, label } } }`) plus
-`.wav`/`.mp3`/`.ogg` files — and it appears in the alert sound pickers. On Windows
-`<userData>` is `%AppData%\everquest-companion`. For example, add your own Final Fantasy fanfare
-as `victory.mp3` and select it for the raid-defeat alert.
-
-For a source build, `npm run fetch:packs` downloads the same pack into
-`resources/soundpacks/` so it's bundled by `npm run dist` (the app's runtime
-auto-provisioning is the fallback for installers built without it). The app never
-depends on that script having been run.
-
-## Extending it
-
-The app is built as a small **module framework** — each feature (loot, kills,
-leveling, alerts, buffs, …) owns a slice of log-derived state and pushes deltas to the
-UI over one typed transport. Adding a new log-driven feature, a new alert trigger, or
-support for a different server's log format is a documented, contained change. The
-architecture, log formats, and extension contract are written up in
+Contributions welcome. Everything about building, testing, and the architecture lives in
 [`AGENTS.md`](AGENTS.md) — start there.
-
-## Screenshots
-
-<!-- TODO: add screenshots of the Plane of Sky tracker, DPS meter, and alerts view. -->
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE). Copyright (c) 2026 Josh Moyers. (The imported voice
-packs are CC-BY-NC-4.0 and are not part of this repository; see above.)
+MIT — see [`LICENSE`](LICENSE). Copyright (c) 2026 Josh Moyers.
+
+The bundled **Alan Rickman** voice pack comes from
+[utensils/openpeon-alan-rickman-soundpack](https://github.com/utensils/openpeon-alan-rickman-soundpack)
+and is licensed CC-BY-4.0. Packs you install from the in-app browser carry their own
+licenses and attribution (see each pack's manifest); none of them are part of this
+repository.
