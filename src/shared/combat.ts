@@ -328,6 +328,14 @@ export interface SegmentSummary {
   id: string
   kind: 'fight' | 'zone' | 'current'
   name: string
+  /**
+   * The zone this segment happened in (raw display name, Task #61). Stamped from the
+   * engine's current zone when the encounter OPENS — the same source the zone sessions use
+   * — and frozen into the memoized summary at finalize. Absent when no `You have entered X.`
+   * line had been seen yet (a session that starts mid-zone), which the log genuinely cannot
+   * answer. It is what makes fight search reach zone names ("freprot" → fights in Freeport).
+   */
+  zone?: string
   durationSec: number
   total: number
   dps: number
@@ -339,6 +347,28 @@ export interface SegmentSummary {
   active: boolean
   /** Healing received by hostile instances during this segment (annotation). */
   enemyHealTotal: number
+}
+
+/**
+ * One ranked fight-search result (Task #61). Carries the WHOLE summary, not just an id: the
+ * result list has to render (name, zone, duration, dps, when) without a second round trip,
+ * and a hit may be a fight far outside the snapshot's `maxSegments` window — so the summary
+ * would otherwise be unreachable from the renderer.
+ */
+export interface FightSearchHit {
+  summary: SegmentSummary
+  /** 0..1 relevance. Exact token matches outrank prefix, prefix substring, substring typo. */
+  score: number
+}
+
+/** The result of one fight-history search (Task #61). */
+export interface FightSearchResult {
+  /** Ranked hits, best first; ties broken by recency (newer first). Capped by the request's
+   *  `limit`. Empty for an empty/whitespace query — the UI shows its browse list instead. */
+  hits: FightSearchHit[]
+  /** How many fights were SEARCHED (the whole uncapped history + the live fight). Lets the
+   *  UI say "12 of 1,428" honestly instead of implying the corpus is the result set. */
+  corpus: number
 }
 
 /** One line as the engine classified it, for the live processing log. */

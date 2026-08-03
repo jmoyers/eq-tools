@@ -978,6 +978,14 @@ function registerIpc(): void {
   // Generic module transport: one handler serves every registered module.
   ipcMain.handle(IPC.getModuleSnapshot, (_e, moduleId: string) => registry.snapshot(moduleId))
   ipcMain.handle(IPC.getCombatSnapshot, (_e, opts) => combat.snapshot(Date.now(), opts ?? {}))
+  // Fight-history search (Task #61). Read-only over the engine; `limit` is clamped here so a
+  // renderer bug can't ask for an unbounded payload over IPC.
+  ipcMain.handle(IPC.searchFights, (_e, text: unknown, limit: unknown) =>
+    combat.searchFights(
+      typeof text === 'string' ? text : '',
+      typeof limit === 'number' && Number.isFinite(limit) ? Math.min(Math.max(1, Math.floor(limit)), 500) : undefined
+    )
+  )
 
   // ---- alerts extension (Task #18) ----
   ipcMain.handle(IPC.listAlerts, () => getAlerts())

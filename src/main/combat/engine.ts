@@ -49,6 +49,7 @@ import { idKey } from '../log/parser'
 import { WorldModel } from './world'
 import { damageCategory } from './taxonomy'
 import { HealAccum, buildHealingView } from './healing'
+import { searchFights } from './fightSearch'
 import type { LogEvent, MissType, MitigationEvent } from '../../shared/logEvents'
 import type { DamageCategory, DamageType } from '../../shared/combat'
 import { CATEGORY_ORDER } from '../../shared/combat'
@@ -56,6 +57,7 @@ import type {
   CategoryView,
   ClassifiedLine,
   CombatSnapshot,
+  FightSearchResult,
   HealSourceKind,
   HealerView,
   MissBreakdown,
@@ -1536,6 +1538,36 @@ export class CombatEngine {
   }
 
   /**
+   * SEARCH THE WHOLE FIGHT HISTORY (Task #61) — "it should go back for all time and be fast
+   * and somewhat fuzzy" (the user).
+   *
+   * "All time" needs no new storage: `history` is UNCAPPED (only the per-encounter timeline
+   * RINGS are capped, at TIMELINE_HISTORY_CAP, and zone sessions at ZONE_HISTORY_CAP), and
+   * every finalized encounter already carries a memoized SegmentSummary. So this walks the
+   * ENTIRE history — deliberately NOT the `maxSegments` window snapshot() serializes, which
+   * is a payload cap, not a retention one — plus the live fight (as `kind: 'current'`, so an
+   * open pull is findable by the mob you are presently swinging at).
+   *
+   * Newest-first, because the pure scorer breaks score ties by recency and a stable input
+   * order keeps that deterministic. The scoring itself lives in the MUI/electron-free
+   * fightSearch.ts; this method is only the corpus.
+   *
+   * READ-ONLY: no closure evaluation, no memoization side effects, nothing mutated — typing
+   * in a search box must never be able to finalize a fight or move a point of damage.
+   */
+  searchFights(text: string, limit?: number, now: number = Date.now()): FightSearchResult {
+    const summaries: SegmentSummary[] = []
+    if (this.current) summaries.push(this.encSummary(this.current, 'current', now))
+    for (let i = this.history.length - 1; i >= 0; i--) {
+      const e = this.history[i]
+      // `summary` is always populated by finalizeCurrent(); the fallback keeps this total
+      // even if a future path ever pushes an encounter without memoizing one.
+      summaries.push(e.summary ?? this.encSummary(e, 'fight', now))
+    }
+    return searchFights(summaries, text, limit)
+  }
+
+  /**
    * Build the selected encounter's timeline view (Task #51). Returns null for the zone
    * selection (no single-fight timeline) or an encounter whose event ring was evicted
    * (older than TIMELINE_HISTORY_CAP). Converts absolute ts → ms-since-start, downsamples
@@ -1627,6 +1659,16 @@ export class CombatEngine {
       id: e.id,
       kind,
       name: encounterName(e, kind === 'current'),
+      // ZONE on the summary (Task #61) — the search haystack is name + zone, so a fight has
+      // to carry where it happened. `Encounter.zone` is stamped at ensureEncounter() from
+      // `this.zone`, the SAME field finalizeZoneSession() names a zone session from, so the
+      // two can never disagree. finalizeCurrent() memoizes this summary, which freezes the
+      // zone with it. NOTE on backfill: encounters already finalized in memory before this
+      // code existed keep `zone: undefined` and are deliberately NOT backfilled — the engine
+      // no longer knows which zone a past fight belonged to, and guessing today's zone would
+      // be an invented fact (law 1). A restart replays the whole log through this path and
+      // rebuilds every summary WITH its zone, so the gap closes on its own.
+      zone: e.zone,
       durationSec: dur,
       total,
       dps: total / dur,
@@ -1646,6 +1688,7 @@ export class CombatEngine {
       id: 'zone',
       kind: 'zone',
       name: `${this.zone ?? 'Session'} — overall`,
+      zone: this.zone,
       durationSec: dur,
       total,
       dps: total / dur,

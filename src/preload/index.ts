@@ -21,7 +21,7 @@ import type {
   SoundPack,
   SpellCatalog
 } from '../shared/types'
-import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
+import type { CombatSnapshot, FightSearchResult, SnapshotOpts } from '../shared/combat'
 import type { OverlayKind, UpdateStatus } from '../shared/types'
 import type { ShareApplyResult, SharePreview } from '../shared/profiles'
 
@@ -95,6 +95,10 @@ const api = {
     ipcRenderer.invoke(IPC.setQuestComplete, questKey, complete),
   getCombatSnapshot: (opts: SnapshotOpts): Promise<CombatSnapshot> =>
     ipcRenderer.invoke(IPC.getCombatSnapshot, opts),
+  /** Fuzzy-search the whole fight history + the live fight by name/zone (Task #61). An
+   *  empty/whitespace query resolves to no hits (the UI shows its browse list instead). */
+  searchFights: (text: string, limit?: number): Promise<FightSearchResult> =>
+    ipcRenderer.invoke(IPC.searchFights, text, limit),
 
   // ---- alerts extension (Task #18) ----
   listAlerts: (): Promise<AlertDef[]> => ipcRenderer.invoke(IPC.listAlerts),

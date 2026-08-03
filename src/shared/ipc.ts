@@ -38,6 +38,9 @@ export const IPC = {
   // ---- combat (its own snapshot transport — see modules/types.ts) ----
   getCombatSnapshot: 'combat:snapshot',
   onCombatActivity: 'combat:activity',
+  // renderer -> main: fuzzy-search the WHOLE (uncapped) fight history + the live fight by
+  // name/zone (Task #61). Args: (text, limit?). Returns FightSearchResult.
+  searchFights: 'combat:searchFights',
 
   // ---- alerts extension (Task #18) ----
   // CRUD over alert defs + global sound prefs (renderer -> main).
