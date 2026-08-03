@@ -30,7 +30,17 @@
 // block at all (an empty block would claim "we checked, there's nothing" — we can't know that).
 
 import { Suspense, lazy, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import type { FeedDelta, FeedEvent, FeedSnap, ItemKnowledge, ModuleDelta, OverlayConfig } from '@shared/types'
+import type {
+  FeedConsider,
+  FeedDelta,
+  FeedEvent,
+  FeedSnap,
+  ItemKnowledge,
+  MobKnowledge,
+  ModuleDelta,
+  OverlayConfig
+} from '@shared/types'
+import { CONSIDER_FACTION_COLOR, CONSIDER_FACTION_LABEL, considerDifficultyShort } from '@shared/logEvents'
 import { wikiPageUrl } from '@shared/wiki'
 import { formatTime } from '../lib/formatDate'
 import { isTradeskillOnly, questUseOutcomes, questUseWhere } from '../lib/itemKnowledgeView'
@@ -121,11 +131,23 @@ function useItemKnowledge(name: string): { data: ItemKnowledge | null; loading: 
   return { data, loading }
 }
 
-/** Per-kind accent + glyph. Colors match the app's semantics (alerts gold, loot teal, quest green). */
+/** Per-kind accent + glyph. Colors match the app's semantics (alerts gold, loot teal, quest green,
+ *  consider violet — a hue none of the other three uses, so a con row is identifiable at a glance
+ *  even before you read it). The '◎' glyph reads as an eye/reticle: you looked at something. */
 const KIND_STYLE: Record<FeedEvent['kind'], { color: string; glyph: string; label: string }> = {
   alert: { color: '#d9b25f', glyph: '!', label: 'Alert' },
   loot: { color: '#6fb3d2', glyph: '◆', label: 'Loot' },
-  quest: { color: '#5fbf72', glyph: '✦', label: 'Quest' }
+  quest: { color: '#5fbf72', glyph: '✦', label: 'Quest' },
+  con: { color: '#a98bf0', glyph: '◎', label: 'Considered' }
+}
+
+/**
+ * A con row's ACCENT is the faction rung's color, not the kind's — the whole point of a consider
+ * is "how does this thing feel about me", so the row's left edge and headline say it before you
+ * read a word. The violet kind color stays on the glyph, so the row is still recognizably a con.
+ */
+function rowAccent(e: FeedEvent): string {
+  return e.con ? CONSIDER_FACTION_COLOR[e.con.faction] : KIND_STYLE[e.kind].color
 }
 
 /** Newest first — the feed module keeps its ring newest-LAST. */
@@ -313,6 +335,185 @@ function ItemHoverCard({ item, stats }: { item: string; stats?: string }): JSX.E
   )
 }
 
+// ---- mob knowledge: ONE fetch per mob name, for the whole window's lifetime ---------------
+//
+// The same discipline the item map above uses, for the same reason: a feed of 100 rows costs
+// zero lookups until one is pointed at, and re-hovering costs nothing at all. `mobs:lookup` is
+// cache-first AND local-first in main (your own loot history + the quest catalog answer with no
+// network), so the usual case is a single IPC round trip.
+const MOB_KNOWLEDGE = new Map<string, MobKnowledge>()
+const MOB_PENDING = new Map<string, Promise<MobKnowledge | null>>()
+
+/** Resolve a mob's knowledge, at most once per name. Never rejects — a miss resolves null. */
+function lookupMobCached(name: string): Promise<MobKnowledge | null> {
+  const key = name.toLowerCase()
+  const hit = MOB_KNOWLEDGE.get(key)
+  if (hit) return Promise.resolve(hit)
+  const inflight = MOB_PENDING.get(key)
+  if (inflight) return inflight
+  const p = window.eqOverlay
+    .lookupMob(name)
+    .then((k: MobKnowledge) => {
+      MOB_KNOWLEDGE.set(key, k)
+      MOB_PENDING.delete(key)
+      return k
+    })
+    .catch(() => {
+      MOB_PENDING.delete(key)
+      return null
+    })
+  MOB_PENDING.set(key, p)
+  return p
+}
+
+/** Knowledge for a mob card that is CURRENTLY OPEN (mount == first hover). */
+function useMobKnowledge(name: string): { data: MobKnowledge | null; loading: boolean } {
+  const [data, setData] = useState<MobKnowledge | null>(() => MOB_KNOWLEDGE.get(name.toLowerCase()) ?? null)
+  const [loading, setLoading] = useState(() => !MOB_KNOWLEDGE.get(name.toLowerCase()))
+
+  useEffect(() => {
+    const hit = MOB_KNOWLEDGE.get(name.toLowerCase())
+    if (hit) {
+      setData(hit)
+      setLoading(false)
+      return
+    }
+    let alive = true
+    setLoading(true)
+    void lookupMobCached(name).then((k) => {
+      if (!alive) return
+      setData(k)
+      setLoading(false)
+    })
+    return () => {
+      alive = false
+    }
+  }, [name])
+
+  return { data, loading }
+}
+
+/** How many drops a mob card lists before collapsing to "+N more". Kept tight — this window
+ *  floats over the game, and a 44-item table (a zol ghoul knight's real page) would swallow it. */
+const MAX_DROPS = 6
+
+/**
+ * THE mob hover card — what a `/con` was actually asking. It leads with the facts the log line
+ * already gave (faction rung, level, rare), then the DROP TABLE.
+ *
+ * ORDERING IS A CLAIM ABOUT AUTHORITY. The wiki's drop list is the definitive statement of what
+ * this mob drops, so it leads; your own loot history is CORROBORATION and rides on the matching
+ * row as "×N". Only items your history has that the page does NOT list get their own (secondary)
+ * block — one lucky drop is evidence, not a drop table.
+ *
+ * HONESTY (law 1): each block renders only if that source said something. A mob whose page
+ * doesn't exist shows the con facts and "no wiki page" — never an empty drop table dressed up
+ * as "drops nothing". Item names are PLAIN TEXT here (the card is `pointerEvents:none` — see
+ * HoverCardLayer — so a nested hover is impossible by construction); the main window's card is
+ * where item names become KnownItemTooltip anchors and click through to the item dialog.
+ */
+function MobHoverCard({ mob, con }: { mob: string; con?: FeedConsider }): JSX.Element {
+  const { data, loading } = useMobKnowledge(mob)
+  const seen = data?.dropsSeen ?? []
+  const wiki = data?.dropsWiki ?? []
+  const quests = data?.quests ?? []
+  const seenByKey = new Map(seen.map((d) => [d.item.toLowerCase(), d]))
+  const wikiKeys = new Set(wiki.map((d) => d.item.toLowerCase()))
+  const extraSeen = seen.filter((d) => !wikiKeys.has(d.item.toLowerCase()))
+  const factionColor = con ? CONSIDER_FACTION_COLOR[con.faction] : CARD_TEXT
+
+  return (
+    <div
+      data-testid="feed-mob-card"
+      data-mob={mob}
+      style={{
+        background: 'rgba(15,16,23,0.98)',
+        border: `1px solid ${factionColor}`,
+        borderRadius: 6,
+        padding: 8,
+        maxWidth: 300,
+        fontFamily: CARD_MONO,
+        boxShadow: '0 6px 20px rgba(0,0,0,0.6)'
+      }}
+    >
+      <div style={{ color: factionColor, fontSize: 12, fontWeight: 700 }}>
+        {mob}
+        {con?.rare && <span style={{ ...LABEL_STYLE, marginLeft: 5 }}>rare</span>}
+      </div>
+      {con && (
+        <div style={LABEL_STYLE}>
+          {CONSIDER_FACTION_LABEL[con.faction]}
+          {con.level != null && ` · Lvl ${con.level}`}
+          {` · ${considerDifficultyShort(con.difficulty) ?? con.difficulty}`}
+        </div>
+      )}
+      {/* The page's own level/zone, when it states them — a range as often as a number. */}
+      {data && (data.levelText || data.zone) && (
+        <div style={LABEL_STYLE}>
+          {data.zone}
+          {data.zone && data.levelText && ' · '}
+          {data.levelText && `lvl ${data.levelText}`}
+        </div>
+      )}
+
+      {/* 1. THE DROP TABLE (definitive), with your own counts riding on the matching rows. */}
+      {wiki.length > 0 && (
+        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+          <div style={LABEL_STYLE}>Drops:</div>
+          {wiki.slice(0, MAX_DROPS).map((d) => {
+            const mine = seenByKey.get(d.item.toLowerCase())
+            return (
+              <div key={d.item} style={TEXT_STYLE}>
+                <span style={{ color: CARD_ITEM }}>{d.item}</span>
+                {d.rarity && <span style={{ color: CARD_LABEL }}> · {d.rarity}</span>}
+                {mine && <span style={{ color: '#7fd8a0' }}> · seen {mine.count}×</span>}
+              </div>
+            )
+          })}
+          {wiki.length > MAX_DROPS && <div style={LABEL_STYLE}>+{wiki.length - MAX_DROPS} more</div>}
+        </div>
+      )}
+
+      {/* 2. Evidence the page doesn't carry — secondary by construction. */}
+      {extraSeen.length > 0 && (
+        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+          <div style={LABEL_STYLE}>Also looted by you:</div>
+          {extraSeen.slice(0, MAX_DROPS).map((d) => (
+            <div key={d.item} style={TEXT_STYLE}>
+              <span style={{ color: CARD_ITEM }}>{d.item}</span>
+              <span style={{ color: CARD_LABEL }}> ×{d.count}</span>
+            </div>
+          ))}
+          {extraSeen.length > MAX_DROPS && <div style={LABEL_STYLE}>+{extraSeen.length - MAX_DROPS} more</div>}
+        </div>
+      )}
+
+      {quests.length > 0 && (
+        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+          <div style={LABEL_STYLE}>Named by {quests.length === 1 ? 'quest' : 'quests'}:</div>
+          {quests.slice(0, MAX_DROPS).map((q) => (
+            <div key={q.quest} style={TEXT_STYLE}>
+              {q.quest}
+              {q.zone && <span style={{ color: CARD_LABEL }}> · {q.zone}</span>}
+            </div>
+          ))}
+          {quests.length > MAX_DROPS && <div style={LABEL_STYLE}>+{quests.length - MAX_DROPS} more</div>}
+        </div>
+      )}
+
+      {loading && !data && <div style={{ ...LABEL_STYLE, marginTop: 4 }}>Looking up…</div>}
+      {/* Say the honest thing when a source came back empty, and only for the source that did. */}
+      {data?.notFound && <div style={{ ...LABEL_STYLE, marginTop: 4 }}>no wiki page</div>}
+      {data && !data.notFound && !data.offline && wiki.length === 0 && (
+        <div style={{ ...LABEL_STYLE, marginTop: 4 }}>its wiki page lists no loot</div>
+      )}
+      {data?.offline && (
+        <div style={{ ...LABEL_STYLE, marginTop: 4 }}>offline — showing what&apos;s known locally</div>
+      )}
+    </div>
+  )
+}
+
 /**
  * Places a hover card near its anchor and CLAMPS it inside the window.
  *
@@ -395,16 +596,20 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
   // is what lets the layer clamp against the exact thing you're pointing at.
   const [anchor, setAnchor] = useState<HTMLElement | null>(null)
   const style = KIND_STYLE[e.kind]
+  const accent = rowAccent(e)
   const href = interactive ? wikiPageUrl(e.page) : undefined
   const reward = e.reward
+  // A CON row explains a MOB, not an item — same lazily-fetched hover machinery, different card.
+  const previewMob = interactive && e.kind === 'con' ? e.title : undefined
   // WHICH item the card explains: a quest's reward item, else — for a loot row — the item that
   // dropped, which IS the headline. Locked mode has no card at all (the header's law).
-  const previewItem = interactive ? (reward?.item ?? (e.kind === 'loot' ? e.title : undefined)) : undefined
+  const previewItem =
+    interactive && !previewMob ? (reward?.item ?? (e.kind === 'loot' ? e.title : undefined)) : undefined
   // A quest row hovers by ROW (the reward is named at the row's right edge, so the whole row is
-  // the target); a loot row hovers by NAME, because the name is the item and the timestamp /
-  // source half of the row is metadata you shouldn't have to avoid.
+  // the target); a loot or CON row hovers by NAME, because the name is the subject and the
+  // timestamp / detail half of the row is metadata you shouldn't have to avoid.
   const rowHover = !!previewItem && !!reward
-  const nameHover = !!previewItem && !reward
+  const nameHover = (!!previewItem && !reward) || !!previewMob
   const enter = (ev: React.MouseEvent<HTMLElement>): void => setAnchor(ev.currentTarget)
   const leave = (): void => setAnchor(null)
 
@@ -418,7 +623,7 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         gap: 6,
         alignItems: 'baseline',
         padding: '3px 4px',
-        borderLeft: `2px solid ${style.color}`,
+        borderLeft: `2px solid ${accent}`,
         marginBottom: 2,
         background: 'rgba(255,255,255,0.04)',
         borderRadius: 3,
@@ -451,7 +656,7 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
             href={href}
             target="_blank"
             rel="noreferrer"
-            style={{ color: style.color, fontWeight: 600, textDecoration: 'none' }}
+            style={{ color: accent, fontWeight: 600, textDecoration: 'none' }}
             onMouseEnter={(ev) => {
               ev.currentTarget.style.textDecoration = 'underline'
               if (nameHover) enter(ev)
@@ -466,7 +671,7 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         ) : (
           <span
             data-testid="feed-title"
-            style={{ color: style.color, fontWeight: 600, cursor: nameHover ? 'help' : undefined }}
+            style={{ color: accent, fontWeight: 600, cursor: nameHover ? 'help' : undefined }}
             onMouseEnter={nameHover ? enter : undefined}
             onMouseLeave={nameHover ? leave : undefined}
           >
@@ -484,9 +689,13 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         )}
       </span>
 
-      {anchor && previewItem && (
+      {anchor && (previewMob || previewItem) && (
         <HoverCardLayer anchor={anchor}>
-          <ItemHoverCard item={previewItem} stats={reward?.stats} />
+          {previewMob ? (
+            <MobHoverCard mob={previewMob} con={e.con} />
+          ) : (
+            <ItemHoverCard item={previewItem as string} stats={reward?.stats} />
+          )}
         </HoverCardLayer>
       )}
     </div>
@@ -642,7 +851,7 @@ export default function EventLogOverlay(): JSX.Element {
       <div style={{ flexGrow: 1, minHeight: 0, overflow: 'auto', padding: '4px 6px' }}>
         {feed.length === 0 ? (
           <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', padding: '8px 2px' }}>
-            Watching for alerts, notable loot and quest completions…
+            Watching for alerts, notable loot, considers and quest completions…
           </div>
         ) : (
           feed.map((e) => <Row key={e.id} e={e} interactive={!locked} />)

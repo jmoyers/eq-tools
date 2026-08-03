@@ -1,6 +1,6 @@
 // Types shared across the main process, preload bridge, and renderer.
 
-import type { LootDisposition } from './logEvents'
+import type { ConsiderFaction, LootDisposition } from './logEvents'
 import type { ItemStatBlock } from './itemStats'
 
 export type { LootDisposition }
@@ -375,6 +375,138 @@ export interface ItemKnowledge {
   offline?: boolean
 }
 
+// ----- Scraped MOB catalog (produced by scripts/scrape-mobs.ts) -----
+//
+// The DEFINITIVE drop source. The wiki's mob pages state what a mob drops; your own loot
+// history only corroborates it ("and you've had 3 of these"). So the drop list is scraped ONCE,
+// committed, and consulted LOCALLY — the same local-first precedent posky.json and quests.json
+// set, for the same reasons: instant, offline, and no per-mob network call to answer a `/con`.
+//
+// Deliberately COMPACT: names only, no wikitext blobs, no drop-rate spans. The catalog is
+// ES-imported (electron-vite inlines it into the main bundle), so every field costs bundle size
+// on every user's disk; rarity annotations and the rest of a page stay behind the live-wiki
+// FALLBACK, which mobLookup still uses for a mob the catalog doesn't have yet.
+
+/** One mob/NPC page from the wiki, reduced to what a consider card needs. */
+export interface MobEntry {
+  /** wiki page title (linkable, and the resolve key for the live fallback) */
+  page: string
+  /** the page's own `|name` — the IN-GAME name, article and casing as the wiki writes it */
+  name: string
+  /** level EXACTLY as the page states it — a RANGE as often as a number ("36-40", "2 - 4") */
+  level?: string
+  /** home zone(s) from the `|zone` field; "Various" is a real value, not a placeholder */
+  zones?: string[]
+  /** item names from `|known_loot`. Absent when the page has no loot section at all. */
+  drops?: string[]
+}
+
+export interface MobData {
+  scrapedAt: string
+  /** human-readable provenance (which enumeration produced this) */
+  source: string
+  mobs: MobEntry[]
+}
+
+// ----- Mob knowledge ("what does this thing drop", Task #63) -----
+//
+// The consider answer: you `/con` something, and the app says what it drops. THREE sources,
+// mirroring itemLookup's local-first architecture (main/mobLookup.ts):
+//   LOCAL 1 — your OWN loot history for that mob (`dropsSeen`). Personal, offline, always
+//             current, and the only source that can say "you've had 3 of these off it".
+//   LOCAL 2 — the scraped quest catalog's `relatedNpcs` (`quests`), so a mob that matters to a
+//             quest says so without a network call.
+//   WIKI    — the mob page's `|known_loot` list (`dropsWiki`), plus the level/zone it states.
+// Every field is present only when a source actually said it (law 1) — a mob with no page, or a
+// page with no loot section, comes back with `notFound` and no invented drop list.
+
+/** One item a mob's wiki page lists under `|known_loot`. */
+export interface MobDrop {
+  /** item name, exactly as the `{{:Item Name}}` transclusion spells it */
+  item: string
+  /**
+   * Rarity EXACTLY as the page states it — the wiki writes it three different ways
+   * ("Rare" / "Ultra Rare" / "Common", a bare "18.4%", or an empty span meaning "unstated").
+   * Absent when the span was empty or missing; never normalized into a scale we'd be inventing.
+   */
+  rarity?: string
+}
+
+/** One item the CURRENT character has actually looted off this mob (own loot history). */
+export interface MobSeenDrop {
+  item: string
+  /** how many we've looted (stacked loots add their `count`, not 1) */
+  count: number
+  /** most recent loot timestamp */
+  lastTs: number
+}
+
+/** One quest the local catalog associates with this mob (`relatedNpcs`). */
+export interface MobQuestUse {
+  quest: string
+  page?: string
+  giver?: string
+  zone?: string
+}
+
+/** The "what does this drop" card for a single mob name. */
+export interface MobKnowledge {
+  /** the mob name looked up, as requested (raw display casing) */
+  name: string
+  /** the wiki page title actually resolved */
+  page?: string
+  /**
+   * Level EXACTLY as the page states it — a RANGE at least as often as a number ("36-40",
+   * "2 - 4", "18"). Kept as text rather than parsed into a number we'd have to pick a side of.
+   */
+  levelText?: string
+  /** home zone from the page ("Lower Guk", "Various"); wiki link markup stripped. */
+  zone?: string
+  /** the page's `|known_loot` list. Absent when the page has no such field (e.g. a merchant). */
+  dropsWiki?: MobDrop[]
+  /** what YOU have looted off it, newest/most-looted first. Absent when you never have. */
+  dropsSeen?: MobSeenDrop[]
+  /** quests the local catalog ties to this mob. Absent when none do. */
+  quests?: MobQuestUse[]
+  /** served from the persistent cache (vs a fresh network lookup) */
+  cached: boolean
+  /** the wiki lookup ran and found no page for this mob (a real negative) */
+  notFound?: boolean
+  /** the wiki was unreachable — local sources may still have answered */
+  offline?: boolean
+}
+
+// ----- consider module (Task #63) -----
+
+/**
+ * One row of the "recently considered" ring — ONE PER MOB, most recent con wins. A mob conned
+ * five times in a pull is one row with `cons: 5`, not five rows: the ring answers "what have I
+ * been sizing up", and five identical lines answer it worse than one.
+ */
+export interface ConsiderRow {
+  /** stable id (the canonical mob key) — the React key AND the delta merge handle */
+  id: string
+  /** RAW display name of the most recent con (see logEvents.ConsiderEvent.mob) */
+  mob: string
+  /** timestamp of the most recent con */
+  ts: number
+  rare: boolean
+  level?: number
+  faction: ConsiderFaction
+  /** VERBATIM difficulty clause — considerDifficultyShort() renders it */
+  difficulty: string
+  /** the zone we were in when we conned it, when known */
+  zone?: string
+  /** how many times this mob has been conned since the last reset */
+  cons: number
+  /** async enrichment (mobLookup). Absent until it lands — never blocks the event path. */
+  knowledge?: MobKnowledge
+}
+
+/** consider module. Delta = the rows that changed (new cons + landed enrichment). */
+export type ConsiderSnap = ConsiderRow[]
+export type ConsiderDelta = { upserted: ConsiderRow[] }
+
 // ----- Raid targets (bosses) -----
 
 export interface RaidTarget {
@@ -485,7 +617,20 @@ export type ItemTiersDelta = { changed: ItemTiersSnap }
 // only when the quest dataset actually names a reward item — an unknown reward shows NO item
 // hover rather than a fabricated one, and `page` is absent when no wiki page is known.
 
-export type FeedEventKind = 'alert' | 'loot' | 'quest'
+export type FeedEventKind = 'alert' | 'loot' | 'quest' | 'con'
+
+/**
+ * The consider context of a 'con' row (Task #63). Carried structurally instead of baked into
+ * `detail` so the overlay can color the row by FACTION rung and its hover card can lead with
+ * the same facts without re-parsing a sentence. Every field came off the log line.
+ */
+export interface FeedConsider {
+  faction: ConsiderFaction
+  level?: number
+  rare: boolean
+  /** VERBATIM difficulty clause */
+  difficulty: string
+}
 
 /** The item a quest awards, when the quest data actually names one. */
 export interface FeedReward {
@@ -512,6 +657,8 @@ export interface FeedEvent {
   page?: string
   /** for a quest that awards an item: what you got. Absent when the data doesn't say. */
   reward?: FeedReward
+  /** for a 'con' row: the consider facts, structurally (Task #63). */
+  con?: FeedConsider
 }
 
 /** eventFeed module. Delta = feed entries appended since the last flush. */
@@ -572,6 +719,7 @@ export type LogEventKind =
   | 'epoch'
   | 'stanceChange'
   | 'invocationChange'
+  | 'consider'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */

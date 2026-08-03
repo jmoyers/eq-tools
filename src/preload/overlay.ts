@@ -3,6 +3,7 @@ import { IPC } from '../shared/ipc'
 import type { CombatSnapshot, SnapshotOpts } from '../shared/combat'
 import type {
   ItemKnowledge,
+  MobKnowledge,
   ModuleDelta,
   ModuleSnapshot,
   OverlayConfig,
@@ -11,7 +12,7 @@ import type {
 } from '../shared/types'
 import { OVERLAY_KINDS } from '../shared/types'
 
-export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayDrill, OverlayKind }
+export type { CombatSnapshot, SnapshotOpts, OverlayConfig, OverlayDrill, OverlayKind, MobKnowledge }
 
 /**
  * Minimal preload for a floating overlay DPS-meter window (Task #52; per-kind in Task #54).
@@ -65,6 +66,8 @@ const overlayApi = {
   },
   /** Item knowledge for the feed's hover card — cache-first in main, never rejects. */
   lookupItem: (name: string): Promise<ItemKnowledge> => ipcRenderer.invoke(IPC.itemsLookup, name),
+  /** Mob knowledge for a CONSIDER row's hover card (Task #63) — same cache-first door. */
+  lookupMob: (name: string): Promise<MobKnowledge> => ipcRenderer.invoke(IPC.mobsLookup, name),
 
   /**
    * Read this kind's persisted overlay config (locked / bgAlpha / topN / bounds / drill).

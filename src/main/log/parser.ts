@@ -18,7 +18,8 @@
 
 import { DEFAULT_PROFILE } from '../../shared/profiles'
 import type { DamageType } from '../../shared/combat'
-import type { LogEvent, MissType } from '../../shared/logEvents'
+import type { ConsiderFaction, LogEvent, MissType } from '../../shared/logEvents'
+import { CONSIDER_FACTION_RUNGS } from '../../shared/logEvents'
 import { getParserConfig, type ParserConfig } from './rulesets'
 import { itemTierFromName } from '../../shared/itemStats'
 import { parseModifiers, hasCritical, damageCategory } from '../combat/taxonomy'
@@ -375,6 +376,33 @@ const MISS_RE = new RegExp(
     '!(?: \\([A-Za-z]+\\))?$'
 )
 
+// ----- consider (`/con`, Task #63) -----
+// ONE shape, from a full-log sweep of the 357 `(Lvl: N)` lines (2026-08-03):
+//   <Mob>[ - a rare creature -] <faction phrase> -- <difficulty clause> (Lvl: N)
+// The faction phrase is what SPLITS the mob name from the rest — a greedy/lazy `.+?` alone
+// cannot, because a mob name and a con phrase are both free text. So the alternation is built
+// from the ladder in shared/logEvents.ts (7 rungs observed here + the 2 unobserved classic
+// rungs; counts documented there). A rung we don't know would make the line DECLINE rather
+// than mis-split a mob name in half — never invent a name (law 2).
+//
+// Notes on the captures:
+//   - the ` - a rare creature - ` infix (12 lines) sits BETWEEN the name and the rung, so it is
+//     an optional group rather than something stripped from the name afterwards.
+//   - the difficulty clause is captured VERBATIM (gendered variants — "looks like HE would wipe
+//     the floor with you!" — are real and kept); `\s*` before `(Lvl:` absorbs the one clause in
+//     the log that is padded with trailing spaces ("looks kind of risky... you might win.   ").
+//   - `(Lvl: N)` is REQUIRED by the matcher: all 357 lines state a level. `ConsiderEvent.level`
+//     is optional only so a future level-less shape stays expressible.
+const CONSIDER_RE = new RegExp(
+  '^(.+?)( - a rare creature -)? (' +
+    CONSIDER_FACTION_RUNGS.map((r) => r.phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') +
+    ') -- (.+?)\\s*\\(Lvl: (\\d+)\\)$'
+)
+/** phrase → rung, for the O(1) lookup after CONSIDER_RE captures the phrase. */
+const CONSIDER_FACTION_BY_PHRASE = new Map<string, ConsiderFaction>(
+  CONSIDER_FACTION_RUNGS.map((r) => [r.phrase, r.faction])
+)
+
 // ----- spell resist (NEW, Task #51 timeline v2) -----
 // A detrimental spell fully resisted — the caster-side analogue of a melee miss.
 // VERIFIED shapes (full-log sweep, 2026-08-02):
@@ -656,6 +684,35 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
         spell: m[5]?.trim() || undefined,
         healer,
         crit: /critical/i.test(m[6] ?? '')
+      }
+    }
+  }
+
+  // --- consider (`/con`, Task #63) ---
+  // Gated on `(Lvl: `, which in the whole real log appears ONLY on consider lines. Placed
+  // here (after the combat/heal battery, before every "You …"-prefixed family) purely for
+  // hot-path cost: it is one substring probe and the regex runs for ~357 lines in 1.02M.
+  // No earlier family can claim a consider line — the two clauses containing ", but " are
+  // rejected by the miss gate's `You try to `/` tries to ` requirement, and the resist gate
+  // needs a trailing "!" where a consider always ends in ")".
+  if (text.includes('(Lvl: ')) {
+    const m = CONSIDER_RE.exec(text)
+    if (m) {
+      const faction = CONSIDER_FACTION_BY_PHRASE.get(m[3])
+      // The alternation can only match a phrase from the ladder, so this is total; the guard
+      // exists so a future edit that widens the regex can't silently emit a bogus rung.
+      if (faction) {
+        return {
+          kind: 'consider',
+          seq,
+          ts,
+          raw,
+          mob: m[1].trim(),
+          rare: m[2] !== undefined,
+          level: Number(m[5]),
+          faction,
+          difficulty: m[4].trim()
+        }
       }
     }
   }

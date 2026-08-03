@@ -78,6 +78,14 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   (index.ts, ipc.ts, types.ts, preload, App.tsx) immediately before each
   surgical edit. errors.log noise from mid-edit HMR is normal — judge by
   final typecheck/tests and check timestamps before blaming current code.
+- **KEEP THE TREE BUILDABLE (user rule, 2026-08-03): the dev app must not
+  stay down.** Transient seconds-long HMR breakage is fine; MINUTES is not.
+  Concretely: create any file you import (even an empty stub) BEFORE writing
+  the import — a scrape/codegen that produces a data file the code needs gets
+  a stub first and overwrites it when done (this exact miss took the app down
+  for the length of a mob-page crawl); sequence multi-file changes so
+  `npm run dev` keeps compiling between edits; if you must break main's build,
+  fix it in your very next edit, not at wave end.
 - Commits: integrator commits per wave, detailed messages,
   `Co-Authored-By: Claude`. Keep `npm run dev` (watch) running — main edits
   auto-relaunch, renderer edits HMR.

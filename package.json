@@ -13,6 +13,7 @@
     "start": "electron-vite dev",
     "scrape:posky": "tsx scripts/scrape-posky.ts",
     "scrape:bosses": "tsx scripts/scrape-bosses.ts",
+    "scrape:mobs": "tsx scripts/scrape-mobs.ts",
     "scrape:quests": "tsx scripts/scrape-quests.ts",
     "scrape:spells": "tsx scripts/scrape-spells.ts",
     "fetch:packs": "tsx scripts/fetch-packs.mts",

@@ -24,6 +24,14 @@ resources/soundpacks/sc_marine/
 # headless Electron e2e harness dumps DOM/screenshots here on a failed assertion
 tests/e2e/artifacts/
 
+# MOB-SCRAPER wikitext cache (Task #63). The quests/spells caches ARE committed — they are ~900
+# and ~2k small files and they make a re-scrape free for anyone. The mob corpus is 7,879 pages /
+# ~40MB, which is an order of magnitude past that, and it is fully REGENERABLE (`npm run
+# scrape:mobs` refills it from the wiki in ~15 minutes). The DATASET it produces —
+# src/renderer/src/data/eqlegends/mobs.json — is committed, which is what reproducibility
+# actually needs; the cache is only a re-run accelerator for whoever refreshes it next.
+scripts/sources/cache/mobs/
+
 # clean-machine sandbox harness writes results here; keep the folder, not the output
 scripts/sandbox/results/*
 !scripts/sandbox/results/.gitkeep

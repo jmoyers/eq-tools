@@ -10,6 +10,7 @@ import type {
   ItemKnowledge,
   LogLine,
   LootEvent,
+  MobKnowledge,
   ModuleDelta,
   ModuleSnapshot,
   PackInstallProgress,
@@ -35,7 +36,7 @@ export interface ShareSaveResult {
 
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
-export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge }
+export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge, MobKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { UpdateStatus }
 export type { ShareApplyResult, SharePreview }
@@ -133,6 +134,10 @@ const api = {
    *  then a cached, politely-throttled wiki lookup. Never rejects (degrades to a
    *  cached-negative/offline record that still carries local posky associations). */
   lookupItem: (name: string): Promise<ItemKnowledge> => ipcRenderer.invoke(IPC.itemsLookup, name),
+
+  /** Mob knowledge (Task #63): "what does this thing drop" — your own loot history + the local
+   *  quest catalog first, then a cached, politely-throttled wiki lookup. Never rejects. */
+  lookupMob: (name: string): Promise<MobKnowledge> => ipcRenderer.invoke(IPC.mobsLookup, name),
 
   /** Report a renderer-detected event into the live event feed (Task #59) — today only quest
    *  completions, which only the renderer's posky/turn-in detector can see. Fire-and-forget;

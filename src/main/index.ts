@@ -36,11 +36,13 @@ import { CharacterModule } from './modules/character'
 import { ItemTiersModule } from './modules/itemTiers'
 import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
+import { ConsiderModule } from './modules/consider'
 import { EventFeedModule } from './modules/eventFeed'
 import type { ModuleDelta } from './modules/types'
 import { defaultOverlayBounds, overlayDefaultSize } from './overlayLayout'
 import { getSoundData, listPacks } from './sounds'
 import { lookupItem } from './itemLookup'
+import { MOB_CATALOG_SIZE, lookupMob, ownLoot } from './mobLookup'
 import { provisionDefaultPacks } from './provisionPacks'
 import {
   fetchPackSounds,
@@ -215,6 +217,14 @@ buffsModule.setDerivedEmitter((ev, live) => bus.emitDerived(ev, live))
 // replaces the old bare prefetch subscription below). Registered LAST so a row appended while
 // an earlier module's delta is being emitted still flushes in that pass.
 const eventFeedModule = new EventFeedModule({ lookupItem })
+// The consider ring (Task #63): the mobs you've recently `/con`ed, enriched asynchronously with
+// drop knowledge. It also OWNS the shared own-loot index's lifetime — it folds every loot event
+// into `ownLoot` and resets it on epoch/character switch, so mobLookup's "what has this mob
+// dropped for ME" answer is rebuilt by the same replay that rebuilds the loot module.
+const considerModule = new ConsiderModule({ lookupMob, ownLoot })
+console.log(
+  `[everquest-companion] Mob catalog: ${MOB_CATALOG_SIZE} mobs (scraped drop tables; the live wiki lookup is the fallback).`
+)
 
 /** Fold an `alerts` module delta into the event feed (alert id → its display name). */
 function feedAlertDelta(delta: ModuleDelta): void {
@@ -235,6 +245,9 @@ registry.register(characterModule)
 registry.register(itemTiersModule)
 registry.register(alertsModule)
 registry.register(buffsModule)
+registry.register(considerModule)
+// eventFeed stays LAST: a row appended while an earlier module's delta is being emitted still
+// rides out on the same flush pass.
 registry.register(eventFeedModule)
 // Subscribe consumers to the bus ONCE, at startup. The bus persists across
 // character switches; on a switch we reset() each consumer rather than tearing
@@ -1125,6 +1138,9 @@ function registerIpc(): void {
   // rejects (degrades to a cached negative/offline record that still carries local posky
   // associations), so a failure here never leaves the renderer hanging.
   ipcMain.handle(IPC.itemsLookup, (_e, name: string) => lookupItem(name))
+  // Mob knowledge (Task #63) — "what does this thing drop". Cache-first + local-first in main,
+  // so the hover card is usually answered without touching the network. Never rejects.
+  ipcMain.handle(IPC.mobsLookup, (_e, name: string) => lookupMob(name))
 
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   ipcMain.handle(IPC.packsRegistry, (_e, force?: boolean) => fetchRegistry(force ?? false))

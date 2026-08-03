@@ -14,6 +14,10 @@
 //                 old bare prefetch call in index.ts — one lookup, same warm cache.
 //   3. QUESTS   — the renderer's posky/turn-in detector reports a completion over `feed:report`
 //                 (`report()`), because only the renderer can match turn-ins against posky.
+//   4. CONSIDER — a LIVE `consider` line (Task #63): you sized something up, so the feed says
+//                 what it was, how hard, and (via the row's hover card) what it drops. Unlike
+//                 loot this needs no lookup to be admitted — the log line already carries every
+//                 field of the row; drop knowledge is the HOVER's job, resolved lazily.
 //
 // HYDRATION (the celebration-detector rule, AGENTS.md "Celebrations"): the startup replay must
 // NOT spam the feed with hours-old events. Rather than seeding a baseline and diffing, this
@@ -26,12 +30,27 @@
 // no reward carries no `reward`, so the UI has no item hover to show — never a fabricated one.
 
 import type { EqModule } from './types'
-import type { LogEvent } from '../../shared/logEvents'
+import type { ConsiderFaction, LogEvent } from '../../shared/logEvents'
 import type { FeedDelta, FeedEvent, FeedReport, FeedSnap, ItemKnowledge } from '../../shared/types'
 import { isNotableKnowledge } from '../../shared/itemKnowledge'
+import { considerDifficultyShort } from '../../shared/logEvents'
 
 /** How many entries the feed keeps. Oldest fall off the back. */
 export const FEED_CAP = 100
+
+/**
+ * CONSIDER ANTI-SPAM WINDOW (Task #63). Re-conning the same mob inside this window appends NO
+ * second feed row. The real log makes this mandatory, not decorative: conning is a reflex, and
+ * the same mob routinely appears two or three times a second or two apart (Guard V`Lex at
+ * 18:56:38 / :44 / :45; A Nisch Val Gnoll at 22:43:16 / :23 / :25; Karam Dragonforge four times
+ * in 25 seconds, across three different faction rungs as his faction shifted). 10s comfortably
+ * covers those bursts while still admitting a genuine re-con later in a pull.
+ *
+ * The window is per MOB, keyed by the canonical name — and it lives HERE, at the feed boundary,
+ * rather than in the consider module: the module's ring already collapses repeats structurally
+ * (one row per mob), so the feed is the only surface a burst could actually spam.
+ */
+export const CONSIDER_FEED_DEDUPE_MS = 10_000
 
 /** Strip a raw log line's `[Sat Aug 02 13:00:28 2026] ` prefix for display. */
 export function stripLogTimestamp(raw: string): string {
@@ -56,6 +75,8 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
   private idCounter = 0
   /** Item names with a lookup in flight, so a stacked loot burst probes each name once. */
   private probing = new Set<string>()
+  /** mob name (lowercased) → ts of the last con we ADMITTED. See CONSIDER_FEED_DEDUPE_MS. */
+  private lastCon = new Map<string, number>()
 
   constructor(private deps: EventFeedDeps = {}) {}
 
@@ -65,6 +86,7 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
     this.ring = []
     this.pending = []
     this.probing.clear()
+    this.lastCon.clear()
     this.seq = 0
   }
 
@@ -72,8 +94,48 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
     this.seq = ev.seq
     // Historical replay contributes NOTHING (see the hydration note above).
     if (!live) return
+    if (ev.kind === 'consider') {
+      this.noteConsider(ev.mob, ev.rare, ev.level, ev.faction, ev.difficulty, ev.ts)
+      return
+    }
     if (ev.kind !== 'loot' || !ev.item) return
     this.probeLoot(ev.item, ev.source, ev.ts)
+  }
+
+  /**
+   * Append a consider row, unless the same mob was already admitted inside the anti-spam window
+   * (CONSIDER_FEED_DEDUPE_MS). No lookup gates admission — every field below came straight off
+   * the log line, so the row is honest with zero network. What the mob DROPS is the hover
+   * card's job (`mobs:lookup`), resolved lazily when the user points at the row.
+   *
+   * `detail` is the glanceable summary: `Lvl 38 · suicide`, with a `· rare` marker when the
+   * line carried the rare-creature infix. An unrecognized difficulty clause falls back to the
+   * VERBATIM clause rather than a guessed label. `page` is deliberately absent — the wiki page
+   * isn't known yet at this point, and a fabricated link is worse than none.
+   */
+  noteConsider(
+    mob: string,
+    rare: boolean,
+    level: number | undefined,
+    faction: ConsiderFaction,
+    difficulty: string,
+    ts: number
+  ): void {
+    const key = mob.trim().toLowerCase()
+    const last = this.lastCon.get(key)
+    if (last !== undefined && ts - last < CONSIDER_FEED_DEDUPE_MS) return
+    this.lastCon.set(key, ts)
+    const bits: string[] = []
+    if (level != null) bits.push(`Lvl ${level}`)
+    bits.push(considerDifficultyShort(difficulty) ?? difficulty)
+    if (rare) bits.push('rare')
+    this.append({
+      kind: 'con',
+      ts,
+      title: mob,
+      detail: bits.join(' · '),
+      con: { faction, level, rare, difficulty }
+    })
   }
 
   /**

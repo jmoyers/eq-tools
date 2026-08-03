@@ -576,6 +576,147 @@ export interface ItemMergeFailedEvent extends LogEventBase {
   component?: string
 }
 
+/**
+ * A CONSIDER (`/con`) — the player sized a mob up (Task #63). ONE shape, verified by a
+ * full-log sweep of eqlog_Primitive_freeport.txt (2026-08-03, 357 lines):
+ *
+ *   <Mob>[ - a rare creature -] <faction phrase> -- <difficulty phrase> (Lvl: N)
+ *
+ *   A zol ghoul knight scowls at you, ready to attack -- what would you like your tombstone to say? (Lvl: 38)
+ *   A froglok gaz knight regards you indifferently -- looks quite risky, but might be worth a try. (Lvl: 18)
+ *   Baron Telyx V`Zher - a rare creature - scowls at you, ready to attack -- what would you like your tombstone to say? (Lvl: 28)
+ *
+ * `(Lvl: N)` is the family's anchor and EVERY one of the 357 lines carries it (the only other
+ * lines in the whole log containing ` -- ` are 9 player chat lines, which have no `(Lvl:`).
+ * `level` is nevertheless optional on the type so a future level-less shape stays expressible
+ * without a breaking change — see parser.ts, which requires the group today.
+ *
+ * `mob` is the RAW display name, exactly as printed. A consider line SENTENCE-CASES the leading
+ * article ("A zol ghoul knight") where a You-have-slain line does not ("a zol ghoul knight"), so
+ * every consumer keys by `idKey(mob)` and adopts the display the same way KillInfo does — see
+ * world-model law 2.
+ */
+export interface ConsiderEvent extends LogEventBase {
+  kind: 'consider'
+  /** RAW display name, verbatim (article casing preserved; canonicalize with idKey). */
+  mob: string
+  /** the ` - a rare creature - ` infix was present (12 lines in the real log). */
+  rare: boolean
+  /** the stated level. Always present today; see the note above. */
+  level?: number
+  /** the faction rung, canonicalized 1:1 from the phrase (never inferred) — see FACTION_RUNGS. */
+  faction: ConsiderFaction
+  /** the difficulty clause, VERBATIM (gendered variants preserved). See considerDifficultyShort. */
+  difficulty: string
+}
+
+/**
+ * The faction (con-message) ladder, friendliest → most hostile. These are the rungs EQ prints
+ * between the mob name and the ` -- `; the key is a 1:1 rename of the phrase, not an inference.
+ *
+ * FULL-LOG SWEEP (2026-08-03, 357 consider lines — every line accounted for, no residue):
+ *   regards you indifferently        128
+ *   scowls at you, ready to attack   102
+ *   judges you amiably                60
+ *   glowers at you dubiously          34
+ *   glares at you threateningly       17
+ *   looks your way apprehensively     14
+ *   looks upon you warmly              2
+ * The two remaining rungs of the classic ladder — `regards you as an ally` and `kindly considers
+ * you` — do NOT occur in this log (this character has no maxed faction). They are matched anyway,
+ * for the same reason the stance regex is name-permissive: covering a rung we haven't stood on
+ * costs nothing and refusing it would silently drop the whole line. Nothing infers a rung that
+ * wasn't printed.
+ */
+export type ConsiderFaction =
+  | 'ally'
+  | 'warmly'
+  | 'kindly'
+  | 'amiably'
+  | 'indifferent'
+  | 'apprehensive'
+  | 'dubious'
+  | 'threatening'
+  | 'scowls'
+
+/** phrase → rung, friendliest first. The parser builds its alternation from this list. */
+export const CONSIDER_FACTION_RUNGS: readonly { phrase: string; faction: ConsiderFaction }[] = [
+  { phrase: 'regards you as an ally', faction: 'ally' },
+  { phrase: 'looks upon you warmly', faction: 'warmly' },
+  { phrase: 'kindly considers you', faction: 'kindly' },
+  { phrase: 'judges you amiably', faction: 'amiably' },
+  { phrase: 'regards you indifferently', faction: 'indifferent' },
+  { phrase: 'looks your way apprehensively', faction: 'apprehensive' },
+  { phrase: 'glowers at you dubiously', faction: 'dubious' },
+  { phrase: 'glares at you threateningly', faction: 'threatening' },
+  { phrase: 'scowls at you, ready to attack', faction: 'scowls' }
+]
+
+/** Short, glanceable rung label for a chip/badge. */
+export const CONSIDER_FACTION_LABEL: Record<ConsiderFaction, string> = {
+  ally: 'ally',
+  warmly: 'warmly',
+  kindly: 'kindly',
+  amiably: 'amiable',
+  indifferent: 'indifferent',
+  apprehensive: 'apprehensive',
+  dubious: 'dubious',
+  threatening: 'threatening',
+  scowls: 'KOS'
+}
+
+/**
+ * The APP's faction palette (friendly cool → hostile warm). This is our presentation choice,
+ * not a color the game states — EQ's own con COLOR encodes relative LEVEL, not faction, and the
+ * log never carries a color at all. Kept beside the ladder so the overlay and the main window
+ * can't drift apart.
+ */
+export const CONSIDER_FACTION_COLOR: Record<ConsiderFaction, string> = {
+  ally: '#5fe08a',
+  warmly: '#7fd8a0',
+  kindly: '#6fa8f0',
+  amiably: '#7fc4e8',
+  indifferent: '#c8ccd8',
+  apprehensive: '#c9c65a',
+  dubious: '#d6a94a',
+  threatening: '#e08b45',
+  scowls: '#e05c5c'
+}
+
+/**
+ * The difficulty clause → a short label for a dense row. Keys are the VERBATIM phrases observed
+ * in the full-log sweep, with the gendered pronoun folded to a regex-free `he|she|it` lookup
+ * below; a phrase we've never seen returns undefined and the caller shows the verbatim clause
+ * (never a guessed tier — and deliberately NO numeric ordering, which the log does not state).
+ */
+const CONSIDER_DIFFICULTY_SHORT: Record<string, string> = {
+  'what would you like your tombstone to say?': 'suicide',
+  'looks like it would wipe the floor with you!': 'wipes the floor',
+  'it appears to be quite formidable.': 'formidable',
+  'looks like quite a gamble.': 'a gamble',
+  'looks kind of dangerous.': 'dangerous',
+  "you would probably win this fight... it's not certain though.": 'probably win',
+  'looks quite risky, but might be worth a try.': 'worth a try',
+  'looks kind of risky, but you might win.': 'might win',
+  'looks kind of risky... you might win.': 'might win',
+  'you could probably win this fight.': 'likely win',
+  'looks like a reasonably safe opponent.': 'safe'
+}
+
+/**
+ * Short label for a difficulty clause, or undefined when we've never seen the phrase.
+ * Folds the gendered variants EQ emits for two of the clauses ("looks like HE/SHE/IT would wipe
+ * the floor with you!", "HE/SHE/IT appears to be quite formidable.") onto the neuter key.
+ */
+export function considerDifficultyShort(difficulty: string): string | undefined {
+  const key = difficulty
+    .trim()
+    .toLowerCase()
+    .replace(/\b(?:he|she)\b/g, 'it')
+    .replace(/\s+/g, ' ')
+  return CONSIDER_DIFFICULTY_SHORT[key]
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -616,4 +757,5 @@ export type LogEvent =
   | InvocationChangeEvent
   | ItemMergeEvent
   | ItemMergeFailedEvent
+  | ConsiderEvent
   | UnknownEvent
