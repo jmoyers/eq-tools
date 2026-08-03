@@ -3,9 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Same policy as index.html minus what this page cannot use (media-src: the overlay has no
+      sound bridge). Kept spelled out rather than shared, because a <meta> CSP cannot be
+      imported — the two pages must be read side by side, so they are written side by side.
+        script-src 'self'          no inline/eval; the hard stop on wiki/log-derived text.
+        style-src 'unsafe-inline'  REQUIRED twice over here: the transparent-window rules in
+                                   the <style> block below, and React's inline `style={{…}}`
+                                   is not affected but the block is. (No MUI/emotion in this
+                                   bundle — AGENTS.md keeps the overlay MUI-free.)
+        img-src eqimg:             item icons from the permanent cache; no `https:` (see
+                                   index.html / imageCache.ts).
+        connect-src 'self'         no fetch of its own; 'self' covers dev HMR's WebSocket.
+        object-src/frame-src/child-src/base-uri/form-action  all 'none'.
+    -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; script-src 'self'"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; child-src 'none'; base-uri 'none'; form-action 'none'"
     />
     <title>DPS Overlay</title>
     <style>

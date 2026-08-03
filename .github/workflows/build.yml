@@ -16,6 +16,21 @@
 #                         can never ship a mismatched package.json version and
 #                         "remember to bump after tagging" is no longer a rule.
 #
+# THOSE TWO PATHS ARE TWO SEPARATE JOBS, and that split is a SECURITY boundary,
+# not cosmetics. GITHUB_TOKEN permissions are per-job and static — they cannot be
+# made conditional inside a job — so a single job covering both paths had to hold
+# `contents: write` on every main-branch push. That handed a writable repo token
+# to `npm ci` plus the whole build (600+ packages of third-party code) on a path
+# that publishes nothing. Now:
+#
+#   job `build`   (non-tag refs) → permissions: contents: read   [no write anywhere]
+#   job `release` (tag refs)     → permissions: contents: write  [the publish path]
+#
+# The `if:` guards are mutually exclusive, so exactly one job runs per event and
+# total CI time is unchanged. The prelude steps are duplicated on purpose: a
+# reusable workflow would re-introduce a shared surface across the boundary and
+# buy nothing at this size. Keep the two preludes in sync.
+#
 # UPDATE-CHANNEL CONTINUITY (do not remove the main.yml bridge): every install
 # to date polls the 'main' channel feed (main.yml) — the app's default channel.
 # A stable release natively writes only latest.yml, so without a bridge every
@@ -28,6 +43,22 @@
 # electron-builder publishes via GITHUB_TOKEN (publish block in
 # electron-builder.yml). Azure Trusted Signing stays inert until the 6 AZURE_*
 # repo secrets exist; args are conditional below.
+#
+# ACTION PINNING: every `uses:` is pinned to a full 40-char commit SHA, with the
+# floating tag it resolved to in the trailing comment. A tag like `@v4` is a
+# MUTABLE pointer — whoever controls the action repo (or anyone who compromises
+# it) can repoint it at new code that then runs inside this job, with this job's
+# token. A SHA cannot be repointed. When bumping, re-resolve with:
+#   gh api repos/<owner>/<action>/git/ref/tags/<tag> --jq .object.sha
+# and update BOTH the SHA and the comment.
+#
+# UNTRUSTED INPUT: nothing here interpolates `${{ }}` into a `run:` body. The tag
+# name reaches pwsh as the ENV VAR $env:GITHUB_REF_NAME, which is a value, not
+# source text — `${{ github.ref_name }}` pasted into a script would be substituted
+# BEFORE the shell parses it and could inject commands. On a tag push ref_name is
+# only settable by someone who can already push a tag (a repo writer), so this is
+# defence in depth rather than a hole; the release job additionally validates the
+# tag against a semver regex before using it.
 
 name: build
 
@@ -37,18 +68,31 @@ on:
     tags: ['v*']
   workflow_dispatch:
 
-permissions:
-  contents: write # needed to create/update GitHub Releases
+# Least privilege at the top: no job gets a token scope it does not name.
+# The repo default is already "read", but stating it here means a newly added
+# job cannot silently inherit write from a future settings change.
+permissions: {}
 
 jobs:
+  # =========================================================================
+  # NON-TAG REFS: verify + build. Read-only token. Publishes NOTHING.
+  # =========================================================================
   build:
+    if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
     runs-on: windows-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        # persist-credentials:false keeps the job's token out of the runner's
+        # git config. Nothing here pushes; the release job talks to GitHub via
+        # the GH_TOKEN env var, not via git credentials.
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        with:
+          persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4 (v4.4.0)
         with:
           # 24 = the dev machine's major. NOT 20: `node --test tests/*.test.mts`
           # relies on the runner's own glob expansion (pwsh/cmd don't expand), which
@@ -57,8 +101,14 @@ jobs:
           node-version: 24
           cache: npm
 
+      # `.npmrc` sets ignore-scripts=true, so this installs 600+ packages
+      # WITHOUT executing any of their install hooks. See .npmrc for the full
+      # rationale and for why exactly one package needs its hook run by hand.
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Electron binary
+        run: npm run deps:electron
 
       - name: Typecheck
         run: npm run typecheck
@@ -69,23 +119,100 @@ jobs:
       - name: Test
         run: npm test
 
-      # --- TAGGED RELEASE ONLY: stamp the version from the tag ----------------
-      # CI-only rewrite (never committed): the tag IS the version. A v1.2.3 push
-      # builds 1.2.3 regardless of what package.json says, so the two cannot drift.
-      - name: Stamp version from tag
-        if: startsWith(github.ref, 'refs/tags/v')
-        shell: pwsh
-        run: |
-          $ver = $env:GITHUB_REF_NAME -replace '^v', ''
-          npm version --no-git-tag-version --allow-same-version $ver
-          Write-Host "Stamped version from tag: $ver"
-
-      # --- Build. On main: artifact only. On tag: build then publish. ---------
       # Azure Trusted Signing (inert until the AZURE_* secrets exist):
       #   AZURE_TENANT_ID / AZURE_CLIENT_ID / AZURE_CLIENT_SECRET  (app registration)
       #   AZURE_SIGNING_ENDPOINT  e.g. https://eus.codesigning.azure.net
       #   AZURE_SIGNING_ACCOUNT   the Trusted Signing account name
       #   AZURE_SIGNING_PROFILE   the certificate profile name
+      - name: Build installer
+        shell: pwsh
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_SIGNING_ENDPOINT: ${{ secrets.AZURE_SIGNING_ENDPOINT }}
+          AZURE_SIGNING_ACCOUNT: ${{ secrets.AZURE_SIGNING_ACCOUNT }}
+          AZURE_SIGNING_PROFILE: ${{ secrets.AZURE_SIGNING_PROFILE }}
+        run: |
+          npm run build
+          $signArgs = @()
+          if ($env:AZURE_TENANT_ID) {
+            $signArgs = @(
+              "--config.win.azureSignOptions.endpoint=$env:AZURE_SIGNING_ENDPOINT",
+              "--config.win.azureSignOptions.codeSigningAccountName=$env:AZURE_SIGNING_ACCOUNT",
+              "--config.win.azureSignOptions.certificateProfileName=$env:AZURE_SIGNING_PROFILE"
+            )
+            Write-Host "Code signing: Azure Trusted Signing enabled."
+          } else {
+            Write-Host "Code signing: skipped (no Azure secrets configured)."
+          }
+          npx electron-builder --win --publish never @signArgs
+
+      - name: Upload installer artifact (CI record)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 (v4.6.2)
+        with:
+          name: installer
+          path: |
+            release/**/*.exe
+            release/**/*.blockmap
+            release/**/*.yml
+          if-no-files-found: warn
+
+  # =========================================================================
+  # TAG REFS ONLY: the publish path. The ONLY job that holds a write token.
+  # =========================================================================
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-latest
+    permissions:
+      contents: write # create/update the GitHub Release + upload its assets
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4 (v4.4.0)
+        with:
+          node-version: 24 # see the build job for why not 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Electron binary
+        run: npm run deps:electron
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      # --- Stamp the version from the tag ------------------------------------
+      # CI-only rewrite (never committed): the tag IS the version. A v1.2.3 push
+      # builds 1.2.3 regardless of what package.json says, so the two cannot drift.
+      #
+      # The regex is a GUARD, not decoration: everything downstream derives file
+      # paths and a `gh release` target from this string. Rejecting anything that
+      # is not `vMAJOR.MINOR.PATCH[-prerelease][+build]` makes a typo'd or hostile
+      # tag fail loudly here instead of producing a `release/<junk>/` path miss or
+      # a surprising `npm version` argument.
+      - name: Stamp version from tag
+        shell: pwsh
+        run: |
+          $tag = $env:GITHUB_REF_NAME
+          if ($tag -notmatch '^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?(\+[0-9A-Za-z.-]+)?$') {
+            throw "refusing to build: tag '$tag' is not a vMAJOR.MINOR.PATCH semver tag"
+          }
+          $ver = $tag -replace '^v', ''
+          npm version --no-git-tag-version --allow-same-version $ver
+          Write-Host "Stamped version from tag: $ver"
+
+      # --- Build + publish as a DRAFT ----------------------------------------
+      # Azure Trusted Signing (inert until the AZURE_* secrets exist) — see the
+      # build job for the secret list.
       - name: Build installer
         shell: pwsh
         env:
@@ -109,26 +236,21 @@ jobs:
           } else {
             Write-Host "Code signing: skipped (no Azure secrets configured)."
           }
-          if ($env:GITHUB_REF -like 'refs/tags/v*') {
-            # releaseType=DRAFT, deliberately: a published release must appear
-            # ATOMICALLY with BOTH feed files. Publishing live here and uploading
-            # main.yml afterwards opened a real race — a main-channel client that
-            # checked mid-publish resolved the new tag from the atom feed and
-            # 404'd on main.yml ("no published versions"-grade errors). The
-            # bridge step below uploads main.yml to the draft, THEN flips it live.
-            npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=draft @signArgs
-          } else {
-            npx electron-builder --win --publish never @signArgs
-          }
+          # releaseType=DRAFT, deliberately: a published release must appear
+          # ATOMICALLY with BOTH feed files. Publishing live here and uploading
+          # main.yml afterwards opened a real race — a main-channel client that
+          # checked mid-publish resolved the new tag from the atom feed and
+          # 404'd on main.yml ("no published versions"-grade errors). The
+          # bridge step below uploads main.yml to the draft, THEN flips it live.
+          npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=draft @signArgs
 
-      # --- TAGGED RELEASE ONLY: main-channel bridge, then publish ATOMICALLY --
+      # --- main-channel bridge + checksums, then publish ATOMICALLY -----------
       # See the header comment. latest.yml and main.yml differ only by filename;
       # the copy lets every existing main-channel install update to this stable
       # build instead of stalling forever. The release is still a DRAFT here —
-      # both feed files land on it, and only then does it flip live, so no
-      # client can ever resolve the tag and miss its channel file.
-      - name: Bridge main-channel feed + publish release
-        if: startsWith(github.ref, 'refs/tags/v')
+      # every asset lands on it, and only then does it flip live, so no client
+      # can ever resolve the tag and miss a file it needs.
+      - name: Bridge main-channel feed + checksums + publish release
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -138,14 +260,61 @@ jobs:
           if (-not (Test-Path $src)) { throw "expected feed file not found: $src" }
           Copy-Item $src main.yml
           gh release upload $env:GITHUB_REF_NAME main.yml --clobber
+
+          # STABLE-NAMED INSTALLER COPY (the website's permanent download link).
+          # The native asset carries the version in its filename, so
+          # /releases/latest/download/<name> can't be hard-coded anywhere. A
+          # byte copy named `everquest-companion-Setup.exe` gives the landing
+          # page (site/index.html) a link that never needs editing:
+          #   https://github.com/jmoyers/everquest-companion/releases/latest/download/everquest-companion-Setup.exe
+          # It is uploaded HERE, to the still-DRAFT release, for the same reason
+          # main.yml is: the release must appear ATOMICALLY with every asset a
+          # client (or the site) can resolve, or a download mid-publish 404s.
+          # Not fed to electron-updater — the feed files still point at the
+          # versioned asset + its .blockmap, so differential updates are unaffected.
+          $exe = "release/$ver/everquest-companion-Setup-$ver.exe"
+          if (-not (Test-Path $exe)) { throw "expected installer not found: $exe" }
+          Copy-Item $exe everquest-companion-Setup.exe
+          gh release upload $env:GITHUB_REF_NAME everquest-companion-Setup.exe --clobber
+
+          # SHA256SUMS.txt — an INDEPENDENT integrity check for humans.
+          # The auto-updater already verifies every download against the sha512
+          # in latest.yml, but a person clicking the website's Download button
+          # gets no such check: they are trusting GitHub's TLS and GitHub's
+          # storage, full stop. This file lets them verify out of band
+          # (`sha256sum -c SHA256SUMS.txt`, or
+          # `certutil -hashfile <exe> SHA256` on Windows) against a value they
+          # can also read from the release page or the public build log.
+          # Written ASCII/no-BOM with the two-space separator so GNU
+          # `sha256sum -c` accepts it verbatim.
+          $items = @(
+            @{ Path = $exe;                            Name = "everquest-companion-Setup-$ver.exe" },
+            @{ Path = "$exe.blockmap";                 Name = "everquest-companion-Setup-$ver.exe.blockmap" },
+            @{ Path = "everquest-companion-Setup.exe"; Name = "everquest-companion-Setup.exe" },
+            @{ Path = $src;                            Name = "latest.yml" },
+            @{ Path = "main.yml";                      Name = "main.yml" }
+          )
+          $lines = foreach ($i in $items) {
+            if (Test-Path -LiteralPath $i.Path) {
+              "$((Get-FileHash -Algorithm SHA256 -LiteralPath $i.Path).Hash.ToLower())  $($i.Name)"
+            } else {
+              Write-Host "SHA256SUMS: skipping missing $($i.Path)"
+            }
+          }
+          Set-Content -Path SHA256SUMS.txt -Value $lines -Encoding ascii
+          Get-Content SHA256SUMS.txt | Write-Host
+          gh release upload $env:GITHUB_REF_NAME SHA256SUMS.txt --clobber
+
           gh release edit $env:GITHUB_REF_NAME --draft=false --latest
-          Write-Host "main.yml bridged; $env:GITHUB_REF_NAME published atomically"
+          Write-Host "main.yml + stable-named installer + SHA256SUMS bridged; $env:GITHUB_REF_NAME published atomically"
 
       - name: Upload installer artifact (CI record)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 (v4.6.2)
         with:
           name: installer
           path: |
             release/**/*.exe
+            release/**/*.blockmap
             release/**/*.yml
+            SHA256SUMS.txt
           if-no-files-found: warn

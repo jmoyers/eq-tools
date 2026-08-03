@@ -17,6 +17,18 @@ files:
 asarUnpack:
   - resources/**
 
+# npmRebuild defaults to TRUE, which makes electron-builder shell out to
+# @electron/rebuild -> node-gyp against the whole production tree at package
+# time. This project has NO native modules (chokidar 4, electron-store/conf and
+# electron-updater are pure JS; there is not a single binding.gyp or prebuilt
+# .node in the tree), so that pass rebuilds nothing — it only keeps a
+# compile-and-execute path wired into every build, which is exactly the kind of
+# step `.npmrc`'s ignore-scripts is there to close. Turning it off is a no-op for
+# output and removes the path. If a native dependency is ever added, this must
+# flip back to true (or `electron-builder install-app-deps` must run explicitly)
+# or the module will ship built against the wrong ABI.
+npmRebuild: false
+
 # Auto-update + release hosting: electron-updater pulls from GitHub Releases of
 # this repo. The CI workflows (.github/workflows) publish here; the app reads
 # latest*.yml from the same owner/repo. `channel` is per-release (main vs latest).

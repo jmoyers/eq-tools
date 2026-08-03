@@ -143,6 +143,38 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   reference its derived soundIds. App signals (bossDefeat, questComplete)
   fire from single always-mounted detectors.
 
+### Electron trust boundary (do not weaken)
+
+- ONE `WEB_PREFERENCES()` in index.ts builds the webPreferences for EVERY window
+  (main + all five overlays) — never inline a second opinion. contextIsolation
+  on; nodeIntegration (+InWorker/+InSubFrames), webviewTag,
+  allowRunningInsecureContent, experimentalFeatures, enableBlinkFeatures,
+  navigateOnDragDrop, spellcheck all off; webSecurity on. Stated explicitly even
+  where they match Electron's default — the default is someone else's decision.
+- `sandbox:false` is a PACKAGING blocker, not a choice: both preloads
+  `require("./chunks/ipc-<hash>.js")` (rollup hoists the shared `shared/ipc.ts`
+  out of the two-entry preload build), and a sandboxed preload's `require`
+  resolves only `electron` + a tiny polyfill set. MEASURED: flipping it makes
+  `npm run test:e2e` time out with `[main:preload-error] module not found:
+  ./chunks/ipc-….js` and no `window.eq` at all. Nothing in the preloads needs
+  Node, so `sandbox:true` (and `app.enableSandbox()`) unlocks the moment
+  electron.vite.config.ts emits each preload as ONE self-contained file.
+- Navigation/window-open/webview policy is installed ONCE from
+  `app.on('web-contents-created')` (hardenWebContents), never per window: a
+  window added later must not be able to miss it. `will-navigate` allows only the
+  bundled renderer dir (or, in dev, the electron-vite server's ORIGIN — the
+  server's own URL, so 5173/5174 both work); `setWindowOpenHandler` is
+  deny-always and hands ONLY an allowlisted https host to `shell.openExternal`.
+  **That allowlist is the boundary, not a formality**: link URLs are built from
+  WIKI PAGE TITLES (`shared/wiki.ts`), and an unvalidated openExternal would let
+  one ask the OS to run `file:///…exe`. Widen `EXTERNAL_LINK_ALLOWLIST`
+  (security.ts) deliberately or not at all. All permissions are denied wholesale
+  (this app needs none); pure policy lives in `src/main/security.ts` and is
+  pinned by `tests/security.test.mts` (no Electron, never skips).
+- Renderer-supplied strings that reach `join()` are validated AT THE IPC
+  HANDLER (`sounds:getData`'s packId → `isSafePackId`), not trusted because
+  today's only caller is the app's own UI.
+
 ## World-model laws (hard-won; do not relearn these)
 
 1. **Messages over inference.** Applications, targets, expiry come from
@@ -369,6 +401,30 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   until 6 `AZURE_*` repo secrets exist (account `jmoyers-eqtools` — an
   EXTERNAL Azure resource name, deliberately not renamed; endpoint
   `https://eus.codesigning.azure.net/`; identity validation pending).
+- **`npm ci` DOES NOT INSTALL ELECTRON'S BINARY ANY MORE.** `.npmrc` sets
+  `ignore-scripts=true` (no dependency's install hook executes — the npm
+  compromise vector), so after any `npm ci` / `npm install` you MUST run
+  `npm run deps:electron` or dev/dist fails on a missing Electron binary.
+  It is the ONE package in the tree that needs its hook (esbuild's is
+  redundant — its binary ships in `@esbuild/win32-x64`; everything else
+  declares only `prepare`/`prepack`, which npm never runs for registry
+  tarballs). Both CI jobs do it as an explicit step. Explicit `npm run <x>`
+  is unaffected by the flag; only lifecycle hooks are.
+- **build.yml is TWO JOBS and that is a security boundary**: `build` (non-tag
+  refs, `contents: read`) and `release` (tag refs, `contents: write`). Token
+  permissions are per-job and static, so one job covering both paths had to
+  hold write on every push to main. Keep the two preludes in sync; never
+  merge them back into one job. All `uses:` are pinned to commit SHAs (a
+  `@v4` tag is mutable) — re-resolve with
+  `gh api repos/<o>/<a>/git/ref/tags/<t> --jq .object.sha` when bumping.
+  Tagged releases also publish `SHA256SUMS.txt` alongside the installer.
+- **Unsigned build ⇒ the GitHub account IS the trust root.** electron-updater
+  verifies the sha512 from the feed (so a tampered *download* fails), but with
+  no Authenticode publisher it cannot verify *who* built the release. Anyone
+  who can publish a release here can ship a silent, per-user, no-UAC update to
+  every install. Azure signing closes this (`verifyUpdateCodeSignature` turns
+  on for signed Windows builds); until then, tag/release access is the control.
+  See `SECURITY.md`, which states this plainly to users.
 ### Installer architecture
 
 - Build chain: `npm run dist` = `electron-vite build` → electron-builder

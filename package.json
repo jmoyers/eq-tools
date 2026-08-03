@@ -6,6 +6,7 @@
   "author": "jmoyers",
   "private": true,
   "scripts": {
+    "deps:electron": "node node_modules/electron/install.js",
     "dev": "electron-vite dev --watch",
     "build": "electron-vite build",
     "preview": "electron-vite preview",

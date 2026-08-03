@@ -3,7 +3,7 @@
 // (module-level) further down this import list.
 import { CHANNEL, USER_DATA } from './channel'
 import { E2E } from './e2e'
-import { app, shell, BrowserWindow, dialog, ipcMain, protocol, screen } from 'electron'
+import { app, shell, BrowserWindow, dialog, ipcMain, protocol, screen, session } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
 import { existsSync, readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
@@ -52,6 +52,7 @@ import {
 } from './packRegistry'
 import { initUpdater } from './updater'
 import { installImageCacheProtocol, registerImageCacheSchemes } from './imageCache'
+import { allowedExternalUrl, isInternalPageUrl, isSafePackId } from './security'
 import {
   applyShare,
   exportAlertsString,
@@ -307,6 +308,142 @@ function notifyCombatActivity(): void {
   }, COMBAT_ACTIVITY_THROTTLE_MS - since)
 }
 
+// ---- Electron runtime trust boundary (webPreferences / navigation / permissions) ----
+//
+// ONE definition for EVERY window (main + all five overlays): a security posture that lives in
+// two places drifts, and a window created with a forgotten flag is exactly the bug this
+// section exists to prevent. Values are stated EXPLICITLY even where they match today's
+// Electron default — a default is a decision someone else can change in a major bump, and
+// `npm audit`-style reviews read this object, not Electron's changelog.
+//
+// WHY `sandbox: false` — MEASURED, not assumed. The two preloads are built by electron-vite
+// from a two-entry rollup input (src/preload/{index,overlay}.ts) and both import the shared
+// `src/shared/ipc.ts` channel registry, so rollup hoists it into
+// `out/preload/chunks/ipc-<hash>.js` and each preload begins `require("./chunks/ipc-….js")`.
+// A SANDBOXED preload's `require` is NOT Node's: it resolves `electron` plus a small
+// polyfilled set (events/timers/url) and nothing else. Flipping this to `true` and running
+// `npm run test:e2e` fails exactly there — the harness times out with no UI, and the e2e
+// errors.log carries:
+//
+//   [main:preload-error] module not found: ./chunks/ipc-D4DrnWdv.js
+//       at preloadRequire (node:electron/js2c/sandbox_bundle)
+//
+// i.e. `window.eq` is never installed and the app is silently dead. Nothing in the preloads
+// themselves needs Node (they use exactly `contextBridge` + `ipcRenderer` — zero `process`,
+// zero `fs`; `grep -c 'process\.' out/preload/index.js` is 0), so this is a PACKAGING blocker,
+// not a design one: `sandbox: true` becomes available the moment each preload is emitted as
+// ONE self-contained file. That is an electron.vite.config.ts change (a per-entry preload
+// build, since rollup will always hoist a module shared by two entries into a chunk), owned
+// outside this pass and written up as the top recommendation of the security report.
+// `app.enableSandbox()` is blocked by the same finding, for the same reason.
+//
+// Until then the mitigations that actually matter without the OS sandbox are all on:
+// contextIsolation (the preload's Node-capable context is unreachable from page JS), no
+// nodeIntegration in any form, a deny-by-default navigation/window-open/webview policy
+// (hardenWebContents), permissions denied wholesale (hardenSession), and a CSP with no
+// script-src escape hatch in either page.
+function WEB_PREFERENCES(preload: string): Electron.WebPreferences {
+  return {
+    preload,
+    // The preload runs with Node available; page JS cannot see it or its globals.
+    contextIsolation: true,
+    // See the note above — the only reason this isn't `true`.
+    sandbox: false,
+    // No Node in the page, in workers, or in any sub-frame. All three are Electron defaults
+    // today; all three are stated because flipping any one of them silently un-does
+    // contextIsolation's value.
+    nodeIntegration: false,
+    nodeIntegrationInWorker: false,
+    nodeIntegrationInSubFrames: false,
+    // Keep same-origin/CSP/mixed-content enforcement ON. Disabling it is how "just load this
+    // one image from the wiki" turns into a renderer that can read any origin.
+    webSecurity: true,
+    allowRunningInsecureContent: false,
+    // No experimental/unshipped Blink surface — this app renders its own bundle and nothing
+    // else, so there is nothing to gain and an unaudited attack surface to lose.
+    experimentalFeatures: false,
+    enableBlinkFeatures: '',
+    // `<webview>` is never used (hardenWebContents also denies every attach attempt).
+    webviewTag: false,
+    // The renderer has no <a href> to a local file and no reason to receive one by drop.
+    // Chromium would otherwise NAVIGATE the window to a file dropped on it.
+    navigateOnDragDrop: false,
+    // Spellcheck downloads a dictionary from Google on first use; nothing here is prose input.
+    spellcheck: false
+  }
+}
+
+/**
+ * Deny-by-default navigation policy for ONE webContents. Installed from the
+ * `web-contents-created` catch-all below, so it covers the main window, every overlay window,
+ * and any webContents a future feature creates — a per-window call site is exactly what gets
+ * forgotten.
+ *
+ * Three doors, all shut:
+ *   1. `will-navigate` — the app's own pages must never navigate away from the bundled
+ *      files (or, in dev, off the electron-vite server's origin). A page that navigated
+ *      elsewhere would keep this window's preload bridge — the ENTIRE `window.eq` IPC
+ *      surface — and hand it to whatever loaded.
+ *   2. `setWindowOpenHandler` — `window.open` / `<a target="_blank">` never opens an Electron
+ *      window. An ALLOWLISTED https URL is handed to the user's default browser; anything
+ *      else is dropped on the floor and logged. This is the door that matters most: the URLs
+ *      reaching it are built from wiki page titles (see security.ts), and an unvalidated
+ *      `shell.openExternal` would let one of them ask the OS to run `file:///…exe`.
+ *   3. `will-attach-webview` — `<webview>` is disabled in webPreferences; this is the belt
+ *      to that suspenders (and it strips node integration from the attach params first, so
+ *      even a future deliberate webview can't be created Node-enabled by page markup).
+ */
+function hardenWebContents(wc: Electron.WebContents): void {
+  const origins = {
+    devServerUrl: process.env['ELECTRON_RENDERER_URL'],
+    rendererDir: join(__dirname, '../renderer')
+  }
+
+  wc.on('will-navigate', (event, url) => {
+    if (isInternalPageUrl(url, origins)) return
+    event.preventDefault()
+    logError('main:blocked-navigation', { url })
+  })
+
+  wc.setWindowOpenHandler((details) => {
+    const safe = allowedExternalUrl(details.url)
+    if (safe) void shell.openExternal(safe)
+    else logError('main:blocked-window-open', { url: details.url })
+    // NEVER 'allow': an Electron child window would inherit this app's preload.
+    return { action: 'deny' }
+  })
+
+  wc.on('will-attach-webview', (event, webPreferences, params) => {
+    delete webPreferences.preload
+    webPreferences.nodeIntegration = false
+    webPreferences.contextIsolation = true
+    event.preventDefault()
+    logError('main:blocked-webview', { src: params?.src })
+  })
+}
+
+/**
+ * Deny every web permission, for every window, forever.
+ *
+ * This app needs NONE of them: no camera, microphone, geolocation, notifications, clipboard
+ * read, MIDI, HID/serial/USB, pointer lock, or media-key capture. The default handler grants
+ * several of these to any page that asks, so the only correct answer for a UI that never asks
+ * is a blanket no — a request arriving at all means something is wrong, hence the log line.
+ *
+ * `setPermissionCheckHandler` is the synchronous sibling (`navigator.permissions.query`,
+ * and the gate some APIs consult without ever raising a request), and
+ * `setDevicePermissionHandler` covers the device-picker path (WebHID/WebUSB/serial) which
+ * does not go through the other two.
+ */
+function hardenSession(ses: Electron.Session): void {
+  ses.setPermissionRequestHandler((_wc, permission, callback) => {
+    logError('main:denied-permission', { permission })
+    callback(false)
+  })
+  ses.setPermissionCheckHandler(() => false)
+  ses.setDevicePermissionHandler(() => false)
+}
+
 function createWindow(): void {
   const bounds = getWindowBounds()
   mainWindow = new BrowserWindow({
@@ -321,11 +458,7 @@ function createWindow(): void {
     frame: false,
     title: 'EQ Legends Companion',
     backgroundColor: '#0f1115',
-    webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
-      sandbox: false,
-      contextIsolation: true
-    }
+    webPreferences: WEB_PREFERENCES(join(__dirname, '../preload/index.js'))
   })
 
   // E2E: never show (and therefore never focus) the window — the harness drives it
@@ -420,10 +553,9 @@ function createWindow(): void {
     }
   })
 
-  mainWindow.webContents.setWindowOpenHandler((details) => {
-    void shell.openExternal(details.url)
-    return { action: 'deny' }
-  })
+  // Navigation + window.open policy is installed for EVERY webContents by the
+  // `web-contents-created` catch-all (hardenWebContents) — never per window, so a window
+  // added later can't miss it.
 
   const rendererUrl = process.env['ELECTRON_RENDERER_URL']
   if (rendererUrl) {
@@ -525,11 +657,10 @@ function createOverlayWindow(kind: OverlayKind): void {
     backgroundColor: '#00000000',
     hasShadow: false,
     title: OVERLAY_TITLE[kind],
-    webPreferences: {
-      preload: join(__dirname, '../preload/overlay.js'),
-      sandbox: false,
-      contextIsolation: true
-    }
+    // Same hardened posture as the main window — one definition, every window (see
+    // WEB_PREFERENCES). The overlay's preload is the LEANER bridge (preload/overlay.ts), but
+    // its window-level privileges must not be a second, weaker opinion.
+    webPreferences: WEB_PREFERENCES(join(__dirname, '../preload/overlay.js'))
   })
   overlayWindows[kind] = w
 
@@ -547,12 +678,10 @@ function createOverlayWindow(kind: OverlayKind): void {
   })
 
   // External links (the event log's wiki links, Task #59) open in the user's DEFAULT BROWSER —
-  // the overlay window itself must NEVER navigate away from overlay.html. Same handler the main
-  // window uses, so `<a target="_blank">` is the one link idiom across the app.
-  wc.setWindowOpenHandler((details) => {
-    void shell.openExternal(details.url)
-    return { action: 'deny' }
-  })
+  // the overlay window itself must NEVER navigate away from overlay.html. Both halves of that
+  // are installed by the `web-contents-created` catch-all (hardenWebContents), which allows
+  // only an ALLOWLISTED https host through to shell.openExternal; `<a target="_blank">` stays
+  // the one link idiom across the app.
 
   w.on('ready-to-show', () => {
     // E2E: overlays stay hidden too (they're always-on-top — showing one would cover the game).
@@ -958,8 +1087,12 @@ function registerIpc(): void {
     }
   )
   ipcMain.handle(IPC.listSoundPacks, () => listPacks())
+  // packId names a DIRECTORY under the soundpack roots, so it is validated at the IPC
+  // boundary (security.ts isSafePackId) rather than trusted because today's only caller
+  // passes a listed pack's id. soundId is a KEY into that pack's manifest (never a path),
+  // and sounds.ts already refuses a manifest entry that escapes the pack dir.
   ipcMain.handle(IPC.getSoundData, (_e, packId: string, soundId: string) =>
-    getSoundData(packId, soundId)
+    isSafePackId(packId) ? getSoundData(packId, soundId) : null
   )
 
   // ---- suggested-alerts wizard (Task #38) ----
@@ -1095,6 +1228,13 @@ if (!gotSingleInstanceLock) {
       `[everquest-companion] Channel '${CHANNEL}' — userData ${USER_DATA}, error log ${errorLogPath()}`
     )
     registerIpc()
+    // Trust boundary, installed BEFORE the first window exists: the catch-all fires for every
+    // webContents this process will ever create (main window, each overlay, anything a future
+    // feature adds), which is the only placement that can't be forgotten later.
+    app.on('web-contents-created', (_e, wc) => hardenWebContents(wc))
+    // Permissions are a SESSION property; every window here uses the default session (no
+    // custom `partition` anywhere — the same fact that lets one eqimg:// handler serve them all).
+    hardenSession(session.defaultSession)
     // Serve `eqimg://item/<id>` from <userData>/image-cache BEFORE any window loads a page
     // that can reference an item icon. One handler on the default session covers the main
     // window and every overlay (none of them use a custom partition).

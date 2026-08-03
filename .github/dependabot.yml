@@ -1,0 +1,57 @@
+# Dependabot — keep the two attack surfaces that actually ship to users current:
+# the npm tree (which becomes the app + the installer) and the GitHub Actions
+# that hold this repo's tokens.
+#
+# GROUPING is the point. Ungrouped, this repo produces a dozen PRs a week for
+# @mui/*, @types/* and friends, they get ignored, and the alert that matters
+# drowns. Minor+patch updates are batched into ONE PR per ecosystem; majors are
+# left as individual PRs because each one needs a human to think (electron and
+# electron-builder majors in particular — see the notes below).
+#
+# NOTE: this file only schedules VERSION updates. Dependabot SECURITY alerts +
+# automatic security PRs are a repo setting, not a file — turn them on at
+# Settings → Code security ("Dependabot alerts" + "Dependabot security updates";
+# `dependabot_security_updates` currently reads "disabled" for this repo).
+#
+# ACTION PINS: both workflows pin `uses:` to commit SHAs. Dependabot understands
+# SHA pins and will bump the SHA *and* rewrite the trailing version comment, so
+# pinning does not cost you update automation.
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'deps'
+      prefix-development: 'deps(dev)'
+    groups:
+      # One PR for everything routine.
+      npm-minor-and-patch:
+        patterns: ['*']
+        update-types: ['minor', 'patch']
+    ignore:
+      # Majors of these two are coupled and load-bearing for the installer +
+      # auto-update contract (NSIS one-click / perMachine:false / the main.yml
+      # channel bridge), so they get deliberate, hand-driven upgrades rather
+      # than a surprise PR. Minor/patch still flow through the group above.
+      - dependency-name: electron
+        update-types: ['version-update:semver-major']
+      - dependency-name: electron-builder
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'ci'
+    groups:
+      actions-minor-and-patch:
+        patterns: ['*']
+        update-types: ['minor', 'patch']

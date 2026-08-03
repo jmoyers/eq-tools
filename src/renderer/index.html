@@ -3,9 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Content-Security-Policy — every directive here is load-bearing; see AGENTS.md.
+        default-src 'self'      backstop for anything not named below.
+        script-src 'self'       NO 'unsafe-inline'/'unsafe-eval': the one directive that keeps
+                                an XSS in log/wiki-derived text from becoming code execution.
+        style-src 'unsafe-inline'  REQUIRED — emotion (MUI's engine) injects <style> tags at
+                                runtime. This is the single deliberate relaxation.
+        img-src eqimg:          the permanent image cache's scheme. `https:` is deliberately
+                                ABSENT so a raw remote <img> fails loudly instead of silently
+                                bypassing the cache (imageCache.ts); `data:` is for inline SVG.
+        media-src blob:         alert sounds arrive over IPC as bytes and are played from a
+                                Blob URL (features/alerts/soundCache.ts) — never fetched.
+        connect-src 'self'      the renderer performs NO fetch/XHR of its own (all network
+                                lives in main). 'self' is what electron-vite's dev HMR
+                                WebSocket needs (same origin as the page).
+        object-src/frame-src/child-src 'none'   no plugins, no iframes, nothing embedded.
+        base-uri 'none'         a <base> injection can't re-point every relative script URL.
+        form-action 'none'      nothing here posts; a form is only ever an exfil path.
+      (frame-ancestors is omitted on purpose: it is ignored in a <meta> policy.)
+    -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; media-src 'self' blob:; script-src 'self'"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; media-src 'self' blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; child-src 'none'; base-uri 'none'; form-action 'none'"
     />
     <title>EQ Legends Companion</title>
   </head>
