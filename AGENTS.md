@@ -300,10 +300,17 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   `CombatSnapshot.hydrating` (engine: true until `setLive()`) gates a quiet
   "Reading log…" placeholder in CombatView + the overlay meter — never a
   churning fake-live meter. Task #56.
-- **A dashboard is never empty while data exists.** "Current fight (live)" =
-  the open fight, else the live ZONE session (`liveFallback`, labeled "No active
-  fight — showing <zone> overall"). It NEVER falls back to the last finished
-  fight — that presented a closed encounter as the current one.
+- **Fight vs Overall is an explicit SCOPE, never an automatic switch.** A
+  `Fight | Overall` toggle (sibling of Dashboard/Timeline, Outgoing/Incoming;
+  persisted `eq.combat.scope`) drives one filter — `scopeOptions()` in
+  dashboardData.ts, shared by the main view AND every overlay kind, so a fight
+  meter can never show zone data. Fight scope keeps the LAST fight on screen
+  between pulls (auto-swapping to the zone aggregate was rejected: it moved the
+  ground under you mid-session) but LABELS it honestly — head row reads
+  "Current fight (live)" only while a pull is open, else "Last fight — <name>",
+  and a locked overlay (no selector) tags its header `· LAST`. The head row's
+  VALUE stays the `__live__` sentinel so it re-resolves each tick. No fights at
+  all ⇒ quiet empty state, never borrowed zone data. `liveFallback` is GONE.
 - Celebrations (confetti/sound) fire EXACTLY ONCE on live transitions;
   hydration seeds a silent baseline; manual actions never celebrate.
 
@@ -433,6 +440,13 @@ first-run provisioning.
   stays fully click-through but RENDERS the persisted drill read-only. The
   drill persists per kind in `overlays.<kind>.drill` (config IS the drill
   state — no renderer mirror; stale ids render level 1 without clearing).
+  FIVE kinds now: fight/overall (damage), heal-fight/heal-overall, events.
+  Each kind's selector is SCOPE-FILTERED (`scopeOptions`) and never crosses
+  over. Selectors are the custom `OverlaySelect` (no native `<select>`: its
+  OS popup ignores the theme) — the overlay bundle stays MUI-free by law.
+  Default geometry is one uniform size for every kind, docked bottom-right
+  and stacking upward with column wrap (`overlayLayout.ts`); PERSISTED bounds
+  always win.
 
 ## Known open items
 

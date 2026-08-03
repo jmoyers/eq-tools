@@ -16,11 +16,18 @@
 //   - HoT ticks are NOT separated from direct heals. No `healed over time` / `regeneration` line
 //     family exists in the log and a regen tick is byte-identical in shape to a direct heal —
 //     splitting them would be an invention.
-//   - the two `magical skin absorbs` families carry NO amount. They are counted, never valued.
-//   - a rune's amount is absorption GRANTED, not damage prevented. The log never says how much
-//     of a rune was consumed, so it is kept out of every healing total.
+//   - the two `magical skin absorbs` families carry NO amount. They are counted, never valued —
+//     they enter no sum anywhere, because there is nothing to sum.
+//   - a rune's amount is absorption GRANTED, not damage consumed. It DOES count toward the
+//     healing total (a shield is sustain), but it is carried as a `classification: 'absorbed'`
+//     LANE for its whole life so the assumption is never laundered into "hit points restored",
+//     and it never touches the row's heal stats. A rune has no overheal; none is invented.
+//   - rune SOURCES are not split (enchanter vs berserker AA). See the verified full-log sweep
+//     documented above `mitigationView` — the gain line names no caster, and the correlate that
+//     looked promising is 42%, not a rule.
 
 import type {
+  HealClassification,
   HealSourceKind,
   HealSourceView,
   HealSpellView,
@@ -81,7 +88,8 @@ function newSource(name: string, kind: HealSourceKind): HealSourceStat {
   }
 }
 
-/** The mitigation counters. Amounts exist for runes only — the rest are counts by construction. */
+/** The absorption counters. Amounts exist for runes only — the rest are counts by construction,
+ *  which is exactly why only the rune lane can become a ledger row (see runeRow). */
 interface MitAccum {
   runeTotal: number
   runeCount: number
@@ -104,6 +112,10 @@ function newMit(): MitAccum {
  *     your damage. Ranked by HEALER (a mob healing itself is its own row).
  * Heals between third parties (other players healing each other) are deliberately NOT collected:
  * the log gives no faction for an arbitrary name, and guessing one would invent a world model.
+ *
+ * `mit` is the third ledger: the raw absorption counters. Its rune half is serialized BOTH as a
+ * classified row inside `friendly`'s ranking (buildHealingView) and, unaggregated, as
+ * `HealingView.mitigation` — one number, two views, no duplication of the accumulation itself.
  */
 export class HealAccum {
   friendly = new Map<string, HealSourceStat>()
@@ -167,50 +179,143 @@ function add(
   m.set(key, s)
 }
 
-/** Cap on serialized spell lanes per healer — same spirit as the damage model's 12-skill cap. */
+/** Cap on serialized spell lanes per healer — same spirit as the damage model's 12-skill cap.
+ *  It applies to the HEAL lanes only; the absorption lane is appended after the cap so it can
+ *  never be squeezed out of the flat drill by a long tail of small heals. */
 const SPELL_CAP = 14
 
-function spellViews(s: HealSourceStat): HealSpellView[] {
+function healLanes(s: HealSourceStat): HealSpellView[] {
   const rows = [...s.bySpell.values()].sort(
     (a, b) => b.total - a.total || b.count - a.count || a.name.localeCompare(b.name)
   )
-  const max = Math.max(1, ...rows.map((r) => r.total))
   return rows.slice(0, SPELL_CAP).map((r) => ({
     name: r.name,
     total: r.total,
-    pct: (r.total / max) * 100,
+    pct: 0,
     count: r.count,
     crits: r.crits,
     max: r.max,
     ...(r.min !== undefined ? { min: r.min } : {}),
     overheal: r.overheal,
-    fullOverheal: r.fullOverheal
+    fullOverheal: r.fullOverheal,
+    classification: 'restored' as HealClassification
   }))
 }
 
-function sourceViews(m: Map<string, HealSourceStat>, durationSec: number): HealSourceView[] {
-  const rows = [...m.entries()].sort((a, b) => b[1].total - a[1].total || b[1].count - a[1].count)
-  const max = Math.max(1, ...rows.map(([, s]) => s.total))
-  const dur = Math.max(1, durationSec)
-  return rows.map(([key, s]) => ({
+/** Display name of the absorption lane. */
+export const RUNE_LANE = 'Rune'
+
+/**
+ * The rune grants as ONE drill lane. Nothing that would be a guess is filled in: no crits, and
+ * no overheal — the log never says a shield expired unused, so "wasted absorption" would be an
+ * invention (AGENTS.md law 1/6).
+ */
+function runeLane(m: MitAccum): HealSpellView | null {
+  if (m.runeCount === 0) return null
+  return {
+    name: RUNE_LANE,
+    total: m.runeTotal,
+    pct: 0,
+    count: m.runeCount,
+    crits: 0,
+    max: m.runeMax,
+    ...(m.runeMin !== undefined ? { min: m.runeMin } : {}),
+    overheal: 0,
+    fullOverheal: 0,
+    classification: 'absorbed'
+  }
+}
+
+/** ONE flat ranked list — heals and absorption together, biggest first, each lane keeping its
+ *  classification so the two are never confused. Deliberately NOT grouped into sections: a
+ *  grouping level is exactly what hid the flat breakdown in the damage drill-down. */
+function rankLanes(lanes: HealSpellView[]): HealSpellView[] {
+  const sorted = [...lanes].sort(
+    (a, b) => b.total - a.total || b.count - a.count || a.name.localeCompare(b.name)
+  )
+  const max = Math.max(1, ...sorted.map((r) => r.total))
+  return sorted.map((l) => ({ ...l, pct: (l.total / max) * 100 }))
+}
+
+/**
+ * A ledger row. `pct`/`hps` are placeholders — they are relative to the final row set, so
+ * `rankRows` fills them in last.
+ *
+ * `extraLanes` carries the absorption lane onto the row it belongs to. The row's HEADLINE stats
+ * (count, crits, max, min, overheal, overhealPct) stay about RESTORED healing only — mixing a
+ * rune grant into "6 heals, max 428" would be an aggregate that lies (law 5). `total` is the
+ * combined ranking figure and `absorbedTotal` says how much of it is absorption.
+ */
+function toView(key: string, s: HealSourceStat, extraLanes: HealSpellView[] = []): HealSourceView {
+  const absorbedTotal = extraLanes.reduce(
+    (t, l) => (l.classification === 'absorbed' ? t + l.total : t),
+    0
+  )
+  return {
     id: key,
     name: s.name,
     kind: s.kind,
-    total: s.total,
-    hps: s.total / dur,
-    pct: (s.total / max) * 100,
+    total: s.total + absorbedTotal,
+    absorbedTotal,
+    hps: 0,
+    pct: 0,
     count: s.count,
     crits: s.crits,
     critPct: s.count > 0 ? (s.crits / s.count) * 100 : 0,
     max: s.max,
     ...(s.min !== undefined ? { min: s.min } : {}),
     overheal: s.overheal,
+    // Relative to RESTORED healing, never to the combined total — absorption in the denominator
+    // would silently deflate a healer's overheal rate.
     overhealPct: s.total + s.overheal > 0 ? (s.overheal / (s.total + s.overheal)) * 100 : 0,
     fullOverheal: s.fullOverheal,
-    spells: spellViews(s)
-  }))
+    spells: rankLanes([...healLanes(s), ...extraLanes])
+  }
 }
 
+/** Sort the final row set and derive the two scope-relative figures (bar fill + rate). */
+function rankRows(rows: HealSourceView[], durationSec: number): HealSourceView[] {
+  const sorted = [...rows].sort(
+    (a, b) => b.total - a.total || b.count - a.count || a.name.localeCompare(b.name)
+  )
+  const max = Math.max(1, ...sorted.map((r) => r.total))
+  const dur = Math.max(1, durationSec)
+  return sorted.map((r) => ({ ...r, pct: (r.total / max) * 100, hps: r.total / dur }))
+}
+
+function sourceViews(m: Map<string, HealSourceStat>, durationSec: number): HealSourceView[] {
+  return rankRows(
+    [...m.entries()].map(([key, s]) => toView(key, s)),
+    durationSec
+  )
+}
+
+/** Row id of the SELF row — the row the absorption lane attaches to (see buildHealingView). */
+export const SELF_ROW_ID = 'you'
+
+/**
+ * ONE rune source, not two — VERIFIED, not assumed (full-log sweep of
+ * eqlog_Primitive_freeport.txt, 1,019,355 lines, 2026-08-02):
+ *
+ *   - `You gain a rune for N points of absorption.` is the ONLY rune-gain shape (1,169 lines).
+ *     It names no spell and no caster, so the LINE can never distinguish its source.
+ *   - Both plausible sources exist for this character on paper: the berserker Blood Rune AA
+ *     (`You have improved Blood Rune 2/3` — owned) and the enchanter Rune line (`Spell: Rune I`
+ *     purchased and scribed).
+ *   - But the enchanter rune NEVER LANDED on the player: its landing messages are known
+ *     (spells.json Rune I–V, "A … shimmer of runes surround you.") and across the whole log
+ *     `shimmer of runes` occurs exactly ONCE — on another player (`Dranix is surrounded by a
+ *     shimmer of runes.`).
+ *   - The proposed `You hurt yourself for N points.` correlate is only a CORRELATION: 487/1169
+ *     gains (42%) have a self-hurt within 1s, 240 (21%) have none within 30s, and the amounts
+ *     never track (13/487 equal). Self-hurt is its own berserker mechanic — it is followed just
+ *     as often by `You kick …` and by `You have become better at Strategy!`.
+ *
+ * ⇒ Per world-model law 1 there is NO defensible split, so the model carries ONE absorption
+ *   lane. If a split is ever wanted, the honest handle is the MESSAGE, not the self-damage: an
+ *   active "shimmer of runes" buff (already in the spell DB, already tracked by the buffs
+ *   module) is what would make an enchanter rune knowable. Do not split on the self-hurt line.
+ */
 function mitigationView(m: MitAccum): MitigationView {
   return {
     runeTotal: m.runeTotal,
@@ -222,15 +327,46 @@ function mitigationView(m: MitAccum): MitigationView {
   }
 }
 
-/** Serialize an accumulator into the snapshot's HealingView. */
+/**
+ * Serialize an accumulator into the snapshot's HealingView.
+ *
+ * The rune lane attaches to the SELF row so a drill-down is ONE flat ranked list of everything
+ * that kept you up — `Lay on Hands VI · Healing · Rune` — instead of hiding absorption behind a
+ * section of its own. The self row is synthesized when it does not exist (absorption with no
+ * heals is a real segment: see the W28 window).
+ *
+ * ATTRIBUTION, stated plainly: `You gain a rune for N points of absorption.` names no caster, so
+ * "you granted it" is NOT something the log says. It is credited to your own sustain row because
+ * the line is addressed to you and this meter's question is "what kept me alive" — and it is
+ * LABELED as absorption everywhere it appears rather than silently merged (law 1). For this
+ * character the credit is also very likely literally true: the enchanter rune never landed on
+ * them in 1.02M lines (see the sweep above the mitigationView).
+ *
+ * The ENEMY ledger gets no absorption: runes are yours, and a mob's own shield is a miss
+ * (mtype 'absorb'), never our mitigation.
+ */
 export function buildHealingView(acc: HealAccum, durationSec: number): HealingView {
-  const healers = sourceViews(acc.friendly, durationSec)
+  const rune = runeLane(acc.mit)
+  const rows: HealSourceView[] = []
+  let selfSeen = false
+  for (const [key, s] of acc.friendly.entries()) {
+    const isSelf = key === SELF_ROW_ID
+    if (isSelf) selfSeen = true
+    rows.push(toView(key, s, isSelf && rune ? [rune] : []))
+  }
+  if (rune && !selfSeen) {
+    rows.push(toView(SELF_ROW_ID, newSource('You', 'you'), [rune]))
+  }
+  const healers = rankRows(rows, durationSec)
   const enemyHealers = sourceViews(acc.hostile, durationSec)
   const total = healers.reduce((s, h) => s + h.total, 0)
+  const absorbedTotal = healers.reduce((s, h) => s + h.absorbedTotal, 0)
   return {
     healers,
     total,
     hps: total / Math.max(1, durationSec),
+    restoredTotal: total - absorbedTotal,
+    absorbedTotal,
     overheal: healers.reduce((s, h) => s + h.overheal, 0),
     enemyHealers,
     enemyTotal: enemyHealers.reduce((s, h) => s + h.total, 0),

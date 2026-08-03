@@ -8,7 +8,6 @@ import {
   Collapse,
   FormControlLabel,
   Link,
-  ListSubheader,
   MenuItem,
   Paper,
   Select,
@@ -22,11 +21,11 @@ import {
 } from '@mui/material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
-import { LIVE, useCombat } from './useCombat'
+import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
 import { Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
-import { flattenSkills, skillsForTarget, type Drill } from './dashboardData'
+import { flattenSkills, scopeOptions, skillsForTarget, type Drill } from './dashboardData'
 import { formatDate, formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
@@ -301,16 +300,13 @@ function SegmentBody({
   tl,
   mode,
   drill,
-  setDrill,
-  fallbackNote
+  setDrill
 }: {
   seg: SegmentView
   tl: TimelineView | null
   mode: 'out' | 'in'
   drill: Drill | null
   setDrill: (d: Drill | null) => void
-  /** Set when the LIVE selection fell back to the zone session (no fight open) — says so. */
-  fallbackNote?: string | null
 }): JSX.Element {
   const rows = mode === 'out' ? seg.entities : seg.incoming
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
@@ -379,18 +375,6 @@ function SegmentBody({
           </Typography>
         </Typography>
       </Stack>
-
-      {/* LIVE with no open fight: the body is the zone session, and it says so (Task #56). */}
-      {fallbackNote && (
-        <Typography
-          data-testid="live-fallback"
-          variant="caption"
-          color="text.secondary"
-          sx={{ display: 'block', mt: -0.75, mb: 0.75, flexShrink: 0 }}
-        >
-          {fallbackNote}
-        </Typography>
-      )}
 
       {/* Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */}
       {crumb && (
@@ -614,6 +598,8 @@ export default function CombatView(): JSX.Element {
     setShowUnparsed,
     selection,
     setSelection,
+    scope,
+    setScope,
     maxSegments,
     loadMore
   } = useCombat()
@@ -635,11 +621,13 @@ export default function CombatView(): JSX.Element {
   // Reset the drill when the selected fight / mode changes (a drill is per-fight).
   useEffect(() => setDrill(null), [selection, mode])
 
-  const history = (snap?.segments ?? []).filter((s) => s.kind === 'fight')
-  const zoneSessions = snap?.zoneSessions ?? []
+  // SCOPE decides what the selector may list — fights only, or zone sessions only. There is no
+  // automatic switch between the two any more: between pulls the Fight scope keeps showing the
+  // LAST fight (labeled as the last one), it never swaps itself to the zone aggregate.
+  const opts = scopeOptions(scope, snap?.segments ?? [], snap?.zoneSessions ?? [])
   // The segment payload is capped at `maxSegments` finalized fights (newest-first).
   // Offer a "Load more" when the cap is likely truncating history.
-  const capped = history.length >= maxSegments
+  const capped = scope === 'fight' && (snap?.segments ?? []).filter((s) => s.kind === 'fight').length >= maxSegments
   // A single `now` for the whole render so all the relative-age labels agree; it advances
   // each snapshot tick (~1s idle, sub-second live) so ages stay live-updating and coarse.
   const now = Date.now()
@@ -649,19 +637,14 @@ export default function CombatView(): JSX.Element {
   // way — both are "we're not ready", and both render the quiet loading state.
   const hydrating = snap?.hydrating ?? true
   const seg = snap?.selected ?? null
-  // LIVE is selected but no fight is open → `selected` is the live ZONE session (the engine
-  // decides this; see snapshot()'s liveFallback). Say so instead of silently relabelling.
-  const fallbackNote =
-    snap?.liveFallback && selection === LIVE
-      ? `No active fight — showing ${snap.zone ?? 'this zone'} overall`
-      : null
   const tl = useStableTimeline(snap?.timeline)
   // Why the event-derived panels have nothing to show: a zone session keeps no ring at all,
   // an older fight had its ring dropped at finalize. Both are quiet notes, never errors.
   const ringless: Ringless = tl ? null : seg?.kind === 'zone' ? 'zone' : 'evicted'
-  // The scrolling window only follows `now` for the live fight (the selector's other rows
-  // are all finalized encounters and zone sessions).
-  const live = selection === LIVE
+  // The scrolling window only follows `now` for a GENUINELY live selection — the open fight, or
+  // the running zone session. The head row between pulls is a finished fight, so it must not
+  // scroll as if time were still passing in it.
+  const live = !!opts.head && selection === opts.head.value && opts.head.live
   // The preview follows the drill when a source is drilled, else the top row of the meter.
   const previewRows = mode === 'out' ? seg?.entities ?? [] : seg?.incoming ?? []
   const previewSource =
@@ -674,13 +657,26 @@ export default function CombatView(): JSX.Element {
     // it grew past the viewport and pushed the dashboard to 0px, leaving "just a combat log".
     <Stack spacing={1.5} sx={{ height: '100%', minHeight: 0, overflow: 'hidden' }}>
       <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
+        {/* SCOPE: an explicit choice, a sibling of the Dashboard/Timeline and Outgoing/Incoming
+            groups. Fight never becomes Overall on its own. */}
+        <ToggleButtonGroup
+          size="small"
+          exclusive
+          data-testid="scope-toggle"
+          value={scope}
+          onChange={(_e, v) => v && setScope(v)}
+        >
+          <ToggleButton value="fight">Fight</ToggleButton>
+          <ToggleButton value="overall">Overall</ToggleButton>
+        </ToggleButtonGroup>
         <Select
           size="small"
           data-testid="segment-select"
           // While hydrating, the fight list is a churning replay artifact — don't invite a
-          // pick from it (the value stays LIVE and the list settles the moment the tail runs).
+          // pick from it (the value stays on the head row and the list settles the moment the
+          // tail runs).
           disabled={hydrating}
-          value={selection}
+          value={opts.head ? selection : '__empty__'}
           onChange={(e) => {
             const v = e.target.value
             if (v === '__loadmore__') loadMore()
@@ -689,20 +685,29 @@ export default function CombatView(): JSX.Element {
           sx={{ minWidth: 320 }}
           MenuProps={{ PaperProps: { sx: { maxHeight: 480 } } }}
         >
-          <MenuItem value={LIVE}>▶ Current fight (live)</MenuItem>
-          <ListSubheader sx={{ lineHeight: '28px' }}>Fights</ListSubheader>
-          {history.length === 0 && (
-            <MenuItem value="__none__" disabled>
-              No finalized fights yet
+          {/* Exactly ONE scope's rows are ever listed — the fight scope shows no zone sessions
+              and vice versa (dashboardData.scopeOptions is the single filter). */}
+          {!opts.head && (
+            <MenuItem value="__empty__" disabled>
+              {scope === 'fight' ? 'No fights yet' : 'No zone sessions yet'}
             </MenuItem>
           )}
-          {history.map((s) => (
-            <MenuItem key={s.id} value={s.id}>
+          {opts.head && (
+            <MenuItem value={opts.head.value}>
               <SelectorRow
-                name={s.name}
-                rate={formatRate(s.dps)}
-                timing={timingLabel(s.startTs, s.durationSec, now)}
+                name={`${opts.head.live ? '▶ ' : ''}${opts.head.label}`}
+                rate={formatRate(opts.head.dps)}
+                timing={
+                  opts.head.live && scope === 'overall'
+                    ? 'live'
+                    : timingLabel(opts.head.startTs, opts.head.durationSec, now)
+                }
               />
+            </MenuItem>
+          )}
+          {opts.rest.map((o) => (
+            <MenuItem key={o.value} value={o.value}>
+              <SelectorRow name={o.label} rate={formatRate(o.dps)} timing={timingLabel(o.startTs, o.durationSec, now)} />
             </MenuItem>
           ))}
           {capped && (
@@ -710,20 +715,6 @@ export default function CombatView(): JSX.Element {
               Load more fights…
             </MenuItem>
           )}
-          <ListSubheader sx={{ lineHeight: '28px' }}>Zone sessions</ListSubheader>
-          {zoneSessions.map((z) => (
-            <MenuItem key={z.id} value={z.id}>
-              <SelectorRow
-                name={`${z.live ? '◆ ' : ''}${z.zone} — overall`}
-                rate={formatRate(z.dps)}
-                timing={
-                  z.live
-                    ? 'live'
-                    : timingLabel(z.startTs, Math.max(1, (z.endTs - z.startTs) / 1000), now)
-                }
-              />
-            </MenuItem>
-          ))}
         </Select>
         <ToggleButtonGroup size="small" exclusive value={view} onChange={(_e, v) => v && setView(v)}>
           <ToggleButton value="dash">Dashboard</ToggleButton>
@@ -792,7 +783,7 @@ export default function CombatView(): JSX.Element {
             '& > *': { minWidth: 0, minHeight: 0 }
           }}
         >
-          <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} fallbackNote={fallbackNote} />
+          <SegmentBody seg={seg} tl={tl} mode={mode} drill={drill} setDrill={setDrill} />
           <DpsChartCard tl={tl} live={live} ringless={ringless} />
           <BreakdownPreviewCard
             source={previewSource}
@@ -801,8 +792,14 @@ export default function CombatView(): JSX.Element {
           <MobDamageCard tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
         </Box>
       ) : (
-        <Paper variant="outlined" sx={{ p: 2, flexGrow: 1 }}>
-          <Typography color="text.secondary">No combat yet — engage something and it&apos;ll appear here live.</Typography>
+        // Empty scope. A Fight scope with nothing in it stays empty on purpose — it does NOT
+        // borrow the zone aggregate to look busy; Overall is one click away and says so.
+        <Paper variant="outlined" data-testid="scope-empty" sx={{ p: 2, flexGrow: 1 }}>
+          <Typography color="text.secondary">
+            {scope === 'fight'
+              ? 'No fights yet — engage something and it’ll appear here live. Switch to Overall for this zone’s totals.'
+              : 'No zone session yet — it starts with your first damage in a zone.'}
+          </Typography>
         </Paper>
       )}
 

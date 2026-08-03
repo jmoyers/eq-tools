@@ -18,8 +18,9 @@
  *
  * WHAT IT ASSERTS: hydration completes (replay → live tail), then, against whatever the real
  * log contains right now: the dashboard is present AND HAS HEIGHT (the regression), the
- * source meter has rows, the DPS-over-time and Damage-by-mob cards exist, the selector is
- * backed by fights + zone sessions, and the combat log is a BOUNDED scrolling box.
+ * source meter has rows, the DPS-over-time and Damage-by-mob cards exist, the Fight/Overall
+ * SCOPE filters the selector to exactly one scope's rows (Task #60 — a fight meter must never
+ * wander into the zone aggregate), and the combat log is a BOUNDED scrolling box.
  * Assertions are identities/floors — never "today's numbers" (AGENTS.md: frozen numbers rot).
  *
  * On any failure: the relevant DOM + a screenshot land in tests/e2e/artifacts/ (gitignored).
@@ -127,7 +128,6 @@ function electronBinary(): string {
 
 interface Snap {
   hydrating: boolean
-  liveFallback: boolean
   selectedId: string
   zone?: string
   selected: { kind: string; name: string; entities: unknown[]; outTotal: number } | null
@@ -155,6 +155,31 @@ function rectOf(page: Page, selector: string): Promise<{ w: number; h: number } 
 
 function countOf(page: Page, selector: string): Promise<number> {
   return page.evaluate((sel) => document.querySelectorAll(sel).length, selector)
+}
+
+/** The selector's closed-state text — the head row's label ("Current fight (live)" / "Last fight — …"). */
+function selectorText(page: Page): Promise<string> {
+  return page.evaluate(
+    () => (document.querySelector('[data-testid="segment-select"]') as HTMLElement | null)?.innerText ?? ''
+  )
+}
+
+/**
+ * Open the segment dropdown, collect every selectable row's value, close it again.
+ * Housekeeping rows ('Load more', the empty placeholder) are not segments and are dropped —
+ * what this asserts is which SCOPE's ids are offered.
+ */
+async function openSelectorValues(page: Page): Promise<string[]> {
+  await page.click('[data-testid="segment-select"]')
+  await page.waitForSelector('li[data-value]', { timeout: 15_000 })
+  const values = await page.evaluate(() =>
+    [...document.querySelectorAll('li[data-value]')].map((el) => el.getAttribute('data-value') ?? '')
+  )
+  await page.keyboard.press('Escape')
+  await sleep(400)
+  // The head row's '__live__' sentinel IS a segment row (it re-resolves to the current/last
+  // fight); only the housekeeping rows are dropped.
+  return values.filter((v) => v && v !== '__loadmore__' && v !== '__empty__')
 }
 
 interface PanelRect {
@@ -368,19 +393,50 @@ async function main(): Promise<void> {
     check('the selector has finalized fights', fights >= 1, `${fights} fights`)
     check('the selector has zone sessions', snap.zoneSessions.length >= 1, `${snap.zoneSessions.length} sessions`)
 
-    // 6. LIVE-with-no-open-fight falls back to the zone session, and SAYS so (Task #56).
-    if (snap.liveFallback) {
-      check('no fight open ⇒ the live ZONE session is shown', snap.selected?.kind === 'zone', `selectedId=${snap.selectedId}`)
-      check('…and the body labels the fallback', (await countOf(page, '[data-testid="live-fallback"]')) === 1)
-      check(
-        '…never the empty "No combat yet" panel',
-        dash !== null && (liveTotal === 0 || rows >= 1),
-        `${Math.round(liveTotal)} dmg / ${rows} rows`
-      )
+    // 6. SCOPE (Task #60): Fight vs Overall is an explicit user choice, never an automatic
+    //    switch. The default scope is Fight, and it must show a FIGHT whether or not one is
+    //    currently open — the old behaviour swapped the body to the zone aggregate between
+    //    pulls (the `liveFallback` caption, now removed).
+    check('the scope toggle is present (Fight | Overall)', (await countOf(page, '[data-testid="scope-toggle"] button')) === 2)
+    check(
+      'the Fight scope never shows the zone aggregate — with or without an open fight',
+      snap.selected === null || snap.selected.kind === 'fight',
+      `selectedId=${snap.selectedId} kind=${snap.selected?.kind ?? 'none'}`
+    )
+    const openFight = snap.segments.find((s) => s.kind === 'current')
+    if (openFight) {
+      note(`a fight is open (${openFight.name}) — the head row reads "Current fight (live)"`)
     } else {
-      note(`a fight is open (${snap.selected?.name ?? '?'}) — the live-fallback path is not exercised this run`)
-      check('an open fight is the selection', snap.selected?.kind === 'fight')
+      note('no fight is open — the head row must read "Last fight — …", not "live"')
+      const headText = await selectorText(page)
+      check('…and the selector says so instead of claiming live', /Last fight/.test(headText), headText.slice(0, 80))
     }
+    check(
+      '…never the empty "No combat yet" panel while the log has fights',
+      dash !== null && (liveTotal === 0 || rows >= 1),
+      `${Math.round(liveTotal)} dmg / ${rows} rows`
+    )
+
+    // 6b. THE FILTER: opening the selector in Fight scope must list fights ONLY. A zone session
+    //     appearing here is how the meter used to wander into the overall aggregate.
+    const fightMenu = await openSelectorValues(page)
+    check(
+      'the Fight-scope dropdown excludes zone sessions',
+      fightMenu.length > 0 && !fightMenu.some((v) => v === 'zone' || /^zs\d+$/.test(v)),
+      `${fightMenu.length} rows: ${fightMenu.slice(0, 4).join(', ')}`
+    )
+    // …and Overall lists zone sessions ONLY (no fight ids).
+    await page.click('[data-testid="scope-toggle"] button:nth-child(2)')
+    await sleep(800)
+    const overallMenu = await openSelectorValues(page)
+    check(
+      'the Overall-scope dropdown lists only zone sessions',
+      overallMenu.length > 0 && overallMenu.every((v) => v === 'zone' || /^zs\d+$/.test(v)),
+      `${overallMenu.length} rows: ${overallMenu.slice(0, 4).join(', ')}`
+    )
+    await page.click('[data-testid="scope-toggle"] button:nth-child(1)')
+    await sleep(800)
+    snap = await snapshot(page)
 
     // 7. The combat log is a BOUNDED scrolling box (this is what ate the dashboard).
     const log = await rectOf(page, '[data-testid="combat-log"]')
@@ -422,11 +478,16 @@ async function main(): Promise<void> {
     // …and the 2x2 grid is still exactly that: growing panel content scrolls INSIDE its cell.
     await checkGrid(page, 'busy log')
 
-    // 10. Drive the SELECTOR for real and land on the newest finalized fight. History always
-    //     carries damage (the engine drops 0-damage encounters), so this is the unconditional
-    //     "the dashboard renders the log's data" assertion — independent of what the player
-    //     happens to be doing right now.
-    const newestFight = snap.segments.find((s) => s.kind === 'fight')
+    // 10. Drive the SELECTOR for real and land on a finalized fight. History always carries
+    //     damage (the engine drops 0-damage encounters), so this is the unconditional "the
+    //     dashboard renders the log's data" assertion — independent of what the player happens
+    //     to be doing right now.
+    //     NOTE: the fight scope's HEAD row is the current-or-last fight under the '__live__'
+    //     sentinel, so between pulls the newest finalized fight is not listed under its own id.
+    //     Pick from what the dropdown actually offers.
+    const listed = await openSelectorValues(page)
+    const pickId = listed.find((v) => v !== '__live__')
+    const newestFight = snap.segments.find((s) => s.id === pickId)
     if (newestFight) {
       await page.click('[data-testid="segment-select"]')
       await page.click(`li[data-value="${newestFight.id}"]`, { timeout: 15_000 })
@@ -446,8 +507,10 @@ async function main(): Promise<void> {
         fightRows >= 1,
         `${fightRows} rows · ${Math.round(newestFight.total)} dmg in that fight`
       )
+      // The zone-fallback caption is gone for good (Task #60) — there is no auto-switch left
+      // that could need one, in ANY selection.
       check(
-        '…and the live-fallback label is gone (an explicit pick is not the live view)',
+        '…and no zone-fallback caption exists anywhere (the auto-switch is gone)',
         (await countOf(page, '[data-testid="live-fallback"]')) === 0
       )
       const dash3 = await rectOf(page, '[data-testid="combat-dashboard"]')
@@ -455,7 +518,11 @@ async function main(): Promise<void> {
       // A finalized fight is the DENSEST case (full source list, full mob list, full ring).
       await checkGrid(page, 'picked fight')
     } else {
-      check('the log has at least one finalized fight to select', false, 'no fights in history')
+      check(
+        'the Fight-scope dropdown offers at least one finalized fight to select',
+        false,
+        `listed: ${listed.join(', ') || 'none'}`
+      )
     }
 
     // 11. FIRST, the narrowest window a USER can actually make: the main window's

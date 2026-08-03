@@ -1216,8 +1216,10 @@ export class CombatEngine {
 
   /**
    * Consume an ABSORPTION / MITIGATION line (Task #59) — damage prevented, not hit points
-   * restored, so it never touches a healing or damage total. Folded into the current encounter
-   * (when one is open and still fresh) and the zone aggregate, exactly like an incoming heal.
+   * restored, so it never touches a DAMAGE total. It does reach the HEALING total: buildHealingView
+   * folds the rune counters in as a row classified 'absorbed' (the two count-only families carry
+   * no amount and so reach no total at all). Folded into the current encounter (when one is open
+   * and still fresh) and the zone aggregate, exactly like an incoming heal.
    *
    * These lines NEVER open, join or extend an encounter and never move the damage timeline —
    * the same rule miss/resist follow (AGENTS.md world-model law 8). A rune ticking while you
@@ -1481,13 +1483,15 @@ export class CombatEngine {
     }
     segments.push(this.zoneSummary())
 
-    // LIVE selection resolution (Task #56). "Current fight (live)" means: the open fight if
-    // there is one, otherwise the live ZONE session — NOT the most recent finalized fight.
-    // Falling back to the last fight presented a finished encounter as the current one (it
-    // even kept re-labelling itself as fights closed), and the zone aggregate is the honest
-    // "what's happening here overall" view that always has data between pulls. `liveFallback`
-    // tells the UI to say so out loud.
-    const defaultId = this.current?.id ?? 'zone'
+    // DEFAULT selection = the FIGHT scope's head row: the open fight if there is one, else the
+    // most recent finalized fight. Fight and Overall are an explicit user-chosen SCOPE now, so
+    // this must never wander into the zone aggregate — a meter that swapped to zone-overall
+    // between pulls is exactly what the user rejected. Overall is reached by ASKING for a zone
+    // session id ('zone' / 'zs<n>'), never by default. With no fights at all the default
+    // resolves to nothing (`selected: null`) and the UI shows a quiet "no fights yet" — the
+    // renderer labels a finished head row honestly ("Last fight — X"), so nothing here has to
+    // pretend a closed encounter is live.
+    const defaultId = this.current?.id ?? this.history[this.history.length - 1]?.id ?? ''
     // Validate against ALL encounters, not just the capped segment window — a
     // selected finalized fight outside the cap is still fully resolvable via
     // buildSelected() (it searches this.history directly).
@@ -1499,8 +1503,6 @@ export class CombatEngine {
     const explicit = !!(opts.selectedId && selectableId)
     const selectedId = explicit ? opts.selectedId! : defaultId
     const selected = this.buildSelected(selectedId, now, combinePets)
-    // LIVE was asked for, no fight is open ⇒ `selected` is the live zone session.
-    const liveFallback = !explicit && !this.current
 
     const recent = (opts.showUnparsed ? this.recent : this.recent.filter((r) => r.cat !== 'unparsed')).slice(-150)
     const stance: StanceState = {
@@ -1514,8 +1516,7 @@ export class CombatEngine {
       selectedId, selected, segments, inCombat, zone: this.zone,
       recent, stance, timeline,
       zoneSessions: this.zoneSessionSummaries(),
-      hydrating: this.hydrating,
-      liveFallback
+      hydrating: this.hydrating
     }
   }
 

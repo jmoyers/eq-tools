@@ -21,6 +21,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { parseEvent } from '../src/main/log/parser'
 import { CombatEngine } from '../src/main/combat/engine'
+import { LIVE_SELECTION, scopeOptions } from '../src/renderer/src/features/combat/dashboardData'
 
 function feed(eng: CombatEngine, lines: string[]): number {
   let seq = 0
@@ -135,13 +136,22 @@ test('Z2: zone-session history is capped at 20 finalized sessions', () => {
 })
 
 // ============================================================================
-// Task #56 — LIVE selection resolution + hydration signal.
+// Task #56 (hydration) + Task #60 (Fight vs Overall is an explicit SCOPE).
 //
-// "Current fight (live)" must mean the OPEN fight, or — when there is none — the live ZONE
-// session, never the most recent FINISHED fight (which the UI would then present as current,
-// silently re-labelling itself as fights closed). `liveFallback` is the flag that lets the UI
-// say which of the two it's showing. `hydrating` marks the historical-replay phase, where
-// every snapshot describes a moment in the past.
+// SUPERSEDED SEMANTICS — read this before "fixing" L2 back: the snapshot used to fall back to
+// the live ZONE session whenever no fight was open, and flagged it with `liveFallback`. That
+// made the meter switch itself between pulls (fight → zone-overall → fight), which is exactly
+// what the user rejected. `liveFallback` is GONE.
+//
+// The default selection (no `selectedId`) is now the FIGHT scope's head row and stays inside
+// the fight scope forever: the open fight while one is open, otherwise the most recent
+// FINALIZED fight, otherwise nothing at all. The zone aggregate is reached ONLY by explicitly
+// asking for a zone-session id ('zone' / 'zs<n>') — the renderer's Overall scope. Presenting a
+// finished fight as the current one is prevented in the UI instead, by LABEL: the renderer
+// finds the `kind: 'current'` segment to tell "Current fight (live)" from "Last fight — <name>"
+// (dashboardData.fightScopeOptions), so the engine never has to lie or switch subjects.
+//
+// `hydrating` marks the historical-replay phase, where every snapshot describes the past.
 // ============================================================================
 
 const ONE_PULL: string[] = [
@@ -150,30 +160,94 @@ const ONE_PULL: string[] = [
   '[Sun Jul 19 12:00:02 2026] You crush a skeleton for 100 points of damage.'
 ]
 
-test('L1: LIVE with an OPEN fight selects that fight (no fallback)', () => {
+test('L1: the default selection with an OPEN fight is that fight', () => {
   const eng = new CombatEngine()
   eng.setPlayerName('Primitive')
   const lastTs = feed(eng, ONE_PULL)
   const snap = eng.snapshot(lastTs + 500, {})
-  assert.equal(snap.liveFallback, false)
   assert.equal(snap.selected!.kind, 'fight')
+  const cur = snap.segments.find((s) => s.kind === 'current')
+  assert.ok(cur, 'an open fight is present, so the UI labels the head row "Current fight (live)"')
+  assert.equal(snap.selectedId, cur!.id)
   assert.ok(snap.selected!.outTotal > 0)
 })
 
-test('L2: LIVE with NO open fight falls back to the live zone session, flagged + populated', () => {
+test('L2: with NO open fight the default STAYS on the last fight — it never switches to the zone', () => {
   const eng = new CombatEngine()
   eng.setPlayerName('Primitive')
   const lastTs = feed(eng, ONE_PULL)
   // Far enough in the future that the fight closed on the idle fallback.
   const snap = eng.snapshot(lastTs + 120_000, {})
-  assert.equal(snap.liveFallback, true, 'the UI is told it is showing the zone, not a fight')
-  assert.equal(snap.selectedId, 'zone')
-  assert.equal(snap.selected!.kind, 'zone')
-  // The whole point: the dashboard is never empty while the zone has data.
+  const lastFight = snap.segments.find((s) => s.kind === 'fight')
+  assert.ok(lastFight, 'the pull finalized into history')
+  assert.equal(snap.selectedId, lastFight!.id, 'the default is the most recent FIGHT, not "zone"')
+  assert.equal(snap.selected!.kind, 'fight')
   assert.equal(snap.selected!.outTotal, 200)
-  assert.ok(snap.selected!.entities.length > 0)
-  // An EXPLICIT pick is never a fallback, even when it resolves to the same zone session.
-  assert.equal(eng.snapshot(lastTs + 120_000, { selectedId: 'zone' }).liveFallback, false)
+  // No `kind: 'current'` segment ⇒ the renderer labels this row "Last fight — …", never "live".
+  assert.equal(snap.segments.some((s) => s.kind === 'current'), false)
+  // Overall is reachable only by ASKING for it (the renderer's Overall scope).
+  const overall = eng.snapshot(lastTs + 120_000, { selectedId: 'zone' })
+  assert.equal(overall.selectedId, 'zone')
+  assert.equal(overall.selected!.kind, 'zone')
+  assert.equal(overall.selected!.outTotal, 200)
+})
+
+test('L2b: with no fights at all the fight scope resolves to NOTHING (it never borrows the zone)', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  // A zone line only — no damage anywhere, so there is no fight to show.
+  feed(eng, ['[Sun Jul 19 13:00:00 2026] You have entered Befallen.'])
+  const snap = eng.snapshot(Date.parse('Sun Jul 19 13:00:01 2026'), {})
+  assert.equal(snap.selected, null, 'a fresh session shows a quiet "no fights yet", not zone data')
+  assert.equal(snap.segments.some((s) => s.kind === 'current' || s.kind === 'fight'), false)
+})
+
+// The selector's SCOPE filter (renderer-side, pure) — the one place that decides what each
+// scope may list. Fight must never offer a zone session and Overall must never offer a fight.
+test('S1: the Fight scope lists only fights and labels a finished head row honestly', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  const lastTs = feed(eng, ONE_PULL)
+
+  // While the pull is OPEN the head row is the live one.
+  const openSnap = eng.snapshot(lastTs + 500, {})
+  const open = scopeOptions('fight', openSnap.segments, openSnap.zoneSessions)
+  assert.equal(open.head!.value, LIVE_SELECTION, 'the head row is the re-resolving sentinel, not a pinned id')
+  assert.equal(open.head!.live, true)
+  assert.equal(open.head!.label, 'Current fight (live)')
+
+  // Once it closes the SAME row keeps showing that fight — but says it is the last one.
+  const doneSnap = eng.snapshot(lastTs + 120_000, {})
+  const done = scopeOptions('fight', doneSnap.segments, doneSnap.zoneSessions)
+  assert.equal(done.head!.live, false)
+  assert.match(done.head!.label, /^Last fight — /)
+  assert.equal(done.head!.name, 'a skeleton')
+  // …and it is not duplicated below itself.
+  assert.equal(done.rest.length, 0)
+
+  // No zone session may appear in the fight scope, ever.
+  const ids = [done.head!.value, ...done.rest.map((r) => r.value)]
+  assert.equal(ids.some((id) => id === 'zone' || /^zs\d+$/.test(id)), false, 'no zone sessions in the Fight scope')
+})
+
+test('S2: the Overall scope lists only zone sessions', () => {
+  const eng = new CombatEngine()
+  eng.setPlayerName('Primitive')
+  feed(eng, [
+    '[Sun Jul 19 14:00:00 2026] You have entered Befallen.',
+    '[Sun Jul 19 14:00:01 2026] You crush a skeleton for 100 points of damage.',
+    '[Sun Jul 19 14:05:00 2026] You have entered East Commonlands.',
+    '[Sun Jul 19 14:05:01 2026] You crush a decaying skeleton for 10 points of damage.'
+  ])
+  const snap = eng.snapshot(Date.parse('Sun Jul 19 14:05:02 2026') + 500, {})
+  const overall = scopeOptions('overall', snap.segments, snap.zoneSessions)
+  assert.equal(overall.head!.value, 'zone', 'the live zone session heads the list')
+  assert.equal(overall.head!.live, true)
+  assert.match(overall.head!.label, /East Commonlands — overall/)
+  assert.ok(overall.rest.length >= 1, 'the finalized Befallen session is selectable')
+  // A fight id ('e<n>') must never leak into the Overall scope.
+  const ids = [overall.head!.value, ...overall.rest.map((r) => r.value)]
+  assert.equal(ids.every((id) => id === 'zone' || /^zs\d+$/.test(id)), true, 'no fights in the Overall scope')
 })
 
 test('L3: hydrating is true during the historical replay and false once the tail takes over', () => {

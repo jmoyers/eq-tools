@@ -183,9 +183,28 @@ export interface HealerView {
  *  damage model's SourceKind ('you'|'pet'|'enemy') has no room for. */
 export type HealSourceKind = 'you' | 'pet' | 'other' | 'enemy'
 
-/** One spell lane inside a healer's drill-down. */
+/**
+ * What a number in the healing ledger MEANS. Both live in the same ledger, the same ranked drill
+ * list and the same total, but they are never the same claim — so every LANE carries this and
+ * the UI must label it:
+ *   - 'restored' — hit points actually put back on a health bar. A heal line said so.
+ *   - 'absorbed' — absorption GRANTED by a rune. Counted as effective sustain on the assumption
+ *     that the shield gets consumed; the log records the grant, never the consumption. That
+ *     assumption is why this classification exists and why it is never silently merged away.
+ * Keeping it on the wire is deliberate: a future UI can split the meter apart again — and a
+ * future model could split ABSORPTION ITSELF by source — without any change here.
+ */
+export type HealClassification = 'restored' | 'absorbed'
+
+/**
+ * One lane inside a healer's drill-down — a heal spell, or the absorption lane. They share one
+ * FLAT ranked list on purpose: a grouping level (heals here, absorption there) is exactly what
+ * hid the flat breakdown in the damage drill-down, so the drill is
+ * `Lay on Hands VI · Lay on Hands V · Center · Rune` ranked by amount, with `classification`
+ * (not position) telling the two kinds apart.
+ */
 export interface HealSpellView {
-  /** Display spell name, or 'Unspecified' when the line named no spell. */
+  /** Display spell name, 'Unspecified' when the line named no spell, or 'Rune' for absorption. */
   name: string
   /** Effective healing (what actually landed on a health bar). */
   total: number
@@ -206,40 +225,61 @@ export interface HealSpellView {
   overheal: number
   /** Ticks that landed entirely on a full health bar (effective 0). */
   fullOverheal: number
+  /** 'restored' on every real heal lane; 'absorbed' on the rune lane. Absorption has no overheal
+   *  by construction — a rune that is never consumed simply expires, and the log does not say. */
+  classification: HealClassification
 }
 
-/** One healer row on the meter (level 1), with its per-spell breakdown (level 2). */
+/**
+ * One healer row on the meter (level 1), with its flat lane breakdown (level 2).
+ *
+ * A row can be MIXED (the self row carries both your heals and your rune absorption), so the row
+ * has no single classification — it has a split total instead. Its other headline stats (count,
+ * crits, max, min, overheal, overhealPct) describe RESTORED healing ONLY: folding rune grants
+ * into "6 heals · max 428" would be an aggregate that lies (AGENTS.md law 5).
+ */
 export interface HealSourceView {
   /** Stable row id: 'you' | 'heal:<healerKey>'. */
   id: string
   name: string
   kind: HealSourceKind
-  /** Effective healing done by this healer within the segment's scope. */
+  /** The row's ranking figure: restored healing + granted absorption. */
   total: number
-  /** total ÷ segment duration — healing per second. */
+  /** How much of `total` is absorption (0 on a pure healer). `total − absorbedTotal` is the
+   *  restored half. Never fabricated: only rune grants have amounts. */
+  absorbedTotal: number
+  /** total ÷ segment duration — sustain per second. */
   hps: number
-  /** pct of the largest healer's total (bar fill). */
+  /** pct of the largest row's total (bar fill). */
   pct: number
+  /** Heal LINES only — a rune grant is not a heal and is never counted here. */
   count: number
   crits: number
   critPct: number
+  /** Largest / smallest single EFFECTIVE heal. Absorption never enters these. */
   max: number
   min?: number
   overheal: number
-  /** overheal ÷ (total + overheal) as a percentage; 0 when no `(M)` line was ever seen. */
+  /** overheal ÷ (restored + overheal) as a percentage — absorption is deliberately NOT in the
+   *  denominator, which would silently deflate a healer's overheal rate. */
   overhealPct: number
   fullOverheal: number
+  /** ONE flat list, ranked by amount desc: heal lanes and the absorption lane together. */
   spells: HealSpellView[]
 }
 
 /**
- * ABSORPTION lanes — mitigation, NOT healing. Kept in its own object (and rendered in its own
- * labeled section) so nothing here is ever summed into a healing total: a rune prevents damage,
- * it does not restore hit points, and two of the three families carry NO amount at all.
+ * The RAW absorption counters, kept intact as their own object even though the rune lane is now
+ * also folded into the healing ledger as an 'absorbed' drill lane. This is the un-aggregated
+ * truth — a future UI can split absorption back out with no model change — and it is the ONLY
+ * home of the two count-only families, which have no amount to sum and so appear in no total.
  */
 export interface MitigationView {
   /** Σ of `You gain a rune for N points of absorption.` — absorption GRANTED. The log never
-   *  records how much of a rune was actually consumed, so this is not "damage prevented". */
+   *  records how much of a rune was actually consumed, so this is not "damage prevented".
+   *  Mirrored by the 'Rune' lane on the self row (same numbers, classified 'absorbed').
+   *  ONE lane, not two: the gain line names no source and the enchanter-rune landing message
+   *  never appears in this log — see the verified sweep in src/main/combat/healing.ts. */
   runeTotal: number
   runeCount: number
   runeMax: number
@@ -253,15 +293,29 @@ export interface MitigationView {
   absorbedDamageShields: number
 }
 
-/** The healing meter for one segment. */
+/**
+ * The healing meter for one segment.
+ *
+ * ABSORPTION IS IN THE LEDGER. Rune grants are a lane on the SELF row and count toward `total` /
+ * `hps`, because a shield is sustain the same way a heal is — but it is an ASSUMPTION (the log
+ * records absorption granted, never consumed), so the classification travels with the number and
+ * the UI labels it. The two count-only absorption families (absorbed swings, absorbed
+ * damage-shield ticks) carry no amount in the log and are therefore in NO total — they stay
+ * counts under `mitigation`.
+ */
 export interface HealingView {
-  /** Healers of You / your pets, ranked by effective healing desc. */
+  /** Healers of You / your pets, ranked by total desc. The self row also carries absorption. */
   healers: HealSourceView[]
-  /** Σ healers[].total. */
+  /** Σ healers[].total — restored hit points AND granted absorption. */
   total: number
   /** total ÷ segment duration. */
   hps: number
-  /** Σ healers[].overheal (a floor — see HealSpellView.overheal). */
+  /** Σ of the 'restored' rows: hit points actually put back. */
+  restoredTotal: number
+  /** Σ of the 'absorbed' rows: absorption granted. `restoredTotal + absorbedTotal == total`. */
+  absorbedTotal: number
+  /** Σ healers[].overheal (a floor — see HealSpellView.overheal). Absorption contributes 0:
+   *  a rune has no overheal and one is never fabricated for it. */
   overheal: number
   /** Healers of engaged HOSTILE instances (counter-healing that undid your damage). */
   enemyHealers: HealSourceView[]
@@ -434,13 +488,11 @@ export interface CombatSnapshot {
    * churning fake-live meter; this is the only honest signal for it.
    */
   hydrating: boolean
-  /**
-   * True when the LIVE selection (no explicit `selectedId`) resolved to the live ZONE
-   * session because NO fight is currently open. The dashboard then shows zone-overall data
-   * and labels itself as such — a dashboard must never go empty while data exists, and it
-   * must never present a finished fight as the current one.
-   */
-  liveFallback: boolean
+  // NOTE: there is deliberately NO `liveFallback` here any more. Fight vs Overall is an explicit
+  // user-chosen SCOPE (renderer-side), not an automatic switch: the default selection resolves to
+  // the open fight, else the most recent finalized fight, and NEVER to the zone aggregate. The
+  // renderer tells "current" from "last" by looking for a `kind: 'current'` entry in `segments`
+  // and labels the row accordingly, so no extra flag is needed.
 }
 
 export interface SnapshotOpts {

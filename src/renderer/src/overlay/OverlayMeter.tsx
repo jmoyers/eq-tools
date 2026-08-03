@@ -3,7 +3,17 @@ import type { OverlayConfig, OverlayDrill, OverlayKind } from '@shared/types'
 import type { DamageCategory, SegmentView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
-import { flattenSkills, type FlatSkill, type SkillRow } from '../features/combat/dashboardData'
+import { formatTime } from '../lib/formatDate'
+import {
+  LIVE_SELECTION,
+  defaultSelection,
+  flattenSkills,
+  scopeOptions,
+  type FlatSkill,
+  type ScopeOption,
+  type SkillRow
+} from '../features/combat/dashboardData'
+import { OverlaySelect, type OverlaySelectRow } from './OverlaySelect'
 import { useOverlayCombat } from './useOverlayCombat'
 
 // Palette (matches the app's combat colors; the overlay has no MUI theme).
@@ -21,7 +31,8 @@ const CAT_COLOR: Record<DamageCategory, string> = {
   ds: '#cf6679'
 }
 
-const LIVE = '__live__'
+/** The "head row" sentinel — one definition, shared with the main view (dashboardData). */
+const LIVE = LIVE_SELECTION
 
 function fmtDur(sec: number): string {
   const s = Math.max(0, Math.round(sec))
@@ -38,6 +49,31 @@ function relativeAge(ts: number, now: number): string {
   const hrs = mins / 60
   if (hrs < 36) return `${Math.round(hrs)}h`
   return `${Math.round(hrs / 24)}d`
+}
+
+/**
+ * The dense disambiguation line under a selector row: start clock · coarse age · duration
+ * (the still-running zone session says 'live' instead of a length it doesn't have yet).
+ * Same information as the main view's selector, spelled terser for an 11px overlay.
+ */
+function overlayTiming(o: ScopeOption, now: number): string {
+  const bits: string[] = []
+  if (o.startTs) bits.push(formatTime(o.startTs))
+  const age = relativeAge(o.startTs, now)
+  if (age) bits.push(age)
+  bits.push(o.durationSec > 0 ? fmtDur(o.durationSec) : o.live ? 'live' : '—')
+  return bits.join(' · ')
+}
+
+/** Scope-filtered rows for the overlay selector: head first, then the rest. */
+function selectorRows(head: ScopeOption | null, rest: ScopeOption[], now: number): OverlaySelectRow[] {
+  return [...(head ? [head] : []), ...rest].map((o) => ({
+    value: o.value,
+    label: o.label,
+    rate: formatRate(o.dps),
+    timing: overlayTiming(o, now),
+    live: o.live
+  }))
 }
 
 /** A single horizontal bar: label + right-text + pct-fill. Dense + high-contrast. Clickable to drill. */
@@ -308,8 +344,11 @@ export default function OverlayMeter(): JSX.Element {
   // 'fight' if the bridge is momentarily absent (e.g. an HMR reload before the preload re-runs).
   const kind: OverlayKind = window.eqOverlay?.kind ?? 'fight'
   const [cfg, setCfg] = useState<OverlayConfig | null>(null)
-  // Selection: for 'fight' → LIVE or a finalized fight id; for 'overall' → 'zone' or a zs<n>.
-  const [selection, setSelection] = useState<string>(kind === 'fight' ? LIVE : 'zone')
+  // Selection is SCOPED to this overlay's kind and never crosses over: a 'fight' overlay lists
+  // (and shows) only fights — the current one while a pull is open, else the LAST one — and a
+  // 'overall' overlay lists only zone sessions. A fight meter silently becoming a zone meter
+  // between pulls was the same bug the Combat tab had.
+  const [selection, setSelection] = useState<string>(defaultSelection(kind === 'fight' ? 'fight' : 'overall'))
   const [hovering, setHovering] = useState(false)
   const hoveringRef = useRef(false)
 
@@ -344,9 +383,15 @@ export default function OverlayMeter(): JSX.Element {
   const durationSec = seg?.durationSec ?? 0
   const totalDps = seg?.outDps ?? 0
 
-  // Selector options.
-  const fightRows = hydrating ? [] : (snap?.segments ?? []).filter((s) => s.kind === 'fight')
-  const zoneRows = hydrating ? [] : snap?.zoneSessions ?? []
+  // Selector options — ONE scope's rows, filtered by the shared helper the main view uses.
+  const opts = scopeOptions(
+    isFight ? 'fight' : 'overall',
+    hydrating ? [] : snap?.segments ?? [],
+    hydrating ? [] : snap?.zoneSessions ?? []
+  )
+  const rows = selectorRows(opts.head, opts.rest, now)
+  /** On the head row, but the head row is the LAST (finished) fight — never dress it up as live. */
+  const headIsLast = selection === LIVE && !!opts.head && !opts.head.live
 
   const patch = (p: Partial<OverlayConfig>): void => {
     setCfg((c) => (c ? { ...c, ...p } : c))
@@ -441,6 +486,10 @@ export default function OverlayMeter(): JSX.Element {
           }}
         >
           {isFight ? 'FIGHT' : 'ZONE'}
+          {/* The head row is a FINISHED fight (no pull is open). Say so in the header, because a
+              LOCKED overlay hides the selector entirely — the tag would otherwise be the only
+              thing on screen and it would read as if this fight were still going. */}
+          {headIsLast && <span style={{ opacity: 0.75 }}> · LAST</span>}
         </span>
         <span
           style={{ fontWeight: 700, color: GOLD, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flexGrow: 1 }}
@@ -465,43 +514,17 @@ export default function OverlayMeter(): JSX.Element {
         )}
       </div>
 
-      {/* Selector — interactive mode only. Dense native select in the overlay header. */}
+      {/* Selector — interactive mode only (a locked overlay is click-through, so it is simply
+          not rendered and installs no listeners). Styled to the meter, not to the OS. */}
       {!locked && (
-        <div style={{ ...noDrag, padding: '4px 8px 2px', flexShrink: 0 }}>
-          <select
-            value={selection}
-            onChange={(e) => selectSegment(e.target.value)}
-            style={{
-              width: '100%',
-              background: 'rgba(0,0,0,0.35)',
-              color: '#f2f2f2',
-              border: '1px solid rgba(255,255,255,0.12)',
-              borderRadius: 4,
-              fontSize: 11,
-              padding: '2px 4px',
-              outline: 'none'
-            }}
-          >
-            {isFight ? (
-              <>
-                <option value={LIVE}>▶ Current fight (live)</option>
-                {fightRows.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.name} · {formatRate(s.dps)} · {relativeAge(s.startTs, now)} · {fmtDur(s.durationSec)}
-                  </option>
-                ))}
-              </>
-            ) : (
-              zoneRows.map((z) => (
-                <option key={z.id} value={z.id}>
-                  {z.live ? '◆ ' : ''}
-                  {z.zone} · {formatRate(z.dps)}
-                  {z.live ? ' · live' : ` · ${relativeAge(z.startTs, now)}`}
-                </option>
-              ))
-            )}
-          </select>
-        </div>
+        <OverlaySelect
+          rows={rows}
+          value={selection}
+          onChange={selectSegment}
+          accent={GOLD}
+          emptyLabel={isFight ? 'No fights yet' : 'No zone sessions yet'}
+          noDragStyle={noDrag}
+        />
       )}
 
       {/* Bars + mini drill-down. Locked mode RENDERS the remembered drill (the pinned "damage by

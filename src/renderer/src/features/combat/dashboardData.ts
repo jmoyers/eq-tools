@@ -13,7 +13,14 @@
 //     null). Callers degrade to a quiet note; these functions are simply not called.
 // The authoritative totals always remain the engine's SourceView bars.
 
-import type { DamageCategory, SkillView, SourceView, TimelineView } from '@shared/combat'
+import type {
+  DamageCategory,
+  SegmentSummary,
+  SkillView,
+  SourceView,
+  TimelineView,
+  ZoneSessionSummary
+} from '@shared/combat'
 
 /** A skill row tagged with the category it was rolled up under (the color key). */
 export type FlatSkill = SkillView & { category: DamageCategory }
@@ -362,6 +369,115 @@ export interface CompositionSlice {
   total: number
   /** pct of the source's whole outgoing total. */
   pct: number
+}
+
+// ── Selector SCOPE (Fight vs Overall) ───────────────────────────────────────────────
+//
+// Fight and Overall are an explicit, user-chosen SCOPE — never an automatic switch. The
+// dashboard used to fall back to the live ZONE aggregate whenever no fight was open, so the
+// meter silently swapped between pulls; that is the behaviour this replaces. A scope decides
+// BOTH what the body shows and what the selector may list:
+//
+//   fight   → the current fight while one is open, otherwise the LAST fight (labeled as such —
+//             a finished fight is never dressed up as live), plus the finalized-fight history.
+//             Zone sessions are not listed at all.
+//   overall → the live zone session, plus the finalized zone-session history. Fights are not
+//             listed at all.
+//
+// This lives here (a pure, MUI-free module) because every selector surface must filter
+// identically: the Combat tab, the 'fight'/'overall' damage overlays and the heal overlays.
+
+export type CombatScope = 'fight' | 'overall'
+
+/**
+ * Sentinel selection meaning "whatever the fight scope's head row currently is". It is sent to
+ * the engine as *no* `selectedId`, so the engine re-resolves it every tick (open fight → that
+ * fight; none open → the most recent finalized fight). Pinning the last fight's real id instead
+ * would freeze the meter on it when the next pull started.
+ */
+export const LIVE_SELECTION = '__live__'
+
+/** One row of a scope-filtered selector. */
+export interface ScopeOption {
+  /** the value to hand `setSelection` (the LIVE sentinel for the fight scope's head row). */
+  value: string
+  /** the row's display name — already carries the honest live/last wording for a head row. */
+  label: string
+  /** raw name without the head-row wording (used for headers/titles). */
+  name: string
+  dps: number
+  /** epoch ms of the segment's start; 0 when unknown. */
+  startTs: number
+  /** wall-clock length in seconds; 0 when it isn't knowable yet (the running zone session). */
+  durationSec: number
+  /** genuinely live right now — an OPEN fight, or the current zone session. */
+  live: boolean
+}
+
+export interface ScopeOptions {
+  /** The pinned first row. Null only when the scope has no data at all yet (fresh session). */
+  head: ScopeOption | null
+  /** Every other row, newest-first. Never contains `head`. */
+  rest: ScopeOption[]
+}
+
+/** Fight scope: the current-or-last fight, then the finalized-fight history. NO zone sessions. */
+export function fightScopeOptions(segments: SegmentSummary[]): ScopeOptions {
+  const open = segments.find((s) => s.kind === 'current') ?? null
+  const finalized = segments.filter((s) => s.kind === 'fight')
+  const headSeg = open ?? finalized[0] ?? null
+  if (!headSeg) return { head: null, rest: [] }
+  const head: ScopeOption = {
+    value: LIVE_SELECTION,
+    // State, not process: while a fight is open this row IS the current fight; between pulls it
+    // is plainly the last one. It must never read "live" for a finished encounter.
+    label: open ? 'Current fight (live)' : `Last fight — ${headSeg.name}`,
+    name: headSeg.name,
+    dps: headSeg.dps,
+    startTs: headSeg.startTs,
+    durationSec: headSeg.durationSec,
+    live: !!open
+  }
+  const rest = (open ? finalized : finalized.slice(1)).map((s) => ({
+    value: s.id,
+    label: s.name,
+    name: s.name,
+    dps: s.dps,
+    startTs: s.startTs,
+    durationSec: s.durationSec,
+    live: false
+  }))
+  return { head, rest }
+}
+
+/** Overall scope: the live zone session, then the finalized zone-session history. NO fights. */
+export function overallScopeOptions(zoneSessions: ZoneSessionSummary[]): ScopeOptions {
+  const toRow = (z: ZoneSessionSummary): ScopeOption => ({
+    value: z.id,
+    label: `${z.zone} — overall`,
+    name: `${z.zone} — overall`,
+    dps: z.dps,
+    startTs: z.startTs,
+    durationSec: z.live ? 0 : Math.max(1, (z.endTs - z.startTs) / 1000),
+    live: z.live
+  })
+  const liveZone = zoneSessions.find((z) => z.live) ?? null
+  const rest = zoneSessions.filter((z) => z !== liveZone).map(toRow)
+  return { head: liveZone ? toRow(liveZone) : (rest.shift() ?? null), rest }
+}
+
+/** The scope-filtered selector rows. The ONE place a scope decides what may be listed. */
+export function scopeOptions(
+  scope: CombatScope,
+  segments: SegmentSummary[],
+  zoneSessions: ZoneSessionSummary[]
+): ScopeOptions {
+  return scope === 'fight' ? fightScopeOptions(segments) : overallScopeOptions(zoneSessions)
+}
+
+/** The selection a scope starts on (and returns to when the user switches scopes). */
+export function defaultSelection(scope: CombatScope): string {
+  return scope === 'fight' ? LIVE_SELECTION : 'zone'
 }
 
 /** 100%-stacked category composition for one source. Uses the engine's authoritative

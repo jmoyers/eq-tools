@@ -2,6 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { OverlayConfig, OverlayDrill, OverlayKind } from '@shared/types'
 import type { HealSourceView, HealSpellView, MitigationView, SegmentView } from '@shared/combat'
 import { formatNum as fmt, formatHealRate } from '../lib/formatRate'
+import { formatTime } from '../lib/formatDate'
+import { scopeOptions } from '../features/combat/dashboardData'
+import { OverlaySelect, type OverlaySelectRow } from './OverlaySelect'
 import { useOverlayCombat } from './useOverlayCombat'
 
 /**
@@ -21,22 +24,37 @@ import { useOverlayCombat } from './useOverlayCombat'
  *     EQ writes `for N (M) hit points` exactly when M > N and omits the parens otherwise.
  *   - HoT ticks are INDISTINGUISHABLE from direct heals (no `healed over time` / `regeneration`
  *     line family exists), so there is no HoT/direct split anywhere in this UI.
- *   - ABSORPTION is not healing. Runes carry a granted amount (never a "damage prevented"
- *     figure — the log doesn't say how much was consumed); absorbed swings and absorbed
- *     damage-shield ticks carry NO amount at all and are shown as COUNTS, never as bars.
+ *   - ABSORPTION RANKS AS HEALING, LABELED. Rune grants are a lane in the SAME flat drill list as
+ *     the heal spells and count toward the total, because a shield is sustain. It is told apart
+ *     by its own cool COLOR and by WORDING — "Rune", "granted", "absorbed" in the stat run —
+ *     never by a chip: a badge overflowed the bar at overlay width, and the color plus the words
+ *     already say it. The honesty note (absorption GRANTED, not consumed) lives in the hover
+ *     title, not in inline chrome. Absorption is never called restored hit points and never
+ *     shows an overheal (a rune has none, and one is not invented for it).
+ *   - The other two absorption families (absorbed swings, absorbed damage-shield ticks) carry NO
+ *     amount at all, so they are COUNTS in the footer — never a bar, never in a total.
+ *
+ * DRILL SHAPE: healer → ONE flat ranked list of lanes (`Lay on Hands VI · Healing · Rune`). No
+ * grouping level, deliberately: removing the category level is what made the damage drill-down
+ * legible, and a separate "absorption" section here would repeat that mistake.
  */
 
 // Palette. The overlay has no MUI theme, so it carries its own colors — a green-leaning ramp so a
 // pinned healing meter is never confused with the gold DPS one at a glance.
 const HEAL_GOLD = '#7fd1a0'
+/** Absorption is a different KIND of number, so it gets a deliberately different, cooler hue —
+ *  a rune bar can never be mistaken for a green "hit points restored" bar at a glance. */
+const MIT_COLOR = '#8fb8d8'
 const KIND_COLOR: Record<string, string> = {
   you: '#7fd1a0',
   pet: '#6fb3d2',
   other: '#a98fe0',
   enemy: '#cf6679'
 }
-/** Absorption is a different KIND of number, so it gets a deliberately different, cooler hue. */
-const MIT_COLOR = '#8fb8d8'
+
+/** The one honest line about the assumption, surfaced on hover (never as a caption). */
+const ABSORB_NOTE =
+  'The log records absorption GRANTED, not consumed — counted here as effective sustain.'
 
 const LIVE = '__live__'
 
@@ -129,16 +147,29 @@ type Drill = OverlayDrill
  * Density comes from carrying FEWER stats, never from compressing labels. The row TOTAL is not
  * here — it owns the right end of the bar. Full, labeled figures live in the hover `title`.
  */
+/** `{min} - {max}`, collapsed to a single figure when every tick was the same size. */
+function range(min: number | undefined, max: number): string {
+  const lo = min ?? 0
+  return lo !== max ? `${fmt(lo)} - ${fmt(max)}` : `${fmt(max)}`
+}
+
+const isAbsorb = (r: { classification: string }): boolean => r.classification === 'absorbed'
+
 function spellStat(s: HealSpellView): string {
+  // An absorption lane has no overheal and no crits by construction — showing "0% over" would
+  // imply the log measured something it never records.
+  if (isAbsorb(s)) return `${s.count}x · ${range(s.min, s.max)} granted`
   const parts: string[] = []
   const over = s.total + s.overheal > 0 ? (s.overheal / (s.total + s.overheal)) * 100 : 0
   if (s.overheal > 0) parts.push(`${pct(over)} over`)
-  const min = s.min ?? 0
-  parts.push(min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : `${fmt(s.max)}`)
+  parts.push(range(s.min, s.max))
   return parts.join(' · ')
 }
 
 function spellTitle(s: HealSpellView): string {
+  if (isAbsorb(s)) {
+    return `${s.name} (absorbed) — ${fmt(s.total)} absorption granted over ${s.count} runes · range ${range(s.min, s.max)}. ${ABSORB_NOTE}`
+  }
   const over = s.total + s.overheal > 0 ? (s.overheal / (s.total + s.overheal)) * 100 : 0
   const bits = [
     `${fmt(s.total)} effective`,
@@ -152,89 +183,61 @@ function spellTitle(s: HealSpellView): string {
   } else {
     bits.push('no overheal recorded')
   }
-  const min = s.min ?? 0
-  bits.push(min !== s.max ? `range ${fmt(min)} - ${fmt(s.max)}` : `always ${fmt(s.max)}`)
+  bits.push((s.min ?? 0) !== s.max ? `range ${range(s.min, s.max)}` : `always ${fmt(s.max)}`)
   const note =
     s.name === 'Unspecified' ? ' — the log named no spell on these lines' : ''
   return `${s.name}${note} — ${bits.join(' · ')}`
 }
 
 function healerStat(h: HealSourceView): string {
-  const parts = [`${h.count}x`]
+  // A row can be MIXED, so the stats describe its RESTORED half and the absorbed share is called
+  // out separately — never averaged in as if it were a heal.
+  const parts = h.count > 0 ? [`${h.count}x`] : []
   if (h.crits > 0) parts.push(`${pct(h.critPct)} crit`)
   if (h.overheal > 0) parts.push(`${pct(h.overhealPct)} over`)
+  if (h.absorbedTotal > 0) parts.push(`${fmt(h.absorbedTotal)} absorbed`)
   return parts.join(' · ')
 }
 
 function healerTitle(h: HealSourceView): string {
-  const bits = [`${fmt(h.total)} effective`, `${h.count} heals`]
+  const restored = h.total - h.absorbedTotal
+  const bits = [`${fmt(restored)} restored`, `${h.count} heals`]
   if (h.crits > 0) bits.push(`${h.crits} crits (${pct(h.critPct)})`)
   if (h.overheal > 0) {
     bits.push(`${fmt(h.overheal)} overheal (${pct(h.overhealPct)} of raw)`)
     if (h.fullOverheal > 0) bits.push(`${h.fullOverheal} fully wasted`)
-  } else {
+  } else if (h.count > 0) {
     bits.push('no overheal recorded')
   }
-  const min = h.min ?? 0
-  bits.push(min !== h.max ? `range ${fmt(min)} - ${fmt(h.max)}` : `always ${fmt(h.max)}`)
+  if (h.count > 0) {
+    bits.push((h.min ?? 0) !== h.max ? `range ${range(h.min, h.max)}` : `always ${fmt(h.max)}`)
+  }
+  // THE ASSUMPTION LIVES HERE (plus the header's total). One line, on hover, no methodology.
+  if (h.absorbedTotal > 0) bits.push(`+ ${fmt(h.absorbedTotal)} absorbed. ${ABSORB_NOTE}`)
   return `${h.name} — ${bits.join(' · ')}`
 }
 
+/** True when the amount-less absorption families have anything to say. */
+const hasCounts = (mit: MitigationView | undefined): boolean =>
+  !!mit && (mit.absorbedSwings > 0 || mit.absorbedDamageShields > 0)
+
 /**
- * The ABSORPTION section. Deliberately below the healer bars, under its own label, and only the
- * rune lane gets a bar: it is the ONLY absorption family the log gives a number for. The two
- * count-only families render as plain counts — a bar would imply a magnitude the log never
- * recorded, and the whole point of this section is that absorption is not healing.
+ * The COUNT-ONLY absorption families. The rune lane is not here any more — it has an amount, so
+ * it ranks among the bars above as an `absorbed` row. These two do not: the log gives them no
+ * number at all, so they are counts under the bars, in no total, never a bar (a bar would imply
+ * a magnitude that was never recorded).
  */
-function Mitigation({ mit }: { mit: MitigationView }): JSX.Element | null {
-  const any = mit.runeCount > 0 || mit.absorbedSwings > 0 || mit.absorbedDamageShields > 0
-  if (!any) return null
-  const range =
-    mit.runeMin !== undefined && mit.runeMin !== mit.runeMax
-      ? `${fmt(mit.runeMin)} - ${fmt(mit.runeMax)}`
-      : `${fmt(mit.runeMax)}`
+function AbsorbCounts({ mit }: { mit: MitigationView }): JSX.Element | null {
+  if (!hasCounts(mit)) return null
   return (
-    <div style={{ marginTop: 6 }}>
-      <div
-        style={{
-          fontSize: 8,
-          letterSpacing: 0.5,
-          textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.4)',
-          marginBottom: 3
-        }}
-        title="Absorption prevents damage — it does not restore hit points, so none of it is counted as healing."
-      >
-        Absorption · not healing
-      </div>
-      {mit.runeCount > 0 && (
-        <Bar
-          color={MIT_COLOR}
-          accent={MIT_COLOR}
-          pct={100}
-          label={
-            <>
-              Rune
-              <span style={{ marginLeft: 6, color: 'rgba(255,255,255,0.62)', fontWeight: 400 }}>
-                {mit.runeCount}x · {range} granted
-              </span>
-            </>
-          }
-          right={fmt(mit.runeTotal)}
-          title={`Rune — ${fmt(mit.runeTotal)} absorption GRANTED over ${mit.runeCount} runes (range ${range}). The log never records how much of a rune was actually consumed, so this is not damage prevented.`}
-        />
-      )}
-      {(mit.absorbedSwings > 0 || mit.absorbedDamageShields > 0) && (
-        <div
-          style={{ fontSize: 10, color: 'rgba(255,255,255,0.55)', padding: '2px 2px 0', lineHeight: 1.5 }}
-          title="The log records these as events with no amount, so they are shown as counts. Never a fabricated total."
-        >
-          {mit.absorbedSwings > 0 && <>{mit.absorbedSwings} swings absorbed</>}
-          {mit.absorbedSwings > 0 && mit.absorbedDamageShields > 0 && ' · '}
-          {mit.absorbedDamageShields > 0 && <>{mit.absorbedDamageShields} damage shields absorbed</>}
-          <span style={{ color: 'rgba(255,255,255,0.35)' }}> · no amount logged</span>
-        </div>
-      )}
+    <div
+      style={{ fontSize: 10, color: 'rgba(255,255,255,0.55)', padding: '5px 2px 0', lineHeight: 1.5 }}
+      title="The log records these as events with no amount, so they are shown as counts and enter no total."
+    >
+      {mit.absorbedSwings > 0 && <>{mit.absorbedSwings} swings absorbed</>}
+      {mit.absorbedSwings > 0 && mit.absorbedDamageShields > 0 && ' · '}
+      {mit.absorbedDamageShields > 0 && <>{mit.absorbedDamageShields} damage shields absorbed</>}
+      <span style={{ color: 'rgba(255,255,255,0.35)' }}> · no amount logged</span>
     </div>
   )
 }
@@ -262,16 +265,15 @@ function HealBars({
   const mit = healing?.mitigation
 
   if (!healing || (!drilled && rows.length === 0)) {
-    // A quiet state, not a zeroed meter. Absorption may still have happened with zero healing
-    // (a rune ticking through a fight you never healed in), so show it rather than go blank.
-    const hasMit =
-      mit && (mit.runeCount > 0 || mit.absorbedSwings > 0 || mit.absorbedDamageShields > 0)
+    // A quiet state, not a zeroed meter. The amount-less absorption families can still have
+    // fired with nothing to rank (swings eaten by a rune granted before this fight), so show
+    // those counts rather than go blank. A rune GRANT would have produced a row above.
     return (
       <>
         <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', padding: '8px 2px' }}>
           {live ? 'No healing yet…' : 'Waiting for healing…'}
         </div>
-        {hasMit && <Mitigation mit={mit} />}
+        {mit && <AbsorbCounts mit={mit} />}
       </>
     )
   }
@@ -280,11 +282,14 @@ function HealBars({
   if (drilled) {
     return (
       <Crumb name={drilled.name} onBack={setDrill ? () => setDrill(null) : null}>
+        {/* ONE flat ranked list: heal spells and the absorption lane together, biggest first.
+            No grouping level — that is what hid the flat breakdown in the damage drill-down.
+            The absorption lane is told apart by COLOR + chip, never by where it sits. */}
         {drilled.spells.map((s) => (
           <Bar
-            key={s.name}
-            color={KIND_COLOR[drilled.kind] ?? '#888'}
-            accent={KIND_COLOR[drilled.kind] ?? '#888'}
+            key={`${s.classification}:${s.name}`}
+            color={isAbsorb(s) ? MIT_COLOR : KIND_COLOR[drilled.kind] ?? '#888'}
+            accent={isAbsorb(s) ? MIT_COLOR : KIND_COLOR[drilled.kind] ?? '#888'}
             pct={s.pct}
             label={
               <>
@@ -293,6 +298,11 @@ function HealBars({
                     silently into a real spell's numbers. */}
                 {s.name === 'Unspecified' && (
                   <span style={{ color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}> ~no spell named</span>
+                )}
+                {/* The classification as a plain suffix, matching this file's existing `·pet` /
+                    `·enemy` convention — no badge, so it can never overflow the bar. */}
+                {isAbsorb(s) && (
+                  <span style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}> ·absorbed</span>
                 )}
                 <span style={{ marginLeft: 6, color: 'rgba(255,255,255,0.62)', fontWeight: 400 }}>
                   {spellStat(s)}
@@ -314,6 +324,9 @@ function HealBars({
         <Bar
           key={h.id}
           color={KIND_COLOR[h.kind] ?? '#888'}
+          // A row carrying absorption gets the cool accent stripe, so it reads as mixed before a
+          // single number is read. The split itself is in the stat run and the drill.
+          accent={h.absorbedTotal > 0 ? MIT_COLOR : undefined}
           pct={h.pct}
           rank={i + 1}
           label={
@@ -330,7 +343,7 @@ function HealBars({
           title={healerTitle(h)}
         />
       ))}
-      {mit && <Mitigation mit={mit} />}
+      {mit && <AbsorbCounts mit={mit} />}
       {/* Counter-healing is an ANNOTATION on your damage, not part of your sustain, so it never
           enters the ranking above — it gets one honest line. */}
       {healing.enemyTotal > 0 && (
@@ -414,10 +427,37 @@ export default function HealMeter(): JSX.Element {
 
   const headerName = hydrating ? 'Reading log…' : seg?.name ?? (isFight ? 'No fight' : 'No zone')
   const durationSec = seg?.durationSec ?? 0
-  const totalHps = seg?.healing?.hps ?? 0
+  const healing = seg?.healing
+  const totalHps = healing?.hps ?? 0
+  // The stat line's rate now includes absorption, so the stat line is where the split (and the
+  // assumption behind it) is available on hover. One line, no methodology panel.
+  const totalTitle = healing
+    ? healing.absorbedTotal > 0
+      ? `${fmt(healing.total)} total · ${fmt(healing.restoredTotal)} restored + ${fmt(healing.absorbedTotal)} absorbed. ${ABSORB_NOTE}`
+      : `${fmt(healing.total)} healing restored`
+    : ''
 
-  const fightRows = hydrating ? [] : (snap?.segments ?? []).filter((s) => s.kind === 'fight')
-  const zoneRows = hydrating ? [] : snap?.zoneSessions ?? []
+  // Scope-filtered selector rows — the SAME helper the damage meters use, so a heal-fight
+  // overlay lists only fights (never crossing over to zone sessions between pulls) and
+  // heal-overall lists only zone sessions. Rate is omitted: a fight's dps is not this
+  // meter's subject, and the name + timing already disambiguate same-named pulls.
+  const selectRows: OverlaySelectRow[] = useMemo(() => {
+    if (hydrating) return []
+    const { head, rest } = scopeOptions(
+      isFight ? 'fight' : 'overall',
+      snap?.segments ?? [],
+      snap?.zoneSessions ?? []
+    )
+    return [...(head ? [head] : []), ...rest].map((o) => ({
+      value: o.value,
+      label: o.label,
+      rate: '',
+      timing: [o.startTs ? formatTime(o.startTs) : '', relativeAge(o.startTs, now), o.durationSec > 0 ? fmtDur(o.durationSec) : o.live ? 'live' : '—']
+        .filter(Boolean)
+        .join(' · '),
+      live: o.live
+    }))
+  }, [hydrating, isFight, snap?.segments, snap?.zoneSessions, now])
 
   const patch = (p: Partial<OverlayConfig>): void => {
     setCfg((c) => (c ? { ...c, ...p } : c))
@@ -514,7 +554,10 @@ export default function HealMeter(): JSX.Element {
         >
           {headerName}
         </span>
-        <span style={{ color: 'rgba(255,255,255,0.7)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+        <span
+          title={totalTitle}
+          style={{ color: 'rgba(255,255,255,0.7)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}
+        >
           {fmtDur(durationSec)} · {formatHealRate(totalHps)}
         </span>
 
@@ -535,39 +578,14 @@ export default function HealMeter(): JSX.Element {
       {/* Selector — interactive mode only. Same rows as the damage pair's selector. */}
       {!locked && (
         <div style={{ ...noDrag, padding: '4px 8px 2px', flexShrink: 0 }}>
-          <select
+          <OverlaySelect
+            rows={selectRows}
             value={selection}
-            onChange={(e) => selectSegment(e.target.value)}
-            style={{
-              width: '100%',
-              background: 'rgba(0,0,0,0.35)',
-              color: '#f2f2f2',
-              border: '1px solid rgba(255,255,255,0.12)',
-              borderRadius: 4,
-              fontSize: 11,
-              padding: '2px 4px',
-              outline: 'none'
-            }}
-          >
-            {isFight ? (
-              <>
-                <option value={LIVE}>▶ Current fight (live)</option>
-                {fightRows.map((s) => (
-                  <option key={s.id} value={s.id}>
-                    {s.name} · {relativeAge(s.startTs, now)} · {fmtDur(s.durationSec)}
-                  </option>
-                ))}
-              </>
-            ) : (
-              zoneRows.map((z) => (
-                <option key={z.id} value={z.id}>
-                  {z.live ? '◆ ' : ''}
-                  {z.zone}
-                  {z.live ? ' · live' : ` · ${relativeAge(z.startTs, now)}`}
-                </option>
-              ))
-            )}
-          </select>
+            onChange={selectSegment}
+            accent={HEAL_GOLD}
+            emptyLabel={isFight ? 'No fights yet' : 'No zone sessions yet'}
+            noDragStyle={noDrag}
+          />
         </div>
       )}
 

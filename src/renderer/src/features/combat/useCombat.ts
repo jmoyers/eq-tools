@@ -1,7 +1,18 @@
 import { useEffect, useState } from 'react'
 import type { CombatSnapshot } from '@shared/combat'
+import { LIVE_SELECTION, defaultSelection, type CombatScope } from './dashboardData'
 
-export const LIVE = '__live__'
+/** Re-export: the sentinel lives with the scope helpers (dashboardData) so the overlay entry —
+ *  which never imports this hook — can share one definition. */
+export const LIVE = LIVE_SELECTION
+
+/** Renderer-local view pref, same shape as App.tsx's saved view / BossView's density. */
+const SCOPE_KEY = 'eq.combat.scope'
+
+function loadScope(): CombatScope {
+  const v = localStorage.getItem(SCOPE_KEY)
+  return v === 'overall' ? 'overall' : 'fight'
+}
 
 /** Default cap on finalized-fight summaries fetched per snapshot (Task #17 wire
  *  payload cap). The zone summary + current fight are always included; a "Load
@@ -16,6 +27,13 @@ export interface UseCombat {
   setShowUnparsed: (v: boolean) => void
   selection: string
   setSelection: (id: string) => void
+  /**
+   * Fight vs Overall — an EXPLICIT scope, never an automatic switch. It decides both what the
+   * body shows and what the selector may list (fights only / zone sessions only). Persisted
+   * renderer-side like the other view prefs.
+   */
+  scope: CombatScope
+  setScope: (s: CombatScope) => void
   /** current finalized-fight cap in the fetched snapshot */
   maxSegments: number
   /** bump the cap by another page of fights (Load more) */
@@ -44,7 +62,8 @@ export interface UseCombat {
 export function useCombat(): UseCombat {
   const [combinePets, setCombinePets] = useState(false)
   const [showUnparsed, setShowUnparsed] = useState(false)
-  const [selection, setSelection] = useState<string>(LIVE)
+  const [scope, setScopeState] = useState<CombatScope>(loadScope)
+  const [selection, setSelection] = useState<string>(() => defaultSelection(loadScope()))
   const [maxSegments, setMaxSegments] = useState(DEFAULT_MAX_SEGMENTS)
   const [wantTimeline, setWantTimeline] = useState(true)
   const [snap, setSnap] = useState<CombatSnapshot | null>(null)
@@ -73,6 +92,14 @@ export function useCombat(): UseCombat {
 
   const loadMore = (): void => setMaxSegments((n) => n + DEFAULT_MAX_SEGMENTS)
 
+  /** Switching scope always lands on that scope's head row — the previous scope's selection is
+   *  not even listable in the new one, so carrying it over would leave the selector blank. */
+  const setScope = (s: CombatScope): void => {
+    setScopeState(s)
+    localStorage.setItem(SCOPE_KEY, s)
+    setSelection(defaultSelection(s))
+  }
+
   return {
     snap,
     combinePets,
@@ -81,6 +108,8 @@ export function useCombat(): UseCombat {
     setShowUnparsed,
     selection,
     setSelection,
+    scope,
+    setScope,
     maxSegments,
     loadMore,
     wantTimeline,

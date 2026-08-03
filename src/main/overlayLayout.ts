@@ -7,8 +7,13 @@
 //
 // Layout: every kind docks to the BOTTOM-RIGHT of the primary display's work area, stacked
 // upward in OVERLAY_KINDS order with a small gutter, so opening two or three overlays never
-// lands one exactly on top of another. A kind with no explicit size gets the fallback, so
-// adding a kind to OVERLAY_KINDS is enough to give it a sane first position.
+// lands one exactly on top of another. When the stack would run past the top of the work area it
+// WRAPS INTO A NEW COLUMN to the left instead — with one uniform size that is exact, so no two
+// kinds can ever overlap on their first open.
+//
+// SIZE IS UNIFORM across kinds (user decision): every overlay opens at the same width x height,
+// whatever it renders. It is erring on the large side of the old per-kind values so the event
+// log — the only kind that is a list rather than a handful of dense bars — is not cramped.
 
 import { OVERLAY_KINDS, type OverlayKind } from '../shared/types'
 
@@ -21,24 +26,16 @@ export interface Bounds extends Size {
   y: number
 }
 
-/** Size for a kind whose default isn't spelled out below. */
-const FALLBACK_SIZE: Size = { width: 320, height: 220 }
+/**
+ * The ONE default size every overlay kind opens at. Chosen to be ≥ every per-kind size this
+ * replaced (the largest was the event log's 360x300): wide enough for a meter's `name · stats ·
+ * rate · total` bar row without ellipsis, tall enough for ~8 event-log lines plus chrome.
+ */
+const DEFAULT_SIZE: Size = { width: 380, height: 320 }
 
-/** Default window size per kind (the taller ones carry a selector / a scrolling feed). */
-const SIZES: Partial<Record<OverlayKind, Size>> = {
-  fight: { width: 320, height: 220 },
-  overall: { width: 340, height: 240 },
-  // The event log is a list, not a bar chart — it wants vertical room.
-  events: { width: 360, height: 300 },
-  // The healing meters (Task #59) carry an absorption section under the healer bars, so they
-  // need a little more height than their damage twins or it is clipped away on first open.
-  'heal-fight': { width: 340, height: 250 },
-  'heal-overall': { width: 360, height: 270 }
-}
-
-/** The first-open size for a kind. */
-export function overlayDefaultSize(kind: OverlayKind): Size {
-  return SIZES[kind] ?? FALLBACK_SIZE
+/** The first-open size for a kind — the same for all of them. */
+export function overlayDefaultSize(_kind: OverlayKind): Size {
+  return { ...DEFAULT_SIZE }
 }
 
 /** Gap from the screen edge and between stacked overlays. */
@@ -46,22 +43,27 @@ const MARGIN = 16
 const GUTTER = 10
 
 /**
- * Where a kind's window goes when it has no persisted bounds: docked bottom-right, offset
- * upward past every kind stacked below it (whether or not those are currently open — the slot
- * is reserved so positions stay stable and predictable). Clamped to the work area.
+ * Where a kind's window goes when it has no persisted bounds: docked bottom-right, offset upward
+ * past every kind stacked below it (whether or not those are currently open — the slot is
+ * RESERVED so positions stay stable and predictable), wrapping into a fresh column to the left
+ * once a column is full. Clamped to the work area as a last resort on a display too small to
+ * hold even one full column.
  */
 export function defaultOverlayBounds(kind: OverlayKind, workArea: Bounds): Bounds {
   const size = overlayDefaultSize(kind)
   const idx = Math.max(0, OVERLAY_KINDS.indexOf(kind))
-  let offset = 0
-  for (let i = 0; i < idx; i++) offset += overlayDefaultSize(OVERLAY_KINDS[i]).height + GUTTER
-  const x = workArea.x + workArea.width - size.width - MARGIN
-  let y = workArea.y + workArea.height - size.height - MARGIN - offset
-  // On a short screen the stack would run off the top; wrap back down rather than go off-screen.
-  if (y < workArea.y) y = workArea.y + ((offset % Math.max(1, workArea.height)) % Math.max(1, workArea.height))
+  // How many uniform slots fit between the bottom and top margins of this work area.
+  const perColumn = Math.max(
+    1,
+    Math.floor((workArea.height - 2 * MARGIN + GUTTER) / (size.height + GUTTER))
+  )
+  const col = Math.floor(idx / perColumn)
+  const row = idx % perColumn
+  const x = workArea.x + workArea.width - size.width - MARGIN - col * (size.width + GUTTER)
+  const y = workArea.y + workArea.height - size.height - MARGIN - row * (size.height + GUTTER)
   return {
     ...size,
-    x: Math.max(workArea.x, x),
+    x: Math.max(workArea.x, Math.min(x, workArea.x + workArea.width - size.width)),
     y: Math.max(workArea.y, Math.min(y, workArea.y + workArea.height - size.height))
   }
 }

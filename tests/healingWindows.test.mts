@@ -13,6 +13,25 @@
 //   W28  ENEMY counter-healing (a mob self-healing mid-fight) + the third absorption family,
 //        absorbed damage-shield ticks (also amount-less).
 //
+// AGGREGATION INTENT (changed after the overlays shipped — user decision): rune absorption is
+// IN the healing ledger. It counts toward `healing.total` / `hps`, because a shield you were
+// handed is sustain the same way a heal is — but it is an ASSUMPTION (the log records absorption
+// GRANTED, never consumed), so it travels as a `classification: 'absorbed'` LANE on the self
+// row, and the split totals (`restoredTotal` / `absorbedTotal` per view, `absorbedTotal` per
+// row) keep it separable forever.
+//
+// DRILL SHAPE: a healer's lanes are ONE flat ranked list — heal spells and the absorption lane
+// together, biggest first, no grouping level. Classification, not position, tells them apart.
+//
+// Four things this must NOT do:
+//   - fabricate an overheal or a crit for a rune (the log never says a shield expired unused),
+//   - let a rune grant pollute the row's HEAL stats (count / max / min / overhealPct),
+//   - value the two COUNT-ONLY families (absorbed swings, absorbed damage-shield ticks) — they
+//     have no amount in the log, so they enter no sum and stay counts under `mitigation`, and
+//   - split absorption by SOURCE. The gain line names no caster; see the verified sweep in
+//     src/main/combat/healing.ts (the enchanter rune never landed on this character, and the
+//     `You hurt yourself` correlate is 42%, not a rule).
+//
 // HAND-READ EXPECTATIONS — every heal / rune / absorb line in each fixture, verbatim:
 //
 // w26-healing-crit.log (Sun Aug 02 17:10:51 → 17:11:39)
@@ -53,6 +72,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { parseEvent } from '../src/main/log/parser'
 import { CombatEngine } from '../src/main/combat/engine'
+import { RUNE_LANE, SELF_ROW_ID } from '../src/main/combat/healing'
 import type { HealSourceView, HealSpellView, SegmentView } from '../src/shared/combat'
 
 const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
@@ -102,6 +122,8 @@ const lane = (h: HealSourceView, name: string): HealSpellView => {
   assert.ok(s, `expected spell lane "${name}" (got ${h.spells.map((x) => x.name).join(', ')})`)
   return s!
 }
+/** The absorption lane inside the self row's flat drill list. */
+const rune = (seg: SegmentView): HealSpellView => lane(you(seg), RUNE_LANE)
 
 // ---------------------------------------------------------------------------
 // Parser shapes — the exact real lines, verbatim.
@@ -203,27 +225,30 @@ test('W26: the crit heal is COUNTED (four heals, 1108 effective, one crit)', { s
   const seg = replay(W26)
   const h = you(seg)
   assert.equal(h.kind, 'you')
-  assert.equal(h.total, 1108)
+  assert.equal(h.total - h.absorbedTotal, 1108, 'restored half of the row')
   assert.equal(h.count, 4)
   assert.equal(h.crits, 1)
   assert.equal(h.max, 428)
   assert.equal(h.min, 210)
   assert.equal(h.overheal, 0, 'no line in this window carried the (M) raw amount')
   assert.equal(h.fullOverheal, 0)
-  assert.equal(seg.healing.total, 1108)
+  assert.equal(seg.healing.restoredTotal, 1108, 'hit points actually put back')
 
-  // One spell lane, and it carries the same numbers (the per-spell drill must reconcile).
-  assert.equal(h.spells.length, 1)
+  // The heal lane carries the same numbers (the per-spell drill must reconcile).
   const healing = lane(h, 'Healing')
   assert.equal(healing.total, 1108)
   assert.equal(healing.count, 4)
   assert.equal(healing.crits, 1)
   assert.equal(healing.max, 428)
   assert.equal(healing.min, 210)
+  assert.equal(healing.classification, 'restored')
 })
 
-test('W26: rune grants are absorption, NOT healing — they never enter a healing total', { skip: have(W26) }, () => {
+test('W26: rune absorption is a LANE on the self row — in the total, classified `absorbed`', { skip: have(W26) }, () => {
   const seg = replay(W26)
+
+  // The raw counters are untouched — the lane is a second VIEW of them, not a replacement, so a
+  // future UI can split absorption back out with no model change.
   const mit = seg.healing.mitigation
   assert.equal(mit.runeTotal, 21)
   assert.equal(mit.runeCount, 2)
@@ -231,9 +256,56 @@ test('W26: rune grants are absorption, NOT healing — they never enter a healin
   assert.equal(mit.runeMin, 6)
   assert.equal(mit.absorbedSwings, 0)
   assert.equal(mit.absorbedDamageShields, 0)
-  // The tripwire: healing totals are the sum of the healer rows and nothing else.
+
+  const r = rune(seg)
+  assert.equal(r.classification, 'absorbed', 'the assumption is carried on the lane, always')
+  assert.equal(r.total, 21, '6 + 15')
+  assert.equal(r.count, 2)
+  assert.equal(r.max, 15)
+  assert.equal(r.min, 6)
+  // NOTHING is invented for a rune: the log records no crit, and never says a shield expired
+  // unused, so an overheal here would be a fabrication.
+  assert.equal(r.crits, 0)
+  assert.equal(r.overheal, 0, 'a rune has no overheal — never fabricate one')
+  assert.equal(r.fullOverheal, 0)
+
+  // ONE row — absorption does not spawn a row of its own; it belongs to your sustain.
+  const h = you(seg)
+  assert.equal(seg.healing.healers.length, 1)
+  assert.equal(h.id, SELF_ROW_ID)
+  assert.equal(h.total, 1129, 'the row ranks on 1108 restored + 21 absorbed')
+  assert.equal(h.absorbedTotal, 21)
+  // ...but the row's HEAL stats are untouched by it (an aggregate that mixed them would lie).
+  assert.equal(h.count, 4, 'a rune grant is not a heal')
+  assert.equal(h.max, 428, 'still the biggest HEAL, not the biggest rune')
+  assert.equal(h.min, 210)
+  assert.equal(h.overhealPct, 0)
+
+  // Totals: absorption is IN, and the split stays derivable.
+  assert.equal(seg.healing.total, 1129, '1108 restored + 21 absorbed')
+  assert.equal(seg.healing.restoredTotal, 1108)
+  assert.equal(seg.healing.absorbedTotal, 21)
+  assert.equal(seg.healing.restoredTotal + seg.healing.absorbedTotal, seg.healing.total)
+  // The tripwire, unchanged in spirit: the total is the sum of the rows and nothing else.
   assert.equal(seg.healing.total, seg.healing.healers.reduce((s, x) => s + x.total, 0))
-  assert.equal(seg.healing.total, 1108)
+  // ...and the derived rate follows the same total.
+  assert.equal(seg.healing.hps, seg.healing.total / Math.max(1, seg.durationSec))
+})
+
+test('W26: the drill is ONE FLAT ranked list — heals and absorption together, no grouping level', { skip: have(W26) }, () => {
+  const h = you(replay(W26))
+  // Exactly the shape the user asked for (`lay on hands vi / lay on hands v / center / absorb`):
+  // individual lanes, biggest first, with absorption inline rather than in a section of its own.
+  assert.deepEqual(
+    h.spells.map((s) => [s.name, s.total, s.classification]),
+    [
+      ['Healing', 1108, 'restored'],
+      [RUNE_LANE, 21, 'absorbed']
+    ]
+  )
+  // Every lane's bar fill is relative to the same maximum — one list, one scale.
+  assert.equal(h.spells[0].pct, 100)
+  assert.equal(Math.round(h.spells[1].pct), Math.round((21 / 1108) * 100))
 })
 
 // ---------------------------------------------------------------------------
@@ -243,7 +315,7 @@ test('W26: rune grants are absorption, NOT healing — they never enter a healin
 test('W27: overheal is DERIVED from the (M) form and is 0 on every plain line', { skip: have(W27) }, () => {
   const seg = replay(W27)
   const h = you(seg)
-  assert.equal(h.total, 2274, 'effective healing = 237+230+239+217+1351')
+  assert.equal(h.total - h.absorbedTotal, 2274, 'effective healing = 237+230+239+217+1351')
   assert.equal(h.count, 5)
   assert.equal(h.crits, 0)
   assert.equal(h.max, 1351)
@@ -267,13 +339,16 @@ test('W27: overheal is DERIVED from the (M) form and is 0 on every plain line', 
   assert.equal(loh.max, 1351)
   assert.equal(loh.min, 1351)
 
-  // Spell lanes must reconcile with their healer row on BOTH axes.
-  assert.equal(h.spells.reduce((s, x) => s + x.total, 0), h.total)
-  assert.equal(h.spells.reduce((s, x) => s + x.overheal, 0), h.overheal)
-  assert.equal(h.spells.reduce((s, x) => s + x.count, 0), h.count)
+  // Lanes must reconcile with their row. The HEAL stats reconcile against the RESTORED lanes
+  // only — the absorption lane is in `total`/`absorbedTotal`, never in `count`/`overheal`.
+  const restored = h.spells.filter((x) => x.classification === 'restored')
+  assert.equal(restored.reduce((s, x) => s + x.total, 0), h.total - h.absorbedTotal)
+  assert.equal(restored.reduce((s, x) => s + x.overheal, 0), h.overheal)
+  assert.equal(restored.reduce((s, x) => s + x.count, 0), h.count)
+  assert.equal(h.spells.reduce((s, x) => s + x.total, 0), h.total, 'all lanes sum to the row total')
 })
 
-test('W27: eleven rune grants sum to 149, and the absorbed swing is a COUNT with no amount', { skip: have(W27) }, () => {
+test('W27: eleven rune grants sum into the total, and the absorbed swing is a COUNT with no amount', { skip: have(W27) }, () => {
   const seg = replay(W27)
   const mit = seg.healing.mitigation
   assert.equal(mit.runeTotal, 149)
@@ -282,9 +357,35 @@ test('W27: eleven rune grants sum to 149, and the absorbed swing is a COUNT with
   assert.equal(mit.runeMin, 1)
   assert.equal(mit.absorbedSwings, 1)
   assert.equal(mit.absorbedDamageShields, 0)
-  // The absorbed swing contributed nothing to any amount-bearing figure.
-  assert.equal(seg.healing.total, 2274)
-  assert.equal(mit.runeTotal, 149)
+
+  // The rune amounts are in the ledger…
+  const r = rune(seg)
+  assert.equal(r.total, 149)
+  assert.equal(r.count, 11)
+  assert.equal(seg.healing.absorbedTotal, 149)
+  assert.equal(seg.healing.restoredTotal, 2274, 'the heal lines are untouched by the fold')
+  assert.equal(seg.healing.total, 2423, '2274 restored + 149 absorbed')
+
+  // The flat drill ranks the absorption lane in with the heal spells, biggest first.
+  assert.deepEqual(
+    you(seg).spells.map((s) => [s.name, s.total, s.classification]),
+    [
+      ['Lay on Hands VI', 1351, 'restored'],
+      ['Healing', 923, 'restored'],
+      [RUNE_LANE, 149, 'absorbed']
+    ]
+  )
+
+  // …but the absorbed SWING is not, and cannot be: the log gives it no amount. The whole ledger
+  // must be explainable by the rows, so a fabricated value would show up right here.
+  assert.equal(seg.healing.total, seg.healing.healers.reduce((s, x) => s + x.total, 0))
+  assert.equal(
+    seg.healing.absorbedTotal,
+    mit.runeTotal,
+    'absorbed total is rune grants ONLY — the count-only families contribute nothing'
+  )
+  // Overheal is unchanged by the fold: absorption adds none.
+  assert.equal(seg.healing.overheal, 4617)
 })
 
 // ---------------------------------------------------------------------------
@@ -293,8 +394,16 @@ test('W27: eleven rune grants sum to 149, and the absorbed swing is a COUNT with
 
 test('W28: a mob self-healing ranks on the ENEMY ledger, never in "who kept me alive"', { skip: have(W28) }, () => {
   const seg = replay(W28)
-  assert.deepEqual(seg.healing.healers, [], 'nothing healed You in this window')
-  assert.equal(seg.healing.total, 0)
+  // Nothing HEALED You in this window, so the friendly ledger holds only a SYNTHESIZED self row
+  // carrying the absorption lane — a mob's self-heal can never appear here.
+  assert.deepEqual(
+    seg.healing.healers.map((h) => h.id),
+    [SELF_ROW_ID]
+  )
+  assert.equal(you(seg).count, 0, 'zero heal lines — the row exists purely for absorption')
+  assert.deepEqual(you(seg).spells.map((s) => s.name), [RUNE_LANE])
+  assert.equal(seg.healing.restoredTotal, 0, 'no hit points were restored to You')
+  assert.equal(seg.healing.total, 66, 'absorption only: 16+5+1+9+11+24')
 
   // 2 (Lifespike) + 64 (the 15:55:38 Skin like Rock). The 15:55:23 Skin like Rock is deliberately
   // NOT here: the ranger had not been engaged yet, so that heal undid none of our damage.
@@ -321,6 +430,85 @@ test('W28: absorbed damage-shield ticks are counted, never valued', { skip: have
   assert.equal(mit.runeCount, 6)
   assert.equal(mit.runeMax, 24)
   assert.equal(mit.runeMin, 1)
+
+  // The three absorbed thorns ticks add nothing anywhere: the absorbed total is exactly the rune
+  // grants. If a future change ever invents a per-tick value, this is where it breaks.
+  assert.equal(seg.healing.absorbedTotal, 66)
+  assert.equal(seg.healing.total, 66)
+  const r = rune(seg)
+  assert.equal(r.count, 6, 'the 3 damage-shield absorbs are NOT counted as rune grants either')
+  assert.equal(r.min, 1)
+  assert.equal(r.max, 24)
+  // An absorption-only segment still reports an honest rate off the same total.
+  assert.equal(seg.healing.hps, 66 / Math.max(1, seg.durationSec))
+})
+
+// ---------------------------------------------------------------------------
+// Cross-cutting invariants of the fold (they must hold in EVERY window).
+// ---------------------------------------------------------------------------
+
+test('the classification split is exact and absorption never carries overheal', { skip: have(W26) || have(W27) || have(W28) }, () => {
+  for (const fixture of [W26, W27, W28]) {
+    const seg = replay(fixture)
+    const hv = seg.healing
+    const laneSum = (h: HealSourceView, cls: string): number =>
+      h.spells.filter((l) => l.classification === cls).reduce((s, l) => s + l.total, 0)
+
+    for (const h of hv.healers) {
+      // Every LANE is classified, and the lanes partition the row's total exactly.
+      for (const l of h.spells) {
+        assert.ok(
+          l.classification === 'restored' || l.classification === 'absorbed',
+          `${fixture}: ${h.name}/${l.name} must be classified`
+        )
+        if (l.classification === 'absorbed') {
+          assert.equal(l.overheal, 0, `${fixture}: absorption must never carry a fabricated overheal`)
+          assert.equal(l.crits, 0, `${fixture}: absorption must never carry a fabricated crit`)
+        }
+      }
+      assert.equal(h.spells.reduce((s, x) => s + x.total, 0), h.total, `${fixture}: ${h.name} lanes`)
+      assert.equal(laneSum(h, 'absorbed'), h.absorbedTotal, `${fixture}: ${h.name} absorbed split`)
+      assert.equal(laneSum(h, 'restored'), h.total - h.absorbedTotal, `${fixture}: ${h.name} restored`)
+      // The row's HEAL stats never absorb a rune grant.
+      assert.equal(
+        h.spells.filter((l) => l.classification === 'restored').reduce((s, l) => s + l.count, 0),
+        h.count,
+        `${fixture}: ${h.name} count is heal LINES only`
+      )
+      // FLAT list: one ranked run, no grouping — strictly descending by amount.
+      for (let i = 1; i < h.spells.length; i++) {
+        assert.ok(h.spells[i - 1].total >= h.spells[i].total, `${fixture}: ${h.name} lanes ranked`)
+      }
+      // Only the SELF row may carry absorption: a rune is yours.
+      if (h.absorbedTotal > 0) assert.equal(h.id, SELF_ROW_ID, `${fixture}: absorption on self only`)
+    }
+
+    assert.equal(
+      hv.absorbedTotal,
+      hv.healers.reduce((s, h) => s + h.absorbedTotal, 0),
+      `${fixture}: absorbed`
+    )
+    assert.equal(hv.restoredTotal + hv.absorbedTotal, hv.total, `${fixture}: split is exact`)
+    assert.equal(hv.total, hv.healers.reduce((s, h) => s + h.total, 0), `${fixture}: rows sum`)
+    // Only rune grants have amounts, so the absorbed total is exactly the rune counter — the two
+    // count-only families (absorbed swings, thorns) are valued nowhere.
+    assert.equal(hv.absorbedTotal, hv.mitigation.runeTotal, `${fixture}: count-only families excluded`)
+    // The overheal total is the rows' overheal — the fold added nothing to it.
+    assert.equal(hv.overheal, hv.healers.reduce((s, h) => s + h.overheal, 0))
+
+    // The ENEMY ledger gets no absorption: runes are ours, and a mob's own shield is a miss.
+    assert.ok(hv.enemyHealers.every((h) => h.absorbedTotal === 0), `${fixture}: enemy`)
+    assert.ok(
+      hv.enemyHealers.every((h) => h.spells.every((l) => l.classification === 'restored')),
+      `${fixture}: enemy lanes`
+    )
+    assert.equal(hv.enemyTotal, seg.enemyHealTotal, `${fixture}: enemy annotation unchanged`)
+
+    // Ranking: rows are sorted by total desc, absorption included in the ordering.
+    for (let i = 1; i < hv.healers.length; i++) {
+      assert.ok(hv.healers[i - 1].total >= hv.healers[i].total, `${fixture}: rows ranked by total`)
+    }
+  }
 })
 
 // ---------------------------------------------------------------------------
