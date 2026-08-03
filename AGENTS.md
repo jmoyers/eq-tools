@@ -319,10 +319,19 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 - CI (`.github/workflows/build.yml`) runs `npm test` — the FULL golden-window
   suite, since `tests/fixtures/*.log` is now committed (see Operating model).
   Only the full-log tests still skip there (the real game log isn't in CI).
-- CI: push to main → prerelease on the
-  `main` update channel (version stamped `-main.<run>`); tag `v*` → stable
-  (`latest`). After cutting a stable tag, BUMP package.json base version so
-  main-channel stays semver-newer. Azure Trusted Signing wiring is inert
+- CI: **publish on tags ONLY** (reworked 2026-08-03; the per-push `-main.<run>`
+  prerelease spam is gone — it filled Releases with lexically-mis-sorted
+  auto-builds). Push to main → typecheck/test/build, installer as CI artifact,
+  nothing published. Tag `v*` → the one publish path: a full release whose
+  version is STAMPED FROM THE TAG in CI (package.json is never committed with
+  it, and can't drift from the tag — the old "bump after tagging" rule is
+  dead). Release process: `git tag vX.Y.Z && git push origin vX.Y.Z`. Semver,
+  increment per release; first stable is v0.1.0.
+- **main.yml BRIDGE (do not remove)**: every install to date polls the 'main'
+  channel feed. A stable release natively writes only latest.yml, so the tag
+  job uploads a copy as main.yml on the same release — semver puts `X.Y.Z`
+  above `X.Y.Z-main.N`, so old main-channel installs step up to stables
+  instead of stalling forever. Azure Trusted Signing wiring is inert
   until 6 `AZURE_*` repo secrets exist (account `jmoyers-eqtools` — an
   EXTERNAL Azure resource name, deliberately not renamed; endpoint
   `https://eus.codesigning.azure.net/`; identity validation pending).

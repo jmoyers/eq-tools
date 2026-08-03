@@ -1,23 +1,33 @@
-# Build + publish the Windows installer (Tasks #26/#27).
+# Build the Windows installer; PUBLISH ONLY ON TAGS.
 #
-# TWO TRIGGERS, TWO CHANNELS — one job, branched by ref:
+# The old model published a GitHub prerelease on EVERY push to main, stamped
+# `<base>-main.<run_number>`. That filled the Releases list with dozens of
+# auto-builds that sort lexicographically (main.9 above main.31), and half of
+# them predate the eq-tools → everquest-companion rename, so their assets carry
+# the dead name. Publishing is now an explicit human act:
 #
-#   push to `main`      → channel 'main'   : a GitHub *prerelease* on every push.
-#                         Version is stamped to `<pkg>-main.<run_number>` (a valid
-#                         semver prerelease) so electron-updater's 'main' channel
-#                         sees each build as newer. Users on the default 'main'
-#                         channel auto-update to the latest push.
+#   push to `main`      → typecheck + test + build the installer as a CI
+#                         ARTIFACT only. Nothing is published; no tag, no
+#                         release, no update-feed movement.
 #
-#   push tag `v*`       → channel 'latest' : a full (non-prerelease) GitHub release,
-#                         version = the tag (no suffix). Users on 'stable' get these.
+#   push tag `v*`       → the ONE publish path: a full (non-prerelease) GitHub
+#                         Release. The version is stamped FROM THE TAG (CI-only
+#                         rewrite of package.json, never committed), so a tag
+#                         can never ship a mismatched package.json version and
+#                         "remember to bump after tagging" is no longer a rule.
 #
-# electron-builder publishes to this repo's Releases via GITHUB_TOKEN (the publish
-# block in electron-builder.yml points at jmoyers/everquest-companion). No extra secrets — the
-# app is UNSIGNED (no code-signing cert configured), which is intentional for now.
+# UPDATE-CHANNEL CONTINUITY (do not remove the main.yml bridge): every install
+# to date polls the 'main' channel feed (main.yml) — the app's default channel.
+# A stable release natively writes only latest.yml, so without a bridge every
+# existing install would silently stop updating forever. After publishing, we
+# upload a COPY of latest.yml as main.yml on the same release: semver puts
+# `X.Y.Z` above `X.Y.Z-main.N`, so main-channel installs step up to the stable
+# build on their next check. (The channel lives in the FILENAME, not the yml
+# body — a byte copy is the whole bridge.)
 #
-# The `channel` electron-builder writes into latest*.yml is controlled by
-# EP_PRE_RELEASE + the generateUpdatesFilesForAllChannels/nsis `channel` — we set it
-# explicitly per branch below via the `--config` overrides.
+# electron-builder publishes via GITHUB_TOKEN (publish block in
+# electron-builder.yml). Azure Trusted Signing stays inert until the 6 AZURE_*
+# repo secrets exist; args are conditional below.
 
 name: build
 
@@ -49,43 +59,33 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      # Unit + golden-window tests. NOTE: tests/fixtures/*.log are gitignored
-      # (blanket `*.log`), so fixture-backed golden windows SKIP here and run
-      # only on a machine with the real game log. What runs in CI is the
-      # log-independent suite — real coverage, but not the full law.
+      # Unit + golden-window tests. tests/fixtures/*.log are committed (scrubbed),
+      # so the fixture-backed golden windows run here too; only the full-log tests
+      # (which need the real, growing game log) skip in CI.
       - name: Test
         run: npm test
 
-      # --- MAIN CHANNEL (push to main): stamp a prerelease version + publish ---
-      # electron-updater needs a semver-newer version each push. We rewrite
-      # package.json's version to `<base>-main.<run_number>` in CI ONLY (never
-      # committed) and publish on the 'main' channel as a GitHub prerelease.
-      - name: Stamp main-channel prerelease version
-        if: github.ref == 'refs/heads/main'
+      # --- TAGGED RELEASE ONLY: stamp the version from the tag ----------------
+      # CI-only rewrite (never committed): the tag IS the version. A v1.2.3 push
+      # builds 1.2.3 regardless of what package.json says, so the two cannot drift.
+      - name: Stamp version from tag
+        if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         run: |
-          $pkg = Get-Content package.json -Raw | ConvertFrom-Json
-          $base = $pkg.version -replace '-.*$', ''
-          $stamped = "$base-main.${{ github.run_number }}"
-          $pkg.version = $stamped
-          $pkg | ConvertTo-Json -Depth 100 | Set-Content package.json -Encoding utf8
-          Write-Host "Stamped version: $stamped"
+          $ver = $env:GITHUB_REF_NAME -replace '^v', ''
+          npm version --no-git-tag-version --allow-same-version $ver
+          Write-Host "Stamped version from tag: $ver"
 
-      # --- CODE SIGNING (Azure Trusted Signing) -------------------------------
-      # Inert until the Azure secrets exist. Once the Trusted Signing account's
-      # identity validation completes, set these repo secrets and every build is
-      # signed automatically (electron-builder has native azureSignOptions):
+      # --- Build. On main: artifact only. On tag: build then publish. ---------
+      # Azure Trusted Signing (inert until the AZURE_* secrets exist):
       #   AZURE_TENANT_ID / AZURE_CLIENT_ID / AZURE_CLIENT_SECRET  (app registration)
       #   AZURE_SIGNING_ENDPOINT  e.g. https://eus.codesigning.azure.net
       #   AZURE_SIGNING_ACCOUNT   the Trusted Signing account name
       #   AZURE_SIGNING_PROFILE   the certificate profile name
-      - name: Build + publish (main channel prerelease)
-        if: github.ref == 'refs/heads/main'
+      - name: Build installer
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # electron-builder reads GH_TOKEN for the github publisher.
-          EP_PRE_RELEASE: 'true'
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -105,34 +105,30 @@ jobs:
           } else {
             Write-Host "Code signing: skipped (no Azure secrets configured)."
           }
-          npx electron-builder --win --publish always --config.nsis.artifactName='everquest-companion-Setup-${version}.${ext}' --config.publish.channel=main @signArgs
+          if ($env:GITHUB_REF -like 'refs/tags/v*') {
+            # releaseType=release → a full (non-draft, non-prerelease) GitHub
+            # Release, live immediately for the update feeds.
+            npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=release @signArgs
+          } else {
+            npx electron-builder --win --publish never @signArgs
+          }
 
-      # --- STABLE CHANNEL (tag v*): full release on the 'latest' channel ---
-      - name: Build + publish (stable / tagged release)
+      # --- TAGGED RELEASE ONLY: main-channel continuity bridge ----------------
+      # See the header comment. latest.yml and main.yml differ only by filename;
+      # uploading the copy lets every existing main-channel install update to
+      # this stable build instead of stalling forever.
+      - name: Bridge main-channel feed (main.yml)
         if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          AZURE_SIGNING_ENDPOINT: ${{ secrets.AZURE_SIGNING_ENDPOINT }}
-          AZURE_SIGNING_ACCOUNT: ${{ secrets.AZURE_SIGNING_ACCOUNT }}
-          AZURE_SIGNING_PROFILE: ${{ secrets.AZURE_SIGNING_PROFILE }}
         run: |
-          npm run build
-          $signArgs = @()
-          if ($env:AZURE_TENANT_ID) {
-            $signArgs = @(
-              "--config.win.azureSignOptions.endpoint=$env:AZURE_SIGNING_ENDPOINT",
-              "--config.win.azureSignOptions.codeSigningAccountName=$env:AZURE_SIGNING_ACCOUNT",
-              "--config.win.azureSignOptions.certificateProfileName=$env:AZURE_SIGNING_PROFILE"
-            )
-          }
-          # releaseType=release → a full (non-draft, non-prerelease) GitHub Release.
-          # Without it electron-builder defaults to a draft; we want it live for the
-          # 'latest' update channel. The tag itself is the version (no suffix).
-          npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=release @signArgs
+          $ver = $env:GITHUB_REF_NAME -replace '^v', ''
+          $src = "release/$ver/latest.yml"
+          if (-not (Test-Path $src)) { throw "expected feed file not found: $src" }
+          Copy-Item $src main.yml
+          gh release upload $env:GITHUB_REF_NAME main.yml --clobber
+          Write-Host "Uploaded main.yml bridge for $env:GITHUB_REF_NAME"
 
       - name: Upload installer artifact (CI record)
         uses: actions/upload-artifact@v4
