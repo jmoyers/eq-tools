@@ -32,6 +32,7 @@ import StarIcon from '@mui/icons-material/Star'
 import StarBorderIcon from '@mui/icons-material/StarBorder'
 import LinkIcon from '@mui/icons-material/Link'
 import type { CountSource } from '@shared/types'
+import { skyQuestPage, wikiPageUrl } from '@shared/wiki'
 import { useProgress, type QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
 import { formatDateTime } from '../../lib/formatDate'
@@ -56,10 +57,9 @@ function loadSelectedClasses(): string[] {
   }
 }
 
-const WIKI_BASE = 'https://eqlwiki.com/'
-
-function wikiClassPage(className: string): string {
-  return `${WIKI_BASE}${encodeURIComponent(`${className} Plane of Sky Tests`.replace(/ /g, '_'))}`
+// Wiki URLs are built in ONE place (src/shared/wiki.ts) — the verified root-path convention.
+function wikiClassPage(className: string): string | undefined {
+  return wikiPageUrl(skyQuestPage(className))
 }
 
 function ProgressBar({ q }: { q: QuestProgress }): JSX.Element {
@@ -311,6 +311,7 @@ export default function PoskyView(): JSX.Element {
       <Box sx={{ flexGrow: 1, overflow: 'auto' }}>
         {filtered.slice(0, visibleCount).map((q) => {
           const shared = sharedItems.get(q.key) ?? []
+          const wikiHref = wikiClassPage(q.className)
           return (
           <Accordion key={q.key} disableGutters>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -397,9 +398,11 @@ export default function PoskyView(): JSX.Element {
               <Stack direction="row" spacing={2} sx={{ mb: 1 }} alignItems="center" flexWrap="wrap" useFlexGap>
                 {q.rune && <Chip size="small" label={`Rune: ${q.rune}`} />}
                 {q.giver && <Chip size="small" label={`Giver: ${q.giver}`} />}
-                <Link href={wikiClassPage(q.className)} target="_blank" rel="noreferrer" variant="caption">
-                  wiki: {q.className} Plane of Sky Tests
-                </Link>
+                {wikiHref && (
+                  <Link href={wikiHref} target="_blank" rel="noreferrer" variant="caption">
+                    wiki: {q.className} Plane of Sky Tests
+                  </Link>
+                )}
                 <Box sx={{ flexGrow: 1 }} />
                 <FormControlLabel
                   control={

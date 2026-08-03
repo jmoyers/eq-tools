@@ -235,6 +235,14 @@ test('H wiki link helpers follow the verified eqlwiki convention', () => {
     'https://eqlwiki.com/Enchanter_Plane_of_Sky_Tests'
   )
   assert.ok(!wikiPageUrl('Mask of Song')!.includes('/wiki/'), 'the /wiki/ path 404s on this site')
+  // Apostrophes are LEGAL in a MediaWiki title and must survive verbatim — encodeURI leaves
+  // them alone (encodeURIComponent would too, but it also escapes the reserved chars that
+  // make other titles work). Verified live 2026-08-02: this exact URL returns 200.
+  assert.equal(
+    wikiPageUrl("Ervaj's Flute of Flight"),
+    "https://eqlwiki.com/Ervaj's_Flute_of_Flight"
+  )
+  assert.equal(wikiPageUrl(null), undefined)
   assert.equal(wikiPageUrl(undefined), undefined, 'no page ⇒ no link (never a dead href)')
   assert.equal(wikiPageUrl('   '), undefined)
   assert.equal(skyQuestPage('Paladin'), 'Paladin Plane of Sky Tests')

@@ -15,6 +15,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import type { ItemKnowledge, LootEvent } from '@shared/types'
+import { wikiPageUrl } from '@shared/wiki'
 import { formatDate } from '../../lib/formatDate'
 import { EQ_ITEM_COLORS, ItemWindow } from '../../lib/ItemWindow'
 
@@ -74,9 +75,10 @@ function KnowledgeSection({ data, loading }: { data: ItemKnowledge | null; loadi
   // to ordinary vendor trash). If it was offline/notFound with no local data, also silent.
   if (!hasSomething) return null
 
-  const wikiUrl = data.page
-    ? `https://eqlwiki.com/wiki/${encodeURIComponent(data.page.replace(/ /g, '_'))}`
-    : undefined
+  // ONE place builds eqlwiki URLs (src/shared/wiki.ts): eqlwiki serves articles from the
+  // ROOT — the `/wiki/<Title>` form this used to build 404s for EVERY item. Undefined when
+  // there's no page title, so the link is rendered only when it can actually go somewhere.
+  const wikiUrl = wikiPageUrl(data.page)
 
   return (
     <Box sx={{ mb: 2 }}>
