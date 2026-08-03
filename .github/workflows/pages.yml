@@ -1,0 +1,72 @@
+# Publish the landing page (site/) to GitHub Pages.
+#
+# `site/` is a dependency-free static page — no build step, no framework, no
+# external requests except a GitHub Releases API call the page makes at runtime.
+# So this workflow only uploads the directory as-is and deploys it.
+#
+# Deployment is the official Actions flow (configure-pages → upload-pages-artifact
+# → deploy-pages), NOT the legacy "push to gh-pages branch" model: it needs the
+# repo's Pages source set to "GitHub Actions" (`gh api repos/<owner>/<repo>/pages
+# -X POST -f build_type=workflow`, done once).
+#
+# The download button on the page points at
+# /releases/latest/download/everquest-companion-Setup.exe — a stable-named copy of
+# the installer that build.yml uploads on every tagged release. That means the
+# site does NOT need to be redeployed when a release ships; it only redeploys when
+# site/** itself changes.
+#
+# Site URL: https://jmoyers.github.io/everquest-companion/
+#
+# ACTION PINNING: `uses:` refs are full commit SHAs with the floating tag in the
+# trailing comment — a `@v4` tag is a mutable pointer the action's owner can
+# repoint at any time, and this job holds `id-token: write` (it can mint an OIDC
+# token for this repo). Re-resolve with
+# `gh api repos/<owner>/<action>/git/ref/tags/<tag> --jq .object.sha` when bumping.
+
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+# Nothing is granted workflow-wide; the deploy job names exactly what it needs.
+permissions: {}
+
+# One deployment at a time; never cancel one mid-flight (a half-applied Pages
+# deploy would serve a mixed tree).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # checkout
+      pages: write # create the Pages deployment
+      id-token: write # OIDC token deploy-pages exchanges for the upload
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        with:
+          # Nothing here pushes; don't leave the token in the runner's git config.
+          persist-credentials: false
+
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5 (v5.0.0)
+
+      - name: Upload site/
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3 (v3.0.1)
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4 (v4.0.5)

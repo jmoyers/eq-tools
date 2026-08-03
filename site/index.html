@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EQ Legends Companion, a DPS meter and log reader for EverQuest Legends</title>
+    <meta
+      name="description"
+      content="A Windows desktop companion for EverQuest Legends. It reads the log the game already writes and shows you what happened: a DPS meter, floating overlays, quest and loot tracking, sound alerts."
+    />
+    <meta name="theme-color" content="#0f1017" />
+    <link rel="icon" href="assets/icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:title" content="EQ Legends Companion" />
+    <meta
+      property="og:description"
+      content="Reads the log EverQuest Legends already writes: live DPS meter, floating overlays, quest and loot tracking, sound alerts."
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="skip" href="#features">Skip to features</a>
+
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <span class="brand">
+          <img class="brand-mark" src="assets/icon.png" alt="" width="24" height="24" />
+          <span>EQ Legends Companion</span>
+        </span>
+        <nav class="topnav">
+          <a href="#features">Features</a>
+          <a href="#author">Author</a>
+          <a href="https://github.com/jmoyers/everquest-companion">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================================ HERO ================================ -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <h1>EQ Legends Companion</h1>
+            <p class="pitch">
+              A Windows app for <strong>EverQuest Legends</strong>. It reads the log file the game
+              already writes and shows you what actually happened. A DPS meter, floating overlays,
+              quest and loot tracking, sound alerts.
+            </p>
+
+            <div class="cta">
+              <a
+                class="btn"
+                id="download"
+                href="https://github.com/jmoyers/everquest-companion/releases/latest/download/everquest-companion-Setup.exe"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M12 3v10.6l3.3-3.3 1.4 1.4L12 16.4l-4.7-4.7 1.4-1.4 3.3 3.3V3h2zM5 18h14v2H5v-2z"
+                  />
+                </svg>
+                Download for Windows
+              </a>
+              <p class="relmeta" id="relmeta">
+                <span id="relmeta-text">Latest release. One-click install, no admin prompt.</span>
+              </p>
+            </div>
+
+            <p class="smartscreen">
+              It is not code-signed yet, so Windows SmartScreen shows a blue
+              <em>“Windows protected your PC”</em> warning the first time you run the installer.
+              Click <strong>More info</strong>, then <strong>Run anyway</strong>. You see it once.
+            </p>
+
+            <p class="trust">
+              <strong>It only reads your log.</strong> Nothing is injected into EverQuest. No game
+              files are touched, no memory is read, and nothing is played for you. Turn logging off
+              and the app has nothing to show.
+            </p>
+          </div>
+
+          <!-- Hand-built illustration of the combat dashboard. Not a screenshot. -->
+          <figure
+            class="mock mock--hero"
+            role="img"
+            aria-label="The combat dashboard: a scope toggle set to Fight, the current target, a live damage-per-second curve, and ranked bars for your damage, your pet's damage and incoming damage."
+          >
+            <div aria-hidden="true">
+              <div class="mtop">
+                <span class="seg"><span class="on">Fight</span><span>Overall</span></span>
+                <span class="msubj">
+                  <b><i class="live"></i>a zol ghoul knight</b>
+                  <i>Plane of Fear · 3:24</i>
+                </span>
+                <span class="mstat"><b>1,412</b><i>dps · 84.2k</i></span>
+              </div>
+
+              <div class="mhd">DPS over time <span class="r">2,180 peak</span></div>
+              <svg class="msvg" viewBox="0 0 520 92" preserveAspectRatio="none">
+                <polygon
+                  fill="#d9b25f"
+                  opacity="0.16"
+                  points="8,74 36,58 64,40 92,46 120,28 148,33 176,18 204,26 232,14 260,30 288,22 316,12 344,26 372,20 400,34 428,24 456,40 484,30 512,52 512,88 8,88"
+                />
+                <polyline
+                  fill="none"
+                  stroke="#d9b25f"
+                  stroke-width="2"
+                  points="8,74 36,58 64,40 92,46 120,28 148,33 176,18 204,26 232,14 260,30 288,22 316,12 344,26 372,20 400,34 428,24 456,40 484,30 512,52"
+                />
+                <polyline
+                  fill="none"
+                  stroke="#6fb3d2"
+                  stroke-width="1.4"
+                  opacity="0.85"
+                  points="8,82 36,76 64,70 92,74 120,64 148,68 176,58 204,64 232,56 260,66 288,60 316,54 344,64 372,58 400,68 428,62 456,72 484,66 512,78"
+                />
+                <polyline
+                  fill="none"
+                  stroke="#cf6679"
+                  stroke-width="1.2"
+                  opacity="0.55"
+                  points="8,88 36,80 64,84 92,78 120,82 148,76 176,80 204,74 232,80 260,76 288,82 316,78 344,84 372,78 400,82 428,80 456,84 484,82 512,88"
+                />
+              </svg>
+              <div class="legend">
+                <span><i style="background: #d9b25f"></i>you + pet</span>
+                <span><i style="background: #6fb3d2"></i>pet</span>
+                <span><i style="background: #cf6679"></i>incoming</span>
+              </div>
+
+              <div class="mhd">Damage by source <span class="r">84.2k out</span></div>
+              <div class="mrow">
+                <i class="stripe" style="background: #d9b25f"></i>
+                <i class="fill" style="width: 100%; background: #d9b25f"></i>
+                <span class="rk">1</span>
+                <span class="nm">Braxus</span>
+                <span class="sub">1,029 dps · 14% miss</span>
+                <span class="val">61.4k</span>
+              </div>
+              <div class="mrow">
+                <i class="stripe" style="background: #6fb3d2"></i>
+                <i class="fill" style="width: 37%; background: #6fb3d2"></i>
+                <span class="rk">2</span>
+                <span class="nm">Vexthar</span>
+                <span class="sub">pet · 382 dps</span>
+                <span class="val">22.8k</span>
+              </div>
+
+              <div class="mhd">Incoming <span class="r">98 dps taken</span></div>
+              <div class="mrow">
+                <i class="stripe" style="background: #cf6679"></i>
+                <i class="fill" style="width: 26%; background: #cf6679"></i>
+                <span class="rk">1</span>
+                <span class="nm">a zol ghoul knight</span>
+                <span class="sub">31% you avoided</span>
+                <span class="val">5.9k</span>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ============================== FEATURES ============================== -->
+      <section id="features" class="features">
+        <div class="wrap">
+          <h2 class="section-title">What it does</h2>
+
+          <div class="row">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="The damage breakdown: ranked bars for melee, Slay Undead, a nuke, kick and a damage shield, each showing miss rate, damage range and total."
+            >
+              <div aria-hidden="true">
+                <div class="mhd">Breakdown · Braxus <span class="r">61.4k · 1,029 dps</span></div>
+                <div class="mrow">
+                  <i class="stripe" style="background: #d9b25f"></i>
+                  <i class="fill" style="width: 100%; background: #d9b25f"></i>
+                  <span class="nm">Melee</span>
+                  <span class="sub"><span class="miss">14% miss</span> · 88 - 412dmg</span>
+                  <span class="val">31.4k</span>
+                </div>
+                <div class="mrow">
+                  <i class="stripe" style="background: #f6f0da"></i>
+                  <i class="fill" style="width: 45%; background: #f6f0da"></i>
+                  <span class="nm">Slay Undead</span>
+                  <span class="sub">3 skills · 640 - 1.9k dmg</span>
+                  <span class="val">14.2k</span>
+                </div>
+                <div class="mrow">
+                  <i class="stripe" style="background: #a98fe0"></i>
+                  <i class="fill" style="width: 31%; background: #a98fe0"></i>
+                  <span class="nm">Flame of Light</span>
+                  <span class="sub"><span class="miss">18% resist</span> · 1.1k - 1.4k dmg</span>
+                  <span class="val">9.6k</span>
+                </div>
+                <div class="mrow">
+                  <i class="stripe" style="background: #d9b25f"></i>
+                  <i class="fill" style="width: 14%; background: #d9b25f"></i>
+                  <span class="nm">Kick</span>
+                  <span class="sub"><span class="miss">9% miss</span> · 61 - 288dmg</span>
+                  <span class="val">4.3k</span>
+                </div>
+                <div class="mrow">
+                  <i class="stripe" style="background: #cf6679"></i>
+                  <i class="fill" style="width: 6%; background: #cf6679"></i>
+                  <span class="nm">Damage shield</span>
+                  <span class="sub">74dmg</span>
+                  <span class="val">1.9k</span>
+                </div>
+                <p class="mnote">Click a row for hits, crits, misses, resists and the average.</p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Live DPS meter</h3>
+              <p>
+                The meter reads your log as you play. Click a fight to see every hit, miss and
+                resist that made the number. <em>Fight</em> and <em>Overall</em> are a scope you
+                pick, so a fight meter never quietly shows you zone numbers.
+              </p>
+              <p class="fine">
+                Misses and resists are kept as real events that carry no damage. Hit rate and resist
+                rate are counted, not estimated.
+              </p>
+            </div>
+          </div>
+
+          <div class="row row--flip">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="The fight timeline: one lane per skill, filled marks where damage landed, hollow red marks for misses and resists, and a time axis across the whole pull."
+            >
+              <div aria-hidden="true">
+                <div class="mhd">
+                  a zol ghoul knight · timeline <span class="r">3:24 · 5,412 events</span>
+                </div>
+                <svg class="msvg" viewBox="0 0 520 200">
+                  <text x="108" y="16" text-anchor="end" font-size="10" fill="#9aa0aa">Stance</text>
+  <rect x="130" y="4" width="342" height="14" rx="2" fill="rgba(217,178,95,0.28)" stroke="#d9b25f" stroke-width="0.5" />
+  <text x="136" y="15" font-size="9" fill="#e6e6e6">Berserker</text>
+  <text x="108" y="34" text-anchor="end" font-size="10" fill="#9aa0aa">Invocation</text>
+  <rect x="150" y="22" width="104" height="14" rx="2" fill="rgba(169,143,224,0.28)" stroke="#a98fe0" stroke-width="0.5" />
+  <text x="156" y="33" font-size="9" fill="#e6e6e6">Inversion</text>
+  <rect x="320" y="22" width="112" height="14" rx="2" fill="rgba(169,143,224,0.28)" stroke="#a98fe0" stroke-width="0.5" />
+  <text x="326" y="33" font-size="9" fill="#e6e6e6">Inversion</text>
+  <text x="104" y="66" text-anchor="end" font-size="12" fill="#c8c8c8">Melee</text>
+  <rect x="112" y="50" width="2" height="22" fill="#d9b25f" opacity="0.8" />
+  <rect x="128" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="145.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="163" y="49" width="2" height="24" fill="none" stroke="#e05663" stroke-width="0.9" opacity="0.85" />
+  <rect x="180.5" y="47" width="4" height="28" fill="#d9b25f" />
+  <rect x="198" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="215.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="233" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="250.5" y="49" width="2" height="24" fill="none" stroke="#e05663" stroke-width="0.9" opacity="0.85" />
+  <rect x="268" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="285.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="303" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="320.5" y="47" width="4" height="28" fill="#d9b25f" />
+  <rect x="338" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="355.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="373" y="49" width="2" height="24" fill="none" stroke="#e05663" stroke-width="0.9" opacity="0.85" />
+  <rect x="390.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="408" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="425.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="443" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="460.5" y="49" width="2" height="24" fill="none" stroke="#e05663" stroke-width="0.9" opacity="0.85" />
+  <rect x="478" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="495.5" y="50" width="3" height="22" fill="#d9b25f" />
+  <rect x="0" y="78" width="520" height="30" fill="rgba(255,255,255,0.02)" />
+  <text x="104" y="98" text-anchor="end" font-size="12" fill="#c8c8c8">Slay Undead</text>
+  <rect x="112" y="82" width="2" height="22" fill="#f6f0da" opacity="0.8" />
+  <rect x="128" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="175" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="222" y="79" width="4" height="28" fill="#f6f0da" />
+  <rect x="269" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="316" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="363" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="410" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="457" y="82" width="3" height="22" fill="#f6f0da" />
+  <rect x="504" y="82" width="3" height="22" fill="#f6f0da" />
+  <text x="104" y="130" text-anchor="end" font-size="12" fill="#c8c8c8">Flame of Light</text>
+  <rect x="112" y="114" width="2" height="22" fill="#a98fe0" opacity="0.8" />
+  <rect x="128" y="114" width="3" height="22" fill="#a98fe0" />
+  <rect x="176" y="114" width="3" height="22" fill="#a98fe0" />
+  <circle cx="225.5" cy="125" r="3.5" fill="none" stroke="#e05663" stroke-width="1.2" />
+  <rect x="272" y="114" width="3" height="22" fill="#a98fe0" />
+  <rect x="320" y="114" width="3" height="22" fill="#a98fe0" />
+  <circle cx="369.5" cy="125" r="3.5" fill="none" stroke="#e05663" stroke-width="1.2" />
+  <rect x="416" y="114" width="3" height="22" fill="#a98fe0" />
+  <rect x="464" y="114" width="3" height="22" fill="#a98fe0" />
+  <rect x="0" y="142" width="520" height="30" fill="rgba(255,255,255,0.02)" />
+  <text x="104" y="162" text-anchor="end" font-size="12" fill="#c8c8c8">Damage shield</text>
+  <rect x="112" y="146" width="2" height="22" fill="#cf6679" opacity="0.8" />
+  <rect x="128" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="146.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="165" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="183.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="202" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="220.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="239" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="257.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="276" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="294.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="313" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="331.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="350" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="368.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="387" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="405.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="424" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="442.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="461" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="479.5" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <rect x="498" y="146" width="3" height="22" fill="#cf6679" opacity="0.5" />
+  <line x1="122" y1="178" x2="512" y2="178" stroke="rgba(255,255,255,0.15)" />
+  <text x="122" y="192" text-anchor="start" font-size="10" fill="#9aa0aa">0:00</text>
+  <text x="220" y="192" text-anchor="middle" font-size="10" fill="#9aa0aa">0:51</text>
+  <text x="317" y="192" text-anchor="middle" font-size="10" fill="#9aa0aa">1:42</text>
+  <text x="415" y="192" text-anchor="middle" font-size="10" fill="#9aa0aa">2:33</text>
+  <text x="512" y="192" text-anchor="end" font-size="10" fill="#9aa0aa">3:24</text>
+                </svg>
+                <p class="mnote">
+                  Scroll to zoom, drag to pan. <span class="key">Hollow red</span> is a miss or a
+                  resist.
+                </p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Fight timeline</h3>
+              <p>
+                The whole pull on one timeline, a lane per skill. Where the damage landed, what
+                missed, what got resisted, and when. Scroll to zoom, drag to pan, <em>Fit</em> to
+                snap back.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="olstack">
+              <figure
+                class="mock mock--overlay"
+                role="img"
+                aria-label="A small always-on-top damage overlay showing you and your pet, locked so it passes clicks through to the game."
+              >
+                <div aria-hidden="true">
+                  <div class="olbar">
+                    <i class="grip"></i>Damage · Fight <span class="lock">locked</span>
+                  </div>
+                  <div class="mrow">
+                    <i class="stripe" style="background: #d9b25f"></i>
+                    <i class="fill" style="width: 100%; background: #d9b25f"></i>
+                    <span class="nm">Braxus</span>
+                    <span class="val">1,029</span>
+                  </div>
+                  <div class="mrow">
+                    <i class="stripe" style="background: #6fb3d2"></i>
+                    <i class="fill" style="width: 37%; background: #6fb3d2"></i>
+                    <span class="nm">Vexthar</span>
+                    <span class="val">382</span>
+                  </div>
+                  <p class="mnote">3:24 · 84.2k · 1,412 dps</p>
+                </div>
+              </figure>
+              <figure
+                class="mock mock--overlay"
+                role="img"
+                aria-label="A second small overlay showing a running event log of the last few log lines."
+              >
+                <div aria-hidden="true">
+                  <div class="olbar"><i class="grip"></i>Event log</div>
+                  <p class="mnote">
+                    You crush a zol ghoul knight for 412 points of damage.<br />
+                    Your Flame of Light was resisted.<br />
+                    Vexthar bites a zol ghoul knight for 188 points of damage.<br />
+                    You have slain a zol ghoul knight.
+                  </p>
+                </div>
+              </figure>
+            </div>
+            <div class="row-copy">
+              <h3>Floating overlays</h3>
+              <p>
+                Small meters that sit on top of the game. Damage or healing, plus an event log,
+                scoped to the current fight or the whole zone. Lock one and it stops taking clicks.
+              </p>
+              <p class="fine">
+                Overlays work in <strong>windowed</strong> or <strong>borderless</strong> mode.
+                Exclusive fullscreen cannot be overlaid by anything, so use borderless if you want
+                them.
+              </p>
+            </div>
+          </div>
+
+          <div class="row row--flip">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="The Plane of Sky tracker: quest rows per class with a progress bar and a have or need chip for every item the quest wants."
+            >
+              <div aria-hidden="true">
+                <div class="mhd">Plane of Sky <span class="r">sorted: closest to done</span></div>
+                <div class="qrow">
+                  <span class="star star--on">★</span>
+                  <span class="mchip mchip--class">CLR</span>
+                  <span class="qname">
+                    <b>Test of Wisdom</b>
+                    <i>→ Testament of Vanear</i>
+                  </span>
+                  <span class="qprog">
+                    <span><em>6/7 items</em><em>86%</em></span>
+                    <span class="track"><i style="width: 86%"></i></span>
+                  </span>
+                </div>
+                <div class="mchips">
+                  <span class="mchip mchip--have">✓ Spiroc Feathers 3/3</span>
+                  <span class="mchip mchip--have">✓ Sky Pearl</span>
+                  <span class="mchip">Efreeti Standard 0/1</span>
+                </div>
+                <div class="qrow">
+                  <span class="star">☆</span>
+                  <span class="mchip mchip--class">WIZ</span>
+                  <span class="qname">
+                    <b>Test of Fire</b>
+                    <i>→ Robe of the Ishva</i>
+                  </span>
+                  <span class="qprog">
+                    <span><em>4/9 items</em><em>44%</em></span>
+                    <span class="track"><i style="width: 44%"></i></span>
+                  </span>
+                </div>
+                <div class="mchips">
+                  <span class="mchip mchip--star">★ Cinder of the Sky 0/2</span>
+                  <span class="mchip mchip--have">✓ Ash of Vessel</span>
+                  <span class="mchip">Ember Sapphire 1/3</span>
+                </div>
+                <div class="qrow">
+                  <span class="star">☆</span>
+                  <span class="mchip mchip--class">RNG</span>
+                  <span class="qname">
+                    <b>Test of the Hunt</b>
+                    <i>→ Bow of the Lost Ones</i>
+                  </span>
+                  <span class="qprog">
+                    <span><em>turned in</em><em>100%</em></span>
+                    <span class="track"><i class="done" style="width: 100%"></i></span>
+                  </span>
+                </div>
+                <p class="mnote">Hover any item chip for its stats and what drops it.</p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Plane of Sky tracker</h3>
+              <p>
+                Every class's Test quests, with a <em>have</em> or <em>need</em> chip per item.
+                Hover an item to read its stats. Sort by closest to done and you can see which quest
+                is actually in reach.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="An item drawn in the game's item window layout: green name, flags, stats, a magenta click effect, and a line listing the quests that use it."
+            >
+              <div class="eqitem" aria-hidden="true">
+                <div class="name">Bladestopper +2</div>
+                <div>MAGIC ITEM, LORE ITEM, QUEST ITEM</div>
+                <div>Class: WAR PAL SHD RNG</div>
+                <div>Primary / Secondary</div>
+                <div class="eqtier">
+                  <div>
+                    Tier 2 <span class="dim">/ 10 · yours</span>
+                    <span class="dim" style="float: right">+10% stats</span>
+                  </div>
+                  <div class="track"><i style="width: 20%"></i></div>
+                  <div class="dim">1,400 item exp merged reaches Tier 3</div>
+                </div>
+                <div class="grid">
+                  <div>
+                    <div class="kv"><span>Size</span>MEDIUM</div>
+                    <div class="kv"><span>Weight</span>4.5</div>
+                    <div class="kv"><span>Skill</span>1H Blunt</div>
+                  </div>
+                  <div>
+                    <div class="kv"><span>AC</span>9</div>
+                    <div class="kv"><span>Base Dmg</span>22</div>
+                    <div class="kv"><span>Delay</span>26</div>
+                    <div class="kv ratio"><span>Ratio</span>0.8</div>
+                  </div>
+                </div>
+                <div class="grid">
+                  <div>
+                    <div class="kv"><span>STR</span>+8</div>
+                    <div class="kv"><span>STA</span>+5</div>
+                  </div>
+                  <div>
+                    <div class="kv"><span>SV FIRE</span>+10</div>
+                    <div class="kv"><span>SV MAGIC</span>+5</div>
+                  </div>
+                </div>
+                <div class="fx">Click Effect: Ward of Vie (Req Level 45)</div>
+                <div class="dim">Cast Time: 3.0s&nbsp;&nbsp; Cooldown: 4:00</div>
+                <hr class="rule" />
+                <div class="use">Used in quests:</div>
+                <div class="usechips">
+                  <b>Test of Wisdom · Kelin Rockmover</b>
+                  <b>Ancient Warders</b>
+                </div>
+                <div class="use" style="margin-top: 8px">Source: eqlwiki.com</div>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Loot and item knowledge</h3>
+              <p>
+                A running list of what you looted, and what each item is actually
+                <em>for</em>. Which quests take it, who you hand it to, which recipes eat it. It
+                draws in the game's own item window layout, with the real icon.
+              </p>
+            </div>
+          </div>
+
+          <div class="row row--flip">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="Alert rules: each row has an on-off switch, the rule name, the log trigger it matches, and the sound pack line it plays."
+            >
+              <div aria-hidden="true">
+                <div class="mhd">Alerts <span class="r">global volume 70%</span></div>
+                <div class="arow">
+                  <span class="sw sw--on"><i></i></span>
+                  <span class="id">
+                    <b>Charm break</b>
+                    <code>event:uncharm</code>
+                  </span>
+                  <span class="voice"><span>Alan Rickman · “It broke”</span></span>
+                  <span class="acts">▶ ⧉ ✎</span>
+                </div>
+                <div class="arow">
+                  <span class="sw sw--on"><i></i></span>
+                  <span class="id">
+                    <b>Reckless Strength faded</b>
+                    <code>event:buffExpired {spell=Reckless Strength}</code>
+                  </span>
+                  <span class="voice"><span>Alan Rickman · “Buff down”</span></span>
+                  <span class="acts">▶ ⧉ ✎</span>
+                </div>
+                <div class="arow arow--off">
+                  <span class="sw"><i></i></span>
+                  <span class="id">
+                    <b>Raid target down</b>
+                    <code>app:bossDefeat</code>
+                  </span>
+                  <span class="voice"><span>Fanfare · “Victory”</span></span>
+                  <span class="acts">▶ ⧉ ✎</span>
+                </div>
+                <p class="mnote">Any rule copies to a short string you can paste in guild chat.</p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Sound alerts and voice packs</h3>
+              <p>
+                Play a sound when something happens. A charm break, a buff dropping, a raid target
+                dying, or any log line you care to write a rule for. One voice pack ships with the
+                app and installs itself. About 350 more install from inside it.
+              </p>
+              <p class="fine">
+                An alert copies to a short paste-safe string. Drop one in guild chat, and whoever
+                pastes it back gets a preview before anything is added. Imports only add.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="Raid targets: a list of named and raid mobs with a kill tier badge, the zone, and the date you last killed each one."
+            >
+              <div aria-hidden="true">
+                <div class="mhd">Raid targets <span class="r">12 / 47 defeated</span></div>
+                <div class="brow">
+                  <span class="tier" style="background: #e0a94a">D4</span>
+                  <span class="who"><b>Lord Nagafen</b><i>Nagafen's Lair</i></span>
+                  <span class="when">Jul 30 · 4 kills</span>
+                </div>
+                <div class="brow">
+                  <span class="tier" style="background: #b07fd0">D3</span>
+                  <span class="who"><b>Cazic Thule</b><i>Plane of Fear</i></span>
+                  <span class="when">Jul 26 · 2 kills</span>
+                </div>
+                <div class="brow">
+                  <span class="tier" style="background: #6fb3d2">D2</span>
+                  <span class="who"><b>Innoruuk</b><i>Plane of Hate</i></span>
+                  <span class="when">Jul 19</span>
+                </div>
+                <div class="brow">
+                  <span class="tier" style="background: #5fbf72">D1</span>
+                  <span class="who"><b>The Spiroc Lord</b><i>Plane of Sky</i></span>
+                  <span class="when">Jul 11</span>
+                </div>
+                <div class="brow brow--off">
+                  <span class="tier tier--none"></span>
+                  <span class="who"><b>Gorenaire</b><i>The Dreadlands</i></span>
+                  <span class="when">not defeated</span>
+                </div>
+                <p class="mnote">The badge is the highest instance tier you have cleared.</p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Raid targets</h3>
+              <p>Which named and raid mobs you have killed, when, and at what tier.</p>
+            </div>
+          </div>
+
+          <div class="row row--flip">
+            <figure
+              class="mock"
+              role="img"
+              aria-label="Leveling and AA: tiles for character level, AA earned and AA unspent, a cumulative AA curve, and a stepped level chart with a dashed line marking a class swap."
+            >
+              <div aria-hidden="true">
+                <div class="tiles">
+                  <div class="tile"><b>58</b><i>character level</i></div>
+                  <div class="tile tile--aa"><b>214</b><i>AA earned</i></div>
+                  <div class="tile tile--un"><b>12</b><i>AA unspent</i></div>
+                </div>
+
+                <div class="mhd">AA gained over time <span class="r">cumulative</span></div>
+                <svg class="msvg" viewBox="0 0 520 60" preserveAspectRatio="none">
+                  <polygon
+                    fill="#6fb3d2"
+                    opacity="0.18"
+                    points="8,56 44,54 80,50 116,47 152,42 188,39 224,33 260,29 296,24 332,20 368,15 404,12 440,9 476,6 512,4 512,58 8,58"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="#6fb3d2"
+                    stroke-width="2"
+                    points="8,56 44,54 80,50 116,47 152,42 188,39 224,33 260,29 296,24 332,20 368,15 404,12 440,9 476,6 512,4"
+                  />
+                </svg>
+
+                <div class="mhd">Level over time <span class="r">44 to 58</span></div>
+                <svg class="msvg" viewBox="0 0 520 76" preserveAspectRatio="none">
+                  <polygon
+                    fill="#d9b25f"
+                    opacity="0.12"
+                    points="8,68 26,68 26,63.9 46,63.9 46,59.7 70,59.7 70,55.6 96,55.6 96,51.4 124,51.4 124,47.3 156,47.3 156,43.1 190,43.1 190,39 226,39 226,34.9 264,34.9 264,30.7 306,30.7 306,26.6 348,26.6 348,22.4 394,22.4 394,18.3 444,18.3 444,14.1 496,14.1 496,10 512,10 512,74 8,74"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="#d9b25f"
+                    stroke-width="2"
+                    points="8,68 26,68 26,63.9 46,63.9 46,59.7 70,59.7 70,55.6 96,55.6 96,51.4 124,51.4 124,47.3 156,47.3 156,43.1 190,43.1 190,39 226,39 226,34.9 264,34.9 264,30.7 306,30.7 306,26.6 348,26.6 348,22.4 394,22.4 394,18.3 444,18.3 444,14.1 496,14.1 496,10 512,10"
+                  />
+                  <line
+                    x1="264"
+                    y1="4"
+                    x2="264"
+                    y2="74"
+                    stroke="#8fa3b8"
+                    stroke-width="1"
+                    stroke-dasharray="3 4"
+                    opacity="0.9"
+                  />
+                  <circle cx="264" cy="30.7" r="3.5" fill="none" stroke="#8fa3b8" />
+                </svg>
+                <p class="mnote">
+                  Steps hold until the next ding. A dashed break is a class swap, where the level is
+                  re-reported for the new loadout rather than lost.
+                </p>
+              </div>
+            </figure>
+            <div class="row-copy">
+              <h3>Leveling and AA</h3>
+              <p>
+                XP and AA per character, with history. Earned, spent and unspent. The numbers come
+                from what the log reported, not from a running tally the app keeps for itself.
+              </p>
+            </div>
+          </div>
+
+          <ul class="extras">
+            <li>
+              <strong>Buff timers <span class="tag">early, still rough</span></strong>
+              Time left on your buffs, learned from the log.
+            </li>
+            <li>
+              <strong>Per character</strong>
+              Everything is per character. Switch, and the app re-reads that log.
+            </li>
+            <li>
+              <strong>Share your setup</strong>
+              Export alerts, volume, overlay look and view preferences as one string. It carries no
+              file paths, no window positions, no progress.
+            </li>
+            <li>
+              <strong>Updates itself</strong>
+              New builds download in the background from GitHub Releases.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- =========================== GETTING STARTED =========================== -->
+      <section class="start">
+        <div class="wrap">
+          <h2 class="section-title">Getting started</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-n">1</span>
+              <p>
+                Download and run the installer. It is a one-click, per-user install, like Discord.
+                No admin prompt, no wizard. You get a Start menu and a desktop shortcut.
+              </p>
+            </li>
+            <li>
+              <span class="step-n">2</span>
+              <p>In EverQuest, type <code>/log on</code>.</p>
+            </li>
+            <li>
+              <span class="step-n">3</span>
+              <p>
+                That is it. The app finds your log on its own, usually under
+                <code>…\EverQuest Legends\Logs\</code>. If your install lives somewhere else, point
+                it at the right folder in <strong>Settings</strong>.
+              </p>
+            </li>
+          </ol>
+          <p class="cta cta--inline">
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/jmoyers/everquest-companion/releases/latest/download/everquest-companion-Setup.exe"
+              id="download-2"
+              >Download for Windows</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- ============================== AUTHOR ================================= -->
+      <section id="author" class="author">
+        <div class="wrap author-grid">
+          <div>
+            <h2 class="section-title">Who built this</h2>
+            <p>
+              I'm Josh. I have been building software for about 22 years. I'm the CTO at
+              <strong>Encamp</strong>, an environmental compliance platform. Before that I ran
+              engineering at <strong>Sococo</strong>, a virtual office that carried millions of
+              audio minutes a week, and I built <a href="https://opencourse.app">OpenCourse.app</a>,
+              which is open source.
+            </p>
+            <p>
+              I have been playing EverQuest since I was 15. I'm 41 now. I do not miss corpse runs,
+              but I do miss sitting on a camp half the night waiting for a named to pop, and this
+              app is partly an excuse to go back.
+            </p>
+            <p>
+              I'm telling you this because you are about to run an unsigned installer from someone
+              on the internet. The source is on GitHub under my name, the license is MIT, and the
+              only file the app opens is your log. You can go read that part yourself.
+            </p>
+            <p class="fine">
+              <a href="https://jmoyers.org">jmoyers.org</a>
+              <span class="dot">·</span>
+              <a href="https://github.com/jmoyers">github.com/jmoyers</a>
+            </p>
+          </div>
+
+          <div class="thanks">
+            <h3>Thanks</h3>
+            <p>
+              This app does not know much on its own. Almost everything it can tell you about
+              items, quests and drops was written down by someone else first.
+            </p>
+            <dl>
+              <dt><a href="https://eqlwiki.com">eqlwiki.com</a></dt>
+              <dd>
+                The item data, quest catalog, spell list and Plane of Sky tables all come from the
+                EverQuest Legends Wiki. Its editors did the documentation work, and this app is
+                mostly a lens over it. The wiki publishes no content license that I could find, so I
+                am not going to claim one on their behalf.
+              </dd>
+              <dt><a href="https://wiki.project1999.com">wiki.project1999.com</a></dt>
+              <dd>
+                The raid target portraits come from the Project 1999 wiki. Twenty years of people
+                writing down what drops where, for free. No content license is declared there
+                either, so the same applies.
+              </dd>
+              <dt>
+                <a href="https://github.com/utensils/openpeon-alan-rickman-soundpack"
+                  >utensils/openpeon-alan-rickman-soundpack</a
+                >
+              </dt>
+              <dd>
+                The Alan Rickman voice pack that ships with the app, licensed CC-BY-4.0. Packs you
+                install from the in-app browser carry their own licenses and are not part of this
+                repository.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <p class="footer-links">
+          <a href="https://github.com/jmoyers/everquest-companion">Source on GitHub</a>
+          <span class="dot">·</span>
+          <a href="https://github.com/jmoyers/everquest-companion/releases">Releases</a>
+          <span class="dot">·</span>
+          <a href="https://github.com/jmoyers/everquest-companion/blob/main/LICENSE">MIT license</a>
+        </p>
+        <p class="footer-fine">
+          The screens on this page are illustrations, drawn to match what the app looks like.
+        </p>
+        <p class="footer-fine">
+          Not affiliated with, endorsed by, or associated with Daybreak Game Company. EverQuest is a
+          trademark of its respective owner.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Fill in version · date · size from the GitHub Releases API, and swap the
+      // download href to the exact versioned asset when we can see one.
+      //
+      // The button already works with JS disabled (and forever): its static href
+      // is the /releases/latest/download/<stable name> redirect, and CI uploads a
+      // stable-named copy of the installer on every tagged release for exactly
+      // this. Everything below is a nicety. Any failure leaves the static link
+      // and the neutral placeholder text in place.
+      ;(function () {
+        var API = 'https://api.github.com/repos/jmoyers/everquest-companion/releases/latest'
+        var out = document.getElementById('relmeta-text')
+        if (!out || !window.fetch) return
+
+        function mb(bytes) {
+          return (bytes / 1048576).toFixed(1) + ' MB'
+        }
+
+        fetch(API, { headers: { Accept: 'application/vnd.github+json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error('http ' + r.status)
+            return r.json()
+          })
+          .then(function (rel) {
+            var assets = rel.assets || []
+            var exes = assets.filter(function (a) {
+              return /^everquest-companion-Setup.*\.exe$/i.test(a.name)
+            })
+            // Prefer the versioned asset (everquest-companion-Setup-1.2.3.exe)
+            // over the stable alias, so the link is unambiguous once resolved.
+            var versioned = exes.filter(function (a) {
+              return /-\d/.test(a.name)
+            })
+            var asset = versioned[0] || exes[0]
+
+            if (asset && asset.browser_download_url) {
+              var links = [document.getElementById('download'), document.getElementById('download-2')]
+              for (var i = 0; i < links.length; i++) {
+                if (links[i]) links[i].href = asset.browser_download_url
+              }
+            }
+
+            var bits = []
+            if (rel.tag_name) bits.push(rel.tag_name)
+            if (rel.published_at) {
+              var d = new Date(rel.published_at)
+              if (!isNaN(d)) {
+                bits.push(
+                  d.toLocaleDateString(undefined, {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })
+                )
+              }
+            }
+            if (asset && asset.size) bits.push(mb(asset.size))
+            if (bits.length) out.textContent = bits.join(' · ') + ' · Windows 10/11'
+          })
+          .catch(function () {
+            /* keep the static text and the permanent download link */
+          })
+      })()
+    </script>
+  </body>
+</html>
