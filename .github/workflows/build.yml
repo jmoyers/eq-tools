@@ -225,14 +225,15 @@ jobs:
           AZURE_SIGNING_PROFILE: ${{ secrets.AZURE_SIGNING_PROFILE }}
         run: |
           npm run build
-          $signArgs = @()
+          # Signing is driven by electron-builder.yml's win.sign hook
+          # (scripts/azure-sign.cjs), NOT azureSignOptions: the built-in path
+          # splices file paths into pwsh -Command unquoted and dies on our
+          # space-bearing exe name ("File not found: ...\EQ" — the v0.1.8
+          # failure). The hook self-activates on the AZURE_* env below; here we
+          # only pre-install the TrustedSigning module it invokes.
           if ($env:AZURE_TENANT_ID) {
-            $signArgs = @(
-              "--config.win.azureSignOptions.endpoint=$env:AZURE_SIGNING_ENDPOINT",
-              "--config.win.azureSignOptions.codeSigningAccountName=$env:AZURE_SIGNING_ACCOUNT",
-              "--config.win.azureSignOptions.certificateProfileName=$env:AZURE_SIGNING_PROFILE"
-            )
-            Write-Host "Code signing: Azure Trusted Signing enabled."
+            Install-Module -Name TrustedSigning -Force -Scope CurrentUser -Repository PSGallery
+            Write-Host "Code signing: Azure Artifact Signing enabled (custom hook)."
           } else {
             Write-Host "Code signing: skipped (no Azure secrets configured)."
           }
@@ -242,7 +243,7 @@ jobs:
           # checked mid-publish resolved the new tag from the atom feed and
           # 404'd on main.yml ("no published versions"-grade errors). The
           # bridge step below uploads main.yml to the draft, THEN flips it live.
-          npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=draft @signArgs
+          npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=draft
 
       # --- main-channel bridge + checksums, then publish ATOMICALLY -----------
       # See the header comment. latest.yml and main.yml differ only by filename;

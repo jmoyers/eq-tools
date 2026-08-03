@@ -47,9 +47,25 @@ win:
   # We sign+edit the exe so it carries the icon + version metadata (rcedit). This
   # needs winCodeSign extracted into the electron-builder cache; on Windows that
   # requires either Developer Mode (symlink privilege) OR the manual cache-seed
-  # workaround (see scripts/seed-wincodesign.ps1). The exe is still UNSIGNED — we
-  # have no code-signing cert, so SmartScreen will warn on first run (see README).
+  # workaround (see scripts/seed-wincodesign.ps1). CI builds are SIGNED via Azure
+  # Artifact Signing (account jmoyers-eqtools, profile eq-companion-public — the
+  # azureSignOptions args are injected by build.yml when the AZURE_* secrets
+  # exist); local `npm run dist` builds stay unsigned.
   signAndEditExecutable: true
+  # CUSTOM SIGN HOOK (not azureSignOptions): the built-in Azure path splices file
+  # paths into a pwsh -Command string UNQUOTED, so our space-bearing exe name
+  # ("EQ Legends Companion.exe") splits and signing fails with "File not found:
+  # ...\EQ" (upstream: @electron/windows-sign#45). The hook passes paths as real
+  # arguments instead. It self-skips when the AZURE_* env is absent, so local
+  # dist builds stay unsigned; CI injects the env and signs.
+  sign: scripts/azure-sign.cjs
+  # UPDATE SIGNATURE VERIFICATION (do not remove): electron-updater's
+  # NsisUpdater.verifySignature SKIPS all checking when publisherName is null —
+  # a signed build alone protects nothing on the update path. This name must
+  # exactly match the certificate subject CN (Azure profile eq-companion-public).
+  # With it set, every downloaded update must carry a valid Authenticode
+  # signature from this publisher or it is rejected before install.
+  publisherName: Joshua Moyers
 
 # One-click installer (Discord model): double-click installs per-user under
 # %LOCALAPPDATA%\Programs (no UAC prompt), then launches. Friendly for friends
