@@ -203,6 +203,11 @@ export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
   ipcMain.handle(IPC.getUpdateStatus, () => lastStatus)
 
   if (!app.isPackaged) {
+    // Say so in the status itself: without the flag the chip renders "not checked yet"
+    // forever (dev never checks), which reads as a broken updater rather than an absent one.
+    // No checkedAt — a stamp inherited from the store would claim a check this process
+    // never made.
+    lastStatus = { state: 'idle', disabled: true }
     ipcMain.handle(IPC.installUpdate, () => {})
     ipcMain.handle(IPC.checkForUpdates, () => lastStatus)
     console.log('[everquest-companion] Auto-update disabled (dev / not packaged).')

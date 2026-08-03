@@ -166,8 +166,10 @@ export type UpdateChipState =
   | { kind: 'downloading'; percent: number; version?: string; checkedAt?: number }
   /** Transient work (checking / found-but-not-started): muted one-liner. */
   | { kind: 'working'; label: string; checkedAt?: number }
-  /** The resting state: "checked 2h ago" (or "never"), click to check. */
-  | { kind: 'quiet'; checkedAt?: number; failed: boolean; message?: string }
+  /** The resting state: "checked 2h ago" (or "never"), click to check. `disabled` means the
+   *  updater is off for this process (dev build) — render a truthful static note, not a
+   *  forever-stale check affordance. */
+  | { kind: 'quiet'; checkedAt?: number; failed: boolean; message?: string; disabled?: boolean }
 
 /**
  * Map a raw UpdateStatus onto what the chip should render.
@@ -202,6 +204,6 @@ export function updateChipState(status: UpdateStatus, currentVersion?: string): 
       return { kind: 'quiet', checkedAt, failed: true, message: status.message }
     case 'idle':
     default:
-      return { kind: 'quiet', checkedAt, failed: false }
+      return { kind: 'quiet', checkedAt, failed: false, disabled: status.disabled }
   }
 }

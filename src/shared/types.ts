@@ -1115,4 +1115,8 @@ export interface UpdateStatus {
   percent?: number
   message?: string
   checkedAt?: number
+  /** The updater machinery is OFF for this process (dev / unpackaged build). The UI must say
+   *  so instead of showing an eternally-stale "not checked yet" that reads as a broken
+   *  updater — dev is the only place that state can persist. */
+  disabled?: boolean
 }

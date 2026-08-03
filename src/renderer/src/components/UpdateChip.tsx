@@ -150,6 +150,26 @@ export function UpdateChip(): JSX.Element {
     )
   }
 
+  // ---- dev build: the updater is OFF, and the line says so ------------------
+  // Without this the dev app showed "not checked yet" forever — a truthful but
+  // misleading state that reads as a broken production updater. Static text,
+  // not a button: clicking would no-op.
+  if (ui.kind === 'quiet' && ui.disabled) {
+    return (
+      <Box sx={{ px: 2, pt: 0.75, pb: 1 }}>
+        <Tooltip title="Auto-update runs only in the installed app — the dev build never checks." placement="top">
+          <Typography
+            data-testid="update-chip-disabled"
+            variant="caption"
+            sx={{ display: 'block', color: 'text.disabled', lineHeight: 1.4, cursor: 'default' }}
+          >
+            updates off · dev build
+          </Typography>
+        </Tooltip>
+      </Box>
+    )
+  }
+
   // ---- working / quiet: one muted line, click to check ----------------------
   const label =
     ui.kind === 'working'

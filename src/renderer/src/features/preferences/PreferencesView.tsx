@@ -200,7 +200,12 @@ function UpdateSetting({ status, version }: { status: UpdateStatus; version: str
   // disagree — in particular about the updated-away case (a 'ready' naming the
   // build we are ALREADY running is stale and must not offer a relaunch).
   const ui = updateChipState(status, version || undefined)
-  const chip = ui.kind === 'quiet' && status.state === 'ready' ? STATE_CHIP.idle : STATE_CHIP[status.state]
+  // Dev build: the updater is off, so "up to date" would be a claim no check ever made.
+  const chip = status.disabled
+    ? { label: 'dev build — updates off', color: 'default' as const }
+    : ui.kind === 'quiet' && status.state === 'ready'
+      ? STATE_CHIP.idle
+      : STATE_CHIP[status.state]
   const busy = checking || status.state === 'checking'
   const ready = ui.kind === 'ready'
   const downloading = ui.kind === 'downloading'
@@ -265,7 +270,7 @@ function UpdateSetting({ status, version }: { status: UpdateStatus; version: str
             size="small"
             startIcon={<RefreshIcon />}
             onClick={() => void checkNow()}
-            disabled={busy}
+            disabled={busy || status.disabled}
           >
             Check for updates
           </Button>
