@@ -184,6 +184,7 @@ export function AreaChart({
         height={H}
         color={color}
         aaPoints={points}
+        bands={chrome.bands}
         suppressed={chrome.suppressed}
       />
     </div>
@@ -324,6 +325,7 @@ export function LevelStepChart({
         height={H}
         color={color}
         aaPoints={aaPoints}
+        bands={chrome.bands}
         segments={segments}
         suppressed={chrome.suppressed}
       />

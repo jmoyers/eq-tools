@@ -32,6 +32,7 @@ import {
   type LevelAt
 } from './levelChartGeometry'
 import type { LevelSegment } from './levelSeries'
+import { zoneAt, zoneColor, type ZoneBand } from './zoneBands'
 
 /** Cursor slack, in CSS px, for "you are on that gain line". */
 const GAIN_TOL_PX = 6
@@ -72,6 +73,13 @@ export interface LevelHoverLayerProps {
   color: string
   /** Cumulative AA series. The AA chart plots it; the level chart reads it for context. */
   aaPoints: readonly AaPoint[]
+  /**
+   * The SAME merged bands the strip above draws (threaded down from the view through
+   * `ChartChrome`, never recomputed here). Names the zone under the cursor: the legend is
+   * the hover-free identification path, but on a busy strip matching a hue to a legend row
+   * by eye is work, and the tooltip is already where the cursor is.
+   */
+  bands: readonly ZoneBand[]
   /** Present on the LEVEL chart only — its presence selects the level readout. */
   segments?: readonly LevelSegment[]
   /** Drag-select seam (plan §7.2): true while a range drag owns the pointer. */
@@ -143,12 +151,29 @@ function samePick(prev: Hover | null, next: Hover): boolean {
 }
 
 /** Identity of the current pick. Deliberately coarse — it changes only when the tooltip's
- *  SUBJECT changes, which is what makes most moves free. */
-function pickKey(at: LevelAt | null, gainIdx: number): string {
-  if (!at) return `aa:${gainIdx}`
-  if (at.kind === 'level') return `level:${at.sinceTs}`
-  if (at.kind === 'swap-gap') return `gap:${at.beforeLevel}`
-  return 'before-first'
+ *  SUBJECT changes, which is what makes most moves free. The zone is part of that subject:
+ *  a boundary can be crossed inside the 2px move gate, and a stale zone name would be a
+ *  lie rather than a missed repaint. */
+function pickKey(at: LevelAt | null, gainIdx: number, zone: string): string {
+  if (!at) return `aa:${gainIdx}|${zone}`
+  if (at.kind === 'level') return `level:${at.sinceTs}|${zone}`
+  if (at.kind === 'swap-gap') return `gap:${at.beforeLevel}|${zone}`
+  return `before-first|${zone}`
+}
+
+/**
+ * The zone row, prepended to whatever the chart's own readout says. Tinted with the band's
+ * own hue (`zoneColor`), so the name and the stripe above the cursor are visibly the same
+ * thing — the legend stays as the hover-free path, unchanged.
+ *
+ * No band covering the cursor ⇒ no row at all. The zone column is capped, so "before the
+ * strip starts" means the log no longer says where you were; naming the nearest zone would
+ * be a guess (world-model law 1).
+ */
+function withZone(content: Content, bands: readonly ZoneBand[], ts: number): Content {
+  const band = zoneAt(bands, ts)
+  if (!band) return content
+  return { ...content, rows: [{ label: 'zone', value: band.name, color: zoneColor(band.key) }, ...content.rows] }
 }
 
 export function LevelHoverLayer({
@@ -156,6 +181,7 @@ export function LevelHoverLayer({
   height,
   color,
   aaPoints,
+  bands,
   segments,
   suppressed = false
 }: LevelHoverLayerProps): JSX.Element {
@@ -186,9 +212,9 @@ export function LevelHoverLayer({
         const gainIdx = gi >= 0 && Math.abs(aaPoints[gi].ts - ts) <= tolMs ? gi : -1
         const at = segments ? levelAt(segments, ts) : null
         const bounds = { w: r.width, h: r.height }
-        commit({ ts, x, y: cy - r.top, bounds, gainIdx, key: pickKey(at, gainIdx) })
+        commit({ ts, x, y: cy - r.top, bounds, gainIdx, key: pickKey(at, gainIdx, zoneAt(bands, ts)?.key ?? '') })
       }),
-    [scale, aaPoints, segments, commit]
+    [scale, aaPoints, bands, segments, commit]
   )
 
   useEffect(() => () => { onFrame.cancel() }, [onFrame])
@@ -207,10 +233,11 @@ export function LevelHoverLayer({
     commit(null)
   }
 
-  const content = useMemo(
-    () => (hov ? (segments ? levelContent(segments, aaPoints, hov.ts) : aaContent(aaPoints, hov.ts, hov.gainIdx)) : null),
-    [hov, segments, aaPoints]
-  )
+  const content = useMemo(() => {
+    if (!hov) return null
+    const base = segments ? levelContent(segments, aaPoints, hov.ts) : aaContent(aaPoints, hov.ts, hov.gainIdx)
+    return base && withZone(base, bands, hov.ts)
+  }, [hov, segments, aaPoints, bands])
 
   return (
     <div ref={rootRef} style={ROOT} onPointerMove={handleMove} onPointerLeave={handleLeave}>

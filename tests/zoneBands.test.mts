@@ -22,6 +22,7 @@ import {
   bandRects,
   chartDomain,
   mergeZoneBands,
+  zoneAt,
   zoneColor,
   zoneLegend,
   type ZoneColumns
@@ -200,6 +201,83 @@ test('the legend sums every visit of a zone across the domain', () => {
   assert.equal(legend.rows[0].name, 'Befallen')
   assert.equal(legend.rows[0].ms, 3 * H, 'two visits, one row')
   assert.equal(legend.more, 0)
+})
+
+// zoneAt — the hover readout's zone. It reads the SAME merged list the strip draws, so the
+// tooltip and the band under the cursor cannot disagree; and it returns null rather than a
+// nearest-neighbour guess wherever the log does not say where you were (law 1).
+
+test('zoneAt finds the covering band and respects half-open bounds', () => {
+  const bands = mergeZoneBands(
+    cols(
+      [
+        ['Befallen', T0, T0 + H],
+        ["Nagafen's Lair", T0 + H, T0 + 2 * H]
+      ],
+      T0 + 2 * H
+    ),
+    T0,
+    T0 + 2 * H
+  )
+  assert.equal(zoneAt(bands, T0 + 30 * M)?.name, 'Befallen', 'mid-band')
+  assert.equal(zoneAt(bands, T0)?.name, 'Befallen', 'start is INSIDE the band')
+  assert.equal(zoneAt(bands, T0 + H)?.name, "Nagafen's Lair", 'the boundary instant belongs to the NEW zone, not both')
+  assert.equal(zoneAt(bands, T0 + 2 * H), null, 'the far end is exclusive')
+  assert.equal(zoneAt(bands, T0 + 2 * H - 1)?.name, "Nagafen's Lair", 'one ms inside still hits')
+})
+
+test('zoneAt is null before the first band and inside a gap', () => {
+  const bands = mergeZoneBands(
+    cols(
+      [
+        ['Najena', T0 + H, T0 + 2 * H],
+        ['Guk', T0 + 5 * H, T0 + 6 * H]
+      ],
+      T0 + 6 * H
+    ),
+    T0,
+    T0 + 6 * H
+  )
+  assert.equal(zoneAt(bands, T0), null, 'pre-first-zone: the log has not said where you are')
+  assert.equal(zoneAt(bands, T0 + 3 * H), null, 'a hole in the capped zone column is never filled in')
+  assert.equal(zoneAt([], T0 + H), null, 'no bands at all')
+})
+
+test('zoneAt reports a merged instance bounce as its base zone', () => {
+  // The strip draws ONE Plane of Hate band across all three intervals; the tooltip must say
+  // the same thing at every instant inside it, including inside the instanced re-entry.
+  const bands = mergeZoneBands(
+    cols(
+      [
+        ['The Plane of Hate', T0, T0 + 10 * M],
+        ['The Plane of Hate - Solo', T0 + 10 * M, T0 + 20 * M],
+        ['The Plane of Hate 2 (Awakened)', T0 + 20 * M, T0 + 30 * M]
+      ],
+      T0 + 30 * M
+    ),
+    T0,
+    T0 + 30 * M
+  )
+  assert.equal(bands.length, 1)
+  for (const ts of [T0, T0 + 15 * M, T0 + 25 * M]) {
+    assert.equal(zoneAt(bands, ts)?.name, 'The Plane of Hate', 'the raw first-seen spelling, everywhere in the stay')
+    assert.equal(zoneColor(zoneAt(bands, ts)?.key ?? ''), zoneColor('The Plane of Hate'), "and the strip's own hue")
+  }
+})
+
+test('zoneAt agrees with a linear scan over many bands (binary search sanity)', () => {
+  const rows: [string, number, number][] = []
+  let t = T0
+  for (let i = 0; i < 40; i++) {
+    rows.push([`Zone ${i}`, t, t + 10 * M])
+    t += 10 * M
+  }
+  const bands = mergeZoneBands(cols(rows, t), T0, t)
+  assert.equal(bands.length, 40)
+  for (let ts = T0 - M; ts <= t + M; ts += 137_000) {
+    const linear = bands.find((b) => ts >= b.start && ts < b.end) ?? null
+    assert.equal(zoneAt(bands, ts), linear, `ts ${ts - T0}`)
+  }
 })
 
 test('chartDomain spans every series and keeps the 4% trailing pad', () => {

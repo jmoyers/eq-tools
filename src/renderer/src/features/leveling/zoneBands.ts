@@ -186,6 +186,34 @@ export function mergeZoneBands(cols: ZoneColumns, t0: number, t1: number): ZoneB
 }
 
 /**
+ * The merged band covering `ts`, or null.
+ *
+ * Reads the SAME merged list the strip draws, so the hover readout and the band under the
+ * cursor can never disagree — an instance bounce that merged into its neighbours reports the
+ * base zone, which is exactly what the strip is showing there.
+ *
+ * Intervals are HALF-OPEN `[start, end)`: the instant you zone out belongs to the new zone,
+ * never to both. `mergeZoneBands` emits them ascending and disjoint (log order is time
+ * order), so this is a binary search.
+ *
+ * null is a real answer, not a fallback: before the first zone line in the window — and
+ * anywhere the capped zone column has aged out (`windowStart`) — the log does not say where
+ * you were, so the caller renders NO zone row rather than guessing (world-model law 1).
+ */
+export function zoneAt(bands: readonly ZoneBand[], ts: number): ZoneBand | null {
+  let lo = 0
+  let hi = bands.length - 1
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1
+    const b = bands[mid]
+    if (ts < b.start) hi = mid - 1
+    else if (ts >= b.end) lo = mid + 1
+    else return b
+  }
+  return null
+}
+
+/**
  * Bands as rectangles, dropping anything under `minW`. The threshold is in VIEWBOX units,
  * which is one screen pixel at the 720u reference width and slightly less than one on a
  * wider panel — the charts stretch (`preserveAspectRatio="none"`), so an exact pixel
