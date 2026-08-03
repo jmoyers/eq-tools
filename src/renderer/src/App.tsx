@@ -24,6 +24,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
+import PetsIcon from '@mui/icons-material/Pets'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
 import UpdateChip from './components/UpdateChip'
@@ -31,6 +32,8 @@ import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
+import MobsView from './features/mobs/MobsView'
+import type { MobTarget } from './features/mobs/mobTarget'
 import CombatView from './features/combat/CombatView'
 import AlertsView from './features/alerts/AlertsView'
 import BuffsView from './features/buffs/BuffsView'
@@ -48,6 +51,7 @@ const DRAWER_WIDTH = 220
 
 type View =
   | 'combat'
+  | 'mobs'
   | 'bosses'
   | 'posky'
   | 'alerts'
@@ -60,6 +64,7 @@ const VIEW_KEY = 'eq.view'
 const DEFAULT_VIEW: View = 'combat'
 const KNOWN_VIEWS: View[] = [
   'combat',
+  'mobs',
   'bosses',
   'posky',
   'alerts',
@@ -130,6 +135,19 @@ export default function App(): JSX.Element {
 
   const [rebuild, setRebuild] = useState(0)
 
+  // ---- app-wide mob routing (Task #64) ----
+  // ONE detail surface for a mob, so the thing that ROUTES to it is app-level. Three callers:
+  // a Raid Targets roster card, and — over the `app:focusView` deep link — a click on a con row
+  // in the events overlay. The NONCE is what makes "open the mob I already have open" work:
+  // MobsView keys its effect on it, so asking twice opens twice.
+  const [mobTarget, setMobTarget] = useState<MobTarget | null>(null)
+  const [mobNonce, setMobNonce] = useState(0)
+  const openMob = (t: MobTarget): void => {
+    setMobTarget(t)
+    setMobNonce((n) => n + 1)
+    setView('mobs')
+  }
+
   // App-level boss-kill watch: independent of the Boss tab being open, so the
   // snackbar shows anywhere. useBossKills gates out the historical baseline. This
   // is the SINGLE always-mounted detector, so it's the one place we fire the
@@ -196,10 +214,19 @@ export default function App(): JSX.Element {
     const offEqConfig = window.eq.onEqConfigChanged(() => {
       void window.eq.listCharacters().then(setCharacters)
     })
+    // Deep link from another window (Task #64): main has already raised + focused us. Today
+    // the only destination is the Mobs tab, optionally drilled into a specific mob — a click
+    // on the events overlay's con rows.
+    const offFocus = window.eq.onFocusView((focus) => {
+      if (focus?.view !== 'mobs') return
+      if (focus.mob) openMob({ mob: focus.mob })
+      else setView('mobs')
+    })
     return () => {
       offDelta()
       offChar()
       offEqConfig()
+      offFocus()
     }
   }, [])
 
@@ -252,6 +279,12 @@ export default function App(): JSX.Element {
                 <BarChartIcon />
               </ListItemIcon>
               <ListItemText primary="Combat" />
+            </ListItemButton>
+            <ListItemButton selected={view === 'mobs'} onClick={() => setView('mobs')}>
+              <ListItemIcon>
+                <PetsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Mobs" />
             </ListItemButton>
             <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
               <ListItemIcon>
@@ -335,7 +368,17 @@ export default function App(): JSX.Element {
               <>
                 {view === 'posky' && <PoskyView key={viewKey} />}
                 {view === 'loot' && <LootView key={viewKey} />}
-                {view === 'bosses' && <BossView key={viewKey} />}
+                {/* The Mobs tab stays MOUNTED across a deep link (no `key` churn on target
+                    change) — remounting per character rebuild only, like every other view. */}
+                {view === 'mobs' && (
+                  <MobsView
+                    key={viewKey}
+                    target={mobTarget}
+                    targetNonce={mobNonce}
+                    onTargetConsumed={() => setMobTarget(null)}
+                  />
+                )}
+                {view === 'bosses' && <BossView key={viewKey} onOpenMob={openMob} />}
                 {view === 'leveling' && <LevelingView key={viewKey} />}
                 {view === 'combat' && <CombatView key={viewKey} />}
                 {view === 'buffs' && <BuffsView key={viewKey} />}

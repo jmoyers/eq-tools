@@ -20,9 +20,16 @@
 //                 item (hover the row, the reward is named at its right edge) and a LOOT row's
 //                 item name (hover the name; the rest of the row is metadata). One card, both
 //                 places: what it is, then what it's for.
+//                 A CON ROW ALSO CLICKS THROUGH TO THE APP (Task #64): the hover card is a
+//                 glance (six drops, then "+38 more"), and a mob you conned and want to think
+//                 about deserves the real page. Clicking asks main to raise the main window and
+//                 open the Mobs tab on that mob — every drop listed out, each one hoverable and
+//                 clickable. The row carries NO cursor change for it (user's call): the pointer
+//                 hand read as a link promise on a window whose other affordances are links,
+//                 and the hover card is already the row's answer to "is there more here".
 //   locked      — fully click-through and STATIC: the same rows, minus every affordance. No
-//                 links, no hover card, no pointer cursors (a click-through window can't be
-//                 hovered, so an affordance there would be a lie).
+//                 links, no hover card, no deep link, no pointer cursors (a click-through
+//                 window can't be hovered, so an affordance there would be a lie).
 //
 // HONESTY (law 1): a row shows only what the feed carries. A quest whose dataset names no
 // reward has no hover target at all; an item whose page never resolved is plain text, not a
@@ -610,14 +617,20 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
   // timestamp / detail half of the row is metadata you shouldn't have to avoid.
   const rowHover = !!previewItem && !!reward
   const nameHover = (!!previewItem && !reward) || !!previewMob
+  // DEEP LINK (Task #64): a con row hands the mob to the app. Interactive mode only — a locked
+  // overlay is click-through by law and has no clicks to give. Deliberately NO cursor change:
+  // the pointer hand is this window's link vocabulary, and this is a hand-off, not a link.
+  const deepLinkMob = previewMob
   const enter = (ev: React.MouseEvent<HTMLElement>): void => setAnchor(ev.currentTarget)
   const leave = (): void => setAnchor(null)
 
   return (
     <div
       data-testid="feed-row"
+      data-deeplink-mob={deepLinkMob}
       onMouseEnter={rowHover ? enter : undefined}
       onMouseLeave={rowHover ? leave : undefined}
+      onClick={deepLinkMob ? () => window.eqOverlay.focusMob(deepLinkMob) : undefined}
       style={{
         display: 'flex',
         gap: 6,
@@ -671,7 +684,9 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         ) : (
           <span
             data-testid="feed-title"
-            style={{ color: accent, fontWeight: 600, cursor: nameHover ? 'help' : undefined }}
+            // A CON row's name carries no cursor change at all (see the deep-link note above);
+            // an item name keeps the `help` cursor, which is what its hover card is.
+            style={{ color: accent, fontWeight: 600, cursor: nameHover && !previewMob ? 'help' : undefined }}
             onMouseEnter={nameHover ? enter : undefined}
             onMouseLeave={nameHover ? leave : undefined}
           >

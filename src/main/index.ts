@@ -86,6 +86,8 @@ import type {
   AlertDef,
   AlertPrefs,
   AlertsDelta,
+  AppFocus,
+  AppFocusView,
   BuffsSnap,
   CharacterRef,
   EqConfig,
@@ -1041,6 +1043,32 @@ function registerIpc(): void {
     eventFeedModule.report(report)
     registry.flushNow()
   })
+  // ---- cross-window deep link (Task #64) ----
+  // An overlay row says a thing happened; clicking it asks the APP to answer it properly. Main
+  // is the only process that can raise a window it doesn't own, so the hop goes through here.
+  //
+  // The `view` is re-validated against the closed AppFocusView union rather than trusted
+  // because today's only caller is the app's own overlay (the same rule `sounds:getData`'s
+  // packId follows): a renderer telling another renderer where to navigate is a capability, and
+  // its vocabulary is fixed here. `mob` is forwarded only when it is a non-empty string — it is
+  // pure display/lookup text in the receiving view and never touches a path.
+  //
+  // E2E never shows a window (src/main/e2e.ts is the whole test mode), so the raise is skipped
+  // there; the forward still happens, which is the half a test could observe.
+  ipcMain.on(IPC.focusView, (_e, focus: AppFocus) => {
+    const views: AppFocusView[] = ['mobs']
+    if (!focus || !(views as string[]).includes(focus.view)) return
+    const w = mainWindow
+    if (!w || w.isDestroyed()) return
+    if (!E2E) {
+      if (w.isMinimized()) w.restore()
+      w.show()
+      w.focus()
+    }
+    const mob = typeof focus.mob === 'string' && focus.mob.trim() ? focus.mob : undefined
+    w.webContents.send(IPC.onFocusView, { view: focus.view, mob } satisfies AppFocus)
+  })
+
   ipcMain.handle(IPC.getAlertPrefs, () => getAlertPrefs())
   ipcMain.handle(IPC.setAlertPrefs, (_e, prefs: AlertPrefs) => setAlertPrefs(prefs))
 

@@ -99,6 +99,16 @@ const overlayApi = {
    * hovered control (the pin button) is clickable. Fire-and-forget.
    */
   setIgnoreMouse: (ignore: boolean): void => ipcRenderer.send(IPC.overlaySetIgnoreMouse, KIND, ignore),
+  /**
+   * DEEP LINK (Task #64): "take me to this mob in the app". Main raises + focuses the main
+   * window and forwards the request to its renderer, which switches to the Mobs tab and opens
+   * the mob's page. Fire-and-forget — an overlay never waits on the app it just raised.
+   *
+   * Interactive mode only, by the caller's construction: a LOCKED overlay is click-through by
+   * law, so it has no clicks to give.
+   */
+  focusMob: (mob: string): void => ipcRenderer.send(IPC.focusView, { view: 'mobs', mob }),
+
   /** Close this overlay from its own close button (interactive mode only). */
   close: (): void => ipcRenderer.send(IPC.overlayClose, KIND)
 }

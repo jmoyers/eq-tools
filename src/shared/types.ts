@@ -1245,6 +1245,29 @@ export interface ProgressState {
   inventorySource?: { path: string; loadedAt: string }
 }
 
+// ----- Cross-window deep link ("take me to this in the app", Task #64) -----
+//
+// An overlay window is a GLANCE surface: it says a thing happened, in a few square inches, over
+// the game. When the thing it named deserves a real answer — a con row's mob and everything it
+// drops — the overlay's job ends and the MAIN WINDOW's begins. This is the payload that hands
+// off: the overlay asks main to focus the app on a view, main shows/focuses the window and
+// forwards the same payload to the app's renderer, which switches tabs and drills.
+//
+// Deliberately a small, CLOSED union rather than a route string: a renderer window asking
+// another window to navigate is a capability, and the set of destinations it may name is
+// spelled out here (and re-validated at the IPC handler) instead of being whatever text the
+// asking window happened to send.
+
+/** Destinations a deep link may name. One today; the union is the extension point. */
+export type AppFocusView = 'mobs'
+
+/** "Focus the app on this." `mob` is the RAW display name, as the log printed it. */
+export interface AppFocus {
+  view: AppFocusView
+  /** the mob to drill into, when the request targets a specific one */
+  mob?: string
+}
+
 // ----- Auto-update (Task #27) -----
 
 /**

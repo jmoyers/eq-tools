@@ -136,6 +136,15 @@ export const IPC = {
   // Payload: FeedReport. Fire-and-forget.
   feedReport: 'feed:report',
 
+  // ---- cross-window deep link (Task #64) ----
+  // renderer(overlay) -> main: "focus the app on this" (AppFocus). Main shows/restores/focuses
+  // the MAIN window and forwards the payload on `onFocusView`. Fire-and-forget; the payload's
+  // `view` is re-validated at the handler against the closed AppFocusView union.
+  focusView: 'app:focusView',
+  // main -> renderer(main app): a deep link landed. App.tsx switches to the named view and
+  // hands the target down (today: the mob to drill into).
+  onFocusView: 'app:focusedView',
+
   // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
   // renderer -> main: look up an item's lore/quest knowledge (local posky-first, then a
   // cached, politely-throttled wiki lookup). Returns ItemKnowledge.

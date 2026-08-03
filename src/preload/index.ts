@@ -3,6 +3,7 @@ import { IPC } from '../shared/ipc'
 import type {
   AlertDef,
   AlertPrefs,
+  AppFocus,
   CharacterRef,
   EqConfig,
   EqConfigResult,
@@ -38,7 +39,7 @@ export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, Progre
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge, MobKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
-export type { UpdateStatus }
+export type { AppFocus, UpdateStatus }
 export type { ShareApplyResult, SharePreview }
 
 export interface ReloadInventoryResult {
@@ -227,6 +228,16 @@ const api = {
     const listener = (): void => cb()
     ipcRenderer.on(IPC.onCombatActivity, listener)
     return () => ipcRenderer.removeListener(IPC.onCombatActivity, listener)
+  },
+  /**
+   * Deep link from another window (Task #64): an overlay row was clicked and main has already
+   * raised + focused this window. App.tsx switches to the named view and hands the target down
+   * (today: the mob to open). Main validates the `view` before forwarding.
+   */
+  onFocusView: (cb: (focus: AppFocus) => void): (() => void) => {
+    const listener = (_e: unknown, focus: AppFocus): void => cb(focus)
+    ipcRenderer.on(IPC.onFocusView, listener)
+    return () => ipcRenderer.removeListener(IPC.onFocusView, listener)
   },
 
   // ---- auto-update (Task #27; reworked in Task #55) ----
