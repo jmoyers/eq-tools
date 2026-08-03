@@ -115,3 +115,32 @@ slice(997999, 998129, 'w28-healing-enemy-thorns.log')
 //                      misses so the aggregate they belong in is populated either way.
 // The window ends on the loot line after the priest dies, one second before the next pull opens.
 slice(990649, 990795, 'w29-absorb-both-shapes.log')
+
+// ---------------------------------------------------------------------------
+// W34 SENTENCE-CASE SPLITS ONE MOB IN TWO — the world-model display-casing fix.
+// ---------------------------------------------------------------------------
+//
+// The "Damage by mob" panel showed BOTH `a zol ghoul knight (230)` and
+// `A zol ghoul knight (230)` — one instance, two rows, the capitalized one carrying only a
+// resist. EQ capitalizes a lowercase-article mob name at the START of a sentence, so the
+// SAME spawn is printed two ways: mid-sentence (`You slash a zol ghoul knight for 19…`) it
+// carries its true name, sentence-initial (`A zol ghoul knight resisted your Condemnation of
+// Nife!`, `A zol ghoul knight hits YOU for 17…`) it is capitalized. WorldModel.resolve()
+// adopted the LATEST sighting's casing, so the instance display flip-flopped and whichever
+// timeline instant was written while it was sentence-cased froze the wrong string. Aggregate
+// rows key by instanceId so they merely relabel; the timeline's per-mob grouping keys by the
+// RAW target string, so it split.
+//
+// THE WINDOW (Sun Aug 02 19:28:01 → 19:29:15, raw 1022491..1023067) is the user's actual
+// reported fight in Befallen, and it is self-contained:
+//   19:28:01  opens on `Auto attack is on.` six seconds after the PREVIOUS zol knight was
+//             slain (raw 1022489) — so the first damage here provably opens a fresh encounter.
+//   19:28:01→ a continuous zol-ghoul-knight grind (three knights + an urd ghoul wizard, all
+//             slain inside the span) whose outgoing damage lines are all LOWERCASE and whose
+//             incoming melee lines are all sentence-CAPITALIZED — the flip-flop driver.
+//   19:28:52  `A zol ghoul knight resisted your Condemnation of Nife!` — THE reported tick,
+//             sentence-initial, on a knight that took `You backstab a zol ghoul knight for
+//             177…` one second later and damage before it.
+//   19:29:15  the last knight is slain + its loot lines; the span ends on the buff-fade line
+//             that follows, so the encounter closes on evidence rather than mid-swing.
+slice(1022491, 1023067, 'w34-resist-case-merge.log')

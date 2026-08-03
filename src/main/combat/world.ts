@@ -149,6 +149,43 @@ export class WorldModel {
     return inst
   }
 
+  /**
+   * Adopt a fresher raw sighting as an instance's DISPLAY name — but never let EQ's
+   * sentence-casing overwrite the spawn's true name.
+   *
+   * EQ capitalizes a lowercase-article mob name whenever the name opens a sentence, so ONE
+   * spawn is printed two ways: mid-sentence it carries its real name
+   * (`You slash a zol ghoul knight for 19 points of damage.`), sentence-initial it is
+   * capitalized (`A zol ghoul knight resisted your Condemnation of Nife!`,
+   * `A zol ghoul knight hits YOU for 17 points of damage.`). Resist lines and incoming melee
+   * are ALWAYS sentence-initial; outgoing damage is always mid-sentence.
+   *
+   * `resolve()` used to adopt the LATEST sighting unconditionally, so the display flip-flopped
+   * with every incoming swing, and any timeline instant written while it happened to be
+   * sentence-cased froze the wrong string. Aggregate rows key by instanceId so they only
+   * relabelled, but the per-mob timeline grouping keys by the RAW target string — so the user
+   * saw one mob as two rows: `a zol ghoul knight (230)` with all the damage and
+   * `A zol ghoul knight (230)` carrying a lone resist.
+   *
+   * THE RULE: a lowercase-initial sighting can only have come from mid-sentence, so it is the
+   * spawn's true name and always wins. A capital-initial sighting may be either the true name
+   * or sentence-casing, so it may only overwrite another capital-initial display. Proper names
+   * ("The Hand of Veeshan", "Kahaptra Z`Taj", players, summoned pets) have NO lowercase variant,
+   * so they are always capital→capital and keep the old latest-wins behavior exactly.
+   *
+   * SPAWN-TIME CONVERGENCE: `spawn()` takes the FIRST sighting verbatim (there is no prior
+   * evidence to weigh), so a mob first seen sentence-initially starts out capitalized. The
+   * first mid-sentence sighting then flips it to canonical and pins it there — that is the
+   * intended one-way settle, not a residual flip-flop.
+   */
+  private adoptDisplay(inst: Instance, name: string): void {
+    if (inst.display === name) return
+    if (idKey(inst.display) !== idKey(name)) return // never relabel across identities
+    const incomingIsLower = /^[a-z]/.test(name)
+    const currentIsLower = /^[a-z]/.test(inst.display)
+    if (incomingIsLower || !currentIsLower) inst.display = name
+  }
+
   /** The charmed active instance for a nameKey, if any. */
   private charmedActive(nameKey: string): Instance | undefined {
     return this.active(nameKey).find((i) => i.charmed)
@@ -191,7 +228,9 @@ export class WorldModel {
       inst = this.hostileActive(key) ?? act[0]
     }
     inst.lastSeenTs = ts
-    if (inst.display !== name && idKey(inst.display) === key) inst.display = name
+    // Fresher casing wins, EXCEPT that EQ's sentence-capitalization can never overwrite the
+    // spawn's true lowercase-article name — see adoptDisplay().
+    this.adoptDisplay(inst, name)
     return inst
   }
 

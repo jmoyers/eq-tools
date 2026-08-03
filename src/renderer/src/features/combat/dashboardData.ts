@@ -292,8 +292,41 @@ export interface MobBreakdown {
 const UNKNOWN_TARGET = 'unknown target'
 
 /**
+ * CASE FOLD (law 2 — names are dirty; key case-insensitively, display raw).
+ *
+ * EQ capitalizes an article-led mob name at SENTENCE START and leaves it lowercase
+ * mid-sentence, so one spawn reaches the ring under two spellings:
+ *   "A zol ghoul knight resisted your Smite!"          ← sentence-initial
+ *   "You slash a zol ghoul knight for 118 points…"     ← mid-sentence, the TRUE name
+ * Keying the panel by the raw string therefore split one mob into two rows — the reported
+ * symptom being a phantom "0 · 0%" row holding a single resist.
+ *
+ * The engine now keeps an instance's display casing stable, and this fold is STILL required:
+ * ring events are immutable once written, so a fight whose FIRST sighting of a mob is a
+ * sentence-initial line (a pull that opens on a resist) has already stamped the capitalized
+ * string into the ring before any mid-sentence line exists to correct it.
+ *
+ * The lowercase-INITIAL variant wins the label because that is the spawn's real name — the
+ * capital is punctuation, not identity. A mob only ever seen capitalized keeps its capital
+ * (proper names like "The Hand of Veeshan" are exactly that case), so the rule only ever
+ * relabels a row once BOTH spellings have been seen.
+ */
+function startsLower(name: string): boolean {
+  const c = name.charAt(0)
+  return c !== '' && c === c.toLowerCase() && c !== c.toUpperCase()
+}
+
+/** The display name for a row that has now been seen as both `shown` and `next`. */
+function preferredLabel(shown: string, next: string): string {
+  if (shown === next) return shown
+  return !startsLower(shown) && startsLower(next) ? next : shown
+}
+
+/**
  * Group OUTGOING instants (you + pet) by defender. One pass; misses/resists fold into the
  * same row as damage-free counters (law 8 — they're first-class but carry no amount).
+ * Rows are keyed case-insensitively (see the fold above) and labelled with the best spelling
+ * seen; everything downstream — sort, bar pct, share, sampling scale — is unchanged.
  */
 export function groupByTarget(tl: TimelineView): MobBreakdown {
   const scale = sampleScale(tl)
@@ -301,11 +334,14 @@ export function groupByTarget(tl: TimelineView): MobBreakdown {
   let total = 0
   for (const e of tl.events) {
     if (e.kind === 'enemy') continue
-    const key = e.target ?? UNKNOWN_TARGET
+    const name = e.target ?? UNKNOWN_TARGET
+    const key = name.toLowerCase()
     let row = byTarget.get(key)
     if (!row) {
-      row = { target: key, total: 0, hits: 0, crits: 0, misses: 0, resists: 0, pct: 0, share: 0 }
+      row = { target: name, total: 0, hits: 0, crits: 0, misses: 0, resists: 0, pct: 0, share: 0 }
       byTarget.set(key, row)
+    } else {
+      row.target = preferredLabel(row.target, name)
     }
     if (e.outcome === 'miss') row.misses += 1
     else if (e.outcome === 'resist') row.resists += 1
@@ -359,6 +395,10 @@ export interface TargetDetail {
  */
 export function skillsForTarget(tl: TimelineView, target: string): TargetDetail {
   const scale = sampleScale(tl)
+  // Same case fold as `groupByTarget`: a folded row is ONE mob, so drilling it must collect
+  // every spelling EQ used for it — otherwise the drill would show a subset of the row it was
+  // opened from. Matching is symmetric, so a drill persisted under either spelling resolves.
+  const want = target.toLowerCase()
   const byLane = new Map<string, FlatSkill>()
   let total = 0
   let hits = 0
@@ -367,7 +407,7 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
   let resists = 0
   for (const e of tl.events) {
     if (e.kind === 'enemy') continue
-    if ((e.target ?? UNKNOWN_TARGET) !== target) continue
+    if ((e.target ?? UNKNOWN_TARGET).toLowerCase() !== want) continue
     const key = `${e.category}|${e.lane}`
     let row = byLane.get(key)
     if (!row) {
