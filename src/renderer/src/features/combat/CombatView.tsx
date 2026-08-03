@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Box, CircularProgress, Paper, Skeleton, Stack, Typography } from '@mui/material'
 import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
@@ -8,6 +8,8 @@ import { SegmentBody } from './SegmentPanel'
 import { DpsChartCard, MobDamageCard, type Ringless } from './CombatDashboard'
 import { BreakdownPreviewCard } from './BreakdownCard'
 import { scopeOptions, type CombatScope, type Drill, type ScopeOptions } from './dashboardData'
+import { selfSource } from './petRows'
+import { useStartDrilled } from './useCombatPrefs'
 import type { CombatFocus } from './combatFocus'
 import type { CombatSnapshot, SegmentView, SourceView, TimelineView } from '@shared/combat'
 
@@ -125,6 +127,85 @@ function DashboardGrid({
   )
 }
 
+/**
+ * DRILL STATE for the main panel — and the DEFAULT it opens on.
+ *
+ * DEFAULT DRILLED (owner direction, 2026-08-03): the game is mostly played solo, so level 1 is
+ * a two-row list (you, your pet) standing in front of the only list worth reading. The dashboard
+ * therefore OPENS on your damage breakdown, with the pet nested inside it as one drillable line
+ * item (petRows.ts). Un-drilling is exactly what it always was — Back / the "All" crumb / Esc —
+ * and the choice STICKS, in localStorage under `eq.combat.drill`, alongside `eq.combat.scope`.
+ *
+ * Three states, deliberately, not two:
+ *   undefined — the user hasn't chosen for THIS selection: the persisted default applies.
+ *   null      — an explicit un-drill: level 1, even though the default says otherwise.
+ *   Drill     — an explicit subject.
+ * Collapsing null into undefined would make a persisted "drilled" default silently re-drill the
+ * list the user just backed out of.
+ *
+ * Only YOUR breakdown moves the persisted bit. Drilling a mob (the Damage-by-mob panel) or a
+ * nested pet, and backing out of either, is navigation inside one fight — it must not decide
+ * what the NEXT fight opens on. (A nested pet's Back hands us its PARENT, your breakdown, not
+ * `null` — the crumb spells that hierarchy out — so backing out of a pet never reads here as
+ * "show me the sources".)
+ */
+function useDashboardDrill({
+  seg,
+  mode,
+  selection,
+  view
+}: {
+  seg: SegmentView | null
+  mode: 'out' | 'in'
+  selection: string
+  view: 'dash' | 'timeline'
+}): { drill: Drill | null; setDrill: (d: Drill | null) => void } {
+  const [startDrilled, setStartDrilled] = useStartDrilled()
+  const [chosen, setChosen] = useState<Drill | null | undefined>(undefined)
+
+  // Incoming is a list of ENEMIES — there is no "your breakdown" to default into, so the
+  // default only ever applies to Outgoing.
+  const rows = mode === 'out' ? seg?.entities ?? [] : []
+  const selfId = selfSource(rows)?.id ?? null
+  const fallback = useMemo(
+    (): Drill | null => (startDrilled && selfId ? { kind: 'entity', entityId: selfId } : null),
+    [startDrilled, selfId]
+  )
+  const drill = chosen === undefined ? fallback : chosen
+
+  const isSelfDrill = drill?.kind === 'entity' && drill.entityId === selfId
+
+  const setDrill = useCallback(
+    (next: Drill | null): void => {
+      if (next === null && isSelfDrill) setStartDrilled(false)
+      else if (next?.kind === 'entity' && next.entityId === selfId) setStartDrilled(true)
+      setChosen(next)
+    },
+    [isSelfDrill, selfId, setStartDrilled]
+  )
+
+  // A drill is per-fight and per-direction: changing either returns to the default.
+  useEffect(() => setChosen(undefined), [selection, mode])
+
+  // Esc leaves the drill-down.
+  useEffect(() => {
+    if (view !== 'dash' || !drill) return
+    const onKey = (ev: KeyboardEvent): void => {
+      if (ev.key !== 'Escape') return
+      // Esc belongs to the innermost open thing. The fight picker owns it while its popover is
+      // up (that is how you dismiss the search), so leaving the drill alone here is what keeps
+      // one keypress from doing two things at once. The popover is portalled to <body>, so a
+      // React-level stopPropagation in the picker could never reach this window listener.
+      if (document.querySelector('[data-testid="fight-picker"]')) return
+      setDrill(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [view, drill, setDrill])
+
+  return { drill, setDrill }
+}
+
 /** The timeline pane's defensive fallback — see CombatBody for why it should be unreachable. */
 function NoTimelinePane(): React.JSX.Element {
   return (
@@ -184,26 +265,6 @@ export default function CombatView({
   } = useCombat()
   const [mode, setMode] = useState<'out' | 'in'>('out')
   const [view, setView] = useState<'dash' | 'timeline'>('dash')
-  const [drill, setDrill] = useState<Drill | null>(null)
-
-  // Esc leaves the drill-down (there is only one level below the source list).
-  useEffect(() => {
-    if (view !== 'dash') return
-    const onKey = (ev: KeyboardEvent): void => {
-      if (ev.key !== 'Escape' || !drill) return
-      // Esc belongs to the innermost open thing. The fight picker owns it while its popover is
-      // up (that is how you dismiss the search), so leaving the drill alone here is what keeps
-      // one keypress from doing two things at once. The popover is portalled to <body>, so a
-      // React-level stopPropagation in the picker could never reach this window listener.
-      if (document.querySelector('[data-testid="fight-picker"]')) return
-      setDrill(null)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [view, drill])
-
-  // Reset the drill when the selected fight / mode changes (a drill is per-fight).
-  useEffect(() => setDrill(null), [selection, mode])
 
   // An inbound focus (deep link) picks the scope + selection, then is consumed. Keyed on the
   // NONCE, not the payload's identity: the same fight asked for twice must select twice.
@@ -227,6 +288,7 @@ export default function CombatView({
   const tl = useStableTimeline(snap?.timeline)
   const ringless = ringlessOf(tl, seg)
   const live = isLiveSelection(opts, selection)
+  const { drill, setDrill } = useDashboardDrill({ seg, mode, selection, view })
   const previewSource = previewSourceOf(seg, mode, drill)
 
   // TIMELINE AVAILABILITY. The timeline is drawn from an encounter's event ring, and a ring only

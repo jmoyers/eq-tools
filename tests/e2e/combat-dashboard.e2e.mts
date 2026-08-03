@@ -64,6 +64,7 @@ import {
   waitForCombatText,
   type Snap
 } from './appHarness.mjs'
+import { meterRows } from './drill.mjs'
 
 // ── the run, one step per numbered section ─────────────────────────────────────────────
 //
@@ -119,7 +120,7 @@ async function stepDashboardShape(page: Page, snap: Snap): Promise<DashboardShap
   //    (AGENTS.md — assert identities, never today's numbers). The identity is
   //    "damage ⇒ rows"; the unconditional row check happens in step 10 against HISTORY,
   //    which always has damage.
-  const rows = await countOf(page, '[data-testid="meter-row"]')
+  const rows = await meterRows(page)
   const liveTotal = snap.selected?.outTotal ?? 0
   if (liveTotal > 0) {
     check('the live selection renders its sources', rows >= 1, `${snap.selected!.name}: ${Math.round(liveTotal)} dmg, ${rows} rows`)
@@ -354,7 +355,7 @@ async function stepPickAFight(page: Page, snap: Snap): Promise<void> {
     // Verify from the DOM, not from our own snapshot call: `getCombatSnapshot({})` resolves
     // OUR (live) selection, not the renderer's — only the rendered view knows what's picked.
     const shown = await waitForCombatText(page, newestFight.name)
-    const fightRows = await countOf(page, '[data-testid="meter-row"]')
+    const fightRows = await meterRows(page)
     check('picking a fight in the selector selects it', shown.includes(newestFight.name), newestFight.name)
     check(
       '…and its dashboard renders source rows',
@@ -461,8 +462,8 @@ async function stepSearch(page: Page, snap: Snap): Promise<void> {
       )
       check(
         '…and its dashboard renders source rows',
-        (await countOf(page, '[data-testid="meter-row"]')) >= 1,
-        `${await countOf(page, '[data-testid="meter-row"]')} rows`
+        (await meterRows(page)) >= 1,
+        `${await meterRows(page)} rows`
       )
       // The picker closed on selection, and clearing the query must restore the browse list.
       check('…and the picker closed on selection', (await countOf(page, '[data-testid="fight-picker"]')) === 0)

@@ -34,11 +34,13 @@ import {
   Box,
   Button,
   Chip,
+  FormControlLabel,
   List,
   ListItemButton,
   ListItemText,
   Paper,
   Stack,
+  Switch,
   TextField,
   Typography
 } from '@mui/material'
@@ -46,9 +48,11 @@ import SearchIcon from '@mui/icons-material/Search'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
+import BarChartIcon from '@mui/icons-material/BarChart'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
+import { useCombinePetRow } from '../combat/useCombatPrefs'
 import { UpdateSetting, VersionSetting, useUpdateStatus } from './UpdateSetting'
 import type { EqConfig, UpdateStatus } from '@shared/types'
 import { normalizeQuery } from '../../lib/search'
@@ -180,6 +184,42 @@ function EqFolderSetting(): JSX.Element {
   )
 }
 
+// -------------------------------------------------------------- Combat section
+
+/**
+ * Pet nesting (owner direction, 2026-08-03). ON by default: the game is mostly played solo, so
+ * "you and your pet" is the shape of nearly every fight, and a two-row source meter is a lid on
+ * the only list worth reading. Combined, the pet is ONE line item inside your breakdown —
+ * labelled with its real name, drillable into its own skills, and never summed into a skill row
+ * of yours (features/combat/petRows.ts). Off, it is a separate source row, as it always was.
+ *
+ * Renderer-local (localStorage, like the Fight/Overall scope), so it needs no store migration —
+ * and it applies LIVE: the Combat dashboard and the Overview card subscribe to the same value.
+ */
+function PetNestingSetting(): JSX.Element {
+  const [combine, setCombine] = useCombinePetRow()
+  return (
+    <Stack spacing={1}>
+      <FormControlLabel
+        control={
+          <Switch
+            size="small"
+            checked={combine}
+            data-testid="pref-combine-pet"
+            onChange={(e) => setCombine(e.target.checked)}
+          />
+        }
+        label={<Typography variant="body2">Show your pet inside your damage</Typography>}
+      />
+      <Typography variant="caption" color="text.secondary">
+        {combine
+          ? 'Your pet is one row inside your damage breakdown — click it for the pet’s own skills. Your per-skill numbers stay yours; the pet’s damage is never folded into them.'
+          : 'Your pet is listed as its own source, beside you, on the meter.'}
+      </Typography>
+    </Stack>
+  )
+}
+
 // ------------------------------------------------------------------- the view
 
 interface PrefItem {
@@ -212,6 +252,19 @@ function buildSections(version: string, status: UpdateStatus): PrefSection[] {
           label: 'EverQuest install folder',
           keywords: 'path directory logs eqlog character detect override install location',
           content: <EqFolderSetting />
+        }
+      ]
+    },
+    {
+      id: 'combat',
+      label: 'Combat',
+      icon: <BarChartIcon fontSize="small" />,
+      items: [
+        {
+          id: 'combine-pet',
+          label: 'Combine pet into your damage',
+          keywords: 'pet combine merge damage breakdown solo meter drill charm nest source',
+          content: <PetNestingSetting />
         }
       ]
     },

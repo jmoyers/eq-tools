@@ -11,8 +11,11 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
 import { TargetSkillBars } from './CombatDashboard'
 import { EntityRow } from './EntityRow'
+import { PetBar } from './PetBar'
 import { CAT_COLOR, CopyButton, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
-import { flattenSkills, skillsForTarget, type Drill, type TargetDetail } from './dashboardData'
+import { skillsForTarget, type Drill, type TargetDetail } from './dashboardData'
+import { nestedRows, petSources, selfSource } from './petRows'
+import { useCombinePetRow } from './useCombatPrefs'
 import { fmtElapsed, formatEntityText, formatSegmentText, formatTargetText } from './copyText'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
@@ -126,17 +129,37 @@ function MeleeRoundsNote({ rounds }: { rounds: SourceView['rounds'] }): React.JS
 /**
  * Level-2 (one of two level-2 subjects): the category legend + ONE flat ranked list of every
  * skill/spell this entity landed. The melee-rounds heuristic footer rides along.
+ *
+ * `pets` are the pet sources NESTED into this list (see petRows.ts) — non-empty only for YOUR
+ * row, and only while the 'Combine pet into your damage' preference is on. Each nests as one
+ * line item that drills into that pet's own breakdown; nothing about your per-skill rows
+ * changes, because a pet's damage is never folded into a lane of yours.
+ *
+ * A category filter hides them: the legend filters YOUR categories, and a pet is not one of
+ * them — showing it under "Melee only" would claim it was melee damage of yours.
  */
-function EntitySkillBars({ e }: { e: SourceView }): React.JSX.Element {
+function EntitySkillBars({
+  e,
+  pets,
+  onDrillPet
+}: {
+  e: SourceView
+  pets: SourceView[]
+  onDrillPet: (id: string) => void
+}): React.JSX.Element {
   const [filter, setFilter] = useState<DamageCategory | null>(null)
-  const all = flattenSkills(e)
-  const rows = filter ? all.filter((s) => s.category === filter) : all
+  const all = nestedRows(e, pets)
+  const rows = filter ? all.filter((r) => r.kind === 'skill' && r.skill.category === filter) : all
   return (
     <Box>
       <CategoryLegend e={e} active={filter} onToggle={(c) => setFilter((f) => (f === c ? null : c))} />
-      {rows.map((s) => (
-        <SkillBar key={`${s.category}|${s.name}`} s={s} />
-      ))}
+      {rows.map((r) =>
+        r.kind === 'pet' ? (
+          <PetBar key={r.pet.id} pet={r.pet} pct={r.pct} onDrill={() => onDrillPet(r.pet.id)} />
+        ) : (
+          <SkillBar key={`${r.skill.category}|${r.skill.name}`} s={r.skill} />
+        )
+      )}
       {rows.length === 0 && <QuietNote>No skill breakdown for this source.</QuietNote>}
       <MeleeRoundsNote rounds={e.rounds} />
     </Box>
@@ -243,22 +266,33 @@ function SegmentHeader({
   )
 }
 
-/** Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */
+/**
+ * Drill-down breadcrumb + Back. Two levels, plus ONE nested case: a pet that was opened from
+ * inside your breakdown (petRows.ts) is a level below it, and the crumb says so —
+ * `All › You › Vebarn`. `parent` is what makes the trail honest: Back goes to the row the pet
+ * was clicked from, "All" still goes all the way out, and neither pretends the pet is a
+ * top-level source while it is being shown as a line item of yours.
+ */
 function DrillCrumb({
   crumb,
   isTarget,
+  parent,
   setDrill
 }: {
   crumb: string
   isTarget: boolean
+  /** the source this drill was nested inside, when it was (your row, for a nested pet). */
+  parent: SourceView | null
   setDrill: (d: Drill | null) => void
 }): React.JSX.Element {
+  const up = (): void => setDrill(parent ? { kind: 'entity', entityId: parent.id } : null)
   return (
     <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75, flexShrink: 0 }}>
       <Button
         size="small"
+        data-testid="drill-back"
         startIcon={<ArrowBackIcon sx={{ fontSize: 16 }} />}
-        onClick={() => setDrill(null)}
+        onClick={up}
         sx={{ minWidth: 0, py: 0 }}
       >
         Back
@@ -267,6 +301,11 @@ function DrillCrumb({
         <Link component="button" underline="hover" color="inherit" onClick={() => setDrill(null)} sx={{ fontSize: 12 }}>
           All
         </Link>
+        {parent ? (
+          <Link component="button" underline="hover" color="inherit" onClick={up} sx={{ fontSize: 12 }}>
+            {parent.name}
+          </Link>
+        ) : null}
         <Typography variant="caption" color="text.primary">
           {isTarget ? `damage to ${crumb}` : crumb}
         </Typography>
@@ -305,12 +344,15 @@ function SegmentContent({
   seg,
   mode,
   rows,
+  pets,
   d,
   setDrill
 }: {
   seg: SegmentView
   mode: 'out' | 'in'
   rows: SourceView[]
+  /** pet sources to NEST inside your breakdown (empty when the preference is off). */
+  pets: SourceView[]
   d: DrillState
   setDrill: (drill: Drill | null) => void
 }): React.JSX.Element {
@@ -332,8 +374,17 @@ function SegmentContent({
           </QuietNote>
         ))}
 
-      {/* Keyed by entity so switching sources resets the legend's category filter. */}
-      {d.entity && <EntitySkillBars key={d.entity.id} e={d.entity} />}
+      {/* Keyed by entity so switching sources resets the legend's category filter. Pets nest
+          into YOUR row only — drilling the pet itself shows the pet's own list, never a pet
+          nested inside a pet. */}
+      {d.entity && (
+        <EntitySkillBars
+          key={d.entity.id}
+          e={d.entity}
+          pets={d.entity.kind === 'you' ? pets : []}
+          onDrillPet={(id) => setDrill({ kind: 'entity', entityId: id })}
+        />
+      )}
       {!d.entity && d.targetDetail && d.targetName && (
         <TargetSkillBars target={d.targetName} detail={d.targetDetail} seg={seg} />
       )}
@@ -357,9 +408,16 @@ export function SegmentBody({
   setDrill: (d: Drill | null) => void
 }): React.JSX.Element {
   const rows = mode === 'out' ? seg.entities : seg.incoming
+  // The header total/DPS stay the SEGMENT's (you + every pet) at every drill level — the same
+  // aggregate the Overview card headlines, so the two surfaces can never disagree on a number.
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
   const dps = mode === 'out' ? seg.outDps : seg.inDps
   const d = useDrillState(rows, tl, drill)
+  const [combinePetRow] = useCombinePetRow()
+  const pets = mode === 'out' && combinePetRow ? petSources(rows) : []
+  // A drilled pet is NESTED (and so has a parent in the trail) only while it is actually being
+  // shown as a line item inside your row — i.e. while the preference is on and you have a row.
+  const nestedIn = d.entity?.kind === 'pet' && pets.some((p) => p.id === d.entity?.id) ? selfSource(rows) : null
 
   // "Copy this view" means THIS view: the same three-way choice the body below makes, so the
   // clipboard can never hold a level the user isn't looking at. Built on click, never on render.
@@ -388,8 +446,8 @@ export function SegmentBody({
       }}
     >
       <SegmentHeader seg={seg} mode={mode} total={total} dps={dps} copyView={copyView} />
-      {d.crumb && <DrillCrumb crumb={d.crumb} isTarget={!!d.targetDetail} setDrill={setDrill} />}
-      <SegmentContent seg={seg} mode={mode} rows={rows} d={d} setDrill={setDrill} />
+      {d.crumb && <DrillCrumb crumb={d.crumb} isTarget={!!d.targetDetail} parent={nestedIn} setDrill={setDrill} />}
+      <SegmentContent seg={seg} mode={mode} rows={rows} pets={pets} d={d} setDrill={setDrill} />
     </Paper>
   )
 }
