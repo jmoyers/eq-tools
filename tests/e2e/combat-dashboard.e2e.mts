@@ -20,7 +20,9 @@
  * log contains right now: the dashboard is present AND HAS HEIGHT (the regression), the
  * source meter has rows, the DPS-over-time and Damage-by-mob cards exist, the Fight/Overall
  * SCOPE filters the selector to exactly one scope's rows (Task #60 — a fight meter must never
- * wander into the zone aggregate), and the combat log is a BOUNDED scrolling box.
+ * wander into the zone aggregate), the header holds its two-rank shape (subject line, then
+ * lens line) with the Timeline view offered only when the selection actually has an event
+ * ring, and the combat log is a BOUNDED scrolling box.
  * Assertions are identities/floors — never "today's numbers" (AGENTS.md: frozen numbers rot).
  *
  * On any failure: the relevant DOM + a screenshot land in tests/e2e/artifacts/ (gitignored).
@@ -243,57 +245,104 @@ interface HeaderInfo {
   /** how far the header's own content overflows it horizontally (0 = nothing is cut off) */
   overflowX: number
   /**
-   * Spread of the primary-line controls' vertical CENTERS. The controls have different
-   * heights (the selector is a two-line row, the toggles are single-line pills) and the row
-   * centers them, so their top edges legitimately differ by ~10px — centers are what agree
-   * on one line. A real wrap moves a control a whole row (≥30px).
+   * Spread of the SUBJECT line's controls' vertical CENTERS (scope + selector + headline stat).
+   * The controls have different heights (the selector is a two-line row, the toggle is a
+   * single-line pill, the headline is a big number over a caption) and the row centers them, so
+   * their top edges legitimately differ by ~10px — centers are what agree on one line. A real
+   * wrap moves a control a whole row (≥30px).
    */
-  primarySpread: number
+  subjectSpread: number
+  /** Same measurement for the LENS line (view switch + direction filter). */
+  lensSpread: number
+  /**
+   * How far the view switch's center sits BELOW the selector's. This is the whole point of the
+   * redesign: two RANKS (what you're looking at, then how you're looking at it), not one flat
+   * row of equal-weight controls. A collapse back to a single line drives this to ~0.
+   */
+  rankGap: number
   /** which of the header's controls are mounted right now */
   controls: string[]
+  /** the headline stat's text ('' when no segment is selected and it isn't rendered) */
+  headline: string
 }
 
-/** The header bar's box + whether its primary line actually stayed one line. */
+/** The header bar's box + whether its two ranks actually landed as two ranks. */
 function headerInfo(page: Page): Promise<HeaderInfo | null> {
   return page.evaluate(() => {
     const el = document.querySelector('[data-testid="combat-header"]') as HTMLElement | null
     if (!el) return null
     const r = el.getBoundingClientRect()
-    const ids = ['scope-toggle', 'segment-select', 'view-toggle', 'direction-toggle']
+    const ids = ['scope-toggle', 'segment-select', 'view-toggle', 'direction-toggle', 'headline-stat']
     const present = ids.filter((id) => document.querySelector(`[data-testid="${id}"]`))
-    // The primary line is scope + selector + view switch; if the bar ever wraps under pressure,
-    // their centers stop agreeing. (The direction filter lives on the second line by design.)
-    const tops = ['scope-toggle', 'segment-select', 'view-toggle']
-      .map((id) => {
-        const r = document.querySelector(`[data-testid="${id}"]`)?.getBoundingClientRect()
-        return r ? r.top + r.height / 2 : undefined
+    // NO named function bindings inside this callback: tsx/esbuild `keepNames` wraps
+    // `const f = (…) => …` in a `__name` helper that lives in the NODE bundle, and Playwright
+    // ships only the callback's source to the page — so the evaluated code throws
+    // `__name is not defined`. Anonymous callbacks passed straight to .map/.filter are the one
+    // shape that stays unwrapped, so the center/spread math is written with those.
+    const centers = new Map(
+      ids.map((id) => {
+        const b = document.querySelector(`[data-testid="${id}"]`)?.getBoundingClientRect()
+        return [id, b ? b.top + b.height / 2 : undefined] as const
       })
-      .filter((t): t is number => typeof t === 'number')
+    )
+    // LINE 1 (subject) = scope + selector + the right-edge headline stat. LINE 2 (lens) = the
+    // view switch + the direction filter (present in dash view only). Absent ids simply drop
+    // out — presence is asserted separately, this is purely "did the line stay one line".
+    const spreads = [
+      ['scope-toggle', 'segment-select', 'headline-stat'],
+      ['view-toggle', 'direction-toggle']
+    ].map((want) => {
+      const cs = want.map((id) => centers.get(id)).filter((t): t is number => typeof t === 'number')
+      return cs.length ? Math.round(Math.max(...cs) - Math.min(...cs)) : -1
+    })
+    const subjectSpread = spreads[0]
+    const lensSpread = spreads[1]
+    const selCenter = centers.get('segment-select')
+    const viewCenter = centers.get('view-toggle')
     return {
       h: Math.round(r.height),
       w: Math.round(r.width),
       overflowX: Math.max(0, el.scrollWidth - el.clientWidth),
-      primarySpread: tops.length ? Math.round(Math.max(...tops) - Math.min(...tops)) : -1,
-      controls: present
+      subjectSpread,
+      lensSpread,
+      rankGap:
+        typeof selCenter === 'number' && typeof viewCenter === 'number'
+          ? Math.round(viewCenter - selCenter)
+          : -1,
+      controls: present,
+      headline: (document.querySelector('[data-testid="headline-stat"]') as HTMLElement | null)?.innerText ?? ''
     }
   })
 }
 
+/** Is the view switch's Timeline button disabled right now? */
+function timelineDisabled(page: Page): Promise<boolean> {
+  return page.evaluate(() => {
+    // MUI renders a disabled ToggleButton as `<button disabled class="… Mui-disabled">`; accept
+    // either signal so a styling-only change can't silently pass the assertion.
+    const btn = document.querySelector('[data-testid="view-toggle"] button:nth-child(2)')
+    return !!btn && (btn.matches('[disabled]') || btn.classList.contains('Mui-disabled'))
+  })
+}
+
 /**
- * The HEADER assertions. It is the tab's subject line — the fight/zone you're looking at, the
- * view switch, and (on a quiet second line) the direction filter plus passive state. What can
- * regress here is SIZE and WRAPPING: at the 900px minimum window there is only ~648px of
- * content width, and the old flat row of five equal-weight controls wrapped into a
- * three-line block whose wrap point moved with the fight name.
+ * The HEADER assertions. It is the tab's subject line THEN its lens line: rank 1 says WHAT you
+ * are looking at (Fight/Overall scope, which fight, and its headline dps), rank 2 says HOW
+ * (Dashboard/Timeline, direction, combine-pets, passive state). What can regress here is SIZE
+ * and WRAPPING: at the 900px minimum window there is only ~648px of content width, and the old
+ * flat row of five equal-weight controls wrapped into a three-line block whose wrap point moved
+ * with the fight name. The two-rank layout is asserted structurally — each line's controls must
+ * agree on a center, AND the lens line must sit materially BELOW the subject line, so a
+ * regression that flattens the bar back into one row fails even though nothing "wrapped".
  */
-async function checkHeader(page: Page, tag: string, expectDirection: boolean): Promise<void> {
+async function checkHeader(page: Page, tag: string, expectDirection: boolean, maxH = 110): Promise<void> {
   const h = await headerInfo(page)
   if (!check(`[${tag}] the combat header is rendered`, h !== null)) return
   const info = h as HeaderInfo
   check(
-    `[${tag}] the header stays a compact two-line bar`,
-    info.h >= 40 && info.h <= 110,
-    `${info.w}×${info.h}px · controls: ${info.controls.join(', ')}`
+    `[${tag}] the header stays a compact bar`,
+    info.h >= 40 && info.h <= maxH,
+    `${info.w}×${info.h}px (cap ${maxH}) · controls: ${info.controls.join(', ')}`
   )
   check(
     `[${tag}] nothing in the header is cut off horizontally`,
@@ -301,14 +350,35 @@ async function checkHeader(page: Page, tag: string, expectDirection: boolean): P
     `+${info.overflowX}px`
   )
   check(
-    `[${tag}] scope + selector + view switch share one line (no wrapping mess)`,
-    info.primarySpread >= 0 && info.primarySpread <= 6,
-    `center spread ${info.primarySpread}px`
+    `[${tag}] the subject line (scope + selector + headline) stays one line`,
+    info.subjectSpread >= 0 && info.subjectSpread <= 6,
+    `center spread ${info.subjectSpread}px`
+  )
+  check(
+    `[${tag}] the lens line (view switch${expectDirection ? ' + direction filter' : ''}) stays one line`,
+    info.lensSpread >= 0 && info.lensSpread <= 6,
+    `center spread ${info.lensSpread}px`
+  )
+  // The structural assertion: the lens sits on its OWN rank under the subject. Any plausible
+  // two-rank bar puts these ≥20px apart; 10px is a floor that only a flattened/overlapping
+  // layout can fail.
+  check(
+    `[${tag}] the view switch sits on a second rank BELOW the selector`,
+    info.rankGap >= 10,
+    `view center is ${info.rankGap}px below the selector's`
   )
   check(
     `[${tag}] the direction filter is ${expectDirection ? 'present' : 'hidden (timeline view)'}`,
     info.controls.includes('direction-toggle') === expectDirection,
     info.controls.join(', ')
+  )
+  // The headline stat is the subject line's payload — it renders only when a segment is
+  // selected, and by the time any checkHeader runs the flow has already asserted a fight is
+  // selected (step 5/6), so its absence here is a real regression, not a quiet log.
+  check(
+    `[${tag}] the selected segment's headline stat is present and states a rate`,
+    info.controls.includes('headline-stat') && /dps/i.test(info.headline),
+    info.headline.replace(/\s+/g, ' ').trim() || 'absent'
   )
 }
 
@@ -465,7 +535,8 @@ async function main(): Promise<void> {
     //     source meter a 1.5x-wide column and squeezed the other three into a narrow strip.
     await checkGrid(page, 'quiet')
 
-    // 4c. THE HEADER: one compact bar, not a wrapped toolbar dump.
+    // 4c. THE HEADER: one compact bar of two RANKS (subject line, then lens line), not a
+    //     wrapped toolbar dump.
     await checkHeader(page, 'quiet', true)
     // Passive state: the two combat-modifier slots are numbered ("1: berserker"), never the
     // old "stance:"/"inv:" category words. Either slot may be absent (never observed yet).
@@ -513,6 +584,17 @@ async function main(): Promise<void> {
       const headText = await selectorText(page)
       check('…and the selector says so instead of claiming live', /Last fight/.test(headText), headText.slice(0, 80))
     }
+    // The CLOSED trigger states the subject only — label + timing. The dps rate moved to the
+    // headline stat at the right edge of the same line, and printing the number twice on one
+    // line was exactly the noise the redesign removed. Scope this to the trigger's own text:
+    // the headline is a SIBLING inside the header, so a page-wide search would always find
+    // "dps" and assert nothing at all.
+    const triggerText = await selectorText(page)
+    check(
+      'the closed selector states the subject only — no dps rate (the headline owns it)',
+      !/dps/i.test(triggerText),
+      triggerText.replace(/\s+/g, ' ').trim().slice(0, 80) || 'empty'
+    )
     check(
       '…never the empty "No combat yet" panel while the log has fights',
       dash !== null && (liveTotal === 0 || rows >= 1),
@@ -536,8 +618,23 @@ async function main(): Promise<void> {
       overallMenu.length > 0 && overallMenu.every((v) => v === 'zone' || /^zs\d+$/.test(v)),
       `${overallMenu.length} rows: ${overallMenu.slice(0, 4).join(', ')}`
     )
+
+    // 6c. TIMELINE AVAILABILITY. The timeline is drawn from a per-encounter EVENT RING, and a
+    //     zone aggregate deliberately keeps none (AGENTS.md law 7: finalized zone sessions are
+    //     frozen totals + timing, NO per-event rings — that's what keeps a full-log history
+    //     under a megabyte). So in Overall scope there is nothing to draw, and the honest UI is
+    //     a DISABLED Timeline button, not a button that leads to an empty pane. Same rule
+    //     covers old fights whose rings have been evicted (≤60 retained).
+    check(
+      'in Overall scope the Timeline view is disabled (a zone aggregate keeps no event ring)',
+      await timelineDisabled(page)
+    )
     await page.click('[data-testid="scope-toggle"] button:nth-child(1)')
     await sleep(800)
+    check(
+      '…and back in Fight scope the Timeline view is selectable again (the live/last fight has its ring)',
+      !(await timelineDisabled(page))
+    )
     snap = await snapshot(page)
 
     // 7. The combat log is a BOUNDED scrolling box (this is what ate the dashboard).
@@ -592,6 +689,38 @@ async function main(): Promise<void> {
     await page.click('[data-testid="view-toggle"] button:nth-child(1)')
     await sleep(800)
     check('…and switching back restores the dashboard', (await countOf(page, '[data-testid="combat-dashboard"]')) === 1)
+
+    // 9c. AUTO-FALLBACK. The view is a LENS over the selection, and the selection can lose its
+    //     timeline underneath you — switching scope to Overall is the everyday way to do it
+    //     (step 6c: no event ring for a zone aggregate). The old behaviour left you staring at a
+    //     dead "No timeline for this selection" pane you had to escape by hand. The contract now
+    //     is that the view falls back to Dashboard on its own, so that empty pane is
+    //     UNREACHABLE — assert both halves: the dashboard comes back, and that copy appears
+    //     nowhere on the page.
+    await page.click('[data-testid="view-toggle"] button:nth-child(2)')
+    await sleep(800)
+    check(
+      'the Timeline view is entered from the Fight scope',
+      (await countOf(page, '[data-testid="combat-dashboard"]')) === 0
+    )
+    await page.click('[data-testid="scope-toggle"] button:nth-child(2)')
+    await sleep(800)
+    check(
+      'losing the timeline mid-view falls back to the Dashboard automatically',
+      (await countOf(page, '[data-testid="combat-dashboard"]')) === 1
+    )
+    check(
+      '…so the empty "No timeline for this selection" pane is never reachable',
+      !(await combatText(page)).toLowerCase().includes('no timeline for this selection')
+    )
+    // Restore the state the remaining steps document as their starting point: Fight scope,
+    // Dashboard view. (The fallback already put the view back; the scope is ours to undo.)
+    await page.click('[data-testid="scope-toggle"] button:nth-child(1)')
+    await sleep(800)
+    check(
+      '…and returning to the Fight scope leaves the Dashboard mounted',
+      (await countOf(page, '[data-testid="combat-dashboard"]')) === 1
+    )
 
     // 10. Drive the SELECTOR for real and land on a finalized fight. History always carries
     //     damage (the engine drops 0-damage encounters), so this is the unconditional "the
@@ -664,7 +793,10 @@ async function main(): Promise<void> {
     check('narrow: the grid collapses to a single column', narrow.cols === 1, `${narrow.cols} column(s)`)
     check('narrow: each stacked panel keeps a usable height', narrow.minH >= 250, `shortest ${narrow.minH}px`)
     check('narrow: the dashboard REGION is the scroller', narrow.scrolls, `region scrolls=${narrow.scrolls}`)
-    await checkHeader(page, 'narrow (720)', true)
+    // 720px is BELOW the app's 900px minimum window: the lens line is explicitly allowed to
+    // wrap once down here (flexWrap is its overflow strategy), so the height cap admits one
+    // extra row. At and above the minimum the two-line cap (110px) stays the law.
+    await checkHeader(page, 'narrow (720)', true, 150)
     const narrowOver = await pageOverflow(page)
     check(
       'narrow: …and the PAGE still does not scroll',
