@@ -305,7 +305,18 @@ jobs:
           Get-Content SHA256SUMS.txt | Write-Host
           gh release upload $env:GITHUB_REF_NAME SHA256SUMS.txt --clobber
 
-          gh release edit $env:GITHUB_REF_NAME --draft=false --latest
+          # A tag WITH a prerelease component (vX.Y.Z-name.N) publishes as a PRERELEASE
+          # and must NOT take the `latest` marker: releases/latest backs the site's
+          # permanent download link AND the app's stable update resolution, both of
+          # which must only ever see stable tags. (The v0.1.5-main.1 rescue tag is why
+          # this branch exists: 0.1.1-0.1.4 installs resolve tags by prerelease
+          # component and need one matching 'main' to escape onto — see updater.ts
+          # applyChannel for the full story.)
+          if ($env:GITHUB_REF_NAME -match '-') {
+            gh release edit $env:GITHUB_REF_NAME --draft=false --prerelease
+          } else {
+            gh release edit $env:GITHUB_REF_NAME --draft=false --latest
+          }
           Write-Host "main.yml + stable-named installer + SHA256SUMS bridged; $env:GITHUB_REF_NAME published atomically"
 
       - name: Upload installer artifact (CI record)

@@ -167,20 +167,34 @@ let downloading: string | null = null
  */
 let checkInFlight = false
 
-/** Map our channel choice onto electron-updater's channel + prerelease settings. */
-function applyChannel(channel: UpdateChannel): void {
-  if (channel === 'main') {
-    autoUpdater.channel = 'main'
-    autoUpdater.allowPrerelease = true
-  } else {
-    autoUpdater.channel = 'latest'
-    autoUpdater.allowPrerelease = false
-  }
-  // MUST come AFTER the channel assignment: `set channel()` silently forces
-  // allowDowngrade = true (electron-updater/out/AppUpdater.js:44). Since we set
-  // the channel on every launch, downgrades were quietly enabled — a
-  // re-published or rolled-back release could walk an install BACKWARDS, which
-  // with apply-on-quit would be an invisible downgrade. Never that.
+/**
+ * Map our channel choice onto electron-updater's settings — which since the tags-only
+ * release rework (2026-08-03) means: STABLE RESOLUTION, ALWAYS, for both stored values.
+ *
+ * WHY 'main' can no longer be a custom electron-updater channel: GitHubProvider's
+ * allowPrerelease branch (out/providers/GitHubProvider.js getLatestVersion) resolves the
+ * tag by SHAPE, not by channel file. With a custom channel set, `shouldFetchVersion`
+ * (`!currentChannel || ['alpha','beta'].includes(currentChannel)`) is false, so the ONLY
+ * acceptable feed entries are tags whose semver prerelease component equals the channel —
+ * i.e. `vX.Y.Z-main.N`. The moment the per-push `-main.N` prereleases were purged and
+ * releases became stable `vX.Y.Z` tags, every 'main'-channel install threw "No published
+ * versions on GitHub": stable tags have NO prerelease component and can never match. The
+ * main.yml bridge never helped — the channel FILE is fetched only after a tag resolves.
+ * (Builds 0.1.1–0.1.4 shipped that dead loop; the v0.1.5-main.1 rescue prerelease is the
+ *  one tag their filter accepts, and it carries this fix.)
+ *
+ * So: `channel` stays UNSET (default 'latest' → latest.yml) and allowPrerelease stays
+ * false, giving the provider its simplest, atomic-under-our-CI path: releases/latest →
+ * latest.yml. The stored 'main'/'stable' pref is retained but both now mean stable; if
+ * real prerelease channels ever return, re-read the provider source FIRST (Trap 6a).
+ */
+function applyChannel(_channel: UpdateChannel): void {
+  autoUpdater.allowPrerelease = false
+  // MUST come AFTER any channel assignment: `set channel()` silently forces
+  // allowDowngrade = true (electron-updater/out/AppUpdater.js:44). We no longer set a
+  // channel at all, but the guard stays — a future edit that reintroduces one must not
+  // quietly re-enable downgrades (a rolled-back release would walk installs BACKWARDS,
+  // invisibly, via apply-on-quit).
   autoUpdater.allowDowngrade = false
 }
 
