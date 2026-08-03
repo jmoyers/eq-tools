@@ -101,7 +101,7 @@ async function pageHtml(apiBase: string, page: string): Promise<string | undefin
 }
 
 function imgSrcs(html: string): string[] {
-  return [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]).filter((s) => /\/images\//.test(s))
+  return [...html.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]).filter((s) => s.includes('/images/'))
 }
 
 /** Project 1999 wiki: prefer the "Npc_*" portrait convention. */

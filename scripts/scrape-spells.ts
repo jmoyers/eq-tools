@@ -61,7 +61,7 @@ async function listSpellPages(): Promise<{ pageid: number; title: string }[]> {
 }
 
 /** Fetch a page's raw wikitext (cached to disk). */
-async function fetchWikitext(pageid: number, title: string): Promise<string | null> {
+async function fetchWikitext(pageid: number, _title: string): Promise<string | null> {
   const cacheFile = resolve(CACHE_DIR, `${pageid}.wikitext`)
   if (existsSync(cacheFile)) return readFileSync(cacheFile, 'utf8')
   const params = new URLSearchParams({
@@ -91,23 +91,7 @@ async function fetchWikitext(pageid: number, title: string): Promise<string | nu
 function parseSpellpageFields(wikitext: string): Record<string, string> {
   const start = wikitext.indexOf('{{Spellpage')
   if (start < 0) return {}
-  // Find the matching close of the Spellpage template by brace-depth from `start`.
-  let depth = 0
-  let end = wikitext.length
-  for (let i = start; i < wikitext.length - 1; i++) {
-    if (wikitext[i] === '{' && wikitext[i + 1] === '{') {
-      depth++
-      i++
-    } else if (wikitext[i] === '}' && wikitext[i + 1] === '}') {
-      depth--
-      i++
-      if (depth === 0) {
-        end = i + 1
-        break
-      }
-    }
-  }
-  const block = wikitext.slice(start, end)
+  const block = wikitext.slice(start, templateBlockEnd(wikitext, start))
 
   // Split on top-level "\n| " field markers (depth 0 relative to the block interior).
   const fields: Record<string, string> = {}
@@ -116,13 +100,10 @@ function parseSpellpageFields(wikitext: string): Record<string, string> {
   let m: RegExpExecArray | null
   while ((m = fieldRe.exec(block)) !== null) {
     // Only accept a marker at template depth 1 (i.e. a direct Spellpage field, not one
-    // inside a nested {{…}}). Compute depth up to this position.
-    let d = 0
-    for (let i = 0; i < m.index; i++) {
-      if (block[i] === '{' && block[i + 1] === '{') { d++; i++ }
-      else if (block[i] === '}' && block[i + 1] === '}') { d--; i++ }
+    // inside a nested {{…}}).
+    if (templateDepthAt(block, m.index) === 1) {
+      marks.push({ name: m[1], valStart: m.index + m[0].length })
     }
-    if (d === 1) marks.push({ name: m[1], valStart: m.index + m[0].length })
   }
   for (let i = 0; i < marks.length; i++) {
     const cur = marks[i]
@@ -135,6 +116,35 @@ function parseSpellpageFields(wikitext: string): Record<string, string> {
     fields[cur.name.toLowerCase()] = val
   }
   return fields
+}
+
+/**
+ * Index just past the `}}` that closes the template opening at `start`, by brace depth.
+ * Falls back to the end of the text when the template is never closed.
+ */
+function templateBlockEnd(text: string, start: number): number {
+  let depth = 0
+  for (let i = start; i < text.length - 1; i++) {
+    if (text[i] === '{' && text[i + 1] === '{') {
+      depth++
+      i++
+    } else if (text[i] === '}' && text[i + 1] === '}') {
+      depth--
+      i++
+      if (depth === 0) return i + 1
+    }
+  }
+  return text.length
+}
+
+/** Template nesting depth at `pos`, counted from the start of `block` (1 = a direct field). */
+function templateDepthAt(block: string, pos: number): number {
+  let d = 0
+  for (let i = 0; i < pos; i++) {
+    if (block[i] === '{' && block[i + 1] === '{') { d++; i++ }
+    else if (block[i] === '}' && block[i + 1] === '}') { d--; i++ }
+  }
+  return d
 }
 
 /** The value ends at the next field marker's line start (approximate but robust here). */
@@ -205,7 +215,7 @@ export function parseDurationMs(text: string | undefined): number | null {
 }
 
 function parseSpell(title: string, fields: Record<string, string>): SpellEntry {
-  const name = clean(fields.spellname) || title
+  const name = clean(fields.spellname) ?? title
   const durationText = clean(fields.duration)
   const castRaw = clean(fields.casting_time)
   const castSec = castRaw ? parseFloat(castRaw) : NaN
@@ -251,7 +261,7 @@ async function main(): Promise<void> {
 
   spells.sort((a, b) => a.name.localeCompare(b.name))
   const withDur = spells.filter((s) => s.durationMs != null).length
-  const withCastMsg = spells.filter((s) => s.msgCastOnYou || s.msgCastOnOther).length
+  const withCastMsg = spells.filter((s) => Boolean(s.msgCastOnYou) || Boolean(s.msgCastOnOther)).length
   const withWearsOff = spells.filter((s) => s.msgWearsOff).length
   const illusions = spells.filter((s) => s.illusion).length
 

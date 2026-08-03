@@ -42,6 +42,12 @@ const RETRY_BASE_MS = 1_000
 
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
+/** Wait before the next attempt: the server's Retry-After when it gave one, else backoff. */
+function backoffMs(res: Response | null, attempt: number): number {
+  const retryAfter = Number(res?.headers.get('retry-after') ?? 0)
+  return retryAfter > 0 ? retryAfter * 1000 : RETRY_BASE_MS * 2 ** (attempt - 1)
+}
+
 /** GET with exponential backoff; honors Retry-After on 429/503. */
 async function fetchWithBackoff(url: string): Promise<Response> {
   for (let attempt = 1; ; attempt++) {
@@ -54,8 +60,7 @@ async function fetchWithBackoff(url: string): Promise<Response> {
       if (attempt >= MAX_ATTEMPTS) throw err
     }
     if (attempt >= MAX_ATTEMPTS) throw new Error(`GET ${url} → ${res?.status ?? 'network error'} (gave up)`)
-    const retryAfter = Number(res?.headers.get('retry-after') ?? 0)
-    const waitMs = retryAfter > 0 ? retryAfter * 1000 : RETRY_BASE_MS * 2 ** (attempt - 1)
+    const waitMs = backoffMs(res, attempt)
     console.warn(`  … ${url} failed (attempt ${attempt}) — retrying in ${waitMs}ms`)
     await sleep(waitMs)
   }
@@ -67,6 +72,40 @@ async function fetchText(url: string): Promise<string> {
 
 async function fetchBytes(url: string): Promise<Buffer> {
   return Buffer.from(await (await fetchWithBackoff(url)).arrayBuffer())
+}
+
+/** First of these that is a non-empty string — an EMPTY display name is "not stated". */
+function firstNonEmpty(...values: (string | undefined)[]): string {
+  for (const v of values) if (v) return v
+  return ''
+}
+
+/**
+ * Download every sound the CESP manifest lists, one polite request at a time. IDEMPOTENT: a
+ * non-empty file already on disk is a cache hit and costs no network.
+ */
+async function downloadSounds(
+  cesp: CespManifest,
+  base: string,
+  soundsDir: string
+): Promise<{ downloaded: number; skipped: number }> {
+  let downloaded = 0
+  let skipped = 0
+  for (const group of Object.values(cesp.categories)) {
+    const sounds = Array.isArray(group) ? [] : (group.sounds ?? [])
+    for (const s of sounds) {
+      if (!s || typeof s.file !== 'string') continue
+      const dest = join(soundsDir, packBasename(s.file))
+      if (existsSync(dest) && statSync(dest).size > 0) {
+        skipped++
+        continue
+      }
+      writeFileSync(dest, await fetchBytes(`${base}/${s.file}`))
+      downloaded++
+      await sleep(REQUEST_DELAY_MS)
+    }
+  }
+  return { downloaded, skipped }
 }
 
 async function fetchPack(pack: RegistryPack): Promise<void> {
@@ -82,28 +121,11 @@ async function fetchPack(pack: RegistryPack): Promise<void> {
   const taken = new Set<string>()
   const manifestSounds = cespToManifestSounds(cesp, (category, file) => deriveSoundId(category, file, taken))
 
-  let downloaded = 0
-  let skipped = 0
-  for (const group of Object.values(cesp.categories)) {
-    const sounds = Array.isArray(group) ? [] : (group.sounds ?? [])
-    for (const s of sounds) {
-      if (!s || typeof s.file !== 'string') continue
-      const name = packBasename(s.file)
-      const dest = join(soundsDir, name)
-      // Idempotent: skip if a non-empty file already exists.
-      if (existsSync(dest) && statSync(dest).size > 0) {
-        skipped++
-        continue
-      }
-      writeFileSync(dest, await fetchBytes(`${base}/${s.file}`))
-      downloaded++
-      await sleep(REQUEST_DELAY_MS)
-    }
-  }
+  const { downloaded, skipped } = await downloadSounds(cesp, base, soundsDir)
 
   const manifest = {
     id: pack.name,
-    name: pack.display_name || cesp.display_name || pack.name,
+    name: firstNonEmpty(pack.display_name, cesp.display_name, pack.name),
     license: cesp.license ?? pack.license ?? 'see source repo',
     sounds: manifestSounds,
     source: { repo: pack.source_repo, ref: pack.source_ref }
@@ -121,7 +143,7 @@ async function main(): Promise<void> {
   console.log('Done. (Pack audio is gitignored — not committed.)')
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   console.error('fetch-packs failed:', err)
   process.exitCode = 1
 })

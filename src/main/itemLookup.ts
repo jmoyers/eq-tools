@@ -153,7 +153,7 @@ export function localKnowledge(name: string): ItemQuestUse[] | null {
 let cooldownUntil = 0
 const RETRY_AFTER_FALLBACK_MS = 60_000
 
-async function apiFetch(params: Record<string, string>): Promise<unknown | null> {
+async function apiFetch(params: Record<string, string>): Promise<unknown> {
   if (Date.now() < cooldownUntil) return null // server asked for quiet — stay quiet
   const url = API + '?' + new URLSearchParams({ format: 'json', formatversion: '2', ...params }).toString()
   const ctrl = new AbortController()
@@ -177,7 +177,7 @@ async function apiFetch(params: Record<string, string>): Promise<unknown | null>
 }
 
 /** Fetch a page's raw wikitext. Returns '' when the page doesn't exist, null on network error. */
-async function fetchWikitext(title: string): Promise<string | null | ''> {
+async function fetchWikitext(title: string): Promise<string | null> {
   const j = (await apiFetch({ action: 'parse', page: title, prop: 'wikitext', redirects: '1' })) as
     | { parse?: { wikitext?: string }; error?: { code?: string } }
     | null
@@ -198,7 +198,7 @@ async function resolvePage(name: string): Promise<ResolveResult> {
     list: 'search',
     srsearch: name,
     srlimit: '8'
-  })) as { query?: { search?: Array<{ title: string }> } } | null
+  })) as { query?: { search?: { title: string }[] } } | null
   if (j === null) return { status: 'offline' }
   const hits = j.query?.search ?? []
   if (hits.length === 0) return { status: 'none' }
@@ -224,16 +224,24 @@ function cacheFilePath(): string {
   return join(app.getPath('userData'), 'item-knowledge-cache.json')
 }
 
+/** The cache file's entries, or null when it is absent, empty, or written by another
+ *  CACHE_VERSION (a version mismatch drops the whole file — see the version note above). */
+function readCacheEntries(path: string): Record<string, CacheEntry> | null {
+  if (!existsSync(path)) return null
+  const parsed = JSON.parse(readFileSync(path, 'utf8')) as CacheFile | null
+  if (parsed === null) return null
+  if (parsed.version !== CACHE_VERSION) return null
+  if (!parsed.entries) return null
+  return parsed.entries
+}
+
 function loadCache(): Map<string, CacheEntry> {
   if (mem) return mem
   mem = new Map()
   try {
-    const path = cacheFilePath()
-    if (existsSync(path)) {
-      const parsed = JSON.parse(readFileSync(path, 'utf8')) as CacheFile
-      if (parsed && parsed.version === CACHE_VERSION && parsed.entries) {
-        for (const [k, v] of Object.entries(parsed.entries)) mem.set(k, v)
-      }
+    const entries = readCacheEntries(cacheFilePath())
+    if (entries) {
+      for (const [k, v] of Object.entries(entries)) mem.set(k, v)
     }
   } catch (err) {
     logError('main:itemLookup', { message: 'failed reading item-knowledge cache', err })
@@ -248,7 +256,7 @@ function scheduleSave(): void {
     saveTimer = null
     try {
       const entries: Record<string, CacheEntry> = {}
-      for (const [k, v] of (mem ?? new Map()).entries()) entries[k] = v
+      for (const [k, v] of (mem ?? new Map<string, CacheEntry>()).entries()) entries[k] = v
       writeFileSync(cacheFilePath(), JSON.stringify({ version: CACHE_VERSION, entries } satisfies CacheFile), 'utf8')
     } catch (err) {
       logError('main:itemLookup', { message: 'failed writing item-knowledge cache', err })

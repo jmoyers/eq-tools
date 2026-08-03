@@ -457,6 +457,20 @@ test('W28: absorbed damage-shield ticks are counted, never valued', { skip: have
 // Cross-cutting invariants of the fold (they must hold in EVERY window).
 // ---------------------------------------------------------------------------
 
+/**
+ * Every lane carries a classification, and an ABSORBED lane never carries a fabricated
+ * overheal or crit (a rune grant is not a heal line and has neither).
+ */
+function assertLaneClassified(fixture: string, healer: string, l: HealSpellView): void {
+  assert.ok(
+    l.classification === 'restored' || l.classification === 'absorbed',
+    `${fixture}: ${healer}/${l.name} must be classified`
+  )
+  if (l.classification !== 'absorbed') return
+  assert.equal(l.overheal, 0, `${fixture}: absorption must never carry a fabricated overheal`)
+  assert.equal(l.crits, 0, `${fixture}: absorption must never carry a fabricated crit`)
+}
+
 test('the classification split is exact and absorption never carries overheal', { skip: have(W26) || have(W27) || have(W28) }, () => {
   for (const fixture of [W26, W27, W28]) {
     const seg = replay(fixture)
@@ -466,16 +480,7 @@ test('the classification split is exact and absorption never carries overheal', 
 
     for (const h of hv.healers) {
       // Every LANE is classified, and the lanes partition the row's total exactly.
-      for (const l of h.spells) {
-        assert.ok(
-          l.classification === 'restored' || l.classification === 'absorbed',
-          `${fixture}: ${h.name}/${l.name} must be classified`
-        )
-        if (l.classification === 'absorbed') {
-          assert.equal(l.overheal, 0, `${fixture}: absorption must never carry a fabricated overheal`)
-          assert.equal(l.crits, 0, `${fixture}: absorption must never carry a fabricated crit`)
-        }
-      }
+      for (const l of h.spells) assertLaneClassified(fixture, h.name, l)
       assert.equal(h.spells.reduce((s, x) => s + x.total, 0), h.total, `${fixture}: ${h.name} lanes`)
       assert.equal(laneSum(h, 'absorbed'), h.absorbedTotal, `${fixture}: ${h.name} absorbed split`)
       assert.equal(laneSum(h, 'restored'), h.total - h.absorbedTotal, `${fixture}: ${h.name} restored`)

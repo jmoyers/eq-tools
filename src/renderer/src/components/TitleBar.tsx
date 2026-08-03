@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { type JSX, useEffect, useRef, useState } from 'react'
 import { Box, Checkbox, Chip, ListItemText, ListSubheader, Menu, MenuItem, Select, Typography } from '@mui/material'
 import CircleIcon from '@mui/icons-material/Circle'
 import MinimizeIcon from '@mui/icons-material/Remove'
@@ -84,6 +84,190 @@ function CaptionButton({
   )
 }
 
+/**
+ * Floating DPS overlay menu (Task #52; two kinds in Task #54). A compact menu toggles the
+ * overlay windows independently; the button is active-tinted when ANY is open so the user
+ * knows an overlay is live even off-screen / behind the game. The menu anchor is local
+ * state — nothing outside this button cares whether the menu is showing.
+ */
+function OverlayMenu({ overlayState }: { overlayState: Record<OverlayKind, boolean> }): JSX.Element {
+  const [anchor, setAnchor] = useState<HTMLElement | null>(null)
+  const btnRef = useRef<HTMLButtonElement>(null)
+  const anyOverlayOpen = Object.values(overlayState).some(Boolean)
+
+  return (
+    <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center' }}>
+      <Tooltip title="Floating DPS overlays">
+        <Box
+          component="button"
+          type="button"
+          ref={btnRef}
+          aria-label="Floating DPS overlays"
+          aria-haspopup="true"
+          aria-expanded={anchor != null}
+          onClick={() => setAnchor(btnRef.current)}
+          sx={{
+            WebkitAppRegion: 'no-drag',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0.25,
+            height: 26,
+            px: 1,
+            borderRadius: 1,
+            border: '1px solid',
+            borderColor: anyOverlayOpen ? 'primary.main' : 'divider',
+            bgcolor: anyOverlayOpen ? 'rgba(217,178,95,0.14)' : 'transparent',
+            color: anyOverlayOpen ? 'primary.main' : 'text.secondary',
+            cursor: 'pointer',
+            outline: 'none',
+            transition: 'background-color 120ms, color 120ms, border-color 120ms',
+            '& svg': { fontSize: 16 },
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
+          }}
+        >
+          <PictureInPictureAltIcon />
+          <Typography variant="caption" sx={{ fontWeight: 600 }}>
+            Overlay
+          </Typography>
+          <ArrowDropDownIcon />
+        </Box>
+      </Tooltip>
+      <Menu
+        anchorEl={anchor}
+        open={anchor != null}
+        onClose={() => setAnchor(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        <MenuItem dense onClick={() => void window.eq.toggleOverlay('fight')}>
+          <Checkbox size="small" edge="start" checked={overlayState.fight} tabIndex={-1} disableRipple />
+          <ListItemText primary="Fight meter" secondary="Current fight + fight selector" />
+        </MenuItem>
+        <MenuItem dense onClick={() => void window.eq.toggleOverlay('overall')}>
+          <Checkbox size="small" edge="start" checked={overlayState.overall} tabIndex={-1} disableRipple />
+          <ListItemText primary="Zone meter" secondary="Zone total + zone selector" />
+        </MenuItem>
+        {/* Task #59: the HEALING pair — siblings of the damage meters above, same per-kind
+            machinery (persisted config, position, lock, drill) and the same fight vs
+            zone-session selection semantics. */}
+        <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-fight')}>
+          <Checkbox size="small" edge="start" checked={overlayState['heal-fight']} tabIndex={-1} disableRipple />
+          <ListItemText primary="Fight healing" secondary="Healing + absorption, current fight" />
+        </MenuItem>
+        <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-overall')}>
+          <Checkbox size="small" edge="start" checked={overlayState['heal-overall']} tabIndex={-1} disableRipple />
+          <ListItemText primary="Zone healing" secondary="Healing + absorption, zone total" />
+        </MenuItem>
+        {/* Task #59: the event log — a non-meter overlay kind driven by the same
+            per-kind machinery (persisted config, position, lock). */}
+        <MenuItem dense onClick={() => void window.eq.toggleOverlay('events')}>
+          <Checkbox size="small" edge="start" checked={overlayState.events} tabIndex={-1} disableRipple />
+          <ListItemText primary="Event log" secondary="Alerts, notable loot, quest completions" />
+        </MenuItem>
+      </Menu>
+    </Box>
+  )
+}
+
+/** The character picker (or a "no log" chip when nothing was discovered). */
+function CharacterPicker({
+  character,
+  characters,
+  onSelectCharacter
+}: {
+  character: CharacterRef | null
+  characters: CharacterRef[]
+  onSelectCharacter: (logPath: string) => void
+}): JSX.Element {
+  return (
+    <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 1 }}>
+      {characters.length > 0 ? (
+        <Select
+          size="small"
+          variant="standard"
+          disableUnderline
+          value={character?.logPath ?? ''}
+          onChange={(e) => onSelectCharacter(e.target.value)}
+          sx={{ minWidth: 200, fontSize: 14 }}
+          renderValue={(v) => {
+            const c = characters.find((x) => x.logPath === v)
+            return c ? `${c.name} · ${c.server}` : 'Select character'
+          }}
+        >
+          <ListSubheader>Characters — most recently played</ListSubheader>
+          {characters.map((c) => (
+            <MenuItem key={c.logPath} value={c.logPath}>
+              <Box>
+                <Typography variant="body2">
+                  {c.name} · {c.server}
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  last played {lastPlayed(c.lastPlayed)}
+                </Typography>
+              </Box>
+            </MenuItem>
+          ))}
+        </Select>
+      ) : (
+        <Chip size="small" color="warning" label="No log detected" variant="outlined" />
+      )}
+    </Box>
+  )
+}
+
+/** Preferences gear — opens the Preferences view (EQ folder, updates). */
+function PreferencesButton({ onOpen }: { onOpen: () => void }): JSX.Element {
+  return (
+    <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 0.5 }}>
+      <Tooltip title="Preferences">
+        <Box
+          component="button"
+          type="button"
+          aria-label="Open preferences"
+          onClick={onOpen}
+          sx={{
+            WebkitAppRegion: 'no-drag',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 28,
+            width: 28,
+            p: 0,
+            borderRadius: 1,
+            border: 'none',
+            background: 'transparent',
+            color: 'text.secondary',
+            cursor: 'pointer',
+            outline: 'none',
+            transition: 'background-color 120ms, color 120ms',
+            '& svg': { fontSize: 18 },
+            '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
+          }}
+        >
+          <SettingsIcon />
+        </Box>
+      </Tooltip>
+    </Box>
+  )
+}
+
+/** Minimize / maximize / close, far right. */
+function WindowControls({ maximized }: { maximized: boolean }): JSX.Element {
+  return (
+    <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'stretch' }}>
+      <CaptionButton label="Minimize" onClick={() => window.eq.minimizeWindow()}>
+        <MinimizeIcon />
+      </CaptionButton>
+      <CaptionButton label={maximized ? 'Restore' : 'Maximize'} onClick={() => window.eq.toggleMaximizeWindow()}>
+        {maximized ? <FilterNoneIcon sx={{ transform: 'scaleX(-1)' }} /> : <CropSquareIcon />}
+      </CaptionButton>
+      <CaptionButton label="Close" danger onClick={() => window.eq.closeWindow()}>
+        <CloseIcon />
+      </CaptionButton>
+    </Box>
+  )
+}
+
 export interface TitleBarProps {
   live: boolean
   character: CharacterRef | null
@@ -107,8 +291,6 @@ export default function TitleBar({
   const [overlayState, setOverlayState] = useState<Record<OverlayKind, boolean>>(
     () => Object.fromEntries(OVERLAY_KINDS.map((k) => [k, false])) as Record<OverlayKind, boolean>
   )
-  const [overlayMenuAnchor, setOverlayMenuAnchor] = useState<HTMLElement | null>(null)
-  const overlayBtnRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => window.eq.onWindowMaximized(setMaximized), [])
   useEffect(() => {
@@ -117,7 +299,6 @@ export default function TitleBar({
       setOverlayState((s) => ({ ...s, [kind]: open }))
     )
   }, [])
-  const anyOverlayOpen = Object.values(overlayState).some(Boolean)
 
   // Double-click on the drag region toggles maximize (native-ish behavior). We
   // guard against double-clicks that originate on an interactive child by only
@@ -155,161 +336,18 @@ export default function TitleBar({
 
       {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
 
-      {/* Floating DPS overlay menu (Task #52; two kinds in Task #54). A compact menu toggles the
-          'fight' and 'overall' overlay windows independently; the button is active-tinted when
-          either is open so the user knows an overlay is live even off-screen / behind the game. */}
-      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center' }}>
-        <Tooltip title="Floating DPS overlays">
-          <Box
-            component="button"
-            type="button"
-            ref={overlayBtnRef}
-            aria-label="Floating DPS overlays"
-            aria-haspopup="true"
-            aria-expanded={overlayMenuAnchor != null}
-            onClick={() => setOverlayMenuAnchor(overlayBtnRef.current)}
-            sx={{
-              WebkitAppRegion: 'no-drag',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 0.25,
-              height: 26,
-              px: 1,
-              borderRadius: 1,
-              border: '1px solid',
-              borderColor: anyOverlayOpen ? 'primary.main' : 'divider',
-              bgcolor: anyOverlayOpen ? 'rgba(217,178,95,0.14)' : 'transparent',
-              color: anyOverlayOpen ? 'primary.main' : 'text.secondary',
-              cursor: 'pointer',
-              outline: 'none',
-              transition: 'background-color 120ms, color 120ms, border-color 120ms',
-              '& svg': { fontSize: 16 },
-              '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
-            }}
-          >
-            <PictureInPictureAltIcon />
-            <Typography variant="caption" sx={{ fontWeight: 600 }}>
-              Overlay
-            </Typography>
-            <ArrowDropDownIcon />
-          </Box>
-        </Tooltip>
-        <Menu
-          anchorEl={overlayMenuAnchor}
-          open={overlayMenuAnchor != null}
-          onClose={() => setOverlayMenuAnchor(null)}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        >
-          <MenuItem dense onClick={() => void window.eq.toggleOverlay('fight')}>
-            <Checkbox size="small" edge="start" checked={overlayState.fight} tabIndex={-1} disableRipple />
-            <ListItemText primary="Fight meter" secondary="Current fight + fight selector" />
-          </MenuItem>
-          <MenuItem dense onClick={() => void window.eq.toggleOverlay('overall')}>
-            <Checkbox size="small" edge="start" checked={overlayState.overall} tabIndex={-1} disableRipple />
-            <ListItemText primary="Zone meter" secondary="Zone total + zone selector" />
-          </MenuItem>
-          {/* Task #59: the HEALING pair — siblings of the damage meters above, same per-kind
-              machinery (persisted config, position, lock, drill) and the same fight vs
-              zone-session selection semantics. */}
-          <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-fight')}>
-            <Checkbox size="small" edge="start" checked={overlayState['heal-fight']} tabIndex={-1} disableRipple />
-            <ListItemText primary="Fight healing" secondary="Healing + absorption, current fight" />
-          </MenuItem>
-          <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-overall')}>
-            <Checkbox size="small" edge="start" checked={overlayState['heal-overall']} tabIndex={-1} disableRipple />
-            <ListItemText primary="Zone healing" secondary="Healing + absorption, zone total" />
-          </MenuItem>
-          {/* Task #59: the event log — a non-meter overlay kind driven by the same
-              per-kind machinery (persisted config, position, lock). */}
-          <MenuItem dense onClick={() => void window.eq.toggleOverlay('events')}>
-            <Checkbox size="small" edge="start" checked={overlayState.events} tabIndex={-1} disableRipple />
-            <ListItemText primary="Event log" secondary="Alerts, notable loot, quest completions" />
-          </MenuItem>
-        </Menu>
-      </Box>
+      <OverlayMenu overlayState={overlayState} />
 
       {/* Interactive controls opt out of the drag region. */}
-      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 1 }}>
-        {characters.length > 0 ? (
-          <Select
-            size="small"
-            variant="standard"
-            disableUnderline
-            value={character?.logPath ?? ''}
-            onChange={(e) => onSelectCharacter(e.target.value)}
-            sx={{ minWidth: 200, fontSize: 14 }}
-            renderValue={(v) => {
-              const c = characters.find((x) => x.logPath === v)
-              return c ? `${c.name} · ${c.server}` : 'Select character'
-            }}
-          >
-            <ListSubheader>Characters — most recently played</ListSubheader>
-            {characters.map((c) => (
-              <MenuItem key={c.logPath} value={c.logPath}>
-                <Box>
-                  <Typography variant="body2">
-                    {c.name} · {c.server}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary">
-                    last played {lastPlayed(c.lastPlayed)}
-                  </Typography>
-                </Box>
-              </MenuItem>
-            ))}
-          </Select>
-        ) : (
-          <Chip size="small" color="warning" label="No log detected" variant="outlined" />
-        )}
-      </Box>
+      <CharacterPicker
+        character={character}
+        characters={characters}
+        onSelectCharacter={onSelectCharacter}
+      />
 
-      {/* Preferences gear — opens the Preferences view (EQ folder, updates). */}
-      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center', pr: 0.5 }}>
-        <Tooltip title="Preferences">
-          <Box
-            component="button"
-            type="button"
-            aria-label="Open preferences"
-            onClick={onOpenPreferences}
-            sx={{
-              WebkitAppRegion: 'no-drag',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: 28,
-              width: 28,
-              p: 0,
-              borderRadius: 1,
-              border: 'none',
-              background: 'transparent',
-              color: 'text.secondary',
-              cursor: 'pointer',
-              outline: 'none',
-              transition: 'background-color 120ms, color 120ms',
-              '& svg': { fontSize: 18 },
-              '&:hover': { bgcolor: 'rgba(255,255,255,0.08)', color: 'text.primary' }
-            }}
-          >
-            <SettingsIcon />
-          </Box>
-        </Tooltip>
-      </Box>
+      <PreferencesButton onOpen={onOpenPreferences} />
 
-      {/* Window controls (far right). */}
-      <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'stretch' }}>
-        <CaptionButton label="Minimize" onClick={() => window.eq.minimizeWindow()}>
-          <MinimizeIcon />
-        </CaptionButton>
-        <CaptionButton
-          label={maximized ? 'Restore' : 'Maximize'}
-          onClick={() => window.eq.toggleMaximizeWindow()}
-        >
-          {maximized ? <FilterNoneIcon sx={{ transform: 'scaleX(-1)' }} /> : <CropSquareIcon />}
-        </CaptionButton>
-        <CaptionButton label="Close" danger onClick={() => window.eq.closeWindow()}>
-          <CloseIcon />
-        </CaptionButton>
-      </Box>
+      <WindowControls maximized={maximized} />
     </Box>
   )
 }

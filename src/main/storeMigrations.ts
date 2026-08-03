@@ -69,8 +69,8 @@ const isPlainObject = (v: unknown): v is StoreData =>
 
 /** Progress worth keeping: anything the user actually accumulated. */
 function hasProgressContent(p: StoreData): boolean {
-  const quests = p['completedQuests']
-  const inventory = p['inventory']
+  const quests = p.completedQuests
+  const inventory = p.inventory
   return (
     (Array.isArray(quests) && quests.length > 0) ||
     (isPlainObject(inventory) && Object.keys(inventory).length > 0)
@@ -104,31 +104,31 @@ const migrateToV2: Migration = {
   describe: 'stamp schemaVersion; recover pre-character progress; drop liveLoot; fold overlay → overlays.fight',
   migrate(data) {
     // (a) + (b) — per-character progress.
-    const byCharacter: StoreData = isPlainObject(data['byCharacter']) ? { ...data['byCharacter'] } : {}
-    const legacyProgress = data['progress']
+    const byCharacter: StoreData = isPlainObject(data.byCharacter) ? { ...data.byCharacter } : {}
+    const legacyProgress = data.progress
     if (isPlainObject(legacyProgress)) {
       if (Object.keys(byCharacter).length === 0 && hasProgressContent(legacyProgress)) {
         byCharacter[PRE_CHARACTER_PROGRESS_KEY] = legacyProgress
       }
-      delete data['progress']
+      delete data.progress
     }
     for (const [charId, progress] of Object.entries(byCharacter)) {
       if (isPlainObject(progress) && 'liveLoot' in progress) {
         const next = { ...progress }
-        delete next['liveLoot']
+        delete next.liveLoot
         byCharacter[charId] = next
       }
     }
-    data['byCharacter'] = byCharacter
+    data.byCharacter = byCharacter
 
     // (c) — overlay config.
-    const legacyOverlay = data['overlay']
+    const legacyOverlay = data.overlay
     if (isPlainObject(legacyOverlay)) {
-      const overlays: StoreData = isPlainObject(data['overlays']) ? { ...data['overlays'] } : {}
+      const overlays: StoreData = isPlainObject(data.overlays) ? { ...data.overlays } : {}
       // A per-kind config already written by a newer build always wins over the flat legacy one.
-      if (!isPlainObject(overlays['fight'])) overlays['fight'] = legacyOverlay
-      data['overlays'] = overlays
-      delete data['overlay']
+      if (!isPlainObject(overlays.fight)) overlays.fight = legacyOverlay
+      data.overlays = overlays
+      delete data.overlay
     }
     return data
   }
@@ -280,69 +280,72 @@ const startsCurrent = (): MigrationOutcome => ({
   changed: false
 })
 
-/**
- * Read the store file, run the chain, back it up, write it back. Call ONCE at startup,
- * before electron-store is constructed. Never throws.
- */
-export function migrateStoreFile(storePath: string, hooks: MigrationHooks = {}): StoreFileMigration {
-  let raw: string
+/** How every failure path below names a thrown value. One spelling, so the logged text of a
+ *  read/rename/write failure is identical whichever step produced it. */
+const errText = (err: unknown): string => (err instanceof Error ? err.message : String(err))
+
+/** Either the file's bytes, or the finished outcome the caller must return unchanged. */
+type ReadStoreStep = { raw: string; result?: undefined } | { raw?: undefined; result: StoreFileMigration }
+
+/** Read the store bytes. A missing file is a fresh install; any other read failure leaves the
+ *  file untouched and unstamped (a file we could not read is a file we must not describe). */
+function readStoreBytes(storePath: string, hooks: MigrationHooks): ReadStoreStep {
   try {
-    raw = readFileSync(storePath, 'utf8')
+    return { raw: readFileSync(storePath, 'utf8') }
   } catch (err) {
     if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
-      return { ...startsCurrent(), path: storePath, wrote: false, fileMissing: true }
+      return { result: { ...startsCurrent(), path: storePath, wrote: false, fileMissing: true } }
     }
-    const message = err instanceof Error ? err.message : String(err)
+    const message = errText(err)
     hooks.error?.(`store schema: cannot read ${storePath} (${message}); leaving it untouched`)
+    return { result: { ...startsCurrent(), path: storePath, wrote: false, fileMissing: false, readError: message } }
+  }
+}
+
+/** Unparseable (or not an object): conf would throw on every single read from here on. */
+function quarantineStore(storePath: string, hooks: MigrationHooks): StoreFileMigration {
+  const quarantine = quarantinePathFor(storePath)
+  try {
+    renameSync(storePath, quarantine)
+    hooks.error?.(
+      `store schema: ${storePath} is not valid JSON — moved to ${quarantine} and starting from defaults`
+    )
+    return { ...startsCurrent(), path: storePath, wrote: false, fileMissing: true, quarantinedPath: quarantine }
+  } catch (err) {
+    const message = errText(err)
+    hooks.error?.(`store schema: ${storePath} is not valid JSON and could not be moved aside (${message})`)
     return { ...startsCurrent(), path: storePath, wrote: false, fileMissing: false, readError: message }
   }
+}
 
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(raw)
-  } catch (err) {
-    parsed = undefined
-    void err
-  }
-  if (!isPlainObject(parsed)) {
-    // Unparseable (or not an object): conf would throw on every single read from here on.
-    const quarantine = quarantinePathFor(storePath)
-    try {
-      renameSync(storePath, quarantine)
-      hooks.error?.(
-        `store schema: ${storePath} is not valid JSON — moved to ${quarantine} and starting from defaults`
-      )
-      return { ...startsCurrent(), path: storePath, wrote: false, fileMissing: true, quarantinedPath: quarantine }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err)
-      hooks.error?.(`store schema: ${storePath} is not valid JSON and could not be moved aside (${message})`)
-      return { ...startsCurrent(), path: storePath, wrote: false, fileMissing: false, readError: message }
-    }
-  }
-
-  const outcome = migrateStoreData(parsed)
-  const result: StoreFileMigration = { ...outcome, path: storePath, wrote: false, fileMissing: false }
-  if (outcome.status === 'up-to-date') return result
-
-  // Pristine copy of the ORIGINAL bytes, once per source version. A failure here is logged
-  // but never blocks the migration: refusing to upgrade forever because a backup could not
-  // be written is strictly worse than upgrading without one.
-  const backup = backupPathFor(storePath, outcome.from)
+/**
+ * Pristine copy of the ORIGINAL bytes, once per source version. A failure here is logged
+ * but never blocks the migration: refusing to upgrade forever because a backup could not
+ * be written is strictly worse than upgrading without one.
+ */
+function writeBackupOnce(
+  storePath: string,
+  raw: string,
+  fromVersion: number,
+  hooks: MigrationHooks
+): string | undefined {
+  const backup = backupPathFor(storePath, fromVersion)
   try {
     if (!existsSync(backup)) writeFileSync(backup, raw, 'utf8')
-    result.backupPath = backup
+    return backup
   } catch (err) {
-    hooks.error?.(`store schema: backup to ${backup} failed (${err instanceof Error ? err.message : String(err)})`)
+    hooks.error?.(`store schema: backup to ${backup} failed (${errText(err)})`)
+    return undefined
   }
+}
 
-  if (outcome.status === 'future') {
-    hooks.error?.(
-      `store schema: ${storePath} is at v${outcome.from} but this build only knows v${CURRENT_SCHEMA_VERSION}. ` +
-        'Leaving it untouched and running best-effort — a downgrade never rewrites a newer store.'
-    )
-    return result
-  }
-
+/** Write the migrated data back, recording the result of the attempt on `result`. */
+function writeMigrated(
+  storePath: string,
+  outcome: MigrationOutcome,
+  result: StoreFileMigration,
+  hooks: MigrationHooks
+): void {
   try {
     // Tab-indented to match conf's serializer, so our write and electron-store's writes
     // produce identical formatting instead of churning the whole file.
@@ -353,12 +356,48 @@ export function migrateStoreFile(storePath: string, hooks: MigrationHooks = {}):
         `backup ${result.backupPath ?? 'none'}`
     )
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err)
+    const message = errText(err)
     hooks.error?.(`store schema: v${outcome.from} → v${outcome.to} could not be written (${message}); will retry next launch`)
     result.wrote = false
     // Nothing persisted ⇒ nothing may be stamped, or the failed steps would be skipped forever.
     result.to = outcome.from
   }
+}
+
+/**
+ * Read the store file, run the chain, back it up, write it back. Call ONCE at startup,
+ * before electron-store is constructed. Never throws.
+ */
+export function migrateStoreFile(storePath: string, hooks: MigrationHooks = {}): StoreFileMigration {
+  const read = readStoreBytes(storePath, hooks)
+  if (read.result) return read.result
+  const raw = read.raw
+
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(raw)
+  } catch (err) {
+    parsed = undefined
+    void err
+  }
+  if (!isPlainObject(parsed)) return quarantineStore(storePath, hooks)
+
+  const outcome = migrateStoreData(parsed)
+  const result: StoreFileMigration = { ...outcome, path: storePath, wrote: false, fileMissing: false }
+  if (outcome.status === 'up-to-date') return result
+
+  const backup = writeBackupOnce(storePath, raw, outcome.from, hooks)
+  if (backup !== undefined) result.backupPath = backup
+
+  if (outcome.status === 'future') {
+    hooks.error?.(
+      `store schema: ${storePath} is at v${outcome.from} but this build only knows v${CURRENT_SCHEMA_VERSION}. ` +
+        'Leaving it untouched and running best-effort — a downgrade never rewrites a newer store.'
+    )
+    return result
+  }
+
+  writeMigrated(storePath, outcome, result, hooks)
   if (outcome.status === 'partial' && outcome.failed) {
     hooks.error?.(
       `store schema: migration to v${outcome.failed.to} failed (${outcome.failed.error}); ` +

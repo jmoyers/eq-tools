@@ -10,7 +10,7 @@ only; run the full `npm test` + `npm run typecheck` after each wave; engine wave
 file comes clean, DELETE its block from `eslint.ratchet.mjs` — the ratchet only
 shrinks, and `npm run lint` is what proves the deletion was earned.
 
-Baseline: **112 files**, **302 file×rule entries**, **591 violations**.
+Baseline: **0 files**, **0 file×rule entries**, **0 violations**.
 
 `linterOptions/reportUnusedDisableDirectives` is not a rule — it means the file
 carries a stale `eslint-disable` comment written before this config existed.
@@ -18,256 +18,20 @@ Deleting the dead comment clears it.
 
 ## Wave A — src/main/combat/** — the combat engine
 
-4 files · 16 file×rule entries · 42 violations
-
-| rule | violations |
-| --- | ---: |
-| `@typescript-eslint/no-unused-vars` | 10 |
-| `complexity` | 10 |
-| `max-params` | 8 |
-| `@typescript-eslint/prefer-nullish-coalescing` | 3 |
-| `@typescript-eslint/prefer-optional-chain` | 3 |
-| `max-depth` | 3 |
-| `@typescript-eslint/array-type` | 1 |
-| `max-lines` | 1 |
-| `max-lines-per-function` | 1 |
-| `@typescript-eslint/no-non-null-assertion` | 1 |
-| `@typescript-eslint/no-unnecessary-type-assertion` | 1 |
-
-| file | violations | rules |
-| --- | ---: | --- |
-| `src/main/combat/engine.ts` | 36 | `@typescript-eslint/array-type`, `@typescript-eslint/no-non-null-assertion`, `@typescript-eslint/no-unused-vars`, `@typescript-eslint/prefer-nullish-coalescing`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-depth`, `max-lines`, `max-lines-per-function`, `max-params` |
-| `src/main/combat/healing.ts` | 3 | `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/prefer-nullish-coalescing`, `max-params` |
-| `src/main/combat/world.ts` | 2 | `complexity`, `max-params` |
-| `src/main/combat/fightSearch.ts` | 1 | `@typescript-eslint/prefer-optional-chain` |
+_clean — nothing suppressed._
 
 ## Wave B — src/main/** (rest) — main process
 
-33 files · 89 file×rule entries · 163 violations
-
-| rule | violations |
-| --- | ---: |
-| `@typescript-eslint/dot-notation` | 21 |
-| `@typescript-eslint/prefer-optional-chain` | 19 |
-| `no-console` | 18 |
-| `complexity` | 17 |
-| `max-depth` | 12 |
-| `max-params` | 11 |
-| `@typescript-eslint/no-redundant-type-constituents` | 9 |
-| `@typescript-eslint/no-non-null-assertion` | 8 |
-| `@typescript-eslint/no-unnecessary-type-conversion` | 8 |
-| `@typescript-eslint/array-type` | 5 |
-| `@typescript-eslint/no-unnecessary-type-assertion` | 5 |
-| `@typescript-eslint/no-empty-function` | 4 |
-| `max-lines-per-function` | 4 |
-| `max-lines` | 3 |
-| `@typescript-eslint/no-unsafe-assignment` | 2 |
-| `@typescript-eslint/no-unsafe-member-access` | 2 |
-| `@typescript-eslint/no-unsafe-declaration-merging` | 2 |
-| `@typescript-eslint/no-unused-vars` | 2 |
-| `@typescript-eslint/prefer-nullish-coalescing` | 2 |
-| `@typescript-eslint/no-unnecessary-type-arguments` | 1 |
-| `@typescript-eslint/no-unsafe-argument` | 1 |
-| `@typescript-eslint/no-floating-promises` | 1 |
-| `@typescript-eslint/use-unknown-in-catch-callback-variable` | 1 |
-| `prefer-const` | 1 |
-| `@typescript-eslint/no-base-to-string` | 1 |
-| `@typescript-eslint/no-unnecessary-type-parameters` | 1 |
-| `@typescript-eslint/consistent-indexed-object-style` | 1 |
-| `@typescript-eslint/non-nullable-type-assertion-style` | 1 |
-
-| file | violations | rules |
-| --- | ---: | --- |
-| `src/main/index.ts` | 32 | `@typescript-eslint/dot-notation`, `@typescript-eslint/no-floating-promises`, `@typescript-eslint/no-non-null-assertion`, `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/no-unnecessary-type-conversion`, `@typescript-eslint/no-unsafe-argument`, `@typescript-eslint/prefer-optional-chain`, `@typescript-eslint/use-unknown-in-catch-callback-variable`, `max-lines`, `max-lines-per-function`, `max-params`, `no-console` |
-| `src/main/modules/buffs.ts` | 25 | `@typescript-eslint/no-non-null-assertion`, `@typescript-eslint/no-redundant-type-constituents`, `@typescript-eslint/no-unused-vars`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-depth`, `max-lines`, `max-lines-per-function`, `max-params` |
-| `src/main/storeMigrations.ts` | 16 | `@typescript-eslint/dot-notation`, `complexity` |
-| `src/main/log/parser.ts` | 12 | `@typescript-eslint/no-redundant-type-constituents`, `@typescript-eslint/no-unused-vars`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-lines`, `max-lines-per-function`, `max-params`, `prefer-const` |
-| `src/main/itemLookup.ts` | 7 | `@typescript-eslint/array-type`, `@typescript-eslint/no-redundant-type-constituents`, `@typescript-eslint/no-unsafe-assignment`, `@typescript-eslint/no-unsafe-member-access`, `@typescript-eslint/prefer-optional-chain`, `max-depth` |
-| `src/main/mobLookup.ts` | 7 | `@typescript-eslint/array-type`, `@typescript-eslint/no-redundant-type-constituents`, `@typescript-eslint/no-unsafe-assignment`, `@typescript-eslint/no-unsafe-member-access`, `@typescript-eslint/prefer-optional-chain`, `max-depth` |
-| `src/main/share.ts` | 7 | `@typescript-eslint/consistent-indexed-object-style`, `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/non-nullable-type-assertion-style`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-depth` |
-| `src/main/imageCache.ts` | 5 | `@typescript-eslint/no-empty-function`, `complexity`, `no-console` |
-| `src/main/itemLookupParse.ts` | 5 | `complexity`, `max-depth` |
-| `src/main/updater.ts` | 5 | `@typescript-eslint/no-empty-function`, `@typescript-eslint/no-unnecessary-type-conversion`, `max-lines-per-function`, `no-console` |
-| `src/main/channel.ts` | 4 | `@typescript-eslint/dot-notation`, `no-console` |
-| `src/main/packRegistry.ts` | 4 | `@typescript-eslint/prefer-nullish-coalescing`, `complexity` |
-| `src/main/store.ts` | 4 | `@typescript-eslint/no-unnecessary-type-conversion`, `@typescript-eslint/prefer-optional-chain`, `no-console` |
-| `src/main/log/scanHistory.ts` | 3 | `max-depth` |
-| `src/main/mobLookupParse.ts` | 3 | `@typescript-eslint/no-unnecessary-type-conversion` |
-| `src/main/log/Tailer.ts` | 2 | `@typescript-eslint/no-unsafe-declaration-merging` |
-| `src/main/log/bus.ts` | 2 | `@typescript-eslint/array-type`, `@typescript-eslint/no-non-null-assertion` |
-| `src/main/modules/alerts.ts` | 2 | `@typescript-eslint/array-type`, `@typescript-eslint/no-base-to-string` |
-| `src/main/modules/eventFeed.ts` | 2 | `@typescript-eslint/prefer-optional-chain`, `max-params` |
-| `src/main/modules/turnins.ts` | 2 | `@typescript-eslint/prefer-optional-chain` |
-| `src/main/sounds.ts` | 2 | `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/prefer-optional-chain` |
-| `src/main/data/defaultPacks.ts` | 1 | `@typescript-eslint/array-type` |
-| `src/main/data/messageOverlay.ts` | 1 | `complexity` |
-| `src/main/data/overlayPersistence.ts` | 1 | `@typescript-eslint/prefer-optional-chain` |
-| `src/main/e2e.ts` | 1 | `@typescript-eslint/dot-notation` |
-| `src/main/errorLog.ts` | 1 | `@typescript-eslint/no-unnecessary-type-arguments` |
-| `src/main/log/config.ts` | 1 | `@typescript-eslint/prefer-optional-chain` |
-| `src/main/log/discovery.ts` | 1 | `max-depth` |
-| `src/main/log/reducers.ts` | 1 | `max-params` |
-| `src/main/mobLookupLocal.ts` | 1 | `@typescript-eslint/prefer-optional-chain` |
-| `src/main/modules/consider.ts` | 1 | `complexity` |
-| `src/main/modules/registry.ts` | 1 | `@typescript-eslint/no-unnecessary-type-parameters` |
-| `src/main/provisionPacks.ts` | 1 | `@typescript-eslint/no-empty-function` |
+_clean — nothing suppressed._
 
 ## Wave C — src/renderer/src/features/combat/** — combat UI
 
-7 files · 27 file×rule entries · 64 violations
-
-| rule | violations |
-| --- | ---: |
-| `@typescript-eslint/no-deprecated` | 32 |
-| `complexity` | 9 |
-| `max-lines-per-function` | 5 |
-| `max-lines` | 3 |
-| `@typescript-eslint/no-unsafe-return` | 3 |
-| `@typescript-eslint/no-unsafe-argument` | 3 |
-| `@typescript-eslint/prefer-optional-chain` | 2 |
-| `@typescript-eslint/prefer-nullish-coalescing` | 2 |
-| `no-console` | 2 |
-| `@typescript-eslint/array-type` | 1 |
-| `@typescript-eslint/use-unknown-in-catch-callback-variable` | 1 |
-| `@typescript-eslint/no-unnecessary-template-expression` | 1 |
-
-| file | violations | rules |
-| --- | ---: | --- |
-| `src/renderer/src/features/combat/CombatView.tsx` | 24 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unsafe-argument`, `@typescript-eslint/no-unsafe-return`, `@typescript-eslint/prefer-nullish-coalescing`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/combat/combatShared.tsx` | 15 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unnecessary-template-expression`, `@typescript-eslint/use-unknown-in-catch-callback-variable`, `no-console` |
-| `src/renderer/src/features/combat/CombatDashboard.tsx` | 9 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/features/combat/CombatTimeline.tsx` | 7 | `@typescript-eslint/array-type`, `@typescript-eslint/no-deprecated`, `@typescript-eslint/prefer-optional-chain`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/combat/FightPicker.tsx` | 7 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/combat/copyText.ts` | 1 | `complexity` |
-| `src/renderer/src/features/combat/dashboardData.ts` | 1 | `complexity` |
+_clean — nothing suppressed._
 
 ## Wave D — src/renderer/** (rest) + overlay
 
-40 files · 109 file×rule entries · 204 violations
-
-| rule | violations |
-| --- | ---: |
-| `@typescript-eslint/no-deprecated` | 102 |
-| `max-lines-per-function` | 30 |
-| `complexity` | 27 |
-| `max-lines` | 9 |
-| `@typescript-eslint/non-nullable-type-assertion-style` | 8 |
-| `@typescript-eslint/prefer-nullish-coalescing` | 5 |
-| `@typescript-eslint/no-unnecessary-type-assertion` | 4 |
-| `@typescript-eslint/no-unsafe-assignment` | 3 |
-| `@typescript-eslint/prefer-optional-chain` | 2 |
-| `@typescript-eslint/no-unsafe-argument` | 2 |
-| `linterOptions/reportUnusedDisableDirectives` | 2 |
-| `@typescript-eslint/no-misused-promises` | 2 |
-| `@typescript-eslint/array-type` | 2 |
-| `@typescript-eslint/no-dynamic-delete` | 1 |
-| `@typescript-eslint/use-unknown-in-catch-callback-variable` | 1 |
-| `@typescript-eslint/no-unused-vars` | 1 |
-| `@typescript-eslint/no-unnecessary-type-parameters` | 1 |
-| `@typescript-eslint/no-unnecessary-boolean-literal-compare` | 1 |
-| `@typescript-eslint/no-unnecessary-template-expression` | 1 |
-
-| file | violations | rules |
-| --- | ---: | --- |
-| `src/renderer/src/overlay/EventLogOverlay.tsx` | 17 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unnecessary-boolean-literal-compare`, `@typescript-eslint/non-nullable-type-assertion-style`, `@typescript-eslint/prefer-nullish-coalescing`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/buffs/BuffsView.tsx` | 15 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/non-nullable-type-assertion-style`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/loot/LootView.tsx` | 14 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-misused-promises`, `complexity`, `linterOptions/reportUnusedDisableDirectives`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/posky/PoskyView.tsx` | 12 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-misused-promises`, `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/no-unsafe-assignment`, `@typescript-eslint/prefer-nullish-coalescing`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/preferences/PreferencesView.tsx` | 12 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/overlay/HealMeter.tsx` | 12 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unnecessary-template-expression`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/alerts/AlertsView.tsx` | 11 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/prefer-optional-chain`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/loot/ItemDetailDialog.tsx` | 9 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unsafe-argument`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/features/mobs/MobPage.tsx` | 8 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/prefer-nullish-coalescing`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/lib/ItemWindow.tsx` | 8 | `@typescript-eslint/array-type`, `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/overlay/OverlayMeter.tsx` | 8 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/alerts/SoundPacksDialog.tsx` | 7 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-dynamic-delete`, `@typescript-eslint/use-unknown-in-catch-callback-variable`, `complexity`, `max-lines`, `max-lines-per-function` |
-| `src/renderer/src/features/bosses/BossView.tsx` | 7 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/no-unsafe-argument`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/features/leveling/LevelingView.tsx` | 7 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/lib/KnownItemTooltip.tsx` | 6 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/features/alerts/SuggestAlertsDialog.tsx` | 5 | `@typescript-eslint/no-deprecated`, `max-lines-per-function` |
-| `src/renderer/src/App.tsx` | 4 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/features/mobs/RecentlyConsidered.tsx` | 4 | `@typescript-eslint/no-deprecated`, `complexity` |
-| `src/renderer/src/features/profiles/ShareImportDialog.tsx` | 4 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/components/TitleBar.tsx` | 3 | `@typescript-eslint/no-deprecated`, `max-lines-per-function` |
-| `src/renderer/src/components/UpdateChip.tsx` | 3 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/data/index.ts` | 3 | `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/prefer-nullish-coalescing` |
-| `src/renderer/src/overlay/OverlaySelect.tsx` | 3 | `@typescript-eslint/no-deprecated`, `complexity`, `max-lines-per-function` |
-| `src/renderer/src/features/favorites/QuestFlagButtons.tsx` | 2 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/features/mobs/MobsView.tsx` | 2 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/features/posky/useProgress.ts` | 2 | `@typescript-eslint/no-unused-vars`, `max-lines-per-function` |
-| `src/renderer/src/features/profiles/ProfileSharing.tsx` | 2 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/overlay/main.tsx` | 2 | `@typescript-eslint/no-deprecated`, `@typescript-eslint/non-nullable-type-assertion-style` |
-| `src/renderer/src/features/favorites/FavoriteStar.tsx` | 1 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/features/favorites/useFavorites.ts` | 1 | `@typescript-eslint/no-unsafe-assignment` |
-| `src/renderer/src/features/favorites/useQuestFlags.ts` | 1 | `@typescript-eslint/no-unsafe-assignment` |
-| `src/renderer/src/features/inventory/reconcile.ts` | 1 | `complexity` |
-| `src/renderer/src/features/posky/ItemTooltip.tsx` | 1 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/features/posky/sharedItems.ts` | 1 | `complexity` |
-| `src/renderer/src/features/posky/turnInCelebration.ts` | 1 | `@typescript-eslint/prefer-optional-chain` |
-| `src/renderer/src/lib/Confetti.tsx` | 1 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/lib/ObservedItemWindow.tsx` | 1 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/lib/clipboard.ts` | 1 | `@typescript-eslint/no-deprecated` |
-| `src/renderer/src/lib/useModule.ts` | 1 | `@typescript-eslint/no-unnecessary-type-parameters` |
-| `src/renderer/src/main.tsx` | 1 | `@typescript-eslint/non-nullable-type-assertion-style` |
+_clean — nothing suppressed._
 
 ## Wave E — src/shared + src/preload + scripts + tests
 
-28 files · 61 file×rule entries · 118 violations
-
-| rule | violations |
-| --- | ---: |
-| `complexity` | 23 |
-| `max-depth` | 15 |
-| `@typescript-eslint/array-type` | 10 |
-| `@typescript-eslint/no-unsafe-call` | 9 |
-| `@typescript-eslint/no-unsafe-member-access` | 9 |
-| `@typescript-eslint/prefer-nullish-coalescing` | 8 |
-| `@typescript-eslint/consistent-type-definitions` | 8 |
-| `max-params` | 5 |
-| `max-lines` | 5 |
-| `@typescript-eslint/no-unsafe-assignment` | 4 |
-| `@typescript-eslint/no-require-imports` | 2 |
-| `@typescript-eslint/use-unknown-in-catch-callback-variable` | 2 |
-| `@typescript-eslint/prefer-for-of` | 2 |
-| `@typescript-eslint/restrict-plus-operands` | 2 |
-| `@typescript-eslint/no-unnecessary-type-parameters` | 2 |
-| `@typescript-eslint/no-unsafe-return` | 2 |
-| `@typescript-eslint/no-redundant-type-constituents` | 2 |
-| `@typescript-eslint/no-base-to-string` | 2 |
-| `@typescript-eslint/prefer-includes` | 1 |
-| `@typescript-eslint/no-unused-vars` | 1 |
-| `max-lines-per-function` | 1 |
-| `linterOptions/reportUnusedDisableDirectives` | 1 |
-| `@typescript-eslint/no-unnecessary-type-assertion` | 1 |
-| `@typescript-eslint/no-unnecessary-type-conversion` | 1 |
-
-| file | violations | rules |
-| --- | ---: | --- |
-| `scripts/site-screens.mts` | 27 | `@typescript-eslint/array-type`, `@typescript-eslint/no-unsafe-assignment`, `@typescript-eslint/no-unsafe-call`, `@typescript-eslint/no-unsafe-member-access`, `@typescript-eslint/no-unsafe-return`, `@typescript-eslint/use-unknown-in-catch-callback-variable`, `complexity`, `max-params` |
-| `scripts/scrape-quests.ts` | 14 | `@typescript-eslint/no-unnecessary-type-parameters`, `@typescript-eslint/prefer-for-of`, `@typescript-eslint/restrict-plus-operands`, `complexity`, `max-depth` |
-| `src/shared/profiles.ts` | 10 | `@typescript-eslint/no-base-to-string`, `@typescript-eslint/no-unnecessary-type-assertion`, `@typescript-eslint/no-unnecessary-type-conversion`, `complexity`, `max-lines`, `max-params` |
-| `src/shared/types.ts` | 9 | `@typescript-eslint/consistent-type-definitions`, `max-lines` |
-| `scripts/sources/eqlegends.ts` | 8 | `@typescript-eslint/prefer-nullish-coalescing`, `complexity`, `max-depth`, `max-lines-per-function` |
-| `tests/e2e/combat-dashboard.e2e.mts` | 7 | `@typescript-eslint/array-type`, `complexity`, `max-depth`, `max-lines` |
-| `scripts/fetch-packs.mts` | 4 | `@typescript-eslint/prefer-nullish-coalescing`, `@typescript-eslint/use-unknown-in-catch-callback-variable`, `complexity` |
-| `scripts/gen-icon.mts` | 4 | `@typescript-eslint/prefer-for-of`, `max-params` |
-| `scripts/scrape-mobs.ts` | 4 | `@typescript-eslint/no-unnecessary-type-parameters`, `@typescript-eslint/restrict-plus-operands`, `complexity` |
-| `scripts/scrape-spells.ts` | 4 | `@typescript-eslint/no-unused-vars`, `@typescript-eslint/prefer-nullish-coalescing`, `complexity` |
-| `src/shared/fuzzy.ts` | 4 | `@typescript-eslint/no-unsafe-assignment`, `complexity` |
-| `src/shared/itemStats.ts` | 3 | `@typescript-eslint/array-type`, `complexity` |
-| `scripts/azure-sign.cjs` | 2 | `@typescript-eslint/no-require-imports` |
-| `src/shared/combat.ts` | 2 | `@typescript-eslint/array-type` |
-| `src/shared/logEvents.ts` | 2 | `@typescript-eslint/no-redundant-type-constituents` |
-| `tests/combatTaxonomyWindows.test.mts` | 2 | `@typescript-eslint/array-type`, `complexity` |
-| `scripts/scrape-bosses.ts` | 1 | `@typescript-eslint/prefer-includes` |
-| `scripts/scrape-posky.ts` | 1 | `@typescript-eslint/prefer-nullish-coalescing` |
-| `scripts/sources/mobPage.ts` | 1 | `@typescript-eslint/prefer-nullish-coalescing` |
-| `scripts/sources/questPage.ts` | 1 | `complexity` |
-| `src/shared/logEventKinds.ts` | 1 | `linterOptions/reportUnusedDisableDirectives` |
-| `src/shared/update.ts` | 1 | `complexity` |
-| `tests/considerWindows.test.mts` | 1 | `max-lines` |
-| `tests/defaultSoundPack.test.mts` | 1 | `@typescript-eslint/array-type` |
-| `tests/epochWindows.test.mts` | 1 | `max-depth` |
-| `tests/fullReplaySmoke.test.mts` | 1 | `complexity` |
-| `tests/healingWindows.test.mts` | 1 | `max-depth` |
-| `tests/itemLookup.test.mts` | 1 | `max-lines` |
+_clean — nothing suppressed._

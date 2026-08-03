@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { type JSX, useEffect, useRef, useState } from 'react'
 
 /**
  * The overlay's segment/session selector.
@@ -36,6 +36,135 @@ export interface OverlaySelectRow {
 const PANEL_BG = 'rgba(18,22,28,0.97)'
 const HAIRLINE = 'rgba(255,255,255,0.12)'
 const HOVER = 'rgba(255,255,255,0.08)'
+
+/**
+ * The closed-state trigger: live dot · label · rate · caret, in the meter's own chrome.
+ * `current` is null only when there is nothing to select at all, which is also the
+ * disabled state.
+ */
+function SelectTrigger({
+  current,
+  open,
+  disabled,
+  accent,
+  emptyLabel,
+  onToggle
+}: {
+  current: OverlaySelectRow | null
+  open: boolean
+  disabled: boolean
+  accent: string
+  emptyLabel: string
+  onToggle: () => void
+}): JSX.Element {
+  return (
+    <div
+      role="button"
+      aria-haspopup="listbox"
+      aria-expanded={open}
+      onClick={() => !disabled && onToggle()}
+      title={current ? `${current.label} · ${current.rate} · ${current.timing}` : emptyLabel}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        height: 20,
+        padding: '0 6px',
+        borderRadius: 4,
+        border: `1px solid ${open ? accent : HAIRLINE}`,
+        background: open ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.32)',
+        color: '#f2f2f2',
+        fontSize: 11,
+        lineHeight: 1,
+        cursor: disabled ? 'default' : 'pointer',
+        opacity: disabled ? 0.55 : 1,
+        userSelect: 'none'
+      }}
+    >
+      {current?.live && (
+        <span style={{ width: 5, height: 5, borderRadius: '50%', background: accent, flexShrink: 0 }} />
+      )}
+      <span style={{ flexGrow: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        {current ? current.label : emptyLabel}
+      </span>
+      {current && (
+        <span style={{ color: 'rgba(255,255,255,0.6)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+          {current.rate}
+        </span>
+      )}
+      <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 9, flexShrink: 0 }}>{open ? '▲' : '▼'}</span>
+    </div>
+  )
+}
+
+/** One popup row: the dense two-line disambiguation the native widget could never carry. */
+function OptionRow({
+  row,
+  selected,
+  hovered,
+  accent,
+  onHover,
+  onPick
+}: {
+  row: OverlaySelectRow
+  selected: boolean
+  hovered: boolean
+  accent: string
+  onHover: (hovering: boolean) => void
+  onPick: () => void
+}): JSX.Element {
+  return (
+    <div
+      role="option"
+      aria-selected={selected}
+      onMouseEnter={() => onHover(true)}
+      onMouseLeave={() => onHover(false)}
+      onClick={onPick}
+      style={{
+        padding: '3px 6px',
+        borderRadius: 3,
+        cursor: 'pointer',
+        // The selected row keeps a full-height accent stripe — the same device the
+        // drill-down bars use for a category — so it reads without a checkmark glyph.
+        borderLeft: `2px solid ${selected ? accent : 'transparent'}`,
+        background: hovered ? HOVER : selected ? 'rgba(255,255,255,0.045)' : 'transparent'
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, fontSize: 11, lineHeight: 1.25 }}>
+        {row.live && (
+          <span style={{ width: 5, height: 5, borderRadius: '50%', background: accent, flexShrink: 0 }} />
+        )}
+        <span
+          style={{
+            flexGrow: 1,
+            minWidth: 0,
+            fontWeight: 600,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}
+        >
+          {row.label}
+        </span>
+        <span style={{ color: 'rgba(255,255,255,0.62)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+          {row.rate}
+        </span>
+      </div>
+      <div
+        style={{
+          fontSize: 9.5,
+          lineHeight: 1.3,
+          color: 'rgba(255,255,255,0.42)',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        }}
+      >
+        {row.timing}
+      </div>
+    </div>
+  )
+}
 
 export function OverlaySelect({
   rows,
@@ -82,42 +211,14 @@ export function OverlaySelect({
 
   return (
     <div ref={wrapRef} style={{ ...noDragStyle, position: 'relative', padding: '4px 8px 2px', flexShrink: 0 }}>
-      <div
-        role="button"
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        onClick={() => !disabled && setOpen((o) => !o)}
-        title={current ? `${current.label} · ${current.rate} · ${current.timing}` : emptyLabel}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-          height: 20,
-          padding: '0 6px',
-          borderRadius: 4,
-          border: `1px solid ${open ? accent : HAIRLINE}`,
-          background: open ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.32)',
-          color: '#f2f2f2',
-          fontSize: 11,
-          lineHeight: 1,
-          cursor: disabled ? 'default' : 'pointer',
-          opacity: disabled ? 0.55 : 1,
-          userSelect: 'none'
-        }}
-      >
-        {current?.live && (
-          <span style={{ width: 5, height: 5, borderRadius: '50%', background: accent, flexShrink: 0 }} />
-        )}
-        <span style={{ flexGrow: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-          {current ? current.label : emptyLabel}
-        </span>
-        {current && (
-          <span style={{ color: 'rgba(255,255,255,0.6)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
-            {current.rate}
-          </span>
-        )}
-        <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 9, flexShrink: 0 }}>{open ? '▲' : '▼'}</span>
-      </div>
+      <SelectTrigger
+        current={current}
+        open={open}
+        disabled={disabled}
+        accent={accent}
+        emptyLabel={emptyLabel}
+        onToggle={() => setOpen((o) => !o)}
+      />
 
       {open && !disabled && (
         <div
@@ -137,68 +238,22 @@ export function OverlaySelect({
             padding: 2
           }}
         >
-          {rows.map((r) => {
-            const on = r.value === value
-            return (
-              <div
-                key={r.value}
-                role="option"
-                aria-selected={on}
-                onMouseEnter={() => setHover(r.value)}
-                onMouseLeave={() => setHover((h) => (h === r.value ? null : h))}
-                onClick={() => {
-                  onChange(r.value)
-                  setOpen(false)
-                }}
-                style={{
-                  padding: '3px 6px',
-                  borderRadius: 3,
-                  cursor: 'pointer',
-                  // The selected row keeps a full-height accent stripe — the same device the
-                  // drill-down bars use for a category — so it reads without a checkmark glyph.
-                  borderLeft: `2px solid ${on ? accent : 'transparent'}`,
-                  background: hover === r.value ? HOVER : on ? 'rgba(255,255,255,0.045)' : 'transparent'
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, fontSize: 11, lineHeight: 1.25 }}>
-                  {r.live && (
-                    <span
-                      style={{ width: 5, height: 5, borderRadius: '50%', background: accent, flexShrink: 0 }}
-                    />
-                  )}
-                  <span
-                    style={{
-                      flexGrow: 1,
-                      minWidth: 0,
-                      fontWeight: 600,
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis'
-                    }}
-                  >
-                    {r.label}
-                  </span>
-                  <span
-                    style={{ color: 'rgba(255,255,255,0.62)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}
-                  >
-                    {r.rate}
-                  </span>
-                </div>
-                <div
-                  style={{
-                    fontSize: 9.5,
-                    lineHeight: 1.3,
-                    color: 'rgba(255,255,255,0.42)',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis'
-                  }}
-                >
-                  {r.timing}
-                </div>
-              </div>
-            )
-          })}
+          {rows.map((r) => (
+            <OptionRow
+              key={r.value}
+              row={r}
+              selected={r.value === value}
+              hovered={hover === r.value}
+              accent={accent}
+              onHover={(hovering) =>
+                setHover((h) => (hovering ? r.value : h === r.value ? null : h))
+              }
+              onPick={() => {
+                onChange(r.value)
+                setOpen(false)
+              }}
+            />
+          ))}
         </div>
       )}
     </div>

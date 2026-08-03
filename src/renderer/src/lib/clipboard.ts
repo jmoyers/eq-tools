@@ -21,6 +21,10 @@ export async function copyText(text: string): Promise<boolean> {
     ta.style.top = '0'
     document.body.appendChild(ta)
     ta.select()
+    // Deprecated by the platform and kept ON PURPOSE — it is the fallback for exactly
+    // the contexts where navigator.clipboard is unavailable, so "use the modern API
+    // instead" is not an option here.
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     const ok = document.execCommand('copy')
     document.body.removeChild(ta)
     return ok

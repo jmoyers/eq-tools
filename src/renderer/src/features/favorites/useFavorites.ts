@@ -7,8 +7,9 @@ const KEY = 'eq.favorites'
 
 function load(): Set<string> {
   try {
-    const v = JSON.parse(localStorage.getItem(KEY) ?? '[]')
-    return new Set(Array.isArray(v) ? v.map((s) => String(s).toLowerCase()) : [])
+    const raw: unknown = JSON.parse(localStorage.getItem(KEY) ?? '[]')
+    const list: unknown[] = Array.isArray(raw) ? raw : []
+    return new Set(list.map((s) => String(s).toLowerCase()))
   } catch {
     return new Set()
   }

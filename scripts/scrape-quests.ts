@@ -32,7 +32,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
-import { isEmptyParse, parseQuestPage } from './sources/questPage'
+import { isEmptyParse, parseQuestPage, type ParsedQuestPage } from './sources/questPage'
 import type { QuestData, QuestEntry } from '../src/shared/types'
 
 const API = 'https://eqlwiki.com/api.php'
@@ -51,9 +51,20 @@ const refresh = process.argv.slice(2).includes('--refresh')
 
 // ---- polite API client ---------------------------------------------------------
 
+/** Wait before a retry: the server's Retry-After when it gave a usable one, else our backoff. */
+function retryDelayMs(res: Response, backoff: number): number {
+  const retryAfter = Number(res.headers.get('retry-after'))
+  return Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoff
+}
+
+/** Which request failed, for the thrown message — whichever identifying param it carried. */
+function describeRequest(params: Record<string, string>): string {
+  return `${params.action} ${params.cmtitle ?? params.eititle ?? params.pageid ?? ''}`
+}
+
 /** One serialized GET with exponential backoff on 429/5xx (honours Retry-After). */
 async function api<T>(params: Record<string, string>): Promise<T> {
-  const url = API + '?' + new URLSearchParams({ format: 'json', formatversion: '2', ...params })
+  const url = `${API}?${new URLSearchParams({ format: 'json', formatversion: '2', ...params }).toString()}`
   let wait = 1000
   for (let attempt = 0; ; attempt++) {
     let res: Response
@@ -70,12 +81,11 @@ async function api<T>(params: Record<string, string>): Promise<T> {
       return (await res.json()) as T
     }
     if ((res.status === 429 || res.status >= 500) && attempt < MAX_RETRIES) {
-      const retryAfter = Number(res.headers.get('retry-after'))
-      await sleep(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : wait)
+      await sleep(retryDelayMs(res, wait))
       wait *= 2
       continue
     }
-    throw new Error(`${res.status} ${res.statusText} for ${params.action} ${params.cmtitle ?? params.eititle ?? params.pageid ?? ''}`)
+    throw new Error(`${res.status} ${res.statusText} for ${describeRequest(params)}`)
   }
 }
 
@@ -129,12 +139,13 @@ function cachePath(name: string): string {
   return resolve(CACHE_DIR, name)
 }
 
-function readCache<T>(name: string): T | null {
+/** Cached JSON, or null when absent/unreadable/`--refresh`. The CALLER names the shape. */
+function readCache(name: string): unknown {
   if (refresh) return null
   const p = cachePath(name)
   if (!existsSync(p)) return null
   try {
-    return JSON.parse(readFileSync(p, 'utf8')) as T
+    return JSON.parse(readFileSync(p, 'utf8')) as unknown
   } catch {
     return null
   }
@@ -174,7 +185,7 @@ function questCategoryNames(all: string[]): string[] {
 }
 
 async function collectQuestPages(): Promise<Member[]> {
-  const cached = readCache<Member[]>('quest-pages.json')
+  const cached = readCache('quest-pages.json') as Member[] | null
   if (cached) {
     console.log(`Quest pages: ${cached.length} (cached)`)
     return cached
@@ -187,8 +198,9 @@ async function collectQuestPages(): Promise<Member[]> {
   const seenCats = new Set<string>()
   const queue = [...cats]
   // Category:Quests carries subcategories; walk ONE level down from any listed category.
-  for (let i = 0; i < queue.length; i++) {
-    const cat = queue[i]
+  // `queue` GROWS during this loop — an array iterator re-reads length on every step, so
+  // subcategories pushed below are visited by this same for-of.
+  for (const cat of queue) {
     if (seenCats.has(cat)) continue
     seenCats.add(cat)
     const members = await categoryMembers(cat)
@@ -226,7 +238,7 @@ const ITEM_CATEGORIES = [
 
 /** Lowercased title set of every ITEM page on the wiki (the prose-link filter). */
 async function collectItemTitles(): Promise<Set<string>> {
-  const cached = readCache<string[]>('item-titles.json')
+  const cached = readCache('item-titles.json') as string[] | null
   if (cached) {
     console.log(`Item titles: ${cached.length} (cached)`)
     return new Set(cached)
@@ -253,64 +265,38 @@ async function collectItemTitles(): Promise<Set<string>> {
 
 // ---- main ----------------------------------------------------------------------
 
-async function main(): Promise<void> {
-  const itemTitles = await collectItemTitles()
-  const isItem = (title: string): boolean => itemTitles.has(title.toLowerCase().replace(/\s+/g, ' ').trim())
+/**
+ * Why this page is NOT a quest, or null when it is one.
+ *
+ * Category:Quests also holds INDEX pages ("Popular Quests by Level", "Class Race Quest
+ * List") — no quest header at all, just hundreds of item links. Indexing those would tie
+ * every listed item to a page that is not a quest.
+ */
+function nonQuestReason(parsed: ParsedQuestPage): string | null {
+  const indexPage =
+    !parsed.hasTopTable && !parsed.giver && !parsed.startZone && parsed.requiredItems.length > 40
+  if (parsed.disambiguation && isEmptyParse(parsed)) return 'disambiguation hub'
+  if (indexPage) return `index/list page (${parsed.requiredItems.length} item links, no quest header)`
+  if (isEmptyParse(parsed)) return 'no quest fields parsed'
+  return null
+}
 
-  const pages = await collectQuestPages()
-  console.log(`\nFetching + parsing ${pages.length} quest pages…`)
+/** Project a parsed page into a catalog entry — ONLY the fields the page actually stated. */
+function toQuestEntry(parsed: ParsedQuestPage): QuestEntry {
+  const entry: QuestEntry = { name: parsed.page, page: parsed.page }
+  if (parsed.startZone) entry.startZone = parsed.startZone
+  if (parsed.giver) entry.giver = parsed.giver
+  if (parsed.minLevel != null) entry.minLevel = parsed.minLevel
+  if (parsed.classes.length) entry.classes = parsed.classes
+  if (parsed.relatedZones.length) entry.relatedZones = parsed.relatedZones
+  if (parsed.relatedNpcs.length) entry.relatedNpcs = parsed.relatedNpcs
+  if (parsed.rewards.length) entry.rewards = parsed.rewards.map((name) => ({ name }))
+  if (parsed.requiredItems.length) entry.requiredItems = parsed.requiredItems
+  if (parsed.expReward) entry.expReward = true
+  return entry
+}
 
-  const quests: QuestEntry[] = []
-  const skipped: { page: string; reason: string }[] = []
-  let done = 0
-  for (const p of pages) {
-    let wt: string | null = null
-    try {
-      wt = await fetchWikitext(p.pageid)
-    } catch (err) {
-      skipped.push({ page: p.title, reason: `fetch failed: ${(err as Error).message}` })
-    }
-    if (wt == null) {
-      if (!skipped.some((s) => s.page === p.title)) skipped.push({ page: p.title, reason: 'no wikitext' })
-    } else {
-      const parsed = parseQuestPage(p.title, wt, isItem)
-      // Category:Quests also holds INDEX pages ("Popular Quests by Level", "Class Race Quest
-      // List") — no quest header at all, just hundreds of item links. Indexing those would
-      // tie every listed item to a page that is not a quest.
-      const indexPage =
-        !parsed.hasTopTable && !parsed.giver && !parsed.startZone && parsed.requiredItems.length > 40
-      if (parsed.disambiguation && isEmptyParse(parsed)) {
-        skipped.push({ page: p.title, reason: 'disambiguation hub' })
-      } else if (indexPage) {
-        skipped.push({ page: p.title, reason: `index/list page (${parsed.requiredItems.length} item links, no quest header)` })
-      } else if (isEmptyParse(parsed)) {
-        skipped.push({ page: p.title, reason: 'no quest fields parsed' })
-      } else {
-        const entry: QuestEntry = { name: parsed.page, page: parsed.page }
-        if (parsed.startZone) entry.startZone = parsed.startZone
-        if (parsed.giver) entry.giver = parsed.giver
-        if (parsed.minLevel != null) entry.minLevel = parsed.minLevel
-        if (parsed.classes.length) entry.classes = parsed.classes
-        if (parsed.relatedZones.length) entry.relatedZones = parsed.relatedZones
-        if (parsed.relatedNpcs.length) entry.relatedNpcs = parsed.relatedNpcs
-        if (parsed.rewards.length) entry.rewards = parsed.rewards.map((name) => ({ name }))
-        if (parsed.requiredItems.length) entry.requiredItems = parsed.requiredItems
-        if (parsed.expReward) entry.expReward = true
-        quests.push(entry)
-      }
-    }
-    if (++done % 100 === 0) console.log(`  ${done}/${pages.length}`)
-  }
-
-  quests.sort((a, b) => a.page.localeCompare(b.page))
-  const out: QuestData = {
-    scrapedAt: new Date().toISOString(),
-    source: 'eqlwiki.com — Category:Quests + quest subcategories',
-    quests
-  }
-  mkdirSync(dirname(OUT_PATH), { recursive: true })
-  writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
-
+function printSummary(quests: QuestEntry[], skipped: { page: string; reason: string }[]): void {
   const indexed = new Set<string>()
   let reqCount = 0
   let rewCount = 0
@@ -333,6 +319,46 @@ async function main(): Promise<void> {
     console.log(`\nSkipped ${skipped.length} pages (nothing parsed):`)
     for (const s of skipped) console.log(`  - ${s.page} — ${s.reason}`)
   }
+}
+
+async function main(): Promise<void> {
+  const itemTitles = await collectItemTitles()
+  const isItem = (title: string): boolean => itemTitles.has(title.toLowerCase().replace(/\s+/g, ' ').trim())
+
+  const pages = await collectQuestPages()
+  console.log(`\nFetching + parsing ${pages.length} quest pages…`)
+
+  const quests: QuestEntry[] = []
+  const skipped: { page: string; reason: string }[] = []
+  let done = 0
+  for (const p of pages) {
+    let wt: string | null = null
+    try {
+      wt = await fetchWikitext(p.pageid)
+    } catch (err) {
+      skipped.push({ page: p.title, reason: `fetch failed: ${(err as Error).message}` })
+    }
+    if (wt == null) {
+      if (!skipped.some((s) => s.page === p.title)) skipped.push({ page: p.title, reason: 'no wikitext' })
+    } else {
+      const parsed = parseQuestPage(p.title, wt, isItem)
+      const reason = nonQuestReason(parsed)
+      if (reason) skipped.push({ page: p.title, reason })
+      else quests.push(toQuestEntry(parsed))
+    }
+    if (++done % 100 === 0) console.log(`  ${done}/${pages.length}`)
+  }
+
+  quests.sort((a, b) => a.page.localeCompare(b.page))
+  const out: QuestData = {
+    scrapedAt: new Date().toISOString(),
+    source: 'eqlwiki.com — Category:Quests + quest subcategories',
+    quests
+  }
+  mkdirSync(dirname(OUT_PATH), { recursive: true })
+  writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
+
+  printSummary(quests, skipped)
 }
 
 void main()

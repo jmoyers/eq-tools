@@ -17,12 +17,25 @@ export interface TailerOptions {
 }
 
 /**
+ * The Tailer's event map — the typed public surface of `on`/`once`/`emit`:
+ *   'line'  — one complete raw line (no trailing newline / `\r`).
+ *   'error' — a stat/read/watch failure; the tailer keeps running.
+ * Declared as a generic argument to EventEmitter rather than as an `interface Tailer`
+ * declaration-merged onto the class: same signatures, same runtime class, but nothing can
+ * silently claim a member the class doesn't implement.
+ */
+interface TailerEvents {
+  line: [raw: string]
+  error: [err: unknown]
+}
+
+/**
  * Tails a single growing text file. Tracks a byte offset, reads only appended
  * bytes on each change, and emits one 'line' event per complete raw line (the
  * caller parses it — the Tailer stays purely byte-level). Survives log
  * rotation/truncation by resetting the offset when the file shrinks.
  */
-export class Tailer extends EventEmitter {
+export class Tailer extends EventEmitter<TailerEvents> {
   private readonly path: string
   private readonly fromStart: boolean
   private readonly startOffset?: number
@@ -127,11 +140,4 @@ export class Tailer extends EventEmitter {
       this.emit('line', raw)
     }
   }
-}
-
-export interface Tailer {
-  on(event: 'line', listener: (raw: string) => void): this
-  on(event: 'error', listener: (err: unknown) => void): this
-  emit(event: 'line', raw: string): boolean
-  emit(event: 'error', err: unknown): boolean
 }

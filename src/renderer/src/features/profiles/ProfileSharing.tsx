@@ -6,7 +6,7 @@
 // window positions, and no character progress — those are machine/character state and the
 // exporter never reads them.
 
-import { useCallback, useEffect, useState } from 'react'
+import { type JSX, useCallback, useEffect, useState } from 'react'
 import { Alert, Box, Button, Chip, Snackbar, Stack, Typography } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import SaveAltIcon from '@mui/icons-material/SaveAlt'

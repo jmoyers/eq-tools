@@ -17,6 +17,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
 import { parseEvent } from '../src/main/log/parser'
+import type { ResistEvent } from '../src/shared/logEvents'
 import { CombatEngine } from '../src/main/combat/engine'
 import { parseModifiers, damageCategory } from '../src/main/combat/taxonomy'
 
@@ -238,24 +239,35 @@ function replayResist(): { eng: CombatEngine; lastTs: number } {
   return { eng, lastTs }
 }
 
+/**
+ * Parse a line and ASSERT it is a resist, returning the narrowed event. The kind assertion
+ * that used to be repeated inline per line now runs for every line (strictly more checking),
+ * and the fields below are typed instead of being re-narrowed in each comparison.
+ */
+function parseResist(line: string): ResistEvent {
+  const ev = parseEvent(line, 0)
+  assert.ok(ev, `parsed: ${line}`)
+  assert.equal(ev.kind, 'resist', `resist event: ${line}`)
+  if (ev.kind !== 'resist') throw new Error('unreachable — asserted above')
+  return ev
+}
+
 test('parser: the three resist shapes (yours / caster / incoming) with rank suffix', () => {
-  const yours = parseEvent('[Thu Jul 30 21:55:33 2026] A revenant resisted your Mesmerization III!', 0)
-  assert.equal(yours?.kind, 'resist')
+  const yours = parseResist('[Thu Jul 30 21:55:33 2026] A revenant resisted your Mesmerization III!')
   assert.deepEqual(
-    yours?.kind === 'resist' ? { caster: yours.caster, target: yours.target, spell: yours.spell, incoming: yours.incoming } : null,
+    { caster: yours.caster, target: yours.target, spell: yours.spell, incoming: yours.incoming },
     { caster: 'you', target: 'A revenant', spell: 'Mesmerization III', incoming: false }
   )
   // A spell name that itself contains "'s" must NOT be mis-split as a caster possessive.
-  const denon = parseEvent("[Thu Jul 30 21:55:33 2026] A willowisp resisted your Denon's Disruptive Discord!", 0)
-  assert.equal(denon?.kind === 'resist' && denon.spell, "Denon's Disruptive Discord")
-  assert.equal(denon?.kind === 'resist' && denon.caster, 'you')
-  const caster = parseEvent("[Thu Jul 30 21:55:33 2026] A hardened skeleton resisted Giber's Disease Cloud!", 0)
-  assert.equal(caster?.kind === 'resist' && caster.caster, 'Giber')
-  assert.equal(caster?.kind === 'resist' && caster.incoming, false)
-  const incoming = parseEvent("[Thu Jul 30 21:55:33 2026] You resist a ghoul's Ghoul Root!", 0)
-  assert.equal(incoming?.kind, 'resist')
-  assert.equal(incoming?.kind === 'resist' && incoming.incoming, true)
-  assert.equal(incoming?.kind === 'resist' && incoming.target, 'You')
+  const denon = parseResist("[Thu Jul 30 21:55:33 2026] A willowisp resisted your Denon's Disruptive Discord!")
+  assert.equal(denon.spell, "Denon's Disruptive Discord")
+  assert.equal(denon.caster, 'you')
+  const caster = parseResist("[Thu Jul 30 21:55:33 2026] A hardened skeleton resisted Giber's Disease Cloud!")
+  assert.equal(caster.caster, 'Giber')
+  assert.equal(caster.incoming, false)
+  const incoming = parseResist("[Thu Jul 30 21:55:33 2026] You resist a ghoul's Ghoul Root!")
+  assert.equal(incoming.incoming, true)
+  assert.equal(incoming.target, 'You')
 })
 
 test('W-res1: resist is a lane + a rate, and does NOT move the damage total (tripwire)', () => {
@@ -404,7 +416,8 @@ test('full-log: per-encounter timeline ring is memory-bounded (drop-oldest acros
   }
   eng.snapshot(Date.now(), {})
   // Reflect into the private history to count retained rings (a whole-session bound check).
-  const anyEng = eng as unknown as { history: Array<{ events: unknown[] }>; current: { events: unknown[] } | null }
+  // `history`/`current` live on the engine's internal state object (src/main/combat/state.ts).
+  const anyEng = (eng as unknown as { st: { history: { events: unknown[] }[]; current: { events: unknown[] } | null } }).st
   let withRing = 0
   let retained = 0
   for (const h of anyEng.history) {

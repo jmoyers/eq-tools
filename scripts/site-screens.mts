@@ -26,15 +26,11 @@
  */
 
 import { _electron as electron, type ElectronApplication, type JSHandle, type Page } from 'playwright-core'
-import { spawnSync } from 'node:child_process'
-import { existsSync, mkdirSync, readFileSync, readdirSync, statSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
+import { MAIN_ENTRY, ROOT, buildIfStale, electronBinary, waitForTypecheck } from './site-build.mjs'
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const OUT_DIR = join(ROOT, 'out-e2e')
-const MAIN_ENTRY = join(OUT_DIR, 'main', 'index.js')
 const ASSETS = join(ROOT, 'site', 'assets')
 /**
  * Persistent (not per-run) throwaway userData: the shots want the boss portraits loaded, and the
@@ -49,9 +45,6 @@ const WIN = { width: 1280, height: 800 }
 const OFFSCREEN = { x: -4000, y: 80 }
 /** A full-log scan of a months-old live log takes a while. */
 const HYDRATE_TIMEOUT_MS = 300_000
-/** How long to wait for the sibling agent's in-flight edits to typecheck clean. */
-const TYPECHECK_WAIT_MS = 15 * 60_000
-const TYPECHECK_POLL_MS = 60_000
 
 const sleep = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms))
 
@@ -68,94 +61,12 @@ interface ShotResult {
   note: string
 }
 const results: ShotResult[] = []
-const skipped: Array<{ file: string; why: string }> = []
+const skipped: { file: string; why: string }[] = []
 
 function log(msg: string): void {
   console.log(msg)
 }
 
-// ── typecheck gate + build ─────────────────────────────────────────────────────────────
-
-/** Both projects, exactly what `npm run typecheck` runs — without needing npm on PATH. */
-function typecheckClean(): { ok: boolean; out: string } {
-  const tsc = join(ROOT, 'node_modules', 'typescript', 'bin', 'tsc')
-  let out = ''
-  for (const project of ['tsconfig.node.json', 'tsconfig.web.json']) {
-    const res = spawnSync(process.execPath, [tsc, '--noEmit', '-p', join(ROOT, project)], {
-      cwd: ROOT,
-      encoding: 'utf8'
-    })
-    out += `${res.stdout ?? ''}${res.stderr ?? ''}`
-    if (res.status !== 0) return { ok: false, out }
-  }
-  return { ok: true, out }
-}
-
-/**
- * A sibling agent may be mid-edit in src/renderer/src/features/posky/**. Building a broken tree
- * would produce a screenshot of a crashed tab, so wait it out — and if it never clears, say which
- * shot we are giving up on instead of shipping a lie.
- */
-function waitForTypecheck(): boolean {
-  const t0 = Date.now()
-  for (;;) {
-    const res = typecheckClean()
-    if (res.ok) {
-      log(`typecheck: clean (${Math.round((Date.now() - t0) / 1000)}s)`)
-      return true
-    }
-    if (Date.now() - t0 >= TYPECHECK_WAIT_MS) {
-      log(`typecheck: STILL failing after ${Math.round(TYPECHECK_WAIT_MS / 60_000)}min:`)
-      log(res.out.split('\n').slice(0, 12).join('\n'))
-      return false
-    }
-    log(`typecheck: failing (a sibling agent is mid-edit) — retrying in ${TYPECHECK_POLL_MS / 1000}s`)
-    spawnSync(process.execPath, ['-e', `setTimeout(()=>{}, ${TYPECHECK_POLL_MS})`])
-  }
-}
-
-function newestMtime(dir: string): number {
-  let newest = 0
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const p = join(dir, entry.name)
-    newest = Math.max(newest, entry.isDirectory() ? newestMtime(p) : statSync(p).mtimeMs)
-  }
-  return newest
-}
-
-function buildIfStale(): void {
-  let outMs = 0
-  try {
-    outMs = statSync(MAIN_ENTRY).mtimeMs
-  } catch {
-    outMs = 0
-  }
-  const srcMs = Math.max(
-    newestMtime(join(ROOT, 'src')),
-    statSync(join(ROOT, 'electron.vite.config.ts')).mtimeMs
-  )
-  if (outMs > srcMs) {
-    log('build: out-e2e/ is fresh — reusing it')
-    return
-  }
-  log('build: electron-vite build --outDir=out-e2e (absolute — a relative one buries the HTML)…')
-  const res = spawnSync(
-    process.execPath,
-    [
-      join(ROOT, 'node_modules', 'electron-vite', 'bin', 'electron-vite.js'),
-      'build',
-      `--outDir=${OUT_DIR.replace(/\\/g, '/')}`
-    ],
-    { cwd: ROOT, stdio: 'inherit' }
-  )
-  if (res.status !== 0) throw new Error(`electron-vite build failed (exit ${res.status})`)
-}
-
-function electronBinary(): string {
-  return process.platform === 'win32'
-    ? join(ROOT, 'node_modules', 'electron', 'dist', 'electron.exe')
-    : join(ROOT, 'node_modules', 'electron', 'dist', 'electron')
-}
 
 // ── off-screen compositing ─────────────────────────────────────────────────────────────
 
@@ -164,6 +75,21 @@ interface Bounds {
   y: number
   width: number
   height: number
+}
+
+/**
+ * The BrowserWindow surface this harness drives, declared STRUCTURALLY. scripts/ typechecks
+ * under tsconfig.node.json, which has no `dom` lib, so pulling in electron's own types is not
+ * an option — and an untyped handle would make every call below an `any`.
+ */
+interface ScreenshotWindow {
+  setSkipTaskbar(skip: boolean): void
+  setFocusable(focusable: boolean): void
+  setBounds(bounds: Bounds): void
+  showInactive(): void
+  getBounds(): Bounds
+  hide(): void
+  isDestroyed(): boolean
 }
 
 /**
@@ -178,7 +104,7 @@ interface Bounds {
  * the main process can be busy enough that the resulting promise is garbage-collected before it
  * settles ("Resulting promise was garbage collected"). Retry rather than lose the run.
  */
-async function browserWindowOf(app: ElectronApplication, page: Page): Promise<JSHandle> {
+async function browserWindowOf(app: ElectronApplication, page: Page): Promise<JSHandle<ScreenshotWindow>> {
   let last: unknown
   for (let i = 0; i < 6; i++) {
     try {
@@ -191,7 +117,10 @@ async function browserWindowOf(app: ElectronApplication, page: Page): Promise<JS
   throw last
 }
 
-async function showOffscreen(win: JSHandle, size: { width: number; height: number }): Promise<boolean> {
+async function showOffscreen(
+  win: JSHandle<ScreenshotWindow>,
+  size: { width: number; height: number }
+): Promise<boolean> {
   const target: Bounds = { ...OFFSCREEN, ...size }
   const got: Bounds = await win.evaluate((w, b) => {
     w.setSkipTaskbar(true)
@@ -212,7 +141,7 @@ async function showOffscreen(win: JSHandle, size: { width: number; height: numbe
   return true
 }
 
-async function hideWindow(win: JSHandle): Promise<void> {
+async function hideWindow(win: JSHandle<ScreenshotWindow>): Promise<void> {
   await win.evaluate((w) => {
     if (!w.isDestroyed()) w.hide()
   })
@@ -226,16 +155,21 @@ function pngSize(file: string): { width: number; height: number } {
   return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) }
 }
 
-async function shot(
-  page: Page,
-  file: string,
-  mode: string,
-  note: string,
-  opts: { omitBackground?: boolean } = {}
-): Promise<void> {
+/** One capture: where it lands, how the window was shown, and what the shot is meant to prove. */
+interface ShotSpec {
+  file: string
+  /** 'offscreen' = the window was composited off-screen; 'hidden' = hidden-window capture. */
+  mode: string
+  note: string
+  /** Keep the page's real transparency instead of matting it onto opaque white. */
+  omitBackground?: boolean
+}
+
+async function shot(page: Page, spec: ShotSpec): Promise<void> {
+  const { file, mode, note } = spec
   const path = join(ASSETS, file)
   try {
-    await page.screenshot({ path, timeout: 30_000, omitBackground: opts.omitBackground })
+    await page.screenshot({ path, timeout: 30_000, omitBackground: spec.omitBackground })
     const { width, height } = pngSize(path)
     const bytes = statSync(path).size
     results.push({ file, ok: true, bytes, width, height, mode, note })
@@ -256,8 +190,8 @@ interface Snap {
   selectedId: string
   zone?: string
   selected: { kind: string; name: string; entities: unknown[]; outTotal: number } | null
-  segments: Array<{ kind: string; id: string; name: string; total: number }>
-  zoneSessions: Array<{ id: string; total: number }>
+  segments: { kind: string; id: string; name: string; total: number }[]
+  zoneSessions: { id: string; total: number }[]
   recent: unknown[]
 }
 
@@ -348,26 +282,24 @@ async function captureCombatAndTimeline(page: Page, mode: string): Promise<void>
 
   const rows = await count(page, '[data-testid="meter-row"]')
   const panels = await count(page, '[data-testid="dash-panel"]')
-  await shot(
-    page,
-    'shot-combat.png',
+  await shot(page, {
+    file: 'shot-combat.png',
     mode,
-    `${panels} panels · ${rows} meter rows · fight "${pick?.name ?? 'live/last'}"`
-  )
+    note: `${panels} panels · ${rows} meter rows · fight "${pick?.name ?? 'live/last'}"`
+  })
 
   // Timeline is a LENS over the same selection.
   await page.click('[data-testid="view-toggle"] button:nth-child(2)')
   await sleep(2000)
   const stillDash = await count(page, '[data-testid="combat-dashboard"]')
   const lanes = await count(page, 'svg text')
-  await shot(
-    page,
-    'shot-timeline.png',
+  await shot(page, {
+    file: 'shot-timeline.png',
     mode,
-    stillDash
+    note: stillDash
       ? 'WARNING: fell back to the dashboard (no event ring for this selection)'
       : `timeline of "${pick?.name ?? 'live/last'}" · ${lanes} svg labels`
-  )
+  })
   await page.click('[data-testid="view-toggle"] button:nth-child(1)')
   await sleep(600)
 }
@@ -386,7 +318,7 @@ async function capturePosky(page: Page, mode: string): Promise<void> {
   await page.locator('.MuiAccordionSummary-root').nth(target).click()
   await sleep(2000)
   const chips = await count(page, '.MuiAccordionDetails-root .MuiTableRow-root')
-  await shot(page, 'shot-posky.png', mode, `quest #${target + 1} expanded · ${chips} turn-in item rows`)
+  await shot(page, { file: 'shot-posky.png', mode, note: `quest #${target + 1} expanded · ${chips} turn-in item rows` })
 }
 
 async function captureOverlay(app: ElectronApplication, page: Page, mode: string): Promise<void> {
@@ -416,7 +348,10 @@ async function captureOverlay(app: ElectronApplication, page: Page, mode: string
   const head = (await ov.evaluate<string>('document.body.innerText || ""')).split('\n')[0] ?? ''
   // omitBackground keeps the overlay's real transparency (it is a transparent, always-on-top
   // window) instead of matting it onto opaque white.
-  await shot(ov, 'shot-overlay.png', ovMode, `fight overlay · header "${head.trim()}" · ${rows} bars`, {
+  await shot(ov, {
+    file: 'shot-overlay.png',
+    mode: ovMode,
+    note: `fight overlay · header "${head.trim()}" · ${rows} bars`,
     omitBackground: true
   })
   await hideWindow(ovWin)
@@ -424,11 +359,65 @@ async function captureOverlay(app: ElectronApplication, page: Page, mode: string
   await sleep(800)
 }
 
+/**
+ * Block until the startup replay hands off to the live tail. Nothing on screen is real until
+ * then — every panel describes an hours-old moment as if it were live — and while that replay
+ * runs the main process is busy enough that `browserWindow()` loses its promise to the GC, so
+ * this must complete BEFORE anything touches the main process.
+ */
+async function waitForHydration(page: Page): Promise<Snap> {
+  const t0 = Date.now()
+  let snap = await snapshot(page)
+  while (snap.hydrating && Date.now() - t0 < HYDRATE_TIMEOUT_MS) {
+    await sleep(500)
+    snap = await snapshot(page)
+  }
+  if (snap.hydrating) throw new Error('still hydrating — nothing worth shooting')
+  log(`hydration: complete in ${Math.round((Date.now() - t0) / 1000)}s · zone ${snap.zone ?? '?'}`)
+  return snap
+}
+
+async function captureBosses(page: Page, mode: string): Promise<void> {
+  await goTab(page, 'Raid Targets', 2000)
+  // Comfortable density = the portrait grid, which is what makes this tab worth a screenshot.
+  await page.locator('button:has-text("Comfortable")').first().click()
+  await sleep(1500)
+  // The portraits stream through the eqimg:// cache on a cold userData — wait them out.
+  for (let i = 0; i < 40; i++) {
+    const pending = await page.evaluate<number>(
+      '[...document.images].filter(im => !im.complete).length'
+    )
+    if (pending === 0) break
+    await sleep(500)
+  }
+  await sleep(1500)
+  const imgs = await page.evaluate<number>(
+    '[...document.images].filter(im => im.naturalWidth > 0).length'
+  )
+  await shot(page, { file: 'shot-bosses.png', mode, note: `${imgs} boss portraits loaded` })
+}
+
+/** The run's verdict: every shot, every skip, and a non-zero exit if anything went wrong. */
+function report(): void {
+  log('')
+  log('=== site/assets ===')
+  for (const r of results) {
+    log(
+      `${r.ok ? 'ok  ' : 'FAIL'} ${r.file.padEnd(20)} ${`${r.width}x${r.height}`.padEnd(10)} ${`${(
+        r.bytes / 1024
+      ).toFixed(0)}KB`.padEnd(8)} ${r.mode.padEnd(9)} ${r.note}`
+    )
+  }
+  for (const s of skipped) log(`SKIP ${s.file} — ${s.why}`)
+  const bad = results.filter((r) => !r.ok).length + skipped.length
+  if (bad) process.exitCode = 1
+}
+
 async function main(): Promise<void> {
   mkdirSync(ASSETS, { recursive: true })
 
-  const typesOk = waitForTypecheck()
-  if (typesOk || !existsSync(MAIN_ENTRY)) buildIfStale()
+  const typesOk = waitForTypecheck(log)
+  if (typesOk || !existsSync(MAIN_ENTRY)) buildIfStale(log)
   else log('build: reusing the last good out-e2e/ (the tree does not typecheck right now)')
 
   log('launch: hidden Electron (EQ_E2E=1) against the real log…')
@@ -440,23 +429,13 @@ async function main(): Promise<void> {
     timeout: 60_000
   })
 
-  let mainWin: JSHandle | null = null
+  let mainWin: JSHandle<ScreenshotWindow> | null = null
   try {
     const page = await app.firstWindow({ timeout: 60_000 })
     await page.waitForSelector('[data-testid="segment-select"]', { timeout: 120_000 })
 
-    // Hydration FIRST, and only then touch the main process. The whole-log replay must hand off
-    // to the live tail before anything on screen is real (until then every panel describes an
-    // hours-old moment as if it were live) — and while that replay runs, the main process is busy
-    // enough that `browserWindow()` (a main-process evaluate) loses its promise to the GC.
-    const t0 = Date.now()
-    let snap = await snapshot(page)
-    while (snap.hydrating && Date.now() - t0 < HYDRATE_TIMEOUT_MS) {
-      await sleep(500)
-      snap = await snapshot(page)
-    }
-    if (snap.hydrating) throw new Error('still hydrating — nothing worth shooting')
-    log(`hydration: complete in ${Math.round((Date.now() - t0) / 1000)}s · zone ${snap.zone ?? '?'}`)
+    // Hydration FIRST, and only then touch the main process (see waitForHydration).
+    await waitForHydration(page)
 
     mainWin = await browserWindowOf(app, page)
     const shown = await showOffscreen(mainWin, WIN)
@@ -482,35 +461,19 @@ async function main(): Promise<void> {
 
     log('capture: Loot')
     await goTab(page, 'Loot', 3500)
-    await shot(page, 'shot-loot.png', mode, `${await count(page, '.MuiTableRow-root')} loot rows`)
+    await shot(page, { file: 'shot-loot.png', mode, note: `${await count(page, '.MuiTableRow-root')} loot rows` })
 
     log('capture: Alerts')
     await goTab(page, 'Alerts', 3000)
-    await shot(page, 'shot-alerts.png', mode, `${await count(page, '.MuiPaper-root')} cards`)
+    await shot(page, { file: 'shot-alerts.png', mode, note: `${await count(page, '.MuiPaper-root')} cards` })
 
     log('capture: Raid Targets')
-    await goTab(page, 'Raid Targets', 2000)
-    // Comfortable density = the portrait grid, which is what makes this tab worth a screenshot.
-    await page.locator('button:has-text("Comfortable")').first().click()
-    await sleep(1500)
-    // The portraits stream through the eqimg:// cache on a cold userData — wait them out.
-    for (let i = 0; i < 40; i++) {
-      const pending = await page.evaluate<number>(
-        '[...document.images].filter(im => !im.complete).length'
-      )
-      if (pending === 0) break
-      await sleep(500)
-    }
-    await sleep(1500)
-    const imgs = await page.evaluate<number>(
-      '[...document.images].filter(im => im.naturalWidth > 0).length'
-    )
-    await shot(page, 'shot-bosses.png', mode, `${imgs} boss portraits loaded`)
+    await captureBosses(page, mode)
 
     log('capture: Leveling & AA')
     await goTab(page, 'Leveling', 3000)
     const levelText = (await bodyText(page)).split('\n').slice(0, 4).join(' · ')
-    await shot(page, 'shot-leveling.png', mode, levelText.slice(0, 90))
+    await shot(page, { file: 'shot-leveling.png', mode, note: levelText.slice(0, 90) })
 
     log('capture: floating overlay')
     // Back to Combat first: the overlay reads the same engine, and leaving the app on a combat
@@ -522,21 +485,10 @@ async function main(): Promise<void> {
     await app.close().catch(() => undefined)
   }
 
-  log('')
-  log('=== site/assets ===')
-  for (const r of results) {
-    log(
-      `${r.ok ? 'ok  ' : 'FAIL'} ${r.file.padEnd(20)} ${`${r.width}x${r.height}`.padEnd(10)} ${`${(
-        r.bytes / 1024
-      ).toFixed(0)}KB`.padEnd(8)} ${r.mode.padEnd(9)} ${r.note}`
-    )
-  }
-  for (const s of skipped) log(`SKIP ${s.file} — ${s.why}`)
-  const bad = results.filter((r) => !r.ok).length + skipped.length
-  if (bad) process.exitCode = 1
+  report()
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   console.error('site-screens: harness error —', err)
   process.exitCode = 1
 })

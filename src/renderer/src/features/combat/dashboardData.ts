@@ -393,6 +393,56 @@ export interface TargetDetail {
  * character — the fight's dropped opening may hold a bigger hit than anything retained — which
  * is why truncation reuses this labeling rather than a second visual language.
  */
+/** The per-mob running totals folded alongside the per-lane rows (all pre-scale). */
+interface TargetTotals {
+  total: number
+  hits: number
+  crits: number
+  misses: number
+  resists: number
+}
+
+/**
+ * Fold ONE event into its lane row and the running per-mob totals. Split out of
+ * `skillsForTarget` purely as factoring — the three outcome arms are the same three the
+ * event model has everywhere (miss / resist / landed), and they carry the one subtlety worth
+ * naming: `max`/`min` stay UNSCALED observations (see the header), and `min` skips 0 so a
+ * miss/resist tick — which carries no amount — can never pull the minimum down to nothing.
+ */
+function foldTargetEvent(row: FlatSkill, e: TimelineView['events'][number], t: TargetTotals): void {
+  if (e.outcome === 'miss') {
+    row.misses = (row.misses ?? 0) + 1
+    t.misses += 1
+    return
+  }
+  if (e.outcome === 'resist') {
+    row.resists = (row.resists ?? 0) + 1
+    t.resists += 1
+    return
+  }
+  row.total += e.amount
+  row.hits += 1
+  t.hits += 1
+  if (e.crit) {
+    t.crits += 1
+    row.crits += 1
+  }
+  if (e.amount > row.max) row.max = e.amount
+  if (!row.min || e.amount < row.min) row.min = e.amount
+  t.total += e.amount
+}
+
+/** Apply the uniform-stride sampling factor to every derived count/sum (never to max/min). */
+function scaleSkillRows(rows: FlatSkill[], scale: number): void {
+  for (const r of rows) {
+    r.total *= scale
+    r.hits = Math.round(r.hits * scale)
+    r.crits = Math.round(r.crits * scale)
+    r.misses = Math.round((r.misses ?? 0) * scale)
+    r.resists = Math.round((r.resists ?? 0) * scale)
+  }
+}
+
 export function skillsForTarget(tl: TimelineView, target: string): TargetDetail {
   const scale = sampleScale(tl)
   // Same case fold as `groupByTarget`: a folded row is ONE mob, so drilling it must collect
@@ -400,11 +450,7 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
   // opened from. Matching is symmetric, so a drill persisted under either spelling resolves.
   const want = target.toLowerCase()
   const byLane = new Map<string, FlatSkill>()
-  let total = 0
-  let hits = 0
-  let crits = 0
-  let misses = 0
-  let resists = 0
+  const t: TargetTotals = { total: 0, hits: 0, crits: 0, misses: 0, resists: 0 }
   for (const e of tl.events) {
     if (e.kind === 'enemy') continue
     if ((e.target ?? UNKNOWN_TARGET).toLowerCase() !== want) continue
@@ -414,33 +460,10 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
       row = { name: e.lane, category: e.category, total: 0, pct: 0, hits: 0, crits: 0, max: 0, min: 0, misses: 0, resists: 0 }
       byLane.set(key, row)
     }
-    if (e.outcome === 'miss') {
-      row.misses = (row.misses ?? 0) + 1
-      misses += 1
-    } else if (e.outcome === 'resist') {
-      row.resists = (row.resists ?? 0) + 1
-      resists += 1
-    } else {
-      row.total += e.amount
-      row.hits += 1
-      hits += 1
-      if (e.crit) crits += 1
-      if (e.crit) row.crits += 1
-      if (e.amount > row.max) row.max = e.amount
-      // min over LANDED amounts only (0 = nothing landed yet — a miss/resist tick carries no
-      // amount and must never pull the minimum to 0). Like `max` it is left UNSCALED.
-      if (!row.min || e.amount < row.min) row.min = e.amount
-      total += e.amount
-    }
+    foldTargetEvent(row, e, t)
   }
   const rows = [...byLane.values()]
-  for (const r of rows) {
-    r.total *= scale
-    r.hits = Math.round(r.hits * scale)
-    r.crits = Math.round(r.crits * scale)
-    r.misses = Math.round((r.misses ?? 0) * scale)
-    r.resists = Math.round((r.resists ?? 0) * scale)
-  }
+  scaleSkillRows(rows, scale)
   rows.sort((a, b) => b.total - a.total || b.hits - a.hits || a.name.localeCompare(b.name))
   const max = Math.max(1, ...rows.map((r) => r.total))
   for (const r of rows) r.pct = (r.total / max) * 100
@@ -450,11 +473,11 @@ export function skillsForTarget(tl: TimelineView, target: string): TargetDetail 
     // the sample scaling above, so a downsampled ring's group sums the same estimates its
     // children show (all of them wear the panel's `~`).
     rows: groupSlay(rows),
-    total: total * scale,
-    hits: Math.round(hits * scale),
-    crits: Math.round(crits * scale),
-    misses: Math.round(misses * scale),
-    resists: Math.round(resists * scale),
+    total: t.total * scale,
+    hits: Math.round(t.hits * scale),
+    crits: Math.round(t.crits * scale),
+    misses: Math.round(t.misses * scale),
+    resists: Math.round(t.resists * scale),
     estimated: isApproximate(tl)
   }
 }

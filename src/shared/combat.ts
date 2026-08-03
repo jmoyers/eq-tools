@@ -249,7 +249,7 @@ export interface ProcsView {
   /** True when `coatAtEngage` grants Weakening Strike — i.e. a slow was actually possible. */
   slowExpected: boolean
   /** Coats applied DURING the segment (yours only), as ms since segment start. */
-  coats: Array<{ poison: string; tMs: number }>
+  coats: { poison: string; tMs: number }[]
   /** Rogue-poison Strike procs that landed, by Strike name. */
   strikes: ProcLane[]
   strikeCount: number
@@ -620,7 +620,7 @@ export interface TimelineView {
   /** encounter duration in ms (X-axis extent). */
   durationMs: number
   /** ordered lane labels (Y axis), grouped by category then by total desc. */
-  lanes: Array<{ lane: string; category: DamageCategory; total: number; kind: SourceKind }>
+  lanes: { lane: string; category: DamageCategory; total: number; kind: SourceKind }[]
   /** timestamped instants (relative ms). */
   events: TimelineEvent[]
   /** pinned stance/invocation spans (rendered above the skill lanes). */

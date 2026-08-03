@@ -25,7 +25,7 @@ export function matchTurnIns(turnIns: TurnInEvent[], quests: PoskyQuest[]): Set<
     const npc = t.npc.toLowerCase()
     const offered = new Set(t.items.map((i) => itemCountKey(i)))
     for (const q of quests) {
-      if (!q.giver || q.giver.toLowerCase() !== npc) continue
+      if (q.giver?.toLowerCase() !== npc) continue
       if (q.items.length > 0 && q.items.every((it) => offered.has(itemCountKey(it.name)))) {
         matched.add(questKey(q))
       }

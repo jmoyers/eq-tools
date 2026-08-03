@@ -29,7 +29,12 @@ window.addEventListener('unhandledrejection', (e) => {
   else report('unhandledrejection', String(reason))
 })
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+// index.html always carries #root; if it ever does not, fail loudly here rather
+// than letting createRoot throw a container error nobody can trace back.
+const container = document.getElementById('root')
+if (!container) throw new Error('renderer: #root container missing from index.html')
+
+ReactDOM.createRoot(container).render(
   <React.StrictMode>
     <ErrorBoundary>
       <ThemeProvider theme={theme}>

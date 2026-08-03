@@ -192,7 +192,8 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 
 ### Electron trust boundary (do not weaken)
 
-- ONE `WEB_PREFERENCES()` in index.ts builds the webPreferences for EVERY window
+- ONE `WEB_PREFERENCES()` in `src/main/windows.ts` (module-private, beside the only
+  code that creates a BrowserWindow) builds the webPreferences for EVERY window
   (main + all five overlays) — never inline a second opinion. contextIsolation
   on; nodeIntegration (+InWorker/+InSubFrames), webviewTag,
   allowRunningInsecureContent, experimentalFeatures, enableBlinkFeatures,

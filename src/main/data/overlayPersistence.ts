@@ -34,7 +34,7 @@ export function loadUserOverlay(): MessageOverlay | null {
   try {
     const txt = readFileSync(userOverlayPath(), 'utf8')
     const ov = JSON.parse(txt) as MessageOverlay
-    if (!ov || ov.version !== OVERLAY_VERSION || !Array.isArray(ov.messages)) return null
+    if (ov?.version !== OVERLAY_VERSION || !Array.isArray(ov.messages)) return null
     return ov
   } catch {
     return null

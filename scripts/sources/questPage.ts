@@ -133,12 +133,15 @@ function cellText(raw: string): string | undefined {
  * `! ''' Label: '''` followed by `| value` lines (a value may span several lines).
  * Returns null when the page has no such table.
  */
-export function parseTopTable(wikitext: string): QuestTopTable | null {
-  const m = TOP_TABLE_RE.exec(wikitext)
-  if (!m) return null
+/**
+ * The table body's `! ''' Label: '''` / `| value` rows, as lowercased label → value. A label
+ * that repeats within one row joins its values with ", "; `|-` (a new row) clears the label,
+ * so a stray value line can never attach to the previous row's label.
+ */
+function topTableFields(body: string): Record<string, string> {
   const fields: Record<string, string> = {}
   let label: string | null = null
-  for (const rawLine of m[1].split('\n')) {
+  for (const rawLine of body.split('\n')) {
     const line = rawLine.trim()
     if (!line) continue
     if (line.startsWith('|-')) {
@@ -158,23 +161,32 @@ export function parseTopTable(wikitext: string): QuestTopTable | null {
       fields[label] = fields[label] ? `${fields[label]}, ${val}` : val
     }
   }
+  return fields
+}
 
-  const pick = (want: string): string | undefined => {
-    for (const [k, v] of Object.entries(fields)) if (k.includes(want)) return v
-    return undefined
+export function parseTopTable(wikitext: string): QuestTopTable | null {
+  const m = TOP_TABLE_RE.exec(wikitext)
+  if (!m) return null
+  const fields = topTableFields(m[1])
+
+  /** First field whose label CONTAINS one of `wants`, in the order given; '' when none. */
+  const pick = (...wants: string[]): string => {
+    for (const want of wants) {
+      for (const [k, v] of Object.entries(fields)) if (k.includes(want)) return v
+    }
+    return ''
   }
-  const minRaw = pick('minimum level') ?? pick('min level') ?? pick('level')
-  const minText = minRaw ? cellText(minRaw) : undefined
+  const minText = cellText(pick('minimum level', 'min level', 'level'))
   const minNum = minText ? Number(/(\d+)/.exec(minText)?.[1]) : NaN
 
   return {
-    startZone: cellText(pick('start zone') ?? ''),
-    giver: cellText(pick('quest giver') ?? pick('giver') ?? ''),
+    startZone: cellText(pick('start zone')),
+    giver: cellText(pick('quest giver', 'giver')),
     minLevel: Number.isFinite(minNum) ? minNum : undefined,
     minLevelText: minText && !/^\d+$/.test(minText) ? minText : undefined,
-    classes: cellList(pick('classes') ?? ''),
-    relatedZones: cellList(pick('related zones') ?? ''),
-    relatedNpcs: cellList(pick('related npcs') ?? pick('related npc') ?? '')
+    classes: cellList(pick('classes')),
+    relatedZones: cellList(pick('related zones')),
+    relatedNpcs: cellList(pick('related npcs', 'related npc'))
   }
 }
 

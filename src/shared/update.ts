@@ -106,26 +106,45 @@ export function compareVersions(a: string | undefined, b: string | undefined): n
   const pa = parseVersion(a)
   const pb = parseVersion(b)
   if (!pa || !pb) return 0
+  const core = compareCore(pa.nums, pb.nums)
+  if (core !== 0) return core
+  return comparePrerelease(pa.pre, pb.pre)
+}
+
+/** major.minor.patch, left to right. 0 when all three are equal. */
+function compareCore(a: number[], b: number[]): number {
   for (let i = 0; i < 3; i++) {
-    if (pa.nums[i] !== pb.nums[i]) return pa.nums[i] < pb.nums[i] ? -1 : 1
-  }
-  if (pa.pre.length === 0 && pb.pre.length === 0) return 0
-  if (pa.pre.length === 0) return 1 // 1.0.0 > 1.0.0-main.1
-  if (pb.pre.length === 0) return -1
-  for (let i = 0; i < Math.max(pa.pre.length, pb.pre.length); i++) {
-    const x = pa.pre[i]
-    const y = pb.pre[i]
-    if (x === undefined) return -1
-    if (y === undefined) return 1
-    const nx = /^\d+$/.test(x) ? Number(x) : null
-    const ny = /^\d+$/.test(y) ? Number(y) : null
-    if (nx !== null && ny !== null) {
-      if (nx !== ny) return nx < ny ? -1 : 1
-    } else if (x !== y) {
-      return x < y ? -1 : 1
-    }
+    if (a[i] !== b[i]) return a[i] < b[i] ? -1 : 1
   }
   return 0
+}
+
+/**
+ * Prerelease precedence: NO prerelease sorts above one (1.0.0 > 1.0.0-main.1), then
+ * identifier by identifier, and a shorter identifier list sorts below a longer one that
+ * agrees on the shared prefix.
+ */
+function comparePrerelease(a: string[], b: string[]): number {
+  if (a.length === 0 && b.length === 0) return 0
+  if (a.length === 0) return 1
+  if (b.length === 0) return -1
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    const x = a[i]
+    const y = b[i]
+    if (x === undefined) return -1
+    if (y === undefined) return 1
+    const c = compareIdentifier(x, y)
+    if (c !== 0) return c
+  }
+  return 0
+}
+
+/** One prerelease identifier pair. All-digit identifiers compare NUMERICALLY (`main.9` < `main.10`). */
+function compareIdentifier(x: string, y: string): number {
+  const nx = /^\d+$/.test(x) ? Number(x) : null
+  const ny = /^\d+$/.test(y) ? Number(y) : null
+  if (nx !== null && ny !== null) return nx === ny ? 0 : nx < ny ? -1 : 1
+  return x === y ? 0 : x < y ? -1 : 1
 }
 
 /** True when `candidate` is strictly newer than `current` (unknown ⇒ false). */

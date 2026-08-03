@@ -1,7 +1,7 @@
 import Store from 'electron-store'
 import { join } from 'path'
 import { STORE_NAME, USER_DATA } from './channel'
-import { logError } from './errorLog'
+import { logError, logInfo } from './errorLog'
 import { CURRENT_SCHEMA_VERSION, migrateStoreFile } from './storeMigrations'
 import type {
   AlertDef,
@@ -87,7 +87,7 @@ interface StoreShape {
  * use, whichever build wrote it. Never throws; see storeMigrations.ts for the failure policy.
  */
 const schemaMigration = migrateStoreFile(join(USER_DATA, `${STORE_NAME}.json`), {
-  info: (message) => console.log(`[everquest-companion] ${message}`),
+  info: (message) => logInfo(`[everquest-companion] ${message}`),
   error: (message) => logError('main:storeSchema', message)
 })
 
@@ -170,12 +170,12 @@ export function setActiveLogPath(logPath: string): void {
  */
 export function getEqInstallDir(): string | undefined {
   const v = store.get('eqInstallDir')
-  return v && v.trim() ? v : undefined
+  return v?.trim() ? v : undefined
 }
 
 /** Set (or clear, with undefined/'') the manual EQ install-dir override. */
 export function setEqInstallDir(dir: string | undefined): void {
-  if (dir && dir.trim()) store.set('eqInstallDir', dir)
+  if (dir?.trim()) store.set('eqInstallDir', dir)
   else store.delete('eqInstallDir')
 }
 
@@ -365,7 +365,7 @@ export function getAlertPrefs(): AlertPrefs {
 export function setAlertPrefs(prefs: AlertPrefs): AlertPrefs {
   const next: AlertPrefs = {
     globalVolume: Math.max(0, Math.min(1, prefs.globalVolume)),
-    muted: !!prefs.muted
+    muted: prefs.muted
   }
   store.set('alertPrefs', next)
   return next

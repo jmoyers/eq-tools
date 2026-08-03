@@ -92,5 +92,5 @@ for (const q of questData.quests ?? []) {
 /** Quests the LOCAL catalog ties to this mob. Null when it knows none (never an empty claim). */
 export function localMobQuests(name: string): MobQuestUse[] | null {
   const uses = questsByMob.get(mobKey(name))
-  return uses && uses.length ? uses : null
+  return uses?.length ? uses : null
 }

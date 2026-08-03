@@ -74,13 +74,11 @@ function replay(lines: string[], withEpoch: boolean): Replayed {
     // post-launch line is folded then immediately reset (it's the boundary marker; subsequent
     // events establish the post-epoch timeline).
     for (const m of mods) m.onEvent(ev)
-    if (withEpoch) {
-      const epochEv = epoch.observe(ev)
-      if (epochEv) {
-        epochCount++
-        for (const m of mods) m.onEvent(epochEv)
-      }
-    }
+    if (!withEpoch) continue
+    const epochEv = epoch.observe(ev)
+    if (!epochEv) continue
+    epochCount++
+    for (const m of mods) m.onEvent(epochEv)
   }
   return {
     loot: loot.snapshot().state,

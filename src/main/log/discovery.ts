@@ -111,6 +111,18 @@ export function fixedDrives(): string[] {
 }
 
 /**
+ * Pull an install path out of ONE `reg query /s` output line: we grep the
+ * "InstallLocation"/"InstallPath"/"InstallDir" REG_SZ lines. Returns null when the
+ * line isn't one of those (or carries an empty value).
+ */
+function installPathFromRegLine(line: string): string | null {
+  const m = /\b(?:InstallLocation|InstallPath|InstallDir)\b\s+REG_SZ\s+(.+?)\s*$/i.exec(line)
+  if (!m) return null
+  const p = m[1].trim()
+  return p ? p : null
+}
+
+/**
  * Probe the Windows registry (defensively) for an EverQuest / Daybreak install
  * location. Checks the standard Uninstall hives (both HKLM 64/32-bit views and
  * HKCU) plus Daybreak/SOE launcher keys. Returns any `InstallLocation` /
@@ -131,7 +143,8 @@ export function registryInstallCandidates(): string[] {
   const out: string[] = []
   for (const key of keys) {
     // Search the subtree for value names holding an install path. `reg query /s`
-    // walks recursively; we grep the "InstallLocation"/"InstallPath" REG_SZ lines.
+    // walks recursively; we grep the "InstallLocation"/"InstallPath" REG_SZ lines
+    // (see installPathFromRegLine).
     let stdout = ''
     try {
       stdout = execFileSync('reg', ['query', key, '/s', '/f', 'EverQuest', '/t', 'REG_SZ'], {
@@ -145,11 +158,8 @@ export function registryInstallCandidates(): string[] {
       continue
     }
     for (const line of stdout.split(/\r?\n/)) {
-      const m = /\b(?:InstallLocation|InstallPath|InstallDir)\b\s+REG_SZ\s+(.+?)\s*$/i.exec(line)
-      if (m) {
-        const p = m[1].trim()
-        if (p) out.push(p)
-      }
+      const p = installPathFromRegLine(line)
+      if (p) out.push(p)
     }
   }
   return out

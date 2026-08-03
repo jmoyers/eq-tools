@@ -382,7 +382,7 @@ export interface BuffApplyEvent extends LogEventBase {
    */
   spell: string
   /** 'self' for a msg_cast_on_you match; the named target for a msg_cast_on_other match. */
-  target: 'self' | string
+  target: string
   /** True when the (resolved) spell's effects are an Illusion (Permanent Illusion AA). */
   illusion: boolean
   /** DB duration in ms (the authoritative prior), or null when the DB has no duration. */
@@ -469,7 +469,7 @@ export interface BuffExpiredEvent extends LogEventBase {
   /** The RESOLVED spell that expired (display casing) — never ambiguous. */
   spell: string
   /** 'self' when it wore off the player; else the bound entity's display name (pet/mob/player). */
-  target: 'self' | string
+  target: string
 }
 
 /**

@@ -35,8 +35,9 @@ interface QuestFlagStore {
 
 function load(storageKey: string): Set<string> {
   try {
-    const v = JSON.parse(localStorage.getItem(storageKey) ?? '[]')
-    return new Set(Array.isArray(v) ? v.map((s) => String(s).toLowerCase()) : [])
+    const raw: unknown = JSON.parse(localStorage.getItem(storageKey) ?? '[]')
+    const list: unknown[] = Array.isArray(raw) ? raw : []
+    return new Set(list.map((s) => String(s).toLowerCase()))
   } catch {
     return new Set()
   }

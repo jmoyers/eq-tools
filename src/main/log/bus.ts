@@ -16,6 +16,12 @@ import type { LogEvent } from '../../shared/logEvents'
 
 export type LogEventListener = (ev: LogEvent, live: boolean) => void
 
+/** One queued DERIVED event awaiting delivery (see `LogBus.derived`). */
+interface DerivedEvent {
+  ev: LogEvent
+  live: boolean
+}
+
 export class LogBus {
   private listeners: LogEventListener[] = []
   /**
@@ -28,7 +34,7 @@ export class LogBus {
    * `buffExpired`, so a derived event never spawns another. `live` is inherited from the
    * primary event so a replayed wear-off stays live:false (alerts never fire on replay).
    */
-  private derived: Array<{ ev: LogEvent; live: boolean }> = []
+  private derived: DerivedEvent[] = []
   private delivering = false
 
   /** Register a listener; returns an unsubscribe fn. Order is registration order. */
@@ -49,8 +55,10 @@ export class LogBus {
     if (this.delivering) return
     this.delivering = true
     try {
-      while (this.derived.length > 0) {
-        const next = this.derived.shift()!
+      // Shift-until-empty: `shift()` returns undefined exactly when the queue is empty, so the
+      // loop condition is also the proof that `next` is defined inside the body.
+      let next: DerivedEvent | undefined
+      while ((next = this.derived.shift()) !== undefined) {
         for (const fn of this.listeners) fn(next.ev, next.live)
       }
     } finally {

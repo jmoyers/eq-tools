@@ -123,7 +123,7 @@ export function deriveSoundId(category: string, file: string, taken: Set<string>
  */
 function cespCategorySounds(value: CespManifest['categories'][string]): CespSound[] {
   if (Array.isArray(value)) {
-    return value.map((v) => (typeof v === 'string' ? { file: v } : v)) as CespSound[]
+    return value.map((v) => (typeof v === 'string' ? { file: v } : v))
   }
   if (value && Array.isArray(value.sounds)) return value.sounds
   return []
@@ -147,7 +147,7 @@ export function cespToManifestSounds(
       const soundId = idFor(category, s.file)
       if (!soundId) continue
       const name = packBasename(s.file)
-      const label = s.label && s.label.trim() ? s.label : name
+      const label = s.label?.trim() ? s.label : name
       sounds[soundId] = { file: `sounds/${name}`, label: `${prefix} · ${label}` }
     }
   }

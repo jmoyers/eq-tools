@@ -75,8 +75,8 @@ export function mobKey(name: string): string {
 export function unlink(value: string): string {
   return value
     .replace(/\[\[([^\]]+?)\]\]/g, (_m, inner: string) => {
-      const pipe = String(inner).indexOf('|')
-      return (pipe >= 0 ? String(inner).slice(pipe + 1) : String(inner)).trim()
+      const pipe = inner.indexOf('|')
+      return (pipe >= 0 ? inner.slice(pipe + 1) : inner).trim()
     })
     .replace(/\[(?:https?|ftp):\/\/\S*(?:\s+([^\]]*))?\]/gi, (_m, label?: string) => (label ?? '').trim())
     .replace(/<[^>]*>/g, '')

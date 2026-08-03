@@ -13,7 +13,7 @@
 //   - a missing sound pack does NOT silently mute or silently re-point the alert: it's
 //     imported, flagged, and the pack name is named so it can be installed from the registry.
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { type JSX, useCallback, useEffect, useState } from 'react'
 import {
   Alert,
   Box,
@@ -33,7 +33,12 @@ import {
 } from '@mui/material'
 import FolderOpenIcon from '@mui/icons-material/FolderOpen'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
-import type { SharePreview, ShareApplyResult } from '@shared/profiles'
+import type {
+  SharePreview,
+  ShareApplyResult,
+  AlertMergeItem,
+  ScalarChange
+} from '@shared/profiles'
 import { describeTrigger } from '@shared/profiles'
 import { formatDateTime } from '../../lib/formatDate'
 import { readUiPrefs, writeUiPrefs } from '../../lib/uiPrefs'
@@ -53,12 +58,220 @@ const ACTION_CHIP: Record<string, { label: string; color: 'success' | 'info' | '
   skip: { label: 'already have', color: 'default' }
 }
 
-export default function ShareImportDialog({
-  open,
-  scope,
-  onClose,
-  onApplied
-}: ShareImportDialogProps): JSX.Element {
+/**
+ * One incoming alert: what it will be stored as, whether it is an add / a re-keyed add / a
+ * skip, and the reason — the whole point of the preview is that nothing is ever overwritten
+ * silently, so the disposition is shown per row.
+ */
+function AlertPreviewRow({
+  item,
+  checked,
+  onToggle
+}: {
+  item: AlertMergeItem
+  checked: boolean
+  onToggle: () => void
+}): JSX.Element {
+  const chip = ACTION_CHIP[item.action]
+  const disabled = item.action === 'skip'
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: 1,
+        px: 0.5,
+        py: 0.4,
+        borderRadius: 1,
+        opacity: disabled ? 0.55 : 1,
+        '&:hover': { bgcolor: 'action.hover' }
+      }}
+    >
+      <Checkbox
+        size="small"
+        sx={{ p: 0.25, mt: 0.2 }}
+        disabled={disabled}
+        checked={!disabled && checked}
+        onChange={onToggle}
+      />
+      <Box sx={{ minWidth: 0, flexGrow: 1 }}>
+        <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap">
+          <Typography variant="body2" sx={{ fontWeight: 600 }}>
+            {item.finalName}
+          </Typography>
+          <Chip
+            size="small"
+            variant="outlined"
+            label={chip.label}
+            color={chip.color === 'default' ? undefined : chip.color}
+          />
+          {item.missingPackId && !disabled && (
+            <Tooltip title="This alert's sound pack isn't installed here">
+              <Chip size="small" color="warning" variant="outlined" label={`needs ${item.missingPackId}`} />
+            </Tooltip>
+          )}
+        </Stack>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ fontFamily: 'monospace', wordBreak: 'break-all', display: 'block' }}
+        >
+          {describeTrigger(item.incoming.trigger)} · {item.incoming.sound.packId}/
+          {item.incoming.sound.soundId}
+        </Typography>
+        <Typography variant="caption" color="text.secondary">
+          {item.reason}
+        </Typography>
+      </Box>
+    </Box>
+  )
+}
+
+/** The alerts block: header count + the scrolling per-alert rows. */
+function AlertsSection({
+  alerts,
+  selected,
+  onToggle
+}: {
+  alerts: AlertMergeItem[]
+  selected: Set<string>
+  onToggle: (id: string) => void
+}): JSX.Element | null {
+  if (alerts.length === 0) return null
+  const importable = alerts.filter((a) => a.action !== 'skip').length
+  const alreadyHave = alerts.length - importable
+  return (
+    <Box>
+      <Typography variant="overline" color="text.secondary">
+        Alerts — {importable} to add
+        {alreadyHave > 0 ? `, ${alreadyHave} you already have` : ''}
+      </Typography>
+      <Stack spacing={0.25} sx={{ maxHeight: 260, overflow: 'auto', mt: 0.5 }}>
+        {alerts.map((item) => (
+          <AlertPreviewRow
+            key={`${item.finalId}-${item.behaviorKey}`}
+            item={item}
+            checked={selected.has(item.finalId)}
+            onToggle={() => onToggle(item.finalId)}
+          />
+        ))}
+      </Stack>
+    </Box>
+  )
+}
+
+/** Scalar settings: each REPLACES your value, so each is its own opt-in row (yours → theirs). */
+function ScalarsSection({
+  scalars,
+  selected,
+  onToggle
+}: {
+  scalars: ScalarChange[]
+  selected: Set<string>
+  onToggle: (id: string) => void
+}): JSX.Element | null {
+  if (scalars.length === 0) return null
+  return (
+    <Box>
+      <Divider sx={{ mb: 1 }} />
+      <Typography variant="overline" color="text.secondary">
+        Settings — these REPLACE your value, so they&apos;re opt-in
+      </Typography>
+      <Stack spacing={0.25} sx={{ maxHeight: 200, overflow: 'auto', mt: 0.5 }}>
+        {scalars.map((s) => (
+          <FormControlLabel
+            key={s.id}
+            sx={{ ml: 0, alignItems: 'flex-start' }}
+            control={
+              <Checkbox
+                size="small"
+                sx={{ p: 0.25, mt: 0.2 }}
+                checked={selected.has(s.id)}
+                onChange={() => onToggle(s.id)}
+              />
+            }
+            label={
+              <Box>
+                <Typography variant="body2">
+                  {s.label}
+                  {s.merge === 'union' && (
+                    <Chip size="small" variant="outlined" color="success" label="adds only" sx={{ ml: 0.75 }} />
+                  )}
+                </Typography>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ fontFamily: 'monospace', wordBreak: 'break-all' }}
+                >
+                  {s.current || '—'} → {s.incoming}
+                </Typography>
+              </Box>
+            }
+          />
+        ))}
+      </Stack>
+    </Box>
+  )
+}
+
+/** Provenance line: what kind of payload this is and where it came from. */
+function PreviewMeta({ preview }: { preview: SharePreview }): JSX.Element {
+  return (
+    <Typography variant="caption" color="text.secondary">
+      {preview.kind === 'alerts' ? 'Alert set' : 'Settings bundle'}
+      {preview.appVersion ? ` · made with v${preview.appVersion}` : ''}
+      {preview.createdAt ? ` · ${formatDateTime(Date.parse(preview.createdAt))}` : ''}
+    </Typography>
+  )
+}
+
+/** A missing sound pack does NOT silently mute the alert — it imports, flagged and named. */
+function MissingPacksNotice({ packs }: { packs: string[] }): JSX.Element | null {
+  if (packs.length === 0) return null
+  const one = packs.length === 1
+  return (
+    <Alert severity="info" variant="outlined">
+      {one ? 'A sound pack' : 'Some sound packs'} used by these alerts {one ? 'is' : 'are'} not
+      installed here: <b>{packs.join(', ')}</b>. The alerts still import — install the pack from
+      Alerts → “Sound packs…” and they&apos;ll play.
+    </Alert>
+  )
+}
+
+/** Add/remove one id from a selection set, immutably. */
+function toggled(set: Set<string>, id: string): Set<string> {
+  const next = new Set(set)
+  if (next.has(id)) next.delete(id)
+  else next.add(id)
+  return next
+}
+
+/** The apply button's label — "Add 3 alerts + 2 settings", omitting either empty half. */
+function applyLabel(alerts: number, scalars: number): string {
+  const a = alerts > 0 ? `${alerts} alert${alerts === 1 ? '' : 's'}` : ''
+  const s = scalars > 0 ? `${scalars} setting${scalars === 1 ? '' : 's'}` : ''
+  return `Add ${a}${a && s ? ' + ' : ''}${s}`
+}
+
+/**
+ * The import state machine: pasted text → preview → per-row selection → apply. Held apart
+ * from the render so the dialog below is only markup.
+ */
+function useShareImport(props: ShareImportDialogProps): {
+  text: string
+  setText: (t: string) => void
+  preview: SharePreview | null
+  busy: boolean
+  alertSel: Set<string>
+  scalarSel: Set<string>
+  canApply: boolean
+  runPreview: (value: string) => Promise<void>
+  openFile: () => Promise<void>
+  apply: () => Promise<void>
+  toggleAlert: (id: string) => void
+  toggleScalar: (id: string) => void
+} {
+  const { open, onApplied, onClose } = props
   const [text, setText] = useState('')
   const [preview, setPreview] = useState<SharePreview | null>(null)
   const [busy, setBusy] = useState(false)
@@ -132,19 +345,38 @@ export default function ShareImportDialog({
     }
   }, [preview, alertSel, scalarSel, onApplied, onClose])
 
-  const toggle = (set: Set<string>, id: string, apply2: (s: Set<string>) => void): void => {
-    const next = new Set(set)
-    if (next.has(id)) next.delete(id)
-    else next.add(id)
-    apply2(next)
+  return {
+    text,
+    setText,
+    preview,
+    busy,
+    alertSel,
+    scalarSel,
+    canApply: !busy && !!preview?.ok && (alertSel.size > 0 || scalarSel.size > 0),
+    runPreview,
+    openFile,
+    apply,
+    toggleAlert: (id) => setAlertSel((s) => toggled(s, id)),
+    toggleScalar: (id) => setScalarSel((s) => toggled(s, id))
   }
+}
 
-  const importable = useMemo(
-    () => preview?.alerts.filter((a) => a.action !== 'skip') ?? [],
-    [preview]
-  )
-  const alreadyHave = (preview?.alerts.length ?? 0) - importable.length
-  const nothingSelected = alertSel.size === 0 && scalarSel.size === 0
+export default function ShareImportDialog(props: ShareImportDialogProps): JSX.Element {
+  const { open, scope, onClose } = props
+  const {
+    text,
+    setText,
+    preview,
+    busy,
+    alertSel,
+    scalarSel,
+    canApply,
+    runPreview,
+    openFile,
+    apply,
+    toggleAlert,
+    toggleScalar
+  } = useShareImport(props)
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
@@ -164,7 +396,9 @@ export default function ShareImportDialog({
             value={text}
             onChange={(e) => setText(e.target.value)}
             onBlur={() => void runPreview(text)}
-            inputProps={{ style: { fontFamily: 'monospace', fontSize: 12, wordBreak: 'break-all' } }}
+            slotProps={{
+              htmlInput: { style: { fontFamily: 'monospace', fontSize: 12, wordBreak: 'break-all' } }
+            }}
           />
           <Stack direction="row" spacing={1} alignItems="center">
             <Button
@@ -186,13 +420,7 @@ export default function ShareImportDialog({
               Open file…
             </Button>
             <Box sx={{ flexGrow: 1 }} />
-            {preview?.ok && (
-              <Typography variant="caption" color="text.secondary">
-                {preview.kind === 'alerts' ? 'Alert set' : 'Settings bundle'}
-                {preview.appVersion ? ` · made with v${preview.appVersion}` : ''}
-                {preview.createdAt ? ` · ${formatDateTime(Date.parse(preview.createdAt))}` : ''}
-              </Typography>
-            )}
+            {preview?.ok && <PreviewMeta preview={preview} />}
           </Stack>
 
           {preview && !preview.ok && (
@@ -203,142 +431,17 @@ export default function ShareImportDialog({
 
           {preview?.ok && (
             <>
-              {preview.missingPacks.length > 0 && (
-                <Alert severity="info" variant="outlined">
-                  {preview.missingPacks.length === 1 ? 'A sound pack' : 'Some sound packs'} used by
-                  these alerts {preview.missingPacks.length === 1 ? 'is' : 'are'} not installed here:{' '}
-                  <b>{preview.missingPacks.join(', ')}</b>. The alerts still import — install the
-                  pack from Alerts → “Sound packs…” and they&apos;ll play.
-                </Alert>
-              )}
-
-              {preview.alerts.length > 0 && (
-                <Box>
-                  <Typography variant="overline" color="text.secondary">
-                    Alerts — {importable.length} to add
-                    {alreadyHave > 0 ? `, ${alreadyHave} you already have` : ''}
-                  </Typography>
-                  <Stack spacing={0.25} sx={{ maxHeight: 260, overflow: 'auto', mt: 0.5 }}>
-                    {preview.alerts.map((item) => {
-                      const chip = ACTION_CHIP[item.action]
-                      const disabled = item.action === 'skip'
-                      return (
-                        <Box
-                          key={`${item.finalId}-${item.behaviorKey}`}
-                          sx={{
-                            display: 'flex',
-                            alignItems: 'flex-start',
-                            gap: 1,
-                            px: 0.5,
-                            py: 0.4,
-                            borderRadius: 1,
-                            opacity: disabled ? 0.55 : 1,
-                            '&:hover': { bgcolor: 'action.hover' }
-                          }}
-                        >
-                          <Checkbox
-                            size="small"
-                            sx={{ p: 0.25, mt: 0.2 }}
-                            disabled={disabled}
-                            checked={!disabled && alertSel.has(item.finalId)}
-                            onChange={() => toggle(alertSel, item.finalId, setAlertSel)}
-                          />
-                          <Box sx={{ minWidth: 0, flexGrow: 1 }}>
-                            <Stack direction="row" spacing={0.75} alignItems="center" flexWrap="wrap">
-                              <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                                {item.finalName}
-                              </Typography>
-                              <Chip
-                                size="small"
-                                variant="outlined"
-                                label={chip.label}
-                                color={chip.color === 'default' ? undefined : chip.color}
-                              />
-                              {item.missingPackId && !disabled && (
-                                <Tooltip title="This alert's sound pack isn't installed here">
-                                  <Chip
-                                    size="small"
-                                    color="warning"
-                                    variant="outlined"
-                                    label={`needs ${item.missingPackId}`}
-                                  />
-                                </Tooltip>
-                              )}
-                            </Stack>
-                            <Typography
-                              variant="caption"
-                              color="text.secondary"
-                              sx={{ fontFamily: 'monospace', wordBreak: 'break-all', display: 'block' }}
-                            >
-                              {describeTrigger(item.incoming.trigger)} · {item.incoming.sound.packId}/
-                              {item.incoming.sound.soundId}
-                            </Typography>
-                            <Typography variant="caption" color="text.secondary">
-                              {item.reason}
-                            </Typography>
-                          </Box>
-                        </Box>
-                      )
-                    })}
-                  </Stack>
-                </Box>
-              )}
-
-              {preview.scalars.length > 0 && (
-                <Box>
-                  <Divider sx={{ mb: 1 }} />
-                  <Typography variant="overline" color="text.secondary">
-                    Settings — these REPLACE your value, so they&apos;re opt-in
-                  </Typography>
-                  <Stack spacing={0.25} sx={{ maxHeight: 200, overflow: 'auto', mt: 0.5 }}>
-                    {preview.scalars.map((s) => (
-                      <FormControlLabel
-                        key={s.id}
-                        sx={{ ml: 0, alignItems: 'flex-start' }}
-                        control={
-                          <Checkbox
-                            size="small"
-                            sx={{ p: 0.25, mt: 0.2 }}
-                            checked={scalarSel.has(s.id)}
-                            onChange={() => toggle(scalarSel, s.id, setScalarSel)}
-                          />
-                        }
-                        label={
-                          <Box>
-                            <Typography variant="body2">
-                              {s.label}
-                              {s.merge === 'union' && (
-                                <Chip size="small" variant="outlined" color="success" label="adds only" sx={{ ml: 0.75 }} />
-                              )}
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="text.secondary"
-                              sx={{ fontFamily: 'monospace', wordBreak: 'break-all' }}
-                            >
-                              {s.current || '—'} → {s.incoming}
-                            </Typography>
-                          </Box>
-                        }
-                      />
-                    ))}
-                  </Stack>
-                </Box>
-              )}
+              <MissingPacksNotice packs={preview.missingPacks} />
+              <AlertsSection alerts={preview.alerts} selected={alertSel} onToggle={toggleAlert} />
+              <ScalarsSection scalars={preview.scalars} selected={scalarSel} onToggle={toggleScalar} />
             </>
           )}
         </Stack>
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button
-          variant="contained"
-          disabled={busy || !preview?.ok || nothingSelected}
-          onClick={() => void apply()}
-        >
-          Add {alertSel.size > 0 ? `${alertSel.size} alert${alertSel.size === 1 ? '' : 's'}` : ''}
-          {alertSel.size > 0 && scalarSel.size > 0 ? ' + ' : ''}
-          {scalarSel.size > 0 ? `${scalarSel.size} setting${scalarSel.size === 1 ? '' : 's'}` : ''}
+        <Button variant="contained" disabled={!canApply} onClick={() => void apply()}>
+          {applyLabel(alertSel.size, scalarSel.size)}
         </Button>
       </DialogActions>
     </Dialog>

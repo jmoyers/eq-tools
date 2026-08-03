@@ -32,12 +32,12 @@ export class TurnInsModule implements EqModule<TurnInSnap, TurnInDelta> {
       return
     }
     if (ev.kind === 'offer') {
-      if (this.pendingOffer && this.pendingOffer.npc === ev.npc) this.pendingOffer.items.push(ev.item)
+      if (this.pendingOffer?.npc === ev.npc) this.pendingOffer.items.push(ev.item)
       else this.pendingOffer = { npc: ev.npc, items: [ev.item] }
       return
     }
     if (ev.kind === 'trade') {
-      if (this.pendingOffer && this.pendingOffer.npc === ev.npc) {
+      if (this.pendingOffer?.npc === ev.npc) {
         const t: TurnInEvent = { ts: ev.ts, npc: ev.npc, items: this.pendingOffer.items }
         this.turnIns.push(t)
         this.pending.push(t)

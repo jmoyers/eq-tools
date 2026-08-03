@@ -53,9 +53,20 @@ const refresh = process.argv.slice(2).includes('--refresh')
 
 // ---- polite API client (identical contract to scrape-quests.ts) ------------------
 
+/** Wait before a retry: the server's Retry-After when it gave a usable one, else our backoff. */
+function retryDelayMs(res: Response, backoff: number): number {
+  const retryAfter = Number(res.headers.get('retry-after'))
+  return Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : backoff
+}
+
+/** Which request failed, for the thrown message — whichever identifying param it carried. */
+function describeRequest(params: Record<string, string>): string {
+  return `${params.action} ${params.cmtitle ?? params.eititle ?? params.pageid ?? ''}`
+}
+
 /** One serialized GET with exponential backoff on 429/5xx (honours Retry-After). */
 async function api<T>(params: Record<string, string>): Promise<T> {
-  const url = API + '?' + new URLSearchParams({ format: 'json', formatversion: '2', ...params })
+  const url = `${API}?${new URLSearchParams({ format: 'json', formatversion: '2', ...params }).toString()}`
   let wait = 1000
   for (let attempt = 0; ; attempt++) {
     let res: Response
@@ -72,14 +83,11 @@ async function api<T>(params: Record<string, string>): Promise<T> {
       return (await res.json()) as T
     }
     if ((res.status === 429 || res.status >= 500) && attempt < MAX_RETRIES) {
-      const retryAfter = Number(res.headers.get('retry-after'))
-      await sleep(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : wait)
+      await sleep(retryDelayMs(res, wait))
       wait *= 2
       continue
     }
-    throw new Error(
-      `${res.status} ${res.statusText} for ${params.action} ${params.cmtitle ?? params.eititle ?? params.pageid ?? ''}`
-    )
+    throw new Error(`${res.status} ${res.statusText} for ${describeRequest(params)}`)
   }
 }
 
@@ -136,12 +144,13 @@ function cachePath(name: string): string {
   return resolve(CACHE_DIR, name)
 }
 
-function readCache<T>(name: string): T | null {
+/** Cached JSON, or null when absent/unreadable/`--refresh`. The CALLER names the shape. */
+function readCache(name: string): unknown {
   if (refresh) return null
   const p = cachePath(name)
   if (!existsSync(p)) return null
   try {
-    return JSON.parse(readFileSync(p, 'utf8')) as T
+    return JSON.parse(readFileSync(p, 'utf8')) as unknown
   } catch {
     return null
   }
@@ -182,7 +191,7 @@ const MOB_CATEGORIES = [
 const MOB_TEMPLATES = ['Template:Namedmobpage', 'Template:MerchantPage']
 
 async function collectCandidatePages(): Promise<Member[]> {
-  const cached = readCache<Member[]>('mob-pages.json')
+  const cached = readCache('mob-pages.json') as Member[] | null
   if (cached) {
     console.log(`Candidate pages: ${cached.length} (cached)`)
     return cached
@@ -216,6 +225,59 @@ async function collectCandidatePages(): Promise<Member[]> {
 
 // ---- main ------------------------------------------------------------------------
 
+/** A page that carried a mob template but produced nothing, or couldn't be read at all. */
+interface PageSkip {
+  reason: string
+}
+
+/**
+ * One candidate page → a mob entry, the counted 'not-mob' verdict, or a LOGGED skip reason.
+ * Every non-entry outcome is named here so `main` never has to guess why a page vanished.
+ */
+async function readMobPage(p: Member): Promise<MobEntry | 'not-mob' | PageSkip> {
+  let wt: string | null
+  try {
+    wt = await fetchWikitext(p.pageid)
+  } catch (err) {
+    return { reason: `fetch failed: ${(err as Error).message}` }
+  }
+  if (wt == null) return { reason: 'no wikitext' }
+  // Expected and NUMEROUS: `embeddedin` reports indirect transclusions, so quest/zone/index
+  // pages that merely show a mob box land in the candidate list. Counted, not enumerated.
+  if (!isMobPage(wt)) return 'not-mob'
+  return parseMobPage(p.title, wt) ?? { reason: 'mob template present but nothing parsed' }
+}
+
+interface RunSummary {
+  mobs: MobEntry[]
+  pageCount: number
+  notMob: number
+  /** Every skipped page is LOGGED with its reason — a silent skip hides a parser gap. */
+  skipped: { page: string; reason: string }[]
+  startedAt: number
+}
+
+function printSummary(s: RunSummary): void {
+  const withDrops = s.mobs.filter((m) => m.drops?.length)
+  const dropEdges = s.mobs.reduce((n, m) => n + (m.drops?.length ?? 0), 0)
+  const distinctItems = new Set<string>()
+  for (const m of s.mobs) for (const d of m.drops ?? []) distinctItems.add(d.toLowerCase())
+  const mins = ((Date.now() - s.startedAt) / 60000).toFixed(1)
+  console.log(`\nWrote ${s.mobs.length} mobs → ${OUT_PATH}  (${mins} min)`)
+  console.log(
+    `  pages enumerated: ${s.pageCount}   parsed as mobs: ${s.mobs.length}   not a mob page: ${s.notMob}   skipped: ${s.skipped.length}`
+  )
+  console.log(
+    `  drop edges: ${dropEdges} across ${withDrops.length} mobs (${distinctItems.size} distinct items)  ` +
+      `levels: ${s.mobs.filter((m) => m.level).length}  zones: ${s.mobs.filter((m) => m.zones?.length).length}`
+  )
+  if (s.skipped.length) {
+    console.log(`\nSkipped ${s.skipped.length} pages:`)
+    for (const row of s.skipped.slice(0, 50)) console.log(`  - ${row.page} — ${row.reason}`)
+    if (s.skipped.length > 50) console.log(`  … and ${s.skipped.length - 50} more`)
+  }
+}
+
 async function main(): Promise<void> {
   const started = Date.now()
   console.log('Enumerating the mob universe…')
@@ -223,28 +285,14 @@ async function main(): Promise<void> {
   console.log(`\nFetching + parsing ${pages.length} candidate pages…`)
 
   const mobs: MobEntry[] = []
-  /** Every skipped page is LOGGED with its reason — a silent skip hides a parser gap. */
   const skipped: { page: string; reason: string }[] = []
   let done = 0
   let notMob = 0
   for (const p of pages) {
-    let wt: string | null = null
-    try {
-      wt = await fetchWikitext(p.pageid)
-    } catch (err) {
-      skipped.push({ page: p.title, reason: `fetch failed: ${(err as Error).message}` })
-    }
-    if (wt == null) {
-      if (!skipped.some((s) => s.page === p.title)) skipped.push({ page: p.title, reason: 'no wikitext' })
-    } else if (!isMobPage(wt)) {
-      // Expected and NUMEROUS: `embeddedin` reports indirect transclusions, so quest/zone/index
-      // pages that merely show a mob box land in the candidate list. Counted, not enumerated.
-      notMob++
-    } else {
-      const entry = parseMobPage(p.title, wt)
-      if (entry) mobs.push(entry)
-      else skipped.push({ page: p.title, reason: 'mob template present but nothing parsed' })
-    }
+    const outcome = await readMobPage(p)
+    if (outcome === 'not-mob') notMob++
+    else if ('reason' in outcome) skipped.push({ page: p.title, reason: outcome.reason })
+    else mobs.push(outcome)
     if (++done % 250 === 0) console.log(`  ${done}/${pages.length}  (mobs so far: ${mobs.length})`)
   }
 
@@ -258,24 +306,7 @@ async function main(): Promise<void> {
   mkdirSync(dirname(OUT_PATH), { recursive: true })
   writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
 
-  const withDrops = mobs.filter((m) => m.drops?.length)
-  const dropEdges = mobs.reduce((n, m) => n + (m.drops?.length ?? 0), 0)
-  const distinctItems = new Set<string>()
-  for (const m of mobs) for (const d of m.drops ?? []) distinctItems.add(d.toLowerCase())
-  const mins = ((Date.now() - started) / 60000).toFixed(1)
-  console.log(`\nWrote ${mobs.length} mobs → ${OUT_PATH}  (${mins} min)`)
-  console.log(
-    `  pages enumerated: ${pages.length}   parsed as mobs: ${mobs.length}   not a mob page: ${notMob}   skipped: ${skipped.length}`
-  )
-  console.log(
-    `  drop edges: ${dropEdges} across ${withDrops.length} mobs (${distinctItems.size} distinct items)  ` +
-      `levels: ${mobs.filter((m) => m.level).length}  zones: ${mobs.filter((m) => m.zones?.length).length}`
-  )
-  if (skipped.length) {
-    console.log(`\nSkipped ${skipped.length} pages:`)
-    for (const s of skipped.slice(0, 50)) console.log(`  - ${s.page} — ${s.reason}`)
-    if (skipped.length > 50) console.log(`  … and ${skipped.length - 50} more`)
-  }
+  printSummary({ mobs, pageCount: pages.length, notMob, skipped, startedAt: started })
 }
 
 void main()

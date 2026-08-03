@@ -66,6 +66,9 @@ import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync } from 'node:fs'
 import { readFile, rename, unlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+// Console passthroughs (no prefix, no reformatting) — the ONE module in src/main that owns
+// the console. The default sinks below stay byte-identical to the console.* calls they were.
+import { logConsoleError, logInfo } from './errorLog'
 
 /** The scheme the renderer asks for. */
 export const EQIMG_SCHEME = 'eqimg'
@@ -308,15 +311,26 @@ export function cacheCandidatePaths(userData: string, req: EqImgRequest): string
  * FAILED fetch (nothing that isn't recognizably an image is ever written to a permanent
  * cache).
  */
+/** The magic-number prefixes the sniffer knows, byte for byte as they were spelled inline.
+ *  WEBP is two runs: `RIFF` at 0 and (the first two bytes of) `WEBP` at 8. */
+const MAGIC_PNG = [0x89, 0x50, 0x4e, 0x47]
+const MAGIC_JPEG = [0xff, 0xd8, 0xff]
+const MAGIC_GIF = [0x47, 0x49, 0x46]
+const MAGIC_RIFF = [0x52, 0x49, 0x46, 0x46]
+const MAGIC_WE = [0x57, 0x45]
+
+/** Do the bytes at `offset` equal this magic prefix? */
+function bytesMatch(buf: Uint8Array, offset: number, magic: readonly number[]): boolean {
+  return magic.every((byte, i) => buf[offset + i] === byte)
+}
+
 export function sniffImageMime(buf: Uint8Array): string | null {
   if (buf.length < 12) return null
-  const b = buf
-  if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return 'image/png'
-  if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'image/jpeg'
-  if (b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46) return 'image/gif'
+  if (bytesMatch(buf, 0, MAGIC_PNG)) return 'image/png'
+  if (bytesMatch(buf, 0, MAGIC_JPEG)) return 'image/jpeg'
+  if (bytesMatch(buf, 0, MAGIC_GIF)) return 'image/gif'
   // RIFF....WEBP
-  if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 && b[8] === 0x57 && b[9] === 0x45)
-    return 'image/webp'
+  if (bytesMatch(buf, 0, MAGIC_RIFF) && bytesMatch(buf, 8, MAGIC_WE)) return 'image/webp'
   return null
 }
 
@@ -367,6 +381,16 @@ export interface ImageCacheOptions {
 const NOT_FOUND = (): GlobalResponse => new Response(null, { status: 404, statusText: 'Not Found' })
 
 /**
+ * The rejection handler both `unlink` cleanups use. Deliberately silent: each one is
+ * BEST-EFFORT tidying (a leftover `.tmp`, a corrupt entry we are re-fetching anyway), the
+ * outcome that actually matters has already been decided, and a failed cleanup gives the
+ * caller nothing to act on.
+ */
+const ignoreCleanupFailure = (): void => {
+  /* silence on purpose — see above */
+}
+
+/**
  * Install the `eqimg://` handler on the default session. Call ONCE, after `app.whenReady()`
  * and before any window loads a page that references an icon (creating the window in the
  * same tick is fine — the handler is registered synchronously here).
@@ -374,8 +398,8 @@ const NOT_FOUND = (): GlobalResponse => new Response(null, { status: 404, status
 export function installImageCacheProtocol(protocol: ProtocolLike, opts: ImageCacheOptions): void {
   const dir = imageCacheDir(opts.userData)
   const doFetch = opts.fetchImpl ?? fetch
-  const log = opts.log ?? ((m: string) => console.log(m))
-  const onError = opts.onError ?? ((m: string, e: unknown) => console.error(m, e))
+  const log = opts.log ?? ((m: string) => logInfo(m))
+  const onError = opts.onError ?? ((m: string, e: unknown) => logConsoleError(m, e))
 
   try {
     mkdirSync(dir, { recursive: true })
@@ -432,7 +456,7 @@ export function installImageCacheProtocol(protocol: ProtocolLike, opts: ImageCac
       await rename(tmp, path)
     } catch (err) {
       onError(`[everquest-companion:error] image cache: could not store ${path}`, err)
-      await unlink(tmp).catch(() => {})
+      await unlink(tmp).catch(ignoreCleanupFailure)
       return bytes // still serve this request; we just didn't get to keep it
     }
     // FIRST FETCH ONLY. A steady-state launch prints none of these at all — which is exactly
@@ -455,7 +479,7 @@ export function installImageCacheProtocol(protocol: ProtocolLike, opts: ImageCac
         if (mime) return imageResponse(bytes, mime)
         // A corrupt/truncated entry from some earlier build: drop it and fall through to a
         // fresh fetch rather than serving garbage forever.
-        await unlink(path).catch(() => {})
+        await unlink(path).catch(ignoreCleanupFailure)
       } catch (err) {
         onError(`[everquest-companion:error] image cache: could not read ${path}`, err)
       }

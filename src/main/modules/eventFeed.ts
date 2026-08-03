@@ -95,7 +95,7 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
     // Historical replay contributes NOTHING (see the hydration note above).
     if (!live) return
     if (ev.kind === 'consider') {
-      this.noteConsider(ev.mob, ev.rare, ev.level, ev.faction, ev.difficulty, ev.ts)
+      this.noteConsider({ mob: ev.mob, rare: ev.rare, level: ev.level, faction: ev.faction, difficulty: ev.difficulty, ts: ev.ts })
       return
     }
     if (ev.kind !== 'loot' || !ev.item) return
@@ -113,14 +113,15 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
    * VERBATIM clause rather than a guessed label. `page` is deliberately absent — the wiki page
    * isn't known yet at this point, and a fabricated link is worse than none.
    */
-  noteConsider(
-    mob: string,
-    rare: boolean,
-    level: number | undefined,
-    faction: ConsiderFaction,
-    difficulty: string,
+  noteConsider(con: {
+    mob: string
+    rare: boolean
+    level: number | undefined
+    faction: ConsiderFaction
+    difficulty: string
     ts: number
-  ): void {
+  }): void {
+    const { mob, rare, level, faction, difficulty, ts } = con
     const key = mob.trim().toLowerCase()
     const last = this.lastCon.get(key)
     if (last !== undefined && ts - last < CONSIDER_FEED_DEDUPE_MS) return
@@ -184,7 +185,7 @@ export class EventFeedModule implements EqModule<FeedSnap, FeedDelta> {
 
   /** Append a renderer-reported event (today: quest completions — see FeedReport). */
   report(r: FeedReport): void {
-    if (!r || r.kind !== 'quest' || !r.title) return
+    if (r?.kind !== 'quest' || !r.title) return
     this.append({
       kind: 'quest',
       ts: r.ts || Date.now(),

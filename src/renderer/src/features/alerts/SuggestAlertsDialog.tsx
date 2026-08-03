@@ -26,7 +26,7 @@
 // the shared `suggest:illusion:fade`). An already-created suggestion renders as a checked,
 // disabled chip so re-opening the wizard shows what's done.
 
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import { type JSX, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import {
   Box,
   Button,
@@ -66,6 +66,116 @@ function relativeTime(ms: number): string {
   if (hr < 24) return `${hr}h ago`
   const d = Math.round(hr / 24)
   return `${d}d ago`
+}
+
+/** Title row: what this dialog is, how big the catalog is, and the manual escape hatch. */
+function SuggestHeader({
+  catalog,
+  onCreateManually
+}: {
+  catalog: SpellCatalog | null
+  onCreateManually: () => void
+}): JSX.Element {
+  return (
+    <DialogTitle sx={{ pb: 1 }}>
+      <Stack direction="row" spacing={1} alignItems="center">
+        <AutoAwesomeIcon fontSize="small" color="primary" />
+        <span>Add an alert</span>
+        {catalog && (
+          <Typography variant="caption" color="text.secondary" sx={{ ml: 1 }}>
+            {catalog.total} spells · {catalog.withUsage} you&apos;ve used
+          </Typography>
+        )}
+        <Box sx={{ flexGrow: 1 }} />
+        <Button size="small" variant="outlined" startIcon={<EditNoteIcon />} onClick={onCreateManually}>
+          Create manually
+        </Button>
+      </Stack>
+      <Typography variant="caption" color="text.secondary">
+        Pick a suggested alert below, or create one manually for full control.
+      </Typography>
+    </DialogTitle>
+  )
+}
+
+/** The ONE alert that covers every illusion click-off — offered above the per-spell rows. */
+function IllusionBanner({
+  created,
+  onCreate
+}: {
+  created: boolean
+  onCreate: () => void
+}): JSX.Element {
+  return (
+    <Box sx={{ p: 1, borderRadius: 1, bgcolor: 'action.hover' }}>
+      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
+        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+          Illusions
+        </Typography>
+        <Typography variant="caption" color="text.secondary">
+          one alert for any illusion click-off:
+        </Typography>
+        <TemplateChip label="When your illusion fades" created={created} onClick={onCreate} />
+      </Stack>
+    </Box>
+  )
+}
+
+/** The scrolling result list. `loaded` gates the "no match" line so an un-hydrated
+ *  catalog reads as empty, never as "nothing matches". */
+function SpellResults({
+  entries,
+  existingIds,
+  onCreate,
+  query,
+  loaded
+}: {
+  entries: SpellCatalogEntry[]
+  existingIds: Set<string>
+  onCreate: (s: Suggestion) => void
+  query: string
+  loaded: boolean
+}): JSX.Element {
+  return (
+    <Box sx={{ maxHeight: 420, overflow: 'auto' }}>
+      <Stack spacing={0.75}>
+        {entries.map((e) => (
+          <SpellRow key={e.key} entry={e} existingIds={existingIds} onCreate={onCreate} />
+        ))}
+        {loaded && entries.length === 0 && (
+          <Typography variant="body2" color="text.secondary" sx={{ p: 1 }}>
+            No spells match “{query}”.
+          </Typography>
+        )}
+      </Stack>
+    </Box>
+  )
+}
+
+/** "Alert created" confirmation with the Undo affordance. */
+function CreatedSnackbar({
+  snack,
+  onClose,
+  onUndo
+}: {
+  snack: { name: string; id: string } | null
+  onClose: () => void
+  onUndo: () => void
+}): JSX.Element {
+  return (
+    <Snackbar
+      open={!!snack}
+      autoHideDuration={6000}
+      onClose={onClose}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      message={snack ? `Alert created — ${snack.name}` : ''}
+      action={
+        <Button color="secondary" size="small" onClick={onUndo}>
+          Undo
+        </Button>
+      }
+    />
+  )
 }
 
 export default function SuggestAlertsDialog({
@@ -135,24 +245,7 @@ export default function SuggestAlertsDialog({
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
-      <DialogTitle sx={{ pb: 1 }}>
-        <Stack direction="row" spacing={1} alignItems="center">
-          <AutoAwesomeIcon fontSize="small" color="primary" />
-          <span>Add an alert</span>
-          {catalog && (
-            <Typography variant="caption" color="text.secondary" sx={{ ml: 1 }}>
-              {catalog.total} spells · {catalog.withUsage} you&apos;ve used
-            </Typography>
-          )}
-          <Box sx={{ flexGrow: 1 }} />
-          <Button size="small" variant="outlined" startIcon={<EditNoteIcon />} onClick={onCreateManually}>
-            Create manually
-          </Button>
-        </Stack>
-        <Typography variant="caption" color="text.secondary">
-          Pick a suggested alert below, or create one manually for full control.
-        </Typography>
-      </DialogTitle>
+      <SuggestHeader catalog={catalog} onCreateManually={onCreateManually} />
       <DialogContent>
         <Stack spacing={1.5}>
           <TextField
@@ -162,65 +255,35 @@ export default function SuggestAlertsDialog({
             placeholder="Search spells, debuffs, buffs…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon fontSize="small" />
-                </InputAdornment>
-              )
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon fontSize="small" />
+                  </InputAdornment>
+                )
+              }
             }}
           />
 
           {illusion && (
-            <Box sx={{ p: 1, borderRadius: 1, bgcolor: 'action.hover' }}>
-              <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
-                <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                  Illusions
-                </Typography>
-                <Typography variant="caption" color="text.secondary">
-                  one alert for any illusion click-off:
-                </Typography>
-                <TemplateChip
-                  label="When your illusion fades"
-                  created={existingIds.has(illusion.def.id)}
-                  onClick={() => void create(illusion)}
-                />
-              </Stack>
-            </Box>
+            <IllusionBanner
+              created={existingIds.has(illusion.def.id)}
+              onCreate={() => void create(illusion)}
+            />
           )}
 
-          <Box sx={{ maxHeight: 420, overflow: 'auto' }}>
-            <Stack spacing={0.75}>
-              {filtered.map((e) => (
-                <SpellRow
-                  key={e.key}
-                  entry={e}
-                  existingIds={existingIds}
-                  onCreate={(s) => void create(s)}
-                />
-              ))}
-              {catalog && filtered.length === 0 && (
-                <Typography variant="body2" color="text.secondary" sx={{ p: 1 }}>
-                  No spells match “{query}”.
-                </Typography>
-              )}
-            </Stack>
-          </Box>
+          <SpellResults
+            entries={filtered}
+            existingIds={existingIds}
+            onCreate={(s) => void create(s)}
+            query={query}
+            loaded={catalog != null}
+          />
         </Stack>
       </DialogContent>
 
-      <Snackbar
-        open={!!snack}
-        autoHideDuration={6000}
-        onClose={() => setSnack(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-        message={snack ? `Alert created — ${snack.name}` : ''}
-        action={
-          <Button color="secondary" size="small" onClick={() => void undo()}>
-            Undo
-          </Button>
-        }
-      />
+      <CreatedSnackbar snack={snack} onClose={() => setSnack(null)} onUndo={() => void undo()} />
     </Dialog>
   )
 }

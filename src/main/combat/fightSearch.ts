@@ -70,7 +70,7 @@ function haystackTokens(s: SegmentSummary): string[] {
   const hit = HAYSTACK_CACHE.get(s)
   // Validate before reuse: a summary object is immutable in practice, but the cache must
   // never be the reason a renamed fight keeps answering to its old name.
-  if (hit && hit.name === name && hit.zone === zone) return hit.tokens
+  if (hit?.name === name && hit.zone === zone) return hit.tokens
   const tokens = tokenize(zone ? `${name} ${zone}` : name)
   HAYSTACK_CACHE.set(s, { name, zone, tokens })
   return tokens

@@ -1,33 +1,13 @@
-import { useEffect, useState } from 'react'
-import {
-  Box,
-  Button,
-  Chip,
-  CssBaseline,
-  Divider,
-  Drawer,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Snackbar,
-  Alert,
-  Typography
-} from '@mui/material'
+import { type JSX, useEffect, useState } from 'react'
+import { Box, Button, CssBaseline, Snackbar, Alert, Typography } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
 import TravelExploreIcon from '@mui/icons-material/TravelExplore'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
-import BarChartIcon from '@mui/icons-material/BarChart'
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong'
-import TrendingUpIcon from '@mui/icons-material/TrendingUp'
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
-import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import EmojiEventsIcon2 from '@mui/icons-material/EmojiEvents'
-import PetsIcon from '@mui/icons-material/Pets'
 import type { CharacterRef } from '@shared/types'
 import TitleBar from './components/TitleBar'
-import UpdateChip from './components/UpdateChip'
+import NavDrawer from './components/NavDrawer'
+import { VIEW_KEY, loadView, type View } from './appViews'
 import PoskyView from './features/posky/PoskyView'
 import LootView from './features/loot/LootView'
 import LevelingView from './features/leveling/LevelingView'
@@ -46,41 +26,6 @@ import { useProgress } from './features/posky/useProgress'
 import { skyQuestPage } from '@shared/wiki'
 
 const bossData = getBossData()
-
-const DRAWER_WIDTH = 220
-
-type View =
-  | 'combat'
-  | 'mobs'
-  | 'bosses'
-  | 'posky'
-  | 'alerts'
-  | 'leveling'
-  | 'loot'
-  | 'buffs'
-  | 'preferences'
-
-const VIEW_KEY = 'eq.view'
-const DEFAULT_VIEW: View = 'combat'
-const KNOWN_VIEWS: View[] = [
-  'combat',
-  'mobs',
-  'bosses',
-  'posky',
-  'alerts',
-  'leveling',
-  'loot',
-  'buffs',
-  'preferences'
-]
-
-function loadView(): View {
-  const v = localStorage.getItem(VIEW_KEY)
-  // The Inventory feature was folded into Loot (Task #55) — land those users on Loot
-  // instead of silently bouncing them to the default view.
-  if (v === 'inventory') return 'loot'
-  return v && (KNOWN_VIEWS as string[]).includes(v) ? (v as View) : DEFAULT_VIEW
-}
 
 /**
  * Fresh-machine empty state: no eqlog_*.txt were found in the (auto-detected or
@@ -122,6 +67,151 @@ function NoLogsEmptyState({ onOpenPreferences }: { onOpenPreferences: () => void
   )
 }
 
+/** Which feature view is on screen. Preferences renders even with zero characters — it's how
+ *  a user fixes the install path, so the fresh-machine empty state must never hide it. */
+function ViewContent({
+  view,
+  hasCharacters,
+  viewKey,
+  mobTarget,
+  mobNonce,
+  onTargetConsumed,
+  onOpenMob,
+  onOpenPreferences
+}: {
+  view: View
+  hasCharacters: boolean
+  viewKey: string
+  mobTarget: MobTarget | null
+  mobNonce: number
+  onTargetConsumed: () => void
+  onOpenMob: (t: MobTarget) => void
+  onOpenPreferences: () => void
+}): JSX.Element {
+  if (view === 'preferences') return <PreferencesView />
+  if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
+  return (
+    <>
+      {view === 'posky' && <PoskyView key={viewKey} />}
+      {view === 'loot' && <LootView key={viewKey} />}
+      {/* The Mobs tab stays MOUNTED across a deep link (no `key` churn on target
+          change) — remounting per character rebuild only, like every other view. */}
+      {view === 'mobs' && (
+        <MobsView
+          key={viewKey}
+          target={mobTarget}
+          targetNonce={mobNonce}
+          onTargetConsumed={onTargetConsumed}
+        />
+      )}
+      {view === 'bosses' && <BossView key={viewKey} onOpenMob={onOpenMob} />}
+      {view === 'leveling' && <LevelingView key={viewKey} />}
+      {view === 'combat' && <CombatView key={viewKey} />}
+      {view === 'buffs' && <BuffsView key={viewKey} />}
+      {view === 'alerts' && <AlertsView key={viewKey} />}
+    </>
+  )
+}
+
+/** The two app-wide celebration toasts — they fire on ANY tab, so they live at app level. */
+function CelebrationToasts({
+  defeatToast,
+  questToast,
+  onDismissDefeat,
+  onDismissQuest
+}: {
+  defeatToast: TargetStatus | null
+  questToast: string | null
+  onDismissDefeat: () => void
+  onDismissQuest: () => void
+}): JSX.Element {
+  return (
+    <>
+      <Snackbar
+        open={!!defeatToast}
+        autoHideDuration={6000}
+        onClose={onDismissDefeat}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          severity="success"
+          variant="filled"
+          icon={<EmojiEventsIcon2 fontSize="inherit" />}
+          onClose={onDismissDefeat}
+          sx={{ alignItems: 'center' }}
+        >
+          Raid target defeated: {defeatToast?.target.name}!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={!!questToast}
+        autoHideDuration={6000}
+        onClose={onDismissQuest}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      >
+        <Alert
+          severity="success"
+          variant="filled"
+          icon={<ShieldMoonIcon fontSize="inherit" />}
+          onClose={onDismissQuest}
+          sx={{ alignItems: 'center' }}
+        >
+          Quest complete: {questToast}
+        </Alert>
+      </Snackbar>
+    </>
+  )
+}
+
+/**
+ * The two ALWAYS-MOUNTED celebration watches, so both fire on any tab.
+ *
+ * Boss kills: useBossKills gates out the historical baseline. This is the SINGLE
+ * always-mounted detector, so it's the one place we fire the 'bossDefeat' app signal for
+ * the alerts extension. Task #24 splits the two:
+ *   - onKill      → snackbar on ANY roster kill, incl. repeats (matches confetti).
+ *   - onNewDefeat → the bossDefeat sound ONLY on a first defeat at a new tier.
+ * fireAppSignal also applies the alert's cooldown, so even if the Boss tab's own detector
+ * fires in the same instant it can't double-play.
+ *
+ * Sky turn-ins: useProgress seeds a silent baseline on the first hydrated snapshot, so
+ * historical completions on load never fire — only a live turn-in transition does
+ * (Task #46). This is the SINGLE always-mounted place we fire the 'questComplete' app
+ * signal (sound) + the app-wide snackbar; PoskyView's own useProgress additionally bursts
+ * confetti when that tab is open, and the shared cooldown stops a double-play. It is also
+ * the ONE place a quest completion is reported into the live event feed (Task #59) — only
+ * the renderer can match turn-ins against the posky dataset, so main can't detect this
+ * itself. The report carries the QUEST link (the class's Plane of Sky Tests wiki page —
+ * there are no per-quest pages) and, when the dataset names one, the reward item for the
+ * event overlay's hover card. A quest with no known reward reports none: no fabricated
+ * item (law 1).
+ */
+function useAppCelebrations(
+  onDefeat: (s: TargetStatus) => void,
+  onQuestComplete: (name: string) => void
+): void {
+  useBossKills(bossData.targets, {
+    onKill: onDefeat,
+    onNewDefeat: (s) => fireAppSignal('bossDefeat', s.target.name)
+  })
+
+  useProgress({
+    onQuestComplete: (q) => {
+      onQuestComplete(q.name)
+      fireAppSignal('questComplete', q.name)
+      window.eq.reportFeedEvent({
+        kind: 'quest',
+        ts: Date.now(),
+        title: q.name,
+        detail: q.giver ? `turned in to ${q.giver}` : q.className,
+        page: skyQuestPage(q.className),
+        reward: q.reward ? { item: q.reward, page: q.rewardPage, stats: q.rewardStats } : undefined
+      })
+    }
+  })
+}
+
 export default function App(): JSX.Element {
   const [view, setView] = useState<View>(loadView)
   const [character, setCharacter] = useState<CharacterRef | null>(null)
@@ -148,47 +238,7 @@ export default function App(): JSX.Element {
     setView('mobs')
   }
 
-  // App-level boss-kill watch: independent of the Boss tab being open, so the
-  // snackbar shows anywhere. useBossKills gates out the historical baseline. This
-  // is the SINGLE always-mounted detector, so it's the one place we fire the
-  // 'bossDefeat' app signal for the alerts extension. Task #24 splits the two:
-  //   - onKill      → snackbar on ANY roster kill, incl. repeats (matches confetti).
-  //   - onNewDefeat → the bossDefeat sound ONLY on a first defeat at a new tier.
-  // fireAppSignal also applies the alert's cooldown, so even if the Boss tab's own
-  // detector fires in the same instant it can't double-play.
-  useBossKills(bossData.targets, {
-    onKill: (s) => setDefeatToast(s),
-    onNewDefeat: (s) => fireAppSignal('bossDefeat', s.target.name)
-  })
-
-  // App-level Sky turn-in watch: always mounted so the celebration fires on ANY tab,
-  // the same as the boss watch above. useProgress seeds a silent baseline on the first
-  // hydrated snapshot, so historical completions on load never fire — only a live
-  // turn-in transition does (Task #46). This is the SINGLE always-mounted place we fire
-  // the 'questComplete' app signal (sound) + the app-wide snackbar; PoskyView's own
-  // useProgress additionally bursts confetti when that tab is open. fireAppSignal applies
-  // the alert cooldown, so PoskyView's detector firing in the same tick can't double-play.
-  // It is also the ONE place a quest completion is reported into the live event feed (Task #59) —
-  // only the renderer can match turn-ins against the posky dataset, so main can't detect this
-  // itself. The report carries the QUEST link (the class's Plane of Sky Tests wiki page — there
-  // are no per-quest pages) and, when the dataset names one, the reward item for the event
-  // overlay's hover card. A quest with no known reward reports none: no fabricated item (law 1).
-  useProgress({
-    onQuestComplete: (q) => {
-      setQuestToast(q.name)
-      fireAppSignal('questComplete', q.name)
-      window.eq.reportFeedEvent({
-        kind: 'quest',
-        ts: Date.now(),
-        title: q.name,
-        detail: q.giver ? `turned in to ${q.giver}` : q.className,
-        page: skyQuestPage(q.className),
-        reward: q.reward
-          ? { item: q.reward, page: q.rewardPage, stats: q.rewardStats }
-          : undefined
-      })
-    }
-  })
+  useAppCelebrations(setDefeatToast, setQuestToast)
 
   // Remember the selected tab across launches (renderer-only).
   useEffect(() => {
@@ -256,135 +306,23 @@ export default function App(): JSX.Element {
 
       {/* Everything below the bar: nav drawer + main content, side by side. */}
       <Box sx={{ display: 'flex', flexGrow: 1, minHeight: 0 }}>
-        <Drawer
-          variant="permanent"
-          sx={{
-            width: DRAWER_WIDTH,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
-              width: DRAWER_WIDTH,
-              boxSizing: 'border-box',
-              // Frameless: the drawer is a normal in-flow child now (no fixed OS bar
-              // above it), so it fills the space under the title bar. `position:
-              // relative` + `height: 100%` keeps it inside the flex row.
-              position: 'relative',
-              height: '100%',
-              borderTop: 'none'
-            }
-          }}
-        >
-          <List>
-            <ListItemButton selected={view === 'combat'} onClick={() => setView('combat')}>
-              <ListItemIcon>
-                <BarChartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Combat" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'mobs'} onClick={() => setView('mobs')}>
-              <ListItemIcon>
-                <PetsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Mobs" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'bosses'} onClick={() => setView('bosses')}>
-              <ListItemIcon>
-                <EmojiEventsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Raid Targets" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'posky'} onClick={() => setView('posky')}>
-              <ListItemIcon>
-                <ShieldMoonIcon />
-              </ListItemIcon>
-              <ListItemText primary="Plane of Sky" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'alerts'} onClick={() => setView('alerts')}>
-              <ListItemIcon>
-                <NotificationsActiveIcon />
-              </ListItemIcon>
-              <ListItemText primary="Alerts" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'leveling'} onClick={() => setView('leveling')}>
-              <ListItemIcon>
-                <TrendingUpIcon />
-              </ListItemIcon>
-              <ListItemText primary="Leveling" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'loot'} onClick={() => setView('loot')}>
-              <ListItemIcon>
-                <ReceiptLongIcon />
-              </ListItemIcon>
-              <ListItemText primary="Loot" />
-            </ListItemButton>
-            <ListItemButton selected={view === 'buffs'} onClick={() => setView('buffs')}>
-              <ListItemIcon>
-                <AutoFixHighIcon />
-              </ListItemIcon>
-              <ListItemText primary="Buffs" />
-              {/* State, not process: this tab is unfinished, and the chip says so. */}
-              <Chip
-                size="small"
-                label="in dev"
-                variant="outlined"
-                sx={{ height: 18, fontSize: 10, color: 'text.secondary', '& .MuiChip-label': { px: 0.75 } }}
-              />
-            </ListItemButton>
-          </List>
-
-          {/* Bottom-aligned Preferences (Task #55) — replaces the old update-channel block. */}
-          <Box sx={{ mt: 'auto' }}>
-            <Divider />
-            <List disablePadding>
-              <ListItemButton
-                selected={view === 'preferences'}
-                onClick={() => setView('preferences')}
-              >
-                <ListItemIcon>
-                  <SettingsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Preferences" />
-              </ListItemButton>
-            </List>
-            {/* …and directly beneath it, the AMBIENT update affordance (Task #60):
-                a gold "Restart to update" chip when a build is downloaded and
-                staged, otherwise a muted "checked 2h ago" line. Never a nag —
-                ignoring it just means apply-on-quit does the work silently. */}
-            <UpdateChip />
-          </Box>
-        </Drawer>
+        <NavDrawer view={view} onSelect={setView} />
 
         <Box
           component="main"
           sx={{ flexGrow: 1, minWidth: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
         >
           <Box sx={{ flexGrow: 1, overflow: 'auto', p: 2 }}>
-            {/* Preferences renders even with zero characters — it's how a user fixes the
-                install path, so the fresh-machine empty state must never hide it. */}
-            {view === 'preferences' ? (
-              <PreferencesView />
-            ) : characters.length === 0 ? (
-              <NoLogsEmptyState onOpenPreferences={() => setView('preferences')} />
-            ) : (
-              <>
-                {view === 'posky' && <PoskyView key={viewKey} />}
-                {view === 'loot' && <LootView key={viewKey} />}
-                {/* The Mobs tab stays MOUNTED across a deep link (no `key` churn on target
-                    change) — remounting per character rebuild only, like every other view. */}
-                {view === 'mobs' && (
-                  <MobsView
-                    key={viewKey}
-                    target={mobTarget}
-                    targetNonce={mobNonce}
-                    onTargetConsumed={() => setMobTarget(null)}
-                  />
-                )}
-                {view === 'bosses' && <BossView key={viewKey} onOpenMob={openMob} />}
-                {view === 'leveling' && <LevelingView key={viewKey} />}
-                {view === 'combat' && <CombatView key={viewKey} />}
-                {view === 'buffs' && <BuffsView key={viewKey} />}
-                {view === 'alerts' && <AlertsView key={viewKey} />}
-              </>
-            )}
+            <ViewContent
+              view={view}
+              hasCharacters={characters.length > 0}
+              viewKey={viewKey}
+              mobTarget={mobTarget}
+              mobNonce={mobNonce}
+              onTargetConsumed={() => setMobTarget(null)}
+              onOpenMob={openMob}
+              onOpenPreferences={() => setView('preferences')}
+            />
           </Box>
         </Box>
       </Box>
@@ -392,39 +330,12 @@ export default function App(): JSX.Element {
       {/* Always-mounted: plays fired alert sounds regardless of the active tab. */}
       <AlertPlayer />
 
-      <Snackbar
-        open={!!defeatToast}
-        autoHideDuration={6000}
-        onClose={() => setDefeatToast(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      >
-        <Alert
-          severity="success"
-          variant="filled"
-          icon={<EmojiEventsIcon2 fontSize="inherit" />}
-          onClose={() => setDefeatToast(null)}
-          sx={{ alignItems: 'center' }}
-        >
-          Raid target defeated: {defeatToast?.target.name}!
-        </Alert>
-      </Snackbar>
-
-      <Snackbar
-        open={!!questToast}
-        autoHideDuration={6000}
-        onClose={() => setQuestToast(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      >
-        <Alert
-          severity="success"
-          variant="filled"
-          icon={<ShieldMoonIcon fontSize="inherit" />}
-          onClose={() => setQuestToast(null)}
-          sx={{ alignItems: 'center' }}
-        >
-          Quest complete: {questToast}
-        </Alert>
-      </Snackbar>
+      <CelebrationToasts
+        defeatToast={defeatToast}
+        questToast={questToast}
+        onDismissDefeat={() => setDefeatToast(null)}
+        onDismissQuest={() => setQuestToast(null)}
+      />
     </Box>
   )
 }

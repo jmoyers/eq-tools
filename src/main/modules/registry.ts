@@ -36,8 +36,14 @@ export class ModuleRegistry {
     this.byId.set(mod.id, mod)
   }
 
-  get<T extends EqModule = EqModule>(id: string): T | undefined {
-    return this.byId.get(id) as T | undefined
+  /**
+   * The registered module with this id, if any. Deliberately NOT generic: a type parameter
+   * appearing once in a signature is just a cast wearing a `<>`, and it let a caller name any
+   * type it liked with no evidence. A module's `snapshot().state` is `unknown` by design —
+   * the caller narrows it at its own boundary, where the id and the shape are read together.
+   */
+  get(id: string): EqModule | undefined {
+    return this.byId.get(id)
   }
 
   /** Subscribe every module to the bus (registration order). Returns unsubscribe. */
@@ -67,7 +73,7 @@ export class ModuleRegistry {
   /**
    * Wall-clock heartbeat (Task #30). Advance every module's optional onTick, then
    * run the SAME flush path as live events (deltas push only when a module went
-   * dirty). Called ~1×/sec from index.ts with Date.now() while the live tail runs —
+   * dirty). Called ~1×/sec from session.ts with Date.now() while the live tail runs —
    * never during historical replay — so real-time deadlines (buffs' 15s land
    * timeout) fire even when the log is idle.
    */

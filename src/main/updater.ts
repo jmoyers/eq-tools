@@ -144,6 +144,7 @@ import electronUpdater from 'electron-updater'
 import { IPC } from '../shared/ipc'
 import type { UpdateChannel, UpdateStatus } from '../shared/types'
 import { MAX_DOWNLOAD_ATTEMPTS, isStaleVersion, nextCheckDelayMs } from '../shared/update'
+import { logInfo } from './errorLog'
 import { getUpdateChannel, getUpdateLastCheckedAt, setUpdateLastCheckedAt } from './store'
 
 const { autoUpdater } = electronUpdater
@@ -199,86 +200,32 @@ function applyChannel(_channel: UpdateChannel): void {
 }
 
 /**
- * Initialize the auto-updater. `getMainWindow` is called lazily on each status
- * push so we always target the current window (it can be recreated). The update
- * machinery is skipped (and logged) when the app isn't packaged; the IPC surface
- * stays registered so the renderer never has to special-case dev.
+ * The dev-mode `update:install` handler. Nothing is ever staged when the app is not
+ * packaged, so there is nothing to install — but the IPC still has to answer, because the
+ * whole point of registering it in dev is that the renderer never special-cases dev.
  */
-export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
-  // PERSISTED "last checked" (Task #60): read before anything else so the very
-  // first status the renderer pulls already carries a truthful age. An
-  // in-memory-only stamp read "never" for the first minute of every launch —
-  // and forever for a user who quits before the first check.
-  lastCheckedAt = getUpdateLastCheckedAt()
-  lastStatus = lastCheckedAt ? { state: 'idle', checkedAt: lastCheckedAt } : { state: 'idle' }
+const noInstallInDev = (): void => {
+  /* nothing staged in dev — deliberately does nothing */
+}
 
-  // Registered in dev too: Preferences shows the version + a (benign) status there.
-  ipcMain.handle(IPC.getAppVersion, () => app.getVersion())
-  ipcMain.handle(IPC.getUpdateStatus, () => lastStatus)
+/** The exact text these two failure paths have always produced: an object's `message` when it
+ *  has one, else the value itself, stringified. */
+const failureText = (e: unknown): string =>
+  String((e as { message?: unknown } | null | undefined)?.message ?? e)
 
-  if (!app.isPackaged) {
-    // Say so in the status itself: without the flag the chip renders "not checked yet"
-    // forever (dev never checks), which reads as a broken updater rather than an absent one.
-    // No checkedAt — a stamp inherited from the store would claim a check this process
-    // never made.
-    lastStatus = { state: 'idle', disabled: true }
-    ipcMain.handle(IPC.installUpdate, () => {})
-    ipcMain.handle(IPC.checkForUpdates, () => lastStatus)
-    console.log('[everquest-companion] Auto-update disabled (dev / not packaged).')
-    return
-  }
-
-  const currentVersion = app.getVersion()
-
-  /** Record + broadcast a status. `checkedAt` rides along on every push once known. */
-  const push = (status: UpdateStatus): void => {
-    lastStatus = lastCheckedAt ? { ...status, checkedAt: lastCheckedAt } : status
-    const win = getMainWindow()
-    if (win && !win.isDestroyed()) win.webContents.send(IPC.onUpdateStatus, lastStatus)
-  }
-
+/** The two status sinks the electron-updater event handlers write through. */
+interface StatusSinks {
+  /** Record + broadcast a status. */
+  push: (status: UpdateStatus) => void
   /** A check finished (whatever the verdict) — stamp + PERSIST the time, then push. */
-  const checkDone = (status: UpdateStatus): void => {
-    lastCheckedAt = Date.now()
-    checkInFlight = false
-    try {
-      setUpdateLastCheckedAt(lastCheckedAt)
-    } catch {
-      // A store write must never break the update flow; the in-memory stamp stands.
-    }
-    push(status)
-  }
+  checkDone: (status: UpdateStatus) => void
+}
 
-  // --- electron-updater configuration -------------------------------------
-  //
-  // WHY autoDownload IS OFF (it was on before Task #60): with autoDownload the
-  // download starts inside checkForUpdates(), BEFORE our `update-available`
-  // handler can veto it. We need that veto for two cases:
-  //   (a) the anti-loop guard — a version whose download has already failed
-  //       MAX_DOWNLOAD_ATTEMPTS times must stop being re-pulled every cycle;
-  //   (b) the updated-away guard — never pull a build we already run.
-  // Behaviour is otherwise identical: we call downloadUpdate() immediately, so
-  // downloads are still fully automatic and silent.
-  autoUpdater.autoDownload = false
-  // THE load-bearing flag for "transparent": a staged update is applied when the
-  // app quits, with no window, no prompt and no UAC (it spawns `--updated /S`).
-  // Ignoring the chip forever still gets you updated.
-  //
-  // Caveat that shapes the flow below: the quit handler is registered from
-  // executeDownload's `done` callback (BaseUpdater.js:28-37, :69-90), so it only
-  // exists once a download RESOLVES IN THIS PROCESS. A build staged during a
-  // previous session therefore needs this session's first check to re-resolve it
-  // (which costs no network — it validates the cached file) before apply-on-quit
-  // is armed. That is why we never persist a 'ready' state across restarts: the
-  // startup check must be allowed to run and re-arm it. Also why a non-zero exit
-  // code skips the install — a crash never installs anything.
-  autoUpdater.autoInstallOnAppQuit = true
-  // We ship an NSIS target, never the web installer. Left at its default (false)
-  // electron-updater logs a deprecation nag on EVERY download
-  // (NsisUpdater.js:44-46).
-  autoUpdater.disableWebInstaller = true
-  applyChannel(getUpdateChannel())
-
+/**
+ * Wire up the electron-updater events. Lifted out of `initUpdater` for size only — every
+ * handler below is unchanged, and they all read/write the module-level counters.
+ */
+function registerUpdaterEvents(currentVersion: string, { push, checkDone }: StatusSinks): void {
   autoUpdater.on('checking-for-update', () => push({ state: 'checking' }))
 
   autoUpdater.on('update-available', (info) => {
@@ -353,8 +300,92 @@ export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
     // hammering a feed that is refusing us.
     consecutiveFailures++
     downloading = null
-    checkDone({ state: 'error', message: err == null ? 'unknown error' : String(err.message ?? err) })
+    checkDone({ state: 'error', message: err == null ? 'unknown error' : failureText(err) })
   })
+}
+
+/**
+ * Initialize the auto-updater. `getMainWindow` is called lazily on each status
+ * push so we always target the current window (it can be recreated). The update
+ * machinery is skipped (and logged) when the app isn't packaged; the IPC surface
+ * stays registered so the renderer never has to special-case dev.
+ */
+export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
+  // PERSISTED "last checked" (Task #60): read before anything else so the very
+  // first status the renderer pulls already carries a truthful age. An
+  // in-memory-only stamp read "never" for the first minute of every launch —
+  // and forever for a user who quits before the first check.
+  lastCheckedAt = getUpdateLastCheckedAt()
+  lastStatus = lastCheckedAt ? { state: 'idle', checkedAt: lastCheckedAt } : { state: 'idle' }
+
+  // Registered in dev too: Preferences shows the version + a (benign) status there.
+  ipcMain.handle(IPC.getAppVersion, () => app.getVersion())
+  ipcMain.handle(IPC.getUpdateStatus, () => lastStatus)
+
+  if (!app.isPackaged) {
+    // Say so in the status itself: without the flag the chip renders "not checked yet"
+    // forever (dev never checks), which reads as a broken updater rather than an absent one.
+    // No checkedAt — a stamp inherited from the store would claim a check this process
+    // never made.
+    lastStatus = { state: 'idle', disabled: true }
+    ipcMain.handle(IPC.installUpdate, noInstallInDev)
+    ipcMain.handle(IPC.checkForUpdates, () => lastStatus)
+    logInfo('[everquest-companion] Auto-update disabled (dev / not packaged).')
+    return
+  }
+
+  const currentVersion = app.getVersion()
+
+  /** Record + broadcast a status. `checkedAt` rides along on every push once known. */
+  const push = (status: UpdateStatus): void => {
+    lastStatus = lastCheckedAt ? { ...status, checkedAt: lastCheckedAt } : status
+    const win = getMainWindow()
+    if (win && !win.isDestroyed()) win.webContents.send(IPC.onUpdateStatus, lastStatus)
+  }
+
+  /** A check finished (whatever the verdict) — stamp + PERSIST the time, then push. */
+  const checkDone = (status: UpdateStatus): void => {
+    lastCheckedAt = Date.now()
+    checkInFlight = false
+    try {
+      setUpdateLastCheckedAt(lastCheckedAt)
+    } catch {
+      // A store write must never break the update flow; the in-memory stamp stands.
+    }
+    push(status)
+  }
+
+  // --- electron-updater configuration -------------------------------------
+  //
+  // WHY autoDownload IS OFF (it was on before Task #60): with autoDownload the
+  // download starts inside checkForUpdates(), BEFORE our `update-available`
+  // handler can veto it. We need that veto for two cases:
+  //   (a) the anti-loop guard — a version whose download has already failed
+  //       MAX_DOWNLOAD_ATTEMPTS times must stop being re-pulled every cycle;
+  //   (b) the updated-away guard — never pull a build we already run.
+  // Behaviour is otherwise identical: we call downloadUpdate() immediately, so
+  // downloads are still fully automatic and silent.
+  autoUpdater.autoDownload = false
+  // THE load-bearing flag for "transparent": a staged update is applied when the
+  // app quits, with no window, no prompt and no UAC (it spawns `--updated /S`).
+  // Ignoring the chip forever still gets you updated.
+  //
+  // Caveat that shapes the flow below: the quit handler is registered from
+  // executeDownload's `done` callback (BaseUpdater.js:28-37, :69-90), so it only
+  // exists once a download RESOLVES IN THIS PROCESS. A build staged during a
+  // previous session therefore needs this session's first check to re-resolve it
+  // (which costs no network — it validates the cached file) before apply-on-quit
+  // is armed. That is why we never persist a 'ready' state across restarts: the
+  // startup check must be allowed to run and re-arm it. Also why a non-zero exit
+  // code skips the install — a crash never installs anything.
+  autoUpdater.autoInstallOnAppQuit = true
+  // We ship an NSIS target, never the web installer. Left at its default (false)
+  // electron-updater logs a deprecation nag on EVERY download
+  // (NsisUpdater.js:44-46).
+  autoUpdater.disableWebInstaller = true
+  applyChannel(getUpdateChannel())
+
+  registerUpdaterEvents(currentVersion, { push, checkDone })
 
   // renderer -> main: apply the downloaded update NOW.
   //
@@ -397,7 +428,7 @@ export function initUpdater(getMainWindow: () => BrowserWindow | null): void {
       // failure is uncounted — that way one failure counts exactly once.
       if (checkInFlight) {
         consecutiveFailures++
-        checkDone({ state: 'error', message: String((err as Error)?.message ?? err) })
+        checkDone({ state: 'error', message: failureText(err) })
       }
     }
     checkInFlight = false

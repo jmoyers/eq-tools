@@ -163,6 +163,32 @@ function titleCase(s: string): string {
   return s.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase())
 }
 
+/** `Combat Effect` / `Click Effect` / … — the key itself names the socket. */
+const KEY_PREFIX_KIND: [string, ItemEffectKind][] = [
+  ['combat', 'combat'],
+  ['click', 'click'],
+  ['worn', 'worn'],
+  ['proc', 'proc'],
+  ['focus', 'focus']
+]
+
+/**
+ * Which socket an effect line belongs to. The KEY decides it whenever it names one; only a
+ * bare `Effect:` falls through to reading the parenthetical, and an unreadable parenthetical
+ * stays the generic 'effect' rather than being guessed into a socket.
+ */
+function effectKind(key: string, detail: string | undefined): ItemEffectKind {
+  const k = key.toLowerCase()
+  const byKey = KEY_PREFIX_KIND.find(([prefix]) => k.startsWith(prefix))
+  if (byKey) return byKey[1]
+  if (!detail) return 'effect'
+  const d = detail.toLowerCase()
+  if (d.startsWith('combat')) return 'combat'
+  if (d.startsWith('worn')) return 'worn'
+  if (d.includes('must equip') || d.includes('any slot') || d.includes('casting time')) return 'click'
+  return 'effect'
+}
+
 function parseEffect(key: string, rawValue: string): ItemEffect {
   const value = rawValue.trim()
   const paren = /\(([^)]*)\)/.exec(value)
@@ -174,21 +200,7 @@ function parseEffect(key: string, rawValue: string): ItemEffect {
     .replace(/[,;]$/, '')
   const lvl = /Req(?:uires)?\.?\s*Level\s*[: ]\s*(\d+)/i.exec(value) ?? /\bat Level\s+(\d+)/i.exec(value)
 
-  const k = key.toLowerCase()
-  let kind: ItemEffectKind = 'effect'
-  if (k.startsWith('combat')) kind = 'combat'
-  else if (k.startsWith('click')) kind = 'click'
-  else if (k.startsWith('worn')) kind = 'worn'
-  else if (k.startsWith('proc')) kind = 'proc'
-  else if (k.startsWith('focus')) kind = 'focus'
-  else if (detail) {
-    // Bare `Effect:` — the parenthetical says which socket it is.
-    const d = detail.toLowerCase()
-    if (d.startsWith('combat')) kind = 'combat'
-    else if (d.startsWith('worn')) kind = 'worn'
-    else if (d.includes('must equip') || d.includes('any slot') || d.includes('casting time')) kind = 'click'
-  }
-  return { kind, name, detail, ...(lvl ? { reqLevel: Number(lvl[1]) } : {}) }
+  return { kind: effectKind(key, detail), name, detail, ...(lvl ? { reqLevel: Number(lvl[1]) } : {}) }
 }
 
 const num = (s: string): number | undefined => {
@@ -209,7 +221,7 @@ export function parseStatsBlock(raw: string): ItemStatBlock {
 
   for (const line of lines) {
     KEY_RE.lastIndex = 0
-    const hits: Array<{ key: string; from: number; to: number }> = []
+    const hits: { key: string; from: number; to: number }[] = []
     let m: RegExpExecArray | null
     while ((m = KEY_RE.exec(line)) !== null) {
       hits.push({ key: m[1], from: m.index, to: m.index + m[0].length })
@@ -234,72 +246,84 @@ export function parseStatsBlock(raw: string): ItemStatBlock {
   return out
 }
 
+// The `KEY: value` dispatch, as three tables instead of one 15-arm switch. Each table names
+// the ItemStatBlock field a key lands in; the shape of the write (number / verbatim text /
+// split list) is what separates them.
+
+/** Keys stored as a NUMBER. These write unconditionally — an unreadable value means `undefined`. */
+const NUMERIC_FIELDS: Record<string, 'atkDelay' | 'dmg' | 'dmgBonus' | 'backstab' | 'ac'> = {
+  'ATK DELAY': 'atkDelay',
+  DELAY: 'atkDelay',
+  DMG: 'dmg',
+  'DMG BON': 'dmgBonus',
+  'DAMAGE BONUS': 'dmgBonus',
+  BACKSTAB: 'backstab',
+  AC: 'ac'
+}
+
+/** Keys stored VERBATIM ("2.5", "LARGE", "1H Slashing"). */
+const TEXT_FIELDS: Record<string, 'skill' | 'weight' | 'size' | 'range'> = {
+  SKILL: 'skill',
+  WT: 'weight',
+  WEIGHT: 'weight',
+  SIZE: 'size',
+  RANGE: 'range'
+}
+
+/** Keys stored as a whitespace/comma-split list ("WAR PAL RNG" → three entries). */
+const LIST_FIELDS: Record<string, 'classes' | 'races'> = { CLASS: 'classes', RACE: 'races' }
+
+/** `Slot:` is two different fields wearing one key — an exaltation socket, or the equip slot. */
+function applySlot(out: ItemStatBlock, value: string): void {
+  // `Slot: Ornamentation: empty` — an EXALTATION socket row, not the equip slot.
+  const sub = /^(\w+)\s*:\s*(.*)$/.exec(value)
+  if (sub && EXALT_SLOT_NAMES.some((n) => n.toLowerCase() === sub[1].toLowerCase())) {
+    const content = sub[2].trim()
+    out.exaltationSlots.push(
+      /^empty$/i.test(content) ? { type: titleCase(sub[1]), empty: true } : { type: titleCase(sub[1]), content }
+    )
+    return
+  }
+  if (value) out.slot = out.slot ? `${out.slot} ${value}` : value
+}
+
 function applyPair(out: ItemStatBlock, keyRaw: string, value: string): void {
   const key = keyRaw.trim()
   const upper = key.toUpperCase()
 
+  // The two keys whose write does NOT require a non-empty value go first (their key spaces
+  // are disjoint from everything below, so the order is free).
+  const numeric = NUMERIC_FIELDS[upper]
+  if (numeric) {
+    out[numeric] = num(value)
+    return
+  }
+  if (upper === 'SLOT') {
+    applySlot(out, value)
+    return
+  }
+  // Every remaining field records TEXT, and empty text is nothing to record.
+  if (!value) return
+
   if (EFFECT_KEYS.some((k) => k.toUpperCase() === upper)) {
-    if (value) out.effects.push(parseEffect(key, value))
+    out.effects.push(parseEffect(key, value))
     return
   }
   if (SAVE_KEYS.includes(upper)) {
-    if (value) out.saves.push({ key: upper, value })
+    out.saves.push({ key: upper, value })
     return
   }
-
-  switch (upper) {
-    case 'SLOT': {
-      // `Slot: Ornamentation: empty` — an EXALTATION socket row, not the equip slot.
-      const sub = /^(\w+)\s*:\s*(.*)$/.exec(value)
-      if (sub && EXALT_SLOT_NAMES.some((n) => n.toLowerCase() === sub[1].toLowerCase())) {
-        const content = sub[2].trim()
-        out.exaltationSlots.push(
-          /^empty$/i.test(content) ? { type: titleCase(sub[1]), empty: true } : { type: titleCase(sub[1]), content }
-        )
-        return
-      }
-      if (value) out.slot = out.slot ? `${out.slot} ${value}` : value
-      return
-    }
-    case 'CLASS':
-      if (value) out.classes = value.split(/[\s,]+/).filter(Boolean)
-      return
-    case 'RACE':
-      if (value) out.races = value.split(/[\s,]+/).filter(Boolean)
-      return
-    case 'SKILL':
-      if (value) out.skill = value
-      return
-    case 'ATK DELAY':
-    case 'DELAY':
-      out.atkDelay = num(value)
-      return
-    case 'DMG':
-      out.dmg = num(value)
-      return
-    case 'DMG BON':
-    case 'DAMAGE BONUS':
-      out.dmgBonus = num(value)
-      return
-    case 'BACKSTAB':
-      out.backstab = num(value)
-      return
-    case 'AC':
-      out.ac = num(value)
-      return
-    case 'WT':
-    case 'WEIGHT':
-      if (value) out.weight = value
-      return
-    case 'SIZE':
-      if (value) out.size = value
-      return
-    case 'RANGE':
-      if (value) out.range = value
-      return
-    default:
-      if (value) out.stats.push({ key: upper, value })
+  const list = LIST_FIELDS[upper]
+  if (list) {
+    out[list] = value.split(/[\s,]+/).filter(Boolean)
+    return
   }
+  const text = TEXT_FIELDS[upper]
+  if (text) {
+    out[text] = value
+    return
+  }
+  out.stats.push({ key: upper, value })
 }
 
 // ---- display helpers ----------------------------------------------------------

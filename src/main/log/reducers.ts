@@ -19,14 +19,24 @@ export function isCountedKill(ev: Extract<LogEvent, { kind: 'death' }>): boolean
   return true
 }
 
+/** One counted kill, as `recordKill` folds it. */
+export interface KillRecord {
+  /** the CANONICAL (lowercase) mob name — the map key. */
+  key: string
+  /** the raw slain-line name, kept for the UI. */
+  display: string
+  tier: number
+  ts: number
+}
+
 /**
  * Fold a counted kill into a KillMap in place. Pure; used by the kills module.
- * `key` is the CANONICAL (lowercase) mob name — the map key — and `display` is the
- * raw slain-line name kept for the UI. Keying by the canonical name folds the two
- * casings EQ emits (sentence-start "A froglok…" vs mid-sentence "a froglok…") into
- * a single entry; the display is set once, from the first-seen kill.
+ * Keying by the canonical name folds the two casings EQ emits (sentence-start
+ * "A froglok…" vs mid-sentence "a froglok…") into a single entry; the display is
+ * set once, from the first-seen kill.
  */
-export function recordKill(kills: KillMap, key: string, display: string, tier: number, ts: number): void {
+export function recordKill(kills: KillMap, kill: KillRecord): void {
+  const { key, display, tier, ts } = kill
   const k = (kills[key] ??= { count: 0, bestTier: 0, firstTs: 0, lastTs: 0, display })
   k.count += 1
   k.bestTier = Math.max(k.bestTier, tier)

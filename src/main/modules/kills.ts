@@ -46,7 +46,7 @@ export class KillsModule implements EqModule<KillsSnap, KillsDelta> {
     // mob (sentence-start "A …" on slain-by lines, mid-sentence "a …" on
     // You-have-slain lines) fold into one entry; keep the raw name for display.
     const key = idKey(ev.name)
-    recordKill(this.kills, key, ev.name, tier, ev.ts)
+    recordKill(this.kills, { key, display: ev.name, tier, ts: ev.ts })
     this.dirty.add(key)
   }
 

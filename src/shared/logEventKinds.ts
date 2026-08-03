@@ -52,6 +52,5 @@ export const ALL_LOG_EVENT_KINDS = [
 // kind is added to LogEventKind but not to the array above, `_exhaustive` errors because the
 // union is not assignable to the array's element type.
 type _KindsInArray = (typeof ALL_LOG_EVENT_KINDS)[number]
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _exhaustive: _KindsInArray = null as unknown as LogEventKind
 void _exhaustive

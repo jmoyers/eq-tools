@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { type JSX, useMemo } from 'react'
 import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
@@ -16,6 +16,7 @@ import {
   swapCount,
   type LevelSegment
 } from './levelSeries'
+import { AreaChart, LevelStepChart, SWAP_COLOR } from './levelCharts'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -68,118 +69,6 @@ function HeroCard({
   )
 }
 
-/** Simple filled area chart of a cumulative series over time. */
-function AreaChart({ points, color }: { points: { ts: number; y: number }[]; color: string }): JSX.Element | null {
-  if (points.length < 2) return null
-  const W = 720
-  const H = 150
-  const pad = 8
-  const t0 = points[0].ts
-  const t1 = points[points.length - 1].ts
-  const yMax = points[points.length - 1].y || 1
-  const x = (t: number): number => pad + ((t - t0) / Math.max(1, t1 - t0)) * (W - 2 * pad)
-  const y = (v: number): number => H - pad - (v / yMax) * (H - 2 * pad)
-  const line = points.map((p) => `${x(p.ts).toFixed(1)},${y(p.y).toFixed(1)}`).join(' ')
-  const area = `${pad},${H - pad} ${line} ${(W - pad).toFixed(1)},${H - pad}`
-  return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
-      <polygon points={area} fill={color} opacity={0.18} />
-      <polyline points={line} fill="none" stroke={color} strokeWidth={2} />
-    </svg>
-  )
-}
-
-const SWAP_COLOR = '#8fa3b8'
-
-/**
- * Level over time, drawn HONESTLY (see ./levelSeries.ts for the world model).
- *
- * A level is a step function: it holds until the next ding, so the line is step-AFTER —
- * never a diagonal that implies you were level 43.6 on Thursday afternoon. A loadout swap
- * drops the reported level with NO log line, so the segments are drawn DISJOINT: the
- * pre-swap segment runs flat to the swap boundary, a dashed rule marks the boundary, and
- * the new segment starts at its first observed ding. Nothing is drawn descending, because
- * nothing descending was ever observed — you did not lose levels, you changed classes.
- * Cheap inline SVG (these surfaces are render-bound; no chart libs).
- */
-function LevelStepChart({ segments, color }: { segments: LevelSegment[]; color: string }): JSX.Element | null {
-  const all = segments.flatMap((s) => s.points)
-  if (all.length < 2) return null
-  const W = 720
-  const H = 150
-  const padX = 8
-  const padTop = 14
-  const padBottom = 8
-  const t0 = all[0].ts
-  const tLast = all[all.length - 1].ts
-  const span = Math.max(1, tLast - t0)
-  // Trailing flat run so the CURRENT level reads as a plateau, not a bare endpoint.
-  const t1 = tLast + span * 0.04
-  const hi = all.reduce((m, p) => Math.max(m, p.level), all[0].level)
-  const lo = all.reduce((m, p) => Math.min(m, p.level), all[0].level)
-  // Baseline one level under the lowest observed ding: the fill follows the steps rather
-  // than reaching an arbitrary zero, so a low post-swap segment doesn't look like a crater.
-  const base = lo - 1
-  const x = (t: number): number => padX + ((t - t0) / (t1 - t0)) * (W - 2 * padX)
-  const y = (v: number): number => H - padBottom - ((v - base) / Math.max(1, hi - base)) * (H - padTop - padBottom)
-  const floor = H - padBottom
-
-  const drawn = segments.map((seg, i) => {
-    const end = i + 1 < segments.length ? segments[i + 1].points[0].ts : t1
-    const pts: string[] = []
-    let py = y(seg.points[0].level)
-    for (const p of seg.points) {
-      const px = x(p.ts)
-      if (pts.length) pts.push(`${px.toFixed(1)},${py.toFixed(1)}`) // hold the old level…
-      py = y(p.level)
-      pts.push(`${px.toFixed(1)},${py.toFixed(1)}`) // …then step up at the ding
-    }
-    pts.push(`${x(end).toFixed(1)},${py.toFixed(1)}`)
-    const x0 = x(seg.points[0].ts)
-    return {
-      line: pts.join(' '),
-      area: `${x0.toFixed(1)},${floor} ${pts.join(' ')} ${x(end).toFixed(1)},${floor}`,
-      startX: x0,
-      startY: y(seg.points[0].level),
-      afterSwap: seg.afterSwap
-    }
-  })
-
-  return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
-      {drawn.map((d, i) => (
-        <g key={i}>
-          <polygon points={d.area} fill={color} opacity={0.12} />
-          <polyline points={d.line} fill="none" stroke={color} strokeWidth={2} />
-        </g>
-      ))}
-      {drawn.map((d, i) =>
-        d.afterSwap ? (
-          <g key={`s${i}`}>
-            <line
-              x1={d.startX}
-              y1={padTop - 6}
-              x2={d.startX}
-              y2={floor}
-              stroke={SWAP_COLOR}
-              strokeWidth={1}
-              strokeDasharray="3 4"
-              opacity={0.9}
-            />
-            <circle cx={d.startX} cy={d.startY} r={3.5} fill="none" stroke={SWAP_COLOR} strokeWidth={1.5} />
-          </g>
-        ) : null
-      )}
-      <text x={padX} y={padTop} fill={color} fontSize={10} opacity={0.7}>
-        {hi}
-      </text>
-      <text x={padX} y={floor - 2} fill={color} fontSize={10} opacity={0.7}>
-        {lo}
-      </text>
-    </svg>
-  )
-}
-
 interface FeedItem {
   ts: number
   kind: 'level' | 'aa' | 'swap'
@@ -191,6 +80,225 @@ const FEED_COLOR: Record<FeedItem['kind'], string> = {
   level: '#d9b25f',
   aa: '#6fb3d2',
   swap: SWAP_COLOR
+}
+
+/**
+ * The four headline numbers. CURRENT level is the LATEST reported one, never max() —
+ * see LevelingView for why — so the peak and the class-swap count ride along in the
+ * caption whenever a swap has actually happened.
+ */
+function LevelingHeroes({
+  currentLevel,
+  levelCount,
+  peak,
+  swaps,
+  aaEarned,
+  aaSpent,
+  aaUnspent,
+  boughtCount
+}: {
+  currentLevel: number | null
+  levelCount: number
+  peak: number | null
+  swaps: number
+  aaEarned: number
+  aaSpent: number
+  aaUnspent: number | null
+  boughtCount: number
+}): JSX.Element {
+  return (
+    <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+      <HeroCard
+        icon={<MilitaryTechIcon fontSize="large" />}
+        value={currentLevel != null ? String(currentLevel) : '—'}
+        label="Character level"
+        sub={
+          levelCount
+            ? `${levelCount} level-ups logged` +
+              (swaps > 0 ? ` · peak ${peak} · ${swaps} class swap${swaps === 1 ? '' : 's'}` : '')
+            : 'no level-ups in log'
+        }
+        accent="#d9b25f"
+      />
+      <HeroCard
+        icon={<AutoAwesomeIcon fontSize="large" />}
+        value={aaEarned ? aaEarned.toLocaleString() : '—'}
+        label="AA points earned"
+        sub="spent + unspent"
+        accent="#6fb3d2"
+      />
+      <HeroCard
+        icon={<AutoAwesomeIcon fontSize="large" />}
+        value={aaSpent ? aaSpent.toLocaleString() : '—'}
+        label="AA points spent"
+        sub={`${boughtCount} abilities allocated`}
+        accent="#b07fd0"
+      />
+      <HeroCard
+        icon={<BoltIcon fontSize="large" />}
+        value={aaUnspent != null ? aaUnspent.toLocaleString() : '—'}
+        label="AA unspent"
+        sub="last reported balance"
+        accent="#5fbf72"
+      />
+    </Stack>
+  )
+}
+
+/**
+ * Cumulative AA gained. Deliberately NOT the earned headline: this is Σ of the gain
+ * lines, so points re-gained after a respec are counted again and the curve runs
+ * ahead of `earned` — the caption says so rather than quietly reconciling them.
+ * Nothing is drawn until there are two points to draw a line between.
+ */
+function AaOverTimePanel({
+  points,
+  aaEarned
+}: {
+  points: { ts: number; y: number }[]
+  aaEarned: number
+}): JSX.Element | null {
+  if (points.length < 2) return null
+  return (
+    <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="subtitle2">AA gained over time</Typography>
+      <Typography variant="caption" color="text.secondary" gutterBottom display="block">
+        cumulative gain lines — includes points re-gained after a respec, so the final
+        value runs ahead of the {aaEarned.toLocaleString()} earned headline
+      </Typography>
+      <AreaChart points={points} color="#6fb3d2" />
+    </Paper>
+  )
+}
+
+/** Level over time, with the caption that explains the dashed class-swap breaks. */
+function LevelOverTimePanel({
+  segments,
+  levelCount,
+  swaps
+}: {
+  segments: LevelSegment[]
+  levelCount: number
+  swaps: number
+}): JSX.Element | null {
+  if (levelCount < 2) return null
+  return (
+    <Paper variant="outlined" sx={{ p: 2 }}>
+      <Typography variant="subtitle2">Level over time</Typography>
+      <Typography variant="caption" color="text.secondary" gutterBottom display="block">
+        {swaps > 0 ? (
+          <>
+            steps hold until the next ding; a{' '}
+            <Box component="span" sx={{ color: SWAP_COLOR }}>
+              dashed break
+            </Box>{' '}
+            is a class swap — the level is re-reported for the new loadout, not lost
+          </>
+        ) : (
+          'steps hold until the next ding'
+        )}
+      </Typography>
+      <LevelStepChart segments={segments} color="#d9b25f" />
+    </Paper>
+  )
+}
+
+/**
+ * Purchases list: newest first, respec re-buys deduped by the caller and tagged with a
+ * ×N count. Auto-grants (cost 0) are shown but badged rather than priced — they were
+ * never bought, so counting them as purchases would inflate the spend.
+ */
+function AaPurchasesPanel({
+  purchases,
+  boughtCount
+}: {
+  purchases: { ev: AASpendEvent; count: number }[]
+  boughtCount: number
+}): JSX.Element | null {
+  if (purchases.length === 0) return null
+  return (
+    <Paper variant="outlined" sx={{ p: 2, display: 'flex', flexDirection: 'column', maxHeight: '45%' }}>
+      <Typography variant="subtitle2" gutterBottom>
+        AAs purchased{' '}
+        <Typography component="span" variant="caption" color="text.secondary">
+          ({boughtCount})
+        </Typography>
+      </Typography>
+      <Box sx={{ overflow: 'auto' }}>
+        {purchases.map(({ ev: p, count }, i) => {
+          const auto = p.cost === 0
+          return (
+            <Stack key={`${p.ts}-${i}`} direction="row" spacing={1} alignItems="center" sx={{ py: 0.3 }}>
+              <AutoAwesomeIcon sx={{ fontSize: 12, color: auto ? '#7a7a7a' : '#b07fd0' }} />
+              <Typography
+                variant="caption"
+                sx={{ flexGrow: 1, color: auto ? 'text.secondary' : 'text.primary' }}
+                noWrap
+                title={p.ability}
+              >
+                {p.ability}
+                {count > 1 && (
+                  <Typography component="span" variant="caption" color="text.disabled">
+                    {' '}
+                    ×{count}
+                  </Typography>
+                )}
+              </Typography>
+              {auto ? (
+                <Typography variant="caption" color="text.disabled" sx={{ fontStyle: 'italic' }}>
+                  auto-granted
+                </Typography>
+              ) : (
+                <Typography variant="caption" color="text.secondary">
+                  {p.cost} pt{p.cost === 1 ? '' : 's'}
+                </Typography>
+              )}
+            </Stack>
+          )
+        })}
+      </Box>
+    </Paper>
+  )
+}
+
+/** Interleaved level/AA/swap feed, newest first. */
+function ProgressFeedPanel({ feed }: { feed: FeedItem[] }): JSX.Element {
+  return (
+    <Paper variant="outlined" sx={{ p: 2, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+      <Typography variant="subtitle2" gutterBottom>
+        Recent progress
+      </Typography>
+      <Box sx={{ overflow: 'auto' }}>
+        {feed.map((f, i) => (
+          <Stack
+            key={`${f.ts}-${f.kind}-${i}`}
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            sx={{ py: 0.4 }}
+          >
+            <Chip
+              size="small"
+              label={f.label}
+              sx={{
+                height: 20,
+                bgcolor: `${FEED_COLOR[f.kind]}22`,
+                color: FEED_COLOR[f.kind],
+                fontWeight: 700,
+                minWidth: 68
+              }}
+            />
+            <Typography variant="caption" color="text.secondary" sx={{ flexGrow: 1 }} noWrap>
+              {f.detail}
+            </Typography>
+            <Typography variant="caption" color="text.disabled" noWrap>
+              {formatDate(f.ts)}
+            </Typography>
+          </Stack>
+        ))}
+      </Box>
+    </Paper>
+  )
 }
 
 export default function LevelingView(): JSX.Element {
@@ -264,41 +372,16 @@ export default function LevelingView(): JSX.Element {
 
   return (
     <Stack spacing={2} sx={{ height: '100%' }}>
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
-        <HeroCard
-          icon={<MilitaryTechIcon fontSize="large" />}
-          value={currentLevel != null ? String(currentLevel) : '—'}
-          label="Character level"
-          sub={
-            sortedLevels.length
-              ? `${sortedLevels.length} level-ups logged` +
-                (swaps > 0 ? ` · peak ${peak} · ${swaps} class swap${swaps === 1 ? '' : 's'}` : '')
-              : 'no level-ups in log'
-          }
-          accent="#d9b25f"
-        />
-        <HeroCard
-          icon={<AutoAwesomeIcon fontSize="large" />}
-          value={aaEarned ? aaEarned.toLocaleString() : '—'}
-          label="AA points earned"
-          sub="spent + unspent"
-          accent="#6fb3d2"
-        />
-        <HeroCard
-          icon={<AutoAwesomeIcon fontSize="large" />}
-          value={aaSpent ? aaSpent.toLocaleString() : '—'}
-          label="AA points spent"
-          sub={`${boughtCount} abilities allocated`}
-          accent="#b07fd0"
-        />
-        <HeroCard
-          icon={<BoltIcon fontSize="large" />}
-          value={aaUnspent != null ? aaUnspent.toLocaleString() : '—'}
-          label="AA unspent"
-          sub="last reported balance"
-          accent="#5fbf72"
-        />
-      </Stack>
+      <LevelingHeroes
+        currentLevel={currentLevel}
+        levelCount={sortedLevels.length}
+        peak={peak}
+        swaps={swaps}
+        aaEarned={aaEarned}
+        aaSpent={aaSpent}
+        aaUnspent={aaUnspent}
+        boughtCount={boughtCount}
+      />
 
       {nothing ? (
         <Typography color="text.secondary" sx={{ p: 2 }}>
@@ -307,115 +390,17 @@ export default function LevelingView(): JSX.Element {
       ) : (
         <Stack direction={{ xs: 'column', lg: 'row' }} spacing={2} sx={{ flexGrow: 1, minHeight: 0 }}>
           <Stack spacing={2} sx={{ flex: 2, minWidth: 320 }}>
-            {aaCumulative.length >= 2 && (
-              <Paper variant="outlined" sx={{ p: 2 }}>
-                <Typography variant="subtitle2">AA gained over time</Typography>
-                <Typography variant="caption" color="text.secondary" gutterBottom display="block">
-                  cumulative gain lines — includes points re-gained after a respec, so the final
-                  value runs ahead of the {aaEarned.toLocaleString()} earned headline
-                </Typography>
-                <AreaChart points={aaCumulative} color="#6fb3d2" />
-              </Paper>
-            )}
-            {sortedLevels.length >= 2 && (
-              <Paper variant="outlined" sx={{ p: 2 }}>
-                <Typography variant="subtitle2">Level over time</Typography>
-                <Typography variant="caption" color="text.secondary" gutterBottom display="block">
-                  {swaps > 0 ? (
-                    <>
-                      steps hold until the next ding; a{' '}
-                      <Box component="span" sx={{ color: SWAP_COLOR }}>
-                        dashed break
-                      </Box>{' '}
-                      is a class swap — the level is re-reported for the new loadout, not lost
-                    </>
-                  ) : (
-                    'steps hold until the next ding'
-                  )}
-                </Typography>
-                <LevelStepChart segments={levelSegments} color="#d9b25f" />
-              </Paper>
-            )}
+            <AaOverTimePanel points={aaCumulative} aaEarned={aaEarned} />
+            <LevelOverTimePanel
+              segments={levelSegments}
+              levelCount={sortedLevels.length}
+              swaps={swaps}
+            />
           </Stack>
 
           <Stack spacing={2} sx={{ flex: 1, minWidth: 260, minHeight: 0 }}>
-            {purchases.length > 0 && (
-              <Paper variant="outlined" sx={{ p: 2, display: 'flex', flexDirection: 'column', maxHeight: '45%' }}>
-                <Typography variant="subtitle2" gutterBottom>
-                  AAs purchased{' '}
-                  <Typography component="span" variant="caption" color="text.secondary">
-                    ({boughtCount})
-                  </Typography>
-                </Typography>
-                <Box sx={{ overflow: 'auto' }}>
-                  {purchases.map(({ ev: p, count }, i) => {
-                    const auto = p.cost === 0
-                    return (
-                      <Stack key={`${p.ts}-${i}`} direction="row" spacing={1} alignItems="center" sx={{ py: 0.3 }}>
-                        <AutoAwesomeIcon sx={{ fontSize: 12, color: auto ? '#7a7a7a' : '#b07fd0' }} />
-                        <Typography
-                          variant="caption"
-                          sx={{ flexGrow: 1, color: auto ? 'text.secondary' : 'text.primary' }}
-                          noWrap
-                          title={p.ability}
-                        >
-                          {p.ability}
-                          {count > 1 && (
-                            <Typography component="span" variant="caption" color="text.disabled">
-                              {' '}
-                              ×{count}
-                            </Typography>
-                          )}
-                        </Typography>
-                        {auto ? (
-                          <Typography variant="caption" color="text.disabled" sx={{ fontStyle: 'italic' }}>
-                            auto-granted
-                          </Typography>
-                        ) : (
-                          <Typography variant="caption" color="text.secondary">
-                            {p.cost} pt{p.cost === 1 ? '' : 's'}
-                          </Typography>
-                        )}
-                      </Stack>
-                    )
-                  })}
-                </Box>
-              </Paper>
-            )}
-            <Paper variant="outlined" sx={{ p: 2, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="subtitle2" gutterBottom>
-                Recent progress
-              </Typography>
-              <Box sx={{ overflow: 'auto' }}>
-                {feed.map((f, i) => (
-                <Stack
-                  key={`${f.ts}-${f.kind}-${i}`}
-                  direction="row"
-                  spacing={1}
-                  alignItems="center"
-                  sx={{ py: 0.4 }}
-                >
-                  <Chip
-                    size="small"
-                    label={f.label}
-                    sx={{
-                      height: 20,
-                      bgcolor: `${FEED_COLOR[f.kind]}22`,
-                      color: FEED_COLOR[f.kind],
-                      fontWeight: 700,
-                      minWidth: 68
-                    }}
-                  />
-                  <Typography variant="caption" color="text.secondary" sx={{ flexGrow: 1 }} noWrap>
-                    {f.detail}
-                  </Typography>
-                  <Typography variant="caption" color="text.disabled" noWrap>
-                    {formatDate(f.ts)}
-                  </Typography>
-                </Stack>
-              ))}
-              </Box>
-            </Paper>
+            <AaPurchasesPanel purchases={purchases} boughtCount={boughtCount} />
+            <ProgressFeedPanel feed={feed} />
           </Stack>
         </Stack>
       )}

@@ -63,12 +63,21 @@ function verifyRequiredSounds(packsRoot: string, packId: string): void {
   }
 }
 
+/**
+ * The progress sink a provisioning install gets. Deliberately does nothing: provisioning has
+ * no UI surface at all (see the file header — "Non-blocking, best-effort, silent"), so every
+ * phase update it would report has nowhere to go.
+ */
+const swallowProgress = (): void => {
+  /* silence on purpose — provisioning is invisible by design */
+}
+
 /** Install one default pack, retrying with exponential backoff. True on success. */
 async function provisionPack(pack: RegistryPack, packsRoot: string): Promise<boolean> {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     try {
       // Progress is swallowed: provisioning is invisible by design (no UI surface).
-      await installPack(pack, () => {}, packsRoot)
+      await installPack(pack, swallowProgress, packsRoot)
       verifyRequiredSounds(packsRoot, pack.name)
       return true
     } catch (err) {

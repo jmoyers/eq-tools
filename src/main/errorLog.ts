@@ -48,7 +48,7 @@ function stringifyPayload(payload: unknown): string {
 
 /** JSON replacer that unwraps nested Error objects and drops circular refs. */
 function replacer(): (key: string, value: unknown) => unknown {
-  const seen = new WeakSet<object>()
+  const seen = new WeakSet()
   return (_key, value) => {
     if (value instanceof Error) {
       return { name: value.name, message: value.message, stack: value.stack }
@@ -97,4 +97,40 @@ export function logError(source: string, payload: unknown): void {
 /** Absolute path of the error log, for diagnostics/tests. */
 export function errorLogPath(): string {
   return logPath()
+}
+
+// ---- info/warn narration (console-only) ------------------------------------
+//
+// The main process narrates its startup and lifecycle to dev stdout with the
+// `[everquest-companion]` prefix (channel + userData, spell-DB sizes, the tailed character,
+// replay totals, inventory reloads…). Those lines are NOT errors and deliberately do NOT go
+// into errors.log — that file exists so a blank window is never silent, and burying it under
+// routine progress would defeat it.
+//
+// They funnel through here anyway so that ONE module in src/main owns the console (this one),
+// which is what lets `no-console` stay on everywhere else instead of decaying into a
+// disable-comment per call site. Nothing is prefixed, tagged or reformatted on the way
+// through: the arguments reach `console.*` exactly as the caller wrote them, so the emitted
+// text is byte-identical to a direct call.
+
+/** `console.log`, verbatim. Routine `[everquest-companion] …` narration. */
+export function logInfo(...args: unknown[]): void {
+  // eslint-disable-next-line no-console
+  console.log(...args)
+}
+
+/** `console.warn`, verbatim. A condition worth noticing that is not a failure. */
+export function logWarn(...args: unknown[]): void {
+  // eslint-disable-next-line no-console
+  console.warn(...args)
+}
+
+/**
+ * `console.error`, verbatim — WITHOUT the errors.log record `logError` makes. For the few
+ * long-standing sites that report to stdout only (a tailer/watcher stream error, the
+ * image-cache default sink); keeping them console-only preserves their exact output.
+ */
+export function logConsoleError(...args: unknown[]): void {
+  // eslint-disable-next-line no-console
+  console.error(...args)
 }

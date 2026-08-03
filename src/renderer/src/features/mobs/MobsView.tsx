@@ -24,7 +24,7 @@
 // filter runs on a deferred value, and the catalog is an ES-imported JSON already bundled for
 // main's mob lookup. No IPC, no network, works offline.
 
-import { useDeferredValue, useEffect, useMemo, useState } from 'react'
+import { type JSX, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import {
   Box,
   Button,

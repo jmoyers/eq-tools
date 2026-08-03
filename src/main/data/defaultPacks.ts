@@ -137,7 +137,7 @@ const LEGACY_DEFAULT_PACK_SOUND: Record<string, string> = {
 }
 
 /** Curated `peon` / `sc_marine` id prefixes → CESP category. */
-const LEGACY_PREFIX_CATEGORY: Array<[string, string]> = [
+const LEGACY_PREFIX_CATEGORY: [string, string][] = [
   ['session-start-', 'session-start'],
   ['session-end-', 'session-end'],
   ['task-acknowledge-', 'task-acknowledge'],

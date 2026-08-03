@@ -3,6 +3,11 @@ import { cpSync, existsSync, mkdirSync, mkdtempSync, writeFileSync } from 'fs'
 import { tmpdir } from 'os'
 import { join } from 'path'
 import { E2E } from './e2e'
+// Console-only sinks. `logError` is deliberately NOT used in this module (it writes into the
+// userData dir this module is still deciding); these three just forward to `console.*`
+// verbatim, resolve nothing, and have no module-scope side effects — so importing them here
+// cannot disturb the first-import law that puts channel.ts ahead of electron-store.
+import { logConsoleError, logInfo } from './errorLog'
 
 /**
  * CHANNEL ISOLATION (Task #58) — the FIRST module index.ts imports.
@@ -88,8 +93,9 @@ function seedFromLegacy(target: string, legacy: string): string[] {
       JSON.stringify({ from: legacy, at: new Date().toISOString(), copied }, null, 2)
     )
   } catch (err) {
-    // errorLog.ts can't be used here (it resolves userData, which we're still deciding).
-    console.error(`[everquest-companion] userData seed from ${legacy} failed:`, err)
+    // errorLog.ts's FILE sink can't be used here (it resolves userData, which we're still
+    // deciding) — only its console passthrough.
+    logConsoleError(`[everquest-companion] userData seed from ${legacy} failed:`, err)
   }
   return copied
 }
@@ -100,7 +106,7 @@ function resolveUserData(): string {
     // The harness passes EQ_E2E_USER_DATA (a fixed path it wipes per run, so runs don't
     // litter temp); a bare `EQ_E2E=1` launch gets its own throwaway dir. No seeding ever —
     // a test run must start from nothing and can never read the user's real state.
-    const given = process.env['EQ_E2E_USER_DATA']
+    const given = process.env.EQ_E2E_USER_DATA
     if (given) {
       mkdirSync(given, { recursive: true })
       return given
@@ -111,7 +117,7 @@ function resolveUserData(): string {
   const target = join(base, CHANNEL === 'prod' ? PROD_DIR_NAME : DEV_DIR_NAME)
   const copied = seedFromLegacy(target, join(base, LEGACY_DIR_NAME))
   if (copied.length > 0) {
-    console.log(
+    logInfo(
       `[everquest-companion] First launch on the '${CHANNEL}' channel: copied ${copied.length} state entries from ${LEGACY_DIR_NAME}\\ → ${target} (${copied.join(', ')}). The old dir is left untouched as a backup.`
     )
   }
@@ -122,4 +128,4 @@ function resolveUserData(): string {
 export const USER_DATA = resolveUserData()
 
 app.setPath('userData', USER_DATA)
-console.log(`[everquest-companion] channel=${CHANNEL} userData=${USER_DATA}`)
+logInfo(`[everquest-companion] channel=${CHANNEL} userData=${USER_DATA}`)

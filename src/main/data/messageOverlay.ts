@@ -86,6 +86,37 @@ function messageMatchesOtherSuffix(text: string, suffix: string): boolean {
   return text.endsWith(tail) && text.length > tail.length
 }
 
+/** A derived verdict for one message, plus the wiki disagreement when there is one. */
+interface VerdictResult {
+  verdict: OverlayVerdict
+  wikiConflict?: { spell: string; wikiText: string }
+}
+
+/**
+ * The LANDING half of verdictFor: the message was unambiguously anchored to the single spell
+ * `spellDisplay`, and the DB knows that spell. Split out of verdictFor only to keep each
+ * function's branch count in range — the tests below run in the exact same order as before.
+ *
+ * A landing line can be the SELF form (msg_cast_on_you) OR the on-OTHER form (the
+ * wiki's "Someone <suffix>" → the log names the target, so we match by suffix). If
+ * the observed line matches EITHER wiki form for this spell, it is CONSISTENT with
+ * the wiki — not a contradiction. Only a line matching NEITHER (while the spell was
+ * unambiguously the anchor) is a genuine wiki inaccuracy (e.g. Symbol of Pinzarn).
+ */
+function landingVerdict(rec: MessageRecord, spellDisplay: string, dbSpell: SpellEntry): VerdictResult {
+  const you = dbSpell.msgCastOnYou
+  if (you && you === rec.text) return { verdict: 'verified' }
+  const otherSuffix = dbSpell.msgCastOnOther ? castOnOtherSuffix(dbSpell.msgCastOnOther) : null
+  if (otherSuffix && messageMatchesOtherSuffix(rec.text, otherSuffix)) {
+    return { verdict: 'verified' }
+  }
+  // The DB has a self message for this spell but we observed a DIFFERENT self-shaped
+  // line → contradiction. If the DB has NO self message at all, treat it as a newly
+  // VERIFIED landing message (a variation the wiki simply omits), not a contradiction.
+  if (you) return { verdict: 'contradicts-wiki', wikiConflict: { spell: spellDisplay, wikiText: you } }
+  return { verdict: 'verified' }
+}
+
 /**
  * The mining accumulator + verdict derivation. Deliberately dependency-free and pure over
  * its inputs so it can run identically in a replay-only generator script and in the live
@@ -160,10 +191,7 @@ export class MessageOverlayMiner {
   }
 
   /** Derive a message's verdict from its per-spell counts + the DB (for contradictions). */
-  private verdictFor(rec: MessageRecord): {
-    verdict: OverlayVerdict
-    wikiConflict?: { spell: string; wikiText: string }
-  } {
+  private verdictFor(rec: MessageRecord): VerdictResult {
     const spells = [...rec.bySpell.values()]
     const total = spells.reduce((a, s) => a + s.count, 0)
     const distinct = spells.length
@@ -174,24 +202,7 @@ export class MessageOverlayMiner {
     const only = spells[0]
     const dbSpell = this.spellsByKey?.get(canonKey(only.display))
     if (dbSpell) {
-      if (rec.role === 'landing') {
-        // A landing line can be the SELF form (msg_cast_on_you) OR the on-OTHER form (the
-        // wiki's "Someone <suffix>" → the log names the target, so we match by suffix). If
-        // the observed line matches EITHER wiki form for this spell, it is CONSISTENT with
-        // the wiki — not a contradiction. Only a line matching NEITHER (while the spell was
-        // unambiguously the anchor) is a genuine wiki inaccuracy (e.g. Symbol of Pinzarn).
-        const you = dbSpell.msgCastOnYou
-        if (you && you === rec.text) return { verdict: 'verified' }
-        const otherSuffix = dbSpell.msgCastOnOther ? castOnOtherSuffix(dbSpell.msgCastOnOther) : null
-        if (otherSuffix && messageMatchesOtherSuffix(rec.text, otherSuffix)) {
-          return { verdict: 'verified' }
-        }
-        // The DB has a self message for this spell but we observed a DIFFERENT self-shaped
-        // line → contradiction. If the DB has NO self message at all, treat it as a newly
-        // VERIFIED landing message (a variation the wiki simply omits), not a contradiction.
-        if (you) return { verdict: 'contradicts-wiki', wikiConflict: { spell: only.display, wikiText: you } }
-        return { verdict: 'verified' }
-      }
+      if (rec.role === 'landing') return landingVerdict(rec, only.display, dbSpell)
       // wears-off role.
       const wikiText = dbSpell.msgWearsOff
       if (wikiText && wikiText !== rec.text) {

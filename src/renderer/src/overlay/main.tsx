@@ -18,13 +18,18 @@ import { isHealOverlayKind } from '@shared/types'
 //   everything else                   → the damage meter (fight / zone selection lives inside)
 const kind = window.eqOverlay?.kind ?? 'fight'
 
-function Surface(): JSX.Element {
+function Surface(): React.JSX.Element {
   if (kind === 'events') return <EventLogOverlay />
   if (isHealOverlayKind(kind)) return <HealMeter />
   return <OverlayMeter />
 }
 
-ReactDOM.createRoot(document.getElementById('overlay-root') as HTMLElement).render(
+// overlay.html always carries #overlay-root; fail loudly rather than letting
+// createRoot throw a container error nobody can trace back.
+const container = document.getElementById('overlay-root')
+if (!container) throw new Error('overlay: #overlay-root container missing from overlay.html')
+
+ReactDOM.createRoot(container).render(
   <React.StrictMode>
     <Surface />
   </React.StrictMode>

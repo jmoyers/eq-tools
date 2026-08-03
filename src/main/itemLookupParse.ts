@@ -192,6 +192,34 @@ function bulletLines(block: string): string[] {
     .filter(Boolean)
 }
 
+/** The shared tail of both tradeskill parsers: the prose fallback fires ONLY when nothing
+ *  structured was read, and `note` is left OFF the object rather than set to undefined. */
+function withNote<T>(recipes: T[], leftovers: string[]): { recipes: T[]; note?: string } {
+  const note = recipes.length === 0 && leftovers.length > 0 ? cleanSummary(leftovers.join(' ')) : undefined
+  return note ? { recipes, note } : { recipes }
+}
+
+/** The tradeskill a `*` heading names. Usually a link ([[Baking]]); a bare word is accepted
+ *  too, and a heading with neither leaves the current tradeskill unnamed. */
+function headingTradeskill(body: string, link: { page: string; label: string } | null): string | undefined {
+  return link?.label ?? (body.replace(TRIVIAL_RE, '').trim() || undefined)
+}
+
+/** One `**` recipe entry of `|recipes`: the linked recipe, its tradeskill heading and the
+ *  trivial stated on the line. `page` only when the link was piped. */
+function recipeFromLine(
+  body: string,
+  link: { page: string; label: string },
+  tradeskill: string | undefined
+): ItemRecipeUse {
+  const trivialM = TRIVIAL_RE.exec(body)
+  const use: ItemRecipeUse = { recipe: link.label }
+  if (link.page !== link.label) use.page = link.page
+  if (tradeskill) use.tradeskill = tradeskill
+  if (trivialM) use.trivial = Number(trivialM[1])
+  return use
+}
+
 /**
  * Parse `|recipes` — the recipes that CONSUME this item. Two-level bullets: `*` names the
  * tradeskill, `**` a recipe (`[[Name]] (Trivial: N)`). A flat single-level list (no `**`
@@ -215,25 +243,66 @@ export function parseRecipeUses(block: string): { recipes: ItemRecipeUse[]; note
     const link = firstLink(body)
     if (!sub && nested) {
       // A tradeskill heading. Usually a link ([[Baking]]); a bare word is accepted too.
-      tradeskill = link?.label ?? (body.replace(TRIVIAL_RE, '').trim() || undefined)
+      tradeskill = headingTradeskill(body, link)
       continue
     }
     if (!link) {
       leftovers.push(body)
       continue
     }
-    const trivialM = TRIVIAL_RE.exec(body)
-    const use: ItemRecipeUse = { recipe: link.label }
-    if (link.page !== link.label) use.page = link.page
-    if (tradeskill) use.tradeskill = tradeskill
-    if (trivialM) use.trivial = Number(trivialM[1])
+    const use = recipeFromLine(body, link, tradeskill)
     if (!recipes.some((r) => r.recipe === use.recipe && r.tradeskill === use.tradeskill)) {
       recipes.push(use)
     }
   }
 
-  const note = recipes.length === 0 && leftovers.length > 0 ? cleanSummary(leftovers.join(' ')) : undefined
-  return note ? { recipes, note } : { recipes }
+  return withNote(recipes, leftovers)
+}
+
+/** One `::` ingredient row's item, quantity and source list. Null when the row names no
+ *  item — we never invent an ingredient. */
+function parseIngredientRow(body: string): { name: string; qty?: number; sources?: string[] } | null {
+  const link = firstLink(body)
+  if (!link) return null
+  const ing: { name: string; qty?: number; sources?: string[] } = { name: link.label }
+  const qty = /(\d+)\s*x\s*\[\[/.exec(body)
+  if (qty) ing.qty = Number(qty[1])
+  // " - Bought, Dropped" trails the link; read it only AFTER the link so an item name
+  // containing a dash can't be mistaken for the source list.
+  const close = body.indexOf(']]')
+  const tail = close >= 0 ? /^\s*-\s*(.+)$/.exec(body.slice(close + 2)) : null
+  const sources = tail ? tail[1].split(',').map((s) => s.trim()).filter(Boolean) : []
+  if (sources.length > 0) ing.sources = sources
+  return ing
+}
+
+/** Attach a `::` ingredient row to the open recipe. With no recipe open the row's text is
+ *  kept as prose instead (it is not an ingredient of anything we read). */
+function readIngredientRow(line: string, cur: ItemCraftRecipe | null, leftovers: string[]): void {
+  const body = line.replace(/^:+\s*/, '').replace(/\{\{[^}]*\}\}/g, '').trim()
+  if (!cur) {
+    if (body) leftovers.push(body)
+    return
+  }
+  const ing = parseIngredientRow(body)
+  if (ing) cur.ingredients.push(ing)
+}
+
+/** A `**` detail line of the open recipe: `'''Yield: X''' xN` or `In [[Container]]:`.
+ *  Anything else — or any such line with no recipe open — is prose. */
+function readCraftDetail(body: string, cur: ItemCraftRecipe | null, leftovers: string[]): void {
+  const y = /^'''\s*Yield:\s*(.+?)\s*'''(?:\s*x\s*(\d+))?/i.exec(body)
+  if (y && cur) {
+    cur.yieldItem = y[1]
+    if (y[2]) cur.yieldQty = Number(y[2])
+    return
+  }
+  const inCont = /^In\s+(.+?):?\s*$/i.exec(body)
+  if (inCont && cur) {
+    cur.container = firstLink(inCont[1])?.label ?? inCont[1].replace(/:$/, '').trim()
+    return
+  }
+  if (!cur && body) leftovers.push(body)
 }
 
 /**
@@ -250,22 +319,7 @@ export function parseCraftRecipes(block: string): { recipes: ItemCraftRecipe[]; 
   for (const line of bulletLines(block)) {
     // Ingredient row.
     if (line.startsWith('::')) {
-      const body = line.replace(/^:+\s*/, '').replace(/\{\{[^}]*\}\}/g, '').trim()
-      const link = firstLink(body)
-      if (!cur || !link) {
-        if (!cur && body) leftovers.push(body)
-        continue
-      }
-      const ing: { name: string; qty?: number; sources?: string[] } = { name: link.label }
-      const qty = /(\d+)\s*x\s*\[\[/.exec(body)
-      if (qty) ing.qty = Number(qty[1])
-      // " - Bought, Dropped" trails the link; read it only AFTER the link so an item name
-      // containing a dash can't be mistaken for the source list.
-      const close = body.indexOf(']]')
-      const tail = close >= 0 ? /^\s*-\s*(.+)$/.exec(body.slice(close + 2)) : null
-      const sources = tail ? tail[1].split(',').map((s) => s.trim()).filter(Boolean) : []
-      if (sources.length > 0) ing.sources = sources
-      cur.ingredients.push(ing)
+      readIngredientRow(line, cur, leftovers)
       continue
     }
     if (!line.startsWith('*')) {
@@ -274,18 +328,7 @@ export function parseCraftRecipes(block: string): { recipes: ItemCraftRecipe[]; 
     }
     const body = line.replace(/^\*+\s*/, '')
     if (line.startsWith('**')) {
-      const y = /^'''\s*Yield:\s*(.+?)\s*'''(?:\s*x\s*(\d+))?/i.exec(body)
-      if (y && cur) {
-        cur.yieldItem = y[1]
-        if (y[2]) cur.yieldQty = Number(y[2])
-        continue
-      }
-      const inCont = /^In\s+(.+?):?\s*$/i.exec(body)
-      if (inCont && cur) {
-        cur.container = firstLink(inCont[1])?.label ?? inCont[1].replace(/:$/, '').trim()
-        continue
-      }
-      if (!cur && body) leftovers.push(body)
+      readCraftDetail(body, cur, leftovers)
       continue
     }
     // Top-level bullet = a new recipe, but ONLY when it names a tradeskill by link.
@@ -301,8 +344,7 @@ export function parseCraftRecipes(block: string): { recipes: ItemCraftRecipe[]; 
     recipes.push(cur)
   }
 
-  const note = recipes.length === 0 && leftovers.length > 0 ? cleanSummary(leftovers.join(' ')) : undefined
-  return note ? { recipes, note } : { recipes }
+  return withNote(recipes, leftovers)
 }
 
 /** Collapse a `notes` field to a single trimmed prose line (strips wiki markup, caps length). */
@@ -319,6 +361,42 @@ export function cleanSummary(notes: string): string | undefined {
   const firstSentence = text.split(/(?<=\.)\s/)[0]
   const s = (firstSentence.length <= 200 ? firstSentence : text.slice(0, 200)).trim()
   return s || undefined
+}
+
+/** The game item WINDOW's structure for a stats block, with `|focus_effect` folded in. */
+function buildStats(statsBlock: string, focusRaw: string | null): ItemStatBlock {
+  const stats = parseStatsBlock(statsBlock)
+  // `|focus_effect` lives OUTSIDE the stats block (Djarn's Amethyst Ring, Golden
+  // Efreeti Boots) but the game window shows it as just another effect line.
+  const focus = focusRaw ? cleanSummary(focusRaw) : undefined
+  if (focus && !stats.effects.some((e) => e.kind === 'focus')) {
+    stats.effects.push({ kind: 'focus', name: focus })
+  }
+  return stats
+}
+
+/** `|lucy_img_ID` → File:Item <id>.png. A bare integer or nothing at all. */
+function parseIconId(iconRaw: string | null): number | undefined {
+  return iconRaw && /^\d+$/.test(iconRaw.trim()) ? Number(iconRaw.trim()) : undefined
+}
+
+/**
+ * The tradeskill half of the result. Every field is `undefined` — never an empty list, never
+ * a bare `false` — unless the page actually carried a STRUCTURED recipe: `playerCrafted` in
+ * particular is asserted only from a parsed craft recipe, and prose-only `|playercrafted`
+ * ("Non-Tradeskill (Quest)") is reported as `craftedNote` and nothing more.
+ */
+function tradeskillFields(
+  recipeParse: { recipes: ItemRecipeUse[]; note?: string } | null,
+  craftParse: { recipes: ItemCraftRecipe[]; note?: string } | null
+): Pick<ItemKnowledge, 'recipes' | 'recipesNote' | 'playerCrafted' | 'craftedBy' | 'craftedNote'> {
+  return {
+    recipes: recipeParse && recipeParse.recipes.length > 0 ? recipeParse.recipes : undefined,
+    recipesNote: recipeParse?.note,
+    playerCrafted: craftParse && craftParse.recipes.length > 0 ? true : undefined,
+    craftedBy: craftParse && craftParse.recipes.length > 0 ? craftParse.recipes : undefined,
+    craftedNote: craftParse?.note
+  }
 }
 
 /**
@@ -366,18 +444,9 @@ export function parseItemWikitext(
   const quest = questFlag || questUses.length > 0
   const summary = notesRaw ? cleanSummary(notesRaw) : undefined
 
-  let stats: ItemStatBlock | undefined
-  if (statsBlock) {
-    stats = parseStatsBlock(statsBlock)
-    // `|focus_effect` lives OUTSIDE the stats block (Djarn's Amethyst Ring, Golden
-    // Efreeti Boots) but the game window shows it as just another effect line.
-    const focus = focusRaw ? cleanSummary(focusRaw) : undefined
-    if (focus && !stats.effects.some((e) => e.kind === 'focus')) {
-      stats.effects.push({ kind: 'focus', name: focus })
-    }
-  }
+  const stats: ItemStatBlock | undefined = statsBlock ? buildStats(statsBlock, focusRaw) : undefined
 
-  const iconId = iconRaw && /^\d+$/.test(iconRaw.trim()) ? Number(iconRaw.trim()) : undefined
+  const iconId = parseIconId(iconRaw)
 
   // Tradeskill knowledge. `playerCrafted` is asserted only from a STRUCTURED craft recipe;
   // a prose-only `|playercrafted` ("Non-Tradeskill (Quest)") is reported as craftedNote and
@@ -392,11 +461,7 @@ export function parseItemWikitext(
     summary,
     stats,
     iconId,
-    recipes: recipeParse && recipeParse.recipes.length > 0 ? recipeParse.recipes : undefined,
-    recipesNote: recipeParse?.note,
-    playerCrafted: craftParse && craftParse.recipes.length > 0 ? true : undefined,
-    craftedBy: craftParse && craftParse.recipes.length > 0 ? craftParse.recipes : undefined,
-    craftedNote: craftParse?.note,
+    ...tradeskillFields(recipeParse, craftParse),
     statsBlock: statsBlock
       ? statsBlock.replace(/<br\s*\/?>/gi, '\n').replace(/[ \t]{2,}/g, ' ').trim()
       : undefined

@@ -81,17 +81,15 @@ export function tokenize(text: string): string[] {
  * which are already past any budget above.
  */
 export function damerauLevenshtein(a: string, b: string, max: number): number {
+  const trivial = trivialDistance(a, b, max)
+  if (trivial !== null) return trivial
+
   const al = a.length
   const bl = b.length
-  if (a === b) return 0
-  if (Math.abs(al - bl) > max) return max + 1
-  if (al === 0) return bl
-  if (bl === 0) return al
-
   // Three rolling rows (prev-prev is what makes the transposition step possible).
   let prev2: number[] = []
-  let prev: number[] = new Array(bl + 1)
-  let cur: number[] = new Array(bl + 1)
+  let prev: number[] = new Array<number>(bl + 1)
+  let cur: number[] = new Array<number>(bl + 1)
   for (let j = 0; j <= bl; j++) prev[j] = j
 
   for (let i = 1; i <= al; i++) {
@@ -101,14 +99,7 @@ export function damerauLevenshtein(a: string, b: string, max: number): number {
     for (let j = 1; j <= bl; j++) {
       const cost = ca === b.charCodeAt(j - 1) ? 0 : 1
       let v = Math.min(cur[j - 1] + 1, prev[j] + 1, prev[j - 1] + cost)
-      if (
-        i > 1 &&
-        j > 1 &&
-        ca === b.charCodeAt(j - 2) &&
-        a.charCodeAt(i - 2) === b.charCodeAt(j - 1)
-      ) {
-        v = Math.min(v, prev2[j - 2] + 1)
-      }
+      if (isTransposition(a, b, i, j)) v = Math.min(v, prev2[j - 2] + 1)
       cur[j] = v
       if (v < rowMin) rowMin = v
     }
@@ -118,10 +109,35 @@ export function damerauLevenshtein(a: string, b: string, max: number): number {
     const spare = prev2
     prev2 = prev
     prev = cur
-    cur = spare.length === bl + 1 ? spare : new Array(bl + 1)
+    cur = spare.length === bl + 1 ? spare : new Array<number>(bl + 1)
   }
   const d = prev[bl]
   return d > max ? max + 1 : d
+}
+
+/**
+ * The answers that need no matrix at all: identical strings, a length gap already past the
+ * budget, and either side empty. `null` means "the matrix is required".
+ */
+function trivialDistance(a: string, b: string, max: number): number | null {
+  if (a === b) return 0
+  if (Math.abs(a.length - b.length) > max) return max + 1
+  if (a.length === 0) return b.length
+  if (b.length === 0) return a.length
+  return null
+}
+
+/**
+ * True when cells (i,j) sit on a swapped pair — `a[i-2]a[i-1]` equals `b[j-1]b[j-2]` — which is
+ * the OSA transposition step (one edit for the swap, and the pair may not be edited again).
+ */
+function isTransposition(a: string, b: string, i: number, j: number): boolean {
+  return (
+    i > 1 &&
+    j > 1 &&
+    a.charCodeAt(i - 1) === b.charCodeAt(j - 2) &&
+    a.charCodeAt(i - 2) === b.charCodeAt(j - 1)
+  )
 }
 
 /**

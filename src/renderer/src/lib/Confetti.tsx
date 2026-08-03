@@ -3,7 +3,7 @@
 // calls onDone so the caller can unmount it. Colors are the app's tier palette so
 // it reads on the dark theme. Keyed by the caller (e.g. burst id) to replay.
 
-import { useEffect, useRef } from 'react'
+import { type JSX, useEffect, useRef } from 'react'
 
 const COLORS = ['#5fbf72', '#6fb3d2', '#b07fd0', '#e0a94a', '#d9b25f', '#ffffff']
 const DURATION_MS = 3000

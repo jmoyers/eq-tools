@@ -13,7 +13,10 @@ import { SOURCES, getSource } from './sources'
 async function main(): Promise<void> {
   const args = process.argv.slice(2)
   const flagIdx = args.indexOf('--source')
-  const sourceId = (flagIdx >= 0 ? args[flagIdx + 1] : process.env.EQ_SOURCE) || 'eqlegends'
+  // Absent OR empty (`--source ""`, `EQ_SOURCE=`) both mean "not specified" — hence the
+  // emptiness test rather than a bare nullish fallback.
+  const requested = (flagIdx >= 0 ? args[flagIdx + 1] : process.env.EQ_SOURCE) ?? ''
+  const sourceId = requested.length > 0 ? requested : 'eqlegends'
 
   const source = getSource(sourceId)
   if (!source) {

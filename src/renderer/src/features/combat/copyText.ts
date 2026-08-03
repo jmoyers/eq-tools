@@ -22,7 +22,7 @@
 //   panel    formatMobsText     — the Damage-by-mob card's ranked rows
 //   panel    formatProcsText    — the Procs tab (rogue poisons, Task #64)
 
-import type { SegmentView, SlowRollup, SourceView } from '@shared/combat'
+import type { ProcsView, SegmentView, SlowRollup, SourceView } from '@shared/combat'
 import { flattenSkills, type MobBreakdown, type SkillRow, type TargetDetail } from './dashboardData'
 import { formatNum, formatRate } from '../../lib/formatRate'
 
@@ -155,25 +155,23 @@ function statLines(parts: string[]): string[] {
  * outgoing numbers. Optional columns appear only when some row HAS that data — a fight with no
  * avoided swings has no Hit column at all, rather than a column of '100%'.
  */
-export function formatSegmentText(seg: SegmentView, mode: 'out' | 'in'): string {
-  const rows = mode === 'out' ? seg.entities : seg.incoming
+/**
+ * The header stat run: direction, total, dps. Active-time DPS rides along under exactly the
+ * panel's condition (outgoing only, and only when the fight actually had idle gaps — otherwise
+ * it is the same number twice), and so does the enemy-heal caveat.
+ */
+function segmentStats(seg: SegmentView, mode: 'out' | 'in'): string[] {
   const total = mode === 'out' ? seg.outTotal : seg.inTotal
   const dps = mode === 'out' ? seg.outDps : seg.inDps
-
-  // Active-time DPS rides along under exactly the panel's condition (outgoing only, and only
-  // when the fight actually had idle gaps — otherwise it is the same number twice).
   const act =
     mode === 'out' && seg.activeSec > 0 && seg.activeSec < seg.durationSec ? ` (act ${formatRate(seg.activeDps)})` : ''
   const stats = [`${mode === 'out' ? 'Outgoing' : 'Incoming'} damage`, formatNum(total), `${formatRate(dps)}${act}`]
   if (mode === 'out' && seg.enemyHealTotal > 0) stats.push(`+${formatNum(seg.enemyHealTotal)} enemy heal`)
+  return stats
+}
 
-  const out: string[] = [subjectLine(null, seg), ...statLines(stats)]
-
-  if (rows.length === 0) {
-    out.push(mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.')
-    return out.join('\n')
-  }
-
+/** The ranked source table. Optional columns appear only when some row HAS that data. */
+function sourceTable(rows: SourceView[], mode: 'out' | 'in'): string[] {
   const showCrit = rows.some((r) => r.crits > 0)
   const showHit = rows.some((r) => r.misses > 0)
   const showResist = rows.some((r) => r.resists > 0)
@@ -187,26 +185,38 @@ export function formatSegmentText(seg: SegmentView, mode: 'out' | 'in'): string 
   if (showHit) cols.push({ header: 'Hit', align: 'right' })
   if (showResist) cols.push({ header: 'Resist', align: 'right' })
 
-  out.push(
-    '',
-    ...table(
-      cols,
-      rows.map((e, i) => {
-        const cells = [String(i + 1), sourceName(e), formatNum(e.total), formatRate(e.dps)]
-        if (showCrit) cells.push(e.crits > 0 ? pctText(e.critPct) : '')
-        // Same omission the meter row makes: hit% is only meaningful once a swing was avoided.
-        if (showHit) cells.push(e.misses > 0 ? pctText(e.hitPct) : '')
-        if (showResist) cells.push(e.resists > 0 ? pctText(e.resistPct) : '')
-        return cells
-      })
-    )
+  return table(
+    cols,
+    rows.map((e, i) => {
+      const cells = [String(i + 1), sourceName(e), formatNum(e.total), formatRate(e.dps)]
+      if (showCrit) cells.push(e.crits > 0 ? pctText(e.critPct) : '')
+      // Same omission the meter row makes: hit% is only meaningful once a swing was avoided.
+      if (showHit) cells.push(e.misses > 0 ? pctText(e.hitPct) : '')
+      if (showResist) cells.push(e.resists > 0 ? pctText(e.resistPct) : '')
+      return cells
+    })
   )
+}
 
-  // The incoming view's healing footer, exactly as the panel appends it under the list.
-  if (mode === 'in' && seg.incomingHealTotal > 0) {
-    out.push('', `Heals received: ${formatNum(seg.incomingHealTotal)}`)
-    for (const h of seg.incomingHealers.slice(0, 4)) out.push(`  ${h.name} · ${formatNum(h.total)} (${h.count})`)
+/** The incoming view's healing footer, exactly as the panel appends it under the list. */
+function healFooter(seg: SegmentView): string[] {
+  if (seg.incomingHealTotal <= 0) return []
+  const out = ['', `Heals received: ${formatNum(seg.incomingHealTotal)}`]
+  for (const h of seg.incomingHealers.slice(0, 4)) out.push(`  ${h.name} · ${formatNum(h.total)} (${h.count})`)
+  return out
+}
+
+export function formatSegmentText(seg: SegmentView, mode: 'out' | 'in'): string {
+  const rows = mode === 'out' ? seg.entities : seg.incoming
+  const out: string[] = [subjectLine(null, seg), ...statLines(segmentStats(seg, mode))]
+
+  if (rows.length === 0) {
+    out.push(mode === 'out' ? 'No outgoing damage in this segment.' : 'No incoming damage in this segment.')
+    return out.join('\n')
   }
+
+  out.push('', ...sourceTable(rows, mode))
+  if (mode === 'in') out.push(...healFooter(seg))
   return out.join('\n')
 }
 
@@ -404,25 +414,34 @@ export function slowRollupText(slow: SlowRollup): string | null {
  * the Cancel Magic family's line, and pasting a bare "Dispels 4" into guild chat under a
  * rogue's name would read as a claim the log does not support.
  */
-export function formatProcsText(seg: SegmentView, slow?: SlowRollup): string {
-  const p = seg.procs
-  const out = [subjectLine('Procs', seg)]
-
+/** What was on the blades at engage — also the test for whether slow is even relevant. */
+function coatParts(p: ProcsView): string[] {
   const coat: string[] = []
   if (p.coatAtEngage) coat.push(`coat ${p.coatAtEngage.poison}`)
   if (p.combatAtEngage.length) coat.push(`venoms ${p.combatAtEngage.map((c) => c.poison).join(', ')}`)
-  if (coat.length) out.push(...statLines(coat))
+  return coat
+}
 
-  // The slow line, which is the point of the tab. "not landed" and "no slow poison" are
-  // different facts and are never collapsed into one phrase.
+/**
+ * The slow lines, which are the point of the tab. "not landed" and "no slow poison" are
+ * different facts and are never collapsed into one phrase; the third case is only worth saying
+ * when SOME poison was actually on, since on a fight with bare blades the whole feature is
+ * beside the point (the block then falls through to its empty note).
+ */
+function slowLines(seg: SegmentView, hasCoat: boolean, slow?: SlowRollup): string[] {
+  const p = seg.procs
+  const out: string[] = []
   if (p.slowLandMs !== undefined) out.push(`Slow landed at ${fmtElapsed(p.slowLandMs)}${p.slowLands > 1 ? ` (${p.slowLands} total)` : ''}`)
   else if (p.slowExpected) out.push('Slow: not landed (a slow-capable coat was on)')
-  // Only worth saying when SOME poison was actually on: on a fight with bare blades the whole
-  // feature is beside the point, and the block falls through to its empty note instead.
-  else if (seg.kind === 'fight' && coat.length > 0) out.push('Slow: no slow-capable coat was on for this fight')
+  else if (seg.kind === 'fight' && hasCoat) out.push('Slow: no slow-capable coat was on for this fight')
   const rolling = slow ? slowRollupText(slow) : null
   if (rolling) out.push(`Rolling: ${rolling}`)
+  return out
+}
 
+/** The three per-lane proc tables, each emitted only when it has rows. */
+function procTables(p: ProcsView): string[] {
+  const out: string[] = []
   if (p.strikes.length) {
     out.push('', ...table(
       [{ header: 'Poison proc', align: 'left' }, { header: 'Count', align: 'right' }],
@@ -442,14 +461,29 @@ export function formatProcsText(seg: SegmentView, slow?: SlowRollup): string {
     ))
     out.push('Dispel lines name no caster — any class or NPC can print them.')
   }
+  return out
+}
 
+/** Switch counts + the coat timeline — the trailing "what changed" run. */
+function procMiscLines(p: ProcsView): string[] {
   const misc: string[] = []
   // `count()` pluralizes with a bare 's', which is wrong for "switch" — spelled out here.
   const switches = (n: number, what: string): string => `${n} ${what} switch${n === 1 ? '' : 'es'}`
   if (p.stanceSwitches > 0) misc.push(switches(p.stanceSwitches, 'stance'))
   if (p.invocationSwitches > 0) misc.push(switches(p.invocationSwitches, 'invocation'))
   for (const c of p.coats) misc.push(`coated ${c.poison} @ ${fmtElapsed(c.tMs)}`)
-  if (misc.length) out.push('', ...statLines(misc))
+  return misc.length ? ['', ...statLines(misc)] : []
+}
+
+export function formatProcsText(seg: SegmentView, slow?: SlowRollup): string {
+  const p = seg.procs
+  const out = [subjectLine('Procs', seg)]
+
+  const coat = coatParts(p)
+  if (coat.length) out.push(...statLines(coat))
+  out.push(...slowLines(seg, coat.length > 0, slow))
+  out.push(...procTables(p))
+  out.push(...procMiscLines(p))
 
   if (out.length === 1) out.push('No procs recorded in this segment.')
   return out.join('\n')

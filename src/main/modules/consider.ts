@@ -124,7 +124,15 @@ export class ConsiderModule implements EqModule<ConsiderSnap, ConsiderDelta> {
       return
     }
     if (ev.kind !== 'consider') return
+    this.foldConsider(ev, live)
+  }
 
+  /**
+   * Fold ONE `consider` line into the ring: upsert the mob's single row (moving it to the front
+   * and bumping `cons`), evict past the cap, and enrich when live. Split out of onEvent purely
+   * to keep each method's branch count in range; the order of every step is unchanged.
+   */
+  private foldConsider(ev: Extract<LogEvent, { kind: 'consider' }>, live: boolean): void {
     const id = mobKey(ev.mob)
     if (!id) return
     const prev = this.byId.get(id)

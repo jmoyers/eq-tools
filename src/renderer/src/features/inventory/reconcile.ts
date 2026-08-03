@@ -38,37 +38,49 @@ export interface ReconcileResult {
 }
 
 /**
- * Reconcile held items from the loot log and the inventory export, then subtract
- * everything consumed by quests the user has marked as turned in — so a drop that
- * was handed in for one quest no longer counts toward another quest that needs it.
+ * Re-key the inventory-export counts onto the normalized counting key so a
+ * `Sphinx Claw +1` in the export pools with a base `Sphinx Claw` (Task #42). The
+ * `log` map arrives already normalized (useProgress.logCounts), but the raw
+ * inventory export names do not, so fold them here (summing collisions).
+ *
+ * `nameByKey` is filled in place — display names are claimed first-writer-wins, and
+ * the call order in `reconcile` (loot names, then export names, then quest item
+ * names) is what decides which spelling the user sees.
  */
-export function reconcile(input: ReconcileInput): ReconcileResult {
-  const { log, inv, lootNames, countSource, completedKeys, quests } = input
-  const completed = new Set(completedKeys)
-
-  const nameByKey: Record<string, string> = { ...lootNames }
-
-  // Re-key the inventory-export counts onto the normalized counting key so a
-  // `Sphinx Claw +1` in the export pools with a base `Sphinx Claw` (Task #42). The
-  // `log` map arrives already normalized (useProgress.logCounts), but the raw
-  // inventory export names do not, so fold them here (summing collisions).
+function foldInventoryByKey(
+  inv: Record<string, number>,
+  nameByKey: Record<string, string>
+): Record<string, number> {
   const invByKey: Record<string, number> = {}
   for (const [rawK, n] of Object.entries(inv)) {
     const k = itemCountKey(rawK)
     invByKey[k] = (invByKey[k] ?? 0) + n
     nameByKey[k] ??= rawK
   }
+  return invByKey
+}
 
-  // base held per the active source
+/** Base held count per key, per the active count source. */
+function baseCounts(
+  log: Record<string, number>,
+  invByKey: Record<string, number>,
+  countSource: CountSource
+): Record<string, number> {
   const base: Record<string, number> = {}
-  const keysUnion = new Set([...Object.keys(log), ...Object.keys(invByKey)])
-  for (const k of keysUnion) {
+  for (const k of new Set([...Object.keys(log), ...Object.keys(invByKey)])) {
     const l = log[k] ?? 0
     const i = invByKey[k] ?? 0
     base[k] = countSource === 'log' ? l : countSource === 'inventory' ? i : Math.max(l, i)
   }
+  return base
+}
 
-  // consumption from turned-in quests
+/** What the turned-in quests ate: counts per item key, plus the quest names that ate it. */
+function questConsumption(
+  quests: PoskyQuest[],
+  completed: Set<string>,
+  nameByKey: Record<string, string>
+): { consumed: Record<string, number>; consumedBy: Record<string, string[]> } {
   const consumed: Record<string, number> = {}
   const consumedBy: Record<string, string[]> = {}
   for (const q of quests) {
@@ -81,6 +93,22 @@ export function reconcile(input: ReconcileInput): ReconcileResult {
       nameByKey[k] ??= it.name
     }
   }
+  return { consumed, consumedBy }
+}
+
+/**
+ * Reconcile held items from the loot log and the inventory export, then subtract
+ * everything consumed by quests the user has marked as turned in — so a drop that
+ * was handed in for one quest no longer counts toward another quest that needs it.
+ */
+export function reconcile(input: ReconcileInput): ReconcileResult {
+  const { log, inv, lootNames, countSource, completedKeys, quests } = input
+  const completed = new Set(completedKeys)
+
+  const nameByKey: Record<string, string> = { ...lootNames }
+  const invByKey = foldInventoryByKey(inv, nameByKey)
+  const base = baseCounts(log, invByKey, countSource)
+  const { consumed, consumedBy } = questConsumption(quests, completed, nameByKey)
 
   const net: Record<string, number> = {}
   const allKeys = new Set([...Object.keys(base), ...Object.keys(consumed)])

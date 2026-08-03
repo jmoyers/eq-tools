@@ -11,7 +11,7 @@
 // carries its item level (` +N`). Within-tier item exp is unobservable (no log line
 // reports it), so the meter shows tier position, never a fabricated exp fill.
 
-import { useMemo } from 'react'
+import { type JSX, useMemo } from 'react'
 import { Box, Chip, Stack, Tooltip, Typography } from '@mui/material'
 import {
   EFFECT_LABEL,
@@ -201,6 +201,220 @@ export interface ItemWindowProps {
   observedTier?: number
 }
 
+/** The window shell: the game's frame, or nothing at all on a compact hover surface. */
+function shellSx(compact?: boolean): Record<string, unknown> {
+  return {
+    fontFamily: MONO,
+    bgcolor: compact ? 'transparent' : EQ_ITEM_COLORS.bg,
+    border: compact ? 'none' : `1px solid ${EQ_ITEM_COLORS.border}`,
+    borderRadius: 1,
+    p: compact ? 0.25 : 1.25,
+    minWidth: compact ? 190 : 260
+  }
+}
+
+/** Name (green) + icon. A dead icon URL hides itself; it never leaves a broken-image box. */
+function ItemHeader({
+  name,
+  iconId,
+  compact
+}: {
+  name: string
+  iconId?: number
+  compact?: boolean
+}): JSX.Element {
+  return (
+    <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 0.5 }}>
+      {iconId !== undefined && (
+        <Box
+          component="img"
+          src={itemIconUrl(iconId)}
+          alt=""
+          onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+            e.currentTarget.style.display = 'none'
+          }}
+          sx={{ width: compact ? 22 : 32, height: compact ? 22 : 32, imageRendering: 'pixelated', flexShrink: 0 }}
+        />
+      )}
+      <Typography
+        component="div"
+        sx={{
+          color: EQ_ITEM_COLORS.name,
+          fontWeight: 700,
+          fontSize: compact ? 12.5 : 14,
+          fontFamily: MONO,
+          lineHeight: 1.25
+        }}
+      >
+        {name}
+      </Typography>
+    </Stack>
+  )
+}
+
+/** Flags (white), then class / race / slot — each line exists only when the data does. */
+function IdentityLines({
+  block,
+  compact
+}: {
+  block?: ItemStatBlock
+  compact?: boolean
+}): JSX.Element | null {
+  if (!block) return null
+  return (
+    <>
+      {block.flags.length > 0 && <Line compact={compact}>{block.flags.join(', ')}</Line>}
+      {block.classes && <Line compact={compact}>Class: {block.classes.join(' ')}</Line>}
+      {block.races && <Line compact={compact}>Race: {block.races.join(' ')}</Line>}
+      {block.slot && <Line compact={compact}>{titleSlot(block.slot)}</Line>}
+    </>
+  )
+}
+
+/** Left column = the physical description. */
+function physicalRows(block?: ItemStatBlock): [string, string][] {
+  const left: [string, string][] = []
+  if (block?.size) left.push(['Size', block.size])
+  if (block?.weight) left.push(['Weight', block.weight])
+  if (block?.skill) left.push(['Skill', block.skill])
+  if (block?.range) left.push(['Range', block.range])
+  return left
+}
+
+/** Right column = combat/defense numbers. */
+function combatRows(block?: ItemStatBlock): [string, string][] {
+  const right: [string, string][] = []
+  if (block?.ac !== undefined) right.push(['AC', String(block.ac)])
+  if (block?.dmg !== undefined) right.push(['Base Dmg', String(block.dmg)])
+  if (block?.dmgBonus !== undefined) right.push(['Dmg Bonus', String(block.dmgBonus)])
+  if (block?.atkDelay !== undefined) right.push(['Delay', String(block.atkDelay)])
+  if (block?.backstab !== undefined) right.push(['Backstab', String(block.backstab)])
+  return right
+}
+
+/** Stat grid: physical | combat, with the damage ratio (red) closing the combat column. */
+function StatGrid({ block, compact }: { block?: ItemStatBlock; compact?: boolean }): JSX.Element | null {
+  const left = physicalRows(block)
+  const right = combatRows(block)
+  const ratio = damageRatio(block?.dmg, block?.atkDelay)
+  if (left.length === 0 && right.length === 0) return null
+  return (
+    <Box
+      sx={{
+        mt: 0.75,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        columnGap: 2,
+        alignItems: 'start'
+      }}
+    >
+      <Box>
+        {left.map(([l, v]) => (
+          <Row key={l} label={l} value={v} compact={compact} />
+        ))}
+      </Box>
+      <Box>
+        {right.map(([l, v]) => (
+          <Row key={l} label={l} value={v} compact={compact} />
+        ))}
+        {ratio !== undefined && (
+          <Row label="Ratio" value={ratio.toFixed(1)} color={EQ_ITEM_COLORS.ratio} compact={compact} />
+        )}
+      </Box>
+    </Box>
+  )
+}
+
+/** A two-column key/value grid — used for attributes and, again, for saves. */
+function StatPairs({
+  rows,
+  compact
+}: {
+  rows: { key: string; value: string }[]
+  compact?: boolean
+}): JSX.Element | null {
+  if (rows.length === 0) return null
+  return (
+    <Box sx={{ mt: 0.5, display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 2 }}>
+      {rows.map((s, i) => (
+        <Row key={`${s.key}${i}`} label={statLabel(s.key)} value={s.value} compact={compact} />
+      ))}
+    </Box>
+  )
+}
+
+/** Effects (magenta), with any cast/cooldown timing attached underneath. */
+function EffectsBlock({
+  block,
+  timing,
+  compact
+}: {
+  block?: ItemStatBlock
+  timing: { key: string; value: string }[]
+  compact?: boolean
+}): JSX.Element | null {
+  if (!block || (block.effects.length === 0 && timing.length === 0)) return null
+  return (
+    <Box sx={{ mt: 0.6 }}>
+      {block.effects.map((e, i) => (
+        <Line key={`${e.kind}${i}`} color={EQ_ITEM_COLORS.effect} compact={compact}>
+          {EFFECT_LABEL[e.kind]}: {e.name}
+          {e.reqLevel !== undefined ? ` (Req Level ${e.reqLevel})` : e.detail ? ` (${e.detail})` : ''}
+        </Line>
+      ))}
+      {timing.length > 0 && (
+        <Line color={EQ_ITEM_COLORS.label} compact={compact}>
+          {timing.map((t) => `${statLabel(t.key)}: ${t.value}`).join('   ')}
+        </Line>
+      )}
+    </Box>
+  )
+}
+
+/** Exaltation sockets — ONLY those the source actually described. */
+function ExaltationBlock({
+  block,
+  compact
+}: {
+  block?: ItemStatBlock
+  compact?: boolean
+}): JSX.Element | null {
+  if (!block || block.exaltationSlots.length === 0) return null
+  return (
+    <Box sx={{ mt: 0.6 }}>
+      {block.exaltationSlots.map((s, i) => (
+        <Line
+          key={`${s.type}${i}`}
+          color={s.content ? EQ_ITEM_COLORS.effect : EQ_ITEM_COLORS.label}
+          compact={compact}
+        >
+          {s.content ? '☑' : '☐'} {s.type} Exaltation: {s.content ?? 'empty'}
+        </Line>
+      ))}
+    </Box>
+  )
+}
+
+/** Anything the parser didn't model, verbatim — never dropped. */
+function ExtrasBlock({
+  block,
+  compact
+}: {
+  block?: ItemStatBlock
+  compact?: boolean
+}): JSX.Element | null {
+  if (!block || block.extras.length === 0) return null
+  return (
+    <Box sx={{ mt: 0.6 }}>
+      {block.extras.map((x, i) => (
+        <Line key={i} compact={compact}>
+          {x}
+        </Line>
+      ))}
+    </Box>
+  )
+}
+
 /**
  * Draw an item the way the game's item description window does. Renders nothing but the
  * name when there's no stat data at all (an honest "we only know the name").
@@ -221,166 +435,28 @@ export function ItemWindow({
   const nameTier = itemTierFromName(name)
   const tier = nameTier ?? observedTier
   const tierIsObserved = nameTier === undefined && observedTier !== undefined
-  const ratio = damageRatio(block?.dmg, block?.atkDelay)
 
   // Cast/cooldown belong to the click effect, not the attribute grid (Boots of the Long
   // Road prints them right under its `Click Effect:` line).
   const attrs = (block?.stats ?? []).filter((s) => !TIMING_KEYS.has(s.key))
   const timing = (block?.stats ?? []).filter((s) => TIMING_KEYS.has(s.key))
-  const saves = block?.saves ?? []
-
-  // Left column = the physical description; right column = combat/defense numbers.
-  const left: Array<[string, string]> = []
-  if (block?.size) left.push(['Size', block.size])
-  if (block?.weight) left.push(['Weight', block.weight])
-  if (block?.skill) left.push(['Skill', block.skill])
-  if (block?.range) left.push(['Range', block.range])
-
-  const right: Array<[string, string]> = []
-  if (block?.ac !== undefined) right.push(['AC', String(block.ac)])
-  if (block?.dmg !== undefined) right.push(['Base Dmg', String(block.dmg)])
-  if (block?.dmgBonus !== undefined) right.push(['Dmg Bonus', String(block.dmgBonus)])
-  if (block?.atkDelay !== undefined) right.push(['Delay', String(block.atkDelay)])
-  if (block?.backstab !== undefined) right.push(['Backstab', String(block.backstab)])
 
   return (
-    <Box
-      sx={{
-        fontFamily: MONO,
-        bgcolor: compact ? 'transparent' : EQ_ITEM_COLORS.bg,
-        border: compact ? 'none' : `1px solid ${EQ_ITEM_COLORS.border}`,
-        borderRadius: 1,
-        p: compact ? 0.25 : 1.25,
-        minWidth: compact ? 190 : 260
-      }}
-    >
-      {/* Name (green) + icon */}
-      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 0.5 }}>
-        {iconId !== undefined && (
-          <Box
-            component="img"
-            src={itemIconUrl(iconId)}
-            alt=""
-            onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-              e.currentTarget.style.display = 'none'
-            }}
-            sx={{ width: compact ? 22 : 32, height: compact ? 22 : 32, imageRendering: 'pixelated', flexShrink: 0 }}
-          />
-        )}
-        <Typography
-          component="div"
-          sx={{
-            color: EQ_ITEM_COLORS.name,
-            fontWeight: 700,
-            fontSize: compact ? 12.5 : 14,
-            fontFamily: MONO,
-            lineHeight: 1.25
-          }}
-        >
-          {name}
-        </Typography>
-      </Stack>
+    <Box sx={shellSx(compact)}>
+      <ItemHeader name={name} iconId={iconId} compact={compact} />
 
-      {/* Flags (white) */}
-      {block && block.flags.length > 0 && <Line compact={compact}>{block.flags.join(', ')}</Line>}
-
-      {/* Class / Race / slot */}
-      {block?.classes && <Line compact={compact}>Class: {block.classes.join(' ')}</Line>}
-      {block?.races && <Line compact={compact}>Race: {block.races.join(' ')}</Line>}
-      {block?.slot && <Line compact={compact}>{titleSlot(block.slot)}</Line>}
+      <IdentityLines block={block} compact={compact} />
 
       {/* Item level — only when the name carries it, or we watched this character merge it */}
       {tier !== undefined && <TierBlock tier={tier} compact={compact} observed={tierIsObserved} />}
 
-      {/* Stat grid: physical | combat, then attributes, then saves (right-aligned) */}
-      {(left.length > 0 || right.length > 0) && (
-        <Box
-          sx={{
-            mt: 0.75,
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            columnGap: 2,
-            alignItems: 'start'
-          }}
-        >
-          <Box>
-            {left.map(([l, v]) => (
-              <Row key={l} label={l} value={v} compact={compact} />
-            ))}
-          </Box>
-          <Box>
-            {right.map(([l, v]) => (
-              <Row key={l} label={l} value={v} compact={compact} />
-            ))}
-            {ratio !== undefined && (
-              <Row label="Ratio" value={ratio.toFixed(1)} color={EQ_ITEM_COLORS.ratio} compact={compact} />
-            )}
-          </Box>
-        </Box>
-      )}
+      <StatGrid block={block} compact={compact} />
+      <StatPairs rows={attrs} compact={compact} />
+      <StatPairs rows={block?.saves ?? []} compact={compact} />
 
-      {attrs.length > 0 && (
-        <Box sx={{ mt: 0.5, display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 2 }}>
-          {attrs.map((s, i) => (
-            <Row key={`${s.key}${i}`} label={statLabel(s.key)} value={s.value} compact={compact} />
-          ))}
-        </Box>
-      )}
-
-      {saves.length > 0 && (
-        <Box sx={{ mt: 0.5, display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 2 }}>
-          {saves.map((s, i) => (
-            <Row key={`${s.key}${i}`} label={statLabel(s.key)} value={s.value} compact={compact} />
-          ))}
-        </Box>
-      )}
-
-      {/* Effects (magenta), with any cast/cooldown timing attached underneath */}
-      {block && (block.effects.length > 0 || timing.length > 0) && (
-        <Box sx={{ mt: 0.6 }}>
-          {block.effects.map((e, i) => (
-            <Line key={`${e.kind}${i}`} color={EQ_ITEM_COLORS.effect} compact={compact}>
-              {EFFECT_LABEL[e.kind]}: {e.name}
-              {e.reqLevel !== undefined
-                ? ` (Req Level ${e.reqLevel})`
-                : e.detail
-                  ? ` (${e.detail})`
-                  : ''}
-            </Line>
-          ))}
-          {timing.length > 0 && (
-            <Line color={EQ_ITEM_COLORS.label} compact={compact}>
-              {timing.map((t) => `${statLabel(t.key)}: ${t.value}`).join('   ')}
-            </Line>
-          )}
-        </Box>
-      )}
-
-      {/* Exaltation sockets — ONLY those the source actually described. */}
-      {block && block.exaltationSlots.length > 0 && (
-        <Box sx={{ mt: 0.6 }}>
-          {block.exaltationSlots.map((s, i) => (
-            <Line
-              key={`${s.type}${i}`}
-              color={s.content ? EQ_ITEM_COLORS.effect : EQ_ITEM_COLORS.label}
-              compact={compact}
-            >
-              {s.content ? '☑' : '☐'} {s.type} Exaltation: {s.content ?? 'empty'}
-            </Line>
-          ))}
-        </Box>
-      )}
-
-      {/* Anything the parser didn't model, verbatim — never dropped. */}
-      {block && block.extras.length > 0 && (
-        <Box sx={{ mt: 0.6 }}>
-          {block.extras.map((x, i) => (
-            <Line key={i} compact={compact}>
-              {x}
-            </Line>
-          ))}
-        </Box>
-      )}
+      <EffectsBlock block={block} timing={timing} compact={compact} />
+      <ExaltationBlock block={block} compact={compact} />
+      <ExtrasBlock block={block} compact={compact} />
 
       {flavor && (
         <Line compact={compact}>

@@ -27,7 +27,6 @@
 //     looked promising is 42%, not a rule.
 
 import type {
-  HealClassification,
   HealSourceKind,
   HealSourceView,
   HealSpellView,
@@ -123,10 +122,10 @@ export class HealAccum {
   mit = newMit()
 
   addFriendly(key: string, name: string, kind: HealSourceKind, h: HealInput): void {
-    add(this.friendly, key, name, kind, h)
+    add(this.friendly, key, { name, kind }, h)
   }
   addHostile(key: string, name: string, h: HealInput): void {
-    add(this.hostile, key, name, 'enemy', h)
+    add(this.hostile, key, { name, kind: 'enemy' }, h)
   }
   addRune(amount: number): void {
     const m = this.mit
@@ -146,10 +145,10 @@ export class HealAccum {
 function add(
   m: Map<string, HealSourceStat>,
   key: string,
-  name: string,
-  kind: HealSourceKind,
+  ref: { name: string; kind: HealSourceKind },
   h: HealInput
 ): void {
+  const { name, kind } = ref
   const s = m.get(key) ?? newSource(name, kind)
   if (s.name !== name) s.name = name
   // A healer first seen healing a hostile can later be reclassified (a charmed mob becomes your
@@ -166,7 +165,10 @@ function add(
   s.overheal += over
   if (h.amount === 0) s.fullOverheal += 1
 
-  const spellName = h.spell?.trim() || UNSPECIFIED_SPELL
+  // An absent, blank or whitespace-only spell name all fall to the one shared lane — never
+  // a nullish check, which would let `''` through as a lane of its own.
+  const trimmedSpell = h.spell?.trim() ?? ''
+  const spellName = trimmedSpell === '' ? UNSPECIFIED_SPELL : trimmedSpell
   const sp = s.bySpell.get(spellName) ?? newSpell(spellName)
   sp.total += h.amount
   sp.count += 1
@@ -198,7 +200,7 @@ function healLanes(s: HealSourceStat): HealSpellView[] {
     ...(r.min !== undefined ? { min: r.min } : {}),
     overheal: r.overheal,
     fullOverheal: r.fullOverheal,
-    classification: 'restored' as HealClassification
+    classification: 'restored'
   }))
 }
 

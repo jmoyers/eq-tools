@@ -18,6 +18,11 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ModuleDelta } from '@shared/types'
 
+// `Delta` appears once in the signature, which no-unnecessary-type-parameters reads as
+// removable. It is not: every call site passes its own delta shape explicitly, and
+// widening the parameter to `unknown` would make each module's typed applyDelta
+// unassignable (parameters are contravariant). The type parameter IS the safety.
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 export function useModule<Snap, Delta>(
   moduleId: string,
   applyDelta: (state: Snap, delta: Delta) => Snap

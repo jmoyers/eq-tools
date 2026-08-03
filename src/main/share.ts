@@ -20,6 +20,7 @@ import {
   SHARE_ERROR_TEXT,
   UI_PREF_SPECS,
   type AlertSetBody,
+  type ScalarChange,
   type SettingsBundleBody,
   type ShareApplyResult,
   type SharePreview,
@@ -59,9 +60,7 @@ function currentOverlays(): ScalarContext['overlays'] {
 }
 
 /** What the export/preview calls carry from the renderer: its whitelisted localStorage map. */
-export interface UiPrefMap {
-  [key: string]: string
-}
+export type UiPrefMap = Record<string, string>
 
 /** Encode the GLOBAL settings bundle (whitelisted — see profiles.ts classification). */
 export function exportSettingsString(appVersion: string, ui: UiPrefMap): string {
@@ -76,7 +75,7 @@ export function exportSettingsString(appVersion: string, ui: UiPrefMap): string 
 
 /** Encode one alert (`ids:[id]`) or every alert (`ids` omitted) as a share string. */
 export function exportAlertsString(appVersion: string, ids?: string[]): string {
-  const body = buildAlertSetBody(getAlerts(), ids && ids.length ? ids : undefined)
+  const body = buildAlertSetBody(getAlerts(), ids?.length ? ids : undefined)
   return encodeShareString(makeEnvelope('alerts', body, appVersion))
 }
 
@@ -108,7 +107,7 @@ export function previewShare(text: string, ui: UiPrefMap): SharePreview {
 
   let scalars: SharePreview['scalars'] = []
   if (env.kind === 'settings') {
-    scalars = planScalarChanges(body as SettingsBundleBody, {
+    scalars = planScalarChanges(body, {
       alertPrefs: getAlertPrefs(),
       overlays: currentOverlays(),
       ui
@@ -127,7 +126,7 @@ export function previewShare(text: string, ui: UiPrefMap): SharePreview {
   if (!alerts.length && !scalars.length) return emptyPreview(text, SHARE_ERROR_TEXT['empty-payload'])
 
   const missingPacks = [
-    ...new Set(alerts.filter((a) => a.action !== 'skip' && a.missingPackId).map((a) => a.missingPackId as string))
+    ...new Set(alerts.flatMap((a) => (a.action !== 'skip' && a.missingPackId ? [a.missingPackId] : [])))
   ]
 
   return {
@@ -150,6 +149,73 @@ export interface ShareSelection {
   scalarIds?: string[]
 }
 
+/** Apply one selected `overlay.<kind>.<field>` change. True when it actually wrote. */
+function applyOverlayScalar(changeId: string, body: SettingsBundleBody): boolean {
+  const [, kind, field] = changeId.split('.')
+  const inc = body.overlays?.[kind as OverlayKind]
+  if (inc && (field === 'bgAlpha' || field === 'topN')) {
+    setOverlayConfig(kind as OverlayKind, { [field]: inc[field] })
+    return true
+  }
+  return false
+}
+
+/** Apply one selected `ui.<key>` change, recording the renderer's localStorage write.
+ *  True when it actually wrote. */
+function applyUiScalar(
+  changeId: string,
+  body: SettingsBundleBody,
+  ui: UiPrefMap,
+  uiWrites: Record<string, string>
+): boolean {
+  const key = changeId.slice(3)
+  const spec = UI_PREF_SPECS.find((s) => s.key === key)
+  const inc = body.ui?.[key]
+  if (spec && inc !== undefined) {
+    uiWrites[key] = mergeUiPref(spec, ui[key], inc)
+    return true
+  }
+  return false
+}
+
+/** Apply ONE selected scalar change, in the same order the categories were tested in when
+ *  this was a single if/else-if chain. True when it actually wrote. */
+function applyScalarChange(
+  change: ScalarChange,
+  body: SettingsBundleBody,
+  ui: UiPrefMap,
+  uiWrites: Record<string, string>
+): boolean {
+  if (change.id === 'alertPrefs.globalVolume' && body.alertPrefs) {
+    setAlertPrefs({ ...getAlertPrefs(), globalVolume: body.alertPrefs.globalVolume })
+    return true
+  }
+  if (change.id === 'alertPrefs.muted' && body.alertPrefs) {
+    setAlertPrefs({ ...getAlertPrefs(), muted: body.alertPrefs.muted })
+    return true
+  }
+  if (change.id.startsWith('overlay.')) return applyOverlayScalar(change.id, body)
+  if (change.id.startsWith('ui.')) return applyUiScalar(change.id, body, ui, uiWrites)
+  return false
+}
+
+/** Walk the previewed scalars in order, applying the ones the user selected. Returns how
+ *  many landed plus the localStorage writes the renderer must perform. */
+function applySelectedScalars(
+  preview: SharePreview,
+  chosen: Set<string>,
+  body: SettingsBundleBody,
+  ui: UiPrefMap
+): { scalarsApplied: number; ui: Record<string, string> } {
+  const uiWrites: Record<string, string> = {}
+  let scalarsApplied = 0
+  for (const change of preview.scalars) {
+    if (!chosen.has(change.id)) continue
+    if (applyScalarChange(change, body, ui, uiWrites)) scalarsApplied++
+  }
+  return { scalarsApplied, ui: uiWrites }
+}
+
 /**
  * Apply a previewed share, ADDITIVELY. Alerts are appended (never overwritten — see
  * planAlertMerge's conflict rules); scalar settings are written only when explicitly
@@ -170,42 +236,14 @@ export function applyShare(text: string, ui: UiPrefMap, selection?: ShareSelecti
   const decoded = decodeShareString(text)
   const body = decoded.ok && preview.kind === 'settings' ? (decoded.envelope.body as SettingsBundleBody) : null
 
-  const uiWrites: Record<string, string> = {}
-  let scalarsApplied = 0
-  if (body) {
-    for (const change of preview.scalars) {
-      if (!chosen.has(change.id)) continue
-      if (change.id === 'alertPrefs.globalVolume' && body.alertPrefs) {
-        setAlertPrefs({ ...getAlertPrefs(), globalVolume: body.alertPrefs.globalVolume })
-        scalarsApplied++
-      } else if (change.id === 'alertPrefs.muted' && body.alertPrefs) {
-        setAlertPrefs({ ...getAlertPrefs(), muted: body.alertPrefs.muted })
-        scalarsApplied++
-      } else if (change.id.startsWith('overlay.')) {
-        const [, kind, field] = change.id.split('.')
-        const inc = body.overlays?.[kind as OverlayKind]
-        if (inc && (field === 'bgAlpha' || field === 'topN')) {
-          setOverlayConfig(kind as OverlayKind, { [field]: inc[field] })
-          scalarsApplied++
-        }
-      } else if (change.id.startsWith('ui.')) {
-        const key = change.id.slice(3)
-        const spec = UI_PREF_SPECS.find((s) => s.key === key)
-        const inc = body.ui?.[key]
-        if (spec && inc !== undefined) {
-          uiWrites[key] = mergeUiPref(spec, ui[key], inc)
-          scalarsApplied++
-        }
-      }
-    }
-  }
+  const applied = body ? applySelectedScalars(preview, chosen, body, ui) : { scalarsApplied: 0, ui: {} }
 
   return {
     ok: true,
     added: merged.added,
     skipped: merged.skipped,
     rekeyed: merged.rekeyed,
-    scalarsApplied,
-    ui: uiWrites
+    scalarsApplied: applied.scalarsApplied,
+    ui: applied.ui
   }
 }

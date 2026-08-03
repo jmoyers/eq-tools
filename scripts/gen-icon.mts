@@ -21,6 +21,17 @@ import { fileURLToPath } from 'node:url'
 
 type RGBA = [number, number, number, number]
 
+/**
+ * An axis-aligned box in pixel space. `x1`/`y1` are EXCLUSIVE, matching every loop below —
+ * one parameter instead of four, which is also what keeps the primitives under max-params.
+ */
+interface Box {
+  x0: number
+  y0: number
+  x1: number
+  y1: number
+}
+
 const BG: RGBA = [15, 17, 21, 255] // #0f1115 — matches the app window background
 const PANEL: RGBA = [26, 30, 38, 255] // slightly lighter inner panel
 const GOLD: RGBA = [214, 175, 92, 255] // #d6af5c — the EQ gold glyph
@@ -51,7 +62,8 @@ class Canvas {
     for (let y = 0; y < this.h; y++) for (let x = 0; x < this.w; x++) this.set(x, y, c)
   }
   /** Filled rounded rectangle. */
-  roundRect(x0: number, y0: number, x1: number, y1: number, r: number, c: RGBA): void {
+  roundRect(box: Box, r: number, c: RGBA): void {
+    const { x0, y0, x1, y1 } = box
     for (let y = y0; y < y1; y++) {
       for (let x = x0; x < x1; x++) {
         // Distance into a corner: only clip if inside the corner arc region.
@@ -62,7 +74,8 @@ class Canvas {
     }
   }
   /** Stroke a ring (for the "Q" and "E" strokes) via two filled discs' difference. */
-  disc(cx: number, cy: number, rOuter: number, rInner: number, c: RGBA): void {
+  disc(cx: number, cy: number, radii: { outer: number; inner: number }, c: RGBA): void {
+    const { outer: rOuter, inner: rInner } = radii
     const r2o = rOuter * rOuter
     const r2i = rInner * rInner
     for (let y = Math.floor(cy - rOuter); y <= Math.ceil(cy + rOuter); y++) {
@@ -72,7 +85,8 @@ class Canvas {
       }
     }
   }
-  rect(x0: number, y0: number, x1: number, y1: number, c: RGBA): void {
+  rect(box: Box, c: RGBA): void {
+    const { x0, y0, x1, y1 } = box
     for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) this.set(x, y, c)
   }
   /** Nearest-neighbour downscale to a new Canvas (for the small ICO frames). */
@@ -100,8 +114,8 @@ class Canvas {
 // --- minimal PNG encoder (RGBA, no filtering) ---
 function crc32(buf: Uint8Array): number {
   let c = ~0
-  for (let n = 0; n < buf.length; n++) {
-    c ^= buf[n]
+  for (const b of buf) {
+    c ^= b
     for (let k = 0; k < 8; k++) c = c & 1 ? (c >>> 1) ^ 0xedb88320 : c >>> 1
   }
   return ~c >>> 0
@@ -148,8 +162,8 @@ function drawMaster(): Canvas {
   const cv = new Canvas(S, S)
   cv.fill(BG)
   // Rounded inner panel with a subtle border.
-  cv.roundRect(16, 16, S - 16, S - 16, 40, [58, 48, 26, 255]) // gold-ish border
-  cv.roundRect(20, 20, S - 20, S - 20, 36, PANEL)
+  cv.roundRect({ x0: 16, y0: 16, x1: S - 16, y1: S - 16 }, 40, [58, 48, 26, 255]) // gold-ish border
+  cv.roundRect({ x0: 20, y0: 20, x1: S - 20, y1: S - 20 }, 36, PANEL)
 
   // "EQC" glyph (was "EQ" — the two-letter mark read as plain "EverQuest", which is
   // exactly the confusion the app must not invite; EQC is the app's own identity).
@@ -164,30 +178,30 @@ function drawMaster(): Canvas {
   // --- E ---
   const eX = 28
   const eW = 44
-  cv.rect(eX, top, eX + strokeW, bot, GOLD) // vertical spine
-  cv.rect(eX, top, eX + eW, top + strokeW, GOLD) // top bar
-  cv.rect(eX, midY - strokeW / 2, eX + eW - 7, midY + strokeW / 2, GOLD) // mid bar
-  cv.rect(eX, bot - strokeW, eX + eW, bot, GOLD) // bottom bar
-  cv.rect(eX, top, eX + 4, bot, GOLD_HI) // highlight along the spine
+  cv.rect({ x0: eX, y0: top, x1: eX + strokeW, y1: bot }, GOLD) // vertical spine
+  cv.rect({ x0: eX, y0: top, x1: eX + eW, y1: top + strokeW }, GOLD) // top bar
+  cv.rect({ x0: eX, y0: midY - strokeW / 2, x1: eX + eW - 7, y1: midY + strokeW / 2 }, GOLD) // mid bar
+  cv.rect({ x0: eX, y0: bot - strokeW, x1: eX + eW, y1: bot }, GOLD) // bottom bar
+  cv.rect({ x0: eX, y0: top, x1: eX + 4, y1: bot }, GOLD_HI) // highlight along the spine
 
   // --- Q ---
   const qcx = 120
   const qR = 40
-  cv.disc(qcx, midY, qR, qR - strokeW, GOLD) // ring
-  cv.disc(qcx, midY, qR, qR - 4, GOLD_HI) // thin bright outer edge
-  cv.disc(qcx, midY, qR - strokeW + 4, qR - strokeW, [58, 48, 26, 255]) // inner shadow edge
+  cv.disc(qcx, midY, { outer: qR, inner: qR - strokeW }, GOLD) // ring
+  cv.disc(qcx, midY, { outer: qR, inner: qR - 4 }, GOLD_HI) // thin bright outer edge
+  cv.disc(qcx, midY, { outer: qR - strokeW + 4, inner: qR - strokeW }, [58, 48, 26, 255]) // inner shadow edge
   // Q tail (short diagonal, sized to stop before the C's ring)
   for (let t = 0; t < 14; t++) {
-    cv.rect(qcx + 14 + t, midY + 14 + t, qcx + 14 + t + strokeW, midY + 14 + t + strokeW, GOLD)
+    cv.rect({ x0: qcx + 14 + t, y0: midY + 14 + t, x1: qcx + 14 + t + strokeW, y1: midY + 14 + t + strokeW }, GOLD)
   }
 
   // --- C --- (the Q's ring with its right side opened — erased back to panel color)
   const ccx = 200
   const cR = 40
-  cv.disc(ccx, midY, cR, cR - strokeW, GOLD)
-  cv.disc(ccx, midY, cR, cR - 4, GOLD_HI)
-  cv.disc(ccx, midY, cR - strokeW + 4, cR - strokeW, [58, 48, 26, 255])
-  cv.rect(ccx + 12, midY - 14, ccx + cR + 2, midY + 14, PANEL) // the C's opening
+  cv.disc(ccx, midY, { outer: cR, inner: cR - strokeW }, GOLD)
+  cv.disc(ccx, midY, { outer: cR, inner: cR - 4 }, GOLD_HI)
+  cv.disc(ccx, midY, { outer: cR - strokeW + 4, inner: cR - strokeW }, [58, 48, 26, 255])
+  cv.rect({ x0: ccx + 12, y0: midY - 14, x1: ccx + cR + 2, y1: midY + 14 }, PANEL) // the C's opening
   return cv
 }
 

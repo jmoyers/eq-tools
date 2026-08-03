@@ -6,18 +6,21 @@ import eqlegendsBosses from './eqlegends/bosses.json'
 // Bundled quest datasets keyed by profile id. Add a profile's dataset here after
 // scraping it (npm run scrape:posky -- --source <id>).
 const DATASETS: Record<string, PoskyData> = {
-  eqlegends: eqlegends as unknown as PoskyData
+  eqlegends
 }
 
 const BOSSES: Record<string, BossData> = {
-  eqlegends: eqlegendsBosses as unknown as BossData
+  eqlegends: eqlegendsBosses
 }
 
 const PROFILE_KEY = 'eq.profile'
 
 export function activeProfileId(): string {
   try {
-    return localStorage.getItem(PROFILE_KEY) || DEFAULT_PROFILE
+    // `|| DEFAULT` semantics deliberately: an EMPTY stored id is as unusable as a
+    // missing one, so both fall back rather than selecting an unknown profile.
+    const id = localStorage.getItem(PROFILE_KEY)
+    return id === null || id === '' ? DEFAULT_PROFILE : id
   } catch {
     return DEFAULT_PROFILE
   }

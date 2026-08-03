@@ -2,7 +2,7 @@
 //
 // Overlay windows persist their bounds the moment the user moves/resizes them, so this only
 // ever decides where a kind appears the FIRST time it is opened (or after its stored bounds are
-// cleared). The persisted position ALWAYS wins — see createOverlayWindow in index.ts, which
+// cleared). The persisted position ALWAYS wins — see `overlayPlacement` in windows.ts, which
 // prefers `cfg.bounds` and calls in here only when there are none.
 //
 // Layout: every kind docks to the BOTTOM-RIGHT of the primary display's work area, stacked

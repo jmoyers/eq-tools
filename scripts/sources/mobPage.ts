@@ -67,7 +67,10 @@ export function splitZones(zone: string | undefined): string[] {
 export function parseMobPage(title: string, wikitext: string): MobEntry | null {
   if (!isMobPage(wikitext)) return null
   const facts = parseMobWikitext(wikitext)
-  const entry: MobEntry = { page: title, name: facts.pageName || title }
+  // `|name` can be present-but-empty (or unlink to nothing), and an EMPTY name is "the page
+  // does not state one" — so the fallback is on emptiness, not merely on absence.
+  const stated = facts.pageName ?? ''
+  const entry: MobEntry = { page: title, name: stated.length > 0 ? stated : title }
   if (facts.levelText) entry.level = facts.levelText
   const zones = splitZones(facts.zone)
   if (zones.length) entry.zones = zones

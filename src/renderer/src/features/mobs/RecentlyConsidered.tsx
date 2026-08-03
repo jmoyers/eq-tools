@@ -12,6 +12,7 @@
 // fold. It also renders NOTHING at all until something has been conned, so a player who never
 // uses /con pays no vertical space for it.
 
+import type { JSX } from 'react'
 import { Box, Chip, Paper, Stack, Tooltip, Typography } from '@mui/material'
 import type { ConsiderDelta, ConsiderRow, ConsiderSnap, KillMap } from '@shared/types'
 import { CONSIDER_FACTION_COLOR, CONSIDER_FACTION_LABEL, considerDifficultyShort } from '@shared/logEvents'
@@ -49,6 +50,61 @@ export function considerTarget(r: ConsiderRow, kills: KillMap): MobTarget {
   }
 }
 
+/** The drop names to show, plus the per-item counts YOUR history corroborates them with. */
+interface RowDrops {
+  /** every drop name, wiki-first */
+  all: string[]
+  /** lowercased item name -> your own sighting (count) */
+  seenByKey: Map<string, { item: string; count: number }>
+}
+
+/**
+ * WIKI DROPS LEAD — the page's drop table is the definitive statement of what this can drop.
+ * Your own history is corroboration: it annotates a listed drop with a count, and only
+ * contributes NAMES of its own for items the page doesn't list.
+ */
+function rowDrops(k: ConsiderRow['knowledge']): RowDrops {
+  const seen = k?.dropsSeen ?? []
+  const seenByKey = new Map(seen.map((d) => [d.item.toLowerCase(), d]))
+  const wiki = (k?.dropsWiki ?? []).map((d) => d.item)
+  const wikiKeys = new Set(wiki.map((i) => i.toLowerCase()))
+  const all = [...wiki, ...seen.filter((d) => !wikiKeys.has(d.item.toLowerCase())).map((d) => d.item)]
+  return { all, seenByKey }
+}
+
+/** The `drops: a, b, c +N` tail of a row. Renders nothing when nothing is known (law 1). */
+function DropsLine({ drops }: { drops: RowDrops }): JSX.Element | null {
+  const shown = drops.all.slice(0, CONSIDER_DROPS_SHOWN)
+  if (shown.length === 0) return null
+  return (
+    <Typography variant="caption" color="text.secondary" noWrap sx={{ minWidth: 0 }}>
+      drops:{' '}
+      {shown.map((item, i) => {
+        const mine = drops.seenByKey.get(item.toLowerCase())
+        return (
+          <Box component="span" key={item}>
+            {i > 0 && ', '}
+            {/* The SAME item card the loot table and the posky tooltip use — hover explains. */}
+            <KnownItemTooltip name={item}>
+              <Box component="span" sx={{ color: 'text.primary', cursor: 'help' }}>
+                {item}
+              </Box>
+            </KnownItemTooltip>
+            {/* Corroboration rides ON the definitive row, never in place of it. */}
+            {mine && (
+              <Box component="span" sx={{ color: 'success.main' }}>
+                {' '}
+                ×{mine.count}
+              </Box>
+            )}
+          </Box>
+        )
+      })}
+      {drops.all.length > shown.length && ` +${drops.all.length - shown.length}`}
+    </Typography>
+  )
+}
+
 /**
  * One considered mob. Everything shown came off the log line (name, rung, level, difficulty,
  * rare) except the drops, which arrive asynchronously from mobLookup — so a row is complete and
@@ -58,15 +114,7 @@ export function considerTarget(r: ConsiderRow, kills: KillMap): MobTarget {
 function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRow) => void }): JSX.Element {
   const color = CONSIDER_FACTION_COLOR[r.faction]
   const k = r.knowledge
-  // WIKI DROPS LEAD — the page's drop table is the definitive statement of what this can drop.
-  // Your own history is corroboration: it annotates a listed drop with a count, and only
-  // contributes NAMES of its own for items the page doesn't list.
-  const seen = k?.dropsSeen ?? []
-  const seenByKey = new Map(seen.map((d) => [d.item.toLowerCase(), d]))
-  const wiki = (k?.dropsWiki ?? []).map((d) => d.item)
-  const wikiKeys = new Set(wiki.map((i) => i.toLowerCase()))
-  const drops = [...wiki, ...seen.filter((d) => !wikiKeys.has(d.item.toLowerCase())).map((d) => d.item)]
-  const shown = drops.slice(0, CONSIDER_DROPS_SHOWN)
+  const drops = rowDrops(k)
   const quests = k?.quests ?? []
 
   return (
@@ -109,33 +157,7 @@ function ConsiderRowView({ r, onOpen }: { r: ConsiderRow; onOpen: (r: ConsiderRo
           />
         </Tooltip>
       )}
-      {shown.length > 0 && (
-        <Typography variant="caption" color="text.secondary" noWrap sx={{ minWidth: 0 }}>
-          drops:{' '}
-          {shown.map((item, i) => {
-            const mine = seenByKey.get(item.toLowerCase())
-            return (
-              <Box component="span" key={item}>
-                {i > 0 && ', '}
-                {/* The SAME item card the loot table and the posky tooltip use — hover explains. */}
-                <KnownItemTooltip name={item}>
-                  <Box component="span" sx={{ color: 'text.primary', cursor: 'help' }}>
-                    {item}
-                  </Box>
-                </KnownItemTooltip>
-                {/* Corroboration rides ON the definitive row, never in place of it. */}
-                {mine && (
-                  <Box component="span" sx={{ color: 'success.main' }}>
-                    {' '}
-                    ×{mine.count}
-                  </Box>
-                )}
-              </Box>
-            )
-          })}
-          {drops.length > shown.length && ` +${drops.length - shown.length}`}
-        </Typography>
-      )}
+      <DropsLine drops={drops} />
       <Box sx={{ flexGrow: 1 }} />
       <Typography variant="caption" color="text.disabled" sx={{ flexShrink: 0 }}>
         {r.cons > 1 && `×${r.cons} · `}

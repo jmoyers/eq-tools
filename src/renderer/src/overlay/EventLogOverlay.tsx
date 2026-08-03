@@ -36,107 +36,18 @@
 // dead link; an item whose lookup says nothing renders as its NAME, with no "what it's for"
 // block at all (an empty block would claim "we checked, there's nothing" — we can't know that).
 
-import { Suspense, lazy, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import type {
-  FeedConsider,
-  FeedDelta,
-  FeedEvent,
-  FeedSnap,
-  ItemKnowledge,
-  MobKnowledge,
-  ModuleDelta,
-  OverlayConfig
-} from '@shared/types'
-import { CONSIDER_FACTION_COLOR, CONSIDER_FACTION_LABEL, considerDifficultyShort } from '@shared/logEvents'
+import { type JSX, useEffect, useRef, useState } from 'react'
+import type { FeedDelta, FeedEvent, FeedSnap, ModuleDelta } from '@shared/types'
+import { CONSIDER_FACTION_COLOR } from '@shared/logEvents'
 import { wikiPageUrl } from '@shared/wiki'
 import { formatTime } from '../lib/formatDate'
-import { isTradeskillOnly, questUseOutcomes, questUseWhere } from '../lib/itemKnowledgeView'
-
-// The game-style item window is a MUI component; the overlay bundle is otherwise MUI-free by
-// design. Loading it LAZILY keeps that promise where it matters — a pinned, locked overlay (and
-// any session where the user never hovers a reward) never pulls MUI into this window at all.
-const ItemWindow = lazy(() =>
-  import('../lib/ItemWindow').then((m) => ({ default: m.ItemWindow }))
-)
+import { isTradeskillOnly } from '../lib/itemKnowledgeView'
+import { ItemHoverCard, MobHoverCard, lookupItemCached } from './feedHoverCards'
+import { HoverCardLayer } from './hoverCardLayer'
+import { useOverlayChrome, type OverlayChrome } from './useOverlayChrome'
+import { IconButton } from './IconButton'
 
 const GOLD = '#d9b25f'
-/** Card palette — the same semantics as EQ_ITEM_COLORS, respelled here so importing it
- *  (from ItemWindow.tsx, which pulls MUI at module scope) can't defeat the lazy import. */
-const CARD_TEXT = '#e9eaf2'
-const CARD_LABEL = '#a8b0c6'
-const CARD_ITEM = '#5fe08a'
-const CARD_MONO = '"Consolas","Courier New",monospace'
-/** How many quest uses / recipes the card lists before collapsing to "+N more". */
-const MAX_LISTED = 4
-/** Gap the hover card keeps from its anchor AND from every window edge. */
-const CARD_MARGIN = 4
-
-// ---- item knowledge: ONE fetch per item name, for the whole window's lifetime ----------
-//
-// Both consumers here ask the same question of the same door (`window.eqOverlay.lookupItem`,
-// which is cache-first in main): the tradeskill FILTER asks about every loot row that appears,
-// and the hover CARD asks about the row you're pointing at. Sharing one map means a hovered
-// loot item is normally already answered — the card paints from memory with no IPC at all —
-// and two rows for the same item can never race into two round trips.
-const KNOWLEDGE = new Map<string, ItemKnowledge>()
-const PENDING = new Map<string, Promise<ItemKnowledge | null>>()
-
-function cachedKnowledge(name: string): ItemKnowledge | undefined {
-  return KNOWLEDGE.get(name.toLowerCase())
-}
-
-/** Resolve an item's knowledge, at most once per name. Never rejects — a miss resolves null. */
-function lookupItemCached(name: string): Promise<ItemKnowledge | null> {
-  const key = name.toLowerCase()
-  const hit = KNOWLEDGE.get(key)
-  if (hit) return Promise.resolve(hit)
-  const inflight = PENDING.get(key)
-  if (inflight) return inflight
-  const p = window.eqOverlay
-    .lookupItem(name)
-    .then((k: ItemKnowledge) => {
-      KNOWLEDGE.set(key, k)
-      PENDING.delete(key)
-      return k
-    })
-    .catch(() => {
-      PENDING.delete(key)
-      return null
-    })
-  PENDING.set(key, p)
-  return p
-}
-
-/**
- * Knowledge for a card that is CURRENTLY OPEN. The card mounts on hover and unmounts on leave,
- * so "on mount" IS "on first hover" — a feed of 100 rows costs zero lookups until one is
- * pointed at, and a second hover of the same row costs nothing at all (the map above).
- */
-function useItemKnowledge(name: string): { data: ItemKnowledge | null; loading: boolean } {
-  const [data, setData] = useState<ItemKnowledge | null>(() => cachedKnowledge(name) ?? null)
-  const [loading, setLoading] = useState(() => !cachedKnowledge(name))
-
-  useEffect(() => {
-    const hit = cachedKnowledge(name)
-    if (hit) {
-      setData(hit)
-      setLoading(false)
-      return
-    }
-    let alive = true
-    setLoading(true)
-    void lookupItemCached(name).then((k) => {
-      if (!alive) return
-      setData(k)
-      setLoading(false)
-    })
-    return () => {
-      alive = false
-    }
-  }, [name])
-
-  return { data, loading }
-}
 
 /** Per-kind accent + glyph. Colors match the app's semantics (alerts gold, loot teal, quest green,
  *  consider violet — a hue none of the other three uses, so a con row is identifiable at a glance
@@ -179,7 +90,10 @@ function newestFirst(rows: FeedSnap): FeedEvent[] {
  * must never blank the feed.
  */
 function useTradeskillFilter(feed: FeedEvent[]): FeedEvent[] {
-  const [verdict, setVerdict] = useState<Record<string, boolean>>({})
+  // `boolean | undefined` is the honest value type: a title with NO verdict yet reads
+  // undefined, and the `=== false` filter below is what holds that row back until the
+  // lookup lands. Typing it as plain `boolean` would make that comparison look redundant.
+  const [verdict, setVerdict] = useState<Record<string, boolean | undefined>>({})
   const asked = useRef<Set<string>>(new Set())
 
   const lootKeys = feed
@@ -215,385 +129,85 @@ function useTradeskillFilter(feed: FeedEvent[]): FeedEvent[] {
   return feed.filter((e) => e.kind !== 'loot' || verdict[e.title.toLowerCase()] === false)
 }
 
-const LABEL_STYLE: React.CSSProperties = { color: CARD_LABEL, fontSize: 10, lineHeight: 1.4 }
-const TEXT_STYLE: React.CSSProperties = { color: CARD_TEXT, fontSize: 10, lineHeight: 1.4 }
 
-/**
- * "What it's for" — the block BELOW the hairline, mirroring the main window's KnownItemTooltip:
- * quest uses first (the reason an item is notable at all), then the recipes that consume it,
- * which is the honest answer for the big family of QUEST-ITEM-flagged tradeskill components.
- *
- * Outcomes are PLAIN TEXT here, unlike the main window's nested card. This is a compact,
- * always-on-top window with no room to escape a popper chain and no dismiss affordance: ONE
- * card, no hops. Renders nothing when we know nothing (an empty block would read as "checked,
- * nothing there", which a failed lookup can't claim).
- */
-function WhatItsFor({ k }: { k: ItemKnowledge }): JSX.Element | null {
-  const uses = k.questUses
-  const recipes = k.recipes ?? []
-  if (uses.length === 0 && recipes.length === 0) return null
+/** What a row hovers, and what it links or hands off to. Locked mode has none of it. */
+interface RowAffordances {
+  href: string | undefined
+  /** a CON row explains a MOB, not an item — same hover machinery, different card */
+  previewMob: string | undefined
+  /** a quest's reward item, else — for a loot row — the item that dropped, which IS the headline */
+  previewItem: string | undefined
+  /** a quest row hovers by ROW (the reward sits at the row's right edge, so the row is the target) */
+  rowHover: boolean
+  /** a loot or CON row hovers by NAME: the name is the subject, the rest of the row is metadata */
+  nameHover: boolean
+}
 
-  const shownUses = uses.slice(0, MAX_LISTED)
-  const shownRecipes = recipes.slice(0, MAX_LISTED)
+function rowAffordances(e: FeedEvent, interactive: boolean): RowAffordances {
+  const reward = e.reward
+  const previewMob = interactive && e.kind === 'con' ? e.title : undefined
+  const previewItem =
+    interactive && !previewMob ? (reward?.item ?? (e.kind === 'loot' ? e.title : undefined)) : undefined
+  return {
+    href: interactive ? wikiPageUrl(e.page) : undefined,
+    previewMob,
+    previewItem,
+    rowHover: !!previewItem && !!reward,
+    nameHover: (!!previewItem && !reward) || !!previewMob
+  }
+}
 
+/** The row's headline: a wiki link when the feed knows a page and we're interactive, else text. */
+function RowTitle({
+  e,
+  accent,
+  href,
+  nameHover,
+  isMob,
+  onEnter,
+  onLeave
+}: {
+  e: FeedEvent
+  accent: string
+  href: string | undefined
+  nameHover: boolean
+  isMob: boolean
+  onEnter: (ev: React.MouseEvent<HTMLElement>) => void
+  onLeave: () => void
+}): JSX.Element {
+  // For a quest the link is the QUEST page, not the reward item's.
+  if (href) {
+    return (
+      <a
+        data-testid="feed-title"
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: accent, fontWeight: 600, textDecoration: 'none' }}
+        onMouseEnter={(ev) => {
+          ev.currentTarget.style.textDecoration = 'underline'
+          if (nameHover) onEnter(ev)
+        }}
+        onMouseLeave={(ev) => {
+          ev.currentTarget.style.textDecoration = 'none'
+          if (nameHover) onLeave()
+        }}
+      >
+        {e.title}
+      </a>
+    )
+  }
   return (
-    <div
-      data-testid="feed-card-uses"
-      style={{
-        marginTop: 6,
-        paddingTop: 5,
-        borderTop: '1px solid rgba(255,255,255,0.12)',
-        fontFamily: CARD_MONO
-      }}
+    <span
+      data-testid="feed-title"
+      // A CON row's name carries no cursor change at all (see the deep-link note below);
+      // an item name keeps the `help` cursor, which is what its hover card is.
+      style={{ color: accent, fontWeight: 600, cursor: nameHover && !isMob ? 'help' : undefined }}
+      onMouseEnter={nameHover ? onEnter : undefined}
+      onMouseLeave={nameHover ? onLeave : undefined}
     >
-      {shownUses.length > 0 && (
-        <div style={{ marginBottom: shownRecipes.length > 0 ? 5 : 0 }}>
-          <div style={LABEL_STYLE}>Used in {uses.length === 1 ? 'quest' : 'quests'}:</div>
-          {shownUses.map((u) => {
-            const where = questUseWhere(u)
-            const outcomes = questUseOutcomes(u)
-            return (
-              <div key={`${u.source}:${u.page ?? ''}:${u.quest}:${u.role ?? ''}`} style={{ marginTop: 2 }}>
-                <div style={TEXT_STYLE}>
-                  {u.quest}
-                  {u.role === 'reward' && <span style={{ color: CARD_LABEL }}> · reward</span>}
-                  {where && <span style={{ color: CARD_LABEL }}> · {where}</span>}
-                </div>
-                {/* Turning it in yields these. Named, never hoverable — see the header above. */}
-                {outcomes.length > 0 && (
-                  <div style={{ ...LABEL_STYLE, paddingLeft: 8 }}>→ {outcomes.join(', ')}</div>
-                )}
-              </div>
-            )
-          })}
-          {uses.length > shownUses.length && (
-            <div style={LABEL_STYLE}>+{uses.length - shownUses.length} more</div>
-          )}
-        </div>
-      )}
-
-      {shownRecipes.length > 0 && (
-        <div>
-          <div style={LABEL_STYLE}>Used in {recipes.length === 1 ? 'recipe' : 'recipes'}:</div>
-          {shownRecipes.map((r) => {
-            const how = [r.tradeskill, r.trivial != null ? String(r.trivial) : null]
-              .filter(Boolean)
-              .join(' ')
-            return (
-              <div key={`${r.tradeskill ?? ''}:${r.recipe}`} style={{ ...LABEL_STYLE, marginTop: 2 }}>
-                <span style={{ color: CARD_ITEM }}>{r.recipe}</span>
-                {how && <> · {how}</>}
-              </div>
-            )
-          })}
-          {recipes.length > shownRecipes.length && (
-            <div style={LABEL_STYLE}>+{recipes.length - shownRecipes.length} more</div>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
-
-/**
- * THE item hover card — one component behind every hover in this window (a quest's reward item
- * and a loot row's item alike). It answers the two questions a name can't: what it IS (the same
- * game item window the loot dialog and posky tooltip draw) and what it's FOR (WhatItsFor).
- *
- * It prefers a live `lookupItem` result (structured stats + icon, cache-first in main) and falls
- * back to the stat blob the scraped quest data already carries, so a reward renders instantly
- * and offline. Neither available ⇒ ItemWindow shows just the NAME, which is the honest answer.
- */
-function ItemHoverCard({ item, stats }: { item: string; stats?: string }): JSX.Element {
-  const { data, loading } = useItemKnowledge(item)
-  return (
-    <div
-      data-testid="feed-item-card"
-      data-item={item}
-      style={{
-        background: 'rgba(15,16,23,0.98)',
-        border: `1px solid ${GOLD}`,
-        borderRadius: 6,
-        padding: 8,
-        maxWidth: 300,
-        boxShadow: '0 6px 20px rgba(0,0,0,0.6)'
-      }}
-    >
-      <Suspense fallback={<div style={{ fontSize: 11, color: CARD_ITEM, fontFamily: CARD_MONO }}>{item}</div>}>
-        <ItemWindow
-          name={item}
-          stats={data?.stats}
-          rawStats={stats ?? data?.statsBlock}
-          iconId={data?.iconId}
-          flavor={data?.summary}
-          compact
-        />
-      </Suspense>
-      {loading && !data && (
-        <div style={{ ...LABEL_STYLE, fontFamily: CARD_MONO, marginTop: 4 }}>Looking up…</div>
-      )}
-      {data && <WhatItsFor k={data} />}
-      {data?.offline && (
-        <div style={{ ...LABEL_STYLE, fontFamily: CARD_MONO, marginTop: 4 }}>
-          offline — showing what&apos;s known locally
-        </div>
-      )}
-    </div>
-  )
-}
-
-// ---- mob knowledge: ONE fetch per mob name, for the whole window's lifetime ---------------
-//
-// The same discipline the item map above uses, for the same reason: a feed of 100 rows costs
-// zero lookups until one is pointed at, and re-hovering costs nothing at all. `mobs:lookup` is
-// cache-first AND local-first in main (your own loot history + the quest catalog answer with no
-// network), so the usual case is a single IPC round trip.
-const MOB_KNOWLEDGE = new Map<string, MobKnowledge>()
-const MOB_PENDING = new Map<string, Promise<MobKnowledge | null>>()
-
-/** Resolve a mob's knowledge, at most once per name. Never rejects — a miss resolves null. */
-function lookupMobCached(name: string): Promise<MobKnowledge | null> {
-  const key = name.toLowerCase()
-  const hit = MOB_KNOWLEDGE.get(key)
-  if (hit) return Promise.resolve(hit)
-  const inflight = MOB_PENDING.get(key)
-  if (inflight) return inflight
-  const p = window.eqOverlay
-    .lookupMob(name)
-    .then((k: MobKnowledge) => {
-      MOB_KNOWLEDGE.set(key, k)
-      MOB_PENDING.delete(key)
-      return k
-    })
-    .catch(() => {
-      MOB_PENDING.delete(key)
-      return null
-    })
-  MOB_PENDING.set(key, p)
-  return p
-}
-
-/** Knowledge for a mob card that is CURRENTLY OPEN (mount == first hover). */
-function useMobKnowledge(name: string): { data: MobKnowledge | null; loading: boolean } {
-  const [data, setData] = useState<MobKnowledge | null>(() => MOB_KNOWLEDGE.get(name.toLowerCase()) ?? null)
-  const [loading, setLoading] = useState(() => !MOB_KNOWLEDGE.get(name.toLowerCase()))
-
-  useEffect(() => {
-    const hit = MOB_KNOWLEDGE.get(name.toLowerCase())
-    if (hit) {
-      setData(hit)
-      setLoading(false)
-      return
-    }
-    let alive = true
-    setLoading(true)
-    void lookupMobCached(name).then((k) => {
-      if (!alive) return
-      setData(k)
-      setLoading(false)
-    })
-    return () => {
-      alive = false
-    }
-  }, [name])
-
-  return { data, loading }
-}
-
-/** How many drops a mob card lists before collapsing to "+N more". Kept tight — this window
- *  floats over the game, and a 44-item table (a zol ghoul knight's real page) would swallow it. */
-const MAX_DROPS = 6
-
-/**
- * THE mob hover card — what a `/con` was actually asking. It leads with the facts the log line
- * already gave (faction rung, level, rare), then the DROP TABLE.
- *
- * ORDERING IS A CLAIM ABOUT AUTHORITY. The wiki's drop list is the definitive statement of what
- * this mob drops, so it leads; your own loot history is CORROBORATION and rides on the matching
- * row as "×N". Only items your history has that the page does NOT list get their own (secondary)
- * block — one lucky drop is evidence, not a drop table.
- *
- * HONESTY (law 1): each block renders only if that source said something. A mob whose page
- * doesn't exist shows the con facts and "no wiki page" — never an empty drop table dressed up
- * as "drops nothing". Item names are PLAIN TEXT here (the card is `pointerEvents:none` — see
- * HoverCardLayer — so a nested hover is impossible by construction); the main window's card is
- * where item names become KnownItemTooltip anchors and click through to the item dialog.
- */
-function MobHoverCard({ mob, con }: { mob: string; con?: FeedConsider }): JSX.Element {
-  const { data, loading } = useMobKnowledge(mob)
-  const seen = data?.dropsSeen ?? []
-  const wiki = data?.dropsWiki ?? []
-  const quests = data?.quests ?? []
-  const seenByKey = new Map(seen.map((d) => [d.item.toLowerCase(), d]))
-  const wikiKeys = new Set(wiki.map((d) => d.item.toLowerCase()))
-  const extraSeen = seen.filter((d) => !wikiKeys.has(d.item.toLowerCase()))
-  const factionColor = con ? CONSIDER_FACTION_COLOR[con.faction] : CARD_TEXT
-
-  return (
-    <div
-      data-testid="feed-mob-card"
-      data-mob={mob}
-      style={{
-        background: 'rgba(15,16,23,0.98)',
-        border: `1px solid ${factionColor}`,
-        borderRadius: 6,
-        padding: 8,
-        maxWidth: 300,
-        fontFamily: CARD_MONO,
-        boxShadow: '0 6px 20px rgba(0,0,0,0.6)'
-      }}
-    >
-      <div style={{ color: factionColor, fontSize: 12, fontWeight: 700 }}>
-        {mob}
-        {con?.rare && <span style={{ ...LABEL_STYLE, marginLeft: 5 }}>rare</span>}
-      </div>
-      {con && (
-        <div style={LABEL_STYLE}>
-          {CONSIDER_FACTION_LABEL[con.faction]}
-          {con.level != null && ` · Lvl ${con.level}`}
-          {` · ${considerDifficultyShort(con.difficulty) ?? con.difficulty}`}
-        </div>
-      )}
-      {/* The page's own level/zone, when it states them — a range as often as a number. */}
-      {data && (data.levelText || data.zone) && (
-        <div style={LABEL_STYLE}>
-          {data.zone}
-          {data.zone && data.levelText && ' · '}
-          {data.levelText && `lvl ${data.levelText}`}
-        </div>
-      )}
-
-      {/* 1. THE DROP TABLE (definitive), with your own counts riding on the matching rows. */}
-      {wiki.length > 0 && (
-        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-          <div style={LABEL_STYLE}>Drops:</div>
-          {wiki.slice(0, MAX_DROPS).map((d) => {
-            const mine = seenByKey.get(d.item.toLowerCase())
-            return (
-              <div key={d.item} style={TEXT_STYLE}>
-                <span style={{ color: CARD_ITEM }}>{d.item}</span>
-                {d.rarity && <span style={{ color: CARD_LABEL }}> · {d.rarity}</span>}
-                {mine && <span style={{ color: '#7fd8a0' }}> · seen {mine.count}×</span>}
-              </div>
-            )
-          })}
-          {wiki.length > MAX_DROPS && <div style={LABEL_STYLE}>+{wiki.length - MAX_DROPS} more</div>}
-        </div>
-      )}
-
-      {/* 2. Evidence the page doesn't carry — secondary by construction. */}
-      {extraSeen.length > 0 && (
-        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-          <div style={LABEL_STYLE}>Also looted by you:</div>
-          {extraSeen.slice(0, MAX_DROPS).map((d) => (
-            <div key={d.item} style={TEXT_STYLE}>
-              <span style={{ color: CARD_ITEM }}>{d.item}</span>
-              <span style={{ color: CARD_LABEL }}> ×{d.count}</span>
-            </div>
-          ))}
-          {extraSeen.length > MAX_DROPS && <div style={LABEL_STYLE}>+{extraSeen.length - MAX_DROPS} more</div>}
-        </div>
-      )}
-
-      {quests.length > 0 && (
-        <div style={{ marginTop: 6, paddingTop: 5, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
-          <div style={LABEL_STYLE}>Named by {quests.length === 1 ? 'quest' : 'quests'}:</div>
-          {quests.slice(0, MAX_DROPS).map((q) => (
-            <div key={q.quest} style={TEXT_STYLE}>
-              {q.quest}
-              {q.zone && <span style={{ color: CARD_LABEL }}> · {q.zone}</span>}
-            </div>
-          ))}
-          {quests.length > MAX_DROPS && <div style={LABEL_STYLE}>+{quests.length - MAX_DROPS} more</div>}
-        </div>
-      )}
-
-      {loading && !data && <div style={{ ...LABEL_STYLE, marginTop: 4 }}>Looking up…</div>}
-      {/* Say the honest thing when a source came back empty, and only for the source that did. */}
-      {data?.notFound && <div style={{ ...LABEL_STYLE, marginTop: 4 }}>no wiki page</div>}
-      {data && !data.notFound && !data.offline && wiki.length === 0 && (
-        <div style={{ ...LABEL_STYLE, marginTop: 4 }}>its wiki page lists no loot</div>
-      )}
-      {data?.offline && (
-        <div style={{ ...LABEL_STYLE, marginTop: 4 }}>offline — showing what&apos;s known locally</div>
-      )}
-    </div>
-  )
-}
-
-/**
- * Places a hover card near its anchor and CLAMPS it inside the window.
- *
- * `position: fixed`, not absolute-in-the-row: the feed is an `overflow:auto` scroll box inside an
- * `overflow:hidden` shell, so a card positioned within a row would be clipped by the scroller
- * (and, worse, could grow its scroll extent). Fixed coordinates are measured against the
- * VIEWPORT — the overlay window itself — which is also the only frame that matters here: this
- * window is small and routinely parked against a screen edge.
- *
- * Placement: above the anchor by preference (the feed reads newest-first, so a card below would
- * cover the rows you're scanning), flipped below when there's no room, then clamped on both
- * axes so it can never hang off any edge. Re-runs whenever the card's own size changes — the
- * MUI ItemWindow arrives lazily and its icon later still, so the first measurement is never the
- * last one. Hidden until placed, so it never flashes at 0,0.
- *
- * `pointerEvents: none` is load-bearing: the card has nothing to click (no links, no nested
- * hover), and a card that took the pointer while overlapping its own anchor would fire the
- * anchor's mouseleave, unmount itself, and flicker.
- */
-function HoverCardLayer({ anchor, children }: { anchor: HTMLElement; children: React.ReactNode }): JSX.Element {
-  const ref = useRef<HTMLDivElement | null>(null)
-  const [pos, setPos] = useState<{ left: number; top: number } | null>(null)
-
-  useLayoutEffect(() => {
-    const el = ref.current
-    if (!el) return
-    let raf = 0
-    const place = (): void => {
-      const a = anchor.getBoundingClientRect()
-      const c = el.getBoundingClientRect()
-      const vw = window.innerWidth
-      const vh = window.innerHeight
-      const m = CARD_MARGIN
-      let top = a.top - c.height - m
-      if (top < m) top = a.bottom + m
-      if (top + c.height > vh - m) top = Math.max(m, vh - m - c.height)
-      let left = a.left
-      if (left + c.width > vw - m) left = vw - m - c.width
-      if (left < m) left = m
-      setPos((p) => (p && Math.abs(p.left - left) < 0.5 && Math.abs(p.top - top) < 0.5 ? p : { left, top }))
-    }
-    place()
-    const ro = new ResizeObserver(() => {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(place)
-    })
-    ro.observe(el)
-    window.addEventListener('resize', place)
-    return () => {
-      cancelAnimationFrame(raf)
-      ro.disconnect()
-      window.removeEventListener('resize', place)
-    }
-  }, [anchor])
-
-  return (
-    <div
-      ref={ref}
-      data-testid="feed-hover-card"
-      style={{
-        position: 'fixed',
-        left: pos?.left ?? 0,
-        top: pos?.top ?? 0,
-        visibility: pos ? 'visible' : 'hidden',
-        zIndex: 20,
-        pointerEvents: 'none',
-        maxWidth: `calc(100vw - ${CARD_MARGIN * 2}px)`,
-        maxHeight: `calc(100vh - ${CARD_MARGIN * 2}px)`,
-        overflow: 'hidden'
-      }}
-    >
-      {children}
-    </div>
+      {e.title}
+    </span>
   )
 }
 
@@ -604,19 +218,8 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
   const [anchor, setAnchor] = useState<HTMLElement | null>(null)
   const style = KIND_STYLE[e.kind]
   const accent = rowAccent(e)
-  const href = interactive ? wikiPageUrl(e.page) : undefined
   const reward = e.reward
-  // A CON row explains a MOB, not an item — same lazily-fetched hover machinery, different card.
-  const previewMob = interactive && e.kind === 'con' ? e.title : undefined
-  // WHICH item the card explains: a quest's reward item, else — for a loot row — the item that
-  // dropped, which IS the headline. Locked mode has no card at all (the header's law).
-  const previewItem =
-    interactive && !previewMob ? (reward?.item ?? (e.kind === 'loot' ? e.title : undefined)) : undefined
-  // A quest row hovers by ROW (the reward is named at the row's right edge, so the whole row is
-  // the target); a loot or CON row hovers by NAME, because the name is the subject and the
-  // timestamp / detail half of the row is metadata you shouldn't have to avoid.
-  const rowHover = !!previewItem && !!reward
-  const nameHover = (!!previewItem && !reward) || !!previewMob
+  const { href, previewMob, previewItem, rowHover, nameHover } = rowAffordances(e, interactive)
   // DEEP LINK (Task #64): a con row hands the mob to the app. Interactive mode only — a locked
   // overlay is click-through by law and has no clicks to give. Deliberately NO cursor change:
   // the pointer hand is this window's link vocabulary, and this is a hand-off, not a link.
@@ -661,38 +264,15 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         {formatTime(e.ts)}
       </span>
       <span style={{ flexGrow: 1, minWidth: 0 }}>
-        {/* The headline. When the feed knows a wiki page AND we're interactive, it's a link —
-            for a quest that is the QUEST page, not the reward item's. */}
-        {href ? (
-          <a
-            data-testid="feed-title"
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: accent, fontWeight: 600, textDecoration: 'none' }}
-            onMouseEnter={(ev) => {
-              ev.currentTarget.style.textDecoration = 'underline'
-              if (nameHover) enter(ev)
-            }}
-            onMouseLeave={(ev) => {
-              ev.currentTarget.style.textDecoration = 'none'
-              if (nameHover) leave()
-            }}
-          >
-            {e.title}
-          </a>
-        ) : (
-          <span
-            data-testid="feed-title"
-            // A CON row's name carries no cursor change at all (see the deep-link note above);
-            // an item name keeps the `help` cursor, which is what its hover card is.
-            style={{ color: accent, fontWeight: 600, cursor: nameHover && !previewMob ? 'help' : undefined }}
-            onMouseEnter={nameHover ? enter : undefined}
-            onMouseLeave={nameHover ? leave : undefined}
-          >
-            {e.title}
-          </span>
-        )}
+        <RowTitle
+          e={e}
+          accent={accent}
+          href={href}
+          nameHover={nameHover}
+          isMob={!!previewMob}
+          onEnter={enter}
+          onLeave={leave}
+        />
         {e.detail && (
           <span style={{ color: 'rgba(255,255,255,0.6)', marginLeft: 5 }}>{e.detail}</span>
         )}
@@ -704,53 +284,44 @@ function Row({ e, interactive }: { e: FeedEvent; interactive: boolean }): JSX.El
         )}
       </span>
 
-      {anchor && (previewMob || previewItem) && (
+      {anchor && previewMob && (
         <HoverCardLayer anchor={anchor}>
-          {previewMob ? (
-            <MobHoverCard mob={previewMob} con={e.con} />
-          ) : (
-            <ItemHoverCard item={previewItem as string} stats={reward?.stats} />
-          )}
+          <MobHoverCard mob={previewMob} con={e.con} />
+        </HoverCardLayer>
+      )}
+      {anchor && !previewMob && previewItem && (
+        <HoverCardLayer anchor={anchor}>
+          <ItemHoverCard item={previewItem} stats={reward?.stats} />
         </HoverCardLayer>
       )}
     </div>
   )
 }
 
-export default function EventLogOverlay(): JSX.Element {
-  const [cfg, setCfg] = useState<OverlayConfig | null>(null)
+/**
+ * Hydrate the feed, then ride deltas. A `log:character` rebuild resets the module's ring; the
+ * next delta's seq restarts low, so we accept a delta whose seq went BACKWARDS by re-hydrating
+ * rather than silently dropping rows forever. Same gap/dupe rule useModule enforces in the app.
+ */
+function useEventFeed(): FeedSnap {
   const [rows, setRows] = useState<FeedSnap>([])
-  const [hovering, setHovering] = useState(false)
-  const hoveringRef = useRef(false)
-  // Last applied module seq — the same gap/dupe rule useModule enforces in the main app.
   const seqRef = useRef(-1)
 
   useEffect(() => {
-    void window.eqOverlay.getConfig().then(setCfg)
-    return window.eqOverlay.onConfig(setCfg)
-  }, [])
-
-  // Hydrate the feed, then ride deltas. A `log:character` rebuild resets the module's ring; the
-  // next delta's seq restarts low, so we accept a delta whose seq went BACKWARDS by re-hydrating
-  // rather than silently dropping rows forever.
-  useEffect(() => {
     let alive = true
-    void window.eqOverlay.getModuleSnapshot<FeedSnap>('eventFeed').then((snap) => {
-      if (!alive || !snap) return
-      seqRef.current = snap.seq
-      setRows(snap.state)
-    })
+    const hydrate = (): void => {
+      void window.eqOverlay.getModuleSnapshot<FeedSnap>('eventFeed').then((snap) => {
+        if (!alive || !snap) return
+        seqRef.current = snap.seq
+        setRows(snap.state)
+      })
+    }
+    hydrate()
     const off = window.eqOverlay.onModuleDelta<FeedDelta>((d: ModuleDelta<FeedDelta>) => {
       if (d.moduleId !== 'eventFeed') return
       if (d.seq <= seqRef.current) {
         // Backwards seq ⇒ the module reset (character switch). Re-hydrate from scratch.
-        if (d.seq < seqRef.current) {
-          void window.eqOverlay.getModuleSnapshot<FeedSnap>('eventFeed').then((snap) => {
-            if (!snap) return
-            seqRef.current = snap.seq
-            setRows(snap.state)
-          })
-        }
+        if (d.seq < seqRef.current) hydrate()
         return
       }
       seqRef.current = d.seq
@@ -766,35 +337,106 @@ export default function EventLogOverlay(): JSX.Element {
     }
   }, [])
 
-  const locked = cfg?.locked ?? false
-  const bgAlpha = cfg?.bgAlpha ?? 0.72
+  return rows
+}
 
-  const patch = (p: Partial<OverlayConfig>): void => {
-    setCfg((c) => (c ? { ...c, ...p } : c))
-    void window.eqOverlay.setConfig(p)
-  }
+/** Header — same shape as the meter's: tag, title, count, controls. Drag handle when interactive. */
+function FeedHeader({
+  count,
+  chrome
+}: {
+  count: number
+  chrome: Pick<OverlayChrome, 'locked' | 'hovering' | 'dragRegion' | 'noDrag' | 'toggleLock'>
+}): JSX.Element {
+  const { locked, hovering, dragRegion, noDrag, toggleLock } = chrome
+  return (
+    <div
+      style={{
+        ...dragRegion,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        padding: '4px 8px',
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+        fontSize: 11,
+        flexShrink: 0
+      }}
+    >
+      <span
+        style={{
+          fontSize: 8,
+          letterSpacing: 0.5,
+          textTransform: 'uppercase',
+          color: 'rgba(255,255,255,0.4)',
+          flexShrink: 0
+        }}
+      >
+        EVENTS
+      </span>
+      <span style={{ fontWeight: 700, color: GOLD, flexGrow: 1, whiteSpace: 'nowrap' }}>Event log</span>
+      <span style={{ color: 'rgba(255,255,255,0.5)', fontVariantNumeric: 'tabular-nums' }}>{count}</span>
+      {(!locked || hovering) && (
+        <div style={{ ...noDrag, display: 'flex', alignItems: 'center', gap: 2, marginLeft: 2 }}>
+          <IconButton
+            title={locked ? 'Unlock (interactive)' : 'Lock (click-through)'}
+            onClick={toggleLock}
+            accent={locked}
+          >
+            {locked ? '🔓' : '📌'}
+          </IconButton>
+          {!locked && (
+            <IconButton title="Close overlay" onClick={() => window.eqOverlay.close()} danger>
+              ✕
+            </IconButton>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
 
-  const setHoverCapture = (capture: boolean): void => {
-    if (hoveringRef.current === capture) return
-    hoveringRef.current = capture
-    setHovering(capture)
-    window.eqOverlay.setIgnoreMouse(!capture)
-  }
-  const toggleLock = (): void => {
-    const next = !locked
-    window.eqOverlay.setLocked(next)
-    patch({ locked: next })
-    if (next) setHoverCapture(false)
-  }
-  const onEnter = (): void => {
-    if (locked) setHoverCapture(true)
-  }
-  const onLeave = (): void => {
-    if (locked) setHoverCapture(false)
-  }
+/** Footer — interactive mode only: the bg-alpha slider, matching the meters. */
+function FeedFooter({
+  bgAlpha,
+  patch,
+  noDrag
+}: {
+  bgAlpha: number
+  patch: OverlayChrome['patch']
+  noDrag: React.CSSProperties
+}): JSX.Element {
+  return (
+    <div
+      style={{
+        ...noDrag,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 8,
+        padding: '3px 8px 5px',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        fontSize: 10,
+        color: 'rgba(255,255,255,0.6)',
+        flexShrink: 0
+      }}
+    >
+      <span title="Background opacity">bg</span>
+      <input
+        type="range"
+        min={0.1}
+        max={1}
+        step={0.02}
+        value={bgAlpha}
+        onChange={(e) => patch({ bgAlpha: Number(e.target.value) })}
+        style={{ flexGrow: 1, accentColor: GOLD, height: 4 }}
+      />
+    </div>
+  )
+}
 
-  const dragRegion = !locked ? ({ WebkitAppRegion: 'drag' } as React.CSSProperties) : {}
-  const noDrag = { WebkitAppRegion: 'no-drag' } as React.CSSProperties
+export default function EventLogOverlay(): JSX.Element {
+  const rows = useEventFeed()
+  const { locked, bgAlpha, hovering, patch, toggleLock, onEnter, onLeave, dragRegion, noDrag } =
+    useOverlayChrome()
   const feed = useTradeskillFilter(newestFirst(rows))
 
   return (
@@ -815,51 +457,10 @@ export default function EventLogOverlay(): JSX.Element {
         overflow: 'hidden'
       }}
     >
-      {/* Header — same shape as the meter's: tag, title, count, controls. Drag handle when interactive. */}
-      <div
-        style={{
-          ...dragRegion,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-          padding: '4px 8px',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
-          fontSize: 11,
-          flexShrink: 0
-        }}
-      >
-        <span
-          style={{
-            fontSize: 8,
-            letterSpacing: 0.5,
-            textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.4)',
-            flexShrink: 0
-          }}
-        >
-          EVENTS
-        </span>
-        <span style={{ fontWeight: 700, color: GOLD, flexGrow: 1, whiteSpace: 'nowrap' }}>Event log</span>
-        <span style={{ color: 'rgba(255,255,255,0.5)', fontVariantNumeric: 'tabular-nums' }}>
-          {feed.length}
-        </span>
-        {(!locked || hovering) && (
-          <div style={{ ...noDrag, display: 'flex', alignItems: 'center', gap: 2, marginLeft: 2 }}>
-            <IconButton
-              title={locked ? 'Unlock (interactive)' : 'Lock (click-through)'}
-              onClick={toggleLock}
-              accent={locked}
-            >
-              {locked ? '🔓' : '📌'}
-            </IconButton>
-            {!locked && (
-              <IconButton title="Close overlay" onClick={() => window.eqOverlay.close()} danger>
-                ✕
-              </IconButton>
-            )}
-          </div>
-        )}
-      </div>
+      <FeedHeader
+        count={feed.length}
+        chrome={{ locked, hovering, dragRegion, noDrag, toggleLock }}
+      />
 
       {/* The feed. Newest first; a fixed-height scroll box (AGENTS.md: a growing list never sizes
           to its content). */}
@@ -873,76 +474,7 @@ export default function EventLogOverlay(): JSX.Element {
         )}
       </div>
 
-      {/* Footer — interactive mode only: the bg-alpha slider, matching the meters. */}
-      {!locked && (
-        <div
-          style={{
-            ...noDrag,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            padding: '3px 8px 5px',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-            fontSize: 10,
-            color: 'rgba(255,255,255,0.6)',
-            flexShrink: 0
-          }}
-        >
-          <span title="Background opacity">bg</span>
-          <input
-            type="range"
-            min={0.1}
-            max={1}
-            step={0.02}
-            value={bgAlpha}
-            onChange={(e) => patch({ bgAlpha: Number(e.target.value) })}
-            style={{ flexGrow: 1, accentColor: GOLD, height: 4 }}
-          />
-        </div>
-      )}
+      {!locked && <FeedFooter bgAlpha={bgAlpha} patch={patch} noDrag={noDrag} />}
     </div>
-  )
-}
-
-/** A small square icon button (plain, no MUI — the overlay bundle stays lean). */
-function IconButton({
-  onClick,
-  title,
-  children,
-  danger,
-  accent
-}: {
-  onClick: () => void
-  title: string
-  children: React.ReactNode
-  danger?: boolean
-  accent?: boolean
-}): JSX.Element {
-  return (
-    <button
-      type="button"
-      title={title}
-      aria-label={title}
-      onClick={onClick}
-      style={{
-        width: 20,
-        height: 20,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: 'none',
-        borderRadius: 4,
-        cursor: 'pointer',
-        fontSize: 11,
-        lineHeight: 1,
-        background: accent ? 'rgba(217,178,95,0.2)' : 'transparent',
-        color: danger ? '#cf6679' : 'inherit',
-        padding: 0
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.14)')}
-      onMouseLeave={(e) => (e.currentTarget.style.background = accent ? 'rgba(217,178,95,0.2)' : 'transparent')}
-    >
-      {children}
-    </button>
   )
 }

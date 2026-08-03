@@ -11,6 +11,7 @@
 // is open, so putting the wrapper INSIDE the tooltip body (not around it) keeps this to one
 // subscription at a time even in a list of hundreds of item rows.
 
+import type { JSX } from 'react'
 import { ItemWindow, type ItemWindowProps } from './ItemWindow'
 import { useModule } from './useModule'
 import { itemTierKey } from '@shared/itemStats'

@@ -57,9 +57,30 @@ function compileFieldMatch(spec: string): (fieldValue: string) => boolean {
   return (v) => v.toLowerCase() === lower
 }
 
+/**
+ * Stringify ONE event field for matching. A `where` key names an arbitrary field of an
+ * arbitrary LogEvent, so the value is nearly always a string/number/boolean — but a few fields
+ * hold arrays (`damage.modifiers`, the buff-landing `candidates` lists, one of which is an
+ * array of OBJECTS).
+ *
+ * This reproduces JS's own `String()` coercion rather than improving on it, because the coerced
+ * text is exactly what every existing alert def is matched against: an array joins its elements
+ * with ',' (a nullish element contributing ''), and an object element renders as the literal
+ * '[object Object]'. That last one IS what a def matching on the object-shaped `candidates` list
+ * sees today — making it nicer would silently change which alerts fire. The final fallback also
+ * absorbs bigint/symbol/function, which no LogEvent field holds.
+ */
+function fieldText(value: unknown): string {
+  if (typeof value === 'string') return value
+  if (typeof value === 'number' || typeof value === 'boolean') return String(value)
+  if (value == null) return '' // only reachable as an array ELEMENT — join() renders nullish as ''
+  if (Array.isArray(value)) return (value as unknown[]).map(fieldText).join(',')
+  return '[object Object]'
+}
+
 /** A single PRIMITIVE condition prepared for fast evaluation (regex compiled once). */
 interface CompiledCondition {
-  event?: { kind: string; fields: Array<{ key: string; test: (v: string) => boolean }> }
+  event?: { kind: string; fields: { key: string; test: (v: string) => boolean }[] }
   raw?: RegExp
   // 'app' primitives compile to neither event nor raw → they never match main-side.
 }
@@ -230,7 +251,7 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
       for (const f of cond.event.fields) {
         const raw = (ev as unknown as Record<string, unknown>)[f.key]
         if (raw == null) return false
-        if (!f.test(String(raw))) return false
+        if (!f.test(fieldText(raw))) return false
       }
       return true
     }

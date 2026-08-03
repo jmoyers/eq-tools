@@ -129,15 +129,18 @@ export class WorldModel {
     return (this.byName.get(nameKey) ?? []).filter((i) => !i.retired)
   }
 
-  private spawn(nameKey: string, display: string, ts: number, charmed: boolean, petKind?: PetKind): Instance {
+  /** Spawn a new instance of `nameKey`. A `petKind` IS the charm flag: every call that
+   *  spawned a charmed instance always named its kind, and every hostile spawn named none. */
+  private spawn(nameKey: string, display: string, ts: number, petKind?: PetKind): Instance {
     const gen = (this.gens.get(nameKey) ?? 0) + 1
     this.gens.set(nameKey, gen)
+    const charmed = petKind !== undefined
     const inst: Instance = {
       instanceId: `${nameKey}#${gen}`,
       nameKey,
       display,
       charmed,
-      petKind: charmed ? petKind : undefined,
+      petKind,
       firstSeenTs: ts,
       lastSeenTs: ts,
       retired: false,
@@ -219,7 +222,7 @@ export class WorldModel {
     const key = idKey(name)
     const act = this.active(key)
     if (act.length === 0) {
-      return this.spawn(key, name, ts, false)
+      return this.spawn(key, name, ts)
     }
     let inst: Instance
     if (preferCharmed) {
@@ -259,7 +262,7 @@ export class WorldModel {
     }
     // Otherwise spawn a fresh charmed instance (first-ever charm, or re-charm while
     // a hostile twin is already live).
-    const inst = this.spawn(key, name, ts, true, 'charmed')
+    const inst = this.spawn(key, name, ts, 'charmed')
     this.petTankedBy.set(inst.instanceId, new Set())
     return inst
   }
@@ -289,7 +292,7 @@ export class WorldModel {
       this.petTankedBy.set(inst.instanceId, new Set())
       return inst
     }
-    const inst = this.spawn(key, name, ts, true, 'summoned')
+    const inst = this.spawn(key, name, ts, 'summoned')
     this.petTankedBy.set(inst.instanceId, new Set())
     return inst
   }
@@ -318,7 +321,7 @@ export class WorldModel {
   noteTwinEvidence(name: string, ts: number): void {
     const key = idKey(name)
     if (!this.charmedActive(key)) return // only meaningful while a pet is live
-    if (!this.hostileActive(key)) this.spawn(key, name, ts, false)
+    if (!this.hostileActive(key)) this.spawn(key, name, ts)
   }
 
   /**
@@ -370,29 +373,7 @@ export class WorldModel {
 
     // Case 2b: killer is a DIFFERENT name (e.g. a fire giant wizard).
     if (kk && kk !== key) {
-      const petTanked = this.petTankedBy.get(pet.instanceId)?.has(kk) ?? false
-      if (petTanked && !hostile) {
-        // Only the pet was tanking this killer and no hostile twin exists → pet died.
-        this.retire(pet, ts)
-        return { retired: pet, wasPet: true, ambiguous: false, reason: `pet slain by ${kk} it was tanking` }
-      }
-      if (hostile) {
-        // Prefer retiring the hostile twin (keep the pet — the safe bias).
-        this.retire(hostile, ts)
-        const ambiguous = petTanked
-        return {
-          retired: hostile,
-          wasPet: false,
-          ambiguous,
-          reason: ambiguous ? `ambiguous: pet also tanked ${kk}; kept pet, retired twin` : `hostile twin slain by ${kk}`
-        }
-      }
-      // No hostile twin AND no evidence the pet tanked this killer: the killer was
-      // fighting a same-named mob we hadn't separately instanced. Spawn+retire a
-      // hostile twin slot; keep the pet, flag ambiguity (never silently kill pet).
-      const ghost = this.spawn(key, name, ts, false)
-      this.retire(ghost, ts)
-      return { retired: ghost, wasPet: false, ambiguous: true, reason: `ambiguous: ${kk} slew a ${name}; kept pet` }
+      return this.deathByForeignKiller({ key, name, ts, pet, hostile }, kk)
     }
 
     // Case 2c: killer is the SAME name ("a fire giant warrior slain by a fire giant
@@ -405,6 +386,43 @@ export class WorldModel {
     // Only the pet is live and a same-named mob slew it → real pet death.
     this.retire(pet, ts)
     return { retired: pet, wasPet: true, ambiguous: true, reason: 'ambiguous same-name death; only pet live → pet died' }
+  }
+
+  /**
+   * death() case 2b: a charmed pet of `name` is live and the killer is a DIFFERENT name
+   * (e.g. a fire giant wizard) — so that killer was fighting SOMETHING named `name`. The
+   * bias is always AWAY from retiring the pet (a false pet-death drops all subsequent pet
+   * damage), which is why the twin is preferred and, when no twin exists, a twin SLOT is
+   * spawned and retired rather than the pet.
+   */
+  private deathByForeignKiller(
+    ctx: { key: string; name: string; ts: number; pet: Instance; hostile: Instance | undefined },
+    kk: string
+  ): DeathResolution {
+    const { key, name, ts, pet, hostile } = ctx
+    const petTanked = this.petTankedBy.get(pet.instanceId)?.has(kk) ?? false
+    if (petTanked && !hostile) {
+      // Only the pet was tanking this killer and no hostile twin exists → pet died.
+      this.retire(pet, ts)
+      return { retired: pet, wasPet: true, ambiguous: false, reason: `pet slain by ${kk} it was tanking` }
+    }
+    if (hostile) {
+      // Prefer retiring the hostile twin (keep the pet — the safe bias).
+      this.retire(hostile, ts)
+      const ambiguous = petTanked
+      return {
+        retired: hostile,
+        wasPet: false,
+        ambiguous,
+        reason: ambiguous ? `ambiguous: pet also tanked ${kk}; kept pet, retired twin` : `hostile twin slain by ${kk}`
+      }
+    }
+    // No hostile twin AND no evidence the pet tanked this killer: the killer was
+    // fighting a same-named mob we hadn't separately instanced. Spawn+retire a
+    // hostile twin slot; keep the pet, flag ambiguity (never silently kill pet).
+    const ghost = this.spawn(key, name, ts)
+    this.retire(ghost, ts)
+    return { retired: ghost, wasPet: false, ambiguous: true, reason: `ambiguous: ${kk} slew a ${name}; kept pet` }
   }
 
   private retire(inst: Instance, ts: number): void {

@@ -55,7 +55,7 @@ export function CopyButton({
 }: {
   getText: () => string
   title?: string
-}): JSX.Element {
+}): React.JSX.Element {
   const [done, setDone] = useState(false)
   useEffect(() => {
     if (!done) return
@@ -65,12 +65,17 @@ export function CopyButton({
   const copy = (): void => {
     const clip = navigator.clipboard
     if (!clip) {
+      // Deliberate console (like lib/ErrorBoundary): main's console-message forwarder is what
+      // puts a renderer failure into errors.log, and a failed copy must leave a trace there
+      // rather than silently looking like a successful one.
+      // eslint-disable-next-line no-console
       console.error('[everquest-companion:error] copy failed: no clipboard available')
       return
     }
     clip.writeText(getText()).then(
       () => setDone(true),
-      (err) => console.error('[everquest-companion:error] copy failed', err)
+      // eslint-disable-next-line no-console
+      (err: unknown) => console.error('[everquest-companion:error] copy failed', err)
     )
   }
   return (
@@ -113,7 +118,7 @@ export function Bar({
   accent?: string
   /** Outline the row as the current drill subject. */
   selected?: boolean
-}): JSX.Element {
+}): React.JSX.Element {
   return (
     <Box
       onClick={onClick}
@@ -168,7 +173,7 @@ export function SkillName({
   name: string
   category: DamageCategory
   plain?: boolean
-}): JSX.Element {
+}): React.JSX.Element {
   if (category !== 'slay' || plain || name === CATEGORY_LABEL.slay) return <>{name}</>
   return (
     <>
@@ -206,7 +211,7 @@ export function skillStatText(s: FlatSkill, a = ''): string {
 }
 
 /** One labeled figure in the expanded readout: a small uppercase caption over the value. */
-function StatItem({ label, value, color }: { label: string; value: string; color?: string }): JSX.Element {
+function StatItem({ label, value, color }: { label: string; value: string; color?: string }): React.JSX.Element {
   return (
     <Box sx={{ minWidth: 0 }}>
       <Typography
@@ -249,7 +254,7 @@ function SkillReadout({
   s: FlatSkill
   approx?: boolean
   after?: ReactNode
-}): JSX.Element {
+}): React.JSX.Element {
   const a = approx ? '~' : ''
   const misses = s.misses ?? 0
   const resists = s.resists ?? 0
@@ -295,7 +300,7 @@ function SkillReadout({
           />
         )}
         {s.hits > 0 && (
-          <StatItem label="Damage range" value={min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : `${fmt(s.max)}`} />
+          <StatItem label="Damage range" value={min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : fmt(s.max)} />
         )}
       </Stack>
       {after}
@@ -309,7 +314,7 @@ function SkillReadout({
  * own click-to-expand readout — the interaction is the identical one users already know, just
  * nested; no third nav level and no breadcrumb change.
  */
-function SkillChildren({ rows, approx }: { rows: FlatSkill[]; approx?: boolean }): JSX.Element {
+function SkillChildren({ rows, approx }: { rows: FlatSkill[]; approx?: boolean }): React.JSX.Element {
   return (
     <Box sx={{ mt: 1 }}>
       <Typography
@@ -335,7 +340,7 @@ function SkillChildren({ rows, approx }: { rows: FlatSkill[]; approx?: boolean }
 
 /** The dimmed stat run inside a bar. Lower contrast than the name so the row still reads
  *  name-first, but sits on the translucent (0.5-opacity) fill, not beyond it. */
-function InlineStats({ children }: { children: ReactNode }): JSX.Element {
+function InlineStats({ children }: { children: ReactNode }): React.JSX.Element {
   return (
     <Typography component="span" variant="caption" sx={{ ml: 0.75, color: 'text.secondary', fontWeight: 400 }}>
       {children}
@@ -354,7 +359,7 @@ function InlineStats({ children }: { children: ReactNode }): JSX.Element {
  * other row; the difference is only in what its expansion holds. `nested` marks a child of such
  * a group: its parent already names the proc, so the row drops the `· Slay Undead` tag.
  */
-export function SkillBar({ s, approx, nested }: { s: SkillRow; approx?: boolean; nested?: boolean }): JSX.Element {
+export function SkillBar({ s, approx, nested }: { s: SkillRow; approx?: boolean; nested?: boolean }): React.JSX.Element {
   // Click expands the full per-ability readout in place (the same inline-Collapse pattern the
   // incoming meter rows use) — no extra nav level, so the flat ranked list never moves.
   const [open, setOpen] = useState(false)
@@ -440,7 +445,7 @@ export function DashCard({
   height?: number
   /** Marks the card as one of the dashboard's measurable panels (e2e layout assertions). */
   testId?: string
-}): JSX.Element {
+}): React.JSX.Element {
   return (
     <Paper
       variant="outlined"
@@ -490,7 +495,7 @@ export function DashCard({
 }
 
 /** A one-line quiet state for a panel that has nothing (honest) to show. Never an error. */
-export function QuietNote({ children }: { children: ReactNode }): JSX.Element {
+export function QuietNote({ children }: { children: ReactNode }): React.JSX.Element {
   return (
     <Typography variant="caption" color="text.disabled" sx={{ py: 0.5 }}>
       {children}
@@ -515,7 +520,7 @@ export function ApproxChip({
   shown: number
   raw: number
   truncated?: boolean
-}): JSX.Element {
+}): React.JSX.Element {
   const why = truncated
     ? `This fight outgrew its event ring, so its OLDEST instants were dropped: ${shown} of ${raw} instants are still held. Numbers below (marked ~) cover only that retained window — read them as LOWER BOUNDS on the fight, not as its totals.`
     : `This fight's event ring was downsampled: ${shown} of ${raw} instants were kept. Numbers below are scaled sample estimates (marked ~).`

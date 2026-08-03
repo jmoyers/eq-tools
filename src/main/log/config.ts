@@ -73,7 +73,7 @@ export function resolveEqDir(): ResolvedEqDir {
   const override = getEqInstallDir()
   let root: string
   let source: EqDirSource
-  if (override && override.trim()) {
+  if (override?.trim()) {
     root = override
     source = 'manual'
   } else {

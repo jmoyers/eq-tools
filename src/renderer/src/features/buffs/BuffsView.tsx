@@ -1,10 +1,10 @@
+import type { JSX } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import {
   Box,
   Chip,
   Collapse,
   IconButton,
-  LinearProgress,
   Paper,
   Stack,
   Table,
@@ -27,14 +27,8 @@ import type {
   OverlayVerdict
 } from '@shared/types'
 import { useModule } from '../../lib/useModule'
-import {
-  fmtDuration,
-  remainingFraction,
-  isOverdue,
-  classAccent,
-  groupKey,
-  groupLabel
-} from './format'
+import { ActiveRow } from './ActiveBuffRow'
+import { fmtDuration, classAccent, groupKey, groupLabel } from './format'
 
 // Stats-table sections: buffs first, then debuffs (Task #35 — a spell property).
 const CLASS_ORDER: BuffClass[] = ['buff', 'debuff']
@@ -46,166 +40,6 @@ const EMPTY_BUFFS: BuffsSnap = { active: [], stats: {} }
 // The buffs module ships its whole (small) snapshot each flush, so the delta simply
 // replaces state — no incremental merge needed.
 const applyBuffsDelta = (_state: BuffsSnap, delta: BuffsDelta): BuffsSnap => delta
-
-/** One active-buff row: name, elapsed, estimated remaining bar, ± spread, n. */
-function ActiveRow({ buff, now }: { buff: ActiveBuff; now: number }): JSX.Element {
-  const elapsed = Math.max(0, now - buff.startedTs)
-  const hasEst = buff.estimatedMs != null && buff.estimatedMs > 0
-  const remaining = hasEst ? Math.max(0, (buff.estimatedMs as number) - elapsed) : null
-  const frac = hasEst ? remainingFraction(elapsed, buff.estimatedMs as number) : null
-  // ± spread from the p25/p75 IQR around the estimate.
-  const spread =
-    buff.p25 != null && buff.p75 != null ? (buff.p75 - buff.p25) / 2 : null
-  // Overdue (Task #30 + #34): run past the estimated window → show "past estimate" instead
-  // of a bottomed-out countdown. For mined estimates this needs n≥2 past p75; for a DB
-  // (authoritative) estimate, being past the DB duration itself is enough (expiry is now
-  // message-driven, so a DB buff sits "past estimate" until its wear-off line lands).
-  const overdue =
-    isOverdue(elapsed, buff.p75, buff.n) ||
-    (buff.durationSource === 'db' && buff.estimatedMs != null && elapsed > buff.estimatedMs)
-  // Provisional (Task #30): shown optimistically the instant we saw the cast begin,
-  // before the land timeout confirms it. Dim the row + show a "casting…" hint.
-  const provisional = buff.provisional === true
-
-  // Debuff target is INFERRED (castBegin carries no target) — surface it honestly as a
-  // "target: inferred" chip, never a silent guess (Task #32 rule 5c).
-  const inferred = buff.inferredTarget === true
-
-  // Permanent illusion (Task #34): a self-cast illusion buff while the Permanent Illusion
-  // AA is owned lasts forever — no countdown, an explicit "permanent · illusion AA" state.
-  const permanent = buff.permanent === true
-  // Estimate provenance (Task #34): 'db' (authoritative wiki duration) vs 'observed'
-  // (recency-weighted max of mined samples). Shown as a small chip on the bar caption.
-  const source = buff.durationSource
-
-  return (
-    <Paper
-      variant="outlined"
-      sx={{
-        p: 1.25,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 0.5,
-        opacity: provisional ? 0.6 : 1,
-        borderStyle: provisional ? 'dashed' : 'solid',
-        // Class accent: red-ish left border for debuffs, green for pet, gold for self.
-        borderLeft: '3px solid',
-        borderLeftColor: classAccent(buff.cls)
-      }}
-    >
-      <Stack direction="row" alignItems="baseline" spacing={1}>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          {buff.spell}
-        </Typography>
-        {inferred ? (
-          <Tooltip title="Target inferred from the pet's current fight target — castBegin carries no target, so this is a best guess, not a confirmed target.">
-            <Chip
-              size="small"
-              label={buff.target ? `target: ${buff.target} (inferred)` : 'target: inferred'}
-              variant="outlined"
-              color="warning"
-              sx={{ height: 18, fontSize: 11, maxWidth: 180, '& .MuiChip-label': { px: 0.75 } }}
-            />
-          </Tooltip>
-        ) : null}
-        {provisional && (
-          <Chip
-            size="small"
-            label="casting…"
-            variant="outlined"
-            color="info"
-            sx={{ height: 18, fontSize: 11 }}
-          />
-        )}
-        {buff.messageDriven && !provisional && (
-          <Tooltip title="Confirmed by an exact chat message (its landing/heal line), not inferred from cast timing.">
-            <Chip
-              size="small"
-              label="message"
-              variant="outlined"
-              color="success"
-              sx={{ height: 18, fontSize: 11 }}
-            />
-          </Tooltip>
-        )}
-        <Box sx={{ flexGrow: 1 }} />
-        <Typography variant="caption" color="text.secondary">
-          {fmtDuration(elapsed)} elapsed
-        </Typography>
-      </Stack>
-
-      {permanent ? (
-        // Permanent illusion (Task #34): a full, steady bar and an explicit label — no
-        // countdown, because a self-cast illusion under the Permanent Illusion AA never fades.
-        <>
-          <LinearProgress
-            variant="determinate"
-            value={100}
-            sx={{ height: 8, borderRadius: 1, '& .MuiLinearProgress-bar': { bgcolor: 'warning.main' } }}
-          />
-          <Typography variant="caption" color="warning.main">
-            permanent · illusion AA
-          </Typography>
-        </>
-      ) : hasEst ? (
-        <>
-          <LinearProgress
-            variant="determinate"
-            value={(frac as number) * 100}
-            sx={{
-              height: 8,
-              borderRadius: 1,
-              // Fade toward warning as the estimated window empties / runs overdue.
-              '& .MuiLinearProgress-bar': {
-                bgcolor: overdue || (frac as number) < 0.2 ? 'warning.main' : 'primary.main'
-              }
-            }}
-          />
-          <Stack direction="row" justifyContent="space-between" alignItems="center">
-            <Typography variant="caption" color={overdue ? 'warning.main' : 'text.secondary'}>
-              {overdue
-                ? 'past estimate'
-                : `~${fmtDuration(remaining as number)} left`}
-              {!overdue && spread != null && spread > 1000 ? ` (± ${fmtDuration(spread)})` : ''}
-            </Typography>
-            <Stack direction="row" spacing={0.5} alignItems="center">
-              {/* Estimate provenance (Task #34): authoritative DB duration vs mined max. */}
-              {source && (
-                <Tooltip
-                  title={
-                    source === 'db'
-                      ? 'Duration from the spell database (authoritative wiki value).'
-                      : 'Duration estimated from observed casts (recency-weighted max of samples).'
-                  }
-                >
-                  <Chip
-                    size="small"
-                    label={source === 'db' ? 'db' : 'observed'}
-                    variant="outlined"
-                    sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
-                  />
-                </Tooltip>
-              )}
-              <Typography variant="caption" color="text.disabled">
-                n={buff.n}
-              </Typography>
-            </Stack>
-          </Stack>
-        </>
-      ) : (
-        <>
-          <LinearProgress
-            variant="indeterminate"
-            sx={{ height: 8, borderRadius: 1, opacity: 0.5 }}
-          />
-          <Typography variant="caption" color="text.disabled">
-            unknown duration
-          </Typography>
-        </>
-      )}
-    </Paper>
-  )
-}
 
 /** The dense per-spell stats table for ONE class, sorted by sample count. */
 function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: BuffClass }): JSX.Element {
@@ -236,61 +70,78 @@ function StatsTable({ stats, cls }: { stats: Record<string, BuffStat>; cls: Buff
         </TableRow>
       </TableHead>
       <TableBody>
-        {rows.map((s) => {
-          // The estimate the app uses (Task #34): DB duration when known ("db"), else the
-          // recency-weighted max of samples ("observed"). Falls back to median for older
-          // deltas without the field.
-          const estMs = s.estimateMs ?? s.dbDurationMs ?? s.medianMs
-          const estSrc = s.estimatorSource ?? (s.dbDurationMs != null ? 'db' : s.medianMs != null ? 'observed' : undefined)
-          return (
-            <TableRow key={s.spell} hover>
-              <TableCell>{s.spell}</TableCell>
-              <TableCell align="right">
-                {estMs != null ? (
-                  <Tooltip
-                    title={
-                      estSrc === 'db'
-                        ? 'Authoritative duration from the spell database.'
-                        : 'Recency-weighted max of observed casts.'
-                    }
-                  >
-                    <span>
-                      {fmtDuration(estMs)}
-                      {estSrc ? (
-                        <Chip
-                          size="small"
-                          label={estSrc === 'db' ? 'db' : 'obs'}
-                          variant="outlined"
-                          sx={{ ml: 0.5, height: 15, fontSize: 9, '& .MuiChip-label': { px: 0.4 } }}
-                        />
-                      ) : null}
-                    </span>
-                  </Tooltip>
-                ) : (
-                  '—'
-                )}
-              </TableCell>
-              <TableCell align="right">
-                {s.n === 0 ? (
-                  <Tooltip title="Seen fading but no clean cast→fade pair yet">
-                    <span style={{ opacity: 0.5 }}>0</span>
-                  </Tooltip>
-                ) : (
-                  s.n
-                )}
-              </TableCell>
-              <TableCell align="right">{fmtDuration(s.medianMs)}</TableCell>
-              <TableCell align="right" style={{ opacity: 0.8 }}>
-                {s.p25 != null && s.p75 != null ? `${fmtDuration(s.p25)} – ${fmtDuration(s.p75)}` : '—'}
-              </TableCell>
-              <TableCell align="right" style={{ opacity: 0.65 }}>
-                {s.minMs != null && s.maxMs != null ? `${fmtDuration(s.minMs)} – ${fmtDuration(s.maxMs)}` : '—'}
-              </TableCell>
-            </TableRow>
-          )
-        })}
+        {rows.map((s) => (
+          <StatsRow key={s.spell} s={s} />
+        ))}
       </TableBody>
     </Table>
+  )
+}
+
+/**
+ * The estimate the app uses (Task #34): DB duration when known ("db"), else the
+ * recency-weighted max of samples ("observed"). Falls back to median for older deltas
+ * without the field.
+ */
+function rowEstimate(s: BuffStat): { ms?: number | null; src?: string } {
+  const ms = s.estimateMs ?? s.dbDurationMs ?? s.medianMs
+  const src =
+    s.estimatorSource ?? (s.dbDurationMs != null ? 'db' : s.medianMs != null ? 'observed' : undefined)
+  return { ms, src }
+}
+
+/** The estimate cell: the figure plus a chip naming where it came from. */
+function EstimateCell({ ms, src }: { ms?: number | null; src?: string }): JSX.Element {
+  if (ms == null) return <>—</>
+  return (
+    <Tooltip
+      title={
+        src === 'db'
+          ? 'Authoritative duration from the spell database.'
+          : 'Recency-weighted max of observed casts.'
+      }
+    >
+      <span>
+        {fmtDuration(ms)}
+        {src ? (
+          <Chip
+            size="small"
+            label={src === 'db' ? 'db' : 'obs'}
+            variant="outlined"
+            sx={{ ml: 0.5, height: 15, fontSize: 9, '& .MuiChip-label': { px: 0.4 } }}
+          />
+        ) : null}
+      </span>
+    </Tooltip>
+  )
+}
+
+/** One stats row. Everything not stated by a source renders as '—', never as a zero. */
+function StatsRow({ s }: { s: BuffStat }): JSX.Element {
+  const est = rowEstimate(s)
+  return (
+    <TableRow hover>
+      <TableCell>{s.spell}</TableCell>
+      <TableCell align="right">
+        <EstimateCell ms={est.ms} src={est.src} />
+      </TableCell>
+      <TableCell align="right">
+        {s.n === 0 ? (
+          <Tooltip title="Seen fading but no clean cast→fade pair yet">
+            <span style={{ opacity: 0.5 }}>0</span>
+          </Tooltip>
+        ) : (
+          s.n
+        )}
+      </TableCell>
+      <TableCell align="right">{fmtDuration(s.medianMs)}</TableCell>
+      <TableCell align="right" style={{ opacity: 0.8 }}>
+        {s.p25 != null && s.p75 != null ? `${fmtDuration(s.p25)} – ${fmtDuration(s.p75)}` : '—'}
+      </TableCell>
+      <TableCell align="right" style={{ opacity: 0.65 }}>
+        {s.minMs != null && s.maxMs != null ? `${fmtDuration(s.minMs)} – ${fmtDuration(s.maxMs)}` : '—'}
+      </TableCell>
+    </TableRow>
   )
 }
 
@@ -380,6 +231,61 @@ function OverlayDiagnostics({ overlay }: { overlay: MessageOverlay }): JSX.Eleme
   )
 }
 
+/** One entity's live buffs: its label, a count chip, and the row grid. */
+function ActiveGroup({
+  label,
+  buffs,
+  now
+}: {
+  label: string
+  buffs: ActiveBuff[]
+  now: number
+}): JSX.Element {
+  return (
+    <Box>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
+        <Typography variant="caption" sx={{ fontWeight: 600 }}>
+          {label}
+        </Typography>
+        <Chip
+          size="small"
+          variant="outlined"
+          label={buffs.length}
+          sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
+        />
+      </Stack>
+      <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))' }}>
+        {buffs.map((b) => (
+          <ActiveRow key={`${b.spell}@${b.self ? 'self' : b.target ?? '?'}`} buff={b} now={now} />
+        ))}
+      </Box>
+    </Box>
+  )
+}
+
+/** One class's durations table, under its accent swatch. */
+function StatsSection({
+  cls,
+  stats
+}: {
+  cls: BuffClass
+  stats: Record<string, BuffStat>
+}): JSX.Element {
+  return (
+    <Box>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
+        <Box sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(cls) }} />
+        <Typography variant="caption" sx={{ fontWeight: 600 }}>
+          {CLASS_LABEL[cls]}
+        </Typography>
+      </Stack>
+      <Paper variant="outlined" sx={{ p: 1, borderLeft: '3px solid', borderLeftColor: classAccent(cls) }}>
+        <StatsTable stats={stats} cls={cls} />
+      </Paper>
+    </Box>
+  )
+}
+
 export default function BuffsView(): JSX.Element {
   const snap = useModule<BuffsSnap, BuffsDelta>('buffs', applyBuffsDelta) ?? EMPTY_BUFFS
   // Tick once a second so active-buff elapsed/remaining stay live between deltas.
@@ -447,30 +353,7 @@ export default function BuffsView(): JSX.Element {
         ) : (
           <Stack spacing={1.5}>
             {activeGroups.map((g) => (
-              <Box key={g.key}>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {groupLabel(g.key)}
-                  </Typography>
-                  <Chip
-                    size="small"
-                    variant="outlined"
-                    label={g.buffs.length}
-                    sx={{ height: 16, fontSize: 10, '& .MuiChip-label': { px: 0.5 } }}
-                  />
-                </Stack>
-                <Box
-                  sx={{
-                    display: 'grid',
-                    gap: 1,
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))'
-                  }}
-                >
-                  {g.buffs.map((b) => (
-                    <ActiveRow key={`${b.spell}@${b.self ? 'self' : b.target ?? '?'}`} buff={b} now={now} />
-                  ))}
-                </Box>
-              </Box>
+              <ActiveGroup key={g.key} label={groupLabel(g.key)} buffs={g.buffs} now={now} />
             ))}
           </Stack>
         )}
@@ -487,22 +370,7 @@ export default function BuffsView(): JSX.Element {
         ) : (
           <Stack spacing={1.5}>
             {statsClasses.map((c) => (
-              <Box key={c}>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.5 }}>
-                  <Box
-                    sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: classAccent(c) }}
-                  />
-                  <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                    {CLASS_LABEL[c]}
-                  </Typography>
-                </Stack>
-                <Paper
-                  variant="outlined"
-                  sx={{ p: 1, borderLeft: '3px solid', borderLeftColor: classAccent(c) }}
-                >
-                  <StatsTable stats={snap.stats} cls={c} />
-                </Paper>
-              </Box>
+              <StatsSection key={c} cls={c} stats={snap.stats} />
             ))}
           </Stack>
         )}

@@ -201,6 +201,17 @@ function readTar(buf: Buffer): TarEntry[] {
 
 // ---- registry fetch -----------------------------------------------------------
 
+/** The offline answer: serve the cache (memory, then disk, then empty) with `error` set. */
+function registryFallback(err: unknown): RegistryListResult {
+  logError('main:packRegistry', { message: 'registry fetch failed', err })
+  const cached = memCache?.packs ?? readDiskCache()?.packs ?? []
+  return {
+    packs: annotate(cached),
+    fromCache: cached.length > 0,
+    error: err instanceof Error ? err.message : String(err)
+  }
+}
+
 /**
  * Fetch the registry index (24h cached, offline-tolerant). Always returns a list;
  * on failure it serves the cache (or empty) and sets `error`. Each pack is
@@ -208,7 +219,7 @@ function readTar(buf: Buffer): TarEntry[] {
  */
 export async function fetchRegistry(force = false): Promise<RegistryListResult> {
   const now = Date.now()
-  if (!memCache) memCache = readDiskCache()
+  memCache ??= readDiskCache()
 
   const fresh = memCache && now - memCache.at < CACHE_TTL_MS
   if (!force && fresh && memCache) {
@@ -223,13 +234,7 @@ export async function fetchRegistry(force = false): Promise<RegistryListResult> 
     writeDiskCache(packs)
     return { packs: annotate(packs) }
   } catch (err) {
-    logError('main:packRegistry', { message: 'registry fetch failed', err })
-    const cached = memCache?.packs ?? readDiskCache()?.packs ?? []
-    return {
-      packs: annotate(cached),
-      fromCache: cached.length > 0,
-      error: err instanceof Error ? err.message : String(err)
-    }
+    return registryFallback(err)
   }
 }
 
@@ -368,6 +373,81 @@ function safeJoin(targetRoot: string, relPath: string): string | null {
   return dest
 }
 
+/** What the archive walk produced: the raw CESP manifest (if the pack carried one) and how
+ *  many audio files were written into the stage dir. */
+interface StagedEntries {
+  cespRaw: string | null
+  wrote: number
+}
+
+/**
+ * Write the pack root's files out of the archive into `stageDir`: `openpeon.json` verbatim
+ * (kept alongside for provenance) and every audio file flattened under `sounds/`. Throws —
+ * after removing the stage dir — on an entry that would escape the target.
+ */
+function stageEntries(entries: TarEntry[], rootPrefix: string, stageDir: string): StagedEntries {
+  let cespRaw: string | null = null
+  let wrote = 0
+  for (const entry of entries) {
+    if (!entry.name.startsWith(rootPrefix)) continue
+    const rel = entry.name.slice(rootPrefix.length)
+    if (!rel || rel.endsWith('/')) continue
+
+    const dest = safeJoin(stageDir, rel)
+    if (!dest) {
+      rmSync(stageDir, { recursive: true, force: true })
+      throw new Error(`unsafe archive path: ${entry.name}`)
+    }
+
+    const base = rel.split('/').pop() ?? rel
+    if (rel === 'openpeon.json') {
+      cespRaw = entry.data.toString('utf8')
+      // keep the original alongside for provenance
+      writeFileSync(dest, entry.data)
+      continue
+    }
+    // Only keep audio files, flattened under sounds/ (matches our manifest paths).
+    if (/\.(wav|mp3|ogg)$/i.test(base)) {
+      writeFileSync(join(stageDir, 'sounds', base), entry.data)
+      wrote++
+    }
+  }
+  return { cespRaw, wrote }
+}
+
+/**
+ * Convert the staged CESP manifest into ours and write `manifest.json` into the stage dir.
+ * Throws — after removing the stage dir — when the CESP is unparseable or converts to nothing.
+ */
+function writeConvertedManifest(pack: RegistryPack, stageDir: string, cespRaw: string): void {
+  let cesp: CespManifest
+  try {
+    cesp = JSON.parse(cespRaw) as CespManifest
+  } catch {
+    rmSync(stageDir, { recursive: true, force: true })
+    throw new Error('openpeon.json is not valid JSON')
+  }
+
+  const taken = new Set<string>()
+  const sounds = cespToManifestSounds(cesp, (category, file) => deriveSoundId(category, file, taken))
+  if (Object.keys(sounds).length === 0) {
+    rmSync(stageDir, { recursive: true, force: true })
+    throw new Error('no sounds after conversion')
+  }
+
+  // First NON-EMPTY of registry name → CESP name → pack id (what `a || b || c` said): an
+  // empty display_name from either source falls through rather than titling the pack ''.
+  const displayName = [pack.display_name, cesp.display_name, pack.name].find((v) => v) ?? pack.name
+  const manifest: SoundPackManifest & { source?: { repo: string; ref: string } } = {
+    id: pack.name,
+    name: displayName,
+    sounds,
+    license: cesp.license ?? pack.license ?? 'see source repo',
+    source: { repo: pack.source_repo, ref: pack.source_ref }
+  }
+  writeFileSync(join(stageDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8')
+}
+
 /**
  * Install a registry pack end-to-end. Streams progress via `onProgress`. Throws on
  * failure (the IPC layer converts that into a `packs:progress` error + a failed
@@ -407,32 +487,7 @@ export async function installPack(
   if (existsSync(stageDir)) rmSync(stageDir, { recursive: true, force: true })
   mkdirSync(join(stageDir, 'sounds'), { recursive: true })
 
-  let cespRaw: string | null = null
-  let wrote = 0
-  for (const entry of entries) {
-    if (!entry.name.startsWith(rootPrefix)) continue
-    const rel = entry.name.slice(rootPrefix.length)
-    if (!rel || rel.endsWith('/')) continue
-
-    const dest = safeJoin(stageDir, rel)
-    if (!dest) {
-      rmSync(stageDir, { recursive: true, force: true })
-      throw new Error(`unsafe archive path: ${entry.name}`)
-    }
-
-    const base = rel.split('/').pop() ?? rel
-    if (rel === 'openpeon.json') {
-      cespRaw = entry.data.toString('utf8')
-      // keep the original alongside for provenance
-      writeFileSync(dest, entry.data)
-      continue
-    }
-    // Only keep audio files, flattened under sounds/ (matches our manifest paths).
-    if (/\.(wav|mp3|ogg)$/i.test(base)) {
-      writeFileSync(join(stageDir, 'sounds', base), entry.data)
-      wrote++
-    }
-  }
+  const { cespRaw, wrote } = stageEntries(entries, rootPrefix, stageDir)
 
   if (!cespRaw) {
     rmSync(stageDir, { recursive: true, force: true })
@@ -445,29 +500,7 @@ export async function installPack(
 
   // 3. Convert CESP → our manifest.
   onProgress({ name, phase: 'converting' })
-  let cesp: CespManifest
-  try {
-    cesp = JSON.parse(cespRaw) as CespManifest
-  } catch {
-    rmSync(stageDir, { recursive: true, force: true })
-    throw new Error('openpeon.json is not valid JSON')
-  }
-
-  const taken = new Set<string>()
-  const sounds = cespToManifestSounds(cesp, (category, file) => deriveSoundId(category, file, taken))
-  if (Object.keys(sounds).length === 0) {
-    rmSync(stageDir, { recursive: true, force: true })
-    throw new Error('no sounds after conversion')
-  }
-
-  const manifest: SoundPackManifest & { source?: { repo: string; ref: string } } = {
-    id: name,
-    name: pack.display_name || cesp.display_name || name,
-    sounds,
-    license: cesp.license ?? pack.license ?? 'see source repo',
-    source: { repo: pack.source_repo, ref: pack.source_ref }
-  }
-  writeFileSync(join(stageDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8')
+  writeConvertedManifest(pack, stageDir, cespRaw)
 
   // 4. Atomically swap the staged dir into place.
   if (existsSync(packDir)) rmSync(packDir, { recursive: true, force: true })

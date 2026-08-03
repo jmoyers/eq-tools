@@ -19,7 +19,8 @@
 // THE SHAPE. Every rule here is a TOTAL, PURE function over arbitrary input, so it can be
 // unit-tested without Electron (tests/security.test.mts) — the imageCache.ts / storeMigrations.ts
 // precedent. The Electron wiring that CALLS them (`app.on('web-contents-created')`, the
-// permission handlers) lives in index.ts next to the window construction it guards.
+// permission handlers) lives in windows.ts next to the window construction it guards, and is
+// installed from the composition root (index.ts) before the first window exists.
 //
 // DENY BY DEFAULT is the rule in all three: an input that isn't recognized is rejected, never
 // "passed through because it looked harmless".

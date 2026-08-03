@@ -111,7 +111,7 @@ test('migration rewrites every retired-pack sound onto a REAL Alan Rickman line'
   const ids = installedSoundIds()
   // One id per legacy pack shape: the synthesized default's four bare ids, the curated
   // peon/sc_marine prefixes, and bastion's derived (single-digit) ids.
-  const legacy: Array<[string, string]> = [
+  const legacy: [string, string][] = [
     ['default', 'victory'],
     ['default', 'warning'],
     ['default', 'chime'],

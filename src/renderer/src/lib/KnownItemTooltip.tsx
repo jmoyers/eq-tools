@@ -29,7 +29,7 @@
 // `window.eq`. The overlay bundle has no such bridge (and stays MUI-free) — the overlay gets
 // the tradeskill FILTER, not this card.
 
-import { useEffect, useState, type ReactElement } from 'react'
+import { type JSX, useEffect, useState, type ReactElement } from 'react'
 import { Box, CircularProgress, Stack, Tooltip, Typography } from '@mui/material'
 import type { ItemKnowledge } from '@shared/types'
 import { EQ_ITEM_COLORS } from './ItemWindow'

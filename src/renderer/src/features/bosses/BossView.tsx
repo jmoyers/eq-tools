@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { type JSX, useCallback, useMemo, useState } from 'react'
 import {
   Box,
   Chip,
@@ -19,7 +19,7 @@ import { useBossKills } from './useBossKills'
 import type { TargetStatus } from './bossStatus'
 import type { MobTarget } from '../mobs/mobTarget'
 import Confetti from '../../lib/Confetti'
-import { tierStyle } from '../../lib/tierChip'
+import { tierStyle, type TierStyle } from '../../lib/tierChip'
 import { formatDate, formatDateTime } from '../../lib/formatDate'
 import { cachedImageUrl } from '../../lib/imageUrl'
 
@@ -96,6 +96,115 @@ function BossImage({
 // about RAID PROGRESSION again — and its cards now route to the same mob page everything else
 // does, instead of opening a modal only this tab knew how to open.
 
+// The little tier-coloured tick in the card's top-left corner: "you have this one".
+function TargetKilledBadge({ tier }: { tier: TierStyle }): JSX.Element {
+  return (
+    <Box
+      sx={{
+        position: 'absolute',
+        top: 4,
+        left: 4,
+        zIndex: 1,
+        width: 20,
+        height: 20,
+        borderRadius: '50%',
+        bgcolor: tier.bg,
+        color: tier.fg,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: 1
+      }}
+    >
+      <CheckIcon sx={{ fontSize: 14 }} />
+    </Box>
+  )
+}
+
+// Portrait + the tier chip that overlays its top-right corner. An undefeated target is
+// greyed out and its chip reads "not defeated" on a neutral scrim instead of a tier colour.
+function TargetCardMedia({
+  s,
+  tier,
+  height
+}: {
+  s: TargetStatus
+  tier: TierStyle
+  height: number
+}): JSX.Element {
+  return (
+    <Box sx={{ position: 'relative' }}>
+      <BossImage target={s.target} height={height} dim={!s.killed} />
+      <Tooltip title={s.killed ? tier.long : 'Not defeated'}>
+        <Chip
+          size="small"
+          label={s.killed ? tier.label : 'not defeated'}
+          sx={{
+            position: 'absolute',
+            top: 4,
+            right: 4,
+            height: 20,
+            bgcolor: s.killed ? tier.bg : 'rgba(0,0,0,0.65)',
+            color: s.killed ? tier.fg : '#fff',
+            fontWeight: 700,
+            fontSize: 11,
+            '& .MuiChip-label': { px: 0.75 }
+          }}
+        />
+      </Tooltip>
+    </Box>
+  )
+}
+
+// The date line under a DEFEATED target's name. A single kill states one date; repeats
+// spell out first and last in the tooltip. The comfortable density also shows the count.
+function TargetKillDate({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.Element {
+  return (
+    <Tooltip
+      title={
+        s.firstTs && s.firstTs !== s.lastTs
+          ? `First ${formatDateTime(s.firstTs)} · Last ${formatDateTime(s.lastTs)}`
+          : `Defeated ${formatDateTime(s.lastTs || s.firstTs)}`
+      }
+    >
+      <Typography variant="caption" color="text.secondary" noWrap display="block">
+        {formatDate(s.lastTs || s.firstTs)}
+        {!compact && ` · ${s.count} kill${s.count === 1 ? '' : 's'}`}
+      </Typography>
+    </Tooltip>
+  )
+}
+
+// Everything below the portrait: name, zone (comfortable only) and the kill/no-kill line.
+function TargetCardCaption({ s, compact }: { s: TargetStatus; compact: boolean }): JSX.Element {
+  return (
+    <Box sx={{ p: compact ? 0.75 : 1 }}>
+      <Typography
+        variant={compact ? 'caption' : 'body2'}
+        noWrap
+        title={s.target.name}
+        sx={{ fontWeight: 600, color: s.killed ? 'text.primary' : 'text.secondary' }}
+      >
+        {s.target.name}
+      </Typography>
+      {!compact && (
+        <Typography variant="caption" color="text.secondary" noWrap display="block">
+          {s.target.zone ?? ''}
+        </Typography>
+      )}
+      {s.killed ? (
+        <TargetKillDate s={s} compact={compact} />
+      ) : (
+        !compact && (
+          <Typography variant="caption" color="text.disabled" display="block">
+            not defeated
+          </Typography>
+        )
+      )}
+    </Box>
+  )
+}
+
 function TargetCard({
   s,
   compact,
@@ -132,83 +241,121 @@ function TargetCard({
         '&:hover': { transform: flash ? 'scale(1.04)' : 'translateY(-2px)' }
       }}
     >
-      {s.killed && (
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 4,
-            left: 4,
-            zIndex: 1,
-            width: 20,
-            height: 20,
-            borderRadius: '50%',
-            bgcolor: tier.bg,
-            color: tier.fg,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: 1
-          }}
-        >
-          <CheckIcon sx={{ fontSize: 14 }} />
-        </Box>
-      )}
-      <Box sx={{ position: 'relative' }}>
-        <BossImage target={s.target} height={imgH} dim={!s.killed} />
-        <Tooltip title={s.killed ? tier.long : 'Not defeated'}>
-          <Chip
-            size="small"
-            label={s.killed ? tier.label : 'not defeated'}
-            sx={{
-              position: 'absolute',
-              top: 4,
-              right: 4,
-              height: 20,
-              bgcolor: s.killed ? tier.bg : 'rgba(0,0,0,0.65)',
-              color: s.killed ? tier.fg : '#fff',
-              fontWeight: 700,
-              fontSize: 11,
-              '& .MuiChip-label': { px: 0.75 }
-            }}
-          />
-        </Tooltip>
-      </Box>
-      <Box sx={{ p: compact ? 0.75 : 1 }}>
-        <Typography
-          variant={compact ? 'caption' : 'body2'}
-          noWrap
-          title={s.target.name}
-          sx={{ fontWeight: 600, color: s.killed ? 'text.primary' : 'text.secondary' }}
-        >
-          {s.target.name}
-        </Typography>
-        {!compact && (
-          <Typography variant="caption" color="text.secondary" noWrap display="block">
-            {s.target.zone ?? ''}
-          </Typography>
-        )}
-        {s.killed ? (
-          <Tooltip
-            title={
-              s.firstTs && s.firstTs !== s.lastTs
-                ? `First ${formatDateTime(s.firstTs)} · Last ${formatDateTime(s.lastTs)}`
-                : `Defeated ${formatDateTime(s.lastTs || s.firstTs)}`
-            }
-          >
-            <Typography variant="caption" color="text.secondary" noWrap display="block">
-              {formatDate(s.lastTs || s.firstTs)}
-              {!compact && ` · ${s.count} kill${s.count === 1 ? '' : 's'}`}
-            </Typography>
-          </Tooltip>
-        ) : (
-          !compact && (
-            <Typography variant="caption" color="text.disabled" display="block">
-              not defeated
-            </Typography>
-          )
-        )}
-      </Box>
+      {s.killed && <TargetKilledBadge tier={tier} />}
+      <TargetCardMedia s={s} tier={tier} height={imgH} />
+      <TargetCardCaption s={s} compact={compact} />
     </Paper>
+  )
+}
+
+/**
+ * What a roster card hands the app-wide mob page. A roster card carries no consider (you may
+ * never have conned it), so the page simply renders without the con block — never with an
+ * invented one. The kill facts come from the status the roster already computed, which is
+ * article-insensitive matching the log's `match` names (bossStatus.ts).
+ */
+function mobTargetForStatus(t: TargetStatus): MobTarget {
+  return {
+    mob: t.target.name,
+    kill:
+      t.count > 0
+        ? { count: t.count, bestTier: t.bestTier, firstTs: t.firstTs, lastTs: t.lastTs }
+        : undefined
+  }
+}
+
+// Search / defeated-only / density, plus the running "N of M defeated" tally.
+function BossToolbar({
+  query,
+  onQueryChange,
+  defeatedOnly,
+  onDefeatedOnlyChange,
+  density,
+  onDensityChange,
+  defeated,
+  total
+}: {
+  query: string
+  onQueryChange: (q: string) => void
+  defeatedOnly: boolean
+  onDefeatedOnlyChange: (v: boolean) => void
+  density: Density
+  onDensityChange: (d: Density | null) => void
+  defeated: number
+  total: number
+}): JSX.Element {
+  return (
+    <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
+      <TextField
+        size="small"
+        label="Search target"
+        value={query}
+        onChange={(e) => onQueryChange(e.target.value)}
+        sx={{ minWidth: 200 }}
+      />
+      <FormControlLabel
+        control={<Switch checked={defeatedOnly} onChange={(e) => onDefeatedOnlyChange(e.target.checked)} />}
+        label="Defeated only"
+      />
+      <ToggleButtonGroup
+        size="small"
+        exclusive
+        value={density}
+        onChange={(_e, v: Density | null) => onDensityChange(v)}
+      >
+        <ToggleButton value="compact">Compact</ToggleButton>
+        <ToggleButton value="comfortable">Comfortable</ToggleButton>
+      </ToggleButtonGroup>
+      <Box sx={{ flexGrow: 1 }} />
+      <Typography variant="body2" color="text.secondary">
+        {defeated} / {total} defeated · badge = highest instance tier
+      </Typography>
+    </Stack>
+  )
+}
+
+// One progression category (Open World, Fear, Hate, Sky) and its grid of target cards.
+function CategorySection({
+  category,
+  list,
+  compact,
+  minCol,
+  flashing,
+  onOpenMob
+}: {
+  category: string
+  list: TargetStatus[]
+  compact: boolean
+  minCol: number
+  flashing: Set<string>
+  onOpenMob: (t: MobTarget) => void
+}): JSX.Element {
+  return (
+    <Box sx={{ mb: compact ? 1.5 : 2.5 }}>
+      <Typography variant="subtitle2" sx={{ mb: 0.75, color: 'primary.main' }}>
+        {category}{' '}
+        <Typography component="span" variant="caption" color="text.secondary">
+          ({list.filter((s) => s.killed).length}/{list.length})
+        </Typography>
+      </Typography>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: `repeat(auto-fill, minmax(${minCol}px, 1fr))`,
+          gap: compact ? 1 : 1.5
+        }}
+      >
+        {list.map((s) => (
+          <TargetCard
+            key={s.target.name}
+            s={s}
+            compact={compact}
+            flash={flashing.has(s.target.name)}
+            onOpen={(t) => onOpenMob(mobTargetForStatus(t))}
+          />
+        ))}
+      </Box>
+    </Box>
   )
 }
 
@@ -278,72 +425,28 @@ export default function BossView({ onOpenMob }: { onOpenMob: (t: MobTarget) => v
   return (
     <Stack spacing={1.5} sx={{ height: '100%', position: 'relative' }}>
       {burst != null && <Confetti key={burst} onDone={() => setBurst(null)} />}
-      <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
-        <TextField
-          size="small"
-          label="Search target"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          sx={{ minWidth: 200 }}
-        />
-        <FormControlLabel
-          control={<Switch checked={defeatedOnly} onChange={(e) => setDefeatedOnly(e.target.checked)} />}
-          label="Defeated only"
-        />
-        <ToggleButtonGroup
-          size="small"
-          exclusive
-          value={density}
-          onChange={(_e, v) => setDensityPersist(v)}
-        >
-          <ToggleButton value="compact">Compact</ToggleButton>
-          <ToggleButton value="comfortable">Comfortable</ToggleButton>
-        </ToggleButtonGroup>
-        <Box sx={{ flexGrow: 1 }} />
-        <Typography variant="body2" color="text.secondary">
-          {defeated} / {statuses.length} defeated · badge = highest instance tier
-        </Typography>
-      </Stack>
+      <BossToolbar
+        query={query}
+        onQueryChange={setQuery}
+        defeatedOnly={defeatedOnly}
+        onDefeatedOnlyChange={setDefeatedOnly}
+        density={density}
+        onDensityChange={setDensityPersist}
+        defeated={defeated}
+        total={statuses.length}
+      />
 
       <Box sx={{ flexGrow: 1, overflow: 'auto' }}>
         {byCategory.map(([category, list]) => (
-          <Box key={category} sx={{ mb: compact ? 1.5 : 2.5 }}>
-            <Typography variant="subtitle2" sx={{ mb: 0.75, color: 'primary.main' }}>
-              {category}{' '}
-              <Typography component="span" variant="caption" color="text.secondary">
-                ({list.filter((s) => s.killed).length}/{list.length})
-              </Typography>
-            </Typography>
-            <Box
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: `repeat(auto-fill, minmax(${minCol}px, 1fr))`,
-                gap: compact ? 1 : 1.5
-              }}
-            >
-              {list.map((s) => (
-                <TargetCard
-                  key={s.target.name}
-                  s={s}
-                  compact={compact}
-                  flash={flashing.has(s.target.name)}
-                  onOpen={(t) =>
-                    onOpenMob({
-                      mob: t.target.name,
-                      // A roster card carries no consider (you may never have conned it), so the
-                      // page simply renders without the con block — never with an invented one.
-                      // The kill facts come from the status the roster already computed, which
-                      // is article-insensitive matching the log's `match` names (bossStatus.ts).
-                      kill:
-                        t.count > 0
-                          ? { count: t.count, bestTier: t.bestTier, firstTs: t.firstTs, lastTs: t.lastTs }
-                          : undefined
-                    })
-                  }
-                />
-              ))}
-            </Box>
-          </Box>
+          <CategorySection
+            key={category}
+            category={category}
+            list={list}
+            compact={compact}
+            minCol={minCol}
+            flashing={flashing}
+            onOpenMob={onOpenMob}
+          />
         ))}
       </Box>
     </Stack>

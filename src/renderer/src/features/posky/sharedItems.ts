@@ -47,50 +47,78 @@ export interface SharedItem {
  *  quest appear; a quest with no overlap maps to an empty array or is absent). */
 export type SharedItemsMap = Map<string, SharedItem[]>
 
+/** An item counting key paired with the display name that introduced it. */
+interface ItemRef {
+  key: string
+  name: string
+}
+
+/**
+ * A quest's required items reduced to DISTINCT non-currency counting keys, in listed
+ * order. Both passes below walk exactly this sequence: de-duping by counting key is
+ * what stops a quest that lists the same base item twice from appearing twice as its
+ * own "sharer".
+ */
+function distinctItemRefs(q: PoskyQuest): ItemRef[] {
+  const seen = new Set<string>()
+  const out: ItemRef[] = []
+  for (const it of q.items) {
+    if (isCurrencyItem(it.name)) continue
+    const key = itemCountKey(it.name)
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ key, name: normalizeItemName(it.name) })
+  }
+  return out
+}
+
+/** Pass 1: item counting key -> { display name, every quest requiring it }. */
+function indexQuestsByItem(
+  quests: PoskyQuest[]
+): Map<string, { name: string; quests: SharingQuest[] }> {
+  const byItem = new Map<string, { name: string; quests: SharingQuest[] }>()
+  for (const q of quests) {
+    const sq: SharingQuest = { key: questKey(q), className: q.className, name: q.name }
+    for (const ref of distinctItemRefs(q)) {
+      let entry = byItem.get(ref.key)
+      if (!entry) {
+        entry = { name: ref.name, quests: [] }
+        byItem.set(ref.key, entry)
+      }
+      entry.quests.push(sq)
+    }
+  }
+  return byItem
+}
+
+/** Pass 2, for one quest: the items it shares with at least one OTHER quest. */
+function contestedItems(
+  q: PoskyQuest,
+  byItem: Map<string, { name: string; quests: SharingQuest[] }>
+): SharedItem[] {
+  const key = questKey(q)
+  const shared: SharedItem[] = []
+  for (const ref of distinctItemRefs(q)) {
+    const entry = byItem.get(ref.key)
+    if (!entry || entry.quests.length < 2) continue // shared by no one else
+    const others = entry.quests.filter((x) => x.key !== key)
+    if (others.length === 0) continue
+    shared.push({ key: ref.key, name: entry.name, quests: others })
+  }
+  return shared
+}
+
 /**
  * Build the shared-items map for a quest set. For each normalized (non-currency)
  * required item, find every quest that requires it; any item required by ≥2 quests is
  * "contested" and is listed under each of those quests (pointing at the OTHERS).
  */
 export function computeSharedItems(quests: PoskyQuest[]): SharedItemsMap {
-  // item counting key -> { display, quests: SharingQuest[] }
-  const byItem = new Map<string, { name: string; quests: SharingQuest[] }>()
-  for (const q of quests) {
-    const sq: SharingQuest = { key: questKey(q), className: q.className, name: q.name }
-    // De-dupe items within a single quest by counting key (a quest listing the same
-    // base item twice must not appear twice as its own "sharer").
-    const seen = new Set<string>()
-    for (const it of q.items) {
-      if (isCurrencyItem(it.name)) continue
-      const k = itemCountKey(it.name)
-      if (seen.has(k)) continue
-      seen.add(k)
-      let entry = byItem.get(k)
-      if (!entry) {
-        entry = { name: normalizeItemName(it.name), quests: [] }
-        byItem.set(k, entry)
-      }
-      entry.quests.push(sq)
-    }
-  }
-
+  const byItem = indexQuestsByItem(quests)
   const out: SharedItemsMap = new Map()
   for (const q of quests) {
-    const key = questKey(q)
-    const shared: SharedItem[] = []
-    const seen = new Set<string>()
-    for (const it of q.items) {
-      if (isCurrencyItem(it.name)) continue
-      const k = itemCountKey(it.name)
-      if (seen.has(k)) continue
-      seen.add(k)
-      const entry = byItem.get(k)
-      if (!entry || entry.quests.length < 2) continue // shared by no one else
-      const others = entry.quests.filter((x) => x.key !== key)
-      if (others.length === 0) continue
-      shared.push({ key: k, name: entry.name, quests: others })
-    }
-    if (shared.length > 0) out.set(key, shared)
+    const shared = contestedItems(q, byItem)
+    if (shared.length > 0) out.set(questKey(q), shared)
   }
   return out
 }

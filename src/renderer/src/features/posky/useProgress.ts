@@ -7,7 +7,6 @@ import type {
   PoskyQuest,
   ProgressState,
   TurnInDelta,
-  TurnInEvent,
   TurnInSnap
 } from '@shared/types'
 import { getPoskyData } from '../../data'
@@ -22,7 +21,6 @@ import { matchTurnIns, newlyCompletedTurnIns } from './turnInCelebration'
 const applyLootDelta = (s: LootSnap, d: LootDelta): LootSnap => [...s, ...d.appended]
 const applyTurnInDelta = (s: TurnInSnap, d: TurnInDelta): TurnInSnap => [...s, ...d.appended]
 const EMPTY_LOOT: LootEvent[] = []
-const EMPTY_TURNINS: TurnInEvent[] = []
 
 const posky = getPoskyData()
 
@@ -43,6 +41,23 @@ export { questKey }
 function loadCountSource(): CountSource {
   const v = localStorage.getItem(COUNT_SOURCE_KEY)
   return v === 'inventory' || v === 'both' || v === 'log' ? v : 'log'
+}
+
+/**
+ * Display names keyed by the SAME normalized counting key logCounts uses, so the
+ * reconcile rows (keyed by counting key) resolve a name. We prefer the BASE
+ * (un-suffixed) display when we've seen it, so a `Sphinx Claw` + `Sphinx Claw +1`
+ * pool reads as "Sphinx Claw" (the quest item), not the variant.
+ */
+function deriveLootNames(lootHistory: LootEvent[]): Record<string, string> {
+  const m: Record<string, string> = {}
+  for (const e of lootHistory) {
+    const k = itemCountKey(e.item)
+    const base = normalizeItemName(e.item)
+    // First writer wins, but a base (un-suffixed) name upgrades a variant one.
+    if (m[k] === undefined || (m[k] !== base && base === e.item)) m[k] = base
+  }
+  return m
 }
 
 export interface ItemProgress {
@@ -143,7 +158,6 @@ export function useProgress(opts?: UseProgressOptions): UseProgress {
   // celebration baseline on hydration so the historical turn-ins that arrive WITH the
   // snapshot seed the baseline silently instead of looking like live transitions.
   const turnInsRaw = useModule<TurnInSnap, TurnInDelta>('turnins', applyTurnInDelta)
-  const turnIns = turnInsRaw ?? EMPTY_TURNINS
 
   // Baseline of quest keys already satisfied by a turn-in — seeded silently on the FIRST
   // observation so historical turn-ins (in the initial log scan) never celebrate. A key
@@ -232,20 +246,7 @@ export function useProgress(opts?: UseProgressOptions): UseProgress {
   // there also keeps it from ever subtracting an item that was never held.
   const logCounts = useMemo<Record<string, number>>(() => computeHeldCounts(lootHistory), [lootHistory])
 
-  // Display names keyed by the SAME normalized counting key logCounts uses, so the
-  // reconcile rows (keyed by counting key) resolve a name. We prefer the BASE
-  // (un-suffixed) display when we've seen it, so a `Sphinx Claw` + `Sphinx Claw +1`
-  // pool reads as "Sphinx Claw" (the quest item), not the variant.
-  const lootNames = useMemo<Record<string, string>>(() => {
-    const m: Record<string, string> = {}
-    for (const e of lootHistory) {
-      const k = itemCountKey(e.item)
-      const base = normalizeItemName(e.item)
-      // First writer wins, but a base (un-suffixed) name upgrades a variant one.
-      if (m[k] === undefined || (m[k] !== base && base === e.item)) m[k] = base
-    }
-    return m
-  }, [lootHistory])
+  const lootNames = useMemo(() => deriveLootNames(lootHistory), [lootHistory])
 
   // Reconcile held items (log + inventory), subtracting anything consumed by
   // quests that have been turned in.
