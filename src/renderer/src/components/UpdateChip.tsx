@@ -30,13 +30,32 @@ const AGE_TICK_MS = 60_000
 /** How long the arrival glow runs before the chip settles into a calm resting look. */
 const GLOW_MS = 6_000
 
+/** Post-manual-check window: "up to date" is shown and re-checking is disabled. One
+ *  answer is valid for at least this long, and it keeps a rapid clicker off GitHub. */
+const CHECK_COOLDOWN_MS = 10_000
+
 export function UpdateChip(): JSX.Element {
   const [status, setStatus] = useState<UpdateStatus>({ state: 'idle' })
   const [version, setVersion] = useState<string>('')
   const [now, setNow] = useState(() => Date.now())
   const [glow, setGlow] = useState(false)
   const [busy, setBusy] = useState(false)
+  // Post-manual-check window: the label says "up to date" and re-checking is disabled.
+  const [cooldown, setCooldown] = useState(false)
+  const cooldownTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const wasReady = useRef<boolean | null>(null)
+
+  const startCooldown = (): void => {
+    setCooldown(true)
+    if (cooldownTimer.current) clearTimeout(cooldownTimer.current)
+    cooldownTimer.current = setTimeout(() => setCooldown(false), CHECK_COOLDOWN_MS)
+  }
+  useEffect(
+    () => () => {
+      if (cooldownTimer.current) clearTimeout(cooldownTimer.current)
+    },
+    []
+  )
 
   useEffect(() => {
     let alive = true
@@ -173,15 +192,24 @@ export function UpdateChip(): JSX.Element {
   // ---- working / quiet: one muted line, click to check ----------------------
   // The quiet line leads with the INSTALLED version — the chip is the bottom-left
   // "what am I running" spot, and "checked 2h ago" alone answered only half of it.
+  //
+  // A MANUAL check that finds nothing must say so: for the cooldown window the line reads
+  // "up to date" instead of the ambiguous "checked just now" (which never answered the
+  // question the click asked). The same window disables re-checking — no spinner, no
+  // extra chrome, the button just won't fire again for a few seconds. One click's answer
+  // is valid for at least that long, and it keeps a rapid-clicker from hammering GitHub.
   const vPrefix = version ? `v${version} · ` : ''
+  const upToDate = cooldown && ui.kind === 'quiet' && !ui.failed
   const label =
     ui.kind === 'working'
       ? ui.label
       : busy
         ? 'Checking for updates…'
-        : ui.checkedAt
-          ? `${vPrefix}checked ${formatAge(ui.checkedAt, now)}`
-          : `${vPrefix}not checked yet`
+        : upToDate
+          ? `${vPrefix}up to date`
+          : ui.checkedAt
+            ? `${vPrefix}checked ${formatAge(ui.checkedAt, now)}`
+            : `${vPrefix}not checked yet`
 
   // Errors stay INVISIBLE here (same muted line) — only the tooltip admits it,
   // and Preferences > Updates carries the detail.
@@ -197,10 +225,13 @@ export function UpdateChip(): JSX.Element {
           component="button"
           type="button"
           data-testid="update-chip-quiet"
-          disabled={busy || ui.kind === 'working'}
+          disabled={busy || cooldown || ui.kind === 'working'}
           onClick={() => {
             setBusy(true)
-            void window.eq.checkForUpdates().finally(() => setBusy(false))
+            void window.eq.checkForUpdates().finally(() => {
+              setBusy(false)
+              startCooldown()
+            })
           }}
           sx={{
             display: 'block',

@@ -196,6 +196,9 @@ function VersionSetting({ version }: { version: string }): JSX.Element {
 
 function UpdateSetting({ status, version }: { status: UpdateStatus; version: string }): JSX.Element {
   const [checking, setChecking] = useState(false)
+  // Same post-check cooldown as the nav chip (10s): one answer is valid for at least
+  // that long, and it keeps a rapid clicker from hammering the release feed.
+  const [cooldown, setCooldown] = useState(false)
   // Same pure mapping the left-nav chip uses, so the two surfaces can never
   // disagree — in particular about the updated-away case (a 'ready' naming the
   // build we are ALREADY running is stale and must not offer a relaunch).
@@ -216,6 +219,8 @@ function UpdateSetting({ status, version }: { status: UpdateStatus; version: str
       await window.eq.checkForUpdates()
     } finally {
       setChecking(false)
+      setCooldown(true)
+      setTimeout(() => setCooldown(false), 10_000)
     }
   }, [])
 
@@ -270,7 +275,7 @@ function UpdateSetting({ status, version }: { status: UpdateStatus; version: str
             size="small"
             startIcon={<RefreshIcon />}
             onClick={() => void checkNow()}
-            disabled={busy || status.disabled}
+            disabled={busy || cooldown || status.disabled}
           >
             Check for updates
           </Button>
