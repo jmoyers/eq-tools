@@ -144,22 +144,44 @@ function firstSoundId(pack: SoundPack | undefined): string {
   return pack ? Object.keys(pack.sounds)[0] ?? '' : ''
 }
 
-/** The pack→sound picker used inline per-alert and in the add/edit dialog. */
+/**
+ * The pack→sound picker used inline per-alert and in the add/edit dialog.
+ *
+ * `inGrid` is a LAYOUT-only escape hatch for the alert list. There the picker's two
+ * Selects must be columns of the ROW's shared grid template (see the grid comment in
+ * the list below) — a self-sized `Stack` here would size to whichever pack/line names
+ * happen to be selected, and every row would land its selects at a different x. With
+ * `inGrid` the wrapper is `display: contents`, so the two Selects become grid items of
+ * the caller's grid and take their width from the shared template instead of from
+ * their own text; each one ellipsizes its displayed value rather than growing.
+ * Behavior, props and callbacks are otherwise identical in both modes.
+ */
 function SoundPicker({
   packs,
   packId,
   soundId,
-  onChange
+  onChange,
+  inGrid = false
 }: {
   packs: SoundPack[]
   packId: string
   soundId: string
   onChange: (packId: string, soundId: string) => void
+  inGrid?: boolean
 }): JSX.Element {
   const pack = packs.find((p) => p.id === packId) ?? fallbackPack(packs)
   const soundIds = pack ? Object.keys(pack.sounds) : []
-  return (
-    <Stack direction="row" spacing={1}>
+  // A grid item must be allowed to shrink below its content (minWidth: 0) for the
+  // Select's own text-overflow to ever kick in.
+  const gridSx = {
+    minWidth: 0,
+    width: '100%',
+    '& .MuiSelect-select': { overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }
+  }
+  const packSx = inGrid ? { gridArea: 'voice', ...gridSx } : { minWidth: 130 }
+  const soundSx = inGrid ? { gridArea: 'line', ...gridSx } : { minWidth: 170 }
+  const selects = (
+    <>
       <Select
         size="small"
         value={pack?.id ?? ''}
@@ -168,7 +190,7 @@ function SoundPicker({
           const firstSound = np ? Object.keys(np.sounds)[0] : ''
           onChange(e.target.value, firstSound)
         }}
-        sx={{ minWidth: 130 }}
+        sx={packSx}
       >
         {packs.map((p) => (
           <MenuItem key={p.id} value={p.id}>
@@ -181,7 +203,7 @@ function SoundPicker({
         size="small"
         value={pack && pack.sounds[soundId] ? soundId : soundIds[0] ?? ''}
         onChange={(e) => onChange(pack?.id ?? packId, e.target.value)}
-        sx={{ minWidth: 170 }}
+        sx={soundSx}
       >
         {soundIds.map((sid) => (
           <MenuItem key={sid} value={sid}>
@@ -189,6 +211,12 @@ function SoundPicker({
           </MenuItem>
         ))}
       </Select>
+    </>
+  )
+  if (inGrid) return <Box sx={{ display: 'contents' }}>{selects}</Box>
+  return (
+    <Stack direction="row" spacing={1}>
+      {selects}
     </Stack>
   )
 }
@@ -625,6 +653,65 @@ function RecentFires({ fires }: { fires: AlertFireRecord[] }): JSX.Element {
   )
 }
 
+// ── The alert-row layout: ONE shared grid template ────────────────────────────
+//
+// Every row used to be a `flexWrap` row of content-sized children, so each row's
+// controls landed wherever the row's own text pushed them: a long trigger badge
+// (`event:buffExpired {spell=Reckless Strength}`) widened the identity block and shoved
+// the pickers right, the two pack/sound Selects sized to whichever names were selected,
+// and the 5-icon action cluster wrapped onto an orphan second line at a DIFFERENT icon
+// count per row. Ten alerts read as ten different layouts.
+//
+// Symmetry has to come from a template, not from luck: every row is the same CSS grid,
+// so a column edge is the same x in row 1 and row 10 regardless of what's in them.
+// Nothing wraps — text ellipsizes (full value in a Tooltip) and the tracks absorb the
+// slack. Tracks are `minmax(0, …)`: the max is the *preferred* width and the 0 min lets
+// a cramped row shrink gracefully instead of overflowing.
+//
+// Two deliberate shapes, chosen by a CONTAINER query on the Paper (the row's real width
+// — a viewport breakpoint would be wrong here, the 220px nav drawer offsets it):
+//   wide  → one line:  [toggle] [identity] [voice] [line] [volume] [actions]
+//   tight → two lines: [toggle] [identity ......... ] [actions]
+//                      [.     ] [voice] [line] [volume]
+// The second line indents under identity and reuses the same column edges, so the
+// collapse still reads as a grid rather than as a wrap accident.
+const ALERT_ROW_TIGHT_COLUMNS = 'auto minmax(0, 1fr) minmax(0, 1fr) auto'
+const ALERT_ROW_WIDE_COLUMNS =
+  'auto minmax(0, 1.5fr) minmax(0, 175px) minmax(0, 1.4fr) minmax(0, 130px) auto'
+
+const ALERT_ROW_GRID_SX = {
+  display: 'grid',
+  alignItems: 'center',
+  columnGap: 1.5,
+  rowGap: 1,
+  gridTemplateColumns: ALERT_ROW_TIGHT_COLUMNS,
+  gridTemplateAreas: `"toggle identity identity actions" ". voice line volume"`,
+  '@container (min-width: 860px)': {
+    gridTemplateColumns: ALERT_ROW_WIDE_COLUMNS,
+    gridTemplateAreas: `"toggle identity voice line volume actions"`
+  }
+} as const
+
+// The action cluster is constant: same five icons, same order, same right edge, never
+// wrapping. Across a long list that's a lot of chrome, so it rests dimmed and comes up
+// to full strength on hover / keyboard focus within the row.
+const ALERT_ROW_ACTIONS_SX = {
+  gridArea: 'actions',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  flexWrap: 'nowrap'
+} as const
+
+const ALERT_ROW_PAPER_SX = {
+  px: 1.25,
+  py: 1,
+  // Establishes the container the row's grid queries above (see ALERT_ROW_GRID_SX).
+  containerType: 'inline-size',
+  '& .alertRowActions': { opacity: 0.62, transition: 'opacity 120ms ease' },
+  '&:hover .alertRowActions, &:focus-within .alertRowActions': { opacity: 1 }
+} as const
+
 function applyAlertsDelta(state: AlertsSnap, delta: AlertsDelta): AlertsSnap {
   if (!delta.fired?.length) return state
   const history = { ...state.history }
@@ -851,35 +938,57 @@ export default function AlertsView(): JSX.Element {
           {alerts.map((def) => {
             const fires = history[def.id] ?? []
             const isOpen = expanded.has(def.id)
+            const badge = triggerBadge(def.trigger)
             return (
-              <Paper key={def.id} variant="outlined" sx={{ p: 1.25 }}>
-                <Stack direction="row" spacing={1.5} alignItems="center" flexWrap="wrap" useFlexGap>
+              <Paper key={def.id} variant="outlined" sx={ALERT_ROW_PAPER_SX}>
+                <Box sx={ALERT_ROW_GRID_SX}>
                   <Switch
                     size="small"
                     checked={def.enabled}
                     onChange={(e) => void persistAlerts({ ...def, enabled: e.target.checked })}
+                    sx={{ gridArea: 'toggle' }}
                   />
-                  <Box sx={{ minWidth: 200 }}>
-                    <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                      {def.name}
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      color="text.secondary"
-                      sx={{ fontFamily: 'monospace', wordBreak: 'break-all' }}
-                    >
-                      {triggerBadge(def.trigger)}
-                    </Typography>
+
+                  {/* Identity. Both lines are single-line + ellipsis: a long trigger badge
+                      (`event:buffExpired {spell=Reckless Strength}`) must never widen this
+                      column and shove the rest of the row sideways. Nothing is lost — the
+                      full text is one hover away. */}
+                  <Box
+                    sx={{ gridArea: 'identity', minWidth: 0, opacity: def.enabled ? 1 : 0.55 }}
+                  >
+                    <Tooltip title={def.name} enterDelay={600}>
+                      <Typography variant="body2" noWrap sx={{ fontWeight: 600 }}>
+                        {def.name}
+                      </Typography>
+                    </Tooltip>
+                    <Tooltip title={badge} enterDelay={300}>
+                      <Typography
+                        component="div"
+                        variant="caption"
+                        color="text.secondary"
+                        noWrap
+                        sx={{ fontFamily: 'monospace' }}
+                      >
+                        {badge}
+                      </Typography>
+                    </Tooltip>
                   </Box>
 
+                  {/* `inGrid` puts these two Selects in the 'voice' / 'line' columns above. */}
                   <SoundPicker
+                    inGrid
                     packs={sortedPacks}
                     packId={def.sound.packId}
                     soundId={def.sound.soundId}
                     onChange={(p, s) => void persistAlerts({ ...def, sound: { packId: p, soundId: s } })}
                   />
 
-                  <Stack direction="row" spacing={1} alignItems="center" sx={{ width: 150 }}>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    alignItems="center"
+                    sx={{ gridArea: 'volume', minWidth: 0 }}
+                  >
                     <Typography variant="caption" color="text.secondary">
                       vol
                     </Typography>
@@ -891,40 +1000,42 @@ export default function AlertsView(): JSX.Element {
                       value={def.volume ?? 1}
                       onChange={(_e, v) => setAlerts((prev) => prev.map((a) => (a.id === def.id ? { ...a, volume: v as number } : a)))}
                       onChangeCommitted={(_e, v) => void persistAlerts({ ...def, volume: v as number })}
+                      sx={{ flex: 1, minWidth: 0 }}
                     />
                   </Stack>
 
-                  <Box sx={{ flexGrow: 1 }} />
-                  <Tooltip title={`Recent fires (${fires.length})`}>
-                    <IconButton
-                      size="small"
-                      color={isOpen ? 'primary' : 'default'}
-                      onClick={() => toggleExpanded(def.id)}
-                    >
-                      <HistoryIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Test (play now)">
-                    <IconButton size="small" onClick={() => test(def)}>
-                      <PlayArrowIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Copy share string for this alert">
-                    <IconButton size="small" onClick={() => void copyShare([def.id])}>
-                      <IosShareIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Edit">
-                    <IconButton size="small" onClick={() => openEdit(def)}>
-                      <EditIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                  <Tooltip title="Delete">
-                    <IconButton size="small" color="error" onClick={() => void removeAlert(def.id)}>
-                      <DeleteOutlineIcon fontSize="small" />
-                    </IconButton>
-                  </Tooltip>
-                </Stack>
+                  <Box className="alertRowActions" sx={ALERT_ROW_ACTIONS_SX}>
+                    <Tooltip title={`Recent fires (${fires.length})`}>
+                      <IconButton
+                        size="small"
+                        color={isOpen ? 'primary' : 'default'}
+                        onClick={() => toggleExpanded(def.id)}
+                      >
+                        <HistoryIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Test (play now)">
+                      <IconButton size="small" onClick={() => test(def)}>
+                        <PlayArrowIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Copy share string for this alert">
+                      <IconButton size="small" onClick={() => void copyShare([def.id])}>
+                        <IosShareIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Edit">
+                      <IconButton size="small" onClick={() => openEdit(def)}>
+                        <EditIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Delete">
+                      <IconButton size="small" color="error" onClick={() => void removeAlert(def.id)}>
+                        <DeleteOutlineIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
+                </Box>
 
                 <Collapse in={isOpen} unmountOnExit>
                   <Divider sx={{ my: 0.75 }} />
