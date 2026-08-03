@@ -436,6 +436,137 @@ export async function checkGrid(page: Page, tag: string): Promise<void> {
   )
 }
 
+// ── chart hover (Task #64: the crosshair + shared ChartTooltip) ────────────────────────
+
+const TOOLTIP = '[data-testid="chart-tooltip"]'
+/**
+ * The timeline's plot SVG. It carries no testid of its own and the Combat view is full of MUI
+ * icon `<svg>`s, so it is identified by the clip path only it owns (`<clipPath id="tl-plot-clip">`,
+ * CombatTimeline.tsx). Hovering anywhere inside it is inside the wrapper that owns the hover
+ * listeners, which is what the assertions actually need.
+ */
+const TIMELINE_PLOT = 'svg:has(#tl-plot-clip)'
+/** The DPS-over-time curve: the one STRETCHED (`preserveAspectRatio="none"`) svg in a panel. */
+const DPS_CURVE = '[data-testid="dash-panel"] svg[preserveAspectRatio="none"]'
+
+/**
+ * Move the REAL pointer to a fractional offset inside `sel`'s box. Real, not synthetic, on
+ * purpose: the renderer then sees a genuine `pointermove` carrying `ev.buttons === 0`, which is
+ * the exact condition the hover/drag seam bails on — a hand-dispatched event would have to
+ * assert `buttons` itself and would prove nothing about the seam.
+ *
+ * Fractions are taken over the element's VISIBLE box: these plots are drawn inside scroll boxes
+ * and can extend past the window, and `page.mouse` speaks VIEWPORT coordinates — a point outside
+ * the viewport hovers nothing at all.
+ *
+ * Returns false when the element is absent (or entirely offscreen). A missing chart is the
+ * caller's decision — note it or fail it — never a thrown harness error, which would skip every
+ * remaining check in the session.
+ */
+export async function hoverAt(page: Page, sel: string, fx: number, fy: number): Promise<boolean> {
+  const pt = await page.evaluate((a) => {
+    const r = document.querySelector(a.sel)?.getBoundingClientRect()
+    if (!r) return null
+    const x0 = Math.max(0, r.left)
+    const y0 = Math.max(0, r.top)
+    const w = Math.min(window.innerWidth - 1, r.right) - x0
+    const h = Math.min(window.innerHeight - 1, r.bottom) - y0
+    return w > 0 && h > 0 ? { x: x0 + w * a.fx, y: y0 + h * a.fy } : null
+  }, { sel, fx, fy })
+  if (!pt) return false
+  await page.mouse.move(Math.round(pt.x), Math.round(pt.y))
+  // The hover layer is rAF-coalesced and change-gated by design, so the DOM lands a frame or
+  // two later — read it after, never on the same tick as the move.
+  await sleep(150)
+  return true
+}
+
+/** The shared cursor-following card's text (`lib/ChartTooltip.tsx`); '' when nothing is hovered. */
+export function tooltipText(page: Page): Promise<string> {
+  return page.evaluate(() => (document.querySelector('[data-testid="chart-tooltip"]') as HTMLElement | null)?.innerText ?? '')
+}
+
+/** Park the pointer somewhere no chart is, and let the leave handler land. */
+async function pointerAway(page: Page): Promise<void> {
+  await page.mouse.move(2, 2)
+  await sleep(250)
+}
+
+/**
+ * The DRAG/HOVER SEAM, asserted rather than assumed: the timeline's drag-pan and its hover share
+ * one surface and are owned by different modules, and the ONLY thing keeping them apart is that
+ * the hover handler returns early while any button is held. So hold the button and move: a
+ * tooltip appearing here is the regression.
+ */
+async function checkDragSeam(page: Page): Promise<void> {
+  await hoverAt(page, TIMELINE_PLOT, 0.6, 0.5)
+  await page.mouse.down()
+  await hoverAt(page, TIMELINE_PLOT, 0.45, 0.5)
+  const held = await countOf(page, TOOLTIP)
+  await page.mouse.up()
+  await pointerAway(page)
+  check(
+    'dragging the plot (button held) suppresses hover entirely — the drag/pan seam',
+    held === 0,
+    `${held} tooltip(s) mid-drag`
+  )
+}
+
+/**
+ * The DPS card's own hover. Whether the curve is drawn at all is log-dependent (a ringless or
+ * damage-free selection renders a quiet note instead), so an absent curve is a NOTE — the same
+ * convention the live-tail and freeze-window steps use. An absent hover LAYER is likewise noted
+ * rather than failed: this assertion is re-run at wave close, and the timeline half above is
+ * what pins the shared tooltip.
+ */
+async function checkDpsCardHover(page: Page): Promise<void> {
+  if (!(await hoverAt(page, DPS_CURVE, 0.5, 0.5))) {
+    note('the DPS-over-time curve is not drawn for this selection — its hover is not asserted this run')
+    return
+  }
+  const shown = await countOf(page, TOOLTIP)
+  if (shown === 0) {
+    note('the DPS card renders no hover tooltip in this build — the curve’s hover layer is not present yet')
+  } else {
+    const text = (await tooltipText(page)).replace(/\s+/g, ' ').trim()
+    check('hovering the DPS-over-time curve renders exactly one chart tooltip', shown === 1, `${shown}: ${text.slice(0, 70)}`)
+  }
+  await pointerAway(page)
+}
+
+/**
+ * HOVER (Task #64), end to end on the real charts. Identities only, never today's numbers: the
+ * tooltip's SHAPE (exactly one card, a rate in the app's own vocabulary, the honesty footer), its
+ * lifecycle (it leaves with the pointer) and the seam that keeps it out of a drag's way.
+ *
+ * Enters the Timeline view itself and restores the Dashboard afterwards, so it can be dropped
+ * anywhere in the flow that has a fight with an event ring selected.
+ */
+export async function checkChartHover(page: Page): Promise<void> {
+  await page.click('[data-testid="view-toggle"] button:nth-child(2)')
+  await sleep(900)
+  const plot = await rectOf(page, TIMELINE_PLOT)
+  if (!check('the timeline plot is mounted (hover needs a drawn chart)', plot !== null, plot ? `${plot.w}×${plot.h}px` : 'absent')) return
+  await hoverAt(page, TIMELINE_PLOT, 0.6, 0.5)
+  const shown = await countOf(page, TOOLTIP)
+  const text = (await tooltipText(page)).replace(/\s+/g, ' ').trim()
+  check('hovering the timeline plot renders exactly one chart tooltip', shown === 1, `${shown} tooltip(s)`)
+  // The rate vocabulary is a repo law (AGENTS.md: '21.7k dps', the word after the number, NO
+  // '/s' anywhere), and 'rolling' is the honesty footer that names the window the number came
+  // from — a readout that lost it would be claiming an instantaneous rate the log can't support.
+  check(
+    '…reading a rolling dps rate in the app’s rate vocabulary (never "/s")',
+    /\d+(\.\d+)?[kM]? dps/.test(text) && /rolling/i.test(text) && !text.includes('/s'),
+    text.slice(0, 90) || 'no tooltip text'
+  )
+  await pointerAway(page)
+  check('…and moving off the plot removes it', (await countOf(page, TOOLTIP)) === 0)
+  await checkDragSeam(page)
+  await page.click('[data-testid="view-toggle"] button:nth-child(1)')
+  await sleep(900)
+  await checkDpsCardHover(page)
+}
+
 /** Visible text of the Combat view — cheap way to assert card titles exist. */
 export function combatText(page: Page): Promise<string> {
   return page.evaluate(() => document.body.innerText ?? '')

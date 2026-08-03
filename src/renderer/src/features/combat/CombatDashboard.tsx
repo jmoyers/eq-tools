@@ -13,12 +13,12 @@
 // treatment; only the chip's tooltip distinguishes them. The source meter's totals stay
 // authoritative in every case — they are folded on ingest and never read the ring.
 
-import { useMemo } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
-import type { SegmentView, TimelineMarker, TimelineView } from '@shared/combat'
+import type { SegmentView, TimelineView } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import { ApproxChip, Bar, CopyButton, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
-import { fmtElapsed, formatMobsText } from './copyText'
+import { formatMobsText } from './copyText'
 import {
   approxNote,
   buildDpsSeries,
@@ -29,7 +29,8 @@ import {
   type MobBreakdown,
   type TargetDetail
 } from './dashboardData'
-import { CHART_H, CHART_W, PAD_B, PAD_T, PAD_X, buildDpsChart, type DpsChart } from './dpsChart'
+import { CHART_H, CHART_W, PAD_B, PAD_T, buildDpsChart, placeMarkers, type DpsChart, type PlacedMarker } from './dpsChart'
+import { DpsCurveHoverLayer, type CurveHoverHandle } from './DpsCurveHoverLayer'
 import { MARKER_COLOR, MARKER_WORD } from './markerStyle'
 
 /** Why the selection has no per-event ring — decides the wording of the quiet note. */
@@ -46,35 +47,6 @@ function ringlessText(r: Ringless): string {
 const OUT_COLOR = '#d9b25f'
 const PET_COLOR = '#6fb3d2'
 const INC_COLOR = '#cf6679'
-
-/** One marker, already placed in chart X coordinates. */
-interface PlacedMarker {
-  m: TimelineMarker
-  x: number
-}
-
-/**
- * MARKERS (Task #64) — thin vertical ticks at the instants the fight CHANGED: a stance or
- * invocation commit, a blade coat, a slow landing.
- *
- * They are placed by TIME, not by bucket index, so a marker sits exactly where it happened
- * rather than snapping to the curve's sampling grid; markers outside the visible (scrolling)
- * window are dropped rather than clamped to the edge, which would put a coat from four
- * minutes ago at t=0 and read as if it had just happened.
- *
- * The engine never downsamples markers (see TimelineMarker), so what is drawn here is the
- * complete set for the visible span — this chart can be read as exhaustive.
- */
-function placeMarkers(tl: TimelineView | null, chart: DpsChart | null): PlacedMarker[] {
-  if (!tl || !chart) return []
-  const span = Math.max(1, chart.endMs - chart.startMs)
-  return tl.markers
-    .filter((m) => m.t >= chart.startMs && m.t <= chart.endMs)
-    .map((m) => ({
-      m,
-      x: PAD_X + ((m.t - chart.startMs) / span) * (CHART_W - 2 * PAD_X)
-    }))
-}
 
 /**
  * The card header's right slot: the inexact-ring chip (ONE chip for both event-ring losses —
@@ -105,12 +77,38 @@ function ChartHeaderStats({
   )
 }
 
-/** The three curves + the marker ticks + the y-max readout, in one SVG. */
-function DpsCurve({ chart, markers, a }: { chart: DpsChart; markers: PlacedMarker[]; a: string }): React.JSX.Element {
+/** The three curves + the marker ticks + the y-max readout, in one SVG, under a hover layer. */
+function DpsCurve({
+  chart,
+  series,
+  markers,
+  startTs,
+  a
+}: {
+  chart: DpsChart
+  series: DpsSeries
+  markers: PlacedMarker[]
+  startTs: number
+  a: string
+}): React.JSX.Element {
+  const hoverRef = useRef<CurveHoverHandle>(null)
+  // HOVER / DRAG SEAM (§7.1): a bare pointermove only. `buttons` is non-zero throughout a drag,
+  // so bailing on it keeps the readout out of the way of any future drag interaction here — and
+  // of a text selection dragged across the card — with no shared "isDragging" state.
+  const onHoverMove = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    if (ev.buttons !== 0) {
+      hoverRef.current?.clear()
+      return
+    }
+    const r = ev.currentTarget.getBoundingClientRect()
+    hoverRef.current?.move(ev.clientX - r.left, ev.clientY - r.top, r.width)
+  }, [])
+  const onHoverLeave = useCallback(() => hoverRef.current?.clear(), [])
+
   return (
     // flexShrink 0 on every strip: in a short grid cell the card body scrolls, it never
     // squashes the curve into an unreadable sliver.
-    <Box sx={{ position: 'relative', flexShrink: 0 }}>
+    <Box sx={{ position: 'relative', flexShrink: 0 }} onPointerMove={onHoverMove} onPointerLeave={onHoverLeave}>
       <svg
         viewBox={`0 0 ${CHART_W} ${CHART_H}`}
         width="100%"
@@ -146,9 +144,7 @@ function DpsCurve({ chart, markers, a }: { chart: DpsChart; markers: PlacedMarke
           strokeWidth={1.8}
           vectorEffect="non-scaling-stroke"
         />
-        {/* Markers LAST so a tick is never buried under the area fill. The <title> is the
-            native SVG tooltip: an MUI Tooltip per tick would mount a popper for every one
-            of them on a surface that re-renders each snapshot. */}
+        {/* Markers LAST so a tick is never buried under the area fill. */}
         <MarkerTicks markers={markers} />
       </svg>
       <Typography
@@ -158,18 +154,18 @@ function DpsCurve({ chart, markers, a }: { chart: DpsChart; markers: PlacedMarke
         {a}
         {formatRate(chart.yMax)}
       </Typography>
+      <DpsCurveHoverLayer api={hoverRef} chart={chart} series={series} markers={markers} startTs={startTs} />
     </Box>
   )
 }
 
+/** The ticks carry NO native `<title>`: the hover layer describes them now, and two tooltips for
+ *  one mark is worse than one (the native one also can't say what the rate was at that instant). */
 function MarkerTicks({ markers }: { markers: PlacedMarker[] }): React.JSX.Element {
   return (
     <>
       {markers.map(({ m, x }, i) => (
         <g key={`${m.kind}|${m.t}|${i}`} opacity={0.9}>
-          <title>
-            {`${m.label} ${MARKER_WORD[m.kind]} @ ${fmtElapsed(m.t)}${m.detail ? ` — ${m.detail}` : ''}`}
-          </title>
           <line
             x1={x}
             x2={x}
@@ -276,7 +272,7 @@ export function DpsChartCard({
         <QuietNote>No damage recorded yet — the curve starts with the first hit.</QuietNote>
       ) : (
         <>
-          <DpsCurve chart={chart} markers={markers} a={a} />
+          <DpsCurve chart={chart} series={series} markers={markers} startTs={tl.startTs} a={a} />
           <ChartAxis chart={chart} />
           <ChartLegend series={series} chart={chart} markers={markers} />
         </>

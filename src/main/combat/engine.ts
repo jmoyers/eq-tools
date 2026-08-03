@@ -63,6 +63,7 @@ import type { LogEvent } from '../../shared/logEvents'
 import type {
   BladeCoatState,
   CombatSnapshot,
+  CurrentTarget,
   FightSearchResult,
   SegmentSummary,
   SlowRollup,
@@ -153,6 +154,20 @@ export class CombatEngine {
   }
 
   /**
+   * The mob in front of you (law 6, LIVE half). Undefined when no encounter is open or when
+   * the open encounter has not yet landed an outgoing hit — never a guess, never the largest
+   * target (that is the FINALIZED naming rule and would relabel a live pull retroactively).
+   *
+   * READ-ONLY, and deliberately does NOT evaluate closure: snapshot() has already done that
+   * before it calls this, so a fight that just closed on elapsed time reports nothing.
+   */
+  currentTarget(): CurrentTarget | undefined {
+    const e = this.st.current
+    if (!e?.lastOutTarget) return undefined
+    return { name: e.lastOutTarget, others: Math.max(0, e.agg.targets.size - 1), lastTs: e.lastTs }
+  }
+
+  /**
    * Inject the player's own character name (from index.ts's tail ref). This is the
    * authoritative source: called before the scan replay and again on a character
    * switch after reset(). Keyed canonically so it matches the idKey() the heal path
@@ -196,6 +211,8 @@ export class CombatEngine {
     return {
       selectedId, selected, segments, inCombat, zone: st.zone,
       recent, stance: stanceState(st), timeline,
+      // AFTER evalClosure() above: a fight that just closed on elapsed time reports nothing.
+      currentTarget: this.currentTarget(),
       poison: { coat: this.coatState(), slow: this.slowRollup() },
       zoneSessions: zoneSessionSummaries(st),
       hydrating: st.hydrating

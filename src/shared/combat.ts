@@ -685,6 +685,28 @@ export interface ZoneSessionSummary {
   live: boolean
 }
 
+/**
+ * The mob you are presently swinging at — the LIVE half of world-model law 6's fight
+ * naming rule, exposed as a FACT rather than as the composed encounter name.
+ *
+ * Present only while an encounter is OPEN and at least one outgoing hit has landed in it
+ * (`Encounter.lastOutTarget` is undefined before the first one). It is deliberately not
+ * derived from `SegmentSummary.name`: that string is `<target>+N`, and a mob lookup needs
+ * the raw name (law 2 — canonicalize at boundaries, display raw).
+ */
+export interface CurrentTarget {
+  /** RAW display name of the most recent outgoing-damage target. */
+  name: string
+  /**
+   * How many OTHER distinct targets this encounter has engaged (the name's '+N'). Counted
+   * over the encounter's OUTGOING damage targets, exactly as `encounterName()`'s suffix is —
+   * so a mob that has only hit YOU is not among them until you swing back at it.
+   */
+  others: number
+  /** epoch ms of the encounter's last attributed damage — freshness for the UI's wording. */
+  lastTs: number
+}
+
 export interface CombatSnapshot {
   selectedId: string
   selected: SegmentView | null
@@ -701,6 +723,12 @@ export interface CombatSnapshot {
   recent: ClassifiedLine[]
   /** current stance + invocation pair (Task #51). */
   stance: StanceState
+  /**
+   * The mob in front of you, while a fight is open. Absent between pulls (law 1) and absent
+   * inside an open fight that has not yet landed an outgoing hit (a pull that opened on the
+   * mob hitting YOU first) — never a guess, and never the FINALIZED largest-target rule.
+   */
+  currentTarget?: CurrentTarget
   /** blade coats + the rolling time-to-slow measurement (Task #64). */
   poison: PoisonState
   /** the selected encounter's timeline — present only when SnapshotOpts.timeline is set. */

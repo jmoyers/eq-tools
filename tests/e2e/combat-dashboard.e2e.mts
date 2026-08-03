@@ -40,6 +40,7 @@ import {
   USER_DATA,
   buildIfStale,
   check,
+  checkChartHover,
   checkGrid,
   checkHeader,
   closePicker,
@@ -560,6 +561,9 @@ async function main(): Promise<void> {
     await stepFrozenList(page)
     await stepSearch(page, snap)
     await stepResponsive(app, page)
+    // 13. HOVER on the real charts (crosshair + shared tooltip + the drag seam) — see the
+    //     harness, which owns the steps: this file is at its factoring ceiling.
+    await checkChartHover(page)
 
     check('no renderer console errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '))
 
