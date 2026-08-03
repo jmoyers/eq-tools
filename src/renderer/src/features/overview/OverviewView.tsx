@@ -1,16 +1,35 @@
-// OverviewView — the at-a-glance landing surface: current DPS, the mob in front of you and
-// its drops, your zone, and the recent-drops feed. A renderer-side COMPOSITION over existing
-// module snapshots + the combat engine's pull-snapshot; it owns no state of its own and is
-// deliberately not an EqModule (docs/plans/overview-tab.md §0).
+// OverviewView — the at-a-glance landing surface: current DPS, the mob in front of you and its
+// drops, your zone, and the recent-drops feed. A renderer-side COMPOSITION over existing module
+// snapshots + the combat engine's pull-snapshot; it owns no state of its own and is deliberately
+// not an EqModule (docs/plans/overview-tab.md §0).
 //
-// STUB (wave 1): the prop contract below is the finished one — Overview routes, it never
-// navigates itself, so every destination arrives as a callback from App.tsx. Wave 2 replaces
-// the body with the card grid; it does not change this shape.
+// IT ROUTES, IT NEVER NAVIGATES. Every destination arrives as a callback from App.tsx, which is
+// what lets a card be added here without touching the router — each card owns its own hook and
+// asks for its own data, so a future MapCard or ClassComboCard is one file plus one grid cell.
+//
+// LAYOUT. `minmax(0, 1fr)` is the load-bearing part of the grid: it lets a track shrink BELOW its
+// content, so no card can dictate the grid's size (an intrinsic track is exactly how a growing
+// panel used to push the page taller — Task #56). The view owns exactly the height it is given
+// and scrolls INSIDE the grid, so the app's content area never gains a page-level scrollbar.
+//
+// HYDRATION IS A STATE (§4). During the startup replay every combat snapshot describes the PAST:
+// an hours-old fight is `current` and a mob you killed at lunch is `currentTarget`. So the NOW
+// row — zone, damage, target — renders a quiet placeholder until `hydrating` clears. `snap === null`
+// (the first pull still in flight) reads the same way, which is why the gate is
+// `snap?.hydrating ?? true`. The recent-drops card is NOT gated: it is a HISTORY surface whose
+// module snapshot is complete and correct during the replay.
 
 import type { JSX } from 'react'
-import { Paper, Stack, Typography } from '@mui/material'
+import { Box, CircularProgress, Paper, Skeleton, Stack, Typography } from '@mui/material'
 import type { CombatFocus } from '../combat/combatFocus'
 import type { MobTarget } from '../mobs/mobTarget'
+import { DpsCard } from './DpsCard'
+import { CurrentMobCard } from './CurrentMobCard'
+import { RecentDropsCard } from './RecentDropsCard'
+import { ZoneStrip } from './ZoneStrip'
+import { useCurrentMob } from './useCurrentMob'
+import { useOverviewCombat } from './useOverviewCombat'
+import { useRecentDrops } from './useRecentDrops'
 
 export interface OverviewViewProps {
   /** DPS card → "Open in Combat": jump to an explicit scope + selection. */
@@ -21,19 +40,70 @@ export interface OverviewViewProps {
   onOpenLoot: () => void
 }
 
-export default function OverviewView(_props: OverviewViewProps): JSX.Element {
+/**
+ * The NOW row while the engine is still folding history. Same visual language as CombatView's
+ * `HydratingPanel` — state ("Reading log…"), never process — with its own testid so the e2e can
+ * tell the two surfaces apart.
+ */
+function OverviewHydrating(): JSX.Element {
   return (
     <Paper
       variant="outlined"
-      data-testid="overview-grid"
-      sx={{ p: 2, height: '100%', minHeight: 0, display: 'flex', flexDirection: 'column' }}
+      data-testid="overview-hydrating"
+      sx={{ p: 1.5, gridColumn: { md: '1 / -1' }, minWidth: 0 }}
     >
-      <Stack spacing={0.5}>
-        <Typography variant="h6">Overview</Typography>
-        <Typography variant="body2" color="text.secondary">
-          Your fight, your target and your drops at a glance — coming soon.
+      <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+        <CircularProgress size={13} thickness={5} />
+        <Typography variant="caption" color="text.secondary">
+          Reading log…
         </Typography>
       </Stack>
+      {[0, 1, 2, 3].map((i) => (
+        <Skeleton key={i} variant="rounded" height={22} sx={{ mb: '3px', opacity: 1 - i * 0.18 }} />
+      ))}
     </Paper>
+  )
+}
+
+export default function OverviewView({ onOpenCombat, onOpenMob, onOpenLoot }: OverviewViewProps): JSX.Element {
+  const snap = useOverviewCombat()
+  const mob = useCurrentMob(snap)
+  const rows = useRecentDrops()
+  const hydrating = snap?.hydrating ?? true
+
+  return (
+    <Stack spacing={1.5} sx={{ height: '100%', minHeight: 0, overflow: 'hidden' }}>
+      {!hydrating && <ZoneStrip />}
+      <Box
+        data-testid="overview-grid"
+        sx={{
+          display: 'grid',
+          gap: 1.5,
+          flexGrow: 1,
+          minHeight: 0,
+          minWidth: 0,
+          overflow: 'auto',
+          alignContent: 'start',
+          gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' },
+          // Every card is internally bounded (a fixed-height scroll box around anything that
+          // grows), so `min-content` rows are safe here and keep the cards from being stretched
+          // into tall empty boxes on a big window.
+          gridAutoRows: 'min-content',
+          '& > *': { minWidth: 0, minHeight: 0 }
+        }}
+      >
+        {hydrating ? (
+          <OverviewHydrating />
+        ) : (
+          <>
+            <DpsCard snap={snap} onOpenCombat={onOpenCombat} />
+            <CurrentMobCard state={mob} onOpenMob={onOpenMob} />
+          </>
+        )}
+        <Box sx={{ gridColumn: { md: '1 / -1' }, minWidth: 0 }}>
+          <RecentDropsCard rows={rows} onOpenLoot={onOpenLoot} />
+        </Box>
+      </Box>
+    </Stack>
   )
 }
