@@ -14,7 +14,13 @@
     details to results\result.txt. The sandbox is disposable — nothing touches
     the host except the mapped results file.
 
-    Run:  double-click this .wsb (or `WindowsSandbox scripts\sandbox\installer-test.wsb`).
+    DO NOT launch this file directly. Run it through the wrapper:
+      powershell -ExecutionPolicy Bypass -File scripts\sandbox\run-installer-test.ps1
+    which closes stale VMs (only ONE sandbox instance is allowed machine-wide),
+    checks that a current installer exists, parks the VM window off the primary
+    monitor without stealing focus, force-closes it when the run ends, and prints
+    the verdict. Raw double-click skips all of that and leaves a VM on screen.
+
     Read: scripts\sandbox\results\result.txt after it finishes.
 
     NOTE: HostFolder paths must be ABSOLUTE. They're written for this repo's

@@ -333,6 +333,27 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   `oneClick:true, perMachine:false` installs to `%LOCALAPPDATA%\Programs`
   with NO UAC ever — which is what lets electron-updater silently
   self-install and relaunch (the Discord model). Never flip perMachine.
+- **Add/Remove Programs**: the entry lives at
+  `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\<UUIDv5(appId)>`
+  (`d1172923-5a3d-5d6c-812f-04090617a582` today) — the key is named by GUID, not
+  by product name, so grep by DisplayName. app-builder-lib's
+  `registryAddInstallInfo` writes it UNCONDITIONALLY (right after file
+  extraction in `installSection.nsh`); nothing in electron-builder.yml gates it,
+  and a fresh install of a current build registers correctly (sandbox-verified).
+  It writes InstallLocation only to `HKCU\Software\<guid>`, NOT to the uninstall
+  key, so Settings showed a blank location — `build/installer.nsh`
+  (`customInstall`, auto-included from buildResources) mirrors it. That file is
+  included at the TOP of the generated .nsi, BEFORE multiUser.nsh defines
+  `UNINSTALL_REGISTRY_KEY`; spell the path out from `UNINSTALL_APP_KEY` (a `-D`
+  define, always present) — using the not-yet-defined one compiles fine but
+  yields an installer that dies instantly with 0xC0000005.
+- **An installed app with files but NO uninstall entry is a RACE, not a build
+  bug.** The uninstaller does `RMDir /r $INSTDIR` first and `DeleteRegKey` LAST,
+  and an NSIS uninstaller launched without `_?=` relaunches itself from %TEMP%
+  and the process you waited on exits IMMEDIATELY. So tier-1's
+  `Uninstall*.exe /S` + an immediate reinstall lets the detached tail delete the
+  keys the reinstall just wrote. Never reinstall after an uninstall without
+  POLLING for the install dir and the uninstall key to disappear.
 - Exe branding: `signAndEditExecutable:true` needs the winCodeSign cache;
   its archive fails to extract on Windows without symlink privilege — run
   `scripts/seed-wincodesign.ps1` once per machine (extracts skipping two
@@ -411,19 +432,33 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    dev app — that's the PASS; it no longer just focuses dev);
    `Uninstall*.exe /S` → assert cleanup, appData preserved. Cheap smoke for
    every dist build.
-2. **Windows Sandbox** (`scripts/sandbox/installer-test.wsb` + its .ps1)
-   — the REAL clean-machine test: disposable pristine VM, maps `release/`
-   read-only + a results folder; LogonCommand silently installs, verifies
-   files/shortcut/process-start, AND asserts the fresh-machine experience
-   (no EQ installed → app still boots to the zero-logs empty state), then
-   writes PASS/FAIL + details to the mapped results dir. Requires the
-   `Containers-DisposableClientVM` Windows feature (needs one elevated
-   enable + reboot; on this machine the first enable half-applied — if
-   `WindowsSandbox.exe` is missing while DISM says Enabled, disable+
-   re-enable elevated and reboot again).
+2. **Windows Sandbox** — the REAL clean-machine test: disposable pristine VM,
+   maps `release/` read-only + a results folder; LogonCommand silently
+   installs, verifies files/shortcut/**Add-Remove-Programs registration**/
+   process-start, AND asserts the fresh-machine experience (no EQ installed →
+   app still boots to the zero-logs empty state), uninstalls, asserts files
+   AND the uninstall key are gone, then writes PASS/FAIL to the mapped results
+   dir. 17 checks; `arp-*` names each ARP field individually so a failure says
+   exactly what was missing.
+   **Invoke via `scripts/sandbox/run-installer-test.ps1`** (never the raw
+   .wsb): it force-closes a stale VM (only ONE sandbox instance is allowed
+   machine-wide — a leftover makes the next launch fail), refuses to boot
+   without a CURRENT `everquest-companion-Setup-*.exe`, parks the VM window on
+   the first NON-PRIMARY monitor at z-order bottom without stealing focus
+   (`-Minimize` / single-monitor → minimized), force-kills the client when the
+   results land (an in-guest shutdown pops a modal on the host desktop), and
+   exits 0/1. The user games on the primary monitor — keep it clear.
+   Harness invariants: it is ASCII-only (the guest's PS 5.1 reads a BOM-less
+   .ps1 as ANSI), always writes a verdict from a `finally` (a silent exit is
+   indistinguishable from a hung VM), and POLLS after uninstall instead of
+   trusting `Start-Process -Wait`. Requires the `Containers-DisposableClientVM`
+   Windows feature (one elevated enable + reboot; on this machine the first
+   enable half-applied — if `WindowsSandbox.exe` is missing while DISM says
+   Enabled, disable+re-enable elevated and reboot again).
 3. **Docker servercore** (`scripts/docker/`) — headless file-level
-   fallback: silent install + file/registry verification only (no GUI
-   launch test). Use when Sandbox isn't available.
+   fallback: silent install + file/ARP-registry verification only (no GUI
+   launch test); throws on the first failure. Use when Sandbox isn't
+   available.
 
 Always test the CURRENT `npm run dist` output, not a stale release/ exe —
 a clean-machine pass on an old build proves nothing about today's
@@ -452,8 +487,9 @@ first-run provisioning.
 
 - Azure signing: waiting on Microsoft identity validation → cert profile +
   app registration + repo secrets.
-- Windows Sandbox: WORKING (validated 2026-08-02, 7/7 PASS incl. clean
-  uninstall) — the .wsb harness is the standard pre-ship clean-machine gate.
+- Windows Sandbox: WORKING (revalidated 2026-08-02, 17/17 PASS incl.
+  Add/Remove-Programs registration + clean uninstall) —
+  `run-installer-test.ps1` is the standard pre-ship clean-machine gate.
 - Startup could be TAIL-FIRST: attach the live tail immediately, then backfill
   history BACKWARDS into the model, so the meter is live in ~0s and deepens as
   the replay lands (today: ~6s of `hydrating` on this log, then live). Needs
