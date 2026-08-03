@@ -4,10 +4,20 @@
 // selector: everything app-level lives here, reached from the drawer's bottom-aligned
 // "Preferences" item, the title-bar gear, and the fresh-machine empty state.
 //
-// Layout: a search field over a [section rail | sections] split. The search echoes
-// instantly from local state and filters a DEFERRED copy (AGENTS.md search pattern);
-// matches keep their section header, so a hit always carries its context. Section
-// labels match too, so typing "updates" shows that whole section.
+// Layout: a [section rail | content] split, where the rail is a TRUE SWITCHER — one
+// section is mounted at a time. (It was originally a scroll-spy page: every section
+// rendered at once and the rail called scrollIntoView. Inside the app's overflow:auto
+// content area the scroll barely moved and `active` never followed, so the rail read
+// as dead and the tab as one endless column. That machinery is gone.)
+//
+// SEARCH IS AN EXPLICIT MODE, not the default rendering. The field sits at the top of
+// the content column so it lines up with the cards it filters; it echoes instantly from
+// local state and filters a DEFERRED copy (AGENTS.md search pattern). While the query is
+// non-empty the content column shows matches from EVERY section, each still under its
+// section overline so a hit always carries its context; section labels match too, so
+// typing "updates" pulls that whole section in. The rail keeps listing every section,
+// dims the ones with no matches, and clicking any row exits search mode back to that
+// section.
 //
 // Sections:
 //   Game     — EverQuest install-folder discovery/override (effective path + how it
@@ -18,7 +28,7 @@
 //             progress, and the "Relaunch to update" action when one is waiting.
 //             Lives in ./UpdateSetting.tsx; this file only names it in the table.
 
-import { type JSX, useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
+import { type JSX, useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import {
   Alert,
   Box,
@@ -51,7 +61,11 @@ const SOURCE_CHIP: Record<EqConfig['source'], { label: string; color: 'success' 
   default: { label: 'default (unverified)', color: 'warning' }
 }
 
-/** The effective path, plus a chip saying how it resolved. */
+/**
+ * The effective path, plus a chip saying how it resolved. Set off by a background
+ * fill, NOT a border: the item card around it is the one border level in this view
+ * (no boxes in boxes).
+ */
 function EqFolderPath({ config }: { config: EqConfig | null }): JSX.Element {
   const chip = config ? SOURCE_CHIP[config.source] : null
   return (
@@ -63,9 +77,7 @@ function EqFolderPath({ config }: { config: EqConfig | null }): JSX.Element {
         flexWrap: 'wrap',
         p: 1.25,
         borderRadius: 1,
-        border: 1,
-        borderColor: 'divider',
-        bgcolor: 'background.default'
+        bgcolor: 'action.hover'
       }}
     >
       <Box sx={{ minWidth: 0, flexGrow: 1 }}>
@@ -90,12 +102,13 @@ function EqFolderPath({ config }: { config: EqConfig | null }): JSX.Element {
 function EqFolderCheck({ config }: { config: EqConfig | null }): JSX.Element | null {
   if (!config) return null
   const found = config.characterCount
+  // variant="standard": a tonal fill, no border ring — same no-boxes-in-boxes rule.
   return found > 0 ? (
-    <Alert severity="success" variant="outlined">
+    <Alert severity="success" variant="standard">
       Found {found} character log{found === 1 ? '' : 's'} in this folder.
     </Alert>
   ) : (
-    <Alert severity="warning" variant="outlined">
+    <Alert severity="warning" variant="standard">
       No character logs (eqlog_*.txt) found here. Make sure EverQuest logging is enabled
       (/log on) and pick the game&apos;s install folder.
     </Alert>
@@ -268,44 +281,52 @@ function filterSections(
     .filter((s) => s.items.length > 0)
 }
 
-/** Sticky left rail: one row per (still-visible) section, click to scroll to it. */
+/**
+ * Left rail: one row per section, ALWAYS all of them — it is the switcher, so it can
+ * never shrink out from under the user's pointer. `active` is null while searching
+ * (there is no single active section in that mode, so nothing is highlighted), and
+ * `unmatched` holds the sections the current query found nothing in — those rows dim
+ * to say so. They stay clickable on purpose: a query that matches nothing would
+ * otherwise disable every row and strand the user in search mode.
+ */
 function SectionRail({
   sections,
   active,
-  onJump
+  unmatched,
+  onPick
 }: {
   sections: PrefSection[]
-  active: string
-  onJump: (id: string) => void
+  active: string | null
+  unmatched: ReadonlySet<string>
+  onPick: (id: string) => void
 }): JSX.Element {
   return (
-    <List dense disablePadding sx={{ width: RAIL_WIDTH, flexShrink: 0, position: 'sticky', top: 0 }}>
-      {sections.map((s) => (
-        <ListItemButton
-          key={s.id}
-          dense
-          selected={active === s.id}
-          onClick={() => onJump(s.id)}
-          sx={{ borderRadius: 1, gap: 1 }}
-        >
-          <Box sx={{ display: 'flex', color: 'text.secondary' }}>{s.icon}</Box>
-          <ListItemText slotProps={{ primary: { variant: 'body2' } }} primary={s.label} />
-        </ListItemButton>
-      ))}
+    <List dense disablePadding sx={{ width: RAIL_WIDTH, flexShrink: 0 }}>
+      {sections.map((s) => {
+        const dim = unmatched.has(s.id)
+        return (
+          <ListItemButton
+            key={s.id}
+            dense
+            data-testid={`prefs-rail-${s.id}`}
+            selected={active === s.id}
+            aria-disabled={dim}
+            onClick={() => onPick(s.id)}
+            sx={{ borderRadius: 1, gap: 1, opacity: dim ? 0.38 : 1 }}
+          >
+            <Box sx={{ display: 'flex', color: 'text.secondary' }}>{s.icon}</Box>
+            <ListItemText slotProps={{ primary: { variant: 'body2' } }} primary={s.label} />
+          </ListItemButton>
+        )
+      })}
     </List>
   )
 }
 
-/** One section header plus its settings cards. `setRef` is the rail's scroll target. */
-function PrefSectionBlock({
-  section,
-  setRef
-}: {
-  section: PrefSection
-  setRef: (el: HTMLDivElement | null) => void
-}): JSX.Element {
+/** One section header plus its settings cards. */
+function PrefSectionBlock({ section }: { section: PrefSection }): JSX.Element {
   return (
-    <Box ref={setRef}>
+    <Box>
       <Typography
         variant="overline"
         color="text.secondary"
@@ -327,13 +348,37 @@ function PrefSectionBlock({
   )
 }
 
+/** The search field, sized to the content column so it aligns with the cards it filters. */
+function PrefSearch({
+  query,
+  onQuery
+}: {
+  query: string
+  onQuery: (q: string) => void
+}): JSX.Element {
+  return (
+    <TextField
+      size="small"
+      fullWidth
+      data-testid="prefs-search"
+      placeholder="Search preferences…"
+      value={query}
+      onChange={(e) => onQuery(e.target.value)}
+      slotProps={{
+        input: {
+          startAdornment: <SearchIcon fontSize="small" sx={{ mr: 0.75, color: 'text.secondary' }} />
+        }
+      }}
+    />
+  )
+}
+
 export default function PreferencesView(): JSX.Element {
   const [query, setQuery] = useState('')
   const deferred = useDeferredValue(query)
   const [active, setActive] = useState('game')
   const [version, setVersion] = useState('')
   const status = useUpdateStatus()
-  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
   useEffect(() => {
     let alive = true
@@ -348,52 +393,48 @@ export default function PreferencesView(): JSX.Element {
   const sections = useMemo(() => buildSections(version, status), [version, status])
   const keys = useMemo(() => sectionKeys(sections), [sections])
   const q = normalizeQuery(deferred)
-  const visible = useMemo(() => filterSections(sections, keys, q), [sections, keys, q])
+  const searching = q !== ''
+  const matches = useMemo(() => filterSections(sections, keys, q), [sections, keys, q])
 
-  const jump = (id: string): void => {
+  // Rail rows to dim: only meaningful while searching, empty otherwise.
+  const unmatched = useMemo(() => {
+    if (!searching) return new Set<string>()
+    const hit = new Set(matches.map((s) => s.id))
+    return new Set(sections.filter((s) => !hit.has(s.id)).map((s) => s.id))
+  }, [searching, matches, sections])
+
+  // A rail click is always an exit from search mode into that one section.
+  const pick = useCallback((id: string): void => {
+    setQuery('')
     setActive(id)
-    sectionRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+  }, [])
+
+  const shown = searching ? matches : sections.filter((s) => s.id === active)
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexWrap: 'wrap' }}>
-        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-          Preferences
-        </Typography>
-        <TextField
-          size="small"
-          placeholder="Search preferences…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          sx={{ width: 280 }}
-          slotProps={{
-            input: {
-              startAdornment: (
-                <SearchIcon fontSize="small" sx={{ mr: 0.75, color: 'text.secondary' }} />
-              )
-            }
-          }}
-        />
-      </Box>
+      <Typography variant="h6" sx={{ fontWeight: 700 }}>
+        Preferences
+      </Typography>
 
       <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
-        <SectionRail sections={visible} active={active} onJump={jump} />
+        <SectionRail
+          sections={sections}
+          active={searching ? null : active}
+          unmatched={unmatched}
+          onPick={pick}
+        />
 
         <Box sx={{ flexGrow: 1, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-          {visible.length === 0 && (
+          <PrefSearch query={query} onQuery={setQuery} />
+
+          {searching && matches.length === 0 && (
             <Typography variant="body2" color="text.secondary">
               No preferences match “{query.trim()}”.
             </Typography>
           )}
-          {visible.map((s) => (
-            <PrefSectionBlock
-              key={s.id}
-              section={s}
-              setRef={(el) => {
-                sectionRefs.current[s.id] = el
-              }}
-            />
+          {shown.map((s) => (
+            <PrefSectionBlock key={s.id} section={s} />
           ))}
         </Box>
       </Box>
