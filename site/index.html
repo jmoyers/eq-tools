@@ -6,7 +6,7 @@
     <title>EQ Legends Companion, a DPS meter and log reader for EverQuest Legends</title>
     <meta
       name="description"
-      content="A Windows desktop companion for EverQuest Legends. It reads the log the game already writes and shows you what happened: a DPS meter, floating overlays, quest and loot tracking, sound alerts."
+      content="A Windows desktop companion for EverQuest Legends: a live DPS meter, optional floating overlays, quest and loot tracking, and sound alerts."
     />
     <meta name="theme-color" content="#0f1017" />
     <link rel="icon" href="assets/icon.png" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="EQ Legends Companion" />
     <meta
       property="og:description"
-      content="Reads the log EverQuest Legends already writes: live DPS meter, floating overlays, quest and loot tracking, sound alerts."
+      content="A desktop companion for EverQuest Legends: live DPS meter, optional floating overlays, quest and loot tracking, and sound alerts."
     />
     <meta property="og:type" content="website" />
   </head>
@@ -42,9 +42,8 @@
           <div class="hero-copy">
             <h1>EQ Legends Companion</h1>
             <p class="pitch">
-              A Windows app for <strong>EverQuest Legends</strong>. It reads the log file the game
-              already writes and shows you what actually happened. A DPS meter, floating overlays,
-              quest and loot tracking, sound alerts.
+              A Windows app for <strong>EverQuest Legends</strong>. A DPS meter, optional floating
+              overlays, quest and loot tracking, and sound alerts.
             </p>
 
             <div class="cta">
@@ -208,15 +207,19 @@
                   <span class="sub">74dmg</span>
                   <span class="val">1.9k</span>
                 </div>
-                <p class="mnote">Click a row for hits, crits, misses, resists and the average.</p>
               </div>
             </figure>
             <div class="row-copy">
               <h3>Live DPS meter</h3>
               <p>
                 The meter reads your log as you play. Click a fight to see every hit, miss and
-                resist that made the number. <em>Fight</em> and <em>Overall</em> are a scope you
-                pick.
+                resist that made the number. Switch to <em>Overall</em> to see your damage profile
+                across the entire zone. Is Slay Undead worth it? How much damage does Backstab do
+                over the night?
+              </p>
+              <p>
+                Charm pets are counted correctly, too. We take great pains to get that right,
+                unlike some of the competitive products out there.
               </p>
             </div>
           </div>
@@ -376,15 +379,13 @@
               </figure>
             </div>
             <div class="row-copy">
-              <h3>Floating overlays</h3>
+              <h3>Optional floating overlays</h3>
               <p>
                 Small meters that sit on top of the game. Damage or healing, plus an event log,
-                scoped to the current fight or the whole zone. Lock one and it stops taking clicks.
+                scoped to the current fight or the whole zone.
               </p>
               <p class="fine">
-                Overlays work in <strong>windowed</strong> or <strong>borderless</strong> mode.
-                Exclusive fullscreen cannot be overlaid by anything, so use borderless if you want
-                them.
+                Requires EverQuest to be in <strong>borderless</strong> mode for overlays.
               </p>
             </div>
           </div>
@@ -393,50 +394,50 @@
             <figure
               class="mock"
               role="img"
-              aria-label="The Plane of Sky tracker: quest rows per class with a progress bar and a have or need chip for every item the quest wants."
+              aria-label="The Plane of Sky tracker: quest rows per class with a progress bar and the items each quest still needs."
             >
               <div aria-hidden="true">
                 <div class="mhd">Plane of Sky <span class="r">sorted: closest to done</span></div>
                 <div class="qrow">
                   <span class="star star--on">★</span>
-                  <span class="mchip mchip--class">CLR</span>
+                  <span class="mchip mchip--class">MNK</span>
                   <span class="qname">
-                    <b>Test of Wisdom</b>
-                    <i>→ Testament of Vanear</i>
+                    <b>Test of Fists</b>
+                    <i>→ Wu's Fist of Mastery</i>
                   </span>
                   <span class="qprog">
-                    <span><em>6/7 items</em><em>86%</em></span>
-                    <span class="track"><i style="width: 86%"></i></span>
+                    <span><em>2/3 items</em><em>67%</em></span>
+                    <span class="track"><i style="width: 67%"></i></span>
                   </span>
                 </div>
                 <div class="mchips">
-                  <span class="mchip mchip--have">✓ Spiroc Feathers 3/3</span>
-                  <span class="mchip mchip--have">✓ Sky Pearl</span>
-                  <span class="mchip">Efreeti Standard 0/1</span>
+                  <span class="mchip mchip--have">✓ Nebulous Sapphire</span>
+                  <span class="mchip mchip--have">✓ Brass Knuckles</span>
+                  <span class="mchip">Wind Rune Neza 0/1</span>
                 </div>
                 <div class="qrow">
                   <span class="star">☆</span>
-                  <span class="mchip mchip--class">WIZ</span>
+                  <span class="mchip mchip--class">PAL</span>
                   <span class="qname">
-                    <b>Test of Fire</b>
-                    <i>→ Robe of the Ishva</i>
+                    <b>Test of Love</b>
+                    <i>→ Thelvorn, Blade of Light</i>
                   </span>
                   <span class="qprog">
-                    <span><em>4/9 items</em><em>44%</em></span>
-                    <span class="track"><i style="width: 44%"></i></span>
+                    <span><em>1/3 items</em><em>33%</em></span>
+                    <span class="track"><i style="width: 33%"></i></span>
                   </span>
                 </div>
                 <div class="mchips">
-                  <span class="mchip mchip--star">★ Cinder of the Sky 0/2</span>
-                  <span class="mchip mchip--have">✓ Ash of Vessel</span>
-                  <span class="mchip">Ember Sapphire 1/3</span>
+                  <span class="mchip mchip--star">★ Sphinx Claw 0/1</span>
+                  <span class="mchip mchip--have">✓ Golden Hilt</span>
+                  <span class="mchip">Wind Rune Geza 0/1</span>
                 </div>
                 <div class="qrow">
                   <span class="star">☆</span>
                   <span class="mchip mchip--class">RNG</span>
                   <span class="qname">
-                    <b>Test of the Hunt</b>
-                    <i>→ Bow of the Lost Ones</i>
+                    <b>Test of Ranged Attack</b>
+                    <i>→ Windstriker</i>
                   </span>
                   <span class="qprog">
                     <span><em>turned in</em><em>100%</em></span>
@@ -449,9 +450,9 @@
             <div class="row-copy">
               <h3>Plane of Sky tracker</h3>
               <p>
-                Every class's Test quests, with a <em>have</em> or <em>need</em> chip per item.
-                Hover an item to read its stats. Sort by closest to done and you can see which quest
-                is actually in reach.
+                Every class's Test quests, and how close you are to finishing each one. Hover an
+                item to read its stats. Sort by closest to done and you can see which quest is
+                actually in reach.
               </p>
             </div>
           </div>
@@ -460,51 +461,43 @@
             <figure
               class="mock"
               role="img"
-              aria-label="An item drawn in the game's item window layout: green name, flags, stats, a magenta click effect, and a line listing the quests that use it."
+              aria-label="An item drawn in the game's item window layout: green name, flags, stats, a magenta combat effect, and the quest it comes from."
             >
               <div class="eqitem" aria-hidden="true">
-                <div class="name">Bladestopper +2</div>
-                <div>MAGIC ITEM, LORE ITEM, QUEST ITEM</div>
-                <div>Class: WAR PAL SHD RNG</div>
-                <div>Primary / Secondary</div>
+                <div class="name">Thelvorn, Blade of Light</div>
+                <div>MAGIC ITEM, LORE ITEM, NO DROP</div>
+                <div>Class: PAL</div>
+                <div>Primary</div>
                 <div class="eqtier">
                   <div>
                     Tier 2 <span class="dim">/ 10 · yours</span>
                     <span class="dim" style="float: right">+10% stats</span>
                   </div>
                   <div class="track"><i style="width: 20%"></i></div>
-                  <div class="dim">1,400 item exp merged reaches Tier 3</div>
                 </div>
                 <div class="grid">
                   <div>
                     <div class="kv"><span>Size</span>MEDIUM</div>
-                    <div class="kv"><span>Weight</span>4.5</div>
-                    <div class="kv"><span>Skill</span>1H Blunt</div>
+                    <div class="kv"><span>Weight</span>3.0</div>
+                    <div class="kv"><span>Skill</span>1H Slashing</div>
                   </div>
                   <div>
-                    <div class="kv"><span>AC</span>9</div>
-                    <div class="kv"><span>Base Dmg</span>22</div>
+                    <div class="kv"><span>Base Dmg</span>20</div>
                     <div class="kv"><span>Delay</span>26</div>
-                    <div class="kv ratio"><span>Ratio</span>0.8</div>
+                    <div class="kv ratio"><span>Ratio</span>0.77</div>
                   </div>
                 </div>
                 <div class="grid">
                   <div>
-                    <div class="kv"><span>STR</span>+8</div>
-                    <div class="kv"><span>STA</span>+5</div>
-                  </div>
-                  <div>
-                    <div class="kv"><span>SV FIRE</span>+10</div>
-                    <div class="kv"><span>SV MAGIC</span>+5</div>
+                    <div class="kv"><span>WIS</span>+15</div>
                   </div>
                 </div>
-                <div class="fx">Click Effect: Ward of Vie (Req Level 45)</div>
-                <div class="dim">Cast Time: 3.0s&nbsp;&nbsp; Cooldown: 4:00</div>
+                <div class="fx">Effect: Dismiss Summoned (Req Level 45)</div>
+                <div class="dim">Combat&nbsp;&nbsp; Casting Time: Instant</div>
                 <hr class="rule" />
-                <div class="use">Used in quests:</div>
+                <div class="use">Reward from:</div>
                 <div class="usechips">
-                  <b>Test of Wisdom · Kelin Rockmover</b>
-                  <b>Ancient Warders</b>
+                  <b>Paladin Test of Love · Dason Goldblade</b>
                 </div>
                 <div class="use" style="margin-top: 8px">Source: eqlwiki.com</div>
               </div>
@@ -560,8 +553,10 @@
               <h3>Sound alerts and voice packs</h3>
               <p>
                 Play a sound when something happens. A charm break, a buff dropping, a raid target
-                dying, or any log line you care to write a rule for. One voice pack ships with the
-                app and installs itself. About 350 more install from inside it.
+                dying, or any log line you care to write a rule for. New alerts can be created
+                straight from what just happened in your log, so you rarely have to write a trigger
+                by hand. One voice pack ships with the app and installs itself. About 350 more
+                install from inside it.
               </p>
               <p class="fine">
                 An alert copies to a short paste-safe string. Drop one in guild chat, and whoever
@@ -608,7 +603,11 @@
             </figure>
             <div class="row-copy">
               <h3>Raid targets</h3>
-              <p>Which named and raid mobs you have killed, when, and at what tier.</p>
+              <p>
+                Track your progress against raid targets and have fun pushing your character to its
+                limits. EQ Legends Companion is aware of tiers of difficulty and tracks your kill
+                progression for every raid target.
+              </p>
             </div>
           </div>
 
@@ -674,8 +673,8 @@
             <div class="row-copy">
               <h3>Leveling and AA</h3>
               <p>
-                XP and AA per character, with history. Earned, spent and unspent. The numbers come
-                from what the log reported, not from a running tally the app keeps for itself.
+                XP and AA per character, with history. Earned, spent and unspent. Tracked
+                automatically from your logs.
               </p>
             </div>
           </div>
@@ -776,15 +775,13 @@
               <dt><a href="https://eqlwiki.com">eqlwiki.com</a></dt>
               <dd>
                 The item data, quest catalog, spell list and Plane of Sky tables all come from the
-                EverQuest Legends Wiki. Its editors did the documentation work, and this app is
-                mostly a lens over it. The wiki publishes no content license that I could find, so I
-                am not going to claim one on their behalf.
+                EverQuest Legends Wiki. Thank you to its editors for the documentation work and the
+                content they publish — this app is mostly a lens over it.
               </dd>
               <dt><a href="https://wiki.project1999.com">wiki.project1999.com</a></dt>
               <dd>
                 The raid target portraits come from the Project 1999 wiki. Twenty years of people
-                writing down what drops where, for free. No content license is declared there
-                either, so the same applies.
+                writing down what drops where, for free. Thank you.
               </dd>
               <dt>
                 <a href="https://github.com/utensils/openpeon-alan-rickman-soundpack"
