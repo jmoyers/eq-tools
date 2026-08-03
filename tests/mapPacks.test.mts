@@ -393,3 +393,34 @@ test('search finds labels in one zone and across the corpus, comma-bearing ones 
     assert.equal(lib.search('to', { limit: 1 }).length, 1)
   })
 })
+
+test('an in-zone search ranks over the SAME zone resolution get() returns for those prefs', () => {
+  // In-zone search ranks over the FULL parsed zone, so it must parse that zone under the
+  // CALLER'S prefs. Resolving it under defaults instead means that the moment a user overrides
+  // the labels pack, the hit list ranks over labels that are not on the map they are looking at.
+  withLibrary((lib) => {
+    const prefs = { labels: 'mypack' }
+
+    // Under DEFAULT prefs the label layer is brewall's: its labels rank, the user pack's do not.
+    assert.equal(lib.search('unpickable', { zone: 'befallen' }).length, 1)
+    assert.deepEqual(lib.search('my own', { zone: 'befallen' }), [])
+
+    // Under the override it is exactly the other way round — and the hit is one of the very
+    // point objects `get(zone, prefs)` hands the viewer, not a lookalike from another pack.
+    const hits = lib.search('my own', { zone: 'befallen', prefs })
+    assert.equal(hits.length, 1)
+    assert.equal(hits[0].point.display, 'My Own Label')
+    const res = lib.get('befallen', prefs)
+    assert.ok(res.ok)
+    assert.ok(
+      res.data.points.includes(hits[0].point),
+      'the hit must be a point of the map get() resolves for these prefs'
+    )
+    // brewall's labels are not part of the zone under these prefs, so they cannot rank either.
+    assert.deepEqual(lib.search('unpickable', { zone: 'befallen', prefs }), [])
+
+    // The CORPUS index is deliberately default-prefs (one index, not one per preference), so it
+    // is unaffected by the option — stated here so a future change to that is a failing test.
+    assert.deepEqual(lib.search('my own', { prefs }), [])
+  })
+})

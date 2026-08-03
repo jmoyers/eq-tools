@@ -375,8 +375,15 @@ export function createMapLibrary(opts: MapLibraryOptions): MapLibrary {
     return rows
   }
 
-  function inZone(zone: ZoneShort, query: string[], limit: number): MapSearchHit[] {
-    const res = get(zone)
+  /**
+   * In-zone search ranks over the FULL parsed zone, so it must parse it under the CALLER'S pack
+   * preference — the same one `maps:get` drew the pane with. Resolving it under default prefs
+   * instead would rank a different pack's labels than the ones on screen the moment the user
+   * overrides a pack, and it is a cache HIT for the map already loaded rather than a second
+   * parse. (The corpus index above is deliberately the other way: one index, default prefs.)
+   */
+  function inZone(zone: ZoneShort, query: string[], limit: number, prefs: MapPackPrefs): MapSearchHit[] {
+    const res = get(zone, prefs)
     if (!res.ok) return []
     return rank(
       res.data.points.map((point) => ({ zone, point, hay: tokenize(point.display) })),
@@ -419,7 +426,7 @@ export function createMapLibrary(opts: MapLibraryOptions): MapLibrary {
       if (tokens.length === 0) return []
       const limit = clampLimit(searchOpts?.limit)
       return searchOpts?.zone
-        ? inZone(searchOpts.zone, tokens, limit)
+        ? inZone(searchOpts.zone, tokens, limit, searchOpts.prefs ?? {})
         : rank(corpusRows(), tokens, limit)
     },
     refresh: () => {

@@ -159,6 +159,16 @@ export interface MapSearchOpts {
   zone?: ZoneShort
   /** Hit cap; clamped at the handler so a renderer bug can't ask for an unbounded payload. */
   limit?: number
+  /**
+   * The viewer's per-layer pack preference, for an IN-ZONE search only.
+   *
+   * In-zone search ranks over the FULL parsed zone — the very `MapData` the pane is drawing —
+   * so it must resolve that zone under the SAME prefs `maps:get` did. Without this the hit list
+   * would rank over a different pack's labels than the ones on screen the moment a user
+   * overrides a pack. The CORPUS index is built once under default prefs (one index, not one
+   * per preference) and ignores this field.
+   */
+  prefs?: MapPackPrefs
 }
 
 /** One scored label hit. Carries the point itself, so the caller can pan straight to it. */

@@ -24,6 +24,7 @@ import type {
   SpellCatalog
 } from '../shared/types'
 import type { CombatSnapshot, FightSearchResult, SnapshotOpts } from '../shared/combat'
+import type { ClassAbbr, ComboDelta, ComboSnap } from '../shared/classCombo'
 import type {
   MapGetResult,
   MapPackListResult,
@@ -49,6 +50,11 @@ export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnow
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { AppFocus, UpdateStatus }
 export type { ShareApplyResult, SharePreview }
+// The combo module rides the generic transport, so the renderer never names these on an API
+// method — re-exported here for the same reason every other module payload is: so a view can
+// say `useModule<ComboSnap, ComboDelta>('combo', …)` without reaching across the tsconfig
+// boundary into src/shared itself.
+export type { ClassAbbr, ComboDelta, ComboSnap }
 
 export interface ReloadInventoryResult {
   ok: boolean
@@ -68,6 +74,23 @@ export interface SetCharacterResult {
 export interface InventoryReloadEvent {
   path: string
   loadedAt: string
+}
+
+/** A combo interval's time span. `endTs: null` = the open (current) interval. */
+export interface ComboRange {
+  startTs: number
+  endTs: number | null
+}
+
+/** What the user says the loadout was over `[startTs, endTs]`. Re-validated in main. */
+export interface ComboCorrectionInput extends ComboRange {
+  classes: ClassAbbr[]
+}
+
+/** Both correction writes answer the same way; `error` is prose for the UI, never a code. */
+export interface ComboWriteResult {
+  ok: boolean
+  error?: string
 }
 
 /** Payload the renderer sends over `error:report` (fire-and-forget). */
@@ -166,7 +189,9 @@ const api = {
   getMapData: (zone: string, prefs?: MapPackPrefs): Promise<MapGetResult> =>
     ipcRenderer.invoke(IPC.mapsGet, zone, prefs),
   /** Fuzzy label search: one zone (`opts.zone`) or the whole corpus. Same scorer as every
-   *  other search box in the app (`shared/fuzzy.ts`). Empty query resolves to no hits. */
+   *  other search box in the app (`shared/fuzzy.ts`). Empty query resolves to no hits.
+   *  Pass the viewer's `opts.prefs` for an in-zone search so the hits rank over the SAME pack
+   *  resolution `getMapData` drew; the corpus index is default-prefs by construction. */
   searchMapPoints: (q: string, opts?: MapSearchOpts): Promise<MapSearchHit[]> =>
     ipcRenderer.invoke(IPC.mapsSearch, q, opts),
 
@@ -228,6 +253,17 @@ const api = {
     ipcRenderer.on(IPC.onModuleDelta, listener)
     return () => ipcRenderer.removeListener(IPC.onModuleDelta, listener)
   },
+
+  // ---- class-combo corrections (docs/plans/class-combo-inference.md § 5.3) ----
+  // The combo READ path is the generic transport above — `useModule<ComboSnap, ComboDelta>`.
+  // These two are the writes, and they are keyed by TIME because interval ids are
+  // recompute-unstable: a correction has to survive the very recompute it triggers.
+  /** "That span was these classes." 1–3 classes; every field re-validated in main. */
+  setComboCorrection: (correction: ComboCorrectionInput): Promise<ComboWriteResult> =>
+    ipcRenderer.invoke(IPC.comboSetCorrection, correction),
+  /** "Reset to detected" — drop every correction overlapping this span. */
+  clearComboCorrection: (range: ComboRange): Promise<ComboWriteResult> =>
+    ipcRenderer.invoke(IPC.comboClearCorrection, range),
 
   onProgress: (cb: (p: ProgressState) => void): (() => void) => {
     const listener = (_e: unknown, p: ProgressState): void => cb(p)

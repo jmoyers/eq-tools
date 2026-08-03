@@ -13,6 +13,13 @@
 //     corpus is findable in its own zone, with the same ordering. Two implementations could not
 //     promise that.
 //
+// IN-ZONE SEARCH CARRIES THE VIEWER'S PACK PREFS (`opts.prefs`), because it ranks over the FULL
+// parsed zone and must therefore resolve the zone the way the pane on screen was drawn — a user
+// who overrides the labels pack would otherwise get a hit list ranked over a pack whose labels
+// are not on the map. The corpus index stays DEFAULT-prefs (one index, not one per preference),
+// so the two scopes can legitimately differ once a pref is set; the in-zone list is the one that
+// has to match the pixels.
+//
 // The corpus is 35,720 records and one zone is at most 316, so this is render-bound either way
 // (AGENTS.md "Search": no workers, no databases). The input echoes INSTANTLY — it is plain
 // controlled state — and only the query that reaches the IPC is deferred.
@@ -34,7 +41,7 @@ import {
   ToggleButtonGroup,
   Typography
 } from '@mui/material'
-import type { MapSearchHit, ZoneShort } from '@shared/maps'
+import type { MapPackPrefs, MapSearchHit, ZoneShort } from '@shared/maps'
 
 /** `zone` = the map on screen; `all` = the whole installed corpus. */
 export type MapSearchScope = 'zone' | 'all'
@@ -48,6 +55,9 @@ const LIMIT = 60
 export interface MapSearchProps {
   /** The zone on screen. `null` ⇒ the in-zone scope has nothing to search and says so. */
   zone: ZoneShort | null
+  /** The viewer's per-layer pack preference — the SAME one that fetched the map on screen, so
+   *  an in-zone search ranks over the labels actually drawn rather than the default packs'. */
+  prefs: MapPackPrefs
   /** A hit was clicked: centre the view on it (and change zone first, when it is elsewhere). */
   onJump: (hit: MapSearchHit) => void
 }
@@ -98,13 +108,16 @@ function HitRow({
   )
 }
 
-export default function MapSearch({ zone, onJump }: MapSearchProps): JSX.Element {
+export default function MapSearch({ zone, prefs, onJump }: MapSearchProps): JSX.Element {
   const [query, setQuery] = useState('')
   const [scope, setScope] = useState<MapSearchScope>('zone')
   const [hits, setHits] = useState<MapSearchHit[]>([])
   // The box echoes every keystroke; only what reaches the IPC waits for the paint to settle.
   const q = useDeferredValue(query).trim()
   const inZone = scope === 'zone' && zone != null
+  // Depend on the pref FIELDS, not the object — useMapData.ts's rule, for the same reason: the
+  // parent rebuilds nothing here, but a future one must not be able to re-query on every render.
+  const { geometry, labels } = prefs
 
   useEffect(() => {
     if (q.length === 0 || (scope === 'zone' && zone == null)) {
@@ -113,7 +126,14 @@ export default function MapSearch({ zone, onJump }: MapSearchProps): JSX.Element
     }
     let cancelled = false
     void window.eq
-      .searchMapPoints(q, { ...(scope === 'zone' && zone != null ? { zone } : {}), limit: LIMIT })
+      .searchMapPoints(q, {
+        ...(scope === 'zone' && zone != null ? { zone } : {}),
+        limit: LIMIT,
+        prefs: {
+          ...(geometry == null ? {} : { geometry }),
+          ...(labels == null ? {} : { labels })
+        }
+      })
       .then((res) => {
         if (!cancelled) setHits(res)
       })
@@ -123,7 +143,7 @@ export default function MapSearch({ zone, onJump }: MapSearchProps): JSX.Element
     return () => {
       cancelled = true
     }
-  }, [q, scope, zone])
+  }, [q, scope, zone, geometry, labels])
 
   return (
     <Stack spacing={1} sx={{ flexShrink: 0 }}>

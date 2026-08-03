@@ -340,7 +340,7 @@ export default function MapsView(): JSX.Element {
           onFit={vp.fit}
         />
       )}
-      <MapSearch zone={zone} onJump={onJump} />
+      <MapSearch zone={zone} prefs={prefs} onJump={onJump} />
 
       {data != null ? (
         <MapSurface data={data} vp={vp} hostRef={hostRef} layers={layers} marker={marker} />

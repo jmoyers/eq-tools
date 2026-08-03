@@ -240,7 +240,7 @@ function AaPurchasesPanel({
           ({boughtCount})
         </Typography>
       </Typography>
-      <Box sx={{ overflow: 'auto' }}>
+      <Box sx={{ overflow: 'auto', pr: 0.75 }}>
         {purchases.map(({ ev: p, count }, i) => {
           const auto = p.cost === 0
           return (
@@ -284,7 +284,7 @@ function ProgressFeedPanel({ feed }: { feed: FeedItem[] }): JSX.Element {
       <Typography variant="subtitle2" gutterBottom>
         Recent progress
       </Typography>
-      <Box sx={{ overflow: 'auto' }}>
+      <Box sx={{ overflow: 'auto', pr: 0.75 }}>
         {feed.map((f, i) => (
           <Stack
             key={`${f.ts}-${f.kind}-${i}`}

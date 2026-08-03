@@ -59,13 +59,18 @@ export function registerMapsIpc(): void {
     return mapLibrary().get(zone.toLowerCase(), safe)
   })
 
+  // `prefs` goes through the SAME `safePrefs` gate as `maps:get` — an in-zone search parses the
+  // zone under the caller's preference, so both pack ids reach the same `join()` they do there.
   ipcMain.handle(IPC.mapsSearch, (_e, query: unknown, opts: unknown) => {
     if (typeof query !== 'string') return []
-    const { zone, limit } = (opts ?? {}) as MapSearchOpts
+    const { zone, limit, prefs } = (opts ?? {}) as MapSearchOpts
     if (zone != null && !isSafePackId(zone)) return []
+    const safe = safePrefs(prefs)
+    if (safe === false) return []
     return mapLibrary().search(query, {
       ...(zone == null ? {} : { zone: zone.toLowerCase() }),
-      ...(typeof limit === 'number' ? { limit } : {})
+      ...(typeof limit === 'number' ? { limit } : {}),
+      prefs: safe
     })
   })
 }
