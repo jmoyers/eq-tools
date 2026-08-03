@@ -151,7 +151,30 @@ const SEG: SegmentView = {
     { name: 'Grinn Frostbeard', total: 1800, count: 6 },
     { name: 'You', total: 300, count: 2 }
   ],
-  healing: { total: 0, restoredTotal: 0, absorbedTotal: 0, sources: [] } as unknown as SegmentView['healing']
+  healing: { total: 0, restoredTotal: 0, absorbedTotal: 0, sources: [] } as unknown as SegmentView['healing'],
+  // Task #64: the rogue-poison ledger. Every dimension at once — a slow that landed, both
+  // ambiguous Strike lanes, a poison damage lane, a dispel tier, a mid-fight coat and both
+  // modifier switches — so one golden pins the whole block's shape.
+  procs: {
+    coatAtEngage: { poison: 'Neurotoxic Poison', sinceTs: 0 },
+    combatAtEngage: [{ poison: 'Asp Venom', sinceTs: 0 }],
+    slowExpected: true,
+    coats: [{ poison: 'Paralytic Poison', tMs: 41_200 }],
+    strikes: [
+      { name: 'Asp Venom Strike / Cobra Venom Strike', count: 15, ambiguous: true },
+      { name: 'Weakening Strike', count: 2 },
+      { name: 'Befuddling Strike', count: 1 }
+    ],
+    strikeCount: 18,
+    slowLands: 2,
+    slowLandMs: 4_200,
+    poisonDamage: [{ name: 'Asp Venom Strike', count: 15, total: 795 }],
+    poisonDamageTotal: 795,
+    dispels: [{ name: 'Cancel Magic / Phobocancel', count: 4, ambiguous: true }],
+    dispelCount: 4,
+    stanceSwitches: 1,
+    invocationSwitches: 2
+  }
 }
 
 function row(name: string, over: Partial<SkillRow> = {}): SkillRow {
@@ -383,6 +406,7 @@ test('nothing anywhere is markdown — a paste must not be re-rendered by its de
     formatEntityText(SEG, YOU),
     formatTargetText(SEG, 'a deadly black widow (7)', TARGET),
     formatMobsText(SEG, MOBS, 3)
+    // The Procs block gets the same treatment in combatProcsCopyText.test.mts.
   ]
   for (const b of blocks) {
     assert.ok(!/[*_`|#]/.test(b), b)

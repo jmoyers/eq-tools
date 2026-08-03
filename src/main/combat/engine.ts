@@ -51,26 +51,35 @@ import { damageCategory } from './taxonomy'
 import { HealAccum, buildHealingView } from './healing'
 import { searchFights } from './fightSearch'
 import type { LogEvent, MissType, MitigationEvent } from '../../shared/logEvents'
+import { DISPEL_FAMILY, SLOW_STRIKE, isSlowCapable } from '../../shared/poisons'
 import type { DamageCategory, DamageType } from '../../shared/combat'
 import { CATEGORY_ORDER } from '../../shared/combat'
 import type {
+  BladeCoatState,
   CategoryView,
   ClassifiedLine,
+  CoatSlot,
   CombatSnapshot,
   FightSearchResult,
   HealSourceKind,
   HealerView,
   MissBreakdown,
+  PoisonState,
+  ProcLane,
+  ProcsView,
   RoundsView,
   SegmentSummary,
   SegmentView,
   SkillView,
+  SlowRollup,
   SnapshotOpts,
   SourceKind,
   SourceView,
   StanceSpan,
   StanceState,
   TimelineEvent,
+  TimelineMarker,
+  TimelineMarkerKind,
   TimelineView,
   ZoneSessionSummary
 } from '../../shared/combat'
@@ -281,6 +290,51 @@ function newSource(name: string, kind: SourceKind): SourceStat {
   }
 }
 
+/**
+ * The per-segment proc accumulator (Task #64). Pure counters — every one of them is
+ * incremented on ingest from a line the game actually printed, so a downsampled or truncated
+ * timeline can never move a number here (the timeline MARKERS are a separate, draw-only
+ * concern; see TimelineMarker).
+ */
+class ProcAccum {
+  /** Strike name → landings. Keyed by the DISPLAY name we show, ambiguity included. */
+  strikes = new Map<string, { name: string; count: number; ambiguous: boolean }>()
+  /** Weakening-Strike landings — broken out because it is the one we time. */
+  slowLands = 0
+  /** Absolute ts of the FIRST slow landing in this segment (0 = none). */
+  firstSlowTs = 0
+  /** Outgoing lanes whose damage type was poison: skill → hits + total. */
+  poisonDamage = new Map<string, { name: string; count: number; total: number }>()
+  /** Dispel landings on engaged mobs (DISPEL_FAMILY only): tier label → count. Every lane is
+   *  ambiguous by construction — each message tier is shared by 2–3 spells. */
+  dispels = new Map<string, { name: string; count: number }>()
+  /** YOUR coats applied inside this segment, in order. */
+  coats: Array<{ poison: string; ts: number }> = []
+  stanceSwitches = 0
+  invocationSwitches = 0
+
+  addStrike(name: string, ambiguous: boolean, ts: number, isSlow: boolean): void {
+    const s = this.strikes.get(name) ?? { name, count: 0, ambiguous }
+    s.count++
+    this.strikes.set(name, s)
+    if (isSlow) {
+      this.slowLands++
+      if (this.firstSlowTs === 0) this.firstSlowTs = ts
+    }
+  }
+  addPoisonDamage(skill: string, amount: number): void {
+    const s = this.poisonDamage.get(skill) ?? { name: skill, count: 0, total: 0 }
+    s.count++
+    s.total += amount
+    this.poisonDamage.set(skill, s)
+  }
+  addDispel(label: string): void {
+    const s = this.dispels.get(label) ?? { name: label, count: 0 }
+    s.count++
+    this.dispels.set(label, s)
+  }
+}
+
 class Agg {
   // Keyed by INSTANCE id (or 'you'/'pet:<instanceId>'); `name` holds display.
   out = new Map<string, SourceStat>()
@@ -296,6 +350,13 @@ class Agg {
    *  ADDITIVE: `enemyHeal`/`incHeal` above are untouched, so every existing damage/heal total
    *  (and the enemyHealTotal annotation) stays byte-identical. */
   heal = new HealAccum()
+  /**
+   * PROC LEDGER (Task #64) — rogue-poison Strikes, poison-typed damage lanes, non-damage spell
+   * landings on engaged mobs, and the stance/coat bookkeeping. On the Agg for exactly the same
+   * reason the healing ledger is: an encounter and a finalized zone session then get it for
+   * free, and the numbers are folded on INGEST so they never depend on the event ring.
+   */
+  procs = new ProcAccum()
   addOut(id: string, name: string, kind: SourceKind, ev: DamageEvent, ambiguous = false): void {
     const s = this.out.get(id) ?? newSource(name, kind)
     if (s.name !== name) s.name = name
@@ -415,6 +476,17 @@ interface Encounter {
   /** Stance/invocation spans that overlapped this encounter (Task #51 pinned rows).
    *  Recorded as they change while the encounter is open (absolute ts). */
   stanceSpans: StanceRaw[]
+  /** Point ANNOTATIONS on this fight's clock (Task #64): stance/invocation commits, blade
+   *  coats, slow landings. Never downsampled and never counted from — see TimelineMarker.
+   *  Capped drop-oldest at MARKER_CAP purely as a memory bound; the densest fight in the
+   *  user's whole log carries three. */
+  markers: MarkerRaw[]
+  /** The UTILITY blade coat that was already on when this encounter opened (Task #64), and
+   *  the combat venoms alongside it. Snapshotted at ensureEncounter() from the engine's live
+   *  coat state, because "was a slow even possible in this pull?" is a question about the
+   *  moment of engage — re-reading today's coat later would re-label old fights. */
+  coatAtEngage?: CoatSlot
+  combatAtEngage: CoatSlot[]
   /** Display name of the MOST RECENT outgoing-damage target (You or pet → mob), for the
    *  LIVE encounter name (Task #54): while a fight is open its name tracks whatever you're
    *  currently swinging at. On FINALIZE the name switches to the largest target (most damage
@@ -437,6 +509,14 @@ interface TimelineRaw {
   detail?: string
   /** target/defender name, for the tooltip. */
   target?: string
+}
+
+/** Internal raw timeline MARKER (absolute ts; converted to relative at snapshot). */
+interface MarkerRaw {
+  ts: number
+  kind: TimelineMarkerKind
+  label: string
+  detail?: string
 }
 
 /** Internal raw stance/invocation span (absolute ts). `end` is undefined while active. */
@@ -516,6 +596,21 @@ const ZONE_HISTORY_CAP = 20
 const TIMELINE_CAP = 8_000
 const TIMELINE_HISTORY_CAP = 60
 const TIMELINE_BUDGET = 2_000
+
+// Rogue poisons (Task #64):
+//   MARKER_CAP     — per-encounter marker ring (drop-oldest). Markers are point annotations
+//                    (stance/invocation commits, coats, slow landings), NOT damage: they are
+//                    never downsampled, because uniform-striding a sparse series just deletes
+//                    most of it. Measured on the user's whole log, the densest single fight
+//                    carries 3 markers, so this cap is a pure memory bound and has never
+//                    engaged. No COUNT is derived from markers (ProcAccum is), so even if it
+//                    did engage no statistic would move.
+//   SLOW_SAMPLE_CAP — how many recent QUALIFYING pulls (a slow-capable coat on at engage) the
+//                    rolling time-to-slow ring keeps. Small on purpose: this is meant to
+//                    answer "how is my poison doing right now", not to average a whole
+//                    evening's worth of loadouts together.
+const MARKER_CAP = 1_000
+const SLOW_SAMPLE_CAP = 25
 
 /** How a damage event `A → B` is attributed given the pet-name set. */
 export type Attribution =
@@ -619,6 +714,22 @@ export class CombatEngine {
    *  used to open/close timeline stance spans on the current encounter. */
   private stance?: { name: string; ts: number }
   private invocation?: { name: string; ts: number }
+  /**
+   * BLADE COATS (Task #64). Two slots because the game has two: `coatUtility` is the ONE
+   * active utility poison (a new utility coat replaces it), `coatCombat` holds the combat
+   * venoms, which STACK. Session-scoped exactly like the stance pair — a coat survives zoning
+   * (the wiki: poisons last until class swap or death) — and cleared by reset().
+   */
+  private coatUtility?: CoatSlot
+  private coatCombat: CoatSlot[] = []
+  /**
+   * ROLLING TIME-TO-SLOW samples (Task #64), newest last, capped at SLOW_SAMPLE_CAP. One
+   * entry per FINALIZED pull that opened with a slow-capable coat on: the ms to the first
+   * slow landing, or null when the pull ended without one. The null entries are the whole
+   * reason this is a list of samples and not a running mean — they are COUNTED (`noLand`) and
+   * never averaged in as zero (law 5).
+   */
+  private slowSamples: (number | null)[] = []
 
   /** Enable classification logging (after the historical scan, for the live tail), and
    *  flip HYDRATION off — from here on every snapshot describes the real present. */
@@ -678,6 +789,9 @@ export class CombatEngine {
     this.lastActivityTs = 0
     this.stance = undefined
     this.invocation = undefined
+    this.coatUtility = undefined
+    this.coatCombat = []
+    this.slowSamples = []
   }
 
   private log(ts: number, cat: string, role: ClassifiedLine['role'], text: string): void {
@@ -845,9 +959,136 @@ export class CombatEngine {
         this.applyStance('invocation', ev.invocation, ev.ts)
         this.log(ev.ts, 'invocation', 'info', `▸ invocation: ${ev.invocation}`)
         return
+      case 'poisonCoat':
+        this.routeCoat(ev.ts, ev.poison, ev.group, ev.who)
+        return
+      case 'poisonDry':
+        this.routeDry(ev.ts, ev.group)
+        return
+      case 'poisonProc':
+        this.routeProc(ev.ts, ev.strike, ev.candidates, ev.effect === 'slow', ev.target)
+        return
+      case 'buffApply':
+        // DISPEL LANDINGS on the mobs we are fighting (Task #64) — the "counts of spells (like
+        // the dispel variants and such)" ledger. Message-driven and gated to DISPEL_FAMILY; it
+        // names NO caster, and the view labels it accordingly.
+        this.routeDispelLanding(ev.ts, ev.target, ev.candidates.map((c) => c.name))
+        return
       default:
         return
     }
+  }
+
+  /**
+   * Apply a blade coat (Task #64). ONLY your own coats move state — a third-person coat line
+   * is another player's blades and is dropped after logging. A UTILITY coat replaces the one
+   * utility slot; a COMBAT venom is added to the stack (re-coating the same venom just
+   * refreshes its ts). An 'unknown' poison is recorded in the segment's coat list (the blades
+   * demonstrably got re-coated) but never placed in a slot — we cannot claim what is on them.
+   */
+  private routeCoat(ts: number, poison: string, group: 'utility' | 'combat' | 'unknown', who: string): void {
+    if (idKey(who) !== 'you') {
+      this.log(ts, 'poison', 'info', `☠ ${who} coated their blades`)
+      return
+    }
+    const slot: CoatSlot = { poison, sinceTs: ts }
+    if (group === 'utility') this.coatUtility = slot
+    else if (group === 'combat') {
+      this.coatCombat = [...this.coatCombat.filter((c) => c.poison !== poison), slot]
+    }
+    // A coat is not combat: it never opens or extends an encounter. It attaches to an
+    // in-progress fight (same freshness rule a miss uses) and always to the zone aggregate.
+    const enc = this.freshEncounter(ts)
+    const label = poison === 'unknown' ? 'poison' : poison
+    if (enc) {
+      enc.agg.procs.coats.push({ poison, ts })
+      this.pushMarker(enc, { ts, kind: 'coat', label, detail: `${group} coat` })
+    }
+    this.zoneAgg.procs.coats.push({ poison, ts })
+    this.log(ts, 'poison', 'info', `☠ coated: ${label}${group === 'unknown' ? '' : ` (${group})`}`)
+  }
+
+  /**
+   * A coat wore off / was replaced. The line names no poison, only which FAMILY dried, so:
+   *   utility — unambiguous, there is only ever one; clear it.
+   *   combat  — the log CANNOT say which venom of a stack expired (law 6). We clear the whole
+   *             stack rather than pick one: under-claiming what is coated is honest, while
+   *             leaving a venom listed that the game just told us ended is not. (No combat
+   *             dry line exists anywhere in the user's log; both observed dries are utility
+   *             replacements, printed in the same second as the coat that replaced them.)
+   */
+  private routeDry(ts: number, group: 'utility' | 'combat'): void {
+    if (group === 'utility') this.coatUtility = undefined
+    else this.coatCombat = []
+    this.log(ts, 'poison', 'info', `☠ ${group} coat dried`)
+  }
+
+  /**
+   * A rogue-poison Strike landed on something (Task #64).
+   *
+   * ATTRIBUTION, HONESTLY: the emote names no caster, so this is never claimed as "your" proc
+   * on its own. It is counted against the fight it lands in, and the SLOW timing is only
+   * reported for pulls that opened with a slow-capable coat on (`ProcsView.slowExpected`) —
+   * which is the closest the log lets anyone get to "my poison did that".
+   *
+   * A proc never OPENS an encounter (it is not damage, law 8's rule for misses applies), but
+   * it IS presence evidence: a mob that just got slowed is emphatically still in the fight.
+   */
+  private routeProc(ts: number, strike: string, candidates: string[], isSlow: boolean, target: string): void {
+    // A proc on YOU is an incoming mob effect, not our poison — never counted here. Nor is a
+    // proc on anything we are not fighting: the log has a `Hakon blinks, looking confused!`
+    // (another PLAYER taking a Concussive Strike from someone else's blades), and counting
+    // that as a proc of ours would be a claim the line does not support. The zone aggregate
+    // is gated the same way, via the encounter — a proc with no open fight is dropped.
+    if (idKey(target) === 'you' || !this.isEngagedHostile(idKey(target))) return
+    const ambiguous = candidates.length > 1
+    const label = ambiguous ? candidates.join(' / ') : strike
+    const enc = this.freshEncounter(ts)
+    if (enc) {
+      enc.agg.procs.addStrike(label, ambiguous, ts, isSlow)
+      this.notePresence(target, ts)
+      if (isSlow) {
+        this.pushMarker(enc, { ts, kind: 'slow', label: SLOW_STRIKE, detail: target })
+      }
+    }
+    this.zoneAgg.procs.addStrike(label, ambiguous, ts, isSlow)
+    this.log(ts, 'poison', 'you', `☠ ${label} → ${target}`)
+  }
+
+  /**
+   * Count a DISPEL landing on an engaged hostile (Task #64).
+   *
+   * TWO gates, both load-bearing:
+   *   1. DISPEL_FAMILY — the raw landing stream is far too broad to tabulate (one lifetap
+   *      message alone resolves to 36 candidate spells), so only the curated dispel family
+   *      is counted. See DISPEL_FAMILY for why that is the one family worth a lane.
+   *   2. ENGAGED — the ledger describes THIS fight, not every dispel in earshot.
+   * `candidates` goes into the label verbatim: each tier is shared by 2–3 spells (law 3), so
+   * the count is exact while the name stays honestly uncertain.
+   */
+  private routeDispelLanding(ts: number, target: string, candidates: string[]): void {
+    if (target === 'self' || candidates.length === 0) return
+    if (!candidates.every((c) => DISPEL_FAMILY.has(c))) return
+    const key = idKey(target)
+    if (key === 'you' || !this.isEngagedHostile(key)) return
+    const enc = this.freshEncounter(ts)
+    const label = candidates.join(' / ')
+    if (enc) enc.agg.procs.addDispel(label)
+    this.zoneAgg.procs.addDispel(label)
+  }
+
+  /** The in-progress encounter, but only while it is FRESH — the same rule routeMiss uses so a
+   *  non-damage event can attach to the fight it belongs to without reviving a stale one (and
+   *  without ever OPENING one: only damage/CC do that). */
+  private freshEncounter(ts: number): Encounter | null {
+    return this.current && ts - this.current.lastTs <= FALLBACK_IDLE_MS ? this.current : null
+  }
+
+  /** Append a point annotation to an encounter's marker ring (Task #64), drop-oldest at
+   *  MARKER_CAP. Draw-only: no count, DPS or attribution ever reads this. */
+  private pushMarker(enc: Encounter, m: MarkerRaw): void {
+    enc.markers.push(m)
+    if (enc.markers.length > MARKER_CAP) enc.markers.shift()
   }
 
   /**
@@ -867,7 +1108,16 @@ export class CombatEngine {
       const prev = [...enc.stanceSpans].reverse().find((s) => s.group === group && s.end === undefined)
       if (prev) prev.end = ts
       enc.stanceSpans.push({ group, name, start: ts })
+      // Task #64: the same commit is ALSO a point annotation (the chart draws a tick at it)
+      // and a counter on the segment's proc ledger. The span drives the timeline's pinned
+      // rows; the marker drives the DPS curve's ticks. Both, because they answer different
+      // questions ("what was on" vs "when did it change").
+      this.pushMarker(enc, { ts, kind: group, label: name })
+      if (group === 'stance') enc.agg.procs.stanceSwitches++
+      else enc.agg.procs.invocationSwitches++
     }
+    if (group === 'stance') this.zoneAgg.procs.stanceSwitches++
+    else this.zoneAgg.procs.invocationSwitches++
   }
 
   private route(ev: DamageEvent): void {
@@ -938,6 +1188,15 @@ export class CombatEngine {
       this.world.notePetEngagement(ev.attacker, idKey(ev.target))
     }
     const ambiguous = at.kind === 'out-pet' && at.ambiguous
+    // POISON-TYPED DAMAGE (Task #64): the game states the damage TYPE on every typed spell
+    // line ("… for 53 points of POISON damage by Asp Venom Strike."), so a poison lane is a
+    // fact the log printed, not a name-matched guess. Outgoing only — a mob's poison DoT on
+    // you is not a proc of ours. Additive: this is a second index over damage already counted,
+    // so no total moves.
+    if (ev.dclass === 'poison') {
+      enc.agg.procs.addPoisonDamage(ev.skill, ev.amount)
+      this.zoneAgg.procs.addPoisonDamage(ev.skill, ev.amount)
+    }
     // Resolve the target to an instance. For a same-name ambiguous pet hit the
     // target is the HOSTILE twin (preferCharmed=false picks the hostile instance).
     const tgtInst = this.world.resolve(ev.target, ev.ts)
@@ -1309,7 +1568,13 @@ export class CombatEngine {
       this.current = {
         id: `e${++this.seq}`, zone: this.zone, startTs: ts, lastTs: ts,
         agg: new Agg(), engaged: new Set(), engagedSeen: new Map(), activeMs: 0,
-        ccActiveUntil: new Map(), events: [], eventsTotal: 0, stanceSpans: spans
+        ccActiveUntil: new Map(), events: [], eventsTotal: 0, stanceSpans: spans,
+        markers: [],
+        // Task #64: freeze the coats as they stand AT ENGAGE. "Could this pull have been
+        // slowed?" is a question about this instant — reading today's coat when the fight is
+        // later rendered would silently re-label every past fight after a poison swap.
+        coatAtEngage: this.coatUtility ? { ...this.coatUtility } : undefined,
+        combatAtEngage: this.coatCombat.map((c) => ({ ...c }))
       }
     }
     return this.current
@@ -1402,6 +1667,16 @@ export class CombatEngine {
     // that never accrues any attributed damage — e.g. a mez lands and the mob is
     // then killed by someone else. Don't pollute history/zone with a 0-damage shell.
     if (enc.agg.out.size === 0 && enc.agg.inc.size === 0) return
+    // ROLLING TIME-TO-SLOW (Task #64). A pull only qualifies when a SLOW-CAPABLE utility coat
+    // was already on at engage — otherwise "how long to slow" is a question nobody asked, and
+    // including it would deflate the denominator with pulls that could never land one. A
+    // qualifying pull that never slowed is pushed as `null`: counted as a miss, never averaged
+    // in as a zero (law 5).
+    if (enc.coatAtEngage && isSlowCapable(enc.coatAtEngage.poison)) {
+      const first = enc.agg.procs.firstSlowTs
+      this.slowSamples.push(first > 0 ? Math.max(0, first - enc.startTs) : null)
+      if (this.slowSamples.length > SLOW_SAMPLE_CAP) this.slowSamples.shift()
+    }
     this.zoneFinalizedMs += Math.max(0, enc.lastTs - enc.startTs)
     this.zoneActiveMs += enc.activeMs
     // Compute the immutable summary once, now that the encounter is frozen. A
@@ -1532,8 +1807,44 @@ export class CombatEngine {
     return {
       selectedId, selected, segments, inCombat, zone: this.zone,
       recent, stance, timeline,
+      poison: { coat: this.coatState(), slow: this.slowRollup() },
       zoneSessions: this.zoneSessionSummaries(),
       hydrating: this.hydrating
+    }
+  }
+
+  /** The live blade-coat pair, copied out so a consumer can't mutate engine state. */
+  private coatState(): BladeCoatState {
+    return {
+      utility: this.coatUtility ? { ...this.coatUtility } : undefined,
+      combat: this.coatCombat.map((c) => ({ ...c }))
+    }
+  }
+
+  /**
+   * The rolling time-to-slow rollup (Task #64). Statistics are computed over the LANDED
+   * samples ONLY; the nulls are surfaced as `noLand` so the reader sees both halves. With no
+   * landed samples every statistic is absent rather than 0 — "0 ms to slow" would be a lie
+   * about a thing that never happened.
+   */
+  private slowRollup(): SlowRollup {
+    const landed = this.slowSamples.filter((s): s is number => s !== null).sort((a, b) => a - b)
+    const pulls = this.slowSamples.length
+    const base: SlowRollup = {
+      pulls,
+      landed: landed.length,
+      noLand: pulls - landed.length,
+      window: SLOW_SAMPLE_CAP
+    }
+    if (landed.length === 0) return base
+    const sum = landed.reduce((a, b) => a + b, 0)
+    const mid = landed.length >> 1
+    return {
+      ...base,
+      avgMs: Math.round(sum / landed.length),
+      medianMs: landed.length % 2 ? landed[mid] : Math.round((landed[mid - 1] + landed[mid]) / 2),
+      minMs: landed[0],
+      maxMs: landed[landed.length - 1]
     }
   }
 
@@ -1637,6 +1948,15 @@ export class CombatEngine {
       start: Math.max(0, s.start - start),
       end: Math.max(0, (s.end ?? endTs) - start)
     }))
+    // MARKERS ARE NOT DOWNSAMPLED (Task #64) — every one is carried, deliberately, whatever
+    // `stride` does to the damage instants above. They are sparse by construction and drawing
+    // one in five of them would be worse than drawing none.
+    const markers: TimelineMarker[] = e.markers.map((m) => ({
+      t: Math.max(0, m.ts - start),
+      kind: m.kind,
+      label: m.label,
+      ...(m.detail ? { detail: m.detail } : {})
+    }))
     return {
       id: e.id,
       name: encounterName(e, isCurrent),
@@ -1644,6 +1964,7 @@ export class CombatEngine {
       lanes,
       events,
       stanceSpans,
+      markers,
       downsampled: stride > 1,
       rawCount,
       totalCount,
@@ -1728,7 +2049,48 @@ export class CombatEngine {
     const activeSec = Math.min(dur, e.activeMs / 1000)
     const isCurrent = this.current?.id === id
     const active = isCurrent && now - e.lastTs < ACTIVE_MS
-    return this.buildView(e.id, 'fight', encounterName(e, isCurrent), e.zone, e.agg, dur, activeSec, active, combinePets)
+    return this.buildView(e.id, 'fight', encounterName(e, isCurrent), e.zone, e.agg, dur, activeSec, active, combinePets, e)
+  }
+
+  /**
+   * The per-segment proc ledger (Task #64), built entirely from the frozen aggregate.
+   *
+   * `enc` is present only for a FIGHT: coats-at-engage and the engage-relative timings are
+   * questions about one pull's opening instant, and a zone session (many pulls, many coat
+   * swaps) has no such instant. So a zone view reports the counts — procs, poison damage,
+   * effects, stance switches — and honestly reports no `slowLandMs` and no `slowExpected`,
+   * rather than measuring from an arbitrary zero.
+   */
+  private buildProcsView(agg: Agg, enc?: Encounter): ProcsView {
+    const p = agg.procs
+    const byCount = (a: ProcLane, b: ProcLane): number => b.count - a.count || a.name.localeCompare(b.name)
+    const strikes: ProcLane[] = [...p.strikes.values()]
+      .map((s) => ({ name: s.name, count: s.count, ...(s.ambiguous ? { ambiguous: true } : {}) }))
+      .sort(byCount)
+    const poisonDamage: ProcLane[] = [...p.poisonDamage.values()]
+      .map((s) => ({ name: s.name, count: s.count, total: s.total }))
+      .sort((a, b) => (b.total ?? 0) - (a.total ?? 0) || a.name.localeCompare(b.name))
+    const dispels: ProcLane[] = [...p.dispels.values()]
+      .map((s) => ({ name: s.name, count: s.count, ambiguous: true }))
+      .sort(byCount)
+    const coatAtEngage = enc?.coatAtEngage
+    const start = enc?.startTs ?? 0
+    return {
+      coatAtEngage: coatAtEngage ? { ...coatAtEngage } : undefined,
+      combatAtEngage: enc ? enc.combatAtEngage.map((c) => ({ ...c })) : [],
+      slowExpected: !!coatAtEngage && isSlowCapable(coatAtEngage.poison),
+      coats: enc ? p.coats.map((c) => ({ poison: c.poison, tMs: Math.max(0, c.ts - start) })) : [],
+      strikes,
+      strikeCount: strikes.reduce((s, l) => s + l.count, 0),
+      slowLands: p.slowLands,
+      ...(enc && p.firstSlowTs > 0 ? { slowLandMs: Math.max(0, p.firstSlowTs - start) } : {}),
+      poisonDamage,
+      poisonDamageTotal: poisonDamage.reduce((s, l) => s + (l.total ?? 0), 0),
+      dispels,
+      dispelCount: dispels.reduce((s, l) => s + l.count, 0),
+      stanceSwitches: p.stanceSwitches,
+      invocationSwitches: p.invocationSwitches
+    }
   }
 
   private buildView(
@@ -1740,7 +2102,8 @@ export class CombatEngine {
     durationSec: number,
     activeSec: number,
     active: boolean,
-    combinePets: boolean
+    combinePets: boolean,
+    enc?: Encounter
   ): SegmentView {
     const entities = sourceViews(agg.out, durationSec, combinePets)
     const incoming = sourceViews(agg.inc, durationSec, false)
@@ -1767,7 +2130,8 @@ export class CombatEngine {
       enemyHealTotal: sumHeal(agg.enemyHeal),
       incomingHealTotal: incomingHealers.reduce((s, h) => s + h.total, 0),
       incomingHealers,
-      healing: buildHealingView(agg.heal, durationSec)
+      healing: buildHealingView(agg.heal, durationSec),
+      procs: this.buildProcsView(agg, enc)
     }
   }
 }

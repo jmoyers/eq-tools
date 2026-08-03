@@ -15,33 +15,11 @@
 
 import { useMemo } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
-import type { SegmentView, SourceView, TimelineView } from '@shared/combat'
-import { CATEGORY_LABEL } from '@shared/combat'
+import type { SegmentView, TimelineMarker, TimelineView } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import {
-  ApproxChip,
-  Bar,
-  CAT_COLOR,
-  CopyButton,
-  DashCard,
-  KIND_COLOR,
-  QuietNote,
-  RESIST_COLOR,
-  SkillBar,
-  SkillName,
-  fmtDur
-} from './combatShared'
-import { formatMobsText } from './copyText'
-import {
-  approxNote,
-  buildDpsSeries,
-  composition,
-  flattenSkills,
-  groupByTarget,
-  skillsForTarget,
-  type Drill,
-  type TargetDetail
-} from './dashboardData'
+import { ApproxChip, Bar, CopyButton, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
+import { fmtElapsed, formatMobsText } from './copyText'
+import { approxNote, buildDpsSeries, groupByTarget, skillsForTarget, type Drill, type TargetDetail } from './dashboardData'
 
 /** Why the selection has no per-event ring — decides the wording of the quiet note. */
 export type Ringless = 'zone' | 'evicted' | null
@@ -65,6 +43,29 @@ const LIVE_WINDOW_MS = 120_000
 const OUT_COLOR = '#d9b25f'
 const PET_COLOR = '#6fb3d2'
 const INC_COLOR = '#cf6679'
+
+/**
+ * MARKER COLORS (Task #64) — deliberately the SAME hues as the header's modifier slots, so a
+ * violet tick on the curve and the violet "3: Neurotoxic" pill are obviously the same fact:
+ *   stance      gold   (slot 1)
+ *   invocation  violet (slot 2)
+ *   coat        magenta(slot 3)
+ *   slow        green  — the one marker that is an OUTCOME rather than a choice, so it also
+ *                        gets a flag head instead of a plain tick. It is what the user is
+ *                        looking for on this chart; it must not read as another setting.
+ */
+const MARKER_COLOR: Record<TimelineMarker['kind'], string> = {
+  stance: '#d9b25f',
+  invocation: '#a98fe0',
+  coat: '#c46fd2',
+  slow: '#57e0a0'
+}
+const MARKER_WORD: Record<TimelineMarker['kind'], string> = {
+  stance: 'stance',
+  invocation: 'invocation',
+  coat: 'coat',
+  slow: 'slow landed'
+}
 
 /**
  * Smoothed damage rate over encounter time. For the LIVE fight the window follows `now`
@@ -114,6 +115,29 @@ export function DpsChartCard({
       yMax
     }
   }, [series, live])
+
+  /**
+   * MARKERS (Task #64) — thin vertical ticks at the instants the fight CHANGED: a stance or
+   * invocation commit, a blade coat, a slow landing.
+   *
+   * They are placed by TIME, not by bucket index, so a marker sits exactly where it happened
+   * rather than snapping to the curve's sampling grid; markers outside the visible (scrolling)
+   * window are dropped rather than clamped to the edge, which would put a coat from four
+   * minutes ago at t=0 and read as if it had just happened.
+   *
+   * The engine never downsamples markers (see TimelineMarker), so what is drawn here is the
+   * complete set for the visible span — this chart can be read as exhaustive.
+   */
+  const markers = useMemo(() => {
+    if (!tl || !chart) return []
+    const span = Math.max(1, chart.endMs - chart.startMs)
+    return tl.markers
+      .filter((m) => m.t >= chart.startMs && m.t <= chart.endMs)
+      .map((m) => ({
+        m,
+        x: PAD_X + ((m.t - chart.startMs) / span) * (CHART_W - 2 * PAD_X)
+      }))
+  }, [tl, chart])
 
   const a = series?.estimated ? '~' : ''
   // ONE chip for both event-ring losses (downsample and/or drop-oldest truncation): the note
@@ -177,6 +201,34 @@ export function DpsChartCard({
                 strokeWidth={1.8}
                 vectorEffect="non-scaling-stroke"
               />
+              {/* Markers LAST so a tick is never buried under the area fill. The <title> is the
+                  native SVG tooltip: an MUI Tooltip per tick would mount a popper for every one
+                  of them on a surface that re-renders each snapshot. */}
+              {markers.map(({ m, x }, i) => (
+                <g key={`${m.kind}|${m.t}|${i}`} opacity={0.9}>
+                  <title>
+                    {`${m.label} ${MARKER_WORD[m.kind]} @ ${fmtElapsed(m.t)}${m.detail ? ` — ${m.detail}` : ''}`}
+                  </title>
+                  <line
+                    x1={x}
+                    x2={x}
+                    y1={PAD_T - 4}
+                    y2={CHART_H - PAD_B}
+                    stroke={MARKER_COLOR[m.kind]}
+                    strokeWidth={1}
+                    strokeDasharray={m.kind === 'slow' ? undefined : '2 2'}
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  {/* The slow tick is the outcome the tab exists to show, so it also flies a
+                      flag — solid line + pennant, unmistakable against the dashed settings. */}
+                  {m.kind === 'slow' && (
+                    <polygon
+                      points={`${x.toFixed(1)},${PAD_T - 4} ${(x + 7).toFixed(1)},${PAD_T - 1} ${x.toFixed(1)},${PAD_T + 2}`}
+                      fill={MARKER_COLOR.slow}
+                    />
+                  )}
+                </g>
+              ))}
             </svg>
             <Typography
               variant="caption"
@@ -204,6 +256,13 @@ export function DpsChartCard({
             <Legend color={OUT_COLOR} label="you + pet" />
             {series.hasPet && <Legend color={PET_COLOR} label="pet" />}
             {series.hasInc && <Legend color={INC_COLOR} label="incoming" />}
+            {/* One legend entry per marker KIND actually present — an always-on legend for four
+                kinds would spend the strip explaining ticks the fight never had. */}
+            {(['slow', 'coat', 'stance', 'invocation'] as const)
+              .filter((k) => markers.some(({ m }) => m.kind === k))
+              .map((k) => (
+                <Legend key={k} color={MARKER_COLOR[k]} label={MARKER_WORD[k]} />
+              ))}
             <Box sx={{ flexGrow: 1 }} />
             <Typography variant="caption" color="text.disabled" noWrap>
               {Math.round(series.smoothMs / 1000)}s rolling
@@ -224,86 +283,6 @@ function Legend({ color, label }: { color: string; label: string }): JSX.Element
         {label}
       </Typography>
     </Stack>
-  )
-}
-
-// ── Panel 2: Breakdown preview ─────────────────────────────────────────────────────
-
-const PREVIEW_SKILLS = 6
-
-/**
- * Always-visible composition strip for one source: a 100%-stacked category bar plus its
- * top skills. Built from the engine's AUTHORITATIVE category rollups (not events), so it
- * stays exact for ring-less zone sessions. Clicking anywhere opens the full level-2 flat
- * drill for that source — this is a preview, so it carries no legend of its own.
- */
-export function BreakdownPreviewCard({
-  source,
-  onOpen
-}: {
-  source: SourceView | null
-  onOpen: () => void
-}): JSX.Element {
-  const slices = useMemo(() => (source ? composition(source) : []), [source])
-  // Same grouped flat list the drill shows (slay merged into one row), so the preview and the
-  // level-2 list can never disagree about how many rows exist.
-  const all = useMemo(() => (source ? flattenSkills(source) : []), [source])
-  const top = all.slice(0, PREVIEW_SKILLS)
-  const more = Math.max(0, all.length - top.length)
-
-  return (
-    <DashCard
-      title={source ? `Breakdown · ${source.name}` : 'Breakdown'}
-      right={
-        source ? (
-          <Typography variant="caption" color="text.secondary" noWrap>
-            {fmt(source.total)} · {formatRate(source.dps)}
-          </Typography>
-        ) : undefined
-      }
-      fill
-      testId="dash-panel"
-    >
-      {!source || slices.length === 0 ? (
-        <QuietNote>No damage from this source yet.</QuietNote>
-      ) : (
-        <Box onClick={onOpen} sx={{ cursor: 'pointer', minWidth: 0 }}>
-          <Stack direction="row" sx={{ height: 14, borderRadius: 0.5, overflow: 'hidden', mb: 0.75 }}>
-            {slices.map((s) => (
-              <Tooltip key={s.category} title={`${CATEGORY_LABEL[s.category]} · ${fmt(s.total)} · ${Math.round(s.pct)}%`}>
-                <Box sx={{ width: `${s.pct}%`, bgcolor: CAT_COLOR[s.category], opacity: 0.75, minWidth: 2 }} />
-              </Tooltip>
-            ))}
-          </Stack>
-          {top.map((s) => (
-            <Box key={`${s.category}|${s.name}`} sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: '1px' }}>
-              <Box sx={{ width: 6, height: 6, borderRadius: '2px', bgcolor: CAT_COLOR[s.category], flexShrink: 0 }} />
-              <Typography variant="caption" noWrap sx={{ flexGrow: 1, minWidth: 0 }}>
-                <SkillName name={s.name} category={s.category} />
-              </Typography>
-              <Box
-                sx={{
-                  width: 54,
-                  height: 5,
-                  borderRadius: 1,
-                  bgcolor: 'rgba(255,255,255,0.06)',
-                  flexShrink: 0,
-                  overflow: 'hidden'
-                }}
-              >
-                <Box sx={{ width: `${Math.max(3, s.pct)}%`, height: '100%', bgcolor: CAT_COLOR[s.category], opacity: 0.7 }} />
-              </Box>
-              <Typography variant="caption" color="text.secondary" sx={{ width: 52, textAlign: 'right' }}>
-                {fmt(s.total)}
-              </Typography>
-            </Box>
-          ))}
-          <Typography variant="caption" color="text.disabled" sx={{ display: 'block', mt: 0.25 }}>
-            {more > 0 ? `+${more} more — click for the full breakdown` : 'click for the full breakdown'}
-          </Typography>
-        </Box>
-      )}
-    </DashCard>
   )
 }
 

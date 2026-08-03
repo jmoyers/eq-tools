@@ -152,6 +152,134 @@ export interface SegmentView {
    * overlays inherit fight/zone-session selection for free.
    */
   healing: HealingView
+  /**
+   * ROGUE-POISON / PROC ledger for this segment (Task #64). Folded on ingest into the same
+   * `Agg` the damage bars come from, so it is exact for zone sessions too (no event ring
+   * involved) — the timeline MARKERS are the only ring-derived half of this feature, and they
+   * are for drawing, never for counting.
+   */
+  procs: ProcsView
+}
+
+// ---------------------------------------------------------------------------
+// ROGUE POISONS (Task #64). The catalog + the message tables live in shared/logEvents.ts;
+// these are the SHAPES the engine hands the UI.
+// ---------------------------------------------------------------------------
+
+/**
+ * One counted lane in the Procs tab. `total` is present only for lanes that carry damage
+ * (the poison-damage lanes); a proc emote has no amount and must never be given one.
+ * `ambiguous` marks a lane whose NAME the log could not pin down — two Strikes share an emote
+ * ("screams as poison burns their veins!" is Asp Venom Strike OR Cobra Venom Strike), and a
+ * dispel landing is shared across the whole Cancel Magic family. The count is exact either
+ * way; only the label is uncertain, and the UI says so with the app's `~` treatment.
+ */
+export interface ProcLane {
+  name: string
+  count: number
+  total?: number
+  ambiguous?: boolean
+}
+
+/** One coated poison and when it went on. */
+export interface CoatSlot {
+  /** DB spell name, or 'unknown' when the line refused to name it. */
+  poison: string
+  /** epoch ms of the coat line. */
+  sinceTs: number
+}
+
+/**
+ * The player's blade coats (Task #64). TWO slots, because that is what the game has (wiki,
+ * Rogue page): combat venoms STACK, utility poisons replace one another. Modeling it as one
+ * "current poison" would have made four of the five procs in the user's own log impossible —
+ * see the block comment in shared/logEvents.ts.
+ */
+export interface BladeCoatState {
+  /** The ONE active utility poison, if any. */
+  utility?: CoatSlot
+  /** Active combat venoms, in the order they were coated. */
+  combat: CoatSlot[]
+}
+
+/**
+ * ROLLING TIME-TO-SLOW (Task #64) — "how long does it take to land slow when I have the right
+ * poison on".
+ *
+ * THE DENOMINATOR IS THE WHOLE POINT (law 5). A pull only enters this rollup when a
+ * SLOW-CAPABLE utility poison was already coated at the moment the pull opened; those are the
+ * only pulls where "time to slow" is a question the game was even being asked. Of those,
+ * `landed` are averaged and `noLand` are NOT — a fight that never slowed is reported as its
+ * own number, never folded in as a zero (which would drag the mean toward a lie) and never
+ * dropped (which would flatter it).
+ */
+export interface SlowRollup {
+  /** Pulls that opened with a slow-capable coat active — the honest denominator. */
+  pulls: number
+  /** Of those, the ones where a slow actually landed. Only these feed the statistics. */
+  landed: number
+  /** `pulls - landed`: qualifying pulls that ended with no slow. Reported, never averaged. */
+  noLand: number
+  /** Mean ms from engage to the FIRST slow landing, over `landed` only. Absent when none. */
+  avgMs?: number
+  /** Median of the same samples — a single 8-minute grind shouldn't set the headline. */
+  medianMs?: number
+  minMs?: number
+  maxMs?: number
+  /** How many recent qualifying pulls the ring keeps; `pulls` saturates here. */
+  window: number
+}
+
+/** Blade coats + the rolling slow measurement, for the header and the aggregate line. */
+export interface PoisonState {
+  coat: BladeCoatState
+  slow: SlowRollup
+}
+
+/**
+ * The per-segment proc ledger (Task #64). Everything here is folded on ingest from the
+ * authoritative event stream — nothing reads the timeline ring — so a downsampled or
+ * truncated fight still reports exact counts.
+ */
+export interface ProcsView {
+  /** The utility coat that was already on when this segment opened. */
+  coatAtEngage?: CoatSlot
+  /** Combat venoms already on when this segment opened. */
+  combatAtEngage: CoatSlot[]
+  /** True when `coatAtEngage` grants Weakening Strike — i.e. a slow was actually possible. */
+  slowExpected: boolean
+  /** Coats applied DURING the segment (yours only), as ms since segment start. */
+  coats: Array<{ poison: string; tMs: number }>
+  /** Rogue-poison Strike procs that landed, by Strike name. */
+  strikes: ProcLane[]
+  strikeCount: number
+  /** Weakening-Strike landings (the slow) in this segment. */
+  slowLands: number
+  /**
+   * ms from the segment's start to the FIRST slow landing. Absent when none landed — which,
+   * combined with `slowExpected`, is the difference between "not landed yet" and "no slow
+   * poison was on". The UI must not collapse those two.
+   */
+  slowLandMs?: number
+  /** Outgoing damage lanes whose damage TYPE was poison (`dclass === 'poison'`). */
+  poisonDamage: ProcLane[]
+  poisonDamageTotal: number
+  /**
+   * DISPEL LANDINGS on the mobs engaged in this segment, one lane per message tier — the
+   * "counts of spells (like the dispel variants and such)" ask. Sourced from the
+   * message-driven landing stream (so a lane exists only because the game printed that
+   * spell's own landing line) and gated to DISPEL_FAMILY.
+   *
+   * IT NAMES NO CASTER, and every lane is `ambiguous`: `<mob> feels a bit dispelled.` is the
+   * Cancel Magic family's message, available to eleven classes plus NPCs. It is emphatically
+   * NOT evidence of your rogue dispel — that proc prints `'s blessings wither!` and lands in
+   * `strikes` instead. The UI labels this section accordingly.
+   */
+  dispels: ProcLane[]
+  dispelCount: number
+  /** Stance / invocation commits inside this segment. */
+  stanceSwitches: number
+  invocationSwitches: number
 }
 
 /** A source of incoming healing (to You / your pet), for the incoming section. */
@@ -430,6 +558,31 @@ export interface TimelineEvent {
   target?: string
 }
 
+/**
+ * A point-in-time ANNOTATION on the fight's clock (Task #64) — a stance/invocation commit, a
+ * blade coat, a slow landing. Markers are NOT damage: they carry no amount, they are not
+ * lanes, and they live in their own array precisely so nothing that walks `events` (the DPS
+ * curve, per-mob grouping, lane totals, the downsampler) has to learn about them.
+ *
+ * THEY ARE NEVER DOWNSAMPLED. `events` is uniform-strided when a fight outgrows the render
+ * budget, which for a sparse series would mean silently dropping most of it — a chart that
+ * shows 1 of 5 coats is worse than one that shows none. Markers are sparse by construction
+ * (the densest fight in the user's whole log carries three), so they are all carried, with a
+ * generous drop-oldest cap purely as a memory bound. No COUNT is ever derived from them:
+ * every number in `ProcsView` is folded on ingest from the aggregate instead.
+ */
+export type TimelineMarkerKind = 'stance' | 'invocation' | 'coat' | 'slow'
+
+export interface TimelineMarker {
+  /** ms since encounter start. */
+  t: number
+  kind: TimelineMarkerKind
+  /** the stance/invocation/poison name, or the slowed mob. */
+  label: string
+  /** secondary text for the tooltip (e.g. the mob a slow landed on). */
+  detail?: string
+}
+
 /** A span during which a stance/invocation was active (Task #51 timeline pinned rows). */
 export interface StanceSpan {
   /** 'stance' | 'invocation' — which pinned lane. */
@@ -472,6 +625,9 @@ export interface TimelineView {
   events: TimelineEvent[]
   /** pinned stance/invocation spans (rendered above the skill lanes). */
   stanceSpans: StanceSpan[]
+  /** point annotations (stance/invocation commits, blade coats, slow landings) — see
+   *  TimelineMarker: never downsampled, never counted from. */
+  markers: TimelineMarker[]
   /** true when the raw event count exceeded the budget and was downsampled. */
   downsampled: boolean
   /**
@@ -538,6 +694,8 @@ export interface CombatSnapshot {
   recent: ClassifiedLine[]
   /** current stance + invocation pair (Task #51). */
   stance: StanceState
+  /** blade coats + the rolling time-to-slow measurement (Task #64). */
+  poison: PoisonState
   /** the selected encounter's timeline — present only when SnapshotOpts.timeline is set. */
   timeline?: TimelineView | null
   /** zone-session list (Task #54): the live zone + capped finalized-zone history, newest-first

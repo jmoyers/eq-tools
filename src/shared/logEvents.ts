@@ -6,6 +6,7 @@
 // own regexes. Keep this pure and serializable — no behavior, just data.
 
 import type { DamageType, DamageCategory } from './combat'
+import type { PoisonEffect, PoisonGroup } from './poisons'
 
 /** Fields present on every event: a monotonic sequence, timestamp, and the raw line. */
 export interface LogEventBase {
@@ -717,6 +718,62 @@ export function considerDifficultyShort(difficulty: string): string | undefined 
   return CONSIDER_DIFFICULTY_SHORT[key]
 }
 
+// ---------------------------------------------------------------------------
+// ROGUE POISON events (Task #64). The catalog these describe — the roster, the coat/dry
+// message tables, the Strike proc emotes and the dispel family — lives in shared/poisons.ts;
+// its block comment carries the evidence (spell DB + eqlwiki) behind every string.
+// ---------------------------------------------------------------------------
+
+
+/**
+ * A rogue-poison Strike LANDING on a target (Task #64). Emitted from the Strike's own
+ * cast-on-other emote — the only line the game prints for a proc (there is no cast line and
+ * no attacker name, so this event deliberately does NOT claim a caster; see law 6 and the
+ * block comment above).
+ */
+export interface PoisonProcEvent extends LogEventBase {
+  kind: 'poisonProc'
+  /** Best-effort strike name (the first candidate). Prefer `candidates` when it matters. */
+  strike: string
+  /** Every strike sharing this emote. Length 1 unless the emote is one of the two shared ones. */
+  candidates: string[]
+  /** Effect class — unambiguous even when `strike` is not (both members of a pair agree). */
+  effect: PoisonEffect
+  /** The entity the proc landed on, RAW display name (canonicalize with idKey). */
+  target: string
+}
+
+/**
+ * The player coated their blades (Task #64). `poison` is the DB spell name when the coat
+ * line is one we know, else 'unknown'.
+ *
+ * THIRD PERSON: other players' coats print two shapes, both in the real log —
+ *   `Pollux coats their blades in asp venom!`   (named; Asp Venom's own msgCastOnOther)
+ *   `Skandercoats their blades in poison.`      (generic; note the MISSING SPACE — that is
+ *      how the game actually prints it, verified verbatim on all 2 occurrences, so the
+ *      matcher must not require one)
+ * The generic form deliberately hides which poison, so it carries `poison: 'unknown'`. These
+ * are somebody ELSE's blades and never touch your coat state — `who` is what says so.
+ */
+export interface PoisonCoatEvent extends LogEventBase {
+  kind: 'poisonCoat'
+  /** DB spell name, or 'unknown' for the generic third-person form. */
+  poison: string
+  /** Which slot it occupies — 'unknown' when the poison itself is unknown. */
+  group: PoisonGroup | 'unknown'
+  /** 'you' for your own coat; otherwise the other player's raw name. */
+  who: string
+}
+
+/**
+ * A coat wore off / was replaced (Task #64) — `The poison dries from the blade.` (utility)
+ * or `The venom drips away.` (combat). The line names no poison; `group` is all it can say.
+ */
+export interface PoisonDryEvent extends LogEventBase {
+  kind: 'poisonDry'
+  group: PoisonGroup
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -758,4 +815,7 @@ export type LogEvent =
   | ItemMergeEvent
   | ItemMergeFailedEvent
   | ConsiderEvent
+  | PoisonProcEvent
+  | PoisonCoatEvent
+  | PoisonDryEvent
   | UnknownEvent

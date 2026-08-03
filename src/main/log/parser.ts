@@ -19,7 +19,9 @@
 import { DEFAULT_PROFILE } from '../../shared/profiles'
 import type { DamageType } from '../../shared/combat'
 import type { ConsiderFaction, LogEvent, MissType } from '../../shared/logEvents'
+import type { PoisonProcDef } from '../../shared/poisons'
 import { CONSIDER_FACTION_RUNGS } from '../../shared/logEvents'
+import { POISON_BY_COAT_MSG, POISON_DRY_MSG, POISON_PROCS } from '../../shared/poisons'
 import { getParserConfig, type ParserConfig } from './rulesets'
 import { itemTierFromName } from '../../shared/itemStats'
 import { parseModifiers, hasCritical, damageCategory } from '../combat/taxonomy'
@@ -402,6 +404,60 @@ const CONSIDER_RE = new RegExp(
 const CONSIDER_FACTION_BY_PHRASE = new Map<string, ConsiderFaction>(
   CONSIDER_FACTION_RUNGS.map((r) => [r.phrase, r.faction])
 )
+
+// ----- rogue poisons (Task #64) -----
+// Three families, all driven by the tables in shared/logEvents.ts (every string there is
+// copied verbatim from the committed spell DB — see that file's block comment):
+//
+//   COAT   `You coat your blades in a neurotoxic poison.` and 19 siblings, matched by EXACT
+//          EQUALITY against POISON_BY_COAT_MSG. Not a pattern: the prose is idiosyncratic
+//          per poison ("a weak paralytic", "with a stunning agent", "in asp venom"), so a
+//          regex over "in <name> poison" would both miss real coats and invent names.
+//          Plus the two third-person shapes below.
+//   DRY    `The poison dries from the blade.` / `The venom drips away.` — exact equality.
+//   PROC   a Strike's landing emote, matched by SUFFIX (POISON_PROCS).
+//
+// PLACEMENT (deliberate, and MEASURED — this was probed against the real parser before it
+// was written, not assumed):
+//   - The PROC emotes and the third-person coats currently classify as 'unknown': the spell
+//     DB's cast-on-other SUFFIX table does not carry them (it is built from the
+//     "Someone …"/"Soandso …" message shapes, and these messages have neither prefix). So
+//     this branch shadows nothing that exists today, and it OWNS them deliberately from now
+//     on — a stable, DB-independent proc stream is what the golden tests and the engine's
+//     time-to-slow measurement need.
+//   - The FIRST-PERSON coat and dry lines DO match the DB today (buffApply /
+//     buffWearOff). Claiming them here is still a no-op for the world model: replaying the
+//     real coat window (2026-08-03 01:05–01:23) through the real BuffsModule produced ZERO
+//     poison actives either way — a coat prints no `You begin casting` line, so own-cast
+//     gating drops it, and the shared `dries` wears-off resolves against an active set that
+//     never contains a poison. Owning them here buys a single, DB-free code path in the
+//     engine instead of two.
+// The whole family is gated on cheap probes so the hot path is untouched.
+
+/** Third person, poison NAMED: `Pollux coats their blades in asp venom!` (Asp Venom's own
+ *  msgCastOnOther). Ends in '!'. */
+const POISON_COAT_OTHER_NAMED_RE = /^(.+?) coats their blades in (.+?)!$/
+/** Third person, GENERIC: `Skandercoats their blades in poison.` — verbatim from the real
+ *  log, MISSING SPACE included (both occurrences, 2026-07-31 and 2026-08-03). The optional
+ *  `\s?` is what lets the lazy name capture stop at "Skander" instead of eating "Skandercoats". */
+const POISON_COAT_OTHER_GENERIC_RE = /^(.+?)\s?coats their blades in poison\.$/
+
+/**
+ * Last WORD of every proc emote → the emotes that end with it. The gate is one
+ * `lastIndexOf(' ')` + one Map lookup, so an ordinary log line costs nothing; the handful of
+ * lines that clear it then run an exact `endsWith` against a 1–2 entry list. (A bare
+ * `endsWith` loop over all ten suffixes would run for every unclassified line in the log.)
+ */
+const POISON_PROC_BY_LAST_WORD = ((): ReadonlyMap<string, PoisonProcDef[]> => {
+  const m = new Map<string, PoisonProcDef[]>()
+  for (const p of POISON_PROCS) {
+    const w = p.suffix.slice(p.suffix.lastIndexOf(' ') + 1)
+    const list = m.get(w)
+    if (list) list.push(p)
+    else m.set(w, [p])
+  }
+  return m
+})()
 
 // ----- spell resist (NEW, Task #51 timeline v2) -----
 // A detrimental spell fully resisted — the caster-side analogue of a melee miss.
@@ -915,6 +971,56 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
   // NOT DB-gated — the text is unambiguous on its own.
   if (text === 'Your illusion fades.') {
     return { kind: 'illusionFade', seq, ts, raw, target: 'self' }
+  }
+
+  // --- rogue poisons (Task #64): coat / dry / Strike proc. See the tables above. ---
+  if (text.startsWith('You coat your blades ')) {
+    const p = POISON_BY_COAT_MSG.get(text)
+    // An unknown coat line is still a coat — we say so and decline to name the poison
+    // (law 1) rather than dropping the only evidence that the blades were re-coated.
+    if (text.endsWith('.')) {
+      return p
+        ? { kind: 'poisonCoat', seq, ts, raw, poison: p.name, group: p.group, who: 'you' }
+        : { kind: 'poisonCoat', seq, ts, raw, poison: 'unknown', group: 'unknown', who: 'you' }
+    }
+  }
+  if (text.includes('coats their blades in ')) {
+    // Named third person (`… in asp venom!`): the descriptor is the same noun phrase the
+    // first-person line uses, so we resolve it through the SAME table instead of keeping a
+    // second one. Unresolvable ⇒ 'unknown', never a guessed name.
+    let m = POISON_COAT_OTHER_NAMED_RE.exec(text)
+    if (m) {
+      const p = POISON_BY_COAT_MSG.get(`You coat your blades in ${m[2].trim()}.`)
+      return {
+        kind: 'poisonCoat', seq, ts, raw,
+        poison: p?.name ?? 'unknown', group: p?.group ?? 'unknown', who: norm(m[1])
+      }
+    }
+    // Generic third person (`Skandercoats their blades in poison.`) — the game deliberately
+    // hides which poison, so there is nothing to resolve.
+    m = POISON_COAT_OTHER_GENERIC_RE.exec(text)
+    if (m) return { kind: 'poisonCoat', seq, ts, raw, poison: 'unknown', group: 'unknown', who: norm(m[1]) }
+  }
+  {
+    const group = POISON_DRY_MSG[text]
+    if (group) return { kind: 'poisonDry', seq, ts, raw, group }
+  }
+  if (text.endsWith('!') || text.endsWith('.')) {
+    const cands = POISON_PROC_BY_LAST_WORD.get(text.slice(text.lastIndexOf(' ') + 1))
+    if (cands) {
+      for (const p of cands) {
+        // Possessive suffixes attach straight to the name; bare ones follow a space —
+        // the same two-shape rule the DB's own cast-on-other matcher uses.
+        const tail = p.suffix.startsWith("'s") ? p.suffix : ` ${p.suffix}`
+        if (!text.endsWith(tail) || text.length <= tail.length) continue
+        const target = text.slice(0, text.length - tail.length).trim()
+        if (!target) continue
+        return {
+          kind: 'poisonProc', seq, ts, raw,
+          strike: p.strikes[0], candidates: [...p.strikes], effect: p.effect, target: norm(target)
+        }
+      }
+    }
   }
 
   // --- message-driven buff events (Task #34) — DB-gated, additive. Emitted only when a

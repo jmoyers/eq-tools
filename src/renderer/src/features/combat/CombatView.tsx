@@ -24,12 +24,13 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import CircleIcon from '@mui/icons-material/Circle'
 import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
-import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
+import { DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
+import { BreakdownPreviewCard } from './BreakdownCard'
 import { Bar, CAT_COLOR, CopyButton, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
 import { FightPicker } from './FightPicker'
 import { flattenSkills, scopeOptions, skillsForTarget, type Drill } from './dashboardData'
-import { formatEntityText, formatSegmentText, formatTargetText } from './copyText'
-import { formatTime } from '../../lib/formatDate'
+import { fmtElapsed, formatEntityText, formatSegmentText, formatTargetText } from './copyText'
+import { formatDateTime, formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
@@ -362,6 +363,29 @@ function SegmentBody({
                   </Typography>
                 </Tooltip>
               )}
+              {/* SLOW CHIP (Task #64). Shown ONLY when a slow-capable coat was actually on at
+                  engage — that is what makes "not landed" a fact about the poison rather than
+                  about the loadout, and it keeps the chip off the header of every fight the
+                  user wasn't running slow poison for. */}
+              {mode === 'out' && seg.procs.slowExpected && (
+                <Tooltip
+                  title={
+                    seg.procs.slowLandMs !== undefined
+                      ? `${seg.procs.coatAtEngage?.poison} was coated at engage; its Weakening Strike proc landed ${fmtElapsed(
+                          seg.procs.slowLandMs
+                        )} in (${seg.procs.slowLands} landing${seg.procs.slowLands === 1 ? '' : 's'} this fight).`
+                      : `${seg.procs.coatAtEngage?.poison} was coated at engage, but its slow proc has not landed in this fight.`
+                  }
+                >
+                  <Typography
+                    component="span"
+                    variant="caption"
+                    sx={{ color: seg.procs.slowLandMs !== undefined ? '#57e0a0' : 'text.disabled', ml: 0.5 }}
+                  >
+                    · {seg.procs.slowLandMs !== undefined ? `slow @ ${fmtElapsed(seg.procs.slowLandMs)}` : 'slow: not landed'}
+                  </Typography>
+                </Tooltip>
+              )}
             </Typography>
           </Typography>
           <CopyButton getText={copyView} />
@@ -488,9 +512,20 @@ function ProcessingLog({
  * The slot number is a dim prefix; the VALUE carries the weight. The tooltip still names the
  * underlying group, so nothing is hidden.
  */
-function ModifierSlot({ slot, value, color }: { slot: 1 | 2; value: string; color: string }): JSX.Element {
+function ModifierSlot({
+  slot,
+  value,
+  color,
+  tip
+}: {
+  slot: 1 | 2 | 3
+  value: string
+  color: string
+  /** Overrides the default "Modifier n — <group>: <value>" tooltip (slot 3 says more). */
+  tip?: string
+}): JSX.Element {
   return (
-    <Tooltip title={`Modifier ${slot} — ${slot === 1 ? 'combat stance' : 'invocation'}: ${value}`}>
+    <Tooltip title={tip ?? `Modifier ${slot} — ${slot === 1 ? 'combat stance' : 'invocation'}: ${value}`}>
       {/* A subtle pill, so the two slots read as one passive readout at the end of the lens line
           rather than as two more bits of loose text competing with the controls. The TEXT is
           unchanged ('1: Berserker') — it is asserted verbatim by the headless e2e harness. */}
@@ -518,17 +553,51 @@ function ModifierSlot({ slot, value, color }: { slot: 1 | 2; value: string; colo
   )
 }
 
-/** The current stance + invocation pair, as two terse right-aligned slots. */
-function StanceReadout({ stance }: { stance: NonNullable<CombatSnapshotStance> }): JSX.Element | null {
-  if (!stance.stance && !stance.invocation) return null
+/**
+ * The passive modifier readout: stance, invocation, and (Task #64) the BLADE COAT.
+ *
+ * Slot 3 mirrors slots 1–2 exactly — the same `<n>: <value>` pill in the same shape, which is
+ * also the contract the headless e2e harness asserts on the first two. It shows the UTILITY
+ * poison, because that is the slot the player actually chooses between: combat venoms stack
+ * and simply accumulate, so they belong in the tooltip, not in a one-line status. A short
+ * label ("Neurotoxic") carries it — the trailing "Poison"/"Venom" is noise at pill size.
+ */
+function coatShortName(poison: string): string {
+  return poison === 'unknown' ? 'unknown' : poison.replace(/\s+(Poison|Venom)$/, '')
+}
+
+function StanceReadout({
+  stance,
+  poison
+}: {
+  stance: NonNullable<CombatSnapshotStance>
+  poison: CombatSnapshotPoison | undefined
+}): JSX.Element | null {
+  const coat = poison?.coat
+  if (!stance.stance && !stance.invocation && !coat?.utility) return null
+  const combat = coat?.combat ?? []
   return (
     <>
       {stance.stance && <ModifierSlot slot={1} value={stance.stance} color="#d9b25f" />}
       {stance.invocation && <ModifierSlot slot={2} value={stance.invocation} color="#a98fe0" />}
+      {coat?.utility && (
+        <ModifierSlot
+          slot={3}
+          value={coatShortName(coat.utility.poison)}
+          color="#c46fd2"
+          tip={
+            `Modifier 3 — blade coat: ${coat.utility.poison}, applied ${formatDateTime(coat.utility.sinceTs)}` +
+            (combat.length
+              ? `. Combat venoms also up (they stack): ${combat.map((c) => c.poison).join(', ')}`
+              : '')
+          }
+        />
+      )}
     </>
   )
 }
 type CombatSnapshotStance = NonNullable<ReturnType<typeof useCombat>['snap']>['stance']
+type CombatSnapshotPoison = NonNullable<ReturnType<typeof useCombat>['snap']>['poison']
 
 /**
  * Chrome for the header's segmented controls. All three used to be identical `small`
@@ -712,7 +781,7 @@ export default function CombatView(): JSX.Element {
     if (view === 'timeline' && noTimeline) setView('dash')
   }, [view, noTimeline])
 
-  const hasStatus = !!(snap?.stance?.stance || snap?.stance?.invocation || snap?.inCombat)
+  const hasStatus = !!(snap?.stance?.stance || snap?.stance?.invocation || snap?.poison?.coat.utility || snap?.inCombat)
 
   return (
     // The tab owns exactly the height it's given: the dashboard (flexGrow) takes what's left
@@ -932,7 +1001,7 @@ export default function CombatView(): JSX.Element {
 
           {/* Everything past this divider is READ-ONLY state, not a control. */}
           {hasStatus && <Divider orientation="vertical" flexItem sx={{ my: 0.25 }} />}
-          {snap?.stance && <StanceReadout stance={snap.stance} />}
+          {snap?.stance && <StanceReadout stance={snap.stance} poison={snap.poison} />}
           {snap?.inCombat && (
             <Stack direction="row" spacing={0.5} alignItems="center">
               <CircleIcon sx={{ fontSize: 8, color: 'success.main' }} />
@@ -990,6 +1059,8 @@ export default function CombatView(): JSX.Element {
           <DpsChartCard tl={tl} live={live} ringless={ringless} />
           <BreakdownPreviewCard
             source={previewSource}
+            seg={seg}
+            slow={snap?.poison?.slow}
             onOpen={() => previewSource && setDrill({ kind: 'entity', entityId: previewSource.id })}
           />
           <MobDamageCard seg={seg} tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />

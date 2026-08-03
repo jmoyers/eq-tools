@@ -20,8 +20,9 @@
 //   level 2  formatEntityText   — one source's flat skill list
 //   level 2  formatTargetText   — everything you+pet landed on one mob
 //   panel    formatMobsText     — the Damage-by-mob card's ranked rows
+//   panel    formatProcsText    — the Procs tab (rogue poisons, Task #64)
 
-import type { SegmentView, SourceView } from '@shared/combat'
+import type { SegmentView, SlowRollup, SourceView } from '@shared/combat'
 import { flattenSkills, type MobBreakdown, type SkillRow, type TargetDetail } from './dashboardData'
 import { formatNum, formatRate } from '../../lib/formatRate'
 
@@ -356,5 +357,100 @@ export function formatMobsText(seg: SegmentView, mobs: MobBreakdown, limit?: num
   )
   if (mobs.rows.length > shown.length) out.push(`+${mobs.rows.length - shown.length} more not shown`)
   if (mobs.estimated) out.push('', APPROX_NOTE)
+  return out.join('\n')
+}
+
+// ── The Procs tab (rogue poisons, Task #64) ─────────────────────────────────────────
+
+/**
+ * A short elapsed time. Sub-minute reads in tenths of a second — a slow that lands in 4.2s
+ * versus 4.9s is a real difference to a rogue — and anything longer falls back to the app's
+ * one `m:ss` spelling rather than printing "76.0s".
+ */
+export function fmtElapsed(ms: number): string {
+  return ms < 60_000 ? `${(ms / 1000).toFixed(1)}s` : fmtDur(ms / 1000)
+}
+
+/**
+ * The rolling time-to-slow line, in ONE spelling shared by the panel and the clipboard.
+ *
+ * Both halves of the denominator are always stated: the mean is over the pulls that LANDED,
+ * and the ones that never landed are named separately (`+2 no land`). A bare "avg 3.8s" over
+ * a set that silently dropped four whiffs would be exactly the aggregate law 5 forbids.
+ * Returns null when no qualifying pull has finished — there is nothing honest to say yet.
+ */
+export function slowRollupText(slow: SlowRollup): string | null {
+  if (slow.pulls === 0) return null
+  if (slow.landed === 0) return `slow never landed in ${count(slow.pulls, 'pull')}`
+  // `landed > 0` guarantees the engine populated the statistics, but this reads the field
+  // rather than asserting it: an absent mean is a reason to say nothing, never to print NaN.
+  if (slow.avgMs === undefined) return null
+  const parts = [`avg ${fmtElapsed(slow.avgMs)} over ${count(slow.landed, 'pull')}`]
+  if (slow.medianMs !== undefined && slow.medianMs !== slow.avgMs) parts.push(`median ${fmtElapsed(slow.medianMs)}`)
+  if (slow.minMs !== undefined && slow.maxMs !== undefined && slow.minMs !== slow.maxMs) {
+    parts.push(`${fmtElapsed(slow.minMs)}–${fmtElapsed(slow.maxMs)}`)
+  }
+  if (slow.noLand > 0) parts.push(`+${slow.noLand} no land`)
+  return parts.join(' · ')
+}
+
+/**
+ * The Procs tab, as text. Every number here is folded on ingest from the authoritative event
+ * stream — never from the event ring — so this block carries NO `~` treatment and no APPROX
+ * footer: there is nothing estimated in it. (That is the one structural difference from
+ * formatMobsText, which is ring-derived.)
+ *
+ * The dispel section deliberately says who it is NOT from. `<mob> feels a bit dispelled.` is
+ * the Cancel Magic family's line, and pasting a bare "Dispels 4" into guild chat under a
+ * rogue's name would read as a claim the log does not support.
+ */
+export function formatProcsText(seg: SegmentView, slow?: SlowRollup): string {
+  const p = seg.procs
+  const out = [subjectLine('Procs', seg)]
+
+  const coat: string[] = []
+  if (p.coatAtEngage) coat.push(`coat ${p.coatAtEngage.poison}`)
+  if (p.combatAtEngage.length) coat.push(`venoms ${p.combatAtEngage.map((c) => c.poison).join(', ')}`)
+  if (coat.length) out.push(...statLines(coat))
+
+  // The slow line, which is the point of the tab. "not landed" and "no slow poison" are
+  // different facts and are never collapsed into one phrase.
+  if (p.slowLandMs !== undefined) out.push(`Slow landed at ${fmtElapsed(p.slowLandMs)}${p.slowLands > 1 ? ` (${p.slowLands} total)` : ''}`)
+  else if (p.slowExpected) out.push('Slow: not landed (a slow-capable coat was on)')
+  // Only worth saying when SOME poison was actually on: on a fight with bare blades the whole
+  // feature is beside the point, and the block falls through to its empty note instead.
+  else if (seg.kind === 'fight' && coat.length > 0) out.push('Slow: no slow-capable coat was on for this fight')
+  const rolling = slow ? slowRollupText(slow) : null
+  if (rolling) out.push(`Rolling: ${rolling}`)
+
+  if (p.strikes.length) {
+    out.push('', ...table(
+      [{ header: 'Poison proc', align: 'left' }, { header: 'Count', align: 'right' }],
+      p.strikes.map((s) => [s.ambiguous ? `${s.name} (?)` : s.name, String(s.count)])
+    ))
+  }
+  if (p.poisonDamage.length) {
+    out.push('', ...table(
+      [{ header: 'Poison damage', align: 'left' }, { header: 'Hits', align: 'right' }, { header: 'Total', align: 'right' }],
+      p.poisonDamage.map((s) => [s.name, String(s.count), formatNum(s.total ?? 0)])
+    ))
+  }
+  if (p.dispels.length) {
+    out.push('', ...table(
+      [{ header: 'Dispel landed', align: 'left' }, { header: 'Count', align: 'right' }],
+      p.dispels.map((s) => [s.name, String(s.count)])
+    ))
+    out.push('Dispel lines name no caster — any class or NPC can print them.')
+  }
+
+  const misc: string[] = []
+  // `count()` pluralizes with a bare 's', which is wrong for "switch" — spelled out here.
+  const switches = (n: number, what: string): string => `${n} ${what} switch${n === 1 ? '' : 'es'}`
+  if (p.stanceSwitches > 0) misc.push(switches(p.stanceSwitches, 'stance'))
+  if (p.invocationSwitches > 0) misc.push(switches(p.invocationSwitches, 'invocation'))
+  for (const c of p.coats) misc.push(`coated ${c.poison} @ ${fmtElapsed(c.tMs)}`)
+  if (misc.length) out.push('', ...statLines(misc))
+
+  if (out.length === 1) out.push('No procs recorded in this segment.')
   return out.join('\n')
 }

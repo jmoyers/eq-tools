@@ -144,3 +144,71 @@ slice(990649, 990795, 'w29-absorb-both-shapes.log')
 //   19:29:15  the last knight is slain + its loot lines; the span ends on the buff-fade line
 //             that follows, so the encounter closes on evidence rather than mid-swing.
 slice(1022491, 1023067, 'w34-resist-case-merge.log')
+
+// ---------------------------------------------------------------------------
+// ROGUE POISONS (Task #64) — the two windows behind the poison/proc model.
+//
+// The user's log holds exactly ONE rogue-poison session (Mon Aug 03 01:05–01:33, the tail of
+// the file): 6 coat lines, 2 dry lines, 25 slow landings log-wide of which 16 fall inside
+// this session, and every Strike-proc emote family the model recognizes. Both windows are
+// cut from it, and W35 is designed to be replayed as a PRIME for W36 — the coat that makes
+// the whole fight sequence slow-capable is applied 7 minutes before the first swing, so a
+// combat-only window cannot establish it.
+// ---------------------------------------------------------------------------
+
+// W35 THE COAT SEQUENCE (Mon Aug 03 01:05:08 → 01:23:00, raw 1100627..1100792). Small and
+// dense: every coat the user has ever applied, in order, with the two replacement `dries`
+// lines and both third-person forms. Hand-read, load-bearing beats:
+//   01:05:08/10  activate + `You coat your blades in asp venom.`         → COMBAT (Asp Venom)
+//   01:05:11/13  `… in a siphoning poison.`                              → COMBAT (Blood Siphon)
+//   01:05:33/36  `… with a stunning agent.`                              → COMBAT (Stunning)
+//   01:06:14/16  `… in a neurotoxic poison.`                             → UTILITY (Neurotoxic)
+//   01:06:44/47  `The poison dries from the blade.` THEN `… in mage bane poison.` — the
+//                utility slot being REPLACED, both lines in the same second. This pair is
+//                why a utility coat must be a single slot and a dry must not clear the
+//                combat venoms: all three of those stay up through the fights in W36.
+//   01:16:26/29  dry + `… in a neurotoxic poison.` again — Mage Bane is swapped back out, so
+//                the coat active for every fight in W36 is Neurotoxic (slow-capable).
+//   01:19:30     `Skandercoats their blades in poison.` — ANOTHER PLAYER's coat, verbatim
+//                with the game's missing space. It must parse (who != you) and must NOT
+//                touch your own slots.
+// The span ends one line before the zone entry W36 opens on.
+slice(1100627, 1100792, 'w35-poison-coats.log')
+
+// W36 SLOW TIME-TO-LAND (Mon Aug 03 01:23:01 → 01:26:47, raw 1100793..1102500). The first
+// ~4 minutes of the Ruins of Old Paineel grind that follows the W35 coats, chosen because it
+// is the shortest span holding SEVERAL pulls with a mix of slow-landed and slow-never-landed
+// fights — the two halves of the honest denominator. Hand-read beats:
+//   01:23:01  `You have entered The Ruins of Old Paineel.` — a clean zone boundary, so the
+//             window opens with an empty zone aggregate.
+//   01:23:13  first outgoing damage (an elemental warrior) — the first pull's engage instant,
+//             which is the t0 every time-to-slow below is measured from.
+//   01:23:15  `You hit … by Asp Venom Strike.` + `screams as poison burns their veins!` — a
+//             COMBAT venom proccing while the UTILITY coat is Neurotoxic. Impossible under a
+//             one-poison model; this is the line that proves the two-slot design.
+//   01:23:33  `stumbles, clutching their head!` (Befuddling Strike — Neurotoxic's other proc)
+//   01:24:29  `an elemental warrior's limbs move slower!` — THE slow landing.
+//   01:26:03  and 01:26:19 two more slow landings on a rock golem.
+//   01:26:0x  `begins to sway!` (Stunning Strike) and `begins to bleed profusely!` (Blood
+//             Siphon Strike) — the remaining two combat venoms' procs, so all four active
+//             poisons are represented.
+// The window ends mid-grind rather than on a death: the last encounter is still open, which
+// is exactly the LIVE case the meter's "slow: not landed" chip has to render honestly.
+slice(1100793, 1102500, 'w36-poison-slow-timing.log')
+
+// W37 DISPEL VARIANTS ARE NOT A ROGUE PROC (Mon Aug 03 00:38:18 → 00:40:02, raw
+// 1095620..1096030) — the Efreeti Lord Djarn kill, cut because it is the densest dispel
+// window in the log and because it sits BEFORE the poison session (the first coat is at
+// 01:05), which makes it the negative case for every poison assertion at the same time.
+// Hand-read beats:
+//   00:38:18→ the Djarn fight already underway: his damage shield, his rune eating our swings.
+//   00:39:02, :07, :16, :24  `Efreeti Lord Djarn feels a bit dispelled.` ×4. That message is
+//             the Cancel Magic FAMILY's landing line (Cancel Magic | Phobocancel — eleven
+//             classes plus NPCs cast it), so the lane must be counted exactly, labeled with
+//             both candidates, and flagged ambiguous. The rogue's own dispel proc would print
+//             `'s blessings wither!`; this window has none, and neither does the whole log.
+//   00:39:59  `You have slain Efreeti Lord Djarn!` — the fight closes on evidence.
+// No coat has ever been applied at this point in the log, so this encounter must report
+// slowExpected:false and an EMPTY strike ledger — a poison feature that lights up on a fight
+// with no poison would be worthless.
+slice(1095620, 1096030, 'w37-dispel-variants.log')
