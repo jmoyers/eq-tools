@@ -816,3 +816,5 @@ export type {
   SpellCatalogEntry,
   SpellCatalog
 } from './buffTypes'
+
+export type { ProgressionSnap, ProgressionDropFront, ProgressionDelta } from './progressionTypes'

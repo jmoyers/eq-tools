@@ -1,0 +1,4 @@
+P -80, 40, 0,  0, 127, 127,  2,  Frostspire Hall
+
+P 60, -30, 10,  127, 64, 0,  1,  GS:_Nightmare_Fungus
+P -100, -50, 0,  255, 255, 255,  2,  Guard_Malforn,_the_Unyielding

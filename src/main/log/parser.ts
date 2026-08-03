@@ -48,6 +48,7 @@ import {
   classifyAa,
   classifyConsider,
   classifyDeath,
+  classifyExp,
   classifyItemMerge,
   classifyLevel,
   classifyLoot,
@@ -107,6 +108,11 @@ const CLASSIFIERS: readonly Classifier[] = [
   classifyItemMerge,
   classifyTurnIn,
   classifyLevel,
+  // Experience: gated on a `You gain ` prefix and END-anchored, so it can only ever claim the
+  // four exp shapes — all of which produced `{kind:'unknown'}` before this entry existed. It
+  // sits after classifyLevel because a ding prints the level line first and the exp line
+  // second; neither can shadow the other, and this keeps the progression families adjacent.
+  classifyExp,
   classifyAa,
   classifyAaActivate,
   classifyStance,

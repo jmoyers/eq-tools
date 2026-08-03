@@ -95,6 +95,19 @@ const TRADE_DONE_RE = /^You complete the trade with (.+?)\.$/
 // "You have gained a level! Welcome to level 26!"
 const LEVEL_RE = /^You have gained a level! Welcome to level (\d+)!$/
 
+// Experience (leveling analytics). FOUR shapes, from a full-log sweep (2026-08-03, 1.11M
+// lines): `You gain experience! (3.288%)` ×3865, `You gain party experience! (1.373%)` ×471,
+// and the percent-LESS variants of both (×474 / ×28). The percentage is an INCREMENT of the
+// CURRENT level's bar, not a bar position — proven by summing it between consecutive
+// `Welcome to level N!` lines: 98.8 / 100.2 / 100.5 / 102.1 over four level spans.
+//
+// The regex is anchored at BOTH ends on purpose. 12 other lines in the log contain the word
+// "experience" — 11 player chat lines ("this is a retro experience") and one mob emote
+// (`Coercer T`vala experiences a quickening.`) — and an unanchored match would claim them,
+// minting phantom experience for somebody else's typing. Anchored, it claims exactly 4838
+// lines, every one of which previously fell through to `{kind:'unknown'}`.
+const EXP_RE = /^You gain (party )?experience!(?: \(([\d.]+)%\))?$/
+
 // "You have gained an ability point!  You now have 7 ability points."
 // "You have gained 2 ability point(s)!  You now have 3 ability point(s)."
 const AA_RE = /^You have gained (an|\d+) ability point(?:\(s\))?!\s+You now have (\d+) ability point/
@@ -348,6 +361,29 @@ export function classifyLevel({ text, ts, seq, raw }: ClassifyCtx): LogEvent | n
   if (text.includes('gained a level')) {
     const m = LEVEL_RE.exec(text)
     if (m) return { kind: 'level', seq, ts, raw, level: Number(m[1]) }
+  }
+  return null
+}
+
+/**
+ * Experience gains. `pct` is OMITTED — never 0 — when the line stated no percentage: in the
+ * real log every percent-less line falls inside one contiguous at-the-cap window (level 50,
+ * no ding for 34h), i.e. the game prints a percentage only while a level bar exists. Emitting
+ * 0 there would turn "the log didn't say" into "you earned nothing" (law 1).
+ *
+ * ORDERING at a ding needs no special case: the level line comes FIRST, then the exp line
+ * carrying the overflow into the new level (verified `Mon Aug 03 00:40:46` — `Welcome to
+ * level 41!` then `You gain experience! (3.867%)`), so nothing is double counted.
+ */
+export function classifyExp({ text, ts, seq, raw }: ClassifyCtx): LogEvent | null {
+  if (text.startsWith('You gain ')) {
+    const m = EXP_RE.exec(text)
+    if (m) {
+      const party = m[1] !== undefined
+      return m[2] === undefined
+        ? { kind: 'expGain', seq, ts, raw, party }
+        : { kind: 'expGain', seq, ts, raw, party, pct: Number(m[2]) }
+    }
   }
   return null
 }

@@ -29,6 +29,7 @@ import { LootModule } from './modules/loot'
 import { TurnInsModule } from './modules/turnins'
 import { KillsModule } from './modules/kills'
 import { LevelingModule } from './modules/leveling'
+import { ProgressionModule } from './modules/progression'
 import { CharacterModule } from './modules/character'
 import { ItemTiersModule } from './modules/itemTiers'
 import { AlertsModule } from './modules/alerts'
@@ -81,6 +82,11 @@ export const registry = new ModuleRegistry({
 export const lootModule = new LootModule()
 export const turnInsModule = new TurnInsModule()
 export const killsModule = new KillsModule()
+// Leveling analytics (docs/plans/leveling-analytics.md): the capped, range-queryable series of
+// experience / credited kills / loot / zone intervals behind the drag-select stats panel. A
+// SEPARATE module from leveling on purpose — LevelingSnap is uncapped by contract (the AA
+// identity needs the whole history) and this one is a drop-oldest ring.
+export const progressionModule = new ProgressionModule()
 export const levelingModule = new LevelingModule()
 export const characterModule = new CharacterModule()
 // Observed item levels (Task #60): character-scoped, epoch-aware per-item tier state folded
@@ -152,6 +158,7 @@ function feedAlertDelta(delta: ModuleDelta): void {
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)
+registry.register(progressionModule)
 registry.register(levelingModule)
 registry.register(characterModule)
 registry.register(itemTiersModule)

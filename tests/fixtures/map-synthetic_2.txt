@@ -1,0 +1,6 @@
+L 300, 2000, 0, 300, 2100, 0, 255, 0, 0
+L 300, 2100, 0, 400, 2100, 0, 0, 0, 255
+P 300, 2000, 0,  0, 0, 0,  2,  Original_Map:_Synthetic_Fixture
+P 300, 2200, 0,  0, 0, 0,  2,  http://example.invalid/maps
+P 300, 2400, 0,  0, 0, 0,  2,  Height_Filter:_25/25
+P 300, 2600, 0,  240, 127, 0,  2,  a_legend_swatch_label

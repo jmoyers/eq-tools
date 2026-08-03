@@ -76,6 +76,34 @@ export interface LevelEventE extends LogEventBase {
   level: number
 }
 
+/**
+ * `You gain experience! (3.288%)` / `You gain party experience! (1.373%)`, and the
+ * percent-LESS variants of both. The percentage is an INCREMENT of the CURRENT level's
+ * bar (proven: Σ between consecutive dings ≈ 100), never a bar position.
+ *
+ * `pct` is UNDEFINED when the line stated none — never 0. In the real log every
+ * percent-less line falls inside one contiguous at-the-cap window (level 50, no ding
+ * for 34 h), i.e. the game prints a percentage only while a level bar exists.
+ *
+ * FULL-LOG SWEEP (read-only, 2026-08-03, 1.11M lines): 3865 `You gain experience! (N%)`,
+ * 471 `You gain party experience! (N%)`, 474 percent-less, 28 percent-less party — 4838
+ * lines, EVERY ONE of which previously fell through to `{kind:'unknown'}` (verified by
+ * replaying the whole log through the pre-change parser). The only other lines containing
+ * "experience" are 11 player chat lines and one mob emote (`Coercer T\`vala experiences a
+ * quickening.`), which is why the classifier's regex is anchored at BOTH ends.
+ *
+ * UNIT HONESTY (law 1): 1% at level 40 is far more raw experience than 1% at level 10, and
+ * the log never states a raw exp number, a to-next-level total, or a bar position. Σ percent
+ * is therefore "levels of progress", never "xp" — see shared/progressionStats.ts.
+ */
+export interface ExpGainEvent extends LogEventBase {
+  kind: 'expGain'
+  /** stated level-bar percent gained; undefined when the line printed none. */
+  pct?: number
+  /** the `party experience` shape — a group-mate's kill paid you. */
+  party: boolean
+}
+
 /** `You have gained N ability point(s)! You now have M ability point(s).` */
 export interface AaGainEvent extends LogEventBase {
   kind: 'aaGain'
@@ -786,6 +814,7 @@ export type LogEvent =
   | OfferEvent
   | TradeEvent
   | LevelEventE
+  | ExpGainEvent
   | AaGainEvent
   | AaSpendEvent
   | DeathEvent
