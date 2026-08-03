@@ -53,7 +53,7 @@ export const SCHEMA_VERSION_KEY = 'schemaVersion'
  * The schema the code running right now expects. Bump by exactly one whenever a persisted
  * shape changes, and add the matching MIGRATIONS entry in the same commit.
  */
-export const CURRENT_SCHEMA_VERSION = 2
+export const CURRENT_SCHEMA_VERSION = 3
 
 export interface Migration {
   /** Version this step produces. Steps run in ascending `to` order, contiguously. */
@@ -135,11 +135,65 @@ const migrateToV2: Migration = {
 }
 
 /**
+ * The character-EPOCH anchor, duplicated from log/epochDetector.ts ON PURPOSE.
+ *
+ * This module is deliberately dependency-free: it runs from store.ts's module scope BEFORE
+ * electron-store is constructed, and it is driven by a test that loads no Electron and no
+ * parser. Importing the detector to reach one constant would drag the whole LogEvent union in
+ * behind it. The number is the OFFICIAL LAUNCH instant (2026-07-28 00:00 local) and it can
+ * never change — it is a historical fact about a game that has already launched.
+ */
+const LAUNCH_MS = new Date(2026, 6, 28, 0, 0, 0, 0).getTime()
+
+/** A persisted combo correction, checked structurally — a hand-edited file can hold anything. */
+function isLiveCorrection(v: unknown): boolean {
+  if (!isPlainObject(v)) return false
+  const startTs = v.startTs
+  if (typeof startTs !== 'number' || !Number.isFinite(startTs)) return false
+  // Pre-launch corrections describe the BETA character that was wiped at launch and shares this
+  // log file. The module drops them in memory too; doing it here as well means an upgrading
+  // user's file stops carrying them at all.
+  return startTs >= LAUNCH_MS
+}
+
+/**
+ * 2 → 3. Class-combo inference (docs/plans/class-combo-inference.md § 7) adds ONE key under
+ * every `byCharacter` entry: `combo.corrections`, the user's manual "no, that span was
+ * PAL/ROG/BER" statements. Intervals themselves are NEVER persisted — they are re-derived from
+ * the log on every replay, and a persisted copy would be a second source of truth that could
+ * disagree with the log it claims to describe.
+ *
+ * Every reader defaults on the missing key, so this step is not strictly REQUIRED for the app
+ * to boot against a v2 store. It ships anyway, because the migration law is about the file
+ * having a stated shape at a stated version: a v3 store says "combo lives here and it is a
+ * list", and the next step that touches it can rely on that instead of re-deriving it.
+ */
+const migrateToV3: Migration = {
+  to: 3,
+  describe: 'add byCharacter[*].combo.corrections; drop pre-launch (beta-character) corrections',
+  migrate(data) {
+    if (!isPlainObject(data.byCharacter)) {
+      data.byCharacter = {}
+      return data
+    }
+    const byCharacter: StoreData = { ...data.byCharacter }
+    for (const [charId, progress] of Object.entries(byCharacter)) {
+      if (!isPlainObject(progress)) continue
+      const existing = isPlainObject(progress.combo) ? progress.combo : {}
+      const corrections = Array.isArray(existing.corrections) ? existing.corrections : []
+      byCharacter[charId] = { ...progress, combo: { corrections: corrections.filter(isLiveCorrection) } }
+    }
+    data.byCharacter = byCharacter
+    return data
+  }
+}
+
+/**
  * The chain, ascending. APPEND ONLY — never renumber, never edit a shipped step (a store
  * out there was migrated by the old text and will never run it again), never delete one:
  * a file written years ago still enters the chain at its own version.
  */
-export const MIGRATIONS: readonly Migration[] = [migrateToV2]
+export const MIGRATIONS: readonly Migration[] = [migrateToV2, migrateToV3]
 
 /** Version recorded in `data`; anything absent, non-integer or < 1 means "pre-framework" ⇒ 1. */
 export function readSchemaVersion(data: StoreData): number {

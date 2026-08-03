@@ -25,6 +25,7 @@ import { MessageOverlayMiner } from './data/messageOverlay'
 import { baselineOverlay, loadUserOverlay } from './data/overlayPersistence'
 import { CombatEngine } from './combat/engine'
 import { ModuleRegistry } from './modules/registry'
+import { ComboModule } from './modules/combo'
 import { LootModule } from './modules/loot'
 import { TurnInsModule } from './modules/turnins'
 import { KillsModule } from './modules/kills'
@@ -79,6 +80,9 @@ export const registry = new ModuleRegistry({
     if (evOverlay && !evOverlay.isDestroyed()) evOverlay.webContents.send(IPC.onModuleDelta, delta)
   }
 })
+// Class-combo inference (docs/plans/class-combo-inference.md): which up-to-three classes the
+// character was running, and when that changed — a swap the game NEVER logs.
+export const comboModule = new ComboModule()
 export const lootModule = new LootModule()
 export const turnInsModule = new TurnInsModule()
 export const killsModule = new KillsModule()
@@ -155,6 +159,11 @@ function feedAlertDelta(delta: ModuleDelta): void {
   }
 }
 
+// combo goes FIRST (design § 5.1): within one bus delivery every later module — and the combat
+// engine, which folds the same event afterwards — then sees an already-advanced combo state.
+// It is purely additive to this documented order: combo consumes no derived events and emits
+// none, so nothing that used to run before it can observe the difference.
+registry.register(comboModule)
 registry.register(lootModule)
 registry.register(turnInsModule)
 registry.register(killsModule)

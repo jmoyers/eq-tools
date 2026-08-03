@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 2,
+	"byCharacter": {
+		"fixture_freeport": {
+			"inventory": {
+				"sky quest turn-in token": 2
+			},
+			"completedQuests": [
+				"Enchanter::Sky Bracer"
+			],
+			"inventorySource": {
+				"path": "C:\\Users\\Fixture\\Inventory.txt",
+				"loadedAt": "2026-08-01T18:00:00.000Z"
+			}
+		},
+		"legacy:pre-character": {
+			"inventory": {},
+			"completedQuests": [
+				"Enchanter::Sky Ring of Fire"
+			]
+		}
+	},
+	"activeLogPath": "C:\\Fixture\\Logs\\eqlog_Fixture_freeport.txt",
+	"alertPrefs": {
+		"globalVolume": 0.5,
+		"muted": false
+	},
+	"overlays": {
+		"fight": {
+			"open": false,
+			"locked": false,
+			"bgAlpha": 0.72,
+			"topN": 5,
+			"drill": null
+		}
+	}
+}

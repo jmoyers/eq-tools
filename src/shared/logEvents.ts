@@ -622,6 +622,41 @@ export interface SkillUpEvent extends LogEventBase {
 }
 
 /**
+ * AN ITEM'S OWN EFFECT FIRED — a click or a proc (class-combo inference Wave 3). TWO verified
+ * shapes, and a full-log sweep found no third `Your <item> …` activation family:
+ *
+ *   `Your Djarn's Amethyst Ring (Exaltation) shimmers briefly.`      5,421×  (2 items)
+ *   `Your Idol of the Underking (Exaltation) feels alive with power.` 2,500× (2 items)
+ *
+ * WHY IT IS ITS OWN EVENT, and this is the load-bearing part: the very next line is `You begin
+ * casting <Spell>.` at the SAME second, and that cast is the ITEM's, not the player's. Cast
+ * evidence is the combo model's weakest tier precisely because items cast spells (design § 9
+ * R3), and the design's proposed defence — require evidence in ≥2 hourly buckets — was
+ * MEASURED IN WAVE 1 TO FAIL: after the Aug 2 loadout swap, ENC still shows SEVEN distinct
+ * exclusive labels (illusions, Rampage I) purely through item clickies, comfortably clearing
+ * any sustain threshold. So the combo module drops a `castBegin` that lands within 2.5 s after
+ * one of these lines (modules/comboEvidence.ts). Hand-casts keep their full weight.
+ *
+ * `item` is the RAW display name including any trailing ` (Exaltation)` — law 2: canonicalize
+ * at counting boundaries, display what the game printed. Nothing keys off it today; it exists
+ * so a future consumer can say WHICH clicky fired.
+ *
+ * CASCADE PLACEMENT: immediately before the permissive spell-landing-emote matcher. 7,749 of
+ * the 7,921 lines were `{kind:'unknown'}`; the other 172 (`Your Idol of the Underking feels
+ * alive with power.`, the variant with no ` (Exaltation)` for the emote's name pattern to trip
+ * over) were being swept into the emote CANDIDATE stream with a subject of "Your Idol of the
+ * Underking". Claiming them here was proven inert: a full-log BuffsModule replay produces a
+ * byte-identical snapshot before and after (see the wave commit message).
+ */
+export interface ItemActivateEvent extends LogEventBase {
+  kind: 'itemActivate'
+  /** raw item display name, verbatim (`Djarn's Amethyst Ring (Exaltation)`). */
+  item: string
+  /** which message fired — 'shimmer' | 'alive'. Kept so a future family stays expressible. */
+  effect: 'shimmer' | 'alive'
+}
+
+/**
  * ITEM UPGRADE (merge) — `You have successfully merged two items together to create a new
  * item: <Name>` (236× in the real log). The mechanic (eqlwiki "Item Upgrade System", quoted
  * in main/itemLookupParse.ts): merging consumes a second copy — or a Mote of Potential — to
@@ -910,6 +945,7 @@ export type LogEvent =
   | InvocationChangeEvent
   | SelfWhoEvent
   | SkillUpEvent
+  | ItemActivateEvent
   | ItemMergeEvent
   | ItemMergeFailedEvent
   | ConsiderEvent

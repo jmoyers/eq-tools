@@ -1,7 +1,13 @@
 // CLASS-EVIDENCE families of the parse cascade (see parser.ts for the ordered list):
-// the character's own `/who` row and the skill-up tick. Wave 1 of
-// docs/plans/class-combo-inference.md — the two lines the combo model needs that nothing
+// the character's own `/who` row, the skill-up tick, and (Wave 3) the item-activation line.
+// docs/plans/class-combo-inference.md — the lines the combo model needs that nothing
 // else on the bus can supply.
+//
+// The third one is EVIDENCE ABOUT EVIDENCE: `Your <item> shimmers briefly.` is immediately
+// followed by a `You begin casting …` line that the ITEM cast, not the player, so it is what
+// lets the combo module tell a hand-cast from a clicky. Wave 1 measured that the design's
+// sustain>=2 rule does not survive without it (post-swap ENC keeps 7 exclusive labels through
+// clickies alone). See ItemActivateEvent in shared/logEvents.ts.
 //
 // Why its own module rather than a branch of parseCasts/parseWorld: neither line is a cast
 // and neither is progression state. A `/who` row is a STATEMENT ABOUT THE CHARACTER (the
@@ -10,9 +16,18 @@
 // no spell list at all. Keeping them together keeps the self-name guard — the thing that
 // separates the player's row from the 410 strangers' rows in the same grammar — in one place.
 //
-// NEITHER RULE CLAIMS A LINE ANY OTHER FAMILY WANTS. Measured, not assumed: a full-log
-// replay through the pre-change parser (spell DB installed, exactly as pipeline.ts wires it)
-// classified all 421 `/who` rows and all 10,216 skill-up lines as `{kind:'unknown'}`.
+// WHAT EACH RULE TAKES IS MEASURED, NOT ASSUMED — a full-log replay through the pre-change
+// parser (spell DB installed, exactly as pipeline.ts wires it), diffed kind by kind:
+//   `/who`        421 rows, ALL previously `{kind:'unknown'}`.
+//   skill-up      10,216 lines, ALL previously `{kind:'unknown'}`.
+//   itemActivate  7,921 lines: 7,749 previously `unknown` and 172 previously `spellEmote` —
+//                 the `Your Idol of the Underking feels alive with power.` variant, whose
+//                 missing ` (Exaltation)` let the permissive emote matcher read "Your Idol of
+//                 the Underking" as a subject. 37 of the 39 other event kinds came out
+//                 byte-identical, and a full-log BuffsModule replay differs in exactly one
+//                 place: the observed-message miner no longer learns that line as a landing
+//                 message for Superior Healing. It was never one — it is the item that fired
+//                 the heal — so claiming it here is a correction, not a regression.
 
 import type { LogEvent } from '../../shared/logEvents'
 import type { ClassifyCtx } from './parseCommon'
@@ -54,6 +69,20 @@ const CORPSE_SUFFIX_RE = /['`’]s corpse$/
 
 /** `You have become better at Flying Kick! (48)` — the trailing value is optional (see below). */
 const SKILL_UP_RE = /^You have become better at (.+?)!(?: \((\d+)\))?$/
+
+/**
+ * An item's own effect firing. The two phrases are EXACT — a full-log sweep of every line
+ * containing "shimmer" or "alive with power" found exactly one `Your …` shape each, and the
+ * neighbouring flavour ("<Mob> is cloaked in a shimmer of glowing symbols.", "<Name>'s image
+ * shimmers.") is third-person and cannot reach this rule. Matching a family instead
+ * (`Your <item> <anything>.`) would swallow `Your <Spell> spell has worn off.` and every other
+ * possessive line in the game, so the phrases stay spelled out.
+ */
+const ITEM_ACTIVATE_RE = /^Your (.+?) (shimmers briefly|feels alive with power)\.$/
+const ITEM_ACTIVATE_EFFECT: Record<string, 'shimmer' | 'alive'> = {
+  'shimmers briefly': 'shimmer',
+  'feels alive with power': 'alive'
+}
 
 /**
  * The character's OWN `/who` row — the only authoritative statement of the class loadout.
@@ -112,4 +141,20 @@ export function classifySkillUp({ text, ts, seq, raw }: ClassifyCtx): LogEvent |
   return m[2] === undefined
     ? { kind: 'skillUp', seq, ts, raw, skill }
     : { kind: 'skillUp', seq, ts, raw, skill, value: Number(m[2]) }
+}
+
+/**
+ * An ITEM cast something — `Your <item> shimmers briefly.` / `… feels alive with power.`
+ *
+ * The `Your ` probe is what keeps this off the hot path (it is also what every buff-fade shape
+ * starts with, which is why this rule sits AFTER classifyWornOff in the cascade and matches on
+ * the exact trailing phrase rather than on the possessive).
+ */
+export function classifyItemActivate({ text, ts, seq, raw }: ClassifyCtx): LogEvent | null {
+  if (!text.startsWith('Your ')) return null
+  const m = ITEM_ACTIVATE_RE.exec(text)
+  if (!m) return null
+  const item = m[1].trim()
+  if (!item) return null
+  return { kind: 'itemActivate', seq, ts, raw, item, effect: ITEM_ACTIVATE_EFFECT[m[2]] }
 }

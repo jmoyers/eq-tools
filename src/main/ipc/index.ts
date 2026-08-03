@@ -15,6 +15,7 @@
 
 import { registerAlertsIpc } from './alerts'
 import { registerCharacterIpc } from './character'
+import { registerComboIpc } from './combo'
 import { registerKnowledgeIpc } from './knowledge'
 import { registerMapsIpc } from './maps'
 import { registerShareIpc } from './share'
@@ -25,6 +26,7 @@ import { registerWorldIpc } from './world'
 export function registerIpc(): void {
   registerCharacterIpc()
   registerWorldIpc()
+  registerComboIpc()
   registerAlertsIpc()
   registerShareIpc()
   registerSoundsIpc()

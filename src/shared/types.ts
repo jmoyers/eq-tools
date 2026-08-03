@@ -2,6 +2,7 @@
 
 import type { ConsiderFaction, LootDisposition } from './logEvents'
 import type { ItemStatBlock } from './itemStats'
+import type { ComboProgress } from './classCombo'
 
 export type { LootDisposition }
 export type { ItemStatBlock }
@@ -709,6 +710,13 @@ export interface ProgressState {
   completedQuests: string[]
   /** metadata about the last inventory load */
   inventorySource?: { path: string; loadedAt: string }
+  /**
+   * Class-combo user corrections (docs/plans/class-combo-inference.md § 7). Character-scoped,
+   * because a loadout is. This is the ONLY durable combo state: intervals are re-derived from
+   * the log on every replay, and persisting them would create a second source of truth that
+   * could disagree with the log. Optional so a store written before this key round-trips.
+   */
+  combo?: ComboProgress
 }
 
 // ----- Cross-window deep link ("take me to this in the app", Task #64) -----

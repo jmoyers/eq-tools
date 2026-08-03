@@ -145,6 +145,19 @@ export const IPC = {
   // hands the target down (today: the mob to drill into).
   onFocusView: 'app:focusedView',
 
+  // ---- class-combo corrections (docs/plans/class-combo-inference.md § 5.3) ----
+  // READS need no channel of their own — the combo module rides the generic module transport
+  // (`module:getSnapshot('combo')` + `module:delta`). These two exist because a correction is a
+  // WRITE: the user telling the app "that span was PAL/ROG/BER", which is persisted per
+  // character and outlives every replay.
+  // renderer -> main: record a correction. Payload {startTs, endTs, classes}. `classes` must be
+  // a 1-3 list of the 16 ClassAbbr literals and the timestamps must be finite and ordered —
+  // VALIDATED AT THE HANDLER, never trusted because today's only caller is the app's own UI.
+  comboSetCorrection: 'combo:setCorrection',
+  // renderer -> main: drop every correction overlapping [startTs, endTs] ("Reset to detected").
+  // A TIME RANGE, not an interval id: ids are recompute-unstable by design (§ 5.4).
+  comboClearCorrection: 'combo:clearCorrection',
+
   // ---- item knowledge ("what's this lore/quest item for", Task #53) ----
   // renderer -> main: look up an item's lore/quest knowledge (local posky-first, then a
   // cached, politely-throttled wiki lookup). Returns ItemKnowledge.

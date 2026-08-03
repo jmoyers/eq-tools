@@ -27,32 +27,16 @@ import { spellCanonKey } from '../log/parseCommon'
 // would miss under out/main/ (AGENTS.md, Toolchain gotchas). Same rule as spellDb.ts.
 import spellsJson from './spells.json'
 import type { SpellDbFile } from '../../shared/types'
+import type { ClassAbbr } from '../../shared/classCombo'
 
 /**
- * The 16 EQ Legends classes by their /who three-letter code.
- *
- * DECLARED LOCALLY ON PURPOSE. The canonical home for this type is
- * `src/shared/classCombo.ts`, which Wave 3 owns and which does not exist yet; a local
- * copy keeps Wave 2's file ownership disjoint from Wave 3's. When that file lands its
- * `ClassAbbr` SUPERSEDES this one and this alias should be re-pointed at it.
+ * WAVE 3 RECONCILIATION. This module used to DECLARE its own `ClassAbbr` because
+ * `src/shared/classCombo.ts` — the canonical home — belonged to a later wave and did not
+ * exist yet. It exists now, so the local copy is gone and there is exactly ONE spelling of
+ * the 16 classes in the tree. The re-export stays so Wave 2's callers (and
+ * tests/classTables.test.mts) keep importing the name from where they always did.
  */
-export type ClassAbbr =
-  | 'BER'
-  | 'BRD'
-  | 'BST'
-  | 'CLR'
-  | 'DRU'
-  | 'ENC'
-  | 'MAG'
-  | 'MNK'
-  | 'NEC'
-  | 'PAL'
-  | 'RNG'
-  | 'ROG'
-  | 'SHD'
-  | 'SHM'
-  | 'WAR'
-  | 'WIZ'
+export type { ClassAbbr }
 
 /**
  * Wiki class name → /who code. The wiki spells the Shadow Knight BOTH ways across its own

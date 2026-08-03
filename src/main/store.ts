@@ -12,6 +12,7 @@ import type {
   ProgressState,
   UpdateChannel
 } from '../shared/types'
+import type { ComboCorrection } from '../shared/classCombo'
 import {
   ALERT_SOUND_MIGRATION_VERSION,
   DEFAULT_ALERT_PACK_ID,
@@ -151,6 +152,56 @@ export function setQuestComplete(charId: string, questKey: string, complete: boo
   if (complete) set.add(questKey)
   else set.delete(questKey)
   return setProgress(charId, { ...p, completedQuests: [...set] })
+}
+
+// ----- Class-combo user corrections (docs/plans/class-combo-inference.md § 7) -----
+//
+// The ONLY durable combo state. Intervals are re-derived from the log on every replay; a
+// correction is the one thing the log can never tell us again.
+//
+// KEYED BY TIME, NEVER BY INTERVAL ID. A correction recomputes every interval from scratch
+// (a `/who` row typed later re-labels the past), so ids are recompute-unstable by design and
+// an id-keyed correction would detach from the span it corrected on the very next fold.
+
+/** This character's corrections, oldest first. Defaults on a missing key (downgrade-safe). */
+export function getComboCorrections(charId: string): ComboCorrection[] {
+  const list = getProgress(charId).combo?.corrections
+  return Array.isArray(list) ? [...list] : []
+}
+
+/** Replace the whole correction list for a character. Returns what was stored. */
+function saveComboCorrections(charId: string, corrections: ComboCorrection[]): ComboCorrection[] {
+  const next = [...corrections].sort((a, b) => a.startTs - b.startTs || a.setAt - b.setAt)
+  setProgress(charId, { ...getProgress(charId), combo: { corrections: next } })
+  return next
+}
+
+/**
+ * Record a correction, REPLACING any existing one with the same span. Same-span replace (rather
+ * than append) is what makes "correct it, then correct it again" behave the way the user means:
+ * two statements about one interval are one statement, the later one.
+ */
+export function setComboCorrection(charId: string, correction: ComboCorrection): ComboCorrection[] {
+  const same = (c: ComboCorrection): boolean =>
+    c.startTs === correction.startTs && c.endTs === correction.endTs
+  return saveComboCorrections(charId, [...getComboCorrections(charId).filter((c) => !same(c)), correction])
+}
+
+/**
+ * Drop every correction OVERLAPPING [startTs, endTs] — the "Reset to detected" action.
+ * Overlap, not exact match, because the interval the user is looking at may have been split or
+ * merged since the correction was written (that is the whole reason corrections are time-keyed).
+ */
+export function clearComboCorrections(
+  charId: string,
+  startTs: number,
+  endTs: number | null
+): ComboCorrection[] {
+  const hi = endTs ?? Infinity
+  return saveComboCorrections(
+    charId,
+    getComboCorrections(charId).filter((c) => (c.endTs ?? Infinity) < startTs || c.startTs > hi)
+  )
 }
 
 export function getActiveLogPath(): string | undefined {

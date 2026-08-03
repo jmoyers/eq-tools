@@ -44,7 +44,7 @@ import {
   classifyStance,
   classifyWornOff
 } from './parseCasts'
-import { classifySelfWho, classifySkillUp } from './parseWho'
+import { classifyItemActivate, classifySelfWho, classifySkillUp } from './parseWho'
 import {
   classifyAa,
   classifyConsider,
@@ -128,6 +128,13 @@ const CLASSIFIERS: readonly Classifier[] = [
   classifyPoisonCoat,
   classifyPoisonProc,
   classifyDbBuff,
+  // ITEM ACTIVATION (class-combo inference Wave 3) — `Your <item> shimmers briefly.` It sits
+  // here, immediately before the permissive landing-emote matcher, for two reasons: the buff
+  // fade / worn-off families own the other `Your …` shapes and are matched far earlier, and
+  // the emote matcher WOULD otherwise claim 172 of these lines as a subject-"Your Idol of the
+  // Underking" candidate (measured; the other 7,749 were `unknown`). Moving them here was
+  // proven inert against a full-log BuffsModule replay.
+  classifyItemActivate,
   classifySpellEmote
 ]
 

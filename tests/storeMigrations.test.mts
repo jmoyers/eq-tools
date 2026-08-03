@@ -99,7 +99,9 @@ test('the FIRST BUILD store (top-level progress, liveLoot) migrates to the curre
   assert.equal(status, 'migrated')
   assert.equal(from, 1)
   assert.equal(to, CURRENT_SCHEMA_VERSION)
-  assert.deepEqual(applied, [2])
+  // Every step from 2 up — written generically so appending a migration does not churn a test
+  // that is about the FIRST-BUILD SHAPE, not about how long the chain happens to be today.
+  assert.deepEqual(applied, Array.from({ length: CURRENT_SCHEMA_VERSION - 1 }, (_, i) => i + 2))
   assert.equal(data[SCHEMA_VERSION_KEY], CURRENT_SCHEMA_VERSION)
 
   // `progress` → `byCharacter`: commit 41831cc re-keyed progress by character and never
@@ -200,10 +202,81 @@ test('malformed values never throw the chain — a hand-edited store still boots
   }
 })
 
+// ------------------------------------------------------- 2 → 3: class-combo corrections
+
+test('a v2 store gains combo.corrections on every character, and nothing else moves', () => {
+  // docs/plans/class-combo-inference.md § 7. Intervals are NEVER persisted (they are re-derived
+  // from the log every replay); the user's manual corrections are the only durable combo state,
+  // and they key on TIME because interval ids are recompute-unstable by design.
+  const before = fixture('store-v2-characters.json')
+  const { status, from, to, applied, data } = migrateStoreData(before)
+
+  assert.equal(status, 'migrated')
+  assert.equal(from, 2)
+  assert.equal(to, CURRENT_SCHEMA_VERSION)
+  assert.ok(applied.includes(3))
+
+  const chars = data['byCharacter'] as Record<string, StoreData>
+  assert.deepEqual(Object.keys(chars), ['fixture_freeport', PRE_CHARACTER_PROGRESS_KEY])
+  for (const [id, progress] of Object.entries(chars)) {
+    assert.deepEqual(progress['combo'], { corrections: [] }, `${id} gets an empty correction list`)
+  }
+  // Nothing a v2 store already held may be disturbed by adding a key.
+  const beforeChars = before['byCharacter'] as Record<string, StoreData>
+  assert.deepEqual(chars['fixture_freeport']['inventory'], beforeChars['fixture_freeport']['inventory'])
+  assert.deepEqual(chars['fixture_freeport']['completedQuests'], ['Enchanter::Sky Bracer'])
+  for (const key of ['activeLogPath', 'alertPrefs', 'overlays']) {
+    assert.deepEqual(data[key], before[key], `${key} must survive untouched`)
+  }
+})
+
+test('a v2 store with NO characters is still stamped to v3', () => {
+  const { status, to, data } = migrateStoreData({ [SCHEMA_VERSION_KEY]: 2, byCharacter: {} })
+  assert.equal(status, 'migrated')
+  assert.equal(to, CURRENT_SCHEMA_VERSION)
+  assert.deepEqual(data['byCharacter'], {})
+  // A store whose byCharacter key is missing or malformed still lands on a valid shape.
+  assert.deepEqual(migrateStoreData({ [SCHEMA_VERSION_KEY]: 2 }).data['byCharacter'], {})
+  assert.deepEqual(migrateStoreData({ [SCHEMA_VERSION_KEY]: 2, byCharacter: 7 }).data['byCharacter'], {})
+})
+
+test('PRE-LAUNCH combo corrections are dropped: they belong to the wiped beta character', () => {
+  // The beta character reached level 30, was wiped at the official launch, and SHARES this log
+  // file. A correction it wrote describes a loadout nobody is running. The module drops these
+  // in memory too; doing it here means an upgrading user's file stops carrying them at all.
+  const LAUNCH_MS = new Date(2026, 6, 28, 0, 0, 0, 0).getTime()
+  const beta = { startTs: LAUNCH_MS - 86_400_000, endTs: null, classes: ['WIZ'], setAt: 1 }
+  const live = { startTs: LAUNCH_MS + 86_400_000, endTs: null, classes: ['PAL', 'ROG', 'BER'], setAt: 2 }
+  const { data } = migrateStoreData({
+    [SCHEMA_VERSION_KEY]: 2,
+    byCharacter: {
+      primitive_freeport: {
+        inventory: {},
+        completedQuests: [],
+        // Junk entries a hand-edited file could hold are dropped by the same structural check.
+        combo: { corrections: [beta, live, null, { startTs: 'soon' }, 42] }
+      }
+    }
+  })
+  const chars = data['byCharacter'] as Record<string, StoreData>
+  assert.deepEqual(chars['primitive_freeport']['combo'], { corrections: [live] })
+})
+
+test('a store already at v3 is left exactly alone (the no-op case)', () => {
+  const current: StoreData = {
+    [SCHEMA_VERSION_KEY]: 3,
+    byCharacter: { primitive_freeport: { inventory: {}, completedQuests: [], combo: { corrections: [] } } }
+  }
+  const out = migrateStoreData(current)
+  assert.equal(out.status, 'up-to-date')
+  assert.equal(out.changed, false)
+  assert.equal(out.data, current, 'not even a defensive clone — nothing ran')
+})
+
 // ------------------------------------------------------------------------ idempotence
 
 test('running the chain twice equals running it once, for every fixture', () => {
-  for (const name of ['store-v1-first-build.json', 'store-v1-pre-framework.json']) {
+  for (const name of ['store-v1-first-build.json', 'store-v1-pre-framework.json', 'store-v2-characters.json']) {
     const once = migrateStoreData(fixture(name))
     const twice = migrateStoreData(once.data)
     assert.equal(twice.status, 'up-to-date', `${name}: a migrated store has nothing left to do`)
