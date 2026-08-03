@@ -14,12 +14,20 @@
 // cannot be — `Your Location` appears ZERO times in 86.6 MB of log. A user hunting for a dot
 // that does not exist is a worse outcome than one quiet line saying so (§10).
 //
+// TWO DENSITY CONTROLS LIVE HERE AND BOTH ARE HONEST ABOUT WHAT THEY ARE. Labels declutter
+// themselves (`labelLayout.ts`) — a label that loses its space becomes a dot and hover raises the
+// text, so nothing is deleted. Floors are CLUSTERED from the map file's own elevations
+// (`floorSlice.ts`) and stepped through by hand: the in-game height filter follows your
+// character, and the log never says where that is, so there is no auto-select and the default is
+// All levels. Out-of-band geometry DIMS rather than disappearing — a floor with its surroundings
+// deleted is a diagram you cannot place.
+//
 // COMPOSITION is the recipe from `useMapViewport.ts`'s header, verbatim: this view owns the
 // relative-positioned host, hands the viewport to the canvas and the label layer, and puts the
 // search's flash marker at `labelPosition(vp, point)` — the SAME arithmetic the labels use, so
 // the marker and its label can never disagree.
 
-import { useCallback, useEffect, useState, useRef, type JSX, type RefObject } from 'react'
+import { useCallback, useEffect, useMemo, useState, useRef, type JSX, type RefObject } from 'react'
 import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
 import MapIcon from '@mui/icons-material/Map'
 import type { CharacterDelta, CharacterSnap } from '@shared/types'
@@ -29,6 +37,7 @@ import { useModule } from '../../lib/useModule'
 import { MapCanvas } from './MapCanvas'
 import { MapPointsLayer, labelPosition } from './MapPointsLayer'
 import { DEFAULT_LAYERS, type LayerMask } from './mapGeometry'
+import { bandRange, floorBands, type FloorBand } from './floorSlice'
 import { useMapViewport, type MapViewport } from './useMapViewport'
 import MapSearch from './MapSearch'
 import MapToolbar, { ZonePicker, zoneLabel } from './MapToolbar'
@@ -257,15 +266,23 @@ function MapSurface({
   vp,
   hostRef,
   layers,
+  bands,
+  floor,
   marker
 }: {
   data: MapData
   vp: MapViewport
   hostRef: RefObject<HTMLDivElement | null>
   layers: LayerMask
+  bands: readonly FloorBand[]
+  floor: number | null
   marker: Marker | null
 }): JSX.Element {
   const at = marker == null ? null : labelPosition(vp, marker)
+  // Resolved here rather than inside the canvas so the canvas stays ignorant of clustering: it
+  // takes a z window and dims what falls outside it, nothing more. Memoized because it is a
+  // canvas redraw dependency — a fresh object every render would repaint on every render.
+  const zBand = useMemo(() => (floor == null ? null : bandRange(bands, floor)), [bands, floor])
   return (
     <Box
       ref={hostRef}
@@ -284,8 +301,8 @@ function MapSurface({
         cursor: vp.dragging ? 'grabbing' : 'grab'
       }}
     >
-      <MapCanvas lines={data.lines} vp={vp} layers={layers} />
-      <MapPointsLayer points={data.points} vp={vp} layers={layers} />
+      <MapCanvas lines={data.lines} vp={vp} layers={layers} zBand={zBand} />
+      <MapPointsLayer points={data.points} vp={vp} layers={layers} bands={bands} floor={floor} />
       {at != null && (
         <Box
           data-testid="maps-marker"
@@ -318,6 +335,17 @@ export default function MapsView(): JSX.Element {
   const { packs, zones, ready } = useMapPacks()
   const { data, error, loading } = useMapData(zone, prefs)
 
+  // THE FLOORS. `zLevels` is the raw distinct set (measured: 10,694 values in the default set's
+  // crystallos.txt), so it is clustered once per loaded map and stepped through by hand — there
+  // is no character z to auto-select with, and pretending otherwise would be law 1's exact sin.
+  const bands = useMemo(
+    () => (data ? floorBands(data.zLevels, data.heightHint ? { hint: data.heightHint } : {}) : []),
+    [data]
+  )
+  const [floor, setFloor] = useState<number | null>(null)
+  // A new zone starts on All levels — a floor index means nothing across two different maps.
+  useEffect(() => setFloor(null), [data?.zone])
+
   const hostRef = useRef<HTMLDivElement>(null)
   const vp = useMapViewport({ bounds: data?.bounds ?? EMPTY_BOUNDS, id: data?.zone ?? '', hostRef })
   const { marker, onJump } = useSearchJump({ vp, zone: data?.zone, pick })
@@ -329,6 +357,9 @@ export default function MapsView(): JSX.Element {
         <MapToolbar
           layers={layers}
           onLayers={setLayers}
+          bands={bands}
+          floor={floor}
+          onFloor={setFloor}
           packs={packs}
           prefs={prefs}
           onPrefs={(p) => {
@@ -343,7 +374,15 @@ export default function MapsView(): JSX.Element {
       <MapSearch zone={zone} prefs={prefs} onJump={onJump} />
 
       {data != null ? (
-        <MapSurface data={data} vp={vp} hostRef={hostRef} layers={layers} marker={marker} />
+        <MapSurface
+          data={data}
+          vp={vp}
+          hostRef={hostRef}
+          layers={layers}
+          bands={bands}
+          floor={floor}
+          marker={marker}
+        />
       ) : (
         // Nothing is claimed before the pack listing and the first fetch have answered — a
         // picker that flashes up and vanishes reads as a bug, not as a load.

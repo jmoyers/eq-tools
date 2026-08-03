@@ -26,13 +26,19 @@
 //        onPointerUp={vp.onPointerUp}
 //        sx={{ position:'relative', flexGrow:1, minHeight:0, overflow:'hidden',
 //              touchAction:'none', cursor: vp.dragging ? 'grabbing' : 'grab' }}>
-//     <MapCanvas lines={data.lines} vp={vp} layers={layers} />
-//     <MapPointsLayer points={data.points} vp={vp} layers={layers} />
+//     <MapCanvas lines={data.lines} vp={vp} layers={layers} zBand={zBand} />
+//     <MapPointsLayer points={data.points} vp={vp} layers={layers} bands={bands} floor={floor} />
 //   </Box>
 //
-// `layers` starts as mapGeometry.DEFAULT_LAYERS (the legend off). `vp.centerOn(x, y)` is the
-// search's jump-to-a-hit; `MapPointsLayer.labelPosition(vp, point)` is where that hit's marker
-// goes, so the marker and the label can never disagree.
+// `layers` starts as mapGeometry.DEFAULT_LAYERS (the legend off). `bands`/`floor` are the floor
+// slice (floorSlice.ts) and default to "All levels". `vp.centerOn(x, y)` is the search's
+// jump-to-a-hit; `MapPointsLayer.labelPosition(vp, point)` is where that hit's marker goes, so
+// the marker and the label can never disagree.
+//
+// THE REDRAW CADENCE IS ALSO THE LAYOUT CADENCE. Nothing here runs per frame: a wheel or a
+// pointermove sets state once, React re-renders, the canvas repaints in its effect and the label
+// declutter re-runs in its memo. That is why a screen-space collision pass over 320 labels is
+// affordable — it happens per view CHANGE, not per animation frame.
 
 import {
   useCallback,

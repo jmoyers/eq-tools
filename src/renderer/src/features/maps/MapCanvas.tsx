@@ -16,6 +16,11 @@
 //      `project()` per endpoint — that would be 52k short-lived objects per frame at pointer
 //      rate, which is exactly the allocation the columnar model exists to avoid.
 //
+// THE FLOOR SLICE rides that same loop for free: each segment already has its z in the columnar
+// array, so selecting a floor costs one comparison per segment and a SECOND set of Path2Ds. Out
+// of band strokes first at `OFF_BAND_ALPHA`, in band strokes on top at full opacity — dimmed,
+// never dropped, because a floor with its surroundings deleted is a diagram you cannot place.
+//
 // REDRAW POLICY: an effect keyed on the view, the size, the data and the toggles. NO
 // requestAnimationFrame loop — an idle map costs zero frames, and React already coalesces the
 // pointer-driven state changes that do cause a redraw.
@@ -43,11 +48,24 @@ export const DEFAULT_INK = '#c8d0de'
 /** Max channel below this counts as "black" for the substitution above. */
 const NEAR_BLACK = 32
 
+/**
+ * Opacity applied to geometry OUTSIDE the active floor band.
+ *
+ * Dimmed, never hidden — a floor with its surroundings deleted is a floating diagram you cannot
+ * place. The other levels stay as context, faint enough that the selected one reads as the map.
+ */
+const OFF_BAND_ALPHA = 0.14
+
 export interface MapCanvasProps {
   lines: MapLines
   vp: MapViewport
   /** Which layers to draw. Layer 2 (the legend) is off in `DEFAULT_LAYERS`. */
   layers: LayerMask
+  /**
+   * The active floor's z window (`floorSlice.bandRange`), or null for "All levels". Geometry
+   * outside it is drawn dimmed rather than dropped.
+   */
+  zBand?: { lo: number; hi: number } | null
   /** Stroke used in place of near-black geometry. */
   ink?: string
 }
@@ -89,14 +107,28 @@ interface Frame {
   rect: ViewRect
   layers: LayerMask
   ink: string
+  zBand: { lo: number; hi: number } | null
   /** Caller-owned scratch buffer for culled segment indices — reused across frames. */
   idx: Uint32Array
+}
+
+/** Stroke one path per palette slot at a fixed opacity. Two calls make the floor slice. */
+function strokeAll(ctx: CanvasRenderingContext2D, paths: Path2D[], styles: string[], alpha: number): void {
+  ctx.globalAlpha = alpha
+  for (let i = 0; i < paths.length; i += 1) {
+    ctx.strokeStyle = styles[i]
+    ctx.stroke(paths[i])
+  }
+  ctx.globalAlpha = 1
 }
 
 function paint(ctx: CanvasRenderingContext2D, f: Frame): void {
   const n = cullSegments(f.lines, f.rect, f.layers, f.idx)
   const styles = strokeStyles(f.lines.palette, f.ink)
   const paths = styles.map(() => new Path2D())
+  // A second set of paths, built only when a floor is selected: same colours, drawn faint first
+  // so the selected level always strokes on top of its own context.
+  const off = f.zBand ? styles.map(() => new Path2D()) : null
   if (paths.length === 0 || n === 0) return
 
   const { coords, colorIndex } = f.lines
@@ -106,7 +138,11 @@ function paint(ctx: CanvasRenderingContext2D, f: Frame): void {
   for (let k = 0; k < n; k += 1) {
     const seg = f.idx[k]
     const o = seg * 6
-    const path = paths[colorIndex[seg]]
+    // `min(z1,z2)` — the SAME rule the parser clustered `zLevels` on. Using both endpoints would
+    // put every ramp in two bands at once and smear each boundary.
+    const z = Math.min(coords[o + 2], coords[o + 5])
+    const inBand = !f.zBand || (z >= f.zBand.lo && z <= f.zBand.hi)
+    const path = (inBand || !off ? paths : off)[colorIndex[seg]]
     // Projection inlined: px = hw + (x-cx)*scale, py = hh - (y-cy)*scale. The `-` is the screen
     // flip (map y grows up) and it is the only negation at render time.
     path.moveTo(hw + (coords[o] - cx) * scale, hh - (coords[o + 1] - cy) * scale)
@@ -116,13 +152,11 @@ function paint(ctx: CanvasRenderingContext2D, f: Frame): void {
   ctx.lineWidth = 1
   ctx.lineCap = 'round'
   ctx.lineJoin = 'round'
-  for (let i = 0; i < paths.length; i += 1) {
-    ctx.strokeStyle = styles[i]
-    ctx.stroke(paths[i])
-  }
+  if (off) strokeAll(ctx, off, styles, OFF_BAND_ALPHA)
+  strokeAll(ctx, paths, styles, 1)
 }
 
-export function MapCanvas({ lines, vp, layers, ink = DEFAULT_INK }: MapCanvasProps): React.JSX.Element {
+export function MapCanvas({ lines, vp, layers, zBand = null, ink = DEFAULT_INK }: MapCanvasProps): React.JSX.Element {
   const ref = useRef<HTMLCanvasElement>(null)
   // ONE index buffer per loaded map, not per frame — grown only when a bigger zone arrives.
   // At everfrost's 26,383 segments a per-frame allocation would run at pointer rate.
@@ -135,8 +169,8 @@ export function MapCanvas({ lines, vp, layers, ink = DEFAULT_INK }: MapCanvasPro
     if (idxRef.current.length < lines.count) idxRef.current = new Uint32Array(lines.count)
     const ctx = prepare(cv, size)
     if (!ctx) return
-    paint(ctx, { lines, view, size, rect, layers, ink, idx: idxRef.current })
-  }, [lines, view, size, rect, layers, ink])
+    paint(ctx, { lines, view, size, rect, layers, ink, zBand, idx: idxRef.current })
+  }, [lines, view, size, rect, layers, ink, zBand])
 
   return (
     <canvas

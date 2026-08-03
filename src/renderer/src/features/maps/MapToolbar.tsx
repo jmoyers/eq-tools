@@ -16,9 +16,10 @@
 // of y ∈ [-1668, 1737]). It is excluded from the bounds by the parser, so switching it on shows
 // it sitting outside the zone rather than shrinking the zone to a speck.
 
-import { useDeferredValue, useMemo, useState, type JSX } from 'react'
+import { useDeferredValue, useMemo, useState, type JSX, type KeyboardEvent } from 'react'
 import {
   Box,
+  Chip,
   IconButton,
   List,
   ListItemButton,
@@ -35,8 +36,11 @@ import {
 import ZoomInIcon from '@mui/icons-material/ZoomIn'
 import ZoomOutIcon from '@mui/icons-material/ZoomOut'
 import CenterFocusStrongIcon from '@mui/icons-material/CenterFocusStrong'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import type { MapLayer, MapPackInfo, MapPackPrefs, ZoneShort } from '@shared/maps'
 import { ZONES } from '@shared/zones'
+import { bandLabel, type FloorBand } from './floorSlice'
 import type { LayerMask } from './mapGeometry'
 
 /** The three optional layers, in file order. Layer 0 (the zone's geometry) is always drawn. */
@@ -132,9 +136,92 @@ export function ZonePicker({ zones, zone, onPick, autoFocus }: ZonePickerProps):
   )
 }
 
+/**
+ * The FLOOR STEPPER — a discrete walk up and down the zone's clustered elevations (§8).
+ *
+ * IT IS MANUAL, AND SAYING SO IS THE POINT. The in-game height filter follows your CHARACTER
+ * ("N units above and below"); the log states the zone you entered and nothing else positional,
+ * so there is no character z here and no honest auto-select. Default is All levels; the control
+ * never claims to know which floor you are standing on (world-model law 1 and law 6).
+ *
+ * Compact by construction — two arrows and a chip — because a dozen bands as a button group
+ * would be wider than every other control on this row put together. Fully keyboard operable:
+ * both arrows are real buttons, and ↑/↓/Home work anywhere in the group.
+ */
+function FloorStepper({
+  bands,
+  floor,
+  onFloor
+}: {
+  bands: readonly FloorBand[]
+  floor: number | null
+  onFloor: (floor: number | null) => void
+}): JSX.Element | null {
+  // One band is not a slice — there is nothing to step between, so the control does not appear.
+  if (bands.length < 2) return null
+  const at = floor ?? -1
+  // -1 is "All levels", so the list is [All, floor 1 … floor N] and stepping is plain arithmetic.
+  const step = (d: number): void => {
+    const next = Math.min(bands.length - 1, Math.max(-1, at + d))
+    onFloor(next < 0 ? null : next)
+  }
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === 'ArrowUp') step(1)
+    else if (e.key === 'ArrowDown') step(-1)
+    else if (e.key === 'Home') onFloor(null)
+    else return
+    e.preventDefault()
+  }
+  const band = floor == null ? null : bands[floor]
+  return (
+    <Stack direction="row" spacing={0.25} alignItems="center" data-testid="maps-floors" onKeyDown={onKeyDown}>
+      <Tooltip title="Lower level">
+        <span>
+          <IconButton size="small" data-testid="maps-floor-down" disabled={at <= -1} onClick={() => { step(-1) }}>
+            <KeyboardArrowDownIcon fontSize="small" />
+          </IconButton>
+        </span>
+      </Tooltip>
+      <Tooltip
+        title={
+          band
+            ? `Elevation ${bandLabel(band)} · grouped from the map's own heights, not your character's — the log never states where you are`
+            : 'Every elevation. Floors are grouped from the map file itself; the game’s own filter follows your character, which the log never states.'
+        }
+      >
+        <Chip
+          size="small"
+          variant={floor == null ? 'outlined' : 'filled'}
+          data-testid="maps-floor-label"
+          onClick={() => { onFloor(null) }}
+          label={floor == null ? 'All levels' : `Level ${String(floor + 1)} of ${String(bands.length)}`}
+          sx={{ minWidth: 104 }}
+        />
+      </Tooltip>
+      <Tooltip title="Higher level">
+        <span>
+          <IconButton
+            size="small"
+            data-testid="maps-floor-up"
+            disabled={at >= bands.length - 1}
+            onClick={() => { step(1) }}
+          >
+            <KeyboardArrowUpIcon fontSize="small" />
+          </IconButton>
+        </span>
+      </Tooltip>
+    </Stack>
+  )
+}
+
 export interface MapToolbarProps {
   layers: LayerMask
   onLayers: (layers: LayerMask) => void
+  /** The zone's clustered floors, ascending. Fewer than two ⇒ the stepper does not render. */
+  bands: readonly FloorBand[]
+  /** The active floor index, or null for All levels. */
+  floor: number | null
+  onFloor: (floor: number | null) => void
   packs: readonly MapPackInfo[]
   prefs: MapPackPrefs
   onPrefs: (prefs: MapPackPrefs) => void
@@ -192,6 +279,9 @@ function PackSelect({
 export default function MapToolbar({
   layers,
   onLayers,
+  bands,
+  floor,
+  onFloor,
   packs,
   prefs,
   onPrefs,
@@ -244,6 +334,8 @@ export default function MapToolbar({
           </ToggleButton>
         ))}
       </ToggleButtonGroup>
+
+      <FloorStepper bands={bands} floor={floor} onFloor={onFloor} />
 
       <PackSelect
         label="Geometry"
