@@ -3,8 +3,15 @@ import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import BoltIcon from '@mui/icons-material/Bolt'
-import type { AASpendEvent, LevelingDelta, LevelingSnap } from '@shared/types'
+import type {
+  AASpendEvent,
+  LevelingDelta,
+  LevelingSnap,
+  ProgressionDelta,
+  ProgressionSnap
+} from '@shared/types'
 import { computeAAAccounting } from '@shared/aa'
+import { rangeStats, type RangeStats } from '@shared/progressionStats'
 import { useModule } from '../../lib/useModule'
 import { formatDate } from '../../lib/formatDate'
 import {
@@ -14,10 +21,15 @@ import {
   peakLevel,
   sortLevels,
   swapCount,
+  type LevelPoint,
   type LevelSegment
 } from './levelSeries'
-import { AreaChart, LevelStepChart, SWAP_COLOR } from './levelCharts'
+import { AreaChart, LevelStepChart, SWAP_COLOR, ZoneLegendStrip, type ChartChrome } from './levelCharts'
 import { fmtDelta, type AaPoint } from './levelChartGeometry'
+import { chartDomain, mergeZoneBands, zoneLegend, type ZoneLegend } from './zoneBands'
+import { useChartSelection } from './useChartSelection'
+import { EMPTY_PROGRESSION, applyProgressionDelta } from './progressionDelta'
+import { RangeStatsPanel } from './RangeStatsPanel'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -145,10 +157,12 @@ function LevelingHeroes({
  */
 function AaOverTimePanel({
   points,
-  aaEarned
+  aaEarned,
+  chrome
 }: {
   points: AaPoint[]
   aaEarned: number
+  chrome: ChartChrome
 }): JSX.Element | null {
   if (points.length < 2) return null
   return (
@@ -158,7 +172,7 @@ function AaOverTimePanel({
         cumulative gain lines — includes points re-gained after a respec, so the final
         value runs ahead of the {aaEarned.toLocaleString()} earned headline
       </Typography>
-      <AreaChart points={points} color="#6fb3d2" />
+      <AreaChart points={points} color="#6fb3d2" chrome={chrome} />
     </Paper>
   )
 }
@@ -168,13 +182,19 @@ function LevelOverTimePanel({
   segments,
   levelCount,
   swaps,
-  aaPoints
+  aaPoints,
+  chrome,
+  legend
 }: {
   segments: LevelSegment[]
   levelCount: number
   swaps: number
   /** Context for the hover readout only ("AA gained by then") — nothing is drawn from it. */
   aaPoints: AaPoint[]
+  chrome: ChartChrome
+  /** The zone legend for the shared domain. Rendered ONCE, under the lower chart: the band
+   *  strip is identical on both plots, so a second copy would be pure noise. */
+  legend: ZoneLegend
 }): JSX.Element | null {
   if (levelCount < 2) return null
   return (
@@ -193,7 +213,8 @@ function LevelOverTimePanel({
           'steps hold until the next ding'
         )}
       </Typography>
-      <LevelStepChart segments={segments} color="#d9b25f" aaPoints={aaPoints} />
+      <LevelStepChart segments={segments} color="#d9b25f" aaPoints={aaPoints} chrome={chrome} />
+      <ZoneLegendStrip legend={legend} fmtDuration={fmtDelta} />
     </Paper>
   )
 }
@@ -296,9 +317,49 @@ function ProgressFeedPanel({ feed }: { feed: FeedItem[] }): JSX.Element {
   )
 }
 
+interface LevelingCharts {
+  /** null only when NOTHING in any series carries a timestamp — the view shows its empty state. */
+  chrome: ChartChrome | null
+  legend: ZoneLegend
+  stats: RangeStats | null
+  clear: () => void
+}
+
+/**
+ * Everything the two charts must AGREE on, derived once.
+ *
+ * The domain is the seam (plan §6.1): both charts used to compute their own `t0/t1`, so a
+ * zone band or a range selection at the same pixel meant two different instants. One
+ * `ChartScale` over the level dings + AA gains + every progression column feeds the strip,
+ * the drag selection and both plots.
+ *
+ * The selection lives here (one hook call, not one per chart) — that is what makes a drag on
+ * the AA chart and a drag on the level chart the SAME selection, with the newer one winning.
+ */
+function useLevelingCharts(prog: ProgressionSnap, levels: readonly LevelPoint[], aas: readonly AaPoint[]): LevelingCharts {
+  const scale = useMemo(
+    () => chartDomain(prog, [...levels.map((p) => p.ts), ...aas.map((a) => a.ts)]),
+    [prog, levels, aas]
+  )
+  const bands = useMemo(() => (scale ? mergeZoneBands(prog, scale.t0, scale.t1) : []), [prog, scale])
+  const legend = useMemo(() => zoneLegend(bands), [bands])
+  const { sel, draft, dragging, clear, onPointerDown, onPointerMove, onPointerUp, onPointerCancel } =
+    useChartSelection(scale)
+  const stats = useMemo(() => (sel ? rangeStats({ snap: prog, range: sel }) : null), [sel, prog])
+  // Rebuilt narrow, NOT the whole SelectionApi: the charts spread this straight onto a DOM
+  // element, so anything else on the object would land there as an unknown attribute.
+  const pointer = { onPointerDown, onPointerMove, onPointerUp, onPointerCancel }
+  const chrome = scale ? { scale, bands, range: draft ?? sel, suppressed: dragging, pointer } : null
+  return { chrome, legend, stats, clear }
+}
+
 export default function LevelingView(): JSX.Element {
   const state = useModule<LevelingSnap, LevelingDelta>('leveling', applyLevelingDelta) ?? EMPTY_LEVELING
   const { levels, aaGains: aas, aaSpends: spends } = state
+  // The SECOND module this view reads: the capped, range-queryable analytics series behind
+  // the zone bands and the range panel. Deliberately separate from `leveling`, whose
+  // contract is "everything, forever" (see src/main/modules/progression.ts).
+  const prog = useModule<ProgressionSnap, ProgressionDelta>('progression', applyProgressionDelta) ?? EMPTY_PROGRESSION
 
   const sortedLevels = useMemo(() => sortLevels(levels), [levels])
   const sortedAAs = useMemo(() => [...aas].sort((a, b) => a.ts - b.ts), [aas])
@@ -365,6 +426,8 @@ export default function LevelingView(): JSX.Element {
     return items.sort((a, b) => b.ts - a.ts).slice(0, 60)
   }, [sortedLevels, sortedAAs])
 
+  const { chrome, legend, stats, clear } = useLevelingCharts(prog, sortedLevels, aaCumulative)
+
   const nothing = sortedLevels.length === 0 && sortedAAs.length === 0
 
   return (
@@ -380,20 +443,23 @@ export default function LevelingView(): JSX.Element {
         boughtCount={boughtCount}
       />
 
-      {nothing ? (
+      {nothing || !chrome ? (
         <Typography color="text.secondary" sx={{ p: 2 }}>
           No level-ups or AA gains found in this character&apos;s log yet. They&apos;ll appear here live as you play.
         </Typography>
       ) : (
         <Stack direction={{ xs: 'column', lg: 'row' }} spacing={2} sx={{ flexGrow: 1, minHeight: 0 }}>
           <Stack spacing={2} sx={{ flex: 2, minWidth: 320 }}>
-            <AaOverTimePanel points={aaCumulative} aaEarned={aaEarned} />
+            <AaOverTimePanel points={aaCumulative} aaEarned={aaEarned} chrome={chrome} />
             <LevelOverTimePanel
               segments={levelSegments}
               levelCount={sortedLevels.length}
               swaps={swaps}
               aaPoints={aaCumulative}
+              chrome={chrome}
+              legend={legend}
             />
+            {stats && <RangeStatsPanel stats={stats} onClear={clear} />}
           </Stack>
 
           <Stack spacing={2} sx={{ flex: 1, minWidth: 260, minHeight: 0 }}>
