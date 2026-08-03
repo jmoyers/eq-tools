@@ -67,26 +67,37 @@
 // unlocked at that level, since that is a documented rule of the level, not a claim
 // about the instance.
 //
-// LOG REALITY (grep of the live log, read-only): there is NO first-person item-upgrade
-// or exaltation line family beyond these —
-//   `You have successfully merged two items together to create a new item: <Name> +N`
-//        — the upgrade event itself, naming the resulting tier. NOT parsed today.
-//   `The item you are trying to add will not work, this mote is not sufficiently
-//        powerful to upgrade this item.` — a failed merge, no item named.
-//   `Your <Item> (Exaltation) shimmers briefly.` (and `feels alive with power.`,
-//        `flickers with a pale light.`, `pulses with light as your vision sharpens.`)
-//        — a socketed click/proc exaltation firing; names the SOURCE item, not the host.
-//   Loot lines already carry the tier suffix (`You have looted a Kitchen Toolbelt +4`).
-// Nothing reports item exp, socket contents, or tier for an item we merely hold.
+// LOG REALITY (full-log sweep, read-only). The complete merge/upgrade/mote/exaltation line
+// inventory now lives beside the regexes in main/log/parser.ts; in summary:
+//   `You have successfully merged two items together to create a new item: <Name>` (236×)
+//        — the upgrade event itself. PARSED (Task #60) as `itemMerge`; 159 name a ` +N`
+//        item level, 77 name a Roman SPELL rank instead (the same line covers scroll
+//        merges) and claim no tier.
+//   `Your request to merge <A> with <B> failed. …` (4×) — PARSED as `itemMergeFailed`
+//        ('mismatch'); the only failure shape that names items, and `<A>` carries its tier.
+//   `The item you are trying to add will not work, this mote is not sufficiently powerful
+//        to upgrade this item.` (9×) / `… you cannot fuse an item to itself.` (4×, the one
+//        line in the family that never says "merge") / `… you cannot merge two different
+//        types of items.` (1×) / `Request to merge items canceled, both items remain
+//        unmodified.` (1×) — PARSED as `itemMergeFailed` with no item named.
+//   `You looted <item> … to create a <item> +N` (302×) — auto-merge on pickup, already a
+//        loot event (disposition 'combined' + `created`); the tier module folds it.
+//   `Your <Item> (Exaltation) shimmers briefly.` (+3 sibling emotes, 6433× total)
+//        — a socketed click/proc exaltation FIRING; names the SOURCE item, not the host,
+//        and carries no tier. NOT parsed: it identifies nothing we can attribute.
+//   `You successfully destroyed 1 <Item> +N.` — the item is gone. NOT parsed.
+// Nothing reports item exp, socket contents, or the tier of an item we merely hold — so
+// the ItemWindow still draws tier POSITION only, never an exp fill, and observed tiers come
+// exclusively from merge evidence (main/modules/itemTiers.ts).
 // ===========================================================================
 
 import type { ItemKnowledge, ItemQuestUse } from '../shared/types'
-import { parseStatsBlock, type ItemStatBlock } from '../shared/itemStats'
+import { itemBaseName, parseStatsBlock, type ItemStatBlock } from '../shared/itemStats'
 
-/** Strip a trailing ` +N` upgrade suffix (mirrors renderer itemName.normalizeItemName —
- *  kept local to avoid a main→renderer import). Applied before lookup + as the cache key. */
+/** Strip a trailing ` +N` upgrade suffix. Applied before lookup + as the cache key. ONE
+ *  definition of the rule for every main-side caller — see shared/itemStats.itemBaseName. */
 export function normalizeItemName(name: string): string {
-  return name.replace(/ \+\d+$/, '').trim()
+  return itemBaseName(name)
 }
 
 /** Extract a named `{{Itempage}}` template field's raw value (`|field = …`). */

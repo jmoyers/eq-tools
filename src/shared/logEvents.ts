@@ -525,6 +525,57 @@ export interface InvocationChangeEvent extends LogEventBase {
   invocation: string
 }
 
+/**
+ * ITEM UPGRADE (merge) — `You have successfully merged two items together to create a new
+ * item: <Name>` (236× in the real log). The mechanic (eqlwiki "Item Upgrade System", quoted
+ * in main/itemLookupParse.ts): merging consumes a second copy — or a Mote of Potential — to
+ * add item EXP; tier N→N+1 costs 2^N. The line names the RESULT, so its ` +N` suffix is the
+ * tier the item just REACHED. It is the only line in the game that reports an upgrade.
+ *
+ * `tier` is UNDEFINED when the result name carries no ` +N`, which is NOT a base item: the
+ * SAME line fires for spell-scroll merges, whose result is rank-suffixed instead
+ * (`Shiftless Deeds III`, `Allure VI`, `Superior Healing IV` — 77 of the 236 vs 159 that
+ * name an item level). A Roman rank is not an item level (law 1: never claim a tier we did
+ * not read), so consumers fold only tier-bearing merges and leave scroll merges as what they
+ * are — an observed merge with no tier.
+ */
+export interface ItemMergeEvent extends LogEventBase {
+  kind: 'itemMerge'
+  /** the RAW result name, exactly as printed (`Thelvorn, Blade of Light +5`) */
+  item: string
+  /** the reached item level, when the result name carries one */
+  tier?: number
+}
+
+/**
+ * A merge that did NOT happen. FIVE VERIFIED shapes (full-log sweep 2026-08-02); only the
+ * first names any item:
+ *   'mismatch'  `Your request to merge <target> with <component> failed. The items do not
+ *               match, are the exact same item, cannot be merged, the component (the item to
+ *               be destroyed) has an augment, or one of the items is no longer in your
+ *               inventory.`                                                            (4×)
+ *   'weakMote'  `The item you are trying to add will not work, this mote is not
+ *               sufficiently powerful to upgrade this item.`                            (9×)
+ *   'selfFuse'  `The item you are trying to add will not work, you cannot fuse an item to
+ *               itself.`                                                                (4×)
+ *   'wrongType' `The item you are trying to add will not work, you cannot merge two
+ *               different types of items.`                                              (1×)
+ *   'canceled'  `Request to merge items canceled, both items remain unmodified.`        (1×)
+ * (The 'selfFuse' wording is why the family cannot be swept by the word "merge" alone — that
+ * line never uses it. It was found by diffing parsed output against the raw log, not by
+ * guessing sibling phrasings.)
+ * NOTHING changed tier here — the value is the 'mismatch' shape, which STATES the tier of an
+ * item sitting in your inventory (`… merge Valorium Bracers +2 with Valorium Bracers …`).
+ */
+export interface ItemMergeFailedEvent extends LogEventBase {
+  kind: 'itemMergeFailed'
+  reason: 'mismatch' | 'weakMote' | 'selfFuse' | 'wrongType' | 'canceled'
+  /** the item that would have been UPGRADED (kept), raw — 'mismatch' only */
+  target?: string
+  /** the item that would have been CONSUMED, raw — 'mismatch' only */
+  component?: string
+}
+
 /** A line that parsed as a log line (had a timestamp) but matched no content rule. */
 export interface UnknownEvent extends LogEventBase {
   kind: 'unknown'
@@ -563,4 +614,6 @@ export type LogEvent =
   | EpochEvent
   | StanceChangeEvent
   | InvocationChangeEvent
+  | ItemMergeEvent
+  | ItemMergeFailedEvent
   | UnknownEvent

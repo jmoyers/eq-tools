@@ -339,6 +339,29 @@ export interface CharacterSnap {
 }
 export type CharacterDelta = Partial<CharacterSnap>
 
+/**
+ * itemTiers module (Task #60): the OBSERVED item level of an item the CURRENT character has
+ * merged. One row per base item name; absent = unknown (never tier 0). See
+ * main/modules/itemTiers.ts for what counts as evidence.
+ */
+export interface ItemTierRow {
+  /** `itemTierKey(name)` — lowercased, ` +N` stripped (the loot counting key) */
+  key: string
+  /** RAW base name for display ("Thelvorn, Blade of Light") */
+  name: string
+  /** HIGHEST tier observed. Undefined on a merge that named no item level (spell scroll). */
+  tier?: number
+  /** tier named by the MOST RECENT observation (several copies climb in parallel) */
+  lastTier?: number
+  /** how many merges we watched land on this item name */
+  merges: number
+  firstAt: number
+  lastAt: number
+}
+/** kills-style map transport: full map to hydrate, changed rows as the delta. */
+export type ItemTiersSnap = Record<string, ItemTierRow>
+export type ItemTiersDelta = { changed: ItemTiersSnap }
+
 // ----- Event feed / event-log overlay (Task #59) -----
 //
 // A capped, LIVE-ONLY stream of "things worth noticing" — what the 'events' overlay renders in

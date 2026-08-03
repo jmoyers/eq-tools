@@ -17,7 +17,8 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import type { ItemKnowledge, LootEvent } from '@shared/types'
 import { wikiPageUrl } from '@shared/wiki'
 import { formatDate } from '../../lib/formatDate'
-import { EQ_ITEM_COLORS, ItemWindow } from '../../lib/ItemWindow'
+import { EQ_ITEM_COLORS } from '../../lib/ItemWindow'
+import { ObservedItemWindow } from '../../lib/ObservedItemWindow'
 
 /**
  * "What it's for" knowledge (Task #53): fetch this item's lore/quest knowledge when the
@@ -278,7 +279,7 @@ export function ItemDetailDialog({
               language. `stats` (posky's scraped block) is the offline fallback when the
               wiki lookup hasn't structured one yet. */}
           <Box sx={{ width: { xs: '100%', md: 340 }, flexShrink: 0 }}>
-            <ItemWindow
+            <ObservedItemWindow
               name={item}
               stats={knowledge.data?.stats}
               rawStats={stats ?? knowledge.data?.statsBlock}

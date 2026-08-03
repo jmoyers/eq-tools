@@ -381,3 +381,22 @@ export function itemTierFromName(name: string): number | undefined {
   const m = / \+(\d+)$/.exec(name.trim())
   return m ? Number(m[1]) : undefined
 }
+
+/**
+ * The BASE display name with the ` +N` item level stripped ("Cloak of Flames +4" →
+ * "Cloak of Flames"). Law 2: canonicalize at COUNTING boundaries, display raw.
+ *
+ * This is the MAIN-side (and shared) home of the same rule the renderer's counting helper
+ * `lib/itemName.ts normalizeItemName/itemCountKey` applies to loot. Main cannot import a
+ * renderer module, so the rule lives here — where `itemTierFromName` (its exact inverse)
+ * already lives — and `tests/itemTierWindows.test.mts` asserts the two agree on every
+ * distinct `+N` item name in the real log, so they can never drift apart.
+ */
+export function itemBaseName(name: string): string {
+  return name.replace(/ \+\d+$/, '').trim()
+}
+
+/** Lowercased, `+N`-stripped key for per-item tier state. Mirrors `itemCountKey`. */
+export function itemTierKey(name: string): string {
+  return itemBaseName(name).toLowerCase()
+}

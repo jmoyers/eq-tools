@@ -20,6 +20,7 @@ import { DEFAULT_PROFILE } from '../../shared/profiles'
 import type { DamageType } from '../../shared/combat'
 import type { LogEvent, MissType } from '../../shared/logEvents'
 import { getParserConfig, type ParserConfig } from './rulesets'
+import { itemTierFromName } from '../../shared/itemStats'
 import { parseModifiers, hasCritical, damageCategory } from '../combat/taxonomy'
 
 // ----- line prefix + timestamp (unchanged from the old parse.ts) -----
@@ -135,6 +136,49 @@ const AA_RE = /^You have gained (an|\d+) ability point(?:\(s\))?!\s+You now have
 const AA_SPEND_RE = / at a cost of (\d+) ability points?\.$/
 const AA_ABILITY_RE = /gained the ability (?:"([^"]+)"|to use (.+?)) at a cost of/
 const AA_IMPROVED_RE = /^You have improved (.+?) (\d+) at a cost of/
+
+// ----- item upgrade / merge (Task #60) -----
+// FULL-LOG SWEEP (read-only, 2026-08-02) of every merge/upgrade/mote/exaltation line family.
+// What EXISTS, and what we parse:
+//
+//   PARSED
+//   236×  `You have successfully merged two items together to create a new item: <Name>`
+//         The upgrade itself. The result name is the ONLY tier signal the game ever prints:
+//         159 of the 236 end in ` +N` (an item level); the other 77 end in a ROMAN RANK
+//         (`Shiftless Deeds III`, `Allure VI`) because the same line fires when two SPELL
+//         SCROLLS are merged. A rank is not a tier, so `tier` stays undefined there.
+//     4×  `Your request to merge <target> with <component> failed. The items do not match,
+//         are the exact same item, cannot be merged, the component (the item to be
+//         destroyed) has an augment, or one of the items is no longer in your inventory.`
+//         The ONLY failure shape that names items — and `<target>` carries its ` +N`, i.e.
+//         it states the tier of an item you are holding.
+//     9×  `The item you are trying to add will not work, this mote is not sufficiently
+//         powerful to upgrade this item.`                            (no item named)
+//     4×  `The item you are trying to add will not work, you cannot fuse an item to
+//         itself.` — NB this one never says "merge", so a sweep on that word alone MISSES
+//         it; it surfaced by diffing parsed output against the raw log. (no item named)
+//     1×  `The item you are trying to add will not work, you cannot merge two different
+//         types of items.`                                           (no item named)
+//     1×  `Request to merge items canceled, both items remain unmodified.` (no item named)
+//
+//   EXISTS, DELIBERATELY NOT PARSED (nothing to model — see the reason on each)
+//   302×  `You looted <item> from <mob>'s corpse to create a <item> +N` — an AUTO-merge on
+//         pickup. ALREADY parsed by the loot family as disposition:'combined' + `created`
+//         (every one of the 302 creates `<same base> +N`), so a second matcher would
+//         double-count. The itemTiers module folds it from the loot event.
+//  6433×  `Your <Item> (Exaltation) shimmers briefly.` / `feels alive with power.` /
+//         `flickers with a pale light.` / `pulses with light as your vision sharpens.`
+//         A socketed exaltation FIRING. It names the exaltation's SOURCE item, never the
+//         host it is socketed into, and carries no tier, so it can neither identify the
+//         item in front of you nor advance any tier state.
+//    ~30× `You successfully destroyed 1 <Item> +N.` — the item is GONE; a destroy can only
+//         retire tier evidence we never claimed to be current inventory.
+//   Motes appear ONLY inside ordinary loot lines (`--You have looted a Mote of
+//   Infinitesimal Potential …--`), which the loot family already parses.
+//   NOTHING anywhere reports item EXP within a tier, socket CONTENTS, or the tier of an
+//   item you merely hold — hence no exp fill in the UI (law 1).
+const ITEM_MERGE_RE = /^You have successfully merged two items together to create a new item: (.+)$/
+const ITEM_MERGE_FAIL_RE = /^Your request to merge (.+?) with (.+?) failed\. /
 
 // ----- combat matchers (verbatim from combat/parse.ts) -----
 
@@ -715,6 +759,41 @@ function classify(text: string, ts: number, seq: number, raw: string, cfg: Parse
     }
     const comb = LOOT_COMBINE_RE.exec(text)
     if (comb) return { ...loot(seq, ts, raw, comb[2], cleanMob(comb[3]), 'combined', comb[1]), created: comb[4].trim() }
+  }
+
+  // --- item upgrade (merge) — the tier event + every failure shape. Two substring probes,
+  // because the mote-too-weak failure is the one line in the family that never says "merge"
+  // ("The item you are trying to add will not work, this mote is not sufficiently powerful
+  // to upgrade this item."). Ordered AFTER loot so the auto-merge-on-pickup line
+  // (`… to create a <item> +N`) stays a single 'combined' loot event and is never
+  // double-counted here. ---
+  if (text.includes('merge') || text.startsWith('The item you are trying to add')) {
+    const m = ITEM_MERGE_RE.exec(text)
+    if (m) {
+      const item = m[1].trim()
+      // A ` +N` result is an item level; a Roman-rank result is a merged SPELL SCROLL and
+      // carries no tier (law 1 — we never invent one for it).
+      const tier = itemTierFromName(item)
+      return tier === undefined
+        ? { kind: 'itemMerge', seq, ts, raw, item }
+        : { kind: 'itemMerge', seq, ts, raw, item, tier }
+    }
+    const f = ITEM_MERGE_FAIL_RE.exec(text)
+    if (f) {
+      return { kind: 'itemMergeFailed', seq, ts, raw, reason: 'mismatch', target: f[1].trim(), component: f[2].trim() }
+    }
+    if (text === 'The item you are trying to add will not work, this mote is not sufficiently powerful to upgrade this item.') {
+      return { kind: 'itemMergeFailed', seq, ts, raw, reason: 'weakMote' }
+    }
+    if (text === 'The item you are trying to add will not work, you cannot fuse an item to itself.') {
+      return { kind: 'itemMergeFailed', seq, ts, raw, reason: 'selfFuse' }
+    }
+    if (text === 'The item you are trying to add will not work, you cannot merge two different types of items.') {
+      return { kind: 'itemMergeFailed', seq, ts, raw, reason: 'wrongType' }
+    }
+    if (text === 'Request to merge items canceled, both items remain unmodified.') {
+      return { kind: 'itemMergeFailed', seq, ts, raw, reason: 'canceled' }
+    }
   }
 
   // --- turn-ins ---

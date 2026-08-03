@@ -92,11 +92,24 @@ function Line({ children, color, compact }: { children: React.ReactNode; color?:
 }
 
 /**
- * The tier meter. Rendered ONLY when the item level is known (a ` +N` name). The fill is
+ * The tier meter. Rendered ONLY when the item level is KNOWN — either the displayed name
+ * carries it (` +N`) or we watched this character merge the item (`observed`). The fill is
  * tier position out of the max tier — the game's own "x / y" within-tier exp is not
  * observable anywhere in the log, so it is never drawn.
+ *
+ * `observed` flips the header to say WHOSE tier this is: the name in front of you didn't
+ * state a level, so the number comes from your own merge history (state, not process — a
+ * chip-style tag, no methodology caption).
  */
-function TierBlock({ tier, compact }: { tier: number; compact?: boolean }): JSX.Element {
+function TierBlock({
+  tier,
+  compact,
+  observed
+}: {
+  tier: number
+  compact?: boolean
+  observed?: boolean
+}): JSX.Element {
   const next = expToNextTier(tier)
   const sockets = unlockedExaltationSlots(tier)
   return (
@@ -107,6 +120,7 @@ function TierBlock({ tier, compact }: { tier: number; compact?: boolean }): JSX.
           <Typography component="span" sx={{ color: EQ_ITEM_COLORS.label, fontSize: 'inherit', fontFamily: MONO }}>
             {' '}
             / {ITEM_MAX_TIER}
+            {observed ? ' · yours' : ''}
           </Typography>
         </Typography>
         <Typography sx={{ color: EQ_ITEM_COLORS.label, fontSize: compact ? 10 : 11, fontFamily: MONO }}>
@@ -168,15 +182,35 @@ export interface ItemWindowProps {
   flavor?: string
   /** hover-surface density: smaller type, no socket chips, no borders */
   compact?: boolean
+  /**
+   * The item level THIS character was observed to merge this item to (itemTiers module,
+   * Task #60). Used only when `name` itself carries no ` +N` — i.e. when we're looking at
+   * the base item and the meter would otherwise be blank. Undefined = never observed, which
+   * stays blank: unknown is not tier 0 (law 1).
+   */
+  observedTier?: number
 }
 
 /**
  * Draw an item the way the game's item description window does. Renders nothing but the
  * name when there's no stat data at all (an honest "we only know the name").
  */
-export function ItemWindow({ name, stats, rawStats, iconId, flavor, compact }: ItemWindowProps): JSX.Element {
+export function ItemWindow({
+  name,
+  stats,
+  rawStats,
+  iconId,
+  flavor,
+  compact,
+  observedTier
+}: ItemWindowProps): JSX.Element {
   const block = useMemo(() => stats ?? (rawStats ? parseStatsBlock(rawStats) : undefined), [stats, rawStats])
-  const tier = itemTierFromName(name)
+  // The displayed NAME wins when it states a level: that is this exact instance's tier, and
+  // it is what the game itself would print. Our observed tier is the fallback for a base
+  // name — it answers "what have I got this item to?" where the wiki has nothing to say.
+  const nameTier = itemTierFromName(name)
+  const tier = nameTier ?? observedTier
+  const tierIsObserved = nameTier === undefined && observedTier !== undefined
   const ratio = damageRatio(block?.dmg, block?.atkDelay)
 
   // Cast/cooldown belong to the click effect, not the attribute grid (Boots of the Long
@@ -245,8 +279,8 @@ export function ItemWindow({ name, stats, rawStats, iconId, flavor, compact }: I
       {block?.races && <Line compact={compact}>Race: {block.races.join(' ')}</Line>}
       {block?.slot && <Line compact={compact}>{titleSlot(block.slot)}</Line>}
 
-      {/* Item level — only when the name carries it */}
-      {tier !== undefined && <TierBlock tier={tier} compact={compact} />}
+      {/* Item level — only when the name carries it, or we watched this character merge it */}
+      {tier !== undefined && <TierBlock tier={tier} compact={compact} observed={tierIsObserved} />}
 
       {/* Stat grid: physical | combat, then attributes, then saves (right-aligned) */}
       {(left.length > 0 || right.length > 0) && (

@@ -33,6 +33,7 @@ import { TurnInsModule } from './modules/turnins'
 import { KillsModule } from './modules/kills'
 import { LevelingModule } from './modules/leveling'
 import { CharacterModule } from './modules/character'
+import { ItemTiersModule } from './modules/itemTiers'
 import { AlertsModule } from './modules/alerts'
 import { BuffsModule } from './modules/buffs'
 import { EventFeedModule } from './modules/eventFeed'
@@ -162,6 +163,9 @@ const turnInsModule = new TurnInsModule()
 const killsModule = new KillsModule()
 const levelingModule = new LevelingModule()
 const characterModule = new CharacterModule()
+// Observed item levels (Task #60): character-scoped, epoch-aware per-item tier state folded
+// from the merge lines, so an item window can show YOUR tier for an item you upgraded.
+const itemTiersModule = new ItemTiersModule()
 // The alerts extension (Task #18): evaluates event/raw triggers on live events and
 // pushes fired deltas over the standard module transport. Its defs are user prefs
 // (owned by the store), loaded into the module here and re-synced on every save.
@@ -221,6 +225,7 @@ registry.register(turnInsModule)
 registry.register(killsModule)
 registry.register(levelingModule)
 registry.register(characterModule)
+registry.register(itemTiersModule)
 registry.register(alertsModule)
 registry.register(buffsModule)
 registry.register(eventFeedModule)

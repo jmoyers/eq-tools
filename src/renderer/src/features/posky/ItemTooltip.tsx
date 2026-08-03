@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react'
 import { Box, Tooltip, Typography } from '@mui/material'
-import { EQ_ITEM_COLORS, ItemWindow } from '../../lib/ItemWindow'
+import { EQ_ITEM_COLORS } from '../../lib/ItemWindow'
+import { ObservedItemWindow } from '../../lib/ObservedItemWindow'
 
 export interface ItemTooltipProps {
   name: string
@@ -24,7 +25,8 @@ export function ItemTooltip({ name, stats, who, where, children }: ItemTooltipPr
   const extra = (where ? 1 : 0) + (who && who.length > 0 ? 1 : 0)
   const body = (
     <Box sx={{ p: 0.25, minWidth: 180 }}>
-      <ItemWindow name={name} rawStats={stats} compact />
+      {/* Inside the tooltip BODY, so the module subscription exists only while open. */}
+      <ObservedItemWindow name={name} rawStats={stats} compact />
       {extra > 0 && (
         <Box sx={{ mt: 0.75, pt: 0.6, borderTop: '1px solid rgba(255,255,255,0.12)' }}>
           {where && (
