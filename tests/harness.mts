@@ -3,8 +3,10 @@
 // world model against hand-verified time spans of the user's actual log.
 //
 // The fixtures under tests/fixtures/*.log are trimmed excerpts of the real
-// eqlog_Primitive_freeport.txt (chat/spam removed; every buff/entity-relevant line
-// kept). Each golden test documents the raw line range it was cut from and the sequence
+// eqlog_Primitive_freeport.txt (third-party chat/social dropped by the shared scrub
+// tests/fixture-scrub.mjs; every buff/entity-relevant line kept). They are COMMITTED — the
+// repo is public, so regenerate them only through tests/extract-*.mjs, which all route
+// through that scrub. Each golden test documents the raw line range it was cut from and the sequence
 // it hand-verifies. This is the methodology the user mandated: never trust the model —
 // pin it to real log windows a human read line-by-line.
 

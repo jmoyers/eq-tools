@@ -5,6 +5,12 @@ dist/
 release/
 .DS_Store
 *.log
+# ...EXCEPT the golden-window fixtures. They are COMMITTED so CI's `npm test` runs the full
+# suite instead of skipping every fixture-backed test. They are real log excerpts scrubbed of
+# third-party chat by the shared tests/fixture-scrub.mjs, which every tests/extract-*.mjs
+# routes through — never hand-copy a raw log span in here. The blanket `*.log` above still
+# hides the real game log, errors.log, and any dev/release log.
+!tests/fixtures/*.log
 .vite/
 devlog.txt
 

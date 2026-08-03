@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import { scrubKeep } from './fixture-scrub.mjs'
 
 // Fixtures resolve RELATIVE to this file — the repo moved once and these extractors kept
 // writing into the old absolute path. Never hardcode a repo path here again.
@@ -23,7 +24,10 @@ const KEEP = [
   // self /who — documentary evidence of the one-level / three-class loadout
   /^\[[^\]]+\] \[\d+ [A-Z]{3}(?:\/[A-Z]{3})*\] Primitive /
 ]
-const keep = (l) => l.startsWith('[') && KEEP.some((re) => re.test(l))
+// Routed through the SHARED scrub (tests/fixture-scrub.mjs) like every other extractor. The
+// self `/who` row survives because the scrub exempts the user's OWN character by name; every
+// other player's `/who` row is dropped there, not here.
+const keep = (l) => l.startsWith('[') && scrubKeep(l) && KEEP.some((re) => re.test(l))
 
 function slice(fromLine, toLine, out) {
   const seg = []

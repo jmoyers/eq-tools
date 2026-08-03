@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import { scrubKeep } from './fixture-scrub.mjs'
 
 // Fixtures resolve RELATIVE to this file — the repo moved once and these extractors kept
 // writing into the old absolute path. Never hardcode a repo path here again.
@@ -62,8 +63,13 @@ const KEEP = [
   // on the user's fight target; with own-cast gating it must NOT bind as the user's buff.
   /is cloaked in a shimmer of glowing symbols\.$/
 ]
+// KEEP is a whitelist, but it still runs through the SHARED scrub (tests/fixture-scrub.mjs)
+// so there is exactly one definition of "third-party chat" in the tree and a future KEEP
+// entry can never re-admit a stranger's words into a committed fixture. The pet-claim tell
+// is carved out inside the scrub, so the `told you, '… Master.'` KEEP above still lands.
 function keep(line) {
   if (!line.startsWith('[')) return false
+  if (!scrubKeep(line)) return false
   return KEEP.some((re) => re.test(line))
 }
 

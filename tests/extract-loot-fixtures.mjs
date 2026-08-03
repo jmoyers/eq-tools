@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
+import { scrubKeep } from './fixture-scrub.mjs'
 
 // Fixtures resolve RELATIVE to this file — the repo moved once and these extractors kept
 // writing into the old absolute path. Never hardcode a repo path here again.
@@ -22,8 +23,11 @@ const KEEP = [
   /\] You looted /,
   /\] You have entered /
 ]
+// Routed through the SHARED scrub (tests/fixture-scrub.mjs) — one definition of
+// "third-party chat" for every extractor in the tree.
 function keep(line) {
   if (!line.startsWith('[')) return false
+  if (!scrubKeep(line)) return false
   return KEEP.some((re) => re.test(line))
 }
 

@@ -29,6 +29,31 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   log span (`tests/fixtures/*.log` via `tests/extract-*.mjs`), hand-read it,
   write the expected state, fix until green. Priming fixtures warm learned
   state (classifier/overlay) the way a full replay would.
+- **Fixtures are COMMITTED and SCRUBBED.** `tests/fixtures/*.log` is tracked
+  (a `!tests/fixtures/*.log` negation under the blanket `*.log` in
+  .gitignore), so CI's `npm test` runs the FULL suite; before this they were
+  ignored and CI was red — most fixture-backed tests `readFixture()`
+  unguarded and threw ENOENT, only the combat/healing windows had
+  `skip: fixture not present` guards. The repo is PUBLIC, so every extractor
+  MUST route through the shared scrub `tests/fixture-scrub.mjs`
+  (`scrubKeep`) — never re-implement a drop list, never hand-copy a raw log
+  span into `fixtures/`. Scrub = DROP the line; NEVER rewrite it with a
+  placeholder (a rewritten line still parses into a fake event and would
+  pollute the golden expectation). It drops third-party chat/social: all
+  quoted speech (`, '` — a whole-log sweep proved the only non-chat lines
+  carrying it are mob growls, so mob speech goes too and nothing parses it),
+  `/who` output, group join/leave/invite/leader lines, and social emotes.
+  It KEEPS combat, casts, buff landings/wear-offs, loot, turn-ins, zone
+  lines, level-ups, AA, charm/pet lines and system messages.
+  **CARVE-OUT: the pet-claim tell** `<Name> told you, '… Master.'` IS a tell
+  but is spoken by an NPC pet and is the ONLY binding signal for a summoned
+  pet (law below), so it is kept verbatim — dropping it silently unbinds
+  every pet in every combat fixture. The user's OWN `/who` row (Primitive)
+  is likewise exempt: it is the only line stating the class loadout and
+  `extract-leveling-fixtures.mjs` needs it. Bystanders' NAMES survive in
+  mechanical lines (kill credit, fizzle/interrupt, third-person buff-landing
+  emotes) — those are load-bearing (own-cast gating, buff classification,
+  entity retirement) and carry no one's words.
 - **Headless app test** (`npm run test:e2e`, playwright-core `_electron`): drives
   the REAL app end-to-end against the live log and asserts what the user SEES
   (`tests/e2e/combat-dashboard.e2e.mts`). Use it for anything a fixture replay
@@ -284,7 +309,10 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 
 ## Shipping
 
-- CI (`.github/workflows/build.yml`): push to main → prerelease on the
+- CI (`.github/workflows/build.yml`) runs `npm test` — the FULL golden-window
+  suite, since `tests/fixtures/*.log` is now committed (see Operating model).
+  Only the full-log tests still skip there (the real game log isn't in CI).
+- CI: push to main → prerelease on the
   `main` update channel (version stamped `-main.<run>`); tag `v*` → stable
   (`latest`). After cutting a stable tag, BUMP package.json base version so
   main-channel stays semver-newer. Azure Trusted Signing wiring is inert

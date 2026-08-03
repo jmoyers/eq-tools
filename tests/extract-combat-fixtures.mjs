@@ -3,36 +3,26 @@
 // Unlike extract-fixtures.mjs (buffs/entity windows, which prune aggressively to the
 // lifecycle lines), COMBAT windows must replay the fight VERBATIM: every damage / miss /
 // resist / heal / death line is load-bearing for segmentation and for the byte-identical
-// damage tripwire. So this slicer keeps the raw span and drops ONLY player chat spam
-// (tells/says/auctions/shouts/OOC), which can never affect the combat model but bloats
-// the fixture and leaks other players' conversations into the repo.
+// damage tripwire. So this slicer keeps the raw span and drops ONLY what the shared scrub
+// (tests/fixture-scrub.mjs) classifies as third-party chat/social — which can never affect
+// the combat model but bloats the fixture and would leak other players into a PUBLIC repo.
 //
 // Usage: node tests/extract-combat-fixtures.mjs "<path to eqlog_Primitive_freeport.txt>"
 import { readFileSync, writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
+import { scrubKeep } from './fixture-scrub.mjs'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const LOG = process.argv[2]
 const lines = readFileSync(LOG, 'utf8').split(/\r?\n/)
-
-// Player chat only. `told you, '… Master.'` (the pet-claim binding) is a DIFFERENT shape
-// ("told you", not "tells <channel>:<n>") and is deliberately NOT dropped.
-const DROP = [
-  / tells [^,]+, '/,
-  / says,? '/,
-  / auctions,? '/,
-  / shouts,? '/,
-  / (tells you|told the guild),/
-]
-const drop = (line) => DROP.some((re) => re.test(line))
 
 function slice(fromLine, toLine, out) {
   const seg = []
   for (let i = fromLine - 1; i < toLine && i < lines.length; i++) {
     const l = lines[i]
     if (!l.startsWith('[')) continue
-    if (drop(l)) continue
+    if (!scrubKeep(l)) continue
     seg.push(l)
   }
   writeFileSync(join(HERE, 'fixtures', out), seg.join('\n') + '\n')
