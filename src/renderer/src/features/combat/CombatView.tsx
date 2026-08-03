@@ -25,9 +25,10 @@ import CircleIcon from '@mui/icons-material/Circle'
 import { useCombat } from './useCombat'
 import { CombatTimeline } from './CombatTimeline'
 import { BreakdownPreviewCard, DpsChartCard, MobDamageCard, TargetSkillBars, type Ringless } from './CombatDashboard'
-import { Bar, CAT_COLOR, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
+import { Bar, CAT_COLOR, CopyButton, DashCard, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
 import { FightPicker } from './FightPicker'
 import { flattenSkills, scopeOptions, skillsForTarget, type Drill } from './dashboardData'
+import { formatEntityText, formatSegmentText, formatTargetText } from './copyText'
 import { formatTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { ClassifiedLine, DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
@@ -298,6 +299,15 @@ function SegmentBody({
   )
   const crumb = drilledEntity?.name ?? (targetDetail ? targetName : null)
 
+  // "Copy this view" means THIS view: the same three-way choice the body below makes, so the
+  // clipboard can never hold a level the user isn't looking at. Built on click, never on render.
+  const copyView = (): string =>
+    drilledEntity
+      ? formatEntityText(seg, drilledEntity)
+      : targetDetail && targetName
+        ? formatTargetText(seg, targetName, targetDetail)
+        : formatSegmentText(seg, mode)
+
   return (
     // Grid-cell sizing, exactly like DashCard's `fill`: 100% of the cell, zero intrinsic
     // height (so a `minmax(0, 1fr)` row can shrink it), everything below the header scrolls
@@ -320,36 +330,42 @@ function SegmentBody({
           {seg.name}
           {seg.active && <CircleIcon sx={{ fontSize: 10, color: 'success.main', ml: 1, verticalAlign: 'middle' }} />}
         </Typography>
-        <Typography variant="body2" sx={{ color: mode === 'out' ? 'primary.main' : KIND_COLOR.enemy }}>
-          {formatRate(dps)}{' '}
-          {mode === 'out' && seg.activeSec > 0 && seg.activeSec < seg.durationSec && (
-            <Tooltip
-              title={`Active-time DPS: damage ÷ ${fmtDur(
-                seg.activeSec
-              )} of actual combat time (gaps between hits capped at 3s each). Wall-clock DPS (${formatRate(
-                seg.outDps
-              )}) divides by the full ${fmtDur(seg.durationSec)} fight length.`}
-            >
-              <Typography component="span" variant="caption" sx={{ color: 'text.secondary', mr: 0.25 }}>
-                (act {formatRate(seg.activeDps)})
-              </Typography>
-            </Tooltip>
-          )}
-          <Typography component="span" variant="caption" color="text.secondary">
-            · {fmt(total)} · {fmtDur(seg.durationSec)}
-            {mode === 'out' && seg.enemyHealTotal > 0 && (
+        {/* The panel's stat run, and hard right of it the copy affordance — it belongs to THIS
+            panel (not to the tab's top bar), because what it copies is whatever level this
+            panel is currently showing. */}
+        <Stack direction="row" spacing={0.5} alignItems="baseline" sx={{ minWidth: 0 }}>
+          <Typography variant="body2" sx={{ color: mode === 'out' ? 'primary.main' : KIND_COLOR.enemy }}>
+            {formatRate(dps)}{' '}
+            {mode === 'out' && seg.activeSec > 0 && seg.activeSec < seg.durationSec && (
               <Tooltip
-                title={`Enemies healed for ${fmt(
-                  seg.enemyHealTotal
-                )} during this fight — that much of your damage was undone (effective DPS is lower).`}
+                title={`Active-time DPS: damage ÷ ${fmtDur(
+                  seg.activeSec
+                )} of actual combat time (gaps between hits capped at 3s each). Wall-clock DPS (${formatRate(
+                  seg.outDps
+                )}) divides by the full ${fmtDur(seg.durationSec)} fight length.`}
               >
-                <Typography component="span" variant="caption" sx={{ color: '#5fbf7f', ml: 0.5 }}>
-                  · +{fmt(seg.enemyHealTotal)} enemy heal
+                <Typography component="span" variant="caption" sx={{ color: 'text.secondary', mr: 0.25 }}>
+                  (act {formatRate(seg.activeDps)})
                 </Typography>
               </Tooltip>
             )}
+            <Typography component="span" variant="caption" color="text.secondary">
+              · {fmt(total)} · {fmtDur(seg.durationSec)}
+              {mode === 'out' && seg.enemyHealTotal > 0 && (
+                <Tooltip
+                  title={`Enemies healed for ${fmt(
+                    seg.enemyHealTotal
+                  )} during this fight — that much of your damage was undone (effective DPS is lower).`}
+                >
+                  <Typography component="span" variant="caption" sx={{ color: '#5fbf7f', ml: 0.5 }}>
+                    · +{fmt(seg.enemyHealTotal)} enemy heal
+                  </Typography>
+                </Tooltip>
+              )}
+            </Typography>
           </Typography>
-        </Typography>
+          <CopyButton getText={copyView} />
+        </Stack>
       </Stack>
 
       {/* Drill-down breadcrumb + Back. Two levels only: source list ↔ one level-2 subject. */}
@@ -976,7 +992,7 @@ export default function CombatView(): JSX.Element {
             source={previewSource}
             onOpen={() => previewSource && setDrill({ kind: 'entity', entityId: previewSource.id })}
           />
-          <MobDamageCard tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
+          <MobDamageCard seg={seg} tl={tl} ringless={ringless} drill={drill} setDrill={setDrill} />
         </Box>
       ) : (
         // Empty scope. A Fight scope with nothing in it stays empty on purpose — it does NOT

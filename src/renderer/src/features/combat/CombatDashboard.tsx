@@ -22,6 +22,7 @@ import {
   ApproxChip,
   Bar,
   CAT_COLOR,
+  CopyButton,
   DashCard,
   KIND_COLOR,
   QuietNote,
@@ -30,6 +31,7 @@ import {
   SkillName,
   fmtDur
 } from './combatShared'
+import { formatMobsText } from './copyText'
 import {
   approxNote,
   buildDpsSeries,
@@ -314,11 +316,15 @@ const MOB_ROWS = 10
  * flat skill breakdown of everything you and your pet landed on that mob.
  */
 export function MobDamageCard({
+  seg,
   tl,
   ringless,
   drill,
   setDrill
 }: {
+  /** The selected segment — this card's rows are only meaningful against that subject, and the
+   *  copied text names it. */
+  seg: SegmentView
   tl: TimelineView | null
   ringless: Ringless
   drill: Drill | null
@@ -334,10 +340,15 @@ export function MobDamageCard({
       title="Damage by mob"
       right={
         mobs && mobs.rows.length > 0 ? (
-          <Typography variant="caption" color="text.secondary" noWrap>
-            {mobs.rows.length} mob{mobs.rows.length === 1 ? '' : 's'} · {a}
-            {fmt(mobs.total)}
-          </Typography>
+          <Stack direction="row" spacing={0.5} alignItems="baseline" sx={{ minWidth: 0 }}>
+            <Typography variant="caption" color="text.secondary" noWrap>
+              {mobs.rows.length} mob{mobs.rows.length === 1 ? '' : 's'} · {a}
+              {fmt(mobs.total)}
+            </Typography>
+            {/* Copies the ranked rows as they are LISTED here — the card's own cap included, so
+                the paste says what it left off instead of quietly widening. */}
+            <CopyButton getText={() => formatMobsText(seg, mobs, MOB_ROWS)} title="Copy this breakdown as text" />
+          </Stack>
         ) : undefined
       }
       fill

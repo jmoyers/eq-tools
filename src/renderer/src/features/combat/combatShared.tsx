@@ -2,12 +2,18 @@
 // Extracted from CombatView so both surfaces render the SAME bar, the SAME category
 // colors and the SAME card chrome (one look, one source of truth).
 
-import { useState, type ReactNode } from 'react'
-import { Box, Collapse, Paper, Stack, Tooltip, Typography } from '@mui/material'
+import { useEffect, useState, type ReactNode } from 'react'
+import { Box, Collapse, IconButton, Paper, Stack, Tooltip, Typography } from '@mui/material'
+import CheckIcon from '@mui/icons-material/Check'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import type { DamageCategory } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
 import type { FlatSkill, SkillRow } from './dashboardData'
+
+// `fmtDur` lives in the MUI-free copyText module (the plain-text serializer needs it and cannot
+// import this file), and is re-exported here so every JSX surface keeps its existing import.
+export { fmtDur } from './copyText'
 
 export const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 
@@ -31,9 +37,60 @@ export const CAT_COLOR: Record<DamageCategory, string> = {
 /** Red-tint for resist/miss rate badges (matches the timeline's hollow marks). */
 export const RESIST_COLOR = '#e05663'
 
-export function fmtDur(sec: number): string {
-  const s = Math.max(0, Math.round(sec))
-  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
+/**
+ * "Copy this view as text": a quiet icon in a panel header that puts the CURRENT view — at
+ * whatever drill level it happens to be — on the clipboard as plain text (see copyText.ts).
+ *
+ * `getText` is a thunk, not a string: serializing a view walks its whole row list, and a panel
+ * header re-renders on every snapshot tick — so the text is built when the user actually asks
+ * for it and never on the render path.
+ *
+ * Feedback is the icon itself flashing to a checkmark for ~1.5s. No toast: this app doesn't nag,
+ * and a copy is not an event worth a banner. A clipboard that isn't there (or refuses) logs and
+ * changes nothing on screen — a failed copy must never look like a successful one.
+ */
+export function CopyButton({
+  getText,
+  title = 'Copy this view as text'
+}: {
+  getText: () => string
+  title?: string
+}): JSX.Element {
+  const [done, setDone] = useState(false)
+  useEffect(() => {
+    if (!done) return
+    const t = setTimeout(() => setDone(false), 1500)
+    return () => clearTimeout(t)
+  }, [done])
+  const copy = (): void => {
+    const clip = navigator.clipboard
+    if (!clip) {
+      console.error('[everquest-companion:error] copy failed: no clipboard available')
+      return
+    }
+    clip.writeText(getText()).then(
+      () => setDone(true),
+      (err) => console.error('[everquest-companion:error] copy failed', err)
+    )
+  }
+  return (
+    <Tooltip title={done ? 'Copied' : title}>
+      <IconButton
+        size="small"
+        data-testid="copy-view"
+        onClick={copy}
+        sx={{
+          p: 0.25,
+          alignSelf: 'center',
+          flexShrink: 0,
+          color: done ? 'success.main' : 'text.disabled',
+          '&:hover': { color: 'text.primary' }
+        }}
+      >
+        {done ? <CheckIcon sx={{ fontSize: 15 }} /> : <ContentCopyIcon sx={{ fontSize: 15 }} />}
+      </IconButton>
+    </Tooltip>
+  )
 }
 
 export function Bar({
