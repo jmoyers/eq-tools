@@ -247,20 +247,24 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
-.smartscreen,
 .trust {
   font-size: 0.88rem;
   color: var(--fg-faint);
   max-width: 52ch;
 }
 
-.smartscreen {
-  margin: 0 0 18px;
-  padding-left: 14px;
-  border-left: 2px solid var(--line);
-}
-.smartscreen strong {
-  color: var(--fg-dim);
+/* Compact signed badge beside the release meta line. The tooltip carries the detail;
+   the page spends no paragraph on it. */
+.badge-signed {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  cursor: default;
+  white-space: nowrap;
 }
 
 .trust {
@@ -1167,7 +1171,6 @@ h1 {
     padding: 32px 0;
   }
   .pitch,
-  .smartscreen,
   .trust {
     max-width: none;
   }
