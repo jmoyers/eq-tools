@@ -38,14 +38,29 @@
 //      of all 192 catalog zones under this fold produces NO collision between two zones that
 //      are genuinely different places.
 //
-// WHAT IT DELIBERATELY DOES NOT DO: alias unrelated names. "The Ruins of Old Guk" (log) and
-// "Lower Guk"/"Upper Guk" (catalog), "The City of Guk", "The Lair of the Splitpaw" and
-// "The Permafrost Caverns" fold cleanly and still miss, because the two sources use different
-// NAMES for those places, not different spellings. A hand-written alias table is a knowledge
-// artifact, not a string rule; until one exists those zones honestly show the empty state
-// rather than a guessed roster (law 1 — never silently invent).
+// THE FOURTH RULE IS NOT A STRING RULE — IT IS KNOWLEDGE. Some zones fold cleanly and still
+// miss, because the two sources use a different NAME for the place, not a different spelling:
+// log "The Ruins of Old Paineel" is catalog "The Hole" (45 rows), "The City of Guk" is
+// "Upper Guk" (51), "The Ruins of Old Guk" is "Lower Guk" (63), plus Permafrost, Splitpaw and
+// the Karana/Ro/Commonlands abbreviation families. That table now EXISTS — `src/shared/zones.ts`
+// (`catalogZonesFor`), where every row was verified by intersecting the mobs the live log
+// recorded slain in the zone against the catalog rows carrying the candidate spelling — so this
+// join consumes it. It is a UNION with the fold above, never a replacement: `catalogZonesFor`
+// returns `[]` both for an unknown zone and for the common case where the fold already suffices.
+//
+// WHAT IT STILL DELIBERATELY DOES NOT DO: guess. There is no fuzzy or closest-match zone
+// matching here and there must never be one — the catalog carries a genuinely distinct
+// "Paineel" (116 rows) AND "The Hole" (45), two real places one letter-distance apart, and a
+// nearest-name match would silently serve one zone's bestiary for the other. A zone that is
+// neither an exact fold nor a VERIFIED alias shows the empty state (law 1 — never silently
+// invent).
 
 import type { MobEntry } from '@shared/types'
+// RELATIVE, not `@shared/zones`, and deliberately: this is a VALUE import and the alias only
+// exists inside the vite build, while `tests/mobZone.test.mts` drives this module under the node
+// test runner. Same constraint, same reasoning as mobSearch.ts:33. (`shared/zones` is pure — its
+// own only import is type-only — so nothing follows it into the test process.)
+import { catalogZonesFor } from '../../../../shared/zones'
 
 /** ` - Solo` / ` - Group 2` and everything after it — instance selection, never part of a name. */
 const SOLO_GROUP_RE = /\s*-\s*(Solo|Group)\b.*$/i
@@ -95,6 +110,12 @@ function sortLevel(entry: MobEntry): number | null {
  * verbatim from the `zone` log event) — instance suffixes, articles and all. Pass it unmodified;
  * folding is this function's job.
  *
+ * A row matches on EITHER authority: the fold (`zoneKey` on both sides) or a VERIFIED rename
+ * from the shared zone table (`catalogZonesFor`). Both sides of the alias comparison are folded
+ * too, so the catalog's ` (35)` / ` (37)` page-disambiguation suffixes come along. The two sets
+ * are unioned in ONE pass over the catalog, so a row spelling both names ("The Hole" AND "The
+ * Ruins of Old Paineel") is returned exactly once — dedupe is structural, not a post-pass.
+ *
  * ORDER: level ascending (unknown level last), then name, then page — fully deterministic and
  * independent of scrape order, the same posture mobSearch's ranking takes.
  * An unknown zone (blank) matches nothing rather than everything.
@@ -102,7 +123,15 @@ function sortLevel(entry: MobEntry): number | null {
 export function mobsInZone(zoneRaw: string, catalog: MobEntry[]): MobEntry[] {
   const key = zoneKey(zoneRaw)
   if (key === '') return []
-  const rows = catalog.filter((m) => m.zones?.some((z) => zoneKey(z) === key))
+  // Empty for the vast majority of zones (the fold already reaches them); a Set so the inner
+  // test stays O(1) across 7,866 rows.
+  const aliases = new Set(catalogZonesFor(zoneRaw).map(zoneKey).filter((k) => k !== ''))
+  const rows = catalog.filter((m) =>
+    m.zones?.some((z) => {
+      const zk = zoneKey(z)
+      return zk === key || aliases.has(zk)
+    })
+  )
   return rows.sort((a, b) => {
     const la = sortLevel(a)
     const lb = sortLevel(b)

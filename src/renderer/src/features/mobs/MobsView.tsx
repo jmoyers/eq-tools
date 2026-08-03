@@ -140,9 +140,15 @@ function MobResultRow({
  * you know the app is talking about where you are. The folding that turns it into catalog rows
  * is mobZone's business, not the heading's.
  *
- * SIZE IS A CONTRACT: this is the panel that must survive, so it takes `flexGrow:1` +
- * `minHeight:0` and owns its own `overflow:auto` (AGENTS.md — "a growing list lives in a
- * FIXED-height scroll box"). Kael Drakkel is 343 rows; the page itself still never scrolls.
+ * SIZE IS A CONTRACT, AND IT IS CONDITIONAL. With rows, this is the panel that must survive, so
+ * it takes `flexGrow:1` + `minHeight:0` and owns its own `overflow:auto` (AGENTS.md — "a growing
+ * list lives in a FIXED-height scroll box"). Kael Drakkel is 343 rows; the page itself still
+ * never scrolls.
+ *
+ * With ZERO rows there is nothing to grow: a `flexGrow:1` panel containing one sentence ate the
+ * whole viewport and pushed "Recently considered" to the bottom edge, so an empty answer was the
+ * loudest thing on the tab. Empty ⇒ `flexShrink:0` and auto height (header + the quiet line), and
+ * the freed space goes to the strip below (see the browse branch).
  */
 function ZoneRoster({
   zone,
@@ -155,11 +161,16 @@ function ZoneRoster({
   kills: KillMap
   onOpen: (t: MobTarget) => void
 }): JSX.Element {
+  const empty = rows.length === 0
   return (
     <Paper
       variant="outlined"
       data-testid="mobs-zone-roster"
-      sx={{ p: 1, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}
+      sx={
+        empty
+          ? { p: 1, flexShrink: 0 }
+          : { p: 1, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }
+      }
     >
       <Typography variant="subtitle2" sx={{ color: 'primary.main', flexShrink: 0 }}>
         In {zone}{' '}
@@ -315,11 +326,23 @@ export default function MobsView({
         // the leftover height; the con strip keeps its own bounded height below it. With no zone
         // known there is nothing to lead WITH, so the strip (which renders nothing when empty)
         // moves to the top and the invitation takes the space the roster would have had.
+        //
+        // EMPTY ROSTER is the third case: the roster goes compact (see ZoneRoster) and the
+        // leftover height is handed DOWNWARD instead, so the con strip sits directly under the
+        // one-line answer rather than being pinned to the bottom of an otherwise blank panel.
+        // The strip keeps its own fixed-height scroll box either way — that is its law, not a
+        // reaction to this state; the wrapper only decides where the slack lives.
         <>
           {zone ? (
             <>
               <ZoneRoster zone={zone} rows={zoneRows} kills={kills} onOpen={setDrill} />
-              <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
+              {zoneRows.length === 0 ? (
+                <Box sx={{ flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
+                  <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
+                </Box>
+              ) : (
+                <RecentlyConsidered rows={considered} kills={kills} onOpen={setDrill} />
+              )}
             </>
           ) : (
             <>

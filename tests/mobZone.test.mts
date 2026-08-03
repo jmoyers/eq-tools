@@ -88,6 +88,58 @@ test('mobsInZone: a multi-zone row matches any of its zones', () => {
 })
 
 // =============================================================================
+// 1b. THE VERIFIED ALIAS (src/shared/zones.ts `catalogZonesFor`)
+// =============================================================================
+//
+// The fold cannot reach a RENAME. The log says "The Ruins of Old Paineel"; the catalog spells
+// that same dungeon "The Hole" — a different NAME, not a different spelling — so before this
+// wiring the tab told a player standing in it that the catalog knew no mobs there. The mapping
+// is knowledge, verified in the shared zone table; these pin that mobsInZone consumes it, that
+// it UNIONS rather than replaces, and that it stays exact (no fuzzy fallback).
+
+const ALIAS_CATALOG: MobEntry[] = [
+  entry('h1', 'a fallen erudite', '43-47', ['The Hole']), //         alias spelling only
+  entry('h2', 'a rock golem', '40', ['The Ruins of Old Paineel']), // log spelling only
+  entry('h3', 'a mimic', '44', ['The Hole', 'The Ruins of Old Paineel']), // BOTH — must appear once
+  entry('h4', 'a slave citizen', '30', ['Paineel']) //               a DIFFERENT, real zone
+]
+
+test('mobsInZone: a verified rename resolves — "The Ruins of Old Paineel" finds "The Hole"', () => {
+  assert.deepEqual(mobsInZone('The Ruins of Old Paineel', ALIAS_CATALOG).map((r) => r.page), [
+    'h2', // 40
+    'h1', // 43-47 → 43
+    'h3' //  44 … and the "Paineel" row is NOT here
+  ])
+})
+
+test('mobsInZone: the alias unions with the exact match and dedupes by page', () => {
+  const rows = mobsInZone('The Ruins of Old Paineel', ALIAS_CATALOG)
+  const pages = rows.map((r) => r.page)
+  assert.equal(new Set(pages).size, pages.length, 'a row spelling BOTH zones came back twice')
+  assert.ok(pages.includes('h1'), 'alias-only row missing')
+  assert.ok(pages.includes('h2'), 'exact-name row missing')
+})
+
+test('mobsInZone: the alias survives instance noise, and never runs backwards', () => {
+  // The raw string the log actually prints for the instance.
+  assert.deepEqual(
+    mobsInZone('The Ruins of Old Paineel - Solo 4 (Refined)', ALIAS_CATALOG).map((r) => r.page),
+    ['h2', 'h1', 'h3']
+  )
+  // "Paineel" is its OWN zone in both sources. A closest-match rule would conflate the two; an
+  // exact table cannot. This is the pin that keeps fuzzy zone matching out.
+  assert.deepEqual(mobsInZone('Paineel', ALIAS_CATALOG).map((r) => r.page), ['h4'])
+})
+
+test('mobsInZone: a zone with no alias entry still returns [] rather than guessing', () => {
+  // In the table (it is a real zone with a map) but with nothing to add — and nothing in this
+  // catalog. Not "the nearest roster", not "The Hole because it is close".
+  assert.deepEqual(mobsInZone('Befallen', ALIAS_CATALOG), [])
+  // Not in the table at all.
+  assert.deepEqual(mobsInZone('Definitely Not A Zone', ALIAS_CATALOG), [])
+})
+
+// =============================================================================
 // 2. THE SORT
 // =============================================================================
 
@@ -147,9 +199,37 @@ test('real catalog: an instance is the same roster as its base zone', () => {
   }
 })
 
+test('real catalog: the renamed zones resolve through the shared alias table', () => {
+  // Each of these is a live-log zone string whose catalog spelling is a different NAME. Floors,
+  // not equalities (a future scrape only adds pages). Counts on the committed catalog today:
+  // The Hole 45, Lower Guk 63, Upper Guk 51, Permafrost 36, Splitpaw Lair 31.
+  const cases: [string, number][] = [
+    ['The Ruins of Old Paineel', 40], //         → The Hole
+    ['The Ruins of Old Paineel - Solo 4 (Refined)', 40], // the instance, same roster
+    ['The Ruins of Old Guk', 60], //              → Lower Guk
+    ['The City of Guk', 45], //                   → Upper Guk
+    ['The Permafrost Caverns', 30], //            → Permafrost
+    ['The Lair of the Splitpaw', 25] //           → Splitpaw Lair
+  ]
+  for (const [zone, floor] of cases) {
+    assert.ok(mobsInZone(zone, REAL).length >= floor, `${zone} → ${mobsInZone(zone, REAL).length}`)
+  }
+})
+
+test('real catalog: an alias never bleeds into a neighbouring zone of the same name', () => {
+  // "Paineel" (116 rows) and "The Hole" (45) are two genuinely different places whose names sit
+  // one word apart, and no catalog row lists both. A fuzzy/closest-match zone rule would merge
+  // them; the exact table must not. This is the anti-fuzzy tripwire.
+  const hole = new Set(mobsInZone('The Ruins of Old Paineel', REAL).map((r) => r.page))
+  const paineel = new Set(mobsInZone('Paineel', REAL).map((r) => r.page))
+  assert.ok(hole.size > 0 && paineel.size > 0)
+  for (const page of hole) assert.ok(!paineel.has(page), `${page} is in both rosters`)
+})
+
 test('real catalog: an unknown place returns [] rather than guessing', () => {
-  // A zone whose two sources genuinely use different NAMES (log "The Ruins of Old Guk" vs the
-  // catalog's "Lower Guk"/"Upper Guk"). The honest answer is the empty state — this pins that we
-  // never widen the fold into fuzzy zone matching.
+  // A place neither authority has ever named. The honest answer is the empty state — this pins
+  // that we never widen the join into fuzzy zone matching. (The zones that USED to land here —
+  // "The Ruins of Old Guk" and friends — are renames, and are answered above by the verified
+  // table rather than by a string rule.)
   assert.deepEqual(mobsInZone('Definitely Not A Zone', REAL), [])
 })
