@@ -10,9 +10,17 @@
 // main-only; the renderer must not import from `src/main` and must not re-implement it. A tier
 // chip here is a clean follow-up that STARTS by moving those two into `src/shared/` — explicitly
 // not done here.
+//
+// IT IS A HEADER BAND, NOT A CARD (visual-hierarchy sweep, 2026-08-03). A border is the app's
+// CARD level, and wearing one here made the Overview read as four peer boxes when it is really
+// one header plus three cards. So the strip differentiates by a subtle fill on the same surface
+// the cards use, with no outline of its own — the cards below keep the only borders on the page.
+// (Fill is `background.paper`, not the `background.default` an INSIDE-a-card recess would use:
+// this strip sits on the page background, which IS `background.default`, so that token would be
+// invisible here and `action.hover` would read brighter than the cards it introduces.)
 
 import type { JSX } from 'react'
-import { Paper, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import PlaceIcon from '@mui/icons-material/Place'
 import type { CharacterDelta, CharacterSnap } from '@shared/types'
 import { useModule } from '../../lib/useModule'
@@ -20,7 +28,7 @@ import { useModule } from '../../lib/useModule'
 export function ZoneStrip(): JSX.Element {
   const who = useModule<CharacterSnap, CharacterDelta>('character', (s, d) => ({ ...s, ...d }))
   return (
-    <Paper variant="outlined" sx={{ px: 1.25, py: 0.75, flexShrink: 0 }}>
+    <Box sx={{ px: 1.25, py: 0.75, flexShrink: 0, borderRadius: 1, bgcolor: 'background.paper' }}>
       <Stack direction="row" spacing={1} alignItems="center" sx={{ minWidth: 0 }}>
         <PlaceIcon sx={{ fontSize: 16, color: 'text.disabled', flexShrink: 0 }} />
         <Typography variant="body2" noWrap data-testid="overview-zone" sx={{ fontWeight: 600, minWidth: 0 }}>
@@ -33,6 +41,6 @@ export function ZoneStrip(): JSX.Element {
           </Typography>
         )}
       </Stack>
-    </Paper>
+    </Box>
   )
 }
