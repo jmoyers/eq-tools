@@ -34,7 +34,15 @@
 // search's jump-to-a-hit; `MapPointsLayer.labelPosition(vp, point)` is where that hit's marker
 // goes, so the marker and the label can never disagree.
 
-import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type RefObject
+} from 'react'
 import type { MapBounds } from '@shared/maps'
 import {
   ZOOM_STEP,
@@ -88,19 +96,42 @@ export interface MapViewport {
   onPointerUp: (ev: React.PointerEvent<HTMLElement>) => void
 }
 
-/** Measure the host box. Fed straight into the pure geometry — no sizing logic lives here. */
-function useHostSize(hostRef: RefObject<HTMLElement>): ViewportSize {
+/**
+ * Measure the host box. Fed straight into the pure geometry — no sizing logic lives here.
+ *
+ * TWO REASONS THIS IS NOT "just a ResizeObserver" (both MEASURED, wave 3):
+ *
+ *   1. THE HOST DOES NOT EXIST WHEN THE HOOK MOUNTS. The view renders its pane only once a map
+ *      has loaded (before that it shows the zone picker), so on the first run `hostRef.current`
+ *      is null and there is nothing to observe. An effect keyed only on the ref never re-runs —
+ *      the ref's identity is stable by construction — so the observer would never attach at all.
+ *      `id` changes exactly when a map lands, which is exactly when the pane appears.
+ *   2. A HIDDEN WINDOW NEVER DELIVERS ResizeObserver CALLBACKS. `EQ_E2E=1` runs the app with no
+ *      window shown, and Chromium's observer callbacks ride the rendering steps, which a window
+ *      that never composites does not run. Measured: with the RO alone the canvas kept its
+ *      intrinsic 300×150 default and the map drew nothing at all under the harness.
+ *
+ * So: read the box SYNCHRONOUSLY in a layout effect (before paint, no blank first frame — the
+ * `useWindowedRows.ts` precedent), then observe for the resizes that follow.
+ */
+function useHostSize(hostRef: RefObject<HTMLElement>, id: string): ViewportSize {
   const [size, setSize] = useState<ViewportSize>({ w: 0, h: 0 })
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = hostRef.current
     if (!el) return
+    const measured = (w: number, h: number): void => {
+      const next = { w: Math.max(1, w), h: Math.max(1, h) }
+      setSize((prev) => (prev.w === next.w && prev.h === next.h ? prev : next))
+    }
+    const box = el.getBoundingClientRect()
+    measured(box.width, box.height)
     const ro = new ResizeObserver((entries) => {
       const cr = entries[0]?.contentRect
-      if (cr) setSize({ w: Math.max(1, cr.width), h: Math.max(1, cr.height) })
+      if (cr) measured(cr.width, cr.height)
     })
     ro.observe(el)
     return () => ro.disconnect()
-  }, [hostRef])
+  }, [hostRef, id])
   return size
 }
 
@@ -112,7 +143,7 @@ interface DragState {
 }
 
 export function useMapViewport({ bounds, id, hostRef }: MapViewportArgs): MapViewport {
-  const size = useHostSize(hostRef)
+  const size = useHostSize(hostRef, id)
   // null === "fitted". Derived from the CURRENT size, so a resize keeps a fitted map fitted.
   const [zoomed, setZoomed] = useState<MapView | null>(null)
   const [dragging, setDragging] = useState(false)

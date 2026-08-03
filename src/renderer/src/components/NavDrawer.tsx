@@ -9,6 +9,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import PetsIcon from '@mui/icons-material/Pets'
+import MapIcon from '@mui/icons-material/Map'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import UpdateChip from './UpdateChip'
 import type { View } from '../appViews'
@@ -38,6 +39,7 @@ const ROWS: NavRow[] = [
   { view: 'overview', label: 'Overview', icon: <SpaceDashboardIcon /> },
   { view: 'combat', label: 'Combat', icon: <BarChartIcon /> },
   { view: 'mobs', label: 'Mobs', icon: <PetsIcon /> },
+  { view: 'maps', label: 'Maps', icon: <MapIcon /> },
   { view: 'bosses', label: 'Raid Targets', icon: <EmojiEventsIcon /> },
   { view: 'posky', label: 'Plane of Sky', icon: <ShieldMoonIcon /> },
   { view: 'alerts', label: 'Alerts', icon: <NotificationsActiveIcon /> },

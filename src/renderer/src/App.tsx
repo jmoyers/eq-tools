@@ -13,6 +13,7 @@ import LootView from './features/loot/LootView'
 import LevelingView from './features/leveling/LevelingView'
 import BossView from './features/bosses/BossView'
 import MobsView from './features/mobs/MobsView'
+import MapsView from './features/maps/MapsView'
 import type { MobTarget } from './features/mobs/mobTarget'
 import CombatView from './features/combat/CombatView'
 import type { CombatFocus } from './features/combat/combatFocus'
@@ -127,6 +128,28 @@ function useAppRouting(setView: (v: View) => void): AppRouting {
   }
 }
 
+/**
+ * The views that take NOTHING but a remount key — split out of `ViewContent` purely as
+ * factoring: the switch is one branch per view, so every view added to the app costs the
+ * enclosing function a point of cyclomatic complexity, and the routed views (the ones carrying
+ * a deep-link payload) are the half worth reading. Behaviour is identical: the `key` still
+ * lives on each view, so a character rebuild still remounts them.
+ */
+function PlainView({ view, viewKey }: { view: View; viewKey: string }): JSX.Element {
+  return (
+    <>
+      {view === 'posky' && <PoskyView key={viewKey} />}
+      {view === 'loot' && <LootView key={viewKey} />}
+      {/* Maps remounts per character rebuild like the rest: the zone it auto-opens comes from
+          the character module, which re-hydrates under the new character anyway. */}
+      {view === 'maps' && <MapsView key={viewKey} />}
+      {view === 'leveling' && <LevelingView key={viewKey} />}
+      {view === 'buffs' && <BuffsView key={viewKey} />}
+      {view === 'alerts' && <AlertsView key={viewKey} />}
+    </>
+  )
+}
+
 /** Which feature view is on screen. Preferences renders even with zero characters — it's how
  *  a user fixes the install path, so the fresh-machine empty state must never hide it. */
 function ViewContent({
@@ -148,8 +171,7 @@ function ViewContent({
   if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
   return (
     <>
-      {view === 'posky' && <PoskyView key={viewKey} />}
-      {view === 'loot' && <LootView key={viewKey} />}
+      <PlainView view={view} viewKey={viewKey} />
       {/* The Mobs tab stays MOUNTED across a deep link (no `key` churn on target
           change) — remounting per character rebuild only, like every other view. */}
       {view === 'mobs' && (
@@ -161,7 +183,6 @@ function ViewContent({
         />
       )}
       {view === 'bosses' && <BossView key={viewKey} onOpenMob={routing.openMob} />}
-      {view === 'leveling' && <LevelingView key={viewKey} />}
       {view === 'overview' && (
         <OverviewView
           key={viewKey}
@@ -180,8 +201,6 @@ function ViewContent({
           onFocusConsumed={routing.clearCombatFocus}
         />
       )}
-      {view === 'buffs' && <BuffsView key={viewKey} />}
-      {view === 'alerts' && <AlertsView key={viewKey} />}
     </>
   )
 }

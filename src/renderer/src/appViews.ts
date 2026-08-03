@@ -6,6 +6,7 @@ export type View =
   | 'overview'
   | 'combat'
   | 'mobs'
+  | 'maps'
   | 'bosses'
   | 'posky'
   | 'alerts'
@@ -23,6 +24,7 @@ const KNOWN_VIEWS: View[] = [
   'overview',
   'combat',
   'mobs',
+  'maps',
   'bosses',
   'posky',
   'alerts',
