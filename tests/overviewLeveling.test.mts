@@ -56,7 +56,7 @@ function emptySnap(): ProgressionSnap {
   return {
     expTs: [], expPct: [], expFlag: [],
     killTs: [], killZone: [], killCredit: [],
-    witnessTs: [], lootTs: [],
+    witnessTs: [], recentKills: [], lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0

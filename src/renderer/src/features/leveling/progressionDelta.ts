@@ -23,6 +23,11 @@
 //
 // `levelTs/levelValue/aaGainTs/aaGainAmount` are UNCAPPED (~5k rows/year) and so are a plain
 // concat with no drop bookkeeping at all.
+//
+// `recentKills` is the named display ring. It merges by the SAME append-then-splice rule, but
+// with its OWN count (`recentKillsDrop`) rather than a `dropFront` member: a 50-row ring drops
+// on almost every kill, and `dropFront` is what feeds the honest "your range reaches into
+// dropped territory" warning about the CAPPED COLUMNS. See src/shared/progressionTypes.ts.
 
 import type { ProgressionDelta, ProgressionSnap } from '@shared/types'
 
@@ -30,6 +35,7 @@ export const EMPTY_PROGRESSION: ProgressionSnap = {
   expTs: [], expPct: [], expFlag: [],
   killTs: [], killZone: [], killCredit: [],
   witnessTs: [],
+  recentKills: [],
   lootTs: [],
   zoneStart: [], zoneEnd: [], zoneName: [],
   levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
@@ -68,6 +74,7 @@ export function applyProgressionDelta(s: ProgressionSnap, d: ProgressionDelta): 
     killZone,
     killCredit: cat(s.killCredit, d.killCredit, drop.kill),
     witnessTs: cat(s.witnessTs, d.witnessTs, drop.witness),
+    recentKills: cat(s.recentKills, d.recentKills, d.recentKillsDrop),
     lootTs: cat(s.lootTs, d.lootTs, drop.loot),
     zoneStart: cat(s.zoneStart, d.zoneStart, drop.zone),
     zoneEnd: cat(zoneEnd, d.zoneEnd, drop.zone),

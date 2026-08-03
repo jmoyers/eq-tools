@@ -796,6 +796,7 @@ export type {
   AlertFireRecord,
   AlertsSnap,
   AlertsDelta,
+  SpellCastRecency,
   PackSound,
   SoundPackManifest,
   SoundPack,
@@ -825,4 +826,9 @@ export type {
   SpellCatalog
 } from './buffTypes'
 
-export type { ProgressionSnap, ProgressionDropFront, ProgressionDelta } from './progressionTypes'
+export type {
+  ProgressionSnap,
+  ProgressionDropFront,
+  ProgressionDelta,
+  ProgressionKill
+} from './progressionTypes'

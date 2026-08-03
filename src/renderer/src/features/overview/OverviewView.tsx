@@ -30,11 +30,13 @@ import { CurrentMobCard } from './CurrentMobCard'
 import { LevelingCard } from './LevelingCard'
 import { useComboSnap } from '../profiles/ClassComboData'
 import { RecentDropsCard } from './RecentDropsCard'
+import { RecentKillsCard } from './RecentKillsCard'
 import { ZoneStrip } from './ZoneStrip'
 import { useCurrentMob } from './useCurrentMob'
 import { useOverviewCombat } from './useOverviewCombat'
 import { useOverviewLeveling } from './useOverviewLeveling'
 import { useRecentDrops } from './useRecentDrops'
+import { useRecentKills } from './useRecentKills'
 
 export interface OverviewViewProps {
   /** DPS card → "Open in Combat": jump to an explicit scope + selection. */
@@ -81,6 +83,7 @@ export default function OverviewView({
   const snap = useOverviewCombat()
   const mob = useCurrentMob(snap)
   const rows = useRecentDrops()
+  const kills = useRecentKills()
   // Its own module, its own hook: the leveling card asks for what it needs, exactly like every
   // other card here, so nothing about it touches the combat snapshot.
   const leveling = useOverviewLeveling()
@@ -130,9 +133,11 @@ export default function OverviewView({
             </Box>
           </>
         )}
-        <Box sx={{ gridColumn: { md: '1 / -1' }, minWidth: 0 }}>
-          <RecentDropsCard rows={rows} onOpenLoot={onOpenLoot} />
-        </Box>
+        {/* The two HISTORY feeds, side by side on md and stacked on xs. Neither is gated: both
+            describe the past, and the module snapshots behind them are complete during the
+            replay. They share one fixed body height so the pair reads as one band. */}
+        <RecentDropsCard rows={rows} onOpenLoot={onOpenLoot} />
+        <RecentKillsCard rows={kills} onOpenLeveling={onOpenLeveling} />
       </Box>
     </Stack>
   )

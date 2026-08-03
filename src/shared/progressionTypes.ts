@@ -19,6 +19,41 @@
 // `src/shared/progressionStats.ts` is the pure query over it.
 
 /**
+ * ONE credited kill, named. The columnar series above deliberately carries no names (a name
+ * column would be ~40k strings against a numeric budget), so this is a small bounded RING —
+ * the last `RECENT_KILL_CAP` credited kills, drop-oldest — that rides alongside it purely so a
+ * glance surface can say WHAT you killed and what it paid.
+ *
+ * It is a DUPLICATE VIEW of `killTs`/`killCredit`, never a second source of truth: no statistic
+ * is derived from it, its drops never enter `dropped`/`windowStart` (those describe the capped
+ * COLUMNS' retention floor, and a 50-row ring drops constantly), and losing it entirely would
+ * change no number anywhere.
+ */
+export interface ProgressionKill {
+  /** timestamp of the kill line. */
+  ts: number
+  /** RAW display name of the thing that died, exactly as the line spelled it (law 2). */
+  name: string
+  /** 0 = your killing blow, 1 = credited to a bound pet (INFERRED — same semantics as
+   *  `killCredit`; the log never names the pet on the kill line, so no name is retained). */
+  credit: number
+  /** RAW zone name the kill landed in; '' before the first zone line (never a fabricated one). */
+  zone: string
+  /**
+   * The bitfield of the experience line JOINED to this kill — SAME bits as `expFlag`
+   * (1 = no percentage stated, 2 = party experience).
+   *
+   * ABSENT means something different from every flag value: no experience line accompanied
+   * this kill at all (a grey kill, or a corpse that paid nothing). `expFlag & 1` means the
+   * game DID pay experience and stated no size for it — the at-the-cap shape. Law 1: those two
+   * unknowns are not the same unknown and the UI must not render either as 0%.
+   */
+  expFlag?: number
+  /** stated level-bar percent of the joined line; present iff the line stated one. */
+  expPct?: number
+}
+
+/**
  * Parallel-array time series. COLUMNAR on purpose: structured-clone of N number arrays
  * is dramatically cheaper than N row objects, and the range query is a binary search on
  * a sorted `ts` column. Every array of a group has identical length; all `*Ts` columns
@@ -48,6 +83,13 @@ export interface ProgressionSnap {
 
   /** third-party kills seen in the world, timestamps only (for the dimmed context number). */
   witnessTs: number[]
+
+  /**
+   * The last `RECENT_KILL_CAP` credited kills, oldest→newest, WITH names and the experience
+   * line joined to each. Bounded by count (50 rows of six small fields is negligible against
+   * the columnar budget) and purely a display feed — see `ProgressionKill`.
+   */
+  recentKills: ProgressionKill[]
 
   // --- loot events, timestamps only: an activity signal for the idle heuristic ---
   lootTs: number[]
@@ -107,6 +149,16 @@ export interface ProgressionDelta {
   killZone: number[]
   killCredit: number[]
   witnessTs: number[]
+  /** rows appended to the recent-kills ring this flush (oldest→newest). */
+  recentKills: ProgressionKill[]
+  /**
+   * How many leading rows to splice off the ring AFTER appending — the ring's own
+   * `dropFront`, deliberately OUTSIDE `ProgressionDropFront`: that struct feeds `dropped` and
+   * `windowStart`, which describe the capped COLUMNS' retention floor, and a 50-row display
+   * ring drops on almost every kill. Folding it in would make the honest "your range reaches
+   * into dropped territory" warning fire permanently.
+   */
+  recentKillsDrop: number
   lootTs: number[]
   zoneStart: number[]
   zoneEnd: number[]

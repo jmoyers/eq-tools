@@ -48,6 +48,7 @@ function blankSnap(): ProgressionSnap {
     expTs: [], expPct: [], expFlag: [],
     killTs: [], killZone: [], killCredit: [],
     witnessTs: [],
+    recentKills: [],
     lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
