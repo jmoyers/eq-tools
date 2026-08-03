@@ -15,11 +15,13 @@ import {
   MenuItem,
   Snackbar,
   Stack,
+  Tab,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
+  Tabs,
   TextField,
   Tooltip,
   Typography
@@ -39,9 +41,13 @@ import { formatDateTime } from '../../lib/formatDate'
 import { sharingQuestLabel, type SharedItem } from './sharedItems'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
+import { useQuestFavorites, useQuestIgnored } from '../favorites/useQuestFlags'
+import { QuestIgnoreButton, QuestStarButton } from '../favorites/QuestFlagButtons'
 import Confetti from '../../lib/Confetti'
 
 type SortKey = 'closest' | 'least-missing' | 'class'
+
+type TabKey = 'quests' | 'ignored'
 
 // How many Accordions to render before the "show more" cap kicks in.
 const PAGE = 40
@@ -125,6 +131,57 @@ function SharedItemsSection({
   )
 }
 
+// The Ignored tab: every quest the user hid, in one flat compact list (no accordions —
+// there is nothing to work on here), each row carrying the same button that put it here,
+// now reading "Stop ignoring". Un-ignoring drops the row instantly and the quest
+// reappears under Quests with its favorite state untouched.
+function IgnoredList({
+  quests,
+  onUnignore
+}: {
+  quests: QuestProgress[]
+  onUnignore: (questKey: string) => void
+}): JSX.Element {
+  if (quests.length === 0) {
+    return (
+      <Typography color="text.secondary">
+        No ignored quests — hide one with the eye icon on its row and it lands here.
+      </Typography>
+    )
+  }
+  return (
+    <Box sx={{ flexGrow: 1, overflow: 'auto' }}>
+      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        {quests.length} quest{quests.length === 1 ? '' : 's'} hidden from the list, filters and counts.
+      </Typography>
+      <Stack spacing={0.5}>
+        {quests.map((q) => (
+          <Stack
+            key={q.key}
+            direction="row"
+            spacing={2}
+            alignItems="center"
+            sx={{ px: 1, py: 0.5, borderRadius: 1, '&:hover': { bgcolor: 'action.hover' } }}
+          >
+            <QuestIgnoreButton ignored onToggle={() => onUnignore(q.key)} />
+            <Chip label={q.className} size="small" color="secondary" variant="outlined" sx={{ minWidth: 92 }} />
+            <Typography variant="subtitle2" sx={{ minWidth: 220 }}>
+              {q.name}
+            </Typography>
+            {q.reward && (
+              <Typography variant="caption" color="primary.main">
+                → {q.reward}
+              </Typography>
+            )}
+            <Box sx={{ flexGrow: 1 }} />
+            {q.completed && <Chip size="small" color="success" variant="outlined" label="Turned in" />}
+          </Stack>
+        ))}
+      </Stack>
+    </Box>
+  )
+}
+
 export default function PoskyView(): JSX.Element {
   // A quest completing via a LIVE turn-in bursts confetti over this view (mirrors
   // BossView's onKill confetti, Task #46). useProgress gates out the historical
@@ -145,7 +202,12 @@ export default function PoskyView(): JSX.Element {
     sharedItems,
     ambiguousQuestNames
   } = useProgress({ onQuestComplete })
-  const { isFavorite, toggle: toggleFavorite } = useFavorites()
+  const { favorites, isFavorite, toggle: toggleFavorite } = useFavorites()
+  // Quest-level flags (renderer-local localStorage, keyed by the canonical `Class::Name`
+  // quest key) — the star the user could not find, and a permanent ignore.
+  const questFavorites = useQuestFavorites()
+  const questIgnored = useQuestIgnored()
+  const [tab, setTab] = useState<TabKey>('quests')
   const [selectedClasses, setSelectedClasses] = useState<string[]>(loadSelectedClasses)
   const [query, setQuery] = useState('')
   const [sort, setSort] = useState<SortKey>('closest')
@@ -159,6 +221,17 @@ export default function PoskyView(): JSX.Element {
 
   const questHasFavorite = (q: QuestProgress): boolean => q.items.some((it) => isFavorite(it.name))
 
+  // Ignored quests are gone from the main list, its filters and its counts — they exist
+  // only under the Ignored tab, where the same button un-ignores them.
+  const ignoredKeys = questIgnored.keys
+  const [visible, ignored] = useMemo(() => {
+    const shown: QuestProgress[] = []
+    const hidden: QuestProgress[] = []
+    for (const q of quests) (ignoredKeys.has(q.key.toLowerCase()) ? hidden : shown).push(q)
+    hidden.sort((a, b) => a.className.localeCompare(b.className) || a.name.localeCompare(b.name))
+    return [shown, hidden]
+  }, [quests, ignoredKeys])
+
   // Remember the class filter across restarts.
   useEffect(() => {
     localStorage.setItem(SELECTED_CLASSES_KEY, JSON.stringify(selectedClasses))
@@ -170,11 +243,13 @@ export default function PoskyView(): JSX.Element {
 
   const filtered = useMemo(() => {
     const q = deferredQuery.trim().toLowerCase()
-    let list = quests
+    let list = visible
     if (selectedClasses.length) list = list.filter((x) => selectedClasses.includes(x.className))
     if (hideCompleted) list = list.filter((x) => !x.completed)
     if (hideNoItems) list = list.filter((x) => x.needCount > 0)
-    if (favoritesOnly) list = list.filter(questHasFavorite)
+    // "Favorites only" = the quest itself is starred OR it needs a starred item.
+    if (favoritesOnly)
+      list = list.filter((x) => questFavorites.has(x.key) || questHasFavorite(x))
     if (q) {
       list = list.filter(
         (x) =>
@@ -196,12 +271,26 @@ export default function PoskyView(): JSX.Element {
     } else {
       sorted.sort((a, b) => a.className.localeCompare(b.className) || a.name.localeCompare(b.name))
     }
-    // Pin quests that contain a favorited, still-needed item to the top (stable).
-    const pinned = (x: QuestProgress): boolean => !x.completed && questHasFavorite(x)
-    sorted.sort((a, b) => Number(pinned(b)) - Number(pinned(a)))
+    // Pin to the top (stable sort, so ties keep the sort above). A quest the user
+    // STARRED outright outranks one that merely contains a favorited item — the star is
+    // an explicit "I'm working on this", so it pins even once turned in; the item-level
+    // pin stays what it always was (only while the quest still needs something).
+    const rank = (x: QuestProgress): number =>
+      questFavorites.has(x.key) ? 2 : !x.completed && questHasFavorite(x) ? 1 : 0
+    sorted.sort((a, b) => rank(b) - rank(a))
     return sorted
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quests, selectedClasses, deferredQuery, sort, hideCompleted, hideNoItems, favoritesOnly, isFavorite])
+  }, [
+    visible,
+    selectedClasses,
+    deferredQuery,
+    sort,
+    hideCompleted,
+    hideNoItems,
+    favoritesOnly,
+    favorites,
+    questFavorites.keys
+  ])
 
   // Reset the page cap whenever the filtered set changes (a new search shows from top).
   useEffect(() => {
@@ -210,11 +299,24 @@ export default function PoskyView(): JSX.Element {
 
   const onReload = async (): Promise<void> => setToast(await reloadInventory())
 
-  const totalQuests = quests.length
+  // Counts describe the list you are looking at, so ignored quests are not in them.
+  const totalQuests = visible.length
 
   return (
     <Stack spacing={2} sx={{ height: '100%', position: 'relative' }}>
       {burst != null && <Confetti key={burst} onDone={() => setBurst(null)} />}
+      <Tabs
+        value={tab}
+        onChange={(_e, v: TabKey) => setTab(v)}
+        sx={{ minHeight: 36, mb: -1, '& .MuiTab-root': { minHeight: 36, py: 0 } }}
+      >
+        <Tab value="quests" label="Quests" />
+        <Tab value="ignored" label={ignored.length ? `Ignored (${ignored.length})` : 'Ignored'} />
+      </Tabs>
+      {tab === 'ignored' ? (
+        <IgnoredList quests={ignored} onUnignore={questIgnored.toggle} />
+      ) : (
+        <>
       <Stack direction="row" spacing={2} flexWrap="wrap" alignItems="center" useFlexGap>
         <Autocomplete
           multiple
@@ -293,10 +395,15 @@ export default function PoskyView(): JSX.Element {
         </Tooltip>
       </Stack>
 
-      {totalQuests === 0 ? (
+      {quests.length === 0 ? (
         <Alert severity="info">
           No Plane of Sky data available.
         </Alert>
+      ) : totalQuests === 0 ? (
+        // Data exists, it is all ignored — say so, and point at the tab that undoes it.
+        <Typography color="text.secondary">
+          Every quest is ignored — the Ignored tab can bring them back.
+        </Typography>
       ) : (
         <Typography variant="body2" color="text.secondary">
           {filtered.length} of {totalQuests} quests · counting from{' '}
@@ -317,6 +424,16 @@ export default function PoskyView(): JSX.Element {
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Stack spacing={0.75} sx={{ width: '100%', pr: 2 }}>
                 <Stack direction="row" spacing={2} alignItems="center">
+                  {/* Star + ignore lead every row, always visible — the quest-level
+                      controls the user could not find when the only star lived on an
+                      item row inside the expanded panel. */}
+                  <Stack direction="row" alignItems="center" sx={{ minWidth: 48 }}>
+                    <QuestStarButton
+                      favorited={questFavorites.has(q.key)}
+                      onToggle={() => questFavorites.toggle(q.key)}
+                    />
+                    <QuestIgnoreButton ignored={false} onToggle={() => questIgnored.toggle(q.key)} />
+                  </Stack>
                   <Chip label={q.className} size="small" color="secondary" variant="outlined" sx={{ minWidth: 92 }} />
                   <Box sx={{ minWidth: 220 }}>
                     <Typography variant="subtitle2">{q.name}</Typography>
@@ -360,7 +477,8 @@ export default function PoskyView(): JSX.Element {
                   )}
                   <ProgressBar q={q} />
                 </Stack>
-                <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ pl: '100px' }}>
+                {/* Indent tracks the header's leading columns (buttons + class chip). */}
+                <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap sx={{ pl: '164px' }}>
                   {[...q.items]
                     .sort((a, b) => Number(isFavorite(b.name)) - Number(isFavorite(a.name)))
                     .map((it) => {
@@ -471,6 +589,8 @@ export default function PoskyView(): JSX.Element {
           </Box>
         )}
       </Box>
+        </>
+      )}
 
       <Snackbar
         open={!!toast}
