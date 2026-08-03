@@ -50,7 +50,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # 24 = the dev machine's major. NOT 20: `node --test tests/*.test.mts`
+          # relies on the runner's own glob expansion (pwsh/cmd don't expand), which
+          # Node's test runner only does from v21 — on 20 the literal pattern is
+          # "not found" and CI fails before it ever runs a test.
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
