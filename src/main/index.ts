@@ -3,7 +3,7 @@
 // (module-level) further down this import list.
 import { CHANNEL, USER_DATA } from './channel'
 import { E2E } from './e2e'
-import { app, shell, BrowserWindow, dialog, ipcMain, screen } from 'electron'
+import { app, shell, BrowserWindow, dialog, ipcMain, protocol, screen } from 'electron'
 import { watch, type FSWatcher } from 'chokidar'
 import { existsSync, readFileSync, writeFileSync } from 'fs'
 import { join } from 'path'
@@ -51,6 +51,7 @@ import {
   uninstallPack
 } from './packRegistry'
 import { initUpdater } from './updater'
+import { installImageCacheProtocol, registerImageCacheSchemes } from './imageCache'
 import {
   applyShare,
   exportAlertsString,
@@ -120,6 +121,11 @@ process.on('uncaughtException', (err) => {
 process.on('unhandledRejection', (reason) => {
   logError('main:unhandledRejection', reason)
 })
+
+// --- permanent image cache (eqimg://) ---
+// Scheme privileges MUST be declared before the app's `ready` event, so this runs at module
+// scope; the handler itself is installed in whenReady below. See imageCache.ts.
+registerImageCacheSchemes(protocol)
 
 /**
  * Log-derived state for the active character, rebuilt on launch + appended live.
@@ -507,6 +513,13 @@ function createOverlayWindow(kind: OverlayKind): void {
     // Never take focus from the game when it appears (locked mode). We also avoid
     // adding it to the taskbar — it's an accessory of the main app.
     skipTaskbar: true,
+    // …and out of ALT-TAB, which skipTaskbar alone does NOT do on Windows (it only
+    // deletes the taskbar button). 'toolbar' sets WS_EX_TOOLWINDOW, the style Alt-Tab
+    // (and Win+Tab) actually consults, so five open overlays don't turn window
+    // switching into a lineup of accessories. NOT `parent: mainWindow` — an OWNED
+    // window would also leave Alt-Tab but gets minimized with its owner, and hiding
+    // the main app while playing must never take the overlays down with it.
+    type: 'toolbar',
     // A transparent window can't have a native background; element rgba does the
     // translucency (per-element alpha beats window-level setOpacity).
     backgroundColor: '#00000000',
@@ -1082,6 +1095,13 @@ if (!gotSingleInstanceLock) {
       `[everquest-companion] Channel '${CHANNEL}' — userData ${USER_DATA}, error log ${errorLogPath()}`
     )
     registerIpc()
+    // Serve `eqimg://item/<id>` from <userData>/image-cache BEFORE any window loads a page
+    // that can reference an item icon. One handler on the default session covers the main
+    // window and every overlay (none of them use a custom partition).
+    installImageCacheProtocol(protocol, {
+      userData: USER_DATA,
+      onError: (msg, err) => logError('main:imageCache', { message: msg, err })
+    })
     createWindow()
     void startTailing()
     // Self-provision the shipped voice packs (Task #39): a CI-built installer ships

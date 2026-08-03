@@ -41,9 +41,19 @@ export const EQ_ITEM_COLORS = {
 
 const MONO = '"Consolas","Courier New",monospace'
 
-/** eqlwiki serves item icons at a stable redirect path keyed by the page's lucy_img_ID. */
+/**
+ * Item icons come from the app's PERMANENT image cache, never straight off the network.
+ *
+ * `eqimg://item/<id>` is served by the main process (src/main/imageCache.ts): a disk hit in
+ * `<userData>/image-cache/` when we've seen the icon before, otherwise ONE polite fetch of
+ * the eqlwiki redirect (`…Special:Redirect/file/Item_<id>.png`) that is then stored forever.
+ * Every consumer — hover tooltip, loot dialog, overlay windows — goes through this one
+ * function, so they all share the same cache and no window can re-download an icon another
+ * one already has. A miss that fails to fetch responds 404 and the `<img onError>` below
+ * hides the icon, exactly as a dead https URL used to.
+ */
 export function itemIconUrl(iconId: number): string {
-  return `https://eqlwiki.com/index.php?title=Special:Redirect/file/Item_${iconId}.png`
+  return `eqimg://item/${iconId}`
 }
 
 function Row({

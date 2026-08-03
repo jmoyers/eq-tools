@@ -20,6 +20,7 @@ import type { TargetStatus } from './bossStatus'
 import Confetti from '../../lib/Confetti'
 import { tierStyle } from '../../lib/tierChip'
 import { formatDate, formatDateTime } from '../../lib/formatDate'
+import { cachedImageUrl } from '../../lib/imageUrl'
 
 // EQL raid progression order.
 const CATEGORY_ORDER = ['Open World', 'Plane of Fear', 'Plane of Hate', 'Plane of Sky']
@@ -43,7 +44,12 @@ function BossImage({
     return (
       <Box
         component="img"
-        src={target.image}
+        // NEVER the raw `target.image`. `bosses.json` carries real wiki.project1999.com URLs
+        // (scraped data stays honest), but a portrait must be downloaded at most ONCE ever —
+        // so it is served from the app's permanent cache instead. A URL the main process
+        // refuses, or a portrait that 404s, falls through to the initials tile below via
+        // onError, exactly as before.
+        src={cachedImageUrl(target.image)}
         alt={target.name}
         onError={() => setFailed(true)}
         sx={{

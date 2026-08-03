@@ -260,6 +260,40 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
 - Item knowledge: `itemLookup.ts` — local-first (posky) → wiki
   `{{Itempage}}` (`statsblock` flags / `relatedquests` / `notes`), userData
   cache with negative caching, live-loot background prefetch.
+- **Downloaded images are cached PERMANENTLY** (`src/main/imageCache.ts`):
+  no image the app fetches may ever be fetched twice. Item icons are served
+  from `eqimg://item/<id>` — a `protocol.handle` on the DEFAULT session
+  (registered in whenReady; `registerSchemesAsPrivileged` runs at index.ts
+  module scope, before ready), backed by `<userData>/image-cache/item-<id>.png`.
+  No window uses a custom `partition`, so the one handler covers the main
+  window and every overlay. Disk hit ⇒ zero network; miss ⇒ ONE polite fetch
+  (shared UA, in-flight dedupe so N windows can't double-request), written
+  ATOMICALLY (temp file + rename — a torn PNG under a no-TTL cache would be
+  permanent) and only if the bytes actually sniff as an image. NEGATIVES ARE
+  NEVER CACHED: a 404/offline/timeout responds 404, the `<img onError>` hides
+  the icon, and the next load retries. No TTL, no eviction — wiki file ids are
+  immutable. `itemIconUrl()` (ItemWindow.tsx) is the single renderer entry
+  point; the upstream eqlwiki URL is spelled out only in imageCache.ts.
+  A SECOND route on the same handler, `eqimg://url/<encodeURIComponent(url)>`,
+  covers images the renderer holds as absolute URLs — today the 29 boss
+  portraits in `bosses.json`. `bosses.json` keeps the REAL wiki URLs (scraped
+  data stays diffable against the wiki); the wrapping is the app's concern and
+  happens at render time via `cachedImageUrl()` (`renderer/src/lib/imageUrl.ts`,
+  used by BossView). Its security boundary is a STRICT host allowlist —
+  `wiki.project1999.com` + `eqlwiki.com`, matched by EXACT `new URL().hostname`
+  equality after decoding, https only, no credentials, default port; anything
+  else 404s having touched the network zero times (never substring/endsWith:
+  `wiki.project1999.com.evil.com` must fail). Entry name = `url-<sha256[0:24] of
+  the normalized URL>.<sniffed ext>` — hash because arbitrary URL text can't
+  safely be a filename, sniffed extension because the URL lies (p1999 serves
+  `.PNG` that is a png, `.jpg` that is a jpeg); a read probes the four known
+  extensions (bounded constant, O(1), and the dir stays human-browsable).
+  Normalization folds `:443` and drops the fragment, so one image is one entry.
+  **`img-src` does NOT list `https:`** (index.html + overlay.html carry exactly
+  `'self' data: eqimg:`): that is what makes "every downloaded image is cached"
+  structurally true instead of a convention — a future raw `<img https://…>`
+  fails visibly in dev instead of silently bypassing the cache. Widening the CSP
+  back is never the fix; wrap the URL through the `url` route instead.
 - Sound packs: og-packs registry (index: peonping.github.io/registry) —
   browse/install any of ~350 packs in-app. The single shipped default
   (`alan-rickman`, pinned tag) is GITIGNORED audio, self-provisioned via the
