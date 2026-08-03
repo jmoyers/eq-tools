@@ -42,16 +42,13 @@ install lives somewhere else, point it at the right folder in **Settings**.
 Overlays sit on top of the game in **windowed** or **borderless** mode. Exclusive
 fullscreen can't be overlaid by anything, so use borderless if you want them.
 
-### "Windows protected your PC" — this is expected
+### Code signing
 
-The app is **not code-signed** yet (a certificate costs money and is on the to-do
-list), so Windows SmartScreen shows a blue warning the first time you run the
-installer. It's safe to proceed:
-
-1. On the "Windows protected your PC" dialog, click **More info**.
-2. Click **Run anyway**.
-
-You only see this once.
+The installer is code-signed as **Joshua Moyers** through Microsoft's Artifact
+Signing service, and auto-updates are verified against that signature before they
+install. If SmartScreen still shows a "Windows protected your PC" warning while
+the certificate is new, click **More info**, then **Run anyway** — you only ever
+see it once.
 
 ### Already have an old `eq-tools` install?
 

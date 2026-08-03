@@ -81,46 +81,37 @@ credentials, and are cached on disk after content sniffing.
    sha256sum -c SHA256SUMS.txt
    ```
 
-## What is NOT yet verified — read this part
+## Code signing and the update trust chain
 
-**The Windows installer is currently unsigned.** That has two consequences, and
-the second one is the one that matters.
+**Release builds are code-signed** ("Joshua Moyers", via Azure Artifact Signing;
+CI injects the signing arguments on tagged releases — see `.github/workflows/`).
+Two consequences:
 
-1. The cosmetic one: SmartScreen shows a "Windows protected your PC" warning on
-   first run. You have to click *More info → Run anyway*. This is expected today.
+1. SmartScreen: signed installers should not warn. If a warning appears while the
+   certificate's reputation is new, *More info → Run anyway* — and the signature
+   details on the exe are checkable either way (right-click → Properties →
+   Digital Signatures).
 
-2. The real one: **because the build is unsigned, `electron-updater` has no
-   publisher identity to check.** It verifies that the installer it downloaded is
-   byte-for-byte the file the release feed describes — but not *who* produced that
-   release. So the trust boundary of the auto-update path is exactly **the
-   maintainer's GitHub account and this repository's release pipeline**. Anyone who
-   could publish a release here — a compromised GitHub account, a stolen token, a
-   malicious workflow change — could ship an update that every existing install
-   would download, verify successfully (the sha512 would match, because the
-   attacker generated it), and apply silently in the background. No warning, no
-   prompt, no UAC.
-   
-   The blast radius is limited by the app being per-user and unelevated, but it is
-   still arbitrary code running as you.
+2. The update path: `electron-updater` verifies more than transport integrity.
+   Every download is checked byte-for-byte against the sha512 in the release
+   feed, AND (because `publisherName` is set in electron-builder.yml) the
+   downloaded installer's Authenticode publisher must match "Joshua Moyers" or
+   the update fails with `ERR_UPDATER_INVALID_SIGNATURE` before anything runs.
+   A compromised GitHub account alone is therefore no longer sufficient to ship
+   a malicious update to existing installs: the attacker would also need the
+   Azure signing identity. (Historical note: builds before v0.1.8 were unsigned
+   and did not verify publisher identity; they will update to signed builds,
+   and from then on the verification applies.)
 
-We do not think this is an acceptable end state, and it is being closed:
-
-- **Code signing (in progress).** Azure Trusted Signing is wired into the release
-  workflow and stays inert until the signing secrets exist. Once builds are signed,
-  `electron-updater` enables `verifyUpdateCodeSignature` on Windows: the downloaded
-  installer's Authenticode publisher is checked against the publisher recorded in
-  the build, and a mismatch fails the update with `ERR_UPDATER_INVALID_SIGNATURE`.
-  At that point compromising the GitHub account alone is no longer sufficient to
-  ship an update.
-- **Release-pipeline hardening (done).** CI publishes only from a pushed `v*` tag;
+- **Release-pipeline hardening.** CI publishes only from a pushed `v*` tag;
   only that one job holds a repository-write token (every other path runs read-only);
   all third-party GitHub Actions are pinned to commit SHAs; dependency install
   scripts are disabled (`.npmrc`, `ignore-scripts=true`) so a compromised npm
   package cannot execute code inside the release job.
 
-Until signing lands, if you want certainty about a specific download, check it
-against `SHA256SUMS.txt` on the release page and against the hash printed in the
-public build log for that tag.
+For out-of-band certainty about a specific download, check it against
+`SHA256SUMS.txt` on the release page and against the hash printed in the public
+build log for that tag.
 
 ## Supply chain
 
