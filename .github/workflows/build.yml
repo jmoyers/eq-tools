@@ -113,40 +113,34 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      # ESLint: type-aware correctness + the FACTORING limits (complexity,
+      # nesting, file/function length, parameter count). Green today because
+      # eslint.ratchet.mjs suppresses the existing violations per file — that
+      # file ONLY SHRINKS, so this step failing means new debt, not old debt.
+      # See eslint.config.mjs and lint-worklist.md.
+      - name: Lint
+        run: npm run lint
+
       # Unit + golden-window tests. tests/fixtures/*.log are committed (scrubbed),
       # so the fixture-backed golden windows run here too; only the full-log tests
       # (which need the real, growing game log) skip in CI.
       - name: Test
         run: npm test
 
-      # Azure Trusted Signing (inert until the AZURE_* secrets exist):
-      #   AZURE_TENANT_ID / AZURE_CLIENT_ID / AZURE_CLIENT_SECRET  (app registration)
-      #   AZURE_SIGNING_ENDPOINT  e.g. https://eus.codesigning.azure.net
-      #   AZURE_SIGNING_ACCOUNT   the Trusted Signing account name
-      #   AZURE_SIGNING_PROFILE   the certificate profile name
+      # UNSIGNED on purpose, and NO AZURE_* env: this job verifies + produces a CI
+      # artifact, it publishes nothing, so it has no business holding the signing
+      # secrets (least privilege — same reasoning as its read-only token). The
+      # win.sign hook (scripts/azure-sign.cjs) self-skips without
+      # AZURE_SIGNING_ENDPOINT. This step previously carried a stale copy of the
+      # pre-hook azureSignOptions args from the job split, which invoked the
+      # UNQUOTED Invoke-TrustedSigning path and failed on the space in
+      # "EQ Legends Companion.exe" — that broke EVERY main-branch push from the
+      # moment the secrets existed. Signing lives in the release job only.
       - name: Build installer
         shell: pwsh
-        env:
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          AZURE_SIGNING_ENDPOINT: ${{ secrets.AZURE_SIGNING_ENDPOINT }}
-          AZURE_SIGNING_ACCOUNT: ${{ secrets.AZURE_SIGNING_ACCOUNT }}
-          AZURE_SIGNING_PROFILE: ${{ secrets.AZURE_SIGNING_PROFILE }}
         run: |
           npm run build
-          $signArgs = @()
-          if ($env:AZURE_TENANT_ID) {
-            $signArgs = @(
-              "--config.win.azureSignOptions.endpoint=$env:AZURE_SIGNING_ENDPOINT",
-              "--config.win.azureSignOptions.codeSigningAccountName=$env:AZURE_SIGNING_ACCOUNT",
-              "--config.win.azureSignOptions.certificateProfileName=$env:AZURE_SIGNING_PROFILE"
-            )
-            Write-Host "Code signing: Azure Trusted Signing enabled."
-          } else {
-            Write-Host "Code signing: skipped (no Azure secrets configured)."
-          }
-          npx electron-builder --win --publish never @signArgs
+          npx electron-builder --win --publish never
 
       - name: Upload installer artifact (CI record)
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4 (v4.6.2)
@@ -186,6 +180,10 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      # See the build job for what this gate is and why it is green.
+      - name: Lint
+        run: npm run lint
 
       - name: Test
         run: npm test

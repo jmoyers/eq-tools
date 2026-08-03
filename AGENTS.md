@@ -111,6 +111,45 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   narrowing (`if (ev.t !== 'dmg') return`); `@shared/*` value imports need
   the renderer `resolve.alias` in electron.vite.config.ts.
 
+## Linting (ESLint 9 flat config + the ratchet)
+
+`npm run lint` gates CI in BOTH build.yml jobs, right after typecheck. Full
+rationale lives in the header of `eslint.config.mjs` — read it before touching a
+threshold. The short version:
+
+- **Two layers.** Correctness: typescript-eslint `strictTypeChecked` +
+  `stylisticTypeChecked`, type-aware through TS's project service (which resolves
+  every file through the same two tsconfigs `npm run typecheck` builds — lint and
+  typecheck can never see different file sets), plus react-hooks for the
+  renderer. Factoring: `complexity 12`, `max-depth 3`, `max-lines 400`,
+  `max-lines-per-function 100`, `max-params 4` (line counts skip blanks AND
+  comments — this repo comments heavily on purpose; the metric is code mass).
+- **Those five numbers were MEASURED, not guessed.** `npm run lint:measure` re-runs
+  ESLint with the rules pinned to `max: 0` so every site reports its actual metric,
+  and prints the distribution + a threshold sweep (raw output:
+  `scripts/lint-measure.txt`). Each threshold sits between p95 and p99 of the real
+  tree. Never change one without re-running it — including `max-depth`, which is 3
+  rather than the obvious 4 *because* the data showed 4 would catch three sites in
+  the whole repo.
+- **THE RATCHET ONLY SHRINKS.** `eslint.ratchet.mjs` is a GENERATED per-file
+  rule-off block listing exactly today's violations, so lint is green with zero
+  source changes. It is a debt register, not a permission slip. A wave DELETES the
+  entries it fixed and re-runs `npm run lint` to prove the deletion was earned.
+  **Adding an entry is the integrator's call, never an executor's**, and
+  regenerating wholesale (`npm run lint:ratchet`) to make a red build green
+  silently widens it and defeats the whole design. `EQ_LINT_NO_RATCHET=1 npx
+  eslint .` shows the true state.
+- **Refactor-wave law.** `lint-worklist.md` (generated beside the ratchet)
+  partitions the inventory into five disjoint waves — A `src/main/combat/**`,
+  B `src/main/**` rest, C `src/renderer/src/features/combat/**`, D renderer rest +
+  overlay, E `src/shared` + `src/preload` + `scripts` + `tests` — so agents can
+  run in parallel on non-overlapping files. Every wave is
+  **BEHAVIOR-PRESERVING ONLY**: no fixes, no feature changes, no "while I was in
+  here". Full `npm run typecheck` + `npm test` after each wave, and the engine
+  waves (A and C) additionally need the byte-identical regression gate — baseline
+  the damage totals before, diff after, they must match exactly (World-model law
+  8's tripwire). Keep the tree buildable throughout (see Operating model).
+
 ## Architecture
 
 ```

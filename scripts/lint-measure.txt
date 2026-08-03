@@ -1,0 +1,132 @@
+==============================================================================
+FACTORING METRIC DISTRIBUTIONS (floor run: every site reports its value)
+==============================================================================
+rule                          n    p50    p75    p90    p95    p99    max
+complexity                 3681      1      3      5      8     20    146
+max-depth                  2353      1      2      2      3      4      5
+max-lines                   210    102    215    410    560    909   1240
+max-lines-per-function     3564      4     10     22     34    112    385
+max-params                 2534      1      2      2      3      4      9
+
+==============================================================================
+THRESHOLD SWEEP — sites (and files) that would violate at each candidate
+==============================================================================
+complexity              8: 171/85f   10: 118/64f   12: 86/51f   15: 58/42f   20: 36/29f
+max-depth               3: 30/13f   4: 3/3f   5: 0/0f   6: 0/0f
+max-lines               300: 38/38f   400: 21/21f   500: 15/15f   600: 8/8f   800: 4/4f
+max-lines-per-function  60: 81/46f   80: 51/36f   100: 42/32f   120: 32/27f   150: 26/23f   200: 15/15f
+max-params              3: 37/16f   4: 24/11f   5: 7/5f   6: 5/3f
+
+==============================================================================
+WORST OFFENDERS (top 12 per rule)
+==============================================================================
+
+-- complexity (cyclomatic complexity)
+      146  src/main/log/parser.ts:575  Function 'classify'
+       79  src/main/modules/buffs.ts:479  Method 'onEvent'
+       63  tests/e2e/combat-dashboard.e2e.mts:478  Async function 'main'
+       60  src/renderer/src/lib/ItemWindow.tsx:208  Function 'ItemWindow'
+       57  src/renderer/src/features/mobs/MobPage.tsx:208  Function 'MobPage'
+       53  src/renderer/src/overlay/OverlayMeter.tsx:342  Function 'OverlayMeter'
+       50  src/renderer/src/features/combat/CombatView.tsx:636  Function 'CombatView'
+       48  src/renderer/src/overlay/HealMeter.tsx:396  Function 'HealMeter'
+       36  src/main/combat/engine.ts:698  Method 'ingestEvent'
+       36  src/renderer/src/overlay/EventLogOverlay.tsx:422  Function 'MobHoverCard'
+       32  src/shared/itemStats.ts:237  Function 'applyPair'
+       30  src/main/combat/engine.ts:1152  Method 'routeHeal'
+
+-- max-depth (block nesting depth)
+        5  src/main/combat/engine.ts:1848  file
+        5  src/main/modules/buffs.ts:607  file
+        5  tests/e2e/combat-dashboard.e2e.mts:869  file
+        4  scripts/scrape-quests.ts:290  file
+        4  scripts/scrape-quests.ts:291  file
+        4  scripts/scrape-quests.ts:292  file
+        4  scripts/scrape-quests.ts:293  file
+        4  scripts/scrape-quests.ts:294  file
+        4  scripts/scrape-quests.ts:295  file
+        4  scripts/scrape-quests.ts:296  file
+        4  scripts/scrape-quests.ts:297  file
+        4  scripts/scrape-quests.ts:298  file
+
+-- max-lines (lines per file)
+     1240  src/main/combat/engine.ts:48  File
+      952  src/renderer/src/features/alerts/AlertsView.tsx:23  File
+      909  src/main/modules/buffs.ts:54  File
+      834  src/main/index.ts:4  File
+      792  src/renderer/src/features/combat/CombatView.tsx:1  File
+      726  src/renderer/src/overlay/EventLogOverlay.tsx:39  File
+      647  tests/e2e/combat-dashboard.e2e.mts:33  File
+      609  src/renderer/src/features/loot/LootView.tsx:1  File
+      599  tests/itemLookup.test.mts:13  File
+      584  tests/considerWindows.test.mts:24  File
+      560  src/main/log/parser.ts:19  File
+      558  src/renderer/src/overlay/HealMeter.tsx:1  File
+
+-- max-lines-per-function (lines per function)
+      385  src/renderer/src/features/posky/PoskyView.tsx:185  Function 'PoskyView'
+      378  src/renderer/src/features/alerts/SoundPacksDialog.tsx:69  Function 'SoundPacksDialog'
+      368  src/renderer/src/features/alerts/AlertsView.tsx:726  Function 'AlertsView'
+      362  src/renderer/src/features/combat/CombatTimeline.tsx:90  Function 'CombatTimelineInner'
+      347  src/main/log/parser.ts:575  Function 'classify'
+      341  tests/e2e/combat-dashboard.e2e.mts:478  Async function 'main'
+      306  src/renderer/src/features/loot/LootView.tsx:374  Function 'LootView'
+      276  src/renderer/src/features/combat/FightPicker.tsx:226  Function 'FightPicker'
+      275  src/renderer/src/features/profiles/ShareImportDialog.tsx:56  Function 'ShareImportDialog'
+      271  src/renderer/src/features/combat/CombatView.tsx:636  Function 'CombatView'
+      246  src/renderer/src/App.tsx:125  Function 'App'
+      237  src/main/index.ts:934  Function 'registerIpc'
+
+-- max-params (parameters)
+        9  src/main/combat/engine.ts:1734  Method 'buildView'
+        9  src/main/log/parser.ts:1147  Function 'dmg'
+        7  src/main/combat/engine.ts:1152  Method 'routeHeal'
+        7  src/main/log/parser.ts:1135  Function 'loot'
+        7  src/main/modules/buffs.ts:1263  Method 'buildActive'
+        6  scripts/gen-icon.mts:54  Method 'roundRect'
+        6  src/main/modules/eventFeed.ts:116  Method 'noteConsider'
+        5  scripts/gen-icon.mts:65  Method 'disc'
+        5  scripts/gen-icon.mts:75  Method 'rect'
+        5  scripts/site-screens.mts:229  Async function 'shot'
+        5  src/main/combat/engine.ts:299  Method 'addOut'
+        5  src/main/combat/engine.ts:310  Method 'addOutMiss'
+
+==============================================================================
+CORRECTNESS RULES — violations by rule
+==============================================================================
+    134     36 files  @typescript-eslint/no-deprecated
+     26     19 files  @typescript-eslint/prefer-optional-chain
+     21      4 files  @typescript-eslint/dot-notation
+     20     13 files  @typescript-eslint/prefer-nullish-coalescing
+     20      6 files  no-console
+     17     13 files  @typescript-eslint/array-type
+     11      3 files  @typescript-eslint/no-unsafe-member-access
+     11      8 files  @typescript-eslint/no-unnecessary-type-assertion
+     11      5 files  @typescript-eslint/no-redundant-type-constituents
+      9      7 files  @typescript-eslint/no-unsafe-assignment
+      9      1 files  @typescript-eslint/no-unsafe-call
+      9      4 files  @typescript-eslint/no-non-null-assertion
+      9      5 files  @typescript-eslint/no-unnecessary-type-conversion
+      9      5 files  @typescript-eslint/non-nullable-type-assertion-style
+      8      1 files  @typescript-eslint/consistent-type-definitions
+      6      4 files  @typescript-eslint/no-unsafe-argument
+      5      5 files  @typescript-eslint/use-unknown-in-catch-callback-variable
+      5      2 files  @typescript-eslint/no-unsafe-return
+      4      4 files  @typescript-eslint/no-unnecessary-type-parameters
+      4      4 files  @typescript-eslint/no-unused-vars
+      4      3 files  @typescript-eslint/no-empty-function
+      3      2 files  @typescript-eslint/no-base-to-string
+      2      1 files  @typescript-eslint/no-require-imports
+      2      2 files  @typescript-eslint/prefer-for-of
+      2      2 files  @typescript-eslint/restrict-plus-operands
+      2      1 files  @typescript-eslint/no-unsafe-declaration-merging
+      2      2 files  @typescript-eslint/no-unnecessary-template-expression
+      2      2 files  @typescript-eslint/no-misused-promises
+      1      1 files  @typescript-eslint/prefer-includes
+      1      1 files  @typescript-eslint/no-unnecessary-type-arguments
+      1      1 files  @typescript-eslint/no-floating-promises
+      1      1 files  prefer-const
+      1      1 files  @typescript-eslint/consistent-indexed-object-style
+      1      1 files  @typescript-eslint/no-dynamic-delete
+      1      1 files  @typescript-eslint/no-unnecessary-boolean-literal-compare
+    374  TOTAL correctness violations

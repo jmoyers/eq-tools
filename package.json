@@ -19,6 +19,10 @@
     "fetch:packs": "tsx scripts/fetch-packs.mts",
     "gen:icon": "tsx scripts/gen-icon.mts",
     "gen:message-overlay": "tsx scripts/gen-message-overlay.ts",
+    "lint": "eslint . --cache --cache-location node_modules/.cache/eslint/",
+    "lint:fix": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/",
+    "lint:measure": "tsx scripts/lint-report.mts --measure",
+    "lint:ratchet": "tsx scripts/lint-report.mts --ratchet",
     "test": "node --import tsx --test tests/*.test.mts",
     "test:e2e": "node --import tsx tests/e2e/combat-dashboard.e2e.mts",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
@@ -40,6 +44,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -48,9 +53,13 @@
     "electron": "^33.2.0",
     "electron-builder": "^25.1.8",
     "electron-vite": "^2.3.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^15.15.0",
     "playwright-core": "^1.62.1",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
+    "typescript-eslint": "^8.65.0",
     "vite": "^5.4.11"
   }
 }
