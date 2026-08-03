@@ -163,7 +163,7 @@ export function UpdateChip(): JSX.Element {
             variant="caption"
             sx={{ display: 'block', color: 'text.disabled', lineHeight: 1.4, cursor: 'default' }}
           >
-            updates off · dev build
+            {version ? `v${version} · ` : ''}updates off (dev)
           </Typography>
         </Tooltip>
       </Box>
@@ -171,14 +171,17 @@ export function UpdateChip(): JSX.Element {
   }
 
   // ---- working / quiet: one muted line, click to check ----------------------
+  // The quiet line leads with the INSTALLED version — the chip is the bottom-left
+  // "what am I running" spot, and "checked 2h ago" alone answered only half of it.
+  const vPrefix = version ? `v${version} · ` : ''
   const label =
     ui.kind === 'working'
       ? ui.label
       : busy
         ? 'Checking for updates…'
         : ui.checkedAt
-          ? `checked ${formatAge(ui.checkedAt, now)}`
-          : 'not checked yet'
+          ? `${vPrefix}checked ${formatAge(ui.checkedAt, now)}`
+          : `${vPrefix}not checked yet`
 
   // Errors stay INVISIBLE here (same muted line) — only the tooltip admits it,
   // and Preferences > Updates carries the detail.

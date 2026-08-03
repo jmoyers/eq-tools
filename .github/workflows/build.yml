@@ -110,18 +110,24 @@ jobs:
             Write-Host "Code signing: skipped (no Azure secrets configured)."
           }
           if ($env:GITHUB_REF -like 'refs/tags/v*') {
-            # releaseType=release → a full (non-draft, non-prerelease) GitHub
-            # Release, live immediately for the update feeds.
-            npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=release @signArgs
+            # releaseType=DRAFT, deliberately: a published release must appear
+            # ATOMICALLY with BOTH feed files. Publishing live here and uploading
+            # main.yml afterwards opened a real race — a main-channel client that
+            # checked mid-publish resolved the new tag from the atom feed and
+            # 404'd on main.yml ("no published versions"-grade errors). The
+            # bridge step below uploads main.yml to the draft, THEN flips it live.
+            npx electron-builder --win --publish always --config.publish.channel=latest --config.publish.releaseType=draft @signArgs
           } else {
             npx electron-builder --win --publish never @signArgs
           }
 
-      # --- TAGGED RELEASE ONLY: main-channel continuity bridge ----------------
+      # --- TAGGED RELEASE ONLY: main-channel bridge, then publish ATOMICALLY --
       # See the header comment. latest.yml and main.yml differ only by filename;
-      # uploading the copy lets every existing main-channel install update to
-      # this stable build instead of stalling forever.
-      - name: Bridge main-channel feed (main.yml)
+      # the copy lets every existing main-channel install update to this stable
+      # build instead of stalling forever. The release is still a DRAFT here —
+      # both feed files land on it, and only then does it flip live, so no
+      # client can ever resolve the tag and miss its channel file.
+      - name: Bridge main-channel feed + publish release
         if: startsWith(github.ref, 'refs/tags/v')
         shell: pwsh
         env:
@@ -132,7 +138,8 @@ jobs:
           if (-not (Test-Path $src)) { throw "expected feed file not found: $src" }
           Copy-Item $src main.yml
           gh release upload $env:GITHUB_REF_NAME main.yml --clobber
-          Write-Host "Uploaded main.yml bridge for $env:GITHUB_REF_NAME"
+          gh release edit $env:GITHUB_REF_NAME --draft=false --latest
+          Write-Host "main.yml bridged; $env:GITHUB_REF_NAME published atomically"
 
       - name: Upload installer artifact (CI record)
         uses: actions/upload-artifact@v4
