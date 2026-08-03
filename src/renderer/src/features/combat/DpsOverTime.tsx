@@ -171,13 +171,15 @@ function MarkerTicks({ markers }: { markers: PlacedMarker[] }): React.JSX.Elemen
   )
 }
 
-/** The four evenly-spaced elapsed labels under the curve. */
+/** The four evenly-spaced elapsed labels under the curve — read off the chart's ONE time base
+ *  (dpsChart.ts), so they step by whole buckets with the curve instead of re-quoting a wall-clock
+ *  right edge that ticked at its own rate. */
 function ChartAxis({ chart }: { chart: DpsChart }): React.JSX.Element {
   return (
     <Stack direction="row" justifyContent="space-between" sx={{ mt: 0.25, flexShrink: 0 }}>
       {[0, 1, 2, 3].map((k) => (
         <Typography key={k} variant="caption" color="text.disabled">
-          {fmtDur((chart.startMs + ((chart.endMs - chart.startMs) * k) / 3) / 1000)}
+          {fmtDur((chart.t0 + ((chart.t1 - chart.t0) * k) / 3) / 1000)}
         </Typography>
       ))}
     </Stack>

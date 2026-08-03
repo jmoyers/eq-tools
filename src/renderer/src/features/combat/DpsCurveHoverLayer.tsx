@@ -147,7 +147,7 @@ export function DpsCurveHoverLayer({ api, chart, series, markers, startTs }: Dps
       const t = tAtUserX(chart, pxToUser(x, w))
       // ms per user unit × the grab radius expressed in user units — one conversion each way, so
       // the tolerance is a true 5 CSS px however wide the card happens to be.
-      const msPerUser = Math.max(1, chart.endMs - chart.startMs) / (CHART_W - 2 * PAD_X)
+      const msPerUser = Math.max(1, chart.t1 - chart.t0) / (CHART_W - 2 * PAD_X)
       const tol = pxToUser(MARKER_TOL_PX, w) * msPerUser
       return { x, y, w, t, mk: pickMarker(mks, t, tol)?.item ?? null }
     },

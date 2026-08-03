@@ -1,9 +1,9 @@
 // Pure unit tests for the DPS curve's hover geometry
 // (src/renderer/src/features/combat/dpsChart.ts).
 //
-// No log, no fixture, no DOM — so this file never skips. It pins the four things this hover can
-// get quietly wrong, every one of them invisible until someone points at a tick and is told about
-// a different one:
+// No log, no fixture, no DOM — so this file never skips. It pins the things this hover can get
+// quietly wrong, every one of them invisible until someone points at a tick and is told about a
+// different one:
 //   1. `tAtUserX` is the EXACT inverse of `xAtT`, the mapping the markers are placed with. If the
 //      two drift, a marker hovered at its own pixel resolves to somebody else's instant.
 //   2. `preserveAspectRatio="none"` means CSS px are NOT viewBox units on this chart — the whole
@@ -13,14 +13,20 @@
 //      floating beside it — including at the clamped edges and on a one-bucket fight.
 //   4. `placeMarkers` DROPS what scrolled out of a live window rather than clamping it to the
 //      edge, so the hover population is exactly what the chart drew.
+//   5. ONE TIME BASE: markers and curve share `{t0, t1}`. A marker at a bucket's centre lands on
+//      that bucket's own drawn vertex, and a live window advances in WHOLE buckets — the two pins
+//      for the reported jitter, where an exact-time marker mapping was scaled against a
+//      wall-clock right edge while the curve only moved when a bucket completed.
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import type { TimelineMarker, TimelineView } from '../src/shared/combat'
 import type { DpsSeries } from '../src/renderer/src/features/combat/dashboardData'
+import { dpsAt } from '../src/renderer/src/features/combat/dpsAt'
 import {
   CHART_W,
   PAD_X,
+  bucketCenterMs,
   buildDpsChart,
   curveYAtUserX,
   placeMarkers,
@@ -81,13 +87,14 @@ test('a scrolling LIVE window reports the buckets it kept, not the ones it dropp
   assert.equal(chart.scrolling, true)
   assert.equal(chart.i0, 80, 'the first 80 buckets scrolled off the left edge')
   assert.equal(chart.count, 120)
-  assert.equal(chart.startMs, 80 * BUCKET, 'the window starts at the first bucket it draws')
+  assert.equal(chart.t0, 80 * BUCKET, 'the window starts at the first bucket it draws')
+  assert.equal(chart.t1, 200 * BUCKET, 'and ends at the END of the last one — both on the grid')
   assert.equal(parsePts(chart.outLine).length, chart.count)
 })
 
 test('tAtUserX is the exact inverse of xAtT — a marker resolves to its own instant', () => {
   const chart = mkChart(RATES)
-  for (const t of [chart.startMs, 1, 1000, 3333, 4999.5, chart.endMs]) {
+  for (const t of [chart.t0, 1, 1000, 3333, 4999.5, chart.t1]) {
     assert.ok(Math.abs(tAtUserX(chart, xAtT(chart, t)) - t) < 1e-9, `round-trip must hold at t=${t}`)
   }
   // …and the other way round, over the drawn plot.
@@ -98,20 +105,20 @@ test('tAtUserX is the exact inverse of xAtT — a marker resolves to its own ins
 
 test('the plot edges are the window edges, and both mappings clamp there', () => {
   const chart = mkChart(RATES)
-  assert.equal(xAtT(chart, chart.startMs), PAD_X)
-  assert.ok(Math.abs(xAtT(chart, chart.endMs) - (CHART_W - PAD_X)) < 1e-9)
+  assert.equal(xAtT(chart, chart.t0), PAD_X)
+  assert.ok(Math.abs(xAtT(chart, chart.t1) - (CHART_W - PAD_X)) < 1e-9)
   // Outside the pads there is no chart, so the cursor reads as the nearest edge rather than as a
   // time before the window started (which would let a tooltip quote a negative elapsed).
-  assert.equal(tAtUserX(chart, 0), chart.startMs)
-  assert.equal(tAtUserX(chart, -500), chart.startMs)
-  assert.equal(tAtUserX(chart, CHART_W), chart.endMs)
-  assert.equal(tAtUserX(chart, 5000), chart.endMs)
+  assert.equal(tAtUserX(chart, 0), chart.t0)
+  assert.equal(tAtUserX(chart, -500), chart.t0)
+  assert.equal(tAtUserX(chart, CHART_W), chart.t1)
+  assert.equal(tAtUserX(chart, 5000), chart.t1)
 })
 
 test('a scrolling window maps its own span, not the whole fight', () => {
   const chart = mkChart(new Array<number>(200).fill(500), true)
   assert.equal(tAtUserX(chart, PAD_X), 80 * BUCKET, 'the left pad is the oldest bucket still shown')
-  assert.equal(tAtUserX(chart, CHART_W - PAD_X), chart.endMs)
+  assert.equal(tAtUserX(chart, CHART_W - PAD_X), chart.t1)
 })
 
 test('CSS px are NOT user units: the stretch factor is the card width', () => {
@@ -239,4 +246,78 @@ test('placeMarkers DROPS what scrolled out of a live window instead of clamping 
 test('placeMarkers is empty when there is nothing drawn to place them on', () => {
   assert.deepEqual(placeMarkers(null, mkChart(RATES)), [])
   assert.deepEqual(placeMarkers(mkView([{ t: 1, kind: 'slow', label: 'x' }]), null), [])
+})
+
+// ── ONE TIME BASE ──────────────────────────────────────────────────────────────────
+//
+// The curve is drawn from BUCKETED samples; markers carry exact instants. They only agree if both
+// are mapped through the same `{t0, t1}`, quantized to the same grid. These are the pins for that.
+
+/** A live chart as the engine would drive it at wall-clock `durationMs`: `buildDpsSeries` ceil()s
+ *  the bucket count, so the final bucket is always still filling — which is exactly the state the
+ *  old wall-clock right edge re-scaled every marker against on every snapshot. */
+function mkLiveChart(durationMs: number): DpsChart {
+  const n = Math.ceil(durationMs / BUCKET)
+  const chart = buildDpsChart({ ...mkSeries(new Array<number>(n).fill(500)), durationMs }, true)
+  assert.ok(chart, 'the fixture must produce a drawable chart')
+  return chart
+}
+
+test('a marker at a bucket centre lands exactly on that bucket own drawn vertex', () => {
+  for (const chart of [mkChart(RATES), mkChart(new Array<number>(200).fill(500), true)]) {
+    const pts = parsePts(chart.outLine)
+    for (let k = 0; k < chart.count; k++) {
+      const t = bucketCenterMs(chart, chart.i0 + k)
+      const placed = placeMarkers(mkView([{ t, kind: 'coat', label: `b${k}` }]), chart)
+      assert.equal(placed.length, 1, `bucket ${k}'s centre must be inside the drawn window`)
+      // 0.05 is the polyline's own rounding (points are emitted at one decimal), nothing else.
+      assert.ok(
+        Math.abs(placed[0].x - pts[k].x) <= 0.05,
+        `marker at bucket ${k} must sit on its vertex (${placed[0].x} vs drawn ${pts[k].x})`
+      )
+    }
+  }
+})
+
+test('hovering a vertex reads back the bucket that vertex was drawn from', () => {
+  // The other half of the same identity: the dot rides vertex k, so the tooltip's rate must be
+  // bucket k's — not its neighbour's, which is what a half-bucket mapping error would print.
+  const chart = mkChart(RATES)
+  const series = mkSeries(RATES)
+  parsePts(chart.outLine).forEach((p, k) => {
+    assert.equal(dpsAt(series, tAtUserX(chart, p.x)).out, RATES[k], `vertex ${k} must read back as its own bucket`)
+  })
+})
+
+test('the live window advances in WHOLE buckets — a marker cannot swim against the curve', () => {
+  // THE reported bug. `TimelineView.durationMs` is wall clock (`max(lastTs, now) - start`) and the
+  // snapshot cadence is ~1s but not exactly, so a right edge taken from it moved by an arbitrary
+  // fraction of a bucket on every tick while the polyline only moved when a bucket COMPLETED.
+  // Frames inside one bucket must therefore be identical, and crossing a boundary must move
+  // everything by exactly one bucket width.
+  const mk: TimelineMarker = { t: 150_500, kind: 'slow', label: 'a froglok tad' }
+  const xs = [200_000, 200_400, 200_900, 201_000, 201_400].map((durationMs) => {
+    const chart = mkLiveChart(durationMs)
+    const placed = placeMarkers(mkView([mk]), chart)
+    assert.equal(placed.length, 1, `the marker is still inside the window at ${durationMs}ms`)
+    assert.ok(
+      Math.abs(placed[0].x - xAtT(chart, bucketCenterMs(chart, 150))) < 1e-9,
+      'and still on its own bucket, frame after frame'
+    )
+    return placed[0].x
+  })
+  const step = (CHART_W - 2 * PAD_X) / 120
+  assert.ok(Math.abs(xs[0] - xs[1] - step) < 1e-9, 'crossing a bucket boundary steps by ONE bucket width')
+  assert.equal(xs[1], xs[2], 'the wall clock advancing INSIDE a bucket must not move the marker at all')
+  assert.equal(xs[2], xs[3], 'nor must the instant the still-filling bucket reaches its own end')
+  assert.ok(Math.abs(xs[3] - xs[4] - step) < 1e-9, 'and the next crossing steps by exactly one more')
+})
+
+test('a marker that just landed in the still-filling bucket is drawn immediately', () => {
+  // Quantizing the window must not cost a second of latency on the thing the tab exists to show.
+  const chart = mkLiveChart(200_400)
+  const placed = placeMarkers(mkView([{ t: 200_400, kind: 'slow', label: 'a froglok tad' }]), chart)
+  assert.equal(placed.length, 1, 'a slow that landed this instant is on the chart now')
+  assert.ok(placed[0].x <= CHART_W - PAD_X, 'inside the plot')
+  assert.ok(placed[0].x > CHART_W - PAD_X - 12, 'and hard against the right edge')
 })
