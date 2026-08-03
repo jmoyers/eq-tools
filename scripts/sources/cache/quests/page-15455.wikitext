@@ -1,0 +1,49 @@
+[[File:npc_gavel_the_temperant.png|frame|Gavel the Temperant]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Gavel the Temperant]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]], [[Rathe Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Ostorm]], [[a giant skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Caduceus of Sacrament}}
+</li></ul>
+
+== Walkthrough ==
+
+Find Gavel the Temperant in the Temple of Solusek Ro.
+
+He needs an Ingot and Icon of Sacrament and two [[Magnetized Platinum Bar]]s. (give enchanted platinum to Ostorm for this). 
+
+The [[Icon of Sacrament]] is a ground spawn found in the jail in [[Mistmoore Castle]] (-68, 280)
+
+The [[Ingot of Sacrament]] is dropped by a Giant Skeleton in the ruins in (#24 on map) Rathe Mountains (-600, -1600). This skeleton is a darker color than the ones that normally spawn at the ruins. No faction hits.
+
+''Need all dialogues, /loc of quest mobs, current faction hits if any.''
+
+{{CheckboxList}}
+===Caduceus of Sacrament===
+'''{{:Caduceus of Sacrament}}'''
+Turn the following in to [[Gavel the Temperant]]
+* 2x [[Magnetized Platinum Bar]]s. (give enchanted platinum to [[Ostorm]] for this)
+* [[Icon of Sacrament]] (ground spawn found in the jail in [[Mistmoore Castle]] (-68, 280))
+* [[Ingot of Sacrament]]
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Cleric Quests]]

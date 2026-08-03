@@ -1,0 +1,58 @@
+{{Classic Era}}
+[[File:npc_sir_morgan.png|frame|Sir Morgan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Sir Morgan]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Rewards ==
+
+<ul><li> Random item, including: {{:Patchwork Cloak}}; {{:Patchwork Boots}}; Rusty Weapons; {{:Silver Earring}}; {{:Bloodstone}}; {{:Halfling Knife}}; 1st level spell scroll; {{:Bronze Dagger}}; {{:Belt Pouch}}; {{:Damask Cap}}; {{:Mountain Lion Cape}}; {{:Highkeep Flask}}; {{:Snakeskin Mask}}; {{:Drom's Champagne}}.
+</li></ul>
+
+== Walkthrough ==
+
+''At the zone border of Eastern Karana, by the Qeynos road marker (-14, 202, 4), is knight, [[Sir Morgan]], and his squire. ''
+
+''He also patrols exactly East/West from (-300, -2700, 3.75) to High Pass Hold Entrance (-300, -26.5, 3.75). Note that between these 2 coords, he is not on the path. ''
+
+You say, 'Hail, Squire Wimbley' 
+
+: [[Squire Wimbley]] says 'Hello! Good to meet you. The road ahead is full of all sorts of nasty creatures. If I were you, I would speak with my master, Sir Morgan.' 
+
+You say, 'Hail, Sir Morgan' 
+
+: Sir Morgan says 'Hail, traveler! Might I escort you through to Highpass? The path ahead is filled with giants and many other hungry beasts. I assure you, you will be safe with me. I must admit, I am quite experienced in the ways of the warrior. Do you [wish an escort] or will you [travel alone]?' 
+
+You say, 'I wish an escort.' 
+
+: Sir Morgan says 'I shall be honored to escort you to Highpass, but you shall have to wait for a spell. I make trips every few hours. I also would be grateful to any who wish to donate gold coins to the upkeep of my armor. The rains in the plains cause much rusting.' 
+
+You say, 'I will travel alone.' 
+
+: Sir Morgan says 'Then, good luck to you! May your faith protect you. Or at the very least, guide you to a grand afterlife.' 
+
+Hand Sir Morgan '''5 gold pieces''' to randomly receive one of the rewards:
+
+: Sir Morgan says 'What a grand donation!! You must be a rich noble to be making such a donation. Here. I am but a simple warrior, but I found this lying on the highway to Highpass Hold. The lifeless corpse next to it had no more need of it.' 
+
+You will recieve a random piece ot patchwork or tattered armor.
+
+[[Category:Quests]]
+[[Category:Eastern Plains of Karana]]
+[[Category:All Classes Quests]]

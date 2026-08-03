@@ -1,0 +1,98 @@
+{{Classic Era}}
+[[File:npc_guntrik.png|frame|Guntrik]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Guntrik]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]], [[Rathe Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Bunk Odon]], [[Gwynn Marthank]], [[Hogus Durmas]], [[Jars Legola]], [[Rell Ostodl]], [[Tann Cellus]], [[Tal Godin]], [[Zepin Winsle]], [[Sven Drinn]], [[Philicia Drinn]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul>
+<li>{{:Bronze Two Handed Battle Axe}}</li>
+<li>{{:Bronze Two Handed Hammer}}</li>
+<li>{{:Ogre War Maul}}</li>
+</ul>
+
+== Walkthrough ==
+
+Guntrik is in the Oggok Warrior guild.
+
+You say, 'Hail, Guntrik'
+
+: Guntrik says, 'Mmmph!!  Who you?  Oh, you _______.  You supposed to be promising Craknek.  Me need you.  There bad things in swamp.  You want [help Crakneks] or you [want Guntrik bash your face]!!?'
+
+You say, 'Me wanna help Crakneks'
+
+: Guntrik says, 'Go to swamps. Find noble hunters of humans and elves. All have house crests. Return to me and I give things. If you find special item says where hunters sleep, give to me. If meat founded then give to Clurg's cook. She make fine stew and give coins for meat.'
+
+'''Time to hunt the hunters! Seek out the noble hunters in [[Innothule Swamp]]. They tend to hang out in front of [[Upper Guk]] and are around levels 14 - 17.'''
+
+* [[Bunk Odon]]
+* [[Gwynn Marthank]]
+* [[Hogus Durmas]]
+* [[Jars Legola]]
+* [[Rell Ostodl]]
+* [[Tann Cellus]]
+* [[Tal Godin]]
+* [[Zepin Winsle]]
+
+''NOTE: You receive negative faction hits with various good races for killing the nobles.''
+
+'''Upon turn-in of [[A Noble's Crest]]:'''
+
+: Guntrik says, 'One less trouble. Hunhuh!! You do good work. Keep up. Remember to bring any special things to Guntrik. Here junk for good work. Go away now.'
+
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Clurg]] got better. 
+* Your faction standing with [[Green Blood Knights]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive a large bronze weapon. Experience gain is negligible at 15.
+
+'''Additionally, nobles can sometimes drop a [[Tattered Parchment]]. Upon turn-in to Guntrik:'''
+
+: Guntrik says, 'Ooh! This where hunters stay. You must go to Rathe Mountains and find Drinn's Inn. Kill all. Bring owners' scalps back and me give good junk. You get more warriors to help. Say Guntrik command them. You will need all help you get.'
+
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Green Blood Knights]] got worse. 
+</div>
+{{YouGainExperience}}
+
+'''Travel to [[Rathe Mountains]] and look for the Inn operated by the Drinns (#13 on the map). Kill both [[Sven Drinn]] and [[Philicia Drinn]] and loot their [[Human Scalp|Human Scalps]]. Return them to Guntrik in Oggok.'''
+
+: Guntrik says, 'What! This just one. Paper say there two owners. Me give you fist in face if you don't scalp other owner.'
+: Guntrik says, 'You some great warrior. Crakneks proud. Take reward. You show us you great. Great Crakneks we need.'
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Green Blood Knights]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive an [[Ogre War Maul]]. 
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

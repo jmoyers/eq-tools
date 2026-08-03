@@ -1,0 +1,86 @@
+{{Classic Era}}
+[[File:npc_noxhil_v`sek.png|thumb|Noxhil V`Sek]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+!''' Quest Giver: '''
+| [[Noxhil V`Sek]]
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Nektulos Forest]]
+|-
+!''' Related NPCs: '''
+| [[A Fire Beetle]]
+|-
+!''' Required Faction: '''
+| Amiable or better
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Rotgrub Rye}}
+</li><li> {{:Neriak Nectar}}
+</li><li> Coin</li></ul>
+
+== Walkthrough ==
+
+''[[Noxhil V`Sek]] may be found at the top of the necromancers guild (1304, -1248).''
+
+You say, 'Hail, Noxhil V`Sek' 
+
+: Noxhil V`Sek says, 'Greetings, ______! We of the Dead are proud to have you among us. Your lineage is well known. Still, you must learn to claw your way to the upper echelon. There are many [menial tasks] to be performed before you can truly be inducted as a member.' 
+
+You say, 'What menial tasks?' 
+
+: Noxhil V`Sek says, 'You cannot avoid the toll of peons. We have all spent our time in the lower ranks. There are duties such as [collecting fire beetle eyes].' 
+
+You say, 'Collecting fire beetle eyes?' 
+
+'''At apprehensive faction:'''
+
+: Noxhil V`Sek says, 'How dare you enter my presence?! In the name of the Dead I should strike you down!'
+
+'''At amiable or better faction:'''
+
+: Noxhil V`Sek says, 'Take this chest. It has been fitted with a mold designed to hold ten beetle eyes. We require them for further experiments. Do not return until you fill the chest.' 
+
+''You receive an [[Fire Beetle Eye Box|Empty Box]].''
+
+'''Combine 10 x [[Fire Beetle Eye]]s in the crate to craft a [[Box of Beetle Eyes]]. '''
+
+You have fashioned the items together to create something new! 
+
+'''Hand in the [[Box of Beetle Eyes]] to [[Noxhil V`Sek]].'''
+
+: Noxhil V`Sek says, 'Fantastic work, my child! We shall store these for further experiments. Take this as extra payment for a fine job. You have done so well I believe you can assist in obtaining two [other components].'
+
+<div class="facblock">
+* Your faction standing with [[The Dead]] has been adjusted by 10.
+* Your faction standing with [[Queen Cristanos Thex]] has been adjusted by 5.
+* Your faction standing with [[King Naythox Thex]] has been adjusted by -1.
+* Your faction standing with [[Keepers of the Art]] has been adjusted by -1.
+* Your faction standing with [[Eldritch Collective]] has been adjusted by -1.
+* Your faction standing with [[Primordial Malice]] has been adjusted by -20.
+</div>
+
+{{YouGainExperience}}
+
+You receive 16 silver from Noxhil V`Sek.
+
+== References ==
+
+* http://everquest.allakhazam.com/db/quest.html?quest=731
+* http://www.necrotalk.com/showthread.php?p=734
+* http://mboards.eqtraders.com/eq/showthread.php?26810-Fire-Beetle-Eyes
+* http://www.angelfire.com/bc/brentcopeland/neriak.html#tusks
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,78 @@
+{{Classic Era}}
+[[File:npc_nestral_tgaza.png|frame|Nestral TGaza]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Nestral TGaza]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All (Mainly for Evil/Neutral Classes)
+|-
+! ''' Related Zones: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Rebby]]
+|}
+
+== Rewards ==
+
+<ul><li>[[Faction]]</li>
+<li>Experience</li>
+<li>Coin</li></ul>
+
+== Walkthrough ==
+
+''Find [[Nestral TGaza]] at location -193, -835 in the [[East_Freeport#East_Freeport_Tunnels|East Freeport Tunnels]] , among the [[Dismal Rage]] in the southwestern corner of the zone. (Under the Seafarer's Roost in the basement, look behind some crates and boxes for a fake wall that you can walk through. Go down the stairs, open the door. Open the next door in front of you and find her on your left.)''
+
+You say, 'Hail, Nestral TGaza'
+
+: Nestral TGaza says 'Hey, hello there, _____. It's been so busy around here lately! Barely time to eat and sleep, let alone have any fun. Oh well, it keeps me employed. But, I really could use someone to [help] me out around here.' 
+
+You say, 'I will help' 
+
+: Nestral TGaza says 'Yeah, if you can help me out with a few things that'd be great! Geez, where do we start? I need someone to run over to [Janam and Rebby's]? Can you do that for me?' 
+
+You say, 'I can run to Janam and Rebby's'
+
+: Nestral TGaza says 'Janam and Rebby are a couple of merchants working the area around the entrance to Arcstone over in [[Freeport|West Freeport]]. It's part of my job to keep tabs on those two rascals. I need someone to take this note to Rebby for me. Don't worry, your efforts won't go unnoticed, _____.' 
+
+'''You receive: [[Message to Rebby]]. Find Rebby and Janam in [[West Freeport]] at location (-156, -720), In front of the Theater of the Tranquil, near Brownloe Bakery & the Ashen Order.''' 
+
+You say, 'Hail, Rebby Willend' 
+
+'''Hand in: Message to Rebby. This turn-in requires a certain faction level. (Reportedly completable with dubious faction)'''
+
+{{exp}}
+
+You receive: [[Rebby's Rat Whiskers]].
+
+Return to Nestral TGaza in East Freeport. Hand in: Rebby's Rat Whiskers'''
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.  (+10)
+* Your faction standing with [[Coalition of Tradefolk]] got better.   (+10)
+* Your faction standing with [[Carson McCabe]] got better.  (+5)
+* Your faction standing with [[Corrupt Qeynos Guards]]  got better.  (+5)
+* Your faction standing with [[The Freeport Militia]] got better.   (+5)
+</div>
+Unlike many faction numbers on the wiki this one appears to be spot on.
+
+{{exp}}
+
+You receive 7 copper pieces from Nestral TGaza.
+
+Nestral TGaza says, 'Thank you _____, You have done well.'
+
+== Related Quests ==
+
+* [[Note for Janam]]
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

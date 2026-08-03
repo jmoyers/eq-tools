@@ -1,0 +1,49 @@
+{{Kunark Era}}
+[[File:npc_dionin_needlespin.png|frame|Dionin Needlespin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Dionin Needlespin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:UNKNOWN}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+Open the loom in [[Dionin Needlespin]]'s house and you will find that it opens up into a 12-slot [[Sewing Kit]] complete with Combine button.
+
+You say, 'hail Dionin Needlespin'.
+
+: Dionin Needlespin sets down a needle and thread and a bolt of cloth.
+: Dionin says, "Greetings my friend.  I am the tailor of this outpost.  We have limited supplies.  I often have to preserve my tailoring supplies to [mend very large items]."
+
+You say, 'How do you mend very large items?'
+
+:Dionin Needlespin says 'I cannot use a sewing kit to mend items such as ship sail.  I must use my loom outside.  I have the only one available in Kunark, but only I am allowed to use it.  I can't have other breaking it.  I have heard there is an old one in an ancient and ruined library.  I am not sure where it goes from here.'
+
+Need all dialogues, faction hits if any, quest reward(s), /loc of quest mobs and objects, details about the rest of the quest.
+
+===Notes===
+* Kaesora has a loom near the Backyard and [[Reaver of Xalgoz]] room.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

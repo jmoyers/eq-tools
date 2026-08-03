@@ -1,0 +1,114 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_ulkar_jollkarek.png|frame|Ulkar Jollkarek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Ulkar Jollkarek]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+Ally faction is required for all Kael armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Circlet of the Invoker
+|Robe of the Invoker
+|Sleeves of the Invoker
+|Bangle of the Invoker
+|Gloves of the Invoker
+|Pants of the Invoker
+|Boots of the Invoker
+}}
+
+== Checklist ==
+Turn-ins to [[Ulkar Jollkarek]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Circlet of the Invoker]]
+:*[[Ancient Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Robe of the Invoker]]
+:*[[Ancient Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Sleeves of the Invoker]]
+:*[[Ancient Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Bangle of the Invoker]]
+:*[[Ancient Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Gloves of the Invoker]]
+:*[[Ancient Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Pants of the Invoker]]
+:*[[Ancient Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Boots of the Invoker]]
+:*[[Ancient Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Ancient silk armor is dropped randomly in the West Wing (Dragon Faction) inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you a cap if you bring him an [[Ancient Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you a robe if you bring him an [[Ancient Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you some sleeves if you bring him a pair of [[Ancient Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you a wristband if you bring him an [[Ancient Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you some gloves if you bring him three a pair of [[Ancient Silk Gloves]] and [[Crushed Topaz]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you some leggings if you bring him a pair of [[Ancient Silk Pantaloons]] as well as three [[Nephrite]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Ulkar promises to make you some boots if you bring him a pair of [[Ancient Silk Boots]] and a trilogy of [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Wizard Quests]]
+[[Category:Kael Armor Quests]]

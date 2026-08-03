@@ -1,0 +1,105 @@
+{{Classic Era}}
+[[File:npc_a_spirit.png|frame|a spirit]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[a spirit]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Cazic Thule]]
+|-
+! ''' Related NPCs: '''
+| [[Disciple Okarote]], [[Ridossan the Unliving]], [[a lizard ritualist]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Soulfiend Lance}}
+</li></ul>
+
+== Walkthrough ==
+
+''Just to the south of the Kejekan Village in a small grassy area with two trees spawns [[a spirit]] (470, -39). This spirit is a level 1 shadow knight type creature that is factioned with the [[Heretics]] of Paineel.''
+
+You say, 'Hail, a spirit'
+
+: a spirit flares brightly as you attempt to speak with it. By listening very closely you're barely able to make out it's frantic whispering. It keeps referring to one of the Kejekans, one that apparently slew him as he attempted to cleanse the land of them. It wants nothing more than to destroy who killed him, but it cannot in this [form]. 
+
+You say, 'What form?'
+
+: a spirit flares brightly again as it explains there isn't enough time for it to explain. It then  begins to whisper again, telling you that it commands you to aid it in it's revenge. You make out, through the barely audible whispering, that if you do help it, you will be rewarded. 
+
+You say, 'I will help you get revenge'
+
+: a spirit whispers that he will need to become whole again before he can defeat the fool animal that slew him. The spirit admits to one mistake before coming here to wipe the Kejekans. In an earlier campaign, he lost a very powerful weapon. That weapon would enable him to take on a form likened to his former self. If you return this weapon to the spirit, and then help him to defeat his enemy, the reward will be yours. 
+
+You say, 'What earlier campaign?'
+
+: a spirit seems hesitant to go into details and reacts harshly when asked further. He does say that he went to enlist an army of lesser beings to do it's bidding, but they refused. The spirit scoffs and says they believed the lord they shared favored them more than it. It goes on, explaining their utter foolishness and eventual demise in great detail. 
+
+'''Go to the [[Cazic Thule|Temple of Cazic Thule]] and slay [[a lizard ritualist]] that spawns on the small pyramid in the maze. Loot from him the [[Grimy Lance]].''' {{Item Lore| you sense a hidden power within}}.
+
+'''Return to [[Stonebrunt]] and give the Grimy Lance to a spirit.'''
+
+: a spirit says, 'Yes, the lance!' and begins to glow as it draws power from the lance, which now floats in mid air next to the spirit. The form of the spirit expands and takes on a humanoid shape. The air itself then seems to condense about the spirit as bits of matter appear within the glowing form. The bits soon take the shape of bones and ropes of muscle. Within minutes, an emaciated Erudite male stands before you. Despite his frail appearance, he stands upright and strong, a fierce red light burning in his eyes.'
+
+{{YouGainExperience}}
+
+''You receive an [[Idol of Fear]].''
+
+: Ridossan the Unliving gazes upon his lance and begins to laugh maniacally. He says, 'AH HAH! I am corporeal once more! I cannot hold this form for long, but it will be long enough for me to rip open that flea brothel and... well, I won't spoil it for you, heheheheh. Come! Assist me in the attack on the Kejekan village! The one that wears the iron beads must die at my hands and NO OTHER! Just make sure I get to him and you will be rewarded.'
+
+''Ridossan the Unliving begins running up to the Kejekan village.''
+
+: Ridossan the Unliving says 'Kejekan! You smell it? That's the smell of death!'
+
+'''Once inside the village, Ridossan runs and stands before [[Disciple Okarote]]. Kill him to exact Ridossan's revenge.''' 
+
+''Ridossan the Unliving may despawn during the fight, but his ghost will spawn after the death of Okarote:''
+
+: Ridossan the Unliving says 'He's escaped. I've failed.' Ridossan suddenly collapses into a pile of dust and is gone.'
+
+You have slain Disciple Okarote!
+
+: Disciple Okarote says, 'You may have slain me, but your conscience will slay you in the end, and it will be a hundred times more painful.'
+
+<div class='facblock'>
+* Your faction standing with [[Kejek Village]] got worse.
+* Your faction standing with [[Peace Keepers]] got worse.
+</div>
+
+''[[Ghost of Ridossan]] spawns.''
+
+: Ghost of Ridossan says, 'I will soon move on from this world to meet my ultimate fate. But before I go, I must reward the stranger that assisted me. Hand me the idol I gave you and you will be rewarded.'
+
+''The ghost will despawn in roughly one minute, so move quickly!''
+
+'''Give [[Ghost of Ridossan]] the [[Idol of Fear]].'''
+
+: Ghost of Ridossan takes the idol into his spectral hand and shoves the lance into your arms. After letting go of the lance, the ghost immediately begins to fade away. Before it is gone completely, it looks into your eyes and says, 'Suffer.'
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse. 
+</div>
+{{YouGainExperience}}
+
+''You receive [[Soulfiend Lance]].''
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]
+[[Category:Shadow Knight Quests]]

@@ -1,0 +1,63 @@
+{{Velious Era}}
+[[File:npc_gkrean_prophet_of_tallon.png|frame|Gkrean Prophet of Tallon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Gkrean Prophet of Tallon]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Book of Tactics}}
+</li><li> {{:Bracelet of Sacrifice}}
+</li><li> {{:Circlet of Tallon}}
+</li><li> {{:Gauntlets of Iron Tactics}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'hail Gkrean Prophet of Tallon'
+
+: Gkrean Prophet of Tallon says 'You have entered the sacred temple of Tallon Zek. This is the Temple of Tactics, where we teach what must be done to achieve goals in the most efficient manner. 
+
+You say, 'will you teach me?'
+
+: Gkrean Prophet of Tallon says 'I cannot teach one of your kind the arts of war.  I must teach the other Kromzek at this time.  If you were to serve the Temple of Tactics I might consider giving you a few words of wisdom. 
+
+You say, 'I will serve the temple of tatics'
+
+: Gkrean Prophet of Tallon says 'The great father of war, Rallos Zek, wishes the destruction of the inferior race known as the Coldain.  As the high priest of Tallon Zek, I see that they use great tactics to evade destruction.  Find the ones who teach these tactics to the other Coldain and bring back the books that contain the ancient Coldain tactics and strategies.  Do not waste my time without a scroll or book that those tiny beasts hold.
+
+'''There seem to be several books of tactics that drop randomly from Coldains.  It may be that each gives a set of rewards, or that the rewards are from a random table for any given book.'''
+
+Here are the ones I know:
+
+* [[Brell's Divine Strategy]] - resulted in the [[Bracelet of Sacrifice]] , [[Gauntlets of Iron Tactics]] , [[Book of Tactics]] or [[Circlet of Tallon]]
+
+* [[War Tactics of the Frostreavers]] gets you a [[Book of Tactics]] and faction.
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+''Need all dialogues (these are transcripts), faction hits, items that work and list of corresponding rewards.''
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

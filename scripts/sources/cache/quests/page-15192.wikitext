@@ -1,0 +1,399 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:npc_drill_master_vygan.png|frame|Drill Master Vygan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Drill Master Vygan]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| [[Warrior]] (Iksar)
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Partisan's Pike}} (#0)
+</li><li> {{:Militia's Pike}} (#1)
+</li><li> {{:Footman's Pike}} (#2)
+</li><li> {{:Soldier's Pike}} (#3)
+</li><li> {{:Trooper's Pike}} (#4)
+</li><li> {{:Legionnaire's Mancatcher}} (#5)
+</li><li class='grayout'> {{:Champion's Mancatcher}} (#6) - '''NOT Classic - Quest finished in Gates of Discord'''
+</li><li class='grayout'> {{:Warlord Mancatcher}}    (#7) - '''NOT Classic - Quest finished in Gates of Discord'''
+</li><li class='grayout'> {{:Pride of the Legion}} (#8) - '''NOT Classic - Quest finished in Gates of Discord'''
+</li></ul>
+
+== Walkthrough ==
+
+=== Partisan's Pike (#0) ===
+
+Hand in your note to [[Drill Master Vygan]].
+
+: Drill Master Vygan says 'I see they have begun to draft younger broodlings? Hmmph!! No matter. We Drill Masters shall make a warrior of you. Here is your partisan's pike and some coin as your wages. Be sure that you begin you training in blacksmithing and report to the other Drill Masters for any other tasks they may have for you. Let them know you are a [partisan of Cabilis]. Perhaps soon you shall be rewarded the [militia pike]. 
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+=== Militia's Pike (#1) ===
+
+You say, 'Hail, Drill Master Vygan'
+
+: Drill Master Vygan says 'I am a Drill Master of the Legion of Cabilis. I have no time for idle chitchat. Be off if you were not summoned to this fortress! Find that guild which was chosen for you as an egg.'
+
+You say, 'What militia pike?'
+
+: Drill Master Vygan says 'The pike is the prime weapon of Cabilis warriors. It can be upgraded, too, such as from the partisan pike to the militia pike and beyond. All these pikes may be slung on one's back when your hands are needed for other pursuits. To upgrade a pike is something that is learned, but it can never be performed without a [geozite tool]. Do you [desire to upgrade the partisan pike]?'
+
+You say, 'I desire to upgrade the partisan pike'
+
+: Drill Master Vygan says 'It seems as though a traitor is among our people. Someone has smuggled shackle keys to the slaves. The froglok slaves have been escaping into the swamplands and there we can hear the whistle of their contact who escorts them to freedom. We must put a stop to this! I desire three things. Your partisan pike, the head of the Iksar traitor and the whistle of the escort. Bring these to me and I shall give you the militia pike.'
+
+'''Drill Master Vygan wants you to find the traitor who is helping the froglok slaves escape, along with his froglok accomplice. You'll need to head to the Swamp of No Hope first, and look for "a froglok escort" or [[Froglok Escort]] and kill it. They can be found near the newbie area, usually on the first island South of the city along the road.'''
+
+: a froglok escort says 'Grripp.. Must not interfere with my mission!! Ribbit.'
+
+You have slain a froglok escort!
+
+a froglok escort's corpse says 'Gcroooakk.. I have failed.. Unghhh.'
+
+* --You have looted a [[Bixie Berry Pie]].--
+* --You have looted a [[Froglok Escort Fife]].--
+
+'''You now have the whistle that the Drill Master speaks of, and a new clue: a Bixie Berry Pie. If you go to the bakers near the bank in East Cabilis, you'll find a Klok that mentions pies. Talk to him about it.'''
+
+: [[Klok Unlar]] wipes flour from his hands and turns to greet you. 'Welcome! Please look over my many treats. Do not think of the coin you shall spend. Heavy coin buys the finest and sweetest of treats. Feel free to ask me about any of the rare pies you see as I can tell you exactly how I make them.'
+
+You say, 'What bixie berry pie?'
+
+: Klok Unlar says 'Bixie berry pie?!! It is no treat and is poisonous to the Iksar. We use it to keep our froglok slaves nourished. My apprentice baker, Bugrin, bakes them and delivers them to the slaves. Only he has access to the bixie berry pie recipe. All the pies are eaten by the slaves. If you think you have one, you must be mistaken. Let me see it if you believe you have one.'
+
+: Klok Unlar breaks open the crust of the pie. 'Wait! What is this? A device of some kind? It looks kind of like some sort of lockpick. BUGRIN!! Get in here and answer some questions at once!!'
+
+'''Just outside the Klok's shop [[Bugrin the Gatherer]] will spawn. You must get outside and kill him fast, as he will try to run away (very quickly).'''
+
+: Bugrin the Gatherer says 'You will never take me alive!!'
+
+You have slain Bugrin the Gatherer!
+
+Bugrin the Gatherer's corpse says 'hisss.. You will never stop the.. Radiant.. Green..'
+
+* --You have looted a An [[Iksar Head]].--
+
+'''Now that you've looted his head, you have what the Drill Master wants. Take the "An Iksar Head", "Froglok Escort Fife", and your Partisan Pike to Drill Master Vygan and turn them in.'''
+
+: Drill Master Vygan says 'You have perfomed just as expected. I bestow upon you the rank of militiaman. Here is your new pike. Past this, you shall require the [geozite tool] to upgrade your future pikes and mancatchers. We see much promise in you, militiaman. Go forth to serve the realm.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+Congratulations, you have your Militia Pike!
+
+== Footman's Pike (#2) ==
+
+You say, 'Hail, [[Drill Master Kyg]]'
+
+: Drill Master Kyg says 'Welcome. Welcome!! Time to train. Time to fight. Time to serve the Iksar Empire. You will need weapons. I have the [footman pike] for all new recruits to earn.'
+
+You say, 'what footman pike?'
+
+: Drill Master Kyg says 'A footman pike is what you need. A footman pike is what you get, but earn it you will. You must [slay many beasts] to prove to us that you are a true warrior. Fail and you will be exiled to live with the Forsaken.'
+
+You say, 'I will slay many beasts'
+
+: Drill Master Kyg says 'Yes. You will slay or you will be slain. Take this footman's pack and fill it you will. Fill it with [weapons of our foes]. When all are combined, the full footman's pack shall be returned to me along with your militia pike. Do this and earn your footman pike and then we may have a true mission for you.'
+
+You say, 'what weapons of our foes?'
+
+: Drill Master Kyg says 'Yes. You need to know the weapons required. Fill the pack with javelins. Froglok bounder and goblin hunter javelins. Two of each.'
+
+'''You receive a "Footman's Pack" (4-slot container).'''
+
+'''Drill Master Kyg has a mission you need to complete if you want to get your Footman's Pike. He wants you to find four javelins, two from [[a froglok bounder|froglok bounders]] (found near the middle of the Swamp of No Hope) and two from [[a goblin hunter|goblin hunters]] (found in the middle of the valley leading to the lake in the Lake of Ill Omen).'''
+
+'''About one out of four goblin hunters and froglok bounders will have the javelin. They will equip it if they have it. They are named [[Goblin Hunter Javelin]] and [[Froglok Bounder Javelin]]. Once you have all four, combine them in the Footman's Pack to receive "Full Footman's Pack".'''
+
+'''Return to Drill Master Kyg and hand in your Full Footman's Pack and your Militia Pike.'''
+
+: Drill Master Kyg says 'Kyg knew you could do it. You will make a fine legionnaire some day but, for now, you shall be a footman. Take the footman pike head plans. Forge the footman's pike. Do so, and then you may have an audience with the War Baron on the subject of his [Memory of Sebilis].'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You will have received [[Footman Head Plans]]. You now need to forge your Footman's Pike. Go outside the fort near the forge and find Weaponsmith Grugl. He can tell you how to make your Footman's Pike.'''
+
+You say, 'what footman's pike?'
+
+: Weaponsmith Grugl says 'To forge a footman pike requires skill as well as an iron rod, forging hammer and a footman pike head. To forge the pike head you will need a geozite tool, raw pike head and petrified redwood if the footman pike head plans are yours.'
+
+'''Buy a [[Raw Pike Head]], [[Forging Hammer]], and an [[Iron Rod]] from [[Weaponsmith Grugl]].'''
+
+'''In a forge, combine "Raw Pike Head", "Footman Head Plans", [[Petrified Redwood]] (foraged in Warslik's Woods or dropped from succulents in The Overthere), and your [[Geozite Tool]] (obtained by a quest from Drill Master Vygan). You'll receive [[Footman's Pike Head]] (blacksmithing, 15 trivial). If you fail you'll receive your Geozite Tool and your Footman Head Plans back.'''
+
+'''You then need to combine an [[Iron Rod]], [[Forging Hammer]], and your [[Footman's Pike Head]] in the forge to obtain your Footman's Pike. If you fail the combine you'll receive your Footman's Pike Head back (trivial is 21).'''
+
+Congratulations, you've received your [[Footman's Pike]]!
+
+== Soldier's Pike (#3) ==
+
+You say, 'Hail, War Baron Eator'
+
+: War Baron Eator turns to you and snorts in anger. Some mucus lands on your cheek. 'Troopers! I thought I ordered you to keep all new recruits away from this chamber! Go, child. The War Baron of Cabilis has no time for games. See this intruder out!!'
+
+You say, 'What memory of Sebilis?'
+
+: War Baron Eator takes a step back and thinks to himself. Phlegm dribbles off his lips. 'The Memory of Sebilis. Kept within my personal chambers. They have been taken. Taken by some croakin' Forsaken no doubt!! You have been sent to me because you show excellent prowess. Find my Memory and bring it to me with your footman's pike.'
+
+'''Seek out Klok Poklon in the Tink and Babble in East Cabilis.'''
+
+You say, 'Hail, Klok Poklon'
+
+: Klok Poklon says 'Greetings, thirsty traveler. Pull up a stool and lay yer copper down. It's time to drink and be merry. Just don't get too merry or I will have to call the troopers.'
+
+You say, 'What memory of Sebilis?'
+
+: Klok Poklon takes a sip of Legion Lager. 'Puhh...lease!! That's the little trophy the War Baron brought back from Sebilis. He got it stolen from him by some thieves!! I say it was the [Steelhead gang]. They were waltzing in and out of Cabilis like it was a blasted public vomitorium!!'
+
+You say, 'What steelhead gang?'
+
+: Klok Poklon picks some flesh from between his teeth. 'The Steelhead gang were a band of Forsaken thieves. No one knew this!! They used to walk around here like they were rebirthed!! They used to frequent my place and get involved in head butt contests. Whew!! I tell ya, the only way to crack their skulls is with a forging hammer!! Heheh!!'
+
+'''The Memory of Sebilis is a set of three gems stolen by the Steelhead Gang. They are now dead and are roaming the basement of Kurn's Tower as [[thick boned skeleton]]s. They drop "[[An Emerald]]" (identifies as "The Gardens of Sebilis"), "[[A Sapphire]]" (identifies as "The Pools of Sebilis"), and [[Thick Iksar Skull]] (identifies as "a crimson gem is stuck inside"). Each different spawn drops a different item.'''
+
+'''Once you get all three, you'll need to remove the last gem from the skull. As Klok Poklon hinted, you'll need to combine the "Thick Iksar Skull" in a forge with a [[Forging Hammer]] buyable from [[Weaponsmith Grugl]]. Upon success you will receive a LORE Ruby (identifies as "The Blood of Sebilis").'''
+
+Note that all three gems are lore and tradeable.
+
+'''Take all three gems ([[An Emerald]], [[A Ruby]], [[A Sapphire]]) and your Footman's Pike to War Baron Eator in the fort in East Cabilis. Hand them in.'''
+
+: War Baron Eator gulps down a wad of phlegm. 'My memory has returned! Boneripper! You are no footman. I grant you the rank of soldier. Go and forge your weapon. Do not return to me until you become a [brave trooper of the empire].'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive "Soldier Head Plans". You now need to forge your Soldier's Pike. Find Weaponsmith Grugl outside the fort in East Cabilis.'''
+
+You say, 'How do I forge a soldier pike?'
+
+: Weaponsmith Grugl says 'To forge a soldier pike requires skill, not to mention an iron rod, a forging hammer plus a soldier pike head. To forge the pike head, you will need a geozite tool, raw pike head and frontier fools gold as well as the soldier pike head plans.'
+
+'''Buy a [[Raw Pike Head]], [[Forging Hammer]], and an [[Iron Rod]] from Weaponsmith Grugl.'''
+
+'''In a forge, combine "A Raw Pike Head", [[Soldier Head Plans]], [[Gold Nugget]] (foraged in Frontier Mountains - there are two, you want the one that identifies as "Frontier Fool's Gold), and your [[Geozite Tool]] (obtained by a quest from Drill Master Vygan). You'll receive "Soldier's Pike Head" (blacksmithing, 15 trivial). If you fail you'll receive your Geozite Tool and your Soldier Head Plans back.'''
+
+'''You then need to combine an "Iron Rod", "Forging Hammer", and your "Soldier's Pike Head" in the forge to obtain your Soldier's Pike. If you fail the combine you'll receive your Soldier's Pike Head back (trivial is under 63).'''
+
+Congratulations, you have your [[Soldier's Pike]]!
+
+== Trooper's Pike (#4) ==
+
+'''Seek out Drill Master Kyg in the fort in East Cabilis.''' Note: Missing the clue that leads someone to ask Drill Master Kyg about Footman Moglok
+
+You say, 'What about Footman Moglok?'
+
+: Drill Master Kyg says 'My dear friend, Warlord Hikyg of the Swamp Gate has encountered some difficulty with a Trooper Moglok. He requested that I find a brave soldier to take charge of the situation. Are you willing to [assist Warlord Hikyg]?'
+
+You say, 'I will assist Warlord Hikyg'
+
+: Drill Master Kyg says 'Good. Take this note to Footman Moglok of the swamp garrison. He shall instruct you on your mission.'
+
+'''You receive "[[A Sealed Note]]" which reads: 
+
+: 'Trooper Moglok, I have sent you this skilled Footman.  Use the Footman in any way you wish.  Hopefully he will allow you to complete your mission for Warlord Hikyg. Drill Master Kyg''''
+
+'''Find [[Footman Moglok]] in the Swamp of No Hope. He's sitting in a corner of one of the buildings near the East Cabilis zone.'''
+
+You say, 'Hail, Footman Moglok'
+
+: Footman Moglok looks at you with sorrowful eyes and wipes his dripping nose. 'Woe is me. I am nothing more than a lowly footman. And spare me the smart remarks - 'Moglok the Froglok' - I have heard all the jokes.'
+
+'''Hand him the note.'''
+
+: Footman Moglok beams a big smile. 'Oh, joy! They have finally sent someone to help me on my mission! I was once a trooper, but I got demoted. I failed to bring Warlord Hikyg the three heads of the Gubbnubb triplets. Here is one head, but we need them all. Track the other two down and take all three heads and your soldier pike to Warlord Hikyg. I quit this outfit!!
+
+'''You receive "A Froglok Head", which identifies as "Head of Narsh". You now need to seek out the other two heads.'''
+
+'''The second head can be found in the Swamp of No Hope, off of [[a froglok outlander]] at location 830, -2880. This is near the waterfall leading to the Trakanon's Teeth zoneline. There are two static spawns there. The one to the West is always a "froglok outlander" and drops a [[Froglok Head]] (identifies as "Head of Barsh") and a Innothule Mushroom.'''
+
+'''The third head can be found in three different zones:'''
+
+* The easiest place to find it is from the Swamp of No Hope. The spawn next to the froglok outlander that drops the Head of Barsh can rarely spawn another "froglok outlander". It's somewhat of a rare spawn and the common spawn is a "froglok gaz knight". You'll know that you have the right PH as killing the PH gives you negative "Frogloks of Guk" faction (as opposed to the normal "Frogloks of Kunark"). This outlander will drop "A Froglok Head" (identifies as "Head of Flindle") and a "Ornate Tin Box" (use unknown).
+* The outlander that drops the Head of Flindle can also be found in Innothule Swamp (as a roamer that has an unknown PH - possibly "a froglok forager") and in Upper Guk (near location 1500, 400). Both of these drop the head and the box.
+
+'''Once you have all three heads, go to Warlord Hikyg and turn in the three heads and your Soldier's Pike.'''
+
+: Warlord Hikyg hands you plans for a trooper's pike head. Congratulations. You are now a trooper of the Legion of Cabilis. Now you may fight with honor and a mighty weapon.
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive [[Trooper Head Plans]]. Now seek out Weaponsmith Grugl in the fort in East Cabilis to learn how to forge your Trooper's Pike.'''
+
+You say, 'How do I forge a trooper pike?'
+
+: Weaponsmith Grugl says 'To forge a trooper pike requires much skill! You also need an iron rod, forging hammer plus a trooper pike head. To forge the pike head, you will need the trooper pike head plans, a geozite tool, raw pike head and a radiant meteorite.'
+
+'''Buy a [[Raw Pike Head]], [[Forging Hammer]], and an [[Iron Rod]] from Weaponsmith Grugl.'''
+
+'''In a forge, combine "A Raw Pike Head", "Trooper Head Plans", [[Radiant Meteorite]] (foraged in the Burning Woods - tradeable) and your [[Geozite Tool]] (obtained by a quest from Drill Master Vygan). You'll receive "Trooper's Pike Head" (blacksmithing, 15 trivial). If you fail you'll receive your Geozite Tool and your Trooper Head Plans back.'''
+
+'''You then need to combine an "Iron Rod", "Forging Hammer", and your "Trooper's Pike Head" in the forge to obtain your Trooper's Pike. If you fail the combine you'll receive your Trooper's Pike Head back (trivial at 74, not trivial at 63 blacksmithing).'''
+
+Congratulations, you've received your [[Trooper's Pike]]!
+
+== Legionnaire's Mancatcher (#5) ==
+
+Seek out [[War Baron Eator]] in the fort in East Cabilis.
+
+You say, 'I am a brave trooper of the empire'
+
+: War Baron Eator says 'So you are a trooper? Word of your deeds has been spreading through the legion. If you truly wield the pike of a trooper, then go and serve the garrisons of swamp, lake and woods. Report to the Warlord and tell him you are a [trooper reporting for duty]. Their recommendations and your trooper pike shall earn you the rank of legionnaire.'
+
+'''You need to seek out the three Warlords, and perform a task for them to get their recommendation to promote you to the rank of Legionnaire. Each is in the city area of the Lake of Ill Omen, the Swamp of No Hope, and Warslik's Woods.'''
+
+'''1. Go to [[Warlord Geot]] in the Lake of Ill Omen.'''
+
+You say, 'Hail, Warlord Geot'
+
+: Warlord Geot says 'Greetings!! You look like an adventurer. I have a bit of a problem with which you might be able to help. You see, there have been reports of sarnak hatchlings near the lake. I do not know why they are here, but I do know we need them exterminated. Here is the deal.. You bash them good and return their brains to me. For every four brains, I shall reward you.'
+
+You say, 'I am a trooper reporting for duty'
+
+: Warlord Geot says 'Very good to have you on board, Trooper _____! We have had reports of sarnak legionnaires attacking caravans. I shall require you to find these sarnak legionnaires. Take this pack. Fill and combine it with as many of their brains as sill fit inside. Return the full pack to me and I shall consider you for a promotion.'
+
+'''You receive a "Lake Garrison Pack", a four slot container.'''
+
+'''Find and kill Sarnaks named [[a Sarnak legionnaire]]. They will each drop a [[Tattooed Sarnak Head]], which identifies as "Head with Legionnaire Tattoo". Get four of them and combine them in the Lake Garrison Pack to receive an item named "Four Sarnak Heads". Hand this in to Warlord Geot.'''
+
+: Warlord Geot says 'Very good. I cannot see any reason a warrior like you should waste their time on the patrols of a trooper. I shall recommend you for a promotion. I hope the War Baron agrees.'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+'''You receive a "Legionnaire Recommendation" (identifies as "Lake Garrison"). 2. Now go to [[Warlord Vyzer]] in Warslik's Woods.'''
+
+You say, 'Hail, Warlord Vyzer'
+
+: Warlord Vyzer says 'Greetings, small one! You should not waste your time in the safety of the troopers' patrols. Go forth into the land and earn your stripes in battle. Become a greater asset to the Iksar empire.'
+
+You say, 'I am a trooper reporting for duty'
+
+: Warlord Vyzer says 'Welcome to my garrison, Trooper _____. Lucky for you that you do not serve the inferior swamp garrison. They lose more troopers than any legion unit. You have come just in time. We need you to take this pack and fill it with goblin warlord warbeads. Combine the beads in the pack and return it to me.'
+
+'''You receive a "Woods Garrison Pack", a four slot container.'''
+
+'''Find and kill [[goblin warlord]]s in either the Lake of Ill Omen or Warslik's Woods. They each drop [[Goblin Warlord Warbeads]]. Combine four of them in the Woods Garrison Pack to receive an item named "Four Warbeads" (identifies as "Full Warlord Warbead Pack"). Hand this in to Warlord Vyzer.'''
+
+: Warlord Vyzer says 'Great job, Trooper _____. Such a warrior would serve the empire better as a legionnaire and not a trooper. I shall recommend you for the rank of legionnaire.'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+'''You receive a "Legionnaire Recommendation" (identifies as "Woods Garrison"). 3. Now go to [[Warlord Hikyg]] in the Swamp of No Hope.'''
+
+: Warlord Hikyg says 'What business do you have speaking to an Iksar warlord? Be gone, before you find yourself served as my evening meal! Go to Captain Nedar if you wish to assist my garrison. Fool.'
+
+You say, 'I am a trooper reporting for duty'
+
+: Warlord Hikyg says 'It is about time they sent new troopers for my garrison!! This is the toughest garrison in Kunark!! And you're going to help prove it. The legion needs to get a hold of some new frog shields called Krup warrior guards. You're going to take this pack and fill it with not one, but four!! When you can return a full, combined pack to me, maybe you will show me that you're not as weak as you look!!'
+
+'''You receive a "Swamp Garrison Pack", a four slot container.'''
+
+'''Find and kill [[froglok krup guard]]s in the Swamp of No Hope. They only spawn in Krup, the frog city, and are a fairly rare spawn. They will each drop a [[Krup Warrior Guard]]. Combine four of those in the Swamp Garrison Pack to receive an item named "Four Crushed Shields" (identifies as "Full Krup Shield Pack"). Hand this in to Warlord Hikyg.'''
+
+: Warlord Hikyg says 'What?!! You crushed all the shields!! You croak-faced skulking brute!! You don't deserve to be in my garrison!! I am going to recommend you for a promotion in hopes that you will be sent to hunt dragons and meet your end!'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+'''You receive a "Legionnaire Recommendation" (identifies as "Swamp Garrison"). Take all three recommendations to War Baron Eator and turn them in along with your Trooper's Pike.'''
+
+: War Baron Eator takes away your pike and hands you plans not for a pike head, but for the crown of another polearm. 'It is time to wield the weapon of a [true warrior of the legion]. You have done well, legionnaire _____!'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive [[Legionnaire Crown Plans]]. Now seek out Weaponsmith Grugl in the fort in East Cabilis to learn how to forge your Legionnaire's Mancatcher.'''
+
+You say, 'What legionnaire mancatcher?'
+
+: Weaponsmith Grugl says 'To forge a legionnaire mancatcher, a blacksmith of great skill would need the steel rod, forge hammer and the forged legionnaire mancatcher crown. That crown is forged with the geozite tool, legionnaire crown plans, a raw crown and a peridot.'
+
+'''Buy a a [[Mancatcher Crown]], [[Forging Hammer]], and a [[Steel Rod]] from [[Weaponsmith Grugl]]. Purchase a [[Peridot]] (gem) from the gem merchants near the bank.'''
+
+'''In a forge, combine "A Raw Mancatcher Crown", "Legionnaire Crown Plans", "Peridot", and your [[Geozite Tool]] (obtained by a quest from Drill Master Vygan). You'll receive [[Legionnaire's Mancatcher Crown]] (blacksmithing, 15 trivial). If you fail you'll receive your Geozite Tool and your Legionnaire Crown Plans back.'''
+
+'''You then need to combine an "Steel Rod", "Forging Hammer", and your "Legionnaire Mancatcher Crown" in the forge to obtain your Legionnaire's Mancatcher (blacksmithing, 170? trivial). If you fail the combine you'll receive your Legionnaire's Mancatcher Crown back.'''
+
+Congratulations, you've received your [[Legionnaire's Mancatcher]]!
+
+== Subsequent Pikes ==
+
+Were not finished/working pre-Luclin, and so possibly never be implemented on EQL.
+
+== Related Quests ==
+
+* [[Geozite Tool Quest]] results in the [[Geozite Tool]], needed for Pike #2 and onwards.
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Warrior Quests]]

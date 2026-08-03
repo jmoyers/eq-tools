@@ -1,0 +1,168 @@
+[[File:npc_jusean_evanesque.png|frame|Jusean Evanesque]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Jusean Evanesque]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Anehan Treol]], [[Behroe Dlexon]], [[Leanon Ruksey]], [[Quinon Hulleaf]]
+|}
+
+== Reward ==
+
+<ul><li>Coin</li></ul>
+
+== Walkthrough ==
+
+Your Location is 554.97, -122.60, 3.18
+
+You say, 'Hail, Jusean Evanesque'
+
+: Jusean Evanesque says 'Why, hello there, ______! I am Jusean, loyal member of the League of Antonican Bards. You look like the reliable sort, maybe you could help me out for a bit, huh? It's about time for our field agents to turn in their [watch reports], and I need someone to go pick them up for me.'
+
+You say, 'What watch reports?'
+
+: Jusean Evanesque says 'We always have someone stationed on watch duty at the two main entries to the city to keep an eye on what is happening around Qeynos. We have [Anehan and Behroe] down at the docks, and [Leanon and Quinon] working the North Gate.'
+
+You say, 'Who are Anehan and Behroe?'
+
+: Jusean Evanesque says 'Here, if you take this to Anehan or Behroe down at the docks, and then return their report to me as soon as you can, I will give you a small reward.'
+
+You receive Jusean's Report Request (identifies as "Dock Watch Report Request").
+
+Your Location is -191.61, -130.41, 3.13
+
+You say, 'Hail, Behroe Dlexon'
+
+: Behroe Dlexon says 'Ah, greetings, ______! How are you this evening? Hopefully, you are faring much better than I. I'm stuck on the night watch here, and never get to see my lovely [Aenia]. Ah, she is so sweet. I wrote her this beautiful [ballad], but I fear she may never hear it.'
+
+Give him Jusean's Report Request.
+
+: Behroe Dlexon yawns and says, 'Oh, report time already again? Yeah, here ya go, ______. Be careful around here at night, I've been seeing some rough looking characters lurking about.'
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+You gain experience!!
+
+You receive Behroe's Report (identifies as "Behroe's Night Watch Report").  Bring it back to Jusean.
+
+: Jusean Evanesque says 'Good job. I hope Behroe wasn't sleeping on the job again when you talked to him. Hmm, the docks seem to be a hotbed of activity after the sun goes down. Thanks for your quick work, ______, here's a little cash for your efforts.'
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{exp}}
+
+You receive 11 copper from Jusean Evanesque.
+
+----
+
+Anehan Treol wanders between the docks and the [[Lion's Mane Inn]].
+
+Your location is 92.76, -117.63, 3.19
+
+You say, 'Hail, Anehan Treol.'
+
+: Anehan Treol says, 'Ah..______, was it? Yes, right, ______. Anyhow, my name's Anehan Treol, member of the Antonican Bards. Feel free to visit our humble guild house here in South Qeynos. It's called the Wind Spirit's Song and we often put on free shows there. I think you'd enjoy it. Anyway, nice chatting with you, and I hope to see you again soon.'
+
+Give him Jusean's Report Request.
+
+: Anehan Treol says, 'Oh, report time already? Yeah, here ya go, ______ - give my regards to Jusean!'
+
+You receive Anehan's Report.  Bring it back to Jusean.
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{exp}}
+
+: Jusean Evanesque says, 'Good job. I'll make sure to note Anehan's report in our journals. Thanks for your quick work. Here's a little cash for your efforts.'
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{exp}}
+
+You receive 10 copper from Jusean Evanesque.
+
+----
+
+You say, 'Hail, Jusean Evanesque'
+
+: Jusean Evanesque says 'Why, hello there, ______! I am Jusean, loyal member of the League of Antonican Bards. You look like the reliable sort, maybe you could help me out for a bit, huh? It's about time for our field agents to turn in their [watch reports], and I need someone to go pick them up for me.'
+
+You say, 'What watch reports?'
+
+: Jusean Evanesque says 'We always have someone stationed on watch duty at the two main entries to the city to keep an eye on what is happening around Qeynos. We have [Anehan and Behroe] down at the docks, and [Leanon and Quinon] working the North Gate.'
+
+You say, 'Who are Leanon and Quinon?'
+
+: Jusean Evanesque says 'Leanon is in charge of the day shift at the North Gates of Qeynos, and Quinon is stationed there during the night. Please take this to either of them, have them fill it out, and then return it to me as soon as you can.'
+
+You receive Jusean's Report Request (identifies as "North Gate Watch Report Request").
+
+You have entered North Qeynos.
+
+Leanon is on top of the wall, looking out over the gate. You have to go up the stairs.
+
+Your Location is 304.21, 127.41, 47.31
+
+You say, 'Hail, Leanon Ruksey'
+
+Leanon Ruksey says 'Ah, good day, friend. My name's Leanon Ruksey, loyal member of the League of Antonican Bards. Qeynos Chapter, of course. It's part of my job to keep up with the goings-on of the city, who's coming and going and all that. So we usually keep a man here and one at the docks. Anyway, nice chatting with you.  Be careful out there!'
+
+Give him the report request.
+
+Leanon Ruksey says 'Ah, hello there, ______. It's such a fine day out, wouldn't you say? Ah, reports are due in. Very well, here you go. Say hello to the fellows back at the Wind Spirit's Song for me. May you have many safe travels, my friend.'
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+You gain experience!!
+
+You receive Leanon's Report (identifies as "Leanon's Day Watch Report").  Bring it back to Jusean.
+
+: Jusean Evanesque says 'Ah, very good. I'll make sure to note Leanon's report in our journals. Here's a little something for your troubles, ______.'
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{exp}}
+
+You receive 10 copper from Jusean Evanesque.
+
+Need dialogues, faction hits, and quest items for Quinon.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

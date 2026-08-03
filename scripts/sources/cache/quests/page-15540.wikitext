@@ -1,0 +1,102 @@
+{{Classic Era}}{{cleanup}}
+[[File:Npc_kurne_rextula.jpg|frame|Kurne Rextula]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Kurne Rextula]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Qeynos|South Qeynos]], [[South Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Trumpy Irontoe]], [[Lord Grimrot]]
+|}
+
+== Reward ==
+
+<ul><li>?</li>
+</ul>
+
+== Walkthrough ==
+
+''After completing [[Drosco the Zombie (evil)]], [[Kurne Rextula]] mentions [a new task].''
+
+You say, 'What new task?'
+
+: Kurne Rextula says 'I have been working with a man named [[Lord Grimrot]]. We are attempting to raise an army of undead in the Plains of Karana. When the time is right, we shall attack from within as well as from beyond the walls of Qeynos. This army needs one more commander. I must find a Bloodsaber to [retrieve the commander].'
+
+You say, 'I will retrieve the commander.'
+
+: Kurne Rextula says 'I have searched for the appropriate man... [[Sir Lucan Dlere|Sir Lucan]] of Freeport, [[Field Marshal Ralem]], [[Marshal Anrey]] of Rivervale, even Commander [[Kane Bayle]]. Any of them would do, but they are either inaccessible or share a common goal with us. So I have decided Trumpy Irontoe is the one. Any former member of the [Irontoe Brigade] has a wealth of military strategies. Kill him and bring me his head. Kane will not be pleased, but, it must be done.'
+
+You say, 'What is the Irontoe Brigade?'
+
+: Kurne Rextula says 'The Irontoe Brigade was a legendary military unit hailing from the dwarven city of Kaladim. After a dangerous assault, where more than three quarters of the unit met their bloody fate, the brigade disbanded and left for parts unknown. In Fish's Bar, in Qeynos, you can find one of them, Trumpy Irontoe.'
+
+''Locate [[Trumpy Irontoe]] as specified and kill him.''  
+
+''You may have to kill him more than once to retrieve a Dwarf Head (identifies as "Trumpy's Head").''  
+
+You take the following faction hits:
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Kane Bayle ]] got worse.
+</div>
+{{exp}}
+
+The turn-in:
+
+: Kurne Rextula says 'Incredible!! You have slain one of the greatest warriors in Qeynos!! He must have been full of grog. No doubt he drank most of his skill away. Now I shall cast a spell and strip the flesh from his skull and.. Presto!! Take this skull to [[Lord Grimrot]] somewhere in the Plains of Karana. He will be in the center of a field of skeletons. If he is not there, wait for his return. He must return eventually.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+</div>
+{{exp}}
+
+''You receive a [[Dwarf Skull]] ([[Identify|identifies]] as "Trumpy's Skull"). Grimrot is located in South Karana, surrounded by some tough and dangerous skeletons.  You may have to wait a while for him to show up so be prepared to fight or hide.  The delivery of the skull will get you a decent amount of experience and gold, as well as an occasional nice item.''
+
+You say, 'Hail, Lord Grimrot'
+
+: Lord Grimrot says 'Welcome to my field of decay. Won't you be so kind as to attack me? I have need of more bodies to join my diseased legion. Try it, maybe you shall win and gain my trusty [Pestilence].'
+
+You say, 'What about your Pestilence?'
+
+: Lord Grimrot says 'My beloved scythe. Upon my death, my soul shall live withn her. Such is the pact.'
+
+''Presumably, this is where you give him the skull. (Please confirm)''
+
+Lord Grimrot judges you amiably -- what would you like your tombstone to say?
+
+: Lord Grimrot says 'The head for my commander. Let us see. I have a body ready for it. There. Hahahaha!! As for your fine work, take this. Also, I believe you can help me find my beloved [Arlena].'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+</div>
+{{exp}}
+
+You receive 2 gold from Lord Grimrot.
+
+''The following quest regarding Arlena's bones is broken, but is nonetheless documented on [[Lord Grimlot's Love]].''
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]

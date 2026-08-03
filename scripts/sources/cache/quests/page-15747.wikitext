@@ -1,0 +1,140 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_elaend_fe`dhar.png|frame|Elaend Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Elaend Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Icicle Circlet
+|Robe of Icicles
+|Icicle Sleeves
+|Icicle Bracelet
+|Icicle Gloves
+|Icicle Pantaloons
+|Icicle Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Elaend Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Icicle Circlet]]
+:*[[Tattered Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Robe of Icicles]]
+:*[[Tattered  Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Icicle Sleeves]]
+:*[[Tattered  Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Icicle Bracelet]]
+:*[[Tattered  Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Icicle Gloves]]
+:*[[Tattered  Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Icicle Pantaloons]]
+:*[[Tattered  Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Icicle Boots]]
+:*[[Tattered  Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+Elaend Fe`Dhar  is located in a room in the Skyshrine Tower TOP level. First room after you zone into the top after clicking on the SECOND orb. (The room has all 14 armor quest NPCs on Claws of Veeshan faction, he is first on the left side.)
+
+You say, 'Hail, Elaend Fe`Dhar'
+
+: Elaend Fe`Dhar says 'Greetings to you. I seek one who calls himself a wizard. What do you call yourself, manling?'
+
+You say, 'I am a wizard'
+
+: Elaend Fe`Dhar says 'Excellent. Are you sure enough of your skills to undertake my tasks?  If not, get out of my sight!'
+
+You say, 'My skills are enough to undertake your tasks'
+
+: Elaend Fe`Dhar says 'I thought so. One should never back down from a challenge. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar, and The Wakening Land. Tattered silk armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience, and faction.'''
+
+== Cap ==
+
+You say, 'What cap?'
+
+: Elaend Fe`Dhar says 'For you to receive my gift, I shall require a tattered silk turban and three crushed flame opals.'
+
+Return with a [[Tattered Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+You say, 'What robe?'
+
+: Elaend Fe`Dhar says 'This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds'
+
+Return with a [[Tattered Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Elaend Fe`Dhar says 'For these durable sleeves, you must fetch me a pair of tattered silk sleeves and a set of three flawed topaz.'
+
+Return with [[Tattered Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+You say, 'What wristbands?'
+
+: Elaend Fe`Dhar says 'The crafting of this wristguard requires that you bring me a tattered silk wristband and three crushed onyx sapphires.'
+
+Return with a [[Tattered Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Elaend Fe`Dhar says 'For this fine pair of gloves you must seek out and return to me three crushed topaz as well as a pair of tattered silk gloves'
+
+Return with [[Tattered Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Elaend Fe`Dhar says 'This pair of leggings will be yours provided you supply me with three nephrite and a pair of tattered silk pantaloons.'
+
+Return with [[Tattered Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Elaend Fe`Dhar says 'These supple boots shall be yours upon receipt of three crushed jaundice gems and a pair of tattered silk boots.'
+
+Return with [[Tattered Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Wizard Quests]]
+[[Category:Skyshrine Armor Quests]]

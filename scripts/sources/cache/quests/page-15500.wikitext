@@ -1,0 +1,67 @@
+[[File:npc_ghil_starn.png|frame|Ghil Starn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Ghil Starn]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Den Magason]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brown Leather Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest is initiated by talking to Ghil Starn in the Qeynos Thieves' Guild.''
+
+Ghil needs you to deliver a package to Den Magason, who is usually at the docks or in Mermaid's Lure.  After giving you the package, he asks that you help Den in anyway possible.
+
+Successfully delivering the package results in the following faction:
+
+<div class="facblock">
+* Faction improves with [[Merchants of Qeynos]].
+* Faction improves with [[Antonius Bayle]].
+* Faction improves with [[Coalition of Tradefolk]].
+* Faction improves with [[Guards of Qeynos]].
+* Faction lowers with [[Circle of Unseen Hands]] (strange). 
+</div>
+
+Den gives you the task of collecting some items for him. He is in need of:
+
+* [[Snake Scales]]
+* [[High Quality Bear Skin]]
+* [[High Quality Wolf Skin]]
+* [[Bat Fur]]
+
+When these items are returned, the same factions get hit, and a little gold is received.  He then gives you a note to return to Ghil. Returning this note gives the faction:
+
+<div class="facblock">
+* Faction improves with [[Circle of Unseen Hands]].
+* Faction improves with [[Corrupt Qeynos Guards]].
+* Faction improves with [[Kane Bayle]].
+* Faction lowers with [[Merchants of Qeynos]].
+* Faction lowers with [[Guards of Qeynos]].
+</div>
+
+You get some more cash, and a nice set of gloves (AC 1, +3 dex).
+
+[[Category:Quests]]
+[[Category:All Classes Quests]]
+[[Category:North Qeynos]]

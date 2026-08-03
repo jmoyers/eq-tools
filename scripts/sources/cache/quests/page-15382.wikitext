@@ -1,0 +1,69 @@
+{{Kunark Era}}
+[[File:npc_war_historian_kobl.png|frame|War Historian Kobl]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[War Historian Kobl]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Related NPCs: '''
+| ?
+|}
+
+== Reward ==
+
+<ul><li> {{:Illweed Parchment}}
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+War Historian Kobl may be found in the Warriors Guild at -596, -237.
+
+: You say, 'Hail War Historian Kobl'
+
+: War Historian Kobl says, 'You have come to learn, have you not? I have knowledge of importance to young warriors of the legion. Or perhaps you are a scribe seeking my [unique writing materials]!'
+
+: You say, 'What unique writing materials?'
+
+: War Historian Kobl says, 'You must be a scribe of sorts? Always glad to assist a talented youth. I make two things unique to Cabilis and important to any future scribe. I can create [blood ink] and [illweed parchment].'
+
+: You say, 'What blood ink?'
+
+: War Historian Kobl says, 'If blood ink is what you seek, only I can provide it. I use a unique blend prepared by my secret method. I can supply you with a vial of blood ink, but first you must fetch me four ingredients. I need globules of blood from certain creatures. I need globules from the carnivorous plants, leeches, and mosquitoes. I also need globules from the blood pit of the Tower of Death. Bring me these and be quick, or the blood will disintegrate.'
+
+: You say, 'What illweed parchment?'
+
+: War Historian Kobl says, 'If you wish to obtain a page of my illweed parchment, you only have to perform a simple task. Bring me four illweed reeds from the Lake of Ill Omen. You may find that the only way one can find illweed is to go fishing.'
+
+You can fish Illweed in the Lake of Ill Omen. Pack up your fishing pole and some bait.
+
+You offered 4 Illweed to War Historian Kobl.
+
+: War Historian Kobl says, 'That was easy enough. Here then is your page of illweed parchment. Don't waste it with silly limericks. Create a masterpiece.'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] has been adjusted by 3.
+* Your faction standing with [[Cabilis Residents]] has been adjusted by 1.
+* Your faction standing with [[Scaled Mystics]] has been adjusted by 1.
+* Your faction standing with [[Crusaders of Greenmist]] has been adjusted by 1.
+* Your faction standing with [[Swift Tails]] has been adjusted by 1.
+</div>
+
+You complete the trade with War Historian Kobl.
+
+You have completed achievement: Cabilis Quests - Illweed Parchment
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:East Cabilis]]

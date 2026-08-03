@@ -1,0 +1,225 @@
+{{Velious Era}}
+[[File:npc_ferjeneror.png|frame|Ferjeneror]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Mischief]]
+|-
+! ''' Quest Giver: '''
+| [[Ferjeneror ]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  {{:Deck of Spontaneous Generation}}
+<li> ... and many other items ([[#Rewards|see below]])
+</ul>
+
+== Part 1: Acquiring the Deck ==
+
+This quest is given by [[Ferjeneror]], but you can start in the Dining Room before moving on to the Hedge Maze.
+
+=== King Cod Card ===
+There is a level 1 ogre named [[Dinner]] on the table of the Dining Room. Kill Dinner to loot the [[King Cod Card]]. Be cautious when going to loot the card as there are two level 55 wizards perma-rooted to the chandelier above him. They are scowling to everyone and like to chain ice comets together. They cannot be hit by melee attacks and will not chase when aggroed. It's wise to use [[Harmony]] or [[Calm]] before entering, or simply moving very quickly.
+
+=== Colored Cod Cards ===
+Alternatively, you can [[Skill Fishing|fish]] in the castle moat for the four colored cod cards: {{:Black Cod Card}}, {{:Blue Cod Card}}, {{:Red Cod Card}}, and {{:White Cod Card}}.  You can turn these four cards in instead of the {{:King Cod Card}}.
+
+=== Reward ===
+After looting the card(s) head to the flower maze and turn in your King Cod Card or all four colored cod cards to the sphinx named [[Ferjeneror]] to get your:
+
+<ul><li> {{:Deck of Spontaneous Generation}}
+</ul>
+
+== Part 2: Using the Deck of Spontaneous Generation ==
+
+Throughout the Plane of Mischief, various Mobs drop [[:Category:Plane_of_Mischief_Cards|playing cards]].  [[:Category:Plane_of_Mischief_Cards#Where_Can_Cards_be_Found.3F|Collect these cards]] and combine them in the {{:Deck of Spontaneous Generation}}, with each combination generating a different reward.
+
+=== Rewards ===
+
+Note that every item here except the {{:Black Flower of Functionality}}, {{:Green Flower of Functionality}}, and {{:White Flower of Functionality}} require at least one Throne card.
+
+===== Armor of Distraction =====
+
+These [[Armor of Distraction|armor pieces]] are used in two different ways (together) to create [[Plane of Mischief Armor]].
+
+First, they can be used in the [[The Gift Box]] quest (along with a [[Words of Wealth]]) to create [[The Gift Box|gift boxes]], which generate [[:Category:Plane of Mischief Dolls|Plane of Mischief dolls]].  Second, those [[:Category:Plane of Mischief Dolls|dolls]] can be combined with (still more) [[Armor of Distraction|armor pieces]] in the [[Plane of Mischief Armor Quest]] to create [[Plane of Mischief Armor]].
+
+Note that every armor piece requires two thrones except the {{:Vambraces of Distraction}} (which require only one).  Because the gift boxes to generate the [[:Category:Plane of Mischief Dolls|dolls]] require a ''minimum'' of two thrones to generate, every armor piece except the {{:Vambraces of Distraction}} requires at least four throne cards ... and remember, gift boxes are random, so it could take many more unless you trade with other players or are very lucky.
+
+{| class="eoTable3 sortable"
+! Reward || 1st Throne || 2nd Throne || Crown || Knight || Squire
+|-
+| {{:Boots of Distraction}}
+| [[White Throne]] || [[Blue Throne]] || [[White Crown]] || [[White Knight]] ||
+|-
+| {{:Breastplate of Distraction}}
+| [[Red Throne]] || [[Black Throne]] || [[Black Crown]] || [[Black Knight]] ||
+|-
+| {{:Crown of Distraction}}
+| [[Red Throne]] || [[Blue Throne]] || [[Red Crown]] || [[Blue Crown]] ||
+|-
+| {{:Gloves of Distraction}}
+| [[White Throne]] || [[Red Throne]] || [[White Crown]] || [[White Knight]] ||
+|-
+| {{:Greaves of Distraction}}
+| [[Blue Throne]] || [[Black Throne]] || [[Black Crown]] || [[Black Knight]] ||
+|-
+| {{:Robe of Distraction}}
+| [[Black Throne]] || [[Red Throne]] || [[Black Crown]] || [[Red Crown]] ||
+|-
+| {{:Vambraces of Distraction}}
+| [[White Throne]] || || [[Black Crown]] || [[Black Knight]] ||[[Black Squire]]
+|-
+| {{:Wristguard of Distraction}}
+| [[White Throne]] || [[Black Throne]] || [[White Crown]] || [[White Knight]] ||
+|-
+|}
+
+===== Plane of Mischief Armor =====
+
+{{#lsth:Plane of Mischief Armor}}
+
+===== Flowers =====
+All flowers except the {{:Red Flower of Functionality}} requires all four colors of a single type of card.  The Red flower instead requires a White card of every type.
+
+This means that most flowers do not require any thrones, but the {{:Red Flower of Functionality}} requires one and the {{:Blue Flower of Functionality}} requires four!
+
+{| class="eoTable3 sortable"
+! Reward || Black Card || White Card || Red Card || Blue Card
+|-
+| {{:Black Flower of Functionality}}
+| [[Black Squire]] || [[White Squire]] || [[Red Squire]] || [[Blue Squire]]
+|-
+| {{:Blue Flower of Functionality}}
+| [[Black Throne]] || [[White Throne]] || [[Red Throne]] || [[Blue Throne]]
+|-
+| {{:Green Flower of Functionality}}
+| [[Black Knight]] || [[White Knight]] || [[Red Knight]] || [[Blue Knight]]
+|-
+| {{:White Flower of Functionality}}
+| [[Black Crown]] ||  [[White Crown]] || [[Red Crown]] || [[Blue Crown]]
+|-
+| {{:Red Flower of Functionality}}
+| [[White Throne]] || [[White Crown]] || [[White Knight]] || [[White Squire]]
+|-
+|}
+
+===== Wrist Items =====
+Every wrist item requires two thrones, a crown, and a knight.
+
+{| class="eoTable3 sortable"
+! Reward || Class(es) ||1st Throne || 2nd Throne || Crown || Knight
+|-
+| {{:Bracelet of the Twisted Mind}}
+| ENC MAG NEC WIZ
+| [[White Throne]] || [[Blue Throne]] || [[Blue Crown]] || [[Blue Knight]]
+
+|-
+| {{:Green Wristguard}}
+| DRU RNG
+| [[White Throne]] || [[Red Throne]] || [[Red Crown]] || [[Red Knight]]
+|-
+| {{:Mushroom Bracelet}}
+| MNK
+| [[Black Throne]] || [[Blue Throne]] || [[Blue Crown]] || [[Blue Knight]]
+|-
+| {{:Onyx Wristbands}}
+| SHD
+| [[Blue Throne]] || [[Red Throne]] || [[Red Crown]] || [[Red Knight]]
+|-
+| {{:Shimmering Wristguard}} 
+| CLR PAL
+| [[Red Throne]] || [[Blue Throne]] || [[Blue Crown]] || [[Blue Knight]]
+|-
+| {{:Silver Wristguards}}
+| PAL
+| [[Black Throne]] || [[Red Throne]] || [[Red Crown]] || [[Red Knight]]
+|-
+|}
+
+===== Other (One Throne) =====
+Each of these items requires a card of each type for a single color.  There is a combination for every color except white (all white cards yields a flower; see above).
+
+{| class="eoTable3 sortable"
+!  || Classes || Throne || Crown || Knight || Squire
+|-
+| {{:Buckler of Doom}}
+| All
+| [[Black Throne]] || [[Black Crown]] || [[Black Knight]] || [[Black Squire]]
+|-
+| {{:Cloak of Confusion}} 
+| All
+| [[Blue Throne]] || [[Blue Crown]] || [[Blue Knight]] || [[Blue Squire]]
+|-
+| {{:Mask of Melodies}} 
+| BRD
+| [[Red Throne]] || [[Red Crown]] || [[Red Knight]] || [[Red Squire]]
+|-
+|}
+
+===== Other (Two Thrones) =====
+Each of these items requires two thrones and two crowns.
+
+{| class="eoTable3 sortable"
+! Reward || Classes || Throne || Throne || Crown || Crown
+|-
+| {{:Belt of Inconsistency}}
+| All
+| [[White Throne]] || [[Blue Throne]] || [[White Crown]] || [[Blue Crown]]
+|-
+| {{:Globe of Darkness}}
+| All
+| [[Black Throne]] || [[Blue Throne]] || [[Black Crown]] || [[Blue Crown]]
+|-
+| {{:Idiot Savant's Cap}}
+| All
+| [[Red Throne]] || [[White Throne]] || [[Red Crown]] || [[White Crown]]
+|-
+| {{:Very Rusty Dagger}}
+| SHD ROG
+| [[Black Throne]] || [[White Throne]] || [[Black Crown]] || [[White Crown]]
+|-
+|}
+
+==== Notes ====
+
+{| class="eoTable3 sortable"
+! Reward || 1st Card || 2nd Card || 3rd Card || 4th Card
+|-
+| {{:Mask of the Tundra Walker}}
+| [[Blue Squire]] || [[Blue Knight]] || [[Black Knight]] ||[[Black Squire]]
+|-
+| Crystal Scimitar
+| [[Red Squire]] || [[Red Knight]] || [[White Squire]] || [[White Knight]]
+|-
+| Crystal Hammer
+| [[Blue Knight]] || [[Blue Squire]] || [[White Squire]] || [[White Knight]]
+|-
+| Great Sword of Bristlebane
+| [[Red Squire]] || [[Red Knight]] || [[Black Knight]] || [[Black Squire]]
+|-
+| Ring of Rememberance
+| [[Red Squire]] || [[Black Squire]] || [[Blue Knight]] || [[White Knight]]
+|-
+
+|}
+
+== See Also ==
+
+* [[The Gift Box]]
+
+[[Category:Quests]]
+[[Category:All Classes Quests]]
+[[Category:Plane of Mischief]]

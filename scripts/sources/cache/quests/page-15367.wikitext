@@ -1,0 +1,147 @@
+{{Cleanup Needed}}
+:'''This appears to be somewhat of a duplicate of the [[Testament of Vanear Quest]] article.'''
+[[File:npc_rarnan_lapice.png|frame|Rarnan Lapice]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Rarnan Lapice]]
+|-
+! ''' Minimum Level: '''
+| 16
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Erudin|Erudin Palace]], [[High Keep]], [[Highpass Hold]], [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Dyllin Starsine]], [[Illithi Nollith]], [[Moodoro Finharn]], [[Nolusia Finharn]], [[Ran Flamespinner]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Languid Pace|Spell: Languid Pace]]
+</li><li> {{:Testament of Vanear}}
+</li></ul>
+
+== Walkthrough ==
+
+You cannot do this turn-in at Indifferent.
+
+'''See [[Testament of Vanear Quest]].'''
+
+[[Rarnan Lapice]] is located at -725, -85 outside the Temple of Divine Light in Erudin.
+
+You say, 'Hail, Rarnan Lapice'
+
+: Rarnan Lapice says 'It is good to meet you, ______. To enter the Temple of Divine Light is to invite Quellious into your body and soul. Tranquility is our way and, as such, we do all we can to uphold it. Are you a [cleric of Quellious], or am I mistaken?'
+
+You say, 'I am a cleric of Quellious.'
+
+: Rarnan Lapice says 'I have a small task for you then. Go to the city library and ask the librarian for the book 'The Testament of Vanear'. I shall require it for further studies. Do not return empty-handed or you shall know my rage.'
+
+Illithi Nollith is located at -1075, -220 in the Erudin City Library in Erudin.
+
+You say, 'Hail, Illithi Nollith'
+
+[[Illithi Nollith]] says 'Shhhh... Greetings, ______. Welcome to the Library of Erudin. Please respect the other patrons and speak softly.'
+
+You say, 'I need the Testament of Vanear.'
+
+Illithi Nollith says 'Oh my!! You have not heard?! The Testament of Vanear was stolen from the library! It was checked out by a man named Moodoro. He is an Erudite, but I believe he was executed for some crime. Now the book is lost forever. You should speak with Tol Nicelot. He used to know Moodoro. Tol is most likely upstairs.'
+
+[[Tol Nicelot]] is located at -1095, -240 on the top floor of the library in Erudin.
+
+You say, 'Hail, Tol Nicelot'
+
+Tol Nicelot says 'I have no time to waste with strangers!'
+
+You say, 'Did you know Moodoro?'
+
+Tol Nicelot says 'Yes, I knew Moodoro Finharn. He used to be a good friend until he started visiting Qeynos and indulging in human vices. He was executed for crimes against the state. Not even his sister [Nolusia] could get the charge dropped. There have been some who say he escaped execution and lives in Qeynos. That is insane babbling.'
+
+Moodoro Finharn is located at +165, +325 outside Crows Pub & Casino in North Qeynos.
+
+You say, 'Hail, Moodoro Finharn'
+
+: [[Moodoro Finharn]] says 'Greetings, fellow traveler! I gotta tell ya. I love this town. Especially Crow's. Although the crowd seems a bit shadier than other places of the sort.'
+
+You say, 'What Testament of Vanear?'
+
+: Moodoro Finharn says 'So you have heard that good old Moodoro has knowledge of the Testament of Vanear. I care little for that book. Of course I have it!! If you want it, I will sell it to you for two gold pieces.'
+
+Give him 2 gold.
+
+: Moodoro Finharn says 'HA!! I hope you enjoy the book. It is missing pages 30 and 34. It is nothing more than garbage without them. A rogue ripped them from their bindings and sold them to [Ran].'
+
+You receive a container called [[Testament of Vanear]].
+
+You say, 'Who is Ran?'
+
+: Moodoro Finharn says 'Ran Flamespinner is a librarian in Highpass Hold.'
+
+Ran Flamespinner is located at -45, -345 in Highpass Keep.
+
+You say, 'Hail, Ran Flamespinner'
+
+: [[Ran Flamespinner]] says 'I am very sorry to have to inform you that the library is off limits to strangers.'
+
+You say, 'What Testament of Vanear?'
+
+: Ran Flamespinner says 'So, you seek the page 30 I recently purchased from an Erudite named Moodoro? He also had page 34, but refused to sell it to me. If you seek page 34, you will first have to find Moodoro. I had page 30 for but a few days when a man swiped it from the library's shelves. I believe he wore the garb of a guard of Qeynos. He darted away so fast I did not have time to cast a single spell! I believe he is still in Highpass, I can feel it!!'
+
+Dyllin Starsine is located at +10, +55 in Highpass Hold.
+
+You say, 'Hail, Dyllin Starsine'
+
+: [[Dyllin Starsine]] says 'Hey!! I don't have any spare change, okay?!'
+
+You say, 'What Testament of Vanear?'
+
+: Dyllin Starsine says 'So you heard Guard Dyllin has page 30 of the Testament of Vanear, eh?! Well, get lost!! Over my dead body will you get page 30!'
+
+: Dyllin Starsine says 'How dare you attack a member of the Qeynos Guard!!'
+
+'''You have slain Dyllin Starsine!'''
+
+You have looted a [[Page 30 of a Book]].
+
+<div class="facblock">
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+Return to Moodoro Finharn.
+
+You say, 'I want page 34.'
+
+: Moodoro Finharn says 'So, you know I have page 34. Pretty smart of me to tear the most important page out before someone else tried, eh? If you really want it, then sit down and deal in. Ante is 4 gold. I will give you one card. If it is a jester, then I will give you the page. Let's do it.'
+
+'''Give him 4 gold and receive a card. You can receive one of several, but eventually you will get the Jester.'''
+
+: Moodoro Finharn says 'Well, what do you have?!!'
+
+'''Give Moodoro the Jester.'''
+
+: Moodoro Finharn says 'Lucky you. We were hoping to really clean you out. Here you go. Take the page. Even together, the book is nothing more than fiction.'
+
+'''Combine Page 30 of a Book and Page 34 of a Book in the Testament of Vanear container to craft a different Testament of Vanear.  Return to Rarnan and give this to him.'''
+
+: Rarnan Lapice says 'I sent you after that book ages ago! What took you so long? I have already completed my studies. Luckily I found the original manuscript under my bedroll. I forgot I had kept it there. Take this as a token of my apology. Maybe it will aid you in your next book hunt. I know how cunning those books can be.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+You receive a spell scroll.
+
+[[Category:Quests]]
+[[Category:Erudin]]

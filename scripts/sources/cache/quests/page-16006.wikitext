@@ -1,0 +1,55 @@
+
+[[File:npc_quartermaster_nellian.png|300px|right|Quartermaster Nellian]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Quartermaster Nellian]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Northern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Aurillias' Winter Broth]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Quartermaster Nellian'
+
+: Quartermaster Nellian says, 'I've run supplies for more Snowdrift feasts than I can count, but this year's shaping up poorly. Wolves raided the wagon on the way down from Velious, and the berries froze into stone. If we're going to have anything decent for the Icestar's Eve, I need [help].'
+
+You say, 'What help?'
+
+: Quartermaster Nellian says, 'Just the basics, nothing fancy. If you can bring me the following, I can finish the first round of meals. Mammoth Meat, Snow Bunny Stew, and Chilled Berries. Sounds awful I know, but wait until you try it. I'll trade you something cheerful for your trouble. Might even let you have a bite yourself.'
+
+Collect the following:
+
+* [[Mammoth Meat]] drops from Mammoths in Eastern Wastes or Everfrost Peaks.
+* [[Snow Bunny Stew]] is a baking recipe (Trivial: 68).
+* [[Chilled Berries]] drops from a tundra yeti in Dreadlands.
+
+Turn in the three ingredients,
+
+: Quartermaster Nellian says, 'Oh! That's real mammoth, not that cavebeast knockoff. And these berries… still cold, not mushy. You're a miracle worker. If we serve this to the camp, they might stop singing 'Greensong Gravy' every ten minutes! Here. The warmth isn't just for us — it’s for anyone who helps make the night brighter. Be sure to consume it before the end of the festival!'
+
+You receive [[Aurillias' Winter Broth]] and a [[Holiday Gift]].
+
+
+[[Category:Quests]]
+[[Category:Northern Karana]]

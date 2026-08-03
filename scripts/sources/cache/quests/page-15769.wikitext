@@ -1,0 +1,130 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_kyla_frostbeard.png|frame|Kyla Frostbeard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Kyla Frostbeard]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Arch Mage's Crown
+|Arch Mage's Robe
+|Arch Mage's Sleeves
+|Arch Mage's Warband
+|Arch Mage's Gloves
+|Arch Mage's Pantaloons
+|Arch Mage's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Kyla Frostbeard]] in [[Thurgadin]].{{CheckboxList}}
+*[[Arch Mage's Crown]]
+:*[[Torn Enchanted Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Arch Mage's Robe]]
+:*[[Torn Enchanted Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Arch Mage's Sleeves]]
+:*[[Torn Enchanted Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Arch Mage's Warband]]
+:*[[Torn Enchanted Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Arch Mage's Gloves]]
+:*[[Torn Enchanted Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Arch Mage's Pantaloons]]
+:*[[Torn Enchanted Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Arch Mage's Boots]]
+:*[[Torn Enchanted Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+You say, 'Hail, Kyla Frostbeard'
+
+: Kyla Frostbeard says 'Greetings to you. I seek those who call themselves magicians. Are you a magician, little one?'
+
+You say, 'I am a magician.'
+
+: Kyla Frostbeard says 'I thought so. I have several tasks for you accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.'
+
+'''Gems are dropped in various Velious zones while Torn Enchanted Silk can be found on Lieutenants, Veterans, Adjudants, and Legionnaires in Kael Drakkel. These high level giants can be found near King Tormax and near the Arena area.'''
+
+'''After turn-in:'''
+
+Kyla Frostbeard smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'What cap?'
+
+: Kyla Frostbeard says 'For an enchanted head guard bring me a [[Torn Enchanted Silk Turban]] as well as three pieces of [[Crushed Flame Opal]].'
+
+== Robe ==
+
+You say, 'What robe?'
+
+: Kyla Frostbeard says 'If you wish to have a fine robe, bring unto me a [[Torn Enchanted Silk Robe]] and three [[Pristine Emerald]]s. Then you will receive a robe beyond your wildest dreams.'
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Kyla Frostbeard says 'Bring unto me a set of [[Torn Enchanted Silk Sleeves]] as well as three [[Flawed Topaz]]. With these in my possession I can create a set of enchanted sleeves the likes of which spellcasters like you dream of.'
+
+== Bracer ==
+
+You say, 'What wristbands?'
+
+: Kyla Frostbeard says 'An [[Torn Enchanted Silk Wristband]] and three [[Crushed Onyx Sapphire]]s is all that I require to create an imbued wrist wrap of great power. Seek out these items and return to me when you have acquired them.'
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Kyla Frostbeard says 'If you seek gloves of great power, bring to me three [[Crushed Topaz]] and a pair of [[Torn Enchanted Silk Gloves]]. I will use the power of the gems to imbue the gloves.'
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Kyla Frostbeard says 'Three [[Nephrite]] and a pair of [[Torn Enchanted Silk Pantaloons]] will net you a fine set of pantaloons.'
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Kyla Frostbeard says 'Three [[Crushed Jaundice Gem]]s combined with [[Torn Enchanted Silk Boots]] would make a most interesting set of footwear. The latent powers of the gems can be harnessed to create magical effects.'
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Magician Quests]]
+[[Category:Thurgadin Armor Quests]]

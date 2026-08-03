@@ -1,0 +1,205 @@
+{{Classic Era}}
+[[File:npc_clurg.png|frame|Clurg the Bartender]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Clurg (NPC)|Clurg]]
+|-
+! ''' Minimum Level: '''
+| 4+
+|-
+! ''' Classes: '''
+| All ([[Enchanter]], [[Rogue]], [[Bard]])
+|-
+! '''Related Zones:'''
+| [[Ocean of Tears]], [[Rivervale]], [[Qeynos]]
+|-
+! '''Related NPCs:'''
+| [[Frostbite]]
+|-
+! '''Required Faction:'''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li> {{:Stein of Moggok}}
+</li><li> Faction
+</li></ul>
+
+
+== TLDR; Walkthrough ==
+
+* You need amiable or higher faction with [[Clurg_(NPC)|Clurg]]. The most common way for non-ogres to attain this is to be a level 8+ Dark Elf Enchanter or level 12+ Enchanter of any race.
+* '''Get [[Kiola Nut]]'''
+** Go to [[Ocean of Tears]]. Turn into a Wood Elf and/or cast faction spell on [[Cleonae Kalen]] (located at "Sisters Island") to purchase a [[Kiola Nut]] 
+* '''Get [[Honey Jum]]'''
+** Get 3 [[Honeycomb]]s by killing Bixies of any kind ([[a Bixie]]) in [[Kithicor Forest]] or [[Misty Thicket]].  Kith seems to be better drop rate.
+** Go to [[Rivervale]].  Turn into a Gnome and/or cast faction spell on [[Kizzie Mintopp]] then give her the 30GP (must be gold) and three [[Honeycomb]]s, to receive the [[Honey Jum]]
+* '''Get [[Erud's Tonic]]'''
+** Purchase [[Innoruuk's Kiss of Death]] from vendors in [[Erudin]] (recommended and faster) or in [[Freeport]].  Cast Human or Erudite illusion and/or faction spell if needed to buy the item.  
+** Go to [[Erudin]]. Turn into Human or Erudite and/or cast faction spell on [[Sinnkin Highbrow]] (3rd floor of library), give her the [[Innoruuk's Kiss of Death]] to receive [[Erud's Tonic]]
+* '''Get [[Koalindl Fish]] (the easy way while avoiding brutal Qeynos faction hits)'''
+** Create an alt Warrior as a "The Prime Healer" worshiper and throw all of the points into stamina, the home city will be [[Qeynos]].  Go to guild master and put skill points into 1hs and kick and level the warrior up to level 2, equip any cloth armor you get killing trash during this time.  When you hit level 2 put more skill points into 1hs and kick etc. to be more effective in killing the 2 fish in the pool.
+** Take your Enchanter to [[Qeynos]] and camp them by the pool where the fish spawn
+** Login on an alt warrior and kill fish in the pool until one has a [[Koalindl Fish]] on the corpse.  Login on Enchanter and loot [[Koalindl Fish]]. (Tip: having someone else hail the 2 pathing NPC's and hold them up from getting around the pool helps. They will assist the fish and 1 shot kill you) (Another tip: I've been able to kill the fish with unskilled level 1 characters before. You do have to get lucky though on the hit rolls, but if you're lazy it may be worth to try).
+**NOTE: I just make a Human Monk and start in [[Qeynos]], spend my 5 skill up on 1h Blunt and use the newb note quest. Can easy kill the fish without too much of a hard time, kick is better on a monk than a warrior at that level.
+**Alternatively you can kill [[Frostbite]] at the Barbarian fishing village in [[Western Karana]] right near the [[Qeynos Hills]] zone line. Beware of the patrolling Barbarian as they may assist.
+
+* '''Get [[Barkeep Compendium]]''' 
+** Go to [[Freeport]]. Turn into a Human and/or cast faction spell on [[Gregor Nasin]] (at East Freeport docks). Give [[Gregor Nasin]] the [[Kiola Nut]], [[Honey Jum]], [[Koalindl Fish]], and [[Erud's Tonic]] all at the same time and receive the [[Barkeep Compendium]]
+
+* '''Get [[Stein of Moggok]]'''
+** Go to [[Oggok]]. Turn into a Dark Elf or Ogre and/or cast faction spell on [[Clurg]] (located around area 17 of the [[Oggok]] map). Give him the [[Barkeep Compendium]] to receive the [[Stein of Moggok]]
+
+
+Enjoy your Stein!  '''<u>Also, if you are trying to do this multiple times remember that the Stein is Lore so DO NOT have one on you when you turn in the [[Barkeep Compendium]].</u>''' Many hearts have been broken because people tried to do this quest while already possessing a Stein and seeing they do not receive a 2nd Stein upon quest completion :)
+
+== Full Walkthrough ==
+
+''Note: Unless you're an enchanter with the benefit of faction spells and illusions, this quest may be a bit time consuming. Non-evil bards and rogues can use the [[Mask of Deception]] to enter Oggok unharmed.''
+
+The introduction of this quest is in [[Oggok]], but it is not necessary:
+
+You say, 'Hail, Clurg'
+
+: Clurg says, 'Hello. friend. Have a drink. I have some [unique drinks]. Try one. And remember. You get rowdy. the [Bouncers] crush you.'
+
+You say, 'What unique drinks?'
+
+: Clurg says, 'I have been all over Norrath and even served with some very great [barkeeps in Freeport].I am the creator of the[Flaming Clurg] and Ogre Swill.'
+
+You say, 'What barkeeps in Freeport?'
+
+: Clurg says, 'Yes. I have journeyed to many taverns, but it was in Freeport where I acquired most of my art. I compiled all my drinks in a [special book].'
+
+You say, 'What special book?'
+
+: Clurg says, 'I compiled all my drinks into one book. I lost this book while in Freeport. No doubt that some barkeep is experimenting with it. I would pay greatly for the return of my Barkeep Compendium.'
+
+
+See [[Gregor Nasin]] Seafarer's Roost (#11) in East Freeport:
+
+You say, 'Hail, Gregor Nasin'
+
+: Gregor Nasin says, 'Sit down and name your poison!  I know we are lacking in originality. but I intend to create some [exotic drinks].'
+
+You say, 'What exotic drinks?'
+
+: Gregor Nasin says, 'Interested in exotic drinks. are we?  I am attempting to create some of these drinks I read about in this book I found. It was called the [Barkeep's Compendium].  I will first need to get my hands on a few [exotic ingredients].'
+
+You say, 'What barkeep's compendium?'
+
+: Gregor Nasin says, 'I found the book amongst some garbage littering the ground in Freeport East.  It appears to have been created by an ogre named [Clurg].  I am sure he wants it returned. but I will never part with it.  That is... unless I get a few [exotic ingredients] I need to experiment with.'
+
+You say, 'Who is Clurg?'
+
+: Gregor Nasin says, 'I do not know. Ask an ogre. Maybe they have heard of him.'
+
+You say, 'What exotic ingredients?'
+
+: Gregor Nasin says, 'I desire a [kiola nut]. [Erud's Tonic]. [honey jum] and a [Koalindl fish].  If I could get those. I would no longer need to hold on to the [Barkeep's Compendium].  Whoever returned the ingredients to me could have it!!'
+
+<ul><li>  {{:Kiola Nut}} (purchased on the island of Erollisi in the Ocean of Tears for 2 gold pieces.) 
+</li><li> {{:Erud's Tonic}} (NO TRADE item that results from the Erud's Tonic quest.) 
+</li><li> {{:Honey Jum}} from [[Rivervale]] (droppable item that results from the Honey Jum quest.)
+</li><li> {{:Koalindl Fish}} from the lake in the Temple of Life in [[Qeynos]] (NO TRADE item).
+</li></ul>
+
+You can get the fish one of a few ways: You can do [[The Regurgitonic]] Quest in Ak'Anon and give the tonic to Frostbite the dog in West Karana (who coughs up a fish). Or you can kill koalindl fish below the Temple of Life in Qeynos (major faction hits with the Priests of Life). 
+
+Hand him the ingredients:
+
+: [[Gregor Nasin]] says, 'Now I have every ingredient mentioned in the Barkeep Compendium. Here. You take it. <..click!.> Whoops!! I just closed it. It's magically sealed, I never closed it before. It's useless to you. I have no need for it any longer. Maybe you can return it to [Clurg] for some type of reward.'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by 5.
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 5.
+* Your faction standing with [[Carson McCabe]] has been adjusted by 5.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 5.
+* Your faction standing with [[Freeport Militia]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}} (Negligible at level 12)
+: You get the [[Barkeep Compendium]].
+
+Take the Compendium to Clurg. If you're KOS in Oggok, you'll need to do faction work beforehand. Ogre or Dark Elf illusions coupled with a faction spell will also work, provided your faction isn't too low. <span style='color:#099;'>(Note: The bank may count as holding a lore item. If you have a Stein of Moggok already, your Barkeep Compendium will be consumed, you will gain experience, and EQ will give you a statement: "You cannot pick up a lore item you already possess.")</span>
+
+: Clurg says, 'My book!! I never thought I'd see it again. Here, take this with my thanks.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] has been adjusted by 50.
+* Your faction standing with [[Kazon Stormhammer]] has been adjusted by -50.
+* Your faction standing with [[Green Blood Knights]] has been adjusted by 50.
+* Your faction standing with [[Craknek Warriors]] has been adjusted by 50.
+* Your faction standing with [[Oggok Guards]] has been adjusted by 50.
+</div>
+
+{{YouGainExperience}} (A fraction of a blue bubble at level 12)
+
+You receive the {{:Stein of Moggok}}.
+
+== Level 12 Agnostic Erudite Enchanter's Solo Walk-Through ==
+
+The first attempt at completing this quest is time consuming, especially if you are doing this totally solo. It is fairly easy, with very little chance of failure or death if you are not reckless. Almost everything in the Dark Elf's guide below is true for an Erudite, albeit in reverse when it come to faction concerns. This guide assumes that the Enchanter has made it to the East Freeport Docks and has all spells including level 12.
+
+* Stage 1: Bind in [[Freeport]] somewhere. Go to the Seafarer's Roost and buy an [[Innoruuk's Kiss of Death]] from [[Gregor Nasin]] (right at behind the bar at the door, can't miss him). Take the boat to [[Ocean of Tears]], do not get off on the first stop, get off on the second stop. Buy [[Kiola Nut]]s (buy many if you intend to repeat this quest) from [[Cleonae Kalen]] who is easily found in a building near the dock. Gate back to your bind in [[Freeport]], and run to the [[East Commonlands]] Tunnel.
+
+* Stage 2: From the [[East Commonlands]] Tunnel, get [[Spirit of the Wolf]] and any other buffs you think you will need. Make sure you have [[Invisibility]] memorized. Cast [[Invisibility]] on yourself and run from [[East Commonlands]] to [[West Commonlands]] to [[Kithicor Forest]]. Enter [[Kithicor Forest]] during the day (if it is night, wait at the zone line). Kill Bixies ([[a Bixie]]) in [[Kithicor Forest]] until you get three [[Honeycomb]]s (about 12-15 kills). Enter [[Rivervale]] (do not worry about faction unless you know you have ruined your [[Rivervale]] faction somehow), and head for the bank, which is a castle looking structure behind the Priest of Discord. Get 30GP (gold) from the bank and drop off your extra [[Kiola Nut]]s (keep one). Find [[Kizzie Mintopp]] in a burrow not very far from the bank and give her the 30GP and three [[Honeycomb]]s, and receive the [[Honey Jum]]. At this point, if you can get [[Spirit of the Wolf]] and/or a port to one of the Karana zones, it would be a big help, but not necessary (and not likely to be found here).
+
+'''Tip: You can also buy the [[Innoruuk's Kiss of Death]] while in Erudin, opposite to the Library where the tonic girl is. So after you get the [[Honey Jum]] it is easier to gate back, go to EC tunnel and get a port to [[Toxxulia Forest]], pick up your [[Erud's Tonic]], then take the boat from Erudin to Qeynos for the fish. Saves quite a bit of time'''
+
+* Stage 3: Cast [[Invisibility]] on yourself and enter [[Kithicor Forest]] during the day (or night if you dare) and run right hugging the zone border until you find the zone entrance to [[Highpass Hold]]. Enter [[Highpass Hold]], but make sure [[Invisibility]] is on and keep an eye on it! For a Level 12 Enchanter, this is probably the most dangerous part of quest and it is not that dangerous if you don't so something stupid. Most likely you've been to [[Highpass Keep]] to get your animation spells, run there now. If you can get [[Spirit of the Wolf]] here, grab it, otherwise with [[Invisibility]] up, head north to [[East Karana]] from the Keep entrance and look for the purplish walls. You can't really get lost, but you can go in circles, check a map for guidance. At [[East Karana]] run down from the mountains to the giant bridge, avoiding the bandit towers on the way down. Make sure to keep [[Invisibility]] up. Cross the giant bridge into [[North Karana]] and head straight across the zone to [[West Karana]] (pretty safe with [[Invisibility]] up). From [[West Karana]], make the long run to [[Qeynos Hills]] avoiding any undead along the way, it is easiest to run straight through the middle (look for the vague road and avoid the bandits), but if you are unfamiliar with [[West Karana]], stay near the shore line until you pass the farms and avoid everything. From [[Qeynos Hills]] head to the left as you exit the canyon entrance to [[Qeynos]]. In [[Qeynos]] go the the Temple of Life and camp out at the poolside. If you happen to be carrying a Bronze or Fine Steel weapon that you are willing the throw away, drop it here.
+
+* Stage 4: Create an alt Warrior on the The Prime Healer faction (throw all of the points into stamina). He will spawn in [[Qeynos]] pretty close to the Temple of Life. Pick up the weapon (if any) or equip the default weapon and kill [[a Koalindl]] until the fish can be looted (about 50%). The Koalindl that spawns in the center of the pool is easiest to deal with, however, the fight is not a push over and you may die several times with no skills at level 1 and a default weapon. Definitely keep your eye on roving guards around the pool, if you try to fight the Koalindl that swims on the pools edge. Keep in mind that the Koalindl will not follow you to kill you. They will disengage and continue swimming if you do not hit within a short period. When the [[Koalindl Fish]] can be looted, camp the Warrior out and log your Enchanter back on. You will be able to loot the [[Koalindl Fish]] after a few minutes, so no real hurry. Make your way to the [[Qeynos]] docks and wait for the boat to [[Erudin]]. Take the boat to [[Erudin]], and head to the third floor of the library. Find [[Sinnkin Highbrow]], give her the [[Innoruuk's Kiss of Death]], and receive an [[Erud's Tonic]]. Gate back to your bind in [[Freeport]].
+
+Sometimes, apparently Rodcet Nife himself likes taking a dip in his swimming pool, and if you happen to attack that version of the Koalindl it will go very badly:
+
+<div class="facblock">
+* a Koalindl 's corpse dies..  Rodcet Nife is not pleased.
+* a Koalindl says, 'Foolish mortal!! You have disturbed the Prime Healer as he swims in the guise of his creatures.  For this.. You shall perish!!
+* You are stunned!
+* A Koalindl bashes YOU for 360 points of damage.
+</div>
+
+'''Note: A Human Monk around level 3-4 will probably perform better than the warrior (though you get perhaps 2-3 less kills than the warrior).'''
+
+'''Tip: Make sure to fight two Koalindl fish at once. The fish flee when at low health, and at such a low level, it's very unlikely that you will catch them.'''
+
+* The Final Stage:  Go to the Seafarer's Roost and give [[Gregor Nasin]] the [[Kiola Nut]], [[Honey Jum]], [[Koalindl Fish]], and [[Erud's Tonic]] and receive the [[Barkeep Compendium]]. Once again, run to the [[East Commonlands]] Tunnel and get [[Spirit of the Wolf]], at least. With [[Invisibility]] up, run through the [[Northern Desert of Ro]], [[Oasis of Marr]], and [[Southern Desert of Ro]] to [[Innothule Swamp]], avoiding any undead (be especially careful in South Ro). At [[Innothule Swamp]], make your way right to [[The Feerrott]]. Once you enter [[The Feerrott]], this is a good time to cast [[Illusion: Dark Elf]] (you may also recast [[Invisibility]]). Run west north west to [[Oggok]] and enter the zone. Find [[Clurg]] around area 17 of the [[Oggok]] map, give him the [[Barkeep Compendium]], and receive the [[Stein of Moggok]]. Gate back to your bind in [[Freeport]]. Congratulations!
+
+== Dark Elf's Guide to Obtaining the Stein of Moggok ==
+
+This a complete, step by step guide to obtaining the Stein with a [[Dark Elf]] agnostic [[Enchanter]] of 4th level or higher. You must have these spells to successfully pull it off: [[Illusion: Human]], [[Invisibility]]. If you are an [[Innoruuk]] worshipper, you may also need [[Alliance]].  To speed things along, you could also have a friend help you out, perhaps in return for you getting a stein for him or her later, but it is not necessary. This guide assumes you will NOT be getting any teleports.
+ 
+* Step 1: From [[Neriak]], run to East Freeport and go to the Seafarer's Roost AFTER 6pm game time. Otherwise there will be an ogre there named Bronto Thudfoot who will kill you swiftly. Bronto seems to be on Halas/Tribunal faction and using Illusion Human or Barbarian will make you non-KOS to him, however. Buy an [[Innoruuk's Kiss of Death]] from the bartender Gregor for about 8 silver. Bind or get yourself bound in East Freeport while you're here, you'll be coming back. If you bind right out of the South Gate (heading toward North Ro) you'll be fine as dark elves aren't KOS in East Freeport, not to the guards anyway. Once you are bound, hop on the boat and head to [[Ocean of Tears]].  Jump off the boat and swim to the island out of LoS of its inhabitants and cast your illusion.  Once human, you should be able to purchase [[Kiola Nut]]s no problem.  Buy as many as you think you'll want to do runs for, but note that they are non-stackable.  Once you've purchased your nuts, gate back to [[East Freeport]].  If you have a friend helping you, while you are doing all of this, have them create a halfling mule to go murder Bixies and pick up 3+ honeycombs.
+ 
+* Step 2: Leave [[East Freeport]] and head west to Rivervale. Ask along the way for a SoW. You'll probably get one since most people who can SoW are kind enough to give you one, especially if you donate between 5 gold and 2 plat, don't be cheap. Once you get to [[Kithicor]], start killing Bixies and collect 3 honeycomb.  However, Kithicor is very dangerous at night, and you'll want to head to [[Misty Thicket]] if it's taking a long time to collect.  You should be able to move through Rivervale freely with human illusion up.  Once you have 3 honeycomb, bring those and 30 gold (not 3 plat!) and give them to [[Kizzie Mintopp]] in the burrow across from the Fool's Gold, which will net you a [[Honey Jum]].  This is one of two parts where your friend can really speed things up by doing the collecting while you are doing other things.  If that's the case, when you get to Rivervale, meet them right at the zone to Kithicor and give them 3 plat. They'll take it to the bank and get it changed to 30 gold. They can then pick up the Honey Jum for you and hand it off at the zone line.  The added benefit is you aren't wasting time killing with the all-important SoW up, as you will really be needing it for this next part!  
+
+* Step 3: If SoW has run out, see if there's a friendly druid to reapply before you run run run to [[Qeynos]]. This is the boring part and a good time to practice Sense Heading. Stick with the shorelines when you get to the Karanas, it's longer but much safer, especially for an 4th level enchanter. If you are doing this solo, you will need to make a human warrior worshiping [[Rodcet Nife]] (very important!) and level it to 2 or 3.  You can do this when reach Qeynos...it is safe to log out (invis up, just in case) in the house just outside the Temple of Rodcet Nife entrance.  Higher level for your warrior will make this next part quicker, but it obviously will take more time to level higher. This is the other part where having a friend help will cut down the time spent, as they can create and level their warrior while you're running to Qeynos.
+
+* Step 4: Once your warrior is ready, head to the Temple of Life Compound in North Qeynos and start killing fish.  Be careful, however, because you will receive a large faction hit for every fish you kill, and if the paladin sees you doing it, you won't be long for this world.  This is why being a Rodcet Nife worshipper is so important, as you start with a high enough faction to be able to kill quite a few fish before becoming KoS.  Once a fish drops... itself... log back on to your enchanter ASAP.  Illusion up before leaving the house and hop into the pool to collect the corpse.  Voila, one fish corpse and no bad faction hits. If working with your friend, they can start killing fish as soon as you zone into Qeynos; you'll have enough time to get there if a corpse drops on the first try.  If you're a 12th or higher enchanter you can cast Enduring Breath so you and the mule can stay underwater all the time, which helps a lot. This is the last you'll need your friend, so thank them profusely.
+
+'''Note: A Human Monk around level 3-4 will probably perform better than the warrior (though you get perhaps 2-3 less kills than the warrior).'''
+
+'''Tip: Make sure to fight two Koalindl fish at once. The fish flee when at low health, and at such a low level, it's very unlikely that you will catch them.'''
+
+'''Note: While there are other ways to get a Koalindl fish corpse in the game, they aren't really viable for a 4th level DE Enchanter.'''
+
+* Step 5: Cast invisibility on yourself before zoning, since illusions run out when you zone. Recast Human illusion right at the zone, then head for the docks. Wait for the boat to Erudin and take it when it gets there. If illusion drops while you are on the docks, you should be fine as an agnostic.  There are one or two NPCs that will be KoS to you, but they don't path near enough to the end of the dock to cause you any trouble.  The boat will stop at the Cat Island in Erud's Crossing, but don't worry, dark elves aren't KOS to the cat folk.
+
+* Step 6: When you get to [[Erudin]] take the ferry to the docks and cast human illusion when you get there.  The guards there were dubious to my agnostic DE Enchanter with no faction work.  If you are an Innoruuk worsipper, you may need to hop off the boat and not take the ferry cause you can't cast while on it. In the water recast Human illusion and Invisibility (there is usually at least one level 20-ish shark in the harbor, so you'll want to be invis) and swim to shore. Either way, run to the teleport pad, which will zip you over to the other side WITHOUT zoning (so your illusion will hold). Run over to the Erudin Library and head to the third floor. Give the Innoruuk's Kiss of Death to Sinnkin with illusion: Human on, and get the Erud's Tonic in return. Gate back to East Freeport.
+
+* Step 7: Go back to the Seafarer's Roost AFTER 6pm. Cast Human Illusion before going in. When you get in, give Gregor the 4 items (Kiola Nut, Erud's Tonic, Honey Jum, Fish Corpse).  He will give you 1 to 4 plat and the Bartender's Compendium. '''NOTE: <s>Do not give the 4 items to him one at a time. He will not give you the reward if you do that!</s> Hand in all 4 items at the same time (give all items into the 4 slots) '''
+
+* Step 8: Leave East Freeport and run down through the desert of Ro (North, Oasis, South) to Innothule Swamp (Invis and a SoW will help here). Run to Feerrott from there, and then to Oggok (more Sense Heading practice). Stick to the shoreline in North Ro and Oasis, and the west wall in South Ro and be careful of undead in South Ro since your invisibility won't fool them. You are safe in Innothule, Feerrott and Oggok.
+
+* Step 9: Once in [[Oggok]], run to the end of the city where the tavern is. You want to be your normal dark elf self for this, you're not KOS in Oggok but the merchants might not sell to you. Go into the tavern, find Clurg and give him the book. You should get the stein in return. Gate back to East Freeport, and head for home.
+
+[[Category: Quests]]
+
+[[Category:Oggok]]
+[[Category:Enchanter Quests]]
+[[Category:All Classes Quests]]

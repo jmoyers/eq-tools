@@ -1,0 +1,69 @@
+{{Kunark Era}}
+[[File:npc_hierophant_oxyn.png|frame|Hierophant Oxyn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Hierophant Oxyn]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]], [[Swamp of No Hope]]
+|-
+! ''' Related NPCs: '''
+| [[a mosquito]]
+|}
+
+== Reward ==
+
+<ul><li> 2x {{:Cursed Wafers}}
+</li></ul>
+
+== Walkthrough ==
+
+Hierophant Oxyn is in the Temple of Terror.
+
+You say, 'Hierophant Oxyn'
+
+: Hierophant Oxyn says 'Greetings, and may the pain of the ancients guide you. You have come to us for guidance, have you not? We are the Hierophants of Cabilis and we guide the young Scale Mystics. All petitioners shall speak with me of [temple tasks].'
+
+You say, 'What temple tasks?'
+
+: Hierophant Oxyn says 'The Temple of Terror requires all young Scaled Mystics to [perform daily tasks.]. The tasks are necessary to the upkeep of our order as well as that of our brothers, the Crusaders of Greenmist.'
+
+You say, 'I will perform daily tasks.'
+
+: Hierophant Oxyn says 'We require many components for various rituals.  Take this [[Component Mortar]] and fill it with the following items - foraged [mud crabs]. two small mosquito wings and one portion of bone chips. You must then use the pestle and combine all the components. When you have a full component mortar, you may return to me and I shall pay you your wages, but most importantly, you shall prove your devotion to the Scaled Mystics.'
+
+'''Hierophant Oxyn hands you a Component Mortar and asks you to fill it with the following items:'''
+
+:{{box}} Two [[Small Mosquito Wing]]
+:{{box}} One [[Bone Chips]]
+:{{box}} One [[Mud Crabs]] (foraged in Lake of Ill Omen).
+
+Combine all four, unstacked, in [[Component Mortar]] container (to craft [[Full Component Mortar]]).
+
+Hand in the Full Component Mortar to Oxyn...
+
+: Hierophant Oxyn says 'We appreciate your service. Take a few copper for your deed as well as some of our cursed waters. They will provide you with nourishment. As for future tasks, we are searching for a few [lost skulls] and i am sure you are searching for your [iron cudgel of the clairvoyant] And i also hear that the furscales are in need of some broodlings to do some manual labor. Tell them Oxyn sent you.'
+
+<div class="facblock">
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+{{exp}}
+
+Receive two [[Cursed Wafers]].
+
+See also: [[Shaman Skull Quests]]
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shaman Quests]]

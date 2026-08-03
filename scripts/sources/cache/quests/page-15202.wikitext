@@ -1,0 +1,594 @@
+{{Epics Era}}
+
+[[File:epic_rogue.jpg|200px|thumb|Rogue Epic]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Malka Rale]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li> {{:Ragebringer}}
+</li></ul>
+
+== High-level Checklist ==
+{{CheckboxList}}
+* '''Obtain [[Stanos' Pouch]]'''
+:* (OPTIONAL) Acquire level 50 (will need assistance from a 50+ rogue if you are not high enough)
+:* (OPTIONAL) Go to the Qeynos Aqueducts and find [[Malka Rale]] at +380, -210 (spawns at 8PM game time), tell her 'I can help' to receive [[Stanos' Pouch]].
+
+* '''Pickpocketing and Travel'''
+:* Pickpocket [[Stained Parchment Top]] from [[Founy Jestands]] in [[North Kaladim]].
+:* Pickpocket [[Stained Parchment Bottom]] from [[Tani N`Mar]] in [[Neriak Third Gate]].
+:* Hand [[Stanos' Pouch]] to [[Anson Mcbale]] and say "I need to see Stanos" to spawn [[Stanos Herkanor]] and then turn both parchment pieces into Stanos in [[Highpass Hold]] to receive [[Combined Parchment]].
+:* Give '''Combined Parchment''', '''100pp''', and '''2 unstacked [[Bottle of Milk]]''' to [[Eldreth]] in [[Lake Rathetear]]. Receive [[Scribbled Parchment]].
+:* Take Scribbled Parchment to [[Yendar Starpyre]] in [[Steamfont Mountains]]. Receive [[Tattered Parchment]].
+
+* '''Book of Souls'''
+:* Wizard teleport to [[Plane of Hate]], obtain [[Book of Souls]] (10 hr ground spawn at -60, +325, 56).
+
+* '''Renux'''
+:* Give [[Tattered Parchment]] and [[Book of Souls]] to [[Yendar Starpyre]]  to spawn Renux. <b>Kill [[Renux Herkanor]]</b>, loot [[Translated Parchment]] and, if it drops, [[Jagged Diamond Dagger]]*.
+
+* '''General V`Ghera'''
+:* Return Translated Parchment to Stanos. Receive a [[Sealed Box]] from Stanos.
+:* Travel to Kithicor Forest, hand in a [[Sealed Box]] to any of the Dark Elves to spawn [[General V`ghera]].<br/><b style="color: red">IMPORTANT: Do not use hide or invisibility / IVU while turning in the box, but <i>do</i> use sneak. Verify that you are sneaking but not hidden and that the mob cons indifferent <i>before</i> turning-in or you may lose your progress!</b>
+:* Kill [[General V`ghera]]. Loot [[General's Pouch]] and, if it drops, [[Cazic Quill]]*.
+
+* '''*Auxiliary Questing (if they did not previously drop)'''
+:* [[Cazic Quill]]
+::* Get [[Robe of the Kedge]] from [[Phinigel Autropos]] in [[Kedge Keep]] or a rare drop from [[Coercer Q`ioul]] in [[Kithicor Forest]].
+::* Get [[Robe of the Ishva]] from [[The Ishva Mal]] in [[Splitpaw]] or a rare drop from [[Coercer Q`ioul]] in [[Kithicor Forest]].
+::* Get [[Shining Metallic Robes]] from [[the ghoul arch magus|Ghoul Archmagus]] in [[Lower Guk]] or a much harder [[Yendar Starpyre]] in [[Steamfont Mountains]].
+::* Get [[Robe of the Oracle]] from [[Oracle of K`Arnon]] in [[Ocean of Tears]].
+::* Turn in all four robes to [[Vilnius the Small]] in [[Western Plains of Karana]] to receive [[Cazic Quill]].
+:* [[Jagged Diamond Dagger]]
+::* Get [[Fleshripper]] from [[Solusek kobold king]] in [[Nagafen's Lair]].
+::* Get [[Painbringer]] from [[Kobold champion]] in [[Nagafen's Lair]].
+::* Get [[Mithril Two-Handed Sword]] from [[The froglok king]] in [[Lower Guk]] (live side).
+::* Get [[Gigantic Zweihander]] from [[Karg Icebear]] in [[Everfrost Peaks]].
+::* Turn in all four blades to [[Vilnius the Small]] in [[Western Plains of Karana]] to receive [[Jagged Diamond Dagger]].
+
+* '''Final Turn in'''
+:* Turn in [[General's Pouch]], [[Jagged Diamond Dagger]], and [[Cazic Quill]] to [[Stanos Herkanor]] to receive [[Ragebringer]]!
+{{End}}
+
+==Guides==
+* [[Rohane's Rogue Epic Guide]]
+* [[Kezzek's Fight Strategies for Rogue Epic Quest]]
+
+== Short Walkthrough ==
+
+===The Jagged Diamond Dagger===
+
+The quest starts out in the '''Qeynos Aqueducts'''. You must find '''Malka Rale''' at +380, -210 (In the 'Smuggler' area of the sewer). If she is not there, her placeholder is 'a courier'. This courier does not need to be killed. It will despawn at 8 pm and then Malka will spawn at 10pm, game time. Talk to her and say "I can help". She will get you '''Stanos' Pack'''. '''LEVEL 50 required!'''
+
+Now travel to '''North Kaladim''' and find '''Founy Jestands''' at about +520, +307. He is a Rogue guildmaster at the bank (or close to). If he is not there wait until 10 am for him to respawn. Then pickpocket from him stained parchment top. He does not always have the piece so just wait another full day for him to despawn and then respawn again. If you are caught and he attacks you just run to the zone.
+
+Now you need to get the bottom of the stained parchment. This is pickpocketed from Tani N'Mar in Neriak 3rd Gate at +650, -1300. Like Founy, he does not always have the piece.  He depops at 7pm and respawns at 8pm, 3 minutes after despawning.
+
+Now go to Highpass Hold. Go to the secret smugglers cave. To get there, jump into the water close to the inn with the deck. swim to +10, +325 and walk up the narrow passage. Find Stanos in the camp. If he is not there then you must make him spawn. You can do this two ways.
+
+Give Anson McBale Stanos' Pack. Stand behind Anson so that you will not be standing on Stanos' spawn point. This is the easiest way to do it.
+
+If you have high faction with Anson then you can tell him "I need to see Stanos." If you are able to do this then you do not need to find Malka Rale in the Qeynos Aqueducts.
+
+If Anson isn't in the camp, then you must kill his placeholder which is a smuggler. Get a group of level 50+ and kill all the smugglers. They are fairly high and backstab very hard. This should cause Anson to spawn. Once Stanos has spawned, give him the two pieces of parchment and he will give you the combined parchment. If you have screwed up your faction with Stanos, you ''can'' sneak to turn in. Just be careful because Anson and Stanos are facing slightly different directions.
+
+Travel to Lake Rathe and locate Eldreth at +2600, -550. He is a random spawn. He may be there, it may take a couple hours, or it may take a couple real life days. Once you have found him. Turn in the Combined Parchment, 100 platinum, and 2 un-stacked bottles of milk. He will reward you with a scribbled note. You must have atleast indifferent faction when turning in the items. If your faction is lower than that then use the sneak technique when turning in the items.
+
+This next part is very tedious and somewhat difficult. You have to go to Plane of Hate and find the Book of Souls. This books spawn time is 10 hours and is located -60, +320. This is on the night stand on the top floor of Maestro of Rancor's house. There are wandering mobs. You will want to do this with a bunch of friends because there are wandering mobs. If the book spawns and no one picks it up, wandering creatures will. To get people to come along and wait with you for 10 hours, try having a Maestro of Rancor raid or a Hate Raid. This way there will be people around you for a long time and you won't get killed by wandering NPCs.
+
+Next, go to Steamfont Mountains and find Yendar Starpyre (respawn time is a few hours). He runs across the zone and is easily spotted because he is wearing an SMR. Yendar's path is a shortish loop that goes north from the druid ring, past the kobold tents, east around that little stub of mountain, southeast down the road towards Watchman Halv, then down the road east a short ways before turning around and following his his path back towards the druid ring. To stop him from running say "book". Give him the Scribbled Parchment and he will despawn. Wait for him to respawn again and then give him the Tattered Parchment and the Book of Souls.
+
+He will despawn and in his place will be Renux, a level 50 human rogue. She quad hits for 200 and can backstab for 200+. She casts clockwork poison which is a spinning stun spell. She does not attack pets. She can be feared and snared. Do not melee her if she is not feared. The best way to kill her is pet kiting. Have one melee class attack her as soon as she spawns. Make sure he and everyone else have SoW and the cleric/shaman needed buffs such as hitpoints and AC. Run around in circles. Have all pets attack her. Make sure they are equipped with weapons. The best kind are magician summoned. While the pets are attacking and the melee is kiting, have people casting fear on her. If she gets feared send all melee in on her and have all casters nuke. When fear breaks, all meleers except for the kiter must back away. She will die very quickly this way with not very many casualties. If the melee person dies, do not panic. Just have more melee people ready to kite her. To do this, you must have 3 or preferably more, necromancers that are 53+, 3 or preferably more, druids that are 57+, and lots and lots of pet casters. (A rogue can duo her if she is agro kited by a caster class or a non-cleric priest class. Some melee classes may also work such as a Bard or Ranger, I just haven't experimented with them. It is best if she is snared but not required)
+
+Loot from her the Jagged Diamond Dagger and Translated Parchment.
+
+Go back to Highpass Hold and find Stanos. If he is not there use the method above. Give Stanos the Translated Parchment for a sealed box.
+
+Go to Kithicor, which is one zone off of Highpass. Find the Dark Elf House at +800, +2400. Ensure that you are <i>not</i> hiding or invisible (including invisibility to undead or animals), but that you are sneaking, and give the box to any of the night spawns causing General V'Ghera to spawn. Take him to a safe spot in the zone, preferably a zone and kill him. He is a very hard level 60 being. He is equal or better than any god. He quad attacks for 275 quite quickly, has a 1500pt harm touch and casts soul devour. He can also summon mobs from the zone to assist him. He is weak to Wizard Lure Line, Poison Spells, Scent Line, and Fire Based Spells. He is extremely strong against magic based spells so do not use it, it will just waste mana.
+
+===Cazic Quill Sub Quest===
+
+This quest is a sub-quest of the Ragebringer Quest for Rogues. Note that you might get the Cazic Quill off of General V'Ghera in the final battle but it is a very rare drop. If he did drop it, disregard this quest. If you do not get it follow the quest below.
+
+Find [[Vilnius the Small]]. He can be located in Western Karanas in the bandit camp (+340, -6700). Making him spawn will take some work. First, be sure all bandits are in the camp. You must kill and continue to kill the bandit which runs from the camp to the top of the hill until the "a brigand" spawns. The "a brigand" is an ultra-rare spawn. Leave the "a brigand" alone, and at 11 p.m. game time Vilinus the Small will spawn in his place. Don't bother trying to make him spawn until you have the four robes he requires. Once you bring them back to him, he will reward you with Cazic's Quill. 
+
+*The first robe is [[Robe of the Kedge]]. This is dropped off of the Phinigel Autropos in Kedge Keep. The Robe of the Kedge is a very rare drop. You might have to do more than one raid to get it. A few of the Dark Elves in Kithichor can drop this. The usual price of a multiquest of this robe is 4k.
+
+*The second robe is [[Robe of the Ishva]]. This is dropped from the Ishva Mal in Splitpaw Lair. He is a 28 minute spawn with placeholders. Note that the Robe of the Ishva is not no drop and can be purchased for approximately 300-500pp. A few of the Dark Elves in Kithichor can drop this.
+
+*The third robe is [[Shining Metallic Robes]]. These robes are dropped off of the Ghoul Archmagus. He spawns in the Magi Room. The magus is a 30 minutes spawn and has a placeholder which is usually a Kor Ghoul Wizard or a Dar Ghoul Knight. The rare drop is a Shining Metallic Robes. Note that the Shining Metallic Robes is not no drop and can be purchased for approximately 1.7-2k.
+
+*The fourth and final robe is the [[Robe of the Oracle]]. This is easily bought for 150-200 platinum from players but can also be found off of the Oracle who is directily straight forward from the docks on the Sister Isle in Ocean of Tears. He is a level 40 wizard, who has hardly any hitpoints. He also has a level 40 paladin guardian. Have a wizard or druid friend come along with you. Root the guardian out of healing range of the oracle and then kill the Oracle. Loot the Robe of the Oracle and then have the wizard teleport you guys out of there. This way you don't have to mess with the guardian.
+
+===Obtaining Ragebringer===
+
+Go back to Stanos in Highpass Hold and turn in the Jagged Diamond Dagger, Cazic's Quill, and the General's Pouch for the Ragebringer.
+
+<span>Congratulations on your {{:Ragebringer}}!</span>
+
+== Long Walkthrough with Dialogue ==
+
+Find Malka Rale in Qeynos Catacombs. Location +380, -210, -80.[http://eq.magelo.com/npc/382140]
+
+You say, 'Hail, Malka Rale'
+
+: Malka Rale says 'Whew! I thought you were one of Hanns' goons. These sewers are a mess, you never know what is going to turn up next. I really wish I could get out of here.'
+
+You say, 'Who is Hanns?'
+
+: Malka Rale says 'Hanns runs the Circle of Unseen Hands. They had an item someone hired me to.. reacquire. I managed to get the item, stealing it right from the heart of the guild hall. The problem is, I had to carve a
+way out, and left a few extra holes in several of Hanns' people. I have been trapped down here in these stinking catacombs and sewers for too long now, and I do not think I can get out of here without some help.'
+
+You say, 'I can help'
+
+: Malka Rale says 'Ok! I am trusting you. Take this pouch to [[Vilnius the Small]] in West Karana. Last word I had from him, he was hanging out near one of the bandit camps. Be careful, since he does not know you. Just give him the pouch, and tell him I was.. delayed. While you are doing that, I will be thinking of a way to get out of this slimehole. With any luck, the Circle will learn the pouch is out of Qeynos, and will assume I got away. That means they won't be looking for me here.'
+
+'''NOTE: If you wish, you can skip the three side quests with Vilnius the Small below and hand the pouch in directly to Anson (see below). The two blades you receive from Vilnius can also drop from the later mobs you have to kill if you are lucky. Renux always drops the Jagged Diamond Dagger; General V'Ghara will sometimes drop the Cazic Quill.'''
+
+'''Find Vilnius the Small in West Karana. His loc is +180, -6715. His placeholder is "a brigand", but DON'T kill him. Leave the brigand alone, and Vilnius will spawn in his place at about 11:00pm game time.'''
+
+You say, 'Hail, Vilnius the Small'
+
+: Vilnius the Small says ' _____, just because I am short don't mean I can't bounce your Vah Shir rump all over these hills. Now, do you have something for me, or are you just in search of a rump bouncing?'
+
+'''Do NOT say "I am in search of a rump bouncing" to him. He will attack, and you will likely have to kill him. Although there are no faction hits, you will have to wait at least a full game day (72 minutes) for him to respawn.'''
+
+You say, 'What about Malka?'
+
+: Vilnius the Small says 'Malka Rale works for me from time to time. One of the best thieves I have ever met, and damn handy with a blade. She is long overdue to meet me here. I'm afraid she may have run into trouble in Qeynos.'
+
+You say, 'Malka will be delayed'
+
+: Vilnius the Small says 'Yes, delayed. She has always been prompt in the past, but she is several days overdue, and I know for a fact she completed the job. I am beginning to wonder if something happened to her. I would go check, but I run the risk of missing her if she shows up here.'
+
+'''Hand him Stanos' Pouch.'''
+
+: Vilnius the Small says 'Ah, very nice. Very nice indeed. Good work, and I hope Malka is able to make it out, good help is hard to find. But in the meantime, I am without an acquisition expert. Do you want the job?'
+
+{{YouGainExperience}}
+
+You say, 'I want the job'
+
+: Vilnius the Small says 'I need a few more items for a collector. They are rare and valuable, but I will pay you well for your trouble. I need the sword owned by the king of the Frogloks, the sword my distant cousin Karg is so proud of, and the matched set of Painbringer and Fleshripper, held by the kobolds. Return those to me quickly, and we will take it from there, eh?'
+
+'''The swords he needs are:'''
+
+*[[Fleshripper]] (from the "Solusek kobold king" in Solusek's Lair (Sol B))
+*[[Painbringer]] (from the "kobold champion" in Solusek's Lair (Sol B))
+*[[Mithril Two-Handed Sword]] (from "The Froglok King" in Lower Guk - live side)
+*[[Gigantic Zweihander]] (from "Karg Icebear" in Everfrost Peaks)
+
+'''Retrieve the swords and hand them to him.'''
+
+: Vilnius the Small says 'Very good, though how you managed to lug around all these oversized blades amazes me. I feel we can do business now, and Malta still has not shown up. Take this dagger. I had an old client who didn't, um.. pay.. so this was extracted from him. Right after it was inserted in him. For your next job, I need a collection of robes. The Robe of the Ishva, some Shining Metallic robes, an Oracle robe, and a Robe of the Kedge. I am not even sure where all these come from, but they are on my list here, and Rokyl is one of my best clients, so I figure that is your job.'
+
+{{YouGainExperience}}
+
+* You receive 100 gold from Vilnius the Small.
+* You receive 20 platinum from Vilnius the Small.
+
+'''You receive [[Jagged Diamond Dagger]].'''
+
+'''The four robes you need are:'''
+
+*[[Robe of the Kedge]] (from "Phinigel Autropos" in Kedge Keep or "Coercer Q`ioul" in Kithicor Forest)
+*[[Robe of the Ishva]] (from "The Ishva Mal", a gnoll in [[Splitpaw]], or "Coercer Q`ioul" and "Advisor C`zatl" in Kithicor Forest)
+*[[Shining Metallic Robes]] (from the "Ghoul Arch Magus" in Lower Guk - dead side)
+*[[Robe of the Oracle]] (from the Oracle of K`Arnon in the Ocean of Tears)
+
+'''Hand him the four robes:'''
+
+: Vilnius the Small says 'You do good work, _____. Here is another trinket for your trouble, you should be able to make use of it. Malta still hasn't made it back yet, and I have one more order to fill, if you're willing. This one should be easy. My sword collector has decided he wants rapiers now, of all things. He has asked for an Eyerazzia, a Martune Rapier, a Burning Rapier, and a well balanced rapier.'
+
+{{YouGainExperience}}
+
+* You receive 200 gold from Vilnius the Small.
+* You receive 15 platinum from Vilnius the Small.
+
+'''You receive [[Cazic Quill]].'''
+
+Note that he mispronounces the rogue's name -- he says Malta, but her name is Malka. '''This time, you need:'''
+
+*[[Burning Rapier]] (obtained from a fairly lenthy and irritating quest)
+*[[Martune Rapier]] (from the "Mistress of Scorn" in the Plane of Hate)
+*[[Eyerazzia]] (from "a scareling" in the Plane of Fear)
+*Well-Balanced Rapier (purchased from various merchants, including the "Shady Swashbuckler" in East Commonlands tunnel, for 221pp)
+
+'''Hand him the four rapiers he asked for.'''
+
+: Vilnius the Small says 'You never cease to amaze me! I never thought you Vah Shir types could be so good at this sort of work. I have been stuck here and haven't any more trinkets to give you, but perhaps you could take this pouch to its new owner, since I do not have the time to deliver it myself. He will pay you in full, and you can just keep what he gives you, how does that sound? The owner is a man named Stanos Herkanor, and he or his friend Anson are supposed to meet me in Highpass this evening. Do not waste too much time getting there, he is a secretive man, and I can not guarantee he will be around long. Good luck, and maybe we will meet again. It is always a pleasure working with another professional such as
+yourself!'
+
+{{YouGainExperience}}
+
+* You receive 300 gold from Vilnius the Small.
+* You receive 10 platinum from Vilnius the Small.
+
+'''You get back [[Stanos' Pouch]].'''
+
+'''Give the pouch to Anson McBale in Highpass Hold.'''
+
+: Anson McBale says 'Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.'
+
+<div class='facblock'>
+* Your faction standing with [[Highpass Guards]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Merchants of Highpass]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{YouGainExperience}}
+
+* You receive 100 gold from Anson McBale.
+* You receive 25 platinum from Anson McBale.
+
+You say, 'Hail, Stanos Herkanor'
+
+: Stanos Herkanor says 'Ah, the pouch. This is the first step, Anson. The Circle has to be upset having this taken right out from under them. That speaks well of the person who did the taking. [Hanns] must be even more furious now (chuckle).'
+
+: Anson McBale says 'Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows [who we are]. . .'
+
+: Stanos Herkanor says 'I tend to agree Anson. We could make a [deal]. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [story], then you decide.'
+
+You say, 'Who are you?'
+
+: Stanos Herkanor says '(chuckle) You are young, aren't you? I ran [the Circle] out of Qeynos for well over 30 years, and did a right fine job of it. It's a long story, and isn't over yet. I have much to answer for.'
+
+You say, 'What is the Circle?'
+
+: Stanos Herkanor says 'The Circle of Unseen Hands, you oaf! The largest collection of thieves, murderers, con artists, and rogues in the world. No finer men can be found anywhere.'
+
+You say, 'What deal?'
+
+: Stanos Herkanor says 'Aye, _____, we could make a deal. I have a blade I won't use anymore, and you have those fine looking daggers Vilnius gave you. Of course, you would have to do something for me first. Let me tell you my [story], then you decide.'
+
+You say, 'What story?'
+
+: Stanos Herkanor says 'Johann Krieghor was the leader of the Circle and I was his second-in-command. He made a dark bargain with a Teir'dal [General]. The Circle was to assassinate [Joren], the high elf ambassador to Qeynos. Had the plot worked, it would have weakened the alliance between high elves and humans, and possibly caused a war between the two powers. In either case, the Teir'Dal would have profited greatly by this event, and all others would have suffered. I could not stand by and let this happen, but Johann would not be deterred, for the Teir'Dal had promised him much. I had no choice but to kill Johann and the Teir'Dal agent. I made it look like they offed each other, and then I hid the [tools].'
+
+You say, 'Who is Joren?'
+
+: Stanos Herkanor says 'Joren was the boon companion to the King of Felwithe, a mighty paladin of great reknown, much loved by all the high elves. To slay him, certain. . .items. . .were crafted to make the job possible. With the death of the Teir'dal agent, and my theft of the [tools], the General was forced to abandon the plot.'
+
+You say, 'What General?'
+
+: Stanos Herkanor says 'The General? I know not his true name, only that he is ranked high among the dark elves. He kept his identity secret, and it was only upon the death of his agent that I even learned the smallest amount about him, that of his Generalship. Knowing who he is would aid me greatly.'
+
+You say, 'What about Hanns?'
+
+: Stanos Herkanor says 'Hanns Krieghor was a talented young man, in many ways much more of a man than his father. After the death of [Johann], I raised Hanns as my own son, and grew to love him as such. A few years back, to take revenge upon me for his [father's murder], Hanns seized control of the Circle. At the same time, he sent four of his best killers to finish me. The killers failed, I still live. Hanns still leads the Circle in Qeynos, and still seeks [my head].'
+
+You say, 'What father's murder?'
+
+: Stanos Herkanor says 'Well, it's no great secret now that I was responsible for the death of Johann Krieghor, Hanns Krieghor's father. Johann used to lead the Circle. Hanns was but a pup when his father died at my hand, and became as a son to me. Hanns did not discover that I was the one who killed his father until many years later. For that, he wants [my head].'
+
+You say, 'Your head?'
+
+: Stanos Herkanor says 'Aye, _____, Hanns has wanted me dead for years. He's tried many times, though not personally. He's smart, that one, for not facing me, but foolish for wasting so many good men for naught.'
+
+You say, 'What tools?'
+
+: Stanos Herkanor says 'To allow the assassin to slay a prince, and fight his way back out, a fell blade was crafted. It was small enough to conceal under a garment and yet large enough to strike a mortal blow through armor. Aided by vile Teir'Dal enchantments, it is much more fearsome than it appears. I would glady rid myself of it, but I fear I can not until I [clear my name] with Hanns.'
+
+You say, 'Clear your name?'
+
+: Stanos Herkanor says 'I need proof that what I say about Johann is truth, so that Hanns may forgive me. YOU can gather that proof for me. First, travel to Kaladim and Neriak, and there, upon the persons of the rogue guildmasters, you should find that which I seek, two parts of a document I recovered from the dead agent. I entrusted one to Founy, but that trust is gone, and Founy would betray me to Hanns were I to attempt to reclaim it. Tani N'mar has the other, which he should not possess, and keeps it only to spite me, not knowing its real import. Steal them both, and bring them back to me. And don't let anyone follow you! If I am not around, tell Anson you want to see me.'
+
+'''Side note: Hanns and Renux (Stanos' daughter) are both rogue guildmasters in North Qeynos. You can ask them about Stanos, along with some of the other rogues.'''
+
+You say, 'Hail, Hanns Krieghor'
+
+: Hanns Krieghor says 'My name is Hanns.. Do as I say, and we shall get along just fine.'
+
+You say, 'What about Stanos?'
+
+: Hanns Krieghor says 'Stanos Herkanor? (he roars in frustration) That bastard should be long dead by now. If you see him, you hightail it back and let me know at once. Do I make myself clear, _____? Do not speak to him, do not attack him, just return here and inform me. And that is ALL you need to know about Stanos.'
+
+You say, 'Hail, Renux Herkanor'
+
+: Renux Herkanor says 'You need something, or are you just browsing?'
+
+You say, 'What about Stanos?'
+
+: Renux Herkanor says 'What? (she looks shaken) I see it is time to make my choices. Forget you mentioned that name, _____. Leave me.'
+
+You say, 'Hail, Nax Ghruna'
+
+You say, 'What about Stanos?'
+
+: Nax Ghruna says 'Come over here, bub. Listen to me, and don't say a word. That name is one that can get you killed. Hanns wants Stanos dead, Renux wants to please Hanns, and everyone else wants to keep their spinal column intact, you know? So, _Yourname_, now you can speak. Where did you hear that name, or did you actually see Stanos somewhere?'
+
+You say, 'What about Renux?'
+
+: Zannsin Resdinet says 'She is second in command around here. She and [Hanns] go way back, from what I hear.. Renux is probably the only person Hanns trusts.'
+
+You say, 'What about Hanns?'
+
+: Zannsin Resdinet says 'Hanns, he runs things around here. Years ago, Hanns took over Ghil's old ring and started up the Circle of Unseen Hands. The Circle quickly took any market opposition out of Qeynos. We currently have connections in Erudin, Highpass and even Freeport.'
+
+'''If you hang around the Rogue guild for a while, you will also overhear the following exchange.'''
+
+: Renux Herkanor says 'Hanns, you are not going to want to hear this, but one of our boys in Donovon's gang swears he saw Stanos in the Karanas a week ago. And we still haven't cornered Malka Rale.'
+
+: Hanns Krieghor says 'Finally, the rat comes out of his hole! Send some men, no no, go yourself, and track him down. Then kill him. I don't care who sees you, or who gets in your way. Finish the job. And bring me whatever you find on his carcass. I'm sure he took some valuables from us when he escaped. And don't worry about Malka, she will keep until you finish Stanos, then she is yours. Shame to waste such talent, but you don't steal from the Circle and live.'
+
+: Renux Herkanor says 'Very well, Father is as good as dead. Did I ever mention that I really hate family reunions? (chuckle). I am gone!'
+
+'''Find [[Tani N`Mar]] in the Hall of the Ebon Mask (rogue's guild) in Neriak Third Gate.'''
+
+You say, 'Hail, Tani N`Mar'
+
+: Tani N`Mar says 'Greetings! You must be a stranger or [new to the Hall]. If you are a stranger, be warned that these halls are intended for the Ebon Mask only. If you are found to be a member of another house, you just may feel the sting of a blade in your back.'
+
+You say, 'Do you know Stanos?'
+
+: Tani N`Mar says 'Stanos? Hahahaha! That old fool crossed my path a few times in the past, but he is not able to trouble me now. If you see him, tell him Tani sends his..love. Hahahaha!'
+
+You say, 'I need the note'
+
+: Tani N`Mar says 'Oh, you want that piece of paper Stanos was so hot after?' He taps his belt pouch. 'Well, it's mine now, though it looks like ogre scratch to me. You're not getting it, Stanos is not getting it, and Hanns is not getting it. It is MINE! Now, _Yourname_, scamper off like the dog you are, before I decide I need more practice with these short swords!''
+
+'''Pickpocket a [[Stained Parchment Bottom]] from Tani. There is no minimum skill required, although higher skill might speed up the process and reduce the number of times you get caught, in which case Tani attacks. If that happens, you can run to the zone out. <strike>No other NPC's will assist Tani.'''</strike>
+
+<b>This is 100% not true.  A failed Pick pocket will trigger all the NPCS in room to assist.</b>
+
+'''Find Founy Jestands outside the bank in North Kaladim.'''
+
+You say, 'Hail, Founy Jestands'
+
+You say, 'What do you know of Stanos?'
+
+: Founy Jestands says 'Um, er.. (looks around nervously) Have you actually seen Stanos? How.. is he? Um, I have things I should be doing. I've got to figure out how this pottery wheel got stuck on my foot, for one thing. Er, I really don't have anything to tell you about Stanos, really, I swear it.'
+
+You say, 'Do you have a note?'
+
+: Founy Jestands says 'I don't know what you're talking about, if you know what I mean.' Founy fingers his belt pouch. 'You should leave now, if you know what's good for you. Don't make me sic the crew on you.'
+
+'''Pickpocket a [[Stained Parchment Top]] from Founy. Again, no minimum skill, and again, if you get caught, run to the nearby zone out.'''
+
+You say, 'Hail, Anson McBale'
+
+: Anson McBale says 'Beat it, _____, unless you have something for me.'
+
+You say, 'I need to see Stanos'
+
+: Anson McBale says 'This better be important.'
+
+'''Stanos spawns. Hand him the two pieces of parchment you pickpocketed.'''
+
+: Stanos Herkanor says 'Excellent! With this document I can..' (He pauses for a moment). 'Damnation! Curse my tired old mind, I forgot that I could not read the document. It is written in some obscure code or language. I can't decipher it, but I know someone who can. Seek out one called Eldreth, an Erudite who used to do work for me. I know not where he may be found these days, only that he will not be found in Erudin, as they want his head for some misdeed in the past. Give him the complete parchment, and tell him I sent you. He owes me.'
+
+<div class='facblock'>
+* Your faction standing with [[Highpass Guards]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Merchants of Highpass]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Find Eldreth in Lake Rathetear. (To save time, bring 100pp and two bottles of milk with you. The milk can also be purchased from the ogre vendors in the zone.) He spawns in the same tower as Cyanelle, at the bookcase next to her. He is a moderately rare spawn, and he despawns after you complete a hand-in. He can take up to eight hours (real time) to respawn afterwards. If he's not there, all you can do is wait or return another time.'''
+
+You say, 'Hail, Cyanelle'
+
+: Cyanelle says 'Hello, _____.'
+
+You say, 'Where is Eldreth?'
+
+: Cyanelle says 'Eldreth is not here right now. *chuckle* He went to find work, but if you know Eldreth, you would know that 'Eldreth working' is an oxymoron! Sometimes I wonder why I still share this tower with him. I suppose I get lonely on this lake, and Jebeker here never has much to say. But I digress. Eldreth will be back sooner rather than later, I would think. You are welcome to stay here and keep me company until he returns, or you can check back later. He is seldom gone more than a few days.'
+
+'''Eventually, Eldreth appears.'''
+
+Eldreth glowers at you dubiously -- looks kind of dangerous.
+
+You say, 'Hail, Eldreth'
+
+: Eldreth says 'Go away! I'm busy! I don't have time for scoundrels like you! Leave me alone or I shall, um..turn you into, er, a fish or something! That is what us powerful wizards do to those who annoy us! Yes, that is it. A fish! *leans towards you, looking abashed* Did that sound scary enough?'
+
+You say, 'Stanos sent me'
+
+: Eldreth says 'Stanos? Stanos Herkanor? I thought he was long dead. He nearly got me killed, in any case. What does the old fool want of me now?'
+
+You say, 'He wants you to translate a note'
+
+: Eldreth says 'Ah, codes are my specialty! It's what I did for the Circle before Hanns took over. But the Fox is wrong. I owe him nothing! As a fact, he owes me! He wants this translated - he will have to pay!'
+
+You say, 'What will he have to pay?'
+
+: Eldreth says 'Aye, pay, and pay you must. I need 100 platinum pieces to begin my work. This tower is old and drafty and it will take that much to make it bearable. And while you're at it, I need something else. I am
+very busy here and have no time to shop, so bring me back a couple bottles of milk along with your very large bag of platinum, and I will translate anything you wish at that time.'
+
+'''Give him 100pp, two bottles of milk, and the note from Stanos.''' I didn't sneak or do anything fancy; he took the hand-in just fine at dubious faction.
+
+: Eldreth looks at you, obviously expecting more. Did you forget the milk?
+
+: Eldreth says 'Hmm, interesting. This document is not only encoded, but written in a very obscure language. From what I can gather, it's a variant of elder Teir'dal, but not one I've encountered. I can not fully translate this, but I know one who can. Find Yendar and give him this'
+
+<div class='facblock'>
+* Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Receive: [[Scribbled Parchment]].'''
+
+'''Find [[Yendar Starpyre]] in Steamfont Mountains. Yendar wanders the zone.'''
+
+You say, 'Hail, Yendar Starpyre'
+
+: Yendar Starpyre says 'Hail, traveler! I sense you did not simply chance upon my isolation here, but are instead seeking me for something.'
+
+You say, 'Eldreth sent me'
+
+: Yendar Starpyre says 'Eldreth, Eldreth, hmm, was that a rather shabby Erudite? I have dealt with him in the past, I am sure. What does he want of me?'
+
+You say, 'He needs you to translate a note'
+
+: Yendar Starpyre says 'Oh, if it is written in Elder Teir'Dal, most likely I can translate it. I will be happy to try, in any case. Let me see it, please.'
+
+: Yendar Starpyre says 'I say, this is indeed a challenge. This is written in what I'm sure is the language of the High Priesthood of Innoruuk. I've often wished I could read this, but I have never had the key to unlock the language. Take this for now.'
+
+{{YouGainExperience}}
+
+'''Receive [[Tattered Parchment]].'''
+
+You say, 'What is the key?'
+
+: Yendar Starpyre says 'In the Plane of Hate, where dwell Innoruuk and his minions, there is a tome. This tome is called the Book of Souls.'
+
+You say, 'What book of souls?'
+
+: Yendar Starpyre says 'The Book of Souls chronicles all the lives Innoruuk has tainted over the years. It is in the care of the Maestro of Rancor. I can use this tome as a basis for my translation, if you return it and the note to me. An experienced practitioner in the art of non-detection should be able to snatch it from its resting place, don't you think, _____? (grin)'
+
+'''Obtain the [[Book of Souls]]; it is a ground spawn in the Plane of Hate. The loc is approximately +178, -320, on the top of a dresser. It looks like an open faced book. The undead in the Plane of Hate will see through sneak/hide and normal invis, but other than that, you should be able to reach the book without too much trouble.'''
+
+'''Return to Yendar and hand both him the Book of Souls and the Tattered Parchment he gave you.'''
+
+: Yendar Starpyre says 'My, this is quite a large list! Yes, I can use the names and dates recorded here to help me understand the script. It should be a simple matter now. A moment, please. Aha, yes, there we go. Traslated as best I can! I do hope you're not involved in what is described here, as it is quite fiendish. Oi! You, woman! Give that back! _____, that woman there took your letter! I think I should leave you to discuss it with her. Best of luck!'
+
+{{YouGainExperience}}
+
+'''Yendar despawns and Renux appears. Note that she is Stanos' daughter. She will not attack until provoked.'''
+
+Renux Herkanor regards you indifferently -- looks kind of dangerous.
+
+You say, 'Hail, Renux Herkanor'
+
+: Renux Herkanor says 'BOO! I'm sure you didn't expect to see me here, but you've left quite a trail. Why did you go to all the trouble to get this scrap of parchment? What can be so important about it that Father would
+risk all for it? No matter, Hanns will figure it out. Now, will you tell me where to find Stanos?'
+
+You say, 'Stanos is in Highpass Hold'
+
+: Renux Herkanor says 'Excellent. Stanos shall meet his end, and soon. You, however, will not live another day. Can't have you warning him, now can I?'
+
+'''Renux attacks. Kill her. You will probably need some help with her.'''
+
+You have slain Renux Herkanor!
+
+<div class='facblock'>
+*Your faction standing with [[Circle Of Unseen Hands]] got worse.
+*Your faction standing with [[Merchants of Qeynos]] got better.
+*Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+*Your faction standing with [[Guards of Qeynos]] got better.
+*Your faction standing with [[Kane Bayle]] got worse.
+</div>
+
+: Renux Herkanor's corpse says '(gasp) Tell Hanns I tried, and will love him always. Tell Father I will save a seat in Hell for him!'
+
+* --You have looted a [[Trochilic's Skean]].--
+* --You have looted a [[Jagged Diamond Dagger]].--
+* --You have looted a [[Translated Parchment]].--
+* --You have looted a [[Ravenscale Shoulderpads]].--
+* --You have looted a [[Ravenscale Mask]].--
+
+'''Loot the Translated Parchment from her corpse (and the Jagged Diamond Dagger if you didn't do the side quest with Vilnius).'''
+
+It reads:
+<pre>
+ T'kar:
+
+ We are ready for you to move into the next phase of the plan.
+
+ I have read your thoughts on the x'kanta Johann, and his chosen tool,
+ Stanos. Johann is a willing pawn, and will serve us well, for greed is yet
+ another facet of Innoruuk's power.
+
+ Stanos should also work out well, he is quite formidable, though I
+ understand he does not yet know he has been chosen to actually carry out the
+ task. Watch him well when the time comes, but I agree with your judgement.
+
+ Joren will be in Qeynos the entire month, so you have ample time to s'ktkar
+ your task. Enclosed are the tools you will give to the Human x'kanta.
+
+ The blade is a gift from Innoruuk himself, forged in his temple and imbued
+ with rage. Be sure to recover it after the mission is complete, it is much
+ too powerful to leave in the hands of those we intend to il'kaash in the
+ future. Combined with Stanos' skill, Joren and his guards should fall
+ easily.
+
+ The Guise has been handcrafted my our Master Coercer and should allow the
+ wearer to pass undetected as Koada'dal, thus allowing the assassin to gain
+ entry into the Ambassador's quarters. Luckily, it shall be a Human
+ transforming himself into that zm'rina form.
+
+ Be sure to eliminate all the human x'kanda you have recruited, and have no
+ fear of the repercussions, for the Circle of Unseen Hands is no threat to us
+ here in Neriak. I have spoken with your master Tani N'mar and he assures
+ me that his group of x'kantar will aid us if need be.
+</pre>
+'''GENERAL RALD V'GHERA'''
+
+'''Take the note back to Stanos and hand it to him.'''
+
+: Stanos Herkanor says 'Let me see what you have here. Aha, so that's who.. yes, yes! There is one more thing I need you to do. This document tells me who the originator of the plot really was. His name is General V'ghera, which is interesting, as Anson's men have spotted him in Kithicor recently. He will not be easy to get to, but if you give this box to one of his many aides, the General will HAVE to come to investigate. You see, this box used to contain the tools crafted for the assassination. When he arrives, kill him! I need any documents you find on him - with luck it will be enough evidence to convince Hanns that what I say is true. Bring any documents or dispatch cases you find, along with those blades Vilnius made you work so hard for, and we will make a trade.'
+
+<div class='facblock'>
+*Your faction standing with [[Highpass Guards]] got better.
+*Your faction standing with [[Carson McCabe]] got better.
+*Your faction standing with [[Merchants of Highpass]] got better.
+*Your faction standing with [[Corrupt Qeynos Guards]] got better.
+*Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Receive a [[Sealed Box]].'''
+
+'''Head to Kithicor Forest. The dark elf contingent spawns in a burned-out cabin during the game's night. You can use sneak/hide to safely approach the cabin, though watch out for wandering undead that may see you. Be sure to remove hide while turning in so you do not lose your Sealed Box. Give the Sealed Box that Stanos gave you to any of the dark elves in the cabin. It does not have to be Coercer Q'ioul specifically, but be careful you don't hand it to a pet by mistake!'''
+
+: Adjutant D`kan says 'The general will want to look at this. Wait here.'
+
+You gain party experience!!
+
+'''General V`ghera appears. Have a group or raid nearby and kill him.'''
+
+You have slain General V`ghera!
+
+<div class='facblock'>
+Your faction standing with [[Fallen of Bloody Kithicor]] got worse.
+</div>
+
+: General V`ghera's corpse shouts 'You think you have won, do you? INNORUUK, MY LORD AND MASTER, I INVOKE YOUR WRATH UPON THIS WRETCHED FOREST! Hahahahahahahahahahahahaha!'
+
+'''Loot a [[General's Pouch]] from his corpse. He will also occasionally drop a Cazic Quill, which you will need if you did not do the side quest with Vilnius.'''
+
+'''Return to Stanos and hand him both the Jagged Diamond Dagger and the Cazic Quill plus the General's Pouch, all at once.'''
+
+: Stanos Herkanor says 'Very well done. I leave now to confront Hanns with this evidence. Even so, it will not be easy to regain his trust. That is why I need those daggers, in case all else fails. (chuckle) Bristlebane grant me luck - I can no longer live like a hunted dog. In any case, I am grateful for your aid. Take this wretched blade, I can bear it no longer. I must warn you, I feel it carries Innoruuk's curse; all who are near it learn the meaning of hate. (chuckle) Ironic, isn't it? You went to all that work to redeem yourself for a rapier, yet the true reward came when you redeemed another. (chuckle). Good luck, _____, for much as I, you will need it.'
+
+<div class='facblock'>
+* Your faction standing with [[Highpass Guards]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Merchants of Highpass]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{YouGainExperience}}
+
+<span>Congratulations on your {{:Ragebringer}}!</span>
+
+== References ==
+* [http://tancidtherogue.com/ragebringer.html Rohane's Ultimate Rogue Epic Quest Guide]
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Rogue Quests]]

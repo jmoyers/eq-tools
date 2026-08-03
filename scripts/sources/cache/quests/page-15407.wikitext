@@ -1,0 +1,199 @@
+{{Classic Era}}
+[[File:npc_gerael_woodone.png|frame|Gerael Woodone]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Gerael Woodone]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Captain Tillin]], [[Gash Flockwalker]], [[Linaya Sowlin]], [[Raffel Minnmorn]], [[Tasya Huntlan]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Small Coin, low-level [[Druid]] spell scrolls
+</li></ul>
+
+== Walkthrough ==
+
+[[Gerael Woodone]] may be found at -180, -395.
+
+You say, 'Hail, Gerael Woodone'
+
+: Gerael Woodone says 'It is good to meet you, ______.  You, my friend,  are an adventurer.  The rugged look of you testifies to that. Let me know if you plan to adventure in the Plains of Karana.  I have need of a person  such as yourself to [deliver a flask].'
+
+You say, 'I will deliver a flask.'
+
+: Gerael Woodone says 'That is splendid!  I thought I would have to take the  long journey to the western Plains of Karana myself.  Here you are, my  friend.  Take this flask of nitrates to a woman named Linaya Sowlin.  It  will help her crops grow stronger.  You will find her farm alongside the  road to Highpass Hold.  She should pay you well for the delivery.   Farewell.'
+
+'''You receive a [[Flask of Nitrates]]. [[Linaya Sowlin]] may be found at -3745, -7655 in Western Karana, in a farmhouse. Give her the flask.'''
+
+: Linaya Sowlin says 'Oh thank [[Tunare]] you showed up when you did.  I was at a nearby merchant house when a fellow dropped a [note] and I picked it up  and read it.  It talked of the [Unkempt Druids] and before I could read  on, the man swiped it from my hands.  I ran for dear life, for surely he would kill me for reading the note.  I think I lost him in the woods but I  am not sure.  Please stay with me a while to be sure.'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 10.
+* Your faction standing with [[Protectors of Pine]] has been adjusted by 5.
+* Your faction standing with [[QRG Protected Animals]] has been adjusted by 5.
+* Your faction standing with [[Unkempt Druids]] has been adjusted by -2.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+</div>
+{{exp}}
+
+You say, 'What note?'
+
+: Linaya Sowlin says 'The note spoke of the [Unkempt Druids].  I did not get a chance to read it all, only a glimpse.  Perhaps the man still has the note.  Too bad.  I am sure Gerael Woodone of the druids of Surefall Glade  should look at it.'
+
+You say, 'What Unkempt Druids?'
+
+: Linaya Sowlin says 'The Unkempt Druids are a crazed group of druids and  rangers.  I learned of them when I was in the Jaggedpine. They are a  secret group and aim to keep it that way.  They would kill anyone who learned of their whereabouts.'
+
+'''[[Draze Slashyn]] spawns outside, probably triggered by the flask turn-in rather than the optional dialogue interactions after:'''
+
+: Draze Slashyn shouts 'Come out of that house, Linaya Sowlin!!  I am  waiting!  It is time for you to die!'
+
+: Draze Slashyn says 'I shall chop you down as your people chopped down the  beauty of the forests!!'
+
+{{expand}}
+
+'''Need fight info for Draze Slashyn.  On his death:'''
+
+You have slain Draze Slashyn!
+<div class="facblock">
+* Your faction standing with [[Unkempt Druids]] has been adjusted by -10.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 7.
+* Your faction standing with [[QRG Protected Animals]] has been adjusted by -5.
+</div>
+
+: Draze Slashyn's corpse says 'Your act of murder will not go unnoticed by  the Unkempt Druids or nature itself!!'
+
+* --You have looted a [[A Tattered Cloth Note]].--
+* --You have looted a [[Rusty Axe]].--
+* --You have looted a [[Human Blood]].-- 
+
+'''The note identifies as "Contract on Gash," and reads:'''
+
+ To all Unkempt Druids, Jale Phlintoes calls upon you to seek out the Surefall Ambassador to Qeynos. His name is Gash Flockwalker. Reward upon delivery of his head. Long live the green!!
+
+'''Give the note to Gerael Woodone.'''
+
+: Gerael Woodone says 'Oh my!!  Our Qeynos Ambassador, Gash, is in danger.   Please take the note over to [[Captain Tillin]] of the Qeynos Guard then find  Gash and inform him [they are trying to kill him].  Go!!'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 15.
+* Your faction standing with [[Protectors of Pine]] has been adjusted by 5.
+* Your faction standing with [[QRG Protected Animals]] has been adjusted by 5.
+* Your faction standing with [[Unkempt Druids]] has been adjusted by -3.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+</div>
+{{exp}}
+
+'''You receive a different version of A Tattered Cloth Note back, which identifies as "Returned Contract on Gash," and which reads the same as the first note.'''
+
+You say, 'Who is Jale Phlintoes?'
+
+: Gerael Woodone says 'Jale Phlintoes was trained in the ways of the  Jaggedpine Treefolk since his birth.  He was only eight when his parents  were killed by poachers.  Young Jale would have had his throat slit also  if he were not off fishing at the lake.  Unfortunate.  The now orphaned  Jale was brought up by us druids.  After many conflicts with our council,  he ran off to start his own sect somewhere in the nearby lands.  For his  terrorist activities his head now brings a high price.'
+
+You say, 'Who are the Unkempt Druids?'
+
+: Gerael Woodone says 'The Unkempt Druids are a radical splinter group of druids.  Their beliefs have been contorted by the mad druid [Jale Phlintoes].  It is he who engineers and coordinates the druids' transgressions.  From setting lumbermills aflame to murdering any man who dares to wear a bearhide.  They must be stopped!!  Citizens must learn to understand Tunare's will, not fear it.'
+
+'''Captain Tillin may be found in South Qeynos overlooking the the arena from the balcony at +40, -510.  Give him the note.'''
+
+: Captain Tillin says 'So, an assassin has been sent to Qeynos!  I shall  have my guards keep an eye out for any suspicious looking visitors.  As  for you... you should speak with the Surefall Glade ambassador.   Ambassador Gash is staying at the Lion's Mane Inn here in South Qeynos.   Inform him that [an assassin has been sent to kill] him.  Do not let the assassin near him!'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Antonius Bayle]] has been adjusted by 5.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by -1.
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by -1.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+You receive 6 platinum, 5 gold, 3 silver, 5 copper pieces.
+
+'''Gash Flockwalker is inside the inn at +370, -85, inside a room.  Go through the main entrance of the inn, turn right, and then left when you see Sissy Huntlan, General Supply vendor. Take another immediate left turn before you enter the hallway and you'll run into the merchant's front desk (Tasla Huntlan, general supply vendor). Take the hallway to your right until you see a wanted poster with a face on it.  He is behind the door to the right of that poster (your right if you are looking at the poster).'''
+
+'''You may warn Gash as the Captain has instructed, though it is optional:'''
+
+You say, 'An assassin has been sent to kill you.'
+
+: Gash Flockwalker says 'What!!?  Must be an Unkempt Druid Assassin nearby!! Find him and slay him.  I am sure he stands to make a FORTUNE!  I believe the assassin may be carrying some sort of [black wood chip].'
+
+You say, 'What black wood chip?'
+
+: Gash Flockwalker says 'That is the mark of an Unkempt Druid.  Long ago there was a tree in Norrath we called the Great Tunarbos.  Legend says it spawned all the woodlands of Norrath.  Many centuries ago, long before the Combine Era, the Great Tunarbos was burned to the ground by unknown  means. The ancient rangers kept what little of the great tree they could  find.  To make it short, all Unkempt Druids now carry burned wood chips to represent the great tree.  They are not real.  Take any black wood chips to Gerael Woodone in Surefall Glade.'
+
+
+'''Speaking with Gash is not requiired, as [[Raffel Minnmorn]] spawns at the [[North Qeynos]] zone north of the Bard's guild, The Wind Spirit's Song, after giving Captain Tillin the note. You can run directly to him and kill him, but if you let him proceed, he is seen trying to get information on Gash:'''
+
+: Raffel Minnmorn says 'Pardon me.  Have you seen a man named Gash Flockwalker?  He hails from Surefall Glade.'
+
+: [[Tasya Huntlan]] says 'Yes.  He is staying here at the Lion's Mane Inn, but it is against regulations to give out room numbers.  I can tell you that he loves to see the sun rise over the ocean.'
+
+You say, 'Hail, Raffel Minnmorn'
+
+: Raffel Minnmorn says 'Hello, friend. I am visiting from the plains.  I hope to make a FORTUNE here in Qeynos.'
+: (If you have low [[Unkempt Druids]] faction, he says, 'Your ways of wickedness are no secret to me or to the Unkempt Druids. You'd better run!' and will not respond otherwise.)
+
+You say, 'Who is Gash Flockwalker?'
+
+: Raffel Minnmorn says 'Gash Flockwalker is a druid from Surefall Glade.  I have a special delivery for him.'
+
+You say, 'What special delivery?'
+
+: Raffel Minnmorn says 'I shall chop you down as your people chopped down the beauty of the forests!!'
+
+He attacks, casting druid spells.
+
+You have slain Raffel Minnmorn!
+
+<div class="facblock">
+* Your faction standing with [[Unkempt Druids]] has been adjusted by -5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 5.
+* Your faction standing with [[QRG Protected Animals]] has been adjusted by -2.
+</div>
+
+Raffel Minnmorn's corpse. Long live the green.
+: Gash Flockwalker says 'Hey... he dropped something. You should most likely take it to Gerael Woodone in Surefall Glade. Tell me what it is.'
+
+* --You have looted a [[Rusty Dagger]].--
+* --You have looted a [[Black Wood Chip]].-- 
+
+'''Give the [[Black Wood Chip]] to [[Gerael Woodone]].'''
+
+: Gerael Woodone says 'So the Unkempt Druids are alive and well.  We shall keep a watchful eye out as should you.  Take this for your bravery and defense of the Jaggedpine.'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 9.
+* Your faction standing with [[Protectors of Pine]] has been adjusted by 5.
+* Your faction standing with [[QRG Protected Animals]] has been adjusted by 5.
+* Your faction standing with [[Unkempt Druids]] has been adjusted by -5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+</div>
+
+You gain experience!!
+
+You receive 2 gold from Gerael Woodone.
+
+
+The various steps of this quest have both positive and negative adjustments to [[QRG Protected Animals]], but overall it grants +8 faction.
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:All Classes Quests]]

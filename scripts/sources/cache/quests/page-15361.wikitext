@@ -1,0 +1,41 @@
+{{Unsolved}}
+[[File:npc_mooto.png|frame|Mooto]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Misty Thicket]]
+|-
+! ''' Quest Giver: '''
+| [[Mooto]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Unknown
+|-
+! ''' Related NPCs: '''
+| Unknown
+|}
+
+== Reward ==
+
+<ul><li>  Unknown
+</li></ul>
+
+== Walkthrough ==
+
+Follow Mooto (assuming nobody kills him) and when he gets to the orc camp he will say:
+
+"Orcs have infiltrated our area.  I will reward anyone who shows me proof of their death."
+
+As a wolf you can hail Mooto and he responds "You would be wise to leave my sight while you still can.  Unless you have something to give me."
+
+Giving the DeathFist Slashed Belt and Pawn Scalp did not result in anything, so I'm not sure what he needs, or if the quest works. 
+
+''Need quest solution, rewards, all dialogues, current faction hits if any, missing quest items, additional quest mobs, /loc of quest mobs, etc.''
+
+[[Category:Quests]]
+[[Category:Misty Thicket]]

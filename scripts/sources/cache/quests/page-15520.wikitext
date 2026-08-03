@@ -1,0 +1,71 @@
+{{Classic Era}}[[File:npc_josper_kenshed.png|frame|Josper Kenshed]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Josper Kenshed]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[A Kobold Caster]], [[Ilanics Skeleton]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  [[Column of Frost|Spell: Column of Frost]] (sells for 2pp)
+</li><li> 7 silver pieces
+</li></ul>
+
+== Walkthrough ==
+
+[[Josper Kenshed]] in the Wizard's Guild of Erudin mentions a [special matter].  Ask him about it and he will ask you to find the skeleton Ilanic and ask him [where is the scroll?].  
+
+You say, 'Hail, Josper Kenshed'
+
+: Josper Kenshed says, 'Come forward and speak.  What is it you seek within these walls?  Let it be the knowledge of wizardry. for that is what we are.  Only a [servant of wizardry] should be within these walls.'
+
+You say, 'i am a servant of wizardry'
+
+: Josper Kenshed says, 'A servant. you say?  If you be a young apprentice. perhaps you might assist me? I could use you to [collect components].  If you believe yourself to be beyond such things. you may wish to assist me with a [special matter].'
+
+You say, 'what special matter'
+
+: Josper Kenshed says, 'An old friend of mine, Ilanic, can not rest till he his research is finished.  If I only know what he was working on. Goto the forest of Toxxulia and seek him out. Bring me back what information you can find about what he was researching before his demise.'
+
+He sent his apprentice, Ilanic, to test his new spell icecapades but only gave him half the spell. Ilanic wanders Toxxulia Forest. He says when you bring the scroll half back to him he'll give the complete spell. Ilanic is a named skeleton that roams the Southern part of Toxxulia forest. 
+
+You say, 'Where is the scroll?' 
+
+: [[Ilanics Skeleton]] says, 'Kobold! Kobold!'
+
+It seems a [[A Kobold Caster]] has taken the spell half from the skeleton. The Kobold Caster is a rare spawn and drops the spell half you're looking for. Turn in {{:Half of a Spell}} to Josper and receive Spell: Column of Frost, experience and faction.<br>
+<div class="facblock">
+*Your faction standing with [[Crimson Hands]] got better.
+*Your faction standing with [[High Council of Erudin]] got better.
+*Your faction standing with [[Heretics]] got worse.
+*Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 7 silver pieces.
+
+: Josper Kenshed says, 'Go now and use his research to aid yourself. Seems that I lack the will to use Ilanic's knowledge for my better good.'
+
+Receive [[Column of Frost|Spell: Column of Frost]]
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]
+[[Category:Wizard Quests]]

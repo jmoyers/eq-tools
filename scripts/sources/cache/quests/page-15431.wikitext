@@ -1,0 +1,65 @@
+{{Kunark Era}}
+[[File:npc_warlord_zyzz.png|frame|Warlord Zyzz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Field of Bone]]
+|-
+! ''' Quest Giver: '''
+| [[Warlord Zyzz]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a scorpion]]
+|}
+
+== Reward ==
+
+<ul><li>[[Faction]], Coin, Experience</li></ul>
+
+== Walkthrough ==
+
+''[[Warlord Zyzz]] can be found at loc -2489.18, 3184.57, 49.61.''
+
+You say, 'Hail, Warlord Zyzz'
+
+: Warlord Zyzz says, 'There is little time for talk. There are plenty of [tiny invaders]. Do your part and exterminate as many as you can. All of Cabilis shall look favorably upon you in the long run.'
+
+You say, 'What tiny invaders?'
+
+: Warlord Zyzz says, 'The small scorpions have been turning up everywhere!! One can hardly sleep from thinking of the little monsters. Please crush as many as you can for the greater good. I will even pay a bounty for every four scorpion pincers you return.'
+
+'''Hand in 4 [[Scorpion Pincer]]s.'''
+
+: Warlord Zyzz says, 'The bounty is awarded to one who can return four scorpion pincers.'
+: Warlord Zyzz says, 'The bounty is awarded to one who can return four scorpion pincers.'
+: Warlord Zyzz says, 'The bounty is awarded to one who can return four scorpion pincers.'
+: Warlord Zyzz says, 'Magnificent!! The more pincers I get the fewer scorpions there are. Here. Take the bounty.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 2 silver from Warlord Zyzz.
+
+== Experience ==
+=== Iksar Necromancer ===
+* 10% per turn-in at level 2
+* 8% per turn-in at level 3
+* 5% per turn-in at level 4
+
+[[Category:Quests]]
+[[Category:Field of Bone]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,95 @@
+:''For the overview of the many bone chips quests, see [[Bone Chips Quests]].''
+[[File:npc_wolten_grafe.png|frame|Wolten Grafe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Wolten Grafe]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Water Flask}}
+</li></ul>
+
+== Walkthrough ==
+
+Please note that this does not work at Indifferent faction. 
+
+Your Location is -189.50, -553.37, 3.29
+
+: Wolten Grafe says 'Your excellency, we need to recruit a newcomer to find and infiltrate the Shrine of Bertoxxulous. The shrine's eyes are watching all our moves.'
+
+Runethar Hamest says 'Hire one soon, Wolten. We need to get in touch with Drosco!'
+
+You say, 'Hail, Wolten Grafe'
+
+: Wolten Grafe says 'Hail, noble ______. Remember to spread the words of Karana throughout the faraway lands on which you shall tread. We of the Temple of Thunder are looking for new members - good people who [wish to join our cause]. Let the call go out!'
+
+You say, 'I wish to join the cause.'
+
+: Wolten Grafe says 'That IS good news! If you walk the righteous path of the Rainkeeper, Karana, then you are truly noble. I have need of someone like that. I must find someone to perform a [dangerous mission] or perhaps you would rather seek out the [Rat King] or [crush the undead]?'
+
+You say, 'I will crush the undead.'
+
+: Wolten Grafe says 'Those who passed generations ago have had their bones exhumed and enchanted. Some evil force plagues this land with these evil skeletons. You will fight for us and crush the skeletons. Take this box and fill it with the bones of those creatures. We will not allow them to rise again and you shall earn our respect. Go forth and fight for Karana!!'
+
+You receive a [[Box For Bones]], a 6-slot SMALL container.  Put 6 x [[Bone Chips]] (normal only) in the box and combine.
+
+You have fashioned the items together to create something new: [[A Box of Bones|Box of Bones]].
+
+It identifies as "Box For Bones."  Give it to Wolten.
+
+: Wolten Grafe says 'You have done well. Let it be known to all that you fight for the Rainkeeper. Go and continue the battle.'
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{Exp}}
+
+You receive 2 silver from Wolten Grafe.
+
+You receive a Water Flask.
+
+You receive a Loaf of Bread
+
+== Exp Gain ==
+
+10% experience at level 2.
+
+=== Wood Elf Ranger (Green, December 2020) ===
+{| class="eoTable2"
+! Level 
+! Turn-ins
+! Percent of level gained
+! XP to complete level
+! Est. XP per turn-in
+! Est. XP per Bone Chip
+|-
+| 8
+| 20
+| 20%
+| 236600
+| 1183
+| 197 
+|}
+
+Above level 2, significantly less XP per Bone Chip than Kaladim and Felwithe quests.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

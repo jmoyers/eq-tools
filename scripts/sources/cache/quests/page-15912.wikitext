@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_jayna_d`bious.png|200px|frame|Jayna D`Bious]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Stained Red Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Magician, you will have a tattered note in your inventory. The note reads as follows:
+
+: Seek out [[Jayna D`Bious | Jayna D'Bious]] of the Spurned. She is the master magician in the Tower of the Spurned. Give her this note, and she will tutor you in the ways of magic.
+
+Upon handing the note to [[Jayna D`Bious]]:
+
+: [[Jayna D`Bious]] says, 'Welcome, young magician. I am Jayna D'Bious. You have much to learn, so lets get you started. Here is your guild tunic'
+
+<div class='facblock'>
+* Your faction standings with [[The Spurned]] got better.
+* Your faction standings with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Crimson Training Tunic*]]. Good luck, Mage!
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:Magician Quests]]

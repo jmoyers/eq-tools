@@ -1,0 +1,97 @@
+{{Classic Era}}
+[[File:npc_byzar_bloodforge.png|frame|Byzar Bloodforge]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Byzar Bloodforge]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Corflunk]], [[Zarchoomi]]
+|}
+
+== Reward ==
+
+[[File:BloodforgeComplete.jpg|frame|Bloodforge armor and hammer]]
+
+<ul><li>  {{:Bloodforge Armplates}}
+</li><li> {{:Bloodforge Boots}}
+</li><li> {{:Bloodforge Bracers}}
+</li><li> {{:Bloodforge Gauntlets}}
+</li><li> {{:Bloodforge Helm}}
+</li><li> {{:Bloodforge Legplates}}
+</li><li> {{:Bloodforge Mail}}
+</li></ul>
+See [[Bloodforge Armor Set]] for more info.
+== Walkthrough ==
+
+[[Image:ogreheadsmap.png|thumb|Helpful Map]]
+
+{{expand}}
+''' ''Please fill in the missing dialog that begins this quest.  Unsure of a lead in from another quest.  As a Wood Elf Ranger with Warmly faction, Byzar only offers the [[Runnyeye Warbeads (Kaladim Warrior)]] quest when hailed'' '''
+
+<br>
+
+After completing [[The Mudtoes]] the quest giver [[Furtog Ogrebane]] will give you the lead to start this quest. However, you might want to do this quest first, as these ogres are quite a bit lower level than the ones Furtog sends you after.
+
+
+''[[Byzar Bloodforge]] is located at -108, 381, 3 or -38, 400, 3 as he paths between two rooms in the Kaladim Warrior's Guild.''
+
+
+You say, 'What about Corflunk' 
+
+
+: Byzar Bloodforge says, 'Do not speak the names of Zarchoomi and Corflunk!! I have heard enough of those ogres!! I would pay greatly for their heads!!'
+
+''Upon the death of [[Corflunk]]''
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got worse.
+* Your faction standing with [[Craknek Warriors]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+</div>
+
+''Upon the death of [[Zarchoomi]]''
+
+<div class="facblock">
+* Your faction standing with [[Shamen of War]] got worse.
+</div>
+
+Zarchoomi says, 'Your destiny lies at the hands of the Greenbloods.'
+
+'''Hand [[Byzar Bloodforge]] the [[Ogre Head]]s looted from [[Corflunk]] and [[Zarchoomi]].'''
+
+: Byzar Bloodforge says, 'I underestimated you. You are truly a great warrior. I reward you with a piece of my own Bloodforge armor. You would be fine Bloodforge Brigade material! How would you like to [take a little trip] in the name of the Bloodforge Brigade?'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+* [[Trumpy Irontoe]]
+
+== Notes ==
+
+If you already have the Helm, you might want to give it to someone else to hold, as it is Lore.  If Byzar gives you another Helm, you'll get nothing if you have one.
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Warrior Quests]]

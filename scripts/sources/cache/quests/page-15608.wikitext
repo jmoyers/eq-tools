@@ -1,0 +1,326 @@
+{{Velious Era}}
+
+[[File:npc_staff_sergeant_drioc.png|frame|Staff Sergeant Drioc at the Kael bank branch Christmas party]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Staff Sergeant Drioc]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Iceclad Ocean]], [[The Wakening Land]], [[Thurgadin]], [[Tower of Frozen Shadow]]
+|-
+! ''' Related NPCs: '''
+| [[Corudoth]], [[Incoherent spirit]], [[Lieutenant Krofer]], [[Noble Helssen]], [[Petcas Coldbeard]], [[lucid spirit of Abrams]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Collar of the Storm}}
+</li><li> {{:Enchanted Velium Mask}}
+</li><li> {{:Girdle of Reflection}}
+</li><li> {{:Helssen's Prismatic Trinket}}
+</li><li> {{:Velium Studded Cloak}}
+</li></ul>
+
+== Checklist ==
+
+<div class="facblock">
+ The length of time needed to complete this quest depends on your accessibility to the Tower of Frozen Shadow. You will need the sixth 
+ floor key to complete this quest.
+ 
+ Quest requires a minimum of Indifferent faction. This quest can be completed at KOS faction by having an Enchanter charm Noble Helssen with Dictate.
+ 
+ Quest can be MQ'd by having one person turn in the [[Ancient Rusted Key]] and one person turn in the [[Arcanum of Rosh]].
+</div>
+
+{{CheckboxList}}
+
+'''Part One'''
+<ul>
+<li>'''OPTIONAL:''' Give 2x [[Panther Meat]], 1x [[Raptor Meat]] and 1x [[Tar Goo Strands]] to [[Lieutenant Krofer]].
+<li>'''OPTIONAL:''' Kill a Sifaye Messenger and give report to [[Lieutenant Krofer]]. '''Receive''' {{:Velium Studded Cloak}}
+<li>'''START HERE:''' Tell [[Lieutenant Krofer]] "I am prepared". Krofer hands you [[Krofer's Requisition]].
+<li>Give [[Krofer's Requisition]] to [[Staff Sergeant Drioc]] in the [[Kael Drakkel]] bank and receive [[Signed Requisition]].
+<li>Return to [[Lieutenant Krofer]] and give him the [[Signed Requisition]] to spawn 4 giants at WL/Kael zoneline and receive [[Mission Report]].
+
+<li>'''OPTIONAL:''' Follow squad of giants to Sifaye village and command them to "troop attack".
+<li>Return the [[Mission Report]] to [[Lieutenant Krofer]] for the [[Report of Failure]]. This can be done anytime; the attack does not need to complete.
+<li>Give the [[Report of Failure]] to [[Staff Sergeant Drioc]] and he will return it to you.
+<li>Next give the [[Report of Failure]] to [[Noble Helssen]], he will hand you an [[Inscribed Velium Tablet]]. '''Receive''' {{:Enchanted Velium Mask}}
+</ul>
+'''Part Two'''
+<ul>
+<li>Speak with [[Corudoth]] - a turtle in Ice Clad Ocean - hand [[Corudoth]] the Inscribed Velium Tablet from [[Noble Helssen]] and receive a [[Lock of Dwarven Hair]].
+<li>Spawn a [[Lucid Spirit of Abrams]] by killing [[Incoherent Spirit]] (with a Capital I) on floor 6A of [[Tower of Frozen Shadow]].
+<li>Hand [[Lucid Spirit of Abrams]] the [[Lock of Dwarven Hair]] to receive the [[Arcanum of Rosh]] (you have limited time before he despawns).
+<li>Kill [[Petcas Coldbeard]] in [[Thurgadin]] and loot an [[Ancient Rusted Key]] {{Item Lore|Rosh's key}}
+<li>Take [[Arcanum of Rosh]] and the [[Ancient Rusted Key]] to Noble Helssen for a voucher.
+<ul>
+<li>Give voucher to [[Kellek Felhammer]]. Receive {{:Collar of the Storm}} OR
+<li>Give voucher to [[Wenglawks Kkeak]]. Receive {{:Girdle of Reflection}} OR
+<li>Give voucher to [[Noble Helssen]]. Receive {{:Helssen's Prismatic Trinket}}
+</ul>
+</ul>
+{{End}}
+
+== Part One - Wakening Land and Kael Drakkal ==
+
+:You say, 'Hail, Staff Sergeant Drioc'
+
+:Staff Sergeant Drioc  glances over at you with a sneer and says, 'I have much to do and organize. If you have anything of importance to say you had best speak up now or leave before I lose my patience.' 
+
+:You say, 'I am looking for work.'
+
+:Staff Sergeant Drioc  stops looking over his papers and takes a moment to size you up. You fight the urge to run in fear as the collosal humanoid considers you. After a moment he says, 'Very well. Our campaign to conquer the so called Tunarean Court has need of reinforcements. The Kromrif are already spread to thinly in the Eastern Wastes so mercenaries will have to do. Take these orders to the commanding officer in the field and follow his orders. Payment will be discussed after you complete your assignment.'
+ 
+'''Receive a [[ Mercenary Assingment ]]. Bring this to Lieutenant Krofer, who can be found outside the city gates in the Wakening Land.'''
+
+:You say, 'Hail Lieutenant Krofer.'
+
+:Lieutenant Krofer says, Unless you are the new mercenary reinforcements I suggest you remove yourself from my presence before I decorate the bottom of my boot with your intestines.'
+
+'''Upon handing the [[ Mercenary Assingment ]] to Lieutenant Krofer, he says:'''
+
+:Lieutenant Krofer says, 'Drioc sent you? I suppose one cannot expect much from a mercenary. Well then, (player name), your first assignment will be to clear out some of this forest's annoying populace. Bring me the meat of one of the raptors, the meat of two panthers, and the remains of one of those living puddles of black sludge found in the caves. You will then have your payment.
+
+'''Bring him two panther meat, one raptor meat and one [[Tar goo Strands]]. Return these to him for some coin and faction.'''
+
+:Lieutenant Krofer says, 'Well, I suppose you may be worth something more than fodder after all. Here is your payment. Speak to me again when you are ready for your next assignment. For now, get some rest, you will need it.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+:You receive 10 platinum, 2 gold, 1 copper pieces.
+
+:{{exp}}
+
+== A Sifaye Messenger ==
+
+:You say, 'I'm ready for my next assignment.'
+
+:Lieutenant Krofer says, 'Well, ready or not, this must be done now. Out there in the forest are our enemies. For us to be successful, we must know what they are doing and how they are going about it. Our probing attacks have revealed little so we've decided to send you out to gather any info you can. There must be some sort of messenger out there, bring any info you might find.'
+
+:He will then need you to catch a messenger roaming the Wakening lands and return proof of its death. This is a Sifaye Messenger, which roams between along the north and northwest region of the forest.
+
+'''Upon killing the Sifaye Messenger'''
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got worse.
+</div>
+:{{exp}}
+
+'''Loot the note and return it to Lieutenant Krofer and receive a [[Velium Studded Cloak]].'''
+
+:Lieutenant Krofer says, 'Excellent, (Player Name). With this we can plan an attack that might actually accomplish something. Here is your payment. You have also earned this cloak, it should help protect you from the clawing undergrowth of this savage land. Your next mission will be more complex and dangerous, however we may be able to spare a laborer or two to assist you. Rest now, and tell me when you are prepared.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+:{{exp}}
+
+'''Tell [[Lieutenant Krofer]] that you are prepared and receive a requisition to take to [[Staff Sergeant Drioc]] in Kael.'''
+
+== Attack on the Sifaye village (You can start the quest here) ==
+
+'''[[Lieutenant Krofer]] can be found in [[Wakening Land]]. Sometimes he paths around but he's usually at the laborer camp at (-700, -4300) just outside [[Kael Drakkel]].'''
+
+:You say, 'I am prepared'.
+
+:[[Lieutenant Krofer]] says, 'Very well. We've decided to attack the small Sifaye village northeast of here and I want you to coordinate the attack. I will send you into Kael Drakkel with a request for troop assistance. After the squad is assembled you will lead them to the staging point where you will oversee the battle. Here is the request. Take it to Drioc in the city and return here with the troops.
+
+'''You are given [[Krofer's Requisition]].'''
+
+<div class="facblock">
+ Safest way to do this if KOS: 
+ 
+ Nothing in the area sees invis but there's a few mobs that could easily ruin your day. The main one is [[Captain Bvellos]] which paths from
+ king tormax to arena, stopping at bank for a few minutes right next to [[Staff Sergeant Drioc]]. Ideally you'll wait for him at bank and start
+ your business when he leaves. First, cast wake of tranquility on the watchman guarding the left door where drioc is. The longer timer will
+ give you enough time to work (05/28/2025: calm is 3mins, pacify 3.5mins, WoT 7mins). Invis, run inside bank and target [[Lieutenant Vellos]].
+ Run out and run up the ramp toward EW and almost at the top you'll see a nook in the wall (-138, +1238). Gnome illusion and look through wall,
+ you'll see your targets and you'll be in range for lulling. The giants in the area, even the green cons, have a fair bit of MR so they'll
+ resist you a couple times. By looking through the wall you'll see if you get a crit resist and that will give you enough time to gate.
+ Calm Vellos. Then "/target watchman" and calm him too. Once that's done invis again and run down the ramp, open the door and target Drioc.
+ Back out, open up inventory and put the quest item on your cursor. Dictate drioc and he'll come to you. So will [[Pollos Stormkeeper]] from the
+ other side of the room but ignore him. You'll have about just a bit more than enough time to quickly do the turn in with Drioc. The moment
+ Pollos hits you, Drioc will engage and keep him busy. Now is your time to back off and gate.
+</div>
+
+'''Give [[Krofer's Requisition]] to [[Staff Sergeant Drioc]] in [[Kael Drakkel]], inside the bank.'''
+
+:[[Staff Sergeant Drioc]] takes the note and begins reading. Seeing a certain passage, he squints and rereads, his brow furrowed. He glances over at you and says, 'Very well. I will assign you a squad lead by Corporal Hlash. They will rendezvous with you out in the field. Oh, and take this back to Krofer.
+
+:{{exp}}
+
+'''You receive the [[Signed Requisition]].'''
+
+<div class="facblock">
+ Note: Turning in the [[Signed Requisition]] to Krofer, will spawn '''4 level 50+ giants INSIDE the Kael/WL tunnel''', which path to the laborer camp. 
+ '''Ensure there are no faction groups in the tunnel and advise the zone you are spawning them.'''
+</div>
+
+'''Return to [[Lieutenant Krofer]] in [[Wakening Land]]. Give him the [[Signed Requisition]].'''
+
+:Lieutenant Krofer takes the note and looks it over, then sighs and says, 'This will have to be enough. The squad should be here shortly. When they arrive you will march with them to the staging area near the village of those insect Sifaye. When you are satisfied with the formation, give the corporal the order to attack and observe the battle. After the village is destroyed return this report to me and we'll plan our next move.
+
+:{{exp}}
+
+'''You receive the [[Mission Report]]. Despite the narrative of the quest, you do not need to follow the squad. Despite some reports otherwise, giving Krofer the report back immediately, i.e. before the script finishes or the squad depops, may result in you having to restart the quest.'''
+
+:Lieutenant Krofer says, 'Failure! Incompetence! The whole squad annihilated! I knew this would happen if left in the hands of a worthless mercenary! Well, you can take this report back to Drioc then. Now get out of my sight, mercenary.'
+
+'''You receive the [[Report of Failure]] and Krofer immediately despawns. Return to Drioc in Kael.'''
+
+:''The following dialogue is optional, if you choose to follow the squad for the sake of completing the story.''
+
+:Follow them to the northeast camp of Sifaye (+1762, -285) and wait for the Corporal to say his squad is ready.
+
+::Upon reaching the village, Corporal Hlash will say, 'Hold here Squad.'
+
+:Say "Troop Attack" and they will charge the Sifaye Village. Four Sylvan Guardians and multiple invisible [[A Phase Puma]] will spawn and defend the Sifaye camp. 
+
+:Corporal Hlash says, 'Destroy them!'
+
+:Suddenly, all around the Sifaye Village, several beings phase into reality. Their eyes glow with the golden light of divinity, obviously sent from a higher plane of existence. The Kromzek assault squad is surely doomed. You decide to withdraw and report what you have found, perhaps the Lieutenant will understand.
+
+:Berzerker Voldak says, 'Lieutenant! Look! Where did they come from?! We're d... AARRGH!'
+
+:Corporal Hlash says, 'Grraaaggh! Ambush! Die well!'
+
+'''Your troops will not survive. Return to Krofer with the mission report and he will send you inside to see Drioc again.''' 
+
+:Lieutenant Krofer says, 'Failure! Incompetence! The whole squad annihilated! I knew this would happen if left in the hands of a worthless mercenary! Well, you can take this report back to Drioc then. Now get out of my sight, mercenary.'
+
+'''Return to the bank in [[Kael Drakkel]]. Give the [[Report of Failure]] to to [[Staff Sergeant Drioc]].'''
+
+:Staff Sergeant Drioc reads over the report, his face begins to turn red with anger. Drioc shouts, 'How can this be?! I sent you a squad of some of our best trained men and you had them destroyed!! This was supposed to be a routine raid and you return in FAILURE!! I would crush you under my boot right now if I wasn't so angry but I think I'll send you to my finacier (sic). YOU can explain what happened and why his investments have been lost. Now take your carcass out of here!
+
+'''Drioc gives you back the [[Report of Failure]]. The financier he mentions is [[Noble Helssen]], who stands next to [[Wenglawks Kkeak]] in the nobles house nearby, just opposite of the bank.'''
+
+<div class="facblock">
+ Note: Wenglawk's will not assist Noble Helssen or aggro you despite being right beside him, a KOS 60 Enchanter can invis into the 
+ room, stand in the corner, cast Dictate on him, do the turn in, and gate out 
+</div>
+
+'''Give the [[Report of Failure]] to [[Noble Helssen]].'''
+
+:[[Noble Helssen]] takes the report from you and places it in a pocket without even glancing at it. He says, 'Do not worry, (player name). I know of the planar creatures who eliminated my troops. The fault is not yours but of that fool Drioc. The Savage land is not just a simple forest as these idiots in the field believe. It is a cradle of life and the forces that drive it. Within that forest is a nexus, a gateway to another plane of existence, The Plane of Growth.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+:{{exp}}
+
+'''You receive an [[Inscribed Velium Tablet]] and the [[Enchanted Velium Mask]] as a side reward.'''
+
+:You say, 'What plane of existence?'
+
+:[[Noble Helssen]] says, 'Our soldiers fell victim to the denizens of that plane and unless we can find some way to stop this from happening, the land of Wakening will never be under our control. Many have suggested just destroying the Nexus but they are short-sighted fools. My vision is not only to control the resources that forest provides, but also to control the very force of Growth itself! You will help me do this, mercenary.'
+
+:You say, 'How can I help you?'
+
+:[[Noble Helssen]] says, 'The tablet I have given you is inscribed with runes of binding. I am owed a favor and it has come time to use it. Their is a venerable sea turtle that lives along the warmer part of the coast, there the ice floes begin to break up. His name is Corudoth. Find him and speak with him. Remind him of his obligation to me and if he is not forthcoming in his answer, tell him he owes me. Then show him the tablet. He will tell you what to do. He will most likely be beneath the ocean. The mask I gave you should help.'
+
+'''Seek out a turtle by the name of [[Corudoth]] in [[Iceclad Ocean]]. He can be found under a chunk of ice at approximately (-5718, 5931).'''
+
+== Part Two - Ice Clad Ocean, Thurgadin and Tower of Frozen Shadow ==
+
+:You say, 'Hail Corudoth'
+
+:[[Corudoth]] seems to completely ignore you. After close examination you begin to wonder if this creature is actually alive.
+
+:Tell [[Corudoth]] "You owe Helssen", he will deny owing Helssen anything.
+
+:You say, 'You owe Helssen, help me with his plans.'
+:Corudoth says, 'What?! I owe him nothing.! Nothing at all! I didn't ask him to.., err. What proof do you have? How do I know he sent you? Bah, leave me, (Player Race).'
+
+'''Handing [[Corudoth]] the [[Inscribed Velium Tablet]], in return he will give you [[Lock of Dwarven Hair]]'''
+
+:[[Corudoth]] curses and goes into a fit of frustration before finally giving in. The ancient sea turtle finally says, 'Fine. I dont know what Helssen wants with that but I know where you can find it. Years and years back I traveled with what was called the Icy Mugs. We were a mercenary company out for fun and profit, and there was plenty of that. During our adventures we ran across a great many foes.'
+
+:{{exp}}
+
+:You say, 'What great foes?'
+
+:[[Corudoth]] says 'Yes. One of note was the vile and evil sorcerer Rosh. A better example of depravity and anti-morality I cannot think of. He researched magics destined to end all life on this cold chunk of rock and snow. We made it our mission to destroy him. In the end we defeated him, but alas our friend and comrade was slain. Poor Abrams was left cursed forever to wander that spire of ultimate loathing, the [[Tower of Frozen Shadow]].'
+
+:You say, 'Who is Abrams?'
+
+:Corudoth says 'Abrams was a brave warrior and a good friend. His great maul could always be counted on to strike true as he used his body to shield others from greivous wounds. He sacrificed himself to save us from the eternal suffering he now endures up in that dark tower. The book you now seek, is in his possesion. You must first destroy his tormented form to free him from his madness. Tell him you seek the Arcanum and then give him the lock of hair I just gave you. You also will need the key.'
+
+:You say, 'What key?'
+
+:Corudoth says 'We ambushed Rosh on an expedition into the cursed Tower. When we faced him, Abrams ran forward and grabbed the Arcanum. He held it to his chest as lightning and flame rained down upon him. With Rosh busy trying to save his book it gave Petcas and I enough time to strike Rosh down. We went to Abrams and found our friend left a smoking pile of Coldain ruin. He underwent a strange transformation in which the Arcanum was lost. We decided Petcas should keep the key.'
+
+:You say, 'Who is Petcas?'
+
+:Corudoth says 'Petcas has retired from the life of an adventurer as I have. I would not tell you where he is as he is a good friend, but what I owe Helssen is stronger than comraderie or even friendship so I must comply; it is the word of Veeshan. Petcas now owns a small bar in the Coldain city of Thurgadin. To get the key you must fight your way into the city and kill Petcas. I wish you a most horrendous death Dark Elf. Now leave me to my sleep.'
+
+== Petcas Coldbeard ==
+
+'''Petcas Coldbeard can be found in The Icy Mug just to the right of the Thurgadin zone when facing out from Icewell Keep.''' He drops an ancient rusted key, and will lower your Dain Frostreaver IV and Coldain faction. He is somewhat of an undercon and is surrounded by other NPCs that will social aggro and would appear to be of similar level range.
+
+<div class="facblock"> 
+ Note: As a 60 Enchanter I was unable to Calm all but one of the dwarves in the room with Petcas despite 10+ attempts, it's possible they 
+ are immune to magic. I ended up engaging him with just Charm to pull him out of the building and to the Icewell Keep zoneline. He will 
+ call for help, 2 of the dwarves will despawn, but the rest of the dwarves wont despawn and may assist if not using Charm
+</div>
+
+== Lucid Spirit of Abrams ==
+
+'''Abram's ghost can be found on the floor 6A of the[[Tower of Frozen Shadow]]. His ghost goes by the name of [[Incoherent Spirit]].''' The placeholder for [[Incoherent Spirit]] is called incoherent spirit with a lower case 'i'. There is only one spawn and the respawn time is 54 minutes. Killing the Incoherent Spirit will spawn [[Lucid Spirit of Abrams]]. 
+
+'''Hand him [[Lock of Dwarven Hair]] and he will hand you the [[Arcanum of Rosh]].  (You have a limited time before the lucid version despawns. The lucid spirit of adams will despawn after 7 minutes.)'''
+
+'''Return the [[Arcanum of Rosh]] and the [[Ancient Rusted Key]] to [[Noble Helssen]] and he will give you a voucher.'''
+There are three rewards here and it is your choice which path to take. ''This turn-in IS MQable''
+
+:[[Noble Helssen]] says "Ahhh, you surprise me mercenary. You have found the book as well as the key to open it. I must begin my research as soon as possible. But first, your reward. With this voucher, you can receive 1 of the three treasures I will offer you. If given to Kellek, you will receive an item worthy of a hearty and rugged combatant. If given go Wenglawks you will acquire an item to be worn by only the most pious. And if given to me I will give you a sorcerous trinket of my own design. ''**READ THIS LINE CAREFULLY**''
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{exp}}
+
+'''Give the voucher to [[Kellek Felhammer]] for [[Collar of the Storm]]. He also gives you the [[Noble's Seal]]. The seal has no known use and may be destroyed.'''
+
+'''Give the voucher to [[Wenglawks Kkeak]] for [[Girdle of Reflection]].'''
+
+'''Give the voucher to [[Noble Helssen]] for [[Helssen's Prismatic Trinket]].'''
+
+:[[Kellek Felhammer]] says, 'So you are the mercenary I have been hearing about! Not what I expected. Anyways, here is your reward. Carry it well. Also, this noble's seal will prove your loyalty to anyone who is skeptical.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+:{{exp}}
+
+:Noble Helssen says, 'Excellent choice, Gnome. Competence and a sense of style. When we are ready to take the Wakening I will most definitely welcome your participation. Here is your reward.'
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

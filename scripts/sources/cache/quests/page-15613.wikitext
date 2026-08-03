@@ -1,0 +1,57 @@
+[[File:npc_basher_nanrum.png|frame|Basher Nanrum]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Basher Nanrum]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Firebeetles
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brass Earring}}
+</li><li> {{:Cat's Eye Agate}}
+</li><li> {{:Chunk of Metal Ore}}
+</li><li> {{:Hematite}}
+</li><li> {{:Silver Earring}}
+</li><li> {{:Turquoise}}
+</li></ul>
+
+== Walkthrough ==
+
+''Your location is -4.05, -70.53, 3.81.''
+
+You say, 'Hail, Basher Nanrum'
+
+: Basher Nanrum says 'Peh!  What am you wanted?!  I am Basher Nanrum.  You? ______?   Heh, you look for works?  Hmm, me tinks you too weakling for [job] me need done.  Hmm..  You might do, mebbe.'
+
+You say, 'What job?'
+
+: Basher Nanrum says 'Me in charge of making torches for basher patrols.  But Nanrum is much too mighty for such stupid job and Nanrum get idea.  Dem fire bugses in da desert - dem eyes glowed.  And dem don't burneded like torches.  If ______ getted Nanrum three fire beetle eyes me would giveded ______ a shiny thingie dat you wanteded.  Go ahed, ______, an' get me da eyes.'
+
+'''Hand in three [[Fire Beetle Eye]]s.'''
+
+: Basher Nanrum says 'Heh heh.  All da eyeballses!  I didn't think ya could do it but ya did.  Here is da shiny.  If you gets more I always have more shinies.'
+<div class="facblock">
+* Your faction standing with [[DaBashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+</div>
+: {{YouGainExperience}}
+
+The "shinies" include random low-level gems and other vendor fodder.
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:All Classes Quests]]

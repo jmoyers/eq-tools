@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_leraena_shelyrak.png|frame|Leraena Shelyrak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Leraena Shelyrak]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Leraena Shelyrak]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Silver Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Leraena Shelyrak]] is located at -640, -94 in the Temple of Light ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Laraena Shelyrak'
+
+: Leraena Shelyrak says, 'Welcome, my child.  I am Leraena Shelyrak, overseer of the Temple of Divine Light. Inside this temple, you may find the path to inner peace.  Introduce yourself to each of the priests and priestesses of the temple as well as the paladins. Together we shall put an end to such disruptive influences as the [kobold shaman].'
+
+'''Hand [[Leraena Shelyrak]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Welcome friend. Come to the Temple of Light, in the city of Erudin. From the harbor, go through the entrance opposite of the boathouse, and then walk onto the blue teleport gem. Give this note to Leraena Shelyrak, and she will welcome you into the Followers of Quellious.</code>
+
+: Leraena Shelyrak says, 'Greetings. and welcome to the Temple of Divine Light! Here is your guild tunic. Serve Quellious well.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Cleric Quests]]

@@ -1,0 +1,55 @@
+{{Classic Era}}
+[[File:npc_menkes_tabolet.png|frame|Menkes Tabolet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Menkes Tabolet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[a giant rat]], [[a large rat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rat's Foot Necklace}}
+</li></ul>
+
+== Walkthrough ==
+
+''Menkes Tabolet is located at -229, -298 in South Qeynos (behind Fish's Ale), but roams to [[Lion's Mane Inn]] along the docks.''
+
+You say, 'Hail, Menkes Tabolet'
+
+: Menkes Tabolet says 'Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee, I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].'
+
+You say, 'I want a lucky rat's foot necklace.'
+
+: Menkes Tabolet says 'Now that is exactly what you need my friend, a lucky rat's foot necklace..  and, it just happens to be my specialty!  Just bring me one rat's foot, some rat whiskers, and I won't even charge you any gold. Just buy me a honey mead, and you'll be the luckiest rat dodger this side of Highpass.'
+
+'''Hand him a [[Rat Foot]], [[Rat Whiskers]] and a [[Honey Mead]].'''
+
+: Menkes Tabolet says 'Hey, I'm giving you a great deal here..  Get the rest of items for this already. I'm sure we both have important things to do.'
+
+: Menkes Tabolet says 'Now this here has got to be one of my best works..  I dare you to find someone who can make a higher quality necklace than this one!  Enjoy, my good friend!'
+
+<div class="facblock">
+* Your faction standing with [[QeynosCitizen]] got better.
+</div>
+{{exp}}
+
+'''You receive a [[Rat's Foot Necklace]].'''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

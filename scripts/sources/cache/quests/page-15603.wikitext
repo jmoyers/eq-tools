@@ -1,0 +1,59 @@
+{{Classic Era}}
+[[File:npc_sylia_windlehands.png|frame|Sylia Windlehands]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Sylia Windlehands]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a widow hatchling]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Hand Drum}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Sylia Windlehands]] is located at -253, 242, 77 in the Songweavers ([[Bard]]) Guild Hall.''
+
+'''Requires AMIABLE faction'''
+
+You say, 'Hail, Sylia Windlehands'
+
+: Sylia Windlehands says, 'Salutations! The Song Weavers are always glad to add a new voice to the choir. In addition to your voice, will you also [fetch spiderling silk]? We need some to replace our worn lute strings. Carry out this task in high tempo and we will show our gratitude.'
+
+You say, 'I will fetch spiderling silk'
+
+: Sylia Windlehands says, 'Very spirited of you!! Gather four spiderling silk and return them to me. Good hunting, my friend!!'
+
+'''Hand [[Sylia Windlehands]] 4 [[Spiderling Silk]]s, unstacked.'''
+
+: Sylia Windlehands says, 'Splendid job! Now if you can just keep a tune, you'll be a fine bard.'
+
+<div class="facblock">
+* Your faction standing with [[Songweavers]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 gold pieces.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]

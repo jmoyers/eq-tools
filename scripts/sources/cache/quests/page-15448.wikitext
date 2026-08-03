@@ -1,0 +1,127 @@
+{{Classic Era}}
+[[File:npc_theron_rolius.png|thumb|upright=2|Theron Rolius]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Theron Rolius]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Eestyana Naestra]], [[Mojax Hikspin]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Marr's Sustenance}}
+</li><li> [[Courage|Spell: Courage]]
+</li><li> {{:Wrist Pouch}}
+</li><li> {{:Buckler}}
+</li><li> [[Potion of Disease Warding]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Theron Rolius]] is found in the Hall of Truth at (1100, -128).''  
+
+Faction Note:  I believe (will edit if I kill enough orcs or get there) this requires amiable faction with [[Knights of Truth]] otherwise you get the following from the milk bottle hand in:  "Mojax Hikspin says, 'You have yet to earn my trust.'"  All dialog works as apprehensive.
+
+You say, 'Hail, Theron Rollius!'
+
+: Theron Rollius says, 'Greetings, ______! To enter these grounds is to proclaim your faith in the Truthbringer. In this city you shall find no greater allies than the Knights of Truth. We urge all knights and clerics who oppose the hand of the Freeport Militia to [join the crusade].'
+
+You say, 'I will join the crusade.'
+
+: Theron Rollius says, 'Then take arms against the Freeport Militia! They serve no one save Sir Lucan, the fallen knight. From this day forth, I put a bounty upon all militia members. For every bashed militia helm, a reward!! If you are not prepared to battle the militia just yet, you may [assist in other areas].'
+
+You say, 'How can I assist in other areas?'
+
+: Theron Rollius says, 'I have need of one such as you. I have been awaiting a message. I will need a young acolyte to [retrieve the message] for me or there are also some [fishing duties] I wish to delegate.'
+
+You say, 'I will retrieve the message for you.'
+
+: Theron Rollius says, 'Thank you. Venture to the Commonlands. There, by a lake, will be a courier from the great city of Qeynos. Tell him you are from the Hall of Truth. He will have a message for you to deliver to Eestyana Naestra.'
+
+'''Travel to [[West Commonlands]] to find the courier. [[Mojax Hikspin]] is located at 109, 2339'''
+
+You say, 'Hail, Mojax Hikspin!'
+
+: Mojax Hikspin says, 'Hi. How are you? The fish are biting pretty good. That is whay Skipynn tells me. I sure wish I had a different job. If I did, I could fish all day long.'
+
+You say, 'What is your job?'
+
+: Mojax Hikspin says, 'I am a messenger for [Antonius Bayle], ruler of the great city of [Qeynos].'
+
+You say, 'I am from the Hall of Truth.'
+
+: Mojax Hikspin says, 'I have been expecting you. I am very parched. Could you please get me a bottle of milk? Once you do that will show you where I hid the note.'
+
+'''Give a [[Bottle of Milk]] to Mojax Hikspin.'''
+
+: Mojax Hikspin says, 'Aaahhhh. Now that is refreshing. Just let me rest for a bit. The note is save and sound in my bedroll inside the inn.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.+1
+* Your faction standing with [[Dismal Rage]] got worse.-1
+* Your faction standing with [[The Freeport Militia]] got worse.-1
+* Your faction standing with [[Priests of Marr]] got better.+1
+* Your faction standing with [[Steel Warriors]] got better.+1
+</div>
+
+{{YouGainExperience}}
+
+'''Wait approximately one minute for Mojax to rest. He will then start walking toward the Toll Booth. At some point during the walk, [[Duggin Scumber]] will run up and steal the [[Note]]''' {{Item Lore | Note To Hall Of Truth}}.
+
+: Duggin Scumber says, 'Aha!! Foolish Qeynite or whatever you call yourself!! I have found the note and now I shall take it to my superior!! Just try and catch me!!'
+
+''Duggin Scumber is a fast runner. If you cannot keep up with him, use root, snare, or a ranged weapon to stop him for battle.''
+
+: Duggin Scumber says, 'Die, dog!!'
+
+<div class="facblock">
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Priests of Marr]] got better.
+</div>
+
+: Dugin Scumber's corpse says, 'Your name shall be added to the most wanted list of the Freeport Militia!!'
+
+''Alternate way of getting the note:  After some time, Mojax Hikspin will walk around the Commonlands. If you follow him, he will walk from the lake to the Stone Sign saying "Freeport <-", stop, then walk north again to his spot. He drops the note at (-560, 3174) at the Stone marker''.  
+
+The note reads:
+
+ Eestyana Naestra
+ Let it be known that the Shrine of Bertoxxulous has discovered our agent which infiltrated their ranks.
+ It is  now my belief that they will soon send word to Freeport and put your agent in jeopardy.
+ Beware. Renic Losaren  High Priest of Thunder Qeynos
+
+'''Once you have the [[Note]], return to the Hall of Truth. Find [[Eestyana Naestra]] on the third floor at (186, -126) and give the note to her.'''
+
+: Eestyana Naestra says, 'You must be the young member of the Hall of Truth who was sent by Theron. I am glad to see you avoided any interference. Please take this as a reward for your service.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive ~1 silver from Eestyana Naestra.
+
+You receive a random reward (see above).
+
+[[Category:Quests]]
+[[Category:North Freeport]]

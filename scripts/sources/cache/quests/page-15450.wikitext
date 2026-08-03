@@ -1,0 +1,74 @@
+{{Classic Era}}
+[[File:npc_uner_gnarltrunk.png|frame|Uner Gnarltrunk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Uner Gnarltrunk]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[Deputy Tagil]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Carrot}}
+</li><li> {{:Fishing Pole}}
+</li><li> {{:Pine Needles}}
+</li><li> {{:Potion of Wisdom}}
+</li><li> 12 copper pieces
+</li></ul>
+
+== Walkthrough ==
+
+You must be at least amiable with Storm Reapers. Speak with [[Uner Gnarltrunk]] at Tagglefoot's Farmstead in {{Loc|Rivervale|-126,-394}}:
+
+You say, 'Hail, Uner Gnarltrunk'
+
+: Uner Gnarltrunk says, 'Hello there, <name>. Please watch where you are stepping when you're out in the field. Nothing is more frustrating than having some fine jumjum ruined by our own careless feet. That reminds me. [Deputy Tagil] still owes us for that jumjum he stomped on the other day!'
+
+You say, 'Who is Deputy Tagil?'
+
+: Uner Gnarltrunk says, 'Deputy Tagil is a fine young halfling who serves the vale well. But the other day, chasing that dirty Nillipuss, he trampled some fresh Jumjum. He promised to make amends but it must have slipped his mind. Please take this note to him as a friendly reminder.'
+
+You receive A Note, which you need to deliver to [[Deputy Tagil]], who is guarding the entrance to Rivervale in {{Loc|Misty Thicket|480,-2480}}.
+
+On handing in the note:
+
+: Deputy Tagil says, 'What's this? Oh dear. I am very sorry. Please take this to Uner with my apologies.'
+
+You receive Deputy Tagil's Payment. On handing it in to Uner Gnarltrunk (again, must be amiable):
+
+: Uner Gnarltrunk says, 'I knew that Deputy Tagil had simply forgotten. He really is a good young halfling. Here, take this as a small payment for your time.'
+
+<div class="facblock">
+*Your faction standing with [[Storm Reapers|StormReapers]] got better.
+*Your faction standing with [[Mayor Gubbin|MayorGubbin]] got better.
+*Your faction standing with [[Merchants of Rivervale|MerchantsofRivervale]] got better.
+*Your faction standing with [[Unkempt Druids|UnkemptDruids]] got worse.
+</div>
+You receive 12 copper pieces from Uner Gnarltrunk.
+{{exp}}
+
+
+== Exp Gain ==
+
+=== Halfling Cleric ===
+
+I created a new cleric and ran him back and forth doing this quest for 2.5 hours and got to level 5 and got 19 potions of wisdom. I had enough money vendoring the non-potion of wisdom rewards to buy all the level 1 & 5 spells and two backpacks. 
+<br>
+
+A level 2 Halfing Druid gets 1 yellow for every 3 run throughs (both turn ins).
+
+[[Category:Quests]]
+[[Category:Rivervale]]

@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_elisi_nasin.png|frame|Elisi Nasin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Elisi Nasin]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brown Faded Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Elisi Nasin]] is located at -336, -862 under the docks among the rogues and thieves of Freeport.''
+
+You say, 'Hail, Elisi Nasin'
+
+: Elisi Nasin says, 'Listen, this is a pretty busy [operation] I run here.  I certainly don't have any spare time to sit around and chit-chat with you all day, got it?'
+
+'''Hand [[Elisi Nasin]] [[a tattered note]].'''
+
+:: ''a tattered note reads:''
+
+:: <code>Freeport is bustling with commerce and suckers. There is many a gold piece to be taken from these glutinous merchants and travelers who arrive here from all over Norrath. To get in on this action, take this note to Elisi Nasin. She has a secret 'Import Shop' hidden beneath the Seafarers' Roost, at the docks of East Freeport.</code>
+
+: Elisi Nasin says, 'Welcome to the Coalition of Tradesfolk Underground. We like to keep a low profile around here and not draw any unneeded attention to our operations.
+
+<div class="facblock">
+* Your faction standing with [[Coalition of TradeFolk Ill]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Freeport Militia]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Rogue Quests]]

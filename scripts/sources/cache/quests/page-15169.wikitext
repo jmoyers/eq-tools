@@ -1,0 +1,159 @@
+{{Kunark Era}}
+[[File:npc_an_undead_foreman.png‎|frame|Undead Foreman]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[an undead foreman]]
+|-
+! ''' Minimum Level: '''
+| 1?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|} 	
+
+== Reward ==
+
+<ul><li> {{:Worker Sledgemallet}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* Have amiable faction, this can happen either via [[Puppet Strings]], bard, necro, or enchanter charm, or questing [[Protect the Shipyard]] to up faction
+* Buy and bring a [[Jade]]
+* Charm [[an undead foreman]] with [[Puppet Strings]], charm spell, etc. or if you're amiable by questing you're good then IMMEDIATELY give him the [[Jade]] (the charm may not last long)
+{{End}}
+
+
+== Walkthrough ==
+
+[[An undead foreman]] may be found at {{Loc|The Overthere|+2385, +3305|+2385, +3305}}.
+
+You say, 'Hail, an undead foreman'
+
+: an undead foreman turns to face you. You can see a faint green glow emanating from his vacant eye sockets. 'Are you a [new worker]? Huh? Speak or go!!'
+
+You say, 'I am a new worker.'
+
+: an undead foreman says 'Hmmph!! Too much flesh!! If you want to work, you must first fill my eye sockets with my favorite gem. This shall be your payment for your Sledgehammer.'
+
+''His favorite gem is jade. Give him a [[Jade]].''
+
+: an undead foreman places the gem deep into his hollow eye socket. He pulls a giant sledgehammer from thin air and hands it to you. 'Here!! You shall be assigned to the lower decks of the Scaled Trident.'
+
+You receive [[Worker Sledgemallet]] and no experience, faction hits, or coin.
+
+'''(If your doing this as a bard/enchanter just use the dark elf form and a faction spell/song to get Amiable no need for charming then)'''
+
+'''(You can do the quest below level 50, you just can't get the mallet to pro until 50. This means you should plan ahead and decide if you want to faction up BEFORE you start hunting in HS, KC or Kaesora and lower your VS faction. A level 20 enchanter or DE mask bard can do the quest and just keep the mallet in the bank until you hit level 50)'''
+
+Please note that if using a charm technique to obtain the mallet, the undead foremen has very high resist rates.  (Four of Five Kintaz resisted and 2 of three Boltrans on 255 cha enchanter at level 55)
+
+== Raising Venril Sathir Faction ==
+
+The turn-in requires '''amiable''' or higher faction standing with [[Venril Sathir (Faction)|Venril Sathir]]. The quickest way to raise faction is to kill dragons in [[Veeshan's Peak]]. Alternatively, charm gives the charmer amiable faction, so [[Enchanter]]s, [[Necromancer]]s (undead charm spell), [[Bard]]s, or anyone with [[Puppet Strings]] can perform the quest turn-in while charming the undead foreman.  Enchanters/Bards can also use Dark Elf illusion and Benevolence/Cinda's Charismatic Carillon to raise their faction to amiable if you haven't reduced faction while leveling.
+
+
+'''To raise faction the old-fashion way, complete the [[Protect the Shipyard]] quest.'''
+* Turning in four [[A_Sarnak_War_Braid|sarnak war braids]] appears to give you +5 to [[Venril Sathir (Faction)|Venril Sathir]].
+** Requires dubious or better faction for turn in of braids.
+*** Can ask another to cast Invisibility Versus Undead on you when your trade window is open to get indifferent.
+** [[Races|Evil and Neutral races]] have better starting faction.
+** Iksar Necromancers and Shadowknights can use a skeletal illusion from the Lich line of spells to not be KoS if they want to raise faction instead of trying charm. This may or may not raise faction for other races.
+* Faction amounts per consider level, from this [[Faction#Faction_Table|table]]. (** This table is not 100% accurate. The breakpoint between Dubious and Apprehensive is 40 points off. It's 210/440 not 250/400. Multiple player submissions below indicate 88 sets (440 points) to cross Apprehensive. The same holds true for Amiable/Warmly; 440/210 respectively.)
+** Amiable: 51 to 450 (**490)
+** Indifferent: -49 to 50 [100 faction = 20 turn-ins]
+** Apprehensive: -449 to -50 (** -489 to -50) [440 faction = 88 turn-ins] However, many players start at -100 faction (no racial or deity penalty) and can get to Indifferent with 11 Turn-ins
+** Dubious: -699 to -450 (** -699 to -490) [210 faction = 42 turn-ins]
+** Threatening: -1049 to -700 [350 faction = 70 turn-ins]
+** Scowls: -2000 to -1050 [950 faction = 190 turn-ins] **This actually leaves you in Scowls, it is the 191st turn-in that tips you into Threatening. This overage also carries forward so that you clear Threatening in 70 (not 71), Dubious in 42 (not 43), etc.
+
+If kill-on-sight (KOS) and able to Sneak, then a cast of Harmony on the marines will allow sneaking up behind Captain Rottgrime to complete the [[Protect the Shipyard]] quest. I'm told that this is possible without Harmony, but that is extremely delicate and risky. To do this, sneak in from the side of Rottgrime and the marines, conning to make sure they are still indifferent and just get close enough to trade. Turn ins can be Multi-Quested by having someone turn in 3 and allowing you to turn in 1 and gain the faction and experience.
+
+The New Worker quest turn-in table is below. List each 4 Braid turn-in as one turn-in. Only list a number if its the complete range. e.g. You just turned in braids and moved from threatening to dubious then you keep track of how many it takes to go from dubious to apprehensive.
+
+
+{| class="eoTable sortable" width="92%"
+! style="width: 6%"|Race || style="width: 8%"|Class || style="width: 10%"|Worships || style="width: 12%"|Scowls to > || style="width: 12%"|Threatening to > || style="width: 10%"|Dubious to >  || style="width: 14%"|Apprehensive to >  || style="width: 14%"|Indifferent to Amiable || Faction Per Turn in
+|-
+|   Race Modifier   ||  Class Modifier   ||  Deity Modifier  || Variable (**191 from MAX) || 70 || 50 (**42)  || 80 (**88) || 20 || 5
+|}
+* am doubtful about the table below. Faction is a fixed modifier not a percentage modifier.  Different races, classes, and religions will have a different starting point, but once you determine distance to the next consider, growth from that point should be common from that point forward. (**Correct, what you are seeing is player error. Mis-recording numbers and/or taking extra faction hits that skew the numbers.)
+
+'''Turn-ins per Faction Level''' (NO PARTIAL faction level turn-in numbers)
+{| class="eoTable sortable" width="92%"
+! style="width: 6%"|Race || style="width: 8%"|Class || style="width: 10%"|Worships || style="width: 12%"|Max Scowls to > || style="width: 12%"|Threatening to > || style="width: 10%"|Dubious to >  || style="width: 14%"|Apprehensive to >  || style="width: 14%"|Indifferent to Amiable || Faction Per Turn in
+|-
+| Ogre || Shadow Knight || Cazic-Thule || - || - || - || 88 || 20 || 5
+|-
+| Ogre || Shadow Knight || Rallos Zek || - || - || - || 11 || 20 || -
+|-
+| Dark Elf || Wizard || Agnostic || - || - || - || 11³ || 20 || -
+|-
+| Iksar || Monk || Cazic-Thule || 75 (**not max kos)  || 75 (** -5=70)|| 37 (** +5=42) || 88 || 20 || ** Likely miscount at Threat to Dub
+|-
+| Iksar || Monk || Cazic-Thule || - || 59-72¹ || 111 total (**39-52) || 201 total (**90) || 221 total (**20) || **Inacurate starting count but essentially in range including faction hits noted
+|-
+| Human || Shadow Knight || Bertoxxulous || - || - || - || - || 20 || - 
+|-
+| Troll || Shaman || Innoruuk || - || - || - || 11³ || 20 || -
+|-
+| Wood Elf || Ranger || Tunare || 191 || 70 || 42 || 88 || 20 (411²) || **This one is 100% correct from MAX KoS
+|-
+| Half Elf || Ranger || Tunare || 191 || 70 || 50 || 92 || 20 (423 total) || **This player took extra faction hits; 40 points in Dub and 20 points in App
+|-
+| Human || Ranger || Tunare || 2 (**not max) || 70 || 41 || - || - || **Started high Scowls. Deity penalty, no Racial penalty.
+|-
+| Dark Elf || Cleric || Innoruuk || - || - || - || 11³ || 20 || -
+|}
+
+¹ December 2018: Had 58 prior turn-ins (scowling), did 14 in rapid succession, was now dubious with total of 72 turn-ins. Became apprehensive after total of 111, and indifferent after total of 201, and amiable after 221 turn-ins. Jul 2019: Another examination of the logs shows that I had killed 2 [[A scorpikis]] at some point, which would skew the faction, so final total for Iksar monk might actually be closer to 198 rather than 211.
+
+² Logging failed multiple times (due to character surfing and repeated logins and logouts) so can not be sure of exact numbers.
+
+³ It took 11 turn-ins (44 braids) to reach Indifferent (not a "complete range report", but a report nonetheless)
+
+'''Starting Faction to next Faction Level Table'''
+{| class="eoTable sortable" width="60%"
+! style="width: 10%"|Race || style="width: 10%"|Class || style="width: 10%"|Worships || style="width: 10%"| Starting Faction || style="width: 20%"|Turn-ins til next Faction Level
+|-
+| Ogre || Shaman || Rallos Zek || Apprehensive || 11
+|-
+| Ogre || Shadowknight || Rallos Zek || Apprehensive || 11
+|-
+| Dark Elf || Wizard || Solusek Ro || Apprehensive || 11
+|-
+| Gnome || Wizard || Solusek Ro || Apprehensive || 11 (confirmed 4/3/22)
+|-
+| Gnome || Wizard || Agnostic || Apprehensive || 11
+|-
+| Human || Shadowknight || Bertoxxulous || Apprehensive || 11
+|-
+| Troll || Shaman || Innoruuk || Apprehensive || 11
+|-
+| Troll || Shadowknight|| Cazic Thule || Apprehensive || 11
+|-
+| Troll || Shadowknight|| Innoruuk || Apprehensive || 11
+|-
+| Iksar || Monk || Cazic Thule || Threateningly || 15
+|-
+| Wood Elf || Ranger|| Tunare || Scowling || 191
+|-
+| Half Elf || Ranger|| Tunare || Scowling || 191
+|-
+| Human || Ranger|| Tunare || Scowling || 2
+|-
+| Human || Monk || Agnostic || Apprehensive || 11
+|-
+[[Category: Quests]]
+[[Category:The Overthere]]
+[[Category:All Classes Quests]]

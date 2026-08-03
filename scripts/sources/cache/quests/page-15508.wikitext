@@ -1,0 +1,103 @@
+{{Classic Era}}
+[[File:npc_guard_weleth.png|frame|Guard Weleth]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Weleth]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Nesiff Tallaherd]]
+|}
+
+== Reward ==
+
+<ul><li>  Small Coin
+</li><li> Faction
+</li></ul>
+
+== Walkthrough ==
+
+Guard Weleth may be found wandering near the North Gate (/loc?).
+
+You say, 'Hail, Guard Weleth'
+
+: Guard Weleth says 'Hail, ______. My name is Weleth Nagoh. In addition to my patrol, I am in charge of keeping the guardhouse stocked with supplies. I must get back to my duties. Farewell.'
+
+If you wait long enough, you'll see:
+
+: Guard Weleth says 'Argh. Not again. This whole crate needs to be returned!' 
+
+You say, 'What crate?'
+
+: Guard Weleth says 'Oh, we just received a shipment of arrows from [Nesiff] in South Qeynos. The arrows in this box are missing their fletchings and I can't leave my patrol to take them back.'
+
+You say, 'Who is Nesiff?'
+
+: Guard Weleth says 'Nesiff Tallaherd owns the wooden weapons shop in Merchant's Square in South Qeynos.' 
+
+You say, 'I will take the crate of arrows.'
+
+: Guard Weleth says 'Oh, thank you! Here is the crate. Make sure [Nesiff] sends me back a new invoice. [Lieutenant Dagarok] would have my head if he found out this happened again!'
+
+'''You receive a Crate of Defective Arrows.'''
+
+Nesiff Tallaherd may be found in South Qeynos in his shop, "Nesiff's Wooden Weapons," at +440, -245.
+
+You say, 'Hail, Nesiff Tallaherd'
+
+: Nesiff Tallaherd says 'Greetings, ______! Nesiff Tallaherd, owner and operator of Nesiff's Wooden Weapons, at your service. I am the finest woodworker in all of Qeynos. Even the Qeynos Guard uses my arrows, thanks to [Guard Weleth].'
+
+You say, 'Who is Guard Weleth?'
+
+: Nesiff Tallaherd says 'Guard Weleth is like a son to me. He is responsible for purchasing supplies for the Qeynos Guard. He buys arrows from me. He is usually stationed near the North Gate.'
+
+'''Give the crate to Nesiff.'''
+
+: Nesiff Tallaherd says 'Oh dear. I hope my mistake will not bring too much grief down on poor Weleth. He was told not to order arrows from me after the last time I fouled up their shipment. But Weleth knew I needed the account to stay in business. Could you please rush this new invoice to him right away? Thank you.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive [[A Slip of Parchment]] (identifies as "Invoice-Nesiff's Wooden Weapons").  It reads:'''
+
+ INVOICE - NESIFF'S WOODEN WEAPONS
+ QEYNOS: 19 CRATES
+ LONG FLIGHT ARROWS
+ 36 GP CREDIT OF 1 GP AND 9 SP REMAINING DUE TO DEFECTIVE CRATE
+ CUSTOMER: WELETH, ON BEHALF OF QEYNOS MILITIA
+
+'''Give the slip of parchment to Guard Weleth.'''
+
+: Guard Weleth says 'Thank you so much for the favor. Please be careful here in Qeynos. I have come to suspect that even some of my fellow guards are not to be trusted - Lieutenant Dagarok, for one.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 4 copper from Guard Weleth. 
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

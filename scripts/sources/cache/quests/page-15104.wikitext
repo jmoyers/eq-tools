@@ -1,0 +1,64 @@
+{{Classic Era}}{{Screenshot Needed}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Vin Moltor]]
+|-
+! ''' Minimum Level: '''
+| Solo-29, Duo-24
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Befallen]] and [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Gynok Moltor]], [[Vin Moltor]]
+|}
+
+== Reward ==
+[[Paw of Opolla]]
+
+== Checklist ==
+{{CheckboxList}}
+* With room for a container in your inventory bring [[Vin Moltor]] a [[Rat Ear Pie]] and 3x [[Bottle of Kalish]] to get, or kill him until he drops, a [[Severed Paw]]
+* Camp [[Gynok Moltor]] (spawns just outside room 4 on the 3rd floor of [[Befallen]] until he drops the [[Platinum Ring]] , [[Gold Ring]] ,and [[Copper Ring]]  
+* Swim to the bottom of the pit in [[Blackburrow]] for the [[Silver Ring]] (see map for location on 3rd floor (several razorgills surround it).
+* Combine the rings together in the [[Severed Paw]]{{End}}
+
+== Walkthrough ==
+
+This quest has been revamped many times from the original vanilla quest, which is due to the revamped zones in EQL.
+
+== Step 1: [[Severed Paw|The Severed Paw]] (Qeynos Catacombs) ==
+
+The Severed Paw comes from [[Vin Moltor]] in [[Qeynos Catacombs]]. There are two ways to acquire it:
+* Killing him (25% drop rate), typically an hour or so camp before you get the paw. Killing him results in hits to the following factions: [[Antonius Bayle]], [[Coalition of Tradefolk]], [[Guards of Qeynos]], [[Merchants of Qeynos]]. So if you have to kill him 4 times to get the Paw it may be too much of a faction hit for you.
+
+* Alternatively you can use [[Skill Baking]] (or hire a baker) to produce a [[Rat Ear Pie]] (Trivial 142 Baking, but is so easy/cheap to make you should have no problems creating it at 135 baking). See the [[Skill Baking#Baking Leveling Guide (Detailed)|Baking Quick Leveling Guide]] if you would like to level your baking. 1-135 will take about an hour. He also needs 3x [[Bottle of Kalish]] with the pie.
+
+Both strategies take about the same amount of time. The latter is recommended because you get to keep leveled baking. (You will need it one day for the amazing [[Coldain Prayer Shawl|Shawl quest]] in [[Thurgadin]]).
+
+== Step 2: The Rings (Befallen) ==
+
+Kill Moltor until he drops the [[Copper Ring]] , [[Platinum Ring]] and  [[Gold Ring]].
+
+Run to [[Blackburrow]], swim to the bottom of the pit and grab the [[Silver Ring]] ground spawn.
+
+Combined the 4 into the [[Severed Paw]] for the [[Paw of Opolla]]
+
+== Related Items ==
+
+* [[Copper Ring (Ring of Opolla)]]
+* [[Silver Ring (Ring of Opolla)]]
+* [[Gold Ring (Ring of Opolla)]]
+* [[Platinum Ring]]
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Shaman Quests]]

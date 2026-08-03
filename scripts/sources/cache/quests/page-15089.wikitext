@@ -1,0 +1,133 @@
+{{Classic Era}}
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[an undead knight]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]], [[Cazic Thule]]
+|-
+! ''' Related NPCs: '''
+| [[Minotaur Lord]], [[A Lizard Crusader]]
+|}
+
+
+Darkforge Armor is a set of [[Shadow Knight]] specific armor obtained through quests offered in the [[The Temple of Solusek Ro]] by the Undead Knights.  It could not originally be used by Iksar, but this racial restriction has been removed.
+
+Each piece of Darkforge armor requires two pieces of [[Decayed Armor]]. These drop form [[A Lizard Crusader]] and [[A Lizard Ritualist]] in the Temple of Cazic-Thule.  You will also need one other item from around the world.
+
+In EQL, the most reliable way to farm the decayed armor is to focus on [[A Lizard Ritualist]], who has a static spawn on top of a small temple at the SouthEast corner of the zone.  You can use Invis to run past all of the other lizards, kill him and any adds, switch to another difficulty, and do it again.  It's also helpful to bind just outside the zone and to Gate over and kill him in base difficulty and another difficulty quickly then return to other tasks.
+
+Take note when turning in the items that there are two undead knights in the same room, each offers only certain pieces of the Darkforge Armor in return for the hand-ins, hail them to find out which pieces they can forge.
+
+The undead knight to the LEFT (say: I seek the darkforge armor) makes: Helm, Breastplate, Vambraces and Bracers.
+
+The undead knight to the RIGHT (say: I seek the darkforge armor) makes: Gauntlets, Greaves and Boots.
+
+== Rewards ==
+
+{{Gear Set
+|Darkforge Bracer
+|Darkforge Breastplate
+|Darkforge Boots
+|Darkforge Gauntlets
+|Darkforge Greaves
+|Darkforge Helm
+|Darkforge Vambraces
+}}
+
+== Fashion ==
+
+[[File:Geykaken.jpg|center|Complete Darkforge Set worn by the Dark Knight Geykaken Ofnyahm]]
+
+
+== Walkthrough ==
+=== Checklist ===
+[[File:npc_an_undead_knight.png|thumb|right|an undead knight]]
+{{CheckboxList}}
+=== [[Darkforge Bracer]] ===
+*[[Decayed Left Bracer]]
+*[[Decayed Right Bracer]]
+*[[Broken Minotaur Lord's Horn]]
+=== [[Darkforge Breastplate]] ===
+*[[Decayed Chainmail]]
+*[[Decayed Breastplate]]
+*[[Enchanted Platinum Bar]] x2
+=== [[Darkforge Boots]] ===
+*[[Decayed Left Boot]]
+*[[Decayed Right Boot]]
+*[[Fairy Dust]] x2
+=== [[Darkforge Gauntlets]] ===
+*[[Decayed Left Gauntlet]]
+*[[Decayed Right Gauntlet]]
+*[[Enchanted Platinum Bar]] x1
+=== [[Darkforge Greaves]] ===
+*[[Decayed Left Legplate]]
+*[[Decayed Right Legplate]]
+*[[Melatite]] x2
+=== [[Darkforge Helm]] ===
+*[[Decayed Helm]]
+*[[Decayed Visor]]
+*[[Damaged Militia Helm]] x2
+=== [[Darkforge Vambraces]] ===
+*[[Decayed Left Vambrace]]
+*[[Decayed Right Vambrace]]
+*[[Qeynos Kite Shield]]
+
+== Rewards and Walkthrough ==
+
+
+{| class="eoTable2"
+! Darkforge Piece
+! Stats
+! Decayed Pieces
+! Other Items
+|-
+| {{:Darkforge Bracer}}
+| 9ac, 3dex, 2.0wgt
+| Left and Right Decayed bracer
+| 1 [[Broken Minotaur Lord's Horn]] (Minotaur Lord in [[Steamfont Mountains]] caves). Makes one bracer.
+|-
+| {{:Darkforge Breastplate}}
+| 20ac, 10sta, 3sv magic, 5.0wgt
+| Decayed Mail and Breastplate
+| 2 [[Enchanted Platinum Bar]]s (not stacked).
+|-
+| {{:Darkforge Boots}}
+| 11ac, 3sta, 1.5wgt
+| Left and Right Decayed boot
+| 2 [[Fairy Dust]] (not stacked) from [[Lesser Faydark]].
+|-
+| {{:Darkforge Gauntlets}}
+| 12ac, 2dex, 5sv magic, 2.5wgt
+| Left and Right Decayed Gauntlets
+| 1 [[Enchanted Platinum Bar]].
+|-
+| {{:Darkforge Greaves}}
+| 13ac, 9sta, 3sv magic, 3.7wgt
+| Left and Right Decayed leg
+| 2 [[Melatite]] (not stacked) MB, MA and MC Model Clockworks in [[Solusek's Eye|Solusek A]].
+|-
+| {{:Darkforge Helm}}
+| 13ac, 5int, 5sv all, 3.0wgt
+| Decayed Helm and Visor
+| 2 [[Damaged Militia Helm]]s (Freeport guards).
+|-
+| {{:Darkforge Vambraces}}
+| 11ac, 4str, 3.2wgt
+| Left and Right Decayed arm
+| [[Qeynos Kite Shield ]] (Qeynos guards).
+|}
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Shadow Knight Quests]]

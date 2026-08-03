@@ -1,0 +1,624 @@
+{{Epics Era}}
+
+[[File:rangerepic.jpg|200px|thumb|right|ranger epic]]
+[[File:RangerEpic.png|200px|thumb|right|Swiftwind and Earthcaller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Burning Woods]]
+|-
+! ''' Quest Giver: '''
+| [[Telin Darkforest]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+	
+
+== Rewards ==
+
+<ul><li> {{:Swiftwind}}
+</li><li> {{:Earthcaller}}
+</li></ul>
+
+== Highlights ==
+{{CheckboxList}}
+* LOTS of running around and giving people stuff
+* Forage:
+** [[Rose of Firiona]] from [[Firiona Vie]]
+** [[Chilled Tundra Root]] from [[Everfrost]]
+** [[Ripened Heartfruit]] from [[Greater Faydark]]
+** [[Speckled Molded Mushroom]] from [[Innothule Swamp]]
+** [[Sweetened Mudroot]] from [[Misty Thicket]]
+* Spawn and kill a [[Dark Elf Corruptor]] (and optionally two [[Dark Elf Reaver]]s) in [[East Karana]]
+* Acquire a [[Jade Reaver]]:
+** Purchase one
+** Slay [[a black reaver|black reavers]] in [[City of Mist]] and loot one
+* Acquire a [[Pulsing Green Stone]]
+** Slay [[Venril Sathir]] (spawned version) in [[Karnor's Castle]] and loot one
+** Purchase a Multi-quested one
+* Acquire a [[ Soulbound Hammer]] by spawning and killing [[Jaeil the Insane]] in [[The Hole]]
+* Acquire a [[Swirling Sphere of Color]] by slaying [[an essence tamer|essence tamers]] in [[Plane of Sky]]
+* Acquire a [[Shattered Emerald of Corruption]] from the [[Plane of Hate]] "mini bosses" (72 hour respawn) or [[Innoruuk]]
+{{End}}
+
+== Checklist ==
+{{CheckboxList}}
+== Making the Hardened Mixture ==
+* '''Acquiring the [[Shiny Tin Bowl]]'''
+** Ask [[Telin Darkforest]] in [[Burning Wood]] "what action" and receive a [[Worn note|Worn Note]].
+** Spawn [[Faelin Bloodbriar]] in [[Greater Faydark]] and give her the Worn Note, receiving [[Faelin`s Ring]].
+** Find [[Giz X`Tin]] in [[Kithicor Forest]] and give him Faelin`s Ring, receiving a [[Dark Metal Coin]].
+** Give coin to [[Telin Darkforest]], receive [[Worn Dark Metal Coin]] 
+** Find [[Althele]] in [[East Karana]] and give her the [[Worn Dark Metal Coin]]. The druid will tell you to find [[Sionae]] who will show up on track and give you a [[Braided Grass Amulet]].
+*** Give [[Sionae]] the Braided Grass Amulet, Frayed Braided Grass Amulet is returned.
+*** Give [[Nuien]] the Frayed Braided Grass Amulet, Frayed Braided Grass Amulet is returned.
+*** Give [[Teloa]] the Frayed Braided Grass Amulet, spawning a [[Dark Elf Corruptor]] and two [[Dark Elf Reaver]]s '''and they run really fast when spawned, almost SOW fast'''.
+*** Kill the [[Dark Elf Corruptor]], loot [[Fleshbound Tome]], give to [[Althele]], receive a [[Earth Stained Note]].
+** Give [[Ella Foodcrafter]] in [[Misty Thicket]] the [[Earth Stained Note]] and receive a [[Shiny Tin Bowl]].
+
+* '''[[Shiny Tin Bowl]] + 4x Foraged Items = [[Hardened Mixture]]'''
+** Forage the following four items:
+*** [[Chilled Tundra Root]] from [[Everfrost]].<br/>'''NOTE:''' If you forage a [[Rose of Firiona ]] before coming here, you can stop by [[Surefall Glade]] while you're in this neck of the woods and give the rose to [[Merdan Fleetfoot]] for a later step
+*** [[Ripened Heartfruit]] from [[Greater Faydark]].
+*** [[Speckled Molded Mushroom]] from [[Innothule Swamp]].
+*** [[Sweetened Mudroot]] from [[Misty Thicket]].
+** Combine all four items in the [[Shiny Tin Bowl]] to make a [[Hardened Mixture]]. Don't destroy the [[Shiny Tin Bowl]] you'll need it later in the quest.
+
+== Making the Runecrested Bowl ==
+This section does not require completing the earlier section.
+
+* '''[[Ancient Pattern]] + [[Platinum Speckled Powder]] + [[Enchanted Clay]] = [[Runecrested Bowl]]'''
+** The [[Ancient Pattern]]
+*** Talk to [[Alrik Farsight]] in [[Timorous Deep]] and receive a [[Crushed Pot]].
+*** Give [[Farios Elianos]] in [[Felwithe]] the Crushed Pot and receive a [[Grocery List]].
+*** Give [[Merchant Nora]] in [[Northern Felwithe]] the Grocery List and receive a [[Bag of Provisions]].
+*** Give the Bag of Provisions to Farios Elianos and receive a [[Receipt]].
+*** Give the Receipt to Alrik Farsight and receive an [[Ancient Pattern]].
+** The [[Platinum Speckled Powder]]
+*** Forage a [[Rose of Firiona]] from [[Firiona Vie]].
+*** Hail [[Merdan Fleetfoot]], ask him "Who is Niera?", then hand him the Rose of Firiona receiving a [[Wood Painting]].
+*** Track down [[a human skeleton]] in [[Frontier Mountains]], give it the [[Wood Painting]] receiving a [[Silver Chained Locket]].
+*** Give [[Niera Farbreeze]] in [[Surefall Glade]] the Silver Chained Locket receiving [[Platinum Speckled Powder]].
+** The [[Enchanted Clay]]
+*** Slay [[a black reaver|black reavers]] in [[City of Mist]] and loot a [[Jade Reaver]].
+*** Speak to [[Kinlo Strongarm]] in [[North Kaladim]] and give him the Jade Reaver receiving [[Enchanted Clay]].
+** Combine the [[Ancient Pattern]], [[Platinum Speckled Powder]], and [[Enchanted Clay]] in a pottery wheel creating a [[Runecrested Bowl]].
+
+== Making Swiftwind ==
+* '''[[Hardened Mixture]] + [[Runecrested Bowl]] + [[Venril Sathir]] [[Pulsing Green Stone|Stone]] = [[Ancient Longsword]] = [[Swiftwind ]]'''
+** Give the [[Hardened Mixture]] and [[Runecrested Bowl]] to Ella Foodcrafter, receiving a [[Softly glowing stone]].
+** Create a [[Summoned: Firefly Globe]] (level 1 Druid spell, NO RENT, only castable at night: 7p - 4a).
+** Purchase Scroll of [[Resurrection]] (level 49 Cleric spell).
+** Give [[Venril Sathir Remains]] in [[Karnor's Castle]] the Summoned: Firefly Globe to spawn [[Spirit of Venril Sathir]].
+** Give [[Spirit of Venril Sathir]] in [[Karnor's Castle]] the Spell: Resurrection to spawn [[Venril Sathir]].
+** Slay [[Venril Sathir]] in Karnor's Castle and loot a [[Pulsing Green Stone]].
+** Give [[Foloal Stormforest]] in [[Firiona Vie]] the Pulsing Green Stone and Softly Glowing Stone, receiving a [[Warmly Glowing Stone]].
+** Give [[Telin Darkforest]] the [[Warmly Glowing Stone]] receiving an [[Ancient Longsword]].
+** '''Check Below for How to Spawn Usbak the Old'''
+** Hail [[Usbak the Old]] and give him the [[Ancient Longsword]] receiving a [[Refined Ancient Sword]].
+** Give [[Telin Darkforest]] the [[Refined Ancient Sword]] spawning [[Faelin Bloodbriar]], then give her the [[Refined Ancient Sword]] receiving [[Swiftwind]].
+
+== Making Refined Mithril Blade ==
+* [[Swirling Sphere of Color]] + [[Shiny Tin Bowl]] = [[Refined Mithril Blade]]
+** Slay [[an essence tamer|essence tamers]] in [[Plane of Sky]] and loot a [[Swirling Sphere of Color]].
+** Spawn [[Jaeil the Insane]] by giving [[Jaeil the Wretched]] in [[The Hole]] Ella's [[Shiny Tin Bowl]] and slay him. Loot a [[Soulbound Hammer]].
+** Speak to [[Mairee Silentone]] in [[Erudin]] Palace and give her the [[Soulbound Hammer]], receiving a [[Dwarven Smiths Hammer]].
+** Give [[Mairee Silentone]] the [[Dwarven Smiths Hammer]] and [[Swirling Sphere of Color]], receiving [[Hammer of the Ancients]].
+** '''STOP! OBTAIN [[Ancient Longsword]] FROM TELIN (see ''Making Swiftwind'' above). YOU NEED TO HAND THAT IN TO USBAK, WHO WILL DESPAWN!'''
+** Give [[Kinlo Strongarm]] the [[Hammer of the Ancients]] spawning [[Usbak the Old]] who gives you a [[Small bit of Mithril Ore]].
+** Give [[Kinlo Strongarm]] the [[Small bit of Mithril Ore]] receiving a [[Refined Mithril Blade]].
+
+== Making Earthcaller ==
+* '''[[Refined Mithril Blade]] + [[Shattered Emerald of Corruption]] = [[Earthcaller]]'''
+** Loot a [[Shattered Emerald of Corruption]] from the [[Plane of Hate]] "mini bosses" (72 hour respawn) or [[Innoruuk]].
+** Give [[Xanuusus]] in [[North Karana]] the [[Shattered Emerald of Corruption]] and [[Refined Mithril Blade]] receiving [[Earthcaller]].{{End}}
+
+== Short Walkthrough ==
+
+==== The Beginning ====
+
+First go to Telin Darkforest (Level 55) in [[Burning Woods]]. He roams near to the Skyfire zone and has been sighted at +3234, +2871. Ask him "what action" and he will give you a note. If he doesn't, then your faction is too low. Faction can be built up fast by doing the muffin-quest in Freeport. (Wolf form works if he con apprahensive it takes you up to amiably)
+
+Next, find Faelin Bloodbriar in Greater Faydark. Faelin spawns at +1500, +500. The placeholder is a roaming orc pawn that spawns at 7 minute intervals. The best tactic is to roam around. Once you do find her, give her the note and you receive a ring. After giving her the note she despawns.
+
+Giz X'Tin (Level 40) is found in Kithicor near the path from West Commons to Highpass Hold. Give him the ring and he gives you a dark metal coin. Giz roams along the path. After you hand him the ring a level 50 Teir`Dal Reaver spawns and attacks you. Be prepared and have Spirit of the Wolf cast on you so that you can run away.
+
+'''Go back to Telin Darkforest and give him the Coin.''' He will give it back to you as worn metal coin. He tells you to find Althele. Find Althele in East Karanas. She can be found just north of the barbarian fishing village. (Make sure you are Amiable Faction or better) Give her the worn metal coin and receive a worn amulet. Give this amulet to Sionae (spawns -2300, -930)(She can be standing either on the East or West side of the farm located there, so check both sides), then to Nuien (spawns -3650, -300) and finally to Teloa (spawns -3800, -2860).
+
+When you give the amulet to Teloa the Dark Elf Corruptor and two Dark Elf Reaver (All around level 50) spawn. You should have one of your druid friends stand on the hill east of the river (loc -1500, -1000)(it will take a minute or two before they spawn after turning in to Teloa, there will be a zone message from the Corruptor when they do). The Dark Elf Corruptor and 2x Dark Elf Reavers will stay spawned at the loc provided until you engage them. It is best to have your kill group stationed at the loc on the hill, you only need to kill the Corruptor and loot the tome (it is suggested to stand near the farm where Sionae was located and just look north up the mountain to watch for them, invis and them run up next to them when you see them and Harmony off to the side to not aggro, then pull away the Corruptor). You can kite the Reavers around (Snareable) and turn in the tome without having Althele get killed by the Reavers and then zone out and the Reavers will depop shortly after. (If you are feeling brave enough to solo as a Ranger in the 50s and risk having to do the Epic all the way over, Buff HP, MR, DR, FR, SoW, DS and Regen and peel Corruptor away with Harmony followed by snare/root).
+
+Give Althele the tome and he gives you an Earth Stained Note. Bring this to Ella Foodcrafter.
+
+Ella Foodcrafter in Misty Thicket is this wanted women that wanders the zone. Give her the [[Earth Stained Note]] and she will tell you that she needs a mixture. She will give you her mixing bowl. It is a Container so you need a free slot in the Inventory. She also mentions some kind of ancient bowl that she needs.
+
+==== The Hardened Mixture ====
+
+You must forage 4 items that you have to combine in Ella's mixing bowl:
+
+<ul>
+<li>{{:Chilled Tundra Root}} from Everfrost Peaks</li>
+<li>{{:Sweetened Mudroot}} from Misty Thicket</li>
+<li>{{:Speckled Molded Mushroom}} from Innothule Swamp</li>
+<li>{{:Ripened Heartfruit}} from Greater Faydark</li>
+</ul>
+
+Go to these places and put the "Forage" button into your hotkey, find a nice safe space and hit forage continuously. This can take several hours so be prepared. When you get the items, combine them in the bowl and you get a Hardened Mixture.
+
+==== The Runed Bowl ====
+
+===== Chess Island =====
+Now go to the Chess Island in [[Timorous Deep]]. The easiest way to do this is to take the barge from the [[Oasis]] docks to [[Timorous Deep]], and then get on the boat to [[The Overthere]].  If you get off this boat just before it enters [[The Overthere]] you can easily run to Chess Island, especially if you cast [[Levitate]] and [[Spirit of Wolf]] before getting on it. You'll probably also want [[Camouflage]], as there's a deadly Iksar on Chess Island, you'll want to avoid.
+
+On Chess island run south. Run straight south. Use track to locate [[Alrik Farsight]]. He's at about -6500, 2000.  Alternatively, [[Succor]] ([[Druid]] 57) and [[Evacuate]] ([[Wizard]] 57) both take you within 100 feet of Alrik.
+
+Click off [[Camouflage]], hail [[Alrik Farsight|Alrik]], then say "How do you make an ancient bowl?" and "I can take the artifact." He gives you a [[Crushed Pot]] and sends you to [[Felwithe]].
+
+You can use the teleportation firepots, which are south a ways from Chess Island, to get to [[Felwithe]] easily.
+
+===== Felwithe =====
+Hail [[Farios Elianos]] in [[South Felwithe]] before you give him the crushed pot. Farios is in the merchant building near the caster's guild. When you enter [[South Felwithe]], you'll see the entrance to the merchant straight ahead, whereas the entrance to the caster's guild is to the left.
+
+If he doesn't respond to you then your faction with Keepers of the Art is too low. Do not give him the pot. Indifferent is not enough, you need amiable. You can build up faction fast with the batwing-quest in [[South Felwithe]]. 
+
+(This quest is simple and cheap but time-consuming. In EC, right near the zone to WC, there is a merchant south of Orc 2 camp, an Erudite. She sells bat wings, cheap. Select the wings from her list, hold down shift and click on Buy about 5-6 times. You'll have 5-6 stacks of wings. Head back to [[South Felwithe]], run to the mage guild, and hand in wings, 4 per stack in all 4 give slots, to Niola Impholder, a trainer in the Felwithe Mage guild. It took me two full backpacks of wings to go from indifferent to amiable, and I am a Wood Elf follower of Tunare.)
+
+Once Farios cons amiable <s>and talks to you</s>, give him the pot and you receive a grocery list. The dialogue with the NPCs for this segment is pretty funny. He will give you the receipt for the bowl if you do a job for him. Bring this grocery list to Merchant Nora in the Shop of All Halos in Felwithe north, which is near the cleric guild. She gives you in return a bag of Provisions. Bring it to Farios and he gives you the receipt for the ancient bowl. Head back to Alrik Farsight in Timorous Deep. He will give you an [[Ancient Pattern]] when you give him the receipt.
+
+The pattern says that you have to combine it with a piece of enchanted clay and platinum speckled powder in a pottery wheel. No skill in pottery is required.
+
+===== Platinum Speckled Powder =====
+
+[[Platinum Speckled Powder]] can be obtained through another sub quest.
+
+Forage a [[Rose of Firiona]] in Firiona Vie and give it to Merdan Fleetfoot in Surefall Glades, a male ranger in the back of the zone, near the water. The old wooden painting that you receive has to be brought to the human skeleton (Level 40) spawns in [[Frontier Mountains]] at -261 -574, behind the giant fort, against the wall, on the mountain side. 
+
+Invis yourself to be left alone by the wandering mobs. Look for "A Human Skeleton" on track. Give it the painting and it will crumble, and you'll have a silver chained locket in your inventory.
+
+Back to [[Surefall Glade]]. Give the locket to [[Niera Farbreeze]], a human female in banded armor, also near the water but close to the druid guild building. She will hand you the [[platinum speckled powder]].
+
+===== Enchanted Clay =====
+
+[[Enchanted Clay]] can be obtained through [[Kinlo Strongarm]] in [[Kaladim]]'s EverHot Forge. If you ask him "what mud" and "do it for me" he will tell you that he would like to have a colored axe for his service. He wants a [[Jade Reaver]] that can be found in the [[City of Mist]] off of [[A black reaver]] who is about level 52. This is not easy at all. The Reaver is a rare drop and the [[A black reaver|Black Reavers]] are a real pain to take down. You will need at least one full group of 50+ players if not two, and one must be a [[Rogue]] with high [[Skill Pick Lock|lock picking]] skills.
+
+===== Making the Bowl =====
+
+Hand Kinlo the axe and you get the enchanted clay. If you hunted dwarf citizens in Butcher, invis yourself and head to the forge. The merchants, thankfully, are on a different faction table. Just go to the Everhot Forge and hand Kinlo a Jade Reaver to get the clay. Now combine the pattern, clay and powder in any pottery wheel to make the [[Runecrested Bowl]].
+
+==== The Stones ====
+
+Go Back to Misty Thicket and hand Ella Foodcrafter the hardened mixture and the rune crested bowl. She will make for you a softly glowing stone from it. Ella tells you to find one such as yourself.
+
+Go to Karnor's Castle. Kill [[Venril Sathir]] for the [[Pulsing Green Stone]].
+
+Kill VS to spawn Venril Sathirs remains. If Venril Sathir has already been killed by another guild, the remains should already be up. If not it spawns every 20 hours +1/-1.
+
+Cast the spell Dance of the Fireflies to Summon a Firefly Globe. Give the Firefly Globe to Venril Sathirs remains to spawn the Spirit of Venril Sathir. Give the scroll for the spell Resurrection to the Spirit of Venril Sathir to respawn Venril Sathir.
+
+After you kill this respawned version of Venril Sathir two [[Pulsing Green Stone]] will drop.
+</div>
+Go to Firiona Vie. Give the Softly Glowing Stone and the Pulsing Green Stone to Foloal Stormforest to get the Warmly Glowing Stone.
+
+Head back to Burning Woods and give Telin Darkforest the Warmly Glowing Stone to get the Ancient Longsword.
+
+==== The Hammers ====
+
+Now head to [[The Hole]] which is a zone adjacent to Paineel. Find [[Jaeil the Wretched]] (level 50). Use Sneak and then go behind Jaeil and give him the Shiny Tin Bowl. Make sure you have a raid party in the room ready for battle. He will scream at himself and then Jaeil the Insane will spawn.
+
+Now the raid party goes into action and kills Jaeil the Insane. Loots from Jaeil the Insane a Soulbound Hammer.
+
+Go to Erudin and find Mairee. She is in the jewelry shop, by the bank. Give her the Soulbound Hammer and in return she will give you the Dwarven Smiths Hammer.
+
+Now go to the Plane of Air and kill the Essence Tamer. He spawns on the fourth island and drops the Swirling Sphere of Color.
+
+Take the Dwarven Smiths Hammer and the Swirling Sphere of Color and give them to Mairee. In return, she will give you the Hammer of the Ancients.
+
+Go back to Kinlo Strongarm and give him the Hammer of the Ancients.
+
+==== The Swords ====
+
+After you give Kinlo Strongarm and the Hammer of the Ancients. Usbak the Old will spawn and he will give you Small Bit of Mithril Ore.
+
+Give Usbak the Old your Ancient Longsword and he will return to you the new and improved Refined Ancient Longsword.
+
+Hand the Mithril Ore to Kinlo to get the Refined Mithril Blade.
+
+Go back to the Burning Woods, to Telin and give him the Refined Ancient Sword. This causes Faelin Bloodbriar to spawn and Telin will give you back the Refined Ancient Sword.
+
+Give the Refined Ancient Sword to Faelin and she will enchant it for you and return to you Swiftwind, the first epic weapon.
+
+At this point she despawns after saying some stuff about how you have to kill Innoruuk to rebalance the world. That is exactly what you are going to do.
+
+Go to the Plane of Hate and kill Innoruuk. His location is (-65, -196) and he spawns about once a week. He is a level 55 Wizard with approx. 32,000 hit points. He is a green looking man wearing clothes. Loot the Shattered Emerald of Corruption.
+
+==== The End ====
+
+Take the Refined Mithril Blade and the Shattered Emerald of Corruption to Xanthuus the Treant in North Karanas. In return he will give you the last epic weapon, the Earthcaller.
+
+Earthcall is a 50% slow with a DoT that does 500 damage over 2.5 minutes. Swift Spirit increases your ATK by 30 and also has a 40% haste.
+
+<span>Congratulations on your {{:Swiftwind}} / {{:Earthcaller}}!</span>
+
+== Long Walkthrough with Dialogue ==
+
+Speak to Telin Darkforest in the Burning Woods. He is located near the Skyfire zone. If your faction isn't high enough with him (halflings don't start with enough faction), you'll need to improve it. An easy way to raise faction is by completing the [[Muffin for Pandos]] quest (a bunch of times; 80 stacks of muffins should get you around ally with no previous negative faction hits, but might be overkill--empty out a couple of backpacks and go at it to be safe).
+
+You say, 'Hail, Telin Darkforest'
+
+: Telin Darkforest looks at you serenely. 'Hello, wanderer.'
+
+You say, 'What are you doing in this forest?'
+
+: Telin Darkforest says 'Mighty this place must have been, once. Now scarred by hatred and suffering. I have been sent here seeking answers to problems not yet understood.
+
+You say, 'What answers?'
+
+: Telin Darkforest considers you for a few moments before speaking. 'A great evil walks across the land. The hand of some demon we don't yet know is twisting and polluting forests.'
+
+You say, 'What evil?'
+
+: Telin Darkforest says 'If I knew that, I wouldn't be here looking for answers. I would be elsewhere, looking for solutions. For now, I suspect much but know little.
+
+You say, 'What do you suspect?'
+
+: Telin Darkforest looks at you and sighs. 'The lands are changing. Beasts, large and small, have turned upon those who watched over them. Druids and rangers, worshippers of both Karana and Tunare, have reported a feeling of hatred throughout their once peaceful lands.'
+
+You say, 'Perhaps it is Innoruuk'
+
+: Telin Darkforest raises his eyebrow slightly and a subtle look of surprise creeps across his face. 'Innoruuk? Perhaps. Aye. It must be. Perhaps I knew and didn't want to consider the possibility. It must be this though, and some action will have to be taken.'
+
+You say, 'What action should I take?'
+
+: Telin Darkforest looks at you consideringly and then scribbles something quickly on a small, worn paper. 'You seem powerful enough. Perhaps you can help those who seek to protect nature's peace. Take this note. Deliver it only into the hands of Faelin Bloodbriar. Where you will find her, I cannot say. She is a friend of mine and a wanderer. She has been seen from one end of the lands to the other. Seek her out, and quickly.'
+
+'''Telin Darkforest gives you a "Worn Note" which you need to take to [[Faelin Bloodbriar]] in Greater Faydark.'''
+
+'''Faelin roams around Greater Faydark and has an Orc Pawn as her PH. Their spawn point is at loc +1500, +500.'''
+
+: Faelin Bloodbriar reads the note carefully and growls to herself. 'Bad news, eh? Take this ring. There is one elf, dark elf even, who we must go to in order to gather insight into Innoruuk's plans. Giz X'Tin, he goes by most commonly. Kithacor seems to be his favorite haunt and most likely you will find him there. Don't ask how I know him. Just take the ring as my sign to him and he will speak to you. We don't need to speak again, so don't seek me out, just go to Telin. I must leave to investigate these events.'
+
+'''Faelin Bloodbriar gives you [[Faelin`s Ring]] to take to take to [[Giz X`Tin]], who is located in Kithicor Forest.'''
+
+: Giz X'Tin flips you a coin after he recognizes the ring. 'It seems we have a mutual 'acquaintance.' The coin repays an old debt. You don't have to worry about what that is. Luckily, Lord Innoruuk has informed me of your coming and your desires. Fortunately, I have all the answers you require right here at the end of my friend's blade. I think I'll be paying my old 'friend' a visit.'
+
+: Teir`Dal Reaver says 'Lord Innoruuk, I have failed you. Forgive me and spare me from service to your undead minions in the world!
+
+'''Giz X'Tin gives you a [[Dark Metal Coin]].'''
+
+'''A Teir`Dal Reaver will spawn when you get the Dark Metal Coin however you do not need to kill it.'''
+
+'''Head back to the Burning Woods and give the coin to Telin.'''
+
+: Telin Darkforest scratches the coin as he looks at it. 'Faelin sent you to Giz? Surprising. This coin speaks to the outcome of your talk. He would hardly give this bit of metal to a stranger, but that's a story for a different time. So, you say Giz did confirm Innoruuk's involvement, and something about undead minions? Here, take this coin back. Find Arch Druid Althele in the Karanas and show her that. Tell her what we have discussed. She will look kindly on an ally in this matter.'
+
+'''Telin Darkforest gives you a "Worn Dark Metal Coin" to take to Althele in East Karana.'''
+
+You say, 'Hail, Althele'
+
+: Althele says 'Hello, friend. Beautiful is what I would call such a day normally but lately?
+
+'''Give the coin to Althele.'''
+
+: Althele looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'
+
+'''Althele gives you a [[Braided Grass Amulet]] to take to [[Sionae]].'''
+
+You say, 'Hail, Tholris'
+
+: Tholris stares in contemplation at the landscape.
+
+: Althele says 'Tholris does not speak much. He is here to assist me in my duties. He is my hands, as Fang is my eyes.
+
+: Fang barks in response to Althele's words.
+
+You say, 'Why do you need him as your hands and Fang as your eyes?'
+
+: Althele says 'Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.
+
+Sionae spawns after you get the Braided Grass Amulet. '''Give the amulet to Sionae.'''
+
+: Sionae says 'I see that the time has come. Take the amulet and give it to the third of our kin, Nuien. I will meet you at the gathering.
+
+'''Sionae gives you a "Frayed Braided Grass Amulet" to take to Nuien. Give the amulet to Nuien.'''
+
+: Nuien says 'So be it. Do as you have done before and find the next. Teloa is the last.
+
+'''Nuien gives the "Frayed Braided Grass Amulet" back to you, and Teloa spawns near the waterfall. Give the amulet to Teloa.'''
+
+Teloa begins walking toward the gathering spot. 'Follow me to the gathering now.'
+
+Follow Teloa back to where Althele is, which is where the druids are gathering. You will not have the amulet at this point as she does not return it to you.
+
+: Althele says 'Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.
+Althele snaps her head towards you. 'Innoruuk's brood is upon us. Go, find the spawn of hatred before they reach this point and destroy them!'
+
+'''[[Dark Elf Corruptor]] and two [[Dark Elf Reaver]]s spawn. You need only the Corruptor and loot the [[Fleshbound Tome]].'''
+
+: Dark Elf Corruptor shouts 'We come for you, fools. Your reign of weakness over the powers of the land comes to an end now!
+
+It is not necessary to kill the two Reavers but if you don't, they'll wander to the druids and kill them. Allowing this to happen will waste your time, as you need to hand the "Fleshbound Tome" you looted off the Corruptor into Althele.
+
+Althele hands the book to Tholris who reads through it with lines of concern etched on his face, then whispers into her ear. 'Dire news, indeed. This cannot be allowed. I must keep this book but you must not allow Innoruuk, to seed the land with his hatred and filth. You have only just begun your quest. The path you are guided upon will be difficult, if not impossible, but someone must finish it. Please, take this, read of it, follow its instructions. Tunare bless your path and Karana watch over you.'
+
+Althele gives you the "Earth Stained Note" and the druids despawn.
+
+: 'We cannot speak again. Our circle is now known and must seek sanctuary. In case this note were to fall into others' hands. I cannot tell you plainly the next steps of your task. All I can say is to seek she who walks the path of the mother, she who walks the lands in service to her kin. Give her this note and she will know.'
+
+Head to Misty Thicket and find Ella Foodcrafter. She wanders the path near Rivervale and won't be hard to track down.
+
+You say, 'Hail, Ella Foodcrafter'
+
+: Ella Foodcrafter says 'Hi, hi. I've got a lot to do, many mouths to feed, some filthy goblins to smack. If you don't need me for something, please let me go back to my work. Karana watch over you.'
+
+Give the Earth Stained Note to her.
+
+: Ella Foodcrafter says 'Hmmm. I've been waiting for someone to bring me this. I'm sorry such a young one as you has taken up this task. Maybe the sky god blesses ya though. Aye, ya have that look in your eye. Our task is to focus the blessings of the gods and cleanse the filth from the land. I have two tasks for ya.'
+
+You say, 'What two tasks?'
+
+: Ella Foodcrafter says 'Well, ya ask before ya act. That's a good sign. What I need isn't easy to find. First, I need a mixture. Plain sounding enough but it's a special one. Cleanses the mind and focuses the earth's energies into a forest walker's mind. I don't know how to make it. I don't even know what it's called. I merely know it exists and we'll be needing it for our task. When ya do find how to make it ya can mix it in that bowl. Keep it when you're done, it's a good bowl.'
+
+Ella Foodcrafter gives you a [[Shiny Tin Bowl]] which identifies as Ellas Reflective Tin Bowl to create the Hardened Mixture.
+
+You say, 'What is the second task?'
+
+: Ella Foodcrafter grins. 'Good, ya didn't run off without finding out what else ya need to do. Second, I need a special type of bowl. An ancient type of bowl, which strengthened the food placed inside it, once made by the elves of old. Again, I cannot tell ya how it is made for the making was lost to the ages. Seek this knowledge and these items out in the lands. Come to me when ya have found both.'
+
+Now, you will need to forage:
+
+* [[Chilled Tundra Root]] in Everfrost.
+* [[Ripened Heartfruit]] in Greater Faydark.
+* [[Speckled Molded Mushroom]] in Innothule Swamp.
+* [[Sweetened Mudroot]] in Misty Thicket.
+
+Combine these four items in the Shiny Tin Bowl to get a "Hardened Mixture." Don't destroy the tin bowl, as you'll need it later in the quest.
+
+Seek out Alrik Farsight who roams near the chessboard in Timorous Deep. He is on Keepers of the Art faction. You will need to be at least amiable to him in order for him to speak to you. It may be raised by doing a bat wing turn in quest described here.
+
+You say, 'I seek an ancient type of bowl made by the elves of old.'
+
+: Alrik Farsight rummages through his tattered bag and throws aside a towel. 'Too many towels. Oh well, someone told me they were good to have once. Here it is, a bowl pattern. Interesting bowl. Looks almost like a magical bowl but I'm no potter. You need it, you say? Well, it is interesting. Part of my research here is for the wizard guild in Felwithe. I'm sure they'd put a high price on this one, the enchanters guild being so interested in trading for magical paraphernalia and all. Of course if you helped me out on a chore I have, I'd be happy to give it to you. I need to deliver an artifact to the guild and I'd much rather stay here exploring. If you wish, you can take the artifact and return with the receipt and I will give you the pattern.'
+
+You say, 'I will take the artifact.'
+
+: Alrik Farsight says 'Hah! Okay then. Here take this to Farios Elianos in Felwithe. He will give you the Receipt.
+
+'''Alrik Farsight gives you "Crushed Pot" to give to Farios Elianos in Southern Felwithe.'''
+
+: Farios Elianos says, 'Why in the nine hells would I need a crushed pot? Perhaps I could use it to not hold water! Why did you even bother me with this? Are you mentally deficient? Apparently. Oh, well, you're just a servant boy. Well, then, we'll make you useful, if just a little. Take this shopping list and go get my groceries. Take it to Nora in the tavern. She'll know what I need.'
+
+Farios Elianos gives you a "Grocery List" to give to Merchant Nora.
+
+: Merchant Nora says 'You hardly look like the type of errand runner Farios usually sends out to fetch his groceries but here they are. I hope he chokes on them. Oh, and tell him he still owes me five gold for his last order!
+
+Merchant Nora gives you a "Bag of Provisions" to take to Farios Elianos.
+
+Take the bag of Provisions back to Farios Elianos and give it to him.
+
+: Farios Elianos says 'Ah, good. Here's a few copper and a receipt for services rendered. Now be off, I'm sure citizens across the land are in dire need of broken pots at right this moment.
+
+Farios Elianos gives you a "Receipt" to take to Alrik Farsight.
+
+Go back to Alrik Farsight and give him the Receipt.
+
+: Alrik Farsight grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'
+
+You receive an [[Ancient Pattern]].
+
+Go to Firiona Vie in Kunark and forage a [[Rose of Firiona]].
+
+Now head to Merdan Fleetfoot in Surefall Glade:
+
+You say, 'Hail, Merdan Fleetfoot'
+
+: Merdan Fleetfoot says 'Yes Niera! Oh. Erm. Hi. I mean, uh. How are you?'
+
+You say, 'Who is Niera?'
+
+: Merdan Fleetfoot blushes. 'She is, uh.. I don't know. I haven't been able to speak with her. She has many suitors, and I'm just another poor ranger. I spend my days here pretending to fish, to carve bows, but really I'm just waiting to catch a glimpse of her. I thought about adventuring into the world to find some kind of token to give her, to show her how I feel, but I cant tear myself away from here.'
+
+Give Merdan Fleetfoot a Rose of Firiona.
+
+: Merdan Fleetfoot blinks and looks at the flower. 'This is perfect. Thank you! I'm going to go over to her now. Erm, well, maybe I'll wait a week to let the uh.. beauty of the flower.. uhm.. blossom. Yes, that sounds good. Here, you take this painting. I don't need it now. I made it myself, she wouldn't like it anyways.'
+
+Merdan Fleetfoot gives you a "Wood Painting" to give to a Human Skeleton in Frontier Mountains.
+
+: a human skeleton begins to crack and disintegrate, its body collapsing into a pile of dust that scatters into the winds. On the ground you notice a locket on a fine, thin chain which you pick up ("Silver Chained Locket").
+
+Head back to Surefall and give the locket to Niera Farbreeze and she will give you [[Platinum Speckled Powder]].
+
+: Niera Farbreeze says 'This, this is my mother's amulet. I cannot believe it. Please, take this powder you say you need. Perhaps it does have powers, I don't know, I don't care. Thank you, my eternal thanks for this.
+
+Seek out Kinlo Strongarm in Kaladim.
+
+You say, 'What mud?'
+
+: Kinlo Strongarm says 'Eh? Oh, the clay. Arrr. Lots o that mud round 'ere. Mostly, a good dwarf not be needin somethin so soft 'n squishy but the womenfolk, you know, the elves come lookin fer it. If ye be one o' those pansy elves wantin some mud fer workin into fairy statues, flashy trinkets, 'n pig sticker arrers then I can get it for ye. Course I'd be lowerin meself, a good dwarf, ta be diggin that kinda mush outta the ground, but I can do it fer ya.
+
+You say, 'Do it for me.'
+
+: Kinlo Strongarm says 'Arrr. Shaddap. I ain't doin it til ya bring me something. A fee, I guess yed call it, fer lowerin meself ta elf woman work. Go get me a good strong axe and I'll do it fer ye. Mebbe somethin with a good tinted polish on it. I got plenty o' axes but no tinted ones. Har har! Colored axe. Something to go with the color left on the blade after I be crackin open a gobbo head.
+
+He wants a Jade Reaver from the City of Mist.
+
+Give Kinlo a Reaver, and he will give you [[Enchanted Clay]].
+
+: Kinlo Strongarm says 'Arrrrr. Ooooo. Arrrrrr... Yah, now that's what I be callin a good lookin axe. I be crackin a few skulls with this one. Oh, here's yer block o' mud. Our priests o' Brell use the mud pit fer relievin themselves after really hard ale blessin ceremonies, so ya ain't got ta be enchantin it in holy water or anythin cause they already have. Har har!
+
+'''Combine the Ancient Pattern, Enchanted Clay, and Platinum Speckled Powder in a Pottery Wheel to make a [[Runecrested Bowl]], which identifies as "A meticulously decorated bowl." This requires no skill in pottery to do and any pottery wheel should work.'''
+
+Head back to Misty Thicket and visit Ella Foodcrafter. Give her the Hardened Mixture and Runecrested Bowl.
+
+: Ella Foodcrafter smiles slowly as she works the mixture in the bowl and it starts to shine with power. 'This is... a piece of a lost magic item known as Nature's Gem. When restored to completeness I've heard its healing powers will be extraordinary. Take it now. I will take the bowl and hopefully do some good from my end. From here, you can go many ways but I can't guide your path step by step. The only advise I can give you is to look for ones such as yourself.'
+
+Ella Foodcrafter gives you the "Softly Glowing Stone," which identifies as Left Half of Natures Balance.
+
+Seek out Foloal Stormforest in Firiona Vie.
+
+You say, 'Are you one such as myself?'
+
+: Foloal Stormforest stares at you and whispers. 'You must be the one that has been spoken of. Yes, yes I am one of the circle. There are many of us in the lands right now, all seeking answers to the ills that have befallen our homes.'
+
+You say, 'What answers?'
+
+: Foloal Stormforest says 'I have heard whispers of new Iksar movements in the land. The name of Venril Sathir is on the scaled lips and sharp tongues of every cold blooded lizard in this place.'
+
+You say, 'What about venril sathir?'
+
+: Foloal Stormforest says 'All I've heard are whispers of connections between the undead lizards and the dark god of hate. There's some kind of history behind the two. It might be that Venril is the main focus of Innoruuk's will in the land. Then again, maybe not, but this is the best we've gotten so far. If you think you can do it, then find him and remove him from the face of this earth. Bring me the half of the stone I know you have and whatever conduit of power you find on his rotting corpse.
+
+Locate Venril Sathir's Remains in Karnor's Castle. VSR spawns about 20 hours after Venril Sathir (real or fake) is killed.
+
+Venril Sathir's Remains says 'The living fire. I seek the fires of life. Bring them.
+
+Use the spell Dance of the Fireflies to summon a Firefly Globe. Give Venril Sathirs remains the Firefly Globe, which causes the Spirit of Venril Sathir to spawn.
+
+Venril Sathir's Remains grasps the glowing sphere of fireflies from your hands. Tendrils of mystical energy begin to flow forth from the swarm of glowing insects like tiny fingers. The glowing tendrils begin to reach into the ribcage of the rotting remains of Venril Sathir, coalescing into the form of an Iksar ghost.
+
+You say, 'Hail, Spirit of Venril Sathir'
+
+Spirit of Venril Sathir says 'So mortals, you seek to end the tainting of Tunare's children? So be it, I have no cares. My death has been caused by this foolishness and I want no more to do with it. Bring me a scroll with the knowledge of resurrection so that I may once again live. I will hand you that which you seek.
+
+Give the Spirit of Venril Sathir the [[Resurrection | Spell: Resurrection]] scroll.
+
+Spirit of Venril Sathir says 'I am alive! My thanks to you. And now I will aid you in your quest for preserving the forests of norrath. Your carcass will help nurture the soils of the wilderness.
+
+A "fake" version of Venril Sathir respawns.
+
+Kill [[Venril Sathir]] to get the [[Pulsing Green Stone]] which identifies as Pulsing with a sickly light. This version of Venril Sathir should be easier to kill as I have been told that he does not Lifetap. He will drop two Pulsing Green Stones and nothing else.
+
+Head back to Firiona and hand Foloal Stormforest the Pulsing Green Stone and Softly Glowing Stone.
+
+: Foloal Stormforest blinks and carefully takes the stones from you, cautiously scratching the jagged green stone against the other. Its skin seems to shiver and flake at the contact and eventually begins to shine brightly. 'With the gem nature's balance is complete. Take the stone and walk your path. Blade or lightning caller, burning sword or the mother's walk.'
+
+Foloal Stormforest gives you the [[Warmly Glowing Stone]], that identifies as Natures Balance Completed.
+
+Head to the Burning Woods and give Telin Darkforest the Warmly Glowing Stone.
+
+: Telin Darkforest nods as he unbuckles his sword and hands it to you. 'The storm callers are working on containing and fighting against the corruption but they can not hold back the inevitable for long. It is up to us to strike against Innoruuk directly. If we were warriors or paladins we would have a fancy ceremony and plenty of feasting but we're just rangers, without time for pleasantries. The sword you hold in your hands is one of the oldest blades known, even to the eldest. To strike at the darkest heart of evil requires a weapon beyond this, or even ones you may carry at your side. The first task, the first preparation you must make is the smithing of that blade. Its edge sharpened, its balance made perfect. When you have finished, bring me this sword again.
+
+Telin gives you an "Ancient Longsword," which identifies as a "Finely Crafted Longsword."
+
+Head back to Kinlo Strongarm in Kaladim and ask him about the ancient.
+
+You say, 'What ancient?'
+
+: Kinlo Strongarm says 'The ancient smiths, for what I think yer askin about, ain't been around fer a long time, laddy. Last anyone heard o' the ancients was 'fore my time even. There be more than a few tales about 'em.
+
+You say, 'What few tales?'
+
+: Kinlo Strongarm says 'There be some who talk about how the ancient smiths went down to work fer the duke o' below, sayin he be needin some fine dwarven smiths fer makin some castle or some such. There be tales that the ancients were so good at smithin that the duke took 'em down and made 'em head smiths over his minions. There's even tales that some o the smiths' souls were trapped in their hammers, stuck there by some necromancer or somethin, as punishment or retribution.
+
+You say, 'What hammers?'
+
+: Kinlo Strongarm says 'Aye. Some says their souls were bound into their hammers by an Erudite necromancer and enchanter. They say they used the power of the hammers ta profit by makin ships, boats, and houses better than any other merchants. Sad tale, if'n it be true.
+
+You say, 'What Erudite necromancer?'
+
+: Kinlo Strongarm says 'I'm not knowin more about the story, lad. Everythin I know is already in what I said. Aye, Erudites. I suppose if yer wantin ta run after shortbeard tales ya can look over on that plague island they call Odus.
+
+You say, 'What Erudite Enchanter?'
+
+: Kinlo Strongarm says 'I'm not knowing more about the story, lad. Everything I know is already in what I said. Aye, Erudites. I suppose if yer wantin ta run after shortbeard tales you can look over on that plagued island they call Odus.
+
+'''Head to The Hole with a raid and make your way down toward [[Jaeil the Wretched]]. Jaeil is indifferent by default.'''
+
+You say, 'Hail, Jaeil the Wretched'
+
+: Jaeil the Wretched whimpers pathetically as his reflection catches his eye. He turns and stares pitifully at the ceiling.
+
+: Jaeil the Wretched shields his eyes from his reflection in the water, occasionally gibbering as he scratches at a flapping, rotted patch of skin on his sunken face. In his arms he cradles something. He seems to emanate an aura of power.
+
+Stand behind Jaeil the Wretched to make him indifferent to you, then give him the Shiny Tin Bowl so that he will see his reflection.
+
+: Jaeil the Wretched howls in anger, his body seeming to suck energy from the walls around him as he sees his reflection. He pulls a hammer from the bundle in his arms and swings fiercely at your head.
+
+: Jaeil the Insane spawns and attacks. Kill Jaeil the Insane and loot the "Soulbound Hammer," which identifies as Hammer of an ancient dwarf. Jaeil the Wretched used to remain there and could be chain triggered. Since the revamp of Old Paineel, he will poof once he receives the bowl.
+
+Give the Soulbound Hammer to Kinlo Strongarm.
+
+: Kinlo Strongarm examines the hammer respectfully, admiring its craftsmanship. He strikes it against his anvil and winces as a howl fills the air. 'This is one of the ancients' hammers? I can almost, well, almost hear it callin ta me. It's strong, that's fer sure, lad. I don't know how ye got it, but aye, a dwarf could make a mighty blade with this. It's lookin like this thing still has its owner inside it though. I'm not knowin how, and not wantin to know, but fer yer own good ye better find some way ta get 'im out.'
+
+Kinlo gives you back the "Soulbound Hammer," which identifies as Hammer of an ancient dwarf.
+
+Off to Erudin Palace to find Mairee Silentone. Talk to her about an ancient hammer.
+
+You say, 'What ancient hammer?'
+
+: Mairee Silentone says 'Yes, the ancient hammer. I heard something about that. Do you mind if I take a look at it?'
+
+Give Mairee Silentone the "Soulbound Hammer," which identifies as Hammer of an ancient dwarf.
+
+: Mairee Silentone makes a few marks on the hammer, and all the while you can hear a muffled cursing coming from the hammer head. 'Yes, it is an ancient dwarf's hammer. Interesting artifact. I've marked it to keep it stable while you retrieve something for me. You need to travel to the Plane of Sky and find a swirling sphere of color. Bring it and the hammer back to me.'
+
+Mairee Silentone gives you the "Dwarven Smiths Hammer," which identifies as Hammer of an ancient dwarf.
+
+Head to Island Four of the [[Plane of Sky]] and kill an essence tamer which drops the [[Swirling Sphere of Color]].
+
+Give Mairee Silentone the Hammer and the Swirling Sphere of Color.
+
+: Mairee Silentone holds the sphere and makes intricate marks and patterns on it, eventually turning the entire crystal clear. She rolls it across the hammer, raising a ringing sound in the room. 'There. Now take the hammer back to Kinlo. He'll know what to do from here. Good luck to you .'
+
+Mairee Silentone gives you the "Hammer of the Ancients," which identifies as Hammer of an ancient dwarf.
+
+Back in Kaladim, hand Kinlo Strongarm the Hammer of the Ancients, which causes Usbak the Old to spawn.
+
+: Kinlo Strongarm looks at the hammer and nods once before slamming the head against his anvil, and shattering the head. In a cloud of dust, another dwarf appears from the cloud and tosses you a hunk of metal. Kinlo stares in awe.
+
+Usbak the Old gives you "Small bit of Mithril Ore," which identifies as Small bit of Mithril Ore.
+
+You say, 'Hail, Usbak the Old'
+
+: Usbak the Old says 'Took ya long enough! Ye'd think ya had an Orc head on them shoulders there. I'm owin' ya for yer help though. Else I'd have been on that darn hammer for ages. Ye said ya had an ancient blade or somethin ta be smithin. If so lemme see it.
+
+Give Usbak the Old the Ancient Longsword and he gives you the "Refined Ancient Sword," which identifies as Sword to show Telin.
+
+: Usbak the Old admires the blade and then starts to bang the edge with a hammer. 'Hah, that was a good blade, no doubt. Ain't seen one I couldn't make better though. I'm knowin' yer cause and all I know is ye should take that ancient blade ta yer friend in the woods, he'll know what to do now. With that I'm gonna be takin muh leave. Debt paid and all. If'n yer wantin' another blade, which ye do, ye got enough ore left that Kinlo can do it for ye'
+
+Usbak the Old despawns. Give the Small bit of Mithril Ore to Kinlo Stirngarm and he forges the "Refined Mithril Blade" for you.
+
+: Kinlo Strongarm says 'Erm. Well, I aint never worked with this stuff but here's what I got for ya. It ain't bad, pretty much like the one ye got there. I suppose ye should take the one the ancient made and show it ta yer friend.
+
+Head to the Burning Woods again and give Telin Darkforest the Refined Ancient Sword. He returns the sword.
+
+: Telin Darkforest smiles slowly. 'Now that's fine work. Just a moment, we have a friend here who can enchant one of the blades. Give her the blade the ancient smithed.'
+
+Faelin appears.
+
+You say, 'Hail, Faelin'
+
+: Faelin says, 'Didn't think I was gone for good, did you? We're that much closer to finishing this trial of our strength, thanks to you.'
+
+Give her the Refined Ancient Sword. She enchants it and returns it to you.
+
+: Faelin smiles at you, then closes her eyes as she sets the gem 'Nature's Balance' into the crossguard and begins to channel her spirit into the sword. The ground rumbles loudly as she casts. She collapses in exhaustion after a short time. 'Take the blade, and perhaps you can finish this. You must strike at Innoruuk's heart. Bring his shattered gem and the Mithril blade to Xanuusus. Only with Innoruuk's death can the balance of the land once again be restored. If we do not meet again, remember you always have my eternal thanks.'
+
+This lands you the first half of the Ranger epic: {{:Swiftwind}}
+
+Now for the Earthcaller.
+
+Head to the Plane of Hate in search of the "Shattered Emerald of Corruption." This item drops randomly off "mini bosses" (Grandmaster R'Tal, Coercer T'Vala, Mistress of Scorn, and Master of Spite confirmed - all "minis" have a 72 hour respawn) and frequently off Innoruuk himself.
+
+Once you've obtained the emerald, find Xanuusus in North Karana.
+
+You say, 'Hail, Xanuusus'
+
+: Xanuusus says 'Greetings, small one! I am Xanuusus of the Stormreapers. You are welcome to rest beneath my mighty branches.
+
+Give Xanuusus the Refined Mithril Blade and the Shattered Emerald of Corruption.
+
+: Xanuusus waves his hands over the gem of corruption and a wave of warm energy passes through the area. With care for such a huge creature, he melds the gem into the sword and seems to glow all over as he channels energy into the weapon. 'Thus is the link of hate broken between Innoruuk and the spirit of earth. Through your will has balance returned. Your deeds, your work for the good of all, will be remembered by anyone who walks beneath the canopy of a forest or roams the plains. Continue your vigil over nature's balance.'
+
+You now have the second half of your epic: {{:Earthcaller}}
+
+[[Category:Quests]]
+[[Category:Burning Woods]]
+[[Category:Ranger Quests]]

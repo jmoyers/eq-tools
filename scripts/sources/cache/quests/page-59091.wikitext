@@ -1,0 +1,105 @@
+{{Classic Era}}
+[[File:npc_thalith_mamluk.png|thumb|Thalith Mamluk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Thalith Mamluk]]
+|-
+! ''' Minimum Level: '''
+| 1+ (Rec. 8)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]]
+|-
+! ''' Related NPCs: '''
+| [[wharf rat]], [[Fang Tooth]]
+|}
+
+== Rewards ==
+<ul><li> {{:Fishbone Necklace}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.010%) @level 10
+
+== Checklist == 
+{{CheckboxList}}
+* Kill 2 Wharf Rats
+* Kill Fang Tooth
+** Deliver Fang Tooth's tooth
+
+{{End}}
+== Walkthrough ==
+You say, 'Hail, Thalith Mamluk'
+
+: Thalith Mamluk says, 'Wha?  Rarrrr!  Thalith try to fish but with [rrrats] and you botherring him, he cannot concentrate on water!  Go away, let Thalith fish!'
+
+You say, 'rrrats'
+
+:Thalith Mamluk says, 'Rats.  Yes.  Small, furrrry, brown, with teeth.  They come, bite my paws, steal my bait, chew on lines and rods.  They nasty little beasts and easy to kill but me not able to leave this position or fish get away.  Errrr.  Maybe you keep rats away? You kill baddest rat, Fang Tooth.  You bring me his tooth.  I be very happy.'
+
+''' You have been assigned the task 'Fang Tooth'. ''' <br>
+Thalith Mamluk, a Kerran fisherman, is being terrorized by wharf rats. By clearing out a few wharf rats and then slaying the largest rat, Fang Tooth, you can put his mind at ease so he can fish in peace. Bring Thalith Fang Tooth's tooth as proof of your victory.
+
+=== Quest Stage 1: ===
+* Step - Kill 2 wharf rats in Kerra Isle
+* Text - Kill 2 wharf rats in Kerra Isle
+
+Wharf Rats roam just at the base of the dock. They are level 11.
+
+ You have slain wharf rat!
+ You have slain wharf rat!
+
+''' Your task 'Fang Tooth' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Kill Fang Tooth
+* Text - Slay Fang Tooth in Kerra Isle and collect his tooth.
+
+Fang Tooth tends to spawn inside the bar, the large building on the beach. It is a level 15 monk
+
+ You have slain Fang Tooth!
+
+''' Your task 'Fang Tooth' has been updated. '''
+
+=== Quest Stage 3: ===
+* Step - Collect 1 Sharp Tooth(s)
+* Text - Give the tooth to Thalith Mamluk on Kerra Isle.
+
+Tooth Drops off Fang Tooth, just loot it.
+
+ --You have looted a Sharp Tooth from Fang Tooth's corpse.--
+
+''' Your task 'Fang Tooth' has been updated. '''
+
+=== Quest Stage 4: ===
+* Step - Give Thalith the tooth
+* Text - None
+
+ You offered 1 Sharp Tooth to Thalith Mamluk.
+
+''' Your task 'Fang Tooth' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">
+You delivered Fang Tooth's tooth to Thalith. He can finally fish in peace. 
+</span>
+
+: Thalith Mamluk says, 'You... You kill the rats?  Errr.  Thalith thanks you.  Here.  Take this.  It's a good luck charm I've had for years.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Fishbone Necklace <br>
+
+ You complete the trade with Thalith Mamluk.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

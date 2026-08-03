@@ -1,0 +1,138 @@
+{{Classic Era}}[[File:npc_tergon_brenclog.png|frame|Tergon Brenclog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Tergon Brenclog]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Dooly Jonkers]], [[The Prophet]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Magician Spells?
+</li></ul>
+
+== Walkthrough ==
+
+Tergon Brenclog, located in the library, wants his spellbook back.  
+
+He gives you a sealed note to deliver to his brother Retlon in Freeport who was working with Master Dooly Jonkers. 
+
+Dooly tells you he's been kidnapped by the Orcs.  When you find him, you give him the letter and get your faction changes, but he tells you the spellbook has been taken by the Prophet in Crushbone.   
+
+The spellbook can be found in Crushbone on one of the high level orcs, or sometimes on D'Vinn.  
+
+Obtain:
+*[[Tergon's Spellbook]]
+
+Returning the spellbook gives the following faction adjustments:
+
+<div class='facblock'>
+* Your faction standing with [[Eldritch Collective]] has gotten better.
+* Your faction standing with [[Dark Reflection]] has gotten worse.
+* Your faction standing with [[The Dead]] has gotten worse.
+* Your faction standing with [[Gem Choppers]] has gotten better.
+* Your faction standing with [[King AkAnon]] has gotten better.
+</div>
+
+You also get experience and an item, usually a scroll.
+
+
+Newer write-up from Sythik:
+
+After completing the Bugglegupp quest:
+
+Tergon Brenclog says 'So, you have survived. There is no doubt in my mind that you achieved this solely with your own powers. Only a dim one requires the assistance of others. Take this. May it help you in your pursuit of greatness. [Further tasks] may bring you to that point.'
+
+You say, 'What further tasks?'
+
+Tergon Brenclog says 'Not all experience is gained upon the battlefield. We magicians must heighten our minds to become formidable opponents. I see much promise in you, ___. I will require you to [travel abroad] toward Freeport.'
+
+You say, 'I will travel abroad toward Freeport.'
+
+Tergon Brenclog says 'You will go to Freeport and seek out the Academy of Arcane Science. There you shall find my brother Retlon. He has scribed some new spells in my [personal spellbook]. Hand him this note as proof of your alliance. He works closely with Master Dooly Jonkers.'
+
+Receive Sealed Letter from Tergon Brenclog.
+Item Lore: Note to Retlon Brenclog.
+
+Dooly Jonkers is at location -44.40, -1057.72 in West Freeport.
+
+You say, 'Hail, Dooly Jonkers'
+
+Dooly Jonkers says 'Greetings, ____! Welcome to the Academy of Arcane Science. Nowhere on Norrath can you find a greater learning center.'
+
+You say, 'Where is Retlon?'
+
+Dooly Jonkers says 'Retlon Brenclog? I take it you have not heard the unfortunate news. Retlon left for Ak'Anon one week ago. I hear he has been captured by the Crushbone orcs and forced to toil in their pits.'
+
+Retlon Brenclog is at location 274.63, -137.54 in Crushbone.
+
+You say, 'Hail, Retlon Brenclog'
+
+Retlon Brenclog says 'Oh my word! A rescuer! Hurry! [Get me out] of these chains! Go find the [orc who has the keys]!'
+
+You say, 'get me out'
+
+Retlon Brenclog says 'I am from Ak'Anon! I must return a [spellbook] to the Eldritch Collective.'
+
+You say, 'what spellbook?'
+
+Retlon Brenclog says 'What?! I am stuck here and you are worried about a spellbook?! Forget that! Just get the keys to my shackles from one of the orcs! HURRY!'
+
+Hand Retlon Brenclog the Sealed Letter.
+
+Retlon Brenclog says 'Ah! A letter from my brother! Mmm... no... no I don't have Tergon's spellbook. The orc's prophet took it and then they locked me in chains! Now why don't you go do something useful and get me key number 15!!'
+
+<div class='facblock'>
+Your faction standing with Eldritch Collective got better.
+Your faction standing with Dark Reflection got worse.
+Your faction standing with The Dead got worse.
+Your faction standing with Gem Choppers got better.
+Your faction standing with King AkAnon got better.
+</div>
+
+You have slain The Prophet!
+The Prophet's corpse says 'You shall have all the Crushbone orc legions on your tail for my death!'
+<div class='facblock'>
+Your faction standing with Crushbone Orcs could not possibly get any worse.
+Your faction standing with Storm Guard could not possibly get any better.
+Your faction standing with Faydarks Champions could not possibly get any better.
+Your faction standing with Indigo Brotherhood could not possibly get any worse.
+Your faction standing with Emerald Warriors could not possibly get any better.
+</div>
+--You have looted a Tergon's Spellbook.--
+Item Lore: Tergon's Spellbook.
+
+Hand Tergon Brenclog Tergon's Spellbook.
+
+Tergon Brenclog says 'You have done well. I did not expect you for weeks. It is good to have my spellbook returned. It was a simple task. Now I have news of a larger matter. It has to do with a [defector].'
+<div class='facblock'>
+Your faction standing with Eldritch Collective got better.
+Your faction standing with Dark Reflection got worse.
+Your faction standing with The Dead got worse.
+Your faction standing with Gem Choppers got better.
+Your faction standing with King AkAnon got better.
+</div>
+
+Related Creatures:
+[[Retlon Brenclog]]
+
+Quest Items:
+[[Sealed Letter]] [Note To Retlon Brenclog]
+
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Magician Quests]]

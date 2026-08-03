@@ -1,0 +1,59 @@
+{{Kunark Era}}
+{{unsolved}}
+{{expand}}
+[[File:npc_war_historian_kobl.png|frame|War Historian Kobl]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[War Historian Kobl]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Related NPCs: '''
+| ?
+|}
+
+''Unknown if this will be in game, it was still broken on live as of 2022 and the quest is still listed on ZAM as 'unsolved'.''
+
+== Reward ==
+
+<ul><li>  Unknown
+</li></ul>
+
+== Walkthrough ==
+
+[[War Historian Kobl]] in the Warrior guild.
+
+'Hail, War Historian Kobl'
+
+He gives this info when hailed:
+: "You have come to learn? Have you not? I have knowledge of importance to young warriors of the Legion. Or perhaps you are a scribe seeking my [unique writing materials]."
+
+When asked about unique writing materials he says:
+: "You must be a scribe of sorts? Always glad to assist a talented yourth. I make two things unique to Cabilis and important to any future master scribe. I can create [Blood Ink] and [Illweed Parchment]."
+
+On blood ink:
+: "If Blood Ink  is what you seek then only I can provide it. I use a unique blend prepared in my secret method. I can supply you with a vial of Blood Ink, but first you must fetch me four ingredients. I need globules of blood from certain creatures. I need globules from the carnivorous plants, the leeches, and the mosquitoes. I also need globules from the blood pit of the Tower of Death. Bring me these and be quick, or the blood shall disintegrate."
+
+<div class='facblock'>
+* Your faction with [[Legion of Cabilis]] gets better.
+* Your faction with [[Cabilis Residents]] gets better.
+* Your faction with [[Scaled Mystics]] gets better.
+* Your faction with [[Crusaders of Greenmist]] gets better.
+* Your faction with [[Swift Tails]] gets better.
+</div>
+
+''Need all dialogues (these are badly copied transcriptions), current faction hits, quest mobs and their /locs, quest items, rewards if any.''
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:East Cabilis]]

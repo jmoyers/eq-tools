@@ -1,0 +1,80 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:BeguilePlansZonemap.png|frame]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| Shrub Marwood
+|-
+! ''' Minimum Level: '''
+| 35+
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! '''Related Zones:'''
+| [[Lake of Ill Omen]], [[Frontier Mountains]], [[Swamp of No Hope]], [[Kaesora]]
+|-
+! '''Related NPCs:'''
+| sarnak revealer, partisan, froglok tsu shaman, strathebone spider
+|}
+
+== Reward ==
+
+<ul><li> [[Beguile Plants|Spell: Beguile Plants (Scroll)]]
+</li></ul>
+
+== Walkthrough ==
+
+[[File:SarnakPartisan.png|frame|right|a sarnak partisan]]
+
+This quest can be done at a bare minimum with one partner at level 29, or solo at level 34 ... if you are skilled/lucky enough.  However, the mobs are level 32+, and many are casters (which can be difficult to solo), so having more people or being higher level is recommended.  Keep in mind though that the spell is only useful for a limited range of levels, so don't wait too long to get it or it won't be of any use to you.
+
+This spell was added with EQ's first expansion Ruins of Kunark, and therefore the entire quest is done in Kunark.  The zones involved zones are circled in red on the map above.
+
+=== Step 1 ===
+
+Go to [[Lake of Ill Omen]] and head to the Sarnak Fort at -2000, +2000. Any sarnak can spawn [[A Sarnak revealer]], thats who you need to kill for [[Farsight Crystal]].
+
+NOTE - Sarnak Fort is a heavily camped location. It is very likely one of these Crystals is rotting on a corpse near one of the groups. Do a camp check, and if anyone is at the Sarnak fort ask them if you could sit nearby and loot a Crystal if one drops. It has no other use than this quest, so chances are they will have no problem with you grabbing it.
+
+[[File:FrontiermtnsSarnaks.png|left|250px]]
+=== Step 2 ===
+
+Go to either of the marked spots on the map in [[Frontier Mountains]]. Kill Sarnaks until [[A sarnak partisan]] Spawns. Kill the Partisans for [[Pouch of Dust]]. It does not drop every time, so keep killing them until you get it. Be aware that Sarnak Partisans cast blind. One has enough mana to cast it 5-6 times.
+
+EDIT: The position marked as 1 (on map) '''DOES NOT''' spawn the "a sarnak partisan" at all.  The other spot with no number is the correct one.
+
+EDIT 2: another location to get the [[Pouch of Dust]] is a static spawn just north of the Overthere Outpost. Other sarknak types can also spawn there, but I confirm I got a Pouch of Dust from that mob.
+
+=== Step 3 === 
+
+Go to [[Firiona Vie]] and kill [[Froglok Tsu Shaman]]s for [[Tsu Shaman Powder]] drop.
+
+=== Step 4 === 
+
+Go to [[Kaesora]], [[Droga]] or [[Nurga]] and kill [[strathbone spider]]s for [[Strathbone Silk]].
+
+Tip: Take the first left from the entrance of Kaesora and go into the hole there. There is a door on the other side of the hall. Hop over the pit and wait for roamers to come by. Be aware that the spiders are casters.
+
+=== Step 5 ===
+
+Find [[Shrub Marwood]] in the eastern hideout of the Firiona Vie outpost.
+
+Turn these four items in to Shrub Marwood and receive "Fertile Crop." Scribe this spell into your spellbook and its name will change to Beguile Plants. NOTE: the scroll is no drop so can't be traded or sold.
+
+<div class='facblock'>
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates of Gunthak]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category: Quests]]
+
+[[Category:Firiona Vie]]
+[[Category:Druid Quests]]

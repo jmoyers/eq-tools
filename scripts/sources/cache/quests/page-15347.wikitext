@@ -1,0 +1,54 @@
+[[File:npc_carver_cagrek.png|frame|Carver Cagrek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Carver Cagrek]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| frogloks (any)
+|}
+
+== Reward ==
+
+<ul><li> {{:Grobb Oven Mittens}}
+</li></ul>
+
+== Walkthrough ==
+
+Carver Cagrek is located in the back of Grobb, near the bank and the Shaman Guild.  He's holding an axe, and standing near a dismembered dwarf on a hook.  Can't miss him, really.
+
+You say, 'Hail, Carver Cagrek'
+
+:  Carver Cagrek says, 'Away from carver Cagrek you get!!  Me's a busy troll.  Must punish enmees of Grobb and feeds trolls a plenty.  Trolls complain meats no good. Dey says dey hears ogres have special meat which taste better den pris'ners of Grobb.  Do you knows name of meat?  What kinda [meat] day be?  Tell me!!'
+
+You say, 'What oven mittens?' 
+
+:  Carver Cagrek says, 'Oven Mittens?!! Whut you need for?  You no cook!!  If you be tinkin you a cook me will gives you Oven Mittens, but first you brings me tree, not Wun or Too, but Tree Groglok Meats and also gives me Ten gold.  You do dis den you get Grobb Oven Mittens.'
+
+Hand three (unstacked) [[Froglok Meat]] and 10 gold to Carver Cagrek.
+
+:  Carver Cagrek says, 'Bouts time you gets everting!!  Here is you Grobb Oven Mittens.  Dey good to keep you from hot stuff.'
+
+<div class="facblock">
+* Your faction standing with [[Da Bashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+</div>
+
+{{YouGainExperience}}
+:You get [[Grobb Oven Mittens]].
+
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:All Classes Quests]]

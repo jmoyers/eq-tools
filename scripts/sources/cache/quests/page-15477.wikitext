@@ -1,0 +1,56 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_a_drunkard.png|frame|a drunkard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[a drunkard]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+None
+
+== Walkthrough ==
+
+''[[a drunkard]] can be found wandering between three [[Greater Faydark|Kelethin]] platforms, starting at location 577, 388, 161, with a brief pause at location 429, 392, 161.''
+
+: a drunkard says, 'Please... Can anyone spare some coppers? <Hic>... Anyone?'
+
+You say, 'Hail, a drunkard'
+
+: a drunkard says 'Can you spare some copper or silver? I just.. <Hic>.. need some change to buy something to drin.. er.. eat. <Hic>..'
+
+'''Hand [[a drunkard]] an [[Elven Wine]], purchased from most any barkeep in [[Greater Faydark|Kelethin]].'''
+
+: a drunkard says, 'Oh.. .. Thank you!! Oh, what has become of me?! Look at me!! I was great once. I wish I never had that shocking experience.'
+
+You say, 'What shocking experience?'
+
+''The quest then progresses from this same point in [[Bandit Sisters]].''
+
+== Related Quests ==
+
+* [[Bandit Sisters]]
+
+== Notes ==
+
+Alternate path to discover the [[Bandit Sisters]] quest. There is no reward for handing in the [[Elven Wine]].
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:All Classes Quests]]

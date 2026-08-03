@@ -1,0 +1,102 @@
+{{Classic Era}}
+[[File:npc_marda.png|frame|Marda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Marda]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[Slayer Captain]], [[a troll slayer]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Forager Bag}}
+</li><li> {{:Hopper Spear}}
+</li><li> {{:Rusty Halberd}}
+</li><li> {{:Short Sword}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with [[Marda]] in the Shaman guild hall of Oggok, #1 on the map.
+
+You say, 'Hail, Marda'
+
+: [[Marda]] says 'Welcome to intelligence, young Tumytuk! Did you think all ogres were inept? Ha!! I hope you show the glimmer, we shamans need more within our ranks. Our race needs to evolve!! So, are you one of the smart ogres or have I spoken too many syllables?'
+
+You say, 'I am one of the smart ogres'
+
+: Marda says 'Well, I suppose your intelligence shall grow. You will have to do. I have a mission for you. First, go and speak with Grevak of the Greenblood Knights. He will have a job for you. After you have performed some manner of service and advanced at least 5 ranks, return to me and ask me about my secret mission.'
+
+''Even though the text leads to Grevak, you do not need to do his quests, you simply need to be level 5 or higher and ask Marda about the secret mission:''
+
+You say, 'What secret mission?'
+
+: Marda says 'I have heard of your advancements. You are a fine addition to Oggok. I require your skill in handling a delicate matter. I want you to run out to the Bouncer's keep near the entrance to Oggok. There, you shall find a froglok named Glib. He will pose no threat to you. He has come on business and I have promised him protection. Tell him the Greenblood shaman sent you. He shall fill you in. Go at once.'
+
+''If she does not respond to this key phrase, Emissary Glib will not spawn!  In this case, attempt the following respawn command.''
+
+You say, 'Where is Emissary Glib?'
+
+: Marda says, 'He has just entered Oggok, from what I hear. He should be where you last met him.'
+
+''After she has spoken these words, [[Emissary Glib]] spawns at the top of the guard tower (#10 on the map). Emissary Glib will take in the view from the tower for perhaps two minutes then walk downstairs, saunter to the Feerrott zoneline and despawn. A single /hail him will stop him for approximately a minute and it is possible to /hail-lock him near the zoneline where no guards path. Once a valid player triggers him with Marda, anyone else can /hail him and hand in necklaces as he appears Indifferent to all races and classes.''
+
+''NOTE: As a wood-elf druid in dark-elf illusion (Guise), I was dubious to Marda (and not kos to any of the other ogres in the vicinity). When I hailed Marda, she did not respond, but when I spoke the words 'Where is Emissary Glib?' she did respond and Glib did spawn.''
+
+You say, 'Hail, Emissary Glib'
+
+: Emissary Glib `Gloop.. Are you the one? Who sent you?'
+
+You say, 'The Greenblood Shaman sent me'
+
+: Emissary Glib 'Gloop.. Good. I am the secret emissary of the frogloks of Guk. I have come to help your community, provided, that is, that you help mine. Gloop.. I want you to track down and kill the troll hunters called 'slayers.' They are capturing our foragers in the swamps. Return their slayer necklaces to me and I shall pay you, but most important, find the slayer captain. Bring me his captain's necklace and I shall give you a secret. I must leave soon. If you need me, just ask Marda where I am.'
+
+''The slayer necklaces are tradeable, not lore and drop off either [[a troll slayer]] (rewarded with minor coin only) or [[Slayer Captain]] (coin and one of the above listed rewards) in [[Innothule Swamp]]. Both versions are called [[Frog Eye Necklace]] (but Identify differently.) See [[Slayer Captain]] for spawn and placeholder info.''
+
+
+===Slayer Necklace===
+
+'''Upon handing in a [[Frog Eye Necklace]] (lore: Troll Slayer Necklace) to Glib:'''
+
+: Emissary Glib says '.. Good work. That is one less troll slayer. My people shall learn of your good deed. Please search for the slayer captain. He must be stopped.'
+
+<div class="facblock">
+* Your faction standing with [[Oggok Citizens]] got better. +1
+</div>
+{{exp}}
+
+You receive 7 silver from Emissary Glib.
+
+===Captain Necklace===
+
+'''Upon handing in a [[Frog Eye Necklace]] (lore: Troll Slayer Capt. Necklace) to Glib:'''
+
+: Emissary Glib says 'Oooh!! .. You have dispatched the slayer captain. It will take them time to reorganize the slayers. During this time the froglok foragers can gather more provisions for Guk. Please take this as a token of my people's appreciation. Your standing with my brethren has grown. As for Marda's information.. within Grobb lies my aide, Groak. He was captured. Tell him Glib sent you.'
+
+<div class="facblock">
+* Your faction standing with [[Oggok Citizens]] got better. +2
+</div>
+{{exp}}
+
+You receive 1 silver from Emissary Glib. 
+
+You receive a random item, which could include the {{:Forager Bag}} or {{:Hopper Spear}}.
+
+Handing in the Captain's necklace leads you into the [[Marda's Secret Mission]] quest.
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

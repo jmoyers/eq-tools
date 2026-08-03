@@ -1,0 +1,40 @@
+{{delete|not present in game}}
+{{Classic Era}}
+{{Disambig3|[[Beta Neutral (Faction)]]}}
+{{expand}}
+[[File:npc_mizr_n`mar.png|frame|Mizr N`Mar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Mizr N`Mar]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  [[Beta_Neutral_(Faction) | Beta Neutral Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+This is a simple, if costly, way to raise beta neutral faction.  Simply purchase the {{:Rune of Fortune}} from [[Mizr N`Mar]] for 50 gp, and you will get a faction boost.
+
+This is a step of the [[Incandescent Mask quest]].
+
+A cheaper way to raise Beta Neutral faction is to give [[Tarn Visilin]] a {{:Bloodstone}}, which can be purchased just a few steps away from [[Merchant Edina]] for 5-7 gold.
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]

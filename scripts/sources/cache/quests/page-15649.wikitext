@@ -1,0 +1,62 @@
+{{Velious Era}}
+
+[[File:npc_svekk_fangbinder.png|frame|Svekk Fangbinder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Svekk Fangbinder]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Crystal Caverns]], [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Bekerak Coldbones]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Kromrif Battle Totem}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Svekk Fangbinder'
+
+: [[Svekk Fangbinder]] says 'Greetings, ______.  I am Svekk, a humble servant of Wenglawks.  It is my job to keep track of the supplies here.  I also sell mundane wares.'
+
+You say, 'What supplies?'
+
+: Svekk Fangbinder says 'We have all kinds of supplies!  Normally we deliver them to the giants who live outside Kael. 
+
+You say, 'What giants?'
+
+: Svekk Fangbinder says 'There are several encampments in the eastern wastes that barter for supplies with us monthly.  The great divide also has a small outpost of Kromrif who strive to beat the Coldain back into their city of Thurgadin and of course the outposts in the wakening lands.  Our last batch of deliveries did not reach their intended targets.  The runners have not been heard from since they were dispatched either.'
+
+You say, 'What great divide?'
+
+: Svekk Fangbinder says 'If you wish to deliver supplies to the warriors in the great divide that is wonderful. One small problem arises.  I do not know you Ogre.  I would not trust you as far as I could throw a dragon.  If you pay for the supplies and deliver them the men at the fortress will surely repay you.  A pack of basic supplies only costs a meager five hundred gold pieces.  If you choose to purchase the supplies and deliver them take them to a man named Bekerak Coldbones at the outpost.'
+
+{{expand}}
+''Need all dialogues, faction hits.''
+ 
+* 50pp will buy a "Giant Sack of Supplies"
+ 
+Bekerak (at the Giant Fort loc: -3011, -2766ish) gives you a note for Svekk, who gives you a Voucher tells you upon return that he needs a [[Klezendian Crystal]] (uncommon drop from random orcs or geonids in the Crystal Caverns). When you return the voucher and crystal, Svekk gives you a Large Supply Sack for Bekerak. 
+
+Upon delivery to Bekerak you receive the Kromrif Battle Totem.
+
+== See Also ==
+
+* [[The Supply Run - Eastern Wastes]]
+* [[The Supply Run - Wakening Land]]
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

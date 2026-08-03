@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:Npc_priestess_ghalea.png|frame|Priestess Ghalea]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Ghalea]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a faerie]], [[a faerie courtier]], [[a faerie duchess]], [[a faerie guard]], [[a faerie maiden]], [[a faerie noble]], [[a faerie royal guard]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Soil of Underfoot}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Priestess Ghalea]] is located at 788, 134, 3 in the Cleric's guild.''
+
+You say, 'Hail, Priestess Ghalea'
+
+: Priestess Ghalea says, 'Welcome to the Church of Underfoot. Please open your soul to the greatness of Brell Serilis. May he guide you in all your future endeavors. And may your soles long for the [Soil of Underfoot].'
+
+You say, 'What Soil of Underfoot'
+
+: Priestess Ghalea says, 'I can trust you with the soil of Underfoot, but first you must obtain four portions of fairy dust. Return them to me and I shall mix it and pray over it. Then I shall give you a pouch of soil of Underfoot.'
+
+'''Hand [[Priestess Ghalea]] 4 [[Fairy Dust]]s, unstacked'''
+
+: Priestess Ghalea says, 'I will need four portions of fairy dust to create the soil of Underfoot.'
+
+: Priestess Ghalea says, 'I will need four portions of fairy dust to create the soil of Underfoot.'
+
+: Priestess Ghalea says, 'I will need four portions of fairy dust to create the soil of Underfoot.'
+
+: Priestess Ghalea says, 'May the mighty power of Brell saturate this soil with his divinity. Here you are, my noble friend. You may have a pouch of the soil of Underfoot.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 4 gold pieces.
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:All Classes Quests]]

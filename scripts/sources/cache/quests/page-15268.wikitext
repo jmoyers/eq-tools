@@ -1,0 +1,71 @@
+[[File:npc_geoard_bluehawk.png|frame|Geoard Bluehawk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Geoard Bluehawk]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Phloatin Highbrow]], [[Sinnkin Highbrow]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Erud's Tonic}}
+</li></ul>
+
+== Walkthrough ==
+
+''Geoard BlueHawk is located at -1170, -315 in BlueHawk's in Erudin.''
+
+You say, 'Hail, Geoard BlueHawk'
+
+: Geoard BlueHawk says 'Greetings, adventurer! After all those months of sweaty, hot and dirty battling of beasts untold, it is time to treat yourself to a tall, cool grog!'
+
+You say, 'What about a Erud's Tonic?'
+
+: Geoard BlueHawk says 'Long ago, the great Erud found that excessive indulgence in spirits led to diminished mental awareness. His love of Kaladim brandy led him to concoct Erud's Tonic. The tonic blocked the effects of all spirits. Unfortunately, it is made from our precious Vasty Deep water and therefore is not permitted to be exported or given to non-Erudites or adventuring Erudites.'
+
+You say, 'Can I have some Erud's Tonic?'
+
+: Geoard BlueHawk says 'The sale or provision of Erud's Tonic to travelers is prohibited!'
+: Phloatin Highbrow says 'Ha! The closest you will get to tonic is in the library. That's assuming you know how to spell tonic. Bwaha ha! When you see the bookworm give her a KISS for me! HAHA!!'
+: Helia BlueHawk says 'Pipe down, Phloatin! Treat the new clientele with respect.'
+
+You say, 'What about Vasty Deep Water?'
+
+: Geoard BlueHawk says 'The Vasty Deep is a lake located on Odus. It contains the purest water in Norrath. Some say it is magical in nature. The High Council does not allow it to be taken by outsiders and those who try are usually converted to chum for the sharks.'
+
+'''The "KISS" Phloatin mentioned is an [[Innoruuk's Kiss of Death]].  Purchase one from Geoard, then find Sinnkin Highbrow at -1045, -255 in the Erudin City Library.'''
+
+You say, 'Hail, Sinnkin Highbrow'
+
+: Sinnkin Highbrow says 'Why, hello there fellow scholar! Don't you just love books? I am quite a bookworm myself. I could read forever! I am currently working my way through the 'T's.'
+
+You say, 'What about Erud's Tonic?'
+
+: Sinnkin Highbrow says 'Erud's Tonic! That is none of your concern!'
+
+'''Give her Innoruuk's Kiss of Death.'''
+
+: Sinnkin Highbrow says 'It's about time you figured it out, genius! Maybe you should spend more time in the library. Here, take this tonic and get out of here before they see me giving it to you and turn us both inside out.'
+
+<div class="facblock">
+* Your faction standing with [[Erudite Citizen]] got better. (+5)
+</div>
+{{exp}}
+
+[[Category:Quests]]
+
+[[Category:Erudin]]
+[[Category:All Classes Quests]]

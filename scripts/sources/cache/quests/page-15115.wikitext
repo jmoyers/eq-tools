@@ -1,0 +1,170 @@
+[[File:Glitterstim_Ench_Sky_Set.jpg|right|200px|thumb|]]
+
+'''Note:''' Most quests in the Plane of Sky require two items. One of those items will be a wind rune and can be found on any mob as a random drop in the Plane of Sky. The second item you need is from an island boss, they are rare drops. Some quests require a third ''Efreeti'' weapon which is also attained from island bosses in the Plane of Sky.
+
+'''To reach the quest room find the ('''[[Key Master]]''') near where you zoned in on island 1 and purchase an [[Efreeti's Key]]. It is free and looks like a [[Jade]]. After you have the key left click on the teleportation pad at the North point of the island, around {{Loc|Plane of Sky| 1600, 520}}.''' You only need to buy the key one time and it will be saved to your character.
+
+'''Find Enchanter Jolas and Hail him. He will tell you about the quests he has to offer. Reading his dialogue is optional and you can simply hand him your quest items.'''
+ 
+== Checklist ==
+Bold item names indicate No Trade items. {{CheckboxList}}<ul>
+
+Test of Illusion
+<li>Reward: {{:Sphinx Hair Cord}}
+  <ul>
+  <li>'''{{:Wind Rune Meda}}''' (random drop from any mob in Plane of Sky)
+  <li> '''Island 3''' - <span style="font-weight: bold">{{:Finely Woven Cloth Cord}}</span> ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Metamorphism
+<li>Reward: {{:Wind Walker's Mantle}}
+  <ul>
+  <li>'''{{:Wind Rune Ozah}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 4''' - <span style="font-weight: bold">{{:Light Cloth Mantle}}</span> ('''[[Keeper of Souls]]''')
+   </ul>
+</ul>
+<ul>
+Test of Deception
+<li>Reward: {{:Ivory Mask}}
+<ul>
+ <li>'''{{:Wind Rune Beza}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 5''' - <span style ="font-weight: bold">{{:Silken Mask}} ([[The Spiroc Lord]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Disillusion
+<li>Reward: {{:Earring of Displacement}}
+  <ul>  
+  <li>'''{{:Wind Rune Caza}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 6''' - <span style ="font-weight: bold">{{:Adamantium Earring}}</span> '''([[Bazzt Zzzt]])'''
+  </ul>
+</ul>
+<ul>
+Test of Memorization
+<li>Reward: {{:Necklace of Whispering Winds}}
+  <ul>
+  <li>'''{{:Wind Rune Fana}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 7''' - <span style ="font-weight: bold">{{:Glowing Necklace}}</span> ([[Sister of the Spire]])
+  </ul>
+</ul>
+ <ul>
+Test of Incapacitation
+<li>Reward: {{:Rod of the Protecting Winds}}
+   <li>'''{{:Wind Rune Izah}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 8''' - <span style ="font-weight: bold">{{:Large Sky Sapphire (Enchanter)}} ([[Eye of Veeshan]])</span>
+  <li>'''Islands 1.5, 4 and 8''' -{{:Efreeti Wind Staff}} '''([[Noble Dojorn]], [[Overseer of Air]], [[The Hand of Veeshan]])'''
+  </ul>
+</ul>
+
+==Quest Start==
+Talk to Enchanter Jolas in the [[Plane of Sky]].
+
+You say, 'hail Enchanter Jolas'
+:''Enchanter Jolas says 'Greetings, Gand.  Have you come here to test your [powers of enchantment?] ''
+You say, 'Greetings Enchanter Jolas, I have come here to test my powers of enchantment'
+:''Enchanter Jolas says 'I am most honored to be able to help you.  Of the many aspects of enchantment, I can offer you the following tests.  [Illusion], [dislocation], [metamorphism], [deception], [memorization], and finally [incapacitation].'
+{{CheckboxList}}
+== Enchanter Test of Illusion ==
+
+Enchanter Jolas says, 'Illusion it is.  Proceed upward through the sky and return to me a finely woven cloth cord and a wind rune meda.  This will prove your abilities to me and I will reward you with a cord of sphinx hair.
+
+'''Reward:''' {{:Sphinx Hair Cord}}
+ <ul>
+  <li>'''{{:Wind Rune Meda}}''' (random drop from any mob in Plane of Sky)
+  <li> '''Island 3''' - <span style="font-weight: bold">{{:Finely Woven Cloth Cord}}</span> ('''[[Gorgalosk]]''')
+ </ul>
+== Enchanter Test of Metamorphism ==
+
+Enchanter Jolas says, 'Metamorphism it is.  Proceed upward through the sky and return to me a light cloth mantle and a wind rune ozah.  This will prove your abilities to me and I will reward you with the Wind Walker's Mantle. 
+
+'''Reward:''' {{:Wind Walker's Mantle}}
+<ul>
+  <li>'''{{:Wind Rune Ozah}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 4''' - <span style="font-weight: bold">{{:Light Cloth Mantle}}</span> ('''[[Keeper of Souls]]''')
+</ul>
+== Enchanter Test of Deception ==
+
+Enchanter Jolas says, 'Deception it is.  Proceed upward through the sky and return to me a silken mask and a wind rune beza.  This will prove your abilities to me and I will reward you with an ivory mask. 
+
+'''Reward:''' {{:Ivory Mask}}
+<ul>
+ <li>'''{{:Wind Rune Beza}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 5''' - <span style ="font-weight: bold">{{:Silken Mask}} ([[The Spiroc Lord]])</span>
+</ul>
+== Enchanter Test of Disillusion ==
+
+Enchanter Jolas says, 'Disillusion it is.  Proceed upward through the sky and return to me an adamantium earring and a wind rune caza.  This will prove your abilities to me and I will reward you with an Earring of Displacement.' 
+
+'''Reward:''' {{:Earring of Displacement}}
+<ul>
+  <li>'''{{:Wind Rune Caza}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 6''' - <span style ="font-weight: bold">{{:Adamantium Earring}}</span> '''([[Bazzt Zzzt]])'''
+</ul>
+== Enchanter Test of Memorization ==
+
+Enchanter Jolas says, 'Memorization it is.  Proceed upward through the sky and return to me a glowing necklace and a wind rune fana.  This will prove your abilities to me and I will reward you with a Necklace of Whispering Winds.'
+
+'''Reward:''' {{:Necklace of Whispering Winds}}
+<ul>
+  <li>'''{{:Wind Rune Fana}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 7''' - <span style ="font-weight: bold">{{:Glowing Necklace}}</span> ([[Sister of the Spire]])
+</ul>
+== Enchanter Test of Incapacitation ==
+
+Enchanter Jolas says, 'Incapacitation it is.  Proceed upward through the sky and return to me a large sky sapphire, efreeti wind staff and a wind rune izah.  This will prove your abilities to me and I will reward you with the Rod of the Protecting Winds.' 
+
+'''Reward:''' {{:Rod of the Protecting Winds}}
+<ul>
+  <li>'''{{:Wind Rune Izah}}''' (random drop from any mob in Plane of Sky)
+  <li>'''Island 8''' - <span style ="font-weight: bold">{{:Large Sky Sapphire (Enchanter)}} ([[Eye of Veeshan]])</span>
+  <li>'''Islands 1.5, 4 and 8''' -{{:Efreeti Wind Staff}} '''([[Noble Dojorn]], [[Overseer of Air]], [[The Hand of Veeshan]])'''
+</ul>
+
+= Table of gear stats =
+
+{| class="eoTable2"
+! Item
+! AC
+! HP
+! Mana
+! STR
+! STA
+! AGI
+! DEX
+! WIS
+! INT
+! CHA
+! SV Poison
+! SV Magic
+! SV Disease
+! SV Fire
+! SV Cold
+
+|-
+| {{:Sphinx Hair Cord}}
+| 4 || - || - || - || - || - || - || - || 5 || 5 || - || - || 10 || 10 || 10
+|-
+| {{:Wind Walker's Mantle}}
+| 6 || 50 || - || 5 || - || 2 || 5 || - || - || 10 || - || - || - || - || -
+|-
+| {{:Ivory Mask}}
+| 6 || - || 30 || - || - || - || - || - || 6 || 6 || - || - || - || - || -
+|-
+| {{:Necklace of Whispering Winds}}
+| 4 || - || 35 || - || 5 || - || - || - || 5 || 10 || - || - || - || - || -
+|-
+| {{:Earring of Displacement}}
+| 6 || - || 25 || - || - || - || - || - || 4 || 4 || - || - || - || - || -
+|-
+| {{:Rod of Warding Winds}}
+| - || - || 75 || - || - || - || - || - || 15 || 5 || - || - || - || - || -
+|-
+| {{:Rod of the Protecting Winds}}
+| 10 || - || 75 || - || - || - || - || - || 15 || 15 || - || - || - || - || -
+|}
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Enchanter Quests]]

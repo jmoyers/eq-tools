@@ -1,0 +1,130 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_dalgrim_underbelly.png|frame|Dalgrim Underbelly]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Dalgrim Underbelly]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Various (Giants)
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Rewards ==
+
+{{Gear Set
+|Dark Runed Crown
+|Dark Runed Breastplate
+|Dark Runed Vambraces
+|Dark Runed Bracer
+|Dark Runed Gauntlets
+|Dark Runed Greaves
+|Dark Runed Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Dalgrim Underbelly]] in [[Thurgadin]].{{CheckboxList}}
+*[[Dark Runed Crown]]
+:*[[Corroded Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Dark Runed Breastplate]]
+:*[[Corroded Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Dark Runed Vambraces]]
+:*[[Corroded Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Dark Runed Bracer]]
+:*[[Corroded Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Dark Runed Gauntlets]]
+:*[[Corroded Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Dark Runed Greaves]]
+:*[[Corroded Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Dark Runed Boots]]
+:*[[Corroded Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Dark Runed Armor is a set of [[Shadow Knight]] specific armor obtained through quests offered in [[Thurgadin]] by [[Dalgrim Underbelly]].
+
+You say, 'Hail, Dalgrim Underbelly'
+
+: Dalgrim Underbelly says 'I wasn't always just a merchant, ye know, I used to work at the temple and spent most of my time in the study of ancient texts and arts. I actually learned a lot about the dark arts in those days. Ye know. . . necromancy. Oh, I'd never touch the stuff, mind ye, but I'll bet I could make a fine set of plate fer shadowknights if'n I had the right materials.'
+
+You say, 'What right materials?'
+
+: Dalgrim Underbelly says 'Glad to see ye're interested, ______. The materials would vary by the piece of armor o' course. I could probably forge a fine set of bracers, gauntlets, greaves, boots, armplates, a helm, or a breastplate.'
+
+'''After turn-in:'''
+
+Dalgrim Underbelly smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Dalgrim Underbelly says 'To create a piece of armor to protect your skull I will require three pieces of [[Crushed Coral]] as well as a [[Corroded Plate Helmet]].'
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Dalgrim Underbelly says 'For the breastplate I will need a [[Corroded Breastplate]] and three [[Flawless Diamond]]s. Once I have them in my possession it will not take long to craft a sturdy breastplate.'
+
+== Vambraces ==
+
+You say, 'What armplates?'
+
+: Dalgrim Underbelly says 'Protection for your arms will come at the price of a set of [[Corroded Plate Vambraces]] and three [[Flawed Emerald]]s.'
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Dalgrim Underbelly says 'For the bracers, I will require a [[Corroded Plate Bracer]] and a set of three [[Crushed Flame Emerald]]s. Return to me if you happen to find these things in your travels.'
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Dalgrim Underbelly says 'Protecting your hands is very important. I can forge protection for your hands if you bring me a pair of [[Corroded Plate Gauntlets]] and three [[Crushed Topaz]].'
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Dalgrim Underbelly says 'A set of [[Corroded Plate Greaves]] might be salvageable if you were to find three [[Flawed Sea Sapphire]]s. With the right techniques almost anything is possible.'
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Dalgrim Underbelly says 'Boots made for battle are not always the most comfortable available. However if you seek a fine set for battle bring me a set of [[Corroded Plate Boots]] and three pieces of [[Crushed Black Marble]].'
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Shadow Knight Quests]]
+[[Category:Thurgadin Armor Quests]]

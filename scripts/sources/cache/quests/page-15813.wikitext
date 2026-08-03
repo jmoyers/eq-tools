@@ -1,0 +1,71 @@
+{{Velious Era}}
+[[File:npc_gleed_dragonhunter.png|frame|Gleed Dragonhunter]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Gleed Dragonhunter]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Vluudeen]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bow of the Huntsman}}
+</li></ul>
+
+== Walkthrough ==
+At apprehensive con, he responds "You need to prove your dedication to our cause before I can discuss such matters with you." And will eat your tail. Indifferent faction achieved by sneaking behind him and turning in worked.
+
+You say, 'hail Gleed Dragonhunter'
+
+Gleed Dragonhunter sighs as he looks down at you.  'I grow tired of this city. I so long for the tundra and lands of the wild.' 
+
+You say, 'what tundra and lands of the wild?'
+
+: Gleed Dragonhunter says 'I enjoy training these animals, don't get me wrong, but the open wastes, where the great animals and dragons roam free are what I crave.  Before I came to serve King Tormax, I wandered those wastes, hunting young dragons and elder wurms.  The whistle of an arrow from my bow was like sweet music - each slash of my sword a sweet song. 
+
+You say, 'what young dragons and elder wurms?'
+
+: Gleed Dragonhunter says 'Yes, I hunted true dragons.  The younger ones, at least.  With my bow I could shoot them from such a distance they would never see what was coming. 
+
+You say, 'what bow?'
+
+Gleed Dragonhunter unslings an intricately carved bow from his back and shows it to you.  'I crafted this bow myself. It was to be a great slayer of wurms and dragons and it was, for a time.  Now it goes to waste in the city, far from the beasts I long to slay.  Far from the hunt and the excitement.' 
+
+You say, 'what waste?'
+
+: Gleed Dragonhunter says 'It is such a shame, this bow deserves to be used.  If only there were someone who would use it to hunt the beasts - someone to slay them and skin them like they should be. 
+
+You say, 'I will hunt the beasts' 
+
+: Gleed Dragonhunter says 'You will, little one? One such as yourself is a hunter? I did not know your kind had any skill in such things. In fact, I do not believe your kind could hunt a wurm, not without my wonderful bow. I will not simply hand it to a foolish Troll. Hunt down some big game before you bother talking to me again. Perhaps if you bring me the tail of the elusive Vluudeen.
+
+'''Give [[Vluudeen's Tail]] to Gleed Dragonhunter.'''
+
+: Gleed Dragonhunter says 'My, you do have a hunters spirit! If you could track down Vluudeen and slay him without the aid of my bow, you must be worthy. Take the bow, huntsman. Use it to slay others of Vluudeen's kind.'
+
+{{exp}}
+<div class="facblock">
+* Your faction standing with Kromrif got better.
+* Your faction standing with Kromzek got better.
+* Your faction standing with ClawsofVeeshan got worse.
+* Your faction standing with Coldain got worse.
+</div>
+
+
+[[Vluudeen]] is a wurm that can be found in the Great Divide who always drops the tail. Turning the tail in with indifferent faction or better yields {{:Bow of the Huntsman}}.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

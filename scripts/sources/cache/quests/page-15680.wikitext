@@ -1,0 +1,70 @@
+[[File:npc_groflah_steadirt.png|frame|Groflah Steadirt]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Groflah Steadirt]] (-211, -884)
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| 
+|-
+! ''' Factions Raised: '''
+| <ul><li>[[Coalition of Tradefolk]]
+</li><li>[[Coalition of Tradefolk Underground]] 
+</li><li>[[Knights of Truth]] 
+</li><li>[[Merchants of Qeynos]]
+</li></ul>
+|}
+
+== Reward ==
+
+<ul><li>  Faction
+</li><li> 1-3 gold pieces
+</li></ul>
+
+== Walkthrough ==
+
+Apparently Groflah Steadirt has a thirst for [[Tumpy Tonic | tumpy tonics]]. If you catch him at the Seafarers Roost in East Freeport and speak to him there he will tell you that he likes Tumpy tonics. He spawns at about 9PM if he is going to show at all, and despawns at 9AM.  I have been told that he is more likely to spawn at the bar if you give him the Zimels Blades list when he is at his store. 
+
+Tumpy Tonics are made with the [[Skill Brewing | brewing]] skill. There is also [[Tumpy Tonics | a quest for them in Kaladim]].
+
+
+''Your location is -211, -884.''
+
+You say, 'Hail, Groflah Steadirt'
+
+Groflah Steadirt says, 'Greetings, <name>! Join in the [celebration]! Have a few drinks. Alas, there are no [Tumpy Tonics].'
+
+You say, 'What celebration?'
+
+Groflah Steadirt says, 'The Freeport Militia now has a bar to themselves. Lucky it is not this one. Ah.. I tell you, I just don't feel up to much right now. I have had so much grog my great grandma could best me!'
+
+You say, 'What Tumpy Tonics?'
+
+Groflah Steadirt says, 'Tumpy Tonics are great!! I used to drink them often in a bar in Kaladim. Kind of glad they don't serve it here. I could not stop drinking them and they would always cause me to drain the dragon. I get tired of running to the docks for that reason.'
+
+''You give a Tumpy Tonic to Groflah Steadirt.''
+
+Groflah Steadirt says, '..glug,glug,glug.. Ahh!! I missed those. I was just telling myself the other.. Uh oh!! I have to use the little dwarves facilities. Excuse me.'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk]] got better!
+* Your faction standing with [[Knights of Truth]] got better!
+* Your faction standing with [[Merchants of Qeynos]] got better!
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better!
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

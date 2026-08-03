@@ -1,0 +1,64 @@
+{{Velious Era}}
+
+[[File:npc_telkorenar.png|frame|Telkorenar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Telkorenar]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Bard]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Krigara]], [[Lepethida]], [[Ymmeln]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cloak of the Fire Storm}}
+</li></ul>
+
+== Walkthrough ==
+
+Telkorenar is at /loc -1350, -182 in the western halls of the Temple of Veeshan.
+
+You say, 'Hail, Telkorenar'
+
+: Telkorenar says 'The strong seek me out, for one reason or another. It seems you have come here in peace. Perhaps you wish to prove yourself a mighty fighter? I respect only might, ______.'
+
+You say, 'How can I prove my strength?'
+
+: Telkorenar says 'For the mighty I have four tests. The test of the tooth, the test of the flame, the test of the fire storm and the test of protection. Which test do you wish to undertake?'
+
+You say, 'What test of the fire storm?'
+
+: Telkorenar says, 'Become like a fire storm and bring your wrath upon the inhabitants of the halls of testing. Return when you have the tear of poison and the serrated tear along with the a symbol kissed by flames and a ruby symbol.'
+
+'''After handing Telkorenar a [[Ruby Symbol]], a [[Flame Kissed Symbol]], a [[Poison Tear]] and a [[Serrated Tear]]:'''
+
+: Telkorenar says 'You have done well, ______. You have proven that you are strong, but do you dare enter those halls again?'
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{YouGainExperience}}
+
+
+
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Bard Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

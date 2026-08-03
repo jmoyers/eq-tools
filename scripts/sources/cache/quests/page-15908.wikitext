@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:npc_kylan_o`danos.png|200px|frame|Kylan O'Danos]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Patched Fur Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Barbarian Warrior, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'Welcome. Bring this note to [[Kylan O'Danos]], and he will train you in the ways of the Warrior. You find him at the Pit of Doom.'
+
+Upon handing him the tattered note:
+
+: [[Kylan O'Danos]] says, 'Greetin's! We are the mighty Wolves o' the North, protectors o' Halas, and we must work hard t' keep it safe fer our citizens. Here is our tunic, it identifies ye as a proud warrior o' this great city. Let's get started with yer training, then, shall we?'
+
+<div class='facblock'>
+* Your faction standings with [[Rogues of the White Rose]] got better.
+* Your faction standings with [[Shadowed Men]] got better.
+* Your faction standings with [[Merchants of Halas]] got better.
+* Your faction standings with [[Steel Warriors]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Patched Fur Tunic*]]. Good luck, Warrior!
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Warrior Quests]]

@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:npc_shamus_felligan.png|frame|Shamus Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Shamus Felligan]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin caster]]
+|}
+Requires amiable or better faction.
+
+== Reward ==
+
+<ul><li>  {{:Gavel of Justice}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest is given to you by Shamus Felligan (he is outside the Shaman's guild). The activation sentence is "I will hunt the goblin casters".
+
+Ice Goblin Casters spawn in one location in {{Loc|Everfrost Peaks|-965,-1555}} and are an uncommon spawn. They can be found by following the right side wall after leaving the one guard area. Eventually, you will come across two igloos. Casters and Scouts spawn here.
+
+About 1 out of every 4 spawns is a caster, and about 1 in 10 drop the [[Shattered Caster Beads]] and 1 in 10 of those drop [[Caster Beads]] .
+
+The items dropped can be either [[Shattered Caster Beads]], or more rarely, [[Caster Beads]]. If you bring the Shattered Caster Beads to Shamus, you receive faction with the guild, experience, coin, and a minor item.
+
+If you return the Caster Beads, you receive a Gavel of Justice. It might be worth considering that the weapon you can summon using the symbol granted by the [[Tribunal Initiate]] quest does not grant mana, but it is a better melee weapon.
+
+If you return the Shattered Caster Beads:
+: Seamus Felligan says, 'These aren't be the beads I be lookin' for.  Keep lookin' for the beads that be glowin o' bright.  Take this for ye attempt o' justice.'
+
+'''Faction increase''': [[Merchants of Halas]], [[Shamen of Justice]]
+
+'''Faction decrease''': [[Hall of the Ebon Mask]], [[Coalition of Tradefolk]], [[Circle of Unseen Hands]]
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Shaman Quests]]

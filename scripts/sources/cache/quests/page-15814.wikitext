@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:miranda.png|frame|Miranda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Miranda]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[Prince Bragnar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ball of Burlap Yarn}}
+</li></ul>
+
+== Walkthrough ==
+
+In Kejek, the kerran city in Stonebrunt, there is a small girl named [[Miranda]] under a tree.
+
+You say, 'Hail, Miranda' 
+
+: Miranda says 'I'm not supposed to talk to strangers but if my parents let you in here I guess it's ok. Do you like [candy]? I would give you some candy to play a game with me but my [dice] are gone now.' 
+
+You say, 'What dice?' 
+
+: Miranda says 'I had my dice in a little bag and lost it outside the walls of the village. I think the kobolds must have found it.' 
+
+<div>The {{:Tiny Pouch of Bone Dice}} in question is from [[Prince Bragnar]] in the [[Warrens]]. To finish the quest, give Miranda the Dice.</div>
+
+: Miranda says 'You found my dice!!! Thank you ______!!'
+
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] has been adjusted by 5.
+* Your faction standing with [[Peace Keepers]] has been adjusted by 5.
+{{exp}}
+</div> 
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]
+[[Category:The Warrens]]

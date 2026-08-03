@@ -1,0 +1,78 @@
+{{Classic Era}}
+[[File:npc_karg_icebear.png|Karg IceBear|thumb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Quest Giver: '''
+| [[Karg IceBear]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a polar bear|polar bears]], [[a polar bear cub|polar bear cubs]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Polar Bear Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Karg IceBear]] outside the Permafrost gates and wanders in a big circle across the tundra area of Everfrost.<blockquote>You say, 'Hail, Karg IceBear'
+
+Karg IceBear says, 'Hail, traveler! I am Karg of Clan IceBear, lone hunter of the Everfrost Peaks.  Have you seen any polar bears about?'
+
+You say, 'Yes.'
+
+Karg IceBear says, 'I hunt polar bears and furnish cloaks from their pelts.  They keep you warm in this cold weather.'
+
+You say, 'Pelts?'
+
+Karg IceBear says, 'Have you some polar bear pelts? You know I can furnish warm cloaks from them, and for you I will do it for the measly sum of 5 platinum pieces.'</blockquote>'''Give him a [[Polar Bear Skin]] and 5 pp to receive your reward.'''<blockquote>Karg IceBear says, 'Here is your polar bear cloak! It will serve you well and keep you warm in even the coldest conditions! Farewell, friend!'</blockquote>''You receive a [[Polar Bear Cloak]].''
+
+'''{{exp}}'''
+
+== Tracking Karg's Whereabouts ==
+[[File:Kargs Pathing Routes.png|alt=Lo-fi map and crudely drawn arrows demonstrating Karg's pathing through the zone.|frame|Karg IceBear's trek across the tundra of Everfrost Peaks.]]
+Adventurer, tracking the path of Karg through the wasteland was no easy feat, let me tell you. It tested my patience, my endurance, and my skill as a tracker, but alas, it proved I am the finest tracker of man and beast in all of Halas. So grab an ale from the bar maid, and pull up a chair, if you wish to learn the whereabouts of the nomadic hunter, Karg IceBear.
+
+All right, where to begin?
+
+I had been tracking Karg for two days and two nights, fending off rampaging orcs, sifting through mammoth scat, avoiding that terribly grumpy [[Martar IceBear]], and living off nothing but foraged beats. The darkness of Everfrost seems to never end, and the daylight is fleeting, but the cold? Oh, the cold cuts deep and burrows to y'er core seeking to steal the very breath from within y'er breast. But none of that could deter me from my quarry, and at dusk of the third night, I caught a trail!
+
+=== Spawn Point & Loop #1 (Orange trail markers on map) ===
+I picked up the first signs of Karg next to a lonely, desiccated tree atop a hill just west of the ice giant guarded '''gates of Permafrost (approximate /loc 1615, -5744)'''. From there, I followed his trail west over the Y-fork in the frozen river right up to the wall of the '''North Tower'''. You know the tower, don't ya? The one with that young lass [[Megan OReilly]] running about, and where you'll often find that pompous [[Tundra Jack]] with his beloved polar bear, [[Iceberg]]. Anyways, as I was saying...
+
+Where was I? ... Oh yes! From the '''North Tower''', Karg's trail turned north towards the '''old ruined temple''' with the band of shamans and alchemy merchants. He appeared to stop there, but only for a moment before turning due south following the hill tops past the old abandoned large ruins before stopping briefly again by some smaller ruins even further south. He turned again, this time to the northwest where he continued for a little ways before abruptly turning east, back toward those aforementioned '''old abandoned large ruins'''. He did not stop though, no, he continued east across the river. I thought I'd lost him, but to my surprise I quickly picked up his trail again on the opposite bank, close to the temple, too close for my comfort. You see, that temple is base camp to the fierce [[Redwind]] and his band of icy orcs. You best steer clear of that temple if you know what's good for ye. Karg seemed all too aware of the danger as well as his trail quickened before stopping atop another hill east of the Temple. Once again, he remained for a moment here, doing gods know what before turning south and looping past the '''old giant statue''' heading back towards the river. This is where I caught sight of him, but I did not approach. This was my chance to track and log his movements for posterity... or maybe just to have a tale to tell over a pint.
+
+So there I was, eyes finally on Karg as he traveled '''north up the river'''. He took the '''left path at the fork''' and continued north before '''stopping atop the icy riverbank''', inside the 'Y' of the river, not far from that secret entrance to the goblin lair beneath the ice. From atop the river bank, he seemed to be inspecting his surroundings, perhaps tracking the migration of the mammoths, or maybe hunting polar bears. I still could not tell the rhyme nor reason for his wandering. He finally started move again, abruptly heading back towards the North Tower. If he saw me, he did seem to care. He's searching for something... clearly.
+
+=== Loop #2 (Light Blue trail markers on the map) ===
+As he crossed back over the river towards the '''North Tower''' again, but this time, he slightly changed his path from before. This time, he went south around the tower and began wandering almost directly west as if he were heading towards the "canyons". However, stopped short of the '''canyon entrance''' guarded by [[Lish McMarrin]], [[Bryndin McMill]], and that adorable pup, [[Snowflake]]. However, Karg paused for a moment, seemingly inspecting the frozen ground for something before quickly taking off due south towards the '''ice goblin igloos in the southwest.'''
+
+Once again, Karg stopped, inspecting his surroundings before turning east along the impassable mountain faces of the south. Ignoring all the nasty, incredibly intimidating giant wooly spiders along the mountain walls, he made his way around the '''South Tower''' before heading due east straight back over the river again. Once across, he made his way in between the '''grouping of ruins south of Redwind's Temple''' and around the tall hill with the abandoned tower atop. Once he was around that tall hill with the abandoned tower atop, he came to rest for a few moments in the '''southeast corner of the tundra'''. I believe he was just catching his breath at this point, as he'd been going for quite a while, but still I kept my distance. He did not acknowledge my presence, but he surely must have seen me following by now...
+
+I did not get long to ponder his actions before he was on the move again, heading '''west back towards the river''' around the south side of the tall hill with the abandoned tower. Once at the river, he followed the same path '''north''' from his first time around. He took the '''left path at the fork''' again, but instead of stopping atop the riverbank, he abruptly turned west back toward the '''North Tower'''.
+
+=== Loop #3 (Light Green trail markers on the map) ===
+He, or we I should say we, reached the '''North Tower''' again. Karg didn't even so much as look at Megan, but continued on his path... the same path as his first time around, heading '''northwest towards that old collapsed temple''' with the shaman and alchemy merchants. Once again, he stopped at the corner of the temple entrance, inspecting his surroundings. Was he looking for someone? Or maybe looking "out" for someone? I can't say for certain, but there are rumors that Karg and Tundra Jack have some sort of history and both men still hold a grudge against one another. Perhaps, Karg is avoiding Jack?
+
+Anyways, pardon my wild speculation! Karg was on the move again, heading due south back towards those '''old abandoned large ruins''' in the middle of the tundra. However, this time around he didn't go past those ruins, he went directly through them as he turned east with a renewed sense of urgency. He made a b-line directly '''across the fork on the river''' and right past the '''dangerous Redwind''' again. He did not stop though, continuing east all the way up to the '''mountains hiding Permafrost''' where he finally came to rest for a few moments. I watched him from afar and saw him muttering something to himself, but I was unable to hear what he was saying. Here, he seemed to wander circles for a moment, unsure of where to go next. Then just as suddenly, he seemed to make up his mind and wander back '''north towards the gates of Permafrost''' before turning west back towards the river.
+
+At this point, I was exhausted, frozen, and starving from the days out in that wasteland. I was fairly certain if I continued to follow him, I would never make it back to our warm and comforting city in the mountains. Before I could return to Halas though, I had to at least introduce myself. So I walked up to Karg, I did and I said, "hail, karg!" He turned, greeted me with a warm smile, and introduced himself. He was surprisingly pretty forthright about his intentions wandering the tundra and downright friendly compared to his IceBear brethren. You see, he's a polar bear hunter and uses their pelts to fashion these incredibly warm [[Polar Bear Cloak|Polar Bear Cloaks]]. I just so happened to have a polar bear skin in bags which he fashioned into this here fine cloak you see me wearing. I tipped him 5p and bid him "good journies". As I made the long trek back towards Halas, I at least didn't have to worry about freezing any more.
+
+== Notes ==
+This quest can probably be multi-quested with one person turning in the skin and the other the coin.
+
+[[Category:Quests]]
+[[Category:Everfrost Peaks]]
+[[Category:All Classes Quests]]

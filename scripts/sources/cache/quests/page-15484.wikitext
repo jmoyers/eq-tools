@@ -1,0 +1,91 @@
+[[File:npc_loveal_s`nez.png|thumb|Loveal S`Nez]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Loveal S`Nez]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Shadow Knight]], [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Lavastorm Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Sir Lindeal]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cloak of the Undead Eye}}
+</li></ul>
+
+== Walkthrough ==
+
+:''Note: This quest CANNOT be done at indifferent [[faction]], the quest giver will NOT provide the final line of dialogue and the Testimony will be consumed with no reward.  As a cleric, completing the symbol quests multiple times lowers faction with [[The Dead]] and may cause you to no longer have enough faction to do this quest. Faction hit amounts based on a post on Allakhazam.''
+
+You say, 'Hail, Loveal S`Nez'
+
+: [[Loveal S`Nez]] says 'What is this I see before me? A would-be hero of the Dead? You reek of false bravado. I have seen others much stronger than you meet their fate at the end of a blade. I see no reason to continue our conversation. How can one such as you assist with my [delegated duties]?'
+
+You say, 'What delegated duties?'
+
+: Loveal S`Nez says 'Why do you ask? I know why. Glory has captured your affections. Those who seek glory find death. Still, you may be of some use. Before I assign you a task, I must be assured of your power. I require you to [perform a test].'
+
+You say, 'I will perform  a test.'
+
+'''At apprehensive faction:'''
+
+: Loveal S`Nez says 'How dare you enter my presence?! In the name of the Dead I should strike you down!'
+
+'''At a higher faction:'''
+
+: Loveal S`Nez says 'In the Lavastorm Mountain Range there have been sightings of a paladin, one Sir Lindeal. He has compromised our routes between.. well, that is none of your concern. All you need to know is that this paladin of the Temple of Marr must be sent to his everlasting life. Do so and prove your worth to us. I await your proof. Use no assistance. If you are truly his equal then I shall know. I know all.'
+
+'''Travel now to [[Lavastorm Mountains]] and find [[Sir Lindeal]].'''
+
+You say, 'Hail, Sir Lindeal'
+
+:Sir Lindeal says 'In the name of the Rainkeeper, I strike at thee!!'
+ 
+You have slain Sir Lindeal!
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better. (50)
+* Your faction standing with [[Guards of Qeynos]] got worse. (-37)
+* Your faction standing with [[Knights of Thunder]] got worse. (-50)
+* Your faction standing with [[Priests of Life]] got worse. (-37)
+</div>
+
+Sir Lindeal's corpse says 'Karana shall guide the Knights of Thunder to avenge the death of one of his flock.'
+
+You receive 2 silver and 6 copper from the corpse.
+
+'''--You have looted a [[Testimony]].--'''
+
+'''Return to Neriak 3rd Gate.  Give [[Loveal S`Nez]] the [[Testimony]].'''
+
+: Loveal S`Nez says 'So you have succeeded where others have failed. You show promise. Take this then. You shall be a valuable asset to the Dead and soon this shall be of value to one so great. This will help you on your way. Are you still interested in my [appointed tasks]?'
+
+<div class="facblock">
+* Your faction standing with [[The Dead]] got better. (25)
+* Your faction standing with [[Queen Cristanos Thex]] got better. (3)
+* Your faction standing with [[King Naythox Thex]] got worse. (-3)
+* Your faction standing with [[Keepers of the Art]] got worse. (-3)
+* Your faction standing with [[Eldritch Collective]] got worse. (-3)
+* Your faction standing with [[Primordial Malice]] got worse. (-50)
+</div>
+
+{{YouGainExperience}}
+
+You receive ~14 gold from Loveal S`Nez.
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Cleric Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Necromancer Quests]]

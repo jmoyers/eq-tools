@@ -1,0 +1,211 @@
+{{Classic Era}}__NOTOC__
+<onlyinclude>[[File:npc_reyia_beslin.png|frame|Reyia Beslin]]
+[[File:npc_brother_velan_torresk.png|thumb|upright=1.5|Velan Torresk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Velan Torresk]], [[Reyia Beslin]]
+|-
+! ''' Minimum Level: '''
+| 1-25 (progresses)
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+The Monk Sash quests take place in [[Freeport]], in the Theatre of the Tranquil, the Monk guild. Start by visiting [[Velan Torresk]] on the second floor of the Monk guild.
+
+== Faction ==
+
+The sash quests require "high amiably" faction in order to do. Sneaking only gives indifferent faction, and while wolf form grants amiably faction, it is not "high amiably".
+
+You can check if you have the require faction by saying "what white training sash" to [[Velan Torresk]]. If your faction is insufficient, he will say "I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.". If it is sufficient, he will give you details on how to obtain the quest items.
+
+A Human Monk starting out can instantly gain the required faction by simply turning in their newbie note. An Iksar Monk must embark on a long faction grind, which is most simply done by killing Deathfist orcs in the newbie area of Freeport, and in East/West Commonlands. Between 1800 and 2000 orc kills are required to get the necessary faction. If you wish, you can repeat the White Sash quest to gain even more faction, along with Knights of Truth and Silent Fist Clan (Qeynos Monks) faction. You can also complete a few select quests to gain faction, see [[Ashen Order]].
+
+== Rewards ==
+
+<ul><li> {{:White Training Sash}}
+</li><li> {{:Yellow Sash of Order}}
+</li><li> {{:Orange Sash of Order}}
+</li><li> {{:Red Sash of Order}}
+</li></ul>
+
+== White Training Sash ==
+
+: You say, 'Hail, Velan Torresk'
+
+: Velan Torresk says, 'Greetings. Soandso !  I am Velan Torresk of the Ashen Order.  I am in charge of training the newest members of our clan. and helping them advance their skills and rank.  When members perform certain tasks on behalf of the Order. they advance to a higher rank in our clan. and are awarded a special [sash].'
+
+: You say, 'What sash?'
+
+: Velan Torresk says, 'The Sashes of Order are given out by the various trainers of our clan.  I give out the [white training sash] and the [yellow Sash of Order]. and [Reyia] is in charge of the [orange and red sashes].'
+
+: You say, 'What white training sash?'
+
+: Velan Torresk says, 'The Sashes of Order are given out by the various trainers of our clan.  I give out the [white training sash] and the [yellow Sash of Order]. and [Reyia] is in charge of the [orange and red sashes].'
+
+: Velan Torresk says, 'The white training sash of the Ashen Order is awarded to our new members for completing a few simple tasks to prove their devotion to our clan. As you know, Freeport is a very hostile place, under constant attack from [orcs], wild beasts, and even the undead. To help keep this city and its citizens relatively safe, we must help the Militia protect the main gates. Bring me two Deathfist pawn scalps from those vile [Deathfist orcs], a snake fang, and some bone chips from a skeleton. Good luck, Soandso, represent us well!'
+
+
+Turn the following items in to [[Velan Torresk]] in [[West Freeport]]: 
+
+*2 - [[Deathfist Pawn Scalp]] - from Deathfist Pawns wandering outside the west gate of Freeport. Do not zone out to east commons, as the "orc pawns" out there drop a different type of scalp.
+*1 - [[Snake Fang]] - From the level 1 snakes also just outside the west gate of Freeport.
+*1 - [[Bone Chips]] - Any skeleton in the game can drop these. The Decaying Skeletons in west freeport do just fine.
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the white sash.'
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the white sash.'
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the white sash.'
+
+: Velan Torresk says, 'Good work, Soandso , you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.'
+
+{{YouGainExperience}}
+<div class="facblock">
+* Your faction standing with [[Ashen Order]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+</div>
+
+== Yellow Sash of Order ==
+
+: You say, 'What yellow Sash of Order?'
+
+: Velan Torresk says, 'The Sashes of Order are given out by the various trainers of our clan.  I give out the [white training sash] and the [yellow Sash of Order]. and [Reyia] is in charge of the [orange and red sashes].'
+
+: Velan Torresk says, 'To earn the yellow sash, you must prove yourself to be very skilled in the art of fighting. The lands to the west and south of Freeport are filled with dangerous beasts that often prey upon innocent travelers. Help protect our merchant caravans and traveling citizens, while at the same time practicing your defensive skills, and eliminating these deadly creatures from the surrounding landscape. Bring me a giant snake rattle, a Deathfist slashed belt, the chitin of a desert tarantula, and turn in your white training sash, and I shall reward your noble work with our yellow Sash of Order. Good luck, Soandso !'
+
+
+Turn the following items in to [[Velan Torresk]] in [[West Freeport]]: 
+
+*1 - [[Deathfist Slashed Belt]] - The Deathfist Orcs can drop these. Only Centurions and stronger orcs have a chance to give you a belt, not pawns. There are two Deathfist orc camps in east commons (along the north wall, on either side of the "Hidden Inn") where you can hunt or ask to buy one of these belts.
+*1 - [[Giant Snake Rattle]] - These drop off the tougher snakes, darkweeds and above. Darkweed snakes in East Commons are the quickest way to go. Giant Rattlesnakes in North Ro are another option. Warning: snakes have powerful poison.
+*1 - [[Desert Tarantula Chitin]] - Dune Tarantulas in North Ro are where you'll find these. Make sure you loot the right item - "cracked" chitins are not useful for the quest.
+*1 - White Training Sash - From the prior Quest
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the yellow Sash of Order.'
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the yellow Sash of Order.'
+
+: Velan Torresk says, 'Ah, very good. You are well on your way to earning the yellow Sash of Order.'
+
+: Velan Torresk says, 'Ah, well done, Soandso. You have proven that you are a very skillful fighter and it is a honor to have you as a member of the Ashen Order. On behalf of Master Closk, and under the watchful eyes of Quellious, I present you, Soandso, with this, the yellow Sash of Order. Go out and make us proud.'
+
+{{YouGainExperience}}
+<div class="facblock">
+* Your faction standing with [[Ashen Order]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+</div>
+
+== Orange Sash of Order ==
+
+: You say, 'Hail, Reyia Beslin'
+
+: Reyia Beslin says, 'Greetings. Soandso . I am Reyia Beslin of the Ashen Order.  I help to train our members and I am in charge of handing out the orange and red Sashes of Order.  Would you like to know how you can get an [orange sash]? Or maybe you think you are ready to earn the [red sash]?'
+
+: You say, 'What orange sash?'
+
+: Reyia Beslin says, 'To prove your skills and earn the orange Sash of Order, you must bring me the following items - a greater lightstone, a cutthroat insignia ring, a legionnaire's bracer, and, of course, your yellow sash. I will leave it to you to figure out exactly where to get these items. Good luck, Soandso .'
+
+
+== ATTENTION: DO NOT TURN INTO VELAN TORRESK! ==
+
+
+'''Turn the following items in to '''[[Reyia Beslin]] in [[West Freeport]]:
+
+*1 - [[Legionnaire's Bracer]] - These drop off the Legionnaires of the Deathfist and Crushbone orcs. They're rather rare if you try to hunt legos in the Commonlands, the quickest way to get your bracer is to go to Crushbone (from Greater Faydark). There, they seem to drop like candy.
+*1 - [[Greater Lightstone]] - Willowisp type mobs drop these. The GLS is semi-rare, but not too hard to get if you hunt the wisps for a half hour or so. Alternatively, just send out an auction in West Commons. There are always people buying and selling lightstones there for a few plat.
+*1 - [[Cutthroat Insignia Ring]] - Any Dervish Cutthroat has a chance to drop one of these. There are three derv camps in North Ro, several in South Ro, one in West Commons.
+*Yellow Sash of Order - From prior Quest
+'''REMINDER: TO REYIA BESLIN'''
+
+: Reyia Beslin says 'You are well on your way to earning the orange Sash of Order.'
+
+: Reyia Beslin says 'You are well on your way to earning the orange Sash of Order.'
+
+: Reyia Beslin says 'You are well on your way to earning the orange Sash of Order.'
+
+: Reyia Beslin says 'You have proven yourself a mighty warrior. I am honored to present you, Soandso, with the orange Sash of Order.'
+
+{{YouGainExperience}}
+<div class="facblock">
+* Your faction standing with [[Ashen Order]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+</div>
+
+== Red Sash of Order ==
+
+Turn the following items in to [[Reyia Beslin]] in [[West Freeport]]:
+
+* 1 - [[Blackened Sapphire]] ("the Sapphire of Souls") - This can be found on [[Ekeros]] in the [[Najena]] dungeon. Ekeros is a somewhat rare spawn, you can find him in the room just outside Rathyl's room. Note: a key is needed to get to Ekeros' spawn point. You can either get the key from another player, or you'll have to go after them yourself. Najena has a sequence of keys that open up deeper and deeper parts of the dungeon to you. The Ogre guards drop [[Guard's Keyring]], the first one you'll need. [[BoneCracker]] drops another key, [[The Guard Captain]] drops a third. These are the only keys you need to get into Rathyl's area ([[Rathyl]] himself drops another key that leads you further in toward Najena's room). 
+* 1 - [[Blackened Wand]] - This drops from [[Priest Amiaz]] on the bottom level of [[Befallen]]. (Spawnpoint is in same room with [[The Thaumaturgist]] which is required for [[Monk Headband Quests]]) 
+* 1 - [[Orange Sash of Order]]
+
+'''Reyia Beslin may be found at -154, -1502, -137.  '''
+
+You say, 'Hail, Reyia Beslin' 
+
+:Reyia Beslin says 'Greetings, ______. I am Reyia Beslin of the Ashen Order. I help to train our members and I am in charge of handing out the orange and red Sashes of Order. Would you like to know [how you can get an orange sash]? Or maybe you think you are ready to earn the [red sash]?' 
+
+You say, 'I think I am ready to earn the red sash.' 
+
+:Reyia Beslin says 'So, you think you are skilled enough to earn the red Sash of Order, ______? I have just the [task] for you then. But be warned, this will be the toughest challenge you have faced yet. There are many legends and myths of great heroes and ancient evils from all over Norrath. Here in Freeport, we get travelers from all over the world, and we get their tales as well. The point is that most of these stories are just that, stories and fairy tales. Told to amuse people and frighten children. I also thought the tales I'd heard about the [Marnek Jaull] were only legends, but now I know better.' 
+
+You say, 'What task?' 
+
+:Reyia Beslin says 'I've heard a few legends of a powerful wand that Marnek himself used to wield. This was known as the wand of the Burning Dead, and was rumored to instill its owner with mystical energies. The legends I have heard all differed on the wand's creation and powers, but the basic story was always the same. I will [tell you the legend] if you like. The task I have for you is to bring me the two parts that make up the wand of the Burning Dead, before they can be assembled and used for evil once again. Bring me [Marnek's wand] and the [Sapphire of Souls], along with your orange sash, and you will have proven yourself a loyal member of the Ashen Order, worthy of receiving the red sash.' 
+
+You say, 'Who is Marnek Jauli?' 
+
+:Reyia Beslin says 'Marnek Jaull led a cult of necromancers who followed the Burning Prince, Solusek Ro. He built an army, known as the Burning Dead, and spread destruction and fire throughout Antonica. Over the years, the Burning Dead fought many fierce and bloody battles with the paladins of Prexus, the Oceanlord. Though Marnek achieved many victories over the paladins, ultimately they were able to defeat him and destroy the Burning Dead. Legends say that before his defeat, Marnek created many powerful weapons and items, and wrote many books on his findings in the areas of magic. Many of these items were hidden away from the paladin forces, and remain untouched, waiting for Marnek's return, as the legends go.' 
+
+You say, 'What is Marnek's wand?' 
+
+:Reyia Beslin says 'Marnek's wand is rumored to be found in the depths of Befallen. Those who currently hold Befallen are said to be new followers of the Burning Dead. Probably believing that they may one day be able to awaken the evil Marnek again. This group must be stopped, and these evil items destroyed, before their wicked armies grow powerful enough to leave their horrible dungeon and spread throughout Antonica.' 
+
+You say, 'What is the Sapphire of Souls?' 
+
+:Reyia Beslin says 'The Sapphire of Souls is rumored to be held by a thief in Najena. No one knows how this guy obtained the sapphire, but we believe he is trying to strike a bargain with those who are currently holding Befallen. Apparently, we aren't the only ones who know of the wand's powers, and this thief thinks he can make a profit from it. Sadly, his greed will surely lead to his death.' 
+
+You say, 'Tell me the legend.' 
+
+:Reyia Beslin says 'The legend of the wand of the Burning Dead goes basically like this, though you may hear slighty different versions from others. Marnek did a lot of experiments and created an unknown number of diabolical artifacts and weapons. One of his creations was this wand. Marnek fashioned a charred wand from the scorched bone of a paladin of Prexus, and Solusek Ro himself created the wretched Sapphire of Souls. Then, Marnek and his priests combined these, with the Burning Prince's blessing, to create the wand of the Burning Dead. Marnek used this Wand and its powers in his evil and destructive reign over Antonica. Years later, as Marnek starting losing battles to the paladins of Prexus, one of his own followers, a necromancer named Kenox, was able to steal the wand. Sensing Marnek's defeat, Kenox made his way toward Odus, hoping to strike a deal with the paladins for the wand. Would you like me to [tell you about Kenox]?' 
+
+You say, 'I would like you to tell me about Kenox.' 
+
+:Reyia Beslin says 'Well, Kenox was not as sly as he liked to think he was. Marnek knew full well what he was up to, but let him continue with his plans. Kenox had arranged to meet with two paladins late one nght on a small island in Erud's Crossing, a place that would be considered neutral ground. Sir Toran Neshal, leader of the paladins, knowing the power of the wand, was certainly not going to make any deals with a servant of Solusek Ro, and definitely not foolish enough to take any chances with this mission. Imagine the look on Kenox's face when a ship carrying more than 25 paladins, including Sir Toran, arrived at the small island! The paladins immediately captured Kenox and the wand, and headed back to Erudin. Would like me to [tell you what happened to Toran]?' 
+
+You say, 'Tell me what happened to Toran.' 
+
+:Reyia Beslin says 'Below the deck of the ship, Toran and his men questioned Kenox and carefully inspected the wand. Toran ordered one of his men to pick up the wand and try to identify its true powers. The man picked up the wand, but was unable to decipher its magic. He handed it to Toran, just as Marnek and Solusek had hoped, and the wand exploded, instantly incinerating the ship and everyone aboard, and lighting up the night sky with a giant fireball. Marnek's plan had succeeded. With the help and blessing of the Burning Prince, they had destroyed Sir Toran and an entire squad of Prexus' finest paladins. Years later, though, the paladins were able to regroup and ultimately defeat Marnek. The wand of the Burning Dead was destroyed and gone forever. Or least, that's what we thought. This wand must never be allowed to be made whole again.' 
+
+'''Marnek's wand is the [[Blackened Wand]] (identifies as "Marnek's Wand"), dropped by [[Priest Amiaz]] in [[Befallen]] (-487.77, 89.39, -76.61). The Sapphire of Souls is the [[Blackened Sapphire]] (identifies as "Sapphire of Souls"), dropped by [[Ekeros]] in [[Najena]] (-161, -47, -22). Bring them back along with your [[Orange Sash of Order]]. You'll need to be at least kindly faction to [[Ashen Order]] to finish the quest.''' 
+
+:Reyia Beslin says 'Great job, ______! Congratulations. With the destruction of these evil items, the wand of the Burning Dead will never bring harm to anyone on Norrath again. It is my honor to present to you, on behalf of Master Closk and the Ashen Order, the red sash. May Quellious be with you always.' 
+
+''You receive the [[Red Sash of Order]]''
+
+== Purple,  Blue and Black Sashes of Order ==
+
+These items are not the result of any quests. They drop from Monk Guildmasters in Freeport. The Red Sash is the highest sash you need to obtain for the [[Robe of the Lost Circle]].
+</onlyinclude>
+==See also==
+*[[Monk Headband Quests]]
+*[[Monks of The Whistling Fist]]
+
+[[Category:Quests]]
+
+[[Category:West Freeport]]
+[[Category:Monk Quests]]

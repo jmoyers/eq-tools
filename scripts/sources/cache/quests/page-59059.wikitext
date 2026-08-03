@@ -1,0 +1,90 @@
+{{Classic Era}}
+
+[[File:npc_urkath_greyface.png|thumb|right|Urkath Greyface]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Kerra Island]]
+|-
+!''' Quest Giver: '''
+| [[Urkath Greyface]]
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Kerra Island]], [[Toxxulia Forest]]
+|-
+!''' Related NPCs: '''
+|  [[Urkath Greyface]], [[a skunk]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Worn Leather Shoulderpads}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.030%) @level 5
+
+== Checklist == 
+{{CheckboxList}}
+* [[Skunk Scent Gland]]
+** Locate and Kill [[a skunk]]
+** Return to Urkath Greyface
+
+{{End}}
+== Walkthrough ==
+
+You say, 'Hail, Urkath Greyface'
+
+: Urkath Greyface says, 'Errr?  What you say to Urrrkath?  Ah.  Hello to you as well, furrrless type person. 'Errrrrmf. If only just that [wish] for Urrkath?'
+
+You say, 'wish'
+
+: Urkath Greyface says, 'Wish?  Oh.  Urrkath old kerran.  Urrkath pass on soon.  It great disappointment that Urrkath never have beautiful [skunk scent gland] to call own.  Now all Urrkaath want is skunk scent gland from Erudite forest.  So me can smell at least little part of forest.'
+
+You say, 'skunk scent gland'
+
+: Urkath Greyface says, 'Why ask Urrrkath about this? May as well ask why trrree has leaf! Go get skunk scent gland!'
+
+''' You have been assigned the task 'Skunk Scent Gland'. ''' <br>
+Urkath Greyface, a rugged old Kerran, has made a request of you that is quite... odd. Nonetheless, you have an opportunity to make an old cat smile.
+
+=== Quest Stage 1: ===
+* Step - Acquire a Skunk Scent Gland. Many of these creatures can be found in Toxxulia Forest
+* Text - Acquire a Skunk Scent Gland.
+ 
+A Skunk roams Toxxulia on both the North and South side of the zone. 
+
+ You have slain a skunk!
+ --You have looted a Skunk Scent Gland from a skunk's corpse.--
+
+''' Your task 'Skunk Scent Gland' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Give Urkath Greyface the Skunk Scent Gland
+* Task - Give the Skunk Scent Gland to Urkath Greyface. And then maybe step away quickly
+
+ You offered 1 Skunk Scent Gland to Urkath Greyface.
+
+Your task 'Skunk Scent Gland' has been updated. 
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">You hand the Skunk Scent Gland to Urkath Greyface. He is elated, and perhaps so are you.</span>
+
+: Urkath Greyface says, 'Scent so excellent!! I can't believe you found it. Herrre is the rrreward I promised you. And yourrr arrrmor skunk scented for weeks as rrreal rrreward!'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.030%) <br>
+You have been given: Worn Leather Shoulderpads <br>
+
+ You complete the trade with Urkath Greyface.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

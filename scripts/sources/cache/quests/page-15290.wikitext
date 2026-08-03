@@ -1,0 +1,59 @@
+{{Classic Era}}[[File:npc_indaria.png|frame|Indaria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Indaria]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Necromancer]], [[Shaman]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]], [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[a shark]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Velvet Choker}}
+</li></ul>
+
+== Walkthrough ==
+
+Indaria is located in the Office of the People behind the bank at loc (312, -488), South Qeynos.
+
+You say, 'Hail, Indaria.' 
+
+: Indaria says 'Hello, have you seen my daughter?'
+
+That is all Indaria has to say until you give her [[A Doll]] looted off a shark in the Qeynos Aqueducts or near the South Qeynos docks or in Erudin harbor or near the Freeport Harbor. Hand her a doll:
+
+: Indaria tries to keep her composure. She hands you a silver locket with great effort and then bursts into tears.
+
+You get experience, coin, and a [[Velvet Choker]]. 
+
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Shaman Quests]]
+[[Category:Wizard Quests]]

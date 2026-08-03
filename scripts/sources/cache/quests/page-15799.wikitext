@@ -1,0 +1,67 @@
+{{Classic Era}}
+[[File:npc_ortallius.png|frame|Ortallius]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Desert of Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Ortallius]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Oasis of Marr]], [[Northern Desert of Ro]]
+|-
+! ''' Related NPCs: '''
+| [[a Dervish Cutthroat]], [[a Dervish Thug]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+Ortallius may be found at +1100, 1275.
+In short, hand him 3 rings.
+
+
+You say, 'Hail, Ortallius' 
+
+: Ortallius says 'Welcome to the lands of Ro.  Stand and fight with me.  We shall fight to reclaim the desert in the name of Solusek Ro.  Death to all [[A_Dervish_Cutthroat | [dervish cutthroats]]]!!' 
+
+You say, 'What dervish cutthroats?' 
+
+: Ortallius says 'The dervish cutthroats are the vile scum who inhabit the desert.  They are rogues who assault wayward travelers.  Solusek Ro has commanded their extermination!!  Do you wish to [join the crusade]?' 
+
+You say, 'I wish to join the crusade.' 
+
+Ortallius grins enthusiastically.  'The scum rarely wander far from their camps.  Hunt them down and I will reward you for every three insignia rings you bring as proof of their deaths.' 
+
+'''Search and destroy''':  kill dervish cutthroats until you obtain three {{:Cutthroat Insignia Ring}}s.  Hand them to Ortallius.
+
+: Ortallius says, 'You will make a fine addition to the crusade.  Continue the cleansing of the desert.  Let it be known that the Defenders of Ro are here to challenge the evils of the desert.  I call upon the righteousness of all paladins to assist me.' 
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+* You receive 8 copper from Ortallius.
+* You receive 4 silver from Ortallius.
+</div> 
+{{YouGainExperience}}
+
+
+
+
+Experience gains: 
+* 13 Ogre SK, one turn-in, 4% points
+* 17 Halfling Druid, two turn-ins, 5% total points (about 2.5% each)
+
+
+[[Category:Quests]]
+[[Category:Southern Desert of Ro]]

@@ -1,0 +1,507 @@
+{{Epics Era}}
+
+[[File:epic.jpg|200px|thumb|Singing Short Sword]]
+[[File:Epic.PNG|200px|thumb|Wearing Bard Epic]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Dreadlands]]
+|-
+! ''' Quest Giver: '''
+| Baldric Slezaf
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li> {{:Singing Short Sword}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+==== Maestro's Symphony Page 24 Top ====
+
+* Talk to [[Konia Swiftfoot]] in [[Western Karana]] (guard tower #4), receive a [[Torch of Misty]]
+* Give the torch to [[Fajio Knejo]] in [[Misty Thicket]], receive [[Torch of Ro]]
+* Give the torch to [[Andad Filla]] in [[Southern Desert of Ro|South Ro]], receive [[Torch of Rathe]]
+* Give the torch to [[Misty Tekchita]] in [[Lake Rathetear]], receive ring [[Proof of Speed]]
+* Give the ring to [[Konia Swiftfoot]] in [[Western Karana|W Karana]], receive [[Maestro's Symphony Page 24 Top]] 
+
+==== Maestro's Symphony Page 24 Bottom ====
+* Ask [[Baenar Swiftsong]] in [[South Karana]], “what doll,” receive [[Solusek Mining Company Invoice]]
+* Take the invoice to [[Marfen Binkdirple]] in [[Solusek's Eye]], receive [[Mechanical Doll]]
+* Give the doll to [[Serra]] in [[Unrest]], receive [[Note for Baenar]] previously [[Ripped Qeynos Bards Guild Flyer]] ? I didn't get this 2nd one on turn in 2/6/25
+* Give the note to [[Baenar Swiftsong]] in [[South Karana]], receive a [[Note to Maligar]]
+* Give the note to [[Maligar]] in [[Western Plains of Karana]]
+* Kill [45][[Maligar's Enraged Doppleganger]], loot his head
+* Give [[Maligar's Head]] to [[Baenar Swiftsong]], receive [[Mahlin's Mystical Bongos]].
+* Give [[Mahlin's Mystical Bongos]] to [[Konia Swiftfoot]] in [[Western Karana]] (guard tower #4), receive [[Maestro's Symphony Page 24 Bottom]]
+
+==== Maestro's Symphony Page 25 ====
+* Kill [36][[Blackwing]] in [[Rathe Mountains]], loot [[Onyx Drake Gut]]
+* Kill [51][[Nezekezena]] or [47][[Phurzikon]] in [[Burning Woods]], loot [[Red Wurm Gut]]
+* Kill [51][[Eldrig the Old]] in [[Skyfire Mountains]], loot [[Chromodrac Gut]]
+* Give all the guts to [[Kelkim Menkia]] in [[South Karana]], receive [[Maestro's Symphony Page 25]]
+
+==== Mystical Lute Head ====
+* ('''OPTIONAL''') Kill [45][[Quag Maelstrom]] in [[Ocean of Tears]], loot [[Alluring Horn]].
+* ('''OPTIONAL''') Give [[Alluring Horn]] to [[Vedico Windwhisper]] in [[Butcherblock Mountains]], receive a [[Note to Forpar Fizfla]].
+* ('''OPTIONAL''') Give [[Note to Forpar Fizfla]] to [[Forpar Fizfla]] in [[Steamfont Mountains]].
+
+* Kill [53][[Phinigel Autropos]] in [[Kedge Keep]], loot [[Kedge Backbone]]
+* Kill an [48][[Amygdalan warrior]] in [[Plane of Fear]], loot [[Amygdalan Tendril]]
+* Kill [52][[Drolvarg Warlord]] in [[Karnor's Castle]], loot [[Petrified Werewolf Skull]]
+* Say "What Components" to [[Forpar Fizfla]] in [[Steamfont Mountains]], Receive [[Forpar's Note to Himself]].
+* Give [[Forpar's Note to Himself]], [[Kedge Backbone]], [[Amygdalan Tendril]], [[Petrified Werewolf Skull]] to [[Forpar Fizfla|Forpar]] and receive [[Mystical Lute Head]]
+
+==== Mystical Lute Body ====
+* Kill a red dragon ([[Lord Nagafen]], [[Zordakalicus Ragefire]], [[Talendor]]) or  [[Nortlav the Scalekeeper]] and loot [[Red Dragon Scales]]
+* Kill a white dragon ([[Lady Vox]], [[Gorenaire]]), loot [[White Dragon Scales]]
+* Give 1 [[metal bits]] (smithed), [[Red Dragon Scales]] and [[White Dragon Scales]] to [[Forpar Fizfla|Forpar]], receive [[Mystical Lute Body]]
+
+==== Undead Dragongut Strings ====
+* Give [[An Undead Bard]] your [[Mystical Lute Body]]. Kill [[An Undead Bard]], upon death he spawns [[Trakanon (triggered)]], kill [[Trakanon (triggered)]] and loot [[Undead Dragongut Strings]].
+
+==== Mystical Lute ====
+* Give [[Mystical Lute Head]], [[Mystical Lute Body]] and [[Undead Dragongut Strings]] to [[Forpar Fizfla|Forpar]], receive the [[Mystical Lute]]
+
+==== Singing Short Sword! ====
+* Give [[Maestro's Symphony Page 24 top]], [[Maestro's Symphony Page 24 bottom]], [[Maestro's Symphony Page 25]] and [[Mystical Lute]] to [[Baldric Slezaf]], receive [[Singing Short Sword]]
+{{End}}
+
+== Short Walkthrough ==
+
+'''The Beginning'''
+
+The Quest starts in the [[Dreadlands]] where you must find Baldric Slezaf.  He is located in the Undead pyramid city near the teleport areas.  He was inside the far west pyramid, location was positive 770, positive 9700.  (Thanks Talespin Spellwind for location.)  Baldric Slezaf will ask you for four items.  They are the top part of page 24, the bottom part of page 24, page 25, and a Lute made by Forpar Fizfla.
+
+'''Top Half of Page 24'''
+
+The quest for the top part of page 24 starts in [[Western Karana]], where you must find Konia Swiftfoot in the guard tower (#4 on map) -516 , -2433.  
+/say "I would like to participate" and then "I am ready" for the torch
+
+She will tell you to take a torch to Fajio Knejo.  Fajio can be found in Misty Thicket (#4 on map) at approximately -250, -250.  This is on the safe side of the wall close to the entrance to the dangerous side where the two guards are stationed.  Give him the torch and he will give you another torch to take to Andad Filla.  (Kind of like the Olympics.)
+
+Fajio says: 'Run Onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.
+
+Andad Filla is in South Ro -3043 , +1243.  He spawns and sits very near to the Innothule Swamp entrance and when you give him the torch from Fajio he will give you yet another torch to give to Misty Tekchita.  
+
+Andad says: You still have a way to go! Seek out Misty Tekchita near the arena at Lake Rathe. Run like the wind!
+
+Misty is in [[Lake Rathetear]] (#13 on map)  If she is there when you get there you can find her near the entrance to the Arena.  Misty will give you a Ring called [[Proof of Speed]].  Return this ring to Konia Swiftfoot and you will get the top part of page 24.
+
+'''Bottom Half of Page 24'''
+
+For the bottom half of page 24, Konia Swiftfoot will give it to you for Mahlin's Bongos.  To get these, first visit Braenar Swiftsong in South Karanas at -19 , +96.  Asked him "what doll" and he will give you a Solusek Mining Company Invoice.
+
+Take the Invoice to Marfen Binkdirple in [[Solusek's Eye]] and he will give you A Mechanical Doll.  Give this doll to Braenar's Daughter, Serra.  She is in [[The Estate of Unrest]] next to the Gnome Spelunker on the right on the mansion.  If you are KoS to him, you will need to mesmerize the spelunker or a group to kill him.  Serra will give you a note to give to Braenar.  He will give you another note to give to Maligar. 
+
+Maligar is found in West Karana at approximately +1300 , -11500.  He appears to be on Karana Bandit faction, so your deity choice and history with Karana Bandits will determine if you are KoS. If you are KoS, you can try sneak, the Mask of Deception, Cinda's Charismatic Carillon, Charm or a combination of these to turn the note in to him. When you give him the note, [[Maligar's Enraged Doppleganger]] will spawn and Maligar should despawn.  You must then kill the Doppleganger to loot [[Maligar's Head]].  This should be doable with a standard group of high 40's to low 50's.
+
+Take Maligar's Head to Braenar and he will give you [[Mahlin's Mystical Bongos]].  Take the Bongo's to Konia for the bottom half of page 24.
+
+'''Page 25'''
+
+Now to find page 25.  First talk to Kelkim Menkia, a female npc in [[Southern Karana]] at -245, -3650.  She asks you to bring her 3 guts from 3 wurms and drakes.  The first guts drops from [[Eldrig the Old]].  He is a rare spawn chromodrake in [[Skyfire Mountains]].  It drops Chromodrac guts which are the guts you  need.  
+
+The next guts are dropped from Nezekezena, a named wurm level 51 in the [[Burning Woods]].  Reports indicate that if you go to Nezekezena's spawn location (about -450, -2550 in Burning Wood) and kill everything in sight, eventually Nez or his (her?) placeholders will start spawning with a cycle time of 90 seconds. People have evidenced acquiring Burning Embers at a rate of 1 or 2 in a few hours' time with this method. Phurzikon and Nezekezena both spawn on this spot, and they are both strong; sometimes Nez or Phurz will spawn two times in a row, so your group had better be strong enough to take them.  Nezekezena, if not killed when she spawns, will wander sometimes along the east and south walls of the zone, so if you can't find her near her spawn, look there. A tracker would definitely help.  The guts you need from her are red wurm guts.  The best way to do this camp, is have someone in your guild with an extra computer bring a ranger to the zone.  Then continually track for a week or so until you get it on track.  Phurzikon drops a very nice resistance shoulder called wurm scale coat.  This might be a good way to convince people to help you camp these two wurms.  Phurzikon also drops an item for the Magician epic.
+
+The last guts are dropped from [[Blackwing]] in [[Rathe Mountains]].  See instructions on how to spawn him on the actual page for [[Blackwing]]
+
+Take the three guts to Kelkin Mekia and she will give you page 25.
+
+'''Head and Neck of the Mystical Lute'''
+
+Now for the final part.  You must get talk to Forpar Fizfla.  You must complete three quests for him.  After each quest he will reward you will part of the lute.  He can usually be found in the middle windmill.
+
+The First Quest is for the Head and Neck of the lute.  Go to Vedico Windwisper in the [[Butcherblock Mountains]].  She is on the docks.  She asks that you bring the Alluring Horn.  This horn is dropped off of [[Quag Maelstrom]].  He is a level 45 mob in [[Ocean of Tears]], only one zone away from Vedico.  The following information was cited by an anonymous person on Illia's Beastiary. He's generally on the Seafury Cyclops island around 1000, -6000. He conned red to me at 42 and he casts drain mana a lot, (which curiously did not appear to lower my bardic mana bar at all). I was able to land a lot of Chants of Flame and Curtailing Chants so his fire/magic resistances may not be that high. He didn't hit me all that much, but if memory serves he was hitting me for around 100 or 120 per shot.  He's generally seen wielding this odd weapon which looks like a thin tree trunk skewering the alluring horn he carries, which tends to make him stand out from the others. There are a good number of cyclopses on the small island, so pulling Quag alone isn't easy. But sometimes he stomps over to the shore by himself (to look in the water I guess). I don't know if he spawns all the time, or if you have to trigger his spawn by talking to the disgruntled elf at the BB docks. I went to talk to the elf first just in case, and by the time I got to the island Quag was there, and didn't despawn over the several hours I took to gauge the island and set up my offensive.
+
+Bring the Alluring Horn to Vedico and she will give you a note to give to give to Forpar.  When you give the note to Forpar he gives you another note of the 3 things he needs.
+
+The first thing is called Backbone of an Ancient Fisherman or Phinigel's Spine.  It is found off of the [[Phinigel Autropos]] in [[Kedge Keep]].  Phinigel Autropos is a level 50 Wizard.  He can be taken out with 1 well structured 55+ group.  He enjoys dispelling people (usually your enduring breath.)  His guardians are level 51. He is mezzable, his guardians are not, and they can complete heal. With new gear, a group of 5 people can easily do this, as long as you have one level 60 to pull (only lvl 60s can get him solo.)
+
+The second thing is a Amygdalan Tentacle or Amygdalan Tendril.  These are 9/25 1h slashing weapons that drop from Amygdalan Warriors and rarely Knights in [[Plane of Fear]].  They are both level 48-52 but the knights can heal, summon pets, and harmtouch.
+
+The third thing is a Petrified Skull of Lycanthrope or petrified werewolf skull.  This is dropped from the Drolvarg Warlord in [[Karnor's Castle]].  This is a level 51-54 Drolvarg who spawns in the Warlord room.
+
+Hand in the three items and the note to Forpar and he will give you the head and neck of the lute.
+
+'''Body of the Mystical Lute'''
+
+When he gives you the head and neck of the lute he offers to give you the body of the lute for three items.
+
+The first item is a Large Red Dragon Scale.  This is most commonly dropped by [[Lord Nagafen]], a level 55 dragon in [[Nagafen's Lair]] but can also be found off of [[Zordakalicus Ragefire]], or [[Talendor]] in [[Skyfire Mountains]]. There is also a mob in [[The Hole]] named [[Nortlav the Scalekeeper]].  He is a level 51-55 Erudite that drops the Red Dragon Scale.  He hits for about 190 on average.  He has a nasty lifetap that does around 1500 damage and heals him for around 20%.  He also uses harmtouch, and has a very high magic resist.
+
+Now find the Large White Dragon Scale from [[Lady Vox]] in Permafrost, or [[Gorenaire]] in the [[Dreadlands]].
+
+The last item you can ask a fellow smith to make.  You need 1 metal bits.
+
+Turn these three items in for the body of the lute.
+
+'''Strings of the Mystical Lute'''
+
+Once you get the body, Forpar will offer to give you the strings to the lute as long as you bring him one thing: [[Undead Dragongut Strings]] from [[Trakanon]].
+
+
+This method with "An Undead Bard" implemented later.
+
+Once you get the body, Forpar will offer to give you the strings to the lute as long as you bring him one thing: Trakanon's Guts.  These drop off of a clone of [[Trakanon]].  He is exactly the same except he always drops the guts.  To get him to spawn, go to Trak's lair while he is not spawned.  Give the body of the lute to An Undead Bard which spawns about 18 hours after a normal Trakanon is killed.   He will hand it back to you and then attack you.  He is level 55 monster.  Once he is killed, the clone of Trakanon will spawn.  Trakanon claws for 650, with a sickening melee range, and his breath attack has been known to kill whole groups in minutes.  The regular Trakanon does not drop the guts.  You must force spawn the clone through the undead bard.   Now give Forpar the Trakanon Guts, the Head and Neck of the Lute (One Item) and the Body of the Lute for Forpar's Mystical Lute.
+
+
+'''The End'''
+
+You are nearly there!  Go back to the Dreadlands and find Baldric.  Give him Maestro's Symphony Page 24 Top, Maestro's Symphony Page 24 Bottom, Page 25, Mystical Lute.  He will give you the {{:Singing Short Sword}}!
+
+The effect on this item is a full party buff that adds 55% haste, 30 Strength, amplifies songs by 80% and 30 attack. It lasts for 2 minutes 30 seconds and has a range of about 150 feet. It also works as every instrument.
+
+== Walkthrough with Dialogue ==
+
+'''Visit Baldric Slezaf, located inside a pyramid at +775, +9665, around the portal area of the [[Dreadlands]].'''
+
+You say, 'Hail, Baldric Slezaf'
+
+Baldric Slezaf says 'Hello. Don't you think this would be a wonderful place to perform a symphony?'
+
+You say, 'What symphony?'
+
+Baldric Slezaf says 'It has been my dream for years to perform a symphony that would be remembered for ages to come. I have run into a few minor snags, however.'
+
+You say, 'What snags?'
+
+Baldric Slezaf says 'Several years ago I bought sheets of the most beautiful sounding music from a traveling merchant. He did not know the author of the work as it was simply signed 'the Maestro'. The melody I played from them was wondrous and invoked feelings in me I have never felt before. However, as I reached the middle of the music, I discovered it was missing two pages!'
+
+You say, 'What pages?'
+
+Baldric Slezaf says 'The pages that were missing were pages 24 and 25. I have been searching the world for a spot to hold my symphony and I have finally found it. Without the music and a new lute crafted by the famous instrument maker Forpar Fizfla, I do not think I can pull it off.'
+
+You say, 'Who is Forpar Fizfla?'
+
+Baldric Slezaf says 'Forpar Fizfla is an eccentric instrument maker from Ak'Anon. He makes enchanted instruments that enhance the sound of the music. If I am to perform the concert of all concerts, I must have one of his instruments. I went to Ak'Anon, seeking to purchase an instrument from him but he wouldn't even speak to me.'
+
+You say, 'What music?'
+
+Baldric Slezaf says 'It makes me sad to know that the pages of this music may be spread across the world or destroyed. If you find and bring me the two missing sheets as well as a new lute, I would be happy to repay you in some way.'
+
+You say, 'How will you repay me?'
+
+Baldric Slezaf pulls a fantastic looking sword from its scabbard and says, 'I might be willing to part with this wonderful sword if I were able to perform this symphony. You would also gain recognition at the opening of the symphony.' Baldric sheathes his sword and begins to hum a haunting melody.
+
+'''Baldric Slezaf wants these four items:'''
+
+# First Half of Page 24
+# Second Half of Page 24
+# Page 25
+# Lute made by Forpar Fizfla
+
+'''To get top part page 24 go to [[Western Karana]] and see Konia Swiftfoot, who may be found inside a guard tower at -500, -2400. She gives you a Torch of Misty and starts a race. Take the torch to Fajio Knejo in Misty Thicket (close to the wall guards). He gives you a Torch of Ro. Then take that torch to Andad Filla in South Ro (close to innothule zone) who gives you a Torch of Rathe. Then take that torch to Misty Tekchita in Lake Rathe (by arena zone). This will get you Proof of Speed. Finally, take this back to Konia Swiftfoot and you will get the top part of page 24.'''
+
+You say, 'Hail, Konia Swiftfoot'
+
+Konia Swiftfoot says 'Hello there, ______. I am hosting a relay running contest. Would you like to participate?'
+
+You say, 'I would like to participate.'
+
+Konia Swiftfoot says 'Great! The prize will be this silly old music sheet. Let me know when you are ready and I will pass you the torch and tell you where the first stop is.'
+
+You say, 'I am ready.'
+
+Konia Swiftfoot says 'Here you go. Run with this torch as fast as you can to the misty thicket and hand this torch off to Fajio Knejo. He will tell you where to go from there. Hurry! You do not have much time!'
+
+You have entered The Misty Thicket.
+
+You say, 'Hail, Fajio Knejo'
+
+Fajio Knejo says 'Greetings, ______. I hope you are having a fine day.'
+
+Fajio Knejo says 'Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.'
+
+{{exp}}
+
+You have entered South Desert of Ro.
+
+You say, 'Hail, Andad Filla'
+
+Andad Filla says 'Hello, traveler, please do not bother me right now. I am waiting for someone.'
+Andad Filla says 'You still have a way to go! Seek out Misty Tekcihta near the arena at Lake Rathe. Run like the wind!'
+
+{{exp}}
+
+You have entered Lake Rathetear.
+
+You say, 'Hail, Misty Tekcihta'
+Misty Tekcihta smiles and taps her foot.
+Misty Tekcihta hands you a small ring.
+
+{{exp}}
+
+Konia Swiftfoot says 'Excellent! You are quite a runner. Here is half of the sheet music. I decided to keep the other half because it has this wonderful signature. I think it might be quite valuable. It is probably worth as much as an instrument the great Mahlin used.'
+
+{{exp}}
+
+'''To get the bottom half of you need to give Konia Swiftfoot Mahlin's Mystical Bongos. Talk to Baenar Swiftsong at location -15, +100 in South Karana. He will give you an invoice after you ask "what doll?". Go to Solusek A and give the gnome vendor Marfen the invoice and you will receive a doll. Take the doll to the Estate of Unrest and give the doll to Serra, who is next to the gnomish speulunker. Serra will give you a Ripped Qeynos Bard Guild Flyer. Now take this from Serra back to Braenar, who will give a new note for Maligar. Take the note from Braenar to Maligar. Maligar's Enraged Doppleganger will attack at that point (bring a group). Kill the Doppleganger and loot his head. Take the head back to Braenar and receive "Mahlin's Mystical Bongos". Take the bongos to Konia Swiftfoot in West Karana to get the bottom of Page 24.'''
+
+'''This part of the quest starts in Unrest by talking to the zombie Serra.  This part of the quest is optional, and is for lore purposes only. You can skip to a later part since the only thing from Serra is information.  If you choose to skip the lore parts, please continue to the section where you ask Baenar Swiftsong, What doll?'''
+
+Serra says 'H..h..hello? Can you help me? I lost [something] and I need it so I can go back home. 
+
+You say, 'what something did you lose?' 
+
+Serra says 'I never got my doll for my birthday. Before he could bring it to me I was h..hurt by the bad man. I cannot leave without my doll. Will you please help me? 
+
+You say, 'What doll?' 
+
+Serra claps her hands. 'Oh goody! But... I cannot seem to remember his name. He gave me this note before I...' 
+
+At this point, she hands you a Ripped Qeynos Bards Guild Flyer. 
+
+You say, 'what note?' 
+
+Serra says 'I hope it will help you out. Please find him so I can leave this place? 
+
+Head to Qeynos to the Bard Guild.
+
+You say, 'hail Belious Naliedin' 
+
+Belious Naliedin says 'Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I finally saved up the money and bought this place. I settled in and have been working here ever since. 
+
+You say, 'I was given a ripped Qeynos Bards Guild Flyer.' and You say, 'I seek a famous Bard' both resulted in... 
+
+Belious Naliedin says 'A famous bard, you say? Why you must be seeking none other than the great Baenar Swiftsong! He is not here as you can see. Mayhap you seek an audience with him? He is a busy man and has not the time to speak with everyone who wishes to preoccupy his time with useless prattle! You are many and he is but one! Leave him be, I beg of you, to continue his songwriting in peace.' 
+
+Give him the Flyer and he says the exact same thing as above and you get experience. 
+
+You say, 'I seek an audience with him.' 
+
+Belious Naliedin says 'Ah! In order to gain an audience with him, you must have a letter of introduction from me, otherwise he will not give you the time of day. 'Belious laughs briefly.' 
+
+You say, 'Give me a letter of introduction.' 
+
+Belious Naliedin looks around. 'Well, you want a letter of introduction, eh? I think that fifty shiny platinum pieces sounds like a good introduction to me, my friend.' 
+
+'''Hand him 50pp and he continues: '''
+
+Belious Naliedin says 'Ah! Here is that letter of introduction I was looking for! Baenar likes to frequent a serene fountain in the southern Karanas. He finds the peace there accommodating to his work. He may even sing a tale for you if the mood strikes him. 
+
+'''You receive A Letter of Introduction and some experience gain.'''
+
+'''Return to Baenar Swiftsong in South Karana'''
+
+You say, 'hail Baenar Swiftsong' 
+
+Baenar Swiftsong says 'Please, I am trying to work here. If you bother me I will write a horrible song about you and sing it from the mountain tops! 
+
+'''Hand him the Letter of Introduction: '''
+
+Baenar Swiftsong says 'So, Belious Naliedin sent you, eh?' Baenar shakes his head. 'I hope your letter of introduction did not empty your purse. You have the audience you seek. What is your [request]? A song perhaps? To immortalize your heroic deeds in song? How about an epic battle with a gnoll pup? I'll make you famous.' 
+
+You say, 'I request a song'
+
+Baenar Swiftsong says 'You have no request for me? How odd. Well, then. Perhaps a tale of [history] will do? 
+
+You say, 'tell me some history' 
+
+Baenar Swiftsong strums his lute and clears his throat. 'Here is a tale of the place of torment from which souls good and bad have come to call home upon this earthly [realm].' 
+
+You say, 'What realm?' 
+
+Baenar Swiftsong says 'The place I speak of is the Estate of Unrest. It is a place that the dead roam and the living detest. Garanel Rucksif was his name, a name that no longer came to be . A name that Quellious herself saw fit not to let anyone see, for a cleric loyal to her called the lands home. Open to all, the Fier'Dal, Koada'Dal and even the occasional [gnome]. 
+
+He continues at length about the history of the Estate of Unrest. 
+
+You say, 'what gnome' 
+
+Baenar Swiftsong says 'A mansion built by the cleric with care For he came to spread the word of Quellious to Faydwer. Garanel mad with rage, killed his wife and children three. From his dwarven homelands he now will flee. Upon this place of tranquility he stumbled upon. He tortured and killed the cleric and his kin by morning's dawn Within the sacred chapel walls the bloodshed took place. Eyes wild with rage, madness and blood upon his [face]. 
+
+You say, 'face' 
+
+Baenar Swiftsong says 'Quellious enraged by this act of violence and murder, decreed that this would continue no further! Garanel was struck down, his soul cursed forever more, to haunt the grounds of the defiled estate, guarding its bloody floor. Undead monsters, ghosts and [ghouls] slaughter all those who stray. They say his undead power grows within him to this day. This sad tale, my friends, is the Legend of Unrest. 
+
+You say, 'what ghouls' 
+
+Baenar Swiftsong says 'I've even heard of the ghosts of poor children haunting the estate. Have you ever [seen a child's ghost]? 
+
+You say, 'I have seen a child's ghost.' 
+
+Baenar Swiftsong says 'You have? Did it speak to you? What did it say? Only the essences of those unjustly wronged or the vilest of souls are bound to this realm and sometimes end up in that accursed place. Only that which binds them to this realm may set them free. Curse those who would harm an innocent child! I knew of one such unfortunate child. I was to bring her a [doll] for her birthday but she fell to a thieving cutthroat's sword!' Baenar's eyes fill with tears. 'Pardon me, friends, she was like a daughter to me. I loved her as I would my own! 
+
+You say, 'What doll?'
+
+What’s that you say?  You wish to have the doll I was to give her?  Whatever for?  Bah!  Nevermind me.  I rant like an old woman sometimes.  I should let her memory go but I would stop my heart from beating before I forgot that child.  Here, take this invoice.  I have no further use for it.  Give it to Marfen Binkdirple.
+
+'''You receive [[Solusek Mining Company Invoice]]'''
+
+Go to Sol A.  [[Marfen Binkdirple]] is the same gnome that sells the Tinker’s bag.  He can be found at –304, -1083.
+
+'''Give Marfen the [[Solusek Mining Company Invoice]].'''
+
+Marfen:  Ah!  ‘Bout time ye got yer lazy bones down here!  I was beginnin’ ta worry bout ya.  Thought ye’d never pick the doll up.  Me kin worked and toiled over this thing fer days.  That Baenar was sure exact in every detail.  For a special child, he said.  Must be some child.  He spent all he had and some he didn’t.  Still owes us a show!  Anyway, I heard she passed away some time ago.  Give the lad muh regards.
+
+'''You receive [[Mechanical Doll]].'''
+
+'''Return to Unrest and hand Serra the Mechanical Doll.'''
+
+Serra say 'Oh!  You have the dolly!  Thank you!  Thank you!  Thank you!  I can go home now.  Please give this to my father, Baenar.  He will understand when he gets it.'
+
+'''Serra begins to fade away.'''
+
+Serra:  Bye, bye!
+
+'''You receive a Note for Baenar'''
+
+'''Deliver the note to Baenar Swiftsong.'''
+
+Baenar Swiftsong says 'A note for the child?  How can that be!  How could she know I was her father?  Unless?  Cyrah told her.  Forgive me.  Cyrah was the name of the woman to whom I was betrothed.  Unfortunately her parents forbade her from marrying a lowly bard such as myself.  Her father married her off to a young merchant in Qeynos named Maligar.  She married him only out of respect to her father.  Her heart was truly mine, at least, so she always said.  When Serra was born, I visited them both often.  She was like no other, so innocent and sweet.  In those few years I watched her group up to be more and more like her mother and I saw none of the father in her appearance.  I do not like Maligar, but the least we can do is inform him of his child’s death.  I saw his caravan pass by not more than a day ago headed to Qeynos.'
+
+'''You receive a Note to Maligar.'''
+
+''Maligar is a level 45 Shadowknight who spawns in West Karana at pos 179, neg 10878. He is KoS, and you should sneak or charm him to turn in the note to him.''
+
+'''Give him Note to Maligar'''
+
+Maligar says 'Hmmm.  What’s this?  A note from that silly bard Baenar?  I wasn’t aware that those of his kind could write, much less read.'
+
+Maligar lets out a deep laugh.
+
+Maligar says 'I see you do not share my sense of humor.  Let’s read it shall we?  Oh, no!  She’s dead?  I knew that already, you fool.  It was by my hand she died!  Ooops!  Did I let that slip out?  Silly me.  I guess I will have to kill you now!'
+
+'''At this point Maligar despawns and [[Maligar's Enraged Doppleganger]] spawns.  Kill him and loot [[Maligar's Head]].  Turn Maligar's Head into Baenar Swiftsong in South Karana.'''
+
+Baenar Swiftsong says 'That vile dog!  I knew there was something not right with him, the way he stared at everyone with contempt!  Even his own wife!  I curse him!  I curse him to stay upon the realm and deny him what he most desires!  This is too much!  I cannot play or write this day.  The sadness overwhelms me.  In honor of Serra, the daughter that was denied to me in spirit, I vow never to play this instrument again!  It was her favorite and she listened to me play for hours on end.  Here take it!  Take it out of my sight!  Leave me be with my grief and my loss.'
+
+'''You receive [[Mahlin's Mystical Bongos]].  Deliver the bongos to [[Konia Swiftfoot]] in West Karana.
+
+Konia Swiftfoot says 'Mahlin’s bongos!  Here, take the other half of the sheet music.  I can not really make out what the signature was anyway.'
+
+'''You receive [[Maestro's Symphony Page 24 Bottom]]'''
+
+Baenar Swiftsong says '
+'''To get Page 25 go to South Karana and talk to the wood elf bard named Kelkin Mekia.'''
+
+You say, 'Hail, Kelkim Menkia'
+
+Kelkim Menkia sighs as she looks over her lute. 'My lute was mangled by those damnable gnolls! I have no idea how I'm going to get a new set of strings for it. They were so rare.'
+
+You say, 'Why are they so rare?'
+
+Kelkim Menkia says 'I only use the finest lute strings on my lute. My uncle got them for me from across the world. His name was Zendrik the Wurmslayer. As his name implies, he killed many wurms and drakes. The strings for my lute were all made from the guts of the wurms and drakes he slew.
+
+You say, 'What wurms and drakes?'
+
+Kelkim Menkia says 'The strings were from a chromodrac, a red wurm and a huge onyx drake. It always sounded so wonderful.' Kelkim sighs, looking off to the horizon. As she shakes her lute angrily, she says, 'I'll kill all of you dirty gnolls!'
+
+'''Find these three items and give them to her to receive Page 25:'''
+
+*Chromodrac Gut (dropped by [[Eldrig the Old]], a named chromodrac in [[Skyfire Mountains]])
+*Red Wurm Gut (dropped by Nezekezena, a named wurm in the [[Burning Woods]])
+*Onyx Drake Gut (dropped by [[Blackwing]], an onyx drake in [[Rathe Mountains]])
+
+Kelkim Menkia snatches the gut strings from your hand and immediately begins to string her lute. 'This is wonderful, I will be able to play my lute again soon! Take this old sheet of music I found - I don't think I will have much use for it. My new desire is to bash gnoll heads in with my lute. Safe travels to you, Kenayne.'
+
+{{exp}}
+
+'''Now you need Forpar's Lute. This is rewarded as head, body and strings.'''
+
+First you need to get horn from Ocean of Tears (Alluring Horn from Quag Maelstrom). Take the alluring horn from Ocean of Tears to a half elf bard in Butcherblock, by the docks (Vedico). Take the note she gives you to Forpar. He then gives you a note and a list of items he needs:
+
+# Backbone of an Ancient Fishman - Kedge Backbone from [[Phinigel Autropos]] in [[Kedge Keep]].
+# Amalgam Tentacle - Amygdalan Tendril from [[Plane of Fear]].
+# Petrified Skull of a Lycanthrope - Petrified Werewolf Skull from [[Karnor's Castle]] off a Drolvarg Warlord.
+
+'''Take all 3 items and the note back give to Forpar.'''
+
+Forpar Fizfla says 'Wow! I didn't think a Human like you would be able to gather all of those things.' Forpar rambles around and works with small tools for a good ten minutes before handing you a very fine looking lute head. 'Now, do you want to gather the next pieces for me?'
+
+'''He gives you the Mystical Lute Head.'''
+
+You say, 'What next pieces?'
+
+Forpar Fizfla says 'The next pieces are a little harder to come by than those. To make the body of an instrument that will last ages to come, I need something very special. The scales of a big red dragon and the scales of a big white dragon will make it unbreakable, as well as giving it a unique look. Some metal bits will allow me to hold the body together. Please, if you gather up these things, bring them to me as soon as possible. I have not felt this good in years!'
+
+'''The body requires the following items:'''
+
+# Red Dragon Scales from [[Talendor]], [[Lord Nagafen]], or [[Nortlav the Scalekeeper]].
+# White Dragon Scales from [[Gorenaire]] or [[Lady Vox]].
+# [[Metal Bits]] (regular smithed metal bits). (There's been some confusion because the name of the item is plural, but you really only need one copy of this. Verified in-game.)
+
+Forpar Fizfla says 'Woooooo! You are doing a wonderful job, ______. I wish I could go out and gather these things myself.' Forpar sits back down at his desk and pulls several very strange looking tools out. Eventually he looks up at you and says, 'The body is done! Only one more piece to go!'
+
+Next, gather your raid force and kill [[Trakanon]]. Loot his [[Undead Dragongut Strings]].
+
+
+This mechanism with "An Undead Bard" was not implemented until March 14, 2001 which is Warrens/Fear/Hate on the timeline.
+
+'''Find An Undead Bard in [[Old Sebilis]] at -2085, -705.'''
+
+You say, 'Hail, An Undead Bard'
+
+: An Undead Bard says 'Hail, ______. Are you perchance a minstrel?'
+
+You say, 'I am a minstrel.'
+
+: An Undead Bard says 'I, too, am a bard, or was rather. I have been cursed by that blasted pile of bones who calls itself, Trakanon'
+
+You say, 'Who is Trakanon?'
+
+: An Undead Bard says 'He is the undead dragon who rules this realm. I came on a quest seeking strings for my new instrument.'
+
+You say, 'What instrument?'
+
+: An Undead Bard says 'I sought to create a Magical Lute.'
+
+You say, 'What Magical Lute?'
+
+: An Undead Bard says 'One that would make me the greatest bard in all the lands! Are you on a similar quest?'
+
+You say, 'I am on a similar quest.'
+
+: An Undead Bard says 'Well then, I would ask you a favor for one in return. If I bring that cursed dragon here, will you kill it for me?'
+
+You say, 'I will kill it for you.'
+
+: An Undead Bard says 'Excellent. I have stayed here far too long and I wish to go to my eternal slumber. But before I do so, I ask for one last request'
+
+You say, 'What last request?'
+
+: An Undead Bard says 'Give me the Mystical Lute Body you have. I will return it, don't worry. I only wish to hold an instrument one last time before I leave.'
+
+'''Give it the Mystical Lute Body.'''
+
+: An Undead Bard says 'I feel so powerful once again...a strange feeling is overcoming me!'
+
+'''You get the Mystical Lute Body back. It respawns and attacks. Kill it to spawn the triggered version of Trakanon. Loot the [[Undead Dragongut Strings]] from this triggered version. If the real version is up, it will kill An Undead Bard and you must wait until UDB spawns again.'''
+
+
+'''Once you have all three lute parts, give the following to Forpar to receive the mystical lute: the head, body and gut strings.'''
+
+Forpar Fizfla says 'Goodness! I can hardly contain myself! This will be my greatest creation ever!' Forpar sits down, slides the lute head into place and screws it together. After a few minutes, he begins to string the lute with the gut strings of the poison dragon. A wonderful sound fills the air as he strums the lute once and hands it to you. 'I hope you find a good use for that! I bet you could play it from the mountaintops and the people below would hear you. Thank you, ______, for making my lifelong dream come true!'
+
+{{exp}}
+
+'''Now head back to Baldric Slezaf and give him the following items:'''
+
+# Maestro's Symphony Page 24 Top
+# Maestro's Symphony Page 24 Bottom
+# Maestro's Symphony Page 25
+# Mystical Lute from Forpar
+
+Baldric Slezaf looks shocked as you hand him the pages and the mystical lute. 'I will put on a symphony the likes of which the gods have never seen. Thank you so much, ______. Please take this sword as a token of my gratitude.'
+
+{{exp}}
+
+'''He will reward you with the [[Singing Short Sword]].'''
+
+[[Category:Quests]]
+[[Category:Dreadlands]]
+[[Category:Bard Quests]]

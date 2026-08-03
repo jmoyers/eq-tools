@@ -1,0 +1,87 @@
+{{Classic Era}}
+[[File:npc_shazda_asad.png|thumb|Shazda Asad]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Shazda Asad]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[an Erudin Emissary]]
+|}
+
+== Reward ==
+<ul><li> {{:Shazda Turban}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div>
+
+* {{YouGainExperience}} (0.030%) @ lvl 6
+
+* You have been assigned the task '[[Second Test of Kejaar]]'.
+
+== Checklist == 
+{{CheckboxList}}
+* [[Emissary Head]]
+** Locate and Kill [[an Erudin Emissary]]
+** Return to Shazda Asad
+
+== Walkthrough ==
+
+'''Shazda Asad is located at 398, -281 in Kerra Island. Indifferent faction is sufficient to receive the reward for this quest. You may use charm, or have an enchanter charm Shazda for you (however, the faction hit will be omitted in that case).'''
+
+You say, 'Hail, Shazda Asad'
+
+: Shazda Asad says 'Rrrr..I am Asad, Shazda of the Kerran [Sejah]. It is my duty to ensure the safety of what lands have not been taken from us by the Erudites, and to train my soldiers in the fighting styles of our heritage.'
+
+You say, 'What Sejah?'
+
+: Shazda Asad says 'The soldiers of our sejah are all trained from the time they are weaned from their matriarchs. If you wish to be honored by the sejah you must prove to us your loyalty and devotion to the defense of our lands. In Toxxulia Forest there are Erudite emissaries who constantly attempt to encroach upon our territory. Bring me the head of one such emissary.'
+
+Asad, the Shazda of the Kerran Sejah has given you a direct order. You are to travel to Toxxulia Forest and hunt down an Erudin Emissay. Do not return to the Shazda until you have retrieved the emissary's head. Body not required
+
+=== Quest Stage 1: ===
+* Step - Claim the head of the Erudin Emissary in Toxxulia Forest
+* Task - Claim the head of an Erudin Emissay in Toxxulia <br> 
+
+'''[[an Erudin Emissary]] can be found wandering Toxxulia Forest. Kill them.'''
+
+ You have slain an Erudin Emissary!
+ --You have looted an Emissary Head from an Erudin Emissary's corpse.--
+
+''' Your task 'First Test of Kejaar' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Present the Erudin Emissary's head to Shazda Asad
+* Task - Deliver the Emissary's head directly to Shazda Asad <br> 
+
+ You offered 1 Emissary Head to Shazda Asad.
+
+''' Your task 'First Test of Kejaar' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">Eliminating the Erudin Emissary has improved Shazda Asad's assessment of you, and he is now prepared to assign you a greater challenge.</span>
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.030%) <br>
+You have been given: [[Shazda Turban]] <br>
+You have been assigned the task '[[Second Test of Kejaar]]'.
+
+: Shazda Asad says, 'Excellent work, young ayyar! You have proven your willingness to dispose of the enemies of our tribe, now you must face one of their most murderous sentries! Bring me the head of Sentinel Creot and I shall induct you into our sejah!'
+ 
+ You complete the trade with Shazda Asad.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

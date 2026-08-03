@@ -1,0 +1,195 @@
+'''Note:''' For the older versions of the rewards for these quest (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+== Checklist ==
+Bold items are No Drop, while bold NPC names indicate island bosses.{{CheckboxList}}<ul>
+Test of Body 
+<li>{{:Griffon Talon Necklace}}
+  <ul>
+  <li>1 - {{:Auburn Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Ysgaril Root}} ([[Protector of Sky]])
+  <li> '''3''' - <span style="font-weight: bold">{{:Griffon Talon}}</span> ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Defense 
+<li>{{:Dark Cloak of the Sky}}
+  <ul>
+  <li>2 - {{:Mithril Disc}} ([[an azarack]])
+  <li>3 - {{:Harpy Tongue}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Fine Velvet Cloak}}</span>  ('''[[Keeper of Souls]]''')
+  <li>
+  </ul>
+</ul>
+<ul>
+Test of The Earth 
+<li>{{:Earthshaker's Mantle}}
+  <ul>
+  <li>3 - {{:Gridelin Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Dragon Hide Mantle}} ([[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Spiroc Earth Totem}}</span> ('''[[The Spiroc Lord]]''')
+</ul>
+</ul>
+<ul>
+Test of Thunder 
+<li>{{:Thunderforged Earring}}
+  <ul>
+  <li>4 - {{:Djinni Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>5 - {{:Spiroc Thunder Totem}} ([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]])
+  <li>'''6''' - <span style="font-weight: bold">{{:White Gold Earring}}</span> ('''[[Bazzt Zzzt]]''')
+</ul>
+</ul>
+<ul>
+Test of Blade - Gordon Treecaller
+<li>{{:Arydryidriyorn}}
+  <ul>
+  <li>5 - {{:Emerald Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 - {{:Bitter Honey}} ([[Bazzzazzt]], [[Bizazzzt]])
+  <li>7 - <span style="font-weight: bold">{{:Circlet of Brambles}}</span> ('''[[Sister of the Spire]]''')
+  <li>1.5, 4, 8 {{:Efreeti Long Sword}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+<ul>
+Test of Ranged Attack 
+<li>{{:Windstriker}}
+  <ul>
+  <li>6 - {{:Thickened Nectar}} ([[Bzzazzt]])
+  <li>7 - {{:Sphinx Tallow}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>8 - <span style="font-weight: bold">{{:Shimmering Pearl}}</span> ('''[[Eye of Veeshan]]''')
+  <li>1.5, 4, 8 {{:Efreeti War Bow}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+
+== Quest Start ==
+Talk to the Ranger Spirit in the [[Plane of Sky]].
+
+You say, 'hail Ranger Spirit'
+:''Ranger Spirit says 'Greetings, Xekl . Are you a true servant of the Pine? ''
+You say, 'I am a true servant of the pine'
+:''Ranger Spirit says 'Very well, my friend. In order to reach your true potential you must pass many tests. Relinin Skyrunner and Gordon Treecaller are here to perform these tests. Please choose one of these worthy teachers.''
+
+= Relinin Skyrunner =
+
+You say, 'I choose Relinin Skyrunner'
+:''Ranger Spirit says 'Relinin Skyrunner, you say. True to Tunare is she.  Take this book (Sisters and Life) and read it. When you feel you know it well, return it and Relinin will appear to test you. ''
+:''Ranger Spirit says 'Relinin Skyrunner, I summon thee. ''
+You say, 'hail Relinin Skyrunner'
+:''Relinin Skyrunner says 'Greetings, Xekl . I can only assume the reason for my being summoned is that you wish to take the tests. Would you like to be tested in the body, in defense, in the element of earth or would you like to trade? ''
+You say, 'I would like to trade'
+:''Relinin Skyrunner says 'I am currently interested in trading for a Spiroc Healer's Cloak. I will even trade something of a better value for it.''
+
+== Ranger Test of Body ==
+
+Relinin Skyrunner says 'Very well. You must scour this plane and bring back to me these components: an auburn tessera, a ysgaril root, and a griffon talon. Make haste, and good luck. 
+
+'''Reward:''' {{:Griffon Talon Necklace}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Auburn Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Ysgaril Root]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Griffon Talon]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+== Ranger Test of Defense ==
+
+Relinin Skyrunner says 'Defense it is. You must prove yourself worthy enough for the spiroc spirits to guard you. Bring back to me a mithril disc, a harpy tongue, and a fine velvet cloak. Good luck to you. 
+
+'''Reward:''' {{:Dark Cloak of the Sky}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Mithril Disc]] || [[an azarack]] || Island 2
+|-
+| [[Harpy Tongue]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Fine Velvet Cloak]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+== Ranger Test of The Earth ==
+
+Relinin Skyrunner says 'Elemental earth you say? When adeptly controlled, the elements can be among our best allies. Retrieve a gridelin globe, a dragon hide mantle, and a spiroc earth totem. Only with these items can you master the element of earth. 
+
+'''Reward:''' {{:Earthshaker's Mantle}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Gridelin Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Dragon Hide Mantle]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Spiroc Earth Totem]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+= Gordon Treecaller =
+
+You say, 'I choose Gordon Treecaller'
+:''Ranger Spirit says 'Ahhh, Gordon Treecaller.  Many say he is the finest swordsman ever. Read of his tale and return the book (The Mother) when you are finished. ''
+:''Ranger Spirit says 'Gordon Treecaller, I summon thee. ''
+:''Gordon Treecaller says 'I, Gordon Treecaller, bid you good day. ''
+:''Ranger Spirit says 'Good luck, my friend. ''
+You say, 'hail Gordon Treecaller'
+:''Gordon Treecaller says 'Hello, Xekl , I can only hope that my disturbance was necessary. Ahh, you seem to be decently adept with a blade. Would you like to be tested in the element of thunder, the blade, or the art of ranged attack?  Or have you already been tested and are looking for things to trade? ''
+You say, 'I am looking for things to trade'
+:''Gordon Treecaller says 'I am searching for the sword called Yannikil.  It seems when I gave this weapon out the blade did not perform as well in combat as it should.  I wish to fix this embarrassment and replace the blade with one tested and proven by my own hands. ''
+
+== Ranger Test of Thunder ==
+
+Gordon Treecaller says 'One of my greatest allies indeed. Thunder can be very powerful if used properly. Bring me a djinni statuette, a spiroc thunder totem, and a white gold earring. Then you will know the true power of nature. 
+
+'''Reward:''' {{:Thunderforged Earring}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Djinni Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Spiroc Thunder Totem]] || [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|-
+| [[White Gold Earring]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+== Ranger Test of Blade ==
+
+Gordon Treecaller says 'Very good choice, my blade is my best friend and yours will be as well if you can complete this task. Retrieve an efreeti long sword, an emerald spiroc feather, some bitter honey, and a circlet of brambles. Be careful with the honey - if it is tainted, the blade will not come to life. 
+
+'''Reward:''' {{:Arydryidriyorn}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Emerald Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Bitter Honey]] || [[Bazzzazzt]], [[Bizazzzt]] || Island 6
+|-
+| [[Circlet of Brambles]] || [[Sister of the Spire]] || Island 7
+|-
+| [[Efreeti Long Sword]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+== Ranger Test of Ranged Attack ==
+
+Gordon Treecaller says 'Many of the fools on Norrath don't realize how powerful a good bow can be. Many dread wolves have met their fate from my bow and you can have the same power if you can bring me back these items. Efreeti war bow, thickened nectar, sphinx tallow, and a shimmering pearl. 
+
+'''Reward:''' {{:Windstriker}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Thickened Nectar]] || [[Bzzazzt]] || Island 6
+|-
+| [[Sphinx Tallow]] || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Shimmering Pearl]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti War Bow]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Ranger Quests]]

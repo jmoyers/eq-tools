@@ -1,0 +1,102 @@
+{{Temple Era}}{{expand}}
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Sultin]]
+|-
+! ''' Minimum Level: '''
+| 25+
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[Radiant]], [[a shadowed man]], [[Tarn Visilin]] , [[Tizina]]
+|}
+
+== Rewards ==
+
+{{Gear Set
+|Incandescent Mask
+|Incandescent Gloves
+|Incandescent Wand
+}}
+
+== Walkthrough ==
+[[File:npc_sultin.png|thumb|right|Sultin]]
+Incandescent gear is Enchanter specific quested items from The Temple of Solusek Ro. Talk to Sultin.
+
+=== Incandescent Gloves ===
+
+Sultin needs to sew together four other sets of gloves to make these.{{CheckboxList}}
+* Indifferent or higher faction with [[Temple Of Sol Ro]].
+* [[Glowing Gloves]] are dropped randomly off [[a shadowed man]].
+* [[Radiant Gloves]] can be found on [[Radiant]] in [[Cazic Thule]].
+* [[Enchanted Gloves]] are obtained by bringing [[Tizina]] in [[Lavastorm Mountains]] 50gp.
+* [[Gleaming Gloves]] are obtained by giving [[Tarn Visilin]] in [[Highpass Keep]] a [[bloodstone]].
+{{End}}
+
+'''NOTE: Successfully did this turn in at indifferent faction as of 2/12/2020'''
+
+'''NOTE: Sultin ate my materials at indifferent faction as of 09/03/2020, make sure to cast a faction spell to be safe'''
+
+<div class='facblock'>
+* Your faction with [[Temple of Solusek Ro]] got better.
+* Your faction with [[Shadowed Men]] got worse.
+</div>
+
+<!-- In the Incandescent Gloves checklist section, the links are broken/unresponsive for: a shadowed man, Radiant, Cazic Thule, Tiznia, Tarn Visilin, bloodstone  -->
+
+=== Incandescent Mask ===
+'''NOTE: You need good faction for this. Amiable will work but he will eat your items if he's indifferent or below! Cast a faction increasing spell before turning in!'''
+
+Sultin needs four items:
+
+* [[Glowing Mask]] (found on the [[a skeleton monk]] or [[A Froglok Scryer]] in [[Upper Guk]]). '''NOTE: Camping the Skeleton Monk is a better bet, as it pops every time, whereas the Scryer has a PH and is a rare pop.  Also note that the mob is a skeletON monk, not skeletal. He's in the same hidden room as Tempus'''
+* all three [[Rune of Fortune]]:
+** [[Rune of Fortune]] (top) can be found on the Dark Elf [[Enynti]] in the Chasm below [[Mistmoore]].
+** The other two can each be traded for 50 golden coins each - one from [[Mizr N`Mar]] [[Rune of Fortune]] (bottom) in the [[Neriak|Neriak City Library]] and the other from [[Madame Serena]] [[Rune of Fortune]] (middle) in [[Qeynos|South Qeynos]] behind the Mermaid's Lure near the dock. ''This is a gold turn-in, not a vendor purchase.''
+
+<div class='facblock'>
+* Your faction with [[Temple of Solusek Ro]] got better.
+* Your faction with [[Shadowed Men]] got worse.
+</div>
+
+Note: Trading 50gp for the rune from Mizr N`Mar increases your faction with beta neutral, so this is an easy, but costly, way to raise this faction.
+
+Note: Madame Serena - As a dark elf your illusion and benevolence may still showed her ready to attack. You can charm her and turn in if you run into this issue.
+
+'''NOTE: This quest is MQ-able.  53 Druid with amiable (about 50 shadowmen kills) faction turned in Glowing Mask, Enynti's rune, and Serena's rune.  12 Enchanter turned in Mizr's rune to get the Mask using Alliance.'''
+
+=== Incandescent Wand ===
+
+Sultin needs:
+
+* [[Pouch of Silver Dust]] from the [[a dusty werebat]] in [[The Estate of Unrest]]
+* [[Silver Wand]] from the [[a silvered guard]] in [[Cazic Thule]]
+
+He asks that you get the wand enchanted before you bring it to him. Both of the components for this quest are no drop. Once you find the Silver Wand, take it to [[Ezmirella]] in the gypsy camp in [[Northern Karana]]. Hand her the Silver Wand and 50 gold coins. She will return a [[Blessed Silver Wand]] and instruct you to seek out [[Raine Beteria]] in the [[Erudin]] Library. Hand Raine the [[Blessed Silver Wand]] and 50 gold coins to receive the [[Glowing Silver Wand]] and the following positive faction adjustments:
+
+<div class='facblock'>
+* Your faction with [[Merchants of Erudin]] gets better.
+* Your faction with [[High Council of Erudin]] gets better.
+* Your faction with [[High Guard of Erudin]] gets better.
+</div>
+
+(WARNING! Turn in [[Glowing Silver Wand]], not [[Silver Wand]])
+You must have a good faction for this, so you may need to use benevolence. Take the [[Glowing Silver Wand]] and Pouch of Silver Dust back to Sultin. Hand him both and he will give you the Incandescent Wand.
+
+<div class='facblock'>
+* Your faction with [[Temple of Solusek Ro]] got better.
+* Your faction with [[Shadowed Men]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Enchanter Quests]]

@@ -1,0 +1,42 @@
+{{Classic Era}}
+{{Unsolved}}
+[[File:npc_blixkin_entopop.png|frame|Blixkin Entopop]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Misty Thicket]]
+|-
+! ''' Quest Giver: '''
+| [[Blixkin Entopop]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Southern Desert of Ro]]
+|-
+! ''' Related NPCs: '''
+| [[Terrorantula]]
+|}
+
+This looks to be a copy/paste page from Allakhazam. At no point has Blixkin ever mentioned the Terrorantula. 
+
+== Reward ==
+
+* Unknown (Unsolved)
+
+== Walkthrough ==
+
+I'm not sure if this leads anywhere (it is probably a broken quest), but [[Blixkin Entopop]] mentions a super bug by the name of [[Terrorantula]] and asks if you have heard of it.
+
+This particular spider can be found in South Ro, is a pretty high level, and is known to drop various body parts, particularly legs, when killed. As Blixkin collects bug parts, it may be that he will reward you if you give him these.  However, I have been told of one person who tried to give it to him and got nothing in return.  There is probably more to this. 
+
+I also handed him the legs off Terrorantula with no dialog or acknowledgement aside from eating them.
+
+''Need all dialogues, /loc and exact in-game names of quest mobs, faction hits if any, quest rewards if any, information required to finish quest.''
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:Misty Thicket]]

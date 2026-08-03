@@ -1,0 +1,407 @@
+{{Epics Era}}
+
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Nektulos Forest]]
+|-
+! ''' Quest Giver: '''
+| Venenzi Oberzendi
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li> {{:Twisted Bone Earring}}
+</li><li> {{:Apprentice Ring}}
+</li><li> {{:Scythe of the Shadowed Soul}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+=== Symbol of the Apprentice ===
+* (optional) Hail [[Venenzi Oberzendi]] in Nektulos Forest
+* (optional) Hail [[Kazen Fecae]] in Lake Rathetear
+* Kill [[Sir Edwin Motte]] and loot his Head
+:* Give the Head to Kazen Fecae for the Symbol of the Apprentice
+
+=== Symbol of the Serpent ===
+* Give the Symbol to Venenzi Oberzendi in Nektulos Forest for the Twisted Symbol of the Apprentice
+* Kill [[Najena (NPC)]] and loot the [[Flowing Black Robe]]
+:* Give the Flowing Black Robe to Venenzi for [[Rolling Stone Moss]]
+* Head to Lake Rathetear, Give the Rolling Stone Moss and the Twisted Symbol of the Apprentice to [[Emkel Kabae]].
+:* Receive Symbol of the Serpent
+
+=== Symbol of Testing ===
+* Hail [[Ssessthrass]] in [[Swamp of No Hope]] and give him the Symbol of the Serpent for the [[Scaled Symbol of the Serpent]]
+* Kill [[Grand Herbalist Mak`ha]]/[[Royal Sarnak Herbalist]] in [[Chardok]] and loot the [[Manisi Herb]]
+:* Give the Manisi Herb and the Scaled Symbol of the Serpent to Ssessthrass for a Refined Mainsi Herb
+:* Give the Refined Mainsi Herb to [[Emkel Kabae]] for the Symbol of Testing
+
+=== Symbol of Insanity ===
+* OPTIONAL: Give the Symbol of Testing to [[Kazen Fecae]]
+:* OR Kill [[Kazen Fecae]] (see Kazen's page for more info on the fight)
+* Go to the small inlet east of Emkel and kill [[a bone golem]]
+* Kill [[a failed apprentice]]
+* Kill [[A tortured soul]] and loot the Symbol of Insanity
+
+=== Gzallk in a Box ===
+* Give the Symbol of Insanity to [[Drendico Metalbones]] in [[Timorous Deep]] and receive the Journal
+* Speak to [[Jzil GSix]] in Plane of Sky
+* Kill [[An azarack]]'s and other second isle monsters for the [[Silver Disc]]
+* Kill [[A gorgalask]] and other third isle monsters for the [[Spiroc Feathers]]
+* Kill [[Keeper of Souls]] for the [[Black Silk Cape]]
+:* Give the items to [[Jzil GSix]] for the [[Cloak of Spiroc Feathers]]
+* Kill Mini-Bosses <span class='grayout'>formerly [[Innoruuk (God)]]</span> from Plane of Hate for the [[Eye of Innoruuk]]
+* Kill [[Cazic Thule (God)]] or the golems from Plane of Fear for the [[Slime Blood of Cazic Thule]]
+:* Give the [[Cloak of Spiroc Feathers]], [[Eye of Innoruuk]], [[Slime Blood of Cazic Thule]], and Journal to [[Drendico Metalbones]] and receive the Prepared Regents Box
+:* Give the Prepared Regents Box to Kazen for the Tome of Instruction
+:* Give the Tome of Instruction to [[Gkzzallk]] for [[Gkzzallk in a Box]] -- '''See the note below. Do not do this step on someone else's (or your own Guild's) Sky slot without contacting their officers first. This will despawn the island 1 boss AND prevent them from raiding normally until respawn.'''
+
+=== Scythe of the Shadowed Soul ===
+* Give [[Gkzzallk in a Box]] to [[Kazen Fecae]] for [[Scythe of the Shadowed Soul]]
+
+{{End}}
+
+== Short Walkthrough ==
+
+'''The Beginning'''
+
+Go to [[Lake Rathetear]] and find Kazen Facae at location 340 -1600.
+
+Say, 'I wish to study the dark arts'
+
+: Kazen Fecae looks you up and down, his eyes glowing with a soft red light. After a moment he begins to speak though his lips do not move. 'You wish to study under me? Perhaps, if you prove yourself to follow the twisted path. If you prove to be as coldhearted as I then I will let you become my servant.'
+
+Ask, 'how can I prove myself'
+
+: Kazen Fecae says 'The wandering 'knight' Sir Edwin Motte recently slew one of my lesser servants. This foolish knave travels from town to town pretending to be 'good.' Separate his head from his body and return it to me so I may work my magics upon it. This fool will become another plaything for me, even in death.
+
+'''Symbol of the Apprentice'''
+
+Sir Edwin Motte is a level 33 paladin. He is found in 4 places throughout Norrath. The first place is at the Docks in East Freeport. He spawns fairly frequently in the inn. He is easiest to catch here. He is part of a rotation with Tumpy, Groflah, and a barbarian in leather. Just kill these guys if they are there and wait for Edwin to spawn. Once he has spawned, kill him too. He is only level 33 and should be easy to dispose of.
+
+Bring the head back to Kazen for the Symbol of the Apprentice.
+
+: Kazen Fecae says 'Excellent!' You watch Kazen hold the head by the hair and begin to cast a spell. A flash of darkness centers around the head and the eyes of the dead knight open, a terrible scream emanating from its lips. 'This poor fool here - I think I will keep him in my bag from now on. You have done well, my new apprentice. Take this symbol and know that you can do other tasks to advance within my apprentice ranks.'
+
+Ask, 'How can I advance?'
+
+: Kazen Fecae says 'I share great secrets with my more powerful servants who show me they are willing to serve without question. Tell my servant the name of any symbol he gives you and he will instruct you. If I give you a symbol, speak its name to me so I may instruct you.
+
+You say, 'What about a symbol of the apprentice?'
+
+: Kazen Fecae says 'You have a long way to go before I teach you the true secrets of life and death. Visit Venenzi Oberendi in the Nektulos forest and show her the symbol. She is collecting reagents for one of my experiments and is taking far too long. I do not wish her dead, yet. I simply need the reagents soon. Retrieve the reagents and give them to my assistant Emkel Kabae. I do not wish to handle them myself.
+
+'''The Task'''
+
+Venenzi Oberzendi is in Nektulos Forest at location -1000, -700. Give her the Symbol of the Apprentice.
+
+: Venenzi Oberzendi says 'I see you serve my master as well now. I assume you are here to take the reagents from me which I have gathered for him? I don't know if I like the idea of you gaining the credit for my hard work here. I might consider giving you these reagents, if only you do a small [task] for me.
+
+Ask, 'What task?'
+
+: Venenzi Oberzendi looks down at her robes and back at you. 'There is a certain dark elf magician who has decided to wear the same fashion as I have on several occasions. I do not wish to attend another social gathering in Neriak and look exactly the same as another woman. Slay her and bring me her robe and I will give you my hard earned reagents.
+
+You need to kill Najena in her dungeon to acquire the FBR. It is a fairly common drop. Alternatively you can try to simple buy one from the auction zone on your server. Take a Flowing Black Robe back to Venenzi for some moss.
+
+'''Emkel'''
+
+Go back to Lake Rathe and find Emkel, Fazen's Apprentice. He is by the stone skeleton tower. Give him the Twisted Symbol of the Apprentice and the moss you got from Venenzi for the Symbol of the Serpent.
+
+Ask, 'what about the twisted symbol of the apprentice'
+
+: Emkel Kabae says 'Very good, Seorn , you have done as the master asked yet again, take this as a reward.' Emkel reaches into his robes and pulls out a small symbol. He holds it out and the tiny symbol floats to your hand.
+
+Ask, 'What is the symbol of the serpent'
+
+: Emkel Kabae says 'There are more reagents to be gathered. The time draws near for our master's ascension. Travel to the lands of Kunark and seek out Ssessthrass. He is a very wise Iksar herbalist helping me in my endeavor to please Master Kazen. Be careful not to insult his speech, or you may end up dead before you serve your purpose to the master. Be sure to show him the symbol as proof or he may consider you dinner.
+
+'''Ssessthrass'''
+
+You will need to take this Symbol to Ssessthrass, a named iksar in Swamp of No Hope. He is at location 3800, 1600 which is in a house in the pass to go to Field of Bone. 
+
+Give him the Symbol of the Serpent.
+
+: Ssessthrass says 'Sssso, Emkel ssssent you to retrieve the manisi herb? I do not have the herb. The ssssarnak guard the herb. Apparently it is ssssacred to them. Only memberssss of their royal family are allowed to partake of it. They live deep in Chardok. They are hoarding what little of the precious herb there is. If you have an army, perhapssss you can bring me the herb and I can prepare it for Emkel. Bring back this ssssymbol as well.
+
+He will give you {{:Scaled Symbol of the Serpent}}.
+
+'''Manisi Herb'''
+
+Next, head to Chardok with 1-2 groups of level 54+. The herb you need drops from Grand Herbalist Mak'ha, located in the Herb House in the mines of Chardok. The Herb House is located North of the Chardok Bank, behind a waterfall and small stream. Alternately, it can be reached from the Bridge Keeper or the 'Ledge path' as you descend into the mines.
+
+'A Dizok Herbalist' is the placeholder for the Grand Herbalist, and always spawns in the Herb House, guarded by many Chokidai and Apprentice Herbalists. The Grand Herbalist does not drop the Mansi Herb every time. It's his uncommon, possibly rare, drop.
+
+Go back to Ssessthrass and give him the Manisi Herb and the Scaled Symbol of the Serpent for your Refined Manisi herb. Now go back to Emkel and give him the Refined Manisi Herb. You will get the Symbol of Testing. 
+
+The Herb can be MQ'd.
+
+Take the Symbol of Testing and give it to Kazen. Immediately after, three mobs will spawn close by to the east of Emkel on a little inlet. The three mobs are Bone Golem, Failed Apprentice, and Tormented Spirit. The Bone Golem and the Tormented Spirit were both level 55 and the Failed Apprentice was 48. The three mobs spawn one after another right after the previous one dies (in the order listed above). The Tormented Spirit drops the Symbol of Insanity.
+
+Loot the Symbol of Insanity and take it to Drendico Metalbones in Timorous Deep. He is at the docks that take you to the Overthere. If you turn right from the docks and climb onto a stoney hill, you will see this little gnome wandering around 6485, 3829. In return for the Symbol he will give you his journal and asks you to return to him, Eye of Innoruuk, Blood of Cazic-Thule, and Cloak of Spiroc Feathers.
+
+'''Reagents'''
+
+To get the [[Cloak of Spiroc Feathers]] you will need to speak with [[Jzil GSix]] in the Plane of Sky Quest Room. He asks for you to bring him a Silver Disc, Spiroc Feathers, and a Black Silk Cape. The Silver Disc is most commonly dropped off of Azeracks on the second isle. The Spiroc Feathers are dropped from the Watchful Guardian on the 3rd Isle. They are level 53-55. The final item, Black Silk Cape, is dropped by the boss of the fourth island, [[Keeper of Souls]]. He is a level 60 mob that death touches every 30 seconds. He can quad hit for 400 which is a real nuisance. Bring along many of your friends to kill him. The cape frequently. Finally, take the three items to Jzil and he will give you the Cloak of Spiroc Feathers.
+
+The {{:Eye of Innoruuk}} drops from  <span class='grayout'>[[Innoruuk (God)]]</span> minibosses in [[Plane of Hate]], like [[Lord of Ire]], [[Lord of Loathing]], [[Master of Spite]], etc. 
+
+The [[Slime Blood of Cazic Thule]] is dropped off of <span class='grayout'>[[Cazic Thule (God)]]</span> one of the golems [[Fright]], [[Dread]], or [[Terror]] in [[Plane of Fear]]. They are level 60 and said to be the second hardest creatures in Plane of Fear.
+
+Take all three items plus the journal back to Drendico. He will give you a Prepared Reagents Box.
+
+'''The End'''
+
+Go back to Kazen and give him the Prepared Reagents Box for Tome of Instruction. Next you have to get Gkzzallk to spawn on the Gorgalosk Isle. Do this by giving a Thunder Spirit Princess 10 gold pieces and then go to the 3rd island. '''THIS WILL DESPAWN THE THUNDER SPIRIT PRINCESS AND PREVENT A RAID ON ISLAND 1 FROM SPAWNING SIRRAN AND GETTING ISLAND 1.5 or 2 KEYS (you'll have to buy them from the key master for 260 or 512 each).''' Give the Tome of Instruction to Gkzzallk in the windmill on Island 3. He will give you Gkzzallk in a Bottle.
+
+
+Unlike Inte Akera for the paladin epic, Gkzzallk does not appear to despawn until you turn in the [[Tome of Instruction]] or he is killed. I noticed someone spawned him yesterday around 1pm PST and he's still up as of 6pm the following day. While this means you don't have to rush to trigger the spawn and get to island 3 in five minutes like paladins, be mindful of other guilds who might be heading up to Sky that night and don't despawn Princess during someone else's time slot. You already spent, at the very least, 150k on that [[Slime Blood of Cazic Thule]] anyways, what's another few thousand plat on Island 2 keys for your raid, right?
+
+The princess respawns at 6 hours after killed/despawned.
+
+Take the {{:Gkzzallk in a Box}} back to Kazen.
+
+Congratulations on your {{:Scythe of the Shadowed Soul}}!
+
+== Long Walkthrough with Dialogue ==
+
+''The quest starts in [[Nektulos Forest]] where you must find Venenzi Oberzendi. She is at location -1140, -260 post-post-revamp.'' 
+
+You say, 'Hail, Venenzi Oberzendi' 
+
+: Venenzi Oberzendi says 'What is it you want! Can't you see I am gathering reagents for my [master]? If I don't get them for him quickly he might punish me.' 
+
+You say, 'Who is your master?' 
+
+: Venenzi Oberzendi says 'You do not know of my teacher? The great Kazen Fe'cae! I am one of his illustrious apprentices! If you fancy yourself a necromancer, travel to Lake Rathetear and tell Kazen you wish to study the dark arts.' 
+
+You say, 'What reagents?' 
+
+: Venenzi Oberzendi says 'My master is working on some great project. He's always busy studying an old text he found and murmuring something about following in the footsteps of Miragul.' 
+
+''Her Master, Kazen Facae, is at location +340, -1600 in [[Lake Rathetear]].'' 
+
+You say, 'Hail, Kazen Fecae' 
+
+: Kazen Fecae 's eyes seem to glow as he turns to you and says, 'Leave me be if you have no reason to be here, mortal!' 
+
+You say, 'I wish to study the dark arts.' 
+
+: Kazen Fecae looks you up and down, his eyes glowing with a soft red light. After a moment he begins to speak though his lips do not move. 'You wish to study under me? Perhaps, if you prove yourself to follow the twisted path. If you prove to be as coldhearted as I then I will let you become my servant.' 
+
+You say, 'How can I prove myself?' 
+
+: Kazen Fecae says 'The wandering 'knight' Sir Edwin Motte recently slew one of my lesser servants. This foolish knave travels from town to town pretending to be 'good.' Separate his head from his body and return it to me so I may work my magics upon it. This fool will become another plaything for me, even in death.' 
+
+''Sir Edwin Motte is a 33rd level Paladin. He is found in four places throughout Norrath. The easiest place to find him is at the Docks in East Freeport. He spawns fairly frequently in the inn. Once he has spawned, kill him and loot his head. Bring the head back to Kazen for the Symbol of the Apprentice.'' 
+
+: Kazen Fecae says 'Excellent!' You watch Kazen hold the head by the hair and begin to cast a spell. A flash of darkness centers around the head and the eyes of the dead knight open, a terrible scream emanating from its lips. 'This poor fool here - I think I will keep him in my bag from now on. You have done well, my new apprentice. Take this symbol and know that you can do other tasks to advance within my apprentice ranks.' 
+
+You say, 'How can I advance?' 
+
+: Kazen Fecae says 'I share great secrets with my more powerful servants who show me they are willing to serve without question. Tell my servant the name of any symbol he gives you and he will instruct you. If I give you a symbol, speak its name to me so I may instruct you.' 
+
+You say, 'What about a symbol of the apprentice?' 
+
+: Kazen Fecae says 'You have a long way to go before I teach you the true secrets of life and death. Visit Venenzi Oberendi in the Nektulos forest and show her the symbol. She is collecting reagents for one of my experiments and is taking far too long. I do not wish her dead, yet. I simply need the reagents soon. Retrieve the reagents and give them to my assistant Emkel Kabae. I do not wish to handle them myself.' 
+
+''Take the symbol to Venenzi and she will give you the Twisted Symbol of the Apprentice.'' 
+
+: Venenzi Oberzendi says 'I see you serve my master as well now. I assume you are here to take the reagents from me which I have gathered for him? I don't know if I like the idea of you gaining the credit for my hard work here. I might consider giving you these reagents, if only you do a small [task] for me.' 
+
+You say, 'What task?' 
+
+: Venenzi Oberzendi looks down at her robes and back at you. 'There is a certain dark elf magician who has decided to wear the same fashion as I have on several occasions. I do not wish to attend another social gathering in Neriak and look exactly the same as another woman. Slay her and bring me her robe and I will give you my hard earned reagents.' 
+
+''The robe she speaks of is a [[Flowing Black Robe]]. This is dropped in [[Najena]] by - you guessed it - Najena. It would surely be quicker to visit EC Tunnel and buy one off a player. Regardless of how you obtain it, head back to Venenzi and hand it over.''
+
+: Venenzi Oberzendi says 'Thank you. I did not think you would track down Najena and slay her. I think that I am going to return to my old life in Neriak. I am sick of the way Kazen has been treating me. He never seems to teach me anything worthwhile. Don't forget to give his lapdog that symbol with the reagents. I'm sure he will give you a new one.' 
+
+''You will receive a Rolling Stone Moss. Now you will need to go back to Lake Rathetear and find Emkel, Fazen's Apprentice. He is by the stone skeleton tower.'' 
+
+You say, 'Hail, Emkel Kabae' 
+
+: Emkel Kabae says 'I am Emkel Kabae, first apprentice to Kazen. If you have a symbol, tell me its name.' 
+
+''Give him the Twisted Symbol of the Apprentice and the moss for the Symbol of the Serpent.'' 
+
+: Emkel Kabae says 'Very good, you have done as the master asked yet again, take this as a reward.' Emkel reaches into his robes and pulls out a small symbol. He holds it out and the tiny symbol floats to your hand. 
+
+You say, 'What is the symbol of the serpent?' 
+
+: Emkel Kabae says 'There are more reagents to be gathered. The time draws near for our master's ascension. Travel to the lands of Kunark and seek out Ssessthrass. He is a very wise Iksar herbalist helping me in my endeavor to please Master Kazen. Be careful not to insult his speech, or you may end up dead before you serve your purpose to the master. Be sure to show him the symbol as proof or he may consider you dinner.' 
+
+''You will need to take this Symbol to Ssessthrass, a named Iksar in the [[Swamp of No Hope]]. He is at location +3800, +1600, which is in a house in the pass to go to Field of Bone. He will give you Scaled Symbol of the Serpent.'' 
+
+You say, 'Hail, Ssessthrass' 
+
+: Ssessthrass says 'I do not wisssh to be bothered.' 
+
+''Give him the Symbol of the Serpent''. 
+
+: Ssessthrass says 'Sssso, Emkel ssssent you to retrieve the manisi herb? I do not have the herb. The ssssarnak guard the herb. Apparently it is ssssacred to them. Only memberssss of their royal family are allowed to partake of it. They live deep in Chardok. They are hoarding what little of the precious herb there is. If you have an army, perhapssss you can bring me the herb and I can prepare it for Emkel. Bring back this ssssymbol as well.' 
+
+''Next, head to [[Chardok]] and find the Herbalist. His spawn point is at the green house near the bank (first right after you cross the bridge). He doesn't always drop the Manisi Herb, which is what you need from him so you might have to try this more than once. Return to Ssessthrass and give him the Manisi Herb and the Scaled Symbol of the Serpent.'' 
+
+: Ssessthrass looks at you and bows. 'You are truly a fearsome sssshadow weaver! Or you have powerful alliessss,' he adds a moment later. Ssessthrass pulls the manisi herb apart and hands a piece to you. 'Emkel will be most pleased with us both!' 
+{{YouGainExperience}}
+
+''You receive a Refined Manisi Herb. Head back to Emkel and give him the Refined Manisi Herb.'' 
+
+: Emkel Kabae says 'You are truly worthy of studying with our master. Bear this new symbol and contemplate what you wish from life before you let go of it. Ask the master about the symbol of testing and he will explain all. I too was tested by him.' Emkel pulls up his sleeve to show a grievous scar from his wrist to his shoulder.' 
+You gain experience!! 
+
+''You receive a Symbol of Testing.'' 
+
+You say, 'Tell me about the symbol of testing' 
+
+: Emkel Kabae says 'You must ask the master about the symbol of testing. Do not hand the symbol to him for he may interpret that as a breach of conduct.' 
+
+''Return to Kazen and tell him about the symbol:'' 
+
+You say, 'I have a symbol of testing' 
+
+: Kazen Fecae says 'Show me that you can overcome larger obstacles and manipulate servants. Gather a force for of mercenaries if you like, or so-called friends, if you desire, and prepare for battle, my promising young student. Return to me with the symbol of testing when you are prepared for battle with my creations. Have no fear, I will not slay you myself. If you do live, tell me the name of the symbol you receive.'
+
+'''Note: Killing Kazen Fecae (also) triggers the Bone Golem chain.'''
+
+''Hand him the Symbol of Testing.'' 
+
+: Kazen Fecae says 'As you hand Kazen the symbol, you hear him speak directly into your mind. 'Good luck, my student!' Kazen finishes an incantation and suddenly hands begin to reach up from the ground, as if they were pulling themselves from the grave all around you. A piercing scream fills the air as the creatures advance upon you!' 
+
+: a bone golem says 'Grrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrraaaaaaaaaaaaaaaaaaaaaaaaaaaaah!' 
+
+''A bone golem spawns to the east of Emkel on a little inlet. Upon its death, a failed apprentice spawns and attacks. Upon its death, a tortured soul spawns and attacks as well. You can kill these with two groups of 50+. With a few clerics and tanks, they shouldn't cause trouble. They hit for ~120 and are not overly difficult.'' 
+
+'''NOTE: In live EQ it was possible to kill Emkel and then Kazen which would trigger the Golem fight sequence allowing you to skip all the steps up to this point. This was a possibility until 01-28-2003 on live.'''
+
+''Loot a Symbol of Insanity from a tortured soul.'' 
+
+''Upon asking Kazen about the symbol:'' 
+
+You say, 'What do I do with the symbol of insanity?' 
+
+: Kazen Fecae says 'It is time for you to meet my partner, so to speak. Drendico Metalbones is his name and I assure you he is quite mad. His mind has been rended by fright, dread, and terror in his trips to the planes and his heart is full of hatred now. He has a tome which I wish you to use. Show him your symbol slowly and listen to his rantings well, they hide great knowledge.'' 
+
+''Take the symbol to Drendico Metalbones in [[Timorous Deep]] (he is located near the dock that takes you to the Overthere). If you turn right from the docks and climb onto a stoney hill, you will see this little gnome wandering around +6485, +3829.'' 
+
+You say, 'Hail, Drendico Metalbones' 
+
+: Drendico Metalbones says 'The hills ears keep spinning the wonders of wells. Twisting twisting fly in water scar hot horses. Teach me! Bring floating water islands of doom!' 
+
+''Give him the symbol.'' 
+
+: Drendico Metalbones says 'Seek, search, turn, twist! Kazen hopes to death master truly! Read out, read in between! Talk to the pretty clouds.' Drendico turns his back to you and throws a book over his shoulder. 'Bring back book! Bring back reagents three!!' He shouts as he mumbles some more gibberish.' 
+
+'''You receive his journal. It reads (backwards): '''
+
+ must find for master kazen 
+ feathered spiroc cloak 
+ eye innoruuk of 
+ slime of blood thule cazic
+
+ grocery list 
+ milk 
+ bread 
+ soap 
+ fippy snacks
+
+ I am quite mad you know
+
+''You'll need to pick up a [[Cloak of Spiroc Feathers]], the [[Eye of Innoruuk]], and the [[Slime Blood of Cazic Thule]].'' 
+
+''The Eye of Innoruuk drops from Innoruuk himself <span class='grayout'>(also mini-bosses in the Plane of Hate, post-revamp only)</span>.'' 
+
+''The (Slime) Blood of Cazic Thule is dropped off of Cazic Thule himself <span class='grayout'>(or Terror, post-revamp only)</span>. Needless to say you'll want to bring a few friends for this fight.'' 
+
+''To get the Cloak of Spiroc Feathers, you will need to speak with [[Jzil GSix]] in the Efreeti room of the Plane of Sky (use a "Key of Veeshan" on the portal pad to port into the room).'' 
+
+You say 'I will take the test of power' 
+
+: Jzil GSix says 'The test of power it is. Prove yourself worthy of power and bring me a silver disc, spiroc feathers, and a black silk cape. Only then will you know true power.' 
+
+''The Silver Disc is found off mobs on the second isle. It is most commonly dropped off the Azeracks. The Spiroc Feathers are dropped from the Watchful Guardian on the third isle. The Black Silk Cape is dropped by the boss of the fourth island, Keeper of Souls (a 60th level mob that death touches every 30 seconds; hits for a max 400). The cape does not drop every time. 
+
+Hand these three items to Jzil in exchange for a Cloak of Spiroc Feathers.'' 
+
+: Jzil GSix says 'This feathered cloak should be more than enough payment, now be gone from my sight!' 
+
+''Take the cloak, eye, blood, and the journal to Drendico.'' 
+
+: Drendico Metalbones turns to you in amazement. 'You actually did it! These are the correct components! Kazen will be most pleased. I searched the planes for almost a year and could not find all the correct components.' Drendico fiddles with the components, puts them into a box and hands it to you. 'You must have access to an army, _____. Return the components to Kazen quickly.' 
+
+''You receive a Prepared Reagents Box. Take this to Kazen:'' 
+
+: Kazen Fecae stares through you at the horizon, pausing as he reaches into his robes. Kazen pulls out a scythe with a shimmering black blade that seems too large to have been hidden there. As quickly and gracefully as it was displayed to you, it is returned to the void inside Kazen's robes. 'It is a creation of Miragul which was looted from his lair under the ice. Take this tome, it will be your final task for me as an apprentice.' 
+
+''You receive a Tome of Instruction.'' 
+
+'''The Tome of Instruction reads:'''
+
+  I have studied the works of Miragul and have seen the flaws with the process he used to reach immortality. 
+  I do not wish to be bound to a single container.
+  I wish to be a free spirit, able to keep my memories and will.
+  I believe I have found the key to doing what I desire in the ancient Combine texts I have discovered recently.
+  I will use the same process Miragul used to draw his soul from his body, however I will not graft it to a simple object.
+  I will use the soul grafting techniques of the Combines to attach my soul to another until I wish to leave my "host."
+  I will be able to live forever in this plane, a million different lives if I so wish.
+  The only restraint I have come upon is I will lose a bit of my life energy each time I change hosts.
+  I do not wish my soul to be torn apart piece by piece so easily.
+  I have consulted other tomes concerning the soul and life essence.
+  I believe I may be able to steal the life energy of another and add it to mine.
+  I do not simply mean life, I mean their being, the thing which transcends life and death.
+  The soul I devour, so to speak, must however be close enough to mine in essence to be accepted into my own soul.
+  This is where, my apt, pupil come in.
+  The only living soul that may be close to mine is the soul of my dear father. 
+  Years ago he traveled to the Plane of Sky, never to return, however; 
+  I have searched for his soul throughout the known planes of existence and he does indeed live.
+  Travel to the Plane of Sky and interrogate its denizens.
+  Find the location of Gkzzallk and simply hand him this black book.
+  It will shrink his body and trap it in a box.
+  Bring it to me and receive your last "reward."
+
+''Now, head to the [[Plane of Sky]] and speak with the Thunder Spirit Princess on the port-up isle.'' 
+
+You say, 'Hail, a thunder spirit princess' 
+
+: a thunder spirit princess says 'Greetings, travelers, welcome to the Plane of Sky! We are thunder spirits - this first island is our home. You are welcome to stay here as long as you like. If you wish to go to other islands you may purchase keys from the Key Master.' 
+
+You say, 'Tell me about Gkzzallk' 
+
+: a thunder spirit princess says 'Gkzzallk lives far above here. We often take him tea because he's so nice to us fairies! He likes to chat with the others who live here and can often be found in the temple up above. If you give me a bit of money, I can go make sure he is home.' 
+
+''Give her 10 gold pieces.'' 
+
+: a thunder spirit princess says 'Thank you, _____. I will tell him to expect visitors.' 
+
+''Click up to the third isle where you'll find Gkzzallk.'' 
+
+You say, 'Hail, Gkzzallk' 
+
+: Gkzzallk says 'Hello Stranger, would you care for some tea?' 
+
+''Hand him the tome:'' 
+
+: Gkzzallk screams as he touches the book. His body shimmers as he shrinks smaller and smaller until it's no larger than an insect. The book shimmers, shifting into the shape of a small, black box. Gkzzallk holds on to the opening of the box as he is sucked backward into it. The tiny screams are finally silenced as the box top closes. 
+
+''You receive "Gkzzallk in a Box". Take this item to Kazen.'' 
+
+: Kazen Fecae grins widely and his eyes flare a deep red. The scythe he promised you flies through the air and into your hand. 'Enjoy your toy, I have no more need of you as a servant.' 
+
+''You receive the [[Scythe of the Shadowed Soul]].''
+
+[[Category:Quests]]
+[[Category:Nektulos Forest]]
+[[Category:Necromancer Quests]]

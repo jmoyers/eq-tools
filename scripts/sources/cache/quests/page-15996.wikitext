@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_mandaril_dark_knife.png|frame|Mandaril Dark Knife]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Fell Blade Guild Note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Paineel]]
+|-
+! ''' Related NPCs: '''
+| [[Mandaril Dark Knife]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Blood Splattered Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Fell Blade Guild Note reads: 
+
+:: <code>Take this note to Sern Adolia.  He will instruct you in the ways of Cazic-Thule.  The path is not an easy one, and you will be shown fear in its every manifestation.  Fear not though, for you will learn to overcome such trivial instincts, and become one with the Fear.</code>
+
+''[[Sern Adolia]] is located at 1130, 522 in the Tabernacle of Terror ([[Cleric]]) Guild Hall.''
+
+You say, 'Hail, Sern Adolia'
+
+: Mandaril Dark Knife says, 'Desist in your prattle.  If you want idle chitchat. talk to someone else.'
+
+'''Hand [[Mandaril Dark Knife]] the [[Fell Blade Guild Note]].'''
+
+: Mandaril Dark Knife says, 'You are welcomed into the fold. Now go out and prove yourself, young one. You have much to learn about the Dark Truth.'
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Shadow Knight Quests]]

@@ -1,0 +1,106 @@
+{{Classic Era}}
+{{Disambig3|[[Orc Runner (Kelethin)]]}}
+[[File:npc_general_jyleel.png|frame|General Jyleel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[General Jyleel]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[orc runner]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Bandages}}
+</li><li> {{:Iron Ration}}
+</li><li> {{:Ration}}
+</li><li> {{:Water Flask}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[General Jyleel]] is located at 18, -198, -19 downstairs in the Paladin Guild Hall. You must have Amiable faction to complete this quest.''
+
+You say, 'Hail, General Jyleel'
+
+: General Jyleel says, 'Stand at attention!! I am General Jyleel, of the Koada'Vie, defenders of Felwithe. Do you [follow Tunare], the Mother of All, or do you still [seek enlightenment]?'
+
+You say, 'I seek enlightenment'
+
+: General Jyleel says, 'Then seek it within these walls. We welcome all fine upstanding Koada'Dal.'
+
+You say, 'I follow Tunare'
+
+: General Jyleel says, 'Then you are wise indeed. Would you like to [assist the defenders] in our conflicts or have you other business to attend to?'
+
+You say, 'I will assist the defenders'
+
+: General Jyleel says, 'Seek out the Crushbone orcs of the Faydarks. We must have their oracle scrolls. They are illegible to you, but we will study them here in Felwithe. Only the orc oracles will carry them, so be very careful. There is also the problem with the [Crushbone runners].'
+
+You say, 'What Crushbone runners'
+
+: General Jyleel says, 'The Crushbone orcs are sending messages across the Ocean of Tears to Antonica. Why, we do not know. The runner is usually spotted on the open pathways of Butcherblock, running toward the docks. Find him, kill him, and return his note pouch.'
+
+'''The [[orc runner]] spawns every 23 minutes at -1121, -2843, 0 near the zone line into [[Greater Faydark]] where he will run west along the road until meeting his demise at the hands of, [[Guard Mandin]] and [[Guard Zyburr]], the two dwarf guards at -968, 6, 0.'''
+ 
+'''Loot the [[Runner Pouch]] and [[a Sealed Letter]] from the slain [[orc runner]].'''
+
+<div class="facblock">
+* Your faction standing with [[Crushbone Orcs]] got worse.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+'''Hand [[General Jyleel]] the [[Runner Pouch]].'''
+
+: General Jyleel says, 'So, you succeeded in stopping a Crushbone runner! That is good. Now take this as reward. Keep up your fine work. The people of Felwithe are grateful.'
+
+<div class="facblock">
+* Your faction standing with [[Anti-Mage]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 gold, 7 silver, 6 copper pieces.
+
+'''Hand [[General Jyleel]] [[a Sealed Letter]].'''
+
+::''A Sealed Letter reads:''
+
+::<code>King Naythox Thex, Continue with your plans to exile the inept Ogres. Emperor Crush has agreed to aid us in our wars. He will require the help of the Indigo Brotherhood to rid him of the traitorous Deathfist Clan of Orcs in the Eastern Antonican region. We shall also continue our supply of arcane knowledge to their agent in Freeport. Ambassador D'Vinn Crushbone Region</code>
+
+: General Jyleel says, 'So, the Teir'Dal are behind the recent advances of the orcs?!! Your news has shed new light on their union. It is time to step forth and prove yourself a [faithful paladin of this court].'
+
+<div class="facblock">
+* Your faction standing with [[Anti-Mage]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 gold, 7 silver, 6 copper pieces.
+
+== Related Quests ==
+
+* [[The Falchion]]
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:All Classes Quests]]

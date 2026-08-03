@@ -1,0 +1,132 @@
+{{Temple Era}}
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Leaf Falldim]], [[Gandari]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]], [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Meldrath The Malignant]], [[Thistle Underbrush]]
+|}
+
+Ivy Etched Armor is a set of [[Ranger]] specific armor obtained through quests offered in [[Kithicor Forest]]. All of the armor has the model of chain mail with a green tint. Depending on the resources available to you, some of the quests can be completed at early levels, however most quests are appropriate for 30-40 range.
+
+Not multi-questable in Everquest:Legends.
+
+== Rewards ==
+'''Gandari Quests'''
+{{Gear Set
+|Ivy Etched Tunic
+|Ivy Etched Helm
+|Ivy Etched Bracer
+|Ivy Etched Sleeves
+}}
+
+'''Leaf Falldim Quests'''
+{{Gear Set
+|Ivy Etched Boots
+|Ivy Etched Gauntlets
+|Ivy Etched Leggings
+}}
+
+== Fashion ==
+
+[[File:Ivyetchedarmor.JPG|Center|600px|]]
+
+
+==[[Gandari]]==
+[[File:npc_gandari.png|thumb|right|Gandari]]
+'''Faction note: Please be at least Indifferent and when you hail her, she should give you the quest information. If below Indifferent she will eat your quest items.'''
+
+Quests that Gandari completes. Turn in these items to her.
+
+===Ivy Etched Tunic==={{CheckboxList}}
+* [[Skull of Meldrath]] (from [[Meldrath The Malignant]] in [[Steamfont Mountains]])
+* [[Rune of Ivy|Right Rune of Ivy]] (from the named Brownie, [[Thistle Underbrush]], in [[Lesser Faydark]])
+* Two [[Ruby|Rubies]]
+
+===Ivy Etched Helm===
+
+* [[Cyclops Charm]] (from the named Cyclops, [[Tarskuk]], in [[Rathe Mountains]])
+* [[Rune of Ivy|Top Rune of Ivy]] (from [[A deathly usher|deathly ushers]] in [[Mistmoore Castle]])
+* One [[Sapphire]]
+
+===Ivy Etched Bracer===
+
+* [[Rune of Ivy|Bottom Rune of Ivy]] (from the named Orc, [[Redwind]], in [[Everfrost Peaks]])
+* [[Water Ring]] (from an [[aqua goblin tidal lord]] in [[Dagnor's Cauldron]])
+* One [[Fire Emerald]]
+
+===Ivy Etched Sleeves===
+
+* [[Heart of Fire]] (from an [[inferno goblin wizard]] in [[Solusek's Eye]])
+* [[Rune of Ivy|Left Rune of Ivy]] (from the named Griffon, [[GrimFeather]], in [[Northern Karana]])
+* Two [[Star Ruby|Star Rubies]]
+
+==[[Leaf Falldim]]==
+[[File:npc_leaf_falldim.png|thumb|right|Leaf Falldim]]
+'''Faction note: Please be at least Indifferent and when you hail him, he should give you the quest information. If below Indifferent he will eat your quest items.'''
+
+EDIT : Tried at apprehensive. he gave quest text, so I gave item. It worked!
+
+Quests that Leaf Falldim completes. Turn in these items to him.
+
+===Ivy Etched Boots===
+
+* [[A Bar of Ronium]] (see the [[Ivy_Etched_Armor_Quests#Bar_of_Ronium|section]] below)
+* [[Mistmoore Granite]] (from the different gargoyles in [[Mistmoore Castle]])
+* 2000gp (must be gold, not platinum)
+
+===Ivy Etched Gauntlets===
+
+* [[Broken Bow Part A]] (from [[Maldyn the Unkempt]], a wayward master archer, in the [[Rathe Mountains]])
+* [[Broken Bow Part B]] (from the named, live Froglok, [[Slaythe the Slayer]], in [[Lower Guk]])
+
+===Ivy Etched Leggings===
+
+Kill [[A Brownie Outcast|Brownie Outcasts]] in [[Lesser Faydark]] for one of each of the following arrows:
+
+* Arrow of Acknowledgment
+* Arrow of Bravery
+* Arrow of Defiance
+* Arrow of Fortitude
+* Arrow of Gallantry
+* Arrow of Recognition
+
+Head to Seafury Island in the [[Ocean of Tears]] to kill [[Wiltin Windwalker]] for the [[Quiver of Kithicor - open]], a 6-slot container. Place one, each, of the six arrows looted previously from the brownie outcasts into this quiver and click Combine. You will now have a 'Quiver of Kithicor - full', which is not a container.
+
+* Quiver of Kithicor
+
+Buy one [[Star of Odus]] (100p) from [[Anite Gemcutter]] in [[Erudin#Erudin_Palace|Erudin Palace]].
+
+* Star of Odus
+
+Head back to Kithicor Forest and return to Leaf Falldim. Give him the [[Star of Odus]] and the closed Quiver of Kithicor.
+
+==Bar of Ronium==
+Obtain the [[Sol Cauldron]] from [[Lord Searfire]], the Dwarven smith, in [[The Temple of Solusek Ro]]. This container is used for the combine to make [[A Bar of Ronium]]. He must consider you Amiably before he will deal with you. To raise faction with him, you can either hunt Shadowed Men or you can give gold, 30gp at a time, to [[Rathmana Allin]] in the [[Southern Desert of Ro]] until he cons Amiable to you (see the quest [[Rathmana's Traveling Offer]]). Once your faction is high enough, return to the Temple of Solusek Ro and hail Lord Searfire and then say "What Ronium" and then he will give you the sol cauldron, and then he will tell you the ingredients that you must acquire to make the metal ronium.
+
+The ingredients to make the Bar of Ronium are the following:
+# [[Melatite]] (Dropped by various CWG Model Clockworks in [[Solusek's Eye]]). Sometimes you can buy this from merchants in and around Solusek's Eye (Sol A) because many players sell them there. This will prevent you from taking any negative faction hits with Ak'Anon.
+# Two [[Enchanted Platinum Bar|Enchanted Platinum Bars]]. [[Enchanter|Enchanters]] level 34 and higher can enchant [[Platinum Bar|Platinum Bars]] using the spell [[Enchant Platinum]].
+# One [[Mistmoore Granite]] (found on [[a flouting gargoyle|flouting gargoyles]], [[a jeering gargoyle|jeering gargoyles]], and [[a leering gargoyle|leering gargoyles]] in Castle Mistmoore). The granite is an uncommon drop from the Gargoyles outside of the castle, but is more common on the Gargoyles inside of the castle. Also note that you will need another Mistmoore Granite to turn in to Leaf Falldim with your Bar of Ronium, so make sure to get two of them before leaving.
+# One [[Sands of Ro]] (from various Sand Giants in the [[Northern Desert of Ro|Northern]]/[[Southern Desert of Ro|Southern]] Deserts of Ro or the [[Oasis of Marr]])
+# One [[Soil of Underfoot]] (from the [[Priestess Ghalea]] in the [[North Kaladim]] Cleric's guild for four [[Fairy Dust|Fairy Dusts]]). You need at least Kindly faction for this, you can raise your faction with Priestess Ghalea by turning in skeleton bones to [[Gunlok Jure]] in the North Kaladim Paladin's guild (see the quest [[Bone Chips Kaladim]]). Also, try not to kill faeries because you will need good faction with them later to complete the Epic quest to Enchant your Trueshot longbow into the Raincaller. It is advised to buying the Fairy Dust or use an alt/ask another player to kill the fairies.
+
+Once all of the above ingredients have been obtained, place them in the Sol Cauldron and hit the combine button and you will receive one Bar of Ronium. You do not need any blacksmithing skill to combine these.
+
+[[Category:Quests]]
+
+[[Category:Kithicor Forest]]
+[[Category:Ranger Quests]]

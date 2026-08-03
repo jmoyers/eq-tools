@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_royal_guard_lilkus.png|frame|Royal Guard Lilkus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Royal Guard Lilkus]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| kobolds
+|}
+
+== Reward ==
+
+<ul><li>[[Faction]], Coin, [[Ringmail Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+You must be indifferent or higher to do this.
+
+See [[Royal Guard Lilkus]] in the Palace at location +1315, +685.
+
+You say, 'Hail, Royal Guard Lilkus'
+
+: Royal Guard Lilkus says 'You tread upon sacred gound Erudite. None may go further unless they [have business with the Overlord]. Or, if youre looking to gain favor with the Heretics and a little coin, I have a [job] for you.
+
+You say,'I have business with the Overlord'
+
+Royal Guard Lilkus says,'The Overlord only see those he calls forward. If you have a summons from him, I will escort you and announce your arrival. If not, then forget whatever business you may have had here. If you wish an audience, then go speak to Sheltiun below. He may be able to help you...if you help him.' This leads to the [[Cold Iron]] quest.
+
+You say, 'What job?'
+
+: Royal Guard Lilkus says 'There are many campaigns we administer from within our city, Paineel. Some of these campaigns are threatened or hindered by annoyances. One of these annoyances are the Kobolds that live in the filth of a cave not far from here. Find that lair and kill as many of these beasts as you can. For every kobold molar you return you shall be rewarded.
+
+{{expand}}
+
+For each [[Kobold Molar]] that is turned in you receive some gold, and have a small chance of receiving a random piece of ringmail armor, and faction.
+
+: Royal Guard Lilkus says 'Not bad. <name>. Here is your reward. If you stay enough of these dogs. Sheltian may have a more important task for you to perform.'
+
+Note: Royal Guard Lilkus refers to Guard Sheltiun as Sheltian but the name in game is Guard Sheltiun.
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better. (+10)
+* Your faction standing with [[Deepwater Knights]] got worse. - It effects the paladins MUCH heavier negatively than the rest. Be warned.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+1 gold and a few silver and copper per turn in.
+
+I received Ringmail Cape, Ringmail Coif, Ringmail Sleeves and nothing as item rewards. Out of 51 turn-ins, received 34 pieces of ringmail.
+
+Pieces sold to Paineel merchants that I'm ambiable with:
+:Ringmail Cape:    3p 3g 9s 9c
+:Ringmail Sleeves: 2p 4g 5s 5c 
+:Ringmail Coif:    2p 5g 4s 9c 
+
+Approximately 1/2 to 1/3rd of a blue bubble of experience at level 4. 80 molars will get you 10% of a level at level 15
+
+At level 19 -- 12 turn-ins were not even 1% (Ogre SK Cazic-Thule)
+
+Level 19 Iksar Shaman - 11 turn-ins resulted in 1% xp gain. June 26, 2022.
+
+''Need all dialogues, /loc of quest mobs, current faction hits, list of quest rewards.''
+
+[[Category:Quests]]
+[[Category:Paineel]]

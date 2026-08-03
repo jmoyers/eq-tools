@@ -1,0 +1,71 @@
+{{Velious Era}}
+
+[[File:npc_semkak_prophet_of_vallon.png|frame|Semkak Prophet of Vallon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Semkak Prophet of Vallon]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Dragon Necropolis]]
+|-
+! ''' Related NPCs: '''
+| [[a dragon construct]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Book of Strategy}}
+</li><li> {{:Circlet of Vallon}}
+</li><li> {{:Shield of Battle}}
+</li><li> {{:Steel Wristband of Strategy}}
+</li></ul>
+
+== Walkthrough ==
+
+completed this with dubiously faction on 11/5/2015
+
+This quest begins with Semkak Prophet of Vallon in Kael Drakkel. He is found in the quarters connected to the city's arena.
+
+You say, 'Hail, Semkak Prophet of Vallon'
+
+: Semkak Prophet of Vallon says 'You have entered the sacred temple of Vallon Zek.  This is the Temple of Strategy.  We teach what must be done to be a great leader.  Forethought is a powerful tool. 
+
+You say, 'Will you teach me?'
+
+: Semkak Prophet of Vallon says 'I cannot teach one of your kind the arts of war at this time.  I must teach the other Kromzek and Kromrif that proper strategy will allow us to win the war against the dragons.  If you were to serve the temple of Vallon, I might consider giving you a few words of advice about strategy. 
+
+You say, 'I will serve the temple of Tallon Zek'
+
+: Semkak Prophet of Vallon says 'The dragons of Velious are ancient and wise beyond belief.  They have ageless strategies to destroy their foes.  The Temple of Strategy must gain the knowledge they hold.  I have heard rumors of a great dragon burial ground.  If this tomb indeed exists, find it and seek out the knowledge of the dragons who are now dead.  Bring whatever you believe will teach us their strategies and tactics of the past. 
+
+'''Bring back either a [[Golden Tablet of Draconic Strategy]] or a [[Scroll of Scaled Tactics]] (dropped by [[a dragon construct]]s in the Dragon Necropolis) in exchange for a reward.'''
+
+Handing in a Golden Tablet of Draconic Strategy: 
+
+: Semkak Prophet of Vallon says 'This tablet holds great knowledge. The Temple of Strategy thanks you, ______. Take this and know that your own strategies are wise indeed if you have acquired this tablet from the depths of the dragons' graveyard.'
+:Receive Book of Strategy.
+
+Upon handing in a Scroll of Scaled Tactics:
+ 
+: Semkak Prophet of Vallon says, 'These scrolls are ancient beyond belief. They describe the maneuvers dragons use to avoid being injured by mighty warriors. This will aid the cause of King Tormax greatly. Take this gift from the temple of Vallon and know that you are wise indeed.'
+:The reward may vary depending on which scroll you bring back or is random. Identify scrolls and update?
+
+<div class='facblock'>
+* Your faction standing with Kromrif got better.
+* Your faction standing with Kromzek got better.
+* Your faction standing with KingTormax got better.
+* Your faction standing with ClawsofVeeshan got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

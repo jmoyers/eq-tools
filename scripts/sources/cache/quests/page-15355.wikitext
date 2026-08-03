@@ -1,0 +1,80 @@
+[[File:npc_cassius_messus.png|frame|Cassius Messus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Cassius Messus]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Bard
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Vhalen Nostrolo]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Hymn of Restoration|Song: Hymn of Restoration]]
+</li></ul>
+
+== Walkthrough ==
+
+''Cassius Messus may be found in the bard guild (520, -140).'' 
+
+You say, 'Hail, Cassius Messus' 
+
+Cassius Messus says 'Hail! What do think of [Lisera]? She aint' much to look at, but soon she will be singing again.' 
+
+You say, 'Who is Lisera?' 
+
+Cassius Messus says 'Lisera is my lute. She sounds horrible. I need to get her tuned by a master tuner, but the League's Master Tuner is in the Plains of Karana for a while. If only... hey! You look like a fellow bard... You [interested in the job]?' 
+
+You say, 'I am interested in the job.' 
+
+Cassius Messus says 'Great! Here. Take Lisera to Vhalen Nostrolo. He is in the plains near the well, composing. He must tune it for me. Be very careful! Lisera is all I've got. If you complete this task and return with good news, I shall be glad to pass along an extra songsheet for a tune entitled 'Hymn of Restoration.'' 
+
+''You receive Lisera Lute.'' 
+
+''Head to South Karana and find [[Vhalen Nostrolo]] at -60, -120. Give him the lute.'' 
+
+Vhalen Nostrolo says 'Oh, dear! I forgot to repair Cassius' lute. I shall fix and return it to him myself. Thank you for bringing this to me. Here, please return this note to Cassius. He shall be most happy. Thank you again, good citizen!' 
+<div class="facblock">
+*Your faction standing with League of Antonican Bards has been adjusted by 20. <br>
+*Your faction standing with Knights of Truth has been adjusted by 3. <br>
+*Your faction standing with Guards of Qeynos has been adjusted by 3. <br>
+*Your faction standing with Ring of Scale has been adjusted by -1. <br>
+*Your faction standing with Mayong Mistmoore has been adjusted by -1. <br>
+</div>
+: {{YouGainExperience}}
+
+''You receive a Note to Cassius, which reads:'' 
+
+Cassius, Sorry for the mishap. I shall repair and tune your lute and return it to you when I return to Qeynos in a week. Valen Nostrolo 
+
+''Give the note to Cassius Messus.'' 
+
+Cassius Messus says 'Thank you! I am in your debt. Here is the songsheet as I promised. I shall sing of you one day.' 
+<div class="facblock">
+*Your faction standing with League of Antonican Bards has been adjusted by 10. <br>
+*Your faction standing with Knights of Truth has been adjusted by 1. <br>
+*Your faction standing with Guards of Qeynos has been adjusted by 1. <br>
+*Your faction standing with Ring of Scale has been adjusted by -1. <br>
+*Your faction standing with Mayong Mistmoore has been adjusted by -1. <br>
+</div>
+: {{YouGainExperience}} <br>
+You receive 3 copper from Cassius Messus. <br>
+You receive 6 silver from Cassius Messus. <br>
+You receive 6 gold from Cassius Messus. <br>
+
+''You receive Song: Hymn of Restoration.''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Bard Quests]]

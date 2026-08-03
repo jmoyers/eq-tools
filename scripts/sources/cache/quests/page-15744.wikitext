@@ -1,0 +1,144 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_lothieder_fe`dhar.png|frame|Lothieder Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Lothieder Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+
+== Reward ==
+
+{{Gear Set
+|Illusionist's Headband
+|Illusionist's Robe
+|Illusionist's Sleeves
+|Illusionist's Wristguard
+|Illusionist's Gloves
+|Illusionist's Pantaloons
+|Illusionist's Slippers
+}}
+
+== Checklist ==
+Turn-ins to [[Lothieder Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Illusionist's Headband]]
+:*[[Tattered Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Illusionist's Robe]]
+:*[[Tattered Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Illusionist's Sleeves]]
+:*[[Tattered Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Illusionist's Wristguard]]
+:*[[Tattered Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Illusionist's Gloves]]
+:*[[Tattered Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Illusionist's Pantaloons]]
+:*[[Tattered Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Illusionist's Slippers]]
+:*[[Tattered Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+Lothieder Fe`Dhar is located beyond the giant staircase section.
+
+You say, 'Hail, Lothieder Fe`Dhar'
+
+: Lothieder Fe`Dhar says 'Greetings to you. I seek those who call themselves enchanters. Are you what I seek?'
+
+You say, 'I am an enchanter'
+
+: Lothieder Fe`Dhar says 'I thought so. I have several tasks for you accomplish [sic]. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Tattered silk armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+<div class='facblock'>
+* Your faction with [[Claws of Veeshan]] got better.
+* Your faction with [[Yelinak]] got better.
+* Your faction with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+== Helm ==
+
+You say, 'What cap?'
+
+: Lothieder Fe`Dhar says 'For you to receive my gift, I shall require three crushed flame opals and a tattered silk turban.'
+
+Return with a [[Tattered Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+You say, 'What robe?'
+
+: Lothieder Fe`Dhar says 'This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds.'
+
+Return with a [[Tattered Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Lothieder Fe`Dhar says 'For these durable sleeves, you must fetch me a pair of tattered silk sleeves and three flawed topaz.'
+
+Return with [[Tattered Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+You say, 'What wristbands?'
+
+: Lothieder Fe`Dhar says 'The crafting of this wristband requires that you bring me a tattered silk wristband and three crushed onyx sapphires.'
+
+Return with a [[Tattered Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Lothieder Fe`Dhar says 'For this fine pair of gloves you must seek out and return to me a pair of tattered silk gloves and three crushed topaz.'
+
+Return with [[Tattered Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Lothieder Fe`Dhar says 'This pair of leggings will be yours provided you supply me with a pair of tattered silk pantaloons and three nephrite.'
+
+Return with [[Tattered Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Lothieder Fe`Dhar says 'These supple boots shall be yours upon receipt of a pair of tattered silk boots and three crushed jaundice gems.'
+
+Return with [[Tattered Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Enchanter Quests]]
+[[Category:Skyshrine Armor Quests]]

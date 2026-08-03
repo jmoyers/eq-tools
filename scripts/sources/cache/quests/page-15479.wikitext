@@ -1,0 +1,58 @@
+{{Classic Era}}
+[[File:npc_kogna.png|frame|Kogna]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Kogna]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Ogre)
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[a lizardman mystic]], [[lizard man broodling]]
+| 
+|}
+
+== Reward ==
+
+<ul>
+<li>  Experience, [[Rusty Two Handed Battle Axe]]</li>
+</ul>
+
+== Walkthrough ==
+
+: A minimum of Amiable is required for this quest.
+
+''Talk to [[Kogna]] and he will reward you for giving him '''4''' pieces (at once, NOT stacked) of '''[[Lizard Meat]]''' with experience and an [[Rusty Two Handed Battle Axe]].''
+
+You say,'Hail, Kogna'
+
+: [[Kogna]] says, 'You be tinking you be [real tuff Craknek]?'
+
+You say, 'I am a real tuff craknek'
+
+: Kogna says, 'Me not tinking so. but maybe me wrongs.. no.. me neber wrongs. You no tuff. only little Craknek is you. You tink you be tuff Craknek. you bringed me four lizard meats. Me like lizard meats. You no tuff. You bringed me lizard [meats]. I make you tuffer Craknek. Me bestest Craknek.'
+
+'''Hand him four (unstacked) pieces of [[Lizard Meat]]'''. ''They cannot be given one-at-a-time!''
+
+: Kogna says, 'Yous really did it. Mebbe you tuff Craknek after all.'
+
+<div class='facblock'>
+* Your faction standing with [[Clurg]] has gotten better!
+* Your faction standing with [[Craknek Warriors]] has gotten better!
+* Your faction standing with [[Green Blood Knights]] got worse.
+{{exp}}
+</div>
+
+As a level 5 [[Troll]] [[Shaman]], each turnin was worth rougly 0.12% of a level.  The Axe vendors for 2g 7s 8c.
+
+[[Category:Quests]]
+[[Category:Oggok]]

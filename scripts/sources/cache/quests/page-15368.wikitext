@@ -1,0 +1,93 @@
+{{Classic Era}}
+[[File:npc_kurne_rextula.jpg|thumb|upright=1.5|Kurne Rextula]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Kurne Rextula]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Drosco]]
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items, Coin, Experience
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Kurne Rextula]] can be found in the [[Qeynos Catacombs]], in the Bloodsabers Guild (Human worshippers of Bertoxxulous).  Take the first right upon entering the Bloodsabers area (313, -425).''
+
+You say, 'Hail, Kurne Rextula'
+
+: Kurne Rextula says, 'Welcome to the new order of life, the life of service to our diseased Lord, Bertoxxulous. Did you encounter any of my [pets] on the way here? I hope not.'
+
+You say, 'What pets?'
+
+: Kurne Rextula says, 'My pets are the skeleton guardians of these catacombs. Some have been behaving erratically since the arrival of [Drosco].'
+
+You say, 'Who is Drosco?'
+
+: Kurne Rextula says, 'Drosco used to be a loyal member of our shrine, until we learned the truth. The truth was that he was a mole from the Knights of Thunder. It appears they are assisting the Temple of Life in their pursuit of our eradication. Drosco was apprehended and boiled alive. I turned his boiled body into a zombie to march these halls. Now he must be stopped. He has begun to [compromise the shrine's location].'
+
+You say, 'How does he compromise the shrine's location?'
+
+: Kurne Rextula says, 'The problem is, he was strong in Karana's faith. And as sometimes is the case, there is a resonance from his deity. This causes him to wander in and out of our hidden shrine and I believe it also interferes with my control of the other pets. Please find him and destroy him. Bring me back the note I placed upon his body. Go!!'
+
+'''[[Drosco]] or his placeholder, [[A Gelatinous Cube]], spawns at (412, -24) then roams west to the [[A Nesting Rat|nesting rat]] room (#7 on map), pauses, then continues on toward the [[a shady mercenary|shady mercenary]] room (#6) where it despawns.'''
+
+Drosco says, 'Rele.. ase.. me.. from.. this.. tor.. ment.. ARGH! You will die for entering the domain of the Bloodsabers!! Karana.. help.. me?'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div>
+
+Drosco says, 'ARGH!!!!!.. Thank.. you..'
+
+You have slain Drosco!
+
+--You have looted a [[A Sealed Letter]].--
+
+It reads:
+
+ Dear Temple of Thunder, Thank you for the lovely retreat to the Shrine of Bertoxxulous.
+ I especially loved the bubbling hot baths, although I think I stayed in too long because all my flesh was
+ boiled clean off my body. Oh well, back to wandering the catacombs. Love, Drosco, agent of thunder.
+ P.S. I think the Shrine was not fooled.
+
+'''Return to Kurne and turn in the letter.'''
+
+: Kurne Rextula says, 'Good work! You shall rise quickly in our ranks of evil. Let no man stand in your way and never betray the shrine or you to will join our collection of undead. You can also assist me with a [[Trumpy's Head|[new task]]].'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 3 silver from Kurne Rextula.
+
+You receive a minor item (ex. [[Belt Pouch]]).
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]

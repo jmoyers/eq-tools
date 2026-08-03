@@ -1,0 +1,54 @@
+[[File:npc_shondo_billin.png|frame|Shondo Billin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Shondo Billin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]], Experience
+</li></ul>
+
+== Walkthrough ==
+
+Your Location is 600.04, 809.14, -31.12
+
+You say, 'Hail, Shondo Billin'
+
+: Shondo Billin says 'Oh, Brell!! Help me get out of here. I did nothing wrong!! I did not know you could not take that [tonic] out of the city.'
+
+You say, 'What tonic?'
+
+: Shondo Billin says 'Oh, why did I have to try and help that Erudite in Qeynos? He was sick and vomiting and needed something called Erud's Tonic!! Now just because I wanted to help, I am going to be vomiting up my insides!! Oh, Brell!!! GET ME OUT OF HERE!!'
+
+'''He's looking for some [[Vasty Deep Ale]].  Give him one.'''
+
+: Shondo Billin says 'Gulp.. Gulp.. Aaahhh!!! That hits the spot. All I can tell you is that the heretic's name was E'lial B'rook. He mumbled something about a rendezvous and he would be floating down a river, smooth sailing back to something called Paineel. That's all I know.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better. (+10)
+* Your faction standing with [[Merchants of AkAnon]] got better. (+5)
+* Your faction standing with [[King AkAnon]] got better. (+5)
+* Your faction standing with [[Dark Reflection]] got worse. (-2)
+* Your faction standing with [[Clan Grikbar]] got worse. (-1)
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]
+[[Category:All Classes Quests]]

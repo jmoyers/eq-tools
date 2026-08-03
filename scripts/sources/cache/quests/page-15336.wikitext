@@ -1,0 +1,111 @@
+{{Classic Era}}
+
+[[File:npc_kazzel_d`leryt.png|upright=1.5|thumb|Kazzel D`Leryt]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Kazzel D`Leryt]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Rathe Mountains]], [[Lower Guk]], [[Permafrost]], [[Nagafen's Lair]]
+|-
+! ''' Related NPCs: '''
+| [[A froglok noble]], [[Darfumpel Zirubbel]], [[Xenyari Lisariel]], [[monstrous zombie]], [[an icy terror]], [[stone spider]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Pulsating Hyacinth Telesm}} (although this is turned in to spawn the final fight mob)
+</li><li> {{:Spell: Life Leech}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+
+*  [[Pulsating Hyacinth Telesm]]
+**  [[White Gold Necklace]] from a [[A froglok noble]] in [[Lower Guk]].
+** [[Crystalline Orb]] from a [[stone spider]] in [[Nagafen's Lair]].
+** [[Bloodied Piece of Parchment]]
+*** Obtain a [[Prickly Pear]] from a [[an icy terror]], Lady Vox's guardians in [[Permafrost]].
+*** Give the [[Prickly Pear]] to [[Xenyari Lisariel]] for [[Bloodied Piece of Parchment]] at the druid ring (5298, 1765).
+** [[Faceted Hyacinth]]
+*** Give 2,000pp to [[Kazzel D`Leryt]] to receive an [[Uncut Hyacinth]].
+*** Give 1,000pp and [[Uncut Hyacinth]] to [[Darfumpel Zirubbel]] to receive the [[Faceted Hyacinth]].
+** Turn in [[White Gold Necklace]], [[Crystalline Orb]], [[Bloodied Piece of Parchment]], [[Faceted Hyacinth]] to [[Kazzel D`Leryt]] and receive [[Faceted Hyacinth Telesm]]
+**  Give [[Faceted Hyacinth Telesm]] to [[Xenyari Lisariel]] for [[Pulsating Hyacinth Telesm]]
+* [[Spell: Life Leech]]
+**  Return the [[Pulsating Hyacinth Telesm]] to [[Kazzel D`Leryt]] to spawn [[monstrous zombie]].
+**  Kill [[monstrous zombie]] and loot [[Monstrous Zombie Heart]]
+**  Give the [[Monstrous Zombie Heart]] to [[Kazzel D`Leryt]] for [[Spell: Life Leech]].
+{{End}} 
+
+== Walkthrough ==
+
+This quest is for the level 47 [[Shadow Knight]] spell [[Life Leech]].
+
+It begins with [[Kazzel D`Leryt]] in the [[Rathe Mountains|Mountains of Rathe]] (roams around -634, -1561 from #24 on map to hill between #22 and #23), who will not speak with you unless you are at least level 46. 
+
+He tells players to give him 2,000pp in exchange for an Uncut Hyacinth to be etched by a gnome shopkeeper named [[Darfumpel Zirubbel]] (also in the Mountains of Rathe (4093, 896) #5 on map). He tells you the gnome does not like the necromantic arts, so you will have to conceal your identity when dealing with him. Darfumppel appears to be indifferent to good and evil characters. There are some good guards nearby, but they are green to a level 50. [[Karam Dragonforge]] gives out the dragonscale armor quests and may be in the same hut, but he is a vendor, so will not aggro unless provoked.
+
+Kazzel tells you to bring back:
+
+* [[Faceted Hyacinth]].
+* "A gold necklace like the purest snow" (the [[White Gold Necklace]] from a [[A froglok noble]] in [[Lower Guk]]).
+* "An orb of the purest crystal" (the [[Crystalline Orb]] from a [[stone spider]] in [[Nagafen's Lair]]).
+* "The blood of [[Xenyari Lisariel]] the druid." He tells you that the blood must be voluntarily given by [[Xenyari Lisariel]], so killing her will not suffice.
+** [[Xenyari Lisariel]] can be found at the druid ring (5298, 1765).  She roams around the mesa the unkempt druid ring is on, and stops where Tabien the Goodly spawns (6350, 1500).
+
+To get a [[Faceted Hyacinth]] (MAGIC ITEM, is tradeable) start by giving 2000p to [[Kazzel D`Leryt]] to receive an [[Uncut Hyacinth]]:
+
+: Kazzel D`Leryt says, 'Very well, Mazirian. Take this gem to a master jeweler and return it to me with the other three items.'
+
+'''You receive an [[Uncut Hyacinth]].'''
+
+Give this, along with 1,000pp, to [[Darfumpel Zirubbel]] to receive the [[Faceted Hyacinth]]:
+
+: Darfumpel Zirubbel says, 'I have not seen a gem such as this in quite some time! It was not since I dabbled in a bit of necro? Wait? What are you going to use this for? Never mind. I do not wish to know. Here, take your gem and leave!'
+
+'''You receive a [[Faceted Hyacinth]].'''
+
+To get the blood, you must bring [[Xenyari Lisariel]] a {{:Prickly Pear}}. The Prickly Pear drops off of [[an icy terror]], one of [[Lady Vox|Lady Vox's]] guardians in [[Permafrost]]. As it is edible, be careful and place it deep in your inventory or you might eat it before you return it. As you hand in the pear:
+
+: Xenyari Lisariel says, 'Prickly Pears! I just love Prickly Pears!!  Thank you so much for getting these for me. I really, really appreciate your gift and I shall not... OWW!! I hate when I stick myself with the needles! Oh look, I am bleeding now! *Sigh*. Can you hold this note for a moment, please? My hands are full and I must clean up.'
+
+'''You receive a [[Bloodied Piece of Parchment]].'''
+
+Take the Hyacinth, parchment, necklace, and orb to Kazzel. In exchange, he gives you a [[Faceted Hyacinth Telesm]]:
+
+: Kazzel D`Leryt says, 'You are quite cunning. After I fashion this telesm, take it back to Xenyari. She would 'enjoy' another 'gift,' eh?'
+
+'''You receive a [[Faceted Hyacinth Telesm]].'''
+
+Give this item to Xenyari. Upon receiving this, she will be struck dead and the Faceted Hyacinth Telesm will be changed into a [[Pulsating Hyacinth Telesm]]:
+
+: Xenyari Lisariel bounces around with glee at the sight of your gift, smiles at you, and dons the telesm. As she clasps the telesm around her neck, she begins to write in agony, and slowly fades from sight leavign just the telesm, which is now pulsating with vibrant energy. 
+
+'''You receive a [[Pulsating Hyacinth Telesm]].'''
+
+Take the [[Pulsating Hyacinth Telesm]] to Kazzel. On handing it in, a level 53 giant skeleton called "[[monstrous zombie]]" spawns and attacks:
+
+: Kazzel D`Leryt laughs heartily and whispers to you, 'Well done, worm, your servitude to my will has now expired...'
+
+Kill it, loot a [[Monstrous Zombie Heart]], and give it to Kazzel to receive your spell [[Spell: Life Leech]]: 
+
+: Kazzel D`Leryt says, 'Oh! Umm... Well, I was just playing with you. Certainly you know I was joking! We had a deal and I will abide by the terms of our agreement. HHere is my payment for your services. Bye...'
+
+'''You receive [[Spell: Life Leech]].'''
+
+''This spell is DROPPABLE''
+
+
+[[Category:Quests]]
+[[Category:Rathe Mountains]]
+[[Category:Shadow Knight Quests]]

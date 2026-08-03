@@ -1,0 +1,87 @@
+{{Classic Era}}
+[[File:npc_ulazia_w`selo.png|frame|Ulazia W`Selo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Ulazia W`Selo]]
+|-
+! ''' Minimum Level: '''
+| -
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>Cures
+</li><li>Healing</li></ul>
+
+== Walkthrough ==
+
+''[[Ulazia W`Selo]] offers healing as well as cures to those liked by the [[Priests of Innoruuk]].''
+
+You say, 'Hail, Ulazia W`Selo'
+
+: Ulazia W`Selo says, 'Welcome to the Spires of Innoruuk. May your destiny be paved with the Words of Innoruuk. What is it you seek? [Healing]? [Curing of disease]? [Curing of poison]? That is my divine duty. So commands Master Zexus.'
+
+You say, 'I require healing'
+
+: Ulazia W`Selo says, 'That is why we are here.  Look for Master Ulazia W'selo. He can be found among the hallways of the Spires of Innoruuk.'
+: Ulazia W`Selo says, 'So, it is the binding of wounds you desire. I could hardly tell with the smell of sacrifice drifting through the corridors of the Spires of Innoruuk. To be healed, I require a donation of 10 gold coins.'
+
+'''Give her 10 gold coins and she will heal you:'''
+
+: Ulazia W`Selo says, 'May the breath of life pass through your failing body and cast its foes from you. Unnngh... Praise Innoruuk!'
+
+Ulazia W`Selo begins to cast a spell.
+
+You feel much better.
+
+You say, 'I require curing of disease'
+
+: Ulazia W`Selo says, 'So curing is what you have come for! Seek out Mistress Ulazia W'selo.'
+: Ulazia W`Selo says, 'Whatever the malady, I can surely rid you of it. First, you must donate 6 gold coins. The power of life is not easily acquired when you follow the unholy might of Innoruuk.'
+
+'''Give her 6 gold coins and she will cure your disease:'''
+
+: Ulazia W`Selo says, 'May the breath of life pass through your failing body and cast its foes from you. Unnngh... Praise Innoruuk!'
+
+Ulazia W`Selo begins to cast a spell.
+
+You say, 'I require curing of poison'
+
+: Ulazia W`Selo says, 'So curing is what you have come for! Seek out Mistress Ulazia W'selo.'
+: Ulazia W`Selo says, 'So, a toxic substance races to your heart? It is best we stop that at once! Ah... But, before I go on, you must pay the required donation of 8 gold coins.'
+
+'''Give her 8 gold coins and she will cure your poison:'''
+
+: Ulazia W`Selo says, 'May the breath of life pass through your failing body and cast its foes from you. Unnngh... Praise Innoruuk!'
+
+Ulazia W`Selo begins to cast a spell.
+
+'''Other text:'''
+
+You say, 'Who is Innoruuk?'
+
+: Ulazia W`Selo says, 'You speak the name of the Prince of Hate. He is the higher power who set the Teir'Dal upon this land. All Teir'Dal pay homage to him. If they do not, they are surely [heretics]. And, if they are heretics, they surely must die!'
+
+You say, 'Who are the heretics?'
+
+: Ulazia W`Selo says, 'Speak not of Teir'Dal Heretics. Those Teir'Dal who do not follow Innoruuk shall be cut down! Master Kerton R`dev of the Spires of Innoruuk is seeing to that.'
+
+You say, 'Who are the Teir'Dal?'
+
+: Ulazia W`Selo says, 'I see the ancient language of the elf kind has been neglected. We dark elves are the Teir'Dal, superior to all elves. The high elves are known as the Koada'Dal and the wood elves are the Feir'Dal. There was once another, but that race is now extinct.'
+
+[[Category:Quests]]
+[[Category:All Classes Quests]]
+[[Category:Neriak Third Gate]]

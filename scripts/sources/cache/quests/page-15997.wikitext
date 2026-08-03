@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Ebon-strongbear.jpg|frame|Ebon Strongbear]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Ebon Strongbear]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Ebon Strongbear]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Ebon Strongbear]] is located at 72, -511 in the Hall of Steel.''
+
+You say, 'Hail, Ebon Strongbear'
+
+: Ebon Strongbear says, 'Welcome. I am the champion of the Steel Warriors. There are none who can challenge me. I guide this brotherhood of Steel Warriors. From Qeynos to the trade city of Freeport, the ways of the Steel Warriors are taught. I welcome all [young Steel Warriors].'
+
+'''Hand [[Ebon Strongbear]] your [[Recruitment Flyer]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Enlist today, the Steel Warriors are looking for strong, able men to help defend the great city of Qeynos.  Take this note to Ebon Strongbear, and join our cause.</code>
+
+: Ebon Strongbear says, 'So then, you wish to join the ranks of the Steel Warriors? Very good, then - take this tunic and wear it with pride. Visit our arena trainers to make preparations for battle and then take your weapon to the field! Remember in all that you do, you represent the Steel Warriors in thought and deed!'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Warrior Quests]]

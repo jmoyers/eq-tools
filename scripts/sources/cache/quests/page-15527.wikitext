@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_henina_miller.png|frame|Henina Miller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Henina Miller]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Small Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+
+[[Henina Miller]] may be found at -2855, -5840. Dubious faction is sufficient to complete the quest. A Troll Shaman of Cazic-thule is able to complete it.
+
+You say, 'Hail, Henina Miller'
+
+: Henina Miller says 'Greetings, ______.  Welcome to the Miller Farmstead.  [Cleet] and I have lived out here on the plains of Karana for thirty years now.  We grow the finest grains in all of Norrath.  Admire the grains all you like, but steer clear of those [scarecrows].'
+
+You say, 'What scarecrows?'
+
+: Henina Miller says 'Yep, those scarecrows are snarky.  I've told Cleet more than a few times that I'd like to cook their heads into a pie, but he won't let me get near them.  Oh, there was a recipe book that the Hutchison's gave us as a gift that described how to bake five different wisp lightstones into a scarecrow head to make it glow.  Ah well.'
+
+You say, 'Who is Cleet?'
+
+: Henina Miller says 'Cleet is my husband.  He is a hard worker and provides for the kids and me.'
+
+[[Cleet Miller]] will periodically drop a [[Sack of Hay]].  If you see him standing still in one location for 30 seconds or so, you will get the message "Cleet Miller begins to gather hay."  A Sack of Hay will spawn on the ground.  One such location is -3280, -5460. The Sack of Hay rots pretty quickly, so grab it as soon as he drops it.  [[Scarecrow]]s also sometimes drop a sack of hay (as loot, not dropped on the ground) when killed.
+
+Give the Sack of Hay to Henina Miller.
+
+: Henina Miller says 'Thank you so much. [[Tiny]] gets quite tired doing this by himself.  Here you go.''
+
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+</div>
+{{exp}}
+
+You receive 1 gold, 5 silver, 4 copper pieces.
+
+[[Category:Quests]]
+[[Category:Western Plains of Karana]]
+[[Category:All Classes Quests]]

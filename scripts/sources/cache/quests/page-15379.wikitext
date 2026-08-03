@@ -1,0 +1,35 @@
+[[File:npc_ged_twigborn.png|frame|Ged Twigborn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Ged Twigborn]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[a black wolf]], [[a shadow wolf]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Wolfskin Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+There is an NPC named Ged Twigborn who wanders the forest. He can usually be spotted in one of two places: Either along the same wall as the zone to the Commonlands, or by turning on the path off the main road from the sign pointing towards Freeport. 
+
+Ged will make you some Wolfskin Gloves if you give him 13 gold and a high quality wolf pelt.
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]
+[[Category:All Classes Quests]]

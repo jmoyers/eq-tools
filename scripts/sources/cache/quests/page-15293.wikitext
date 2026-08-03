@@ -1,0 +1,92 @@
+{{Classic Era}}
+[[File:Npc marton sayer.jpg|alt=Marton Sayer|thumb|Marton Sayer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Hills]]
+|-
+! ''' Quest Giver: '''
+| [[Marton Sayer]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Bard]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]], [[Splitpaw Lair]]
+|-
+! ''' Related NPCs: '''
+| [[Lord Elgnub]], [[a Lteth Val Scribe]], [[a one eyed gnoll]]
+|}
+
+== Reward ==
+
+<ul>
+<li>{{:Gnoll Slayer}}</li>
+<li>{{:Gnoll Slayer (final)}}</li>
+</ul>
+
+== Walkthrough ==
+
+[[Marton Sayer]] may be found in a cottage in [[Qeynos Hills]] (/loc 1381, 278).
+
+'''Note: This quest may be completed at Dubious faction. Since the NPC happens to be a merchant, the worst your faction could possibly be is dubious.
+
+'''<blockquote>You say, 'Hail, Marton Sayer'
+
+Marton Sayer says 'Welcome. Please stock up on provisions, especially if you are headed toward the lair of the vile gnolls. If so, I wish you much luck and many gnoll pelts!! I also have knowledge of a [powerful dog]. I pray you do not encounter him.'
+
+You say, 'What powerful dog?'
+
+Marton Sayer says, 'I have encountered a gnoll who spoke the common tongue. He dared to call himself Lord Elgnub. He swore that some day we would cross paths and he would snatch my infant son Joseph from our home. He would stand no chance against me and the mighty [Gnoll Slayer].'
+
+You say, 'What is Gnoll Slayer?'
+
+Marton Sayer says, 'Gnoll Slayer is the mighty longsword which was passed down unto me through generations of Sayers. My days of battle are over, but I can still wield her with ferocity. The only thing more precious would be my son, Joseph Sayer. I would trade Gnoll Slayer only for him to be safe and sound at home.'</blockquote>'''
+
+[[Lord Elgnub]] can be found in the skull room of [[Blackburrow]].  Kill him and loot [[Baby Joseph Sayer]], which you will bring back to Marton.
+
+'''<blockquote>Marton Sayer says 'Baby Joseph!! Look, Momma!! Baby Joseph has been rescued by this good adventurer!! That evil Lord Elgnub made good on his word and snatched my son from under our noses. You saved the day!! For this you shall wield 'Gnoll Slayer'!!</blockquote>
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 20.
+* Your faction standing with [[Circle of Unseen Hands]] has been adjusted by -4.
+* Your faction standing with [[Antonius Bayle]] has been adjusted by 5.
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+{{exp}}
+
+You receive [[Gnoll Slayer]]<br>You receive 2 platinum pieces
+
+You receive [[Gnoll Slayer]] (the intermediate version).
+
+'''<blockquote>
+You say, 'What true potential?'
+
+Marton Sayer says, 'The true potential of Gnoll Slayer is an enchantment which was once imbedded into a gnoll's eye which was placed into the hilt of the blade. The spell would help you fight off disease and call forth a wolf to fight beside you. Alas, the gnoll eye was stolen from the blade by a great, one-eyed, white gnoll. Along with the eye, the only book which explained how to return the enchantment was also stolen. I know not where this gnoll might be. If you can find the journal and the eye, return them with the Gnoll Slayer to me, for I have been searching for decades.'</blockquote>
+
+* Head to [[Splitpaw Lair]]
+* Kill [[a one eyed gnoll]]
+** Loot a [[Gnoll's Eye]]
+* Kill [[a Lteth Val Scribe]]
+** Loot a [[Journal of Greater Enchantment]]
+* Give the eye, journal, and intermediate [[Gnoll Slayer]] to Marton.
+
+'''<blockquote>Marton Sayer says, 'The eye and the journal! What a great day! The Gnoll Slayer shall be returned to full strength because of you. Your service to Qeynos will not soon be forgotten.'</blockquote>
+
+* Your faction standing with Merchants of Qeynos has been adjusted by 125.
+* Your faction standing with Circle of Unseen Hands has been adjusted by -40.
+* Your faction standing with Antonius Bayle has been adjusted by 30.
+* Your faction standing with Coalition of Tradefolk has been adjusted by 20.
+* Your faction standing with Guards of Qeynos has been adjusted by 40.
+{{exp}}
+
+You receive the final version of the [[Gnoll Slayer (final)|Gnoll Slayer]].
+
+[[Category:Quests]]
+[[Category:Qeynos Hills]]
+[[Category:Bard Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

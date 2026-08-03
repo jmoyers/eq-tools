@@ -1,0 +1,539 @@
+__NOTOC__
+{{Kunark Era}}
+<onlyinclude>[[File:npc_grand_master_glox.png|frame|Grand Master Glox]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Grand Master Glox]], Master Raska, Master Niska
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Shackle of Dust}} (#0)
+</li><li> {{:Shackle of Clay}} (#1)
+</li><li> {{:Shackle of Stone}} (#2)
+</li><li> {{:Shackle of Rock}} (#3)
+</li><li> {{:Shackle of Copper}} (#4)
+</li><li> {{:Shackle of Bronze}} (#5) 
+</li><li> {{:Shackle of Steel}} (#6)
+</li></ul>
+
+== Shackle Quest No. 0 (Dust)==
+
+As you enter the Court of Pain, [[Grand Master Glox]], sits in mediation. Without even looking up, he addresses you. 'The time has come for discipline. Read the note in your inventory and then hand it to me to begin your training.'
+
+Newbie iksar monks start out with a Guild Summons in their inventory, which reads:
+
+ This Broodling has reached the Age of Rebirth.
+ The Broodling is called forth to Cabilis to begin training in the art of fist and tail.
+ Within the walls of the Court of Pain shall I wait.
+ This summons shall be presented to me upon arrival.
+ Discipline awaits.
+ <br>
+ Grand Master Glox
+ The Swifttail Cast
+
+Give the summons to Grand Master Glox.
+
+: Grand Master Glox breaks his meditation and quickly grabs your forearms. You feel the raw power in his heavily callused hands. Out of nowhere, his tail sweeps forward and places a small shackle upon your wrist. He then points southward towards Master Bain and returns to his meditation.
+
+You receive a {{:Shackle of Dust}}.
+
+Note: If you lose this newbie item, you can complete [[The Penance]] quest to replace it (available for all Iksar classes from their guildmaster).
+
+== Shackle Quest No. 1 (Clay)==
+
+:NOTE: need Amiable faction to trigger.
+
+''Shackle of '''Dust''' IS NOT a prerequisite for this quest, but it is for Stone''
+
+[[File:npc_master_raska.png|frame|Master Raska]]
+You say, 'Hail, Master Raska'
+
+: Master Raska says 'Hmmph!! Expect to be a great master such as I? Maybe. You still appear to be a [whiff].'
+
+You say, 'What is a whiff?'
+
+: Master Raska says 'A whiff is the sound of a tail striking air. A whiff is you. Inexperienced. I can help you. If you [want to earn the second shackle].'
+
+You say, 'I want to earn the second shackle.' (need Amiable faction or higher; can't be sneak-quested)
+
+: Master Raska says 'Then you shall perform the first rite. Take this pack. To the Outlands you will go. You will fill and combine the pack with one of each of the following - [[Goblin Scout Beads]], a [[Large Scorpion Pincer]], [[a froglok skipper]]'s [[skipping stone]] and a [[Sabertooth Cub Canine]]. Return the full first rite pack and you shall prove yourself a monk.'
+
+You obtain a [[First Rite Pack]]. Fill it with:
+{{CheckboxList}}
+* 1 [[Goblin Scout Beads]] ([[Lake of Ill Omen]], Warsliks Woods or Lavastorm)
+* 1 [[Large Scorpion Pincer]] ([[Field of Bone]])
+* 1 [[Skipping Stone]] ([[Swamp of No Hope]]) Merchants on the second floor of the ruins might have these from players selling them.
+* 1 [[Sabertooth Cub Canine]] (Lake of Ill Omen)
+{{end}}
+
+Combine to craft a [[Full First Rite Pack]], which you should hand in:
+
+: Master Raska says 'You have succeeded, young ______! You have proven yourself a skilled monk. You will now wear the shackle of clay. You will now be required to increase your intensity of training in hopes that you may soon be able to earn your [shackle of stone].' 
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+
+{{exp}}
+
+You receive 4 gold pieces.
+
+You receive your {{:Shackle of Clay}}.
+
+== Shackle Quest No. 2 (Stone) ==
+
+Note: Adventurers who have lost their [[Shackle of Dust]] and are looking to avoid [[The Penance]] may [[Multiquest]] this quest by creating a new Iksar monk and using their shackle. 
+
+===Checklist===
+
+{{CheckboxList}}
+* Obtain Shackle of Dust
+* Obtain Shackle of Clay
+* Obtain two [[Iksar Bandit Mask]]s
+* Turn in shackles and masks to Master Raska (to receive [[Shackle of Stone]])
+{{end}}
+
+===Walkthrough===
+
+This is the second Monk Shackle quest. [[Master Raska]] is located at approximately 390.29, 113.16 in the Cabilis Monk Guild (The Court of Pain). After completing the previous Shackle quest (Shackle of Clay), Raska mentions the Shackle of Stone...
+
+You say, 'Tell me about the shackle of stone'
+
+: Master Raska says 'Interested in the shackle of stone are we? They are made for monks who have earned their first two shackles and are ready to climb up to the next rung. A monk who feels he is ready to wear the shackle of stone must first [perform the task of cleansing].'
+
+You say, 'I am ready to perform the task of cleansing'
+
+: Master Raska says 'Go forth to the outer gates and seek out the [[Iksar bandit]]s. They have refused to bow to the will of the empire and shall pay dearly for their traitorous ways. They often wear bandit masks. If you return with two bandit masks and the shackles of dust and clay then I shall reward you with the shackle of stone.'
+
+The iksar bandits that drop the masks Raska is looking for spawn within and around the central pit in The [[Field of Bone]] and also near Kaesora city entrance.
+
+Upon turning in the Shackle of Clay, Shackle of Dust, and the two [[Iksar Bandit Mask]]s, you'll receive your {{:Shackle of Stone}} and gain positive faction hits with the Legion of Cabilis and The Swift Tails.
+
+Master Raska says, 'You will get nothing until I hold two bandit masks and the shackles of dust and clay.'
+Master Raska says, 'You will get nothing until I hold two bandit masks and the shackles of dust and clay.'
+Master Raska says, 'You will get nothing until I hold two bandit masks and the shackles of dust and clay.'
+Master Raska says, 'You have done supremely, ______. You have earned your shackle of stone. Mistress Niska will now help you on your way to earning the shackle of rock. May the elements guide you to the next rung.'
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+
+{{exp}}
+
+You receive 3 gold pieces.
+
+You receive your {{:Shackle of Stone}}.
+
+== Shackle Quest No. 3 (Rock) ==
+[[File:npc_master_niska.png|frame|Master Niska]]
+
+=== Checklist ===
+
+{{CheckboxList}}
+*; Right Hand
+:* Talk to [[an Iksar master]] "Rinmark" to receive [[Tattered Sack from Rinmark]] (container)
+::* Obtain [[Excavator Claws]]
+::* Obtain [[Intact Brutling Choppers]]
+::* Obtain [[Torn Sash]]
+::* Obtain [[Goblin Sparring Gloves]]
+:* Combine in [[Tattered Sack from Rinmark]] for [[Full Sack for Master]]
+:* Give [[Full Sack for Master]] to [[an Iksar master]] "Rinmark" and receive [[Iksar Right Hand]] ('=|-')
+:* 
+*; Left Hand with {{Item Lore|Left Hand of Talon Southpaw}}
+:* Give [[The Great Oowomp]] 5 gold to spawn [[a dancing skeleton]]
+:* Talk to dancing skeleton to receive [[Hand With Only a Thumb]] (container)
+:* Kill [[Fingered skeleton]] to receive four fingers.
+::*  A [[Withered 2.5 Inch Finger]]
+::*  A [[Withered 3 Inch Finger]]
+::*  A [[Withered 3.1 Inch Finger]]
+::*  A [[Withered 4 Inch Finger]]
+:* Combine all the Withered Fingers in [[Hand With Only a Thumb]] to craft the [[Iksar Left Hand]] ('=|-')
+*; Left Hand with {{Item Lore|an Iksar Left Hand}}
+:* Kill [[a Sarnak courier]] for another [[Iksar Left Hand]] ('=|-')
+*; Shackle of Rock
+:* Give all three hands to [[Master Niska]] to receive [[Shackle of Rock]]
+{{end}}
+
+=== Summary ===
+
+* Right Hand: acquire [[Excavator Claws]] ([[Field of Bone]] or [[Kurn's Tower]]), [[Intact Brutling Choppers]] ([[Warsliks Wood]]), [[Torn Sash]] ([[Oasis of Marr]]), and [[Goblin Sparring Gloves]] ([[Warsliks Woods]]).
+:Go to [[An Iksar master]] in [[Timorous Deep]]. Say "I will return the hand to Cabilis" to get a bag. Combine the items in the bag to create the Full Sack for Master. Hand in the Full Sack to [[An Iksar master]] for the first hand.
+:'''Do not forget to hand the Full Sack for Master back to the iksar master before you leave.'''
+* Left Hand 1: kill [[fingered skeleton]] in [[Kurn's Tower]] until you get all four fingers.  Give [[The Great Oowomp]] in [[Timorous Deep]] 5g to spawn [[a dancing skeleton]].
+:Tell the skeleton, "I will return the hand to Cabilis" to get a hand with only a thumb.  Combine the four fingers in the container.
+* Left Hand 2: kill [[A Sarnak courier]] in [[Lake of Ill Omen]]
+* Return to Cabilis and turn in the three hands to [[Master Niska]]
+
+=== Details ===
+
+After completing the quest for your Shackle of Stone, Master Raska mentioned that you need to see [[Master Niska]], who may be found at 456, 32 in the Court of Pain.
+
+You say, 'Hail, Master Niska'
+
+: [[Master Niska]] bows with elegance and grace. You can see her arms rippling with muscles. 'Greetings. We are the Swifttails. We are the harnessers of the elements. We are the tails of discipline. To achieve rebirth into our caste is a great honor indeed. We can be identified by our adornments. You should display that which we have given you to adorn your arms with pride. You do have your bracer, correct?'
+
+You say, 'I want the Shackle of Rock.'
+
+: Master Niska strikes within inches of your snout with amazing speed. 'The shackle of rock is your interest? Then learn well our ways and prepare yourself. If the stone embraces your wrist, you are ready indeed. To complete the second rung you must find for me the [Fists of Talon].'
+
+You say, 'What are the Fists of Talon?'
+
+: Master Niska points to the Court Chronicler. 'All that is known of Talon has been chronicled. Should you obtain the fists then you shall hand them to me. This shall earn you the shackle of rock.'
+
+* Purchase the book named [[Talon Southpaw]] (identifies as "Scribed by Rinmark") from the Court Chronicler nearby at 363, 48, across the courtyard from Master Niska. It reads:
+
+<pre>
+ Talon Southpaw
+
+ Talon Southpaw was the fastest pugilist ever to walk within the Court of Pain. His speed rivaled that of the great Grandmaster Tynn.
+ He could often be found within the local taverns demonstrating the awesome speed of his left fist.
+
+ Talon Southpaw came to rebirth within this caste. Although quick with fist and tail, the speed of his left arm was not to come to blossom
+ for a couple of decades past his rebirth. It was to follow his captivity by the accursed sarnak.
+
+ Soon after fulfilling the Rung of Tynn, Talon went on a wandering retreat into the dangerous outlands of Kunark. He was not heard from for a total of 5 seasons.
+ Upon his return to Cabilis he told of his captivity within an ancient city of the Iksar now claimed by the sarnak.
+
+ He told of intense torture.
+
+ He survived the ordeal.
+ 
+ He escaped from the claws of the sarnak with numerous scars which proved his painful ordeal. Most of the worst scars were never seen.
+
+ Talon wore a robe which he never removed. The scars underneath were for no lizard's eyes. His great perseverance gave him an inner strength no other monk could lay claim to.
+
+ He now possessed incredible, almost blinding speed with his left arm. He could trap a foe's arm with his left and strike with it as if he had a third arm!
+ He was indeed a paragon of the Swifttails. All in the empire either respected or feared him. None would spar him outside of the taverns. With grog comes stupidity.
+
+ Upon his death in Kurn, Grandmaster Tynn removed his hands in a private ceremony. Only Tynn was allowed to gaze upon Talon's body.
+ The fists were then sealed in a canopic which would stay within the Tower of Kurn. His body was dusted. This is his tale as told by Rinmark.
+</pre>
+
+[[Klok Poklon]] may be found at Tink n' Babble +910, -70, on the first floor of the house near the castle.
+
+You say, 'Hail, Klok Poklon'
+
+: [[Klok Poklon]] says 'Greetings, thirsty traveler. Pull up a stool and lay yer copper down. It's time to drink and be merry. Just don't get too merry or I will have to call the troopers.'
+
+You say, 'Who was Talon Southpaw?'
+
+: Klok Poklon feints with two quick left hooks!! 'Talon Southpaw. He had the fastest hands in the empire. I remember he once beat another lizard in an arm wrestling match. The amazing thing was, while he was gripping the croak's left hand, he left-hooked him without losing his hold!! That's quick!! I hear one of his treasured hands is in the possession of a monk called Master Rinmark.'
+
+[[Master Bain]] resides in the Court of Pain at 293, -49.
+
+You say, 'Where is Master Rinmark?'
+
+: Master Bain says 'Seeking Master Rinmark? He has left the Court of Pain. Gone to focus his thoughts on the elements of wind and thunder. I believe he was headed toward the Overthere. That was the last I heard of his trek.'
+
+* Find [[an Iksar master]] in the [[Timorous Deep]] at -5055, +2790.
+
+[[File:npc_an_iksar_master.png|frame|an iksar master (Master Rinmark) near the chessboard in Timorous Deep]]
+
+You say, 'Hail, an Iksar master'
+
+: [[an Iksar master]] is humming and chanting softly. He seems oblivious to your presence.
+
+You say, 'Are you Master Rinmark?'
+
+: an Iksar master squints one eye open, then returns to his meditation.
+
+You say, 'Who was Talon Southpaw?'
+
+: an Iksar master waves his arms in the air. 'The great master. His soul is the wind. He speaks to us in words of thunder. He strikes Norrath with bolts of lightning. I seek to be as he is. I have traveled the globe in search of his fists. I have found only one. Another is said to be with [Gomoz]. I shall return it when I am finished with my seasons-long meditation or perhaps I shall find a monk to [return the hand to Cabilis].'
+
+You say, 'Who is Gomoz?'
+
+: an Iksar master says 'Disciple Gomoz was once Talon Southpaw's pupil. It is rumored that he has only one hand. Unfortunately, a horde of ogre raiders swiped his bones, along with others, from their place in Kurn's Tower. What those simple oafs plan to do with them is a mystery. Only one who has studied the arcane sciences could use them. They most likely used them as soup bones.'
+
+You say, 'I will return the hand to Cabilis.'
+
+: an Iksar master hands you an old tattered sack. 'This shall be your proof of allegiance. Prove that you are strong with an intact mandible of a skulking brutling and the claws of a burynai excavator. Prove that you are a monk of fist and tail with a sash of an exiled human monk and the sparring gloves of a goblin pit fighter. Combined, these items make the sack full. This will earn my trust and the hand.'
+
+You receive a [[Tattered Sack from Rinmark]] from Rinmark, a 4-slot container. 
+
+Acquire [[Excavator Claws]] (identifies as "Burynai Excavator Claws," dropped by various burynai in [[Kurn's Tower]]), [[Intact Brutling Choppers]] (dropped by a skulking brutling in [[Warsliks Woods]]), [[Torn Sash]] (identifies as "Exiled Monk Sash," dropped by [[a young ronin]] in [[Oasis]]), and [[Goblin Sparring Gloves]] (dropped by [[a goblin pit fighter]] in [[Warsliks Woods]]). 
+
+Combine them to create a [[Full Sack for Master]] (identifies as "property of Rinmark"). Hand this in to An Iksar master.
+
+: an Iksar master bows before you and takes a wrinkled, mummified hand from a pouch at his side. 'Take the hand. Let it rest within Cabilis and be reunited with the left.'
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+{{exp}}
+
+You receive [[Iksar Right Hand]] ('=|-') {{Item Lore|Right Hand of Talon Southpaw}}
+
+* Find [[The Great Oowomp]] elsewhere in the [[Timorous Deep]] at +5725, +3120.
+
+You say, 'Hail, The Great Oowomp'
+
+: The Great Oowomp gestures as if casting a powerful spell. 'Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerful spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!'
+
+You say, 'I want to see the dancing skeleton.'
+
+: The Great Oowomp says 'Oh!! You wish to see the great Oowomp perform his magic!! I have studied with the grand mages and wise [McMerin clan] of Norrath, as my speech implies. I can call forth the skeleton with but a twinkling of my power and five of your gold.'
+
+* Give him 5 gold pieces (or any equivalent money).
+
+: The Great Oowomp flings the coins into the air and they all fall neatly into his oversized coin pouch. 'Gaze in awe at my awesome powers of the arcane!! You, a simple citizen, shall see my power. Allakabam!!'
+
+You say, 'Hail, [[a dancing skeleton]]'
+
+: a dancing skeleton begins to dance with a loud clatter. A cloud of dust is created. Teedle dee. Teedle doo.
+
+: a dancing skeleton says 'A dancing skeleton am I.'
+
+: a dancing skeleton says 'Dancing for you and dancing for me.'
+
+You say, 'Are you Gomoz?'
+
+: a dancing skeleton says 'Gomoz!! Why, that is me! I was heading off to be with the elements when I was captured by this smelly ogre. Actually, he is not as smelly as most.'
+
+: a dancing skeleton says 'Dancing for the great Oowomp!! Wheee!!'
+
+You say, 'Who was Talon Southpaw?'
+
+: a dancing skeleton says 'Master Talon Southpaw!! He was my master. Dead, he became. Off to the elements. I keep his special hand with me. Perhaps I should have it returned. Maybe I shall find a young adventurer to [return the hand to Cabilis].'
+
+You say, 'I will return the hand to Cabilis.'
+
+: a dancing skeleton says 'Yes!! Return the hand. Here it is. Missing four it is. Within the tower of past pain and torture is where the four lie. Taken by bones similar to myself.'
+
+: a dancing skeleton says 'Dancing and singing is my life!!'
+
+You receive a [[Hand With Only a Thumb]] {{Item Lore|Palm of Talon Southpaw}}
+
+* Head to [[Kurn's Tower]] and keep killing [[fingered skeleton]] until you have looted:
+
+* A [[Withered 2.5 Inch Finger]] {{Item Lore|Finger 3 Of Talon's Hand}}
+* A [[Withered 3 Inch Finger]] {{Item Lore|Finger 2 Of Talon's Hand}}
+* A [[Withered 3.1 Inch Finger]] {{Item Lore|Finger 1 Of Talon's Hand}}
+* A [[Withered 4 Inch Finger]] {{Item Lore|Finger 4 Of Talon's Hand}}
+
+* Combine them in the hand container to craft a [[Iksar Left Hand]] ('=|-') {{Item Lore|Left Hand of Talon Southpaw}}
+
+Finally, an [[Iksar Left Hand]] ('=|-') {{Item Lore|an Iksar Left Hand}} drops from [[a Sarnak courier]] in the [[Lake of Ill Omen]].
+
+* Hand in the three hands to '''Master Niska''' in East Cabilis, ''<u>not</u> an Iksar Master''.
+
+: Master Niska removes a crudely hewn shackle. 'This is yours. It is one of the keys to the third rung. I see that you are truly a great monk and have studied your disciplines well. I have need of one such as you. I have heard of [troubles with an outlander].'
+
+You receive the {{:Shackle of Rock}}.
+
+== Shackle Quest No. 4 (Copper)==
+
+=== Checklist ===
+
+{{CheckboxList}}
+;* Obtain the [[Shackle of Stone]]
+;* Obtain the [[Shackle of Rock]]
+;* Obtain [[An Outlander's Head]] from [[Kwinn the Outlander]]
+;* Turn in both Shackles and the Head to Niska (to receive [[Shackle of Copper]])
+{{End}}
+
+===Walkthrough===
+
+After completing the Shackle of Rock Quest, Master Niska says he has heard of [troubles with an outlander].
+
+You say, 'what troubles with an outlander'.
+
+: [[Master Niska]] says 'It seems Klok Ephmir has encountered an outlander who was hunting the food we lizards enjoy. The Legion will not act without proof of this outlanders existence. We were asked by the Baron to find this proof. We shall do this. You shall provide me with the outlanders head and the shackles of Rock and Stone!!"
+
+Klok ephmir can be found on the island of merchants.
+
+You say, 'Hail [[Klok Ephmir]]'.
+
+: [[Klok Ephmir]] stares at you with a wicked smirk. So you share the Brood's love of Frogloks. Alive, they provide much trouble. Dead, they provide much delight. I have found many uses for the Frogloks. From fine meat to fine mats. Ask if you do not see something. 
+
+You say, 'what outlander'. 
+
+: Klok Ephmir turns pale at the mention of the Outlander. The Outlander!! That is what the lizards in the Tink N' Babble have dubbed him!! He is tall and strong. Get close enough and he will kill you on sight!! I think he could even defeat the likes of Bruiser Noz!! I spotted him near the edge of the swamps. He was headed toward the fields of Firiona.
+
+[[Kwinn the Outlander]] Spawns in [[Firiona Vie]]. He is a rare spawn and is usually killed by Frogloks soon after he spawns.
+
+Kill him and he drops [[An Outlander's Head]]. Return his head and shackles of rock and stone to Master Niska to receive the {{:Shackle of Copper}}.
+
+:Master Niska says 'This is not all. Bring me the item this caste seeks and the shackles of stone and rock.'
+:Master Niska says 'This is not all. Bring me the item this caste seeks and the shackles of stone and rock.'
+:Master Niska says 'Very good!! Here is your shackle of copper. The emperor shall be pleased that I, Mistress Niska, have slain the outlander. Do you have some time? I need someone to be my [personal courier]? Will you?'
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+
+{{exp}}
+
+You receive 15 gold pieces.
+
+You receive the {{:Shackle of Copper}}.
+
+== Shackle Quest No. 5 (Bronze) ==
+
+=== Checklist ===
+
+{{CheckboxList}}
+:* Talk to [[Master Niska]] (to receive [[Tin Box]]) (optional)
+:* Give Tin Box to [[An Iksar Master]] "Rinmark" (to receive [[Empty Tin Box (Bronze Shackle)|Empty Tin Box]])
+:* Collect foraged and looted pebbles (see list below)
+:* Combine in [[Empty Tin Box (Bronze Shackle)|Empty Tin Box]] to craft [[Pebble Filled Box]]
+:* Give Filled Box to [[An Iksar Master]] (to receive [[Shackle of Bronze]])
+{{End}}
+
+=== Walkthrough ===
+
+It begins again with [[Master Niska]].
+
+You say, 'I will be your personal courier.'
+
+: Master Niska grabs a tin box resting by her feet. 'Take this to Master Rinmark and be quick about it!!'
+
+You receive a [[Tin Box]] (identifies as "property of Rinmark"). Take it to [[an Iksar master]] in [[Timorous Deep]].
+
+: an Iksar master opens the box to reveal a variety of pebbles. 'How grand!! My pebbles!! Now I can continue with my rock garden!! Hmmm. You look familiar. Hey!! I bet you can help me complete my garden!! Would you please [assist old Rinmark in completing his rock garden]?'
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+{{exp}}
+
+You say, 'I will assist old Rinmark in completing his rock garden.'
+
+: an Iksar master pours the pebbles into his pocket and hands the box to you. 'Take my box. Fill and combine within my box the following; a radiant meteorite, frontier fool's gold, petrified redwood, Rile's sand coin, sulfur stone, fragment of tektite, plains pebble, jade magma, heart of ice and an unholy coldstone. Return the full tin box to me and I shall reward you with a shackle of bronze.'
+
+You receive an [[Empty Tin Box (Bronze Shackle)|Empty Tin Box]] (identifies as "Empty Pebble Box"). Here is a breakdown of where each item can be found:
+
+[[File:Rinmark empty tin box filled.png|right|thumb|All pebbles in Empty Tin Box (before combine)]]
+
+====Pebbles checklist====
+{{CheckboxList}}
+* Foraged pebbles
+:* [[Radiant Meteorite]] (foraged in [[Burning Woods]])
+:* [[Gold Nugget]] (foraged in [[Frontier Mountains]]). {{Item Lore|Frontier Fool's Gold}} The proper nugget is stackable, cannot be sold to a vendor. The other nugget ("Genuine Gold Nugget") doesn't stack and can be sold.
+:* [[Rile's Sand Coin]] (foraged in [[Timorous Deep]])
+:* [[Plains Pebble]] (foraged in the Karana plains)
+* Looted pebbles
+:* [[Petrified Redwood]] dropped by succulents in [[The Overthere]] -or- foraged in [[Warsliks Woods]] 
+:* [[A Scarlet Stone]] dropped by [[a drolvarg scavenger]] in [[Firiona Vie]]. {{Item Lore|Sulfur Stone}}
+:* [[Jade Magma]] dropped by [[a burynai miner]] in [[Frontier Mountains]]
+:* [[Heart of Ice]] dropped by an [[Icebone Skeleton]] in [[Swamp of No Hope]] or [[Lake of Ill Omen]]
+:* [[Unholy Coldstone]] dropped by [[a goblin priest]] in [[Permafrost]]
+* Quested pebbles
+:* [[Tektite (Item)|Tektite]] Fragment: [[Tektite]] is a gargoyle guard inside the [[The Overthere]] Outpost. He wants new "eyes". What he wants are 2 [[Carnelian]]s. These can be bought from a gem vendor (like [[Tin Merchant IV]]). If KOS, get an invis and sneak through the main tunnel.
+{{End}}
+
+Combine all pebbles to craft [[Pebble Filled Box]] (identifies as "property of Rinmark"). Hand this in.
+
+: an Iksar master graciously accepts the tin box filled with precious rocks and gems. 'Thank you greatly, young Shasriz. For your deed, I bestow upon you the shackle of bronze!! You have completed the third rung.
+
+: an Iksar master says, 'Alas, there is no time for celebration. I need your help in rescuing a [student] of mine.'
+
+<div class="facblock">
+* Your faction standing with SwiftTails got better.
+* Your faction standing with LegionofCabilis got better.
+</div>
+{{exp}}
+
+You receive the {{:Shackle of Bronze}}.
+
+== Shackle Quest No. 6 (Steel)==
+{{Velious Era Inline}}
+
+===Checklist===
+{{CheckboxList}}
+* Obtain a Shackle of Copper
+* Obtain a Shackle of Bronze
+* Talk to [[an Iksar master]] "Rinmark" (to receive [[Part of a Large Key]])
+* Obtain a [[Nickel Key]] from [[a coerced penkeeper]] in Dalnir
+* Obtain a [[Copper Key]] from [[a goblin interrogator]] in [[Droga Jail area]]
+* Combine a Nickel and Copper key inside Large Key Part (to craft [[Coppernickel Key]])
+* OPTIONAL Obtain [[A Bronze Key]] from [[a goblin penkeeper]] to gain access to slave cell, Note if you walk into the cell doors near the hinge side of the door you can clip through even as an iksar 5/28/2020
+* Turn in Coppernickle Key, Copper Shackle, and Bronze Shackle to [[an iksar slave]] "Veltar" (to receive [[Shackle of Steel]])
+{{End}}
+Receive {{:Shackle of Steel}}
+
+===Walkthrough===
+
+'''After finishing the shackle of bronze quest, Master Rinmark asks you to help him rescue a student of his.'''
+
+You say, 'Where is your student?'
+
+: an Iksar master hands you what appears to be the base of a key. 'This was delivered to me by a dying student. He collapsed just after handing it to me. He was accompanying a student of mine named Veltar. They were questing for the legendary Whistling Fists. The key is made of a metal I have never felt or heard of. Find him.'
+
+'''You receive [[Part of a Large Key]], a 2-slot container.''' {{Item Lore|Base of Coppernickel Key}}
+
+You say, 'what legendary whistling fists?'
+
+: an Iksar master says,'The Whistling Fists are rumored to be magical instruments of destruction which can only be wielded by monks. The founder, Supreme Master Tynn, was the only lizard to ever gaze upon the weapon. He only spoke of it to his student Mathor. Marthor rarely spoke of it and when he did it was usually after a few flagons of Trog Brew. That is why many consider it to be babble.
+
+
+'''Then you need to find "Veltar". "Veltar" ([[an iksar slave]]) can be found in Frontier Mountains, in Goblin cave system -2196, 1664 '''. Veltar's placeholder is a KOS [[a crazed iksar slave]] (not on Cabilis faction). "an enslaved Iksar" is not the PH, and will reduce Cabilis faction.
+
+You say, 'Hail, an Iksar slave'
+
+: an Iksar slave seems to have lost all hope. He sadly looks to the ground. His shackles are different than the others you see in this cell. One is definitely steel and not of goblin design. The other is made of an unfamiliar metal.
+
+You say, 'Are you Veltar?'
+
+: an Iksar slave 's soiled face shines with a glint of hope. 'You know my name? Who has [sent] you to find me?'
+
+You say, 'Master Rinmark sent me'
+
+: an Iksar slave says 'Then word has gotten to him!! If you be a monk of the third rung I will accept your aid. You must find the [coppernickel key]. It is required to release me from this goblin shackle. I have no reward to offer other than the shackle of steel. Give me both your shackles of the third rung along with the key and I shall reward you the first shackle of the fourth rung.'
+
+You say, 'Where is the coppernickel key?'
+
+: an Iksar slave says 'The key is split into three parts. Part one is the base and must be combined with the two remainder pieces. One piece is in here and the other was lost. I overheard the goblins chattering and recognized the goblin phrase, 'lair of flying mouths'!! As for the base, I do not know.'
+
+'''You now need to collect and combine the three pieces of the coppernickel key.'''
+
+# You already have the base, which you received from Master Rinmark.
+# The second piece is a [[Copper Key]], dropped by the [[a goblin interrogator]] in the jail area of Temple of Droga. {{Item Lore|Coppernickel Key "I.."}}
+# The "lair of flying mouths" is a reference to [[Dalnir]]. A [[Nickel Key]] is dropped by [[a coerced penkeeper]] on the third level. 	{{Item Lore|Coppernickel Key "..I"}}
+
+Combine the nickel and copper keys inside the base. This results in [[Coppernickel Key]] {{Item Lore|Coppernickel Key "..II.."}}
+
+Give Veltar the Coppernickel Key, and your Bronze and Copper Shackles.'''
+:'''Note: 'a iksar slave' and 'a crazed iksar slave' are different NPC's and the crazed one is KOS and will eat your items, de-pop and pop happens at 6am and 8pm game time. Make sure you hail the NPC first and get a reaction from him, there's also a slave with a shovel who doesn't respond and will eat your items. There is also a report of an unarmed an iksar slave (no faction hits on death) that is also unresponsive and will also eat your items (09/30/2019). Suggested action is to keep turning over spawns until you have a responsive 'an iksar slave'.'''
+
+: an Iksar slave says 'I made a pact to reward the shackle of steel to one who could deliver the coppernickel key and the shackles of copper and bronze.'
+: an Iksar slave says 'I made a pact to reward the shackle of steel to one who could deliver the coppernickel key and the shackles of copper and bronze.'
+: an Iksar slave hands you a shackle and removes the coppernickel shackle so he may flee. He places your shackles on his wrists and darts into the darkness.
+
+{{exp}}
+
+You receive the {{:Shackle of Steel}}.
+
+== Related Quests ==
+
+* [[The Penance]]
+</onlyinclude>
+== Reference Links ==
+
+* [http://monklybusiness43508.yuku.com/forum/viewtopic/id/1690 In-Depth Guide to Whistling Fists and Shackle Quests (Monkly Business)]
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Monk Quests]]
+[[Category:Timorous Deep]]

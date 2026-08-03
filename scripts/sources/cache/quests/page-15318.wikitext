@@ -1,0 +1,51 @@
+[[File:Larsk Juton.jpg|alt=Larsk Juton, Ranger Guildmaster in Surefall Glade|thumb|Larsk Juton]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Larsk Juton]]
+|-
+! ''' Minimum Level: '''
+| 12
+|-
+! ''' Classes: '''
+| [[Druid]], [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]]
+|-
+! ''' Related NPCs: '''
+| [[a gnoll brewer]], [[Master Brewer]]
+|}
+
+== Reward ==
+
+<ul><li> Faction
+</li><li>  {{:Cloak of Jaggedpine}}
+</li></ul>
+
+== Walkthrough ==
+
+After you turn in Gnasher's head to Larsk Juton, he will sometimes say that he requires your services to [assist in the extermination of the gnoll brewers]. '''Note: You do not have to complete [[Gnasher's Head]] turn in to begin this quest.'''<blockquote>You say, 'I will assist in the extermination of the gnoll brewers.'
+
+Larsk Juton says, 'Within the bowels of Blackburrow, our scouts have reported seeing the gnoll brewers. You will go and brave the lair of the dogs and slay these brewers in order to cease the flow of Blackburrow Stout. During your mission, should you find any Blackburrow casks, you must return them to me. When you have recovered three of these casks, I shall award you the '''[Cloak of Jaggedpine]'''.'
+
+You say, 'What is the Cloak of Jaggedpine?'
+
+Larsk Juton says, 'The Cloak of Jaggedpine was made for those loyal to the ways of the forest. It is enchanted to increase one's dexterity. It is awarded to those who have aided in our cause to rid the land of those vile dogs called the Sabertooths. Should you earn one, be sure to hold onto it- you never know when we may alter the enchantments placed upon the cloak.'</blockquote>
+
+You can find [[Blackburrow Cask]] on [[a gnoll brewer]] or [[Master Brewer]] on level three of Blackburrow. The Master Brewer spawns within the barrels next to the water underneath the Gnoll Sharpshooter ledge. The spawn time is fast (~5-10 minutes) and the Master Brewer always spawns. The brewer spawns next to the Master Brewer. The cask is a very rare drop from the gnoll brewer, but a guaranteed drop from the Master Brewer.
+
+'''Upon turning in your third [[Blackburrow Cask]]...'''<blockquote>
+Larsk Juton says, 'You have done well and served the people of the forest through this brave and noble deed. I now bestow upon you our friendship and reward you with the {{:Cloak of Jaggedpine}}. Wear it as a mark of your allegiance.'</blockquote>
+
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+
+'''{{exp}}'''
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:Ranger Quests]]

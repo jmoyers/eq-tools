@@ -1,0 +1,129 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_lorekeeper_zorik.png|frame|Lorekeeper Zorik]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Lorekeeper Zorik]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Warlock's Crown
+|Warlock's Robe
+|Warlock's Sleeves
+|Warlock's Wristguard
+|Warlock's Gloves
+|Warlock's Pantaloons
+|Warlock's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Lorekeeper Zorik]] in [[Thurgadin]].{{CheckboxList}}
+*[[Warlock's Crown]]
+:*[[Torn Enchanted Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Warlock's Robe]]
+:*[[Torn Enchanted Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Warlock's Sleeves]]
+:*[[Torn Enchanted Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Warlock's Wristguard]]
+:*[[Torn Enchanted Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Warlock's Gloves]]
+:*[[Torn Enchanted Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Warlock's Pantaloons]]
+:*[[Torn Enchanted Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Warlock's Boots]]
+:*[[Torn Enchanted Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+<ul><li>''Hail, Lorekeeper Zorik
+</li><li>Zorik: I seek those who practice the art of dark magicks. I seek those who call themselves necromancers. Are you a necromancer?
+</li><li>say: I am a necromancer
+</li><li>Zorik: Excellent. Are you sure enough of your skills to undertake my taksks? If not, get out of my sight, weakling!
+</li><li>Say: I will undertake your tasks.
+</li><li>Zorik: I thought so. One should never back down from a challenge. Once you have completed them, I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.
+</li><li>Say: What <enter piece>
+</li></ul>
+
+'''After turn-in:'''
+
+Lorekeeper Zorik smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+''Dialogue needed.''
+
+Zorik promises to make you a cap if you bring her a [[Torn Enchanted Silk Turban]] and three pieces of [[Crushed Flame Opal]].
+
+== Robe ==
+
+''Dialogue needed.''
+
+Zorik promises to make you a robe if you bring her a [[Torn Enchanted Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Zorik promises to make you a sleeves if you bring her a set of [[Torn Enchanted Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Zorik promises to make you wristbands if you bring her an [[Torn Enchanted Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Zorik promises to make you gloves if you bring her a pair of [[Torn Enchanted Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Zorik promises to make you leggings if you bring her a pair of [[Torn Enchanted Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+''Dialogue needed.''
+
+Zorik promises to make you boots if you bring her [[Torn Enchanted Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Necromancer Quests]]
+[[Category:Thurgadin Armor Quests]]

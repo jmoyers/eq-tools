@@ -1,0 +1,122 @@
+{{Classic Era}}
+[[File:npc_garuc_anehm_pet.png|frame|Garuc Anehm]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Garuc Anehm]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| -
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Gomo Limerin]], [[Ronly Jogmill]], [[Kobot Dellin]], [[Lander Billkin]], [[Parcil Vinder]], [[Grebin Sneztop]], [[Habastash Gikin]], [[Kyle Rinlin]], [[Quegin Hadder]], [[Tolony Marle]] 
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  [[Rusty Weapons|A rusty weapon]]
+</li><li> {{:Wrist Pouch}}
+</li></ul>
+
+== Walkthrough ==
+
+''See the Shadow Knight guildmaster, [[Garuc Anehm]], in the Qeynos Catacombs.''
+
+You say, 'Hail, Garuc Anehm'
+
+: Garuc Anehm says, 'Welcome to the Shrine of Bertoxxulous! You appear to be [new to the shrine]. I do not remember seeing you around.'
+
+You say, 'I am new to the shrine'
+
+: Garuc Anehm says, 'New blood to spread Bertoxxulous' disease? We presently need the help of a [young shadowknight]. There are certain deeds which must be carried out.'
+
+You say, 'I am a young shadowknight'
+
+: Garuc Anehm says, 'Then let your supreme task be the extermination of the Priests of Life. Know that they threaten the will of our Lord Bertoxxulous. For every fallen paladin and cleric of the Temple of Life, you shall rise within our ranks. So... do you [loathe paladins]?'
+
+You say, 'I loathe paladins'
+
+: Garuc Anehm says, 'As do we all. The paladins of Qeynos come from either the Hall of Thunder or the Temple of Life. We have put a bounty upon their heads. Destroy these knights and return either the Order of Thunder or the prayer beads of these inferior men. There has even been a report from [Commander Kane].'
+
+You say, 'Commander Kane?'
+
+: Garuc Anehm says, 'Kane Bayle is the Commander of the Qeynos Guard. He has found it advantageous to befriend the Bloodsabers. We share a [common goal]. He assists us in many ways. He has some new information to reveal. Go and tell him you are a Bloodsaber. Do not speak with him while he is [on duty]!'
+
+You say, 'What common goal?'
+
+: Garuc Anehm says 'Kane Bayle and the leaders of this shrine all wish to overthrow the rule of Antonius Bayle. He, for power, and we for the glory of Bertoxxulous. From this city, our diseased lord shall appear and tread across the land spitting death from his mouth and deforming the land. His glory shall be eternal!'
+
+You say, 'Where is Commander Kane on duty?'
+
+: Garuc Anehm says, 'Kane is quartered within the gatehouse of Qeynos while on duty. At times he can also be found within this shrine.'
+
+'''Your targets are paladins and priests in [[West Karana]]. The best place to hunt them is in the cut-away section of the hills leading to [[Qeynos Hills]].'''
+
+* [[Gomo Limerin]]
+* [[Ronly Jogmill]]
+* [[Kobot Dellin]]
+* [[Lander Billkin]]
+* [[Parcil Vinder]]
+
+* [[Grebin Sneztop]]
+* [[Habastash Gikin]]
+* [[Kyle Rinlin]]
+* [[Quegin Hadder]]
+* [[Tolony Marle]]
+
+''NOTE: These mobs tend to be difficult for their levels. Some dual wield. All can cast [[Lay on Hands]].''
+
+'''On the turn-in of the [[Order of Thunder]] (Not to be confused with [[Order of Thunder (Drosco)]], which Garuc will NOT accept):'''
+
+: Garuc Anehm says, 'Ha! You must have slain a member of the Knights of Thunder. These pitiful knights have been a thorn in our side for far too long. Take this reward and continue the work of Bertoxxulous.'
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better (10).
+* Your faction standing with [[Guards of Qeynos]] got worse (-1).
+* Your faction standing with [[Opal Dark Briar]] got better (1).
+* Your faction standing with [[Priests of Life]] got worse (-2).
+* Your faction standing with [[Corrupt Qeynos Guards]] got better (1).
+</div>
+{{YouGainExperience}}
+
+You receive a [[Rusty Short Sword]].
+
+'''On the turn-in of [[Prayer Beads]]:'''
+
+: Garuc Anehm says, 'Fine work! One less threat to our shrine. Take this. It shall help you become a greater asset to our shrine. Go forth and spread the disease.'
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better (10).
+* Your faction standing with [[Guards of Qeynos]] got worse (-1).
+* Your faction standing with [[Opal Dark Briar]] got better (1).
+* Your faction standing with [[Priests of Life]] got worse (-2).
+* Your faction standing with [[Corrupt Qeynos Guards]] got better (1).
+</div>
+{{YouGainExperience}}
+
+You receive a [[Wrist Pouch]].
+
+'''Warning!'''
+
+Garuc is not pleased if you give him [[Brother Trintle|Brother Trintle's]] [[Busted Prayer Beads]]:
+
+: Garuc Anehm says, 'You fool! Brother Trintle was our mole within the Priests of Life. Now you have killed him. For this you shall die!'
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got worse (-50).
+* Your faction standing with [[Guards of Qeynos]] got better (7).
+* Your faction standing with [[Opal Dark Briar]] got worse (-5).
+* Your faction standing with [[Priests of Life]] got better (12).
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse (-2).
+</div>
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]

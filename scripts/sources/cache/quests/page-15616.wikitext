@@ -1,0 +1,68 @@
+{{Kunark Era}}[[File:npc_jondin.png|frame|Jondin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Jondin]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Related NPCs: '''
+|  <div><li>[[Man eating shrub]]</li></div>
+  <div><li>[[Man eating plant]]</li></div>
+  <div><li>[[Man eating fern]]</li></div>
+  <div><li>[[Man eating creeper]]</li></div>
+  <div><li>[[Man eating vine]]</li></div>
+|-
+|}
+
+== Reward ==
+
+<ul><li>  {{:Frogskin Shield}} </li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, [[Jondin]]'
+
+: Jondin says 'Greetings, friend.  I have many fine herbs for sale. My prices are reasonable for I am not governed by the [Haggle Baron]. If you fancy yourself an adventurer, I would like to hire you for a [simple mission].'
+
+You say, 'Who is the haggle baron?'
+
+: Jondin says '[[Haggle Baron Klok|Haggle Baron Klok Dun Ree]] is the current Haggle Baron. It is written in the law that all services shall be governed by the Haggle Baron. To do business outside of the law is forbidden, but the merchants of the Tower of Death are exempt from this rule. Klok will not test the temper of the Harbinger and Baron Eator will not upset his most powerful ally.'
+
+You say, 'What simple mission?'
+
+: Jondin says 'I actually have a few items I am presently low on. I would appreciate some assistance to [collect fern flowers] or maybe you are an alchemist who can [gather bone chips].'
+
+You say, 'how do I collect fern flowers?'
+
+: Jondin says 'I have run low on fern flowers and must have more of them. Take this [flower pouch]. Outside the city can be found carnivorous plants and a strain of them buds the flower in question. Collect enough of these flowers to fill and combine the pouch and I shall reward you.'
+
+: Receive: [[Fern Flower Pouch]], a 4 slot container.
+
+Fern Flowers are a common drop from any of the "man-eating" plants found in Swamp of No Hope, collect four of them and combine them in the pouch to create a Full Fern Flower Pouch.
+
+Collect 4 '[[Fern Flower]]' and combine them in [[Fern Flower Pouch]] (to create a [[Full Fern Flower Pouch]]).
+
+Give the Full Fern Flower Pouch to [[Jondin]].
+
+:Jondin says, 'Thank you for your service my good friend. Here is a small reward and please accept this item which I procured in one of my many visits to the Outlands.'
+
+Receive: Small amount of coin 1-9 gold, and a [[Frogskin Shield]].
+
+<div class="facblock">
+* Your faction standing with [[Brood of Kotiz]] has been adjusted by 2. 
+* Your faction standing with [[Legion of Cabilis]] has been adjusted by 1. 
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:West Cabilis]]

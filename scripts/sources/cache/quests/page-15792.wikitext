@@ -1,0 +1,50 @@
+{{Velious Era}}
+[[File:npc_telkorenar.png|frame|Telkorenar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Telkorenar]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Bard]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Essedera]], [[Grozzmel]], [[Midayor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Pauldrons of the Deep Flame}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'I wish to undertake the test of protection.'
+
+: Telkorenar says 'My fire will protect you if you are strong enough to endure this test. A ruby tear like my flames, an emerald tear, like a forest ready to burn, an emerald symbol and a platinum symbol are what I seek. With these I will forge pauldrons unlike any you have ever seen mortal. Go now and seek out what I desire.
+
+'''Return with a [[Ruby Tear]], [[Emerald Tear]], [[Emerald Symbol]] and a [[Platinum Symbol]] for the pauldrons.'''
+
+== Related Items ==
+<ul><li>{{:Ruby Tear}} </li></ul>
+<ul><li>{{:Emerald Tear}}</li></ul>
+<ul><li>{{:Emerald Symbol}}</li></ul> ([[Grozzmel]] or [[Midayor]])
+<ul><li>{{:Platinum Symbol}}</li></ul> ([[Essedera]])
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Bard Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

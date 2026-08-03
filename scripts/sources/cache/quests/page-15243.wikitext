@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_bilrio_surecut.png|frame|Bilrio Surecut]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark]]
+|-
+! ''' Quest Giver: '''
+| Bilrio Surecut
+|-
+! ''' Minimum Level: '''
+| 26
+|-
+! ''' Classes: '''
+| [[Bard]], [[Rogue]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Southern Desert of Ro]]
+|-
+! ''' Related NPCs: '''
+| [[Sandgiant Husam]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brazen Brass Kilij}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Bilrio Surecut]] is at location -643, 384 in Kelethin, on the same platform as the Druid guild.''
+
+You say, 'Hail, Bilrio Surecut'
+
+: Bilrio Surecut says 'Greetings, friend. If fine weapons are what you seek then you shall find them here in my shop. I have traveled far and wide for the finest weapons. Still, there are a few [unusual weapons] which have eluded me.'
+
+You say, 'What unusual weapons?'
+
+: Bilrio Surecut says 'Unusual weapons? Yes. There are a few which I sought. Such an item is the [brazen brass kilij].'
+
+You say, 'What brazen brass kilij?'
+
+: Bilrio Surecut says 'The brazen brass kilij is a legendary magical weapon designed by the ancients and long lost to the winds of time. I have searched the world for it to no avail. Perhaps the [legend of Husam] will add some insight to my quest. I have some knowledge of its design and I am sure I can [craft the kilij].'
+
+You say, 'What legend of Husam?'
+
+: Bilrio Surecut says 'Legend says the kilij was forged for a great paladin for his assault on the land of the dead. He was to slay the evil siblings Dimetreas and Byzola. It is said he killed Byzola. With the kilij he was unstoppable. Dimetreas knew this and cast an [evil spell] upon the kilij.'
+
+You say, 'What evil spell?'
+
+: Bilrio Surecut says 'The enchantment would allow only rogues, warriors and the feeble minstrels to wield it. And so Dimetreas defeated the now unarmed paladin and shattered the kilij. He then found the only kilij plans and sent them to the Plane of Man to be held forever by his evil servant, Husam.. Husam of the burning sun.'
+
+You say, 'You can craft the kilij?'
+
+: Bilrio Surecut says 'I can craft the kilij. All I need are the kilij plans and three enchanted gold bars. The blend of metals is not entirely brass and only an enchanter can provide the enchanted metal I need. As for the plans, perhaps during your great adventures you shall happen upon it. If so, I can make one for you.'
+
+'''[[Sandgiant Husam]] spawns in [[South Ro]].'''
+
+You have slain Sandgiant Husam!
+
+--You have looted a [[Kilij Plans]].--
+
+Hand Bilrio Surecut the {{:Kilij Plans}} and 3 x {{:Enchanted Gold Bar}}.
+
+: Bilrio Surecut says 'You have succeeded in your quest for the kilij!! Wield it proudly.'
+
+<div class="facblock">
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Rogue Quests]]
+[[Category:Warrior Quests]]

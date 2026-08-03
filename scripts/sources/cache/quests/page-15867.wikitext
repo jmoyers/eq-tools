@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_furtog_ogrebane.png|frame|Furtog Ogrebane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Furtog Ogrebane]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[South Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Furtog Ogrebane]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirt Stained Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Furtog Ogrebane]] is located at 73, 300, 15 in the skybox overlooking the Kaladim Warrior's Guild arena.''
+
+You say, 'Hail, Furtog Ogrebane'
+
+: Furtog Ogrebane says, 'Hail, mighty ______! Welcome to Stormguard Hall. I am Captain Furtog Ogrebane, only surviving descendant of the legendary Trondle Ogrebane, slayer of the [Mudtoes]. If you wish to serve the grand city of Kaladim, I urge you to speak with any of the trainers. Good day.'
+
+'''Hand [[Furtog Ogrebane]] your [[Recruitment Letter]]'''
+
+:: ''The Recruitment Letter reads:''
+
+:: <code>The Stormguard are now recruiting. To join, give this note to Furtog Ogrebane. He will train you well.</code>
+
+: Furtog Ogrebane says, 'Greetings, friend, and welcome to Stormguard Hall! I am Furtog Ogrebane, Captain of the Guard. We shall train you to be a fearless warrior, who will serve to protect King Kazon well. Here is your tunic.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Warrior Quests]]

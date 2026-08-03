@@ -1,0 +1,89 @@
+{{Classic Era}}
+[[File:npc_reebo_leafsway.png|frame|Reebo Leafsway]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Reebo Leafsway]]
+|-
+! ''' Minimum Level: '''
+| 17+
+|-
+! ''' Classes: '''
+| All
+|-
+! '''Related Zones:'''
+| NONE
+|-
+! '''Related NPCs:'''
+| [[Nillipuss]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Anti-Poison Amulet}}
+</li><li> {{:Arrow of Contagion}}
+</li><li> {{:Arrow of Frost}}
+</li><li> {{:Compass}}
+</li><li> {{:Earring of Disease Reflection}}
+</li><li> {{:Earring of Fire Reflection}}
+</li><li> {{:Earring of Frost Reflection}}
+</li><li> {{:Earring of Magic Reflection}}
+</li><li> {{:Earring of Poison Reflection}}
+</li><li> {{:Eye of Disvan}}
+</li><li> {{:Pierce's Pouch of Storing}}
+</li><li> {{:Rod of Identification}}
+</li><li> {{:Runners Ring}}
+</li><li> {{:Travelers Pack}}
+</li><li> {{:Travelers Pouch}}
+</li><li> {{:Wand of Frost Bolts}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Reebo Leafsway'
+
+: Reebo Leafsway says 'Greetings and salutations, Rootless! My name is Reebo Leafsway, loyal Druid of [Karana]. I am in charge of helping young druids who wish to get started down the [trail to Karana's wisdom]. I also do my share of tending the [crops].'
+
+You say, 'What crops?'
+
+: Reebo Leafsway says 'The crops we grow here are mostly carrots, lettuce and squash. We also are the only place on all of Norrath where the soil can support the mystical Jumjum Stalk.'
+
+You say, 'What about Nillipuss?'
+
+: Reebo Leafsway says 'Nillipuss? Oh that dirty brownie keeps stealing our jumjum for his own greedy uses. We certainly would not mind if someone taught him a painful [lesson].'
+
+You say, 'What lesson?'
+
+: Reebo Leafsway says 'He needs to be taught not to steal our jumjum! If you find some jumjum on him, I would appreciate it if you would return it to me.'
+
+'''[[Nillipus]] is approximately level 17 and likes to run around the main roundabout in town around Fool's Gold and down the passage by Meeka Diggs.'''
+
+: Nillipuss shouts 'Nillipuss, Nillipuss is my name. Stealing jumjum is my game. Think you can catch me? Let's see if you can! I'll always run faster than you ever ran.'
+
+'''Attack him and kill him.'''
+
+: Nillipuss says 'Caught me you did but what will you do when I crush you and eat you in my jumjum stalk stew?'
+
+'''You will need to kill Nillipuss mutliple times to get four [[Jumjum Stalk]]s. Many times he won't drop any jum jum. Make sure they identify as "Nillipus' Jumjum" as a merchant also sells Jum jum that won't work for the quest. Bring the four [[Jumjum Stalk]] to Reebo:'''
+
+: Reebo Leafsway says 'Oh good! I see you have taught that nasty Nillipuss a thing or two! Good. But it seems to me that he has stolen more jumjum than this. Perhaps he needs another lesson?'
+
+: Reebo Leafsway says 'Excellent!! You must have taught ol' Nillipuss a great deal! But he never seems to learn.. Oh well. The Stormreapers and all of Rivervale owe you a debt of gratitude. Please accept this token of our appreciation.'
+
+<div class='facblock'>
+*Your faction standing with [[Storm Reapers]] got better.
+*Your faction standing with [[Mayor Gubbin]] got better.
+*Your faction standing with [[Merchants of Rivervale]] got better.
+*Your faction standing with [[Unkempt Druids]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 15 silver from Reebo Leafsway.
+
+You may also randomly receive one of several items (listed above).
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

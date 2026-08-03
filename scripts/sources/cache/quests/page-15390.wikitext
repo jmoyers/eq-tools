@@ -1,0 +1,281 @@
+{{Cleanup Needed}}
+{{Kunark Era}}
+[[File:npc_clerk_doval.png|frame|Clerk Doval]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Clerk Doval]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]], [[Lake of Ill Omen]], [[Swamp of No Hope]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| Various Troopers
+|}
+
+== Reward ==
+
+<ul><li>  {{:The Book of Knowledge}}
+</li><li> {{:The Code of Combat}}
+</li><li> Other books?
+</li></ul>
+
+== Checklist ==
+
+:{{box}} Talk to [[Clerk Doval]] to receive the [[Legion Order]] {{Item Lore|Restraint Order, 0 signed}}
+:{{box}} Give [[Trooper Frogzin]] the Legion Order to receive {{Item Lore|Restraint Order, 1 signed}}
+:{{box}} Give [[Trooper Fryp]] a [[Quill]] with the Legion Order to receive {{Item Lore|Restraint Order, 2 signed}}
+:{{box}} Brew or obtain a [[Legion Lager]]
+:{{box}} Give [[Trooper Gummin]] the Legion Lager with the Legion Order to receive {{Item Lore|Restraint Order, 3 signed}}
+:{{box}} Obtain a [[Skipping Stone]]
+:{{box}} Give [[Trooper Inkin]] the Stone with the Legion Order to receive {{Item Lore|Restraint Order, 4 signed}}
+:{{box}} Obtain 2x [[Barracuda Tooth]]
+:{{box}} Give [[Trooper Nishnish]] the unstacked teeth with the Legion Order to receive {{Item Lore|Restraint Order, 5 signed}}
+:{{box}} Give [[Trooper Ogmire]] the Legion Order to receive {{Item Lore|Restraint Order, 6 signed}}
+:{{box}} Obtain 2x [[Sabertooth Kitten Canine]]s
+:{{box}} Give [[Trooper Ozlot]] the unstacked canines with the Legion Order to receive {{Item Lore|Restraint Order, 7 signed}}
+:{{box}} Obtain [[Goblin Scout Beads]]
+:{{box}} Give [[Trooper Roklon]] the beads with the Legion Order to receive {{Item Lore|Restraint Order, 8 signed}}
+:{{box}} Give [[Trooper Selbat]] the Legion Order to receive {{Item Lore|Restraint Order, 9 signed}}
+:{{box}} Give [[Trooper Taer]]the Legion Order to receive {{Item Lore|Restraint Order, all signed}}
+:{{box}} Give Clerk Doval the fully signed order to receive reward
+
+== Walkthrough ==
+
+During daytime, inside of the Tink 'N Babble on the second floor will be found a city clerk by the name of '''Clerk Doval''' (881, -75, 18).
+
+You say, 'Hail, Clerk Doval'
+
+: [[Clerk Doval]] takes a sip of lager and looks up at you. 'Ahh!! An adventurer of sorts? Looking for work, are we? If you have the time, I might have a bit of a [proposition] for you.'
+
+You say, 'What proposition?'
+
+: Clerk Doval says 'I was sent by the Legion to deliver a restraining order to a few of the troopers. They have been ordered to stay away from the tavern. They have spent too much time drinking and not enough training. I am to have them initial the restraint order list, but my feet are killing me. Perhaps you could [deliver the restraining order]?'
+
+You say, 'I can deliver the restraining order.'
+
+: Clerk Doval says 'Here is the restraint order. Go to the troopers and ask them to [sign the restraining order]. Also, make sure to have them sign it in alphabetical order. I am a very big stickler about this. The troopers' names are as follows; Ozlot, Ogmire, Nish Nish, Frogzin, Gummin, Inkin, Roklon, Taer, Fryp and Selbat. When all is done, I shall pay you.'
+
+'''Once you agree, he hands you a letter ([[Legion Order]]) which must be signed by all ten troopers, in alphabetical order.  Find each trooper and give them the restraining order. Each will sign the order, and return it to you, though some require sub-tasks to get them to sign. Once you have finished this task, return to the Tink 'N Babble and give the finished order to Doval.'''
+
+The troopers' names and what they want to sign are '''(in alphabetical order)''':
+
+* [[Trooper Frogzin]] (found at the Lake of Ill Omen, at the city gate -- will just sign it),
+::: You say, 'Hail, Trooper Frogzin'
+
+::: Trooper Frogzin says, 'Mind yourself in these parts!  There are many dangers.  Stay away from the water. if you know whats good for you.'
+
+::: You say, 'I need you to sign this restraining order.'
+
+::: Trooper Frogzin looks very upset at your mention of the order.  'I cannot believe I have been banned from what little enjoyment can be found in Cabilis.  Oh, well, I cannot argue with a legion order.  Hand me the order so that I may sign it.
+
+::: Trooper Frogzin grabs the order from your hand and mumbles something unpleasant and vaguely threatening.  He then hands the signed order back to you.
+
+* [[Trooper Fryp]] (found at the entrance to the warriors' guild -- needs a [[Quill]]),
+::: You say, 'Hail, Trooper Fryp'
+
+::: Trooper Fryp says, 'Hail, citizen!  Have you been fishing lately?  The water is alive with sewer catfish. Unfortunately, there are also the barracudas!!'
+
+::: You say, 'I need you sign this restraining order.'
+
+::: Trooper Fryp says, 'Alas.  The masters have learned of my long evenings in the tavern.  Ok..  Long mornings and afternoons too.  Heh heh.  Can't fight authority!!  Hand me the.. Wait.  I do not have my quill with me.  Go and fetch me a writing quill and hand it to me along with the legion order and then I shall sign it.'
+
+::: <i>Hand him the [[Quill]] along with the restraining order.</i>
+
+::: Trooper Fryp signs the order and hands it back to you. ' Well..  At least I now have this fancy writing quill.
+
+* [[Trooper Gummin]] (Field of Bones in left ruined building -- Needs the order and a [[Legion Lager]] brewed)
+
+::: You say, 'Hail, Trooper Gummin'
+
+::: Trooper Gummin says, 'Beware the bone field beyond the path.  It is said that the bones of a thousand fallen warriors walk its grounds at night.'
+
+::: You say, 'I need you to sign this restraining order'
+
+::: Trooper Gummin says, 'Blast!!  The masters have condemned me to a life of sobriety and bloodshed!  At least I still have bloodshed.  But I would like one last drink.  I would like a bottle of Legion Lager from Cabilis.  Bring me the lager and the legion order and then I shall sign it.'
+
+::: <i>Hand him the [[Legion Lager]] along with the restraining order.</i>
+
+::: Trooper Gummin says, 'What?!!  I need the Legion Lager and the legion order.'
+
+::: Trooper Gummin slowly signs the order.  '...Love, Innoruuk.  There you go. Now run along.  Let me enjoy my last brew alone.
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+* [[Trooper Inkin]] (found at the Swamp of No Hope, at the city gate -- Needs a [[Skipping Stone]] from [[a froglok skipper]])
+
+::: You say, 'Hail, Trooper Inkin'
+
+::: Trooper Inkin says, 'Many frogloks in here.  Beware!  They can be a sneaky bunch.  I hear tales of a froglok village nearby.'
+
+::: You say, 'I need you to sign this restraining order'
+
+::: Trooper Inkin says, 'I have been expecting this.  Oh, well...  Can't argue with the Baron or he will have both our heads.  Keeping that in mind, I will make you a deal.  I will sign the order if you bring me one of those grand skipping stones these Frogloks are said to have.  Bring me the stone and the order and I shall sign.'
+
+::: <i>Hand him the [[Skipping Stone]] along with the restraining order.</i>
+
+::: Trooper Inkin So smooth.  I shall be the skipping stone champion!!  Here. You may have my autograph.
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+* [[Trooper Nishnish]] (found at the gate to the Swamp of No Hope, in Cabilis -- Needs two [[Barracuda Tooth|Barracuda Teeth]] from pygmy barracuda/barracuda in Cabilis waterways)
+
+::: You say, 'Hail, Trooper Nishnish'
+
+::: Trooper Nishnish says, 'Hail, citizen!  Keep clear of the waterways which run through this grand city.  For swimming they are not.  Many times have playful broodlings fallen prey to the sharp teeth of barracudas.'
+
+::: You say, 'I need you to sign this restraining order'
+
+::: Trooper Nishnish says, 'So the legion has sent you to have me sign this order, eh?  Nay.  I shall not do so unless the messenger, you, gathers two barracuda teeth for me.  Hand me the legion order when you hand me the two barracuda teeth and then your task shall be complete.'
+
+::: <i>Hand him 2 x [[Barracuda Tooth]] (separately, not stacked) along with the restraining order.</i>
+
+::: Trooper Nishnish says, 'You shall get my signature when I have the legion order and two barracuda teeth.'
+
+::: Trooper Nishnish says, 'You shall get my signature when I have the legion order and two barracuda teeth.'
+
+::: Trooper Nishnish grabs the barracuda teeth and attaches them to a necklace.  'Good.  Now this barracuda charm shall keep me safe from slipping into the waters and becoming a feast for the barracuda.  And you,  take this legion order and be gone.
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+* [[Trooper Ogmire]] (found at the gate to the Lake of Ill Omen, in Cabilis -- will just sign it)
+
+::: You say, 'Hail, Trooper Ogmire'
+
+::: Trooper Ogmire says, 'Greetings. citizen.  Looking for healing or other such services?  If so. then I urge you to seek out the Temple of Terror.  The hierophants will see to it for you.'
+
+::: You say, 'Sign the restraining order'
+
+::: Trooper Ogmire says, 'I knew my wicked ways would eventually come to an end.  Very well, then.  Hand me the legion order and I shall sign it.'
+
+::: Trooper Ogmire signs the order and hands it back to you.
+
+* [[Trooper Ozlot]] (found next to the gate to Warslik's Wood -- Needs two [[Sabertooth Kitten Canine]]s (not cub) from the Lake of Ill Omen)
+
+::: You say, 'Hail, Trooper Ozlot'
+
+::: Trooper Ozlot says, 'Hail. citizen!  If it is a good time you are seeking. you should head toward the tavern.  You can't miss it.  There is only one.  The emperor says we should spend most of our time training. not in revelry.  We troopers try.'
+
+::: You say, 'Sign the restraining order'
+
+::: Trooper Ozlot says, 'I do not believe you were sent by the legion.  You do not look as though you could squash a kitten or even a bug.  If you truly were sent, then you should be able to hunt down a sabertooth kitten.  Tell you what, you bring me two sabertooth kitten canines and the legion order and I shall believe you. Only then will I sign the order for you.'
+
+::: <i>Hand him 2 x [[Sabertooth Kitten Canine]] (not cub; separately, not stacked) along with the restraining order.</i>
+
+::: Trooper Ozlot says, 'I suppose you were sent by the legion.  I will sign.  Here is the legion order back.  Now, leave, so I can finish my watch.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+* [[Trooper Roklon]] (found outside gates in Warslik's Woods -- Needs [[Goblin Scout Beads]] from the Lake of Ill Omen)
+
+::: You say, 'Hail, Trooper Roklon'
+
+::: Trooper Roklon says, 'Hail!  Beware the giants of the woods.  They have a dwelling somewhere out there.  Should you stumble upon it, run!!  Leave the fighting to us.'
+
+::: You say, 'Sign the restraining order'
+
+::: Trooper Roklon says, 'I've been ratted out!!  Very well.  I shall sign the order, but first I shall force you to fetch me a set of goblin scout beads.  I hear they make fine counters.  Bring me the beads and that despicable order and I shall do as instructed.'
+
+::: <i>Hand him the [[Goblin Scout Beads]] along with the restraining order.</i>
+
+:::: Trooper Roklon says, 'No, NO!  I want the goblin scout beads and the legion order.'
+
+{{exp}}
+
+* [[Trooper Selbat]] (found AT NIGHT in a building in the Lake of Ill Omen, near the city gate -- will just sign it)
+
+::: You say, 'Hail, Trooper Selbat'
+
+::: Trooper Selbat says, 'Good evening. citizen!  It is a fine night for a stroll. but not in the woods.  No. no!!  That would be far too dangerous!'
+
+::: You say, 'Sign the restraining order'
+
+::: Trooper Selbat says, 'I knew this time would come.  I will slay you for bringing this to me . . .  No . . .  I'd best not make the officers angry. <sigh> Hand me the order and I shall sign it.'
+
+::: Trooper Selbat signs the note and hands back to you.  'Be off now.  Before I do choose to slay the messenger.
+
+* [[Trooper Taer]] (found wandering the Field of Bone, he stops at the city gate occasionally -- will just sign it). 
+
+::: You say, 'Hail, Trooper Taer'
+
+::: Trooper Taer says, 'Hail!!  I suggest you stay within the walls of Cabilis.  This is no place for you.  The Field of Bone is far too close.'
+
+::: You say, 'Sign the restraining order'
+
+::: Trooper Taer says, 'Oh, no!  My good times have come to an end.  Hand me the note and I shall sign it.'
+
+::: Trooper Taer says, 'Ha ha!!  Look at all the names.  Ozlot and Frogzin.  What lushes.  Here you are.  I can't imagine there being any others to sign.  This is the entire Cabilis brew brigade.  Alas.. Disbanded forever.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+'''When you turn in the fully signed order to [[Clerk Doval]]:'''
+
+: Clerk Doval says, 'Thank you so much.  I am so glad I did not have to deal with such a rowdy band of troopers as these.  Please take some coin and perhaps a book from my personal library.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+</div>
+You receive ~17 silver, 4 copper pieces.
+
+''Note that you can also sometimes loot a completely signed legion order from frogloks in the swamp.''
+
+'''Return the list and you get a small amount of experience, some coin, and a random book from his library (the book you get may be specific to your class).'''
+
+Books given out so far are:
+* The Code of Combat,
+* The History of Combat, 
+* The Tome of Combat, 
+* The Book of Knowledge.
+
+'''Presumably there is more after this.'''
+
+''Need all dialogues, faction hits, rewards, list of quest items, /loc of quest mobs, additional steps, etc.''
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:East Cabilis]]
+[[Category:All Classes Quests]]

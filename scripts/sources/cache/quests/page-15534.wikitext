@@ -1,0 +1,72 @@
+[[File:npc_rathmana_allin.png|frame|Rathmana Allin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Desert of Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Rathmana Allin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Sol Ro Temple Faction
+</li><li> Chance for one of:<br>
+[[Rotted Illegible Scroll]]<br>
+[[Quickness|Spell: Quickness]]<br> 
+[[Lightning Bolt|Spell: Lightning Bolt]]<br>
+[[Lifedraw|Spell: Lifedraw]]<br>
+[[Banshee Aura|Spell: Banshee Aura]]<br>
+[[Charm|Spell: Charm]]<br>
+[[Engulfing Darkness |Spell: Engulfing Darkness]]
+<br>[[Whirl Till You Hurl|Spell: Whirl Till You Hurl]]
+<br>[[Bind Affinity|Spell: Bind Affinity]]
+<br>[[Column of Fire|Spell: Column of Fire]]  
+<br>[[Force Shock|Spell: Force Shock]]
+</li><li> 
+</li></ul>
+
+== Walkthrough ==
+
+Rathmana Allin may be found at +1200, +1400.
+
+You say, 'Hail, Rathmana Allin'
+
+: Rathmana Allin says 'Company?!  Way out here in the desert of Ro?  This is a pleasant surprise!  Won't you stay for a while?  I am sure the desert has dried your throat.  I have supplies if necessary.  At a price, of course.  Are you [traveling] or are you [here on business]?'
+
+You say, 'I am here on business'
+ 
+: Rathmana Allin says 'Of course.  You do not look like a traveling merchant or a lost adventurer.  Someone has sent you to Rathmana.  Well then, let's not waste time.  Give me the item, or items, and my fee of twenty gold coins.  It must be gold.  I have no use for any other metals.'
+ 
+You say, 'I am traveling'
+
+: Rathmana Allin says 'Oh, wonderful!  Then you must need water and rations for your long journey.  Be sure to approach any camp you may find in Ro with caution.  There are many bandits in the desert.  If it were not for [Ortallius], they would have gutted me and thieved all my merchandise by now.  If you have any use of magic then I believe I may have an [offer] for you.'
+
+You say, 'What offer?'
+
+: Rathmana Allin says 'My offer to you is this - you give me thirty gold and I allow you to reach into my scroll bag and retrieve one scroll and only one.  It may be the spell of a wizard or maybe not.  The school of magic will not be known beforehand.  The only knowledge you will have is that Rathmana will not exchange the spell for another.  You get what you take.  Do you wish to reach into my bag?  Then give Rathmana his thirty gold coins.'
+ 
+'''Give him 30 gold pieces'''.
+ 
+: Rathmana Allin says 'Good luck, my friend. May Solusek Ro guide your hand.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Southern Desert of Ro]]
+[[Category:All Classes Quests]]

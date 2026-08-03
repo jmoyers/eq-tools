@@ -1,0 +1,57 @@
+[[File:npc_agryn_moonfield.png|frame|Agryn Moonfield]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Agryn Moonfield]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Leraena Shelyrak]]
+|}
+
+== Reward ==
+
+<ul><li>Clear Water</li></ul>
+
+== Walkthrough ==
+
+''Agryn Moonfield is at location +735, +835 in the Bank of Erudin (Erudin Palace).''
+
+You say, 'Hail, Agryn Moonfield'
+
+: Agryn Moonfield says, 'Welcome to the Bank of Erudin. I am Agryn, the bank manager. How may I be of service to you?'
+
+You say, 'Do you have Vasty Deep water?'
+
+: Agryn Moonfield says, 'You must have been sent by one of the guilds. All you need to do is give me your guild coin and I shall exchange it for the Vasty Deep water.'
+
+You say, 'What guild coin?'
+
+: Agryn Moonfield says, If you do not have your guild coin, you must go and ask the guildmaster for one.'
+
+''Leraena Shelyrak is at location -655, -80 in The Temple of Divine Light in Erudin.''
+
+You say, 'Hail, Leraena Shelyrak'
+
+: Leraena Shelyrak says, 'Welcome, my child. I am Leraena Shelyrak, overseer of the Temple of Divine Light. Inside this temple, you may find the path to inner peace. Introduce yourself to each of the priests and priestesses of the temple as well as the paladins. Together we shall put an end to such disruptive influences as the [kobold shaman].'
+
+You say, 'I need a guild coin.'
+
+: Leraena Shelyrak says, 'Yes, of course. Here it is. Remember that it is not a form of currency.'
+
+'''Receive Peacekeeper Token.  Return to Agryn Moonfield and hand it in.'''
+
+: Agryn Moonfield says, 'Ah!! A Peacekeeper. I have some Vasty Deep water sitting out already. Here you are. Do not let it fall into the wrong hands.'
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]

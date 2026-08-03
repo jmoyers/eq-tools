@@ -1,0 +1,115 @@
+__NOTOC__
+{{Disambig3|[[Orc Belt Quests]]}}
+{{Classic Era}}
+[[File:npc_canloe_nusback.png|frame|Canloe Nusback]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Canloe Nusback]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Crushbone]], [[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Centurion (Crushbone)]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Small Patchwork Boots}}
+</li><li> {{:Small Patchwork Cloak}}
+</li><li> {{:Small Patchwork Pants}}
+</li><li> {{:Small Patchwork Sleeves}}
+</li><li> {{:Small Patchwork Tunic}}
+</li><li> {{:Small Tattered Belt}}
+</li><li> {{:Small Tattered Gloves}}
+</li><li> {{:Small Tattered Gorget}}
+</li><li> {{:Small Tattered Mask}}
+</li><li> {{:Small Tattered Shoulderpads}}
+</li><li> {{:Small Tattered Skullcap}}
+</li><li> {{:Small Tattered Wristbands}}
+</li></ul>
+
+Always 1 Gold
+
+Between 0 to 9 Silver
+
+Between 0 to 9 Copper
+
+== Walkthrough ==
+
+''[[Canloe Nusback]] is located at -16, 536, 3 in the Kaladim Warrior's Guild.''
+
+You say, 'Hail, Canloe Nusback'
+
+: Canloe Nusback says, 'Step forward and speak up, young ______! Kaladim can always use another warrior. Are you [ready to serve Kaladim] or has a yellow streak appeared down your back?'
+
+You say, 'I am ready to serve Kaladim'
+
+: Canloe Nusback says, 'Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all [Crushbone orcs]. Return their belts to me. I shall also reward you for every two orc legionnaire shoulder pads returned. A warrior great enough to slay one legionnaire shall surely have no problem with another. Go, and let the cleansing of Faydwer begin.'
+
+You say, 'What Crushbone orcs'
+
+: Canloe Nusback says, 'The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great [Trondle Ogrebane]. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.'
+
+You say, 'Who is Trondle Ogrebane'
+
+: Canloe Nusback says, 'Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.'
+
+You say, 'Who are the Mudtoes'
+
+: Canloe Nusback says, 'The Mudtoes were a small clan of ogres. They lived somewhere in the Butcherblock Mountains. They had an insatiable appetite for dwarves. They were finally destroyed by the hand of Trondle Ogrebane.'
+
+'''Hand [[Canloe Nusback]] a [[Crushbone Belt]], randomly looted from [[Orc Centurion (Crushbone)|Orc Centurions]] around Faydwer.'''
+
+: Canloe Nusback says, 'Good work, warrior! Now continue with your training. Only on the battlefield can one become a great warrior.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better +10.
+* Your faction standing with [[Kazon Stormhammer]] got better +1.
+* Your faction standing with [[Miners Guild 249]] got better +1.
+* Your faction standing with [[Merchants of Kaladim]] got better +2.
+* Your faction standing with [[Craknek Warriors]] got worse -2.
+</div>
+
+{{exp}}
+
+You receive 9 silver pieces.
+
+== Related Quests ==
+
+* [[Crushbone Shoulderpads Quest]]
+* [[The Mudtoes]]
+
+== Notes ==
+
+* Players often will buy [[Crushbone Belt]]s for ~3pp per belt.
+* Be careful not to be handing in belts while other players are doing the same. Often Canloe will take both sets of belts and not reward any experience, faction, or items.
+* As an iksar necro, my parser counted 600+ rep gains by killing orcs till I hit threatening with storm guard. 100ish more and you will be dubious and can do this quest.
+* This quest lowers faction with ogre warriors.
+* 107 turn ins took a level 13 Erudite (Prexus) Cleric from Level 13 to Level 14. Started with no experience.
+
+== Exp Gain ==
+
+Needs testing / verification. 
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]
+[[Category: Repeatable Turn-in Quests]]

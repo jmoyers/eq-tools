@@ -1,0 +1,124 @@
+[[File:npc_noxhil_v`sek.png|frame|Noxhil V`Sek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Noxhil V`Sek]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]], [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Cytodl Krish]], [[Kizdean Gix]], [[Loveal S`Nez]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul>
+<li>2 [[Bandages]]</li>
+<li>2 [[Iron Ration|Irons Rations]]</li>
+<li>1 [[Torch]]</li>
+<li>Coin</li>
+</ul>
+
+== Walkthrough ==
+
+''[[Noxhil V`Sek]] can be found on the top floor of the Lodge of the Dead in [[Neriak Third Gate]].''
+
+You say, 'Hail, Noxhil V`Sek'
+
+: Noxhil V`Sek says, 'Greetings, _______! We of the Dead are proud to have you among us. Your lineage is well known. Still, you must learn to claw your way to the upper echelon. There are many [menial tasks] to be performed before you you can truly be inducted as a member.'
+
+You say, 'What menial tasks?'
+
+: Noxhil V`Sek says, 'You cannot avoid the toil of peons. We have all spent our time in the lower ranks. There are duties such as [collecting beetles eyes] or [courier duties].'
+
+You say, 'What courier duties?'
+
+: Noxhil V`Sek says, 'We require you to retrieve messages from our nearby agents. Periodically, you are required to contact the agent and ask if he has any messages for Neriak. If he does, you will return all correspondence to the designated party. Presently, we have enough runners. Here. You may see the list.'
+
+''-- You receive [[A Sealed List]]'' {{Item Lore|Current Expeditionary Units}}''. --''
+
+It reads:
+ Current Expeditionary Units
+ The Dead
+ Kizdean Gix - Commonlands
+ Cytodl Krish - High Hold
+ Xxxxxxxxxxx - Freeport
+
+'''Travel to [[West Commonlands]] to to find [[Kizdean Gix]]. He spawns at (-162, 262) near the toll booth (#9). If not there, he may be patrolling east/west along the southern road of the zone.'''
+
+''NOTE: There appear to be two versions of Kizdean that can spawn, one with a message for Neriak and one without.''
+
+You say, 'Hail, Kizdean Gix'
+
+: Kizdean Gix says, 'If you have business then out with it!! If not, then please be gone. I have little time to waste on chitchat!' 
+
+You say, 'Do you have any messages for Neriak?'
+
+'''If Kizdean does NOT have a message for Neriak:'''
+
+: Kizdean Gix says, 'Inform the Dead that I have no further information at this time. I shall continue with my work as directed. Please return regularly, for I am expecting to break new ground.'
+
+'''If Kizdean does have a message for Neriak:'''
+
+: Kizdean Gix says, 'It's about time a courier reached these wastelands of humanity. I have urgent news for the Dead. Take this message at once. Let no one stop you. Be on the lookout for the Feir'Dal [Silent Watch]! They have learned of our quest.'
+
+''-- You receive [[A Sealed Letter]]'' {{Item Lore|Letter To Loveal Of The Dead}}''. --''
+
+It reads:
+ To Loveal S'Nez, The Dead.
+ Neriak I require aid in keeping adventurers from Befallen.
+ I have reason to believe the Thex Mallet lies shattered within Befallen.
+ I have lost too many members of the expeditionary team.
+ Help.
+
+You say, 'Who are the Silent Watch?'
+
+: Kizdean Gix says, 'The Koada'Dal have created an elite band of paladins, greater even than our own Teir'Dal Dragoons. They exist on the edge of righteousness. They will perform despicable acts in the name of their deity, barely skimming the edge of evil.'
+
+'''Return the Sealed Letter to [[Loveal S`Nez]] located on the second floor of the Lodge of the Dead in [[Neriak Third Gate]].'''
+
+: Loveal S`Nez says, 'I see my expeditionary unit has encountered problems. I must send a dragoon unit to [Befallen] at once. I must not allow the [Thex Mallet] to fall into the hands of some simple adventurer. Here is payment for your quick service.'
+
+<div class='facblock'>
+* Your faction standing with [[The Dead]] got better.
+* Your faction standing with [[Queen Cristanos Thex]] got better.
+* Your faction standing with [[King Aythox Thex]] got worse.
+* Your faction standing with [[Keepers of the Art]] got worse.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Primordial Malice]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You say, 'What is Befallen?'
+
+: Loveal S`Nez says, 'Long ago, Befallen was a military outpost of the Koada'Dal. When they fled this continent for Faydwer, they hastily abandoned the place. All save Commander Windstream. He and a few stayed on to seek the lost [Thex Mallet]. All that is known is that he never found it. In the centuries since, Befallen has become a haven for the undead.' 
+
+You say, 'What is the Thex Mallet?'
+
+: Loveal S`Nez says, 'All you can know is that the Thex Mallet is desired by our Queen. If we are not successful in its retrieval, it will be our heads which adorn her trophy room. We have learned its location and believe it to be broken into three separate pieces.' 
+
+---
+
+Noxhil needs someone to be a courier. He wants you to seek out three individuals and ask them if they have [any messages for Neriak].
+
+* The first person is Kizdean Giz located in the Western Commonlands.
+* The second person Cytodl Krish, is on the second floor of the Inn that is NE of the entrance to the High Hold Keep.
+* I'm not sure where the third one is.
+
+''Need all dialogues, faction hits, quest items, /loc of quest mobs, list of quest rewards.''
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]

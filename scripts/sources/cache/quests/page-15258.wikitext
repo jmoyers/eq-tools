@@ -1,0 +1,113 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_drekon_vebnebber.png|frame|Drekon Vebnebber]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Drekon Vebnebber]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Duster V]], [[Duster X]], [[Sanfyrd Featherhead]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bootstrutter's Framed Pack}}
+</li><li> {{:Forging Hammer}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest is one of two which follows [[Series C Black Boxes]] given by [[Drekon Vebnebber]], located at 866, -475, -30 in the Gemchoppers (Warrior) Hall.''
+
+'''After giving [[Drekon Vebnebber]] a [[Daily Log]] (Log 5673172):'''
+
+: Drekon Vebnebber says, 'Oh my!! It seems two of the obsolete duster models were not fully shut down. You must find them. They could be anywhere in Ak'Anon!! After you destroy them, take their scraps to Sanfyrd Montop. He is the operator of the scrapyard.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+''[[Duster V]] (or its placeholders [[Scrubber IV]] or [[Cleaner X]]) spawn every 4 minutes in the Palace at 788, -177, -30 where it will then walk near to the [[Steamfont Mountains]] entrance at -27, 20, -26. After a brief pause, it will proceed to walk to the loom located at 763, 165, -26. After yet another pause, it will then proceed to sprint back to its origin in the Palace where it will despawn.  The placeholders are common and Scrubber IV is level 12.''
+
+: Duster V says, 'Click.. Dust. Dust. Dust.'
+
+'''Upon dispatching [[Duster V]], loot a piece of [[Scrap Metal]] from its corpse.'''
+
+{{YouGainExperience}}
+
+You receive 17 copper.
+
+''[[Duster X]] spawns 1 min after handing [[Drekon Vebnebber]] a [[Daily Log]] on the wall above the Mines of Malfunction, east of the paddle wheel at 1916, -372, -124. It will immediately sprint south through the tunnel and to the right over the bridge to 1679, -226, -123. After a brief pause it will sprint south to the end of the pier at 1508, -302, -122 and pause again. At this point [[Duster X]] will reverse course, walking back to its midpoint location, then sprint from there back to its origin point. He will repeat this cycle until killed.''
+
+: Duster X says, 'Click.. Dust. Dust. Dust.'
+
+'''Upon dispatching [[Duster X]], loot a piece of [[Scrap Metal]] from its corpse.'''
+
+{{YouGainExperience}}
+
+You receive 3 gold, 5 silver, and 8 copper.
+
+''[[Sanfyrd Featherhead]] is across the river, west of the Mines of Malfunction at 2020, -231, -194''
+
+You say, 'Hail, Sanfyrd Featherhead'
+
+: Sanfyrd Featherhead says, 'Greetings! I am the operator of this scrapyard. If you have any scrap metal, I would be glad to purchase it from you in loads of four. The Gemchoppers no longer allow me to accept blackbox fragments and micro servos.'
+
+'''Hand [[Sanfyrd Featherhead]] the two pieces of [[Scrap Metal]] you looted from [[Duster V]] and [[Duster X]].'''
+
+: Sanfyrd Featherhead says, 'I hear there is one more on the loose. Find him and then I shall pay you.'
+
+: Sanfyrd Featherhead says, 'Good. The citizens of Ak'Anon are safe from these little critters. They may have injured someone; that is why they were deactivated. Here is something I found in the scrapyard. I hope you can find a purpose for it.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 7 silver pieces.
+
+== Related Quests == 
+
+* [[Series C Black Boxes]]
+* [[Red V Clockwork]]
+
+== Notes ==
+
+* It's recommended that you be immediately ready to find and kill Duster X after handing Drekon the [[Daily Log]] as that is the only trigger to spawn the Clockwork.
+* Guide Clockworks throughout Ak'Anon will kill steal if you attack the Duster Clockworks too near to them.
+* There are no faction changes for killing either Duster V, Duster X, or Cleaner X.
+* Killing Scrubber IV results in the following faction hit:
+<div class="facblock">
+* Your faction with [[Dark Reflection]] got better.
+* Your faction with [[Eldritch Collective]] got worse.
+* Your faction with [[Gem Choppers]] got worse.
+* Your faction with [[King AkAnon]] got worse.
+* Your faction with [[Meldrath]] got better.
+</div>
+* Yes, Drekon refers to Sanfyrd Featherhead as Sanfyrd Montop in his quest dialog.
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

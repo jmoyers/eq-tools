@@ -1,0 +1,108 @@
+{{Velious Era}}
+
+[[File:npc_nilham_the_chef.png|frame|Nilham the Chef]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Nilham the Chef]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Necromancer]], [[Shaman]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Mist Panther]], [[Pythic Urson]], [[Qarrgy Scallopgobbler]], [[Sojan the Sleepless]], [[gnomish deserter]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rough Silver Chain}}
+</li></ul>
+
+== Checklist ==
+
+===[[Locked Rum Box]]===
+{{CheckboxList}}
+*Collect two [[Barracuda Liver]] from [[a coldwater barracuda]] in Cobalt Scar.
+:*Give the two livers to [[Qarrgy Scallopgobbler]] to receive [[Bladder of Acidic Ooze]].
+*Forage [[Fresh Tree Sap]] in Wakening Lands.
+:*Give the [[Fresh Tree Sap]] and the [[Bladder of Acidic Ooze]] to [[Pythic Urson]] in Thurgadin to receive [[Dissolving Liquid]]. Note: Amiable or better faction is required for this turn-in.
+*Give the [[Dissolving Liquid]] to the [[gnomish deserter]] in the Great Divide to get the locked case.
+
+===[[Rum Box Key]]===
+*Collect four [[Fresh Chunk of Wooly Rhino]] from [[A Wooly Rhino]] in Eastern Wastes.
+:*In Wakening Lands, give [[Fresh Chunk of Wooly Rhino]] to the [[Mist Panther]] to receive [[Golden Broken Key]].
+*Collect a [[High Quality Dire Wolf Fur]] from any Velious-found dire wolf.
+:*Give [[Errgriz]] in Iceclad Ocean [[High Quality Dire Wolf Fur]] to receive [[Wolf Fur Earcovers]].
+:*Give the earcovers to [[Sojan the Sleepless]] to receive [[Fine Gold Chain]].
+*Give Sojan both the chain and key in exchange for a [[Rum Box Key]].
+
+===[[Rough Silver Chain]]===
+*Give both the [[Rum Box Key]] and [[Locked Rum Box]] to [[Captain Nalot]] for a bottle of [[Capt. Nalot's Triple Strength Rum]].
+*Give the rum to [[Nelet Durzit]] at the docks for [[Rough Silver Chain]].
+{{End}}
+== Walkthrough ==
+
+In Iceclad there are two gnomes that will tell you how they lost a case of rum and the key to the case. one of them mentions that the case and the key should be returned to the Captain if found. There is also a gnome at the docks that needs the captain's rum to cure his cold.
+
+The gnomes were attacked by a big white cat, the case and the key were knocked out of their hands. The gnomish deserter in the Great Divide now has the case. One of them describes the cat:
+
+You say, 'What cat?'
+
+: Nilham the Chef says 'That was a nasty cat. I dun think it was after us, though. I think it just smelled the fresh chunk of wooly rhino jerky I had. It didn't do anythin' but knock us over. I guess that's what it likes, walrus. After it knocked us over it slipped away towards the bridge island like a ghostly mist. I'm thinkin I saw a glimmer in its maw while it was runnin off.'
+
+'''Travel to Cobalt Scar and kill Coldwater Barracudas (they spawn and path everywhere in the deeper waters, have about 700 hp - rare drop, about 1 in 60 or 70) until you find two [[Barracuda Liver]], then head over to the westernmost otterman camp and give both to [[Qarrgy Scallopgobbler]] to receive [[Bladder of Acidic Ooze]].'''
+
+: Qarrgy Scallopgobbler slams a knife into the various livers and squeezes out all of their various goos and juices.  Eventually he separates a bit of it and pours it into a protective bladder. 'Excellent work.  This good catch.  Here, you have sack of ooze.  It's good for burning things off or etching metals.  Thank you for your help.
+
+'''Forage in Wakening Lands until you find a [[Fresh Tree Sap]] (no drop item), then give both it and the Bladder of Acidic Ooze to [[Pythic Urson]] in Thurgadin (in the bar near the mines).  He needs them in order to clean his boots.  In return, you will get a portion of his boot-cleaning-mixture, Disolving Liquid.''' 
+'' '''Note: Amiable or better faction is required for this turn-in.''' ''
+
+: Pythic Urson laughs at you and then takes the sap and bladder.  He mixes the two together and then adds something from a small pourch he carries.  With a quick sizzle he pours some on his boots and the crud melts away.  'See that?  Didn't do anything but get rid of the crud.  This stuff is great.  It doesn't burn yer skin or valuables.  Here ya go, you can have the rest.'
+
+'''Give this mixture to the [[gnomish deserter]] in the Great Divide (at the very top of the wurm-tunnel mountain in the center of the zone) to get the locked case.'''
+
+: gnomish deserter grins and pours the ooze on his hand and the box.  You hear a burning sizzle and then the box thumps onto the ground. 'Ow! Ow! Take it!  Hah.  I never thought I would get rid of that piece of...'
+
+'''Collect four [[Fresh Chunk of Wooly Rhino]], a rare drop (~7% drop rate) from Wooly Rhinos in Eastern Wastes, then travel to Wakening Lands and give them to the [[Mist Panther]] located around the water's edge near the tower to Plane of Growth to receive [[Golden Broken Key]].'''
+
+: mist panther jumps at you and snatches the meat from your hand.  It runs away from you and feasts on the other side of the water.  As it runs away you notice a small shiny object fall from its mouth.
+
+'''Collect a [[High Quality Dire Wolf Fur]] from any Velious-found dire wolf (many roam around IC port-in area) and then go to the gnoll camp in Iceclad Ocean and give [[Errgriz]] one fur to receive [[Wolf Fur Earcovers]].'''
+
+: Errgriz starts to cut and scrape the furts.  He growls softly as he works and his master watches his progress.  'Grrr.  Much too small.  I fail.  I not ready to work on my own.  Sorry to waste your time.  Here, take what I made.  Maybe you can find use for it.
+
+'''Travel East to the gnomish pirate camp, and give the wolf-hide earmuffs to [[Sojan the Sleepless]] to receive [[Fine Gold Chain]].'''
+
+: Sojan the Sleepless stares at you and then laughs before putting on the earmuffs.  As he moves around, blissfully protected from the noise, a fine chain slips from his coat. 'Hey!  Look at that!  What a fine chain!  It looks familiar but I can't tell how.  Oh, well, yu can have it.  It looks like it could be used to fill gaps or if needed to repair another similar metal object.  I can do that if you ever find need.
+
+'''Give Sojan both the chain and key in exchange for a [[Rum Box Key]].'''
+
+: Sojan the Sleepless puts a tiny eyeglass up to his eye and studies the key and chain.  "Aye, this looks like the perfect metal to fix this key.  Gimmie just a moment."  He uses fine and minute tools to pick and push the chain and key over a fire.  "Ha!"  Don't say I ain't never done anythin for ya.  There ya go, Soandso."
+
+'''Give both the [[Rum Box Key]] and [[Locked Rum Box]] to Captain Nalot for a bottle of [[Capt. Nalot's Triple Strength Rum]].'''
+
+: "Land ho!  That be me rum!  Where did ya get that?  Ah nevermind.  Gimme those things.  Just a bit of a turn here... and a pick there... and a twist... and she's unlocked, har!  Here, take a jug.  It'll be the least I can do fer ye.  We'll be havin a party tonight lads!"
+
+'''Finally, give this rum to Nelet Durzit at the docks for your reward.'''
+
+: Nelet Durzit greedily swigs rum from the jug.  After a few drinks, he starts to gag and make faces. 'Oh geez!  Rendap told me this stuff was strong, but this tastes like clockwork grease!  It burns but now I feel - ugh.
+: Nelet doubles over and passes out on the ground.  As he falls over, a small silver trinket slips out of his pocket.
+: Renday points and laughs as Nelet falls over.  "That'll put hair on yer ears, boy.  Suck it up.  Least ya ain't shiverin' o' cold anymore, eh?"
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Shaman Quests]]
+[[Category:Wizard Quests]]

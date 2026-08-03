@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_sern_adolia.png|frame|Sern Adolia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Harbingers of Fear Guild Note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Paineel]]
+|-
+! ''' Related NPCs: '''
+| [[Sern Adolia]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Blood Splattered Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Harbingers of Fear Guild Note reads: 
+
+:: <code>Take this note to Sern Adolia.  He will instruct you in the ways of Cazic-Thule.  The path is not an easy one, and you will be shown fear in its every manifestation.  Fear not though, for you will learn to overcome such trivial instincts, and become one with the Fear.</code>
+
+''[[Sern Adolia]] is located at 1130, 522 in the Tabernacle of Terror ([[Cleric]]) Guild Hall.''
+
+You say, 'Hail, Sern Adolia'
+
+: Sern Adolia says, 'I hope you have a good reason for disturbing my contemplations. Perhaps you [seek the knowledge] of those who meditate within this Temple of Fear?'
+
+'''Hand [[Sern Adolia]] the [[Harbingers of Fear Guild Note]].'''
+
+: Sern Adolia says, 'You are welcomed into the fold. Now go out and prove yourself young one. You have much to learn about the Dark Truth.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]

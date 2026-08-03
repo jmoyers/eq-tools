@@ -1,0 +1,90 @@
+{{Disambig3|[[Hollow Skull (Skull of the Tower Cook)]]}}
+{{disambig3|[[Hollow Skull (Skull of Wun Toque)]]}}
+{{Simple Quest 
+ |era=Classic
+ |image=npc_yiz_pon.png
+ |zone=Western Plains of Karana
+ |quest giver=Yiz Pon
+ |minimum level=30
+ |classes=[[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+ |related zones=[[Innothule Swamp]], [[Southern Karana]], [[Freeport|West Freeport]]
+ |related NPCs=[[Hyrill Pon]], [[Kurrpok Splitpaw]], [[Lynuga]], [[a Splitpaw assassin]]
+ |reward=Jeweled Skull
+ |turn-in=Say 'What beasts?' to [[Yiz Pon]] located about halfway across Western Karana on the side of a hill to receive [[Torn Parchment]]'' {{Item Lore|Letter to Hyrill Pon}} and spawn a [[Splitpaw assassin]]
+ |turn-in 2=Kill a [[Splitpaw assassin]] and loot a [[Hollow Skull (Skull of Wun Toque)]] (container with two slots).
+ |turn-in 3=Give [[Torn Parchment]] to [[Hyrill Pon]] in [[West Freeport]] (OPTIONAL)
+ |turn-in 4=Kill [[Lynuga]] in [[Innothule Swamp]] and loot a [[Large Ruby]]
+ |turn-in 5=Kill [[Kurrpok Splitpaw]] in [[Splitpaw Lair]] and loot a [[Ruby Pendant]]
+ |turn-in 6=Put the [[Large Ruby]] and [[Ruby Pendant]] in the [[Hollow Skull (Skull of Wun Toque)]] and hit combine. This will turn it into a [[Jeweled Skull]]
+ |dialogue=''[[Yiz Pon]] is located about halfway across Western Karana on the side of a hill.  He wanders as far as the North Karana zone line.''
+
+You say, 'Hail, Yiz Pon'
+
+:[[Yiz Pon]] says, 'Argh... the [beasts] are on my tail.  They will find me soon... I gave them the [skull] and still they pursue me!'
+
+You say, 'What skull?'
+
+:Yiz Pon says, 'The skull of Wun Toque!  I have found it. And have learned the location of its eyes!  But now the [beasts] have it and I must flee...'
+
+You say, 'What beasts?'
+
+:Yiz Pon says, 'Here... No time left... Take this please... My brother [Hyrill] is staying in [Freeport].  Please... Ugh... Must keep moving...'
+
+::''You receive [[Torn Parchment]]'' {{Item Lore|Letter to Hyrill Pon}}
+
+::''A [[Splitpaw assassin]] spawns and attacks Yiz Pon''
+
+:Yiz Pon says 'He has found me! Help meeeeeee!'
+
+<div class="facblock">
+You have slain a Splitpaw assassin!
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+</div>
+
+You say, 'Hail, Yiz Pon'
+
+You say, 'Who is Hyrill?'
+
+:Yiz Pon says, 'There is no time... must keep moving... ugh.'
+
+You say, 'Where in Freeport?'
+
+:Yiz Pon says, 'There is no time... must keep moving... ugh.'
+
+Yiz Pon will ask you to deliver a note to his brother in Freeport named Hyrill Pon. Yiz is running from Splitpaw and some beast is after him.  He gives you a Torn Parchment.
+
+'''You need to kill a [[Splitpaw assassin]] and loot a [[Hollow Skull (Skull of Wun Toque)]] (container with two slots).'''
+
+Apparently Yiz stole this skull in Splitpaw, but then he gave it to assassin to stop hunting him. However, the assassin is still trying to kill him. 
+
+'''Take the note from Yiz to his brother [[Hyrill Pon]] in West Freeport.'''
+
+<div class="facblock">
+* Your faction with [[Commons Residents]] got better.
+* Your faction with [[The Freeport Militia]] got better.
+* Your faction with [[Knights of Truth]] got better.
+* Your faction with [[Priests of Marr]] got better.
+</div>
+{{exp}}
+
+:Hyrill Pon says 'Peh!  He thinks this old skull he found is a legendary skull of Wun Toque.  It is said, a wizard who possesses one is granted power and intelligence far beyond those of his peers.  Yiz was searching for the skull's missing ruby eyes.  It seems he found the location of the first eye.  Hmm.. Lynuga.. Lynuga.. I think I have heard that name before.. Yeah!  Now I remember.  I met her in the Foreign Quarter of Neria.. um.. Highpass Hold.  She was trying to hawk some stolen gems!  I think she mumbled something about going home to Grobb.  I sure don't have time to track her down.'
+
+'''You now have to find two ruby eyes which need to be combined in the Hollow Skull container.'''
+
+* The first eye is found on [[Lynuga]] in Innothule Swamp.  She is a 32nd level Troll Shaman and doesn't present an easy fight. Loot a [[Large Ruby]] from her (gives a +1 INT bonus when worn). 
+
+* The second eye is called a [[Ruby Pendant]] and can be found on a gnoll shaman named [[Kurrpok Splitpaw]] who spawns in [[Splitpaw Lair]].
+
+'''Put the two ruby eyes in the Hollow Skull and hit combine. This will turn into a [[Jeweled Skull]], which is a half decent held item.'''
+
+}}
+
+{{expand}}
+
+''Need missing dialogues.''
+
+[[Category:Quests]]
+[[Category:Western Plains of Karana]]
+[[Category:Wizard Quests]]

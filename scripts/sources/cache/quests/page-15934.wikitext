@@ -1,0 +1,70 @@
+{{Classic Era}}
+[[File:Npc_gretta_mottle.png|frame|Gretta Mottle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Gretta Mottle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+|  [[Gretta Mottle]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Gretta Mottle]] is located at 196, 298, 3 inside Irontoe's Eats during the hours of 6am to 8pm. During the overnight hours, Gretta despawns from Norrath and is replaced by her assistant, [[Buggle Palkin]].''
+
+You say, 'Hail, Gretta Mottle'
+
+: Gretta Mottle says, 'Greetings, ______. I'm Gretta Mottle. Tumpy has been kind enough to let me set up my bakery in his fine establishment here. Unfortunately, with that nasty plague corruptin' the crops in the Plains of Karana, things are goin' a bit slow for me. I keep runnin' out of bread and muffins to sell. Because of flour bein' easily spoiled now, it takes longer to make 'em just right. My assistant Buggle is still learnin' how to cook. Hehe.. All he can make is Meat Pie. If I don't get any [help to bake] soon I won't be able to keep the supply up with the demand.'
+
+You say, 'I will help to bake'
+
+: Gretta Mottle says, 'Glad to hear it. Are ye thinkin' of helpin' me to [bake muffins] or did ye want to [fetch some bread] for me?'
+
+You say, 'I will help bake muffins'
+
+:Gretta Mottle says, 'Ah, if ye want to help me with the bakin', take this Muffin Crate, fill it up with some of your freshly baked Muffins, then seal them in so they won't become stale. I sure hope you can make 'em good enough.'
+
+You receive [[Muffin Crate]] 
+
+''Fill the Muffin Crate with 10 unstacked Muffins that were baked and Combine them to receive a [[Full Muffin Crate]]''
+
+'''Hand the [[Full Muffin Crate]] back to Gretta (Or deliver it to a different town see [[Muffin Quests]])'''<br>
+
+Gretta Mottle smells the aroma in the air and says, 'Mmm... Mmm... That sure smells good. You truly are a fine baker. Here, take this payment for such fine bakin.'
+<div class="facblock">
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Miners Guild 628]] got worse.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 7 gold pieces.
+
+== Related Quests ==
+
+* [[Bread Shipment Quests]]
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

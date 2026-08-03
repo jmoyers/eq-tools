@@ -1,0 +1,75 @@
+{{Velious Era}}
+[[File:npc_jaled_dar`s_shade.png|frame|Jaled Dar`s shade]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Dragon Necropolis]]
+|-
+! ''' Quest Giver: '''
+| [[Jaled Dar`s shade]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerafyrm's Lair]], [[Skyshrine]], [[Temple of Veeshan]], [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Klandicar]], [[Lendiniara the Keeper]], [[Lord Yelinak]], [[Neb]], [[Sontalak]], [[Zlandicar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Sleeper's Key}}
+</li></ul>
+
+== Walkthrough ==
+
+Jaled Dar`s shade may be found at +1590, -120.  The simple way to get into Jaled Dar's lair is to have a rogue with a 210+ skill in lockpicking to open the door. If simplicity isn't your thing, or you just want the key for yourself, you can obtain it one of two ways: Either a quest offered by Zlandicar or a quest offered by Neb.
+
+Once you've found your way into the lair:
+
+You say, 'Hail, Jaled Dar`s shade'
+
+: Jaled Dar`s shade says 'Mortal! You MUST aid me.  I will have my revenge, and my rest!'
+
+You say, 'How can I aid you?'
+
+: Jaled Dar`s shade says 'You must wake The Sleeper. He is our salvation, he will restore a new golden age to Norrath. It was a terrible mistake to subdue him, jealousy and envy led us to do it. I see all of this clearly now.'
+
+You say, 'Who is The Sleeper?'
+
+: Jaled Dar`s shade says 'Kerafyrm, the best of us, what we should be. We imprisoned him in a timeless slumber aeons ago. I know how to release him, but I am no longer of the flesh, so I cannot do it myself. But you can accomplish this task!'
+
+You say, 'What task?'
+
+: Jaled Dar`s shade says 'When the tomb was closed and the entry sealed, many dragons participated in the ceremony. They invested portions of their essence into the seal. The seal is part of them now. With the right talismans, I can show you how to make a key that will allow one to pass, as if they were of the First Brood. If you do not wish to do this for the good of all, perhaps you will be willing to do it for material riches. Priceless treasures are stored in the tomb, yours for the taking, once you are inside and have released The Sleeper.'
+
+You say, 'What talismans?'
+
+: Jaled Dar`s shade says 'Sontalak, Lendiniara, Klandicar, Yelinak, and Zlandicar are all that are left alive of those who were involved in the sealing of the tomb. Each has a talisman. Bring me any one of these items, or a large enough piece from one of the talismans from a dead first brood, and I shall unlock its power, which will allow you entry into the tomb.'
+
+'''You'll need to give him a talisman from any of the five dragons of the first brood mentioned:''' 
+
+<ul>
+<li>{{:Sontalak's Talisman}}</li>
+<li>{{:Lendiniara's Talisman}}</li>
+<li>{{:Klandicar's Talisman}}</li>
+<li>{{:Yelinak's Talisman}}</li>
+<li>{{:Zlandicar's Talisman}}</li>
+</ul>
+
+: Jaled Dar`s shade says 'Very well done. Here is how you unlock the entry. Seek out a great dragon statue in the Eastern Wastes, and use this key there. Not very different from how you entered my old domain, Veeshan's Peak, now, is it? Haha, yes, I know many things, even dead.'
+
+
+'''There is a stun trap directly in front of Jaled, right next to the first step or on the first step. If you trigger the trap, you will be stunned and Jaled will kill you. Also if you're a small race and don't have levitate, you won't be able to get up the first step to turn in. Get levitate or go into an Illusion to get up the steps'''
+
+
+How to get to Jaled Dar`s shade without lockpicking
+{{Youtube| id=srRA5PUxGL0}}
+
+[[Category:Quests]]
+[[Category:Dragon Necropolis]]
+[[Category:All Classes Quests]]

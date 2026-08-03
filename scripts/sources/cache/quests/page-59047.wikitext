@@ -1,0 +1,88 @@
+{{Classic Era}}
+
+[[File:npc_the_kerran_sha`rr.png|thumb|right|The Kerran Sha`rr]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Kerra Island]]
+|-
+!''' Quest Giver: '''
+| [[The Kerran Sha`rr]]
+|-
+!''' Minimum Level: '''
+| 1+ (Rec. 10)
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Kerra Island]]
+|-
+!''' Related NPCs: '''
+|  [[The Kerran Sha`rr]], [[kerran tiger spathi]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Talisman of Kejaar Kerrath}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 100.
+</div> 
+
+* {{YouGainExperience}} (0.044%) @level 5
+
+== Checklist == 
+{{CheckboxList}}
+* [[Heretic Insurrection Orders]]
+** Locate and Kill [[kerran tiger spathi]] around -501.74, -147.13, 3.19
+** Return to The Kerran Sha`rr
+
+{{End}}
+== Walkthrough ==
+
+'''The Kerran Sha`rr is located at 902.55, 347.27, -6.81'''
+
+''' Following from the end of the previous quest ([[Something is Wrrrong]])
+
+''' You have been assigned the task 'This Means Warrr'. ''' <br>
+The Kerran Sha`rr has sensed that something is amiss in Kerra Isle. The trouble seems to stem from the small island south of the village. He has asked you to investigate the situation on the island and report back.
+
+: The Kerran Sha`rr says, 'Herrresy! No disciple of Kejaarrr would do such a thing! And even the pumas of the isle have turrrned on us, you say? I must ask yourrr aid once again. The danger is grrreat. Make any necessarrry prrreparrrations, and then storrrm the tigerrr trrraining pit on the south end of that once sacrrred island. Do not rrreturrrn until you have rrrouted what evil has taken rrroot. I fearrr anything less could mean the dawn of a new warrr.'
+
+=== Quest Stage 1: ===
+* Step 1 - Slay one of the Heretics at the Tiger Training Pits and collect their orders. <br>
+* Text 1 - The Kerran Sha`rr has sent you to deal with the threat directly. <br> 
+** Loot the [[Heretic Insurrection Orders]]
+
+kerran tiger spahi spawns on the southern part of the South Island. On a raised platform above a pit of tigers.
+
+ You have slain kerran tiger spahi!
+ --You have looted a Heretic Insurrection Orders from kerran tiger spahi's corpse.--
+
+''' Your task 'This Means Warrr' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step 2 - Show the Heretic's orders to the Kerran Sha`rr  <br>
+* Text 2 - Locate evidence of the threat to Kerra Village.<br>
+
+ You offered 1 Heretic Insurrection Orders to The Kerran Sha`rr.
+
+''' Your task 'This Means Warrr' has been updated. '''
+
+=== Quest Completed: ===
+
+: You've dealt a blow to the Heretics attempting to seize control of Kerra Isle, but they're sure to return in time.
+
+Your faction standing with Kerra Isle has been adjusted by 100.
+
+You gain experience!
+
+You have been given: Talisman of Kejaar Kerrath
+
+: The Kerran Sha`rr says, 'So it rrreally was herrretics on Kerran lands. I fearrred as much. We have enjoyed an age of peace, but apparrrently someone in this village has rrreason to see it end.'
+
+ You complete the trade with The Kerran Sha`rr.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

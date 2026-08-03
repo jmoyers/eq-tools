@@ -1,0 +1,61 @@
+[[File:npc_suuspa_clanim.png|frame|200px|Suuspa Clanim]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Suuspa Clanim]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| ?
+|-
+! ''' Related NPCs: '''
+| Bloodsabers
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Suuspa Clanim]] is in the Temple of Life in North Qeynos.''
+
+You say, 'Hail, Suuspa Clanim'
+
+: Suuspa Clanim says 'Welcome to the Temple of Life, ______. It is here that you may pay tribute to the Prime Healer. Does not your heart beat with the sound of life? It is He who makes it so. Do not let the hand of [[Bertoxxulous]] and his [new disease] lay upon your soul or, like so many, you shall meet your fate at the end of my sword!'
+
+You say, 'What new disease?'
+
+: Suuspa Clanim says 'The new disease I speak of is called the [[Bloodsabers]]. They are the loyal followers of Bertoxxulous and as such have been condemned by our temple. Do you wish to [join the fight]?'
+
+You say, 'I wish to join the fight'
+
+: Suuspa Clanim says 'Then seek out those who worship the Plaguebringer. End their threat!! Each member has upon them the mark of the Bloodsabers, a rat-shaped ring. I shall reward all those who return such rings to me.'
+
+'''When you kill [[Brother Trintle]] (others?), they have a [[Rat Shaped Ring]]. Bring the rings back and Suuspa will reward you.'''
+
+(Note: The [[Rat Shaped Ring]] sometimes given out by the [[Hurrieta's Tunic Quest]] also works!)
+
+Suuspa Clanim, says, 'You have cleansed Norrath of another follower of the Plaguebringer. You have done well. Take this reward and continue your search for others who wear this ring.'
+<div class='facblock'>
+* Your faction with [[Antonius Bayle]] got better.
+* Your faction with [[Guards of Qeynos]] got better.
+* Your faction with [[Priests of Life]] got better.
+* Your faction with [[Knights of Thunder]] got better.
+* Your faction with [[Bloodsabers]] got worse.
+</div>
+{{exp}}
+
+You receive 1 gold, 3 silver pieces.
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

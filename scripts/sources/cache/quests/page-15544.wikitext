@@ -1,0 +1,131 @@
+{{Classic Era}}
+[[File:npc_toala_nehron.png|frame|Toala Nehron]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Toala Nehron]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Brunar Rankin]], [[Lenka Stoutheart]], [[Olunea Miltin]], [[Bronto Thudfoot]]
+|}
+
+== Reward(s) ==
+
+<ul><li>  [[:Moggok's Right Eye]]
+</li><li>  [[Snapped Pole]]
+</li><li>  [[Fishing Pole]]
+</li></ul>
+
+== Walkthrough ==
+
+'''Find Toala [[Toala Nehron]] in [[West Freeport]]''' ''(Optional)''
+
+You say, 'Hail, [[Toala Nehron]]'
+
+: Toala Nehron says, 'I am Toala Nehron. You must be another young warrior aspiring to join the ranks of the Steel Warriors. We welcome all who would try. When you [have time], there is a friend of mine I would like you to check on.'
+
+You say, 'I have time.'
+
+: Toala Nehron says, 'I have a friend by the name of [Lenka Stoutheart]. She reported to me that her ship was broken into and someone stole a pouch of hers. Could you go look into it for me? Just tell her Toala sent you. Oh, and pay no mind to the walking mountain by her. That will only be Bronto, her navigator. Thanks, friend.' 
+
+You say, 'who is Lenka Stoutheart?'
+
+: Toala Nehron says, 'Lenka Stoutheart is an old friend of mine. I trained with her in my younger days when the Steel Warriors sent me to train in the ways of the Wolves of the North, the barbarian warriors of Halas. She is now an adventurer of great sorts. She travels from continent to continent aboard the Blue Beast, her ship. The Last time I had heard from her she was docked in East Karana.'
+
+'''Find [[Lenka Stoutheart]] and [[Bronto Thudfoot]] at the [[Seafarer's Roost]] dockside tavern in [[East Freeport]] during the daytime only.'''
+
+You say, 'Hail, Lenka Stoutheart'
+
+: Lenka Stoutheart says 'Hi, kid! You seem to be a stranger in these parts. Heed my words, this city is dangerous to new blood!'
+
+: Bronto Thudfoot says 'You said it, boss! Stay clear of taking sides and you should be just fine, young one .'
+
+You say, 'Toala sent me'
+
+: Lenka Stoutheart says 'She does not even have the courtesy to come herself. Some old friend!! Listen, some rogue in this city broke into the [Beast] and stole a pouch containing a voucher ticket for a part I need to repair the Beast. I can't get the part back without the ticket. I did not see the rogue. I did not sleep on the Beast that night. Bronto was there. Ask him if he saw the rogue.'
+
+You say, 'What is the Beast?'
+
+: Lenka Stoutheart says 'You're joking, right? You have never heard of the Blue Beast?!! She is the fastest ship in Norrath. She made the [Kunark run] in under three weeks. She was designed by [Bronto].'
+
+You say, 'What Kunark run?'
+
+: Lenka Stoutheart says 'The Kunark run is the most dangerous run between Freeport and [Firiona Vie], in Kunark. If the seas don't rip your hull to splinters and the pirates and sea wyrms don't kill you, you can make a quick run back and forth, avoiding any unwanted inspections.'
+
+You say, 'What about Firiona Vie?'
+
+: Lenka Stoutheart says 'Firiona Vie is an elven outpost on the continent of Kunark. Every so often I run supplies to and from there. Do not even think about asking me to take you there. It will be months before I can make improvements on the Blue Beast to make it impervious to aerial attacks.'
+
+You say, 'Hail, [[Bronto Thudfoot]]'.
+
+You say, 'Did you see the rogue?'
+
+: Bronto Thudfoot says 'I had quite a bit of grog that night and it was very dark. What I do remember was seeing a tall woman in a dress run from the docks. She sort of smelled, too. Like fish. I know it was the docks, but this woman had a real stench to her. Like dried fish baking in the sun. That is all I remember. It was too dark to see anything but her [silhouette].'
+
+You say, 'Her silhouette?'
+
+: Bronto Thudfoot says 'Yeah!! The silhouette looked like a very brawny woman. It had to be a woman. The silhouette was surely that of one with a short skirt and long hair.' 
+
+'''Find [[Brunar Rankin]] under the docks right next to [[Seafarer's Roost]]'''
+
+You say, 'Hail, Brunar Rankin'
+
+: Brunar Rankin says 'How are you? Please excuse my stench. I fish all day and night just to feed my large family. You look like an adventurer. That must be exciting. I am but a humble fisherman. Maybe someday we shall both be rich. You by your treasures and me by my catch.'
+
+You say, 'What did you steal from Lenka?'
+
+: Brunar Rankin says 'How dare you accuse me of being a thief!? I labor hour after hour trying to catch one fish which will bring me one copper piece to buy one slice of bread which I will split into five pieces to feed me, my sick wife and three little children, one of whom has the plague!! Poor little Repi. Now please, leave this humble little fisherman alone!'
+
+'''If you stay with Brunar he eventually goes up into the Seafarers Roost and gives his 'Catch" to Gregor the bartender. If asked about Brunar, Gregor hints that he steals for him. Gregor says he will put the catch down in the storeroom, which by the way leads down to the Thieves guild.'''
+
+===L.S. Pouch===
+[[File:L.S. Pouch.png|thumb|L.S. Pouch groundspawn]]
+'''The [[L.S. Pouch]] is a groundspawn in the basement of the [[Seafarer's Roost]] behind the crates and boxes is a discolored 'Fake' wall that you can walk through which leads into the Evil underground guilds.<br>
+'''Go down the steps, open the first door and the L.S. Pouch should be on the ground to your right. (It looks like a 'Large' bag but is actually a small item and not a container so you can place inside your own bag)
+'''
+
+'''Return to [[Lenka Stoutheart]] and hand her the [[L.S. Pouch]]
+
+:Lenka Stoutheart says, 'You found my pouch ! Thanks kid. Let me buy you a drink and this is for the good work. Hmmmm. It looks as though they took my voucher. Darn it ! Hey . . . It looks like they were using my bag to hold items they were stealing. Here you go. You can have it. It looks like junk. 
+
+<div class='facblock'>
+* Your faction standing with [[Wolves of the North]] got better
+* Your faction standing with [[Shamen of Justice]] got better
+* Your faction standing with [[Merchants of Halas]] got better
+* Your faction standing with [[Steel Warriors]] got better
+</div>
+{{exp}}
+
+You either receive [[Snapped Pole]] or [[Moggok's Right Eye]].
+
+==Snapped Pole==
+
+'''Find [[Olunea Miltin]] just outside the tavern at the end of the EFP Docks and hand her the [[Snapped Pole]]:
+
+: Oliunea Miltin says, 'Great !! Thank you stranger. The rogues must have broken it. At least I can repair it. It would be seasons before I could afford another pole.'
+
+<div class='facblock'>
+* Your faction standing with [[Freeport Militia]] got better.
+* Your faction standing with [[Coalition of Tradefolk Ill]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Priests of Marr]] got worse.
+</div>
+{{exp}}
+
+You receive [[Fishing Pole]]
+
+''Moggok's Right Eye is part of an unknown, unsolved or broken quest. Even on Live''
+
+[[Category:Quests]]
+[[Category:East Freeport]]

@@ -1,0 +1,27 @@
+{{Unsolved}}
+
+'''This quest was unfinished / not implemented until much later after classic. Some text is pasted here for reference:'''
+
+''Speak with Noxhil V`Sek in Neriak Third Gate.''
+
+You say, 'Hail, Noxhil V`Sek'
+
+: Noxhil V`Sek remains silent, uninterested in speaking with you.
+
+You say, 'Who is Innoruuk?'
+
+: Noxhil V`Sek says 'He is the Prince of Hate. We are His vessels of destruction. There are no greater servants of Innoruuk than the Dead. His word is law. Once the Teir'Dal obtain the second half of the [scroll of G'han], all Norrath shall be enveloped by His glorious hate.'
+
+You say, 'What about the scroll of G'han?'
+
+''If your faction level with "The Dead" is too low, you see:''
+
+: Noxhil V`Sek says 'When you learn to serve the Dead, then I will find the time to speak of such things.'
+
+''If your faction is dubious or higher:''
+
+: Noxhil V`Sek says 'The scroll of G'han was scribed long ago by the great necromancer G'han. With it, we can commune directly with Innoruuk. Unfortunately, one portion of the scroll was taken from us by a rogue who was hired by the Koada'Dal. In Felwithe, it doth lie. The Indigo Brotherhood now attempts to reclaim it.'
+
+''The quest is classically broken at this point. This storyline was later (2013) incorporated into the quest described at'' [https://everquest.allakhazam.com/db/quest.html?quest=7283]
+
+[[Category: Quests]]

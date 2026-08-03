@@ -1,0 +1,84 @@
+
+
+[[File:npc_gretta_mottle.png|frame|Gretta Mottle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim]] in Irontoe's Eats
+|-
+! ''' Quest Giver: '''
+| [[Gretta Mottle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All, Good Aligned
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to [[Gretta Mottle]] in Irontoe's Eats in Kaladim.
+
+''' Note: Gretta spawns during the day and is replaced with Buggle Palkin at night.
+
+The conversation with Gretta Mottle:
+
+You say, 'Hail, Gretta Mottle'
+
+: Gretta Mottle says, 'Greetings, Zokkor. I'm Gretta Mottle.  Tumpy has been kind enough to let me to set up my bakery in his fine establishment here.  Unfortunately, with that nasty plague corruptin' the crops in the Plains of Karana, things are goin' a bit slow for me.  I keep runnin' out of bread and muffins to sell.  Because of flour bein' easily spoiled now, it takes longer to make 'em just right.  My assistant Buggle is still learnin' how to cook.  Hehe.. All he can make is Meat Pie.  If I don't get any [help to bake] soon I won't be able to keep the supply up with the demand.'
+
+You say, 'help to bake'
+
+: Gretta Mottle says, 'Glad to hear it.  Are ye thinkin' of helpin' me to [bake muffins] or did ye want to [fetch some bread] for me?'
+
+You say, 'fetch some bread'
+(note that responding to 'bake muffins' gives [[Muffin Quests|a different quest]])
+
+: Gretta Mottle says, 'The only one who can make bread almost as good as I can is Jarlen Meadowgreen.  He lives a long way off though.. in the southern Plains of Karana.  If ye travel there, tell him that you are there to pick up some bread loaves for me.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Beth Breadmaker.
+
+: Gretta Mottle says, 'Well now, what do we have here?  You actually went out of your way to fetch bread for me?  Thank ye so kindly.  Please accept this as payment for your service.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Miners Guild 628]] got worse.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1-3 platinum  from Beth Breadmaker.
+
+'''Gretta despawns after turn in, but respawns about a minute later.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,65 @@
+{{Velious Era}}
+[[File:npc_bloogy_shellcracker.png|frame|Bloogy Shellcracker]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cobalt Scar]]
+|-
+! ''' Quest Giver: '''
+| [[Bloogy Shellcracker]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]], [[Timorous Deep]]
+|-
+! ''' Related NPCs: '''
+| [[Faydedar]], [[Kelorek`Dar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Othmir Prexus Totem}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest begins with [[Bloogy Shellcracker]] in Cobalt Scar (location 187.25, -1507.34, 77.76 on upper edge of coast).
+
+You say, 'Hail, Bloogy Shellcracker'
+
+: Bloogy Shellcracker says, 'Hello, strange one. I am Bloogy Shellcracker, the preparer of meals for my people. I am not familiar with the culinary tastes of your kind but you are welcome to purchase some of my supplies. I will also barter for ingredients to some of my exotic dishes.'
+
+You say, 'What ingredients?' 
+
+: Bloogy Shellcracker says 'The rarest treat I can prepare for my people is saucy salted seadragon steak. I wish to barter for some water dragon or sea dragon meat, saltwater seaweed, and fish eggs. The rest of the ingredients are collected locally by our collectors. 
+
+* You need one [[Sea Dragon Meat]]. It can drop off either [[Kelorek'dar]], [[Faydedar]], or [[Lord Koi`Doken]]. 
+
+* 2 [[Saltwater Seaweed]] is fished in Ocean of Tears, Timorous Deep, or Butcherblock Mountains. You need two of these.
+
+* 1 [[Fish Eggs]]. You receive 2 [[Fish Eggs]] by combining [[Thunder Salmon]] or a [[Greengill Salmon]] and a [[Skinning Knife]] in a [[Tackle Box]], which presumably is the source of the confusion about needing both eggs. Confirmed 06/20/2018. The combine is 135 trivial (I failed twice at 95 skill). You can skill up [[Fishing]] with the combine (I went from 120-121 skill). 
+
+'''Trade Bloogy ''':{{CheckboxList}}
+* 2x [[Saltwater Seaweed]]
+* 1x [[Sea Dragon Meat]]
+* 1x [[Fish Eggs]]
+to receive [[Othmir Prexus Totem]] (''Confirmed 06/20/2018'').
+{{End}}
+
+: Bloogy Shellcracker says 'It has been many moons since my people have feasted on this rarest of meat. Take this totem crafted in the form of our oceanlord Prexus and inscribed with the runes of our people. may the oceans watch over you, _____' 
+
+<div class="facblock">
+* Your faction standing with [[Othmir]] got better.
+* Your faction standing with [[Ulthork]] got worse.
+</div>
+
+Reward: [[Othmir Prexus Totem]].
+
+[[Category:Quests]]
+[[Category:Cobalt Scar]]
+[[Category:All Classes Quests]]
+[[Category:Druid Quests]]

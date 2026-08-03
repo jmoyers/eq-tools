@@ -1,0 +1,58 @@
+{{Classic Era}}
+{{Disambig3|[[Ortallius' Cutthroat Rings]]}}
+[[File:Npc guard valon.png|thumb|Guard Valon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Commonlands]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Valon]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a Dervish Cutthroat]], [[a Dervish Thug]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], [[Militia Armory Token]]
+</li></ul>
+
+== Walkthrough ==
+
+This quest is given by [[Guard Valon]] at the toll booth in the Commonlands. You must have atleast Indifferent faction with the Freeport Militia in order to receive it. 
+
+The '''[[Orc Picks]]''' quest (also given by Valon) is the prerequisite for the Cutthroat Rings quest.
+
+'''After handing in 4 [[Orc Pawn Pick]]...'''
+
+: Guard Valon Says, 'You have done well. Keep up the good work and we may trust you to [hunt dervish cutthroats] which in turn will allow you to join the Reserve Freeport Militia.
+
+You Say, 'I want to hunt dervish cutthroats'
+
+'''You'll receive an 8-slot container called [[Bag for Cutthroat Rings]].'''
+
+'''[[Cutthroat Insignia Ring]]s are dropped pretty commonly from dervish cutthroats located in the West Commonlands and North and South Ro.'''
+
+'''Combine them in the container and turn in the result to Guard Valon.'''
+
+<div class='facblock'>
+* Your faction standing with [[Coalition of Tradefolk Underground]] has gotten better.
+* Your faction standing with [[Freeport Militia]] has gotten better.
+* Your faction standing with [[Knights of Truth]] has gotten worse.
+* Your faction standing with [[Priests of Marr]] has gotten worse.
+</div>
+
+You also receive a [[Militia Armory Token]] for use in the [[Reserve Militia]] quest.
+
+[[Category:Quests]]
+[[Category:West Commonlands]]
+[[Category:All Classes Quests]]

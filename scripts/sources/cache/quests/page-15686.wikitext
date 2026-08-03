@@ -1,0 +1,73 @@
+{{Delete}}
+
+{{Velious Era}}
+
+[[File:npc_vkjor.png|frame|Vkjor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Vkjor]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| Warrior
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Draazak]], [[Jerigozia]], [[Veredenia]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Silver Steel Gauntlets}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+Need /loc of all quest mobs and logs of dialogues for first part of script (these are transcriptions).
+
+You say, 'Hail, Vkjor'
+
+: Vkjor says 'Greetings, Troll. Welcome to the great arena of Kael Drakkel. I am Vkjor, master of the arena. The games begin and end when I wish them to. Gladiators train themselves year round to entertain the populace of Kael. Have you come to watch, or is there something else I can help you with?'
+
+You say, 'Something else.'
+
+: Vkjor says 'What is it you need? Do you wish to be a gladiator or something along those lines? I do not allow your kind to fight in the arena, I am sorry to say. It is a sacred place for the children of Zek. If you wish to hone your battle skills, however, I do have several things I need taken care of.'
+
+You say, 'What do you need taken care of?'
+
+: Vkjor says 'I have several things which must be dealt with. However I must know if you are capable of the tasks before I send you off. Do you fight like an ice wurm or a dragon?'
+
+You say, 'I fight like a dragon.'
+
+: Vkjor says 'If you fight like a dragon, I suppose destroying one might not be that hard for you. Several years ago, Nevederia led a flight of dragons to defile the Temple of Rallos Zek. We beat them back to the skies but not without our losses.'
+
+You say, 'What losses?'
+
+: Vkjor says 'My youngest son, Vkjrog, now rests with Rallos Zek in the Plane of War. The loss has sapped me nearly of my will to live. However, a few things keep me going - my duty to keep the arena in order and the knowledge that I might still bring pain and suffering to Nevederia. I wish her to suffer as I did with the loss of a child. She may stay safe in the Temple of Veeshan but her brood does not. Slay her three children and bring me proof of their deaths so they may serve as my message to Nevederia. I will compensate you with a pair of gloves fit for a fine warlord if you can give me this satisfaction.'
+
+The three dragons are [[Draazak]], [[Jerigozia]], and [[Veredenia]], all found in the Western Wastes.  Loot a claw from each and hand them in to Vkjor.
+
+Vkjor looks down at you, shocked. 'I honestly did not expect you to be able to destroy her children, ______. Vkjrog must have guided your hand as you slew those beasts. Nevederia will now know sorrow the like of which she has never felt.' Vkjor drops a shiny pair of gauntlets on the ground before you as he turns his attention to the bloody claws he now holds.
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{exp}}
+
+
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Warrior Quests]]

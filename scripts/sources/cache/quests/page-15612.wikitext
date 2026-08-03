@@ -1,0 +1,63 @@
+{{Velious Era}}
+
+[[File:npc_king_tormax.png|frame|King Tormax]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[King Tormax]]
+|-
+! ''' Minimum Level: '''
+| ?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Skyshrine]]
+|-
+! ''' Related NPCs: '''
+| [[Lord Yelinak]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Gauntlets of Dragon Slaying}}
+</li></ul>
+
+== Walkthrough ==
+
+Faction Required: King Tormax (Min: Dubious)
+
+You say, 'Hail, King Tormax'
+
+: King Tormax says, 'Greetings, _______.  You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me. 
+
+You say, 'What tasks?'
+
+: King Tormax says, 'The tasks are simple, _______. I wish the death of the other 'powers' of this frozen waste land. If you are able to destroy either of my mortal foes, bring me proof of your exploits and you will be known as the hero of Kael Drakkel. 
+
+You say, 'What powers?'
+
+: King Tormax laughs deeply, 'I speak of the foolish old dragon Yelinak and that pitiful Dain Frostreaver.' 
+
+'''[[Lord Yelinak]] is a very tough dragon in [[Skyshrine]]. Kill him and bring back his head ([[Yelinak's Head]]) for your gauntlets.'''
+
+: King Tormax laughs deeply as he takes the bloody head then gives you your reward.
+
+<div class='facblock'>
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[KingTormax]] got better.
+* Your faction standing with [[Yelinak]] got worse.
+* Your faction standing with [[Dain Frostreaver IV]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]
+
+(Confirmed to have turn in at 53. So minimum level posted on this page isn't correct. Actual minimum unknown)

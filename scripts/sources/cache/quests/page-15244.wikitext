@@ -1,0 +1,129 @@
+{{Classic Era}}
+[[File:npc_laren.png|frame|Laren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Laren]]
+|-
+! ''' Minimum Level: '''
+| 16
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[High Keep]]
+|-
+! ''' Related NPCs: '''
+| [[Fenn Kaedrick]], [[Jail Clerk Maryl]], [[Rodrick Marslett]], [[Xentil Herkanon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Scouts Blade}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest follows [[Scouts Cape]] and is given by [[Laren]],located at -361, -333, 161 in the small building opposite the Scouts of Tunare Guild Hall.''
+
+You say, 'Hail, Laren'
+
+: Laren says, 'Welcome, my friend! What is it you seek from Laren and the Scouts of Tunare?'
+
+You say, 'The Scout Blade'
+
+: Laren says, 'So you have heard of the dagger created especially for the rogues of Kelethin! The creator of these blades has since passed away. We mourn his death. And, I am sorry to say, we have no more to offer our new scouts. There is a way though.. A way to gain a blade and a way to [avenge the craftsman].'
+
+You say, 'How do I avenge the craftsman'
+
+: Laren says, 'You must journey to Antonica. Seek out a castle high in the Serpent's Spine. A castle called Highkeep. Search for a man named Fenn Kaedrick. Give him this token and he shall know why you were sent. Perhaps the merchants will know of his whereabouts. Go at once. I have faith in you. Good luck, ______.'
+
+'''You receive a [[Useless Token]] from [[Laren]].'''
+
+----
+
+''Find [[Jail Clerk Maryl]], located at 3, -364, -11 in the basement of [[High Keep]].''
+
+You say, 'Hail, Jail Clerk Maryl'
+
+: Jail Clerk Maryl says, 'Hail! I am the jail clerk of Highkeep. How may I be of service?'
+
+You say, 'Where is Fenn Kaedrick?'
+
+: Jail Clerk Maryl says, 'Why do you ask of that horrid rogue? We had him locked away with that high elf and then he got bailed out. I know of no reason why anyone would want to bail his bloody carcass out of our dungeon.'
+
+''The high elf Maryl references is [[Rodrick Marslett]], located at 146, -308, -12 in a cell adjacent to the torture room..''
+
+You say, 'Hail, Rodrick Marslett'
+
+: Rodrick Marslett says, 'Oooh.. Hello, [guard]. Please do not let the [Teir'Dal] at me again. I can take no more.'
+
+You say, 'What Teir'Dal'
+
+: Rodrick Marslett says, 'The Teir'Dal are what all elves call the dark elves, such as those vile torturers. I don't know what they are doing in Highpass.'
+
+You say, 'Where is Fenn Kaedrick'
+
+: Rodrick Marslett says, 'Are you searching for the rogue named Fenn Kaedrick? He used to be locked in here with me. That Lady McCabe bailed him out just minutes before the Teir'Dal planned to operate on him. He said that if I ever did escape, to venture to the very roof of this keep and wait till he showed up to escort me away from here.'
+
+''After inquiring to Fenn's whereabouts with Rodrick, [[Fenn Kaedrick]] will spawn at location 25, -84, 83 on the roof of [[High Keep]]. Use the railing of either fourth floor balcony to jump up to the roof.''
+
+You say, 'Hail, Fenn Kaedrick'
+
+: Fenn Kaedrick says, 'What brings you to the top of the castle? Me? I am just the Highkeep exterminator. We have had a nasty time with rats.'
+
+'''Hand [[Fenn Kaedrick]] the [[Useless Token]].'''
+
+: Fenn Kaedrick says, 'So you are the one Laren sent. I myself was trained by Laren. Imagine that, a human trained by elven rogues. I share the concerns of the scouts. You were sent to assassinate [Xentil Herkanon]. He betrayed the scouts and Kelethin. He is somewhere in this keep. Return his head to Laren in Kelethin.'
+
+{{YouGainExperience}}
+
+You say, 'Who is Xentil Herkanon'
+
+: Fenn Kaedrick says, 'Xentil Herkanon is related to one of the bigwigs of the Circle of Unseen Hands, the rogue guild in Qeynos. Killing him would greatly decrease your popularity with them, but who do they like, anyway? He travels with two bodyguards, Lartin and Grex, very tough customers. It's best to avoid them. Goodbye and good luck.'
+
+''[[Fenn Kaedrick]] will immediately despawn after asking him about Xentil.''
+
+''[[Xentil Herkanon]] is located at -101, -257, 3 in a small room on the main floor of [[High Keep]]. He is flanked by his two bodygaurds, [[Lartin]] and [[Grez]].''
+
+You say, 'Hail, Xentil Herkanon'
+
+: Xentil Herkanon says, 'I do not desire any company other than my bodyguards. Be off!!'
+
+: Xentil Herkanon says 'You have made a big mistake choosing to battle a high member of the Circle of Unseen Hands. Now you shall pay!!'
+
+'''You have slain Xentil Herkanon!'''
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Kane Bayle]] got worse.
+</div>
+
+Xentil Herkanon's corpse says 'Big mistake, my friend!! The Circle of Unseen Hands shall surely find and cut you down for the death of the nephew of Renux Herkanon. My bodyguards will be waiting for you!!'
+
+--You have looted a [[Half Elf Head]].--
+
+----
+
+'''Hand Laren the Half Elf Head (identifies as "Xentil's Head").'''
+
+: Laren says 'You have proven yourself to be a worthy Scout of Tunare and as such you are worthy to hold the hilt of a scout blade. Remember, rogues in class are we, but in our chests beats the heart of the forest. Our skills are used in defense of Kelethin and her allies. Next you shall speak to Master Tylfon. He will inform you of the [scout silvermesh leggings].'
+
+<div class="facblock">
+* Your faction standing with [[Tunare's Scouts]] got better.
+</div>
+{{exp}}
+
+== Related Quests==
+
+* [[Scouts Leggings]]
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Rogue Quests]]

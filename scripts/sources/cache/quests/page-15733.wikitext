@@ -1,0 +1,143 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_umykith_fe`dhar.png|frame|Umykith Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Umykith Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV East)
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+
+== Reward ==
+{{Gear Set
+|Helm of Twilight
+|Breastplate of Twilight
+|Vambraces of Twilight
+|Bracer of Twilight
+|Gauntlets of Twilight
+|Greaves of Twilight
+|Boots of Twilight
+}}
+
+== Checklist ==
+Turn-ins to [[Umykith Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Helm of Twilight]]
+:*[[Unadorned Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Breastplate of Twilight]]
+:*[[Unadorned Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Vambraces of Twilight]]
+:*[[Unadorned Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Bracer of Twilight]]
+:*[[Unadorned Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Gauntlets of Twilight]]
+:*[[Unadorned Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Greaves of Twilight]]
+:*[[Unadorned Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Boots of Twilight]]
+:*[[Unadorned Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Umykith Fe`Dhar is located in the Tower Top, when referring to the alternate map shown on the Skyshrine page. He is among a long row of other Fe`Dhar, one on each side of the room.
+
+You say, 'Hail, Umykith Fe`Dhar'
+
+: Umykith Fe`Dhar says 'Hail! What news and stories have you from the New World? Perhaps if you are a bard you can spin me stories of those lands. Oh, I forget my manners. We shall exchange talk another time. You seek something, do you not? A new outfit perhaps?'
+
+You say, 'I seek a new outfit'
+
+: Umykith Fe`Dhar says 'Well, then, I have just what you need.  Now, my terms of payment are thus, you gather some things for me and in return I shall craft you the finest armor a bard has ever seen!  A new outfit comprised of a helm, breastplate, armplates, bracers, gauntlets, greaves, and boots shall make you the envy of your peers, my little friend.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned plate armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan. '''
+
+Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction. Ally faction is required for all Skyshrine armor quests.
+
+<div class='facblock'>
+* Your faction with [[Claws of Veeshan]] got better.
+* Your faction with [[Yelinak]] got better.
+* Your faction with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Umykith Fe`Dhar says 'A brand new shiny helm shall be yours once I have an unadorned plate helmet and three pieces of crushed coral. May the audience swoon in your presence.'
+
+Return [[Unadorned Plate Helmet]] and three [[Crushed Coral]].
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Umykith Fe`Dhar says 'I have need of an unadorned breastplate and three flawless diamonds. Find these for me and I shall craft you a breastplate, minstrel. May it protect you from unruly audiences with rotten vegetables.'
+
+Return [[Unadorned Breastplate]] and three [[Flawless Diamond]]s.
+
+== Armplates ==
+
+You say, 'What armplates?'
+
+: Umykith Fe`Dhar says 'A gorgeous pair of armplates shall be yours once you have retrieved a set of three flawed emeralds and a pair of unadorned plate vambraces.  The detail and craftsmanship are stunning!'
+
+Return [[Unadorned Plate Vambraces]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Umykith Fe`Dhar says 'A pair of bracers shall be yours upon receipt of an unadorned plate bracer and three crushed flame emeralds. May your songs never falter during a tactical retreat.'
+
+Return [[Unadorned Plate Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Umykith Fe`Dhar says 'It would be a shame if your hands were to be injured wouldn't it? I shall craft some gauntlets so that your nimble digits remain intact. Bring me a pair of unadorned plate gauntlets as well as three crushed topaz.'
+
+Return [[Unadorned Plate Gauntlets]] and three [[Crushed Topaz]].
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Umykith Fe`Dhar says 'Some new greaves would do you some good. The pair you have now looks quite stained and worn. Fetch me a pair of unadorned plate greaves and three flawed sea sapphires.'
+
+Return [[Unadorned Plate Greaves]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Umykith Fe`Dhar says 'A fancy pair of boots you want, is it? Yes, I can see the pair you have now looks a bit worn from running so much. All I require are a pair of unadorned plate boots and three crushed pieces of black marble.'
+
+Return [[Unadorned Plate Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Bard Quests]]
+[[Category:Skyshrine Armor Quests]]

@@ -1,0 +1,74 @@
+[[File:npc_noxhil_v`sek.png|thumb|Noxhil V`Sek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Noxhil V`Sek]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Necromancer]], [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]], [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[Kerra Isle beetle]], [[a wooly mammoth]]
+|}
+
+== Reward ==
+
+<ul><li>  Low-level Necro Spells
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Noxhil V`Sek'
+
+:Noxhil V`Sek says, 'Greetings, Playername!  We of the Dead are proud to have you among us.  Your lineage is well known.  Still, you must learn to claw your way to the upper echelon.  There are many [menial tasks] to be performed before you can truly be inducted as a member.'
+
+After completing the Fire Beetle Eyes quest:
+
+:Noxhil V`Sek says, 'Fantastic work, my child! We shall store these for further experiments. Take this as extra payment for a fine job. You have done so well I believe you can assist in obtaining two [other components].'
+
+You say, 'what other components?'
+:Noxhil V`Sek says, 'Take this chest. This one must be filled with Kerra Isle Beetle eyes. Before you return the filled chest to me, be sure to also return with a wooly mammoth tusk. Be quick about it....'
+
+You receive an Empty Chest.
+
+Wooly Mammoths are found in Everfrost and the Kerran Beetle Eyes are found in Erud's Crossing, so you will have to do some hiking to get him his stuff. 
+
+Hand in the combined [[Beetle Eye Chest]] and [[Mammoth Tusks]]:
+:Noxhil V`Sek says 'I was expecting a mammoth tusk and the combined beetle eye box!'
+:Noxhil V`Sek says, 'Excellent work, young one!  You are sure to be an asset to our faction.  Let us see if we can help you on your journey to power.  I believe this can be of assistance to a young necromancer of the Dead.'
+
+When you give him the Mammoth tusk and the combined box of Kerra Island beetle eyes, you will get some experience and a reward. I received level 12 necro spells each of the three times I did the quest. 
+
+You receive Spell: [[Engulfing Darkness]]
+
+<div class="facblock">
+*Your faction standing with TheDead got better.
+*Your faction standing with QueenCristanosThex got better.
+*Your faction standing with KingAythoxThex got worse.
+*Your faction standing with KeepersoftheArt could not possibly get any worse.
+*Your faction standing with EldritchCollective got worse.
+*Your faction standing with PrimordialMalice got worse.
+</div>
+
+He then tells you that you seem to be of sufficient level to assist [The Dead].
+
+You say, "what about the dead?"
+
+:Noxhil V`Sek says, "Seek the guidance of Loveal S`Nez. He will set you on the path to glory."
+
+After some research, the end of the quest line involving "assisting The Dead" was not implemented until the ''Call of the Forsaken'' expansion.
+
+''Need list of additional quest rewards.''
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Necromancer Quests]]
+[[Category:Shadow Knight Quests]]

@@ -1,0 +1,392 @@
+{{Velious Era}}
+[[File:npc_oglard.png|thumb|right|Oglard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Oglard]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Burning Woods]], [[Crystal Caverns]], [[Dragon Necropolis]], [[Frontier Mountains]], [[Howling Stones]], [[Kael Drakkel]], [[Paineel]], [[The Overthere]], [[The Warrens]], [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| [[Armor of Zek]], [[Carpenter Grundo]], [[Eldriaks Fe`Dhar]], [[Garzicor's Corpse]], [[Garzicor's Wraith]], [[Ghost of Burdael]], [[Ghostly Presence]], [[Historian Baenek]], [[Koajin]], [[Loremaster Sarl]], [[Taralani Rahnta]], [[A Cliff Golem]]
+|}
+'''Ally faction with CoV is required for Oglard to talk to you and to accept any turn-in'''
+== Reward ==
+
+<ul><li>  {{:Ethereal Bladed Naginata}}
+</li><li> {{:Pitted Iron Ring}}
+</li><li> {{:Sanctum Guardian's Earring}}
+</li></ul>
+
+'''''There is no reward for Bards or Rogues!!'''''
+'''''THIS IS NOT A ROUND ROBIN TURN IN. IF YOU TURN IN AND YOU MISS YOUR ITEM, YOU MUST COMPLETELY REDO THE QUEST'''''
+
+== Full Checklist ==
+
+Please read walkthrough below this checklist carefully to prevent mishaps. It is recommended to have 210 Blacksmithing/128 Pottery
+{{CheckboxList}}
+'''Smith Finished Naginata Blade''' - Be prepared to redo this section if a combine fails
+*[[Thurgadin]]: Hail [[Loremaster Sarl]], start dialogue then meet him in library, and hand him 50pp to receive [[Worn Coldain Tome]]
+*[[Crystal Caverns]]: Hand in [[Worn Coldain Tome]] to [[Historian Baenek]] to spawn the [[Ghost of Burdael]] (DESPAWNS IN 5 MINUTES), kill and loot [[Onyxbrand]]
+*[[Skyshrine]]: Hail [[Oglard]], hand him [[Onyxbrand]] to receive [[Dragon Crafted Urn]] (2-slot container) '''Requires Ally faction.'''
+*[[Dragon Necropolis]]: Run to {{Loc|Dragon Necropolis|(+1523, +1109)}} exactly, say "Remember, Garzicor", wait 95 seconds, pick up two ground spawns ([[Dragonwing Skin]] and [[Dragonbone Dust]] TEMPORARY ITEMS), put inside [[Dragon Crafted Urn]] (2-slot container) and click combine for a new Dragon Crafted Urn (v1) that fits in bags 
+*Skyshrine: Hail [[Oglard]], hand him Dragon Crafted Urn (v1) to receive a different version of Dragon Crafted Urn (v2)
+*Skyshrine: Hail [[Eldriaks Fe`Dhar]], hand him Dragon Crafted Urn (v2) to receive a book ([[The Blade]]) and [[Sanctified bone dust]]
+*[[The Overthere]]: Kill [[a Cliff Golem]] and loot [[Starmetal Ore]]
+*Smith 173: Combine [[Starmetal Ore]] into two [[Portion of Starmetal]]
+*Smith 171: Combine [[Portion of Starmetal]] + [[Sanctified bone dust]] into [[Dusted Starmetal Block]] and [[Remaining Bone dust]], then smith Block x5 to create [[Shaped blade core]]
+*Smith 171: Combine [[Portion of Starmetal]] + [[Remaining Bone dust]] into [[Dusted Starmetal Block]], then smith x10 to create [[Blade skin-10th fold]]
+*Smith 206: Combine [[Shaped blade core]] + [[Blade skin-10th fold]] to create [[Complete raw blade]]
+*Smith 188: Combine [[Complete raw blade]] + [[Forging Hammer]] to create [[Complete shaped blade]]
+*'''Pottery!''' 128: Combine [[Complete shaped blade]] + [[Clay/water mixture]] to create [[Clay coated blade]]
+*[[Frontier Mountains]]: Run to -260, -300 and pick up ground spawn [[Gray Colored Ice]]
+*Smith 199-200: Combine [[Clay coated blade]] + [[Gray Colored Ice]] to create [[Finished Naginata Blade]]
+	
+'''Obtain Bronzewood Staff'''	
+*[[Burning Woods]]: Kill [[Carpenter Grundo]] and loot [[Bronzewood Staff]]
+
+'''Obtain Finished Tsuba'''
+*[[Kael Drakkel]]: Kill [[Armor of Zek]] and loot [[Chunk of Chronium Ore]]
+*Smith: Combine [[Chunk of Chronium Ore]] into [[Chronium Plate]] (Trivial <157)
+*[[Howling Stones]]: pick up ground spawn [[Mandala sketch]] off table in the East Wing (+140,-510) 
+*[[Paineel]]: Hail [[Taralani Rahnta]] and hand him 1000pp to receive [[Kejekan Tool Kit]]
+*[[The Warrens]]: Hail [[Koajin]], hand him [[Mandala sketch]] + [[Kejekan Tool Kit]] + [[Chronium Plate]] to receive [[Finished Tsuba]]
+
+'''Hand in Finished Naginata Blade + Bronzewood Staff + Finished Tsuba'''
+*Skyshrine: Hail [[Eldriaks Fe`Dhar]], hand him [[Finished Naginata Blade]] + [[Bronzewood Staff]] + [[Finished Tsuba]] to receive [[Assembled Naginata]] + [[Vial of Kromzek blood]] 
+
+'''Raid Garzicor's Wraith'''
+*Obtain 2x [[Flawless Diamond]]
+*Dragon Necropolis: Run to +1523, +1109 exactly, say "you are one but two.  your vengeance shall find a home." to spawn a [[Ghostly Presence]] at +1523, +1109 (Stays up for 60 Seconds and then depops, respawn timer is 1 hour). Make sure to have 2 spaces between those two sentences; if you copy and paste from here you may need to add a space.  Use say, not ooc, to trigger the spawn.
+*Dragon Necropolis: Hail a [[Ghostly Presence]], hand him [[Vial of Kromzek blood]] to spawn [[Garzicor's Corpse]] at +1523, +1109
+*Dragon Necropolis: Kill [[Garzicor's Corpse]] to spawn [[Garzicor's Wraith]] at +1523, +1109 
+*Dragon Necropolis: Kill [[Garzicor's Wraith]] (raid target) to spawn translucent dragon (v1) on CoV faction at +1523, +1000 and translucent dragon (v2) on CoV faction at +1500, +800 (Stays up Approx 15 Mins before despawning)
+*Dragon Necropolis: Hail a translucent dragon (v1), hand him [[Flawless Diamond]] to receive [[Blackened Diamond]]
+*Dragon Necropolis: Hail a translucent dragon (v2), hand him [[Flawless Diamond]] to receive [[Gold Tinted Diamond]]
+	
+'''Final Smithing Combine'''
+*Smith 160: Combine [[Assembled Naginata]] + [[Blackened Diamond]] + [[Gold Tinted Diamond]] to receive [[Ethereal Bladed Naginata]]
+
+'''Final Hand-in'''
+
+'''''THIS IS NOT A ROUND ROBIN TURN IN.  IF YOU TURN IN AND YOU MISS YOUR ITEM, MUST COMPLETELY REDO THE QUEST'''''
+
+*Skyshrine: Hail [[Eldriaks Fe`Dhar]], hand him [[Ethereal Bladed Naginata]] to receive [[Ethereal Bladed Naginata]] back plus faction and experience (WAR PAL RNG SHD)
+*Skyshrine: Hail [[Eldriaks Fe`Dhar]], hand him [[Ethereal Bladed Naginata]] to receive [[Sanctum Guardian's Earring]] (CLR DRU MNK SHM)
+*Skyshrine: Hail [[Eldriaks Fe`Dhar]], hand him [[Sanctum Guardian's Earring]] to receive [[Pitted Iron Ring]] (NEC WIZ MAG ENC)
+
+{{end}}
+
+== Walkthrough ==
+
+Assumptions:
+*You're 60th Level
+*You have a group or raid guild
+*You're familiar with all the zones in question
+*You have some money to spend on Tradeskills and miscellaneous trades.  You'll need approximately 15kpp~ to do this all. (7kpp~ depending on how far you go for blacksmithing/if farming materials/class/cha/wis/int, 7kpp~ for Gems if buying, 1kpp for turn in)
+
+=== START - SKYSHRINE/THURGADIN ===
+
+This quest can be done in really any order, however, for simplicity sake, we'll start in [[Thurgadin]].  You can, if you would prefer start at [[Oglard]] in [[Skyshrine]], but he only directs you to Thurgadin, anyway, so...
+
+Go to [[Thurgadin]] and locate '''[[Loremaster Sarl]]''' in the Statue Room directly across from the Icewell Zone Line.
+
+You say, 'Can you tell me the name of a slain dragon'
+
+:Loremaster Sarl says 'The name of Dragon you say? One that was slain? Hmmm, sounds interesting. Like I said, we've had little contact with Dragons, but I vaguely recall an ancient legend about a slain dragon and one of our people meeting. Follow me to the Library and we'll talk along the way.
+
+Once he starts walking, you can say "Black" and he will immediately spawn in the library ready for the next segment of the quest.  Run there and hand him 50pp to receive [[Worn Coldain Tome]].
+
+Perfect!  Reading the book elludes to someone named Burdael having seen a dying dragon.  Also, Sarl mentions something about this being a rescued book from their old home and speak of Froststone.  The only other place in Velious with Dwarves is the [[Crystal Caverns]], so that's the next place we go!
+
+=== Crystal Caverns ===
+
+[[Historian Baenek]] is located on the bottom floor in the Dwarve outpost in Crystal Caverns.  Give him the [[Worn Coldain Tome]].
+*Your faction standing with CitizensofFroststone got better. (+10)
+Handing the book to him spawns the [[Ghost of Burdael]] at the rear of the of the Tentacle Terror area (you have approximately five minutes before he will despawn).  He's a 50 SK who is slowable, rootable, and can be mezzed, so as long as you have one of those, you should be alright.  Do note, though, he's got a boatload of hps, so it may be a long fight.
+
+After you kill Burdael, loot [[Onyxbrand]] and head back to [[Oglard]] in Skyshrine.
+
+'''Oglard hand-in requires Ally faction? He eats Onyxbrand with amiable, please update if you know what level is required but, to be safe, be Ally'''
+
+Hand in Onyxbrand to Oglard. Oglard will scream and blab for a bit, but eventually he'll hand you a [[Dragon Crafted Urn]] and instruct you to fill it with the remains of Garzicor in [[Dragon Necropolis]].  Great, a crypt.  Now's the time you should make a hotkey for "Remember, Garzicor".
+
+=== Dragon Necropolis ===
+
+For this next part, it's highly recommended that you have a partner. Once you get to [[Dragon Necropolis]], you'll want to have at least Invis/SoW and if possibly some AC/HP. First head to the large double doors (Number #2 on the map) set nearly in the floor with three-four spiders spread around it. There are many traps on the ramp and in the bones on the first landing. These traps are random in location and respawn, although unlike the bones above these will not always spawn a construct and you'll need to go into them anyway for the items to trigger. The door can also trapped (confirmed to be 7/18/22) so you could end up triggering/aggroing nearby mobs/traps. These traps will need to be triggered and moved or trained off (this is where the partner comes in to play). Once the construct/spiders/traps are trained off, go down to the first landing and you'll find the pile of bones. Spam your Garzicor hotkey (Remember, Garzicor) and run around in here. Eventually you'll get text scrolling. Once you see "I am sorry", look on the floor and you'll see a brown bag. It's actually two: [[Dragonwing Skin]] and [[Dragonbone Dust]]. These are TEMPORARY items, so recommend combining them in the urn right away. This is a No Fail combine and returns a Dragon Crafted Urn. Once looted have you and your kiter cap out or gate.
+
+This spawn shares the same spawn as the Ghost Prensence. '''Triggering either one will result in a 1-hour respawn, regardless of which one you trigger.
+'''
+
+'''Do NOT leave a construct (since they do NOT reset) at the zone in or out in the open.'''
+
+=== Skyshrine (Finished Naginata Blade) ===
+
+At this point, head back to Oglard and hand him the urn.(Kindly faction was NOT sufficient for this turn in)  He'll immediately hand it back and send you to [[Eldriaks Fe`Dhar]].  Hand Eldriaks the urn and he will hand you a book titled: "The blade" (instructions on how to form the Naginata Blade) and a [[Sanctified bone dust]] (this is two dusts).
+
+:The book gives you instructions on how to fabricate the blade as well as the rest of the components to manufacture the full polearm.  You'll need to get the following items in the following zones:
+*[[Bronzewood Staff]] off of [[Carpenter Grundo]] in [[Burning Woods]]
+*[[Chunk of Chronium Ore]] off of an [[Armor of Zek]] in [[Kael]]
+*[[Starmetal Ore]] off of a [[A Cliff Golem]] in [[The Overthere]]
+*[[Mandala sketch]] off of the table in the East wing of [[Howling Stones]] (see below)
+*[[Gray Colored Ice]] off of the ground in the middle of [[Frontier Mountains]] at loc (-260, -300)
+
+== Blacksmithing section ==
+
+Now, this is the part that typically trips folks up.  You need Blacksmithing to NO LOWER THAN 206 and Pottery to NO LOWER THAN 128 to ensure the lowest possible chance of failure (always 5% min).  Pottery's easy, just follow the guide, but Smithing can take a bit longer and involve some coin.  You ''can'' attempt this at 200, but I strongly advise against it.
+
+Once you're where you want to be in tradeskills, do the following:
+
+:In [[Forge]]:
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, Returned on Success
+ 1 x [[Smithing Chisel]] - Bought, Returned on Failure, Returned on Success
+ 1 x [[Starmetal Ore]] - Dropped
+
+This will return {{:Portion of Starmetal}} x2. Next:
+
+:In [[Forge]]:
+ 1 x [[Portion of Starmetal]] - Crafted
+ 1 x [[Sanctified bone dust]] - Quested
+
+This will return {{:Dusted Starmetal Block}} and {{:Remaining Bone dust}}.  Next begins the most difficult part.  This section Trivial is no less than 171.  Proceed at your own peril.  The next part has an incremental material output (1, 2, 3, 4, 5).  Start with:
+
+:In [[Forge]]:
+ 1 x [[Dusted Starmetal Block]] - Crafted
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, Returned on Success
+ 1 x [[Smithing Chisel]] - Bought, Returned on Failure, Returned on Success
+
+This will return [[Blade core-1st fold]].  Continue doing the combines like this:
+
+:In [[Forge]]:
+ 1 x [[Blade core-1st fold]] - Crafted
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, Returned on Success
+ 1 x [[Smithing Chisel]] - Bought, Returned on Failure, Returned on Success
+
+until you get a [[Blade core-5th fold]]. Once you have your core folded 5 times, you'll need to shape it with just the forging hammer:
+
+:In [[Forge]]:
+ 1 x [[Forging Hammer]] - Bought
+ 1 x [[Blade core-5th fold]] - Foraged, Crafted, Quested
+
+to get {{:Shaped blade core}}. At this point you should have the these two items (barring fails) in your inventory:
+
+*[[Portion of Starmetal]]
+*[[Remaining Bone dust]]
+
+'''DO NOT be confused about this part.'''  There are two bone dust applications and each one leads to a half of the sword so if you fail the first ore/dust combine, you can still do the second part.  You'll have to reobtain the [[Sanctified bone dust]] to reattempt the first, though.
+
+Now, This is the long part.  Do the following:
+
+:In [[Forge]]
+ 1 x [[Portion of Starmetal]] - Crafted
+ 1 x [[Remaining Bone dust]] - Crafted, Quested
+
+To get: {{:Dusted Starmetal Block}}. Next:
+
+:In [[Forge]]:
+ 1 x [[Dusted Starmetal Block]] - Crafted
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, Returned on Success
+ 1 x [[Smithing Chisel]] - Bought, Returned on Failure, Returned on Success
+
+and on success you should have {{:Blade skin-1st fold}}.  At this point, it's the same process as above to get to {{:Blade skin-10th fold}}.  At this point it's time to combine your {{:Shaped blade core}} and your {{:Blade skin-10th fold}}
+
+:In [[Forge]]:
+ 1 x [[Blade skin-10th fold]] - Crafted
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, Returned on Success
+ 1 x [[Shaped blade core]] - Crafted
+ 1 x [[Smithing Chisel]] - Bought, Returned on Failure, Returned on Success
+
+This will return {{:Complete raw blade}}. Once you have your raw blade, you'll need to shape it with just the forging hammer.
+
+:In [[Forge]]:
+ 1 x [[Forging Hammer]] - Bought
+ 1 x [[Complete raw blade]] - Foraged, Crafted, Quested
+
+This will return {{:Complete shaped blade}}. Congratulations!!!! There's still a bit more to go, but we're in the home stretch!
+
+===  Pottery Section ===
+
+  In order to get your {{:Finished Naginata Blade}} you'll need to do some pottery.  You need Pottery to 128 in order to trivial this part.  No sweat, though, since most of what you need to do it is located in [[Thurgadin]].
+  
+  Once you have Pottery to 128 (or w/e you feel comfortable risking), do the following combine at the pottery wheel:
+
+:In [[Pottery Wheel]]:
+ 1 x [[Small Block of Clay]] - Crafted, Bought, Dropped
+ 1 x [[Water Flask]] - Foraged, Crafted, Summoned, Bought, Quested, Dropped
+
+Then (Trivial < 128),
+
+:In [[Pottery Wheel]]:
+ 1 x [[Clay/water mixture]] - Crafted
+ 1 x [[Complete shaped blade]] - Crafted
+
+Ok, so we have the clay on our blade, but the egde still needs to be hardened and quenched.  To do this part, you need the {{:Gray Colored Ice}} you collected earlier.  (If you didn't, this may be a good time to just read below and collect the rest).  To wrap up this part:
+
+:In [[Forge]]: (Trivial somewhere between 199-200) success at 198 skill and it was not trivial ---> 1/28/2023, did combine at 200 skill, success "You can no longer advance your skill from making this item".
+ 1 x [[Clay coated blade]] - Crafted
+ 1 x [[Gray Colored Ice]] - Ground Spawn
+
+'''BAM!!!!!!''' {{:Finished Naginata Blade}}.  Congratulations on the hardest combine! Now for the rest of the drops.
+
+== Burning Woods (Bronzewood Staff) ==
+
+In the Northwestern section of [[Burning Woods]], there's a large crater with a spaceship-style hut on stilts.  This is the giant fort.  Inside the giant fort up the ramp are a series of small huts but 1 big one. This big hut is what you want. There are two static spawns in there and each one has a chance to spawn [[Carpenter Grundo]] 6:40 respawn. This may take a while, but the giants aren't super hard, so keep at it and he'll show up.
+
+Once [[Carpenter Grundo]] pops, kill him and loot your {{:Bronzewood Staff}}. This will be the haft of the polearm you're making.
+
+== Howling Stones (Mandala sketch - Finished Tsuba) ==
+
+The next part is tricky. You'll need your {{:Key to Charasis}}, and if you don't have one yet, now's the time to do it. You'll also need a {{:Leatherfoot Raider Skullcap}} ready to click.  You ''can'' go in with a group and fight your way to it, but the easier way to do it is get a [[Dead Man Floating]], [[Invisibility]] and [[Invisibility versus Undead]] (this is commonly called "Double Invis" for those than can do it). 
+
+Once inside and all buffed up, go up the North or South stairs to the landing and then turn to the East Wing. From here run onto the east wing landing (most of the east stairs are fake and you will fall through) be ready to turn back to the center and try again if you don't make it the first time. Changing your frame rate to 100 here 'might' help the levitate stays at mostly the same height (go in to Options under the 'Display' tab and push the slider to 100 if it's lower.
+
+Another trick is to sit and alt-tab to discord (or something else to where you can still see you character) when your floating animation reaches its lowest point then tab back in when your animation is at its highest. Rinse/repeat until you can't go any higher.
+
+From here, you need to head to the section on the map that looks like a horizonal 'H'. The {{:Mandala sketch}} is located on the table in the top left alcove in the 'H' (loc +140,-410 or so). Once you pick it up, click your {{:Leatherfoot Raider Skullcap}} and GTFO.
+
+Done.
+
+== Kael (Chunk of Chronium Ore - Finished Tsuba) ==
+This is undisputedly the most difficult part as you'll need a raid or large group to pull from the Arena/Temple area.  The best time, if you can, is to wait for a Statue or Vindi pop and ask the raid/group to pull an armor after the target's dead.  
+
+Alternatively, if you have a bold monk and a raid force, the Armor of Zeks can be split-pulled. This requires Vindi being down, killing all of the mobs around and including Kallis, and all mobs at the opposite side of arena as your raid. Have the monk create a corpse on a mob (3-hour rez timer) and pull the corpse all the way against the ice wall where Vindi roams. The monk should leave a small item on corpse and have them flop-run back to the Armor of Zeks. The monk SHOULD be 54+ so they can void dance if the fail FD. Once back at the Armor of Zeks, perform a rez-box pull. Have a cleric rez your ice wall corpse, throw a projectile at the Armor, and click YES on the rez while the projectile is in the air. Allow the train to gain some ground until you see it leave the temple, and then run it to the side opposite of your raid force. Use standard splitting technique and the Armor is all yours. If both sides of arena are camped, you can clear out the Protector of Zeks and gladiators, and run the train down into the actual PvP arena. 
+- Krixis
+
+However you do it, you'll need to kill an [[Armor of Zek]] and loot the {{:Chunk of Chronium Ore}}.  Once you're done in Kael, grab your {{:Forging Hammer}} and head to a [[Forge]].  Do this combine:
+
+:In [[Forge]]:
+ 1 x [[Chunk of Chronium Ore]] - Dropped
+ 1 x [[Forging Hammer]] - Bought, Quested, Dropped, Returned on Failure, NOT Returned on Success
+ 1 x [[Water Flask]] - Foraged, Crafted, Summoned, Bought, Quested, Dropped
+
+This should yield 1x {{:Chronium Plate}}.
+
+Keep this and the {{:Mandala sketch}} on you and head to Paineel.
+
+== Paineel/The Warrens ==
+This part is either going to require factioning in the Warrens until amiably faction (which has its own benefits); starting your own level 1 Evil Erudite; or trusting someone else with the appropriate faction to handle 1000pp. However you do it (the toolkit is tradeable), you need to go to #9 on the map of Paineel and talk to [[Taralani Rahnta]].  Simply 'Hail' him to confirm that you can do the turn in (sneak works), then hand him 1000pp and he'll return to you a {{:Kejekan Tool Kit}}.  If you are transferring this to another character: as a reminder, characters who are amiably in Paineel (which includes any freshly-created character) can say "need" to the guards by the elevator, to get a key to access Toxxulia Forrest to transfer the Tool Kit. (If you choose to do the turn-in yourself at a lower faction, such as by sneaking, you will need someone to operate the elevator for you.)
+
+Once you have your {{:Kejekan Tool Kit}}, take that, your {{:Mandala sketch}} and your {{:Chronium Plate}} to [[The Warrens]].  Nothing in here sees invis; invis down to the Prison area (take a right coming from Paineel, then the first door on the left). This is marked as #10 on [[The Warrens]] map. Hail [[Koajin]].
+
+You say, 'Hail, Koajin'
+
+Koajin slowly looks up at you, his eyes glazed in exhaustion. Obviously the kobolds have worked him near to the point of death. You notice he is strong and his paws are scarred here and there. He must be some sort of craftsman. After gazing at you a few moments he realizes you are not a kobold and says, 'Hurry and leave this place, High Elf. Or you'll end up sharing this cell with us and wishing death upon yourself.'
+
+You say, 'I need your help'
+
+Koajin says, 'You need my help to build one? I can help you, but I'll need my tools first. Then maybe when I have my tools I can break out of this rusty cage and run. My tools were taken when they first captured me. They used to force me to use them, show them our craft. I showed them what I could, fearing death, but I haven't seen them since. If you can find them, bring them here along with a suitable plate of metal and a sketch of the tsuba's design. Then I'll see what I can do.'
+
+Everyone should get this dialogue.  Give him the [[Mandala sketch]], the [[Kejekan Tool Kit]] and the [[Chronium Plate]] and he'll return to you {{:Finished Tsuba}} (MQed successfully by Chickander of Ex Astra).
+
+WOOT!!!!  Grats on ya!
+
+Now, it's time to get the {{:Assembled Naginata}}.
+
+== Skyshrine (Assembled Naginata & Vial of Kromzek blood) ==
+At this point, you should have three items on you: {{:Finished Naginata Blade}} + {{:Bronzewood Staff}} + {{:Finished Tsuba}}. If they're in the bank, don't worry, Skyshrine has one, but you'll have to refer to the maps since it's hidden near the [[Cobalt Scar]] fire pot.
+
+Once you get all these items, head to [[Eldriaks Fe`Dhar]] and hand him all three items.  He will do the following:
+
+Eldriaks Fe`Dhar takes the staff, blade, and tsuba and looks them over. He says, 'Excellent craftsmanship. These will make a fine weapon. But one part remains to join all the pieces together. That is the fitings.' The Wyvern then hands you the items back along with a vial of blood and says, 'This vial of blood will allow you to awaken Garzicor's spirit.'
+
+You should receive:
+* [[Assembled Naginata]]
+* [[Vial of Kromzek blood]]
+
+At this point, it's raid only.  If you don't have a raid, get one as there is really no other way to kill the [[Garzicor's Wraith]]
+
+== Dragon Necropolis (Ethereal Bladed Naginata) ==
+Alright, you got your Raid, you've slushed out the crap from above and now you have your [[Assembled Naginata]], your [[Vial of Kromzek blood]].  The last step is to imbue your Naginata with the spirit of Garzicor.  To do this, you'll need to purchase 2x [[Flawless Diamond]] and then awaken [[Garzicor's Corpse]] as well as [[Garzicor's Wraith]] and then subdue.  Garzicor's is summoned by saying the following phrase '''''exactly''''' at +1523, +1109 (same place as before with 2 item spawns)
+
+ you are one but two.  your vengeance shall find a home.    '''''MUST BE EXACT'''''
+
+This will spawn [[Ghostly Presence]]. ****NOTE!!!! Ghostly Presence despawns very, very quickly ~ 60 seconds and there are several construct spawns in the area. This spawn shares the same spawn as the 2 ground spawns. '''Triggering either one will result in a 1-hour respawn, regardless of which one you trigger.'''
+
+Give the [[Ghostly Presence]] the [[Vial of Kromzek blood]] and [[Garzicor's Corpse]] will spawn.  Upon death, [[Garzicor's Wraith]] will spawn - requires several groups to kill.
+
+Once they are dead, two spirits should spawn; one at the skull you woke him up at and one further down towards the Paebala area.  Hand each one a [[Flawless Diamond]] to receive:
+
+* [[Blackened Diamond]]
+* [[Gold Tinted Diamond]]
+
+==  Final Combine - Tanks only (Ethereal Bladed Naginata) ==
+Alright, you're nearly there.  At this point, you should be nervous to do another combine. The last step is to do this combine:
+
+:In [[Forge]]: (Trivial: 160)
+ 1 x [[Assembled Naginata]] - Player Crafted
+ 1 x [[Blackened Diamond]] - Quested
+ 1 x [[Gold Tinted Diamond]] - Quested
+
+If all is successful, WOOT!  {{:Ethereal Bladed Naginata}}!!!!  Yay for you tanks!  But what about those clothies and all the rest who don't bash, huh?  Luckily, we get some love too!
+
+---
+
+Garzicor's Book of the Fallen...those who have failed the last combine (as reported):
+* Arrynn of Europa
+* Carleton of Europa
+* Chest of Bregan D'Aerth
+* Cigaw of The Second Sons
+* Cressie of Blood Guard
+* Flopcakes of Kingdom
+* Nedorelis of Eclipse
+* Papier of Seal Team
+* Pehpar of Gravity
+* Plano of Good Guys
+* Resku of Axiom, Three (Server first)
+* Transfusion of Vanquish
+* Ohmini of Good Guys
+* Muujo of Kingdom
+* Garzlok of Riot
+* Knuckle of Kingdom (3/31/2025)
+* Canidik of Kingdom
+* Samora of Good Guys (1/28/2026)
+
+== Eldriaks and the Turn-in ==
+So, ya thought we were done, eh?  Fooled you!  Head ''back'' to [[Eldriaks Fe`Dhar]] in Skyshrine and hand him the [[Ethereal Bladed Naginata]] you combined.  He should hand you back your final one:
+
+* [[Ethereal Bladed Naginata]] (Identifies as: Eldriaks Verified Naginata).
+
+But, if you can't use it, he gives you some options:
+
+Eldriaks Fe`Dhar says 'You have succeeded Iustus . Garzicor's spirit no longer calls to us from beyond. Now we ask that you do one more thing. You must wield this weapon against all giant kind to satiate Garzicor's thirst for vengeance. The Naginata has a special power against the Kromzek, they will fall easily before it. However, if you do not wish to, hand the weapon back to me and I'll give you an earring more worthy of a being of faith. If you are one of sorcerous powers, hand me the earring and Ill hand you a ring more suited to you. 
+
+Give naginata back to him:
+
+Eldriaks Fe`Dhar says 'Tis sad to see that the weapon will not be wielded by it's maker,
+but here is your earring. Wear it well. 
+
+* [[Sanctum Guardian's Earring]]
+
+Give him the earring:
+
+Eldriaks Fe`Dhar says 'So you prefer the ring? Very well, may it serve you well ___Name___. 
+
+* [[Pitted Iron Ring]]
+
+YOU'RE DONE!  CONGRATULATIONS!
+
+'''''THIS IS NOT A ROUND ROBIN TURN IN.  IF YOU TURN IN AND YOU MISS YOUR ITEM, MUST COMPLETELY REDO THE QUEST'''''
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Monk Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]
+[[Category:Wizard Quests]]

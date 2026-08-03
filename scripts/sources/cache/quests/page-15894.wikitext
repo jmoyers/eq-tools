@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:npc_wallin_slyfoot.png|frame|Wallin Slyfoot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Commonlands]]
+|-
+! ''' Quest Giver: '''
+| [[Wallin Slyfoot]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Master Whoopal]]
+|}
+
+== Reward ==
+<ul><li>Small Coin</li></ul>
+== Walkthrough ==
+
+You say, 'Hail, Wallin Slyfoot'
+
+:Wallin Slyfoot says 'What? What do you want? Are you here to assist me?'
+
+You say, 'Yes, I will assist you'
+
+:Wallin Slyfoot says 'Yes..yes..of course you will. It is a matter of the utmost importance. I need this letter to be delivered to Master Whoopal in the Nektulos forest but I must also get these Brussels sprouts to my granny before they spoil. Please deliver this message for me?' 
+
+''' You Receive [[Leatherfoot Raider Orders]]. [[Master Whoopal]] can be found in {{Loc|Nektulos Forest|-929,1238}}. Give him the orders.'''
+
+:Master Whoopal says 'You have my gratitude for getting this note to me safely. Here are some coins as payment. I'm sorry it's all I can spare at the time. We are in need of constant supplies to hold off the assaults of the dark elves who inhabit this tainted dark forest.'
+
+<div class="facblock">
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+</div>
+{{YouGainExperience}}
+
+You Gain 1 Silver
+
+[[Category:Quests]]
+[[Category:West Commonlands]]
+[[Category:All Classes Quests]]

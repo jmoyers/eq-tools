@@ -1,0 +1,99 @@
+{{Classic Era}}
+[[File:npc_marshal_lanena.png|frame|Marshal Lanena]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Rivervale]]
+|-
+! ''' Quest Giver: '''
+|[[Marshal Lanena]]
+|-
+! ''' Minimum Level: '''
+|4+
+|-
+! ''' Classes: '''
+|[[Druid]], [[Paladin]], [[Rogue]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+|None
+|-
+! ''' Related NPCs: '''
+|[[Fiddy Bobick]], [[a large piranha]]
+|} 	
+
+== Reward ==
+
+<ul><li>{{:Rantho Rapier}}</li></ul>
+
+== Walkthrough ==
+
+[[Marshall Lanena]] is located at 90, -174 on the second floor of the Rivervale Bank.
+
+You say, 'Hail, Marshal Lanena’
+
+: Marshal Lanena says, ‘Hello. ____. I am Lanenea Wickystick, marshal of all Vale concerns. If there are any troubles brewing in our fine town which concern the Guardians of the Vale, please inform me. You must be a [new deputy] or are you an [outsider]?’
+
+You say, ‘I am a new deputy’
+
+: Marshal Lanenea says, ‘It is good to see such fine stock in the ranks of the Guardians. Being new, there is much to learn, in battle and in life itself. If you are not presently obligated, we have need of you here in the hollow. There seems to be a [small problem].’
+
+You say, 'What small problem?'
+
+: Marshal Lanena says, ‘For months. Fiddy Bobick has petitioned the marshals to assist him with a problem he has. With the addition of new deputies such as yourself, we can now give him the assistance he requires. Just go down to Bobick’s shop near the lake. Tell him I sent you.’
+
+[[Fiddy Bobick]] is usually around 19, -428. He runs between his shop and the dock and occasionally jumps into the water and swims around a little. Hailing him causes him to pause briefly. Just stand on the dock to talk to him and it should work.
+
+You say, ‘Hail, Fiddy Bobick.”
+
+: Fiddy Bobick says, ‘Ahoy, mate!! The name’s Fiddy Bobick! Perhaps you’ve heard of me.. the greatest halfling to sail the seas of Norrath? I have been to the North. South. East and West, and thank Prexus. I have survived it all! Why I have returned to this little hollow is a wonder to me. Obviously, the salty air finally got to my brain!
+
+You say, ‘Wickystick sent me’
+
+: Fiddy Bobick says, ‘Well, it’s about blasted time! The ship was about to sink. Wickystick finally managed to send the troops in! The problem, mate, is piranha !! What?!! That’s what I said. Pirahna! The lake is infested with the little buggers. More and more every sunrise. They’re chomping down all our food supply. You have gotta get your can in the drink and kill them. Take one of their teeth to old Wickystick and see what she has to say about Fiddy then! I will also give you some booty for any teeth you pull out of this river. Well, get going, Deputy ______!’
+
+Fiddy wants you to kill the piranha that are eating all the fish in the lake. 
+
+Piranha sometimes drop a [[Piranha Tooth]]
+
+===Turn in to Fiddy (faction, exp)===
+
+Fiddy Bobick says, 'Whew!! We are sure on the way to saving this village, pal! They're gonna erect a statue in our names.  Fishslayers is what we are!  Let's keep up the good work!'
+
+<div class="facblock">
+* Your faction standing with Merchants of Rivervale got better.
+* Your faction standing with DeepPockets got better.
+* Your faction standing with Guardians of the Vale got better.
+* Your faction standing with Mayor Gubbin got better.
+* Your faction standing with Coalition of Trade Folk Ill got '''worse'''.
+{{exp}}
+</div>
+You receive 1 gold, 8 silver pieces.
+
+===Turn in to Lanena (for Rapier)===
+
+'''OR''' take a tooth back to Marshall Lanena and she will give you a [[Piranha Bag]] to put 4 of them into:
+
+Marshal Lanena says, ''What was I thinking?!! Piranha are coming downstream and eating our supply of fish! We have never had a problem like this!!  Where are these little beasts coming from?  For now we must collect more. Take this bag. Collect enough teeth to fill the bag. Don't worry, if it takes a while I shall reward you with the [Rantho Rapier].  We will need to examine the teeth.'
+
+You say, 'what rantho rapier?'
+
+Marshal Lanena says, 'The Rantho Rapier was crafted by the great blacksmith Rantho Goobler.  It was designed for use by the warriors of the wee folk.  With its light weight and special two-hand hilt, it becomes a formidable weapon in the hands of our younger deputies.  Only a [new deputy] has the right to earn one.'
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got '''worse.'''
+{{exp}}
+</div>
+You receive 1 silver pieces.
+
+Once you have combined the 4 teeth, return them to her and she will give you a [[Rantho Rapier]].
+
+''need quest text and final exp hits here'''
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:Warrior Quests]]
+[[Category:Paladin Quests]]
+[[Category:Rogue Quests]]

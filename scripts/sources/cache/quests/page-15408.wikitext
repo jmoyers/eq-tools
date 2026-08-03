@@ -1,0 +1,69 @@
+{{Unsolved}}
+[[File:npc_a_hermit.png|frame|a hermit]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[a hermit]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jale Phlintoes]], [[Linaya Sowlin]]
+|}
+
+This quest is closely related to the [[Winds of Karana]] quest. In that quest, the normal route is to kill [[a hermit]], but it's also possible to complete two quests for the hermit instead. In completion of these quests, it's reported that the leader of Unkempt Druids, [[Jale Phlintoes]] can be made to spawn.
+
+== Reward ==
+
+<ul><li>  Unknown
+</li></ul>
+
+== Walkthrough ==
+
+[[a hermit]] is found inside the hut in the southern part of [[South Karana]]. 
+
+a hermit regards you indifferently -- You could probably win this fight.
+
+''If you stand near the chimney and use /target a_hermit you may hail him, his house does not block line of sight.''
+
+You say, 'Hail, a hermit'
+
+: a hermit says, 'Huh!?  Get out of my house before I have my pets devour you!!'
+
+''If you were on the [[Winds of Karana]] quest, you know he had stolen two music sheets from [[Vhalen Nostrolo]].''
+
+You say, 'What sheet'
+
+: a hermit says, 'So you seek the two song sheets? If you truly want them, you will help the cause of the Unkempt Druids. Otherwise, you would have to fight me for it. So, which will it be? Will you help the Unkempt Druids or will you fight me?'
+
+You say, 'I will help the unkempt druids'
+
+: a hermit says, 'Wise decision. I ask you then, to go to the western plains of Karana. Seek a farmer called Linaya Sowlin. Bring me her heart. A heart for a song sheet. Fitting, don't you think?'
+
+''At this point you can perform his subquests related to the alternative route for [[Winds of Karana]].''
+
+''When you turn in Linaya's heart in regards to that quest, he reportedly remarks:''
+
+: a hermit says, 'Good work, my friend! I thank you and the Unkempt Druids thank you. Unfortunately I have sold the other song sheet to a traveling bard of the plains. I believe her name was Cordelia. Now be on your way. Unless you plan to join the Unkempt Druids..?'
+
+Factions changed by handing in Linaya's Heart: 
+* Your faction standing with [[Unkempt Druids]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* [[Jaggedpine Treefolk]] got worse.
+* [[QRG Protected Animals]] got better.
+
+[[Jale Phlintoes]] can be spawned by a hermit by telling him "I wish to join the Unkempt." or "I wish to join the Unkempt Rangers." If you tell him "I wish to join the Unkempt Druids" he won't actually spawn Jale. Do note that Cathalantru Fleetfoot has been waiting for someone's arrival for a long time...
+
+''Jale Phlintoes is the founder and leader of the Unkempt Druids (some background is available from [[Gerael Woodone]] in Surefall Glades by asking him "Who is Jale Phlintoes?" He mentions a "high bounty as a reward" for his head.''
+
+[[Category:Quests]]
+[[Category:Southern Karana]]

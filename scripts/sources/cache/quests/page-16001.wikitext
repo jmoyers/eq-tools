@@ -1,0 +1,58 @@
+{{Classic Era}}
+:''For the overview of the many orc belt quests, see [[Orc Belt Quests]].''
+[[File:npc_kaglari.png|frame|Kaglari]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Kaglari]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Northern Ro]], [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| deathfist orcs
+|}
+
+Multiquestable with correct faction requirements
+
+== Reward ==
+
+<ul><li>  [[Spirit Pouch|Spell: Spirit Pouch]]
+</li></ul>
+
+== Walkthrough ==
+
+'''At the end of the previous quest, [[Kaglari]] asked you whether you wanted to "more help Innoruuk.". Apprehensive or better is required for this quest. This means Ogres normally cannot complete it. Agnostic and Innoruuk Dark Elves can.'''
+
+You say, 'Meez more help Innoruuk.'
+
+: Kaglari says 'Me hears orcs nearby are trubble. Da werd frum Neriak is dey wants us ta kills dem before dey organize. Dark elf say ta looks for Deathfist Clan. Say dey called cen-tu-ri-ons. Dey try ta gets big orc army. Shows me ya can strike fear and hate inta dem orcs.. dey needs be more scared a us den dem humies. Brings me a Deathfist slashed belt.'
+
+Give Kaglari a [[Deathfist Slashed Belt]].
+
+: Kaglari says 'Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Ones]] got better.
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+* Your faction standing with [[Frogloks of Guk]] got worse.
+</div>
+{{YouGainExperience}}
+
+This quest can be used to farm [[Dark Ones]] faction, but like other orc belt quests the hits are very small.
+
+Experimentation shows Frogloks of Guk faction is lowered by -10.
+
+== Experience received ==
+*Lvl 20 Troll Warrior, 4 turn ins for 1 %
+
+[[Category:Quests]]
+[[Category:Grobb]]

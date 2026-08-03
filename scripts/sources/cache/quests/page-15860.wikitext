@@ -1,0 +1,204 @@
+{{Velious Era}}
+This is the '''10th (and final) [[Coldain Ring Quests|Coldain Ring Quest]]''', sometimes called the '''Ring War'''.
+
+Overview: Hand the [[Dirk of the Dain]] back to [[Dain Frostreaver IV]] to receive the [[Declaration of War]] as part of the ring 10 quest. '''DO NOT HAND DAIN YOUR RING 9!! AT NO POINT IS RING 9 EVER HANDED TO DAIN!!'''
+
+This is a large encounter that requires a fair amount of players to complete. It involves multiple waves of giants of different levels attempting to overrun Thurgadin. You must kill the giants and the final giant in the war, Narandi the Wretched. 
+
+==== Obtaining the Orders ====
+
+: Dain Frostreaver IV says, 'My good ______, you have served me well. You have flushed out all who sought to oppose me and my people. I am afraid I need to call upon you and your friends one final time. The dissension and treason ran deeper than I had anticipated. Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels. In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour. Can I count on your help outlander?' 
+
+'''You say, 'You can count on my help.'''' 
+
+: Dain Frostreaver IV says 'Several of our greatest officers, including a few veterans from the war on Yesterwinter are assembling just outside our city. Gather your army at once and give this parchment and the ninth ring to Sentry Badian. I will remain inside the city with a few of my troops to defend it against any who might penetrate your defense. May Brell be with you, ______.' 
+
+'''He hands you a [[Declaration of War]] . Take the [[Declaration of War]]  to [[Sentry Badain]] who is located in a guard tower in the [[Great Divide]], at -1080, +140. Hand Sentry Badain the [[Declaration of War]] and your Ring 9 [[Coldain Hero's Insignia Ring]] to start the "WAR". He will return your Ring 9 '''
+
+<span style="color:red">'''WARNING:''' There is apparently a 30 minute time limit between the handin to Sentry Badain, and the handin to Zrelik.  If you start the script with the Sentry Badain handin, and fail to turn in the appropriate item to Zrelik within 30 minutes, the event WILL FAIL.</span>
+
+<span style="color:red">'''WARNING:''' Be careful '''''not''''' to give your ring to anyone else (eg. [[Garadain Glacierbane]]).</span>
+
+: Sentry Badain Breathes deeply and blows into an ornate horn. The sound echos through the mountain pass. All local inhabitants scurry to take cover. 
+
+: Sentry Badain says 'I'll be right with you, _____.' 
+
+
+''He and the other Coldain despawn. He reappears shortly.'' 
+
+
+: Sentry Badain says 'Excellent! All of your commanders have reported to the Dain, and none too soon mind you. We are getting reports of Kromrif troop movement in the area and final preparations must be made. Follow me and the Seneschal will brief you. 
+
+'''Follow him to a circle of dwarves that are in the middle of a conversation, they are sitting in a circle close to Thurgadin: '''
+
+: Garadain Glacierbane says 'With all due respect, Seneschal, I feel my men are best suited for the eastern post. If the outlander has rounded up enough soldiers to hold 'em off from the south then they'll definitely test us in the gorge. We'll be needin' a solid defense there.' 
+
+: Seneschal Aldikar says 'Very well, Garadain, the eastern post is yours. I'll place Kargin and his bowmen on the hill to the west, and Churn, you'll station your troops up near the caves just past them.' 
+
+: Churn the Axeman says 'Understood sir.' 
+
+: Sentry Badain says 'Excuse me, Seneschal Aldikar, you instructed me to report to you when the outlander returned. I have brought him.' 
+
+: Seneschal Aldikar says 'Perfect timing outlander, please be seated and listen carefully. Badain, yer dismissed.' 
+
+: Sentry Badain says 'Sir, yessir!' 
+
+''Sentry Badain then walks off towards Thurgadin and despawns.''
+
+: Seneschal Aldikar says 'We knew the day might come when the Kromrif would discover the location of our beloved city. It was only prudent for there to be a plan for such a circumstance. In light of recent developments, however, our plans have been adjusted. Outlander, the Dain has appointed you to lead our armies in defense of Thurgadin.' 
+
+: Seneschal Aldikar says 'I will stand here with a handful of men as a final line of defense. Should I fall, all will be lost. You will have these men and their soldiers to command. Use them wisely, you will be richly rewarded if your forces are able to keep them alive.' 
+
+: Seneschal Aldikar says 'Garadain will post his men in the gorge to the east. Churn and his men will await your command in the caves to the west. Dobbin will have his forces at the ready in the clearing directly south of here near the towers. If any Kromrif make it to his vicinity he and his men will attack with or without your command.' 
+
+: Seneschal Aldikar says 'Lastly, Corbin will hide his men in the worm caves to the south, call on him for a surprise attack. Remember where these men are stationed, outlander. Should they call out for help you may wish to send some of your people to aid them.' 
+
+: Seneschal Aldikar says 'The leader of this invasion is a powerful Kromrif named Narandi. Rumor has it that he is more powerful than any ten of his peers. He must fall. When he is slain you must show his head and the ninth ring to me.' 
+
+: Seneschal Aldikar says 'Scout Zrelik here will follow you and serve as your herald. He will relay your orders to the troops. Show me your ninth ring now to verify your identity and I will give you the orders to memorize.' 
+
+'''Give [[Seneschal Aldikar]] your ring 9 [[Coldain Hero's Insignia Ring]] . He gives it back along with an item called [[Orders of engagement]]. ''' 
+
+: Seneschal Aldikar says 'Commit these orders to memory, ______, have them ready to speak at a moment's notice. When you are finished memorizing, repeat them to me. Tell your soldiers to prepare themselves. When the orders are handed to Zrelik we will take up our positions.' 
+
+The Orders read: 
+
+ OFFICIAL COLDAIN ORDERS OF ENGAGEMENT:
+ To call Garadain's men: "Garadain to my side!"
+ To call Dobbin and his men: "Dobbin assist me!"
+ To summon Churn's troops: "Churn protect me!"
+ To call upon Corbin's team: "Corbin, attack!"
+ Call all available troops: "For the Dain, attack!" 
+
+'''''You should make hotkeys to turn off attack, target Zrelik and /say one of those commands to Zrelik the Scout. You only really need the last command "For the Dain, Attack!" as this rallies all the troops. Zrelik runs after you and as long as he is moving the host of dwarf soldiers ''should'' be running after him. But don't hesitate to spam the command whenever to ensure they keep up. Once Zrelik stands still the troops will start moving toward their spawn location after about 5 seconds. So you need to say the command every 5 seconds to keep them around. Be careful if you have people helping you with the ring war that are KoS to the dwarves as this will mess up your war and the dwarves will attack them. So keep them away from your raid force if you have KoS players helping. If you run a long way, from the eastern front to the western front for instance, the dwarves will take a while to catch up. You don't need to be spamming the orders while waiting for them. They will come as long you commanded them once and started running'''''
+
+==== Triggering the War ====
+
+'''Give the [[Orders of engagement]] to Zrelik (Not The One In Thurgadin)'''
+
+<span style="color:red">'''WARNING:''' There is apparently a 30 minute time limit between the handin to Sentry Badain, and the handin to Zrelik.  If you start the script with the Sentry Badain handin, and fail to turn in the Order of Engagement to Zrelik within 30 minutes, the event WILL FAIL.</span>
+
+: Zrelik the Scout says 'At yer service, ______. Remember now, before issuing me an order ya must disengage from any combat and be sure yer speakin to me. I advise you to avoid combat at all costs, your leadership is crucial.' 
+
+This begins the war. You'll see: 
+
+: Seneschal Aldikar shouts 'Good citizens of Thurgadin, hear me! Our city, our people, our very lives are in danger this day. The Kromrif are at this very moment marching towards us in an offensive they hope will bring about our demise...' 
+
+: Seneschal Aldikar shouts 'I hereby command, by authority of Dain Frostreaver the Fourth, that all able bodied Coldain fight to the death in defense of our land. Children, disabled citzens, and unseasoned travellers are advised to evacuate immediately!' 
+
+: Seneschal Aldikar shouts 'My fellow soldiers, take heart! For we are not alone in this endeavor. One among us, an outlander, has earned the title Hero of the Dain for valiant service to our people. This newcomer has brought with him allies that will fight alongside you to help bring about our victory.' 
+
+: Seneschal Aldikar shouts 'My friends... Brell did not place us here so many centuries ago to be slaughtered by these heathens. Nor did our forefather, Colin Dain, sacrifice himself simply to have us fail here now. Through these events we were brought to this day to test our strength and our faith.' 
+
+: Seneschal Aldikar shouts 'Will we be shackled together to slave away in Kromrif mines or will we stand united and feed these beasts Coldain blades? By Brell, I promise you, it is better to die on our feet than to live on our knees!' 
+
+: Seneschal Aldikar shouts 'TROOPS, TAKE YOUR POSITIONS!!'
+
+==== Commands to Zrelik ====
+
+These are the commands you can give to Zrelik the Scout:
+
+'''You say, 'For the Dain, attack!'''' 
+
+: Zrelik the Scout shouts 'All able Coldain, come to me at once!' 
+
+You say, 'Churn protect me!' 
+
+: Zrelik the Scout shouts 'Churn, get yer men and c'mere on the double! _____ needs ye!' 
+
+You say, 'Corbin, attack!' 
+
+: Zrelik the Scout shouts '_____ is in need of yer help Corbin. Bring yer men!' 
+
+You say, 'Dobbin assist me!' (this seems wrong)
+
+: Dobbin Crossaxe closes his eyes and in a graceful motion, gives a low, sweeping bow, 'Greetings to you, friend, and welcome to the district of Selia. We are the beacon of light and justice, of all that is good and kind. As Tanaan is the cornerstone of neutrality, we are the shining jewel of righteousness, valor, and honor. I am Phantasmist Abaur and in my years upon Norrath, served as an enchanter within the arcane council of Freeport. Then, the city was in a fledgling state of being -- the Temple of Truth was still in the primordial beginnings of its construction and the city served solely as a port rather than the functioning metropolis I'm told it has come to be today. If you practice the same art and require aid in learning the fundamental basic skills, then I will be more than pleased to oblige that necessity.'
+
+==== In the Event of a Loss ====
+
+If any giant gets past you to the Thurgadin entrance, you lose. You'll know this has happened if you see that Zrelik is missing and the giants are lined up on both sides of the river to Thurgadin. 
+
+All of Thurgadin dies in the event of a loss. You'll see dead Coldain throughout the zone: A Gutted Guard, A Gored Guard, A Butchered Butcher, A Murdered Merchant, A Bludgeoned Banker, A Conquered Coldain, A Punctured Priestess, and A Perforated Priest. 
+
+==== The War ====
+
+[[Coldain Ring War|Detailed Ring War Breakdown]]
+
+'''Once Seneschal Aldikar shouts for troops to take their positions, the battle begins. '''
+
+The war can be split up into three rounds. Each round consists of seven waves of giants attacking Thurgadin. Each round and wave get progressively harder. Once wave seven of round three is done [[Narandi the Wretched]] spawns. He is a fairly simple tank and spank boss. Kill him loot his head. '''Be absolutely certain to keep the dwarf army you have been controlling far away from Narandi. If they get aggro they will attack him and you will not be able to stop them. If they get the killing blow Narandi's corpse will poof and you get no ring 10 and no loot'''. The war is a timed event that is scripted. This means that if you kill the giants of a wave fast you will have more recovery time before the next wave. If you kill the giants slowly then you risk having the next wave spawning before having finished off the previous wave. This is good way to fail the war, so be sure to bring enough people. The whole event takes around 1 hour and 45 minutes.
+
+<b>Round 1 Mobs</b>
+* [[Kromrif Spearman]]
+* [[Kromrif Captain]]
+* [[Kromrif Recruit]]
+* [[Cleric of Zek]]
+
+<b>Round 2 Mobs</b>
+* [[Kromrif General]]
+* [[Kromrif Warrior]]
+* [[Priest of Zek]]
+
+<b>Round 3 Mobs</b>
+* [[Kromrif Warlord]]
+* [[Kromrif Veteran]]
+* [[High Priest of Zek]]
+
+'''Once Narandi is dead:''' 
+
+: Narandi the Wretched's corpse says 'Rallos! Please accept my soul... I pray that you may find me worthy.' 
+
+: Seneschal Aldikar shouts 'Outlander! You've done it! The Kromrif invasion has been frustrated! Bring me the head of Narandi and your Hero's ring.'
+
+Note: Mobs despawn when the war starts, and will all respawn 30 minutes after the war is won.
+
+==== Turn-In for the 10th Ring ====
+
+'''Once you have won, turn in ring 9 [[Coldain Hero's Insignia Ring]] and [[Narandi's head]] to [[Seneschal Aldikar]] to receive the 10th Coldain ring [[Ring of Dain Frostreaver IV]]. He is standing in a circle with the other named Coldain close to Thurgadin'''
+
+: Seneschal Aldikar unsheathes a knife and shaves the beard from Narandi's face and returns the head to you, 'The Dain will require the beard for his trophy room, please accept this ring on his behalf. May its effect aid you as you have aided us. Be certain to present the ring to the Dain when you're in town. If you remain an ally he will be most gracious, but be warned, if you fall from his good graces he will keep the ring.' 
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div> 
+
+'''You receive the 10th ring [[Ring of Dain Frostreaver IV]] and the [[Shorn Head of Narandi]].'''
+
+==== Additional Rewards ====
+
+'''Hand in the [[Shorn Head of Narandi]] to each of the dwarves near the Seneschal. This may only be possible if none of the dwarves die (need confirmation either way). Do NOT turn in the [[Shorn Head of Narandi]] to Zrelik the Scout, as he will eat it:'''
+
+: Churn the Axeman pries a crown from the head of Narandi, 'The halls of Thurgadin will echo with praises to you for as long as we grace the face of this land. May this crown serve you well. Honor through battle!' 
+
+You receive the {{:Crown of Narandi}}. 
+
+: Kargin the Archer picks up a stick and hits the back of the dismembered head with all his might, knocking one of its eyes out of the socket, 'Bastard killed my brother! Hope his ghost felt that one!' 
+
+You receive the {{:Eye of Narandi}}. 
+
+: Corbin Blackwell unhooks a glowing earring from Narandi's shorn head, 'Hmm, this looks like something special. Take it, ______, you've earned it! Be well.' 
+
+You receive an {{:Earring of the Frozen Skull}}. 
+
+: Dobbin Crossaxe gives a gentle, warm smile and slight nod of his head in warm welcoming, 'Good day to you, ______, and welcome to the district of Selia. We are children of the light -- beings who valiantly uphold the ways of honor, valor, and merits of goodly faith and virtue. Rather, we are crusaders of these things, collectively comprising the beacon of these traits within the universe in our position in New Tanaan. We are quite pleased to have you approach us with such confidence -- perhaps the inner light has brought you to us, seeking a way to unlock the purity of these merits that you faintly mirror now. If you are seeking council in the ways of enchantments, then I would be more than pleased and honored to aid you where I can, my friend.' 
+
+You receive the {{:Faceguard of Bentos the Hero}}.   (Named after player Bentos<Triton> on Povar server, first player to complete this quest.)
+
+: Garadain Glacierbane removes a choker from the severed head and returns both items to you, 'Congratulations on your victory, ______. I couldn't have done a better job myself. May Brell protect and watch over you and your friends. Farewell.' 
+
+You receive a {{:Choker of the Wretched}}. 
+
+'''Make sure your faction is Ally! (warmly is not high enough), then give the ring to the Dain in Icewell Keep:'''
+
+: Dain Frostreaver IV says '______, your deeds have changed the fate of my people forever. Not since the sacrifice of Colin Dain himself has anyone so selflessly risked so much for our well being. Accept this blessing as a token of my gratitude.' 
+
+'''You receive [[Protection of the Dain]].'''
+
+Note: If you maintain your allied status to [[Dain Frostreaver IV]], you can turn in your [[Ring of Dain Frostreaver IV]] and receive a new {{:Protection of the Dain}}.
+
+[[Category:Quests]]
+[[Category:Great Divide]]
+[[Category:All Classes Quests]]

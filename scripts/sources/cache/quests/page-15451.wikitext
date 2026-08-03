@@ -1,0 +1,71 @@
+[[File:npc_dleria_mausrel.png|frame|Dleria Mausrel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Dleria Mausrel]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| [[a zombie]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Backpack}}
+</li><li> {{:Belt Pouch}}
+</li><li> {{:Raw-hide Sleeves}}
+</li><li> [[Divine Aura|Spell: Divine Aura]]
+</li><li> [[Flash of Light|Spell: Flash of Light]]
+</li><li> [[Lull|Spell: Lull]]
+</li><li> [[Spook the Dead|Spell: Spook the Dead]]
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Dleria Mausrel'
+
+: Dleria Mausrel says, 'Hail! You appear to be a [new priest].  Ah, I so enjoy the presence of youth within Deepwater Temple. I am sure Prexus is smiling upon us as we speak.'
+
+You say, 'I am a new priest.'
+
+: Dleria Mausrel says, 'As I suspected. I shall assist you with your training and you shall assist the temple with your service. A young priest can help out by asking to [convert fishermen in QEynos] or maybe even something truly great such as requesting to [protect the depths].'
+
+You say, 'I will protect the depths.'
+
+: Dleria Mausrel says, 'We have heard of zombies inhabiting the depths of Erud's Crossing. Go and seek them out. Destroy them. This evil should not exist within the realm of the Ocean Lord. Take this bag. Fill it with their rotting flesh, combine it and return it to me. May Prexus guide you.'
+
+'''You receive an Empty Bag (identifies as "Zombie Flesh Bag").  Despite the quest text, you need to obtain four [[Zombie Skin|Zombie Skins]], not zombie flesh.  You can use zombie skins from anywhere, not just Erud's Crossing.  Combine four in the bag to craft a Bag of Zombie Flesh, and hand this to Dleria.'''
+
+You have fashioned the items together to create something new!
+
+: Dleria Mausrel says, 'Peeuww!! That most certainly is zombie flesh!! Here is your reward. You have done a fine service in the name of Prexus. Soon you shall advance and we may tell you of greater dangers lurking in the depths.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 12 silver from Dleria Mausrel.
+
+You receive 4 gold from Dleria Mausrel.
+
+You also receive a minor item.
+
+[[Category:Quests]]
+[[Category:Erudin]]

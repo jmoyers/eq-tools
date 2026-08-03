@@ -1,0 +1,55 @@
+{{Classic Era}}
+[[File:npc_karg_icebear.jpg|frame|Karg IceBear]]
+{| class='questTopTable'
+! ''' Start Zone: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Quest Giver: '''
+| [[Karg IceBear]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]], [[Mistmoore Castle]], [[Southern Karana]], [[Western Karana]], [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a werewolf]]
+|}
+Possibly multiquestable (Needs verification).
+
+== Reward ==
+
+<ul><li> {{:Werewolf Skin Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Karg IceBear]] is a barbarian that wanders [[Everfrost Peaks]]. 
+
+You say, 'Hail, Karg IceBear'
+
+Karg IceBear says 'Hail, traveler! I am Karg of Clan IceBear, lone hunter of the Everfrost Peaks. Have you seen any polar bears about?'
+
+You say, 'I have slain a werewolf.'
+
+Karg IceBear says 'Werewolf?! I have not seen a werewolf in years. Have you slain one and collected its skin or its claws?'
+
+You say, 'What skin?'
+
+Karg IceBear says 'You have managed to procure a werewolf skin?? Amazing! Well then, I will let you know that for a fee of 100 platinum, I can craft a hearty cloak for you if you leave the skin and the coin with me.' 
+
+'''Hand in the following to receive the cloak:'''
+
+* [[Werewolf Pelt]] (from [[a werewolf|werewolves]] in WC, MM, SK, NK or WK)
+* 100 platinum
+<b><span style="color:red">*IMPORTANT: You MUST hand in 100p along with your Werewolf Pelt in the same trade, or your item will be STOLEN and without reward!*</span></b>
+
+There are no faction hits one way or the other, though you do gain experience.
+
+[[Category: Quests]]
+[[Category:Everfrost Peaks]]
+[[Category:All Classes Quests]]

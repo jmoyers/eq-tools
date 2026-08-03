@@ -1,0 +1,247 @@
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lake Rathetear]]
+|-
+! ''' Quest Giver: '''
+| [[Vrynn]], [[Kyralynn]]
+|-
+! ''' Recommended Level: '''
+| 15+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! '''Related Zones:'''
+| Various
+|-
+! '''Related NPCs:'''
+| Various
+|}
+
+== Fashion ==
+(Needs a better picture, breastplate is missing)
+
+[[File:Totemicarmor.png|Center|x300px|]]
+
+== Rewards ==
+
+{{Gear Set
+|Totemic Boots
+|Totemic Bracers
+|Totemic Breastplate
+|Totemic Cloak
+|Totemic Gauntlets
+|Totemic Greaves
+|Totemic Helm
+|Totemic Vambraces
+}}
+
+== General Quest Info ==
+
+The quests are given out by a pair of Barbarian shamans in [[Lake Rathetear]]: [[Vrynn]] and [[Kyralynn]], at the Barbarian Village (loc 500, 2500).
+
+Vrynn will make:
+*Totemic Boots
+*Totemic Gauntlets
+*Totemic Greaves
+*Totemic Vambraces
+
+Kyralynn will make:
+*Totemic Bracers
+*Totemic Breastplate
+*Totemic Cloak
+*Totemic Helm
+
+'''Note:''' If you try to turn in the wrong items the game refuses to allow the turn-in.
+
+===Recommended Order===
+You can reference the list of quests below to decide which items you plan to get and use the regional checklist and zone guides further below to help you find whichever pieces you are after.
+
+If you're also trying to level at the same time, then in terms of difficulty you will probably want to start with [[Lesser Faydark]], [[Rathe Mountains]], then the [[North Karana|North]] and [[South Karana|South]] Karanas camps first - though you will want Tracking for Grizzleknot in South Karana.
+
+Next you can do [[Everfrost]] and [[Ocean of Tears]] followed by [[Cazic Thule]].
+
+And you will probably want to end with the Dagnor's Cauldron region ([[Dagnor's Cauldron]], [[Unrest]], [[Kedge Keep]]). I recommend doing [[Permafrost]] last because it requires clearing lots of the zone and dealing with lots of swarms of mobs, so better off done when you're not trying to get experience - unless you can convince friends to go with you. This may change in the coming months when Permafrost gets its own zone revamp for EQ Legends.
+{{CheckboxList}}
+
+= Vrynn's Quests =
+==Boots==
+'''Reward:''' {{:Totemic Boots}}
+* [[Banded Boots]]
+* [[Dufrenite]]
+* [[Terror Spines]] ([[Tentacle Terror]], [[Najena]]) (lvl22) or ([[A_tentacle_terror_(Unrest)|a tentacle terror]], [[Unrest]]) (lvl30)
+* [[Chief's Tongue]] ([[Orc chief]], [[Lesser Faydark]]) (lvl18-21)
+
+==Gauntlets==
+
+'''Reward:''' {{:Totemic Gauntlets}}
+* [[Banded Gauntlets]]
+* [[Crushed Dufrenite]]
+* [[Mammoth Rib Bone]] ([[a wooly mammoth]], [[Everfrost Peaks]]) (lvl22-26)
+* [[Griffenne Downfeather]] ([[a griffenne]], [[Northern Karana]]) (lvl23-27)
+
+==Sleeves==
+
+'''Reward:''' {{:Totemic Vambraces}}
+* [[Banded Sleeves]]
+* [[Ground Dufrenite]]
+* [[Ghoul Carrion]] ([[a carrion ghoul]], [[Unrest]]) (lvl20)
+* [[Charger Hoof Chips]] ([[centaur charger]], [[Southern Karana]]) (lvl29)
+
+==Leggings==
+
+'''Reward:''' {{:Totemic Greaves}}
+* [[Banded Leggings]]
+* [[Powdered Dufrenite]]
+* [[Permafrost Snowball]] ([[a goblin wizard (Permafrost)|goblin wizard]], [[Permafrost]]) (lvl23)
+* [[Bone Barbs]] ([[a barbed bone skeleton]], [[Unrest]]) (lvl24)
+
+= Kyralynn's Quests =
+==Bracer==
+
+'''Reward:''' {{:Totemic Bracers}}
+* [[Banded Bracer]]
+* [[Dufrenite]]
+* [[Bull Elephant Tooth]] ([[a bull elephant]], [[Southern Karana]]) (lvl20-24)
+* [[Cauldron Shell]] ([[aqua goblin tidal lord]], [[Dagnor's Cauldron]]) (lvl22-24)
+
+==Mail==
+
+'''Reward:''' {{:Totemic Breastplate}}
+* [[Banded Mail]]
+* [[Crushed Dufrenite]]
+* [[Grizzleknot Bark]] ([[Grizzleknot]], [[Southern Karana]]) (lvl 28)
+* [[Lancer Swordfish Fin]] ([[A Lancer Swordfish]] lvl28-lvl32; [[A Piercer Swordfish]] lvl35-lvl37; [[An impaler swordfish]] lvl39) [[Kedge Keep]]
+
+==Helm==
+
+'''Reward:''' {{:Totemic Helm}}
+* [[Banded Helm]]
+* [[Ground Dufrenite]]
+* [[Glacier Bear Pelt]] ([[A Glacier Bear]], caves in [[Everfrost Peaks]]) (lvl27-29)
+* [[Ogreskin Chamois]] ([[A lizard page]] in [[Cazic Thule]]) (lvl23-25)
+
+==Cloak==
+
+'''Reward:''' {{:Totemic Cloak}}
+* [[Banded Cloak]]
+* [[Powdered Dufrenite]]
+* [[Driftwood Pipe]] ([[An isle goblin chieftan]], [[Ocean of Tears]])  (lvl 26)
+* [[Basalt Drake Scales]] ([[a basalt drake]], [[Rathe Mountains]]) (lvl 23)
+
+= Quest Drops and Zone Guide =
+This is a checklist of all the items needed for a full set of Totemic Armor, sorted by where they drop and tips for acquiring them.
+
+==Dufrenite==
+*2 Dufrenite (Boots & Bracer)
+*2 Crushed Dufrenite (Gauntlets & Mail)
+*2 Ground Dufrenite (Sleeves & Helm)
+*2 Powdered Dufrenite (Leggings & Cloak)
+
+You can buy [[Dufrenite]] from a merchant in your hometown. Dufrenite rarely drops in [[Solusek's Eye]] (Sol A) from clockwork gnomes. This camp pretty easy and good experience at upper 20s, but the gemstone is very rare - so you will likely need to buy all the dufrenite you need. The [[Grobb]] merchant's name is Zumzal, and he is in the Shaman Guild area. Dufrenite can also be purchased from [[Murtog MacYee]] in [[Halas]].
+
+The Ogre Shamans in [[Lake Rathetear]] at loc 3000,-1900 will crush/grind/powder Dufrenite for you.
+
+*[[Grud]] makes the [[Crushed Dufrenite]].
+*[[Trug]] makes the [[Powdered Dufrenite]].
+*[[Punga]] makes the [[Ground Dufrenite]].
+
+==Crafted==
+*[[Banded Boots]]
+*[[Banded Bracer]]
+*[[Banded Gauntlets]]
+*[[Banded Mail]]
+*[[Banded Sleeves]]
+*[[Banded Helm]]
+*[[Banded Leggings]]
+*[[Banded Cloak]]
+
+The quests '''only accept Medium banded armor''', not small or large. This has been confirmed to still be true in Everquest Legends. Medium banded does not actually say "Medium" on it. It is just called banded armor. So don't run all the way there with your large banded gauntlets and get stonewalled by Vrynn, or run all the way there with the ringmail gauntlets you got while farming the Centaur Charger for his chips, thinking you have your banded gauntlets with you.
+
+You will need to buy these from other players or make them yourself with [[Smithing]].
+
+==Lake Rathetear Region==
+===Rathe Mountains===
+*[[Basalt Drake Scales]] from [[a basalt drake]] or [[a drake]] (Cloak)
+[[a basalt drake]] can be found in the area around the troll shrine (area 10 on the [[Rathe Mountains]] map).  Just kill all roaming mobs in the middle of this area - drakes, basilisks and lizardmen. Just watch out for the troll guards if you're not on friendly terms.
+
+===South Karana===
+*[[Grizzleknot Bark]] from [[Grizzleknot]] (Mail)
+
+[[Grizzleknot]] is a rare spawn in South Karana. He paths from the Treants in the NE corner, down past the Hermit's House in the SE corner of the zone.  According to old posts and wikis, a good way to spawn Grizzleknot is stand around 567, 783 and kill anything that paths by. However, I have not managed to spawn [[Grizzleknot]] yet in EQ Legends.
+
+*[[Bull Elephant Tooth]] from [[a bull elephant]] (Bracer)
+
+The tooth drops from [[a bull elephant]] in [[South Karana]]. As with most of these quests, having a class with track will really speed things up. But just kill as many elephants and lions and wolves you can find to keep the bull elephants spawning regularly. For me the drop rate was not great - probably less than 10%. That being said, you'll be spending plenty of time in South Karana going after [[Centaur Charger|Centaur Chargers]] so you'll probably get a tooth while camping the others if you keep clearing out elephants you see.
+
+*[[Charger Hoof Chips]] from [[centaur charger]] (Sleeves)
+
+[[centaur charger|Centaur Chargers]] are in South Karana at the Centaur Stables (area 4 on the [[South Karana]] map). You can hunt the centaurs inside and around their camp to spawn chargers pretty regularly. Just keep clear of the western stable with the named vendors. The centaurs will assist one another but they won't give you much trouble, and if you come here around level 20 its probably pretty good experience, too.
+
+===North Karana===
+*[[Griffenne Downfeather]] from [[a griffenne]] (Gauntlets)
+
+[[a griffenne|Griffennes]] are difficult to find without track. Unlike some other versions of Everquest, Everquest Legends does not seem to have any static spawns of griffennes or griffawns. Using tracking, I started hunting both types of griffins - which mostly seemed to spawn in the northern part of the zone, north of the road.  But pretty soon there were no more griffins of any type. So it seems that they share spawns with other roaming animals in the area. Clearing all of the beetles, wisps, bears, and lions north of the road I was able to get griffennes to spawn, but it's very slow and the drop rate for the downfeather is not great - mine dropped from my fifth or sixth griffenne.
+
+==Everfrost Region==
+===Everfrost Tundra===
+*[[Glacier Bear Pelt]] from a [[A Glacier Bear]] (Helm)
+
+[[A Glacier Bear]] is found in the Everfrost cave that can be reached by dropping down into the frozen lake in one of the openings ({{Loc|Everfrost|-850, -1480}}, {{Loc|Everfrost|20, -4500}}{{Loc|Everfrost|1375, -4600}}) and swimming down to the end of the West fork. You shouldn't need underwater breathing, but it's a good idea to have a [[fishbone earring]] anyways as its easy to get. The bear spawns near the 3-way intersection towards Sulon McMoor. Old information suggests the bear is on an 6-8 hour spawn cycle with Iced Bone Skeletons as its place holder, and my own testing certainly points to an hour or longer respawn. Both the bear and the skeletons can patrol the entire cave when they spawn and you can find more than one bear at a time. A good strategy for finding him if you don't have tracking is to simply sit in the back of the cave and cast Sense Animal; if he is there, you will target him. Due to the long spawn time, it might be easiest to check for the bear, then hop to another difficulty or personal instance and check again. Using Instance Hopping I was able to find the glacier bear four times in very short time - all four bears dropped a pelt, so it seems to be a guaranteed drop. '''Look out for [[Lich of Miragul]], a level 45 necromancer. I ran into him a few times and he just walked past me, despite being scowls - but not sure if this was just a bug.'''
+
+*[[Mammoth Rib Bone]] from a [[a wooly mammoth]] (Gauntlets)
+
+Head out to the [[Everfrost]] tundra, near [[Permafrost]]. Slay [[a wooly mammoth|wooly mammoths]] (and calfs) and [[a giant wooly spider|giant wooly spiders]]. The spiders seem to share spawns with the mammoths. This area is wide open and easy to take them on one at a time (though the mammoths will help each other) and as long as you keep killing both you should find plenty of mammoths. This camp is really just a matter of time and luck.  I got mine after less than 10 mammoths. One issue to watch for: the rib bone is GIANT sized, so it won't fit in most bags.
+
+===Permafrost===
+*[[Permafrost Snowball]] from [[A_goblin_wizard_(Permafrost)|goblin wizard]] (Leggings)
+
+[[a goblin wizard (Permafrost)|Goblin wizards]] are all around Permafrost - though I find them most often around the eastern side of the map. In the areas between area 3 and 11 on the [[Permafrost]] map. You're going to need to kill tons of goblins to get spawns and you're probably going to find yourself swarmed by goblins due to how packed the areas are. So my recommendation is save this for last and do it when you're mid-high 20s and can just clear rooms of grey to blue goblins with relative ease. Then just patrol all the halls and rooms on the eastern side to find wizards. It looks like wizards may be the placeholder for the rare spawn in room 11 on the map since there seems to almost always be one there. The goblins respawns for Everquest Legends seem to be close to 6 minutes.
+
+==Dangor's Cauldron Region==
+===Dangor's Cauldron===
+*[[Cauldron Shell]] from [[aqua goblin tidal lord]] (Bracer)
+
+[[aqua goblin tidal lord|aqua goblin tidal lords]] spawn all over [[Dagnor's Cauldron]]. You can hunt the four goblins at the camp at location 5 on the map, but they don't always spawn and the camp has a six minute respawn. You should also kill roaming goblins - particularly any in the water - while hunting at the camp.  If you have access to track, the better way is to zone in, scour the zone with track for all the tidal lords, then hop to another instance like D1-D4 and repeat. I managed to get 3 shells after about ~30 tidal lords - so seems to be about a 10% drop rate.  [[Fishbone earring]] from [[Hadden]] will help with this - and is pretty much a necessity for the [[Kedge Keep]] portion of these quests. So if you can go grab one before coming here.
+
+===Unrest===
+*[[Bone Barbs]] from [[a barbed bone skeleton]] (Leggings)
+
+*[[Ghoul Carrion]] from [[a carrion ghoul]] (Sleeves)
+
+*[[Terror Spines]] from [[a_tentacle_terror_(Unrest)|a tentacle terror]] (Boots)
+
+If you do not intend to get the [[Terror Spines]] in Unrest (they can also be farmed in [[Najena]]) you can ignore the rest and just hunt barbed bone skeletons and carrion ghouls upstairs in the house in Unrest. Both mobs spawn frequently and their drops aren't too rare.
+
+If you want to collect all three drops in Unrest, you will need to get the [[Cracked Glass Key]] to open the fake bookshelf that leads to the basement, as the doors are locked in Everquest Legends. If you want to do this, start with a personal, non-respawning instance of the zone so all the key holders will be up.  As you clear the house to get the keys, you have a good chance to get the [[Ghoul Carrion]], and a slim chance of getting the [[Bone Barbs]]. Once you have all the keys, switch to a respawning instance, and head down to the basement for the [[Terror Spines]]. You can also get the [[Bone Barbs]] down in the basement as well. But the [[a carrion ghoul|carrion ghouls]] are only in the upstairs of the house. Fortunately, the carrion drop is fairly common.
+
+Just remember you want [[Bone Barbs]], NOT [[Barbed Bone Chips]].
+
+'''NOTE:''' In the pre-order beta I could not get the tentacle terrors in [[Unrest]] to drop the spines. But I went to Najena, dropped down the fake floor to the jail cell with the [[Tentacle Terror]] and I got the spines after three kills (less than 15 minutes).
+
+===Kedge Keep===
+*[[Lancer Swordfish Fin]] from [[A Lancer Swordfish]], [[A Piercer Swordfish]], or [[An impaler swordfish]] (Mail)
+
+The [[Lancer Swordfish Fin]] can drop from any of the swordfish, and the very first room is filled with nothing but swordfish that respawn after 6 minutes or so. I was able to single pull each one and solo them all at level 27. I did three spawns worth of swordfish and got the fin once. Apart from needing to get a [[fishbone earring]] from [[Hadden]] (or maintain [[Enduring Breath]], which is annoying) this part of the quest is pretty easy.
+
+==Other Regions==
+===Cazic-Thule===
+*[[Ogreskin Chamois]] from [[A lizard page]] (Helm)
+
+[[a lizard page|Lizard pages]] can be found in the throne room area of [[Cazic Thule]] as a fairly frequent spawn, as well as inside the maze. The drop isn't guaranteed but seems pretty common.
+
+===Lesser Feydark===
+*[[Chief's Tongue]] from [[Orc chief]] (Boots)
+
+[[Orc chief]] presides over a camp of Orcs in Lesser Faydark. Most of the orcs are under level 10, the chief and his placeholder, Orc Legionnaire, are 18 to 22. He is located on the [[Lesser Faydark]] map at number 9. The camp itself is very easy, just watch out for higher level dangers on the way to the camp. Out of five kills, four were chiefs and I got one tongue.
+
+===Ocean of Tears===
+*[[Driftwood Pipe]] from [[An isle goblin chieftan]] (Cloak)
+
+[[An isle goblin chieftan]] (yes it is spelled that way in game) is on the goblin island, which is #9 on the [[Ocean of Tears]] map. The chieftain spawns in the hut located at (-846, -8550). There are a lot of goblins that spawn or roam near the chieftan's tent, combined with spawn time of about 2 minutes for most of the goblins and you can find yourself fighting an unending stream of goblins if you try to fight at the tent. Depending on your level you may be better off pulling them in groups to the shoreline to clear the area. At level 23 the area is pretty trivial, with most goblins being grey or green, and a fair number of blues.
+
+The chieftan, and their place holder [[an isle goblin]], are 24-26. They have a 6 minute spawn time, and it seems to be around 50% which will spawn. The pipe seems to be quite rare (or I got unlucky). It took me about 30-40 kills, so this part might take you some time. Try doing this one at mid-high 20's so you can at least get some experience from the goblins.
+
+[[Category:Quests]]
+[[Category:Lake Rathetear]]
+[[Category:Shaman Quests]]

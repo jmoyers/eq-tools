@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:old_torn_robe.png|frame|Teddeefashion wearing the reward]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Markus Jaevins]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Erudin Palace]]
+|-
+! ''' Related NPCs: '''
+| [[Markus Jaevins]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Torn Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Markus Jaevins]] is located at 740, 890 in Guild Tower of the Gate Callers.''
+
+You say, 'Hail, Markus Jaevins'
+
+: Markus Jaevins says, 'Greetings, young one! It is always good to see a new face here in the Palace of Erudin, the perfect city-state, free from [crime].'
+
+'''Hand [[Markus Jaevins]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Enroll in Jaevins' School. Go to the blue teleport gem above the fountain, it will take you into the palace. Go upstairs and give this note to Markus Jaevins, in the Tower of The Gate Callers, and he will teach you the ways of the Magician.</code>
+
+: Markus Jaevins says, 'Welcome. young one! I see you show interest in the circle of magic. Nowhere upon Norrath will you find a greater school than this - the Gatecallers. You shall wear this robe as a sign that you have begun the training of this circle. Remember. the power of the Gatecaller is the power of summoning. Good luck, friend!'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Magician Quests]]

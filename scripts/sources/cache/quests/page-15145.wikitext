@@ -1,0 +1,70 @@
+{{Temple Era}}[[File:npc_grim_oakfist.png|frame|Grim Oakfist]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Grim Oakfist]]
+|-
+! ''' Minimum Level: '''
+| 25+
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related NPCs: '''
+| [[Eenot]], [[Kobb]], [[Reggit]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Collar of Neshika}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Grim Oakfist]] can be found in the first Inn on the left of the path when entering Kithicor Forest from [[West Commonlands]].''
+
+You say, 'Hail, Grim Oakfist'
+
+: Grim Oakfist says, 'It is good to finally see one who respects the disciplines of the Ashen Order. All I have met are rangers. They have interfered with my [mission in the woods].'
+
+You say, 'What mission in the woods?"
+
+: Grim Oakfist says, 'I have come here to avenge my family. One season past, they were attacked by a trio of deadly tigers. I came here to hunt the beasts down, but then I found the local rangers and residents here protect the tigers. They seem to be a legends in these parts. The tigers even have name's! They call them Eenot, Reggit and Kobb. I wish I had help from a [fellow monk].'
+
+You say, 'I am a fellow monk'
+
+: Grim Oakfist says, 'Good! The rangers are watching me so you must go alone. I can only wait until the morning, then I must go. If you find all three tigers, return their pelts to me and I shall reward you with something discovered for monks only.'
+
+: Eenot shouts 'A loud roar his heard within the woods!' 
+
+'''Find the three tigers and collect their pelts for Grim:'''
+* [[Unusual Tiger Pelt]], from [[Eenot]] - seen around -586, 877 before pathing
+* [[Peculiar Tiger Pelt]], from [[Reggit]] - seen around -812, 1008 before pathing
+* [[Strange Tiger Pelt]], from [[Kobb]] - seen around 1016, -618 before pathing
+
+: Grim Oakfist says, 'I asked you to hunt down all three of the tigers.'
+: Grim Oakfist says, 'I asked you to hunt down all three of the tigers.'
+: Grim Oakfist says, 'Good work. I hope you had no run ins with the local rangers. Here is my reward. An object from the past which I found in my journeys. Wish that I could reward also with [treant fists].' 
+
+<div class='facblock'>
+* Your faction standing with [[Ashen Order]] got better.
+* You faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive a {{:Collar of Neshika}}.
+
+== Notes ==
+* Grim shares a spawn cycle with [[Brollus Hoost]] and [[Tallyn Starwatch]]. If he is not present, check back later, or kill the placeholder (and suffer the faction hits).
+* The three tigers spawn after you talk to Grim, so the easiest way to find these tigers is with a tracker. Fair warning though, killing them gives a hit to ranger/druid factions.
+* If you reverse the names of Eenot and Rigget, you get Tonee (Tony the Tiger) and Tigger. Kobb is probably a reference to inner circle Hall of Famer Ty Cobb, who played for the Detroit Tigers.
+
+[[Category: Quests]]
+[[Category:Kithicor Forest]]
+[[Category:Monk Quests]]

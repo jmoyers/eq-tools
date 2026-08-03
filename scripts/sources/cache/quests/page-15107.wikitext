@@ -1,0 +1,248 @@
+{{Temple Era}}
+[[File:npc_lord_searfire.png|thumb|right|Lord Searfire]]
+[[File:roarmor2.jpg|thumb|right|Complete Armor of Ro set.  Unlike Lord Searfire, the gauntlets and boots on players show the bronze armor graphic.]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Searfire]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[Priestess Ghalea]], [[a sand giant]], [[an ancille cook]]
+|}
+
+== General Information ==
+The Armor of Ro is a set of [[Paladin]] specific armor quested from [[The Temple of Solusek Ro]] and the paladins encamped in [[Rathe Mountains]].  '''Each piece of the Armor of Ro is created by combining a quested Mold of Ro and a crafted [[A Bar of Ronium|Bar of Ronium]] in a NON-CULTURAL forge'''.  The molds are NO DROP but the Bar of Ronium is tradeable, as are the completed armor pieces.  The armor is only usable by paladins, but can be quested by any character able to get their faction with the quest NPCs to Amiable.  Each mold requires Amiable with a separate faction.
+
+== Rewards ==
+
+{{Gear Set
+|Helm of Ro
+|Breastplate of Ro
+|Vambraces of Ro
+|Bracer of Ro
+|Gauntlets of Ro
+|Greaves of Ro
+|Boots of Ro
+}}
+
+== Molds of Ro Armor ==
+
+To get the molds, you must go to the [[Rathe Mountains]] paladin camp (+2930, -800). Each mold must be quested from a different NPC in the camp, and each NPC is on a different faction. If the NPC does not con at least Amiable to you, he or she will refer you to their guild instead of giving you the quest.
+
+*[[Mold of Ro Boots]]{{CheckboxList}}
+:*[[Kilij Plans]]
+{{End}}
+*[[Mold of Ro Bracer]]{{CheckboxList}}
+:*2x [[Deepwater Goblin Net]]
+{{End}}
+*[[Mold of Ro Breastplate]]{{CheckboxList}}
+:*2x [[A Dark Cauldron]]
+{{End}}
+*[[Mold of Ro Gauntlets]]{{CheckboxList}}
+:*[[A Locket]]
+{{End}}
+*[[Mold of Ro Greaves]]{{CheckboxList}}
+:*[[Nightfall Giant's Head]]
+{{End}}
+*[[Mold of Ro Helm]]{{CheckboxList}}
+:*2x [[Cyclops Skull]]
+{{End}}
+*[[Mold of Ro Vambrace]]{{CheckboxList}}
+:*2x [[Rotten Shark Meat]]
+{{End}}
+== Mold of Ro Boots ==
+You must have Amiable faction with [[Clerics of Underfoot]] to complete this step.
+; You say, 'Hail Nicholas'
+: Nicholas says, 'Greetings, friend. I am the keeper of the [Boots of Ro]. Please rest here with us in our camp of righteousness. No harm can come to you while we paladins keep watch.'
+; You say, 'I seek the Boots of Ro'
+: Nicholas says, 'If you desire the mold needed for smithin the Boots of Ro, then first, you shall prove your power. I have long sought an ancient holy weapon called the brazen brass kilij. I have heard rumors of detailed plans on how to make it, coming from Faydwer. Seek out the Kilij plans. Bring them to me and you shall have the mold.'
+
+*[[Kilij Plans]] drop from [[Sandgiant Husam]] in [[Southern Desert of Ro|South Ro]].
+
+Give Nicholas the [[Kilij Plans]] and receive the [[Mold of Ro Boots]].
+
+: Nicholas says, 'Ahh!! The kilij!! The legend was true. As for you.. the mold for the Boots of Ro. Go and speak with Thomas for the final component. Ask him of [Lord Searfire]. Brell be with you.
+
+<div class="facblock">
+* You faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+== Mold of Ro Bracer ==
+You must have Amiable faction with [[Deepwater Knights]] to complete this step.
+; You say, 'Hail, David'
+: David says, 'I, the keeper of the [Bracers of Ro], welcome you. Come and rest within our camp. You have nothing to fear while such righteous might is gathered.'
+; You say, 'I seek the Bracers of Ro'
+: David says, 'When you can swim the waters of Rathe and return two goblin nets from the elusive goblin net masters. then you will be rewarded the bracer mold.'
+
+*[[Deepwater Goblin Net]]s drop from [[a goblin net master]] in [[Lake Rathe]].
+
+Give David 2 [[Deepwater Goblin Net]]s and receive the [[Mold of Ro Bracer]].
+
+<div class="facblock">
+* Your faction standing with [[Clockwork Gnome]] got better.
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+== Mold of Ro Breastplate ==
+You must have Amiable faction with [[Clerics of Tunare]] to complete this step.
+; You say, 'Hail, Abigail'
+: Abigail says, 'Greetings! I am the holder of the secret of the [Breastplate of Ro]. You may rest here. You are quite safe within this camp of paladins.
+; You say, 'I seek the Breastplate of Ro'
+: Abigail says, 'The Breastplate of Ro mold will be awarded to you. First, you must perform a test of strength. Go to Faydwer. There you shall seek out and destroy the Tier'Dal who carry the dark cauldrons!! They have been venturing into our lands and capturing many Koada'Dal and Fier'Dal for cooking purposes! Bring me two of their dark cauldrons.'
+
+*[[A Dark Cauldron]] drops from [[an ancille cook]] in [[Mistmoore Castle]].
+
+Give Abigail 2 [[A Dark Cauldron]]s and receive the [[Mold of Ro Breastplate]].
+
+== Mold of Ro Gauntlets ==
+You must have Amiable faction with [[Priests of Marr]] to complete this step.
+; You say, 'Hail, Sentry Joanna'
+: Sentry Joanna says, 'Love and passion to you. my friend. Seek you the [Gauntlets of Ro]? If not, then I offer you the safety of this camp.'
+; You say, 'I seek the Gauntlets of Ro'
+: Sentry Joanna says, 'I will give you the mold. but first you will complete a task in the name of Erollisi Marr. My fellow Sentry. Alechin. was bitten by a wolf while he journeyed to Qeynos. He now turns into a werewolf at night. forced to kill innocent travelers. Go toward Qeynos. Release him from life and his curse and return his locket to me.'
+
+*[[A Locket]] drops from [[Sentry Alechin]] or [[a werewolf]] in [[Southern Karana]].<br>
+Note: Killing Sentry Alechin damages your [[Knights of Truth]] and [[Priests of Marr]] faction. Waiting until nightfall and killing the werewolf that he becomes does not. As you will be in South Karana for a while camping the helm drops, you might as well wait until he changes to kill him.
+
+Give Sentry Joanna [[A Locket]] and receive the [[Mold of Ro Gauntlets]].
+
+: Sentry Joanna says, 'Thank you my friend. It is good to see him free at last. I shall miss him. Here now is the mold of gauntlets as promised. Go and speak with Thomas about [Lord Searfire].'<br>
+<div class='facblock'>
+Your faction standing with KnightsofTruth got better.<br>
+Your faction standing with FreeportMilitia got worse.<br>
+Your faction standing with PriestsofMarr got better.<br>
+</div>
+
+== Mold of Ro Greaves ==
+You must have Amiable faction with [[Knights of Truth]] to complete this step.
+; You say, 'Hail, Elisabeth'
+: Elisabeth says, 'Very good to meet you. (charactername). I am the keeper of the [Greaves of Ro]. Please feel free to rest and recuperate here. We shall see that you are safe from the evils of the Rathe Mountains.
+; You say, 'I seek the Greaves of Ro'
+: Elisabeth says, 'Go to the countryside of Freeport. There, you shall seek out any nightfall giants. They have terrorized the countryside for too long. They have protection from common weapons. Rely on magic. I failed in tracking them down. You shall succeed and when return any single head to me. you shall be awarded the mold for the greaves.'
+
+*[[Nightfall Giant's Head]] drops from [[a nightfall giant]] in [[West Commonlands]].
+
+Give Elisabeth [[Nightfall Giant's Head]] and receive [[Mold of Ro Greaves]].
+
+== Mold of Ro Helm ==
+You must have Amiable faction with [[Knights of Thunder]] to complete this step.
+; You say, 'Hail, Thomas'
+: Thomas says, 'Welcome to our camp. We are paladins gathered from many lands. We have been called to this land by our deities. Ours is a crusade or righteousness. Have you happened upon us by chance or do you [seek the sacred molds]?'
+; You say 'I seek the sacred molds'
+: Thomas says, 'Many of us carry the sacred molds of the holy paladin armor. We will release it only to those who have proven themselves to each of our deities. If you seek it, speak up!! Tell us which part you seek. I carry the secret of the [Helm of Ro]. The others carry those of vambraces, breastplates, bracers, gauntlets, greaves and boots of Ro.'
+; You say, 'I seek the Helm of Ro'
+: Thomas says, 'To receive the mold of the Helm of Ro you must first demonstrate your strength. Go to the plains of thunder. There you shall hunt down the most vile creatures I have ever encounterd. Seek the undead cyclopes. I have spied them in the most dangerous portions of my realm. Fetch me two of their skulls.'
+
+*[[Cyclops Skull]]s drop from [[An undead cyclops]] in [[Southern Karana]], The undead cyclops roams the area between Splitpaw and the Aviak city and share the spawn with a regular cyclops, lions and bull elephants.
+
+Give Thomas two [[Cyclops Skull]]s and receive the [[Mold of Ro Helm]].
+
+: Thomas says, 'You have proven yourself to Karana. I grant you the mold of the Ro Helm. May the winds of Karana blow in your favor. Now you must seek out [Lord Searfire] and ask him for [ronium] to complete the second and only other component needed to be fashioned by a master blacksmith.'
+<div class='facblock'>
+Your faction standing with KnightsofThunder got better.<br>
+Your faction standing with Bloodsabers got worse.<br>
+Your faction standing with PriestsofLife got better.<br>
+Your faction standing with GuardsofQeynos got better.
+</div>
+
+== Mold of Ro Vambrace ==
+You must have Amiable faction with [[Priests of Life]] to complete this step.
+; You say, 'Hail, Marianna'
+: Marianna says, 'Rodcet Nife welcomes you into our noble camp. I am the keeper of the [Vambraces of Ro].'
+; You say, 'I seek the Vambraces of Ro'
+: Marianna says, 'The mold will be offered to you when you have performed a task for the Temple of Life. The oceans near our home are host to a plague.. the plague sharks!!. They have been infected with a deadly malady which has been turning up in Qeynos Hills. Kill the sharks and bring me two of their rotten shark portions as proof.'
+
+*[[Rotten Shark Meat]] drops from [[a plague shark]] in [[Erud's Crossing]]. There is a static plague shark spawn off the southern shore of the island which paths east to west across the length of the island. 2 hour spawn and the meat is a somewhat rare drop.
+
+Give Marianna 2 [[Rotten Shark Meat]] and receive the [[Mold of Ro Vambrace]].
+
+== Bars of Ronium ==
+
+Once you have the mold for an item, you need to talk to [[Lord Searfire]], the Dwarven Smith in The Temple of Solusek Ro. He must consider you Amiably before he will deal with you. You will need an empty main inventory slot to use the [[Sol Cauldron]] he gives you.
+
+*[[Bar of Ronium]] (crafted in a [[Sol Cauldron]]){{CheckboxList}}
+:*2x [[Enchanted Platinum Bar]]
+:*[[Melatite]]
+:*[[Mistmoore Granite]]
+:*[[Sand of Ro]]
+:*[[Soil of Underfoot]]
+{{End}}
+
+; You say, 'Hail, Lord Searfire'
+: Lord Searfire says, 'Greetings! May the glory of Solusek Ro burn in your veins. I am the forge master of this temple. Called to service by the Burning Prince. Should you ever need my service and find me gone. have no fear. I shall return. I must occasionally venture to other realms in service of the temple. I shall always return. this is my eternal home.'<br>(Note: punctuation matches in-game text, there are no commas in the first reply)
+; You say, 'Do you have ronium?'
+: Lord Searfire says, 'You seek ronium. It is a fine blend of metals. I alone hold the secret of its formula. I, and I alone, can offer it to those who serve this temple. Do you wish a [bar of the alloy]?'
+; You say, 'I wish a bar of the alloy'
+: Lord Searfire says, 'Take this Sol Cauldron. Within it shall be combined elements of this world. You will add to it, melatite, two bars of enchanted platinum, Mistmoore granite, the sands of Ro and soil of Underfoot. If you be a master blacksmith, the elements shall combine to make the enchanted metal I have named 'ronium.''
+
+You receive a [[Sol Cauldron]] (Lore). Combine the following ingredients (unstacked) in the Sol Cauldron to create [[A Bar of Ronium]]. Despite what Lord Searfire says, you do not need the [[Skill Blacksmithing|blacksmithing skill]] to combine these. This combine consumes the Sol Cauldron.
+
+* Two Bars of [[Enchanted Platinum Bar|Enchanted Platinum]]
+** A level 34 or higher enchanter with the [[Enchant Platinum]] spell is required to enchant vendor-purchased [[Platinum Bar]]s.
+* [[Melatite]] (Dropped by MB and MC Clockworks in [[Solusek's Eye]].
+** You can also sometimes buy them from the [[Gnome]]s in Solusek's Eye since many players sell them if they find them)
+** A better option may be to hang around near the merchant and offer to buy them from players. The merchant buys them for less than 1 gold, but sells them for ~100pp. A player will usually sell for 10pp-20pp.
+* [[Mistmoore Granite]] (from Gargoyles in [[Mistmoore]])
+** If you are unable to get a group, you can hang around the Pond (west of area 13), CE (the ledge north of area 8) or CY (area 6) groups and ask to loot granite. It is often left to rot, or even destroyed. I got around 2 [[Mistmoore Granite]] per hour in a CE group.
+* [[Sand of Ro]] (Dropped by [[A sand giant]], [[Cazel]], and [[Sandgiant Husam]] in [[Northern_Desert_of_Ro|North Ro]], [[Oasis_of_Marr|Oasis]], and [[Southern_Desert_of_Ro|South Ro]])
+* [[Soil of Underfoot]] (Quested from [[Priestess Ghalea]] in the [[Kaladim]] cleric's guild)
+** You MUST have at least amiable faction with Clerics of Underfoot, or the Priestess will take your items and give no reward. Give 4 [[Fairy Dust]]s to [[Priestess Ghalea]] to get 1 [[Soil of Underfoot]].<br>WARNING: The quest reward is a LORE item, use it before you try to get another.
+
+== Mistmoore Granite ==
+Mistmoore granite is fairly tough ingredient to get for making ronium. They come off all gargoyles but certain types it drop more frequently. There are Grinning, Sneering, Jeering, Leering and Flouting gargoyles. There are a few places to look for gargoyles.
+
+1. "The Tower", close to the entrance, spawns two Grinning Gargoyles which have the lowest rate of dropping. This is the safest and slowest spot to get granite. Don't expect much at this spot.
+
+2. In the "Canyon", past the "Pit", by Enyti there are 2 gargoyles by her. Most of the time it is Sneering Gargoyles but occasionally Jeering Gargoyles will show up. Rarely pulled because of close proximity to blood wolves which are much higher level.
+
+3. At the "Castle Entrance", you can pull Gargoyles from inside castle and from the "Canyon" although Gargoyles don't spawn here. A good spot for experience and granite.
+
+4. Past the Secret Room (SR), inside a little bit from the Tower, there are 2 gargoyles there (you turn left at the top of the stairs past the SR and its through the torture room...so you'll have to clear first)...this is near the Spa room where Xicotl the troll SK spawns (he has the hilt for [[SoulFire]]). If you go down the set of stairs from where those 2 gargoyles (instead of turning left and passing through the fake wall to the spa). There are 2 more gargoyles there and also another spawn (dark elf caster or melee types). Clear out this room. And then you can work 6 gargoyle spawns. The 2 up the stairs, 2 in that room and down yet another set of stairs are 2 more gargoyles and an occasional hallway roamer. So far this is the best place I have seen to get granite because you are working 6 gargoyle spawns. If you have a good group, you don't even need to be invis to get there... just fight your way in. Be careful that Xicotl isn't up...and don't go near the spa if so...as pulling him is dangerous if you are not prepared. (Mid 30's group should have little trouble with it).
+
+5. Another good place (both easy each to break and has dropped well for me before) is in the servants rooms near the Kitchen. A group of level 32-36's can invis their way in there and take the kitchen and both of the servant rooms with little difficulty...hardest part is invising your way past everything else. Make sure the person who is invising/camoing has practiced their DIV skill. There is 1 gargoyle in each of the servants quarters. The Butler room is the safest to pull to because you will have no runners and you will only get the two spawns in there. It is better I've found to go in and break the kitchen...before you start pulling. As a double harm touch from the Cooks can be a real killer if you pull them.
+
+== Faction Guide ==
+*[[Deepwater Knights]] (Prexus) (Erudian - [[Erudin]])
+**The only way to raise faction with the DW knights is to kill [[Elial Brook]] at the docks in Toxxulia Forest. He spawns every 10 minutes. He is a Necro and is often with pet.  I also found killing [[Aglthin Dasmore]] and [[Noclin Saah]] does the same thing.
+**Once your faction is at Indifferent or Amiable, you can probably start doing quests directly from the Prexus temple.: [[Zombie Flesh Quest]] for facton at Deepwater Knights. This is for the Bracers. [[The Estate of Unrest]] is a good source for this.
+**[[Odus Pearls]] Weligon Steelherder is also looking for Odus Pearls from the Odus harbor. These pearls sit underneath some very easy sharks.
+
+*[[Clerics of Underfoot]] (Brell Serillis) (Dwarven - [[Kaladim]])
+**The best way to raise Clerics of Underfoot and Miners Guild 249 faction is by bone chips questing. Give bone chips to Gunlok Jure in the Kaladim Paladin guild. This may take a couple hundred bone chips.
+
+*[[Clerics of Tunare]] (Tunare) (High Elf - [[Felwithe]])
+**Give bone chips to Yeolan Bronzeleaf in the cleric hall of Felwithe. I read it may take 400 bone chips.
+**Give muffins to Pandos, a dwarf in West Freeport. You can find Pandos on the 2nd floor of the Hogcallers' Inn.
+
+*[[Priests of Life]] & [[Knights of Thunder]] (Rodcet Nife & Karana) (Human - [[Qeynos]])
+**Bandit Sashes to Chesgard in the paladin guild.
+**Give 2 gold to Lashun Novashine and/or 2 bone chips to raise Priests of Life faction.
+
+*[[Priests of Marr]] & [[Knights of Truth]] (Mithaniel Marr) (Human - [[Freeport]])
+**A way to raise faction with the Priests of Marr is to give [[Bottle of Milk|bottles of milk]] to Mojak Hikspin, who fishes by the lake in West Commonlands. Giving Mojax milk will spawn a npc named Duggin Scumper, a thief. Kill Duggin and return the note to [[Eestyana Naestra]] in the Hall of Truth in North Freeport. If you dont want to run back and forth from WC to NFP, you can just keep giving milk to Mojax. You can give him up to 4 individual bottles (one in each trade slot) at a time.
+**Kill Orcs for Knights of Truth faction in the common lands or assist people who are killing orcs.
+
+*[[Temple Of Sol Ro]] ([[The Temple of Solusek Ro]])
+**The best way to raise Temple of Sol Ro faction is to seek out Rathmana in South Ro (NW corner of zone), and give him 30 gold at at time (it must be 30 gold, 3pp will not work).
+**Alternatively, if you're a dervish hunter, you can turn in 4 dervish rings to Ortallius, the orc who is next to Rathmana.
+**If you hang around Mistmoore a lot, you can raise faction there if you camp in the graveyard. There is a [[Flower]] that spawns in the crypt, which you can give to an outcast Shadowman named [[Ssynthi]], who sits behind the crypt building. Be careful of the invisible pit traps inside the crypt! You simply go to the Graveyard in MM. In the tomb you will see a bag, pick it up. You'll find a flower on your cursor. Go behind the Tomb and there is an outcast Shadowed Man named Synthi there, give her the flower. Rinse and repeat. The flower spawns every 1 minute. When Synthi cons amiable to you, your faction is high enough.
+
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Paladin Quests]]

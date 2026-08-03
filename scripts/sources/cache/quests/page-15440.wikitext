@@ -1,0 +1,115 @@
+{{Kunark Era}}
+[[File:npc_emperor_ganak.png|frame|Emperor Ganak]]
+<div style="float:right;">__TOC__</div>
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Trakanon's Teeth]]
+|-
+! ''' Quest Giver: '''
+| [[Emperor Ganak]]
+|-
+! ''' Minimum Level: '''
+| 1 (Note: Must be 5 to zone into Sebilis)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Burning Woods]], [[Chardok]], [[Dreadlands]], [[Firiona Vie]], [[Kaesora]], [[Karnor's Castle]], [[Lake of Ill Omen]], [[Old Sebilis]], [[Swamp of No Hope]], [[Timorous Deep]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[A Bloodgill Marauder]], [[An Ancient Jarsath]], [[Niblek]], [[Pained Soul]], [[Professor Akabao]], [[Rotting skeleton]], [[Slixin Klex]], [[Ssolet Dnaas]], [[Trakanon]], [[Verix Kyloxs Remains]], [[Xiblin Fizzlebik]], [[froglok forager]], [[froglok hunter]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Trakanon Idol}}
+</li><li> {{:Key of Veeshan}}
+</li></ul>
+
+== Description ==
+
+This is the quest to get the keys to enter [[Old Sebilis]] and [[Veeshan's Peak]]. Not far south (just keep the wall on your right) from the [[Swamp of No Hope]] zone, there's a passage going into the wall. At the end of the passage, there's a huge room with a red throne, and the ghost-looking Iksar floating on top of it is [[Emperor Ganak]]. He is indifferent.
+
+== Key to Old Sebilis ==
+
+'''For the [[Trakanon Idol]] (key to [[Old Sebilis]]):'''
+
+* The [[Medallion of the Kunzar]] drops from the [[froglok forager]] in Trakanon's Teeth.
+* The [[Medallion of the Nathsar]] drops from the [[froglok hunter]] in Trakanon's Teeth.
+
+These Mobs spawn one after another, so they are fairly easy to get.
+
+Turn in these two medallions to [[Emperor Ganak]] and you should get the [[Trakanon Idol]], which will get you into Old Sebilis, where you can find [[Trakanon]].
+
+== Key to Veeshan's Peak ==
+{{Kunark Era}}
+You need to obtain three medallions (Jarsath, Obulus and Kylong) and {{:Trakanon's Tooth}}, turn them in to [[Emperor Ganak]] in [[Trakanon's Teeth]] and you will get you the Key to [[Veeshan's Peak]].{{CheckboxList}}
+*[[Medallion of the Jarsath]] - Quest
+* [[Medallion of the Obulus]] - Quest
+* [[Medallion of the Kylong]] - Quest
+* [[Trakanon's Tooth]] - Drop
+
+=== Medallion Quests ===
+
+To obtain the medallions you need the 3 broken [[Piece of a medallion]] for each. '''Do not get these pieces mixed up!''' If you have or want to make sure you are turning in the right pieces you can use [[identify]] on them. Ground spawns are FFA and NOT A CAMP according to Stigion.
+
+*'''[[Medallion of the Jarsath Quest]] - [[Xiblin Fizzlebik]] ([[Timorous Deep]])
+
+Turn in to [[Xiblin Fizzlebik]] {{Loc|Timorous Deep|(-5778, 2943)}}
+
+* Upper Portion[19961]: Ground spawn in the [[Swamp of No Hope]] at {{Loc|Swamp of No Hope|(52, 2935, -6)}}. 8 hour respawn, tiny bag appearance near waterline and a tree.
+* Middle Portion[19960]: Drops off [[an ancient Jarsath]] at {{Loc|Firiona Vie|(116, -1365),(-322, 1854)}} in [[Firiona Vie]], wanders after spawn, sense the dead to locate easier.
+* Bottom Portion[19959]: Drops off [[a bloodgill marauder]] at {{Loc|Lake of Ill Omen|(-378, -57)}} in [[Lake of Ill Omen]], 8 hour respawn, located under the water in front of temple.
+
+
+*'''[[Medallion of the Obulus Quest]] - [[Slixin Klex]] ([[Burning Woods]])
+
+Turn in to [[Slixin Klex]] {{Loc|Burning Woods|(-678, -1129)}}
+
+* Upper Portion[19958]: Quest: [[Burnished Wooden Staff Quest]] given by [[Ssolet Dnaas]] at {{Loc|Warsliks Woods|(4014, 402)}} in [[Warsliks Woods]]. You will need to have someone charm the turn-in NPC if you are not an Iksar, have not factioned, or cannot sneak behind before turn-in.
+* Middle Portion[19957]: Drops off the [[rotting skeleton]] at {{Loc|Dreadlands|(2252, -5144)}} in [[Dreadlands]], near #4 on map.
+* Bottom Portion[19956]: Drops off the [[Pained Soul]] at {{Loc|Trakanon's Teeth|(-1834, -4368)}} in [[Trakanon's Teeth]], near the ramp down to Old Sebilis orb.
+
+
+*'''[[Medallion of the Kylong Quest]] - [[Professor Akabao]] ([[Lake of Ill Omen]])
+
+Turn in to [[Professor Akabao]] {{Loc|Lake of Ill Omen|(-2540, -2996)}}
+
+* Upper Portion[19964]: Quest: [[Niblek's Gems]] given by [[Niblek]] at {{Loc|Chardok|(506, -107)}} in [[Chardok]].
+* Middle Portion[19963]: Drops off [[Verix Kyloxs Remains]] at {{Loc|Karnor's Castle|(114, -631)}} in [[Karnor's Castle]], in the basement.
+* Bottom Portion[19962]: Ground spawn in [[Kaesora]] on the 2nd floor of the library at {{Loc|Kaesora|(55, -439)}}. 8 hour respawn.{{End}}
+
+=== Dialogue ===
+
+You say, 'hail Emperor Ganak' 
+
+:''Emperor Ganak says 'Greetings..It has been long since I have been aware on this plane..Who are you and what do you want of I, Ganak, slayer of Jaled-Dar?' ''
+
+You say, 'what is veeshan's peak?'. 
+
+:''Emperor Ganak says 'You wish to know of Veeshans Peak?! You are either very brave or very foolish! There is nothing there for the uninvited but a fiery death. I have been away from this plane of existence for a long time yet still I feel the presence of the ancient wurms. I am sure they sense my presence as well, being as I hold the only [key to the chambers] of the Ring of Scale.' ''
+
+You say, 'what about the key to the chambers?'. 
+
+:''Emperor Ganak says 'I am not so quick to grant someone the key to their death! If you truly wish your doom to fall upon you so soon then bring me the three medallions of the fallen Iksar tribes, Kylong, Obulus, and Jarsath. The tribes were long ago crushed by the warriors of the Kunzar and their remains lye buried beneath ages of rubble. Finding the lost medallions of my people will not be enough to prove your worthy of entry into the fortress of the great wurms there is another task that you must complete before you return the medallions.' ''
+
+You say, 'what medallions?'. 
+
+:''Emperor Ganak says 'There were five different tribes of my people. The Kunzar, Kylong, Nathsar, Obulus, and Jarsath. Each of these tribes had a medallion that represented it. If you can return to me the Medallion of the Kunzar and Nathsar, I will give you the Idol of Trakanon.' ''
+
+You say, 'what task'. 
+
+:''Emperor Ganak says 'Those who enter Veeshans Peak uninvited by the lords of the Ring of Scale become nothing more than a snack for the wurms that dwell within its halls. Once you cross the threshold of the Peak there Is no escape. Any fool dedicated enough to locate the medallions can do so, but it takes a truly mighty individual to slay the dragon that has plagued my people for ages. I speak of the poison dragon Trakanon, the vile undead wurm that has conquered my peoples greatest wurmslayers. Bring me proof of Trakanons death with the medallions I request and I may deem you worthy of the key to the Ring of Scale.' ''
+
+Turn in the three completed medallions and Trakanon's Tooth
+
+:''Emperor Ganak says, 'I must say, I thought your flesh would be rotting from your bones alongside the remains of the ancient Sebilisians. I commend you on your victory over the poison dragon and thank you for returning the ancient medallions of my people. I reward you with the key you seek. A place shall be prepared for your souls among the most honored of the dead. Soon you will be seeing the world through the shroud of death.' ''
+
+=== MQ Info ===
+
+This quest is MQable. '''Emperor Ganak will not say anything upon turning items in, don't panic.''' I turned in two medallions & Trakanon's Tooth on one character, camped and logged into another character to turn in the final medallion and successfully received the key. (2/14/2026)
+
+[[Category:Quests]]
+[[Category:Trakanon's Teeth]]
+[[Category:All Classes Quests]]

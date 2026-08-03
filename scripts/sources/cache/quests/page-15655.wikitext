@@ -1,0 +1,67 @@
+{{Velious Era}}
+[[File:npc_qarrgy_scallopgobbler.png|frame|Qarrgy Scallopgobbler]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cobalt Scar]]
+|-
+! ''' Quest Giver: '''
+| [[Qarrgy Scallopgobbler]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Wuoshi]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Emerald Dragonscale Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+Qarrgy Scallopgobbler may be found at -805, -400, +76.
+
+You say, 'Hail, Qarrgy Scallopgobbler' 
+
+Qarrgy Scallopgobbler sets down several large crustacean shells covered in foreign runes, then extends his large, coarse hands in a gesture of friendship. 'I am pleased to see friendly visitors to our villages. I am the head craftsman of the village. The crustacean shell armor worn by the warriors of our village was crafted by me and by my apprentices. I will craft other materials as well when they are available.'
+
+You say, 'What other materials?' 
+
+: Qarrgy Scallopgobbler says 'I am able to craft dragon scale armor but it has been a long time since I have had the opportunity to do so for my people. What kind of scales do you wish for me to craft?' 
+
+You say, 'Emerald Dragon Scales.' 
+
+: Qarrgy Scallopgobbler says 'I will craft an emerald dragonscale tunic for emerald dragon scales, ulthork tusks, and an unstained fine plate breastplate.' 
+
+[[Emerald Dragon Scales]] drop from Wuoshi in the Wakening Land. ''(Not to be confused with [[Green Dragon Scales]] used in the [[Warrior Epic Quest]]).'' [[Ulthork Tusks]] drop from various ulthorks in Siren's Grotto and Eastern Wastes.  The unstained [[Fine Plate Breastplate]] is crafted.  Hand in the three items:
+
+: Qarrgy Scallopgobbler says 'I'm sorry strange one. That is not a sufficient barter.'
+: Qarrgy Scallopgobbler says 'I'm sorry strange one. That is not a sufficient barter.'
+Qarrgy Scallopgobbler skillfully crafts the Emerald Dragon Scales into a tunic then hands it to ______ and claps enthusiastically.
+
+<div class="facblock">
+* Your faction standing with [[Othmir]] got better.
+* Your faction standing with [[Ulthork]] got worse.
+</div>
+{{exp}}
+
+You receive an [[Emerald Dragonscale Tunic]].
+
+[[Category:Quests]]
+[[Category:Cobalt Scar]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

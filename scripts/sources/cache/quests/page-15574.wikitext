@@ -1,0 +1,80 @@
+[[File:npc_corun_finisc.jpg|frame|Corun Finisc]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Corun Finisc]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+Note that one needs to slay a skulking gnoll in the caves of Surefall Glade and return his Gnoll Paw. Paws from other gnolls will not work. And Bren Treeclimber kills this gnoll when she encounters it, so be faster than her.
+
+== Reward ==
+
+Coin, Faction.
+
+== Walkthrough ==
+
+/loc of Corun Finisc? Roams.
+
+You say, 'Hail, Corun Finisc'
+
+: [[Corun Finisc]] says, 'Hello.  My name is Corun Finisc and I am one of the Jaggedpine Treefolk.  It is our divine responsibility to watch over and protect Surefall Glade and its [inhabitants] from those who seek to [destroy] them.'
+
+You say, 'Who are the inhabitants?'
+
+: Corun Finisc says 'The bears of Surefall Glade are our brothers.  We are all children of [Tunare].  We would gladly die in their defense.'
+
+You say, 'Who is Tunare?'
+
+: Corun Finisc says 'Tunare is the Mother of All.  It is through Her will that we protect this land and its many creatures.'
+
+You say, 'Who is destroying them?'
+
+: Corun Finisc says 'Poachers in seach of bear skins and [gnolls] who attack us unprovoked.  We are doing all we can to stop them.  May [Tunare] give me the strength needed to smite them dead with my [crook].'
+
+You say, 'What gnolls?'
+
+: Corun Finisc says 'The Sabertooths are a vicious band of gnolls who live in Blackburrow, to the east of Surefall Glade.  They constantly attack us when we only seek to share this land with them.  They also send many patrols out into the Qeynos Hills to the south.  We have even seen a Sabertooth skulking about in the caves behind Grizzly Falls.  There is a [reward] for his hide.'
+
+You say, 'Reward?'
+
+: Corun Finisc says 'Yes.  We are offering a small reward for slaying the skulking gnoll in the bear caves. Bring me his paw to claim your bounty.  The Jaggedpine Treefolk remember well those who aid their cause.'
+
+On handing in Gnoll Paw to Corun Finisk.
+
+:  Corun Finisc says 'Thank you for tracking down the filthy little poacher. Take this as your reward."
+
+Your faction standing with Jaggedpine Treefolk got better.
+
+Your faction standing with Protectors of Pine got better.
+
+Your faction standing with QRG Protected Animals got better.
+
+Your faction standing with Unkempt Druids got worse.
+
+Your faction standing with Guards of Qeynos got better.
+
+You gain experience!!
+
+You receive 8 copper from Corun Finisk.
+
+You receive 9 silver from Corun Finisk.
+
+You receive 2 gold from Corun Finisk.
+Lynaria saved.
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]

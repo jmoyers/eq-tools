@@ -1,0 +1,103 @@
+{{Velious Era}}
+[[File:npc_sentry_kale.png|frame|Sentry Kale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kale]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| [[Ungdin]]
+|-
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bracer of Hammerfal}}
+</li><li> 0-4 platinum pieces
+</li></ul>
+
+'''Does not always give you the Bracer of Hammerfal'''
+
+== Note ==
+
+'''Multiple versions of Sentry Kale can spawn, which give different quests. Read his quest text carefully'''
+
+'''TURN-IN:''' You can turn the [[Shipment of Velium Ore]] from [[Ungdin]] into any of the three versions of Sentry Kale to complete the quest. However, you need the Sentry Kale that responds to "I will deliver the supplies" to start the quest (get the [[Velium Delivery Note]])
+
+== Walkthrough ==
+
+This quest begins with Sentry Kale at location 195, -457, 15, in the bakery in Skyshrine.
+
+You say, 'Hail, Sentry Kale'
+
+: Sentry Kale says 'Another Halfling, in the great shrine? Perhaps the times have gotten worse than we had expected -- I wonder if I will need to reactivate my [sentinel] for further use in my stead.'
+
+You say, 'What sentinel?'
+
+: Sentry Kale says 'It was not too long ago that I was merely a chunk of walking velium in the eyes of most who traveled through the shrine. However that golem was in fact one of my sentinels used to keep my identity secluded, and took on the tasks that I gave it. However, there has been a problem recently with our supplies, and I have had to take it offline until further notice.'
+
+You say, 'What problem?'
+
+: Sentry Kale says 'As you may have noticed, there are a great deal of golems and gargoyles within the shrine that consist of velium. These are our guards and they serve us well, however with extended use of these creatures comes extensive repair needed. It is because of this necessity to keep our sentries and lookouts working well that we require a great deal of velium ore stocked and ready for use. Unfortunately, our supplies have been running thin and we are in need of a new shipment of ore.'
+
+You say, 'I will deliver the supplies.'
+
+: Sentry Kale says 'I may have been wrong in my initial thoughts about your race, Halfling. You may just prove to be worth my time. Take this note now and find Ungdin. Please hurry and remember to keep this information to yourself.'
+
+'''Sentry Kale will hand you a [[Velium Delivery Note]], which you are to take to a Coldain dwarf named [[Ungdin]] in Thurgadin.'''
+
+=== Head in to the mines ===
+
+Go into the mines and take the center tunnel. Continue in that tunnel until you come to the next fork of three tunnels. Take the one on your right. He is at the end of that tunnel. There's a table and bench in the room with him.
+
+You say, 'Hail, Ungdin'
+
+:Ungdin says 'Uuuuhhh, how goes it, Halfling? Oh, I'm doin' jest fine down here, just hanging around... Mining! Yes mining for our fearless leader, the Dain. Yessiree... sssoooooo...'
+
+'''Give him the note'''
+
+: Ungdin says 'Hmmm, not sure why you're giving me all this. <cough> 50 pieces <cough> of platinum <cough> Whew, wow, I may be coming down with <cough> and the note <cough> something.'
+
+'''Give him 50pp'''
+
+: Ungdin's eyes dart about the room before retrieving a large box from under the table. He takes the platinum and the note, then hands you the box without a word.
+
+'''You receive a [[Shipment of Velium Ore]]. Take that back to Sentry Kale in Skyshrine and he will say the following:'''
+
+: Sentry Kale says 'You've returned, and with the shipment of ore intact! It was wise to send you out on that mission, ______, and I'm glad you did not fail. If you're looking for more assignments to do, I may have something that is just right for you. If you're interested in it, just let me know and we'll talk.'
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 4 platinum from Sentry Kale. 
+
+Platinum reward will vary. You may not get the Bracer of Hammerfal each time, but he will finally give you one.
+
+Follow up with this quest: [[Friend of the Kin]]
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

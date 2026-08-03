@@ -1,0 +1,63 @@
+[[File:npc_utandar_rizndown.png|frame|Utandar Rizndown]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Utandar Rizndown]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Abscond]]
+* [[Tears of Solusek]]
+* [[Thunderbold]]
+* [[Tishan's Discord]]
+
+== Walkthrough ==
+
+Utandar Rizndown may be found in The Overthere.  He wants any of the following spell scrolls:
+
+* [[Atol's Spectral Shackles]]
+* [[Inferno of Al'Kabor]]
+* [[Pillar of Frost]]
+* [[Tears of Druzzil]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+You say, 'Hail, Utandar Rizndown'
+
+Utandar Rizndown says, 'It is good to see our numbers growing on this land.
+Welcome! May your travels be as prosperous as mine have. There are many [new powers] to be gained from this land.'
+
+You say, 'what new powers?'
+
+Utandar Rizndown says, 'The new powers are scrolls that give us access to new and powerful spells.
+My collection is almost complete. I am simply [lacking] four more and then I will return back to the homeland.'
+
+You say, 'what are you lacking?'
+
+Utandar Rizndown says, 'I am missing the scroll Atol's Spectral Shackles, Tears of Druzzil, Inferno of Al'kabor, and Pillar of Frost. Should you run into one, bring it to me and I'll perform an exchange for another scroll.'
+
+Turn in one of the above spell scrolls to Utandar Rizndown:
+
+Utandar Rizndown says, 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!'
+
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Wizard Quests]]

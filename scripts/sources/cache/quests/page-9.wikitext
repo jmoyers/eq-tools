@@ -1,0 +1,201 @@
+{{Velious Era}}
+
+{{disambig3|Graphic texture comparisons [[Players:Fashion]]}}
+''See [[Velious Armor Checklist]] for a checklist you can use to track your gems/armor pieces.''<br>
+''For a direct row by row stat comparison of each set, see [[Velious Class Armor Comparisons]].''
+
+== Faction Requirements ==
+* [[Thurgadin]] / [[Coldain]]: Kindly
+* [[Skyshrine]] / [[Claws of Veeshan]]: Ally
+* [[Kael Drakkal]] / [[Kromzek]]: Ally  - Be very wary of the various Tormax faction mobs that are on the way to the quest room in Kael; [[Dlammaz Stormslayer]] is to the left on the other side of the bridge, as well as at least the two throne guards in the throne room. Also keep in mind there is corpse drag aggro in Kael, even for you dragging your own body near mobs you are max ally with.
+
+'''It should be noted there is no level requirement on the quests.'''
+
+== Melee Sets ==
+{| class="eoTable3" style="width:725px;"
+! style="width:125px;" | Class
+! style="width:200px;" | Thurgadin
+! style="width:200px;" | Kael
+! style="width:200px;" | Skyshrine
+! style="width:200px;" | Mischief
+! style="width:200px;" | Growth
+|-
+| Bard
+| [[Resonant Armor]]
+| [[Troubadour Armor]]
+| [[Twilight Armor]]
+|
+| [[Melodic Armor]]
+|-
+| Monk
+| [[Grand Master's Armor]]
+| [[Golden Star Armor]]
+| [[White Lotus Armor]]
+| [[Monkey Hide Armor]]
+| [[Silver Moon Armor]]
+|-
+| Paladin
+| [[Runed Protector's Armor]]
+| [[Shining Armor]]
+| [[Scaled Knight's Armor]]
+| 
+| [[Righteous Armor]] (Hate 2.0)
+|-
+| Ranger
+| [[Runed Scout's Armor]]
+| [[Forest Stalker's Armor]]
+| [[Golden Leaf Armor]]
+|
+| [[Armor of the Untamed]] (Hate 2.0)
+|-
+| Rogue
+| [[Brigand's Armor]]
+| [[Deceiver's Armor]]
+| [[Shadow Armor]]
+|
+| [[Assassin's Armor]]
+|-
+| Shadow Knight
+| [[Dark Runed Armor]]
+| [[Malevolent Armor]]
+| [[Blood Lord's Armor]]
+|
+| [[Noctivagant Armor]]
+|-
+| Warrior
+| [[Champion's Armor]]
+| [[Warrior_Kael_Armor_Quests|Warlord's Armor]]
+| [[Myrmidon Armor]]
+|
+| [[Berserker's Armor]] [[Legionnaire Scale Armor]] (Hate 2.0)
+|}
+
+== Caster Sets ==
+{| class="eoTable3" style="width:725px;"
+! style="width:125px;" | Class
+! style="width:200px;" | Thurgadin
+! style="width:200px;" | Kael
+! style="width:200px;" | Skyshrine
+! style="width:200px;" | Mischief
+! style="width:200px;" | Growth
+|-
+| Enchanter
+| [[Beguiler's Armor]]
+| [[Dazzling Armor]]
+| [[Illusionist's Armor]]
+| [[Mischievous Dazzler Armor]]
+| [[Resplendent Armor]]
+|-
+| Magician
+| [[Arch Mage's Armor]]
+| [[Summoner's Armor]]
+| [[Prestidigitator's Armor]]
+| [[Sly Summoners Armor]]
+| [[Armor of Conjuration]]
+|-
+| Necromancer
+| [[Warlock's Armor]]
+| [[Plague Bearer's Armor]]
+| [[Rotting Armor]]
+| [[Maleficent Armor]]
+| [[Armor of the Bonecaster]]
+|-
+| Wizard
+| [[Sage's Armor]]
+| [[Armor of the Invoker]]
+| [[Icicle Armor]]
+| [[Wily Warlock Armor]]
+| [[Sorcerer's Armor]]
+|}
+
+== Priest Sets ==
+{| class="eoTable3" style="width:725px;"
+! style="width:125px;" | Class
+! style="width:200px;" | Thurgadin
+! style="width:200px;" | Kael
+! style="width:200px;" | Skyshrine
+! style="width:200px;" | Mischief
+! style="width:200px;" | Growth
+|-
+| Cleric
+| [[Armor of Forbidden Rites]]
+| [[Templar's Armor]]
+| [[Akkirus' Armor of the Risen]]
+| [[Crazy Cleric Armor]]
+| [[Armor of Stability]]
+|-
+| Druid
+| [[Rowyl's Armor of Nature]]
+| [[Nature Walker's Armor]]
+| [[Woven Grass Armor]] <div class="armorSetStats">{{#lst:Woven Grass Armor|armorSetStats}}</div>
+| [[Twisted Nature Armor]]
+| [[Armor of Harmony]] (Hate 2.0)
+|-
+| Shaman
+| [[Rune Crafter's Armor]]
+| [[Spirit Caller's Armor]]
+| [[Wolf Caller's Armor]]
+| [[Shamanistic Shenannigan Armor]]
+| [[Spirit Weaver's Armor]]
+|}
+
+{{:Velious Class Armor Comparisons}}
+
+== Obtaining Velious Armor Sets ==
+
+=== Thurgadin, Kael, and Skyshrine ===
+To create the Thurgadin, Kael, and Skyshrine class armor, you must collect a few Velious gems (Dropped) and a Armor Component (Dropped). To check faction; Hail the Quest giver - if they will talk to you about the quest they will accept the turn in.
+
+{| class="eoTable3"
+!
+! Thurgadin
+! Kael
+! Skyshrine
+|-
+| '''Faction Required'''
+| Kindly
+| Ally
+| Ally
+|-
+| '''Component Location'''
+| [[Kael Drakkel]]
+(Arena)
+| [[Temple of Veeshan]]
+(North and West Wing)
+| [[Temple of Veeshan]]
+(Halls of Testing)
+|-
+| '''Plate'''
+| Corroded Plate
+| Ancient Tarnished Plate
+| Unadorned Plate
+|-
+| '''Chain'''
+| Corroded Chain
+| Ancient Tarnished Chain
+| Unadorned Chain
+|-
+| '''Leather'''
+| Eroded Leather
+| Ancient Leather
+| Unadorned Leather
+|-
+| '''Cloth'''
+| Torn Enchanted Silk
+| Ancient Silk
+| Tattered Silk
+|}
+
+=== Plane of Growth ===
+Plane of Growth armor sets drop from various mobs in [[Plane of Growth]].
+
+=== Plane of Mischief ===
+The [[Plane of Mischief]] armor is obtained via [[The Gift Box]] quest.
+
+==Velious Armor Gems==
+Useless/Vendor gems include: [[Crushed Emerald]], [[Crushed Diamond Dust]], [[Chipped Black Marble]], [[Crushed Sea Sapphire]], [[Crushed Chrysolite]], [[Coral Crescent]], [[Flawed Chrysolite]], [[Flawed Flame Emerald]], [[Flawed Lava Ruby]], [[Flawed Opal]], [[Flawed Flame Opal]], [[Chipped Fire Opal]], [[Crushed Nephrite]]
+{{:Velious_Armor_Gems}}
+
+[[Category:Velious Armor Quests]][[Category: Velious Era]]
+
+{{Velious Era}}

@@ -1,0 +1,146 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_fardonad_fe`dhar.png|frame|Fardonad Fe`Dhar]]
+[[File:Dwarfakk.png|frame|Dwarf in full set of Akkirus']]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Fardonad Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East
+|}
+
+Ally faction is required for all Skyshrine armor quests.<br>
+
+== Reward ==
+{{Gear Set
+|Akkirus' Crown of the Risen
+|Akkirus' Chestplate of the Risen
+|Akkirus' Vambraces of the Risen
+|Akkirus' Bracelet of the Risen
+|Akkirus' Gauntlets of the Risen
+|Akkirus' Greaves of the Risen
+|Akkirus' Boots of the Risen
+}}
+
+== Checklist ==
+Turn-ins to [[Fardonad Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Akkirus' Crown of the Risen]]
+:*[[Unadorned Plate Helmet]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Akkirus' Chestplate of the Risen]]
+:*[[Unadorned Breastplate]]
+:*3x [[Black Marble]]
+*[[Akkirus' Vambraces of the Risen]]
+:*[[Unadorned Plate Vambraces]]
+:*3x [[Jaundice Gem]]
+*[[Akkirus' Bracelet of the Risen]]
+:*[[Unadorned Plate Bracer]]
+:*3x [[Crushed Opal]]
+*[[Akkirus' Gauntlets of the Risen]]
+:*[[Unadorned Plate Gauntlets]]
+:*3x [[Crushed Lava Ruby]]
+*[[Akkirus' Greaves of the Risen]]
+:*[[Unadorned Plate Greaves]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Akkirus' Boots of the Risen]]
+:*[[Unadorned Plate Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+Fardonad Fe`Dhar is now located at 1550, 1370, lined up with the other class turn in NPCs at Skyshrine Tower Top, not in the libraries where they once were.
+
+You say, 'Hail, Fardonad Fe`Dhar'
+
+Fardonad Fe`Dhar bows. 'Hail, most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling if you are a cleric.  Do you wish my aid?'
+
+You say, 'I wish your aid'
+
+: Fardonad Fe`Dhar says 'Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.'
+
+Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned plate armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.
+
+Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.
+
+<div class='facblock'>
+* Your faction with [[Claws of Veeshan]] got better.
+* Your faction with [[Yelinak]] got better.
+* Your faction with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Fardonad Fe`Dhar says 'I shall craft a helm for you but you must seek these items out for me first.  I have need of an unadorned plate helmet and three pieces of crushed onyx sapphire.'
+
+Return with [[Unadorned Plate Helmet]] and three [[Crushed Onyx Sapphire]]s.
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Fardonad Fe`Dhar says 'As your faith protects you, so shall this breastplate.  I must have an unadorned breastplate and three pieces of black marble.'
+
+Return with an [[Unadorned Breastplate]] and three [[Black Marble]] pieces.
+
+== Armplates ==
+
+You say, 'What armplates?'
+
+: Fardonad Fe`Dhar says 'Such lofty goals your kind sets for yourselves.  But, that is the way of your kind, I suppose - to seek that which is the most difficult to attain.  Bring to me a set of unadorned vambraces and three jaundice gems and you will receive your reward.'
+
+Return with [[Unadorned Plate Vambraces]] and three [[Jaundice Gem]]s.
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Fardonad Fe`Dhar says 'For the bracers, faithful one, I shall require the acquisition of an unadorned plate bracer as well as three crushed opals.'
+
+Return with [[Unadorned Plate Bracer]] and three [[Crushed Opal]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Fardonad Fe`Dhar says 'I will need a pair of unadorned gauntlets as well as three crushed lava rubies, so that I may make your reward.'
+
+Return with [[Unadorned Plate Gauntlets]] and three [[Crushed Lava Ruby|Crushed Lava Rubies]].
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Fardonad Fe`Dhar says 'You shall acquire a pair of unadorned plate greaves and three chipped onyx sapphires for me.  I await your return.'
+
+Return with [[Unadorned Plate Greaves]] and three [[Chipped Onyx Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Fardonad Fe`Dhar says 'With your aid, I shall make a pair of fine boots for you.  All that is needed are a pair of unadorned plate boots and three crushed flame emeralds.'
+
+Return with [[Unadorned Plate Boots]] and three [[Crushed Flame Emerald]]s.
+
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Cleric Quests]]
+[[Category:Skyshrine Armor Quests]]

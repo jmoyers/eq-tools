@@ -1,0 +1,78 @@
+{{Temple Era}}
+[[File:npc_vilissia.png|frame|Vilissia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vilissia]]
+|-
+! ''' Minimum Level: '''
+| 32
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[Martar Icebear]], [[a froglok shinta warrior]], [[a shadowed man]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tishan's Kilt}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+*[[Shadowed Ball]] (From [[a shadowed man]])
+*[[Barbarian Head (Head of Wulfthan)]] (From [[a froglok shinta warrior]] in [[Upper Guk]])
+*[[Warthread Kilt]] (From [[Martar Icebear]] in [[Everfrost Peaks]])
+
+== Walkthrough ==
+
+You say, 'Hail, Vilissia'
+
+: [[Vilissia]] says 'I am Vilissia, chosen of Solusek Ro. I am a practitioner in the wizardly arts, and keeper of lore for the [runescale cloak], [Tishan's kilt] and the [acumen mask].'
+You say, 'What Tishan's kilt?'
+: Vilissia says 'Tishan was once counted among the mightiest of wizards, and his items are items of power. If you are interested in acquiring Tishan's kilt, you must take a shadowed ball from our mortal enemies, the shadowed men, and bring it to Trankia in the Everfrost Mountains.' 
+
+'''You must take a [[Shadowed Ball]] from Shadowed Men and bring it to [[Trankia]] in the Everfrost Mountains.'''
+
+: Trankia says 'You must be another one from Vilissia. I will tell you what I tell all the others - you must help be [avenge] my [brother] before I will help you attain Tishan's Kilt.'
+
+{{exp}}
+
+''(You receive a Tattered Note - Reads: Reminder for a Shadowed Ball - Identifies: This item appears to be written in Barbarian)''
+
+You say, 'I will avenge your brother.'
+
+: Trankia says 'My brother was part of a raiding party that adventured into the Caverns of Guk. Somewhere inside, he was betrayed and left for dead by the dastardly brother of Karg IceBear, Martar. I want you to find me what remains of my brother's body and bring it back to me. I am told that he died in a mine shaft.'
+
+'''After you hand in the [[Shadowed Ball]] you must then head to Guk and kill the shinta warrior.'''
+
+'''This will get you the [[Barbarian Head]], which you must then take back to [[Trankia]]. Giving Trankia the Barbarian Head...'''
+
+: Trankia says 'Oh, Wulfthan, look what has become of you! I told you that you should not have trusted Martar. <<name>>, as a final service, I want you to kill Martar IceBear for me. He is known to roam these parts. Bring me the warthread kilt he wears and my two reminder notes, and I will give you Markar's kilt.'
+
+{{exp}}
+
+''(You receive a Tattered Note - Reads: Reminder for a good deed done. - Identifies: This item appears to be written in Barbarian)''
+
+'''She will ask you then to kill [[Martar Icebear]] and hand in the [[Warthread Kilt]] you find on him along with the two notes (one for the shadow ball one for the barb head).'''
+
+'''Giving Trankia the two Tattered Notes and the Warthread Kilt...'''
+: Trankia says 'Ah, Wulfthan, you are at last avenged. Thank you, <<name>>- please take this kilt as a reward for services well done.'
+
+{{exp}}
+
+She will then reward you with the Kilt. 
+
+Note: May be able to multiquest this but need confirmation. It is possible to solo all the drops on a higher level and trade the Shadowed Ball to the wizard to turn in after turning in the note from the Barbarian Head and the Warthread Kilt.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

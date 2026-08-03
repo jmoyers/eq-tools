@@ -1,0 +1,137 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_komawin_fe`dhar.png|frame|Komawin Fe`Dhar]]
+[[File:Monk_skyshrine_armor_appearance.jpg|300px|thumb|A full set of Monk Skyshrine Armor shown on a human.]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Komawin Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV East)
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|White Lotus Headband
+|White Lotus Chest Wraps
+|White Lotus Arm Wraps
+|White Lotus Wrist Wraps
+|Fist of the White Lotus
+|White Lotus Pants
+|White Lotus Slippers
+}}
+
+== Checklist ==
+Turn-ins to [[Komawin Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[White Lotus Headband]]
+:*[[Unadorned Leather Cap]]
+:*3x [[Crushed Coral]]
+*[[White Lotus Chest Wraps]]
+:*[[Unadorned Leather Tunic]]
+:*3x [[Flawless Diamond]]
+*[[White Lotus Arm Wraps]]
+:*[[Unadorned Leather Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[White Lotus Wrist Wraps]]
+:*[[Unadorned Leather Bracelet]]
+:*3x [[Crushed Flame Emerald]]
+*[[Fist of the White Lotus]]
+:*[[Unadorned Leather Gloves]]
+:*3x [[Crushed Topaz]]
+*[[White Lotus Pants]]
+:*[[Unadorned Leather Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[White Lotus Slippers]]
+:*[[Unadorned Leather Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Komawin Fe`Dhar is located (https://youtu.be/J2-SACbuMD4?t=138) LOC +1654 +1021 at Tower TOP
+
+You say, 'Hail, Komawin Fe`Dhar'
+
+: Komawin Fe`Dhar says 'Greetings to you. I seek one that has chosen the path of monkhood. What do you call yourself?'
+
+You say, 'I am a monk'
+
+: Komawin Fe`Dhar says 'Good. I had hoped you were one. As seeker of the way you are in constant training to push yourself to your physical and mental limits. It is an admirable quality and I wish to aid you. I will provide you with a cap, a tunic, sleeves, bracers, gloves, leggings and boots.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned leather armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''For each armor piece, bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Cap ==
+
+You say, 'What cap?'
+
+: Komawin Fe`Dhar says 'I shall weave one of exceptional quality for you but you must gather the items first. I require an unadorned leather cap and three pieces of crushed coral.'
+
+Return with [[Unadorned Leather Cap]] and three [[Crushed Coral]] pieces.
+
+== Tunic ==
+
+You say, 'What tunic?'
+
+: Komawin Fe`Dhar says 'You shall be an imposing force with this tunic. Solid as the unmoving mountains, it shall protect you. Once I have gained a set of three flawless diamonds and an unadorned leather tunic.'
+
+Return with [[Unadorned Leather Tunic]] and three [[Flawless Diamond]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Komawin Fe`Dhar says 'As the mighty stone that parts the flow of water, so shall these sleeves divert harm against you. Bring me a pair of unadorned leather sleeves and three flawed emeralds.'
+
+Return with [[Unadorned Leather Sleeves]] and three [[Flawed Emerald]]s.
+
+== Bracelet ==
+
+You say, 'What bracers?'
+
+: Komawin Fe`Dhar says 'For a bracer I shall require three crushed flame emeralds and an unadorned leather bracelet. Bring me these items and the reward shall be yours to keep.'
+
+Return with [[Unadorned Leather Bracelet]] and three [[Crushed Flame Emerald]]s.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Komawin Fe`Dhar says 'Your hands are like the wind, everflowing and moving. Subtle one moment, then a howling wind raining blow upon blow to your foes. These gloves shall aid you. In order for me to complete them, I require a pair of unadorned leather gloves and three crushed topaz.'
+
+Return with [[Unadorned Leather Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Komawin Fe`Dhar says 'The leggings shall protect you, as the valley shelters the still pool within it from the howling winds. Furnish a pair of unadorned leather leggings and three flawed sea sapphires.'
+
+Return with [[Unadorned Leather Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Komawin Fe`Dhar says 'Your feet are as hard as any stone and as swift as a coiled serpent but even the swiftest feet require protection so I shall provide you with these. They should help. Acquire a pair of unadorned leather boots and three crushed pieces of black marble.'
+
+Return with [[Unadorned Leather Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Monk Quests]]
+[[Category:Skyshrine Armor Quests]]

@@ -1,0 +1,84 @@
+[[File:npc_mcneal_jocub.png|frame|McNeal Jocub]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[McNeal Jocub]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Gnasher Furgutt]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Black Burrow Stout}}
+</li></ul>
+
+== Walkthrough ==
+
+Inside Fish's Ale:
+
+: McNeal Jocub says 'Blast!! We are running [low]!!'
+
+Your Location is -243.82, -261.48, 3.28
+
+You say, 'Hail, McNeal Jocub'
+
+: McNeal Jocub says 'Good ta see ya! Now start showin' these poodlewalkers how a real fish drinks!'
+
+You say, 'Running low on what?'
+
+: McNeal Jocub says 'This is going to sound crazy, but my main supplier of [Blackburrow Stout] is one of the brewers themselves. I have run too low on the fine brew and need someone to [pick up my shipment].'
+
+You say, 'I will pick up the shipment.'
+
+: McNeal Jocub says 'Take this note to the Qeynos Hills. Somewhere there, you shall find a gnoll at night called Gnasher. Give him the note. Now, get moving!'
+
+You receive "A tattered note" (identifies as "To Branick").  It reads:
+
+ Branick Notai Here is the lackey I sent to retrieve this month's shipment. I have informed The Circle of your needs and they will provide you with them at a later date. McJ
+
+Gnasher Furgutt sometimes wanders around the Qeynos Hills (/loc?).
+
+You say, 'Hail, Gnasher Furgutt'
+
+: [[Gnasher Furgutt]] says 'Who are you? Did McNeal send you? If not, you would do yourself good to leave Gnasher alone. I have friends in high places.'
+
+'''Give Gnasher the note.'''
+
+: Gnasher Furgutt says 'Ah. Good for you! Here you are. Take this to McNeal, but next time there will be no stout if there are no weapons.'
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+</div>
+{{exp}}
+
+'''You receive a [[Case of Blackburrow Stout]] (NO TRADE version).  Bring it back to McNeal Jocub.'''
+
+: McNeal Jocub says 'Good work, pal. Here's a little dough to spend, just don't spend it at any other bar.'
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+</div>
+{{exp}}
+
+You receive 3 silver, 12 copper pieces from McNeal Jocub.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

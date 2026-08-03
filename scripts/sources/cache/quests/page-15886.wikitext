@@ -1,0 +1,53 @@
+{{Velious Era}}
+[[File:Npc_bob_the_painter.png|frame|Bob the Painter]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Mischief]]
+|-
+! ''' Quest Giver: '''
+| [[Bob the Painter]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Peachy D`Vicci]]
+|}
+
+== Reward ==
+A single piece of one of the following armor sets:
+
+* [[Crazy Cleric Armor]]
+* [[Twisted Nature Armor]]
+* [[Mischievous Dazzler Armor]]
+* [[Sly Summoners Armor]]
+* [[Monkey Hide Armor]]
+* [[Maleficent Armor]]
+* [[Shamanistic Shenannigan Armor]]
+* [[Wily Warlock Armor]]
+
+== Walkthrough ==
+
+Talk to [[Bob the Painter]] and give him your [[Words of Wealth]]: you will get an [[Empty Pot of Gold]] (2 slot container).
+
+In that container combine:
+
+* a [[Armor of Distraction]] piece (created via the [[Deck of Spontaneous Generation Quest]])
+* a [[:Category:Plane of Mischief Dolls|Plane of Mischief Doll]] (created via the [[The Gift Box]] quest)
+
+to create the corresponding piece of [[Plane of Mischief Armor]] for the class indicated by the [[:Category:Plane of Mischief Dolls|Plane of Mischief Doll]].
+
+== See Also ==
+
+* [[Deck of Spontaneous Generation Quest]]
+* [[The Gift Box]]
+
+[[Category:Quests]]
+[[Category:Plane of Mischief]]
+[[Category:All Classes Quests]]

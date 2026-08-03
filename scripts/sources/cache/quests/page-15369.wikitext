@@ -1,0 +1,108 @@
+[[File:nomaria.jpg|frame|Nomaria Doseniar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Nomaria Doseniar]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All Classes
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]], [[Qeynos Hills]], [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[Gharin]], [[Te'Anara]]
+|}
+
+== Reward ==
+
+<ul><li>  Factions (Bloodsabers namely)
+</li><li>  Coin
+</li></ul>
+
+== Walkthrough ==
+
+'''Find [[Nomaria Doseniar]] located in the [[Qeynos Aqueducts]] at loc 347, -614 ''' ''(Optional)''
+
+You say, 'Hail, Nomaria Doseniar' ''(even at Dubious she responded)''
+
+:Nomaria Doseniar says 'Welcome! It is good to see our disciples can still outsmart the guards of Qeynos and make it to the Shrine of Bertoxxulous. Our ranks are best filled with disciples such as yourself. We have need of you. Do you wish to serve the Lord of Disease or not?'
+
+You say, 'I wish to serve.'
+
+:Nomaria Doseniar says 'Aye! That is good. Of late, we have heard news of a message that will be sent to the Treefolk of the Jaggedpine. Antonius Bayle will send word to the Jaggedpine that certain requests will be met. We must intercept this message. That is all you need to know. Go and find Antonius Bayle's messenger, Gharin. He should have the message. Get it by any means necessary and return it to me. Go now!'
+
+'''Find [[Gharin]] in [[South Qeynos]] hanging near the Bag n Barrel and sometimes wandering to his room on the third floor of the Lion's Mane Inn.'''
+
+You say, 'Hail, Gharin'
+
+:Gharin says 'Good day! I see they have good stock for the future armies of Qeynos. I, myself, wish to be a soldier one day instead of doing this [job].'
+
+You say, 'What job?'
+
+:Gharin says 'I am a [messenger] for Antonius Bayle. Not big enough to fight, but light enough to run all the way to the [Jaggedpine] tomorrow morning. I sort of wish I did not have to go. I'd rather be at the Lion's Mane.'
+
+You say, 'What is Jaggedpine?'
+
+:Gharin says, 'I will be taking a private note to the head druid of the Jaggedpine Treefolk. Matter of fact, I am carrying the note right now. But enough about that, if it were not for the mission tomorrow, I could be doing something at the [Lion's Mane].'
+
+You say, 'What is Lion's Mane'
+
+:Gharin says 'Ahh. The Lion's Mane. If I were there, I would be enjoying a stein of Crow's [special brew]. They are expecting their first shipment of the brew. I believe if I had a few or more of those lagers, I would be very ill. I would probably have to have someone else deliver the note for me. Still, I wish I had one of those fine brews.'
+
+'''Hand [[Gharin]] 4 [[Crows Special Brew]] to receive the letter.'''
+
+''Note: There are two kinds of Crow's Special Brew in the game. [[Crow's Special Brew]] with an ' Apostrophe in the name that comes from Tattered Pouch quest will '''not''' be accepted by Gharin. The correct kind [[Crows Special Brew]] is purchased from [[Crow]] himself, but this is a limited supply item (20). Once he sells out, its all gone until the server is restarted or he respawns after being killed.'' 
+
+: Gharin says 'Oohhh! My head. Stop the pub from spinning. I cannot make it to the Jaggedpine feeling like this. Please take this note to Te'Anara of the Treefolk. Here is a little silver for the favor. Thanks. Ooohhhh..'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 50.
+* Your faction standing with [[Antonius Bayle]] has been adjusted by 5?.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by -7.
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by -12.
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 5?.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 - 2 silver<br>
+You receive A Sealed Letter
+
+'''Return to [[Nomaria Doseniar]] and hand her the Sealed Letter'''  
+
+:Nomaria Doseniar says 'Good work, child of the plague. Now take this forged note to Te'Anara of the Jaggedpine Treefolk. Be sure to watch your back, now. The guards of Qeynos surely know who you are by now. They will not stop to ask questions.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] has been adjusted by 50.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -7.
+* Your faction standing with [[Opal Dark Briar]] has been adjusted by 5.
+* Your faction standing with [[Priests of Life]] has been adjusted by -12.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 5.
+</div>
+
+You receive 8 silver<br>
+You receive: Sealed Letter [Note To Jaggedpine - fake] which reads:
+
+  Te'Anara, I Regret to inform you that my city shall not impose the tax increase for bearskins as you requested.<br> Furthermore, we shall not be arresting poachers for extradition to the Jaggedpine.<br> Signed,<br> Antonius Bayle
+
+'''Go to [[Surefall Glade]] (aka Jaggedpine) and find [[Te`Anara]] at loc -209, -441 to hand her the Sealed Letter'''
+
+:TeAnara says 'This is dreadful news. We have been nothing but kind neighbors to Qeynos. Now Antonius Bayle wishes to abuse our friendship. This will not sit well with the others. Begone, messenger!'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by -30.
+* Your faction standing with [[Protectors of Pine]] has been adjusted by -7.
+* Your faction standing with [[Surefall Protected Animals]] has been adjusted by -4.
+* Your faction standing with [[Unkempt Druids]] has been adjusted by 7.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -4.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]

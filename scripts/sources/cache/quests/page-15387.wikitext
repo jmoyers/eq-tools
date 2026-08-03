@@ -1,0 +1,59 @@
+{{Classic Era}}
+[[File:npc_soonog.png|frame|Soonog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Soonog]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Ogre)
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| lizardmen
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rusty Two Handed Sword}}
+</li><li> [[Faction]], Experience
+</li></ul>
+
+== Walkthrough ==
+
+You can give Soonog in the Greenblood guild 4 [[lizard meat]] for a rusty two handed sword.
+
+You say, 'Hail, Soonog'
+
+: Soonog says 'You [Greenblood]?'
+
+You say, 'Me Greenblood'
+
+: Soonog says 'Gud. you go kill da lizzies in da Feerrott. Bring Soonog four of dere meatses. Soonog give you gud sword to bash more lizzies wif.'
+
+'''You hand the four lizardmen tails to Soonog:'''
+
+: Soonog says, "Mmm Lizzie meat!! Here, go bash dem lizzies more better wif dis."
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Storm Guard]] got worse.
+* Your faction standing with [[Shadowknights of Night Keep]] got worse.
+</div>
+
+{{YouGainExperience}}.
+
+You Receive {{:Rusty Two Handed Sword}}.
+
+At Indiffrent, you cannot do this quest. Presumably, this is only doable by fledgling Shadow Knights.
+
+[[Category:Quests]]
+[[Category:Oggok]]

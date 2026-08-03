@@ -1,0 +1,69 @@
+{{Classic Era}}{{cleanup}}
+{{Namedmobpage
+
+| imagefilename     = npc_jarlen_meadowgreen.png
+
+| emu_id            = 
+| illia_id          = 
+
+| name              = Jarlen Meadowgreen
+| race              = Centaur
+| class             = ?
+| level             = less than 31
+| agro_radius       = ?
+| run_speed         = ?
+
+| zone              = [[South Karana]]
+| location          = 100% @ (86.50, -2248.15, -0.03)
+
+| AC                = 
+| HP                = 
+| HP_regen          = 
+| mana_regen        = 
+
+| attacks_per_round = 
+| attack_speed      = 
+| damage_per_hit    = 
+| special           = 
+| description = Bread shipment quests are completed by handing a '''[[Bag of Bread Loaves]]''' to various Innkeepers and Merchants listed here [[Bread_Shipment_Quests|Bread Shipment Quests]].<br>
+<br>
+The only current source of acquiring the [[Bag of Bread Loaves]] is as an uncommon drop in [[Runnyeye Citadel]] from Sporali and Pickclaw goblins. <br>
+<br>
+''The original source of this quest was part of a time-locked event involving handing 2 gold to [[The Bread Shipment|Jarlen Meadowgreen]] in [[South Karana]] to get the Bread Loaves.
+
+See ZAM's page for this quest here [https://everquest.allakhazam.com/db/quest.html?quest=1261].
+
+''The original (removed) quest follows:''<br>
+You say, 'Hail, Jarlen Meadowgreen'
+
+: Jarlen Meadowgreen says, 'Hello there stranger! What brings you here?'
+
+You say, 'I am here to pick up some bread loaves.' (or say just "bread")
+
+: Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+
+| known_loot = 
+
+* Unknown
+
+| factions = 
+
+* Unknown
+
+| opposing_factions = 
+
+* Unknown
+
+| related_quests = 
+
+* [[Bread Shipment Quests]]
+
+}}
+
+[[Category: Quests]]
+[[Category: Repeatable Turn-in Quests]]

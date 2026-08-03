@@ -1,0 +1,91 @@
+{{Velious Era}}
+{{unsolved}}
+[[File:npc_svekk_fangbinder.png|frame|Svekk Fangbinder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Svekk Fangbinder]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Korzak Stonehammer]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:UNKNOWN}}
+</li></ul>
+
+== Walkthrough ==
+
+'''This seems to be a broken quest with no reward.'''
+
+You say, 'hail Svekk Fangbinder'
+
+: Svekk Fangbinder says 'Greetings, Kabal .  I am Svekk, a humble servant of Wenglawks.  It is my job to keep track of the supplies here.  I also sell mundane wares. 
+
+You say, 'what supplies'
+
+: Svekk Fangbinder says 'We have all kinds of supplies!  Normally we deliver them to the giants who live outside Kael. 
+
+You say, 'what giants'
+
+: Svekk Fangbinder says 'There are several encampments in the eastern wastes that barter for supplies with us monthly.  The great divide also has a small outpost of Kromrif who strive to beat the Coldain back into their city of Thurgadin and of course the outposts in the wakening lands.  Our last batch of deliveries did not reach their intended targets.  The runners have not been heard from since they were dispatched either. 
+
+You say, 'what wakening land'
+
+: Svekk Fangbinder says 'Korzak Stonehammer is the name of the man whom we usually deliver to in the Wakening Land.  His men are attempting to expand Kael further into that accursed forest.  If you buy a pack of supplies and deliver it to him I am sure he would repay you handsomely.  A single pack will only cost you a mere five hundred pieces of gold. 
+
+'''Give 500 gold pieces to [[Svekk Fangbinder]].'''
+
+Svekk Fangbinder regards you as an ally -- looks like quite a gamble.
+
+Svekk Fangbinder heaves a large pack from a pile in the corner and sets it before you. 'I wish you luck in your endeavor, Iksar.'
+
+You gain experience!!
+
+'''You receive a [[Giant Sack of Supplies]]. Travel to [[Wakening Land]] and follow the eastern wall south a bit to a ruined building where you'll find Korzak Stonehammer at (-1377, -4426).'''
+
+You say, 'Hail, Korzak Stonehammer'
+
+''(no response)''
+
+'''Upon handing Korzak a [[Giant Sack of Supplies]]:'''
+
+Korzak Stonehammer says, 'It's about time the supplies got here.  Not like it's a long trip from the center of Kael to us out here.  Payment?  I already paid Wenglawks for the supplies I ordered.  Don't give me any trouble, little one.  I have enough trouble with the missing helmets.'
+
+Your faction standing with ClawsofVeeshan could not possibly get any worse.
+
+Your faction standing with Coldain could not possibly get any worse.
+
+Your faction standing with Kromrif got better.
+
+Your faction standing with Kromzek could not possibly get any better.
+
+You gain experience!!
+
+'''No item is returned for this hand-in.'''
+
+You say, 'what helmets'
+
+Korzak Stonehammer says, 'Recently helmets have been stolen from our workers.  One of them reported seeing one of those wreched flying monkey beasts carry one off.  Having those helmets back would be very useful.  If you come across any of the workers helmets, return them to me and I will bestow a reward totem upon you.'
+
+''More information is required. What holgresh need to be killed, and where? What helmets do they drop? What is the reward? Perhaps it's the same reward as another supply quest, [[Kromrif Battle Totem]]''
+
+== See Also ==
+
+* [[The Supply Run - Great Divide]]
+* [[The Supply Run - Eastern Wastes]]
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

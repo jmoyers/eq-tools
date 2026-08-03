@@ -1,0 +1,54 @@
+
+[[File:npc_watcher_aenwen.png|300px|right|Watcher Aenwen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Quest Giver: '''
+| [[Watcher Aenwen]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Permafrost]], [[Thurgadin]], [[Dreadlands]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter I, The Shatter Sky]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Watcher Aenwen.'
+
+: Watcher Aenwen says, 'Have you seen it? Not the snowfall, but the sky. Not the cold, but the silence beneath it. Something ancient has shifted. A song once sung by stars has stilled. The Icestar — the first gift ever given — is breaking. And with it, the enchantments that bind the Plane of Snowdrift to your world begin to fade.The magic allowing us to read the Ledger is broken. We Snowdrift Elves are oathbound to frost and memory. We may not intervene where the sky fractures. But you…You may still walk the [cracked places].'
+
+You say, 'What cracked places'
+
+: Watcher Aenwen says, 'They are echoes. Reflections. Where the Icestar’s light once shone strongest in your world — now dimmed, disturbed. Rifts between our and your worlds that cannot be seen with our eyes, but are known. Go to them. Three places: where a king stands in a land once touched by frostbreath, frozen statues under the rule of a frozen  master, and the crossroads of caves in a dreadful land. At each place, speak her name. Say: Aurilias, I remember.’ The fracture will answer, if you are true.'
+
+* [[Permafrost Resonance Crystal]] comes from [[King Thex'Ka IV]] spawn in [[Permafrost]]. {{Loc | Permafrost | 660, -280}}
+* [[Thurgadin Resonance Crystal]] comes from [[Thurgadin]] at the statue straight across from [[Icewell Keep]] entrance. Stand behind the statue at {{Loc | Thurgadin | -200, 0}}.
+* [[Dreadlands Resonance Crystal]] comes from the Yeti Caves Crossroads in [[Dreadlands]] at #1 on the map. {{Loc | Dreadlands | 2400, 4845}}
+
+
+Hand in all three Crystals to Watcher Aenwen.
+
+: Watcher Aenwen touches the crystal, which glows faintly. She says, 'You have walked where we cannot. And the Icestar has heard you. It remembers, just a little. Take this - a fragment of what once was written, and what may still be restored. This story belongs in the Ledger. Let it be remembered.
+
+You receive [[Chapter I, The Shatter Sky]] and a [[Holiday Gift]].
+
+
+[[Category:Quests]]
+[[Category:Dreadlands]]

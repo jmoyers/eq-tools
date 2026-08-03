@@ -1,0 +1,177 @@
+{{Classic Era}}
+[[File:Npc retlon brenclog.png|thumb|right|One of the captives.]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Crushbone]]
+|-
+! ''' Quest Giver: '''
+| Various
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Retlon Brenclog]], [[a dwarven slave]], [[an elven slave]], [[orc slaver]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+When you kill an Orc Slaver, sometimes they will drop keys. The keys always are the same for the particular race/sex combo of a slave, but different slaves can spawn in the same places. Each key has a number to go to a lock on the slaves. When you match the key with the lock (slave) you will get xp and some cash. The number/lock combinations are as follows (except for Retlon, you can give a slave one copper and they'll tell you which key unlocks them):
+
+* [[Shackle Key 15]] goes to Retlon Brenclog.
+* [[Shackle Key 16]] goes to a dwarven slave (male).
+* [[Shackle Key 17]] goes to a dwarven slave (female).
+* [[Shackle Key 18]] goes to a Male Wood Elf Slave.
+* [[Shackle Key 19]] goes to a Female Wood Elf Slave.
+* [[Shackle Key 20]] goes to a Male High Elf Slave.
+* [[Shackle Key 21]] goes to a Female High Elf Slave
+* Keys # 22-24 appear to have no use ''(not used to free prisoners in the minotaur caves in Steamfont)''.
+
+'''Faction Note:''' Must be debiously or better.
+
+ * I received no reward while:  an elven slave glares at you threateningly
+ * I received reward while:  an elven slave glowers at you dubiously (killed orc to increase faction)
+
+===Key 15===
+
+You say, 'Hail, Retlon Brenclog'
+
+: [[Retlon Brenclog]]:  says 'Oh my word!! A rescuer!! Hurry! Get me out of these chains!! Go find the orc who has the keys!'
+
+'''Hand Retlon Brenclog [[Shackle Key 15]].'''
+
+: Retlon Brenclog:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 2 gold, 3 silver from Retlon Brenclog.
+
+===Key 16===
+
+You say, 'Hail, a dwarven slave'
+
+: [[a dwarven slave]]:  says 'Please go away. The orcs might see you and me talking and slay us both!'
+
+'''Hand [[Shackle Key 16]] to a dwarven slave (Male).'''
+
+a dwarven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 5 gold from a dwarven slave.
+
+
+Also frees Rondo Dunfire, Named Dwarf Slave under the keep.
+
+===Key 17===
+
+'''Hand [[Shackle Key 17]] to a dwarven slave (Female).'''
+
+: a dwarven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 11 silver from a dwarven slave.
+
+===Key 18===
+
+You say, 'Hail, an elven slave'
+
+: an elven slave:  says 'Please go away. The orcs might see you and me talking and slay us both!'
+
+'''Hand [[Shackle Key 18]] to an elven slave (Male Wood Elf).'''
+
+: an elven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got better.
+* Your faction standing with [[Merchants of Felwithe]] got better.
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 4 silver from an elven slave.
+
+===Key 19===
+
+'''Hand [[Shackle Key 19]] to an elven slave (Female Wood Elf).'''
+
+: an elven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Merchants of Felwithe]] got better.
+* Your faction standing with [[Kelethin Merchants]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 6 silver from an elven slave.
+
+===Key 20===
+
+'''Hand [[Shackle Key 20]] to an elven slave (Male High Elf).'''
+
+: an elven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 3 gold from an elven slave.
+
+===Key 21===
+
+'''Hand [[Shackle Key 21]] to an elven slave (Female High Elf).'''
+
+: an elven slave:  says 'Good work!! I shall be on my way. Farewell my friend!!'
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 2 Platinum, 2Gold, 2 silver from an elven slave.
+
+[[Category:Quests]]
+[[Category:Crushbone]]
+[[Category:All Classes Quests]]

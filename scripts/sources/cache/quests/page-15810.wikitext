@@ -1,0 +1,38 @@
+{{Simple Quest 
+ |era=Velious
+ |image=npc_ergrez_shortpaw.png
+ |zone=Iceclad Ocean
+ |quest giver=Ergrez Shortpaw
+ |minimum level=30
+ |classes=All except pure casters
+ |related zones=[[Iceclad Ocean]], [[Eastern Wastes]]
+ |related NPCs=cougars, walrus
+ |reward=Cougarskin Sleeves
+ |turn-in={{:Low Quality Cougarskin}} (drops from [[a snow cougar]] or named cougar, in [[Eastern Wastes]] or [[Iceclad Ocean]])
+ |turn-in 2={{:Fatty Walrus Meat}} (drops from [[Ulthork]] and [[a walrus|walrus]] in various zones; the lowest level ones are in [[Eastern Wastes]], but there are also some in [[Cobalt Scar]] and [[Siren's Grotto]])
+ |dialogue=Ergrez Shortpaw works at skinning and cleaning the raw furs around him. 
+
+You say, 'Are you skinning those?' 
+
+Ergrez Shortpaw says 'Yes. I take skin of animal that hunters catch and make into things. Very important, very big job for clan.' 
+
+You say, 'Why is it important?' 
+
+Ergrez Shortpaw says 'Is important because I make all the clothes, armor, bags, hut covers, and more. Life much harder for clan if I not here to clean and cure skins. Not many have knowledge anymore.' 
+
+You say, 'What armor?' 
+
+Ergrez Shortpaw says 'Many armors. All of animal hides from the islands. If you wanting armor then I can make for you. All I ask is you do me favor.' 
+
+You say, 'What favor?' 
+
+Ergrez Shortpaw says 'Snowfangs in need of much help lately. Once we mighty but now weak. You help us get stronger. If you want armor of wolves or cougar then I need you bring twice as many materials. For each thing you wanting I need thing. Just tell me what furs you have and I tell you what I need.' 
+
+You say, 'I have a Low Quality Cougarskin.' 
+
+Ergrez Shortpaw says 'More cat skin. You bring more meat but this time bring fatty walrus meat. Many gnolls need for winter fat. Keeps gnolls healthy.' 
+
+Hand him 1 Low Quality Cougarskin and 1 Fatty Walrus Meat. 
+
+Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it. 
+}}

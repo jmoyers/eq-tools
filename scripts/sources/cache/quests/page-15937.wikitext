@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_gans_paust.png|frame|Maesyn Trueshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Gans Paust]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Gans Paust]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Blue Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Gans Paust]] is located at -1045, -384 in the Deepwater Knights ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Gans Paust'
+
+: Gans Paust glances at you and hurriedly makes a gesture of religious meaning before you and says, 'Yes, yes, I hereby bless you in the name of Prexus. May your catch be plentiful and your nets never snag. Are there any other fisherman seeking a blessing? I'm very busy.
+
+'''Hand [[Gans Paust]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Welcome friend. Join us in the worship of Prexus, the Ocean Lord. From the harbor, go through the entrance opposite the boathouse, and then walk onto the blue teleport gem. Seek out the Deepwater Knights, and give this note to Gans Paust, the Guild Master.</code>
+
+: Gans Paust says, 'Yes, welcome friend! Here is your guild tunic. You'll make a fine addition to the Deepwater Knights.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+Note: The shirt you get is used for the quest: [[Fisherman Convert]]
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Cleric Quests]]

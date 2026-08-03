@@ -1,0 +1,95 @@
+{{Classic Era}}
+{{Disambig3|[[Bone Chips Quests]]}}
+[[File:npc_yeolarn_bronzeleaf.png|frame|Yeolarn Bronzeleaf]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Yeolarn Bronzeleaf]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]]
+|-
+! ''' Required Faction: '''
+| Apprehensive or better
+|}
+
+== Rewards ==
+
+<ul><li>  [[Strike|Spell: Strike]]
+</li>
+<li> [[Fine Steel Short Sword]]</li>
+</ul>
+
+== Walkthrough ==
+
+''[[Yeolarn Bronzeleaf]] is located at 13, -434, 0 in the Cleric Guild.''
+
+You say, 'Hail Yeolarn Bronzeleaf'
+
+: Yeolarn Bronzeleaf says, 'Hail, ______! We of Tunare are charged with protecting the Great Mother from the forces of Innoruuk. Even now, the evil minions of this foul deity are despoiling our great forest. Will you help us [protect the Mother]?' 
+
+You say, 'I will help protect the Mother'
+
+: Yeolarn Bronzeleaf says, 'Just outside the gates of Felwithe, the forces of Innoruuk gather in the guise of decaying skeletons. Bring me four set of bone chips as proof of your vigilance. I assure you, your faith shall not go unrewarded.' 
+
+'''Hand [[Yeolarn Bronzeleaf]] 4 [[Bone Chips]], unstacked.'''
+
+: Yeolarn Bronzeleaf says, 'Praise Tunare! I knew you would be victorious. I reward you with this spell, and pray that it will help you in your fight against the unholy forces of Innoruuk. When you are ready you will make a fine [Initiate of Tunare].' 
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Tunare Symbol Quests]]
+
+== Notes ==
+
+59 turn-ins will take you from scowling to threatening. Another 40 turn-ins will take you from threatening to apprehensive.
+
+This quest is NOT as good as the kaladim bone chip quest for XP purposes but it is still decent if you can't do that one for whatever reason.  For example, a Rallos Zek war/bard (dwarves hate RZ).  I think there is also a strong possibility you can do this in wolf form even as an evil deity since it is an outdoor zone and most HE surprisingly don't seem to care about deity (But I dont have a druid to test this out).
+
+On a Rallos Zek Gnome War, it took 30 stacks of bone chips to go from lvl 1-8.  It took about another 12 stacks to get to 9, and another 20 stacks to get to 10.  Thats about 62 total stacks to get to 10 (I'm going from memory but its pretty close)
+
+'''As an Iksar monk''' : don't bother to do this quest for faction. After turning in 5 full bags of bone chips I still con scowl to the guards. Complete waste of time and money. Also feign death turn in doesn't work.
+
+== Exp Gain ==
+
+3% per turn in at level 3
+
+=== Wood Elf Ranger (Green, December 2020) ===
+{| class="eoTable2"
+! Level 
+! XP to next
+! Turn-ins to complete
+! Min. XP per turn-in
+! # of Bone Chips
+! XP per Bone Chip
+|-
+| 7
+| 177800
+| 89
+| 1998
+| 356
+| 500
+|}
+
+[[Category: Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Cleric Quests]]

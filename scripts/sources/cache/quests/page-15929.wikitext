@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_baxok_curhunter.png|200px|frame|Baxok Curhunter]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Recruitment Summons]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Torn and Ripped Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a good Gnome Warrior, you will have a Recruitment Summons in your inventory. The note reads as follows:
+
+: ----   Recruitment Summons   ----    Your service is requested at Gemchopper Hall.  Return this summons to Master Warrior [[Baxok Curhunter]] to enlist immediately.
+
+Upon handing the note to [[Baxok Curhunter]]:
+
+: [[Baxok Curhunter]] says, 'I, Baxok, guildmaster, welcome you to Gemchopper Hall, young warrior! You are expected to serve his majesty, King Ak'Anon, with pride. You have much to learn. Go forth and serve!'
+<div class='facblock'>
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Torn and Ripped Tunic*]]. Good luck, Brigand!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Warrior Quests]]

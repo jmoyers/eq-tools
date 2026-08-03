@@ -1,0 +1,62 @@
+{{Velious Era}}
+[[File:Npc_debbis_the_fish.png|frame|Debbis the Fish]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Mischief]]
+|-
+! ''' Quest Giver: '''
+| [[Debbis the Fish]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related NPCs: '''
+| [[Stomples]], [[Vinny V. D`vicci]]
+|}
+
+== Reward ==
+
+<ul><li>[[Faction]]</li></ul>
+
+== Walkthrough ==
+
+If you take [[Stomples]]'s [[A Rabbit Foot|foot]], he will no longer be able to stomp. This is one of the only things that will make the inhabitants of Plane of Mischief permanently angry at you. To correct this situation, bring it to [[Debbis the Fish]].
+
+You say, 'Hail, Debbis the Fish'
+
+: Debbis the Fish sighs. 'If only I could walk in somebody elses shoes just for a day. It's not easy being a skunk you know.'
+
+Give her the [[A Rabbit Foot]].
+
+: Debbis the Fish says, 'Oh wow! A rabbits foot!! Thank you so much. Here take this, I won't need this smelly thing any more.'
+
+<div class="facblock">
+* Your faction standing with [[Denizens of Mischief]] got better.
+</div>
+
+{{YouGainExperience}}
+
+Receive [[Lucky Skunk Foot|A Lucky Skunk Foot]]. Bring this to [[Vinny V. D`vicci]], who is outside the castle on the wall.
+
+You say, 'Hail, Vinny V. D`vicci'
+
+: Vinny V D`vicci says, 'What? You think I's fishin here to amooze you? Yooz think I'm tha entertainment? I ain't da god who owns this here joint, so's I can't make no farkin hail. Go bother the Pod people kid.'
+
+Give him the foot.
+
+: Vinny V D`vicci says, 'Nice work kid. Now I'm feelin lucky. So's ya say ya wanna learn about cards right? Lemme tell ya. Them cards are nice but lets have some REAL fun. Yer resourceful, I like that. What say we take over this joint fer ourselves? Ol' Bristle's gettin soft, ya know? Wadda ya say? Man or mouse?'
+
+<div class="facblock">
+* Your faction standing with [[Denizens of Mischief]] got better.
+</div>
+
+{{YouGainExperience}}
+
+Your faction should now be back to where it started before you killed Stomples.
+
+[[Category:Quests]]
+[[Category:Plane of Mischief]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,117 @@
+{{Classic Era}}
+[[File:npc_innkeep_morpa.png|frame|Innkeep Morpa]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Feerrott]]
+|-
+! ''' Quest Giver: '''
+| [[Innkeep Morpa]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul>
+<li>  [[Faction]], Experience, Coin</li>
+</ul>
+
+{| class="wikitable" style="text-align: right;"
+|-
+! Level !! Average Coin (Plat) !! Experience
+|-
+| 23      || 2.7      || 3.69%
+|-
+| 24      || 2.4      || 3.61%
+|-
+| 25      || 2.2      || 3.13%
+|-
+| 26      || 2.5      || 2.89%
+|-
+| 27      || 2.4      || 2.63%
+|-
+| 28      || 2.7      || 2.46%
+|-
+| 29      || 2.6      || 2.33%
+|-
+| 30 (hell)      || 2.4      || 1.07%
+|-
+| 31      || 2.4      || 1.82%
+|-
+| 32      || 2.3      || 1.69%
+|-
+| 33      || 2.5      || 1.64%
+|-
+| 34      || 2.5      || 1.54%
+|-
+| 35 (hell)|| 2.5      || 0.72%
+|-
+| 36      || 2.5      || 1.33%
+|-
+| 37      || 2.5      || 1.22% (incomplete data for this level)
+|}
+
+Between levels 19 and 23, a [[Druid]] may bind at [[Innkeep Morpa]], port to [[North Karana]], run to [[Jarlen Meadowgreen]] in [[South Karana]], get the bread, and gate back.  This round trip, including zone loads and mana regeneration, takes about 7:30 minutes.
+
+At level 24, a [[Druid]] may bind at [[Jarlen Meadowgreen]], gather the bread, port to [[The Feerrott]], run to [[Innkeep Morpa]], do the turnin, and gate back.  Including two roughly 18 second zone loads, and medding back the mana spent for the gate and the port, this round trip took a 44 [[Halfling]] [[Druid]] 3:04 minutes to complete.
+
+== Walkthrough ==
+
+Speak to Innkeep Morpa in her stone hut in Feerrott.
+
+The conversation with Innkeep Morpa:
+
+You say, 'Hail Innkeep Morpa'
+
+: Innkeep Morpa says 'Huh? Oh hi. Weeze got a [problem] here. It not gud.
+
+You say, 'What problem?'
+
+: Innkeep Morpa says 'Da problem is dat weeze running low on sum kinds of foods. Weeze low on [muffins] and weeze also low on [loaves of bread]. Tink you can help us?
+
+You say, 'I can get you loaves of bread.'
+(note that responding to 'muffins' gives [[Muffin Quests|a different quest]])
+
+: Innkeep Morpa says 'You go to Plains of Karana. You look for Jarlen Meadowgreen. You tells him dat you there to get Bread Loaves for us. Weeze pay you when you get back. Tanks.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Innkeep Morpa.
+
+: Innkeep Morpa says 'You nice for getting bread loaves for us. You take some money. Weeze happy now dat weeze got more bread for sale. You maybe check back later if weeze run out of bread again.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Ogguk]] got better. <span class='oppfac'>(+4)</span>
+* Your faction standing with [[Clurg]] got better. <span class='oppfac'>(+3)</span>
+* Your faction standing with [[Oggok Guards]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum, 3 gold from Innkeep Morpa.  (This varies, see table above.)
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:The Feerrott]]
+[[Category:All Classes Quests]]

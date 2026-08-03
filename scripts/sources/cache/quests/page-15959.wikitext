@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_kinloc_flamepaw.png|frame|Kinloc Flamepaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Kinloc Flamepaw]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Kinloc Flamepaw]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Blue Training Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Kinloc Flamepaw]] is located at 307, -664 in the Hall of Sorcery: the Qeynos Caster Guild Hall.''
+
+You say, 'Hail, Kinloc Flamepaw'
+
+: Kinloc Flamepaw says, 'Greetings, Teddee. I am Kinloc Flamepaw, Arch Magician of the Order of Three.'
+
+'''Hand [[Kinloc Flamepaw]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Summon forth the powers of the arcane. Seek out the mystic knowledge of the ancients. Give this scroll to Master Kinloc Flamepaw in the Hall of Sorcery, and submerge yourself in the ways of the Magician.</code>
+
+: Kinloc Flamepaw says, 'Welcome to the Order of Three. I am Kinloc, guildmaster of the magicians. This tunic of the order is for you, wear it with honor. Study hard and master your skills, and you will become an important part of our order. Yestura shall help introduce you to the ways of magic.'
+
+<div class="facblock">
+*Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Magician Quests]]

@@ -1,0 +1,131 @@
+{{Velious Era}}__NOTOC__[[File:npc_crendatha_fe`dhar.png|frame|Crendatha Fe`Dhar]]
+[[File:Rogueshadowarmor.png|frame|Rogue in Shadow Armor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Crendatha Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Shadow Crown
+|Shadow Chestguard
+|Shadow Vambraces
+|Shadow Bracer
+|Shadow Gauntlets
+|Shadow Greaves
+|Shadow Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Crendatha Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Shadow Crown]]
+:*[[Unadorned Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Shadow Chestguard]]
+:*[[Unadorned Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Shadow Vambraces]]
+:*[[Unadorned Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Shadow Bracer]]
+:*[[Unadorned Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Shadow Gauntlets]]
+:*[[Unadorned Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Shadow Greaves]]
+:*[[Unadorned Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Shadow Boots]]
+:*[[Unadorned Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Crendatha Fe`Dhar is located at the TOP of the tower after clicking on the SECOND orb which leads you to the 'pyramid room' where all the class quest givers now reside. Crendatha is located on the right side of the room.
+
+You say, 'Hail, Crendatha Fe`Dhar'
+
+: Crendatha Fe`Dhar says 'What do we have here?  A cutthroat, perhaps? If you are a rogue, I may have use for you. I am in need of certain components and will reward you well if they are brought to me. Do I have your services?'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned chain armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction. Ally faction is required for all Skyshrine armor quests.'''
+
+== Helm ==
+
+You say, 'What coif?'
+
+: Crendatha Fe`Dhar says 'I am in need of an unadorned chain coif and three crushed pieces of coral. For your services I shall give you a coif suitable for one such as you.'
+
+Return with an [[Unadorned Chain Coif]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Crendatha Fe`Dhar says 'For the breastplate you must seek out an unadorned chain tunic and three flawless diamonds.  Only then will you receive a breastplate of my crafting.'
+
+Return with an [[Unadorned Chain Tunic]] and three [[Flawless Diamond]]s.
+
+== Armplates ==
+
+You say, 'What armplates?'
+
+: Crendatha Fe`Dhar says 'For the armplates I shall give you, I require these: unadorned chain sleeves and three flawed emeralds.'
+
+Return with [[Unadorned Chain Sleeves]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+You say, 'What bracer?'
+
+: Crendatha Fe`Dhar says 'An unadorned bracer and three crushed flame emeralds are what I require of you. A bracer of my making is your reward.'
+
+Return with [[Unadorned Chain Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Crendatha Fe`Dhar says 'I need unadorned chain gauntlets and a set of three crushed topaz. Once I have these, you shall have your reward.'
+
+Return with [[Unadorned Chain Gauntlets]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Crendatha Fe`Dhar says 'A pair of leggings will be yours once you complete this task for me, thief. A pair of unadorned chain leggings and three flawed sea sapphires are all I require.'
+
+Return with [[Unadorned Chain Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Crendatha Fe`Dhar says 'A fine pair of boots shall you have to skulk around in, once you bring me a pair of unadorned chain boots and three pieces of crushed black marble.'
+
+Return with [[Unadorned Chain Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Rogue Quests]]
+[[Category:Skyshrine Armor Quests]]

@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:npc_chesgard_sydwen.png|frame|Chesgard Sydwen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Chesgard Sydwen]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a bandit]], [[a brigand]], [[a highwayman]], [[a raider]]
+|}
+
+== Reward ==
+
+<ul><li>  A bronze weapon
+</li><li> Coin (4-15 gold)
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+Chesgard Sydwen, in the house of thunder, is willing to reward those who help eliminate the bandits in the Karanas.  Bring him a [[Bandit Sash|Bandit Sash]] and he will give you xp (about one blue to a 12 bard), faction, some decent gold and a bronze weapon.
+
+'''Upon handing in a sash:'''
+
+: Chesgard Sydwen says, 'Good work Bard.  The Karana Bandits have been plaguing the Rainkeepers flock for some time.  Take this as a small reward for your devotion.  Continue the fight against the Karana Bandits.  Ahh... I wish [Cheslin] was equally as skilled.'
+
+<div class="facblock">
+* Your faction with [[Bloodsabers]] has gotten worse.
+* Your faction with [[Guards of Qeynos]] has gotten better.
+* Your faction with [[Priests of Life]] has gotten better.
+* Your faction with [[Knights of Thunder]] has gotten better.
+</div>
+{{YouGainExperience}}
+
+You can hand in more than one sash, you will get multiple rewards.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

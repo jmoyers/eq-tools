@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_tylfon.png|frame|Tylfon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Tylfon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]], [[Enchanter]], [[Magician]], [[Necromancer]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]], [[Orc Pawn (Crushbone)]], [[a pixie trickster]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tarnished Dagger}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tylfon]] is located at -515, -229, 161 in the Scouts of Tunare ([[Rogue]]) Guild Hall.''
+
+You say, 'Hail, Tylfon'
+
+: Tylfon says, 'You [dare] to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away while you still can.'
+
+You say, 'I dare'
+
+: Tylfon says, 'So, you think you have what it takes to be a Scout of Tunare? Come back with 2 [gold] and 2 [rusty dagger]s and I'll make it worth your while.'
+
+'''Hand [[Tylfon]] 2 gold and 2 [[Rusty Dagger]]s.'''
+
+: Tylfon says, 'Well, well. I didn't think you could do it. Here's your cut and don't be surprised that it's not much because it's your first lesson. Remember, the smaller the operation, the bigger the share, and the richest rogues have the tightest lips.'
+
+<div class="facblock">
+* Your faction standing with [[Tunare's Scouts]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 5 silver pieces.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]
+[[Category:Wizard Quests]]

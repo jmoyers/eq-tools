@@ -1,0 +1,45 @@
+{{Classic Era}}{{unsolved}}
+[[File:npc_lord_grimrot.png|frame|Lord Grimrot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Grimrot]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Unknown
+|-
+! ''' Related Zones: '''
+| [[Mistmoore]]
+|-
+! ''' Related NPCs: '''
+| Unknown
+|}
+
+This is a quest that was probably in the live beta or early launch but patched out very early on.
+
+== Reward ==
+
+<ul><li>  '''Unknown''' (possibly [[Electrum-bladed Wakizashi]])
+</li></ul>
+
+== Walkthrough ==
+
+This quest follows [[Trumpy's Skull]].
+
+You say, 'Who is Arlena?'
+
+: Lord Grimrot says 'My beloved Arlena is my most perfect creation. A bit of flesh here, a bit of bone there and I created her. She left my arms while I was away. Find her and stop her. Return her bones to me so that I may restore her. She has no doubt returned to where I first met.. most.. of her, [Mistmoore Castle]!!'
+
+You say, 'what about Mistmoore Castle?'
+
+: Lord Grimrot says 'It stands on the continent of Faydwer. That is all you need to know.' 
+
+''This quest no longer results in the Electrum-Bladed Wakizashi.  I am not sure what if anything you get for this.  Lord Grimlot tells you about his poor, misguided beloved Arlena, who has run away from him to Mistmoore castle.  Being the sentimental type, he wants you to track down the lass, kill her and return her either the lute of the gypsy or her bones.
+
+[[Category:Quests]]
+[[Category:Southern Karana]]

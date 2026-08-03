@@ -1,0 +1,70 @@
+{{Temple Era}}
+[[File:npc_vira.png|frame|Vira]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vira]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  {{:Stein of Ulissa}}
+</li></ul>
+
+== Walkthrough ==
+
+Vira may be found on the balcony to the left, at +410, +85. She will give quest dialog and rewards to a level 10 Magician as of 9/29/2019 (perhaps lower).
+
+You say, 'Hail, Vira'
+
+: Vira says 'I am Vira, elementalist of Solusek Ro. I guard the secrets of the tools of [elemental summoning]. If you are a magician, you might be interested.'
+
+You say, 'What is elemental summoning?'
+
+: Vira says 'I hold the secrets to the construction of four tools which assist magicians with the summoning of elementals. I know about the [broom of Trilon], the [shovel of Ponz], the [torch of Alna] and the [stein of Ulissa].'
+
+You say, 'What of the stein of Ulissa?'
+
+: Vira says 'The stein of Ulissa was found and used by the mistress of water of the same name.  Are you [interested] in the [stein]?'
+
+You say, 'I am interested in the stein.'
+
+: Vira says 'I will devise a replica of the stein of Ulissa for you, but I will need the following items to make it: a sapphire, a scale from a mermaid, a stein from a magician in Najena and the toes of an ice giant.  Bring me these four components, and I will make for you an object of elemental power.'
+
+'''She wants the following four items:'''
+{{CheckboxList}}
+* A [[Sapphire]] may be purchased from a jewelry merchant. 
+* A [[Mermaid Scale]] drops from various mermaids around the world. 
+* A [[Stein (of Water)]] drops from magicians in [[Najena]] or alligators in [[Cazic_Thule_(Zone)|Cazic Thule]] or [[Lake Rathetear]].
+* [[Ice Giant Toes]] drop from various ice giants around the old world (everfrost, permafrost, [[Gornit]] in ocean of tears). These are not to be confused with [[Frost Giant Toes]] which drop from Velious giants.
+{{End}}
+'''Turn in the four items:'''
+
+: Vira says 'The four components required for the stein of Ulissa?!  I am impressed!  As you have displayed valor, I grant you this stein.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Stein of Ulissa}}.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]
+[[Category:Magician Focus Items]]

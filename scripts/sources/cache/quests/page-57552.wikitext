@@ -1,0 +1,67 @@
+{{Classic Era}}
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Northern Desert of Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Crusader Iktra]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ALL
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+[[File:Crusader iktra.png|thumb]]
+
+== Reward ==
+
+Faction
+
+== Walkthrough ==
+
+''[[Crusader Iktra]] is at location 2256, -812 in North Ro on the shoreline closest to Freeport.''
+
+You say, 'Hail, Crusader Iktra'
+
+: Crusader Iktra says 'Hail yourself, [Race]. I've got multiple ships worth of people to watch over, and I could use some [supplies]. If you're not here to help, and you were going to make the mistake of attacking us, do it quickly.'
+
+You say, 'What supplies?'
+
+: Crusader Iktra says 'If you want to help restock our supplies, we could use more bits of metal, in batches of four. They aren't worth a lot, but many of our ships were lost in the storm that landed us here, and we need nails if we're going to make new ships. Though, if you have [better ore] you'd be willing to part with, we can talk.'
+
+You say, 'What better ore?'
+
+: Crusader Iktra says 'A lot of our weapons and armor went overboard in the storm, and our stock for repair and outfitting the growing recruits is getting... Slim, to say the least. If you can bring me small pieces or small bricks of high quality ore, it'd go a long way to helping us keep our people safe.'
+
+---
+
+'''[[Small Piece of High Quality Ore]]''' can drop from goblins in zones like [[Permafrost]], [[Solusek's Eye]], and [[High Keep]]. Pieces and [[Small Brick of High Quality Ore]] can also be obtained via Blacksmithing by breaking down Fine Steel weapons at a forge. 
+
+---
+
+Upon handing Crusader Iktra (1) [[Small Piece of High Quality Ore]]:
+
+: Crusader Iktra says 'This will keep our equipment going for a while longer, thank you [Player].'
+
+<div class="facblock">
+* Your faction standing with [[New Sebilisian Expedition]] has been adjusted by 10.
+
+Upon handing Crusader Iktra (1) [[Small Brick of High Quality Ore]]:
+
+: Crusader Iktra says 'Thank you, [Player]. This will certainly help us keep our outpost safe for a bit longer.'
+
+<div class="facblock">
+* Your faction standing with [[New Sebilisian Expedition]] has been adjusted by 15.
+
+</div>
+{{exp}}
+
+[[Category:Quests]]

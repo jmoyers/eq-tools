@@ -1,0 +1,188 @@
+'''This appears to be somewhat of a duplicate of the [[Library Book]] quest article.'''
+[[File:npc_moodoro_finharn.png|frame|Moodoro Finharn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Moodoro Finharn]] (156, 331)
+|-
+! ''' Minimum Level: '''
+| 15+
+|-
+! ''' Classes: '''
+| WIS Casters ([[Druid]], [[Shaman]], [[Cleric]])
+|-
+! '''Related Zones:'''
+| [[Highpass Hold]], [[Qeynos]]
+|-
+! '''Related NPCs:'''
+| [[Dyllin Starsine]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Testament of Vanear}}
+</li><li> [[Languid Pace|Spell: Languid Pace]]
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+*Kill [[Dyllin Starsine]] in [[Highpass Hold]] for [[Page 30 of a Book]]
+*Give [[Moodoro Finharn]] at [[Crow’s Pub & Casino]] 2 gold to get the book
+*Give [[Moodoro Finharn]] at [[Crow’s Pub & Casino]] 4 gold as many times as it takes to get Jester card
+*Give Jester card back to [[Moodoro Finharn]] to get [[Page 34 of a Book]]
+*Combine page 30 and 34 in the book to get the Testament of Vanear
+{{End}}
+
+== Walkthrough ==
+
+In [[Highpass Hold]], there is a secret area under the pond near the Orc side.
+
+This hidden area is a smugglers den that can only be entered from an underwater tunnel (-158, 335 in the water by the Tiger's Roar).
+
+Once through, walk around until you find [[Dyllin Starsine]] (Only person in there that looks like a Qeynos Guard). If he is not up, there is a tent with boxes near it in the smuggler area and this is where he will spawn.
+
+[[Dyllin Starsine]] is on a 7 hour timer with no PH (place holder). He can spawn in a range of levels from 12 to 16 and hits relatively hard for a moderately under geared player in the teens and has about 600 HP (hit points).
+
+[[Dyllin Starsine]] at average faction will not aggro, nor will the smugglers, so it's a safe area to bind point for those that can, and it's a safe area to stay at for hours on end.
+
+Careful, although the smugglers may not be KoS (kill on sight) they will assist [[Dyllin Starsine]] if they get too close. BEWARE - at least one of the smugglers who paths this area is higher level (backstabs for 360, and quads for 120). To avoid a smuggler joining the fight, wait for the high level smuggler to path to the southwest or harmony the high level smuggler if you are a dru or rng, or lull him if you are high enough level before engaging Dyllin. Depending on your level, other Smugglers may join if they get too close. For This reason, don't pull Dyllin away from the tent or engage when he paths out of that area. Fight him under his awning while the smugglers are away using root or snare so he doesn't flee. 
+
+Kill him and loot page 30.
+
+Now you will need to travel to [[Qeynos]] and find the [[Crow’s Pub & Casino]].
+
+[[Moodoro Finharn]] is in the [[Crow’s Pub & Casino]] but you can wait until he comes out of the tavern to puke in the pond.
+
+Moodoro is on one of the Erudite caster factions, but you can do this part at dubious. If you are KoS inside Crow's and feeling brave or scared, he can be pulled to the zoneline by someone else and no other NPCs will assist him. You can also wait and he leaves Crow's during the 6 PM in-game hour and goes back inside during the 10 PM in-game hour.
+
+Give [[Moodoro Finharn]] 4 gold and you will receive a card. If it is a Jester, give it back to him in return for page 34. Other cards are useless and can be destroyed or handed to Moodoro for nothing. You may need several turn-ins before getting a Jester.
+
+When you have both page 30 and 34, Give Moodoro 2 gold and he will give you the book to combine Pages 30 and 34 in.
+it of money here.
+
+Note that [[Zenita D`Rin]] in the [[East Freeport]] slums can be given an [[Innoruuk's Kiss of Death]] to get a random card in return, but she gives out Joker cards rather than Jester cards. The Joker card will NOT complete the quest with Moodoro.
+
+Once you have both Pages 30 and 34 in your possession, combine them and create the {{:Testament of Vanear}}.
+
+== Dialogue ==
+
+Rarnan Lapice is located at -725, -85 outside the Temple of Divine Light in Erudin.
+
+You say, 'Hail, Rarnan Lapice'
+
+: Rarnan Lapice says 'It is good to meet you, Rcme. To enter the Temple of Divine Light is to invite Quellious into your body and soul. Tranquility is our way and, as such, we do all we can to uphold it. Are you a [cleric of Quellious], or am I mistaken?'
+
+You say, 'I am a cleric of Quellious'
+
+: Rarnan Lapice says 'I have a small task for you then. Go to the city library and ask the librarian for the book 'The Testament of Vanear'. I shall require it for further studies. Do not return empty-handed or you shall know my rage.'
+
+Illithi Nollith is located at -1075, -220 in the Erudin City Library in Erudin.
+
+You say, 'Hail, Illithi Nollith'
+
+: Illithi Nollith says 'Shhhh... Greetings, Rcme. Welcome to the Library of Erudin. Please respect the other patrons and speak softly.'
+
+You say, 'I need the Testament of Vanear.'
+
+: Illithi Nollith says 'Oh my!! You have not heard?! The Testament of Vanear was stolen from the library! It was checked out by a man named Moodoro. He is an Erudite, but I believe he was executed for some crime. Now the book is lost forever. You should speak with Tol Nicelot. He used to know Moodoro. Tol is most likely upstairs.'
+
+Tol Nicelot is located at -1095, -240 on the top floor of the library in Erudin.
+
+You say, 'Hail, Tol Nicelot'
+
+: Tol Nicelot says 'I have no time to waste with strangers!'
+
+You say, 'Did you know Moodoro?'
+
+: Tol Nicelot says 'Yes, I knew Moodoro Finharn. He used to be a good friend until he started visiting Qeynos and indulging in human vices. He was executed for crimes against the state. Not even his sister [Nolusia] could get the charge dropped. There have been some who say he escaped execution and lives in Qeynos. That is insane babbling.'
+
+Moodoro Finharn is located at 165, 325 outside Crows Pub & Casino in North Qeynos.
+
+You say, 'Hail, Moodoro Finharn'
+
+: Moodoro Finharn says 'Greetings, fellow traveler! I gotta tell ya. I love this town. Especially Crow's. Although the crowd seems a bit shadier than other places of the sort.'
+
+You say, 'What Testament of Vanear'
+
+: Moodoro Finharn says 'So you have heard that good old Moodoro has knowledge of the Testament of Vanear. I care little for that book. Of course I have it!! If you want it, I will sell it to you for two gold pieces.'
+
+Give him 2 gold.
+
+: Moodoro Finharn says 'HA!! I hope you enjoy the book. It is missing pages 30 and 34. It is nothing more than garbage without them. A rogue ripped them from their bindings and sold them to [Ran].'
+
+You say, 'Who is Ran'
+
+: Moodoro Finharn says 'Ran Flamespinner is a librarian in Highpass Hold.'
+
+Ran Flamespinner is located at -45, -345 in Highpass Keep.
+
+You say, 'Hail, Ran Flamespinner'
+
+: Ran Flamespinner says 'I am very sorry to have to inform you that the library is off limits to strangers.'
+
+You say, 'What Testament of Vanear'
+
+: Ran Flamespinner says 'So, you seek the page 30 I recently purchased from an Erudite named Moodoro? He also had page 34, but refused to sell it to me. If you seek page 34, you will first have to find Moodoro. I had page 30 for but a few days when a man swiped it from the library's shelves. I believe he wore the garb of a guard of Qeynos. He darted away so fast I did not have time to cast a single spell! I believe he is still in Highpass, I can feel it!!'
+
+Dyllin Starsine is located at 40, 130 in Highpass Hold, in the Smuggler area next to the pottery wheel.
+
+You say, 'Hail, Dyllin Starsine'
+
+: Dyllin Starsine says 'Hey!! I don't have any spare change, okay?!'
+
+You say, 'What Testament of Vanear'
+
+: Dyllin Starsine says 'So you heard Guard Dyllin has page 30 of the Testament of Vanear, eh?! Well, get lost!! Over my dead body will you get page 30!'
+
+Auto attack is on. Dyllin Starsine says 'How dare you attack a member of the Qeynos Guard!!' You have slain Dyllin Starsine! You have looted a Page 30 of a Book.
+
+<div class='facblock'>
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+Return to Moodoro Finharn
+
+You say, 'I want page 34'
+
+: Moodoro Finharn says 'So, you know I have page 34. Pretty smart of me to tear the most important page out before someone else tried, eh? If you really want it, then sit down and deal in. Ante is 4 gold. I will give you one card. If it is a jester, then I will give you the page. Let's do it.'
+
+Give him 4 gold and receive a card.
+
+: Moodoro Finharn says 'Well, what do you have?!!'
+
+Give Moodoro the Jester.
+
+: Moodoro Finharn says 'Lucky you. We were hoping to really clean you out. Here you go. Take the page. Even together, the book is nothing more than fiction.'
+
+Combine Page 30 of a Book and Page 34 of a Book in the Testament of Vanear.
+
+Receive {{:Testament of Vanear}}.
+
+''' If you are looking to get the [[Testament of Vanear]], Your quest is complete and you can stop now, YOU WILL LOSE THIS BOOK IF YOU TURN IT IN ON THE NEXT STEP. '''
+
+Return to Rarnan Lapice and hand in the Testament of Vanear.
+
+: Rarnan Lapice says 'I sent you after that book ages ago! What took you so long? I have already completed my studies. Luckily I found the original manuscript under my bedroll. I forgot I had kept it there. Take this as a token of my apology. Maybe it will aid you in your next book hunt. I know how cunning those books can be.'
+
+<div class='facblock'>
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 20 gold from Rarnan Lapice. You receive 3 platinum from Rarnan Lapice.
+
+Reward: Spell: Languid Pace 
+
+[[Category:North Qeynos]]
+[[Category:Druid Quests]]
+[[Category:Shaman Quests]]
+[[Category:Cleric Quests]]

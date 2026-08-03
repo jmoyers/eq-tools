@@ -1,0 +1,150 @@
+{{Classic Era}}
+[[File:npc_brother_estle.png|frame|Brother Estle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Brother Estle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Brother Hayle]], [[Nomsoe Jusagta]], [[Priestess Jahnda]], [[Tyokan Mekase]], [[Whysia Flock]]
+|}
+
+Quest requires amiable or better faction.
+
+== Reward ==
+
+<ul><li>  [[Inspire Fear|Spell: Inspire Fear]]
+</li><li> [[Ward Summoned|Spell: Ward Summoned]]
+</li></ul>
+
+== Walkthrough ==
+
+Brother Estle may be found in Western Karana on the road as you enter the plains from the Qeynos Hills.
+
+You say, 'Hail, Brother Estle'
+
+: Brother Estle says 'Greetings, child of life. The way of the [Prime Healer] shall set you free and cleanse your soul. I hope to see you at [mass].'
+
+You say, 'What Prime Healer?'
+
+: Brother Estle says 'Rodcet Nife is the Prime Healer. His way is the path of healing and life. There can be no true life until your soul is healed by healing others. This will take you into the eternal when your time comes.'
+
+You say, 'What mass?'
+
+: Brother Estle says 'Mass is not being held out here as yet. I am waiting for the [blessed oil] from the Temple of Life. You may attend services there.'
+
+You say, 'What blessed oil?'
+
+: Brother Estle says 'The blessed oil is necessary during services. It is blessed by High Priestess Jahnda at the [Temple of Life]. If you are going in that direction, please stop at the temple and remind High Priestess Jahnda that brother Estle is waiting for his blessed oil.'
+
+You say, 'What is the Temple of Life?'
+
+: Brother Estle says 'The Temple of Life is the center of worship for the followers of Rodcet Nife. It is located in North Qeynos and is one of the greatest temples ever created. Be sure to visit and attend services.'
+
+'''Now journey to North Qeynos and find the Temple of Life (looks like a flying saucer hovering above a pond).  Priestess Jahnda is inside.'''
+
+You say, 'Hail, Priestess Jahnda'
+
+: [[Priestess Jahnda]] says 'Welcome to the Temple of Life, where the will of Rodcet Nife, the Prime Healer, is carried out. I am the High Priestess Jahnda. If you require any training in our ways, please talk to any of our priests or any of the paladins of the Temple of Life.'
+
+You say, 'Brother Estle needs the blessed oil.'
+
+: Priestess Jahnda says 'I do not distribute the blessed oil of life. Please speak with Nomsoe Jusagta. Tell Nomsoe that Brother Estle needs the blessed oil.'
+
+'''[[Nomsoe Jusagta]] is standing outside against the wall.  Saying what Priestess Jahnda told you to say doesn't get you anywhere, but following his quest dialogue does:'''
+
+You say, 'Hail, Nomsoe Jusagta'
+
+: Nomsoe Jusagta says 'Greetings and welcome to the Temple of Life! The healing of the world shall begin within. Let me know if you have seen a [new disciple of life]. I have a task which needs to be attended to.'
+
+You say, 'I am a new disciple of life.'
+
+: Nomsoe Jusagta says 'It is good to meet a new follower of the Prime Healer. Remember that we must defend all life. Disease and poison are the enemies. Within Qeynos we work hand in hand with other guilds. I seek an acolyte to [deliver a flask].'
+
+You say, 'I will deliver a flask.'
+
+: Nomsoe Jusagta says 'Our allies, the Knights of Thunder, have requested that we aid their followers in the Plains of Karana. We have a few young acolytes working there now. Take this blessed oil to Brother Estle. Follow the path to the plains. He shall be waiting for you by a tree alongside the path.'
+
+'''You receive a Blessed Oil Flask, which identifies as "Blessed Oil of Life."  Take this back to Brother Estle.'''
+
+: Brother Estle says 'Thank you. Now I may cleanse the bodies of the new converts and help them enter into a new life. I also have this. It was given to me by a dying gnoll of all things. They belong to Brother Hayle. The gnoll's last words were 'Free him.' Make sure High Priestess Jahnda gets this. Be swift!'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+{{exp}}
+</div>
+You receive 1 silver from Brother Estle.
+
+'''You receive [[PrayerBeads]] (no space in name), which identifies as "Hayle's Prayer Beads."  Take the beads back to Jahnda.'''
+
+: Priestess Jahnda says 'Oh my word!! This is terrible news. This belongs to Hayle Mool. He has been captured by the Splitpaw Clan while in Karana. You must go to his aid. We cannot do so at this time. Here. Be sure to hand him this summons. I will need to speak with him.'
+
+'''You receive a Temple Summons, which identifies as "Summons For Hayle."  The text of the summons is, "Brother Hayle, I command your presence in the Temple of Life.  Abandon all current missions and return at once.  This is the will of the Prime Healer.  Priestess Jahnda." '''
+
+You say, 'Who is Hayle Mool?'
+
+: Priestess Jahnda says 'Brother Hayle Mool is one of our finest clerics. He could convert anyone to the ways of Rodcet Nife. Recently, he has been out in the [Plains of Karana] trying to befriend the [Splitpaw clan]. I pray he has not become their prisoner or even worse, their dinner.'
+
+Priestess Jahnda doesn't respond to either phrase, so '''head over to Splitpaw Lair and find Brother Hayle in the jail there. Give him the summons.'''
+
+: [[Brother Hayle]] says 'I am needed!! What am I doing here? I must return to the Temple of Life to commune with the Prime Healer. Rodcet Nife will give me more strength to finish this job. Thank you, young one! Take this key as a reward. Turn it into Tyokan in the temple shop. Safe journey to you!'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+{{exp}}
+</div>
+
+'''You receive a key named [[T.O.L. 2020]], which identifies as "Strongbox Key 2020."  Hayle despawns and immediately respawns.'''
+
+'''Return to North Qeynos and find the temple shop.  You'll have to wait until daytime to find Tyokan Mekase.  At night, Whysia Flock takes his place.'''
+
+You say, 'Hail, Whysia Flock'
+
+: Whysia Flock says 'Good evening, ______. Feel free to take your time browsing. The temple shop is open night and day for your convenience. Most clerics need access to their [scroll strongbox] at all times.'
+
+You say, 'What scroll strongbox?'
+
+: Whysia Flock says 'The scroll strongboxes are kept here. They are used by the temple clerics to hold their valuable scrolls. I tend to the 30 and 40 numbered boxes and [Tyokan] deals with the 20s. Presently all are taken and the waiting list is quite long. If you are here to turn in your key, then please do so. I shall get your scroll for you.'
+
+You say, 'Who is Tyokan?'
+
+: Whysia Flock says 'Tyokan Mekase is the day merchant here at the temple shop. He usually arrives around eight in the morning or so.'
+
+'''Once Tyokan is up, hail him.'''
+
+You say, 'Hail, Tyokan Mekase'
+
+: [[Tyokan Mekase]] says 'Please look around. We have many items exclusively for the members of the Temple of Life. We also have [scroll strongboxes]. If you are unsure of what an item is, feel free to ask me.'
+
+You say, 'What scroll strongboxes?'
+
+: Tyokan Mekase says 'The scroll strongboxes are merely personal safes. Most of the members use them. I am afraid all are taken, but if you are here to remove a scroll, merely hand me your key and I shall get it for you. I handle all 20 numbered keys and [Whysia] handles all 30 and 40 numbered keys.'
+
+He doesn't respond to any text involving "Whysia," so '''give him the key.'''
+
+: Tyokan Mekase says 'Oh, turning in your key, are you? Very well, defender of life. Here you are.'
+
+The reward is a random cleric spell.
+
+[[Category:Quests]]
+[[Category:Western Plains of Karana]]
+[[Category:Cleric Quests]]

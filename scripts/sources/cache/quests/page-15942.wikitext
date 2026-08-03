@@ -1,0 +1,53 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:old_used_robe.png|frame|Teddeefashion wearing the reward]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Ghanlin Skyphire]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Erudin Palace]]
+|-
+! ''' Related NPCs: '''
+| [[Ghanlin Skyphire]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Used Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Ghanlin Skyphire]] is located at 887, 712 in Guild Tower of the Crimson Hands.''
+
+'''Hand [[Ghanlin Skyphire]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Devote yourself to the study of the arcane arts. Go to the blue teleport gem above the fountain, it will take you into the palace. Go upstairs and give this note to [[Ghanlin Skyphire]], and he will teach the ways of the Wizard.
+</code>
+
+: Ghanlin Skyphire says, 'Greetings. I am Ghanlin Skyphire, Master Wizard of the Crimson Hands. All of us here have devoted our lives to the studies of the arcane and mystical. Let's get you started. Here's your training robe.  Now, go find Raskena. She'll help train you and give you your first lesson.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Wizard Quests]]

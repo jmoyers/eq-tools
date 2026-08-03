@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_rocthar_bekesna.png|frame|Rocthar Bekesna]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Quest Giver: '''
+| [[Rocthar Bekesna]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Related NPCs: '''
+| [[Rocthar Bekesna]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Rocthar Bekesna]] is located at 320, -387 in the Shrine of Bertoxxulous Guild Hall.''
+
+You say, 'Hail, Rocthar Bekesna'
+
+: Rocthar Bekesna says, 'I've little time for banter. unless you have come to me for training as a [new warrior] of the Bloodsabers move along.'
+
+'''Hand [[Rocthar Bekesna]] your [[Blood Stained Note (Guild Summons) | Blood Stained Note]]'''
+
+:: ''Blood Stained Note reads:''
+
+:: <code>Your fate lurks in disease and bile, the blood of Bertoxxulous. Beneath the Grounds of Fate Arena, the rotting bones of fallen warriors mark the entrance to the underworld. In these shadowy depths, lurk the Bloodsabers and other minions of the Lord of Disease. Seek out Rocthar Bekesna, she shall initiate you into this circle of darkness that eats away at the world above.</code>
+
+: Rocthar Bekesna literally says nothing.
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Warrior Quests]]

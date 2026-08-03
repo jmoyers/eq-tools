@@ -1,0 +1,58 @@
+{{Classic Era}}
+[[File:npc_karam_dragonforge.png|frame|Karam Dragonforge]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Karam Dragonforge]]
+|-
+! ''' Minimum Level: '''
+| 45+
+|-
+! ''' Classes: '''
+| All
+|-
+! '''Related Zones:'''
+| [[Nagafen's Lair]]
+|-
+! '''Related NPCs:'''
+| [[Lord Nagafen]], [[Talendor]]
+|}
+Requires Indifferent or better faction, is multiquestable. 
+
+== Reward ==
+
+<ul><li> {{:Red Dragonscale Armor}}
+</li></ul>
+
+== Checklist ==
+
+[[Karam Dragonforge]] is located at +4105, +920, 4.51 in the Mountain of Rathe (the "human inn"). He wants the following items:
+{{CheckboxList}}
+* [[Red Dragon Scales]] from [[Lord Nagafen]] or [[Talendor]]
+* [[Vial of Swirling Smoke]] (vendor)
+* 1000 platinum pieces
+{{End}}
+
+== Dialogue ==
+
+You say, 'Hail, Karam Dragonforge'
+
+:Karam Dragonforge says 'Welcome, ___. I have a number of platemail items, if you are interested. I am also a master [smith] of exotic materials such as dragon scales.'
+
+You say, 'A master smith of what?'
+
+:Karam Dragonforge says 'Dragon scales make terrfic armor. I can make a [white dragonscale cloak] and [red dragonscale armor]. I have not seen any other colored dragon variants around. But if you see any, be sure to let me know. I would be interested in what can be made from their scales.'
+
+You say, 'What red dragonscale armor?'
+
+:Karam Dragonforge says 'So you have a red dragon scale, eh? Well, I am wanting very much to return to my fiancee and propose to her. If you could aid me in quickly returning to her with a bit of spare change, we could have a deal. Heck, for the armor, a vial of swirling smoke and 1000 platinum coins is a bargain!'
+
+After turn in:
+
+:Karam Dragonforge says 'Wonderful! Now I can get back to my fiance instantly! Isn't Love grand! As for your red dragonscale armor, it is all done. Farewell!'
+
+[[Category:Quests]]
+[[Category:Rathe Mountains]]
+[[Category:All Classes Quests]]

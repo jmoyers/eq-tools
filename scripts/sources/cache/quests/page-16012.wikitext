@@ -1,0 +1,52 @@
+
+[[File:npc_merry_snowgleam.png|300px|right|Merry Snowgleam]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Commonlands]]
+|-
+! ''' Quest Giver: '''
+| [[Merry Snowgleam]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Runnyeye Citadel]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Gnome Shaped Cookie]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Merry Snowgleam'
+
+: Merry Snowgleam says, 'Have you noticed? Half our decorations are gone! Someone's stolen the garlands, the tinsel, even the snow globes!'
+
+You say, 'Who stole it?'
+
+: Merry Snowgleam says, 'It wasn't the wind, no no no. I heard them — high-pitched giggles and the clatter of tiny boots! Goblins! They're down in their miserable tunnels hoarding Frostmas joy like it's gold! Would you [help] recover it'
+
+You say, 'I will help recover it.'
+
+: Merry Snowgleam says, 'Wonderful! The goblins probably thought our ornaments were magical gems. Look for Frostmas Baubles in Runnyeye Citadel — they should sparkle even down there. Bring me three, and we'll brighten Frostmas again!'
+
+Collect three [[Frostmas Baubles]] from goblins in [[Runnyeye Citadel]] and turn them in to [[Merry Snowgleam]]
+
+: Merry Snowgleam twirls and hangs one mid-air and exclaims, 'Oh! You found them! I can smell the peppermint polish still on them. Bless you! Now the camp will sparkle again — and I'll have words with those goblins later. For now, take this — a token of laughter restored.'
+
+You receive a [[Gnome Shaped Cookie]] and a [[Holiday Gift]].
+
+[[Category:Quests]]
+[[Category:East Commonlands]]

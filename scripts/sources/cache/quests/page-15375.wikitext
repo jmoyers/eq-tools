@@ -1,0 +1,78 @@
+{{DNE}}
+[[File:npc_shakey_scarecrow.png|frame|Shakey Scarecrow]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Shakey Scarecrow]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| ?
+|}
+
+== Note: Marking this as Does Not Exist for now, assuming EQL will never see this quest. ==
+
+This is a broken quest, as it was unfinished as implemented in classic EverQuest. The quest was resolved and incorporated into the Rogue Epic 1.5 quest much later after Velious. [https://thesafehouse.org/forums/forum/everquest-wing/quests-of-norrath/15022-fatestealer-epic-1-5-complete-walkthrough?s=479968c6419d6de51e4e47c1377fae0a&postcount=2#post291690].
+
+== Reward ==
+
+<ul><li>  Unknown
+</li></ul>
+
+== Walkthrough ==
+
+''Start speaking with Shakey (Loc -140, -410), but Reebo (Loc -85, -355) will say something and move to him to complete the conversation.''
+
+You say, 'Hail, Shakey Scarecrow'
+
+: Shakey Scarecrow rustles and looks up at you in acknowledgment.
+
+: Reebo Leafsway shakes his head sadly. 'Poor old [Shakey] just isn't what he used to be.'
+
+You say, 'Hail, Reebo Leafsway'
+
+You say, 'Who is Shakey?'
+
+: Reebo Leafsway says 'Shakey is our protector and friend. He is just getting old. Losing his [stuffing]. His [head] is getting very cracked and dry as well.'
+
+You say, 'What about his Head?'
+
+: Reebo Leafsway says 'The head of a scarecrow is difficult to replace. We do not know what is needed and all of our attempts have failed. Perhaps you could [research] this for us and bring back a new head for our old friend Shakey?'
+
+You say, 'What research?'
+
+: Reebo Leafsway says 'We have heard of a great forbidden tome penned by an evil necromancer that holds the secrets of instilling life into scarecrows. We have recovered pages from that book. That is how we know about Shakey's hay. But the pages detailing the creation of a scarecrow's head are missing. We believe that the Erudites possess at least some of the pages and might know where the rest of them may be found. Start your search in their city of Erudin.'
+
+''[[Sornita Eltern]] (Loc -1100, -230) is found on the top floor next to the rest of the wizard spell merchants.''
+
+You say, 'Hail, Sornita Eltern'
+
+: Sornita Eltern says 'Greetings, &lt;Name>! Please be do not speak too loudly while inside the library. If you need anything special, feel free to ask me. I am a member of the Crimson ands and my specialty is divination. In my research I have stumbled across many [rare tomes].'
+
+You say, 'What rare tomes'
+
+: Sornita Eltern says 'Why, just yesterday I stumbled upon what I believe to be an excerpt from Miragul's own treatise on the origin of the creatures known as scarecrows. Such a work is heresy and would be destroyed if the High Council knew of its existence so I have been tight-lipped about my discovery. If you would like to see it, I will show it to you, for a nominal donation of 20 gold pieces.'
+
+''Give her 20 gold.''
+
+: Sornita Eltern says 'Oh, yes. Very good friend. Here is the document I mentioned. It would seem to be part of a larger body of work, but this page describes a Teir'Dal who it seems was instrumental in creating the head of the very first scarecrow. You may keep that as it is merely a magical duplicate of the original document which I have carefully hidden.'
+
+''Receive [[Torn Parchment]]. At this point, the quest is broken. Sources [https://thesafehouse.org/forums/forum/everquest-wing/quests-of-norrath/15022-fatestealer-epic-1-5-complete-walkthrough?s=479968c6419d6de51e4e47c1377fae0a&postcount=2#post291690] indicate that the quest was classically broken and remained unresolved until it was incorporated into the Rogue Epic 1.5 quest, very long after Velious. Although [[Dark Huntress]] may spawn in [[Castle Mistmoore]], she reportedly does not drop the needed Water-Stained Ancient Tome, nor anything else.''
+
+== See Also ==
+
+* [[Shakey's Stuffing]]
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:Rivervale]]

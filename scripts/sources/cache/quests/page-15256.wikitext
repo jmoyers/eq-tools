@@ -1,0 +1,142 @@
+{{Classic Era}}
+[[File:npc_bronlor_lightblade.png|frame|Bronlor Lightblade]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Bronlor Lightblade]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Deity: '''
+| [[Brell Serilis]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Kithicor Forest]], [[Oasis of Marr]], [[Unrest]]
+|-
+! ''' Related NPCs: '''
+| [[an enraged goblin]], [[an undead barkeep]], [[Taldrik Stumpystout]], [[Torklar Battlemaster]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Initiate Symbol of Brell Serilis}}
+</li><li> {{:Disciple Symbol of Brell Serilis}}
+</li></ul>
+
+== '''Initiate Symbol of Brell Serilis''' ==
+
+''[[Bronlor Lightblade]] is located at -88, 416, 3 in a back room within the Kaladim Warrior's Guild Hall.''
+
+You say, 'Hail, Bronlor Lightblade'
+
+: Bronlor Lightblade says, 'Allo dere ______, how does ye fare today? Are ye a priest of the great Brell Serilis? If ye are not I mean nothin against yar but I am on a mission to administer guidance to a holy priest of milord Brell Serilis.'
+
+You say, 'I am a priest'
+
+: Bronlor Lightblade says, 'Well now were talkin ______. I think if ye have been doing well in your training then ye will be ready to assist me in with the problem we been havin with those dern good fer nothin [green rascals].'
+
+You say, 'What green rascals'
+
+: Bronlor Lightblade says, 'Well of course I be talkin bout dose goblins that have tried to storm our front gates fer some time. I reckon dey are up to no good sense I hear dey just be a few from a well trained horde of goblin invaders that are planning an attack me thinks. Will ye [help] us in finding and slaying these [goblins]?'
+
+You say, 'I will help slay the goblins'
+
+: Bronlor Lightblade says, 'Dats great to hear ______! To prove to me that you have found and slain these beasts bring 4 sets of the beads that dey carry around their necks. I don't know much about dem but id reckon dey have set up camp close bye ere. The night watch that haulted the first attack by these goblins described the fighting style to be of the highest goblin caliber. I hope this helps. Good luck to ye.'
+
+'''Now head out to ButcherBlock and find location -300, +1100. This is a cove between the goblin warrior camp and the yellow skeleton tower near the Crossroads region. Three [[an enraged goblin|enraged goblins]] spawn there. They always drop an [[Enraged Goblin Beads]] <s>and appear to be on the same spawn timer as everything else in the zone.</s> and are on a 15 minute respawn timer.'''
+
+'''Hand [[Bronlor Lightblade]] 4 [[Enraged Goblin Beads]].'''
+
+: Bronlor Lightblade says, 'I knew that I was able to trust ye to help me rid the land of these nasty goblins! The Bloodforge Brigade salutes ye ______. Ye will be well known in our city for being the young one that helped rid our mountains of these goblins. Please take this as a Symbol of your devotion to your faith and your God and return to me when ye are ready for yer next [task].'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+''You receive an [[Initiate Symbol of Brell Serilis]].''
+
+== '''Disciple Symbol of Brell Serilis''' ==
+[[File:npc_Taldrik_Stumpystout.png|thumb|upright=1.5|right|Taldrik Stumpystout]]
+''After completing the Initiate Symbol of Brell quest:''
+
+You say, 'What about my next task?'
+
+: Bronlor Lightblade says, 'Ah ye are ready fer yer task are ya ______. I must say dat I am quite impressed with the excellent job dat ya did taking care of those strong goblins. Ok well ye came for yer task so here it tis. I need to get this note to me friend Taldrik, however he has told me that he was heading to the Oasis that is the finest in norrath for sum relaxin time. Although I would love to go myself but I'm afraid I hab many duties to uphold here. Will you [deliver] my note to Taldrik?'
+
+You say, 'I will deliver the note.'
+
+: Bronlor Lightblade says, 'Fantastic ______! I knew that ye would be able to help me. Please take this note to Taldrik, whereber he may be and be sure to give him his favorite [drinks] or he may be very grumpy.'
+
+''You receive a [[Note to Taldrik]].''
+
+You say, 'What drinks?'
+
+: Bronlor Lightblade says, 'Oh yes of course. Taldrik's favorites if I can remembur correctly be Elven wine, Freeport stout and of course Dwarven ale! Bring these drinks to him with your note and after ye tell him you are sent from muh to continue your training i'm shure he will warm up to ye fer sure.'
+
+'''Gather the following drinks, all of which can be purchased in [[Freeport|East Freeport]]:'''
+
+* [[Elven Wine]] and [[Dwarven ale]], from [[Gregor Nasin]] at [[Seafarer's Roost]]
+* [[Freeport stout]], from [[Jaleel Hoglomp]] at [[Grub n Grog Tavern]]
+
+'''Travel to the [[Oasis of Marr]] where [[Taldrik]] can be found in the very southwest part of the zone (-1788, 1346).'''
+
+You say, 'Hail, Taldrik Stumpystout'
+
+: Taldrik Stumpystout says, 'Move along dere yer blocking me view lad. I await me friend that has gone off to fetch me some water. It sure is hot out here.'
+
+'''Give him the [[Freeport Stout]], [[Elven Wine]], [[Dwarven Ale]], and the [[Note to Taldrik]].'''
+
+: Taldrik Stumpystout says, 'Ah ha! So ye are Bronlor's chosen aye? Well den these fine brews can only mean one thing! Yep its dat youre a drinker like meh! Arg, if I only had me recipe.'
+
+{{YouGainExperience}}
+
+You say, 'What recipe?'
+
+: Taldrik Stumpystout says, 'Well ya see lad I had an ancient recipe passed down to me that told one how to create the holiest of ale. Its far gone now, however I recently had a vision of the ingredients and where they might be found. Do you wish to seek out the components for me?'
+
+You say, 'I will seek out the components.'
+
+: Taldrik Stumpystout says, 'Excellent lad! Let meh see here if I can remember correctly. I know that you need to Preserved hops and a Battleworn canteen. I know that these were carried by my good friend Torklar back when I was still a young lad in training like you. However one day he adventured to an undead estate with a friend of his that was a very skilled brewer. I believe they went there in search of some ingredients they needed for a recipe however neither of them ever returned. But before you go any further I must tell ye that you will need a [specific kind of cask] to combine these items in.'
+
+You say, 'What specific kind of cask?'
+
+: Taldrik Stumpystout says, 'Why a holy cask is what ye will need of course! Find the ingredients that I asked you for before and combine them within this holy cask along with barley from the forests of Kithicor and water summoned from none other than yourself. After doing this if the gods have smiled upon you a thick and hearty keg of Brells Blessed Stout will be created. Give this to me along with a Rat sandwich to enjoy while I sip the finest of ales as well as your Initiate symbol that you carry now and I will be sure to reward you.'
+
+''You receive a [[Holy Cask]].''
+
+'''As instructed, procure the following:'''
+
+* [[Preserved hops]], dropped from [[an undead barkeep]] and [[An Undead Brewer]] in [[Unrest]]
+* [[Battleworn canteen]], dropped from [[Torklar Battlemaster]] in [[Unrest]]
+* [[Forest Barley]], purchased from [[Clomen Walker]] in [[Kithicor Forest]]
+* [[Summoned: Globe of Water]], from the [[Summon Drink]] spell
+
+'''Combine the above items in the [[Holy Cask]] to craft a [[Keg of Brells Blessed Stout]]. Return to Taldrik and give him the Keg, a [[Rat Sandwich]] (Baking, Trivial: 26), and your [[Initiate Symbol of Brell Serilis]].'''
+
+: Taldrik Stumpystout says, 'Ye are a true Priest of Brell Serillis! And ye make me both proud and happy to have met ye so that I could enjoy this sweet drink once again! Please take this Initiate Symbol of Brell Serillis which will I have crafted to enable you to turn water into this blessed ale for you have truly earned it!'
+
+{{YouGainExperience}}
+
+''You receive a [[Disciple Symbol of Brell Serilis]].''
+
+== Notes ==
+
+* You can not start the quest until level 4, but you can finish it (with help of course) at level 4. 
+* The Freeport Stout, Elven Wine, Dwarven Ale, and note turn in are optional although you will need to know the next key phrase if you do not do this turn in. 
+* I was able to MQ this at level 4 using another character to kill the goblins in BB for my cleric to loot, obtain the hops, canteen, barley and summoned water, combine them and turn the resulting keg in then have the cleric hand in the initiate symbol and rat sandwich.
+* You must equip these symbols to use them and 1 summoned water is needed as a reagent to summon booze, though it will summon more than 1 stout per cast. They are usable at level 4, but you will have to get someone else to summon water for you if you are not level 5 with your own summon water spell. 
+* You can get 4 more beads and get a new initiate symbol after you turn the first one in (they are lore) if you want to both summon booze and cast a strength buff.
+
+[[Category: Quests]]
+[[Category:South Kaladim]]
+[[Category:Cleric Quests]]

@@ -1,0 +1,81 @@
+{{Classic Era}}
+[[File:npc_nomala.png|frame|Nomala]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Grahan Rothkar]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Faction Needed: '''
+| Amiable?
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Rogue]], [[Monk]], [[Paladin]], [[Shadow Knight]], [[Cleric]], [[Ranger]], [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]], [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Minotaur Hero]], [[Grahan Rothkar]]
+|}
+
+== Reward ==
+
+{{:Hero Bracers}}
+
+== Walkthrough ==
+
+'''Note:''' need to verify what faction/consider the quest can be done, assuming amiable for now.
+
+The hero bracers are a result of this quest. The name of the quest is 'The Escaped Catman'.
+
+'''[1]''' Go to the basement of the arena in South Qeynos and talk to [[Grahan Rothkar]]. He will ask you if '...you have a report of the [escaped catman].' Ask him What escaped catman. He will give you the story and ask if you want to '...[retrieve key seven].' You can continue the quest anyway, but you will get nothing for it; no faction, no xp, no item, no nothing. 
+
+'''[2]''' Grahan will tell you to go to Wisp Isle (in [[Erud's Crossing]]) and kill the catman named [[Nomala]]. Yes, there is a catman named 'Monola' but that is the wrong catman. The correct catman is named 'Nomala'. He is not as high level as any of the other cats but tends to gather a mob. Best strategy to kill him is in Step 3. 
+
+'''[3]''' Go to Wisp Isle (the only one in Erud's Crossing). Nomala will spawn by the fire. Once killed, he will not spawn again for another hour or two, so figure on taking a while to do this. Be warned that you lose faction with Prexuz for killing these catmen. Anyway, he will stand there for a bit, then walk off toward the shore down by the dock. Milla is standing around close by, but if you wait about one minute, she will walk off and leave Nomala all alone. Kill him - but don't let him run, kill him quick. Best bet is to hit him once then run a few feet down shore away from their village. He does not always have the [[Pen Key]]. 
+
+'''[4]''' Return the Key to Grahan and you get xp, faction, an item (along the lines of a bronze short sword), and a second quest.
+
+<div class="facblock">
+* +Steel Warriors
+* +Guards of Qeynos
+* -Corrupt Qeynos Guards
+*-Freeport Militia
+* +Knights of Truth
+</div>
+
+'''[5]''' The 2nd Quest: He wants you to go hunt down '...a [second escaped gladiator]' Fine, sounds easy... nope. He wants you to return the shackles of the [[Minotaur Hero]] of the Steamfont Mountains. You do not need to do the 1st quest to complete this step.
+
+Grahan Rothkar judges you amiably -- what would you like your tombstone to say?
+You say, 'what second escaped gladiator?'
+Grahan Rothkar sat, 'it appears our prize gladiator has escaped. He is a minotaur hero!! Trained by our best. He took down five of our greatest warriors during his escape. Rumor has it he fled to his homeland in the Steamfont Mountains. They say he is an outcast and does not live with his people. He appears during times of great need to champion the minotaurs. Return his shackles to me and glory is yours!!'
+
+'''[6]''' The [[Minotaur Hero]]'s trigger is any [[minotaur slaver]] in the minotaur cave. When they die, there is a chance that the Minotaur Hero will spawn. Loot the [[Minotaur Hero Shackles]] and take them back to Grahan Rothkar.
+
+[[Grahan Rothkar]] says, 'You are a true Steel Warrior!! Now you shall wear my hero bracers. I designed them for my greatest gladiators and you have shown yourself mighty enough to wear them.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 2 platinum pieces. 
+
+This can be done if you are dubious. Just give item from Minotaur Hero and you will receive the Hero Bracers in return.
+
+'''Lore Item Note'''
+
+Because the [[Hero Bracers]] are lore, if you hand in the [[Minotaur Hero Shackles]] while in possession of Hero Bracers, you may lose the shackles and not receive additional Hero Bracers.
+
+[[Category: Quests]]
+[[Category: South Qeynos]]

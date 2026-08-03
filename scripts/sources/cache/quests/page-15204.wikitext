@@ -1,0 +1,682 @@
+{{Kunark Era}}
+[[File:npc_lord_gikzic.png|thumb|200px|Lord Gikzic]]
+<div style="float:right; padding:15pt">__TOC__</div>
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Arch Duke Xog]], [[Lord Gikzic]], [[Lord Korzin]], [[Lord Qyzar]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Faction: '''
+| [[Crusaders of Greenmist]] (amiable?)
+|}
+
+== Rewards ==
+
+<ul><li> {{:Pawn's Khukri}} (#0)
+</li><li> {{:Knave's Khukri}} (#1)
+</li><li> {{:Squire's Khukri}} (#2)
+</li><li> {{:Knight's Khukri}} (#3)
+</li><li> {{:Zealot's Khukri}} (#4)
+</li><li> {{:Crusader's Khukri}} (#5)
+</li><li> {{:Hero's Khukri}} (#6)
+</li><li> {{:Lord of Pain's Khukri}} (#7)
+</li><li> {{:Greenmist}} (#8)
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* '''Crusader's Test of the Newbie'''
+** Turn in your newbie note (Guild Summons) to [[Arch Duke Xog]]
+** Receive [[Pawn's Khukri]]
+
+* '''Crusader's Test of the Pawn'''
+** Get a Sarnak Head Pack from [[Lord Gikzic]]
+** MAKE SURE TO COMBINE FIRST!!! 4 [[Sarnak Whelp Head]] from [[a Sarnak Hatchling]] in [[Lake of Ill Omen]] in the Sarnak Head Pack
+** Turn in Full Pack of Sarnak Heads and [[Pawn's Khukri]] to [[Lord Gikzic]]
+** Receive [[Knave's Khukri]]
+
+* '''Crusader's Test of Pain'''
+** Talk to [[Lord Gikzic]] and acquire 1 [[Page of a Tome]] (No Drop & Lore)
+** Kill [[Froglok Raider]]s in [[Swamp of No Hope]]
+*** Loot 1 [[Tome Binder]]
+*** Loot 8 [[Page of a Tome]] (Lore)
+*** Loot 1 [[Page of a Tome]] (Non-Lore)
+** Combine all pages in the binder to get [[Magically Locked Tome]]
+** Turn in [[Magically Locked Tome]] and [[Knave's Khukri]] to [[Lord Gikzic]]
+** Receive [[Squire's Khukri]]
+
+* '''Crusader's Test of Suffering'''
+** Talk to [[Lord Korzin]]
+** Loot [[Glowing Skull]] off of [[Greater Scalebone]], [[Lesser Charbone Skeleton]], or [[Lesser Icebone Skeleton]] in [[Kurn's Tower]]
+** Turn in [[Glowing Skull]] and [[Squire's Khukri]] to [[Lord Korzin]]
+** Receive [[Knight's Khukri]]
+
+* '''Crusader's Test of the Zealot'''
+** Talk to [[Lord Qyzar]]
+** Talk to [[an iksar knight]] in [[Warsliks Wood]]
+** Kill [[a Forest Giant Sapling]] for [[Misscribed Gate]] and [[Misscribed Lifetap]]
+** Pick up Groundspawn [[Scroll in a Bottle]]
+** Buy a [[Shovel]]
+** Turn in [[Misscribed Gate]], [[Misscribed Lifetap]], [[Scroll in a Bottle]], and [[Shovel]] to [[an iksar knight]] to get [[Chalp Diagram]]
+** Turn in [[Chalp Diagram]] and [[Knight's Khukri]] to [[Lord Qyzar]]
+** Receive [[Zealot's Khukri]]
+
+* '''Crusader's Test of Betrayal'''
+** Talk to [[Lord Qyzar]]
+** Talk to [[an Iksar crusader]] and receive a [[Coin]]
+** Give a [[Coin]] to [[Tracker Azeal]] in [[Firiona Vie]] once he kneels at the boulder
+** Talk to [[Hero Goxnok]]
+** Talk to, and kill [[a drachnid spy]] to loot [[Charasis Tome]]
+** Talk to, and kill [[Hero Goxnok]] to loot [[Charasis Tome Copy]]
+** Turn in [[Charasis Tome]], [[Charasis Tome Copy]], and [[Zealot's Khukri]] to [[Lord Qyzar]]
+** Receive [[Crusader's Khukri]]
+
+* '''Crusader's Test of The Hero'''
+** Talk to [[Lord Qyzar]]
+** Complete [[Visceral Dagger]] quest line to receive [[The Visceral Dagger]]
+** Turn in [[The Visceral Dagger]] and [[Crusader's Khukri]] to [[Lord Qyzar]]
+** Receive [[Hero's Khukri]]
+
+* '''Crusader's Test of the Lord'''
+** Talk to [[Arch Duke Xog]]
+** '''Part 1 - Six Scrolls'''
+*** Kill [[failed crypt raider]] in [[Kaesora]] and loot scroll I
+*** Kill [[Spectral Courier]] in [[City of Mist]] and loot
+**** Scroll II
+**** Scroll III
+**** Scroll IV
+*** Kill [[a dark librarian]] in [[Castle Mistmoore]] and loot scroll V
+*** Kill [[a dark ass`t librarian]] in [[Castle Mistmoore]] and loot scroll VI
+** '''Part 2'''
+*** Kill [[a goblin penkeeper]] and [[a goblin penmaster]] in [[Droga Jail]] or [[Frontier Mountains]] and loot
+**** [[A Bone Key]]
+**** [[A Bone Necklace]]
+**** [[A Stone Key]]
+*** Give [[A Bone Key]], [[A Bone Necklace]], and [[A Stone Key]] to [[an enslaved iksar]] in [[Droga Jail]] to receive [[Coarse Iron Needle]]
+*** <s>Kill [[a goblin prison warden]] in [[Droga Jail]] and loot [[Droga Jail Key]]</s>
+*** Combine the 6 scrolls and [[Coarse Iron Needle]] in the [[Droga Jail]] Pottery Wheel to create [[Stupendous Tome]]
+** Turn in [[Stupendous Tome]] and [[Hero's Khukri]] to [[Arch Duke Xog]]
+** Receive [[Lord of Pain's Khukri]]
+
+* '''Crusaders of Greenmist'''
+** Talk to [[Librarian Zimor]]
+** Kill [[Loremaster Piza`tak]] or [[Grand Lorekeeper Kino Shai`din]] in the Chardok Library and loot [[The History of the Greenmist]]
+** Give [[The History of the Greenmist]] to [[Librarian Zimor]] to receive [[Note to Oxyn]]
+** Give [[Note to Oxyn]] to [[Hierophant Oxyn]] to receive [[Bottle of Liquid Deklium]]
+** Give [[Bottle of Liquid Deklium]] to [[Alchemist Granika]] in [[The Overthere]] to spawn [[A Glowing Cliff Golem]]
+** Kill [[A Glowing Cliff Golem]] and loot [[Chunk of Tynnonium]]
+** Give [[Chunk of Tynnonium]] to [[Hierophant Oxyn]] to receive [[Note to Librarian Zimor]]
+** Give [[Note to Librarian Zimor]] to receive [[Notes from the Greenmist Tome]]
+** Kill [[Weaponsmith Ko`Zirr]] in [[Lake of Ill Omen]] and loot [[Hammer of 1406]]
+** Kill [[a Alchemist`s Acolyte]] in Chardok's Lower Caves and loot [[Greenish Metal Shard]]
+** Pickup [[Rile's Shattered Blade]] in [[Karnor's Castle]]
+** Kill [[Drusella Sathir]] in [[Howling Stones]] and loot [[Mirror of Self-loathing]]
+** Go to Dalnir's Forge Room and clear the room until [[a tormented tradesman]] spawns
+** Give [[Mirror of Self-loathing]] to [[a tormented tradesman]] to receive [[Cracked Mirror of Self-Loathing]] and spawn [[Haggle Baron Dalnir]]
+** Give Piece of Parchment, Quill and [[Rile's Shattered Blade]] to [[Haggle Baron Dalnir]] to receive [[Greenmist Design Pattern]]
+** In the [[Always Works|Dalnir Grand Forge]] combine [[Greenmist Design Pattern]], [[Chunk of Tynnonium]], [[Hammer of 1406]], and [[Notes from the Greenmist Tome]] to receive [[Greenmist Khukri Blade]]
+** In the Dalnir Grand Forge combine [[Lord of Pain's Khukri]], [[Greenish Metal Shard]], [[Greenmist Khukri Blade]], [[Notes from the Greenmist Tome]], and [[Hammer of 1406]] to forge [[Greenmist]]
+
+== Walkthrough ==
+
+The quest line starts at the SK guildmaster.
+If for some reason you do not have a Guild Summons or your first weapon, simply create a level 1 SK and have him hand in the note to receive the Pawn's Khukri. Then you do the next part of the quest and obtain the Full Pack of Sarnak Heads. Log in your lv1, hand in the Pawn's Khukri, then log in your main character and hand in the Full Pack of Sarnak Heads and you will receive the Knight's Khukri.  You can do the quest [[The Penance]] to get your newbie item back but that's just crazy :)
+== Crusader's Test of the Newbie ==
+
+You say, 'Hail, Arch Duke Xog' 
+
+: As your reptilian eyes adjust to the darkness of the room, an imposing Iksar turns towards you, addressing you with a sharp hiss. 'I am Arch Duke Xog. The time has come young one. You have chosen the path of the Shadowknight. Open your inventory and read the note within. Once you are ready to begin your training, hand the note to me and we will continue.' 
+
+'''Turn in your newbie note called Guild Summons (identifies as "The Crusaders of Greenmist"):'''
+
+: Arch Duke Xog says 'Welcome into our brotherhood. Know you that our way is the way of pain. Do as we say and you shall climb the rungs of knighthood. Listen well to the Lords of Pain within this temple and follow the words of the hierophants, for Cazic-Thule speaks to us through them. Take this khukri. It is the chosen weapon of the Crusaders and can deliver great pain unto our foes. Go now and learn our ways. Seek out Lord Gikzic.'
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive a [[Pawn's Khukri]].
+
+== Crusader's Test of the Pawn (#1) ==
+
+You say, 'Hail, Lord Gikzic' 
+
+: Lord Gikzic says 'You dare to intrude upon the presence of a Lord of Pain?! Such foolish acts can only be those of a knight in training. Are you a [knight in training]?' 
+
+You say, 'I am a knight in training.' 
+
+: Lord Gikzic says 'If you are a pawn, then let us begin with a simple test. Complete the test and you shall be rewarded with a new khukri. Do you [wish to perform the test of a pawn]?' 
+
+You say, 'I wish to perform the test of a pawn.' 
+
+: Lord Gikzic says 'You shall carry this pack. Within it you shall combine 4 sarnak hatchling heads. When you have the full sarnak head pack then you shall return it to me along with your pawn's khukri and I shall reward you with the khukri of a knave. Beware, the sarnak are our most hated foes and even their whelps are quite formidable fighters. Be sure to seek out Klok Mugruk. He may have some curscale armor available.' 
+
+You receive a [[Sarnak Head Pack]] {{Item Lore|Pack for Whelp Heads}}, a 4-slot SMALL container.
+
+'''Go to the [[Lake of Ill Omen]] and kill [[A Sarnak Hatchling]] until you have looted 4 x [[Sarnak Whelp Head]]. Combine these in the pack to craft a [[Full Pack of Sarnak Heads]]''' {{Item Lore|Sarnak Whelp Heads}}. '''Give this to Lord Gikzic along with your [[Pawn's Khukri]].'''
+
+: Lord Gikzic says 'You have learned to behead your opponents with great precision. Take the khukri of the knave. It shall prove most formidable in combat when wielded by a young crusader. You may now assist us with a [greater concern] than your training.' 
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive your [[Knave's Khukri]].
+
+== Crusader's Test of Pain (#2) ==
+
+You say, 'What greater concern?'
+
+: Lord Gikzic says 'A tome has been taken from us. An expeditionary unit was returning to Cabilis when they were overtaken by a band of froglok raiders. The odds were greatly in their favor, but our forces would soon cut them down. Then, as abruptly as the battle began, it came to an end. The frogs retreated. The only item they took was an ancient tome entitled 'The Origins of Pain'. What the frogs want with it is unknown to us. Will you [retrieve the tome]?'
+
+You say, 'I will retrieve the tome.'
+
+: Lord Gikzic says 'The tome ripped open in battle. There were but ten pages. This is one of those pages. You must find the remainder and the tome binder. Place the pages within the binder and once you combine them, the binder shall magically lock. Do not look upon the pages, for the words would bring a great madness upon you. Your task is simply to seek out the froglok raiders and return the magically locked tome to me. Return it with a knave's khukri and I shall give you a more powerful weapon.'
+
+'''You receive "a page of a tome" (identifies as "Page Ten of 'Origins Of Pain'").'''
+
+'''Go to the bandit camp east of Cabilis, in the northern part of the [[Swamp of No Hope]]. Kill the [[froglok raider]]s there until you've collected the nine other pages. The raiders are fairly common at night and patrol around the camp. This quest is doable at level 9 onwards, though there are aggressive deep reds roaming around this area even at level 20, and can be achieved by pulling the raiders back to the opening that leads to the Field of Bone zone. Raiders spawn at 8pm game time and despawn during the day.'''
+
+Raiders spawn from the spawn point at 2275, -193, 15 near the tree behind the bandit camp. Another spawn point is 2390, 293 behind the statue. There is a ph and a 6min respawn timer. There are multiple spawn points. This is just one of them.
+
+To successfully combine the tome you need the following:
+
+* One NO-DROP LORE [[Page of a Tome]] (given by Lord Gikzic)
+* Eight LORE [[Page of a Tome]]
+* One NON-LORE [[Page of a Tome]]
+* One LORE NO DROP [[Tome Binder]]
+
+'''Combine the ten pages in the binder: You have fashioned Magically Locked Tome.'''
+
+Give this and your [[Knave's Khukri]] to Gikzic.
+
+: Lord Gikzic says 'You have done as instructed. You are wise to hand this tome to me. It could bring you nothing more than insanity. As your reward, you shall have the squire's khukri. Soon you shall wield the knight's khukri, but that is for another Lord of Pain to decide.'
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive your [[Squire's Khukri]].
+
+== Crusader's Test of Suffering (#3) ==
+
+At the end of the previous quest Lord Gikzic directs you to speak to Lord Korzin (loc pos1061, neg172, pos45).
+
+You say, 'Hail, Lord Korzin'
+
+: Lord Korzin says 'What is it you seek? Eternal suffering?'
+
+You say, 'I seek eternal suffering.'
+
+: Lord Korzin says 'Then follow the words of Cazic-Thule and may his blessed curses rain upon your soul as they shall on all of his faithful servants. Were you [sent] to me by Gikzic?'
+
+You say, 'I was sent to you.'
+
+: Lord Korzin says 'You were sent to me. You must be the squire who found the ancient tome, 'The Origins of Pain'. I can use a talented crusader such as yourself. In my dreams, Cazic-Thule has spoken to me. He instructed me to seek out the 'Skull of Torture' which was last reported to be within the torture tower of the ancient Lord of Pain, Kurn. Will you [accept the calling]?.'
+
+You say, 'I accept the calling.'
+
+: Lord Korzin says 'As if you had a choice. Seek out the tower of Kurn and find the Skull of Torture. You should be able to easily recognize this skull as it glows with the power of Cazic Thule. Return it to me with your squire's khukri and I shall reward you with the knight's khukri. Go at once.'
+
+'''Go to [[Kurn's Tower]] and loot a [[Glowing Skull]] (identifies as "The Skull Of An Undead Cook") from [[Greater Scalebone]], [[Lesser Charbone Skeleton]] or [[Lesser Icebone Skeleton]]. This is a Temporary item and will disappear if you log out, so make sure you hand it in as soon as possible.'''
+
+: Lord Korzin says 'Excellent work! You are no squire. You are now a knight of the crusaders. Your next step shall be zealot. And every zealot wields a magical khukri.' 
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive your [[Knight's Khukri]].
+
+== Crusader's Test of the Zealot (#4) ==
+
+You will need to speak to [[Lord Qyzar]]
+
+You say, 'Hail, Lord Qyzar'
+
+: Lord Qyzar looks upon you with a sneer. 'What is the year of our birth and who was our Father?'
+
+You say, 'The year is 371 AG and our father is Rile.'
+
+: Lord Qyzar says 'You are a student of our ways? I would hope so. I seek a knight in search of a way to prove his allegiance and a way to earn his [zealot khukri].'
+
+You say, 'I want a way to earn my zealot khukri.'
+
+: Lord Qyzar says 'In search of a zealot khukri? I have heard much of your deeds to aid us. I offer it to you in exchange for your service. I have dispatched a knight named Grizzle to seek out the Kromdul fortress called Chalp. He was to secretly map Chalp and return with a [Chalp diagram]. He has yet to return. Perhaps you can [rescue Grizzle].'
+
+You say, 'Chalp diagram?'
+
+: Lord Qyzar grimaces in pure disgust. 'I have been awaiting the Chalp diagram from a knight named Grizzle, but alas, he has proven himself weak. He has been taken prisoner by one of the Kromdul of Chalp. If only there were another knight I could send to [rescue Grizzle] and return the Chalp diagram...'
+
+You say, 'I will rescue Grizzle.'
+
+: Lord Qyzar says 'If you can find the knight in Chalp and have him hand you the Chalp diagram, you shall become a zealot and wield a zealot khukri. All I need are the Chalp diagram and your knight khukri.'
+
+'''Grizzle is actually [[an iksar knight]] in [[Warsliks Wood]]. If he is not resting near Cabilis entrance  he's you will need to make him spawn. Go to the giant fort and find a relatively round building in the middle. The giant that spawns there (-960, +1090) is sometimes "[[a forest giant]]" with no evergreen/greenwood/sapling appended.''' When you attack him you'll see the following emote:
+
+: a forest giant covers a pouch as to something from jumping out. 'You not get lizard!! You be squashed!!'
+
+When you kill him, if Grizzle wasn't already at Cabilis, [[an iksar knight]] springs from the corpse and starts running toward Cabilis. You will need to speak to the version of him that appears near Cabilis.
+
+You say, 'Hail, an Iksar knight'
+
+: an Iksar knight wipes the sweat from his forehead and spits some flarefire seeds on the ground near your feet. 'Whew!! Good to be back and safe at the Cabilis Gate. The troopers will protect us.'
+
+You say, 'Do you have the Chalp diagram?'
+
+: an Iksar knight spits out some flarefire seeds. 'Great!! Sent to retrieve the Chalp diagram. I will give them to you, but I want you to do me a little favor first. I want you to [retrieve some spells] I lost. They are incorrectly scribed and useless, but I yearn for their return nonetheless.'
+
+You say, 'How can I retrieve some spells?'
+
+: an Iksar knight spits flarefire seeds on you. 'Oops!! Sorry. Yeah!! You go to Chalp and get two incorrectly scribed spells which they grabbed from me. The third one, I threw in a river crossing by Chalp. It was in a bottle and probably drifted way down the river. Bring me all three and also a shovel and I will make it worth your while.'
+
+You say, 'You really like those flarefire seeds, don't you?'
+
+: an Iksar knight spits some flarefire seeds on your face. 'What? Interested in flarefire seeds? There you go. Ha!!'
+
+'''You will need to kill a forest Giant Sapling until they drop a [[Misscribed Gate]] (identifies as "Scribbling 'Gree..?'") and a [[Misscribed Lifetap]] (identifies as "Scribbling of a mountain"). Go swimming in the northwest corner of the zone near +4235, +4220 and find a bag that picks up as [[Scroll in a Bottle]] (identifies as "Misscribed Fear"). Buy a [[Shovel]]. Give all FOUR items to the knight.'''
+
+: an Iksar knight accidently swallows a mouthful of flarefire seeds. 'ACCCKK!! I can't believe you did it!! Here is the Chalp diagram.'
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive Chalp Diagram.
+
+'''Return to Lord Qyzar and give him the knight's khukri and the Chalp diagram.'''
+
+: Lord Qyzar says 'At last!! The Chalp diagram. I shall see that the emperor gets this at once. You have proven yourself more than just a mere knight, you are a zealot. Being new to the temple we have need of you in a [matter of betrayal].' 
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive your [[Zealot's Khukri]].
+
+== Crusader's Test of Betrayal (#5) ==
+
+In order to spawn an Iksar crusader, you must first complete the dialog with Lord Qyzar:
+
+While targeting Lord Qyzar:
+
+You say, 'What matter of betrayal?'
+
+: Lord Qyzar says 'One of our agents, a hero by the name of Goxnok, has found evidence that the book entitled 'Charasis' has been taken from this temple and is to be delivered to an unknown foe in the Outlands. Go at once to the lower levels of the temple and greet Goxnok. Hurry, before he departs!'
+
+'''Drop down to the bottom floor of the western tower to find [[an Iksar crusader]] at +1010, -100, -24.'''
+
+You say, 'Hail, an Iksar crusader'
+
+: an Iksar crusader clicks his heels together at attention. 'Hail, follower of Pain.'
+
+You say, 'What about the [[Charasis Tome]]?'
+
+: an Iksar crusader says 'The Charasis Tome, the tome of the old city of Charasis. It was taken from this temple and must be returned. The one sent to [apprehend the traitor] who stole the tome must be [ready to depart] with me at once.'
+
+You say, 'I have been sent to apprehend the traitor.'
+
+: an Iksar crusader spies the khukri sheath at your side. 'This cannot be. I was told a duke would attend the matter. Still, if the Lords have sent you, then you must be able to complete the task. The [traitor] most certainly must be stopped from delivering the [Charasis Tome]. The [recipients] appear quite formidable and I cannot handle such a deed, not single-handed.'
+
+You say, 'Who is the traitor?'
+
+: an Iksar crusader says 'I am afraid I do not know. The babble is that he is from Cabilis, but he could have been a disguised sarnak. Who knows? The tink is that at night within the Outland territory, near the old skinless outpost, they are to meet. We should depart at once. Go get outfitted and let me know when you are [ready to depart].'
+
+You say, 'Who are the recipients?'
+
+: an Iksar crusader shows signs of fear and his face turns olive. 'I do not know. The [spider riders]!! I have only heard tales of them from dying lizards. Evil skinless stubs. From the wounds inflicted on the lizards, I can tell they are vicious opponents. Bloated and frayed flesh, disembowelment. Their steeds must have also joined the fray, for some of the victims were covered in webs.'
+
+You say, 'What are spider riders?'
+
+: an Iksar crusader says 'As I have reported, the babble states they appear to be skinless stubs who ride giant spiders. Most encounters occur when the moon is high. Little is known about them and only in recent weeks have they begun to appear.'
+
+If you say you will "apprehend the traitor" it will circle back to the first response.
+
+You say, 'I am ready to depart.'
+
+: an Iksar crusader slings his pack on his back and locks his sheath. 'Very well. I shall follow shortly. You must depart on your own. Go to the plains of the old skinless outpost. Beware, they have returned and patrol the hillside. Keep an eye on the gates of the outpost. I will be disguised within their ranks, I shall kneel as a sign. Give me this [[Coin]] as your token.'
+
+'''You receive a [[Coin]] (identifies as "Token of Goxnok").'''
+
+'''Head to Firiona Vie.  Around 9 PM game time, Tracker Azeal despawns and reappears in a form indifferent to everyone, then walks out of the outpost.'''
+
+: Tracker Azeal says 'I'm going to start my patrol. I'll report back by morning.'
+
+'''He wanders off and ends up near a boulder at -2560, -1520, where he kneels (the sign he said to watch for). He still doesn't respond to hails. At this point you give him the [[Coin]].'''
+
+: Tracker Azeal begins to pull his face off.. it is a disguise!! 'Aha!! You have made it!! I cannot see well in this disguise, but I thought I smelled you. I have [news of the Charasis tome].'
+
+'''He respawns as [[Hero Goxnok]].'''
+
+You say, 'What news of the Charasis tome?'
+
+: Hero Goxnok says 'The Charasis Tome has been scribed and now another copy exists. The traitor obviously wants to keep a copy for himself. I am told you will deliver both copies to Lord Qyzar along with your zealot khukri and you shall be awarded that of a crusader. Let us rest for a minute and then I shall show you the meeting place.'
+
+There is a momentary pause.
+
+: Hero Goxnok says 'Come along. If we get separated, look for the humanoid wolf camp and beyond the tunnel, you shall find the meeting place of the spider riders and the traitor.'
+
+After some running, he pauses again.
+
+: Hero Goxnok stops abruptly and shudders with fear. 'Look!! There, past the wolf people. Near an ancient tunnel can be found the meeting place. I fear we may be too late. I thought I saw a shadow dash from the tunnels, but I did not see any spider riders. We'll see when we reach it'
+
+After another pause.
+
+: [[Hero Goxnok]] looks over at you and sizes you up before continuing on. He says, 'We should continue, follow me.'
+
+'''He runs northeast, cutting across the edge of a drolvarg encampment, and approaches a Drolvarg Tunnel. He then approaches [[a drachnid spy]].''' (667, -1769)
+
+You say, 'Hail, a drachnid spy'
+
+: a drachnid spy looks upon you with evil eyes and you hear a horrid chatter. Hairs rise from the spider's thorax. 'Greetings, creature. What a fine meal you would make!'
+
+'''It attacks.'''
+
+a drachnid spy says 'You shall not take the tome from me!! I shall snack upon your blood-drained corpse.'
+
+'''Kill the spy and loot a [[Charasis Tome]], then hail Goxnok again.'''
+
+You say, 'Hail, Hero Goxnok'
+
+: Hero Goxnok sighs slowly, seeing the confusion on your face. He says, 'Yes, ______, I am the traitor. What I can gain by giving up this tome outweighs any patriotic obligations I may have once had. That city is dead, it is now time for us to grasp at our own destinies. I now give you two choices, Iksar. You can walk away and never speak of this to anyone......or you can die. What will it be?'
+
+'''It's time to kill him. You may want to use this time to summon a pet to eat the harm touch.'''
+
+: Hero Goxnok says 'Die by the power of Greenmist!!'
+
+Once you have slain him:
+
+: Hero Goxnok's corpse says 'You shall now be a wanted man.. The Union of Vie shall punish you.'
+
+'''Loot a [[Charasis Tome Copy]]. Return to Lord Qyzar and give him both tomes and your Zealot's Khukri.'''
+
+: Lord Qyzar says 'Congratulations! You are now a true crusader, but there is no time for celebration. We have lost two of our operatives. Crusaders Golin and Fodcod were dispatched to seek out an ancient artifact, the [visceral dagger]. Where they have gone, I do not know. They have been gone far too long. Find them and return the dagger to me with your crusader khukri and you shall be a hero.'
+
+<div class="facblock">
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive your [[Crusader's Khukri]].
+
+== Crusader's Test of the The Hero (#6) ==
+
+Lord Qyzar is standing on the parapet one level up in the SK guild, at +1005, -150. At the end of the previous quest, he mentioned the [visceral dagger].
+
+You say, 'What of the visceral dagger?'
+
+: Lord Qyzar says 'The visceral dagger was an ancient torturing weapon. I do not know much of it other than that it was forged by a member of the Brood of Kotiz, but that was ages ago. He is surely dust by now.'
+
+'''Now go play with the Kly Imprecators in [[Dalnir]] and bring back the [[Visceral Dagger]] (see details in that quest link) and your [[Crusader's Khukri]] for the [[Hero's Khukri]].'''
+
+On handing it in:
+
+Lord Qyzar gazes in astonishment at the dagger. 'Ahhh!! You have brought the sacred visceral dagger back to the Temple of Terror. Let all be aware that the great ______ has returned to Cabilis a hero!! You now wield the weapon of a hero. Hail, ______, hero of the Crusaders of Greenmist.'
+
+<div class='facblock'>
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] could not possibly get any better.
+</div>
+{{YouGainExperience}}
+
+You receive the [[Hero's Khukri]].
+
+== Crusader's Test of the Lord (#7) ==
+
+You say, 'What about the Crusaders of Greenmist?'
+
+: Arch Duke Xog appears surprised at your words. 'You know of Greenmist? The Unholy Khukri of Rile? We once had knowledge of this weapon, but when our great cities were destroyed in 1056 A.G., so, too, were all the great libraries. We lost all records. An explorer named [Argest] claimed to have found one library still intact. Pure babble.'
+
+You say, 'Who is Argest?'
+
+: Arch Duke Xog says 'Once a Lord of Pain, Argest is now a great explorer. No lizard has seen more of Kunark than he. He returned one season ago to tell tales of an [ancient library]. He said that he believed that there he would find a tome which would reveal the location of the ancient crusader weapon, Greenmist.'
+
+You say, 'What about the ancient libraries?'
+
+: Arch Duke Xog says 'There are many ancient libraries yet to be discovered. Our once great cities have been decimated, if not by our foes, then by nature itself. Within the outlands are many ruins which have yet to reveal themselves. We look forward to the discovery of these ruins by such explorers as Lord [Argest] the Great.'
+
+You say, 'Where is argest?'
+
+: Arch Duke Xog becomes despondent at your question. 'Alas, our chance of locating Greenmist is lost as long as Argest remains missing. Reports have come in from the Legion's deep range patrols that he may be in the Frontier Mountain range. At least, that is where the patrol captain found Argest's walking staff. He might have been captured, killed or even digested!!'
+
+<u>PART I</u>
+
+First you must collect six scrolls. The scrolls are located in the following places:
+
+* I is dropped by the "failed crypt raider" in Kaesora.
+
+He also drops a note that reads:
+
+ I have found one more of the scrolls and have learned the final three were en route to
+ be rescribed in some ancient city called Torsis. When I find them I shall see that the
+ final four are rejoined in my masters realm.
+
+The reference to Torsis leads you to the City of Mist.
+
+* II, III, and IV are dropped by the Spectral Courier.
+* V is dropped by [[a dark librarian]] in Castle Mistmoore. Spawns in room 19 on map.
+* VI is dropped by [[a dark ass`t librarian]] in Castle Mistmoore. Spawns in room 23 on map.
+
+<u>PART II</u>
+
+'''After collecting the scrolls, you must see and free the imprisoned Argest.'''
+'''[[Droga Jail Guide]]'''
+'''In the [[Droga Jail]] area kill [[a goblin penkeeper]] and [[a goblin penmaster]] (and place holders) until you loot:'''
+
+* [[A Bone Key]]
+* [[A Bone Necklace]]
+* [[A Stone Key]]
+
+
+'''An enslaved iksar (wearing chain armor) is also found in the Droga jail. After the revamp he can be found in the goblin caves at approximately -2165, +1635, -435 (left side spawn, the placeholder is "an iksar slave" on Legion of Cabilis faction).'''
+
+You say, 'Hail, an enslaved iksar'
+
+: an enslaved iksar looks up at you. You can tell his spirit is broken. His scars speak of a severe beating.
+
+You say, 'Where are the scrolls of Vok Na Zov?'
+
+: an enslaved iksar says, 'Forget them. I believe all six scrolls lie in the [Kaesora Library] and that is no safe place for any explorer. The scrolls are not readable by any living person, but I came here in search of a machine which may be able to decipher them, the [Stupendous Contraption]. Should you return to Cabilis, see that the Arch Duke hears of the scrolls.'
+
+You say, 'What is this Stupendous Contraption?'
+
+: an enslaved iksar says, 'I have learned it was a machine tinkered by a legendary gnome. It has many uses. It lies in the slave pens of Droga. Perhaps it may be used to decipher the [Scrolls of Vok Na Zov]. I have leearned that it will not work without a [contraption needle]. Luckily I have found one in my journeys.'
+
+You say, 'I need the contraption needle.'
+
+: an enslaved iksar says, 'The contraption needle is a piece of the machine, the [Stupendous Contraption]. It won't operate without it and if you want it, you're going to have to bring me the [pen keys].'
+
+You say, 'Which pen keys?'
+
+: an enslaved iksar says, 'Pen keys!! I need the pen keys to get out of here! Find the ones who hold these keys. Bring me the key to pen number 1 and both keys to the pen gates. Do so and I shall give you the [contraption needle].'
+
+'''Hand him the three keys.'''
+
+: an enslaved iksar escapes with a flash, but before he goes, he speaks, 'At last!! The keys which shall bring me freedom! I thank you and here is the contraption needle. Good luck.'
+
+'''You receive a[[ Coarse Iron Needle]].'''
+
+'''In the pottery wheel (called Always Works / Tinmizer's Stupendous Contraption) at -197, +1114, -249 in Droga, combine:'''
+
+* Coarse Iron Needle
+* Illegible Scroll
+* Illegible Scroll
+* Illegible Scroll
+* Illegible Scroll
+* Illegible Scroll
+* Illegible Scroll
+
+This produces a Stupendous Tome. Turn in this item along with your Hero's Khukri to Arch Duke Xog to complete the quest.
+
+:Arch Duke Xog says, 'A legible tome of the scrolls of Vok Na Zov! What a find this is!! May the unholy curses of Cazic flow through you. Please accept the weapon of a Lord of Pain. To abandon it is to abandon our ways and earn yourself the hatred of our order.'
+
+<div class='facblock'>
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive the [[Lord of Pain's Khukri]].
+
+== Crusaders of Greenmist (#8) ==
+<br>
+{{Chardok Revamp Era}}
+
+You say, 'Hail, Librarian Zimor' ''(Located in the top floor of the SK Guild)''
+
+: Librarian Zimor says 'Hail, citizen, I hope that you are here to assist. We are gathering Crusaders to make an assault on the Libraries of Chardok. The slave creations have thrived in their sanctuary for too long. The tomes and texts they have stolen to fill their library belong us. They are even rumored to have a text on the Sacred Khukri of Rile, the Greenmist. If you see such a tome, you must bring it to me immediately. May Cazic-Thule guide you! 
+
+'''Kill Loremaster Piza'Tak or Grand LoreMaster Di`Korr in Chardok library. Loot [[The History of the Greenmist]].'''
+
+'''Hand The History of the Greenmist to Librarian Zimor.'''
+
+: Librarian Zimor looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. "This book may alter the reality you see before you, Klissar, "the scholar says as he continues to read the tome. "The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome." the Librarian hands you a note and turns his attention back to the book. 
+
+<div class="facblock">
+* Your faction standing with [[Brood of Kotiz]] got better. 
+* Your faction standing with [[Legion of Cabilis]] got better. 
+</div>
+{{YouGainExperience}}
+
+'''You receive [[Note to Oxyn]], hand the Note from Zimor to [[Hierophant Oxyn]] whom is downstairs.'''
+
+: Hierophant Oxyn takes the note and begins to howl into the air! "The visions are true! The new prophecy begins today, Crusader," the mystics growls with pleasure. He quickly turns and takes a bottle of murky liquid from one of his potion bags and hands it to you. "Take this and keep it safe. Our visions have told of this day. We have been able to learn of the metal of prophecy. This liquid will help us to locate it's true resting place! 
+
+{{YouGainExperience}}
+
+'''You receive a [[Bottle of Liquid Deklium]].'''
+
+You say ‘What is in this bottle of liquid?’ 
+
+: Heirophant Oxyn says "The bottle contains deklium in a liquid solution. The metal of prophecy has been determined to rest in a mass of living earth. Our scholars have written of a mass of ore that fell from the heavens. This ore was used in the creation of a blade of our father, Rile. We have been filled with visions of this blade. I have seen it in the hands of our Crusaders as they march towards the new age of Greenmist! Seek out the corrupted earth that guards the interlopers. We have an alchemist near there. He will be able to use the deklium to determine which golem contains the metal. Take care to go in force. I sense that there will be a battle. 
+
+'''Alchemist Granika is at The Overthere Outpost outside of East wall. '''
+
+You say ‘Hail Alchemist Granika’ 
+
+: Alchemist Granika says, 'If you were sent to me, show proof or be gone from my sight! 
+
+'''Hand Alchemist Granika the Bottle of Liquid Deklium.'''
+
+: Alchemist Granika says "If Heirophant Oxyn has sent this with you, I can assume that our visions were corect. The new age is calling us from the heavens. Prepare for battle. I will take this solution to the Outlander's gates and use it to reveal the location of the metal of prophecy. Should I not return, you will only need to find the creature that glows without the use of a torch. Deklium glows when it gets near the smallest trace of tynnomium. Prepare for battle, Crusader... I am off". 
+
+'''[[A Glowing Cliff Golem]] spawns just inside the east exit of the Outpost. He and 5 skeletal guards walk straight out of the Outpost with the golem trailing, then form a defensive position with the golem in the rear. If you watch him for a moment, the golem will walk away from the other mobs and you can snag him easily by himself. Cliff Golem being Cliff Golem, expect a negative faction hit to Venril Sathir. Kill him and loot a [[Chunk of Tynnonium]].'''
+
+'''Return to Cabilis and hand the Chunk of Tynnonium to Heirophant Oxyn.'''
+
+: Heirophant Oxyn holds the ore in his hands and begins to chant. His eyes go white as he raises the chunk of ore above his head. He lowers his arms and shakes his head for a moment. His eyes return to their normal state as they focus on you. The shaman hands you the ore and says, 'Seek out the creator of Rile's blade. He is still on this plane. I have felt his torment. Take this note to Librarian Zimor. He learned a great deal from the tome and can instruct you further. Librarian Zimor says 'I am very glad you have returned. 
+
+<div class="facblock">
+* Your faction standing with [[Scaled Mystics]] got better. 
+* Your faction standing with [[Legion of Cabilis]] got better. 
+</div>
+
+'''You receive a [[Note to Librarian Zimor]], hand the Note to Librarian Zimor''' 
+
+: Librarian Zimor says 'I am very glad you have returned. Your discovery of the tynnonium is extraordinary! This Sarnak tome has been an incredible source of information. It appears that they have been studying the Greenmist for some time. I'm sure they sought it as nothing more than a trinket to be collected. Their shortsightedness will be their eventual undoing. I have compiled a book of notes that will aid you in your quest for the Greenmist. Please take care to keep this information of the grasp of our enemies. 
+
+<div class="facblock">
+* Your faction standing with [[Brood of Kotiz]] got better. 
+* Your faction standing with [[Legion of Cabilis]] got better
+</div>
+
+'''You receive Notes from the Greenmist Tome, the book reads as follows:''' 
+
+ I made these notes from my interpretation of the Sarnak tome. Read them carefully. 
+ The weaponsmith who created the Greenmist still exists in some form. He has been 
+ tormented for a very long time and may not remember his art. If this is the case, 
+ there may still be some chance of recovering the design of the sacred blade. The 
+ key lies with the Lich-King's beloved. 
+ It is rumored the lich had a mirror created that allows his beloved Drusella to 
+ see her former self in its reflection. Perhaps this artifact can offer you some 
+ assistance in this quest. 
+ Several items will be needed to recreate the Greenmist Khukri. A special hammer 
+ was specifically created to fold and sculpt the weapon's blade. Both the Greenmist 
+ and this hammer were created on the same day. Only the year is know. The year was 
+ 1406. The tome mentions that the Sarnak were actively seeking the tool. 
+ The formula that will be needed to smelt the Tynnonium is written in the back of 
+ this book. Use this book when you find the forge needed to create the Khukri. You 
+ will need a design pattern, the block of Tynnonium, the hammer, and this tome to 
+ create the Greenmist blade. 
+ To finish the weapon, you will need the Lord of Pain's Khukri, this tome, the 
+ hammer, the Greenmist blade, and a Greenmist shard or fragment. We have not found 
+ any Greenmist fragments. 
+ All items must be forged in the hottest of all forges, the Forge of Dalnir. 
+ May the will of Cazik Thule guide you.
+ 
+'''Acquire the following items:'''
+
+* Kill [[Weaponsmith Ko`Zirr]] in Lake of Ill Omen. He's down the hall from the chancellor's room along with 3 imperial escorts.
+** Loot [[Hammer of 1406]].
+* Kill [[An Apprentice Herbalist]] in Chardok lower caves.
+** Loot the [[Greenish Metal Shard]].
+* Pick up [[Rile's Shattered Blade]] ("Shattered Blade of Rile") in Karnor's Castle. It is sitting on top of a large wooden box adjacent to the jail area where the Drovlarg Warlord spawns. (location 12 on the map) It looks like a dagger that's been dropped on the ground.
+* Kill [[Drusella Sathir]] in Howling Stones.
+** Loot the [[Mirror of Self-loathing]].
+* In the necromancer guild in West Cabilis, purchase a parchment, and quill from Visar Glolith.
+
+'''Head to Dalnir's Forge room, keep the room clear until [[a tormented tradesman]] spawns then hand him the Mirror of Self Loathing. He spawns The Haggle Baron Dalnir, the following text appears: '''
+
+: The undead entity looks in the mirror and appears to be stunned by the memory of his former self. He drops the mirror, which causes it to crack slightly. You immediately grab it and place it back in your bag. The spirit looks at you and begins to transform. Ethereal strands of muscle, blood, and flesh come together and the Haggle Baron Dalnir appears. 
+
+'''You receive [[Cracked Mirror of Self-Loathing]].''' ''(NOTE: Haggle Baron Dalnir is iksar but is on beta neutral faction)''
+
+You say ‘Hail Haggle Baron Dalnir’ 
+
+: Haggle Baron Dalnir says 'I have little time to speak. I can feel this facade weakening already. A Scaled Mystic came to me during my time of torment. He spoke to me. He said that a new time was hiding behind the darkness of the horizon. You seek Master Rile's Khukri. I can diagram it for you... Arrrgh! I feel the pull of torment upon me! Return to me with a piece of parchment, a quill, and Rile's Shattered Blade. Use your mirror again to bring me back and I will try to remember the design. Please be quick! 
+
+'''Hand Piece of Parchment, Quill and Rile's Shattered Blade to Haggle Baron Dalnir:'''
+
+: Haggle Baron Dalnir stares at the broken blade for some time. After a few moments of studying, the apparition begins to draw and scribble on the parchment. He works with amazing speed as the memories from his past flood from his quill. The diagrams and runes that etch the surface of the parchment begin to glow. The legendary Haggle Baron rolls the parchment and hands it to you. Smiling, he bows deeply and quickly fades away. 
+
+{{YouGainExperience}}
+
+'''You receive a Greenmist Design Pattern. Then, in the Dalnir Forge you place:'''
+
+* [[Greenmist Design Pattern]]
+* [[Chunk of Tynnonium]]
+* [[Hammer of 1406]]
+* [[Notes from the Greenmist Tome]]
+
+'''Click combine: "You have fashioned the items together to create something new!" (appears to be no-fail)'''
+
+{{YouGainExperience}}
+
+* You have fashioned Greenmist Khukri Blade. 
+* You have fashioned Hammer of 1406.
+* You have fashioned Notes from the Greenmist Tome.
+
+'''In the Dalnir Forge combine: '''
+
+* [[Lord of Pain's Khukri]]
+* [[Greenish Metal Shard]]
+* [[Greenmist Khukri Blade]]
+* [[Notes from the Greenmist Tome]]
+* [[Hammer of 1406]]
+
+'''Click combine: "You have fashioned the items together to create something new!" '''
+
+* You have fashioned [[Greenmist]].
+
+== Related Quests ==
+
+* [[The Penance]] to retrieve the starting Khukri if you lose it.
+* [[Bone Chips (Quest)]] to increase Crusader's of Greenmist faction.
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shadow Knight Quests]]

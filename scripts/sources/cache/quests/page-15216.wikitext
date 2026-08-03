@@ -1,0 +1,140 @@
+{{Classic Era}}
+[[File:npc_smith_tvysa.png|frame|Smith Tv`ysa]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South_Ro|Southern Desert of Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Smith Tv`ysa]] 
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+
+
+== Rewards ==
+
+<ul><li> {{:Concordance of Research}}
+</li><li> {{:Runes and Research Volume I}}
+</li><li> {{:Runes and Research Volume II}}
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''Smith Tv'ysa is in the camp in [[South Ro]] at loc pos100, pos500.''
+
+''Note: Although this quest is meant for lvl 16+ casters looking to work on their Research skill, it gives great Neriak faction hits and no negative hits. Requires to be Indifferent or better.''
+
+
+
+'''Hand in a [[Lightstone]]:'''
+
+: Smith Tv`ysa says 'A lightstone ? Thank you very much. Here is a copy of 'Runes and Research' for you.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better. 
+* Your faction standing with [[Dreadguard Outer]] got better. 
+* Your faction standing with [[Dreadguard Inner]] got better. 
+</div>
+
+{{YouGainExperience}}
+
+=== Dark Elf Mage (10% Exp penalty) ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 5
+| 11.2%
+| 5
+|-
+| 7
+| 9.25%
+| 4
+|-
+| 9
+| 5.4%
+| 5
+|-
+| 10
+| 4.25%
+| 4
+|-
+| 11
+| 3.5%
+| 8
+|-
+| 12
+| 3%
+| 2
+|}
+
+
+
+'''Hand in a [[Greater Lightstone]]:'''
+
+: Smith Tv`ysa says 'A greater lightstone? Thank you very much. Here is a 'Concordance of Research' for you.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better. 
+* Your faction standing with [[Dreadguard Outer]] got better. 
+* Your faction standing with [[Dreadguard Inner]] got better. 
+</div>
+
+{{YouGainExperience}}
+
+=== Dark Elf Mage (10% Exp penalty) ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 5
+| 11%
+| 2
+|-
+| 7
+| 11.33%
+| 3
+|-
+| 8
+| 11%
+| 3
+|-
+| 9
+| 11%
+| 1
+|-
+| 10
+| 8.66%
+| 9
+|-
+| 11
+| 7%
+| 6
+|}
+
+== Related Quests ==
+
+* [[Research_Aid|Research Aid (Good Research)]]
+
+[[Category:Quests]]
+[[Category:Southern Desert of Ro]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Wizard Quests]]

@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_iony_gredlong.png|200px|frame|Iony Gredlong]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Worn Felt Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Cleric who doesn't follow Bertoxxulous, you will have a tattered note in your inventory. The note reads as follows:
+
+: Journey to the Abbey of Deep Musing, where [[Iony Gredlong]] awaits.  She is the Master Cleric of the Deep Muses.  Take this note to her, and she will instruct you further.
+
+Upon handing the note to [[Iony Gredlong]]:
+
+: [[Iony Gredlong]] says, 'Welcome to the Abbey of Deep Musing. Here you can train and raise your abilities to the peak of perfection.  Take this tunic and wear it with pride.'
+
+<div class='facblock'>
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Deep Muses]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Worn Felt Tunic*]]. Good luck, Cleric!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Cleric Quests]]

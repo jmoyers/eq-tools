@@ -1,0 +1,93 @@
+[[File:npc_reebo_leafsway.png|frame|Reebo Leafsway]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Reebo Leafsway]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Blinza Toepopal]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+Reebo Leafsway can be found at either -85, -355, -9; or -115, -415, -9; or -110, -455, -6 (outside Tagglefoot's Farmstead in the garden). He'll eventually walk from one point to another.
+
+You say, 'Hail Reebo Leafsway'
+
+: Reebo Leafsway says 'Greetings and salutations, _____! My name is Reebo Leafsway, loyal Druid of [Karana]. I am in charge of helping young druids who wish to get started down the [trail to Karana's wisdom]. I also do my share of tending [crops].'
+
+You say, 'I wish to start down the trail to Karana's wisdom.'
+
+: Reebo Leafsway says 'Good. First you should learn that Karana's work is just that.. work. Karana provides us with the tools but it is by the sweat of our brows that we prosper. Common sense and hard work are two things that are highly prized by our people. Time for you to sweat, young one. Take this crate of carrots over to Blinza Toepopal in the Fool's Gold. They need our finest carrots for Mayor Gubbin's stew. When you return I will teach you a lesson of the Rainkeeper.
+
+'''Reebo Leafsway hands you a [[Crate of Rotten Carrots]].'''
+
+Blinza Toepopal can be found at -48, -177, 2. Upon handing the Crate of Rotten Carrots to Blinza:
+
+Blinza Toepopal says 'What are these?! I am trying to make stew for the mayor and you bring me ROTTEN CARROTS?! Have you no sense?? Take these back to Reebo.'
+
+<div class="facblock">
+* Your faction standing with [[DeepPockets]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+* Your faction standing with [[Carson McCabe]] got worse.
+</div>
+{{YouGainExperience}}
+
+Receive back the Crate of Rotten Carrots, which you can hand back to Reebo.
+
+: Reebo Leafsway says 'These carrots are rotten. They were rotten when I gave them to you. Why would you waste time and energy on such a fool's errand? Because I asked you to? Many, even those you trust, will ask you to do things which you should not. Use the common sense Karana has blessed you with to know which tasks can benefit our people and which could harm them. Learn this lesson well. You will need it if you plan to adventure beyond the vale. Now take these fresh carrots to Blinza and apologize for your error. You may keep any donation she gives you as payment.'
+
+'''Receive a Crate of Carrots and deliver it to Blinza.'''
+
+Blinza Toepopal says 'Well it is about time! The mayor gets very upset if he does not have the freshest of carrots in his stew. Here is the money for the carrots. Be off with you. Now, where the heck did [Jillin] go?'
+
+<div class="facblock">
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+</div>
+{{YouGainExperience}}
+
+You gain a small amount of experience and a very small amount of coin.
+
+'''If you give back the crate of rotten carrots you get the following:'''
+
+: Reebo Leafsway says, 'Very good. Very good indeed. Karana does not need the blind obedience that so many deities require. Trust your instincts, they are more often right than not. Here, take this to Blinza. Hurry, she is expecting them. You may keep the donation she gives you in return.'
+
+'''Reebo Leafsway hands you a Crate of Fine Carrots, which needs to be delivered to Blinza.'''
+
+Blinza Toepopal says, 'Oh excellent! These carrots are perfect! The finest Reebo has ever sent us. The mayor will be so pleased. Here is the payment for the carrots. Excuse me, but I must finish preparing the stew. Hmm. Where the heck did [Jillin] go?'
+
+<div class="facblock">
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+</div>
+{{YouGainExperience}}
+
+You gain a small amount of experience and a very small amount of coin.
+
+[[Category:Quests]]
+[[Category:Rivervale]]

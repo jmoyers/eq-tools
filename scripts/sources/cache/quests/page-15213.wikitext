@@ -1,0 +1,72 @@
+{{Classic Era}}
+[[File:npc_phin_esrinap.png|frame|Phin Esrinap ]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| Phin Esrinap 
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| [[Monk]] (or non-KoS)
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Konem Matse]]
+|}
+
+== Rewards ==
+
+<ul><li> [[Faction]]
+</li><li> Experience
+</li><li> [[Water Flask]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Phin Esrinap]] is in the monk's guild in North Qeynos.''
+
+Tell Phin Esrinap, "Where is Konem?."
+
+He will say he left somewhere and hasn't returned, and will give you a note to take to him. 
+
+You receive [[Message to Konem]].
+
+'''[[Konem Matse]] is in Qeynos Hills. He is always very close to one of the two paths and he is usually under a tree. Give the note to Konem.''' 
+
+Konem Matse says 'Oh I see.. Phin's always after me about something. I mean, it's not my fault the order hasn't come in yet. Hey, since I'm so busy right now, why don't you be a friend and take this back to Phin for me, huh?' 
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better. (+5)
+* Your faction standing with [[Guards of Qeynos]] got better. (+5)
+* Your faction standing with [[Ashen Order]] got better. (+5)
+</div>
+{{exp}}
+
+'''You receive: [[Grathin's Invoice]].'''
+
+It reads: 
+
+''Phin -- I am sorry to report that the wooden arms you ordered last week, have not yet arrived. I've sent my assistant to find out what happened to the last trade caravan. Probably bandits again. I'll let you know as soon as I find out anything. -- Grathin ''
+
+'''Give it to Phin.'''
+
+Phin Esrinap says 'Oh this is not good. Too many innocent traders have been getting robbed lately by the those vile bandits out in the Karanas. Something must be done soon. Anyway, thank you for delivering the message.. you did well, young __________. Here's a little something to quench your thirst from all that running around.' 
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better. (+5)
+* Your faction standing with [[Guards of Qeynos]] got better. (+5)
+* Your faction standing with [[Ashen Order]] got better. (+5)
+</div>
+{{exp}}
+
+You receive a [[Water Flask]].
+
+[[Category: Quests]]
+[[Category:North Qeynos]]
+[[Category:Monk Quests]]

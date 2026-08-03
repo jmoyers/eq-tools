@@ -1,0 +1,145 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_jendavudd_fe`dhar.png|frame|Jendavudd Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Jendavudd Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests. Below are the stat totals for a full set of armor with 2 bracers.<br>
+<table class="eoTable">
+<tr class=tableheader><td>'''AC'''</td><td>'''HP'''</td><td>'''STR'''</td><td>'''STA'''</td><td>'''AGI'''</td><td>'''DEX'''</td><td>'''WIS'''</td><td>'''INT'''</td><td>'''CHA'''</td><td>'''MANA'''</td><td>'''MAGIC'''</td><td>'''FIRE'''</td><td>'''COLD'''</td><td>'''POISON'''</td><td>'''DISEASE'''</td></tr>
+<tr><td>250</td><td>335</td><td>36</td><td>31</td><td>39</td><td>42</td><td>0</td><td>0</td><td>0</td><td>0</td><td>25</td><td>18</td><td>17</td><td>1</td><td>11</td></tr>
+</table>
+
+== Reward ==
+
+{{Gear Set
+|Crown of the Myrmidon
+|Breastplate of the Myrmidon
+|Vambraces of the Myrmidon
+|Bracer of the Myrmidon
+|Gauntlets of the Myrmidon
+|Greaves of the Myrmidon
+|Boots of the Myrmidon
+}}
+
+== Checklist ==
+Turn-ins to [[Jendavudd Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Crown of the Myrmidon]]
+:*[[Unadorned Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Breastplate of the Myrmidon]]
+:*[[Unadorned Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Vambraces of the Myrmidon]]
+:*[[Unadorned Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Bracer of the Myrmidon]]
+:*[[Unadorned Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Gauntlets of the Myrmidon]]
+:*[[Unadorned Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Greaves of the Myrmidon]]
+:*[[Unadorned Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Boots of the Myrmidon]]
+:*[[Unadorned Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Jendavudd Fe`Dhar is located in an icy room at the top of the giant staircase section beyond the maze. Other resources may put the quest NPCs in a library at the bottom of the giant staircase.
+
+You say, 'Hail, Jendavudd Fe`Dhar'
+
+: Jendavudd Fe`Dhar says 'Greetings to you. I seek the service of a powerful warrior. If you are not what I seek leave me be.'
+
+You say, 'I am a warrior'
+
+: Jendavudd Fe`Dhar says 'Excellent. I admire strength and ferocity. Life is but a series of battles, is it not?'
+
+You say, 'Life is a series of battles'
+
+: Jendavudd Fe`Dhar says 'We share the same view then.  I wish to test your skills in battle.  Not with me of course, for I will destroy you where you stand.  Instead I wish for you to retrieve some trinkets for me and once I have them I will reward you handsomely with a helm, a breastplate, armplates, bracers, gauntlets, greaves, or boots.'
+
+Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned plate armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.
+
+Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Jendavudd Fe`Dhar says 'All I require are an unadorned plate helmet and three pieces of crushed coral. This should be a small task for one such as you. Go now and I shall await your return.'
+
+Return with an [[Unadorned Plate Helmet]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Jendavudd Fe`Dhar says 'As the resolve of your discipline and strength shall endure through a battle, so shall this breastplate.   All I required are an unadorned breastplate, and three flawless diamonds.  Do this quickly so that you may return to the field of battle.'
+
+Return with an [[Unadorned Breastplate]] and three [[Flawless Diamond]]s.
+
+== Armplates ==
+
+You say, 'What armplates?'
+
+: Jendavudd Fe`Dhar says 'So, a pair of armplates is what you require? Well, I require unadorned plate vambraces, as well as three flawed emeralds before you may receive them. May your deeds be spread throughout the lands!'
+
+Return with [[Unadorned Plate Vambraces]] and three [[Flawed Emerald]]s.
+
+== Bracers ==
+
+You say, 'What bracers?'
+
+: Jendavudd Fe`Dhar says 'Bracers for the mighty? Retrieve these components and I shall forge the item for you. Bring me an unadorned plate (sic) and three crushed flame emeralds.'
+
+Return with [[Unadorned Plate Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Jendavudd Fe`Dhar says 'Mighty gauntlets to aid in obliterating your foes, eh? It is no easy task but I shall require a pair of unadorned plate gauntlets and three crushed topaz.'
+
+Return with [[Unadorned Plate Gauntlets]] and three [[Crushed Topaz]].
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Jendavudd Fe`Dhar says 'Strength and balance are important, are they not? I shall help give you an advantage with these leggings. Gather for me three flawed sea sapphires and a set of unadorned plate greaves.'
+
+Return with [[Unadorned Plate Greaves]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Jendavudd Fe`Dhar says 'A pair of boots you shall have once you have gotten a pair of unadorned plate boots as well as three pieces of crushed black marble.'
+
+Return with [[Unadorned Plate Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Warrior Quests]]
+[[Category:Skyshrine Armor Quests]]

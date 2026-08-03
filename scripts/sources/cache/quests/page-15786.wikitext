@@ -1,0 +1,72 @@
+{{Velious Era}}
+[[File:npc_clrakk_blackfist.png|frame|Clrakk Blackfist]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Clrakk Blackfist]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Deaen Greyforge]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Spear of Venom}}
+</li><li> {{:Mask of Malediction}}
+</li></ul>
+
+== Walkthrough ==
+
+NOTE: Amiable faction is not high enough to do this quest, turn in was eaten.
+
+Clrakk Blackfist is found in the Iceshard Manor of Kael Drakkel.
+
+You say, 'Hail, Clrakk Blackfist'
+
+Clrakk Blackfist looks down at you.  'What is it you want, _____?  Why do you speak to the great Knight Clrakk Blackfist?'
+
+You say, 'I want to bring strife'
+
+Clrakk Blackfists says 'The Coldain have grown complacent. The defenses of their city are built to keep my kind and dragonkind at bay. However, their defenses against the smaller races such as yourself are not nearly as sophisticated. I wish to kill many Coldain, but now is not the time for that. There is a particular Coldain whose death will strike fear into the hearts of many. His name is Deaen Greyforge, a Coldain knight. He is both feared and respected by his kind. If you can destroy him, it will send a message to the Coldain that they are not safe from the wrath of the giants. Kill him and chop his body into bits. Bring me a few pieces as proof that the fool is dead.'
+
+Deaen spawns in the same hut as Garadain Glacierbane in the Eastern Wastes. Kill him and loot either a Hand of Deaen Greyforge or a Legs of Deaen Greyforge.
+
+Handing Clrakk Blackfists the Hand of Deaen Greyforge results in:
+
+: Clrakk Blackfist says 'You truly are a bringer of strife, _____.  Take this.  I hope it will assist you.  Use it in our war against the Coldain scum.'
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive the Mask of Malediction.
+
+Handing Clrakk Blackfists the Legs of Deaen Greyforge results in:
+
+: Clrakk Blackfist says 'You truly are a bringer of strife, Hobbun.  Take this.  I hope it will assist you.  Use it in our war against the Coldain scum.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive the Dark Spear of Venom.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,79 @@
+{{Classic Era}}
+
+[[File:npc_einhorst_mcmannus.png|thumb|Einhorst McMannus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Einhorst McMannus]]
+|-
+! ''' Minimum Level: '''
+| 20+
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Broon]]
+|}
+
+== Reward ==
+
+<ul>
+<li>{{:McMannus Clan Dagger}}</li>
+<li>Gold</li>
+<li>Faction</li>
+</ul>
+
+== Checklist ==
+{{CheckboxList}}
+*  [[Broon's Eye]]
+*  Turn in [[Broon's Eye]] to [[Einhorst McMannus]].
+{{End}} 
+
+== Walkthrough ==
+
+The bereft McMannus family needs revenge against a cyclops.
+
+Begin by talking to any of the McMannus barbarians in the [[Western Plains of Karana]] Barbarian fishing village in the southwest corner, and asking them about their mother who seems to be missing.
+
+You say, 'Hail, Brenzl McMannus'
+
+: Brenzl McMannus says, 'Hail, traveler!  It is good to see new faces in our fishing village.  I am Brenzl McMannus.  I am quite talented with wood and string.  I sell the finest nets and bows in the land. Have a glance.'
+
+You say, 'mother'
+
+: Brenzl McMannus says, 'Unfortunately, she passed away a year ago. She was killed while defending our dogs from a giant. Do not ask our father, Einhorst, about our mother, Helsa. He does not need to be reminded.'
+
+Talk to [[Einhorst McMannus]] in one of the huts: 
+
+You say, 'Helsa'
+
+: Einhorst McMannus says, 'My wife? She is dead. Crushed by the hands of a foul cyclops. I wish I could find that cyclops. I would pay greatly for his eye. I have slain every giant I could find, but I have not met him. I could still remember that cry of his...  BROOON!'
+
+Head to the [[Eastern Plains of Karana]], and look for [[Broon]] who spawns in the east, at the base of the ramp going into the canyon. Kill [[Broon]], who drops [[Broon's Eye]].
+
+Give [[Broon's Eye]] to [[Einhorst McMannus]]. 
+
+: Einhorst McMannus says, 'Finally, my wife has been avenged. Thank you, my friend! Here. May this be used in many glorious battles!'
+
+<div class='facblock'>
+* Your faction standing with [[Wolves of the North]] has been adjusted by 5.
+* Your faction standing with [[Shamen of Justice]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Halas]] has been adjusted by 5.
+* Your faction standing with [[Rogues of the White Rose]] has been adjusted by 5.
+* Your faction standing with [[Steel Warriors]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}}
+
+<div>You receive the {{:McMannus Clan Dagger}}.</div>
+
+
+[[Category:Quests]]
+[[Category:Western Plains of Karana]]
+[[Category:Warrior Quests]]

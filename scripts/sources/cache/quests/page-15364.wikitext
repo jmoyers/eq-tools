@@ -1,0 +1,58 @@
+[[File:npc_theron_rolius.png|frame|Theron Rolius]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Theron Rolius]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]], [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[A shark]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Sharkskin Shield}}
+</li></ul>
+
+== Walkthrough ==
+
+''Theron Rolius is located at 238.46, -147.80 in the Hall of Truth.''
+
+You say, 'Hail, Theron Rolius'
+
+: Theron Rolius says 'Greetings, ______! To enter these grounds is to proclaim your faith in the Truthbringer. In this city you shall find no greater allies than the Knights of Truth. We urge all knights and clerics who oppose the hand of the Freeport Militia to [join the crusade].'
+
+You say, 'I will join the crusade.'
+
+: Theron Rolius says 'Then take arms against the Freeport Militia! They serve no one save Sir Lucan, the fallen knight. From this day forth, I put a bounty upon all militia members. For every bashed militia helm, a reward!! If you are not ready to battle the militia just yet, you may [assist in other areas].'
+
+You say, 'I will assist in other areas.'
+
+: Theron Rolius says 'I have been creating shields for the crusade. Right now I work on the sharkskin shield for the knights. I require two shark skins. Unfortunately, most sharks are too dangerous for the squires. I have begun using [reef shark] skins. Will you hunt the [reef sharks]?'
+
+You say, 'What reef sharks?'
+
+: Theron Rolius says 'Reef sharks are the smallest and most docile of the sharks. Even a young acolyte can slay one. I have heard there are some in the Ocean of Tears. There are numerous reef sharks there. I need a young acolyte to [hunt] reef sharks. I require their skins.'
+
+You say, 'I will hunt the reef sharks.'
+
+: Theron Rolius says 'I thought I spied the shoulders of a swimmer upon you! Take this large sack. Travel to the Ocean of Tears. There are numerous reef sharks there. I will require no few than two shark skins. When the full sack is combined and returned to me, I shall reward you.'
+
+'''The shark skin required can be from any shark. Place two [[Shark Skin]] into the bag and combined it to crate a [[Sack of Sharkskins]]. Hand him the [[Sack of Sharkskins]].'''
+
+: Theron Rolius says 'Fantastic work, my young knight. Here is sharkskin shield as a token of the my appreciate.'
+
+''Note: No Experience or coin reward''
+
+[[Category:Quests]]
+[[Category:North Freeport]]

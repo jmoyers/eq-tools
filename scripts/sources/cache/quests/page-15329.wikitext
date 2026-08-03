@@ -1,0 +1,53 @@
+{{Classic Era}}[[File:npc_dok.png|Dok|alt=Dok, the general supplies vendor of Halas|thumb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Dok]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| bixies
+|}
+
+== Reward ==
+
+<ul><li>  {{:Everburn Candle}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Dok]] may be found inside the shop called Dok's Cigars (/loc 213, 274).''<blockquote>You say, 'Hail, Dok'
+
+: Dok says, 'A fine day to ye, ______. Welcome to me shop. If ye're searchin' fer a [cigar], ye won't be findin' any, more's th' pity.'
+
+You say, 'What's a cigar?'
+
+: Dok says, 'I was hoping to perfect me creation I was callin' the 'cigar', but I'm afraid I just couldn't get it right. To keep from settin' meself on fire, I switched me talents to makin' candles. I could use help from a person such as yerself. Ye could [collect the wax] fer me - the candle-makin's.'
+
+You say, 'I will collect the wax.'
+
+: Dok says, 'Grreatt!! Take this wax jarr. Head to any place ye can find the wee ones they call bixies. I'm afraid ye're going to hafta bash 'em and search to find out if they're carrying any honeycombs. If they are, then ye can fill the jar with them and combine them, then return the full honeycomb jar to me. I'll be givin' ye a special candle if ye can do that fer me.'
+</blockquote>'''You receive an [[Empty Jar]], a 6-slot TINY container that identifies as "Empty Jar for Honeycombs."'''
+
+
+Go hunt bixies in various zones and collect their [[honeycomb]]. Combine six in the jar to craft a Full Honeycomb Jar, which you should return to Dok.<blockquote>Dok says 'Great work!! Now I can make more candles! Here ye are, me friend. I call this the Everburn Candle. It has a wee bit o' magic in it. I hope ye like it.'</blockquote>
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+{{exp}}
+
+You receive coin and an [[Everburn Candle]].
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:All Classes Quests]]

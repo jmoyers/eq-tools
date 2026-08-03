@@ -1,0 +1,93 @@
+{{Velious Era}}
+[[File:npc_makil_rargon.png|frame|Makil Rargon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Makil Rargon]]
+|-
+! ''' Minimum Level: '''
+| ~40 (exact level unknown, 33 to low)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kedge Keep]], [[Skyfire Mountains]], [[The Hole]]
+|-
+! ''' Related NPCs: '''
+| [[Guardian Kozzalym]], [[Master Yael]], [[Phinigel Autropos]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Strength of the Elements}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest starts in [[Western Wastes]]. [[Makil Rargon]] provides the quest and wanders the entire zone rarely standing still. Your best bet is to have a Rng/Dru friend track and follow him when you're ready to do the turn in. When hailed he will talk about the fusibility of elements and ask you to bring him 4 items to combine in a box he gives you. After you combine the 4 items and hand the combined box back to him he will give you the Strength of the Elements. The 4 items that are needed are:
+
+===Checklist===
+
+{{CheckboxList}}
+* [[Fusible Coral Ore]] - [[Phinigel Autropos]] in [[Kedge Keep]]
+* [[Fusible Earthen Ore]]  - [[Master Yael]] in [[The Hole]]
+* [[Fusible Igneous Ore]] - Ground spawn by the large volcano in [[Skyfire Mountains]] around {{Loc|Skyfire Mountains|(900, -1500)}} 
+* [[Fusible Velium Ore]] - A large air elemental named [[Guardian Kozzalym]] in [[Western Wastes]]
+{{end}}
+
+===Dialogues===
+
+You say, 'Hail Makil Rargon'
+ 
+: [[Makil Rargon]] says, 'Greetings, _____. I am Makil Rargon, an esteemed Assistant to the great wizard [Al'kabor].  What can I help you with?'
+ 
+You say, 'Who is Al'kabor?'
+ 
+: Makil Rargon says "Al'Kabor is the most powerful wizard on all of Norrath.  He is currently back to his Combine Empire research.  Being his most trusted assistant, he assigned me to follow up on his fusibility [research] findings.  Do you have any information to offer?'
+ 
+You say, 'Research?'
+ 
+: Makil Rargon says, 'Ah. Yes, his fusibility research.  Al'Kabor has been studying the melting point of minerals. Here. Take this journal. It explains what fusibility is.  Over the last few years, he has conducted several tests on [fusible ores].'
+ 
+'''Receive [[Fusibility Study: Part 1]]'''
+
+You say, 'Fusible ores?'
+ 
+: Makil Rargon says, 'An ore is considered fusible if it can be melted.  Now, this book explains the most unique forms of fusible ore that the master has conducted [experiments] on.'
+ 
+'''Receive [[Fusibility Study: Part 2]]'''
+
+You say, 'Experiments?'
+ 
+: Makil Rargon says, 'So far his research has been quite successful.  This journal explains what he has been able to accomplish.  He has managed to create several magical items including an artifactual scepter of great power.  While only he can grant permission to a worthy wizard to possess the artifact, if you are willing to help me complete a [fusibility test], I can offer you another item of great strength against the elements.'
+ 
+'''Receive [[Fusibility Study: Part 3]]'''
+
+You say, 'Fusibility test?'
+ 
+: Makil Rargon says, 'Very well then ... Fill this Empty Fusible Ore Crate up with four different fusible ores then seal it.  Bring me back the Full Crate of Fusible Ore and I will use the compound to create a magical item that was developed by Master Al'Kabor.'
+ 
+'''Receive [[Empty Fusible Ore Crate]]'''
+ 
+'''Combine Fusible Coral Ore + Fusible Earthen Ore + Fusible Igneous Ore + Fusible Velium Ore in the Empty Fusible Ore Crate to receive a [[Full Crate of Fusible Ore]].'''
+ 
+'''Give Makil Rargon the Full Crate of Fusible Ore.'''
+ 
+: Makil Rargon begins to examine the contents of the crate and proceeds to conduct an experiment.  He then turns toward you and says, 'Excellent job! As promised, here is one of Master Al'Kabor's fusiblity research creations.'
+ 
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 28 platinum from Makil Rargon.
+ 
+'''You receive [[Strength of the Elements]].'''
+
+[[Category:Quests]]
+[[Category:Western Wastes]]
+[[Category:All Classes Quests]]

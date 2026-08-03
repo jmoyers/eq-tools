@@ -1,0 +1,68 @@
+{{Classic Era}}
+[[File:Npc_gretta_mottle.png|frame|Gretta Mottle]]
+[[File:Npc_buggle_palkin.png|frame|Buggle Palkin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Gretta Mottle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Buggle Palkin]], [[Gretta Mottle]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+'''NOTE: THIS QUEST IS NO LONGER IN GAME'''
+
+''[[Gretta Mottle]] is located at 196, 298, 3 inside Irontoe's Eats during the hours of 6am to 8pm. During the overnight hours, Gretta despawns from Norrath and is replaced by her assistant, [[Buggle Palkin]].''
+
+You say, 'Hail, Gretta Mottle'
+
+: Gretta Mottle says, 'Greetings, ______. I'm Gretta Mottle. Tumpy has been kind enough to let me set up my bakery in his fine establishment here. Unfortunately, with that nasty plague corruptin' the crops in the Plains of Karana, things are goin' a bit slow for me. I keep runnin' out of bread and muffins to sell. Because of flour bein' easily spoiled now, it takes longer to make 'em just right. My assistant Buggle is still learnin' how to cook. Hehe.. All he can make is Meat Pie. If I don't get any [help to bake] soon I won't be able to keep the supply up with the demand.'
+
+''During the hours of 6am to 8pm, [[Buggle Palkin]] can be found pathing the road between [[Kaladim]] and the [[Butcherblock Mountains|Butcherblock]] docks. Buggle will randomly drop [[Gretta's Baking Supplies]] on the road as he paths.''
+
+You say, 'Hail, Buggle Palkin'
+
+: Buggle Palkin says, 'Greetings, ______. I am Gretta Mottle's assistant, Buggle. I tend to the bakery for her during the night. I can only make one thing though.. Meat Pie. Poor Gretta is in desperate need of help right now so I'm trying to learn how to make muffins for her.'
+
+'''Hand [[Gretta's Baking Supplies]] to [[Gretta Mottle]] back in [[South Kaladim]] when she returns to Irontoe's Eats.'''
+
+: Gretta Mottle says, 'Me bakin' supplies! Thank ye very much for bringin' em back to me. Buggle sure can be a clumsy fellow. Now I can get back to me bakin'.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Miners Guild 628]] got worse.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 7 gold pieces.
+
+== Related Quests ==
+
+* [[Bread Shipment Quests]]
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:npc_hibbs_rootenpaw.png|200px|frame|Hibbs Rootenpaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| A tattered note
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Jumjum Sack Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Halfling Druid, you will have a tattered note in your inventory. The note reads as follows:
+
+: ''Go out to Will Tagglefoot's Farmstead, to the east of the Fool's Gold tavern. There you will find the Storm Reapers. They are helping Will prepare for the upcoming harvest season, which, with the help of Karana, should be a good one. Give this note to Hibbs Rootenpaw, and he will help you get started.''
+
+You'll start directly in front of [[Hibbs Rootenpaw]], but if you lose him, his location is -38.50, -424.75, -11.81.
+
+Upon handing him the tattered note:
+
+: Hibbs Rootenpaw says 'Hello, friend! I am Hibbs Rootenpaw, leader of the Storm Reapers. Our guild works together with Will Tagglefoot and his family on their farm, to produce the food supply for all of Rivervale. With Karana's help, we have a bountiful harvest every season. We're glad you could help us out. Here's your guild tunic, it'll help keep you dry during the wet months.
+
+<div class='facblock'>
+* Your faction standings with [[Storm Reapers]] got better.
+* Your faction standings with [[Mayor Gubbin]] got better.
+* Your faction standings with [[Merchants of Rivervale]] got better.
+* Your faction standings with [[Unkempt Druids]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Jumjum Sack Tunic]]. Good luck, druid!
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:Druid Quests]]

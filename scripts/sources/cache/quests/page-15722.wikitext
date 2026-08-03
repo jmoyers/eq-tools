@@ -1,0 +1,887 @@
+{{Velious Era}}
+<div style='float:left; margin-right: 25px'>__TOC__</div>
+[[File:npc_garadain_glacierbane.png|frame|Garadain Glacierbane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Eastern Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Garadain Glacierbane]]
+|-
+! ''' Minimum Level: '''
+| 30+ (to start)
+|-
+! ''' Classes: '''
+| All 
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul style="margin-left:15px"><li>  {{:Copper Coldain Insignia Ring}} (#1)
+</li><li> {{:Silver Coldain Insignia Ring}} (#2)
+</li><li> {{:Gold Coldain Insignia Ring}} (#3)
+</li><li> {{:Platinum Coldain Insignia Ring}} (#4)
+</li><li> {{:Obsidian Coldain Insignia Ring}} (#5)
+</li><li> {{:Mithril Coldain Insignia Ring}} (#6)
+</li><li> {{:Adamantium Coldain Insignia Ring}} (#7)
+</li><li> {{:Velium Coldain Insignia Ring}} (#8)
+</li><li> {{:Coldain Hero's Insignia Ring}} (#9)
+</li><li> {{:Ring of Dain Frostreaver IV}} (#10)
+</li></ul>
+
+== Trivials Overview ==
+
+'''Tradeskill Trivial Levels'''
+
+{| class="eoTable2"
+! Ring
+! Tradeskill
+|-
+| #1 Copper Coldain Insignia Ring
+| [[Tailoring]]: 41
+|- 
+| #3 Gold Coldain Insignia Ring
+| [[Blacksmithing]]: 41
+|- 
+| #9 Coldain Hero's Insignia Ring
+| [[Brewing]]: 248
+|}
+
+
+'''Tradeskill Success Chances'''
+
+''Chance to succeed tradeskill combine with various skill levels''
+
+*  '''41 Trivial: Tailoring / Smithing'''
+* 41 Skill = 67%
+* 51 Skill = 77%
+* 61 Skill = 87%
+* 70 Skill = 95% (max)
+
+* '''248 Trivial: Brewing'''
+* 200 Skill = 67%
+* 210 Skill = 74%
+* 220 Skill = 84%
+* 230 Skill = 95% (max)
+
+== Checklists==
+{{CheckboxList}}
+<ul style="list-style-type: none;list-style-image: none;">
+  <li>Ring 1: {{:Copper Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Craft a {{:Coldain Hunting Blanket}} (2x HQ Cougar Skins and 2x HQ Tundra Kodiak Pelts)</li>
+    <li>Turn Blanket in to [[Garadain Glacierbane]] ({{loc|Eastern Wastes|-2714, -390}}) to receive Ring</li>
+  </ul>
+  <li>Ring 2: {{:Silver Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Say 'I will give assistance.' to [[Garadain Glacierbane]] to get {{:Dull Bladed Axe}}</li>
+    <li>Turn in Axe to [[Boridain Glacierbane]] (-2450, +1550)</li>
+    <li>Escort and protect Boridain and kill [[Rabid Tundra Kodiak]]</li>
+    <li>Loot {{:Rabid Kodiak Skin}} and immediately give to Boridain (to receive {{:Broken Axe}})</li>
+    <li>Hand in {{:Broken Axe}} and {{:Copper Coldain Insignia Ring}} to his uncle [[Garadain Glacierbane]] to receive Ring</li>
+  </ul>
+  <li>Ring 3: {{:Gold Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Smith a {{:Coldain Hunting Knife}} (from a {{:High Quality Walrus Hide}}, {{:Skinning Rock}}, and a {{:Wooly Rhino Horn}})</li>
+    <li>Hand the {{:Coldain Hunting Knife}} and your {{:Silver Coldain Insignia Ring}} into [[Garadain Glacierbane]] to receive Ring</li>
+  </ul>
+  <li>Ring 4: {{:Platinum Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Say "I will help" to [[Tain Hammerfrost]] ({{loc|Eastern Wastes|-4950, -2650}})and save him from giant ambush</li>
+    <li>Loot {{:Frozen Elixir}} and give to Tain to receive {{:Coldain Smithing Hammer}}</li>
+    <li>Hand the {{:Coldain Smithing Hammer}} and your {{:Gold Coldain Insignia Ring}} into [[Garadain Glacierbane]]</li>
+  </ul>
+  <li>Ring 5: {{:Obsidian Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Find and kill [[Ry'Gorr Messenger]] loot {{:Ry'Gorr Invasion Plans}}</li>
+    <li>Hand {{:Ry'Gorr Invasion Plans}} to [[a coldain lookout]] to start invasion</li>
+    <li>Kill [[Scarbrow Ga`Hruk]] and loot {{:Head of Scarbrow}}</li>
+    <li>Hand the {{:Head of Scarbrow}} and your {{:Platinum Coldain Insignia Ring}} into [[Garadain Glacierbane]]</li>
+  </ul>
+  <li>Ring 6: {{: Mithril Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Find [[ Korrigain]] (9PM - 6AM) and give him your {{:Obsidian Coldain Insignia Ring}}, follow [[Icefang]]</li>
+    <li>Kill [[Poxbreath Yellowfang]] and loot {{:Note from Kromrif}}</li>
+    <li>Find and kill [[Rodrick Tardok]] loot {{:Rodrick's Head}}</li>
+    <li>Hand the {{:Note from Kromrif}} , {{:Rodrick's Head}} and your {{:Obsidian Coldain Insignia Ring}} into [[Garadain Glacierbane]]</li>
+  </ul>
+  <li>Ring 7: {{:Adamantium Coldain Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Loot {{:Shackle Key}} from [[Warden Bruke]]</li>
+    <li>Find [[Corbin Blackwell]], Hand him the {{:Shackle Key}} and your {{:Mithril Coldain Insignia Ring}}</li>
+    <li>Escort him to safety. Wait for [[Corbin Blackwell]] to talk to [[Dobbin Crossaxe]]</li>
+    <li>Hand your {{:Mithril Coldain Insignia Ring}} into [[Dobbin Crossaxe]] (Black Beard), receive {{:Note from Corbin}}</li>
+    <li>Hand Note into [[Garadain Glacierbane]]</li>
+  </ul>
+  <li>Ring 8: {{: Velium Coldain Insignia Ring}} <span style="color:#FF0000">*CAN FAIL AND LOSE RING*</span></li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>''See [https://wiki.project1999.com/Ring_8_player_agreement Ring 8 Server Roll] for the Ring 8 Server Roll times.</li>
+    <li>Give [[Garadain Glacierbane]] your {{:Adamantium Coldain Insignia Ring}} and receive {{:Marching Orders}}</li>
+    <li>Hand [[Gloradin Coldheart]] the {{:Marching Orders}} to start the war</li>
+    <li>Kill [[Chief Ry`Gorr]] and loot {{:Chief Ry`Gorr's Head}}</li>
+    <li>Wait for [[Garadain Glacierbane]] to yell CHARGE!, then hand him {{:Chief Ry`Gorr's Head}}</li>
+  </ul>
+  <li>Ring 9: {{:Coldain Hero's Insignia Ring}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Wait until the Royal Court starts (around 8 AM) then say 'I will accept this task' to [[Seneschal Aldikar]] and receive a {{:Traitor's Bane Box}}</li>
+    <li>Collect the {{:Dirk of the Traitor}}: kill [[Rodrick Tardok]] (in a small tower in the northwest corner of the Ry`Gorr Keep in the [[Eastern Wastes]])</li>
+    <li>Collect {{:Murdrick's head}}: kill [[Murdrick Tardok]] in the [[Great Divide]] (-5900, +3700)</li>
+    <li>Collect {{:Berradin's head}}: kill [[Captain Berradin]] in the [[Eastern Wastes]] after giving him a {{:Tainted Avalanche Ale}}</li>
+    <li>Collect {{:Peffin's head}}: kill [[Peffin Ambersnow]] in the giant fort in the [[Eastern Wastes]]</li>
+    <li>Collect {{:Doldigun's head}}: kill [[Doldigun Steinwielder]] after spawning him in Iceshard Manor (in [[Kael Drakkel]]  -850, +1150)</li>
+    <li>Collect {{:Juliah's Head}}: kill [[Councilor Juliash Lockhear]] in Icewell Keep (+540, -25) after giving her the {{:Ring of the Coldain Council}} from [[Doldigun Steinwielder]]</li>
+    <li>Create a {{:Box of the Guilty}} by combining the five heads and the dirk in the {{:Traitor's Bane Box}}</li>
+    <li>Give the {{:Box of the Guilty}} and your {{:Velium Coldain Insignia Ring}} to the [[Dain Frostreaver IV]] in Icewell Keep to receive a {{:Coldain Hero's Insignia Ring}} and a {{:Dirk of the Dain}}</li>
+  </ul>
+  <li>Ring 10: {{:Ring of Dain Frostreaver IV}}</li>
+  <ul style="list-style-type: none;list-style-image: none;">
+    <li>Say 'You can count on my help.' to [[Dain Frostreaver IV]] to receive the {{:Declaration of War}}</li>
+    <li>Hand Sentry Badain (in a guard tower in [[Great Divide]] at -1080, +140) the {{:Declaration of War}} and your ({{:Coldain Hero's Insignia Ring}}); he returns the ring</li>
+    <li>Follow him to a circle of dwarves then wait until he walks off towards Thurgadin and despawns</li>
+    <li>Wait for [[Seneschal Aldikar]] to finish speaking then give him your {{:Coldain Hero's Insignia Ring}}; he returns it and the {{:Orders of engagement}}</li>
+    <li>Give the {{:Orders of engagement}} to [[Zrelik the Scout]] (the non-Thurgadin version)</li>. If you hand in the orders to the wrong npc, you can hand your ring back in to Seneschal for another Orders of Engagement (And your ring back)
+    <li>Win the war</li>
+    <li>Turn in {{:Coldain Hero's Insignia Ring}} and {{:Narandi's head}} to [[Seneschal Aldikar]] to receive the {{:Ring of Dain Frostreaver IV}}</li>
+  </ul>
+</ul>
+{{End}}
+
+== Quests ==
+=== Copper Coldain Insignia Ring (#1) ===
+<div style='border:1px solid gray; margin:10px; padding:10px; float: right;'>
+'''Item Requirements (Copper Coldain Insignia Ring):'''
+* 2x [[High Quality Cougarskin]] (Non-stackable)
+* 2x [[High Quality Tundra Kodiak Pelt]] (Non-stackable)
+</div>
+
+You say, 'Hail, [[Garadain Glacierbane]]'
+
+: Garadain Glacierbane says 'Hrmff, what's this? A spy sent from the giant heathens, or the selfrighteous wurms perhaps? Either way, you'd be no [friend] of the great Coldain.'
+
+You say, 'I am a friend.'
+
+: Garadain Glacierbane says 'A friend, you say? That remains to be seen. Much more to being a friend of the Coldain than just sayin' so. Anyway, I'm too [tired] to argue about it. I haven't slept in days.'
+
+You say, 'Why are you tired?'
+
+: Garadain Glacierbane says 'Did I say tired? Exhausted is more like it. Ever since that blizzard last week I haven't slept a wink. I came back from huntin' snow orcs to find that my [blanket] had blown away and now I'm just too tired to rustle up a new one.'
+
+You say, 'What blanket?'
+
+: Garadain Glacierbane says 'Not just any old blanket, mind ye, mine was made of the finest tundra kodiak hides and snow panther skins, two of each. When I was wrapped up in it ya couldn't see me a bit, no, I blended right into the snow, I did. Say, if you be a friend, here's yer chance to prove it. Sew me up a new blanket so I can get some rest.'
+
+'''Step 1'''
+
+'''You must now hunt animals in [[Eastern Wastes]] for their hides.'''
+* You need 2 [[High Quality Cougarskin]], Rare drop from [[a snow cougar]] (5% chance).
+* You need 2 [[High Quality Tundra Kodiak Pelt]], Rare drop from [[a tundra kodiak]] (2% chance).  
+
+'''Step 2'''
+
+'''Garadain's blanket must be made from 2 [[High Quality Cougarskin]] and 2 [[High Quality Tundra Kodiak Pelt]]. Tailor them together to craft a [[Coldain Hunting Blanket]] and give this to Garadain.'''
+
+* [[Tailoring]] (Trivial: 41)
+** '''Yield: Coldain Hunting Blanket''' x1
+** In [[Sewing Kit]]:
+:: {{SmIcon|552}} 2 x [[High Quality Cougarskin]] - Dropped
+:: {{SmIcon|552}} 2 x [[High Quality Tundra Kodiak Pelt]] - Dropped 
+
+: Garadain Glacierbane says 'Ahh, that'll do fine. Take this, it is but a trinket for now, but continue to serve the Coldain and it will grow in power. I must get some rest now, for I have been told my [nephew] has disappeared again and I will need to track him down tomorrow.'
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got better.
+</div>
+{{YouGainExperience}}
+
+=== Silver Coldain Insignia Ring (#2) ===
+<div style='border:1px solid gray; margin:10px; padding:10px; float: right;'>
+'''Item Requirements (Silver Coldain Insignia Ring):'''
+* [[Copper Coldain Insignia Ring]]
+* [[Broken Axe]]
+</div>
+
+At the end of the previous quest, Garadain mentioned his nephew.
+
+You say, 'What nephew?'
+
+: Garadain Glacierbane says 'My nephew, Boridain, keeps running away from home to kill a bothersome [beast], thinking this will prove to all of Thurgadin that he is a great hunter. Every time he does this my sister gets hysterical and I am sent out to find him.'
+
+You say, 'What beast?'
+
+: Garadain Glacierbane says 'A rabid tundra kodiak has been feeding on our people for weeks now. If Boridain ever stumbled across the critter I doubt he'd stand a chance. I have a solution, but it would require the [assistance] of an outsider.'
+
+You say, 'I will give assistance.'
+
+: Garadain Glacierbane says 'I'm taking a liking to you stranger. Your eagerness to help us will not go unnoticed. Find my nephew and give him this axe. It should keep him from hurting himself. Return to me with the ring and proof that he is safe.'
+
+'''Step 1'''
+
+'''You receive a [[Dull Bladed Axe]]. Take it to his nephew, [[Boridain Glacierbane]], who spawns at -2450, +1550.'''
+
+You say, 'Hail, Boridain Glacierbane'
+
+: Boridain Glacierbane says 'Hello stranger, I am Boridain, master hunter of the Coldain. Glad to meet you.'
+
+'''Step 2'''
+
+'''Give [[Boridain Glacierbane]] the [[Dull Bladed Axe]].'''
+
+: Boridain Glacierbane says 'Say! This looks just like the axe my uncle uses. With this I can kill the beast for sure! Now please, be very quiet, I must track my prey. I won't return to Thurgadin without the hide of the rabid tundra kodiak!'
+
+'''You must now follow [[Boridain Glacierbane]] around and keep him alive while he hunts for the [[Rabid Tundra Kodiak]]. He will go to certain dangerous locations such as the giant fort, the prison camp, and the Ry'gorr fort, before finally encountering the [[Rabid Tundra Kodiak]]. You must protect him from any aggressive monsters en route, as well as from any static spawns he finds in these locations. This event has a fair bit of intricacies so see [[Boridain Glacierbane Escort Guide]] for more info.
+
+
+'''Step 3'''
+
+'''Make sure you are the one to kill the [[Rabid Tundra Kodiak]] and not [[Boridain Glacierbane]], or the corpse will disappear. Once you have killed the [[Rabid Tundra Kodiak]], loot the [[Rabid Kodiak Skin]] and quickly give it to [[Boridain Glacierbane]] (he despawns within a minute or so).
+
+'''If you are not able to kill the kodiak quickly enough (which is likely if you are solo), then make sure that you at least kill the kodiak and loot the skin. When Boridian respawns (3 hours later), you can give him another Dull Bladed Axe. Once he starts walking, immediately give him the Rabid Kodiak Skin to receive the reward.'''
+
+'''He will give you a [[Broken Axe]], which you then turn in to his uncle [[Garadain Glacierbane]] along with your [[Copper Coldain Insignia Ring]] as proof of having aided his nephew to receive your [[Silver Coldain Insignia Ring]].'''
+
+: Garadain Glacierbane says 'Well done friend! My nephew is safe at home and his thirst for adventure is quenched for now. The beast will claim no more of our people. I couldn't have handled it better myself. Now I can get back to the business of [hunting].'
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got better.
+</div>
+{{YouGainExperience}}
+
+=== Gold Coldain Insignia Ring (#3) ===
+<div style='border:1px solid gray; margin:10px; padding:10px; float: right;'>
+'''Item Requirements (Gold Coldain Insignia Ring)
+* 1X [[Skinning Rock]] (ground spawn in [[Eastern Wastes]])
+* 1X [[Wooly Rhino Horn]] (rare drop off [[A Wooly Rhino]])
+* 1X [[High Quality Walrus Hide]] (rare drop off [[a walrus]])'''
+</div>
+At the end of the previous quest, Garadain mentioned hunting.
+
+You say, 'What hunting?'
+
+: Garadain Glacierbane says 'My camp here boasts the most proficient hunters in the recorded history of the mighty Coldain empire. We alone could feed an entire clan. Things have been frustratingly [slow] lately, though.'
+
+You say, 'How slow?'
+
+: Garadain Glacierbane says 'After years of skinning the hides of the giantmen, my hunting knife has lost its edge. The dull blade has slowed me down considerably. It has served me well, but a new [knife] would make me a much more proficient hunter.'
+
+You say, 'What knife?'
+
+: Garadain Glacierbane says 'Hunt a wooly rhino and take his tusk, then take a flawless hide from a walrus. Combine them in a forge with a skinning rock and bring me the new knife and the silver insignia ring.'
+
+'''Step 1'''
+
+'''You must now gather 3 items in the zone.'''
+* The [[Skinning Rock]] are a random ground spawn throughout the zone. 
+* The "tusk" is really a [[Wooly Rhino Horn]], Rare drop off [[A Wooly Rhino]]. 
+* The hide is a [[High Quality Walrus Hide]], Rare drop off [[a walrus]]. 
+
+'''Step 2'''
+
+'''After collecting the items, you must now smith them together in a forge to craft a [[Coldain Hunting Knife]] (trivial 41)'''
+* [[Blacksmithing]] (Trivial: 41)
+** '''Yield: Coldain Hunting Knife''' x1
+** In [[Forge]]:
+:: {{SmIcon|871}} 1 x [[Skinning Rock]] - Ground Spawn
+:: {{SmIcon|807}} 1 x [[Wooly Rhino Horn]] - Dropped
+:: {{SmIcon|554}} 1 x [[High Quality Walrus Hide]] - Dropped
+
+'''Step 3'''
+
+''' Hand the [[Coldain Hunting Knife]] along with your [[Silver Coldain Insignia Ring]] into [[Garadain Glacierbane]] to receive your [[Gold Coldain Insignia Ring]].'''
+
+: Garadain Glacierbane says 'Hrmm, not quite the work of a Coldain. Barely functional, in fact. I'll be needing to touch this up a bit. Fetch me a Coldain [smithing hammer] and I'll be sure to tell my associates in Thurgadin of your deeds.'
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got better.
+</div>
+{{YouGainExperience}}
+
+=== Platinum Coldain Insignia Ring (#4) ===
+
+At the end of the previous quest, [[Garadain Glacierbane]] mentioned a smithing hammer.
+
+
+'''Step 1 (Optional)'''
+
+You say, 'What smithing hammer?'
+
+: Garadain Glacierbane says '[Tain] Hammerfrost can get you one. Find him and give him this.'
+
+'''You receive a [[Note to Tain]].'''
+
+You say, 'Who is Tain?'
+
+: Garadain Glacierbane says 'Tain left a short time ago, he said he had a score to settle with a particular Kromriff.'
+
+'''Step 2'''
+
+'''[[Tain Hammerfrost]] is a wounded dwarf lying on the ground at -4950, -2650, a bit west of the bridge to Iceclad Ocean.  Giving him the [[Note to Tain]] doesn't do much, so try hailing him.'''
+
+You say, 'Hail, Tain Hammerfrost'
+
+: Tain Hammerfrost says 'The bloody Kromrif ambushed me! I escaped, but I am near death. They'll be tracking me down to finish me off at any moment. Without [help], I'm as good as dead.'
+
+You say, 'I will help.'
+
+: Tain Hammerfrost says 'Thank Brell! I hear them approaching from just over that hill! Slay the leader, Ghrek, and give me his elixir.'
+
+'''Step 3'''
+
+'''Three frost giants and a named leader, [[Ghrek Squatnot]], spawn on a hill a bit east of Tain's location.  They will kill Tain (forcing you to wait for him to respawn), so your best bet is to intercept them and draw aggro before they can reach him.  Kill Ghrek and loot the [[Frozen Elixir]] from his corpse. Give the [[Frozen Elixir]] to [[Tain Hammerfrost]]. (Note: if Tain was killed by the giants and you are turning the Elixir in to a Respawned version, be sure to say 'I will help.' again BEFORE handing him the vial to prevent him from eating it.)'''
+
+: Tain Hammerfrost says 'I will report your selfless actions when I return to Thurgadin. Take this for your troubles, friend. I hope you find it useful. Fare thee well.'
+
+'''You receive a [[Coldain Smithing Hammer]]'''
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Step 4'''
+
+'''Return to [[Garadain Glacierbane]] and give him the [[Coldain Smithing Hammer]] along with your [[Gold Coldain Insignia Ring]] to receive your [[Platinum Coldain Insignia Ring]].'''
+
+: Garadain Glacierbane says 'Ahh, there we go now, that's more like it. It would be time to return to the hunt were it not for the [plans] our spies have discovered.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+=== Obsidian Coldain Insignia Ring (#5) ===
+
+At the end of the previous quest, Garadain mentioned plans. 
+
+You say, 'What plans?' 
+
+: Garadain Glacierbane says 'The bloody Ry'Gorr, friends of the frost giants, plan to raid our encampment. Their captain, Scarbrow Ga'hruk is leading the raid. I need someone to intercept his [orders] so we may prepare for the attack. Without them we could be in serious trouble.' 
+
+You say, 'What orders?' 
+
+: Garadain Glacierbane says 'Find the Ry'Gorr messenger and cut him down. Bring the message he carries to my lookout. When the attack is thwarted, return to me with the head of Scarbrow and the platinum insignia ring.' 
+
+'''Step 1'''
+
+'''The [[Ry'Gorr Messenger]] generally makes a beeline from the north toward the Ry'Gorr fort. Kill him and loot [[Ry'Gorr Invasion Plans]].''' 
+
+'''Step 2'''
+
+'''Give the [[Ry'Gorr Invasion Plans]] to [[a coldain lookout]] near [[Garadain Glacierbane]]'s hut. This will start the orc invasion so be ready!''' 
+
+: a coldain lookout shouts ' Aahhh..You're too late! They're upon us! To arms men! Death to Scarbrow!'
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better (+10).
+* Your faction standing with [[Dain Frostreaver IV]] got better (+10). 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+NOTE* 30-June-2022 tested Indifferent to Amiably with Coldain; repeating [[Ry'Gorr Invasion Plans]] part of this quest will grant +10 faction per turn in. Do not turn in multiple Plans in a single trade. Turn in as singles only.
+
+
+'''Orc Invasion Information'''
+
+''Mobs that spawn''
+
+* [[Scarbrow Ga`Hruk]] and a band of orcs spawn about 100 feet away and proceed to attack [[Garadain Glacierbane]]'s outpost.
+* The attacking force consists of [[Scarbrow Ga`Hruk]] 45+ Orc Shadow Knight.
+* 2-3 [[a Ry`Gorr invader]] (level 43-46).
+* 2-3 [[a Ry`Gorr oracle]] (level 42-44).
+
+''Strategy''
+
+* The Orcs spawn south west of the camp.
+* If you engage them as soon as they spawn they won't attack the dwarves.
+* Without your assistance the orcs will probably wipe out the dwarves.
+* DO NOT allow the dwarves to engage [[Scarbrow Ga`Hruk]], his corpse will disappear if one of them gets the kill shot.
+* The trick is to intercept [[Scarbrow Ga`Hruk]] while he is still some distance away from the huts and let the dwarves and the rest of the rygorr battle it out amongst themselves. 
+* You may also want to keep an eye on [[Garadain Glacierbane]], as it can take a while (30 minutes or so) for him to respawn if he is killed, he is need to finish the quest.
+
+'''[[Scarbrow Ga`Hruk]] drops [[Head of Scarbrow]] and occasionally a [[Frozen Orb]].''' Loot the [[Head of Scarbrow]].
+
+'''Step 3'''
+
+'''Give the [[Head of Scarbrow]] and your [[Platinum Coldain Insignia Ring]] to [[Garadain Glacierbane]] to receive your [[Obsidian Coldain Insignia Ring]]''' 
+
+: Garadain Glacierbane says 'Without your assistance, we would have lost our camp and our lives. Again, I thank you. Now that you have proven your loyalty to the throne I have a special [favor] to ask of you.' 
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+=== Mithril Coldain Insignia Ring (#6) ===
+
+At the end of the previous quest, Garadain mentioned a favor. 
+
+You say, 'What favor?' 
+
+: Garadain Glacierbane says 'For several seasons there has been an unsolved mystery in this land. Not far from here an elite team of Coldain and their trained wolves were gathered to make a strike at the Kromrif. No one knows just what became of our strike force. Bring me proof of their fate and proof that whoever was responsible for their loss is no more.' 
+
+''' Step 1 '''
+
+<span style="font-size:120%;color:red"> '' Warning: Make sure to clear the orc camp near the Iceclad bridge before starting the quest. This will prevent 5+ extra adds during the Poxbreath fight.''<span> (The orcs can be harmonied, and with a 6:40 respawn time having them clear when you arrive with Icefang would require a 2nd team to do the clearing, so take this with a grain of salt.) A level 60 was able to pull Poxbreath out of the pile using a ranged attack with only two additional orcs coming, for a total of 3, even with a full spawn at the camp, so clearing the camp might not be required.
+
+'''To find proof of their fate, your journey begins with [[Korrigain]], located in the southwestern corner of the zone. He generally spawns around 9 p.m. game time at the dwarven hut near [[Icefang]], the named dire wolf.'''
+
+You say, 'Hail, Korrigain' 
+
+: Korrigain says 'Who dares disturb my rest? If ye be a friend of the mighty Coldain, then show me proof and I shall tell you of my plight. If not, then be on your way.' 
+
+'''Give him your [[Obsidian Coldain Insignia Ring]] (he will return it). Be prepared to follow [[Icefang]] at running speed'''.
+
+: Korrigain says 'Many seasons ago I stood here in life with my comrades, the best warriors Thurgadin had to offer. Along with our faithful wolven army we were poised to eliminate the Kromrif presence in the region. Somehow, the enemy was made aware of our plans and just before our attack, a group of Ry'Gorr oracles charmed our wolves, forcing them to tear down their own masters. We were caught by surprise and died a savage death.' 
+
+'''During the conversation with [[Korrigain]], [[Icefang]] comes out of his hut and stands next to [[Korrigain]], who then proceeds to buff his loyal doggie sidekick.''' 
+
+: Korrigain says 'All that remains from that battle is my loyal [[Icefang]]. He will not rest until I am avenged. Follow and watch after him. He alone knows where our attackers lie and he cannot overcome them by himself. May Brell bless you with success, farewell.'
+
+''' Step 2 '''
+
+''Follow [[Icefang]]''
+
+* [[Icefang]] then runs generally east to the orc hut near the bridge to [[Iceclad Ocean]].
+* You must follow [[Icefang]] and keep him alive.
+* His route is not direct and his speed is around Spirit of Wolf speed.
+* Wandering orcs and giants will aggro on him, so you must keep him alive en route. 
+
+''' Step 2.1 '''
+
+''Fight [[Poxbreath Yellowfang]]''
+
+* When [[Icefang]] gets near to the orc hut some orcs will spawn.
+* The orc leader [[Poxbreath Yellowfang]] level 46-47 orc shaman.
+* 2 to 4 [[Oracle of Ry`Gorr]] level 45-47 orc shamans.
+* Kill [[Poxbreath Yellowfang]] and loot a [[Note from Kromrif]] from his corpse.
+
+You have slain [[Poxbreath Yellowfang]]!
+
+<div class='facblock'>
+* Your faction standing with [[Rygorr Clan Snow Orcs]] got worse. 
+* Your faction standing with [[Citizens of Froststone]] got better. 
+</div>
+{{YouGainExperience}}
+
+--You have looted a [[Note from Kromrif]].-- 
+
+The note reads: 
+
+ Commander Yellowfang, Your handling of the Coldain elite guard was outstanding. It will take the 
+ stumpymen many years to recover from that slaughter. My superiors are well pleased.
+ Your loyalty and service to the Kromrif have sealed an alliance between our peoples that we shall
+ honor from this day forward. The bulk of this treasure is for you to distribute among your men as 
+ you see fit. We ask that you provide well for your coldain informant, Rodrick Kotrad, as your 
+ success would have been impossible without his cooperation.
+
+ Surikka Squatnot
+
+''' Step 3 '''
+
+'''The coldain traitor is really one [[Rodrick Tardok]], who spawns in the small tower outside the northwest corner of the Ry`Gorr Keep. Every once in a while a [[Ry`Gorr Emissary]] will spawn there. If you leave him alone for a few minutes, [[Rodrick Tardok]] will spawn inside the tower.'''
+
+You have slain [[Rodrick Tardok]]! 
+
+<div class='facblock'>
+* Your faction standing with [[Rygorr Clan Snow Orcs]] got worse. 
+* Your faction standing with [[Citizens of Froststone]] got better. 
+</div>
+{{YouGainExperience}}
+
+Loot [[Rodrick's Head]] and [[Dirk of the Traitor]] (keep the Dirk, as it is used in the 9th quest in this series.)
+
+'''Turn [[Rodrick's Head]], the [[Note from Kromrif]], and your [[Obsidian Coldain Insignia Ring]] to [[Garadain Glacierbane]] to receive your [[Mithril Coldain Insignia Ring]]. This turn-in is MQable.'''
+
+Garadain Glacierbane lowers his head and mutters, 'At least there will be some closure for their families, thanks to you. The Ry`gorr will pay for this with their lives! I will ask you to help us in the invasion of Ry`gorr keep, but first I have a delicate [mission] I was hoping you'd handle.' 
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+=== Adamantium Coldain Insignia Ring (#7) ===
+
+At the end of the 6th quest, [[Garadain Glacierbane]] mentioned a delicate [mission]. 
+
+You say, 'What mission?' 
+
+: Garadain Glacierbane says 'A Coldain... A very important Coldain, has been abducted by the Ry'gorr. He was gathering information that is imperative to our victory over the brainless heathens. You must find him before he is killed and escort him to safety. Return to me with proof that Corbin Blackwell is safe.' 
+
+'''Step 1'''
+
+'''First you must Kill [[Warden Bruke]] for his [[Shackle Key]] (no drop) and then you must find and rescue [[Corbin Blackwell]].'''
+
+[[Warden Bruke]] can spawn in the east most building in the camp where [[Corbin Blackwell]] is located - keep killing the lone Kromrif Prison Guard until he spawns. He is immune to magic and spawns 3 frost giant warrior guards when engaged. The guards are buggy and sometimes just follow Bruke without attacking you. If you kill Bruke they will guard his corpse until it rots.
+
+You say, 'Hail, Corbin Blackwell' 
+
+: Corbin Blackwell says 'Hurry! There's not much time. give me the key and show me proof that you are a friend sent to rescue me...' 
+
+'''Step 2'''
+
+'''Give both the [[Shackle Key]] and your [[Mithril Coldain Insignia Ring]] to [[Corbin Blackwell]](he will give back the ring). He will then make his escape. You must protect Corbin until he reaches [[Dobbin Crossaxe]]. (Ulthorks and walrus do not agro him while he walks east of the pit.)'''
+
+If you wish to make this section easy on yourself, pacify the giants, orcs, and Corbin himself before turning in. [[Calm]] is sufficient.
+
+'''Step 3'''
+
+'''Along the way, four Ry`Gorr Bashers and four Frost Giant Warriors including [[Commander Bahreck]], a named giant, will attack Corbin at the same time.'''
+: ''When Corbin Blackwell reaches (-551, -1890) he will be ambushed.''
+: Corbin Blackwell says 'I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.'
+
+: Corbin Blackwell says 'Almost there now, just a bit further...' 
+
+: Corbin Blackwell says 'Uh oh, looks like they were tipped off somehow... I hope you can handle them.' 
+
+: Corbin Blackwell says 'I'll hack at your knees 'til you fall down! Out of love for the Dain, for the glory of the crown!' 
+
+'''You must keep him alive.''' 
+The easiest way to complete the ambush part is to position yourself slightly in front of Corbin at the ambush point then sit down and use sit aggro to grab the entire ambush.  You will have to sit twice to grab both groups, then you can kite the giants to the huts and do circles while the dwarves aggro on the kite and take them down one by one. If you're a level 60 Druid, [[Entrapping Roots]] is extraordinarily helpful here; you should have ample time to root both groups.
+
+You have slain Ry`Gorr Basher! 
+<div class='facblock'>
+* Your faction standing with [[Rygorr Clan Snow Orcs]] got worse. 
+* Your faction standing with [[Citizens of Froststone]] got better. 
+</div>
+
+You have slain Kromrif Soldier! 
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Claws of Veeshan]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+
+You have slain Commander Bahreck! 
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Claws of Veeshan]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+
+'''Once Commander Bahreck is slain, and Corbin is no longer in combat, he will proceed to Dobbin'''
+
+'''Once he reaches Dobbin, Dobbin will thank you for rescuing him.'''
+
+: Corbin Blackwell says 'I have escaped! With the help of our friends here I was saved from certain death. We are in their debt.' 
+
+: Dobbin Crossaxe says 'We thought it was too late, the Dain will be very pleased!' 
+
+'''Step 4'''
+IMPORTANT: Before Dobbin Crossaxe usually has a Light Red colored beard.  You Must wait until he respawns with a BLACK colored beard before turning in or you will LOSE your Ring and have to start the entire quest over!!!
+
+'''Give [[Dobbin Crossaxe]] your [[Mithril Coldain Insignia Ring]] in exchange for a note to Garadain.'''
+
+: Dobbin Crossaxe says 'Thank you, _____, your deeds will be mentioned to the Dain. Please take this note from Corbin to Garadain, it may help him to achieve victory over the enemy.' 
+
+The version of Dobbin you have to give the ring to has a dark gray/black beard. At some point he will despawn and a red-bearded version will appear. '''Giving the ring to the red-bearded version will result in losing your ring.''' It is possible for both versions to appear at once. If that happens you can still complete the quest, just be very careful to make sure you click the correct one, as they will be on top of each other.
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Go back to [[Garadain Glacierbane]] and give him the note. He will reward you with the [[Adamantium Coldain Insignia Ring]] and the final quest.'''
+
+: Garadain Glacierbane says 'Thank you, _____, your service to our people has been most helpful. The time has come for our people to make war with the Ry`gorr. They must pay for their transgressions against our people. We are just waiting on you. Prepare yourself for glorious battle and tell me when you are [ready].' 
+
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better. 
+* Your faction standing with [[Kromzek]] got worse. 
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+=== Velium Coldain Insignia Ring (#8) ===
+
+Start by handing your [[Adamantium Coldain Insignia Ring]] back to [[Garadain Glacierbane]] and he will give you the [[Marching Orders]]
+
+The Ring 8 war is triggered when you turn in your [[Marching Orders]] to [[Gloradin Coldheart]]
+
+THIS PART IS IMPORTANT
+Rights to do the ring 8 is determined by winning this daily /random 1000 roll.
+
+''See the [https://wiki.project1999.com/Ring_8_player_agreement Ring 8 Server Roll] for the current Ring 8 Server Roll times.''
+
+''This is the 8th quest in Garadain's series. It involves an all-out war against Chief Ry'Gorr and his troops.''
+
+'''This quest is challenging, and you only get ONE chance to complete it successfully. Once you hand your ring to Garadain, you must give the Marching Orders to Lady Gloradin (who has a 24-hour respawn timer). The siege on the orc fort will begin immediately afterward. Your goal is to kill [[Chief Ry`Gorr]], loot his head, and deliver it to Garadain. It's crucial to keep Garadain alive, as he only accepts the head during the event—and only after he shouts "CHARGE!" Note that Chief Ry'Gorr will only drop his head during this specific event.'''
+
+''The preferred strategy is as follows: You’ll need a group of 2-6 players, levels 55-60, to handle this event comfortably. Before handing in the Marching Orders, have your party members cast invisibility and enter the Ry'Gorr fort. After entering through the main entrance, turn right and proceed to a relatively open, safe area away from enemy mobs. **Ensure Garadain is alive** before you hand in the Marching Orders to [[Gloradin Coldheart]]. 
+
+''Once the Marching Orders are handed in, the event starts, and there is no way to stop it. Failing here means you must begin the Coldain Ring quest series from the very first ring! [[Garadain Glacierbane]] will begin marching towards the Ry'Gorr fort, accompanied by a small dwarven army. After you’ve handed in the orders, invis up and join your group inside the fort. Your objective is to kill the special version of [[Chief Ry`Gorr]] that spawns, loot his head, and hand it in to Garadain AFTER he shouts "CHARGE!" but BEFORE the dwarves storm the fort.''
+
+''A minute or two after you hand in the Marching Orders, the special version of Chief Ry'Gorr spawns near the fort's entrance, accompanied by several giant guards and orc allies. At this point, pull the Chief and kill him as quickly as possible. You can use Lull/Harmony to avoid pulling the giants, but the Oracle standing next to the Chief will aggro regardless. However, the Oracle can be pacified. The Chief, his pet Firbrand, and possibly the Oracle will come when you aggro the Chief. Focus on killing him quickly and loot his head. The Chief isn’t particularly resistant to spells, can be slowed, and has relatively few hit points. A group of 2 or 3 level 60 players, with at least one healer and one DPS, can handle this easily.''
+
+''Once you have the Chief's head, invis up and exit the fort through the main entrance, heading north. You’ll find Garadain and a small army of dwarf archers and soldiers overlooking the Ry'Gorr fort. If you’ve been quick, you’ll arrive while Garadain is giving his pep talk to the troops. DO NOT hand him the Chief’s head at this point. If you do, you’ll lose the head and fail the quest. Wait until Garadain finishes speaking and begins marching toward the fort. When he shouts "CHARGE," that’s your signal to hand in the head. There’s no need to worry about him despawning or resetting—the "CHARGE" shout is your green light. Once you hand in the head, you will receive the 8th ring.''
+
+''This method allows you to avoid participating in the large battle that follows. If Garadain reaches the fort and engages in combat, he could die, which would result in failure. By completing the hand-in before the battle begins, you can avoid this risk entirely.''
+
+: You say, 'I am ready.'
+
+: [[Garadain Glacierbane]] says 'Very Well, <NAME>, give me the Adamantite ring and I will give you the marching orders. Once the orders are given to Gloradin in the next hut, we will be underway. You then must follow me to what will be our battleground. I must warn you, I will hold your ring until the head of Chief Ry'Gorr is given to me. If we fail, all will be lost... for both of us. 
+
+'''Give Garadain your [[Adamantium Coldain Insignia Ring]].'''
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got Better. 
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+
+
+: [[Garadain Glacierbane]] says 'Give this to Gloradin and return to me immediately, it is time. May Brell be with us!'
+
+
+'''' [[Gloradin Coldheart]] is a 24 hour spawn and after you turn in [[Marching Orders]] she despawns and respawns instantly and starts walking. She will eat any more marching orders givin to her after she has respawned and started walking.
+
+'''Give [[Gloradin Coldheart]] [[Marching Orders]] and be prepared for the war.
+
+: [[Gloradin Coldheart]] says 'Thank you. I will return to the Dain and inform him that the battle is underway. Please escort Garadain to the battlefield and see that he returns safely. May Brell bless you and bring you victory over these beasts.'
+{{YouGainExperience}}
+
+Garadain starts to walk towards the Orc fort.
+
+: You say, 'Hail, Garadain Glacierbane'
+
+: [[Garadain Glacierbane]] says 'Follow me closely, friend, time is of the essence. I will describe our situation as we walk.'
+
+Your pulse quickens in anticipation of battle!
+
+: [[Garadain Glacierbane]] says 'The Dain's own royal troops will be at our disposal for the battle. This is good news, they are hardened, experienced soldiers. The bad news is that our sources indicate that the Ry`gorr have been alerted to our presence and will be ready for an attack. This is most unfortunate... They will not go down without a fierce fight.'
+
+You hear the pounding of Ry`gorr war drums.
+
+: [[Garadain Glacierbane]] says 'It is of utmost importance that you stay with me throughout the fight. Your focus must be on killing Chief Rygorr and keeping me alive, mind that you do not become distracted. If I fall the Dain's men will retreat and you'll definitely be cut down.'
+
+: [[Garadain Glacierbane]] groans, 'It is worse than I thought. Not only are they prepared for an attack, but they have the Kromrif here to help them. Our steel will be tested today. Be sure not to show the troops any fear.'
+
+Garadain walks away from the Orc fort to arrange his troops on the plain to the north.
+
+: [[Garadain Glacierbane]] says 'TROOPS! FALL IN!'
+
+: [[Garadain Glacierbane]] says 'Listen up men!'
+
+: [[Garadain Glacierbane]] says 'You all know why we're here. For decades these savages have menaced our people. Recent events have been too much to bear and the Dain has declared war! We will stop at nothing short of the Ry`gorr's annihilation!'
+
+: [[Garadain Glacierbane]] says 'No longer will we tolerate their heathen presence in our lands! Never again will we mourn the loss of a Coldain to these pawns of the Kromrif! Our deeds here today shall make this land safe for Coldain for all time!'
+
+: [[Garadain Glacierbane]] says 'Today the Ry`gorr fall! Tomorrow the Kromrif!'
+
+: [[Garadain Glacierbane]] says 'Fall out men!'
+
+: [[Garadain Glacierbane]] says 'Stay back from the initial charge, my friend. We will go directly for the chief once the troops are engaged. Follow me closely!'
+
+: [[Garadain Glacierbane]] shouts 'For the Glory of Thurgadin! CHARGE!'
+
+You have slain [[Chief Ry`Gorr]]! 
+
+<div class='facblock'>
+* Your faction standing with [[Rygorr Clan Snow Orcs]] got worse. 
+* Your faction standing with [[Citizens of Froststone]] got better. 
+</div>
+{{YouGainExperience}}
+
+Loot [[Chief Ry`Gorr's Head]]
+
+'''Give Garadain your [[Chief Ry`Gorr's Head]].'''
+<div class='facblock'>
+* Your faction standing with [[Coldain]] got Better. 
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+The reward is the [[Velium Coldain Insignia Ring]].
+
+: [[Garadain Glacierbane]] says 'Good work friend! The Dain will hear of this right away. We couldn't have defeated the Ry'gorr without your help. Take this ring as proof that you have served the Coldain well. You may wish to show it to the Seneschal should you ever stop in our fine city. Farewell, ______, it has been my pleasure knowing you.'
+
+
+'''Turning in [[Chief Ry`Gorr's Head]] will despawn [[Garadain Glacierbane]] exercise caution (9/14/2015) '''
+
+=== Coldain Hero's Insignia Ring (#9) ===
+
+''<span style="font-size:120%;color:red">Note: The Royal Court must be in session to get the [[Traitor's Bane Box]]. Starts around 8 AM</span>
+
+'''Find [[Seneschal Aldikar]] in the throne room with Dain Frostreaver IV and hand him your Velium Coldain Insignia Ring [You do not need to give Seneschal your ring, simply asking for the box is sufficient. This can be done as soon as it hits 8am game time and he leaves his room on the 2nd floor of the keep.] (#8). ''Note: The Royal Court must be in session for him to continue to the next part of the script. Otherwise, he just says something about speaking to the Dain and hands you the ring back. Dain Frostreaver IV does NOT need to be up, however.'''''
+
+: Seneschal Aldikar says, 'Well done _____, I have heard of your victory over the Ry'Gorr. If you are willing to assist the crown further please follow me.' 
+
+At this point he leads you out of the throne room and down to his private sleeping quarters. 
+
+: Seneschal Aldikar says, 'Please, shut the door behind you. What I am about to share with you must not be overheard.' 
+
+: Seneschal Aldikar says, 'My army stands prepared to launch an assault on Kael itself, but one task must be completed before this can happen.' 
+
+: Seneschal Aldikar says, 'It seems Rodrick was not alone in his treachery. There is a faction of Coldain who believe that a treaty should be signed with the Kromrif, ending our hostilities with them. This, of course, is impossible. If there is one thing our history here has taught us it is that the Kromrif simply cannot be trusted.' 
+
+: Seneschal Aldikar says, 'These traitors are poisoning the minds of our citizens, promising great rewards to those who will betray the Dain. It will take an unbiased eye of an outlander to flush out masterminds behind this plan. Once again we turn to you.' 
+
+: Seneschal Aldikar says, 'Will you accept this task, outlander?' 
+
+You say, 'I will accept this task' 
+
+: Seneschal Aldikar says, 'In this box, place the Accursed Dirk of the Fallen Rodrick. With it combine the heads of every traitor you dispose of. When this is done give the box and the Velium insignia ring to the Dain directly. On behalf of the crown and all good Coldain, I thank you.....May Brell be with you.' 
+
+: Seneschal Aldikar says, 'Farewell' 
+
+'''You receive a [[Traitor's Bane Box]], a 6-slot container in which you are to put Rodrick's Dagger and the heads of the Traitors.'''
+
+''' Item #1: Dirk of the Traitor '''
+
+Kill [[Rodrick Tardok]] in the Eastern Wastes. He drops the [[Dirk of the Traitor]] you seek. 
+
+He spawns in the small tower outside the northwest corner of the Ry`Gorr Keep. Every once in a while, a Ry`Gorr Emissary will spawn there. If you leave him alone for a few minutes, Rodrick will spawn inside the tower. 
+
+''' Item #2: Murdrick's Head '''
+
+Kill [[Murdrick Tardok]] in the Great Divide (-5900, +3700 -- around the southwest edge of the zone, in a cave almost due south of the druid/wizard ring, up the rock ledge from the snow and on first plateau. The cave has two stone boulders on either side NOT wood beams. Cave entrance at -5600, +3530 go in make your first right.
+
+* [[Murdrick Tardok]] is in a room with 2 clerics and a few other dwarfs, all these will assist him when he is engaged. The clerics will complete heal, and also try dispell sow and root if you are kiting them around *
+
+(not needed you can just go in and pull/kill him without waiting on text) Invis yourself and stand next to Murdrick. This will trigger a dialogue script between him and another Coldain. Listen to entire dialogue. If you attack him before he finishes the dialogue, he'll despawn.  Also, if you wait too long after the dialog before aggroing him (eg, while clearing the rest of the room), he'll despawn.  The dialog ends with: "Gerton Dumkin says 'Consider it done. Be sure to watch yourself Murd, the Dain's gotta be suspicious of ya, being Rodrick's brother and all. And those outlander friends of his are dangerous, chopped down the Ry'Gorr chief like he was nothin!'"
+
+Once attacked, Murdrick calls for help from all the mobs in the room (harmony/lull spells will not get around this if you pull Murdrick, but it is effective on the others - you can clear the room before pulling Murdrick).
+
+None of the dwarves have any faction hits.  All of them should be duoable with a melee and a healer (assuming the healer can harmony or lull).
+
+The two clerics are [[Lapker Geynion]] and [[Laima Ratgur]].  The other mobs are [[Davin Fatfist]], [[Gerton Dumkin]], [[Herga Ratgur]], [[Fomgrut Borkel]].
+
+You need to leave up Lapker, Davin, Gerton, and Murdrick in order for the conversation to happen, so don't do all of the harmony clearing before triggering the conversation.
+
+A common tactic is to have someone kite away all of the dwarves except for Murdrick and then have someone else tag then kill Murdrick solo. The trainer must stay in the zone with aggro on the mobs otherwise Murdrick will despawn immediately.
+
+Loot [[Murdrick's head]] and [[Murdrick's Plan]], a note which contains the recipe for tainted avalanche ale.
+
+''' Item #3: Berradin's Head '''
+
+Make a [[Tainted Avalanche Ale]] (brewing trivial 248):
+ 
+* [[Bottle]]
+* An [[Iceball]]
+* [[Ice Wyvern Stinger]]
+* [[Arctic Mussels]]
+* [[Seahorse Scales]]
+* [[Runed Sea Shell]] (Cloud) 
+* Vial of [[Mind Melt]] 
+
+Hand this to [[Captain Berradin]] in the Eastern Wastes (note: the person doing the quest does not need to hand in the Ale). Kill him after he falls down. [[Bodyguard Nergan]], [[Bodyguard Persevil]], and [[Bodyguard Stoneberg]] WILL help him. Do the hand in, then back off. Have a druid harmony the room then single pull Berradin. The dwarves outside won't social agrro so it should be an easy solo pull with harmony. Loot his head and the [[Letter to Peffin]].
+
+''' Item #4: Peffin's Head '''
+
+[[Peffin Ambersnow]] is located in the giant fort in the Eastern Wastes. She is invisible. Hand her the [[Letter to Peffin]]. At this point, she respawns and runs out (may be glitchy; you may not see her -- just dont attack until she respawns a second time in front of the fire). 
+
+Three Kromrif Elite giants spawn inside the hut and will attack you immediately. They're fully immune to spells, summon, see invis, and are 51+. If left undamaged, they can be kited by a player with sow speed, though they are faster than normal run speed. 
+
+Peffin will be standing right in front of the fire outside at the bottom of the hill. This instance of Peffin will be permarooted but won't summon. She is also capable of throwing javelins at you for minor damage once aggroed. She has five permarooted, summoning Kromrif Elite giant guards. If the Elites are left undamaged, they won't summon. It's possible to destroy Peffin with ranged attacks and spells without engaging her guards. Medium and small races may be able to carefully approach and attack Peffin without getting hit by the guards.
+
+Ironically enough, Giant-factioned characters with ranged attack abilities can kill Peffin and not aggro the giants. Getting into Melee range is not advised.
+Confirmed on Feb 25 2026: You can melee Peffin with a Kael factionned char w/o drawing aggro
+
+Note: Be careful with damage shields! If you step into melee range of the permarooted guards for too long and do damage to them with DS, they will start summoning you and you will have a very bad day unless you brought a large-ish kill force. There are static and pathing giants that do not always despawn near the fire outside suggest clearing them prior to turn in. 
+
+Kill Peffin and loot her [[ Peffin's head | head ]] along with a [[ Letter to Doldigun ]]. She also drops the valuable {{:Talisen, Bow of the Trailblazer}}.
+
+Note- it can be difficult to get close enough to loot her corpse if you are a large race without getting into melee range of the permarooted giants, should they still be alive when Peffin dies. One option is to use Divine Aura or a similar invulnerability spell, or a shrink potion to allow yourself to get close enough to get the job done.
+
+''' Item #5: Doldigun's Head '''
+
+[[Doldigun Steinwielder]] is located in Iceshard Manor in Kael Drakkel (location -850, +1150). He can be spawned by standing on the throne and saying "The Dain shall be slain for the peace we must obtain." Hand him the letter and receive in return [[Ring of the Coldain Council]]. 
+
+If you attack him, he runs and two guards show up. Several giants will spawn (perhaps two at a time). 
+
+Doldigun respawns when the giant named [[Valorankt Zekkin]] dies. He comes in from the door on the north side of the throne, which is the same door that Doldigun attempts to flee out of.
+
+You have slain Valorankt Zekkin!
+
+: Valorankt Zekkin's corpse shouts Doldigun, you have caused us too much trouble. You are no longer welcome here! Show yourself!" 
+
+: Doldigun Steinwielder says, 'Uhh, I think I'll be leaving now... Give my regards to Thurgadin.'
+
+'''Aggro him quickly, kill him and loot [[Doldigun's head]]. Note: He does not seem to spawn if the giants are up.'''
+
+''' Item #6: Juliash's Head '''
+
+Find Councilor Juliash Lockheart (A.K.A) [[Councilor Juliash Lockhear]] in Icewell Keep at approximate location +540, -25, 65 (in Dain Frostreaver IV's room -- she is the councilman on the far left as you face the council (facing away from Dain), in the front row). 
+
+Hand her the [[Ring of the Coldain Council]] from Doldigun. 
+
+Councilor Juliash Lockheart says, "FOOL! You've ruined everything!" 
+
+Councilor Juliash Lockheart says, "You'll pay with your life for meddling in the affairs of others!" 
+
+She respawns and attacks, hitting for a max 385 The other Coldain do not aggro. Kill her and loot the head.  You must kill her within 10 minutes or she will despawn and you must start Ring 9 over.
+
+''' Final Combine and Hand-In '''
+
+In the Traitor's Bane Box, combine the five heads along with the Dirk of the Traitor. This produces a [[Box of the Guilty]]. Take this and the 8th ring (Velium Coldain Insigna Ring) to the Dain in Icewell Keep. 
+
+'''(Confirmed dubious faction turn in works)'''
+
+[[Dain Frostreaver IV]] says 'The people of Thurgadin are in your debt, ______. Please accept the Coldain Hero's Ring as a token of our gratitude. The curse has been removed from the blade as well. I hope you find it useful against our common foes. When you are interested in assisting me further please show me the blade. Until that day, may Brell bless and protect you.'
+
+Dain hands you [[Coldain Hero's Insignia Ring]] and [[Dirk of the Dain]].
+
+ADDITION 1/31/19: The moment you receive your [[Coldain Hero's Insignia Ring]] is the best opportunity to obtain the orders to trigger Ring 10. The following is repeated here for convenience.
+
+Immediately after obtaining your [[Coldain Hero's Insignia Ring]], give your newly cleansed dagger to Dain (he will give it back) and say 'You can count on my help.' for the following Dialogue:
+
+Upon giving Dain the dagger he will give it back and say, "My good _______, you have served me well.  You have flushed out all who sought to oppose me and my people.  I am afraid I need to call upon you and your friends on final time.  The dissension and treason ran deeper than I had anticipated.  Our population has been cleansed, but we lost a full third of our army to the poisonous words of those rebels.  In retaliation for your deeds, the Kromrif have made plans to attack us in this, our weakest hour.  Can I count on your help, outlander?"
+
+You say, 'You can count on my help.'
+
+Dain Frostreaver IV says 'Several of our greatest officers, including a few veterans from the war on Yesterwinter are assembling just outside our city. Gather your army at once and give this parchment and the ninth ring to Sentry Badian. I will remain inside the city with a few of my troops to defend it against any who might penetrate your defense. May Brell be with you, ______.'
+
+He hands you a Declaration of War. 
+
+IMPORTANT NOTE AND CHANGE: You MUST say the phrase AFTER Dain says, "Can I count on your help, outlander?" However, your dagger hand-in can be sniped by someone saying the phrase right after you've handed it in (this also allows someone who has "lost" their dagger to still receive the orders).  The good news is that you can try again since you get the dagger back; simply hand it back to get Dain to repeat the phrase.  Note that you will have a little less than 1 minute to complete this with the new Dain race rules effective 3/31/22.
+
+DO NOT HAND DAIN YOUR RING 9!! AT NO POINT IS RING 9 EVER HANDED TO DAIN!!
+
+=== Ring of Dain Frostreaver IV (#10) ===	
+{{: 10th Coldain Ring Quest}}
+
+
+==External links==
+* http://www.rimzig.com/quests/coldain_insigia_rings_quests.html (site missing SSL)
+* http://www.bonzz.com/coldain.htm
+* <s>http://hungos2cp.orgfree.com/questcoldring01.html (German)</s> (broken link)
+
+[[Category:Quests]]
+[[Category:Eastern Wastes]]
+[[Category:Great Divide]]
+[[Category:All Classes Quests]]

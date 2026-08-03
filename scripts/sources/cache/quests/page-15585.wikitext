@@ -1,0 +1,44 @@
+[[File:npc_toxdil.png|frame|Toxdil]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Toxdil]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[East Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[a giant snake]]
+|}
+
+== Reward ==
+
+<ul><li> [[Snake Venom]]
+</li></ul>
+
+== Walkthrough ==
+
+Toxdil is a Teir'Dal poison vendor in West Freeport behind the fake wall in the north of the newbie yard.
+
+You say, 'Hail, Toxdil'
+
+: Toxdil says 'Correct, Toxdil is my name. No last name. I swear allegiance to no house nor guild. What brings you down here? Perhaps you seek my [deadly liquid], perhaps not. Whatever your reasons, I warn you to keep an eye out for the militia. They have begun to patrol the sewers.'
+
+You say, 'What deadly liquid?'
+
+: Toxdil says 'The deadly liquid I offer to rogues is called snake venom. I will be glad to make it for you, but first you must supply me with two snake venom sacs and my fee of 20 gold pieces. You may find the sacs upon the giant snakes of the Commonlands.'
+
+He wants 2 Snake Venom Sacs and 20 gp and he'll give you a vial of poison.
+
+Reward is [[Snake Venom]] and some experience. Toxdil has no dialogue nor faction hits for his reward.
+
+[[Category:Quests]]
+[[Category:West Freeport]]

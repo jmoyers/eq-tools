@@ -1,0 +1,39 @@
+[[File:npc_bonlarg.png|frame|Bonlarg]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Bonlarg]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[a lizardman scout]]
+|}
+
+Requires Amiable or better faction, is multiquestable. 
+
+== Reward ==
+
+<ul><li>  {{:Black Shadow Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest is given by Bonlarg in the Greenblood Shadow Knight Guild.
+
+He will give you a Black Shadow Tunic if you give him 3 [[Lizardman Scout Fife]] (found on Lizard Scouts in [[Feerrott]]) and your original guild tunic.
+
+The tunic can be used for the [[Greenblood Tunics]] quest in Grobb or just worn as is.
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Shadow Knight Quests]]

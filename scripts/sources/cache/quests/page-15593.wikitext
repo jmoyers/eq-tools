@@ -1,0 +1,165 @@
+[[File:npc_dargon_mcpherson.png|frame|Dargon McPherson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Dargon McPherson]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[Arnis McLish]], [[Bryndin McMill]], [[Megan OReilly]], [[Snowflake]], [[Talin ODonal]]
+|}
+
+== Reward ==
+
+<ul>
+<li>  {{:Copper Band}}</li>
+<li> {{:Lapis Lazuli}}</li>
+<li> {{:Tattered Cloth Sandal}}</li>
+<li> {{:Turquoise}}</li>
+<li> {{:Large Patchwork Pants}}</li>
+<li> {{:Leather Boots}}</li>
+<li> {{:Rusty Axe}}</li>
+</ul>
+
+== Walkthrough ==
+
+'''Find [[Dargon McPherson]] in northeast [[Halas]] at +470, -440''' ''Was able to start this quest at cons Indifferent'' <br>
+* **Update 04/27/2022** ''Able to start quest at Apprehensive.''
+
+You say, 'Hail, Dargon McPherson'
+
+: Dargon McPherson says 'Hail, mighty ______! I assume ye must be a [warrior o' the Wolves]. Why else would ye approach a trainer such as meself, then?'
+
+You say, 'I am a warrior o' the Wolves.'
+
+: Dargon McPherson says 'Aye, 'tis as I thought. I'm glad t' see we've warriors such as yerself amongst the Wolves o' the North. Lately, Kylan's been allowing too many scrawny warriors in, methinks. Nor have they fared well in Everfrrost. Many frreeze to death, ye know... Will ye assist me and [deliver an elixir to young warriors] in Everfrost?'
+
+You say, 'I will deliver an elixir to young warriors.'
+
+: Dargon McPherson says 'Ach, 'tis good o' ye! Take this bottle of elixir to Everfrost Peaks. Find Talin O'Donal. He'll take the first sip, and then instruct ye on who else ye need to find. Do that, and I'll give ye a fine reward when ye return the empty elixir bottle. Good luck, then. Don't die.'
+
+You receive a Full Bottle of Elixir.
+
+'''Find [[Talin ODonal]] is at +3620, +670 in the tunnel just outside Halas in Everfrost, near the two female merchants.'''
+
+You say, 'Hail, Talin ODonal'
+
+Talin ODonal says 'Brrrrrr!! Grr.. Grreetings. It is freezing out here!!'
+
+Give him the elixir.
+
+Talin ODonal says 'Mmmm.. I feel much warmer. Thank you. You should now find Bryndin McMill. He could use a swig also. I saw him hanging around two other guards.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive back One Quarter of Elixir. Note: It is actually a 3/4 full bottle, but its name is erroneously called "One Quarter of Elixir"
+
+'''Find [[Bryndin McMill]] go down the ramp, then east, next to a tree and [[Snowflake]] at +2040, -1150.'''
+
+You say, 'Hail, Bryndin McMill'
+
+Bryndin McMill says 'H-ha.. H-hai.. Hail!! It is v-v-very.. C-cold out here. You sh-sh-should light a c-c-campfire.'
+
+Give him the elixir.
+
+Bryndin McMill says 'Ahhh!! I feel warm all over. Thanks. You should go give Arnis McLish a drink of this elixir. Last time I saw him he was headed toward Blackburrow.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive back One Half of Elixir.
+
+'''Find [[Arnis McLish]] who may be found wandering in the southwest corner of the zone near (Blackburrow zone line) at -1600, -170.  If he isn't there, wait a bit and he'll come running back.'''
+'''Keep your eyes open as the vengeful lyrist roams around this area as well and will end a low level character very quickly.'''
+
+You say, 'Hail, Arnis McLish'
+
+Arnis McLish says 'My word!! I cannot believe how cold it is out here. I must keep running around just to keep warm.'
+
+Give him the elixir.
+
+Arnis McLish says 'Mmmm.. Thank you stranger. I feel a lot warmer now. You should now go and find [Megan] O'Reilly.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive back One Quarter of Elixir
+
+You say, 'Where is Megan?'
+
+Arnis McLish says 'I heard she got lost on the plains. You should go ask her dog, Snowflake, where she is. I hear he is somewhere around the pass to Halas.'
+
+'''Head back again to the previous spot with Bryndin McMill and [[Snowflake]] +2020, -1160.''' ''(Optional?)''
+
+You say, 'Hail, Snowflake'
+
+Snowflake says 'Grrrrrr!!'
+
+You say, 'Where is Megan?'
+
+Snowflake says 'Ruff.. Ruff.. Woof..'
+
+'''Follow Snowflake east across the tundra, ending up at the North Tower at +2060, -3890.  If [[Megan]] is not there, wait for her return (from a patrol) or respawn (orcs attacked her).'''
+
+You say, 'Hail, Megan OReilly'
+
+Megan OReilly says 'Brrrr.. It.. Is sooo.. c-cold!! I never.. sh-should've j-joined.. the.. the W-wolves of the N-north!!'
+
+'''Give [[Megan]] the elixir.
+'''<br>
+
+Megan OReilly says 'Oh thank you. Sorry, but the bottle is empty now. I hope you did't need any. Take the empty bottle back to Dargon. He may refill it for you.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive an Empty Bottle of Elixir.
+
+'''Return to [[Dargon McPherson]] in Halas and give him the empty bottle.'''
+
+: Dargon McPherson says 'Ye've proven yerself to be a cut above the rest and aided yer fellow warriors, no matter how worthless they were. Ye may take this. It was found in the snow by one of our foraging parties. I hope it can be of use to a warrior like yerself.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+You receive 1-3 copper from Dargon McPherson.
+
+You receive a random low-level item.
+
+[[Category:Quests]]
+[[Category:Halas]]

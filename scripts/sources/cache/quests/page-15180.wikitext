@@ -1,0 +1,64 @@
+{{Classic Era}}
+[[File:npc_vilissia.png|frame|Vilissia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vilissia]]
+|-
+! ''' Minimum Level: '''
+| 26
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[The Estate of Unrest]], [[Ocean of Tears]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin headmaster]], [[a shadowed man]], [[a skeletal monk]], [[a greater dark bone]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Acumen Mask}}
+</li></ul>
+
+== Checklist ==
+
+Obtain the following items and return them to Vilissia:{{CheckboxList}}
+*[[Glowing Mask]] from [[a skeleton monk]] or [[A Froglok Scryer]] in [[Upper Guk]] 
+*[[Patch of Shadow]] from [[a shadowed man]]
+*[[Darkbone Skull]] from [[a greater dark bone]] in [[The Estate of Unrest]]
+*[[Bonechipped Mask]] from [[A Goblin Headmaster]] in [[Ocean of Tears]]
+{{End}}
+
+== Dialogue ==
+
+You say, 'Hail, Vilissia' 
+
+: Vilissia says 'I am Vilissia, chosen of Solusek Ro. I am a practitioner in the wizardly arts, and keeper of lore for the [runescale cloak], [Tishan's kilt] and the [acumen mask].' 
+
+You say, 'I wish to know of the acumen mask.' 
+
+: Vilissia says 'The acumen mask, as its name suggests, confers to its wearer certain powers of insight and knowledge. Are you [interested] in obtaining a [mask]?' 
+
+You say, 'I am interested in obtaining a mask.' 
+
+: Vilissia says 'I can make an acumen mask for you, but you will need to bring me the proper components. I will need a glowing mask from a skeletal monk in the caverns of Guk, a patch of Shadow from our mortal enemies, the shadowed men, a darkbone Skull from a darkbone skeleton in the Estate of Unrest, and a bonechipped mask from a goblin headmaster in the Ocean of Tears. Bring me these four items, and I will make for you an acumen mask.' 
+
+'''Upon handing in the items:'''
+
+: Vilissia says 'Mask, patch, skull and mask. All of the items necessary for me to make an acumen mask. Excellent. All praise Solusek Ro!' 
+
+<div class="facblock">
+*Your faction standing with [[Temple Of Sol Ro]] got better. 
+*Your faction standing with [[Shadowed Men]] got worse. 
+</div>
+
+Note: This quest may be multiquestable with 1 person turning in the 3 nodrop items and the wizard turning in the shadowed man eyepatch. May also be multiquestable with the wizard turning in only the [[Glowing Mask]].
+[[Category: Quests]]
+
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

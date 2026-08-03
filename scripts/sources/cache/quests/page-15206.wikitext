@@ -1,0 +1,162 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_kalatrina_plossen.png|frame|Kalatrina Plossen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Kalatrina Plossen]]
+|-
+! ''' Minimum Level: '''
+| 1, but 50 for killing NPCs
+|-
+! ''' Classes: '''
+| ALL (designed for [[Paladin]])
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+
+== Reward ==
+
+<ul><li> {{:SoulFire}}
+</li></ul>
+
+==Checklist==
+
+{{CheckboxList}}
+* [[A Sealed Note]]
+** Brew/obtain [[Bog Juice]]
+** Brew/obtain [[Edible Goo]]
+** Turn in 4x [[Drom's Champagne]] to [[Tykar Renlin]] in Seafarer's Roost bar in East Freeport (to receive [[Bunker Cell #1]])
+** Turn in Juice, Goo, and Bunker Cell #1 to [[a prisoner]] in West Freeport Arena prison (to receive [[H. K. 102]])
+** Turn in H.K. 102 to [[Assistant Kiolna]] in Highpass Keep bank (to receive [[A Sealed Note]])
+
+* The [[Testimony]]
+** Obtain [[A Spider Venom Sac]]
+** Obtain [[Cloth Shirt]]
+** Turn in Cloth Shirt to [[Altunic Jartin]] in East Commons (to receive [[Token of Generosity]])
+** Turn in Venom Sac to [[Merko Quetalis]] in the North Freeport Hall of Truth (to receive [[Token of Bravery]])
+** Turn in both Tokens to Merko to spawn [[Guard Willia]]
+** Kill [[Guard Willia]] (to loot [[Token of Truth]])
+** Turn in Truth Token to Merko (to receive [[Testimony]])
+
+* The Hilt
+** Kill [[Xicotl]] in Mistmoore Castle (to loot [[Glowing Sword Hilt]])
+
+* The Sword of Faith
+** Kill [[Sir Lucan D'Lere]] (both GM and undead spawn) in West Freeport (to loot [[Testimony of Truth]])
+** Obtain high '''warmly''' faction with [[Knights of Truth]] (ally to be safe, doesn't need to be max ally)(tested with warmly on paladin - worked on 20191216)
+** Turn in [[Testimony of Truth]] to [[Valeron Dushire]] in the North Freeport Hall of Truth (to receive [[Brilliant Sword of Faith]])
+
+* Final Turn-ins
+** Obtain '''warmly''' faction with [[Priests of Life]] (see [[Bone Chips Qeynos]])
+** Turn in A Sealed Note to [[Brother Hayle]] in Splitpaw
+{{End}}
+
+== Walkthrough ==
+
+A lot of the storyline and running around of this quest can be skipped. The quest is called "Zimel's Blades," but the short walkthrough will have next to nothing involving Zimel, or his store.
+
+Your final turn-in will be a note, your own Paladin Testimony, the [[Glowing Sword Hilt]], and the Brilliant Sword of Faith.
+
+;The Note
+*Acquire:
+**[[Bog Juice]] - Doable at 0 [[Brewing]] skill (trivial at 21): 1 [[Bottle]] (vendor), 1 [[Snake Scales]] (drop/vendor), 1 [[Water Flask]] (vendor).
+**[[Edible Goo]] - Doable at 0 [[Cooking]] skill (trivial at 21): 1 [[Fire Beetle Eye]] (drop), 1 [[Rat Ears]] (drop/vendor). Note: Don't eat it! (Tip: Keeping the edible goo on cursor will prevent you from eating it, or just put it behind your food).
+*Go to the freeport docks. Across the docks in the Seafarer's Roost. Buy 4 [[Drom's Champagne]]s from the bartender, and wait for [[Tykar Renlin]] to spawn. His character model is the same as a desert madman, and he spawns next to the bar in the room on your left. When he spawns, hand him the 4 droms (stacked is fine) and receive [[Bunker Cell #1]], which identifies as "Zimel's Blanket."
+*Go to the arena in West Freeport. Exit through the door and find a small prison. In one of the cells is a prisoner merely named [[a prisoner]]. Give him the bog juice, edible goo, and Bunker Cell #1. He will give you a key called [[H. K. 102]].
+*Take the key to [[Highpass Keep]]. Hand in the key [[H. K. 102]] from last step to [[Assistant Kiolna]]. You will receive [[A Sealed Note]].
+
+;Your Paladin Testimony
+*Acquire [[A Spider Venom Sac]]. This can be achieved by killing any run-of-the-mill giant spider.
+*Acquire a medium-sized [[Cloth Shirt]] (buy it from a vendor). Find [[Altunic Jartin]] in EC. His shop is the lone hut across the road from inn3 (the inn right before WC), but he wanders the zone. If he's missing, just wait for him to come back (or hunt him down if you really want to). Hand him the cloth shirt. He will give you the ''Token of Generosity''.
+*Go to [[Merko Quetalis]] in the courtyard of the Hall of Truth in North Freeport. Hand him the spider venom sac and receive the ''Token of Bravery''. Now hand in both the tokens. Follow the wall that leads to the moat. There is an opening to the freeport sewers. By turning in the tokens, you have spawned [[Guard Willia]], a low level militia guard just inside the sewer. Kill him fast, because he's on a timer to run away. Loot the [[Token of Truth]] and return it to Merko for ''[[Testimony]]''.
+
+;The Hilt of SoulFire
+*Kill [[Xicotl]] in the pool room in [[Mistmoore Castle]]. He is a rare spawn, but 100% drop rate. His PH is the naked female DE standing in front of the pool steps. He is a level 43 (ish?) SK, and kinda tough for a level 50 paladin. Be safe and bring a friend. Loot ''[[Glowing Sword Hilt]]''.
+
+;The Brilliant Sword of Faith
+*Kill [[Sir Lucan D'Lere]] in West Freeport. This spawns the TRUE Sir Lucan D'Lere, an undead knight (of weaker power than his first form). Loot ''A Testimony of Truth'' from the undead Sir Lucan. Sir Lucan's respawn time is uncertain, but will be up in a personal instance.
+*Go to North Freeport and find [[Valeron Dushire]] on the balcony of the Hall of Truth. If you are not a follower of the Hall of Truth, please ensure you are of max faction with the Knights of Truth. You can max it by giving Mojax in WC bottles of milk as part of the [[Paladin Message]] quest, or if you are not already KOS with East Freeport guards you can hand in 2 gold at a time as part of [[Fabian's Strings]] to max the faction). Give the Testimony of Truth you looted off Lucan's skeletal form to Valeron Dushire, and he will hand you the ''[[Brilliant Sword of Faith]]''.
+
+;The Turn-in
+Invis down to the jail cells of [[Splitpaw Lair]] (it is recommended that you bring some invis potions for the journey). At the end you will find [[Brother Hayle]]. Please ensure that you are of adequate faction with the [[Priests of Life]] - high warmly (just max it). The final turn-in can be MQd, but everyone must be of sufficient faction.
+
+Turn in the [[A Sealed Note]] '''ALONE'''. He will hand it back, opened. '''Now''' turn in the opened note, your testimony, the hilt, and the brilliant sword of faith. Congratulations! You have received {{:SoulFire}}.
+
+== Long Walkthrough & Storyline ==
+
+=== Background/Lore Details ===
+
+;What is SoulFire?
+SoulFire is not the average holy sword. In fact, it is a powerful artifact for use by both paladins and shadowknights. Supposedly, anyone killed by the blade has his soul trapped within its hilt, forever in torment. First found by the Dark Elves, it made its way out into the world centuries later when it became disassembled and scattered around Norrath. It was later reassembled by its own will when a paladin retrieved all the fragments.
+
+;Who is Ariska Zimel?
+Ariska Zimel is a once-master blacksmith whose shop, Zimel's Blades, was located in East Freeport. Traveling through Lavastorm Mountains with Groflah Steadirt, he came upon a caravan of evil knights transporting a powerful artifact. The caravan was attacked, and Zimel took the artifact.
+
+That stolen artifact was SoulFire, presumably being transported to Sir Lucan D'Lere. After finding out what the sword was, Zimel gave the sword to Brother Hayle for safekeeping. They agreed it would only be given to a paladin that Zimel chooses worthy, and proves his nobility to Hayle.
+
+Presumably to hide from Lucan, Zimel became a beggar. He befriended [[Tykar Renlin]], a fellow beggar. Lucan raided Zimel's Blades in search of SoulFire; unable to find it, he burned the store. Eventually Lucan found Zimel, and he had both him and Tykar arrested for vagrancy. He put them in the prison in the West Freeport arena. Tykar was eventually released, and took the blanket from Zimel's cell with him. Zimel was left there indefinitely.
+
+At some point after finding SoulFire, Zimel lost his mind.
+
+;Who is Sir Lucan D'Lere?
+Lucan was a homeless boy taken in by the Temple of Marr. They found him to be strong, and requested he be trained as a knight. Valeron Dushire, the leader of the Knights of Truth, took him as a squire.
+
+Sir Lucan grew to be a powerful knight, and quickly ascended the ranks of the paladinhood. When Valeron and others had to go on a mission elsewhere, they left Sir Lucan in charge. His head swelled and power corrupted, and he hired mercenaries and took over Freeport. He killed a fellow paladin and was stripped of his divine powers. He called his new army "The Freeport Militia" and controls Freeport to this day.
+
+=== The Quest ===
+
+The quest begins as an errand from Kalatrina Plossen to give Guard Alayle, a paladin spy in the Freeport Militia, a note that tells him that his cover is compromised and he must report back. [You must say, "I serve the will of the Truthbringer" not I will serve...] Using the code phrase "Truth Is Good" to identify yourself, you find Alayle in the Militia House backyard.
+
+After saying the phrase to Alayle and giving him the note, he gives you ''A Tattered Flier'' he found on the floor of Lucan's office. He is then confronted by a guard; he tells you to run. If you decide to stay and watch, you see him killed. The flier appears to be merely a price list from Zimel's shop. If you right click on it, it says "ZIMEL'S BLADES," and a sequence of dots.
+
+If you return to Kalatrina and turn in the flier, the quest continues; but she doesn't give back the flier, so it's a dead-end. This is probably a mistake. You can either redo the errand for another flier, or just don't turn it in and skip to the next part. If you hand in the flier, Kalatrina tells you to go ask Rashinda Elore in the Office of the People about Zimel's Blades.
+
+Rashinda Elore informs you that Ariska Zimel went missing about one year prior, and shortly after he disappeared his shop essentially exploded, and was condemned. All remaining merchandise was given to Ariska Zimel's best friend, Groflah Steadirt. Rashinda then points you to Groflah Steadirt. You can go back to Kalatrina and report, and she'll tell you that Lucan is after SoulFire and you have to beat him to it. You find Groflah Steadirt in his shop, Groflah's Forge. Asking him about Zimel is responded with wariness. If you hand him the flier, he'll recognize the sequence of dots and ask you to meet him at the Seafarer's Roost at night and give him the flier there. He will return the flier.
+
+At the Seafarer's Roost, there are a number of NPCs which cycle in and out spawning and despawning. Groflah will spawn in the room on your left. Facing into the room from the doorway, it will be the far right corner. When he spawns, hand him the flier. Groflah deciphers the code for you - it says "help captive." (How, exactly, Zimel got this message into his own shop after he was arrested is beyond my ability to interpret.) When asked about Zimel, Groflah will tell the story of when they acquired SoulFire, and then Zimel's disappearance. It remains unclear exactly what happened to Zimel and in what order.
+
+The next part, for the pioneer quester, takes mere luck. To catch up with the above short walkthrough, [[Tykar Renlin]] must be up at some point when "Zimel" or "Lucan" is mentioned. He, as well, is a cycling spawn. If he is up during your conversation with Groflah, he will respond to any mention of Zimel's name, either by you or Groflah. Or, if he is up at the same time as a cycled NPC bard, the bard will sing a pro-Lucan song and Tykar will say bad things about Lucan, mentioning Zimel's name.
+
+When Tykar spawns, he will ask for the four Drom Champagnes when you mention Zimel. He tells you to find Zimel in the West Freeport arena jail cells, and that he has gone crazy. He gives you Zimel's blanket to return to him.
+
+In the arena, you find "a prisoner" in one of the cells. the prisoner will respond to the mention of "Ariska Zimel," indicating that this is who you're looking for. If you hand him the blanket, he'll say "Bog n Goo.. Blanket too!!" The "Bog n Goo" referring to the bog juice and edible goo mentioned in the short walkthrough. So it would be smart to bring those with you as well to do the turn-in all at once, instead of risking something messing you up while you go out and get the bog n goo.
+
+When you give him the 3 items, he will give you a key. You can either deduce that his reference to "Tunaria's corridor" means highpass, or casting identify on it reveals it as a Highkeep strongbox key. When you hand it in to the highkeep banker, you receive ''A Sealed Note''. Whether finding Zimel proved your connection to the Hall of Truth, or if he had just simply gone insane and handed the letter to someone who brought him his blankey... is unclear.
+
+At this point you are supposed to go to Brother Hayle and hand in the note, but you should get the rest of the items first so you don't have to make this trip twice. To find Brother Hayle you can go around asking Priests of Life in Qeynos. Eventually someone responds and points you to Split Paw. Upon turning in the letter, Hayle sends you to prove your nobility, by giving him your testimony, a Sword of Faith, and the hilt of SoulFire. The hilt of SoulFire was lost when a troll named Xicotl attempted to steal the sword from the Temple of Life, and tore off the hilt.
+
+To get your testimony, you must undergo the Test of Truth from Merko Quetalis in the courtyard of the Hall of Truth. You must first identify yourself as a squire and perform a small task, which is to look into a problem for Altunic Jartin. Find him in the lone hut across from inn3 in EC, and hand him the letter you receive from Merko. Soon after, Squire Narl, a human rogue, will walk up to Altunic's door. Kill him, loot his head, and give it to Altunic. Altunic will then ask for a cloth shirt. Hand him a medium sized cloth shirt, and you will receive the ''Token of Generosity''.
+
+Return to Merko and tell him that you have earned the Token of Generosity. He sends you to Nro to get a spider venom sac from a desert tarantula, although you can get the sac from any giant spider. Hand him a spider venom sac for the ''Token of Bravery''.
+
+To take the Test of Truth, hand in both tokens to Merko. Turn around and follow the moat into the sewer, in which you have just spawned Guard Willa. Guard Willa is Merko's niece, who joined the Militia and killed Merko's wife on Lucan's orders. If you talk to Willa, she will plead for mercy and stretch the truth a little about what happened. If you ask Merko, he will tell you what actually happened. However, she's on a quick timer to run away; if you leave her up for too long, she will thank you for sparing her life, and you will fail the Test of Truth. Once she's dead, loot the ''Token of Truth'' and hand it to Merko. You will receive ''a testimony''.
+
+Go to mistmoore and find Xicotl in the pool room. He is a rare spawn, but drops the hilt 100% of the time. His PH is the naked DE in front of the pool steps. He is a 43 (ish?) SK, and kind of tough for a level 50 paladin. Be safe and bring a friend. Loot ''Glowing Sword Hilt''.
+
+Valeron Dushire wants Lucan killed. He kind of gives you the feeling that killing Lucan will free Freeport from the Militia's tyranny, but nothing so glorious happens and Lucan just respawns a week later. However, he gives you a hint as to the required strategy, saying "we have never been able to separate him from his militia." This brings about the famous train-and-hail tactic. If you do the impossible, bring Valeron Lucan's paladin testimony.
+
+Kill Sir Lucan D'Lere. This will spawn Sir Lucan D'Lere, an undead knight (who just happens to be weaker than his first form). Loot ''A Testimony of Truth'' from the undead version, and give it to Valeron on the balcony of the Hall of Truth. He will give you the ''Brilliant Sword of Faith''.
+
+You now have the proof of nobility requested by Brother Hayle. Return (or go for the first time) to Split Paw. If this is your first time, hand him the sealed note ALONE. If you've already handed him the note, hand in the returned note, your testimony, the hilt, and the brilliant sword of faith. He hands you {{:SoulFire}}.
+
+Fun fact: the jail cell locks from the outside, and if you go alone you will be trapped in the cell. Someone needs to come down and let you out if this happens.
+
+;What happens next?
+Eventually, SoulFire is given to Inte Akera for the Fiery Avenger. How it goes from this point to the next point is unclear, but after EQ1 and before EQ2, SoulFire is wielded by the Avatar of War in an assault on Freeport. Slain in the battle, SoulFire passed to the next wielder; at the start of EQ2, the evil ruler of Freeport, the fallen paladin Lucan D'Lere, wields SoulFire.
+
+== Related Quests ==
+
+* [[The Fiery Avenger]]
+* [[Paladin Epic Quest]]
+
+[[Category:Quests]]
+[[Category:Paladin Quests]]
+[[Category:North Freeport]]

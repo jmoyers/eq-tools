@@ -1,0 +1,76 @@
+[[File:npc_sal_drana.png|frame|Sal Drana]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Foreign Quarter]]
+|-
+! ''' Quest Giver: '''
+| [[Sal Drana]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Sal Drana in Dranas Bread and Butcher #4 on the map of Neriak Foreign Quarter.
+
+The conversation with Sal Drana:
+
+You say, 'Hail, Sal Drana'
+
+: Sal Drana says, 'Greetings to you. It seems we have a bit of a food shortage. I'm afraid I may be out of certain supplies. However, King Thex in his benevolent wisdom has authorized us merchants to look to the Teir`Dal and those friendly to our causes for assistance with this matter. Would you be [willing to assist] us?'
+
+You say, 'willing to assist'
+
+:Sal Drana says, 'Very well. There are two ways you may help us to keep our supplies stocked. If you are a [baker] you may use your skills to personally keep our supplies maintained at acceptable levels. If you are willing to travel then you can help us keep the supply lines open by personally delivering [food shipments]. You will be compensated in either case.'
+
+You say, 'food shipments'
+(note that responding to 'baker' gives [[Muffin Quests|a different quest]])
+
+: Sal Drana says, 'An adventurous sort, very good. Then travel to the Southern Plains of Karana and locate the centaur baker there. He has a large supply of grain and we have been authorized to secure shipments of bread loaves from this individual. Tell him you are there to secure of shipment of bread loaves for the people of Neriak. You shall be compensated upon your return.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Sal Drana.
+
+: Sal Drana says, 'You have returned and none too soon! Thank you very much, I will put this bread on sale immediately. Here is your reward as promised. Thank you very much.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better.
+* Your faction standing with [[Dreadguard Outer]] got better.
+* Your faction standing with [[Dreadguard Inner]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum - 3 platinum from Sal Drana.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Neriak Foreign Quarter]]
+[[Category:All Classes Quests]]

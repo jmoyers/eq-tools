@@ -1,0 +1,55 @@
+{{Velious Era}}
+{{Unsolved}}
+[[File:npc_sentry_emil.png|frame]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Emil]]
+|-
+! ''' Minimum Level: '''
+| 0
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Grudash the Baker]]
+|}
+
+== Reward ==
+
+<ul><li> Unsolved/broken </li></ul>
+
+== Walkthrough ==
+
+''This quest was mentioned when they posted about info for broken quests on the [http://boards.station.sony.com/ubb/everquest/Forum1/HTML/000358.html Developers Boards]. Absor said that the quest had never been implemented and the NPCs hadn't said anything about pie for a LONG time. They later realised some versions of the NPCs still did say something, so now they have removed the references.''
+
+You say, 'Hail Sentry Emil'
+
+: [[Sentry Emil]] says 'Greetings stranger, what brings you to the Skyshrine, home to the kin?  Your intentions had best be honorable, perhaps you wish to prove them?
+
+You say, 'I wish to prove them."
+
+: Sentry Emil says 'Good, then you wouldn't mind doing a little favor for me?  I was on my way to the galley to eat when I was called for this duty, and I remain incredibly hungry.  If you would be so kind as to visit the galley and bring to me one of their fabulous boysenberry pies I would be incredibly grateful.
+
+'''Head down to the kitchen.'''
+
+You say, 'Hail Grudash the Baker'
+
+: [[Grudash the Baker]] says 'Ah, welcome stranger. Perhaps I could interest you in one of my famous Boysenberry pies, the delight of Sky Shrine Ruru the Cook says 'Hah! Whatever Grudash. You know that my Roasted Walrus in Plum Sauce is better. You just don't want to admit it. Grudash the Baker says 'Why would I admit to such a lie? Everyone loves my pies. I rarely see anyone come in here asking for your Roasted Walrus. Ruru the Cook says 'Just you wait, just you wait! One of these days Grudash, you'll see.  Grudash the Baker says 'Please ignore my friend Ruru here. He is a bit delusional. Ruru the Cook says 'Bah!
+
+You say, 'I would  like a boysenberry pie.'
+
+: Grudash the Baker chuckles, 'I thought you might, what say you now Ruru? Who is the better cook between us now?' Ruru the Cook grumbles, 'Bah, this still doesn't settle anything Grudash. This stranger obviously has no taste for fine cuisine.'
+
+You say, 'hail Ruru the Cook'
+
+: [[Ruru the Cook]] says 'Hey there stranger, Pleased to meet you. I'm Ruru, I do the cooking around here. I'm the best cook around these parts. So, If you get hungry, you'd best be making sure you're coming to see me. Grudash the Baker laughs, 'I'm sure they'd prefer my Boysenberry pie to your Roasted Walrus with Plum Sauce any day.' Ruru the Cook laughs, 'Don't get me started. You know that my cuisine Is prefered over yours two to one.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]

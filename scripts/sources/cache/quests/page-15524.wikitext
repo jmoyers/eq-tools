@@ -1,0 +1,45 @@
+[[File:npc_jras_solsier.png|frame|Jras Solsier]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Jras Solsier]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Talym Shoontar]]
+|}
+
+== Reward ==
+
+A random low level spell
+
+== Walkthrough ==
+
+After you hand the Poacher Head (it may take more than one) to Jras Solsier outside of the Temple of Divine Light in Erudin, he will ask you to find out who is leading the activities of the poachers.  
+
+This leader is [[Talym Shoontar]], who is also wanted in Surefall Glades for his activities.  Talym appears in Qeynos Hills, somewhere between the cottage, the road marker, and the Guard Tower. He appears by the WK zone border and heads down the road towards Qeynos. He is about lvl 15, and is roughly on par with Dorn B'Dynn, the scourge of the Northern Desert of Ro.   Plus, if you attack him in Qeynos Hills, the guards will attack you.  For a safer way to kill him, Shoontar also occasionally appears in Fish Tavern's back room, where you turn in the moonstones for gnoll stouts.  This may only happen after the executioner appears following the Gnasher's head quest.  Shoontar will also appear in Freeport at the docks, in place of the dwarf you turn in the Tumpy Tonics.  When he appears here, he is often killed by someone wanting to force the dwarf to spawn, so you can sometimes loot his corpse by asking the person who killed him for the head (called a barbarian head).  
+
+He appears in Surefall as well.  If you hand his [[Barbarian Head]] to Jras Solsier, he says, "It is done! Quellious will look favorably upon our church and we will look favorably upon you. Go in peace."
+
+Need missing dialogues, current faction hits if any, /loc of quest mobs, list of additional quest rewards.
+
+For handing in [[Barbarian Head]]:
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]

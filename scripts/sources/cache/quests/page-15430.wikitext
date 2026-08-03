@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_tergon_brenclog.png|frame|Tergon Brenclog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Tergon Brenclog]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Bugglegupp]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Elementalkin: Air|Spell: Elementalkin: Air]]
+</li><li>  [[Elementalkin: Earth|Spell: Elementalkin: Earth]]
+</li><li>  [[Elementaling: Fire|Spell: Elementaling: Fire]]
+</li><li>  [[Elementaling: Water|Spell: Elementaling: Water]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tergon Brenclog]] is located at 1082, -1034, 31 in a room on the east side of the Library Mechanamagica. This quest requires at least amiable faction.''
+
+You say, 'Hail, Tergon Brenclog'
+
+: Tergon Brenclog says, 'Eh!!? What do I see before me? A young upstart? Some child pretending to be a great mind? If you wish to test your mettle then you will assist Tergon. Will you [Help Tergon] or are you far [too superior] to deal with such things?'
+
+''If you say, 'I am too superior' ''
+
+: ''Tergon Brenclog says, 'Well excuse me!! your majesty. Please forgive my arrogance. Now get out of here, before you stink this place up with that rotting grape you call a brain!' ''
+
+You say, 'I will help Tergon'
+
+: Tergon Brenclog says, 'No!! You will help yourself. Your task shall find your skills tested. Succeed and knowledge is yours. Fail and death shall embrace you. Go to the Steamfont Mountains and seek out a troll named Bugglegupp. As a youngster I once tried to attack the beast with a device of mine. It sent an Iron Pellet deep into the beasts head. Kill Bugglegupp and return the Iron Pellet. I hope the Pellet does not get lost in the battle.'
+
+''Upon the death of [[Bugglegupp]]''
+
+:Bugglegupp says, 'My Crakneks will make you bleed...'
+
+<div class="facblock">
+* Your faction standing with [[Broken Skull Clan]] got worse.
+* Your faction standing with [[DaBashers]] got better.
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+</div>
+
+{{YouGainExperience}}
+
+'''Loot an [[Iron Pellet]] from the corpse of [[Bugglegupp]] and return it to [[Tergon Brenclog]].'''
+
+: Tergon Brenclog says, 'So, you have survived. There is no doubt in my mind that you achieved this solely with your own powers. Only a dim one requires the assistance of others. Take this. May it help you in your pursuit of greatness. [Further tasks] may bring you to that point.'
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon (Faction)|King Ak'Anon]] got better.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Tergon's Spellbook Quest]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Magician Quests]]

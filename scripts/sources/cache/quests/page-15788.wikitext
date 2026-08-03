@@ -1,0 +1,72 @@
+{{Velious Era}}
+[[File:npc_reivaj_the_battlerager.png|frame|Reivaj the Battlerager]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Reivaj the Battlerager]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Paladin]], [[Shadowknight]], but all classes can complete quest
+|-
+! ''' Related Zones: '''
+| [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Blizzent]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Vehement Sword of Reivaj}}
+</li></ul>
+
+== Walkthrough ==
+
+Head to the Iceshard house in Kael and speak to Reivaj. You must be Amiable to him before he will give you the quest/reward.
+
+''Note: Dialogue is reported broken as of December 2014.''
+
+You say, 'Hail, Reivaj the Battlerager'
+
+: [[Reivaj the Battlerager]] says 'Greetings.  You tread in the halls of Iceshard manor.  Are you here with a purpose or are you lost? '
+
+You say, 'I am here with a purpose.'
+
+: Reivaj the Battlerager says 'I do not know what purpose you would serve to the Kromrif.  If you seek to amass a fortune you have come to the wrong man. I am but a simple battlerager, wielding my blade for the Iceshard brothers when needed. '
+
+You say, 'What is a battlerager?'
+
+: Reivaj the Battlerager says 'Yes, I am a warrior who thrives on battle.  I have great faith in Rallos Zek and I call upon his power to make me more efficient in battle.  I am not like the foolish berserkers.  They howl like animals and create strange totems.  They simply unleash their anger upon the world whereas I focus and destroy my foes with the aid of Rallos Zek. '
+
+You say, 'I worship Rallos Zek'
+
+: Reivaj the Battlerager says 'The great war god guides my blade and has helped shape my day to day life...  I feel as if there is something greater mapped out for my life than what I have here. '
+
+You say, 'What is the great warlord's plan?'
+
+: Reivaj the Battlerager says 'I have been planning to travel forth from Kael Drakkel and destroy any Coldain who have spread from their safe home in Thurgadin.  It is always a nice trip, I will take several of the elder Kromrif with me as well.  Perhaps we will track down the elusive wurm, Blizzent. '
+
+You say, 'Who is Blizzent?'
+
+: Reivaj the Battlerager says 'Blizzent is an ancient ice wurm Vorken speaks of occasionally.  If I remember the story correctly, Blizzent once bit Vorken and Klaggen and has had a desire to have another taste.  I have never seen the wurm myself.  He may not even be alive still.  If I were able to slay Blizzent and retrieve proof of it, I could probably get in good with master Vorken. '
+
+The wurm Reivaj speaks of is [[Blizzent]], a 45th level wurm in the Great Divide. It wanders in the Southern portion of the Great Divide, near the Young shard wurms and the Coldain Miner Cave. It's the Valley south of the Giant Fort. Find it and kill it, and loot [[Blizzent's Fang]].
+
+Hand the Fang in to Reivaj:
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+He does not give any dialogue but gives the [[Vehement Sword of Reivaj]] as a reward
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

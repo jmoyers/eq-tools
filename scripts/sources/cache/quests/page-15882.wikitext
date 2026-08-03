@@ -1,0 +1,77 @@
+{{Classic Era}}
+[[File:npc_hetie_mcdonald.png|frame|Hetie McDonald]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Hetie McDonald]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  Faction, Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Hetie McDonald in McDonald's Fine Cider #10 on map in Halas.
+
+The conversation with Hetie:
+
+You say, 'Hail, Hetie McDonald'
+
+: Hetie McDonald says, 'Hello there, Zokkor. I'm afraid times are getting tough. The plague has hindered our ability to restock food, and I am finding myself running short on baked goods lately. Would you be [willing to help] me out?'
+
+You say, 'willing to help'
+
+: Hetie McDonald says, 'Excellent! There are two ways you can help me. If you [can bake] you can make me some muffins so I don't run out. Or you [can travel] a ways for me and pick up some bread.'
+
+You say, 'can travel'
+(note that responding to 'can bake' gives [[Muffin Quests|a different quest]])
+
+: Hetie McDonald says, 'Good! Now there is a man who lives in the plains to the south. He goes by Jarlen Meadowgreen. He is a respected baker and makes some good quality bread. Just let him know that you want a bag of bread loaves.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.) 
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Hetie
+
+: Hetie McDonald says, 'Fresh bread! Thank you so much, I will put this on the shelves straightaway. Here is your payment as promised.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1-3 platinum from Hetie McDonald.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:All Classes Quests]]

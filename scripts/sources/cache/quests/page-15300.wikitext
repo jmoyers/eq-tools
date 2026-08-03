@@ -1,0 +1,59 @@
+{{Temple Era}}
+[[File:npc_vilissia.png|frame|Vilissia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vilissia]]
+|-
+! ''' Minimum Level: '''
+| 28
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Lavastorm Mountains]], [[Southern Desert of Ro]], [[Cazic Thule]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[Tae Ew Templar]], [[a crocodile]], [[a deepwater caiman]], [[a deepwater crocodile]], [[a firescale crocodile]], [[a saltwater croc]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Runescale Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with Vilissia in the Temple of Solusek Ro.''
+
+You say, 'Hail, Vilissia'
+
+: Vilissia says, 'I am Vilissia, chosen of Solusek Ro. I am a practitioner in the Wizardly arts, and keeper of lore for the [Runescale Cloak], [Tishan's Kilt] and the [Acumen Mask].'
+
+You say, 'What runescale cloak?'
+
+: Vilissia says, 'The Runescale cloak is a wonderful item of defense for any wizard. Are you [interested in the cloak]?'
+
+You say, 'I am interested in the cloak.'
+
+: Vilissia says, 'I can assemble for you a Runescale Cloak, but you will need to bring me the necessary components. I will need a Lizardscale Cloak from the Feerrott and the three Runes of Scale. All three can be found on Crocodiles = Saltwater Crocodiles in the Caverns of Guk, Deepwater Crocodiles in the Oasis of Marr and Firescale Crocodiles in the mountains of Lavastorm. Bring me these items, and I will make for you a Runescale Cloak.'
+
+'''Vilissia needs a [[Lizardscale Cloak]] from the Tae Ew Templar (in Cazic Thule) three [[Rune of Scale|Runes of Scale]] (from [[a saltwater croc]] in Upper Guk, [[a deepwater crocodile]] (looted off [[a deepwater caiman]] on 10/10/2025) in Oasis of Marr, and [[a firescale crocodile]] in the Lavastorm Mountains).'''
+
+'''After handing in the items:'''
+
+: Vilissia says, 'Well done, _______. You truly are a powerful wizard. I have crafted your cloak. Take it.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

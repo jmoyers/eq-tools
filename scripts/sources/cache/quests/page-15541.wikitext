@@ -1,0 +1,57 @@
+{{Classic Era}}
+[[File:npc_xelha_nevagon.png|frame|Xelha Nevagon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Xelha Nevagon]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| Necromancer
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various cyclopes'
+|}
+
+'''Classically Broken''' this quest was broken on live until 2003.
+
+== Reward ==
+
+<ul><li>   [[Beguile Undead|Spell: Beguile Undead]]
+</li><li>  [[Call of Bones|Spell: Call of Bones]]
+</li><li>  [[Invoke Shadow|Spell: Invoke Shadow]]
+</li><li>  [[Greater Shielding|Spell: Greater Shielding]]
+</li><li>  [[Resist Disease|Spell: Resist Disease]]
+</li><li>  [[Venom of the Snake|Spell: Venom of the Snake]]</ul>
+
+== Walkthrough ==
+
+[[Xelha Nevagon]] is located in the East Freeport tunnels at -168, -235
+
+Your Location is -1409.67, 547.72, -49.54
+
+
+'''After bringing [[Xelha Nevagon]] four [[spiderling silk]]s,'''
+
+'''Xelha will tell you to bring her a [[cyclops eye]].
+
+: Xelha Nevagon says 'A cyclops eye!! You are stronger than I believed. You will rise in the ranks of the Dismal Rage quickly with acts such as this!! I am most appreciative! Here, take this. It was lying around my shelves, just getting all dusty. I hope you can use it. And watch yourself in your journeys, the aura of your faith in Innoruuk surrounds you like a shroud. Our enemies will surely see you for what you are.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+{{exp}}
+</div>
+
+You receive 7 gold 12 silver from Xelha Nevagon. 
+
+[[Category:Quests]]
+[[Category:East Freeport]]

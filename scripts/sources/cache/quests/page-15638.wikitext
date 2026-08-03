@@ -1,0 +1,96 @@
+{{Velious Era}}
+
+[[File:npc_the_dragon_sage.png|frame|The Dragon Sage]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[The Dragon Sage]]
+|-
+! ''' Minimum Level: '''
+| 60
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Siren's Grotto]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Myga]], [[Tomekeeper Bjordnessin]], [[a coldspine seahorse]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Porlos' Fury|Spell: Porlos' Fury]]
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* Get [[Giant Loyalist Token]] from [[The Dragon Sage]] in [[Western Wastes]].
+* Take the coin to [[Tomekeeper Bjordnessin]] in [[Wakening Lands]], receive [[Giant Scalebound Tome]].
+* Take the tome back to the sage, receive [[Ornate Reagent Box]].
+* Get [[Dragonbane Herb]] from [[Siren's Grotto]].
+* Get [[Dragon Blood]] from [[Myga]] in WW.
+* Combine the herb and blood in the box, receive [[Sealed Reagent Box]].
+* Give this box to the sage.
+
+== Walkthrough ==
+
+The quest starts with [[The Dragon Sage]] in [[Western Wastes]], a High Elf found at loc +2465, -4702. The Dragon Sage has no faction and cons Indifferent. Tomekeeper Bjordnessin is on Giant faction but can be charmed for the turn in.
+
+You say, 'Hail, The Dragon Sage'
+
+The Dragon Sage appears to fade in and out. The ghostly figure seems to stare through you, as though he is not aware of your presence. 'Do you know who I am?', he asks, as if he is inquiring for his own benefit. 
+
+You say, 'Who are you?'
+
+The Dragon Sage begins to smile. 'It has come back to me, just now', he says. 'I am the Dragon Sage. I lived in the once great elven city of Takish Hiz, where I studied the dragons of Norrath.' The figure appears to be concentrating on something in the distance. His image begins to fade as he says, 'If I am among the world of the living again, then Norrath must be in great danger.' 
+
+You say, 'what danger?'
+
+: The Dragon Sage says 'Thousands of years ago, Veeshan, the Mother of All Wurms, made her mark upon the face of a young world called Norrath. She struck the planet with her godly might, laying her claim to the world, and created the beings known as dragons. This began the Age of Scale. 
+
+You say, 'what is the age of scale?'
+
+: The Dragon Sage says 'The Age of Scale was the time when dragons ruled supreme. They controlled the lands, the sea, and the sky for some 3000 years. That was when other gods took notice. 
+
+You say, 'what other gods?'
+
+: The Dragon Sage says 'Tunare, the Mother of All, Prexus, the Oceanlord and Brell Serilis, the Duke of Below formed a pact in response to Veeshan's claim to Norrath. The elves, the dwarves, and the aquatic kedge were all created to help keep the dragons in check.  Rallos Zek, the Warlord, learned of this pact and created the giants. This began the Elder Age.
+
+You say, 'what is the elder age?'
+
+: The Dragon Sage says 'The Elder Age was the time of the first humanoid races, the oldest on Norrath, next to the dragons. The elves prospered, while the giants struggled to survive. The giants on the frozen continent of Velious were in constant skirmishes with the dragons. It was at this point that the observations began. 
+
+You say, 'what observations?'
+
+: The Dragon Sage says 'The giants, smarter than expected, began watching and observing the habits of the dragons. They paid close attention to the things the dragons avoided... certain plants and watering holes. It was determined that a particular type of plant, when mixed with other reagents, was deadly to the dragons. The giants adapted their technique to specifically harm Yelinak's brood in order to give them an advantage. The ancient Kromzek King, Porlos, used this to aid in his battle with Hsagra, Yelinak's mate. Porlos killed Hsagra, forever bringing Yelinak's vengeance upon his family. Thus began the eternal war between the giants and the dragons. 
+
+You say, 'what plant?'
+
+: The Dragon Sage says 'The name of the plant eludes me at this time, for my thoughts have grown cold through the ages. The findings of the giants were written in a book of lore by some of our sages. You should seek out one of the giant's Tomekeepers. If you find a Tomekeeper, ask him about the herb that harms dragons. Perhaps if you give him this trinket he will assist you. Maybe they will remember my tired soul. 
+
+You receive a coin called a [[Giant Loyalist Token]]. At this point take the coin to [[Tomekeeper Bjordnessin]] in Wakening Lands Northeast corner (+665, -4586) and hand it to him.
+
+Tomekeeper Bjordnessin says 'Amazing! Simply Amazing! The legends must be true! This item was said to have been given to the Dragon Sage as a sign of friendship and trust, but I have always considered it to be legend. The discovery of this artifact will work wonders for my status! I have discovered a legend! Oh... oh yes. You sought information on that herb. Take this back to the sage. Maybe he can decipher it. 
+
+Tomekeeper gives you the [[Giant Scalebound Tome]] that you need to take back to the dragon sage in Western Wastes.
+
+The Dragon Sage takes the guide and immediately begins to scan through it. He then says, 'Ah... Ah yes... According to this book, the dragonbane herb grows only in one place, deep inside the lair of the sirens. If my memory serves me properly one of the creatures there is very fond of its flavor. I will also need the blood of a dragon, but not just any dragon. The blood must come from a beast of Lord [[Yelinak]]'s bloodline. Please go now and see if you can find this herb and the dragon blood. No time to waste, child. You will need to take this box to contain and combine the herbs and dragon blood in. Once you have accomplished this, please return the box to me. 
+
+You now have in your possession an Ornate Reagent Box. You will use this box to combine both the herb and the blood. The herb is called a [[Dragonbane Herb]] and drops in Sirens Grotto off of random mobs that frequent the water areas. One has definitely been dropped from a seahorse. 
+
+The blood is called [[Dragon Blood]] and is found on [[Myga]] in Western Wastes. Myga looks like Vulak`Aerr and wanders all over the zone. It would be wise to bring a tracker. Killing Myga will lower your Claws of Veeshan faction.
+
+Once you have both items, put them in the [[Ornate Reagent Box]] and hit combine. Once combined, the box will turn into a [[Sealed Reagent Box]]. Hand this sealed box over to The Dragon Sage to receive your [[Porlos' Fury|Porlos' Fury spell]].
+
+: The Dragon Sage says 'Ahhh! With the knowledge that I have gained from the Giant Scalebound Tome and these reagents, I can finish my research and create a most powerful spell for you! If successful, I will call it the Porlos' Fury spell. It will cause near fatal wounds to any dragon or dragon kin in Lord Yelinak's bloodline. Take this and study it. The magiks contained within will aid you in your fight. The Dragon Sage hands you the scroll and says, 'You will need a reagent to channel the magical energies through to enhance the power of the spell. Two peridots will be required to cast this spell. I wish you good fortune in your fight.'
+
+Thanks to Cinexa Candlelighter, Madinia & Wizmaster da Sorcerer.
+
+[[Category:Quests]]
+[[Category:Western Wastes]]
+[[Category:Wizard Quests]]

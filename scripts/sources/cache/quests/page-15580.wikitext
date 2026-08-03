@@ -1,0 +1,67 @@
+{{Classic Era}}[[File:npc_vasile_jahnir.png|frame|Vasile Jahnir]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Vasile Jahnir]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Rungupp]]
+|}
+
+Requires Amiable or better faction with Gate Callers.
+
+== Reward ==
+
+<ul><li>  [[Fire Flux|Spell: Fire Flux]]
+</li></ul>
+
+== Walkthrough ==
+
+''Vasile Jahnir is located at +720, +900 in the Tower of The Gatecallers in Erudin Palace.''  
+
+At the end of the previous quest, Vasile says the following:
+
+: Vasile Jahnir says, 'You have mastered these spells quickly. You shall now wear the gloves of the Gatecaller. Cumbersome they may feel, but they protect the hands of a young magician. In your young days of magic they will protect you from harm. They are not valued much by merchants, but they are prized by other circles. Nevertheless, we offer them only to our young Gatecallers. You may now be of assistance with a [slight problem].'
+
+You say, 'What slight problem?'
+
+: Vasile Jahnir says, 'We have heard rumor of an troll who has taken residence within the forest of Toxxulia. During your travels in Toxxulia, we command you to keep a watchful eye out for the beast. Slay it on sight and return its head to me. To do so will earn you the spell Fire Flux or Burn, whichever may be available at the time.'
+
+''Rungupp is found around location -1865, +390 in Toxxulia Forest.''
+
+: Rungupp says, 'Bash 'n Smash! Smash 'n Bash! Now ur face are luk like trash!'
+
+You have slain Rungupp!
+
+<div class="facblock">
+* Your faction standing with [[Dark Ones]] got worse.
+* Your faction standing with [[Shadowknights of Night Keep]] got worse.
+* Your faction standing with [[Frogloks of Guk]] got better.
+</div>
+
+'''Loot the [[Troll Head]] from Rungupp's corpse and give it to Vasile Jahnir.'''
+
+: Vasile Jahnir says, 'So the rumor shows true. Good work. You are an excellent student and a noble Erudite. Here is your spell as I promised. Go forth and fill your brain with knowledge.'
+
+<div class="facblock">
+* Your faction standing with [[Gate Callers]] got better.
+* Your faction standing with [[High Guard of Erudin]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+Among the possible rewards is the Spell: Fire Flux.
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]

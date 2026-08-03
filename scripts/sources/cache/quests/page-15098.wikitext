@@ -1,0 +1,60 @@
+{{Temple Era}}
+[[File:npc_joyce.png|frame|Joyce]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Joyce]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Rathe Mountains]], [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Bindlegrob]], [[Findlegrob]], [[Sindlegrob]], [[a goblin headmaster]]
+|}
+
+==Checklist==
+
+{{CheckboxList}}
+*[[Rune of Clay]] (Top) - From [[Findlegrob]] in [[Rathe Mountains]]
+*[[Rune of Clay]] (Right) - From [[Bindlegrob]] in [[Rathe Mountains]]
+*[[Rune of Clay]] (Left) - From [[Sindlegrob]] in [[Rathe Mountains]]
+*[[Rune of Clay]] (Bottom) - From [[A Goblin Headmaster]] in [[Ocean of Tears]]
+
+== Reward ==
+
+<ul><li>  {{:Clay Bracelet}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Joyce' 
+
+: [[Joyce]] says 'I am Joyce of the Temple of Solusek Ro.  I am the guardian of four of the items of the elementalist. If you are a magician, ask me about the [Robe of the Elements], the [clay bracelet], the [earthen boots] or the [Circlet of Mist]' 
+
+You say, 'What clay bracelet?' 
+
+: Joyce says 'The clay bracelet is a wonderful piece of jewelry to wear on your wrist. It provides fine protection, enhances your resistance to magic, and lets you call forth a mystic eye to help you in your travels. Are you [interested] in the [bracelet]?' 
+
+You say, 'I am interested in the bracelet' 
+
+: Joyce says 'I will make you a clay bracelet, but you will need to bring me the proper components. I will need each of the four runes of clay. Three of them can be found in the Rathe Mountains, held by gnomish necromancers. The fourth one is somewhere in the Ocean of Tears, held by a goblin headmaster. Bring me these four components, and I will make you a clay bracelet.' 
+
+'''Find [[Bindlegrob]], [[Sindlegrob]] and [[Findlegrob]] in the Rathe Mountains. (Bindlegrob is up north near Lake Rathe zone in. Sindlegrob and Findlegrob share the same hut south-east of zone. ) ''' Kill them. Loot [[Rune of Clay]] off each of them (they have three separate pieces -- right, left and top.)
+
+'''Find and kill [[a goblin headmaster]] in the Ocean of Tears (-1206, -8576 ; Island #9) for the bottom piece. Hand the four Runes in and receive a Clay Bracelet:'''
+
+: Joyce says 'One, two, three.. all four runes of clay! I knew you looked competent. I am very impressed! Please take the clay bracelet that you have earned.'
+
+: This quest is MQable - One person needs one stone , other can turn in rest. Receiving player needs to turn in last. 
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]

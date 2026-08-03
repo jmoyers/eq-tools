@@ -1,0 +1,55 @@
+{{Classic Era}}
+
+[[File:npc_tabure_ahendle.png|frame|Tabure Ahendle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Tabure Ahendle]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| [[a zombie sailor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cast-Iron Long Sword}}
+</li><li> {{:Cast-Iron Mace}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest follows [[Kobold Killing]], given by [[Tabure Ahendle]], located at 65, -507, 5 in the South Qeynos Steel Warriors Arena. You must have Amiable faction to complete this quest.''
+
+You say, 'What dangerous task'
+
+: Tabure Ahendle says, 'A ship sank while returning from Odus. On this ship was my squire, Tombor. He sank to the bottom and there he still lies. With him went a map. I would very much like you to search for this sunken ship. Return the map to me. I am sure it is still in the rotting hands of Tombor.'
+
+'''Hand [[Tabure Ahendle]] a [[Blurred Map]]; randomly looted from [[a zombie sailor]] in [[Erud's Crossing]].'''
+
+Tabure Ahendle says, 'The map!! It is all blurred. The ink has run. I shall never be able to decipher it now. Still, I owe you for completion of your mission. May these be of assistance. It is always good for a warrior to be well supplied.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 10 silver pieces.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

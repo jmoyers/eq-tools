@@ -1,0 +1,53 @@
+[[File:npc_menkes_tabolet.png|frame|Menkes Tabolet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Menkes Tabolet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[a giant rat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rat Fur Cap}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Menkes Tabolet'
+
+: Menkes Tabolet says 'Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee, I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].'
+
+You say, 'I want a rat fur cap.'
+
+: Menkes Tabolet says 'Rat fur cap?  You're in luck, that happens to be my specialty, ______.  Just bring me 2 [[Piece of Rat Fur|pieces of rat fur]] and 3 gold, and I'll make one up for you while you wait.'
+
+Your Location is -305.46, -90.65, 6.41
+
+: Menkes Tabolet says 'Get your rat fur caps here!  Get your snake fang necklaces here!  Special discount prices..  this week only.'
+
+Your Location is -118.91, -99.94, 4.38
+
+: Menkes Tabolet says 'Hey..  look at this..  some of my best work, if I do say so myself.  Enjoy, and tell your friends.'
+
+<div class="facblock">
+* Your faction standing with [[QeynosCitizen]] got better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

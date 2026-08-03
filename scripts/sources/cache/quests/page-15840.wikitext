@@ -1,0 +1,99 @@
+{{Classic Era}}
+[[File:npc_roesager_thusten.png|frame|Roesager Thusten]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Roesager Thusten]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| [[Cleric]],[[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Niclaus Ressinn]], [[Priestess Jahnda]], [[a putrid skeleton]]
+|}
+
+== Reward ==
+
+More rewards & Faction were added
+<ul><li>  {{:Potion of Disease Warding}}
+</li><li> {{:Potion of Light Healing}}
+</li><li> {{:Skullcap of Rodcet Nife}}
+</li><li> {{:Shield of Nife}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Roesager Thusten]] is the Paladin Guildmaster in the building on the right when you enter the Temple of Life complex in [[Qeynos|North Qeynos]] found at (-123.51, -127.12, 2.19). 
+
+You say, 'Who is Niclaus Ressinn?' 
+
+:Roesager Thusten says '[[Niclaus Ressinn]]? Have you seen him? He is one of our paladins who was sent out to investigate the undead sightings in Qeynos Hills. I have a message from Jahnda for him, but I must continue my own search here in Qeynos. Could you take this to Niclaus? Your help would be appreciated.' 
+
+You receive a [[Note to Niclaus]]. 
+
+Niclaus roams across Qeynos Hills zone. Give him the note. 
+
+:Niclaus Ressinn says 'Oh, things are becoming dire here in Norrath. May Rodcet protect us! I have gathered most of the evidence I will need to present to Jahnda, but I could still use your assistance with one final piece. I need to recover a rib bone from of the undead beasts that wander these hills. Be sure the rib bone comes from one of the putrid skeletons. They are the spawn of Bertoxxulous.' 
+
+<div class="facblock">
+*Your faction standing with Priests of Life got better.
+*Your faction standing with Knights of Thunder got better.
+*Your faction standing with Guards of Qeynos got better.
+*Your faction standing with Bloodsabers got worse.
+*Your faction standing with Antonius Bayle got better.
+</div>
+You receive 4 copper. <BR>
+
+Find and kill [[a putrid skeleton]] and loot a [[Putrid Rib Bone]]. Two putrid skeletons spawn in Qeynos Hills, one at 3300, 550 and the other at 2090, -850, and wander. Give the rib bone to Niclaus. 
+
+:Niclaus Ressinn says 'Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.' 
+
+<div class="facblock">
+*Your faction standing with Priests of Life has been adjusted by 50.
+*Your faction standing with Knights of Thunder has been adjusted by 15.
+*Your faction standing with Guards of Qeynos has been adjusted by 25.
+*Your faction standing with Bloodsabers has been adjusted by -12.
+*Your faction standing with Antonius Bayle has been adjusted by 7.
+</div>
+{{exp}}
+You receive 1 gold, 2 silver, 6 copper. <BR>
+
+You receive a [[Pouch of Evidence]]. Give it to [[Priestess Jahnda]] in the Temple of Life in [[Qeynos|North Qeynos]], found at (-64.93, -677.59, -11.81). 
+
+:Priestess Jahnda says 'Excellent work! You are surely under the protection and guidance of the Prime Healer. This evidence will help us greatly to convince Antonious and the guild leaders of Qeynos that the Bloodsabers are here and seek to destroy all we have worked so long for.' 
+
+<div class="facblock">
+Your faction standing with Priests of Life has been adjusted by 50.<BR>
+Your faction standing with Knights of Thunder has been adjusted by 15. <BR>
+Your faction standing with Guards of Qeynos has been adjusted by 25. <BR>
+Your faction standing with Bloodsabers has been adjusted by -12. <BR>
+Your faction standing with Antonius Bayle has been adjusted by 7. <BR>
+</div>
+{{exp}}
+You receive 5 gold. <BR>
+
+Rewards and recorded chances:
+<BR>[[Potion of Light Healing]] - 15/24
+<BR>[[Potion of Disease Warding]] - 7/24
+<BR>[[Shield of Nife]] - 2/24
+<BR>[[Skullcap of Rodcet Nife]] - 0/24
+
+== Faction tips ==
+Went from Apprehensive to Warmly with Priests of Life within 9 total turn-ins.
+
+Unable to initiate quest with Erudite Paladin (Prexus) at Apprehensive or low Indifferent.
+
+Unable to get note for the 1st step, but was able to turn in both rib and pouch at dubious.
+
+Using Skeleton form (nec call of bones) I was able to go from scowls to dubious as a dark elf and turn in bone and pouch. 
+
+[[Category:Quests]]
+[[Category:North Qeynos]]

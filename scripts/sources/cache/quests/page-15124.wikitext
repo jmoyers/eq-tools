@@ -1,0 +1,201 @@
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+
+Test of Strength - Falorn 
+<li>{{:Runed Wind Amulet}}
+  <ul>
+  <li>2 - {{:Bronze Disc}} ([[an azarack]])
+  <li>3 - {{:Small Pick}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[a gorgalask]]*, [[Gorgalosk]]*)
+  <li>'''4''' - <span style="font-weight: bold">{{:Stone Amulet}}</span> ('''[[Keeper of Souls]]''')
+   </ul>
+</ul>
+<ul>
+Test of Force - Falorn 
+<li>{{:Pauldrons of the Blue Sky}}
+  <ul>
+  <li>3 - {{:Pearlescent Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Silver Mesh}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Spiroc Air Totem}}</span> ('''[[The Spiroc Lord]]''')
+</ul>
+</ul>
+<ul>
+Test of Skill - Falorn 
+<li>{{:Azure Ruby Ring}}
+  <ul>
+  <li>1 - {{:Ivory Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Small Ruby}} ('''[[Protector of Sky]]''')
+  <li> '''3''' - <span style="font-weight: bold">{{:Azure Ring}}</span>  ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Bash - Ogog
+<li>{{:Fangol}}
+  <ul>
+  <li>6 - {{:Honeyed Nectar}} ([[Bazzzazzt]])
+  <li>'''8''' - <span style="font-weight: bold">{{:Ethereal Emerald}}</span> ('''[[Eye of Veeshan]]''')
+  <li>7 - {{:Bottled Djinni}} ([[a fatestealer drake]]*, [[a windrider drake]]*, [[an undine spirit]]*, [[a greater sphinx]]*)
+<li>1.5, 4, 8 {{:Efreeti Battle Axe}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]]*)
+  </ul>
+</ul>
+<ul>
+Test of Smash - Ogog
+<li>{{:Dagas}}
+  <ul>
+  <li>'''5''' - {{:Mottled Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 -  {{:Virulent Poison}} ([[Bizazzzt]], [[Bazzzazzt]]*, [[Bzzzt]])
+  <li>'''1.5, 4, 8''' - <span style="font-weight: bold">{{:Djinni War Blade}} ([[Sister of the Spire]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Think - Ogog
+<li>{{:Belt of the Four Winds}}
+  <ul>
+  <li>4 - {{:Pegasus Statuette}} ([[A Soul Carrier]], [[A Soul Harvester]], [[An essence harvester]])
+  <li>'''5+''' - <span style="font-weight: bold">{{:Wind Tablet}}</span> ('''[[Bazzt Zzzt]]''', '''[[Spiroc Lord]]'''*)
+  <li>5 - {{:Spiroc Wind Totem}} (normal spirocs)
+  <li>'''1.5, 4, 8''' {{:Efreeti Belt}} ('''[[Noble Dojorn]]''', '''[[Overseer of Air]]'''*, '''[[the Hand of Veeshan]]''')
+  </ul>
+</ul>
+
+==Quests==
+Talk to Torgon Blademaster in the [[Plane of Sky]].
+
+You say, 'hail Torgon Blademaster'
+:''Torgon Blademaster says 'Greetings. Are you a true warrior? ''
+You say, 'I am a true warrior'
+:''Torgon Blademaster says 'Then you shall be tested as one.  Choose.  Do you wish to be tested by Falorn or Ogog?''
+
+= Falorn =
+
+You say, 'i wish to be tested by falorn'
+:''Torgon Blademaster says 'So be it, warrior.  Take this book and read it.  When you are finished, hand it back to me and I shall summon the mighty warrior Falorn to test you. ''
+:''Torgon Blademaster says 'Falorn, come forth! ''
+:''Falorn says 'I am Falorn. Good day to thee. ''
+:''Torgon Blademaster says 'Farewell. ''
+You say, 'hail Falorn'
+:''Falorn says 'Do not waste my time, Xekl .  Do you wish to take the test of blades or not? Or do you have one of my old trinkets you wish to trade in? ''
+You say, 'I have an old trinket to trade in'
+:''Falorn says 'Ahh, I've given out some lesser trinkets in the past that many have gotten bored with. I'm willing to accept Aerated Pauldrons in trade for Pauldrons of the Blue Sky. ''
+You say, 'I wish to take the test of blades'
+:''Falorn says 'The test of blades is not easy.  I hope you are as powerful as you are brave.  What do you wish to strive for? Strength, force, or skill? ''
+
+== Warrior Test of Strength ==
+
+Falorn says 'Remember, true strength lies not only in the body, but in the mind as well. Return to me a bronze disc, a small pick, and a stone amulet.  If you manage to do this, my runed wind amulet shall be yours. 
+
+'''Reward:''' {{:Runed Wind Amulet}}
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Bronze Disc]] || [[an azarack]] || Island 2
+|-
+| [[Small Pick]] || [[a sprited harpie]], [[a watchful guard]], [[a gorgalask]]*, [[Gorgalosk]]* || Island 3
+|-
+| [[Stone Amulet]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+<nowiki>*needs confirmation on this list Oct/2023</nowiki>
+
+== Warrior Test of Force ==
+
+Falorn says 'Foolishness or bravery, Xekl ?  We shall see.  Return to me a pearlescent globe, silver mesh and a spiroc air totem.  In return, you will receive both my deepest respect and the aerated pauldrons. 
+
+'''Reward:''' {{:Aerated Pauldrons}} (upgrades to {{:Pauldrons of the Blue Sky}})
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Pearlescent Globe]] || [[a shimmering meteor]], [[a gust of wind]], [[a crystalline cloud]], [[a gorgalask]] || Island 3
+|-
+| [[Silver Mesh]] || [[a soul carrier]]*, [[an essence carrier]]*, [[a soul tamer]]*, [[an essence tamer]]* || Island 4
+|-
+| [[Spiroc Air Totem]] || [[Spiroc Lord]] || Island 5 Boss
+|}
+
+<nowiki>*</nowiki>needs confirmation on this list Oct/2023
+
+== Warrior Test of Skill ==
+
+Falorn says 'The test of skill it is. Go upward and retrieve these three items: an ivory tessera, a small ruby, and an azure  ring.  Return these to me and the azure ruby ring shall be yours. 
+
+'''Reward:''' {{:Azure Ruby Ring}}
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Ivory Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Small Ruby]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Azure Ring]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+= Ogog =
+
+You say, 'i wish to be tested by ogog'
+:''Torgon Blademaster says 'Ogog?  You are indeed brave for choosing that brute.  Take this book telling the tale of Ogog and read it.  When you are finished, hand it back to me. ''
+:''Torgon Blademaster says 'Farewell. ''
+:''Ogog says 'I Ogog, har har. ''
+You say, 'hail Ogog'
+:''Ogog says 'Ogog not smart, but Ogog smarter than you.  You ready for Ogog or no? ''
+You say, 'I am ready for ogog'
+:''Ogog says 'Ok.  Ogog got some hard things for you.  You do bash, smash, or think test? ''
+
+== Warrior Test of Bash ==
+
+Ogog says 'This one hard. Ogog like it.  Ogog need efreeti battle axe, some honey nectar, bottled djinni, and ethereal emerald. Then Ogog make you best basher.' 
+
+'''Reward:''' {{:Fangol}}
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Honeyed Nectar]] || [[Bazzzazzt]] || Island 6
+|-
+| [[Ethereal Emerald]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Bottled Djinni]] || [[a fatestealer drake]]*, [[a windrider drake]]*, [[an undine spirit]]*, [[a greater sphinx]]* ? || Island 7
+|-
+| [[Efreeti Battle Axe]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]]* || Islands 1.5, 4, 8*
+|}
+
+<nowiki>*needs confirmation on this list Oct/2023 </nowiki>
+
+== Warrior Test of Smash ==
+
+Ogog says 'Ogog smash good. . . Ogog no think you can smash good.  But Ogog let you try.  You get Ogog Djinni War Blade, some virulent wasp poison, and a mottled spiroc feather.  Ogog say you good warrior if you do this!' 
+
+'''Reward:''' {{:Dagas}}
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Mottled Spiroc Feather]] || [[A spiroc arbiter]], [[A spiroc caller]], [[A spiroc expulser]], [[A spiroc revolter]],<br> [[A spiroc vanquisher]], [[A spiroc walker]], [[The Spiroc Guardian]]* || Island 5
+|-
+| [[Virulent Poison]] || [[Bizazzzt]], [[Bzzzt]], [[Bazzzazzt]]* || Island 6
+|-
+| [[Djinni War Blade]] || [[Sister of the Spire]] || Island 7
+|}
+
+<nowiki>*needs confirmation on this list Oct/2023 </nowiki>
+
+== Warrior Test of Think ==
+
+Ogog says 'Ogog think you can do this one maybe.  Ogog no know, though.  You bring Ogog efreeti belt, pegasus statue, a spiroc wind totem, and a wind tablet.  Ogog say good luck!'
+
+'''Reward:''' {{:Belt of the Four Winds}}
+
+{| style="margin-top: 10px;" cellpadding="4" cellspacing="0" border="1"
+! Item || Who || Where
+|-
+| [[Pegasus Statuette]] || [[A Soul Carrier]], [[A Soul Harvester]], [[An essence harvester]] || Island 4
+|-
+| [[Wind Tablet]] || [[Bazzt Zzzt]], [[Spiroc Lord]]* ? || Island Bosses (5+)
+|-
+| [[Spiroc Wind Totem]] || normal spirocs || Island 5
+|-
+| [[Efreeti Belt]] || [[Noble Dojorn]], [[Hand of Veeshan]], [[Overseer of Air]]* ? || Islands 1.5, 4, 8
+|}
+<nowiki>*needs confirmation on this list Oct/2023 </nowiki>
+[[Category: Quests]]

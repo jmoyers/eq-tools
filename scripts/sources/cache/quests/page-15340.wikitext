@@ -1,0 +1,157 @@
+{{Classic Era}}
+
+[[File:npc_lork.png|frame|Lork]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Lork]]
+|-
+! ''' Minimum Level: '''
+| 26
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Crushbone]], [[Innothule Swamp]], [[Neriak|Neriak Foreign Quarter]]
+|-
+! ''' Related NPCs: '''
+| [[Ambassador DVinn]], [[Ambassador K`Ryn]], [[Uglan]], [[a fat alligator]], [[orc runner]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crude Stein}}
+</li><li> {{:Gatorsmash Maul}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with [[Lork]] in Oggok warrior guild. Faction hit amounts based on post on Allakhazam by DeathTemplar.''
+
+Lork looks upon you warmly -- what would you like your tombstone to say?
+
+You say, 'Hail, Lork'
+
+: [[Lork]] says 'You _____. We hear of you. We need help. You [help Crakneks] or you [help self]?'
+
+You say, 'I help Crakneks' (or 'I will help crakneks')
+
+: Lork says 'Ha!! We hear of great adventurer. You?!! Me no think so. You prove self to Crakneks before you help us. Go to Innoth.. Innotu.. Innooth.. Arghh!! You go to outside Oggok. Find fat alligator bit Lork brother in two. Bring brother, Nork, body back. Then me know you strong.'
+
+'''Kill [[a fat alligator]] in Innothule Swamp and loot an [[Ogre Arm]]. Bring this item to Lork:'''
+
+: Lork says 'Ahhh!! Boohoohoo. Nork!! That you arm. Me will take care of you now. Thank you for killing gator. You must be strong. Now you help Crakneks. We hear.. ohh, poor Nork, we hear trouble begins. Find ogre warrior [Uglan]. Give him this. It broken. He know where you from. Go. Nork.. Poor Nork.'
+
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better. (10)
+* Your faction standing with [[Clurg]] got better. (1)
+* Your faction standing with [[Green Blood Knights]] got worse. (-1)
+</div>
+{{exp}}
+
+''You receive [[A Cracked Stein]].''
+
+Lork looks upon you warmly -- what would you like your tombstone to say?
+
+You say, 'Where is Uglan?'
+
+: Lork says 'Uglan brave warrior of Oggok. He now in Neriak. Work for dark elves. He NO LIKE dark elves!! He work because we make him. He spy for Crakneks.'
+
+'''Bring [[A Cracked Stein]] to the ogre trainer, [[Uglan]], in Neriak Foreign Quarter. Be aware that [[Uglan]] is on a dark elf faction KOS to Rallos Zek Warrior Ogres and perhaps other Ogres as well.'''
+
+''Turning in with Apprehensive faction appears to have a different response. Possibly [[Orc Runner (Oggok)]] Quest?''
+
+You say, 'Hail, Uglan'
+
+''No response''
+
+Turning in [[Cracked Stein]] results in:
+
+:Uglan says, 'Wat dis? Lork makes deese steins. Dat means he tink you strong enuf for speshul quest me have for you. Me and Lork tink ders someting going on between dese darkies and the orcses in Crushbone. Someting bad for us ogres. We need you to go mountains where da dorfs live. There be a blue Orc Runner wif darkie letters Lork wants. Bring Lork letters.'
+
+<div class="facblock">
+* Your faction standing with Clurg got better.
+* Your faction standing with CraknekWarriors got better.
+* Your faction standing with GreenBloodKnights got worse.
+</div>
+{{exp}}
+
+''Original walkthrough continues...''
+
+You say, 'Hail, Uglan'
+
+:Uglan says 'Me Uglan. Mighty ogre. Member of Crakneks. We crush for dark elves. Do you [like dark elves] or they be [mean] to you?'
+
+Upon turning in the Stein:
+
+:Uglan says 'You from Oggok. Me waiting for you. Me know dark elves have dark plan for ogres. We must stop plan. You must go to Nektulos Forest. Wait for blue orc. He deliver message for dark elf king. Not good. You kill blue orc runners. If message on them then you take to Lork in Oggok. Ogres must know plan.'
+
+<div class="facblock">
+* Your faction standing with [[The Dead]] got better. (5)
+* Your faction standing with [[Queen Cristanos Thex]] got better. (1)
+* Your faction standing with [[King Naythox Thex]] got worse. (-1)
+* Your faction standing with [[Keepers of the Art]] got worse. (-1)
+* Your faction standing with [[Eldritch Collective]] got worse. (-1)
+* Your faction standing with [[Primordial Malice]] got worse. (-10)
+</div>
+{{exp}}
+
+Intercept and kill the [[orc runner]] in Nektulos Forest. Obtain the [[Sealed Letter]] from its corpse. It details a conspiracy between the Crushbone Orcs and the Dark Elves against the Ogres. Bring the letter to Lork in Oggok:
+
+: Lork says 'What this!! So, dark elves think they can bash ogres. Replace with blue orcs. Dumb Zulort friend with dark elf ambassador in Oggok. We kill him. We kill Crushbone dark elf ambassador also. This slow down plan. We need a hero. Me guess you do. You go. Go bring Lork both Crushbone and Oggok dark elf hearts. Then you be hero.'
+
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better. (10)
+* Your faction standing with [[Clurg]] got better. (1)
+* Your faction standing with [[Green Blood Knights]] got worse. (-1)
+</div>
+{{exp}}
+
+You receive a random item at this point (occasionally a bronze weapon).
+
+'''You'll need to bring to Lork the hearts of "Lord Crushbone" and "the Dark Elf Ambassador" who visits the shaman guild in Oggok.'''
+
+The Dark Elf Ambassador is named [[Ambassador K`Ryn]] and is located in Komarr's Caves (the tunnels). If you enter the tunnels through the bottom right tunnel, continue through until you reach the Shaman Guildmasters. Go to the right and you'll see about six Ogre merchants who sell Shaman spells. In that room there is another tunnel which will bring you to a room with about five different passages. In one of those passages waits the Dark Elf Ambassador. Kill him and get his heart. He also often drops a dragoon dagger. Beware faction here... for killing K`ryn, you lose faction with Indigo Brotherhood (but gain with Emerald Warriors and Steel Warriors).
+
+Kill Ambassador K`Ryn.
+
+Ambassador K`Ryn's corpse says 'Start digging your grave. The Indigo Brotherhood shall find you.'
+
+<div class="facblock">
+* Your faction standing with [[Indigo Brotherhood]] got worse. (-200)
+* Your faction standing with [[Emerald Warriors]] got better. (30)
+* Your faction standing with [[Steel Warriors]] got better. (10)
+* Your faction standing with [[Primordial Malice]] got better. (400)
+</div>
+
+Loot his heart?
+
+Lord Crushbone is [[Ambassador DVinn]] in Crushbone. Kill him and loot his [[Black Heart]].
+
+<div class="facblock">
+* Your faction standing with [[Indigo Brotherhood]] got worse. (-75)
+* Your faction standing with [[Emerald Warriors]] got better. (11)
+* Your faction standing with [[Steel Warriors]] got better. (3)
+* Your faction standing with [[Primordial Malice]] got better. (150)
+</div>
+
+Return to Lork.
+
+: Lork says 'This one dead. Where other? Lork say Crushbone heart and Oggok heart.'
+
+: Lork says 'That show dark elves who strongest. Me hope you kill many blue orcs. You Craknek Hero now. You take this. It mine. Hero reward. You great ogre now. Smash best.'
+
+<div class="facblock">
+* Your faction standing with [[Craknek Warriors]] got better. (25)
+* Your faction standing with [[Clurg]] got better. (3)
+* Your faction standing with [[Green Blood Knights]] got worse. (-3)
+</div>
+
+The reward varies and is often bad (patchwork armor, for example). You'll rarely get a {{:Crude Stein}} or {{:Gatorsmash Maul}}.
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

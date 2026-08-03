@@ -1,0 +1,96 @@
+[[File:Npc_behroe_dlexon.png|frame|Behroe Dlexon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Behroe Dlexon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Aenia Ghenson]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Shawl of the Wind Spirit}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Behroe Dlexon]] is on the League of Antonican Bards faction.''
+'''Can start quest at level 1'''
+
+Behroe Dlexon judges you amiably -- You could probably win this fight. 
+
+Your Location is -192.19, -129.81, 3.26
+
+You say, 'Hail, Behroe Dlexon'
+
+: [[Behroe Dlexon]] says 'Ah, greetings, ______! How are you this evening? Hopefully, you are faring much better than I. I'm stuck on the night watch here, and never get to see my lovely [Aenia]. Ah, she is so sweet. I wrote her this beautiful [ballad], but I fear she may never hear it.'
+
+You say, 'Who is Aenia?'
+
+: Behroe Dlexon says 'Aenia lives in North Qeynos in a little blue house near the Temple of Life with her overprotective father. Last time he caught me there, he nearly killed me!'
+
+You say, 'What ballad?'
+
+: Behroe Dlexon says 'I wrote this little song for my dearest Aenia, but I can't sing it to her because I'm stuck here on watch duty. You have a nice voice, ______, maybe you could go and sing my song to her for me, huh? Just make sure you don't sing to Aenia when her father's around, 'cause like I said, he's already tried to kill me for seeing her.'
+
+'''You receive The Thornless Rose, which reads:'''
+
+ The Thornless Rose by Behroe Dlexon Oh beautiful thornless rose, growing in the briar patch.
+ Oh glistening crimson rose, you would be such a catch.
+ Oh beautiful thornless rose, your essence has no match.
+ Oh glistening crimson rose, your love I must snatch.
+
+'''Head to North Qeynos.'''
+
+Aenia Ghenson judges you amiably -- You could probably win this fight. Your Location is -87.54, -67.79, 5.62
+
+You say, 'Hail, Aenia Ghenson'
+
+: Aenia Ghenson says 'Why, hello there! I'm Aenia, daughter of Dranom. It's such a bore just sitting around here all day and night. My father is soooooo overprotective! He never lets me go out and have any fun at all. And he's so mean to my poor [boyfriend]!'
+
+You say, 'Who is your boyfriend?'
+
+: Aenia Ghenson says 'My boyfriend's name is Behroe Dlexon. He is so dreamy. . But, I haven't been able to see him lately. He works nights down at the docks, and with my father here all day, we just can't seem to get together. Oh, how I wish I could speak with him.'
+
+You say, 'Oh beautiful thornless rose, growing in the briar patch. Oh glistening crimson rose, you would be such a catch. Oh beautiful thornless rose, your essence has no match. Oh glistening crimson rose, your love I must snatch.'
+
+: Aenia Ghenson says 'Oh.. My Behroe is so sweet. Oh, how I long to see him. Please, oh please, kind ______, can you do me but one favor? Here, quickly, before my father returns. Take this letter to my love, Behroe. I have no money to offer you, but as you are a friend of his, so are you a friend of mine, and I will not forget your good deeds, ______. Thank you and be safe.'
+
+'''You receive a Letter to Behroe (identifies as "Aenia's Love Letter to Behroe"). The father was standing there the whole time.'''
+
+You say, 'Hail, Dranom Ghenson'
+
+: Dranom Ghenson says 'Hello there, ______. My name's Dranom Ghenson. My daughter, Aenia, and I moved out here from Freeport about a year ago. That dump of a city is just horrible! I feel that Qeynos is a much safer place for [Aenia] and myself to set up our shop. I only have a few things to sell right now, but hopefully business will pick up soon.'
+
+You say, 'Who is Aenia?'
+
+: Dranom Ghenson says 'Aenia is my beautiful daughter. Many so-called men have tried to win her hand in marriage, but none of them have been able to live up to my standards. My daughter shall have a nobleman or a wealthy merchant... certainly not some lowly bard, like that Behroe she's been seeing. If I ever catch him, or one of his cronies, around my daughter again, I'll bash their good-for-nothing heads in.'
+
+'''Head back to Behroe and give him Aenia's letter.'''
+
+: Behroe Dlexon says 'Ah, thank you, kind ______. You've made two foolish lovebirds very happy. Please, take this. Though it is not much, it will help keep you warm on those chilly Karana nights. It is very good to have a friend such as yourself, and I will one day repay you for your kindness and generosity.'
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Bard Quests]]

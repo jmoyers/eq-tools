@@ -1,0 +1,197 @@
+{{Classic Era}}
+[[File:npc_yeolarn_bronzeleaf.png|frame|Yeolarn Bronzeleaf]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+|[[Yeolarn Bronzeleaf]]
+|-
+! ''' Minimum Level: '''
+|8+
+|-
+! ''' Classes: '''
+|[[Cleric]], [[Druid]]
+|-
+! ''' Related Zones: '''
+|[[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+|[[a decaying skeleton]], [[a rancorous ghast]], [[Larik Z`Vole]], [[a dark elf courier]], [[a werebat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Initiate Symbol of Tunare}}
+</li><li> {{:Disciple Symbol of Tunare}}
+</li><li> {{:Warden Symbol of Tunare}}
+</li></ul>
+
+== Quick List ==
+
+'''Initiate Symbol of Tunare'''
+*(Optional) Northern Felwithe: Give [[Yeolarn Bronzeleaf]] 4x Bone Chips
+*Lesser Faydark: Kill [[A rancorous ghast]] between 8pm and 6am to collect 4x [[Putrescent Heart]]
+*Northern Felwithe: Give [[Yeolarn Bronzeleaf]] 4x [[Putrescent Heart]] and receive [[Initiate Symbol of Tunare]].
+'''Note''': The hearts can be MQ'd as long as Yeolarn responds positively to "I will be an initiate of Tunare."
+
+'''Disciple Symbol of Tunare'''
+*Lesser Faydark: Kill [[Larik Z`Vole]] and loot [[Larik Z`Vole's Head]] (He or his placeholder spawns at 8PM, 1AM and at 6AM Game Time)
+*Lesser Faydark: Quickly head southeast to the dark elf camp and track [[A dark elf courier]] (who will approach from the northeast); kill and loot [[Teir`Dal Courier's Head]] and [[Teir`Dal Crate]]
+*Northern Felwithe: Give [[Yeolarn Bronzeleaf]] the [[Initiate Symbol of Tunare]], [[Larik Z`Vole's Head]], [[Teir`Dal Courier's Head]] and [[Teir`Dal Crate]]. Receive [[Disciple Symbol of Tunare]]
+'''Note''': This part is confirmed MQ'able as well. Unknown if lower faction will influence Yeolearn accepting both heads + crate. Both characters were amiable.
+
+'''Warden Symbol of Tunare'''
+*Split Paw: Kill various gnolls and loot [[White Hellebore]] (droppable)
+*Solusek A: Kill various fire goblins and loot [[Pouch of Red Dust]]
+*Unrest: Kill [[a werebat]] and loot [[Thick Caustic Fluid]] (or from [[a Dark Offerer]] in Mistmoore)
+
+*Northern Felwithe: Say to [[Yeolarn Bronzeleaf]] 'I am ready to become a Warden of Tunare.'  Receive [[Black Stone Candlestick]]
+*Erudin Palace: Give [[Trilani Parlone]] the [[Black Stone Candlestick]] to receive [[Magical Suspension Fluid ]]
+*Brew the [[Magical Suspension Fluid]], [[Thick Caustic Fluid]], [[Pouch of Red Dust]], and the [[White Hellebore]] in a [[brew barrel]] (triv > 188 and apparently no-fail)
+*Erudin Palace: Give [[Trilani Parlone]] the [[Divinatory concoction]]. Receive [[Powder of Unanimation]]
+*Northern Felwithe: Give [[Yeolarn Bronzeleaf]] the [[Disciple Symbol of Tunare]] and [[Powder of Unanimation]]. Receive [[Warden Symbol of Tunare]]
+
+== Initiate Symbol of Tunare ==
+
+You say, 'Hail, Yeolarn Bronzeleaf'
+
+: Yeolarn Bronzeleaf says, 'Hail, _______ ! We of Tunare are charged with protecting the Great Mother from the forces of Innoruuk. Even now, the evil minions of this foul deity are despoiling our great forest. Will you help us [protect the Mother]?
+
+You say, 'I will protect the Mother'
+
+: Yeolarn Bronzeleaf says, 'Just outside the gates of Felwithe, the forces of Innoruuk gather in the guise of decaying skeletons. Bring me four sets of bone chips as proof of your vigilance. I assure you, your faith shall not go unrewarded.'
+
+'''Give him the 4x [[Bone Chips]].'''
+
+: Yeolarn Bronzeleaf says, 'Praise Tunare! I knew you would be victorious. I reward you with this spell, and pray that it will help you in your fight against the unholy forces of Innoruuk. When you are ready you will make a fine [Initiate of Tunare].'
+
+<div class='facblock'>
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+{{YouGainExperience}}
+
+You say, 'What Initiate of Tunare?'
+
+: Yeolarn Bronzeleaf says, 'The Teir'Dal behind the undead plague in our forest have discovered a means of creating a terrible undead called a Ghast. These Ghasts have been sighted in the Lesser Faydark and must be destroyed. Bring me four of the vile creatures hearts.'
+
+'''Travel to [[Lesser Faydark]] and hunt [[a rancorous ghast|rancorous ghasts]]. They only spawn at night (8pm-6am in-game time; use /time) and the ''roaming'' undead are the placeholders for them. Wolf Form prevents agro from Brownies! After collecting 4 [[Putrescent Heart|Putrescent Hearts]], return to Yeolarn.'''
+
+: Yeolarn Bronzeleaf says, 'I requested four Ghast hearts!'
+
+: Yeolarn Bronzeleaf says, 'Praise Tunare!! You have done well young Initiate. Here the symbol of your station within our faith. Return to me when you are ready to [slay the necromancer] that has been creating the undead.'
+
+<div class='facblock'>
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+{{YouGainExperience}} 
+
+You receive {{:Initiate Symbol of Tunare}}
+
+== Disciple Symbol of Tunare ==
+
+''You must do the Initiate quest before starting this quest.''
+
+You say, 'I will slay the Necromancer'
+
+: Yeolarn Bronzeleaf says, 'The Fier'Dal rangers that inhabit the Lesser Faydark have spotted a courier making deliveries to the Teir'Dal camp near Castle Mistmoore and to a necromancer that lingers near the ancient obelisk. We believe that the crates he carries are supplies needed for the creation of more Ghasts. Another shipment should be arriving soon. Seek out the necromancer at the obelisk and take his head then take the head of the courier and return them to me with the crate that the courier carries and your Initiate Symbol of Tunare.'
+
+'''Seek out the necromancer, [[Larik Z`Vole]], that spawns at "The Haunted Shrine" in [[Lesser Faydark]] (#8 on the map). Kill him and loot his head.''' 
+
+''Note: His placeholder is the central undead on the lowest step. He never spawns during in-game day hours, but has a chance to spawn every time his placeholder respawns at night (8pm-6am). This placeholder will automatically respawn at 8pm, even if it was already spawned or you are fighting it. (This means he can pop up by himself every night!) If you camp this placeholder and kill it every respawn starting at 8pm, you get roughly 3 chances at Larik each night cycle, though you only get 2 solid chances. The spawn near 6AM gives you very little time to kill the necromancer and the courier before the daylight hits, despawning both.''
+
+--You have looted a [[Larik Z`Vole's Head]].--
+
+'''Now, move to the Teir'Dal camp (#15 on the map) and start tracking for [[a dark elf courier]] who only spawns after Z'vole is killed. The courier will approach the Teir'Dal camp from the northeast side. Find him and kill him before he reaches the Teir'Dal camp or he will despawn once there. Loot his head and the crate he is carrying.'''
+
+''Note: If you miss the courier, you will have to kill Z'Vole again. It can be helpful to bind near the Teir'dal camp before killing him so you can simply gate back and start tracking. From Z'Vole's death you have around 30 seconds before the courier makes it to the camp.'' 
+
+--You have looted a [[Teir`Dal Courier's Head]].--
+
+--You have looted a [[Teir`Dal Crate]].--
+
+'''Return to Yeolarn with the [[Initiate Symbol of Tunare]], [[Larik Z`Vole's Head]], [[Teir`Dal Courier's Head]], and [[Teir`Dal Crate]].''' 
+
+: Yeolarn Bronzeleaf says, 'I require the head of the necromancer, the head of the courier, the crate the courier carries and your Initiate Symbol.'
+
+: Yeolarn Bronzeleaf says, 'Praise Tunare! The Mother smiles on you this day Disciple _______! I present you with the symbol of your new station among the Priests of Tunare. Return to me when you are ready to become a [Warden of Tunare].'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+{{YouGainExperience}} 
+
+You receive {{:Disciple Symbol of Tunare}}.
+
+== Warden Symbol of Tunare ==
+[[File:npc_trilani_parlone.png|thumb|Trilani Parlone]]
+''You must do the Initiate and Disciple quests before starting this quest.''
+
+You say, 'I am ready to become a Warden of Tunare.' 
+
+: Yeolarn Bronzeleaf says, 'The crate that the you recovered from the Courier contained this black candlestick that radiates an aura of great magical power. I request that you deliver the candlestick to Lady Trilani who is studying with the High Men in Erudin. Perhaps she can divine the nature of the candlestick and offer aid in defeating its power. The remaining contents of the crate have been given to Crusader Swiftmoon to be delivered to a gnome in steamfont that is purchasing them on behalf of the Eldrich Collective. When you return be sure to present your Disciple Symbol to me with anything that Trilani may ask you to deliver.' 
+
+You receive a [[Black Stone Candlestick]].
+
+'''Take the candlestick to [[Trilani Parlone]] on the second floor of the Craftkeepers guild in [[Erudin Palace]].''' 
+
+: Trilani Parlone says, 'I can sense the dark magic that rests within this candlestick. I will need you to concoct a divinatory aid for me before I can discern more. Take this suspension and brew it in a brew barrel with one white hellebore, a pouch of the red dust created by the Fire Peak goblin wizards, and the caustic substance used by the werebats in Unrest.' 
+
+<div class='facblock'>
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}} 
+
+You receive a [[Magical Suspension Fluid]] vial.
+
+'''Seek out the following reagents for Trilani's ritual:'''
+
+* [[White Hellebore]], dropped from gnolls in [[Splitpaw Lair]].
+* [[Pouch of Red Dust]], dropped from fire goblins in [[Lavastorm Mountains]] and [[Solusek's Eye]]
+* [[Thick Caustic Fluid]], dropped from [[A werebat|werebats]] in [[The Estate of Unrest]] (Alternatively, from [[A Dark Offerer|dark offerers]] in [[Mistmoore Castle]]) 
+
+'''Brew the [[Magical Suspension Fluid]], [[White Hellebore]], [[Pouch of Red Dust]], and [[Thick Caustic Fluid]] in a brew barrel (trivial, cannot fail).'''
+
+''Note: There is a brew barrel back in Erudin (not the palace). Go into the two-story building behind Erudin Surplus. There is a pottery wheel and kiln next to the door. The brewing barrel is behind the counter and up a flight a stairs on the second floor.''
+
+'''Give the resulting [[Divinatory concoction]] to Trilani.''' 
+
+: Trilani Parlone says, 'This is a powerful evil indeed. The smoke from special candles crafted by the Teir'Dal and burned in this candlestick allows the creation of undead of unordinary might. The Ghasts are only one of it's many possible creations. I will concoct a powder for you to take back to Yeolarn that will assist in defeating the monstrosities the candle has produced. The candlestick itself will remain here within the High Tower of Erudin for the time being.' 
+
+<div class='facblock'>
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}} 
+
+You receive [[Powder of Unanimation]].
+
+'''Return to Yeolarn with the [[Powder of Unanimation]] and the [[Disciple Symbol of Tunare]].'''
+
+: Yeolarn Bronzeleaf says, 'Praise Tunare!! I will have our sorcerers examine this powder immediately to see if we can reproduce it in quantities enough to eliminate the undead plague. I award you the rank of Warden of Tunare, the All Mother smiles upon you, _______!'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+{{YouGainExperience}} 
+
+You receive {{:Warden Symbol of Tunare}}.
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]

@@ -1,0 +1,170 @@
+== Checklist ==
+[[File:Drakis_Bloodcaster.png|right|200px|thumb|]]
+
+'''Note:''' Most quests in the Plane of Sky require two items. One of those items will be a wind rune and can be found on any mob as a random drop in the Plane of Sky. The second item you need is from an island boss, they are rare drops. Some quests require a third ''Efreeti'' weapon which is also attained from island bosses in the Plane of Sky.
+
+'''To reach the quest room find the ('''[[Key Master]]''') near where you zoned in on island 1 and purchase an [[Efreeti's Key]]. It is free and looks like a [[Jade]]. After you have the key left click on the teleportation pad at the North point of the island, around {{Loc|Plane of Sky| 1600, 520}}.''' You only need to buy the key one time and it will be saved to your character.
+
+'''Find Drakis Bloodcaster and Hail him. He will tell you about the quests he has to offer. Reading his dialogue is optional and you can simply hand him your quest items.'''{{CheckboxList}}<ul>
+
+Test of Flight
+<li>Reward: {{:Bloody Griffon-Hide Wrist Guard}}
+  <ul>
+  <li>'''[[wind rune lena]]'''
+  <li><span style="font-weight: bold">{{:Griffon's Beak}}</span> ('''[[Gorgalosk]]''') -  '''Island 3'''
+  </ul>
+</ul>
+<ul>
+Test of Power
+<li>Reward: {{:Cloak of Spiroc Feathers}}
+  <ul>
+  <li>'''[[wind rune neza]]'''
+  <li><span style="font-weight: bold">{{:Black Silk Cape}}</span> ('''[[Keeper of Souls]]''') - '''Island 4'''
+   </ul>
+</ul>
+<ul>
+Test of Mind
+<li>Reward: {{:Bloodsoaked Raiment}}
+<ul>
+  <li>'''[[wind rune ozah]]'''
+  <li><span style ="font-weight: bold">{{:Fine Cloth Raiment}} ([[The Spiroc Lord]])</span> - '''Island 5'''
+  </ul>
+</ul>
+<ul>
+Test of Heart
+<li>Reward: {{:Sphinx Heart Amulet}}
+  <ul>
+  <li>'''[[wind rune azia]]'''
+  <li><span style ="font-weight: bold">{{:Pulsating Ruby}}</span> '''([[Bazzt Zzzt]])''' - '''Island 6'''
+  </ul>
+</ul>
+<ul>
+Test of Hands
+<li>Reward: {{:Gorgon Head Staff}}
+  <ul>
+  <li>{{:Gorgon Head}} '''([[Gorgalosk]])''' - '''Island 3'''
+  <li>'''[[wind rune azia]]'''
+  <li><span style ="font-weight: bold">{{:Efreeti Great Staff}} ([[Noble Dojorn]], [[Overseer of Air]], [[The Hand of Veeshan]])</span> - '''Islands 1.5, 4 and 8''' 
+  </ul>
+</ul>
+<ul>
+Test of Finger
+<li>Reward: {{:Band of Wailing Winds}}
+  <ul>
+  <li>'''[[wind rune caza]]'''
+  <li><span style ="font-weight: bold">{{:Ring of Veeshan}}</span> ([[Sister of the Spire]]) - '''Island 7'''
+  </ul>
+</ul>
+<ul>
+
+==Quest Start==
+
+Talk to Drakis Bloodcaster in the [[Plane of Sky]].
+
+You say, 'hail Drakis Bloodcaster'
+:''Drakis Bloodcaster says 'Greetings, dark one. Are you ready to begin? ''
+You say, 'I am ready to begin'
+:''Drakis Bloodcaster says, 'Then choose, necromancer.  Do you wish to test your will, or your fortitude?  I can conduct the tests of [flight], [power], and the [mind] to test your will, along with tests of the [heart], [hands], and [finger], to test your body.  Stop wasting my time, and choose.''
+
+== Necromancer Test of Flight ==
+
+You say, 'flight'
+
+Drakis Bloodcaster says, 'So, you wish to start upon the test of flight? So be it.  You must return to me a griffon's beak and a wind rune lena to reap your rewards.  May the darkness guide your steps.'
+
+'''Reward:''' {{:Bloody Griffon-Hide Wrist Guard}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Griffon's Beak]] || [[Gorgalosk]] || Island 3
+|-
+| [[wind rune lena]] || random drop || Plane of Sky
+|}
+
+== Necromancer Test of Power ==
+
+You say, 'power'
+
+Drakis Bloodcaster says, 'The test of power it is.  Prove yourself worthy of power and bring me a black silk cape and a wind rune neza.  Only then will you know true power.'
+
+'''Reward:''' {{:Cloak of Spiroc Feathers}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Black Silk Cape]] || [[Keeper of Souls]] || Island 4
+|-
+| [[wind rune neza]] || random drop || Plane of Sky
+|}
+
+== Necromancer Test of Mind ==
+
+You say, 'mind'
+
+Drakis Bloodcaster says, 'The test of mind it shall be.  You must return to me, from this place of air and mist, a fine cloth raiment and a wind rune ozah.  Then, and only then, you shall have the reward you deserve!'
+
+'''Reward:''' {{:Bloodsoaked Raiment}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Fine Cloth Raiment]] || [[The Spiroc Lord]] || Island 5
+|-
+| [[wind rune ozah]] || random drop || Plane of Sky
+|}
+
+== Necromancer Test of Heart ==
+
+You say, 'heart'
+
+Drakis Bloodcaster says, 'So the heart it shall be.  Bring me, foolish one, a pulsating ruby and a wind rune azia.  Perhaps then you shall find your reward.'
+
+'''Reward:''' {{:Sphinx Heart Amulet}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Pulsating Ruby]] || [[Bazzt Zzzt]] || Island 6
+|-
+| [[wind rune azia]] || random drop || Plane of Sky
+|}
+
+== Necromancer Test of Hands ==
+
+You say, 'hands'
+
+Drakis Bloodcaster says, 'The test of the hands it shall be.  Bring me a gorgon head, efreeti great staff and a wind rune fana.  When you return, I shall reward you for your deeds, assuming you live through the experience.  Hahaha!'
+
+'''Reward:''' {{:Gorgon Head Staff}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Gorgon Head]] || [[Gorgalosk]] || Island 3
+|-
+| [[Efreeti Great Staff]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4 and 8
+|-
+| [[wind rune fana]] || random drop || Plane of Sky
+|}
+
+== Necromancer Test of Finger ==
+
+You say, 'finger'
+
+Drakis Bloodcaster says, 'The finger.  Needed for nearly every casting you shall ever hope to produce, it truly is the most powerful tool of creation.  Should you bring me the ring of veeshan and a wind rune caza, I shall reward you with power you can only now begin to comprehend.'
+
+'''Reward:''' {{:Band of Wailing Winds}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Ring of Veeshan]] || [[Sister of the Spire]] || Island 7
+|-
+| [[wind rune caza]] || random drop || Plane of Sky
+|}
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Necromancer Quests]]

@@ -1,0 +1,55 @@
+{{Velious Era}}
+[[File:npc_relik.png|frame|Relik]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Great Divide]]
+|-
+! ''' Quest Giver: '''
+| [[Relik]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| WAR PAL RNG SHD BRD ROG
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a young shardwurm]], [[an elder shardwurm]], [[an ancient shardwurm]], other shardwurms
+|}
+
+== Reward ==
+
+<ul><li>  {{:Coldain Velium-Pick}}
+</li></ul>
+
+== Walkthrough ==
+
+Relik may be found at -4900, -3510. 
+
+You say, 'Hail, Relik' 
+
+: Relik says 'Huh? What are ya needin'? Speak up! I ain't got all day. Are you here to help out or just eat up valuable time chatting?' 
+
+You say, 'I am here to help.' 
+
+: Relik says 'Ah, good. That's what I wanted to hear. We be needin' help with supplies. I been needin' pickheads for a while now but the minin' guild hasn't had the stock ta send 'em. We're gonna need ta improvise. I've seen the gashes left in rock after a shardwurm crawled over it and I think that be the thing we need. If ya can bring me four shardwurm claws, maybe I can rig 'em up into enough picks to keep us runnin' on time with our crystal mining.' 
+
+'''Loot 4 [[Shardwurm Claw]]s from various Shardwurm mobs, and give them to Relik.'''
+
+: Relik says 'Oh, yeah. That's strong, very strong. With these, we can make our shipment for this month. I gotta be thankin' ya properly. This be one of our best tools. Here, ya can swing a pick with us anytime, ______.' 
+
+Relik gives you a [[Coldain Velium-Pick]].
+ 
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Great Divide]]
+[[Category:Bard Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

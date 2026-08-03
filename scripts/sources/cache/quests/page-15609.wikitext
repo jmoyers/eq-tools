@@ -1,0 +1,114 @@
+{{Velious Era}}
+
+[[File:npc_ralgyn.png|frame|Ralgyn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Ralgyn]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Dragon Necropolis]], [[Great Divide]], [[Kael Drakkel]], [[The Wakening Land]], [[Skyshrine]]
+|-
+! ''' Related NPCs: '''
+| [[Gkrean Prophet of Tallon]], [[Kardakor]], [[Rolandal]], [[Staff Sergeant Drioc]], [[Taskmaster Abyott]], [[Vilefang]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Circlet of the Falinkan}}
+</li></ul>
+
+== Checklist == 
+{{CheckboxList}}
+You only need to do the steps listed here in this checklist. The Great Divide section below concerns post-Velious patches.
+
+:* Loot the [[Head of Staff Sergeant Drioc]] from [[Staff Sergeant Drioc]] found in the [[Kael Drakkel]] bank.
+:* Loot the [[Teachings of Gkrean]] from [[Gkrean Prophet of Tallon]] found in the [[Kael Drakkel]] Arena.
+:* Loot [[A chipped fang]] from [[Vilefang]] found in [[Dragon Necropolis]] near Zlandicar's Lair.
+:* Turn in above items to [[Rolandal]] found in [[The Wakening Land]] along Northern Wall (requires Warmly faction?) to receive [[Glanitar's Imbued Talisman]].
+:* Turn in [[Glanitar's Imbued Talisman]] to [[Ralgyn]] found in [[Skyshrine]] near Yelinak's Lair. Search youtube for 'Yelinak Skyshrine' to see several videos that will lead you through this gigantic zone. (Once Turned in he depops and respawn in 30 mins. Tested 04/24/2020)
+
+== Walkthrough ==
+
+
+=== Skyshrine ===
+
+You say, 'Hail Ralgyn' 
+
+: Ralgyn says 'Hello Soandso, what brings you to these sacred quarters on this day? If it is treasure that you seek please ask someone else for I do not have time to think of such petty things. My worries are much greater at this time I am afraid.
+
+You say, 'what are your worries?'
+
+: Ralgyn says 'Well I suppose I can tell you of my promise if you are willing to listen as I do not feel you have intentions of using anything I tell you against my dragonkin. Not many can walk these quarters unless they are very trusted amongst us.
+
+You say, 'what was your promise?'
+
+: Ralgyn says 'I made a promise a very long time ago to my wingmate Faliana, a promise that I feel I may have broken.
+
+You say, 'how was your promise broken?'
+
+: Ralgyn says 'I promised my dear Faliana that I would always keep her talisman close to me. If something has happened to my son I must retain his talisman so that I may keep Faliana's Talisman secure, as I promised her I always would. Before she perished she split her talisman into two pieces one of which I always will carry and the other half which my son Glanitar carries. My son has not returned to me for some time and I am deeply concerned for this is not normal behavior for him. I fear something must have happened to him for he has never been so involved in his training to not inform me of his whereabouts or to not come visit.
+
+You say, 'what was his training?'
+
+: Ralgyn says 'It seems like it was only yesterday that my only son Glanitar was practicing his skills as a young Wurm. Before long he quickly mastered many fighting skills and the development of his magical skills rapidly progressed. He was coming along so well in his training that he was quickly drafted for the Patrol. Even when he was away for his training he would often return to me and tell me of his progress. I was very proud of him for his involvement with the Patrol. Although I am very proud of his accomplishments, I have not seen him for longer then I have ever been away from him and I fear for the worst.
+
+You say, 'what is the patrol?'
+
+: Ralgyn says 'Ah yes, the patrol. Well in the Great Divide there is a collection of caves that the dragonkind holds as a sacred territory. For this reason we always have a number of our strongest up and coming younger ones train there with the great [Kardakor]. They patrol the caved labyrinth to make sure it is free from unwanted intruders who are quickly dealt with upon discovery.
+
+You say, 'who is kardakor?'
+
+: Ralgyn says 'Kardakor is a strong and powerful Warrior. He has fought in many battles against the vile Giants and is well respected amongst our people as a champion. For this reason when one was needed to train our young fighters seeking guidance in developing both their magical and fighting techniques it was clear to us who we should select for this honor, Kardakor.
+
+===Great Divide (skip this section)===
+
+<span style="color:red">'''NOTE:''' You '''DO NOT''' need to do this part!! Everything in this section concerns post-Velious patches.</span>
+
+Now, head to [[Great Divide]] and seek out [[Kardakor]].  He's located in the wurm caves to the right of the area where the Guardian Wurms live. 
+
+You say, 'Hail Kardakor'
+
+:Kardakor says 'Hello [PLAYER] . It is not very often that I see adventurers back in this cave unless they have intentions of hurting the kind wurms here. I can only hope that for your sake that your intentions are good.
+
+You say, 'i am looking for glanitar'
+
+:Kardakor says 'Glanitar? It has been quite long sense I have seen Glanitar, I fear that something unfortunate has become of him. It is not like him at all to be away for this long. He was out on normal patrol with a few others when they disappeared. We have not heard from any of them.
+
+You say, 'where did they disappear?'
+
+:Kardakor says 'This, I do not know. There are a few Giant forces that I have heard word of moving into the area. It is tough to say where they could have gone and if something happened to them or not who would be to blame. I highly doubt the Coldain would dare attack one of our units. The last I heard of them was when they left for the patrol of the Divide; this could have been anywhere. I remember that Glanitar carries a talisman from his mother. If you are to find any sign of Glanitar or any of the others please come to me first along with something that would symbolize who you received or took it from.'
+
+=== Wakening Lands ===
+
+You say, 'Hail Rolandal'
+
+:Rolandal says, 'It would be my guess that you present this to me in hopes to find out more about the magics it possesses. Before I can do this I require some rare treasures that you must present to me."
+
+You say, 'what rare treasures?'
+
+:Rolandal says, 'There are 3 items that I seek to continue my studies of some various and musterious [sic] magics. Bring to me the teachings of a high ranking Kromzek that I hear goes by the name of Gkrean, a chipped fang from a beast deep within the Cursed Necropolis. Also for good measure, I require the Head of a Kromzek Staff Sergeant to prove to your dedication to our cause. Present these 3 items to me along with your Talisman that you wish to learn more about and I shall do my best to identify its origin for you.'
+
+''(Although he seems to ask for a "talisman" too, the only items required are the 3 listed below.)''
+
+Gather these items.  
+
+* [[Head of Staff Sergeant Drioc]] - Found in Kael on [[Staff Sergeant Drioc]] at the bank.  He can be taken down easily by a group of 55+. Splitting him out of the bank can be a bit trickier.
+* [[Teachings of Gkrean]] - Found in Kael on [[Gkrean Prophet of Tallon]] in the Arena. Best pulled with a kael-factioned puller. Pet puller is even better. He has two Cleric guardians and is a Cleric himself (he gates and complete heals so bring an enchanter to sieve).
+* [[A chipped fang]] - Drops from [[Vilefang]] in Dragon Necropolis, and is on a 24 hour respawn.  When you go down the ramp proceed to Zlandicar's lair, Vilefang is in the water.
+
+Once you have these items hand them to [[Rolandal]]; you will receive a [[Glanitar's Imbued Talisman]] and Rolandal will despawn. Go all the way back up to [[Ralgyn]] deep in [[Skyshrine]] and hand this item to him. [[Ralgyn]] will not respond to any of the above trigger phrases, but the quest is confirmed doable with at least Warmly faction. Once Turned in he depops and respawn in 30 mins.
+
+Your reward will be the [[Circlet of the Falinkan]].
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

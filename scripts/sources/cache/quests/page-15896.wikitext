@@ -1,0 +1,104 @@
+{{Classic Era}}
+
+[[File:npc_kazlo_naedra.png|frame|Kazlo Naedra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Kazlo Naedra]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[Den Magason]], [[Sequea Erthinon]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, faction, experience
+</li></ul>
+
+== Walkthrough ==
+
+Kazlo Naedra patrols South Qeynos from Wrin Liltin near the Mermaid's Lure, to the area outside the warrior guild, to the area by Fish's Ale.
+
+You say, 'Hail, Kazlo Naedra'
+
+: Kazlo Naedra says 'Hail, ______. I'm Kazlo Naedra of the Order of Three. We always seem to be running out of [supplies] around here, which is, of course, very distracting to our studies.'
+
+You say, 'What supplies?'
+
+: Kazlo Naedra says 'Yes, we're almost out of [blank scroll sheets]. Gahlith will be very upset, unless I can replenish our inventory soon.'
+
+You say, 'What blank scroll sheets?'
+
+: Kazlo Naedra says 'These blank sheets seem harder to find every month. All the local merchants are out of them. Hopefully, one of the merchants out in Surefall will have some.'
+
+'''You can purchase Blank Scroll Sheets from [[Sequea Erthinon]] in the Jaggedpine Treefolk store in Surefall Glades.'''
+
+(You can also purchase the sheets from [[Den Magason]] in South Qeynos for 2gp.)
+
+Your Location is -154.95, -292.89, 3.14 
+
+Sequea Erthinon tells you, 'That'll be 1 silver 5 copper for the Blank Scroll Sheets.'
+
+'''Give the sheets to Kazlo.'''
+
+: Kazlo Naedra says 'Good work, ______! Here's a little something for your troubles. Your quick work and loyalty will be noted by the Order of Three.'
+
+<div class="facblock">
+* Your faction standing with [[Order of Three]] has been adjusted by 5.
+* Your faction standing with [[Bloodsabers]] has been adjusted by -1.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Opal Dark Briar]] has been adjusted by -1.
+</div>
+{{YouGainExperience}}
+You receive 1 silver 5 copper from Kazlo Naedra.
+
+'''You can get the same faction hits with the following mini-quest:'''
+
+You say, 'Hail, Den Magason'
+
+: Den Magason says 'Oh, hey there. How ya doing? My name's Den. I work for ol' [Rohand] here, unloading the [shipments] that come in from overseas.'
+
+You say, 'What shipments?'
+
+: Den Magason says 'Yeah. We get merchants and traders with goods from here to [Odus].'
+
+You say, 'Who is Rohand?'
+
+: Den Magason says 'Ol' Captain Rohand is the owner of the Mermaid's Lure. He trades goods with sailors and sea [merchants]. I think that old man was even born at sea. And he's got more stories than fish have scales.'
+
+You say, 'What merchants?'
+
+: Den Magason says 'Yeah. We get merchants and traders with goods from here to [Odus].'
+
+You say, 'What is Odus?'
+
+: Den Magason says 'Odus? I've never been there, but I hear it's a long journey.' 
+
+If you hang out near Den long enough he will whisper to you that he is selling Blank scrolls for 2gp each.
+
+'''Give him 2 gold.'''
+
+Den Magason says 'Yeah, well, these are pretty hard to come by. In fact, these came all the way from Odus. Enjoy, and tell your buddies.'
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

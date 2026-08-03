@@ -1,0 +1,68 @@
+{{Velious Era}}
+
+[[File:npc_kyenka.png|frame|Kyenka]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Kyenka]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| Western Wastes Dragons
+|}
+
+== Reward ==
+
+<ul><li>  {{:Barbed Dragonscale Pauldrons}}
+</li><li> {{:Barbed Dragonscale Boots}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Kyenka appears to be on [[Kromzek]] faction. Warmly faction is required for this quest.'''
+
+He is located in Tormax's throne room, in close proximity to Tormax's guards, who are on [[King Tormax (Faction)]]. Be '''very''' careful if you are KOS to Tormax. The safest mob to check this faction is [[Dlammaz Stormslayer]], who is visible from the landing before the bridge in the preceding area.
+
+You say, 'Hail Kyenka'
+
+: Kyenka says 'My, it is the great Lias who stands before me!  Rumors of your greatness have spread even to the court of King Tormax.  I am Kyenka, Duke of Kael Drakkel. I advise King Tormax on matters concerning the nefarious dragons. 
+
+You say, 'What about these dragons?'
+
+: Kyenka says 'The living dragons of this realm are the bane of Kael Drakkel and its people.  Eventually they will be gone and only we Kromzek will remain.  We will purge this land of their menace. 
+
+You say, 'I will help you purge them'
+
+: Kyenka says 'The beasts must be slain.  They only bring strife to this world.  You are a powerful mercenary, and are sympathetic to my cause, I would assume.  You could become rich beyond your wildest dreams by assisting King Tormax and me. 
+
+You say, 'I will assist you'
+
+: Kyenka says 'Rally together a band of adventurers and track down and slay the elder dragons of this continent.  For each head you return to me I will impart a gift to you. 
+
+'''Turning in the [[Greater Dragon's Head]] results in [[Barbed Dragonscale Pauldrons]]'''
+
+'''Turning in the [[Great Dragon's Head]] results in [[Barbed Dragonscale Boots]]'''
+
+<div class='facblock'>
+*Your faction standing with [[Kromzek]] got better.
+*Your faction standing with [[Kromrif]] got better.
+*Your faction standing with [[King Tormax (Faction)]] got better.
+*Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+: Kyenka says "You serve the crown well. Lias.  This is one less beast to ruin our lands. Take these pauldrons which I had fashioned from the lst dragon scales brought to King Tormax's court."
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

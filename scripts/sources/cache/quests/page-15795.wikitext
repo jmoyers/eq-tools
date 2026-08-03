@@ -1,0 +1,54 @@
+{{Classic Era}}
+[[File:npc_kaglari.png|thumb|Kaglari]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Kaglari]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All ([[Shaman]])
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]], [[A froglok tad]]
+|}
+
+Multiquestable with correct faction requirements.
+
+== Reward ==
+
+<ul><li>  [[Burst of Flame|Spell: Burst of Flame]]
+</li></ul>
+
+== Walkthrough ==
+
+'''Requires at least amiable faction, was not able to turn in while indifferent. Ogres cannot normally complete it or the subsequent Orc Belt quest. Dark Elves usually can.'''
+
+You say, 'Hail Kaglari' 
+
+: Kaglari says 'SNORT! HHUUUUCCCSSH.. Peh! You speak at Kaglari, High Priestess of Dark Ones. Children of Hate. Spawn of Innoruuk. Archaleon, speak or be gone! You [wish majik power]?' 
+
+You say, 'I wish majik power.' 
+
+: Kaglari says 'GOOD! Innoruuk needs more childrens. You show majik skill or I give you to Innoruuk. You bring two snake scales and two bone chips .... from old bones. I teach you majik. GO! .' 
+
+'''Give Kaglari two [[Froglok Tadpole Flesh]] and two [[Bone Chips]]. '''
+
+: Kaglari says ' Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want help Innoruuk?' 
+
+<div class="facblock">
+* Your faction standing with [[Dark Ones]] got better.
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+* Your faction standing with [[Frogloks of Guk]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Grobb]]

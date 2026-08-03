@@ -1,0 +1,62 @@
+[[File:npc_ged_twigborn.png|frame|Ged Twigborn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Ged Twigborn]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[a giant rat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ratskin Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+Ged Twigborn wanders around in Kithicor Forest stopping at 5 spots.
+: 672.07, 1526.49, 174.48
+: 46.09, 1653.18, 188.39
+: 420.82, 2263.61, 263.31
+: 145.44, 2170.49, 263.02
+: 103.04, 2347.75, 279.21
+
+You say, 'Hail, Ged Twigborn'
+
+: Ged Twigborn says 'Hello, ______. What brings you to this neck of the woods? You must have heard of my expert tanning skills. I craft some of the finest skin garments this side of Highpass Hold.'
+
+You say, 'What garments?'
+
+: Ged Twigborn says 'Gloves are my specialty. I make four varieties; ratskin, wolfskin, bearskin, and my most sought after type, lionskin.'
+
+You say, 'What ratskin gloves?'
+
+: Ged Twigborn says 'Interested in some ratskin gloves, are you? Well, before I can start, I need you to provide me a [[Giant Rat Pelt|giant rat pelt]] and 6 gold pieces. I need to make a living at this, after all..'
+
+Upon hand-in:
+
+: Ged Twigborn says 'Ok! Let me see here.. Hmmm.. Oh, excellent.. Here you go. Some of my finest work, if I must say so myself.'
+
+<div class="facblock">
+* Your faction standing with [[Kithicor Residents]] got better.
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,48 @@
+{{Disambig3|[[Healing]]}}
+{{Classic Era}}
+[[file:npc_nultal_malfoot.png|frame|]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Nultal Malfoot]]
+|-
+! ''' Minimum Level: '''
+| 
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  [[Healing]] Spell
+</li></ul>
+
+== Walkthrough ==
+
+Nultal Malfoot is at location 796.44, 153.87 in the cleric guild in North Kaladim.
+
+You say, 'Hail, Nultal Malfoot' 
+
+Nultal Malfoot:  says 'May the power of Underfoot be with you. Welcome. I am here to serve the will of the king as should you. If you [need healing], then speak. Or perhaps you are here to [return skunk glands]?' 
+
+You say, 'I need healing.' 
+
+Nultal Malfoot:  says 'Before the power of Underfoot can attempt to bind your wounds you must pay tribute. Three gold coins!' 
+
+Hand Nultal 3 gold.
+
+Nultal Malfoot:  says 'May your body and soul be rejuvenated.' 
+Nultal Malfoot begins to cast a spell. 
+You feel better. You have been healed for 65 points.
+
+[[Category:Quests]]
+[[Category:North Kaladim]]

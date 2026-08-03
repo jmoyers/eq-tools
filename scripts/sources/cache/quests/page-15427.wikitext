@@ -1,0 +1,200 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_manik_compolten.png|frame|Manik Compolten]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Manik Compolten]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Clockwork XIIC]], [[Clockwork XVIIC]], [[Clockwork XXVIC]], [[Clockwork XXVIIC]], [[Jogl Doobraugh]], [[Drekon Vebnebber]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  Faction
+</li></ul>
+
+== Walkthrough ==
+
+''[[Manik Compolten]] is located at 902, -470, -30 in the Gemchoppers (Warrior) Hall.''
+
+You say, 'Hail, Manik Compolten'
+
+: Manik Compolten says, 'Greetings, young one. I am Manik Compolten, High Watchman. Are you a [new warrior] or an [experienced fighter]?'
+
+You say, 'I am a new warrior'
+
+: Manik Compolten says, 'It is always good to see new blood amongst the Gemchoppers. I have a small task for you. Take this keycard. I will give you only one at a time. Use each to obtain blackboxes for the C series clockworks. I am sure you are familiar with the clockworks. When you are done, bring them all to me. Let me know if you need another keycard.'
+
+'''Give each Clockwork spider, located as follows, the [[Shiny Card]] you received from [[Manik Compolten]]:'''
+  
+* ''[[Clockwork XIIC]] is located at 1314, -380, -80 on an island at the top of the waterfalls.''
+
+: Clockwork XIIC says, 'Tic.. Pop.. Access Granted'
+
+<div class="facblock">
+* Your faction standing with [[King Ak'Anon]] got better. (+5)
+* Your faction standing with [[Eldritch Collective]] got better. (+5)
+* Your faction standing with [[Gem Choppers]] got better. (+5)
+* Your faction standing with [[Dark Reflection]] got worse. (-1)
+* Your faction standing with [[Meldrath]] got worse. (-1)
+</div>
+
+{{YouGainExperience}}
+
+You receive the [[Blackbox XIIC]]
+
+* ''[[Clockwork XVIIC]] is located atop the wall just inside from the [[Steamfont Mountains]] entrance at 238, -46, 12 between 8pm and 6am, or at 2045, -354, -180 outside the entrance to the the Mines of Malfunction (evil Gnomes) between 6am and 8pm.''
+
+: Clockwork XVIIC says, 'Tic.. Pop.. Access Granted'
+
+<div class="facblock">
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Meldrath]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive the [[Blackbox XVIIC]]
+
+* ''[[Clockwork XXVIC]] is located at 762, -175, -54 in the Palace outside King Ak'Anon's room.''
+
+: Clockwork XXVIC says, 'Tic.. Pop.. Access Granted'
+
+<div class="facblock">
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Meldrath]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive the [[Blackbox XXVIC]]
+
+* ''[[Clockwork XXVIIC]] paths between 1783, -385, -124 south of the paddle wheel, and 1988, -544, -182 in the Mines of Malfunction (evil Gnomes), stopping briefly at each location.''
+
+: Clockwork XXVIIC says, 'Tic.. Pop.. Access Granted'
+
+<div class="facblock">
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Meldrath]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive the [[Blackbox XXVIIC]]
+
+'''Return to [[Manik Compolten]] and hand him the 4 Series C Blackboxes.'''
+
+: Manik Compolten says, 'There are a total of four C series clockworks.'
+
+: Manik Compolten says, 'There are a total of four C series clockworks.'
+
+: Manik Compolten says, 'There are a total of four C series clockworks.'
+
+: Manik Compolten says, 'Ah!! I see you had no problem finding all of the C series clockworks. Good work. Here. Take this blackbox. We received it from Clockwork 27C. Take it to Jogl Doobraugh. He is the operator of the only blackbox definer in Ak'Anon. He is out at the windmills checking on their operation.'
+: [[File:Faction Change for Manik.png|thumb]]
+
+<div class="facblock">
+* Your faction standing with [[King AkAnon]] has been adjusted by 5.
+* Your faction standing with [[Eldritch Collective]] has been adjusted by 5.
+* Your faction standing with [[Gem Choppers]] has been adjusted by 5.
+* Your faction standing with [[Dark Reflection]] has been adjusted by -1.
+* Your faction standing with [[Meldrath]] has been adjusted by -1.</div>
+
+{{YouGainExperience}}
+
+You receive 6 copper pieces.
+
+You receive the [[Blackbox XXVIIC]] {{Item Lore | Blackbox for 27C Returned}}
+
+'''[[Jogl Doobraugh]] and his pet clockwork spider [[Charlotte]] wander between -159, -495, -108 and 91, -867, -109 near the windmills.'''
+
+You say, 'Hail, Jogl Doobraugh'
+
+: Jogl Doobraugh says, 'Hellooo!! My name is Jogl, master engineer with the Eldritch Collective. And this here is Charlotte. Pay no mind to her, she won't bite unless you attack me.'
+
+: Charlotte Beep.. Beep.. Beep..
+
+'''Give [[Jogl Doobraugh]] the [[Blackbox XXVIIC]] and he will return to you a [[Daily Log]].'''
+
+: Jogl Doobraugh says, 'Hmmm. Here you go. Take this log to Drekon Vebnebber. He is the in-house merchant at Gemchoppers Hall. It is his duty to file away all these logs.'
+: [[File:Jogl DooBraugh Blackbox XXVIIC Turn In .png|thumb]]
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] has been adjusted by 5.
+* Your faction standing with [[Dark Reflection]] has been adjusted by -1.
+* Your faction standing with [[The Dead]] has been adjusted by -1.
+* Your faction standing with [[Gem Choppers]] has been adjusted by 5.
+* Your faction standing with [[King AkAnon]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}}
+
+You receive a [[Daily Log]]
+
+:: ''Log 5663172 reads:''
+
+:: <code>Clockwork 27 C.. Log: 5663172. Scrapyard. 0700 hours. Biounits enter to deliver outdated Clockworks. 0815 hours. Biounits exit scrapyard. 0900 hours. Biounits enter scrapyard to deliver refuse. 1200 hours. Biounits enter scrapyard to deliver refuse. 1235 hours. Biounits exit scrapyard. 1415 hours. Biounits enter scrapyard to deliver refuse. 1455 hours. Biounits exit scrapyard. 1600 hours. Biounits enter scrapyard to deliver scrap metal. 1730 hours. Biounits exit scrapyard..</code>
+
+:: ''Log 5673172 reads:''
+
+:: <code>Clockwork 27 C.. Log: 5673172. Scrapyard. 0700 hours. Biounits enter to deliver outdated Clockworks. 0915 hours. Biounits exit scrapyard. 1003 hours. Biounits enter scrapyard to deliver refuse. 1035 hours. Biounits exit scrapyard. 1908 hours. Retired Cleaner, Duster Model enters scrapyard. 1909 hours. Retired Cleaner, Duster Model exits scrapyard. 2110 hours. Biounits enter scrapyard to deliver scrap metal. 2150 hours. Biounits exit scrapyard.</code>
+
+''[[Drekon Vebnebber]] is located at 866, -475, -30 in the Gemchoppers (Warrior) Hall, through the door just passed [[Manik Compolten]].''
+
+You say, 'Hail, Drekon Vebnebber'
+
+: Drekon Vebnebber says, 'Hello, <name>. It is grand to make your acquaintance. I am the in-house merchant-slash-file clerk. I have goods to offer and I handle all the Gemchopper paperwork. Thrilling, don't you think?'
+
+'''Upon Handing [[Drekon Vebnebber]] a [[Daily Log]], you will receive one of two responses, leading to follow-up quests, based upon which log [[Jogl Doobraugh]] gave you in the prior step.'''
+
+* '''Log 5663172'''
+
+: Drekon Vebnebber says, 'Why, thank you. Hey!! This log indicates some messy business is going on at the scrapyard. Something happened to a group of gnomes. They never came out!! Go check out the scrapyard! I believe the rumors of [Red 5] are true.'
+
+* '''Log 5673172'''
+
+: Drekon Vebnebber says, 'Oh my!! It seems two of the obsolete duster models were not fully shut down. You must find them. They could be anywhere in Ak'Anon!! After you destroy them, take their scraps to Sanfyrd Montop. He is the operator of the scrapyard.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests == 
+
+* [[Duster Models]]
+* [[Red V Clockwork]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

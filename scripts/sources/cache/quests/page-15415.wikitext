@@ -1,0 +1,72 @@
+[[File:npc_morin_shadowbane.png|frame|Morin Shadowbane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Morin Shadowbane]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[Bryn Fynndel]], [[Glidara Myllar]], [[Morin Shadowbane]], [[Shadowman Leader]], [[ghoul boss]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Orc Impaler}}
+</li></ul>
+
+== Walkthrough ==
+
+''This initiates with Morin in Kithicor after you do the short [[Morin's Sword|sword of Morin quest]], but most of the quest takes place in Lesser Faydark.''
+
+'''Find [[Bryn Fynndel]] (Wood Elf Camp in LFay) and say the following:'''
+
+You say, 'Morin sent me" 
+
+:Bryn Fynndel says, 'Morin Shadowbane, the great ranger, sent you to assist us?  A strong ranger you must be if he has sent you personally.  There is a great evil shaking the land.  and it has spread its tendrils into Kithicor Forest.  We belive the [shadowed men] are involed with this, somehow.
+
+You say, 'How are the shadowed men involved?'
+
+:Bryn Fynndel says, 'The shadowed men have recently begun to appear with vile purposes unknown to us.  Their leader wanders these woods with a contingent of guards.  Bring us his code book, and we may learn more of their plans.'
+
+'''The Shadowman Leader spawns along the north wall in Lesser Faydark around 1800, -400.  He's high 30's and has a 25 min placeholder, so it may be a long camp.<br> Kill him and he sometimes drops a [[Shadowed Code Book]], which you need to return to Bryn.'''
+
+:Bryn Fynndel says, 'Excellent work,_____! According to these codes, it seems the Ghoul Boss has been alerted to our probes now that his messenger is missing.  We have a scout, Glidara Myllar, that may be in danger.  Give her this note as soon as you can, she is in grave danger!'
+
+''When you give him the book,  Glidara Myllar spawns by the undead marker.''
+
+'''Give [[Glidara Myllar]] the note from Bryn. She gives you [[:Glidara's Ring]] which you will need to return along with the [[:Ghoul Boss' Log Book]]'''
+
+:Glidara Myllar says, 'So the Ghoul Boss knows of our inquiries?  I fear that villain not! In fact, we must find out how much information he has received. Invade the undead ruins nearby and retrieve his log.  Take this Ring will protect from his spells.  Return my ring with his log book and we will hopefully crack the mystery of Kithicor.'
+
+'''The [[ghoul boss]] is a rare spawn at the Undead Marker (43, 2261) in the place of a Skeleton (despite being called a ghoul, he looks like a skeleton).  He's mid 30's.  Kill him and he drops the book.'''  
+
+'''Hand Ring and Book to Glidara Myllar'''
+
+:Glidara says "Daring work, Player. I have imprinted my seal on this log so that only Morin may open it. Deliver the log to Morin."
+You Receive {{:Sealed Ghoul Boss' Log Book}}
+
+'''Give "sealed Ghoul Boss' Log Book" to Morin'''
+
+:Morin Shadowbane says, "We meet again, Player. This log reveals much of the machinations of our dark oppressors, but not enough. Deliver these orders to Bryn in Lesser Faydark, and he will provide you with another weapon to aid in our defense of Kithicor."
+You receive {{:Orders for Bryn}} 
+{{exp}}
+
+'''Give [[:Orders for Bryn]] to Bryn'''
+:Bryn Fynndel says, "The vile Ghoul Boss has been defeated! My new orders state to arm you with our finest weaponry. Take this, the mighty Orc Impaler. Safe journeys, brave adventurer."
+Receive {{:Orc Impaler}}
+{{exp}}
+
+''A shortcut to do this is to kill the ghoul boss first, then go after the Shadowman Leader.  Then turn in the Leader's Code Book to Bryn, get the ring from Glidara Myllar, and promptly return it with the Ghoul Boss's Logbook.'' 
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]

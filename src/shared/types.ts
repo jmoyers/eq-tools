@@ -222,6 +222,46 @@ export interface PoskyData {
   quests: PoskyQuest[]
 }
 
+// ----- Wiki quest catalog (produced by scripts/scrape-quests.ts) -----
+//
+// The SECOND local-first source for item knowledge. Item pages only carry a quest
+// association when someone filled in their `|relatedquests` field, so classic turn-in
+// items (Dwarven Ale, Guard Bracelet, …) look quest-less from the item side. The linkage
+// actually lives on the QUEST pages, which this catalog indexes item-first.
+
+/** One quest scraped from an eqlwiki quest page (Category:Quests + quest subcategories). */
+export interface QuestEntry {
+  /** display name (the wiki page title) */
+  name: string
+  /** wiki page title (linkable) */
+  page: string
+  /** "Start Zone" cell */
+  startZone?: string
+  /** "Quest Giver" NPC */
+  giver?: string
+  /** "Minimum Level" (numeric part only) */
+  minLevel?: number
+  /** classes the quest is offered to ("All" when unrestricted) */
+  classes?: string[]
+  /** "Related Zones" cell */
+  relatedZones?: string[]
+  /** "Related NPCs" cell */
+  relatedNpcs?: string[]
+  /** reward items (from the Reward section's item boxes/links) */
+  rewards?: { name: string }[]
+  /** items the quest body references (turn-ins / collectibles), reward items excluded */
+  requiredItems?: string[]
+  /** page carries an experience-reward marker */
+  expReward?: boolean
+}
+
+export interface QuestData {
+  scrapedAt: string
+  /** human-readable provenance, e.g. "eqlwiki.com Category:Quests (+ subcategories)" */
+  source: string
+  quests: QuestEntry[]
+}
+
 // ----- Item knowledge ("what's this lore/quest item for", Task #53) -----
 
 /** One quest an item is used in (or given by), as learned from the wiki / posky. */
@@ -230,10 +270,20 @@ export interface ItemQuestUse {
   quest: string
   /** wiki page title to resolve the quest (for future linking); may equal `quest` */
   page?: string
-  /** where this association came from: the local posky dataset or the wiki */
-  source: 'posky' | 'wiki'
-  /** quest-giver NPC, when known (posky only) */
+  /**
+   * Where this association came from: the local Plane of Sky dataset, the local scraped
+   * wiki quest catalog (`quests.json`), or a live item-page `|relatedquests` lookup.
+   */
+  source: 'posky' | 'quests' | 'wiki'
+  /** quest-giver NPC, when known (posky / quests) */
   giver?: string
+  /**
+   * How the item relates to the quest, when the source knows: a turn-in/collectible
+   * ('required') or something the quest hands out ('reward'). Omitted by posky/wiki uses.
+   */
+  role?: 'required' | 'reward'
+  /** the quest's start zone, when known (quests catalog only) */
+  zone?: string
 }
 
 /** The "what's this item for" knowledge card for a single item name. */

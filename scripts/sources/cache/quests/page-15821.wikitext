@@ -1,0 +1,59 @@
+{{Classic Era}}
+[[File:miranda.png|frame|Miranda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Miranda]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[a brownie scout]], [[brownie scout]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Pouch of Kejek Catnip}}
+</li></ul>
+
+== Walkthrough ==
+
+Find [[Miranda]] in the [[Stonebrunt Mountains]], located in the Kejekan camp.
+
+You say, 'Hail, Miranda'
+
+: Miranda says 'I'm not supposed to talk to strangers but if my parents let you in here I guess it's ok. Do you like [candy]? I could give you some candy to play a game with me but my [dice] are gone now.'
+
+You say, 'What candy?'
+
+: Miranda says 'Khonza Ayssla went away one time and came back with chocolate covered cherries and pixie powder cinnesticks for my sister and I. I like the chocolates the best.'
+
+Miranda would like some [[Chocolate Marr Cherries]], which are made from three [[Marr Cherries]] and one [[Winter Chocolate]] (126 trivial baking).
+
+[[Marr Cherries]] are foraged in the [[Ocean of Tears]] (droppable), while [[Winter Chocolate]] is made from 1 [[Brownie Parts]] and 2 [[Frosting]] (95 trivial [[baking]]).
+
+Miranda claps her hands with excitement 'Chocolate cherries!! My favorite!! 
+Here try some of this!!'
+
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] has been adjusted by 1.
+* Your faction standing with [[Peace Keepers]] has been adjusted by 1.
+
+{{exp}}
+</div>
+
+In exchange for the cherries, Miranda gives you a [[Pouch of Kejek Catnip]], STA: -1, WIS: +5.
+
+Note: You can't turn in 4 at a time - she will eat 3 of them and only give you 1 kejek catnip.
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]

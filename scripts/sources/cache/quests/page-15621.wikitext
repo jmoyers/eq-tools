@@ -1,0 +1,67 @@
+{{Velious Era}}
+
+[[File:npc_chamberlain_krystorf.png|frame|Chamberlain Krystorf]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Icewell Keep]]
+|-
+! ''' Quest Giver: '''
+| [[Chamberlain Krystorf]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Coldain Velium Morning Star}}
+</li><li> {{:Coldain Velium Short Sword}}
+</li><li> {{:Coldain Velium-Pick}}
+</li><li> {{:Coldain Velium Rapier}}
+</li></ul>
+
+== Walkthrough ==
+(Worked with Dubious Faction)
+{{expand}}
+
+Your Location is 693.97, 13.27, 69.41
+
+(He is upstairs in the room before #12 on the [[Icewell Keep]] map. Walk the pathway over the ice. Open the portcullis and go inside. Take the second left or right hallway stairs leading up to another room. In that room, take either stairwell up again. He is to the north in the uppermost room with some other named Dwarves.
+
+You say, 'Hail, Chamberlain Krystorf'
+
+: [[Chamberlain Krystorf]] says 'Greetings and welcome to Thurgadin, ______. I am Chamberlain Krystorf and it is my duty to assist the Dain in the management of Icewell Keep and the Royal Court. One could say that Seneschal Aldikar is the Sword of the Dain while I am the Shield, protecting all of his interests and those of the kingdom.'
+
+''Dialogues?''
+
+Chamberlain Krystorf wants you to bring him four [[Giant Warrior Helmet]]s.  These are dropped by various Giants in Kael Drakkal.  Hand in four:
+
+: Chamberlain Krystorf says 'For storage reasons I'm afraid I can only accept four of these at once for the bounty.'
+: Chamberlain Krystorf says 'For storage reasons I'm afraid I can only accept four of these at once for the bounty.'
+: Chamberlain Krystorf says 'For storage reasons I'm afraid I can only accept four of these at once for the bounty.'
+: Chamberlain Krystorf says 'Well done, ______, the Dain is pleased with your efforts. With a few more brave allies like you, we'll soon be tearing down the halls of Kael Drakkel.'
+
+<div class="facblock">
+* Your faction standing with [[Dain Frostreaver IV]] got better. +50
+* Your faction standing with [[Coldain]] got better. +50
+* Your faction standing with [[King Tormax]] got worse. -25
+</div>
+{{exp}}
+
+You receive 20 platinum from Chamberlain Krystorf.
+
+  Note: 56 helms (14 turn ins) took a toon with 0 previous faction work from Apprehensive to  Kindly with Coldain, and from Dubious to Amiable with Dain.
+
+The experience gained is significant, at least at low levels: a level 15 halfling cleric got 10% per turn-in.
+
+[[Category:Quests]]
+[[Category:Icewell Keep]]

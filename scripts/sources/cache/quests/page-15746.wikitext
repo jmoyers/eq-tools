@@ -1,0 +1,139 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_abudan_fe`dhar.png|frame|Abudan Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Abudan Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Rotting Crown
+|Rotting Robe
+|Rotting Sleeves
+|Rotting Wristguard
+|Rotting Gloves
+|Rotting Trousers
+|Rotting Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Abudan Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Rotting Crown]]
+:*[[Tattered Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Rotting Robe]]
+:*[[Tattered Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Rotting Sleeves]]
+:*[[Tattered Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Rotting Wristguard]]
+:*[[Tattered Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Rotting Gloves]]
+:*[[Tattered Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Rotting Trousers]]
+:*[[Tattered Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Rotting Boots]]
+:*[[Tattered Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+Abudan Fe`Dhar is located in an icy room at the top of the giant staircase section beyond the maze. Other resources may put the quest NPCs in a library at the bottom of the giant staircase.
+
+: Abudan Fe`Dhar eyes you malevolently. 'I seek those who practice the dark magicks. I seek those who call themselves necromancers. Are you what I seek?'
+
+You say, 'I am a necromancer'
+
+: Abudan Fe`Dhar says, 'Excellent. Are you sure enough of your skills to undertake my tasks? If not, get out of my sight weakling!'
+
+You say, 'I will undertake your tasks.'
+
+: Abudan Fe`Dhar says, 'I thought so. I have several tasks for you to accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings, and boots to reward you with.'
+
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Tattered silk armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Cap ==
+
+You say, 'What cap?'
+
+: Abudan Fe`Dhar says 'For you to receive my gift, I shall require three crushed flame opals and a tattered silk turban.'
+
+Return with a [[Tattered Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+You say, 'What robe?'
+
+: Abudan Fe`Dhar says 'This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds.'
+
+Return with a [[Tattered Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Abudan Fe`Dhar says 'For these durable sleeves, you must fetch me a pair of tattered silk sleeves and three flawed topaz.'
+
+Return with [[Tattered Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+You say, 'What wristbands?'
+
+: Abudan Fe`Dhar says 'The crafting of this wristband requires that you bring me a tattered silk wristband and three crushed onyx sapphires.'
+
+Return with a [[Tattered Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Abudan Fe`Dhar says 'For this fine pair of gloves you must seek out and return to me a pair of tattered silk gloves and three crushed topaz.'
+
+Return with [[Tattered Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Abudan Fe`Dhar says 'This pair of leggings will be yours provided you supply me with a pair of tattered silk pantaloons and three nephrite.'
+
+Return with [[Tattered Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Abudan Fe`Dhar says 'These supple boots shall be yours upon receipt of a pair of tattered silk boots and three crushed jaundice gems.'
+
+Return with [[Tattered Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Necromancer Quests]]
+[[Category:Skyshrine Armor Quests]]

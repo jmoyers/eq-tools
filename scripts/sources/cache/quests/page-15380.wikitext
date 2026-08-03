@@ -1,0 +1,178 @@
+{{Epics Era}}{{P99 Era Header| Nov | 2000 }}
+__NOTOC__
+[[File:npc_zazlan_furscale.png|frame|Zazlan Furscale]]
+[[File:npc_shezlie_furscale.png|frame|Shezlie Furscale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Zazlan Furscale]], [[Shezlie Furscale]]
+|-
+! ''' Minimum Level: '''
+| 20+, 30+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+Scaled Mystic is a quested set of armor for [[Iksar]] [[Shaman]]s. The various pieces require you to traverse much of Kunark to complete.
+
+== Rewards ==
+{{Gear Set
+|Scaled Mystic Breastplate
+|Scaled Mystic Greaves
+|Scaled Mystic Gauntlets
+|Scaled Mystic Cloak
+|Scaled Mystic Boots
+|Scaled Mystic Bracers
+|Scaled Mystic Helm
+|Scaled Mystic Vambraces
+}}
+
+Total stats (one bracer):
+
+
+[[Category:Armor Sets]]
+
+
+== Walkthrough ==
+Armor pieces are ordered in their general order of availability based on the level of mobs required to obtain the necessary items. You can start the quests by saying "Oxyn sent me." to either of the NPCs. EDIt: Addionally they will not return the item if your ending statement to them is not "Payment" make sure that this is the last dialogue option done before giving the items otherwise they will eat the items and not give the amour piece.
+
+=== Breastplate ==={{CheckboxList}}
+Talk to Shezlie Furscale in East Cabilis. You need:
+
+* [[Banded Mail]]
+* [[Star Ruby]]
+* [[Watchman's Spectacles]] ([[Raider watchman]] in [[Timorous Deep]])  [Level 19-21]
+* [[Nectar of Isolation]] (merchant sold, by [[Portik Grolam]] in [[Timorous Deep]])
+
+=== Greaves ===
+
+Talk to Shezlie Furscale in East Cabilis. You need:
+
+* [[Banded Leggings]]
+* [[Fire Emerald]]
+* [[Sarnak Recruitment Letter]] ([[a Sarnak recruit]] in LoIO)  [Level 21-25]
+* [[Exiled Iksar Head]] ([[Iksar exile]] in LoIO, SoNH, Warsliks)  [Level 22-26]
+
+=== Gauntlets ===
+
+Talk to Shezlie Furscale in East Cabilis. You need:
+
+* [[Banded Gauntlets]]
+* [[Ruby]]
+* Venomous Parchment ([[venomous lamprey]] in SoNH)  [Level 22-26]
+* Warlord Drawing Pen ([[goblin warlord]] in LoIO)  [Level 23-25]
+
+=== Cloak ===
+
+Talk to Zazlan Furscale in East Cabilis. You need:
+
+* [[Banded Cloak]]
+* [[Star Ruby]]
+* [[Forest Giant Hammer]] (various forest giants in [[Warsliks Woods]])  [Level 17-27]
+* [[Worn Charbone]] ([[charbone skeleton]] in LoIO or SoNH)  [Level 24]
+
+=== Boots ===
+
+Talk to Zazlan Furscale in East Cabilis. You need:
+
+* [[Banded Boots]]
+* [[Fire Emerald]]
+* [[Spirit Caller Beads]] (goblin spirit callers in LoIO, Warsliks, ...)  [Level 22-24]
+* [[Rhino Hoof]] ([[a Kunark rhino]] in [[The Overthere]])  [Level 22-35]
+
+=== Bracers ===
+
+Talk to Zazlan Furscale in East Cabilis. You need:
+
+* [[Banded Bracer]]
+* [[Ruby]]
+* [[Coercion Implant]]  (various coerced mobs in [[Dalnir]]) [Level 26-29]
+* [[Gooey Adhesive]] ([[gyrating goo]] or [[smoldering goo]] in [[Dalnir]]) [Level 28-29]
+
+=== Helm ===
+
+Talk to Shezlie Furscale in East Cabilis. You need:
+
+* [[Banded Helm]]
+* [[Sapphire]]
+* [[Bargynn's Digger]] ([[Bargynn]] in [[Kurn's Tower]])  [Level 20]
+* [[Sythrax Building Plans]] ([[Gharg Oberbord]] or [[servant of Sythrax]] or [[A skeletal jester]] in [[Field of Bone]])  [Level 26-31]
+
+=== Vambraces ===
+
+Talk to Zazlan Furscale in East Cabilis. You need:
+
+* [[Banded Sleeves]]
+* [[Sapphire]]
+* [[Frenzied Gnawer Tail]] ([[A Frenzied Gnawer]] in [[Kaesora]])  [Level 37]
+* [[Froglok Treated Planks]] ([[a froglok repairer]] in [[Swamp of No Hope]])  [Level 20]
+
+== Quest Item Drops by Zone ==
+<p><i>Note: all but banded armor and gems listed here.</i></p>
+
+=== Crypt of Dalnir ===
+
+* [[Coercion Implant]] (various coerced mobs (26-29)) - for <b>Bracers</b>
+* [[Gooey Adhesive]] ([[gyrating goo]] (35-45), [[smoldering goo]] (27)) - for <b>Bracers</b>
+
+=== Field of Bone ===
+
+* [[Sythrax Building Plans]] ([[Gharg Oberbord]] (31) [2036, -20], [[servant of Sythrax]] (27), [[a skeletal jester]] (30) [1901, -47]) - for <b>Helm</b>
+
+=== Kaesora ===
+
+* [[Frenzied Gnawer Tail]] ([[A Frenzied Gnawer]] (37)) - for <b>Vambraces</b>
+
+=== Kurn's Tower ===
+
+* [[Bargynn's Digger]] ([[Bargynn]] (20) [-115, 264, -120.47]) - for <b>Helm</b>
+
+=== Lake of Ill Omen ===
+
+* [[Exiled Iksar Head]] ([[Iksar exile]] (25)) - for <b>Greaves</b>
+** <i>Note: also found in SoNH & WW</i>
+* [[Sarnak Recruitment Letter]] ([[a Sarnak recruit]] (21-25)) - for <b>Greaves</b>
+* [[Spirit Caller Beads]] ([[goblin spirit caller]] (22-24)) - for <b>Boots</b>
+** <i>Note: also found in WW</i>
+* [[Warlord Drawing Pen]] ([[goblin warlord]] (23-25)) - for <b>Gauntlets</b>
+* [[Worn Charbone]] ([[charbone skeleton]] (24)) - for <b>Cloak</b>
+** <i>Note: also found in SoNH</i>
+
+=== Swamp of No Hope ===
+
+* [[Exiled Iksar Head]] ([[Iksar exile]] (22-25)) - for <b>Greaves</b>
+** <i>Note: also found in LOIO & WW</i>
+* [[Froglok Treated Planks]] ([[a froglok repairer]] (20)) - for <b>Vambraces</b>
+* [[Venomous Parchment]] ([[venomous lamprey]] (22-26)) - for <b>Gauntlets</b>
+* [[Worn Charbone]] ([[charbone skeleton]] (24)) - for <b>Cloak</b>
+** <i>Note: also found in LOIO</i>
+
+=== The Overthere ===
+
+* [[Rhino Hoof]] ([[a Kunark rhino]] (22-35)) - for <b>Boots</b>
+
+=== Timorous Deep ===
+
+* [[Nectar of Isolation]] (sold by [[Portik Grolam]] [-11592, -2275]) - for <b>Breastplate</b>
+* [[Watchman's Spectacles]] ([[Raider Watchman]] (19-21)) - for <b>Breastplate</b>
+
+=== Warsliks Woods ===
+
+* [[Exiled Iksar Head]] ([[Iksar exile]] (22-25)) - for <b>Greaves</b>
+** <i>Note: also found in LOIO & SoNH</i>
+* [[Spirit Caller Beads]] ([[goblin spirit caller]] (22-24)) - for <b>Boots</b>
+** <i>Note: also found in LOIO</i>
+* [[Forest Giant Hammer]] (various forest giants (17-27)) - for <b>Cloak</b>
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shaman Quests]]

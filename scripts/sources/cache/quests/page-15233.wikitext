@@ -1,0 +1,133 @@
+{{Classic Era}}
+[[File:npc_tohsan_hallard.jpg|frame|Tohsan Hallard]]
+<div style="float:right;margin-left:20px;">
+__TOC__
+</div>
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Tohsan Hallard]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[High Keep]]
+|-
+! ''' Related NPCs: '''
+| [[Treasurer Lynn]]
+|}
+
+== Rewards ==
+
+<ul><li>[[Faction]]</li>
+<li>Experience</li></ul>
+
+== Walkthrough ==
+
+''This is a sub-quest in the Princess Lenya quest, but is nice in its own right. In East Freeport, go into Hallard's Resales (located on the left at the top of the ramp down to the "bad" part of East Freeport) and talk to Tohsan Hallard (Loc: -85, -456).''
+
+You say, 'Hail, Tohsan Hallard'
+
+: Tohsan Hallard says 'Greetings and welcome to Hallard's! You will find many aged weapons begging you to shine them up and make them great once more. We will gladly pay you top dollar for any rusty weapons you may have found littering the Commonlands. I have a [special offer] for those who have obtained orc pawn picks.'
+
+You say, 'What special offer?'
+
+: Tohsan Hallard says 'I will pay some silver pieces for every four orc pawn picks returned to me. I shall also throw in a ticket to the Highpass Hold lottery. It could be a winner!!'
+
+'''Upon turning in four [[Orc Pawn Pick]]:'''
+
+: Tohsan Hallard says 'There will be no silver nor lottery ticket until I receive four orc pawn picks.'
+: Tohsan Hallard says 'There will be no silver nor lottery ticket until I receive four orc pawn picks.'
+: Tohsan Hallard says 'There will be no silver nor lottery ticket until I receive four orc pawn picks.'
+: Tohsan Hallard says 'As I promised, some silver and of course, the Highpass lottery ticket. Oh yes, I forgot to mention the ticket was for last season's lottery. Ha Ha!! You now own a losing Highpass lottery ticket, lucky you! Ha!!' 
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Ill|Coalition of Tradefolk Underground/Illegal]] got better. 
+* Your faction standing with [[Coalition of Tradefolk]] got better. 
+* Your faction standing with [[Knights of Truth]] got better. 
+* Your faction standing with [[Merchants of Qeynos]]  got better. 
+</div>
+{{exp}}
+
+You also get some coin, and one of 6 "Lottery Ticket # _____" (you can keep turning in Orc Pawn Picks four at a time until you've got all six tickets).
+
+Possible tickets are:
+
+* Lottery Ticket # 14001
+* Lottery Ticket # 14350
+* Lottery Ticket # 15600
+* Lottery Ticket # 15601
+* Lottery Ticket # 15602
+* Lottery Ticket # 16568
+
+
+'''If you head to High Keep, you can learn about the Highpass Hold Lottery from Jail Clerk Meryl.'''
+
+You say, 'Hail, Jail Clerk Maryl'
+
+: Jail Clerk Maryl says 'Hail! I am the jail clerk of Highkeep. How may I be of service?'
+
+You say, 'What highkeep lottery?'
+
+: Jail Clerk Maryl says 'The Highkeep Lottery is held every season. The Casino Treasurer, Lynn, handles all ticket sales and information. She can be found at the vault.'
+
+
+'''[[Treasurer Lynn]] is found nearby:'''
+
+You say, 'Hail, Treasurer Lynn'
+
+: Treasurer Lynn says 'Greetings!! Welcome to Highkeep, home of the greatest casino in all of Norrath. Please visit our fine casino on the second floor.'
+
+You say, 'What highkeep lottery?'
+
+: Treasurer Lynn says 'Interested in the Highkeep lottery, are we? I am afraid it has been put on hold. We found last season's winner to be holding a counterfeit ticket. We now await [last season's winner] to step forward with the winning ticket - ticket number 16568. His prize is the key to the royal suite.'
+
+You say, 'Who was last season's winner?'
+
+: Treasurer Lynn says 'Last season's winner is not known. I have heard from my sources that he was some sort of merchant of used goods.'
+
+
+(Little does Tohsan Hallard know...)
+
+
+Treasurer Lynn is a vendor, and thus at worst will con dubious.  The turn-in of lottery tickets can be done with dubious faction.
+
+
+'''Upon turning in "Lottery Ticket # 14001", "Lottery Ticket # 14350", "Lottery Ticket # 15601", or "Lottery Ticket # 15602":'''
+
+: Treasurer Lynn says 'I have no need for this _____, you can have it back.'
+
+
+'''Upon turning in "Lottery Ticket # 15600" (the runner-up ticket):'''
+
+: Treasurer Lynn says 'You have the runner up ticket from last season!! Here is your reward. Remember, a copper gambled is a plat earned!!'
+{{exp}}
+
+You receive ... gold from Treasurer Lynn.
+
+
+'''Upon turning in "Lottery Ticket # 16568" (the winning ticket):'''
+
+: Treasurer Lynn says 'Congratulations!! You are the winner of last season's Highkeep lottery. Here is the key to the royal suite. You should find this room on the third floor.'
+{{exp}}
+
+You receive [[Highkeep Royal Suite]], a key.
+
+== Related Quests ==
+
+* [[Princess Lenya (Quest)|Princess Lenya]]
+
+==External links==
+
+* http://runen.co.uk/Everquest/Zones/Quests/EFreeport/TohsanHallard.htm
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

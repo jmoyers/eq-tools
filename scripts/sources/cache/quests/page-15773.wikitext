@@ -1,0 +1,54 @@
+{{Velious Era}}
+[[File:npc_lord_gossimerwind.png|frame|Lord Gossimerwind]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Gossimerwind]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crest of the Faerie Dragons}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Lord Gossimerwind]] can typically be found near the geonid caves. It has a placeholder of [[A Faerie Dragon]].
+
+You say, 'Hail, Lord Gossimerwind'
+
+: Lord Gossimerwind blinks at you a few times then speaks in a strangely musical draconic voice. 'You vish to azzizt ze count of ze Tunarean Faerie Dragons?' 
+
+You say, 'I wish to assist.'
+
+: Lord Gossimerwind says 'I vish to ztop ze Kromzek Foreman from continuing ta deztroy thiz land. Iv you vish to azzizt you can zlay ze Foreman and bring me hiz helm az proof.'
+
+'''Slay the [[A Storm Giant Foreman]] and loot his [[Kromzek Foreman Helm]] and bring it back for the [[Crest of the Faerie Dragons]].'''
+
+Upon handing in the helm:
+: Lord Gossimerwind takes the helm in his claws and crushes it with seeming ease. 'Yeez hav eernd ta reezpect ov my peoplez, here iz ze crezt ov ze faerie dragons'
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+{{exp}}
+</div>
+
+
+Need /loc of quest mobs, minimum faction required to get quest.
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

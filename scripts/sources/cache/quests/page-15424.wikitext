@@ -1,0 +1,68 @@
+{{Classic Era}}
+[[File:npc_baxok_curhunter.png|thumb|Baxok Curhunter]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Baxok Curhunter]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[Gearheart]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Small Leather Wristbands}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Baxok Curhunter]] is at location 851, -436 in Ak'Anon.
+
+You say, 'Hail, Baxok Curhunter'
+
+: Baxok Curhunter says 'Hail, ______. I invite you to serve the mighty state of Ak'Anon by becoming a Gemchopper. We gnomes are not known for our warrior skills, but those few who endure and survive to become elite amongst our warriors soon find that the technology of the gnomes has found its way into our halls. You must be a [new recruit] or [an outsider], perhaps?'
+
+You say, 'I am a new recruit.'
+
+: Baxok Curhunter says 'Well, good to make your acquaintance, ___. Maybe someday you shall be a great Watchman. Until then, I have a task for you. Will you [serve the Crown] or has a yellow streak appeared upon your back?'
+
+You say, 'I will serve the Crown.'
+
+: Baxok Curhunter says 'Go to the Lesser Faydarks. There you will seek out a fairy city. It seems the little pests have stolen one of our fabulous clockworks. Destroy the clockwork and bring me proof. Be very careful. The fairy folk may be small, but they pack a punch.'
+
+[[Gearheart]] is a clockwork gnome found in Lesser Faydark
+
+You have slain Gearheart!
+<div class="facblock">
+* Your faction standing with [[Fairie]] got worse.
+</div>
+--You have looted a [[Blackbox XIVD]].--
+
+: Baxok Curhunter says 'I can hardly believe you destroyed the clockwork. The last ten men I sent became fairy fodder. Thank you. Here is a token of my appreciation. Serve Ak'Anon well and we shall treat you well.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+{{exp}}
+
+You receive 4 silver from Baxok Curhunter.
+
+You receive a random low-level item.
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]

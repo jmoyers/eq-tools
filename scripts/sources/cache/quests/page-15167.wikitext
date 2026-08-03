@@ -1,0 +1,431 @@
+{{Epics Era}}
+
+[[File:Epic.jpg|200px|thumb|Roran]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Stofo Olan]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Chalice of Kings}}
+</li><li> {{:Staff of the Serpent}}
+</li></ul>
+
+== Checklist ==
+'''Note:''' It is possible to obtain [[Enchanters Sack]] from any of the four masters '''AND''' perform '''ANY''' of the combines. For example, a sack obtained from [[Nadia Starfeast]] '''CAN COMBINE''' the items requested by [[Polzin Mrid]]. Hand a master Jeb's Seal. They will return it. Then, say, "I need a sack"
+=== [[Jeb's Seal]] === 
+{{CheckboxList}}
+*  Hail [[Stofo Olan]] in [[Erudin]] (Must be level 50)
+* [[Ink of the Dark]]
+:* Get [[Empty Ink Vial]] from [[Reania Jukle]] in [[Qeynos Catacombs]]
+:* Charm the [[a ghoul scribe]] in [[Lower Guk]]. Give him the [[Empty Ink Vial]] to get the [[Ink of the Dark]].
+* [[Mechanical Pen]]
+:* Kill [[the ghoul arch magus]] in [[Lower Guk]] and loot the [[Shining Metallic Robes]].
+:* Give the [[Shining Metallic Robes]] to [[Rilgor Plegnog]] in [[Ak'Anon]] to get the [[Mechanical Pen]].
+* [[White Paper]]
+:* Purchase a [[Quill]] and a [[Piece of Parchment]].
+:* Give the [[Quill]] and the [[Piece of Parchment]] to [[Chrislin Baker]] in [[Western Karana]] to spawn [[Thrackin Griften]]. Kill [[Thrackin Griften]] and loot a [[White Paper]].
+* Give the [[Ink of the Dark]], the [[Mechanical Pen]], and the [[White Paper]] to [[Stofo Olan]] in [[Erudin]] to get a [[Copy of Notes]].
+* Give the [[Copy of Notes]] to Jeb Lumsed ([[a sarnak imitator]]) in [[Burning Woods]] to get [[Jeb's Seal]].
+
+=== [[1st Piece of Staff]] -- Test of Illusion ===
+*  Kill [[Vessel Drozlin]] in [[Cabilis]] East and loot the [[Xolion Rod]].
+* Kill [[Verina Tomb]] in [[Neriak]] and loot [[Innoruuk's Word]].
+* Obtain the [[Chalice of Kings]].
+:* Kill [[Prince Selrach Di'zok]] in [[Chardok]] and loot the [[Head of a Prince]].
+:* Give the [[Head of a Prince]] to [[Joren Nobleheart]] in [[Felwithe]] to get the [[Chalice of Kings]].
+* Obtain [[Snow Blossoms]] in [[Oggok]].
+:* Pick up [[Large Muddy Sandals]].
+:* Give [[Large Muddy Sandals]] to [[Bozlum Blossom]] to get [[Scribbled Parchment]].
+:* Give [[Scribbled Parchment]] to [[Brokk Boxtripper]] to get a [[Gift to Bozlum]].
+:* Give the gift to [[Bozlum Blossom]] to get [[Snow Blossoms]].
+* Combine the [[Chalice of Kings]], [[Xolion Rod]], [[Snow Blossoms]] and [[Innoruuk's Word]] in an [[Enchanters Sack]].
+* Give the combined sack to [[Modani Qu`Loni]] in [[The Overthere]] to get the [[1st Piece of Staff]].
+
+=== [[2nd Piece of Staff]] -- Test of Enlightenment ===
+*  Kill [[Cazel]] in Oasis to get a [[Spoon]]
+* Pick up the [[The One Key]] in the [[Overthere]].
+* Pick up the [[Lost Scroll]] in [[Dalnir]].
+* Pick up the Book of [[Charm and Sacrifice]] in [[Plane of Sky]].
+* Combine the [[Spoon]], [[the One Key]], the [[Lost Scroll]] and the Book of [[Charm and Sacrifice]] in an [[Enchanters Sack]].
+* Give the combined sack to [[Mizzle Gepple]] ([[Clockwork VIIX]]) in [[Ak'Anon]] to get the [[2nd Piece of Staff]].
+
+=== [[3rd Piece of Staff]] -- Test of Charm ===
+* Obtain the four dull gems from [[Nadia Starfeast]] in [[Firiona Vie]].
+* Charm a [[Spectral librarian]] in [[Kaesora]]. Give him the [[Dull Diamond]] to get the [[Enchanted Diamond]].
+:* Upon turn in an aggro [[Enraged spectral librarian]] will spawn. It is strongly recommended not to kill this see page for details.
+* Charm [[Felia Goldenwing]] in [[Skyfire]]. Give her the [[Dull Sapphire]] to get the [[Enchanted Sapphire]].
+* Charm the [[Wraith of Jaxion]] in the [[City of Mist]]. Give him the [[Dull Ruby]] to get the [[Enchanted Ruby]].
+* Charm [[Impaler Tzilug]] in the [[Overthere]]. Give him the [[Dull Emerald]] to get the [[Enchanted Emerald]].
+* Combine the [[Enchanted Diamond]], [[Enchanted Sapphire]], [[Enchanted Ruby]] and [[Enchanted Emerald]] in an [[Enchanters Sack]].
+* Give the combined sack to [[Nadia Starfeast]] in [[Firiona Vie]] to get the [[3rd Piece of Staff]].
+
+=== [[4th Piece of Staff]] -- Test of the Phantasm ===
+* Kill the [[Wraith of a Shissir]] in the [[Plane of Fear]] and loot [[Head of the Serpent]].
+* Kill [[the Ghost of Kindle]] in [[The Hole]] and loot the [[Essence of a Ghost]].
+* Kill [[a forsaken revenant]] in the [[Plane of Hate]] and loot the [[Essence of a Vampire]].
+* Kill [[The Tangrin]] in the [[Field of Bone]] and loot the [[Sands of the Mystics]].
+* Combine the [[Head of the Serpent]], [[Essence of a Ghost]], [[Essence of a Vampire]] and [[Sands of the Mystics]] in an [[Enchanters Sack]].
+* Give the combined sack to [[Polzin Mrid]] in [[The Hole]] to get the [[4th Piece of Staff]].
+
+ [[The Hole]]:  Any Elemental illusion + Collab will make you Dubious (I started apprehensive with this combo) with everything besides rats/undead if you haven't hunted there before.
+
+=== [[Staff of the Serpent]] ===
+* Combine the four pieces of staff in an [[Enchanters Sack]] to make a [[Bundle of Staves]].
+* Give the [[Bundle of Staves]] to Jeb Lumsed ([[a sarnak imitator]]) in [[Burning Woods]] to get the [[Staff of the Serpent]]!
+{{End}}
+
+== Short Walkthrough ==
+
+'''Obtaining the Notes'''
+
+The first thing you should do is find Stofo Olan. He is on the second floor of the Vasty Deep Inn near the [[Erudin]] City Library (Loc: -1100, -60). 
+
+Hail him and the conversation is as follows:
+
+: 'Good day, I have discovered something truly wonderful! If I only had the materials required so I can copy my notes and send them to my teacher'.
+
+Ask him 'What materials' 
+
+: 'The materials I need are a mechanical pen, ink of the dark, and white paper. Bring me those and I will give you a copy of this information'.
+
+Ask him 'Who is your teacher' 
+
+: 'My teacher is Jeb Lumsed. He was last seen in the regions of the newly discovered lands. If you wish to find him that is where you must seek him out'
+
+You then need to gather the three items and bring them back to Stofo Olan: a Mechanical Pen, Ink of the Dark, and the White Paper.
+
+The Mechanical Pen can be obtained in Ak'Anon. Rilgor Plegnog (in the Mines of Malfunction) in is the one to ask about the {{:Mechanical Pen}}. 
+
+Ask him 'What Mechanical Pen'
+
+: 'Why do you want one of those contraptions. You will spend more time repairing it then you will writing with it. But if you insist on getting one, you are going to have to do a small favor.' 
+
+Rilgor Plegnog tugs at your robe and grins evilly. 
+
+: 'Mighty nice outfit you have there. Sure beats these drab robes us three are wearing. Hmm...my favorite color is purple, in fact a shiny metallic purple would do nicely. How bad did you want that pen?'. 
+
+You guessed it, he wants a Shining Metallic Robe (SMR). These are obtained off the Arch Ghoul Magi in the Dead Side of Lower Guk. Rare Spawn and Rare Drop. Once you hand him the SMR he will give you the Mechanical Pen.
+
+To obtain the Ink of the Dark, head on over to Qeynos. Reania Jukle is in the Temple under Qeynos (Loc: 2030, -580). 
+Make sure to be in DE illusion or you'll probably get murdered by the mobs in this area. 
+
+Ask Reania 'What ink of the dark?'
+
+Reania Jukle says, 'Ink of the Dark, you say? That isn't an everyday item, you know. In fact i can't remember the last time someone requested it. I have given up keeping any here with me. You are going to need to find your own supply now. Sorry.'
+
+Ask Reania 'Where can I find the Ink of the Dark?'
+
+: 'The ink is the blood of a dark scribe. Tempt him and give him this vial. He should cooperate'. 
+
+She will then give you an [[Empty Ink Vial]].
+
+From there head to [[Lower Guk]]. [[A ghoul scribe]] spawns in the Ghoul Sage room (near the Executioner room). Whilst a rare spawn, this shouldn't be too long a camp. Charm the Scribe and hand him the Empty Ink Vial. You will get the Ink of the Dark returned to you.
+
+Then you need to get the White Paper. This part is completed in [[Western Karana]]. You will need to bring a paper and a quill and these can be obtained from almost all Enchanter guilds. You need to speak with Chrislin Baker (Loc: 1050, -1990). 
+
+Hail her and then give her the paper and quill. 
+
+: Chrislin Baker gives you a hug. 'Thank you so much. I did some cleaning after you left and found this behind a barrel. It may have been left behind by the person who took my materials. You can have it'. 
+
+You will then get a Bandit Sash.
+
+A Human Monk named [[Thrackin Griften]] will then spawn at Loc 880, -11570. Kill him and you and loot the White Paper. This mob is almost totally magic immune and a tough battle. Take a group with some tanks and a cleric.
+
+Head back to Erudin City and return to Stofo (Loc: -1100, -60). Give him the three items and he will say the following: 
+
+: 'Yes, that is what I wanted.'
+
+: 'Here, take these notes.'
+
+: 'My teacher will be very interested if he knows what I have found'. 
+
+He will then give you a {{:Copy of Notes}}.
+
+Now it is time to head over to the [[Burning Woods]] and speak with Jeb Lumsed (Loc: -1200, -4000). 
+
+Give him the Copy of Notes and he will then talk to you:
+
+: 'I see that you have what I was waiting for. Stofo does do excellent work. It seems that you are to start on a long journey. Take this seal and it will guide you on your next step. Seek out the masters of enchantment. In time we will craft the Serpent for you. When you have collected the four parts of the staff, you must combine them in a bundle for me. If you need a sack, just let me know'. 
+
+He will also give you the coin Jeb's Seal.
+
+Tell him 'I need a sack'
+
+: 'Take this sack and combine the items I requested in it. Then return it to me'. 
+
+He will then give you an Enchanter's Bag.
+
+Ask him 'Who are the four other masters'
+
+: 'The masters are enchanters who have reached the plateau of understanding. Their names are Modani Qu'Loni, Mizzle Gepple, Nadia Starfeast, and Polzin Mrid. All are master crafters in their own right'.
+
+Ask him 'Who is Modani'
+
+: 'Modani is a master of illusions. You should seek him out first. Keep a careful eye out for him - he is never in his true form. The last time I spoke to him, he seemed very excited about his voyage to the elven outpost. You may or may not find more clues about his location there'.
+
+Ask him 'Who is Mizzle'
+
+: 'Mizzle is a gnome who has mastered the use of enlightened magic. Go to him once you have spoken to Modani. Mizzle is not one to travel, so you should not have to look far from his home to find him'.
+
+Ask him 'Who is Nadia'
+
+: 'The mistress of charm, Nadia is very beautiful. She, too, traveled with her relatives to the new land. I just recently received a letter from her. She says more and more pilgrims and explorers are arriving every day, and that the outpost is well defended now'.
+
+Ask him 'Who is Polzin'
+
+: 'Master of the Phantasms - he is the last one you will seek out. Hmm...Polzin is native to Erudin, however, after the incident near Paineel, no one has heard from him. I hope that he is well'.
+
+Now the fun begins. You have to find the four masters and complete sub-quests for all of them.
+
+=== Enchanter Master One ===
+
+'''First go and locate Modani Qu'Loni in [[The Overthere]] (Loc: +540 -940). Modani is in the form of a Scorpikis. Actually getting to Modani can be tricky sometimes as there are other Scorpikis nearby that can make it a challenge. Either kill them, or have someone lure them away so you can speak to Modani.'''
+
+'Hail Modani Qu`Loni'
+
+: 'The hidden self inside a myriad of magic is one that walks quite softly. Yes, that is what you must seek.'
+
+Give Modani Jeb's Seal.
+
+: 'Ah yes, Jeb's seal. The time to craft a Serpent must have come. I will need components collected to craft the first of the pieces. I will also provide you with a sack in which you must combine the items. Are you ready to collect them?'
+
+'I am ready to collect them.'
+
+: 'Scattered throughout the world are various items. To prove your worth, go collect these and return them to me. The Xolion Rod, Innoruuk's Word, Chalice of Kings, and snow blossoms.'
+
+'I need a sack.'
+
+: 'Take this sack and combine the items I requested in it. Then return it to me. '
+
+'''You will receive an Enchanter's Bag'''
+
+'What is the Chalice of Kings?'
+
+: 'The Chalice of Kings is the chalice of elven kings. Recently thought to be lost to the ages, it was recently discovered. I need its magical powers to create a magical liquid.'
+
+'What is the Xolion Rod?'
+
+: 'This is the rod of an ancient civilization found on this continent. Nothing is known of it other than that the scaled ones discovered it years ago.'
+
+'What are Snow Blossoms?'
+
+: 'These are flowers that are also used in the creation process. They were once widespread, but now I am told they only grow in select places.'
+
+'What is Innoruuks Word?' 
+
+: 'The strict doctrine of the priests of Innoruuk is used as a material component in the crafting. The power of their hate must not be underestimated.' 
+
+'''Head to [[Oggok]] and look for Bozlum Blossom (Loc 540, 1150). Hail her and she will start talking: <Note: This seems to be broken. Just get the sandals and do the hand-in.>'''
+
+: Bozlum Blossom heaves a great sigh.
+
+Ask her 'What is wrong Bozlum?'
+
+: 'Boz like to grow perty flowers in her garden. But garden no more.'
+
+'What happened to your flower garden?' 
+
+: 'Boz not know what happen. Only see der biggins footprints in it. Me perty sure my puppy not smash garden. He has tiny feets. Right, puppy?'
+
+: Bozlum Blossom pet wags his tail.
+
+'''Go and find Brokk Boxtripper in a hut outside her caves (Loc: 230, 380). '''
+
+'''Once you find him, look for a pair of sandals right next to him. Get it and you will see they are called Large Muddy Sandals. Take the sandals back to Bozlum and give it to her. She will give you a Scribbled Parchment and ask that you take it to Brokk.'''
+
+'''Go to Brokk and give him the Parchment. He will give you a Gift to Bozlum to make up for messing her garden. Give her the Gift.'''
+
+: 'Oh, dat silly Brokk. He sent me too many of these perty flowers. Me not know where put them all. Here, you take some cause you help Bozlum. Me like you. Flowers make you smell perty, too'. 
+
+'''She will then give you the [[Snow Blossoms]].'''
+
+'''Then get a good group together and head over to [[Neriak]]. Inside the Cleric Guild in the Third Gate region you will find Verina Tomb. Verina has a long spawn window of 2-7 days after she dies, and often is not up (some other Enchanter has killed her normally). She is considered one of the few bottlenecks of this epic. You may have to just wait, or pop back now and then to check on her. She is a level 60 Dark Elf Cleric and you can kill her without aggroing the guards (provided you aren't Kill on Sight to the guards) as she is not on any faction and the guards won't assist her. 
+
+
+[''(NOTE: She is no longer soloable, there is no charmable NPC in the zone that is capable of killing her) She's soloable as a 60 enchanter. I've soloed her. You just have extra side quests to do to complete your epic. Like acquiring a reaper of the dead, soulfire (you will do this quest a bunch of times if you keep playing your enchanter in the end game), wand of allure, maybe some wort pots, maybe some pet gear and decent gear for yourself. It goes without saying, you need to know how to solo... These are things you will want to do anyway as a 60 enchanter. You may fail a couple times too (if you have reaper, soulfire, wand of allure or puppet strings and maybe some wort pots, you should wreck her face if you don't freak out and get too nervous'')...
+
+''As far as I remember, with 170mr you resist all of her spells except she has a 5% chance to land root no matter what and she doesn't social agroe any other NPC in the zone. You can pull her around whole zone with only a small risk of being rooted, which shouldn't be fatal if it happens. The cultural smithing merchant in the back of the zone is the most powerful pet available but with a soulfire instead of just a reaper, you can probably take her down with a guard np and that's probably a less risky approach''...]'''
+
+
+'''You will loot [[Innoruuk's Word]] off her once she is dead.'''
+
+'''The Xolion Rod can be obtained by killing Vessel Drozlin in the [[Cabilis]] Shaman guild (Loc: 591, -826.) You will need to swim through the large pool and go through the tunnels. Becareful as this monster is also immune to most magic, and will run through a one way door as the fight progresses. He also has some guards. Take a good high level group (or more if worried). Vessel has an identical spawn window to Verina's and is therefore also somewhat of a bottleneck.'''
+
+'''Kill Drozlin and then loot the [[Xolion Rod]].'''
+
+'''Now its time to head over to [[Chardok]] and head deep inside the dungeon. You have to kill Prince Selrach Di'zok (Loc: -560 +1360). The Prince is a level 61 Warrior and to fight him and clear the path to his room you will need some heavy fighting power. Kill the Prince and loot his head. Then go to Felwithe and look for Joren Nobleheart in the Magician guild.'''
+
+Hail him and then give him the princes head.
+
+: 'Vengeance has been fufilled! However, the King still has a heavy heart. Not until Firiona has been return can this sadness be lifted. But in appreciation of your efforts, I am honored to present to you the King's Chalice'. 
+
+'''He will then give you the [[Chalice of Kings]].'''
+
+'''Once you have the [[Xolion Rod]], [[Innoruuk's Word]], the [[Chalice of Kings]], and [[Snow Blossoms]], put all of them in the Enchanter's Bag Modani previously gave you and hit the combine button.'''
+
+'''You will create a new item called a Sack for Modani.'''
+
+'''Go back to the Overthere and see Modani once again (Loc: +540 -940). Give him the Sack for Modani.'''
+
+: 'Excellent, you have done well. Here is the first piece of the staff. Now you must go seek out the second master; he will clear the path for you'. 
+
+'''You will get the [[1st Piece of Staff]].'''
+
+== Enchanter Master Two ==
+
+Next you need to find Mizzle Gepple in [[Ak'Anon]] (Loc: 2020, -520). Mizzle is hiding as a Clockwork Gnome. You will see him as Clockwork VIIX. Check by asking him if he is Mizzle and he should say he is. 
+
+Give Mizzle Jeb's Seal.
+
+Ask for a sack. Mizzle will then give you another Enchanter's Bag and ask you to collect four different items, a Spoon, the One Key, the Lost Scroll, and the book Charm and Sacrifice. This is a much easier quest than Modani's.
+
+The Spoon is on a named sand giant called Cazel, you can find him in the Oasis of Maar. Whilst he is only level 50 he has ridiculous regen and hits very hard. 2 groups are recommended to kill Cazel, or one very high level group. Kill him and grab the Spoon.
+
+Head on over to to the Overthere on the boat which leaves from the Oasis dock. On the top of a little ledge at Loc: -190, -380 you should find the key. The key spawns once every 24 hours. 
+
+The Lost Scroll is at the bottom of Dalnir's Crypt. Go to Loc -20, 50. You will see a bed next to a wall. The scroll will spawn between the bed and the wall every 24 hours. Note that casting collaboration will make all of the coerced mobs in this zone apprehensive, assuming you havent altered starting faction. Only the goos seem to have the capacity to see through invis.
+
+The Book of Charm and Sacrifice is in the Plane of Sky on a table in the quest room at Loc: 1300, 560. The book spawns once every 24 hours. Buy Veeshan's Key from the Key Master on island 1 to click down to the quest room.
+
+Put the Spoon, the One Key, the Lost Scroll, and the Book of Charm and Sacrifice in the Enchanter's Bag Mizzle previously gave you and combine them. You will get a Sack for Mizzle.
+
+Give this back to Mizzle Gepple in [[Ak'Anon]] (Loc: 2020, -520).
+
+: 'Oh excellent, you have done what is required. Here take this part, and seek the third master, you are well on your way'. 
+
+He will then give you the [[2nd Piece of Staff]].
+
+=== Enchanter Master Three ===
+
+[[Nadia Starfeast]] has your next sub-quest. Head over to [[Firiona Vie]] to Loc: -3870, 2525 (be careful of your faction here, you may need to raise it if you are kill on sight by killing goblins in Warslik Woods). 
+
+Give Nadia Jeb's Seal.
+
+Ask for a sack. She will give you another Enchanter's Bag and ask that you obtain the essence of four different stones: a Dull Diamond, a Dull Sapphire, a Dull Ruby, and a Dull Emerald.
+
+To obtain these you will need to transform them into enchanted versions of the gems. To do so, you will need to charm a few different creatures. 
+
+'What gems?'
+
+: 'I have prepared some gems that you will need to trap the essence. You will need to force a diamond, sapphire, ruby and emerald onto special creatures to obtain their essence.
+
+What diamond?'
+
+: 'Here is the diamond that I have prepared for you. Its only purpose is to trap the essence of a particular book worm. If you should fail in your first attempt. Do not worry, I will provide you with another.
+
+'What sapphire?'
+
+: 'Here is the sapphire that I have prepared for you. Take it and give it to the one referred to as the Golden Faerie.
+
+'What ruby?'
+
+: 'Blood red is the ruby that I have given you. The city that you must travel to has no sun, but still a day and night. And at night, the mist could suffocate one. Tis the fate of poor Jaxion.
+
+'What emerald?'
+
+: Nadia Starfeast jumps. 'Eeekk... a scorpian. I thought they rid this area of these critters. Those things give me the creepers. Take this emerald and be on your way.'
+
+To obtain the Enchanted Diamond go to [[Kaesora]]. You need to get to Loc: 85, -415. It is quite easy to get there. Once you enter Kaesora, cast levitate and invis, and go straight forwards and drop down the hole. Don't go all the way down - just keep heading straight ahead onto the ledge in front of you. Turn left at the first tunnel and enter the room with the two to three spiders and turn right and go through that door. Directly behind that door there is a secret wall which you go through then just before you hit the corner, cast invis vs. undead. Keep moving forward down the ramp and enter the building you see when you go round the corner.
+
+Here you will find either your mob the [[Spectral librarian]] (spectral librarian) or one of many placeholders, including undead, found inside the small library room. Also, be careful because [[a frenzied gnawer]] will see thru your IVU, which can be found inside the library - work your way inside carefully. Kill the placeholders until the [[Spectral librarian]] spawns. Then charm him and give him the Dull Diamond. He will then give you the Enchanted Diamond and turn into a [[Enraged spectral librarian]] (enraged spectral librarian). At this point you have bagged your Enchanted Diamond it is safe to stun or mezz and then gate. If you kill this spawn it will morph on death into two to six [[A Freed Soul]] mobs which cast some nasty area of affect spells (500 aoe dmg). They have almost no hitpoints, so take them out quick if you choose this route.  
+
+Then head to the [[City of Mist]] and look for the [[Wraith of Jaxion]]. It spawns right up the back in Neh'Ashiir's building near the Reaver. It is a rare spawn. If it is not there, keep killing everything near there until it does. Then charm it and hand the Dull Ruby. You will get the Enchanted Ruby.
+
+Head to [[The Overthere]]. Look for a scorpikis called [[Impaler Tzilug]] at Loc: -27, 1359. He is inside the temple which leads to Charasis (Howling Stones) but go left instead and down to the bottom. He is in a room with 4 Defenders plus a roaming defender on the ramp. Charm the Impaler (like Modani this might mean killing some other NPC's first or getting someone to train them away) and give him the Dull Emerald. In return, he will give you the Enchanted Emerald.
+
+Now head to [[Skyfire]] and look for the a tiny Chromodac called [[Felia Goldenwing]] near the Burning Woods zone. Felia is another rare spawn and you might have to kill a bunch of other placehoder spawns to trigger her. Once she does spawn, quickly charm her and avoid taking her anywhere near other Skyfire spawns. Other mobs will kill her on sight. After you charm Felia, hand her the Dull Sapphire and she will give you an Enchanted Sapphire.
+
+Combine the Enchanted Diamond, Enchanted Sapphire, Enchanted Ruby, and Enchanted Emerald in the Enchanter's Bag Nadia gave you. You will create a new item called a Sack for Nadia.
+
+Give Nadia back her new sack.
+
+: 'Excellent, you have done what is required. Here take this part, and seek the fourth master, to complete your quest'. 
+
+She will then give you the [[3rd Piece of Staff]].
+
+=== Enchanter Master Four ===
+
+Next head to [[The Hole]] and find [[Polzin Mrid]] (Loc: 210, -50). 
+
+'Hail Polzin Mrid!'
+
+: 'Yes, young one?
+
+Give Polzin Mrid Jeb's Seal.
+
+: 'Jeb has spoken with you already, excellent. Tell me are you ready for the test of the phantasm?
+
+You receive Jeb's Seal back.
+
+: 'I am ready for the test of the phantasm'
+
+: 'It will be simple, go collect these items and return them to me. Head of a serpent, essence of a ghost, essence of a vampire, and sands of the mystics. Do so and you will receive the last of the pieces. Be sure to combine them in a sack first. Just ask and I will provide you with one.
+
+'What is the head of a serpent?'
+
+: 'Serpent is probably not an accurate term form what you must return to me. It is actually the remnants of a spirit. The spirit is one which was eradicated long long ago by the Iksar. I believe they were called the Shissar. You may need to travel to the Iksar city to learn more about these creatures.
+
+'What is the essence of a ghost?'
+
+: 'You don't have to look for to find roaming spirits. One in particular though has more meaning then the other sorry souls trapped here. You see, Kindle was a dear friend of mine. I came in search of him when he stopped writing. Wel....look at me now. I fear that I have succumbed to the same fate as poor Kindle.
+
+'What is the essence of a vampire?'
+
+: 'The essence of a vampire is just that. Only the most powerful of these creatures will possess what you need.
+
+'What sands of the mystics?'
+
+: 'They are sands that were imbued with the magical might of the mystics. Mystics use a ritual involving their own blood to create a powerful bond with the sand. One will need to search the shores.
+
+You should get the Essence of a Ghost first since it is found in The Hole as well. You must look for the Ghost of Kindle, a spawn in between the city and Master Yael's lair (take a couple of groups). Kill her get the Essence of a Ghost.
+
+The Head of a Serpent is found in the [[Plane of Fear]]. The Spirit of Shissar can be found in the Amygdalan Temple. It's on a 5-7 day timer. The Shissar itself is actually extremely easy, the hard part is breaking fear and getting to it. Kill it and loot the Head of the Serpent.
+
+The Essence of a Vampire is found in the [[Plane of Hate]]. They are a rare drop by Forsaken Revenants (mainly in the north east corner of the zone). 
+
+Then head to the [[Field of Bone]] and look for [[The Tangrin]] (Loc: 3300, 2530). A rare spawn Gorilla Warrior - this is a fun fight for a couple of high level groups. Kill The Tangrin and loot the Sands of the Mystics.
+
+Put the four items in the Enchanter's Bag Polzin gave you and when combined you will get a Sack for Polzin.
+
+Give Polzin the sack. 
+
+: 'Excellent, you have done what is required. Here take this part, and return to Master Jeb Lumsed'. 
+
+He will then give you the [[4th Piece of Staff]].
+
+=== Completing the Quest ===
+
+Return to [[Burning Woods]] and look for Jeb Lumsed (Loc: -1200, -4000). Find him and make sure you have an Enchanter's Bag. If you don't have it you will need to get another Seal and give it to a master again to get another bag. Now put all four Pieces of Staff in your Enchanter's Bag and hit the combine button. You will create a new item called Bundle of Staves.
+
+Give the Bundle of Staves to Jeb Lumsed.
+
+: 'The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well'. 
+
+'''Congratulations on your [[Staff of the Serpent]]!'''
+
+== Walkthrough with Dialogue ==
+
+...
+
+[[Category: Quests]]
+
+[[Category:Erudin]]
+[[Category:Enchanter Quests]]

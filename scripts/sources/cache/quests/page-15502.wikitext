@@ -1,0 +1,128 @@
+[[File:npc_thadres_thyme.png|frame|Thadres Thyme]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Thadres Thyme]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[vengeful composer]], [[vengeful lyricist]], [[vengeful soloist]]
+|}
+
+== Reward ==
+
+<ul><li> [[Garsen's Brewing List]] </li></ul>
+
+== Walkthrough ==
+
+Thadres Thyme may be found in McQuaid's Dark Stout at +100, -200.
+
+You say, 'Hail, Thadres Thyme'
+
+: Thadres Thyme says 'Hello, ______! It's hard to believe just how cold it gets here!  It really has been wearing me down.  Especially after the [journey] from Qeynos.'
+
+You say, 'What journey?'
+
+: Thadres Thyme says 'I have been traveling the face of Norrath to unravel the mystery of why my beloved [brother] attacked a group of traveling bards.  He didn't survive the fight.  It's been so long, I can't really remember what he looked like!  I miss him so much . . . Now all I have are his [diary] and some brewing recipes he sold before his death.'
+
+You say, 'Who was your brother?'
+
+: Thadres Thyme says 'My brother was Delius Thyme.  I think he was a great man.  ______, have you ever lost someone close?  I don't know if I can ever forgive myself for letting him travel on his own after his sanity began to fade.  Oh, Delius, please forgive me!'
+
+You say, 'What about his diary?'
+
+: Thadres Thyme says 'The diary? It's one of the two connections I still have to my brother.  Sadly, [pages] are missing from it.  I've been looking for them.'
+
+You say, 'What pages?'
+
+: Thadres Thyme says 'I believe the pages contain the events that drove my brother to insanity.  I have been searching for the remaining three missing pages.  There is some hope; I found a couple of pages over in Everfrost Mountains.'
+
+Head to Everfrost Peaks and find and kill a "vengeful soloist," "vengeful composer," and "vengeful lyricist," all undead skeletons, all around level 10, and all wandering the newbie area.  Loot Delius Thyme's Diary Pg. 74-76.  The pages are NO TRADE and TEMPORARY.  Page 74 reads:
+
+Oct 2
+Today was an especially cold day.  Never stay in Halas again.  The only bright point was I met a Master Brewer named Garsen who agreed to join our group and help us explore the uncharted depths of Permafrost.  He seems to speak only in rhyme which is a bit annoying but his skill with weapons makes up for it.  He said he has to keep practicing because he is writing countless books of Brewing Limericks.
+
+Oct 3
+Everfrost Mountains must be the coldest place on Norrath, and to make matters worse we were almost killed by a Mammoth that appeared over a peak.  Tolan was almost slain but Garsen saved him.
+
+Oct 4
+We discovered underground caverns.  The only thing more frightening than
+monsters is Garsen opening his mouth.  I'd say, " I need to sit and rest".  He'd follow with; "Do you really think that's best?"  Tolan said, "We could really use a Cleric".  Garsen replied, "Don't be a hysteric".  I can't take it, can't take it.
+
+Page 75 reads:
+
+Oct 5
+Garsen was quite offended by Tolan's outburst today.  Tolan said that our food tasted like it came from the sewer and Garsen, as usual, replied with a rhyme, "It could taste better with a skewer."  Tolan made him realize how irritating his voice is.  One more rhyme, ONE more damn rhyme, and I'll kill him myself.
+
+Oct 6
+Garsen was quiet all day today and didn't mutter a word even when he was almost killed and needed help.
+
+However, when we stopped to camp we had to sleep right next to each other because of our location.  Garsen was murmuring rhymes in his sleep.  Every damn word out of his mouth rang in my ears.  Each syllable lingered just long enough to drive me crazy.  I kept praying that the next word would not rhyme.  Satisfaction never came.
+
+Tolan and I talked and decided to help him sleep a bit better.
+
+Oct 7
+We rifled through our departed friends things and found the unfinished limericks and component charts on the brewing trade.  After destroying many Tolan suggested someone might want to buy the rest. We'll try to sell them in Halas.
+
+Page 76 reads:
+
+Oct 23
+Just got out of prison and finally received my possessions back.  I arrived back in Halas on the 9th and sold the limericks to a Barbarian who paid a hefty amount of silver for the work.  As I was walking down the street a Blacksmith said, "I'll have to charge my usual fee of 12 copper."  His patron replied, "If I pay you that much I'll be a pauper."  I had no idea if the rhyme was intentional or not but uncontrollable rage swept over me.  Slowly, ever so slowly, I turned, grabbed the patron by the throat and squeezed.  It took six guards to free him.  One guard gave me a strong warning and said, "You must now leave our city".  Which was fine but another guard said right afterward, "Do this again and face the committee."
+Before I could realize it, my hands were wrapped around the guard's throat.  Jail wasn't that bad save the rats, bats, mildew, and stench.  Unusually, the jail served rat sandwiches everyday.  At least no one has said a rhyme to me since.  The end to the horror seems far from sight.  Rhyming winter nightmares have sadly impaled me.  Writhing with nightly havoc, sanity eludes me.
+
+Turn in the three pages to Thadres Thyme.
+
+: Thadres Thyme says 'Thank you very much.  Now, please help me find all three missing pages.'
+: Thadres Thyme says 'Thank you very much.  Now, please help me find all three missing pages.'
+: Thadres Thyme says 'Thank you, thank you.  Let me read them.  Oh!  How could I want these brewing recipes after they made my brother insane? Where are they?  I think this is all of them.  Take them away from me!  Delius can smile upon me now.'
+
+You gain experience!! 
+
+You receive [[Garsen's Brewing List]], which sells for about 1 sp and reads:
+
+:The best Brews of Norrath.
+
+:Bog Juice
+:Kalish
+:Honey Mead
+:Fish Wine
+:Ale
+:Gypsy Wine
+:White Wine
+:Red Wine
+:Gnomish Spirits
+:Elven Wine
+:Vodka
+:Brandy
+:Halfling Stouters
+:Halas Heater
+:Ol' Tujim's Fierce Brew
+:Hulgarsh
+:Bleeding Brain
+:Ginesh
+
+Note: You have to turn in all 3 pages at once. Bringing them one by one, doesn't work.
+
+==Trivia==
+While there's no confirmation in the game itself, the circumstantial evidence suggests that the three vengeful skeletons are the remains of the bards that Delius attacked, and that Thadres murdered them both to avenge her brother and to hide the evidence of Garsen's murder.
+
+* They are musicians, and Thadres explains when you first speak to her that her brother died at the hands of a group of bards he attacked.
+* The pages missing from the journal describe the murder of Garsen at the hands of Delius and a man named Tolan.
+* Based on the dates in the journal, Delius spent roughly two weeks in prison after assaulting some guards in Halas. There's no way an act of murder would only earn him two weeks in prison, suggesting that the guards had no idea of his more serious crime.
+* Thadres has Delius' journal, but it's clear from the journal's entries that Delius had the journal on him ''after'' he was released from a Halas jail for assaulting the guards, meaning he must have had it on him when he was killed by the bards.
+* If you kill Thadres, you lose faction standing with the corrupt Qeynos guards and the Circle of Unseen Hands (Qeynos' rogues guild), suggesting she's a part of the Qeynos underworld. We never find out who Tolan was, but he was evidently willing to help Delius murder Garsen. If Delius and Thadres are both rogues working with the Circle, it stands to reason that Tolan was as well.
+
+Since the bards survived their fight with Delius, and the vengeful skeletons have some of Delius' journal pages, the most logical explanation is that after the bards killed Delius in self-defense, they looted his journal and read it. When they found out that Delius and Tolan had murdered Garsen, they tore out the relevant pages to give them to the authorities. Meanwhile, Thadres discovered that her brother's journal was missing and, fearing it might contain information that implicates members of the Circle of Unseen Hands, tracked down and murdered the bards to get the journal back, unaware that they had stolen the key pages from it. When you encounter her in Halas, she's still trying to find the missing pages, so she has you go hunt them down, because she knows that to you, the pages will simply appear to be the rantings of a madman-turned-murderer and you probably won't care about any other names the pages mention.
+
+[[Category:Quests]]
+[[Category:Halas]]

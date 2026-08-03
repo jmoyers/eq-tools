@@ -1,0 +1,113 @@
+[[File:npc_wolten_grafe.png|frame|Wolten Grafe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Wolten Grafe]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Drosco]]
+|-
+! ''' Related Quests: '''
+| [[Errand for Wolten]], [[Bonethunder Staff Quest]]
+|-
+! ''' Required Faction: '''
+| Warmly or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Thunder Staff}}
+
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins in [[South Qeynos]] with [[Wolten Grafe]], the Keeper of the Medallions of the Order of Thunder. He is located at -189, -554, +3.''
+
+You say, 'Hail, Wolten Grafe'
+
+: Wolten Grafe says, 'Hail, noble _____. Remember to spread the words of Karana throughout the faraway lands on which you shall tread. We of the Temple of Thunder are looking for new members - good people who [wish to join our cause]. Let the call go out!' 
+
+You say, 'I wish to join the cause.'
+
+: Wolten Grafe says, 'That IS good news! If you walk the righteous path of the Rainkeeper, Karana, then you are truly noble. I have need of someone like that. I must find someone to perform a [dangerous mission] or perhaps you would rather seek out the [Rat King] or [crush the undead]?'
+
+You say, 'What dangerous mission?' 
+
+: Wolten Grafe says, 'You must go into the catacombs and find a man named Drosco Finlayer. Pass him this note. He has been deep undercover in the Shrine of Bertoxxulous and will have directions to that vile place. To do this will surely show your allegiance to this temple.' 
+
+''You receive a [[Tattered Note]]'' {{Item Lore|Note To Drosco}}'', which reads:''
+
+ THE STORM IS NEAR !
+
+'''Find [[Drosco]] in the [[Qeynos Catacombs]], room 7.'''
+
+: Drosco says, 'Rele.. ase.. me.. from.. this.. tor.. ment.. ARGH! You will die for entering the domain of the Bloodsabers!! Karana.. help.. me?' 
+
+You have slain Drosco! 
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div> 
+
+{{YouGainExperience}} 
+
+Drosco's corpse says, 'ARGH!!!!!.. Thank.. you..' 
+
+'''Drosco will occasionally drop [[A Sealed Letter]]. Loot this and return to Wolten Grafe.'''
+
+Upon turning in [[A Sealed Letter]] {{Item Lore|Note to Temple}} (had amiable faction while doing this quest):
+
+: Wolten Grafe says, 'This is terrible news. It is good you did not find your grave in the catacombs. You completed your mission regardless of the odds of survival. The temple thanks you. We shall still require your service, Knight of Thunder. Events have transpired which put all agents of righteousness in danger. We cannot explain all as yet. Take this note to Freeport. You will give it to Eestyana Naestra at the Hall of Truth. Beware, now. The Shrine of Bertoxxulous now knows of your allegiance.'
+
+Quest: [[Errand for Wolten]]
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div> 
+
+{{YouGainExperience}}
+
+''' More rarely, Drosco will drop an [[Order of Thunder]] (this can be a long camp), which you need to take to Wolten Grafe who will give you your [[Thunder Staff]].'''
+
+Upon Turn in to Wolten Grafe:
+
+: Wolten Grafe says, 'Ahh, Drosco's Order of Thunder.  You are truly an honorable knight.  Many vile people would pay greatly for this medal.  I thank you for its return.  I shall honor you by rewarding you with a thunder staff.  Meant for young clerics and paladins of this temple.  Never let it leave your side.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div> 
+
+{{YouGainExperience}}
+
+You receive a {{:Thunder Staff}}.
+
+== Notes ==
+<ul><li>Turn in of A Sealed Letter yielded ~6% EXP @ lvl 14, 4-5% EXP @ lvl 26</li>
+</ul>
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]

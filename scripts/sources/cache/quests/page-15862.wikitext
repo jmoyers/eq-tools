@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_Datur_Nightseer.png|frame|Datur Nightseer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Datur Nightseer]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Datur Nightseer]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dusty Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Datur Nightseer]] is located at 1337, 133, 46 in the Paladin's guild.''
+
+You say, 'Hail, Datur Nightseer'
+
+: Datur Nightseer says, 'Welcome to our temple. We are the paladins of the Church of Underfoot. I am lord of our holy order. I call upon you to assist us in the defense of Kaldim. Speak with the master paladins or priests and find ways to prove your allediance to Brell.'
+
+'''Hand [[Datur Nightseer]] your [[Folded Parchment]]'''
+
+:: ''The Folded Parchment reads:''
+
+:: <code>We would be honored if you would join us in serving the will of Brell. Find Datur, leader of the Paladins of the Underfoot, and give him this note. He will help you in your training.</code>
+
+: Datur Nightseer says, 'Welcome. We are the Paladins of the Underfoot. I am Datur, and I will help teach you the word and will of the Duke of Below, Brell Serilis. Here is our guild tunic.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Paladin Quests]]

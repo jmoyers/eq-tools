@@ -1,0 +1,63 @@
+[[File:npc_wolten_grafe.png|300px|thumb|Wolten Grafe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Wolten Grafe]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Beggar Wyllin]]
+|}
+
+== Reward ==
+
+<ul><li>Coin</li>
+<li>A piece of [[Leather Armor Set|leather armor]]</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Wolten Grafe'
+
+:Wolten Grafe says, 'Hail, noble Human. Remember to spread the words of Karana throughout the faraway lands on which you shall tread. We of the Temple of Thunder are looking for new members - good people who [wish to join our cause]. Let the call go out!'
+
+You say, 'I wish to join the cause'
+
+:Wolten Grafe says, 'That is good news! If you walk the righteous path of the Rainkeeper, Karana, then you are truly noble. I have need of someone like that. I must find someone to perform a [dangerous mission]...Or perhaps you would rather [seek out the Rat King] or [crush the undead]?'
+
+You say, 'I will seek out the rat king'
+
+:Wolten Grafe says, 'Under this city lie the catacombs of Qeynos.  Somewhere down there lurks the Rat King.  None have truly seen him, but we know of him.  It is he who plagues us with the recent infestation of rats.  Why?  Who knows?  We need a brave member to [hunt the Rat King].'
+
+You say, 'I will hunt the rat king'
+
+:Wolten Grafe says, (Missing Dialog)
+
+In the aqueducts, you will find an NPC named [[Beggar Wyllin]] surrounded by four rats near the smugglers. Kill him and loot his [[Human Head]]. He also drops [[A Tattered Cloth Note]] for which there is no known use.
+
+You give the human head to Wolten.
+
+:Wolten Grafe says, 'We have finally destroyed the Rat King. You have performed a great service to Qeynos. Here is a small reward. Please continue with the work of the Rainkeeper.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{Exp}}
+
+*Note: Upon handing him the note Wyllin drops, he eats it.
+Quest is able to be completed by dubious con.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

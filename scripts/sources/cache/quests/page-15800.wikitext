@@ -1,0 +1,53 @@
+{{Velious Era}}
+[[File:npc_countess_silveana.png|frame|Countess Silveana]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Countess Silveana]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[a storm giant surveyor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crest of the Sifaye}}
+</li></ul>
+
+== Walkthrough ==
+
+Location of [[Countess Silveana]] is 1747, -65 in the center of the Sifaye Village (#2 on the map). She spawns in the middle of the camp and there can be either Knights or Chancellors as PHers. If she is not up you will need someone to kill the PHer or DoT them up and gate out before they die to avoid the faction hits.
+
+You say, 'Hail, [[Countess Silveana]]' 
+
+: Countess Silveana curtsies politely 'Welcome to our home! I am the Countess Silveana of the Tunarean Court.'
+
+You say, 'What tunarean court?'
+
+: Countess Silveana says 'The Tunarean Court consists of several of Tunares most blessed creatures. We Sifaye help defend the wakening land from the invading giants to the east and watch for threats from the dragons to the west.'
+
+You say, 'What giants?' 
+
+: Countess Silveana says 'There is a giant with a strange metal stick that has been the largest threat as of late. He wanders further into our lands than the other with the stick to his eye and squashes my Sifaye when he finds them. If you eliminate him for us I would like to see that stick he carries.'
+
+'''Here you hand her the [[Kromzek Surveyor Scope]] from the Storm Giant Surveyor.'''
+
+: Countess Silveana claps boisterously 'My people are in your debt for putting an end to that monsters murderous squashings! Here is the crest of the Sifaye.'
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+</div>
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

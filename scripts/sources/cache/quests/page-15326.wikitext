@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:npc_cindl.png|frame|Cindl]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Cindl]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a snow orc shaman]], [[a snow orc trooper]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Leather Gloves}}
+</li><li> {{:Raw-hide Leggings}}
+</li><li> {{:Raw-hide Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+''Find Cindl inside Mac's Kilts, at +300, -160.  At the end of the previous quest, Cindl mentioned a [second job].''
+
+You say, 'What second job?'
+
+: Cindl says 'I've seen the warriors bringin' in items called 'wrath orc wristbands.' Apparently, they find them on the lifeless bodies o' the snow orc troopers. They're made from a skin I've yet to find. I'll gladly reward ye with either a rawhide tunic or leggings or even perhaps leather gloves, if ye like. All I'm askin' are two wrath orc wristbands.'
+
+'''[[Wrath Orc Wristbands]] drop from a snow orc trooper and a snow orc shaman in Everfrost Peaks.  Hand in two.'''
+
+: Cindl says 'Fine work, Hunter!! As yer reward, please accept this item which I've fashion'd fer ye.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Halas]] (+10) got better.
+* Your faction standing with [[Wolves of the North]] (+7) got better.
+* Your faction standing with [[Shamen of Justice]] (+7) got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:All Classes Quests]]

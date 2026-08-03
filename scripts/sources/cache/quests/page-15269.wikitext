@@ -1,0 +1,77 @@
+{{Classic Era}}
+[[File:npc_melixis.png|frame|Melixis]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Melixis]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[a fungus mutant]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Copper Ring (Ring of Opolla)}}
+</li><li> {{:Gold Ring (Ring of Opolla)}}
+</li><li> {{:Silver Ring (Ring of Opolla)}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+This quest will result in the three rings required for the [[Paw of Opolla Quest]]. [[Melixis]] is a merchant that sells supplies for shaman-made potions.
+
+
+When you hail her she claims to have three [shiny tings] that she found all over the world. These shiny things are [a dull ring] a [kinda shiny ring] and a [really shiny ring].
+
+* For the 'dull ring' ([[Copper Ring (Ring of Opolla)]]) she wants a [[Guk Bracket Mildew]].  
+* For the 'kinda shiny ring' ([[Silver Ring (Ring of Opolla)]]) she wants [[Faerix Spores]].  
+* For the 'really shiny ring' ([[Gold Ring (Ring of Opolla)]]) she wants some [[Degenerated Guk Weed]].
+
+All of these items drop off the [[A Fungus Mutant]] in [[Upper Guk]]. 
+
+You say, 'Hail Melixis'
+
+:Melixis says, 'Welcome to Melixis shop.Rrrr. Feel free to brrrowse through my wares.  Melixis also find some [shiny tings] that she may trade you.'
+You say, 'what shiny tings'
+:Melixis says, 'In Melixis travels of the Odus, she find a [dull ring], a [kinda shiny ring] and a [really shiny ring]. Maybe you want to trade for those tings. Rrrr.'
+You say, 'what dull ring'
+:Melixis says, 'For dat ting? You brrring Melixis some bracket mildew. Rarr.'
+:Melixis says, 'Many thanks.. rrrr.. here is dull ring.'
+
+{{exp}}
+
+You say, 'what kinda shiny ring'
+:Melixis says, 'Hmm Hamed need faerix spores forrr potion. Rrrrr. You bring some to Melixis and she gives you the kinda shiny ring.'
+:Melixis says, 'Melixis thanks you, Hamed will be pleased. A kinda shiny ring is yours.'
+
+{{exp}}
+
+You say, 'what really shiny ring'
+:Melixis says, 'You go find degenerated guk weed. Melixis gives you the really shiny ring.'
+:Melixis says, 'You done good job, furless one. Here is really shiny ring. Rarr..'
+
+{{exp}}
+
+
+''Need all dialogues, /loc of quest mobs, faction hits if any.''
+
+== Related Quests ==
+
+* [[Paw of Opolla Quest|Paw of Opolla]]
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

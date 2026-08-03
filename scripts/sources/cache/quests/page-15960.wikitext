@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_gahlith_wrannstad.png|frame|Gahlith Wrannstad]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Gahlith Wrannstad]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Gahlith Wrannstad]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Blue Training Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Gahlith Wrannstad]] is located at 314, -670 in the Hall of Sorcery: the Qeynos Caster Guild Hall.''
+
+You say, 'Hail, Gahlith Wrannstad'
+
+: Gahlith Wrannstad says, 'Greetings, Teddee. I am Gahlith Wrannstad, Arch Wizard of the Order of Three.'
+
+'''Hand [[Gahlith Wrannstad]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Follow your destiny into the arcane. Magic is more powerful than any blade or fist, and flows through our veins like streaks of lightning. Go north, then east, from the Grounds of Fate Arena, to the Hall of Sorcery. Give this scroll to the Master Wizard Gahlith Wrannstad, and he shall teach you the ways of sorcery.</code>
+
+: Gahlith Wrannstad says, 'Greetings, I am Gahlith, Master of the Wizard's Order of the Hall of Sorcery. Here, we have devoted our lives and souls to the study of the arcane. My apprentice Kazlo Naedra shall tutor you and teach you the foundations and fundamentals of sorcery. You should visit Unsar also, I believe he's having difficulty with a new spell he's been tinkering with.'
+
+<div class="facblock">
+*Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Wizard Quests]]

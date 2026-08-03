@@ -1,0 +1,107 @@
+[[File:npc_hukulk.png|frame|Hukulk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Hukulk]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Cleric]], [[Paladin]], [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]], [[Neriak|Neriak Foreign Quarter]], [[Neriak|Neriak Third Gate]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Lumpin]], [[Lynuga]], [[Ratraz]]
+|}
+multiquestable
+
+Quest has a minimum faction requirement (Amiably+?)
+
+== Reward ==
+
+<ul><li> {{:Helm of Hukulk}}
+</li></ul>
+*Faction
+
+== Walkthrough ==
+
+Be forewarned that this quest invovles killing an NPC in Neriak that will lower your faction with the dark bargainers and Dread Guard Inner/Outer (DE Merchants and Guards). 
+
+'''(Optional)'''
+'''Go to [[Grobb]] and Find [[Hukulk]] in the back of the zone, in ShadowKnights of Night Keep.''' <br>
+''If your faction is high enough''<br>
+
+You say, 'Hail, Hukulk'
+
+:Hukulk says, 'What you want! You make fun of [helm of Hukulk]?! Me smash you! Maybe you come learn ways of Hate and Fear! You be dark power. You be Pain. You [want join Nightkeep]?'
+
+You say, 'Me no make fun - me want Helm of Hukulk'
+
+:Hukulk says, 'Oh! Yooz tink you great enough to wear helm of Hukulk? Me have another just like it. Me make deal with yooz. If yooz want helm den yooz help Hukulk get revenge. Yooz better be strong or yooz useless! So... Yooz [make deal with Hukulk]?'
+
+You say, 'Yas Meez make deal with Hukulk'
+
+:Hukulk says, 'Yooz smart! Yooz go and walks to dark elf city. Yooz finds one whos make Lynuga breaks up wit Hukulk! Maybe first yooz find Lynuga. Find who she visits in dark elf city! Den yooz go and lop off him head! Bash Lynuga too, if she no give me back [happy love bracers]! Me want head of dat home wrecker an' me happy love bracers, den me give yooz helm of Hukulk.'
+
+You say, 'Me sad yooz loose da Happy Love Bracers'
+
+:Hukulk says, 'Happy love bracers are mines! Me make dem for Lynuga. Dey all shiny and green like da forests me see in adventures when me young. Dey make Hukulk all warm and happy. Den me give to Lynuga and... and ... and... AND LYNUGA RIP OUT HUKULK HEART! Yooz makes Lynuga give back [happy love bracers]!'
+'''(Optional)'''
+'''Find [[Lynuga]] roaming through [[Innothule Swamp]].'''<br>
+You say, 'Hail, Lynuga'
+:Lynuga says, 'Hrrump?! Who you? Reveree? What you want with Lynuga? Me am out [collecting]. Leave me be!'
+You say, 'what yooz collecting?'
+:Lynuga says, 'I collect all sorts of things. Gems be my favorite. Me really like rubies. If you have ruby, give to me! Why you want to know? You want to steal my collection?!?! I squish you if you do!'
+You say, 'What yooz do wit Happy Love Bracers ?'
+:Lynuga says, 'Happy love bracers! Dem ugly tings! Me gave dem to old flame in Neriak. Him old news now. Me let him keep dem ugly green tings.'
+
+'''Travel to [[Neriak]] in the [[Neriak Foreign Quarter]] find [[Guard Lumpin]] '''<br>
+''You can talk to him to find out about the Happy Love Bracer or just Kill him and loot his'' [[Troll Head]]<br>
+
+You say, 'Hail, Guard Lumpin'<br>
+:Guard Lumpin says, 'Hullo citizen. Me am here to guard you so puts away any wepuns.'<br>
+You say, 'where are the happy love bracers?'<br>
+:Guard Lumpin says, 'Hmm... Me seen green bracers on troll named [Ratraz].'<br>
+You say, 'Ratraz'<br>
+Guard Lumpin says, 'Ratraz is dumb troll who werk in dark elf bar. Him tink he smart because dark elves raise him. Tink he know everyting. Him just as stewpid as all us trolls is!'<br>
+
+'''Slay [[Guard Lumpin]] and loot his [[Troll Head]]'''<br>
+<div class="facblock">
+* Your faction standing with [[Neriak Trolls]] '''got worse'''.
+</div>
+
+'''Travel to [[Neriak Third Gate]] and find [[Ratraz]]'''
+
+Ratraz is a bouncer in the Maiden's Fury in Neriak.  You have to kill Ratraz. If he runs while your fighting him, and you're a troll or ogre, be aware that you may have to duck while chasing him through some of the lower arches in Neriak, so you will have to reclick your autoattack. I haven't had anyone jump in on that battle yet and I've let him run pretty far before. From him you will get the happy love bracers (AC 1 bracers, I'd use them just for the name alone if they weren't so lousy), his head, and a warclub. <br>
+''Watch out!''  '''DO NOT''' give Ratraz's head to Hukulk! You can identify each head if you get confused. Lumpkin was the one who stole Lyguna from Hulkulk, not Ratraz! Either put his head in a separate container or destroy it.  The warclub is a decent non-magic blunt weapon that you can sell for quite a few plat. Ratraz is about 19th level. 
+
+'''Travel back to [[Grobb]] to deliver final pieces to [[Hukulk]]'''<br>
+Give [[Hukulk]] the Guard Lumpin's [[Troll Head]] and [[Happy Love Bracers]] to receive your reward.<br>
+:Hukulk says, 'No, No, No! I said to bring me the happy love bracers and the troll head of the homewrecker! You not done the right things! Messed up you are!'
+:Hukulk says, 'Ha! Ha! Who have last laugh now! You do good werk. Now me give you extra helm of Hukulk. Now go away!'
+<div class="facblock">
+* Your faction standing with [[Shadowknights of Night Keep]] got better. <span class='oppfac'>(+50)</span>
+* Your faction standing with [[Green Blood Knights]] got worse.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+* Your faction standing with [[DaBashers]] got better.
+*{{YouGainExperience}}
+</div>
+
+The Helm of Hukulk AC5 +3 strength +3 agility, wearable by evil races only helmet and some money (even up to some plat!), experience, and Faction.  Note about factions: if your standing is too low with shadowknights you will get nothing for turning in the quest items to Hukulk.
+
+''Imagine being gifted clothing with 'Love' in the name , only to find out it was made your Ex's Ex's Ex's Ex''<br>
+Reward:<br>
+<ul><li> {{:Helm of Hukulk}}
+</li></ul>
+
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Warrior Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Cleric Quests]]

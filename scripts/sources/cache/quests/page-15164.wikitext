@@ -1,0 +1,814 @@
+{{Epics Era}}
+
+[[File:druid.jpg|thumb|200px|{{:Nature Walkers Scimitar}} - Druid]]
+[[File:druid.png|thumb|200px|epic {{:Nature Walkers Scimitar}}]]
+[[File:Epic.jpg|thumb|200px|epic {{:Nature Walkers Scimitar}}]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Burning Woods]]
+|-
+! ''' Quest  Giver: '''
+| Telin Darkforest
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Elaborate Scimitar}}
+</li><li>{{:Nature Walkers Scimitar}}
+</li></ul>
+
+== Highlights (Difficult Parts) ==
+
+These sections of the quest are the most difficult parts.  Unlike the rest of the quest, most of these parts will require assistance from others:
+
+* ''Lots'' of running/porting around foraging and getting corrupted versions of creatures to spawn (soloable)
+* Must kill a variety of corrupted creatures.  Many are soloable, but not:
+** The [[Corrupted seafury cyclops]] summons and so is (nearly?) impossible for a [[Druid]] to solo.  Bring a [[Necromancer]] friend, as he is easy to fear kite.
+** The [[Corrupted Seahorse]] summons and so is very difficult for a [[Druid]] to solo. Bring (at least) a [[Torpor]] [[Shaman]] or small group.
+** The  [[Corrupted Brownie]] summons and so is difficult for a [[Druid]] to solo.
+* Must kill [[a black reaver]] (or buy a [[Jade Reaver]])
+* Must kill [[Venril Sathir]] (the version spawned by [[Venril Sathirs remains]]), which requires a small raid, or buy a multi-quested [[Pulsing Green Stone]]
+* Must kill [[Ulump Pujluk]] (requires a small group)
+* Must kill [[Faydedar]] (triggered version)
+
+== Checklist ==
+{{CheckboxList}}
+* '''Acquire a [[Shiny Tin Bowl]]''' ( '''Warning : You must be ready to face Dark Elfs, by starting East Karana part, Nuien trigger Teloa, who trigger Dark Elfs''' )
+:* Speak with [[Telin Darkforest]] in [[Burning Wood]] and say "I will take action" to receive a [[Worn note]].
+:* Spawn [[Faelin Bloodbriar]] in [[Greater Faydark]] and give her the Worn Note to receive [[Faelin`s Ring]].
+:* Give [[Giz X`Tin]] in [[Kithicor Forest]] Faelin`s Ring to receive a [[Dark Metal Coin]].
+:* Give [[Telin Darkforest]] in [[Burning Wood]] the Dark Metal Coin to receive [[Worn Dark Metal Coin]].
+:* Give [[Althele]] in [[East Karana]] the Worn Dark Metal Coin to receive [[Braided Grass Amulet]].
+:* Give [[Sionae]] (-2300, -930 in [[East Karana]]) the Braided Grass Amulet. (Amulet is returned)
+:* Give [[Nuien]] (-3650, 300 in [[East Karana]]) the Braided Grass Amulet. (Amulet is returned)
+:* '''CAUTION, THIS STEP SPAWNS AN ENEMY YOU MUST INTERCEPT''': Give [[Teloa]] (-3800, -2860 in [[East Karana]]) the Braided Grass Amulet, spawning the [[Dark Elf Corruptor]] and two [[Dark Elf Reaver]] at (-700, -1450) '''Note: They run really fast when spawned, almost SoW fast'''
+:* Kill the [[Dark Elf Corruptor]], loot [[Fleshbound Tome]].
+:* Give [[Althele]] in [[East Karana]] the Fleshbound Tome to receive [[Earth Stained Note]].
+:* Give [[Ella Foodcrafter]] in [[Misty Thicket]] the Earth Stained Note to receive a [[Shiny Tin Bowl]].	
+
+* '''Forage the [[Hardened Mixture]]'''
+:* Forage the following four items:
+::* [[Chilled Tundra Root]] from [[Everfrost]].
+::* [[Ripened Heartfruit]] from [[Greater Faydark]].
+::* [[Speckled Molded Mushroom]] from [[Innothule Swamp]].
+::* [[Sweetened Mudroot]] from [[Misty Thicket]].
+:* Combine all four items in the [[Shiny Tin Bowl]] to make a [[Hardened Mixture]]. 
+
+* '''Make a [[Runecrested Bowl]]'''
+:* Acquire an [[Ancient Pattern]]
+::* Speak with [[Alrik Farsight]] in [[Timorous Deep]] and say "I will take the artifact" to receive a [[Crushed Pot]].
+::* Give [[Farios Elianos]] in [[Felwithe]] South the Crushed Pot to receive a [[Grocery List]].
+::* Give [[Merchant Nora]] in [[Northern Felwithe]] the Grocery List to receive a [[Bag of Provisions]].
+::* Give [[Farios Elianos]] the Bag of Provisions to receive a [[Receipt]].
+::* Give [[Alrik Farsight]] in [[Timorous Deep]] the Receipt to receive an [[Ancient Pattern]].
+
+:* Acquire some [[Platinum Speckled Powder]]
+::* Forage a [[Rose of Firiona]] from [[Firiona Vie]].
+::* Hail [[Merdan Fleetfoot]] in [[Surefall Glade]], ask him "Who is Niera?", then hand him the Rose of Firiona to receive a [[Wood Painting]].
+::* Give [[a human skeleton]] in [[Frontier Mountains]] (behind the giant fort) the Wood Painting to receive a [[Silver Chained Locket]].
+::* Give [[Niera Farbreeze]] in [[Surefall Glade]] the Silver Chained Locket to receive [[Platinum Speckled Powder]].
+
+:* Acquire some [[Enchanted Clay]]
+::* Kill [[a black reaver]] in [[City of Mist]], loot a [[Jade Reaver]].
+::* Give [[Kinlo Strongarm]] in North Kaladim the Jade Reaver to receive [[Enchanted Clay]].
+:* Combine the [[Ancient Pattern]], [[Platinum Speckled Powder]], and [[Enchanted Clay]] in a [[Pottery Wheel]] to create a [[Runecrested Bowl]].
+
+* '''Trade Stones for an [[Elaborate Scimitar]]'''
+:* Give the [[Hardened Mixture]] and [[Runecrested Bowl]] to [[Ella Foodcrafter]] in [[Misty Thicket]] to receive a [[Softly Glowing Stone]].
+:* Create a [[Summoned: Firefly Globe]] (level 1 Druid spell, NO RENT, only castable at night: 7p - 4a).
+:* Purchase Scroll of [[Resurrection]] (level 49 Cleric spell).
+:* Give [[Venril Sathir Remains]] in [[Karnor's Castle]] the Summoned: Firefly Globe to spawn [[Spirit of Venril Sathir]].
+:* Give [[Spirit of Venril Sathir]] in [[Karnor's Castle]] the Spell: Resurrection to spawn [[Venril Sathir]].
+:* Slay [[Venril Sathir]] in Karnor's Castle and loot a [[Pulsing Green Stone]].
+:* Give [[Foloal Stormforest]] in [[Firiona Vie]] the Pulsing Green Stone and Softly Glowing Stone to receive a [[Warmly Glowing Stone]].
+:* Give [[Ella Foodcrafter]] in [[Misty Thicket]] the Warmly Glowing Stone to receive an [[Elaborate Scimitar]].
+
+* '''Cleanse Spirits'''
+:* Cleanse the Spirits of Antonica
+::* Kill [[corrupted wooly mammoth]] (level 30) in [[Everfrost Peaks]], loot a [[Chunk of Tundra]].
+::* Kill [[corrupted shaman]] (level 40) in [[Lake Rathetear]], loot [[Clean Lakewater]].
+::* Kill [[corrupted hill giant]] (level 40) in [[Rathe Mountains]], loot an [[Ancient Rock]].
+::* Give [[Withered treant]] in [[Northern Karana]] the [[Chunk of Tundra]], [[Clean Lakewater]] and [[Ancient Rock]] to receive a [[Warm Pulsing Treant Heart]].
+::* Give [[Yeka Ias]] in [[Southern Karana]] the Warm Pulsing Treant Heart to receive [[Cleansed Spirit of Antonica]].
+:* Cleanse the Spirits of Faydwer
+::* Kill [[Corrupted Seahorse]] (level 53) in [[Kedge Keep]], loot [[Kedge Cave Crystals]].
+::* Kill [[Corrupted seafury cyclops]] (level 52) in [[Ocean of Tears]], loot [[Ocean of Tears Seavines]].
+::* Kill [[Corrupted brownie]] (level 51) in [[Lesser Faydark]], loot [[Green Heartwood Branch]].
+::* Give [[Pained Unicorn]] in [[Lesser Faydark]] the [[Kedge Cave Crystals]], [[Ocean of Tears Seavines]] and [[Green Heartwood Branch]] to receive [[Gleaming Unicorn Horn]].
+::* Give [[Silox Azrix]] in [[Ak'Anon]] the Gleaming Unicorn Horn to receieve the [[Cleansed Spirit of Faydwer]].
+:* Cleanse the Spirits of Kunark
+::* Kill [[Ulump Pujluk]] (level 55) in [[Swamp of No Hope]], loot [[Froglok Essence]].
+::* Kill [[Corrupted Gorilla]] (level 47) in [[Emerald Jungle]], loot [[Green Tree Bark]].
+::* Kill the [[Corrupted barracuda]] (level 46) in [[Lake of Ill Omen]] and loot the [[Pure Lakewater]].
+::* Give [[Dolgin Codslayer]] in [[Timorous Deep]] the Froglok Essence (he will hand it back and despawn - 14h respawn) to spawn [[Faydedar]].
+::* Kill [[Faydedar]] in [[Timorous Deep]], loot [[Pod of Seawater]].
+::* Give [[Nekexin Virulence]] in [[The Overthere]] the [[Froglok Essence]], [[Pod of Seawater]], [[Green Tree Bark]] and [[Pure Lakewater]] to receive [[Cleansed Spirit of Kunark]].
+
+* '''Acquire a [[Nature Walkers Scimitar]]!'''
+:* Give [[Xanuusus]] in [[North Karana]] the Elaborate Scimitar and three cleansed spirits to receive the '''[[Nature Walkers Scimitar]]'''.
+
+{{End}}
+
+== Short Walkthrough ==
+
+'''Telin Darkforest'''
+
+It starts with {{NPC| Telin Darkforest}} (Level 55) in [[Burning Woods]]. He's hidden in a grove of thick trees near to the [[Skyfire]] zone and has been spotted at 3234, 2871. Use tracking to find him, and invis to get through the zone unharmed.  Once you reach him you may want to bind, to save yourself a trip coming back later. Hail him.  Edit (10 Sep 2022): This is a bad idea if you die, as there is a roaming sarnak who will camp your corpse if you respawn on him.
+
+==== Faction Issues ====
+
+
+If Telin responds with "I can not trust you with such important information yet," changing into wolf form may raise your faction enough to start the quest. If he will not respond even with wolf form, you will need to work on your faction.  Specifically, if you have done any of the following:
+
+* Participated with any battle in the Plane of Growth
+* Killed the Millers in Qeynos Hills
+* Killed Holly Windstalker in Qeynos Hills
+* Killed Druids at a druid circle
+* Killed Treants
+
+Then you will most likely have faction issues to correct in order to complete the epic. Also, if you are a halfling or human worshipping Karana you may also have some faction work to do (no more than 20 stacks of Muffins, see below).
+
+It's tedious, but it can be done.   ''As of 2017-07-12, I was able to receive the worn note in wolf form without any faction work. (55 Halfling Druid) (I just did the turn in on a 47 Halfling worshipping Karana with no faction work and not in wolf form - 11/28/2017)''
+
+==== Getting the Note ====
+
+The keyword Telin Darkforest is looking for is "action". /say anything with "action" in it.
+
+He will give you 'a worn note'. If he doesn't, then your faction may be too low. Faction can be built up fast by doing the "Muffin Quest" ([[Muffin for Pandos]]) in Freeport. Also, you must be of level 50 or higher before he will speak to you as well. [This may not be true - I was able to have him speak to me on my level 46 Woodelf druid. Does NOT work with a level 46 Halfling Druid. **Note: Was able to turn in 18 stacks of Muffins to get to Amiable and Telin gave me 'a worn note' on 46 Halfling Druid of Karana (I just did the turn in on a 47 Halfling worshipping Karana with no faction work and not in wolf form - 11/28/2017)]
+
+*note: As a 47 halfling druid, went from apprehensive to amiable when in wolf form. Received the note. 7/8/22
+*note: Level 44 halfing druid (Karana) initially apprehensive and no dialog.  In wolf form, amiable, but got the message "You are not yet powerful enough to complete this task..."  Likely requirements are level 46 and faction.
+*note: Level 46 Halfling Druid of Karana.  /con Apprehensive (I've never killed anything on the "bad" list).   Amiable in wolf form.  Got the note.  4/28/25.  I was here at 44, and was told "You are not yet powerful enough to complete this task..."
+
+====Faelin Bloodbriar====
+
+Next, [[Faelin Bloodbriar]] in [[Greater Faydark]]. She spawns around 1513, 561 or south-west of the [[Crushbone]] zone with a 7 minute respawn. She has an orc pawn placeholder, so kill every pawn you see to make her spawn. Once she spawns, make sure you have casted [[Spirit of the Wolf]] on yourself, because she runs constantly and won't stop when you hail her. Give her the note (and keep running after her) and you'll receive a ring. After giving her the note she despawns.
+
+====Giz X`Tin====
+
+Go to [[Kithicor Forest]] and track [[Giz X`Tin]], a dark elf who will not attack you. He can be found on the path to [[Highpass Hold]], but is usually closer to the [[West Commons]] zone than [[Highpass Hold]]. Be very careful of the other dark elves in this zone. Give him the ring and he gives you a [[Dark Metal Coin]]. After you hand him the ring a level 50 [[Teir`Dal Reaver]] spawns and attacks you. He has tons of HP, backstabs, and summons; don't try to solo him. Have SoW on you so that you can run away. (4 hour repop on this mob, there is also a possibility that multiple Druids and Rangers can turn in back to back but it seems there is a very short time window to do so, plus the risk of the Teir`Dal Reavers is present with each turn in)
+
+====Althele====
+
+Go back to [[Telin Darkforest]], turn into wolf form if necessary, and give him the Coin. He will not accept the coin at apprehensive - he must be amiable. He will give it back to you as [[Worn Dark Metal Coin]] and tells you to find [[Althele]]. She is in [[East Karana]], just west of the barbarian fishing village, near the shore at -3658, -1593. Once you start this section, you begin a chain of events, so don't do it until you are ready to finish the job.
+
+Give her the [[Worn Dark Metal Coin]] and receive a worn amulet.
+
+==== Sionae, Nuien, and Teloa ====
+Give this amulet to [[Sionae]] (-2300, -930) (She can be standing either on the East or West side of the farm located there, so check both sides), then to [[Nuien]] (-3650, 300 - Spawns near the gnolls, out of tracking range) and finally to [[Teloa]] (-3800, -2860 - Spawns near the waterfall). [[Teloa]] will say to follow her, but don't. Sionae, Nuien and Teloa will each run to join Althele. A [[Dark Elf Corruptor]] and two Darkelf Reavers (all around level 50) will spawn around (-700, -1450) (it will take a minute or two before they spawn after turning in to Teloa, there will be a zone message from the Corruptor when they do).  The trio will run south toward this gathering of druids and be summarily decimated and the corpses will poof.  '''Therefore you or your party must wait for them or intercept them before they get to there. If they poof, you must start from the beginning''' (it is suggested to stand near the farm where Sionae was located and just look north up the mountain to watch for them, invis and them run up next to them when you see them and Harmony off to the side to not aggro, then pull away the Corruptor). Also keep in mind these inkies are Shadow Knights, so don't be too close to their spawn point or you will be harm touched (To solo as a Druid in the 50s, Buff HP, MR, DR, FR, SoW, and Regen and Root Rot after peeling Corruptor away with Harmony).  If you do choose to engage all three, a charmed pet can be useful to absorb harm touches.  Most of the animals in the zone are lower lvl, but they're still useful for something.
+
+'''Again, you must kill the Dark Elf Corruptor BEFORE he reaches the druids or you have to repeat the entire coin part again. Also, if the other dark elves reach the druid and kill them, the Corruptor will despawn on you.'''
+
+You can probably solo this at 50, but bring a friend just in case. Harmony the Corruptor, pull with snare, root, dot, then back out of spell range to avoid its necromancer spells while your dots do their thing.  If the reavers kill you you will have to repeat the first part of the quest.
+
+If the Reavers kill the druids (which, again, won't happen), just wait one hour of real time (not EQ time) and [[Althele]] will spawn again. Give her the tome and she gives you an [[Earth Stained Note]]. She then despawns for one hour so if you are doing back to back fights for multiple druids, don't turn any books in until you have all got one. Bring the [[Earth Stained Note]] to [[Ella Foodcrafter]], a Halfling running around in [[Misty Thicket]]. Like Faelin, she constantly runs, so you have to chase her. Give her the [[Earth Stained Note]] and she will tell you that she needs a mixture. She will give you her mixing bowl. It is a Container so you need a free slot in the Inventory. She also mentions some kind of ancient bowl that she needs.
+
+==== The Hardened Mixture ====
+
+You must forage four items that you have to combine in Ella's mixing bowl:
+
+* A [[Chilled Tundra Root]] from [[Everfrost Peaks]]
+* A [[Sweetened Mudroot]] from [[Misty Thicket]]
+* A [[Speckled Molded Mushroom]] from [[Innothule Swamp]]
+* A [[Ripened Heartfruit]] from [[Greater Faydark]]
+
+You need a forage skill of over 100 to do this, so I hope you've been building up your forage skills.
+
+Go to these zones, you can forage these items anywhere within the zones, find a nice safe space and hit forage continuously. The four items look like edible foods, but you'll get a message reading "You have foraged something that does not look edible." This can take several hours so be prepared to be very bored. When you get the items, combine them in the bowl and you get a 'Hardened Mixture'. After this you will no longer need the mixing bowl (You may want to keep the bowl if you intend on Multi Questing this part of the epic to an alt or another player).
+
+==== The Runed Bowl ====
+
+Now go to the Chess Island in [[Timorous Deep]]. Take the Barrel Barge (boat) from the dock in Oasis of Marr , which will take you to Timorous Deep. Cast Egress to transport yourself to the Chess board island, or cast levitate on yourself to make the run. Use track to locate Alrik Farsight. He's at about -6500, 2000, but does wander. Egress is a level 52 Druid spell, and Succor is a level 57 group.
+
+You say, "Hail, Alrik Farsight", "How do you make an ancient bowl?" and "I can take the artifact." He gives you a crushed pot and sends you to Felwithe. You will soon return here but, unfortunately, you can't bind on the island.
+
+Hail Farios Elianos in Felwithe South before you give him the crushed pot. Farios is in the merchant building near the caster's guild. When you enter Felwithe South, you'll see the entrance to the merchant straight ahead, whereas the entrance to the caster's guild is to the left.
+
+You must con amiable to him. If your faction is too low, you can build up faction fast with the "[[Bat Wings|Batwings Quest]]" in Felwithe South. [Please note, Farios Elianos conned kindly to my wood elf druid, but would not speak to her when hailed. This didn't affect the progress of the quest, as I was still able to turn in the crushed pot to receive the grocery list.]
+
+Once Farios cons amiable and talks to you, give him the pot and you receive a grocery list. The dialogue with the NPCs for this segment is pretty funny. He will give you the receipt for the bowl if you do a job for him. Bring this grocery list to [[Merchant Nora]] in the Shop of All Halos in [Felwithe North]], which is near the cleric guild. She gives you in return a bag of Provisions. Bring it to Farios and he gives you the receipt for the ancient bowl. Head back to [[Alrik Farsight]] in [[Timorous Deep]]. He will give you an [[Ancient Pattern]] when you give him the receipt.
+
+The pattern says that you have to combine it with a piece of enchanted clay and [[Platinum Speckled Powder]] in a pottery wheel. No skill in pottery is required.
+
+[[Platinum Speckled Powder]] can be obtained through the following sub quest:
+
+Forage a [[Rose of Firiona]] in [[Firiona Vie]] and give it to [[Merdan Fleetfoot]] in [[Surefall Glade]], a male ranger in the back of the zone, near the water. In return he will give you a [[Wood Painting]]. You may find it beneficial to bind your self in Surefall at this point to save time running back from [[Frontier Mountains]]. The Wood Painting that you get from Merdan has to be brought to the human skeleton (Level 40) lives in [[Frontier Mountains]]. It can be found at (-261, -574) behind the giant fort (along the outside of the fort's West wall).
+
+Invis yourself to be left alone by the wandering mobs. Look for "A Human Skeleton" on track. Give him the painting and he will crumble, and you'll have a silver chained locket in your inventory.
+
+Gate back to [[Surefall Glade]]. Give the locket to [[Niera Farbreeze]], a human female in banded armor, also near the water but close to the druid guild building. She will hand you the [[platinum speckled powder]].
+
+[[Enchanted Clay]] can be obtained through [[Kinlo Strongarm]] in Kaladim's EverHot Forge. If you ask him "what mud" and "do it for me" he will tell you that he would like to have a colored axe for his service. He wants a [[Jade Reaver]] that can be found in the City of Mist off of [[a black reaver]] who is about level 52. This is not easy at all. The [[Jade Reaver]] is a rare drop and the Black Reavers are a real pain to take down. You will need at least one full group of 50+ players if not two, and one must be a rogue with high lock picking skills.
+
+Hand Kinlo the axe and you get the enchanted clay. If you hunted dwarf citizens in Butcher, invis yourself and head to the forge. You are able to do a sneak turn-in from behind if Kinlo himself is KOS to you. The merchants, thankfully, are on a different faction table. Just go to the Everhot Forge and hand Kinlo a [[Jade Reaver]] to get the clay. Now combine the pattern, clay and powder in any pottery wheel to make the [[Runecrested Bowl]].
+
+==== The Stones ====
+
+Go Back to [[Misty Thicket]] and hand [[Ella Foodcrafter]] the [[Hardened Mixture]] and the [[Runecrested Bowl]]. She will make for you a [[Softly glowing stone]] from it. Ella tells you to find one such as yourself. For the Druids this means to seek out [[Foloal Stormforest]] in [[Firiona Vie]].
+
+Foloal is a half elf on the wall that circles the city of [[Firiona Vie]] at the north end. Ask her "are you one such as myself?", "what answers?" and "what about [[Venril Sathir]]?" She tells you to bring her the stone you already have from Ella and the gem that can be found on [[Venril Sathir]]. Kill him to get the [[Pulsing Green Stone]].
+
+You can kill [[Venril Sathir]] in [[Karnor's Castle]], but why? Venril is a very tough shadow knight. He is only killed by the strongest guilds or big raids because he is level 55, hits for 300 FAST, has a 1000+ life suck spell and has three personal clerics that heal him whenever he gets hurt. This guy is extremely hard so you might want to be in a good raid guild to do this part.
+
+Better thing to do is let some uber guild take him down. He gets killed for his loot all the time. His remains will spawn in 24 hours, or less. When you see [[Venril Sathir]] Remains on track, get your friends together, fast. The Remains will be indifferent to you and just stand there. Hail him and he will respond.
+
+First, conjure a Firefly Globe. [[Dance of the Fireflies]] is a level 5 druid spell that you may not have even bought, but you'll need it for this. Hand him the globe. A new VS will spawn. Then give him the level 49 cleric [[Resurrection]] spell, which you can buy at any cleric guild. He will attack you. Step back and let your tanks take him out. Thankfully, this new VS is not as brutal as the original, but he's no cakewalk either.
+
+The remains will drop two stones, called [[Pulsing Green Stone]]. You can use either stone. 
+
+Take the [[Softly glowing stone]] and [[Pulsing Green Stone]] to [[Foloal Stormforest]] a female half elf in [[Firiona Vie]]. She will give you a [[Warmly Glowing Stone]]. This is the time where the quest splits up into the Druid and the Ranger parts. Up to now, they've been identical.
+
+Foloal tells you to take the stone and walk your path.
+
+The Druid's path leads back to [[Ella Foodcrafter]] in [[Misty Thicket]]. Give her the stone and you will get the [[Elaborate Scimitar]] (10/30 9 wis 10 mana 5 sv poison and disease). Now you have one of the four final pieces and a pretty good weapon in its own right.
+
+She asks you to collect the Cleansed Spirits of Antonica, Faydwer and Kunark and hand them along with the scimitar to Xanuusus.
+
+== The Cleansed Spirits ==
+
+In almost all cases with the cleansed spirits, on all three continents, you will have to kill placeholders before a Tainted animal will spawn. Once you kill the Tainted, a Corrupted version may or may not spawn. It’s always pot luck and you may have to kill several Tainteds to get one Corrupted. In most cases, a Corrupted will spawn immediately after the Tainted is killed, there’s no delay, and it will spawn from the corpse of the Tainted, not at the original spawn spot. So a lot of patience is required. The good news is that when the Corrupted spawns out of the Tainted, some of them won't agro on you, so you have a few seconds to regroup before attacking again. But don't sit around or it will depop.
+
+=== The Cleansed Spirit of Antonica ===
+
+Go to [[Northern Karana]] and find a [[withered treant]]. It is at the far north end of NK, at the base of a mountain wall. It’s very close to Xanuusus, who gets the three Cleansed Spirits and the Scimitar when you are done. Hail him and ask him "What Sickness" and he will respond that he wants you to cleanse Antonica of its sickness. He means to kill three things.
+
+The first one is the Corrupted Mammoth. He is below level 30, spawns in Everfrost Peaks (try 837, -2537 with 6 minute timer one of the calves/wooly mammoths should be a solid spawn location around there, but there will be near constant skeletons, goblins and orcs roaming by), pops near Permafrost zone line and Mammoth Calves are his place holder. I got this one while hunting Icy Orcs at Redwind's temple. From level 25 to 30 you can camp the Icys and get good XP, all the taking out Mammoth Calves to make him pop and keeping an eye on Tracking for the Tainted Mammoth. When you see the Tainted, take it out and immediately a hopefully a Corrupted Mammoth will spawn. Kill it and a Chunk of Tundra will drop. That's what you need.
+
+The second monster is the Corrupted Aquagoblin Shaman. He is mid level 30 in Lake Rathe with side spawns on tops of the underwater-tower. There is a female dark elf named Deep for the Cleric Epic Quest. Ignore her and she’ll ignore you. Do this in wolf form so the other goblins won't agro on you. Some people have chosen to fight under water, but if Enduring Breath wears off you could be in a heap of trouble. You are better off kiting the goblins at the top of the tower to the surface, especially since these gobs are clerics and cast some strong cleric spells. They can dish out a serious hurting, plus they can heal themselves. Kill the gobs at the top of the tower only, don’t bother with the ones around the base. Eventually a Tainted Goblin will spawn. Kill the Corrupted and get a Clean Lakewater item. It looks like a globe of water. (Note that if you try to use the tower's inner corners to prevent water push back from mob hits to mitigate casting interrupts, the corners will auto-duck you)
+
+The third one creature is the Corrupted Hill Giant in Rathe Mountains. You want to hunt in the HG area south of the hill with the Guard Tower in Rathe, where Cyclops can also be found. The same process applies here. Kill HGs around the tower and a [[tainted hill giant]] will spawn. Kill it and hopefully a [[corrupted hill giant]] will spawn. When it dies, loot an [[Ancient Rock]] from it.
+
+(This turn in requires 46+) Give the 3 items looted from all the Corrupted monsters to the Withered Treant in NK to receive the [[Warm Pulsing Treant Heart]].
+
+Go to [[Yeka Ias]] (2330, -2340) in South Karana, who is far to the east of the bridge and along the water, and give him the heart. He will give you the Cleansed Spirit of Antonica. This is the easiest of the three spirits.
+
+=== The Cleansed Spirit of Faydwer ===
+
+You will meet a [[Pained Unicorn]] in [[Lesser Faydark]]. He is on either Faydark Champions or Soldiers of Tunare faction (probably Soldiers, as it is the druid faction. It is one of the factions raised by the [[Muffin for Pandos]] quest).
+
+Ask him "What Corruption" and he will tell you, "Pained Unicorn tosses its head back, drool falling from its mouth. The priests of the sick, channel filth and sickness into the lands. Too late did we notice to stop them. Here, in the ocean, and in the underwater city of old. Go to those places and find the corruptions. Bring them to me." Collect for him the items looted from the Corrupted Seahorse, the Corrupted Cyclops, and the Corrupted Brownie.
+
+The first monster, the Corrupted Seahorse is located in Kedge Keep. He is around level 52 and needs 1-2 strong groups to be killed. It's passed the area where Estrella and Undertow, the named Seahorse, spawn. This guy hits for about 141 damage and is a cleric, so he can complete heal himself. Bring clerics and barbarians to stun him when he starts to cast a spell. KK is a rough zone, bring lots of scales for Enduring Breath or get an EB item like a fishbone earring. You MUST bring an enchanter for crowd control because there are a lot of crowds.
+
+The second creature is the [[Corrupted seafury cyclops]]. You need 3-4 high level people to take this one out. It spawns on an island west of Sister Island in OOT. Take the boat from Freeport, get off on Sister Island, and head west. The first island is the one with a mage spell vendor in a tower.
+
+The next island to the west is Sea Fury island. There's around a half dozen Sea Furies (cyclops). You can pull them to the shore or other island until a Tainted spawns. The best tactic is fear kiting because they hit hard and are around level 52. The [[Corrupted seafury cyclops]] also summons. The item dropped is Seavines.
+
+The third creature is the Corrupted Brownie. He is a level 51 druid and can be taken out by a full group of mid level 40s, especially with a necro or enchanter to fear kite. His placeholder is a Brownie Scout. All Brownie Scouts spawn at location 0,0. He pops every 7 minutes or so. Camp there and kill every brownie that spawns. The Tainted will spawn at the same location. The Brownie is a druid so get your magic resist up and be ready to get hit hard.
+
+Now head back to the Unicorn. The Unicorn will give you a gleaming horn for the 3 items looted from the corrupted. This has to be handed to the gnome Silox Azrix in Ak'Anon to get the Cleansed Spirit of Faydwer. He is near the mines on the left side of the green river. There is another green gnome near him but you can do this part with superior camouflage on you if you are KoS or otherwise disliked there because you need no faction for Silox.
+
+=== The Cleansed Spirit of Kunark ===
+
+[[Ulump Pujluk]], a named Froglok in [[Swamp of No Hope]] tells you to give his own essence along with the 3 corrupted things to the gnome that hurts the land. His location is -108, -1762. He is around level 55+ and hits for over 200 damage with 32000 hitpoints and almost 100% magic resist. The only spell that works is the wizard Lure spell. You should have 2 groups with 4-6 melees and 2-4 healers to kill Ulump (was able to take him down with 2 lvl57 monks fully buffed and a cleric), casters with pets if you can, and damage shield the tanks. He drops the Froglok Essence.
+
+The 3 corrupted mobs of Kunark are the Corrupted Gorilla, Corrupted Barracuda, and the Dragon Faydedar. The Corrupted Gorilla is mid-40s and spawns in the Emerald Jungle in the northern part of the plateau. Take the giant stairs on the western side of the zone and then head north from the stairs, to the zone wall. Tottering Gorillas are its placeholder. Only pull Tottering Gorillas, the rest are pointless. The best way to get the gorilla is to use invis to get around, track them down and pull to the northern zone wall away from other mobs (If you want a relatively easy camp spot, the area -2207, 4281 is good for solo as the NW corner of zone tottering gorillas will path to this point and then roam back to the North. Note that the pathing takes a while, and that gorillas will assist each other if close enough. I would kill all gorillas that roam to this spot, just in case). Make sure that Severilous, a very powerful dragon, is not around. He will agro if you are in wolf form. The gorilla can be feared with Repulse Animal. He drops the Green Tree Bark.
+
+The second monster, Corrupted Barracuda, is found in the main lake of Lake of Ill Omen at around -900, -900. Same old story here, kill the placeholder, a Deepwater Barracuda and a Stuffed Barracuda, until the Tainted spawns. Placeholders are on a 60 second timer. Kill him and get the Pure Lakewater.
+
+The last, final and toughest mob in this whole ordeal is the dragon [[Faydedar]] in Timorous Deep. He's a really small for a dragon and looks like a lowland basilisk in Butcherblock, but don't be fooled. He is at least level 53 and hits rapidly for up to 250 damage and has major magic resist. 
+
+The spot to spawn his triggered version: the entrance is at approximately -11300, -3500. It's a large mountain range with a hidden cove. On the far eastern side is an underwater cavern. Swim in and you come up in an inside ring, with yet a second circular area to enter, like a circle within a circle. The second entrance is on the north side of the inside ring. So when you get inside, go right and follow the inside wall, so it's on your left. There is a second underwater entrance that will bring you into the lagoon.
+
+When you go to trigger him, have the casters hiding in the second tunnel that leads into the oasis. This will keep them out of range of the AoEs and Dragon Roar. Take the tanks with you to the shore where you will see a dwarf fisherman named [[Dolgin Codslayer]]. Give him the Froglok Essence you got from Ulump. Dolgin will give it back to you and depop (he has a 12 hour respawn). This triggers Fay. Have the tanks melee him down to 80 or 70 percent, then bring in the casters from the tunnel to nuke him and start healing the tanks. His magic resists are very high, but cold spells and wizard lures can stick, as will Tashan. But to be honest, lots of tanks and lots of clerics really are the tactic here. Casters won't be much help except wizards for lures and enchanters to haste the tanks.
+
+The tactics are: load up with about four or five useless, dummy buffs like see invisible, save vs. poison, etc. Then put on your good buffs. He will dispel you several times, so let the garbage buffs go first. You need as high fire and magic resist as possible, those are his main weapons. Get all the fire and magic resist gear you can and have a bard to twist Psalm of Mystic Shielding and Psalm of Cooling. Also, remove SoW and turn run to walk. He will fear people. If you are SoWed and running you will go quite a distance. Never, under any circumstances, should a caster sit to med when they go OOM. You will be summoned and killed. Last, never heal yourself. Have someone else do it.
+
+Kill him and loot the [[Pod of Seawater]].
+
+Hand the 4 items to the Gnome Nekexin Virulence in Overthere. He is by the water at the far north end of the zone, to the east of the evil outpost. Approach from the far east, heading west. The evil outpost, with those damned goons, is on the far west of the zone by the water and you don't want to go near it. Give him the Froglok Essence, Pure Lakewater, Green Tree Bark and Pod of Seawater. He will depop and give you the Cleansed Spirit of Kunark. (His respawn time after depop is 2 hours).
+
+=== The End ===
+
+Hand the 3 'Cleansed Spirits' and the scimitar to [[Xanuusus]] the Treant in North Karana.
+
+Congratulations on your {{:Nature Walkers Scimitar}}!
+
+== Walkthrough with Dialogue ==
+
+Telin Darkforest may be found at 3240, 2862, -155 in [[Burning Woods]].
+
+You say, 'Hail, Telin Darkforest'
+
+: Telin Darkforest looks at you serenely. 'Hello, wanderer.'
+
+You say, 'What are you doing here?'
+
+: Telin Darkforest says 'Mighty this place must have been, once. Now scarred by hatred and suffering. I have been sent here seeking answers to problems not yet understood.'
+
+You say, 'What answers?'
+
+: Telin Darkforest considers you for a few moments before speaking. 'A great evil walks across the land. The hand of some demon we don't yet know is twisting and polluting forests.'
+
+You say, 'What demon?'
+
+: Telin Darkforest says 'Mighty this place must have been, once. Now scarred by hatred and suffering. I have been sent here seeking answers to problems not yet understood.'
+
+You say, 'What evil?'
+
+: Telin Darkforest says 'If I knew that, I wouldnt be here looking for answers. I would be elsewhere, looking for solutions. For now, I suspect much but know little.'
+
+You say, 'What do you suspect?'
+
+: Telin Darkforest looks at you and sighs. 'The lands are changing. Beasts, large and small, have turned upon those who watched over them. Druids and rangers, worshippers of both Karana and Tunare, have reported a feeling of hatred throughout their once peaceful lands.'
+
+You say, 'Perhaps it is Innoruuk?'
+
+: Telin Darkforest raises his eyebrow slightly and a subtle look of surprise creeps across his face. 'Innoruuk? Perhaps. Aye. It must be. Perhaps I knew and didn't want to consider the possibility. It must be this though, and some action will have to be taken.'
+
+You say, 'What action?'
+
+If your faction standing is too low with Faydarks Champions (high amiable required), you can build it up by doing the [[Muffin for Pandos]] quest in Freeport.
+
+If it is high enough, you will see:
+
+: Telin Darkforest looks at you consideringly and then scribbles something quickly on a small, worn paper. 'You seem powerful enough. Perhaps you can help those who seek to protect nature's peace. Take this note. Deliver it only into the hands of Faelin Bloodbriar. Where you will find her, I cannot say. She is a friend of mine and a wanderer. She has been seen from one end of the lands to the other. Seek her out, and quickly.'
+
+You receive a Worn Note (identifies as "Note from the hands of Telin").
+
+Find Faelin Bloodbriar in the [[Greater Faydark]], a rare spawn at +1500, +500, with an orc pawn as placeholder. She roams the northern part of the zone near Crushbone. Give her the note.
+
+: Faelin Bloodbriar reads the note carefully and growls to herself. 'Bad news, eh? Take this ring. There is one elf, dark elf even, who we must find in order to gain insight into Innoruuk's plans. Giz X'Tin, he goes by most commonly. Kithicor seems to be his favorite haunt and most likely you will find him there. Don't ask how I know him. Just take the ring as my sign to him and he will speak to you. We don't need to speak again, so don't seek me out, just go to Telin. I must leave to investigate these events.'
+
+You receive Faelin's Ring (identifies as "Personal Ring of Faelin"). Faelin despawns.
+
+Find Giz X`Tin roaming the path in [[Kithicor Forest]], but he may be found at +1501, +940. Give him the ring.
+
+: Giz X'Tin flips you a coin after he recognizes the ring. 'It seems we have a mutual 'acquaintance.' The coin repays an old debt. You don't have to worry about what that is. Luckily, Lord Innoruuk has informed me of your coming and your desires. Fortunately, I have all the answers you require right here at the end of my friend's blade. I think I'll be paying my old 'friend' a visit.'
+
+You receive a Dark Metal Coin (identifies as "An old coin"). A level 50 Teir`Dal Reaver spawns and attacks. You can outrun it with SoW if required, or kill it (no faction hits). Once it's dead:
+
+: Teir`Dal Reaver says 'Lord Innoruuk, I have failed you. Forgive me and spare me from service to your undead minions in this world!'
+
+Go back to Telin Darkforest and give him the coin.
+
+: Telin Darkforest scratches the coin as he looks at it. 'Faelin sent you to Giz? Surprising. This coin speaks to the outcome of your talk. He would hardly give this bit of metal to a stranger, but that's a story for a different time. So, you say Giz did confirm Innoruuk's involvement, and something about undead minions? Here, take this coin back. Find Arch Druid Althele in the Karanas and show her that. Tell her what we have discussed. She will look kindly on an ally in this matter.'
+
+You get a Worn Dark Metal Coin back (identifies as "An old coin, worn through handling"). Althele may be found in East Karana at -3650, -1600.
+
+You say, 'Hail, Althele'
+
+: Althele says 'Hello, friend. Beautiful is what I would call such a day normally, but lately? I sense that something is [out of balance].'
+
+You say, 'What is out of balance?'
+
+: Althele says 'I sense something foreboding, young one, but you should think nothing of it. The sons and daughters of nature will be able to deal with this problem.'
+
+Give her the coin.
+
+: Althele looks at the coin and nods gravely at you as she slips it into a fold of her clothing. 'I see. The story of this coin speaks much to me as do the words you have given me. Telin sent word that you would arrive. The tidings you bring are ill indeed. Here, take this amulet and find Sionae. She is nearby. We will speak more on this matter when all are present.'
+
+You receive a Braided Grass Amulet (identifies as "Token of Gathering").
+
+You begin tracking Sionae.
+
+Give her the amulet.
+
+: Sionae says 'I see that the time has come. Take the amulet and give it to the third of our kin, Nuien. I will meet you at the gathering.'
+
+You get a Frayed Braided Grass Amulet (identifies as "Token frayed by use").
+
+You begin tracking Nuien.
+
+Give her the amulet.
+
+: Nuien says 'So be it. Do as you have done before and find the next. Teloa is the last.'
+
+You get the amulet back.
+
+You begin tracking Teloa.
+
+Give her the amulet.
+
+: Teloa begins walking toward the gathering spot. 'Follow, friend.'
+
+When Teloa gets to the group:
+
+: Althele says 'Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.'
+
+* Teloa begins to cast a spell.
+* Teloa breathes slowly as tendrils of power emanate from her body and race along the ground.
+* Nuien begins to cast a spell.
+* Nuien growls as his power seeps into the earth.
+* Sionae begins to cast a spell.
+* Sionae shivers as her power flows into the air above the gathering.
+* Tholris begins to cast a spell.
+* Tholris breathes quickly and sweats as he channels his spirit into the sky.
+
+: Althele snaps her head towards you. 'Innoruuk's brood is upon us. Go, find the spawn of hatred before they reach this point and destroy them!'
+
+: Dark Elf Corruptor shouts 'We come for you, fools. Your reign of weakness over the powers of the land comes to an end now!'
+
+The last step is the trigger for the Dark Elf Corruptor and two Dark Elf Reavers (all about level 50) to spawn on top of the hill east of the river, at -1500, -1000. The Corruptor will despawn after 10 seconds if not attacked. The Reavers will attack and try to kill the four druids (Althele will respawn in about an hour); if they succeed, the Corruptor will despawn. Kill the Corruptor.
+
+<div class='facblock'>
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Primordial Malice]] got better.
+</div>
+{{YouGainExperience}}
+
+--You have looted a Fleshbound Tome.--
+
+Give the tome to Althele.
+
+: Althele hands the book to Tholris who reads through it with lines of concern etched on his face, then whispers into her ear. 'Dire news, indeed. This cannot be allowed. I must keep this book but you, ______, must not allow Innoruuk, to seed the land with his hatred and filth. You have only just begun your quest. The path you are guided upon will be difficult, if not impossible, but someone must finish it. Please, take this, read of it, follow its instructions. Tunare bless your path and Karana watch over you.'
+
+You receive an Earth Stained Note (identifies as "Note from Althele"), which reads:
+
+ We cannot speak again. Our circle is now known and must seek sanctuary.
+ In case this note were to fall into others' hands, I cannot tell you plainly the next steps of your task.
+ All I can say is to seek she who walks the path of the mother, she who walks the lands in service to her kin.
+ Give her this note and she will know. Althele then despawns for one hour so if you are doing multiple druid fights, make sure everyone gets their corrupter kills in before anyone turns in their book to Althele.
+
+The one you must seek is Ella Foodcrafter, who wanders Misty Thicket. Make sure to have an inventory slot free.
+
+You say, 'Hail, Ella Foodcrafter'
+
+: Ella Foodcrafter says 'Hi, hi. I've got a lot to do, many mouths to feed, some filthy goblins to smack. If you don't need me for something, please let me go back to my work. Karana watch over you.'
+
+Give her the note.
+
+: Ella Foodcrafter says 'Hmmm. I've been waiting for someone to bring me this. I'm sorry such a young one as you has taken up this task. Maybe the sky god blesses ya though. Aye, ya have that look in your eye. Our task is to focus the blessings of the gods and cleanse the filth from the land. I have two tasks for ya.'
+
+You say, 'What two tasks?'
+
+: Ella Foodcrafter says 'Well, ya ask before ya act. That's a good sign. What I need isn't easy to find. First, I need a mixture. Plain sounding enough but it's a special one. Cleanses the mind and focuses the earth's energies into a forest walker's mind. I don't know how to make it. I don't even know what it's called. I merely know it exists and we'll be needing it for our task. When ya do find how to make it ya can mix it in that bowl. Keep it when youre done, it's a good bowl.'
+
+You receive a Shiny Tin Bowl.
+
+You say, 'What is the second task?'
+
+: Ella Foodcrafter grins. 'Good, ya didn't run off without finding out what else ya need to do. Second, I need a special type of bowl. An ancient type of bowl, which strengthened the food placed inside it, once made by the elves of old. Again, I cannot tell ya how it is made for the making was lost to the ages. Seek this knowledge and these items out in the lands. Come to me when ya have found both.'
+
+'''The Hardened Mixture'''
+
+You must forage four items and combine them in Ella's mixing bowl:
+
+# [[Chilled Tundra Root]] from Everfrost Peaks (identifies as "Root frozen rock hard by the tundra")
+# [[Sweetened Mudroot]] from Misty Thicket (identifies as "Sweet Root from Misty Thicket")
+# [[Speckled Molded Mushroom]] from Innothule Swamp (identifies as "Old molded mushroom")
+# [[Ripened Heartfruit]] from Greater Faydark (identifies as "Fruit ripened perfectly")
+
+Combine the items in the bowl to craft a Hardened Mixture (no-fail combine?).
+
+'''The Runed Bowl'''
+
+Go to the Chess Island in Timorous Deep (Succor will take you there once inside the zone) and seek Alrik Farsight near -5875, +2845. You must /con at least amiably to the Keepers of the Art to him for him to talk to you.
+
+You say, 'Hail, Alrik Farsight'
+
+: Alrik Farsight says 'Ah. Hello there, adventurer. Come to search for ancient artifacts with Fizzlebik and myself?'
+
+You say, 'What ancient artifacts?'
+
+: Alrik Farsight says 'Oh. All types of things. This area is great. So many artifacts and remains of things all over. It's starting to fall into the pattern of things.'
+
+You say, 'What ancient bowls?'
+
+: Alrik Farsight rummages through his tattered bag and throws aside a towel. 'Too many towels. Oh well, someone told me they were good to have once. Here it is, a bowl pattern. Interesting bowl. Looks almost like a magical bowl but I'm no potter. You need it, you say? Well, it is interesting. Part of my research here is for the wizard guild in Felwithe. I'm sure they'd put a high price on this one, the enchanters guild being so interested in trading for magical paraphernalia and all. Of course if you helped me out on a chore I have, I'd be happy to give it to you. I need to deliver an artifact to the guild and I'd much rather stay here exploring. If you wish, you can take the artifact and return with the receipt and I'll give you the pattern.'
+
+You say, 'I will take the artifact.'
+
+: Alrik Farsight says 'Hah! Okay, then. Here take this to Farios Elianos in Felwithe. He will give you the receipt.'
+
+You receive a Crushed Pot (identifies as "Ancient crushed pot"). Seek out Farios Elianos in Southern Felwithe at +380, -845. If he won't respond to you, you must build up your faction with Keepers of the Art. Give him the pot.
+
+: Farios Elianos says 'Eh? What is this? A cracked earthen pot? Why in the nine hells would I need a crushed pot? Perhaps I could use it to not hold water! Why did you even bother me with this? Are you mentally deficient? Apparently. Oh, well, you're just a servant boy. Well, then, we'll make you useful, if just a little. Take this shopping list and go get my groceries. Take it to Nora in the tavern. She'll know what I need.'
+
+You receive a Grocery List (identifies as "List of Provisions"). Take it to Merchant Nora in Northern Felwithe at +145, -415, inside the Shop of All Holos.
+
+: Merchant Nora says 'You hardly look like the type of errand runner Farios usually sends out to fetch his groceries but here they are. I hope he chokes on them. Oh, and tell him he still owes me five gold for his last order!'
+
+You receive a Bag of Provisions (identifies as "Bag of Groceries"). Bring it back to Farios.
+
+: Farios Elianos says 'Ah, good. Here's a few copper and a receipt for services rendered. Now be off, I'm sure citizens across the land are in dire need of broken pots at right this moment.'
+
+You receive a Receipt (identifies as "Receipt for errand running"). Bring it back to Alrik.
+
+: Alrik Farsight grins happily. 'Excellent! Was he pleased with the artifact? Oh, that's not even worth answering. I'm sure he was. He's always happy with the things I send him. That's why he honored me with this position of esteem, searching for useful and powerful items in this newly discovered land.'
+
+If you did the previous turn-in close enough to Xiblin Fizzlebik, you'll see:
+
+: Xiblin Fizzlebik mutters to himself. 'Yeah, not because you're a goblin headed moron or anything.'
+
+: Alrik Farsight says 'What was that, Xib?'
+
+: Xiblin Fizzlebik says 'I didn't say anything! Now get back on your side of the island, you're getting dirt and junk all over mine!'
+
+You receive an [[Ancient Pattern]] (identifies as "Ancient Bowl Pattern"). It reads:
+
+<pre>
+ .........x..........w...............iea.......Pla......Sp......Powder....
+ Encha......lay.......
+ This........attern.
+</pre>
+
+The pattern says that you have to combine it with a piece of Enchanted Clay and Platinum Speckled Powder in a pottery wheel (no-fail combine).
+
+To obtain [[Enchanted Clay]], seek out Kinlo Strongarm in Kaladim's Everhot Forge in North Kaladim at +350, -175.
+
+You say, 'Hail, Kinlo Strongarm'
+
+: Kinlo does not respond. At random intervals, Kinlo will emote as follows:
+
+: Kinlo Strongarm says, 'Mud, rock, crystals, gems, metal. Arrrrrr!'
+
+You say, 'What mud?'
+
+: Kinlo Strongarm says 'Eh? Oh, the clay. Arrr. Lots o' that mud round 'ere. Mostly, a good dwarf not be needin' somethin' so soft 'n squishy but the womenfolk, you know, the elves come lookin' fer it. If ye be one o' those pansy elves wantin' some mud fer workin' into fairy statues, flashy trinkets, 'n pig sticker arrers then I can get it for ye. Course I'd be lowerin' meself, a good dwarf, ta be diggin' that kinda mush outta the ground, but I can do it fer ya.'
+
+You say, 'Do it for me.'
+
+: Kinlo Strongarm says 'Arrr. Shaddap. I ain't doin' it til ya bring me somethin'. A fee, I guess ye'd call it, fer lowerin' meself ta elf woman work. Go get me a good strong axe and I'll do it fer ye. Mebbe somethin' with a good tinted polish on it. I got plenty o' axes but no tinted ones. Har har! Colored axe. Somethin' to go with the color left on the blade after I be crackin open a gobbo head.'
+
+The axe in question is a [[Jade Reaver]], dropped in the [[City of Mist]]. Hand it in:
+
+: Kinlo Strongarm says 'Arrrrr. Ooooo. Arrrrrr... Yah, now that's what I be callin' a good lookin' axe. I be crackin' a few skulls with this one. Oh, here's yer block o' mud. Our priests o' Brell use the mud pit fer relievin' themselves after really hard ale blessin' ceremonies, so ya ain't got ta be enchantin' it in holy water or anythin' cause they already have. Har har!'
+
+You receive [[Enchanted Clay]] (identifies as "Dwarven holy clay").
+
+To obtain [[Platinum Speckled Powder]], seek out [[Merdan Fleetfoot]] in [[Surefall Glade]] at +245, -75.
+
+You say, 'Hail, Merdan Fleetfoot'
+
+: Merdan Fleetfoot says 'Yes Niera! Oh. Erm. Hi. I mean, uh. How are you?'
+
+You say, 'Who is Niera?'
+
+: Merdan Fleetfoot blushes. 'She is, uh.. I don't know. I haven't been able to speak with her. She has many suitors, and I'm just another poor ranger. I spend my days here pretending to fish, to carve bows, but really I'm just waiting to catch a glimpse of her. I thought about adventuring into the world to find some kind of token to give her, to show her how I feel, but I cant tear myself away from here.'
+
+Forage a [[Rose of Firiona]] in [[Firiona Vie]] and bring it back to him.
+
+: Merdan Fleetfoot blinks and looks at the flower. 'This is perfect. Thank you! I'm going to go over to her now. Erm, well, maybe I'll wait a week to let the uh.. beauty of the flower.. uhm.. blossom. Yes, that sounds good. Here, you take this painting. I don't need it now. I made it myself, she wouldn't like it anyways.'
+
+You receive a [[Wood Painting]] (identifies as "Painting for Niera"). Find "a human skeleton" wandering the western side of the Frontier Mountains from the giant fort to the Burning Woods zoneline near -815, -905, on the south side of the giant fort. Give it the painting.
+
+''Any dialogues before this?''
+
+a human skeleton begins to crack and disintegrate, its body collapsing into a pile of dust that scatters into the winds. On the ground you notice a locket on a fine, thin chain which you pick up.
+
+The locket is a Silver Chained Locket (identifies as "Niera's Locket"). Head to Niera Farbreeze in Surefall Glade at +105, -190. If you hang around long enough, you'll see:
+
+: Niera Farbreeze hums softly, a little tune that tickles the back of your mind but you can't quite recall.
+
+You say, 'What tune are you humming?'
+
+: Niera Farbreeze says 'Ohh. Just a little song my mother taught me when I was young. It speaks of the earth, the sky, and the sparkling stars above, always there.'
+
+You say, 'Always there?'
+
+: Niera Farbreeze says 'Aye, always there. Like this small bag I wear around my neck. The last gift of my dying
+mother. It holds a fine dust, a dust she collected during her short life, that she believed brought her luck. It's speckled, flecked as the night sky is with stars.'
+
+You say, 'Where can I find platinum speckled powder?'
+
+: Niera Farbreeze says 'I've had this little bit of dust, all I have of my mother, for many years now. It's the only reminder I have of her. She said it was special, magical, a warmth to help me through the nights. Even if my life were in the balance, I would have a hard time giving it up.'
+
+How do you find out that the human skeleton is Niera's mother?
+
+Give her the locket.
+
+: Niera Farbreeze says 'This, this is my mother's amulet. I cannot believe it. Please, take this powder you say you need. Perhaps it does have powers, I don't know, I don't care. Thank you, my eternal thanks for this.'
+
+You receive Platinum Speckled Powder.
+
+Now combine the pattern, clay and powder in any pottery wheel to make the [[Runecrested Bowl]] (identifies as "A meticulously decorated bowl").
+
+'''The Stones'''
+
+Head back to Misty Thicket and give Ella Foodcrafter the Hardened Mixture and the Runecrested Bowl.
+
+: Ella Foodcrafter smiles slowly as she works the mixture in the bowl and it starts to shine with power. 'This is... a piece of a lost magic item known as Nature's Gem. When restored to completeness I've heard its healing powers will be extraordinary. Take it now. I will take the bowl and hopefully do some good from my end. From here, you can go many ways but I can't guide your path step by step. The only advice I can give you is to look for ones such as yourself.'
+
+You receive a [[Softly glowing stone]] (identifies as "Left Half of Natures Balance").
+
+Seek out Foloal Stormforest in Firiona Vie at -3390, +3482.
+
+You say, 'Hail, Foloal Stormforest'
+
+You say, 'Are you one such as myself?'
+
+: Foloal Stormforest stares at you and whispers. 'You must be the one that has been spoken of. Yes, yes I am one of the circle. There are many of us in the lands right now, all seeking answers to the ills that have befallen our homes.'
+
+You say, 'What answers?'
+
+: Foloal Stormforest says 'I have heard whispers of new Iksar movements in the land. The name of Venril Sathir is on the scaled lips and sharp tongues of every cold blooded lizard in this place.'
+
+You say, 'Who is Venril Sathir?'
+
+: Foloal Stormforest says 'All I've heard are whispers of connections between the undead lizards and the dark god of hate. There's some kind of history behind the two. It might be that Venril is the main focus of Innoruuk's will in the land. Then again, maybe not, but this is the best we've gotten so far. If you think you can do it, then find him and remove him from the face of this earth. Bring me the half of the stone I know you have and whatever conduit of power you find on his rotting corpse.'
+
+Kill [[Venril Sathir]] and loot the [[Pulsing Green Stone]].
+
+Venril Sathir himself is relatively easy to kill. Once it's dead, Venril Sathirs remains [sic] will spawn. Give it a Summoned: Firefly Globe.
+
+Venril Sathirs remains grasps the glowing sphere of fireflies from your hands. Tendrils of mystical energy begin to flow forth from the swarm of glowing insects like tiny fingers. The glowing tendrils begin to reach into the ribcage of the rotting remains of Venril Sathir, coalescing into the form of an iksar ghost.
+
+Give it a Spell: Resurrection.
+
+Spirit of Venril Sathir says 'I am alive! My thanks to you, ______. And now I will aid you in your quest for preserving the forests of norrath. Your carcass will help nurture the soils of the wilderness.'
+
+It respawns as the triggered version of Venril Sathir. Kill it.
+
+--You have looted a Pulsing Green Stone.--
+
+Head back to Foloal and give her the [[Softly glowing stone]] and Pulsing Green Stone.
+
+: Foloal Stormforest blinks and carefully takes the stones from you, cautiously scratching the jagged green stone against the other. Its skin seems to shiver and flake at the contact and eventually begins to shine brightly. 'With the gem nature's balance is complete. Take the stone and walk your path. Blade or lightning caller, burning sword or the mother's walk.'
+
+You get a [[Warmly Glowing Stone]] (identifies as "Nature's Balance Completed").
+
+Head back to Ella Foodcrafter in Misty Thicket and give her the stone.
+
+: Ella Foodcrafter hands you a scimitar she usually wears at her side. 'Thank you, ______. With this we can hold back the corruption. We have learned something new though. Not only is this work the responsibility of the lord of hatred alone. For some reason we cannot know the lord of disease has decided it worthy of his time to work in conjunction with Innoruuk. The spirits of the three main continents, Faydwer, Antonica, and Kunark, have been corrupted. Look for the corrupted forces of the land and heal them. When you have found them all then take my scimitar and the spirits to Xanuusus.'
+
+You receive an Elaborate Scimitar (identifies as "Elaborately Runed Scimitar").
+
+'''The Cleansed Spirits'''
+
+'''The Cleansed Spirit of Faydwer'''
+
+Find a pained unicorn wandering in the Lesser Faydark north of 0, 0.
+
+NOTE: the unicorn will not respond to you or take any items from you until you are at least level 46.
+
+You say, 'Hail, pained unicorn'
+
+: pained unicorn snorts and stamps at the ground. An unusual angry glimmer enters the eyes of what should be one of Tunare's most peaceful creatures. Its coat seems slickened and filthy in places.
+
+You say, 'What corruption?'
+
+: pained unicorn tosses its head back, drool falling from its mouth. 'The priests of the sick channel filth and sickness into the lands. Too late did we notice to stop them. You can though. Here, in the ocean, and the underwater city of the old. Go to those places and find the corruptions. Bring them to me.'
+
+It's referring to the corrupted brownie elsewhere in Lesser Faydark, the corrupted seafury cyclops in the Ocean of Tears, and the corrupted seahorse in Kedge Keep.
+
+To spawn the corrupted brownie, kill brownie scouts near 0, 0 to spawn the tainted brownie, which you must kill to spawn the corrupted version. Kill that to loot a [[Green Heartwood Branch]] (identifies as "Green Branch from a Heartwood Tree").
+
+To spawn the corrupted seafury cyclops, kill seafury cyclops until you spawn a tainted seafury cyclops, which you must kill to spawn the corrupted version. Kill that to loot [[Ocean of Tears Seavines]] (identifies as "Sea Vines from Ocean of Tears").
+
+To spawn the corrupted seahorse, kill seahorses until you spawn a tainted seahorse (found at 152.04, -401.71, -72.79), which you must kill to spawn the corrupted version. Kill that to loot [[Kedge Cave Crystals]] (identifies as "Pure Crystals from Kedge").
+
+Map location for the seahorse:
+
+* P 401.7101, -152.0390, -75.9162, 0, 240, 0, 3, Tainted_Seahorse
+
+Give the three items to the pained unicorn.
+
+: pained unicorn tosses its head back and whinnies as the items that were corrupted are brought near. It seems to burn and brighten as the items melt into the ground. 'Take my horn, symbol of Faydwer, now cleansed, to the gnome priest. It is anathema to him, to the corrupt forces in his soul, channeled into him by his dark god and will release the grip of corruption on the land. He is close, I can feel it.'
+
+You receive a Gleaming Unicorn Horn (identifies as "Pure Symbol of Tunare").
+
+Find Silox Azrix in Ak'Anon near the mines on the left side of the river, at +2000, -260. Map location:
+
+* P 261.4257, -2012.0223, -194.3498, 0, 240, 0, 2, Silox_Azrix_-_Druid_1.0
+
+You say, 'Hail, Silox Azrix'
+
+: Silox Azrix gives you a crooked smile. 'Hello there, ______. I'm doin some important 'meditations' to my
+god here. Maybe you can go somewhere else?'
+
+Since he's a gnome cleric practicing in the Scrapyard near the evil clerics, he's eeeevvilll. Give him the horn.
+
+: Silox Azrix looks up at you with a twisted gleam in his eyes. 'Something for me then, eh?' As he looks closer his skin begins to peel and stretch, a bright hot light emanating from his hands gripped around the unicorn horn. 'NOOOO!' The pure cleansing light burns away the gnome without a trace of his existence except for a tiny ball of light which you pick up.
+
+You receive the Cleansed Spirit of Faydwer.
+
+'''The Cleansed Spirit of Antonica'''
+
+Find a [[withered treant]] in North Karana at +1175, -1050.
+
+You say, 'Hail, withered treant'
+
+: withered treant says 'Yes. My bark is blackened and cracked by sickness. If only I were the only one to be afflicted this way. Throughout the lands this is happening. Agents of some dark god are twisting the lands and their creatures.'
+
+You say, 'What sickness?'
+
+: withered treant says 'I have kept in touch with friends of Tunare and Karana. It seems something is building amid the darkness. Some pact between gods to corrupt. All I know for sure is that you can stop the sickness in this land. I can feel it, vaguely. Somewhere, in the mountain and lake areas, and far north amid the cold mountains is where the land hurts most. Go, find the sources of corruption, and bring them back to me. Three should be their number.'
+
+It's referring to the corrupted mammoth in Everfrost Peaks, the corrupted shaman in Lake Rathetear, and the corrupted hill giant in the Mountains of Rathe.
+
+To spawn the corrupted mammoth, kill wooly mammoth calves (placeholders) until you spawn the tainted wooly mammoth, which you must kill to spawn the corrupted wooly mammoth. Kill it to loot a Chunk of Tundra (identifies as "Tundra from Everfrost").
+
+To spawn the corrupted shaman, kill side spawns on top of the underwater tower to spawn the tainted aquagoblin, which you must kill to spawn the corrupted shaman. You can use wolf-form to remain non-aggro to the other goblins. Kill the corrupted shaman to loot Clean Lakewater (identifies as "Water from Lake Rathe").
+
+To spawn the [[corrupted hill giant]], kill hill giants south of the hill with the guard tower until you spawn the [[tainted hill giant]], which you must kill to spawn the corrupted hill giant. Kill it to loot an [[Ancient Rock]] (identifies as "Ancient piece of earth from Rathe Mountains").
+
+Bring these items back to the withered treant.
+
+: withered treant lets out a sigh like a slow storm over the plains of Karana. Its skin begins to slough off into piles at its base. 'This step is done. Now, take my heart, pure symbol of Antonica. My heart, cleansed of corruption, can interrupt the flow of the corruption between the priest and his dark god. Force it upon him, quickly. I can feel him here in the karanas somewhere.'
+
+You receive a [[Warm Pulsing Treant Heart]] (identifies as "Pure Symbol of Karana"). The treant despawns.
+
+Find [[Yeka Ias]] in South Karana at 2330, -2355. Occasionally he emotes:
+
+: Yeka Ias seems oblivious to the outside world. He stares into the water, chuckling every so often, as he drops in some sort of pebble that hisses for a moment on impact. His robes seem faded, tattered, and caked in dirt. A slight green shimmer surrounds his body.
+
+Give him the heart (how do you know to give it to him?).
+
+: Yeka Ias grabs the heart as you toss it to him before realizing what it is. As soon as it touches his hands, his body convulses, a sickly light emanating from his eyes and oozing cracks appear in his skin. As he melts into the ground, a small glowing ball floats where he once stood.
+
+You receive the Cleansed Spirit of Antonica. It despawns.
+
+'''The Cleansed Spirit of Kunark'''
+
+Find [[Ulump Pujluk]], a named froglok in the [[Swamp of No Hope]] at -110, -1760.
+
+You say, 'Hail, Ulump Pujluk'
+
+: Ulump Pujluk croaks slowly and wipes a filthy muck from its eyes as it tries to look at you. 'Something come to talk to Ulump. Too much pain. Just go.' It goes back to scratching and wiping at its muck and filth covered body.
+
+You say, 'What corruption?'
+
+: Ulump Pujluk says 'Corruption spread by priests of disease. It slides and moves just beneath the surface of the land. Ulump not able to hold on any more. If you stormwalker and trying to cleanse the land then you must kill Ulump. Kill him and take his essence and the three foci from the corrupted beasts to the filthy gnome who hurts the land. Ulump can feel him, far off near the large water.'
+
+Kill him. He's a warrior that doubles for 250, has ~32k HPs, and cannot be slowed or tashed. Loot Froglok Essence (identifies as "Soul of a Cleansed Froglok").
+
+The three corrupted mobs of Kunark are the corrupted gorilla in the Emerald Jungle, the corrupted barracuda in the Lake of Ill Omen, and the dragon Faydedar that lives in Timorous Deep.
+
+To spawn the corrupted gorilla, kill tottering gorillas in the northern part of the plateau until you spawn a tainted gorilla. Kill non-undead tainted gorillas until you spawn the corrupted version, which you must kill to loot Green Tree Bark (identifies as ""Tree sample from Emerald Jungle"). Note that it has SoW speed.
+
+To spawn the corrupted barracuda, kill barracudas in the lake at -900, -835 until you spawn a tainted barracuda. Kill higher-level tainted barracudas to spawn the corrupted version, which you must kill to loot Pure Lakewater (identifies as "Water from Ill Omen"). Map location:
+
+* {{Loc|Lake of Ill Omen|831, 903}} Corrupted_Barracuda_-_Druid_1.0
+
+Finally, find [[Faydedar]] up and kill him to loot the [[Pod of Seawater]] (identifies as "Seawater from Timorous").
+
+The triggered version of Faydedar spawns in the hidden oasis in Timorous Deep. To spawn it, find [[Dolgin Codslayer]] at -11840, -1855, on the beach in the oasis. Map location:
+
+* {{Loc|Timorous Deep|-11840, -1855}} Dolgin_Codslayer_-_Druid_1.0
+
+You say, 'Hail, Dolgin Codslayer'
+
+: Dolgin Codslayer says 'ARGH! Dangit, ya scared me! Tread cautiously, friend. This here place ain't as friendly as it seems. There's a beast lurkin' in this here puddle.'
+
+You say, 'A beast?'
+
+: Dolgin Codslayer says 'Aye lad. I seen it come from the ocean. It was fightin' a group of adventurers, not unlike yerself. The battle raged long and hard, and at the end the beast lay still among countless of the adventurers bodies. They left assuming it had been slain by their hands. But, once they left, I seen it come crawlin in this here place. They called it by the name Fayde, er, Fayred. Hrmm. What was it they called it? I can't remember.'
+
+You say, 'Faydedar?'
+
+: Dolgin Codslayer says 'Ya! That's what they called it! A great water dragon as the legends say. Only way to find him now is to lure him out from hiding. Not that I would suggest doin such a thing. The dern thing's broken, bleedin, and cornered. That's a mighty deadly position to put a critter in if ye ask me. Course if yer wantin' to try it, there might be a way. Ya willin to risk it?'
+
+You say, 'I will risk it.'
+
+: Dolgin Codslayer says 'Well jus' before that there beast ended up in combat, I watched him from the shores. Only reason he got into such a mess was 'cause of his belly. He swam right into those adventurers chasin' down a wandering froglok. You wanna catch a fish, use the right bait. If only we had us some frogloks essence, then mebbe he'd come out agin. But I must warn ye laddies that the bloke over by the inn already warned me to leave all the natural critters in this here oasis in peace. He might get right mad if he sees a battle brewin' here.'
+
+Hand him the froglok essence looted from Ulump.
+
+: Dolgin Codslayer says 'What's this? Egads! It's perfect. Now all we gotta do is hope he bites.' Dolgin takes a little of the essence and smears it on a piece of bread. He places the bait into the water and watches intently.'
+
+He will hand it back and despawn. Faydedar will now be spawned in the water in the middle of the oasis. Kill it to loot a Pod of Seawater (identifies as "Seawater from Timorous").
+
+Find Nekexin Virulence in The Overthere at +3660, -790. Occasionally he emotes:
+
+Nekexin Virulence chuckles to himself as he notices blades of grass disintegrate beneath his feet. He stares out over the water as if watching for some sign.
+
+You say, 'What corruption?'
+
+Nekexin Virulence grins wide at you. 'Corruption? I know nothing of corruption.' He goes back to staring out over the water.
+
+Give the four items to Nekexin (Ulump Pujluk told you to hand his "essence and the three foci from the corrupted beasts to the filthy gnome who hurts the land. Ulump can feel him, far off near the large water.").
+
+Nekexin Virulence stares at the swirling bottle of essence. His eyes open wide as he realizes what it is. As its warm bright waves wash over him his skin dissolves into a green goo that coats the ground. From his remains a floating white ball is retrieved.
+
+It despawns. You receive the Cleansed Spirit of Kunark.
+
+'''The End'''
+
+Find Xanuusus the treant in North Karana at +1335, +495.
+
+You say, 'Hail, Xanuusus'
+
+: Xanuusus says 'Greetings, small one! I am Xanuusus of the Stormreapers. You are welcome to rest beneath my mighty branches.'
+
+Give it the scimitar and the three cleansed spirits.
+
+: Xanuusus pushes the spirits into the air, making them dance around the scimitar. With a wave of his hand they melt into the blade and hilt of the weapon. 'With this the spirits of the lands are now free from the corruption of the dark gods. Through your strength and dedication was this possible, ______. May the foul poison that once poured into the earth itself never do so again. Take this weapon that you may continue to watch over the balance of nature. Go now, with the gods' blessings.'
+You gain experience!!
+
+You receive your epic weapon, the {{:Nature Walkers Scimitar}}.
+
+<div class='grayout'>
+After Dungeons of Norrath, access to the title "Naturewalker" is also awarded.
+</div>
+
+''All the parts that haven't mentioned how many people you need can be done solo.''
+
+[[Category:Quests]]
+[[Category:Burning Woods]]
+[[Category:Druid Quests]]

@@ -1,0 +1,113 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_tynkale.png|frame|Tynkale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Tynkale]]
+|-
+! ''' Minimum Level: '''
+| 12
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a drunkard]], [[Jayla Nybright]], [[Kayla Nybright]], [[Shayla Nybright]], [[Tayla Nybright]]
+|-
+! ''' Minimum Faction '''
+| Indifferent
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bearskin Gloves}}
+</li><li> {{:Leather Belt}}
+</li><li> {{:Leather Leggings}}
+</li><li> {{:Leather Shoulderpads}}
+</li><li> {{:Targ Shield}}
+</li><li> {{:Small Leather Gorget}}
+</li><li> {{:Small Leather Mask}}
+</li><li> {{:Small Leather Shoulderpads}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tynkale]] is located at 11, -328, 12 within the Paladin Guild Hall.''
+
+You say, 'Hail, Tynkale'
+
+: Tynkale says, 'Hail noble, ______! Can you be of [service to the Clerics of Tunare] or are you not from our order?'
+
+You say, 'I can be of service to the Clerics of Tunare'
+
+: Tynkale says 'That is good. Prove yourself, then. Are you [new to Felwithe] or have I been conversing with a [veteran of the good fight]?'
+
+You say, 'I am new to Felwithe'
+
+: Tynkale says, 'Then stand at attention when I speak. I want you to venture to Kelethin and seek out Tandan Nybright. He is an old member of ours. He had some hardships and he fell from Tunare's grace, yet he is still a member of our family. He will be the one who reeks of elven wine. Greet him by name. We are worried for him.'
+
+----
+
+''[[a drunkard]] can be found wandering between three [[Greater Faydark|Kelethin]] platforms, starting at location 577, 388, 161, with a brief pause at location 429, 392, 161.''
+
+You say, 'Hail, Tandan Nybright'
+
+: a drunkard says, 'How did you know my name? You must be from Felwithe. .. Excuse my condition. I am not the man I once was. I have had a [shocking experience].'
+
+You say, 'What shocking experience'
+
+: a drunkard says, 'My daughters have become bloodthirsty bandits. They went off to visit Antonica and when they returned, they became bandits. They now attack every poor traveler who happens upon them. They have disgraced the name of Nybright. Will you [hunt the Nybright Sisters] or is this not to your liking?'
+
+You say, 'I will hunt the Nybright Sisters'
+
+: a drunkard says, 'I am most thankful. Many adventurers would not help me with this matter. Go and seek out the Nybright sisters. I gave each of the four a personalized necklace. Return them all to me when the deeds are done. May the Tribunal watch over you.'
+
+''The Nybright sisters can be found at a camp located within the [[Lesser Faydark]] at {{Loc|Lesser Faydark|-802,2682,-2|-802, 2682, -2}}, near the entrance to [[Mistmoore Castle]].''
+
+'''Upon the deaths of [[Jayla Nybright]], [[Kayla Nybright]], [[Shayla Nybright]], and [[Tayla Nybright]], there is a chance to loot a [[Dull Pearl Necklace]] - unique to each sister and discoverable through the use of an [[Identify]] spell.'''
+
+<div class="facblock">
+* Your faction standing with [[Dervish Cutthroats]] got worse.
+</div>
+
+'''Return to [[Greater Faydark|Kelethin]] and hand [[a drunkard]] the 4 [[Dull Pearl Necklace]]s.'''
+
+: a drunkard says, 'This is a sad day, but it was the just thing to do. The Nybright name will no longer be tarnished. Here you are, my friend. This is a bit neglected, but it is yours. My warrior days are over. Now, go. I must be alone.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Princess Lenya (Quest)]]
+* [[Wino]]
+
+== Exp Gain ==
+
+* ~5% for level 14 Halfling druid
+
+*Note: The experience gained from this quest is 4% from level 14 to 15 , and 3% at lvl 16 as a High Elf Enchanter.
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

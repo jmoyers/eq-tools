@@ -1,0 +1,60 @@
+[[File:npc_clurg.png|frame|Clurg]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Clurg (NPC)|Clurg]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Cazic Thule (Zone)| Temple of Cazic-Thule]], [[The Feerrott]], [[Rathe Mountains]]
+|-
+! ''' Related Items: '''
+| [[Lizard Tail]]
+|}
+
+== Reward ==
+
+Experience
+Faction
+
+== Walkthrough ==
+
+Clurg the bartender has a new task available.
+
+== Dialogue ==
+You say, 'Hail, Clurg' 
+
+Clurg says 'Hello, friend. Have a drink. I have some [unique drinks]. Try one. And remember. You get rowdy, the [Bouncers] crush you.' 
+
+You say, 'Bouncers?' 
+
+Clurg says 'The Bouncers were organized by me. As I traveled to many of the world's taverns I encountered great enforcers called bouncers. It was their duty to keep order amongst chaos. When I returned and rose to greatness after the creation of the [Flaming Clurg], I organized the Oggok Bouncers to keep order amongst the [rival guilds].' 
+
+You say, 'Flaming Clurg?' 
+
+Clurg says 'The Flaming Clurg was my greatest creation. It brought me great respect in Oggok. Unfortunately, I have heard tales of an [imposter drink]. But I have an [idea] for a new creation....' 
+
+You say, 'Idea?' 
+
+Clurg says 'Yes, lizard tails! I think this idea might just be my next big creation! Bring me two lizard tails, and let me test. I'll pay you when you get back.' 
+
+*Obtain x2 [[Lizard Tail]], which drop from lizardmen in [[Cazic Thule (Zone)| Temple of Cazic-Thule]], [[The Feerrott]], and [[Rathe Mountains]]. 
+
+Clurg says, 'Ahh, yes! These will do. If I cure them, remove the bone, and chop the tip off the tail, you can drink through them! I think I'll call it ... a tailpipe! Eh, I'll keep working on it. For now, take this, and thanks.' 
+
+Your faction standing with [[Clurg]] has been adjusted by 5.<br>
+Your faction standing with [[Kazon Stormhammer]] has been adjusted by -5.<br>
+Your faction standing with [[Green Blood Knights]] has been adjusted by 5.<br>
+Your faction standing with [[Craknek Warriors]] has been adjusted by 5.<br>
+Your faction standing with [[Oggok Guards]] has been adjusted by 5.<br>
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

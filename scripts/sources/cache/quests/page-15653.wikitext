@@ -1,0 +1,72 @@
+{{Velious Era}}
+
+[[File:npc_qarrgy_scallopgobbler.png|frame|Qarrgy Scallopgobbler]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cobalt Scar]]
+|-
+! ''' Quest Giver: '''
+| [[Qarrgy Scallopgobbler]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Siren's Grotto]]
+|-
+! ''' Related NPCs: '''
+| [[Kelorek`Dar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Sea Dragonscale Bracer}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest begins with [[Qarrgy Scallopgobbler]] on the beach of Cobalt Scar. He is an otter located at -800, -400.
+
+'''Bring him the following items in exchange for a [[Sea Dragonscale Bracer]]:'''
+
+;{{box}} [[Ornately Runed Shell Necklace]] (rare drop from neriad weavers in Siren's Grotto)
+;{{box}} [[Sea Dragon Scales]] (dropped by Kelorek`Dar)
+;{{box}} [[Fine Plate Bracer]] (168 trivial blacksmith combine)
+
+You say, 'Hail, Qarrgy Scallopgobbler'
+
+: Qarrgy Scallopgobbler sets down several large crustacean shells covered in foreign runes, then extends his large, coarse hands in a gesture of friendship.
+: Qarrgy Scallopgobbler says, 'I am pleased to see friendly visitors to our villages. I am the head craftsman of the village. The crustacean shell armor worn by the warriors of our village was crafted by me and by my apprentices. I will craft other materials as well when they are available.'
+
+You say, 'What other materials?'
+
+: Qarrgy Scallopgobbler says, 'I am able to craft dragon scale armor but it has been a long time since I have had the opportunity to do so for my people. What kind of scales do you wish for me to craft?'
+
+You say, 'Sea Dragon Scales'
+
+: Qarrgy Scallopgobbler says, 'Should you slay Kelorek'Dar, the sea dragon, I would craft you a sea dragon bracer from his scales. All I ask for are the scales of the dragon, an ornately runed shell necklace, and an unstained bracer crafted of the metal you strange ones call fine steel.'
+
+: Qarrgy Scallopgobbler regards you indifferently -- it appears to be quite formidable.
+
+: Qarrgy Scallopgobbler skillfully crafts the Sea Dragon Scales into a bracer than hands it to Gweed and claps enthusiastically.
+
+<div class="facblock">
+* Your faction standing with [[Othmir]] got better. 
+* Your faction standing with [[Ulthork]] got worse. 
+</div>
+{{YouGainExperience}}
+
+
+[[Category:Quests]]
+[[Category:Cobalt Scar]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

@@ -1,0 +1,74 @@
+{{Classic Era}}
+[[File:npc_ssynthi.png|frame|Ssynthi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Mistmoore Castle]]
+|-
+! ''' Quest Giver: '''
+| [[Ssynthi]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  {{:Scepter}} (of Sorrow)
+</li></ul>
+
+== Walkthrough ==
+
+'''Ssynthi may be found at -55, +385, in the graveyard behind the mausoleum.  He is on Temple of Solusek Ro faction.'''
+
+You say, 'Hail Ssynthi.'
+
+: Ssynthi says, 'I am Ssynthi, [Warder of Ro]. Would you do a simple [service] for me?'
+
+You say, 'A Warder of Ro?'
+
+: Ssynthi says, 'I have renounced by ties to the shadowed men and become a follower of the one true flame, Solusek Ro. I have hopes that one day my brethren will see the errors of their ways and cease their mindless war.'
+
+You say, 'What service can I do for you?'
+
+: Ssynthi says, 'The body of my true love lies within this tomb. I seek a token to remember her by - the flower which lies atop her coffin. I would get it myself, but the tomb is warded against my kind. Since I can not enter, I ask you to fetch it for me.'
+
+The Flower is a ground spawn that looks like a bag atop a coffin inside the tomb in front of Ssynthi, at loc -25, 375, -225. Its respawn time is 1 minute. Take care to not step to either side of the coffin, where there are pit traps that will drop you into the basement of Mistmoore. 
+
+Give the flower to Ssynthi.
+
+: Ssynthi says, 'Thank you. Since you have done me a service with no thought of reward, I offer you this small token of my favor.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro|Temple of Solusek Ro]] has been adjusted by 1.
+* Your faction standing with [[Shadowed Men]] has been adjusted by -1.
+</div>
+{{YouGainExperience}}
+
+You receive a Scepter. (Identifies as The Scepter of Sorrow)
+
+Notes: Ssynthi is on [[Temple Of Sol Ro]] faction, so he can be used to test your faction if you are doing the quest to raise it.<br>
+
+== Faction Gain ==
+
+22 turn ins (could have been 20, the counting was not especially accurate) took me from Amiable to Kindly, which would make the faction from this quest around, or just under +20 per turn in.
+<br>
+25 turn ins to get through amiably (came for amiably, stayed for kindly) - blue, 10/21/23
+<br>
+
+== See Also ==
+
+* [[Shadowbound Armor Quests|Shadowbound Boots]]
+* [[Weeping Wand Quest]]
+
+[[Category:Quests]]
+[[Category:Mistmoore Castle]]
+[[Category:All Classes Quests]]

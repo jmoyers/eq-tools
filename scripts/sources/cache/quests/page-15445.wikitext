@@ -1,0 +1,106 @@
+{{Disambig3|[[Necromancer Words - X`Ta Tempi]]}} {{Disambig3|[[Necromancer Words - X`Ta Tompi]]}} {{Disambig3|[[Necromancer Spells (Cabilis)]]}}{{Disambig3|[[Necromancer Spells|Necromancer Spells (The Overthere)]]}}
+
+[[File:npc_x`ta_timpi.png|frame|X`Ta Timpi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Foreign Quarter]]
+|-
+! ''' Quest Giver: '''
+| [[X`Ta Timpi]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[The Estate of Unrest]], [[Lower Guk]], [[Plane of Fear]], [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[a boogeyman]], [[a spectre]], [[a worry wraith]], [[dark boned skeleton]], [[ice boned skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Words of Detachment}}
+</li><li> {{:Words of Requisition}}
+</li><li> {{:Words of Rupturing}}
+</li><li> {{:Words of the Suffering}}
+</li></ul>
+
+== Walkthrough ==
+
+You can get 12 words needed for high level Necromancer pet research from the 3 Sisters (X`Ta Tempi, Timpi, and Tompi) in Neriak Foreign Quarters (-10, -45).  It is really easier to get them though randomly looting creatures than by doing the quests.
+
+Timpi will give you the following words: 
+
+[[Words of Detachment]]: 
+* 2 x [[Dull Bone Chips]] (Unrest)
+* 1 x [[Charred Dagger]] (Unrest) (Mistmoore)
+* 1 x [[Bloodstone]] (Bought/Dropped)
+
+[[Words of Rupturing]]: 
+* 1 x [[Festering Cloak]] (Unrest)
+* 2 x [[Ebon Wand]] ([[Unrest]])
+* 1 x [[Jasper]] (Bought/Dropped)
+
+[[Words of the Suffering]]: 
+* 1 x [[Globe of Fear]] (Feerrott/Oasis/TOFS from Spectres)
+* 2 x [[Iced Bone Chips]] (Befallen)
+* 1 x [[Star Rose Quartz]] (Bought)
+
+[[Words of Requisition]]: 
+* 1 x [[Eye of Fright]] (Plane of Fear)
+* 1 x [[Stone of the Wraith]] (Plane of Fear)
+* 1 x [[Pearl]] (Bought/Dropped)
+
+
+<!-- Copied from Allakhazam -->
+You say, 'Hail, X`Ta Timpi'
+
+X`Ta Timpi says, 'We three are the [Sisters Dark] - [Necromancy] is our Art - Bonded dead, they serve our will - No beat of heart, yet faithful still.'
+
+You say, 'Necromancy'
+
+X`Ta Timpi says, 'Necromancy - Art of the Dead - Binding bones to serve your will - We research now the [Lore of Death] - Ancient spells with power still.'
+
+You say, 'Lore of Death'
+
+X`Ta Timpi says, 'The Lore of Death is shadow bound - Its [words] are [hid], yet shall be found - Through our research into the dark - Old hexes found and parchment marked.'
+
+You say, 'words'
+
+X`Ta Timpi says, 'The Words are hid in tomes of old - Their yielded lore worth more than gold - Though we search both 'fore and 'hind - [Components] we cannot yet find.'
+
+You say, 'Components'
+
+X`Ta Timpi says, 'We need components for research - These are things that you could find - In return for [tasks] that you perform - Words of [reward] we have in mind.'
+
+You say, 'tasks'
+
+X`Ta Timpi says, 'Bring us components for our research - We give [Word]s by tasks performed - [Possession], [Detachment], [Allure], [Haunting], [Rupturing], [Dark Paths], [Suffering], [Collection], [Obligation], [Requisition] and [Acquisition].'
+
+Lead-in phrases appear to not work, items can still be handed in for the rewards however.
+
+You say, 'I want words of requisition'
+
+X`Ta Timpi says, 'From the Plane of Fear, bring an Eye of Fright and a Stone of the Wraith - From a merchant bring a pearl - Then Words of Requisition will to you be given.'
+
+You say, 'I want words of detachment'
+
+X`Ta Timpi says, 'From the Estate of Unrest, bring dull bone chips - From Castle Mistmoore, a dagger charred - From a merchant bring a stone of blood - Words of Detachment will be your reward.'
+
+You say, 'I want words of rupturing'
+
+X`Ta Timpi says, 'From the Estate of Unrest, bring a festering cloak - From Castle Mistmoore, ebon wands - From a merchant bring a jasper stone - Then Words of Rupturing will to you be given.'
+
+You say, 'I want words of suffering'
+
+X`Ta Timpi says, 'From Befallen, bring Iced Bone Chips - From spectres, bring a Globe of Fear - From a merchant bring a Star Rose Quartz - Then Words of Suffering will to you be given.'
+
+''Need all dialogues checked, current faction hits, /loc of quest mobs.''
+
+[[Category:Quests]]
+[[Category:Neriak Foreign Quarter]]
+[[Category:Necromancer Quests]]

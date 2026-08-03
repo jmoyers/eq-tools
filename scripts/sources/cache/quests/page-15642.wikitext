@@ -1,0 +1,63 @@
+{{Velious Era}}
+
+[[File:npc_shamus_aghllsews.png|frame|Shamus Aghllsews]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Shamus Aghllsews]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crest of the Fauns}}
+</li></ul>
+
+== Walkthrough ==
+
+After getting the case for the crests (see the [[Friend of the Tunarean Court]] Quest), you can do this one to get the faun crest.
+
+A Kromzek architect occasionally visits the building sites. Shamus desires to acquire his blueprints for the expansion of Kael.
+
+Kill [[a storm giant architect]] and loot kromzek architect blueprints.
+
+After turning in the Architect Blueprints : Shamus Aghllsews says 'You have my gratitude Jaeden . With these blueprints we can better prepare the forests defenses against the giant invaders. I have yet another favor to ask of you as well. Fill this empty bag with crystallized sulfur. When mixed with the crushed herbs in the other bag it will create an explosion strong enough to destroy stone. Take the two full bags into Kael Drakkel and plant it into a crate of the kromzeks building supplies. 
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+</div>
+You gain party experience!!
+
+Received a 4 slot container for the crystalized sulfur.
+
+Received a bag of crushed herbs (not a container).
+
+I put one [[Crystallized Sulfur]] into each slot and combined and it became a bag of sulfur, no longer a container. Headed to Kael from Wakening. If you proceed past the first few guards and go up a hill you see 4 destroyed buildings(platforms with broken walls). Look on the floor of each and you will see two bags on the floor of one platform (Loc -560, +2500). If you take one of the bags (sulfur or herbs) and try to drop them on the floor where (you must click the directly onto the floor) the bags are, a trade screen will open up labeled a bag of (building?)supplies. NOTE: Your invis drops at this point even though it still shows you as invis. Put the bag of sulfur and the bag of crushed herbs in this window and hit trade. After the explosion goes off a bag appears on the ground where you are PICK THIS BAG UP, it is the proof that you set off the explosion. Looks like a black marble and is called a pile of rubble. WARNING: When you hit trade the explosion goes off. I was unprepared and was probably hit for the full damage (around 1000 points of fire damage). I'm assuming if you buff up fire resists you may be able to resist it, however my natural FR is 85 so maybe I just got unlucky. The explosion nearly killed me and soon after a giant did.
+With a FR of 163 I resisted Pillar of Flame spell. With 65FR I took ~300 damage.
+
+Took the [[Pile of Rubble]] back to Shamus and gave it to him. 
+
+: Shamus Aghllsews says 'You have proven yourself to the Fauns of the Tunarean Court. The destruction of the Kromzeks building supplies will slow their progress for some time. 
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+</div>
+You gain experience!!
+
+Received a crest of the fauns.
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

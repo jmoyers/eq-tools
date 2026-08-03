@@ -1,0 +1,70 @@
+{{Classic Era}}
+[[File:npc_brona_frugrin.png|250px|Brona Frugrin|thumb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Brona Frugrin]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Shaman]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Clan Runnyeye]]
+|-
+! ''' Related NPCs: '''
+| [[Borxx]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Staff of the Observers}}
+</li></ul>
+
+== Walkthrough ==
+
+At the observatory past the windmills in the Steamfonts a female gnome name Brona Frugrin is a telescope lens crafter and she believes that if you can get the retina of the beholder named Borxx, who may be found in either Runnyeye or Beholder at certain times, and return it to her, she can create a telescope unlike any other.
+
+Borxx is a L30 Evil Eye-type monster.  Bringing back his loot, the evil eye lens, will yield a 2h blunt weapon called the Staff of the Observers.
+
+== Dialogue ==
+
+[[Brona Frugrin]] is located in Steamfont mountains at loc 1868, -197.
+
+You say, 'Hail, Brona Frugrin'
+
+: Brona Frugrin says, 'Well met, _______! What brings you out this way? Are you interested in becoming an observer? No, you look like the adventuring type. The wilds of the Steamfont Mountains are as far as my body goes. But through my [duties] as an observer, my mind travels the cosmos.'
+
+You say, 'What are your duties?'
+
+: Brona Frugrin says, 'Well, I am quite an accomplished enchanter but most of my time now is spent crafting the magical lenses that enable us to see beyond the ceiling of Norrath and into other realms and dimensions. Say, in your travels have you encountered any [evil eyes]?'
+
+You say, 'What are evil eyes?'
+
+: Brona Frugrin says, 'Evil eyes are dangerous creatures of great magical power. You will know one if you see one. There is a rumor that somewhere on Antonica there lives a powerful Evil Eye by the name of Borxx. I believe that with the Lens from her eye and some expert tinkering I could create a device that will enable me to observe the gods themselves in their native planes. If you were to bring me this lens the Eldrich Collective will reward you greatly.
+
+[[Borxx]] can be found on the fourth floor of Clan Runnyeye. (loc?) She will drop the [[Evil Eye Lens]]
+
+: Brona Frugrin says, 'This lens is perfect, ________! Please, take this staff in return for your services.'
+
+<div class="facblock">
+* Your faction with [[King Ak'Anon]] got better.
+* Your faction with [[Eldritch Collective]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Steamfont Mountains]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Shaman Quests]]
+[[Category:Wizard Quests]]

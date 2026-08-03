@@ -1,0 +1,61 @@
+{{Classic Era}}
+[[File:Wislen.png|frame|Wislen Mamluk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Wislen Mamluk]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Kerran Fishing Pole}}
+</li></ul>
+
+== Walkthrough ==
+
+You can find [[Wislen Mamluk]] on a dock in the wharf, fishing.  He wants a Kerra Catfish, which you can get via fishing on either Kerra Isle or Tox Forest.  I got it in about 10 minutes.
+
+Your reward for this is a Kerran Fishing Pole.  This is a no-drop, non magic item with no stats, not to be confused with the Kerran Fishingpole given by [[Feren]].
+
+Wislen - loc is (-204, -87, 10) - Kerra Isle
+
+You say, 'Hail, Wislen Mamluk'
+Wislen Mamluk says, 'Why you bother Wislen? Wislen trying to get fishies. Leave Wislen alone to get [fish], please.'
+
+You say, 'What about fish'
+Wislen Mamluk says, 'Fish. Wislen fish. Wislen is mamluk, not just fisher. Mamluk is warrior, but they also helps provide for all [Kerran]. This is hadi place in life. We happy doing this. Please. let Wislen fish now.'
+
+You say, 'What Kerran'
+Wislen Mamluk says, 'Mostly they like [catfish], but Wislen not have any luck today.'
+
+You say, 'What about catfish'
+Wislen Mamluk says, 'Kerra Catfish is what Wislen want.'
+
+Upon giving Wislen Mamluk a Fresh Fish:
+Wislen Mamluk says, 'Fish! Fish! Not again Fish! Take it back, I have too many.'
+
+Upon giving Wislen Mamluk a Kerra Catfish:
+Wislen Mamluk says, 'You caught catfish? Errr. Wislen thanks you. Here. Take this. It's one of my best fishing poles.'
+Your faction standing with KerraIsle got better.
+You gain experience!!
+
+You receive a Kerran Fishing Pole.
+
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

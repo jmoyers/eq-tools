@@ -1,0 +1,181 @@
+{{Classic Era}}
+[[File:npc_kazzel_d`leryt.png|frame|Kazzel D`Leryt]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Kazzel D`Leryt]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[A froglok noble]], [[Darfumpel Zirubbel]], [[Xenyari Lisariel]], [[monstrous zombie]], [[an icy terror]], [[stone spider]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Pulsating Hyacinth Telesm}}
+</li><li> [[Life Leech|Spell: Life Leech]]
+</li></ul>
+
+== Walkthrough ==
+
+This quest is for the 49th level Shadowknight spell Life Leech.
+
+It begins with [[Kazzel D`Leryt]] in the Mountains of Rathe (roams around -634, -1561), who will not speak with you unless you are at least level 50.
+
+He tells evil-aligned characters to give him 2,000pp in exchanged for an Uncut Hyacinth to be etched by a gnome shopkeeper named [[Darfumpel Zirubbel]] (also in the Mountains of Rathe (4093, 896)). He tells you the gnome does not like the necromantic arts, so you will have to conceal your identity when dealing with him. Despite this warning, most evil characters seem to be able to talk to Darfumpel without a problem.
+
+Kazzel tells you to bring back:
+
+* 1) The Faceted Hyacinth.
+* 2) A gold necklace like the purest snow (the [[White Gold Necklace]] from a [[A froglok noble]] in [[Lower Guk]]).
+* 3) An orb of the purest crystal (the [[Crystalline Orb]] from a [[stone spider]] in [[Nagafen's Lair]]).
+* 4) The blood of [[Xenyari Lisariel]] the druid. He tells you that the blood must be voluntarily given by [[Xenyari Lisariel]], so killing her will not suffice.  [[Xenyari Lisariel]] can be found at the druid ring (5298, 1765).  She roams along the notable feature surrounding the area including around where Tabien the Goodly spawns (6350, 1500).
+
+To get the Faceted Hyacinth, talk to Darfumpel. He will ask for 1,000pp to etch the stone. Give him the stone and the 1,000pp. In return, you receive a Faceted Hyacinth Talesm.
+
+To get the blood you must bring Xenyari Lisariel a {{:Prickly Pear}}. The Prickly Pear drops off of [[an icy terror]], one of Lady Vox's guardians. Be careful and place it deep in your inventory or you might eat it before you return it. As you hand in the pear:
+
+: Xenyari Lisariel says, "Prickly Pears! I just love Prickly Pears!!  Thank you so much for getting these for me. I really, really appreciate your gift and I shall not OWW!! I hate when I stick myself with the needles. Oh look, I am bleeding now. Sigh. Can you hold this note for a moment please? My hands are full and I must clean up." 
+
+'''You receive a Bloodied Piece of Parchment.'''
+
+'''Take the Hyacinth, parchment, necklace, and orb to Kazzel. In exchange, he gives you a Faceted Hyancinth Telesm.'''
+
+'''Take this item to Xenyari. Upon receiving this, she will be struck dead and the Faceted Hyancinth Telesm will be changed into a [[Pulsating Hyacinth Telesm]].'''
+
+'''Take the [[Pulsating Hyacinth Telesm]] to Kazzel. On handing it in, a level 53 zombie called "[[monstrous zombie]]" spawns and attacks. Kill it, loot a [[Monstrous Zombie Heart]], and give it to Kazzel to receive your spell.'''
+
+''Missing dialogues and /locs needed.''
+
+[[Category:Quests]]
+[[Category:Rathe Mountains]]
+[[Category:Shadow Knight Quests]]
+
+===================================
+
+
+
+ '''This interesting write-up I found on Allakhazam.com and in no way do I take credit for this story'''.
+
+'''<out of character stuff: This was done today, after the revamp of the RM zone. All the quest mobs conned indifferent and there were no faction hits whatsoever. xp was granted three times in this quest, but not enough to make much difference (not even 1% total). The quest was done with a 51 SK, with a 63 2 box cleric in healing support. The fight wasn't tough at all really, easy to box even with a level 51 tank. The dialogue below is all directly quoted from the in game dialogue... with a couple of added bits and piece to make it a more interesting read...>''' 
+
+
+My mentor (may Innoruuk torment his soul) had given me a clue. Just a small one, but it was all my considerable intelligence required to bring it all to its inevitable conclusion. I stole the items I needed from the pitiful bloodstained room the old wretch had called home, and made my way the the Rathe Mountains to complete the task which was now before me. 
+
+My journey took me to the south eastern part of that shudderingly green area. It did not take me very long to find the object of my search - a fellow dark elf, and necromancer Kazzel D'Leryt. A hand on the hilt of my weapon, I greeted him. 
+
+'Hail, Kazzel D`Leryt' 
+
+The necromancer looked up from his musings, a glint of humour in his eye as his eyes crawled over me, sizing me up. I sighed impatiently. 
+
+Kazzel D`Leryt says 'Finally, a servant worthy of my needs! Apparently you are of high status, which perhaps means you might know a master jeweler capable of faceting a very magical, yet fragile stone?' 
+
+'I know a jeweler.' Actually I knew several. My own sister Tamina was a skillful jeweler and powerful enchanter. How she managed to attain such power after forsaking the Prince of Hate is a secret I will torture from her some day. 
+
+Kazzel D`Leryt says 'You must provide me with 2000 platinum pieces as a deposit, then you must take this stone to a master jeweler or Darfumpel, have it faceted and return it to me along with an orb of pure crystal, a gold necklace the color of snow, and the blood of Xenyari. Do that and I will provide you with magic beyond that of most knights of darkness.' 
+
+This sounded interesting. The price, however, was steep. I bought myself some time to think it over by asking him further questions. 
+
+'Who is Darfumpel?' 
+
+Kazzel D`Leryt says 'Darfumpel is a gnomish shopkeeper here in the Rathe Mountains. He apparently has a new technique for gemcutting, however, he will not deal with me due to my affiliation with necromancy. Speak with him. Perhaps he might be willing to aid you for a price, but make sure you hide your true nature. He despises dark magic.' 
+
+The fool. 'Where can I find this ... Xenyari?' 
+
+Kazzel D`Leryt says 'Xenyari is a druid who inhabits these parts. She is rarely seen, however, I require a droplet of her blood. Here is the catch though, and one for which you may be well suited if you desire magic of the knights of darkness - Xenyari must give of herself willingly. In other words, you cannot take her blood by force. Rather, she must give you her blood of her own accord.' 
+
+By now I had reached my decision, and handed over the two thousand platinum the necromancer asked for. Even as I counted out the coins I knew he was taking me for a ride. 
+
+Kazzel D`Leryt says 'Very well, Mischievous. Take this gem to a master jeweler and return it to me with the other three items.' 
+
+He handed me a dark blue stone. It glittered and danced in the light in a way that was almost mesmerising. I broke my eyes away and nodded curtly at Kazzel, only to see him already striding away. 
+
+My earlier career saw me well. I had spent some time in this area many years before, drinking of the blood of the gypsies who were foolish enough to set up camp in the area. Near to them were a few fortified huts and a trading store. It was in one of these huts I knew I had seen some gnome, and heard others call him by this Darfumpel name. I quickly donned my Journeyman Boots and sprinted to him. 
+
+I was prepared for a hostile welcome, but as I loomed through the doorway he merely glanced at me, as though expecting to see a dark elf standing there, and went back to his work. 
+
+'Hail, Darfumpel Zirubbel' 
+
+Darfumpel Zirubbel says 'Hail, Mischievous. I am Darfumpel, master jeweler and proprietor of this shop. How might I assist you today? Perhaps you need a stone cut or some jewelry repaired?' 
+
+His head was big, but at least he got to business fast. 
+
+'I need a stone cut.' 
+
+Darfumpel Zirubbel says 'Yes, I use a new gemcutting technique I designed myself. It will bring out the beauty of any gem. However, as arrogant as this may sound, I do not cut just any ordinary stone. They must be rare or of extraordinary quality. Have you an exceptional stone that requires faceting? If so, what type of gem is it?' 
+
+'It is a hyacinth' 
+
+Darfumpel Zirubbel says 'A hyacinth, eh? That is quite a rare stone. Quite fragile and easily shattered, too. With my new technique, I can assure you I will not destroy the gem, however, it will cost you. 1000 platinum coins is my fee. Provide me with the coin and the gem and I will cut it for you.' 
+
+My jaw dropped. One thousand platinum for a service that would take him but a minute or two to render? Then I saw the corner of his mouth tug in a smile and I wondered what kind of a deal he and Kazzel had with each other. Maybe I would torture that from them later, starting with this thieving little gnome. I could expect it from one of my own race, but from this short.... it was almost too much. Gritting my teeth, I counted out another thousand - my pouch was getting very light by now - and handed it and the stone over to him. As I had thought, the stone cut and etched easily, and moments later he was done. 
+
+Darfumpel Zirubbel says 'I have not seen a gem such as this in quite some time! It was not since I dabbled in a bit of necro? Wait? What are you going to use this for? Never mind. I do not wish to know. Here, take your gem and leave!' 
+
+I took the stone from him, holding his gaze for just a moment longer than I really needed to, and had the satisfaction of seeing a small flicker of fear cross his face. 
+
+As I was already nearby, I went to the most logical place to find a druid - at the massive druid circle on top of the hill. I prowled around, flinching at the treehugging druids as they made small talk with each other. Then my sharp hearing heard one of them call a greeting in the name of Xenyari, and I quickly tracked down my mark. Even as I approached she was muttering to herself. Clearly all the dancing around and stroking small furry animals had gone to her brain. 
+
+Xenyari Lisariel says 'Oh, I wish I had a prickly pear. I just have this insatiable craving for a prickly pear. But Permafrost is just so far!' She sighed deeply. 
+
+I smiled wickedly. I too enjoyed prickly pears and I had a couple even now, buried at the bottom of my pack. This could be easier than I thought. 
+
+'Hail, Xenyari Lisariel.' 
+
+Xenyari Lisariel says 'Hello, Mischievous.' 
+
+She didn't seem too bothered to see a dark elf either. The sun had definitely gone to her head. 
+
+'I couldn't help but overhear. Do you like prickly pears?' 
+
+Xenyari Lisariel says 'Yes, yes! Prickly pears! Do you have any? I just love prickly pears but Permafrost is just so far away even for us druids.' 
+
+Smiling in the false way that had always served me so well, I carefully removed the prickly pears from my pack and handed them to the wood elf. 
+
+Xenyari Lisariel says 'Prickly pears! I just love prickly pears!! Thank you so much for getting these for me. I really, really appreciate your gift and I shall not.. OWW!! I hate it when I stick myself with the needles! Oh look, I am bleeding now! *Sigh*. Can you hold this note for a moment, please? My hands are full and I must clean up.' 
+
+She handed over a bloodstained note to hold on to, the writing obliterated by the red drops. I took it and ran while she was cleaning up the blood - She was so scatterbrained I doubt she even realised I had gone. 
+
+I made my way back to Kazzel, and without a word, handed over the items he had asked for, two of which I had stolen from my old mentor's rooms - a white gold necklace and a crystalline orb. Kazzel smiled as I handed over the bloody paper. 
+
+Kazzel D`Leryt says 'You are quite cunning. After I fashion this telesm, take it back to Xenyari. She would 'enjoy' another 'gift,' eh?' 
+
+A moment later he had bonded the pieces by magic, and handed me back some kind of talisman. I could feel the fell magics pulsing through it, and even touching it I felt somewhat drained. Quickly, I hurried back to Xenyari. She was still standing in the same place, grinning like an idiot as she watched a butterfly's flight. 
+
+The flashing light off the talisman caught her eye though, and as I held it out to her she was clearly captured by the mesmerising beauty of the gemstone. Unthinking, her hands reached out for it, and I let her take the thing away. 
+
+Xenyari Lisariel bounced around with glee at the sight of my gift, smiled at me, and donned the telesm. As she clasped the telesm around her neck, she began to writhe in agony, and slowly faded from sight leaving just the telesm, which now pulsated with vibrant energy. 
+
+I raised an eyebrow. Potent magic indeed. I picked up the talisman and took it back to Kazzel. It was a nice enough piece of work - I could sense an enchantment now on the item, but it was not the power beyond other knights that Kazzel had promised. 
+
+I found him close to where he had been before, and angrily thrust the talisman at him. 
+
+'Give me the power you promised, old man.' 
+
+Kazzel D`Leryt laughed heartily and whispered to me, 'Well done, worm, your servitude to my will has now expired...' 
+
+Even as I was drawing my weapon to strike him down, the final word of a prepared conjuration slipped from his mouth. Immediately the skeleton of a giant rose from the ground, and I was barely able to dodge the unholy light that had gathered in his skeletal hand that would sap my life energy. 
+
+'Two can play at that game,' I muttered, returning the favour with a Harm Touch. 
+
+The battle was long and hard, requiring me to make use of much healing magic. But eventually, as I was about to drop from exhaustion, the creature turned and started lumbering away. Did it realise it could not defeat me? I chased after it, hacking and chipping away at its bones with my sturdy blade. And soon, it fell. 
+
+The mockery of a heart, beating amidst writhing coils of dark energy, was ripped from the abomnination's chest. I angrily took it back to Kazzel, who had wandered off, unconcerned, thinking his creation enough to finish me, and threw the thing at his feet, my sword to his throat. 
+
+Kazzel D`Leryt says 'Oh! Umm... Well, I was just playing with you. Certainly you know I was joking! We had a deal and I will abide by the terms of our agreement. Here is my payment for your services. Bye..' 
+
+Even as his lips completed the gate spell, I forgot him. I snatched up the parchment that was drifting to the ground, my hands almost shaking with my excitement. 
+
+A spell! And a powerful one, allowing me to drain the life force of victims and add it to my own. This was much better than that puny talisman! I quickly copied it into my spellbook and commited it to memory. 
+
+And then I made my way back to that thieving little gnome ........

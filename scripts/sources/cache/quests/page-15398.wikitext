@@ -1,0 +1,93 @@
+__NOTOC__
+{{Classic Era}}
+[[File:npc_canloe_nusback.png|frame|Canloe Nusback]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Canloe Nusback]]
+|-
+! ''' Minimum Level: '''
+| 6 (May be even lower. Needs testing.)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Legionnaire (Crushbone)]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Hematite}}
+</li><li> {{:Rusty Halberd}}
+</li><li> {{:Rusty Warhammer}}
+</li><li> {{:Small Patchwork Boots}}
+</li><li> {{:Small Patchwork Sleeves}}
+</li><li> {{:Small Patchwork Tunic}}
+</li><li> {{:Small Tattered Belt}}
+</li><li> {{:Turquoise}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Canloe Nusback]] is located at -16, 536, 3 in the Kaladim Warrior's Guild.''
+
+You say, 'Hail, Canloe Nusback'
+
+: Canloe Nusback says, 'Step forward and speak up, young ______! Kaladim can always use another warrior. Are you [ready to serve Kaladim] or has a yellow streak appeared down your back?'
+
+You say, 'I am ready to serve Kaladim'
+
+: Canloe Nusback says, 'Then serve you shall. Let your training begin on the battlefields of Faydwer. Seek out and destroy all [Crushbone orcs]. Return their belts to me. I shall also reward you for every two orc legionnaire shoulder pads returned. A warrior great enough to slay one legionnaire shall surely have no problem with another. Go, and let the cleansing of Faydwer begin.'
+
+You say, 'What Crushbone orcs'
+
+: Canloe Nusback says, 'The army of the Crushbone orcs is deadly indeed. They are great military strategists. It was a legion of them that brought down the great [Trondle Ogrebane]. Speak with Furtog Ogrebane about the Crushbones. He has need of warriors such as you.'
+
+You say, 'Who is Trondle Ogrebane'
+
+: Canloe Nusback says, 'Trondle Ogrebane is the legendary dwarven warrior who single-handedly exterminated the ogre clan called the [Mudtoes]. He was recently killed in battle. It took an entire legion of Crushbone orcs to bring him down. Furtog is still fuming about that.'
+
+You say, 'Who are the Mudtoes'
+
+: Canloe Nusback says, 'The Mudtoes were a small clan of ogres. They lived somewhere in the Butcherblock Mountains. They had an insatiable appetite for dwarves. They were finally destroyed by the hand of Trondle Ogrebane.'
+
+'''Hand [[Canloe Nusback]] 2 [[Crushbone Shoulderpads]], randomly looted from [[Orc Legionnaire (Crushbone)|Orc Legionnaires]] around Faydwer.'''
+
+: Canloe Nusback says, 'Yes, yes!! You have slain one legionnaire, but I reward for proof of two. Certainly you do not find another battle with the legionnaires difficult!!'
+
+: Canloe Nusback says, 'Good Work, warrior! Now continue with your training. Only on the battlefield can one become a great warrior.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 3 gold, 5 copper pieces.
+
+== Related Quests ==
+
+* [[Crushbone Belts]]
+* [[The Mudtoes]]
+
+== Notes ==
+
+At level 35 you will earn half a yellow bubble of exp for turning in 40 [[Crushbone Shoulderpads]] (20 turn ins).
+
+Level 7 gnome wizard went from 0% in 7 to nearly 60% into 8 with 15 turn ins, 30 pads.  Roughly 10% per turn in.
+
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

@@ -1,0 +1,45 @@
+{{Velious Era}}
+[[File:npc_dain_frostreaver_iv.png|frame|Dain Frostreaver IV]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Icewell Keep]]
+|-
+! ''' Quest Giver: '''
+| [[Dain Frostreaver IV]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| [[King Tormax]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tri-Plated Golden Hackle Hammer}}
+</li></ul>
+
+== Walkthrough ==
+<br>
+'''Dain Frostreaver will accept Tormax's head at kindly or better faction.'''
+<br><br>
+Upon turning in King Tormax's Head, obtained by killing King Tormax in Kael Drakkel, to Dain Frostreaver IV:
+
+: Dain Frostreaver IV says 'You have done what no Coldain could do, ______!  This is indeed a glorious say in our people's history.  In return for your invaluable service I present you with the Tri-plated Golden Hackle Hammer.  Its magic is powerful and I am sure it will serve you well.'
+
+Dain Frostreaver IV shouts 'Let it be know from this day forth that ______ and their companions are Heros of the Coldain Kingdom.  King Tormax has been slain, it is a time for celebration.  Let no tankard go unfilled!'
+
+<div class="facblock">
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[King Tormax]] could not get any worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Icewell Keep]]

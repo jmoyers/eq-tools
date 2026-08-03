@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_seloxia_punox.png|200px|frame|Seloxia Punox]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Warrior, you will have a tattered note in your inventory. The note reads as follows:
+
+: We, the Indigo Brotherhood, are the children of Innoruuk. He has blessed us well with Hate. Take this note to [[Seloxia Punox]] at the Cauldron of Hate. She will help train you to serve the will of Innoruuk.
+
+Upon handing the note to [[Seloxia Punox]]:
+
+: [[Seloxia Punox]] says, 'Welcome to the Indigo Brotherhood. Hmmm, you're a bit scrawny, but we'll work with it. Here's your guild tunic. Defend Neriak and all her allies.'
+
+<div class='facblock'>
+* Your faction standings with [[Indigo Brotherhood]] got better.
+* Your faction standings with [[Emerald Warriors]] got worse.
+* Your faction standings with [[Steel Warriors]] got worse.
+* Your faction standings with [[Primordial Malice]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Old Training Tunic*]]. Good luck, Warrior!
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:Warrior Quests]]

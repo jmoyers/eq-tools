@@ -1,0 +1,61 @@
+[[File:npc_slicia_jsinge.png|frame|Slicia J`Singe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| Slicia J`Singe
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Boon of Immolation]]
+* [[Scintillation]]
+* [[Vocarate: Air]]
+* [[Vocarate: Fire]]
+
+== Walkthrough ==
+
+Slicia J`Singe may found in the caster circle, wearing magenta, at loc +2790, +2390.  She wants any of the following spell scrolls:
+
+* [[Bristlebane's Bundle]]
+* [[Gift of Xev]]
+* [[Quiver of Marr]]
+* [[Scars of Sigil]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+
+You say, 'Hail, Slicia J`Singe'
+
+Slicia J`Singe says, 'Why is it that you have come to this place? If you are coming here in search of [magical scrolls], just get back on that so-called ship you came here on and forget everything you thought you heard.'
+
+You say, 'Magical scrolls?'
+
+Slicia J`Singe says 'Is your hearing failing you!? Unless you [have something I need], be gone!'
+
+You say, 'What something do you need?'
+
+Slicia J`Singe says 'I must have the scrolls of Gift of Xev, Bristlebane's Bundle, Quiver of Marr, and the Scars of Sigil. If you don't have one of these, leave my sight! If you do, I think we can work up a fair trade.'
+
+Hand in one of the scrolls mentioned.
+
+Slicia J`Singe says 'Here is the scroll that I promised. We have both
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Magician Quests]]

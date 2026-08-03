@@ -1,0 +1,71 @@
+{{Classic Era}}
+[[File:npc_daedet_losaren.png|frame|Daedet Losaren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Daedet Losaren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Good Races)
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Enic Ruklin]], [[Guard Cheslin]], [[Guard Leopold]], [[Kane Bayle (NPC)|Kane Bayle]], [[Lanhern Firepride]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''Note: This quest requires better than indifferent faction. Keep in mind for low level characters especially, while running around, these donations weigh 10.0 each and you need to collect 6''
+
+This is a good faction quest.  Daedet Losaren, in the Temple of Thunder, gives you a donation box and asks you to find six residents of Qeynos to donate to the temple.  Here's a list of where to get the six donations:
+
+1) [[Lanhern Firepride]] - Only at night when she is in Fish's bar.  Give her four ogre swills for one (and the following faction changes):
+
+<div class='facblock'>
+* Your faction standing with [[Merchants of Qeynos]] has gotten better.
+* Your faction standing with [[Circle Of Unseen Hands]] has gotten worse.
+* Your faction standing with [[Antonius Bayle]] has gotten better.
+* Your faction standing with [[Coalition of Tradefolk]] has gotten better.
+* Your faction standing with [[Guards of Qeynos]] has gotten better.
+</div>
+
+2) [[Hansl Bigroon]]  - Either at his house, or the office of the people;
+
+3) [[Kane Bayle (NPC)|Kane Bayle]] - Guard House;
+
+4) [[Enic Ruklin]] - Temple of Life;
+
+5) [[Guard Leopold]] - Qeynos Hills, wanders;
+
+6) [[Guard Cheslin]] - Qeynos Hills, wanders - Frequently dead.
+
+There are other people who respond to "donation", but don't seem to cough one up:  The cloth armor salesperson in front of the Lion Mane Inn and Tavern (she says to go away) in South Qeynos.  The two gents who make bags in North Qeynos.  A bard in the Bard's guild (says he donates to his own cause) in South Qeynos.  Also in South Qeynos, a merchant by the Grounds of Fate who only makes three things, axes I believe.  He laughs because of the taxes being so high.  Oh, so do the bag makers.
+
+Your reward is usually a spell scroll. When you turn in the combined box the following factions change:
+
+<div class='facblock'>
+* Your faction standing with [[Knights of Thunder]] has gotten better.
+* Your faction standing with [[Bloodsabers]] has gotten worse.
+* Your faction standing with [[Priests of Life]] has gotten better.
+* Your faction standing with [[Guards of Qeynos]] has gotten better.
+</div>
+
+Note that the donations weigh 10 each, so prepare to become encumbered during the quest.
+
+''Need all dialogues, current faction hits, /loc of quest mobs.''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,224 @@
+{{Classic Era}}
+[[File:npc_rarnan_lapice.png|frame|Rarnan Lapice]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Rarnan Lapice]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Erudin|Erudin Palace]], [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Flynn Merrington]], [[Geoard Bluehawk]], [[Illithi Nollith]], [[Lanken Rjarn]], [[Moodoro Finharn]], [[Nolusia Finharn]], [[Phloatin Highbrow]], [[Sinnkin Highbrow]], [[Tol Nicelot]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Erud's Tonic}}
+</li><li> {{:Rusty Long Sword}}
+</li><li> {{:Splintering Club}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+''[[Rarnan Lapice]] is located at -725, -85 outside the Temple of Divine Light in Erudin.''
+
+You say, 'Hail, Rarnan Lapice'
+
+: Rarnan Lapice says 'It is good to meet you, ______. To enter the Temple of Divine Light is to invite[[ Quellious]] into your body and soul. Tranquility is our way and, as such, we do all we can to uphold it. Are you a [cleric of Quellious], or am I mistaken?'
+
+You say, 'I am a cleric of Quellious.'
+
+: Rarnan Lapice says 'I have a small task for you then. Go to the city library and ask the librarian for the book 'The Testament of Vanear'. I shall require it for further studies. Do not return empty-handed or you shall know my rage.'
+
+''[[Illithi Nollith]] is located at -1075, -220 in the Erudin City Library in Erudin.''
+
+You say, 'Hail, Illithi Nollith'
+
+: Illithi Nollith says 'Shhhh... Greetings, ______. Welcome to the Library of Erudin. Please respect the other patrons and speak softly.'
+
+You say, 'I need the Testament of Vanear.'
+
+: Illithi Nollith says 'Oh my!! You have not heard?! The Testament of Vanear was stolen from the library! It was checked out by a man named [[Moodoro Finharn]]. He is an Erudite, but I believe he was executed for some crime. Now the book is lost forever. You should speak with [[Tol Nicelot]]. He used to know Moodoro. Tol is most likely upstairs.'
+
+''[[Tol Nicelot]] wanders around the Erudin City Library in Erudin.''
+
+You say, 'Hail, Tol Nicelot'
+
+: Tol Nicelot says 'I have no time to waste with strangers!'
+
+You say, 'Did you know Moodoro?'
+
+: Tol Nicelot says 'Yes, I knew [[Moodoro Finharn]]. He used to be a good friend until he started visiting Qeynos and indulging in human vices. He was executed for crimes against the state. Not even his sister [Nolusia] could get the charge dropped. There have been some who say he escaped execution and lives in Qeynos. That is insane babbling.'
+
+You say, 'Who is Nolusia?'
+
+: Tol Nicelot says 'Nolusia is a member of the Craftkeepers. She lives as a guildmaster in Erudin Palace.'
+
+''[[Nolusia Finharn]] Wanders between the entrance to Erudin Palace, and the upper floor during in-game daytime.''
+
+You say, 'Hail, Nolusia Finharn'
+
+: Nolusia Finharn says 'Greetings, ______! Has Lanken sent you to see me? Are you a [visitor or citizen of Erudin]?'
+
+You say, 'I am a visitor of Erudin.'
+
+: Nolusia Finharn says 'Then, remember, inside the palace walls, never speak the names of those defilers who have passed on. I shall be at the Vasty Inn later tonight. I can answer your questions there.'
+
+''[[Nolusia Finharn]] is located at -1110, -105 outside The Vasty Deep Inn in Erudin during in-game nighttime''
+
+You say, 'Hail, Nolusia Finharn'
+
+: Nolusia Finharn says 'Good evening. Are not the stars beautiful? Somewhere out there, I imagine there is another world and another person staring right back at me. If you have business with me, please save it for the morning in the palace.'
+
+You say, 'Who is your brother?' ''(NOT "Who is Moodoro?")''
+
+: Nolusia Finharn says 'Moodoro Finharn is my brother. He was a good boy up until he met that accursed halfling named [Flynn] Merrington.'
+
+You say, 'Who is Flynn?'
+
+: Nolusia Finharn says '[[Flynn Merrington]] talked my brother into stealing waters from the [Vasty Deep] and selling them to any buyers they could find. The waters from the Vasty Deep are sacred. That is why they started their [business].'
+
+You say, 'What Vasty Deep?'
+
+: Nolusia Finharn says 'The Vasty Deep waters are said to be magical. Of course this is rumor, but it does not stop magic users from all over Norrath from trying to obtain some of the waters.'
+
+You say, 'What business?'
+
+: Nolusia Finharn says 'Flynn had talked Moodoro into delivering the waters to him in Qeynos. Eventually Moodoro was caught. He was sentenced to death, but a few spells from yours truly helped him escape death by replacing him with a [doppelganger].'
+
+You say, 'What doppelganger?'
+
+: Nolusia Finharn says 'The doppelganger's innards were pulled out its esophagus and Moodoro went to Qeynos to start a new life. Unfortunately, he found Flynn there also. Now they have started up again somehow! My guildmaster is aware of this and fears what the High Council will do to our guild when they find this out. Will you [help] me?'
+
+You say, 'Yes, I will help.'
+
+: Nolusia Finharn says 'Find out how they get the water. Get me the water and I shall put a poison on the seal of the container. Then you carefully carry the container back to Flynn, not to my brother, and we shall put an end to this.'
+
+''[[Geoard BlueHawk]] is located at -1170, -315 in BlueHawk's in Erudin.''
+
+You say, 'Hail, Geoard BlueHawk'
+
+: Geoard BlueHawk says 'Greetings, adventurer! After all those months of sweaty, hot and dirty battling of beasts untold, it is time to treat yourself to a tall, cool grog!'
+
+You say, 'What about a Erud's Tonic?'
+
+: Geoard BlueHawk says 'Long ago, the great Erud found that excessive indulgence in spirits led to diminished mental awareness. His love of Kaladim brandy led him to concoct Erud's Tonic. The tonic blocked the effects of all spirits. Unfortunately, it is made from our precious Vasty Deep water and therefore is not permitted to be exported or given to non-Erudites or adventuring Erudites.'
+
+You say, 'Can I have some Erud's Tonic?'
+
+: [[Geoard BlueHawk]] says 'The sale or provision of [[Erud's Tonic]] to travelers is prohibited!'
+: [[Phloatin Highbrow]] says 'Ha! The closest you will get to tonic is in the library. That's assuming you know how to spell tonic. Bwaha ha! When you see the bookworm give her a KISS for me! HAHA!!'
+: [[Helia BlueHawk]] says 'Pipe down, Phloatin! Treat the new clientele with respect.'
+
+You say, 'What about Vasty Deep Water?'
+
+: Geoard BlueHawk says 'The Vasty Deep is a lake located on Odus. It contains the purest water in Norrath. Some say it is magical in nature. The High Council does not allow it to be taken by outsiders and those who try are usually converted to chum for the sharks.
+
+'''The "KISS" Phloatin mentioned is an [[Innoruuk's Kiss of Death]]. Purchase one from Geoard (~5 Silver), then find [[Sinnkin Highbrow]] at -1045, -255 in the Erudin City Library.'''
+
+You say, 'Hail, Sinnkin Highbrow'
+
+: Sinnkin Highbrow says 'Why, hello there fellow scholar! Don't you just love books? I am quite a bookworm myself. I could read forever! I am currently working my way through the 'T's.'
+
+You say, 'What about Erud's Tonic?'
+
+: Sinnkin Highbrow says 'Erud's Tonic! That is none of your concern!'
+
+'''Give her [[Innoruuk's Kiss of Death]].'''
+
+: Sinnkin Highbrow says 'It's about time you figured it out, genius! Maybe you should spend more time in the library. Here, take this tonic and get out of here before they see me giving it to you and turn us both inside out.'
+
+<div class="facblock">
+* Your faction standing with [[Erudite Citizen]] has been adjusted by 5.
+{{exp}}
+</div>
+
+'''You receive [[Erud's Tonic]] (there are two versions, but this is the NO TRADE one).''' 
+'''Return this to [[Nolusia Finharn]] (Outside of the Vasty Deep Inn, in Erudin)'''
+
+: Nolusia Finharn says 'Good work! Now, hold the bottle by the label! When you hand Flynn the bottle, the label will slide off. Bring me the label as proof of the deed.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] has been adjusted by 20.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by 5.
+* Your faction standing with [[Heretics]] has been adjusted by -3.
+* Your faction standing with [[High Guard of Erudin]] has been adjusted by 5.
+* {{exp}}
+</div>
+
+'''You receive the other version of [[Erud's Tonic]] back; this one isn't NO TRADE.'''
+
+'''Get another NO TRADE [[Erud's Tonic]] and then go to Qeynos.'''
+
+[[Moodoro Finharn]] is located at +165, +325 outside Crows Pub & Casino in North Qeynos.
+
+You say, 'Hail, Moodoro Finharn'
+
+: Moodoro Finharn says 'Greetings, fellow traveler! I gotta tell ya. I love this town. Especially Crow's. Although the crowd seems a bit shadier than other places of the sort.'
+
+You say, 'What about Erud's Tonic?'
+
+: Moodoro Finharn says 'I need some of Erud's tonic water. There is a merchant in Erudin who sells it.'
+
+'''Give him the NO TRADE [[Erud's Tonic]].'''
+
+: Moodoro Finharn says 'Oh thank the maker you have returned. Here is a little something in return.'
+
+<div class="facblock">
+* Your faction standing with [[Crimson Hands]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+* {{exp}}
+</div>
+You receive 1 copper from Moodoro Finharn.
+
+[[Flynn Merrington]] is located at +35, +340 inside Crows Pub & Casino in North Qeynos.
+
+You say, 'Hail, Flynn Merrington'
+
+: Flynn Merrington says 'Oh look.. another gnoll pup. This bar is too rough for the likes of you. Why don't you try Fish's. We don't need any more regulars here, chump!'
+
+'''Give him the regular [[Erud's Tonic]].'''
+
+: Flynn Merrington says 'Well, now... That's cutting out the middle man. Thanks, chum! Now, beat it!'
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by -20.
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by -3.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Kane Bayle]] has been adjusted by -2.
+* {{exp}}
+</div>
+
+'''You receive a [[Label of Erud's Tonic]].'''
+
+'''Return to Nolusia Finharn (at the Vasty Deep Inn) and hand in the [[Label of Erud's Tonic]].'''
+
+: Nolusia Finharn says 'Fantastic. Now I can rest assured that my brother stands a better chance of finding the right path without that manipulating little man around. Master Lanken can rest assured that the waters are safe from abuse.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] has been adjusted by 30.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by 5.
+* Your faction standing with [[Heretics]] has been adjusted by -4.
+* Your faction standing with [[High Guard of Erudin]] has been adjusted by 5.
+* {{exp}}
+</div>
+You receive 11 copper from Nolusia Finharn.
+
+You receive a [[Splintering Club]]
+
+[[Category:Quests]]
+[[Category:Erudin]]

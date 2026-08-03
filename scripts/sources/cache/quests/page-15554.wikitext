@@ -1,0 +1,62 @@
+[[File:npc_styria_fearnon.png|frame|Styria Fearnon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ocean of Tears]]
+|-
+! ''' Quest Giver: '''
+| [[Styria Fearnon]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a pirate]]
+|}
+
+== Reward ==
+
+<ul><li>       {{:Aviak Feather}}
+</li><li>      {{:Conch Shell}}
+</li><li>      {{:Fishing Spear}}
+</li><li>      {{:Kiola Nut}}
+</li></ul>
+
+== Walkthrough ==
+
+Styria Fearnon walks around the top of the hill next to the dock on the island with the Sisters of Erollisi.
+
+You say, 'Hail, Styria Fearnon'
+
+: Styria Fearnon says 'Welcome to my island. I always welcome visitors, but I would prefer that your stay not last too long. My warriors are sometimes tempted by others. That is why they all wear purity belts. I should warn you, also, to be on the lookout for the Pirates of Gunthak.'
+
+You say, 'Who are the Pirates of Gunthak?'
+
+: Styria Fearnon says 'The Pirates of Gunthak have been stranded on a nearby island. Their ship was sunk by some unknown water beast. They no attempt to take over this island and commandeer the first ship they encounter. I am looking for brave adventurers to hunt the rogues. Do you wish to hunt the pirates or are you waiting for the next ship?'
+
+You say, 'I will hunt the pirates!'
+
+: Styria Fearnon says 'Go and seek them out. They are on a nearby island. You will have to swim if you have no boat. Each pirate wears the pirate earring of the Pirates of Gunthak. I shall reward you for each earring you return to me. They have also stolen the Bracers of Erollisi from us. Their leader may have the pair. Return it to me and I shall be very appreciative.'
+
+[[Capt Surestout]] is on the Isle of the Seafoam Cyclops, two islands to the west.
+
+'''Give the Bracers of Erollisi to Styria Fearnon.'''
+
+: Styria Fearnon says 'Oh!! Thank you!! We are so grateful to you. I offer you this as reward. It is one of the dwarven smith's finest works.'
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Ocean of Tears]]

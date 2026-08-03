@@ -1,0 +1,44 @@
+{{Velious Era}}
+
+[[File:npc_ergrez_shortpaw.png|frame|Ergrez Shortpaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ergrez Shortpaw]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Direwolf Fur Hood}}
+</li></ul>
+
+== Walkthrough ==
+
+Ergrez will make you a Direwolf Fur Hood if you bring him a [[Low Quality Dire Wolf Fur]] and 2 [[Bark Bindings]].
+
+You say, 'Hail, Ergrez Shortpaw' 
+(no response) 
+
+(handed in the items) 
+Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+
+There is no faction or experience associated with this quest.
+
+[[Bark Bindings]] can be foraged in Wakening Lands.
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

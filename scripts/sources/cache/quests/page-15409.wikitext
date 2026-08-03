@@ -1,0 +1,65 @@
+{{Classic Era}}[[File:npc_narex_t`vem.png|frame|Narex T`Vem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Narex T`Vem]]
+|-
+! ''' Minimum Level: '''
+| 12+
+|-
+! ''' Classes: '''
+| All (Evil)
+|-
+! ''' Related Zones: '''
+| [[Lavastorm Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[goblin runner]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Featherweight Pouch}}
+</li></ul>
+
+== Walkthrough ==
+
+'''This quest requires amiable or better faction.'''
+
+Narex T`Vem may be found in the warriors guild.
+
+You say, 'Hail, Narex T`Vem'
+
+: Narex T`Vem says 'Welcome to the Cauldron of Hate. If you are a young warrior, you have come to the right place. There are many [duties] to be performed. If you are a veteran of the blade, we welcome your return to service. Perhaps you return with a [Leatherfoot] skullcap?'
+
+You say, 'What duties?'
+
+: Narex T`Vem says 'I am so glad you asked. There is one matter of importance with which you may be able to assist. It seems an Erudite has made camp in Lavastorm. He is powerful and we do not expect you to slay him. Your mission is to cut off  his supply line. I hope you will [accept the mission].'
+
+You say, 'I will accept the mission.'
+
+: Narex T`Vem says 'Go to the Lavastorm Mountain Range. It is a dangerous place, but the one you seek must leave by the direction you entered. He is a goblin. Apparently the Erudite is employing their strength. The fire goblin runner shall be an easy kill for you. At least, he should be. Return his runner pouch to me.'
+
+Head to Lavastorm Mountains, kill a Goblin Runner and loot its Goblin Supply Pouch. The Goblin Runner paths through the goblin camp above Solusek over towards druid ring. *killed at loc (989,1165)*. Turn this in to Narex.
+
+: Narex T`Vem says 'Fine work.  I trust the denizens of Lavastorm were not unkind.  Please take this featherweight pouch as a reward.  May it keep you fleet of foot.'
+ 
+<div class="facblock">
+* Your faction standing with [[Indigo Brotherhood]] got better.
+* Your faction standing with [[Emerald Warriors]] got worse.
+* Your faction standing with [[Steel Warriors]] got worse.
+* Your faction standing with [[Primordial Malice]] got worse.
+</div>
+{{exp}}
+
+''Need cut-off level to receive quest, minimum faction to receive quest''
+
+== Experience Gain ==
+
+For a level 12 Dark Elf Cleric, it gives 4% of xp bar per turn.
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:All Classes Quests]]

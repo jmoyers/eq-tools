@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_coriante_verisue.jpg|frame|Coriante Verisue]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Dark Truth Guild Note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Paineel]]
+|-
+! ''' Related NPCs: '''
+| [[Coriante Verisue]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirt Soiled Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Dark Truth Guild Note reads: 
+
+:: <code>Take this note to Coriante Verisue.  She is perhaps the oldest 'living' resident of Paineel.  She will, with the aid of her many henchmen, guide you in the perilous craft of Necromancy.  Together, combined with the Power of the Heretics, you will grow in power, and one day exert your will upon the common races and take the place that is rightfully yours.</code>
+
+''[[Coriante Verisue]] is located at 797, 839 in the Tabernacle of Terror ([[Cleric]]) Guild Hall.''
+
+You say, 'Hail, Coriante Verisue'
+
+: Coriante Verisue says, 'Greetings, young one! There are many tasks to be performed aside from your studies to truly harness the powers passed down to us by our ancestor [Miragul]. The most basic of these tasks is the gathering of bat wings and snake fangs from the yard outside our city. I will reward you for every two bat wings and two snake fangs you bring to me.'
+
+'''Hand [[Coriante Verisue]] the [[Harbingers of Fear Guild Note]].'''
+
+: Coriante Verisue says, 'You are welcomed into the fold.  Now go out, and prove yourself, young one.  You have much to learn about the Dark Truth.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

@@ -1,0 +1,42 @@
+{{Kunark Era}}
+[[File:npc_grype.png|frame|Grype]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Grype]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  1 Copper and a Burp
+</li></ul>
+
+== Walkthrough ==
+
+In the Tink 'N Babble '''at night''' there is an NPC named Grype. He spawns in the same place as Clerk Doval. If you hail him, he'll just be finishing his ale. Go buy four [[Cabilis Pale Ale]]s and give them to him.
+
+You'll be rewarded with a loud burp and 1 copper (no faction or exp). 
+
+: Grype swallows the whole bottle in one gulp. 'Here, go buy yourself a brain. What?! You expecting something? How about this.. <BUUURRRPPPP!!> Thanks for helping me get through my dry spell, croak!! Never mess with Blue Talon!!
+
+When you ask, "Who are the Blue Talons?"
+
+: Grype takes a swipe at you. We used to be the bruisers of the west side. We didn't take nothin' from no one!! Fist and mind was our motto. Now get lost before I introduce my fist to your face. Hmpf. Too late, I see.
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:All Classes Quests]]

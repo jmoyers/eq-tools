@@ -1,0 +1,106 @@
+{{Velious Era}}
+[[File:a_kromrif_recruiter.png|frame|A Kromrif Recruiter]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[A Kromrif recruiter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Great Divide]], [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| 
+* [[a coldain cook]]
+* [[a coldain hunter]]
+* [[a coldain lookout]]
+* [[a coldain missionary]]
+* [[a coldain skinner]]
+* [[a coldain warrior]]
+* [[Loremaster Derrin]]
+* [[Rodrick Tardok]]
+* [[Tain Hammerfrost]]
+
+* [[a Coldain miner]]
+* [[a coldain wolfmaster]]
+* [[a velium miner]]
+* [[an expedition guard]]
+* [[Captain Stonefist]]
+* [[Davin Fatfist]]
+* [[Fomgrut Borkel]]
+* [[Gerton Dumkin]]
+* [[Herga Ratgur]]
+* [[Laima Ratgur]]
+* [[Lapker Geynion]]
+* [[Relik]]
+|}
+
+== Reward ==
+
+Faction
+
+== Walkthrough ==
+
+a kromrif recruiter scowls at you, ready to attack -- You could probably win this fight.
+
+You say, 'Hail, a kromrif recruiter' 
+
+a kromrif recruiter says, 'I will do nothing to help beings like you!'
+
+''At dubious or higher:''
+
+You say, 'Hail, a kromrif recruiter' 
+
+a kromrif recruiter says 'Greetings, little thing. You have entered into the great city of Kael Drakkel, home of the Kromzek as well as a few of my kind, the Kromrif. If you are to walk among my people as a peer you must prove yourself as a friend, not a foe.' 
+
+You say, 'I will prove myself as a friend' 
+
+a kromrif recruiter says 'Leave this place then and return when you have waged war upon the Coldain. Remove their heads from their bodies and return them to me. I will spread the word of your deeds amongst my people if you do so, Lias.' 
+
+You say, 'what about the Coldain?' 
+
+a kromrif recruiter says 'The Coldain are the ice dwarves who dwell in the city of Thurgadin. They are a blight upon the land known as Velious, speaking the word of their god, Brell.' 
+
+On handing in heads you get faction, and... 
+
+A kromrif recruiter says 'Very good, ______. Slay more of the beasts and your name will be known by all of the Kromrif!' 
+
+<div class="facblock">
+''Note: If you are seeking to improve Kael faction then you would be well advised to switch from this quest to "Bvellous Bounty" as soon as you are Dubious to Captain Bvellous, and gain faction with King Tormax.
+
+''You can hand in the heads invis (need a friend to help out) and you can hand in 4 Coldain heads at a time.
+
+''The recruiter resists the Alliance spellcast from Ornate Velium Pendant and will then attack you if within melee range but remains rooted.
+</div>
+
+Upon turning in a [[Coldain Head]], you get the following hits:
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better. (+10) -- 74 heads from max kos and remained Scowling. Turned in 100 heads and went to threatening. 134 heads + OVP got to Dubious with Kromrif. Note recruiter is immune to OVP and will agro if OVP is used on him.
+* Your faction standing with [[Kromzek]] got better. (+8)
+* Your faction standing with [[Coldain]] got worse. (-17)
+* Your faction standing with [[Claws of Veeshan]] got worse. (-20 or more)
+(tested: from max kos CoV, after 20 positive CoV hits, turning in one Coldain head put me back to max kos CoV)
+</div>
+
+{{exp}}
+
+== Notes ==
+
+He will eat heads if he is KOS. Methods to hand in while KOS include sneak and invisibility (after opening a trade box). He will not aggro from proximity, so you can stand right next to him while casting invis.
+
+He is immune to faction spells like [[Alliance]]; however, you can just go down the hall a short way and cast it on the nearest bearded (Kromrif) giant. If you have no other faction hits, this is enough to raise you to dubious with him.
+
+It takes 6 Coldain heads for most (all?) race/class combinations to attain Dubious, assuming no other faction hits.
+
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

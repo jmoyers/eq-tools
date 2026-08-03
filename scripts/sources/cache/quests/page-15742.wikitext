@@ -1,0 +1,25 @@
+__TOC__
+[[Monk]] [[quests]] are quests which pertain exclusively to the Monk [[class]], which is exclusive to the [[Human]] and [[Iksar]] [[races]].
+
+= Freeport Sash Quests =
+{{main|Monk Sash Quests}}
+{{:Monk Sash Quests}}
+
+= Qeynos Headband Quests =
+{{main|Monk Headband Quests}}
+{{:Monk Headband Quests}}
+
+= Cabilis Shackle Quests =
+{{main|Monk Shackle Quests}}
+{{:Monk Shackle Quests}}
+
+= Iksar Sparring Armor =
+{{main|Sparring Armor}}
+{{:Sparring Armor}}
+
+= Epic Quest =
+{{main|Monk Epic Quest}}
+{{:Monk Epic Quest}}
+
+[[Category:Monk Quests]]
+[[Category:Quests]]

@@ -1,0 +1,195 @@
+'''Note:''' For the older versions of the rewards for these quest (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+Test of Courage 
+<li>{{:Truewind Earring}}
+  <ul>
+  <li>1 - {{:Ochre Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Sky Emerald}} ([[Protector of Sky]])
+  <li> '''3''' - <span style="font-weight: bold">{{:Silver Hoop}}</span> ([[Gorgalosk]])
+  </ul>
+</ul>
+<ul>
+Test of Skill 
+<li>{{:Aegis of the Wind}}
+  <ul>
+  <li>2 - {{:Gold Disc}} ([[an azarack]])
+  <li>3 - {{:Dark Wood}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Small Shield}}</span> ([[Keeper of Souls]])
+   </ul>
+</ul>
+<ul>
+Test of Protection 
+<li>{{:Pauldrons of Piety}}
+  <ul>
+  <li>3 - {{:Adumbrate Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Faintly Glowing Diamond}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Shiny Pauldrons}}</span> ([[The Spiroc Lord]])
+</ul>
+</ul>
+<ul>
+Test of Resolution 
+<li>{{:Necklace of Resolution}}
+  <ul>
+  <li>4 - {{:Spiroc Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>5 - {{:Spiroc Healing Totem}} ([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]]
+  <li>'''6''' - <span style="font-weight: bold">{{:Silvered Spiroc Necklace}}</span> ([[Bazzt Zzzt]])
+  </ul>
+</ul>
+<ul>
+Test of Theurgy 
+<li>{{:Theurgist's Star}}
+  <ul>
+  <li>'''5''' - {{:Saffron Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 -  {{:Glowing Sapphire}} <span style="font-weight: bold">([[Bazzzazzt]], [[Bazzt Zzzt]], [[Bzzzt]]) </span>
+  <li>'''7''' -  <span style="font-weight: bold">{{:Djinni Aura}}</span> ([[Sister of the Spire]])
+  <li>1.5, 4, 8 - {{:Efreeti Mace}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]]
+  </ul>
+</ul>
+<ul>
+Test of The Weak 
+<li>{{:Truwian Baton}}
+  <ul>
+  <li>6 - {{:Manna Nectar}} ([[Bzzazzt]])
+  <li>7 - {{:Shimmering Topaz}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>8 - <span style="font-weight: bold">{{:Mithril Bands}}</span> ([[Eye of Veeshan]])
+  <li>1.5, 4, 8 - {{:Efreeti Standard}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+
+==Quests==
+Talk to [[Josin Faithbringer]] in the [[Plane of Sky]].
+
+You say, 'hail Josin Faithbringer'
+:''Josin Faithbringer says 'Greetings, Xekl .  Are you ready to begin your test of faith? ''
+You say, 'I am ready to begin the test of faith'
+:''Josin Faithbringer says 'I have faith that you will do well.  Choose Alan or Deric. ''
+
+= Alan Harten =
+
+You say, 'I choose alan'
+:''Josin Faithbringer says 'Take and read this book. When you are done, hand it back to me and I will summon him.'' 
+:''Josin Faithbringer says 'Farewell. ''
+:''Alan Harten says 'Faith is the key. ''
+You say, 'hail Alan Harten'
+:''Alan Harten says 'Greetings, faithful.  Your faith shall be tested this day.  Shall you take the test of courage, skill, protection or have you already proven your faith and wish to see what I have to trade? ''
+You say, 'I wish to see what you have to trade'
+:''Alan Harten says 'So the faithful has returned for a trade, eh?  Well, I am willing to upgrade the Darkwood Aegis or the Glowing Pauldrons for one of such devout faith.''  
+
+== Cleric Test of Courage ==
+
+Alan Harten says 'You have come seeking the knowledge and treasures I possess.  I will impart such things to you, if you do a service to your god.  It matters not who that god may be, but the service and the faith you must exemplify.  Bring to me an ochre tessera, a sky emerald, and a silver hoop. 
+
+'''Reward:''' {{:Truewind Earring}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Ochre Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Sky Emerald]] || [[Protector of Sky]] || Island 2 boss
+|-
+| [[Silver Hoop]] || [[Gorgalosk]] || Island 3 boss
+|}
+
+== Cleric Test of Skill ==
+
+Alan Harten says 'The test of skill it will be.  Bring to me a golden disc, a piece of dark wood, and a small shield.  You shall be rewarded upon your return. 
+
+'''Reward:''' {{:Aegis of the Wind}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Gold Disc]] || [[an azarack]] || Island 2
+|-
+| [[Dark Wood]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Small Shield]] || [[Keeper of Souls]] || Island 4 boss
+|}
+
+== Cleric Test of Protection ==
+
+Alan Harten says 'So, you must be a great protector to have ventured this far.  Bring to me an adumbrate globe, a glowing diamond, and some shiny pauldrons to get your reward. 
+
+'''Reward:''' {{:Pauldrons of Piety}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Adumbrate Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Faintly Glowing Diamond]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Shiny Pauldrons]] || [[The Spiroc Lord]] || Island 5 boss
+|}
+
+= Deric Lennox =
+
+You say, 'I choose deric'
+:''Josin Faithbringer says 'Take and read this book. When you are done, hand it back to me and I will summon him. ''
+:''Josin Faithbringer says 'Farewell. ''
+:''Deric Lennox says 'Faith is the key. ''
+You say, 'hail Deric Lennox'
+:''Deric Lennox says 'Greetin's there, lad.  Come seekin' glory then, have ye?  So be it then, glorious ye shall be.  Take me tests here, and I will show ye the light.  Will ye be takin' the test of resolution, of theurgy, or of the weak? Or maybe ye already have gotten your glory and wish to trade some of spoils for items of more use to you.'' 
+You say, 'I wish to trade'
+:''Deric Lennox says 'Bring me Theurgist or a Truwian Baton and I will upgrade them to something a bit more useful.'' 
+
+== Cleric Test of Resolution ==
+
+Deric Lennox says 'The test of resolution be an easy one.  Trust me there!  I'll just be needin' ye t' bring me a spiroc statuette, a spiroc healing totem, and a silvered spiroc necklace.  Ne'er liked those blasted birds anyway. 
+
+'''Reward:''' {{:Necklace of Resolution}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Spiroc Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Spiroc Healing Totem]] || [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|-
+| [[Silvered Spiroc Necklace]] || [[Bazzt Zzzt]] || Island 6 boss
+|}
+
+== Cleric Test of Theurgy ==
+
+Deric Lennox says 'The test of theurgy.  Ne'er unnerstood it meself. It calls fer ye t' bring me an efreeti mace, a saffron spiroc feather, a glowing sapphire, an' some djinni aura. 
+
+'''Reward:''' {{:Theurgist's Star}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Saffron Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Glowing Sapphire]] || [[Bazzzazzt]], [[Bzzzt]], [[Bazzt Zzzt]] || Island 6
+|-
+| [[Djinni Aura]] || [[Sister of the Spire]] || Island 7 boss
+|-
+| [[Efreeti Mace]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+== Cleric Test of The Weak ==
+
+Deric Lennox says 'Aye, the weak.  I laugh at 'em meself.  Dinnae look so shocked, laddie!  I was only kiddin'!  Anyhow, ye know ye should help the weak, right? Unless ye worship one o' the evil ones, then ye kill em! So go out an' do what yer god expects from ye!  Oh, an' laddie, bring me an efreeti standard, a manna nectar, mithril bands, and a shimmering topaz.  Aye, that'll do it. 
+
+'''Reward:''' {{:Truwian Baton}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Manna Nectar]] || [[bzzazzt]] || Island 6
+|-
+| [[Shimmering Topaz]] || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Mithril Bands]] || [[Eye of Veeshan]] || Island 8 boss
+|-
+| [[Efreeti Standard]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Cleric Quests]]

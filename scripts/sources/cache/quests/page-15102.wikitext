@@ -1,0 +1,95 @@
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Shakrn Meadowgreen]], [[Ulan Meadowgreen]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+Crafted Armor is a mid-level [[Warrior]] specific armor set.
+
+== Rewards ==
+
+{{Gear Set
+|Crafted Breastplate
+|Crafted Plate Boots
+|Crafted Vambraces
+|Crafted Gauntlets
+|Crafted Bracers
+|Crafted Greaves
+|Crafted Helm
+|Crafted Pauldron
+}}
+
+== Walkthrough ==
+
+Talk to either [[Shakrn Meadowgreen]] (160, -2217) or [[Ulan Meadowgreen]] (126, -2177) in [[Southern Karana]].
+
+* Shakrn: Vambraces, Boots, Gauntlets, Helmet
+* Ulan: Pauldron, Greaves, Bracer, Breastplate
+
+For each armor piece you'll need to collect the following items.
+==[[Shakrn Meadowgreen]]==
+[[File:npc_shakrn_meadowgreen.png|thumb|right|Shakrn Meadowgreen]]
+{{CheckboxList}}
+
+'''{{:Crafted Vambraces}}'''
+* [[Fire Emerald]] (2)
+* [[Griffon Eye]] ([[Northern Karana]] - [[a Griffon]] (level 35), [[Grimfeather]] (lvl 37))
+<br>
+'''{{:Crafted Plate Boots}}'''
+* [[Sapphire]] (2)
+* [[Goblin Frost Totem]] ([[Permafrost]] - a Goblin Patriarch (lvl 27-33 mob))
+<br>
+'''{{:Crafted Gauntlets}}'''
+* [[Star Ruby]] (2)
+* [[Aviak Charm]] ([[Southern Karana]] - [[Aviak avocet]] (lvl 28-30 mob))
+<br>
+'''{{:Crafted Helm}}'''
+* [[Ruby]]
+* [[Goblin Fire Totem]] ([[Solusek's Eye]] (A) - [[Fire goblin shaman]] Lvl 24, [[inferno goblin shaman]] Lvl 28)
+
+==[[Ulan Meadowgreen]]==
+[[File:npc_ulan_meadowgreen.png|thumb|right|Ulan Meadowgreen]]
+'''{{:Crafted Breastplate}}'''
+
+* [[Ruby]] (3)
+* [[Werewolf Talon]] ([[Mistmoore]] - [[A gypsy musician]],  [[Western Karana]] - [[A Werewolf]] (lvl 28-31 mobs))
+<br>
+'''{{:Crafted Bracers}}'''
+
+* [[Sapphire]]
+* [[Bunch of Optic Nerves]] ([[Gorge of King Xorbb]] and [[Lower Guk]] - an evil eye (level 17-18 mob))
+<br>
+'''{{:Crafted Greaves}}'''
+
+* [[Star Ruby]] (2)
+* [[Dark Circlet]] ([[Najena]] - [[Trazdon]] (lvl 25 mob))
+<br>
+'''{{:Crafted Pauldron}}'''
+
+The runes below are dropped by [[an Evil Eye (Runnyeye)]] pre-revamp and [[an Evil Eye prisoner]] post-revamp.
+
+* [[Fire Emerald]]
+* [[Bottom of a Fractured Rune]]
+* [[Middle of a Fractured Rune]]
+* [[Top of a Fractured Rune]]
+
+
+[[Category:Quests]]
+
+[[Category:Southern Karana]]
+[[Category:Warrior Quests]]

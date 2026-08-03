@@ -1,0 +1,280 @@
+{{Epics Era}}
+
+<onlyinclude>
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Tomekeeper Danl]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Robe of the Lost Circle}}
+</li><li> {{:Robe of the Whistling Fists}}
+</li><li>{{:Celestial Fists}}
+     <ul><li>Require level 46 to equip, level 50 to click, and change the Damage / Delay of both of your fists to 9/16.
+     </li></ul>
+</li></ul>
+
+== Short Walkthrough/Checklist ==
+{{CheckboxList}}
+* ''' Kill [[Brother Zephyl]] or [[Brother Qwinn]] and loot [[Robe of the Lost Circle]] OR perform the following sub-quest. '''
+:* ''' [[Monks of The Whistling Fist|Robe of the Lost Circle]] sub-quest '''
+::* Obtain [[Purple Headband]] via quests.
+::* Obtain [[Red Sash of Order]] via quests.
+::* Kill [[Targin the Rock]] in [[Nagafen's Lair]] King room to get [[Code of Zan Fi]].
+::* Kill [[Raster of Guk]] in [[Lower Guk]] to get [[The Idol]]. It should be noted you CANNOT MQ the idol and sash to [[Brother Zephyl]].
+::* Turn in [[Purple Headband]] and [[Code of Zan Fi]] to [[Brother Qwinn]] in [[Southern Karana]] to get [[Needle of the Void]]. This turn-in was successfully multiquested (MQ'd) as of 2024-09-14.
+::* Turn in [[Red Sash of Order]] and [[The Idol]] to [[Brother Zephyl]] in [[Rathe Mountains]] to get [[Rare Robe Pattern]].
+::* Combine [[Shadow Wolf Pelt]], [[Silk Swatch]], and [[Gather Shadows|Spell: Gather Shadows]] in sewing kit to make [[Shadow Silk]] ([[Tailoring]] 36).
+::* Combine [[Shadow Silk]], [[Needle of the Void]], [[Rare Robe Pattern]], and [[Jonthan's Whistling Warsong|Song: Jonthan's Whistling Warsong]] in a sewing kit to make '''[[Robe of the Lost Circle]]''' (no skill check)
+
+* ''' [[The Lost Circle|Robe of the Whistling Fists]] sub-quest'''
+:* Kill [[an iksar betrayer]] in [[Chardok]] and loot [[A Metal Pipe]] (Fi).
+:* Kill [[a drolvarg pawbuster]] in [[Karnor's Castle]] and loot [[A Metal Pipe]] (Zan).
+:* Turn in the two pipes and [[Robe of the Lost Circle]] to [[Brother Balatin]] (must not be aggro'd. Charm and sneak both work, pacify does NOT work.) in [[Dreadlands]] to receive '''[[Robe of the Whistling Fists]]'''.
+
+* ''' First Book'''
+:* Get an [[Immortals]] book from any named mob in [[Skyfire]].
+:* Turn in [[Immortals]] to [[Tomekeeper Danl]] in the [[Erudin]] library for [[Danl's Reference]].  Do not turn in while Feigned Death.  Danl will eat your turn in. 
+:* Save this until the final turn in so you may keep your robe longer.
+:* Find [[Lheao]] in the hidden cove in [[Timorous Deep]]. Turn in [[Danl's Reference]] and [[Robe of the Whistling Fists]] to get '''[[Celestial Fists (book)]]'''.
+
+* ''' Fist of Fire'''
+:* Find [[a fire sprite]] in [[Lavastorm Mountains]] and say "I challenge Eejag" to spawn [[Eejag]]. Kill Eejag and loot '''[[Charred Scale]]'''.
+
+* ''' Fist of Air'''
+:* Go to Dojorn's Island (Isle 1.5) in [[Plane of Sky]]. Hand Scale to [[a presence]] to spawn [[Gwan]]. Kill Gwan and loot '''[[Breath of Gwan]]'''.
+
+* ''' Fist of Earth'''
+:* Hand [[Breath of Gwan]] in to [[a sleeping ogre]] in [[Mines of Nurga]] to spawn [[Trunt]]. Kill Trunt and loot '''[[Trunt's Head]]''' (Note: a sleeping ogre must con indifferently, use sneak from behind to turn in).
+
+* ''' Fist of Water'''
+:* '''OPTIONAL''' Find dark elf named [[Deep]] in underwater caverns of [[Lake Rathetear]] and turn in the Head. She will give it back then despawn. 
+:* Go to [[Overthere]] and locate a monk named [[Astral Projection (Overthere)]]. Hand him [[Trunt's Head]] and receive [[Eye of Kaiaren]].
+:* In [[Lake of Ill Omen]] (It's not on the platform, but on the shore, loc neg 1900 neg 950), give an [[Astral Projection (LOIO)]] the [[Eye of Kaiaren]] to spawn [[Vorash]] and [[Deep]]. Once [[Vorash]] dies, [[Xenevorash]] will spawn. Kill [[Xenevorash]] and loot '''[[Demon Fangs]]'''.
+
+* ''' Book Conversion (Dealing with Kaiaren): '''
+:* SUPER DUPER IMPORTANT: If you are doing/receiving an MQ or you do not have your Demon Fangs in hand and ready, do NOT turn in [[Celestial Fists (book)]] to Sane Kaiaran and receive [[Book of Celestial Fists]] because Sane Kaiaren will despawn within 30 minutes. If you lose [[Celestial Fists (book)]] you can no longer spawn Sane Kaiaren for the final epic turn in and will have to either 1) wait for another monk to spawn Sane Kaiaren or 2) petition for reimbursement and wait a month or more for Sirken's response.
+:* Give [[Celestial Fists (book)]] to <b><u>mad</u></b> [[Kaiaren]] at the ruins near Sebilis in [[Trakanon's Teeth]] and he hands you back the book, then he punches you in the face - you can either kill him or feign off the aggro.
+:* Go to <b><u>sane</u></b> [[Kaiaren]], who spawns over by the lake in TT (p305, p2470 in an empty hut) <b><u>after</u></b> you hand in [[Celestial Fists (book)]] to mad [[Kaiaren]].
+:* Hand [[Celestial Fists (book)]] to <b><u>sane</u></b> [[Kaiaren]] and he hands you back a ''slightly different'' book called [[Book of Celestial Fists]].
+
+* ''' Final Turn-in'''
+:* Turn in the modified [[Book of Celestial Fists]] and [[Demon Fangs]] to <b><u>sane</u></b> [[Kaiaren]] to receive the monk epic, [[Celestial Fists]].
+{{End}}
+
+'''IMPORTANT: Turning your final pieces in to <u>mad</u> [[Kaiaren]] instead of <u>sane</u> Kaiaren will cause your items to be lost.'''
+''' Summary Version of Final Turnin '''
+Go to Kaiaren near Seb, turn in book, feign death.
+Run to Hut by the lake where new Kaiaren spawns.
+Hand him just the book. he gives it back.
+Give your new book and demon fangs back to him for your epic...
+
+== Long Walkthrough with dialogue ==
+
+''' The Books '''
+
+[[Tomekeeper Danl]] can be found on the second floor of the library (the three story building in the center of Erudin's courtyard nearest Tox forest.
+
+You say, 'Hail Tomekeeper Danl' 
+
+Tomekeeper Danl says 'Good day, citizen. Please remember to keep your voice down in our library. Feel free to browse the extensive collection of books we have on display. Learning is all about you and our library is the greatest collection of educational literature in the world, as you can no doubt see. However, there are a few books we do not own and we are prepared to pay well to acquire [rare finds]. 
+
+You say, 'What rare finds?' 
+
+Tomekeeper Danl says 'Yes, any rare books, tomes, essays, or other literature you find may be of interested to me. Although the finds I am interested in are quite high profile and would most likely only be found in the possession of very powerful or influential beings. Give me what you have found and I will pay you what it is worth to us. 
+
+'''The book he requires is called Immortals, which can be found on various named mobs in [[Skyfire]] (Guardian of Felia, A Lava Walker, A Wandering Wurm, Black Scar). '''
+
+'''Give Tomekeeper Danl the book of Immortals and get this response:''' 
+
+Tomekeeper Danl gasps at the sight of the rare book and says, 'This is a great find indeed! I can only imagine who you had to.. persuade to give you the book. Our library would be very interested in acquiring this and I am prepared to give you this platinum and a referral that marks you as a friend of the library. If only [Lheao] could see this.' 
+
+You say, 'Who is Lheao?' 
+
+Tomekeeper Danl says 'Lheao was my predecessor here at the Library of Erudin. He has since retired, just a few years ago. I'm sure he would be most impressed with your find and offer insightful conversation on the subject. Although I'm not sure one of your profession would be interested in such a scholarly endeavor, no offense. If you are interested, find him and tell him you found the book 'Immortals.' I'm not sure where he has retired to, but I hear it is near an ocean somewhere. 
+
+'''He gives you a piece of paper called [[Danl's Reference]]. '''
+
+'''Before continuing on, you will need to complete the following quests in this order: '''
+
+* [[Monk Sash Quests]] to obtain [[Red Sash of Order]]
+* [[Monk Headband Quests]] to obtain [[Purple Headband]]
+* [[Monks of The Whistling Fist]] to obtain [[Robe of the Lost Circle]]
+* [[The Lost Circle]] to obtain [[Robe of the Whistling Fists]], which is required in the next part of the monk epic
+
+'''Next, head to the hidden oasis in [[Timorous Deep]]. Once there, speak to Lheao.''' 
+
+You say, 'Hail Lhaeo' 
+
+Lheao jumps at your voice and begins laughing at his skittishness. He says, 'Ahh, hello there. Not many people know of this place, so visitors are quite rare. Hehehe. It's a very beautiful place indeed, so, ummm, please don't go telling everyone you know about it. Heheh. Thanks, friend.' 
+
+You say, 'I have found the book Immortals' 
+
+Lheao looks up at you, eyes wide in astonishment, and says, 'My god, you found 'Immortals'?! Where did you find it? Never mind, that is unimportant. I have in my possession a book that explains more about these individuals. Its value is unimaginable as well as the impact it is capable of. As you can see, I grow old. I need an individual to watch over this book and make sure it is protected. Would you be willing to [take this responsibility]?' 
+
+You say, 'I will take this responsibility' 
+
+Lheao says 'I'm sorry, but I could only give this book to a true master, such as a member of the Whistling Fists Order. And unless you can give me proof that you are one, in addition to Danl's reference, which is very unlikely, there is no way I'll let you take charge of [the Celestial Fists]. 
+
+You say, 'What Celestial Fists?' 
+
+Lheao says 'The Celestial Fists is the title of a book written by an unknown author. His writing is sub par but the legend is interesting from a biographical standpoint alone. Its rarity commands top dollar in the scholarly community but the secrets revealed in the book are what truly makes it dangerous. I've thought many times to destroy it but just couldn't. I hope I'm able to find someone to watch over it soon. 
+
+'''Hand in [[Robe of the Whistling Fists]] and [[Danl's Reference]] to get this response:''' 
+
+Lheao says 'Astonishing! To think that you are a master of an order thought to be lost to our world. Forgive my earlier doubts. I believe you are indeed worthy to be given the responsibility of watching over this book. Take great care that it does not fall into the wrong hands as it would be truly disastrous. 
+
+'''The Celestial Fists Book is illegible. '''
+
+'''The next section for the book requires you to go to [[Trakanon's Teeth]] and find an NPC named [[Kaiaren]]. [You should wait on doing this part until you have defeated Eejag, Gwan, Trunt, Vorash, Deep and Xenovorash, because you want to spawn Sane Kaiaren when (and ONLY when) you are ready for the final turn in - otherwise he will despawn after several hours, and turning the items in to Mad Kaiaren will lead to your items being eaten.] He is located at Loc -1609, -2679, in the undead ruins.''' 
+
+You say, 'Hail Kaiaren' 
+
+: Kaiaren says, "AHHH get it away from me go away .. leave me alone". 
+
+You say, 'What Celestial Fists?' 
+
+: Kaiaren says 'Eh? What's that? Bah! That was destroyed long ago. Don't waste my time with fairy taAAAAAGGHHH GET IT AWAY!!!! HELP!!! They're all over MEHEHEHEHEEEEEEee!! 
+
+'''Hand [[Celestial Fists (book)]] to [[Kaiaren]], you will get the [[Celestial Fists (book)]] back and get this response:''' 
+
+: Kaiaren's eyes open wide and he attacks you! 
+
+'''If you kill him, you'll get the response:'''
+
+: 'Not bad.. Now lets see if you can find my trueform if you do we discuss this further.' 
+
+'''However it is not necessary to kill him. You can just Feign Death to eliminate his aggro.''' 
+
+'''Now go out and find Kaiaren's true form, which spawned when you gave the book to the angry form. This version is also called Kaiaren, and spawns at approximately +300, +2400 in a building next to the lake. He is indifferent to all. '''
+
+'''Hand Kaiaren the book. (NOTE: The book you handed in was called [[Celestial Fists (book)]]. The book you get back is called [[Book of Celestial Fists]]. Do NOT hand this book in yet, as he will also be expecting an item you have not yet obtained).''' 
+
+'''When you hand him the book, he says the following:'''
+
+: Kaiaren says 'Now, then. Where did you find this, monk? This is not just some light reading to be borrowed from the town library. Who gave this to you? 
+
+You say, 'I got it from Lheao' 
+
+: Kaiaren says 'Hmmm, never heard of him. Well, it doesn't matter, the book is here now. Curse that idiot for writing it in the first place. Not even sure why I let him stick around. If you ever see that clown monk Aradiel kick him in the shins for me! At any rate, I suppose you'd like to find the Fists and [have a nice chat with them], eh? Their master owes me much. I would reward you well if you were to bring me proof of the master's defeat' 
+
+You say, 'I would like to have a nice chat with them' 
+
+: Kaiaren says 'Yes, I suppose you would. All you children looking for fame and glory will eventually learn the poison of ambition. But how will you find them? They are able to meld with their elements seamlessly and they certainly have no interest in fooling with the likes of you. No, you will need to get their attention. Fortunately, I know [how you can do this]. 
+
+You say, 'How can I do this?' 
+
+: Kaiaren says, 'My guess is that the weakest of the Fists will be the easiest to draw out. He is egotistical and arrogant. How he came to master the Discipline of Fire, I do not know. He will most likely be in another form, one of his element. When you find the one you believe to be the Fist, you must challenge him. If you use his true name, Eejag, in your formal challenge, he will respond. A flame can burn intensely but it cannot last for long. Know this when you battle him. 
+
+=== Eejag ===
+
+'''At this point, head on over to the [[Lavastorm Mountains]] with a group and find an imp named "[[A Fire Sprite]]" and say "I challenge Eejag." There will be a shout to the zone (if no shout, it means Eejag is already up):''' 
+
+: Eejag shouts, "What imbecile dares challenges a Celestial Fist?! Do you even know who you are challenging? HA! You are nothing but an insect! I will enjoy crushing you, I have not charred the flesh of an idiot in decades! If you truly wish to fight me, the battle shall be held in my own element. Come, challenger, come down to the pits of flowing fire." 
+
+'''Head over to the fire pit by the entrances to Sol A and Sol B. Under the middle smoke plume, about half way down, you'll see [[Eejag]] (an Iksar) swimming. He cannot be pulled so you'll have to fight him where he is -- in the lava. '''
+
+'''Once killed, he drops a [[Charred Scale]]. '''
+
+=== Gwan ===
+
+'''Now head up to the [[Plane of Sky]] and find an NPC named "[[A Presence]]" on Noble Dojorn's island. It is in the form of a shadowman so only the name is visible. '''
+
+'''Hand the [[Charred Scale]] over to [[A Presence]] and get this response:''' 
+
+: a presence says 'Hahaha! That dolt Eejag fell to the likes of you? I'm not surprised. So, I guess this means you're here to challenge me. Normally, I wouldn't waste my time, but since you've defeated my younger brother, I suppose I'm obligated. I'm ready when you are, tell me when you're [prepared]. 
+
+'''The Presence will despawn and a Human monk named [[Gwan]] appears in his place. Telling him 'I am prepared' causes him to attack (or do it the old fashioned way by engaging him first). '''
+
+(NOTE: Gwan procs Fist of Air which can knock you backwards. This can be dangerous if you're too close to the island's edge.)
+
+'''Once dead, loot the [[Breath of Gwan]] and go directly to the [[Mines of Nurga]] to find [[a sleeping ogre]]. He's KOS so you may have to sneak for the turn-in or have an enchanter charm him.''' 
+
+=== Trunt ===
+
+'''Once you're ready for a fight, hand him the Breath of Gwan to get this response:''' 
+
+: a sleeping ogre says 'Your path of wanton destruction ends here. Gwan and Eejag were impatient and hot-headed. You will not defeat me, for I have the patience and perseverance of stone, unlike the children you have beaten before me. Are you sure you want to challenge me? 
+
+'''He won't give you a chance to respond. Trunt, a 59th level KOS ogre will immediately spawn and attack. He is immune to magic and a tougher fight than the previous ones. '''
+
+'''He drops [[Trunt's Head]].''' 
+
+=== Deep ===
+
+'''Take the head to [[Lake Rathetear]] and find a 58th level dark elf named Deep who lives in the lake. Hand Trunt's Head to her to get the following:''' 
+
+: Deep slowly opens her eyes and looks up at you. She stares at you a long while and then closes her eyes and lowers her head again, saying, 'Very well, if you wish death so greatly, we will be happy to oblige. My master projects part of himself in the wilder lands known as the Overthere. He has granted you an audience. Find him and show him the head of our earth brother. At that point, we will discuss how we will end your life. 
+
+'''Deep despawns immediately and you get the Head of Trunt back. '''
+
+'''Head to [[the Overthere]], and find [[Astral Projection (Overthere)]] in the bottom of the scorpion chasm at +3830, -3545. He does not need to be fought.''' 
+
+'''Hand [[Trunt's Head]] over and get the following response:'''
+
+: Astral Projection looks up and down and says, 'Hmmm, I was hoping for something more impressive. This is just a small token of the last person who tried to interfere with my plans. He failed as you shall. But tell me truly, are you the one who has so rudely removed my students?' 
+
+You say, 'Yes' 
+
+: Astral Projection says 'I assume you have read about us and spoken with the old man, Kaiaren. Since that time, I have grown in power and influence to a point unseen by any mortal. Unfortunately, I will have to demonstrate a small amount of my skill when I destroy you. This is bad. I must decide whether you are worthy to see the techniques I wield, even though you will die shortly thereafter. Tell me, who are you? 
+
+You say, 'I am the one' 
+
+: Astral Projection chuckles and says, 'That's quite a boast. All beings strive for nothingness at the most basic level of sentience. However, almost none ever achieve this. Not even I have discarded my ego yet and you stand here and tell me you have? Perhaps you will be a worthy opponent. I shall be waiting in the great lake near here. Take that token as proof of things to come for you. If you still wish to throw your life away so needlessly, return it to my image there. I await your decision.' 
+
+'''He will give you an [[Eye of Kaiaren]] and then despawn.''' 
+
+=== The Final Fight ===
+
+'''Head to the [[Lake of Ill Omen]] for the final fight of the monk epic. You can find [[Astral Projection (LOIO)]] at neg1900, neg900 (along the shore of the lake between Windmill and Fronteir Mountains zone).
+
+'''When you give the [[Eye of Kaiaren]] to [[Astral Projection (LOIO)]], he despawns. [[Deep]] and [[Vorash]] will then both spawn, and are very much KOS. '''
+
+Deep procs Fist of Water, and hits for 170ish. Vorash procs Fist of Mastery, which is a DD and a stun, and hits for around the same as Deep. Both Deep and Vorash have no items.
+
+Once killed, Vorash says:
+
+: 'Foolish mortal! You think you have defeated me? Now, witness the true power of Rallos Zek! 
+
+'''[[Xenevorash]] will then spawn on the platform, regardless of where Vorash dies. ''' Xenevorash procs Fist of Sentience which is a 500DD and a stun, and hits for 250. 
+
+Once he is killed, his death message is: 
+
+: Xenevorash's corpse shouts 'Grraaaagghhhh!! NOT.. POSSIBLE! 
+
+'''He drops [[Demon Fangs]]. '''
+
+=== Final Turn-in ===
+
+*Give [[Celestial Fists (book)]] to <b><u>mad</u></b> [[Kaiaren]] (he will be apprehensive) at the ruins in [[Trakanon's Teeth]] and he hands you back the book.
+*Go to <b><u>sane</u></b> [[Kaiaren]], who spawns over by the lake in TT (approx +300, +2400) after you hand in [[Celestial Fists (book)]] to <b><u>mad</u></b> [[Kaiaren]].
+*Hand [[Celestial Fists (book)]] ONLY to <b><u>sane</u></b> [[Kaiaren]] and he hands you back A NEW BOOK, now called [[Book of Celestial Fists]].
+*Turn in [[Book of Celestial Fists]] and [[Demon Fangs]] to <b><u>sane</u></b> [[Kaiaren]] to receive the monk epic, [[Celestial Fists]].
+
+'''Finally, head back to [[Trakanon's Teeth]] and hand <u>sane</u> Kaiaren (NOT to be confused with <u>mad</u> Kaiaren) the [[Demon Fangs]] and [[Book of Celestial Fists]]. '''
+
+: Kaiaren bows his head and breathes a long sigh as if relived of a great weight. He then looks up at you and says, 'I honestly did not believe you could have defeated Vorash. Even though he sought nothing but war and bloodshed, it is a life nonetheless and we must mourn him. I will sew these fangs into magical fist wraps and they shall be yours. Remember Xenevorash. A purpose can be found for every situation and individual. To achieve perfection is to perceive this truth.'
+</onlyinclude>
+
+*NOTE* If on step 3 you also handed in [[Demon Fangs]] along with the [[Celestial Fists (book)]], you can hand the [[Book of Celestial Fists]] back to Kaiaren to receive your epic.
+
+
+[[Category:Quests]]
+[[Category:Monk Quests]]

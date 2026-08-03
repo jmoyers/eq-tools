@@ -1,0 +1,76 @@
+{{Classic Era}}
+
+[[File:npc_azzar_habbib.png|frame|Azzar Habbib]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Azzar Habbib]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Necromancer]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[The Mighty Bear Paw]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>{{:Dreadful Cap}}</li></ul>
+
+== Walkthrough ==
+''This quest begins with [[Azzar Habbib]], a Heretic located in the observation area of [[Paineel]] overlooking the newbie grounds.''
+
+Upon completing the initial [[Azzar's Dreadful Hat]] quest, you see this:
+
+: Azzar Habbib gasps in astonishment and says, You...you..found my hat!! This is the most I can repay you but perhaps I can reward you further for some other tasks?' 
+
+You say, 'What other tasks?'
+
+: Azzar Habbib says, 'I will sew you your own personal dreadful cap if you bring me the necessary components. I will need the pelt of a feared beast, some gold thread, and an imbued amber.'
+
+These items are:
+
+{{CheckboxList}}
+* [[Bear Paw's Pelt]] (from [[The Mighty Bear Paw]] located deep in the Warrens).
+* [[Gold Thread]] (bought from tailoring vendors for around 20pp).
+* [[Imbued Amber]] (imbued by shamans or clerics of Cazic Thule).
+{{End}}
+
+
+'''Give him all three items and to receive your cap.'''
+
+: Azzar Habbib says 'I must have all the necessary components to sew you a cap!'
+
+: Azzar Habbib says 'I must have all the necessary components to sew you a cap!' 
+
+: Azzar Habbib says, 'Here is your dreadful cap as I have promised.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better. 
+* Your faction standing with [[Deepwater Knights]] got worse. 
+* Your faction standing with [[Gate Callers]] got worse. 
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+''You receive a [[Dreadful Cap]].''
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

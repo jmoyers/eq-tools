@@ -1,0 +1,58 @@
+[[File:npc_brinaa_darkpact.png|frame|Brinaa Darkpact]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Brinaa Darkpact]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  [[Heroic Bond]]
+</li><li> [[Sunskin]]
+</li><li> [[Unswerving Hammer]] (of Faith)
+</li><li> [[Word of Vigor]]
+</li></ul>
+
+== Walkthrough ==
+
+Brinaa Darkpact may be found at +2790, +2330. She wants any of the following spell scrolls:
+
+* [[Death Pact]]
+* [[Reckoning]]
+* [[Upheaval]]
+* [[Yaulp IV]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+
+You say, 'Hail, Brinaa Darkpact'
+
+Brinaa Darkpact says 'Hello, ______. It's nice to see more able bodies around this part of the outland. We came here in search of the magical powers that are supposed to exist in the ruins and dungeons of this area. We need you to bring back evidence of this power in the form of scrolls. I can't offer much coin in payment, but I do have some rare scrolls I already brought back that may interest you, if you wish to [help in the search.]'
+
+You say, 'I wish to help in the search.'
+
+Brinaa Darkpact says 'Excellent! Here is what we are still seeking. The scrolls of Death Pact, Upheaval, Yaulp IV, and Reckoning. If you return one of these to me, I'll release one of my rare scrolls to you.'
+
+Hand in one of the requested spells.
+
+Brinaa Darkpact says 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!'
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Cleric Quests]]

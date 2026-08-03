@@ -1,0 +1,46 @@
+{{Classic Era}}
+{{allakhazam}}
+[[File:npc_ilscent_tagglefoot.png|frame|Ilscent Tagglefoot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Ilscent Tagglefoot]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Xanuusus]]
+|}
+
+== Reward ==
+
+<ul><li>Minor coin</li></ul>
+
+== Walkthrough ==
+
+Llscent Tagglefoot by the druids guild is in a bind.  He will say he needs somone to deliver a [[Case of Jumjum Juice]] to Xanuusus a treant in the Northern Karanas Plains.
+
+Say "I will take the Jumjum Juice" and you will be provided with a case.
+
+Getting to Treant is a long walk.  Go to North Karana and follow the water to the right.  When you hit the mountains follow them and you will run right into him.  I have been told you no longer have to levitate to give him the jum jum juice.
+
+<div class='facblock'>
+* Your faction with [[Storm Reapers]] has gotten better.
+* Your faction with [[Mayor Gubbin]] has gotten better.
+* Your faction with [[Merchants of Rivervale]] has gotten better.
+* Your faction with [[Unkempt Druids]] has gotten worse.
+</div>
+
+You will also get some minor coin and a minor item.
+
+[[Category:Quests]]
+[[Category:Rivervale]]

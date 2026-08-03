@@ -1,0 +1,134 @@
+{{Chardok Revamp Era}}[[File:Npc warlord skargus.png|frame|[[Warlord Skargus]]]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Chardok]]
+|-
+! ''' Quest Giver: '''
+| [[Herald Telcha]]
+|-
+! ''' Minimum Level: '''
+| 51
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Temple of Droga]], [[Frontier Mountains]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[A Sarnak Spy]], [[Warlord Skargus]], [[a goblin traitor]], [[a shady goblin]], [[an angry goblin]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Regal Band of Bathezid}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* Obtain [[Di'Zok Signet of Service]] (warmly faction)
+* Give [[a goblin traitor]] your Signet ring (to receive quest text)
+* Speak to the Traitor to receive [[Traitor's note]]
+* Give Traitor's note to [[a sarnak spy]] (to receive quest text)
+* Speak to the Spy to receive [[Forged Note to Courier]]
+* Loot [[Drogan Warlord's Insignia]] from various Drogan goblins
+* Give [[a shady goblin]] a Forged Note along with Drogan Insignia (to receive a [[Report to Skargus]])
+* Give [[an angry goblin]] the Report to spawn [[Warlord Skargus]]
+* Loot [[Head of Skargus]] from the corpse of Skargus
+* Obtain Ally [[faction]] with Di`Zok
+** Once allied, Give [[Herald Telcha]] your Signet ring and Skargus's head to receive [[Regal Band of Bathezid]]
+{{End}}
+
+== Walkthrough ==
+
+''NOTE: You will need to obtain the [[Di'Zok Signet of Service]] (ring #1) before proceeding with this quest.''
+
+'''Talk to [[a goblin traitor]] (2-3 hour spawn) in the [[Temple of Droga]] on the northwest wall of the dining room, /location:(0, -115).'''
+
+You say, 'Hail, a goblin traitor'
+
+(He is on Di'Zok faction so he is a good way to test your faction standing.)
+
+: a goblin traitor says 'Serve the Sarnak do ya? You the one they say they send? I don't know that I believe ya, show a token. Humm show me ya ring if ya got it. '
+
+You give a goblin traitor your Di`Zok Signet of Service. He hands it right back to you. 
+
+: a goblin traitor looks relieved when he sees your signet of service and eyes you with a bit more respect. 'Good! They tell'd me to wait here for ya, can't say I like it but here I sits. Itbe good to be rid of Skargus though, so I be a happy one, oh yes. Want to know the [plan] then?'
+
+You say, 'What's the plan?' 
+
+: a goblin traitor says 'Alrighty, listen listen. Skargus used to be a low rankin' nogood. He made fake story 'bout Gragbar who was the warlord and caused him much trouble with the chief. Gragbar was cast down, chief made Skargus the warlord now. Gragbar is very angry, would take back his position and kill Skargus if he get [evidence] of his treachery. ' 
+
+You say, 'What evidence?' 
+
+: a goblin traitor makes a terrible face, then spits on the ground before continuing. ''Gragbar are workin' with the Iksar, bleh Iksar. He sellin' goblin troopsas slaves to Cabilis when he can, sayin' they died in battle at the lake. If we get evidence of that, we get Skargus and kill him. You go to Frontier mountains, find Sarnak there, he knows where we get evidence from. Give him this note from me, and he help ya. Off with ya now, before I get seen with ya.' 
+
+'''You receive [[Traitor's note]].'''
+
+'''Take this note to [[a sarnak spy]] in Frontier Mountains at 1880, 3600.'''
+
+[[File:Npc a sarnak spy.png|right]]
+ 
+: a sarnak spy reads the note slowly, turning it around in his claws a few times before completing it. ''I see you spoke with that half-wit goblin! I hate hate hate it when he sends me a note, his penmanship is almost illegible. I hope he informed you of the situation, he's really not the most dependable agent of Di'zok, and sadly his note doesn't really make much sense. No matter though, are you ready to [proceed] in this mission?'' 
+
+You say, 'I am ready to proceed' 
+
+: a sarnak spy says 'Good, here then is what you must do. It's pretty simple actually and even one such as you should have no troubles. Skargus has been trading in slaves with the Iksar. He has a courier there, visits the outskirts of Cabilis and sends weekly reports back to Droga. If we could get that report, Skargus would be finished. Will you go to Cabilis and [get the report]? ' 
+
+You say, 'I will get the report' 
+
+: a sarnak spy scowls at you, clearly unimpressed by your efforts.''Of course you'll go get the report fool, but do you think that the courier will just give it to you?'' The sarnak shakes his head sadly. ''Okay, look. Go into Droga and try to get a warlord's insignia off one of the goblins in there. Take this forged note to the courier I've written out, along with the insignia to Warslik's woods and give it to the courier. With luck, he'll believe you work for Skargus and give you the report. If you get the report, find Gragbar and give it to him .'' 
+
+'''You receive [[Forged Note to Courier]].''' 
+
+'''Take this forged note to [[a shady goblin]] (24 hour spawn) in Warsilik Woods near Cabilis at -1650, -1135 on the 2nd floor, along with a [[Drogan Warlord's Insignia]] (random drop in Nurga and Droga).'''
+
+[[File:Npc a shady goblin.png|right]]
+
+You say, 'Hail, a shady goblin' 
+
+: a shady goblin says 'If yer not my contact ya best be movin' on. Got no time to waste on ya. ' 
+
+You say, 'I am your contact' 
+
+: a shady goblin says 'Are ya? Hum, let me see yer insignia then, and the note Skargus gave ya. ' 
+
+'''Give a shady goblin the forged note and a Drogan Warlord's Insignia.'''
+
+: a shady goblin gapes at the note in puzzlement, obviously a bit concerned by it. The courier looks at the note for more than a minute, then looks at you, and back at the note. ''Errm.. welp, dunno what to make of the note. If I know the right of it, [[Skargus]] finally got him some girly to do his writin' for him. Ooooh I bet she a tasty one, graarr. If I was warlord I know I'd have me a girly too. Gah, take this report and get outta my sight. 
+
+'''He despawns and give you the [[Report to Skargus]]. Take this report to [[an angry goblin]] (3 day spawn with a 10% variance) in the Temple of Droga (location 150, 1950).'''
+
+You say, 'Hail, an angry goblin'
+
+: an angry goblin 'Go away, my life is miserable enough!' The angry goblin looks at you more closely, his rage fading for a moment. 'Are you here with the evidence I was promised? Give it to me if you have it!!'
+
+''Hand in the Report to Skargus to angry goblin''
+
+: an angry goblin howls in triumph! 'This is just what I needed! Skargus is mine now, wait until he finds out, just wait! His death is close at hand. Follow me and I'll take you to Skargus's chamber, you can wait there while I take this report to the chief!' 
+
+: an angry goblin shouts 'I have you now Skargus, you traitor! Even now I'm taking this report of slave-trading to the chief! Your days here are at an end!' 
+
+''an angry goblin walks up to the dining room, and then to a smaller room north...''
+
+: [[Warlord Skargus]] says 'I've gotta stop Gragbar before he turns in that report!' 
+
+'''This spawns [[Warlord Skargus]] (level 56 SK with a 561 HT). Kill Skargus and loot the [[Head of Skargus]].'''
+
+'''Take ring #1 and the head of Skargus back to Herald Telcha in Chardok.'''
+
+''Faction needed is '''ally''' to do final turn-in?''[https://web.archive.org/web/20030216222355/http://www.how.to/chardok/]
+
+: Herald Telcha says 'Ah hah! You are notworthy indeed amongst the servants of the Sarnak! Perhaps I should have you killed, before your deeds outdo mine.. Hmm.. Guards! Guards! Haha, do not panic menial being, in fact I am most impressed with your service. Here is the ring I promised you in exchange for your efforts.' 
+
+<span>'''You receive the second ring:''' {{:Regal Band of Bathezid}}'''.</span>
+<br>The effect on the ring, [[Aegis of Bathezid]], is a 25dmg Damage Shield, and lasts 25 minutes.'''
+
+'''The ring comes with 5 charges and is rechargable by giving it back to Herald Telcha as long as you keep your faction at ally.'''
+
+'''Note: This quest continues further to obtain the final item, see [[Spirit Wracked Cord Quest]].'''
+
+[[Category:Quests]]
+[[Category:Chardok]]
+[[Category:All Classes Quests]]

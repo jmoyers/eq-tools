@@ -1,0 +1,151 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_vylleam_vyaeltor.jpg|frame|Vylleam Vyaeltor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Vylleam Vyaeltor]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+Ally faction is required for all Kael armor quests.<BR>
+== Reward ==
+
+{{Gear Set
+|Templar's Crown
+|Templar's Chestplate
+|Templar's Vambraces
+|Templar's Bracer
+|Templar's Gauntlets
+|Templar's Leggings
+|Templar's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Vylleam Vyaeltor]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Templar's Crown]]
+:*[[Ancient Tarnished Plate Helmet]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Templar's Chestplate]]
+:*[[Ancient Tarnished Breastplate]]
+:*3x [[Black Marble]]
+*[[Templar's Vambraces]]
+:*[[Ancient Tarnished Vambraces]]
+:*3x [[Jaundice Gem]]
+*[[Templar's Bracer]]
+:*[[Ancient Tarnished Plate Bracelet]]
+:*3x [[Crushed Opal]]
+*[[Templar's Gauntlets]]
+:*[[Ancient Tarnished Plate Gauntlets]]
+:*3x [[Crushed Lava Ruby]]
+*[[Templar's Leggings]]
+:*[[Ancient Tarnished Greaves]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Templar's Boots]]
+:*[[Ancient Tarnished Plate Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+Vylleam Vyaeltor is located in the room behind King Tormax's throne room in Kael Drakkel.
+
+You say, 'Hail, Vylleam Vyaeltor'
+
+Vylleam Vyaeltor bows 'Greetings to you. You are far away from your homelands, stranger. I am looking for someone. Someone that the outlanders call a cleric. Are you a cleric?'
+
+You say, 'I am a cleric'
+
+: Vylleam Vyaeltor says 'Ahhh... most pious one. I sense the aura of your devotion and conviction and it is strong about you. A shame you are so short lived, mortal. But I see potential in you and for that I shall aid you in your calling. Do you wish my aid?'
+
+You say, 'I wish your aid'
+
+: Vylleam Vyaeltor says 'Then I have a set of goals for you. Once you have achieved them, you shall be rewarded with such as these; a helm, a breastplate, armplates, bracers, gauntlets, greaves and boots. May they protect you from your enemies.'
+
+After handing in your items:
+
+Vylleam Vyaeltor smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{exp}}
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Vylleam Vyaeltor says 'I shall craft a helm for you but you must seek these items out for me first. I have need of an ancient tarnished plate helmet and three crushed onyx sapphires..'
+
+Hand in an [[Ancient Tarnished Plate Helmet]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Crushed Onyx Sapphire]]s.
+
+== Breastplate ==
+
+You say, 'What about the breastplate?'
+
+(Response?)
+
+Hand in an [[Ancient Tarnished Breastplate]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Black Marble]]s.
+
+== Vambraces ==
+
+You say, 'What armplates?'
+
+: Vylleam Vyaeltor says 'For the armplates, I shall require a pair of ancient tarnished plate armplates as well as three jaundice gems. Go forth and seek these out.'
+
+Hand in an [[Ancient Tarnished Vambraces]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Jaundice Gem]]s.
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Vylleam Vyaeltor says 'For the bracers, faithful one, I shall require the acquisition of an ancient tarnished plate bracer and three crushed opals.'
+
+Hand in an [[Ancient Tarnished Plate Bracelet]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Crushed Opal]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Vylleam Vyaeltor says 'I will need a pair of ancient tarnished gauntlets and three crushed lava rubies, so that I may make your reward.'
+
+Hand in an [[Ancient Tarnished Plate Gauntlets]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Crushed Lava Ruby|Crushed Lava Rubies]].
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Vylleam Vyaeltor says 'You shall acquire a pair of ancient tarnished plate greaves and three chipped onyx sapphires for me.  I await your return.'
+
+Hand in an [[Ancient Tarnished Greaves]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Chipped Onyx Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Vylleam Vyaeltor says 'With your aid I shall make a pair of fine boots for you. All that is needed is a pair of an ancient tarnished plate boots and a trilogy of crushed flame emeralds.'
+
+Hand in an [[Ancient Tarnished Plate Boots]] (random rare drop from Claws of Veeshan mobs in the Temple of Veeshan) and three [[Crushed Flame Emerald]]s.
+
+[[File:Nexii final.png|thumb|left|Templar's armor set]]
+[[File:Templar's Armor.png|thumb|left|Templar's armor set]]
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Cleric Quests]]
+[[Category:Kael Armor Quests]]

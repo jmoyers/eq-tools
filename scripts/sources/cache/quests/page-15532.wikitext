@@ -1,0 +1,63 @@
+{{Velious Era}}
+[[File:npc_fixxin_followig.png|frame|Fixxin Followig]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Fixxin Followig]]
+|-
+! ''' Minimum Level: '''
+| All
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Karana]]
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]]
+</li><li> {{:Fixxin Followigs Silvery Blades}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Fixxin Followig'
+
+: [[Fixxin Followig]] says 'Hail, ______! Fixxin is my moniker. Nice ta see ya. I am a member of the [Fangbreakers] and we are hunting [werewolves]. We run into lots of other [creepies] out here as well.'
+
+You say, 'What are Fangbreakers?'
+
+: Fixxin Followig says 'Fangbreakers? You have not heard of us? We are the best [werewolf] hunters there are!'
+
+You say, 'What werewolves?'
+
+: Fixxin Followig says 'Those blasted fiends hide among normal folk during the day, but at night their bloodlust is set free on an innocent populace. Some claim there is a cure for their condition but the only one we know of is an [enchanted blade] through the bellies of the beasts.'
+
+You say, 'What enchanted blade?'
+
+: Fixxin Followig says 'Interested in an enchanted blade? You wouldn't be planning on hunting the moon beasts without a strong. well-oiled party to back you up, now, would you? Well, in any case, I'll gladly lend you a copy of my book, Fixxin Followigs Silvery Blades, if you will fetch me a bar of silver. My supply is running low and our weapons are in need of repair after the deaths of so many lycanthropes.'
+
+'''Give him a [[Silver Bar]]. Fixxin will accept 1 silver bar and ONLY 1 silver bar at a time.'''
+
+: Fixxin Followig thanks ______ heartily. 'Here is the book as promised. I wish you luck with your enchanted weapons. May they slay many lycanthropes before they go dull.'
+
+<div class='facblock'>
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive a LORE book called [[Fixxin Followigs Silvery Blades]], which contains information about how to craft silver weapons. The chief reward is all the positive faction hits, though.
+
+[[Category:Quests]]
+[[Category:Northern Karana]]
+[[Category:All Classes Quests]]

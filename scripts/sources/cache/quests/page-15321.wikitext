@@ -1,0 +1,93 @@
+[[File:npc_merona_castekin.png|frame|Merona Castekin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Merona Castekin]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]], [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Ronn Castekin]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Band of Tunare}}
+</li><li> {{:Ring of Pine}}
+</li><li> {{:Water Flask}}
+</li><li> {{:Bandages}}
+</li><li> {{:Mead}}
+</li><li> {{:Ration}}
+</li><li> {{:Loaf of Bread}}
+</li></ul>
+
+== Walkthrough ==
+
+Your Location is 138.96, -106.46, 3.75
+
+You say, 'Hail, Merona Castekin'
+
+: Merona Castekin says 'Oh, hello! Welcome to Surefall Glade. Are you planning a trip to Qeynos? If you are, I could use some help finding my [brother].'
+
+You say, 'Who is your brother?'
+
+: Merona Castekin says 'My brother Ronn went to Qeynos several days ago for supplies. He was just going to Sneed's and back. But he hasn't been seen since. I can't leave the Glade because the Sabertooths could attack at any minute. Could you please find out what happened to my brother? Ask Sneed about [Ronn Castekin].'
+
+'''Sneed Galliway may be found in North Qeynos. Your Location is 132.29, 239.56, 3.75'''
+
+You say, 'Hail, Sneed Galliway'
+
+: Sneed Galliway says 'Hello, ______. I am Sneed Galliway, merchant and citizen. I run the only general store in all of Qeynos, serving the needs of the many adventurers who call Qeynos home. If only one of them would take the time to help me with my er... [problem]...'
+
+You say, 'Where is Ronn Castekin?'
+
+: Sneed Galliway says 'Ronn? I saw him a few days ago. He was with someone dressed in black I didn't recognize .. I think I saw them later that day, swimming in the north pond. They really should stay away from the aqueducts. They can be quite dangerous. Full of rats, ya know.'
+
+'''[[Ronn Castekin]] has met an unfortunate fate as an undead skeleton in the [[Qeynos Catacombs]], near the entrance from the pond next to the Silent Fist monk guild.  (860.12, 43.46, -39.78).  Kill him:'''
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] bot better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div>
+
+Ronn Castekin's corpse says 'Argh!.. Mer.. o..na.. it's.. not.. your fault.. arhhh..' 
+
+'''Loot a [[Torn Parchment]] (identifies as "Note to Merona").  It reads:'''
+
+ Dear Merona, I wont be returning to you. You see, I have found my true calling as a disciple of 
+ Bertoxxulous. I have become one of the Bloodsabers. I have foolishly given them my flesh. I was a weakling
+ and cried while they stripped it from my bones. I only pray that you too will someday know the pain that I 
+ now endure as one of the undead. Your pitiful and stupid dead brother, Ronn
+
+'''Bring this back to Merona.'''
+
+: Merona Castekin says 'Oh Tunare why!?!? Those foul Bloodsabers will pay for my brother's death!! Here. You have given us valuable information about a new threat to our homes. Take this a token of our appreciation.'
+
+<div class="facblock">
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{exp}}
+
+You receive a minor reward, possibly a [[Band of Tunare]] or [[Ring of Pine]].
+Received Band of Tunare after 6th turn in.
+
+Other rewards include 1 ration, 1 bandage.
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:All Classes Quests]]

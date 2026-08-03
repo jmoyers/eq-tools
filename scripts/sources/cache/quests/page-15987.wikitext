@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:Npc_soonog.png|200px|frame|Soonog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Green Stained Skin Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating an Ogre Shadowknight, you will have a tattered note in your inventory. The note reads as follows:
+
+: Soonog now your master. . . Go to Soonog. . .Fight for Soonog. . .Fight for Greenbloods.
+
+Upon handing the note to [[Soonog]]:
+
+: [[Soonog]] says, 'Soonog own you now.. fight for Soonog.. Soonog make you power.. Soonog army rule all!'
+
+<div class='facblock'>
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Storm Guard]] got worse.
+* Your faction standing with [[Shadowknights of Night Keep]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Green Stained Skin Tunic*]]. Good luck, Shadowknight!
+
+Note: You will need this for the [[Greenblood Shadowknight Tunic]] quest.
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Shadow Knight Quests]]

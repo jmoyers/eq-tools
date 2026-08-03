@@ -1,0 +1,76 @@
+[[File:npc_vesteri_nomanoi.png|frame|Vesteri Nomanoi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Vesteri Nomanoi]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Nesiff Tallaherd]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+Your Location is -122.39, -303.39, 3.28
+
+You say, 'Hail, Vesteri Nomanoi'
+
+: Vesteri Nomanoi says 'Hail, ______. I am Vesteri Namanoi. I provide training to the Jaggedpine Treefolk and their allies. If you are not busy, I would like to ask a small [favor] of you.'
+
+You say, 'What favor?'
+
+: Vesteri Nomanoi says 'I need you to take this claim check to Qeynos for me. Nesiff Talaherd is a woodcarver who owns a shop in South Qeynos. I am having him carve a small statue of Tunare for Te'Anara. With my training schedule, I can not make the journey to Qeynos. Please give this claim check to Nesiff and bring the statue to me. It is a surprise, so please do not say anything to Te'Anara about it.'
+
+'''You receive a Claim Check (identifies as "Vesteri's Claim Check")''', which reads:
+
+ CLAIM CHECK - NESIFF'S WOODEN WEAPONS - QEYNOS: ONE Custom STATUE - CUSTOMER: Vesteri Nomanoi
+
+Head to South Qeynos, inside Nesiff's Wooden Weapons (loc 440.56, -243.45):
+
+You say, 'Hail, [[Nesiff Tallaherd]]'
+
+: Nesiff Tallaherd says 'Greetings, ______! Nesiff Tallaherd, owner and operator of Nesiff's Wooden Weapons, at your service. I am the finest woodworker in all of Qeynos. Even the Qeynos Guard uses my arrows, thanks to [Guard Weleth].'
+
+'''Give Nesiff the claim check.'''
+
+Nesiff Tallaherd says 'Oh. Vesteri sent you? Here you go. I hope Te'Anara likes it.'
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive a [[Wooden Statue]] (identifies as "Statue of Tunare").  Take it back to Vesteri.'''
+
+: Vesteri Nomanoi says 'Oh thank you so much! Here. Take this reward for your time. I will also tell Te'Anara of you.'
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[QRG Protected Animals]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 1 silver from Vesteri Nomanoi.
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]

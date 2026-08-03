@@ -1,0 +1,60 @@
+
+[[File:npc_archivist_tyriele.png|300px|right|Archivist Tyriele]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Archivist Tyriele]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Iceclad Ocean]], [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| [[Kirvil Snowstring]]
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter II, Of Bards and Bitter Winters]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Archivist Tyriele'
+
+: Archivist Tyriele says, 'Have you ever found a gift with no name? This one was buried beneath the snow where even time forgets. Still wrapped… still waiting. But the [tag] is nearly gone and is hard to read.'
+
+You say, 'What tag?'
+
+: Archivist Tyriele says, 'It reads: ‘To the one who fought with song beneath a frozen moon.’ That is all. How can I [find who this belonged to]?'
+
+You say, 'find who this belonged to'
+
+: Archivist Tyriele says, 'Yes. That would be wonderful. The gift is unfinished — a kindness not yet received. The Ledger cannot remember what is left unwritten. He was a bard, I believe. A Coldain. Kind-hearted. The kind who sings warmth into frost. Search the halls of Thurgadin. Speak the gift aloud. If he remembers… so too may the Icestar. Bring back the packaging so that I may know that the gift was properly received. Please note, it can only be opened by those the gift was intended for.'
+
+You receive a [[Lost Gift Box]].
+
+Go to the Thurgadin Bar and Hand [[Kirvil Snowstring]] the [[Lost Gift Box]].
+
+: Kirvil Snowstring turns the box over in his hands. His expression softens and says, 'This ribbon… Brell’s breath, it’s hers. She said if it ever found me, I’d know she made it out. But now…Now I remember. And so will the stars.'
+
+You receive [[Discarded Packaging]].
+
+Give [[Discarded Packaging]] to [[Archivist Tyriele]].
+
+: Archivist Tyriele carefully places the frosted page onto a bound stack. The words inscribe themselves in pale blue ink. She says, 'Thank you for delivering the gift! And what is this? The wrapping on that gift seemed to be chapter 2 of the Preamble! That is fantastic news indeed! Its story is no longer lost. The Ledger stirs. Another thread woven into the Whispers. Another light reclaimed.'
+
+You receive [[Chapter II, Of Bards and Bitter Winters]] and a [[Holiday Gift]].
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

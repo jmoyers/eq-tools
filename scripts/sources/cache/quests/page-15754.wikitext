@@ -1,0 +1,126 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_kragek_thunderforge.png|frame|Kragek Thunderforge]]
+[[File:Kael_Woodelf_Warrior_Female.png|250px|thumb|right|Full set of Warlord's Armor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Kragek Thunderforge]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+Ally faction with [[Kromzek]] is required for all Kael armor quests. [[King Tormax (Faction)]] is also quite helpful, as [[Kragek Thunderforge]] is located behind Tormax's throne room, which is populated by his (very nasty) guards. Below are the stat totals for a full set of armor with 2 bracers.<br>
+<table class="eoTable">
+<tr class=tableheader><td>'''AC'''</td><td>'''HP'''</td><td>'''STR'''</td><td>'''STA'''</td><td>'''AGI'''</td><td>'''DEX'''</td><td>'''WIS'''</td><td>'''INT'''</td><td>'''CHA'''</td><td>'''MANA'''</td><td>'''MAGIC'''</td><td>'''FIRE'''</td><td>'''COLD'''</td><td>'''POISON'''</td><td>'''DISEASE'''</td></tr>
+<tr><td>279</td><td>310</td><td>34</td><td>40</td><td>23</td><td>17</td><td>0</td><td>0</td><td>0</td><td>0</td><td>17</td><td>9</td><td>14</td><td>2</td><td>4</td></tr>
+</table>
+== Reward ==
+
+<ul><li>  {{:Warlord's Crown}}
+</li><li> {{:Warlord's Breastplate}}
+</li><li> {{:Warlord's Vambraces}}
+</li><li> {{:Warlord's Bracer}}
+</li><li> {{:Warlord's Gauntlets}}
+</li><li> {{:Warlord's Greaves}}
+</li><li> {{:Warlord's Boots}}
+</li></ul>
+
+== Checklist ==
+Turn-ins to [[Kragek Thunderforge]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Warlord's Crown]]
+:*[[Ancient Tarnished Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Warlord's Breastplate]]
+:*[[Ancient Tarnished Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Warlord's Vambraces]]
+:*[[Ancient Tarnished Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Warlord's Bracer]]
+:*[[Ancient Tarnished Plate Bracelet]]
+:*3x [[Crushed Flame Emerald]]
+*[[Warlord's Gauntlets]]
+:*[[Ancient Tarnished Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Warlord's Greaves]]
+:*[[Ancient Tarnished Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Warlord's Boots]]
+:*[[Ancient Tarnished Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+'''The gems are found in Velious Dungeons, the armour component is found in the Temple of Veeshan, on level 60+ monsters.'''
+
+After handing in your items:
+
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+== Helm ==
+
+''Dialogue needed.''
+
+Kragek promises to make you a helm if you bring him an [[Ancient Tarnished Plate Helmet]] and three pieces of [[Crushed Coral]].
+
+== Breastplate ==
+
+''Dialogue needed.''
+
+Kragek promises to make you a breastplate if you bring him an [[Ancient Tarnished Breastplate]] and three [[Flawless Diamond]]s.
+
+== Armplates ==
+
+''Dialogue needed.''
+
+Kragek promises to make you some armplates if you bring him a pair of [[Ancient Tarnished Vambraces]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Kragek promises to make you some bracers if you bring him an [[Ancient Tarnished Plate Bracelet]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+''Dialogue needed.''
+
+Kragek promises to make you some gauntlets if you bring him a pair of [[Ancient Tarnished Plate Gauntlets]] as well as three [[Crushed Topaz]]. 
+
+== Greaves ==
+
+''Dialogue needed.''
+
+Kragek promises to make you some greaves if you bring him a pair of [[Ancient Tarnished Greaves]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Kragek promises to make you some boots if you bring him a pair of [[Ancient Tarnished Plate Boots]] and a set of three [[Crushed Black Marble]] pieces. 
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Warrior Quests]]
+[[Category:Kael Armor Quests]]

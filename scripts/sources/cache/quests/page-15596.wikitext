@@ -1,0 +1,42 @@
+[[File:npc_waltor_felligan.png|frame|Waltor Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Waltor Felligan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|- [[Halas]]
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li> [[Cure Disease]] is cast upon you.
+</li></ul>
+
+== Walkthrough ==
+
+Waltor Felligan says, 'Hello, me friend! I'm the resident healer o' Halas. Please inform me when ye've a need fer me talents to [bind wounds], [cure disease] or [cure poison]. Might I add, if ye're a young shaman o' Halas, ye can also [assist in gathering fungus].'
+
+You say, "Please cure disease."
+
+Waltor Felligan says, 'Two small quantities o' wooly fungus are needed before we can cure yer malady.'
+
+After you hand him 2 [[Wooly Fungus]]:
+
+Waltor Felligan says, 'The scales have been balanced and the Tribunal has spoken.  Yer body shall be saved.'
+
+After this, he cures your disease.
+
+[[Category:Quests]]
+[[Category:Halas]]

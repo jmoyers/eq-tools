@@ -1,0 +1,75 @@
+{{Classic Era}}
+[[File:npc_chef_dooga.png|frame|Chef Dooga]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Chef Dooga]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[Hogus Durmas]], [[Zepin Winsle]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+This is a sub-quest that takes place during the HEHE Meat quest. You can do this quest without going through the HEHE Meat one.
+
+''Find Chef Dooga at the "Meet and Drink Tew Bie" tavern in Oggok, at location +200, -240.''
+
+You say, 'Hail, Chef Dooga' 
+
+: Chef Dooga says 'Welcome you, _____. You look all skin 'n bones. Eat you must do. Chef Dooga can fix up goodies for you. Try [HEHE meat].' 
+
+You say, 'What is HEHE meat?' 
+
+: Chef Dooga says 'It is a secret ground meat made with high elf, human, and Erudite Flesh. Mmmm. It good stuff. Dooga make it and [the Gobbler] make it. If you find any of those meats in the swamps bring to me and I pay you.' 
+
+'''Chef Dooga will not take the more common and universally-dropped Human Parts, High Elf Parts, or Erudite Parts. She will, however, take Human Flesh or High Elf Flesh (Erudite Flesh does not seem to exist). These items drop from the named cycle in Innothule Swamp and the Rathe Mountains.'''
+
+'''Upon handing in [[Human Flesh]]:'''
+
+: Chef Dooga says 'MmmmMmm. Human make good meat pies. Here. A little coins for you.' 
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Oggok Guards]] got better.
+</div> 
+{{YouGainExperience}}
+
+You receive (5 to 9) copper from Chef Dooga.
+
+'''Upon handing in [[High Elf Flesh]] that drops from [[Jyle Windstorm]]:'''
+
+: Chef Dooga says, 'High elf! Now that is a good meat. Goes good with Ogre Swill.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Oggok Guards]] got better.
+</div> 
+{{YouGainExperience}}
+
+You receive 5 silver pieces.
+
+[[Category:Quests]]
+[[Category:Oggok]]

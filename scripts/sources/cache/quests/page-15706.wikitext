@@ -1,0 +1,82 @@
+{{Classic Era}}
+[[File:npc_jali_kaliio.png|frame|Jali Kaliio]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Jali Kaliio]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All (Melee)
+|-
+! ''' Related Zones: '''
+| [[Oasis of Marr]]
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  {{:Wakizashi of the Frozen Skies}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Jali Kaliio'
+
+: [[Jali Kaliio]] says 'Greetings outsider. I trust you have [peaceful intentions] while visiting our village?
+
+You say, 'I have peaceful intentions.'
+
+: Jali Kaliio says 'That is good to hear. Those filthy kobolds have caused enough trouble. We do not need more enemies.' Jali turns around and glances at another Kejekan. This one seems somewhat ill. Her fur is coming out in patches and strange sores cover her body. 'That is my wife, Yuio. She has come down with a sickness, no doubt caused by those accursed kobolds.' Anger wracks Jali's face as he speaks. 'I would ask you for [help] but you are a stranger and owe us nothing. Of course if you did assist me, I would be forever grateful.'
+
+You say, 'I would like to help.'
+
+: Jali Kaliio says 'Oh thank you. You are most kind. I fear that there is not much time left for my dear Yuio. Please speak to [Khonza Ayssla]. She is most wise and perhaps can find some cure for this affliction.
+
+You say, 'Who is Khonza Ayssla?'
+
+: Jali Kaliio says 'Khonza Ayssla is the village's High Shaman. She teaches the ancient ways of Okanjo and is most wise. If she cannot assist you I do not know who can. I would go myself but I am too worried to leave my dear wife behind. When you find Khonza, tell her that Jali sent you. Please hurry, friend!
+
+Go to Khonza and tell her, 'Jali sent me.'
+
+: [[Khonza Ayssla]] says 'Ah yes Jali, whose wife is ill. I have been looking for a cure for many moons. I do believe I can make one now if I had the proper ingredients. Unfortunately it will require the deaths of some of our lands creatures but the spirits will not be angered as it is for a noble cause. Perhaps you could [fetch them] for me?
+
+'''Tell Khonza , 'I will fetch them for you.' '''
+
+: Khonza Ayssla says 'Take this satchel and please listen closely. I need the following and they need to be relatively fresh. So dont waste time with frivolous strolls through the jungle. I require two Panda Claws, two Tiger Skins, two Asp Poison Sacs, a Bamboo Shoot, and a Kejekan Palm Fruit, which you will need to find somewhere in the jungle. Once you have these items, combine them in the bag and return to me.'
+
+* 2x [[Panda Claws]] can be found from pandas in Stonebrunt.
+* 2x [[Tiger Skin]]s drop from Kejek Tigers (orange ones).
+* 2x The best place to get [[Asp Poison Sac]]s is in Oasis of Marr.
+* 1x [[Kejekan Palm Fruit]] are foraged in Stonebrunt
+* 1x [[Bamboo Shoot]] are foraged in Stonebrunt and can also drop [[Bamboo Shoot]] from pandas. 
+
+Combine into a [[Full Gathering Satchel]].
+
+When you return the bag to Khonza, Khonza Ayssla says 'I thought the kobolds would have you for dinner, but you made it back.' Ayssla takes the satchel and begins to pour different vials of foul smelling liquid into it. She then takes the entire contents of the bag and dumps it into a large kettle and begins to chant in an unknown language. After a few minutes, she takes a small amount of the now boiling liquid and puts it in a vial. 'Take this vial back to Jali. I pray to the Titan Spirits that it works.'
+
+<div class='facblock'>
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+</div>
+
+You receive a [[Vial of Healing Liquid]] (MAGIC, LORE, NO TRADE, Tiny, weight 0.2) in return.
+
+Giving this to Jali gets the following:
+
+: [[Jali Kaliio]] says ''Khonza Ayssla gave this to you? We must try it at once then.' Jali opens the vial and gently tilts back Yuio's head. He pours the liquid into her mouth and waits. Miraculously, Yuios fur begins to take on a healthy sheen and the sores begin to disappear! Yuio falls into Jali's arms then goes slack, passing out. 'She needs much rest. I cannot begin to thank you enough for helping us. Please accept this as a reward. It is not much but it should be of some use. You are indeed a friend of ours and if you ever need shelter from the wilds, please visit us again.'
+
+You receive the [[Wakizashi of the Frozen Skies]].
+
+==External links==
+
+* http://runen.co.uk/Everquest/Zones/Quests/Stonebrunt/JaliKaliio.htm
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]

@@ -1,0 +1,75 @@
+{{Disambig3|[[Going Postal]]}}
+{{Kunark Era}}
+[[File:npc_tacar_tissleplay.png|frame|Tacar Tissleplay]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Tacar Tissleplay]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Jakum Webdancer]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, [[Faction]]
+</li></ul>
+
+XP reward (% of level):<br>
+11% at Level 3<br>
+10-11% at Level 4<br>
+
+== Walkthrough ==
+
+''[[Tacar Tissleplay]] is located at -90, -326, 3 outside Faydarks Bane.''
+
+You say, 'Hail, Tacar Tissleplay'
+
+: Tacar Tissleplay says, 'Hail, ______ - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?'
+
+You say, 'What mail'
+
+: Tacar Tissleplay says, 'The League of Antonican Bards has a courier system made up of travelers and adventurers. We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices. Are you [interested]?'
+
+You say, 'I am interested'
+
+: Tacar Tissleplay says, 'I have messages that need to go to - well, right now I have one that needs to go to Kelethin. Will you [deliver] mail to [Kelethin] for me?'
+
+You say, 'I will deliver mail to Kelethin'
+
+: Tacar Tissleplay says, 'Take this letter to Jakum Webdancer in Kelethin. You can find him at the bard guild hall. I am sure he will compensate you for your troubles.'
+
+'''You receive [[A Bardic Letter (Kelethin)]].'''
+
+''[[Jakum Webdancer]] is located at -229, 265, 77 in the [[Kelethin|Kelethin]] [[Bard]] Guild hall.''
+
+'''Hand [[Jakum Webdancer]] [[A Bardic Letter (Kelethin)]].'''
+
+: Jakum Webdancer says, 'Incoming mail - very good! Please take this gold for your troubles.'
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive (between 1 and 11) gold pieces.
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:All Classes Quests]]

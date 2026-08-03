@@ -1,0 +1,188 @@
+{{Classic Era}}
+[[Category:Quests]]
+[[Category:Guides]]
+<blockquote>
+Listen, I've traveled every road in this here land...  I've been to Crushbone, Blackburrow, Upper Guk, Befallen, Runnyeye, Najena, Permafrost, Unrest Estate, Mistmoore, Splitpaw, Cazic Thule, Solusek A, Lower Guk, Nagafen’s Lair, Kedge Keep, The Hole... I've been everywhere, man.
+</blockquote>
+
+
+===This is a work in progress!  Check back later or make suggestions in Discord (Jaruden)!===
+== TODO / OPEN ISSUES ==
+* All levels need verified for EQL - the level ranges given are from P99
+* get an image
+
+[[File:user_jaruden.png|frame|Jaruden]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| None, this is a Custom Quest
+|-
+! ''' Quest Giver: '''
+| [[User:Jaruden]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| All Dungeons
+|}
+
+==Reward==
+Knowledge that you've seen it all
+
+==OOC==
+This custom quest is designed to send you to every dungeon in Norrath, granting the full experience of all available lands.  It is split into 4 sections, designed for different level ranges.  The quest is most appropriate if you go through each one with a level appropriate character.  Part 1 is roughly levels 10-25, Part 2 for characters level 25-35, Part 3 for levels 35-45, and Part 4 for characters 45+.  Named targets have been selected in each zone to attempt to let you explore the majority of the space.
+
+== Quest ==
+: So, you think you know your way around Norrath, do ya?  Been there, done that and all?  We'll see, we'll see...
+
+: Let's start you off easy.  Here are some places to get your feet a-hoppin' off to.  Prove you've really been everywhere, and defeat the guardians throughout each land.
+
+==Part 1==
+: Head on off to the continent of Faydwer, and look for the home of Clan Crushbone.  Take a good wander through their lands, though you may have to defeat a few of their leadership on the way.  From there, it's a scenic jaunt over to The Warrens, then into the gnoll lair of Blackburrow.  Once you've finished those, take an adventure down through Befallen, before, ick, frogs, in Upper Guk.  Don't go stumbling into the lower tunnels just yet!  Ya might just catch warts.  From there, collect the keys to move through Najena, before donning your best winter coat and exploring Permafrost - watch out for the Giants!  Once you've finished with those goblins, find their cousins in Runnyeye, before finishing off with an exploration of The Estate of Unrest, near where you started.  Don't miss the underground tunnels!{{CheckboxList}}
+* [[Crushbone]]
+** [[Orc Trainer]]
+** [[Orc Taskmaster]]
+** [[Orc Warlord]]
+** [[Ambassador DVinn|Ambassador Dvinn]]
+** [[Lord Darish]]
+** [[Emperor Crush]]
+** [[The Prophet]]
+* [[The Warrens]]
+** [[Rikfeer the Arcane]]
+** [[Jailer Mkrarrg]]
+** [[Prince Bragnar]]
+** [[Krode_the_Diviner|Khrode the Diviner]]
+** [[High Shaman Drogik]]
+** [[King Gragnar]]
+** [[Cave Bat Lord]]
+* [[Blackburrow]]
+** [[Master Brewer]]
+** [[Refugee Splitpaw]]
+** [[Splitpaw Commander]]
+** [[Lord Elgnub]]
+** [[Splitpaw Explorer]]
+* [[Befallen]]
+** [[Asaka L`Rei]]
+** [[The Thaumaturgist]]
+** [[A_shadowknight_(Dark_Elf_Female)|Dark Elf Female Shadow Knight]]
+** [[Baron Telyx V`Zher]]
+* [[Upper Guk]]
+** [[An Ancient Croc|Ancient Croc]]
+** [[The froglok shin lord|froglok shin lord]]
+** [[a giant heart spider]]
+** [[the froglok warden]]
+* [[Najena]]
+** [[Najena (NPC)|Najena]]
+* [[Permafrost]]
+** [[Goblin Preacher]]
+** [[Goblin Scryer]]
+** [[King Thex'Ka IV|King Thex’Ka IV]]
+* [[Runnyeye Citadel]]
+** [[Slime Elemental]]
+** [[a Goblin Knight]]
+** [[Lord Pickclaw]]
+** [[The Goblin King]]
+** [[Goblin Warlord (Clan Runnyeye)|Goblin Warlord]]
+* [[The Estate of Unrest]]
+** [[reclusive ghoul magus]]
+** [[an undead barkeep]]
+** [[An undead knight of Unrest|undead knight of Unrest]]
+** [[Garanel Rucksif]]
+{{End}}
+
+: You did all that, did ya?  Eh, so did my grandmother, using nothing but a wooden spoon!  This next set will take you further and farther.  Let's see what you're made of.
+: And if you see Granny out there...
+
+== Part 2 ==
+: To start, head back to the continent of Faydwer and enter the castle of Mayong Mistmoore and defeat the vampires within.  From there, there's lots to unearth in the template of Cazic Thule, before heading into the lair of the Splitpaw gnolls.  Finally, bring lots of water, it's plenty hot down in Solusek's Eye.  These will be quite a bit more difficult to explore than the previous!{{CheckboxList}}
+* [[Mistmoore Castle]]
+** [[Garton Viswin]]
+** [[Mynthi Davissi]]
+** [[Butler Syncall]]
+** [[Princess Cherista]]
+** [[Xicotl]]
+* [[Cazic Thule]]
+** [[A Lizard Crusader]]
+** [[Tae Ew Archon]]
+** [[Avatar of Fear]]
+** [[Tae Ew Templar]]
+* [[Splitpaw Lair]]
+** [[Tesch Val Kadvem]]
+** [[The Ishva Mal]]
+** [[Rosch_Val_L'Vlor|Rosch Val L’Vlor]]
+** [[Tesch_Val_Deval`Nmak|Tesch Val Deval’Nmak]]
+* [[Solusek's Eye]]
+** [[Inferno Goblin Captain]]
+** [[lava elemental]]
+** [[Singe]]
+** [[Fire Goblin Bartender]]
+** [[Solusek Goblin King]]
+{{End}}
+
+: Alright now, you might actually have the spirit for this!  Having yourself a grand adventure, are ya?  Don't let your head get too big now, the next batch will really test you.
+: You might actually have the spirit for this!  Having yourself a grand adventure, are ya?  Don't let your head get too big now, the next batch will really test you.
+
+== Part 3 ==
+Let's start out on, you guessed it, Faydwer again.  Get yourself one of those fancy gnomish underwater helmets and explore the maze of Kedge Keep.  From there, head into Nagafen's Lair, but not too deep!  Explore the upper tunnels of the kobolds.  Finally, head back to those disgusting frogs of Lower Guk - and this time there are undead ones too!{{CheckboxList}}
+* [[Kedge Keep]]
+** [[Seahorse Matriarch]]
+** [[Seahorse Patriarch]]
+** [[Cauldronbubble]]
+** [[Cauldronboil]]
+* [[Nagafen's Lair]]
+** [[Solusek kobold king]]
+** [[kobold champion]]
+** [[Efreeti Lord Djarn]]
+* [[Lower Guk]]
+** [[a minotaur elder]]
+** [[a minotaur patriarch]]
+** [[an evil eye]]
+** [[a froglok noble]]
+** [[the froglok king]]
+** [[the ghoul lord]]
+** [[the ghoul arch magus]]
+** [[a frenzied ghoul]]
+** [[a ghoul savant]]
+** [[a ghoul executioner]]
+** [[a ghoul supplier]]
+{{End}}
+
+: It take a lot to impress me... but you aren't quite there yet.  This is the most dangerous bit yet, taking you even off Norrath and into some extra-dimensional areas.  If you can defeat all of these and see the sights beyond, you'll have a claim to something few have ever done.
+
+== Part 4 ==
+Oh boy, you've asked for it... the deepest and darkest parts of Norrath... and even some that aren't on Norrath!  First off, head back to Faydwer and into Kedge Keep, to find the room of that fishy wizard.  Next, head back into Nagafen's Lair... and I mean the lair itself this time!  Try not to get too cooked.  If you need to cool off, head over to Permafrost and find Lady Vox's lair hidden within.  Lastly on this world, head deep into the hole and explore its depths!  From there, you can head into the Planes of Fear and Hate, then finish up with some island time in the Plane of Sky!{{CheckboxList}}
+* [[Kedge Keep]]
+** [[Phinigel Autropos]]
+* [[Nagafen's Lair]]
+** [[King Tranix]]
+** [[Warlord Skarlon]]
+** [[Lord Nagafen]]
+* [[Permafrost]]
+** [[Lady Vox]]
+* [[The Hole]]
+** [[Slizik the Mighty]]
+** [[Master Yael]]
+* [[Plane of Fear]]
+** [[Fright]]
+** [[Dread]]
+** [[Terror]]
+** [[Dracoliche]]
+** [[Cazic Thule]]
+* [[Plane of Hate]]
+** [[Maestro of Rancor]]
+** [[Innoruuk]]
+* [[Plane of Sky]]
+** Complete Island 1
+** Complete Island 2
+** Complete Island 3
+** Complete Island 4
+** Complete Island 5
+** Complete Island 6
+** Complete Island 7
+{{End}}
+
+: Amazing!  You really saw all that?  Maybe it's time I get off this rock and get up there and finish my own path...

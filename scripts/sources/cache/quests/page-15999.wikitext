@@ -1,0 +1,75 @@
+{{Classic Era}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Ghalea]]
+|-
+! ''' Minimum Level: ''' 
+| 35
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Lesser Faydark]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Soil of Underfoot}} </li></ul>
+
+<onlyinclude><includeonly><div class="hbdiv">[[Soil of Underfoot]]<span class="hb">{{Itembox
+|itemname    = Soil of Underfoot
+|lucy_img_ID = 539
+|statsblock  = 
+LORE ITEM  NO DROP<br>
+WT: 0.5  Size: TINY<br>
+Class: ALL<br>
+Race: ALL<br>
+}}</span></div></includeonly></onlyinclude>
+
+== Walkthrough ==
+{{expand}}
+
+Priestess Ghalea may be found at 790, 135.
+
+You say, 'Hail, Priestess Ghalea'
+
+:Priestess Ghalea says 'Welcome to the Church of Underfoot. Please open your soul to the greatness of Brell Serilis. May he guide you in all your future endeavors. And may your soles long for the [Soil of Underfoot].'
+
+You say, 'What Soil of Underfoot?'
+
+:Priestess Ghalea says 'I can trust you with the soil of Underfoot, but first you must obtain four portions of fairy dust. Return them to me and I shall mix it and pray over it. Then I shall give you a pouch of soil of Underfoot.'
+
+You will need to be high amiable (failed at 403, worked tat 453) with Clerics of Underfoot before turning in. Upon giving her four Fairy Dust:
+
+:Priestess Ghalea says 'I will need four portions of fairy dust to create the soil of Underfoot.'
+:Priestess Ghalea says 'I will need four portions of fairy dust to create the soil of Underfoot.'
+:Priestess Ghalea says 'I will need four portions of fairy dust to create the soil of Underfoot.'
+:Priestess Ghalea says 'May the mighty power of Brell saturate this soil with his divinity. Here you are, my noble friend. You may have a pouch of the soil of Underfoot.'
+
+<div class="facblock">
+* Your faction standing with Clerics of Underfoot has increased.
+* Your faction standing with Kazon Stormhammer has increased.
+* Your faction standing with Miners Guild 249 has increased.
+</div>
+
+{{YouGainExperience}}
+
+You receive 4 gold from Priestess Ghalea.
+
+You receive 1 platinum from Priestess Ghalea.
+
+[[Category:Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+
+==Related Quests ==
+
+* [[Chalice of Conquest Quest]]
+* [[Armor of Ro Quests]]
+* [[Ivy Etched Armor Quests|Ivy Etched Boots]]
+
+[[Category:Inventory Items]]

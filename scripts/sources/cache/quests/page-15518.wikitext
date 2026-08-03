@@ -1,0 +1,62 @@
+{{Classic Era}}
+:''For the overview of the many muffin quests, see [[Muffin Quests]].''
+[[File:npc_guard_wenbie.png|frame|Guard Wenbie]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Wenbie]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brass Ring}} (~1/10)
+</li><li>  Experience
+</li><li>  Faction
+</li><li>  Minor Coin
+</li></ul>
+
+== Walkthrough ==
+
+'''Guard Wenbie can be found patrolling South Qeynos during the day time. He follows the typical guard patrol path, so sometimes it will be difficult to find him. A good place to stand and wait for him is in the general vicinity of 117.43, -158.50, 3.75. Make sure it is day time - he is not around during the night.'''
+
+'''The changing of the "night time guards" to "day time guards" happens at 6 a.m. game time. Personally witnessed Guard Wenbie spawn at point 76.7, -19.37, 3.75 in South Qeynos. (spawn points of roaming guards randomized?)'''
+
+: Guard Wenbie says 'Hello, ______. What brings you to Qeynos? Must be the mighty fine muffins over at [Voleen's Bakery]. I just love those muffins!'
+
+You say, 'Where is Voleen's Bakery?'
+
+: Guard Wenbie says 'Oh, it will be easier for us both if I just show you where it is. Follow me. But be quick about it, because I have to get back to my patrol.'
+
+:'''The escort does NOT appear to work (it may never have worked originally). Maybe try /pet commands like 'follow me'.'''
+
+Muffins can be purchased from Voleen Tassen or Karn Tassen in the shop (or elsewhere around the world).  Give him 1-4 individual (not stacked) Muffins.  (Will crafted muffins work?)
+
+: Guard Wenbie says 'Oh, thank you so much. I do get hungry on patrol. Here, please take this reward for your kindness.'
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+
+You receive 3-5 copper from Guard Wenbie. Occasionally you will receive a [[Brass Ring]].
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

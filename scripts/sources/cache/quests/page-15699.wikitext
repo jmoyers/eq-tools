@@ -1,0 +1,85 @@
+{{Classic Era}}
+[[File:npc_jeet.png|frame|Jeet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Jeet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Minimum Faction: '''
+| Indifferent
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Giant Rat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Small Tattered Belt}}
+</li><li>  {{:Small Tattered Gloves}}
+</li><li>  {{:Small Tattered Mask}}
+</li><li>  {{:Small Tattered Skullcap}}
+</li><li>  {{:Small Tattered Wristbands}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Jeet]] is located at 563, 193, -33 outside the Ratsbone Treasury & Assay Office. You must have <s>Amiable</s> Indifferent faction to complete this quest.''
+
+* Possible bug. At indifferent faction as a dwarf cleric, I could not complete the quest. Volunteering to exterminate rats I was told to kill butcherblock bandits to prove my worth.
+
+You say, 'Hail, Jeet'
+
+: Jeet says, 'What business do you have here?!! This here is the mine and that means if you ain't a [member of Miner's Guild 628], you'd best be moving on!!'
+
+You say, 'I am a member of Miner's Guild 628'
+
+: Jeet says, 'Well then get off yer rump and give us a hand. If you don't have a mining pick then get down there and use your fingernails!! If you're new and you want to earn a pick you can [volunteer to exterminate the rats] which have been infesting the mines!!'
+
+You say, 'I will volunteer to exterminate the rats'
+
+: Jeet says, 'Well someone has to do the dirty work around here. Let it be all you new miners. Go patrol the mines and if you see any rats, bash them good!! Return back to me with four Rat Pelts and I will give you some armor as payment. If you want a 628 Mining Cap, yer gonna' have to smash that infernal [Cleaner]!!'
+
+'''Hand [[Jeet]] 4 [[Giant Rat Pelt]]s.'''
+
+: Jeet says, 'What are you?! Some kinda' slacker?! I told you to return with FOUR rat pelts!'
+: Jeet says, 'What are you?! Some kinda' slacker?! I told you to return with FOUR rat pelts!'
+: Jeet says, 'What are you?! Some kinda' slacker?! I told you to return with FOUR rat pelts!'
+: Jeet says, 'It's about time you managed to smash these four! Here. You do good work. We could use someone like you to [run to the gnome city]'
+
+<div class="facblock">
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Hall of the Ebon Mask]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Miner's Cap]]
+* [[The Gnome Take]]
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

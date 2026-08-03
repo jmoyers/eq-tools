@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_priestess_jahnda.png|frame|Priestess Jahnda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Jahnda]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Priestess Jahnda]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Priestess Jahnda]] is located at -59, -678 in the Temple of Life ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Priestess Jahnda'
+
+: Priestess Jahnda says, 'Welcome to the Temple of Life, where the will of Rodcet Nife, the Prime Healer, is carried out.  I am the High Priestess Jahnda.  If you require any training in our ways. please talk to any of our priests or any of the paladins of the Temple of Life.'
+
+'''Hand [[Priestess Jahnda]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Join us in the worship of Life. Seek enlightenment, devote yourself to the will of Rodcet Nife. Turn to the Temple of Life, where High Priestess Jahnda shall help guide you on your new journeys. Go north, then east, from the Clock of Ak'Anon, and with this note, the Clerics of Nife shall welcome you.</code>
+
+: Priestess Jahnda says, 'Welcome to the Temple of Life. I am Jahnda, the High Priestess of the Clerics of Nife. Wear this tunic with pride and carry out the will of Nife. Please, see [[Tonmerk Plorsin]] or [[Nomsoe Jusagta]]. They will help get you started spreading the will of The Prime Healer.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:Cleric Quests]]

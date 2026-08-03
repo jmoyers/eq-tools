@@ -1,0 +1,57 @@
+{{Kunark Era}}
+[[File:npc_niblek.png|frame|Niblek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Chardok]]
+|-
+! ''' Quest Giver: '''
+| [[Niblek]]
+|-
+! ''' Minimum Level: '''
+| 50+ (not correct, did on level 39)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  {{:Piece of a medallion}} (''Top Shard of the Kylong Medallion'')
+</li></ul>
+
+== Walkthrough ==
+
+Found deep in Chardok in the slave area is a small RatMan who cons indifferent named Niblek. 
+
+Once hailed, he is looking for some old jewellery. He wants a [[Black Sapphire]] and a [[Ruby]]. If you give these to him, you get some experience and a 'Piece of Medallion'. When Identified, it's the Top Shard of the Kylong Medallion, which is needed for the Medallion of Kylong Quest.
+
+NOTE: If you spend enough time in [[Temple of Droga]] or [[Mines of Nurga]] (or, after the Chardok 2.0 revamp, if one turns in enough [[Green Goblin Skin]] or [[Mt. Death Mineral Salts]]) it is possible to raise your faction to the point where you can walk around Chardok without agroing any of the mobs there, which makes this quest very easy.
+
+'''You say, "Hail, Niblek"'''
+
+: Niblek says, "I Niblek. You want something from Niblek? Niblek find treasures in walls. Niblik like to trade treasures."
+
+'''You say, "What treasures?"'''
+
+: Niblek says, "Niblek find piece of old jewelry! It very old, probably has much power!"
+
+'''You say, "What do you want?"'''
+
+: Niblek says, "Niblek likes shiny tings very much! You bring Niblek two shiny tings! Niblek has seen [[Black Sapphire]] and [[Ruby]]! Niblek likes them very much!"
+
+'''Hand Niblek a ruby and a black sapphire.'''
+
+: Niblek says, "I much happy now!! I want shiny tings for long time! I give you ugly broken necklace now!"
+== See Also ==
+
+* [[Rune of Scale Quest]]
+* [[Medallion of the Kylong Quest]]
+
+[[Category:Quests]]
+[[Category:Chardok]]

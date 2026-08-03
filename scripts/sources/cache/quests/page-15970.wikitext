@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_konious_eranon.png|frame|Konious Eranon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Konious Eranon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Konious Eranon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Stained Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Konious Eranon]] is located at -26, -261 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Konious Eranon'
+
+: Konious Eranon says, 'Greetings!  I am the mighty Konious Eranon, Master Enchanter, devoted follower of Innoruuk, and loyal assistant to the all-powerful Nexvok.'
+
+'''Hand [[Konious Eranon]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>The Dismal Rage has need of your dark skills. Take this note to Konious Eranon, he has a job for you. The Dismal Rage is currently operating out of the basement of an abandoned building in the slums of East Freeport.</code>
+
+: Konious Eranon says, 'Hey, Nex, we got another sucker.. Er.. Volunteer, that is, to help us out around here.  Here ya go friend, put this on and let's whip you into shape.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Enchanter Quests]]

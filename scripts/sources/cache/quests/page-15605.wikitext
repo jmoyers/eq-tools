@@ -1,0 +1,90 @@
+{{Velious Era}}
+
+[[File:npc_chief_kalan.png|frame|Chief Kalan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cobalt Scar]]
+|-
+! ''' Quest Giver: '''
+| [[Chief Kalan]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[a bulthar]], [[a bulthar herdleader]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Runed Othmir Spear}} (for 1x Bulthar Herdleader Trunk) 
+<br/>
+'''For 2x regular Bulthar Trunks'''
+</li><li>Rare Gems
+</li>
+: <li>[[Blue Diamond]]</li>
+: <li>[[Black Sapphire]]</li>
+: <li>[[Diamond]]</li>
+: <li>[[Jacinth]]</li>
+: <li>[[Fire Opal]]</li>
+: <li>[[Fire Emerald]]</li>
+: <li>[[Sapphire]]</li><br/>or
+<li>Random Vendor Jewelry or Crystalized Sulfur a.k.a trash</li>
+: <li>[[Sapphire Necklace]] </li> 
+: <li>[[Ruby Crown]]</li>
+: <li>[[Emerald Ring]]</li>
+: <li>[[Star Ruby Earring]]</li>
+: <li> [[Crystallized Sulfur]] </li>
+
+</ul>
+
+== Walkthrough ==
+
+This quest begins at [[Chief Kalan]] in Cobalt Scar (location -330, -1218 on the beach just north by northwest of the druid portal). You must be at least indifferent for the reward. At apprehensive, he will respond to quest dialogue but eat the trunks.
+
+You say, 'Hail, Chief Kalan'
+
+Chief Kalan nods respectfully and says 'Welcome to Siren Bay strange one. These beaches belong to my people, the Othmir. You are welcome in our villages as long as you do not cause trouble and are willing to either assist the shellfish collectors provide nourishment or aid the warriors defending the beaches.'
+
+You say, 'I will aid the warriors defending the beaches?'
+
+: Chief Kalan says 'There are many creatures that would prey on my people if it were not for the dedication of our warriors. The Bulthar and Ulthork often invade our territory and prey on our shellfish collectors. They are wasteful creatures and take more than they could possibly eat from the sacred seas.'
+
+You say, 'Who are the bulthar?'
+
+: Chief Kalan says 'The Bulthar are sea elephant people. They are strong brutes with the intelligence of a clam. There is no reasoning with the savages since they seem to only understand their territorial instincts. There is a small herd of them that has taken up residence on the rocky beach beneath the lonely tower and have already injured many of our shellfish collectors. I will reward you for the trunks of every two brutes that you slay.'
+
+For turning in 2 x regular [[Bulthar Trunk]] (no special identification):
+
+: Chief Kalan says 'Such wasteful creatures the Bulthar are. It is a shame they are not intelligent enough to realize the harm they do to the very oceans that sustain them.'
+<div class="facblock">
+* Your faction standing with [[Othmir]] got better.
+* Your faction standing with [[Ulthork]] got worse.
+</div> 
+
+You receive a random trinket or gem.
+
+
+
+For turning in 1 x Special [[Bulthar Trunk]] (identifies as "Herd Leaders Trunk"), dropped by the occasionally spawning [[a bulthar herdleader]]:
+
+: Chief Kalan says 'With the Bulthar herd leader dead we can hope that they will move on to less occupied waters.'
+<div class="facblock">
+* Your faction standing with [[Othmir]] got better.
+* Your faction standing with [[Ulthork]] got worse.
+</div> 
+
+You receive a [[Runed Othmir Spear]].
+
+[[Category:Quests]]
+[[Category:Cobalt Scar]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

@@ -1,0 +1,58 @@
+{{Kunark Era}}
+[[File:npc_captain_keatar.png|frame|Captain Keatar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Keatar]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| War, Cle, Pal, Rng, SK, Bard, Rog, Shm
+|-
+! ''' Related Zones: '''
+| [[Firiona Vie]], [[Lake of Ill Omen]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[goblin battlemaster]]
+|}
+
+== Reward ==
+
+{{Gear Set
+|Faydark Ringmail Boots
+|Faydark Ringmail Bracer
+|Faydark Ringmail Coat
+|Faydark Ringmail Coif
+|Faydark Ringmail Collar
+|Faydark Ringmail Gloves
+|Faydark Ringmail Mantle
+|Faydark Ringmail Pants
+|Faydark Ringmail Skirt
+|Faydark Ringmail Sleeves
+}}
+
+== Walkthrough ==
+
+[[Captain Keatar]] is located at -3440, 3320 in the Ranger guild building.
+
+You get this after completing the goblin raider quest.  The captain now wants you to hunt [[goblin battlemaster]]s.  They sometimes drop [[Goblin Bracer]]s.  Bring him 4 of these and you will receive a random piece of Faydark Ringmail Armor, which has the same AC as ringmail/chainmail, plus stat modifiers (+CHA).
+
+Captain Keatar says, 'Good work!! Please accept this piece of armor.  It was crafted in Felwithe for the swiftly moving rangers of this outpost.'
+
+You get the following faction changes:
+
+<div class="facblock">
+* Your faction with [[Inhabitants of Firiona Vie]] has gotten better.
+* Your faction with [[Emerald Warriors]] has gotten better.
+* Your faction with [[Storm Guard]] has gotten better.
+* Your faction with [[Legion of Cabilis]] has gotten worse.
+* Your faction with [[Pirates of Gunthak]] has gotten worse.
+</div>
+{{YouGainExperience}} ''(Amount not noticeable at level 20.)''
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

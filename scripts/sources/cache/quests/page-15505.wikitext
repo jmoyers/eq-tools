@@ -1,0 +1,59 @@
+{{Classic Era}}
+[[File:npc_azzar_habbib.png|frame|Azzar Habbib]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Azzar Habbib]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[Cave Bat Lord]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Black Lace Sash}}
+</li></ul>
+
+== Walkthrough ==
+''This quest begins with [[Azzar Habbib]], a Heretic located in the observation area of Paineel overlooking the newbie grounds.''
+
+You say, 'Hail, Azzar Habbib'
+
+: Azzar Habbib says, 'I'm not in any mood for conversation. My favorite hat was torn right from my head by a gigantic bat the other night and I am quite upset.'
+
+You say, 'What hat?'
+
+: Azzar Habbib says, 'It is a marvelous cap sewn from the finest textiles and imbued with the divine power of our lord of fear. Cazic Thule!' 
+
+'''Head to [[The Warrens]] and seek out the [[Cave Bat Lord]] (blue to a level 23). It can be found past the King's Throne Room and is surrounded by giant cave bats. It drops [[Azzar's Dreadful Hat]], a helm for Cazic Thule worshipers only. Take this item to Azzar Habbib.'''
+
+: Azzar Habbib gasps in astonishment and says 'You...you..found my hat!! This is the most I can repay you but perhaps I can reward you further for some other tasks?' 
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better. 
+* Your faction standing with [[Deepwater Knights]] got worse. 
+* Your faction standing with [[Gate Callers]] got worse. 
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+''Saying "What other tasks?" leads into a second quest, [[Azzar's Dreadful Hat, Part 2]].''
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:All Classes Quests]]

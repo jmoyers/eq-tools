@@ -1,0 +1,1264 @@
+{{Velious Era}}
+
+[[File:npc_loremaster_borannin.png|frame|Loremaster Borannin]]
+[[File:npc_betti_frostweaver.png|frame|Betti Frostweaver]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Loremaster Borannin]], [[Betti Frostweaver]]
+|-
+! ''' Minimum Level: '''
+| 35-55+
+|-
+! ''' Classes: '''
+| All [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Thurgadin]], [[Great Divide]], [[Eastern Wastes]], [[Kael Drakkel]], [[Cobalt Scar]], [[Siren's Grotto]]
+|-
+! ''' Related NPCs: '''
+| Various and numerous. 
+|}
+
+== Rewards ==
+
+There are seven Coldain prayer shawl quests during Velious. Shawl #8 cannot be fully completed until Luclin. Each is an upgrade of the previous, with {{:Runed Coldain Prayer Shawl}} being the final reward:
+
+<ol>
+<li>{{:Burlap Coldain Prayer Shawl}}</li>
+<li>{{:Cloth Coldain Prayer Shawl}}</li>
+<li>{{:Woven Coldain Prayer Shawl}}</li>
+<li>{{:Fur-Lined Coldain Prayer Shawl}}</li>
+<li>{{:Silk Coldain Prayer Shawl}}</li>
+<li>{{:Embroidered Coldain Prayer Shawl}}</li>
+<li>{{:Runed Coldain Prayer Shawl}}</li>
+</ol>
+
+== Overview ==
+
+The Coldain prayer shawl quests are a series of progressively more difficult tradeskill quests to repeatedly upgrade a cloth shawl. All quests except the final can be completed solo.
+
+== Tradeskills ==
+
+
+The table below displays the tradeskill trivial levels for each level of the quest. The quests can be completed with lower skill levels, but the risk of combine failures increases.
+
+{| class="wikitable"
+! colspan=2 | Shawl
+! Tradeskill
+! Level
+|-
+! 3rd
+| {{:Woven Coldain Prayer Shawl}}
+| [[Baking]]
+| 127
+|-
+! 4th
+| {{:Fur-Lined Coldain Prayer Shawl}}
+| [[Pottery]]
+| 122
+|-
+! 5th
+| {{:Silk Coldain Prayer Shawl}}
+| [[Tailoring]]
+| 115
+|-
+! 6th
+| {{:Embroidered Coldain Prayer Shawl}}
+| [[Tailoring]]
+| 208
+|-
+! rowspan=5 | 7th
+| rowspan=5 | {{:Runed Coldain Prayer Shawl}}
+| [[Brewing]]
+| 168
+|-
+| [[Fletching]]
+| 168
+|-
+| [[Jewelcraft]]
+| 162
+|-
+| [[Pottery]]
+| 162
+|-
+| [[Tailoring]]
+| 162
+|-
+|}
+
+== Requirements Summary ==
+Below is a checklist of all skill levels and non-trivial items that you must acquire for this quest.  Items given by NPCS as part of the quest, items which can be purchased from vendors, or items that can be crafted using items purchased from vendors (eg. [[Mixing Bowl]] or [[Pie Tin]]) are not listed.
+
+'''NOTE:''' These requirements assume successes on all combines, but keep in mind that even with max skill there is always at least a 5% failure rate, so you may wind up needing multiple copies of some items if you are unlucky.{{CheckboxList}}
+
+'''Tradeskilling'''
+* Tradeskills (see above)
+
+'''Shawl 1'''
+* 4x Kromrif [[Frost Giant Toes]]
+
+'''Shawl 2'''
+* 10x [[Kromrif Head]]
+
+
+'''Shawl 3''' and some Shawl 7
+* 1x [[Tundra Kodiak Meat]]
+* 2x [[Snow Bunny Meat]]
+* 2x [[Ulthork Meat]]   (don't forget to collect 1x [[Ulthork Tusks]] for Shal 7)
+* 4x [[Snow Griffin Egg]]
+
+
+:'''Tradeskill Items Needed to Bake With (Pottery 115):'''
+::*[[Mixing Bowl]] (Pottery - Trivial 17; Make: [[Clump of Dough]] x1, [[Spicy Ulthork Meat]] x1, [[Saucy Bunnymeat]] x1, )
+::*[[Pot]]  (Pottery - Trivial at 56,  or Blacksmithing - Trivial 122; Easier to go the pottery route)
+::*[[Pie Tin]] (Pottery - Trivial 115)
+
+
+
+'''Shawl 4''' and some Shawl 7
+* 3x [[Crystalline Silk]]
+* 1x [[Small Brick of Velium]] (IMORTANT: pick up 2x. This means 1x for Shawl #4, 1x for Shawl #7)
+* 2x [[Small Piece of Velium]] (IMORTANT: pick up 4x. This means 2x for Shawl #4, 2x for Shawl #7)
+
+'''Shawl 5'''
+* 75x [[Crystalline Silk Thread]]
+* 5x [[Glowing Worm Bile]]
+
+'''Shawl 6''' (The most difficult shawl to make so it is wise to get enough of the items below to attempt at least 2 times)
+* 2x [[Drakkel Wolf Whisker]] (Getting at least 4 would be wise, this is often the rarest drop to come by)
+* 2x [[Manticore Mane]]  
+* 2x [[Siren Hair]] (Getting at least 4 would be wise, he Sirens are often the most difficult mobs to kill for this shawl and drops are not so common. Also keep an eye out for Sirens to drop [[Runed Sea Shell (Enduring Breath)]] for Shawl 7)
+* 1x [[Woven Frost Giant Beard]]
+
+
+'''Shawl 7'''
+* 1x [[Runed Sea Shell (Enduring Breath)]] (Enduring Breath) (may have dropped when doing Shawl 6 siren kills)
+* 1x [[Small Brick of Velium]] (best to have picked up when collecting for Shawl 4)
+* 1x [[Ulthork Tusks]] (best to have picked up when collecting Shawl 3 ulthork meat)
+* 1x [[Swordfish Tooth]]
+* 1x [[Molkor Hide]]
+* 1x [[Royal Kromrif Blood]]
+* 3x [[Iceclad Cutlassfish ]] (technically obtained from Fishing in and is not a drop)
+* 2x [[Small Piece of Velium]] (best to have picked up when collecting for Shawl 4)
+
+
+{{End}}
+
+== Quick XP and Collection Guide ==
+
+{{CheckboxList}}
+
+'''At/Around level 35 Group in:'''
+
+'''[[Great Divide]]''' to get XP and drops:
+* 2x [[Drakkel Wolf Whisker]] (Shawl 6 and painful to do when not able to get xp, so prioritize these 1st at level 35 and I highly recommend getting at least 4 as these are high fail combines)
+* 4x Kromrif [[Frost Giant Toes]] (Shawl 1)
+* 10x [[Kromrif Head]] (Shawl 2)
+* 1x [[Woven Frost Giant Beard]] (Shawl 6)
+
+
+'''At/Around level 45 Group in:'''
+
+'''[[Great Divide]]''' to get XP and drops:
+* 5x [[Glowing Worm Bile]] (Shawl 5)
+
+'''[[Eastern Wastes]]''' to get XP and drops:
+* 1x [[Tundra Kodiak Meat]]  (Shawl 3)
+* 2x [[Snow Bunny Meat]] (Shawl 3)
+* 2x [[Ulthork Meat]]   (Shawl 3)
+* 1x [[Ulthork Tusks]]  (Shawl 7)
+* 4x [[Snow Griffin Egg]] (Shawl 3 - these will be very tough until about level 50 and soloable at 49 by good Enchanters and Necros)
+
+* 2x [[Manticore Mane]] (Shawl 6)
+* 1x [[Woven Frost Giant Beard]] (Shawl 6)
+
+
+'''[[Crystal Caverns]]''' to get XP and drops:
+* 3x [[Crystalline Silk]] (Shawl 4 - also pick up all the stacks you need for Tailoring trade skilling at this point)
+* 2x [[Small Brick of Velium]] (Shawl 4 needs 1x, Shawl 7 needs 1x)
+* 4x [[Small Piece of Velium]] (Shawl 4 needs 2x, Shawl 7  needs 2x)
+
+
+'''At/Around level 48+ Group in:'''
+
+'''[[Velketor's Labyrinth]]''' to get XP and drops:
+* 75x [[Crystalline Silk Thread]] (Shawl 5 - IMPORTANT: You can just go there at any level and loot the tons of threads that rot on the floor group's spider's.  Rarely is anyone collecting them.  Just bring a sewing kit with you.)
+
+
+'''At/Around level 49+ Group in:'''
+
+'''[[Cobalt Scar]]''' to get XP and drops: 
+* 2x [[Siren Hair]] (Shawl 6 - 49+ Enchanters and Necros can solo the sirens but if in a group, must have Snare/Fear combo or Fear with Pet's combo because pets can keep up with feared and un-snared running/swimming mobs.  They must be feared the entire fight to not charm players or pets or dispell enduring breath or player's charmed mobs.)
+* 1x [[Runed Sea Shell (Enduring Breath)]] (Shawl 7 - Easier to just buy from players)
+
+
+'''At/Around level 55+ Group in:'''
+
+'''[[Siren's Grotto]]''' to get XP and drops: 
+* 1x [[Molkor Hide]] (Shawl 7 - It is easier to just buy but if killing for it... It is basically mandatory for the group to have 2 charmers (2 Druids or Enchanters or a combo). Group must have an MR debuffer and slower (Shaman or Enchanter). Group needs plenty of stun capability to interrupt Molkor CH and Gates.  This is more of a tactical kill group than an XP group)
+* 1x [[Swordfish Tooth]] (Shawl 7 - This is not really a group mob but if there doing Molkors get the Druid or Enchanter to kill the entrance swordfish for tooth drops)
+
+
+'''At/Around level 55+ Group in:'''
+
+'''[[Kael Drakkal]]''' to get XP and drops: 
+* 1x [[Royal Kromrif Blood]] (Shawl 7 - Easier to just buy from players who get from raids)
+
+
+{{End}}
+
+== 1st: Burlap Coldain Prayer Shawl ==
+{{CheckboxList}}
+* 4x Kromrif [[Frost Giant Toes]]{{End}}
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 4
+| width=256 | [[Frost Giant Toes]]
+|}
+</div>
+
+<strong>Find [[Loremaster Borannin]] in [[Thurgadin]].</strong>
+
+: You say, 'Hail, Loremaster Borannin'
+
+:: Loremaster Borannin says 'Greetings, Soandso, please be seated and hear the Grand Historian, he is among the wisest of our people.'
+
+: You say, 'I seek to perform duties for the crown.'
+
+:: Loremaster Borannin says 'Those eager to prove their loyalty to the Dain may do so by completing tasks that I have been commissioned to assign. If you wish to begin your service, return to me with four toes of our enemy, the Kromrif.'
+
+<strong>Give four Kromrif {{:Frost Giant Toes}} to [[Loremaster Borannin]].</strong>
+
+:: Loremaster Borannin says 'Ahh, well done! On behalf of the Dain I thank you for making a dent in the number of our sworn enemy. Please accept this as a token of our appreciation. It is trivial, I know, but if you are as loyal as you claim to be, it will increase in power over time. It just so happens I have a [task] to further demonstrate your loyalty, Soandso.'
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better. (+10)
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better. (+2)
+* Your faction standing with [[Kromzek]] got worse. (-1)
+* Your faction standing with [[Kromrif]] got worse. (-5)
+</div>
+{{YouGainExperience}}
+
+<strong>Receive {{:Burlap Coldain Prayer Shawl}}.</strong>
+
+== 2nd: Cloth Coldain Prayer Shawl ==
+{{CheckboxList}}
+* 10x [[Kromrif Head]]{{End}}
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 10
+| width=256 | [[Kromrif Head]]
+|}
+</div>
+
+<strong>Return to [[Loremaster Borannin]] in Thurgadin.</strong>
+
+: You say, 'What task?'
+
+:: Loremaster Borannin says 'Every year the Dain replaces the trophies in his trophy room. There is a reward given for the best new trophy obtained. I intend to win this year and I will upgrade your prayer shawl for assisting me. Fill this box with ten Kromrif heads and bring me the combined contents along with the burlap shawl. I will submit the best one for the Dains consideration.
+
+<strong>Receive [[Preservationists Box]]. Combine 10 [[Kromrif Head]] in [[Preservationists Box]] to create [[Preserved Kromrif Heads]].</strong>
+
+<strong><span style="color: #d52200">Preserved Kromrif Heads are TEMPORARY and will be LOST after camping.</span></strong>
+
+<strong>Give [[Preserved Kromrif Heads]] and {{:Burlap Coldain Prayer Shawl}} to [[Loremaster Borannin]].</strong>
+
+:: Loremaster Borannin says 'Ahh, some fine specimens indeed, Soandso. I will have the best of these mounted at once, wish me luck in the contest! Here is the Cloth Prayer Shawl of our people. Before I forget, the council has issued yet another [chore] for you to complete.
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+<strong>Receive {{:Cloth Coldain Prayer Shawl}}.</strong>
+
+== 3rd: Woven Coldain Prayer Shawl ==
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 1
+| width=256 | [[Bottle of Milk]]
+|-
+| 1
+| [[Cup of Flour]]
+|-
+| 2
+| [[Flask of Water]]
+|-
+| 2
+| [[Jug of Sauces]]
+|-
+| 1
+| [[Loaf of Bread]]
+|-
+| 1
+| [[Mixing Bowl]]
+|-
+| 1
+| [[Pie Tin]]
+|-
+| 1
+| [[Pot]]
+|-
+| 1
+| [[Snake Egg]] (any egg to make [[Clump of Dough|Dough]])
+|-
+| 2
+| [[Snow Bunny Meat]]
+|-
+| 4
+| [[Snow Griffin Egg]]
+|-
+| 3
+| [[Spices]]
+|-
+| 1
+| [[Tundra Kodiak Meat]]
+|-
+| 2
+| [[Ulthork Meat]]
+|-
+| 1
+| [[Vinegar]]
+|}
+</div>
+
+<strong><span style="color: #d52200">Some quest items are edible. Player characters will be forced to REDO THE QUEST if they accidentally eat them. Keep a stack of food above the items to prevent this.</span></strong>{{CheckboxList}}
+* 1x [[Tundrabear Sandwich]]
+** 1x [[Loaf of Bread]]
+** 1x [[Saucy Bearmeat]]
+*** 1x [[Tundra Kodiak Meat]]
+*** 1x [[Jug of Sauces]]
+* 1x [[Snow Bunny Stew]]
+** 2x [[Water Flask]]
+** 1x [[Spices]]
+** 1x [[Saucy Bunnymeat]]
+*** 1x [[Jug of Sauces]]
+*** 2x [[Snow Bunny Meat]]
+*** 1x [[Mixing Bowl]]
+** 1x [[Pot]]
+*** 1x [[High Quality Firing Sheet]]
+*** 1x [[Unfired Pot]]
+**** 1x [[Large Block of Clay]]
+**** 1x [[Pot Sketch]]
+**** 1x [[Water Flask]]
+**** 1x [[Metal Bits]]
+***** 1x [[Water Flask]]
+***** 2x [[Small Piece of Ore]]
+* 1x [[Ulthork Meat Pie]]
+** 1x [[Pie Tin]]
+*** 1x [[Pie Tin Mold]]
+*** 1x [[Water Flask]]
+*** 1x [[Metal Bits]]
+**** 1x [[Water Flask]]
+**** 2x [[Small Piece of Ore]]
+*** 1x [[Ceramic Lining]]
+**** 1x [[Quality Firing Sheet]]
+**** 1x [[Unfired Ceramic Lining]]
+***** 1x [[Water Flask]]
+***** 1x [[Small Block of Clay]]
+***** 1x [[Ceramic Lining Sketch]]
+** 1x [[Clump of Dough]]
+*** 1x [[Bottle of Milk]]
+*** 1x [[Cup of Flour]]
+*** 1x [[Snake Egg]] (or other egg to make more than 1 clump of dough)
+*** 1x [[Mixing Bowl]]
+** 1x [[Spicy Ulthork Meat]]
+*** 1x [[Spices]]
+*** 2x [[Ulthork Meat]]
+*** 1x [[Vinegar]]
+*** 1x [[Mixing Bowl]]
+* 1x [[Snow Griffin Souffle]]
+** 4x [[Snow Griffin Egg]]
+** 1x [[Spices]]
+{{End}}
+
+<strong>Visit [[Loremaster Borannin]] in [[Thurgadin]].</strong>
+
+: You say, 'What chore?'
+
+:: Loremaster Borannin says 'The council agrees that you have demonstrated a disdain for our enemy, the Kromrif, that rivals our own. They now ask that you demonstrate your loyalty to the Dain by humbling yourself and serving our people. Give this, my seal, to Mordin. He will instruct you further.
+
+<strong>Receive {{:Borannin's Seal}}. Visit [[Mordin Frostcleaver]] at Mordin's Meats in [[Thurgadin]].</strong>
+
+: You say, 'Hail, Mordin Frostcleaver'
+
+:: Mordin Frostcleaver says 'Ah, hello there, and welcome to me shop, Halfling. Ye'll have to excuse the mess but I've been havin a bloody good time here lately. . . HAR HAR, ye get it? Anyways, thanks to you offlanders I now have a selection of some exotic meats never afore seen here on Velious. In addition to supplyin' the freshest meat in Thurgadin I also offer tasks to would-be hunters in the wastes.
+
+<strong>Give {{:Borannin's Seal}} to [[Mordin Frostcleaver]].</strong>
+
+:: Mordin Frostcleaver says 'Hullo Soandso, I see you've signed on for a bit of food service eh? Well we can always use an extra pair a hands here dat's fer sure. First things first, warsh yer grubby mitts an cook up dinner fer good ol Leif. Shouldn be too tough fer ye, he has simple enough taste. Make him a Tundrabear sandwich an lemme know when he's been fed. Dontcha ferget ta give him this with his meal.
+
+<strong>Receive {{:Leif's Napkin}}.</strong>
+
+: You say, 'What is a tundrabear sandwich?'
+
+:: Mordin Frostcleaver says 'Dat's easy, ye just take a slab a dat Tundra Kodiak meat and a jug a sauce, put it in da oven, den combine the product with a loaf a bread in a mixin bowl an there ye be.
+
+'''Used Napkin'''
+
+<strong>Craft {{:Saucy Bearmeat}}.</strong>
+* [[Baking]] (Trivial: 26)
+** '''Yield: Saucy Bearmeat''' x1
+** In [[Oven]]:
+:: {{SmIcon|696}} 1 x [[Jug of Sauces]] - Bought
+:: {{SmIcon|817}} 1 x [[Tundra Kodiak Meat]] - Dropped 
+
+<strong>Craft {{:Tundrabear Sandwich}}.</strong>
+* [[Baking]] (Trivial: 51)
+** '''Yield: Tundrabear Sandwich''' x1
+** In [[Mixing Bowl]] or [[Oven]]:
+:: {{SmIcon|537}} 1 x [[Loaf of Bread]] - Crafted, Bought, Dropped
+:: {{SmIcon|816}} 1 x [[Saucy Bearmeat]] - Crafted
+
+<strong>Give {{:Tundrabear Sandwich}} and {{:Leif's Napkin}} to [[Guard Leif]]. Receive {{:Used Napkin}}. (Verified MQ'able 07/09/2024)</strong>
+
+Guard Leif says, 'Well I'll be derned. An outlander that can make a good Bearmeat 'n Bread! Thank ye, Soandso.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Trita's Napkin'''
+
+<strong>Give {{:Used Napkin}} to [[Mordin Frostcleaver]]. Receive {{:Trita's Napkin}}.</strong>
+
+: You say, 'What is snow bunny stew?'
+
+:: Mordin Frostcleaver says 'Simple enuff, getcherself two hunksa Bunny meat and a jug a sauces. Stir 'em in a mixin bowl, then put spices and two flasks a water with it and cook it in a pot. Mmmm, zesty!
+
+<strong>Craft {{:Saucy Bunnymeat}}.</strong>
+* [[Baking]] (Trivial: 63)
+** '''Yield: Saucy Bunnymeat''' x1
+** In [[Mixing Bowl]]:
+:: {{SmIcon|925}} 2 x [[Snow Bunny Meat]] - Dropped
+:: {{SmIcon|696}} 1 x [[Jug of Sauces]] - Bought
+
+<strong>Craft {{:Snow Bunny Stew}}.</strong>
+* [[Baking]] (Trivial: 68)
+** '''Yield: Snow Bunny Stew''' x1
+** In [[Oven]]:
+:: {{SmIcon|1017}} 1 x [[Pot]] - Crafted, NOT Returned on Failure
+:: {{SmIcon|815}} 1 x [[Saucy Bunnymeat]] - Crafted
+:: {{SmIcon|881}} 1 x [[Spices]] - Bought
+:: {{SmIcon|584}} 2 x [[Water Flask]] - Foraged, Crafted, Summoned, Bought, Quested, Dropped
+
+<strong>Give {{:Snow Bunny Stew}} and {{:Trita's Napkin}} to [[Trita Coldheart]]. Receive {{:Dirty Pot}}. (Verified MQ'able 07/09/2024)</strong>
+
+
+<strong>Give {{:Dirty Pot}} to [[Mordin Frostcleaver]]. Receive {{:Brita's Napkin}}.</strong>
+
+
+
+'''Brita's Napkin'''
+
+<strong>Visit [[Mordin Frostcleaver]] in [[Thurgadin]].</strong>
+
+: You say, 'What is Ulthork meat pie?'
+
+:: Mordin Frostcleaver says 'Hmm, lemme look that one up. Been awhile since I made one. Here we are, two Ulthork meats, a vinegar and a spices in a mixin bowl. Put yer meat mix, a clump a dough, an a pie tin in da oven an yer good ta go.
+
+<strong>Craft [[Spicy Ulthork Meat]].</strong>
+
+* [[Baking]] (Trivial: 82)
+** '''Yield: Spicy Ulthork Meat''' x1
+** In [[Mixing Bowl]]:
+:: {{SmIcon|881}} 1 x [[Spices]] - Bought
+:: {{SmIcon|817}} 2 x [[Ulthork Meat]] - Dropped
+:: {{SmIcon|1006}} 1 x [[Vinegar]] - Bought
+
+<strong>Craft [[Ulthork Meat Pie]].</strong>
+ 
+* [[Baking]] (Trivial: 95)
+** '''Yield: Ulthork Meat Pie''' x1
+** In [[Oven]]:
+:: {{SmIcon|1090}} 1 x [[Clump of Dough]] - Crafted
+:: {{SmIcon|1013}} 1 x [[Pie Tin]] - Crafted
+:: {{SmIcon|815}} 1 x [[Spicy Ulthork Meat]] - Crafted
+
+<strong>Give {{:Ulthork Meat Pie}} and {{:Brita's Napkin}} to [[Lorekeeper Brita]] in the back of the [[Thurgadin]] library. Receive {{:Used Pie Tin}}. (Verified MQ'able 07/09/2024)</strong>
+
+
+<strong>Give {{:Used Pie Tin}} to [[Mordin Frostcleaver]]. Receive {{:Thoridain's Napkin}}.</strong>
+
+
+'''Seal of Thoridain'''
+
+<strong>Visit [[Mordin Frostcleaver]] in [[Thurgadin]].</strong>
+
+: You say, 'What is snow griffin souffle?'
+
+:: Mordin Frostcleaver says 'This one's a bit tricky, ya toss four snow griffin eggs and a pack of spices in de oven. Ye must bake it just right or it's all gunna be wasted. When yer done bring it to Thoridain and if ye did it right he'll give ye his special seal. Just show Borannin that seal and yer shawl and he'll know that yer finished in the kitchen.
+
+<strong>Craft {{:Snow Griffin Souffle}}.</strong>
+
+* [[Baking]] (Trivial: 122)
+** '''Yield: Snow Griffin Souffle''' x1
+** In [[Oven]]:
+:: {{SmIcon|871}} 4 x [[Snow Griffin Egg]] - Dropped
+:: {{SmIcon|881}} 1 x [[Spices]] - Bought
+
+<strong>Give {{:Snow Griffin Souffle}} and {{:Thoridain's Napkin}} to [[Grand Historian Thoridain]]. (Verified MQ'able 07/09/2024)</strong>
+
+:: Grand Historian Thoridain says 'My compliments, Dyllwin , what a wonderful dish! Please accept my personal Seal as a token of my appreciation. May it give you power over your adversaries.
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+<strong>Receive {{:Seal of Thoridain}}.</strong>
+
+
+<strong>Give {{:Seal of Thoridain}} and {{:Cloth Coldain Prayer Shawl}} to [[Loremaster Borannin]] in the [[Thurgadin]] chapel. (Verified MQ'able 10/28/2023)</strong>
+
+:: Loremaster Borannin says 'Well done Dyllwin, the council will be impressed with your effort. Here is the woven prayer shawl, wear it with pride. I know there is talk of great plans for you, be sure to come back and ask me what the council has [brewing].
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+<strong>Receive {{:Woven Coldain Prayer Shawl}}. He also returns {{:Seal of Thoridain}}.</strong>
+
+== 4th: Fur-Lined Coldain Prayer Shawl ==
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 3
+| width=256 | [[Crystalline Silk]]
+|-
+| 2
+| [[Glass Shard]]
+|-
+| 1
+| [[High Quality Firing Sheet]]
+|-
+| 1
+| [[Small Brick of Velium]]
+|-
+| 2
+| [[Small Piece of Velium]]
+|-
+| 1
+| [[Tanik's Note]]
+|-
+| 1
+| [[Unfired Velium Vial]]
+|-
+| 1
+| [[Velium Purifier]]
+|-
+| 1
+| [[Velium Vial]]
+|-
+| 1
+| [[Vial of Velium Vapors]]
+|}
+</div>{{CheckboxList}}
+* 1x [[Vial of Velium Vapors]]
+** 2x [[Small Piece of Velium]]
+** 1x [[Velium Vial]]
+*** 1x [[High Quality Firing Sheet]]
+*** 1x [[Unfired Velium Vial]]
+**** 3x [[Crystalline Silk]]
+**** 2x [[Glass Shard]]
+**** 1x [[Small Brick of Velium]]
+{{End}}
+After finishing the first three quests, ask Loremaster Borannin 'What is brewing?'
+
+: Loremaster Borannin says 'Ahh yes, good to see you again Maeve . I wish it were under better circumstances that we meet today. For some time now we have sent teams of our finest rogues to gather intelligence for the Dain. Tanik Greskil is one of our best. He was recently sent into the heart of Kael Drakkel on a very important mission and has not returned. He is now long overdue, and fearing the worst, our wise council has asked me to dispatch a rescue party to determine what has become of him and return him to safety. I have decided to give you this opportunity to build upon the trust you have earned from the council. Will you accept this mission?'
+
+You say, 'I will accept this mission'
+
+: Loremaster Borannin says 'The council will be pleased to hear of your acceptance. Scour the regions surrounding the city of the Giants. Discover what happened to Tanik and, if possible, return him to Thurgadin. If you are successful, remember to hand me your woven shawl. We seem to be running low on them, but I must say Mordin has never had so much help in the kitchen. Anyway, I will eagerly await word of your findings. Good luck, and may Brell protect you.'
+
+'''Bring a Vial of Velium Vapors (see below) with you to the Eastern Wastes to keep from having to find Tanik twice.  Simply hand him the Vial to receive his note.''' (Confirmed 7/13/2023)
+
+'''If you wander around [[Eastern Wastes]] near the upper ridge of the Kael entrance (a wide area near -6644,4337 UPDATE: also spawns around -6000, 4350 or the north side of the gorge where I found him on tracking) you will eventually trigger either a group of [[Kromrif Death Squad]] or you will see the message "the snow crumbles away revealing an injured coldain." A common way to find the mob is to have a pet on guard and it will point in the direction of the nearest NPC, including invisible ones, such as the dwarf we are looking for. The injured Coldain is [[Tanik Greskil]].'''  Run away from the Death Squad, as they are immune to snare as well as other immobilizing effects. There is no reason to fight them. FYIs: I was KOS in wolf form to Tanik Greskil also if you have a levitate buff you will not trigger either.
+
+You say, 'Hail, Tanik Greskil'
+
+: Tanik Greskil says 'Outlander! Thank Brell you've found me! I am the last surviving member of my unit. Our mission was somehow compromised, the bloody Kromrif knew just where to find us... I can't imagine how they knew. I was barely able to escape with my life and wandered into a trap here. I am badly hurt and need your help.'
+
+You say, 'I will help'
+
+: Tanik Greskil says 'Quickly, give me a vial of Veluim Vapors so I can return home, I am in desperate need of some attention from our clerics.'
+
+You say, 'What are velium vapors?'
+
+: Tanik Greskil says 'Drat! Are you telling me you don't have one with you? Run back to Thurgadin at once and speak with Frundle, she can make you one. I will do what I can to stay alive. I may need to move about a bit to keep from being discovered. Hurry now outlander, you're my only hope.'
+
+'''Once back in [[Thurgadin]], find [[Frundle Frenkler]]. Run past the bank staying left, Second building on the left'''
+
+You say, 'Hail, Frundle Frenklar'
+
+You say, 'What velium vapors?'
+
+: Frundle Frenklar says 'Ahh, you come seeking my family recipe? After all you've done for our people it's the least I can do. First you must fashion a velium vial, then combine the vial with two small pieces of velium in this jar. That's all there is to it. Please keep the recipe a secret.'
+
+'''You receive a [[Velium Purifier]].'''
+
+You say, 'What velium vial?'
+
+: Frundle Frenklar says 'I'm no potter mind you, but if I remember correctly it's a small brick of velium, three crystalline silks, and two glass shards. Then you'll have to finish up by firing it in a kiln with a high quality firing sheet.'
+
+
+'''Drop Locations'''
+
+[[Small Piece of Velium]] and [[Small Brick of Velium]] can be looted off [[A Ry`Gorr Miner]] in [[Crystal Caverns]] or off spiders in [[Velketor's Labyrinth]], or various golems (you can find some on the 5th and 7th floors) in [[Tower of Frozen Shadow]].
+
+[[Crystalline Silk]] can be found on spiders in both zones.
+
+'''Step 1'''
+# Combine a small (7 lb) [[Small Brick of Velium]], 3 [[Crystalline Silk]] and 2 [[Glass Shard]]  in a pottery wheel. You will receive an [[Unfired Velium Vial]].
+* [[Pottery]] (Trivial: 122)
+** '''Yield: Unfired Velium Vial''' x1
+** In [[Pottery Wheel]]:
+:: {{SmIcon|782}} 3 x [[Crystalline Silk]] - Dropped
+:: {{SmIcon|968}} 2 x [[Glass Shard]] - Bought
+:: {{SmIcon|1138}} 1 x [[Small Brick of Velium]] - Crafted, Dropped
+
+'''Step 2'''
+# Combine the [[Unfired Velium Vial]] and a [[High Quality Firing Sheet]] in the kiln and receive a [[Velium Vial]].
+* [[Pottery]] (Trivial: 122)
+** '''Yield: Velium Vial''' x1
+** In [[Kiln]]:
+:: {{SmIcon|1036}} 1 x [[High Quality Firing Sheet]] - Bought
+:: {{SmIcon|1154}} 1 x [[Unfired Velium Vial]] - Crafted
+
+'''Step 3'''
+# Combine the [[Velium Vial]] and 2 [[Small Piece of Velium]] in the [[Velium Purifier]]. The [[Velium Purifier]] disappears and you are left with a [[Vial of Velium Vapors]]. The vial is a lore item and has one charge of gate to Thurgadin.
+* [[Non-Tradeskill]] (Trivial: No-Fail)
+** '''Yield: Vial of Velium Vapors''' x1
+** In [[Velium Purifier]]:
+:: {{SmIcon|1155}} 1 x [[Velium Vial]] - Crafted
+:: {{SmIcon|1135}} 2 x [[Small Piece of Velium]] - Crafted, Dropped
+
+The vial is trivial at skill 122.
+
+'''When you get [[Tanik Greskil]] to spawn again, just hand him the [[Vial of Velium Vapors]].'''
+
+: Tanik Greskil says 'Thank you. I shall be eternally grateful to you. Should you ever require my assistance I pledge to you my aid. Please deliver this to Borannin, it is imperative that he deliver this to the Dain at once. Farewell for now outlander...'
+
+'''You receive [[Tanik's note]].'''
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Then head back to [[Thurgadin]] and hand [[Loremaster Borannin]] the [[Tanik's note]] and your [[Woven Coldain Prayer Shawl]], you receive [[Fur-Lined Coldain Prayer Shawl]]. (Verified MQ'able 03/15/2024)'''
+
+: Loremaster Borannin says 'Words cannot express our gratitude for your deeds outlander, you have saved a hero of our people from certain death. Please accept this, the Fur-lined shawl, as a token of our sincere appreciation. You are indeed among the most highly regarded Humans to set foot in Thurgadin. The next time we meet be sure to ask me how to further advance your reputation with the Coldain.'
+
+== 5th: Silk Coldain Prayer Shawl ==
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 15
+| width=256 | [[Crystalline Silk Fiber]]
+|-
+| 75
+| [[Crystalline Silk Thread]]
+|-
+| 1
+| [[Glowing Bile Soaker]]
+|-
+| 5
+| [[Glowing Crystalline Silk Piece]]
+|-
+| 5
+| [[Glowing Worm Bile]]
+|}
+</div>{{CheckboxList}}
+* 1x [[Silk Coldain Prayer Shawl]]
+** 1x [[Fur-Lined Coldain Prayer Shawl]]
+** 5x [[Glowing Crystalline  Silk Piece]]
+*** 5x [[Glowing Worm Bile]]
+*** 15x [[Crystalline Silk Fiber]]
+**** 75x [[Crystalline Silk Thread]]
+{{End}}
+
+Find [[Loremaster Borannin]] in [[Thurgadin]]. You say, 'How can I further advance my reputation with the Coldain?'
+
+: Loremaster Borannin says 'Soandso! Thank Brell you're here. I was about to send one of my Lorekeepers looking for you. It appears that the information Tanik acquired is most perilous indeed. The Dain has called an emergency session of the council and I must attend. We don't have the luxury of waiting for an appropriate task to arise, you must advance as soon as possible. Unfortunately, I have neither the time, nor the components to fashion the next few shawls for you. Ask Rexx Frostweaver about the prayer shawl and follow his direction carefully.'
+
+'''[[Rexx Frostweaver]] may be found in the Thurgadin Exchange, near the bank.'''
+
+You say, 'Hail Rexx Frostweaver'
+
+: Rexx Frostweaver says 'Hmmm, ye be one o them offlanders, don't ye? I've heard some strange tales o yer kind so don't be tryin' any funny business with me. I know the value of a platinum piece and I'll not get cheated by yer foreign coin.'
+
+You say, 'I am here for the next prayer shawl.'
+
+: Rexx Frostweaver says 'Gather five strands of crystalline silk thread and combine them in a sewing kit to make a crystalline silk fiber. Take this container and combine a glowing shardworm bile with three of the fibers to form a piece of glowing crystalline silk. Five pieces of glowing crystalline silk sewn to your fur-lined shawl will yield a beautiful silk shawl. Become a master in the art of tailoring before risking all you've worked for and be sure to let me inspect your work when it's complete.'
+
+'''You receive a [[Glowing Bile Soaker]].'''
+
+'''You will need at least 75 [[Crystalline Silk Thread]] and 5 [[Glowing Worm Bile]], provided you don't fail at all.'''
+
+'''Drop Locations'''
+
+[[Crystalline Silk Thread]] is a common drop from various spiders in [[Velketor's Labyrinth]]. 
+
+[[Glowing Worm Bile]] is a uncommon drop from various shardwurms in the [[Great Divide]].
+ 
+'''Step 1 '''
+
+Combine 5 [[Crystalline Silk Thread]] in a sewing kit or loom to craft [[Crystalline Silk Fiber]] (trivial 51).
+* [[Tailoring]] (Trivial: 51)
+** '''Yield: Crystalline Silk Fiber''' x1
+** In [[Loom]]:
+:: {{SmIcon|851}} 5 x [[Crystalline Silk Thread]] - Dropped
+
+'''Step 2'''
+
+Combine 3 [[Crystalline Silk Fiber]] and a [[Glowing Worm Bile]] in the [[Glowing Bile Soaker]] to craft a [[Glowing Crystalline Silk Piece]] (no-fail).
+* [[Tailoring]] (Trivial: No-Fail)
+** '''Yield: Glowing Crystalline Silk Piece''' x1
+** In [[Glowing Bile Soaker]]:
+:: {{SmIcon|823}} 3 x [[Crystalline Silk Fiber]] - Crafted
+:: {{SmIcon|925}} 1 x [[Glowing Worm Bile]] - Dropped
+
+'''Step 3'''
+
+Combine 5 [[Glowing Crystalline Silk Piece]] with your {{:Fur-Lined Coldain Prayer Shawl}} in a sewing kit or loom to craft a {{:Silk Coldain Prayer Shawl}} (trivial 115). If you fail the final combine, you will get your {{:Fur-Lined Coldain Prayer Shawl}} back.
+* [[Tailoring]] (Trivial: 115)
+** '''Yield: Silk Coldain Prayer Shawl''' x1
+** In [[Sewing Kit]]:
+:: {{SmIcon|790}} 5 x [[Glowing Crystalline Silk Piece]] - Crafted
+:: {{SmIcon|664}} 1 x [[Fur-Lined Coldain Prayer Shawl]] - Crafted
+
+Give the [[Silk Coldain Prayer Shawl]] to Rexx Frostweaver. He gives it back.
+
+: Rexx Frostweaver says 'Splendid, Soandso, this is beautiful workmanship! As the Grand Historian may have mentioned, our esteemed Dain Frostreaver the fourth is making some important plans with his council. These plans will doubtlessly include you if the Dain deems you worthy.'
+
+You say, 'Am I worthy?'
+
+: Rexx Frostweaver says 'To ensure your worthiness you must continue to refine your prayer shawl. Speak with my wife Betti regarding the embroidered shawl and listen carefully to her words. Hurry now, there seems to be a sense of urgency about.'
+
+== 6th: Embroidered Coldain Prayer Shawl ==
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 1
+| width=256 | [[Woven Frost Giant Beard]]
+|-
+| 2
+| [[Manticore Mane]]
+|-
+| 2
+| [[Drakkel Wolf Whisker]]
+|-
+| 2
+| [[Siren Hair]]
+|-
+| 1
+| [[Embroidered Shawl Pattern]]
+|-
+| 1
+| [[Spool of Sacred Coldain Thread]]
+|}
+</div>{{CheckboxList}}
+* 1x [[Embroidered Coldain Prayer Shawl]]
+** 1x [[Embroidered Shawl Pattern]]
+** 1x [[Silk Coldain Prayer Shawl]]
+** 1x [[Spool of Sacred Coldain Thread]]
+*** 2x [[Drakkel Wolf Whisker]]
+*** 2x [[Manticore Mane]]
+*** 2x [[Siren Hair]]
+*** 1x [[Woven Frost Giant Beard]]
+{{End}}
+
+At the end of the previous quest, Rexx Frostweaver told you to speak to his wife [[Betti Frostweaver]] regarding the embroidered shawl.
+
+You say, 'Hail, Betti Frostweaver'
+
+: Betti Frostweaver says 'Well, hello there, dear, it sure gets cold here, doesn't it? Perhaps I can interest you in a sewing pattern to pass the time and keep you warm.'
+
+You say, 'I am here regarding the embroidered shawl.'
+
+'''You receive an [[Embroidered Shawl Pattern]].'''
+
+: Betti Frostweaver says 'It will be an honor to assist you in fashioning an embroidered shawl. It is a very demanding product and '''I can see from the look in your eyes that you desire to burn your sewing kit in our furnace''' ''(YEP)'', but if you persevere, your efforts will be richly rewarded. When you are ready you must carefully weave a spool of sacred Coldain thread. Take the thread, this pattern, and the silk shawl and carefully embroider the pattern. The result will be most exquisite. Please show me if you manage to create one.'
+
+You say, 'What sacred Coldain thread?'
+
+: Betti Frostweaver says 'Take a woven frost giant beard, two siren's hairs, two manticore manes and two Drakkel dire wolf whiskers, and combine them in a sewing kit. The resulting thread will enhance your shawl's power when embroidered in a special pattern.'
+
+* The DROPPABLE [[Woven Frost Giant Beard]] is an uncommon drop from various frost giants across Velious. It is droppable, so you may find it on vendors in [[Thurgadin]].
+* The DROPPABLE [[Manticore Mane]] are a common drop from [[A Manticore]] in [[Eastern Wastes]]. These are also droppable but vendors do not buy them.
+* The NO DROP [[Siren Hair]] is a rare drop from sirens in [[Cobalt Scar]] and [[Siren's Grotto]]. This should not be confused with [[Lock of Siren Hair]], which is used for a different quest.
+* The NO DROP [[Drakkel Wolf Whisker]] is a rare drop from [[A drakkel dire wolf]] in the [[Great Divide]]. They're often left to rot by players killing for faction, so a quick zonewide /shout may net you one or more rather quickly.
+
+'''Step 1'''
+
+'''Once you have all the components, combine 2 [[Drakkel Wolf Whisker]],  2 [[Manticore Mane]],  2 [[Siren Hair]] and 1 [[Woven Frost Giant Beard]] in a [[Sewing Kit]] to craft a [[Spool of Sacred Coldain Thread]] (trivial 162). 
+
+* [[Tailoring]] (Trivial: 162)
+** '''Yield: Spool of Sacred Coldain Thread''' x1
+** In [[Sewing Kit]]:
+:: {{SmIcon|794}} 2 x [[Drakkel Wolf Whisker]] - Dropped
+:: {{SmIcon|555}} 2 x [[Manticore Mane]] - Dropped
+:: {{SmIcon|853}} 2 x [[Siren Hair]] - Dropped
+:: {{SmIcon|1001}} 1 x [[Woven Frost Giant Beard]] - Dropped
+
+'''Step 2'''
+
+Combine the [[Spool of Sacred Coldain Thread]] with the [[Embroidered Shawl Pattern]] and {{:Silk Coldain Prayer Shawl}} in a sewing kit to craft an {{:Embroidered Coldain Prayer Shawl}} (trivial 208). If you fail the final combine you get the {{:Silk Coldain Prayer Shawl}} back, and can follow the initial dialogue to get another [[Embroidered Shawl Pattern]]. Because of this, some people choose to raise tailoring to 162 then repeat the final combine until succeeding, because it is much faster and cheaper than raising tailoring to 200+.
+
+* [[Tailoring]] (Trivial: 208)
+** '''Yield: Embroidered Coldain Prayer Shawl''' x1
+** In [[Sewing Kit]]:
+:: {{SmIcon|1140}} 1 x [[Spool of Sacred Coldain Thread]] - Crafted
+:: {{SmIcon|504}} 1 x [[Embroidered Shawl Pattern]] - Quested
+:: {{SmIcon|658}} 1 x [[Silk Coldain Prayer Shawl]] - Crafted
+
+'''Give Betti the [[Embroidered Coldain Prayer Shawl]].''' (She will return it.)
+
+: Betti Frostweaver says 'Spectacular artistry! I doubt I could have done better myself. You'll have to forgive me, I know time is short and I tend to carry on. This is the pattern for the making of a rune sacred to our people. It will be our final test of your craftsmanship and will put many of your skills to the test, but I trust you'll find the finished product to be more than worth the effort. Show Gilthan the silk shawl, he will set you on the path. May Brell always be with you outlander.'
+
+You receive the [[Runed Prayer Shawl Pattern]], this is needed in the next shawl quest (Shawl 7).
+
+== 7th: Runed Coldain Prayer Shawl ==
+
+<div style="float: right">
+{| class="wikitable"
+! colspan=2 | Item Requirements
+|-
+| 1
+| width=256 | [[Blank Rune]]
+|-
+| 1
+| [[Burin]]
+|-
+| 1
+| [[Cutlassfish Oil]]
+|-
+| 1
+| [[Encased Velium Etched Rune]]
+|-
+| 1
+| [[Enchanted Velium Powder]]
+|-
+| 1
+| [[Etched Rune]]
+|-
+| 1
+| [[Etched Rune Pattern]]
+|-
+| 1
+| [[Fish Oil Extractor]]
+|-
+| 1
+| [[Fletching Kit]]
+|-
+| 1
+| [[High Quality Firing Sheet]]
+|-
+| 3
+| [[Iceclad Cutlassfish]]
+|-
+| 1
+| [[Liquid Velium]]
+|-
+| 1
+| [[Mixing Bowl]]
+|-
+| 1
+| [[Molkor Hide]]
+|-
+| 1
+| [[Mortar and Pestle]]
+|-
+| 1
+| [[Prayer to Brell]]
+|-
+| 1
+| [[Royal Kromrif blood]]
+|-
+| 1
+| [[Rubbing Alcohol]]
+|-
+| 1
+| [[Rune Casing Pattern]]
+|-
+| 1
+| [[Rune Casing]]
+|-
+| 1
+| [[Runed Prayer Shawl Pattern]]
+|-
+| 1
+| [[Runed Sea Shell (Enduring Breath)|Runed Sea Shell (Enduring Breath)]]
+|-
+| 1
+| [[Sacred Velium Ink]]
+|-
+| 1
+| [[Small Brick of Velium]]
+|-
+| 2
+| [[Small Piece of Velium]]
+|-
+| 1
+| [[Swordfish Tooth]]
+|-
+| 1
+| [[Ulthork Tusks]]
+|-
+| 1
+| [[Unfired Rune]]
+|-
+| 1
+| [[Velium Etched Rune]]
+|-
+| 1
+| [[Water Flask]]
+|}
+</div>{{CheckboxList}}
+* 1x [[Runed Coldain Prayer Shawl]]
+** 1x [[Embroidered Coldain Prayer Shawl]]
+** 1x [[Runed Prayer Shawl Pattern]]
+** 1x [[Encased Velium Etched Rune]]
+*** 1x [[Rune Casing]]
+**** 2x [[Platinum Bar]]
+**** 1x [[Small Piece of Velium]]
+**** 1x [[Rune Casing Pattern]]
+*** 1x [[Velium Etched Rune]]
+**** 1x [[Sacred Velium Ink]]
+***** 1x [[Royal Kromrif Blood]]
+***** 1x [[Liquid Velium]]
+****** 1x [[Small Piece of Velium]]
+****** 1x [[Rubbing Alcohol]]
+***** 1x [[Cutlassfish Oil]]
+****** 1x [[Fish Oil Extractor]]
+****** 3x [[Iceclad Cutlassfish]]
+**** 1x [[Etched Rune]]
+***** 1x [[ Etched Rune Pattern]]
+***** 1x [[Burin]]
+****** 1x [[Ulthork Tusks]]
+****** 1x [[Swordfish Tooth]]
+****** 1x [[Molkor Hide]]
+***** 1x [[Blank Rune]]
+****** 1x [[High Quality Firing Sheet]]
+****** 1x [[Water Flask]]
+****** 1x [[Unfired Rune]]
+******* 1x [[Water Flask]]
+******* 1x [[Enchanted Velium Powder]]
+******** 1x [[Small Brick of Velium]]
+******** 1x [[Runed Sea Shell]] (Enduring Breath)
+{{End}}
+
+At the end of the previous quest, Betti Frostweaver told you to show your {{:Embroidered Coldain Prayer Shawl}} to [[Gilthan Brittleblade]]. Do that (and take care not to give it to the guard that sometimes paths in front of him!) He gives it back. 
+
+: Gilthan Brittleblade says 'So, you've been chosen to attempt the rune, eh? Been ages since anyone's even made an attempt. The rune represents the very essence of our people, our culture, and our religion. Take a sea shell runed with enduring breath and a small brick of velium and grind them together in a mortar and pestle. Add water to the powder and model the rune. Fire the rune with water and the best of firing sheets. Show the product to Trademaster Kroven.'
+
+'''Step 1'''
+
+'''Head off to [[Siren's Grotto]] and kill Sirens until you get a [[Runed Sea Shell]] with one charge of Enduring Breath.'''
+
+'''Step 1.1'''
+
+Combine the [[Runed Sea Shell (Enduring Breath)|Runed Sea Shell (Enduring Breath)]] that has the effect: [[Enduring Breath]] and a [[Small Brick of Velium]] in a [[Mortar and Pestle]] or [[Mixing Bowl]] to get an [[Enchanted Velium Powder]] (No-Fail Combine).
+* [[Baking]] (Trivial:No-Fail)
+** '''Enchanted Velium Powder''' x1
+** In [[Mortar and Pestle]]:
+:: {{SmIcon|998}} 1 x [[Runed Sea Shell (Enduring Breath)|Runed Sea Shell (Enduring Breath)]] - Dropped
+:: {{SmIcon|1138}} 1 x [[Small Brick of Velium]] - Dropped
+
+'''Step 1.2'''
+
+Now combine the [[Enchanted Velium Powder]] and a [[Water Flask]] in a pottery wheel to get an [[Unfired Rune]] (Pottery Trivial 162, tradable).
+* [[Pottery]] (Trivial:162)
+** '''Unfired Rune''' x1
+** In [[Pottery Wheel]]:
+:: {{SmIcon|1075}} 1 x [[Enchanted Velium Powder]] - Crafted
+:: {{SmIcon|584}} 1 x [[Water Flask]] - Bought
+
+'''Step 1.3'''
+
+Combine the [[Unfired Rune]] with a [[High Quality Firing Sheet]] and [[Water Flask]] in a kiln to receive a [[Blank Rune]] (Pottery Trivial 15).
+* [[Pottery]] (Trivial:15)
+** '''Blank Rune''' x1
+** In [[Kiln]]:
+:: {{SmIcon|969}} 1 x [[Unfired Rune]] - Crafted
+:: {{SmIcon|1036}} 1 x [[High Quality Firing Sheet]] - Bought
+:: {{SmIcon|584}} 1 x [[Water Flask]] - Bought
+
+'''Now show the rune (give the rune) to Trademaster Kroven (also in the Thurgadin Exchange).'''
+
+: Trademaster Kroven says 'Fine piece of work there, Soandso, especially fer an outlander. Now yer gunna need to make a burin to etch the rune with. Once that's done ye need to kneel in the chapel and recite this prayer with total sincerity in yer heart. If yer plea be heard by our Father Brell he'll bless ya with the knowledge necessary to carry on. With that knowledge you'll take the blank rune, the burin and a fletching kit to etch the rune. Show [[Grimthor Brewbeard|Grimthor]] the etched rune and he'll guide you from there.'
+
+'''He returns the blank rune and also gives you a Prayer to Brell.'''
+
+You say, 'What burin?'
+
+: Trademaster Kroven says 'You'll need a fletching kit and a fair bit of skill for this one, Soandso. Round up a tooth from a swordfish and attatch it to an Ulthork tusk wrapped in a Molkor hide.'
+
+'''Step 2'''
+
+'''Head to [[Siren's Grotto]] and get [[Swordfish Tooth]] from the swordfish and a [[Molkor Hide]] from the molkors. You can also get [[Ulthork Tusks]] there but they're much easier to get in [[Eastern Wastes]] where you can kill the low level ulthorks. The [[Swordfish Tooth]] is NO DROP which is the only item actually forcing you to go into [[Siren's Grotto]].'''
+
+'''Step 2.1'''
+
+Combine the [[Ulthork Tusks]], [[Swordfish Tooth]], and [[Molkor Hide]] in a fletching kit to get [[Burin]] (Fletching Trivial 135).
+* [[Fletching ]] (Trivial:135)
+** '''Burin''' x1
+** In [[Fletching Kit]]:
+:: {{SmIcon|807}} 1 x [[Ulthork Tusks]] - Dropped
+:: {{SmIcon|1137}} 1 x [[Swordfish Tooth]] - Dropped
+:: {{SmIcon|554}} 1 x [[Molkor Hide]] - Dropped
+
+'''Step 2.2'''
+
+Go to the room where the quest started with the Grand Historian, stand on the floor in front of the altar (you might have to do this on top of the stage to get it to work; As a Gnome I had to be on the ground in front of the stage but not up against the stage; As an Iksar I had to stand on the stage AND in front of the lectern (talking to him from any other side of him did not work). The wood elf that did it before me had to be on the stage for him to get it to work.) and say the following prayer until you see a message saying you've been inspired. Type the message ''exactly'', including all punctuation (especially the final period):
+
+You say, <nowiki>'</nowiki>Oh Brell, thank you for protecting me and seeing me through my trials. Forgive me for the things I think and say and do that displease you. Please reveal to me your will and bless me with the patience and obedience to do that which you desire. Amen.<nowiki>'</nowiki>
+
+You have been inspired. The sacred pattern of the Coldain rune materializes on the ground before you.
+
+On the floor in front of the Historian is an [[Etched Rune Pattern]].
+
+'''Step 2.3'''
+
+This [[Etched Rune Pattern]] needs to be combined with the [[Burin]] and [[Blank Rune]] in a fletching kit. This makes an [[Etched Rune]] (Fletching Trivia 168). '''Note''' -Upon a successful combine you will get back your Burin. If you fail a later combine, you can re-use the Burin to etch a second rune.
+
+* [[Fletching ]] (Trivial:168)
+** '''Etched Rune''' x1
+** In [[Fletching Kit]]:
+:: {{SmIcon|504}} 1 x [[Etched Rune Pattern]] - Quested
+:: {{SmIcon|801}} 1 x [[Burin]] - Crafted, Returned upon failure
+:: {{SmIcon|972}} 1 x [[Blank Rune]] - Crafted
+
+'''Show your Etched Rune to [[Grimthor Brewbeard]] by the brew barrel in Thurgadin.''' He returns it.
+
+
+'''Step 3'''
+
+: Grimthor Brewbeard says 'That looks about right. You're moving along well outlander. Next you'll be needin to brew up a sacred ink to fill the grooves in your rune. Take Iceclad Cutlass fish oil, liquid velium, and some Royal Kromrif blood, brew them in the barrel here then take the product and the rune and combine them in a fletching kit. Show Talem Tucter the resulting item if yer successful.
+
+You say, 'What cutlass fish oil?'
+
+: Grimthor Brewbeard says 'Grab a pole and fish the waters in Iceclad until you catch yourself three Iceclad Cutlass fish. Place them in this oil extractor and you'll have whatcha need.'
+
+'''Receive [[Fish Oil Extractor]], a four-slot container.'''
+
+You say, 'What liquid velium?'
+
+: Grimthor Brewbeard says 'Collect a small piece of velium and a bottle of rubbing alcohol and brew them together in a barrel. It aint easy, but it should prove to be a minor task for the likes of you.'
+
+
+'''Step 3.1'''
+
+Fish in Iceclad until you get 3 [[Iceclad Cutlassfish]] and combine them in the [[Fish Oil Extractor]]. This results in [[Cutlassfish Oil]].
+* [[Fishing ]] (Trivial:No-Fail)
+** '''Cutlassfish Oil''' x1
+** In [[Fish Oil Extractor]]:
+:: {{SmIcon|775}} 3 x [[Iceclad Cutlassfish]] - Fishing
+
+'''Step 3.2'''
+
+Find some [[Rubbing Alcohol]] (bought from [[a mortician]] in Cabilis). Combine the [[Rubbing Alcohol]] and a [[Small Piece of Velium]] in a [[Brew Barrel]] to get [[Liquid Velium]] (Brewing Trivia 135).
+* [[Brewing ]] (Trivial:135)
+** '''Liquid Velium''' x1
+** In [[Brew Barrel]]:
+:: {{SmIcon|584}} 1 x [[Rubbing Alcohol]] - Bought
+:: {{SmIcon|1135}} 1 x [[Small Piece of Velium]] - Dropped
+
+'''Step 3.3'''
+
+Get some [[Royal Kromrif blood]] from Iceshard Manor in [[Kael Drakkel]].
+
+'''Step 3.4'''
+
+Combine the [[Liquid Velium]], [[Cutlassfish Oil]] and [[Royal Kromrif blood]] in a [[Brew Barrel]]. This results in a [[Sacred Velium Ink]] (Brewing Trivial 168).
+* [[Brewing ]] (Trivial:168)
+** '''Sacred Velium Ink''' x1
+** In [[Brew Barrel]]:
+:: {{SmIcon|1160}} 1 x [[Liquid Velium]] - Crafted
+:: {{SmIcon|1158}} 1 x [[Cutlassfish Oil]] - Crafted
+:: {{SmIcon|1157}} 1 x [[Royal Kromrif blood]] - Dropped
+
+'''Step 3.5'''
+
+Combine the [[Sacred Velium Ink]] and [[Etched Rune]] in a fletching kit to get a [[Velium Etched Rune]] (Fletching Trivial 168).
+* [[Fletching]] (Trivial:168)
+** '''Velium Etched Rune''' x1
+** In [[Fletching Kit]]:
+:: {{SmIcon|1157}} 1 x [[Sacred Velium Ink]] - Crafted
+:: {{SmIcon|967}} 1 x [[Etched Rune]] - Crafted
+
+
+'''Step 4'''
+
+Go to the jewelry store in Thurgadin, close to the Exchange. Give the Velium Etched Rune to Talem Tucter.
+
+: Talem Tucter says 'I've heard of your mission, Soandso. I must admit that I had my doubts you'd make it this far. The rune's creation is nearly impossible for even the most skilled of Coldain craftsmen. You should be exceedingly proud. Many have attempted this feat and nearly all have lacked the skill, faith, patience and persistence that is prerequisite for what destiny holds in store for you. You are now ready to use this pattern to construct the sacred rune's casing and complete the runed shawl.'
+
+He returns the Velium Etched Rune and also gives you a [[Rune Casing Pattern]].
+
+You say, 'What casing?'
+
+: Talem Tucter says 'Combine two platinum bars, a small piece of velium and the casing pattern in a Jeweler's kit. Take the completed casing and the rune and combine them in the same kit. When this is done all that's left is to tailor the rune to the shawl with the pattern. Take the finished product to Borannin, I'm sure he's eager to speak with you.'
+
+'''Step 4.1'''
+
+Combine the [[Rune Casing Pattern]], a [[Small Piece of Velium]] and 2 [[Platinum Bar]] in a [[Jeweler's Kit]] to receive the [[Rune Casing]] (Jewelry Trivial 152).
+* [[Jewelcrafting]] (Trivial:152)
+** '''Rune Casing''' x1
+** In [[Jeweler's Kit]]:
+:: {{SmIcon|504}} 1 x [[Rune Casing Pattern]] - Quested
+:: {{SmIcon|1135}} 1 x [[Small Piece of Velium]] - Dropped
+:: {{SmIcon|1092}} 2 x [[Platinum Bar]] - Bought
+
+'''Step 4.2'''
+
+Now combine the [[Rune Casing]] and [[Velium Etched Rune]] in a [[Jeweler's Kit]] to receive an [[Encased Velium Etched Rune]] (Jewelry Trivial 162).
+* [[Jewelcrafting]] (Trivial:162)
+** '''Encased Velium Etched Rune''' x1
+** In [[Jeweler's Kit]]:
+:: {{SmIcon|1002}} 1 x [[Rune Casing]] - Crafted
+:: {{SmIcon|967}} 1 x [[Velium Etched Rune]] - Crafted
+
+'''Step 4.3'''
+
+Take the [[Encased Velium Etched Rune]], [[Runed Prayer Shawl Pattern]] that you got from Betti for handing in shawl 6, and your {{:Embroidered Coldain Prayer Shawl}}. Combine them in a tailoring kit to receive your 7th Shawl: {{:Runed Coldain Prayer Shawl}} (Tailoring Trivial 162). If you happen to lose the [[Runed Prayer Shawl Pattern]] just give the 6th shawl To [[Betti Frostweaver]] again and she'll give you the pattern and your shawl back.
+
+* [[Tailoring ]] (Trivial:162)
+** '''Runed Coldain Prayer Shawl''' x1
+** In [[Sewing Kit]]:
+:: {{SmIcon|566}} 1 x [[Encased Velium Etched Rune]] - Crafted
+:: {{SmIcon|504}} 1 x [[Runed Prayer Shawl Pattern]] - Quested
+:: {{SmIcon|659}} 1 x [[Embroidered Coldain Prayer Shawl]] - Crafted
+
+'''You can then go show Loremaster Borannin your 7th shawl.'''
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+: Loremaster Borannin says 'Incredible! Never before has an outlander been skilled and determined enough to craft our sacred rune. You are now worthy of the Dains most perilous tasks. One is being prepared for you as we speak, please check back with me soon and I will outline the details for you. Until then, Fastsole, allow me to commend you on a job well done!'
+
+''This text leads into the 8th shawl quest''
+
+''Note: the Runed Shawl you craft is ID 1198; the one you get back from Loremaster Borannin is ID 1199. Both shawls have the same Identify text. You can only show Loremaster Borannin your shawl one time.''
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:All Classes Quests]]
+
+== Malmur’s Coldain Prayer Shawl Tips ==
+
+
+Aaah… The {{:Runed Coldain Prayer Shawl}}! I was always interested in it on Live, but never had the stomach to chase it.
+
+'''Foreword'''
+
+It is best to not look at the Coldain Prayer Shawl quest as an ‘overnight’ quest, but one you do piece by piece. Giving yourself a quota on what you need done and pacing yourself can really reduce burn out. Some tradeskills will be easier than others. The purpose of this guide is to add an addendum of tips to the excellent guide here.
+
+You will need at least 6000pp to complete this quest. Most of that money will be spent in jewelcrafting, but you can mitigate prices with CHA buffs and ensuring you sell some things back. Some buffs to your INT or WIS can also make your skillpoints rise faster. There are a few instances you can make money back that we’ll discuss in this guide.
+
+Some things you can do right off the bat are to (1. see how many skill points you have with your class guildmaster and (2. get yourself a few [[Hand Made Backpack]]s. Extra slots can really help when it comes to tradeskills.
+
+Protip: Hold down Shift when you click on a stack to pick up the entire stack, hold CTRL to grab a single item. This will make your life so much easier. It makes tradeskill leveling so much faster and saves your arm/hand a lot of pain. You can also hold shift when buying/selling from merchants to buy/sell an entire stack of items. Same goes for holding CTRL to buy/sell single items to a merchant.
+
+An overview on where tradeskills need to be for 100% trivial combines…
+
+[[Baking]]: 127
+
+Baking is a very easy skill to level up utilizing the guide. By carrying around a spit and components you can sit in a camp doing combines in your spare time. It is a cheap and easy process. '''Remember, store all food items in lower bags than your regular food/drink!''' You might accidentally eat them, and some components are annoyingly rare.
+
+[[Pottery]]: 162
+
+Pottery can be annoying but is not very costly. You must be both near a merchant for pottery supplies and use the pottery wheel/kiln. Clay blocks also do not stack, so you will be making multiple trips. One of the good things in bringing this skill up to 148 is you do not need to use the kiln and can just keep making clay items and disposing of them through drop or destroy. When you get to 148, you then have to make vials that have components that you can’t get from the pottery merchant. I would not sweat it, as your final pottery combine that requires 162 can be done by another person with 162 in pottery and handed back to you! Consider it a shortcut. I feel Thurgadin Bank is the best place to do this tradeskill since you do not have to wander far.
+
+[[Tailoring]]: 208
+
+I struggled with tailoring the most due to components. Getting to 160 is a tough task. You will want to farm or purchase a couple dozen stacks of spider silk. Furthermore, you will be spending a bit of time in [[Crystal Caverns]] clearing the lvl 30 spiders again and again to get crystalline spider silk. The good news is spiders there drop lots of medallions, jewelry, and gems. Take them and sell them, as this paid for both Tailoring and Fletching for me. I’d bring my sewing kit, so you can save slots by turning the silk into swatches to make more inventory space. I probably went through 24-30 stacks. Until you get to the later Wu’s Armor sets you can do it in a large sewing kit, but when there are too many components you have to use a loom. I personally preferred the one at Outpost in OT.
+
+When you get to 160, you’re in a bit of trouble. The guide for tailoring insists you do quivers, but the truth is those lion hides are very rare drops and you need countless ones. Wyvern Armor is a better avenue.
+
+Brewing is related closely to this skill, as you will need to make [[Heady Kiola]]s. Hundreds of them. I found I would make 10 stacks, do my combines in tailoring, and then make more Heady Kiolas.
+
+Feeling lucky? I brought my tailoring up to 160 and did my 208 combine. I was lucky to get the component on my first shot. Risky combines can eat up components, but you can never lose your shawl piece doing them. I personally feel it is easier chasing down the components for the 208 combine to try it multiple times compared to the hundreds of combines of rarer/more expensive components. I got lucky, but it was a sound strategy.
+
+Your final tailoring combine in 162. I did it at 160 and was fine, but I did add a little risk to the combine. At that point components are more painful, so consider doing wyvern armor combine to 162.
+
+[[Brewing]]: 168 
+
+Brewing is not the hardest of skills, but often requires many components and keeps you trapped beside a brew barrel for quite a while. Thurgadin has all of the components you need to get to 168. You may find yourself doing brewing more for tailoring than bringing up the skill itself! 
+
+A quick way to 151 brewing is doing [[Skull Ale]]
+
+[[Jewelcraft]]: 162
+
+Jewelcraft (JC) moves quickly and can be done in a couple hours. You only combine two components; leaving you with a very smooth series of combines and sells when you run out of space. Get yourself a CHA buff and bank all of your negative CHA items (Hello, fellow Necromancers!) to reduce costs tremendously. Increase your INT/WIS to reduce the number of combines you must do. It is very costly, often taking up to 3000pp! I have seen folks half that with proper buffs. I recommend just hitting the jewelry store in Thurgadin.
+
+[[Fletching]]: 168
+
+Fletching can be knocked out in a couple hours. You can carry the kit around with you to make arrows. It can get a little costly toward the end, but I enjoyed giving stacks of arrows to tanks in guild. You might not have the best quality arrows depending on the combines you did, but free is free. This skill cost me somewhere between 300pp-400pp.
+
+'''Quest Protips'''
+
+Try and duo with a friend when you can, but the quest can be done solo by a 50-60 person. The great thing about the Coldain Prayer Shawl is whether you are an epic raider or super casual you can both obtain the item if you are willing to put the work into it.
+
+Pace yourself. Do a bit at a time. There is no rush.
+
+When getting [[Siren Hair]]s you’re better off doing it in [[Cobalt Scar]]. Also, get yourself some [[Excellent Siren Scales]] for the [[Wenglawks Manly Purse]] quest. Great item.
+
+Many components for the final combines can be purchased. [[Molkor Hide]]s are very prized items and sell very well due to this quest. Consider them a good farming item if you can handle SG well enough.
+
+It cannot be understated that [[Siren's Grotto]] is a very dangerous place. You have at least one component you must get from this zone. Work with a Druid who can charm sea horses and other monsters. I’m a fairly powerful Necromancer, but monsters there summon and have HP that is ridiculous. Druids and Enchanters do well here with charm. A friendly one hunting let me loot the NO DROP component I needed!
+
+Work with other people. This is what makes Classic EQ great! You will bump into others getting components for their own shawls. Help them with buffs, advice, and team up when you can. Save extra components to help other folks running the quest. Guildmates also appreciate spare items you may come across!
+
+
+== A note on tailoring ==
+
+As mentionned above, most people go 162 tailoring instead of the 208 trivial and attempt the shawl with a 57,5% success rate.
+
+Tailoring is indeed very expensive and time consuming. The drop rate on the most farmed fur/hides to skill up is around 10% and on most recipes, there are other components that are tedious to come by, taking forever to solo farm. If you go the market route, assuming you can find sellers, the cheapest combines will cost you around 60pp per try. Seeing you need around 10 combines for 1 skill up on average with a 255 main stat, we're talking of an investment of at least 30 000pp just to get from 158 to 208. If you don't have that kind of money, it will take you a couple hundred hours to farm the materials.
+
+On the other hand, I've personally failed the shawl 6 times at 165 tailoring, meaning I had to gather the materials 7 times. The manticore manes and the frost giant beards are easy but the wolf whiskers and the siren hair seem to have a 5-10%ish drop rate. The wolves are easy but the sirens are a very annoying farm for many classes despite their relatively low level. Some are clumped up, most of the fights are underwater, they hit hard and cast haste, damage shield, charm, slow, tash, dispel, dot and nuke. They also ruin your siren's grotto faction so not many able players will be willing to help you.
+
+All this to say yes, the 162 route is cheaper but be warned even though it is probably faster, it still remains a major pain if you're unlucky with combines. I've done half of it during a double loot xmas week and despite being relatively patient, it still was a very frustrating and annoying undertaking, I just don't want to imagine doing it as many times under normal loot rules. I could still solo all the drops though, so if it is difficult or impossible for your class and you need help doing it and doing it 6 times isn't really an option, going over 162 tailoring will help you with that but it is a tough pill to swallow if you didn't have any plans to actually raise tailoring to 200-250.
+
+Good luck.

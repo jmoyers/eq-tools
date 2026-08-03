@@ -1,0 +1,128 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_jaglorm_ygorr.png|frame|Jaglorm Ygorr]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Jaglorm Ygorr]]
+|-
+! ''' Minimum Level: '''
+| 50 (Turn-in's can be done at any level but Druid clickies do not work until lvl 50 on -all- pieces?)
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+Ally faction is required for all Kael armor quests.<br>
+Set Totals ''(1 bracer)''
+
+== Reward ==
+
+{{Gear Set
+|Nature Walker's Circlet
+|Nature Walker's Chestguard
+|Nature Walker's Vambraces
+|Nature Walker's Bracer
+|Nature Walker's Gauntlets
+|Nature Walker's Greaves
+|Nature Walker's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Jaglorm Ygorr]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Nature Walker's Circlet]]
+:*[[Ancient Leather Cap]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Nature Walker's Chestguard]]
+:*[[Ancient Leather Tunic]]
+:*3x [[Black Marble]]
+*[[Nature Walker's Vambraces]]
+:*[[Ancient Leather Sleeves]]
+:*3x [[Jaundice Gem]]
+*[[Nature Walker's Bracer]]
+:*[[Ancient Leather Bracelet]]
+:*3x [[Crushed Opal]]
+*[[Nature Walker's Gauntlets]]
+:*[[Ancient Leather Gloves]]
+:*3x [[Crushed Lava Ruby]]
+*[[Nature Walker's Greaves]]
+:*[[Ancient Leather Leggings]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Nature Walker's Boots]]
+:*[[Ancient Leather Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+After handing in your items:
+
+Jaglorm Ygorr smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{exp}}
+
+== Circlet ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you a cap if you bring him an [[Ancient Leather Cap]] and three [[Crushed Onyx Sapphire]]s.
+
+== Tunic ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you a tunic if you bring him  an [[Ancient Leather Tunic]] and three pieces of [[Black Marble]].
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you some sleeves if you bring him a pair of an [[Ancient Leather Sleeves]] and three [[Jaundice Gem]]s.
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you a bracer if you bring him an [[Ancient Leather Bracelet]], and three [[Crushed Opal]]s.
+
+== Gauntlets ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you some gloves if you bring him a pair of an [[Ancient Leather Gloves]] and three [[Crushed Lava Ruby]]s.
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you some leggings if you bring him a pair of an [[Ancient Leather Leggings]] as well as three [[Chipped Onyx Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Jaglorm promises to make you some boots if you bring him a pair of [[Ancient Leather Boots]] and three [[Crushed Flame Emerald]]s.
+
+
+== Fashion ==
+[[File:druid.PNG|300px|thumb|left|Full set of Nature Walker's Armor and Scimitar of the Mistwalker]]
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Druid Quests]]
+[[Category:Kael Armor Quests]]

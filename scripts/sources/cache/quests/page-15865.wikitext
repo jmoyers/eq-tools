@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_priestess_ghalea.png|frame|Priestess Ghalea]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Ghalea]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Priestess Ghalea]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dusty Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Priestess Ghalea]] is located at 788, 134, 3 in the Cleric's guild.''
+
+You say, 'Hail, Priestess Ghalea'
+
+: Priestess Ghalea says, 'Welcome to the Church of Underfoot. Please open your soul to the greatness of Brell Serilis. May he guide you in all your future endeavors. And may your soles long for the [Soil of Underfoot].'
+
+'''Hand [[Priestess Ghalea]] your [[Dirt Covered Letter]]'''
+
+:: ''The Dirt Covered Letter reads:''
+
+:: <code>Greetings. If you wish to serve the Underfoot and Brell, seek our Priestess Ghalea, and give her this note. She can be found at the Underfoot Cathedral and will train you well.</code>
+
+: Priestess Ghalea says, 'Welcome to the Underfoot Cathedral. I am High Priestess Ghalea. Here is your guild tunic. Now, let's get you started helping us spread the will of Brell.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Cleric Quests]]

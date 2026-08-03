@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_opal_darkbriar.png|frame|Opal Darkbriar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Opal Darkbriar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Stained Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Opal Darkbriar]] is located at -60, -185 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Opal Darkbriar'
+
+: Opal Darkbriar says, 'Greetings! You will have to excuse me.  I have no time to talk right now and I prefer to be left alone. Please leave.'
+
+'''Hand [[Opal Darkbriar]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>The Dismal Rage has need of your dark skills. Take this note to Opal Darkbriar, he has a job for you. The Dismal Rage is currently operating out of the basement of an abandoned building in the slums of East Freeport.</code>
+
+: Opal Darkbriar says, 'Welcome to the Guild, here's your guild robe.  Now, let's get to work.'
+
+<div class="facblock">
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[The Dead]] got better.
+* Your faction standing with [[Bloodsabers]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Necromancer Quests]]

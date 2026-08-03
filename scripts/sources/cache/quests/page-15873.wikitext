@@ -1,0 +1,53 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_sylia_windlehands.png|frame|Sylia Windlehands]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Sylia Windlehands]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Sylia Windlehands]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Brown Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Sylia Windlehands]] is located at -253, 242, 77 in the Songweavers ([[Bard]]) Guild Hall.''
+
+You say, 'Hail, Sylia Windlehands'
+
+: Sylia Windlehands says, 'Salutations! The Song Weavers are always glad to add a new voice to the choir. In addition to your voice, will you also [fetch spiderling silk]? We need some to replace our worn lute strings. Carry out this task in high tempo and we will show our gratitude.'
+
+'''Hand [[Sylia Windlehands]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Welcome young bard, to the woodland city of Kelethin. Seek out Sylia Windlehands and give this note to her. She will be your new teacher and trainer.</code>
+
+: Sylia Windlehands says, 'Greetings, friend. I am Sylia. I see that you wish to join our humble guild. Good. Here is a gift for you - your guild tunic. Let's get started with your training, shall we?'
+
+<div class="facblock">
+* Your faction standing with [[Songweavers]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]

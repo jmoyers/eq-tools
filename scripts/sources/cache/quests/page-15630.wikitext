@@ -1,0 +1,62 @@
+{{Velious Era}}
+
+[[File:npc_harla_dar.png|frame|Harla Dar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Harla Dar]]
+|-
+! ''' Minimum Level: '''
+| 60+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Dragon Necropolis]]
+|-
+! ''' Related NPCs: '''
+| [[Zlandicar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Shroud of the Dar Brood}}
+</li></ul>
+
+== Walkthrough ==
+
+- Quest has been confirmed completed with Amiable faction at level 28
+
+Harla Dar is found wandering the northeastern portion of the Western Wastes.
+
+You say, 'son'
+
+: Harla Dar says 'Have you seen him?  I must find him, he has been gone far to long!  If you have harmed him, I will slay you and all of your race!  Tell me where he is!'
+
+You say, 'Seen who?'
+
+: Harla Dar says 'My whelp, Frakadar.  I was sunning myself and he wandered off.  At first I did not worry, for he never went far before.  But it has been hours and hours, and no other dragon has seen him.  I have flown calling his name, but he does not answer.  Klandicar was the last to see him, near the entrance of the Necropolis.  I am forbidden to enter the Necropolis as long as this body draws breath, for good reason.  But I must know if my son is in there!'
+
+[[Klandicar]] has nothing to say regarding Frakadar. Head inside Dragon Necropolis and make your way deep inside to Zlandicar (/loc -250, -250, -250). 
+
+Slay [[Zlandicar]], loot [[Frakadar's Talisman]] and return to Harla Dar.
+
+Upon handing [[Frakadar's Talisman]] to Harla Dar:
+
+: Harla Dar says 'This...this is not what I had hoped for.  My whelp is lost, but I take some comfort in knowing that you helped destroy his killer.  Zlandicar has been a blight upon our race since the beginning.  Here is your reward, as I promised.  It will protect you in more ways than are obvious.  Leave me now, it is time to mourn.'
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You receive {{:Shroud of the Dar Brood}}.
+
+[[Category:Quests]]
+[[Category:Western Wastes]]
+[[Category:All Classes Quests]]

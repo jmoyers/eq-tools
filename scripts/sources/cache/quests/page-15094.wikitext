@@ -1,0 +1,72 @@
+{{Temple Era}}
+[[File:npc_vira.png|frame|Vira]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vira]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li> {{:Shovel of Ponz}}
+</li></ul>
+
+== Walkthrough ==
+
+Vira may be found on the balcony to the left, at +410, +85. 
+
+
+
+You say, 'Hail, [[Vira]]'
+
+: Vira says 'I am Vira, elementalist of Solusek Ro. I guard the secrets of the tools of [elemental summoning]. If you are a magician, you might be interested.'
+
+You say, 'What is elemental summoning?'
+
+: Vira says 'I hold the secrets to the construction of four tools which assist magicians with the summoning of elementals. I know about the [broom of Trilon], the [shovel of Ponz], the [torch of Alna] and the [stein of Ulissa].'
+
+You say, 'What of the shovel of Ponz?'
+
+: Vira says 'The shovel of Ponz was crafted by the earthen master of the same name. Are you [interested] in the [shovel]?'
+
+You say, 'I am interested in the shovel.'
+
+: Vira says 'I will create a replica of the shovel of Ponz for you, but I will need the following components to make it: a ruby, the eyes of a gargoyle, a shovel from a magician in Najena and the toes of a hill giant. Bring me these four components, and I will construct for you an object of elemental power.'
+
+'''She wants the following four items:'''
+{{CheckboxList}}
+* A [[Ruby]] may be purchased from a jewelry merchant.
+* A [[Gargoyle Eye]] drops from various gargoyles around the world.
+* [[A Shovel]] (identifies as "Shovel of Earth") drops from magicians in [[Najena]] or alligators in [[Cazic_Thule_(Zone)]].
+* [[Hill Giant Toes]] drop from various hill giants around the world.
+{{End}}
+'''Hand in all four items'''
+
+: Vira says 'Each of the four items needed to construct the famed Shovel of Ponz! Very well. As you have displayed ingenuity, I grant you this shovel.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Shovel of Ponz}}.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]
+[[Category:Magician Focus Items]]

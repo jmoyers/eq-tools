@@ -1,0 +1,135 @@
+__NOTOC__
+[[File:npc_master_xydoz.png|frame|Master Xydoz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| Master Xydoz and others
+|-
+! ''' Minimum Level: '''
+| 4+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Apprentice Skullcap - 1st Rank}} (#1)
+</li><li> {{:Apprentice Skullcap - 2nd Rank}} (#2)
+</li><li> {{:Apprentice Skullcap - 3rd Rank}} (#3)
+</li><li> {{:Dark Binder Skullcap}} (#4)
+</li><li> {{:Occultist Skullcap}} (#5)
+</li><li> {{:Revenant Skullcap}} (#6)
+</li><li> {{:Sorcerer Skullcap}} (#7)
+</li></ul>
+
+== Necromancer 1st Rank ==
+{{CheckboxList}}
+Ask [[Master Xydoz]] in the Tower of Death about the Apprentice Skullcap. He wants you to prove yourself by bringing him four [[Sarnak Hatchling Brain]] and he will reward you with [[Apprentice Skullcap - 1st Rank]].  [[A Sarnak Hatchling]] is found in the [[Lake of Ill Omen]] near the entrance to West Cabilis.  The hatchlings also drop [[Torn Tapestry]], and [[Ripped Tapestry]], save these for the second skullcap.
+
+== Necromancer 2nd Rank ==
+
+Talk to [[Master Xydoz]] again and ask him about the Second Rank Skullcap.  He tells you he wants a [[Mended Tapestry]].  You need to acquire two pieces of the now-destroyed tapestry and repair them. The pieces are [[Torn Tapestry]] and [[Ripped Tapestry]], which you find off of [[A Sarnak Hatchling]] in the [[Lake of Ill Omen]]. [[Skill_Tailoring|Tailor]] the two pieces together (the result is a [[Mended Tapestry]], not a faded one, and EQTraders lists the trivial for this at 23) and hand them in along with your {{:Apprentice Skullcap - 1st Rank}} for your {{:Apprentice Skullcap - 2nd Rank}}.(Hint: [[Klok Sargin]] in [[Lake of Ill Omen]] usually has both components for sale).
+
+== Necromancer 3rd Rank ==
+
+Talk to [[Master Rixiz]] and ask about the Third Rank Skullcap.  He tells you he wants the brain of a Sarnak Crypt Raider and hands you a glass canopic.  In this you must place the brain of a Sarnak Crypt Raider and embalming fluid.  This quest is going to take a little [[Smithing]] and [[Brewing]] to complete.
+
+* [[Bone Granite Powder]]  '''TEMPORARY''' - [[Blacksmithing]] (Trivial: 21) in [[Forge]]:
+:* 2 x [[Bone Chips]] - Bought, Dropped
+:* 1 x [[Forging Hammer]] - Bought
+:* 1 x [[Pile of Granite Pebbles]] - Quested---> [[Granite Pebbles]]
+
+* [[Embalming Fluid (Item)]] - [[Brewing]] (Trivial: <=21) in [[Brew Barrel|Brewing Barrel]]:
+:* 2 x [[Bog Juice]] - Crafted
+:* 1 x [[Bone Granite Powder]] - Crafted  '''TEMPORARY'''
+:* 1 x [[Rubbing Alcohol]] - Bought
+
+*[[Sarnak Raider Brain]] from [[Sarnak Crypt Raider]] in [[Lake of Ill Omen]] near "Explorer Tower" (#7 on the map).
+
+Kill everything around the tower area and the [[Sarnak Crypt Raider]] will eventually spawn. You may find it safer to stick close to the shore of the lake, as you will likely get lots of wandering enemies as you fight things here. Place both of these items in the canopic and hit combine. Head back to Master Rixiz and turn in the combined canopic (no longer a container) and your [[Apprentice Skullcap - 2nd Rank]] for your new [[Apprentice Skullcap - 3rd Rank]].
+
+== Necromancer 4th Rank ==
+
+Talk to [[Master Kyvix]] next.  He tells you he needs some new components.  These are a creeper cabbage, a heartsting telson with venom, brutling choppers and a scalebone femur.  He then hands you a [[Brood Sack]] and sends you on your way.
+
+* [[Creeper Cabbage]] is dropped by [[Man eating creeper]] in the [[Swamp of No Hope]].  Most people seem to agree that the best place to hunt these are near the "Outcast Iksar Camp" (#3 on the map).  This is a food item so make sure you have plenty of food so you don't accidentally eat it.
+* "Heartsting Venom" (called a [[Scorpion Telson]]) is dropped by [[A Heartsting Scorpion]] in the [[Field of Bone]].  The one you want has the charge of Poison Bolt.
+* [[Intact Brutling Choppers]]) from [[A Skulking Brutling]] in [[Warsliks Woods]].
+* "Scalebone Femur" (called a [[A Cracked Femur]]) is dropped by [[Greater Scalebone]] in [[Lake of Ill Omen]], [[Field of Bone]], and [[Kurn's Tower]]. Kurn's is best bet
+
+Combine all 4 of these in your Brood Sack and head back to Master Kyvix and hand in the combined result with your [[Apprentice Skullcap - 3rd Rank]] for your [[Dark Binder Skullcap]].  Note: the xp reward was about 2 blues at level 20.
+
+== Necromancer 5th Rank ==
+
+After you complete the fourth rank quest, Master Kyvix says something about the "true mission".  When asked about this "true mission," he gives you a Spectacle and sends you to see someone named Ryx.
+
+Ryx is in the Overthere at the Dark Elf Outpost. Bind yourself outside the Outpost if you feel you are in danger of dying during the hand-ins! (It's less annoying to rebind than it is to do a CR back to Overthere). Ryx is disguised as [[a skeleton worker]] on top of the westernmost boat (aka hammer hill) and cons indifferent. Levitate from the hillside into the boat to get up to him. Place yourself north-west of him to be as far away from the Skeletons who are on the ground. He doesn't reply anything to hails. Give him the spectacle first and he will say:
+
+''"I live to study and quench my thirst. I live to bash the faces of the Pariah and entangle myself in the ivy of evergreen. I live. I want to remember."''
+
+This translates into the following four items:
+
+* [[Spectacle]] (received from Master Kyvix)
+* [[Green Death Rum]] (bought in [[Cabilis|East Cabilis]])
+* [[Forsaken Pariah Mask]] from an Iksar Pariah ([[Lake of Ill Omen]], [[Warsliks Woods]], [[Swamp of No Hope]])
+* [[Evergreen Ivy Ringband]] from the Forest Giant Evergreens ([[Warsliks Woods]])
+
+Give him the remaining 3 items.
+
+Once he has all these four items he gives you a metal key.  Give the Metal Key to [[Tin Banker Assistant]] at the Overthere outpost. You have to wait till (Evening, Nighttime) the General who is in the bank leaves to check up on his troops.  You have to be at least level 20** to finish this part.  Giving the key to the banker will get you a tome (A Journal), 6 gold, 6 silver and 6 copper.  Give the tome (A Journal) together with your 4th level "Dark Binder Skullcap" to Master Kyvix to receive the [[Occultist Skullcap]], 5 gold pieces and 3 blues of experience @ level 20.
+
+== Necromancer 6th Rank ==
+
+'''High amiable faction with [[Brood of Kotiz]] is required to complete this portion of the quest.'''
+
+Master Kyvix now wants you to track down an item called the Kor Sha Candlestick, which is in 2 pieces. He sends you to speak with [[Keeper Rott]]. The magic words are 'I am the chosen occultist'. Keeper Rott tells you he doesn't have the pieces but tells you where to find them...on Sarnak Revenants in the [[Lake of Ill Omen]].
+
+Although Keeper Rott tells you that both pieces of the Candlestick can be found on [[A sarnak revenant]], this quest has been reverted to it's original form and the Revenants will only drop the first piece. The revenants also drop a note which makes reference to the candlestick, and indicates where to look for the other half.
+
+*[[Stem of Candlestick]] (identifies as: Stem of a Kor Sha Candlestick) from [[A sarnak revenant]] at the Sarnak Fort
+
+Head to [[Firiona Vie]]. In the North East corner roughly at location +4000, -2200. Head south and you'll see an open field with mainly Drolvargs and Frogloks moving about, this is the general area you want to be at. To your east you'll see a hill with a small Giant fort and to your west the zone just continues onward with more Drolvargs and Frogloks (with the occasional Drachnid) keep in mind to Con everything you see, as some Drolvargs can see right through your invis.
+
+* [[Stein]] (identifies as: crafted in West Cabilis - GRYPE) from the [[a halfling swashbuckler]], Most sites agree that he can be found roughly at +2200, -1700 so you'll want to check around there first.
+
+Once you've gotten that stein, head back to [[Cabilis|East Cabilis]] and go to #2 on the map, just directly south-west of the Shaman/Shadow Knight guild. One the top floor of that building you'll find an iksar named [[Grype]], who only spawns at night. Grype responds to the question "what candlestick?" and will tell you about the swashbuckler when asked. Give him the stein and in exchange he'll give you: Foot of Candlestick (identifies as: Foot of a Kor Sha Candlestick).
+
+Take the pieces to Master Kyvix and hand them in along with your current Skullcap to receive your [[Revenant Skullcap]].
+
+== Necromancer 7th Rank ==
+
+'''Kindly faction with [[Brood of Kotiz]] is required to be able to receive the Unfinished Scepter from Harbringer Glosk. Being in Skeletal form boosts this faction.'''
+
+Time to talk to Harbinger Glosk. Hail him and say "I am the new revenant." He wants your help finishing a scepter for the Emperor. He hands you an '''Unfinished Scepter''' and tells you to find 4 gems and combine the gems and the scepter in the Forge of Dalnir.
+
+First the gems. The gems you want are:
+
+* [[Eye of RokGus]] (dropped from [[a burynai slave]] in [[Mines of Nurga]])
+* [[Gem of Yet to Come]] (dropped from [[A Sarnak gem oracle]] in [[Lake of Ill Omen]])
+* [[Jewel of Ganak]] (dropped from [[Red Eye Jack]] in [[Firiona Vie]])
+* [[Shiny Emerald]] (dropped from [[greater charbone]] in [[Emerald Jungle]]).
+
+After you have the gems, the next step is to find the Forge of Dalnir (aka the "Always Works" forge).  The forge is located on the third level of [[Dalnir]] (#10 on the map).  In order to be able to use the forge, you need the
+* [[Forge Hammer of Dalnir]] from [[An Undead Blacksmith]] located on the third level of [[Dalnir]] (#9 on the map)
+
+Combine the scepter, gems and hammer in the forge to receive the Scepter of Emperor Vekin. Return this to Harbinger Glosk and receive your shiny new [[Sorcerer Skullcap]].
+
+== Necromancer 8th Rank ==
+I got the {{:Yellow Whip}} on the west wall from [[a wulfware lonewolf]].  Seemed to path in like all the other Lycanthrope spawns.   Posting in case we can ever do this quest.
+
+Note:
+
+Got the {{:Yellow Whip}} from a decaying skeleton in nektulos forest.
+
+[[Category:Quests]]
+[[Category:West Cabilis]]
+[[Category:Necromancer Quests]]

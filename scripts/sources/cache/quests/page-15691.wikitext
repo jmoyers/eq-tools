@@ -1,0 +1,50 @@
+{{Velious Era}}
+
+[[File:npc_gozzrem.png|frame|Gozzrem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Gozzrem]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Casalen]], [[Grozzmel]], [[Lepethida]], [[Midayor]], [[Tavekalem]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:White Dragon Statue}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Gozzrem'
+
+: Gozzrem says 'Greetings ______. If you seek wisdom or the arcane I have tasks in the halls of testing you may complete to gain what you seek.'
+
+You say, 'I seek the arcane.'
+
+: Gozzrem says 'To garner a reward fit for one who walks the arcane path return to me the poison tear and the poison symbol. Along with these return the serrated symbol and the runed symbol. If this task is not hard enough for you, I have a second quest for you.'
+
+== Related Items ==
+<ul><li>{{:Poison Tear}} ([[Dozekar the Cursed]])
+</li><li>{{:Poison Symbol}} ([[Casalen]] or [[Tavekalem]])
+</li><li>{{:Runed Symbol}} ([[Grozzmel]] or [[Midayor]])
+</li><li>{{:Serrated Symbol}} ([[Lepethida]])
+</li></ul>
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Wizard Quests]]

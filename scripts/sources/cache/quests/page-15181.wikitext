@@ -1,0 +1,162 @@
+{{Epics Era}}
+__NOTOC__
+[[File:npc_sirtha_scarscale.png|frame|Sirtha Scarscale]]
+[[File:Female_iksar_dreadscale1.jpg|thumb|190px|Dreadscale armor on an Iksar female]]
+[[File:Female_iksar_dreadscale2.jpg|thumb|190px|Dreadscale armor on an Iksar female]]
+[[File:Iksar_Male_Dreadscale.png|thumb|190px|Dreadscale armor on an Iksar male]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Sirtha Scarscale]], [[Sarth Scarscale]]
+|-
+! ''' Minimum Level: '''
+| 23
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+
+Dreadscale is a quested set of armor for [[Iksar]] [[Shadow Knight]]s. The various pieces require you to traverse much of Kunark to complete.
+Both are located in the bottom of the Eastern Tower for Shaman and Shadow Knight building.
+
+A full set (2 bracers) gives a total of 91 AC, +12str, +22sta, +3agi, +13dex, +10int, +10HP, +16sv Magic, +9sv Fire, +9sv Cold, +10sv Disease, +10sv Poison.
+
+== Rewards ==
+==== Sirtha Scarscale ====
+{{Gear Set
+|Dreadscale Helm
+|Dreadscale Gauntlets
+|Dreadscale Boots
+|Dreadscale Vambraces
+}}
+
+==== Sarth Scarscale ====
+{{Gear Set
+|Dreadscale Bracer
+|Dreadscale Mask
+|Dreadscale Greaves
+|Dreadscale Breastplate
+}}
+
+== Walkthrough ==
+<b><i>Note:  There is no faction reward for doing these quests</I></b>
+
+=== [[Sirtha Scarscale]] ===
+<I>You say, 'Hail, Sirtha Scarscale'
+
+Sirtha Scarscale eyes you intently. 'So, yet another hatchling approaches us. I am known as Sirtha and that is Sarth. We are of [Rile's] children. Who do you call your father, broodling?'
+
+You say, 'I am a child of Rile'
+
+Sirtha Scarscale says, 'Very good. We are smiths for the Crusaders of the Greenmist and I shall make [armor] for you, provided you prove your worth. Fail these simple tasks, and you shall not be worthy to bear the title of crusader!'
+
+You say, 'what armor'
+
+Sirtha Scarscale says, 'I will make [helms], [gauntlets], [boots], and [vambraces]. My broodmate shall make the bracers, greaves, masks, and breastplate.' </i>
+
+==== Dreadscale Helm ===={{CheckboxList}}
+<i>You say, 'what helms'
+
+Sirtha Scarscale says, 'The sarnak are a mockery of the Iksar. They are nothing more than beasts fit only to do our bidding! I require you to bring me the sword of one of their Order of Knights and the head of a sarnak berserker. These beasts have been attacking our patrols of late. I also require a stone called a ruby and a banded helm. Do this and I shall make a helm for you.'</i>
+
+Requires:
+* 1x [[Sarnak Berserker Head]] - Dropped [[Overthere]] (Level 30-33)
+* 1x [[Sarnak Knight's Sword]] - Dropped from [[a sarnak knight]] in [[Burning Wood]] (Level 33-37)
+* 1x [[Ruby]] - Bought
+* 1x [[Banded Helm]] - Crafted
+
+==== Dreadscale Gauntlets ====
+<I>You say, 'what gauntlets'
+
+Sirtha Scarscale says, 'I currently have need of a complete skeletal hand, for the research I am conducting. I wish to study its properties and form so that I can make gauntlets befitting our station. I also require two rubies that holds stars within and some banded gauntlets to complete my ritual. Do that and the gauntlets are yours to keep.'</i>
+
+Requires:
+* 1x [[Skeletal Hand]] - Dropped from [[charbone skeleton]] in [[Lake of Ill Omen]] (Level 23-27)
+* 2x [[Star Ruby]] - Bought
+* 1x [[Banded Gauntlets]] - Crafted
+
+==== Dreadscale Boots ====
+<i>You say, 'what boots'
+
+Sirtha Scarscale says, 'Cactus quills can be very lethal. I seek to work them into my new boots. Find me these quills, a pair of skeletal feet, an emerald of fire, and some banded boots so that I may start working on them. Why are you still here?! Begone!'</i>
+
+Requires:
+* 1x [[Cactus Quills]] - Dropped [[Overthere]] (Level 31-33)
+* 1x [[Skeletal Feet]] - Dropped [[Kurn's Tower]] (Level 15, but to get to the mob you need a group/duo in upper teens)
+* 1x [[Fire Emerald]] - Bought
+* 1x [[Banded Boots]] - Crafted
+
+==== Dreadscale Vambraces ====
+<i>You say, 'what vambraces'
+
+Sirtha Scarscale says, 'The hideous Golra are hardy creatures. The tales indicate their ferocity almost matches our own. I wish to gain a trophy of one of these beasts. Bring me the skin of one, two blue sapphires, and banded sleeves. Then I shall give you these fine vambraces.'</i>
+
+Requires:
+* 1x [[Golra Skin]] - Dropped [[Timorous Deep]] (Level 34-35)
+* 2x [[sapphire]] - Bought
+* 1x [[Banded Sleeves]] - Crafted
+
+== [[Sarth Scarscale]] ==
+<i>You say, 'Hail, Sarth Scarscale'
+
+Sarth Scarscale hisses at you loudly. 'So, you [bear the mantle of a crusader], yes? I am known as Sarth and shall reward you, provided you prove your worthiness to our cause, child of Rile.'
+
+You say, 'I will bear the mantle of a crusader'
+
+Sarth Scarscale says, 'We shall see if you are worthy of that. I shall make [armor] for you, to aid you in your service to our Father. I specialize in the forging of [bracers], [greaves], [masks], and [breastplates]. Sirtha makes the other items of armor. Take care when you address her, hatchling, it would not be the first time a hatchling has left here with scars.'</i>
+
+==== Dreadscale Bracer ====
+<i>You say, 'what bracers'
+
+Sarth Scarscale says, 'Have you ever seen Bloodgills? I hear they will devour a broodling in seconds and that their scales are tough as iron. Bring me some of these scales, a banded bracer, and a sapphire as blue as the sky. Only then will I give the bracer to you, broodling.</i>
+
+Requires:
+* 1x [[:Bloodgill Scales]] - Dropped [[Lake of Ill Omen]] (Level 35-39)
+* 1x [[sapphire]] - Bought
+* 1x [[:Banded Bracer]] - Crafted
+
+==== Dreadscale Greaves ====
+<i>You say, 'what greaves'
+
+Sarth Scarscale says, 'Do you know the beasts that call themselves sarnaks? One such beast who calls itself Zorash attacked an envoy of merchants who were to deliver a pair of special boots to me. It taunts us by wearing them as a trophy. Bring them back and the skull of Grachnist, his goblin ally. Return them to me along with a star ruby and your banded greaves, and I shall craft you an excellent pair of greaves.'</i>
+
+Requires:
+* 1x [[:Grachnist's Head]] - Dropped [[Warsliks Woods]] (Level 32)
+* 1x [[:Boots of Zorash]] - Dropped [[Overthere]] (Level 37)
+* 1x [[Star Ruby]] - Bought
+* 1x [[:Banded Leggings]] - Crafted
+
+==== Dreadscale Mask ====
+<i>You say, 'what mask'
+
+Sarth Scarscale says, 'Have you ever encountered a drixie before? I crush every one I see. They are an annoyance beyond mere words! Kill the Queen and bring me her wings as a trophy along with an emerald of fire and a banded mask.'</i>
+
+Requires:
+* 1x [[Wings of the Drixie Queen]] - Dropped [[Firiona Vie]] (Level 25)
+* 1x [[Fire Emerald]] - Bought
+* 1x [[Banded Mask]] - Crafted
+
+==== Dreadscale Breastplate ====
+<i>You say, 'what breastplate'
+
+Sarth Scarscale says, 'Ahhhh....a breastplate you want, is it? Well, they are not easy to come by. Fetch me a scorpion chitin. Intact, mind you! They are extremely fragile and must be treated before they can protect your carcass. Also, fetch me a war braid from a sarnak to connect the pieces. I also require a ruby and your banded tunic. Do this and I shall make it for you, hatchling. Now, go!'</i>
+
+Requires:
+* 1x [[Scorpion Chitin]] - Dropped [[Field of Bone]] (Level 17)
+* 1x [[Sarnak War Braid]] - Dropped [[Overthere]] (Level 31-33)
+* 1x [[ruby]] - Bought
+* 1x [[Banded Mail]] - Crafted
+
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shadow Knight Quests]]

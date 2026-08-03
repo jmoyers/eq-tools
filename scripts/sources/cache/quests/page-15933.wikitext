@@ -1,0 +1,89 @@
+{{Expand}}
+{{Classic Era}}
+[[File:npc_frenway_marthank.png|thumb|upright=1.5|Frenway Marthank]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Frenway Marthank]]
+|-
+! ''' Minimum Level: '''
+| 1?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Mammoth]]
+|-
+! ''' Related Quests: '''
+| [[The Bayle List]]
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items?, Coin?, Experience?
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Frenway Marthank]] can be found in the [[Surefall Glade]]''
+
+You say, 'Hail, Frenway Marthank'
+
+: Frenway Marthank says, 'Greetings, stranger. Please excuse my melancholy state. I have just received some [bad news] that has brought me much sorrow.'
+
+You say, 'what bad news?'
+
+: Frenway Marthank says, 'My youngest son was devoured by a grizzly bear while playing near the caves.  It was an unfortunate accident.  The great bear was just protecting its terrority.  Now, could you please leave me be? <sniff>'
+
+You say, 'Toe needs the Bayle List'
+
+: Frenway Marthank says, 'The [Bayle List] is gone.  It lies inside the belly of that beast, [Mammoth].'
+
+You say, 'What is Mammoth?'
+
+: Frenway Marthank says, 'Mammoth is the great bear which inhabits the caves.  It was he that swallowed my son whole.  My son was using the scroll case as a play sword when Mammoth approached.  I know you need the list but my vows as a Protector of the Pine forbid me to harm the bear.  Help me ease my pain.  Kill Mammoth and bring me his hide.  You will find the list inside the beast.'
+
+'''I suppose you'd ask him this if you had killed and looted the list from Mammoth without being sent by Runethar'''
+
+You say, 'What is the Bayle List?'
+
+: Frenway Marthank says, 'The Bayle List is my property.  Return it to me if you have it.  There is no more I can say of the list, but if you have the note and refuse to return it, then I shall let it be known that you betray [Antonius Bayle] himself!'
+
+You say, 'How do you know Antonius Bayle?'
+
+: Frenway Marthank says, 'Antonius Bayle and I were childhood friends.  He entrusted me to watch over the list.  What the list is, was never explained to me.  It looks like gibberish.'
+
+'''[[Mammoth]] is the bear guilty of murder.'''
+'''Note: Killing Mammoth will incur a big negative faction hit for the residents of Surefall. Turning the hide in will recover only a tiny fraction of that loss.'''
+
+Kill Mammoth and loot [[Mammoth's Hide]] and [[Bayle List II]]
+
+'''You give the hide to Frenway.'''
+
+: Frenway Marthank says, 'It is not right to feel satisfied at the sight of Mammoth's hide, but I do.  Thank you, Soandso.'
+
+<div class="facblock">
+*Your faction standing with [[Protectors of Pine]] has been adjusted by 5.
+*Your faction standing with [[Jaggedpine Treefolk]] has been adjusted by 5.
+*Your faction standing with [[Sabertooths of Blackburrow]] has been adjusted by -1.
+*Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+</div>
+{{exp}}
+
+You receive 6 gold, 6 silver pieces.
+
+'''You give the list to Frenway.'''
+
+:Frenway Marthank says ?
+
+Rewards? Faction?
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]

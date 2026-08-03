@@ -1,0 +1,61 @@
+[[File:npc_ton_firepride.png|frame|Ton Firepride]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Ton Firepride]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Garuc Anehm]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rat Shaped Ring}}
+</li></ul>
+
+== Walkthrough ==
+
+After completing the [[Faren's Tacklebox]] quest, you receive [[Hurrieta's Tunic]].
+
+Hurrieta is the mother of the Ironforges in Qeynos. [[Ton Firepride]] despises the Ironforges.  Take the tunic to him and receive faction, experience and coin.
+
+: Ton Firepride says, "Ha! This is great! Here's your money, murderer! Hope the guards don't find you. Now get lost! Take the tunic. Maybe Garuc will reward you for such a vile deed. I sure don't want to keep it around here"
+
+<div class="facblock">
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Bloodsabers]] got better.
+</div>
+{{exp}}
+
+'''You receive [[Hurrieta's Bloody Dress]].  Take Hurrieta's Bloody Dress and seek out [[Garuc Anehm]] in the Qeynos Aqueducts.'''
+
+'''Hand the dress to him to get your reward: Experience, faction, money and a piece of Patchwork armor or [[Rat Shaped Ring]].'''
+
+: Garuc Anehm says 'Hahaha.. I see you actually killed a respected, well-known citizen of Qeynos. No loss for them, but you are certainly a gain for our shrine. Maybe this shall do you some good. If not now, then surely later. You may need it when the Qeynos Guards hunt you down.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

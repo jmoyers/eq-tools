@@ -1,0 +1,200 @@
+{{Velious Era}}
+
+[[File:npc_normon_stonetooth.png|frame|Normon Stonetooth]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Normon Stonetooth]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| Necromancer, Wizard, Enchanter, Magician
+|-
+! ''' Related Zones: '''
+| [[Burning Woods]], [[Great Divide]], [[The Hole]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Hakon Brightsteel]], [[Phenocryst]], [[A geonid]], [[accolyte of Zek]], [[Bloodpriest Ioukond]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Phenocryst's Focus}}
+</li></ul>
+
+== Concise Version ==
+
+===Thurgadin===
+(Note that Enchanters, or players with an Ornate Velium Pendant, can jump ahead to the Wakening Lands Part II step)
+*Find [[Normon Stonetooth]] deep in the [[Thurgadin]] Mines and Say,"I will do a favor"
+*Take the pick axe you recieve to weaponsmith [[Hakon Brightsteel]]
+*You give Hakon the Pick Axe and a [[Small Piece of Velium]]
+*Return the pickaxe to Normon Stonetooth in exchange for the [[Velium Focus]]
+
+===Wakening Lands part I===
+*Locate [[Phenocryst]] in the genoid caves and give it your [[Velium Focus]] he will return a slightly different [[Velium Focus]] (identifies as "Altered Focus")
+
+===Crystal Caverns===
+*Locate any [[A geonid]] near the back of the caverns past the Coldain and give it your [[Velium Focus]] he will return a slightly different [[Velium Focus]] (identifies as "Velium Focus")
+===Wakening Lands part II Electric Bugaboo=== 
+(Enchanters, or players with an Ornate Velium Pendant, can start here - Collaborate/Alliance Phenocryst to 'amiable' then say the below "I will gather these stones for you.")
+*Return to [[Phenocryst]] and hand him back your new and slightly improved [[Velium Focus]] he will give you a positive faction hit. You should be amiable now (if you haven't previously damaged your geonid faction) and you can say "I will gather these stones for you." to get your [[Elbaite Focus]] from him.
+*Phenocryst will ask you to find 3 stones, ground spawns around Norrath, each looks like a small bag on the ground. The items are very heavy, collectively weight 44.4.
+**Go to [[Great Divide]] and find [[Bent Metallic Crystal]] in the wurm caves behind some glowing crystals near {{Loc|Great Divide|(-5000,-650)|(-5000,-650)}} 
+**Go to [[Burning Woods]] and find [[Heavy Metallic Crystal]] near the Meteor and [[Slixin Klex]] It's touching the meteor near {{Loc|Burning Woods|(-842, -1179)|(-842, -1179)}}
+**Go to [[Splitpaw]] and find [[Reddish Crystal]] near the entrance of the underwater tunnel leading to the Ishva area near {{Loc|Splitpaw|(+690, -17)|(+690, -17)}}
+
+===Wakening Lands part III getting the band back together===
+*Before you move on you will need a group of 50's to assist you, a tracker is strongly recommended but not necessary.
+*Return to [[Phenocryst]] and hand in all 3 Crystals and your [[Elbaite Focus]] for [[Azurite Focus]].
+**'''You MUST be amiable or better before turning in the [[Elbaite Focus]] or he will eat it!'''
+**This will spawn 3 Giants: 2 [[accolyte of Zek]] (War 50) and [[Bloodpriest Ioukond]] (Cleric 50, yes with CH at 40%) **these levels and HP values are wrong. They were all dark blue to 60 and had far more HP than 4500 and 9000 respectively, and were extremely spell resistant to the point that only wizard lures would land reliably. 
+**The spawn separately but will all wander to the northern tunnel entrance in their own time
+**Kill all 3 and loot each of their [[Holy Symbol of Zek]]
+*Advise all people in zone that every genoid will being forming a giant train towards the northern tunnel entrance. 
+*Return to [[Phenocryst]] and hand in all 3 [[Holy Symbol of Zek]] and your [[Azurite Focus]] for [[Phenocryst's Focus]]. At this point every geonid in the tunnel will sprint full speed to Phenocryst and begin a train out towards the northwestern exit of the tunnels, where they will proceed to the location {{Loc|The Wakening Land|-1121, -28|(-1121, -28)}}, emote a bit, and promptly despawn. Warn the zone in advance, both of the train and that geonids will assist goos and fairy dragons.
+
+== Faction Tips ==
+If you have lowered your faction below Indifferent or even to Scrowling with [[Geonid Collective]] by killing Geonids in either [[Wakening Lands]] or [[Crystal Caverns]], you will not be able to gain back the faction required to do the final hand in ''(Amiable required)'' without repeating the beginning parts of the quest using faction tricks.
+
+*First, collect a couple stacks of [[Small Piece of Velium]], in preperation for repeating the beginning quest steps multiple times
+*Complete the entire 'Thurgadin' section of the quest chain to receive the initial [[Velium Focus]]
+*Acquire Invisibility before locating [[Phenocryst]] in the geonid caves and have a Druid/Ranger use Harmony on it and the surrounding mobs
+*Open an trade window with [[Phenocryst]] but before handing it the [[Velium Focus]], re-acquire Invisiblity from the Druid/Ranger before clicking the 'Trade' button. Once Invisible, hit trade and the game will think you are of Indifferent faction and you will receive the slightly different [[Velium Focus]]
+*Locate any [[A geonid]] in [[Crystal Caverns]] but simply have an Enchanter charm it before handing in your [[Velium Focus]]
+*Go back to [[Phenocryst]] in [[Wakening Lands]] and use the same 'Harmony/Invis-while-trading' trick from the previous steps and you should receive a faction boost to [[Geonid Collective]].
+*Repeat until Amiable Faction, then you can continue with the final quest steps. Enjoy your hard earned [[Phenocryst's Focus]]
+
+== Walkthrough ==
+
+;Thurgadin
+Deep in the bottom of the mines in Thurgadin resides a Coldain named Normon Stonetooth.  Talking to him he offers to tell you a secret but he needs a favor done first.
+
+You say, 'I will do a favor'
+: Normon Stonetooth says, 'Ahh, well me pick is a bit dull, don't cut like it should. Up in the city proper ye kin find a weapons smith named Hakon. Take me pick axe and and tell him Stonetooth sent ye. Then give it to him, wait fer him ta sharpen it, an bring it back to me. Then I'll help ya ta listen to the stone.'
+
+You receive [[Normon's axe]] from Normon.
+
+
+Hakon is located at Scar's Edge, a weapon shop.
+
+You say, 'Stonetooth sent me'
+: Hakon Brightsteel says, 'You spoke with old Stonetooth? Eeegads man! No one talks to 'im. Legend says he spent so much time down there that he eats nothin' but rocks now and drinks melted velium. Well I guess I should sharpen his axe, but I'll need some velium ore to repair it some. Bring me a chunk o' Velium Ore along with his axe and I'll get to work.'
+
+You give Hakon the Pick Axe and a [[Small Piece of Velium]]:
+
+: Hakon Brightsteel says, 'Excellent! I'll get ta work now.' Hakon whistles an unfamiliar tune as he repairs and sharpens the pick axe. 'Here ye are, Ingilram. Watch that old Stonetooth, he's a few steins short of a keg, if ye know what I mean'
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive Pick Axe from Hakon.
+
+
+Go back into the mines and return the pick axe to Normon:
+:  Normon Stonetooth says, 'Ahhhh, good work, Ingilram. Now ta speak with the stone ye need somethin' ta focus on. Use this piece o' velium as yer focus. Ta speak the language o' the stone ye need ta slow down like the stone. Rock looks like it don't move but it does, just real slow. So place yer focus on the stones ye wish ta speak with and get yerself real slow, both yer body an' yer noggin. Then if yer quiet enough ye might hear 'em. An' that's what's to it.'
+{{YouGainExperience}}
+
+You receive a [[Velium Focus]] from Normon.
+
+
+;Wakening Land
+You bring the focus item to [[Phenocryst]], a named geonid in Wakening Land at -3210, -397 inside a maze of caves.  You can hail him and such, the geonids conning indifferent to everybody as far as I can tell.
+ 
+You hail Phenocryst. Phenocryst speaks with a soundless voice, as if you are hearing your own thoughts. 'We sense you are attempting communication with us but do not understand what it is you are trying to convey. We are eager to know more. Perhaps there is one who knows the language of the stone and will speak with us' 
+ 
+Then you give him the [[Velium Focus]].
+
+Phenocryst speaks to you from within your mind, 'You know the stone! This is wonderful! The fullfillment of the prophecy is now one step closer. The most ancient of the stone tells us that one not of stone will come forth and act as our harbringer of asscention. We believe you to be our harbringer. Please help us!'
+ 
+You reply, "how can I help you?"
+
+Phenocryst speaks from within your mind as well as conveys a sense of joy empathically. 'It is said that the harbringer will find all of our people and unite them. When we join we will know all of our experiences and perhaps then be aware of how to proceed with the next step in our asscention. We implore you to find others like us and make them aware of us. You know the language of the stone and can tell them. We await your return with proof that you have spoken to them."
+
+
+;Crystal Caverns
+Now you have to go to Crystal Caverns.  If you invis up and head down into the caverns, you'll pass through an orc area, then a dwarf area, then a tentacle terror and spiders area, and finally there's a long stretch of tunnel leading up to a zone out point.  That long stretch of tunnel is filled with geonids and they con the same as the ones in Wakening Land.  Give one of them the focus (any one, doesn't matter, you don't have to hail them or anything) and you'll get it back with the following message:
+
+A geonid seems as if it doesn't recognize you as anything of importance. You attempt to speak with the geonid through your velium focus but all you are able to hear is the same though over and over.., Eat. You have gained no knowledge from these creatures but you notice your focus has been altered slightly.
+
+The description on the focus doesn't change, but it is altered.
+
+
+;Wakening Land
+Take the focus back to Phenocryst in Wakening Land and give it to him.  The following will happen:
+
+Phenocryst sends it's thoughts to you, a feeling of disappointment washes over you, 'It seems the others are not aware of themselves yet. We are alone..So many questions yet we can find no answers. We have been given a very special gift but without direction we are lost. We must find who has made us aware of ourselves and why it has done so.'
+
+<div class="facblock">
+* Your faction standing with [[Geonid Collective]] got better.
+</div>
+
+
+You say to Phenocryst, "Find what?"
+ 
+Phenocryst says in the form of thoughts, 'We must call to it. We must make ourselves heard past these rocks though. A menhir must be constructed to amplify our voice. The stones we will need are not found in this area though. We hear whispers of stones far away that have the ability to channel and amplify our thoughts. We ask you to gather these stones for us harbinger."
+
+You say to Phenocryst, "I will gather these stones for you."
+
+Phenocryst's thoughts flood your mind, 'Thank you Harbinger. We need 3 crystals. One of Beryl, one of Stibnite, and one of the purest Iron. These minerals will only be found deep within the earth where the geology is relatively stable. This Focus will aid you in finding the right crystals. Return it to me with the 3 crystals and we will construct our Menhir. Please hurry Harbinger, our prophecy awaits.
+ 
+Phenocryst gives you an item for telling him you'll gather the stones.  It's a magic, lore, no drop Elbaite Focus that has 5 charges of Identify.  It looks like a fire emerald.
+
+
+;Gather the Stones
+The stibnite crystal is found in The Great Divide.  If you enter the wurm caves in the center of that zone from the south, go up to the first right, go in and take the next right, you'll be in a room with two spawn points for wurms and there's a patch of blue crystal at the back of the room.  The stibnite is behind the crystals and looks like a bag on the floor.  It spawns every 1-2 hours or so I think.  The description of the item is "Bent Metallic Crystal".  It weights 20.0, is magic, lore, and no drop.  When you identify it, it identifies as "Stibnite for the Menhir".  To identify an item using the Elbaite Focus, target yourself, pick up the item and right click it on the Elbaite Focus in your inventory.  It won't change the description of the item, it'll just tell you what it is in your chat window.
+ 
+The Reddish Crystal can be found in Splitpaw Lair behind one of the stone pillars near the entrance of the underwater tunnel leading to the Ishva area {{Loc|Splitpaw|(+690, -17)|(+690, -17)}}. It weighs 10.0 and is magic, lore, and no drop. It identifies as "Beryl for the Menhir".
+ 
+The crystal of purest iron is in Burning Woods.  It's sitting on the meteor near Slixin Klex.  It's item description is "Heavy Metallic Crystal" and is
+magic, lore, and no drop.  It weighs 14.0.
+ 
+
+;Wakening Land
+Take these three crystals and the Elbaite Focus back to Wakening Lands to Phenocryst and you're ready for the next step.  Get 1-2 parties of 50+ players and bring 'em with you.  Due to the dragon that spawns in Wakening Land near the dragon portal, you might want to approach from skyshrine.  If you're going along the wall from skyshrine towards the caves, you want to gather your troops at the second cave entrance along the wall.  Phenocryst is closest to that entrance.  Get to know the path between you and him at this point so you're familiar with how to get out in a hurry.  At this point, all the geonids should con amiable to you.  Finishing the Velium Focus section achieves this faction adjustment.  Make sure you have a ranger in your party of friends.  You're going to have to track down some triggered MOBs and fight them.
+ 
+You submit the items to Phenocryst.
+ 
+Phenocryst makes no sound but it's voice fills your mind. 'We have always held our memories within the earth and stone but only recently have we become aware of them.  We do not know what happened or who gave us this wonderful gift but we can now access those memories and are aware of it's storage.  With that knowledge has come questions and desires.  When the prophecy comes to be then we will have our answers and fulfill our desires.'
+ 
+Phenocryst 's familiar thoughts flood into your mind again, 'You truly are the Harbinger, take this Focus as a mark of your friendship with us. Now we can construct the Menhir, we need ..,..,the stones speak.., There is a problem. Ones of flesh are coming, the large ones, 3 of them. They must not disturb us while we construct the Menhir! Please stop them Harbinger! bring us proof of their distruction along with your Focus and then we will begin the calling. Our asscention is at hand!'
+ 
+You lose the focus and the three crystals and in return gain another focus item with the description "Azurite Focus".  It's a magic, lore, no drop item weighing 0.5.
+ 
+Now head outside and start tracking.  After a few minutes, two "accolyte of Zek" giants will show up on track. A minute later or so, a Bloodpriest Loukond will show up on tracker as well.  You'll have to run out and pull the accolytes to you once you track them.  If they are snared, they still run quite fast.  These giants con blue at 52 and are quite magic resistant.  Make sure you pull these, they're almost more important than the Bloodpriest.  They get attacked by the various mercenaries in the zone sometimes and get killed before you can do the job.  If you have to pull mercenaries with the accolytes, do.
+
+Possible locs and spawn times after hand-ins (need confirmation, best to bring a tracker)
+
+  [[accolyte of Zek]]  A  spawns at  {{Loc|The Wakening Land|(408.10, -690.21, -201.55)|(408.10, -690.21, -201.55)}} after 3.11 minutes. Warrior, level 50, ~13,000 HP, AC 344, summons, hits between 73-200
+
+  [[accolyte of Zek]]  B spawns at {{Loc|The Wakening Land|(-564.04, -985.80, -191.31)|(-564.04, -985.80, -191.31)}} after 3.11 minutes. Warrior, level 50, ~13,000 HP, AC 344, summons, hits between 73-200
+
+  [[Bloodpriest Ioukond]]  C spawns at {{Loc|The Wakening Land|(303.02, 254.44, -201.54)|(303.02, 254.44, -201.54)}} after 3.11 minutes. Cleric, level 50, ~9,000 HP, summons, hits between 73-150, CH's
+
+
+After killing both accolytes, loot them.  Each one has a medalion that has the description, "Holy Symbol of Zek", which is magic, no drop, and weighs 2.0.  After the accolytes are done, go out and get the Bloodpriest.  Bloodpriest Loukond should eventually walk up to the cave entrance and stand outside it if nobody pulls it.  After a minute of standing outside the cave, he depops, which is why you have to do the accolytes first (they pop first) then the bloodpriest (he'll get to the cave probably if you can't find him, the accolytes might not).  The bloodpriest cons blue at 52 and is just as magic resistant.  He drops a third and final medalion with the same description.  You must get all three medalions in order to for this part to prove fruitful.  When you kill the giants, you take the following faction hits: Kromzek (worse), Kromrif (worse), KingTormax (worse), and ClawsofVeeshan (better).  The giants never enter the caves to attack the geonids or anything.  Everything will happen outside the caves and the giants won't aggro the dragon if it's up either.  The Bloodpriest Loukond is also not to be confused with Priest Bjek, another giant who wanders in the area sometimes who is red at 52 and not related to this quest.
+ 
+Now.  Take your Azurite Focus and the three medalions to Phenocryst.  Submit them to Phenocryst.
+ 
+Phenocryst 's thoughts become your own, a feeling of joy overwhelms you, 'Because of you we can at last speak with our maker. We were once given a gift, and we ask that you accept this gift from us now so that we may come closer to that which we owe our sentience to. Now..,we must construct the Menhir..' 
+ 
+You lose the Azurite Focus and medalions and get [[Phenocryst's Focus]] in return, which is, it seems, the reward for this quest.
+
+Then then geonids, led by Phenocryst, start walking around, through the halls and such.  When this happens, you see the following message:
+
+ "Phenocryst begins to resonate. All the stones about you begin to resonate seemingly at its command. The Geonids all begin moving, all to construct the Menhir."
+ 
+I'm assuming they get together at this point at make their Menhir and the quest is over.  I didn't stick around to watch because we got some tar goo on us and that put a dampener on things real quick.  It's very important to note that although geonids con indifferent or amiable, goo does not and if you get any of it on you and a geonid is close by, it'll aggro the geonid.  No idea why this is, it doesn't make any sense, but it's the case.  Also, enchanters can skip a huge chunk of this quest by casting Collaboration on Phenocryst and starting from the point where to say to him "I will gather these stones for you".  The Velium Focus half gives you the faction to be able to tell that to Phenocryst.  Provided an enchanter MAKES him amiable, they don't have to bother with the first half.
+
+P.S. After killing the giants and turning in the final pieces to Phenocryst, he gathers all the Geonids in the cave to him and walks out.  We found it to be a good idea to call a geo train in /shout approximately 3 to 5 minutes prior to doing this final turn in and attempt to warn anyone killing Geonids during this time frame that a train is imminent.
+
+[[Category:Quests]]
+[[Category:Thurgadin]]

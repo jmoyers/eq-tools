@@ -1,0 +1,200 @@
+'''Note:''' For the older versions of the rewards for these quest (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+== Checklist ==
+Bold items are No Drop, while bold NPC names indicate island bosses. {{CheckboxList}}<ul>
+Test of Wolf 
+<li>{{:Drake-Hide Mask}}
+<ul>
+  <li>1 - {{:Azure Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Black Face Paint}}, ([[Protector of Sky]])
+  <li>'''3''' - <span style="font-weight: bold">{{:Worn Leather Mask}}</span>, ('''[[Gorgalosk]]''')
+</ul>
+</ul>
+<ul>
+Test of Bear 
+<li>{{:Nature Walker's Mantle}}
+<ul>
+  <li>2 - {{:Copper Disc}} ([[an azarack]])
+  <li>3 - {{:Nature Walker's Sky Emerald}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Mantle of Woven Grass}}</span>  ('''[[Keeper of Souls]]''')
+</ul>
+</ul>
+<ul>
+Test of Tree 
+<li>{{:Shillelagh}}
+<ul>
+  <li>3 - {{:Diaphanous Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Hardened Clay}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Spiroc Battle Staff}}</span> ('''[[The Spiroc Lord]]''')
+</ul>
+</ul>
+<ul>
+Test of The Bee 
+<li>{{:Honeycomb Belt}}
+<ul>
+  <li>4 - {{:Efreeti Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>5 - {{:Wilder's Girdle}}([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]])
+  <li>'''6''' - <span style="font-weight: bold">{{:Divine Honeycomb}}</span> ('''[[Bazzt Zzzt]]''')
+</ul>
+</ul>
+<ul>
+Test of Eagle 
+<li>{{:Spiroc Banisher Focus}}
+<ul>
+  <li>5 - {{:White-tipped Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Spiroc Elder's Totem}} ([[The Spiroc Lord]])</span>
+  <li>6 -  {{:Acidic Venom}} ([[Bazzt Zzzt]], [[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]])
+  <li>'''7''' -  <span style="font-weight: bold">{{:Ethereal Ruby}}</span> ('''[[Sister of the Spire]]''')
+</ul>
+</ul>
+<ul>
+Test of Nature 
+<li>{{:Espri}}
+<ul>
+  <li>6 - {{:Lush Nectar}} ([[Bzzazzt]])
+  <li>7 - {{:Fire Sky Ruby}} (Druid ver weighs 3.0) ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>8 - <span style="font-weight: bold">{{:Storm Sky Opal}}</span> ('''[[Eye of Veeshan]]''')
+  <li>1.5, 4, 8 {{:Efreeti Scimitar}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+</ul>
+</ul>
+
+==Quest Start==
+
+Talk to Strandar Pinemist in the [[Plane of Sky]].
+
+You say, 'hail Strandar Pinemist'
+:''Strandar Pinemist says 'Greetings, young one. Are you a [child of the trees]? ''
+You say, 'I am a child of the trees'
+:''Strandar Pinemist says 'Then you are welcome in my presence. I shall call forth some loyal children if you but speak the name. Will or Fenalla will serve you well. ''
+
+= Will Treewalker =
+
+You say, 'I choose Will'
+:''Strandar Pinemist says 'Please read this tome. It will explain how Will Treewalker is able to assist. When you are finished, please return it to me. We have but a single copy of such a tome, for which a tree gave its life.'' 
+:''Strandar Pinemist says 'Welcome, Will Treewalker. ''
+:''Will Treewalker says 'I am Will and I am here to serve. ''
+:''Strandar Pinemist says 'I am no longer needed and will take my leave. ''
+You say, 'hail Will Treewalker'
+:''Will Treewalker says 'Children of the trees, friend and protector of nature. We are brothers and sisters to the wolves and bears. The call of the Great Pine has filled your soul and you have found your way here to be tested. Are you ready to be tested? ''
+You say, 'I am ready to be tested'
+:''Will Treewalker says 'The tests of old are difficult and dangerous, but the rewards for perseverance are great. I hold rewards for three tests. The test of the wolf, the test of the bear and the test of the tree. ''
+
+== Druid Test of Wolf ==
+
+Will Treewalker says 'So you wish to take the test of the wolf, do you? Go forth unto the islands and find an azure tessera, black face paint, and a worn leather mask.  Bring them back to me, but not until you have all three, and you shall be rewarded. 
+
+'''Reward:''' {{:Drake-Hide Mask}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Azure Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Black Face Paint]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Worn Leather Mask]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+
+== Druid Test of Bear ==
+
+Will Treewalker says 'Ah, the test of the bear it is. Find in this plane a copper disc, a nature walker's sky emerald, and a mantle of woven grass. Bring all three at one time to me for your reward. 
+
+'''Reward:''' {{:Nature Walker's Mantle}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Copper Disc]] || [[an azarack]] || Island 2
+|-
+| [[Nature Walker's Sky Emerald]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Mantle of Woven Grass]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+
+== Druid Test of Tree ==
+
+Will Treewalker says 'The test of the tree is said to be a test of Nature and only those stout of limb and bark will succeed. Bring to me a diaphanous globe, some hardened clay and a spiroc battle staff. Hand them all to me at once and the reward will be yours. 
+
+'''Reward:''' {{:Shillelagh}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Diaphanous Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Hardened Clay]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Spiroc Battle Staff]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+
+= Fenalla Moonshadow =
+
+You say, 'I choose Fenalla'
+:''Strandar Pinemist says 'Please read this tome. It wll explain what Fenalla Moonshadow can assist you with. When you are finished, please return this to me. We have but a single copy of such a tome in the world, for which a tree gave its life.'' 
+:''Strandar Pinemist says 'Welcome, Fenalla Moonshadow. ''
+:''Fenalla Moonshadow says 'I am Fenalla. How may I serve? ''''
+:''Strandar Pinemist says 'I am no longer needed and will take my leave. 
+You say, 'hail Fenalla Moonshadow'
+:''Fenalla Moonshadow says 'We are children of the trees, friends and protectors of nature. We are brothers and sisters to the wolves and bears. The call of the Great Pine has filled your heart and led you here to be tested.'' 
+
+== Druid Test of The Bee ==
+
+Fenalla Moonshadow says 'The test of the bee, you say? Very well, go forth and gain an efreeti statuette, a wilder's girdle and finally a piece of divine honeycomb. Bring them to me after you have them all and I shall grant thy just reward. 
+
+'''Reward:''' {{:Honeycomb Belt}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Efreeti Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Wilder's Girdle]] || [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|-
+| [[Divine Honeycomb]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+
+== Druid Test of Eagle ==
+
+Fenalla Moonshadow says 'The test of the eagle is very difficult, and one must be as strong as the Great Pine to finish. For this test I shall need you to find a white-tipped spiroc feather, some acidic venom, an ethereal ruby and finally a spiroc elder's totem. Return all four at once and the prize will be yours. 
+
+'''Reward:''' {{:Spiroc Banisher Focus}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[White-tipped Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Ethereal Ruby]] || [[Sister of the Spire]] || Island 7 Boss
+|-
+| [[Spiroc Elder's Totem]] || [[The Spiroc Lord]] || Island 5 Boss
+|-
+| [[Acidic Venom]] || [[Bazzt Zzzt]], [[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]] || Island 6
+|}
+
+== Druid Test of Nature ==
+
+Fenalla Moonshadow says 'The test of nature is the most difficult test a child of the trees can undergo. Its completion would prove the druid is truly one with all of nature. An efreeti scimitar, some lush nectar, a fire sky ruby and a storm sky opal are required. When you return all at once, the reward will be yours. Safe journey to you! (WARNING: There are 2 different Fire Sky Rubies.  Make sure you have the right one.)
+
+'''Reward:''' {{:Espri}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Lush Nectar]] || [[Bzzazzt]] || Island 6
+|-
+| [[Fire Sky Ruby]] (Druid version weighs 3.0) || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Storm Sky Opal]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti Scimitar]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Druid Quests]]

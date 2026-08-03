@@ -1,0 +1,115 @@
+{{Disambig3|[[Necromancer Words - X`Ta Timpi]]}} {{Disambig3|[[Necromancer Words - X`Ta Tompi]]}} {{Disambig3|[[Necromancer Spells (Cabilis)]]}}{{Disambig3|[[Necromancer Spells|Necromancer Spells (The Overthere)]]}}
+
+
+[[File:npc_x`ta_tempi.png|frame|X`Ta Tempi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Foreign Quarter]]
+|-
+! ''' Quest Giver: '''
+| [[X`Ta Tempi]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[The Estate of Unrest]], [[Lower Guk]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[A Kor Ghoul Wizard]], [[a barbed bone skeleton]], [[a spectre]], [[dark boned skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Words of Collection (Beza)}}
+</li><li> {{:Words of Collection (Caza)}}
+</li><li> {{:Words of Haunting}}
+</li><li> {{:Words of Possession}}
+</li></ul>
+
+== Walkthrough ==
+
+You can get 12 words needed for high level Necromancer pet research from the three Sisters (X`Ta Tempi, Timpi, and Tompi) in Neriak Foreign Quarter (-10, -45).
+
+You say, 'Hail, X`Ta Tempi'
+
+: X`Ta Tempi says 'We three are the [Sisters Dark] - [Necromancy] is our Art - Bonded dead, they serve our will - No beat of heart, yet faithful still.'
+
+You say, 'Who are the Sisters Dark?'
+
+: X`Ta Tempi says 'We three are the Sisters Dark - Keepers of the shadowed Dread - [Lore of Death], we research now - Join with us and serve [the Dead].'
+
+You say, 'What Necromancy?'
+
+: X`Ta Tempi says 'Necromancy - Art of the Dead - Binding bones to serve your will - We research now the [Lore of Death] - Ancient spells with power still.
+
+You say, 'Who are the Dead?'
+
+: X`Ta Tempi says 'The Dead are the shadowknights and necromancers of Neriak. They were formed by Queen Cristanos herself. Even among the Teir'Dal they are feared and they keep to themselves within the Lodge of the Dead in the Third Gate. I have heard they take orders only from the queen.'
+
+You say, 'What Lore of Death?'
+
+: X`Ta Tempi says 'The Lore of Death is shadow bound - Its [words] are [hid], yet shall be found - Through our research into the dark - Old hexes found and parchment marked.'
+
+You say, 'How are the words hid?'
+
+: X`Ta Tempi says 'The Words are hid in tomes of old - Their yielded lore worth more than gold - Though we search both 'fore and 'hind - [Components] we can not yet find.'
+
+You say, 'What components?'
+
+: X`Ta Tempi says 'We need components for research - These are things that you could find - In return for [tasks] that you perform - Words of [reward] we have in mind.'
+
+You say, 'What tasks?'
+
+: X`Ta Tempi says 'Bring us components for our research - We give [Word]s by tasks performed - [Possession], [Detachment], [Allure], [Haunting], [Rupturing], [Dark Paths], [Suffering], [Collection], [Obligation], [Requisition] and [Acquisition].'
+
+You say, 'What reward?'
+
+: X`Ta Tempi says 'Bring us components for our research - We give [Word]s by tasks performed - [Possession], [Detachment], [Allure], [Haunting], [Rupturing], [Dark Paths], [Suffering], [Collection], [Obligation], [Requisition] and [Acquisition].'
+
+You say, 'What about Words of Possession?'
+
+: X`Ta Tempi says 'From the Estate of Unrest, bring two barbed bone chips - From Castle Mistmoore, a dagger charred - From a merchant bring a stone of blood - Words of Possession will be your reward.'
+
+She is asking for a [[Charred Dagger]] actually from Unrest, two [[Barbed Bone Chips]], and a [[bloodstone]].
+
+You say, 'What about Words of Haunting?'
+
+: X`Ta Tempi says 'From the Estate of Unrest, bring two dark bone chips - From Castle Mistmoore, a dagger ebon - From a merchant bring a jasper stone - Then Words of Haunting will to you be given.'
+
+She is asking for two [[Dark Bone Chips]], an [[Ebon Dagger]] actually from Unrest, and a [[jasper]].
+
+You say, 'What about Words of Collection?'
+
+: X`Ta Tempi says 'Two Words of Collection I possess - To obtain Beza to me you must bring - a globe of darkness, an Eye of Kor and an amber gem. To obtain Caza to me you must bring - an Eye of Guk, a globe of fear, and jade.'
+
+For Beza, she wants the globe of darkness which is a [[Sphere of Unrest]], an [[Eye of Kor]], and an [[amber]].
+
+For Caza, she wants a [[Globe of Fear]], an [[Eye of Guk]], and a [[jade]].
+
+If you ask about any of the other words:
+
+: X`Ta Tempi says 'The answer to that question is held by another - Ask again of my sister, brother.'
+
+Upon completing the turn-in for the Words of Haunting, the dialogue was:
+
+: X`Ta Tempi says 'You have quested well - With spell and sword - Accept our thanks - And this reward.'
+
+<div class="facblock">
+* Your faction standing with [[The Dead]] got better.
+* Your faction standing with [[Queen Cristanos Thex]] got better.
+* Your faction standing with [[King Naythox Thex]] got worse.
+* Your faction standing with [[Keepers of the Art]] got worse.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Primordial Malice]] got worse.
+</div>
+You gain experience!! 
+
+Need all dialogues, current faction hits from other hand-ins.
+
+[[Category:Quests]]
+[[Category:Neriak Foreign Quarter]]
+[[Category:Necromancer Quests]]

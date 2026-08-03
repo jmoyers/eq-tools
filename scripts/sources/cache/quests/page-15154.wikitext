@@ -1,0 +1,83 @@
+{{EpicQuests Era}}
+[[File:npc_brother_balatin.jpg|frame|Brother Balatin]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Dreadlands]]
+|-
+!''' Quest Giver: '''
+| [[Brother Balatin]]
+|-
+!''' Minimum Level: '''
+|?
+|-
+!''' Classes: '''
+| [[Monk]]
+|-
+! '''Related Zones:'''
+| [[Chardok]], [[Karnor's Castle]]
+|-
+! '''Related NPCs:'''
+| [[Brother Balatin]], [[a drolvarg pawbuster]], [[an iksar betrayer]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Robe of the Whistling Fists}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Brother Balatin]] is a skeletal monk located on a pyramid in the wizard spires of the Dreadlands at +981, +9057, +1102.''
+
+Hail him as any other mob, and you get the following response: 
+
+You say, 'Hail, Brother Balatin'
+
+Brother Balatin turns toward you. A transparent human face materializes upon the skull. As he speaks the smells of rotted rat corpses rushes into your face. You must fight the urge to vomit. What discipline do you [follow]?
+
+You say, 'I follow the brotherhood of the Lost Circle.'
+
+Brother Balatin says 'Then we are one. The rebirth of our Circle shall start with you. I have waited decades for your arrival. Seek the living brothers within Tunaria. When you have earned your garb, you will be [ready for the true drape].'
+
+You say, 'I am ready for the true drape.'
+
+Brother Balatin says 'Seek the broken flute of our master, taken from us by the Iksar twins of Vistrei. To me they will come along with your robe and to you will come the dawning of the new brotherhood.'
+
+'''You need to turn in the following items to Brother Balatin to receive the robe:'''
+
+'''Notes on turn in methods:
+*[[Sneak]] You can sneak to turn-in pieces.  While in sneak behind him (without hailing him) you can open a trade window and he will not aggro. '''warning''': ''While in sneak, do not hail him, he will turn and aggro you.''
+*Charming him to do the turn-in does work, need confirmation of this.'''
+* Enchanter Pacify may not work, need confirmation of this.
+* Enchanter [[Pacify]] then after the trade window is opened casting [[Invisibility]] (not [[Invisibility versus Undead]]) may work, need confirmation.
+*[[Feign Death]] turn-in does not work, need confirmation of this.
+
+:{{box}} [[Metal Pipe]] from [[an iksar betrayer]] in [[Chardok]] (identifies as Fi).
+:{{box}} [[A Metal Pipe]] from [[a drolvarg pawbuster]] in [[Karnor's Castle]] (identifies as Zan).
+:{{box}} [[Robe of the Lost Circle]]
+
+Brother Balatin says 'May you have the correct items or lost forever will be all.'
+
+Brother Balatin says 'May you have the correct items or lost forever will be all.'
+
+Brother Balatin holds his arms out and a fine robe materializes before your eyes. You grab it just in time to see the skeleton fade from existence.
+
+'''Balatin despawns*. You receive [[Robe of the Whistling Fists]].'''
+
+<div class="facblock">
+* Your faction standing with [[Whistling Fist Brotherhood]] got better.
+* Your faction standing with [[Combine Empire]] got better.
+* Your faction standing with [[Swift Tails]] got worse.
+{{exp}}
+</div>
+
+This quest may be able to be MultiQuested.
+
+== Related Quests ==
+
+* [[Monks of The Whistling Fist]]
+* [[Monk Epic Quest]]
+
+[[Category: Quests]]
+[[Category:Dreadlands]]
+[[Category:Monk Quests]]

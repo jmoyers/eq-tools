@@ -1,0 +1,61 @@
+{{Disambig3|[[Necromancer Words - X`Ta Tempi]]}} {{Disambig3|[[Necromancer Words - X`Ta Timpi]]}} {{Disambig3|[[Necromancer Words - X`Ta Tompi]]}} {{Disambig3|[[Necromancer Spells (Cabilis)]]}}
+
+[[File:npc_vaean_the_night.png|frame|Vaean the Night]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Vaean the Night]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Minion of Shadows|Spell: Minion of Shadows]]
+* [[Sacrifice (spell)|Spell: Sacrifice]]
+* [[Scent of Terris|Spell: Scent of Terris]]
+* [[Shadowbond|Spell: Shadowbond]]
+
+== Walkthrough ==
+
+Vaean the Night may be found in The Overthere.  He wants any of the following spell scrolls:
+
+* [[Convergence]]
+* [[Defoliation]]
+* [[Splurt]]
+* [[Thrall of Bones]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+
+Vaean the Night is located at +2765, +2330.
+
+You say, 'Hail, Vaean the Night'
+
+Vaean the Night says 'Ahh, welcome! More souls to succumb to the inhabitants of the Outlands! My army of undead will grow stronger by the day, but it would be a pity if you perished before doing a [mortal bidding] for me.'
+
+You say, 'What mortal bidding?'
+
+Vaean the Night says 'I see it as a win-win situation for me. If you succeed, I'll gain more power from the knowledge you bring back to me. If you fail, you become another addition to my undead minions. Thus, you cannot fail me in returning a scroll of Splurt, Defoliation, Covergence, or Thrall of Bones. In return, I will part with a scroll of mine.'
+
+Hand in one of the requested scrolls:
+
+Vaean the Night says 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!'
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Necromancer Quests]]

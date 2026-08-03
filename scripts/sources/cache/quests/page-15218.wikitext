@@ -1,0 +1,90 @@
+{{Disambig3|[[Bone Chips Quests]]}}
+{{Classic Era}}
+[[File:NPC_Gunlok.jpg|frame|Gunlok Jure]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Gunlok Jure]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying dwarf skeleton]], [[a dwarf skeleton]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Rusty Axe}}
+</li><li> {{:Rusty Broad Sword}}
+</li><li> {{:Rusty Mace}}
+</li><li> {{:Rusty Two Handed Sword}}
+</li><li> {{:Small Lantern}}
+</li><li> {{:Small Patchwork Boots}}
+</li><li> {{:Small Patchwork Cloak}}
+</li><li> {{:Small Patchwork Pants}}
+</li><li> {{:Small Patchwork Sleeves}}
+</li><li> {{:Small Patchwork Tunic}}
+</li><li> {{:Small Tattered Belt}}
+</li><li> {{:Small Tattered Gloves}}
+</li><li> {{:Small Tattered Gorget}}
+</li><li> {{:Small Tattered Mask}}
+</li><li> {{:Small Tattered Shoulderpads}}
+</li><li> {{:Small Tattered Skullcap}}
+</li><li> {{:Small Tattered Wristbands}}
+</li><li> {{:Torch}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Gunlok Jure]] is located at 1315, 158, 39 in the Paladin guild. You must have Indifferent faction to complete this quest.''
+
+You say, 'Hail, Gunlok Jure'
+
+: Gunlok Jure says, 'Hail, ______! Bow before the greatness of the Clerics of Underfoot! It is good to be a paladin in such an order as ours - to fight the good fight and defend Kaladim from the evil and undead. If you be a paladin, then I pray you find the [courage to battle the undead].'
+
+You say, 'I have the courage to battle the undead'
+
+: Gunlok Jure says, 'Yes!! To battle the undead is our greatest call. There has been a rise in the number of dwarven skeletons seen in the Butcherblocks. If you are a true member of this order, I shall reward you for the return of four bone chips. We shall defend our land from evil!'
+
+'''Hand [[Gunlok Jure]] 4 [[Bone Chips]], unstacked.'''
+
+: Gunlok Jure says, 'I called for the remains of four skeletons.'
+
+: Gunlok Jure says, 'I called for the remains of four skeletons.'
+
+: Gunlok Jure says, 'I called for the remains of four skeletons.'
+
+: Gunlok Jure says, 'You have done well. We thank you for your deed with this humble reward. The power behind the raising of our dead shall soon be found. You will earn more respect with more bone chips. I only wish you could assist in the return of the [remains of Cromil].'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] has been adjusted by 10. 
+* Your faction standing with [[Kazon Stormhammer]] has been adjusted by 10.
+* Your faction standing with [[Miners Guild 249]] has been adjusted by 7. 
+</div>
+
+{{YouGainExperience}}
+
+You receive 15 silver, 6 copper pieces.
+
+== Related Quests ==
+
+* [[Cromil's Remains]]
+
+== Notes ==
+
+Doing this quest about 100 times will take your faction from scowling to warmly.
+
+May not be worth much XP.
+
+[[Category: Quests]]
+[[Category:North Kaladim]]
+[[Category:All Classes Quests]]

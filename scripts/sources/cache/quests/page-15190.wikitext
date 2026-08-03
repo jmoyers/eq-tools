@@ -1,0 +1,64 @@
+{{Kunark Era}}
+[[File:npc_the_toilmaster.png|frame|The Toilmaster]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[The Toilmaster]]
+|-
+! ''' Minimum Level: '''
+| 3+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Location: '''
+| 890,-75 (inside building); 825,-28, 1100, -300 (after 8PM game time)
+|-
+! '''Related Zones:'''
+| [[Swamp of No Hope]]
+|-
+! '''Related NPCs:'''
+| [[an escaped froglok]], [[escaped froglok slave]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Pile of Granite Pebbles}} 
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, [[The Toilmaster]]'
+
+: The Toilmaster says, 'Do not bother me unless you wish to join the chain gang. Now go away or I shall have my slaves chop you as they chop this granite!'
+
+You say, 'I need granite pebbles.'
+
+: The Toilmaster says, 'Ah. Looking for granite pebbles, are we? You must be a Swifttail. I am tired of doing your caste's work when you give nothing in return. Tell you what, I have lost many slaves to escape. If you bash their heads in with your many skills and return at least two busted froglok shackles I will give you one pile of granite pebbles.'
+
+'''[[Busted Froglok Slave Shackles]] drop from either [[an escaped froglok]] or [[escaped froglok slave]] in the [[Swamp of No Hope]]. Hand Toilmaster two Busted Shackles.''' 
+
+: The Toilmaster says, 'A deal is a deal. Here is one pile of granite pebbles. I hope you need more because I know there are more escaped froglok slaves.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+== Notes ==
+* Kill NPCs in Swamp of No Hope until you see a named frog "Froglok Escort". Protect the Froglok Escort from attackers and escaped froglok slaves will spawn randomly.
+* The Toilmaster walks to the alcove near the Field of Bone zoneline at 8pm game time, so he may not be in the buildings indicated on the map.
+
+== Related quests ==
+* [[Bone Granite Powder Quest]]
+* [[Necromancer Skullcap Quests|Necromancer 3rd Skullcap Quest]]
+* [[Sparring Armor]]
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

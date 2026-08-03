@@ -1,0 +1,83 @@
+{{Classic Era}}
+[[File:npc_karn_tassen.png|frame|Karn Tassen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Karn Tassen]], [[Voleen Tassen]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+The current edition of the Qeynos newspaper suggested speaking with Qeynos Merchants and the Coalition of Tradefolk about how we can help in the current famine.
+
+Speak to Karn or Voleen Tassan in Voleen's Bakery in South Qeynos.
+
+The conversation with Karn:
+
+You say, 'Hail Karn Tassen'
+
+: Karn Tassen says 'Bah, I told Voleen it would happen and it finally did!  Food is becoming so scarce that I'm starting to run out of stock. You wouldn't happen to [be a baker] yourself or maybe you [know] someone who bakes?
+
+You say, 'I am a baker'
+
+: Karn Tassen says 'Well good! Maybe you can help me restock. If you are a baker you could help me out by restocking my [muffin supply]. Or if you don't mind a little travel, you can pick up a [shipment of bread] for me.
+
+You say, 'I will pick up a shipment of bread'
+(note that responding to 'muffin supply' gives [[Muffin Quests|a different quest]])
+
+: Karn Tassen says 'There is a guy that lives in the plains to the south. I guess the plague hasn't hit that area too bad. Anyway, he's one heck of a baker and makes some quality bread. Go look him up and tell him you want a bag of bread loaves. He's one of those fellas that goes by the name of Meadowgreen.
+
+Voleen gives almost the same information, and identifies the person as [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.) 
+
+: ''[[Bag of Bread Loaves]] is now only found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali.''
+
+Return and give to Karn (or Voleen)
+
+: Karn Tassen says 'Ah finally, fresh bread! All right let me get this on the shelves right away. Here is your payment.
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum from Karn Tassen.
+
+Experience was approximately 1.5-2% as a level 20 Druid.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

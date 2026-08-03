@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_regren.png|frame|Regren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Regren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Regren]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Green Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Regren]] is located at 352, 269, 77 in the Emerald Warriors ([[Warrior]]) Guild Hall.''
+
+You say, 'Hail, Regren'
+
+: Regren says, 'Welcome, Warrior. Show the Emerald Warriors your mettle and bring me a ruined wolf pelt, some bat fur, some bone chips, and a spiderling eye from the depths of Greater Faydark. If you succeed, my admiration and a reward will be yours. To battle!'
+
+'''Hand [[Regren]] your [[Recruitment Letter]].'''
+
+:: ''The Recruitment Letter reads:''
+
+:: <code>The Emerald Warriors is now recruiting strong, able bodied elves for service. Please turn in this Recruitment Letter to Master Regren to enlist.</code>
+
+: Regren says, 'Welcome to the Emerald Warriors. Hmmm, you have a lot of training to do, so lets get started right away. Here's our guild tunic. Represent us well, young ______.'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Merchants of Felwithe]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Warrior Quests]]

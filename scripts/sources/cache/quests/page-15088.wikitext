@@ -1,0 +1,112 @@
+{{Classic Era}}
+[[File:npc_marshal_anrey.png|frame|Marshal Anrey]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Marshal Anrey]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]], [[Northern Karana]], [[Everfrost Peaks]], [[Innothule Swamp]], [[Crushbone]], [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Ambassador DVinn]]
+|}
+
+== Reward ==
+
+<ul>
+<li> {{:Leatherfoot Skullcap}}</li>
+<li> {{:Leatherfoot Raider Skullcap}}</li>
+</ul>
+
+== Checklist ==
+{{CheckboxList}}
+*REQUIRES AMIABLE OR BETTER FACTION
+* Obtain a [[Shark Skin]]
+* Obtain a [[Grizzly Bear Skin]]
+* Obtain a [[Polar Bear Skin]]
+* Obtain an [[Alligator Skin]]
+* Turn in 4 skins (all at once) to [[Marshal Anrey]] (to receive [[Leatherfoot Skullcap]])
+* Obtain a [[Dragoon Dirk]]
+* Turn in Skullcap and Dirk to Marshal Anrey (to receive Leatherfoot Raider Skullcap)
+{{end}}
+
+== Walkthrough ==
+
+'''NOTE: This quest requires amiable faction. Not merely amiable, but quite high amiable as Anrey at the minimum amiable may still eat your initial turn-in.'''
+
+Marshal Anrey may be found on the second floor of the bank in a nook in the southwest corner, at 100, -135, 40.
+
+'''To obtain [[Shark Skin]]:'''
+
+* Go to [[Ocean of Tears]] with a Ranger or Druid friend and track sharks just off the Sisters of Erollisi Island dock. This area has the largest density of sharks.
+* A single 6 minute respawn can be found offshore of East Freeport near Bait Masterson.
+* Two sharks can be found in Qeynos Catacombs.
+* This item also drops off of the sharks in Erudin harbor including off of [[a diseased shark]] and several [[a young shark]]s spawned from it's death (please note, diseased shark and babies give erudin faction and reduce paineel faction). This is not to be confused with the non-stackable magic version of shark skin that also drops there.
+
+'''To obtain [[Grizzly Bear Skin]]:'''
+: Go to North Karana and run big circles around the gypsy camp (check gypsy merchants first just in case), killing all grizzly bears you find. The skin is a rare drop, but kill ~20 grizzlies and you should get at least one (fast repop).
+
+'''To obtain [[Polar Bear Skin]]:'''
+: Go to [[Everfrost Peaks]]. Check the noob vendor areas as they frequently have one for sale. Otherwise, the cubs are the easiest to farm and any mob in the noob area can spawn as a cub.
+
+'''To obtain [[Alligator Skin]]:'''
+: Go to [[Innothule Swamp]] and kill [[a bull alligator]] or [[a fat alligator]]. Placeholders are [[a kobold hunter]], [[giant water moccasin]], [[a froglok forager]].
+
+'''To obtain [[Dragoon Dirk]]:'''
+: Go to [[Crushbone]] and kill [[Ambassador DVinn]], or go to [[Northern Desert of Ro]] and kill [[Dorn B`Dynn]] (lowest level mob for Dirk). The Dragoons in Nektulos and West Commons drop Dirks as well (West Commons Dragoon spawns after killing Kizdean Gix). [[Ambassador K`Ryn]] in [[Oggok]] (spawns at 8am and despawns at 8pm behind the shaman guild, Bouncer Gronk is the spawn from 8pm to 8am) always drops the dirk.
+
+Go to [[Rivervale]] bank, go upstairs and give the skins to Marshall Anrey to receive a preliminary [[Leatherfoot Skullcap]]. Give that cap back to him along with a [[Dragoon Dirk]] and receive Leatherfoot Raider Skullcap.
+
+Enjoy instaclick-from-inventory gate to WC
+
+== Dialogue ==
+
+You say, 'Hail, Marshal Anrey'
+
+: Marshal Anrey says 'Stand at attention!! You don't look fit enough to toe-wrestle my grandma!! You cannot be in my squad!! Are you '''[petitioning]''' or are you a '''[visitor]'''?'
+
+You say, 'I am a visitor.'
+
+: Marshal Anrey says 'Well, why didn't you say so?! Forgive me for hollering. Allow me to introduce myself. I am Marshal Anrey Leadladle, commander of the '''[Leatherfoot Raiders]'''.'
+
+You say, 'I am petitioning.'
+
+: Marshal Anrey says 'So you want to be a '''[Leatherfoot Raider]'''? What kind of joke is this? Look at you! You're a mess! Where are you '''[from]'''?'
+
+You say, 'I am from Rivervale.'
+
+: Marshal Anrey says 'So you're from Rivervale?!! You must be some kind of freak. No halfling from Rivervale would look, smell and act anything like you. Well, freak, if you think you're stout enough to be a Leatherfoot Raider, you prove it!! You travel the lands and return to me a polar bear skin, a grizzly bear skin, a shark skin and an alligator skin. Then maybe, just maybe, I will let you wear the cap of a Leatherfoot Raider.'
+
+'''Turn in the four skins (all 4 skins should be turned in at once)'''
+
+: Marshal Anrey says, 'So I see the young troll has become a young warrior. You have stepped up to the challenge of the Leatherfoot Raiders,you may wear the petitioners Skullcap,but to receive the true cap of the Raiders,bring me the Dirk of a fallen Neriak Dragoon and the cap I have given you. Only then can I be sure that you can truly be one of the few and bold, the Leatherfoot Raiders.'
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+
+'''Turn in the [[Leatherfoot Skullcap]] and [[Dragoon Dirk]]:'''
+
+: Marshal Anrey says, 'Congratulations my young deputy. Welcome into the brotherhood of the Leatherfoot Raiders. You have earned your skullcap.  Wear it with pride. You are now one of the elite. Remember our motto 'Those who risk, prevail'!'
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

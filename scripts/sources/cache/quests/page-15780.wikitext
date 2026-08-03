@@ -1,0 +1,43 @@
+{{Kunark Era}}
+[[File:npc_guard_frandan.png|frame|Guard Frandan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Frandan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:UNKNOWN}}
+</li></ul>
+
+== Walkthrough ==
+
+Hail Guard Frandan:
+
+: Guard Frandan says "Glad to see you made it to the outpost in one piece. Now you can test your mettle against the giants of Kunark. They sometimes carry some [odd items] which can fetch a coin or two on the market." 
+
+You say, 'what odd items'
+
+: Guard Frandan says "I once spoke with a ranger who tried to sell me a mountain giant toothpick he recovered. Looked like it would make a fine weapon, but it smelled of decayed flesh!! I do not even care to think of what kind of flesh it was used to pick."
+
+Not sure where it goes from here, but you probably give him something. Upon giving him [[Kromdul Toothpick]] he says and returns nothing.
+
+Edit: I don't actually think you give him anything. There are multiple examples in Firiona Vie of people talking about rumored items in Kunark. I think this was just stand in dialogue without actual quests attached.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

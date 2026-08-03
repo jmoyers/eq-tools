@@ -1,0 +1,47 @@
+{{Classic Era}}
+[[File:npc_tyokan_mekase.png|frame|Tyokan Mekase]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Tyokan Mekase]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Prayer Beads}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tyokan Mekase]] can be found in a building near the Temple of Life pool during daytime hours. He shares a spawn point with [[Whysia Flock]] who appears during the night.''
+
+'''Hand Tyokan your used [[Prayer Beads]].'''
+
+: Tyokan Mekase says, 'As instructed by High Priestess Jahnda I must ask for the beads and a donation of 100 gold coins.'
+
+'''Hand him 100 gold coins (gold only, multi-questable).'''
+
+: Tyokan Mekase says, 'I see your beads need to be charged. Very well, here you are. Use them and good health to you!!!'
+
+You receive a fully charged set of [[Prayer Beads]].
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

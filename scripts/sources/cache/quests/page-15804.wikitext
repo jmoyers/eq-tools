@@ -1,0 +1,55 @@
+{{Classic Era}}
+[[File:npc_raskena_djor.png|frame|Raskena Djor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Raskena Djor]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Raskena Djor]]
+|}
+
+== Reward ==
+
+<ul><li> [[Frost Bolt|Spell: Frost Bolt]]
+</li><li>[[Minor Shielding|Spell: Minor Shielding]]
+</li><li>[[Sphere of Light|Spell: Sphere of Light]]
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Raskena Djor'
+
+: Raskena Djor says, 'Greetings.  What brings you to Raskena?  Did Ghanlin send you?'
+
+You say, 'Ghanlin sent me.'
+
+: Raskena Djor says, 'Then let us begin your first task.  I require some components for an experiment I have been meaning to conduct.  If you could [gather] them for me, I will make sure that you are rewarded.'
+
+You say, 'What should I gather?'
+
+: Raskena Djor says, 'In Toxxulia Forest you should be able to find some fire beetles.  I require two fire beetle legs and two fire beetle eyes.  Once you have collected them, bring them to me for your reward.'
+
+'''Hand in two [[Fire Beetle Leg]] and two [[Fire Beetle Eye]].'''
+
+: Raskena Djor says 'You have passed your first task.  Nice work.  Take this spell as your payment.'
+
+{{exp}} (~1% at Level 3)
+
+You receive a random low-level spell.
+
+There are no faction changes.
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]

@@ -1,0 +1,95 @@
+{{Kunark Era}}
+[[File:npc_klok_mugruk.png|frame|Klok Mugruk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Klok Mugruk]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Melee
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]]
+|-
+! ''' Related NPCs: '''
+| [[a scaled wolf cub]], [[a scaled wolf pup]]
+|}
+
+== Reward ==
+
+{{Gear Set
+|Curscale Belt
+|Curscale Boots
+|Curscale Cape
+|Curscale Choker
+|Curscale Gloves
+|Curscale Leggings
+|Curscale Shawl
+|Curscale Skullcap
+|Curscale Sleeves
+|Curscale Snout Mount
+|Curscale Tunic
+}}
+
+A full set gives +33 AC.
+
+== Walkthrough ==
+
+''[[Klok Mugruk]] can be found at +384, -213, inside the Haggle Baron (opposite Monk Guild) in East Cabilis.''
+
+You say, 'Hail, Klok Mugruk'
+
+: Klok Mugruk says, 'Welcome to my shop, sss.  Only the finessst I have.  I make for you jussst as I make for the emperor's harem.  Many [bristle silk] garmentsss do they need.  Ssss..  Lucky man, the emperor isss.'
+
+You say, 'What is bristle silk?'
+
+: Klok Mugruk says, 'What is bristle silk?!!  Huh?  Where have you been living?  Under the rocksss..  Nahh.  I sssee.  You are a broodling from the common ssstock.  You could never afford bristle silk nor the affectionss of those who drape themselves with it.  Still, commons have much ssservice to offer.  Maybe you would like to earn some [curscale armor].  Hmm?'
+
+You say, 'What is curscale armor?'
+
+: Klok Mugruk says, 'Curscale armor?  I make thisss crude armor from the broodlings of the scaled wolves.  I use the ssskins of the pupsss and cubs.  Those ssskins are ssstill young and thin and are bessst for the young adventurers.  I sssupply them to the Legion of Cabilisss, but for a [small service] I shall make them available to you.'
+
+You say, 'What small service?'
+
+: Klok Mugruk says, 'I am in need of pup and cub scaled wolf skins to create more [curscale armor].  Many Legionnaires have died in battle.  The Baron demands more sssuits.  I mussst have more ssskins or it is MY HIDE!!  I shall reward pieces of the curscale armor to any who [perform a small service].'
+
+You say, 'I will perform a small service'
+
+: Klok Mugruk says, 'Good.  You take thisss pack and fill it all with scaled curskins.  Only the pupsss and cubs of the scaled wolves shall do.  They are not much for one sssuch as you.  Combine all those ssskins and return the full curskin pack and I shall reward you with any available piece of curskin armor and a sssmall amount of coin.  Mossst important is that you shall be proving your allegiance to all of Cabilisss.'
+
+''You receive an [[Empty Curskin Bag]].''
+
+'''Hunt [[a scaled wolf pup|scaled wolf pups]] and [[a scaled wolf cub|scaled wolf cubs]] in [[Field of Bone]] and fill the [[Empty Curskin Bag]] with eight [[scaled curskin]]. Combine them and return the [[Full Curskin Bag]] to Klok Mugruk.'''
+
+You have fashioned the items together to create something new!
+
+: Klok Mugruk says, 'You are a good servant and a fine citizen.  I have this piece of curscale armor available, but if it is not enough then perhaps I shall have another piece available if you were to [perform the small service] again.'
+
+<div class="facblock">
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 1 gold, 3 silver, 4 copper pieces.
+
+== Experience ==
+
+* level 2 is 11%
+* level 3 is 10% - 11%
+* level 4 & level 5 is 10% for Iksar Monk (June, 12th 2021 Green, With Exp Penalty 144%)
+* level 6 is 7% for Iksar Monk and 8% for Iksar Shadow Knight (June, 12th 2021 Green, With Exp Penalty 144%)
+* level 7 is 5% for Iksar Monk (June, 12th 2021 Green, With Exp Penalty 144%)
+* level 8 is 3% for Iksar Monk (June, 12th 2021 Green, With Exp Penalty 144%)
+
+== See also ==
+* [[Sparring Armor]] Quest
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Armor Sets]]

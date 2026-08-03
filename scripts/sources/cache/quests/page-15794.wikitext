@@ -1,0 +1,47 @@
+{{Velious Era}}
+[[File:npc_sentry_kcor.png|frame|Sentry Kcor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kcor]]
+|-
+! ''' Minimum Level: '''
+| ?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]], [[The Wakening Land]], [[Eastern Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Barbarian Mercenary]], [[Gnome Mercenary]], [[Human Mercenary]], [[Ogre Mercenary]], [[Teir`Dal Mercenary]], [[Troll Mercenary]], [[an ogre mercenary]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Coin (around 1pp, varies)
+</li></ul>
+
+== Walkthrough ==
+
+Hand the [[Mercenary Assignments]] into Sentry Kcor, 1 to 4 at a time. '''Works with dubious faction.'''
+
+He'll give you some copper, silver, gold and platinum, along with...
+
+<div class='facblock'>
+* Your faction standing with [[Claws of Veeshan]] got better. <span class='oppfac'>(+6)</span>
+* Your faction standing with [[Yelinak]] got better.  <span class='oppfac'>(+6)</span>
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+
+From just barely indifferent, it took me 14 assignment hand-ins and 6 mercenary kills to go from indifferent to amiable.
+
+==See also==
+* [[Field Supplies Quest]]
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

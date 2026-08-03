@@ -1,0 +1,152 @@
+{{Classic Era}}
+[[File:npc_weligon steelherder.png|frame|Weligon Steelherder]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Erudin]]
+|-
+!''' Quest Giver: '''
+| [[Weligon Steelherder]]
+|-
+!''' Minimum Level: '''
+| 30+
+|-
+!''' Classes: '''
+| [[Paladin]]
+|-
+!''' Related Zones: '''
+| [[High Keep]], [[Kaladim]], [[Qeynos]], [[Steamfont Mountains]]
+|-
+!''' Related NPCs: '''
+| [[Hansl Bigroon]], [[Jogl Doobraugh]], [[Purchin Oddsbot]], [[Trantor Everhot]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Deep Six Cutlass}}
+</li></ul>
+
+== Walkthrough ==
+
+'''[[Weligon Steelherder]] is located at -1040, -380 in Erudin.'''
+
+'''''It appears you need better than Indifferent faction, likely Amiable, for final turn-in'''''
+
+You say, 'Hail, Weligon Steelherder'
+
+: Weligon Steelherder says 'Hail, ______! This is the Deepwater Temple. Here you shall find the wisdom and courage of Prexus, the Ocean Lord. I am glad to see you have an interest. Forgive me if I cut our conversation short, but I have many [Deepwater tasks] to complete.'
+
+You say, 'What Deepwater tasks?'
+
+: Weligon Steelherder says 'We here at the Deepwater Temple must tend to the [Peacekeeper battlestaff] and the [Deepwater harpoon] as well as other duties such as [ocean protection]. There is always something we must do.'
+
+You say, 'What Deepwater harpoon?'
+
+: Weligon Steelherder says 'We do not award the Deepwater harpoon to just any paladin. Nobility is all well and good, but you must still prove yourself. We have heard rumors of a very distressing matter. Perhaps it is your calling. Are you ready to [prove allegiance to Erudin] and earn the Deepwater harpoon?'
+
+You say, 'I am ready to prove allegiance to Erudin.'
+
+: Weligon Steelherder says 'Yes, you are ready. We have heard rumors of a great bridge which will connect Antonica with Odus!! This must not happen! We must shield ourselves from the savage and evil ways of the other races. They say that a list exists. A list of three grand architects who wish to see this bridge erected. You will venture to Qeynos and find the list, then exterminate these three men. Return the list along with their heads and the Deepwater Harpoon is yours. Go!!'
+
+'''[[Hansl Bigroon]] is located at +355, -465 in South Qeynos.'''
+
+You say, 'Hail, Hansl Bigroon'
+
+: Hansl Bigroon says 'Greetings, ______! Are you a [citizen of Qeynos] or are you a [traveler of sorts]?'
+
+You say, 'I am a traveler of sorts.'
+
+: Hansl Bigroon says 'Ah, yes! Traveling can be truly dangerous. Have you ever been to Erudin or do you not care for that place?'
+
+You say, 'I have been to Erudin.'
+
+: Hansl Bigroon says 'The trip to Erudin takes far too long. I have been designing a [titanic bridge] which will shorten the trip. Well, I cannot take full credit, most of the plans are being designed by [three great engineers].'
+
+You say, 'What titanic bridge?'
+
+: Hansl Bigroon says 'My grand plan has always been to erect a bridge which would span the distance between Qeynos and Odus. It would bypass the city of Erudin. Antonius Bayle would take full control of the bridge and its adjacent territories. This has had some opposition in Erudin, but for the most part, they just believe it is impossible to build such a bridge.'
+
+'''Hansl Bigroon walks to location +275, -350 and drops [[A Sealed List]] (identifies as "List Of Engineers").'''
+
+'''[[Purchin Oddsbot]] is located at +135, -320 in the High Keep jail area.'''
+
+You say, 'Hail, Purchin Oddsbot'
+
+<span style="color:red;">Auto attack is on.</span>
+
+[[Purchin Oddsbot]] says 'That was not a very intelligent thing to do.'
+
+You have slain Purchin Oddsbot!
+
+<div class='facblock'>
+* Your faction standing with [[Arcane Scientists]] got worse.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+
+You have looted a [[Human Decapitated Head]].
+
+'''[[Jogl Doobraugh]] is located at +110, -850 in Steamfont Mountains.'''
+
+You say, 'Hail, Jogl Doobraugh'
+
+: Jogl Doobraugh says 'Hellooo!! My name is Jogl, master engineer with the Eldritch Collective. And this here is Charlotte. Pay no mind to her, she won't bite unless you attack me.'
+
+Charlotte Beep.. Beep.. Beep..
+
+<span style="color:red;">Auto attack is on.</span>
+
+Jogl Doobraugh says 'The power of the Eldritch Collective shall put an end to your vile life.'
+
+You have slain Jogl Doobraugh!
+<div class='facblock'>
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Dark Reflection]] got better.
+* Your faction standing with [[The Dead]] got better.
+* Your faction standing with [[Gem Choppers]] got worse.
+* Your faction standing with [[King AkAnon]] got worse.
+</div>
+
+You have looted a [[Gnome Decapitated Head]].
+
+Charlotte does not assist.
+
+'''[[Trantor Everhot]] is located at +400, -150 in Everhot Forge in North Kaladim.'''
+
+You say, 'Hail, Trantor Everhot'
+
+: Trantor Everhot says 'Yes, yes!! I am a very busy man. I've got blueprints to work on, [dwarven wire] to perfect and formulae to calculate. In between those tasks, I have to find time to head down to Irontoe's and down a few Tumpy Tonics.'
+
+You have slain Trantor Everhot!
+<div class='facblock'>
+* Your faction standing with [[Storm Guard]] has been adjusted by -300.
+* Your faction standing with [[Kazon Stormhammer]] has been adjusted by -45.
+* Your faction standing with [[Miners Guild 249]] has been adjusted by -45.
+* Your faction standing with [[Merchants of Kaladim]] has been adjusted by -75.
+* Your faction standing with [[Craknek Warriors]] has been adjusted by 75.
+</div>
+
+You have looted a [[Dwarf Decapitated Head]].
+
+'''Hand Weligon Steelherder the sealed letter, Human Decapitated Head, Gnome Decapitated Head, and Dwarf Decapitated Head.'''
+
+: Weligon Steelherder says 'It is done!! I pray to Prexus that the knowledge of the bridge's design has departed from this world with the passing of these intelligent men. A pity they had to die. As for you, the other states may not tolerate your presence any longer, but you have proven that allegiance to Erudin is paramount among all Erudites. I am afraid the [harpoon is no more]!! I bestow upon you Deep Six, my personal cutlass!! May you wield it in the name of Erudin.'
+
+<div class='facblock'>
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{exp}}
+
+: Tiam Khonsir says 'Well, Weligon Steelherder, that is unfortunate. Quite a pity, indeed.'
+
+You say, 'Why is the harpoon no more?'
+
+: Weligon Steelherder says 'The Deepwater harpoon's distribution has been restricted by order of the High Council. The last one awarded was to an outsider, the brave and noble paladin, Sentry Xyrin. She hailed from the Temple of Marr.'
+
+You receive the {{:Deep Six Cutlass}}.
+
+[[Category: Quests]]
+[[Category:Erudin]]
+[[Category:Paladin Quests]]

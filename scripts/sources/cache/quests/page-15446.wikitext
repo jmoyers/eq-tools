@@ -1,0 +1,57 @@
+[[File:npc_wolten_grafe.png|frame|Wolten Grafe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Wolten Grafe]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Eestyana Naestra]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Prayer Beads}}
+</li><li> {{:Rusty Morning Star}}
+</li><li> {{:Small Lantern}}
+</li></ul>
+
+== Walkthrough ==
+
+'''You may have to do the [[Drosco the Zombie (good)]] first to get this. Wolten will give you a scroll to Give To Eestyana Naestra, who is in the Hall of Truth in West Freeport.  The reward for this part of the quest is usually a nice item (sometimes a [[Prayer Beads|prayer bead necklace]]).'''
+
+Upon handing in the item:
+
+: Eestyana Naestra says 'Thank you, defender of Karana! We have heard rumors of the followers of [[Bertoxxulous]] gaining knowledge of our knight who infiltrated the ranks of the [Militia]. They would have tried to sell the information to the Militia. We will inform our knight immediately. As for you, here is a donation to your journey's expenses. Stay clear of the Freeport Militia. There is no doubt they have learned of your alliance with us.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 1 platinum from Eestyana Naestra.
+
+Rewards include a [[Rusty Morning Star]].
+
+You say, 'What about the militia?'
+
+: Eestyana Naestra says 'The Freeport Militia is nothing more than a ragtag band of mercenaries and convicts. They act as the guards of this troubled city. Be well aware that they are not the honorable guards you may think they are. They are commanded by Sir Lucan D'Lere, the self-proclaimed ruler of Freeport. We of the Hall of Truth shall set this city free from the grip of the Militia one day. It is our duty as Knights of Truth.'
+
+Need missing dialogues, /loc of quest mobs, list of quest items, list of additional quest rewards.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

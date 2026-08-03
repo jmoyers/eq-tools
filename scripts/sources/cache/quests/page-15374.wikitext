@@ -1,0 +1,65 @@
+[[File:npc_joogl_honeybugger.png|frame|Joogl Honeybugger]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Misty Thicket]]
+|-
+! ''' Quest Giver: '''
+| [[Joogl Honeybugger]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+
+== Reward ==
+
+* [[Faction]]
+
+'''No experience'''
+
+== Walkthrough ==
+
+Joogl Honeybugger is located at (-852, -2264).
+
+You say, 'Hail, Joogl Honeybugger'
+
+: Joogl Honeybugger says 'Hello.  I would shake your hand, but it would [hurt].  Ooooh! Owwy!'
+
+You say, 'What hurts?'
+
+: Joogl Honeybugger says 'I was attacked by the bixies.  They swarmed on me!!  I think I got too near their queen.  I need that honey to make a living!  Get me a bandage and I will tell you where all their worker bees buzz around.'
+
+Give him 1 x [[Bandages]] (see '''Notes''' below)
+
+: Joogl Honeybugger says 'Oh thank you, ______.  If you are ever going to gather bixie honeycombs pray you do not run into the queen.  The only way I know of collecting the honey is by intercepting the drones and taking the honeycombs they sometimes carry.  Good luck !!'
+<div class="facblock">
+* Your faction standing with [[Merchants of Rivervale]] has been adjusted by 5.
+* Your faction standing with [[DeepPockets]] has been adjusted by 5.
+* Your faction standing with [[Guardians of the Vale]] has been adjusted by 5.
+* Your faction standing with [[Mayor Gubbin]] has been adjusted by 5.
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by -1.
+</div>
+
+'''Notes:''' 
+*  You can hand in 100 bandages at a time (stacked) and get 100 sets of faction hits.
+*  This quest can be done as an Iksar Monk.  Stand at the window closest to Joogl, duck, and move in really close to the window.  Sneak.  Once you're indifferent, give him the Bandages. (Alternatively, ask a druid for Wolf Form, and you will con indifferent.) After 556 turn in I'm now dubious to Joogl.
+*  This quest when done as a KOS Iksar Shaman required wolf form brining me to Apprehensive. Tested without wolf form and he accepts bandages at Dubious. 
+*  As an Iksar monk, it me took 1152 bandages (57 stacks +12) to get indifferent, and another 100 to get to amiable. This resulted in amiable with most guards, and warmly with most merchants - however Ella Foodcrafter and the cleric guild remained KoS (as expected) 07/02/26
+
+
+== See Also ==
+
+* [[Honey Jum Quest]]
+
+[[Category:Quests]]
+[[Category:Misty Thicket]]
+[[Category:All Classes Quests]]

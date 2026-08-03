@@ -1,0 +1,124 @@
+{{Kunark Era}}
+[[File:npc_crusader_zixo.png|frame|Crusader Zixo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Crusader Zixo]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Monk]], [[Necromancer]], Shaman, Shadowknight, Warrior
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> {{:Drape of the Brood}} (NEC)
+</li>
+<li>  {{:Shackle of Dust}} (MNK)
+</li>
+<li>  {{:Pawn's Khukri}} (SHD)
+</li>
+<li>  {{:Iron Cudgel of the Petitioner}} (SHM)
+</li>
+<li>  {{:Partisan's Pike}} (WAR)
+</li>
+</ul>
+
+== Walkthrough ==
+
+''This quest lets you get back your newbie robe/weapon in case you lost it so that you can do the quests that require it.  Hail your Guild Master to start the quest.  Each class starts a little different, but the phrases are pretty obvious ("I do not have my _____"). Once you get to the toilmaster, the path is the same.''
+
+* [[Squire Gristle]] is for shadow knights
+* [[Master Niska]] for monks
+* [[Hierophant Zand]] for shamans
+* [[Nihilist Zeegarn]] for necros
+
+'''As an example, here is the necromancer version:'''
+
+You say, 'Hail Nihilist Zeegarn'
+
+: [[Nihilist Zeegarn]] says 'Mind yourself within Cabilis. We will not tolerate any mischief. If you don't heed my warnings, you may be sentenced to the pit of the Crusaders of Greenmist. You don't want that! Also, you should always wear your robe when entering these walls. You do have your [[Drape of the Brood]], correct?
+
+You say, '''''I do not have my''' drape of the brood'
+
+: Nihilist Zeegarn says 'What is this?' the Nihilist barks in disbelief. 'You have lost your drape? This is unacceptable! Take this note and report to the Toilmaster at once. Read it on the way and praise Cazic-Thule for any mercy that you may be granted!'
+
+===Toilmaster=== 
+
+'''This part is the same for everyone.'''
+
+'''Then you get [[Ragged Book]]. Read it (it is quite interesting). Then go to East Cabilis and find [[the Toilmaster]]. Give him A Ragged Book and...'''
+
+: The Toilmaster looks at the tome and speaks to you, scowling, 'Very well Broodling, I have a task for you. I should make you work at the feet of my Froglok Slaves, crushing granite, but the lore of the Brood has a specific rite for this situation. Take this book and learn the will of Cazic-Thule. Read it and ask me any questions that you may have before you start your penance. It would be a shame for you to fail at this task as well... though I wouldn't mind destroying you.'
+
+''Read the book he gives you titled [[Rites of Exoneration]], it tells you to ask him for the hammer and a bag.''
+
+You say, 'Hail The Toilmaster'
+
+: The Toilmaster says 'Do not bother me unless you wish to join the chain gang. Now go away or I shall have my slaves chop you as they chop this granite!'
+
+You say, 'I need the [[Hammer of Exoneration]]'
+
+: The Toilmaster hands you a massive hammer and says, 'So, you can read. Good for you. Don't think that you're going to make an impression on me with that rubbish. Let's see if you can handle this hammer like you can that book, whelp.' 
+
+'''(The Toilmaster hands you the [[Hammer of Exoneration]], 4/60, effect: [[Bone Shatter]], wt. 25.0. You have to make this thing proc 56 times.)'''
+
+You say, 'I need the bag'
+
+: The Toilmaster turns his head to focus on you and hands you a dusty bag ([[Penance Bag]]). He then returns to looking into the distance, just over your left shoulder.
+
+'''(Hands you an 8 slot bag, that you will put 7 Bone dusts in, and 1 [[Flask of Bloodwater]].)'''
+
+''Next you go back to West [[Cabilis]], in the building near the necro guild on the wall, there's [[a mortician]]. He's a skelly, but he won't hurt you.''
+
+You say, 'Hail a mortician'
+
+: [[a mortician]] stares at you with hollow eye sockets. As he opens his jaw to speak, you are overcome by the foul smell of a thousand rotted corpses. 'What is your desire, master?' 
+
+You say, 'I desire a mortar and pestle'
+
+: a mortician moves with a mixture of creaks and clicks and produces a grotesque looking mortar and pestle set. He places the items in your hands and motions indicating you dismissal. You can feel the vile power of your god moving throughout the material that makes up the two items.
+
+You receive [[Grotesque Mortar and Pestle]].
+
+'''This is what you combine the [[Bone Fragment]]s in that you get. It's an 8 slot container. Here's the part where it gets BORING. I went to LoIO, there's lots of mobs there that you can fight for a long time without causing too much harm. If you get low on life, cast leach or something. Bloodmaw in the Great Divide is the perfect mob to proc on.'''
+
+===Final combine===
+
+'''When you do get 8 [[Bone Fragment]]s, you combine them in the mortar and pestle and you get a white [[Powdered Bone]]. Put that in the Penance Bag. You need 7 of them. When you have 7 Powdered Bones, put one [[Flask of Bloodwater]] in there and press Combine to yield a [[Filled Penance Bag]]. Then turn that Bag and the [[Rites of Exoneration]] book you have into the Quest Giver.'''
+
+===Necromancer final hand-in===
+
+: Nihilist Zeegarn takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time. Lucky, you... you have earned a second chance. Praise Cazic-Thule!  You get your Newbie Robe back.
+
+===Shadow Knight final hand-in===
+Hand the book and Filled bag to Squire Gristle. 
+
+:Squire Gristle takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time. Lucky you. You have earned a second chance. Praise Cazic-Thule!
+
+<div class="facblock">
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+===Monk final hand-in===
+Hand the book and Filled bag to Master Niska.
+
+:Master Niska takes the bag and tome from you and in return gives you the item that you have been thinking of all of this time.  Lucky, you... you have earned a second chance.  Praise Cazic-Thule!
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

@@ -1,0 +1,62 @@
+[[File:npc_daleen_leafsway.png|frame|Daleen Leafsway]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Daleen Leafsway]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[Deputy Eigon]]
+|}
+
+== Reward ==
+
+<ul><li>  Coins
+</li></ul>
+
+== Walkthrough ==
+
+Daleen Leafsway may be found in the garden at {{Loc|Rivervale|-85, -345}} outside the Druid guild.
+
+You must be amiable or better (with which faction?) to get this quest.
+
+She will randomly blurt out the following dialogue:
+
+: Daleen Leafsway says 'Oh Dear.. I can't believe I forgot.. He must be [starving]!'
+
+You say, 'Who is starving?'
+
+: Daleen Leafsway says 'Deputy Eigon! I forgot! I was supposed to bring him some turnips to eat while he is on patrol! Oh... He asked so nicely, too. I feel bad that I forgot. If only someone would take these [turnips] to the Deputy..'
+
+You say, 'I will take the turnips.'
+
+: Daleen Leafsway says 'Oh, thank you so much! You can keep any payment he gives you. Be sure to tell him I'm sorry.'
+
+'''You receive a Sack of Turnips. Deputy Eigon may be found in the {{Loc|Misty Thicket|-125,-25}}.  Give him the sack.'''
+
+: Deputy Eigon says 'Daleen sent you? She is so sweet. If she wasn't married.. ehem.. Thanks.'
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+{{YouGainExperience}} (minimal) 1% per turn in at level 6
+
+You gain a random amount of coin ranging from a few 2 copper to a couple pieces of gold.
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

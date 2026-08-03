@@ -1,0 +1,54 @@
+{{Velious Era}}
+[[File:npc_captain_bvellos.png|frame|Captain Bvellos]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Bvellos]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Shardwing Courier]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dire Wolf-hide Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest optionally follows the [[Mask of War Quest]]. Faction higher than amiable needed. Not sure what the required faction is at this time''
+
+
+Captain Bvellos regards you as an ally -- it appears to be quite formidable.
+
+You say, 'more proof'
+
+:Captain Bvellos says, 'The more convincing the proof is, the better. There must be a record of his actions somewhere.'
+
+<b>Hand in the {{:Sealed Letter}} dropped by [[Shardwing Courier]] to receive a {{:Dire Wolf-Hide Cloak}}.</b>
+
+:Captain Bvellos says, 'This will be that fools downfall. How dare he trade with our enemies! I am sure King Tormax with have him put to death. Take my cloak. It is the last item i have to give. I must see the king immediately about these matters!'
+
+{{exp}}
+
+<div class="facblock">
+* Your faction standing with King Tormax got better.
+* Your faction standing with Kromzek got better.
+* Your faction standing with Yelinak got worse.
+* Your faction standing with ClawsofVeeshan could not possibly get any worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

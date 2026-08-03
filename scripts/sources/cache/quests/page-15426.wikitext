@@ -1,0 +1,52 @@
+[[File:npc_sanfyrd_featherhead.png|frame|Sanfyrd Featherhead]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Sanfyrd Featherhead]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[rogue clockwork]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Small Coin, Minor Items
+</li><li> {{:Earring of Fire Reflection}}
+</li><li> {{:Gnome Glow Rod}}
+</li><li> {{:Small Scarab Helm}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Sanfyrd Featherhead'
+
+: Sanfyrd Featherhead says 'Greetings! I am the operator of this scrapyard. If you have any scrap metal, I would be glad to purchase it from you in loads of four.  The Gemchoppers no longer allow me to accept blackbox fragments and micro servos.'
+
+'''Give [[scrap metal]] to Sanfyrd four at a time''' for some experience, money, a random item and the following faction changes:
+
+<div class="facblock">
+* Your faction with [[King AkAnon]] got better.
+* Your faction with [[Merchants of AkAnon]] got better.
+* Your faction with [[Gem Choppers]] got better.
+* Your faction with [[Dark Reflection]] got worse.
+* Your faction with [[Clan Grikbar]] got worse.
+</div>
+
+You will get one of several random items out of this.  Often it is [[Rusty Weapons]].  One unusual item is the [[Gnome Glow Rod]], which acts as a light source.
+
+''Occasionally you get a "Tinmizer's Fabulous Compactor", which is a 0 slot container (!) with a combine button.  This is for the Tinmeizer quest.''
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

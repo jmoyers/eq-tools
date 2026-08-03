@@ -1,0 +1,64 @@
+{{Disambig3|[[Necromancer Words - X`Ta Tempi]]}} {{Disambig3|[[Necromancer Words - X`Ta Timpi]]}} {{Disambig3|[[Necromancer Spells (Cabilis)]]}}{{Disambig3|[[Necromancer Spells|Necromancer Spells (The Overthere)]]}}
+
+[[File:npc_x`ta_tompi.png|frame|X`Ta Tompi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Foreign Quarter]]
+|-
+! ''' Quest Giver: '''
+| [[X`Ta Tompi]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[The Estate of Unrest]], [[Lower Guk]], [[Plane of Fear]], [[The Feerrott]], [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[A turmoil toad]], [[a carrion ghoul]], [[a fetid fiend]], [[a samhain]], [[zombie of an Unrest noble]] [[Garanel Rucksif]]
+|}
+
+== Walkthrough ==
+
+You can get 12 words needed for high level Necromancer pet research from the 3 Sisters (X`Ta Tempi, Timpi, and Tompi) in Neriak Foreign Quarter (-10, -45).  It is easier to get them though randomly looting creatures than by doing the quests. 
+
+Tompi will give you the following words: 
+
+<li> {{:Words of Allure}}</li>
+<ul><li>{{:Charred Pearl}} (Unrest)<br>
+</li><li>{{:Ruby}} (Bought and Dropped randomly)<br>
+</li><li>{{:Wand}} (Mistmoore off of a glyphed familiar)<br>
+</li><li>{{:Bloodstone}} (Bought/Dropped)<br>
+</li></ul>
+
+
+<li> {{:Words of Dark Paths}}</li>
+<ul><li>{{:Sphere of Unrest}} (Unrest) <br>
+</li><li>{{:Eye of Urd}} (Guk) <br>
+</li><li>{{:Star Rose Quartz}} (Bought) <br>
+</li></ul>
+ 
+
+<li> {{:Words of Obligation}}</li>
+<ul><li>{{:Globe of Fear}} (Oasis or Feerrott from Spectres) <br> 
+</li><li>{{:Eye of Jin}} (Guk) <br> 
+</li><li>{{:Jade}} (Bought/Dropped) <br> 
+</li></ul>
+
+
+<li>  {{:Words of Acquisition (Beza)}}</li>
+<ul><li>{{:Fetid Skin}} (Plane of Fear) <br>
+</li><li>{{:Scare Straw}} (Plane of Fear) <br>
+</li><li>{{:Turmoil Warts}} (Plane of Fear) <br>
+</li><li>{{:Pearl}} (Bought/Dropped) <br>
+</li></ul>
+
+
+Need all dialogues, current faction hits, /loc of quest mobs.
+
+[[Category:Quests]]
+[[Category:Neriak Foreign Quarter]]
+[[Category:Necromancer Quests]]

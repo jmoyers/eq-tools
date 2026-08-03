@@ -1,0 +1,70 @@
+{{Classic Era}}
+[[File:npc_sheriff_roglio.png|frame|Sheriff Roglio]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Sheriff Roglio]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bixie Berry Buns}}
+</li><li> {{:Tagglefoot Tingle Drink}}
+</li></ul>
+
+== Walkthrough ==
+
+''Sheriff Roglio is located at +90, -150, on the second floor of the building containing the bank and warrior guild.''
+
+You say, 'Hail, Sheriff Roglio'
+
+: Sheriff Roglio says 'Hail, ______! Stand tall whenever you are speaking to the Sheriff of Rivervale. I command the warriors of this vale. You must be new to the ranks of the Guardians of the Vale, so be sure to report to your squad at once. We must protect our people. The [danger] has come closer to home. If you are not a deputy, then please leave these halls.'
+
+You say, 'What danger?'
+
+: Sheriff Roglio says 'What danger?!! You must be new to the community. The goblins of Clan Runnyeye have been scaling our wall somehow. You must join our forces in exterminating every one of those beasts. Your wages are earned with every four bloody goblin warbead necklaces you return to me. Now be off and fight the good fight.'
+
+'''Hand in 4 x [[RunnyEye Warbeads]].'''
+
+Sheriff Roglio says 'Good work, Deputy ______! We shall soon rid our countryside of the goblin threat. Here are your wages. Eat well tonight!'
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 8 silver from Sheriff Roglio.
+
+You also receive Tagglefood Tingle Drink and Bixie Berry Buns.
+
+== Notes ==
+
+* Provided 7% for level 8 halfling druid, ~5% of full level for a level 8 human monk, 9% for a level 7 [[Halfling]] [[Rogue]], 11% for level 6 [[Dwarf]] [[Cleric]]
+* Provided 5% for lvl 22 Iksar Monk from 9 turn-ins.  (Ally with the Sheriff)
+* Must be higher than indifferent to turn in.
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

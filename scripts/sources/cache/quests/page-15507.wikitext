@@ -1,0 +1,106 @@
+[[File:npc_guard_weleth.png|frame|Guard Weleth]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Weleth]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Lieutenant Dagarok]], [[Nesiff Tallaherd]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin
+</li></ul>
+
+== Walkthrough ==
+
+''You must be Amiable with Qeynos Guards to get the crate from Guard Weleth.''
+
+'''[[Guard Weleth]] may be found wandering near the North Gate.'''
+
+You say, 'Hail, Guard Weleth'
+
+: Guard Weleth says 'Hail, ______. My name is Weleth Nagoh. In addition to my patrol, I am in charge of keeping the guardhouse stocked with supplies. I must get back to my duties. Farewell.'
+
+If you wait long enough, you'll see:
+
+: Guard Weleth says 'Argh. Not again. This whole crate needs to be returned!' 
+
+You say, 'What crate?'
+
+: Guard Weleth says 'Oh, we just received a shipment of arrows from [Nesiff] in South Qeynos. The [arrows in this box] are missing their fletchings and I can't leave my patrol to take them back.'
+
+You say, 'Who is Nesiff?'
+
+: Guard Weleth says 'Nesiff Tallaherd owns the wooden weapons shop in Merchant's Square in South Qeynos.' 
+
+You say, 'arrows in this box'
+
+: Guard Weleth says 'Oh, thank you! Here is the crate. Make sure [Nesiff] sends me back a new invoice. [Lieutenant Dagarok] would have my head if he found out this happened again!'
+
+'''You receive a [[Crate of Defective Arrows]].'''
+
+'''Nesiff Tallaherd may be found in South Qeynos in his shop, "Nesiff's Wooden Weapons," at +440, -245.'''
+
+You say, 'Hail, Nesiff Tallaherd'
+
+: Nesiff Tallaherd says 'Greetings, ______! Nesiff Tallaherd, owner and operator of Nesiff's Wooden Weapons, at your service. I am the finest woodworker in all of Qeynos. Even the Qeynos Guard uses my arrows, thanks to [Guard Weleth].'
+
+You say, 'Who is Guard Weleth?'
+
+: Nesiff Tallaherd says 'Guard Weleth is like a son to me. He is responsible for purchasing supplies for the Qeynos Guard. He buys arrows from me. He is usually stationed near the North Gate.'
+
+: Nesiff Tallaherd says 'Oh dear. I hope my mistake will not bring too much grief down on poor Weleth. He was told not to order arrows from me after the last time I fouled up their shipment. But Weleth knew I needed the account to stay in business. Could you please rush this new invoice to him right away? Thank you.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by -1.
+* Your faction standing with [[Antonius Bayle]] has been adjusted by 5.
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+</div>
+{{YouGainExperience}}
+
+'''You receive [[A Slip of Parchment]] ({{Item Lore|Invoice-Nesiff's Wooden Weapons}}). It reads:'''
+
+ INVOICE - NESIFF'S WOODEN WEAPONS
+ QEYNOS: 19 CRATES
+ LONG FLIGHT ARROWS
+ 36 GP CREDIT OF 1 GP AND 9 SP REMAINING DUE TO DEFECTIVE CRATE
+ CUSTOMER: WELETH, ON BEHALF OF QEYNOS MILITIA
+
+'''[[Lieutenant Dagarok]] wanders near "Crows Pub & Casino" in North Qeynos.'''
+
+You say, 'Hail, Lieutenant Dagarok'
+
+: Lieutenant Dagarok says 'How dare you disturb me! You people need to just mind your pathetic lives and leave the rest to us. Leave me now!'
+
+'''Give him the Slip of Parchment.'''
+
+: Lieutenant Dagarok says 'What is this? Hmmm. It seems Weleth has a problem with following orders. I will deal with him. Good work in bringing this to my attention. Our job here would be much more difficult without the help of loyal citizens like yourself. Take this as a token of Commander Kane's appreciation.'
+
+<div class="facblock">
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 25.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -3.
+* Your faction standing with [[Kane Bayle]] has been adjusted by 5.
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by 5.
+* Your faction standing with [[Bloodsabers]] has been adjusted by 5.
+</div>
+{{YouGainExperience}}
+
+You receive 2 silver and 6 copper pieces from Lieutenant Dagarok.
+
+[[Category:Quests]]
+[[Category:North Qeynos]]

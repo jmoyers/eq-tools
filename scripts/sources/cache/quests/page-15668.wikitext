@@ -1,0 +1,63 @@
+{{Velious Era}}
+
+[[File:npc_ancient_totem.png|frame|Ancient Totem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[Ancient Totem]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Dragon Necropolis]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Visage of Life}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'hail Ancient Totem'
+
+: Ancient Totem says 'Greetings, my friend it is not often that we see strangers coming to this plane. I fear that our growing infestation problem has kept us busy as of late. The time for battle grows near yet we still do not have the offensive magics necessary to fend off our enemies.
+
+You say, 'what magics'
+
+: Ancient Totem says 'There are legends describing scrolls of ultimate power and enlightenment from fallen channelers that preserver the knowledge necessary for us to overcome our plight. Since these are just legends I cannot assure you that these scrolls exist, but at this point they are our only hope.
+
+You say, 'what scrolls'
+
+: Ancient Totem says 'The ancient scrolls needed to complete the Tome that will aid us are found in Dragon Necropolis if the legends are true. The tome itself was made up of the incantations and the teachings of the great Lel`Farthok who was a mighty channeler for his time.
+
+There are 4 scrolls in DN which drop from the named lvl 60 rats:
+
+The scrolls are:
+
+<ul><li>  {{:Scroll of Power}}
+</li></ul>
+
+<ul><li>  {{:Scroll of Enlightenment}}
+</li></ul>
+
+<ul><li>  {{:Scroll of Insight}}
+</li></ul>
+
+<ul><li>  {{:Scroll of Knowledge}}
+</li></ul>
+
+Turn in all four for your reward.
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Wizard Quests]]

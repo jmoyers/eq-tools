@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_rilgor_plegnog.png|200px|frame|Rilgor Plegnog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Old Folded Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Gold Felt Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Enchanter of Bertoxxulous, you will have an Old Folded Letter in your inventory. The note reads as follows:
+
+: In the mirror of this wretched society, we await. . .the time grows ever near, for us to shatter these rose-colored visions of Ak'Anon's citizens, and let their eyes fall upon the image of our true selves.  The Dark Reflection readies its soldiers of Bertoxxulous, hidden away deep beneath Ak'Anon, in the Mines of Malfunction.  [[Rilgor Plegnog]] is your new master now. . .do not keep him waiting.
+
+Upon handing the note to [[Rilgor Plegnog]]:
+
+: [[Rilgor Plegnog]] says, 'Its always good to see new blood eager to learn the dark art of mind control. Please take this robe as a symbolization of loyalty to this house.'
+
+<div class='facblock'>
+* Your faction standing with [[Dark Reflection]] got better.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Gem Choppers]] got worse.
+* Your faction standing with [[Deep Muses]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dark Gold Felt Robe*]]. Good luck, Enchanter!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Enchanter Quests]]

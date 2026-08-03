@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_hukulk.png|200px|frame|Hukulk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Black and Green Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Troll Shadowknight, you will have a tattered note in your inventory. The note reads as follows:
+
+You find Hukulk. . .give note. . .Hukulk train you, make you mighty.
+
+Upon handing the note to [[Hukulk]]:
+
+: Hukulk says, 'Haaah!! Bow to Hukulk!! Hukulk make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood! Go to Treskar. He give you first lesson in pain.'
+
+<div class='facblock'>
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+* Your faction standing with [[Greenblood Knights]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+* Your faction standing with [[Da Bashers]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Black and Green Tunic*]]. Good luck, warrior!
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Shadow Knight Quests]]

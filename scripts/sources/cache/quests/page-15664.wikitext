@@ -1,0 +1,120 @@
+{{Velious Era}}
+
+[[File:npc_erdarf_restil.png|frame|Erdarf Restil]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Erdarf Restil]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Crystal Caverns]], [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[A Drakkel Blood Wolf]], [[Fergul Frostsky]], [[Gralk Dwarfkiller]], [[Queen Dracnia]], [[Shardwurm Broodmother]], [[Vores the Hunter]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Kromrif Military Leggings}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+High amiable/kindly faction required for Erdarf to talk to you.
+
+You say, 'Hail, Erdarf Restil'
+
+: [[Erdarf Restil]] says 'Huh?  Dont you know better than to interrupt a Coldain enjoying his ale?  I may be a user of priestly magic but that doesnt mean I cant bash your head in. 
+
+You say 'What user of priestly magic?'
+
+: Erdarf Restil says 'Aye.  An old one not much taken with idle chit chat. 
+
+You say, 'What old one?'
+
+: Erdarf Restil says 'Very old, very wise, and on and on.  You must have some point to bothering me.  Im not a merchant and I dont contract myself out for work.  I've performed works for the Dain.  There isn't much I haven't done. 
+
+You say, 'What haven't you done?'
+
+: Erdarf Restil chuckles at you.  'If you want to impress me, and let me make certain you understand I doubt you can, then you can do what I never was able.  For years I adventured and attempted to venture to the bottom of the Crystal Caverns in search of ancient artifacts from my people.  Do that, show me that you have, and I will be impressed.' 
+
+'''Give him the [[Sceptre of the Coldain Ancients]] OR a [[Bottle of Karsin Acid]], he will give you back a [[Gem of Persuasion]], which has no stats and is lore and no drop. [[Bottle of Karsin Acid]] drops semi-rarely from any one of the orcs or geonids in [[Crystal Caverns]]. [[Sceptre of the Coldain Ancients]] drops from [[Queen Dracnia]].'''
+
+: Erdarf Restil smirks at you. 'Hrm, you again eh? Did you come back to bother me with more... Wait a minute, let me see that. This is... This must be, yes it is. This is one of the ancient coldain priests sceptres of channeling. This is too good to be true. Haha! Oh, what I can do with this. Here, take this gem from the sceptre. If ancient lore proves right it will allow you to persuade beasts of many kinds.' He grins at you strangely and then leaves.
+
+'''Erdarf despawns.''' 
+
+{{YouGainExperience}}
+
+'''Now talk to [[Vores the Hunter]] in Great Divide (-6908, 513).
+
+You say, 'Hail, Vores the Hunter'
+
+: Vores the Hunter squints and looks in your direction. 'Who is that? I can't see ya but yer not Coldain and yer voice is too whiny for a giant. We ain't bashin' each other's brains in yet so ya can't be all that bad. Come have a seat by me fire. But quiet yerself down already. The wurms may not be the best at sniffin out people but best not to test em.'
+
+You say, 'what wurms'
+
+: Vores the Hunter says 'Ye must be kidding me, outlander. Sure'n ya got eyes. The shardwurms. If ye can't see em then ya best not be tryin' ta put on yer pants for fear of stabbin' yerself with a sword.'
+
+You say, 'what control'
+
+: Vores the Hunter says 'Control. Aye. Break em like dogs or such. Domesticate em. I ain't ever found a way, all I got is me theories.'
+
+You say, 'what theories'
+
+: Vores the Hunter says 'It ain't so complex like a caster's diagrams 'n such. I just be thinkin' mebbe ya need somethin' like a leash and then maybe some magical gem o' control. Uh, maybe. Ain't much for years o' work, eh? Unfortunately, I tried a hundred other things already. Them wurms chafe at any attempt at control.'
+
+He asks for a [[Blood Wolf Harness]] and the [[Gem of Persuasion]].'''
+
+Blood wolf harness is dropped by [[Drakkel Blood Wolf]] in Great Divide.  (Note the Crested Blood Wolf Harness will not work).
+
+'''Give him these two items, and Vores gives you a [[Harness of Control]].'''
+
+: Vores the Hunter says 'Hey! What ya got there? Well now, ain't that pretty! Ya know, this just might do it. You done what I never was able. I gotta give ya that much. I ain't much o' one for travelin' any more. My legs be old and my bones are weak. You take this harness and find a good big mother of a wurm ta test it on. Just focus in yer mind what yer wantin the wurm ta do. Heh, maybe have it clear out some pests, eh?'
+
+{{exp}}
+
+[[File:quest_crystal_caverns_ancient_artifacts.jpg|frame|Broodmother Path in GD]]
+
+'''Turn in this harness to the [[Shardwurm Broodmother]].'''
+
+Note: Before turning in the harness, be sure that [[Fergul Frostsky]] and [[Gralk Dwarfkiller]] are spawned and not in combat, otherwise the quest will fail and you lose the harness. It is wise to announce to the zone (ooc) your intention to do the quest and specifically tell everyone not to engage or agro Fergul or Gralk.  No one involved in the quest or nearby should be in wolf form but be sure to have a movement buff on, because the broodmother moves at a wurm's run speed.
+
+{{exp}}
+
+: shardwurm broodmother reels in pain as the harness snaps around its neck tightly. A strange gleam enters its eyes as it slowly begins to shamble towards the exit and the giant fortress.
+
+'''The Broodmother then walks out of the cave and heads to the giant fort. At the giant fort, two of the named giants inside the fort, [[Gralk Dwarfkiller]] and [[Fergul Frostsky]], repop outside. Gralk engages the Broodmother and Fergul repops (again, in the spot he stands) and immediately runs away. '''
+
+: Gralk Dwarfkiller roars in anger and flings himself at the draconic beast.
+
+: Fergul Frostsky howls in anger as claws and teeth slash their way through Kromrif flesh. He bolts, his mind set on returning to Kael and assistance.
+
+: shardwurm broodmother roars as it tosses back its head and attacks you.
+
+'''While the Broodmother fights Gralk, chase down Fergul and kill him and then loot [[Kromrif Military Leggings]] off his body. The Broodmother will kill Gralk, in addition he drops nothing if killed by players.'''
+
+'''DO NOT engage Fergul until he has repopped and started running away. Only the version of Fergul who is actively running away drops the pants.'''
+
+<div class='facblock'>
+* Your faction standing with [[Kromrif]] got worse.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Claws of Veeshan]] got better.
+</div>
+
+After killing Gralk, the Broodmother seems to be somewhat buggy. She has been reported to have poofed, become pc's pet, become an npc's pet, or attacked the pc. It may be broken at this point. (In June 2019 she stood there for about 5 minutes after the giants died, then poofed.)
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Druid Quests]]

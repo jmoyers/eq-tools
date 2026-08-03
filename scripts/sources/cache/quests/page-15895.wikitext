@@ -1,0 +1,60 @@
+[[File:npc_kozyn_gigglephizz.png|frame|Kozyn Gigglephizz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Kozyn Gigglephizz]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Lapis Lazuli}}
+</li></ul>
+
+== Walkthrough ==
+
+'''[[Kozyn Gigglephizz]] is found at the entrance of [[Ak'Anon]]. He's looking for a defective gadget invented by Tinmizer.'''
+
+You say, 'Hail, Kozyn Gigglephizz'
+
+:Kozyn Gigglephizz bows politely. 'Greetings my friend. Have you come to turn in one of those malfunctioned containers called, [Tinmizer]'s [Fabulous Compactor]? I shall gladly exchange it for a few nice gems.'
+
+You say, 'Who is Tinmizer?'
+
+:Kozyn Gigglephizz chortles with glee. 'Ho, ho, ho!! Oh, my! Tinmizer was a bit of a goof when it came to tinkering. I am from the [T.B.I.] and I was sent to clean up the mess he made. He was tinkering defective containers and selling them. We exiled him and destroyed all his containers. Now we hear the scrapman found some and was using them as a reward for deeds. We have warned him.'
+
+You say, 'What is the T.B.I. ?'
+
+:Kozyn Gigglephizz lowers his voice and leans closer to your ear. 'Ssshhh. This is against regulations, but you look like you could keep a secret. T.B.I. stands for the Tinkerers Bureau of Investigation. We are a clandestine organization reporting directly to King Ak'Anon. We handle all tinkering glitches, if you know what I mean.'
+
+You say, 'What Fabulous Compactor?'
+
+:Kozyn Gigglephizz looks sternly at you. 'The compactor is a defective piece of junk. Crafted by the clumsy hands of [Tinmizer]. My work shall be done as soon as I exchange all the compactors for precious gems. We take a loss here, you know!!?' 
+
+'''Sometimes when you do the [[Scrap Metal Quest]], you get a "Tinmizer's Fabulous Compactor". Give it to Kozyn and he will reward you with a low level gem.'''
+
+''If you ask about Tinmizer's whereabouts, you also get some information about him and Big Bynn, the clockwork dragon:''
+
+You say, 'Where is Tinmizer?'
+
+:Kozyn Gigglephizz shakes his head in sorrow. 'Alas, for tinkering defective merchandise, he was exiled from Ak'Anon. First, the [clockwork dragon] and now the [Fabulous Compactor]. What could be next? No one has seen nor heard of him since. Probably ended up as a feast for the ogres.'
+
+You say, 'What clockwork dragon?'
+
+:Kozyn Gigglephizz shakes in fear. 'Oh!! I have seen it. A thousand feet tall and smells of burning oil. It was tinkered by [Tinmizer]. Yep, that's it all righty. Tinkered by the loon. He started out just making a clock, a GIANT ONE!! It was in the form of a wurm. He called it [Big Bynn], you know, after his familiar named Bynn. And then... then it escaped. Yeah.. That's it.'
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]

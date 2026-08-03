@@ -1,0 +1,55 @@
+{{Luclin Era}}
+[[File:npc_evreth_menesez.png|frame|Evreth Menesez]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| 
+|-
+! ''' Quest Giver: '''
+| [[Evreth Menesez]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Cobalt Scar]], [[Great Divide]], [[Kael Drakkel]], [[Tower of Frozen Shadow]]
+|-
+! ''' Related NPCs: '''
+| [[Fergul Frostsky]], [[Gralk Dwarfkiller]], [[VhalSera]], [[a Kromzek sorcerer]], [[a haunted seachest]], [[a shadow beast necromancer]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Orb of Draconic Energy}}
+</li></ul>
+
+== Walkthrough ==
+
+/loc of Evreth?
+
+{{expand}}
+
+You say, 'Hail, Evreth Menesez'
+
+: Evreth Menesez says 'Greetings ally of the Claws of Veeshan! Allow me to introduce myself. I am Evreth Menesez of the Draconic Loyalist Fellowship, scholar and researcher of draconic arcane knowledge and practitioner of magery. I am currently researching the whereabouts of an [ancient dragon tome] that my contain lost arcane knowledge that could prove useful to the Claws of Veeshan, particularly the dragons and dragon-kin of Skyshrine.'
+
+You say, 'What ancient dragon tome?'
+
+: Evreth Menesez says 'The dragon sorcerer, Xervolithax, according to dragon lore had penned a tome of arcane knowledge that he guarded with his life. It is told that when Xervolithax fell to the Kromzek centuries ago in the Great Divide in a great battle. The only surviving apprentice of Xervolithax that survived the fateful incident recovered the tome from the fallen dragon sorcerer and divided it into [sections], which he then hid for fear of the tome falling into the hands of the Kromzek magic-users.'
+
+You say, 'What sections?'
+
+: Evreth Menesez says 'It is my belief from the information I have gathered thus far, that sections of the tome have been scattered into four sections that were hidden across Velious. The pages of the tome are a thick durable parchment, possibly magically preserved, and the ancient dragon script was penned in the blood of the author. Here is a binding that can be used to store the sections of the tome should you come across them in your explorations. If you find all the sections of the tome return the complete tome to me and I will reward you for your assistance with treasures from the Skyshrine coffers.'
+
+The Tome sections drop off of: 
+
+# [[A Kromzek sorcerer]] (Kael Drakkal)
+# [[Fergul Frostsky]] or [[Gralk Dwarfkiller]] (Great Divide)
+# [[A shadow beast necromancer]] or [[VhalSera]] (Tower of Frozen Shadow)
+# [[A Haunted Seachest]] (Cobalt Scar)
+
+Hand-in dialogue and faction hits needed.
+
+[[Category:Quests]]

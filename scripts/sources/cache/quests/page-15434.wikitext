@@ -1,0 +1,98 @@
+{{Classic Era}}
+[[File:npc_kimble_nogflop.png|frame|Kimble Nogflop]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Kimble Nogflop]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[TeAnara]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Regurgitonic}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Kimble Nogflop]] of Ak'Anon will give you a Regurgitonic, but requires a [[Flask of Nitrates]] first.
+
+Find [[Te`Anara]] in [[Surefall Glade]]s at location -202, -423, 5.
+
+You say, 'Hail, Te`Anara'
+
+:Te`Anara says, 'Welcome, friend! I hope your stay in Surefall Glade will ease your mind and soothe your soul. While you are here, we ask you to abide by the [laws of the Jaggedpine].'
+ 
+You say, 'What are the laws of the Jaggedpine?'
+ 
+:Te`Anara says, 'We ask that you do not start campfires on our land. Do not litter our land with any items. Do not chop down our pines or tread upon any foliage. Please do not take more than a bellyful of fish. Do not harm any other wildlife and stay clear of [the great bear]!'
+ 
+You say, 'Who is the great bear?'
+ 
+:Te`Anara says, 'The great bear I speak of is Mammoth. He has lived among us for over a century. Tunare has truly blessed us with his presence. As long as Mammoth lives, so too does Surefall Glade. We are currently worried. Corun has reported that there is something [wrong with Mammoth].'
+ 
+You say, 'What is wrong with Mammoth?'
+ 
+:Te`Anara says, '[[Mammoth]] is not eating. We believe something is lodged in his throat. We require a young druid to [fetch a special potion].'
+ 
+You say, 'I will fetch a special potion'
+ 
+:Te`Anara says, 'Go to the gnome city of Ak'Anon on the continent of Faydwer. With their great zoo, you will find a gnome named Kimble Nogflop. Give him the flask of nitrates and he shall hand you a special potion which will force Mammoth to cough up whatever may be stuck inside his throat. Be sure to show me what you find inside his throat upon your return.'
+ 
+You receive [[Flask of Nitrates]].
+ 
+Head to Ak'Anon, and once there find Kimble Nogflop at location 1329, -808, -61 (one floor below the tiger in the zoo). Hand him the Flask of Nitrates.
+
+:Kimble Nogflop says, 'The flask of nitrates I sent for!! As was the deal, here is my [Regurgitonic]. Give it to whoever may need it and they will surely cough up whatever may be inside them with no harm to them whatsoever.'
+
+You receive [[Regurgitonic]].
+ 
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+
+You say, 'regurgitonic'.
+ 
+:Kimble Nogflop says 'I formulate the Regurgitonic myself. My animals kept eating the occasional spectator here and there. Femurs and ribs kept getting stuck inside, not to mention a few platinum pieces. Sometimes my batch would come out wrong and the animals would go berserk!! '''I hope I got the formula right this time'''.'
+
+If you choose to give the regurgitonic to Mammoth and give the Bayle List II to Te'Anara
+
+: Te`Anara says 'Oh my! This must belong to Antonius Bayle. I shall see that he receives it. You have done a great service to Qeynos and Surefall Glade. I rewards you with this. May it be of good use in your future deeds.' 
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[QRG Protected Animals]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+</div>
+
+
+You receive [[Invigor|Spell: Invigor]].
+
+== Known uses ==
+
+* [[Frostbite's Fish]]
+* [[Exotic Drinks]]
+* [[The Bayle List]]
+* [[Bonethunder Staff Quest]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

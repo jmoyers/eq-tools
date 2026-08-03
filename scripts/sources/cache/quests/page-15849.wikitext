@@ -1,0 +1,157 @@
+{{Classic Era}}
+[[File:npc_leraena_shelyrak.png|frame|Leraena Shelyrak]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Leraena Shelyrak]]
+|-
+! ''' Minimum Level: '''
+| 10-25
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[The Warrens]], [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[High Shaman Drogik]], [[ a kobold missionary]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Initiate Symbol of Quellious}}
+</li><li> {{:Disciple Symbol of Quellious}}
+</li><li> {{:Regent Symbol of Quellious}}
+</li></ul>
+
+== Initiate Symbol ==
+''Speak to [[Leraena Shelyrak]] in the Temple of Peace (Quellious) in [[Erudin]] (continuation from the [[Kobold Shaman Paws]] quest).'' 
+
+You say, 'What more powerful shamen?'
+
+: Leraena Shelyrak says, 'There have been sightings of kobold lesser shaman, greater shaman, and even a kobold high shaman. If you wish to continue Quellious' work take this sack and bring me eight of the odd bone necklaces worn by the lesser shaman.'
+
+''You receive a [[Small Embroidered Sack]].''
+
+'''Fill the sack with 8 [[Odd Bone Necklace|Odd Bone Necklaces]] from lesser kobold shaman in [[The Warrens]] and combine it to create an [[Embroidered Bag of Bone Necklaces]]. Hand this back to Leraena.'''
+
+: Leraena Shelyrak says, 'I am unfamiliar with the markings that adorn these necklaces. You have done well thus far in hindering the kobolds worship of their evil deity. I award you the Initiate Symbol of Quellious. Return to me when you feel you are ready to deal with the [greater kobold shaman].'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{YouGainExperience}}
+
+Reward: {{:Initiate Symbol of Quellious}}
+
+=== Notes ===
+* The necklaces drop about 1 in 10 times and are subject to [[Trivial Loot Code]].
+
+== Disciple Symbol ==
+
+''After completing the [[Initiate Symbol of Quellious]] quest, ask Leraena about [greater kobold shaman]:''
+
+You say, 'What greater kobold shamen?'
+
+: Leraena Shelyrak says, 'Return to the Warrens and obtain eight of the bronze symbols worn by the kobolds greater shaman. Place them in this sack that has been blessed by the powers of Quellious to protect you from the evil influence of the evil symbols. Return the full sack with your initiate symbol of Quellious.'
+
+''You receive a  [[Small Embroidered Sack]].'' 
+
+'''In the sack, combine 8 [[Odd Bronze Necklace|Odd Bronze Necklaces]] from greater shaman in [[The Warrens]] and [[Stonebrunt Mountains]] to produce an [[Embroidered Bag of Bronze Symbols]]. Hand in this item and the [[Initiate Symbol of Quellious]] to Leraena.'''
+
+: Leraena Shelyrak says, 'I require the full sack of symbols and your initiate symbol of Quellious.'
+
+: Leraena Shelyrak says, 'Your service to this temple is commendable. I award you the rank of Disciple for your devotions to The Tranquil. When you are [ready to advance] return to me and I will set you upon another task.' 
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better (+30).
+* Your faction standing with [[High Council of Erudin]] got better (+7).
+* Your faction standing with [[Heretics]] got worse (-7). 
+</div>
+{{YouGainExperience}}
+
+Reward: {{:Disciple Symbol of Quellious}}.
+
+=== Notes ===
+* You must be at least '''level 20''' to successfully do the hand-in for this quest.
+* Odd '''Bronze''' Necklace should not be confused with Odd '''Cold Iron''' Necklace (Used in [[Regent Symbol of Quellious]] quest). They look very similar.
+* Leraena's [quest hint text] has a typo; "shamen" is the correct spelling.
+* The '''same''' bag is used for the Bone and Bronze symbols. If you can't get the quest text to trigger on one of the steps, you can invoke the other step (assuming you're high enough level) to get the bag.
+
+== Regent Symbol ==
+''After completing the [[Disciple Symbol of Quellious]] quest, inform Leraena you are [ready to advance]:'' 
+
+You say, 'I am ready to advance' 
+
+: Leraena Shelyrak says, 'You are ready to strike at the body of the kobold shamans power. There is no reasoning with the Kobolds thus there shall be no peace in our beloved lands until their devotion to their wicked deity ceases. Return once again to the Warrens and bring me the unholy symbol worn by the High Shaman.' 
+
+'''Hand her an [[Odd Cold Iron Necklace]] obtained from [[High Shaman Drogik]] in [[The Warrens]] or various kobolds in [[Stonebrunt Mountains]].'''
+
+: Leraena Shelyrak says, 'It is imperative that we discern the nature of these symbols and the source of the kobolds shamanistic powers. There is a citizen of Erudin residing in Freeport named Glyssa Sonshaw. She is quite possibly the most knowledgeable individual in the field of heraldic and hieroglyphic studies. Take the high shamans necklace and this note to her. When you have discovered the nature of the symbols return to me with the documentation and your Disciple Symbol of Quellious.' 
+
+''You receive a [[Sealed Parchment]]'' {{Item Lore|Sealed Letter to Heraldry Researcher}} ''and [[Odd Cold Iron Necklace]].''
+
+'''Seek out [[Glyssa Sonshaw]] at the Academy of Arcane Science in [[Freeport|West Freeport]] (-335, -795) and hand her the  [[Sealed Parchment]] and [[Odd Cold Iron Necklace]].'''
+
+: Glyssa Sonshaw says, 'Ah..yes, I have seen this symbol before. There is a kobold that lives among the gnomes of Ak'anon. He may be reluctant to speak with you but you have no need to fear him. He is a follower of Brell Serilis and a valuable source of information on kobold society and culture. I will construct a message for him. Deliver the message and necklace and perhaps he can enlighten you to its meaning.'
+
+''You receive a [[Sealed Parchment]]'' {{Item Lore|Sealed Letter to Drigaz Grumblegrowl}} ''and [[Odd Cold Iron Necklace]].''
+
+<div class="facblock">
+* Your faction standing with [[Arcane Scientists]] got better (+10). 
+* Your faction standing with [[Knights of Truth]] got better by (+2). 
+* Your faction standing with [[Opal Dark Briar]] got worse (-1). 
+* Your faction standing with [[The Freeport Militia]] got worse (-1). 
+</div>
+{{YouGainExperience}}
+
+'''Travel to [[Ak'Anon]] and find [[Drigaz Grumblegrowl]] located at a bar (1245, -925) near the bank.''' 
+
+You say, 'Hail, Drigaz Grumblegrowl' 
+
+: Drigaz Grumblegrowl says, 'Grrreetings, _______, would you like to share a roasted rat steak or perhaps a tall glass of gnomish spirits? Have no fear of my appearance. My bark is meaner than my bite! Grraw haw haw!' 
+
+'''Hand in the [[Sealed Parchment]] and [[Odd Cold Iron Necklace]].'''
+
+: Drigaz Grumblegrowl says, 'I need the odd cold iron necklace and the note from Glyssa if I am to assist you.' 
+
+: Drigaz Grumblegrowl says, 'I had hoped to see the last of these sorrowful symbols. There is little I can tell you of the details of the kobold religion as I was rescued from death as a pup by the Deep Muses and reunited with Brell Serilis. What I know is this, the deity this symbol represents is named Rolfron Zek. He was a devoted shaman of Brell before the Abandonment, now he is the lord of Despair and Hopelessness. There is a shaman of Rolfron that teaches the local kobolds, he carries with him a doctrine. Recover the doctrine and take it with this translation scroll back to your Temple.'
+
+''You receive [[Hieroglyph Translations]].''
+
+<div class="facblock">
+* Your faction standing with [[Deep Muses]] got better (+5). 
+* Your faction standing with [[Merchants of AkAnon]] got better (+1). 
+* Your faction standing with [[Gem Choppers]] got better (+1). 
+* Your faction standing with [[Dark Reflection]] got worse (-1). 
+</div>
+{{YouGainExperience}}
+
+'''Find [[a kobold missionary]] in the area outside the minotaur caves in the [[Steamfont Mountains]] behind the massive broken cog. Kill it and loot an [[Encrypted Document]].''' 
+
+'''Return to [[Erudin]] and hand in the [[Hieroglyph Translations]], [[Encrypted Document]], and your [[Disciple Symbol of Quellious]] to Leraena Shelyrak.'''
+
+: Leraena Shelyrak says, 'I require the hieroglyph translations, the doctrine of Rolfron Zek, and your disciple of Quellious.'
+
+: Leraena Shelyrak says, 'I require the hieroglyph translations, the doctrine of Rolfron Zek, and your disciple of Quellious.'
+
+: Leraena Shelyrak says, 'You have done well yet again, young disciple. I award you the rank of Regent of the Peacekeepers. With this information we can hopefully gain some insight into the workings of the kobolds' religion.' 
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse. 
+</div>
+{{YouGainExperience}}
+
+Reward: {{:Regent Symbol of Quellious}}.
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Cleric Quests]]

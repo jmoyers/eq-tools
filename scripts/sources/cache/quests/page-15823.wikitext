@@ -1,0 +1,47 @@
+{{Classic Era}}
+[[File:npc_captain_bvellos.png|frame|Captain Bvellos]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Bvellos]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Dragon Necropolis]]
+|-
+! ''' Related NPCs: '''
+| [[Chetari Courier]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mask of War}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'I am looking for work'
+
+: Captain Bvellos says 'Are you looking for work, Feninie? I may have a use for one of your kind. I believe that several nobles in this fine city are not all they appear to be. I have suspicions about that filthy Wenglawks. He will do whatever it takes to amass his own wealth. My sources tell me that he may very well be trading with the Coldain, or worse yet, the dragons. If you could find me proof of his underhanded dealings, I would be most pleased.'
+
+You say, 'what proof?'
+
+: Captain Bvellos says 'The more convincing the proof is, the better. There must be a record of his actions somewhere.'
+
+A [[Chetari Courier]] in [[Dragon Necropolis]] drops a {{:Wurmscale Scroll}}, which identifies as "dragons letter to wenglawks".
+
+Hand the scroll into Captain Bvellos.
+
+: Captain Bvellos says 'This indeed points to Wenglawks being a traitor. If only there were more proof I could take this to the king. Thank you, Leata, you have done a great service for Kael. Take this mask as a reward for your service to this city.'
+
+The reward is the Mask of War. Indifferent is not enough faction for this turn in.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

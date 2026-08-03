@@ -1,0 +1,67 @@
+{{Classic Era}}
+[[File:npc_priestess_caulria.png|frame|Priestess Caulria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Caulria]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]], [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Lorme Tredore]], [[a Spiroc Proven]], [[a rabid grizzly]], [[a rabid wolf]]
+|}
+
+== Reward ==
+
+<ul><li> Small Coin
+</li><li> [[Faction]]
+</li><li> [[Fine Steel Weapons]]
+</li></ul>
+
+== Walkthrough ==
+
+[[Priestess Caulria]] in the temple in North Qeynos (-132, -611), and requires you to look into the occurrence of rabid wolves in the area. Rabid wolves and bears are found in the Qeynos Hills and also in West Karana will occasionally drop [[Fleshy Orb]]s. Return one of the orbs to Caulria:
+
+''NOTE: You must con '''amiable or above''' to do this quest! (She will not return the orb if you attempt turn-in below amiable)''
+
+: Priestess Caulria says, 'This is odd. This could explain the increase in the number of beasts within the lands surrounding Qeynos. You must take this to Freeport. Here. You must speak with Lorme Tredore. Show him this pellet. You had best gear up for the trip. Freeport is very far away. Here is some gold. Outfit yourself at our expense.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+You will receive some gold and a returned [[Fleshy Orb]] (item lore: ''Odd Tumor returned''), which you need to deliver to West Freeport. [[Lorme Tredore]] is at the top of Academy of Arcane Science and will reward you with a fine steel weapon, experience and some coin upon turning receiving the orb.
+
+<s>''NOTE: You must con '''amiable or above''' to do this quest!'' </s> -- You do not need to be amiable to do the Lorme Tredore (Freeport hand in) portion of the quest. I just did it at apprehensive and he gave me the positive faction hits. Not sure about the Caulria side as I was amiable to her.
+
+: Lorme Tredore says, 'Ah, thank you for bringing this to me! I will make very good use of it. Here, take this small token of my appreciation in return. Guard Jenkins will no longer require it, as he was killed on the training field yesterday. tsk tsk tsk.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 5 gold, 12 silver pieces.
+
+You receive a fine steel weapon.
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

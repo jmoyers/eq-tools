@@ -1,0 +1,38 @@
+{{Velious Era}}
+[[File:npc_ergrez_shortpaw.png|frame|Ergrez Shortpaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ergrez Shortpaw]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| All except INT casters
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[a snow cougar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cougarskin Mask}}
+</li></ul>
+
+== Walkthrough ==
+
+Ergrez will make you a mask from the skins of your kills, but you need to bring him some food as well as the skins.  Bring him a [[High Quality Cougarskin]] and 2 [[Mammoth Meat]]
+
+Ergrez Shortpaw is located at 1075, 2415, 37(Iceclad Ocean). Standing in a hut next to Errgriz. There are Snowfang spearguards around the camp. They all con'd amiable to a barbarian shaman.
+Walked up to him handed the [[High Quality Cougarskin]] and 2 [[Mammoth Meat]] (Seperate, not in a stack). I tried to hail him for dialogue but he said nothing.
+
+need all dialogues, current faction hits if any.
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

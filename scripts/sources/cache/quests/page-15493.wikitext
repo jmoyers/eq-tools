@@ -1,0 +1,171 @@
+{{Velious Era}}
+
+[[File:npc_saemey_wirewhisker.png|frame|Saemey Wirewhisker]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Saemey Wirewhisker]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| [[Tower of Frozen Shadow]]
+|-
+! ''' Related NPCs: '''
+| [[A fading erudite apparition]], [[A fading heretic apparition]], [[A heretic apparition]], [[A jungle spiritling]], [[A mountain spiritling]], [[A valley spiritling]], [[Emylie Steelclaws]], [[Giang Yin]], [[Mrowro Wirewhisker]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Purified Claymore}}
+</li><li> {{:Purified Crystal Claymore}}
+</li><li> {{:Purified Crystal Dagger}}
+</li><li> {{:Purified Crystal Long Sword}}
+</li><li> {{:Purified Crystal Scimitar}}
+</li><li> {{:Purified Crystal Short Sword}}
+</li><li> {{:Purified Crystal Star}}
+</li><li> {{:Purified Dagger}}
+</li><li> {{:Purified Long Sword}}
+</li><li> {{:Purified Rapier}}
+</li><li> {{:Purified Scimitar}}
+</li><li> {{:Purified Spear}}
+</li><li> {{:Purified Spirit Belt}}
+</li><li> {{:Purified Spirit Boots}}
+</li><li> {{:Purified Spirit Bracer}}
+</li><li> {{:Purified Spirit Gloves}}
+</li><li> {{:Purified Spirit Helm}}
+</li><li> {{:Purified Spirit Leggings}}
+</li><li> {{:Purified Spirit Sleeves}}
+</li><li> {{:Purified Spirit Tunic}}
+</li><li> {{:Purified Staff}}
+</li><li> {{:Purified Star}}
+</li><li> {{:Purified Warhammer}}
+</li><li> {{:Soulforge Hammer}}
+</li></ul>
+
+== Walkthrough ==
+'''Travel to the Kejek Village located in [[Stonebrunt Mountains]] by going through the Warrens. (not to be confused Steamfont Mtns) and locate [[Saemey Wirewhisker]]'''<br>
+
+''Apprehensive is high enough for both hand-ins needed to acquire the soulforge hammer. (Will dubious work?)''
+
+You say, 'Hail, Saemey Wirewhisker'
+
+: [[Saemey Wirewhisker]] says 'Welcome to Kejek friend. I am the seer of this village for I have been gifted by the spirits with an affinity for their realm. The barrier between the spirit and physical realms is thin in these lands. The heretics know this and must be prevented from committing [atrocities] similar to those that have been committed in the past. 
+
+You say, 'What sort of atrocities?'
+
+: Saemey Wirewhisker says 'Long ago when our noble ancestors the Vah Shir were destroyed by an explosion that devastated the warring Heretic and Erudin armies an evil creature by the name of Tserrina Syl'Tor was attracted to the sudden abundance of new spirits in these lands. Tserrina was capable of capturing these spirits before they were able to cross over beyond the mortal realm and through her dark magic transformed them into a [crystalline shadow] substance. 
+
+You say, 'What crystalline shadow substance?'
+
+: Saemey Wirewhisker says 'The crystalline shadow substance was used as building blocks for Tserrina's tower on an Island near the frozen lands to the south as well as fashioned into armor and weapons for her mindless servants. Emylie Steelclaws has developed a means to purify the armor and weapons using the special properties of our Kejek forge and a smithy hammer blessed by the Titan Spirits. The purifying process transfers the imprisoned spirits into [soul orbs]. Ask Emylie about the purification process. 
+
+You say, 'What are soul orbs?'
+
+: Saemey Wirewhisker says 'I have perfected a ritual that will free the imprisoned spirits within the soul orbs. I simply require some kejek [spirit powder] to scrawl the proper sigils and a soul orb upon which to perform the ceremony. My apprentice will perform the ceremony on fading soul orbs. Simply bring him a fading soul orb and some kejek spirit powder. 
+
+You say, 'What is kejek spirit powder?'
+
+: Saemey Wirewhisker says 'The spirit power of which I speak is composed of ground spiritling stones. I will grind some powder for you if you would bring me a Valley Spiritling Stone, a Jungle Spiritling Stone, and a Mountain Spiritling Stone. Collecting the stones does not truly harm the spiritlings for when slain in this realm their essence simply disperses until it eventually reforms into a new spiritling. 
+
+'''Approach Emylie in the same fort.'''
+
+You say, 'Hail, Emylie Steelclaws'
+
+: [[Emylie Steelclaws]] says 'Shalom friend. My mate Kalaaro is the primary blacksmith of our village. I mostly create his tools, do touch ups and refurbishes, and maintain the [kejek forge].
+
+You say, 'What kejek forge?'
+
+: Emylie Steelclaws says 'Our forge has received the blessings of the Titan Spirits to burn with a supernatural flame! This flame has many beneficial properties but most importantly it can aid in freeing the spirits that have been imprisoned in materials by evil sorcerers.
+
+You say, 'What about the purification process?'
+
+: Emylie Steelclaws says 'The crystalline shadow must be purified in the kejek forge using a special hammer blessed by the Titan Spirits. I will craft a hammer for you to take to the Titans for their blessings if you bring me a Large Brick of High Quality Ore and an Oak Shaft. Once the hammer is blessed you may use it in the kejek forge to purify the crystalline shadow and transfer the spirits contained within it to a Soul Orb that must be taken to our village seer.
+
+'''Give Emylie a [[Large Brick of High Quality Ore]] and an [[Oak Shaft]].'''
+
+: Emylie Steelclaws takes the supplies and begins to work on the hammer. She works swiftly and efficiently then cools the finished hammer and hands it to you.
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] has been adjusted by 5.
+* Your faction standing with [[Peace Keepers]] has been adjusted by 5.
+{{exp}}
+</div> 
+'''You receive a [[Kejekan Smithy Hammer]].'''
+
+'''Locate a giant panda by the name of [[Giang Yin]] in Stonebrunt Mountains. Unfortunately he also has loot and unrelated quest so is possibly contentested and killed on sight by incentivized players. Advise doing a CampCheck and if called asking them to allow you to do Quest Turn before they kill him.'''
+
+You say, 'Hail, Giang Yin'
+
+: Giang Yin looks down upon the creature standing beneath him and speaks. 'You are brave to approach a titan such as Giang Yin. I pray that the spirits have granted you honor and respect as well as courage.'
+
+'''Give him the Kejekan Smithy Hammer.'''
+
+: Giang Yin says 'Freeing long imprisoned spirits is a noble cause. Your hammer has our blessing to free the souls from their crystalline shadow tombs.  
+
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+{{exp}}
+</div> 
+
+'''You receive a [[Soulforge Hammer]].'''
+
+
+💡 '''Do not trust the Allakhazam posting saying that *any* of avatars can be used; tested with Prowler and ate the hammer and Ghostback also ate it. but Giang Yin does work though.'''
+
+
+'''Place the Soulforge Hammer and one Crystallized Shadow or Fading Shadow item into a Forge and combine. There is a Forge located inside the Kejek Village. The trivial for all combines is 15 (no-fail) and the Soulforge Hammer will be returned after each combine just like a regular Smithy Hammer functions'''
+
+* A [[Fading Shadow Weapons|Faded Shadow weapon]] results in the [[Purified Weapons|Purified weapon]] and a [[Fading Soul Orb]].  
+* A [[Crystallized Shadow Weapons|Crystallized Shadow weapon]] results in a [[Purified Crystal Weapons|Purified Crystal weapon]] and a [[Soul Orb]].
+* A [[Crystallized Shadow Armor|Crystallized Shadow armor]] piece results in a [[Purified Spirit Armor|Purified Spirit armor]] piece and a [[Soul Orb]].
+
+'''This is where remainder of the quest may be broken or incomplete ( Unsolved on Live too--according to discussion on allakaZAM).<br>
+''You could stop the quest here and just continue using your Soulforge Hammer to purify more Fading/Crystallized weapons and armor as many times as you want.''<br>'''
+<br>
+
+
+If you want to continue just for extra Faction (I dont recommend it as 2 of the drops are quite rare!), hunt down the three types of 'spiritlings' [[A jungle spiritling]], [[A mountain spiritling]], [[A valley spiritling]] ( they are willow wisp models but a bit larger and in colors Green, Yellow and Pink) collect one of each Valley, Jungle, and Mountain Spiritling Stones and give them to Saemey Wirewhisker.
+
+: Saemey Wirewhisker grinds the spiritling stones in a mortar and pestle with foreign runes scratched into the ceramic. 'This powder will assist in matters concerning the contacting or freeing of spirits.'
+
+'''You receive between 1 - 4 Kejek Spirit Powders.'''<br>
+<br>
+'''Give one [[Kejek Spirit Powder]] and a [[Soul Orb]] to Saemey Wirewhisker:'''
+
+: Saemey Wirewhisker says 'I require a Soul Orb and Kejek Spirit Dust in order to perform the ritual that will free the imprisoned souls.  Saemey Wirewhisker scrawls an arcane symbol on the ground with an odd powder and places the orb in its center. He then begins reciting an incantation and waving his arms over the symbol and orb. Moments later the orb shatters and an apparition appears.
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+{{exp}}
+</div> 
+'''You receive a [[Shattered Soul Orb]].''' ( ''No known use for this item'' )<br>
+
+'''This triggers nearby [[a heretic apparition]] who paths out of the town. Gave no faction and no loot.'''
+
+'''Giving one [[Kejek Spirit Powder]] and the other kind [[Fading Soul Orb]] (from purifying the Fading shadow items) to Mrowro Wirewhisker results in:'''
+
+: Mrowro Wirewhisker says 'I require a Fading Soul Orb and Kejek Spirit Dust in order to perform the ritual that will free the imprisoned souls.  Mrowro Wirewhisker scrawls an arcane symbol on the ground with an odd powder and places the orb in its center. He then begins reciting an incantation and waving his arms over the symbol and orb. Moments later the orb shatters and an apparition appears.
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+{{exp}}
+</div> 
+'''You receive a [[Shattered Fading Soul Orb]].''' ( ''No known use for this item'' ) <br>
+'''This triggers nearby [[a fading erudite apparition]] who paths out of the town. Gave no faction and no loot.'''
+<div style="margin: 0 10% 1em 10%; text-align: center;">
+{| style="background: #ffaf8b; border: 1px solid #999; padding: 0.1em; margin: 0.5em auto;"
+|-
+| valign="top" style="padding: 0.2em" | [[File:WarningIcon.png]]
+| style="padding: 0.1em" | <div style="text-align: center;">'''Notice:''' The quest is either broken at this point, or further steps have never been discovered.</div>
+|}</div>
+
+----
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]

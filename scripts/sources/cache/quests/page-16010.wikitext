@@ -1,0 +1,57 @@
+
+[[File:npc_windscribe_thaloria.png|300px|right|Windscribe Thaloria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Great Divide]]
+|-
+! ''' Quest Giver: '''
+| [[Windscribe Thaloria]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Great Divide]], [[Tower of Frozen Shadow]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter III, When Stars Forget Their Light]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Windscribe Thaloria'
+
+: Windscribe Thaloria says, 'The Icestar once carried our words — not in ink, but on the breath between snowflakes. That wind is broken now. The [pages] no longer know where to land.'
+
+You say, 'What pages?'
+
+: Windscribe Thaloria says, 'I've found most of the pages, but four pages of this chapter were [scattered] when the fracture opened. I have traced them to voices that no longer speak — beings caught between warmth and cold.'
+
+You say, 'Scattered where?'
+
+: Windscribe Thaloria says, 'Bring me four fragments: scraps carried by wind, guarded by beasts or spirits too long silent in a tower of frost. Then the chapter may form again.'
+
+* Kill any Mob on Floor 1 in Tower of Frozen Shadow : Chance to drop [[Forgotten Page 1]]
+* Kill any Mob on Floor 2 in Tower of Frozen Shadow : Chance to drop [[Forgotten Page 2]]
+* Kill [[An Armored Shadow]] on Floor 3 in Tower of Frozen Shadow : Chance to drop [[Forgotten Page 3]] (Seems Skeletons can drop Page 1 on this floor)
+* Kill any Mob on Floor 4 in Tower of Frozen Shadow : Chance to drop [[Forgotten Page 4]]
+
+Hand all four pages into [[Windscribe Thaloria]].
+
+: Windscribe Thaloria lays the fragments on a snow-slick slab. A cold wind threads through and glowing script returns to the page. She says, 'Yes... they trembled in silence, but the words still waited. They remember one another. Another breath in the darkness. Another truth reclaimed by the Icestar. Take these combined pages for another chapter of the preamble.'
+
+You receive [[Chapter III, When Stars Forget Their Light]] and a [[Holiday Gift]].
+
+[[Category:Quests]]
+[[Category:Dreadlands]]

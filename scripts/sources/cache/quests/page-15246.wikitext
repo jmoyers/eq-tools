@@ -1,0 +1,74 @@
+{{Classic Era}}
+[[File:npc_tylfon.png|frame|Tylfon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark]]
+|-
+! ''' Quest Giver: '''
+| Tylfon
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Faldor Hendrys]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Silvermesh Leggings}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest begins in Kelethin and is the third in the "Scouts" series of  quests.
+
+'''Begin by talking to [[Tylfon]] the guildmaster inside the Scouts of Tunare in the southern end of [[Kelethin]].'''
+
+Tylfon is located at -513, -220 in the Rogues Guild in Kelethin.
+
+You say, 'Hail, Tylfon'
+
+You say, 'What are scout silvermesh leggings?'
+
+: Tylfon says 'Scout silvermesh leggings are part of the garb of the Scouts of Tunare. Besides greater protection in battle, they offer a protection against magic and their unique powers boost the wearer's agility. They are meant for the scouts only and, as such, are not just given away. Are you [willing to earn the leggings]?'
+
+You say, 'I am willing to earn the leggings.'
+
+: Tylfon says 'A former scout named Faldor Hendrys has stolen our [Gem of Tunare]. He has fled Faydwer and we have been unable to track him down. Perhaps if you go and speak with his brother, [Elmion Hendrys], and ask him of Faldor, we might learn something of value?'
+
+You say, 'What Gem on Tunare?'
+
+: Tylfon says 'The bright green Gem of Tunare was discovered by the Scouts of Tunare in the trunk of a great tree. The lightning streaked down to split the tree in twain and there, inside, was the gem, Tunare's gift to the people of Kelethin. It has no magical properties, but it represents the glory of Tunare. It appears as a small emerald shard. Alas, now it has been stolen by Faldor Hendrys and only his brother [Elmion Hendrys] could know of his whereabouts.'
+
+You say, 'Who is Elmion Hendrys?'
+
+: Tylfon says 'Seek out the Fier'Dal, Elmion. He was last heard telling the local bar patrons that he was off to do some adventuring at the lake near the estate. What that is, I do not know.'
+
+'''You will be directed to kill [[Faldor Hendrys]] to obtain the Gem of Tunare.''' 
+
+'''To find him, you can talk to his brother [[Elmion Hendrys]] (or skip this part). Elmion Hendrys is at location 443, 97 in Dagnor's Cauldron.'''
+
+You say, 'Hail, Elmion Hendrys'
+
+: Elmion Hendrys says 'How are you? Please rest. Have you [been wounded by the beasts] of this region?'
+
+You say, 'Where is Faldor Hendrys?'
+
+: Elmion Hendrys says 'Ha!! You seek my foul brother, Faldor Hendrys?!! He is my half brother and has left to live with the vile half of his ancestry in Qeynos. No doubt he has decided to lend his talents to the local thieves' guild. Good luck finding him.'
+
+'''Find [[Faldor Hendrys]] either in Crows Tavern in North Qeynos or walking around outside the gate.  Kill him.'''  (He conned blue to me at level 21) or pickpocket him to obtain the Gem of Tunare.  
+
+The gem is actually an Emerald Shard and is LORE, NO DROP, so if you have friends helping, make sure you loot him.  
+
+'''Return the [[Emerald Shard]] to the guildmaster in Kelethin for your [[Silvermesh Leggings]]'''.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Rogue Quests]]

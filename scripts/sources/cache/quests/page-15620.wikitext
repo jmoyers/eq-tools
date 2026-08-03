@@ -1,0 +1,60 @@
+{{Velious Era}}
+
+[[File:npc_tunarean_earthmelder.png|frame|Tunarean Earthmelder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[Tunarean Earthmelder]]
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Derakor the Vindicator]], [[Priest Bjek]], [[Priest Delar]], [[Priest Grenk]]
+|}
+
+== Reward ==
+<ul><li>  {{:Gloves of Earthcrafting}}
+</li></ul>
+{{CheckboxList}}
+You need the heads off the following four giants:
+<ul>
+<li> [[Priest Grenk]] - roams in the Wakening Land. 24h Respawn
+<li> [[Priest Bjek]] - roams in the Wakening Land. 24h Respawn
+<li> [[Priest Delar]] - roams in the Wakening Land. 24h Respawn
+<li> [[Derakor the Vindicator]] - found behind the ice wall near Kael's temple. Bring a few friends..
+</ul>
+Return the four heads for the [[Gloves of Earthcrafting]].
+== Walkthrough ==
+
+''(Must be level 46+ and must worship Tunare.)''
+
+You say, 'Hail, [[Tunarean Earthmelder]]' (He is at -447, -2484)
+
+: Tunarean Earthmelder says 'Hail my friend, unfortunately I am sorry I cannot talk right now. The giants must be dealt with.
+
+You say, 'What giants?'
+
+: Tunarean Earthmelder says 'The giants are continuing to put forth efforts to encroach the lands blessed by Tunare. We need an outrider or preserver to aid us in our continued fight.
+
+You say, 'I am a preserver'
+
+: Tunarean Earthmelder says 'Noble preserver, you will be needed to combat the priests of the warbringer. Scouts have reported three priests wandering the Wakening Lands in search of a site to build a shrine to their god. Seek them out kill them and bring their heads and those of anyone else involved.'
+
+You need the heads off the following four giants:
+
+# [[Priest Grenk]] - roams in the Wakening Land. 24h Respawn
+# [[Priest Bjek]] - roams in the Wakening Land. 24h Respawn
+# [[Priest Delar]] - roams in the Wakening Land. 24h Respawn
+# [[Derakor the Vindicator]] - found behind the ice wall near Kael's temple. Bring a few friends..
+
+Return the four heads for the [[Gloves of Earthcrafting]].
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Druid Quests]]

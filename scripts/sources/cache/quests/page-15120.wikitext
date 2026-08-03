@@ -1,0 +1,99 @@
+{{Paineel Era}}{{P99 Era Header| Mar | 2000 }}
+__NOTOC__
+[[File:npc_sern_adolia.png|frame|Sern Adolia]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Paineel]]
+|-
+! ''' Quest Giver: '''
+|[[Sern Adolia]]
+|-
+! ''' Minimum Level: '''
+|25 (Solo)
+|-
+! ''' Classes: '''
+|[[Cleric]]
+|-
+! ''' Related Zones: '''
+|[[Lesser Faydark]], [[Southern Desert of Ro]]
+|-
+! ''' Related NPCs: '''
+|[[Kalayia Woodwhisper]], [[Obretl]], [[a mummy]], [[a zombie]]
+|} 	
+
+== Reward ==
+
+<ul><li> {{:Fright Forged Helm}} </li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* [[Zombie Skin]] (dropped by various zombies)
+* [[Embalming Dust]] (dropped by mummies and zombies in [[South Ro]])
+* [[Charred Bone Chips]] (from a skeleton named [[Obretl]] in South Ro)
+* [[Vial of Tunare's Breath]] (from a druid named [[Kalayia Woodwhisper]] in [[Lesser Faydark]])
+{{End}}
+
+== Walkthrough ==
+
+''(continued from the [[Initiate Symbol of Cazic Thule]] quest)''
+
+You say, 'What duties?'
+
+: Sern Adolia says, 'The primary duties of this temple are to spread terror, fright, and dread as a symbol of your devotion to our lord Cazic Thule. We are currently researching a means of summoning avatars of Fright, Terror and Dread, the primary minions of The Faceless in his home plane. Will you [assist me in summoning] the avatar of Fright?'
+
+You say, 'I will assist you in summoning him'
+
+: Sern Adolia says, 'In order to summon the avatar of Fright. I require some special components for the ritual. Fetch me the skin of a zombie, the dust used in the process of mummification, [charred bone chips], and a [vial of Tunare's Breath].'
+
+You say, 'Tell me about the charred bone chips'
+
+: Sern Adolia says, 'Some time ago a necromancer by the name of Obretl was sent to slay Rathmana Allin and his abomination of an adopted son, Ortallius. Obretl failed in his task and now haunts a small ruin in the desert of Ro cursed by Solusek to wallow in his failure in the form of a burning skeleton. Slay Obretl to free him from his pathetic existence and gather his charred remains.'
+
+You say, 'And tell me about the rancid vial of Tunare's Breath'
+
+: Sern Adolia says, 'Tunare's Breath is a life-giving potion created by the Fier'Dal Soldiers of Tunare. Seek out the druid Kalayia who is known to wander the Faydarks in search of reagents for potions. Procure from her a vial of Tunare's Breath. Shed her blood if need be.'
+
+'''Turn in the items'''
+
+: Sern Adolia says, 'Excellent work, young apostle of Fright. Our chanters have successfully summoned the avatar. Hurry and hand him this mundane helm so that he may forge it into a valuable symbol of your devotion to the principles of Fear!'
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{exp}}
+
+You receive a [[Mundane Helm]].
+
+ Avatar of Fright shouts, Grrrraaaaarrrrrg!! The stench of fear permeates the walls of this city! 
+ I will forge one item for the faithful of our Lord Cazic-Thule!! Make haste! My time here is short!
+
+[[File:npc_avatar_of_fright.png|frame|Avatar of Fright]]
+
+'''Turn around and go out the right door, cross the hall and you'll find the [[Avatar of Fright]]. Give him the [[Mundane Helm]].'''
+
+: Avatar of Fright says, 'I grant you the Fright Forged Helm. Wear it in honor of your devotion to our Lord Cazic-Thule!!'
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{exp}}
+
+== Note ==
+<ul>
+<li>This Quest may be multiquested, need confirmation of this.</li>
+<li>[[Kalayia Woodwhisper]] is an incredibly rare spawn on live, but may be more common here. Her page includes a map of her location. She's a level 22(ish) druid and has no faction hits.</li>
+<li>[[Obretl]] is a level 22(ish) skeleton necro who is a rare spawn in the mostly-buried tower in South Ro. While killing placeholders you'll likely get the embalming dust and zombie skin.</li>
+</ul>
+
+[[Category: Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]

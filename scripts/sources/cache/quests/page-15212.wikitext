@@ -1,0 +1,151 @@
+{{Classic Era}}
+[[File:npc_harkin_duskfoot.png|frame|Harkin Duskfoot]]
+<div style="float:right;margin-left:20px;">__TOC__</div>
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Harkin Duskfoot]] 
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Janam]]
+|}
+
+== Rewards ==
+
+<ul><li>[[:Used Merchants Gloves]]</li>
+<li>[[Faction]]</li>
+<li>Experience</li></ul>
+
+== Walkthrough ==
+
+===Ale===
+
+''[[Harkin Duskfoot]] may be found at -326.57, -844.42, -110.68 in the [[East_Freeport#East_Freeport_Tunnels|Freeport Tunnels]] among the [[Dismal_Rage|Dismal Rage]] guildmasters in the southwestern corner of [[Freeport|East Freeport]]. [[Beur Tenlah]] is standing right next to him. (Under the Seafarer's Roost in the basement, look behind some crates and boxes for a fake wall that you can walk through. Go down the stairs and through the door. Take your first left and around the corner will be Harkin and Beur ''
+
+You say, 'Hail, Harkin Duskfoot'
+
+: Harkin Duskfoot says 'HA! Greetings there, ______! How are ya this fine day? Me? I'm doing all right. Guard duty down here always reminds me of home.' 
+
+: [[Beur Tenlah]] says 'Heh, I got something that reminds you of home.. My armpit! Bwa haha!!!' 
+
+You say, 'Hail, Beur Tenlah' 
+
+: Beur Tenlah says 'Heya, ______! I've been on watch duty all night. Kinda makes a man thirsty, ya know? Why don't you be a good little scamp and run up to the bar and get me a [dwarven ale]? That sure would hit the spot right about now.' 
+
+'''Purchase some [[Dwarven Ale]] and give it to Beur.'''
+
+: Beur Tenlah says 'Well, well, well.. It's about time. Whatta ya got, boots fulla stones? Or maybe yer just part turtle? Bah, anyways, thanks for the ale. Maybe I'll buy you one sometime, eh? Bwahaha!' 
+
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span> 
+
+: Harkin Duskfoot says 'Bah! Don't listen to this fool. Listen, I've something a little more important for you to do than buy ales. I need you to take a [message] to my friend Janam over in West Freeport.'
+
+===Message to Janam===
+
+You say, 'What message?'
+
+: Harkin Duskfoot says 'Ok, ______, I need you to take this message to Janam in West Freeport. He is usually hanging out in front of the Theater of the Tranquil with that good-for-nothing Rebby. Anyway, give this note to Janam and bring his reply back to me.' 
+
+'''You receive a [[Note to Janam]]. '''
+
+'''Go to [[Freeport|West Freeport]] and find Janam Rekish at {{Loc|West Freeport|-156.00, -725.00, -26.00}} outside the Ashen Order building, northwestern side.''' 
+
+You say, 'Hail, Janam Rekish' 
+
+: Janam Rekish says 'Ah, hello there, friend! Me an' Rebby here, we're a just couple o' regular merchants. Though we've got nothin' to sell right now, we'd gladly take any donations. Them's the breaks, I suppose.' 
+
+'''Give him the note. '''
+
+: Janam Rekish scribbles out a note and says, 'Please make sure that Harkin gets this right away. If you lose it, it could mean both of our heads.' 
+
+{{exp}}
+
+'''You receive a [[Note to Harkin]]. Head back to East Freeport and give Harkin the note. '''
+
+: Harkin Duskfoot says 'Ah, good work, ______. And quick too, I'll makes sure that Elisi hears of your loyal work. Here... take this for your efforts.. it's not much, but it's all I have on me right now.' 
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by 20. 
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 20. 
+* Your faction standing with [[Carson McCabe]] has been adjusted by 5. 
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 5. 
+* Your faction standing with [[The Freeport Militia]] has been adjusted by 5. 
+</div>
+{{exp}}
+
+You receive 6 copper pieces.
+
+== Strategy if KoS ==
+
+'''Risk'''
+
+First of all, none of the npcs you'll encounter, or have to pass, will see invis. The guards in [[Freeport|West Freeport]] hit up to about 40 and weren't too dangerous when i screwed up, although the rogue guildmasters in [[Freeport|East Freeport]] will hit up to 350, no doubt backstab and maybe assassinate. None run fast, summon, or cast, although all of them have high resists to snare and roots.
+
+'''First Step'''
+
+Both Harkin Duskfoot and Nestral TGaza will give you first note when sneaking. However standing behind either mob will not work since both npcs have a second guildmaster beside them.
+
+On Harkin's left is the tunnel leading west eventually to [[Freeport|West Freeport]]. This tunnel stick out slightly, blocking his view of you. If you turn sneak on (making sure it was successful), you can inch your way along this wall towards him, continually hitting a hotkey of '/say what messages?' until he gives you the note. At which point he will turn towards you (but not see you due to the bump in the wall), and backing off is advised!
+
+Nestral is much easier. For her you need to enter her room (invisible) and target her. Now leave and head back the way you came till you see Harkin in front of you. It is at this point that you can drop invis without either seeing you (too far from harkin, and a wall between you and Nestral), and raise sneak. /say I can go to Janam and Rebby's.
+
+If you don't like this method, there are three others I have that work well. Firstly you can harmonise the surrounding npcs, and then sneak right behind either guildmaster. Another option is to pull the guildmaster to the zone, zone out, invis, come back, and sneak while he/she is moving back to their spot. Lastly, since the items are droppable, you could just have a friend who isn't kos to get the items for you!
+
+No matter what you do, you will need to con Indifferent for the final turn-in.
+
+'''Second Step'''
+
+The two NPCs you will want to hand either note to are called Janam Rekish and Rebby Willend. They both stand side by side, with a static character called peasant woman, and a wandering guard named Guard Inofus nearby. The peasant woman may look at you amiably, though those who she is less fond of should harmonize her before attempting the hand in. Rooting her may also work. Then the task is simple to wait for Guard Inofus to leave, then sneak, drop invis, and give Janam and Rebby their respective notes. They return two items which are again droppable.
+
+'''Third Step'''
+
+This is the most dangerous step as you need to be right by the mob to hand in the item. Dubious works for neither, and Indifferent is enough for both. You will have to sneak (unless you are a class that can charm/alliance/etc.). One option will be to pull the guildmaster from their position, then zone/camp the agro, come back and sneak to the returning guildmaster. In many ways this is safer than the alternative, but takes longer.
+
+The other option is to harmonize the guildmaster and the npc you're turning the item into, then sneak, then hand it in, and then get out before harmonize wears off.
+
+If you fail sneak too often and my harmony wears off, you could get in trouble. So long as you're careful though, both methods work.
+
+'''Effect'''
+
+I went from Threatening to Dubious to the rogue guildmasters in three trips, but stayed Dubious after my roughly next 20. I remained KOS to the Freeport Militia throughout. This is a long and slow process to get friendly with the faction you're doing it for, though there are no negative faction hits which therefore makes it a useful quest.
+
+== KoS Strategy 2 ==
+
+This can be done without Sneak, using Hide and/or (several) Ring of Shadows, plus a friend with Harmony. I did this on a DE wizard.
+
+Next to Harkin is a room with Elisi and Gren. When Harmony is cast on these two NPCs, a Level 60 can stand against the wall just to the left of the doorway (facing west) without getting aggro, at loc ''(-322, -853)''. Then, opening the door and rotating the camera allows you to see and trade with Harkin through the doorway, and also to receive the note by saying, ''"What message?"''.
+
+* Step 01: Bind next to Janam.
+* Step 02: Invis and run to the room with Elisi and Gren, standing next to the doorway at loc ''(-322,-853)''. Don't get any closer than this to Elisi or Gren.
+* Step 03: Have friend cast Harmony on Elisi and Gren.
+* Step 04: Drop invis. Nothing should aggro.
+* Step 05: Say "What message?" to receive the note (this step works even at scowling faction).
+* Step 06: Gate to Janam.
+* Step 07: Open trade window with Janam using the note, but successfully Hide or click invis ring before clicking Trade (Janam should con indifferent).
+* Step 08: Invis and run back to the doorway at loc ''(-322,-853)''. The fastest route is through the illusory wall in the storage room under the dock.
+* Step 09: Have friend cast Harmony on Elisi and Gren.
+* Step 10: Open trade window with Harkin through the doorway, again using Hide or invis before clicking Trade. This completes the quest.
+* Step 11: Immediately turn off hide/invis and and say "What message?" to receive another note.
+* Step 12: Repeat steps 6-11 as many times as necessary to become Dubious. It took me about 25 runs.
+
+Note: The entire quest can be completed start-to-finish at '''dubious''' without any need for Harmony / Hide / Invis. The above comments about requiring at least indifferent faction are wrong. I tested it immediately upon reaching dubious faction and it worked fine.
+
+== Related Quests ==
+
+* [[Note for Rebby]]
+
+[[Category: Quests]]
+
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

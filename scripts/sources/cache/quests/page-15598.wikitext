@@ -1,0 +1,65 @@
+[[File:Waltor Felligan.jpg|alt=Waltor Felligan, Shaman Guildmaster of Halas|thumb|Waltor Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Waltor Felligan]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a wooly spiderling]]
+|-
+!Repeatable:
+|Yes
+|}
+
+== Reward ==
+
+<ul><li>  [[Cure Poison|Spell: Cure Poison]]
+</li><li> [[Drowsy|Spell: Drowsy]]
+</li><li> [[Endure Fire|Spell: Endure Fire]]
+</li><li> [[Feet like Cat|Spell: Feet like Cat]]
+</li><li> [[Fleeting Fury|Spell: Fleeting Fury]]
+</li><li> [[Frost Rift|Spell: Frost Rift]]
+</li><li> [[Gate|Spell: Gate]]
+</li><li> [[Sicken|Spell: Sicken]]
+</li></ul>
+
+== Walkthrough ==
+
+[[Waltor Felligan]] is located just outside the Temple of Justice, the shaman guild hall in Halas (/loc 288, 374). You must be amiable or higher with [[Shamen of Justice]] to obtain this quest.<blockquote>You say, 'Hail, Waltor Felligan'
+
+Waltor Felligan says 'Hello, me friend! I'm the resident healer o' Halas. Please inform me when ye've a need fer me talents to '''[bind wounds]''', '''[cure disease]''' or '''[cure poison]'''. Might I add, if ye're a young shaman o' Halas, ye can also '''[assist in gatherin' fungus]'''.'
+
+You say, 'I will assist in gathering fungus'
+
+'''''If your faction is indifferent or lower...'''''
+
+Waltor Felligan says 'The scales o' the Shamans o' Justice dinnae tip in yer favor.  Ye'd best flee while ye still have the chance.'
+
+'''''If your faction is high enough...'''''
+
+Waltor Felligan says 'As the wooly spiderlings get ready to molt, they'll carry wooly fungus. Oftentimes, one can find wooly fungus growing on their bellies. I use this in me healing practices. I'll reward ye if ye can fill this jar full o' the valuable fungus. Don't forget to combine them before ye return it to me. And have yerself some rations handy, or ye may find yerself snacking on this tasteless food source.'</blockquote>'''You receive an 8-slot container, [[Empty Jar]] (identifies as "Jar for Wooly Fungus").'''
+
+Combine 8x (1 per container slot) [[Wooly Fungus]] (dropped from [[A Wooly Spiderling|a wooly spiderling]] in [[Everfrost Peaks]]) in the Empty Jar to produce a [[Jar of Fungus]] and hand it over to Waltor.<blockquote>Waltor Felligan says 'Aye! Ye've filled the jar. I'll see to it that Holana locks this away. Tis difficult to obtain and we can only spare the talents of our young shamans. Allow me to give ye a reward. Thank ye kindly fer yer service.'</blockquote>
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+* Your faction standing with [[Hall_of_the_Ebon_Mask]] got worse.
+{{YouGainExperience}} 
+
+You'll receive 8-9 gold and one low level shaman spell. 
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Shaman Quests]]

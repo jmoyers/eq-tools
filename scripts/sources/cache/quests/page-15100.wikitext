@@ -1,0 +1,69 @@
+{{Temple Era}}
+[[File:npc_joyce.png|frame|Joyce]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Joyce]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]], [[Permafrost]], [[Solusek's Eye]]
+|-
+! ''' Related NPCs: '''
+| fire goblins, ice goblins, [[a faerie guard]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Robe of the Elements}}
+</li></ul>
+
+== Walkthrough ==
+
+Joyce will make a [[Robe of the Elements]] if you bring her the following:
+{{CheckboxList}}
+* [[Fire Goblin Skin]] (Fire Goblins in [[Solusek's Eye]])
+* [[Frost Goblin Skin]] ([[An Elite Goblin Guard]] in [[Permafrost]])
+* a "[[Twice-Woven Cloak]]" ([[A Faerie Guard]] in [[Lesser Faydark]])
+* a scroll of [[Elemental Armor]].
+
+----
+
+You say, 'Hail, Joyce'
+
+
+: Joyce says 'I am Joyce of the Temple of Solusek Ro.  I am the guardian of four of the items of the elementalist.  If you are a magician, ask me about the [Robe of the Elements], the [clay bracelet], the [earthen boots] or the [Circlet of Mist].'
+
+
+You say, 'What Robe of the Elements?'
+
+
+:Joyce says 'The Robe of the Elements is a fine cloak for a Magician.  It provides protection from the elements, protection from melee attacks and aids the Magician with her focus.  Are you [interested in the robe]?'
+
+
+You say, 'I am interested in the robe.'
+
+
+:Joyce says 'I will make for you the Robe of the Elements, but I will be needing the proper components.  I will be needing a fire goblin skin, a frost goblin skin, a Twice-Woven Cloak which can be found on Faerie Guards in the Faydark, and a scroll of elemental armor.  Return to me with these items and I will craft your robe.'
+
+
+[Hand in the items]
+
+
+:Joyce says 'You have done well.  You are truly a powerful Magician.  Here is your Robe of the Elements.'
+
+
+Your faction standing with TempleofSolusekRo got better.
+
+Your faction standing with ShadowedMen got worse.
+ 
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]

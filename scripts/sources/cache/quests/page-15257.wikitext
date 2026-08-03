@@ -1,0 +1,70 @@
+[[File:npc_narron_jenork.png|frame|Narron Jenork]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Narron Jenork]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Watchman Dexlin]], [[a tiny skeleton]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Watchman Boots}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest originates in Ak'Anon with [[Narron Jenork]] at the Gemchoppers Guild, but you only have to go there for the final turn in.
+
+There is a rare spawn Gnome Guard named [[Watchman Dexlin]] that pops in place of the vendor [[Bilbis Briar]] on the second floor of the bridge tower in [[North Karana]].  He occasionally spawns at 6 AM game time every couple hours and will stay up until 8 PM game time.  Hail him and he says he's in need of a brave fighter. Say "I am a brave fighter" and he tells you he is looking for the remains of tiny skeletons.  If you have sufficient faction, he gives you a box with 4 slots and tells you to collect the remains (and for some reason you will take a hit with your Gem Chopper faction).  He tells you to return with them before his sundial reaches 8 PM, when he will de-spawn. Either Bilbis Briar or Watchman Dexlin will respawn at 8 AM. Tiny Skeleton's will also de-spawn at 8 PM.
+
+After he gives you the box at least 5 [[a tiny skeleton]] will spawn in the zone.  They stand at static spawns points in the Northern part of the zone near the East Karana bridge. They are level 15 and always drop a [[Very Tiny Crumpled Skeleton]]. 
+
+''/loc of quest mobs: '' (Exact Locs Needed)
+
+The tiny skeletons are hard to find, as they're as small as brownies. A Ranger with tracking would be a big help on this quest, or any class with Sense Undead. Kill and collect four [[Very Tiny Crumpled Skeleton]] and combine them in the [[Empty Tin Box (Tiny Skeletons)|Empty Tin Box]] to create [[Box Full Of Tiny Bones]]. Give the [[Box Full Of Tiny Bones]] back to [[Watchman Dexlin]]. He will give you back a [[Box of Undead Brownie Bones]] and tells you to deliver it to [[Narron Jenork]] in Ak'Anon.  
+
+Narron Jenork says, 'Wonderful!! Watchman Dexlin sent word that you would be returning these specimens.  I shall see that the Eldritch Collective gets them.  For you there is a reward.  Manik has donated a pair of Watchman Boots!!'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+''You receive 4 platinum pieces.''
+
+''You receive [[Watchman Boots]].''
+
+==External links==
+
+* http://runen.co.uk/Everquest/Zones/Quests/NKarana/WatchmanDexlin.htm
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

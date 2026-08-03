@@ -1,0 +1,53 @@
+{{Velious Era}}
+[[File:npc_guardian_of_takish.png|frame|Guardian of Takish]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[Guardian of Takish]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| [[Gkrean Prophet of Tallon]], [[Semkak Prophet of Vallon]], [[a cleric of Vallon Zek]], [[a priest of Tallon Zek]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Symbol of Tunarian Worship}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail Guardian of Takish'
+
+: Guardian of Takish says 'Well met. It is indeed a wondrous day to be serving the lady Tunare.  If you know of any templars or knights send them to me.
+
+You say, 'I am a templar'
+
+: Guardian of Takish says 'I require your aid. It seems the agents of corruption have supplied the followers of the warbringer with four idols that will help defoliate the Wakening Lands. Will you aid me noble Templar?
+
+You say, 'I will aid you'
+
+: Guardian of Takish says 'Excellent gather the four idols that are held in Kael and return them to me. I will then properly dispose of these foul creations.
+
+'''You will need:'''
+
+* [[Idol of Corruption]] from [[Gkrean Prophet of Tallon]]
+* [[Idol of Decay]] from [[a cleric of Vallon Zek]] or [[a cleric of Tallon Zek]]
+* [[Idol of Disease]] from [[Semkak Prophet of Vallon]]
+* [[Idol of Erosion]] from [[a priest of Tallon Zek]] or [[a priest of Vallon Zek]]
+
+'''They drop off the following giants in the Kael Arena: Gkrean Prophet of Tallon, Cleric of Vallon Zek, Semkak Prophet of Vallon and Priest of Tallon Zek.'''
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Cleric Quests]]

@@ -1,0 +1,99 @@
+[[File:npc_raz_the_rat_misk.png|frame|Raz The Rat Misk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Raz The Rat Misk]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Crow]]
+|}
+
+== Reward ==
+
+<ul><li> faction, coin, [[Crow's Special Brew]]
+</li></ul>
+
+== Walkthrough ==
+
+Your Location is -345.80, 36.39, -13.27
+
+[[Raz The Rat Misk]] looks your way apprehensively -- You could probably win this fight.
+
+You say, 'Hail, Raz The Rat Misk'
+
+: Raz The Rat Misk says 'Spare 3 gold so I can get a decent meal for once, master?'
+Give him 3 gold.
+
+: Raz The Rat Misk says 'Thank you, kind master.  I don't wish to trouble you further but I do have another [favor] to ask..'
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+{{exp}}
+</div> 
+
+You say, 'What favor?'
+
+: Raz The Rat Misk says 'I found this pouch and do not know whose it is.  I would be more than willing to part with it for 5 gold, since the owner would probably reward you more.'
+
+Give him 5 gold.
+
+: Raz The Rat Misk says 'Very good, master!  Best of luck in locating the proper owner.  Maybe try giving it to ol' Crow in North Qeynos.  Everyone knows if you need to fence.. er.. find something in Qeynos, Crow is your man.  He always seems to know who's missing what.  I am off to get some food.'
+
+You receive A [[Tattered Leather Pouch]].
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+</div>
+
+Raz The Rat Misk looks your way apprehensively -- You could probably win this fight.
+
+'''LOADING, PLEASE WAIT...'''
+
+You have entered North Qeynos.
+
+Your Location is 91.57, 359.40, 3.75
+
+Crow looks your way apprehensively -- what would you like your tombstone to say? 
+
+You say, 'Hail, Crow'
+
+[[Crow]] says 'Welcome to Crow's!  If you're thirsty, we have a fine selection of brews and ales.'
+
+Give him the pouch.
+
+Crow says 'What are you?  The Rat's new bag man?  Peh, he is useless.  That bum drinks any gold he gets.  Here ya go, kid!' 
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+{{exp}}
+</div>
+
+You receive 3-5 gold from Crow.
+
+You receive [[Crow's Special Brew]], which is not to be confused with [[Crows Special Brew]] (without an apostrophe), which may be purchased from [[Crow]].
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

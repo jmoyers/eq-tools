@@ -1,0 +1,88 @@
+{{Velious Era}}
+[[File:npc_shamus_aghllsews.png|frame|Shamus Aghllsews]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Shamus Aghllsews]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+
+== Reward ==
+
+<ul><li>  {{:Tunarean Signet Ring}}
+</li></ul>
+
+== Walkthrough ==
+
+In the faun building that leads to the Plane of Growth, there is a named faun called [[Shamus Aghllsews]].
+
+You say, 'Hail, Shamus Aghllsews'
+
+: Shamus Aghllsews says 'Welcome to my fiefdom wayward Gnome. I am Duke Shamus Aghllsews of the Tunarean Court. Only those who pledge friendship or membership to the Court are allowed sanctuary in the Wakening Lands.'
+
+You say, 'I pledge friendship.'
+
+: Shamus Aghllsews says 'You must first prove your intentions to the Tunarean Court. I will permit you to participate in an oath of friendship only after you bring me four picks used by the Kromrif Laborers that are attempting to build into our lands.'
+
+'''Give him the 4 [[Kromrif Laborer Pick]]s...
+<div class=facblock>
+* +[[Tunarean Court]] faction
+{{exp}}
+</div>
+
+: Shamus Aghllsews grips your hand in his own and recites an oath in an ancient tongue. Should you ever seek membership in this court you are required to receive the support of its counts, countesses, barons, and baronesses. Should they deem you worthy you may present their crests to me and with my approval become a citizen of our kingdom. The Kromrif and Kromzek are persistent in their efforts to expand Kael into the forest of Tunare, they are a threat to all houses of the Tunarean Court. A Kromzek architect occasionally visits the building sites. I desire to acquire his blueprints for the expansion of Kael.' (This is a separate quest, listed on its own.)
+
+'''He gives you an [[Empty Crest Case]], a size SMALL 6-slot container.'''
+
+'''Go into the Wakening Lands and talk to the various subjects of Tunare that reside there. Each Crest requires a rather lengthy subquest to collect. Turn in mobs [[Countess Silveana]], [[Lord Gossimerwind]], and [[Lord Prismwing]] have PH that give negative tunare faction (which is needed) so you'll need someone else to take the hit. The 6 crests are:'''{{CheckboxList}}
+* [[Crest of the Wood Nymphs Quest]]
+** Tell [[Eysa Florawhisper]] in [[Wakening Land]] {{Loc|Wakening Lands|-940, -1700}} "I will gather seeds for you." to get a [[Empty Seed Collection Bag]]
+** Forage the following and combine them in the bag
+*** [[Misty Acorn]]: foraged or picked up off ground in [[Misty Thicket]]
+*** [[Emerald Orange]]: [[Emerald Jungle]]
+*** [[Bag of Caynar Nuts]]: [[Toxxulia Forest]]
+*** [[Vineclinger Berries]]: [[Butcherblock Mountains]] (no drop)
+*** [[Ripened Heartfruit]]: [[Greater Faydark]] (no drop)
+*** [[Rathe Berries]]: [[Lake Rathe]]
+*** [[Marr Cherries]]: [[Ocean of Tears]]
+*** [[Flarefire Seeds]]: [[Field of Bone]] (no drop)
+** Give the combined [[Bag of Seeds]] to [[Eysa Florawhisper]]
+* [[Crest of the Unicorn Quest]]
+** Kill [[Lithiniath_(Black_Version)|Lithiniath]] in [[Plane of Mischief]], give her horn to [[a white stallion]] (nearby)
+* [[Crest of the Sifaye Quest]]
+** Kill [[A storm giant surveyor]] in [[Wakening Lands]] and loot a [[Kromzek Surveyor Scope]]
+** Give the [[Kromzek Surveyor Scope]] to [[Countess Silveana]] in [[Wakening Lands]]
+* [[Crest of the Fauns Quest]]
+** Kill [[a storm giant architect]] and loot [[Kromzek Architect Blueprints]].
+** Turn them in to [[Shamus Aghllsews]] and get an Empty Sulfur Collection Bag (4 slot container) and also a [[Bag of Crushed Herbs]] (not actually a container).
+** Fill the container with 4 [[Crystallized Sulfur]] and combine to make a [[Bag of Sulfur]].
+** Go to Kael and "trade" those two bags with bags of supplies (found in ruined buildings in [[Kael]]). ** Note: This mob now comes up nameless, and has name ? in the trade screen.  Upon turn-in, hit me for 197 and the rubble appeared as a 3rd bag groundspawn.
+**  After the resulting explosion (may kill you) pick up [[Pile of Rubble]] and bring it back to [[Shamus Aghllsews]]
+* [[Crest of the Drixie Quest]]
+** Kill [[Yvolcarn]] in [[Cobalt Scar]] and loot [[Drixie Remains]] 
+** Give the [[Drixie Remains]] to [[Lord Prismwing]] in [[Wakening Lands]]
+* [[Crest of the Faerie Dragons Quest]]
+** Slay [[A Storm Giant Foreman]] in [[Wakening Lands]] and loot the [[Kromzek Foreman Helm]]
+** Give the [[Kromzek Foreman Helm]] to [[Lord Gossimerwind]] in [[Wakening Lands]] (in Geonid Caves)
+{{End}}
+'''Follow the links for the subquests needed to obtain these. After getting all 6 crests, combine them in the empty case.  This creates a Case of Tunarean Crests.  Hand this back to Shamus for your reward.'''
+
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]
+[[Category:Ranger Quests]]
+[[Category:Druid Quests]]

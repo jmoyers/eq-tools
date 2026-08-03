@@ -1,0 +1,75 @@
+{{Classic Era}}[[File:npc_hendi_mrubble.png|frame|Hendi Mrubble]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Hendi Mrubble]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  Healing, Cure Poison, or Cure Disease
+</li></ul>
+
+== Walkthrough ==
+
+[[Hendi Mrubble]] is located at -232, -347 in [[Rivervale]].
+
+You say, 'Hail, Hendi Mrubble'
+
+[[Hendi Mrubble]] says 'Why, hello there!! Welcome to the Church of Mischief. I am Hendi Mrubble. The 'R' is silent. I am the resident healer of the church, so if you are in [need of healing], or want me to [cure poison] or [cure disease], let me know. If you've got a touch of the crazy brain, I can't do a thing for you.'
+
+You say, 'I am in need of healing.'
+
+[[Hendi Mrubble]] says 'Hmmm. I would love to help you with that, but you will have to make a donation to the temple. The Guardians asked me to charge one of the Rivervale piranha teeth.'
+
+You have slain [[a large piranha]]!
+--You have looted a [[Piranha Tooth]].--
+
+Hand [[Hendi Mrubble]] the [[Piranha Tooth]].
+
+[[Hendi Mrubble]] says 'May the swift and silent spirit of Fizzlethorpe Bristlebane smile upon your frail soul.'
+
+[[Hendi Mrubble]] begins to cast a spell.
+You feel better. You have been healed for 65 points.
+
+You say, 'Cure Poison.'
+
+[[Hendi Mrubble]] says 'Cure poison, eh? Before we do that, you must fetch me three bixie stingers.'
+
+You have slain [[a bixie]].
+Your faction standing with [[Stone Hive Bixies]] got worse.
+Your faction standing with [[Guardians of the Vale]] got better.
+--You have looted a [[Bixie Stinger]].--
+
+Hand [[Hendi Mrubble]] three Bixie Stingers.
+
+[[Hendi Mrubble]] says 'May the swift and silent spirit of Fizzlethorpe Bristlebane smile upon your frail soul.'
+
+[[Hendi Mrubble]] begins to cast a spell.
+
+You say, 'Cure Disease.'
+
+[[Hendi Mrubble]] says 'Eeww!! Careful, don't touch Hendi. I figured there must have been something not quite right about you. Well, now, before we can cast the disease from your body you will have to make a little donation of one gold for the service and eight gold to disinfect this place. That would be 10 total!! Let's see it.'
+
+Hand Hendi Mrubble 10 gold.
+
+[[Hendi Mrubble]] says 'May the swift and silent spirit of Fizzlethorpe Bristlebane smile upon your frail soul.'
+
+[[Hendi Mrubble]] begins to cast a spell.
+
+[[Category:Quests]]
+[[Category:Rivervale]]

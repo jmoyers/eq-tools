@@ -1,0 +1,67 @@
+{{Kunark Era}}
+[[File:npc_drill_master_dal.png|frame|Drill Master Dal]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Drill Master Dal]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Shadow Knight]], [[Monk]], [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]], [[Swamp of No Hope]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[a giant swamp leech]], [[a goblin scout]], [[a sabertooth kitten]], [[a skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Curscale Buckler}}
+</li></ul>
+
+== Walkthrough ==
+
+''Find Drill Master Dal in Fortress Talishan [-248.40, -124.09, 31.75].''
+
+You say, 'Hail, Drill Master Dal'
+
+: Drill Master Dal says 'Yes, yes!! What do I have here?!! Another [new recruit]? If so, then speak up! If not, then leave and do not waste my time nor risk your life. I also seek a [legion soldier] if you be one.'
+
+You say, 'I am a Legion soldier.'
+
+: Drill Master Dal says 'Good news to my ears!! I seek to prove to the War Baron that the infamous forsaken band of thieves who call themselves Marrtail's Marauders are operating within earshot of our city. You must bring me proof that you encountered no fewer than four of these thieves. Do so and I shall offer you an armor item unavailable to most.'
+
+You say, 'I am a new recruit.'
+
+: Drill Master Dal says 'Yes. You have the look of the Partisan. I trust you have begun your blacksmith training. If not, then do so. Also, you should read all the books available to you in Fortress Talishan. We are not dimwitted broodlings here. You shall need the knowledge soon. That, or a coffin. Ha!! Here is your task, are you [ready for your task]?'
+
+You say, 'I am ready for my task.'
+
+: Drill Master Dal says 'Yes, yes!! It does not matter. You must be ready. I will hand you the Partisan pack. Into it you shall combine one giant blood sac of the giant leech; scout beads from a goblin scout; one sabertooth kitten canine and finally, three bone shards from decaying skeletons. Hopefully, you will survive your attempt to obtain these items. Return the full Partisan pack and you shall be rewarded with a curscale shield.'
+
+You receive a [[Partisan Pack]].
+
+'''You need [[Goblin Scout Beads]], a [[Sabertooth Kitten Canine]], A [[Giant Blood Sac]], and 3 x [[Bone Chips]].  Combine them in the pack to craft a [[Full Partisan Pack]].  Give this back to Dal for your reward, a [[Curscale Buckler]].'''
+
+: Drill Master Dal says 'Fantastic work, Partisan _____. Here is your reward. You may continue to perform this task as the baron has found it aids in our defense. I shall always pay for a good day's work. Just let me know if you are still [ready for the task]. As for the curskin shield, you may only have one. Perhaps soon you will prove yourself a formidable fighter and you can earn a militia pike from Drill Master Vygan.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 9 silver from Drill Master Dal.
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

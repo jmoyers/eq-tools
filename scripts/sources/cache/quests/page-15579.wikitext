@@ -1,0 +1,61 @@
+{{Classic Era}}
+[[File:npc_treskar.png|frame|Treskar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Treskar]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Cleric]], [[Shadowknight]], [[Rogue]], [[Shaman]], [[Wizard]], [[Necromancer]], [[Magician]], [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[Spore Guardian]]
+|}
+
+Quest has a faction requirement.
+
+== Reward ==
+
+<ul><li>  {{:Froglok Skin Mask}}
+</li></ul>
+
+== Walkthrough ==
+''[[Treskar]] is found in the Shadowknights Guild in [[Grobb]].''
+
+You say, 'Hail, Treskar'
+
+: Treskar says, 'You dare to speak to Master Treskar!! You be [sent by Hukulk] or you be hurtin'!! Me have no time to waste with ugly one like you!!'
+
+You say, 'I sent by Hukulk'
+
+: Treskar says, 'Ha!! Hukulk accept puny troll now?!! Ha!! You join us and you join fight. Nightkeep enemy is Gamkek enemy!! You help smash [other weak shadowknights]. Them weak. We true power!! You bash good and maybe you do [secret mission] for Treskar.'
+
+You say, 'What secret mission?'
+
+: Treskar says, 'Nightkeep hear bashers see fungus man spore guardian in Innothule. Him protect young fungus man spores so they grow big. BIG an' attack trolls!! You go find spore guardian. Smash his big red head!! Bring Treskar that huge mushroom head of his to prove he walk no more. You do this and me give you froglok skin mask.'
+
+'''Hand in [[Huge Mushroom Head]]. '''
+
+: Treskar says 'You do it!! You am great knight. Me give you special froglok skin mask. Shaman make for Nightkeep. It make you smarter like Treskar..Me tink so!!' 
+
+<div class="facblock">
+* Your faction standing with [[Shadowknights of Night Keep]] got better. 
+* Your faction standing with [[Green Blood Knights]] got worse.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+* Your faction standing with [[DaBashers]] got better.
+</div>
+{{YouGainExperience}}
+
+:  You receive [[Froglok Skin Mask]]
+:  You receive 2 gold, 1 silver, 3 copper pieces
+
+[[Category:Quests]]
+[[Category:Grobb]]

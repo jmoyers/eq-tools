@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_gygus_remnara.png|frame|Gygus Remnara]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Gygus Remnara]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Purple Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+a tattered note reads: Followers of Erollisi Marr unite to spread her will and love across all of Norrath. Go north from the West Gate to Temple of Marr, and give this note to Gygus Remnara. He will accept you into the Priests of Marr, and train you well.
+
+''[[Gygus Remnara]] is located at 139, 339 in the Temple of Marr ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Gygus Remnara'
+
+: Gygus Remnara says, 'The Temple of Marr welcomes you. I am Gygus Remnara. High Sentinel for the Sentries of Passion. We are the order of paladins within the Priests of Marr and whose charge it is to protect the holy Temple of Marr.'
+
+'''Hand [[Gygus Remnara]] [[a tattered note]].'''
+
+:: <code></code>
+
+: Gygus Remnara says, 'Welcome to the Sentries of Passion. We are the protectors of the Temple of Marr. Wear our tunic with pride, young knight! Find your wisdom within these walls and in the words of our priests. And remember to aid all who follow the twin deities, Mithaniel and Erollis [sic] Marr.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Paladin Quests]]

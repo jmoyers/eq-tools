@@ -1,0 +1,88 @@
+{{Classic Era}}
+
+[[File:npc_allix.png|thumb|right|Allix]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Kerra Island]]
+|-
+!''' Quest Giver: '''
+| [[Allix]]
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Kerra Island]], [[Toxxulia Forest]]
+|-
+!''' Related NPCs: '''
+|  [[Allix]], [[a kobold shaman]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Erudehide Tunic}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.030%) @ lvl 6
+
+== Checklist == 
+{{CheckboxList}}
+* [[Ajrah Leaf]]
+** Locate and Kill [[a kobold shaman]] around -990.37, -425.06, -83.46
+** Return to Allix
+
+{{End}}
+== Walkthrough ==
+
+'''Allix is located at -148.92, 273.53, 3.19'''
+
+You say, 'Hail, Allix'
+
+: Allix says, 'Rrraaarrrr!  Hello. You come to study from [mighty warrior], yes?'
+
+You say, 'Are you the mighty warrior?'
+
+: Allix says, 'Errrr.  Well, Allix not yet mighty warrior, but soon, yes.  Allix just come of age and soon will enter training to become mighty pasdar.  Errr... Allix little nervous.  Allix missing [one thing] to become mighty pasdar.'
+
+You say, 'What is that one thing?'
+
+: Allix says, 'Well, Allix not have to have but is good.  Is leaf.  Ajrah leaf.  Powerful magic in the leaf.  Pasdar holds next to body, keeps body strong and mind clear.  Not have to have but pasdar without ajrah leaf is poor pasdar. Kobolds in Erudite forrrest carry leaf, use in kobold magic. But Allix not mighty enough to fight kobold shamans for leaf.'
+
+''' You have been assigned the task 'The Luck of Allix'. ''' <br>
+Allix is preparing to become the might pasdar he was meant to be, but he could use a confidence boost. He would be ever so pleased if you would bring him an Ajrah leaf.
+
+=== Quest Stage 1: ===
+* Step - Collect 1 Ajrah Leaf(s)
+* Task - Slay kobold shamans in the Toxxulia Forest until you acquire an Ajrah leaf from one of them. <br> 
+
+ You have slain a kobold shaman!
+ --You have looted an Ajrah Leaf from a kobold shaman's corpse.--
+
+''' Your task 'The Luck of Allix' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Deliver the Ajrah leaf to Allix
+* Task - Give the Ajrah leaf to Allix on Kerra Isle <br> 
+
+ You offered 1 Ajrah Leaf to Allix.
+
+''' Your task 'The Luck of Allix' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;"> You brought Allix the Ajrah leaf, aiding his journey towards becoming a mighty pasdar. </span>
+
+: Allix says, 'Ajrah!  Raaarrrr!  Ajrah leaf!  Allix destined to be mighty saiar now!  Allix unsure how to thank you.  Here, take this.  Is my most treasured tunic.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.030%) <br>
+You have been given: Erudehide Tunic <br>
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

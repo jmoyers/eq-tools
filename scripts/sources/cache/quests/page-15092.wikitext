@@ -1,0 +1,75 @@
+{{Temple Era}}
+[[File:npc_vurgo.png|Vurgo|thumb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vurgo]]
+|-
+! ''' Minimum Level: '''
+| 25+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]], [[The Estate of Unrest]]
+|-
+! ''' Related NPCs: '''
+| [[a shadowed man]], [[Mortuary Fungus]], [[A Goblin Headmaster]]
+|} 	
+
+== Reward ==
+
+<ul><li> {{:Harvester}}
+</li></ul>
+
+== Checklist =={{CheckboxList}}
+;First turn-in
+*[[Shadowed Scythe]] (drops off [[a shadowed man]])
+
+;Second Turn-in
+*[[A note]] (given by turning in the shadowed scythe to Vurgo)
+*[[Fungus Eye]] (drops from [[Mortuary Fungus]] behind the trick wall in the basement of [[The Estate of Unrest]])
+*[[Shadowed Knife]] (drops from [[A goblin headmaster]] in [[Ocean of Tears]] Loc -1221, -8581 PH is [[an island goblin headhunter]] at the hut near the stone column)
+*[[Fire Opal]] (Buyable in the Solusek Ro Temple for 550gp '''(NOT 55pp!)''' from Genni.) OR (drops from specters in Oasis of Marr, and seafury cyclops).
+{{End}}
+
+== Walkthrough ==
+
+
+
+You Say 'Hail Vurgo'
+
+:Vurgo says, 'Welcome! I am Vurgo, follower of Solusek Ro and holder of the [harvester] and the [Words of Darkness].'
+
+You Say 'What harvester?'
+
+:Vurgo says, 'I can forge you one, but you will need to bring me the correct [scythe components].'
+
+Hand Vurgo the [[Shadowed Scythe]]
+
+:Vurgo says, 'A Shadowed Scythe - well done. The only good Shadowed Man is a banished one. As the weapons of the Shadowed Man have a tendency to disappears, <b>I have given you a note</b> to remind me that you have indeed supplied me with a Scythe. Give me the note with the following items and I will forge you a Harvester: A Fungus Eye from a Mortuary Fungus in the Estate of Unrest, A Shadowed Knife from an Island Goblin Headmaster in the Ocean of Tears and fire opal. Give me these items, and I will forge for you a Harvester.'
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+
+
+Hand Vurgo the Note from above, the [[Fungus Eye]], the [[Shadowed Knife]], and [[Fire Opal]], all at the same time.
+
+:Vurgo gives you [[Harvester]]
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Necromancer Quests]]

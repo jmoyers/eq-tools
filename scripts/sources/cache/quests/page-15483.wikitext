@@ -1,0 +1,64 @@
+[[File:npc_eolorn_j`axx.png|frame|Eolorn J`Axx]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Eolorn J`Axx]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Giz Dinree]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  Small Coin, Minor Items, {{:Rat Pelt Cape}}
+</li></ul>
+
+== Walkthrough ==
+
+Eolorn J`Axx is a Rogue Guildmaster in the Rogue guild in Neriak Third Gate (630,-1308).
+
+You say, 'Hail, Eolorn J`Axx'
+
+: Eolorn J`Axx says 'It is good to see new blood in our halls. I am the leader of this house. If you are looking for guidance, seek out the masters within. I rarely appoint tasks to new recruits, unless I need to retrieve the [foreign take].'
+
+You say, 'What foreign take?'
+
+: Eolorn J`Axx says 'We have rogues operating in a few great cities. We send young rogues to retrieve the monthly take. We have been awaiting the Freeport delivery. The last youth I sent must have been killed along the way. I will need a new runner to [retrieve the chest].'
+
+You say, 'I will retrieve the chest.'
+
+: Eolorn J`Axx says 'You seem able enough. Here. Take this note to Freeport. Go through the Commonlands and be careful not to encounter any Freeport guards. There is a network of aqueducts accessible through hidden passages. Search the outside walls of Freeport. Take the note to Giz. She will meet you at night, on an island in the harbor. Good luck.'
+
+You receive a Sealed Letter (identifies as "Letter To Giz") which reads:
+
+ Giz Dinree. Freeport. My love, I have sent this young recruit to deliver the shipment to me. I believe he can be trusted. Please allow him to take the chest. E.J. xintldl ii
+
+Eolorn wants you to find Giz Dinree in East Freeport.  I found her at -367, -1095.  She spawns at night - during the day, an NPC named Bait Masterson occupies her space; he is KOS to evil races.
+
+Once you find Giz, she tells you that the loot is in a strongbox, and that the last courier was killed by sharks before he could deliver it.  If you swim off shore a little ('''mind the shark guarding it''') you will find a groundspawn named [[A Locked Chest]] (Loc: -406, -1150). Pick the chest up and bring it back to Eolorn for some coin and a minor item.
+
+<div class="facblock">
+* Your faction standing with [[Ebon Mask]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Wolves of the North]] got worse.
+* Your faction standing with [[Guardians of the Vale]] got worse.
+* Your faction standing with [[Carson McCabe]] got worse.
+{{exp}}
+</div>
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]

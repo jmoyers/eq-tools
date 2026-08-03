@@ -1,0 +1,154 @@
+{{Velious Era}}
+[[File:npc_ami.png|thumb|upright=1.5|Ami]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ami]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| WAR CLR PAL RNG SHD BRD ROG
+|-
+! ''' Related Zones: '''
+| [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Ami]], [[An Agitated Snowfang]], [[Nilham the Chef]], [[Snowfang fisher]], [[a holgresh conjurer]], [[a lost pirate]], [[a tigeraptor]]
+|}
+
+== Minimum Level ==
+
+You can get the shackle at lvl 5, you just can't use the clikky until 35.
+
+== Reward ==
+
+<ul><li>  {{:Ice Forged Shackles}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+<ul>
+<li> loot {{:Strong Wooden Branch}} from [[a holgresh conjurer]] or [[a holgresh elementalist]]
+<li>loot {{:Strong Raptor Gut}} from [[a tigeraptor]] or [[a tigesaurous]]
+<li>Give Branch and Gut to [[Snowfang fisher]] (to spawn enraged walrus)
+<li>cause [[enraged walrus]] to die (you do not have to get the killing blow)
+<li>''quickly'' talk to agitated snowfang by hailing and then typing " /say I want the magic thing. "to get {{:Chapter P}}
+<li>give [[Ami]] the {{:Chapter P}} to receive {{:Pirate Grammar Manual}}
+<li>give {{:Pirate Grammar Manual}} to [[Nilham the Chef|Chef Nilham]] (to receive {{:Ice Forged Shackles}})</ul>{{End}}
+
+== Complete Walkthrough ==
+
+Speak to [[Ami]] at the gnome pirate camp.
+
+You say, 'Hail, Ami'
+
+: Ami flips through a few pages of a small book, reading intently before answering you.  'Ye scurvy dog.  I'll strike yer colors 'fore ya can put me on a gibbet.  Take that, ya crimp!'  She flips through a few more pages then smiles at you.  'Arrrr!'
+
+You say, 'Ye scurvy dog!'
+
+: Ami grins.  'Hey, that's pretty good.  You did it without a book too.  Nice to meet you.  I'm the bosun here.'
+
+You say, 'What's a bosun?'
+
+: Ami says 'Yup.  I think it means I'm in charge of the flag cause that's what the Cap'n told me to take care of.  I'm the one who made our symbol, so I get to protect it.  I even got my own copy of the grammar manual so I can practice my pirate speech.'
+
+You say, 'What grammar manual?'
+
+: Ami nods and shows you the book for a moment.  'We don't have many of them and usually we share.  My book is missing a chapter, though.'
+
+You say, 'What chapter are you missing?'
+
+: Ami nods.  'A mate of mine borrowed the P Chapter to draw a map on but then he went and got himself lost.  I've memorized the rest of the book but that chapter.  Oh, well, I guess I can get by with what I have.  Walk the mizenmast and batten down the boom!'  She looks at you proudly.  'Good, eh?  I'm one of the best pirates we have.'
+
+'''Now go find [[a lost pirate]] on the northeast side of the island (hug the coast north from the dock).'''
+
+You say, 'Hail, a lost pirate'
+
+: a lost pirate twitches and growls a little.  'Arrr.  Grrr.  Ahoy, mate.  The name's Teep.'  He shivers and you notice a little drool at the corner of his mouth.  'Ya ain't lost out here too, are ya?'
+
+You say, 'I am not lost.'
+
+: a lost pirate grins and stares through you with a mad gleam in his eye.  'Hehehe.  Yah, yer lost aren't ya.  I can tell from the crazy sound o' yer voice.  Too bad we ain't got me map.  The map would lead us straight back ta camp.  Yah, that it would, boyo.'
+
+You say, 'What map?'
+
+: a lost pirate nods.  'After we got ourselves stuck on this island I got it in me head to draw up a map so none o' the crew would ever get lost.  So I set myself to explorin' and drawin'.  Now the map is gone.  Too bad, too, cause it was a map o' the whole place, not just the first island, but a bunch o' parts.'  Mention of the map seems to have sobered him up a bit.
+
+''[This is for a related quest to recover The Lost Map.]''
+
+You say, 'Ami wants Chapter P.'
+
+: a lost pirate stares at the water.  'I'm rememberin' that.  Yah.  Ami's book.  Thats what I drew, erm, the fifth part o'n.  It got lost in the ocean too.'  He looks at you.  'Yer wantin' ta go out and find all o' these pieces?'
+
+'''Not sure what the next trigger phrase is, but go find [[Snowfang fisher]] on an ice floe south of the Tower of Frozen Shadow.'''
+
+You say, 'Hail, Snowfang fisher'
+
+: Snowfang fisher says 'Furless one wants something with snowfang?  You here to help with curse?'
+
+You say, 'What curse?'
+
+: Snowfang fisher growls as the other fisher-gnolls bark at the mention of the curse.  'Some days ago we found flat, strong, stretchy thing.  Many scribbles, many marks on it.  Ever since fish not come to us..  Rest of the snowfang think this is bad magic.  To not believe this is foolish.  But I not able to just get rid of bad magic.'
+
+You say, 'What magic thing?'
+
+: Snowfang fisher says 'To cast away is not something we can do.  Snowfang believe bad magic thrown away just make worse magic.  Only way to get rid of badness is for friend to bring gift offering.  Offering that means much to snowfang.  If that is done magic is broken by the giving.'
+
+You say, 'What offering?'
+
+: Snowfang fisher says 'Offering must be true and strong.  To trade for anything else would be an insult to the spirits.  If you want you can bring me true strong wooden pole and fine string for new pole.  That would be true strong gift and maybe enough to break bad evil on this thing we find.'
+
+'''You must go to the Wakening Land to get these items. [[Strong Wooden Branch]] drops rarely from holgreshes. [[Strong Raptor Gut]] drops rarely from tigeraptors and tigesaurous.'''
+
+'''Give these two items to the fisher.'''
+
+''Note: You can't MQ the 2 WL drops. They need to be turned in at the same time.''
+
+: Snowfang fisher sniffs the offering and seems to relax.  'Very good, very worthy.   You take this magic thing, with you maybe this evil is broken.'  Before he can hand you the parchment a roar explodes from the ocean and a gigantic dark shadow slams into the ice floe.
+
+'''An [[enraged walrus]] spawns and immediately attacks you. The gnoll fishermen will join in the battle against the walrus. You do not have to get the killshot.'''
+
+'''After the walrus dies, [[an agitated snowfang]] spawns in its place and will only stay for approx 40 seconds.'''
+
+WARNING: I failed this quest twice in a row now because my auto-attack on the enraged walrus did not stop when it died and I targeted the agitated snowfang (probably too quickly, before the corpse had completely faded from view). The snowfang began attacking me as a result, rather than allowing me to complete the quest.
+
+You say, 'Hail, an agitated snowfang'
+
+: an agitated snowfang shivers and growls to itself.  'Much thanks must I give ______.  Furless one still wants magic thing, after all the troubles?  Say quickly.  Much pain from attack.  Must go, shaman help.'
+
+:You say, ''''I want the magic thing'''.'
+
+'''It gives you "[[Chapter P]]" and immediately despawns.'''
+
+'''Go back to Ami and give her Chapter P.'''
+
+: Ami bounces excitedly.  'Oh!  I've been needing this!'  She reads over the pages intently.  'Uh.  Pirate - A sea robber.'  She scratches her head.  'I totally forgot we were supposed to be robbing people. Put down yer weapons and hand over yer platinum and gold ya port side bilge suckers!  Heh.  This is great.  Thank you, ______' She grins and goes back to reading.
+
+'''She gives you a "[[Pirate Grammar Manual]]"'''
+
+'''Go see Nilham the Chef in a nearby igloo.'''
+
+You say, 'Hail, Nilham the Chef'
+
+: Nilham the Chef says 'Ahoy, ______.  Welcome ta the brig.  I didn't get ta the 'B' section of my piratisms manual so I'm not sure what a brig is but I'm guessin' it means 'really small place without enough food or water.'  So, ya here ta stay or just visitin'?'
+
+'''Give Nilham the manual.'''
+
+: Nilham the Chef looks at you with a gleam in his eye.  'Wow.  Ya actually got one.  Thanks, mate!  Here, you can have my cuffs.  I'm tired of 'em and they're startin' ta chafe.'  He flips through the book with a grin.  'B - Bilgewater.  Barnacle brained blunderhead.  Blast yer ballast...' Nilham happily reads through the book.
+
+'''You receive the shackles.''' 
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]
+[[Category:Warrior Quests]]
+[[Category:Cleric Quests]] 
+[[Category:Paladin Quests]] 
+[[Category:Ranger Quests]] 
+[[Category:Shadow Knight Quests]] 
+[[Category:Bard Quests]] 
+[[Category:Rogue Quests]]

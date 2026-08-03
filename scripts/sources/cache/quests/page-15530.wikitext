@@ -1,0 +1,69 @@
+[[File:npc_daedet_losaren.png|frame|Daedet Losaren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Daedet Losaren]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| [[Kerra Isle beetle]], [[a fire beetle]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Holy Armor|Spell: Holy Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+''Note: This quest requires indifferent or better faction.''
+
+Daedet Losaren in the Temple of Thunder can provide the Holy Armor spell for faithful followers of Karana.
+
+<br>
+
+You say, 'Hail, Daedet Losaren'
+
+: Daedet Losaren says, 'Welcome Elrood. I am Deadet Losaren, faithful priest of Karana. You appear to be in search of [guidance] or perhaps you are merely a [visitor to the temple of thunder] wishing the blessing of [Holy Armor].'
+
+You say, 'I wish the blessing of Holy Armor.'
+
+: Daedet Losaren says, 'Holy Armor? I offer good standing members of the Knights of Thunder the blessing of Holy Armor. I must charge ten gold for the service. [Components] are expensive these days.'
+
+You say, 'What components?'
+
+: Daedet Losaren says, 'Components are required for my daily tribute to the Rainkeeper. It is he whose power flows from my body. I require a faithful acolyte to [gather the required items].'
+
+You say, 'I will gather the required items.'
+
+: Daedet Losaren says, 'Very noble of you. Take this chest. I will require it to be filled with flame beetle eyes. Four normal beetles and four [Kerra Isle Beetles]. Combine these items within the chest and return it to me and I shall reward you with the power of Holy Armor.'
+
+You say, 'What are Kerra Isle Beetles?'
+
+: Daedet Losaren says, 'Kerra Isle Beetles are within the territory of the Kerra Catpeople, but a closer and perhaps safer location would be on the island between Antonica and Odus. The outcast Catpeople of that island are far less dangerous.'
+
+He provides you with an 8-slot [[Beetle Eye Chest]]. The trick to it is to have ONE [[Kerra Isle Beetle eye]] in each of the 4 slots left after the [[Fire Beetle Eye]]s go in. Combine the box, and hand it in to Daedet.
+
+: Daedet Losaren says, 'You have done well. Karana is pleased. I cannot say the same for the cat people. I reward you this. It is not much, but may be of use while you serve our wills.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{exp}}
+
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

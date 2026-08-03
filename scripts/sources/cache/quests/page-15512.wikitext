@@ -1,0 +1,69 @@
+{{Classic Era}}
+[[File:npc_tiam_khonsir.png|thumb|Tiam Khonsir]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Tiam Khonsir]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[Breya Nostulia]], [[Krode the Diviner]], [[a greater shaman]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Midnight Sea Mail Leggings}}
+</li></ul>
+
+== Walkthrough ==
+[[File:npc_breya_nostulia.png|frame|Breya Nostulia]]
+''At the end of the [[Kobold Molars (Good)]] quest, you were told of a [quest of greater importance].''
+
+You say, 'What quest of greater importance?'
+
+: Tiam Khonsir says, 'Very well then, you may be able to help us. Go to Breya and tell her I sent you. She will brief you.'
+
+'''Go find [[Breya Nostulia]] on the second floor of the Temple of Deepwater Knights.'''
+
+You say, 'Hail, Breya Nostulia'
+
+: Breya Nostulia stares off into the distance in meditation. Her eyes are a light blue, much like the tropical waters of the ocean between Odus and the mainland. She ignores your greeting.
+
+You say, 'Tiam sent me.'
+
+: Breya Nostulia says, 'Seems you've slain quite a few kobolds, then. This is good. You will need to kill many more to fulfill your quest. While the kobolds are fairly primitive, they are an ancient race and have learned to wield the powers of the spirits. This ability is the only thing that has kept us from eradicating them completely. We need you to find instruments of their craft.'
+
+You say, 'What instruments?'
+
+: Breya Nostulia say,s 'There are two items we seek. The shamans carry medicine pouches in which they hold the materials of their craft. Only the more adept shamans are allowed to carry the pouches; seek them out. The other item we seek is of greater importance.'
+
+You say, 'What other item?'
+
+: Breya Nostulia says, 'The other is a magical bowl from which a highly skilled shaman may divine the future or diagnose illness. Only the wisest of the kobold shamans have the intelligence to use the bowls, or perhaps an outcast with powers that the other, larger kobolds fear. Bring me a kobold medicine pouch and the diviner's bowl and you shall be rewarded with the armor of our trusted knights and priests.'
+
+'''The [[Kobold Shaman's Pouch]] can drop from [[a greater shaman]]. The [[Diviner's Bowl]] drops from [[Krode the Diviner]]. Hand in the items.'''
+
+: Breya Nostulia says, 'I'll need both the kobold medicine pouch and the diviner's bowl before I can reward you, ______. Good luck.'
+
+: Breya Nostulia says, 'Well done, ____.  I had a feeling you would return victorious.  Here is your reward, the Leggings of Midnight Sea.  Wear them with pride for the Ocean Lord.  If you are interested in aiding us further, you may want to ask Gans about his brother.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]

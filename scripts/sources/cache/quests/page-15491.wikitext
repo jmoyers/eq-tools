@@ -1,0 +1,93 @@
+{{Classic Era}}
+{{Unsolved}}
+[[File:npc_lumi_stergnon.png|frame|Lumi Stergnon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Lumi Stergnon]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]], [[High Keep]], [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Bank Clerk Jaylin]], [[Lady McCabe]], [[Tallus Holton]]
+|}
+
+== Reward ==
+
+<ul><li>  Unsolved/Broken Quest
+</li></ul>
+
+== Walkthrough ==
+
+Lumi Stergnon is located at -640, -90 in the Temple of Divine Light.
+
+: Lumi Stergnon says 'You have done well, my child. Let me add the touch of harmony to finish the job.. Here, then. Take these supplies. I am sure you'll need them. Soon you may be able to assist us in [important missions].' 
+
+You say, 'What important missions?' 
+
+: Lumi Stergnon says 'We have need of skilled priests. We have learned that a High Guard battle staff has been stolen. We require a priest to [track down the staff].' 
+
+'''Lumi Stergnon regards you indifferently -- what would you like your tombstone to say?'''
+
+You say, 'I will track down the staff' 
+
+: Lumi Stergnon says, 'You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.'
+
+'''At an unknown, presumably higher faction level:'''
+
+You say, 'I will track down the staff' 
+
+: Lumi Stergnon says 'In the mountain keep called High Hold, we have heard there is a person hiring mercenaries for an attempt to obtain a High Guard battle staff. We are missing one of our staffs and believe this person has it. Go to Highpass Hold and find this person. Return the High Guard battle staff to me!' 
+
+[[Tallus Holton]] is located at 1530, -655 in East Karana.
+
+Tallus Holton says 'Stand and deliver, fool!!' 
+
+You have slain Tallus Holton! 
+
+<div class="facblock">
+* Your faction standing with [[Karana Bandits]] got worse.
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Highpass Guards]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+</div> 
+
+From Tallus, loot [[H.K. 401]] and a [[Staff Segment]] (Lore: Staff Segment A). Then see [[Bank Clerk Jaylin]] at -40, -340 in High Keep.
+
+You say, 'Hail, Bank Clerk Jaylin' 
+
+: Bank Clerk Jaylin says 'Greetings! I am Jaylin Monel, your Highkeep bank clerk. If you are here to close an account, please return your strongbox key and I will return any items you may have stored.'
+
+Hand her H.K. 401.
+
+: Bank Clerk Jaylin says 'I am sorry to see you check out. Here is all you had in your box. We hope to serve you again. Have a nice day!! Next!' 
+
+{{YouGainExperience}}
+You receive 7 gold from Assistant Kiolna. 
+
+Receive Staff Segment.
+
+[[Lady McCabe]] is located at 25, -85 in High Keep.
+
+You say, 'Hail, Lady McCabe' 
+
+: Lady McCabe says 'Pleasure to meet you, _____. What brings you to High Hold? You do not appear to be the gambling type. Then again, you are speaking with me. That is quite a gamble in itself. I just love high rollers. Really, I do!' 
+
+You say, 'Tell me about the staff segments' 
+
+: Lady McCabe says 'I have no idea what you are talking about. Battle staff.. Hmmm.. No, it does not ring a bell.'
+
+You may be able to combine them in a container and return the result to Lumi to get a High Guard Battlestaff. (Eru/Pal/Clr only, 5/33, +10 cha?) (This quest may be bugged at this point.)
+
+[[Category:Quests]]
+[[Category:Erudin]]

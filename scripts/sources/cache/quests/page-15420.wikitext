@@ -1,0 +1,67 @@
+{{Classic Era}}
+[[File:Lysbith McNaff.jpg|alt=Lysbith McNaff, Warrior Guildmaster of Halas|thumb|Lysbith McNaff]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Lysbith McNaff]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]], [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a gnoll]], [[a gnoll guardsman]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Iron Ration}}
+</li><li>  {{:Ration}}
+</li><li>  {{:Torch}}
+</li><li>  {{:Water Flask}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Note: Lysbith and the other warriors do NOT like wolf form. They will still be KOS.'''
+
+Lysbith McNaff is one of the warrior guildmasters found in the Pit of Doom within Halas (/loc 566, -412).<blockquote>You say, 'Hail, Lysbith McNaff' 
+
+Lysbith McNaff says, 'Hail! Ye've come to [serve Halas], have ye not? We're the Wolves o' the North and it is our task to defend our city from harm.' 
+
+You say, 'I serve Halas.'
+
+'''''Response if you're a non-warrior class... (triggers for [[The Seax]] and [[Ice Goblin Necklaces|Ice Goblin Necklace]] quests).'''''
+
+Lysbith McNaff says, 'Halas is surrounded by barren arctic tundra. We've many foes. Among them are the [orc troopers], [ice goblins] and the ever-present polar bears.'
+
+'''''Response if you're a warrior... (but you can still use the trigger phrase to get the gnoll bounty dialogue)'''''
+
+Lysbith McNaff says, 'The Wolves o' the North show ye no ill will, but there's much ye must do to earn our trust.  Perhaps ye should inquire o' the [gnoll bounty].'
+
+You say, 'What gnoll bounty?' 
+
+Lysbith McNaff says 'I've placed a bounty on the gnolls o' Blackburrow.  Their whelps have invaded our land and we must carry the fight into their dens.  Join the fight and return three gnoll fangs as proof of yer victory in Blackburrow.  Do so, and earn the respect o' the Wolves o' the North.'</blockquote>[[Gnoll Fang]]s are a randomly dropped from any gnoll in Everfrost Peaks or Black burrow.  You can give her stacks, in multiples of 3 (i.e. 3, 6, 9, etc.), at a time.
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] has been adjusted by 15.
+* Your faction standing with [[Shamen of Justice]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Halas]] has been adjusted by 5.
+* Your faction standing with [[Rogues of the White Rose]] has been adjusted by 5.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+You'll receive 2-5 gold and a minor item as well.
+
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:All Classes Quests]]

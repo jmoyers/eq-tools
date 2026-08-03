@@ -1,0 +1,82 @@
+{{Kunark Era}}
+[[File:npc_despondo.png|frame|Despondo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Despondo]]
+|-
+! ''' Minimum Level: '''
+| 37+
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[City of Mist]], [[Trakanon's Teeth]], [[Karnor's Castle]]
+|-
+! ''' Related NPCs: '''
+| Hampton, Ryla, Mardon, [[a human skeleton]]
+|}
+
+<b>NOTE:</b> Spell scroll is NO DROP.
+
+== Reward ==
+
+* Scroll of Brain Bite ([[Concussion|Spell: Concussion]])
+
+{{Experience}}
+
+== Walkthrough ==
+
+Despondo resides in Firiona Vie.
+
+You say, 'Hail, Despondo'
+
+: Despondo looks a bit troubled and says, 'Welcome, welcome adventurer, I am the wizard tutor Despondo although few need tutorage around here. It would seem that this is no place for a student of any sorts. The lands of Kunark are quite deadly.'
+
+You say, 'Whats wrong?'
+
+: Despondo says, 'I was bound to this post by General Veredeth. I came to find the lost souls of my friends, but am needed here. I must find a fellow wizard to [rescue their souls]'
+
+You say, 'I will rescue their souls.'
+
+: Despondo says, 'You will need the [three bottles of entrapment]. If you can find their remains in Kunark they you will give the bottles to the body and their soul shall enter. Return all three bottles and I shall give you the wizard spell [Brain Bite]'
+
+You say, 'Where are the three bottles of entrapment?'
+
+: Despondo says, 'I will need three gems to prepare the bottles. I am afraid I left my currency within the Freeport Vault. You will have to get the gems I need: a [[Peridot]], an [[Onyx]] and a [[Star Rose Quartz]]. Then I will give you the bottles.'
+
+You say, 'What is Brain Bite?'
+
+: Despondo says, 'Brain Bite is a concussion spell created by my former friends whose souls are now lost to Kunark. The blow to the inner brain of an enraged foe may just cause the loss of memory and lower their rage. If you want a copy you have to [rescue their souls].'
+
+'''Give him a [[Peridot]], an [[Onyx]] and a [[Star Rose Quartz]] one at a time. In exchange, you will receive three bottles of entrapment. They each look like a royal jelly jar and must be identified to figure out which is which. They identify as Hampton (Onyx), Ryla (Star Rose Quartz), and Mardon (Peridot).'''
+
+'''Each needs to be given to a particular version of [[a human skeleton]] to receive a [[Bottle of Swirling Smoke]].'''
+{{CheckboxList}}
+* Hampton, a human skeleton, is located along the zone wall of [[Trakanon's Teeth]] location {{Loc|Trakanon's Teeth|270, -3800}}. Hand him the correct bottle to receive a [[Bottle of Swirling Smoke]], which identifies as Hampton's Soul. He is friendly and you can do this hand-in by yourself.
+
+* Ryla, a human skeleton, is located in a jail cell in [[Karnor's Castle]] just south of the "hand" room. Loc is {{Loc|Karnor's Castle|100,-590, 38}}. Give the correct bottle to the skeleton to receive a [[Bottle of Swirling Smoke]], which identifies as Ryla's Soul. He is KoS and you will need an enchanter or necromancer to charm him before you can do the turn-in.
+:: This version is on VS faction, not necessarily KoS.
+:: From zone-in, run all the way back and go left (into room 5). Take the stairs in room 5 up top and head north to the castle edge (room 7). Turn right and run all the way back to the wall, turn right, past room 10 (hands), then left and right again at the corner. Half way down this hallway to your right are the jail cells. He is in the second cell on the right. 
+
+* Mardon, a human skeleton, is located in the [[City of Mist]] at location {{Loc|City of Mist|136, -641, 77}}. Give the correct bottle to the skeleton to receive a [[Bottle of Swirling Smoke]], which identifies as Mardon's Soul. He is KoS and you will need an enchanter or necromancer to charm him before you can do the turn-in.
+{{End}}
+'''Return to Despondo and hand him the three bottles to receive the spell Brain Bite.'''
+
+: Despondo embraces the bottles as if they were babes. 'Rejoice, my friends!! Your souls are safe. _____, you are a good wizard. You deserve to know the secret of concussion.'
+
+<div class='facblock'>
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates of Gunthak]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Wizard Quests]]

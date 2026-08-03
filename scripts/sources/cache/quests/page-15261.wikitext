@@ -1,0 +1,101 @@
+{{Classic Era}}[[File:npc_shazda_asad.png|thumb|Shazda Asad]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Shazda Asad]]
+|-
+! ''' Minimum Level: '''
+| 1+ (Rec. 10)
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Sentinel Creot]]
+|}
+
+== Reward ==
+
+<ul><li>[[Sejah Ghulam Bracer]]
+</li></ul>
+
+Your faction standing with Kerra Isle has been adjusted by 20.
+
+You gain experience! (0.010%) @level 10
+
+== Walkthrough ==
+
+'''Indifferent faction is sufficient to receive the reward for this quest. You may use charm, or have an enchanter charm Shazda for you (however, the faction hits will be omitted in that case).''' 
+'''An Iksar monk at lvl 40 can do this quest by sneaking behind the quest giver and handing them the heads to get that juicy monk bracer very easily.  The kerrans do not agro if you over level them.'''
+
+''After you complete the [[First Test of Kejaar]], you will then be told to to kill their most hated foe, Sentinel Creot (approx level 10, possibly higher), a roaming guard in Tox Forest.  If you kill him and return his head you will become a full Sejah warrior, and receive the reward of a Sejah Ghulam Bracer.'' 
+
+''Sentinel Creot wanders but can located along the shore of Toxxulia Forest between the Wizard Hut and the Western Dock. He is a level 10 paladin on Erudin's guards faction.  (Warning:  Pretty heavy Eurdin faction hit.)''
+
+'''Attack and lay [[Sentinel Creot]] to waste.'''
+
+=== Quest Stage 1: ===
+* Step - Claim the head of Sentinel Creot in Toxxulia Forest
+* Text - Claim the head of Sentinel Creot in Toxxulia Forest
+
+Sentinel Creot spawns just outside the structure in Northwest Toxxulia Forest, then roams South towards the dock. It is a level 10 Paladin
+
+: Sentinel Creot says, 'Prepare to meet the vengeance of Erud!!'
+
+ You have slain Sentinel Creot!
+ --You have looted a Sentinel Creot's Head from Sentinel Creot's corpse.--
+
+<div class='facblock'>
+* Your faction standing with [[High Guard of Erudin]] has been adjusted by -300.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by -45.
+* Your faction standing with [[Heretics]] has been adjusted by 45.
+* Your faction standing with [[Merchants of Erudin]]  has been adjusted by -225.
+* Your faction standing with [[Kerra of Barren Coast]] ([[Kerra Isle]]) has been adjusted by 45.
+</div>
+
+''' Your task 'Second Test of Kejaar' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Present Sentinel Creot's head to Shazda Asad
+* Text - Give Creot's head to Shazda Asad
+
+ You offered 1 Sentinel Creot's Head to Shazda Asad.
+
+''' Your task 'Second Test of Kejaar' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">
+Eliminating Sentinel Creot has completed your trials. You are now honored as a member of the Kerran Sejah.
+</span>
+
+'''Shazda Asad is located in Kerra Isle at 396, -255, -2. '''
+
+: Shazda Asad says, 'You have proven your devotion to our cause and defeated one of the greatest threats to our people. I welcome you into the Kerran Sejah. Wear this bracer as a symbol of your station in the Kerran tribes.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Sejah Ghulam Bracer <br>
+
+ You complete the trade with Shazda Asad.
+
+== Legends Changes ==
+In Legends, this quest was retooled to be part of the new Kerran experience.  Sentinel Creot's level was adjusted from 30 to 10.  At the same time, the faction hits were made significantly higher, possibly related to Legend's general faster faction growth.
+
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

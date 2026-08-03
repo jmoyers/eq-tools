@@ -1,0 +1,64 @@
+{{Classic Era}}
+[[File:npc_yegek_b`larin.png|frame|Yegek B`Larin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Yegek B`Larin]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All (Evil Races)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Teir`Dal Coward]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Sullied Two Handed Sword}}
+</li></ul>
+
+== Walkthrough ==
+
+''When [[Yegek's Test, Part 1|Part 1]] has been completed, Yegek may ask if you are ready for the [second test]:''
+
+: Yegek B`Larin says, 'Excellent, you have passed the first test. Take this as a small reward for your fortitude. Do you feel you are ready for the [second test]?'
+
+You say, 'I am ready for the second test'
+
+: Yegek B`Larin says, 'You think you are ready for the final test? To prove you worth, you will fight a cowardly Teir'Dal in hand to hand combat. You must first relinquish your basic short sword to me in order for us to begin the duel. I hope you have been honing your skills in battle, you'll need it! Once you are ready, hand me the blade and we'll begin!'
+
+'''Give Yegek your starting No Drop shortsword (you DID keep it, right?), and a Teir`Dal Coward appears in the arena. You have to kill the Coward and turn his [[Teir`Dal Head]] into Yegek.'''
+
+: Yegek B`Larin says, 'Hah!! Well done, very entertaining duel! Here... you have earned the right to wear this blade. Let anyone whose eyes fall on it to shudder in fear of the Indigo Brotherhood!!'
+
+<div class='facblock'>
+* Your faction standing with [[Indigo Brotherhood]] got better.
+* Your faction standing with [[Emerald Warriors]] got worse.
+* Your faction standing with [[Steel Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Notes ==
+
+<ul><li>Yegek says you must do it without a blade, but you can use a weapon. He is hard to kill, but can be done by levels 4 and above. The easier way is to enlist the help of a high level player and let him kill the Coward and then you can loot him and get his head.</li>
+<li>If you finished the first part of the quest and hand it in, make a new level 1 warrior say, 'I'm ready for the second test', then hand in your sword, the Teir`Dal Coward will spawn and not attack you. You can then relog your original character to kill the Coward and complete the quest.</li>
+<li>XP and reward isn't worth doing this quest repeatedly.</li></ul>
+
+== Related Quests ==
+<ul><li>[[Yegek's Test, Part 1]]</li></ul>
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:All Classes Quests]]

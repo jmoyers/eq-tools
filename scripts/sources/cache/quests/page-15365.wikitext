@@ -1,0 +1,69 @@
+[[File:npc_captain_bosec.png|frame|Captain Bosec]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[High Keep]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Bosec]]
+|-
+! ''' Minimum Level: '''
+| 9
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[A_Pickclaw_Visionary| A Pickclaw Visionary]], [[A_Pickclaw_Raider|A Pickclaw Raider]], [[A_pickclaw_warrior|A pickclaw warrior]], [[A_Pickclaw_Cabalist|A Pickclaw Cabalist]], [[A_Pickclaw_Lookout|A Pickclaw Lookout]], [[A_Pickclaw_seer|A Pickclaw seer]]
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]]
+</li><li> Experience
+</li></ul>
+
+== Walkthrough ==
+
+''Spawns at 33.27, -304.73, -10.25 and paths around the bank area.''
+
+Captain Bosec will pay between 1 and 5 gold for each [[Left Goblin Ear]] you turn over to him.
+
+He generally stands close to the entrance of the cellars, near the bank. 
+
+<span style="font-weight:bold;color:#007345;">You say, 'Hail, Captain Bosec'</span>
+
+: Captain Bosec says, 'I'm Captain Bosec, and I am the officer in charge down here. It's my job to patrol the prison and try to keep any [goblins] from getting into Highpass.'
+
+You say, 'what goblins?'
+
+: Captain Bosec says, 'Help us exterminate these vile creatures. They call themselves the [Pickclaw] Clan.. I call them annoying. I will gladly pay big money for the left ear of every goblin slain.'
+
+You say, 'who are the Pickclaw Clan?'
+
+: Captain Bosec says, 'A couple of months ago, Carson decided to add some more floors beneath the keep. During the construction, we came across these tunnels.. and these goblins. Work has been temporarily halted until we can completely clear out this Pickclaw infestation.'
+
+'''Turn in a [[Left Goblin Ear]] (you may turn in up to four at once). '''
+
+: Captain Bosec says, 'Well done! We could really use the extra help around here.'
+
+<div class='facblock'>
+* Your faction with [[Highpass Guards]] got better.
+* Your faction with [[Carson McCabe]] got better.
+* Your faction with [[Merchants of Highpass]] got better.
+* Your faction with [[Corrupt Qeynos Guards]] got better.
+* Your faction with [[The Freeport Militia]] got better.
+</div>
+{{exp}}
+
+This is a great way to raise faction with the corrupt Freeport and Qeynos Guards/Militia.
+
+Note: As an Ogre, it took 240 ears to be dubious to [[Bank Clerk Jaylin]]
+
+''Need all dialogues, current faction hits, /loc of quest mobs, list of rewards.''
+
+[[Category:Quests]]
+[[Category:High Keep]]
+[[Category: Repeatable Turn-in Quests]]

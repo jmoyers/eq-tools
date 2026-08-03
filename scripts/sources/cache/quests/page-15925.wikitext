@@ -1,0 +1,53 @@
+{{Classic Era}}
+[[File:Npc_wuggan_azusphere.png|200px|frame|Wuggan Azusphere]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Registration Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Gold Felt Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Magician who doesn't follow Bertoxxulous, you will have a Registration Letter in your inventory. The note reads as follows:
+
+: Welcome new student of the Eldritch Collective. Take this Registration Letter to master [[Wuggan Azusphere]] at the Library Mechanimagica. He will be your new instructor. Study hard, and you shall obtain your goals.
+
+Upon handing the letter to [[Wuggan Azusphere]]:
+
+: [[Wuggan Azusphere]] says, 'Welcome to Library Mechanimagica.  I am Master Magician Wuggan Azusphere. and I will help to teach you the ways of summoning.  Here is our guild tunic. make us proud.'
+
+<div class='facblock'>
+
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dirty Gold Felt Robe*]]. Good luck, Mage!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Magician Quests]]

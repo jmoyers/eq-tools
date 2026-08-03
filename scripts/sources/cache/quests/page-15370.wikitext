@@ -1,0 +1,84 @@
+[[File:npc_astaed_wemor.png|frame|Astaed Wemor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Astaed Wemor]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Milea Clothspinner]], [[Nerissa Clothspinner]]
+|}
+
+== Reward ==
+
+<ul><li>  Unknown
+</li></ul>
+
+== Note ==
+
+2021-09-10 '' Per '' Nilbog  '' This quest " is currently written to require amiable or better".'' '' As in amiable with Milea which requires freeport faction (knights of truth / steel warriors) It doesnt matter if your faction in Qeynos is almost maxxed.'' This is slated to be updated.
+
+== Walkthrough ==
+
+Astaed Wemor in the Temple of Life asks you to go check on Nerissa Clothspinner who seems down for some reason. You will occasionally see her running around outside the gates.  Talk to her and hear her tale of woe.
+
+She will tell you that she misses her warrior sister, and will give you a letter to deliver to her sister somewhere in the Karanas.  
+
+You say, 'Hail, Nerissa Clothspinner'
+
+: Nerissa Clothspinner says, 'Good day to you! Be careful in the city of Qeynos. [Rumors] of corruption may be true. Believe me, I wish my [sister] were here to help.'
+
+You say, 'sister'
+
+: Nerissa Clothspinner says, 'My sister is in the Karanas. She is a warrior. Her name is [[Milea_Clothspinner | Milea]]. I really need her. Would you please deliver a note to her? You look able-bodied enough for the job.'
+
+You say, 'i will deliver a note to her'
+
+: Nerissa Clothspinner says, 'Here you go then, brave adventurer. Godspeed to you. '
+
+Receive A Tattered Note
+
+
+The sister is located in East Karana in a cave.  Deliver the note to her, and she will thank you and give you a [[Monogrammed Cloth]] veil to take back to her sister.
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div> 
+
+She will then be rewarded for talking to you by being attacked by a guard named Guard Elias and killed. Bet that makes you feel good. If you kill the guard and the sister lives, you may get an additional reward. When you give the original sister the veil she will send you with a note to the Temple of Life.
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle Of Unseen Hands|Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div> 
+
+If you give her the veil, you get a decent item as well. Delivering the note gets you more experience and faction.
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+</div>
+
+''Need all dialogues, /loc of quest mobs, all items used, list of quest rewards, current faction hits.''
+
+[[Category:Quests]]
+[[Category:North Qeynos]]

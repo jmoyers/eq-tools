@@ -1,0 +1,68 @@
+{{Classic Era}}[[File:npc_baobob_miller.png|frame|Baobob Miller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Hills]]
+|-
+! ''' Quest Giver: '''
+| [[Baobob Miller]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a black wolf]], [[a shadow wolf]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Wolf-hide Belt}}
+</li><li> {{:Wolf-hide Boots}}
+</li><li> {{:Wolf-hide Cape}}
+</li></ul>
+
+== Walkthrough ==
+
+''Baobob Miller will make you Wolfhide Armor if you bring him pelts and pay him some gold.''
+
+'''You say, 'Hail, Baobob Miller'''
+
+: Baobob Miller says, "Hello there. My name is Baobob Miller. My '''[sister]''' and I are the best tanners in all of Norrath. Wolves are my specialty. A Nice Wolf Skin '''[garment]''' would be the perfect accessory to your stylish ensemble.
+
+'''You say, "Who is your sister?'''
+
+: Baobob Miller says, "My little sister Chanda is the second best tanner around! Seriously though, she is a very skilled artisan and people travel far and wide to acquire one of her fine bear skin cloaks. I am proud of her. She doesn't really like to meet new people, but if you tell her '''[Baobob sent you]''', I am sure she can help you get into some nice bear skin boots.
+
+'''You say, 'What garment?''''
+
+: Baobob Miller says, "I make the finest wolf skin '''[boots]''', '''[cloaks]''', and '''[belts]''' in all of Antonica.
+
+'''You say, 'What boots?''''
+
+: Baobob Miller says, 'If you can bring me a '''[[Medium Quality Wolf Skin|wolf skin of medium quality]]''' and pay me a fee of say.. hmmmm.. for you.. 15 gold pieces, I think I can make you a pair of boots that will make all of Qeynos envy you.'
+
+'''You say, 'What cloaks?'''
+
+: Baobob Miller says, 'Yes! One of my wolf skin cloaks would go very well with your.. eeerr.. style.. Ahem! Let's see.. I think i can get you into one for 21 gold pieces, but, you have to provide the skin, and I make my cloaks with only the '''[[High Quality Wolf Skin|highest quality of wolf skins]]'''.'
+
+'''You say, 'What belts?'''
+
+: Baobob Miller says, 'Belts are far more forgiving than cloaks or boots. A '''[[Low Quality Wolf Skin|lesser quality pelt]]''' and 5 gold pieces would get you a nice wolf-hide belt.'
+
+Buying one of the items also gives you the following faction adjustments:  
+
+<div class="facblock">
+* Your faction with [[Karana Residents]] has been adjusted by 5.
+* Your faction with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction with [[Priests of Life]] has been adjusted by 5.
+* Your faction with [[Knights of Thunder]] has been adjusted by 5.
+</div>
+
+[[Category:Quests]]
+[[Category:Qeynos Hills]]
+[[Category:All Classes Quests]]

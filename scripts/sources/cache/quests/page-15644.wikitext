@@ -1,0 +1,175 @@
+[[File:npc_sentry_xyrin.png|right|400px|Sentry Xyrin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ocean of Tears]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Xyrin]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]], [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Sentry Andlin]], [[Sentry Boris]], [[Sentry Gallius]], [[Sentry Janeal]], [[Sentry Meighan]], [[Sentry Theo]], [[Sentry Warren]], [[Serna Tasknon]], [[Styria Fearnon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Deepwater Harpoon}}
+</li></ul>
+
+== Walkthrough ==
+
+Somewhere in the Ocean of Tears there is an undead island (rough loc of -604.96, -7343.81).  The island is populated by a few greater skeletons, gargoyles who kill the skeletons, and four specters at the top.  This is where the female paladin named Sentry Xyrin is triggered to spawn by speaking to [[Styria Fearnon]].  Xyrin mentions that she was part of a [boat disaster] and that she is from the Temple of Marr in [[Freeport]].  She will ask you to get her a [[Potion of Marr]] from Serna Tasknon in the Temple of Marr in Freeport.  With the potion she will be able to regain her strength and take on the undead.  (You can also initiate this quest by first speaking to someone in the Temple of Marr, getting the potion, and from that point on learning of Sentry Xyrin's location and going to look for her, which is actually the way most people would discover the quest).   You don't have to get the bottle from the Temple of Marr.
+
+Head to the Sister's Island in the Ocean of Tears and find the small hut to the right with Styria Fearnon and say "Where is Sentry Xyrin?".  Styria Fearnon will realize that Sentry Xyrin must have shipwrecked on a nearby island and ask you to find her.  This will trigger Sentry Xyrin to spawn on the East coast of the Undead Island on top of a small ridge.  Be aware that she will fight Gargoyles and Skeletons during her stay.  She is slightly higher level than the Gargoyles but two at the same time can likely slay her.  She does not cast root but she will heal herself.
+
+Go to the undead island and hail to her.   Don't leave yet it's just beginning.  After getting the potion, she will feel invigorated and decide march up to the spectres on the island and sit there.  If you wait for a while, she will despawn and the {{:Deepwater Harpoon}} will be on the ground.  If you invis vs. undead, you can avoid the spectres.
+
+ <br>
+''Need all dialogues, missing quest items, current /loc of guards (including zones), current faction hits if any.''
+
+== Dialogue ==
+
+'''This quest formally starts in [[Ocean of Tears]] at undead island (rough loc of -604.96, -7343.81), though you may skip this first dialogue. If [[Sentry Xyrin]] is not up already, you may need to spawn her by finding [[Styria Fearnon]] on sisters island and saying "Where is Sentry Xyrin".'''
+
+: You say, 'Hail, Sentry Xyrin' 
+
+Sentry Xyrin says, 'Shhhh! Keep quiet! Can you not tell this island is inhabited by undead? I wish to take the fight to them, but I am weak from the [boat disaster].' 
+
+: You say, 'What boat disaster?' 
+
+Sentry Xyrin says, 'I was returning to my temple in Freeport in a small boat when the storm hit. I soon found myself shipwrecked on this evil island of undead. The words of Marr tell me to destroy these beings, but I am far too weak. If I only had a sip of the [Potion of Marr].' 
+
+: You say, 'What is a Potion of Marr?' 
+
+Sentry Xyrin says, 'The Potion of Marr was created for the Sentries of Passion. It makes us alert and energetic. It will work only on sentries such as myself. It is distributed by Serna Tasknon of the Temple of Marr in Freeport.' 
+
+'''Now head to North Freeport (if you weren't already there). Find [[Serna Tasknon]] at the top of the Temple of Marr.'''
+
+: You say, 'Hail, Serna Tasknon' 
+
+Serna Tasknon says, 'It is a good thing to see new faces visiting our temple. We are the source of strength within this city. Do not be fooled by the Freeport Militia. They are not warriors of valor. [Join the fight against the Freeport Militia].' 
+
+: You say, 'I will join the fight against the Freeport Militia' 
+
+Serna Tasknon says, 'You are wise. If you are a paladin, either speak with Theron of this temple or visit the Hall of Truth here in North Freeport. Clerics should concentrate on keeping the knights strong and healthy. Would you care to [assist the Temple of Marr]?' 
+
+: You say, 'I will assist the Temple of Marr' 
+
+Serna Tasknon says, 'Good. Take this Potion of Marr to the Sentries of Passion. They are the protectors of this temple. Start in alphabetical order and the first shall take but a sip then you shall take it to the next in order of the alphabet. There are but eight sentries. Sentry Andlin to Sentry Xyrin. Go.' 
+
+'''As instructed, you will now hand the [[Potion of Marr]] to each Sentry in alphabetical order.'''
+
+: You say, 'Hail, Sentry Andlin' 
+
+Sentry Andlin says, 'Greetings! I would love to converse with you, but as you can see, I am standing my watch.' 
+Sentry Andlin says, 'My thanks to you. I feel much strength. You may take the bottle to the next sentry.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+: You say, 'Hail, Sentry Boris' 
+
+] Sentry Boris says, 'Please seek guidance from the clerics within this temple. I am but a Sentry of Passion and my duty is to protect this temple.' 
+Sentry Boris says, 'Ahhh! That has given me back lost energy. Thank you. Please take this to the next sentry.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+: You say, 'Hail, Sentry Gallius' 
+
+Sentry Gallius says, 'I welcome you to the Temple of Marr, home to clerics of the deities Erollisi and Mithaniel Marr. Please seek guidance from the clerics.' 
+Sentry Gallius says, 'Excellent! I feel quite refreshed with but a sip. You may take this to the next sentry.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+: You say, 'Hail, Sentry Janeal' 
+
+Sentry Janeal says, 'Welcome, friend! Please seek the words of the clerics of Marr. Their words are the words which will set us free from the tyranny of the Freeport Militia.' 
+Sentry Janeal says, 'I feel quite alert now. Thank you. You should take this to the next sentry.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+: You say, 'Hail, Sentry Meighan' 
+
+Sentry Meighan says, 'Please speak no further. I am nothing more than a defender of this temple. The words of Marr lie with the masters and clerics of this temple. They await you.' 
+Sentry Meighan says, 'Very good. Nothing more than a sip and I feel much more alert. The next sentry awaits you.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}} 
+
+: You say, 'Hail, Sentry Theo' 
+
+Sentry Theo says, 'Please speak with the masters. I am on watch and have no time to converse.' 
+Sentry Theo says, 'That gives me new life. Take it to the next sentry.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+: You say, 'Hail, Sentry Warren' 
+
+Sentry Warren says, 'May the words of Marr be passed on to you. Please seek knowledge from the masters of this temple.' 
+Sentry Warren says, 'Thank you. I believe you need to seek out Sentry Xyrin. She is not at the temple. I believe she left to speak with the [Sisterhood of Erollisi]. She was to speak with Styria.' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+'''You may now go to (or return to) [[Sentry Xyrin]] on the undead island in [[Ocean of Tears]]. If [[Sentry Xyrin]] is not up already, you may need to spawn her by finding [[Styria Fearnon]] on sisters island and saying "Where is Sentry Xyrin".'''
+
+Sentry Xyrin says, 'Ahhhh! I am energized! Come! Let us show these undead the greatness of Erollisi Marr!' 
+
+<div class='facblock'>
+* Your faction standing with Priests of Marr has been adjusted by 1. 
+* Your faction standing with The Freeport Militia has been adjusted by -1. 
+* Your faction standing with Knights of Truth has been adjusted by 1. 
+</div>
+{{YouGainExperience}}
+
+Sentry Xyrin says, 'Let the fury of passion smite thee!' 
+
+'''More details about this escort portion of the quest are needed here.'''
+
+Sentry Xyrin says, 'Many thanks to all who aided in this battle. I offer you this, a weapon I found upon a slain Erudite paladin. May Marr watch over his soul and may Marr guide yours. Now I must go.'
+
+'''Xyrin despawns, leaving the''' {{:Deepwater Harpoon}} '''behind as a ground spawn wherever she last was. There may be a bug where the harpoon is difficult or impossible to pick up if she despawns on a slope. Try to make sure she is on a flat surface to attain your harpoon.'''
+
+[[Category:Quests]]
+[[Category:Ocean of Tears]]
+[[Category:Paladin Quests]]

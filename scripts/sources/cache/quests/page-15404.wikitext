@@ -1,0 +1,65 @@
+[[File:npc_jemoz_lerkarson.png|frame|Jemoz Lerkarson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Jemoz Lerkarson]] (loc: 59, 350, -27.81)
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| Militia guards
+|}
+
+== Reward ==
+
+<ul><li>  Random cleric spell scroll
+</li><li>A cast of minor healing</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Jemoz Lerkarson'
+
+: Jemoz Lerkarson says, 'Bless you, my friend! We always welcome new converts into our Hall of Truth. The righteous army of the twin deities must assemble. The battle draws near. The blessings of the Truthbringer are passed to all who are [devoted to truth].'
+
+You say, 'I am devoted to truth.'
+
+: Jemoz Lerkarson says, 'May the hand of Marr shield you from harm. Welcome to our world. The war begins here in Freeport. The [fallen knight] has masked the truth from the world, but he cannot mask his evil from the Truthbringer. He once followed our ways. Now he is our enemy and yours. We must end his rule. We must [crush the Freeport Militia]!'
+
+You say, 'Who is the fallen knight?'
+
+: Jemoz Lerkarson says, 'The fallen knight is Sir Lucan D'Lere. The organizer and leader of the Freeport Militia. He once stood beside us. Now he shall burn!! We will end him. We shall [crush the Freeport Militia]. Truth shall reign once again.'
+
+You say, 'I will crush the Freeport Militia.'
+
+: Jemoz Lerkarson says, 'Our goal is to end their rule. To retake our city in the name of Marr. Let it begin with their blood!! Slay the militia!! They have no souls and hail from the back alleys and prison cells of darkness and depravity. Thieves and murderers, nothing more. Slay any you can and, as proof, return their militia helms to me. We shall see what bounty you deserve.'
+
+'''Kill Militia guards in West Freeport and loot a [[Damaged Militia Helm]]. Return to Jemoz to turn in.''' 
+
+: Jemoz Lerkarson says, 'Excellent! You have begun to show your devotion to the Truthbringer. But, only the most fervent of followers dare confront the [true organizer] of the militia, however.'
+
+{{YouGainExperience}}
+
+Experience gain is negligible (less than 1%) at level 6.
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Steel Warriors]] got better. 
+* Your faction standing with [[Dismal Rage]] got '''worse'''.
+* Your faction standing with [[Freeport Militia]] got '''worse'''. 
+</div>
+
+You feel a little better.
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Cleric Quests]]

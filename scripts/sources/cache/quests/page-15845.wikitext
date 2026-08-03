@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:npc_an_erudite_prisoner.png|frame|An Erudite Prisoner]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Warrens]]
+|-
+! ''' Quest Giver: '''
+| [[An Erudite Prisoner]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+* Faction, Exp
+
+== Walkthrough ==
+
+You say, 'hail an erudite prisoner'
+
+an erudite prisoner angrily rattles his shackles and says 'Damned Kobolds!! Some day I will return and these filthy warrens will be littered with their dog faced corpses! You wouldnt happen to have a key for these shackles would you?' a captured erudite bats her eye lashes seductively. 'I would be immensely pleased if someone would free me from these shackles.'
+
+Go and kill [[Jailer Mkrarrg]] and loot the [[Bronze Shackle Key]] and give it to the prisoner.
+
+: a captured erudite says 'I say we round up the Furballs AND the Dog Faces and let them kill each other off! Then we can easily finish off the survivors! an erudite prisoner says 'I thank you for freeing me from my dog faced captors!!
+
+Give the erudite the key
+
+: an erudite prisoner says, 'I thank you for freeing me from my dog faced captors!'
+<div class='facblock'>
+* Your faction standings with [[Heretics]] got better.
+* Your faction standings with [[Clan Kolbok]] got worse.
+* Your faction standings with [[High Guard of Erudin]] got better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:The Warrens]]

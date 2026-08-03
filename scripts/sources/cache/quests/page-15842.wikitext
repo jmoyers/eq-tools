@@ -1,0 +1,78 @@
+[[File:npc_beth_breadmaker.png|frame|Beth Breadmaker]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]] at the Docks
+|-
+! ''' Quest Giver: '''
+| [[Beth Breadmaker]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All, Good Aligned
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to [[Beth_Breadmaker|Beth Breadmaker]] in her leanto by the docks in Erudin.
+
+The conversation with Beth Breadmaker:
+
+You say, 'Hail Beth Breadmaker'
+
+: Beth Breadmaker says 'Hi [Name]. Times are tough these days. I am finding myself running short on baked goods lately. Would you be [willing to help] me out?'
+
+You say, 'I'm willing to help.'
+
+: Beth Breadmaker says 'You'd help me? Oh, you are such a dear! Well, there are two ways you can help me and my little business. If you [can bake] you can make me some muffins so I don't run out. Otherwise, you [can travel] a little way for me and pick up some bread.'
+
+You say, 'I can travel a little.'
+(note that responding to 'can bake' gives [[Muffin Quests|a different quest]])
+
+: Beth Breadmaker says 'How nice of you! There is a man who lives in the plains to the south. I believe his name is Jarlen Meadowgreen. I guess the plague hasn't hit that area too hard. Anyway, he's a talented baker and makes some delicious bread. Just let him know that you want a bag and bread loaves.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Beth Breadmaker.
+
+: Beth Breadmaker says 'Oh, wonderful fresh bread! Thank you for making the trip, that is such a long way. Here, I hope this covers your travel expenses. You have my deepest thanks.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Erudin]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum, 7 gold from Beth Breadmaker.
+
+Experience was approximately 2% as a level 19 Druid.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:All Classes Quests]]

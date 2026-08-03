@@ -1,0 +1,69 @@
+{{Classic Era}}
+[[File:npc_weltria_ostriss.png|frame|Weltria Ostriss]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Weltria Ostriss]]
+|-
+! ''' Minimum Level: '''
+| 22
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[Lorekeeper Roggik]]
+|}
+
+== Reward ==
+
+* 50 Platinum 
+* [[Large Scroll Case]] (kept)
+* Faction 
+
+== Walkthrough ==
+
+''[[Weltria Ostriss]] can be found on the top floor of the Erudin City Library.''
+
+You say, 'Hail, Weltria Ostriss'
+
+:Weltria Ostriss says, 'Good day, ____. I assist in maintaining an accurate collection of historical tomes here in the great library of Erudin. One of our citizens recently escaped the dungeons of the Kobold warrens and tells of a Kobold lore keeper who keeps a collection of scrolls detailing the history of their kind. Are you capable of obtaining those scrolls for our library?'
+
+You say, "I am capable of obtaining the scrolls" 
+
+:Weltria Ostriss says, 'Take this case and return it to me when you have collected all of the scrolls.'
+
+''You receive a [[Large Scroll Case]].''
+
+'''[[Lorekeeper Roggik]] is located in [[The Warrens]] and drops seven UNIQUE [[Dusty Kobold Scroll|Dusty Kobold Scrolls]], which [[identify]] as the following:'''
+
+* Rise of King Gkar and Klan Kolbok  
+* The Ascension of Rolfron Zek
+* The Fall of Kolbok
+* The Kobold Age of Blood
+* The Council and the Dwarves
+* Kobolds in the Age of Scale
+* The Arrival of Rallos Zek
+
+''These scrolls are written in Elder Teir'Dal. Very interesting reading, detailing the history of the Kobolds.''
+
+'''Combine the seven scrolls in the [[Large Scroll Case]] to create [[Kobold History Collection]]. The [[Large Scroll Case]] is not consumed in this combine. Hand the [[Kobold History Collection]] in to Weltria.''' 
+
+: Weltria Ostriss says, 'You have my gratitude, _____! This will make a valuable addition to our historical volumes and perhaps offer some insight into the workings of Kobold society.'
+
+<div class="facblock">
+*Your faction standing with [[Merchants of Erudin]] got better. (+5)
+*Your faction standing with [[High Council of Erudin]] got better. (+3)
+*Your faction standing with [[High Guard of Erudin]] got better. (+3)
+</div>
+{{YouGainExperience}}
+
+You receive 50 platinum pieces.
+
+[[Category:Quests]]
+[[Category:Erudin]]

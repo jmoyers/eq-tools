@@ -1,0 +1,125 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_kelenek_bluadfeth.jpg|frame|Kelenek Bluadfeth]]
+[[File:Roguedeceiver.png|frame|Deceiver Armor]][[File:Deceiver2.PNG|frame|Indoor View]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Kelenek Bluadfeth]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV West)
+|}
+Ally faction (Kromzek) is required for all Kael armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Deceiver's Crown
+|Deceiver's Chestguard
+|Deceiver's Vambraces
+|Deceiver's Bracer
+|Deceiver's Gauntlets
+|Deceiver's Greaves
+|Deceiver's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Kelenek Bluadfeth]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Deceiver's Crown]]
+:*[[Ancient Tarnished Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Deceiver's Chestguard]]
+:*[[Ancient Tarnished Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Deceiver's Vambraces]]
+:*[[Ancient Tarnished Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Deceiver's Bracer]]
+:*[[Ancient Tarnished Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Deceiver's Gauntlets]]
+:*[[Ancient Tarnished Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Deceiver's Greaves]]
+:*[[Ancient Tarnished Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Deceiver's Boots]]
+:*[[Ancient Tarnished Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Kelenek Bluadfeth says, 'What do we have here? A cutthroat, perhaps? If not then go away, for I have words to speak with a rogue.'
+
+You say, 'I am a rogue'
+
+Kelenek Bluadfeth says, 'I commend you on your skill, making it this far. I have a job for you, thief. Several in fact and quite simple for an assassin such as yourself. I am in need of certain components and will reward you well if they are brought to me. Do I have your services?'
+
+You say, 'you have my services'
+
+Kelenek Bluadfeth says, 'Excellent. Now, down to business. I shall pay you in trade for the items I seek. What I have for you is as such, a coif, a breastplate, armplates, bracers, gauntlets, greaves and boots. These should aid you in your skullduggery.'''
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Ancient tarnished chain armor is dropped randomly in the West Wing (Dragon Faction) inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+''You say, 'what coif'
+
+Kelenek Bluadfeth says, 'I am need of an ancient tarnished chain coif and three crushed pieces of coral. For your services I shall give you a coif suitable for one such as you.'''
+
+Kelenek promises to make you a coif if you bring him an [[Ancient Tarnished Chain Coif]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+''Kelenek Bluadfeth says, 'For the breastplate you must seek out an ancient tarnished chain tunic and three flawless diamonds. Only then will you receive a breastplate of my crafting.'''
+
+Kelenek promises to make you a breastplate if you bring him an [[Ancient Tarnished Chain Tunic]] as well as three [[Flawless Diamond]]s.
+
+== Sleeves ==
+
+''Kelenek Bluadfeth says, 'For the armplates I shall give you, I require this; an ancient tarnished chain sleeves and three flawed emeralds.'''
+
+Kelenek promises to make you some sleeves if you bring him [[Ancient Tarnished Chain Sleeves]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+''Kelenek Bluadfeth says, 'An ancient tarnished bracer and three crushed flame emeralds is what I require of you. A bracer of my making is your reward.'''
+
+Kelenek promises to make you a bracer if you bring him an [[Ancient Tarnished Chain Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+''Kelenek Bluadfeth says, 'I need an ancient tarnished chain gauntlets as well as three crushed topaz. Once I have these you shall have your reward.'''
+
+Kelenek promises to make you some gauntlets if you bring him a pair of an [[Ancient Tarnished Chain Gauntlets]] as well as three [[Crushed Topaz]].
+
+== Leggings ==
+
+''Kelenek Bluadfeth says, 'A pair of leggings will be your once you completed this task for me, thief. Bring unto me a pair of ancient tarnished chain leggings and a trilogy of flawed sea sapphires.'''
+
+Kelenek promises to make you some leggings if you bring him a pair of an [[Ancient Tarnished Chain Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+''Kelenek Bluadfeth says, 'A fine pair of boots shall you have to skulk around in, once I have a pair of an ancient tarnished chain boots and three pieces of crushed black marble.'''
+
+Kelenek promises to make you some boots if you bring him a pair of an [[Ancient Tarnished Chain Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Rogue Quests]]
+[[Category:Kael Armor Quests]]

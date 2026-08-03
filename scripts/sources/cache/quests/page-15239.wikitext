@@ -1,0 +1,103 @@
+{{Classic Era}}
+[[File:npc_oracle_of_k`arnon.png|frame|Oracle of K`Arnon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ocean of Tears]]
+|-
+! ''' Quest Giver: '''
+| [[Oracle of K`Arnon]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| See [[The Fiery Avenger]]
+|-
+! ''' Related NPCs: '''
+| See [[The Fiery Avenger]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Miragul's Phylactery}}
+</li></ul>
+
+== Walkthrough ==
+
+''The Oracle may be found on top of a mountain at -15, -6730, -200 (?).''
+
+You say, 'Hail, Oracle of K`Arnon' 
+
+: Oracle of K`Arnon says 'Greetings, ______, I am the Oracle of K'Arnon. Do you quest for [knowledge] yourself, or do you offer that which I [seek]?'
+
+You say, 'What about knowledge?' 
+
+: Oracle of K`Arnon says 'I have lived long and have insight into many matters, yet I despise charity. To learn from me, you must first bring me that which I [seek].'
+
+You say, 'What do you seek?' 
+
+: Oracle of K`Arnon says 'I seek knowledge, which is superior to all things. And no knowledge is greater than that which is contained within the [Tome of Ages].'
+
+You say, 'What is the Tome of Ages?' 
+
+: Oracle of K`Arnon says 'The Tome of Ages has been compiled over the millennia by the Scribes of [Dal]. It was divided into seven distinct books by the scribes to keep the knowledge from one such as me. That said, with aid, I shall unite these books and the Tome of Ages shall be mine.'
+
+You say, 'What about the Dal?' 
+
+: Oracle of K`Arnon says 'They were elves once, but now are Teir'Dal, and as evil as they are wise. Many tomes have they written, but none greater than the Tome of Ages.'
+
+You say, 'What about the Book of Ages?' 
+
+: Oracle of K`Arnon says 'The seven Books that make up the Tome of Ages are those of Enlightenment, Scale, Turmoil, Monuments, Elders, Blood, and the Lost Book. Each of these great books is an important chapter in the history of Norrath. If ever you find one of these books, bring it to me.'
+
+You say, 'What about the Book of Enlightenment?' 
+
+: Oracle of K`Arnon says 'I do not seek the Book of Enlightenment at this time, but I might have need of it in the future.'
+
+You say, 'What about the Book of Scale?' 
+
+: Oracle of K`Arnon says 'Ah, the Book of Scale.. It would be wondrous indeed if you could recover the Book of Scale for me. If you do manage to procure the Book of Scale, I will gladly part with an artifact of my own that may be of interest to you.'
+
+'''Giving him the Book of Scale nets you Miragul's Phylactery, used in the Fiery Avenger quest, a subquest for the Paladin epic.'''
+
+: Oracle of K`Arnon says 'Unbelievable! The legendary Book of Scale is mine! Please, take this as a small token of my thanks. I warn you however, if you ever manage to join the corporeal body to the evil that resides within, you will rue the day.' 
+
+<div class="facblock">
+* Your faction standing with [[Oracle Of Karnon]] got better.
+* Your faction standing with [[Oracle Of Marud]] got worse.
+</div> 
+{{exp}}
+
+You say, 'What about the Book of Turmoil?' 
+
+: Oracle of K`Arnon says 'Ah, yes! The Book of Turmoil. I seek this book, and should you find it and return it to me, I will reward you with secret knowledge.'
+
+You say, 'What about the Book of Monuments?' 
+
+: Oracle of K`Arnon says 'I do not seek the Book of Monuments at this time, but I might have need of it in the future. 
+
+You say, 'What about the Book of Elders?' 
+
+: Oracle of K`Arnon says 'I do not seek the Book of Elders at this time, but I might have need of it in the future. 
+
+You say, 'What about the Book of Blood?' 
+
+: Oracle of K`Arnon says 'I do not seek the Book of Blood at this time, but I might have need of it in the future. 
+
+You say, 'What about the Lost Book?' 
+
+: Oracle of K`Arnon says 'I do not seek the Lost Book at this time, but I might have need of it in the future.'
+
+== Related Quests ==
+
+* [[The Fiery Avenger]]
+* [[Paladin Epic Quest]]
+* [[Book of Turmoil Quest]]
+
+[[Category:Quests]]
+
+[[Category:Ocean of Tears]]
+[[Category:All Classes Quests]]

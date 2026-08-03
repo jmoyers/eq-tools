@@ -1,0 +1,54 @@
+{{Kunark Era}}
+[[File:npc_captain_nedar.png|frame|Captain Nedar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Nedar]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Iksar)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a froglok tad]]
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]], Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+''[[Captain Nedar]] can be found on a second floor balcony (2645, 3030) near [[Cabilis]] during daytime hours.''
+
+You say, 'Hail, Captain Nedar'
+
+: Captain Nedar says, 'Come to serve the garrison? Good. I aim to offer a reward for the return of four froglok tad tongues. Best if we handle the pesky critters before they grow too big and too numerous.'
+
+'''Hunt [[a froglok tad|froglok tads]] in the area and collect 4 [[Froglok Tad Tongue|foglok tad tongues]] for Captain Nedar.'''
+
+: Captain Nedar says, 'There shall be no coins for you until I have four of these.'
+: Captain Nedar says, 'There shall be no coins for you until I have four of these.'
+: Captain Nedar says, 'There shall be no coins for you until I have four of these.'
+: Captain Nedar says, 'Well done. It is good to serve the Warlord. Here is a small reward befitting such a small task.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 7 copper from Captain Nedar.
+
+[[Category:Quests]]
+[[Category:Swamp of No Hope]]

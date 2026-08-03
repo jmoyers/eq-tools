@@ -1,0 +1,73 @@
+{{Classic Era}}
+[[File:npc_plagus_ladeson.png|frame|Plagus Ladeson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Plagus Ladeson]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Milea Clothspinner]]
+|}
+
+== Reward ==
+
+<ul><li> [[Grizzly Hide Cloak]], other minor items, Coin
+</li></ul>
+
+== Walkthrough ==
+
+[[Plagus Ladeson]] of the Steel Warriors in Freeport (he can be found in the courtyard behind the Steel Warriors building) talks to you about his hopeless love affairs with both [Milea] and [Toala].
+
+You say, 'Hail'
+
+:Plagus Ladeson says, 'Greetings _____, and welcome to the Bunker. Are you a [new warrior] or [veteran]?'
+
+''How do you know to ask about Milea?''
+
+You say, 'Milea'
+
+:Plagus Ladeson says, 'Milea Clothspinner. She was my one true love. She is a Steel Warrior also. When she left Qeynos to find adventure my heart left also. I never saw her again, but I decided to transfer my skills to Freeport. It is probably best I did not find her. She was in love with adventure. Sigh !! The women I am attracted to are always in love with another. Just like [Toala].'
+
+You say, 'Milea is in East Karana'. 
+
+: Plagus Ladeson says, 'You have seen Milea Clothspinner!! This is great news. I wish I could travel to see her, but Cain will not allow me to do so at this time. You must take her a note for me. Here. Take this to her. I as a master in this order command you to do so immediately. Go!!'
+
+You receive [[A Sealed Note]] that reads, "Dearest Milea, This is your love, Plagus Ladeson. I know we never had a chance, but perhaps we could try. I am a guild master in Freeport and plan on purchasing a nice cottage in the Commonlands. I will await your visit. Love Plagus"
+
+[[Milea Clothspinner]] can be found at the end of the gorge that runs next to the ramp to Highhold in [[East Karana]].
+
+:Milea Clothspinner says, 'Hail, fellow adventurer. Are you from Qeynos?'
+
+You hand Milea A Sealed Note
+
+:Milea Clothspinner says, 'Oh great!! I thought I saw that last of Plagus, or as all the women in the Steel Warriors called him, The Plague. Please do not tell him where I am. It must have been a long journey for you. Here. A little something for your wasted trip. I found it on the ground. Have fun going back to Freeport.'
+
+<div class="facblock">
+*  Your faction standing with SteelWarriors got better.
+* Your faction standing with GuardsofQeynos got better
+* Your faction standing with CorruptQeynosGuards got worse.
+* Your faction standing with FreeportMilitia got worse.
+* Your faction standing with KnightsofTruth got better.
+{{exp}}
+</div>
+
+''You receive 2 gold pieces.''
+
+''You receive a minor reward'' (such as a [[Grizzly Hide Cloak]])
+
+== See also ==
+* [[Hopeless Love, Part 2]]
+
+[[Category:Quests]]
+[[Category:West Freeport]]

@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_mater.png|frame|Mater]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Mater]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Mater]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ruined Miner's Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Mater]] is located at 564, 202, -34 outside the Ratsbone Treasury & Assay Office (Bank).''
+
+You say, 'Hail, Mater'
+
+: Mater says, 'Welcome to the mines of Kaladim!'
+
+'''Hand [[Mater]] your [[Small, Folded Note]]'''
+
+:: ''The Small, Folded Note reads:''
+
+:: <code>You've earned yourself quite a little reputation around Kaladim. I believe we could strike a deal that could be mutually beneficial. Return this note to me. I could use someone with your talents in my outfit. - Mater</code>
+
+: Mater says, 'Ah, welcome. We could use some fresh blood around here. The name's Mater, and I run this outfit. Work hard for me, and I will reward you well. Cross me, and you'll find yourself buried under the mine cap.'
+
+<div class="facblock">
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Hall of the Ebon Mask]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Rogue Quests]]

@@ -1,0 +1,49 @@
+{{Velious Era}}
+
+[[File:npc_telkorenar.png|frame|Telkorenar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Telkorenar]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Bard]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Casalen]], [[Krigara]], [[Lepethida]], [[Tavekalem]], [[Ymmeln]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Earring of the Living Flame}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'what test of the flame'
+
+: Telkorenar says 'Return the black tear, the black symbol the poison symbol and the serrated symbol to me, and you will have completed the test of flame. Your reward will be quite suitable to one who enters the fray of battle.
+
+== Related Items ==
+<ul><li>{{:Black Tear}} </li></ul>
+<ul><li>{{:Black Symbol}}</li></ul> ([[Krigara]] or [[Ymmeln]])
+<ul><li>{{:Poison Symbol}}</li></ul> ([[Casalen]] or [[Tavekalem]])
+<ul><li>{{:Serrated Symbol}}</li></ul> ([[Lepethida]])
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Bard Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

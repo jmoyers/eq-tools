@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_weligon_steelherder.png|frame|Weligon Steelherder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Weligon Steelherder]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Weligon Steelherder]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Blue Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Weligon Steelherder]] is located at -1041, -395 in the Deepwater Knights ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Weligon Steelherder'
+
+: Weligon Steelherder says, 'Hail, Teddee! This is the Deepwater Temple. Here you shall find the wisdom and courage of Prexus, the Ocean Lord. I am glad to see you have an interest. Forgive me if I cut our conversation short, but I have many [Deepwater tasks] to complete.'
+
+'''Hand [[Weligon Steelherder]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Welcome friend. Join us in the worship of Prexus, the Ocean Lord. From the harbor, go through the entrance opposite the boathouse, and then walk onto the blue teleport gem. Seek out the Deepwater Knights, and give this note to Welgon Steelherder, the Guild Master.</code>
+
+: Weligon Steelherder says, 'Greetings and welcome to the Deepwater Knights. Here is your guild tunic. Wear it with pride, and Prexus will keep a watchful eye on you.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+Note: The Tunic you get is used for the quest: [[Fisherman Convert]]
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Paladin Quests]]

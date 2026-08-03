@@ -1,0 +1,112 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_miadera_shadowfyre.png|frame|Miadera Shadowfyre]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Paineel]]
+|-
+! ''' Quest Giver: '''
+|[[Miadera Shadowfyre]]
+|-
+! ''' Minimum Level: '''
+|35 (Group)
+|-
+! ''' Classes: '''
+|[[Cleric]]
+|-
+! ''' Related Zones: '''
+|[[Lower Guk]], [[Rathe Mountains]], [[Gorge of King Xorbb]], [[Najena]]
+|-
+! ''' Related NPCs: '''
+|[[An urd ghoul wizard]], [[a basalt drake]], [[Lord Soptyvr]], [[The Widowmistress]]
+|-
+! ''' Required Faction: '''
+|Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>{{:Terror Forged Mask}} (cannot be used from inventory by other classes; must be a human or erudite cleric)</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* [[Eye of Urd]] from [[An urd ghoul wizard]] (in [[Lower Guk]])
+* [[Basalt Drake Scales]] (in [[Rathe Mountains]])
+* [[Lens of Lord Soptyvr]] from [[Lord Soptyvr]] (in [[Gorge of King Xorbb]])
+* [[Widowmistress Hair]] from [[The Widowmistress]] (in [[Najena]])
+{{End}}
+== Walkthrough ==
+
+''[[Miadera Shadowfyre]] can be found in the Tabernacle of Terror in [[Paineel]] at (1130, 535).''
+
+You say, 'Hail, Miadera Shadowfyre'
+
+: Miadera Shadowfyre says, 'Ahhhahahaha! The terror that lays over this city like a blanket tingles my bones with vigor. I seek a fellow apostle of Cazic-Thule to assist me in the [summoning of Terror].' 
+
+You say, 'What is required for the summoning of Terror?'
+
+: Miadera Shadowfyre says, 'It will be a frightfully fulfilling summons. Alas there are a few components I need before we may proceed. I would be most thrilled if you would bring me an eye of urd, some basalt drake scales, the lens of Lord Soptyver, and a lock of widowmistress hair.' 
+
+Some details on each:
+
+* [[Eye of Urd]] - Easiest item to get, as long as you are of sufficient level to group in Lower Guk. You will have the opportunity to pull Urd Wizards from just about every camp in the zone. Not a common drop, but since you'll be there doing the XP grind or hoping for Guk Loot to drop, its palatable.
+
+* [[Basalt Drake Scales]] - VERY annoying. Went there at 40, so no xp. Took five hours to get one to drop. Basalt Drakes are the rarest of the Drake spawns, and it took five Basalts before one coughed up a scale. They spawn on the hillside near Zazamoukh the Sphynx. Beware, because he did aggro me once when I got too zealous in chasing down a Drake. Kill all the drakes you see to get Basalts to spawn.
+
+* [[Lens of Lord Soptyvr]] - Soptyver is a 4 hour spawn and the lens is rare (much rarer than live where it dropped almost every time if not 100%).  It wasn't terrible at level 30, because killing the EEs and lesser Lords is reasonable entertaining, about half provided at least some XP for me, and you can hopefully pick up a PBB or two. Word of warning, when Lord Soptyver spawns, ALL THREE Lords spawn together, regardless of how the spawn has been broken up before that. Soptyver cons even to level 30, and the three Lords together killed me and the few other EE campers that were there (mid/upper thirties).
+
+* [[Widowmistress Hair]] - Also terribly annoying. I just did her at 40. Everything in Najena is green then, so no xp off anything but the Widowmistress, but there is no way you can solo her, you need a Tank. I spent SIX hours on her, the SIXTH Widowmistress spawn finally dropped hair, and I had to wait through FIVE PHs. 
+
+'''Upon turning these 4 items in to Miadera:'''
+
+: Miadera Shadowfyre says, 'Yes! Can you feel the terror in the air, prickling your flesh, and standing your hair on end? The chanters have summoned the avatar of Terror! Quickly take this mundane mask to him and he shall forge it into a valuable symbol to be worn by loyal apostles of Terror!'
+
+--You receive a [[Mundane Mask]].--
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+ Avatar of terror shouts, 'Grrrraaaarrrrg! The stench of fear permeates the walls of this city! 
+ I will forge one item for the faithful of our Lord Cazic-Thule! Make haste! My time here is short!'
+
+[[File:npc_avatar_of_terror.png|frame|Avatar of Terror]]
+
+'''Take the [[Mundane Mask]] into the next room behind you (east) and hand it to an [[Avatar of Terror]].'''
+
+You say, 'Hail, Avatar of Terror'
+
+: Avatar of Terror says, 'I haven't much time mortal. Do you bring Terror?'
+
+: Avatar of Terror says, 'I grant you a mask crafted with my own essence! Wear it in honor of your devotion to our Lord Cazic Thule!' 
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+For your efforts, you will get a [[Terror Forged Mask]].
+
+== Notes ==
+* 10-23-24  <ul><li>Nilbog: 'The Summoning of Dread, Fear, and Terror' quests are multiquestable. Amiable or better faction required. Corrected faction hits.
+Nilbog: Khrix Fritchoff requires a Fire Beetle Eye prior to Nov2000 to trigger the Abomination. Nov2000 onward, he requires a Greater Lightstone.</li></ul>
+
+
+* This quest CANNOT be multiquested as of 12/12/14.
+* Be careful not to turn the items in to the wrong golem in the event there are other Avatar golems present.
+
+[[Category: Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]

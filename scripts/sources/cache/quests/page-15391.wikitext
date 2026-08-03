@@ -1,0 +1,58 @@
+{{Kunark Era}}
+[[File:npc_captain_gideen.png|frame|Captain Gideen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Warsliks Woods]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Gideen]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| All (Iksar)
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin watcher]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Aloe Swatch}}
+</li><li> [[Faction]]
+</li></ul>
+
+Although this quest gives an experience message, there is no visible experience given at level 4.
+
+== Walkthrough ==
+
+You say, 'Hail, Captain Gideen'
+
+: [[Captain Gideen]] says 'I hope you have come to assist in the defense of the gate. We have had numerous assaults by the goblins. No doubt it is due to those [goblin watchers].'
+
+You say, 'What goblin watchers?'
+
+: Captain Gideen says 'The goblin watchers are rumored to be the communication link between goblin outposts and patrols. We have found goblin [[Watcher Signal Torch]]es on a few of them. You bring me back no fewer than three and I will reward you.' 
+
+Hand in three [[Watcher Signal Torch]]:
+
+: Captain Gideen says 'Good work, player name. You are on your way to becoming a respected ally of the Iksar Empire. Keep up the good work. Take this reward for a job well done.'
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{exp}}
+
+You receive 7 silver from Captain Gideen.
+
+[[Category:Quests]]
+[[Category:Warsliks Woods]]
+[[Category:All Classes Quests]]

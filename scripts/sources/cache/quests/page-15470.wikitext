@@ -1,0 +1,82 @@
+{{Classic Era}}[[File:npc_blixkin_entopop.png|frame|Blixkin Entopop]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Misty Thicket]]
+|-
+! ''' Quest Giver: '''
+| [[Blixkin Entopop]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Karana]], [[Kithicor Forest]], [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Queen Klaknak]], [[a fire beetle]], [[a giant scarab]], [[a giant wasp]], [[a spiderling]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bracelet of Beetlekind}}
+</li><li> {{:Potion of Poison Warding}}
+</li><li> {{:Silver Bracelet}}
+</li><li> {{:Spider Venom}}
+</li><li> {{:Stalking Probe}}
+</li></ul>
+
+(Any of them at random. There is no prevention of duplicates.)
+
+== Walkthrough ==
+
+Blixkin Entopop roams the inside of the wall and has an unusual hobby.  He collects bug parts, and you are just the halfling to help him out. Hail him to make him stop walking, then say the following: 
+
+You Say 'Hail, Blixkin Entopop'
+
+: Blixkin Entopop says, 'Hail! My name is Blixkin Entopop. Have you seen the wonderful assortment of [spiders] and [beetles] that inhabit the thicket? I have quite an extensive [bug collection]. Be careful, though. I have seen many brave halflings fall beneath a [swarm] of clicking hissing bugs.'
+
+You say 'What bug collection?'
+
+:Blixkin Entopop says ' I collect all kinds of bugs but most of the ones I have are dead. [Ember] is the only exception. I just like them for their pretty colors and I kind of admire how loyal they are to each other. If you want to, you can help me fill out my collection and I will reward you for your time. Here is a list of the bug parts I need for my collection. If you [don't have a bug collection box] to collect the bug parts, just ask me for one. I think I have some extras.'
+
+You say, 'I don't have a bug collection box'
+
+:Blixkin Entopop says 'Here you go. Just follow the instructions on the [list] so you know what to collect and how to prepare the collection for me.'
+
+You say 'What list?'
+
+:Blixkin Entopop says 'What did you do, lose the list? Here is another one. Hold onto it because I will want it back when you are done.'
+
+
+
+'''The six bug parts for this quest are:'''
+
+1) {{:Spiderling Eye}},<br>
+2) {{:Spiderling Silk}},<br>
+3) {{:Fire Beetle Eye}},<br>
+4) {{:Giant Scarab Egg Sack}}<br>
+5) {{:Giant Fire Beetle Leg}}<br>
+6) {{:Giant Wasp Wing}}
+
+'''After collecting the items, hit combine and give the '''box''' back to him, ''along with the '''list''' he gave you'', for your reward. Make sure to hand them both in at the same time or he won't give you a reward or experience. I forgot to ask for a list, handed him the box and he ate it. I then asked for a list and handed it to him and still got nothing.'''
+
+:Blixkin Entopop says 'Oh you have a complete collection for me?! Good! Good! Well done. But remember that I need the complete bug collection and you must return my want list before I can pay you.'
+
+:Blixkin Entopop says 'Excellent! Good work! I knew you were the one for this job! Thank you so much! My collection just gets better and better each day. Here is your reward as I promised.'
+
+You will also get the following faction changes:
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Rivervale]] has gotten better.
+* Your faction standing with [[Deeppockets]] has gotten better.
+* Your faction standing with [[Guardians of the Vale]] has gotten better.
+* Your faction standing with [[Mayor Gubbin]] has gotten better.
+* Your faction standing with [[Coalition of Tradefolk Ill]] has gotten worse. 
+</div>
+
+[[Category:Quests]]
+[[Category:Misty Thicket]]
+[[Category:All Classes Quests]]

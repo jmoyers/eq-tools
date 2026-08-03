@@ -1,0 +1,86 @@
+{{Classic Era}}
+{{Broken}}
+[[File:npc_talisyn_stormwing.png|frame|Talisyn Stormwing]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lesser Faydark]]
+|-
+! ''' Quest Giver: '''
+| [[Talisyn Stormwing]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| Bloodboil
+|}
+
+== Reward ==
+
+<ul><li>  {{:Emerald Cloak of the Faydark}}
+</li></ul>
+
+== Walkthrough ==
+
+<b>This quest is no longer active.</b>
+
+
+
+You say, 'Hail Talisyn Stormwing'
+
+: Talisyn Stormwing says 'Greetings, _____. You must forgive my rather [inhospitable mood] this day, if of course it comes forth to you in what speech we have.'
+
+You say, 'What about your inhospitable mood?'
+
+: Talisyn Stormwing says ' I am merely... troubled by the conditions of my change in stations. I once guarded Kelethin from the vile Crushbone Orcs, but it seems a new terror has arisen within our forests. It is the duty of a ranger, and I do not complain in the least, but the [mutilation and corruption] that slithers through the forest still brings a pain of anger to my heart. 
+
+You say, 'What about the mutilation and corruption?'
+
+: Talisyn Stormwing furrows his troubled brow in confusion and surprise. 'You need ask such a question and receive answers in the form of words to understand what it is that surrounds you, Danian ? Have you neither heard nor seen the vile creatures that inhabit the putrid lands of Mistmoore to the south? Or have you not seen the creatures forged from the very shadows that lie not to far from our homelands? The Teir`Dal beasts that have made camp not too far from the entrance of Mistmoore's lair? These evils, some ancient beyond our pilgrimage from Tunaria, have torn and marred these precious, beautiful forests. Unfortunately, a [greater evil] has descended, and thus my presence here. 
+
+You say, 'What about the greater evil?'
+
+: Talisyn Stormwing says 'Not too far in the recent past did Firiona Vie, the lovely and gracious Champion of Tunare, return to our homelands. In her return, she sought to bring forth the avatar of our sacred Mother to seek guidance on her path -- the path of Elven Kind. Little did the Champion know that The Faceless was close at bay, and through means unknown, his power was greater than that of our sacred Mother's. In a petty display of his new found power, the Lord of Fear [furthered the corruption] of these natural lands. 
+
+You say, 'What furthered the corruption?'
+
+: Talisyn Stormwing says 'I cannot say for sure, and neither can our elders. None know for certain how or why this was done. All we know is that [the beings that were closest to Tunare's grace] were reaved from her grasp, and now roam as the undead or worse.
+
+You say, 'What about the beings that were closest to Tunare's grace?'
+
+: Talisyn Stormwing closes his eyes and bows his head for a moment as if in mourning. 'The Faerie Folk that called this place their home have been changed into unnatural monsters of Cazic's will. They thirst for mortal blood and flesh, and have lost all innocent, grace, and reason that was once their existence. But they seem incomparable to [the greatest loss] to be turned in Cazic-Thule's favor. 
+
+You say, 'What is the greatest loss?'
+
+: Talisyn Stormwing  raises his head, his features remaining solemn but stern. 'Equestrielle, the maiden unicorn, was corrupted by The Faceless himself and through vile trickery, he convinced the angered and frightened Firiona to remove her horn to cease the spreading of the disease. In honor and regret, the Champion did so, but now that once beautiful and sacred being roams as a blood thirsty, uncaring monster who kills any and all mortal beings. She is why I was sent, as The Heartwood Master knew that any other would end her life in mercy or the others she would harm and thus he entrusted to me [these tasks].' 
+
+You say, 'what about these tasks?'
+
+: Talisyn Stormwing says 'I am here to observe, warn the travelers that would pass through these infected lands, and to gather what evidence that I can to further the research of the council of magics at Felwithe. However, as I am the only one that has been charged with such tasks, it has been quite difficult. I do not know if I can withstand seeing such destruction and chaos before even I find mercy to be the proper route. If only they would send [assistance], if only for a day.'
+
+You say, 'I will assist you'
+
+: Talisyn Stormwing says 'I would be eternally grateful for your company, _____ and your pledge to this cause. However, I cannot expect anything of you. If [you are sure] that you would be willing to aid all of the Faydark, then I will be willing to give forward what knowledge I have gathered thus far.'
+
+You say, 'I am sure'
+
+: Talisyn Stormwing says 'Then I thank you, _____, and the entire Faydark thanks you. I have been studying and gathering evidence of the [Frightlings], or the distorted Pixies. I have already given several specimens of these creatures to the researchers, but I have found a great use for them beyond research. If you can bring to me one of their every so tiny skulls, I will do all in my power to cleanse that object so that it may aid you further in the tasks of the forest.'
+
+You say, 'What about the frightlings?'
+
+: Talisyn Stormwing says 'The Frightlings are what the corrupted Pixies have been calling themselves. I have found through my extensive scouting of the area that one called Bilewretch who acts as their leader. I have dreamed for many days now of his destruction at my bow, but unfortunately that would cause me to abandon my post, and leave myself vulnerable to attacks from the [Undead Sprites.] However, as you have pledged yourself to the cause, if you would bring me proof of Bilewretch's destruction, I shall reward you greatly for your service.'
+
+You say, 'What about the undead sprites?'
+
+: Talisyn Stormwing says 'They are the twisted monsters of what used to be the noble Faeries of the forest. Now, they are but fleshy beings that desire only to bring death for their dark amusements. As with the Frightlings, these unnatural beasts are lead by a fearsome creature that has named himself Bloodboil. Another despicable being that I wish to bring a swift death to, but cannot for fear of abandoning my post and failing my master. If you would be so brave and bring to me proof of this monster's demise, your efforts will not go unrewarded.'
+
+Talisyn wants you to obtain a wing dropped by an undead sprite named Bloodboil. Bloodboil spawns in the middle of the mushrooms. The wing is an uncommon drop. If you bring back the wing, you will get your reward.
+
+[[Category:Quests]]
+[[Category:Lesser Faydark]]

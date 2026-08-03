@@ -1,0 +1,142 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_veldern_blackhammer.jpg|frame|Veldern Blackhammer]]
+[[File:malevolent.png|frame|Iksar Shadow Knight in Malevolent Armor (except helm).]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Veldern Blackhammer]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV West Wing)
+|}
+Ally faction is required for all Kael armor quests.<br>
+
+== Rewards ==
+
+{{Gear Set
+|Malevolent Crown
+|Malevolent Breastplate
+|Malevolent Vambraces
+|Malevolent Bracer
+|Malevolent Gauntlets
+|Malevolent Greaves
+|Malevolent Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Veldern Blackhammer]] in [[Kael Drakkal]]. You must at least be ALLY with Kromzek for turn-in. {{CheckboxList}}
+*[[Malevolent Crown]]
+:*[[Ancient Tarnished Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Malevolent Breastplate]]
+:*[[Ancient Tarnished Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Malevolent Vambraces]]
+:*[[Ancient Tarnished Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Malevolent Bracer]]
+:*[[Ancient Tarnished Plate Bracelet]]
+:*3x [[Crushed Flame Emerald]]
+*[[Malevolent Gauntlets]]
+:*[[Ancient Tarnished Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Malevolent Greaves]]
+:*[[Ancient Tarnished Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Malevolent Boots]]
+:*[[Ancient Tarnished Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+After handing in your items:
+
+Veldern Blackhammer smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+== Helm ==
+
+You say, 'Ancient Tarnished Helm'
+
+Veldern Blackhammer says, 'For the helm I shall require an ancient tarnished plate helmet and three pieces of crushed coral. Does your tiny mind comprehend the task set before you? If so, then get them immediately! I am beginning to get hungry and you are looking all the better as a snack.'
+
+
+Veldern promises to make a helm for you if you bring him an [[Ancient Tarnished Plate Helmet]] and three pieces of [[Crushed Coral]].
+
+== Breastplate ==
+
+You say, 'Ancient Tarnished BreastPlate'
+
+Veldern Blackhammer says, 'For the breastplate, I require this. An ancient tarnished breastplate and three flawless diamonds. Nothing more, nothing less. For perfection, there is a price, insignificant one.'
+
+
+Veldern promises to make a breastplate for you if you bring him an [[Ancient Tarnished Breastplate]] and three [[Flawless Diamond]]s.
+
+== Vambraces ==
+
+''Dialogue needed.''
+
+
+Veldern promises to make some armplates for you if you bring him an [[Ancient Tarnished Vambraces]] as well as three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+You say, 'Ancient Tarnished Bracer'
+
+Veldern Blackhammer says, 'For the bracers, I will require an ancient tarnished plate bracer and three crushed flame emeralds. Now go away before I use your insides as decoration for my boot.'
+
+
+Veldern promises to make a bracer for you if you bring him an [[Ancient Tarnished Plate Bracelet]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'Ancient Tarnished Gauntlets'
+
+Veldern Blackhammer says, 'Your hands are quite important are they not? For without them, you cannot use your precious weapons or shields to protect yourself. You humor me with your feeble attempts. Fetch me an ancient tarnished plate gauntlets and three crushed pieces of topaz for your precious little hands.'
+
+
+Veldern promises to make some gauntlets for you if you bring him [[Ancient Tarnished Plate Gauntlets]] and three pieces of [[Crushed Topaz]].
+
+== Greaves ==
+
+You say, 'Ancient Tarnished Greaves'
+
+Veldern Blackhammer says, 'Legs... they are my favorite part of any meal. I like to pull them off first and...Oh, yes, where was I? The leggings. Go and retrieve an ancient tarnished plate greave as well as three flawed sea sapphires. Now, leave my sight before I sample one of yours.'
+
+
+Veldern promises to make some leggings for you if you bring him an [[Ancient Tarnished Greaves]] as well as three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'Ancient Tarnished boots'
+
+Veldern Blackhammer says, 'You wish to have a pair of boots? Then acquire these items for me. A pair of ancient tarnished plate boots and three pieces of crushed black marble. I tire of your prattle. Go away now.'
+
+
+Veldern promises to make some boots for you if you bring him A pair of [[Ancient Tarnished Plate Boots]] and three pieces of [[Crushed Black Marble]].
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Shadow Knight Quests]]
+[[Category:Kael Armor Quests]]

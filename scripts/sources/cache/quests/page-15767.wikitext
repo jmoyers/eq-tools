@@ -1,0 +1,137 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_terman_underbelly.png|frame|Terman Underbelly]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Terman Underbelly]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+
+Kindly faction is required for all Thurgadin armor quests.<br>
+Set Totals ''(1 bracer)'':
+
+== Reward ==
+
+{{Gear Set
+|Rune Crafter's Helm
+|Rune Crafter's Breastplate
+|Rune Crafter's Vambraces
+|Rune Crafter's Bracer
+|Rune Crafter's Gauntlets
+|Rune Crafter's Greaves
+|Rune Crafter's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Terman Underbelly]] in [[Thurgadin]].{{CheckboxList}}
+*[[Rune Crafter's Helm]]
+:*[[Corroded Chain Coif]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Rune Crafter's Breastplate]]
+:*[[Corroded Chain Tunic]]
+:*3x [[Black Marble]]
+*[[Rune Crafter's Vambraces]]
+:*[[Corroded Chain Sleeves]]
+:*3x [[Jaundice Gem]]
+*[[Rune Crafter's Bracer]]
+:*[[Corroded Chain Bracer]]
+:*3x [[Crushed Opal]]
+*[[Rune Crafter's Gauntlets]]
+:*[[Corroded Chain Gauntlets]]
+:*3x [[Crushed Lava Ruby]]
+*[[Rune Crafter's Greaves]]
+:*[[Corroded Chain Leggings]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Rune Crafter's Boots]]
+:*[[Corroded Chain Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+You say, 'Hail, Terman Underbelly'
+
+: Terman Underbelly speaks in a rumbling tone. : Terman Underbelly says, 'Greetings.  I only wish to speak to a shaman.  Are you a shaman?'
+
+You say, 'I am a shaman.'
+
+: Terman Underbelly says 'I sense the strength of your mystical powers within you and they vibrate with power.  You have learned much from your travels and I shall help you, by providing you with protection from harm and the elements, in the form of armor.'
+
+You say, 'What armor?'
+
+: Terman Underbelly says 'For you I shall make a coif, tunic, sleeves, a bracer, gauntlets, leggings, and boots.  Each piece is a quest unto itself.  To seek the components, you must search the lands for them and test the power of the spirit within.'
+
+'''Gems are dropped in various Velious zones while Corroded Chain Armor drops from the higher level giants in Kael Drakkel.'''
+
+'''After turn-in:'''
+
+Terman Underbelly smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'How do you make a coif?'
+
+: Terman Underbelly says 'Those who are wise as we are know that protection of the head is most important. I may be able to forge you something most interesting if you were to bring me a [[Corroded Chain Coif]] and three pieces of [[Crushed Onyx Sapphire]].'
+
+== Tunic ==
+
+You say, 'How do you make a tunic?'
+
+: Terman Underbelly says 'If you find a [[Corroded Chain Tunic]] and three pieces of [[Black Marble]] bring them to me and I shall attempt to create an enchanted tunic that will serve you well.'
+
+== Sleeves ==
+
+You say, 'How do you make sleeves?'
+
+: Terman Underbelly says 'Three [[Jaundice Gem]]s and a set of [[Corroded Chain Sleeves]] might be an interesting combination. The powers of the gems may be harnessed to imbue the sleeves.'
+
+== Bracers ==
+
+You say, 'How do you make a bracer?'
+
+: Terman Underbelly says 'Bracers are quite easy to imbue. Simply find three [[Crushed Opal]]s and a [[Corroded Chain Bracer]] and I will complete the ritual to enchant them.'
+
+== Gauntlets ==
+
+You say, 'How do you make gauntlets?'
+
+: Terman Underbelly says 'Strong protection for one's hands is important. I may be able to craft you a set of powerful chain gauntlets if you find a set of [[Corroded Chain Gauntlets]] and three [[Crushed Lava Ruby|Crushed Lava Rubies]].'
+
+== Leggings ==
+
+You say, 'How do you make leggings?'
+
+: Terman Underbelly says 'Leggings are a bit trickier to imbue. Three [[Chipped Onyx Sapphire]]s will allow me to channel the correct energies into a pair of [[Corroded Chain Leggings]] however those chipped onyx sapphires are somewhat rare. Return to me if you find such things in your journeys.'
+
+== Boots ==
+
+You say, 'How do you make boots?'
+
+: Terman Underbelly says 'Simply bring me a set of three [[Crushed Flame Emerald]]s and a pair of [[Corroded Chain Boots]] and I will imbue them. I bid you good luck in finding such things.'
+
+[[Category:Shaman Quests]]
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Thurgadin Armor Quests]]

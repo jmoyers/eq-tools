@@ -1,0 +1,69 @@
+{{Velious Era}}
+[[File:npc_sentry_kale.png|frame|Sentry Kale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kale]]
+|-
+! ''' Minimum Level: '''
+| 53
+|-
+! ''' Classes: '''
+| [[Bard]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| [[Wenglawks Kkeak]], [[Sentry Rotiart]], [[A krom zek spy]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dragon Tooth Choker}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, "Hail, Sentry Kale"
+
+: Sentry Kale says, "Ah outsiders, I have heard word of your travel here. Perhaps you wish to become a friend of the kind?
+
+You say, "I wish to become a friend of the kin"
+
+: Sentry Kale says, "Good, then you would not mind assisting us with a matter of grave importance. We have received news of an alarming sort. There walks amongst us a spy of the storm giants, who feeds our every move to them and their accursed strategist. For the life of us, we cannot deduce whom the traitor is, however we have received word from Wenglawks of Kael, an associate of ours, that he has information concerning this. For a measly sum of 100 platinum, he has offered to give us the information to rid ourselves of this traitor. If you are indeed friend of the kin, take this note to Wenglawks and rid us of this traitor."
+
+'''You must now travel to [[Kael Drakkel]] and find [[Wenglawks Kkeak]] located at #4 on the map.'''
+
+Go inside the building with invisibility and give him [[Note to Wenglawks]] from [[Sentry Kale]] and 100 platinum to receive a [[Dispelling Device]].
+
+''If you are brave enough, you can hand him the stuff in there with a lot of giants around -OR- You can wait outside since he does come out from the room and walk up the corridor.''
+
+'''Return to [[Skyshrine]] and give the [[Dispelling Device]] to [[Sentry Rotiart]].''' 
+
+: Sentry Rotiart turns towards you as you toss the device at him.  Startled, the golem catches the device as it suddenly begins to whine, increasing in volume quickly until it reaches a deafening level.  Rotiart falls to the ground.  His image begins to fade and is replaced with that of a Kromzek warrior!
+
+Prepare for a fight as [[Sentry Rotiart]] is in fact [[A krom zek spy]]! He is a belly caster, but otherwise not notably resistant to magic. Other NPCs in the room will not aggro him. Once you have killed him, he will drop a [[Spy Report]]. Loot and turn it in to [[Sentry Kale]] to receive faction and [[Dragon Tooth Choker]].
+
+: Sentry Kale says, 'You have done us a great service, _______. I cannot believe a mere child of Zek could infiltrate our society, this whole encounter has been very frightening. Soon a time will come when we can no longer cut ourselves off from the rest of the world. Soon we will be forced to fight every day of our lives to defend our heritage and way of life. Hopefully we shall have allies such as yourself when that time comes. I would like you to have this small token of our gratitude. A venerable wurm allowed us to grace this piece of armor with his teeth when he passed on, wear it well.
+
+{{exp}}
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div> 
+
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Bard Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

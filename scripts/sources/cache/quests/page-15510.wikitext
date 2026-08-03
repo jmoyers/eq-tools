@@ -1,0 +1,108 @@
+{{Classic Era}}
+[[File:npc_markus_jaevins.png|frame|Markus Jaevins]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Markus Jaevins]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Elial Brook]]
+|}
+
+== Reward ==
+
+<ul><li> Experience, faction
+</li></ul>
+
+== Walkthrough ==
+
+Markus Jaevins is located at +730, +915 on the top floor of the Tower of The Gate Callers in Erudin Palace.
+
+You say, 'Hail, Markus Jaevins'
+
+: Markus Jaevins says 'I am the overseer of the great city of Erudin. You will address me in the proper manner. HAIL!!'
+
+You say, 'Who are you?'
+
+: Markus Jaevins says 'Markus Jaevins is the highest ranking official in Erudin.'
+
+You say, 'What about the heretics?'
+
+: Markus Jaevins says 'The heretics are our sworn enemies. Their ancient origins are our own, however, they are the mad Erudites who chose the dark side of magic called necromancy. We, the magicians, caught one snooping in the palace just last week. He is now our [prisoner].'
+
+You say, 'What prisoner?'
+
+: Markus Jaevins says 'The infidel was memorizing our spells to take to the rest of the heretic scum. He will finally be [purged] today. Could you please go to the cells here in the palace and ask Jail Master Lius to give you the heretic's remains?'
+
+You say, 'What do you mean, purged?'
+
+: Markus Jaevins says 'To be purged is to take all the evil from one's body and set the soul free. Through magical means, the Erudite cleansers pull the accused's organs out through the mouth. When all is done, you can be assured the body is cleansed of all evil.'
+
+You say, 'Where is Jail Master Lius?'
+
+: Markus Jaevins says 'The prison is on the lower level of the palace inside the City Office.'
+
+'''Warden Lius is located at +560, +850 inside the City Office in Erudin Palace.'''
+
+You say, 'Hail, Warden Lius'
+
+: Warden Lius says 'Hail, citizen! This is no place for you. Make sure you keep it that way. We do not need any more [hollow men].'
+
+You say, 'What hollow men?'
+
+: Warden Lius says 'There is only one sentence in Erudin, death!! And death by purging is the most common. The insides of the criminal are literally pulled out chunk by chunk through the mouth. Then the hollow man is set adrift to float the seas of Erud's Crossing, his body cleansed of all anarchy.'
+
+You say, 'I need the heretic remains.'
+
+: Warden Lius says 'I am afraid the heretic prisoner has escaped. There was a skirmish on the palace grounds so I went to assist. When I returned to my post he was gone! I don't know how... he was locked away in the first cell, across from that no-good, thieving gnome, and it is impossible to break the lock with or without magic. We will find him soon. Tell Guildmaster Markus he has escaped.'
+
+You say, 'Hail, Markus Jaevins'
+
+You say, 'The heretic has escaped.'
+
+: Markus Jaevins says 'Escaped!! This is not good. The sentinels will not find him in time. You must find him. When you find him, release his soul and rid his body of evil any way you can. Bring me proof and all will be well.'
+
+'''Elial Brook is located at -365, +330 in Toxxulia Forest. Kill him and loot his [[Bones]].'''
+
+You have slain Elial Brook!
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[Gate Callers]] got better.
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[Crimson Hands]] got better.
+</div>
+
+'''Hand in the Bones.'''
+
+: Markus Jaevins says 'This is fine work, young one. You keep this up and you shall be knighted before long.'
+
+<div class="facblock">
+* Your faction standing with [[Gate Callers]] got better.
+* Your faction standing with [[High Guard of Erudin]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{exp}}
+
+The positive hit to Gate Callers is significant.  Was warmly after ~20 turnins as a Dwarf.
+
+Note: This quest can be done with dubious faction.
+
+At level 6, each turn in resulted in 3% exp for an Erudite Magician.
+At level 9, each turn in resulted in ~1.25% exp for an Erudite Magician.
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]

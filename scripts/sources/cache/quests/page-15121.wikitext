@@ -1,0 +1,144 @@
+'''Note:''' For the older versions of the rewards for these quest (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+== Checklist ==
+Bold items are No Drop, while bold NPC names indicate island bosses. {{CheckboxList}}<ul>
+Test of Spirit - Dirkog
+<li>{{:Girdle of Faith}}
+  <ul>
+  <li> - 3 - {{:Diaphanous Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li> - 4 - {{:Silvery Girdle}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li> - '''5''' - <span style="font-weight: bold">{{:Ivory Sky Diamond}}</span> ('''[[The Spiroc Lord]]''')
+  </ul>
+</ul>
+<ul>
+Test of Sacrifice - Gregori
+<li>{{:Aldryn, Blade of the Ocean}}
+  <ul>
+  <li> [[Wind Rune Ozah]] (random drop from any mob in Plane of Sky)
+  <li> - '''6''' - <span style="font-weight: bold">{{:Bixie Sword Blade}}</span> ('''[[Bazzt Zzzt]]''')
+  </ul>
+</ul>
+<ul>
+Test of Love - Gregori
+<li>{{:Thelvorn, Blade of Light}}
+  <ul>
+  <li> - 5 - {{:Dark Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li> - 6 -  {{:Ethereal Topaz}} ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]])
+  <li> - '''7''' -  <span style="font-weight: bold">{{:Sphinx Claw}}</span> ('''[[Sister of the Spire]]''')
+  </ul>
+</ul>
+<ul>
+Test of Compassion - Gregori
+<li>{{:Truvinan}}
+  <ul>
+  <li> - 6 - {{:Dulcet Nectar}} ([[Bzzazzt]])
+  <li> - 7 - {{:Golden Hilt}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li> - 8 - <span style="font-weight: bold">{{:Large Sky Diamond}}</span> ('''[[Eye of Veeshan]]''')
+  <li> - 1.5, 4, 8 {{:Efreeti Zweihander}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+
+==Quest Start==
+
+Talk to Dason Goldblade in the [[Plane of Sky]].
+
+You say, 'hail Dason Goldblade'
+:''Dason Goldblade says 'Greetings.  Are you pure of heart and soul?''
+You say, 'I am pure of heart and soul'
+:''Dason Goldblade says 'Then choose.  Do you wish your purity to be tested by Gregori or Dirkog? ''
+
+= Gregori Lightbringer =
+
+You say, 'I wish to be tested by gregori'
+:''Dason Goldblade says 'Gregori is a true and faithful warrior of Tunare.  Read this book and, when you feel confident, hand it back to me.  I will summon Gregori to test you after you have done so. ''
+:''Dason Goldblade says 'Farewell. ''
+You say, 'hail Gregori Lightbringer'
+:''Gregori Lightbringer says ' Hail and well met!  You have traveled far indeed to cross my path.  I will be testing you in compassion, sacrifice, and love.  Are you ready for the test of the heart, Xekl ?  If you've already passed one of these tests I may have something else you might be intrested in. ''
+You say, 'I am '''interested''' in trade' (spelling)
+:''Gregori Lightbringer says 'Ah, you are interested in getting a new reward for what you have accomplished.  Very well, bring me Senki or Zephywind and I will find a reward more fitting. ''
+You say, 'I am ready for the test of the heart'
+:''Gregori Lightbringer says 'As I said before, the test of the heart is in three parts.  Compassion, sacrifice and love.  Choose one and we will begin. ''
+
+'''Note:''' I can't find any information on the item named '''Senki.'''
+
+== Paladin Test of Sacrifice ==
+
+Gregori Lightbringer says 'You have sacrificed much to come so far, Erudite.  Sacrifice this one last time and the Sword of Ocean Breeze shall be yours.  Retrieve a wind rune ozah and a bixie sword blade. 
+
+'''Reward:''' {{:Aldryn, Blade of the Ocean}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Wind Rune Ozah]] || Random drop || Any island (Plane of Sky)
+|-
+| [[Bixie Sword Blade]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+
+== Paladin Test of Love ==
+
+Gregori Lightbringer says 'Love is what brings us close to the gods we follow.  Without it, we could not truly worship them, and would be lost.  Prove yourself to me and return with a dark spiroc feather, ethereal topaz, and a sphinxian claw.  In return, I will give you Zephyrwind. 
+
+'''Reward:''' {{:Thelvorn, Blade of Light}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Dark Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Ethereal Topaz]] || [[Bazzzazzt]], [[Bizazzt]], [[Bzzzt]] || Island 6
+|-
+| [[Sphinx Claw]] || [[Sister of the Spire]] || Island 7
+|}
+
+== Paladin Test of Compassion ==
+
+Gregori Lightbringer says 'Compassion is of great importance to us.  Without it, we do not feel empathy, and cannot truly follow the path we claim to travel.  Return to me an efreeti two handed sword, dulcet nectar, a golden hilt, and a large sky diamond.  If you present these to me, I will award you Truvinan, the divine wind. 
+
+'''Reward:''' {{:Truvinan}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Dulcet Nectar]] || [[bzzazzt]] || Island 6
+|-
+| [[Golden Hilt]] || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Large Sky Diamond]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti Zweihander]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+= Dirkog Steelhand =
+
+You say, 'I wish to be tested by dirkog'
+:''Dason Goldblade says 'Dirkog is a gruff one, but his faith is what all paladins should strive to equal.  Read this book and return it to me.  After you have done so, I shall summon Dirkog to test you. ''
+:''Dason Goldblade says 'Farewell. ''
+:''Dirkog Steelhand says 'May faith guide you always.'' 
+:''Dason Goldblade says 'Farewell. ''
+You say, 'hail Dirkog Steelhand'
+:''Dirkog Steelhand says 'Leave me be, ye orc kissin' son o' Innoruuk! ''
+You say, 'I am ready to get started.'
+:''Dirkog Steelhand says 'Well Then!  You best go out an get me a silvery girdle, a diaphanous globe, an a ivory sky diamond!  Come on back with them and you'll get a nice belt.''
+
+== Paladin Test of Spirit ==
+
+
+'''Reward:''' {{:Girdle of Faith}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Diaphanous Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Silvery Girdle]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Ivory Sky Diamond]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Paladin Quests]]

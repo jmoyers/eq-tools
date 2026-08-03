@@ -1,0 +1,99 @@
+{{Classic Era}}
+[[File:npc_roary_fishpouncer.png|thumb|Roary Fishpouncer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Roary Fishpouncer]]
+|-
+! ''' Minimum Level: '''
+| 1+ (Rec. 5)
+|-
+! ''' Classes: '''
+| [[Bard]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]], [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a darkwater piranha]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Kerran Fishing Spear}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by X.
+</div> 
+
+* {{YouGainExperience}} (0.030%) @ lvl 6
+
+== Checklist == 
+{{CheckboxList}}
+* [[Raw Darkwater Piranha]]
+** Locate and Kill [[a darkwater piranha]] roams entirety of the bay between Kerra Isle and Toxxulia Forest
+** Return Roary Fishpouncer
+
+{{End}}
+
+== Walkthrough ==
+
+'''Roary Fishpouncer can be found in the hut immediately inside the zone and on your right. ''Your Location is 630.53, -675.76, 17.05'''''
+
+You say, 'Hail, Roary Fishpouncer'
+
+: Roary Fishpouncer says, 'Rrrr... catching and prrreparing fish is my specialty. Perrrhaps you could fetch for me some [rrrare fish] so that I may demonstrate my skill? Rrrr.'
+
+You say, 'What rrrare fish?'
+
+: Roary Fishpouncer says, 'Rrrr... my most delectable dish is prrreparrred frrrom rrraw darkwater piranha. Unforrrtunately, the pirrranha only surrrvives in the murrrky waterrrs of the wicked Toxxulia forrrest. I will rrreward any brrrave fisherman who can brrring me some rrraw darkwater pirranha.'
+
+''' You have been assigned the task 'Fish Dinner'. ''' <br>
+Roary Fishpouncer, a telented chef of Kerra Village, would love your help acquiring fresh darkwater piranha meat, a key ingredient in his specialty dish.
+
+=== Quest Stage 1: ===
+* Step - Collect 1 Raw Darkwater Pinaha(s)
+* Task - Kill darkwater piranha in the rivers of Toxxulia Forest until you acquire Raw Darkwater Piranha meat.
+
+You must kill [[a darkwater piranha]] which is a rare spawn in the Toxxulia Forest River between the entrance to Kerra Island and the mainland. It will rarely drop [[Raw Darkwater Piranha]]. It's PH appears to be any large piranha in the river.
+This is an uncommon spawn, with an uncommon drop rate. 
+
+ You have slain a darkwater piranha!
+ --You have looted a [[Raw Darkwater Piranha]].--
+
+''' Your task 'Fish Dinner' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Deliver the Raw Darkwater Piranha to Roary Fishpouncer
+* Task - Return to Roary Fishcatcher with the fresh meat.
+
+Return to Roary Fishpouncer with the raw piranha. Give it to him for the following dialogue and your spear.
+
+ You offered 1 Raw Darkwater Piranha to Roary Fishpouncer.
+
+''' Your task 'Fish Dinner' has been updated. '''
+
+=== Quest Complete: ===
+<span style="color: yellow; font-weight: bold;">
+You gave Roary Fishpouncer the meat he needed to prepare a delicious meal. He rewarded you with a spear that looks like it could be very useful on your adventures.
+</span>
+
+: Roary Fishpouncer says, 'Rrrr... my mouth is waterrring alrrrready. Ourrr trribe shall feast well tonight. You have prrroven yourself a fisherrrman worrrthy of one of my special spearrrs. They are coated with a specially prrrepared fish oil. My special technique assurrres the oil neverrr wearrrs off.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Kerran Fishing Spear <br>
+
+ You complete the trade with Roary Fishpouncer.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:Bard Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

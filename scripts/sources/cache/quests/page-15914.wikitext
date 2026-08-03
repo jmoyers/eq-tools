@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:Npc xon quexill.PNG|alt=A Dark Elf wearing black and red robes|thumb|200px|Xon Quexill]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Stained Training Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Necromancer, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'The Lodge of the Dead is now your home, and [[Xon Quexill]] your master. Take this note to him, and follow his orders.'
+
+Upon handing the note to [[Xon Quexill]]:
+
+: [[Xon Quexill]] says, 'Just what I need in this outfit, another waste of flesh. Here, put this on. Return to me when you have become more experienced in our art. You'd better prove yourself of value to me. I hear I can get few platinum for the skull of an idiot on the black market, and I could make a fortune from your type. Now, get outta here!'
+
+<div class='facblock'>
+* Your faction standings with [[The Dead]] got better.
+* Your faction standings with [[Queen Cristanos Thex]] got better.
+* Your faction standings with [[King Aythox Thex]] got worse.
+* Your faction standings with [[Keepers of the Art]] got worse.
+* Your faction standings with [[Eldritch Collective]] got worse.
+* Your faction standings with [[Primordial Malice]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dark Stained Training Robe*]]. Good luck, Necromancer!
+
+[[Category:Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Neriak Third Gate]]

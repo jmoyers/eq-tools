@@ -1,0 +1,83 @@
+{{Classic Era}}
+[[File:npc_toelia_snuckery.png|frame|Toelia Snuckery]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Toelia Snuckery]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Chomper (NPC)]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+''Note: Indifferent faction required to do this quest.''
+
+[[Toelia Snuckery]] is located at -37, -197 on the second floor of the Fool's Gold in Rivervale.
+
+You say, 'Hail, Toelia Snuckery'
+
+: Toelia Snuckery says 'Oh, hi. Listen, um.. ______, was it? Listen, pal. I really don't have time for the friendly-friendly, so why don't you just move on?'
+
+You say, 'I am the new dishwasher.'
+
+: Toelia Snuckery says 'Dishwasher, huh? You must not mind getting your feet wet then, huh? Well, I do have a job for you. It seems one of our younger employees got a little nevous around a Deputy and ditched his um.. recent purchase into the river. We sent the fool after it but ol' [Chomper] got him. He said he had dropped it off the docks but the currents might have moved it from there. It should be in an old pouch. Return the merchandise to me. Well? Get going!'
+
+'''A [[Torn Old Pouch]] spawns at 90, -356 at the bottom of the lake in Rivervale.'''
+
+'''Hand Toelia Snuckery the Torn Old Pouch.'''
+
+: Toelia Snuckery says 'What is this? The pouch is empty! Where is the Ruby?! What do you mean you don't have it? Oh no. I bet [Chomper] swallowed it! Get it back and bring it to me.'
+
+<div class="facblock">
+* Your faction standing with [[Deeppockets]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+</div>
+{{YouGainExperience}}
+You receive ~4 copper from Toelia Snuckery.
+
+You say, 'Who is Chomper?'
+
+: Toelia Snuckery says 'Chomper is a big, mean ol' fish. He looks like a normal fish, but a little bigger, and boy, oh boy, is he mean!'
+
+'''You have slain [[Chomper]]. You have looted a [[Large Ruby]].'''
+
+'''Hand Toelia Snuckery the Large Ruby.'''
+
+: Toelia Snuckery says 'You found it! Heh. Good thing you brought it back bub. This thing isn't priceless, its worthless but at least you proved you are loyal. Poor ol' Chomper..'
+
+<div class="facblock">
+* Your faction standing with [[Deeppockets]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+</div>
+{{YouGainExperience}}
+You receive ~4 copper from Toelia Snuckery.
+
+==See also==
+
+* [[The Fishslayers]]
+
+[[Category:Quests]]
+[[Category:Rivervale]]

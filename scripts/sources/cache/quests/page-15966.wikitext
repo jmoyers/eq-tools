@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_tynkale.png|frame|Tynkale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Tynkale]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Northern Felwithe]]
+|-
+! ''' Related NPCs: '''
+| [[Tynkale]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Used Gold Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tynkale]] is located at 11, -328 in the Cathedral of Fortitude ([[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Tynkale'
+
+: Tynkale says, 'Hail noble, Teddee!  Can you be of [service to the Clerics of Tunare] or are you not from our order?'
+
+'''Hand [[Tynkale]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Join our crusade to rid evil and disease from our beautiful lands.  Visit Master Tynkale, Priest of Tunare.  Give him this note, and he will accept you in and help begin your training.  Good luck young paladin.</code>
+
+: Tynkale says, 'Greetings, young paladin!  I am Master Tynkale of the Clerics of Tunare.  Here, we shall teach and train you in the skills needed to defeat our evil and diseased enemies.  Take this, our guild tunic - it will help protect you.  Wear it with pride, for you are now one of us.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Paladin Quests]]

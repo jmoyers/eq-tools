@@ -1,0 +1,120 @@
+{{Classic Era}}
+[[File:npc_priestess_caulria.png|frame|Priestess Caulria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Caulria]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[a rabid wolf]]
+|}
+
+== Reward ==
+
+<ul><li> Small Coin (Note - not giving any coin at the end of the Velious timeline)
+</li><li> Experience
+<li> any disease cured
+</li>
+</li></ul>
+
+== Walkthrough ==
+
+[[Priestess Caulria]] in the North Qeynos Temple (Take a left at the '''Temple of Life''' and enter the purple rings above the pond at (-160,-470) next to [[Astaed Wemor]])  gives the quest, which requires you to look into the occurrence of rabid wolves in the area.
+
+'''Return a [[Diseased Wolf Pelt]].'''
+
+:Priestess Caulria says, 'I see you have rid our land of a beast tainted with the blood of Bertoxxulous. The Prime Healer shall look favorably upon your soul. Here is our thanks and just in case the beast may have bitten you...'
+
+[[Priestess Caulria]] will cast [[Cure Disease]] on you to remove [[Rabies]] and other diseases.
+
+If you turn in the Pelts at the same time as someone else, you may not receive the Cure Disease cast.
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+{{YouGainExperience}}
+
+Works at apprehensive / dubious, unlike [[Fleshy Orbs]] from the same NPC.
+
+= Exp Gain =
+
+=== Human Bard ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 5
+| 12%
+| 6
+|-
+| 6
+| 11%
+| 9
+|-
+| 7
+| 11%
+| 9
+|-
+| 8
+| 9.5%
+| 3
+|-
+| 9
+| 8%
+| 13
+|-
+| 10
+| 6%
+| 18
+|-
+| 11
+| 5%
+| 20
+|-
+| 12
+| 4%
+| 24
+|-
+| 13
+| 3.5%
+| 7
+|}
+
+=== Wood Elf Ranger (Green, December 2020) ===
+
+{| class="eoTable2"
+! Level 
+! Turn-ins
+! % of Level gained
+! XP to complete level
+! Est. XP gained
+! Est. XP per turn-in
+|-
+| 10
+| 5
+| 18%
+| 379400
+| 68292
+| 13658
+|}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

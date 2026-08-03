@@ -1,0 +1,105 @@
+{{Temple Era}}
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Syllina]]
+|-
+! ''' Minimum Level: '''
+| 24
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[Rathe Mountains]], [[Lower Guk]], [[Upper Guk]], [[Unrest]]
+|-
+! ''' Related NPCs: '''
+| [[Ssynthi]]
+|}
+
+There are three primary pieces of [[Necromancer]] only ShadowBound armor. You will need to collect the following items and turn them in to [[Syllina]] in [[The Temple of Solusek Ro]].
+
+== Rewards ==
+
+{{Gear Set
+|ShadowBound Boots
+|ShadowBound Gloves
+|Robe of Enshroudment
+}}
+
+== ShadowBound Boots =={{CheckboxList}}
+* [[Scepter|Scepter of Sorrow]] (in [[Mistmoore]] complete the [[Solusek's Flower]] subquest - turn in flower to [[Ssynthi]] to receive "a scepter")
+* [[Skeletal Toe]] (drops off [[A_Giant_Skeleton|giant skeletons]] in [[Rathe Mountains]])
+* [[Eye of Shadow]] (drops off [[A shadowed man]])
+* [[Shadow Silk]] ([[Tailoring]] (Trivial: 36) - combine: 1 [[Gather_Shadows|Gather Shadows]] scroll, 1 [[Silk_Swatch|silk swatch]], 1 [[Shadow_Wolf_Pelt|shadow wolf pelt]])
+{{End}}
+
+== ShadowBound Gloves =={{CheckboxList}}
+* [[Scepter|Scepter of Tears]] (ground spawn in [[Lower Guk]] - from "dead side" entrance, turn left at first T intersection and follow path down to waterfall and up to room where it spawns (Number 1 on Dead Side Map))
+* [[Skeletal Finger]] (drops off [[A_Giant_Skeleton|giant skeletons]] in [[Rathe Mountains]])
+* [[Hand of Shadow]] (drops off [[A shadowed man]])
+* [[Inky Shadow Silk]] ([[Tailoring]] (Trivial: 36) - combine: 2 [[Gather_Shadows|Gather Shadows]] scrolls, 1 [[Silk_Swatch|silk swatch]], 1 [[Shadow_Wolf_Pelt|shadow wolf pelt]])
+{{End}}
+
+== Robe of Enshroudment =={{CheckboxList}}
+* [[A Werebat Wing]] (drops off [[A_werebat|Werebats]] in [[Unrest]])
+* [[Globe of Shadow]] (drops off [[A_froglok_nokta_shaman|A Froglok Nokta Shaman]] in [[Upper Guk]] - near "live side" entrance and [[Ancient Crocodile]] spawn (Number 3 on Live Side Map))
+* [[Mask of Shadow]] (drops off [[A shadowed man]])
+* [[Large Shadow Silk]] ([[Tailoring]] (Trivial: 36) - combine: 1 [[Gather_Shadows|Gather Shadows]] scroll, 1 [[Silk_Swatch|silk swatch]], 2 [[Shadow_Wolf_Pelt|shadow wolf pelts]])
+{{End}}
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Necromancer Quests]]
+
+== Walkthrough ==
+[[File:npc_syllina.png|thumb|right|Syllina]]
+You say, 'Hail, Syllina'
+
+:Syllina says, 'Hello, I am Syllina, follower of Solusek Ro and keeper of the [Shadow Lore].'
+
+You say, 'What Shadow Lore'
+
+:Syllina says, 'I hold the secrets to the Shadow Lore so highly prized by Necromancers. If you are interested, I can tell you about [ShadowBound Boots], [ShadowBound Gloves], the [Robe of Enshroudment] or the secrets to the making of [Shadow Silk].'
+
+
+'''ShadowBound Boots'''
+
+You say, 'What ShadowBound Boots'
+
+:Syllina says, 'ShadowBound Boots are boots woven from purest shadow. If you are interested, I will weave you a pair - but I will need [boot components].'
+
+You say, 'What boot components'
+
+:Syllina says, 'I will need the following items to make you a pair of ShadowBound Boots: Shadow Silk, The Scepter of Sorrow from Castle Mistmoore, an Eye of Shadow from our mortal enemies the Shadowed Men and a Skeletal toe from a Rathe Giant Skeleton.'
+
+
+'''ShadowBound Gloves'''
+
+You say, 'What ShadowBound Gloves'
+
+:Syllina says, 'ShadowBound Gloves are gloves woven from the purest shadow. If you are interested, I will weave you a pair - but I will need [glove components].'
+
+You say, 'What glove components'
+
+:Syllina says, 'I will need the following items to make you a pair of ShadowBound Gloves: Inky Shadow Silk, The Scepter of Tears from the circle-stair-waterfall of Guk, a Hand of Shadow from our mortal enemies the Shadowed Men and a Skeletal finger from a Rathe Giant Skeleton.'
+
+
+'''Robe of Enshroudment'''
+
+You say, 'What Robe of Enshroudment'
+
+:Syllina says, 'The Robe of Enshroudment is a robe woven from the purest of shadow. If you are interested, I will weave you a robe - but I will need the following [robe components].'
+
+You say, 'What robe components'
+
+:Syllina says, 'I will need the following items to make you a Robe of Enshroudment: Large Shadow Silk, A Werebat Wing from the Estate of Unrest, A Mask of Shadow from our mortal enemies the Shadowed Men and a Globe of Shadow from a Nokta Shaman in Guk.'
+
+
+'''Shadow Silk'''
+
+You say, 'What Shadow Silk'
+
+:Syllina says, 'If you are interested, I will tell you the secrets of making Shadow Silk for a mere 50 pieces of gold.'

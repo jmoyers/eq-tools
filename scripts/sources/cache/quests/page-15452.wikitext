@@ -1,0 +1,90 @@
+[[File:npc_dleria_mausrel.png|frame|Dleria Mausrel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Dleria Mausrel]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]] (Erudite)
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]], [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Marlin Bizmite]], [[Weligon Steelherder]], [[Gans Paust]], [[Bait Masterson]]
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items, Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+[[Dleria Mausrel]] is located at -1070, -415 in Erudin.
+
+You say, 'Hail, Dleria Mausrel'
+
+: Dleria Mausrel says 'Hail! You appear to be a [new priest].  Ah, I so enjoy the presence of youth within Deepwater Temple. I am sure Prexus is smiling upon us as we speak.'
+
+You say, 'I am a new priest.'
+
+: Dleria Mausrel says 'As I suspected. I shall assist you with your training and you shall assist the temple with your service. A young priest can help out by asking to [convert fishermen in Qeynos] or maybe even something truly great such as requesting to [protect the depths].'
+
+You say, 'I will convert fishermen in Qeynos.'
+
+: Dleria Mausrel says 'So you wish to journey to Qeynos? So be it. Go to Qeynos and find me a willing convert. Ask them if they wish the blessing of Prexus. If so, they should snap their pole in two and you will return it to me. Do this and be rewarded.'
+
+Marlin Bizmite is located at 0, +55 in South Qeynos.
+
+You say, 'Hail, Marlin Bizmite'
+
+: Marlin Bizmite says 'Greetings, fellow fisherman. You must be a fisherman. You have the stench of one. If you are not, might I suggest this new pastime I have heard of? A bath!!'
+
+You say, 'Do you wish the Blessing of Prexus?'
+
+: Marlin Bizmite says 'Oh no!! Not another Prexus freak!! Listen up aqua man, if you think a man named Marlin has any chance of giving up fishing, you have got another think coming. Go night diving in the north pond, you might find some bait for your Prexus blessing.'
+
+'''You can enter the catacombs by diving into the aforementioned pond.  Bait Masterson is located at +865, +90 in Qeynos Catacombs.'''
+
+You say, 'Hail, Bait Masterson'
+
+: Bait Masterson says 'You know.. I took up fishing because it was a nice, quiet activity. Most of all, I took it up to avoid conversing with strangers. Get the picture?!!'
+
+You say, 'Do you wish the Blessing of Prexus?'
+
+: Bait Masterson says 'Prexus!!? Aye!! I once followed the ways of the Ocean Lord. I remember those days. So clear and peaceful were they. I shall make a deal with you, my friend. I shall give up fishing if you give me your guild tunic. With such a tunic I shall once again be compelled to follow the peaceful ways of the Ocean Lord.'
+
+'''Give him your [[Old Blue Tunic*]], obtained by handing your starting "[[A tattered note]]" to your Deepwater guildmaster in Erudin, either [[Weligon Steelherder]] for Paladins or [[Gans Paust]] for Clerics'''
+
+Bait Masterson says 'Nice material!! I feel the ways of Prexus enlightening my soul. Unngh!! Enough of this fishing. Here take my broken fishing pole an toss it to the sea. All hail Prexus!!'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+{{exp}}
+</div>
+
+You receive a [[Snapped Pole]].  Return to Dleria Mausrel and hand in the Snapped Pole.
+
+: Dleria Mausrel says 'Good work, young priest. Soon you shall carry the word of the Ocean Lord to distant lands. For now, continue your training. As for your reward, I have this which has been sitting in our vault. I hope it can be of use to a young priest such as yourself.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+{{exp}}
+</div>
+
+You receive 5 gold from Dleria Mausrel. You receive a minor item.
+
+Need list of quest rewards; names, /locs, dialogues and faction hits for any other mobs that can be converted.
+
+[[Category:Quests]]
+[[Category:Erudin]]

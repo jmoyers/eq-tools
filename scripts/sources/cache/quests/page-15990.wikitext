@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_valeron_dushire.png|frame|Valeron Dushire]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Valeron Dushire]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Purple Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+a tattered note reads: Go to North Freeport and cross the river to the Hall of Truth. Give this note to Valeron Dushire and join the Knights of Truth in spreading the word of Mithaniel Marr.
+
+''[[Valeron Dushire]] is located at 229, -183 in the Hall of Truth ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Valeron Dushire'
+
+: Valeron Dushire says, 'I am Sir Valeron Dushire, leader of the order of the Knights of Truth. If your soul shines with purity and strength, I urge you to join our order. The might of Mithaniel Marr stands behind all who join. Soon that might will help us free this city from the tyranny of the [Freeport Militia].'
+
+'''Hand [[Valeron Dushire]] [[a tattered note]]'''
+
+:: <code></code>
+
+: Valeron Dushire says, 'Welcome to the Guild, here's your guild tunic.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Paladin Quests]]

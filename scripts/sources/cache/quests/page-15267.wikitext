@@ -1,0 +1,75 @@
+[[File:npc_weligon_steelherder.png|frame|Weligon Steelherder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Weligon Steelherder]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Paladin]], [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| [[a diseased shark]], [[a young shark]]
+|-
+! ''' Faction required to start quest: '''
+| Amiable or higher, would not give at indifferent
+|}
+
+== Reward ==
+
+<ul><li>  {{:Barnacle Breastplate}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Weligon Steelherder]] is in the Deepwater Knights guild in the room behind the merchants (-1040.84, -395.93, 51.19). He must consider you '''amiable''' to undergo the quest.'' 
+
+You say, 'Hail, Weligon Steelherder'
+
+: Weligon Steelherder says 'Hail, ______! This is the Deepwater Temple. Here you shall find the wisdom and courage of Prexus, the Ocean Lord. I am glad to see you have an interest. Forgive me if I cut our conversation short, but I have many [Deepwater tasks] to complete.'
+
+You say, 'What Deepwater tasks?'
+
+: Weligon Steelherder says 'We here at the Deepwater Temple must tend to the [Peacekeeper battlestaff] and the [Deepwater harpoon] as well as other duties such as [ocean protection]. There is always something we must do.'
+
+You say, 'What is ocean protection?'
+
+: Weligon Steelherder says 'In the name of Prexus, we are sworn to protect all ocean creatures. We have heard reports of a shark carrying a deadly malady. We believe she is pregnant. If she delivers her young to the ocean, it will endanger all other creatures. We need to find a young paladin to [hunt the diseased shark].'
+
+You say, 'I will hunt the diseased shark.'
+
+: Weligon Steelherder says 'Ah, yes! Take this bag with you. When you have collected the remains of the diseased shark and no fewer than three of her young in it, combine them in it and return it to me. Then, you shall get your reward.'
+
+'''You receive an [[Empty Shark Bag]], a 4-slot SMALL container. The [[diseased shark]] will drop a lore [[Heretic Shark Skin|Shark Skin]] and on death will spawn [[young shark]]s which drop the [[Baby Shark Remains]]. Combine 1 Heretic Shark Skin and 3 Baby Shark Remains in the Bag.'''
+
+'''You have fashioned the items together to create something new: [[Bag of Shark Remains]]. Give this to Weligon.'''
+
+: Weligon Steelherder says 'Very good, my dear young follower of Prexus. You will learn that swimming is a strong skill among the Deepwater Knights. Keep this up and you may wield a Deepwater harpoon soon enough. For now, you shall wear this barnacle breastplate. It is strong enough to aid a young knight in his quest for perfection.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive a [[Barnacle Breastplate]]
+
+[[Category:Quests]]
+
+[[Category:Erudin]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

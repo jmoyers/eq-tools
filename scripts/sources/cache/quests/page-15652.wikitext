@@ -1,0 +1,43 @@
+{{Velious Era}}
+
+[[File:npc_qarrgy_scallopgobbler.png|frame|Qarrgy Scallopgobbler]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cobalt Scar]]
+|-
+! ''' Quest Giver: '''
+| [[Qarrgy Scallopgobbler]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+{{:Bladder of Acidic Ooze}}
+
+== Walkthrough ==
+
+Qarrgy Scallopgobbler sets down several large crustacean shells covered in foreign runes, then extends his large, coarse hands in a gesture of friendship. 'I am pleased to see friendly visitors to our villages. I am the head craftsman of the village. The crustacean shell armor worn by the warriors of our village was crafted by me and by my apprentices. I will craft other materials as well when they are available.'
+
+You say, 'what crustacean shell armor'
+
+: Qarrgy Scallopgobbler says 'It takes awhile to make each piece.  It has to go through a long burning process to clean away all old meat and dirt.  Then it needs shaping and etching with runes.
+
+You say, 'what burning process'
+
+: Qarrgy Scallopgobbler says 'Usually I use a mixture made from the livers of barraccudas.  Their liquids are very strong and make good burning liquid.  If you want some you need to bring me two barraccuda livers.
+
+The reward when you turn in two {{:Barracuda Liver}} is a {{:Bladder of Acidic Ooze}}.  It appears that the Vial of Acid is used in [[Captain Nalot's Triple Strength Rum]] quest. It may be that there is a way to use this to make the armor yourself. 
+
+[[Category:Quests]]
+[[Category:Cobalt Scar]]

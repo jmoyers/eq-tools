@@ -1,0 +1,41 @@
+{{Cleanup Needed}}
+[[File:npc_sultin.png|frame|Sultin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Sultin]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Enchanter]], [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[Neriak|Neriak Third Gate]], [[Qeynos|South Qeynos]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[Enynti]], [[Madame Serena]], [[Mizr N`Mar]], [[a froglok scryer]], [[a skeleton monk]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Incandescent Mask}}
+</li></ul>
+
+== Walkthrough ==
+
+:''Main article: [[Incandescent Armor Quests]]''
+
+He needs a Glowing Mask, found on the skeletal monk or the froglock scryer in the caverns of Guk and all three Runes of Fortune.  
+
+One Rune can be found on the Dark Elf Enynti in the Chasm below Castle Mistmoore.  The other two can each be purchased for 50 golden coins each - one from Mizr N`Mar in the Neriak City Library and the other from Madam Serena in Qeynos. 
+
+Purchasing the rune from Mizr N`Mar increases your faction with beta neutral,so this is an easy, but costly, way to raise this faction. 
+
+Need all dialogues, /loc of quest mobs, drop information for each item, current faction hits if any.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]

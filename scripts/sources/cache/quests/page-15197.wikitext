@@ -1,0 +1,89 @@
+{{Classic Era}}
+[[File:npc_tolkar_parlone.png|frame|Tolkar Parlone]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Tolkar Parlone]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Classes: '''
+| [[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+|-
+! '''Related Zones:'''
+| [[Erudin|Erudin Palace]], [[Najena]], [[Unrest]]
+|-
+! '''Related NPCs:'''
+| [[Linara Parlone]], [[Trilani Parlone]], [[A priest of najena]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Mystic Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+''A minimum faction level is required with [[Keepers of the Art]] to interact with [[Linara Parlone]] and [[Tolkar Parlone]] (please confirm what faction is required). Use of charm or sneak might prove useful to bypass this requirement. Otherwise, use the [[Bat Wings]] quest to raise the faction.''
+
+You say, 'Hail, Tolkar Parlone'
+
+: Tolkar Parlone says 'Hail, good adventurer! I am afraid that my services are not available at the moment. I am too worried about my [daughter].'
+
+You say, 'Who is your daughter?'
+
+: Tolkar Parlone says 'My daughter's name is Linara. I have not seen her in several months, and I fear the worst. She went off adventuring, even though I told her how dangerous it was.'
+
+You say, 'Where is she adventuring?'
+
+: Tolkar Parlone says 'I do not know where she went, but I thought she mentioned something about lava. It still sends shivers down my spine just thinking about it.'
+
+'''Go to [[Unrest]] and kill the [[A_priest_of_najena|Priest of Najena]] in the southwest tower on the 3rd floor and get a [[Tarnished Bronze Key]]. '''
+
+'''In [[Najena]], kill ogres or [[Moosh]] for a [[Guard's Keyring]] to access [[Linara Parlone]]'s cell, or drop in through the correct pit trap. If you choose the wrong pit trap, kill [[Moosh]] for the key to escape the other cell.'''
+[NOTE: Feign Death turn ins do NOT work.](Can charm Linara for turn-in.).
+Additional Note: Was able to turn the key in to Linara at Dubious as a Dark Elf.
+
+'''Give [[Tarnished Bronze Key]] to [[Linara Parlone]] in jail cell in [[Najena]], for [[A Sealed Letter]]. Then give the [[A Sealed Letter]] to her father in [[Felwithe]] near the lake.'''
+
+:Linara Parlone says, 'Take this letter to my father immediately, his name is [[Tolkar Parlone]]!'
+
+{{YouGainExperience}}
+
+You hand the letter to Tolkar Parlone:
+
+:Tolkar Parlone says, 'Oh my she did get herself into some trouble! I thank you for rescuing her my friend. Here, take this old cloak. I am afraid its power has faded, but if you bring it to my wife, she might be able to do something for you. She is currently studying in Erudin.'
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive a [[Faded Cloak]].
+
+Give it to [[Trilani Parlone]] in the Enchanter Guild of [[Erudin]]:
+
+:Trilani Parlone says, 'Oh my lord Tunare! I did not know my daughter was in trouble. I thank you for saving her. Here, I have returned the once lost power to this cloak. Wear it with my humblest gratitude.
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Mystic Cloak}}.
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Wizard Quests]]

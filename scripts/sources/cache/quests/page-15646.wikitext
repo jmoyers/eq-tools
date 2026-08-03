@@ -1,0 +1,94 @@
+{{Velious Era}}
+
+[[File:npc_captain_bvellos.png|frame|Captain Bvellos]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Bvellos]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All [[Ranger]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Great Divide]], [[Velketor's Labyrinth]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Antlered Mask}}
+</li><li> {{:Giant Scalemail Tunic}}
+</li><li> {{:Silvery Mask}}
+</li></ul>
+
+== Walkthroughs ==
+
+'''Note that although it is possible to charm Bvellos, this will not yield you faction adjustments.'''
+
+{{expand}}
+
+This quest begins with [[Captain Bvellos]] in Kael Drakkel (roams from the arena to the bank to the palace area).  [[Captain Bvellos]] is on [[ Kromzek ]] faction.
+
+You say, 'Hail, Captain Bvellos'
+
+: Captain Bvellos says 'Greetings, _____.  I am the captain of the Kael militia.  I will be watching those of your kind who have come to Kael Drakkel as mercenaries and bounty hunters.  You may have come here to serve king Tormax but Kael is my home and I intend to keep it a safe place for the Kromzek.  Keep yourself out of trouble or you will end up in a world of pain.'
+
+You say, 'I will keep Kael safe.'
+
+: Captain Bvellos says 'With the influx of [mercenaries] into Kael Drakkel, I have seen minor crimes increase.  I have had to increase my militia patrols.  A majority of my militia work longer hours than they did before.  There was a time when we only had to watch for the dragons from the sky and the Coldain from the outside.  Now we must watch within.' 
+
+You say, 'What about mercenaries?'
+
+: Captain Bvellos says 'I have several bounties open if you are interested.  Bring me the '''head of a Coldain''' and I will reward you with a small sum of money and spread the word of your good work. There is also a bounty upon the nefarious '''Icepaw kobolds''' who serve the outcast Velketor.  I require four of the paws of those little beasts.'
+
+==Coldain Heads==
+
+In exchange for a {{:Coldain Head}}, you receive a few platinum pieces and a substantial faction increase with King Tormax. (Note: An easy way to test your faction standing with King Tormax is to exit the bank and turn hard left. Before you get to the Icy Bridge, stop and con [[Dlammaz Stormslayer]] who is across the bridge and to the left.)
+
+'''Note that although it is possible to charm Bvellos, this will not yield you faction adjustments.'''
+
+Refer to [[Glumf's Spectacular Faction Guide]] for tips on turning in heads to Bvellos while KOS.
+
+:Captain Bvellos says, 'Excellent, Throttled. Here is the bounty as promised.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better. (+40)
+* Your faction standing with [[Kromrif]] got better. (+10)
+* Your faction standing with [[King Tormax]] got better. (+10)
+* Your faction standing with [[Claws of Veeshan]] got worse. (-20)
+</div>
+{{exp}}
+
+* You receive 8 platinum pieces.
+* '''This quest does not yield any experience.'''
+
+Since each turn-in gives +40 Kromzek but only +10 King Tormax, you will max Kromzek long before Tormax is safe.
+
+* '''Rallos Zek followers:''' ~40 heads to Ally with Kromzek, ~50–60 heads to Dubious with Tormax
+* '''Neutral starting faction:''' ~45 heads to Ally with Kromzek, ~80 heads to non-KOS with Tormax
+* '''Max KOS:''' ~75 heads to Ally with Kromzek, ~200 heads to Amiable with Tormax
+
+==Icepaw Kobold's Paws==
+
+In exchange for 4x {{:Icepaw Kobold's Paw}}, you get either a {{:Silvery Mask}}, an {{:Antlered Mask}}, or a {{:Giant Scalemail Tunic}}:
+
+: Captain Bvellos says 'You have done well to hunt down these foul dogs.'
+Captain Bvellos reaches into a large bag and pulls something shiny from within its depths 'Take this as a reward.'
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better. (+40)
+* Your faction standing with [[Kromrif]] got better. (+10)
+* Your faction standing with [[King Tormax]] got better. (+10)
+* Your faction standing with [[Claws of Veeshan]] got worse. (-20)
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

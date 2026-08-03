@@ -1,0 +1,73 @@
+{{Kunark Era}}
+[[File:npc_luminare_pasinia.png|frame|Luminare Pasinia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Luminare Pasinia]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Kurn's Tower]], [[Lake of Ill Omen]], [[Swamp of No Hope]], [[The Overthere]], [[Trakanon's Teeth]]
+|-
+! ''' Related NPCs: '''
+| [[froglok nok shaman]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Visions of Sebilite}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* '''[[Shaman Powder]]''' - This should identify as "Powder of Nok". This comes from a "froglok nok shaman" in the north area of [[Firiona Vie]].  The icon looks like black pixie dust.'''
+
+* '''[[Heart of Ice]]''' - This is dropped by icebone skeletons and greater icebone skeletons. The skeleton tower located in the SE corner of [[Lake of Ill Omen]] is an easy place to farm this item quickly.
+
+* '''[[Ton Warrior Totem]]''' - This is dropped by various frogloks found in the froglok city in the [[Swamp of No Hope]], and identifies as "Key of Dai -I.".  Look for Ton and Krup frogloks holding a doll. They spawn apparently in several places but aren't very common. You can also get these in FV. Look for Ton Warriors holding a totem in their hand. SONH is much safer/lower level.'''
+
+* '''[[Sabertooth Tiger Mane]]''' - These drop off the sabertooth Tigers found in [[Lake of Ill Omen]], the Overthere, and Trakanon's Teeth.'''
+{{End}}
+
+== Walkthrough ==
+
+You say, 'Hail, Luminare Pasinia'
+
+: Luminare Pasinia waves her hands as if to cast a spell. 'GREETINGS!! I am the Luminare of Firiona by decree of his royal highness, King Thex,I am here to research spells and artifacts. I have much to do. I welcome any enchanter who offers to [assist the great Luminare].'
+
+You say, 'I will assist the great Luminare.'
+
+: Luminare Pasinia says 'And great I am, indeeed!! Alas, not great enough to be everywhere at once. I would gladly reward you if you would [collect components] for me.'
+
+You say, 'I will collect components for you.'
+
+: Luminare Pasinia says 'Then go into the wilds beyond the outpost and upon your return, you shall give to me the powder of Nok, heart of ice. Ton warrior totem, and a sabertooth tiger mane. This shall earn you knowledge of an enchanter spell I recently scribed.'
+
+'''Bring these items back to Luminare:'''
+
+: Luminare Pasinia says 'Do you not remember that I asked for powder of Nok, a Ton warrior totem, a heart of ice and a sabertooth tiger mane?  Incomplete deeds shall fetch no enchanter reward.'
+: Luminare Pasinia says 'Do you not remember that I asked for powder of Nok, a Ton warrior totem, a heart of ice and a sabertooth tiger mane?  Incomplete deeds shall fetch no enchanter reward.'
+: Luminare Pasinia says 'Do you not remember that I asked for powder of Nok, a Ton warrior totem, a heart of ice and a sabertooth tiger mane?  Incomplete deeds shall fetch no enchanter reward.'
+Luminare Pasinia places the items into a sack and removes a scroll from her robe.  This is yours.  A spell I discovered and translated for one with less intelligence than the great Luminare of Firiona Vie.  You may kiss my feet now.'
+
+<div class="facblock">
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates Of Gunthak]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive a scroll called {{:Visions of Sebilite}}, which scribes as the spell "[[Illusion: Iksar]]."
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Enchanter Quests]]

@@ -1,0 +1,54 @@
+[[File:npc_grevak.png|frame|Grevak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Grevak]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Backpack}}</li>
+<li>  Spell: [[Leering Corpse]]</li></ul>
+
+== Walkthrough ==
+
+Grevek doesn't like lizards. You can give Grevak in the Greenblood guild 2 lizardman {{:Mystic Doll}}s for a minor item.
+
+Grevak says, 'You no getting big head!! Me still bash you gud! You no longer peon....you BIG peon now! Har! Har!......ok den, here great reward.'
+
+Your faction standing with Clurg got better.
+
+Your faction standing with GreenBloodKnights got better.
+
+Your faction standing with KazonStormhammer got worse.
+
+Your faction standing with ShadowknightsofNightKeep got worse.
+
+You gain experience!!
+
+You receive 4 gold pieces.
+
+== Reward ==
+<ul>
+<li>[[Disease Cloud]]</li>
+<li>[[Invisibility versus Undead]]</li>
+<li>[[Leering Corpse]]</li>
+</ul>
+What other rewards are possible?
+
+[[Category:Quests]]
+[[Category:Oggok]]

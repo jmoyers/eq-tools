@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_lyris_moonbane_pet.png|frame|Lyris Moonbane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Quest Giver: '''
+| [[Lyris Moonbane]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Related NPCs: '''
+| [[Lyris Moonbane]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Stained Purple Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Lyris Moonbane]] is located at 301, -445 in the Shrine of Bertoxxulous Guild Hall.''
+
+You say, 'Hail, Lyris Moonbane'
+
+: She doesn't respond.
+
+'''Hand [[Lyris Moonbane]] your [[Blood Stained Note (Guild Summons)|Blood Stained Note]].'''
+
+:: ''a tattered note reads:''
+
+:: <code>In death, there is life. Shunned from the light and society of the above world, make your way through the filthy sewers, to a place where your dark skills can be honed. Take this note to Lyris Moonbane, she has a small task for you if you feel you are worthy.</code>
+
+: Lyris Moonbane says, 'A new initiate always pleases me, here is your tunic.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Necromancer Quests]]

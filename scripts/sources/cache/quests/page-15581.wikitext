@@ -1,0 +1,87 @@
+{{Classic Era}}
+[[File:Npc_tomer_instogle.png|frame|Tomer Instogle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Tomer Instogle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Seta Bakindo]]
+|}
+
+== Reward ==
+
+*Faction
+
+== Walkthrough ==
+
+''This quest is NOT available at Indifferent faction. Tomer will say "Don't take this personally, but I cant trust you with such matters" after returning his backpack.''
+
+''[[Tomer Instogle]] is a monk hurt near the western walls outside of Qeynos city.''
+
+You say, 'Hail, Tomer Instogle' 
+
+: Tomer Instogle says, 'Ahhhggggh.. Those mangy [dogs] put up a tough fight.. If I don't make it back to the Clan House soon, it'll be all over for me.' 
+
+You say, 'What dogs?' 
+
+: Tomer Instogle says, 'It's those Darkpaws.. They've beaten me pretty badly.. but they'll get theirs soon enough!' 
+
+You say, 'Which Clan House?' 
+
+: Tomer Instogle says, 'I am a new member of the Silent Fist Clan.. I need someone from my guild to help me find my way back.' 
+
+You say, 'Seta sent me to find you' 
+
+: Tomer Instogle says, 'Oh.. Thank goodness you found me.. I'm lost and weak, those [mutts] are a vicious lot.. Can you carry my [backpack] for me?' 
+
+You say, 'I will carry your backpack'
+
+: Tomer Instogle says, 'Thank you, friend.. Now, can you [lead me back to Master Seta] of the Silent Fist Clan?' 
+
+'''Receive a [[Ruined Backpack]].'''
+
+You say, 'I will lead you back to Master Seta'
+
+''NOTE: The first time I said this line, Tomer responded with his "Leave me alone!" line, despite having Kindly faction. I said the line a second time, and that time he decided to follow, and I was able to complete the quest.''
+
+: Tomer Instogle says, 'Lead the way, and I shall follow. When we make it back, please inform Seta that you have rescued me.' 
+
+'''Go to the Silent Fist Clan guildhouse in North Qeynos and talk to [[Seta Bakindo]].'''
+
+You say, 'Hail, Seta Bakindo'
+
+: Seta Bakindo says, 'Ah... Welcome friend. I am Master Seta, of the Silent Fist Clan. We know that true strength lies inside your soul. Once you have found and mastered it, your fists will be deadlier than any blade.'
+
+You say, 'I found Tomer'
+
+: Seta Bakindo says, 'Great work, _____! We thought that was the last we'd seen of young Tomer.' 
+
+: Tomer Instogle says, 'I am now accepting quests.' 
+
+: Tomer Instogle says, 'Yes, he saved my life.. I owe him much thanks. Please return my pack to me now, good friend.' 
+
+'''Give Tomer the [[Ruined Backpack]].'''
+
+: Tomer Instogle says, 'Oh, you have the makings of a true hero.. The Silent Fist Clan is proud to have you as an ally. May your soul guide and protect you through these chaotic times.' 
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+</div> 
+{{exp}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]

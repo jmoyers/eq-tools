@@ -1,0 +1,73 @@
+{{Classic Era}}
+[[File:npc_celsar_vestagon.png|frame|Celsar Vestagon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Celsar Vestagon]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All (Good)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a piranha]]
+|}
+
+== Reward ==
+
+<ul><li>  Faction, Small Coin, Minor Items
+</li></ul>
+
+== Walkthrough ==
+
+A priest named Celsar Vestagon in the Temple of Marr is concerned with the danger to the Marr Minnow posed by the piranha.  He wants you to go collect some for him and put them in a box.  Go kill piranha in the pond by the Hall of Truth and fill the box. Combine it and return it to the priest for experience, copper, increased faction with Priests of Marr and sometimes an item. 
+
+Need all dialogues, /loc of quest mobs, current faction hits if any, list of quest rewards, missing quest items.
+
+You say, 'Hail, Celsar Vestagon'
+
+: Celsar Vestagon says 'May the Truthbringer guide your path. I am Celsar Vestagon, upholder of the faith and cleric of Mithaniel Marr.' 
+
+You say, 'What minnows of Marr?'
+
+: Celsar Vestagon says 'The Marr Minnow is unique to the Hall of Truth. It is a beautiful fish. Unfortunately, recently, reports of piranha have been heard. Due to greater concerns, I must look for assistance from noble clerics who wish to help Marr and [eradicate the piranha].' 
+
+You say, 'I will eradicate the piranha!'
+
+: Celsar Vestagon says 'Yes. You are new to the word of Marr. Go to the waters surrounding the Hall of Truth. Fill this sack with no fewer than four dead piranha. You'd best keep well fed. I do not want you to eat the fish before you fill the sack and combine it. May Marr be with you.' 
+
+You receive an [[Empty Fish Sack]].
+
+For every [[a piranha]] you kill in North Freeport, you take the following faction adjustments:
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got worse.</div>
+
+(Fresh Piranha also drops off of piranha in Surefall Glade and you take no faction adjustments when you kill them.)
+
+Put four [[Fresh Piranha]] in the sack and combine to create a [[Sack of Piranha]]. Give it to Celsar Vestagon
+
+: Celsar Vestagon says 'You have done well. The Marr Minnow shall have a greater chance of flourishing. Please take this as a reward.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better. (+20)
+* Your faction standing with [[Priests of Marr]] got better. (+4)
+* Your faction standing with [[Steel Warriors]] got better. (+2)
+* Your faction standing with [[Dismal Rage]] got worse. (-3)
+* Your faction standing with [[The Freeport Militia]] got worse. (-3)</div>
+
+You gain experience!! 
+
+You receive some copper and occasionally a cleric spell or potion. 
+
+[[Category:Quests]]
+[[Category:North Freeport]]

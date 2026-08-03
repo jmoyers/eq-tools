@@ -1,0 +1,113 @@
+{{Classic Era}}
+[[File:npc_kizzie_mintopp.png|frame|Kizzie Mintopp]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Rivervale]]
+|-
+! ''' Quest Giver: '''
+|[[Kizzie Mintopp]]
+|-
+! ''' Minimum Level: '''
+|1 (Solo)
+|-
+! ''' Classes: '''
+|All
+|-
+! ''' Related Zones: '''
+|[[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+|[[a bixie]], [[a bixie drone]], [[a bixie queen]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Honey Jum}}
+</li></ul>
+
+[[Honey Jum]] is used in the quests [[Exotic Drinks]] and [[Cure for Lempeck Hargrin]].
+
+== Walkthrough ==
+
+Gather 3 [[Honeycomb]]s by looting bixies or finding them on merchants if other players have sold them.
+
+Bixie {{loc|Misty Thicket| (600, -50), (400, -1250), (-385, 675)|spawn points}} in [[Misty Thicket]]:
+*600, -50 (on top of the north wall-tower)
+*400, -1250 (next to the road)
+*-385, 675 (next to tree)
+*There are also at least 2 roaming bixies, one on either side of the wall.
+
+Bixies are more readily found in [[Kithicor Forest]], but make sure you are there during the day!
+
+Give 3 honeycombs and 30 gold pieces (or 3 platinum pieces) to [[Kizzie Mintopp]] Location: (-229, -217 #11 on Map) to receive [[Honey Jum]].
+
+== Dialogue ==
+
+You say, 'Hail, Kizzie Mintopp'
+
+:[[Kizzie Mintopp]] says 'Enough talk there, chatterbox. You buy lots of herbs. I gotta make a living, not more friends.'
+
+You say, 'I am from the Temple of Life'
+
+:Kizzie Mintopp says 'Oh, yes.. They always come for Kizzie's [honey jum]. They should have sent you next week. There is a [problem].'
+
+You say, 'What honey jum?'
+
+:Kizzie Mintopp says 'It's a secret!! I get the honeycombs and combine them with the secret sauce and..presto.. honey jum!! It is used by only the wisest as a component. And you can only get it from Kizzie. It is also good on batwing crunchies. If you like.. Kizzie can [make honey jum] for you?'
+
+You say, 'Make honey jum for me'
+
+:Kizzie Mintopp says 'No, no, no!! You will not get honey jum until you give Kizzie three honeycombs and thirty gold coins. Honey jum is valuable. Kizzie raised the fee!! That is how it works.'
+
+You say, 'What problem?'
+
+:Kizzie Mintopp says 'You see.. Joogl Honeybugger is hurt. He usually collects the [Honeycombs]. Only he knows where to get them. I need the Honeycombs to make the Honey Jum. Go and speak with Joogl. He is at his burrow outside of Rivervale. He says he cannot work. Tell him you need the Honeycombs.'
+
+'''Joogl Honeybugger is found in Misty Thicket...'''
+
+You say, 'Hail, Joogl Honeybugger'
+
+:[[Joogl Honeybugger]] says 'Hello. I would shake your hand, but it would [hurt]. Ooooh! Owwy!'
+
+You say, 'I need the honeycombs'
+
+:Joogl Honeybugger says 'If you're looking for the honeycombs, I don't have any right now. I have been unable to get any since I was attacked by the little [buggers]. I will tell you where to get some if you will only get me a bandage for my bites.'
+
+You say, 'What buggers?'
+
+:Joogl Honeybugger says 'I was attacked by the bixies. They swarmed on me!! I think I got too near their queen. I need that honey to make a living! Get me a bandage and I will tell you where all their worker bees buzz around.'
+
+'''Give him a [[bandage]]...'''
+
+Joogl Honeybugger says 'Oh thank you, _____. If you are ever going to gather bixie honeycombs pray you do not run into the queen. The only way I know of collecting the honey is by intercepting the drones and taking the honeycombs they sometimes carry. Good luck !!'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse. 
+</div>
+
+'''Get 3 [[honeycomb]]s, 30 gold and return to Kizzie for the turn in:'''
+
+Kizzie Mintopp says 'You are one lucky bixie buster. I just made a batch of honey jum. Here. No waiting for you. One jar for your good work. Bye, now!'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by -1. 
+</div>
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Cure for Lempeck Hargrin]]
+* [[Exotic Drinks]]
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

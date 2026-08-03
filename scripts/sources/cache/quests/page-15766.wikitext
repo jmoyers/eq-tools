@@ -1,0 +1,131 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_foreman_felspar.png|frame|Foreman Felspar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Foreman Felspar]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Brigand's Circlet
+|Brigand's Chestguard
+|Brigand's Vambraces
+|Brigand's Bracer
+|Brigand's Gauntlets
+|Brigand's Greaves
+|Brigand's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Foreman Felspar]] in [[Thurgadin]].{{CheckboxList}}
+*[[Brigand's Circlet]]
+:*[[Corroded Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Brigand's Chestguard]]
+:*[[Corroded Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Brigand's Vambraces]]
+:*[[Corroded Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Brigand's Bracer]]
+:*[[Corroded Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Brigand's Gauntlets]]
+:*[[Corroded Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Brigand's Greaves]]
+:*[[Corroded Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Brigand's Boots]]
+:*[[Corroded Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+'''You must have High Amiably /  Kindly faction before he give you the quest.'''
+
+You say, 'Hail, Foreman Felspar'
+
+: Foreman Felspar says 'Welcome to the Thurgadin Minin' Company, Human. As foreman it's my job to see that me lads are well trained and well cared fer. Unfortunately we're not in too good shape right now. Ye see, it seems a new vein was struck recently and a bunch of unwelcome critters have come crawlin outta the works attackin' me lads. In order ta help combat this menace I've engineered a new set of armor for the miners, but need some raw materials to get them started.'
+
+You say, 'What new set of armor?'
+
+: Foreman Felspar says 'Excellent, ______! I knew ye were the right Human for the job. The pieces I can make are a coif, a tunic, sleeves, bracers, gauntlets, leggings, and boots.  This stuff might not be fitting ya if ye're not stealthy like us miners though.'
+
+'''Gems are dropped in various Velious zones while Corroded Chain Armor drops from the higher level giants in Kael Drakkel.'''
+
+'''After turn-in:'''
+
+Foreman Felspar smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'What coif?'
+
+: Foreman Felspar says 'To create a piece of armor to protect your sensitive skull, I will require three pieces of [[Crushed Coral]] as well as a [[Corroded Chain Coif]].'
+
+== Tunic ==
+
+You say, 'What tunic?'
+
+: Foreman Felspar says 'To forge a spectacular chain tunic I will require three [[Flawless Diamond]]s and a [[Corroded Chain Tunic]].  With the gems and my skills I may be able to draw out some of its magical powers.'
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Foreman Felspar says 'Protection for your arms will come at the price of three [[Flawed Emerald]]s and a set of [[Corroded Chain Sleeves]].'
+
+== Bracers ==
+
+You say, 'What bracers?'
+
+: Foreman Felspar says 'For the bracers, I will require a [[Corroded Chain Bracer]] as well as three [[Crushed Flame Emerald]]s. Return to me when you find such things, Human.'
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Foreman Felspar says 'Protecting your hands is very important. I can forge protection for your hands if you bring me a pair of [[Corroded Chain Gauntlets]] and three [[Crushed Topaz]].'
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Foreman Felspar says 'A set of [[Corroded Chain Leggings]] might be salvageable if you were to find three [[Flawed Sea Sapphire]]s. With the right techniques and ingredients almost anything is possible.'
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Foreman Felspar says 'We use our feet so often, should not they be protected as well as any other portion of our bodies? If you seek fine protection for your feet, return to me with three pieces of [[Crushed Black Marble]] and a set of [[Corroded Chain Boots]].'
+
+[[Category:Rogue Quests]]
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Thurgadin Armor Quests]]

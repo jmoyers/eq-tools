@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_belious_naliedin.png|frame|Belious Naliedin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Belious Naliedin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Belious Naliedin]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brown Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Belious Naliedin]] is located at -253, 242, 77 in The Wind Spirit's Song ([[Bard]]) Guild Hall.''
+
+You say, 'Hail, Belious Naliedin'
+
+: Belious Naliedin says, 'Welcome, my name is Belious Naliedin of the League of Antonican Bards. A few years ago, I had finally saved up the money, and I bought this place. I settled in, and have been working here ever since.'
+
+'''Hand [[Belious Naliedin]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>We are the historians of Norrath. Our magical songs of lore and legend can soothe beasts, heal the injured, and rally armies. Bring this note to Guild Master Belious Naliedin at the Wind Spirit's Song. He will teach you and help guide you in your new career. It's our lives' work to preserve the history and lore of Norrath for future generations.</code>
+
+: Belious Naliedin says, 'Good day friend, and welcome to the Wind Spirit's Song. Thank you for joining our cause. Go speak with Jusean Evanesque; I'm sure you'll fit in well.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Mayong Mistmoore]] got worse.
+* Your faction standing with [[Ring of Scale]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Bard Quests]]

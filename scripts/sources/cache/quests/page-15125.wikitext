@@ -1,0 +1,198 @@
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+
+Test of Concentration
+<li>{{:Augmentor's Mask}}
+  <ul>
+  <li>1 - {{:Azure Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Augmentor's Gem}} ('''[[Protector of Sky]]''')
+  <li> '''3''' - <span style="font-weight: bold">{{:Grey Damask Cloak}}</span> ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Focus
+<li>{{:Al`Kabor's Cap of Binding}}
+  <ul>
+  <li>2 - {{:Iron Disc}} ([[an azarack]])
+  <li>3 - {{:Ethereal Opal}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Woven Skull Cap}}</span> ('''[[Keeper of Souls]]''')
+   </ul>
+</ul>
+<ul>
+Test of Meditation
+<li>{{:Raiment of Thunder}}
+<ul>
+ <li>3 - {{:Hyaline Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+<li>4 - <span style ="font-weight: bold">{{:Sky Topaz}}</span> ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style ="font-weight: bold">{{:High Quality Raiment}} ([[The Spiroc Lord]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Conception
+<li>{{:Solidate Mithril Ring}}
+  <ul>
+  <li>4 - {{:Efreeti Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>5 - {{:Mithril Air Ring}} ([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[The Spiroc Guardian]])
+  <li>'''6''' - <span style ="font-weight: bold">{{:Box of Winds}}</span> '''([[Bazzt Zzzt]])'''
+  </ul>
+</ul>
+<ul>
+Test of Visualization
+<li>{{:Amulet of the Void}}
+  <ul>
+  <li>5 - {{:White-tipped Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 - {{:Pulsating Sapphire}} ([[Bazzzazzt]], [[Bzzzt]])
+  <li>7 - <span style ="font-weight: bold">{{:Amethyst Amulet}}</span> '''([[Sister of the Spire]])'''
+  </ul>
+</ul>
+<ul>
+Test of Preparation
+<li>{{:Nargon's Staff}}
+  <ul>
+  <li>6 - {{:Lush Nectar}} ([[Bazzzazzt]])
+  <li>7 - {{:Copper Air Band}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[an undine spirit]])
+  <li>'''8''' - <span style ="font-weight: bold">{{:Large Sky Sapphire}} ([[Eye of Veeshan]])</span>
+  <li>'''1.5, 4, 8''' - {{:Efreeti War Staff}} '''([[Noble Dojorn]], [[Overseer of Air]], [[The Hand of Veeshan]])'''
+  </ul>
+</ul>
+<ul>
+
+==Quest Start==
+Talk to Wizard Schrock in the [[Plane of Sky]].
+
+You say, 'hail Wizard Schrock'
+:''Wizard Schrock says 'Greetings.  Do you believe that you are a great wizard? ''
+You say, 'I am a great and powerful wizard'
+:''Wizard Schrock says 'I will not take your word for it!  You must prove your greatness to my apprentices.  Do you wish to be tested by Neasin or by Abec? ''
+
+= Neasin Leornic =
+
+You say, 'I wish to be tested by neasin'
+:''Wizard Schrock says 'Neasin it shall be.  Take this book and read it.  When you are finished, hand it back to me and I shall summon the mighty wizard Neasin to test you. ''
+:''Wizard Schrock says 'Farewell. ''
+:''Neasin Leornic says 'I am here to do your bidding, Wizard Spirit! ''
+:''Wizard Schrock says 'Till next time!  Farewell! ''
+You say, 'hail Neasin Leornic'
+:''Neasin Leornic says 'Welcome.  I am apprentice Neasin.  Do you wish to test your powers? ''
+You say, 'I wish to test my powers'
+:''Neasin Leornic says 'Great, let us waste no more time!  Whichh test do you wish to begin, the test of concentration, focus, or meditation? ''
+
+== Wizard Test of Concentration ==
+
+Neasin Leornic says 'Concentration is of the utmost importance to a wizard.  Without it, we cannot cast even the most simple dweomer.  Proceed upward through the sky and return to me an azure tessera, an augmentor's gem, and a grey damask cloak.  This will prove your ability to concentrate and I will reward you with an Augmentor's Mask. 
+
+'''Reward:''' {{:Augmentor's Mask}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Azure Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Augmentor's Gem]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Grey Damask Cloak]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+
+== Wizard Test of Focus ==
+
+Neasin Leornic says 'Focus is a must.  Travel among the residents of the sky and bring to me an iron disk, an ethereal opal, and a woven skull cap.  This will prove your ability to focus and I will reward you with Al'Kabor's cap. 
+
+'''Reward:''' {{:Al`Kabor's Cap of Binding}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Iron Disc]] || [[an azarack]] || Island 2
+|-
+| [[Ethereal Opal]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Woven Skull Cap]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+
+== Wizard Test of Meditation ==
+
+Neasin Leornic says 'A wizard is nothing without meditation.  Meditation allows us to focus and concentrate when casting our spells of power.  Fly to those above and return to me a hyaline globe, a sky topaz, and high quality raiment.  If you are successful, I will reward you with the Raiment of Thunder. 
+
+'''Reward:''' {{:Raiment of Thunder}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Hyaline Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Sky Topaz]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[High Quality Raiment]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+= Abec Lanor =
+
+You say, 'I wish to be tested by abec'
+:''Wizard Schrock says 'Abec it shall be.  Take this book ([[Knowledge and Power]]) and read it.  When you are finished, hand it back to me and I shall summon the mighty wizard Abec to test you. ''
+:''Wizard Schrock says 'Farewell. ''
+:''Wizard Schrock says 'Till next time!  Farewell! ''
+:''Abec Ianor says 'I am here to do your bidding, Wizard Spirit!'' 
+You say, 'hail Abec Ianor'
+:''Abec Ianor says 'Welcome.  I am Apprentice Abec.  Do you wish to test your powers?  Or have you already finished all your tests? ''
+You say, 'I have already finished all tests'
+:''Abec Ianor says 'We recently gave out a batch of inferior Amulets of Planar Transference.  If you bring me one of these I will gladly replace it with an upgraded version.  After all, you earned it, right?''
+You say, 'I wish to test my powers'
+:''Abec Ianor says 'Great, let us waste no more time!  Do you wish to begin your test of conception, visualization, or preparation?''
+
+== Wizard Test of Conception ==
+
+Abec Ianor says 'Conception is vital.  Travel beyond and bring forth an efreeti statuette, a mithril air ring, and a box of winds.  From these, I will produce a ring that will protect you wherever you go. 
+
+'''Reward:''' {{:Solidate Mithril Ring}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Efreeti Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Mithril Air Ring]] || [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|-
+| [[Box of Winds]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+== Wizard Test of Visualization ==
+
+Abec Ianor says 'Visualize and succeed.  Proceed upward and bring to me a white-tipped spiroc feather, a pulsating sapphire, and an amethyst amulet. With these items, I will be able to produce an amulet that will aid in your travels to our home. 
+
+'''Reward:''' Current - {{:Amulet of the Void}} Outdated - <strike>[[Amulet of Planar Transference]]</strike>
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[White-tipped Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Pulsating Sapphire]] || [[Bazzzazzt]], [[Bzzzt]] || Island 6
+|-
+| [[Amethyst Amulet]] || [[Sister of the Spire]] || Island 7
+|}
+
+== Wizard Test of Preparation ==
+
+Abec Ianor says 'Always be prepared.  Adventure and return an efreeti war staff, some lush nectar, a copper air band, and a large sky sapphire. You shall be rewarded with the Staff of Storms. 
+
+'''Reward:''' {{:Nargon's Staff}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Lush Nectar]] || [[Bazzzazzt]] || Island 6
+|-
+| [[Copper Air Band]] || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Large Sky Sapphire]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti War Staff]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Wizard Quests]]

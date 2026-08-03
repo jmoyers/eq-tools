@@ -1,0 +1,69 @@
+{{Classic Era}}
+
+[[File:npc_karn_tassen.png|frame|Karn Tassen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Karn Tassen]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Small Coin, Faction
+</li></ul>
+
+== Walkthrough ==
+
+The current edition of the Qeynos newspaper suggested speaking with Qeynos Merchants and the Coalition of Tradefolk about how we can help in the current famine.
+
+Speak to Karn or Voleen Tassan in Voleen's Bakery in South Qeynos.
+
+The conversation with Karn:
+
+You say, 'Hail, Karn Tassen'
+
+: Karn Tassen says 'Bah, I told Voleen it would happen and it finally did! Food is becoming so scarce that I'm starting to run out of stock. You wouldn't happen to [be a baker] yourself or maybe you [know] someone who bakes?'
+
+You say, 'I am a baker.'
+
+: Karn Tassen says 'Well good! Maybe you can help me restock. If you are a baker you could help me out by restocking my [muffin supply]. Or if you don't mind a little travel, you can pick up a [shipment of bread] for me.'
+
+You say, 'What muffin supply?'
+
+: Karn Tassen says 'Thanks, you're a pal. Take this crate and fill it with muffins, then seal it up and bring the Full Muffin Crate back to me. Don't go trying to pass off that store bought stuff on me either, I need fresh baked muffins.  The ones in the stores are already too old and will get moldy too fast, so I don't want those.'
+
+'''Take the Box and fill it with 10 UNSTACKED baked [[Muffin]]s and combine. It becomes [[Full Muffin Crate]]. (Obviously, you need to baking skill for this).'''
+
+'''Give the box back to Karn for some gold (I got 2gp and 4gp) and faction changes.'''
+
+<div class="facblock">
+* Your faction standing with MerchantsofQeynos got better.
+* Your faction standing with CircleofUnseenHands got worse.
+* Your faction standing with AntoniusBayle got better.
+* Your faction standing with CoalitionofTradefolk got better.
+* Your faction standing with GuardsofQeynos got better.
+</div>
+==Related quests==
+* [[The Bread Shipment]]
+
+==External links==
+
+* http://everquest.allakhazam.com/db/quest.html?quest=1262
+* http://runen.co.uk/Everquest/Zones/Quests/Erudin/BethBreadmaker.htm
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

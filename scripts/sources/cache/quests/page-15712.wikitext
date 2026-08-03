@@ -1,0 +1,39 @@
+[[File:npc_gearin_gaxx.png|frame|Gearin Gaxx]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Gearin Gaxx]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| ?
+|-
+! ''' Related NPCs: '''
+| ?
+|}
+
+== Reward ==
+
+<ul><li>  "Hate Tail Guard Shield"
+</li></ul>
+
+== Walkthrough ==
+
+Gearin Gaxx says he can create the Hate Tail Guard for the price of:
+
+* 100 gold coins (only gold) (need confirmation other denominations don't work)
+* and two flawless carapaces (called what?) from Giant Hate Tail Scorpions. 
+
+''Need all dialogues, faction hits if any, exact name of quest items, exact names and /loc of quest mobs, confirmation about whether other monetary denominations work or not.''
+
+'''Note: Appears this quest was never finished on live, perhaps no "Giant Hate Tail Scorpions" exist.'''
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

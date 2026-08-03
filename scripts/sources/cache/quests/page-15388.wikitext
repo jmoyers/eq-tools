@@ -1,0 +1,180 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:npc_drill_master_vygan.png|frame|Drill Master Vygan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Drill Master Vygan]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Warrior]] (Iksar)
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]], [[Swamp of No Hope]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[Warlord Hikyg]], [[Warlord Vyzer]], [[Warlord Zyzz]], [[a goblin thief]], [[a large scorpion]], [[a militia skeleton]], [[an escaped froglok]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Geozite Tool}} (for [[Warrior Pike Quests]])
+</li></ul>
+
+== Walkthrough ==
+===Drill Master Vygan ===
+
+[[Drill Master Vygan]] may be found in Fortress Talishan.
+
+You say, 'Hail, Drill Master Vygan'
+
+: Drill Master Vygan says 'I am a Drill Master of the Legion of Cabilis. I have no time for idle chitchat. Be off if you were not summoned to this fortress! Find that guild which was chosen for you as an egg.'
+
+You say, 'What militia pike?'
+
+: Drill Master Vygan says 'The pike is the prime weapon of Cabilis warriors. It can be upgraded, too, such as from the partisan pike to the militia pike and beyond. All these pikes may be slung on one's back when your hands are needed for other pursuits. To upgrade a pike is something that is learned, but it can never be performed without a [geozite tool]. Do you [desire to upgrade the partisan pike]?'
+
+You say, 'What geozite tool?'
+
+: Drill Master Vygan says 'The Geozite Tool is used to sharpen the pikes of the Legion of Cabilis. Only it can produce the serrated edges necessary for these deadly weapons. They are not handed out to just any broodling. The tool is only given to warriors who serve the legion. Do you [want a geozite tool]?'
+
+You say, 'I want a geozite tool.'
+
+: Drill Master Vygan says 'Then take this satchel and go to the outer walls of Cabilis and seek out large scorpions. When you can fill and combine the satchel with scorpion pincers, then you shall prove to me that you are truly a warrior and I shall send you off on your true test.'
+
+'''You receive a 2-slot [[Pincer Satchel]].  Kill [[a large scorpion]] in the center of the Field of Bone to loot a [[Large Scorpion Pincer]].  Combine 2 in the satchel:'''
+
+'''You have fashioned the items together to create something new: [[Full Pincer Satchel]].'''
+
+'''Bring this back to Drill Master Vygan.'''
+
+: Drill Master Vygan says 'You are a true warrior of Cabilis. You obviously are aware that in order to upgrade your pike you shall need a [geozite tool]. Take this note to the Lord of the outer gates. He desires a young warrior for a small task. Do this and he is instructed to reward you with the tool.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+You then receive a random Note to Iksar Lord to be delivered to one of three warlords.
+
+Each warlord gives you a sub-quest to complete to receive your Geozite Tool. You only need to complete 1.
+
+* [[Warlord Hikyg]] in the Swamp of No Hope gives the quest to collect Busted Froglok Slave Shackles.
+* [[Warlord Zyzz]] in the Field of Bone gives the quest to collect charred bones.
+* [[Warlord Vyzer]] in Warslik Woods to collect stolen pages.
+
+Their respective notes identify as "Note to Lord Hikyg," and "Note to Lord Vyzer," and "Note to Lord Zyzz."
+
+'''You may turn in as many full pincer satchels as you'd like in order to receive your desired Warlord note.'''
+
+----
+
+==== Warlord Hikyg ====
+You say, 'Hail, Warlord Hikyg'
+: Warlord Hikyg says, 'What business do you have speaking to an Iksar Warlord? Be gone before you find yourself served as my evening meal. Go to Captain Nedar if you wish to assist my garrison. Fool.'
+
+'''Give him the note.'''
+
+'''You receive an 8-slot [[Slave Shackle Bag]]'''
+
+: Warlord Hikyg says, 'It is about time they sent some lackey to perform tasks too paltry for my troopers to deal with. We need to punish those who dare to run from their servitude. You will need this bag. Are you [prepared to hunt escaped froglok slaves] and serve your lord?'
+
+You say, 'I am prepared to hunt escaped froglok slaves'
+
+: Warlord Hikyg says, 'Of course you are. They can be found running in packs along the edges of the city gates. Find the escaped frogloks and slay them. Take their slave shackles and throw them in the bag I have given you. When it is filled and combined, return it to me. My concern is only for those who have escaped into the swamp. This is my land and I have been ordered to keep its denizens under control.'
+
+'''Fill the Slave Shackle Bag with 8 [[Busted Froglok Slave Shackles]] and combine to form a [[Filled Slave Shackle Bag]].'''
+
+'''Give the filled bag to Warlord Hikyg.'''
+
+: Warlord Hikyg says, 'Warlord Hikyg says 'Good work, Syriash. You would make a fine trooper in my garrison. As instructed by the War Baron, I reward you with the geozite tool. May you find your place among the Legion of Cabilis and win many battles.''
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+You receive 1 gold pieces.
+
+{{YouGainExperience}}
+
+You receive the [[Geozite Tool]].
+
+----
+
+==== Warlord Zyzz ====
+
+Turn in the note to [[Warlord Zyzz]]
+
+:Warlord Zyzz says, 'Ah!! Good to have you on board. We lack strong young recruits such as yourself. Take this box. Your task is to seek [[a militia skeleton|milita skeletons]] near this gate. Apparently, someone or something has been raising militia corpses and they now walk the land not knowing the difference between friend or foe. They even continue using their old call, 'Halt Who goes there?'. Fill and combine within the box their charred bone shards and return the filled box to me for your geozite tool.'
+
+'''You receive a 4-slot [[Charred Bone Box]].'''
+
+Fill it with [[Charred Bone Shards]] and combine to form a [[Full Charred Bone Box]].
+
+Give this to Warlord Zyzz
+
+:Warlord Zyzz says, 'Great work! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabilis' warriors guild. A true Iksar warrior should always have one.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+You receive 1 gold pieces.
+
+{{YouGainExperience}}
+
+You receive the [[Geozite Tool]].
+
+----
+
+==== Warlord Vyzer ====
+
+Warlord Vyzer may be found at -1852, -894, +307, on the balcony of building in Warsliks Woods, just outside West Cabilis.
+
+You say, 'Hail, Warlord Vyzer'
+
+: Warlord Vyzer says 'Greetings, small one! You should not waste your time in the safety of the troopers' patrols. Go forth into the land and earn your stripes in battle. Become a greater asset to the Iksar empire.'
+
+Give him the note.
+
+: Warlord Vyzer says 'I am glad to see they have sent a strong new recruit. I have a task for you which will require you to recover a few pages of a certain poem I once wrote. I never should have written of such weak-minded things, but the pages were stolen from me before I could destroy them. Take this poem binder and find the [thieves]. When you combine the pages in the binder, it will magically lock and you may return it to me for your prize, the geozite tool.'
+
+'''You receive a Book Binder, a 4-slot container (identifies as "Binder for Love Poem").  Kill [[a goblin thief]] who may be found mostly between the succor point (-1430, -465) and the goblin pond (-2180, 900).'''
+                          ****11/04/24 -- [[a goblin scout]] also drops the pages and these are far more common than the theif mobs, easily farmable in a triangle pattern between Cabilis, pond, and zone wall. 
+
+'''Loot four different LORE versions of [[A Page of A Poem]] (they identify as "Page One of Love Poem," "Page Two of Love Poem," "Page Three of Love Poem," and "Page Four of Love Poem," respectively.'''
+
+'''Combine the four pages in the binder: You have fashioned the items together to create something new: magically locked poem. '''
+
+'''It identifies as "Love Poem by Lord Vyzer."  Give it to Warlord Vyzer.'''
+
+: Warlord Vyzer says 'Great work!! You have saved me from disgrace. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive the [[Geozite Tool]].
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

@@ -1,0 +1,80 @@
+{{Classic Era}}
+[[File:Ysanna MacGibbon.jpg|alt=Ysanna MacGibbon, Rogue Guildmaster of Halas|thumb|Ysanna MacGibbon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Ysanna MacGibbon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]], [[Shaman]], [[Warrior]] (for the Fang of the Wolf)
+All (for the Patched Fur Bundle)
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Blackburrow]], [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[a burly gnoll]] 
+[[a gnoll]]
+[[a gnoll brewer]] 
+[[a gnoll commander]] 
+[[a gnoll guardsman]] 
+[[a gnoll pup]] 
+[[a gnoll scout]] 
+[[a gnoll shaman]] 
+[[a gnoll tactician]] 
+[[a patrolling gnoll]] 
+[[a scrawny gnoll]] 
+[[an elite gnoll guard]] 
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Fang of the Wolf}}
+</li><li> {{:Patched Gnoll Fur Bundle}}
+</li></ul>
+
+== Walkthrough ==
+Start with [[Cappi McTarnigal]] who's on the second floor of the Halas bank (/loc 204, 172). <blockquote>You say, 'Hail, Cappi McTarnigal' 
+
+Cappi McTarnigal says, 'Hail there, <player>! If you are not a [member of the White Rose], then it be best that you stay on the lower level. This here floor is for honest ...ermm respectable rogues only.' 
+
+You say, 'member of the White Rose' 
+
+'''''If your faction with the White Rose isn't high enough...''''' 
+
+Cappi McTarnigal says, 'I will take these as a donation for I can only reward those who are 'respectable.''<nowiki/>'''
+;At "indifferent" (or better) faction...
+
+Cappi McTarnigal says, 'I hope that you are indeed respectable, and loyal to Halas and the Rogues of the White Rose. To do otherwise would bring the wrath of the Six Hammers down on you. But enough with talk! Our caravan to the frigid north leaves in less than two days, and we are short on mammoth calf hides. Return four of them and you will be given items that show your loyalty to our Clan.' 
+
+Ysanna MacGibbon says, 'The mammoth calf hides are used to shield our beasts of burden from the icy wind. You are probably now asking what shields us Northmen from that same icy wind eh? Well, along with many other furs and leathers, we have come to find that [Gnoll Fur] of all things is a good insulator against the cold. Look at their tiny bodies and it's obvious their fur does something good.' </blockquote>Next, target Ysanna who's standing close by (/loc 184, 157)...<blockquote>You say, 'gnoll fur'
+
+Ysanna MacGibbon says, 'You should not be asking where or what a gnoll is, but asking how I make use of that patch fur I find on their corpse. It is quite simple, take four pieces of gnoll fur and sew them together. Take the result and sew four of them together. And again with that product. In the end you will have a bundle of tailored gnoll fur. You can either return it to me or keep it for yourself.' </blockquote>Now, head out to Everfrost Peaks or Blackburrow to loot [[Patch of Gnoll Fur]] from various gnolls. Once you've collected at least 64 furs, you can begin the crafting process (via Tailoring) into different progression pieces, eventually yielding a [[Patched Gnoll Fur Bundle]].
+
+==== '''Tailoring Details''' ====
+You'll need Tailoring skill level of around 31 for consistent combines.
+
+# Combine 4 [[Patch of Gnoll Fur]] to yield 1 Gnoll Fur Patch.
+# Combine 4 [[Gnoll Fur Patch]] to yield 1 Gnoll Fur Patch Quarter.
+# Combine 4 [[Gnoll Fur Patch Quarter]] to yield 1 [[Patched Gnoll Fur Bundle]].
+
+
+Now, give Ysanna the [[Patched Gnoll Fur Bundle]].<blockquote>[[Ysanna MacGibbon]] says, 'You have done well. Here is a small reward for your effort.' </blockquote>
+* Your faction standing with [[Rogues of the White Rose]] has been adjusted by 5.
+{{exp}}
+
+You receive ~1 platinum, 3 silver from Ysanna MacGibbon. 
+
+Reward is: [[Fang of the Wolf]]
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Rogue Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

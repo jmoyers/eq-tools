@@ -1,0 +1,71 @@
+[[File:npc_weligon_steelherder.png|frame|Weligon Steelherder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Weligon Steelherder]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|-
+! ''' Faction Required to start quest: '''
+| Amiable or higher, will not give it to you at indifferent. Wolf form will take you from apprehensive to amiable and you can then do any of the Deepwater quests.
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items (Raw-hide armor pieces), [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+''[[Weligon Steelherder]] may be found in a small room in the back on the first floor of the Temple of [[Deepwater Knights]], at -1040, -395.''
+
+You say, 'Hail, Weligon Steelherder'
+
+: Weligon Steelherder says 'Hail, ______!  This is the Deepwater Temple.  Here you shall find the wisdom and courage of Prexus, the Ocean Lord.  I am glad to see you have an interest.  Forgive me if I cut our conversation short, but I have many [Deepwater tasks] to complete.'
+
+You say, 'What Deepwater tasks?'
+
+: Weligon Steelherder says 'We here at the Deepwater Temple must tend to the [Peacekeeper battlestaff] and the [Deepwater harpoon] as well as other duties such as [ocean protection].  There is always something we must do.'
+
+You say, 'What Peacekeeper battlestaff?'
+
+: Weligon Steelherder says 'Every sentinel in Erudin carries a High Guard battlestaff.  The creation of these weapons is the duty of the Deepwater Temple and the Temple of Divine Light.  Our portion of the task is to send young members to [collect the Pearls of Odus].  These are imbedded into the staff and used to store mystical power.'
+
+You say, 'I will collect the Pearls of Odus.'
+
+: Weligon Steelherder says 'Then venture to the harbor of Erudin. There, you shall dive into the shark-infested water and search for the Pearls of Odus. They lie upon the grounds of our waters. Fill the bag I have given you, combine it, and return it to me. Good luck.'
+
+'''You receive an Empty Bag (strangely, identifies as "Zombie Flesh Bag"), a 4-slot size SMALL bag.  [[Pearl of Odus]] are ground spawns underwater in the harbor of Erudin at -275, -460; -215, -475; +5, -485; +955, -620 (any other /locs?). They are guarded by level 8 [[a sand shark]]. Combine four in the bag.'''
+
+* You have fashioned the items together to create something new!
+* You have fashioned Full Bag of Pearls. 
+
+Give this to Weligon.
+
+: Weligon Steelherder says 'Fine work, Deepwater Knight.  You have proven yourself an excellent addition to our ranks.  These shall be used to create more Peacekeeper staffs.  Oh yes, I almost forgot your reward.  Here you are. Now, go, and serve Prexus.'
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{exp}}
+
+You receive 14 silver from Weligon Steelherder.
+
+Known rewards: [[Patchwork Sleeves]], [[Small Bag]], [[Tattered Skullcap]], [[Worn Great Staff]]
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:All Classes Quests]]

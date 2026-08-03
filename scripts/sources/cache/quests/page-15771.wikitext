@@ -1,0 +1,130 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_mauren_frostbeard.png|frame|Mauren Frostbeard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Mauren Frostbeard]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Sage's Crown
+|Sage's Robe
+|Sage's Sleeves
+|Sage's Bracelet
+|Sage's Gloves
+|Sage's Pantaloons
+|Sage's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Mauren Frostbeard]] in [[Thurgadin]].{{CheckboxList}}
+*[[Sage's Crown]]
+:*[[Torn Enchanted Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Sage's Robe]]
+:*[[Torn Enchanted Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Sage's Sleeves]]
+:*[[Torn Enchanted Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Sage's Bracelet]]
+:*[[Torn Enchanted Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Sage's Gloves]]
+:*[[Torn Enchanted Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Sage's Pantaloons]]
+:*[[Torn Enchanted Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Sage's Boots]]
+:*[[Torn Enchanted Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+Hail her, and she says "Greetings to you. I seek those who call themselves wizards. Are you a wizard, ____?"
+
+You say, 'I am a wizard'
+
+She says "I thought so. I have several tasks for you to accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings, and boots to reward you with."
+
+'''After turn-in:'''
+
+Mauren Frostbeard smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+''Dialogue needed.''
+
+Mauren promises to make you a cap if you bring him a [[Torn Enchanted Silk Turban]] and three pieces of [[Crushed Flame Opal]].
+
+== Robe ==
+
+You say 'what robe'
+
+She says "If you wish to have a fine robe, bring unto me a torn enchanted silk robe and three pristine emeralds.  Then you will receive a robe beyond your wildest dreams."
+
+Mauren promises to make you a robe if you bring him a [[Torn Enchanted Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Mauren promises to make you a sleeves if you bring him a set of [[Torn Enchanted Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Mauren promises to make you wristbands if you bring him an [[Torn Enchanted Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Mauren promises to make you gloves if you bring him a pair of [[Torn Enchanted Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Mauren promises to make you leggings if you bring him a pair of [[Torn Enchanted Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+You say 'what boots'
+
+She says "Three crushed jaundice gems combined with torn enchanted silk boots would make a most interesting set of footwear. The latent powers of the gems can be harnessed to create magical effects."
+
+Mauren promises to make you boots if you bring him [[Torn Enchanted Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Wizard Quests]]
+[[Category:Thurgadin Armor Quests]]

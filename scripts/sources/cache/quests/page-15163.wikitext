@@ -1,0 +1,64 @@
+{{Sky Era}}
+[[File:npc_sirran_the_lunatic.png|frame|Sirran the Lunatic]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Sky]]
+|-
+! ''' Quest Giver: '''
+| [[Sirran the Lunatic]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Plane of Sky]]
+|-
+! ''' Related NPCs: '''
+| [[Bazzt Zzzt]], [[Gorgalosk]], [[Keeper of Souls]], [[Protector of Sky]], [[Sister of the Spire]], [[The Spiroc Lord]], [[a thunder spirit princess]]
+|}
+
+== Plane of Sky Keys==
+
+Sirran the Lunatic is the little chap who will hand you keys to progress from isle to isle in Plane of Sky.
+
+Obtain the free key from the Key Master to journey down to the quest room - the northern dish on island one is the click spot. Looks like a Jade.
+
+== Tips ==
+
+1) He will assist any MOB still living so make sure you always kill Sirran's spawning MOB last.
+
+2) He pops on (or very close to) the kill location of each island's boss MOB.
+
+3) Won't attack unless you start chatting with him. Just hailing him is safe.
+
+4) Despawns in 20 mins.
+
+5) If you have trouble clicking the ashtray in first person, try zooming the camera out
+
+== Walkthrough ==
+
+On the first island ([[Key Master]]/Thunder Spirits Island), he spawns once [[Thunder Spirit Princess]] dies. Hand him one [[Miniature Sword]] to get the [[Key of Swords]] (to island 1.5, [[Noble Dojorn]] Island, which is a one-way trip). Hand him one [[Lost Rabbit's Foot]] to get the [[Key of the Misplaced]] (to island 2, Azarack Island).
+
+On the second island (Azarack Island), he spawns once the [[Protector of Sky]] dies. Hand him one [[Broken Mirror]] to get the [[Key of Misfortune]] (to Gorgalask Island).
+
+On the third island (Gorgalosk Island), he spawns once [[Gorgalosk]] dies. Hand him one [[Animal Figurine]] to get the [[Key of Beasts]] (to Harvester Island).
+
+On the fourth island (Harvester Island), he spawns once the [[Keeper of Souls]] dies. Hand him one [[Bird Whistle]] to get the [[Avian Key]] (to Spiroc Island).
+
+On the fifth island (Spiroc Island), he spawns once the [[Spiroc Lord]] dies. Hand him one [[Noise Maker]] to get the [[Key of the Swarm]] (to Wasp Island).
+
+On the sixth island (Wasp Island), he spawns once the [[Bazzt Zzzt]] dies. Hand him one [[Dull Dragon Scale]] to get the [[Key of Scale]] (to Drake Island). Telling him the phrase "Am I one with the wall" will make The [[Sister of the Spire]] spawn on Drake Island.
+
+On the seventh island (Drake Island), he spawns once the [[Sister of the Spire]] dies. Hand him one [[Replica of the Wyrm Queen]] to get [[Veeshan's Key]] (to the eighth and final island, Butterfly Island).
+
+There are no keys to be obtained on the eighth and final island.
+
+{{Plane of Sky Keys}}
+
+[[Category:Quests]]
+[[Category:Plane of Sky]]
+[[Category:All Classes Quests]]
+[[Category:Keys]]

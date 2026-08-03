@@ -1,0 +1,81 @@
+{{Classic Era}}
+[[File:npc_manik_compolten.png|frame|Manik Compolten]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Manik Compolten]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Red V]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bull Smasher}} rare
+</li><li> {{:Iony's Absorber}} rare
+</li><li> Misc. Small Patchwork Armor
+
+== Walkthrough ==
+
+This is sometimes given after the 27 C Blackbox quest.  If you turn in a Daily Log reading 27C.566... to Drekon Vebnebber you will be told that the "rumors of Red V must be true".  
+
+You say, 'what about red 5?'
+
+: Drekon Vebnebber says 'Red 5 is rumored to be a haywire clockwork. They say he pieced himself back together and lives in the scrapyard. If he IS there, you must hunt him down and take his blackbox to Manik Compolten. Be careful, if Red 5 rebuilt himself, he may have rebuilt minions as well.'
+
+You need to get Red V's incomplete blackbox and give it to Manik Compolten.  Red V is usually about level 4-6 and spawns in the southeasternmost room of the Mines of Malfunction (2026, -624, -181). Red 5 is on an 8 minute timer. The corridors leading to and the room in which Red 5 spawns are short, so only small and medium sized people can actually fight or cast in there, since you have to be standing to cast or attack. 
+
+The spawning point for Red 5 alternates between "obsolete model" and "Red 5" both of which will wander the mines. His PH are an armadillo-type "obsolete model" and a darker rust colored clockwork gnome "obsolete model".  The brighter bronze colored clockwork obsolete models are not his PH.  Red 5 is killable by solo lvl 7 or bunch of lvl 5's.  When he gets low on hp, he will run off and often get killed by the guards outside the mines, so be ready to use root if you have it.  If you kill him, his corpse will have an [[Incomplete Blackbox]].  To fix the blackbox you have to put 4 [[Blackbox Fragment]]s in the [[Incomplete Blackbox]] and hit combine.  You can get the blackbox fragments from the [[Obsolete model]]s that also inhabit the mines.   When you combine the 4 blackbox fragments inside the incomplete blackbox you will get a [[Rusted Blackbox]].  The rusted blackbox looks just like the ones you get from the rogue clockworks in Steamfont, but it's actually different.  (The other rusted blackboxes are for a different quest.) Return to Manik Compolten and give him the rusted blackbox.
+
+Note: You can skip the 27C Blackbox quest entirely and just go camp Red V.  Complete his box and continue camping him and other Obsolete Models so you have a second full box, it lets you do two turn ins per run (hand in the complete lore box, then complete the second and hand that in).
+
+Faction Note:  If you are KOS to the necro guild, hug the right wall after opening the door.  There is an obsolete model in the next area.  Go further into the next room, do not take the first right towards Red V's room, instead go past this to the next hallway on your right.  It's the hallway to the right, between 2 and 3 on the map, it's longer and straight.  There are no necros here.  You can use this same path back and forth to avoid the guildmasters so you don't die.
+
+Faction Note 2:  Need better reputation than indifferent to complete the turn in.
+
+On hand-in:
+
+: Manik Compolten says, 'What's This? You've found and smashed Red V? Amazing! Wonderful! Take this as a sign of my thanks!
+
+<div class='facblock'>
+* Your faction standing with [[King AkAnon]] gets better
+* Your faction standing with [[Merchants of AkAnon]] gets better
+* Your faction standing with [[Gem Choppers]] gets better
+* Your faction standing with [[Dark Reflection]] gets worse
+* Your faction standing with [[Clan Grikbar]] got worse
+</div>
+
+The reward seems to be random and faction may not play a role, but you should try to have a high faction with the Gemchoppers before doing the quest. 
+
+Also, you should know that this quest lowers faction with the Dark Reflection, who happen to be the NPC's in the Mines.  The item is often a piece of cloth armor (hardly worth the trouble), but sometimes you'll get a potion and sometimes you will get the Bullsmasher - a very nice weapon for any small class.  You might also get an Iony's Absorber.
+
+On hand-in:
+
+: Manik Compolten says 'This is fabulous news!! You have done well, young one. Once you are ready for [further instruction] please let me know, I will guide you through your early most dangerous days. When you have become more experienced in our art, I wil be able to further instruct you on how to progress through your early ranks, as well as in some various [trades] you will have available to you.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of AkAnon]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[Clan Grikbar]] got worse.
+</div>
+{{exp}}
+
+''Need missing dialogues, current faction hits if any.''
+
+[[Category:Quests]]
+
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

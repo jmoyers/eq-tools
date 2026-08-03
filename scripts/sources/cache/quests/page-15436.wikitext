@@ -1,0 +1,123 @@
+{{Classic Era}}
+[[File:npc_chesgard_sydwen.png|frame|Chesgard Sydwen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Chesgard Sydwen]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Cheslin]]
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items
+</li></ul>
+
+== Walkthrough ==
+
+Chesgard Sydwen may be found at -270, -500.
+
+You say, 'Hail, Chesgard Sydwen'
+
+: Chesgard Sydwen says 'May Karana guide you. Are you a [citizen of Qeynos] or a visitor?'
+
+You say, 'I am a visitor.'
+
+: Chesgard Sydwen says 'Then study and spread the words of Karana the Rainkeeper.  May all the storms in your heart be controlled by the Rainkeeper.  You are young to the world just as [Cheslin] is.'
+
+You say, 'Who is Cheslin?'
+
+: Chesgard Sydwen says 'My son, Cheslin, is currently in training to be a Qeynos Guard.  I fear it was not his calling.  He is not quite in our realm of reality.  He spent too many years playing games of warriors and dragons.  He will be doing his first patrols in Qeynos Hills this week.  If you are near there, I would appreciate it if you would watch and see him safely through his first patrols. Tell him I sent you.'
+
+'''Guard Cheslin may be found in a guard tower in the Qeynos Hills at +1035, -875.  If he is not there, he is out on patrol and will be back shortly.'''
+
+You say, 'Hail, Guard Cheslin'
+
+: Guard Cheslin says 'Hail, mighty adventurer!  I am Guard Cheslin Sydwend and I am here to serve and protect.  Feel safe when we Qeynos guards are on watch.  We are the best!'
+
+You say, 'Your father sent me.'
+
+: Guard Cheslin says 'My father has no need to worry and I do not need a baby sitter.  I may be in training still, but a Qeynos guard in training is still a formidable opponent.  EVIL, BEWARE!! HAIL ANTONIUS BAYLE!'
+
+'''Wait until you see:'''
+
+: Guard Cheslin says 'Hail, fellow guards! I am off to protect the travelers of the hills from evil. I shall return!'
+
+'''He sets off on patrol.  If a monster gets too close, you must keep him alive.  Soon you will see:'''
+
+: Guard Cheslin says 'Fear not, simple travelers. Cheslin the masterful is here to protect you.'
+
+: Guard Cheslin says 'Hey! Did I just drop something?'
+
+[[File:Cheslin.png|frame|Guard Cheslin
+-------------
+To speed this up some, if you know the spot where he is walking to, just agro a mob before Cheslin does and get him to start chasing it, in turn making Cheslin run after the mob and faster to the next 'drop.']]
+
+'''Loot the Illusion card off the ground. Note: The cards he drops are random and he may not drop all four separately on a single escort. I had to escort Guard Cheslin twice, with most cards dropped being not lootable (lore, I already carried them) until at last he dropped fourth distinct card.'''
+
+: Guard Cheslin says 'I lost some of my [illusion] playing cards.  And they were the rare ones too! Darn it! If anyone finds them, please return them to me.'
+
+You say, 'You dropped an Illusion card.'
+
+: Guard Cheslin says 'Yes!!  I seem to have dropped some of my [Illusion] cards.'
+
+You say, 'Illusion?'
+
+: Guard Cheslin says 'Oh!!  Do you play Illusion, too?  I love that game.  I have some very rare cards in my deck.  I seem to have dropped four of them somewhere during my last patrol.  Darn it!  They probably blew away the minute I dropped them!  I will never find those cards again.'
+
+'''As he follows his patrol route, he drops four different cards: [[Chrono Cyclone]], [[Diamond Vale]], [[Ebon Lotus (Item)|Ebon Lotus]], and [[Library of Erudin]]. The locations are +1780, -170; +3400, -940; +4880, +640; +1070, -740.'''
+
+Hand in one:
+
+: Guard Cheslin says 'Wow!! I thought I lost this for good. All together I lost the [illusion] cards: Ebon Lotus, Library of Erudin, Chrono Cyclone and Diamond Vale. Man!! Those are rare cards!'
+
+'''If you hand in all four:'''
+
+Guard Cheslin says 'Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman.  Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos.  No doubt he sent you to follow me on my watch.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 2 gold from Guard Cheslin. 
+
+'''You receive A Sealed Letter (identifies as "Letter From Cheslin") which reads:'''
+
+ Dear Father, I thank you for your concerns, but I am fine. You endangered the life of this brave adventurer.
+ Luckily, I was there to keep him from harm's way. We Qeynos Guards are a strong lot. You have nothing to worry about.
+ Qeynos is safe as long as we, the Qeynos Guards, are on watch. All Hail Antonius Bayle!! - Guard Cheslin
+
+Return this to Chesgard Sydwen.
+
+: Chesgard Sydwen says 'Hmmph!! My son is living in a fantasy world. Still, you have done well. Take this as a token of appreciation. It is not much, but it may come in handy.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive a piece of Raw Hide armor
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

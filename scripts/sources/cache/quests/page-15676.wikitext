@@ -1,0 +1,165 @@
+{{Velious Era}}
+[[File:Gnome pirate camp iceclad.jpg|frame|Gnome Pirate Camp, with [[Ami]] and [[Captain Nalot]] quest npcs here. '''Location 4571,1307''']]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ami]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-L
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Great Divide]], [[Iceclad Ocean]]
+|-
+! ''' Related NPCs: '''
+| [[Bloodmaw]], [[Captain Nalot]], [[Lodizal]], [[Stormfeather]], [[a lost pirate]], [[dire wolf stalker]], [[rabid snow cougar]]
+|}
+
+[[File:A_lost_pirate.jpg|thumb|250px||Gives the Map Binding and Completed Map of Iceclad. '''Location +6360, +1005''']]
+
+== Reward ==
+
+<ul><li>  {{:Eyepatch of Plunder}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* '''Find the four parts to the map!'''
+** [[First part of an Iceclad Map]] can be looted from a [[dire wolf stalker]], a rare spawn in Iceclad Ocean.
+** [[Second part of an Iceclad Map]] can be looted from [[Stormfeather]], a rare spawn in Iceclad Ocean.
+** [[Third part of an Iceclad Map]] is obtained through a mini-quest.
+*** Loot four [[Yakman Parts]] from tizmaks in Great Divide
+*** Turn in four Parts to [[Bloodmaw]]. '''You need to be non-KoS with Bloodmaw to turn in--Killing Bloodmaw does not work.''' You CAN use sneak to do the turn in if you are kos, confirmed 6/20/2023, you CAN turn in on a sneakable character and swap to the questing toon. You CANT use the same turn in to get multiple maps, four parts for one map only. NOTE: If Bloodmaw is up and the bloody gnome captive, too, but will not respond as expected, then you can just turn in the four yakman parts to Bloodmaw to re-spawn the bloody gnome captive. He will then respond properly and will despawn upon handing you the third map piece.
+*** Target [[bloody gnome captive]] and say, ''''I want the map please' (or, for the impatient, 'map')''' to receive [[Third part of an Iceclad Map]]. NOTE: The pirate will attack you if in wolf form!
+** [[Fourth part of an Iceclad Map]] can be looted from [[Lodizal]], a rare spawn in Iceclad Ocean that will require friends to kill.
+*'''Talk to [[a lost pirate]] in [[Iceclad Ocean]]'''
+** Say to him 'I will find the parts' to receive a [[Map Binding]], a four-slot container.
+*'''Combine the four pieces in the [[Map Binding]] to craft [[Pieces of the Iceclad Map]]'''
+*'''Give the [[Pieces of the Iceclad Map]] to the [[a lost pirate]] to receive the [[Completed Map of Iceclad]] in return.'''
+** A [[Rabid_snow_cougar]] will spawn and kill the lost pirate.  Kill or avoid the Rabid snow cougar.
+*'''Give the [[Completed Map of Iceclad]] to [[Captain Nalot]] and receive [[Eyepatch of Plunder]]'''
+{{End}}
+
+==Walkthrough==
+
+===Ami===
+
+You say, 'Hail, Ami' 
+
+: Ami flips through a few pages of a small book, reading intently before answering you.  'Ye scurvy dog. I'll strike yer colors 'fore ya can put me on a gibbet. Take that, ya crimp!' She flips through a few more pages then smiles at you. 'Arrrr!' 
+
+You say, 'Ye scurvy dog!' 
+
+: Ami grins. 'Hey, that's pretty good. You did it without a book too. Nice to meet you. I'm the bosun here.' 
+
+You say, 'You're a Bosun?' 
+
+: Ami says 'Yup. I think it means I'm in charge of the flag cause that's what the Cap'n told me to take care of. I'm the one who made our symbol, so I get to protect it. I even got my own copy of the grammar manual so I can practice my pirate speech.' 
+
+You say, 'What kind of grammar manual?' 
+
+: Ami nods and shows you the book for a moment. 'We don't have many of them and usually we share. My book is missing a chapter, though.' 
+
+You say, 'What chapter is missing?' 
+
+: Ami nods. 'A mate of mine borrowed the P Chapter to draw a map on but then he went and got himself lost. I've memorized the rest of the book but that chapter. Oh, well, I guess I can get by with what I have. Walk the mizenmast and batten down the boom!' She looks at you proudly. 'Good, eh? I'm one of the best pirates we have.' 
+
+'''Find the [[a lost pirate|lost pirate]] at +6360, +1005.'''
+
+===Lost pirate===
+
+You say, 'Hail, a lost pirate' 
+
+: a lost pirate twitches and growls a little. 'Arrr. Grrr. Ahoy, mate. The name's Teep.' He shivers and you notice a little drool at the corner of his mouth. 'Ya ain't lost out here too, are ya?' 
+
+You say, 'I am not lost.'
+
+: a lost pirate grins and stares through you with a mad gleam in his eye.  'Hehehe.  Yah, yer lost aren't ya.  I can tell from the crazy sound o' yer voice.  Too bad we ain't got me map.  The map would lead us straight back ta camp.  Yah, that it would, boyo.'
+
+You say, 'What map?'
+
+: a lost pirate nods.  'After we got ourselves stuck on this island I got it in me head to draw up a map so none o' the crew would ever get lost.  So I set myself to explorin' and drawin'.  Now the map is gone.  Too bad, too, cause it was a map o' the whole place, not just the first island, but a bunch o' parts.'  Mention of the map seems to have sobered him up a bit.
+
+You say, 'Gone?'
+
+: a lost pirate says 'Aye.  I lost the first part walkin' through the woods.  Some big wolf bowled me over 'n started to tear me book up.  'Fore I could stop, it he ran off.  I'm not knowin' why.  The second part, heh.  That was worse.'
+
+You say, 'What happened to the second part?'
+
+: a lost pirate shivers.  'The second piece I lost, well, that put the fear o' Bertox in me.  I was still in the woods at the time.  It was at night.  Cold and crisp, it was.  I heard a flappin' and squawkin' above me and I knew my time was near.  So I up and jumped into a snow drift.  Soon as that, somethin' swooped down where I was and started tearin' my camp up.  When I came back, I saw nothin' but feathers and me torn up book.  Another quarter o' me book was gone.'
+
+You say, 'What happened to the third part?'
+
+: a lost pirate says 'Huh?  Oh, the other pieces?  I gave a piece to a mate o' mine 'cause he wanted to help.  Nice enough fella but he couldn't find north from a hole in the hull.  Last I saw he wandered off towards the bridge.  The last piece went away after I stumbled and fell down here.  After a while I didn't care, so I threw it in the water.  It floated off.  Seems like everythin' that goes wrong ta me is because of some danged wild animal.  I can't quite figger it.'
+
+You say, ''''I will find the parts'''.
+
+: a lost pirate laughs.  'Its yer funeral, boyo.  I'm not even sure they're readable.  Oh, well.  Here, take this. ('''receive [[Map Binding]]''') It's the cover of the book I was puttin' the map in.  If ya get the first four parts, put em in there.  If ya get the fifth, just go give it ta Ami the way ya find it.  Hey, if ya find em all, come get me so I can find me way back.  I'm thinkin' I'd like ta go back now.' 
+
+You say, 'Where is chapter P?' 
+
+: a lost pirate stares at the water. 'I'm rememberin' that. Yah. Ami's book. Thats what I drew, erm, the fifth part o'n. It got lost in the ocean too.' He looks at you. 'Yer wantin' ta go out and find all o' these pieces?' 
+
+'''You receive a [[Map Binding]], a four-slot container.  Find the four parts to the map:'''
+
+# The first piece of the map can be looted off of a [[dire wolf stalker]], a rare spawn in Iceclad Ocean. 
+# The second piece is looted from [[Stormfeather]] - again, a rare spawn in Iceclad.
+# The third piece is found via a mini-quest. Kill Tizmaks in Great Divide until you have four of the NO DROP [[Yakman Parts]]. Hand all four parts to [[Bloodmaw]] in the same zone. Bloodmaw will despawn after you give him the parts. At the same time, the bloody gnome captive standing behind Bloodmaw will respawn. '''''(Note: Bloodmaw is an animal and can be charmed by Shamans and Druids in addition to Enchanters, then you can do the turn in. Golem illusion will not work, and neither will killing him.)''''' After this happens, say, 'I want the map' to the gnome captive. He'll give you the third piece. 
+# The fourth piece of the map is found on [[Lodizal]].
+
+'''Combine the four pieces in your container to craft [[Pieces of the Iceclad Map]] give this to the lost pirate:'''
+
+: a lost pirate grins widely and slaps you on the arm. 'Har har! You're crazier than I am. And since I know that I must not be that crazy after all. Ahh, I haven't felt this good in ages..' He shuffles the pieces and jots down a few notes here and there. 'There, now it's really finished. Let's get us outta here. Hold this fer me.' As he starts to try and crawl up the hill, a sleek figure darts towards him. 
+{{YouGainExperience}}
+:a lost pirate says 'Take this ya lily livered landlubber!'
+:a lost pirate has been slain by [[rabid snow cougar]]!
+
+'''Receive the [[Completed Map of Iceclad]] in return.'''
+
+'''A [[rabid snow cougar]] spawns and attacks. Whether you kill it or not does not seem to matter. Head to [[Captain Nalot]].'''
+
+===Captain Nalot===
+
+You say, 'Hail, Captain Nalot' 
+
+: Captain Nalot squints at you through one eye, the other covered by a metallic eyepatch. 'Garrr. What `ave we here? Another beller yellied land blubber eh? By the looks of ye someones mudder didnt know when ta throw a bad fish back. HAR HAR!' 
+
+You say, 'What do you mean, bad fish?' 
+
+: Captain Nalot says 'That means I'm callin ya ugly as a piece o' whale blubber but twice as bad smellin, ya son of a water treadin _____. Yer about as smart as the slime we use ta patch our boat hull, aren't ya?' 
+
+You say, 'Where is this boat of yours?' 
+
+: Captain Nalot says 'Arrrr. So we ain't got a boat right now. What's that got ta do with anythin'? Just cause we ain't got a boat, or a way to sail the waters, or even know how ta sail, don't mean we aren't crusty and dangerous. Just watch yerself cause we're mean.' 
+
+You say, 'You're mean?' 
+
+: Captain Nalot says 'Thats right! We're mean, nasty, devious 'n cruel. We'll knock ya down, bite yer knees, and steal yer money. Arrr. We won't always say please and thank you either! Just remember that and don't be tryin' anyhin' funny.' 
+
+You say, 'What do you consider funny?' 
+
+: Captain Nalot says 'Uh, I dunno what funny stuff. No one's ever asked that one. You know, just be nice ta everyone I guess. Think ya can do that?' 
+
+You say, 'What about the map?'
+
+: Captain Nalot says 'The map?  What map?  Oh wait, that thing I made ol' what's-his-name do ta get los... uh adventure.  Uh, sure.  If yer wantin' we've got a job for ya.  If ya do it ya get ta be a real member o' me crew.'
+
+You say, 'I want to be a real member of your crew.'
+
+: Captain Nalot says 'That means ya get ta take orders from me and ya get ta use fancy words like bilge hoistin' land blubbing beller yellied, and more.  Anyways, we needed a map so me lads would stop gettin' lost, but the lad I sent out ain't come back with it.  I even sent out a search party but I ain't heard from them either.  If ya find 'im get the map and get back 'ere.'
+
+'''Give the [[Completed Map of Iceclad]] to Captain Nalot.'''
+
+: Captain Nalot squints and then knocks hard on the metal half of his face to get his eye back in adjustment.. 'Arrr. This is perfect. Har! Now we can be plannin' our pillagin' and plunderin' all proper like. Good work, _____!' Captain Nalot slaps you on the back and accidentally drops his eyepatch. Being a proper pirate now you conveniently forget to mention it to him. 
+{{YouGainExperience}}
+
+'''Receive [[Eyepatch of Plunder]].'''
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]
+[[Category:All Classes Quests]]

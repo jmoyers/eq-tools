@@ -1,0 +1,49 @@
+{{expand}}
+[[File:npc_plagus_ladeson.png|frame|Plagus Ladeson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Plagus Ladeson]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Toala Nehron]], [[Cain Darkmoore]]
+|}
+
+== Reward ==
+
+<ul><li>None?
+</li></ul>
+
+== Walkthrough ==
+
+Plagus Ladeson of the Steel Warriors in Freeport (he can be found in the courtyard behind the Steel Warriors building) talks to you about his hopeless love affairs with both [Milea] and [Toala].
+
+If you ask him about Toala, he will tell you that she is in love with Cain Darkmoore.
+
+She won't respond to Plagus's name (I have been told she might respond now), but will respond to Cain Darkmoore's name, and will tell you that he is in love with Opal Darkbriar.  Quite the triangle. I am told that this is not a quest, but merely a story line.
+
+
+You say, 'Who is Cain Darkmoore?'
+
+: Toala Nehron says, 'Cain Darkmoore is only the most handsome of warriors!  He is also the strongest and most bold.  He has slain the mightiest of fiends.  He is truly the manliest man around.  It is no wonder he is the guildmaster of the Steel Warriors.'
+
+
+''Need all dialogues, steps, quest items, rewards, additional zones, quest mobs, faction hits if any.''
+
+== See also ==
+
+* [[Hopeless Love, Part 1]]
+
+[[Category:Quests]]
+[[Category:West Freeport]]

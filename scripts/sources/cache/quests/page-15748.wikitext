@@ -1,0 +1,116 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_gragek_mjlorkigar.png|frame|Gragek Mjlorkigar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Gragek Mjlorkigar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV West)
+|}
+Ally faction is required for all Kael armor quests.<br>
+Set Totals ''(1 bracer)''
+
+== Reward ==
+
+{{Gear Set
+|Forest Stalker's Coif
+|Forest Stalker's Breastplate
+|Forest Stalker's Vambraces
+|Forest Stalker's Bracer
+|Forest Stalker's Gauntlets
+|Forest Stalker's Greaves
+|Forest Stalker's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Gragek Mjlorkigar]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Forest Stalker's Coif]]
+:*[[Ancient Tarnished Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Forest Stalker's Breastplate]]
+:*[[Ancient Tarnished Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Forest Stalker's Vambraces]]
+:*[[Ancient Tarnished Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Forest Stalker's Bracer]]
+:*[[Ancient Tarnished Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Forest Stalker's Gauntlets]]
+:*[[Ancient Tarnished Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Forest Stalker's Greaves]]
+:*[[Ancient Tarnished Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Forest Stalker's Boots]]
+:*[[Ancient Tarnished Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Gragek Mjlorkigar says, 'Greetings to you. I seek one who is a protector of nature. A ranger is what you call them I believe. Are you a ranger?'''
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Ancient tarnished chain armor is dropped randomly in the West Wing (Dragon Faction) inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+''Dialogue needed.''
+
+Gragek promises to make you a coif if you bring him an [[Ancient Tarnished Chain Coif]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+''Dialogue needed.''
+
+Gragek promises to make you a breastplate if you bring him an [[Ancient Tarnished Chain Tunic]] as well as three [[Flawless Diamond]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Gragek promises to make you some sleeves if you bring him [[Ancient Tarnished Chain Sleeves]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Gragek promises to make you a bracer if you bring him an [[Ancient Tarnished Chain Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+''Dialogue needed.''
+
+Gragek promises to make you some gauntlets if you bring him a pair of an [[Ancient Tarnished Chain Gauntlets]] as well as three [[Crushed Topaz]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Gragek promises to make you some leggings if you bring him a pair of an [[Ancient Tarnished Chain Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Gragek promises to make you some boots if you bring him a pair of an [[Ancient Tarnished Chain Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Ranger Quests]]
+[[Category:Kael Armor Quests]]

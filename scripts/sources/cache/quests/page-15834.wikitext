@@ -1,0 +1,292 @@
+{{expand}}
+
+This is a list of quests that result in all positive [[faction]] gains.
+
+== Positive Faction Quests ==
+
+=== Evil ===
+{| class="wikitable"
+|+
+!Quest
+!Lvl Min
+!City
+!Faction Adjustments
+!Requirements
+!Notes
+|-
+|[[Bottle of Red Wine]]
+|1
+|Neriak
+|1x [[Red Wine]] for:
+
+* [[Dreadguard Outer]] (+5)
+* [[Dreadguard Inner]] (+5)
+* [[Dark Bargainers]] (+10)
+|Apprehensive [[Dark Bargainers]] (or Stealth)
+|Purchased Item
+Stackable Items
+
+Stacked Turn-Ins
+|-
+|[[Evil Research]]
+|10
+|Neriak
+|1x [[Lightstone]] OR 1x [[Greater Lightstone]] for:
+
+* [[Dreadguard Outer]] (+?)
+* [[Dreadguard Inner]] (+?)
+* [[Dark Bargainers]] (+?)
+|Class: ENC MAG NEC WIZ
+|Dropped Item
+|-
+|[[Exotic Drinks]] (first step only)
+|4
+|Freeport
+|1x [[Kiola Nut]] + 1x [[Erud's Tonic]] + 1x [[Honey Jum]] + 1x[[Koalindl Fish]] for:
+
+* [[Coalition of Tradefolk Underground]] (+5)
+* [[Coalition of Tradefolk]] (+5)
+* [[Carson McCabe]] (+5)
+* [[Corrupt Qeynos Guards]] (+5)
+* [[Freeport Militia]] (+5)
+|Amiable [[Clurg]]
+|Lore Items
+4 items per turn-in
+|-
+|[[Supplies for the New Sebilisian Expedition]]
+|1
+|New Sebilis
+|2x [[Metal Bits]] for [[New Sebilisian Expedition]] (+5)
+1x [[Small Piece of High Quality Ore]] for [[New Sebilisian Expedition]] (+10)
+
+1x [[Small Brick of High Quality Ore]] for [[New Sebilisian Expedition]] (+15)
+|Requires Blacksmithing (~10-20)
+|Purchasable Items
+Stackable Items
+
+Stacked Turn-Ins
+|}
+
+* [[Bone Chips Field of Bone]] - Cabilis
+* [[Cures]] - Cabilis
+* [[Frogloc Tad Tongues]] - Cabilis
+* [[The Bread Shipment (Feerrott)]] - Oggok
+
+=== Non-Evil ===
+{| class="wikitable"
+|+
+!Quest
+!Lvl Min
+!City
+!Faction Adjustments
+!Requirements
+!Notes
+|-
+|[[Bladed Weapons]]
+|1
+|Kelethin
+|1x ea of [[Rusty Short Sword]], [[Rusty Long Sword]], [[Rusty Broad Sword]], and [[Rusty Bastard Sword]] for:
+
+* [[Soldiers of Tunare]] (+?)
+* [[King Tearis Thex]]  (+?)
+* [[Faydarks Champions]] (+?)
+|Amiable with [[Soldiers of Tunare]] (?)
+|Dropped Items
+4 items per turn-in
+|-
+|[[Orc Vest]]
+|12
+|Kelethin
+|2x [[Crushbone Shoulderpads]],1x [[Crushbone Belt]], and '''10gp''' 
+OR 2x [[Deathfist Shoulderpads]], 1x[[Deathfist Slashed Belt]], and '''10gp''' for:
+
+* [[Kelethin Merchants]] (+5)
+* [[Faydarks Champions]] (+5)
+* [[Emerald Warriors]] (+5)
+|Indifferent with <?>
+|Dropped Items
+|-
+|[[Bone Chips Felwithe]]
+|1
+|Felwithe
+|4x [[Bone Chips]] for:
+
+* [[Clerics of Tunare]] (+?)
+* [[King Tearis Thex]] (+?)
+* [[Anti-Mage]] (+?)
+|Apprehensive with [[Clerics of Tunare]]
+|Dropped Item
+Stackable Items
+
+Stacked Turn-Ins(?)
+|-
+|[[Note for Rebby]]
+|1
+|Freeport
+|Deliver Message from [[East Freeport]] to [[West Freeport]], carry [[Rebby's Rat Whiskers]] back to EFp for:
+
+* [[Coalition of Tradefolk Underground]] (+10)
+* [[Coalition of Tradefolk]] (+5)
+* [[Carson McCabe]] (+5)
+* [[Corrupt Qeynos Guards]] (+5)
+* [[The Freeport Militia]] (+5)
+|
+|Can carry multiple Messages for first leg
+Can turn in 4 at a time
+
+
+Stacked Turn-Ins for Rat Whiskers
+|-
+|[[Note for Janam]]
+|1
+|Freeport
+|Deliver Note to Janam from [[East Freeport]] to [[West Freeport]], carry Note to Harkin back to EFp for:
+
+* [[Coalition of Tradefolk Underground]] (+20)
+* [[Coalition of Tradefolk]] (+20)
+* [[Carson McCabe]] (+5)
+* [[Corrupt Qeynos Guards]] (+5)
+* [[The Freeport Militia]] (+5)
+|
+|Can carry multiple Notes each way
+Can turn in 4 at a time.
+|-
+|[[Gnoll Bounty]]
+|1
+|Halas
+|Give 3x [[Gnoll Fang]] for:
+
+* [[Wolves of the North]]  (+15)
+* [[Shamen of Justice]] (+5)
+* [[Merchants of Halas]] (+5)
+* [[Rogues of the White Rose]] (+5)
+* [[Steel Warriors]] (+?)
+|
+|Dropped item
+Stacked Turn-Ins (multiples of 3)
+|-
+|[[Note for Konem]]
+|1
+|Qeynos
+|Say "Where is Konem?" to [[Phin Esrinap]] and deliver message to [[Konem Matse]] for:
+
+* [[Silent Fist Clan]] (+5)
+* [[Guards of Qeynos]] (+5)
+* [[Ashen Order]] (+5)
+
+Rewards the same faction for returning [[Grathin's Invoice]] to [[Phin Esrinap]].
+|Non KOS to Silent Fist Clan
+|Can Carry multiple Notes each way.
+Faction awarded at each message handoff.
+Can turn in 4 at a time.
+|}
+* [[Gnoll Scalp Collecting]] - Freeport
+* [[Kilij's Plans]] (Kelethin factions)
+* [[Orc Scalp Collecting]] - Freeport
+* [[Lenka's Pouch]] - Halas
+* [[Bone Chips Kaladim]] - Kaladim
+* [[Moonstones]] - second section only, Qeynos
+* [[Gathering Grain]] - Qeynos
+* [[The Frikniller Family]] - various
+* [[The Lottery Ticket]] - various
+* [[Miranda's Dice]] - Kejek
+* [[Slave Keys]] - various
+* [[The Bread Shipment (Kelethin)]] - Kelethin
+* [[Protect the Shipyard]] - Venril Sathir
+
+== Hits to Hostile Factions or Mostly Positive with Small Hits to others ==
+{| class="wikitable"
+|+
+!Quest
+!Lvl Min
+!City
+!Faction Adjustments
+!Requirements
+!Notes
+|-
+|[[Red Wine to Lady Shae]]
+|1
+|Felwithe
+|4x [[Red Wine]] for:
+
+* [[Emerald Warriors]] (+5)
+* [[Merchants of Felwithe]] (+5)
+* [[Kelethin Merchants]] (+5)
+
+Negative Hit to:
+
+* [[Indigo Brotherhood]] (-1)
+|
+|Purchased Item
+Stackable Turn-Ins
+|-
+|[[Hogcaller's Inn]]
+|14
+|Felwithe
+|1x [[White Wine]] for:
+
+* [[Faydarks Champions]] (+?)
+* [[King Tearis Thex]] (+?)
+* [[Clerics of Tunare]] (+?)
+* [[Soldiers of Tunare]] (+?)
+
+Negative hit to:
+
+* [[Crushbone Orcs]] (-??)
+|Amiable with [[The Freeport Militia]]?
+|Purchased Item
+Stackable Turn-Ins
+|-
+|[[Fabian's Strings]] (first step)
+|?
+|North Freeport
+|Trade 2gp for:
+
+* [[League of Antonican Bards]] (+5)
+* [[Knights of Truth]] (+5)
+* [[Guards of Qeynos]] (+5)
+
+Negative Hit to:
+
+* [[Ring of Scale]] (-1)
+* [[Mayong Mistmoore]] (-1)
+|
+|Pure gold Trade
+Exact Change required
+|-
+|[[Bandages for Honeybugger]]
+|1
+|Rivervale
+|Trade 1x [[Bandage]] for:
+
+* [[Merchants of Rivervale]] (+5)
+* [[DeepPockets]] (+5)
+* [[Guardians of the Vale]] (+5)
+* [[Mayor Gubbin (Faction)]] (+5)
+
+Negative Hit to:
+
+* [[Coalition of Tradefolk Underground]] (-1)
+|Yes, need details
+|Purchased Item
+Stackable Turn-Ins
+|-
+|[[Shondo and the Tonic]]
+|1
+|AkAnon
+|Trade 1x [[Vastly Deep Ale]] for:
+
+* [[Gem Choppers]] (+10)
+* [[Merchants of AkAnon]] (+5)
+* [[King Ak'Anon (Faction)]] (+5)
+
+Negative Hit to:
+
+* [[Dark Reflection]] (-2)
+* [[Clan Grikbar]] (-1)
+|
+|Purchased
+Stackable Turn-Ins
+|}
+[[Category:Guides]]
+[[Category:Quests]]

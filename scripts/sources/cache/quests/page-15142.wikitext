@@ -1,0 +1,208 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:npc_perrir_zexus.png|frame|Perrir Zexus]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+!''' Quest Giver: '''
+| [[Perrir Zexus]] , [[Ithvol K`Jasn]]
+|-
+!''' Minimum Level: '''
+| 5+
+|-
+!''' Classes: '''
+| [[Cleric]], [[Shaman]]
+|-
+!''' Related Zones: '''
+| Various
+|-
+!''' Related NPCs: '''
+| [[Draxiz N'Ryt]], [[Dran `slug` Rembor]], [[Dragoon Szorn]], [[Ennixy Frennor]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Initiate Symbol of Innoruuk}}
+</li><li> {{:Disciple Symbol of Innoruuk}}
+</li><li> ({{:Skinned Halfling Face Mask}})
+</li><li> {{:Regent Symbol of Innoruuk}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+*Hand 4 [[Woven Grass Amulet]]s to [[Perrir Zexus]] back in [[Neriak Third Gate]] get [[Initiate Symbol of Innoruuk]]
+<br>
+
+*Kill [[Master Whoopal]] - Loot [[Halfling Druid Master's Head]] 
+
+*Give [[Halfling Druid Master's Head]] to [[Draxiz N'Ryt]] in [[Neriak Commons]] Receive [[Skinned Halfling Face Mask]]
+
+*Use [[Skinned Halfling Face Mask]] in West Commons and Hail / say "I will assist you" to [[Wallin Slyfoot]] to receive [[Leatherfoot Raider Orders]].  NOTE: Even if you use wolf form to become indifferent, you will need to use the mask.  2024-10-10 I attempted to engage and he would not respond to hails while I was in wolf form, until clicked off wolf form and used the mask.
+
+*Give [[Leatherfoot Raider Orders]] to [[Draxiz N`Ryt]] in [[Neriak Commons]] to spawn [[a leatherfoot spy]] under the waterfall.
+
+*Kill [[a leatherfoot spy]] and receive [[Head of a Halfling Spy]] 
+
+*Give [[Head of a Halfling Spy]] and [[Initiate Symbol of Innoruuk]] to [[Ithvol K`Jasn]] in Neriak 3rd Gate Cleric's Guild 3rd level to receive [[Disciple Symbol of Innoruuk]]
+<br>
+*Make 2x [[Steel Boning]]. Tell [[Dran `slug` Rembor]] that 'Ithvol sent me.'
+
+*Give [[Dran `slug` Rembor]] 2x [[Steel Boning]] to receive a [[crate of teir'dal provisions]]. 
+
+*Take the [[crate of teir'dal provisions]] to [[Dragoon Szorn]] in the [[Lesser Faydark]] dark elf camp to receive [[ Receipt for Provisions Crate]]
+
+*Go to Steamfont and tell [[Ennixy Frennor]] "Hate be my guide" to spawn [[Crusader Swiftmoon]] . Track down or wait 8 minutes for [[Crusader Swiftmoon]] to arrive and kill him and loot [[Missing Teir`Dal Crate]] and [[Swiftmoon's Head]]. 
+
+*Take [[Missing Teir`Dal Crate]] to [[Dragoon Szorn]] in the [[Lesser Faydark]] dark elf camp to receive [[Voucher of Service to Naythox]].
+
+*Take [[Voucher of Service to Naythox]], [[Swiftmoon's Head]], [[ Receipt for Provisions Crate]], and [[Disciple Symbol of Innoruuk]] to [[Ithvol K`Jasn]] in Neriak 3rd Gate Cleric's Guild 3rd level to receive [[Regent Symbol of Innoruuk]]
+{{End}}
+
+== Initiate Symbol of Innoruuk ==
+
+'''Find [[Perrir Zexus]] in [[Neriak Third Gate]]. He resides in the Temple of Innoruuk (Cleric Guild) on the first floor in the southwest corner room.'''
+
+When hailed with dubious and apprehensive faction:
+
+: You say, 'Hail, Perrir Zexus'
+:: Perrir Zexus says 'You are worthless and pathetic! You could never be of service to our temple! Begone before your innards decorate our walls!'
+
+'''I was indifferent faction with him as a Troll Shaman and was able to complete this quest from start to finish with no faction problems.'''
+
+'''To get the faction needed as a Human: (1) Say "I am devoted to Innoruuk" to [[Saxarivza Zaxun]] in the underground [[East Freeport]] Tunnels and she hands you a [[note of recommendation]] (2) Take the note to Perrir Zexus at the Cleric guild in Neriak Third Gate (3) Repeat steps 1 and 2 one or two more times (On 11/6/19, it took 3 total turn-ins to go from dubious to amiable)'''
+
+When hailed with acceptable faction:
+
+: You say, 'Hail, Perrir Zexus'
+:: Perrir Zexus says 'Salutations, ________! Your devotion to our Lord Innoruuk is evident in your actions and on your soul. As a member of the Spires of Innoruuk, you are required to obtain and wear the symbol of your station among the clergy. I can award you the [hematite symbol of Innoruuk] worn by the initiates of the Spires.'
+: You say, "What hematite symbol of Innoruuk?"
+:: Perrir Zexus says 'The forest beyond the gates of our grand city has been shaped by the magic of our Lord Innoruuk to be more hospitable to our kind. There are halfling druids in the service of Karana who have set up shrines there in hopes of restoring the forest to its former state. They could never succeed in their task with their feeble powers granted by their insignificant god, yet still, they are a nuisance. Bring me four of the holy symbols worn by the druids and I shall grant you the initiate symbol of Innoruuk.'
+
+'''He wants four [[Woven Grass Amulet]]s. There are 2 camps of Halflings in Nektulos, I used area 4 on the map because there were more spawns I could pull solo (at level 15), also Camp 4 is where Master Whoopal spawns (by the statue) and you need his head for the next step.  It took about 30 kills to get my first Woven Grass Amulet, then I got the next 3 in about 5 minutes.
+
+Hand in the four [[Woven Grass Amulet]]s to [[Perrir Zexus]] back in [[Neriak Third Gate]].'''
+
+: Perrir Zexus says, 'You have done well young Initiate. I grant you this medallion invested with the divine hatred of Innoruuk. Wear it proudly as a representation of your importance to these sacred spires. Now if you will excuse me I must proceed with the burning of these pathetic halfling symbols of faith.'
+
+<div class='facblock'>
+* Your faction standing with [[King Naythox Thex]] got better.
+* Your faction standing with [[Priests of Innoruuk]] got better.
+* Your faction standing with [[Clerics of Tunare]] got worse.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Priests of Marr]] got worse.
+* Your faction standing with [[Primordial Malice]] got worse.
+</div>
+{{exp}}
+
+'''You receive [[Initiate Symbol of Innoruuk]] from Perrir Zexus.'''
+
+== Disciple Symbol of Innoruuk ==
+
+[[File:npc_ithvol_k`jasn.png|frame|Ithvol K`Jasn]]
+'''Find [[Ithvol K`Jasn]] (another Cleric GM). He is upstairs from [[Perrir Zexus]] in [[Neriak Third Gate]].'''
+
+You say, 'Hail, [[Ithvol K`Jasn]]'
+
+: ''[[Ithvol K`Jasn]] says, 'Hail, _____! I sense the gift of hatred in your aura. What status do you hold within these Spires?' ''
+
+You say, 'I am an initiate of Innoruuk'
+
+: ''[[Ithvol K`Jasn]] says, 'Well met, Initiate _____. If you desire to raise your station in this temple, I have a task for you. Are you willing to accept the task I am about to set before you?' ''
+
+You say, 'I am willing'
+
+: ''[[Ithvol K`Jasn]] says 'As an initiate of the Spires, you have proven your hatred of the halflings who are desecrating our forest with their feeble shrines and camps. They persist in their hopeless task and seem to anticipate many of our tactics against them. Go out into the Nektulos and slay the one called [[Master Whoopal]]. Take his head to [[Draxiz N'Ryt]] so that he may probe the brain.' ''
+
+'''[[Master Whoopal]] and his PH [[Quester Dunden]] spawn in [[Nektulos Forest]] at area 4 on the map (where you killed halflings for the Woven Grass Amulets earlier). I was unable to pull Quester Dunden solo, the guards would add. I recruited some help and Master Whoopal spawned on the 3rd try (6 minute respawn) and dropped [[Halfling Druid Master's Head]]. <<Can Confirm, Whoopal seems to be a 1:3 chance>>'''
+
+'''Loot his head and take it to [[Neriak Commons]] where you will hand it to [[Draxiz N'Ryt]], He can be found upstairs in the caster's guild at location 120, -980, 3,75. '''
+
+[[Draxiz N'Ryt]] glowers at you dubiously -- he appears to be quite formidable. (He will eat the turn in if done from around a corner at threateningly).
+
+''[[Draxiz N`Ryt]] says, 'I have foreseen your arrival, _____. I see from the mind of this lesser creature you have slain that he was receiving orders from beyond the boundaries of Nektulos. I see an armored Leatherfoot moving cautiously through the commonlands attempting to avoid the eyes of travelers and guard posts. Find this Leatherfoot I see in my visions and return any pertinent information he may be carrying to me so that I may decipher it. I have skinned the face of this druid and enchanted it so that you may learn what you must through your skills of subterfuge. Go now, _____, and do not disappoint me!' ''
+
+<div class='facblock'>
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[The Spurned]] got better.
+</div>
+
+'''You receive a [[Skinned Halfling Face Mask]] from [[Draxiz N`Ryt]].'''
+
+[[Draxiz N'Ryt]] looks your way apprehensively -- he appears to be quite formidable.
+
+'''Find [[Wallin Slyfoot]] in the West Commonlands near Kithicor Forest at location 390, 3600, -51. Use the face mask illusion effect to temporarily boost your faction.'''
+
+You feel different.
+
+You say, 'Hail, [[Wallin Slyfoot]]'
+
+: ''[[Wallin Slyfoot]] says 'What? What do you want? Are you here to assist me?' ''
+
+You say, 'Yes, I will assist you'
+
+: ''[[Wallin Slyfoot]] says 'Yes..yes..of course you will. It is a matter of the utmost importance. I need this letter to be delivered to [[Master Whoopal]] in the Nektulos forest but I must also get these Brussels sprouts to my granny before they spoil. Please deliver this message for me?' ''
+
+You receive [[Leatherfoot Raider Orders]] Return to [[Draxiz N`Ryt]] in [[Neriak Commons]] and hand him the orders. Do not hand in the note until you are ready to kill the level 20 halfling spy, because handing in will spawn the quest mob. If you hand in and do not kill the mob then you have to repeat this step of the quest to get a new mask and note.
+
+: ''[[Draxiz N`Ryt]] says, 'I see you are more cunning than you appear, _____. These orders to Whoopal bring disturbing news indeed. It seems there is a Leatherfoot spy somewhere in Neriak who has been providing the raiders with information. Find this spy and return his head and your initiate holy symbol of Innoruuk to Ithvol and if he deems you worthy he will promote you within the ranks of the Spires.' ''
+
+'''In a hidden passageway around -180, -560 in Neriak Commons, accessed either by swimming up the waterfall or through a false wall in "Toadstool" bar. - the spy - yellow to level 19 - aggros you.  Run around in the passage back there until you either pass through a false wall on the left, or walk to the top of the path where you a false floor will give out. If you fall through the false floor, you will fall on top of the spy, be prepared.'''
+
+: ''[[a leatherfoot spy]] says 'I have been discovered!!! You will never stop us from reclaiming the Nektulos for Karana, _____!!' ''
+
+I had a lvl18 necro with me for the spy kill, it was pretty easy. The spy will attempt to flee at low hp.  
+
+'''Loot the '[[Head of a Halfling Spy]]' and return to [[Ithvol K`Jasn]] in Neriak 3rd Gate and give him the Head of a Halfling Spy and Initiate Symbol of Innoruuk.  If you do not give him both items at the same time, you will have to redo the quest(s).  It does not appear to be multi-quest-able.  Handing in just the head results in the message "I don't need this." following that up with handing in just the necklace results in the same message and no disciple symbol.''' ''' ''(11th June 2020: This seems incorrect. MQ is possible, I just handed in head and necklace one at a time, and I got the next necklace.)'''''
+
+: ''[[Ithvol K`Jasn]] says 'You have focused the hate within you and discovered that hate and rage are not the same. Hate can be calculating and deceptive. For your service in defending the Kingdom of King Naythox Thex from the halfling invaders, I award you the disciple symbol of Innoruuk. Wear it with pride, _____.' ''
+
+== Regent Symbol of Innoruuk ==   
+
+You will need 2 [[Steel Boning]]s for this portion of the quest. Find a smith or make them yourself. I went from 0 smithing skill to having the bonings in about 15 minutes.
+
+- I found all the supplies in Neriak underground at the Blind Fish. 
+- Get 2:1 Small Piece of Ore to water flasks. In the forge combine 2 ore and 1 flask until you have some metal bits.
+- Next make a File using a File Mold, 1 Metal Bits, and 1 water flask in the forge.
+- Lastly, combine the file, water flask, and a Small Brick of Ore (not stack-able) to make the steel boning. (You get the file back whether you fail or succeed.)
+
+Get this lined up and ready to go before you start the next part of the quest.
+
+'''Hail [[Ithvol K`Jasn]] and tell him 'I am a disciple of Innoruuk.''''
+
+He says 'I have an important task for a Disciple of Hate such as yourself. It is no secret that King Naythox Thex wishes to expand the Teir'Dal Empire to the continent of Feydwer. We have a camp established in the Lesser Faydark near the stronghold of the vampire lord Mayong Mistmoore. The camp is constantly under siege by the Feir'Dal and Koada'Dal and must rely on the support of Neriak for supplies necessary to the survival of the camp. Are you willing to serve your King and Empire by delivering the provisions?'
+
+'''Tell him 'I will deliver the provisions.''''
+
+He will tell you 'The provisions are crated and prepared for shipment by Dran Slug Rembor. Go to his establishment in the Foreign Quarter and tell him Ithvol sent you. Make haste young Disciple of Hate, the fate of the Empire hangs on our support of the Faydark Camp.' Go the Neriak Foreign Quarter and tell [[Dran `slug` Rembor]] that 'Ithvol sent me.'
+
+Dran is in Slugs Bar in area 5 on the map.
+
+
+Dran will ask you for two steel bonings. After you give the bonings unstacked, he will hand you a crate and says 'Heres the crate of provisions. Take this to [[Dragoon Szorn]] in the [[Lesser Faydark]] immediately!  
+
+Travel to Lesser Faydark to the camp at (loc -900, 1155) and give the crate to [[Dragoon Szorn]]. He will hand you the [[Receipt for Provisions Crate]] and ask you to find the [missing shipment]. If you ask about it he will tell you to 'Seek out Ennixy and tell her [hate be my guide]. She typically works from her homeland in the [[Steamfont Mountains]].'
+
+'''Travel to [[Steamfont]] and talk to [[Ennixy Frennor]] (a gnome at 1350, -850). You say, 'Hate be my guide''''
+
+Ennixy will ask you to slay a paladin named [[Crusader Swiftmoon]]. When I talked to Ennixy, [[Crusader Swiftmoon]] (Spawns at 782, 2000 near Lesser Faydark zoneline and eventually walks to Ennixy and stops there) spawned right in front of me (although he can take 5-8 minutes to arrive, be patient). He is a level 28 Paladin. He has LoH and heals.
+
+NOTE: anyone can spawn Swiftmoon. So you can log to a high level alt, say 'Hate be my guide' to Ennixy, and wait a few minutes for Swiftmoon, kill him, then log back to your cleric.  You will get faction hits for [[Faydarks Champions]], [[King Tearis Thex]], and [[Soldiers of Tunare]].
+
+'''Travel back to Lesser Faydark and take the [[Missing Teir`Dal Crate]] back to [[Dragoon Szorn]].'''
+
+Dragoon Szorn says, 'What is this!! The items of importance have been removed from the crate!! This is most unfortunate. However, you have done well in your service to the Teir'Dal Empire. Take this voucher of services rendered under the command of Naythos. Then back to Ithvol along with the head of that slain Fier'Dal, the receipt for the provisions, and your disciple symbol of Innoruuk.'
+
+He will give you a [[Voucher of Service to Naythox]], experience, and 2-5pp.
+
+'''Travel back to [[Neriak|Neriak 3rd Gate]] and give to [[Ithvol K`Jasn]]: the [[Voucher of Service to Naythox]] , [[Swiftmoon's Head]], the [[ Receipt for Provisions Crate]] , and your [[Disciple Symbol of Innoruuk]].'''
+
+Ithvol K'Jasn says, 'Your devotion to the ideals of hatred and your service to our King Naythox Thex has proven your usefulness within these spires and within our great city. I award you the Regent Symbol of Innoruuk. Congratulations, Regent <name>!'
+
+'''Ithvol will then give you your [[Regent Symbol of Innoruuk]] and experience. You will get positive faction hits with [[Priests of Innoruuk]] and [[King Aythox Thex]]. You will get negative faction hits with [[Priests of Marr]], [[Clerics of Tunare]], [[Priests of Life]], and [[Primordial Malice]].'''
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Cleric Quests]]
+[[Category:Shaman Quests]]

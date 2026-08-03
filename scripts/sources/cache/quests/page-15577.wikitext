@@ -1,0 +1,73 @@
+{{EpicQuests Era}}
+[[File:npc_general_v`ghera.png|frame|General V`ghera]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[General V`ghera]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]], [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Stanos Herkanor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Guise of the Coercer}}
+</li></ul>
+
+== Walkthrough ==
+'''THIS DESPAWNS GENERAL UPON TURN-IN'''
+
+This is actually a subquest of the [[Rogue Epic Quest]]. [[General V`ghera]] is a triggered spawn by turning in a [[Sealed Box]] to one of his minions.
+
+Ask General V'ghera about 'stanos' and he says:
+
+: General V'ghera says, "Stanos? Stanos!! That dog, I WILL see him dead for what he cost me.  Outcast I am, stripped of my position, my god has forsaken me, blaming ME for the loss of some tome.  And you, Melchiord, you have aided him.  For that, you will die first.  Please, struggle and beg, I do so enjoy watching my victims squirm, and I have little joy left in my life now.  If you want my favor, perhaps if you came bearing Stanos' head I would be more forgiving.  But I doubt it."
+
+Head over to Highpass and kill [[Stanos Herkanor]]. Loot [[Head of Stanos]].  When you bring it back to V'ghera, you get a nice reward.
+
+: General V'ghera says 'Life is indeed sweet! Thank you, ______, you have done me a great service this day. Take this, Stanos was kind enough to return it to me, and I have no use for it now. Know that you have the blessing of Innoruuk for this deed! But of course, I leave it to you to leave here alive. A leader has to feed his minions,you know.'
+
+You receive [[Guise of the Coercer]]. '''THIS DESPAWNS GENERAL UPON TURN-IN'''
+
+== Full Checklist ==
+{{CheckboxList}}
+* '''Obtain [[Stanos' Pouch]]'''
+:* (OPTIONAL) Acquire level 50 (will need assistance from a 50+ rogue if you are not high enough)
+:* (OPTIONAL) Go to the Qeynos Aqueducts and find [[Malka Rale]] at +380, -210 (spawns at 8PM game time), tell her 'I can help' to receive [[Stanos' Pouch]].
+
+* '''Pickpocketing and Travel'''
+:* Pickpocket [[Stained Parchment Top]] from [[Founy Jestands]] in [[North Kaladim]].
+:* Pickpocket [[Stained Parchment Bottom]] from [[Tani N`Mar]] in [[Neriak Third Gate]].
+:* Hand [[Stanos' Pouch]] to [[Anson Mcbale]] and say "I need to see Stanos" to spawn [[Stanos Herkanor]] and then turn both parchment pieces into Stanos in [[Highpass Hold]] to receive [[Combined Parchment]].
+:* Give '''Combined Parchment''', '''100pp''', and '''2 unstacked [[Bottle of Milk]]''' to [[Eldreth]] in [[Lake Rathetear]]. Receive [[Scribbled Parchment]].
+:* Take Scribbled Parchment to [[Yendar Starpyre]] in [[Steamfont Mountains]]. Receive [[Tattered Parchment]].
+
+* '''Book of Souls'''
+:* Wizard teleport to [[Plane of Hate]], obtain [[Book of Souls]] (10 hr ground spawn at -60, +325, 56).
+
+* '''Renux'''
+:* Give [[Tattered Parchment]] and '''THEN''' [[Book of Souls]] to [[Yendar Starpyre]]  to spawn Renux. <b>Kill [[Renux Herkanor]]</b>, loot [[Translated Parchment]].
+
+* '''General V`Ghera'''
+:* Return Translated Parchment to Stanos. Receive a [[Sealed Box]] from Stanos.
+:* Kill [[Stanos Herkanor]]. Loot [[Head of Stanos]].
+:* Travel to Kithicor Forest, hand in a [[Sealed Box]] to any of the Dark Elves to spawn [[General V`ghera]].<br/><b style="color: red">IMPORTANT: Do not use hide or invisibility / IVU while turning in the box, but <i>do</i> use sneak. Verify that you are sneaking but not hidden and that the mob cons indifferent <i>before</i> turning-in or you may lose your progress!</b>
+:*Give [[Head of Stanos]] to [[General V`ghera]]
+:*Receive [[Guise of the Coercer]]. '''THIS DESPAWNS GENERAL UPON TURN-IN'''
+
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]
+[[Category:Bard Quests]]
+[[Category:Rogue Quests]]

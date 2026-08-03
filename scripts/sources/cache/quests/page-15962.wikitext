@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_runethar_hamest.png|frame|Runethar Hamest]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Runethar Hamest]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Runethar Hamest]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Gray Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Runethar Hamest]] is located at -150, -520 in the Temple of Thunder ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Runethar Hamest'
+
+: Runethar Hamest says, 'Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance] or are you [already a follower of Karana]?'
+
+'''Hand [[Runethar Hamest]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Harness the power of the storm, become one with Thunder. Join the Knights of Thunder in raining Karana's will across the lands of Norrath. Give this note to Guild Master Runethar Hamest at the Temple of Thunder, south of the Grounds of Fate and to the east of the Qeynos docks.</code>
+
+: Runethar Hamest says, 'Thank you Teddee, and welcome to the Temple of Thunder. Wear this tunic with pride as you walk through these lands, and protect the flock of Karana wherever your foot may fall. Go and see [[Gehna Solbenya]], I'm sure she will have Temple duties for you to complete.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Paladin Quests]]

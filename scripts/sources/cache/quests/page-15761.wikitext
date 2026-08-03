@@ -1,0 +1,154 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_loremaster_dorinan.png|frame|Loremaster Dorinan]]
+[[File:ThurgadinDwarfCleric.png|300px|thumb|A full suit of Forbidden Rites armour on a dwarf cleric (helm shown is custom)]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Loremaster Dorinan]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly [[faction]] is required for all Thurgadin armor quests. Quest can be done by anyone of ANY level as long as they have the faction.
+When completing an MQ, both characters must have Kindly+ faction. <br>
+
+== Reward ==
+{{Gear Set
+|Crown of Forbidden Rites
+|Breastplate of Forbidden Rites
+|Vambraces of Forbidden Rites
+|Bracers of Forbidden Rites
+|Gauntlets of Forbidden Rites
+|Greaves of Forbidden Rites
+|Boots of Forbidden Rites
+}}
+
+== Checklist ==
+Turn-ins to [[Loremaster Dorinan]] in [[Thurgadin]].{{CheckboxList}}
+*[[Crown of Forbidden Rites]]
+:*[[Corroded Plate Helmet]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Breastplate of Forbidden Rites]]
+:*[[Corroded Breastplate]]
+:*3x [[Black Marble]]
+*[[Vambraces of Forbidden Rites]]
+:*[[Corroded Plate Vambraces]]
+:*3x [[Jaundice Gem]]
+*[[Bracers of Forbidden Rites]]
+:*[[Corroded Plate Bracer]]
+:*3x [[Crushed Opal]]
+*[[Gauntlets of Forbidden Rites]]
+:*[[Corroded Plate Gauntlets]]
+:*3x [[Crushed Lava Ruby]]
+*[[Greaves of Forbidden Rites]]
+:*[[Corroded Plate Greaves]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Boots of Forbidden Rites]]
+:*[[Corroded Plate Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+Part of the [[:Velious Class Armor]]
+
+Loremaster Dorinan says, 'Greetings to you. You are far away from your homelands, stranger. I am looking for someone. We here at the Temple of Lore are always seeking fellow priests of various faiths. Tell me, Erudite, are you a cleric?'
+
+'''After turn-in:'''
+
+Loremaster Dorinan smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'what helmet'
+
+Loremaster Dorinan says, 'Those who are wise as we are know that protection of the head is most important.  I may be able to forge you something most interesting if you were to bring me a [[Corroded Plate Helmet]] and three pieces of [[Crushed Onyx Sapphire]].'
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you a helm if you bring him a [[Corroded Plate Helmet]] and three pieces of [[Crushed Onyx Sapphire]].
+
+== Breastplate ==
+
+You say, 'what breastplate'
+
+Loremaster Dorinan says, 'If you find a corroded breastplate and three pieces of black marble bring them to me an I shall attempt to create an enchanted breastplate that will server you well.'
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you a breastplate if you bring him a [[Corroded Breastplate]] and three pieces of [[Black Marble]].
+
+== Vambraces ==
+
+You say, 'what armplates'
+
+Loremaster Dorinan says 'Three [[Jaundice Gem]]s and a set of [[Corroded Plate Vambraces]] might be an interesting combination.  The powers of the gems may be harvested to imbue the vambraces.'
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you some armplates if you bring him three [[Jaundice Gem]]s and a set of [[Corroded Plate Vambraces]].
+
+== Bracer ==
+
+You say, 'what bracers'
+
+Bracers are quite easy to imbue. Simply find three [[Crushed Opal]]s and a [[Corroded Plate Bracer]] and I will complete the ritual to enchant them.
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you some bracers if you bring him three [[Crushed Opal]]s and a [[Corroded Plate Bracer]].
+
+== Gauntlets ==
+
+You say, 'what corroded plate gauntlets'
+
+Loremaster Dorinan says, 'Strong protection for one's hands is important.  I may be able to craft you a set of powerful plate gauntlets if you find a set of [[Corroded Plate Gauntlets]] and three [[Crushed Lava Ruby|Crushed Lava Rubies]].'
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you some gauntlets if you bring him a set of [[Corroded Plate Gauntlets]] and three [[Crushed Lava Ruby|Crushed Lava Rubies]].
+
+== Leggings ==
+
+You say, 'what greaves'
+
+Loremaster Dorinan says, ''A set of [[Corroded Plate Greaves]] might be salvageable if you were to find three [[Chipped Onyx Sapphire]]s. With the right techniques almost anything is possible.'
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you some greaves if you bring him three [[Chipped Onyx Sapphire]]s and a pair of [[Corroded Plate Greaves]].
+
+== Boots ==
+
+You say, 'what boots'
+
+Simply bring me a set of three [[Crushed Flame Emerald]]s and a pair of [[Corroded Plate Boots]] and I will imbue them. I bid you good luck in finding such things.
+
+Loremaster Dorinan smiles warmly as he hands you your reward.  'You have done well.'
+
+Dorinan promises to make you some boots if you bring him three [[Crushed Flame Emerald]]s and a pair of [[Corroded Plate Boots]].
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Cleric Quests]]
+[[Category:Thurgadin Armor Quests]]

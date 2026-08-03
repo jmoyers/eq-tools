@@ -1,0 +1,405 @@
+{{Epics Era}}
+
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| Solomen
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Staff of Gabstik}}
+</li><li>{{:Staff of the Four}}
+</li></ul>
+
+== Post-Revamp Checklist ==
+{{CheckboxList}}
+('''IMPORTANT NOTE''': With [[Ornate Velium Pendant]], you can skip straight to receiving the [[Golem Sprocket]] - IF YOU DO THIS, you '''MUST''' use the OVP on '''ALL''' turn in mobs thereafter, lest your turn ins be eaten).
+<br>
+<br>
+('''IMPORTANT NOTE''' for evil wizards and Dark Elves: you have 3 options:
+
+1. wolf form and avoid guards.  The Halas guards are KOS to wolf form, however, the shaman guild masters are not. If you do the turn-in in wolf form, be wary of patrolling guards (perhaps your druid friend can harmony these but its not necessary).
+2. harmony.  Just harmony the NPCs around Dargon.
+3. Having someone pull Dargon to the zone in area of Halas, snare, then they zone.
+
+Consider binding at the zone line as well. Unfortunately, succor/abscond will drop you at the main guard post which can make for a grisly death.
+
+<br>
+<br>
+* '''Talk to [[Solomen]] in the [[Temple of Solusek Ro]], receive a note.''' [OPTIONAL ''if using Ornate Velium Pendant''
+** Hand the note to [[Camin]] at the Vasty Deep Inn in Erudin. Hail him, then hand him 1000pp. [OPTIONAL ''if using Ornate Velium Pendant''][NOTE: Doing this part twice is NOT enough faction to get you to indifferent.]
+* '''Buy the potion called [[Ro's Breath]] from [[Dargon]] in Halas, outside the shaman guild (900-1100pp).'''
+** Take the potion to [[Camin]], receive potion back with the charge missing.
+** Hand the used potion to [[Dargon]], who turns into [[Arantir Karondor]]. Hail him and receive the ring (note more than one wizard can hail Arantir after he has been triggered and each receive a ring).
+** Hand [[Challice]] the ring in the basement of the Paladin Guild in Felwithe, receive another ring back.
+** Hand the ring to [[Dargon]]/[[Arantir Karondor]]. Talk to him of the other wizards and receive [[Note from  Arantir]]. (Say 'Who is the gnome?' to skip to the end of the conversation)
+** Talk to [[Kandin Firepot]] in Butcherblock. Hand him [[Note from Arantir]], say "what oil?" to receive [[Golem Sprocket]].
+* '''Kill [[Phinigel Autropos]] in Kedge Keep. Loot the [[Blue Crystal Staff]].'''
+* '''Kill [[Venril Sathir]] in Karnors's Castle, loot [[Gnarled Staff]].'''
+* '''Give the Golem Sprocket to [[a broken golem ]] in Fear. This spawns [[an enraged golem]]. Kill him and loot [[Green Oil]]. '''
+* '''Give the oil to [[Kandin Firepot]]. Receive the [[Staff of Gabstik]] and [[Note to Arantir]].'''
+* '''Give [[Note to Arantir]] to [[Dargon]] to spawn [[Arantir Karondor]], then hail him. Give him the Blue Crystal Staff, Gnarled Staff, and Staff of Gabstik. Receive a bag.'''
+* '''Give the bag to [[Solomen]], receive the [[Staff of the Four]]'''
+{{End}}
+<br>
+
+== Pre-Revamp Checklist ==
+'''Note If you have a Cazic's Skin from before the revamp, you can still turn it into Kandin to get Kandin's Bag, which you can turn into him to get the note.'''
+{{CheckboxList}}
+* Talk to [[Solomen]] in the [[Temple of Solusek Ro]], receive a note. [OPTIONAL]
+** Hand the note to [[Camin]] at the Vasty Deep Inn in Erudin. Hail him, then hand him 1000pp. [OPTIONAL]
+* Buy the potion called [[Ro's Breath]] from [[Dargon]] in Halas, outside the shaman guild (900-1100pp).
+** Take the potion to Camin, receive potion back with the charge missing.
+** Hand the used potion to Dargon, who turns into [[Arantir Karondor]], and receive the ring.
+** Hand [[Challice]] the ring in the basement of the Paladin Guild in Felwithe, receive another ring back.
+** Hand the ring to Dargon/Arantir. Talk to him of the other wizards and receive a note.
+* Kill [[Phinigel Autropos]] in Kedge Keep. Loot the [[Blue Crystal Staff]].
+* Kill [[Venril Sathir]] in Karnors's Castle, loot [[Gnarled Staff]].
+* Take the note to [[Kandin Firepot]], then:
+** 1. Give him [[Cazic's Skin]] from CT to recieve Kandin's Bag.
+** 2. Give him [[Mistletoe Powder]] to obtain the [[Staff of Gabstik]]
+** 3. Give him back Kandin's Bag to get a new note.
+* Give note to Dargon to spawn Arantir, then hail him. Give him the Blue Crystal Staff, Gnarled Staff, and Staff of Gabstik. Receive a bag.
+* Give the bag to Solomen, receive the Staff of the Four
+{{End}}
+<br>
+
+== Short Walkthrough ==
+
+=== The Beginning === 
+'''[this exact step is not absolutely required; the Wizard epic quest is based on TrueSpirit faction. If you increase that faction in another way, the later quest NPC's will give you the items you need]''' 
+
+The Wizard Epic Quest is started by talking to [[Solomen]] (Level 40) within the Temple of Solusek Ro. Entrance is in Lavastorm location (+800, +228). Solomen is a human wizard located on the left portion of the temple, third floorm between the two undead knights, one room away from Lord Seafire. Here is what you say:
+
+Start by saying "Hail Solomen."
+
+: He will respond, "Ah, I see you have found my study. This is where I study and scribe the history of magic in Norrath."
+
+Say, "What history?"
+
+: Solomen says, "I have worked to chronicle everything from the beginnings of magic to what we consider the modern day of magic. Solusek Ro has been very generous to those who wield magic in Norrath. But throughout history there is one thing I have noticed - too much power corrupts the soul. I have seen and documented that the strongest wizards and those closest to Solusek Ro become corrupted by their power."
+
+You says, "What Wizards?"
+
+: Solomen responds, "Unfortunately, I don't have time to speak of such things right now. But I could use your help since you are here. I have here an envelope that I need delivered to one Camin Rah. You can find Camin in the wizard tower in the city of Erudin. He is a sage like myself whose knowledge rivals my own. Do you [agree] to undertake my task?."
+
+You say, 'I agree.'
+
+: Solomen says 'Here you are, then. Good luck on your journey.
+
+Solomen then gives you a note that you must give to Camin.
+
+=== Camin ===
+
+Now you must head to the City of Erudin and find [[Camin]]. He can be found at the Vasty Deep Inn. To find him, simply open the front door and go up the stairs to your right. Go down the hall and open the first door on your left. Camin will be behind the door. He is normally indifferent or apprehensive to everyone. Hand him the note that Solomen gave to you.
+
+: Camin will say, "So you have met Solomen, eh? He is a man with a wealth of knowledge. It is good to hear he is well."
+
+Hail Camin and he will respond, "Go away! I have no time for you!" 
+
+Then say, "What are you searching for?"
+
+: Camin says ''Ah! A smart one, I see! If you really wish to know about such a thing, you will have to help me finance my studies. The knowledge I have acquired and researched did not come cheaply."
+
+Hand Camin 1000 platinum pieces. '''(this step is not required; it's only needed to find out information about the quest, but that information is already listed here. You just need to have sufficient TrueSpirit faction to continue the quest)'''.
+
+Once you have handed him the money he will reply,
+
+: "Good, good, you show a willingness to learn of this with your offer. What I can tell you is that Solusek Ro had four followers who had shown exceptional aptitude in the arts of wizardry. Solusek Ro himself tutored them. He considered them to be like his own children. I know of one who still exists. He goes by the name of Arantir Karondor. He used to specialize in the storing of magic into physical objects. Arantir has been hiding for many, many years and will most assuredly be going by another name, so keep your eyes open. Anyway, be off, I need to continue my research. Return to me if you ever find Arantir Karondor.''
+
+Your faction with Truespirit will increase, and you will get a tiny amount of experience.
+
+=== Arantir Karondor ===
+
+Now to find Arantir Karondor. There is a female NPC vendor in Halas named [[Dargon]] that sells a potion called [[Ro's Breath]]. She is located in front of the Shaman guild. Purchase this potion from Dargon for the sum of about 900pp to 1100pp depending on your faction and charisma. Now take this potion back to [[Camin]] in Erudin and hand it to him. He will reply with the following:
+
+: Camin says 'Very interesting... I've seen this work before. Yes, yes! It's the work of Arantir Karondor! Give this back to the person you got it from. Maybe he will have a clue to Arantir's location.'
+
+Camin gives you back the potion (it has now been stripped of it's Shield of Lava charge) and you must take it back to Dargon in Halas. Note: you cannot skip the previous trip to Camin. You absolutely, must hand the potion to Camin. If you try to skip the trip to Erudin, you will get the following message from Dargon: "I didn’t request this item, but thank you very much".
+
+Back in Halas, hand the Ro's Breath potion back to Dargon. She will turn into blue robe adorned, [[Arantir Karondor]] and reply with:
+
+: Dargon says 'So, I've been discovered! You must know Camin - he is one of the only people who could have recognized my work. I have worked very hard to mask my presence here.'
+
+You say, 'Hail Arantir Karondor'
+
+: Arantir Karondor says 'Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this letter and then return to me.'
+
+=== Arantir's Ring ===
+
+The letter that Arantir hands you is actually a ring called [[Arantir's Ring]]. Identifying it reveals: "Item Lore: My love has no bounds.". Challice is found in the basement of the Felwithe Paladin guild. Remember that Arantir will despawn in three minutes. So if you want him to stay there while you go to Felwithe, have a friend stay with Arantir and continue to talk to him while you are gone. If he does despawn then you must wait for another wizard to make him spawn, but you do not have to keep him up in order to complete the quest. Once in Felwithe, hand Challice the ring and she will reply with:
+
+: "Oh yes? Arantir? What a fool he was! The man gave me everything, but for all his intelligence, he could never understand why I was truly with him. It was for his power; he could do anything. But when he mysteriously lost it, he became just another toy. I never loved him. Return this ring to him. He will understand that I have no desire to see him again.''
+
+She then returns to you a new ring that you must take to Arantir/Dargon. It does not matter if you give the ring to Dargon if Arantir has despawned. If you do this, Arantir will respawn. Then Hail him. (If you have gotten back to him quickly, before he has despawned, after hailing him he gives you another ring.  If he then despawns before you get a chance to ask him about the gnome, you can repeat handing the ring in to Challice and then return to Halas to turn the ring in to Dargon to get Arantir to spawn again.)
+
+"Ah, but it pains my heart to see this. How I could love a women like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?'"
+
+You say, ''I wish to hear your story.''
+
+: Arantir Karondor says "I once was one of four true followers of Solusek Ro. So great were the four of us that Solusek Ro himself made us each a special item. We did not know what the others' items were, but we realized that was for our own safety. Each one of us, after receiving the item, began to plot against Solusek Ro. Each of us believed we had enough power to dominate Norrath. Solusek Ro saw this and at the time we needed our powers most, he stripped us of them. Now I know two of the other wizards by name. One was called Sylen Tyrn, the other's name was Demunir Scry. The last wizard was a gnome, but I can't think of his name."
+
+=== Sylen Tyrn - Blue Crystal Staff ===
+
+You say, ''What about Sylen Tyrn?''
+
+: Arantir Karondor says ''Sylen was a high elf wizard, and like many high elves, he believed himself to be better than others. Because of his birth, he thought he was more noble and more intelligent than anyone else. I heard how met his demise - while flying over a vast area of water, his powers were stripped from him in midflight. He fell and was captured by a rival wizard who specialized in magics of the water. Search for that wizard and you could find a trace of Sylen.''
+
+The trace of Sylen Tyrn can be found on the [[Phinigel Autropos]] in Kedge Keep. The item he means is the [[Blue Crystal Staff]]. The Phinigel Autropos is a level 50 Wizard. He is actually quite easy to kill. If you have support, this part isn't hard to do. Phinny spawns every 12 hours. He is surrounded by guards, that can be solo pulled by 60. Phinny can be done with one well structured group of level 58s plus. There are many tactics to killing Phinny. The most used and most reliable is single pulling the guardians fast. They repop every 20 minutes so if you don't go fast enough, you will have to start over. Once they are dispatched, pull Phinny. He himself isn't very hard to kill. It helps to have someone to slow. If you are doing this with one group, you need a shaman, enchanter, warrior, cleric, yourself, and preferably a damage meleer such as a monk, rogue, or ranger.
+
+=== Demunir Scry - Gnarled Staff ===
+
+You say, 'What about Demunir Scry?'
+
+: Arantir Karondor says 'Demunir was a human in a rush for power. He was extremely intelligent and resourceful but, unfortunately, was more interested in destructive magic. Hearing of an ancient land, he immediately traveled to it, believing there to be powerful relics left undiscovered there. While exploring, he came upon a dwelling that housed a powerful warrior. Believing himself to be more powerful, he attempted to take this dwelling for himself. While in battle with this warrior, Solusek Ro stole his powers and left him helpless. It is said that Demunir's item is the warrior's most prized trophy."
+
+The item you need this time is the [[Gnarled Staff]] dropped off of [[Venril Sathir]] in Karnor's Castle, the leader of the Iksar Empire. He is a 55 Warrior with approximately 18,000 hitpoints. This is hardly anything, but his regeneration is amazing. You basically have to kill him within the first 20 seconds, or else it is hard to win the fight. You have to realize that 18khp is hardly anything. He has 2 personal clerics which heal him and never seem to run out of mana. It might be smart to have a designated group that would kill these before helping the other groups with Venril. The best type of spells to cast on him are cold and fire because he doesn't have as strong resistances in those type of spells. He has 1000 lifetap punches which can be very dangerous also. Basically, you need a strong guild to kill him and be able to loot the staff, if it drops. Venril is on a 68-72 hour spawn.
+
+=== The Gnome - Staff of Gabstik ===
+
+'''this quest requies faction'''.
+
+
+You say, ''What about the gnome?'' If he doesn't reply, say: ''Who is the gnome?''
+
+: Arantir Karondor says 'Ah, the gnome I know very little about. I know he was small and crafty, and that he had a brother. His brother's craft was that of making fireworks, and he was the unfortunate victim of one of his own experiments. His firework exploded, leaving his mind diminished in capacity, even for a gnome. I remember others calling him 'Old Stewpot' in jest. I do not know if this is his birth name, but it may help you to locate him. I hear he also stays close to water because of the explosion. You never know when another gnomish invention will go awry. Give him this letter to help motivate him to remember."
+
+The gnome Arantir Karondor is talking about is [[Kandin Firepot]] in Butcherblock. His location is -1500, +2800, near the ocean. 
+
+<div style='margin: 10px 10px 10px 30px; padding: 10px; border:1px solid red;'>
+'''Post-Revamp Method'''
+
+There is now a new way you can get the Staff of Gabstik and the note to Arantir. Instead of handing Kandin the note from Arantir, Hail him:
+
+Say 'what oil?' and Kandin will give you a Golem Sprocket, to give to the broken golem in fear. The golem he speaks of is called a broken golem in the Plane of Fear. His location is-720, -109. Give him the Golem Sprocket from Kandin:
+
+Now in the place of the broken golem is an enraged golem. He double hits for 400 and has around 150k hit points. You will need many tanks and clerics. Casters are not necessary, but they can sometimes put a dent into his hp. He does not cast so you don't need to worry about resists. When he dies, loot the green oil from his corpse. Return this to Kandin.
+</div>
+
+<div style='margin: 10px 10px 10px 30px; padding: 10px; border:1px solid green;'>
+'''Pre-Revamp:'''
+
+Kill Cazic Thule in fear and obtain [[Cazic's Skin]]. Hand it to Kandin and he will give you 'Kandin's Bag'. When identified, the bag comes up with: Item Lore: Warning - Explosive!". Although it is a bag, it cannot be opened. Don't worry about this, continue with the quest.
+
+The [[Mistletoe Powder]] is found within Old Sebilis upon [[Tolapumj]]. Once you have the powder, return to Kandin and hand only the powder to him. Upon handing Kandin the mistletoe powder, he will return to you the [[Staff of Gabstik]]. Once he hands you the staff he asks for his bag back. Hand him 'Kandin's Bag' to receieve the note.
+
+</div>
+
+'''You will now have the [[Note to Arantir]] and the [[Staff of Gabstik]].'''
+
+=== The Ending ===
+
+Take the note from Kandin to Dargon and give it to her for Arantir to spawn. Then Hail him:
+
+You say, ''Hail Arantir Karondor''
+
+: Arantir Karondor says ''Ah yes, you again. Do you have the items? Give me the three you possess and I'll combine them with my own."
+
+Now give Arantir all of the three staves, the Blue Crystal Staff, the Gnarled Staff, and the Staff of Gabstik. Make sure they are the right ones! Some of these staves icons look like other staves that aren't needed in the quest. If you give him the wrong ones then you will have to start over.
+
+: Arantir Karondor says 'Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.
+
+Now go back to Solomen and give him the bag. He will then give you the final epic weapon, The Staff of Four.
+
+Congratulations on your {{:Staff of the Four}}!
+
+== Long Walkthrough with Dialogue ==
+
+Head to the the Temple of Solusek Ro and talk to a human wizard named Solomen. He is located on the left side of the temple between the two undead knights (one room from Lord Searfire at +425, +80, +29).
+
+You say, 'Hail, Solomen'
+
+: Solomen says 'Ah, I see you have found my study. This is where I study and scribe the history of magic in Norrath.'
+
+You say, 'What history?'
+
+: Solomen says 'I have worked to chronicle everything from the beginnings of magic to what we consider the modern day of magic. Solusek Ro has been very generous to those who wield magic in Norrath. But throughout history there is one thing I have noticed - too much power corrupts the soul. I have seen and documented that the strongest wizards and those closest to Solusek Ro become corrupted by their power.'
+
+You say, 'What Wizards?'
+
+: Solomen says 'Unfortunately, I don't have time to speak of such things right now. But I could use your help since you are here. I have here an envelope that I need delivered to one Camin Rah. You can find Camin in the wizard tower in the city of Erudin. He is a sage like myself whose knowledge rivals my own. Do you [agree] to undertake my task?'
+
+You say, 'I agree.'
+
+: Solomen says 'Here you are, then. Good luck on your journey.'
+
+You receive a Note to Camin (identifies as "I've found what we've been searching for!") that you must hand to Camin, the next NPC involved in the epic. It reads:
+
+ Hello, old friend, I have made an updated list and locations of the items required for my research.
+ Dragon bones- Plane of Fear Jet Black egg- Unknown Mistletoe powder- Old Sebilis Rune of Lost
+ Thought- Unknown Contact me when you find them Solomen
+
+Now head to the City of Erudin and find [[Camin]]. He can be found inside the Vasty Deep Inn (/loc?). To find him, simply open the front door and go up the stairs to your right. Go down the hall and open the first door on your left. Camin will be behind the door. He is on Truespirit faction (similar to Beta Neutral - no faction for killing him and starts non-KOS to all).
+
+Hand him the note that Solomen gave to you to get this response:
+
+: Camin says 'So you have met Solomen, eh? He is a man with a wealth of knowledge. It is good to hear he is well.'
+
+You say, 'Hail, Camin'
+
+: Camin says 'Go away! I have no time for you!'
+
+You say, 'What are you searching for?'
+
+: Camin says 'Ah! A smart one, I see! If you really wish to know about such a thing, you will have to help me finance my studies. The knowledge I have acquired and researched did not come cheaply.'
+
+You will need to give Camin 1000pp at this point.
+
+: Camin says 'Good, good, you show a willingness to learn of this with your offer. What I can tell you is that Solusek Ro had four followers who had shown exceptional aptitude in the arts of wizardry. Solusek Ro himself tutored them. He considered them to be like his own children. I know of one who still exists. He goes by the name of Arantir Karondor. He used to specialize in the storing of magic into physical objects. Arantir has been hiding for many, many years and will most assuredly be going by another name, so keep your eyes open. Anyway, be off, I need to continue my research. Return to me if you ever find Arantir Karondor.'
+
+Now you must head to Halas. Once there, head toward the shaman guild and find a vendor named Dargon (location 350, 357) that sells a potion called Ro's Breath (identifies as "Powerful magic radiates from this object."). Buy this potion for around 1000pp and make your way back to Erudin.
+
+Hand [[Ro's Breath]] over to Camin and get this response:
+
+: Camin says 'Very interesting... I've seen this work before. Yes, yes! It's the work of Arantir Karondor! Give this back to the person you got it from. Maybe he will have a clue to Arantir's location.'
+
+Camin gives you back the potion (now identifies as "I know who you are."). The only difference is that it no longer has a charge of Shield of Lava. You must now take this potion back to Dargon in Halas. Once it's handed in, she will turn into Arantir Karondor and reply with:
+
+: Dargon says 'So, I've been discovered! You must know Camin - he is one of the only people who could have recognized my work. I have worked very hard to mask my presence here.'
+
+You say, 'Hail, Arantir Karondor'
+
+: Arantir Karondor says 'Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this letter and then return to me.'
+
+You receive [[Arantir's Ring]] (identifies as "My love has no bounds").
+
+You now need to seek [[Challice]] out and give her the ring. Challice is found inside the Felwithe Paladin guild at location -13, -263.
+
+: Challice says 'Oh yes? Arantir? What a fool he was! The man gave me everything, but for all his intelligence, he could never understand why I was truly with him. It was for his power; he could do anything. But when he mysteriously lost it, he became just another toy. I never loved him. Return this ring to him. He will understand that I have no desire to see him again.'
+
+You get a different version of the ring back (identifies as "I never could love a man like you."). You can hand it to either version of Arantir. Handing it into Dargon will spawn the real version.
+
+: Arantir Karondor says 'Ah, but it pains my heart to see this. How I could love a women like that is beyond me. And yet, I still do love her. It was on the day I was to ask her to marry me that I lost my powers. When I was about to cast my greatest spell to prove my love to her, my magic failed. She ran out on me that day. But enough of me, do you wish to hear my story?'
+
+You say, 'I wish to hear your story.'
+
+: Arantir Karondor says 'I once was one of four true followers of Solusek Ro. So great were the four of us that Solusek Ro himself made us each a special item. We did not know what the others' items were, but we realized that was for our own safety. Each one of us, after receiving the item, began to plot against Solusek Ro. Each of us believed we had enough power to dominate Norrath. Solusek Ro saw this and at the time we needed our powers most, he stripped us of them. Now I know two of the other wizards by name. One was called Sylen Tyrn, the other's name was Demunir Scry. The last wizard was a gnome, but I can't think of his name.'
+
+You say, 'What about Sylen Tyrn?'
+
+: Arantir Karondor says 'Sylen was a high elf wizard, and like many high elves, he believed himself to be better than others. Because of his birth, he thought he was more noble and more intelligent than anyone else. I heard how met his demise - while flying over a vast area of water, his powers were stripped from him in midflight. He fell and was captured by a rival wizard who specialized in magics of the water. Search for that wizard and you could find a trace of Sylen.'
+
+The "trace of Sylen" he speaks of can be found on Phinigel Autropos in Kedge Keep (/loc?). A Blue Crystal Staff is what you need. It's one of Phinigel's rare drops so you're in for a "fun" camp. He can be taken out easily by two or three organized groups. He has a number of magic immune guardians surrounding him so you may want a monk to do the pulling.
+
+You say, 'What about Demunir Scry?'
+
+: Arantir Karondor says 'Demunir was a human in a rush for power. He was extremely intelligent and resourceful but, unfortunately, was more interested in destructive magic. Hearing of an ancient land, he immediately traveled to it, believing there to be powerful relics left undiscovered there. While exploring, he came upon a dwelling that housed a powerful warrior. Believing himself to be more powerful, he attempted to take this dwelling for himself. While in battle with this warrior, Solusek Ro stole his powers and left him helpless. It is said that Demunir's item is the warrior's most prized trophy.'
+
+You're in for another not-so-enjoyable camp. The item you need now is the Gnarled Staff which can be found on Venril Sathir in Karnor's Castle (/loc?). It's his uncommon drop.
+
+Although only 55th level, Venril will take three or four groups to put down. He procs a 1500 point lifetap so your raid will need to manage aggro very carefully.
+
+You say, 'Who is the gnome?'
+
+: Arantir Karondor says 'Ah, the gnome I know very little about. I know he was small and crafty, and that he had a brother. His brother's craft was that of making fireworks, and he was the unfortunate victim of one of his own experiments. His firework exploded, leaving his mind diminished in capacity, even for a gnome. I remember others calling him 'Old Stewpot' in jest. I do not know if this is his birth name, but it may help you to locate him. I hear he also stays close to water because of the explosion. You never know when another gnomish invention will go awry. Give him this letter to help motivate him to remember.'
+
+You receive a Note from Arantir (identifies as "What is lost must be found"). It reads:
+
+ Greetings Sir Gnome, I hope this letter reaches you in good health.
+
+The gnome Arantir is referring to is Kandin Firepot by the docks in Butcherblock, at -1491, +2843.
+
+<div style='margin: 10px 10px 10px 30px; padding: 10px; border: 1px solid red;'>
+'''Post-Revamp Method'''
+
+When you give Kandin the Note from Arantir he will say:
+
+: Kandin Firepot says 'Brother! I have one of those. He's great, but he's dead. His name was Gabstik and he was a really powerful wizard. I still have one of his greatest possessions! You look like you could use it. I've added another item to my shopping list. I require a dry brittle skin that I can mold or a rare oil found in the planes that I must soak the fuse in. Get me one of these things and I'll trade it for my brother's stick.'
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got better.
+</div>
+
+You say, 'Hail, Kandin Firepot'
+
+: Kandin Firepot says 'Hello, there! Don't have time to talk. I'm workin', workin', workin'! Careful! Don't slip in the oil!
+
+You say, 'What oil?'
+
+: Kandin Firepot says 'Ah the oil! I recently sent a specially crafted golem to explore through a huge portal to another plane. Its instructions were to collect special oil that I suspect existed in the plane. What I think is the golem broke down. This looks like a good task for one like you. Go see what's wrong with the golem. Here are spare gears of mine in case it's broken. Be careful though, if you put it in wrong it could explode, or worse!'
+
+You receive a Golem Sprocket. Head to the Plane of Fear with a raid intact. Hand the sprocket to a broken golem.
+
+* An enraged golem says 'Error! Malfunction! Destroy!
+* An enraged golem says 'Wizards like you always bring out the worst in me.'
+
+You now have a 65th level Enraged Golem to deal with. This will be a LONG fight, as he has well over 150k hps. Once he is dead, loot Green Oil and take it back to Kandin in Butcherblock.
+
+: Kandin Firepot says 'Oh wow! You found the oil! Where is the golem? You didn't hurt him did you? I am very fond of him. Anyways, here is your reward a note and staff to give to that guy you were asking me about.'
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got better.
+</div>
+
+</div>
+
+<div style='margin: 10px 10px 10px 30px; padding: 10px; border:1px solid green;'>
+'''Pre-Revamp:'''
+
+If you have happen to have [[Cazic's Skin]] from Cazic Thule in Fear (some may have the skin from before the patch), you can hand it to Kandin and he will reply with the following -
+
+: Kandin Firepot says 'Great! This is? What is this for again? Oh yeah, the casing for my firework. Here, you can have this then, oh no, wait. You can't yet. I forgot I needed another part to my firework, and you are exactly the person to get it for me! I need some mistletoe powder. Now, go find some for me! Go, go, go, go! Shoo! Oh, wait! Hold on to my bag for me, please. You can give it back after you've given me what I want.
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got better.
+</div>
+
+At this point, Kandin Firepot will give you 'Kandin's Bag'. When identified, the bag comes up with: Item Lore: Warning - Explosive!". Although it is a bag, it cannot be opened. Don't worry about this, continue with the quest.
+
+The [[Mistletoe Powder]] is found within Old Sebilis upon [[Tolapumj]]. Once you have the powder, return to Kandin and hand only the powder to him. Upon handing Kandin the mistletoe powder, he will return to you the Staff of Gabstik. Once he hands you the staff he asks for his bag back. Hand him 'Kandin's Bag' -
+
+: Kandin Firepot says 'Great! Give this to Arantir so he knows you've helped me! Hey! Have you seen my lantern anywhere?
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got better.
+</div>
+
+</div>
+
+'''You receive a [[Staff of Gabstik]] and a [[Note to Arantir]]''' (identifies as "Give him a fish!"), which reads:
+
+: The fish thank you for the people you sent me! Oh also if you ever come across my lantern please let me know.
+
+'''Now take the note from Kandin and give it to Dargon in Halas. Arantir will once again appear in her place.'''
+
+You say, 'Hail, Arantir Karondor'
+
+: Arantir Karondor says 'Ah yes, you again. Do you have the items? Give me the three you possess and I'll combine them with my own.
+
+'''At this point, hand Arantir the Blue Crystal Staff, the Gnarled Staff, and the Staff of Gabstik.'''
+
+: Arantir Karondor says 'Here, this pack contains all of our items. You will never be able to open it again, so you must deliver the pack, intact, to Solomen. He will then reward you. Now that I have helped you, leave me in peace.'
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got better.
+</div>
+
+'''You receive a Magically Sealed Bag (identifies as "Godlike magic radiates from this bag"). Now you must go back to Solomen and hand him this bag.'''
+
+: Solomen says 'You actually did it! I never would have thought that anyone could have truly followed this path. This is a tribute to your intelligence and patience. Here, take this staff and know that you have made Solusek Ro and all the wizards of the world proud this day.'
+
+<div class="facblock">
+Your faction standing with [[Truespirit]] got worse.
+</div>
+
+The final faction hit is in fact negative. You receive {{:Staff of the Four}}.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

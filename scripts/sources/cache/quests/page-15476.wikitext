@@ -1,0 +1,79 @@
+{{Kunark Era}}
+[[File:npc_assistant_buford.png|frame|Assistant Buford]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Assistant Buford]]
+|-
+! ''' Minimum Level: '''
+| 1 (35+ recommended)
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[City of Mist]], [[Crypt of Dalnir]], [[Emerald Jungle]], [[Kaesora]], [[Lake of Ill Omen]], [[The Overthere]]
+|-
+! ''' Related NPCs: '''
+| [[a bloodgill goblin]], [[a kly imprecator]], [[a scorpikis scrounger]], [[Failed crypt raider]], [[Captain of the Guard]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Nostrolo Tambourine}}
+</li></ul>
+
+== Walkthrough ==
+
+Assistant Buford can be found inside the Firiona Vie bank.
+
+You say, 'Hail, Assistant Buford'
+
+: Assistant Buford says 'Well hello there. I am new to the bank. I am helping the Fargins out since it is so busy lately. Mr. Fargin doesn't even have time for his [hobby] these days.'
+
+You say, 'What hobby?'
+
+: Assistant Buford says 'Mr. Fargin used to collect rare coins and gems. He came to Firiona Vie to do just that, but now he never has the time to [collect rare coins] since he is always working here. That is why I came to help him out.'
+
+You say, 'I will collect rare coins'
+
+: Assistant Buford says 'If you want to help, you can begin by replacing Mr. Fargin's prized Star of Odus which was taken from his vault when he stepped out to dine one night. Do so, and I may trust you to collect coins. I will also reward you with an item a composer left here. With Mr. Fargin's approval of course.'
+
+'''You can purchase a [[Star of Odus]] for about 115pp''' in the jewel shop under the Erudin palace. 
+
+Give Star of Odus to Buford
+
+:Buford says "Thank you!! I never could have gone to Odus to replace this. Perhaps now you can collect some rare coins."
+
+You receive a [[Tin Box]] {{Item Lore|Coin Collection Box}} with 6 slots. 
+{{CheckboxList}}
+'''He asks for the following coins (all called '''[[Ancient Coin]]''', although they can be [[identified]] to determine which is which):'''
+
+* "Torsis Ton" (foraged in the [[Emerald Jungle]])
+* "Royal Crown of Dalnir" (dropped by [[A Kly Imprecator]] in [[Dalnir]])
+* "Terraz Ton" (dropped by [[Failed crypt raider]] in [[Kaesora]])
+* "Veksar Gran" (dropped by [[A Bloodgill Goblin]]s in [[Lake of Ill Omen]])
+* "Danak Gran" (dropped by [[a scorpikis scrounger]] in [[The Overthere]])
+* "Ik Gran" (dropped by [[Captain of the Guard]] in the [[City of Mist]])
+
+{{End}}
+
+Put these gems in the box, combine it, and return the result to Buford.
+:Assistant Buford takes the box, reaches into a crate and grabs a tambourine to give you. 'Great!! Now, my collection is almost complete. Here is a gift. A composer accidently left behind a crate of these, perhaps it can be of some use to you.
+
+<div class=facblock>
+*Your faction standing with FirionaVie got better.
+*Your faction standing with EmeraldWarriors got better.
+*Your faction standing with StormGuard got better.
+*Your faction standing with LegionofCabilis got worse.
+*Your faction standing with PiratesofGunthak got worse.
+</div>
+{{exp}}
+
+He will reward you with a {{:Nostrolo Tambourine}}.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Bard Quests]]

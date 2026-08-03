@@ -1,0 +1,57 @@
+{{Velious Era}}
+[[File:npc_tunarean_earthmelder.png|frame|Tunarean Earthmelder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[Tunarean Earthmelder]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Frostgiant Overseer]], [[Kallis Stormcaller]], [[protector of Zek]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Helm of the Tracker}}
+</li></ul>
+
+== Walkthrough ==
+
+Real True Notes: You can complete the quest and acquire this helm at level 46, due to the minimum level requirement to enter the Plane of Growth. A faction level of at least Indifferent is sufficient for the turn in. While the Growth quest items have specific race/class/diety requirements to equip them, there are no race/class/diety requirements for anyone doing the turn ins, MQ or otherwise; multiple MQs confirmed on a halfling rogue worshiping Bristlebane.
+
+You say, 'Hail, Tunarean Earthmelder'
+
+: Tunarean Earthmelder says 'Hail my friend, unfortunately I am sorry I cannot talk right now. The giants must be dealt with.'
+
+You say, 'What giants?' 
+
+: Tunarean Earthmelder says 'The giants are continuing to put forth efforts to encroach the lands blessed by Tunare. We need an outrider or preserver to aid us in our continued fight.'
+
+You say, 'I am an outrider.' 
+
+: Tunarean Earthmelder says, 'We have need of you to disrupt the construction efforts of the giants in the Wakening Land. Find the frost giant overseer, kill him and any others that are responsible for the building and bring back their heads.'
+
+'''He asks you to kill the [[Frostgiant Overseer]], who spawns in front of Kael in the Wakening Lands. When you kill him, he says something about a giant named Kallis.'''
+
+'''[[Kallis Stormcaller|Kallis]] spawns in the arena nearby the Vindicator. There are also two Protectors of Zek with him (you need the protectors whose names are capitalized).'''
+
+'''Kill all three and collect their heads. The heads are named:'''{{CheckboxList}}
+* [[Frostgiant Overseers Head]]
+* [[Kallis' Head]] (dropped by [[Kallis Stormcaller]])
+* [[Smashed Protector of Zek's Head]] (dropped by [[a Protector of Zek]])
+* [[Bloody Protector of Zek's Head]] (dropped by [[a Protector of Zek]])
+<br>'''Bring all four heads back for your [[Helm of the Tracker]].'''
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Ranger Quests]]

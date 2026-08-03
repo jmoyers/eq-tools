@@ -1,0 +1,136 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_ocoenydd_fe`dhar.png|frame|Ocoenydd Fe`Dhar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Ocoenydd Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Prestidigitator's Headband
+|Prestidigitator's Robe
+|Prestidigitator's Sleeves
+|Prestidigitator's Wristband
+|Prestidigitator's Gloves
+|Prestidigitator's Trousers
+|Prestidigitator's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Ocoenydd Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Prestidigitator's Headband]]
+:*[[Tattered Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Prestidigitator's Robe]]
+:*[[Tattered Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Prestidigitator's Sleeves]]
+:*[[Tattered Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Prestidigitator's Wristband]]
+:*[[Tattered Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Prestidigitator's Gloves]]
+:*[[Tattered Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Prestidigitator's Trousers]]
+:*[[Tattered Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Prestidigitator's Boots]]
+:*[[Tattered Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+Ocoenydd Fe`Dhar is located in a room just beyond the giant staircase section, as if you were running to Yelinak.  This is past the maze. The room has an ice pyramid in the middle and 14 (7 on each side) named Wyverns split along opposite walls. Ocoenydd Fe'Dhar's loc is 1396, 1371.
+
+You say, 'Hail, Ocoenydd Fe`Dhar'
+
+: Ocoenydd Fe`Dhar says 'Greetings to you. I seek those who call themselves magicians. Are you a magician, little one?'
+
+You say, 'I am a magician'
+
+: Ocoenydd Fe`Dhar says 'I thought so. I have several tasks for you accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Tattered silk armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Cap ==
+
+You say, 'What cap?'
+
+: Ocoenydd Fe`Dhar says 'For you to receive my gift, I shall require three crushed flame opals and a tattered silk turban.'
+
+Return with a [[Tattered Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+You say, 'What robe?'
+
+: Ocoenydd Fe`Dhar says 'This exquisite robe shall be yours in exchange for a tattered silk robe and three pristine emeralds.'
+
+Return with a [[Tattered Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Ocoenydd Fe`Dhar says 'For these durable sleeves, you must fetch me a pair of tattered silk sleeves and three flawed topaz.'
+
+Return with [[Tattered Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+You say, 'What wristbands?'
+
+: Ocoenydd Fe`Dhar says 'The crafting of this wristband requires that you bring me a tattered silk wristband and three crushed onyx sapphires.'
+
+Return with a [[Tattered Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Ocoenydd Fe`Dhar says 'For this fine pair of gloves you must seek out and return to me a pair of tattered silk gloves and three crushed topaz.'
+
+Return with [[Tattered Silk Gloves]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Ocoenydd Fe`Dhar says 'This pair of leggings will be yours provided you supply me with a pair of tattered silk pantaloons and three nephrite.'
+
+Return with [[Tattered Silk Pantaloons]] and three [[Nephrite]].
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Ocoenydd Fe`Dhar says 'These supple boots shall be yours upon receipt of a pair of tattered silk boots and three crushed jaundice gems.'
+
+Return with [[Tattered Silk Boots]] and three [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Magician Quests]]
+[[Category:Skyshrine Armor Quests]]

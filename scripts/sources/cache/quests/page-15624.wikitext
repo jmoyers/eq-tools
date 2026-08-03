@@ -1,0 +1,65 @@
+{{Chardok Era}}[[File:npc_westernwastes_-_melalafen.png|frame|Melalafen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Melalafen]]
+|-
+! ''' Minimum Level: '''
+| 58
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerafyrm's Lair]]
+|-
+! ''' Related NPCs: '''
+| [[The Progenitor]], [[The Final Arbiter]], [[Master of the Guard]].
+|}
+
+== Reward ==
+
+<ul><li>  {{:Essence Blade}}
+</li><li> {{:Essence Lens}}
+</li><li> {{:Essence Mace}}
+</li><li> {{:Essence Pearl}}
+</li><li> {{:Essence Ring}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Note: This is a quest that becomes available only AFTER [[Kerafyrm]] has been awoken.'''
+
+Approach a dragon named [[Melalafen]] in the [[Western Wastes]] (indifferent by default, on the faction [[Disciples of Kerafyrm]]).
+ 
+You say, 'What Prismatic Dragon Scale?"
+
+: Melalafen says, 'You have a scale? A scale from Kerafyrm himself? His long slumber, or the battles after he was freed, must have weakened him a great deal! One such as our master does not shed. If this is true, and you possess what you say, there is hope for us. With his scale, we can create a focus which gives us a chance to locate him in the far ether. But wait! If you have his scale, you must have been in his tomb! You are the ones who were responsible for freeing him, yes? If this is so, we owe you a debt, for carrying out Jaled'Dar's Plan. Give us the scale and we shall reward you well. We also require the key Jaled'Dar crafted for you to enter the tomb. His tomb is a holy place, and the likes of you should not be allowed to further defile it. We shall not compromise, the key and the scale.
+ 
+'''Find yourself a [[Prismatic Dragon Scale]] in [[Sleeper's Tomb]]. If The Sleeper has been awakened, any mob in ST will drop it rarely. Handing over just the scale results in:'''
+ 
+: Melalafen says, 'We require BOTH the Key and the scale, mortal. Do not attempt to cheat us.
+
+'''So hand in your Key, too: (NOTE he requires the actual Sleepers Key, NOT the talisman from the dragons)'''
+
+: Melalafen says, 'Thank you for returning this to us. Here is your reward, imbued with the essence of a fool who held one of the keys to our Masters prison. If you are unhappy with your reward, return it to us and perhaps we can give you something more appropriate. 
+
+<div class="facblock">
+* Your faction standing with [[Disciples of Kerafyrm]] got better.
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Ring of Scale]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{YouGainExperience}}
+ 
+The first reward is the [[Essence Lens]]. 
+
+The Lens can be traded for something else, and repeat that process until you find something to your liking.
+
+From an old post on Allakhazam, it appears the order is: Lens -> Mace -> Sword -> Earring -> Ring -> Lens.
+
+[[Category:Quests]]
+[[Category:Western Wastes]]
+[[Category:All Classes Quests]]

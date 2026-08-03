@@ -1,0 +1,81 @@
+{{Kunark Era}}
+[[File:npc_an_iksar_prisoner.png|frame|an Iksar prisoner]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[an Iksar prisoner]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Crypt of Dalnir]]
+|-
+! ''' Related NPCs: '''
+| [[a coerced dwarf]]
+|}
+
+== Reward ==
+
+<ul><li> Negative Faction
+</li><li> {{:Greenmist Icon}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest article describes the "bad ending" of what begins as the [[Trooper Scale Armor Quests|Trooper Scale Bracers]] quest.''
+
+: Drixiv Arcut says 'The bracers of our ancestors embody righteousness. When we strike, and our forearms are soaked in the blood of our enemies, our purpose must be pure. Else that blood will burn our souls and anger that which we live for. Go and find the Archduke in Cabilis and give him my note. He will teach you of righteousness. For if our chosen did not know righteousness, our people would not be. Go!
+
+''You give the note to [[Arch Duke Xog]]
+
+: Arch Duke Xog takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly, 'Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].
+
+You say, 'what strange iksar'
+
+: Arch Duke Xog says 'Yes, he was dressed in rags and hadn't eaten in days. He rambled on about seemingly nothing, obviously he had lost his mind at some point. The guards brought him in because he told them he had valuable information concerning a captured Crusader. According to the mad man, our missing knight was captured by a group of cultists that follow a false god. The cultists intend on converting him apparently. Your [test] will concern Geanik.
+
+You say, 'what test'
+
+: Arch Duke Xog says 'Learning Righteousness is learning to listen to one's own heart. At all times our Lord of Fear speaks to us. Our heart is through which he speaks. If we are pure in action and undistracted in mind we can hear the very words of our Father. Your test will be to find our lost Crusader. When you find him you must listen, and act based on what you hear. If your actions are Righteous, I will give you my reference. Bring me proof of your action and two sapphires.
+
+
+
+''Upon locating [[an Iksar prisoner]] on the second floor of the [[Crypt of Dalnir]], you have 2 choices, you must listen to your heart:''
+*''Kill him for being a coward and return his [[Traitor's Heart]].''
+*''Assist him in escaping his shackles and return with proof of your actions.''
+
+
+
+You say, 'Hail, [[an Iksar prisoner]]'
+
+: an Iksar prisoner squints at you and gasps when he recognizes notoriety within Iksar society. He scrambles to his feet and says, 'Please, brother! Get me out of these chains so that I may escape back to Cabilis! They intend to coerce me like the others. A more tragic fate no Iksar should endure. I implore you to [help] me!'
+
+You say, 'how can I help you?'
+
+: an Iksar prisoner says 'Well some of the brainwashed short ones seem to know much of mechanical devices and such. Perhaps they have a tool that can get me out of these chains. If they have anything that looks useful bring it to me. I'm sure your help will be rewarded once I reach Cabilis.'
+
+''Kill Coerced Dwarves until you get a rare drop of [[Serrated Wire]], take that and give it to the prisoner.'' Must be indifferent faction or greater.
+
+: an Iksar prisoner takes the wire and quickly saws through the rusted shackles. He hands you an icon and says as he runs off, 'Show that to the Arch Duke in Cabilis! He will reward you. Now I'm off to escape!'
+
+{{exp}}
+
+'''You receive a [[Greenmist Icon]] in your inventory and can head to the top floor of the Shaman and Shadowknight guild in East Cabilis.'''
+
+: Arch Duke Xog takes the icon and stares at it. His face twists into a look of disdain and he suddenly throws the icon off the balcony. it lands in the water some distance away. Without even a glance at you he says in disgust, 'You're an idiot, Jhereg. You fit your profession well. Leave me sight.'
+
+<div class='facblock'>
+* Your faction standing with [[Crusaders Of Greenmist]] got worse.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+</div>
+
+[http://oldunsolvedquestsineverquest.yuku.com/topic/409 Old Thread on this quest being "Unsolved"]
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

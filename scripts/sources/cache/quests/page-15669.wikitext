@@ -1,0 +1,40 @@
+{{Kunark Era}}
+{{Unsolved}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Crypt of Dalnir]]
+|-
+! ''' Quest Giver: '''
+| None
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All except Bard/Rogue
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[an undead blacksmith]]
+|}
+
+== Reward ==
+<ul><li>  {{:Long Iron Rod}}
+</li></ul>
+
+== Walkthrough ==
+Kill [[A coerced revenant]] and loot the [[Tattered Memo]] and [[Rod Segment 'I']].
+
+The Memo states:
+:Day 55 I have happened upon the Crypt of Dalnir. His Grand Forge is near, I can feel it.
+:I have also discovered a segment of a staff. It shows signs of Iksar craftsmanship, but of the age of Atrebe. I know the other part must be here. It would fetch heavy coin. 
+
+If you combine [[Rod Segment 'I']] and [[Rod Segment 'II']] ([[A Kly Imprecator]]) with the [[Forge Hammer of Dalnir]] (dropped by [[an undead blacksmith]] who can be found in the room w/ 3 decapitated Iksar statues on the same floor as the chapel) in the [[Always Works]] forge, you will get the {{:Long Iron Rod}}.
+
+The Long Iron Rods use is unknown.
+Need missing dialogues, current faction hits if any, /loc of quest mobs, list of additional quest rewards.
+
+[[Category:Quests]]
+[[Category:Crypt of Dalnir]]

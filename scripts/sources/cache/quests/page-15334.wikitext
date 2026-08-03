@@ -1,0 +1,74 @@
+{{Classic Era}}
+[[File:npc_mrysila.png|frame|Mrysila]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Mrysila]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+
+== Appearance in the Timeline ==
+
+Part of the July 26th, 1999 - Plane of Fear patch.
+
+'' Be careful turning in lightstones to this NPC or vendoring items at lower levels there are aggressive NPC everything from lower level wolves, to higher level griffawns, that would pose a challenge to any new adventurer that path through the area that will attack. '' 
+
+== Rewards ==
+
+<ul><li>  {{:Concordance of Research}}
+</li><li> {{:Runes and Research Volume I}}
+</li><li> {{:Runes and Research Volume II}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Faction Note: Dubious will eat your lightstone(s). Suspect apprehensive and above is required. This rules out Iksars from being able to turn in unless using faction tricks like sneak or wolf form.'''
+
+''This quest begins with [[Mrysila]] at location -671, -170 in North Karana.''
+
+You say, 'Hail, Mrysila'
+
+: Mrysila says 'I am Mrysila, custodian of the [Concordance of Research].'
+
+You say, 'What Concordance of Research?'
+
+: Mrysila says 'The 'Concordance of Research' is an aid to those who follow the path of academia.  It, and its sister books, 'Runes and Research,' volumes I and II, help those who are [interested] in researching spells.'
+
+You say, 'I am interested'
+
+: Mrysila says 'I have several copies of each book. If you want a copy of 'Runes and Research', volume I or II, bring me a lightstone and I will give you whichever book I have more of at the moment. Bring me a greater lightstone, and I will give you a copy of the 'Concordance of Research.'
+
+'''Lightstones are a common drop from willowisps.'''
+
+'''Upon handing in a [[Lightstone]]:'''
+
+: Mrysila says 'A lightstone? Thank you very much. Here is a copy of 'Runes and Research.''
+
+Upon handing in a [[Greater Lightstone]]:
+
+: Mrysila says 'A greater lightstone? Thank you very much. Here is a '[[Concordance of Research]]' for you.'
+
+'''WARNING!''' Agnostic dwarf rogue con's dubious and Mrysila will not give a reward for hand-ins.
+
+== Related Quests ==
+
+* [[Evil Research]]
+
+[[Category:Quests]]
+[[Category:Northern Karana]]
+[[Category: Repeatable Turn-in Quests]]

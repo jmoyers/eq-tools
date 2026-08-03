@@ -1,0 +1,130 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_lorekeeper_brita.png|frame|Lorekeeper Brita]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Lorekeeper Brita]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Beguiler's Crown
+|Beguiler's Robe
+|Beguiler's Sleeves
+|Beguiler's Wristguard
+|Beguiler's Gloves
+|Beguiler's Trousers
+|Beguiler's Slippers
+}}
+
+== Checklist ==
+Turn-ins to [[Lorekeeper Brita]] in [[Thurgadin]].{{CheckboxList}}
+*[[Beguiler's Crown]]
+:*[[Torn Enchanted Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Beguiler's Robe]]
+:*[[Torn Enchanted Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Beguiler's Sleeves]]
+:*[[Torn Enchanted Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Beguiler's Wristguard]]
+:*[[Torn Enchanted Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Beguiler's Gloves]]
+:*[[Torn Enchanted Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Beguiler's Trousers]]
+:*[[Torn Enchanted Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Beguiler's Slippers]]
+:*[[Torn Enchanted Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+''Hail, Lorekeeper Brita''
+
+Lorekeeper Brita says, 'Greetings to you. I see those who call themselves enchanters. Are you an enchanter?'
+
+''I am an enchanter''
+
+Lorekeeper Brita says' 'I thought so. I have several tasks for you accomplish. Once you have completed them I will have a cap, a robe, sleeves, wristbands, gloves, leggings and boots to reward you with.'
+
+'''Gems are dropped in various Velious zones while Torn Enchanted Silk can be found on Veterans, Adjudants, and Legionnaires in Kael Drakkel. These high level giants can be found near King Tormax and near the Arena area.'''
+
+'''After turn-in:'''
+
+Lorekeeper Brita smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+''Dialogue needed.''
+
+Brita promises to make you a cap if you bring her a [[Torn Enchanted Silk Turban]] and 3 [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+''Dialogue needed.''
+
+Brita promises to make you a robe if you bring her a [[Torn Enchanted Silk Robe]] and 3 [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Brita promises to make you sleeves if you bring her [[Torn Enchanted Silk Sleeves]] and 3 [[Flawed Topaz]].
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Brita promises to make you a wristband if you bring her an [[Torn Enchanted Silk Wristband]] and 3 [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Brita promises to make you gloves if you bring her [[Torn Enchanted Silk Gloves]] and 3 [[Crushed Topaz]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Brita promises to make you leggings if you bring her [[Torn Enchanted Silk Pantaloons]] and 3 [[Nephrite]].
+
+== Boots ==
+
+''Dialogue needed.''
+
+Brita promises to make you boots if you bring her [[Torn Enchanted Silk Boots]] and 3 [[Crushed Jaundice Gem]].
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Enchanter Quests]]
+[[Category:Thurgadin Armor Quests]]

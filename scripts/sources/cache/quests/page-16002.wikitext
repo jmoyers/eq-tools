@@ -1,0 +1,50 @@
+{{Disambig3|[[Healing]]}}
+{{Classic Era}}
+[[file:npc_vesagar_nekio.png|frame|]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Vesagar Nekio]]
+|-
+! ''' Minimum Level: '''
+| 
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  [[Healing]] Spell
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Vesagar Nekio'
+
+Vesagar Nekio says, 'Welcome into our church of rage. I am Vesagar Nekio. servant of Innoruuk. If you should need me to [cure poison]. [cure disease]. or if you [require healing]. just let me know.'
+
+You say, 'I require healing'
+
+(If below Indifferent)
+
+Vesagar Nekio says, 'Blasphemer!! You are no ally of the Dismal Rage. Run while you still have legs!!'
+
+(If Indifferent or Above)
+
+Vesagar Nekio says, 'If you wish me to lay my hands upon your wounds, you must first lay 10 gold coins upon my palm.'
+
+Vesagar Nekio says, 'Your gold has proven your faith in our ways as well as having made my pockets a bit heavier. Let the power of the Prince of Hate bind your wounds.'
+
+Vesagar Nekio begins to cast a spell. (Light Healing)
+
+[[Category:Quests]]
+[[Category:East Freeport]]

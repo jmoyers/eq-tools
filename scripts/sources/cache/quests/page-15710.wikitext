@@ -1,0 +1,100 @@
+__NOTOC__
+[[File: npc_genni.png|frame|Genni]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Ostorm]], [[Genni]], [[Gardern]], [[Vilissia]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[Ostorm]], [[Genni]], [[Gardern]], [[Vilissia]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Lambent Fire Opal}}
+</li><li> {{:Lambent Star Ruby}}
+</li><li> {{:Lambent Sapphire}}
+</li><li> {{:Lambent Ruby}}
+</li><li> {{:Fire Opal}}
+</li></ul>
+
+== Walkthrough ==
+
+<i>
+In order to get Lambent armor, you must first obtain some Lambent Stones. Lambent Stones are dropped by Antonican giants (hill, ice, sand).
+
+For the [[Lambent Fire Opal]], give two [[Fire Opal|fire opals]] and one [[Lambent Stone]] to [[Ostorm]].
+
+For the [[Lambent Star Ruby]], give two [[Star Ruby|Star Rubies]] and one [[Lambent Stone]] to [[Genni]].
+
+For the [[Lambent Sapphire]], give two [[Sapphire|sapphires]] and one [[Lambent Stone]] to [[Gardern]].
+
+For the [[Lambent Ruby]], give two [[Ruby|rubies]] and one [[Lambent Stone]] to [[Vilissia]].
+
+For the [[Fire Opal]], give 550 gold to [[Genni]].
+</i>
+
+You say, 'Hail, Genni'
+
+Genni says 'I am Genni of the temple of Solusek Ro. I serve as custodian of the [lambent stones].'
+
+You say, 'What lambent stones?'
+
+: Genni says 'Lambent stones are receptacles of power. Alone they are not useful, but when combined with other gemstones they can be used for making magic items. I know of [star ruby] lambent, [ruby] lambent, [sapphire] lambent and [fire opal] lambent.'
+
+You say, 'What star ruby lambent?'
+
+: Genni says 'To make a star ruby lambent stone, you must give me two star rubies and a lambent stone. Lambent stones can be found on hill giants, sand giants and griffons.'
+
+You say, 'What ruby lambent?'
+
+: Genni says 'My Sister Vilissia holds the secrets to making ruby lambent stones. Though she will not speak of it, if you give her two rubies and a lambent stone, she will make you ruby lambent.'
+
+Upon turning in two Rubies and a Lambent Stone to Vilissia:
+
+: Vilissia says 'Solusek Ro does not believe in half measures.'
+: Vilissia says 'Solusek Ro does not believe in half measures.'
+: Vilissia says 'Here is your prize - a lambent ruby.'
+
+Your faction standing with Temple Of Sol Ro got better.
+Your faction standing with Shadowed Men got worse.
+You gain experience!!
+You gain experience!!
+
+You say, 'What sapphire lambent?'
+
+: Genni says 'My Brother Gardern holds the secret to making sapphire lambent stones. Though he will not speak of it, if you give him two sapphires and a lambent stone, he will make you sapphire lambent.'
+
+Upon turning in two Sapphires and a Lambent Stone to Gardern:
+
+: Gardern says 'Solusek Ro does not believe in half measures.'
+: Gardern says 'Solusek Ro does not believe in half measures.'
+: Gardern says 'Here is your prize - a lambent sapphire.'
+
+Your faction standing with Temple Of Sol Ro got better.
+Your faction standing with Shadowed Men got worse.
+You gain experience!!
+You gain experience!!
+
+You say, 'What fire opal lambent?'
+
+: Genni says 'My Brother Ostorm holds the secret to making fire opal lambent stones. Though he will not speak of it, if you give him two fire opals and a lambent stone, he will make you fire opal lambent. If you are interested, I can [sell] you a [fire opal].'
+
+You say, 'Sell me a fire opal'
+
+: Genni says 'I will sell you a fire opal for 550 golden coins. Remember, gold! The metal of fire for a gem of fire.'
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Bard Quests]]

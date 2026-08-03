@@ -1,0 +1,87 @@
+{{Classic Era}}
+[[File:npc_larkon_theardor.png|frame|Larkon Theardor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Larkon Theardor]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Shadowknight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Races '''
+| [[Barbarian]], [[Dwarf]], [[Halfling]], [[High Elf]], [[Wood Elf]], [[Dark Elf]], a[[Ogre]], [[Troll]], [[Erudite]], [Gnome]], [[Half-Elf]], [[Human]]
+|-
+!''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related Creatures: '''
+| [[Myre]], [[Cleaner VII]], [[Giant Rat]] placeholder, [[Infected Rat]] placeholder
+|-
+! ''' Items Required '''
+| [[Bozinite Pestle]] 
+|-
+! ''' Faction '''
+| [[Eldritch Collective]] positive, [[Gem Choppers]] positive, [[King Ak'Anon]] positive, [[Dark Reflection]] negative, [[The Dead]] negative
+|}
+
+== Reward ==
+Various spells, XP, Coin
+
+== General Thoughts Regarding Quest ==
+
+
+== Walkthrough ==
+
+=== Speak with Larkon Theardor ===
+
+[[Larkon Theardor]] is at location 1032.02, -974.80 in  [[Ak'Anon]].
+
+After completing the [[Minotaur Horns]] quest You are supposed to be able to pick up at this final statement from [[Larkon Theardor]]
+
+'''You say, 'I will go to Kaladim'''' 
+
+<blockquote>Larkon Theardor says 'We need someone to venture to the dwarven kingdom of Kaladim and speak with Myre of Miner's Guild 628. She has a delivery of special pestles made from bozinite. If you feel up to it, go to her and tell her you are from the Eldritch Collective and desire the bozinite pestles. Return them to me.' </blockquote>
+
+=== Go to North Kaladim to Speak with Myre ===
+
+Go to find [[Myre]].  She is at location 565.09, 218.12 in [[North Kaladim]].
+
+'''You say, 'Hail, Myre'''' 
+
+<blockquote>Myre says 'I am not here to chitchat dear. If you need some gear, I can help. If you want to talk, go find a tavern.'</blockquote>
+
+'''You say,  'I am from the Eldritch Collective and desire the bozinite pestles.'''' 
+
+<blockquote>Myre says 'So you came to get the bozinite pestles, eh? Well, dearie, we have no bozinite pestles. We don't have enough bozinite to spare. One of those wondrous clockwork creatures from Ak'Anon has gone and found a home amongst us dwarves. He is sucking up what little bozinite we have mined. You go and find that little bugger and bring me some of the bozinite he slurped up and I will make you one bozinite pestle. Good luck. He is one quick hunk of metal.'</blockquote>
+
+=== Go Kill Cleaner VII ===
+
+[[Cleaner VII]] spawns in [[North Kaladim]] on the mining bridge at 762.16, 294.86. [[Cleaner VII]] has several rat placeholders and has about a 10% chance of spawning. It is on a six minute spawn cycle so keep killing placeholders until Cleaner VII spawns, then kill, kill, kill. Set up at 762.58, 395.85 to be able to be positioned to easily pick them off. [[Cleaner VII]] does not always drop the pestle. He will also drop [[scrap metal]], and [[blackbox fragment]] for other quests.
+
+When you kill Cleaner VII
+
+<blockquote>Cleaner VII says 'Wizzzz... Click. Tick...' You have slain Cleaner VII!</blockquote>
+
+You have looted a [[Bozinite Pestle]]
+
+Even though [[Myre]] asked for the bozinite, she will not accept it. Hand the [[Bozinite Pestle]] to [[Larkon Theardor]] back in [[Ak'Anon]].
+
+=== Take the Bozinite Pestle to Larkon Theardor in Ak'Anon ===
+
+Return to [[Ak'Anon]]
+
+Upon turn in of the [[Bozinite Pestle]] to [[Larkon Theardor]]
+
+<blockquote>Larkon Theardor says 'The Eldritch Collective thanks you. You have done a great service. We need these special bozinite pestles for use with our eldritch mortars. Here is a scroll from our library. Study it and use it wisely.'</blockquote>
+
+Receive Coin; faction [[Eldritch Collective]] positive, [[Gem Choppers]] positive, [[King Ak'Anon]] positive, [[Dark Reflection]] negative, [[The Dead]] negative; XP; and a random mage spell
+
+
+[[Category:Quests]]
+[[Category:Ak'Anon Quests]]
+[[Category:Faydwer Quests]]

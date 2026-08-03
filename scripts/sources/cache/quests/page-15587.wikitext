@@ -1,0 +1,57 @@
+{{Classic Era}}[[File:npc_grevak.png|frame|Grevak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Grevak]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[lizard man broodling]], [[a lizardman mystic]]
+|}
+
+== Reward ==
+
+<ul><li> Small Coin, Faction
+</li></ul>
+
+Piece of Tattered armor
+
+== Walkthrough ==
+
+Grevak doesn't like lizards.  You can give Grevak in the Greenblood guild four [[Lizard Tail]]s for a minor item.
+
+You say, 'Hail, Grevak'
+
+: Grevak says 'Need new members we do not. Powerful enough we are with Grevak. Still, peons needed. Are you a [new peon] or are you an [outsider]? Speak up!! Fool!! No time Grevak has!!'
+
+You say, 'I am a new peon'
+
+: Grevak says 'So you think you can be greater than Grevak!! Touch you not and still I can smash you. I am a Greenblood shadowknight!! Peon go to swamps and slay lizardmen. You return with four lizardmen tails and a reward is yours. You return with two lizardman shaman dolls and a great reward is yours.'
+
+'''You hand the four lizardmen tails to Grevak:'''
+
+: Grevak says 'Hmph! You still not as great as Grevak!! But you do gud. Here.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got worse.
+* Your faction standing with [[Shadowknights of Night Keep]] got worse.
+</div>
+
+{{YouGainExperience}}.
+
+Receive: 6sp
+
+[[Category:Quests]]
+[[Category:Oggok]]

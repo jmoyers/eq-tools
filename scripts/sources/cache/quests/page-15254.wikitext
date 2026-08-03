@@ -1,0 +1,107 @@
+{{Classic Era}}[[File:npc_diggins.png|frame|Diggins]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Diggins]]
+|-
+! ''' Minimum Level: '''
+| 13
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Barma Dunfire]], [[Crytil Dunfire]], [[Keldyn Dunfire]], [[Rondo Dunfire]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Parrying Pick 628}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Note: This quest requires Friendly faction'''
+
+'''Find [[Diggins]] located at 658, 304, -53 in the mining tunnels just outside the Kaladim bank. He does, on occasion, wander up to the bank.'''
+
+''This quest is the 2nd step after completing the [[Runnyeye Warbeads (Kaladim Rogue)]] quest~''
+
+:Diggins says, 'We shall add these to the stash. Here is your reward, as promised. Be happy with it and continue your work. Maybe soon you shall be able to [earn a parrying pick].
+
+You say, 'I want to earn a parrying pick'
+
+:Diggins says, 'Seek Mater and tell him you are ready.'
+''(I think this quest dialogue is incorrect. He is responding for the 3rd quest for a Miner's Pick. Instead just ask him about doing a great favor)''
+
+You say, 'What great favor?'
+
+:Diggins, 'Well, if you think you are up to it...there is unfortunate business of the Dunfires of the Butcherblock Bandits. Giving honest rogues a bad name they be. Return their tongues and be rewarded!'
+
+'''Go loot 4 different bandit tongues that are No Drop. Three of them [[Barma Dunfire]], [[Crytil Dunfire]] and [[Keldyn Dunfire]] are from the bandit camp in [[Butcherblock Mountains]] located at 280, 1648 (10 on the Map) not far from the three Goblin Warrior camp.'''  
+
+You have slain Crytil Dunfire!
+<div class=facblock>
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+--You have looted [[Crytil's Tongue]].--
+
+You have slain Keldyn Dunfire!
+<div class=facblock>
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+--You have looted [[Keldyn's Tongue]].--
+
+You have slain Barma Dunfire!
+<div class=facblock>
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+--You have looted [[Barma's Tongue]].--
+
+'''Find the fourth Bandit [[Rondo Dunfire]] located in [[Crushbone]]. This elusive blagard hides amongst the slaves in the Slaver Caves of Crushbone.
+'''In the main room of the slaver cave there are two slaves next to eachother. His placeholder is the slave on the left - next to a wheelbarrow.''' ''(not the spot with Kelynn)'''''<br> ''This is rather bothersome as your options are either hoping to get an orc slaver to drop the correct [[Slave Keys]] its 1 out 7 and they are not a guaranteed drop. OR if you kill a slave you will take some bad faction hits. Better off having an evil friend or alt kill the slave PH for you.''
+*''Hand in the [[Brass Earring]] for the taskmaster quest to clear out dwarven slaves as well while improving faction instead of taking hits.'' 
+
+You have slain Rondo Dunfire!
+<div class=facblock>
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+--You have looted [[Rondo's Tongue]].--
+
+'''Return to [[Diggins]] and hand all 4 tongues in to him to receive your Parrying Pick 628 (a Magic weapon Dwarf Rogue only item).''' 
+
+<div class=facblock>
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Hall of the Ebon Mask]] got worse.
+</div>
+{{experience}}
+
+:Diggins says, 'Well done. Butcherblock is a better place with those blagards out of the way. Go see Mater, he has a job for you and tell him [you are ready] to earn your Mining Pick 628'
+
+You receive [[Parrying Pick 628]] !
+
+''This leads into a 3rd quest [[Miners Pick]] from [[Mater]]''
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Rogue Quests]]

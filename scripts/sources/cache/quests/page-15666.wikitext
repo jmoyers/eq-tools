@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_shazda_kaekwon.png|frame|Shazda Kaekwon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Shazda Kaekwon]]
+|-
+! ''' Minimum Level: '''
+| 28
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Rognarog the Infuriated]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Titan Blessed Bokken}}
+</li><li> {{:Titan Blessed Tachi}}
+</li><li> {{:Titan Blessed Tanto}}
+</li><li> Minor coin
+</li></ul>
+NOTE I did this quest 6-7 times and only received the Titan Blessed Bokken on each turn in.
+
+2/7/25 - I got the Tanto on my second turn-in.
+
+8/29/25 - Shazda sees invis. Turned head in on scowling and she ate it : (
+
+== Walkthrough ==
+
+You say, 'Hail, Shazda Kaekwon'
+
+: [[Shazda Kaekwon]] says, 'Shalom, _______! I welcome you to our humble village in these [trying times].'
+
+You say, 'What trying times?'
+
+: Shazda Kaekwon says, 'There are many threats currently facing this village. The kobolds of Clan Kolbok are becoming bolder in pushing the boundaries of the territory in which they usually hunt. A few of the kobolds now hunt recklessly, killing for pleasure instead of sustenance. [Rognarog] the Infuriated is the most murderous of such kobolds. Then there are the [heretics] that have been invading both Clan Kolbok and Kejek territories alike, practicing their dark sorceries as a show of devotion to their faceless god.'
+
+You say, 'Who is Rognarog?'
+
+: Shazda Kaekwon says, 'Rognarog the Infuriated was once a mighty warrior for Clan Kolbok until his devotion to the kobold god Rolfron Zek devoured his spirit and drove him mad with anguish. Now he wanders the mountains and valleys of Stonebrunt shedding the blood of whatever creatures cross his path. Should you face Rognarog and release him from this life I will reward you for his severed head.'
+
+'''Find and kill [[Rognarog]] in Stonebrunt Mountains. Nearly any kobold in the zone can be a placeholder, and he has a lot of health for his level. Loot his [[Kobold Head]] and return it to Shazda.'''
+
+: Shazda Kaekwon says, 'By slaying Rognarog you have spared the lives of those who would have crossed his path. I thank you for your assistance, the spirits have noticed your actions and are pleased.'
+
+<div class=facblock>
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]

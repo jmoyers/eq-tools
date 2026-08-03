@@ -1,0 +1,78 @@
+[[File:npc_innkeep_rislarn.png|frame|Innkeep Rislarn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Innkeep Rislarn]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Innkeep Rislarn at #2 on the map.
+
+The conversation with Innkeep Rislarn:
+
+You say, 'Hail, Innkeep Rislarn'
+
+Innkeep Rislarn says, 'I knew this would happen. Food is becoming so scarce that I'm starting to run out of stock. You wouldn't happen to [be a baker] yourself or maybe you [know] someone who bakes?'
+
+(note that responding to 'know' gives [[Muffin Quests|a different quest]])
+You say, 'be a baker'
+
+: Innkeep Rislarn says, 'Well good! Maybe you can help me restock. If you are a baker you could help me out by restocking my [muffin supply]. Or if you don't mind a little travel, you can pick up a [shipment of bread] for me.'
+
+You say, 'shipment of bread'
+
+: Innkeep Rislarn says, 'There is a guy that lives in the plains to the south. I guess the plague hasn't hit that area too bad. Anyway, he's one heck of a baker and makes some quality bread. Go look him up and tell him you want a bag of bread loaves. He's one of those fellas that goes by the name of Meadowgreen.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Innkeep Danin.
+
+: Innkeep Rislarn says, 'Thanks for running that errand for me, you are a life saver.  I hate having to turn folks away like that.  Here is your payment and you have my deepest thanks.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk|Coalition of Trade Folk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum - 3 platinum from Innkeep Danin.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Western Plains of Karana]]
+[[Category:All Classes Quests]]

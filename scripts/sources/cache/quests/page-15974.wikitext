@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_pietro_zarn.png|frame|Pietro Zarn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Pietro Zarn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Crimson Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Pietro Zarn]] is located at -207, -303 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Pietro Zarn'
+
+: Pietro Zarn says, 'Who are you that you dare to speak with the great Pietro Zarn!! I see nothing more than a whelp in front of me. Innoruuk himself speaks with me. And now you expect me to waste words on you, a commoner. Begone Teddee. You have nothing to peak my interest, only my rage.'
+
+'''Hand [[Pietro Zarn]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>From secret tunnels and basements, we are quietly sowing the seeds of hate into the underworld of this city. Innoruuk surely has a place for you in his army of hate. Take this note to Pietro Zarn, of the Dismal Rage, he'll have some work for you. They are currently working out of the basement of an abandoned building in the East Freeport slums.</code>
+
+: Pietro Zarn says, 'A new member to carry the rage of Innoruuk into the city and beyond. How wonderful. I must admit that you do not appear to carry the rage within. Hopefully you shall color the battlefields with the blood of many knights from the Hall of Truth. Here. Wear this tunic with pride. Ha ha ha!! We shall see young one. We shall see.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Shadow Knight Quests]]

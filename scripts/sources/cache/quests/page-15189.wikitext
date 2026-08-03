@@ -1,0 +1,54 @@
+{{Kunark Era}}
+[[File:npc_tortured_librarian.png|frame|tortured librarian]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaesora]]
+|-
+! ''' Quest Giver: '''
+| [[tortured librarian]]
+|-
+! ''' Minimum Level: '''
+| 35+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! '''Related Zones:'''
+| [[Emerald Jungle]], [[The Overthere]]
+|-
+! '''Related NPCs:'''
+| Dom K`Perl, an Iksar tomb raider
+|}
+
+== Reward ==
+
+<ul><li> {{:Large Tassel Bookmark}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+The tortured librarian can be found in the library in Kaesora. He is on [[Brood of Kotiz]] (Iksar Necro) faction.
+
+You say, 'Hail, tortured librarian'
+
+tortured librarian says 'Bring to me that which was taken.'
+
+Go to the [[Emerald Jungle]] and clear the northwest area (top side of the cliff) of mobs. You'll eventually find [[an iksar tomb raider]]. Spawn point is likely (1914, 2682) without a placeholder. He paths northwest upon spawning. He is approximately 33-35th level and is a rare spawn.
+
+He always drops a book, which can be one of several Iksar history books. '''The common drops are the same books as sold in Cabilis.''' His uncommon drop is a TEMPORARY version of [[Venril the Chief]] (tradeable). This is similar to the ones sold in stores in that it covers the rise of Venril Sathir and his creation of an Iksar Empire.
+
+Once you have that book, you bring an [[Emerald]] to [[Dom K`Perl]] in the Dark Elf outpost of [[The Overthere]]. Handing it to him will result in a tradeable TEMPORARY book called [[Before Green]]. If you are Kill on sight at the outpost and worried about being attacked by guards, you can have someone hand in the Emerald and trade the book back to you.
+
+Take the two TEMPORARY books and head back to Kaesora's library. If the tortured librarian is not there then clear the libary of MOBs until he appears. He will despawn after a while.
+
+Hand him the two books and it will result in:
+
+tortured librarian fades out of existence. The air smells of death. Something has appeared in your hand.
+
+The result is a [[Large Tassel Bookmark]] which identifies as a 'Tassel of Flaxen Cord', required for the [[Necromancer Skullcap Quests|Necromancer 8th Rank Skullcap Quest]] in Cabilis West.
+
+[[Category:Quests]]
+[[Category:Kaesora]]
+[[Category:Necromancer Quests]]

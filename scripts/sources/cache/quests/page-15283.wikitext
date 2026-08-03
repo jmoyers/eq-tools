@@ -1,0 +1,158 @@
+{{Classic Era}}[[File:npc_brin_stolunger.png|frame|Brin Stolunger]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Brin Stolunger]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Axe Broadsmith]], [[Grahan Rothkar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Steel Warrior Bracer}}
+</li></ul>
+
+== Walkthrough ==
+
+''Your Location is 80.40, -588.16, 31.23''
+
+Note: you need amiable faction to start this quest.
+
+You say, 'Hail, Brin Stolunger'
+
+: Brin Stolunger says 'What? What?!! Are we a [young steel warrior].. Or another [spectator] for the Arena?'
+
+You say, 'I am a young steel warrior.'
+
+: Brin Stolunger says 'I say!! Good show!! I see the look of the warrior in you. Some day you may be as great as Brin Stolunger. Ha!! Still, you are surely wet behind the ears. You will need to polish your skills. Take this sack. Return it to me when you have filled it with 5 bat wings and 5 snake scales. Be sure you combine the contents of the bag before you give it back to me. Now, be off!!'
+
+'''You receive an Empty Arena Sack.  Fill it with 5 x Bat Wing and 5 x Snake Scales.'''
+
+'''You have fashioned the items together to create something new: Full Arena Sack. Give the sack to Brin.'''
+
+: Brin Stolunger says 'Jolly good!! You are clearly on your way to being a fine addition to the Steel Warriors. Now you must take this message to the person noted. All shall be explained.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+You gain experience!!
+
+You receive A Sealed Letter (identifies as "Note To Axe Broadsmith").  It reads:
+
+ Axe Broadsmith Steel Warrior Qeynos Hills Fellow warrior, here is the help you requested. May he prove himself a true Steel Warrior.
+
+'''Head to Qeynos Hills.''' Your Location is 3773.14, 960.97, -19.00
+
+You say, 'Hail, Axe Broadsmith'
+
+: Axe Broadsmith says 'Greetings. The fishing is sparse here. You would fare better at [Lake Rathe].'
+
+'''Give him the letter.'''
+
+: Axe Broadsmith says 'So you are the new warrior. Let us test your skill. Across the pond is a skeleton. See him? Engage him in combat. He awaits. Return his skull to me and I shall call you a Steel Warrior. Be quick. He will dissipate soon.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+You gain experience!!
+
+: a strange skeleton says 'Blast!! Another one to be tested!! My work is never done.'
+
+'''Kill it (Light Blue con to lvl 10, Scowls ready to attack).'''
+
+--You have looted a Skull.--
+
+'''It identifies as "Axe's Skeleton Skull."  Give it to Axe.'''
+
+: Axe Broadsmith says 'So you have returned. Victory is yours, young Steel Warrior. Take this letter of recommendation to Brin Stolunger at the arena in Qeynos. You have passed.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+You gain experience!!
+
+'''You receive a Letter of Recommendation (identifies as "Letter of Recommendation From Axe").  It reads:'''
+
+ Brin Stolunger, Steel Warriors of Qeynos This young one has passed the test of undead. He is ready for the final glory.
+
+'''Return to Brin and give the letter to him.'''
+
+: Brin Stolunger says 'So I see you have performed test of undead. Good show. Now it is time you truly tested your mettle. Take this note to Grahan Rothkar. He can be found beneath the arena in the pens. May you live to join our brotherhood.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+You gain experience!!
+
+'''You receive A Sealed Letter (identifies as "Note To Grahan Rothkar"). It reads:'''
+
+ Grahan, This young warrior has proven himself skillful. Give him the final test of a Steel Warrior. May his sword swing swiftly and surely.
+
+'''Grahan Rothkar may found in the bottom of the arena.''' Your Location is -31.67, -466.36, -24.83
+
+You say, 'Hail, Grahan Rothkar'
+
+: Grahan Rothkar says 'Hail, ______! What business do you have in the pens of the Qeynos Arena? Have you a report of the [escaped catman]?'
+
+'''Give him the letter.'''
+
+: Grahan Rothkar says 'So you are ready to encounter your final test. I wish you well, young warrior. Take this key to the pen on the left along the wall with three doors. There you shall meet your final challenge. Return with proof of victory. Exit before it is at an end and I shall not help you.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+'''You receive Pen Key # 5 (identifies as "QEY Arena Key 5").  Use it to unlock the pen as directed, then slay "a young lion" (Light Blue con to lvl 10, Scowls ready to attack).'''
+
+--You have looted a Arena Lion Skin.--
+
+'''It identifies as "Grahan's Lion Skin."  Give it to Grahan.'''
+
+Grahan Rothkar says 'I salute you. You have done well and crossed into the brotherhood of the Steel Warriors. Welcome. Take this. It is the mark of a Steel Warrior. Live the way of the warrior.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+You gain experience!!
+
+[[Category:Quests]]
+
+[[Category:South Qeynos]]
+[[Category:Warrior Quests]]

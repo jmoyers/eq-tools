@@ -1,0 +1,1570 @@
+[[Category:Quests]]
+
+I wanted to create a page for people that wanted to quest, alone or with a group and sorted by level instead of by name. This list focuses more on gear other than any other normal quest. This guide is for the following people.
+* New Players
+* Players that don't have the money to buy gear.
+* Players that like to simply quest.
+
+{{MajorEraTableFilter}}
+
+== Bard Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+! Quest                                !! Starts In                 !! Level   !! Era                                    !! Reward
+|-
+| [[Aenia and Behroe]]                 || [[South Qeynos]]          || 01      || {{Classic Short}} || {{:Shawl of the Wind Spirit}}
+|-
+| [[Ale for Beur]]                     || [[East Freeport]]         || 01      || {{Classic Short}} || {{:Used Merchants Gloves}}
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{Classic Short}} || {{:Rat Shaped Ring}}
+|-
+| [[Leatherfoot Raiders]]              || [[Rivervale]]             || 01      || {{Classic Short}} || {{:Leatherfoot Skullcap}}
+|-
+| [[Aviak Chicks]]                     || [[North Kaladim]]         || 03      || {{Classic Short}} || {{:Shawl of the Wind Spirit}}
+|-
+| [[Frostbite's Fish]]                 || [[North Qeynos ]]         || 03      || {{Classic Short}} || {{:Band of Rodcet Nife}}
+|-
+| [[Barnacle Breastplate Quest]]       || [[Erudin]]                || 10     || {{Classic Short}} || {{:Barnacle Breastplate}}
+|-
+| [[Gnasher's Head]]                   || [[Surefall Glade]]        || 10     || {{Classic Short}} || {{:Medal of Merit}}
+|-                  
+| [[Fish Dinner]]                      || [[Kerra Island]]          || 13     || {{Classic Short}} || {{:Kerran Fishing Spear}}
+|-                 
+| [[Indaria's Doll]]                   || [[South Qeynos]]          || 15     || {{Classic Short}} || {{:Velvet Choker}}
+|-
+| [[Tiny Skeletons]]                   || [[Ak'Anon]]               || 15     || {{Classic Short}} || {{:Watchman Boots}}
+|-
+| [[Screaming Mace Quest]]             || [[Crushbone]]             || 18     || {{Classic Short}} || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Mirgon Dower's Head]]              || [[Kurn's Tower]]          || 20+    || {{Kunark Short}} || {{:The Skull of Torture}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{Classic Short}} || {{:Karana's Tear}}
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20      || {{Kunark Short}} ||                     
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{Classic Short}} || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Kilij%27s_Plans]]                  || [[Greater Faydark]]       || 26     || {{Classic Short}} || {{:Brazen Brass Kilij}}
+|-
+| [[Lambent Armor Quests]]             || [[Temple of Solusek Ro]]  || 30     || {{Classic Short}} ||
+<ul><li>  {{:Lambent Breastplate}}
+</li><li> {{:Lambent Helm}}
+</li><li> {{:Lambent Vambraces}}
+</li><li> {{:Lambent Bracers}}
+</li><li> {{:Lambent Greaves}}
+</li><li> {{:Lambent Boots}}
+</li><li> {{:Lambent Gauntlets}}
+</li></ul>
+|-
+| [[Second Test of Kejaar]]            || [[Kerra Island]]          || 30     || {{Classic Short}} || {{:Sejah Ghulam Bracer}}
+|-
+| [[The Gnoll Slayer]]                 || [[Qeynos Hills]]          || 30     || {{Classic Short}} || {{:Gnoll Slayer}}
+|-
+| [[Mining Picks]]                     || [[Great Divide]]          || 35     || {{Velious Short}} || {{:Coldain Velium-Pick}}
+|-
+| [[Rare Coins]]                       || [[Firiona Vie]]           || 35     || {{Kunark Short}} || {{:Nostrolo Tambourine}}
+|-
+| [[The Grammar Manual]]               || [[Iceclad Ocean]]         || 35     || {{Velious Short}} || {{:Ice Forged Shackles}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{Velious Short}} || {{:Shrine Key}}
+|-
+| [[Key to Charasis Quest]]            || [[Swamp of No Hope ]]     || 40     || {{Kunark Short}} || {{:Key to Charasis}}
+|-
+| [[Bard Thurgadin Armor Quests]]      || [[Thurgadin]]             || 45    || {{Velious Short}} || 
+<ul><li>  {{:Resonant Vambraces}}
+</li><li> {{:Resonant Boots}}
+</li><li> {{:Resonant Bracer}}
+</li><li> {{:Resonant Gauntlets}}
+</li><li> {{:Resonant Greaves}}
+</li><li> {{:Resonant Helm}}
+</li><li> {{:Resonant Breastplate}}
+</li></ul>
+|-
+| [[Velium Retrieval]]                 || [[Skyshrine]]             || 45     || {{Velious Short}} || {{:Bracer of Hammerfal}}
+|-
+| [[Bard Epic Quest]]                  || [[Dreadlands]]            || 46+    || {{Kunark Short}} || {{:Singing Short Sword}}
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+   || {{Classic Short}} || Plane of Sky Keys
+|-
+| [[Bard Plane of Sky Tests]]          || [[Plane of Sky]]          || 46+   || {{Classic Short}} || 
+<ul><li> {{:Agilmente's Flute of Flight}}
+</li><li>{{:Songweaver's Mantle}} 
+</li><li>{{:Mask of the Songbird}} 
+</li><li>{{:Denon's Horn of Disaster}}
+</li><li>{{:Fae Amulet}}
+</li><li>{{:Harmonic Spear}}
+</li></ul>
+|-
+| [[Bard Kael Armor Quests]]           || [[Kael Drakkel]]          || 50    || {{Velious Short}} || 
+<ul><li>  {{:Troubadour's Helm}}
+</li><li> {{:Troubadour's Vambraces}}
+</li><li> {{:Troubadour's Breastplate}}
+</li><li> {{:Troubadour's Bracer}}
+</li><li> {{:Troubadour's Gauntlets}}
+</li><li> {{:Troubadour's Greaves}}
+</li><li> {{:Troubadour's Boots}}
+</li></ul>
+|-
+| [[Bard Skyshrine Armor Quests]]      || [[Skyshrine]]             || 50     || {{Velious Short}} || 
+<ul><li>   {{:Helm of Twilight}}
+</li><li>  {{:Vambraces of Twilight}}
+</li><li>  {{:Breastplate of Twilight}}
+</li><li>  {{:Bracer of Twilight}}
+</li><li>  {{:Gauntlets of Twilight}}
+</li><li>  {{:Greaves of Twilight}}
+</li><li> {{:Boots of Twilight}}
+</li></ul>
+|-
+| [[Demise of Blizzent]]               || [[Kael Drakkel]]          || 50     || {{Velious Short}} || {{:Dragonhide Belt}}
+|-
+| [[Emerald Dragonscale Quest]]        || [[Cobalt Scar]]           || 50     || {{Velious Short}} || {{:Emerald Dragonscale Tunic}}
+|-
+| [[Kelorek's Scales]]                 || [[Cobalt Scar]]           || 50     || {{Velious Short}} || {{:Sea Dragonscale Bracer}}
+|-
+| [[Slaggak's Bounty]]                 || [[Kael Drakkel]]          || 50     || {{Kunark Short}} || {{:Cerulean Greaves}}  {{:Cerulean Vambraces}}
+|-
+| [[Stanos%27_Head|Stanos Head]]       || [[Kithicor Forest]]       || 50     || {{Classic Short}} || {{:Guise of the Coercer}}
+|-
+| [[Friend of the Kin]]                || [[Skyshrine]]             || 53     || {{Velious Short}} || {{:Dragon Tooth Choker}}
+|-
+| [[Request of the Strong]]            || [[Temple of Veeshan]]     || 55     || {{Velious Short}} || {{:Silver Mask of the Slayer}}
+|-
+| [[Test of Protection]]               || [[Temple of Veeshan]]     || 55     || {{Velious Short}} || {{:Pauldrons of the Deep Flame}}
+|-
+| [[Test of the Fire Storm]]           || [[Temple of Veeshan]]     || 55     || {{Velious Short}} || {{:Cloak of the Fire Storm}}
+|-
+| [[Test of the Living Flame]]         || [[Temple of Veeshan]]     || 55     || {{Velious Short}} || {{:Earring of the Living Flame}}
+|-
+| [[Test of the Tooth]]                || [[Temple of Veeshan]]     || 55     || {{Velious Short}} || {{:Serrated Dragon Tooth}}
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{Velious Short}} || {{:Sleeper's Key}}
+|-
+|}
+
+== Cleric Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+! Quest                                  || Starts In                 || Level  || Reward                               
+|-
+| [[Cazic Thule Symbol Quests]]                 || [[Paineel]]          || 01+      || {{:Initiate Symbol of Cazic Thule}}                   
+|-
+| [[Cure for Lempeck Hargrin]]           || [[North Qeynos ]]          || 01      || {{:Shining Star of Light}}   
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}  
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}  
+|-
+| [[Aviak Chicks]]                       || [[North Kaladim]]         || 03      || {{:Shawl of the Wind Spirit}}
+|-
+| [[Frostbite's Fish]]                 || [[North Qeynos ]]         || 03      || {{:Band of Rodcet Nife}}     
+|-
+| [[Merona's Brother]]                 || [[Surefall Glade]]         || 04      || {{:Band of Tunare}}, {{:Ring of Pine}}
+|-
+| [[Innoruuk Symbol Quests]]                 || [[Neriak Third Gate]]Evil          || 05+      || {{:Initiate Symbol of Innoruuk}}, {{:Disciple Symbol of Innoruuk}}, {{:Regent Symbol of Innoruuk}}    
+|-                  
+| [[Bertoxxulous Symbol Quests]]                 || [[Ak'Anon]]          || 08      || {{:Initiate Symbol of Bertoxxulous}}     
+|-                 
+| [[Drosco the Zombie]]                 || [[South Qeynos]]          || 08      || {{:Thunder Staff}}   
+|-                 
+| [[Red V Clockwork]]                 || [[Ak'Anon]]          || 08      || {{:Bull Smasher}}, {{:Iony's Absorber}}  
+|-
+| [[Tunare Symbol Quests]]*                 || [[Northern Felwithe]]          || 08+      || {{:Initiate Symbol of Tunare}}, {{:Disciple Symbol of Tunare}}, {{:Warden Symbol of Tunare}}   
+|-
+| [[Barnacle Breastplate Quest]]                 || [[Erudin]]          || 10      || {{:Barnacle Breastplate}}    
+|-                  
+| [[Peacekeeper Staff Quest]]                 || [[Erudin]]          || 10+      || {{:Peacekeeper Staff}}     
+|-                 
+| [[Quellious Symbol Quests]]                 || [[Erudin]]          || 01      || {{:Initiate Symbol of Quellious}}, {{:Disciple Symbol of Quellious}}, {{:Regent Symbol of Quellious}}     
+|-
+| [[Trumpy Irontoe]]                 || [[South Kaladim]]          || 10      || {{:Bloodforge Hammer}}    
+|-
+| [[Brell Serilis Symbol Quests]]                 || [[South Kaladim ]]          || 12      || {{:Initiate Symbol of Brell Serilis}}, {{:Disciple Symbol of Brell Serilis}}    
+|-                  
+| [[The Acolyte]]                 || [[Rivervale ]]          || 14      || {{:Acolyte's Anklet}}     
+|-                 
+| [[Indaria's Doll]]                 || [[South Qeynos ]]          || 15        || {{:Velvet Choker}}   
+|-
+| [[Sir Lindeal's Testimony]]Evil    || [[Neriak Third Gate]]          || 15      || {{:Cloak of the Undead Eye}}    
+|-
+| [[Testament of Vanear Quest]]                 || [[North Qeynos]]          || 15+      || {{:Testament of Vanear}}    
+|-
+| [[Tiny Skeletons]]                 || [[Ak'Anon]]          || 15      || {{:Watchman Boots}}
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Azzar's Dreadful Hat, Part 2]]                 || [[Paineel]]          || 20    || {{:Dreadful Cap}}
+|-
+| [[Health Potion]]                 || [[Kerra Island]]          || 20    || {{:Bone Talisman}}   
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Bonethunder Staff Quest]]                 || [[South Qeynos ]]          || 20      || {{:Bonethunder Staff}}    
+|-
+| [[Paw of Opolla Quest]]                 || [[Qeynos Aqueducts]]          || 29      || {{:Paw of Opolla}}    
+|-
+| [[The Summoning of Fright]]                 || [[Paineel]]          || 25       || {{:Fright Forged Helm}}    
+|-
+| [[The Summoning of Terror]]                 || [[Paineel]]          || 25      || {{:Terror Forged Mask}}    
+|-
+| [[Shield of the Devout Quest]]                 || [[Temple of Solusek Ro ]]          || 30      || {{:Shield of the Devout}}    
+|-
+| [[The Telescope]]                 || [[Steamfont Mountains ]]          || 30      || {{:Staff of the Observers}}    
+|-
+| [[Aegis of Life Quest]]                 || [[Northern Karana]]          || 35+      || {{:Aegis of Life}}    
+|-
+| [[The Grammar Manual]]                 || [[Iceclad Ocean ]]          || 35      || {{:Ice Forged Shackles}}    
+|-
+| [[The Mighty Garou]]                 || [[Iceclad Ocean ]]          || 35      || {{:Garou Bone Club}}    
+|-
+| [[The Mighty Snowfang Hero]]                 || [[Iceclad Ocean ]]          || 35      || {{:Icy Totem of Protection}}    
+|-
+| [[Armor of the Priest Quests]]                 || [[Temple of Solusek Ro]]          || 35      || SET  
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Captain Nalot's Triple Strength Rum]]                 || [[Iceclad Ocean ]]          || 40      || {{:Rough Silver Chain}}    
+|-
+| [[The Summoning of Dread]]                 || [[Paineel ]]          || 40      || {{:Dread Forged Shield}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}}    
+|-
+| [[Cleric Thurgadin Armor Quests]]                 || [[Thurgadin ]]          || 45      || SET   
+|-
+| [[Velium Retrieval]]                 || [[Skyshrine ]]          || 45      || {{:Bracer of Hammerfal}}    
+|-
+| [[Cleric Epic Quest]]                 || [[Lake Rathetear]]          || 46      || {{:Water Sprinkler of Nem Ankh}}    
+|-
+| [[Cleric Plane of Sky Tests]]                 || [[Plane of Sky]]          || 46      || MANY
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys      
+|-
+| [[Cleric Kael Armor Quests]]                 || [[Kael Drakkel]]          || 50      || SET   
+|-
+| [[Cleric Skyshrine Armor Quests]]                 || [[Skyshrine]]          || 50   || SET   
+|-
+| [[Demise of Blizzent]]                 || [[Kael Drakkel]]          || 50      || {{:Dragonhide Belt}}    
+|-
+| [[Emerald Dragonscale Quest]]                 || [[Cobalt Scar ]]          || 50      || {{:Emerald Dragonscale Tunic}}    
+|-
+| [[Kelorek's Scales]]                 || [[Cobalt Scar ]]          || 50    || {{:Sea Dragonscale Bracer}}    
+|-
+| [[Lodizal Shell Shield Quest]]                 || [[Cobalt Scar]]          || 50      || {{:Lodizal Shell Shield}}    
+|-
+| [[Slaggak's Bounty]]                 || [[Kael Drakkel]]          || 50      || {{:Cerulean Greaves}}, {{:Cerulean Vambraces}}     
+|-
+| [[The Family Chest Straps]]                 || [[Kael Drakkel ]]          || 50      || {{:Flayed Coldain-Skin Leggings}}    
+|-
+| [[Request of the Arcane]]                 || [[Temple of Veeshan ]]          || 55      || {{:Mask of the Silver Eyes}}    
+|-
+| [[The Four Idols]]                 || [[Plane of Growth ]]          || 55      || {{:Symbol of Tunarian Worship}}    
+|-
+| [[Wisdom - The Long Battle]]                 || [[Temple of Veeshan ]]          || 55      || {{:Boots of Silent Striding}}    
+|-
+| [[Wisdom - The Short Battle]]                 || [[Temple of Veeshan ]]          || 55      || {{:White Dragon Idol}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}  
+|}
+
+== Druid Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                   || Level  || Reward 
+|-
+| [[Hurrieta's Tunic Quest]]             || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}} 
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}                                 
+|-
+| [[Aviak Chicks]]                       || [[North Kaladim ]]          || 3      || Small Patchwork Armor Set                  
+|-
+| [[The Acolyte]]                        || [[Rivervale ]]              || 3      || {{:Acolyte's Anklet}}  
+|-
+| [[Merona's Brother]]                 || [[Surefall Glade]]         || 04      || {{:Band of Tunare}}, {{:Ring of Pine}}
+|-
+| [[Tunare Symbol Quests]]               || [[Northern Felwithe ]]      || 12      || {{:Initiate Symbol of Tunare}}                   
+|-
+| [[Tunare Symbol Quests]]               || [[Northern Felwithe ]]      || 17      || {{:Disciple Symbol of Tunare}}  
+|-
+| [[Tunare Symbol Quests]]               || [[Northern Felwithe ]]      || 17      || {{:Warden Symbol of Tunare }}   
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}                
+|-
+| [[Trumpy Irontoe]]                     || [[South Kaladim ]]          || 10      || {{:Bloodforge Hammer}}  
+|-
+| [[Indaria's Doll]]                     || [[South Qeynos ]]         || 15      || {{: Velvet Choker}}                   
+|-
+| [[Testament of Vanear Quest]]          || [[North Qeynos ]]         || 15      || {{:Testament of Vanear}}  
+|-
+| [[Health Potion]]                 || [[Kerra Island]]          || 20    || {{:Bone Talisman}}  
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Paw of Opolla Quest]]                || [[Qeynos Aqueducts ]]         || 29      || {{:Paw of Opolla }}                   
+|-
+| [[Solvedi Scimitar Quest]]             || [[Rathe Mountains ]]         || 25      || {{:Solvedi Scimitar}}  
+|-
+| [[Tibrinn's Quest]]                    || [[Rathe Mountains ]]         || 35      || {{:Sap Sheen Staff}}   
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}}                 
+|-
+| [[Handy Shillelagh]]                   || [[Firiona Vie]]         || 30      || {{:Dark Oak Shillelagh}}  
+|-
+| [[Second Test of Kejaar]]              || [[Kerra Island]]         || 30      || {{:Sejah Ghulam Bracer}}                   
+|-
+| [[The Telescope]]                      || [[Steamfont Mountains ]]         || 30      || {{:Staff of the Observers}}  
+|-
+| [[The Mighty Garou]]                   || [[Iceclad Ocean ]]         || 35      || {{:Garou Bone Club}}                   
+|-
+| [[The Mighty Snowfang Hero]]                 || [[Iceclad Ocean ]]         || 35      || {{:Icy Totem of Protection}}  
+|-
+| [[Captain Nalot's Triple Strength Rum]]                 || [[Iceclad Ocean ]]         || 40      || {{:Rough Silver Chain}}  
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Druid Thurgadin Armor Quests]]                 || [[Thurgadin ]]         || 45      || SET
+|-
+| [[Velium Retrieval]]                 || [[Skyshrine ]]         || 45      || {{:Bracer of Hammerfal}}  
+|-
+| [[Druid Epic Quest]]                 || [[Burning Woods ]]         || 46+      || {{:Nature Walkers Scimitar}}  
+|-
+| [[Druid Plane of Sky Tests]]                 || [[Plane of Sky]]         || 46     || MANY
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys  
+|-
+| [[Demise of Blizzent]]                 || [[Kael Drakkel ]]         || 50      || {{:Dragonhide Belt}}  
+|-
+| [[Druid Kael Armor Quests]]                 || [[Kael Drakkel ]]         || 50      || SET  
+|-
+| [[Druid Skyshrine Armor Quests]]                 || [[Skyshrine ]]         || 50      || SET 
+|-
+| [[Friend of the Tunarean Court]]                 || [[The Wakening Land]]         || 50      || {{:Tunarean Signet Ring}}  
+|-
+| [[Lodizal Shell Shield Quest]]                 || [[Cobalt Scar]]         || 50      || {{:Lodizal Shell Shield}}  
+|-
+| [[The Family Chest Straps]]                 || [[Kael Drakkel]]         || 50      || {{:Flayed Coldain-Skin Leggings}}  
+|-
+| [[The Spirit of Garzicor]]                 || [[Skyshrine]]         || 50      || {{:Sanctum Guardian's Earring}}  
+|-
+| [[Gloves of Earthcrafting Quest]]                 || [[Plane of Growth]]         || 53      || {{:Gloves of Earthcrafting}}  
+|-
+| [[Request of the Arcane]]                 || [[Temple of Veeshan]]         || 55     || {{:Mask of the Silver Eyes}}  
+|-
+| [[Wisdom - The Long Battle]]                 || [[Temple of Veeshan]]         || 55      || {{:Boots of Silent Striding}}  
+|-
+| [[Wisdom - The Short Battle]]                 || [[Temple of Veeshan]]         || 55      || {{:White Dragon Idol}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Enchanter Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In              || Level   || Reward 
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}    
+|-
+| [[Leatherfoot Raiders]]              || [[Rivervale]]             || 01      || {{:Leatherfoot Skullcap}}                             
+|-
+| [[Ice Goblin Beads]]                   || [[Erudin|Erudin Palace]]      || 3       || {{:Servant's Staff}} 
+|-
+| [[Frostbite's Fish]]                   || [[North Qeynos ]]         || 03      || {{:Band of Rodcet Nife}} 
+|-
+| [[Gnasher's Head]]                     || [[Surefall Glade]]        || 10     || {{:Medal of Merit}}                  
+|-
+| [[Indaria's Doll]]                     || [[South Qeynos]]       || 15      || {{:Velvet Choker}}  
+|-
+| [[Mirgon Dower's Head]]              || [[Kurn's Tower]]          || 20+    || {{:The Skull of Torture}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Incandescent Armor Quests]]          || [[Temple of Solusek Ro]]      || 25+      || {{:Incandescent Mask}},  {{:Incandescent Gloves}}, {{:Incandescent Wand}}                  
+|-                  
+| [[Rod of Insidious Glamour Quest]]     || [[Temple of Solusek Ro]]      || 25      || {{:Rod of Insidious Glamour}}  
+|-
+| [[The Mystic Cloak]]                   || [[Northern Felwithe]]      || 30      || {{:Mystic Cloak}}                   
+|-
+| [[The Telescope]]                      || [[Steamfont Mountains]]      || 30    || {{:Staff of the Observers}}  
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Captain Nalot's Triple Strength Rum]] || [[Iceclad Ocean]]      || 40      || {{:Rough Silver Chain}}  
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Enchanter Thurgadin Armor Quests]]   || [[Thurgadin]]      || 45      || SET                  
+|-
+| [[Enchanter Epic Quest]]               || [[Erudin]]      || 46      || {{:Staff of the Serpent}}  
+|-
+| [[Enchanter Plane of Sky Tests]]       || [[Plane of Sky]]      || 46      || MANY    
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys              
+|-
+| [[Enchanter Kael Armor Quests]]        || [[Kael Drakkel]]      || 50      || SE  
+|-
+| [[Enchanter Skyshrine Armor Quests]]   || [[Skyshrine]]      || 50    || SET                
+|-
+| [[The Family Chest Straps]]            || [[Kael Drakkel]]      || 50    || {{:Flayed Coldain-Skin Leggings}}  
+|-
+| [[The Spirit of Garzicor]]             || [[Skyshrine]]      || 50   || {{:Pitted Iron Ring}}                   
+|-
+| [[Request of the Arcane]]              || [[Temple of Veeshan]]      || 55   || {{:Mask of the Silver Eyes}}  
+|-
+| [[The First Arcane Test]]                 || [[Temple of Veeshan]]      || 55   || {{:White Dragon Statue}}                   
+|-
+| [[The Second Arcane Test]]             || [[Temple of Veeshan]]      || 55    || {{:Boots of Deep Thought}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Magician Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                      || Level    || Reward         
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}                                     
+|-
+| [[Frostbite's Fish]]                   || [[North Qeynos ]]         || 03      || {{:Band of Rodcet Nife}} 
+|-
+| [[Mirgon Dower's Head]]              || [[Kurn's Tower]]          || 20+    || {{:The Skull of Torture}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Captain Nalot's Triple Strength Rum]]|| [[Iceclad Ocean]]       || 40      || {{:Rough Silver Chain}}  
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Circlet of Mist Quest]]              || [[Temple of Solusek Ro ]]       || 30     || {{:Circlet of Mist}}                 
+|-                  
+| [[Clay Bracelet Quest]]                || [[Temple of Solusek Ro]]       || 25      || {{:Clay Bracelet}}  
+|-
+| [[Earthen Boots Quest]]                || [[Temple of Solusek Ro]]       || 28      || {{:Earthen Boots}}                   
+|-
+| [[Magician Epic Quest]]                || [[Lake Rathetear]]       || 46+      || {{:Orb of Mastery}}  
+|-
+| [[Magician Focus Items]]               || [[Temple of Solusek Ro]]       || 33      || {{:Broom of Trilon}}, {{:Shovel of Ponz}}, {{:Stein of Ulissa}}, {{:Torch of Alna}}        
+|-
+| [[Magician Kael Armor Quests]]         || [[Kael Drakkel]]       || 50      || SET  
+|-
+| [[Magician Plane of Sky Tests]]        || [[Plane of Sky]]       || 46+      || MANY 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys                    
+|-
+| [[Magician Skyshrine Armor Quests]]    || [[Skyshrine]]       || 30      || SET 
+|-
+| [[Magician Thurgadin Armor Quests]]    || [[Thurgadin ]]       || 45      || SET
+|- 
+| [[Request of the Arcane]]              || [[Temple of Veeshan]]       || 55      || {{:Mask of the Silver Eyes}}  
+|-
+| [[Robe of the Elements Quest]]         || [[Temple of Solusek Ro]]       || 25      || {{:Robe of the Elements}}                   
+|-
+| [[The Family Chest Straps]]            || [[Kael Drakkel]]       || 50      || {{:Flayed Coldain-Skin Leggings}}  
+|-
+| [[The First Arcane Test]]              || [[Temple of Veeshan]]       || 55      || {{:White Dragon Statue}}  
+|-
+| [[The Lost Tome]]                      || [[Plane of Growth ]]       || 55      || {{:Chord of Vines}}  
+|-
+| [[The Mystic Cloak]]                   || [[Northern Felwithe ]]       || 30+      || {{:Mystic Cloak}}                   
+|-
+| [[The Second Arcane Test]]             || [[Temple of Veeshan ]]       || 55      || {{:Boots of Deep Thought}}  
+|-
+| [[The Spirit of Garzicor]]             || [[Skyshrine ]]                || 50             || {{:Pitted Iron Ring}}  
+|-
+| [[The Telescope]]                      || [[Steamfont Mountains ]]       || 30      || {{:Staff of the Observers}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}                  
+|}
+
+== Monk Quests ==
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                      || Level    || Reward   
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}} 
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}}                                         
+|-
+| [[Demise of Blizzent]]|| [[Kael Drakkel ]]       || 50      || {{:Dragonhide Belt}}  
+|-
+| [[Friend of the Kin]]|| [[Skyshrine ]]       || 53      || {{:Dragon Tooth Choker}}      
+|-
+| [[Garath's Weapons to Trade]]|| [[Eastern Wastes ]]       || 55      || {{:Primal Velium Fist Wraps}}, {{:Priceless Velium Fist Wraps}} 
+|-
+| [[Grim's Tiger Revenge]]|| [[Kithicor Forest ]]       || 25+      || {{:Collar of Neshika}}  
+|-
+| [[Monk Epic Quest]]|| [[Erudin ]]       || 46+      || {{:Celestial Fists}}  
+|-
+| [[Monk Headband Quests]]|| [[North Qeynos ]]       || 01-30      || {{:White Headband}} to {{:Purple Headband}} 
+|-
+| [[Monk Kael Armor Quests]]|| [[Kael Drakkel ]]       || 50      || SET  
+|-
+| [[Monk Plane of Sky Tests]]|| [[Plane of Sky]]       || 46      || MANY 
+|-
+| [[Monk Sash Quests]]|| [[West Freeport ]]       || 01-25      || {{:Red Sash of Order}}
+|-
+| [[Monk Shackle Quests]]|| [[East Cabilis ]]       || 01+      || {{:Shackle of Steel}}  
+|-
+| [[Monk Skyshrine Armor Quests]]|| [[Skyshrine ]]       || 50      || SET  
+|-
+| [[Monk Thurgadin Armor Quests]]|| [[Thurgadin ]]       || 45      || SET 
+|-
+| [[Monks of The Whistling Fist]]|| [[Southern Karana ]]       || 39+     || {{:Robe of the Lost Circle}}  
+|-
+| [[Request of the Strong]]|| [[Temple of Veeshan ]]       || 55      || {{:Silver Mask of the Slayer}}  
+|-
+| [[Second Test of Kejaar]]|| [[Kerra Island ]]       || 30      || {{:Sejah Ghulam Bracer}}  
+|-
+| [[Sparring Armor]]|| [[East Cabilis ]]       || 04      || SET 
+|-
+| [[Test of Protection]]|| [[Temple of Veeshan ]]       || 55      || {{:Pauldrons of the Deep Flame}}  
+|-
+| [[Test of the Fire Storm]]|| [[Temple of Veeshan ]]       || 55      || {{:Cloak of the Fire Storm}}  
+|-
+| [[Test of the Living Flame]]|| [[Temple of Veeshan ]]       || 55      || {{:Earring of the Living Flame}}   
+|-
+| [[Test of the Tooth]]|| [[Temple of Veeshan]]       || 55      || {{:Serrated Dragon Tooth}}  
+|-
+| [[The Lost Circle]]|| [[Dreadlands]]       || 50      || {{:Robe of the Whistling Fists}}  
+|-
+| [[The Spirit of Garzicor]]|| [[Skyshrine ]]       || 50      || {{:Sanctum Guardian's Earring}}  
+|-
+| [[The Treant Fists]]|| [[West Freeport ]]       || 25+      || {{:Treant Fists}}
+|-
+| [[Trumpy Irontoe]]|| [[South Kaladim ]]       || 10      || {{:Bloodforge Hammer}}  
+|-
+| [[Velium Retrieval]]|| [[Skyshrine ]]       || 45      || {{:Bracer of Hammerfal}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Necromancer Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                      || Level    || Reward         
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}} 
+|-
+| [[Mirgon Dower's Head]]              || [[Kurn's Tower]]          || 20+    || {{:The Skull of Torture}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}}                                     
+|-
+| [[Azraxs' Legacy]]||               [[Paineel]]       || 50*      || {{:Mantle of Souls}}  
+|-
+| [[Captain Nalot's Triple Strength Rum]]||               [[Iceclad Ocean]]       || 40      || {{:Rough Silver Chain}}                   
+|-                  
+| [[Harvester Quest]]||               [[Temple of Solusek Ro ]]       || 25+      || {{:Harvester}}    
+|-
+| [[Ice Goblin Beads]]||               [[Erudin]]       || 01+      || {{:Servant's Staff}}             
+|-
+| [[Indaria's Doll]]||               [[South Qeynos]]       || 15      || {{:Velvet Choker}}   
+|-
+| [[Necromancer Epic Quest]]||               [[Nektulos Forest ]]       || 46+      || {{:Scythe of the Shadowed Soul}}        
+|-
+| [[Necromancer Kael Armor Quests]]||               [[Kael Drakkel ]]       || 50      || SET   
+|-
+| [[Necromancer Plane of Sky Tests]]||               [[Plane of Sky]]       || 46      || MANY      
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys           
+|-
+| [[Necromancer Skullcap Quests]]||               [[West Cabilis]]       || 04+      || {{:Apprentice Skullcap - 1st Rank}} +     
+|-
+| [[Necromancer Skyshrine Armor Quests]]||               [[Skyshrine]]       || 50      || SET                  
+|-
+| [[Necromancer Thurgadin Armor Quests]]||               [[Thurgadin]]       || 40      || SET
+|-
+| [[Request of the Arcane]]||               [[Temple of Veeshan]]       || 55      || {{:Mask of the Silver Eyes}}                    
+|-
+| [[ShadowBound Armor Quests]]||               [[Temple of Solusek Ro]]       || 24      || {{:ShadowBound Boots}}, {{:ShadowBound Gloves}}, {{:Robe of Enshroudment}}                   
+|-
+| [[Sir Lindeal's Testimony]]||               [[Neriak Third Gate ]]       || 15      || {{:Cloak of the Undead Eye}}                                             
+|-
+| [[The Family Chest Straps]]||               [[Kael Drakkel ]]       || 50      || {{:Flayed Coldain-Skin Leggings}}                   
+|-
+| [[The First Arcane Test]]||               [[Temple of Veeshan ]]       || 55      || {{:White Dragon Statue}}      
+|-
+| [[The Lost Pet]]||               [[Paineel ]]       || 01      || {{:Noclin's Femur}}                   
+|-
+| [[The Mystic Cloak]]||               [[Northern Felwithe ]]       || 30+      || {{:Mystic Cloak}}                   
+|-
+| [[The Second Arcane Test]]||               [[Temple of Veeshan ]]       || 55      || {{:Boots of Deep Thought}}                   
+|-
+| [[Thex Mallet Quest]]||               [[Neriak Third Gate ]]       || 20      || {{:Reaper of the Dead}}                   
+|-
+| [[Words of Darkness Quest]]||               [[Temple of Solusek Ro ]]       || 35      || {{:Words of Darkness}} 
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}                                            
+|}
+
+== Paladin Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                    || Starts In                   || Level    || Reward      
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}  
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}                                        
+|-
+| [[Frostbite's Fish]]     || [[North Qeynos ]]         || 03      || {{:Band of Rodcet Nife}} 
+|-
+| [[Merona's Brother]]                 || [[Surefall Glade]]         || 04      || {{:Band of Tunare}}, {{:Ring of Pine}}
+|-                 
+| [[Red V Clockwork]]                 || [[Ak'Anon]]          || 08      || {{:Bull Smasher}}, {{:Iony's Absorber}} 
+|-
+| [[Scarab Armor Quests]]     || [[South Kaladim]]         || 08      || {{:Small Scarab Breastplate}} 
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Aegis of Life Quest]]  ||  [[Northern Karana ]]       || 35+      || {{:Aegis of Life}}  
+|-
+| [[Armor of Ro Quests]]   ||  [[Temple of Solusek Ro ]]       || 30+      || SET                  
+|-
+| [[Aviak Chicks]]         ||  [[North Kaladim ]]       || 03      || Small Patchwork Armor Set   
+|-
+| [[Barnacle Breastplate Quest]]  ||  [[Erudin ]]       || 10      || {{:Barnacle Breastplate}}         
+|-
+| [[Bonethunder Staff Quest]]     ||  [[South Qeynos ]]       || 20      || {{:Bonethunder Staff}}  
+|-
+| [[Chalice of Conquest Quest]]   ||  [[Butcherblock Mountains ]]       || 35      || {{:Holy Partisan of Underfoot}}                   
+|-
+| [[Cure for Lempeck Hargrin]]    ||  [[North Qeynos ]]       || 01      || {{:Shining Star of Light}}  
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Demise of Blizzent]]          ||  [[Kael Drakkel ]]       || 50      || {{:Dragonhide Belt}}                   
+|-
+| [[Dragon Scales Quest]]         ||  [[Firiona Vie ]]       || 45      || {{:Wurmslayer}}  
+|-
+| [[Drosco the Zombie (good)]]    ||  [[South Qeynos ]]       || 08      || {{:Thunder Staff}}                   
+|-
+| [[Emerald Dragonscale Quest]]   ||  [[Cobalt Scar ]]       || 50      || {{:Emerald Dragonscale Tunic}}  
+|-
+| [[Fish Dinner]]                 ||  [[Kerra Island ]]       || 13      || {{:Kerran Fishing Spear}}                   
+|-
+| [[Friend of the Kin]]           ||  [[Skyshrine ]]       || 53      || {{:Dragon Tooth Choker}}  
+|-
+| [[Garath's Weapons to Trade]]   ||  [[Eastern Wastes ]]       || 55     || {{:Primal Velium Knight's Sword}}, {{:Priceless Velium Knight's Sword}}                    
+|-
+| [[Kelorek's Scales]]                     ||  [[Cobalt Scar ]]       || 50      || {{:Sea Dragonscale Bracer}}  
+|-
+| [[Living Granite]]                     ||  [[The Wakening Land ]]       || 45      || {{:Gigantic Kromzek Pick}}                   
+|-
+| [[Lodizal Shell Shield Quest]]                     ||  [[Cobalt Scar ]]       || 50      || {{:Lodizal Shell Shield}}  
+|-
+| [[Mining Picks]]                     ||  [[Great Divide ]]       || 35      || {{:Coldain Velium-Pick}}                   
+|-
+| [[Natures Defender Quest]]                     ||  [[Plane of Growth ]]       || 55      || {{:Natures Defender}}  
+|-
+| [[Paladin Epic Quest]]                     ||  [[Plane of Fear ]]       || 46+      || {{:Fiery Defender}}                             
+|-
+| [[Paladin Kael Armor Quests]]                     ||  [[Kael Drakkel]]       || 50      || SET 
+|-
+| [[Paladin Plane of Sky Tests]]                     ||  [[Plane of Sky]]       || 46      || MANY 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys                    
+|-
+| [[Paladin Skyshrine Armor Quests]]                     ||  [[Skyshrine ]]       || 50      || SET 
+|-
+| [[Paladin Thurgadin Armor Quests]]                     ||  [[Thurgadin ]]       || 45      || SET                   
+|-
+| [[Peacekeeper Staff Quest]]                     ||  [[Erudin ]]       || 10+      || {{:Peacekeeper Staff}}  
+|-
+| [[Princess Lenya (Quest)|Princess Lenya]]                     ||  [[Northern Felwithe ]]       || 40      || {{:Silent Watch Shield}}                             
+|-
+| [[Request of the Strong]]                     ||  [[Temple of Veeshan ]]       || 55      || {{:Silver Mask of the Slayer}}  
+|-
+| [[Second Test of Kejaar]]                     ||  [[Kerra Island ]]       || 30      || {{:Sejah Ghulam Bracer}}                   
+|-
+| [[Sentry Xyrin Quest]]                     ||  [[Ocean of Tears ]]       || 50      || {{:Deepwater Harpoon}}  
+|-
+| [[Slaggak's Bounty]]                     ||  [[Kael Drakkel ]]       || 50      || {{:Cerulean Greaves}}, {{:Cerulean Vambraces}}                    
+|-
+| [[Test of Protection]]                     ||  [[Temple of Veeshan]]       || 55      || {{:Pauldrons of the Deep Flame}}  
+|-
+| [[Test of the Fire Storm]]                     ||  [[Temple of Veeshan]]       || 55      || {{:Cloak of the Fire Storm}}                    
+|-
+| [[Test of the Living Flame]]                     ||  [[Temple of Veeshan]]       || 55      || {{:Earring of the Living Flame}}  
+|-
+| [[Test of the Tooth]]                     ||  [[Temple of Veeshan]]       || 55      || {{:Serrated Dragon Tooth}}                   
+|-
+| [[The Bridge]]                     ||  [[Erudin]]       || 30+      || {{:Deep Six Cutlass}}  
+|-
+| [[The Falchion]]                     ||  [[Northern Felwithe ]]       || 22      || {{:Falchion of the Koada'Vie}}                             
+|-
+| [[The Fiery Avenger]]                     ||  [[Plane of Sky ]]       || 46      || {{:Fiery Avenger}}  
+|-
+| [[The Fishslayers]]                     ||  [[Rivervale ]]       || 04+      || {{:Rantho Rapier}}                   
+|-
+| [[The Gnoll Slayer]]                     ||  [[Qeynos Hills ]]       || 30      || {{:Gnoll Slayer}}  
+|-
+| [[The Grammar Manual]]                     ||  [[Iceclad Ocean ]]       || 35      || {{:Ice Forged Shackles}}    
+|-
+| [[The Pirate Ship]]                     ||  [[Western Wastes ]]       || 60      || {{:Breezeboot's Frigid Gnasher}}  
+|-
+| [[The Spirit of Garzicor]]                     ||  [[Skyshrine ]]       || 50      || {{:Ethereal Bladed Naginata}}                   
+|-
+| [[Tiny Skeletons]]                     ||  [[Ak'Anon ]]       || 15      || {{:Watchman Boots}}  
+|-
+| [[Trumpy Irontoe]]                     ||  [[South Kaladim ]]       || 10      || {{:Bloodforge Hammer}}   
+|-
+| [[Velium Retrieval]]                     ||  [[Skyshrine ]]       || 45      || {{:Bracer of Hammerfal}}  
+|-
+| [[Zimel's Blades (SoulFire)]]                     ||  [[North Freeport ]]       || 50      || {{:SoulFire}}   
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}                
+|}
+
+== Ranger Quests ==
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                      || Level    || Reward  
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}                                            
+|-
+| [[Ale for Beur]]||               [[East Freeport ]]       || 01      || {{:Used Merchants Gloves}}  
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}  
+|-
+| [[Aviak Chicks]]||               [[North Kaladim ]]       || 03      || Small Patchwork Armor Set  
+|-
+| [[Frostbite's Fish]]                 || [[North Qeynos ]]         || 03      || {{:Band of Rodcet Nife}} 
+|-
+| [[Merona's Brother]]                 || [[Surefall Glade]]         || 04      || {{:Band of Tunare}}, {{:Ring of Pine}}
+|-
+| [[Barnacle Breastplate Quest]]||               [[Erudin ]]       || 10      || {{:Barnacle Breastplate}} 
+|-
+| [[Blackburrow Brewers]]||               [[Surefall Glade ]]       || 12      || {{:Cloak of Jaggedpine}} 
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Bulthar Trunks]]||               [[Cobalt Scar ]]       || 50      || {{:Runed Othmir Spear}} 
+|-
+| [[Dragon Scales Quest]]||               [[Firiona Vie ]]       || 45      || {{:Wurmslayer}} 
+|-
+| [[Emerald Dragonscale Quest]]||               [[Cobalt Scar ]]       || 50      || {{:Emerald Dragonscale Tunic}} 
+|-
+| [[Fish Dinner]]||               [[Kerra Island ]]       || 13      || {{:Kerran Fishing Spear}} 
+|-
+| [[Friend of the Kin]]||               [[Skyshrine ]]       || 53      || {{:Dragon Tooth Choker}} 
+|-
+| [[Friend of the Tunarean Court]]||               [[The Wakening Land]]       || 50      || {{:Tunarean Signet Ring}} 
+|-
+| [[Helm of the Tracker Quest]]||               [[Plane of Growth ]]       || 46      || {{:Helm of the Tracker}} 
+|-
+| [[Ivy Etched Armor Quests]]||               [[Kithicor Forest ]]       || 35      || SET 
+|-
+| [[Jagged Pine Crook Staff]]||               [[Surefall Glade]]       || 05      || {{:Jaggedpine Crook}} 
+|-
+| [[Kelorek's Scales]]||               [[Sea Dragonscale Bracer]]       || 50      || {{:Sea Dragonscale Bracer}} 
+|-
+| [[Living Granite]]||               [[The Wakening Land ]]       || 45      || {{:Gigantic Kromzek Pick}} 
+|-
+| [[Mining Picks]]||               [[Great Divide ]]       || 35      || {{:Coldain Velium-Pick}} 
+|-
+| [[Morin's Sword]]||               [[Kithicor Forest ]]       || 28      || {{:Short Sword of Morin}} 
+|-
+| [[Rain Caller Quest]]||               [[Greater Faydark ]]       || 35      || {{:Rain Caller}} 
+|-
+| [[Ranger Epic Quest]]||               [[Burning Woods ]]       || 46+      || {{:Swiftwind}}, {{:Earthcaller}} 
+|-
+| [[Ranger Kael Armor Quests]]||               [[Kael Drakkel]]       || 50      || SET 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys  
+|-
+| [[Ranger Plane of Sky Tests]]||               [[Plane of Sky]]       || 46      || MANY
+|-
+| [[Ranger Skyshrine Armor Quests]]||               [[Skyshrine ]]       || 50      || SET
+|-
+| [[Ranger Thurgadin Armor Quests]]||               [[Thurgadin ]]       || 45      || SET
+|-
+| [[Request of the Strong]]||               [[Temple of Veeshan ]]       || 55      || {{:Silver Mask of the Slayer}} 
+|-
+| [[Second Test of Kejaar]]||               [[Kerra Island ]]       || 30      || {{:Sejah Ghulam Bracer}}                     
+|-
+| [[Test of Protection]]||               [[Temple of Veeshan ]]       || 55      || {{:Pauldrons of the Deep Flame}} 
+|-
+| [[Test of the Fire Storm]]||               [[Temple of Veeshan]]       || 55      || {{:Cloak of the Fire Storm}}                     
+|-
+| [[Test of the Living Flame]]||               [[Temple of Veeshan]]       || 55      || {{:Earring of the Living Flame}} 
+|-
+| [[Test of the Tooth]]||               [[Temple of Veeshan]]       || 55      || {{:Serrated Dragon Tooth}}                     
+|-
+| [[The Gnoll Slayer]]||               [[Qeynos Hills]]       || 30      || {{:Gnoll Slayer}} 
+|-
+| [[The Grammar Manual]]||               [[Iceclad Ocean ]]       || 35      || {{:Ice Forged Shackles}}                     
+|-
+| [[The Pirate Ship]]||               [[Western Wastes ]]       || 60      || {{:Breezeboot's Frigid Gnasher}} 
+|-
+| [[The Spirit of Garzicor]]||               [[Skyshrine ]]       || 40      || {{:Ethereal Bladed Naginata}}                     
+|-
+| [[Tiny Skeletons]]||               [[Ak'Anon]]       || 15      || {{:Watchman Boots}} 
+|-
+| [[Trueshot Longbow Quest]]||               [[Greater Faydark ]]       || 8      || {{:Trueshot Longbow}}
+|-
+| [[Trumpy Irontoe]]||               [[South Kaladim ]]       || 10      || {{:Bloodforge Hammer}} 
+|-
+| [[Velium Retrieval]]||               [[Skyshrine ]]       || 45      || {{:Bracer of Hammerfal}}, {{:Shattering Hammer}}
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Rogue Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                    || Starts In                   || Level    || Reward   
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}                                           
+|-
+| [[The Seax]]                 || [[Halas]]          || 01    || {{:Seax}}
+|-
+| [[Ale for Beur]]         ||  [[East Freeport ]]       || 01      || {{:Used Merchants Gloves}}  
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}  
+|-
+| [[Aviak Chicks]]         ||  [[North Kaladim ]]      || 03      || Small Patchwork Armor Set                   
+|-
+| [[Death of Lyda Nasin]]  ||  [[Neriak Third Gate]]Evil       || 04     || {{:Cinctured Whip}}  
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}}
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Demise of Blizzent]]   ||  [[Kael Drakkel ]]      || 50      || {{:Dragonhide Belt}} 
+|-
+| [[Emerald Dragonscale Quest]]  ||  [[Cobalt Scar ]]       || 50      || {{:Emerald Dragonscale Tunic}}  
+|-
+| [[Fish Dinner]]   ||  [[Kerra Island ]]      || 13      || {{:Kerran Fishing Spear}} 
+|-
+| [[Friend of the Kin]]  ||  [[Skyshrine ]]       || 53      || {{:Dragon Tooth Choker}}  
+|-
+| [[Gnoll Fur]]   ||  [[Halas]]      || 03      || {{:Fang of the Wolf}} 
+|-
+| [[Kilij's Plans]]  ||  [[Greater Faydark ]]       || 26      || {{:Brazen Brass Kilij}}  
+|-
+| [[Mammoth Calf Hides]]   ||  [[Halas ]]      || 10      || SET 
+|-
+| [[Miner's Cap]]  ||  [[North Kaladim ]]       || 02+      || {{:Miners Cap 628}}  
+|-
+| [[Miners Pick]]   ||  [[North Kaladim ]]      || 18      || {{:Mining Pick 628}} 
+|-
+| [[Mining Picks]]  ||  [[Great Divide ]]       || 35      || {{:Coldain Velium-Pick}}  
+|-
+| [[Parrying Pick Quest]]   ||  [[North Kaladim ]]      || 08      || {{:Parrying Pick 628}} 
+|-
+| [[Request of the Strong]]  ||  [[Temple of Veeshan ]]       || 55      || {{:Silver Mask of the Slayer}}  
+|-
+| [[Rogue Epic Quest]]   ||  [[Qeynos Aqueducts ]]      || 46+      || {{:Ragebringer}} 
+|-
+| [[Rogue Kael Armor Quests]]  ||  [[Kael Drakkel ]]       || 50      || SET
+|-
+| [[Rogue Plane of Sky Tests]]   ||  [[Plane of Sky]]      || 46      || MANY 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys  
+|-
+| [[Rogue Redemption]]  ||  [[Temple of Solusek Ro ]]       || 30      || {{:Burning Rapier}}  
+|-
+| [[Rogue Skyshrine Armor Quests]]   ||  [[Skyshrine ]]      || 50      || SET
+|-
+| [[Rogue Thurgadin Armor Quests]]  ||  [[Thurgadin ]]       || 45      || SET  
+|-
+| [[Scout Blade]]   ||  [[Greater Faydark ]]      || 10      || {{:Scouts Blade}} 
+|-
+| [[Scouts Cape Quest]]  ||  [[Greater Faydark ]]       || 01      || {{:Scouts Cape}}  
+|-
+| [[Scouts Leggings]]   ||  [[Greater Faydark ]]      || 20      || {{:Silvermesh Leggings}} 
+|-
+| [[Second Test of Kejaar]]  ||  [[Kerra Island ]]       || 30      || {{:Sejah Ghulam Bracer}}  
+|-
+| [[Spear Delivery]]   ||  [[Kael Drakkel ]]      || 45      || {{:Bracer of Midnight}} 
+|-
+| [[Stanos' Head]]  ||  [[Kithicor Forest ]]       || 50      || {{:Guise of the Coercer}}  
+|-
+| [[Test of Protection]]   ||  [[Temple of Veeshan ]]      || 55      || {{:Pauldrons of the Deep Flame}} 
+|-
+| [[Test of the Fire Storm]]  ||  [[Temple of Veeshan ]]       || 55      || {{:Cloak of the Fire Storm}}  
+|-
+| [[Test of the Living Flame]]   ||  [[Temple of Veeshan ]]      || 55      || {{:Earring of the Living Flame}} 
+|-
+| [[Test of the Tooth]]  ||  [[Temple of Veeshan]]       || 55      || {{:Serrated Dragon Tooth}}  
+|-
+| [[The Bloody Shank]]   ||  [[High Keep ]]      || 18      || {{:Bloody Shank}}, {{:Scouts Blade}}
+|-
+| [[The Gnoll Slayer]]  ||  [[Qeynos Hills ]]       || 30      || {{:Gnoll Slayer}}  
+|-
+| [[The Grammar Manual]]   ||  [[Iceclad Ocean ]]      || 35      || {{:Ice Forged Shackles}} 
+|-
+| [[The Pirate Ship]]  ||  [[Western Wastes ]]       || 60      || {{:Breezeboot's Frigid Gnasher}}  
+|-
+| [[Tiny Skeletons]]   ||  [[Ak'Anon]]      || 15      || {{:Watchman Boots}} 
+|-
+| [[Wenglawks The Traitor]]  ||  [[Kael Drakkel ]]       || 45      || {{:Frozen Shard}}  
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Shadow Knight Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                      || Level    || Reward                                            
+|-
+| [[Aviak Chicks]]||               [[North Kaladim ]]       || 03      || Small Patchwork Armor Set  
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Azzar's Dreadful Hat, Part 2]]||               [[Paineel]]       || 20      || {{:Dreadful Cap}} 
+|-
+| [[Health Potion]]                 || [[Kerra Island]]          || 20    || {{:Bone Talisman}}  
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[The Bayle List]]                || [[Qeynos Aqueducts]]          || 20     || {{:Rage War Maul}}
+|-
+| [[Barnacle Breastplate Quest]]||               [[Erudin ]]       || 10      || {{:Barnacle Breastplate}} 
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Bulthar Trunks]]||               [[Cobalt Scar ]]       || 50      || {{:Runed Othmir Spear}} 
+|-
+| [[Crusader's Tests]]||               [[East Cabilis ]]       || 01+      || {{:Greenmist}} 
+|-
+| [[Darkforge Armor Quests]]||               [[Temple of Solusek Ro ]]       || 33   || SET 
+|-
+| [[Death of Lyda Nasin]]||               [[Neriak Third Gate]]       || 4      || {{:Cinctured Whip}} 
+|-
+| [[Demise of Blizzent]]||               [[Kael Drakkel]]       || 50      || {{:Dragonhide Belt}} 
+|-
+| [[Dragon Scales Quest]]||               [[Firiona Vie ]]       || 45      || {{:Wurmslayer}} 
+|-
+| [[Dreadscale Armor]]||               [[East Cabilis ]]       || 23      || SET
+|-
+| [[Emerald Dragonscale Quest]]||               [[Cobalt Scar ]]       || 50      || {{:Emerald Dragonscale Tunic}} 
+|-
+| [[Experienced Courier]]||               [[Paineel ]]       || 31      || {{:Battle Worn Halberd}} 
+|-
+| [[Fish Dinner]]||               [[Kerra Island]]       || 13      || {{:Kerran Fishing Spear}} 
+|-
+| [[Friend of the Kin]]||               [[Skyshrine]]       || 53      || {{:Dragon Tooth Choker}} 
+|-
+| [[Garath's Weapons to Trade]]||               [[Eastern Wastes ]]       || 55      || {{:Primal Velium Knight's Sword}}, {{:Priceless Velium Knight's Sword}} 
+|-
+| [[Greenblood Shadowknight Tunic]]||               [[Oggok ]]       || 3      || {{:Black Shadow Tunic}} 
+|-
+| [[HEHE Meat Quest]]||               [[Grobb ]]       || 20      || {{:Grobb Cleaver}} 
+|-
+| [[Kelorek's Scales]]||               [[Cobalt Scar ]]       || 50      || {{:Sea Dragonscale Bracer}} 
+|-
+| [[Living Granite]]||               [[The Wakening Land]]       || 45      || {{:Gigantic Kromzek Pick}} 
+|-
+| [[Lodizal Shell Shield Quest]]||               [[Cobalt Scar ]]       || 50      || {{:Lodizal Shell Shield}} 
+|-
+| [[Mining Picks]]||               [[Great Divide ]]       || 35      || {{:Coldain Velium-Pick}} 
+|-
+| [[Request of the Strong]]||               [[Temple of Veeshan ]]       || 55      || {{:Silver Mask of the Slayer}} 
+|-
+| [[Ridossan's Spirit]]||               [[Stonebrunt Mountains ]]       || 25      || {{:Soulfiend Lance}} 
+|-
+| [[Second Test of Kejaar]]||               [[Kerra Island ]]       || 30      || {{:Sejah Ghulam Bracer}} 
+|-
+| [[Shadow Knight Epic Quest]]||               [[The Overthere ]]       || 46+      || {{:Innoruuk's Curse}} 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys  
+|-
+| [[Shadow Knight Plane of Sky Tests]]||               [[Plane of Sky]]       || 46      || MANY 
+|-
+| [[Shadowknight Kael Armor Quests]]||               [[Kael Drakkel ]]       || 50      || SET
+|-
+| [[Shadowknight Skyshrine Armor Quests]]||               [[Skyshrine ]]       || 50      || SET
+|-
+| [[Shadowknight Thurgadin Armor Quests]]||               [[Thurgadin ]]       || 45      || SET 
+|-
+| [[Sir Lindeal's Testimony]]||               [[Neriak Third Gate ]]       || 15      || {{:Cloak of the Undead Eye}} 
+|-
+| [[Slaggak's Bounty]]||               [[Kael Drakkel]]       || 40      || {{:Cerulean Greaves}},  {{:Cerulean Vambraces}}
+|-
+| [[Test of Protection]]||               [[Temple of Veeshan ]]       || 55     || {{:Pauldrons of the Deep Flame}} 
+|-
+| [[Test of the Fire Storm]]||               [[Temple of Veeshan]]       || 55      || {{:Cloak of the Fire Storm}} 
+|-
+| [[Test of the Living Flame]]||               [[Temple of Veeshan]]       || 55      || {{:Earring of the Living Flame}} 
+|-
+| [[Test of the Tooth]]||               [[Temple of Veeshan]]       || 55      || {{:Serrated Dragon Tooth}} 
+|-
+| [[The Etched Stone]]||               [[Rathe Mountains ]]       || 50      || {{:Pulsating Hyacinth Telesm}} 
+|-
+| [[The Gnoll Slayer]]||               [[Qeynos Hills]]       || 30      || {{:Gnoll Slayer}} 
+|-
+| [[The Grammar Manual]]||               [[Iceclad Ocean]]       || 35      || {{:Ice Forged Shackles}} 
+|-
+| [[The Mighty Garou]]||               [[Iceclad Ocean ]]       || 35      || {{:Garou Bone Club}} 
+|-
+| [[The Pirate Ship]]||               [[Western Wastes]]       || 60      || {{:Breezeboot's Frigid Gnasher}} 
+|-
+| [[The Spirit of Garzicor]]||               [[Skyshrine ]]       || 50      || {{:Ethereal Bladed Naginata}} 
+|-
+| [[Thex Mallet Quest]]||               [[Neriak Third Gate]]       || 20      || {{:Thex Mallet}}, {{:Reaper of the Dead}}
+|-
+| [[Tiny Skeletons]]||               [[Ak'Anon]]       || 15      || {{:Watchman Boots}} 
+|-
+| [[Trumpy Irontoe]]||               [[South Kaladim]]       || 10      || {{:Bloodforge Hammer}} 
+|-
+| [[Velium Retrieval]]||               [[Skyshrine ]]       || 45      || {{:Bracer of Hammerfal}} 
+|-
+| [[Visceral Dagger]]||               [[East Cabilis ]]       || 30      || {{:The Visceral Dagger}} 
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Shaman Quests ==
+{| class="eoTable2 sortable" style="width:60em;"
+
+! Quest                                  || Starts In                   || Level  || Reward                               
+|-
+| [[Aviak Chicks]]                       || [[North Kaladim ]]          || 03      || Small Patchwork Armor Set   
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}               
+|-
+| [[Azzar's Dreadful Hat, Part 2]]       || [[Paineel]]              || 20      || {{:Dreadful Cap}}  
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}
+|-
+| [[Barnacle Breastplate Quest]]               || [[Erudin ]]      || 12      || {{:Barnacle Breastplate}}  
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}}          
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}}         
+|-
+| [[Bulthar Trunks]]               || [[Cobalt Scar]]      || 50      || {{:Runed Othmir Spear}}  
+|-
+| [[Captain Nalot's Triple Strength Rum]]               || [[Iceclad Ocean]]      || 40      || {{:Warden Symbol of Tunare }}                   
+|-
+| [[Cazic Thule Symbol Quests]]                     || [[Paineel]]          || 01+      || {{:Initiate Symbol of Cazic Thule}}  
+|-
+| [[Demise of Blizzent]]                     || [[Kael Drakkel]]          || 50      || {{:Dragonhide Belt}}  
+|-
+| [[Emerald Dragonscale Quest]]                     || [[Cobalt Scar]]          || 50      || {{:Emerald Dragonscale Tunic}}  
+|-
+| [[Fish Dinner]]                     || [[Kerra Island]]          || 13      || {{:Kerran Fishing Spear}}  
+|-
+| [[Gnoll Fur]]                     || [[Halas ]]          || 03      || {{:Fang of the Wolf}}  
+|-
+| [[Goblin Caster Necklace]]                     || [[Halas ]]          || 05      || {{:Gavel of Justice}}  
+|-
+| [[Indaria's Doll]]                     || [[South Qeynos ]]          || 15      || {{:Velvet Choker}}  
+|-
+| [[Innoruuk Symbol Quests]] - Evil                     || [[Neriak Third Gate]]          || 5+      || {{:Initiate Symbol of Innoruuk}}  
+|-
+| [[Kelorek's Scales]]                     || [[Cobalt Scar]]          || 50      || {{:Sea Dragonscale Bracer}}  
+|-
+| [[Lodizal Shell Shield Quest]]                     || [[Cobalt Scar]]          || 10      || {{:Lodizal Shell Shield}}  
+|-
+| [[Paw of Opolla Quest]]                     || [[Qeynos Aqueducts]]          || 29      || {{:Paw of Opolla}}  
+|-
+| [[Rallos Zek Symbol Quests]] - Evil                     || [[Oggok]]          || 10      || {{:Initiate Symbol of Rallos Zek}}  
+|-
+| [[Request of the Arcane]]                     || [[Temple of Veeshan]]          || 55      || {{:Mask of the Silver Eyes}}  
+|-
+| [[Scaled Mystic Armor Quests]] - Evil                     || [[East Cabilis]]          || 20+      || {{:Scaled Mystic Boots}}, {{:Scaled Mystic Bracers}} , {{:Scaled Mystic Vambraces}} , {{:Scaled Mystic Breastplate}} , {{:Scaled Mystic Cloak}} , {{:Scaled Mystic Gauntlets}} , {{:Scaled Mystic Greaves}}, {{:Scaled Mystic Helm}} 
+|-
+| [[Shaman Epic Quest]]                     || Various          || 46+      || {{:Spear of Fate}}  
+|-
+| [[Shaman Kael Armor Quests]]                     || [[Kael Drakkel]]          || 50      || 
+<ul><li>  {{:Spirit Caller's Breastplate}}
+</li><li> {{:Spirit Caller's Vambraces}}
+</li><li> {{:Spirit Caller's Boots}}
+</li><li> {{:Spirit Caller's Bracer}}
+</li><li> {{:Spirit Caller's Helm}}
+</li><li> {{:Spirit Caller's Gauntlets}}
+</li><li> {{:Spirit Caller's Greaves}}
+</li></ul> 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys   
+|-
+| [[Shaman Plane of Sky Tests]]                     || [[Plane of Sky]]          || 46      || MANY  
+|-
+| [[Shaman Skull Quests]]                     || [[East Cabilis ]]          || 05+      || <ul><li> {{:Iron Cudgel of the Petitioner}} (#0)
+</li><li> {{:Iron Cudgel of the Clairvoyant}} (#1)
+</li><li> {{:Iron Cudgel of the Seer}} (#2)
+</li><li> {{:Iron Cudgel of the Mystic}} (#3)
+</li><li> {{:Iron Cudgel of the Prophet}} (#4)
+</li><li> {{:Iron Cudgel of the Channeler}} (#5)
+</li></ul> 
+|-
+| [[Shaman Skyshrine Armor Quests]]                     || [[Skyshrine ]]          || 50      || <ul><li>  {{:Wolf Caller's Breastplate}}
+</li><li> {{:Wolf Caller's Vambraces}}
+</li><li> {{:Wolf Caller's Boots}}
+</li><li> {{:Wolf Caller's Bracer}}
+</li><li> {{:Wolf Caller's Helm}}
+</li><li> {{:Wolf Caller's Gauntlets}}
+</li><li> {{:Wolf Caller's Greaves}}
+</li></ul>
+|-
+| [[Shaman Thurgadin Armor Quests]]                     || [[Thurgadin]]          || 45      || <ul><li>  {{:Rune Crafter's Boots}}
+</li><li> {{:Rune Crafter's Bracer}}
+</li><li> {{:Rune Crafter's Helm}}
+</li><li> {{:Rune Crafter's Gauntlets}}
+</li><li> {{:Rune Crafter's Greaves}}
+</li><li> {{:Rune Crafter's Vambraces}}
+</li><li> {{:Rune Crafter's Breastplate}}
+</li></ul> 
+|-
+| [[Shaman's Velium Sleeves]]                     || [[Thurgadin]]          || 45      || {{:Rune Crafter's Vambraces}}  
+|-
+| [[Testament of Vanear Quest]]                     || [[North Qeynos]]          || 15+      || {{:Testament of Vanear}}  
+|-
+| [[The Family Chest Straps]]              || [[Kael Drakkel]]          || 50      || {{:Flayed Coldain-Skin Leggings}}  
+|-
+| [[The Mighty Garou]]                     || [[Iceclad Ocean]]          || 35      || {{:Garou Bone Club}}  
+|-
+| [[The Mighty Snowfang Hero]]                     || [[Iceclad Ocean]]          || 35      || {{:Icy Totem of Protection}}  
+|-
+| [[The Spirit of Garzicor]]                     || [[Skyshrine ]]          || 50      || {{:Pitted Iron Ring}}, {{:Sanctum Guardian's Earring}}   
+|-
+| [[The Telescope]]                      || [[Steamfont Mountains]]          || 30      || {{:Staff of the Observers}}  
+|-
+| [[Tiny Skeletons]]                     || [[Ak'Anon ]]          || 15      || {{:Watchman Boots}}  
+|-
+| [[Totemic Armor Quests]]                     || [[Lake Rathetear ]]          || 20      || <ul><li>  {{:Totemic Breastplate}}
+</li><li> {{:Totemic Cloak}}
+</li><li> {{:Totemic Helm}}
+</li><li> {{:Totemic Greaves}}
+</li><li> {{:Totemic Vambraces}}
+</li><li> {{:Totemic Boots}}
+</li><li> {{:Totemic Gauntlets}}
+</li><li> {{:Totemic Bracers}}
+</li></ul>
+|-
+| [[Tribunal Initiate]]                     || [[Halas]]          || 01      || {{:Initiate Symbol of the Tribunal}}  
+|-
+| [[Trumpy Irontoe]]                     || [[South Kaladim ]]          || 10      || {{:Bloodforge Hammer}}  
+|-
+| [[Urako's Big Mistake]]                     || [[Grobb]]          || 01+      || {{:Kaglari Mana Doll}}  
+|-
+| [[Velium Retrieval]]                     || [[Skyshrine]]          || 45      || {{:Bracer of Hammerfal}}, {{:Shattering Hammer}}  
+|-
+| [[Wisdom - The Long Battle]]                     || [[Temple of Veeshan ]]          || 55      || {{:Boots of Silent Striding}}  
+|-
+| [[Wisdom - The Short Battle]]                     || [[Temple of Veeshan ]]          || 55      || {{:White Dragon Idol}} 
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}  
+|}
+
+== Warrior Quests ==
+
+{| class="eoTable2 sortable" style="width:60em;"
+! Quest                                || Starts In              || Level   || Reward    
+|-
+| [[Hurrieta's Tunic Quest]]           || [[South Qeynos ]]         || 01      || {{:Rat Shaped Ring}}                             
+|-
+| [[Ale for Beur]]                 || [[East Freeport]]          || 01      || {{:Used Merchants Gloves}} 
+|-
+| [[Leatherfoot Raiders]]               || [[Rivervale]]              || 01      || {{:Leatherfoot Raider Skullcap}}                    
+|-
+| [[Aviak Chicks]]                 || [[North Kaladim]]          || 03      || Small Patchwork Armor Set 
+|-                 
+| [[Red V Clockwork]]                 || [[Ak'Anon]]          || 08      || {{:Bull Smasher}}, {{:Iony's Absorber}}  
+|-
+| [[Scarab Armor Quests]]     || [[South Kaladim]]         || 08      || {{:Small Scarab Breastplate}}   
+|-
+| [[Screaming Mace Quest]]                 || [[Crushbone]]          || 18      || {{:Prayer Cloth of Tunare}} , {{:Screaming Mace}}
+|-
+| [[Azzar's Dreadful Hat, Part 2]]                 || [[Paineel]]          || 20      || {{:Dreadful Cap}}    
+|-
+| [[Shakey's Stuffing]]                 || [[Rivervale]]          || 20    || {{:Belt of the River}}, {{:Wee Harvester}} 
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 20     || {{:Karana's Tear}}   
+|-
+| [[Goblin Battlemasters]]             || [[Firiona Vie ]]          || 20     || 
+<ul><li>  {{:Faydark Ringmail Boots}}
+</li><li> {{:Faydark Ringmail Bracer}}
+</li><li> {{:Faydark Ringmail Coat}}
+</li><li> {{:Faydark Ringmail Coif}}
+</li><li> {{:Faydark Ringmail Collar}}
+</li><li> {{:Faydark Ringmail Gloves}}
+</li><li> {{:Faydark Ringmail Mantle}}
+</li><li> {{:Faydark Ringmail Pants}}
+</li><li> {{:Faydark Ringmail Skirt}}
+</li><li> {{:Faydark Ringmail Sleeves}}
+</li></ul>             
+|-
+| [[Barnacle Breastplate Quest]]                 || [[Erudin]]          || 10      || {{:Barnacle Breastplate}} 
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}}    
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40+     || {{:Key to Charasis}} 
+|-                  
+| [[Bulthar Trunks]]                 || [[Cobalt Scar]]          || 50      || {{:Runed Othmir Spear}}   
+|-                 
+| [[Crafted Armor Quests]]                 || [[Southern Karana]]          || 25     || <ul><li>  {{:Crafted Breastplate}}
+</li><li> {{:Crafted Plate Boots}}
+</li><li> {{:Crafted Vambraces}}
+</li><li> {{:Crafted Gauntlets}}
+</li><li> {{:Crafted Bracers}}
+</li><li> {{:Crafted Greaves}}
+</li><li> {{:Crafted Helm}}
+</li><li> {{:Crafted Pauldron}}
+</li></ul>
+ 
+|-
+| [[Demise of Blizzent]]                 || [[Kael Drakkel ]]          || 50      || {{:Dragonhide Belt}}   
+|-
+| [[Dragon Scales Quest]]                 || [[Firiona Vie]]          || 45      || {{:Wurmslayer}}   
+|-
+| [[Emerald Dragonscale Quest]]                 || [[Cobalt Scar]]          || 50      || {{:Emerald Dragonscale Tunic}}   
+|-
+| [[Eye of Stormhammer]]                 || [[South Kaladim ]]          || 20     || {{:Avenger Battle Axe}}   
+|-
+| [[Fish Dinner]]                 || [[Kerra Island]]          || 13    || {{:Kerran Fishing Spear}}                   
+|-
+| [[Friend of the Kin]]                 || [[Skyshrine]]          || 53     || {{:Dragon Tooth Choker}}   
+|-
+| [[Gnoll Fur]]                 || [[Halas]]          || 04    || {{:Fang of the Wolf}}                     
+|-
+| [[HEHE Meat Quest]]                 || [[Grobb]]          || 20     || {{:Grobb Cleaver}}    
+|-                  
+| [[Help Hergor Get Fatter]]                 || [[Grobb]]          || 01    || Random pieces 
+|-                 
+| [[Kelorek's Scales]]                 || [[Cobalt Scar]]          || 50      || {{:Sea Dragonscale Bracer}}  
+|-
+| [[Kilij's Plans]]                 || [[Greater Faydark]]          || 26    || {{:Brazen Brass Kilij}}   
+|-
+| [[Langseax Quest]]                 || [[Halas]]          || 20     || <ul><li>  {{:Langseax}}
+</li><li> {{:Langseax of the Wolves}}
+</li></ul>  
+|-
+| [[Living Granite]]                 || [[The Wakening Land]]          || 45    || {{:Gigantic Kromzek Pick}}   
+|-
+| [[Lodizal Shell Shield Quest]]                 || [[Cobalt Scar]]          || 50      || {{:Lodizal Shell Shield}}   
+|-
+| [[Mining Picks]]                 || [[Great Divide ]]          || 35    || {{:Coldain Velium-Pick}}                   
+|-
+| [[Ogre Heads]]                 || [[South Kaladim]]          || 10    || <ul><li>  {{:Bloodforge Armplates}}
+</li><li> {{:Bloodforge Boots}}
+</li><li> {{:Bloodforge Bracers}}
+</li><li> {{:Bloodforge Gauntlets}}
+</li><li> {{:Bloodforge Helm}}
+</li><li> {{:Bloodforge Legplates}}
+</li><li> {{:Bloodforge Mail}}
+</li></ul>
+|-
+| [[Request of the Strong]]                 || [[Temple of Veeshan ]]          || 55     || {{:Silver Mask of the Slayer}}                     
+|-
+| [[Second Test of Kejaar]]                 || [[Kerra Island]]          || 30    || {{:Sejah Ghulam Bracer}}    
+|-                  
+| [[Slaggak's Bounty]]                 || [[Kael Drakkel]]          || 50      || <ul><li>  {{:Cerulean Greaves}}
+</li><li> {{:Cerulean Vambraces}}
+</li></ul>   
+|-                 
+| [[Steel Warrior Initiation]]                 || [[South Qeynos]]          || 06    || {{:Steel Warrior Bracer}}  
+|-
+| [[Test of Protection]]                 || [[Temple of Veeshan]]          || 55     || {{:Pauldrons of the Deep Flame}}   
+|-
+| [[Test of the Fire Storm]]                 || [[Temple of Veeshan]]          || 55     || {{:Cloak of the Fire Storm}}   
+|-
+| [[Test of the Living Flame]]                 || [[Temple of Veeshan]]          || 55     || {{:Earring of the Living Flame}}   
+|-
+| [[Test of the Tooth]]                 || [[Temple of Veeshan]]          || 55     || {{:Serrated Dragon Tooth}}   
+|-
+| [[The Fishslayers]]                 || [[Rivervale]]          || 04+   || {{:Rantho Rapier}}                     
+|-
+| [[The Gnoll Slayer]]                 || [[Qeynos Hills]]          || 30    || {{:Gnoll Slayer}}    
+|-                  
+| [[The Grammar Manual]]                 || [[Iceclad Ocean]]          || 35    || {{:Ice Forged Shackles}}   
+|-                 
+| [[The Pirate Ship]]                 || [[Western Wastes]]          || 60     || {{:Breezeboot's Frigid Gnasher}}  
+|-
+| [[The Seax]]                 || [[Halas]]          || 01    || {{:Seax}}   
+|-
+| [[The Spirit of Garzicor]]                 || [[Skyshrine]]          || 50      || {{:Ethereal Bladed Naginata}}   
+|-
+| [[Tiny Skeletons]]                 || [[Ak'Anon]]          || 15    || {{:Watchman Boots}}   
+|-
+| [[Trooper Scale Armor]]                 || [[The Overthere ]]          || 25   || <ul>
+<li>  {{:Trooper Scale Boots}} Quest Giver: Drixiv Arcut
+</li>
+<li> {{:Trooper Scale Bracers}} Quest Giver: Drixiv Arcut
+</li>
+<li> {{:Trooper Scale Breastplate}} Quest Giver: Xlixinar Arcut
+</li>
+<li> {{:Trooper Scale Gauntlets}} Quest Giver: Drixiv Arcut
+</li>
+<li> {{:Trooper Scale Greaves}} Quest Giver: Drixiv Arcut
+</li>
+<li> {{:Trooper Scale Helm}} Quest Giver: Xlixinar Arcut
+</li>
+<li> {{:Trooper Scale Pauldron}} Quest Giver: Xlixinar Arcut
+</li>
+<li> {{:Trooper Scale Vambraces}} Quest Giver: Xlixinar Arcut
+</li>
+</ul> 
+|-                  
+| [[Trumpy Irontoe]]                 || [[South Kaladim]]          || 10     || {{:Bloodforge Hammer}}   
+|-                 
+| [[Velium Retrieval]]                 || [[Skyshrine]]          || 45    || {{:Bracer of Hammerfal}}  
+|-
+| [[Vkjor's Major Task]]                 || [[Kael Drakkel]]          || 50      || {{:Silver Steel Gauntlets}}   
+|-
+| [[Warrior Epic Quest]]                 || [[East Freeport]]          || 46+   || <ul><li> {{:Jagged Blade of War}} (2H)
+</li><li> {{:Blade of Tactics}} (1H)
+</li><li> {{:Blade of Strategy}} (1H)
+</li></ul>
+|-
+| [[Warrior Kael Armor Quests]]                 || [[Kael Drakkel ]]          || 50      || <ul><li>  {{:Warlord's Breastplate}}
+</li><li> {{:Warlord's Crown}}
+</li><li> {{:Warlord's Greaves}}
+</li><li> {{:Warlord's Gauntlets}}
+</li><li> {{:Warlord's Bracer}}
+</li><li> {{:Warlord's Boots}}
+</li><li> {{:Warlord's Vambraces}}
+</li></ul>
+|-
+| [[Warrior Pike Quests]]                 || [[East Cabilis]]          || 01+   || <ul><li>  {{:Partisan's Pike}} (#0)
+</li><li> {{:Militia's Pike}} (#1)
+</li><li> {{:Footman's Pike}} (#2)
+</li><li> {{:Soldier's Pike}} (#3)
+</li><li> {{:Trooper's Pike}} (#4)
+</li><li> {{:Legionnaire's Mancatcher}} (#5)  
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys   
+|-                  
+| [[Warrior Plane of Sky Tests]]                 || [[Plane of Sky]]          || 46    || MANY
+|-                 
+| [[Warrior Skyshrine Armor Quests]]                 || [[Skyshrine]          || 50      || <ul><li>  {{:Breastplate of the Myrmidon}}
+</li><li> {{:Vambraces of the Myrmidon}}
+</li><li> {{:Boots of the Myrmidon}}
+</li><li> {{:Bracer of the Myrmidon}}
+</li><li> {{:Gauntlets of the Myrmidon}}
+</li><li> {{:Greaves of the Myrmidon}}
+</li><li> {{:Crown of the Myrmidon}}</li></ul> 
+|-
+| [[Warrior Thurgadin Armor Quests]]                 || [[Thurgadin]]          || 50      || <ul><li>  {{:Champion's Vambraces}}
+</li><li> {{:Champion's Boots}}
+</li><li> {{:Champion's Bracer}}
+</li><li> {{:Champion's Gauntlets}}
+</li><li> {{:Champion's Greaves}}
+</li><li> {{:Champion's Crown}}
+</li><li> {{:Champion's Breastplate}}</li></ul>
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|}
+
+== Wizard Quests ==
+{| class="eoTable2 sortable" style="width:60em;"
+! Quest                                  || Starts In                      || Level    || Reward         
+|-
+| [[Ice Goblin Beads]]                || [[Erudin Palace]]       || 01      || {{:Servant's Staff}}                   
+|-
+| [[Lynuga's Gem Collection]]                      || [[Innothule Swamp]]       || 01      || {{:Ivandyr's Hoop}}  
+|-
+| [[Exotic Drinks]]             || [[Oggok]]       || 04+      || {{:Stein of Moggok}}
+|-
+| [[Indaria's Doll]]                || [[South Qeynos]]       || 15      || {{:Velvet Choker}}  
+|-
+| [[Tesch Val Scrolls]]                || [[South Qeynos]]          || 24     || {{:Karana's Tear}}
+|-
+| [[Qeynos Badge Quests]]              || [[North Qeynos]]          || 24     || {{:Investigator's Badge}}, {{:Interrogator's Badge}}, {{:Researcher's Badge}}
+|-
+| [[Weeping Wand Quest]]      || [[Temple of Solusek Ro]]     || 25      || {{:Weeping Wand}}
+|-
+| [[Acumen Mask Quest]]           || [[Temple of Solusek Ro]]         || 26      || {{:Acumen Mask}}                                     
+|-
+| [[Runescale Cloak Quest]]             || [[Temple of Solusek Ro]]       || 28      || {{:Runescale Cloak}}
+|-                  
+| [[Hollow Skull Quest]]                || [[Western Plains of Karana]]       || 30      || {{:Jeweled Skull}}  
+|-
+| [[The Mystic Cloak]]                   || [[Northern Felwithe ]]       || 30+      || {{:Mystic Cloak}}                   
+|-
+| [[The Telescope]]                      || [[Steamfont Mountains ]]       || 30      || {{:Staff of the Observers}}  
+|-
+| [[Wizard Skyshrine Armor Quests]]    || [[Skyshrine]]       || 30      || SET 
+|-
+| [[Tishan's Kilt Quest]]      || [[Temple of Solusek Ro]]     || 32      || {{:Tishan's Kilt}}
+|-
+| [[Darkwood Staff Quest]]              || [[Kurn's Tower]]          || 35    || {{:Darkwood Staff}}
+|-
+| [[Staff of Temperate Flux Quest]]   || [[Temple of Solusek Ro ]]    || 35     || {{:Staff of Temperate Flux}}                 
+|-
+| [[Key to Cobalt Scar]]               || [[Skyshrine ]]            || 35     || {{:Shrine Key}} 
+|-
+| [[Tarton's Wheel]]      || [[Everfrost Peaks]]     || 35      || {{:Staff of the Wheel}}
+|-
+| [[Captain Nalot's Triple Strength Rum]]|| [[Iceclad Ocean]]       || 40      || {{:Rough Silver Chain}}  
+|-
+| [[Frostbite's Fish]]      || [[North Qeynos ]]         || 40      || {{:Band of Rodcet Nife}} 
+|-
+| [[Key to Charasis Quest]]               || [[Swamp of No Hope ]]         || 40     || {{:Key to Charasis}} 
+|-
+| [[Wizard Thurgadin Armor Quests]]    || [[Thurgadin ]]       || 45      || SET
+|-
+| [[Wizard Plane of Sky Tests]]        || [[Plane of Sky]]       || 46+      || MANY 
+|-
+| [[Plane of Sky Keys]]                  || [[Plane of Sky]]            || 46+    || Plane of Sky Keys                    
+|-
+| [[Wizard Epic Quest]]      || [[Temple of Solusek Ro]]     || 46      || {{:Staff of the Four}}
+|-
+| [[The Family Chest Straps]]            || [[Kael Drakkel]]       || 50      || {{:Flayed Coldain-Skin Leggings}}  
+|-
+| [[The Spirit of Garzicor]]             || [[Skyshrine ]]                || 50             || {{:Pitted Iron Ring}}  
+|-
+| [[Wizard Kael Armor Quests]]         || [[Kael Drakkel]]       || 50      || SET  
+|- 
+| [[Request of the Arcane]]              || [[Temple of Veeshan]]       || 55      || {{:Mask of the Silver Eyes}}                 
+|-
+| [[Key to Sleeper's Tomb]]            || [[Dragon Necropolis ]]     || 55     || {{:Sleeper's Key}}
+|-
+| [[The First Arcane Test]]              || [[Temple of Veeshan]]       || 55      || {{:White Dragon Statue}}  
+|-
+| [[The Second Arcane Test]]             || [[Temple of Veeshan ]]       || 55      || {{:Boots of Deep Thought}}
+|}

@@ -1,0 +1,162 @@
+[[File:npc_lord_qyzar.png|frame|Lord Qyzar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Qyzar]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Crypt of Dalnir]]
+|-
+! ''' Related NPCs: '''
+| [[a kly imprecator]], [[a spectral crusader]], [[an undead blacksmith]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:The Visceral Dagger}}
+</li></ul>
+
+== Walkthrough ==
+
+Lord Qyzar is standing on the parapet one level up in the SK guild, at +1005, -150.  For the Crusader's Test of the Hero, Lord Qyzar requires you to retrieve the [visceral dagger].
+
+You say, 'What of the visceral dagger?'
+
+: Lord Qyzar says 'The visceral dagger was an ancient torturing weapon. I do not know much of it other than that it was forged by a member of the Brood of Kotiz, but that was ages ago. He is surely dust by now.'
+
+Not much to go on, but if you find your way to the Crypt of Dalnir, you can find various scraps of paper called "A Journal Entry" which identify as "Crusader Nodfod 1-6."
+
+Entry 1 reads:
+
+ Day 47
+ Crusader Golin and I have discovered what we
+ believe to be the crypt of the ancient Haggle
+ Baron Dalnir. It would seem as though the babble
+ of the goblin slave we caught and tortured turned
+ out to be accurate.
+ Unfortunately we must rest and plan our route
+ into the depths of this beast. It is filled with
+ very dangerous creatures. Hopefully we can
+ overcome the odds and find the final resting
+ place of the Visceral Dagger and the Grand Forge.
+
+Entry 2 reads:
+
+ Day 48
+ Blast! This IS the Crypt of Dalnir. We found
+ the entrance which had the ancient Haggle Baron's
+ name upon it. How foolish of the crypt keepers!
+ The Crypt is filled with croaks from many races.
+ They seem to be in some sort of trance and far
+ more powerful then they appear. We were about to
+ enter the main tomb when we were assaulted by
+ the horde. Crusader Golin sustained a major gash
+ on his shoulder. Before I could cauterize his
+ wound, blood flowed all over, even this entry.
+ Tomorrow we shall try to enter the main tomb.
+
+Entry 3 reads:
+
+ Day 49
+ We finally had an opportunity to make a run into
+ the main tomb, but just as we had the
+ sarcophagus in our sights, we fell through a
+ trap door hidden on the floor. We fell into what
+ appears to be the true Crypt of Dalnir and also
+ a haven for coerced sarnak! They were upon us in
+ no time. We ran, but found ourselves in an
+ unholy church. We fought our way out, but just
+ as we broke through, Golin's skull was punctured
+ by what appeared to be a rusted Crusader's
+ khukri. I am now in hiding, praying to any god.
+
+Entry 4 reads:
+
+ Day 49 Eve
+ The gods were listening. After many hours of
+ hiding, it appears the beasts have gone to
+ perform some sort of dark ritual in the church
+ we found earlier. I could hear the screams of a
+ sacrifice and the chant of some unknown tongue.
+ I did a reconnaissance of this level and found
+ no way out. The walls had tombs built into them
+ as mortuaries do. None of the doors would open,
+ but I did find one. I slid the sarcophagus out
+ with much effort. Before I could attempt to open
+ it I was scared off by noises within the drawer.
+
+Entry 5 reads:
+
+ Day 50
+ What have I gotten myself into? Soon I shall be
+ dead. After finding the secret passage through
+ the drawer, I found myself in a pit of evil. I
+ crept through the shadows and came upon a locked
+ door. I am no rogue. The door opened and a beast
+ walked out, I spied the Grand Forge! Perhaps,
+ also, a way to escape this madness. There must
+ a key around here somewhere! On the beasts
+ perhaps. Even fragments which I could piece
+ together would do. I shall have to face great
+ evil once more. Gods be with me once more.
+
+Entry 6 reads:
+
+ Day 55
+ I have made my way past many locked doors and
+ encountered great hordes of evil. The forge
+ is here. Unfortunately I have learned that the
+ dagger is fragmented in the crypt. I lost much
+ in here. My good friend and along with him the
+ shard which may be a piece to a larger puzzle,
+ the khukri, Greenmist. I could never get that
+ back. I would need to speak with the Brood and
+ obtain a Crusader Coffin. But should I return to
+ Cabilis without the dagger, Qyzar would torture
+ me. No! Here shall be my last stand!
+
+{{expand}}
+
+'''You can also occasionally encounter [[a spectral crusader]] in the room at +150, -340, -180, who does not respond to hails but will offer a few more clues if you ask the right questions:'''
+
+You say, 'Do you know of Greenmist?'
+
+: a spectral crusader says 'Mighty was the mist which covered the land.  Mighty is the blade wielded by a crusader.'
+
+You say, 'Are you Golin?'
+
+: a spectral crusader swipes his hand toward his own head in a chopping motion. 'Stuck between crypt and dust.'
+
+You say, 'What of the visceral dagger?'
+
+: a spectral crusader says 'Shattered!!  Three within the crypt.  A master must go.  To the [grand forge] they must go.  Three become one with the spirit hammer.'
+
+You say, 'Grand forge?'
+
+: a spectral crusader points to the ground. 'Beyond the doors lies a forge unlike any other.'
+
+'''You need to collect three parts of the dagger and the hammer used to reunite them.  The three parts of the dagger drop from three different versions of a kly imprecator, each of which may be found in a different part of the dungeon.'''
+
+* The first imprecator spawns on the second floor, in an alcove at +260, -885, -80.  From where you drop down to the level, head east, then north as though to get to the portal that exits the dungeon from that level.  Where you would turn west to go to the portal, go east instead, and follow the passage north, then west at the next junction, and the path will lead to the room where the next imprecator spawns.  This one drops a [[Dagger Hilt]] (identifies as "Hilt of Visceral Dagger").
+
+* Next, drop to the third floor and head south from the landing spot to reach a room with three decapitated statues to find an undead blacksmith.  His placeholder is by the north wall of the room at -45, -685, -190 (the same location as one of the journal scraps).  He drops a [[Forge Hammer of Dalnir]].
+
+* The second imprecator spawns at the altar in the church area, at +205, -610, -190.  He drops a [[Sharp Metal Shard]] (identifies as "Shard of Dagger"). '''PH will de-spawn after 8 minutes and then respawn after 12 minutes, making a 20 minute cycle with no player interaction.'''
+
+* The third imprecator spawns in the last room on the left just before the dining room as you're heading south to where the Kly himself spawns, at +10, -155, -180.  The placeholder is whatever mob is standing near the lab table in that room.  He drops a [[Jagged Metal Shard]] (identifies as "Fragment of Dagger"). '''PH will de-spawn after 8 minutes and then respawn after 12 minutes, making a 20 minute cycle with no player interaction.'''
+
+* The [[Grand Forge]] is in a room down a passage on the right just before the Kly's room, at -230, +30, -180.  Remember this location if you're planning to do the Greenmist quest, since you'll have to use the forge and the nearby tormented tradesman for that as well.  The tradesman sees invis but is indifferent to all.
+
+'''Put the three dagger pieces and the hammer in the forge and combine them to create [[The Visceral Dagger]] (identifies as "Rusted Visceral Dagger").  The hammer and pieces are consumed.'''
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shadow Knight Quests]]

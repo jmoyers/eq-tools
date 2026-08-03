@@ -1,0 +1,46 @@
+[[File:npc_pazin_punox.png|frame|Pazin Punox]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Pazin Punox]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Rogue]] (Only?)
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[Lil Honeybugger]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  None?
+</li></ul>
+
+== Walkthrough ==
+
+This starts in the Rogue Guild...
+
+{{expand}}
+
+[[Pazin Punox]] wants [[Lil Honeybugger]] dead and promises a "king's reward" for her head.  She lives in Misty Thicket in the Halfling territory just outside of town.  Unfortunately, she rooms with her big brother Joogl Honeybugger who never seems to leave her side, and he is probably around level 10 or so.  Since you need to be below this level to get the quest, you had better get some help in killing her.
+
+When you kill Lil, she drops a [[Halfling Head]] (which is what you're supposed to bring back to Paziu Puno for your "kings reward"), a [[Bandage]] (so you can reverse the faction hit you take from killing Lil by giving it to Joogl later), and a [[Case of Jumjum Juice]] (lore item) (which I guess you can give to the treant).
+
+Here's where this quest gets funny.  After sneaking/hiding through Rivervale and making the run back to Neriak, you need to give the Halfling Head to Pazin Punox.  He then tells you something to the effect of:
+
+: "Foolish young elf. This was no contract from King Naythox. I wanted Lil Honeybugger killed before she gave birth to my child.  Only a naive dark elf would set foot in Halfling territory.  Here's your great reward, garbage from other guild exploits."
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Rogue Quests]]

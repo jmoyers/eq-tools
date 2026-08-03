@@ -1,0 +1,65 @@
+{{Velious Era}}
+[[File:npc_lady_gelistial.png|frame|Lady Gelistial]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Lady Gelistial]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Plane of Growth]], [[Plane of Mischief]]
+|-
+! ''' Related NPCs: '''
+| [[Lithiniath]], [[Prince Thirneg]], [[a white stallion]]
+|}
+
+== Reward ==
+
+<ul><li>{{:Crest of the Unicorn}}
+</li></ul>
+== Walkthrough ==
+
+You say, 'Hail, Lady Gelistial'
+
+: Lady Gelistial nods towards Pharos  and a soft gentle voice whispers in your mind as if carried by the breeze passing through the gentle grove. You tread upon the sacred ground of Tunare. I am the Lady Gelistial, baroness of the Tunarean Unicorns. Are you a friend of the Tunarean Court?
+
+You say, 'I am a friend'
+
+: Lady Gelistial says 'Be wary of the black unicorns then my friend. All unicorns once inspired dreams and fascination in mortals but the lineage of Lithiniath has been twisted and now inspire delusions and madness. If my duties here were not so pressing I would seek the wisdom of Prince Thirneg in finding a cure for the cursed bloodline of Lithiniath.
+
+You say, 'Who is Lithiniath?'
+
+: Lady Gelistial says 'Lithiniath was once a proud and noble Unicorn until he stumbled upon the realm of Fizzlethorpe Bristlebane. The lord of mischief twisted the magical nature of Lithiniath. The once noble unicorns fur grew blacker as delusions clouded his mind and madness follows where he treads.
+
+You say, 'Who is prince thirneg?'
+
+: Lady Gelistial says 'Prince Thirneg is the ruler of the Tunarean Court. He resides in the Plane of Growth where he is constant contact with the all mother herself.
+
+'''Go find the prince. He is located in the bottom of Tunare's Tree.'''
+
+You say, 'Hail, Prince Thirneg'
+
+: Prince Thirneg says 'Salutations! I am the Prince of the Tunarean Court! What brings you to this most sacred of all Tunares blessed creations?'
+
+You say, 'Lady Gelistial sent me'
+
+: Prince Thirneg says 'Gelistial is a very wise Lady. She does well in her duties to the court as well as the duties to her people. Unfortunately the weight of her responsibility prevents us from meeting as often as I would like.'
+
+You say, 'I seek a cure for the line of Lithiniath'
+
+: Prince Thirneg says 'Ahh..Lithiniath, the first of the black unicorns, cursed by Fizzlethorpe Bristlebane to spread madness and delusions. Lithiniath is not evil, but his lawful magical nature has been replaced with a chaotic reflection of it that has twisted his mind. Lithiniaths physical form can not survive the removal of the chaotic magical nature. The only cure for Lithiniath is death and rebirth into a lawful vessel.'
+
+'''[[Lithiniath]] is found in the Plane of Mischief in a room off the right side of the dining hall. Kill him and loot his horn. Nearby is [[a white stallion]]. Give the white horse the horn and you'll receive a [[Crest of the Unicorn]] in exchange.'''
+{{YouGainExperience}}
+
+: Lithiniath shouts 'The madness has fled my mind and I am once again whole! Give Gelistial my regards, I must leave this place and try to quell the madness I have inflicted.'
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

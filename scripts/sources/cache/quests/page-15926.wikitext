@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_eonis_mournunder.png|200px|frame|Eonis Mournunder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Stained Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Gold Felt Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Necromancer, you will have a Stained Letter in your inventory. The note reads as follows:
+
+: In the mirror of this wretched society, we await. . .the time grows ever near, for us to shatter these rose-colored visions of Ak'Anon's citizens, and let their eyes fall upon the image of our true selves.  The Dark Reflection readies its soldiers of Bertoxxulous, hidden away deep beneath Ak'Anon, in the Mines of Malfunction.  [[Eonis Mournunder]] is your new master now. . .do not keep him waiting.
+
+Upon handing the letter to [[Eonis Mournunder]]:
+
+: [[Eonis Mournunder]] says, 'Hmm.. As you wish, we will train you in our dark ways, but, know this, our art carries a high price, and there is no turing back for you now.'
+
+<div class='facblock'>
+* Your faction standing with [[Dark Reflection]] got better.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Gem Choppers]] got worse.
+* Your faction standing with [[Deep Muses]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dark Gold Felt Robe*]]. Good luck, Necromancer!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Necromancer Quests]]

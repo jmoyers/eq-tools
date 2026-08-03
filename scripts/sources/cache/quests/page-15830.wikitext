@@ -1,0 +1,26 @@
+{{Velious Era}}{{Disambiguation}}
+:Bread shipment quests are completed by handing a '''[[Bag of Bread Loaves]]''' to various Innkeepers and Merchants listed below.
+
+This quest was changed after the plague affecting the Karanas was resolved. The quest itself is shorter now on live - "kill sporalis inside of Runnyeye until you get the Bag of Bread Loaves then return it back to whatever city you are looking to gain faction on."
+
+For more info, see: https://everquest.allakhazam.com/db/quest.html?quest=1261
+
+The only other source of acquiring the [[Bag of Bread Loaves]] is as an uncommon drop in [[Runnyeye Citadel]] from Sporali and Pickclaw goblins.
+
+: The rewards are experience, faction, and small amounts of coin.
+
+* [[The Bread Shipment (Qeynos)]], [[Karn Tassen]]
+* [[The Bread Shipment (Neriak)]], [[Sal Drana]]
+* [[The Bread Shipment (Feerrott)]] (Oggok), [[Innkeep Morpa]]
+* [[The Bread Shipment (N Karana)]], [[Innkeep James]]
+* [[The Bread Shipment (W Karana Rislarn)]], [[The Bread Shipment (W Karana Danin)]] [[Innkeep Rislarn]] and [[Innkeep Danin]]
+* [[The Bread Shipment (Halas)]], [[Hetie McDonald]]
+* [[The Bread Shipment (Kaladim)]], [[Gretta Mottle]]
+* [[The Bread Shipment (Kelethin)]][https://www.graffe.com/forums/showthread.php?4774-Got-lv-20-Wanna-make-lv-29-and-not-kill-a-thing], [[Innkeep Wuleran]]
+* [[The Bread Shipment (Erudin)]], [[Beth Breadmaker]]
+* [[The Bread Shipment (East Freeport)]], Freeport Inn, [[Innkeep Nasumi]]
+
+==See also==
+* [[Muffin Quests]]
+
+[[Category:Quests]]

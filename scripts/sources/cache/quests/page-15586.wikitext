@@ -1,0 +1,61 @@
+[[File:npc_gindlin_toxfodder.png|frame|Gindlin Toxfodder]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Gindlin Toxfodder]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Crow]], [[a giant spider]]
+|}
+
+== Reward ==
+
+<ul><li>  {{: Spider Venom}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Gindlin Toxfodder]] can be found in a small hut next to some farmers at (-2986, -13398) in the [[Western Plains of Karana]].''
+
+You say, 'Hail, Gindlin Toxfodder'
+
+: Gindlin Toxfodder says, 'Enough with the formalities.  I don't make it to these parts often and I only plan on being here a couple days. My time is precious. You must be a rogue in search of the [death juice].'
+
+You say, 'What is death juice?'
+
+: Gindlin Toxfodder says, 'Spider venom. You can't mix it yourself. If you want, I can do it. I'll need two spider venom sacs from the giant spiders. There should be some around these plains. I also demand a fee of 20 gold pieces, oh yeah!!.. I have been banished from Qeynos.. I also want a bottle of my favorite brew, Crow's special brew, purchased from Crow himself in North Qeynos.'
+
+'''Collect the following for Gindlin:'''
+
+<ul>
+<li>2 [[Spider Venom Sac|Spider Venom Sacs]] (common drop from [[A Giant Spider|giant spiders]] in the area)</li>
+<li>1 [[Crows Special Brew]] (purchased from [[Crow]] in [[North Qeynos]]; limited quantity)</li>
+<li>20 gold pieces (must be gold)</li>
+</ul>
+
+'''Upon turn-in:'''
+
+: Gindlin Toxfodder says, 'You did hear me, didn't you? I want two spider venom sacs, a bottle of Crow's special brew and 20 gold pieces.'
+
+: Gindlin Toxfodder says, 'You did hear me, didn't you? I want two spider venom sacs, a bottle of Crow's special brew and 20 gold pieces.'
+
+: Gindlin Toxfodder says, 'You did hear me, didn't you? I want two spider venom sacs, a bottle of Crow's special brew and 20 gold pieces.'
+
+{{YouGainExperience}}
+
+You receive [[Spider Venom]].
+
+[[Category:Quests]]
+[[Category:Rogue Quests]]
+[[Category:Western Plains of Karana]]

@@ -1,0 +1,75 @@
+{{Paineel Era}}
+[[File:npc_antus_shelbra.png|frame|Antus Shelbra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Antus Shelbra]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Aglthin Dasmore]]
+|}
+
+== Reward ==
+
+<ul><li>{{:Staff of the Abattoir Initiate}}</li>
+<li>Experience, Faction, Coin</li></ul>
+
+== Walkthrough ==
+
+''[[Antus Shelbra]] can be found on the third floor of the Abattoir at (762, 829) in [[Paineel]]. Minimum faction is unknown, but kindly is sufficient.''
+
+You say, 'Hail, Antus Shelbra'
+
+:Antus Shelbra says, 'Greetings, _______. You have come to me searching for tasks and tasks I have. Would you judge yourself an [experienced heretic] or one who has [much to learn]?'
+
+You say, 'I have much to learn'
+
+:Antus Shelbra says, 'Very well, ____. I do have a task for you. There is an old and frail Erudite male that now lives in Toxxulia named [[Aglthin Dasmore]]. He has left the ways of Cazic-Thule and no longer practices our craft. He has been stripped of his power and wealth, so he spends his time fishing by the river. Our great Lord of Fear has decreed that his life is forfeit. Slay him, and bring me proof of the deed.'
+
+'''Find [[Aglthin Dasmore]] at location (370, -1670) in [[Toxxulia Forest]].'''
+
+You say, 'Hail, Aglthin Dasmore'
+
+:Aglthin Dasmore says, 'I am so tired. Leave me be. All I wish to do is fish! Can't I have even a few seconds alone?!'
+
+You have slain Aglthin Dasmore!
+
+*Your faction standing with [[Heretics]] has been adjusted by -10.
+*Your faction standing with [[Deepwater Knights]] has been adjusted by 10.
+*Your faction standing with [[Gate Callers]] has been adjusted by 10.
+*Your faction standing with [[Craftkeepers]] has been adjusted by 10.
+* Your faction standing with [[Crimson Hands]] has been adjusted by 10.
+
+--You have looted a [[Aglthin's Fishing Pole]].--
+
+'''Return to [[Antus Shelbra]] and give him [[Aglthin's Fishing Pole]].'''''
+
+:Antus Shelbra says, 'Excellent, _______. You have proven yourself to be a true follower of Cazic-Thule. Continue on the path you have chosen, and you will surely become one of the mightiest in the land.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 4 gold, 9 copper pieces.
+
+You receive the [[Staff of the Abattoir Initiate]].
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

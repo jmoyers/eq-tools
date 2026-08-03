@@ -1,0 +1,53 @@
+{{Velious Era}}
+
+[[File:npc_gozzrem.png|frame|Gozzrem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Gozzrem]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Shaman]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Essedera]], [[Grozzmel]], [[Midayor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:White Dragon Idol}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Gozzrem'
+
+: Gozzrem says 'Greetings Ayama . If you seek wisdom or the arcane I have tasks in the halls of testing you may complete to gain what you seek. 
+
+You say, 'I seek wisdom'
+
+: Gozzrem says 'Wisdom can be gleaned from battle and that is what I wish you to do. Battle in the halls of testing may give you a different outlook on life. Which do you seek, the short battle or the long? 
+
+You say, 'I seek the short battle'
+
+: Gozzrem says 'For the shortest time in the halls, seek out a [[Platinum Tear]] held by the cursed one [[Dozekar the Cursed]], a [[Platinum Symbol]], a [[Silver Symbol]] and an [[Emerald Symbol]] as green as the forests. If you are able to return these to me I will reward you with a simple idol of the white dragons.
+
+== Related Items ==
+<ul><li>{{:Platinum Tear}} </li></ul>
+<ul><li>{{:Platinum Symbol}}</li></ul> ([[Essedera]])
+<ul><li>{{:Emerald Symbol}}</li></ul> ([[Grozzmel]] or [[Midayor]])
+<ul><li>{{:Silver Symbol}}</li></ul> ([[Essedera]])
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Shaman Quests]]

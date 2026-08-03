@@ -1,0 +1,364 @@
+{{Kunark Era}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Xlixinar Arcut]], [[Drixiv Arcut]]
+|-
+! ''' Minimum Level: '''
+| 20-45
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+Full Set bonuses: 105AC, +13Sta, +16Str, +8Dex, +8Agi, +5Cha, +5Wis, +4Int, +45HP, +5SvD, +5SvP, +9SvM, +2SvC, +2SvF
+
+== Rewards ==
+{{Gear Set
+|Trooper Scale Boots
+|Trooper Scale Bracers
+|Trooper Scale Gauntlets
+|Trooper Scale Greaves
+|Trooper Scale Breastplate
+|Trooper Scale Helm
+|Trooper Scale Pauldron
+|Trooper Scale Vambraces
+}}
+
+== General ==
+Xlixinar Arcut and Drixiv Arcut are on [[Legion of Cabilis]] faction, and are located at the {{loc|The Overthere|-1407, -1397|South East tip}} of the Overthere chasm. The quests can be completed by anyone given sufficient faction.
+
+With the exception of the vambraces, the note from Xlinar and Drixiv is not required to start these quests. They simply are used to get the other NPCs who give the recommendations to talk about the quest.
+
+=Short Walkthrough=
+==Drixiv Arcut==
+{{CheckboxList}}'''Boots'''
+*Acquire 2x [[Fire Emerald]]
+*Kill [[Snaorf]] (37) and loot [[Snaorf's Medallion]]
+*Give [[Master Rixiz]] the Medallion and 2 fire emeralds (unstacked) to receive his recommendation.
+*Acquire [[Banded Boots]]
+*Give Drixiv the Banded Boots and recommendation.
+'''Bracers'''
+*Acquire 2x [[Sapphire]]
+*Kill [[an Iksar prisoner]] (28) and loot his [[Traitor's Heart]]
+*Give [[Arch Duke Xog]] the Traitor's Heart and 2 sapphires (unstacked) to receive his recommendation.
+*Acquire [[Banded Bracer]]
+*Give Drixiv the Banded Bracer and recommendation.
+*Repeat for a second Bracer
+'''Gauntlets'''
+*Acquire 2x [[Star Ruby]]
+*Kill [[Kerosh Blackhand]] (33) and loot the [[Head of Blackhand]]
+*Give [[Arch Duke Xog]] the Head of Blackhand and 2 star rubies (unstacked) to receive his recommendation.
+*Acquire [[Banded Gauntlets]]
+*Give Drixiv the Banded Gauntlets and recommendation.
+'''Greaves'''
+*Acquire 2x [[Star Ruby]]
+*Kill [[Advisor Sh'Orok]] (30-35) and loot his [[Iron Bound Tome]]
+*Give [[Master Xydoz]] the Iron Bound Tome and 2 star rubies (unstacked) to receive his recommendation.
+*Acquire [[Banded Leggings]]
+*Give Drixiv the Banded Leggings and recommendation.
+{{End}}
+
+==Xlixinar Arcut==
+{{CheckboxList}}
+'''Breastplate'''
+*Acquire 3x [[Ruby]]
+*Kill [[Sergeant Daelione]] (26) for [[Daelione's Implant]]
+*Hand [[Vekis]] the implant
+*Kill [[Commander Streaven]] (45) for [[Straeven's Head]]
+*Give [[Grik the Exile]] Straeven's Head and 3 rubies (unstacked) to receive his recommendation.
+*Acquire [[Banded Mail]]
+*Give Xlixinar the Banded Mail and recommendation.
+'''Helm'''
+*Acquire 2x [[Star Ruby]]
+*Kill [[an odd mole]] for the [[tiny collar]]
+*Give [[Master Glox]] the tiny collar and 2 star rubies (unstacked) to receive his recommendation.
+*Acquire [[Banded Helm]]
+*Give Xlixinar the Banded Helm and recommendation.
+'''Pauldron'''
+*Acquire 2x [[Fire Emerald]]
+*Bake (Trivial 21) the following to receive a [[Spine Poison Extract]]:
+**[[Gray Colored Ice]] - Ground spawn - Frontier Mountains
+**2x [[Pondfish Spine|Pondfish Spines]] (unstacked) - [[Pond Sturgeon]] (14-18)
+**[[Pot]] (Blacksmithing or Pottery)
+*Brew (Trivial 21) the following to receive a [[Grayish Liquid]]:
+**Spine Poison Extract
+**[[Hopeless Willow Moss]] - Foraged - The Swamp of No Hope
+**[[Water Flask]] - Purchased
+**[[Bottle]] - Purchased
+*Give [[a froglok slave]] the grayish liquid to receive [[Froglok Goo]] ('''Must be indifferent, see [[#Pauldron|long walkthrough]] for details''')
+*Give [[Prime Hierophant Vek]] the froglok goo and 2 fire emeralds (unstacked) to receive his recommendation.
+*Acquire a [[Banded Mantle]]
+*Give Xlixinar the Banded Mantle and recommendation.
+'''Vambraces'''
+*Acquire a [[Sapphire]]
+*Acquire an [[Opal]]
+*Ask Xlixinar 'What vambraces?' to receive a note (item name?)
+*Give [[Prime Hierophant Vek]] the note to receive [[Hierophant's Knife]]
+*Kill [[Pit Fighter Dob]] (33) for his [[Diseased Tongue]]
+*Give [[Prime Hierophant Vek]] the tongue, opal, sapphire, and knife to receive his recommendation.
+*Acquire [[Banded Sleeves]]
+*Give Xlixinar the Banded Sleeves and recommendation.
+{{End}}
+
+=Long Walkthrough=
+This quest begins with the book [[Brother's Fallen]] which tells you about two cursed brothers, born of [[Rallos Zek|War]] and [[Cazic Thule|Fear]].
+The following quest text is the same for both Scorpiki.
+
+You say, 'Hail, Drixiv Arcut'
+
+:Drixiv Arcut sighs heavily and after a long while says, 'Leave us, Iksar. Leave us to our eternal damnation.'
+
+You say, 'What curse?'
+
+:Drixiv Arcut twists his face into a frown and says, 'You read what's written, Iksar. It's clear enough so we won't bother to explain the details. We can only stand our guard and hope for [redemption].'
+
+You say, 'redemption'
+
+:Drixiv Arcut grits his teeth and snaps, 'It's very simple, Syriash! We are fallen! We seek redemption! We guard our 'brothers' here among the Howling Stones until we are relieved. Whether that will ever happen, we do not know. We can only hope that by providing the great warriors of the legion with our [ancient armor], we will earn salvation.'
+
+You say, 'What ancient armor?'
+
+:Drixiv Arcut says, 'You wish the armor of our ancestors? The armor donned by the Guard whose duty was to protect the Chosen? A warrior relies not on strength alone, but many virtues. If a warrior learns to balance each virtue, then he may be fit to guard the Chosen. Each piece of armor reflects a [virtue], and each virtue must be learned before the armor is given.'
+
+==Drixiv Arcut==
+[[Image:npc_drixiv_arcut.png|Drixiv Arcut|thumb|400px]]
+You say, 'What virtue?'
+
+:Drixiv Arcut says, 'The virtues symbolized by the armor I keep are confidence and righteousness. The [boots], [greaves], [gauntlets], and [bracers]. Bring me proof that you have mastered these virtues as well as a piece of Banded armor of the type you desire and the appropriate armor shall be yours, Syriash. If you wish the other pieces you must speak to my brother.'
+
+=== Boots ===
+You say, 'What boots?'
+
+: Drixiv Arcut says 'You wish the boots worn by the ancients? Then you must first master the virtue of confidence. For our brothers of the dead, confidence is the virtue that allows them to control the forces that would tear them apart if they knew it not. When a warrior steps, he must be confident, for a weak step cannot crush your enemies. Take this note to the current Harbinger in Cabilis and learn from him.
+
+'''You receive [[Illegible Note: Boots]]'''
+
+'''You give the note to [[Harbinger Glosk]]'''
+
+: Harbinger Glosk hisses and says venomously, 'And I am disturbed yet again. I hope for your sake it is important.' The gaunt necromancer looks down at the paper in his hands and after reading a few lines gasps, then falls into a violent coughing fit. After recovering he takes a deep breath, puffs his chest out and hands the paper back to you. With his head held high, he says in a raspy voice, 'Show this to Rixiz. He will test you.'
+
+'''You give the note to [[Master Rixiz]]'''
+
+: Master Rixiz takes the note and after reading a few lines opens his eyes wide in astonishment. He looks up at you and stares at you a while before he says, 'You spoke to the Brothers? A common soldier such as yourself interested in silly stories to frighten broodlings? Fine, then. You shall know confidence, if you live. If you have the strength to stride into a lair, go before the owner, and kill that thing in its own home, you will acquire a small part of the virtue we as necromancers must master to ply our art. In the Frontier Mountains lives a unit of the troublesome burynai. Invade their home and destroy their leader. Bring me proof and two fire emeralds.'
+
+'''The leader he is speaking of is [[Snaorf]], kill him and loot his medallion, called [[Snaorf's Medallion]]. Hand in the medallion along with 2 [[Fire Emerald]]s to [[Master Rixiz]] for your recommendation.'''
+
+Hand the recommendation and banded boots to [[Drixiv Arcut]] to get your trooper scale boots.
+
+=== Bracer ===
+You say, 'What bracers?'
+
+: Drixiv Arcut says 'The bracers of our ancestors embody righteousness. When we strike, and our forearms are soaked in the blood of our enemies, our purpose must be pure. Else that blood will burn our souls and anger that which we live for. Go and find the Archduke in Cabilis and give him my note. He will teach you of righteousness. For if our chosen did not know righteousness, our people would not be. Go!
+
+'''You receive [[Illegible Note: Bracer]]'''
+
+'''You give the note to [[Arch Duke Xog]]'''
+
+: Arch Duke Xog takes the note and glances at it briefly then lets out a heavy sigh and stares out over the city for several minutes. Finally he says quietly, 'Several months ago we lost contact with one of our crusaders. His name is, or was, Geanik. The last we heard from him he was furthering our cause against the loathsome Goblins that reside in Warsliks Wood. Just recently we were visited by a [strange Iksar].
+
+You say, 'What strange Iksar?'
+
+: Arch Duke Xog says 'Yes, he was dressed in rags and hadn't eaten in days. He rambled on about seemingly nothing, obviously he had lost his mind at some point. The guards brought him in because he told them he had valuable information concerning a captured Crusader. According to the mad man, our missing knight was captured by a group of cultists that follow a false god. The cultists intend on converting him apparently. Your [test] will concern Geanik.
+
+You say, 'What test?'
+
+: Arch Duke Xog says 'Learning Righteousness is learning to listen to one's own heart. At all times our Lord of Fear speaks to us. Our heart is through which he speaks. If we are pure in action and undistracted in mind we can hear the very words of our Father. Your test will be to find our lost Crusader. When you find him you must listen, and act based on what you hear. If your actions are Righteous, I will give you my reference. Bring me proof of your action and two sapphires.
+
+'''The lost Crusader is the [[an Iksar prisoner]] inside Dalnir. He drops a [[Traitor's Heart]] which you hand in along with 2 [[Sapphire]]s to [[Arch Duke Xog]] to get your recommendation.'''
+
+: Arch Duke Xog lets the heart drop to the dusty ground with a splat. He stares down at it, a wicked grin creeps onto his face. He looks up and says, 'Well done, Syriash. Well done indeed. Perhaps fate hatched you in the wrong brood. A weakling that allowed himself to be captured alive does not deserve to live. You listened and heard your Lord's command and acted. For that you have earned your reference.'
+
+'''You give Drixiv Arcut a [[Banded Bracer]] and the recommendation.'''
+
+: Drixiv Arcut takes the note in his pincers carefully and looks it over. After a moment he bows his head, closing his eyes. You lapse into unconciousness for a second and when your eyes open you are still standing, although now holding your new legionnaire scale bracers!
+
+=== Gauntlets ===
+You say, 'What gauntlets?'
+
+: Drixiv Arcut says 'Our hands are our most useful and deadly instruments, after our minds. When we use them other than in service of our lord and ancestors, our actions are false. Without knowing righteousness we can never be sure if our actions are in the name of fear. The Chosen, the Crusaders of Greenmist, know fear intimately. Their actions are never without the blessing of our lord. Take this note to the Archduke. He will recognize my writing and instruct you.
+
+'''You receive [[Illegible Note: Gauntlets]]'''
+
+'''You give the note to [[Arch Duke Xog]]'''
+
+: Arch Duke Xog takes the note without even a glance in your direction and begins reading. After a long silence, he lets his arms drop to his sides and says quietly, 'We kill, Glaakt. That is our job, our duty in life. Our targets are chosen for us. We merely listen. Right now I am being told there is a traitor not far from here, near the ocean. Go to him and end his life. Bring me his head, and two star rubies. As you do this, try hard to listen to our Lord's instruction. If you hear even a whisper, you will know more righteousness than most of this city.'
+
+'''The traitor he speaks of is [[Kerosh Blackhand]] in the field of bone.  He drops [[Head of Blackhand]], which you hand in with 2 [[Star Ruby]]s to Arch Duke Xog for your recommendation.'''
+
+: Arch Duke Xog says 'Ahh, excellent, Syriash. Did you hear our Lord speaking to you? Let him guide your actions as his are pure and you are but a vessel to carry out his wishes. This fool's death will bring suffering to many. You have done well. Take this reference to the Brothers. Perhaps, in time, a new pact may be drawn up.'
+
+'''Hand in your recommendation along with a banded gauntlets to [[Drixiv Arcut]]'''
+
+: Drixiv Arcut takes the note in his pincers carefully and looks it over. After a moment he bows his head, closing his eyes. You lapse into unconciousness for a second and when your eyes open you are still standing, although now holding your new legionnaire scale gauntlets!
+
+=== Greaves ===
+You say, 'What greaves?'
+
+: Drixiv Arcut says 'Our legs move us forward. If we move with hesitance we will surely fall and leave our charge exposed. Before you can wear the greaves, you must learn from the Brood of Kotiz. For if they did not wield their powers over the dead with confidence, their life forces would be sucked from them instantly, leaving them empty husks. Take this note to the Harbinger and listen to his instructions.
+
+'''You receive [[Illegible Note: Greaves]]'''
+
+'''You give the note to [[Harbinger Glosk]]'''
+
+: Harbinger Glosk snatches the note out of your hands, obviously irritated. After reading a few lines, he glances up at you, his brow furrowed, then looks down again to continue reading. When he's finished, he hands the note back to you and takes a deep breath, shuddering slightly. He then says, 'Xydoz. Take this to Xydoz. He will test you.' The Harbinger watches you carefully as you leave.
+
+: Master Xydoz snatches the paper from your hand and hisses in anger. Without even looking at the paper he growls, 'WHAT?! What is this tra...' He stares down at the paper, mouth hanging open wide in disbelief. He finally continues, saying, 'Very well, then. If you wish to know confidence I have a task for you. Our hated enemies, the sarnak, have a tome we have sought to return to our libraries for centuries. At this point, we believe it to be found in a small fortress they maintain near the Great Lake. One of their scholars will most likely have it on their person. Bring it to me along with two star rubies.'
+
+'''Obtain an [[Iron Bound Tome]] from [[Advisor Sh'Orok]] in the Lake of Ill Omen sarnak fort.  Hand in the tome with 2 [[Star Ruby]]s to [[Master Xydoz]] for your recommendation.'''
+
+Hand in your recommendation and banded leggings to [[Drixiv Arcut]] for your Trooper Scale Greaves.
+
+==Xlixinar Arcut==
+[[Image:npc_xlixinar_arcut.png|Thumb|Xlixinar Arcut|thumb|400px]]
+You say, 'what virtue'
+
+: Xlixinar Arcut says, 'The armor I keep are the symbols of focus, sacrifice, and perseverence. The [helm], [pauldrons], [vambraces], and [breastplate]. You must bring me proof that you know these virtues before attaining the armor I keep. I also will need a piece of Banded armor of the type you desire. My brother keeps the other pieces.'
+=== Breastplate ===
+You say, 'What breastplate?'
+
+: Xlixinar Arcut says 'The monk is the master of focus, the shaman of sacrifice and the shadowknight of righteousness. Lastly, our brothers of the dark know confidence. It is then our duty to know perseverance more than any other. When others fall from spear and sword, we must stand. When others are washed away by fire and ice, we must stand. When others are frustrated and confused, we must continue on. There is a warrior in the swamp near the city. He is an exile, like my brother and I. He knows more about it.
+
+'''You receive [[Illegible Note: Breastplate]]'''
+
+'''You give the note to [[Grik the Exile]]'''
+
+: Grik the Exile snickers to himself and looks out over the swamp for a moment before saying, 'Perseverance is indeed our greatest virtue. Perhaps if we as warriors looked more to cultivate our virtue rather than to hoard glory our people would be rulers of this entire land. I will send you on a [mission] to learn of perseverance. If you complete it I will give you my reference.'
+
+You say, 'what mission'
+
+: Grik the Exile says 'If you have not noticed the new intelligent races that have found it's way to our land, you will see soon. They have built a small outpost far to the south along the ocean. If they go unchecked, their outpost will become a city from which they will cause us much discomfort. They are strong and have experienced [mercenaries] in their employ.
+
+You say, 'what mercenaries'
+
+: Grik the Exile says 'Yes. In particular, a company of mercenaries commanded by a human known as Streaven. He has personally thwarted an operation I was in charge of. I will make him pay for his interference. You will kill Streaven. But first you must [draw him out], as he is not a fool.
+
+You say, 'how do I draw him out'
+
+: Grik the Exile says 'While Streaven is not foolish he has made a mistake. He's taken a young and ambitious noble on as an officer in his company. This noble represents a source of funds and as such Streaven most likely will come to his aid if endangered. Our spies have reported that he has been implanted with some sort of device that will alert the commander of any danger. You must retrieve this [implant].
+
+You say, 'what implant'
+
+: Grik the Exile says 'The implant is buried deep within this noble's head. Retrieving it will most likely leave quite a traumatic wound. Once you have the implant you must take it to an agent that will be in the area. This agent is one of the Kotiz Brood, a necromancer. Her name is Vekis and she will be able to activate the implant and draw Streaven out. She will only appear after you have dispatched the noble and she will go back into hiding shortly there after, so you must [find her] quickly.
+
+You say, 'where do I find her'
+
+: Grik the Exile says 'She will be near one of our ancient statues along the coast. You need only hand her the implant for her to activate it. Once he is away from the guards you will have your chance. Bring me Streaven's Head and 3 rubies and you will have your reference for the Arcut. Remember that your perseverance is your greatest virtue and will carry you to victory always.
+
+'''First you have to kill [[Sergeant Daelione]] in FV and loot [[Daelione's Implant]].  After killing him a npc named [[Vekis]] spawns near the giant Iksar statue where the river meets the lake.  You hand her the implant which causes [[Commander Straeven]] to spawn back at the town on the bridge.  You then kill him, loot [[Straeven's Head]] and hand it and 3 [[Ruby]]s to [[Grik the Exiled]]. Grik will give you Grik's Recommendation.'''
+
+Hand the recommendation and a banded mail to [[Xlixinar Arcut]] to get your Trooper Scale Chestplate.
+
+=== Helm ===
+You say, 'What helm?'
+
+: Xlixinar Arcut says 'You must first learn focus before being awarded the legionnaire scale helm. The Swifttails are the masters of focus and as such you will learn from the Grand Master of the Court. It has been so long, I do not know who is Grand Master now. Whoever it is, give him this note and follow his instruction. Once you have learned, return to us and the helm will be yours.
+
+'''You receive [[Illegible Note: Helm]]'''
+
+'''You give the note to [[Grand Master Glox]]'''
+
+: Grand Master Glox sits whispering incoherently for a long moment before even regarding the note you dropped in front of him. The Grand Master suddenly snatches up the note from Xlixinar, removes a small charcoal marker from a belt pouch, and scrawls some intructions upon it. He drops the note immediately after finishing and resumes his meditation without a word.
+
+The note reads:
+
+ Glox's Instructions
+ Atop the ancient tower of Kurn lives a mole. This mole has unwittingly taught the Swifttails much. It has taught us focus.
+ Go into the tower, sit and meditate near his burrow, and settle yourself. When it peers out to look for food, use all of your
+ pent up ferocity and kill the mole quickly. Upon its neck will be a collar. Return to me the collar and 2 star rubies and I
+ will give you my reference for the Arcut.
+
+'''Kill the [[an odd mole]] and loot his [[tiny collar]].  Hand it along with 2 [[Star Ruby]]s to [[Master Glox]] for your recommendation.'''
+
+: Grand Master Glox slowly opens his eyes and glances down at the gems and collar, then up at you. After staring at you a long moment, he produces a small piece of paper and his charcoal marker and quickly scratches a brief note. He then crumples the paper up and tosses it to you as he motions for you to leave the temple. You feel his eyes pierce your back as you take your leave.
+
+'''Hand in your recommendation along with a banded helm to [[Xlixinar Arcut]].'''
+
+: Xlixinar Arcut takes the note in his pincers carefully and looks it over. After a moment he bows his head, closing his eyes. You lapse into unconciousness for a second and when your eyes open you are still standing, although now holding your new legionnaire scale helm!
+
+=== Pauldron ===
+You say 'What pauldron?'
+
+: Xlixinar Arcut says, 'Upon our shoulders we carry the virtue of sacrifice. Our bodies are ruined in the name of our Lord. Pain and suffering please him and our ancestors. Without knowing sacrifice, a warrior can never protect his charge from harm as he sees himself as greater than his duty. The mystics embody sacrifice. Find their highest authority and give him this note. He will recognize it.'
+
+'''You receive [[Illegible Note: Pauldron]]'''
+
+'''You give the note to [[Prime Hierophant Vek]]'''
+
+: Prime Hierophant Vek chuckles scornfully and says, 'So, the brothers still seek their redemption? Fools! They know nothing of sacrifice and because of this Cazic-Thule will never forgive them. No matter. You are here now and wish to learn. You must brew a [special potion] for us and make use of it in the name of the Mystics. Once you witness the creation's glory you will know sacrifice.'
+
+You say, 'What special Potion?'
+
+: Prime Hierophant Vek says, 'It is a most lecherous distillment and has been the savior of many. Making it is a complicated procedure and collecting the ingredients is a task not for the average scholar. First one must melt the rare [gray ice] in a pot and boil 2 [pondfish spines] until the poison is extracted. Then take the extraction along with a portion of Hopeless Willow Moss and brew this with plain water in a common bottle. After you have the potion force one of our froglok workers to drink it. As it suffers and its life melts into a puddle you must quickly collect the remains. Bring back the ultimate product of that suffering, along with 2 fire emeralds and you will know sacrifice.'
+
+You say, 'What gray ice?'
+
+: Prime Hierophant Vek says, 'Gray ice is a very rare element found only atop the highest peaks in the region known as Frontier Mountains. It is valued for its very caustic nature and is used in many ways by our alchemists.'
+
+You say, 'What pondfish spines?'
+
+: Prime Hierophant Vek says, 'There is a small spring that is the father of two streams. One leads to the ocean while the other is a tributary to the great Lake of Ill Omen. Due to the mineral-rich waters of the spring, many fish in the area have developed poison-based defenses. Some of the larger fish are adorned with spines that carry a deadly poison. These are the spines you must gather.'{{CheckboxList}}'''Spine Poison Extract'''
+* [[Gray Colored Ice]] (Ground spawn - Frontier Mountains)
+* 2 [[Pondfish Spine|Pondfish Spines]] (Dropped by [[Pond Sturgeon]] - Lake of Ill Omen)
+* [[Pot]] (Blacksmithing or Pottery)
+* Craft [[Spine Poison Extract]] (Baking - Trivial 21)
+'''Grayish Liquid'''
+* [[Spine Poison Extract]]
+* [[Hopeless Willow Moss]] (Foraged - The Swamp of No Hope)
+* [[Water Flask]]
+* [[Bottle]]
+* Craft [[Grayish Liquid]] (Brewing - Trivial 21)
+{{End}}
+
+'''For this step, you will need to con indifferent to the slave successfully turn in the Grayish Liquid.''' The easiest way is to open a trade window with the froglok, then have a shaman cast invisibility on you '''before''' completing the trade. Alternatively, you can drag an enchanter friend to Cabilis to charm the slave for you. Three slaves spawn near the abandoned building near the Cabilis Bank, after a while they walk over to the zone out area to the Field of Bone.
+
+'''You give a froglok slave the Grayish Liquid.'''
+
+: a froglok slave takes the vial, hands shaking as he looks upon you fearfully. It then gulps down what it assumes to be a beverage. After a moment, it clutches at its throat and tries to scream, only able to muster a weak gurgle as its flesh is reduced to liquid. In seconds all that is left is a puddle of greenish goo which you quickly collect.
+
+'''You receive [[Froglok Goo]]'''
+
+'''Give the Froglok Goo and 2 [[Fire Emerald]]s to 'Prime Hierophant Vek' for your recommendation.'''
+
+: Prime Hierophant Vek says 'Ahhh, yes, wonderful work indeed, Legionnaire. It's amazing your brood was not chosen to be blessed as a Scaled Mystic. Here is your reference, Syriash. Remember the suffering and pain you have caused in the name of your creator.'
+
+'''Give the recommendation along with a banded mantle to [[Xlixinar Arcut]].'''
+
+: Xlixinar Arcut takes the note in his pincers carefully and looks it over. After a moment he bows his head, closing his eyes. You lapse into unconciousness for a second and when your eyes open you are still standing, although now holding your new legionnaire scale pauldron!
+
+=== Vambraces ===
+You say "What vambraces?"
+
+: Xlixinar Arcut says 'Our arms carry more than the weapons of war and the hands that make use of them. We sacrifice the strength in our arms to carry our duties and obligations. Unless we can sacrifice our own bodies and abilities to carry these ideals, we will never be fit to protect the Chosen. Take this note to the master of the mystics in Cabilis, he will teach you a lesson in sacrifice.'
+
+'''You receive [[Illegible Note: Vambraces]]'''
+
+'''You give the note to [[Prime Hierophant Vek]]'''
+
+: Prime Hierophant Vek stares down at the note, confused, until he recognizes the writing and gasps in shock! 'You spoke to the Brothers? You, a simple Legionnaire? Well, no matter, you are here to test your virtue of sacrifice and we will take pleasure in it as we have for generations even before the Fallen Brothers. One of our greatest allies in pain is disease. In the woods outside our fair city is a small tribe of goblins. There is a certain goblin famed for his [unique weapon]. Take this knife and use it to cut this from the goblin. Then return his weapon, the knife, a sapphire, and an opal to me.'
+
+You say, 'What unique weapon?'
+
+: Prime Hierophant Vek says 'This goblin is known as a pit fighter. Though they are small, weak, and unintelligent, they still maintain a level of ferocity that surpasses that of most wild animals. This, along with a disgusting and perverse imagination, has allowed these pit fighters to reach heights of physical power most Iksar never see. This particular fighter uses his tongue liberally while fighting. He has ingested many deadly contagions and licked things from the slimy surfaces of the darkest and dankest crevasses imaginable. His tongue will do well to further our cause in pain and suffering.'
+
+'''Make sure you get the note and hand it in to [[Prime Hierophant Vek]], he will then give you [[Hierophant's Knife]], you must get this, because you have to hand it back to him.'''
+
+'''Kill [[Pit Fighter Dob]] and loot his [[Diseased Tongue]]. Hand the tongue, a [[Sapphire]], an [[Opal]], AND the knife he gives you when you hand in the note. Do not forget this. This is the one piece you must actually go get the note for.'''
+
+: Prime Hierophant Vek grins maniacally as you set down the filth-ridden tongue and bloody knife, the jewels seeming to go unnoticed. He says, 'We thank you, Syriash. It is indeed a lovely specimen. I hope you were able to test its effects in the name of our Lord. But I suppose you mustn't keep the Brothers waiting. Take your reference and leave this place.'
+
+'''Hand the recommendation and banded sleeves to [[Xlixinar Arcut]]'''
+
+: Xlixinar Arcut takes the note in his pincers carefully and looks it over. After a moment he bows his head, closing his eyes. You lapse into unconciousness for a second and when your eyes open you are still standing, although now holding your new legionnaire scale vampraces!
+
+[[Category:Quests]]
+[[Category:The Overthere]]
+[[Category:Warrior Quests]]

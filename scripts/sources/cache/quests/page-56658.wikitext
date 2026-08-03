@@ -1,0 +1,636 @@
+{{Epics Era}}
+
+[[File:pic.JPG|frame|SHD Epic]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| Kurron Ni
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Corrupted Ghoulbane}}
+</li><li> {{:Will of Innoruuk}}
+</li><li> {{:Head of the Valiant}}
+</li><li> {{:Innoruuk's Curse}}
+</li></ul>
+
+== Checklist ==
+
+'''NOTE::When doing any sort of turn in/hand in for this epic quest, whether it be spawning Kyrenna or turning in the Dark Shroud etc... '''MAKE 100% CERTAIN''' ''' that you are indifferent to the NPC you are doing the hand in with. You can do this by putting the item(s) in the trade window, and then using the Hide skill or have someone cast invis (or IVU for Glohnor). Again, make absolutely certain that the npc cons indifferent to you before you click trade or the item(s) will be gobbled up. If for some reason you are already indifferent to the npc, best bet is to use hide/invis/ivu and consider another npc (or better still, a mob) to be sure.'''
+
+{{CheckboxList}}
+==== '''The Letter to Duriek''' ====
+* Hail [[Kurron Ni]] in Overthere Outpost
+* Give [[Kurron Ni]] [[Darkforge Breastplate]], [[Darkforge Greaves]], [[Darkforge Helm]] and 900 Platinum.  You can get the armor through the [[Darkforge Armor Quests]].
+* Kill [[Kurron Ni]] and Loot the [[Letter to Duriek]]
+
+==== '''The Dusty Tome''' ====
+* Give the letter to [[Duriek Bloodpool]] in [[Paineel]]
+* Hail [[Smaka]] in Neriak Foreign Quarter
+* Give [[Smaka]] 1000 Platinum for a [[Cough Elixir]]
+* Give the [[Cough Elixir]] to [[Duriek Bloodpool | Duriek]]
+* Kill [[a ratman guard]] in [[The Hole]] and loot a [[Dusty Tome]]
+* Give the [[Dusty Tome]] to [[Duriek Bloodpool | Duriek]]
+
+'''The Letter to Duriek and The Dusty Tome are NOT required portions of the quest.  As noted above, ensure you hand your item(s) to the quest mob, hide, invis, or invis undead, verify an indifferent con, then give the quest items.'''
+
+==== '''The Corrupted Ghoulbane''' ====
+* Kill the [[The froglok shin lord]] in Ruins of [[Upper Guk]] and loot The [[Ghoulbane]]
+* Kill [[Cazic-Thule]] and Loot The [[Soul Leech, Dark Sword of Blood]] (NOTE: Post Fear Revamp this now drops off Fear Golems [[Fright]], [[Dread]], and [[Terror]])
+* Kill monsters in [[Plane of Sky]] for the [[Blade of Abrogation]]
+* Kill [[Rharzar]] in [[Rathe Mountains]] for a [[Drake Spine]]
+* Kill [[An ashenbone drake]]s in [[Plane of Hate]] for a [[Decrepit Hide]]
+* Buy a [[Platinum Bar]] and find an enchanter to make an [[Enchanted Platinum Bar]]
+* Open trade window, click Hide and make sure you con INDIFFERENT STATUS (Hiding is not needed if you have better faction). SUPER IMPORTANT! DO NOT HAND IN ITEMS W/O indifferent status or better. [[Teydar]] in the evil guild area of the [[Qeynos Aqueducts]]
+* Give the [[Drake Spine]], [[Decrepit Hide]] and [[Enchanted Platinum Bar]] to [[Teydar]] for a [[Decrepit Sheath]]
+* Go to Duriek. Open trade window, click Hide and make sure you con INDIFFERENT STATUS (Hiding is not needed if you have better faction). SUPER IMPORTANT! DO NOT HAND IN ITEMS W/O indifferent status or better. Give the [[Ghoulbane]], the [[Soul Leech, Dark Sword of Blood]], the [[Blade of Abrogation]] and the [[Decrepit Sheath]] to [[Duriek Bloodpool | Duriek]] for the [[Corrupted Ghoulbane]].
+
+==== '''The Dark Shroud''' ====
+* (Optional) Hail [[Lhranc]] in the [[City of Mist]]
+* (Optional) Hail [[Marl Kastane]] in [[Kerra Isle]] and say 'I have the will of innoruuk' and 'What prophecy?' to get a [[Seal of Kastane]]
+* (Optional) Hail [[Gerot Kastane]] in Paineel and give him the [[Seal of Kastane]] to get the [[Note to Marl]]
+* (Optional) Give the [[Note to Marl]] to [[Marl Kastane]]
+* Hail [[Knarthenne Skurl]] in [[Toxxulia Forest]] and say 'what heart of an innocent?' to get a [[Soulcase]]
+* Gather a [[Cell Key]] from [[a mimic]] (looks like a chest) in the city bank of [[the Hole]]
+* Give the [[Cell Key]] to [[Caradon]] (You must be indifferent for this turn-in) - '''Use "Hide" Skill.'''
+* Kill [[Kyrenna]] NOT [[Caradon]] (if it can be avoided) and Loot [[Blood of Kyrenna]] and [[Heart of Kyrenna]]
+* Give the [[Blood of Kyrenna]] to [[Marl Kastane]] and receive the [[Dark Shroud]] '''DONT FEIGN DEATH FOR THIS TURN-IN''' You must be Indifferent for this turn in '''(use "Hide" skill)'''. Make sure to be Hidden for this turn in.
+
+==== '''Lhranc's Coin''' ====
+* Give the [[Dark Shroud]] to the [[Ghost of Glohnor]] in [[the Hole]] (Make sure to con indiff w/ IVU!)
+* Kill [[Mummy of Glohnor]] and loot the [[Head of Glohnor]] and the [[Glohnor wrappings]]
+* Give the [[Head of Glohnor]] to [[Gerot Kastane]] and receive the [[Head of the Valiant]] (Make sure to con indifferent w/ hide!)
+* Give the [[Glohnor wrappings]] to [[Marl Kastane]] and receive the [[Will of Innoruuk]] (Make sure to con indifferent w/ hide!)
+* Combine the [[Heart of Kyrenna]] with the [[Soulcase]] to produce the [[Heart of the Innocent]]
+* Give the [[Corrupted Ghoulbane]], the [[Heart of the Innocent]], the [[Head of the Valiant]] and the [[Will of Innoruuk]] to [[Lhranc]] - Make sure you are indifferent to him before you do the hand in, have someone else cast IVU on you before you hit trade. He will respawn with the sword... prepare for a fight.  If you wipe in fight, Lhranc won't despawn. Bring at least 2 groups.
+*  '''Kill [[Lhranc]] and LOOT [[Innoruuk's Curse]]! Gratz!'''{{End}}
+
+== Short Walkthrough ==
+
+'''The Beginning'''
+
+Kurron Ni appears in the Overthere outpost. 
+
+You say, 'Hail, Kurron Ni' 
+
+Kurron Ni says 'Out of my way, stranger, I am on a delicate mission. Interfere with my search and I shall relieve you of your head! Bother me no more. 
+
+You say, 'What do you seek?' 
+
+Kurron Ni says 'I have traveled here in hopes of finding a soul worthy of assisting me in completing my mission. 
+
+You say, 'I am worthy' 
+
+Kurron Ni says 'I doubt it, but I have been wrong before. Before I share with you the details of my mission, however, you must first prove your worthiness. Agreed? 
+
+You say, 'Agreed' 
+
+Kurron Ni says 'Very well then, my new friend. I have an acquaintance that stands in need of three pieces of Darkforge Armor. He requires the breast, greaves and helm to complete his set. I also must pay back a loan that has come due in the amount of 900 platinum. Return this to me and I shall share with you my dark mission, and the immeasurable reward that will be earned at its completion. Show your face here without fulfilling my request and I will offer you on the altar to Innoruuk himself. Be off! 
+
+After a hard task of acquiring the requested Darkforge items and 900 platinum pieces, come back to the Overthere. Hand the Darkforge Breastplate, Darkforge Greaves, Darkforge Helm,and 900 platinum pieces to Kurron Ni.
+
+
+Kurron Ni says 'Well done, {your name} , I honestly didn't expect to see you again. Yes, yes, this is perfect! My mission is nearly complete! 
+Your faction standing with TrueSpirit got better. 
+
+Kurron Ni looks your way apprehensively -- he appears to be quite formidable. 
+
+You say, 'What mission?' 
+
+Kurron Ni says 'My mission was to find a pathetic shadowknight and bring him closer to Innoruuk. You volunteered. By exercising my superior powers of persuasion, I have now taken from you a fine suit of armor and enough coin to ensure that I will be sleeping neither soberly nor alone for quite some time! Now I ask you, worthy shadowknight, do you not feel the fires of hatred coursing through your veins like never before? That is the very reward I spoke of! You have been brought closer to my master. My mission is complete! You foolish excuse for a dark knight, I shall take your head and tell all of your generous donation to the mighty Teir'Dal rogues! 
+
+Kurron Ni punches YOU for 200 points of damage. 
+
+Kurron Ni glares at you threateningly -- he appears to be quite formidable. 
+... 
+You have slain Kurron Ni! 
+You gain party experience!! 
+
+Kurron Ni - Level 55 rogue - Highly resistant to immune to all spells but disease/poison DoTs and lure line. 
+Approximate forces required: one 50+ group. 
+
+You find a Letter to Duriek on his corpse that reads: 
+Duriek, I have searched this godless pit for what seems to be an eternity with nothing to show for my efforts. I pray to Innoruuk that you have made some breakthrough in your research. Please update me as to your progress. In the meanwhile I have run into some unexpected expenses and will need some funds to carry on. An additional ten thousand should suffice. Regards, Karnett 
+
+
+'''The New Apprentice''' 
+
+Duriek Bloodpool can be found in Paineel. Hand him the Letter to Duriek you have... found. 
+
+Duriek Bloodpool says 'Yes, most unfortunate. I was informed last week of the death of my most recent apprentice. A few months ago, I paid a substantial sum to a group of rogues sent from Neriak to collect on a gambling debt. He swore to me that was the end of it, but I suspected otherwise. My warnings of gambling with the rogues fell on deaf ears.' 
+
+Your faction standing with TrueSpirit has been adjusted by 3. 
+You gain experience!! 
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable. 
+
+Despite what Duriek tells you, you receive neither item nor money. 
+
+You say, 'What apprentice?' 
+
+Duriek Bloodpool says 'As stubborn and foolish as he sometimes was, he was full of potential. Had he managed to achieve my age he doubtless would have surpassed my abilities. Though I am not surprised at his passing, he will be sorely missed. Well, I thank you for your efforts. Feel free to meet me in the tavern for a drink sometime. I must now get to the task of replacing my associate. 
+
+You say, 'I will replace him' 
+
+Duriek Bloodpool says 'Hmm, you seem a bit green and I hesitate to trust you with such an important work, but time is of the essence as my days in this world are running out. Bring me back a bottle of cough elixir and, if you are still interested, I will instruct you further. 
+
+Head to Neriak Foreign Quarter. Find Smaka. 
+
+You say, 'hail Smaka' 
+
+Smaka says 'You want stuff? Or mebby you looks for a cure? 
+
+You say, 'I need a bottle of cough elixir' 
+
+Smaka says 'Ahh, you want me cure?! It cost lots of money, big big secret it is. Only us ogres know how to make. You wants? Only 1000 platinum! Make you feels bedder in no times! 
+
+Hand 1000 platinum to Smaka. 
+
+Smaka says 'Okay, enjoy me drink! 
+
+Your faction standing with DarkBargainers has been adjusted by 3. 
+Your faction standing with DreadguardOuter has been adjusted 1. 
+Your faction standing with DreadguardInner has been adjusted 1. 
+
+You get a Cough Elixir. 
+
+Head back to Paineel. Hand the Cough Elixir to Duriek. 
+
+Duriek Bloodpool says 'Thank you. Now, quickly, there is not much time for me. What I tell you here now must never be shared with another soul. I have spent the better part of my life piecing together clues for the creation of a legendary dark blade, a corrupted Ghoulbane. I am very close to understanding the method used in manipulating the enchantments of the Ghoulbane, but in my current condition, I cannot finish collecting the research. My previous apprentice was searching for this last clue when he met his untimely demise.' 
+Your faction standing with TrueSpirit has been adjusted by 3. 
+
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable. 
+
+You say, 'where was he searching?' 
+
+Duriek Bloodpool says 'I possess a key that will open a sealed tome to be found somewhere in the ruins uncovered here not long ago. Recover that tome for me and I am certain I will be able to corrupt the Ghoulbane. My name will be etched in history and you will wield a legend! You must hurry now, and I must return to my studies. Do not return to me, {your name} , without the tome. 
+
+
+'''More Work''' 
+
+Head to the Hole and find a ratman guard. They patrol the jail area together with ratman warriors. 
+
+a ratman guard scowls at you, ready to attack -- it appears to be quite formidable. 
+a ratman guard hits YOU for 370 points of damage. 
+... 
+You have slain a ratman guard! 
+You gain party experience!! 
+
+a ratman guard - Level 55 warrior - Is not immune from any spells. 
+Approximate forces required: two 50+ groups. 
+You find a Dusty Tome on its corpse. 
+
+Head back to Paineel and hand the Dusty Tome to Duriek. 
+
+Duriek Bloodpool gasps at you in astonishment, eyes beaming with pride and says, 'You've found it! It seems I underestimated you. You have succeeded where others failed. I feared it would never come to pass.' Duriek takes the key from his neck, softly muttering some words, and places it in a previously unseen keyhole. The book's hinges creak as Duriek pulls it open. After reading for a few moments, he says, 'It is even better than I had hoped! It will take me weeks to uncover a portion of what this book has to offer. But this is what I have been searching for, so many years! At last I know the items required to corrupt that accursed blade!' 
+
+Your faction standing with TrueSpirit has been adjusted by 3. 
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable. 
+
+You say, 'what items?' 
+
+Duriek Bloodpool says 'I will need the Ghoulbane, the Soul Leech, the Blade of Abrogation, and the Decrepit Sheath. Alas, I am far too ill to travel and collect these pieces. I must call upon your youth and ability again, {your name} . Return to me with these items and I shall be known throughout history as the greatest grave lord to have walked Norrath and you shall be among the most powerful
+'''The Corrupted Ghoulbane'''
+
+The Ghoulbane can be obtained by camping the Froglok Shin Lord in Upper Guk You can also do it via [[The Sword of Nobility (Ghoulbane)]] Quest.
+
+The Soul Leech is dropped from Cazic-Thule himself (only pre-Fear revamp, drops off [[Fright]], [[Dread]], and [[Terror]] post revamp). He has the ability to harmtouch (his harmtouch essentially kills anyone) anyone in the zone, no matter how far they are. He is pretty hard to kill unless you have a strong guild and to make this even harder, Soul Leech is a rare drop!
+
+The Blade of Abrogation is dropped by various mobs within Plane of Air.
+
+The Decrepit Sheath is a separate quest started by Teydar in the Qeynos Aqueducts.
+
+'''Decrepit Sheath'''
+
+The decrepit hide is found off of Ashenbone Drakes in the Plane of Hate. They are level 51-53 and are extremely resistant to magic. They look like a miniature Dracholiche. The Drake Spine is dropped from Rharzar, a named drake. He is level 55 and is a cleric who heals himself. You need two full level 50-60 groups. He is resistant to all magic based spells, so don't depend on stuns to interrupt his heals, however a 60 SK can land a snare on him. The enchanted bar of platinum can be found off of a fellow enchanter. Take the three items to Teydar and you will get the Decrepit Sheath.
+
+Take the Decrepit Hide, the Drake Spine, and the enchanted bar of platinum to Qeynos Aquaducts. Just north east of 8b on map is Teydar. IMPORTANT - Feign Death WILL NOT WORK. Open trade window and hit hide and ensure you are a conned "indifferent" to Teydar. You will get the Decrepit Sheath.
+
+'''Corrupting the Ghoulbane'''
+
+Now take the Ghoulbane, the Soul-Leech, the Blade of Abrogation, and the Decrepit Sheath to Duriek. Open trade then hide make sure he con's indifferent then hit trade. You will get the Corrupted Ghoulbane.
+
+Duriek Bloodpool takes the Ghoulbane and places the other swords on either side of it. The sheath begins to gleam so intensely, you can see the bones inside Duriek's hands. After several minutes, there is a final, blinding flash. Duriek collapses to the ground. After a few moments, Duriek motions you closer and whispers, 'You have done well. I wish fate had been kinder to me and allowed me your aid years ago--I might have lived long enough to enjoy the fame of our combined efforts. I studied much of the tome you retrieved and have stumbled upon something that may be the key to unleashing darkness upon the face of Norrath forever. You must seek out a powerful lich by the name of Lhranc. Farewell, Hrothh.' With his last bit of energy, Duriek places the corrupted Ghoulbane in your hands.
+
+Your faction standing with TrueSpirit got better.
+
+Duriek Bloodpool then dies after giving you the Corrupted Ghoulbane.
+
+'''Lhranc: the Ghost'''
+
+Find Lhranc the Ghost is City of Mist. He spawns in the center room on the other side of the wall that surrounds the castle moat.
+
+'''The Ritual'''
+
+At the docks in Toxxulia Forest, looks for Knarthenne Skurl.
+
+Knarthenne will then give you a Soulcase.
+
+Now go to Kerra Isle and search for Marl Kastane.
+
+Marl will hand you a Seal of Kastane.
+
+Give this Seal to Gerot Kastane, her husband. He can be found in Paineel, past the elevator.
+
+Gerot Kastane says 'At last! I have been waiting for my brother for weeks! We are doomed! Innoruuk will taint our seed into some perverse, twisted, maddened breed. The prophecy has begun to unfold and there are none capable of stopping it. Quickly, return this note to Marl, we must hide! We have failed the master! We must escape the hateful one's wrath!
+
+From Gerot you get a Note to Marl. Go back to Marl and give her the note.
+
+Go to the Hole and find Caradon.
+
+Find [[a mimic]]. They are in the city section hole. A semi-common drop from them are [[Cell Key]]s. Take this cell key and (NOTE::When doing any sort of turn in/hand in for this epic quest, whether it be spawning Kyrenna or turning in the Dark Shroud etc... MAKE 100% CERTAIN that you are indifferent to the NPC you are doing the hand in with. You can do this by putting the item(s) in the trade window, and then using the Hide skill or have someone cast invis (or IVU for Glohnor). Again, make absolutely certain that the npc cons indifferent to you before you click trade or the item(s) will be gobbled up. If for some reason you are already indifferent to the npc, best bet is to use hide/invis/ivu and consider another npc (or better still, a mob) to be sure.) give it to [[Caradon]].
+
+Caradon and Kyrenna then start attacking you. Caradon is a level 55 Paladin and Kyrenna is a level 55 cleric. Two kill them both you will need to full level 50-60 groups. Caradon and Kyrenna both are immune to any spells so you need many tanks and many clerics *(This is not true, see [[Wedar's Guide to The Hole]] for tips on this fight).
+
+Loot Kyrenna and you will get Blood of Kyrenna and Heart of Kyrenna.
+
+'''Completing the Ritual'''
+
+Take the Blood of Kyrenna back to Marl.
+
+Marl Kastane says 'Here, you take this shroud. You must now find the spirit of glohnor and place this item on him. This should force him back into his mummified body and then you must destroy this newly raised form and return to me its wrappings.
+
+You will find Ghost of Glohnor in the Hole. It is a rare spawn you might have to wait a while. When you find him give him the Dark Shroud that was given to you by Marl.
+
+The Ghost then despawns and a mummy comes running at you from the basement.
+
+The mummy is a level 56 warrior and is immune to all spells except the Wizard Lure Spells. You will need two level 50-60 groups (A single balanced group 54+ is fine, mummy hits around 288 max). 
+From his corpse you get the Head of Glohnor and the Glohnor Wrappings. 
+Take the Head of Glohnor to Gerot Kastane and the Glornor Wrappings to Marl. 
+You will get the Valiant Head and the Will of Innoruuk. 
+To get the Heart of the Innocent you must combine the Heart of Kyrenna in the Soulcase.
+
+'''The End'''
+
+Go back to Lhranc and give him the Corrupted Ghoulbane, the Heart of the Innocent, the Valiant Head, and the Will of Innoruuk. Make sure you are indifferent to him, open trade window and have somebody else cast IVU on you before you hit trade.
+
+Lhranc will disappear and reappear as a human. If you have not become KoS at this point then...
+
+Lhranc will now start attacking you. He is level 63 Shadow Knight. He harmtouches many times during the fight and has a buttload of hitpoints. It is impossible to mesmerize him, slow him, or any other debuffs so have many, many, many clerics ready to use all their many healing. You will need around 5-6 full groups of level 50-60s. Once Lhranc is dead you will find, on his corpse, Innoruuk's Curse.
+
+Congratulations on your {{:Innoruuk's Curse}}!
+
+== Long Walkthrough with Dialogue ==
+
+Kurron Ni appears in the Overthere outpost.
+
+You say, 'Hail, Kurron Ni'
+
+Kurron Ni says 'Out of my way, stranger, I am on a delicate mission. Interfere with my search and I shall relieve you of your head! Bother me no more.
+
+You say, 'What do you seek?'
+
+Kurron Ni says 'I have traveled here in hopes of finding a soul worthy of assisting me in completing my mission.
+
+You say, 'I am worthy'
+
+Kurron Ni says 'I doubt it, but I have been wrong before. Before I share with you the details of my mission, however, you must first prove your worthiness. Agreed?
+
+You say, 'Agreed'
+
+Kurron Ni says 'Very well then, my new friend. I have an acquaintance that stands in need of three pieces of Darkforge Armor. He requires the breast, greaves and helm to complete his set. I also must pay back a loan that has come due in the amount of 900 platinum. Return this to me and I shall share with you my dark mission, and the immeasurable reward that will be earned at its completion. Show your face here without fulfilling my request and I will offer you on the altar to Innoruuk himself. Be off!
+
+After a hard task of acquiring the requested Darkforge items and 900 platinum pieces, come back to the Overthere. Hand the Darkforge Breastplate, Darkforge Greaves, Darkforge Helm,and 900 platinum pieces to Kurron Ni. Kurron Ni says 'Well done, {your name} , I honestly didn't expect to see you again. Yes, yes, this is perfect! My mission is nearly complete! Your faction standing with TrueSpirit got better.
+
+Kurron Ni looks your way apprehensively -- he appears to be quite formidable.
+
+You say, 'What mission?'
+
+Kurron Ni says 'My mission was to find a pathetic shadowknight and bring him closer to Innoruuk. You volunteered. By exercising my superior powers of persuasion, I have now taken from you a fine suit of armor and enough coin to ensure that I will be sleeping neither soberly nor alone for quite some time! Now I ask you, worthy shadowknight, do you not feel the fires of hatred coursing through your veins like never before? That is the very reward I spoke of! You have been brought closer to my master. My mission is complete! You foolish excuse for a dark knight, I shall take your head and tell all of your generous donation to the mighty Teir'Dal rogues!
+
+Kurron Ni punches YOU for 200 points of damage.
+
+*Kurron Ni glares at you threateningly -- he appears to be quite formidable.
+*...
+*You have slain Kurron Ni!
+*You gain party experience!!
+
+Kurron Ni - Level 55 rogue - Immune from all spells but disease/poison DoTs and lure line.
+Approximate forces required: one 50+ group.
+
+You find a Letter to Duriek on his corpse that reads:
+Duriek, I have searched this godless pit for what seems to be an eternity with nothing to show for my efforts. I pray to Innoruuk that you have made some breakthrough in your research. Please update me as to your progress. In the meanwhile I have run into some unexpected expenses and will need some funds to carry on. An additional ten thousand should suffice. Regards, Karnett
+
+'''The New Apprentice'''
+
+Duriek Bloodpool can be found in Paineel. Hand him the Letter to Duriek you have... found.
+
+Duriek Bloodpool says 'Yes, most unfortunate. I was informed last week of the death of my most recent apprentice. A few months ago, I paid a substantial sum to a group of rogues sent from Neriak to collect on a gambling debt. He swore to me that was the end of it, but I suspected otherwise. My warnings of gambling with the rogues fell on deaf ears. Please accept this for your troubles.
+
+Your faction standing with TrueSpirit got better
+You gain experience!!
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable.
+
+Despite what Duriek tells you, you receive neither item nor money.
+
+You say, 'What apprentice?'
+
+Duriek Bloodpool says 'As stubborn and foolish as he sometimes was, he was full of potential. Had he managed to achieve my age he doubtless would have surpassed my abilities. Though I am not surprised at his passing, he will be sorely missed. Well, I thank you for your efforts. Feel free to meet me in the tavern for a drink sometime. I must now get to the task of replacing my associate.
+
+You say, 'I will replace him'
+
+Duriek Bloodpool says 'Hmm, you seem a bit green and I hesitate to trust you with such an important work, but time is of the essence as my days in this world are running out. Bring me back a bottle of cough elixir and, if you are still interested, I will instruct you further.
+
+Head to Neriak Foreign Quarter. Find Smaka.
+
+You say, 'hail Smaka'
+
+Smaka says 'You want stuff? Or mebby you looks for a cure?
+
+You say, 'I need a bottle of cough elixir'
+
+Smaka says 'Ahh, you want me cure?! It cost lots of money, big big secret it is. Only us ogres know how to make. You wants? Only 1000 platinum! Make you feels bedder in no times!
+
+Hand 1000 platinum to Smaka.
+
+Smaka says 'Okay, enjoy me drink!
+
+*Your faction standing with DarkBargainers got better
+*Your faction standing with DreadguardOuter got better
+*Your faction standing with DreadguardInner got better
+*You get a Cough Elixir.
+
+Head back to Paineel. Hand the Cough Elixir to Duriek.
+
+Duriek Bloodpool says 'Thank you. Now, quickly, there is not much time for me. What I tell you here now must never be shared with another soul. I have spent the better part of my life piecing together clues for the creation of a legendary dark blade, a corrupted Ghoulbane. I am very close to understanding the method used in manipulating the enchantments of the Ghoulbane, but in my current condition, I cannot finish collecting the research. My previous apprentice was searching for this last clue when he met his untimely demise.
+Your faction standing with TrueSpirit got better
+
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable.
+
+You say, 'where was he searching?'
+
+Duriek Bloodpool says 'I possess a key that will open a sealed tome to be found somewhere in the ruins uncovered here not long ago. Recover that tome for me and I am certain I will be able to corrupt the Ghoulbane. My name will be etched in history and you will wield a legend! You must hurry now, and I must return to my studies. Do not return to me, {your name} , without the tome.
+
+'''More Work'''
+
+Head to the Hole and find a ratman guard. They patrol the jail area together with ratman warriors.
+
+*a ratman guard scowls at you, ready to attack -- it appears to be quite formidable.
+*a ratman guard hits YOU for 370 points of damage.
+*...
+*You have slain a ratman guard!
+*You gain party experience!!
+
+[[a ratman guard]] - Level 55 warrior - Is not immune from any spells. Approximate forces required: two 50+ groups. You find a [[Dusty Tome]] on its corpse.
+
+Head back to Paineel and hand the Dusty Tome to Duriek.
+
+Duriek Bloodpool gasps at you in astonishment, eyes beaming with pride and says, 'You've found it! It seems I underestimated you. You have succeeded where others failed. I feared it would never come to pass.' Duriek takes the key from his neck, softly muttering some words, and places it in a previously unseen keyhole. The book's hinges creak as Duriek pulls it open. After reading for a few moments, he says, 'It is even better than I had hoped! It will take me weeks to uncover a portion of what this book has to offer. But this is what I have been searching for, so many years! At last I know the items required to corrupt that accursed blade!'
+
+Your faction standing with TrueSpirit got better
+Duriek Bloodpool looks your way apprehensively -- he appears to be quite formidable.
+
+You say, 'what items?'
+
+Duriek Bloodpool says 'I will need the Ghoulbane, the Soul Leech, the Blade of Abrogation, and the Decrepit Sheath. Alas, I am far too ill to travel and collect these pieces. I must call upon your youth and ability again, {your name} . Return to me with these items and I shall be known throughout history as the greatest grave lord to have walked Norrath and you shall be among the most powerful in our art.
+
+'''The Corruption'''
+
+The Ghoulbane is in possession of the froglok shin lord in the Ruins of Upper Guk.
+
+The Soul Leech, Dark Sword of Blood is in possession of the God of Fear, Cazic-Thule, in the Plane of Fear.
+
+The Blade of Abrogation is at times carried by monsters in the Plane of Sky.
+
+The Decrepit Sheath is fashioned by Teydar. He is located in the Qeynos Aqueduct System.
+
+Teydar looks your way apprehensively -- looks like he would wipe the floor with you!
+
+You say, 'hail Teydar'
+
+Teydar says 'Hello {your name} , It's good to see another shadowknight. I'm Teydar, I've made it my life to fashion suitable scabbard and sheaths for our order.
+
+You say, 'Can you fashion a decrepit sheath?'
+
+Teydar says 'The object you desire is very difficult to fashion, nearly impossible, really. All I can offer to do is try. The real difficulty is the contents that give the sheath its power. They have to be of an almost equal evil. I think some kind of decrepit hide, a drake spine along with a bar of enchanted platinum should prove enough to make this item.
+
+Drake Spine can be taken from a drake named Rharzar in Rathe Mountains.
+
+*Rharzar scowls at you, ready to attack -- it appears to be quite formidable.
+*Rharzar hits YOU for 288 points of damage.
+*...
+*You have slain Rharzar!
+*You gain party experience!!
+
+Rharzar - Level 55 cleric - Immune from all spells but tap line, poison/disease DoTs, and lure line.
+Approximate forces required: two 50+ groups.
+28.03.20 - Fairly easy solo for 60 shaman. Root/malosini/slow lands.
+
+Decrepit Hide can sometimes be found on the ashenbone drakes in the Plane of Hate.
+
+*an ashenbone drake scowls at you, ready to attack -- it appears to be quite formidable.
+*an ashenbone drake hits YOU for 137 points of damage.
+*...
+*You have slain an ashenbone drake!
+*You gain party experience!!
+
+BE HIDDEN (NOT FD) and ensure you con INDIFFERENT when handing the Drake Spine, the Decrepit Hide, and the enchanted platinum bar to Teydar.
+
+Teydar says 'I did it! The pieces you got me were perfect! It took a huge effort on my part to craft this, of course. it saddens me that I'm unable to keep one of my best works. A deal is a deal. There is honor among shadowknights.
+
+Your faction standing with Truespirit got better
+
+Teydar looks your way apprehensively -- looks like he would wipe the floor with you!
+
+You get a Decrepit Sheath.
+
+Head back to Duriek and give him the Ghoulbane, the Soul Leech, Dark Sword of Blood, the Blade of Abrogation, and the Decrepit Sheath.
+
+Duriek Bloodpool takes the Ghoulbane and places the other swords on either side of it. The sheath begins to gleam so intensely, you can see the bones inside Duriek's hands. After several minutes, there is a final, blinding flash. Duriek collapses to the ground. After a few moments, Duriek motions you closer and whispers, 'You have done well. I wish fate had been kinder to me and allowed me your aid years ago, I might have lived long enough to enjoy the fame our combined efforts. I studied much of the tome you retrieved and have stumbled upon something that may be the key to unleashing darkness upon the face of Norrath forever. You must seek out a powerful lich by the name of Lhranc. Farewell, {your name}.' With his last bit of energy, Duriek places the corrupted Ghoulbane in your hands.
+
+Your faction standing with TrueSpirit got better
+You get a Corrupted Ghoulbane.
+
+'''The Cursed Being'''
+
+Lhranc is a ghost in the City of Mist.
+
+You say, 'hail Lhranc'
+
+Lhranc says 'Ahh, finally! He has sent you. No time to waste now, you must help me lift the curse at once!
+
+You say, 'What curse?'
+
+Lhranc says 'Can you not see my condition! I have been unjustly sentenced to an eternity in this wretched form you see before you, never to leave these walls. In exchange for the cure for this curse, I swear to show you a secret that would make you the most powerful of your kind.
+
+You say, 'What is the cure?'
+
+Lhranc says 'I require only four things of you, dark one, and one of them you hold now. Bring me the heart of an innocent, the head of the valiant, and the will of Innoruuk. With these, my curse shall be lifted at last and I will craft a weapon that will cast a shadow over all of Norrath. "one of them you hold" refers to the Corrupted Ghoulbane.
+
+'''The Ritual'''
+
+In Toxxulia Forest near the dock you may find Knarthenne Skurl, at -5, +1145.
+
+You say, 'hail Knarthenne Skurl'
+
+Knarthenne Skurl says 'Ah, you do not possess the heart of an innocent. Be gone with you!
+
+You say, 'what heart of an innocent?'
+
+Knarthenne Skurl says 'What's that? Heart of the Innocent, you say?! Ages, it has been, since I was last asked that. The Heart of the Innocent is an item of great power. Few are they who have ever commanded the dark magic of such an object. It is the bound soul of a pure mortal, rare indeed. Take this hollow gem, and combine with it the heart of one who is pure. If your hand is steady and your mind is clear, you shall have what you seek. You get a Soulcase.
+
+Marl Kastane may be found in Toxxulia Forest at +115, +2135.
+
+You say, 'hail Marl Kastane'
+
+Marl Kastane says 'Begone!! You do not have the will to do the things I require!
+
+You say, 'I have the will of Innoruuk'
+
+Marl Kastane says 'You speak of a myth, friend. Such an object does not exist in this age and the secret of its creation lies locked in my mind, where it shall stay. It has been passed down through generations in my line, not to be revealed to a soul until the prophecy has come to pass.
+
+You say, 'What prophecy?'
+
+Marl Kastane says 'My apologies, {Your name} , I have said too much already. Instead, I have an errand to occupy your thoughts. Take this as proof that you are sent from me and find my brother in Paineel. I haven't spoken with him in some time now and his well being is essential to our family's destiny.
+
+You get a Seal of Kastane.
+
+In Paineel, past the elevator, you may find Gerot Kastane. 
+Hand the Seal of Kastane to Gerot Kastane.
+Gerot Kastane says 'At last! I have been waiting for my brother for weeks! We are doomed! Innoruuk will taint our seed into some perverse, twisted, maddened breed. The prophecy has begun to unfold and there are none capable of stopping it. Quickly, return this note to Marl, we must hide! We have failed the master! We must escape the hateful one's wrath!
+
+Your faction standing with Truespirit got better
+
+You get a Note to Marl.
+
+You say, 'hail Gerot Kastane'
+
+Gerot Kastane says, '{Your name} ! My hero! I am at your service. I have been told to tell you all I know of the Head of the Valiant. Its construction is a mockery to the gods of Light, an abomination above all others. The method of creation of the Head of the Valiant was passed down through my family for centuries. All I require of you is the physical head of a valiant warrior. I have the rest of the materials right here to fashion this item for you.
+Head to Kerra Isle and hand the "Note to Marl" to Marl Kastane.
+
+Marl Kastane reads the note, eyes widening in panic. He raises his eyes to you and says, 'This is grave news, friend. If the prophecy is allowed to be fulfilled, our strength will vanish into obscurity. Goodness and purity will spread like a plague across the land and the servants of Hate will be powerless to stop it!'
+Your faction standing with Truespirit got better
+
+You say, 'What prophecy?'
+
+Marl Kastane says 'I suppose it is time for the secret to be shared. Ages ago, two brothers were born. Glohnor was highly favored by the pompous Lightbringer, whose name we do not utter. Lhranc was chosen by the Prince of Hate to bring destruction and turmoil to the sons of men. The one thing they shared in common was their love of the fair priestess, Kyrenna. Kyrenna fell deeply in love with Glohnor. When Lhranc discovered this, he was overcome with rage and unwisely attacked his brother, who happened to be far more adept in combat. The fight cost Lhranc dearly. He lost his dignity as well as an eye in the struggle. He was ordered to leave Freeport and live his life in exile from the only home he had ever known.
+
+You say, 'What became of Lhranc?'
+
+Marl Kastane says 'Lhranc wandered the deserts of Ro for weeks, sinking deeper into depression and giving in to rage. Reports from the local merchants and caravans had him roaming the dunes muttering to himself incoherently. Eventually, he was forgotten, blending in with the hermits and madmen common to that region, forgotten by all save one.
+
+You say, 'Who is the one?'
+
+Marl Kastane says 'Innoruuk had not forsaken Lhranc. Once his rage and hate had matured and sufficiently altered his soul, the dark prince summoned him and gave him dominion over the demons that had enslaved his mind. He was given a weapon that made him powerful enough to slay any enemy that stood in his way. He was to become the first human to harness the power of the almighty shadowknight. After years of traveling and teaching mankind his newfound abilities, Lhranc sneaked back into Freeport through a series of sewers in search of revenge against his brother and in hopes of kidnapping Kyrenna, the source of his obsession. Waiting until Glohnor was alone, Lhranc sprang from the shadows and slew his brother. This was the act that brought about his curse.
+
+You say, 'What curse?'
+
+Marl Kastane says 'As I said, Glohnor was highly favored by the Lightbringer. When the contemptible god of honor discovered what had been done, he transformed Lhranc into a deformed spectral knight and placed him in the ruined city. Lhranc then used what remained of his power to summon Kyrenna to his side and bind her there in a timeless, seamless sphere. He struggled for centuries to break her will and convince her to serve Innoruuk, certain that together they could remove his curse. But then, there was the prediction.
+
+You say, 'What prediction?'
+
+Marl Kastane says 'The prophecy states that one day Kyrenna will escape the clutches of Lhranc and that she will resurrect Glohnor. Together, it reads, they will destroy Lhranc and undo all he has done. I trust that I do not need to tell you, {Your name} , that this would decimate our foothold in Norrath. When the prophecy was written, its words spread across the land. A dark council was held to construct a plan that would frustrate the words of the prophets. My ancestors were responsible for robbing Glohnor's tomb and securing his remains. For generations we have been charged with the duty of guarding those remains and the secret plan, should the corpse be discovered.
+
+You say, 'What secret plan?'
+
+Marl Kastane says 'The plan is a last resort only to be tried if Kyrenna indeed escapes and the remains are discovered. Judging by my brother's words that time is now. It will take the most powerful hero all the courage and dedication he can muster to complete the ritual.
+
+You say, 'I will complete the ritual'
+
+Marl Kastane says 'It would seem we have no choice, and this is our only hope. I must first make a dark shroud. To do this I must stain it with the blood of an innocent. Go find me this rare blood so I can start the creating of the shroud.
+
+In the Hole, in a jail cell, you may find Caradon.
+
+You say, 'hail Caradon'
+
+Caradon says 'Please help me get out of here! My companion, Kyrenna, and I are trapped in this hellish place!
+
+You say, 'Who is Kyrenna?'
+
+Caradon says 'I was with Kyrenna when she attempted to revive the corpse of Glohnor the Valiant. Like fools, we rushed into a trap. Now we sit here and await our deaths.'
+
+You say, 'Where is Kyrenna?'
+
+Caradon says 'She is close by. For a price, I shall tell you. Bring me the key to my freedom and I will betray her, who sentenced me to this fate.'
+
+In the city area of the Hole you can find "a chest," which sometimes drops a Cell Key.
+
+Take the Cell Key to Caradon.
+As with most turn-ins, you will need to '''hide/invis and verify indifferent faction''' after opening the trade window.
+
+*Caradon says 'Kyrenna! We are free!
+*Your faction standing with Truespirit got better
+*Kyrenna punches YOU for 157 points of damage.
+*Caradon punches YOU for 157 points of damage.
+
+*You have slain Kyrenna! You gain party experience!! You have slain Caradon! You gain party experience!!
+
+*Caradon - Level 55 paladin - Is not immune from any spells. Approximate forces required: one 50+ groups.
+*Kyrenna - Level 55 cleric - Immune from any spells.
+*Approximate forces required: one 50+ groups.
+
+You get Blood of Kyrenna and Heart of Kyrenna from her corpse.
+
+'''The Ritual Completion or The Mummy Undressing'''
+
+Take Blood of Kyrenna to Marl Kastane. 
+BE HIDDEN (NOT FD) and ensure you con INDIFFERENT when handing in the blood
+Marl Kastane says 'Here, you take this shroud. You must now find the spirit of Glohnor and place this item on him. This should force him back into his mummified body and then you must destroy this newly raised form and return to me its wrappings.' 
+Your faction standing with Truespirit got better. 
+You get a Dark Shroud. 
+
+In the ghost area of the Hole you may find a Ghost of Glohnor. 
+Hand the Dark Shroud to it. 
+Shortly after a Mummy of Glohnor will appear. When you kill the mummy you will get the head of Glohnor and the wrappings.
+
+*Mummy of Glohnor - Level 55 ? - Immune ?
+*Approximate forces required: two 50+ groups.
+
+Bring the head to Gerot Kastane. 
+Gerot Kastane says 'Good travels, dark one! May Innoruuk curse your enemies!' 
+Your faction standing with Truespirit got better. 
+You get the Head of the Valiant. 
+Bring the wrappings to Marl Kastane. 
+Marl Kastane says 'You've done it! Your efforts will stand as a tribute to our kind for time eternal, my friend. Although nothing could possibly serve as a just reward for your accomplishments, please accept this as well as my eternal gratitude. It has been fashioned from the wraps of the mummy and shall protect you well.' 
+Your faction standing with Truespirit got better. 
+You get the Will of Innoruuk. 
+Combine the Heart of Kyrenna with the Soulcase to produce the Heart of the Innocent.
+
+'''The Lift of the Curse or Back to the Dead'''
+
+Head to City of Mist and hand the Corrupted Ghoulbane, the Heart of the Innocent, the Head of the Valiant, and the Will of Innoruuk to Lhranc.
+
+Lhranc says 'Ahh, at last I can free myself of this prison! Centuries have passed since I enjoyed the fruits of mortality.' He hurls the components above his head where they remain suspended in midair. They hover in place while he chants the words of an ancient spell. As he speaks, the items begin to rotate around his head, slowly at first, then faster as the chanting grows louder, until it spins in a blur. Soon, the room is filled with a deafening shriek that pierces you to the core. Lhranc hurls a coin at you and laughs, 'Here is your reward fool.'
+
+Your faction standing with True Spirit got better. Receive Lhranc's Coin.
+
+After a brief pause..
+
+Lhranc says 'Young one, you cannot fathom how long it has been since I breathed air and felt flesh on my bones. I told you I would show you a weapon that would make you the most powerful of your kind. I said nothing of giving it to you. Feast your eyes on Innoruuk's Curse mortal, thank you for your service.' 
+
+At this point, if you are not satisfied with his answer, you better start using some force.
+
+Auto attack on. Lhranc slashes YOU for 385 points of damage.
+... You have slain Lhranc! You gain party experience!!
+
+Lhranc - Level 60 shadowknight - Immune from any spells. Procs a direct damage spell.
+Approximate forces required: three 50+ groups.
+
+Upon killing Lhranc, Marl Kastane appears nearby.
+
+Marl Kastane says 'Alas, I cannot be the one to carry the sword back to my people as proof in fear they will kill me to possess it for their own. I think a simple trade is in order, perhaps you have a symbol or token of Lhranc's that I could take back to the others to ease their worries?'
+
+Hand the Lhranc's Coin to Marl Kastane.
+
+Marl Kastane says 'Very good, I will go deliver this right away.'
+
+You receive the {{:Innoruuk's Curse}}. 
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Shadow Knight Quests]]

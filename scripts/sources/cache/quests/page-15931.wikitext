@@ -1,0 +1,54 @@
+{{Classic Era}}
+[[File:Npc_tobon_starpyre.png|200px|frame|Tobon Starpyre]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Registration Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Gold Felt Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Wizard who doesn't follow Bertoxxulous, you will have a Registration Letter in your inventory. The note reads as follows:
+
+: Greetings young pupil, your new school awaits you.  Seek out the Eldritch Collective at the Library Mechanimagica.  Give this Registration Letter to master [[Tobon Starpyre]], he will introduce you to your new course of studies.
+
+Upon handing the letter to [[Tobon Starpyre]]:
+
+: [[Tobon Starpyre]] says, 'Ah..  Welcome, friend!  I am Tobon Starpyre, Master Wizard of Library Mechanimagica.  This is our tunic - wear it with pride.  Study hard, master your skills, and make us proud. '
+
+<div class='facblock'>
+
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dirty Gold Felt Robe*]]. Good luck, Wizard!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Wizard Quests]]

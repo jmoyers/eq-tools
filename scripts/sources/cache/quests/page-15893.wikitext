@@ -1,0 +1,68 @@
+{{Paineel Era}}
+[[File:npc_antus_shelbra.png|frame|Antus Shelbra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Antus Shelbra]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]]
+|-
+! ''' Related NPCs: '''
+| [[Kirran Mirrah]]
+|}
+
+== Reward ==
+
+<ul><li>Experience, Faction, Coin</li></ul>
+
+== Walkthrough ==
+
+''[[Antus Shelbra]] can be found on the third floor of the Abattoir at (762, 829) in [[Paineel]].''
+
+You say, 'Hail, Antus Shelbra'
+
+: Antus Shelbra says, 'Greetings, ______. You have come to me searching for tasks and tasks I have. Would you judge yourself an [experienced heretic] or one who has [much to learn]?'
+
+You say, 'I am an experienced heretic.'
+
+: Antus Shelbra says, 'Ah. Excellent. I have just the task for you, ______. In Kerra Ridge, there is a particular cat named Kirran Mirrah that we have been using to gather information about, well, certain aspects of cat society. He is no longer providing information for us and we have something for him that may encourage him to assist again. Ha! Hand him this sealed bag for us. It may just change his point of view. Hahaha!'<br>
+
+''--You receive [[A Smelly Sealed Bag]].--''
+
+'''Travel to [[Kerra Island]] to find [[Kirran Mirrah]] at location (389, -652) in the first hut to the left of the entrance. Placeholder is [[a kerran awrat]] and respawn time is ~18 minutes.'''
+
+You say, 'Hail, Kirran Mirrah'
+
+'''Hand Kirran the [[A Smelly Sealed Bag]].'''
+
+: Kirran Mirrah says, 'Ahhhhhhhh! I can't believe that you ---- ahhhhhhhh! Die you, you, you evil evil heretic!'
+
+''--You receive [[Karran's Head]].--''
+
+'''Return to Antus and give him [[Karran's Head]].'''
+
+: Antus Shelbra says, 'Ah, it seems as if he was not a very cooperative kitty. So much for family. Oh well, take this token change as a show of my appreciation. Cazic-Thule shines on you in all his glorious fear this day, young one.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 2 platinum, 8 silver, 2 copper pieces.
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

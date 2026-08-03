@@ -1,0 +1,134 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_lorekeeper_einar.png|frame|Lorekeeper Einar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Lorekeeper Einar]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Grand Master's Headband
+|Grand Master's Chest Wraps
+|Grand Master's Arm Wraps
+|Grand Master's Wrist Wraps
+|Fist of the Grand Master
+|Grand Master's Leg Wraps
+|Grand Master's Slippers
+}}
+
+== Checklist ==
+Turn-ins to [[Lorekeeper Einar]] in [[Thurgadin]].{{CheckboxList}}
+*[[Grand Master's Headband]]
+:*[[Eroded Leather Cap]]
+:*3x [[Crushed Coral]]
+*[[Grand Master's Chest Wraps]]
+:*[[Eroded Leather Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Grand Master's Arm Wraps]]
+:*[[Eroded Leather Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Grand Master's Wrist Wraps]]
+:*[[Eroded Leather Bracelet]]
+:*3x [[Crushed Flame Emerald]]
+*[[Fist of the Grand Master]]
+:*[[Eroded Leather Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Grand Master's Leg Wraps]]
+:*[[Eroded Leather Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Grand Master's Slippers]]
+:*[[Eroded Leather Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+
+== Walkthrough ==
+
+Must be at least Kindly.
+
+You say, 'Hail, Lorekeeper Einar'
+
+Lorekeeper Einar says, 'Greetings to you. I seek one that has chosen the path of monkhood. What do you call yourself?'
+
+You say, 'I am a monk'
+
+Lorekeeper Einar says, 'Good. I had hoped you were one. I have heard that as seeker of the way you are in constant training to push yourself to your physical and mental limits. It is an admirable quality and I wish to aid you. I will provide you with a cap, a tunic, sleeves, bracers, gloves, leggings and boots.'
+
+
+'''Gems are dropped in various Velious zones while Eroded Leather Armor drops from the higher level giants in Kael Drakkel.'''
+
+'''After turn-in:'''
+
+Lorekeeper Einar smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Cap ==
+
+''Dialogue needed.''
+
+Einar promises to make you a cap if you bring him three pieces of [[Crushed Coral]] as well as an [[Eroded Leather Cap]].
+
+== Tunic ==
+
+''Dialogue needed.''
+
+Einar promises to make you a tunic if you bring him three [[Flawless Diamond]]s and an [[Eroded Leather Tunic]].
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Einar promises to make you some sleeves if you bring him three [[Flawed Emerald]]s and a set of [[Eroded Leather Sleeves]].
+
+== Bracer ==
+
+You say, 'I want bracers'
+
+Lorekeeper Einar says, 'For the bracers, I will require a [[Eroded Leather Bracelet|eroded leather bracelet]] as well as three [[Crushed Flame Emerald|crushed flame emeralds]]. Return to me when you find such things.'
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Einar promises to make you some gloves if you bring him three [[Crushed Topaz]] and a pair of [[Eroded Leather Gloves]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Einar promises to make you some leggings if you bring him a set of old [[Eroded Leather Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Einar promises to make you some boots if you bring him three pieces of [[Crushed Black Marble]] and a pair of [[Eroded Leather Boots]].
+
+[[Category:Monk Quests]]
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Thurgadin Armor Quests]]

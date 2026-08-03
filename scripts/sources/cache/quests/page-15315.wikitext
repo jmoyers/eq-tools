@@ -1,0 +1,126 @@
+{{Classic Era}}
+
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Romar Sunto]]
+|-
+! ''' Minimum Level: '''
+| 35 (to start, 44 to use)
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Ak'Anon]], [[Erudin]], [[Erudin|Erudin Palace]], [[Grobb]], [[Halas]], [[High Keep]], [[Neriak|Neriak Commons]], [[Neriak|Neriak Third Gate]], [[Qeynos|North Qeynos]], [[Felwithe|Northern Felwithe]], [[Oggok]], [[South Kaladim]], [[West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Romar Sunto]], [[Tarn Visilin]], [[Mizr N`Mar]], [[Raine Beteria]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Spell: Tashania}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* Get [[Coin Pouch]] from [[Romar Sunto]] in The Temple of Solusek Ro
+* Collect the coins from cities across the world:
+** Azia - '''[[Ak'anon]]''' - Near great wheel (not in water) (+1990, -260, -125).  It's on the West side of the water wheel, then North a bit right at the Star light thing.
+** Beza - '''[[Erudin|Erudin Palace]]''' - In the Caster's Guild zone, go one level up from the zone-in teleporter. It's in the fountain with rocks in it. (+703, +740, +44).
+** Caza - '''[[Felwithe|Northern Felwithe]]''' - in the fishing pond (-110, -790, -50).
+** Dena - '''[[West Freeport]]''' - In the pool under the Academy of Arcane Science (Caster Guild) (129, -750, -80).
+** Ena - '''[[Grobb]]''' - in pool near bar #6 on map. When you enter the zone and go across the first bridge the small pool on the right. (+197, -261).
+** Fana - '''[[Halas]]''' - in lake in front of city. If you're facing the city, it's to the left near the far dock, underwater on a raised ledge (-138, +179).
+** Geza - '''[[South Kaladim]]''' - Pool by warrior's guild (+75, +360, -5).
+** Heda - '''[[Neriak Commons]]''' - Pass the [[Constructed Potential]] to the big bridge. Jump off to the left, it's in the water next to the glass windows. (0, -795, -70).
+** Izah - '''[[Oggok]]''' - in lake near warrior guild at the north end (+103, +108).
+** Jaka - '''[[North Qeynos]]''' - under Temple of Life "UFO" in the Koalindl Fish Pool (-90, -445, -10).
+* Combine the 10 coins and combine them in the coin pouch to get a [[Coin of Tash]].
+* Give [[Coin of Tash]] to [[Tarn Visilin]] in the High Keep library at +75, -220 and receive the [[Glowing Coin of Tash]].
+* Give [[Glowing Coin of Tash]] to [[Mizr N`Mar]] in the Neriak 3rd Gate library to receive the [[Gleaming Coin of Tash]]. 
+* Give [[Gleaming Coin of Tash]] to [[Raine Beteria]] in Erudin library to receive the [[Radiant Coin of Tash]]. 
+* Give [[Radiant Coin of Tash]] to [[Romar Sunto]] in The Temple of Solusek Ro to receive [[Spell: Tashania]].
+{{End}}
+
+'''Warning DO NOT do turn-ins while invisible, though you can use Sneak'''
+
+== Walkthrough ==
+
+[[Romar Sunto]] may be found at +395, +95, +18 in the [[Temple of Solusek Ro]]
+
+You say, 'Hail, Romar Sunto' 
+
+: [[Romar Sunto]] says 'I am Romar Sunto, servant of Solusek Ro. I am searching for the [coin] of the mighty enchanter [Tash] - if you are interested in helping me acquire it, I will [reward] you with a powerful spell. I am also a dispenser of the Staff of Ro, sometimes also called [darkwood staves].' 
+
+You say, 'What coin?' 
+
+: Romar Sunto says 'Tash had a collection of ten antique silver coins that were left in different cities around the world. If you were to collect all 10 coins, I would give you a [coin pouch] that would let you combine them into the master coin of Tash. If you are interested, I will sell you a copy of the Tome of Tash, detailing where the coins were reportedly left, for a mere 50 gold.' 
+
+You say, 'Who was Tash?' 
+
+: Romar Sunto says 'Tash was a mighty enchanter and master jewelcrafter.' 
+
+You say, 'What is the reward?' 
+
+: Romar Sunto says 'I will reward you with a scroll for the spell Tashania. For personal use, of course.' 
+
+: Romar Sunto says 'Once you combine the coins within the pouch, you must take the Coin of Tash to Tarn Vislin in the HighKeep library to get it enchanted. Give him the coin and he will enchant it for you.'
+
+'''You say, 'What coin pouch?'''' 
+
+: '''Romar Sunto says 'I will lend you this coin pouch - put all 10 antique silver coins into it and combine them into the Coin of Tash.'''' 
+
+You receive the [[Coin Pouch]].
+
+For 50 gp, he will sell you a book called [[Tome of Tash]] which contains clues about where to find all 10 coins. The coins are called "An Old Silver Coin," and can be found as shown in the checklist above. 
+
+Take the 10 coins and combine them in the coin pouch to get a [[Coin of Tash]].
+
+Next, go visit [[Tarn Visilin]] in the High Keep library at +75, -220.
+
+You say, 'Hail, Tarn Visilin' 
+
+: Tarn Visilin says 'Hello. I am Tarn Visilin.' 
+
+Give Tarn the [[Coin of Tash]].
+
+: Tarn Visilin says 'The Coin of Tash! Very good. I have laid a basic enchantment on it - to get it further enchanted you must take the coin to Mizr N'Mar in the Library of Neriak.' 
+
+{{exp}}
+
+You receive a [[Glowing Coin of Tash]]. 
+
+Go to [[Mizr N`Mar]] in the library in Neriak 3rd Gate at +915, -1315, -67. and give him the [[Glowing Coin of Tash]]. 
+
+: Mizr N`Mar says 'Ah - the Coin of Tash - and already enchanted by..? Tarn? Very good! I have enchanted it further - you must now take the coin to Raine Beteria in the Library of Erudin to get the final enchantment.' 
+
+{{exp}}
+
+You receive a [[Gleaming Coin of Tash]]. Go to [[Raine Beteria]] in Erudin at -1050, -210, +68 (the library), and give her the coin. 
+
+* You may need to use Illusion-Erudite in order to obtain high enough regards with her to receive the next quest item.
+* She will return the Gleaming Coin of Tash if your faction is not high enough.
+
+: Raine Beteria says 'Thank you very much. I have always wanted one of these! Hehehe? just kidding. I see that you have enchanted this coin. I have placed the final enchantment on it - take it back to Romar.' 
+
+{{exp}}
+
+You receive a [[Radiant Coin of Tash]]. 
+
+Take this back to [[Romar Sunto]].
+
+: Romar Sunto says 'The Coin of Tash - fully enchanted! I am in your debt. Here is the scroll of Tashania that was promised to you.' 
+
+{{exp}}
+
+Receive your reward: [[Spell: Tashania]]. The scroll is NO TRADE.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Enchanter Quests]]

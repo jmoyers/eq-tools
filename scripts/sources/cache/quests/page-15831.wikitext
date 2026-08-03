@@ -1,0 +1,95 @@
+{{Velious Era}}
+{{Unsolved}}
+[[File:npc_tobart_dirkins.png|frame|Tobart Dirkins]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Tobart Dirkins]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Adia Coldbeard]], [[Doogle McBanick]], [[Loremaster Fronden]]
+|}
+
+== Reward ==
+
+<ul><li>no reward</li></ul>
+
+== Walkthrough ==
+
+''Note: It's possible this is only a storyline rather than a quest. If it's a quest, it remains unsolved.''
+
+{{expand}}
+
+===Tobart===
+
+Speak with Tobart Dirkins in the tavern called [[The Broken Glacier]] in Thurgadin.
+
+You say, 'Hail, Tobart Dirkins'
+
+:Tobart Dirkins says 'Hail and welcome to the Broken Glacier, _____. Ye'll find the bar downstairs and comfortable rooms up top. Can I interest you in one of our signature mugs? Only a platinum piece they are!'
+
+Hand him 1 platinum and receive [[The Broken Glacier Souvenir Mug]].
+
+:Tobart Dirkins says 'Thank ye and enjoy it. All the bars here in Thurgadin have their own mugs, just ask the barkeep if'n yer interested.' 
+
+There are five different bars in Thurgadin. You can obtain different mugs from some of them.
+
+===Doogle===
+
+Find [[Doogle McBanick]] in the tavern called [[Doogle's Drinks]].
+
+You say, 'Hail, Doogle McBanick'
+
+:Doogle McBanick says 'Welcome ta me bar, I suggest ye sit down and have a drink cause if'n ye ain't drinkin ye've no business bein 'ere.'
+
+You say, 'What signature mug?'
+
+:Doogle McBanick says 'Mug, yeah we got a lot of mugs here but what has that got to do with anything.'
+
+Hand him 3 gold pieces to receive [[Doogle's Signature Souvenir Mug]].
+
+===Adia===
+
+Find [[Adia Coldbeard]] in the tavern called [[The Icy Mug]].
+
+You say, 'Hail, Adia Coldbeard'
+
+:(She gives no reply.)
+
+Hand her 5 gold pieces to receive [[The Icy Mug Souvenir]].
+
+:Adia Coldbeard says 'Thank ye for yer Patronage. Enjoy yer mug and be sure ta visit us often.'
+
+===Fronden===
+
+Find [[Loremaster Fronden]] in a [[The Holy Harbinger]].
+
+You say, 'Hail, Loremaster Fronden'
+
+:(He gives no reply.)
+
+Hand him 1 platinum piece to receive [[The Broken Glacier Souvenir Mug]] (this would be the wrong mug for the tavern he is in).
+
+:Loremaster Fronden says 'Thank ye and enjoy it. All the bars here in Thurgadin have their own mugs, just ask the barkeep if'n yer interested.'
+
+
+A fourth mug is known to exist: [[The Velium Keg Collectors Mug]] from the tavern called [[The Velium Keg]], but how to actually obtain this item remains unknown.
+
+These mugs have no known use.
+
+==See also==
+* [[Fool's Gold Stein]]
+
+[[Category:Quests]]
+[[Category:Thurgadin]]

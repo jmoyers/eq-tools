@@ -1,0 +1,75 @@
+{{Classic Era}}
+[[File:npc_caleah_herblender.png|frame|Caleah Herblender]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Caleah Herblender]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| newbie mobs, [[Drawna Opimsor]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+'''Faction: Order of Three, minimum Indifferent or better is required.'''
+
+[[Caleah Herblender]] may be found inside the Herb Jar. Your Location is 303.76, -554.90, 3.36
+
+
+: Caleah Herblender says 'Drawna. Are we all out of [[Bat Fur]] again?'
+
+[[Drawna Opimsor]] says 'Yeah, it seems hard to come by lately. We're all out of [[Rat Whiskers]], too.'
+
+: Caleah Herblender says 'Hmm. Let's see if we can find someone to help replenish our stock of [[Rat Whiskers]] and [[Bat Fur]]. I need these items for a new little experiment I'm working on.'
+
+You say, 'Hail, Caleah Herblender'
+
+: Caleah Herblender says 'Greetings, and welcome to my humble little shop. I sell and trade various goods for my fellow wizards of the Order of Three. My assistants, Hanlore and Drawna, specialize in magicians' and enchanters' goods and would be glad to help you, too.'
+
+You say, 'What bat fur?'
+
+: Caleah Herblender says 'I need someone to gather up the three ingredients for a new spell I'm working on. I need some [rat whiskers], a [fire beetle eye], and a patch of [bat fur]. Thanks for helping me, young ______.'
+
+You say, 'What rat whiskers?'
+
+: Caleah Herblender says 'I need someone to gather up the three ingredients for a new spell I'm working on. I need some [rat whiskers], a [fire beetle eye], and a patch of [bat fur]. Thanks for helping me, young ______.'
+
+You say, 'What [[fire beetle eye]]?'
+
+: Caleah Herblender says 'I need someone to gather up the three ingredients for a new spell I'm working on. I need some [rat whiskers], a [fire beetle eye], and a patch of [bat fur]. Thanks for helping me, young ______.'
+
+All three items are common drops from the mobs in the newbie yard outside the Qeynos north gate.  Hand them in in this specific order: Bat Fur, Bat Fur, Rat Whisker, Fire Beetle Eye.
+
+: Caleah Herblender says 'All right. Remember, I need all three ingredients to test this spell out. Keep up the good work, ______.'
+: Caleah Herblender says 'All right. Remember, I need all three ingredients to test this spell out. Keep up the good work, ______.'
+: Caleah Herblender says 'Hmm. Good job, ______, let's give this a try. Flame and fire. Heat and spark. Touch of Ro, light this dark! Ahh. It stills needs a little work, I guess. Thanks for your help, here's a little something for your effort.'
+
+<div class="facblock">
+* Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+</div>
+{{exp}}
+
+You receive 8 copper from Caleah Herblender.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

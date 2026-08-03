@@ -1,0 +1,49 @@
+:''For the overview of the other Bayle List quests, see [[The Bayle List]].''
+[[File:npc_commander_kane.jpg|frame|Commander Kane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Commander Kane]]
+|-
+! ''' Minimum Level: '''
+| ?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]], [[Highpass]]
+|-
+! ''' Related NPCs: '''
+| [[Commander Kane]], [[Barn Bloodstone]], [[Mutt Rootlit]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bayle List I}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Note:''' Warmly faction required.
+
+===No Faction Hit Option===
+Talk to [[Commander Kane]] at the Shrine of Bertoxxulus in [[Qeynos Aqueducts]] and he will ask you to deliver [[Blackburrow Stout]] '''(NO DROP version)''' to [[Barn Bloodstone]] who is located outside the Golden Rooster in [[Highpass]].  If [[Commander Kane]] doesn't talk to you at first, just Hail him and say, "The disease is spreading."  Your faction with [[Barn Bloodstone|Barn]] needs to be at least indifferent.  To raise it you can do the [[Note for Janam]] and/or [[Note for Rebby]] quests in the [[East Freeport]]. 
+
+===Faction Hit Option===
+If you don't care about faction you can kill [[Mutt Rootlit]], who stands next to [[Barn Bloodstone]], and she will drop the [[Bayle List I]]. 
+Doing this will give a serious faction hit for 
+
+<div class="facblock">
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Carson McCabe]] got worse.
+* Your faction standing with [[Coalition of Tradefolk]] got worse.
+* Your faction standing with [[Coalition of TradeFolk III]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Shadow Knight Quests]]

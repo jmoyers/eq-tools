@@ -1,0 +1,111 @@
+__NOTOC__
+{{Kunark Era}}
+[[File:npc_sern_adolia.png|frame|Sern Adolia]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Sern Adolia]], [[Atdehim Sqonci]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Shaman]]
+|-
+! ''' Deity: '''
+| [[Cazic-Thule]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Kerra Island]], [[Toxxulia Forest]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|} 
+
+== Reward ==
+
+<ul><li>  {{:Initiate Symbol of Cazic Thule}}
+</li><li> {{:Disciple Symbol of Cazic Thule}}
+</li></ul>
+
+== Initiate Symbol of Cazic Thule ==
+
+''If you dare, approach [[Sern Adolia]] in the Tabernacle of Terror in [[Paineel]].''
+
+You say, 'Hail, Sern Adolia'
+
+: Sern Adolia says, 'I hope you have a good reason for disturbing my contemplations. Perhaps you [seek the knowledge] of those who meditate within this Temple of Fear?'
+
+You say, 'I seek the knowledge.'
+
+: Sern Adolia says, 'It is the secrets of fear that you seek, but you must first prove your devotion to our temple. There are pack rats within the city that have a habit of getting into things. Some of these rats have ingested a concoction developed by the necromancers of this great city. The rats have since died, and due to the concoction their undead corpses now roam the fields. Bring me four of the livers from these undead rats so that we may examine them.'
+
+'''Kill [[An undead rat]] in the [[Paineel]] newbie area or [[an infected rat]] in [[Toxxulia Forest]] to get four [[Infected Rat Livers]]. Pack rats are the placeholders for the undead rat. Infected rats can be commonly found along the beach in Toxxulia.''' 
+
+Upon handing a fourth liver to Sern:
+
+: Sern Adolia says, 'I need no fewer than four infected rat livers!! Now, go get me what I require!!'
+
+: Sern Adolia says, 'Well done, go now and continue your contemplations of fear. Keep up with your [duties] and you will soon be reaping the rewards granted by our Lord Cazic Thule!!'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 5 silver, 8 copper pieces.
+
+You receive [[Initiate Symbol of Cazic Thule]].
+
+''The dialogue of this quest dovetails into [[The Summoning of Fright]], though it is not technically required as a prerequisite.''
+
+== Disciple Symbol of Cazic Thule ==
+
+[[File:npc_atdehim_sqonci.png|frame|Atdehim Sqonci]]
+''[[Atdehim Sqonci]] is also located in the Tabernacle of Terror, across from Sern Adolia.''
+
+You say, 'Hail, Atdehim Sqonci'
+
+: Atdehim Sqonci says, 'Ah. greetings. I hope you are a student of the way of fear. Within this temple there are many who can teach you to harness your gifts. I am an instructor in the [rituals of fear].'
+
+You say, 'What rituals of fear?'
+
+: Atdehim Sqonci says, 'So you wish to learn, eh? I am working on a ritual to strike fear into the hearts of the other inhabitants of Odus. The reagents I require for this ritual are the doll of a Kerran priestess, the ichor of a giant wooly spider, your initiate symbol of Cazic-Thule, and a giant snake fang with which to carve my glyphs. Fetch me these components and we shall infect this land with fear, and I shall reward you with the station of disciple of this temple.'
+
+'''Turn in the following to Atdehim Sqonci:'''
+
+<ul>
+<li>A [[Kerran Doll]] (from [[A kerran awrat]] on [[Kerra Island]];<br>
+ alternatively, from [[Lomarc]], a level 3 rogue in [[Qeynos|South Qeynos]])</li>
+<li>A [[Giant Snake Fang]] (from any large snake, commonly found in many starting zones)</li>
+<li>An [[Initiate Symbol of Cazic Thule]] (from the previous symbol quest)</li>
+<li>An [[ichor]] (from [[a giant wooly spider|giant wooly spiders]] in [[Everfrost Peaks]])</li>
+</ul>
+
+: Atdehim Sqonci says, 'I need all four of the items I asked for! Incompetence is not tolerated in this tabernacle!'
+
+: Atdehim Sqonci says, 'Excellent, with these items we may perform a frightful ritual. Take this for your service to the tabernacle and your lord Cazic-Thule!
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive [[Disciple Symbol of Cazic Thule]].
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]
+[[Category:Shaman Quests]]

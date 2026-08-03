@@ -1,0 +1,143 @@
+{{Classic Era}}
+[[File:npc_diggs_duggun.png|frame|Diggs Duggun]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Beholder's Maze]]
+|-
+! ''' Quest Giver: '''
+| Diggs Duggun
+|-
+! ''' Minimum Level: '''
+| 49+
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> [[Divine Might|Spell: Divine Might]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Diggs Duggun]] is at 1260, -550 in the Gorge of King Xorbb.''
+
+You say, 'Hail, Diggs Duggun'
+
+: Diggs Duggun says 'ail, dere! Ain'tcha a sight fer me sore eyes! I knows dat we're strangers an' all, but might I ask a [boon] of ye?'
+
+You say, 'What boon?'
+
+: Diggs Duggun says 'Well, me pickaxe is blunted awfully bad and me ale supplies are dangerously low. If'n ye would be kind enough t' get me a new pick and a couple o' bottles o' dwarven ale, I would be f'rever in yer debt.'
+
+'''Give him a Pick (found at the vendor at the Kaladim Bank) and two [[Dwarven Ale]]s (not stacked).'''
+
+: Diggs Duggun drinks one of the ales and burps loudly then says 'By Brell's Beard! Yer a lifesaver, ya are! 'ere, take dis bone I've found 'ere in dis maze. Looks human ta me and I'm thinkin that a proper burial is in order. Freeport's the closest place dat has one o Marr's temples. I'm thinkin dis was one o' his Holy Knights by da look o' da tattered tunic I found it wrapped in. I'm thinkin Valeron might be havin an interest in it.'
+
+'''Receive A Dusty Old Leg Bone.'''
+
+Now go find a Paladin guildmaster by the name of [[Valeron Dushire]].
+
+You say, 'Hail, Valeron Dushire'
+
+: Valeron Dushire says 'I am Sir Valeron Dushire, leader of the order of the Knights of Truth. If your soul shines with purity and strength, I urge you to join our order. The might of Mithaniel Marr stands behind all who join. Soon that might will help us free this city from the tyranny of the [Freeport Militia].'
+
+'''Give him the Dusty Old Leg Bone:'''
+
+: Valeron Dushire says 'Hail, adventurer! I... what's this? Where did you get this? Never mind.. I.. I never thought we would find [him]!'
+
+You gain experience!!
+
+You say, 'Who is Diggs Duggun?'
+
+: Valeron Dushire says 'According to this crest on the tunic, you have recovered one of the bones of a lost Paladin [Hero].'
+
+You say, 'What hero?'
+
+: Valeron Dushire says 'His name has been long lost but his legend lives on in every young knight who aspires to continue his fight. He attempted to quell an evil that resided within Kithicor, perverting nature itself. Much to his relief, it was an earthly foe he fought against and not a denizen summoned from the planes of evil. Then, suddenly, he was surrounded by dozens of dark elves. He was captured and taken to the Dead to be experimented upon and had his soul twisted by vile necromantic magics. Then the Tier'Dal cast his remains to the winds. Where they landed, no one knew, until now. You have found one of his bones. I hereby charge you with a Holy Quest to bring this Hero's bones back for a burial with honors. Do you [accept], knight?'
+
+You say, 'I accept.'
+
+: Valeron Dushire says 'Good! I knew you would. It is one of the highest honors one can receive. Your quest will not be easy for I know not where his other bones lay. A spy of ours within Neriak was able to surmise that six of his bones along with his sword and shield were scattered throughout Norrath. You must search far and wide to find the remaining pieces, as you already have one.. Do not give up. It is now your sacred duty. Once you have retrieved all eight pieces, come back to me and inform me that you [have all the bones].'
+
+'''You now need to collect six bones, a shield, a sword and a coffin. These are the items and locations:'''. *These are not actual bones, they are small bags that you pick up.
+
+[[File:Unrest Bone Spawns.png|thumb|Unrest Ghost Pit with both quest items spawned.]]
+# A [[Dusty Old Skull]] - Minotaur caves in [[Steamfont Mountains]] in Meldrath's room.
+# [[A Dusty Old Leg Bone]] - You received this from talking to Diggs Duggun in [[Beholder's Maze]].
+# [[Dusty Ribcage]] - The Garden in [[Mistmoore Castle]].  This is actually in the Fountain Room #7 on the map. This can also spawn in the same room as  [[A Dusty Old Backbone]] in Unrest.
+# [[A Dusty Old Backbone]] - Ghost Room Pit in [[Unrest]].  Go in the basement, then through the invisible wall, go through the lava, and the bag is in the pit.
+# [[A Dusty Old Jawbone]] - Underwater Ice Cave in [[Everfrost Peaks]]. There are emblems on the wall in the cave. The item is under the third emblem at about 4535, -5235.
+# [[A Dusty Broken Sword]] - In the mines of North [[Kaladim]] in the water. Ground spawn in the water at roughly +761, +291.
+# [[A Dusty Broken Shield]] - On a ledge on right cliffs in [[Erudin]] from the docks.  Ground spawn at -605, -725.  You must swim from the docks to reach the shield.
+# [[Dusty Old Finger Bones]] - Inside Phinigel Autropos's room in [[Kedge Keep]]. Beware Swirlspine Seahorse (4 of them, 51 Cleric’s) can see invis! So bring a group! Swim down through the Star which is in the center of the room. There's an alcove on the SOUTH WALL with a large rock, and the bag spawns to the LEFT of the rock. Exact Location is neg 150, pos 127, neg 270. (proper spawn location updated July '17) (This spawned on top of the large rock in the south alcove on 08/01/2026.)
+[[File:Dust_Old_Finger_Bones.png]]
+''*NOTE:'' The respawn timer on bones seems to be 20 minutes. Tested 6/30/2022 with two Paladins in Unrest and Mistmoore.
+
+
+# '''Gem Encrusted Casket is received from Ping Fuzzlecutter as follows:'''
+
+You say, 'I have all the bones.'
+
+: Valeron Dushire says 'Excellent! You are indeed worthy to bear the title of Holy Knight! Now, about the coffin. I have spoken with Ping Fuzzlecutter, outside the western gates. Ask him about the coffin and once it is made, bring it to Simon Aldicott of Marr. I shall have Simon meet you by the lake in the Commonlands after Ping gives you the coffin.'
+
+'''Go to [[Ping Fuzzlecutter]], outside the gates of West Freeport.'''
+
+You say, 'What components?'
+
+'''Ping gives you an [[Empty Gem Bag]] to combine the following items:'''
+
+# [[Diamond]]
+# [[Star Ruby]]
+# [[Pearl]]
+# [[Fire Emerald]]
+# [[Sapphire]]
+# [[Fire Opal]]
+# (2) [[Enchanted Platinum Bar]] (Unstacked)
+
+'''Combine the gems in the bag to craft a '''Full Gem Bag'''. Give this to Ping to receive '''Gem Encrusted Casket'''.'''
+
+Ping Fuzzlecutter smiles broadly as he rifles through the bag, then looks up at you and says, 'Bout time! Here is the coffin as promised.'
+
+Put the 6 dusty bones + sword + shield in the casket and combine to craft '''A Gem Encrusted Casket'''. See [[Simon Aldicott]] in the West Commonlands.
+
+You say, 'Hail, Simon Aldicott'
+
+: Simon Aldicott says, 'Hail and well met, ______. I am Simon Aldicott, a cleric in the service of Mithaniel Marr. I've been sent here to prepare a [funeral service] for one of our lost to join Marr in his kingdom.'
+
+You say, 'What funeral service?'
+
+: Simon Aldicott says, 'Are you the brave knight whom Valeron sent to meet me here? If so, please place the remains in the coffin and seal it. Then hand me the coffin so that we may bless it in the waters of this lake.'
+
+'''Give him the casket. ''note: Was able to hand him casket as Iksar/dubious)'''''
+
+: Simon Aldicott places the coffin in the water and begins to pray. 'Lord of Valor high above, take this knight, your loyal child, into thy kingdom and... by all that is holy! What is that thing?!'
+
+'''[[A Tortured Revenant]] will spawn and attack you (some thanks eh?). This mob is immune to changes in runspeed and has a ton of hitpoints for its level. Kill it and loot [[Revenant Ash]] (identifies as "Ash of Darak Lightforge").'''
+
+A Tortured Revenant's corpse says 'At last I can rest..'
+
+'''Give the Revenant Ash to Simon and he will reward you with your new spell.'''
+
+: Simon Aldicott says, ''Tis a sad thing. His soul was twisted to its current state somehow and he thought YOU were the foul Teir'Dal who destroyed him in the first place. But that is no matter..you have freed him to stand by Marr's side once more! Now, give me the ash so that I may finally put him to rest. In return for your valor I shall provide you with an ancient spell unknown to most Holy Knights of Marr.'
+
+: Simon Aldicott says, 'Thank you Knight. With this task accomplished, I shall reward you with this scroll. It is an ancient spell that only the holiest of knights may cast. Remember your duty!'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Beholder's Maze]]
+[[Category:Paladin Quests]]

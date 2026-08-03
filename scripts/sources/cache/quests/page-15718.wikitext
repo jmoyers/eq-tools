@@ -1,0 +1,61 @@
+{{Velious Era}}
+[[File:npc_terman_underbelly.png|frame|Terman Underbelly]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Terman Underbelly]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rune Crafter's Vambraces}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Terman Underbelly'
+
+: Terman Underbelly speaks in a rumbling tone.
+
+: Terman Underbelly says, 'Greetings. I only wish to speak to a shaman. Are you a shaman?'
+
+You say, 'I am a shaman.'
+
+: Terman Underbelly says 'I sense the strength of your mystical powers within you and they vibrate with power. You have learned much from your travels and I shall help you, by providing you with protection from harm and the elements, in the form of armor.'
+
+You say, 'What armor?'
+
+: Terman Underbelly says 'For you I shall make a coif, tunic, sleeves, a bracer, gauntlets, leggings, and boots. Each piece is a quest unto itself. To seek the components, you must search the lands for them and test the power of the spirit within.'
+
+You say, 'How do you make sleeves?'
+
+: Terman Underbelly says 'Three jaundice gems and a set of corroded chain sleeves might be an interesting combination.  The powers of the gems may be harnessed to imbue the sleeves.'
+
+'''On handing in items:'''
+
+Terman Underbelly smiles warmly as he hands you your reward. 'You have done well, _____.' 
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV (Faction)|Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Shaman Quests]]

@@ -1,0 +1,28 @@
+{{Simple Quest 
+ |era=Velious
+ |image=npc_ergrez_shortpaw.png
+ |zone=Iceclad Ocean
+ |quest giver=Ergrez Shortpaw
+ |minimum level=30
+ |classes=All except pure casters
+ |related zones=[[Iceclad Ocean]], [[Cobalt Scar]]
+ |related NPCs=cougars
+ |reward=Cougarskin Boots
+ |turn-in={{:Medium Quality Cougarskin}} (drops from [[a snow cougar]] or named cougar, in [[Eastern Wastes]] or [[Iceclad Ocean]])
+ |turn-in 2=2 {{:Cutting Shells}} (ground spawn in the water in Cobalt Scar)
+ |dialogue=TBD
+}}
+
+== Walkthrough ==
+
+Ergrez will make you a pair of [[Cougarskin Boots]] if you bring him a [[Medium Quality Cougarskin]] and 2 [[Cutting Shells]].
+
+Upon turning in "Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it."
+
+No Faction Hits
+
+* The skin is a random drop from various snow cougars, including named, in the Eastern Wastes and Iceclad Ocean.
+* Cutting Shells are a ground spawn in the water in Cobalt Scar.
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

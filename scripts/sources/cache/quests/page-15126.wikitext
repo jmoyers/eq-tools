@@ -1,0 +1,229 @@
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+
+Test of Clarification
+<li>{{:Bracelet of Clarification}}
+  <ul>
+  <li>1 - {{:Crimson Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Ethereal Sapphire}} ('''[[Protector of Sky]]''')
+  <li> '''3''' - <span style="font-weight: bold">{{:Feathered Cape}}</span> ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Empowerment
+<li>{{:Mask of Empowerment}}
+  <ul>
+  <li>2 - {{:Iron Disc}} ([[an azarack]])
+  <li>3 - {{:Gem of Empowerment}} ([[a gorgalask]], [[a spirited harpie]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Ceramic Mask}}</span> ('''[[Keeper of Souls]]''')
+   </ul>
+</ul>
+<ul>
+Test of Gesticulation
+<li>{{:Staff of The Magister}}
+<ul>
+ <li>6 - {{:Sweet Nectar}} ([[Bazzzazzt]], [[Bzzazzt]])
+<li>'''1.5, 4, 8''' - {{:Efreeti Magi Staff}} <span style="font-weight: bold">([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])</span>
+  <li>7 - {{:Sphinx Crown}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]])
+  <li>'''8''' <span style="font-weight: bold">{{:Hazy Opal}} ([[Eye of Veeshan]])</span>
+</ul>
+</ul>
+<ul>
+Test of Shielding
+<li>{{:Gold White Pendant}}
+  <ul>
+  <li>3 - {{:Hyaline Globe}} ([[a crystalline cloud]])
+  <li>4 - {{:Ivory Pendant}} ([[a soul carrier]], [[an essence carrier]], [[an essence tamer]])
+  <li>'''5''' - <span style ="font-weight: bold">{{:Golden Coffer}}</span> '''([[The Spiroc Lord]])'''
+  </ul>
+</ul>
+<ul>
+Test of Summoning
+<li>{{:Drake-Hide Amice}}
+  <ul>
+  <li>4 - {{:Harpy Statuette}} ([[an essence harvester]])
+  <li>5 - {{:Finely Woven Cloth Amice}} ([[The Spiroc Guardian]])
+  <li>'''6''' - <span style ="font-weight: bold">{{:Large Diamond}}</span> '''([[Bazzt Zzzt]])'''
+  </ul>
+</ul>
+<ul>
+Test of Interpretation
+<li>{{:Duennan Shielding Ring}}
+  <ul>
+  <li>5 - {{:Carmine Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc caller]], [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc vanquisher]], [[a spiroc walker]], [[The Spiroc Guardian]])
+  <li>6 - {{:Blood Sky Amethyst}} ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzazzt]], [[Bzzzt]])
+  <li>7 - <span style ="font-weight: bold">{{:Golden Efreeti Ring}}</span> ([[Sister of the Spire]])
+  </ul>
+</ul>
+<ul>
+Test of Displacement
+<li>{{:Staff of Elemental Mastery: Air}}
+  <ul>
+  <li>6 - {{:Sweet Nectar}} ([[Bazzzazzt]], [[Bzzazzt]])
+  <li>7 - {{:Djinni Stave}} ([[Sister of the Spire]])
+  <li>'''8''' - <span style="font-weight: bold">{{:Large Opal}} ([[Eye of Veeshan]])</span>
+ <li>7 - {{:Crown of Elemental Mastery}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[an undine spirit]])
+  </ul>
+</ul>
+
+==Quest Start==
+Talk to [[Magi Frinon]] in the [[Plane of Sky]].
+
+You say, 'Hail, Magi Frinon'
+:''Magi Frinon says 'Greetings, Soandso.  Have you come here to test your abilities as a magician?' ''
+You say, 'I have come to test my abilities as a magician'
+:''Magi Frinon says 'Choose your tester. Frederic or Roanis.' ''
+
+= Frederic Calermin =
+
+You say, 'I choose frederic'
+:''Magi Frinon says 'Frederic it shall be.  Take this book and read it.  When you are finished, hand it back to me and I shall summon the magician Frederic to test you.' ''
+:''Magi Frinon says 'Farewell.' ''
+:''Frederic Calermin says 'I am here to do your bidding, Magician Spirit! ''
+You say, 'hail Frederic Calermin'
+:''Frederic Calermin says 'Welcome.  I am Magus Frederic.  Do you wish to test your powers? ''
+You say, 'I wish to test my powers'
+:''Frederic Calermin says 'Great, let us waste no more time!  I offer to you three challenges.  Clarification, Empowerment, Gesticulation, and Shielding.  Please choose one of these. ''
+
+== Magician Test of Clarification ==
+
+Frederic Calermin says 'Clarification it is.  Proceed upward through the sky and return to me a crimson tessera, an ethereal sapphire, and a feathered cape.  This will prove your abilities to me and I will reward you with the Bracelet of Clarification. 
+
+'''Reward:''' {{:Bracelet of Clarification}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Crimson Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Ethereal Sapphire]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Feathered Cape]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+
+== Magician Test of Empowerment ==
+
+Frederic Calermin says 'Empowerment it is.  Proceed upward through the sky and return to me an iron disk, a gem of empowerment, and a ceramic mask.  This will prove your abilities to me and I will reward you with the Mask of Empowerment. 
+
+'''Reward:''' {{:Mask of Empowerment}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Iron Disc]] || [[an azarack]] || Island 2
+|-
+| [[Gem of Empowerment]] || [[a gorgalask]], [[a spirited harpie]] || Island 3
+|-
+| [[Ceramic Mask]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+
+== Magician Test of Gesticulation ==
+
+
+
+'''Reward:''' {{:Staff of The Magister}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Sweet Nectar]] || [[Bazzzazzt]], [[Bzzazzt]] || Island 6
+|-
+| [[Efreeti Magi Staff]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|-
+| [[Sphinx Crown]] || [[a fatestealer drake]], [[a heartsbane drake]], [[a windrider drake]] || Island 7
+|-
+| [[Hazy Opal]] || [[Eye of Veeshan]] || Island 8
+|}
+
+== Magician Test of Shielding ==
+
+Frederic Calermin says 'Shielding it is.  Proceed upward through the sky and return to me a hyaline globe, an ivory pendant, and a gold coffer.  This will prove your abilities to me and I will reward you with a gold white pendant. 
+
+'''Reward:''' {{:Gold White Pendant}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Hyaline Globe]] || [[a crystalline cloud]] || Island 3
+|-
+| [[Ivory Pendant]] || [[a soul carrier]], [[an essence carrier]], [[an essence tamer]] || Island 4
+|-
+| [[Golden Coffer]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+
+= Roanis Elindar =
+
+You say, 'I choose roanis'
+:''Magi Frinon says 'Return this tome (Forms of Magic) to me if you wish me to summon Roanis Elindar to assist you. Destroy it if you do not. ''
+
+:''Magi Frinon says 'Farewell.' ''
+:''Magi Frinon says 'I am no longer needed and will take my leave.' ''
+
+He despawns and Roanis Elindar, a high elf, spawns.
+
+You say, 'hail Roanis Elindar'
+:''Roanis Elindar says, 'Great, let us waste no more time! I offer to you three challenges. Summoning, Interpretation, and Displacement.  Please choose one of these.''' 
+
+== Magician Test of Summoning ==
+
+Roanis Elindar says 'Summoning it is.  Proceed upward through the sky and return to me a harpy statuette, a finely woven cloth amice, and a large diamond.  This will prove your abilities to me and I will reward you with a drake hide amice. 
+
+'''Reward:''' {{:Drake-Hide Amice}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Harpy Statuette]] || [[an essence harvester]] || Island 4
+|-
+| [[Finely Woven Cloth Amice]] || [[The Spiroc Guardian]] || Island 5
+|-
+| [[Large Diamond]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+
+== Magician Test of Interpretation ==
+
+You say, 'I choose interpretation.'
+
+Roanis Elindar says, 'Interpretation it is. Proceed upward through the sky and return to me a Carmine Spiroc Feather, a Blood Sky Amethyst, and a Golden Efreeti Ring. This will prove your abilities to me and I will reward you with the Duennan Shielding Ring.'
+
+'''Reward:''' {{:Duennan Shielding Ring}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Carmine Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc caller]], [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc vanquisher]], [[a spiroc walker]], [[The Spiroc Guardian]] || Island 5, Island 5 Boss
+|-
+| [[Blood Sky Amethyst]] || [[Bazzzazzt]], [[Bizazzzt]], [[Bzzazzt]], [[Bzzzt]] || Island 6
+|-
+| [[Golden Efreeti Ring]] || [[Sister of the Spire]] || Island 7
+|}
+
+
+
+== Magician Test of Displacement ==
+
+Roanis Elindar says 'Displacement it is.  Proceed upward through the sky and return to me some sweet nectar, the crown of elemental mastery, a large opal, and a djinni stave.  This will prove your abilities to me and I will reward you with the Staff of Elemental Mastery. 
+
+'''Reward:''' {{:Staff of Elemental Mastery: Air}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Sweet Nectar]] || [[Bazzzazzt]], [[Bzzazzt]] || Island 6
+|-
+| [[Djinni Stave]] || [[Sister of the Spire]] || Island 7
+|-
+| [[Large Opal]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Crown of Elemental Mastery]] || [[a fatestealer drake]], [[a greater sphinx]], [[a heartsbane drake]], [[a windrider drake]], [[an undine spirit]] || Island 7
+|}
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Magician Quests]]

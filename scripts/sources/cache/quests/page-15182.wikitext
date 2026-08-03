@@ -1,0 +1,608 @@
+{{Delete}}
+{{Classic Era}}
+[[File:npc_vegalys_keldrane.png|frame|Vegalys Keldrane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Vegalys Keldrane]] (310, 200)
+|-
+! ''' Minimum Level: '''
+| 24 (Step 1, 30+ for Step 2, 40+ for Step 3)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li>{{:Investigator's Badge}}</li>
+<li>{{:Interrogator's Badge}}</li>
+<li>{{:Researcher's Badge}}</li>
+<li> {{:Qeynos Badge of Honor}}</li></ul>
+
+==Checklists==
+
+Are there faction requirements? *(I can get the dialog asking for help at Apprehensive to Antonius Bayle.)''
+
+
+-An iskar necromancer - RTA to Riley Shplots but ally to Good Qeynos Guards was unable to hand in any confession document. Lich form to turn threatening did not work. FD turn in did not work. 
+
+'''NOTE: many of the quest NPCs despawn on hand in, and take hours to respawn. When several people are doing the quest chain it may be better to wait a few hours to start the chain.
+
+All of the dialogue is optional, and can be skipped or will continue automatically even if you do not say the key phrases (eg conversation with Theodore Exanthem).'''
+
+===Badge 1===
+{{CheckboxList}}
+* (OPTIONAL) Loot [[Cracked Corrupt Guard Helm]] from [[Guard Shilster]].
+* (OPTIONAL) Turn in Helm to [[Vegalys Keldrane]] to receive [[Investigator's Briefing]] book.
+* (OPTIONAL) Turn in Briefing book to [[an investigator]] in South Qeynos.
+* Obtain a [[Confession Document]] from the Investigator (target the Investigator and /say "Hand me a Confession Document").
+* Hand the Confession Document to [[Riley Shplots]] in the Fireprides shop (yielding [[Riley's Confession]]).
+* Obtain a Confession Document from the Investigator (target the Investigator and /say "Hand me a Confession Document").
+* Hand the Confession Document to [[Willie Garrote]] in the PVP Arena Underground (yielding [[Willie's Confession]]).
+* Obtain a Confession Document from the Investigator (target the Investigator and /say "Hand me a Confession Document").
+* Hand the Confession Document to [[Donally Stultz]] at the Docks. Kill him when he attacks and loot [[Head of Donally Stultz]].
+* Obtain a Confession Document from the Investigator (target the Investigator and /say "Hand me a Confession Document"). Used later in quest series.
+* Hand in Donally's Head, Willie's Confession, and Riley's Confession to [[an investigator]] ('''not''' [[Vegalys Keldrane]]) to receive the [[Investigator's Badge]].
+
+===Badge 2===
+* Get another [[Confession Document]] before leaving qeynos!
+* Turn in [[Investigator's Badge]] to [[Vegalys Keldrane]] to receive [[Interrogator's Briefing]].
+* Turn in [[Interrogator's Briefing]] to [[an interrogator]] in South Karana.
+* Escort interrogator to Hermit House.
+* "Interrogate" [[Theodore Exanthem]].
+* After the correct phrase, [[Hand to hand|punch]] Theodore 1 time. ''Use a weapon at your own risk: you might kill the old Theodore and be able to continue the quest but you are playing with fire here.'' A duplicate Theodore will spawn in his place. Do not attack this duplicate Theodore!
+
+'''The phrase is "Why don't you hit him for a while. Maybe you will be more convincing then I have been.''' 
+'''<Theodore Exanthem gulps nervously.>''' 
+
+'''NOTE: you can attack Theodore the moment he stops to talk, allowing you to skip the interrogation entirely.'''
+
+* Turn in [[Confession Document]] to Theodore to receive [[Theodore's Confession]].
+* Target Theodore and /say "Take us to the location".
+* Escort Theodore to the abandoned druid ring.
+* Kill [[Morley Murrain]], [[Markus Cachexia]] and their minions. 
+* Loot [[Head of Morley Murrain]] & [[Head of Markus Cachexia]].
+* Turn in Heads and [[Theodore's Confession]] to the Interrogator and receive the [[Interrogator's Badge]].
+
+===Badge 3===
+* Turn in [[Interrogator's Badge]] to [[Velarte Selire]] '''(NOT Vegalys)''' to receive [[Research Briefing]]
+* Loot the Enchanted Jars from [[Oobnopterbevny Biddilets]] in West Karana (can be done before previous step)
+* Read Briefing book carefully
+* Turn in Researcher Briefing to Velarte to initiate the rat test
+* Cure all Diseased Rats by strategically trading the Jars to empty tiles
+* Once all are Healthy Rats, turn in Empty Jars to Velarte to receive the [[Researcher's Badge]]
+
+===Badge 4===
+* Turn in [[Researcher's Badge]] to [[Vegalys Keldrane]] to receive [[Seal of Vegalys]]
+* Give Seal to an [[An_investigator_(Qeynos_Aqueducts)|investigator]] in Qeynos Sewers (to spawn [[Guard Helminth]])
+* Give Seal to [[Guard Helminth]] and say 'I am ready to complete the mission'to spawn [[Corrupt Guard Helminth]].
+* Kill Corrupt Helminth (to spawn [[Azibelle Spavin]]) NOTE: If you die on any part of this you can restart this as long as you have Seal of Vegalys.
+* Loot the [[Head of Azibelle Spavin]] from Azibelle
+* Hand in Azibelle's Head and the Seal to Vegalys to receive the [[Qeynos Badge of Honor]]
+{{End}}
+
+== First Quest ==
+{{:Investigator's Badge}} (Badge #1)
+
+===Vegalys dialogue===
+
+You say, 'Hail, Vegalys Keldrane' 
+
+: [[Vegalys Keldrane]] says 'Greetings to you, citizen. By order of the Council of Qeynos I have been given the duty of apprehending the individuals [responsible] for unleashing this terrible plague upon the people and the lands of Antonius Bayle. The more I look into this matter, the more I come to find that this will be no easy task.' 
+
+You say, 'Who is responsible?' 
+
+: Vegalys Keldrane says 'The plague unleashed upon the Plains of Karana is the work of the followers of Bertoxxulous. Those responsible belong to group known as the [[Bloodsabers]] though there were others involved as well. Some time back, they launched a plot to overthrow Antonius Bayle and our ruling council. Their [plan] failed.' 
+
+You say, 'What plan?' 
+
+: Vegalys Keldrane says 'Their plan was to unleash a plague so deadly and virulent that it would wipe out all life from here to Highpass Hold. They planned to brand themselves and their foul allies with a rune that would have rendered them immune to the effects of this plague. From that point they would have been able to simply walk in, easily defeat the weakened stragglers and declare themselves the rulers of this kingdom by default. But they were [careless].' 
+
+You say, 'How were they careless?' 
+
+: Vegalys Keldrane says 'The sudden influx of scoundrels and loathsome individuals was our first tip off. They required a rather enormous number of supplies, materials and manpower to construct the ornate altars, craft and enchant their runed branding irons and supply their armies with the weapons needed for the cleanup work afterward. They needed to rely upon [outside help].' 
+
+You say, 'What outside help?' 
+
+: Vegalys Keldrane says 'They mostly chose to hire bandits and brigands who are foolishly more concerned with immediate profits than the long-term effects of their actions. But once they knew we were on to them they even started hiring some of the more 'civil' gnolls, if there is such a thing. Gnolls tend to be easy to push around, stupid, and they work very cheaply. They knew their time was short and they were desperate. Choosing to work with untrustworthy, lazy scoundrels caused the whole thing to begin to [unravel], praise Rodcet!' 
+
+You say, 'How did it unravel?' 
+
+: Vegalys Keldrane says 'Their workers were careless. Aside from noticing the unsavory element in our city, our citizens began to run across many of the strange items and materials that were being trafficked into our city en masse. It was at that point that the citizens began to [complain] quite loudly about all of this.' 
+
+You say, 'Complain?' 
+
+: Vegalys Keldrane says 'Obviously, they questioned the meaning behind these events and rightfully so. They were frightened much as they are now. I admit, I was remiss in my duties for not noticing it sooner. One of the biggest complainers during this time was a man by the name of [Earron Huntlan], proprieter of the famed Lion's Mane tavern. Though he is just a simple merchant, he did us a great service.'
+
+You say, 'Who is [[Earron Huntlan]]?' 
+
+: Vegalys Keldrane says 'Earron is quite a character. He gets all kinds of travelers stopping by his inn for a drink or whatever other business. His patrons started telling stories of being mugged and harassed by these loathsome individuals in the very streets of our fair city. Of course, he was concerned. So he became a kind of advocate for this cause, ringing the [alarm] bell as it were. I admit, at first I did not believe the conspiracy. I simply could not believe it was all happening under our nose.' 
+
+You say, 'What alarm?' 
+
+: Vegalys Keldrane says 'Well, he succeeded in whipping the populace into a frenzy. He even got the famous wizard Al'Kabor to help him out by determining the nature of the strange items many of our citizens were finding. Getting that man to do anything not directly related to his research is not an easy thing to accomplish either. Needless to say, at that point I saw the truth and the Prime Healer forgive me for not seeing it sooner. Were it not for the investigations and general outcry of [concerned citizens], we might not be standing here talking today.' 
+
+You say, 'What concerned citizens?' 
+
+: Vegalys Keldrane says 'Yes, it was citizens like you that helped to save Qeynos that day. We uncovered their plot, captured the man who was in charge and put him to death. Of course, the Bloodsabers retaliated and using their incomplete research still managed to unleash the plague we face now. Though devastating in its own right, you must admit it is rather mild compared to what it might have been. I thank you for your interest. Perhaps you would be willing to [help] me?' 
+
+You say, 'I am willing to help you'.
+
+: Vegalys Keldrane says 'Excellent! The more I learn from my investigators the more I find that these Bloodsabers have stretched their tendrils of influence all throughout our beloved city. Nevertheless, we are committed to exposing these fiends once and for all. Perhaps you would like to become an [investigator]?' 
+
+You say, 'I would like to become an investigator' 
+
+: Vegalys Keldrane says 'Very well then, Durix. We will not allow just anyone to wear the official Investigator's Badge and please forgive me. . . But it is hard to tell where one's loyalties lie these days. If you are truly [serious] then there is a duty you must perform first to show you are on the side of Antonius Bayle, the council and the good people Qeynos.' 
+
+You say, 'I am serious' ('I am truly serious' may also work)
+
+: Vegalys Keldrane says 'There is a guard by the name of '''Robbie Shilster''' that patrols the Northern Plains of Karana. He is allied with our enemies and completely corrupt. He is flagrant in his trafficking of contraband goods. His orders are to guard the great wooden bridge to stave off the insect swarms. But our investigators report that he simply stands to the side and watches as the swarm rolls through. You are to execute this man for his treason and bring me his helm. Then, we will talk.'
+
+===Kill Shilster===
+
+'''Go [[North Karana]] and go north of the wooden bridge, near the wall. Find [[Guard Shilster]] and kill him. Loot a [[Cracked Corrupt Guard Helm]]. Run back to Qeynos and give his helm to Vegalys.''' 
+
+Vegalys Keldrane says 'Thank you for bringing this person to justice. Please read this manual very, VERY carefully. Commit it to memory. We do everything strictly by the book. We are a people of law and order and I simply won't tolerate a breach of protocol. Investigators are expected to accurately report findings, are authorized to issue warrants and to notarize official documents for all lands under the jurisdiction of Antonius Bayle and the council. I sincerely hope you can earn your Investigator's Badge.' 
+
+<div class='facblock'>
+* Your faction standing with [[Antonius Bayle]] got better. 
+* Your faction standing with [[Guards of Qeynos]] got better. 
+* Your faction standing with [[Ring of Scale]] got worse. 
+* Your faction standing with [[Kane Bayle]] got worse. 
+* Your faction standing with [[Merchants of Qeynos]] got better. 
+</div> 
+{{exp}}
+
+'''You receive an [[Investigator's Briefing]].'''
+
+===Investigator meetings===
+
+'''Go to South Qeynos. At a tree south of the Lions Mane tavern you will meet [[an investigator]] in a yellow robe. Give him the book.'''
+
+: an investigator says 'Very well, let's get to work. I assume you have read the briefing and committed it to memory. This is how you will be tested. I shall play the part of student and you shall play the master who directs me. I promise I won't make it easy on you either, we want only the best. We'll see how you do and then I'll decide if you are worthy to wear the badge or not.' 
+
+You say, 'Where is the first suspect?' 
+
+: an investigator says 'The first suspect was last seen near the shop called Fireprides.' 
+
+''Fireprides is the armor store near the bank.''
+
+You say, 'Follow me'. (''triggers the escort'')
+: an investigator says 'Right, let's get going.' (''he follows you slowly'')
+
+====Riley====
+
+'''Look for [[Riley Shplots]].'''
+
+You say, 'Are you a member of the [[Bloodsabers]]?' 
+
+: Riley Shplots shakes visibly and says, 'Oh, no. I knew this would happen one day. Please don't hurt me! I had very little to do with this plague, though it is quite a nice one, you must admit. I was just a courier. I'll come quietly. I don't want any trouble. My small contribution to the glory of Bertoxxulous has already been given but I certainly don't want to go to meet him just yet!' 
+
+You say, 'Give me a confession document' 
+
+: an investigator says 'Here you are.'
+
+Hand the [[Confession Document]] to Riley Shplots. He gives you back [[Riley's Confession]].
+
+You say, ''''Summon a guard''''
+
+: [[Guard Sylus]] says 'Come along, prisoner.' 
+
+You say, 'Where is the second suspect?'
+
+: an investigator says 'The second suspect was sighted below the Grounds of Fate.'
+
+You say, 'Follow me.' (triggers the escort)
+: an investigator says 'Right, let's get going.' (''he follows you slowly'')
+
+====Willie====
+
+'''Look for [[Willie Garrote]]. He may be found under the arena, near the cells.''' 
+
+You say, 'Are you a member of the Bloodsabers?' 
+
+: Willie Garrote says 'A Bloodsaber? Of course I'm not, don't be ridiculous!'
+
+''Ask him again''
+
+You say, 'Are you a member of the Bloodsabers?'
+
+[another dialog occurs here]
+
+''Ask him again, until he confesses''
+
+[another dialog occurs here]
+
+You say, 'Are you a member of the Bloodsabers?' 
+
+[another dialog occurs here]
+
+You say, 'Give me a confession document.' 
+
+: an investigator says 'Here you are.' 
+
+You say, 'Summon a guard'
+
+: Guard Sylus says 'Come along, fiend. We haven't far to go.' 
+
+You say, 'Where is the third suspect?' 
+
+: an investigator says 'The last suspect has been known to hang around that low life known as [[Raz the Rat]].'
+
+You say, 'Follow me.' (''triggers the escort'')
+: an investigator says 'Right, let's get going.' (''he follows you slowly'')
+
+====Donally====
+
+'''Look for [[Donally Stultz]] near the docks, on the shore. '''
+
+You say, 'Are you a Bloodsaber?' 
+
+: Donally Stultz says 'Of course I'm a Bloodsaber, you fool! I've just returned from the Plains of Karana where I was reveling in the glory of the Plaguebringer. Now then, since I see that this foolish investigator is with you, I suppose you want me to sign a confession document or something like that? Well, let's have it then!' 
+
+You say, 'Give me a confession document'. 
+
+: an investigator says 'Here you are.' 
+
+Donally Stultz crumples the document into a ball, throws it to the ground and spits in your face, yelling, 'You are a fool if you really believe I would sign such a thing. Prepare to die!' 
+
+For some reason, if you root Donally and SIT DOWN, the investigator will aggro on you (before Donally attacks you, he has the same faction as the investigator, which may explain this bug). You can root him too and camp aggro, but if you lose the investigator before you can hand in the items you will have to start over from Guard Shilster.
+
+'''Kill him and loot [[Head of Donally Stultz]]. 
+
+====Badge Turn in: Investigator====
+
+Note: Before you give him these items, get one more confession document for the next quest, because he will disappear after you do this hand in and get your first badge. ** 
+You say, 'Give me a confession document.' 
+Give the investigator the two confessions and the one head at the same time.''' 
+
+
+an investigator says 'You have done our city a great service and helped to bring several criminals to justice this day! Wear this Investigator's Badge with pride! Speak again with Vegalys Keldrane, he may have information about [advancing further] in rank.' 
+
+<div class='facblock'>
+* Your faction standing with Antonius Bayle got better. 
+* Your faction standing with Guardsof Qeynos got better. 
+* Your faction standing with Ring of Scale got worse. 
+* Your faction standing with Kane Bayle got worse. 
+* Your faction standing with Merchants of Qeynos got better.
+</div>
+{{exp}}
+
+'''You receive an [[Investigator's Badge]]. '''
+
+;Return to Vegalys (optional)
+
+Go back to Vegalys.
+
+You say, 'I want to advance further in rank' 
+
+: Vegalys Keldrane says 'At this point, I am mainly in need of loyal and trustworthy investigators. I must first gather information on who these people are and exactly how far their influences stretch. However, once I begin to implement the next phase of this operation, you may be able to assist us once again if you prove to be talented enough. For now, simply continue to observe and report.'
+
+== Second Quest ==
+'''LEVEL 30+'''
+{{:Interrogator's Badge}} (Badge #2)
+'''You must do the Investigator's Badge Quest before doing this one.'''
+
+=== Last visit to investigator ===
+
+Before you go on with this one, be sure to get an extra unsigned [[Confession Document]] from [[an investigator]] after he respawns in Qeynos.
+
+=== Dialog with Vegalys ===
+
+You say, 'Hail, Vegalys Keldrane' 
+
+: [[Vegalys Keldrane]] says 'Greetings to you, citizen. By order of the Council of Qeynos I have been given the duty of apprehending the individuals [responsible] for unleashing this terrible plague upon the people and the lands of Antonius Bayle. The more I look into this matter, the more I come to find that this will be no easy task. 
+
+You say, 'How can I advance further?
+
+: Vegalys Keldrane says 'Interested in advancing further are you? Excellent, we are ready to begin the next phase of our operation. We have gathered a great deal of information as a result of the latest series of arrests. What we require most now are [interrogators] that are able to pry the information we require out those less then willing to talk. 
+
+You say, 'What interrogators?' 
+
+: Vegalys Keldrane says 'If you are interested in joining the ranks of our interrogators and helping Qeynos further as we bring these fiends and murderers to justice, turn in your investigator's Badge and I will give you the briefing document you need. I already know I can trust my investigator's, so there is no need to further test you.
+
+Give Vegalys Keldrane your [[Investigator's Badge]].
+
+Vegalys Keldrane says 'Very well, here is the briefing document. Please read it very carefully. I wish you luck friend, this mission could prove to be dangerous. 
+
+You receive '''[[Interrogator's Briefing]]'''.
+
+The book leads you to an interrogator in South Karana.
+
+'''Locate [[an investigator]] again and obtain an unsigned [[Confession Document]] before you travel.'''
+
+You say, 'hand me a confession document'.
+
+===Interrogator===
+
+Travel to [[South Karana]] to find [[an interrogator]] near the Hermit House.
+
+You say, 'Hail, an interrogator'
+
+'''Hand him the Interrogator's Briefing.'''
+
+: an interrogator says 'I see you wish to become an interrogator. This is not a duty for the weak of heart you know. This job sometimes requires. .. an interrogator coughs, 'a little muscle I guess you would say.' 
+
+: an interrogator says 'Nevertheless, we have an important job to do. There is a man by the name of Theodore Exanthem who is a known member of the Bloodsaber cult. He fled from Qeynos some time ago and we have been hot on his tail ever since. 
+
+: an interrogator says 'We have tracked this man down and we now know his whereabouts. However, we have bigger fish to fry today then just this low life. Theodore knows the location of two other individuals also suspected of hiding out here in the plains.'
+
+: an interrogator says 'Sadly, these fiends were the two that slipped into Surefall Glade and poisoned the waters there. Though the druids were able to quickly combine their efforts and neutralize the toxins with their magicks, grievous damage was done none the less. Two of the great protectors of the hills and the glade, [[Holly Windstalker]] and [[Cros Treewind]], became seriously ill as did one of the glade's sacred bears. 
+
+: an interrogator says 'Holly and Cros, sickened as they were, removed themselves from the Hills to weather out their illness and to keep the disease from spreading further. During their absence, the Bloodsabers were easily able to traffic in the materials needed to complete their terrible work. 
+
+: an interrogator shakes his head sadly and says, 'Tragically, Cros Treewind was attacked by one of the sacred bears which was maddened by its illness. In his weakened state Cros was unable to defend himself and was killed by this defiled grizzly, one of the very creatures he was sworn to protect.' 
+
+: an interrogator says 'So our goal is to pry the information we need from [[Theodore Exanthem]] so that we may bring these two fugitives to justice. After getting him to comply, you are to collect a confession from Theodore and have him lead us to the two fugitives. Give me Theodore's confession and the heads of these two fugitives and you shall have your badge. 
+
+: an interrogator says 'I believe I know where we can find him. Follow me please.' 
+
+'''Follow the interrogator.'''
+
+====Theodore====
+
+: an interrogator says 'Theodore Exanthem by order of the Council of Qeynos and his lordship Antonius Bayle, I order you to come out of there immediately! 
+: an interrogator says 'Theodore Exanthem, you will [take us to the location] of Marcus Cachexia and Morley Murrain immediately. 
+
+: [[Theodore Exanthem]] says 'I think you've been breathing the air in the Northern Plains of Karana for too long. I will most certainly not tell you anything about their whereabouts, much less lead you right to them. You are not right in the head.'
+
+: an interrogator says 'Vile beast! You are withholding information on two men guilty of terrible atrocities, not the least of which was causing the death of one of Qeynos' most respected and well known citizens, Cros Treewind! As an Interrogator I am authorized to use physical force if necessary. 
+
+: Theodore Exanthem says 'What a joke! I'm not telling you a thing. You don't look like you could scare a moss snake. I'm not afraid of you! 
+
+: Theodore Exanthem reels back, his eyes wide with shock. 'Ow', he says nervously.
+
+: an interrogator says '[Take us to the location] of Markus Cachexia and Morley Murrain! 
+
+: an interrogator says 'Take us to Markus Chachexia and Morley Murrain this instant or I'll turn you over to my friend here who appears to be much stronger then I am! 
+
+: Theodore Exanthem winces and says, 'Oh. Yeah right. Like I'm afraid of that moron or something. Theodore glances nervously over at you.'
+
+: an interrogator smiles and says, 'Well, I'm getting tired. Why don't you hit him for a while. Maybe you will be more convincing then I have been.' 
+
+: Theodore Exanthem gulps nervously.
+
+'''Attack him one time without a weapon (hand-to-hand).''' After you hit him, you will automatically stop attacking and he will respond with:
+
+: Theodore Exanthem says 'Sweet father of rot, alright already! Stop hitting me and tell me what you want me to do!
+
+'''Give him the unsigned [[Confession Document]] you got from the investigator in Qeynos.''' 
+
+: Theodore Exanthem makes a big X at the bottom of the document and hands it back saying, 'A bunch of worthless thugs is all you folks are!'
+
+You receive [[Theodore's Confession]].
+
+You say, 'Take us to the location' 
+
+: Theodore Exanthem says 'Fine follow me creeps.'
+
+====Morley and Markus====
+
+'''At this point you follow the interrogator to the south to the abandoned druid ring.'''
+
+Theodore Exanthem says 'Whoa! It's up to you guys from here. I'm out of here!' (despawns)
+
+'''The culprits spawn along with a few minions and wraiths. They are [[Morley Murrain]] (who spawns many mini [[a spectre]]s) and [[Markus Cachexia]] (who spawns some [[a summoned minion]]s). Kill them. The longer the fight the more minions they will summon'''
+
+Loot [[Head of Morley Murrain]] and [[Head of Markus Cachexia]].
+
+Turn in the two Heads and [[Theodore's Confession]] to an interrogator.  (I did this in two steps by mistake and it was ok.)
+
+: an interrogator says 'Excellent work, you did just fine today. You'll make a fine interrogator. Talk to Vegalys about advancing further. 
+
+'''You receive your [[Interrogator's Badge]].'''
+
+== Third Quest ==
+'''LEVEL 40+'''
+{{:Researcher's Badge}} (Badge #3)
+
+'''This is the third in the Qeynos Badge Quest series. You must do the first two before doing this one. '''
+
+You say, 'Hail, Vegalys Keldrane' 
+
+: [[Vegalys Keldrane]] says 'Greetings to you, citizen. By order of the Council of Qeynos I have been given the duty of apprehending the individuals [responsible] for unleashing this terrible plague upon the people and the lands of Antonius Bayle. The more I look into this matter, the more I come to find that this will be no easy task. 
+
+You say, 'I wish to further advance' 
+
+: Vegalys Keldrane says 'Interested in advancing further are you? We have gathered a great deal of information as a result of the latest series of arrests. We do require [interrogators] that are able to pry the information we require out those less then willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research]. You may wish to talk with him. 
+
+You say, 'I will help with his research' 
+
+: Vegalys Keldrane says 'Excellent! The more I learn from my investigators the more I find that these Bloodsabers have stretched their tendrils of influence all throughout our beloved city. Nevertheless, we are committed to exposing these fiends once and for all. Perhaps you would like to become an [investigator]? 
+
+'''This just leads back to the original quest. Instead of following that lead go seek out [[Velarte Selire]]. He is standing outside in the courtyard at the Temple of Life. '''
+
+You say, 'Hail, Velarte Selire' 
+
+: [[Velarte Selire]] says 'Hello Nandarr . Antonius Bayle and the council have ordered a full investigation of these folks that call themselves the Bloodsabers. I hear his plan is to eventually round up every member of this strange disease worshipping cult and bring them in to answer for their terrible crimes against our city and people. [Vegalys] Keldrane is heading up the investigation. 
+
+You say, 'what research' 
+
+: Velarte Selire says 'We are currently in the process of conducting research into viable ways to bring an end to this terrible plague. This suffering has gone on long enough. Being a researcher doesn't take strength or brute force, though those qualities do sometimes help. Being a researcher takes intelligence first and foremost. No offense, but not everyone has that quality. This will be no easy task. Are you still [interested] in helping us with our research? 
+
+You say, 'I am interested' 
+
+: Velarte Selire says 'Still interested? Very well then Nandarr, you look rather intelligent. As a show of your commitment to this task, please turn in your [Interrogator's Badge]. 
+
+'''At this point I give him the badge. He gives me a [[Research Briefing]], which tells me how curing diseased rats with enchanted rats work (see bottom). '''
+
+: Velarte Selire says 'It seems Vegalys trusts you, so I guess I can trust you as well. Take this briefing. It explains the current state of our research and it explains the test you will be conducting. If you can conduct the test successfully, the Temple of Life shall be in your debt and we shall use the findings to continue our work. However, we have a [problem] we need assistance with first. 
+
+You say, 'what problem' 
+
+: Velarte Selire says 'Unfortunately, those vile followers of the Plague Bringer are still attempting to foul up our plans. Several our [test animals] have been stolen from us by a gnome, a member of the Dark Reflection. These animals are very important to our research, as the briefing describes. 
+
+You say, 'what test animals' 
+
+: Velarte Selire says 'These animals were enchanted with a sort of anti-disease aura. It sounds crazy but we thought that perhaps we could use a sort of 'anti-epidemic' to spread a cure to this disease. However, this aura is as of yet imperfect and also quite [volatile]. We had hoped to use rats to spread the cure, much in the same way they often spread disease. 
+
+You say, 'how volatile?' 
+
+: Velarte Selire says 'Yes, the enchantment we placed on the rodents does not last long at all. It disperses its curing magic almost instantly. We fashioned several containers at great expense and they have the ability to preserve an enchantment for long periods of time. After enchanting a rat we [place them in the container] until we are ready to conduct our tests. 
+
+You say, 'place them in the container?' 
+
+: Velarte Selire says 'Oh, I assure you it is completely humane and the rats do seem to enjoy prolonged exposure to the enchantment while in the container. In fact, it is all we can do to get them out of the containers once we put them in! In any case, those containers are dreadfully expensive to make and those rats. . . Well, we have begun to become sort of attached to them. Please find this [gnome]. 
+
+You say, 'what gnome' 
+
+: Velarte Selire says 'Her name is '''[[Oobnopterbevny Biddilets]]'''. She was last seen high tailing it across the Plains of Karana. She infiltrated our temple and stole the containers that had our beloved rodents, which were already enchanted and prepared for our next round of tests. I shudder to think of what this monster may be doing to those poor animals. Anyway, retrieve them at any cost. You will need them for the [test] you will be conducting. 
+
+You say, 'what test' 
+
+: Velarte Selire says 'The briefing explains how the test is to be conducted but first you need to find the test animals. Get the rodents first from that gnome. Then give me your Researcher's Briefing and we will start the test. Release all three rodents as directed then give me the three Empty Enchanted Jars. If you were able to cure all of the diseased rodents by properly using our enchanted rodents, we will consider this test a success and you shall be rewarded with the Researchers Badge. 
+
+'''The Gnome we need to find wanders in West Karana. She spawns at /loc -2239, -1849. When [[Oobnopterbevny Biddilets]] (level 40) is up, she will shout 'What a lovely diseased filled place! Tra la la.' You should be able to track her down from the loc above.''' Alternately, If you have the [[Sense Summoned]] spell, her undead pet is one of the few summoned entities in West Karanas; you can often get a lock on her location from as far away as the Qeynos Hills zone line. Alternatively [[Sense the Dead]] can also help. She wanders, so be prepared to cast it every so often to get a new update on her pet's position.
+
+'''Loot [[Live Enchanted Rat: Jar 1]], [[Live Enchanted Rat: Jar 2]], and [[Live Enchanted Rat: Jar 3]]. Then return to North Qeynos.'''
+
+====Curing rats====
+
+Since I was ready to start my test, having the jars that Velarte Selire wanted (NOTE: do not turn them into him yet) I turned in the book he gave me (NOTE: You have 6 Norrathian hours to complete this test, i.e. 18 minutes of real time).
+
+[[File:Qeynos badge rat tiles.png|500px|right|A possible tile ordering.]]
+
+'''NOTE: READ the book first!''' Study it, you'll understand whats going on below better. Upon turning in the book, rats will spawn behind you each on its own tile. ORDER MATTERS! Each jar is labeled 1, 2, or 3. You need to place the jar labeled 1 first, then second, etc. If you place the #3 jar first, the quest will fail and you'll lose everything (like me).
+
+'''The rat mix is random.''' (THIS IS AN EXAMPLE DO NOT COPY DIRECTLY FROM THIS)
+
+Facing Velarte Selire, the tiles can ''sometimes'' look as follows:
+
+<div class="facblock">
+ 1 x x 0 
+ 0 x x x 
+ 0 1 1 x 
+ 0 0 0 0 
+</div>
+
+ 1 = healthy rat
+ x = diseased rat 
+ 0 = empty slot 
+ E = enchanted rat 
+
+So in order to have a successful test, cure all rats. Take your 3 enchanted rats and place them as follows: (THIS IS AN EXAMPLE DO NOT COPY DIRECTLY FROM THIS)
+ 
+<div class="facblock">
+ 1 x x E <--- FIRST
+ E x x x <--- THIRD
+ 0 1 1 x 
+ 0 0 0 E <--- SECOND
+</div>
+
+Open trade and give the three Rat Jar to the correct tile "NPCs" (look like "tile XX"). Make sure you are trading with an empty square and not with A Healthy Rat - check the trade dialogue box.
+
+'''NOTE 2: The empty tile you trade with will also become a healthy rat.''' 
+
+After all the rats are cured you should have "Empty enchanter Jar 1 thru 3" these are also small items and will fit in yer bags. Now you can turn the 3 jars into Velarte Selire. After doing so he will despawn along with the rats. 
+
+: Velarte Selire says 'You did it! You have proven you have the intelligence required and you may wear this Researcher's Badge with pride! Thank you for returning the jars.'
+
+<div class="facblock">
+* Antonius Bayle got better
+* Guards of Qeynos got better
+* Knights of Thunder got better
+* Priests of Life got better
+* Bloodsabers got worse.
+</div>
+{{exp}}
+
+'''You receive the [[Researcher's Badge]].'''
+
+== Fourth Quest ==
+
+You say, 'Hail, Vegalys Keldrane'
+
+: Vegalys Keldrane says, 'Greetings to you, citizen. By order of the Council of Qeynos I have been given the duty of apprehending the individuals [responsible] for unleashing this terrible plague upon the people and the lands of Antonius Bayle. The more I look into this matter, the more I come to find that this will be no easy task.'
+
+You say, 'I wish to advance further'
+
+: Vegalys Keldrane says, 'Interested in helping us further? We continue to gather valuable information. We still require [interrogators] that are able to pry the information we require out those less then willing to talk. Also, Velarte Selire at the Temple of Life is looking for help with his [research] so you may wish to talk with him. Lastly, we now have information we believe may lead us to the [individual that unleashed this plague] in the first place.'
+
+You say, 'What individual that unleashed this plague?'
+
+: Vegalys Keldrane says, 'The plague was unleashed by a woman named Azibelle Spavin. She was the bodyguard and some say concubine of Mordavin Telase. He was put to death for his long list of crimes against Qeynos which included murder, treason and attempted genocide. The plague is apparently her revenge. I sent one of my investigators and one of the best guardsmen we have to try and find her and bring her to justice. They are [still missing].'
+
+You say, 'Still missing?'
+
+: Vegalys Keldrane says, 'Kane recommended Guard Helminth personally as one of his best. They must have run into serious trouble. These were two of Qeynos' finest. I am only willing to send those with both strength and intelligence down there to complete this mission and find our people's whereabouts. Give me your Researcher's Badge should you wish to accept this mission.'
+
+'''Hand Vegalys your [[Researcher's Badge]] at this point.'''
+
+You receive the [[Seal of Vegalys]].
+
+: Vegalys Keldrane says, 'Here is my personal seal. Go to the sewers and locate my investigator and show him this seal if he yet lives. Find out what happened to he and guard Helminth. Then if at all possible, complete this operation by finding Azibelle Spavin and execute her. Bring me her head and return me my seal and you shall be rewarded.'
+
+'''Head to [[Qeynos Aqueducts]] and find [[an investigator]] at {{Loc|Qeynos Aqueducts|951, 30}}, laying on the ground.'''
+
+You say, 'Hail, an investigator'
+
+: an investigator coughs and struggles to move. 'There were. . . too many . . . too strong.'
+
+'''Give the investigator the [[Seal of Vegalys]].'''
+
+: an investigator says, 'Vegalys sent you. I'm done for. Guard Helminth found a false wall. We stepped through it. We were ambushed. I didn't see where Helminth went. He disappeared. I knew we were overwhelmed. I ran and feigned death but I knew [it was too late].'
+
+You say, 'It was too late?'
+
+: an investigator gasps clutching a wound and says, 'Their magic was too powerful. Necromancers. Undead. Cursed knights of an unholy god. They left when they thought I was dead. But even now their curses sap the last of my life. I made it as far as I could. If Helminth lives, tell him [I am dead]. Please complete the mission. Bring this Azibelle to justice. Avenge me.'
+
+'''[[Guard Helminth]] then spawns at {{Loc|Qeynos Aqueducts|376, -49}}. This is just before the 4 spectres outside of the necromancer guild.'''
+
+You say, 'Hail, Guard Helminth'
+
+: Guard Helminth says, 'Who are you and what are you doing here? This place is not safe. You are to leave here immediately! You do not belong here!'
+
+You say, 'The investigator is dead'
+
+: Guard Helminth says, 'So he did not make it, that is a shame. I managed to defeat all of the enemies. It was difficult but they were no match for one of my skill. Did Vegalys send you?' 
+
+You say, 'Vegalys sent me'
+
+: Guard Helminth says, 'So Vegalys sent you to check on our progress then? I don't believe you. Prove it!'
+
+'''Give Guard Helminth the [[Seal of Vegalys]]. You get the seal back, and he responds with:'''
+
+: Guard Helminth says, 'Well, well! Vegalys did send you after all. Are you [ready to complete the mission]? I am certain I know where Azibelle is hiding.'
+
+You say, 'I am ready to complete the mission'
+
+''At this point, Guard Helminth respawns as [[Corrupt Guard Helminth]]. Also directly behind him [[a necromancer]] spawns. Both aggro. A few seconds later, [[a rotting sentry]] spawns in the tunnel corner you pass to reach Helminth, likely to catch unprepared players from behind. All 3 hit in the 70 - 80's range. Rotting sentry did harm touch me for 351 points of damage. Corrupt Guard Helminth cons blue at 56, but the other two are green and hit the hardest.'' (At 59, the green adds did not aggro me. Take care to not sit.)
+
+'''Once Corrupt Guard Helminth is killed, [[Azibelle Spavin]] spawns at {{Loc|Qeynos Aqueducts|439, -264}} which is just past the 4 spectres that are outside the necromancer guild. Kill her and loot her head.'''
+
+''She does not respond to hails and has a pet. She is a shadowknight and is blue to 56. She hits hard, up to 117, and her pet is no joke either. Watch for [[Argyn Shieldstan]] who patrols through the area and may assist during the fight.''
+
+--You have looted a [[Head of Azibelle Spavin]].--
+
+'''Return to Vegalys Keldrane and turn in the seal and head.'''
+
+: Vegalys Keldrane says, 'Good work _______! So Guard Helminth was corrupt? So crafty are these black hearted souls that they can fool even the righteous Kane Bayle himself! I'm sure he will be saddened to hear of this. I too am saddenned by the loss of one of my best investigators. At least we've served justice this day by sending Azibelle Spavin to her dark master. May she rot with her god. Take this Badge of Honor and wear it with pride and distinction.'
+
+<div class='facblock'>
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better. 
+</div>
+{{YouGainExperience}}
+
+You receive the [[Qeynos Badge of Honor]].
+
+==Resources==
+* http://eqdiary.tripod.com/quests/qeynos1.htm
+* http://www.bonzz.com/badge.html (view in older browsers)
+* http://www.ttlg.com/forums/showthread.php?t=5538
+
+[[Category: Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

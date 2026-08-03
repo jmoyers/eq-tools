@@ -1,0 +1,89 @@
+{{Classic Era}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Innkeep Nasumi]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul>
+<li>  [[Faction]], Experience, Coin</li>
+</ul>
+
+
+== Walkthrough ==
+
+Speak to Innkeep Nasumi in East Freeport at #8 on the map.
+
+The conversation with Innkeep Nasumi:
+
+You say, 'Hail Innkeep Nasumi'
+
+: Innkeep Morpa says 'Huh? Oh hi. Weeze got a [problem] here. It not gud.
+
+You say, 'What problem?'
+
+: Innkeep Nasumi says, 'Hi Kollins. Times are tough these days. We are finding ourselves running short on baked goods lately. Would you be [willing to help] us out?'
+
+You say, 'willing to help'
+
+: Innkeep Nasumi says, 'You'd help us? Oh, you are such a dear! Well, there are two ways you can help us and our little business. If you [can bake] you can make us some muffins so we don't run out. Otherwise, you [can travel] a little way for us and pick up some bread.'
+
+You say, 'i can bake'
+: Innkeep Nasumi says, 'A free lance baker, well that is nice. Here. Take this crate and make some of your muffins. Bring the Full Muffin Crate back to me when you are done. I'll pay you the same as we pay our regular suppliers. Make sure you bake them fresh yourself, we only sell quality muffins here.'
+(note this leads to [[Muffin Quests|a different quest]])
+
+You say, 'i can travel'
+: Innkeep Nasumi says, 'How nice of you! There is a man who lives in the plains to the south. I believe his name is Jarlen Meadowgreen. I guess the plague hasn't hit that area too hard. Anyway, he's a talented baker and makes some delicious bread. Just let him know that you want a bag of bread loaves.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Innkeep Nasumi.
+
+: Innkeep Nasumi says, 'Oh, wonderful fresh bread! Thank you for making the trip, that is such a long way. Here, I hope this covers your travel expenses. You have my deepest thanks.'
+
+
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Coalition of Tradefolk Ill]] got better.
+</div>
+
+
+{{Exp}}
+
+You receive 3 platinum, 2 gold pieces.
+  (This varies, see table above.)
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

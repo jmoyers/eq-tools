@@ -1,0 +1,63 @@
+[[File:npc_yegek_b`larin.png|frame|Yegek B`Larin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Yegek B`Larin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Evil Races)
+|-
+! ''' Related Zones: '''
+| [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Seloxia Punox]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>Small Coin</li>
+<li>[[Iron Ration]]</li>
+<li>[[Torch]]</li></ul>
+
+== Walkthrough ==
+
+''Yegek B'Larin is located inside the arena at the Indigo Brotherhood guild hall (-49.27, -1214.76, -24.87).''
+
+You say, 'Hail, Yegek B`Larin'
+
+: Yegek B`Larin says, 'Welcome. A brother of the Indigo you must be. Why else would anyone dare to roam the corridors of the Cauldron of Hate? You were most likely sent to speak with Yegek. If so, speak up and tell Yegek who [sent] you.'
+
+You say, 'Seloxia Punox sent me'
+
+: Yegek B`Larin says, 'Good. Let us begin your training. Take this and fill it with three fire beetle eye and three bone chips found on the creatures that infest Nektulos Forest. Combine the items in the bag, and give it to me. Hold onto the basic short sword you first received from Seloxia for you will need this for the next part of your training.'
+
+'''Fill the [[Empty Bag]] with 3 [[fire beetle eye]] and 3 [[Bone Chips]] as instructed, combine, and hand in the [[Bag of Eyes n Bones]].'''
+
+: Yegek B`Larin says, 'Excellent, you have passed the first test. Take this as a small reward for your fortitude. Do you feel you are ready for the [second test]?'
+
+<div class='facblock'>
+*Your faction standing with [[Indigo Brotherhood]] got better.
+*Your faction standing with [[Emerald Warriors]] got worse.
+*Your faction standing with [[Steel Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 4 silver pieces.
+
+== Related Quests ==
+
+<ul><li>[[Yegek's Test, Part 2]]</li></ul> 
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:All Classes Quests]]

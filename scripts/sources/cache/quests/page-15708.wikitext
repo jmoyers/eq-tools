@@ -1,0 +1,124 @@
+{{Velious Era}}
+[[File:npc commander leuz.png|frame|]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Commander Leuz]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Scout Charisa]], [[a Kromzek Captain]], [[a Kromzek warrior]]
+|}
+
+== Reward ==
+
+<ul>
+<li> {{:Robe of Benevolence}}, OR
+</li>
+<li>  {{:Bracer of Benevolence}}, OR
+</li>
+<li> {{:Talisman of Benevolence}}
+</li></ul>
+
+== Checklist==
+
+{{CheckboxList}}
+* Talk to [[Commander Leuz]] say, "I will accept this task" to receive [[Scout Tools]] ('''requires warmly faction or higher'''. If you don't have amiable faction you cannot complete the quest and will agro and train Scout/Dragons to the others at turn-in).
+* Give Scout Tools to [[Scout Charisa]] (v1) (to spawn [[a Kromzek Captain]], several giants, and Scout Charisa v2)
+* Loot [[Broken Disk]] from Kromzek Captain
+* Give Broken Disk to Charisa (either version) (to receive [[Scout Report]] & [[Robe of Benevolence]])  ***DO NOT DO THE TURN IN UNDER AN ILLUSION (WOLF FORM ETC) AS IT AFFECTS YOUR FACTION - VERIFY BEFORE YOU TURN IN THE DISK***
+* OPTIONAL: Return the Robe to Charisa (to receive [[Bracer of Benevolence]])
+* OPTIONAL: Return the Bracer to Charisa (to receive  [[Talisman of Benevolence]])
+* OPTIONAL: Give [[Scout Report]] to [[Commander Leuz]] (to receive faction & experience)
+{{end}}
+
+== Walkthrough ==
+
+* Faction Required: Claws of Veeshan (Min: Warmly)
+
+You say, 'Hail, Commander Leuz'
+
+: [[Commander Leuz]] says 'Welcome to Skyshrine. I have noticed a great deal more of your people joining the ranks of the shrine, hoping to assist in pushing back the giants for good. I am here as the commander of the militia set forth by Lord Yelinak himself. With that in mind, it is my duty to assign certain tasks to those who are willing to show their support to the kin, and to the shrine.'
+
+You say, 'What task?'
+
+: Commander Leuz says 'Well, for instance, we have recently acquired information from one of our scouts in the wastelands to the west that there have been storm giants wandering the coastal area nearby. We have not heard from this scout in some time however, and we are beginning to worry about their status. Your task, should you choose to accept it, is to deliver some tools to the scout so that they can communicate back to us with their status, and the status of those giants.'
+
+You say, 'I will accept this task.'
+
+: Commander Leuz says 'Good. Please take these tools with haste to the western wastelands and find the scout. Strength be with you, and with the kin.'
+
+'''The Commander will hand you [[Scout Tools]].'''
+
+'''In the Western Wastes you can find [[Scout Charisa]] (respawn: 10 hours) that stands on a hill just south of the Sirens Grotto zone. The first version of Charisa (no bag in hand) will spawn. Handing her the [[Scout Tools]] gave this dialog.'''
+
+:''See also: [[Scout Charisa/Player Agreement]]''
+
+: Scout Charisa says 'Great! I was wondering when they would send someone out to give me these. In my haste and excitement of this new assignment I forgot these. This scout business is great I must say. It sure beats setting in Southern Ro studying the ruins. I've been following these Storm Giants for days. They've been wandering up and down the coast looking for something.'
+
+<div class='facblock'>
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+{{exp}}
+</div>
+
+The first version of Charisa (no-bag in hand) will then despawn and the second version of Charisa (bag in hand) will spawn. You can turn your [[Broken Disk]] in to either version of Charisa and receive rewards.
+'''This will spawn 8 giants near the shoreline just south of the Scout. Seven Kromzek Warriors and one [[a Kromzek Captain]]. Kill the Captain to loot the [[Broken Disk]].'''
+
+'''DO NOT DO THE TURN IN UNDER AN ILLUSION (WOLF FORM ETC) AS IT AFFECTS YOUR FACTION - VERIFY BEFORE YOU TURN IN THE DISK'''
+
+'''Give the Disk to Scout Charisa immediately. She'll give you the [[Scout Report]] and [[Robe of Benevolence]].
+
+: Scout Charisa says, 'Ahhh the artifact, I will return this to Commander Leuz.  Please take this updated report to him ahead of me so he knows what to expect on my arrival.  Please accept this robe as a reward, I'm not very skilled at judging size so if you have a problem with wearing it please give it back and I will see what else I have for you.'
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+{{exp}}
+</div>
+
+;Bracer
+
+If you return the Robe to Scout Charisa, you will get a [[Bracer of Benevolence]].
+
+:Scout Charisa says, 'Didn't like the robe, eh?  How about this then.  They packed it in my scout kit, and it is of no use to me, though it looks very nice.'
+
+;Talisman
+
+If you hand the Bracer back in, you will get a [[Talisman of Benevolence]].
+
+:Scout Charisa says, 'Hmm, not the martial type, I take it.  Perhaps this will better suit your needs.'
+
+;Scout Report
+
+Return the [[Scout Report]] to [[Commander Leuz]] in Skyshrine for faction and experience:
+
+: Commander Leuz says 'Well this artifact will definitely need study. Thank you for this report. Perhaps after we have researched this object more we will have more for you to search for.'
+
+<div class='facblock'>
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+{{exp}}
+</div>
+
+===Notes===
+Scout Charisa v2 and giants will despawn after 15 minutes. Giants will not despawn while aggro, however. It's possible to kill [[a Kromzek Captain]] after Scout Charisa v2 despawns, or for her to despawn before you give her the [[Broken Disk]]. If this happens, then save the disk for a later scout roll. Give the disk to Scout Charisa v2 (holding bag) <b>ONLY</b>. This will not interfere with other players. Scout Charisa v2 will accept quest items (Disk, Robe, Bracer) from any factioned player during her 15 minute window.
+'''''See also: [[Scout Charisa/Player Agreement]]'''''
+
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

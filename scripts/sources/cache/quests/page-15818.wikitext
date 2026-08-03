@@ -1,0 +1,54 @@
+{{Velious Era}}
+{{Disambig3|[[Custom Plate Helms - Skyshrine]]}}
+{{Disambig3|[[Custom Plate Helms - Thurgadin]]}}
+[[File:npc_grand_armsmith_korin.png|frame|Grand Armsmith Korin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Grand Armsmith Korin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Custom Warlord's Crown}}
+</li><li>{{:Custom Cowl of Mortality}}
+</li><li>{{:Custom Templar's Crown}}
+</li><li>{{:Custom Crown of the Kromzek Kings}}
+</li><li>{{:Custom Malevolent Crown}}
+</li><li>{{:Custom Frostreaver's Velium Crown}}
+</li><li>{{:Custom Troubadour's Helm}}
+</li><li>{{:Custom Shining Helm}}
+</li></ul>
+
+== Walkthrough ==
+
+-- As of 18 December 2017 the custom warlord crown quest is working --
+
+[[Grand Armsmith Korin]] may be found at -1665, +1440.
+
+You say, 'Hail, Grand Armsmith Korin'
+
+: [[Grand Armsmith Korin]] says 'Another offlander who has recognized and submitted to the will of Tormax I see in you, ______, and that is a good thing for you indeed. For your service I offer you the option of trading in any plate helm you earned from our smiths for one more suited to your race. I believe I can make a fine helm indeed for a Human of your standing. Just hand over your Malevolent Crown, Shining Helm, Troubadour's Helm, Crown of the Kromzek Kings, Frostweaver's Velium Crown, Cowl of Mortality or Warlord's Crown and I'll perform the work for you.' 
+
+''Turning in any of the listed helms will result in a new helm with the same stats, but will appear on your character with the custom helm graphics instead of no graphic. Upon turning in a [[Warlord's Crown]]:''
+
+: [[Grand Armsmith Korin]] says 'Ah, here is your helm, Rums, may it serve you as well as you have served us.'
+
+''You receive [[Custom Warlord's Crown]]. There are no faction hits or experience.''
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

@@ -1,0 +1,135 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_onerind_fe`dhar.png|frame|Onerind Fe`Dhar]]
+[[File:Iksarbloodlord.png|frame|Iksar in Blood Lord Armor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Onerind Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Blood Lord's Crown
+|Blood Lord's Breastplate
+|Blood Lord's Vambraces
+|Blood Lord's Bracer
+|Blood Lord's Gauntlets
+|Blood Lord's Greaves
+|Blood Lord's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Onerind Fe`Dhar]] in [[Skyshrine]].You must at least be ALLY with Claws of Veeshan for turn-in. {{CheckboxList}}
+*[[Blood Lord's Crown]]
+:*[[Unadorned Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Blood Lord's Breastplate]]
+:*[[Unadorned Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Blood Lord's Vambraces]]
+:*[[Unadorned Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Blood Lord's Bracer]]
+:*[[Unadorned Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Blood Lord's Gauntlets]]
+:*[[Unadorned Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Blood Lord's Greaves]]
+:*[[Unadorned Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Blood Lord's Boots]]
+:*[[Unadorned Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Onerind Fe`Dhar is located in an icy room at the top of the giant staircase section beyond the maze. Other resources may put the quest NPCs in a library at the bottom of the giant staircase.
+
+You say, 'Hail, Onerind Fe`Dhar'
+
+Onerind Fe`Dhar looks around. 'Who dares address me?  Oh, it is you. What is it you want? Some armor perhaps? To make a pretty corpse? There is something exquisite about a well-dressed meal. If you are not a shadowknight leave me now or you may end up as my next meal.
+
+You say, 'What armor?'
+
+Onerind Fe`Dhar laughs deeply,  'You manlings are so transparent.  Well, if armor is what you wish, then only the best shall you have for I will not waste my time on less than the best. This is what I will make for you, granted that you can acquire the components for me - a helm, breastplate, armplates, bracers, gauntlets, leggings, and boots.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned plate armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan. Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Onerind Fe`Dhar says 'For the helm I shall require an unadorned plate helmet and three pieces of crushed coral for my trouble. Does your tiny mind comprehend the task set before you? If so, then get them immediately! I am beginning to get hungry and you are looking all the better as a snack.'
+
+'''Return with an [[Unadorned Plate Helmet]] and three [[Crushed Coral]] pieces.'''
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Onerind Fe`Dhar says 'For the breastplate, I require an unadorned breastplate and three flawless diamonds.  Nothing more, nothing less.  For perfection, there is a price, insignificant one.'
+
+'''Return with an [[Unadorned Breastplate]] and three [[Flawless Diamond]]s.'''
+
+== Armplates ==
+
+You say, 'What armplates?'
+
+: Onerind Fe`Dhar says 'For the armplates, I need these components - unadorned plate vambraces as well as three flawed emeralds. Now go and fetch them before I change my mind.'
+
+'''Return with [[Unadorned Plate Vambraces]] and three [[Flawed Emerald]]s.'''
+
+== Bracers ==
+
+You say, 'What bracers?'
+
+: Onerind Fe`Dhar says 'For the bracers, I will require an unadorned plate bracer and a set of three crushed flame emeralds. Now go away before I use your insides as decoration for my gullet.'
+
+'''Return with [[Unadorned Plate Bracer]] and three [[Crushed Flame Emerald]]s.'''
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Onerind Fe`Dhar says 'Your hands are quite important, aren't they? For without them, you cannot use your precious weapons or shields to protect yourselves. You humor me with your feeble attempts. Fetch me a set of unadorned plate gauntlets and three crushed topaz for your precious little gauntlets.'
+
+'''Return with [[Unadorned Plate Gauntlets]] and three [[Crushed Topaz]].'''
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Onerind Fe`Dhar grins malevolently. 'Legs?? They are my favorite part of a meal. Some of my brethren consider them too tough, but I like them chewy. Don't you agree? Oh, yes, where was I? The leggings. Go and retrieve unadorned plate greaves as well as three flawed sea sapphires. Leave my sight before I sample one of yours.
+
+'''Return with [[Unadorned Plate Greaves]] and three [[Flawed Sea Sapphire]]s.'''
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Onerind Fe`Dhar says 'You wish to have a pair of boots? Then acquire these items for me. Three pieces of crushed black marble and a pair of unadorned plate boots. I tire of your prattle. Go away now.'
+
+'''Return with [[Unadorned Plate Boots]] and three [[Crushed Black Marble]] pieces.'''
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Shadow Knight Quests]]
+[[Category:Skyshrine Armor Quests]]

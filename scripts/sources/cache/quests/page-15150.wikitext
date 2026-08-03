@@ -1,0 +1,108 @@
+{{Classic Era}}
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Crushbone]]
+|-
+! ''' Quest Giver: '''
+| [[a dwarven smith]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| All (Mainly for Melee)
+|-
+! ''' Related Zones: '''
+| [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[a dwarven smith]], [[an elven priest]], [[orc trainer]], [[Emperor Crush]], [[orc warlord]]
+| 
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Dwarven Mace}}
+</li><li> {{:Prayer Cloth of Tunare}}
+</li><li> {{:Screaming Mace}}
+</li></ul>
+
+== Pre-Quest Mini-Quest/Dialogue ==
+'''Note''': You do not need to do this part to get prayer cloth. Just hail the elf and say "The king is dead" and he will ask for proof. Give him the BoB and receive the prayer cloth of tunare.
+
+'''Hail a dwarven slave (male) found in various locations around Crushbone.'''
+
+: a dwarven slave says, 'Slavedrivers are just lackeys for the [taskmaster]. He is the real orc in charge.'
+
+You say, 'taskmaster?'
+
+: a dwarven slave says, 'The taskmaster?? He is that large orc who runs around with that [bronze earring[ in his ear.'
+
+You say, 'what bronze earring?'
+
+: a dwarven slave says, 'Yeah, a bronze earring. He wears it like a newly crowned king. If I ever had that earring I know I would stand a chance at escape.'
+
+This is the [[Taskmaster Earring]] quest. The [[Brass Earring]] (incorrectly called bronze in the dialogue) can be given to  various slaves around Crushbone to free them and receive a small quest to inform their loved ones of their whereabouts. You can instead give it to [[a dwarven smith]] to get the preliminary dialogue for the Screaming Mace Quest.
+
+[[a dwarven smith]] is at location 60, 746 (inside the slaver cabin) in [[Crushbone]]. 
+
+'''Hand a dwarven smith a [[Brass Earring]], dropped by an [[orc taskmaster]]'''
+
+: a dwarven smith says, 'Outstanding! If you can kill the taskmaster, you might prove useful in recovering the #items the orcs took from me when they caught me out in the Faydarks. Interested in helping me out?'
+
+{{YouGainExperience}}
+You receive a {{:Unfinished Blade Mold}}. (Note: this does not give any faction.)
+
+
+You say 'I am interested' to get the next dialogue, asking you to retrieve the shiny brass shield.
+
+'''Hand a dwarven smith a [[Shiny Brass Shield]], dropped by an [[orc trainer]]'''
+
+: a dwarven smith says 'MY SHIELD!! Excellent, laddie! Next item on the list is my ringmail. Once I have my ringmail, I am out of here for good. I will finally be able to leave!' 
+
+{{YouGainExperience}}
+You receive an {{:Unfinished Sledge Mold}}. (Note: this does not give any faction.)
+
+== Quest Start ==
+
+You say, 'What about ringmail?' 
+
+: a dwarven smith says 'The king was the last person I heard of who was wearing what sounded like my ringmail. Return it to me and I will reward you with a fine weapon I forged myself.' 
+
+'''Hand a dwarven smith the [[Dwarven Ringmail Tunic]], dropped by [[Emperor Crush]]. '''
+
+: a dwarven smith says 'AHA!! My ringmail!! My, you ARE a resourceful one! Here is your reward as promised. It is exquisite, if I do say so myself. You might also wish to tell the priest in the cell over there that the king is dead. I am sure he will be pleased to hear that and might even be able to help you further. Farewell! It's time for me to make my escape!' 
+
+{{YouGainExperience}}
+
+You receive a {{:Dwarven Mace}}. (Note: this does not give any faction.)
+
+----
+
+[[an elven priest]] is located at 84, 744 (inside the slaver cabin, last stall on the left) in [[Crushbone]]. 
+
+You say, 'The king is dead.' 
+
+: [[an elven priest]] says 'Dead you say? My goodness! Did you manage to slay the warlord too? If you provide me with proof of his death, I can enchant the mace the dwarf gave you as payment. But, I will require the proof first!' 
+
+'''Hand an elven priest the [[Bracers of Battle]], dropped by the [[orc warlord]]. '''
+
+: an elven priest says 'Erollisi be praised! You slew the orc lord! Well, here is a token of my appreciation! Should you wish to have that mace enchanted, just hand me the mace and my token and I shall uphold my end of the bargain!' 
+
+{{YouGainExperience}}
+
+You receive a {{:Prayer Cloth of Tunare}}. 
+
+'''Give the [[Dwarven Mace]] and the [[Prayer Cloth of Tunare]] to an elven priest. '''
+
+: an elven priest says 'Have you the other item I require?' 
+
+: an elven priest says 'As promised, here is your mace. Let it not fall into dark hands as its power is hidden until combat when it will reveal its true nature. Fare thee well!' 
+
+{{YouGainExperience}}
+
+You receive a {{:Screaming Mace}}.
+
+[[Category:Quests]]
+[[Category:Crushbone]]
+[[Category:All Classes Quests]]

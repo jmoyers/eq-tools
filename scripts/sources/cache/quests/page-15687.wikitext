@@ -1,0 +1,80 @@
+{{Velious Era}}
+{{expand}}
+[[File:npc_vkjor.png|frame|Vkjor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Vkjor]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Iceclad Ocean]], [[Tower of Frozen Shadow]]
+|-
+! ''' Related NPCs: '''
+| [[Graktar Bluehammer]], [[an undead bridesmaid]], [[Daman]]
+|}
+
+== Reward ==
+
+<ul><li> Unsolved? {{:Graktar's Signet Ring}}, faction, experience, coin
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Vkjor'
+
+: Vkjor says 'Greetings, Ogre.  Welcome to the great arena of Kael Drakkel.  I am Vkjor, master of the arena.  The games begin and end when I wish them to.  Gladiators train themselves year round to entertain the populace of Kael.  Have you come to watch, or is there something else I can help you with?'
+
+You say, 'there is something else you can help me with'
+
+: Vkjor says 'What is it you need?
+
+Do you wish to be a gladiator or something along those lines?  I do not allow your kind to fight in the arena, I am sorry to say.  It is a sacred place for the children of Zek.  If you wish to hone your battle skills, however, I do have several things I need taken care of.
+
+You say, 'what do you need taken care of?' 
+
+: Vkjor says 'I have several things which must be dealt with.  However I must know if you are capable of the tasks before I send you off.  Do you fight like an ice wurm or a dragon? 
+
+You say, 'I fight like a  ice wurm'
+
+: Vkjor says 'Very well, young one.  A friend of mine named Graktar recently traveled to the Eastern Wastes in search of the remains of his brother, Vkalth.  Please take this [[Large Note]] to Graktar and assist him in his search.  Return to me when you have news of his fate.
+
+''Graktar has moved on from the Eastern Wastes and is to be found in Iceclad Ocean.''
+
+'''Graktar does not respond to hails as normal. Hand in the [[Large Note]] to receive [[Graktar's Signet Ring]]:'''
+
+: [[Graktar Bluehammer]] says, 'So, Vkjor has sent you to assist me? He must want me back fighting in the arena as soon as possible if he'd send a mercenary out here to help me. My brother Felkak went missing no less than a fortnight ago. He told me he was traveling to the great Eastern Wastes to hunt, however, I have found no sign of him. My younger brother often lied about where he was going in order to be 'free'. Take my ring and search the lands for one that looks exactly like it. If my brother is alive, show him this ring and he will give you his, to prove to me that he is alive. If he is dead... Bring me his ring as proof that he is. I have heard that he may be near the Tower of Frozen Shadows but many times have I warned him not to enter that dread place. You may wish to begin your search in that area.'
+
+{{YouGainExperience}}
+
+'''You receive [[Graktar's Signet Ring]]. The item he wants in return is a [[Signet Ring]] from the Tower of Frozen Shadow wedding.'''
+
+'''Return to Graktar Bluehammer. Again he does not respond to hails, so turn in the Signet Ring:'''
+
+Graktar Bluehammer swipes the ring from your outstretched hand. 'Yes, this is Felkak's ring, a twin of my own. He would never part with this willingly so this is truly a sign of his passing. I thank you for delivering this news to me. Though it saddens me deeply, at least I will know now what has become of him. One day I may return to the arena but for now I must wander these lands to cool the fury of my heart. Please take what little coins I have as thanks in return.'
+
+<div class='facblock'>
+* Your faction standing with the [[Kromrif]] gets better.
+* Your faction standing with the [[Kromzek]] gets better.
+* Your faction standing with the [[Coldain]] gets worse.
+* Your faction standing with the [[Claws of Veeshan]] gets worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 5 platinum from Graktar Bluehammer.
+
+''Note: There are a few problems with this quest. One, Vkjor says Graktar's brother name is Vkalth. Graktar after turning in the Large Note says his name is Felkak and refers to him that way. Vkjor does not respond to anything about returning to him. What to do with the ring Graktar gives? Graktar refused it.''
+
+Need all dialogues (these are transcriptions), current faction hits if any, /loc of quest mobs, quest items, quest rewards, any additional information required to solve the quest, etc.
+
+[[Category:Quests]]
+[[Category:Unsolved]]
+[[Category:Kael Drakkel]]

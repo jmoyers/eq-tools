@@ -1,0 +1,61 @@
+{{Velious Era}}
+{{Disambig3|[[Custom Plate Helms - Kael Drakkel]]}}
+{{Disambig3|[[Custom Plate Helms - Thurgadin]]}}
+[[File:npc_supreme_laochsmith_psorin.png|frame|Supreme Laochsmith Psorin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Supreme Laochsmith Psorin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li> {{:Akkirus' Custom Crown of the Risen}}
+</li><li>{{:Custom Blood Lord's Crown}}
+</li><li>{{:Custom Cowl of Mortality}}
+</li><li>{{:Custom Crown of the Kromzek Kings}}
+</li><li>{{:Custom Crown of the Myrmidon}}
+</li><li>{{:Custom Frostreaver's Velium Crown}}
+</li><li>{{:Custom Helm of Twilight}}
+</li><li>{{:Custom Scaled Knight's Helm}}
+ </li></ul>
+
+== Walkthrough ==
+
+This quest requires ally with Claws of Veeshan to complete.
+
+Supreme Laochsmith Psorin may be found at +1200, +1200, 0.  He is in a room adjacent to the armor quest givers; immediately after you click the final globe on your way to the quest armor room, turn around.
+
+You say, 'Hail, Supreme Laochsmith Psorin'
+
+: Supreme Laochsmith Psorin says 'It is most unfortunate that you do not have scales to defend your fragile mortal shell, Human, I can only hope that the armor we in the Shrine can provide you with will extend your life another fraction of a century. In addition to that you also might want a [special helm] to cover up that scaleless face of yours. I understand that the Mother could not grace you with all our blessings, but at least we can try to make you look half way decent.'
+
+You say, 'What special helm?'
+
+: Supreme Laochsmith Psorin says 'Using my obviously superior skills I can customize a plate helm from the Shrine to suit a Human such as yourself. Give me your [[Blood Lord's Crown]], [[Scaled Knight's Helm]], [[Helm of Twilight]], [[Akkirus' Crown of the Risen]], [[Cowl of Mortality]], [[Frostreaver's Velium Crown]], [[Crown of the Kromzek Kings]], or [[Crown of the Myrmidon]] and I shall make you a new helm that will better hide and protect your unscaled features.'
+
+Hand in one of the aforementioned helms.
+
+: Supreme Laochsmith Psorin says 'Thank you, ______. Please accept this Helm as a token of our gratitude for your service to the Shrine.'
+
+The result is a "Custom" helmet with the same stats but different look under pre-Luclin models.
+
+==See also==
+* [[Fashion#Velious Armor Sets by Race]]
+
+[[Category:Quests]]
+[[Category:Skyshrine]]

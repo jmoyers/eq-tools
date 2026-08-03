@@ -1,0 +1,76 @@
+{{Velious Era}}
+
+[[File:npc_lord_yelinak.jpg|frame|Lord Yelinak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Yelinak]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| [[King Tormax]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Clawed Griffin Sword}}
+</li><li> {{:White Dragonscale Boots}}
+</li><li> {{:White Dragon Helm}}
+</li></ul>
+
+== Walkthrough ==
+<br>
+''Lord Yelinak will accept Tormax's head at amiable or better faction.'''
+: See [[Tsiraka]] to check Yelinak Faction
+
+<br><br>
+NOTE: If your faction is not high enough and you turn in the item, he will not give the item back to you.
+
+You say, 'Hail, Lord Yelinak' 
+
+: Lord Yelinak says 'Young mortal, I welcome you here, though quite reluctantly. I fear I may seem haughty or arrogant, and for that I apologize, however, young one, my trust is not an easy commodity to gain these days. There was a time when I would have welcomed you to these chambers and to my council with great honor, for the dragon kin speak fondly of your deeds toward them. However, the times do unfortunately change. Ages ago, like you, young Kragen Morshire presented himself. He too had earned the trust of the dragon kin and as such, I accepted his counsel. In the end, young one, his true nature shone through and my trust he betrayed. Perhaps you wish to prove yourself more worthy of my trust than he? 
+
+You say, 'I wish to prove my worth' 
+
+: Lord Yelinak says 'Then as agreed, young mortal, I will grant you one chance to prove your worth in my eyes. The Storm King Tormax sits on a throne carved from the skull of one of our fallen within the city of Kael, which disgraces the mighty children of Veeshan. His life alone is a blight upon the children of Veeshan. Should you be a true patriot to our cause, I seek of you but one task. Should you succeed in this task, not only will your actions offset the balance of this war in our favor, but will surely take a step in driving the vileness of the giants from our noble lands. Bring me, young one, the head of Tormax, and then we shall speak further.'
+
+'''Upon handing him the [[King Tormax's Head]]:'''
+
+Lord Yelinak watches as you drop the colossal head of King Tormax to the ground before him. You sense intense hatred within Yelinak as he stares down at the bloody remains of a descendent of the one who slew his mate. Obviously the death of Tormax has done little to console the ancient snow dragon. Finally Yelinak speaks, 'I look upon this face, and even though he is dead, the hatred burns on. My grief and anger are unchanged even in the face of ultimate fate. His grandfather's act was so despicable and all-encompassing that it instilled an. immortal loathing. Neverttheless, you have completed the task I set before you and, as such, you deserve my gratitude. Please accept this [treasure]. 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got worse.
+</div>
+
+'''He gives you the [[Clawed Griffin Sword]].'''
+
+You say, 'What treasure?' 
+
+: Lord Yelinak says 'This sword is a symbol of our evolution and ancient heritage. Back when our feathered relatives were not so distant, a sword was forged and enchanted with the spirit of an elder griffin. This noble griffin bound his soul to the sword, the essence of his being honing the blade to an edge imperceptible to mortal eyes. Although our races have evolved away from each other, we still hold them in high regard. But if you think you are not worthy to wield this honor, return the sword to me and I have other tokens you may find of more use.'
+
+'''If you give him back the sword:'''
+
+: Lord Yelinak says 'I lost the scales that made these boots in a battle with Tormax's minions. The casters of the shrine gathered these fallen scales up and fashioned a very powerful enchantment into these boots.'
+
+'''He gives you [[White Dragonscale Boots]].'''
+
+'''If you give him back the boots:'''
+
+: Lord Yelinak says 'This helm was created by our smiths and enchanted by the priests of the shrine to provide protection to our new allies who have found that their heads are much more fragile than those of our kin.'
+
+'''He gives you: [[White Dragon Helm]].  If you give him back the helm, he gives you: [[Clawed Griffin Sword]].'''
+
+[[Category:Quests]]
+[[Category:Skyshrine]]

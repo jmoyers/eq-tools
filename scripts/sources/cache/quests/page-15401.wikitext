@@ -1,0 +1,67 @@
+{{Classic Era}}
+[[File:npc_beno_targnarle.png|frame|Beno Targnarle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Beno Targnarle]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[A Giant Rat]]
+|}
+Requires Amiable or better faction, is multiquestable. 
+== Reward ==
+
+<ul><li>  {{:Rat Pelt Cape}}
+</li><li> {{:Small Lantern}}
+</li><li> {{:Torch}}
+</li><li> {{:Malachite}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Beno Targnarle]] located at 84, 404, 15 in the north turret of the Kaladim Warrior's Guild.''
+
+You say, 'Hail, Beno Targnarle'
+
+: Beno Targnarle says, 'Step forth, young ______! I heard that you have come of age! The spirit of adventure has entered your body. That is good. Go and speak with the others. They shall help you. I am afraid I have no time to spend conversing. There is much I have to [ponder].'
+
+You say, 'Ponder what'
+
+: Beno Targnarle says, 'Must you know everyone's business? Hmm.. Maybe you can be of assistance. You see, I have been instructed by Furtog to tend to a matter of extreme urgency, which is keeping me from clearing the mines of rats. Will you assist and [exterminate the rats]?'
+
+You say, 'I will exterminate the rats'
+
+: Beno Targnarle says, 'Very good! I shall reward you for every four giant rat pelts returned to me. And be on the lookout for a [metal rat]!'
+
+'''Hand [[Beno Targnarle]] 4 [[Giant Rat Pelt]]s, looted from [[a Giant Rat]] located in the mines below the [[North Kaladim]] Bank.'''
+
+: Beno Targnarle says, 'Well done indeed! You are well on your way to becoming a fine warrior. Take this for your travels.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Cleaner Clockwork]]
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

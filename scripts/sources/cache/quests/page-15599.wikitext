@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_nultal_malfoot.png|frame|Nultal Malfoot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Nultal Malfoot]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a large skunk]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Cure Poison|Spell: Cure Poison]]
+</li><li> [[Divine Aura|Spell: Divine Aura]]
+</li><li> [[Fear|Spell: Fear]]
+</li><li> [[Flash of Light|Spell: Flash of Light]]
+</li><li> [[Furor|Spell: Furor]]
+</li><li> [[Gate|Spell: Gate]]
+</li><li> [[Holy Armor|Spell: Holy Armor]]
+</li><li> [[Lull|Spell: Lull]]
+</li><li> [[Stun|Spell: Stun]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Nultal Malfoot]] is located at 798, 158, 3 inside the Cleric guild. You must have Amiable faction to complete this quest.''
+
+You say, 'Hail, Nultal Malfoot'
+
+: Nultal Malfoot says, 'May the power of Underfoot be with you. Welcome, I am here to serve the will of the king as should you. If you [need healing], then speak. Or perhaps you are here to [return skunk glands]?'
+
+You say, 'I am here to return skunk glands'
+
+: Nultal Malfoot says, 'I have made an offer to all clerics of this cathedral. I shall reward one cleric scroll from our scribes for the return of four skunk scent glands. This offer is best left to our clerics.'
+
+'''Hand [[Nultal Malfoot]] 4 [[Skunk Scent Gland]]s, randomly looted from [[a large skunk]] roaming throughout the [[Butcherblock Mountains]].'''
+
+: Nultal Malfoot says, 'There shall be no scroll until I see four skunk scent glands.'
+
+: Nultal Malfoot says, 'There shall be no scroll until I see four skunk scent glands.'
+
+: Nultal Malfoot says, 'There shall be no scroll until I see four skunk scent glands.'
+
+: Nultal Malfoot says, 'I thank you for your good deed. I trust it was not a problem. Take this scroll. A cleric of this cathedral will find it useful, may the power of Underfoot be with you.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 5 silver pieces.
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Wizard Quests]]

@@ -1,0 +1,69 @@
+{{Classic Era}}
+[[File:npc_heartwood_master.png|frame|Heartwood Master]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Heartwood Master]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]], [[Orc Pawn (Crushbone)]], [[Orc Centurion (Crushbone)]], [[a pixie trickster]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Tarnished Scimitar}}
+</li><li> {{:Worn Great Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+Requires amiably faction or better.
+
+''The [[Heartwood Master]] is located at -637, 213, 77 in the Soldiers of Tunare ([[Druid]]) Guild Hall.''
+
+You say, 'Hail, Heartwood Master'
+
+: Heartwood Master says, 'Welcome! We are the Soldiers of Tunare, the sworn protectors of Faydark. Through the magic of Tunare we care for the land and with blade, staff and spell we protect the Faydark against those who would destroy and despoil it. We are always grateful for any assistance to our cause. Perhaps you could help me with some simple [errands].'
+
+You say, 'What errands'
+
+: Heartwood Master says, 'As druids of the Mother of All, we may only use the scimitar and blunt weapons, all other blades are forbidden. Prove your devotion by bringing me a rusty [short sword], [long sword], [broad sword], and [bastard sword]. I will destroy them and reward you for your faith. They will be reforged into weapons blessed by Tunare to assist the Soldiers in their defense of the Heartwood.'
+
+'''Hand The [[Heartwood Master]] a [[Rusty Short Sword]], [[Rusty Long Sword]], [[Rusty Broad Sword]], and [[Rusty Bastard Sword]].'''
+
+: Heartwood Master says, 'Tunare be praised! Do you have the rest I requested?'
+
+: Heartwood Master says, 'Tunare be praised! Do you have the rest I requested?'
+
+: Heartwood Master says, 'Tunare be praised! Do you have the rest I requested?'
+
+: Heartwood Master says, 'You have done well, child! Take these as a blessing from Tunare for doing her will.'
+
+<div class="facblock">
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 6 gold pieces.
+
+== Personal Notes ==
+
+''I have completed this quest 10 times now as a lvl 3 from just buying weapons off of merchants and turning them in. The merchants at the lifts are loaded. Even after buying all the weapons, you still make profit after the turn in and selling the reward (Buying as a Wood Elf Druid in Kelethin). With under 6g you can buy all 4 weapons needed for the quest. The turn in gives you 6g and a weapon that sells for 1.9 gold. On top of that, the 10 turn ins gave me just under 1.5 bubbles of exp I beleive. I was doing 2 turn ins at a time due to bag space and weight. Its not to bad of a quest if you're new and looking for a little extra spell money.''
+
+[[Category: Quests]]
+[[Category:Greater Faydark]]
+[[Category:All Classes Quests]]

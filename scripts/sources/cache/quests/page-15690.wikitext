@@ -1,0 +1,51 @@
+{{Velious Era}}
+
+[[File:npc_telkorenar.png|frame|Telkorenar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Telkorenar]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Bard]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Casalen]], [[Essedera]], [[Grozzmel]], [[Krigara]], [[Lepethida]], [[Midayor]], [[Tavekalem]], [[Ymmeln]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Serrated Dragon Tooth}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'What test of the tooth?'
+
+: Telkorenar says 'With tooth and nail you must fight, deep into the halls of testing. Recover the white tear of power, the white symbol for purity the silver symbol to calm ones self and a glowing orb. If you can return these to me I will know you are a mighty fighter indeed.
+
+'''Return with a [[White Tear]], [[White Symbol]], [[Silver Symbol]] and a [[Glowing Drake Orb]] for the tooth.'''
+
+== Related Items ==
+<ul><li>{{:White Tear}} </li></ul> ([[Dozekar the Cursed]])
+<ul><li>{{:Silver Symbol}}</li></ul> ([[Essedera]])
+<ul><li>{{:White Symbol}}</li></ul> ([[Casalen]] or [[Tavekalem]])
+<ul><li>{{:Glowing Drake Orb}}</li></ul>
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Bard Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

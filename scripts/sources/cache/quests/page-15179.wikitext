@@ -1,0 +1,103 @@
+<div style="float:right;margin-left:20px;">__TOC__</div>
+[[File:npc_fabian.png|frame|Fabian]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Fabian]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Classes: '''
+| All 
+|-
+! ''' Related Zones: '''
+| [[North Karana]], [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Zahal the Vile]]
+|}
+
+== Rewards ==
+
+<ul><li>Experience</li>
+<li>[[Faction]]</li>
+<li>Coin</li></ul>
+
+== Walkthrough ==
+
+''[[Fabian]] is located at 132.27, -797.48, 6.87  in [[Freeport|East Freeport]] inside the Grub 'n Grog Tavern.''
+
+You say, 'Hail, Fabian'
+: Fabian says, 'Greetings, merry gentlefolk! If you enjoy the music, please feel free to cross my palm with gold.'
+
+'''Give Fabian 2gp and he will say:''' 
+
+Note: If previous questers have over-given gold, you can give him 1cp and it will use up his cached gold, trigger his response and faction hit. ''(This does not seem to be the case in Legends, anything other than 2g trades does nothing.)''
+: Rat spittle! Busted another string! You seem like a good music loving citizen, could you please run to the Wind Spirit's Song and grab me a fresh set of lute strings? 
+
+<div class="facblock">
+* Your Faction standing with [[League of Antonican Bards]] got better. (+5)
+* Your Faction standing with [[Knights of Truth]] got better. (+5)
+* Your Faction standing with [[Guards of Qeynos]] got better. (+5)
+* Your Faction standing with [[Ring of Scale]] got worse. (-1)
+* Your Faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse. (-1)
+</div>
+
+'''''Note: You can stop here if your only goal is faction. The rest of the quest is for level 30+.'''''<br/>
+
+'''Head to Wind Spirits Song, the Bard guild in [[Qeynos|South Qeynos]]'''
+
+You say, 'Hail, Sansa Nusk'
+
+: Sansa Nusk says 'Hello.. Welcome to the Wind Spirit's Song. I'm Sansa, and I help out the local bards here.'
+
+You say, 'Who is Fabian?'
+
+: Sansa Nusk says 'Ahh - jolly Fabian. He is one of our best customers! That is, of course, due to the fact that he has the heaviest fingers of any bard I know. Anyhow, down to business. I assume he sent you for a new set of strings. Unfortunately, I have not been able to procure any of the special - uhh - things needed to make his strings lately.'
+
+You say, 'What special things?'
+
+: Sansa Nusk says 'Uhh - ummm - uhhh - Fabian does not know this, but his strings are - uh - made of - uh - troll guts.'
+
+You say, 'Where do I get troll guts?'
+
+: Sansa Nusk says 'Well, Fabian likes the thick resonance that only troll gut strings can provide. Trouble is, trolls are scarce around these parts, thank the gods, but Fabian breaks his strings as fast as I find suppliers. Trolls sometimes wander the Karanas in search of food but that is so rare, to see one there. Anyhow, if you find one out in the Karanas, bring me his gut and I can make the strings to take to Fabian.'
+
+'''You need a [[Bag of Troll Guts]] which drops off [[Zahal the Vile]] in [[North_Karana|North Karana]]. Hand them into Sansa.'''
+
+: Sansa Nusk says 'I am not even going to bother asking where you got that. Just take this set I already made and hurry them back to Fabian.'
+
+<div class="facblock">
+* Your Faction standing with [[League of Antonican Bards]] got better. 
+* Your Faction standing with [[Knights of Truth]] got better. 
+* Your Faction standing with [[Guards of Qeynos]] got better. 
+* Your Faction standing with [[Ring of Scale]] got worse. 
+* Your Faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Receive Lute Strings, hand them in to Fabian back in East Freeport.'''
+
+: Fabian says 'Many thanks, merry gentlefolk! Let me cross your palm in gratitude for your kindness.'
+
+<div class="facblock">
+* Your Faction standing with [[League of Antonican Bards]] got better. 
+* Your Faction standing with [[Knights of Truth]] got better. 
+* Your Faction standing with [[Guards of Qeynos]] got better. 
+* Your Faction standing with [[Ring of Scale]] got worse. 
+* Your Faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 20 silver, 10 gold, 1 platinum from Fabian.
+
+==External links==
+
+* http://runen.co.uk/Everquest/Zones/Quests/SQeynos/SansaNusk.htm
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

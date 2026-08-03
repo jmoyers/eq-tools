@@ -1,0 +1,181 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:npc_hierophant_oxyn.png|frame|Hierophant Oxyn]]
+[[File:npc_heirophant_zand.png|frame|Heirophant Zand]]
+[[File:npc_crusader_quarg.png|frame|Crusader Quarg]]
+[[File:npc_mystic_dovan.png|frame|Mystic Dovan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Hierophant Oxyn]]
+|-
+! ''' Minimum Level: '''
+| 5+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Iron Cudgel of the Petitioner}} (#0)
+</li><li> {{:Iron Cudgel of the Clairvoyant}} (#1)
+</li><li> {{:Iron Cudgel of the Seer}} (#2)
+</li><li> {{:Iron Cudgel of the Mystic}} (#3)
+</li><li> {{:Iron Cudgel of the Prophet}} (#4)
+</li><li> {{:Iron Cudgel of the Channeler}} (#5)
+</li></ul>
+
+== Skull Quest No. 1 ==
+
+After completing the [[Cursed Wafers Quest]], Heirophant Oxyn mentions [lost skulls] and the [iron cudgel of the clairvoyant]. (Note: You do not actually need to complete the cursed wafers quest to begin the shaman skull quests. The completion dialogue in the cursed wafers quest just points you in the direction of the skull quests.)
+
+;You say, 'What Iron Cudgel of the Clairvoyant?'
+:Hierophant Oxyn shakes his head and waves a finger in your face. 'If you are looking to be handed the Iron Cudgel of the Clairvoyant then you are sadly mistaken. Perhaps if you were to gather a few [lost skulls] for the temple we may find you worthy to wield one.'
+;You say, 'What lost skulls?'
+:Hierophant Oxyn says, 'You must have heard of the Trilac Brotherhoods disappearance. They are the skulls of three soon to be ancients. They were taken from this temple by a silent intruder. Crusaders are always on duty. I do not know how they got into our vault. Every petitioner is ordered to search for the three skulls and return them to me along with their petitioner cudgel and then they shall become clairvoyants.'
+
+The three skulls drop from [[an iksar outcast]], found in the [[Cabilis|East Cabilis]] sewers or in the [[Swamp of No Hope]].
+*[[Logrin Skull]]
+*[[Morgl Skull]]
+*[[Waz Skull]]
+
+The iksar outcast in the Swamp of No Hope is much more difficult for a low-level character, so stick to the spawns in the Cabilis sewers. To get to the sewers, swim underneath the docks on the east side of the lake in East Cabilis (around +601, -409), and look for a tunnel going east, with [[a pygmy barracuda]] swimming along it. In the second air pocket that you come to (around +420, -731), face the north wall, look straight up, and hold forward until your character jumps up to the ledge (make sure you have your Max Frames Per Second set to 30 - 35). Once up there, follow the right-hand wall around to the third room, which should look exactly like the one you jumped up in. In this room, [[an iksar outcast]] spawns at (+487, -861) every 6.5 minutes. Between spawns, you can run around the other rooms and kill trash mobs to level up.
+
+Note: From other sources, it seems that an iksar outcast *should* spawn in each of the three "air pocket" rooms, and as a rare spawn off the "in-room" mob.
+
+To reach the Iksar in the sewers, watch the video found in Vessel Drozlin's wiki page.
+
+Note 2: It may not be possible currently to jump up to the ledge because setting max frames to 30 no longer works. However, it is easy enough to aggro the outcast simply by swimming beneath him through the tunnel and fighting him in the water. Alternatively, you can use the pit in the shaman's guild to reach the area. At level 4 I was able to survive the fall from the pit, though barely, and it is possible to take no damage, though very difficult. There are two fake walls you must pass through after falling into the pit in order to reach the area of the catacombs the iksar outcast is in. If you fall through a second pit before reaching him, you missed the second fake wall.
+
+Give all three skulls and your [[Iron Cudgel of the Petitioner]] to Heirophant Oxyn
+
+:Heirophant Oxyn says, 'Excellent!! You have proven yourself worthy to wield the iron cudgel of the clairvoyant. As a clairvoyant, I feel I can trust you, so I will tell you that the issue of the missing skulls is a [much larger problem] than last stated.'
+
+<div class='facblock'>
+Your faction standing with ScaledMystics got better.<br>
+Your faction standing with LegionofCabilis got better.<br>
+</div>
+You receive (minor coin reward) and [[Iron Cudgel of the Clairvoyant]].<br>
+
+== Skull Quest No. 2 ==
+
+;You say, 'What much larger problem?'
+:Heirophant Oxyn says, 'Many of the ancient skulls have been cast out of our temple. A heirophant was supposed to cast a special spell which was to protect the skulls from dust and decay. He cast some unknown spell which has sent many of our skulls to their original point of death. It would be most helpful if you would [assist in collecting the ancient skulls].'
+;You say, 'I will assist in collecting the ancient skulls.'
+:Hierophant Oxyn seems unsure of your prowess. 'Hmmm. First you shall go after the two skulls of the Cleansers of the Outlands. If you find them, bring them back unbroken and then I shall trust you. Hand me both skulls and your iron cudgel of the clairvoyant and I will know you are prepared.'
+
+For the first of these two skulls, you are looking for [[a rogue shaman]] in [[Warsliks Woods|Warslik's Woods]] and [[Field of Bone]]
+
+The rogue shaman in Warslik's Woods spawns at #4 on the map at (+2815,-2855),near Field of Bone. His placeholder can be an Iksar Brigand,or an Iksar Bandit. Kill him to get [[Jawless Skull]] and [[A Tattered Note (Shaman Skull Quest 2)|A Tattered Note]]. The tattered note tells you where to get the rest of the pieces...
+
+<blockquote><i>Shaman, I have sent another of your ilk to retrieve the mandible which was taken from us. He will meet up with you at Bone Run around midnight. When you have them, find a way to get some Mendglow Clay and a wheel from Cabilis so we can mend this skull. I am enroute to find the Giant Barracuda who swallowed the other skull at the lake.</i></blockquote>
+
+The rogue shaman in Field of Bone spawns northeast of Kurn's Tower, in a wide area around (+1100, +400). His placeholders are [[an iksar brigand]] and possibly [[an iksar marauder]]. Note: [[A scaled wolf tracker]] will attack and kill iksar and burynai in this area, and can easily kill the shaman before you get to him. When killed, this shaman will drop [[A Mandible]].
+
+[[Mendglow Clay]] can be foraged in [[Burning Wood]]. It is tradeable, so can be bought if you are unwilling to make the run (rather dangerous at low levels).
+
+Combine the [[Jawless Skull]], [[A Mandible|Mandible]] and [[Mendglow Clay]] on a potters wheel (the exact trivial is unknown, but it is trivial at skill 21). The combination will result in [[Skull with II]]. If you fail the combine, you will only be returned the [[Jawless Skull]].  It is advised you raise your skill higher than the estimated trivial level to reduce the possibility of failure.
+
+[[Skull with I]] is found on [[a stuffed barracuda]] in [[Lake of Ill Omen]], which swims over and around the dome in the center of the lake. Beware of [[a bloodgill goblin]] and [[Tainted barracuda]], and stay near the surface of the water. You will need Enduring Breath at least for this step.
+
+Give [[Hierophant Oxyn]] the [[Skull with I]], [[Skull with II]], and [[Iron Cudgel of the Clairvoyant]].
+
+:Hierophant Oxyn says, 'We are in your debt. You are truly one who shall collect all the lost ancient skulls. Take your weapon. Go to Hierophant Zand and he shall guide you further. Tell him you are [the chosen saviour.]'
+<div class='facblock'>
+Your faction standing with ScaledMystics got better.<br>
+Your faction standing with LegionofCabilis got better.<br>
+</div>
+{{exp}} (5% on a level 9 iksar shaman)<br>
+
+You receive (minor coin reward) and [[Iron Cudgel of the Seer]].<br>
+
+== Skull Quest No. 3 ==
+
+;You say, 'I am the chosen savior'
+:Hierophant Zand closes his eyes and bows before you. 'I am honored to meet the one who shall pledge his life to the return of the Skulls of the Ancients. However, I must see proof of our prowess as of yet. Go to the outlands and retrieve one Froglok Hexdoll, and no, they are not found on Frogloks. They are shaman dolls made by the goblin tribe.'
+
+[[A Froglok Hex Doll]] drops from [[A Goblin Hextracer]] in [[Warsliks Woods|Warslik's Woods]]. The hextracer spawns near the lake just south of the giant fort, around -2000, 1000. Likely placeholders include [[a goblin bonecaster]], though they may include [[a goblin whelp]] as well. When the hextracer spawns, he usually runs back and forth along an east/west line.
+
+Give [[A Froglok Hex Doll]] to [[Hierophant Zand]].
+
+:Heirophant Zand says, 'You have proven your prowess to me, now take this note to Crusader Quarg outside the city and he will test you further.'<br>
+<div class='facblock'>
+Your faction with ScaledMystics got better.<br>
+Your faction with LegionofCabilis got better.<br>
+</div>
+You receive 5 platinum pieces.
+
+Hierophant Zand gives you a note. Take that note to Crusader Quarg in Field of Bone. He wanders around the buildings near the Cabilis entrance.
+
+:Crusader Quarg says 'At last!! The last three sent were not of sufficient power to brave the evils of the tower. Here is your container. I was to travel with you, but Warlord Zyzz insists that I stay on post. The skulls you seek are the ones belonging to the [caste of bone brethren]. Combine the five skulls of the caste and the one belonging to the leader inside the box and bring to me the full box along with your iron cudgel of the seer.'<br>
+Your faction standing with ScaledMystics got better.<br>
+Your faction with LegionofCabilis got better.
+
+Crusader Quarg gives you [[A Skull Chest]].
+
+Go to [[Kurns tower|Kurn's Tower]] and kill [[undead crusader]]. Keep killing him until you have collected one [[Iksar Skull with an 'X' (Leader)|Iksar Skull with an 'X']] (LORE, identifies as 'Leader of Bone Brethren') and five [[Iksar Skull with an 'X' (Caste)|Iksar Skull with an 'X']] (not lore, identifies as 'Caste of Bone Brethren'). Combine the six skulls in the skull chest. The combined chest becomes [[Full C.O.B.B. Chest]].
+
+Give the [[Full C.O.B.B. Chest]] and your [[Iron Cudgel of the Seer]] to Crusader Quarg.
+:Crusader Quarg says 'I require the full C.O.B.B. chest and your iron cudgel of the seer.'
+:Crusader Quarg says 'The temple will be pleased. As instructed by the hierophants, here is your iron cudgel of the mystic. You have done so well that I must ask you to also collect the [crusaders of Rok Nilok].'
+<div class='facblock'>
+Your faction with ScaledMystics got better.<br>
+Your faction with LegionofCabilis got better.<br>
+</div>
+You receive (minor coin reward) and [[Iron Cudgel of the Mystic]].
+
+== Skull Quest No. 4 ==
+
+;You say, 'I will collect the crusaders of Rok Nilok'
+:Crusader Quarg says, 'Take this chest. Inside you shall combine the skull of their leader and at least five of the caste members. You must then go to the swamp garrison and deliver the full chest along with your Iron Cudgel of the Mystic to Mystic Dovan. Go to him now and inquire of the Crusaders of Rok Nolok."
+You receive [[A Skull Chest]].
+
+[[Mystic Dovan]] spawns after 9pm on top of the building with [[Warlord Hikyg]], in the [[Swamp of No Hope]] (2644, 3031). During the day, [[Captain Nedar]] stands in his place.
+
+;You say, 'Hail, Mystic Dovan'
+:Mystic Dovan shows the signs of a great mystic. You can feel power resonating from his aura. 'Greetings and may the cursed blessings of Cazic-Thule be yours. What may I do for you this fine evening? Perhaps I can [cure disease] or [heal] you, perhaps even [purge toxins] from your system?'
+;You say, 'What of the crusaders of Rok Nilok?'
+:Mystic Dovan lowers his head in sorrow. 'let us have a moment of peace. I cannot find the words to describe the unspeakable act of the gods which took the lives of the legendary Crusaders of Rok Nilok. You must find the answers for yourself. All I can do is await their return.'
+
+If you are interested, the story of the Crusaders of Rok Nilok can be found in a book called [[The Crusade of 1312 A.G.]], which can be purchased from [[War Historian Kobl]] in [[East Cabilis]].
+
+Go to [[Warslik's Woods]] and kill [[a goblin bloodtracer]] (placeholder [[a goblin battlemaster]]), at the ruins marked #2, #6, and #7 on the map. Bloodtracers can also be found wandering around near the #6 ruins, but this area is significantly more dangerous than the other two, with wandering giants and higher-level goblins. Keep killing until you have collected the six [[Tiny Glowing Skull]]s. You need 1 LORE skull (identifies as 'Skull of Rok Nolok') and 5 non-lore skulls (identifies as 'Crusader of Rok Nolok'). Combine the six skulls in the skull chest. The combined chest becomes [[Full C.O.R.N. Chest]].
+
+Give the [[Full C.O.R.N. Chest]] and your [[Iron Cudgel of the Mystic]] to Mystic Dovan.
+
+:Mystic Dovan says, 'Let me hold within my hands the full box of the C.O.R.N. Caste and your iron cudgel of the Seer. Only then may you hold the iron cudgel of the Prophet.
+:Mystic Dovan's voice booms loudly and does not sound the same as before. 'You have brought the skulls back to the empire. For this you shall be rewarded. You are now a prophet of the Temple of Terror. Go and find the Skulls of Di Nozok. I shall wait within Zand. Bring them along with your iron cudgel of the prophet.'
+<div class='facblock'>
+Your faction with ScaledMystics got better.<br>
+Your faction with LegionofCabilis got better.<br>
+</div>
+You receive (minor coin reward) and [[Iron Cudgel of the Prophet]].
+
+== Skull Quest No. 5 ==
+
+Heirophant Zand has this small piece of information:
+;You say, 'What skulls of Di Nozok'
+:Heirophant Zand says, 'What?!!  I have read of them, but that is all I know of the legendary mystic, err, mystics... whatever!!  Where their remains rest is a mystery but those filthy goblins always seem to get ahold of things that are lost, all that infernal digging you see.'
+
+This quest requires two skulls.
+
+The first is [[Iksar Skull Helm]], which identifies as 'Skull of Die Nozok'. It is a fairly common drop from [[a Sarnak adherant]] in the Sarnak fort area of [[Lake of Ill Omen]].
+
+The second requires a multi-step subquest.
+
+You need to kill [[Overseer Dlubish]] in Nurga or Droga and get the [[Dai Nozok skull canopic]]. You also need to get the two keys of Dai. The first drops as a complete [[Ton Warrior Totem]] off [[Froglok Ton Warrior]]s. Froglok Ton Warriors also drop three distinct [[Piece of Totem]] items, each of which identifies as a different portion of the Dai key. Combine these three pieces with some mendglow clay in a pottery wheel (no-fail combine) to get the second Ton Warrior Totem. You then hand the totems/keys and the canopic and 400 gp to [[Galdon Vok Nir]] in the Overthere to get an [[Iksar Skull]] (identifies as "Skull of Dai Nozok"). Be careful of your faction here. You may need an enchanter to help you do this part.
+
+Turn in both skulls and your Cudgel of the Prophet to Hierophant Zand and you will get {{:Iron Cudgel of the Channeler}}.
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Shaman Quests]]

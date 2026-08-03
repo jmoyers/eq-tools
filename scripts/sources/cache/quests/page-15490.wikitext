@@ -1,0 +1,71 @@
+{{Classic Era}}
+[[File:npc_guard_kwint.png|frame|Guard Kwint]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Kwint]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Earron Huntlan]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Coin
+</li></ul>
+
+== Walkthrough ==
+
+''[[Guard Kwint]] patrols the area near -12, -265.''
+
+You say, 'Hail, Guard Kwint'
+
+: Guard Kwint says 'Hail, _____!  Are you new to Qeynos?  If you are, I highly recommend stopping by the Lion's Mane Tavern for the best ale in Antonica.  Oh, did I mention that my brother Earron is the master brewer there?  Tell him [Kwint sent] you.'
+
+'''Find Earron Huntlan inside the Lion's Mane and tell him Kwint sent you.'''
+
+You say, 'Kwint sent me.'
+
+: Earron Huntlan says 'Kwint?  Gave you the line about being my brother, huh?  That boy sends me more customers, I tells ya!  I give him one free drink for every person he gets to come in.  Hey, could you do me a favor and take this voucher to him when you are done drinking?  Thanks.'
+
+'''Receive a note which reads it is "good for one free ale". You can return it to the guard...'''
+
+: Guard Kwint says 'Hey.  Thanks!  Sorry about that 'he's my brother' bit but I am sure you had a good time at the Lion's Mane anyway.  I sure didn't lie to you about the quality of the ale there.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+{{exp}}
+</div>
+'''...Or keep it for yourself and give it to the bartender..."
+
+: Earron Huntlan says 'What the..? This voucher was for Kwint, not you!  I will find someone more trustworthy to take it to him!'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Antonius Bayle]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Coalition of Tradefolk]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+</div>
+
+{{expand}}
+
+''(Nug Rellash will just eat the voucher)"
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

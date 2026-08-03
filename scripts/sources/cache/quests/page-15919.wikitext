@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_evah_xokez.png|200px|frame|Evah Xokez]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Stained Note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tin Patched Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Cleric of Bertoxxulous, you will have a Stained Note in your inventory. The note reads as follows:
+
+: You have chosen to become part of the Dark Reflection, and embrace the very shadows that have haunted and chased you your whole life.  There is no turning back know. . .seek out Evah Xokez, she will instruct you further.
+
+Upon handing the note to [[Evah Xokez]]:
+
+: [[Evah Xokez]] says, 'Join us in fulfilling the will of Bertoxxulous. You can train with us here, in the shadows of the Abbey. Wear this tunic to help conceal your true identity.'
+
+<div class='facblock'>
+* Your faction standing with [[Dark Reflection]] got better.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Gem Choppers]] got worse.
+* Your faction standing with [[Deep Muses]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Tin Patched Tunic*]]. Good luck, Cleric!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Cleric Quests]]

@@ -1,0 +1,71 @@
+{{Disambig3|[[Going Postal]]}}
+{{Kunark Era}}
+[[File:npc_kilam_oresinger.png|frame|Kilam Oresinger]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Kilam Oresinger]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Jakum Webdancer]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Kilam Oresinger]] is located at 105, 223, 3 outside Pub Kal.''
+
+You say, 'Hail, Kilam Oresinger'
+
+: Kilem Oresinger says, 'Hail, ______ - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?'
+
+You say, 'What mail'
+
+: Kilam Oresinger says, 'The League of Antonican Bards has a courier system made up of travelers and adventurers. We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices. Are you [interested]?'
+
+You say, 'I am interested'
+
+: Kilam Oresinger says, 'I have messages that need to go to - well, right now I have one that needs to go to Kelethin. Will you [deliver] mail to [Kelethin] for me?'
+
+You say, 'I will deliver mail to Kelethin'
+
+: Kilam Oresinger says, 'Take this letter to Jakum Webdancer in Kelethin. You can find him at the bard guild hall. I am sure he will compensate you for your troubles.'
+
+'''You receive [[A Bardic Letter (Kelethin)]].'''
+
+''[[Jakum Webdancer]] is located at -229, 265, 77 in the [[Greater Faydark|Kelethin]] [[Bard]] Guild hall.''
+
+'''Hand [[Jakum Webdancer]] [[A Bardic Letter (Kelethin)]].'''
+
+: Jakum Webdancer says, 'Incoming mail - very good! Please take this gold for your troubles.'
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 8 gold pieces.
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

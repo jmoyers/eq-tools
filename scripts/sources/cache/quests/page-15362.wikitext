@@ -1,0 +1,94 @@
+{{DNE}}
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[High Keep]]
+|-
+! ''' Quest Giver: '''
+| Tearon Bleanix
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Felwithe]]
+|-
+! ''' Related NPCs: '''
+| [[Princess Lenya (NPC)|Princess Lenya]], [[Inkeeper Freegraze]]
+|}
+This quest is 'removed' with the Temple Era (October 1999)
+
+== Reward ==
+
+<ul><li> {{:Thex Dagger}}
+</li></ul>
+
+== Summary == 
+
+* Say "I will become a hero" to [[Tearon Bleanix]] in [[High Keep]]. Receive [[Tearon's Bracer]] (no AC).
+
+* Take it upstairs to [[Princess Lenya (NPC)|Princess Lenya]], loc 85, -200, 70. Receive [[Tearon's Bracer]] (1 AC).
+
+* Take it back downstairs to Tearon. Receive an [[Princess Lenya's Amulet]] (LORE, droppable), and a different version of Lenya spawns next to him. 
+
+* Hand the amulet to the new Lenya that spawned next to Tearon. Receive [[A Sealed Letter (Thex Dagger Quest)|A Sealed Letter]].
+
+* In [[Felwithe]], say "Where is Tolon Nurbyte?" to [[Inkeeper Freegraze]] in Traveller's Home. [[Tolon Nurbyte]] spawns upstairs.
+
+* Give Tolon Nurbyte the sealed letter. Receive [[Thex Dagger]].
+
+::''Several of the walkthroughs focus on gating in the middle of the quest to try to save 10 minutes. Consider that an advanced tactic for people repeating the quest over and over. It is not necessary, especially if you are only doing it once.''
+
+== Walkthrough ==
+
+'''You must be Kindly or better with [[Clerics of Tunare]].  [[Anti-Mage]] is not needed'''
+
+''Vaila's Notes''
+
+'''Part I'''
+
+* Head to [[High Keep]] near the entrance next to the guard on your left as you enter the courtyard, [[Tearon Bleanix]] spawns. Target and say to him 'I will become a hero'. He will hand you Tearon's Bracer, 5.0Wt no AC. 
+
+* Head up to the 4th Floor in [[High Keep]] and find [[Princess Lenya (NPC)|Princess Lenya]] (not Lenia). Walk through the painting to a secret area in HK 4th floor.  Continue down the hallway past the DE / Guard on the right.  Pull a U-Turn around the wall and the room will have the Princess standing alone near a table and chairs.  (Note: She despawns after quest turn in, so be prepared to sit and wait ~18 min.) Hand her the bracer, she will hand you back Tearon's Bracer this time with 1.0Wt and 1 AC.
+
+You Say: 'Hail, Princess Lenya'
+
+Princess Lenya: 'Are you not a little short for a Highpass Guard?'
+
+*Hand Her the bracer
+
+Princess Lenya: 'So you are a member of the Silent Watch!! They are accepting anyone these days. I shall leave then. Here is your bracer back. Thank you for unlocking the door.'
+
+<div class="facblock">
+* Your faction standing with [[King Tearis Thex]] got better. 
+* Your faction standing with [[Faydarks Champions]] got better. 
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse. 
+* Your faction standing with [[Ring of Scale]] got worse. 
+* Your faction standing with [[King Aythox Thex]] got worse. 
+</div>
+
+* If you're a caster that can bind, you can gate to Tearon if you're fast enough and do the next step, if not wait about 10ish min. for repop.
+
+* Head back to Tearon and zoom out your view so that you can easily and quickly hand in 2 items in succession. First hand in the bracer you have to Tearon, this will cause Lenya to spawn next to him, quickly hand her the amulet you receive. If you're successful you'll get a No Drop sealed letter from her. If you weren't fast enough you have to redo the whole quest up until this part.
+
+Upon Handing in Bracer to Tearon:
+
+Tearon Bleanix: 'King Tearis Thex thanks you my friend. Could you please hand the princess this amulet. It is hers. I pryed it from the hands of some beggar.'
+
+<div class="facblock">
+* Your faction standing with [[King Tearis Thex]] got better. 
+* Your faction standing with [[Clerics of Tunare]] got better. 
+* Your faction standing with [[Anti-Mage]] got better. 
+</div>
+{{exp}}
+
+'''Part II'''
+
+* You need to make your way to [[Felwithe]] now to Traveller's Home - Inn. Find [[Inkeeper Freegraze]] standing by the entrance door to the inn and say 'Where is Tolon Nurbyte?', this will cause Tolon to spawn on the 2nd Floor in the far back.
+
+* Hand Tolon Nurbyte the sealed letter and receive the Thex Dagger.
+
+[[Category: Quests]]

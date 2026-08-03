@@ -1,0 +1,160 @@
+[[File:npc_sulgar.png|frame|Sulgar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Quest Giver: '''
+| [[Sulgar]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]], [[Everfrost Peaks]], [[Lake Rathetear]], [[Dagnor's Cauldron]], [[Lower Guk]], [[Oasis of Marr]], [[Highpass Hold]], [[Qeynos Aqueducts]], [[Neriak]], [[Unrest]]
+|-
+! ''' Related NPCs: '''
+| [[Sulgar]]
+|}
+
+== Rewards ==
+
+<ul>
+<li>[[Spell: Ice Comet]]</li>
+<li>{{:Staff of the Wheel}}</li>
+<li>{{:Star of Eyes}}</li>
+</ul>
+
+== Checklist ==
+
+Obtain the 10 rods and combine them in the <span style="color:#d52200"><strong>TEMPORARY</strong></span> [[Glowing Chest]] from [[Sulgar]]{{CheckboxList}}
+
+'''Odus'''
+
+*Azia from [[Erud's Crossing]]
+
+'''Antonica'''
+*Heda from [[Qeynos Aqueducts]]
+*Beza from [[Everfrost Peaks]]
+*Caza from [[Lake Rathetear]]
+*Geza from [[Highpass Hold]]
+*Ena from [[Lower Guk]]
+*Fana from [[Oasis of Marr]]
+*Izah from [[Neriak Commons]]
+
+'''Faydwer
+*Dena from [[Dagnor's Cauldron]]
+*Jaka from [[Unrest]]
+
+
+{{End}}
+
+== Walkthrough ==
+
+<strong>Travel to [[Everfrost]] to find [[Sulgar]] at the edge of the tundra.</strong>
+
+: You say, 'Hail, Sulgar'
+:: Sulgar says 'Hail, traveler! Would you happen to [know] the location of any of the spokes of Tartons Wheel?'
+: You say, 'What is Tartons Wheel?'
+:: Sulgar says 'Tartons Wheel was a device that Tarton constructed to let him travel through the planes. If you are [interested] in helping me reassemble it, I will [reward] you well.'
+: You say, 'What reward?'
+:: Sulgar says 'If you bring me the [Staff of the Wheel] and the [Star of Eyes], I will reward you with a rune of frost and a rune of the astral - for personal use, of course..'
+: You say, 'What is the Staff of the Wheel?'
+:: Sulgar says 'The Staff of the Wheel and the Star of Eyes are made by combining the ten spokes of Tarton's Wheel in a [wheel case].'
+: You say, 'What wheel case?'
+:: Sulgar says 'I will lend you this wheel case - put the ten spokes of the wheel in it when you have collected them. I did say lend, however. I shall need the case back. Once you have constructed the Staff of the Wheel and the Star of Eyes, I will trade you them for a rune of frost and a rune of the astral.'
+
+<strong>Receive [[Tome of the Wheel]] and [[Glowing Chest]], a ten slot combine container that identifies as "Tartons Wheel Case."</strong>
+
+<span style="color:#d52200"><strong>The chest is a TEMPORARY container. Any stored items will be LOST after camping.</strong></span>
+
+: You say, 'I am interested in helping you assemble it.'
+:: Sulgar says 'Tartons Wheel was split into 10 separate pieces. These pieces were then scattered across the face of Norrath. I have a [tome] that I can [give] you detailing the Wheel of Tarton, as well as a [Wheel Case] that you can have when you are ready to assemble the pieces.'
+
+<strong>There are ten pieces of the staff scattered across Norrath, each called [[Rod]]. Combine them in [[Glowing Chest]].</strong>
+
+: You have fashioned the items together to create something new: Staff of the Wheel.
+: You have fashioned the items together to create something new: Star of Eyes.
+
+<strong>Despite what Sulgar said, the wheel case is destroyed when this combine is made, and he does not require it to be returned. Give {{:Staff of the Wheel}} and {{:Star of Eyes}} to [[Sulgar]] to receive</strong> '''the spell [[Ice Comet]]'''
+
+<span style="color:#d52200"><strong>He will NOT return the staff or star. The trade is PERMANENT.</strong></span>
+
+== Locations ==
+'''NOTE: All rods can be picked up while Invisibility is active and it does not break invis.'''
+
+{{expand}}
+{| class="wikitable"
+|- style="text-align: center"
+! width="60" | Rod
+! width="130" | Zone
+! width="110" | Location
+! width="500" | Description
+! width="200" | Enduring Breath Recommended
+|- style="text-align: center"
+! Azia
+| [[Erud's Crossing]]
+| {{loc|Erud's Crossing|-1159, 2329}}
+| width="500" style="text-align: left" | Underwater on the ocean floor past the shipwreck with the zombie sailors, just after the ledge. Use invis and avoid the five zombie sailors inside the ship. BEWARE! Lvl 40 "a killer shark"s see invis and dispel!
+| Yes
+|- style="text-align: center"
+! Beza
+| [[Everfrost Peaks]]
+| {{loc|Everfrost Peaks|5000, -5100}}
+| width="500" style="text-align: left" | Floor of the house in the back of the hidden cave entered through the frozen river. The house is located in the northeast portion of the caves. Three ice boned skeletons spawn inside. Enter the river through the closest hole {{loc|Everfrost Peaks|(2417, -4068)}} and swim up against the ice to breathe. Beware the Lich of Miragul wandering the caves. It is high level, aggressive, and can [[See Invisible]]. Either track him, or use [[Sense Summoned]] to follow his movement via his pet.
+| No
+|- style="text-align: center"
+! Caza
+| [[Lake Rathetear]]
+| {{loc|Lake Rathetear|2782, 142, -372}}
+| width="500" style="text-align: left" | Underwater on the top floor of the stone tower in the hidden cave underneath the first island out from Rathe Mountains island #15 on the map. Cave entrance is at {{loc|Lake Rathetear|2826, -907, -171}}.
+| '''Yes'''
+|- style="text-align: center"
+! Dena
+| [[Dagnor's Cauldron]]
+| {{loc|Dagnor's Cauldron|-890, -740}}
+| width="500" style="text-align: left" | Underwater in a small gully on the lake floor out and to the left of Kedge Keep (near the island), directly out from Unrest.
+| Yes
+|- style="text-align: center"
+! Ena
+| [[Lower Guk]]
+| {{loc|Lower Guk|1145, -690, -122}}
+| width="500" style="text-align: left" | On the floor of the [[a reanimated hand (Lower Guk)]] room. Most players will need a group for this one, though if they know the path extremely well it is possible to sprint there after another player casts both [[Invisibility]] and [[Invisibility versus Undead]] on them. [[Spirit of Wolf]] is recommended for this approach.
+| No
+|- style="text-align: center"
+! Fana
+| [[Oasis of Marr]]
+| {{loc|Oasis of Marr|-790, -60}}
+| width="500" style="text-align: left" | Underwater on the top floor of the stone tower in the lake.
+| No
+|- style="text-align: center"
+! Geza
+| [[Highpass Hold]]
+| {{loc|Highpass Hold|-180, +445}}
+| width="500" style="text-align: left" | Beneath the waterfall near The Tiger's Roar patio.
+| No
+|- style="text-align: center"
+! Heda
+| [[Qeynos Aqueducts]]
+| {{loc|Qeynos Aqueducts|670, 60}}
+| width="500" style="text-align: left" | Underwater on the tile floor of the shark pit. 14 on map.
+| No
+|- style="text-align: center"
+! Izah
+| [[Neriak]] Commons
+| {{loc|Neriak Commons|+0.89, -803.9}}
+| width="500" style="text-align: left" | Underwater on the river floor immediately outside The Blind Fish windows. The Blind Fish is the underground bar near the Bank, with four large windows looking out below the surface.
+| No
+|- style="text-align: center"
+! Jaka
+| [[Unrest]]
+| {{loc|Unrest|+520, -285}}
+| width="500" style="text-align: left" | Underwater on the hidden cavern floor to the right of the manor. Near [[Serra]] and [[a gnomish spelunker]], but in a cubby between them and the house.
+| No
+|}
+
+[[Category:Quests]]
+[[Category:Everfrost Peaks]]
+[[Category:Wizard Quests]]

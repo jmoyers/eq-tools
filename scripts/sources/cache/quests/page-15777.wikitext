@@ -1,0 +1,64 @@
+{{Velious Era}}
+[[File:npc_sentry_kale.png|frame|Sentry Kale]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kale]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related NPCs: '''
+| [[a crystal spider]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ring of the Chameleon}}
+</li><li> 0-4 platinum pieces
+</li></ul>
+
+'''Does not always give you the Ring of the Chameleon'''
+
+You can turn into Sentry Kale regardless of the quest he is giving out.
+
+== Notes ==
+
+* '''Spawn timer:''' 3 hours
+
+* One spider in room behind the bank (563, -597, 11)
+* One spider in the drop off just through fake wall going to bank area (336, -231, 12)
+* One is in the fountain (624, -328, 27)
+* One is in a bedroom (303, -636, 42).
+
+== Walkthrough ==
+
+You say, 'Hail, Sentry Kale'
+
+: Sentry Kale says, 'Why come you to the home of the kin? Seek a home amongst the kin perhaps? Perhaps if you wish to prove yourself I may have a task for you.'
+
+You say, 'I wish to prove myself.'
+
+: Sentry Kale says, 'Very well, it is a minor task, but I am sure that you are quite capable. Lately the food supply in the guards' galley has been dwindling. I fear that there are spiders amongst us who are pilfering our food when we do not see. I would ask of you to please seek out and eliminate these vermin for us. Bring their legs back to me and I shall reward you for your effort.'
+
+'''Go out and kill the four INVISIBLE crystal spiders that spawn in the zone and bring back 4 [[Velium Spider Leg]] as proof.'''
+
+: Sentry Kale says, 'Excellent work, _______. Here is your payment. I will also reward you for any more you bring.'
+
+<div class="facblock">
+* Your faction standing with [[Claws_of_Veeshan]] got better!
+* Your faction standing with [[Yelinak]] got better!
+* Your faction standing with [[Kromzek]] got worse!
+</div>
+
+{{exp}}
+
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,133 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_captain_njall.png|frame|Captain Njall]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Njall]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests. Below are the stat totals for a full set of armor with 2 bracers.<br>
+<table class="eoTable">
+<tr class=tableheader><td>'''AC'''</td><td>'''HP'''</td><td>'''STR'''</td><td>'''STA'''</td><td>'''AGI'''</td><td>'''DEX'''</td><td>'''WIS'''</td><td>'''INT'''</td><td>'''CHA'''</td><td>'''MANA'''</td><td>'''MAGIC'''</td><td>'''FIRE'''</td><td>'''COLD'''</td><td>'''POISON'''</td><td>'''DISEASE'''</td></tr>
+<tr><td>216</td><td>220</td><td>30</td><td>27</td><td>26</td><td>18</td><td>0</td><td>0</td><td>0</td><td>0</td><td>12</td><td>7</td><td>6</td><td>10</td><td>0</td></tr>
+</table>
+== Reward ==
+
+{{Gear Set
+|Champion's Crown
+|Champion's Breastplate
+|Champion's Vambraces
+|Champion's Bracer
+|Champion's Gauntlets
+|Champion's Greaves
+|Champion's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Captain Njall]] in [[Thurgadin]].{{CheckboxList}}
+*[[Champion's Crown]]
+:*[[Corroded Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Champion's Breastplate]]
+:*[[Corroded Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Champion's Vambraces]]
+:*[[Corroded Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Champion's Bracer]]
+:*[[Corroded Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Champion's Gauntlets]]
+:*[[Corroded Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Champion's Greaves]]
+:*[[Corroded Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Champion's Boots]]
+:*[[Corroded Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+Captain Njall says, 'Well met, Ogre! I am Captain Njall, commander of the city gaurds here in Thurgadin. If ye seek ta join our ranks, I welcome ye with open arms and have an offer to make if you are interested. If ye seek to be our enemy, I hope ye can run swifter than my archers arrows.'  (*yeah, guards is misspelled in game*)
+
+You say, "I am interested"
+
+Captain Njall says, 'Aye, I thought ye might be. My elite warriors are in sore need of some enchanted armor. Unfortunately, I can't spare the men to go out and fetch me the components. If you can do this for me, I'll gladly reward you with a piece of it. I need materials for a helm, a breastplate, armplates, bracers, gauntlets, greaves, and boots.'
+
+
+'''After turn-in:'''
+
+Captain Njall smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, "What helm"
+
+Captain Njall says, 'To create a piece of armor to protect your skull I will require three pieces of [[Crushed Coral]] as well as a [[Corroded Plate Helmet]].'
+
+== Breastplate ==
+
+You say, "What breastplate"
+
+Captain Njall says, 'For the breastplate, I will need a [[Corroded Breastplate]] and three [[Flawless Diamond]]s. Once I have them in my possession it will not take long to craft a sturdy breastplate.'
+
+== Sleeves ==
+
+You say, "What armplates"
+
+Captain Njall says, 'Protection for your arms will come at the price of a set of [[Corroded Plate Vambraces]] and three [[Flawed Emerald]]s.'
+
+== Bracer ==
+
+You say, "What bracers"
+
+Captain Njall says, 'For the bracers, I will require a [[Corroded Plate Bracer]] and a set of three [[Crushed Flame Emerald]]s. Return to me if you happen to find these things in your travels.'
+
+== Gauntlets ==
+
+You say, "What gauntlets"
+
+Captain Njall says, 'Protecting your hands is very important. I can forge protection for your hands if you bring me a pair of [[Corroded Plate Gauntlets]] and three [[Crushed Topaz]].'
+
+== Leggings ==
+
+You say, "What greaves"
+
+Captain Njall says, 'A set of [[Corroded Plate Greaves]] might be salvageable if you were to find three [[Flawed Sea Sapphire]]s. With the right techniques almost anything is possible.'
+
+== Boots ==
+
+You say, "What boots"
+
+Captain Njall says, 'Boots made for battle are not always the most comfortable available. However if you seek a fine set for battle bring me a set of [[Corroded Plate Boots]] and three pieces of [[Crushed Black Marble]].'
+
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Warrior Quests]]
+[[Category:Thurgadin Armor Quests]]

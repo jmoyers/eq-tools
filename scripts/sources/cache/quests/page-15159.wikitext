@@ -1,0 +1,55 @@
+{{Classic Era}}[[File:npc_vasile_jahnir.png|frame|Vasile Jahnir]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+!''' Quest Giver: '''
+| [[Vasile Jahnir]]
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| [[Magician]]
+|-
+!''' Related Zones: '''
+| None
+|-
+!''' Related NPCs: '''
+| None
+|}
+
+Requires Amiable or better faction, quest is multiquestable.
+
+== Rewards ==
+
+<ul><li> {{:Gloves of the Gatecaller}}
+</li></ul>
+
+== Walkthrough ==
+
+''Vasile Jahnir is located at +720, +900 in the Tower of The Gatecallers[Blue Side] in Erudin Palace.''
+
+You say, 'Hail, Vasile Jahnir'
+
+: Vasile Jahnir says 'Greetings! You seek knowledge of our ways. You shall find knowledge and you shall offer knowledge you have been taught. What is the power of the Gatecallers?'
+
+You say, 'The power of the Gatecallers is summoning.'
+
+: Vasile Jahnir says 'Yes. We are the true summoners of Norrath. We are the power supreme. You will learn more and we shall test you. You will go forth and learn the art of summoning. Let your first test be to master the summoning of the dagger and of food. Return to me two summoned daggers and two of the food source you learn to call forth. Do so, and I shall give you the gloves of the Gatecaller.'
+
+'''Hand in 2 x Summoned: Dagger and 2 x Summoned: Black Bread.'''
+
+: Vasile Jahnir says 'You have mastered these spells quickly. You shall now wear the gloves of the Gatecaller. Cumbersome they may feel, but they protect the hands of a young magician. In your young days of magic they will protect you from harm. They are not valued much by merchants, but they are prized by other circles. Nevertheless, we offer them only to our young Gatecallers. You may now be of assistance with a [slight problem].'
+
+<div class="facblock">
+* Your faction standing with [[Gate Callers]] got better.
+* Your faction standing with [[High Guard of Erudin]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+[[Category: Quests]]
+
+[[Category:Erudin Palace]]
+[[Category:Magician Quests]]

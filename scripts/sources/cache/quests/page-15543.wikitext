@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_nusk_treton.png|frame|Nusk Treton]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Nusk Treton]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Lenka Stoutheart]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+''Nusk Treton is in  [[Freeport|West Freeport]] in the Magic Users Guild at 71.87, -649.37, -54.09''
+
+You say, 'Hail, Nusk Treton'
+
+: [[Nusk Treton]] says 'Freeport!! Great trade city of Norrath!! What a wondrous place! How do you do? You are an [arcane scientist]. are you not?' 
+
+You say, 'I am an arcane scientist.'
+
+: Nusk Treton says 'Grand!! I remember my younger days within this great academy. I have spent many years of research here in Freeport. I compiled a [locked journal] of my research. Alas, I still am awaiting it's return.'
+
+You say, 'What locked journal?'
+
+: Nusk Treton says 'I lent it to an old colleague of mine in [[Ak'Anon]]. He was to send it back aboard a private vessel. A Lenka Stoutheart was to return it to me. It has been one month and counting. I wish there was a young wizard who could [seek out Lenka].' 
+
+You say, 'I will seek out Lenka'
+
+: Nusk Treton says 'What luck!! I would be most appreciative if you could find [[Lenka Stoutheart]] in Freeport and inquire where the Journal Strongbox would be. I do so look forward to it's return.'
+
+She can be found in the daytime at the Seafarer's Roost bar in East Freeport, but she will tell you that she dropped the box off a ship straight out from the dock at an Isle in the [[Ocean of Tears]]. 
+
+The strongbox is found in the Ocean of Tears at (-400, -9200), straight out from the Sisters' docks.
+
+Return it for some minor money and xp. 
+
+''Need all dialogues, current faction hits, /loc of quest mobs, in-game names of all items, etc.''
+
+[[Category:Quests]]
+[[Category:West Freeport]]

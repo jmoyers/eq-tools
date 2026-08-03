@@ -1,0 +1,66 @@
+{{Classic Era}}[[File:npc_daenor_casthopur.png|frame|Daenor Casthopur]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Daenor Casthopur]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Neclo Rheslar]]
+|}
+
+== Reward ==
+
+<ul>
+<li>[[Minor Shielding|Spell: Minor Shielding]]</li>
+</ul>
+
+== Walkthrough ==
+
+''Talk to [[Daenor Casthopur]], located behind the Temple of Magic in South Qeynos. Your Location is 281.38, -631.25, 2.14''
+
+You say, 'Hail, Daenor Casthopur'
+
+: Daenor Casthopur says 'Ah, hello there, ______, and welcome to the Hall of Sorcery! I'm Daenor, a wizard of the Order of Three. I can help you practice your skills and learn some new ones.'
+
+(How do you know to say this?)
+
+You say, 'Who is Neclo?'
+
+: Daenor Casthopur says 'Neclo Rheslar is an old friend of mine. Right now, he's out working in the Qeynos Hills. In fact, if you have some free time, you should go out and meet him. Here, if you go, take this note to him for me. Thanks, friend.'
+
+'''You receive a [[Note to Neclo]] (identifies as "Daenor's Note to Neclo").  The note reads:'''
+
+ Greetings Neclo, I've sent one of our students to you for some training. Thanks, your friend, Daenor Casthopur.
+
+'''[[Neclo Rheslar]] may be found in the Qeynos Hills wandering near the tower (1028, -843, 35).  Give him the note.'''
+
+: Neclo Rheslar says 'Ah.. Hello friend.. So, I see Daenor sent you.. Uh huh, ok.. Here's something that will be very useful for you. Practice this well, friend.. It will help protect you in this harsh world.'
+
+<div class="facblock">
+* Your faction standing with [[Order of Three]] has been adjusted by 5.
+* Your faction standing with [[Bloodsabers]] has been adjusted by -1.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Opal Dark Briar]] has been adjusted by -1.
+</div>
+{{exp}}
+
+You receive a low-level spell.
+
+Need list of quest rewards:
+
+* [[Gate|Spell: Gate]]
+* [[Lesser Shielding|Spell: Lesser Shielding]]
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

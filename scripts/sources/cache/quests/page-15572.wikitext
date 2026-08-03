@@ -1,0 +1,93 @@
+[[File:npc_guard_lasen.png|frame|Guard Lasen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Lasen]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Coin
+</li></ul>
+
+== Walkthrough ==
+
+Even when it rains, [[Guard Lasen]] is thirsty.  Bring him a [[Water Flask]] and he'll give you some coin and faction.
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+You receive 4 copper pieces from [[Guard Lasen]].
+
+{{YouGainExperience}}
+
+== Exp Gain ==
+
+
+=== Half-Elf Druid (0% Exp penalty) ===
+
+{| class="eoTable2"
+! Level 
+! Number of Waters per 1% XP
+! Sample size (Number of runs)
+|-
+| 11
+| 8
+| 100
+
+|-
+| 12
+| 8
+| 100
+|-
+| 13
+| 2
+| 100
+|-
+| 14
+| 12
+| 100
+|-
+| 15
+| 12
+| 100
+|-
+| 17
+| 16
+| 100
+|-
+| 18
+| 16
+| 100
+|-
+
+|}
+
+The xp was very good for 1-10 or so, but I wasn't keeping track of exact percentages so I wont list them here.
+
+At level 14 the xp seemed to take a big hit so I decided to time a small sample of turn-in's to decide if the quest was still worth doing. In 8 minutes, I was able to go from 24% into level 14 to 61% into level 14. That comes out to a little more than 4% xp per minute at a cost of slightly more than 1 gold per 1% xp. This is extremely tedious, but a fast and cheap form of leveling 1-14ish if you don't care about being KOS with Corrupt Qeynos Guards. It cost less than 60pp to level from 1-14 as a Half Elf druid solely doing this quest.
+
+'''Note: This quest will make you KOS with Corrupt Qeynos Guards quickly. Also note, [[Guard Lasen]] spawns at 6am game time and despawns at 8pm game time, the quest cannot be done at night.'''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

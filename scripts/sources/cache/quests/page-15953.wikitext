@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_perkon_malok.png|frame|Perkon Malok]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Quest Giver: '''
+| [[Perkon Malok]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Related NPCs: '''
+| [[Perkon Malok]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Purple Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Perkon Malok]] is located at 392, -355 in the Shrine of Bertoxxulous Guild Hall.''
+
+You say, 'Hail, Perkon Malok'
+
+: He doesn't respond.
+
+'''Hand [[Perkon Malok]] your [[Blood Stained Note (Guild Summons)|Blood Stained Note]]'''
+
+:: ''Blood Stained Note reads:''
+
+:: <code>Your fate lurks in disease and bile, the blood of Bertoxxulous. Beneath the Grounds of Fate Arena, the rotting bones of fallen warriors mark the entrance to the underworld. In these shadowy depths, lurk the Bloodsabers and other minions of the Lord of Disease. Seek out Perkon Malok, she shall initiate you into this circle of darkness that eats away at the world above.</code>
+
+: Perkon Malok says, 'A new initiate always pleases me, here is your tunic.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Magician Quests]]

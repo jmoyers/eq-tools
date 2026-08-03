@@ -1,0 +1,92 @@
+{{Classic Era}}
+[[File:npc_vacto_molunel.png|frame|Vacto Molunel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Vacto Molunel]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Paladin]], [[Rogue]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a giant scarab]], [[a worker scarab]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Small Scarab Helm}}
+</li><li> {{:Small Scarab Breastplate}}
+</li><li> {{:Small Scarab Boots}}
+</li></ul>
+
+== Walkthrough ==
+
+'' [[Vacto Molunel]] is located at 33, 408, 9 just inside the entrance to the Kaladim Warrior's Guild.''
+
+You say, 'Hail, Vacto Molunel'
+
+: Vacto Molunel says, 'Well met, ______! I am Vacto Molunel. If you are seeking to outfit yourself with the finest weapons in all of Kaladim, I am the one to see. I also posses a [rare talent] you might find useful.' 
+
+You say, 'What rare talent'
+
+: Vacto Molunel says, 'Piqued your interest, did I? Well, you see, I am one of the few dwarves who possess the knowledge and talent to craft a unique type of armor entirely out of scarab carapaces. While my specialty is making [scarab helms], I have also been convinced to make [scarab breastplates] and [scarab boots] from time to time. All of the pieces I craft are to dwarven proportions, but I have had some gnomish and halfling customers as well. They come from all over for my armor.'
+
+You say, What scarab helms'
+
+: Vacto Molunel says, 'Interested in a scarab helm, are you? Well, because my talent is so unique and my time is so valuable, I am afraid I could only make you a helm if you were to provide me with the two scarab carapaces necessary to accommodate a head such as yours. I will also need a payment of 5 gold pieces. The Butcherblocks are crawling with worker scarabs that have just the right size carapaces for our needs.'
+
+You say, 'What scarab breastplates'
+
+: Vacto Molunel says, 'Ah.. A scarab breastplate.. hmm.  Well, if you want to convince me to go though the trouble of crafting one of those, not only will you have to pay my fee of 23 gold pieces, you must provide me with a pristine giant scarab carapace. I refuse to make a breastplate with cracked carapaces.'
+
+You say, What scarab boots'
+
+: Vacto Molunel says, 'Ah..  Scarab Boots.. hmm.  Well, if you want to convince me to go though the trouble of crafting a pair of those, not only will you have to pay my fee of 17 gold pieces. you must provide me with a cracked giant scarab shell and 2 scarab legs.'
+
+----
+
+'''For the [[Small Scarab Helm]], hand [[Vacto Molunel]] 2 [[Scarab Carapace]]s and 5 gold. This requires at least indifferent faction.'''
+
+: Vacto Molunel says, 'Excellent. Here is your helm. Wear it with pride! And be sure to occasionally wipe out the insulating mucus that tends to build up on its underside. It will make your hair fall out. One more thing, would you be interested in [scarab boots] to match your helm?'
+
+'''For the [[Small Scarab Breastplate]], hand [[Vacto Molunel]] a [[Pristine Giant Scarab Carapace]] and 23 gold. This requires at least amiable faction.'''
+
+: Vacto Molunel says, 'If I do say so myself, this is one of the finest breastplates in all of Norrath. I am truly a master at my craft. You might want to wipe out some of the excess scarab goo before wearing, though.'
+
+'''For the [[Small Scarab Boots]], hand [[Vacto Molunel]] a [[Cracked Giant Scarab Carapace]], 2 [[Scarab Legs]], and 17 gold. This requires at least indifferent faction.'''
+
+: Vacto Molunel says, 'Very good! Let me see here. Thread the legs around like this and... There ya go. Wear them with pride!'
+
+----
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+----
+''11/04/22 Green: This quest is currently bugged.  Giving Vacto any valid combination will randomly give one of the three rewards.  On my first attempt, I gave him the two scarab carapaces and 5 gold for a helm and was awarded the boots.  On the second attempt, gave him two scarab carapaces and 5 gold and properly received the helm.  On the third attempt, gave him one Pristine and the 23 gold and he gave me another helm.  As a test, I once again gave him the two scarab carapaces and 5 gold and received the breastplate.''
+
+
+''12/5/2022 Green: I did about 10 turn ins all gave correct armor.  If someone has recently given the scarab piece without the Money the next full turn in will give the incorrect armor piece.  This can be fixed by giving gold to Vacto.  He will then hand over the correct armor piece.  
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Rogue Quests]]
+[[Category:Warrior Quests]]

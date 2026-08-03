@@ -1,0 +1,101 @@
+{{Velious Era}}
+
+[[File:npc_a_frost_giant_wolf_tamer.png|frame|a frost giant wolf tamer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[a frost giant wolf tamer]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Crystal Caverns]], [[Great Divide]], [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| [[Coldain War Wolf]], [[Erdarf Restil]], [[Korf Brokenhammer]], [[Shardwurm Broodmother]], [[a Ry`Gorr miner]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Coldain Military Wristguard}}
+</li></ul>
+
+== Walkthrough ==
+
+'''This quest NO LONGER REQUIRES [[War Wolf Choker]] as of 1/3/2016. The wolf tamer eats the [[War Wolf Choker]].'''
+
+'''You must have at least dubious faction to the Coldain and to the Kromrif/Kromzek.''' (Sneak works.)
+
+See [[A frost giant wolf tamer]] in Kael and say "I am looking for more work".
+
+: ''A frost giant wolf tamer says, 'Yes. I was charged with a certain... delivery. Apparently one of our good friends named Erdarf in Thurgadin needs a shipment of one karsin acid bottle. You can find such a thing in Crystal Caverns. Maybe one of the orc dogs has it. Find a way to get one of those bottles to our good friend eh? When you do, let me see whatever it is you find on him.''
+
+He is being sarcastic... Erdarf is not really a friend and the Karsin acid will poison him.
+
+A [[Bottle of Karsin Acid]] is no drop, and is dropped by orcs and geonids in Crystal Caverns. About 1 out of 15 drops a bottle.
+
+'''If your faction is good with both giant and dwarf, then give the karsin bottle to Erdarf in The Holy Harbinger in Thurgadin.''' 
+
+'''Erdaf "gives" you a [[Gem of Persuasion]] in return. (The gem of persuasion can also be used for the [[Kromrif Military Leggings]] quest.)'''
+
+Go back to giant wolf tamer and give him [[Gem of Persuasion]]. He gives you a '''Giant's Gem of Persuasion'''. Hand him back the '''Giant's Gem of Persuasion'''. (Note, he also asks for a wolf harness. Disregard this, just hand him the gem he just gave you). He gives you a '''Giants Harness of Control'''.
+
+Go to The Great Divide and make sure [[Korf Brokenhammer]] is up. He is in the Coldain mining caves in the southeast of the zone. If the broodmother is up he generally is too, as his normal version is level 55 and not commonly hunted. 
+
+Then give the '''Giants Control Harness''' to [[Shardwurm Broodmother]]. She can be found by making all lefts in the wurm cave from Thurgadin.
+
+: ''shardwurm broodmother reels in pain as the harness snaps around its neck tightly. A strange gleam enters its eyes as it slowly begins to shamble towards the exit and the Coldain mines.''
+
+She takes off for the Coldain mines at a good clip. You will want SOW to keep up with her while also avoiding the other wurms.
+
+When she gets near the mine, [[Korf Brokenhammer]] spawns at the entrance. This version is level 50. He runs south immediately; '''engage him and kill him'''. If he gets away, you lose. He has quite a few hitpoints. He had high fire resistance, resisting all fire spells even after having his FR debuffed with [[Ro's Fiery Sundering]], but his magic resistance was average for a mob of his level.
+
+While you are fighting Korf the broodmother goes to the mouth of the cave, where another dwarf has appeared, and kills that dwarf. (This is analogous to Fergul Frotsky running and Gralk Dwarfkiller getting killed by the broodmother in the [[Kromrif Military Leggings|leggings]] version of the quest. Maybe it is finally working as intended.) After killing the dwarf, the broodmother went and stood to the left/north of the cave entrance. A couple minutes later, she despawned.
+
+'''Loot [[Coldain Military Wristguard]] from Korf's corpse.'''
+
+== Dialogue ==
+With the Coldain Military Bracers quest, you must have at least dubious faction to the Coldain and to the Kromrif/Kromzek. 
+
+In The Great Divide, kill a [[Coldain War Wolf]], (PH's being the coldain tracking wolfies around the coldain areas). [[Coldain War Wolf]] drops a "[[Velium War Wolf Choker]]." 
+
+Bring the choker to a [[A Frost Giant Wolf Tamer]] under the bridge that leads to King Tormax's throne room. Just jump down the side of bridge. 
+
+After giving the Wolf Tamer the choker he gives you a [[Blood Wolf Harness]]. 
+
+With the wolf harness now in your possession say "I am looking for more work". 
+
+[[A frost giant wolf tamer]] says 'Yes. I was charged with a certain... delivery. Apparently one of our good friends named Erdarf in Thurgadin needs a shipment of one karsin acid bottle. You can find such a thing in Crystal Caverns. Maybe one of the orc dogs has it. Find a way to get one of those bottles to our good friend eh? When you do, let me see whatever it is you find on him.' 
+
+He is being sarcastic... Erdarf is not really a friend and the Karsin acid will poison him. 
+
+A [[Bottle of Karsin Acid]] is no drop, and is looted off of random orcs in [[Crystal Caverns]]. 
+
+If your faction is good with both giant and dwarf then give the karsin bottle to Erdarf (in a bar near the cleric guild), and he "gives" you a gem of persuasion. 
+
+Now, with Gem of Persuasion, you can do the [[Kromrif Military Leggings]] OR you can do this: 
+
+Go back to giant wolf tamer, give him gem of persuasion, he gives you a giant's version of the gem. 
+
+Give him the wolf harness and the giant version of the gem, and he gives you his giant control harness. If you want, you can start the whole quest by handing in the [[Bottle of Karsin Acid]].. it is not necessary to kill the [[Coldain War Wolf]] and hand in the Choker. 
+
+Anyway, bring this giant control harness to the Shardwurm Broodmother in Great Divide (located in the wurm caves). 
+
+After giving the Broodmother the giant control harness, head to the Coldain Mine camp in the south east part of the zone and see Korf Brokenhammer. 
+
+Wait for the Broodmother to come. She suddenly comes running to the side of the cave and starts attacking, 1 second later, the dwarf with the coldain bracers (Korf Brokenhammer) starts running southwards (right of the cave entrance), hurry and root him. If you miss him you may miss chance on the bracer. 
+
+Now, the Broodmother becomes Korf's pet and will hit you if you're too close to Korf. 
+
+Kill Korf and find the [[Coldain Military Wristguard]] on the corpse.
+
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

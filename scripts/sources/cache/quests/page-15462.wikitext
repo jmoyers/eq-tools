@@ -1,0 +1,68 @@
+{{Kunark Era}}
+[[File:npc_captain_nealith.png|frame|Captain Nealith]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Nealith]]
+|-
+! ''' Minimum Level: '''
+| 27
+|-
+! ''' Classes: '''
+| All (Good Races)
+|-
+! ''' Related Zones: '''
+| [[Crypt_of_Dalnir|Dalnir]], [[Dreadlands|Dreadlands]], [[Firiona_Vie|Firiona Vie]]
+|-
+! ''' Related NPCs: '''
+| [[A_drolvarg_growler| A Drolvarg Growler]], [[A_drolvarg_savage|A Drolvarg Savage]], [[A_drolvarg_scavenger|A drolvarg scavenger]], [[A_drolvarg_snarler|A Drolvarg Snarler]], [[A Kly Acolyte|A Kly Acolyte]], [[A coerced Teir`Dal]]
+|}
+
+== Reward ==
+
+<ul>
+<li>Experience</li>
+<li>{{:Elven Trail Mix}}</li>
+</ul>
+<p><b>MONEY</b></p>
+<ul>
+<li> 0 - 0 <span style="color:#e5e4e2"><b>Platinums</b></span></li>
+<li> 2 - 9 <span style="color:gold"><b>Golds</b></span></li>
+<li> 6 - 9 <span style="color:silver"><b>Silvers</b></span></li>
+<li> 13 - 13 <span style="color:#CD7F32"><b>Coppers</b></span></li>
+</ul>
+== Walkthrough ==
+
+Captain Nealith may be found at -3900, +2600. He will respond to hails and give rewards at '''dubious''' faction.
+
+You say, 'Hail, Captain Nealith'
+
+: Captain Nealith says 'Hail, adventurer!!  Stand tall and fight for the forest folk and all good races of Norrath.  We shall claim this land for the kingdom of Thex!  My warriors shall not fail.  Already we patrol deep in the wilds of Kunark.  We welcome all mercenaries and urge adventurers to [join the defense of the outpost].'
+
+You say, 'I will join the defense of the outpost.'
+
+: Captain Nealith says 'I salute you!!  Join the hunt.  Reports from the front line indicate a rise in the drolvarg population.  Abandon your fear and slay these beasts for the greater good.  Already, they have taken far too many lives, even my sibling's!!  I shall pay you your wages upon the return of four drolvarg teeth.'
+
+'''Collect A Canine (identifies as "Drolvarg Tooth") from drolvargs in various zones.  Hand in all four:'''
+
+Captain Nealith will say on [[a canine]] turn in one thru three "Good work, but you will have to slay more than this to earn your wages."
+
+'''Upon Turning in your fourth [[a canine]]'''
+
+Captain Nealith tosses the teeth into a very large cask full of similar teeth.  'Fine work, ______.  I wish all my own troops showed the same tenacity.  I salute you.  This will keep you well fed during your long patrols.  Use your wages to better equip yourself.  Continue the fight!!  The General is pleased.'
+
+<div class="facblock">
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates Of Gunthak]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

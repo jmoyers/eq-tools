@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_teanara.png|frame|Te`Anara]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Te`Anara]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[Te`Anara]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dried Grass Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Te`Anara]] is located at -209, -441 in the Jaggedpine Treefolk ([[Druid]]) Guild Tree.''
+
+You say, 'Hail, Te`Anara'
+
+: Te`Anara says, 'Welcome, friend. I hope your stay in Surefall Glade will enlighten your soul. While you are here we ask you to abide by the [laws of the Jaggedpine].'
+
+'''Hand [[Te`Anara]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Life.  Its heart lies deep in the woods and forests of Norrath. The heart of Jaggedpine must be preserved, or else all life shall wither and rot. Join the Jaggedpine Treefolk, not to save yourself, but to save the life of Norrath. Take this note to Te'Anara, the Master of the Woods, she will guide you on your new journey.</code>
+
+: Te`Anara says, 'Well met, friend of the forest. You will find power and enlightenment among these woods. Here, wear this tunic and represent the Jaggedpine with pride. Gerael Woodone will help train you and teach you the duties of Jaggedpine Treefolk. The forests, being the soul and heart of Norrath, depend on you and your actions from this day forth.'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[QRG Protected Animals]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:Druid Quests]]

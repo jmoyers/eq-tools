@@ -1,0 +1,104 @@
+{{Disambig3|[[Poacher's Head Quest (Erudin)]]}}{{Classic Era}}
+[[File:npc_gillarian_naelev.png|Gillarian Naelev|alt=Gillarian Naelev (Ranger Guildmaster of Surefall Glade)|thumb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Gillarian Naelev]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Gnoll Poacher]], [[A Poacher]], [[Poacher]], [[Poacher Dell]], [[Poacher Hill]], [[Poacher Shelli]], [[Poacher Topi]], [[Poacher Willa]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Rough Elm Recurve Bow}}, coin
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Gillarian Naelev' (179.39, -35.15)
+
+: Gillarian Naelev says 'Welcome, friend! Welcome to Surefall Glade. I need not remind you about [poaching], I hope...?'
+
+You say, 'What about poaching?'
+
+: Gillarian Naelev says 'Poaching is illegal. We here are the Protectors of the Pine, rangers sworn to protect our land and all its inhabitants. This includes the wildlife. We spend a lot of time hunting poachers. If you want to [join the hunt] just let me know.'
+
+You say, 'I want to join the hunt.'
+
+: Gillarian Naelev says 'Very good, friend. Be on the lookout for poachers in Surefall Glade or Qeynos Hills. Especially in the nearby caves. The poachers are not always human. Oftentimes, we'll find ourselves a Blackburrow gnoll or two. Bring me back their heads. Let us see how they look mounted above the mantle. Be on your way, then!'  
+
+==== '''Poacher Spawns in Surefall Glade:''' ====
+<nowiki>#</nowiki>1 Waterfall Cave (/loc 221,-179): shared spawn point for [[Poacher]] and Mammoth (named bear). Poacher drops a regular [[Poacher's Head]] for coin and faction rewards.  
+
+<nowiki>#</nowiki>2 Hidden Cave (/loc 144,-415): behind the hidden wall cave entrance, and the shared spawn point for [[Gnoll Poacher]], [[a poacher]], and a bear cub. The Gnoll Poacher drops the Gnoll Head used for the Rough Elm Recurve Bow quest reward. A poacher drops a regular [[Poacher's Head]] that just nets you coin and faction rewards.  
+
+The spawn timer for either spot is approximately 2.5 minutes, but the mobs in both locations will start to wander around the tunnels shortly after spawning. The will path back to their spawn points if you don't want to go looking for them though. If you blindly sit on either spawn point, you could be waiting anywhere from 7.5 - 30 minutes for the spawns to cycle through.  
+
+==== Turn Ins: ====
+'''Hand Gillarian Naelev a [[Gnoll Head]] (identifies as "Gnoll Poacher Head").'''
+
+: Gillarian Naelev says 'Fantastic work!! Hager will be pleased. Not only do we rid ourself of a poacher, but we rid the land of these destructive gnolls. Our fletchers crafted this for me... Please take it as thanks.'
+:* Your faction standing with [[Protectors of Pine]] got better.
+:* Your faction standing with [[Jaggedpine Treefolk]] got better.
+:* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+:* Your faction standing with [[Guards of Qeynos]] got better.
+{{YouGainExperience}}
+
+Rewards include 7 gold, a [[Rough Elm Recurve Bow]].
+
+'''Hand Gillarian Naelev a [[Poacher's Head]].''' 
+
+The [[Poacher's Head]] does not have to be from one of the poachers in Surefall Glade.  The poacher's heads from the poachers in the [[Toxxulia Forest]] will also work.
+
+: Gillarian Naelev says 'Your deeds are great indeed.  We shall cleanse our land of these poachers once and for all. A report has surfaced of a [master poacher].'
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+{{YouGainExperience}}
+
+You receive 3-6 Gold.
+
+==== Additional Dialog: ====
+You say, 'What master poacher?'
+: Gillarian Naelev says 'The master poacher is Talym Shoontar.  If you wish to collect the bounty on this vile man, be sure to speak with our leader, Hager Sureshot.  No doubt you will find him practicing his skills at the archery range.'
+
+This is an alternate lead into the quest for [[Talym Shoontar's Head]].
+What dialogs/faction hits/rewards do you receive from turning in other versions of Gnoll Head?
+
+What dialogs/faction hits/rewards do you receive from turning in other versions of Gnoll Head?
+
+Need list of quest rewards.
+
+
+
+== Exp Gain ==
+
+=== Human Cleric ===
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 18
+| 1% 
+| 3
+|-
+
+
+|}
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]

@@ -1,0 +1,74 @@
+{{Temple Era}}
+[[File:npc_joyce.png|frame|Joyce]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Joyce]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Dagnor's Cauldron]], [[The Estate of Unrest]], [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[a festering hag]], [[an alligator]], [[aqua goblin tidal lord]]
+|}
+
+== Checklist ==
+
+{{CheckboxList}}
+* A [[Globe of Mist]] (from [[A Festering Hag]] in [[The Estate of Unrest]]).
+* A [[Water Ring]] (from [[Aqua goblin tidal lord]] in [[Dagnor's Cauldron]]).
+* A [[Ring of Evoluoy]] ( from [[An alligator]] in [[Cazic Thule]])
+* A [[Sapphire]], bought from jewelry merchants for as little as 105pp.
+
+Bring these items to Joyce for your Circlet of Mist.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]
+
+== Reward ==
+
+<ul><li>  {{:Circlet of Mist}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest begins with a High Elf named Joyce in the Temple of Solusek Ro.
+
+To get to her: Once inside the temple, go through the large gate and then through one of the two doors on the side. Somewhere in the series of small rooms, there is a door that will be hidden by another open door, so in each room look around when the doors are closed. (If you come to a bigger room, you've gone too far.) When you find the side door, go through it and follow it up the stairs. You will come to a balcony in the room mentioned above. Facing into the room, go left and you will find Joyce.
+
+You say, 'Hail, Joyce'
+
+
+: Joyce says 'I am Joyce of the Temple of Solusek Ro.  I am the guardian of four of the items of the elementalist.  If you are a magician, ask me about the [Robe of the Elements], the [clay bracelet], the [earthen boots] or the [Circlet of Mist].'
+
+
+You say, 'What Circlet of Mist?'
+
+
+:Joyce says 'The Circlet of Mist is a beautiful hoop that would look good atop your head.  It produces a fine gleam, and is known to increase your mental power.  Are you [interested in the circlet]?'
+
+
+You say, 'I am interested in the circlet.'
+
+
+:Joyce says 'I will be needing the proper components to craft the circlet of mist.  Bring me a Globe of Mist from a festering hag, a Water Ring from a Tidal Lord in Dagnor's Cauldron, a Ring of Evoluoy from an alligator in Cazic Thule, and a Sapphire.  Do this, I will craft it for you.'
+
+
+[Hand in the items]
+
+
+:Joyce says 'You have done well.  You are truly a powerful Magician.  Here is your Circlet of Mist.'
+
+
+Your faction standing with TempleofSolusekRo got better.
+
+Your faction standing with ShadowedMen got worse.

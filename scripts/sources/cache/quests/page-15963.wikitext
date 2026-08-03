@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_hager_sureshot.png|frame|Hager Sureshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Hager Sureshot]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[Hager Sureshot]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mud Stained Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Hager Sureshot]] is located at 108, 84 at the Protectors of the Pine ([[Ranger]]) Guild Shooting Range.''
+
+You say, 'Hail, Hager Sureshot'
+
+: Hager Sureshot says, 'Greetings, Teddee.  Feel free to rest here in Surefall Glade.  Just be sure you do no hunting whilst here.  If so, then you shall pay the punishment of death.  I trust you [will abide by the laws]?'
+
+'''Hand [[Hager Sureshot]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>The seed of life stems from these great woods. The rangers of Qeynos have joined together here, to save that which is vital to the existence of Norrath itself. Guild Master Hager Sureshot of the Protectors of the Pine, shall teach you the prowess of the beast and the wisdom of the ancient woods. Find Hager, give him this note, and become a Protector.</code>
+
+: Hager Sureshot says, 'Welcome, we are the Protectors of the Pine. Wear this tunic of our guild, and help us defend our great and beautiful woods. Go to Larsk Juton, he will help train you and teach you the power of the woods.'
+
+<div class="facblock">
+* Your faction standing with [[Protectors of Pine]] got better (+100).
+* Your faction standing with [[Jaggedpine Treefolk]] got better (+25).
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse (-15).
+* Your faction standing with [[Guards of Qeynos]] got better (+25).
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:Ranger Quests]]

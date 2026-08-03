@@ -1,0 +1,65 @@
+{{Classic Era}}[[File:npc_blinza_toepopal.png|frame|Blinza Toepopal]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Blinza Toepopal]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Deputy Lowmot]]
+|}
+
+== Reward ==
+
+<ul><li>  Coins
+</li></ul>
+
+== Walkthrough ==
+
+'''This text is given after you complete the quest for [[Reebo's Carrots]].'''
+
+Find [Blinza Toepopal] in {{Loc|Rivervale|-49, -177}}
+
+: Blinza Toepopal says '[Jillin]? Jillin? Where did he go? Hrumph!'
+
+You say, 'Who is Jillin?' 
+
+: Blinza Toepopal says 'Jillin is my courier. He was supposed to take this pot of [stew] over to Deputy Lowmot in Guardian Stronghold. It is just about ready and Mayor Gubbin hates cold stew!'
+
+You say, 'I will take the stew.'
+
+: Blinza Toepopal says 'Here. Take it to Lowmot. The stew is already paid for but the good Deputy usually tips Jillin quite well. Hurry! It's getting cold!'
+
+'''You receive Carrot Stew, which you need to deliver to Deputy Lowmot at location {{Loc|Rivervale|130,-145}}.'''
+
+: Deputy Lowmot says 'Oh good! Hey. You are not Jillin.. Helping out Blinza huh? She is quite a woman.. Yes indeed. Quite a woman.. ah.. Oh sorry. Here you go. Thanks again. Mayor Gubbin will be pleased.'
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+{{YouGainExperience}} 1% xp every 3 turn in's at level 6
+
+You gain a small amount of coin : gives 7 copper per hand in
+
+Less than 1% per turn in Level 3 Halfling Druid (Green 4/24/20) (1-4 silver, 2-6 copper)
+
+'''This quest can be exploited to raise [[Merchants of Rivervale]] faction if the player has sufficient [[Guardians of the Vale]] faction, but not enough [[Storm Reapers]] faction to do [[Bandages for Honeybugger]]. Be aware however, that a high level rogue trainer, [[Rueppy Kutpurse]] stands near Blinza.'''
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

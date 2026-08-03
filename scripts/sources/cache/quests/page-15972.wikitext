@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_heneva_jexsped.png|frame|Heneva Jexsped]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Heneva Jexsped]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Stained Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Heneva Jexsped]] is located at -42, -264 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Heneva Jexsped'
+
+: Heneva Jexsped says, 'Yes. yes. yes.  Hail to you. too. Teddeefashion .  Now. quit bugging me!'
+
+'''Hand [[Heneva Jexsped]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>The Dismal Rage has need of your dark skills. Take this note to Heneva Jexsped, he has a job for you. The Dismal Rage is currently operating out of the basement of an abandoned building in the slums of East Freeport.</code>
+
+: Heneva Jexsped says, 'Welcome, friend.  I see more than a slight glimmer of hate in your eyes.  Good, for we have much work to do.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Magician Quests]]

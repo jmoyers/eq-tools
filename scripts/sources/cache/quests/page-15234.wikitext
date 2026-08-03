@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_general_jyleel.png|frame|General Jyleel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[General Jyleel]]
+|-
+! ''' Minimum Level: '''
+| 22
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Crushbone]], [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Ambassador DVinn]], [[Brawn]], [[The Prophet]]
+|}
+Requires kindly or better faction.
+
+== Reward ==
+
+<ul><li>  {{:Falchion of the Koada'Vie}}
+</li></ul>
+
+== Walkthrough ==
+
+This quest is offered after you complete the [[Orc runner]] quest.
+
+'''You need will need high faction (kindly is sufficient) to do this quest. Speak with the Paladin guildmaster, Lord Jyleel, in the basement of the Paladin guild. He wants you to prove yourself a faithful Paladin of the court.'''
+
+: General Jyleel says, 'So, the Teir'Dal are behind the recent advances of the orcs?!! Your news has shed light on their union. It is time to step forth and prove yourself a [faithful paladin of this court].'
+
+You say, 'I am a faithful paladin of this court'
+
+: General Jyleel says, 'I command you to seek out this Ambassor D’Vinn and rip his heart from his lifeless body. Next, find the supreme caster of the orcs and, finally, find the spot where supplies are dropped by the Teir’Dal for the orcs. There you should find the supply crate. Return all 3 items and you shall wield the falchion.'
+
+* The [[Black Heart]] of Ambassador Dvinn (found in [[Crushbone]])
+
+* [[Blue Orc Head]] (from the Orc Prophet in [[Crushbone]])
+
+* A [[Large Locked Crate]] (dropped by [[Brawn]] in the [[Ocean of Tears]] - about 22nd level - on the rocks with the Sirens just as you enter the Ocean of Tears from Antonica).
+
+'''Bring the items back to Jyleel.'''
+
+General Jylell says, 'A noble deed has been done and the alliance of evil has been stalled. I present you with the falchion of the Koada’Vie. You are now an honorable member of our order. Hail Felwithe! May you defend her with honor.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{exp}}
+
+Receive Falchion of the Koada`Vie.
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:Paladin Quests]]

@@ -1,0 +1,69 @@
+{{Kunark Era}}
+[[File:npc_marlyn_mcMerin.png|frame|Marlyn McMerin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Marlyn McMerin]] Loc: -3813, 1668, -102
+|-
+! ''' Recommended Level: '''
+| 40+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[City of Mist]], [[Dreadlands]], [[Kaesora]], [[Trakanon's Teeth]], [[Karnor's Castle]]
+|-
+! ''' Related NPCs: '''
+| [[an army behemoth]], [[gem cutter skeleton]], [[spectral guardian]], [[a froglok yun shaman]], [[skeletal warlord]]
+|}
+
+== Reward ==
+
+* [[McMerin's Feast]]
+
+== Walkthrough ==
+
+''Note that there is an identical quest for evil races: [[Cannibalize II (Evil)]].''
+
+You say, 'Hail Marlyn McMerin'
+
+: Marlyn McMerin says, 'Greetings hearty adventurer. Searching for the components necessary for fine shaman spells are we? I have come to Kunark in search of [rare alchemy components], but I have found the dangers of Kunark are far too great for me.'
+
+You say, 'What rare alchemy components?'
+
+: Marlyn McMerin says, 'I have heard word of four rare components - the clay of Ghiosk, crushed dread diamonds and powder of Yun. Most rare are chips from the bones of one who has touched the Bath of Obulus.'
+
+'''Marlyn McMerin wants the following:'''
+
+* 1. '''[[Strange Ochre Clay]]'''. Comes from [[an army behemoth]] in the [[City of Mist]] - Called Strange Ochre Clay, and identifies as "Clay of Ghiosk."
+
+* 2. '''[[Crushed Diamonds]]'''. There are two ways to get this. 
+The easy way: Ground spawn in the [[Timorous Deep]] on the Golra island at -8850, -6040; just use invisibility and levitation to walk on to the island and pick it up.
+The hard way: Go get a dufrenite (you can buy this at several cities). In the [[Dreadlands]], in the area with all the wizard spires, there is a MOB called [[gem cutter skeleton]]. He is inside one of the pyramids (there's an entrance on the ground), and is KOS to everyone. An Enchanter, Necro, or Bard is required to charm him so that you can hail him, and he talks about sparklies. Ask him "what dread diamond," and he offers to trade a dufrenite for one. Give him a dufrenite (while he's charmed) and he gives you a [[Dread Diamond]] (not crushed), and says how they are very valuable but more so in the crushed form, and that you would require high skill and a [[spectral pestle]] to crush it. The spectral pestles are found on [[spectral guardian]]s in [[Kaesora]] and [[Trakanon's Teeth]], and combining the dread diamond + spectral pestle to make [[Crushed Diamonds]], which identifies as "Crushed Dread Diamonds" (trivializes at around 70 [[Skill Alchemy|Alchemy skill]], so make sure your skill is high enough - you lose the pestle, but get the diamond back).
+
+* 3. '''[[Yun Shaman Powder]]'''. Come from a [[froglok yun shaman]] in [[Trakanon's Teeth]]. It is droppable, black and called [[Yun Shaman Powder]]. Identifies as "Powder of Yun.". It does not appear to drop in FV at all. A powder that looks similar but identifies differently drops in FV only. The real Yun Shaman is in Trakanons Teeth only and he is lev41 so make sure you are prepared for a tough fight.
+
+* 4. '''[[Greyish Bone Chips]]'''. Bone chips from the bones of one who has touched the Bath of Obulus. These are called Greyish Bone Chips, and come from [[skeletal warlord]]s (named mob) in [[Karnor's Castle]]. People will often let you loot these from their kill. They identify as "Obulus Bone Chips."
+
+Return all 4 items to Marlyn.
+
+: Marlyn McMerin says, 'Incredible!! You have done well. I reward you with a spell which has been kept in my clan. I offer its secrets to one I now consider family.'
+
+<div class="facblock">
+* Your faction standing with [[Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates of Gunthak]] could not possibly get any worse.
+</div>
+
+{{Exp}}
+
+You receive [[McMerin's Feast]].
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Shaman Quests]]

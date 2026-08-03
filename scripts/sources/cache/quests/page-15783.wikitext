@@ -1,0 +1,73 @@
+{{Velious Era}}
+[[File:npc_slaggak_the_trainer.png|frame|Slaggak the Trainer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Slaggak the Trainer]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Cleric]], [[Paladin]], [[Shadow Knight]], [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Cobalt Scar]], [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[a crystaline shardwurm]], [[a wyvern (Cobalt Scar)|a wyvern]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cerulean Greaves}}
+</li><li> {{:Cerulean Vambraces}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Slaggak the Trainer]] can be found at #5 on the map of [[Kael Drakkel]].''
+
+You say, 'Hail, Slaggak the Trainer'
+
+''At apprehensive or lower:''
+: Slaggak the Trainer says, 'Your loyalty to our ideals has yet to be proven.'
+
+''At higher faction (what exactly?):''
+
+: Slaggak the Trainer says, 'Hello there, _______. I am Slaggak, the trainer. The Kromrif here will soon be ready to serve the great and honorable King Tormax.'
+
+You say, 'I will serve King Tormax'
+
+: Slaggak the Trainer says, 'So you say, little one. Why are you here, then? You should be out slaying those pestering little Coldain or maybe those damnable shard wurms and wyverns.'
+
+You say, 'What of the shard wurms and wyverns?'
+
+: Slaggak the Trainer says, 'You must have seen the shard wurms by now! The lizards that roam the lands eating whatever they can find? They can grow to be quite ferocious! Not nearly as ferocious as their ancient cousins, the dragons, but a nuisance nonetheless. We have a bounty on those beasts here in Kael Drakkel.'
+
+You say, 'What bounty?'
+
+: Slaggak the Trainer says, 'If you think you have what it takes to slay the shard wurms or their relatives, the wyverns, bring back proof of your exploits. For every four shard wurm fang you bring me, I am authorized to reward you with a pair of cerulean greaves. Every fourth ice wyvern stinger will grant you a pair of vambraces.'
+
+'''Return with 4x [[Shard Wurm Fang]] for the [[Cerulean Greaves]] or 4x [[Ice Wyvern Stinger]] for the [[Cerulean Vambraces]].'''
+
+: Slaggak the Trainer says, 'You are truly a worthy little _______. I hope this armor serves you well. If it does not, I am sure a mercenary such as yourself could find a buyer.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

@@ -1,0 +1,50 @@
+{{Kunark Era}}[[File:npc_trooper_shestar.png|frame|Trooper Shestar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Trooper Shestar]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| Melee
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]]
+|-
+! ''' Related NPCs: '''
+| scaled wolfs
+|}
+
+== Reward ==
+
+<ul><li>  {{:Shestar's Scaled Coif}} ([[blacksmithing|smithed]])
+</li></ul>
+
+== Walkthrough ==
+
+[[Trooper Shestar]], inside the gates to the Field of Bone, wants 5 gp and three {{:Loose Scale}}s.  In return, he gives you {{:Shestar's Unfinished Coif}}.  The unfinished coif grants no AC, but he tells you that you can fix it up if you are a blacksmith and use 3 more loose scales.  So run out and get three more loose scales, combine them in a forge with the unfinished coif (no water needed), and you will get the Shestar's Scaled Coif for your troubles.
+
+You say, 'Hail, Trooper Shestar'
+
+:Trooper Shestar says, 'My father was a great blacksmith.  He taught me how to make great items such as the [Shestar scaled coif].  Alas, smithing was not my rebirth, but rather the life of a warrior.'
+
+You say, 'What is the Shestar scaled coif?'
+
+:Trooper Shestar says, 'The Shestar Scaled Coif was a light coif my father would fashion out of loose scales from the scaled wolves.  I have some scales on me and if you bring me three loose scales I will have enough to create the coif for you, but I require you to also pay a fee of five gold.'
+
+'''You give Trooper Shestar 3 scaled wolf scales and 5 gold.'''
+
+:Trooper Shestar quickly inserts the scales into a half finished coif and hands you the coif. 'I am afraid that is not enough and I cannot possibly complete the task while on duty. You must go and find an additional three [[Loose Scale|Scaled Wolf Scales]] and take them, along with the Unfinished Coif, to the nearest forge and complete the smithing yourself. I hope you are a blacksmith.'
+
+(No faction or experience is awarded.)
+
+'''In any forge combine 1x [[Shestar's Unfinished Coif]] + 3x [[Loose Scale]]s to create [[Shestar's Scaled Coif]]. This completes the quest.'''
+
+''Giving the coif to Shestar after crafting it causes you to lose the coif with no dialog.''
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

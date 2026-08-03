@@ -28,18 +28,28 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { logError } from './errorLog'
 import { normalizeItemName, parseItemWikitext } from './itemLookupParse'
-import type { ItemKnowledge, ItemQuestUse, PoskyData } from '../shared/types'
+import type { ItemKnowledge, ItemQuestUse, PoskyData, QuestData } from '../shared/types'
 
 export { normalizeItemName, parseItemWikitext }
 // The scraped Plane of Sky dataset is the local-first source. Imported directly so
 // electron-vite INLINES it into the main bundle (same reason spells.json is imported,
 // not readFileSync'd — a path-relative read misses it in out/main/ in production).
 import poskyJson from '../renderer/src/data/eqlegends/posky.json'
+// …and the scraped wiki QUEST CATALOG (scripts/scrape-quests.ts) is the second local
+// source. Item pages only name a quest when their |relatedquests field was filled in, so
+// classic turn-in items (Dwarven Ale, Guard Bracelet, …) read as quest-less from the item
+// side; this catalog is built the other way round — from the quest pages themselves.
+import questsJson from '../renderer/src/data/eqlegends/quests.json'
 
 const API = 'https://eqlwiki.com/api.php'
 const UA = 'everquest-companion/0.1 (personal quest tracker)'
 
-const CACHE_VERSION = 1
+// Bumped to 2 when the local quest catalog (quests.json) joined posky as a local source:
+// the cache stores the MERGED ItemKnowledge (see `finish()`), and positive entries never
+// expire, so every item cached before the catalog existed would otherwise keep serving its
+// stale zero-quest answer for the item-page fields. A version mismatch drops the whole file
+// (loadCache), so the next lookup re-merges against the new index.
+const CACHE_VERSION = 2
 const NEG_TTL_MS = 7 * 24 * 60 * 60 * 1000 // negative results: retry after 7 days
 const OFFLINE_TTL_MS = 30 * 60 * 1000 // offline misses: retry after 30 min
 const REQUEST_SPACING_MS = 150 // polite inter-request delay (wiki)
@@ -74,19 +84,87 @@ for (const q of posky.quests) {
   }
 }
 
-/** Local-first answer from posky, or null if this item isn't a known Sky quest item. */
+// ---- local (wiki quest catalog) cross-ref --------------------------------------
+
+const questData = questsJson as unknown as QuestData
+
+/**
+ * Index the scraped quest catalog by normalized item name → the quests that use it, from
+ * BOTH sides of a quest: its turn-in/collectible items (role 'required') and the items it
+ * hands out (role 'reward'). This is the answer for every classic turn-in item whose own
+ * wiki page never listed a quest.
+ */
+const questsByItem = new Map<string, ItemQuestUse[]>()
+for (const q of questData.quests) {
+  const add = (itemName: string, role: 'required' | 'reward'): void => {
+    const key = cacheKey(itemName)
+    const uses = questsByItem.get(key) ?? []
+    if (!uses.some((u) => u.page === q.page && u.role === role)) {
+      const use: ItemQuestUse = { quest: q.name, page: q.page, source: 'quests', role }
+      if (q.giver) use.giver = q.giver
+      if (q.startZone) use.zone = q.startZone
+      uses.push(use)
+    }
+    questsByItem.set(key, uses)
+  }
+  for (const it of q.requiredItems ?? []) add(it, 'required')
+  for (const r of q.rewards ?? []) add(r.name, 'reward')
+}
+
+/** Quest identity for de-duping across sources: drop a "Class · " prefix + fold case. */
+function questIdentity(s: string): string {
+  return s
+    .replace(/^[^·]*·\s*/, '')
+    .replace(/[|]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+}
+
+/**
+ * Local-first answer: the Plane of Sky dataset FIRST (it carries per-item island/giver
+ * detail), then the wiki quest catalog, deduped by quest identity. Null when neither
+ * local source knows this item.
+ */
 export function localKnowledge(name: string): ItemQuestUse[] | null {
-  return poskyByItem.get(cacheKey(name)) ?? null
+  const key = cacheKey(name)
+  const posky = poskyByItem.get(key)
+  const quests = questsByItem.get(key)
+  if (!posky && !quests) return null
+  const uses: ItemQuestUse[] = [...(posky ?? [])]
+  for (const u of quests ?? []) {
+    const nu = questIdentity(u.quest)
+    if (!uses.some((x) => questIdentity(x.quest) === nu)) uses.push(u)
+  }
+  return uses
 }
 
 // ---- wiki client (search → wikitext) ------------------------------------------
 
+/**
+ * Server-asked-us-to-back-off state. When the wiki answers 429 (or any 5xx), we honour its
+ * Retry-After (seconds; falls back to 60s when absent/unparseable) by refusing to issue ANY
+ * request until the cooldown passes — the whole serialized queue goes quiet, not just the one
+ * item. During the cooldown apiFetch returns null, which callers already treat as "offline":
+ * the item caches as a short-TTL miss and is retried later, so being polite costs nothing.
+ */
+let cooldownUntil = 0
+const RETRY_AFTER_FALLBACK_MS = 60_000
+
 async function apiFetch(params: Record<string, string>): Promise<unknown | null> {
+  if (Date.now() < cooldownUntil) return null // server asked for quiet — stay quiet
   const url = API + '?' + new URLSearchParams({ format: 'json', formatversion: '2', ...params }).toString()
   const ctrl = new AbortController()
   const t = setTimeout(() => ctrl.abort(), REQUEST_TIMEOUT_MS)
   try {
     const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: ctrl.signal })
+    if (res.status === 429 || res.status >= 500) {
+      const retryAfter = Number(res.headers.get('retry-after'))
+      const waitMs =
+        Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1000 : RETRY_AFTER_FALLBACK_MS
+      cooldownUntil = Date.now() + waitMs
+      return null
+    }
     if (!res.ok) return null
     return await res.json()
   } catch {
@@ -186,7 +264,8 @@ function cacheHit(entry: CacheEntry): boolean {
 
 // ---- merge + public API -------------------------------------------------------
 
-/** Merge posky-local associations into a knowledge record (posky wins on identity). */
+/** Merge the LOCAL associations (posky + quest catalog) into a knowledge record; local
+ *  wins on identity, so the wiki's `|relatedquests` links only ADD quests we didn't know. */
 function mergeLocal(base: Omit<ItemKnowledge, 'cached'>, local: ItemQuestUse[] | null): Omit<ItemKnowledge, 'cached'> {
   if (!local || local.length === 0) return base
   const uses = [...local]
@@ -194,13 +273,7 @@ function mergeLocal(base: Omit<ItemKnowledge, 'cached'>, local: ItemQuestUse[] |
   // name often ALREADY carries the class ("Paladin · Paladin Test of Love"), while the wiki
   // link label is the bare "Paladin Test of Love". So compare with the class prefix stripped
   // (drop everything up to a "·") and de-dupe when one normalized name contains the other.
-  const norm = (s: string): string =>
-    s
-      .replace(/^[^·]*·\s*/, '') // drop a leading "Class · " prefix
-      .replace(/[|]/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toLowerCase()
+  const norm = questIdentity
   for (const u of base.questUses) {
     const nu = norm(u.quest)
     if (!uses.some((x) => { const nx = norm(x.quest); return nx === nu || nx.includes(nu) || nu.includes(nx) })) uses.push(u)

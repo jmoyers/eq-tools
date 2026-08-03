@@ -1,0 +1,49 @@
+[[File:npc_tibrinn_ember.png|frame|Tibrinn Ember]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Tibrinn Ember]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Beholder's Maze]]
+|-
+! ''' Related NPCs: '''
+| [[Grazhak the Berzerker]], [[King Xorbb]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Sap Sheen Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+''Tibrinn Ember says,'' 'Have you what it takes to acquire my '''[staff]'''?'
+
+''You say,'' 'what staff'
+
+''Tibrinn Ember says,'' 'I am Tibrinn Ember, forest friend and Unkempt Druid. Aid us in our '''[conflict]''' against the polluters of nature and I will reward you.'
+
+''You say,'' 'what conflict'
+
+''Tibrinn Ember says,'' 'Grazhak the Berzerker is a powerful orc who roams these mountains. Slay him and bring me his Mithril Plated Girth. The gorge tyrant himself, King Xorbb, has plagued my halfling brothers for ages. Dispatch this beast and bring me his Slime Crystal Staff as proof of your deed. After you have brought me these items I will give you a weapon as reward for your feats.'
+
+Give Tibrinn Ember a [[Grazhak the Berserker]]'s [[Mithril Plated Girth]] and [[King Xorbb]]'s [[Slime Crystal Staff]].
+
+''Tibrinn Ember says,'' 'Finally! I can't thank you enough! As promised, here is your Sap Sheen Staff.'
+
+You receive {{:Sap Sheen Staff}}
+
+You gain experience!!
+
+[[Category:Quests]]
+[[Category:Rathe Mountains]]
+[[Category:Druid Quests]]

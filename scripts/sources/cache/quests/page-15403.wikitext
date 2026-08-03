@@ -1,0 +1,64 @@
+{{Classic Era}}
+[[File:npc_gren_frikniller.png|frame|Gren Frikniller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Gren Frikniller]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Falia Frikniller]]
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]], Small Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+
+'''[[Gren Frikniller]] is a bodyguard for the rogue guildmaster in East Freeport. Ask him about his sister (they share the same surname):'''
+
+You say, 'Who is your sister?'
+
+: Gren Frikniller says 'Ah, my sister Falia has traveled here all the way from Rivervale.  I hear that she's been staying up in North Freeport, but I haven't had a chance to find her yet.  If you get some spare time, could you take this letter to her for me?  Thanks, _____, you're really not so bad after all.'
+
+'''Take the letter to [[Falia Frikniller]] in North Freeport. Note she is on [[Merchants of Rivervale]] faction and may not deal with you if your faction is too low (dubious works):'''
+
+You say, 'Hail, Falia Frikniller'
+
+: Falia Frikniller says 'Aye, hello there, friend!  How are ye on this fine day?  A beautiful day to be alive, I must say!  Anyway, I just got into Freeport last month.  Wow, is this city big!  Way bigger than humble little Rivervale. That's where I'm from.  I'm working on setting up my own little business here, Falia's Foot Combs and Footwear, it'll be called.  But, I don't have anything to sell yet, so check back in a couple of weeks.  Safe travels to ye, friend.'
+
+'''Hand her the letter:'''
+
+: Falia Frikniller says 'Heh, that good for nothing fool.  I've been here for over a month already, and I haven't seen him yet.  Bah, anyway, could you take this back to him for me?  It was our grandfather's lucky necklace.  He passed it down to our father, and now onto my brother.  Knowing that little worm, Grenny, he'll probably trade it for a mug of ale.  Oh well, thanks for delivering the letter, friend.  Good day to you, and safe travels.'
+
+{{exp}}
+
+'''Receive a [[Broken Heirloom Necklace]] in return, which you can take to Gren:'''
+
+: Gren Frikniller says 'What's this?  Oh, ol' Grandpa Frikniller's lucky necklace, huh?  I'll bet this broken piece of junk won't even get me a sip of ale up at the bar.  And lucky?  How lucky could this thing be?  Poor gramps was lonely and copperless his whole life.  Bah!! Oh, well.  Here's some coin for your efforts, thanks, _____'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by 10.
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 10.
+* Your faction standing with [[Carson McCabe]] has been adjusted by 5.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 5.
+* Your faction standing with [[The Freeport Militia]] has been adjusted by 5.
+</div>
+{{exp}}
+You receive ~1 silver from Gren Frikniller.
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]

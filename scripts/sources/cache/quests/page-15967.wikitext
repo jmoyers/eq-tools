@@ -1,0 +1,49 @@
+[[File:npc_daedet_losaren.png|frame|Daedet Losaren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Daedet Losaren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  You have [[Holy Armor]] cast on you.
+</li></ul>
+
+== Walkthrough ==
+
+Daedet Losaren in the Temple of Thunder can provide the Holy Armor spell for faithful followers of Karana.
+
+<br>
+
+You say, 'Hail, Daedet Losaren'
+
+: Daedet Losaren says, 'Welcome Teddee. I am Deadet Losaren, faithful priest of Karana. You appear to be in search of [guidance] or perhaps you are merely a [visitor to the temple of thunder] wishing the blessing of [Holy Armor].'
+
+You say, 'I wish the blessing of Holy Armor.'
+
+: Daedet Losaren says, 'Holy Armor? I offer good standing members of the Knights of Thunder the blessing of Holy Armor. I must charge ten gold for the service. [Components] are expensive these days.'
+
+When you give him the 10g:
+
+: Daedet Losaren says, 'Thank you for your donation to the Temple of Thunder.  Take this boon from our lord Karana!'
+
+You feel the favor of the gods upon you.
+
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

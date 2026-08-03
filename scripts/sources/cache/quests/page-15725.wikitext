@@ -1,0 +1,68 @@
+{{Velious Era}}
+[[File:npc_fjokar_frozenshard.png|frame|Fjokar Frozenshard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Fjokar Frozenshard]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[Shardwing Courier]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Frozen Shard}}
+</li></ul>
+
+== Walkthrough ==
+
+Fjokar Frozenshard can be found in Kael, in the halls behind King Tormax.
+
+You say, 'Hail, Fjokar Frozenshard'
+
+: Fjokar Frozenshard says 'Today is a good day in Kael Drakkel. Don't you think?'
+
+You say, 'Tell me about Wenglawks'
+
+: Fjokar Frozenshard says 'Wenglawks masquerades as a noble. As family lines go, his is even more diluted than those two Iceshard brothers. He is a petty merchant and traitor. One day I will find my proof of this.'
+
+You say, 'Who are the Iceshard brothers?'
+
+: Fjokar Frozenshard says 'Klaggan and Vorken, those two ruffians who somehow have managed to become the lords of the Kromrif manor. They were nothing but a pair of thugs no less than twenty years ago. I remember watching them kill and maim the innocent among the Kromrif tribes. If it were not for King Tormax's protection, I would slay them.'
+
+You say, 'What about the Kromrif?'
+
+: Fjokar Frozenshard says 'The Frost giants are a proud race, but they are not nearly as powerful and blessed as we Kromzek. Our cousins may be strong, but the might of an enraged storm giant is something to behold.'
+
+You say, 'What about courier?'
+
+: Fjokar Frozenshard says 'Those Kromzek deserve to die. They know very well what he is up to. I will hunt them for sport, moving silently through the streets of Kael Drakkel, and invisibly through the outside world.  Wenglawks has some sort of underhanded deals going on with the dragons. I have yet to find anything which will persuade King Tormax to allow me to slay him, unfortunately.'
+
+'''Fjokar is seeking a [[Sealed Letter]] dropped by a [[Shardwing Courier]] in the Western Wastelands.  On handing in the letter:'''
+
+: Fjokar Frozenshard says 'You have found what I was unable to.  King Tormax's protection of Wenglawks will end soon.  His death will be so very delightful to invoke.'  Fjokar rushes out of the room, dropping his spear as he does.'
+
+* Your faction standing with Kromzek got better.
+* Your faction standing with KingTormax got better.
+* Your faction standing with DainFrostreaverIV got worse.
+* Your faction standing with Yelinak could not possibly get any worse.
+
+* You receive a [[Frozen Shard]].
+
+Note: This quest appears to give approximately 1.1 million experience, or about 1.5% of level 59/5% of level 45.  It can be turned in by a KOS rogue using sneak at level 59; possibly earlier, but hide does need to be removed while in a position that may be in front of lower level giants in the room, so this may be level dependent.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Rogue Quests]]
+[[Category: Repeatable Turn-in Quests]]

@@ -1,0 +1,94 @@
+{{Classic Era}}
+[[File:npc_collier.png|frame|Collier]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Collier]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Stonebrunt Mountains]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Slyder the Ancient]], [[a venomous spikefish]], [[Heretic Invader]]
+|}
+
+== Reward ==
+
+<ul>
+<li>{{:Bloodclaw Battle Axe}}</li>
+<li>{{:Bloodclaw Dagger}}</li>
+<li>{{:Bloodclaw Mace}}</li>
+<li>{{:Bloodclaw Long Sword}}</li>
+<li>{{:Bloodclaw Rapier}}</li>
+<li>{{:Bloodclaw Scimitar}}</li>
+</ul>
+
+== Walkthrough ==
+
+Collier may be found at (-1170, -70, 83) in [[Erudin]], on the top floor of the Vasty Deep Inn.
+
+You say, 'Hail, Collier' 
+
+: Collier says 'Make it a habit of walking into peoples rooms now do ya? Well seeing as I'm here on business I may have a [proposition] for you.' 
+
+You say, 'What is the proposition?'
+
+: ''If your faction is too low:''
+
+: Collier says 'You need to prove your dedication to our cause before I can discuss such matters with you.'
+
+: ''If your faction is high enough ''(indifferent)'':''
+
+: Collier says 'I'm in the employment of an alchemist that desires some rare venom from this region of Norrath. I will reward you with a special weapon treatment if you can return to me with a venomous spikefish poison sac, an ancient poison sac, an ancient snake fang, and the blood of a necromancer.' 
+
+You say, 'What special weapon treatment?'
+
+: Collier says 'My employer has uncovered the secrets of the Bloodclaw and can reproduce the weapon treatment used in the forging of the legendary Stiletto of the Bloodclaw.'
+
+He wants:
+
+<ol>
+<li>[[Ancient Snake Fang]] - drops off [[Slyder the Ancient]] in [[Stonebrunt Mountains]]</li>
+<li>[[Ancient Venom Sack]] - drops off [[Slyder the Ancient]] in [[Stonebrunt Mountains]]</li>
+<li>[[Venomous Spikefish Poison Sac]] - extremely rare drop off [[Venomous Spikefish]] in [[Kerra Island]]</li>
+<li>[[Necromancer Blood]] - drops off [[Heretic Invader]]s in [[Stonebrunt Mountains]]</li>
+</ol>
+
+Collier gives back a [[Thick Caustic Liquid]] which is tradeable, along with the text reply to the effect of:  "There is the weapon treatment I promised you.  Use it in a forge with any standard forged weapon.  Choose your preferred weapon carefully as there is only enough of the substance for a single treatment."
+: Collier says, 'Here is the weapon treatment that I have promised you. Use it with any standard forged weapon. Choose your preferred weapon carefully as there is only enough of the substance for a single treatment.'
+
+<div class="facblock">
+* Your faction standing with [[Circle of Unseen Hands]] has been adjusted by 2
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by -1
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 1
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -1
+* Your faction standing with [[Kane Bayle]] has been adjusted by 1
+{{exp}}
+</div>
+
+(Collier then despawns)
+
+
+The reward varies depending upon which weapon you use:
+
+* [[Forged Battle Axe]] yields [[Bloodclaw Battle Axe]].
+* [[Forged Dagger]] yields [[Bloodclaw Dagger]].
+* [[Forged Long Sword]] yields [[Bloodclaw Long Sword]]. (This is the best ratio)
+* [[Forged Mace]] yields [[Bloodclaw Mace]] - (The Mace is not a MAGIC item, and as a result, inferior to the others.)
+* [[Forged Rapier]] yields [[Bloodclaw Rapier]].
+* [[Forged Scimitar]] yields [[Bloodclaw Scimitar]]. (Druid usable)
+
+Weapons that do not work:
+
+* [[Forged Warhammer]] does not work.
+
+[[Category:Quests]]
+[[Category:Erudin]]

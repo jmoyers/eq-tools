@@ -1,0 +1,53 @@
+{{Kunark Era}}
+[[File:npc_zulort.png|frame|Zulort]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Zulort]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Shaman]] (Ogre)
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]], [[Rathe Mountains]]
+|-
+! ''' Related NPCs: '''
+| a lizardman mystic
+|}
+
+== Reward ==
+
+<ul><li>  {{:Initiate Symbol of Rallos Zek}}
+</li></ul>
+
+== Initiate Symbol ==
+
+After completing [[Froglock Tadpole Fleshies]]
+ 
+: ''Zulort says, 'Oh, me.. um.. Warlord BERRY happy. Berry like dese. Gimme. Uh, why is you still here? Take dis and gets more kills. You learning good, come sees me. I teaches you bout stuff. Make you [bedder shaman]. Go. He and me watching.'''
+
+You say, 'i bedder shaman'
+
+: ''Zulort says, 'Yoo want to be bedda shaman? Them lizards in de Ferrott tink de bedda den us and bodder us wit der majiks like fleas on a dog. Kill dem and bring me, um, one of dem bags dey wear around dem necks and, um, three of dem dolls dey hold.'''
+
+These are both dropped by [[Lizardman mystic]]s in both The Feerrott and Rathe Mountains and the dolls can be seen in their hands when they have them. Unsure if they are more common on the higher level mystics in the Feerrott  or the ones in Rathe Mountains, but I have seen both drops come from even the low level mystics.
+
+Bring Zulort three [[Mystic Doll]]s and a [[Allize Volew Medicine Bag]] to receive an Initiate Symbol of Rallos Zek.
+
+: ''Zulort says, 'Dis good stuff! Me and Warlord happy! Wear dis symbol and he make yoo strong with majik!'''
+
+<div class='facblock'>
+* Your faction standing with [[Shamen of War]] got better.
+</div>
+{{exp}}
+
+
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Shaman Quests]]

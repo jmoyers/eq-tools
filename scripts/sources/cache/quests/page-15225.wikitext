@@ -1,0 +1,17 @@
+{{Disambiguation}}
+: [[File:Item_804.png]] There are many quest iterations regarding turning in '''[[Bone Chips]]''' for city/guard faction. For more details, see the specific quest.
+
+(Dec, 10th 2020)Note: Rumor on the forums is these grant less than previously expected experience per turn-in. 
+
+*[[Bone Chips Field of Bone|Trooper Mozo ('''Cabilis''')]] - Just outside Cabilis in the Field of Bone, [[Trooper Mozo]] will reward you for every four (unstacked) bone chips you give him.
+*[[Skeleton Killing|Lumi Stergnon ('''Erudin''')]] - [[Lumi Stergnon]] in the Cleric's guild gives you a 6 slot container to be filled with bone chips and combined.
+*[[Bone Chips Felwithe|Yeolarn ('''Felwithe''')]] - In the Cleric guild, [[Yeolarn Bronzeleaf]] will reward you for every four (unstacked) bone chips you give him.
+*[[Assist the Great Xelha|Xelha ('''Freeport''')]] - In East Freeport, in the necromancer guild, you can give 4 Bone Chips to [[Xelha Nevagon]] for faction, xp, and a gold.
+*[[Bone Chips Grobb|Hukulk ('''Grobb''')]] - In the Shadowknight guild, [[Hukulk]] will reward you for every four (unstacked) bone chips you give him.
+*[[Bone Chips Kaladim|Gunlok Jure ('''Kaladim''')]] - [[Gunlok Jure]] inside the Paladin/Cleric guild will reward you for every four (unstacked) bone chips you return to him. This quest also gives you items such as rusty weapons and tattered armor.
+*[[Bone Chips Qeynos|Lashun Novashine ('''Qeynos''')]] - Just outside of the North Qeynos gates, [[Lashun Novashine]] will reward you for every two (unstacked) bone chips you give to him (and cast a heal on you).
+*[[Crush the Undead|Wolten Grafe ('''Qeynos''')]] - [[Wolten Grafe]], the Paladin guildmaster in South Qeynos, gives you a 6 slot container to be filled with bone chips and combined.
+*[[Vexia D`Ynth]] ([[Neriak Commons]]) - on the outer wall of the Indigo Brotherhood (Dark Elf Warrior Guild). Hand in 4 chips per throw.
+
+[[Category: Quests]]
+[[Category: Repeatable Turn-in Quests]]

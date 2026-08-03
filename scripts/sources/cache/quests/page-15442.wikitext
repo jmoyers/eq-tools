@@ -1,0 +1,113 @@
+{{Classic Era}}
+[[File:npc_captain_boshinko.png|frame|Captain Boshinko]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[High Keep]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Boshinko]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Rivervale]]
+|-
+! ''' Related NPCs: '''
+| [[Bronin Higginsbot]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bloody Shank}}
+</li><li> {{:Scouts Blade}} (Sometimes)
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+=== The Captain ===
+
+''Be warned that this quest can really mess with your faction with the deep pockets.''
+
+Visit the Captain B standing out on a balcony in Highhold Keep. Hail him and answer his questions.
+
+You say, 'Hail, Captain Boshinko' 
+
+:Captain Boshinko says 'Greetings, stranger! Are you the [bounty hunter I requested]?' 
+
+You say, 'I am the bounty hunter you requested' 
+
+:Captain Boshinko says 'It is about time. I have been waiting for you for ages! Your [reputation] precedes you.' 
+
+You say, 'What reputation?' 
+
+:Captain Boshinko says 'You humor me, [[Slaythe]]! I would have guessed someone like yourself would have little time for humor. Nevertheless, would you [like to hear about the job] I have for you?' 
+
+You say, 'I would like to hear about the job' 
+
+If '''too low''' faction:
+
+:Captain Boshinko says 'Your name is as respected as the name of the Karana bandits. Leave my presence while you still have legs to run with.' 
+
+---
+
+''If adequate faction:''
+
+:Captain Boshinko says, 'A prisoner named Bronin Higginsbot, a halfling, recently escaped.  He was a small time thief and I would care less if it were not for the fact that in the process of obtaining the cell key. he disemboweled my finest guard.  We found the bloodied shank still stuck in my guard's gutted corpse.  Would you [like to know more]?'
+
+You say, 'i would like to know more'
+
+:Captain Boshinko says, 'That little man has now made it to Rivervale.  He has ties with the halfling rogues, obviously. I want you to find him.  When you find him, take this shank he used to kill my guard and hand it to him.  I want him to know why he is about to die.  No one escapes my prison!!  Bring me his head and I shall pay the bounty.'
+
+It seems a petty rogue escaped the dungeon in Highhold Keep but left behind crucial evidence. The rogue's Bloody Shank was sticking out of a guards back!
+
+The Captain gives you the [[Bloody Shank]] to take to the rogue to let the rogue know why you are there to kill him. 
+
+===Bronin===
+
+The rogue's name is [[Bronin Higginsbot]] and he hangs around the Deeppockets in Rivervale. He may sometimes be found around the southernmost tower in [[Misty Thicket]].
+
+:Bronin Higginsbot says, 'Hello.  It is dangerous out in the woods.  You should go to Rivervale.  It's at the end of the path.  You will find good times there.  Travel safely, my friend!'
+
+Hand him the Shank and he will attack:
+
+:Bronin Higginsbot says, 'So Slaythe finally found a lackey.  Let us see an end to this.'
+
+Kill him, but be careful because a bodyguard sometimes spawn next to him when you hand him the Shank and also the guards will help him if they are nearby.
+
+<div class='facblock'>
+* Your faction standing with [[DeepPockets]] has gotten worse.
+</div>
+
+Loot a [[Halfling Head]] {{Item Lore|Bronin's Head}}
+
+===Return to Captain===
+
+Return his head for decent money and experience, and occasionally a Scouts Blade.  You will get the following faction hits:
+
+:Captain Boshinko says, 'Well done, Slaythe!  What?  You look disappointed in the reward.  Get moving while you still have legs to carry you!!'
+
+<div class='facblock'>
+* Your faction standing with [[Highpass Guards]] has gotten better.
+* Your faction standing with [[Carson McCabe]] has gotten better.
+* Your faction standing with [[Merchants of Highpass]] has gotten better.
+* Your faction standing with [[Corrupt Qeynos Guards]] has gotten better.
+* Your faction standing with [[Freeport Militia]] has gotten better.
+</div>
+{{exp}}
+
+You receive ~20 copper pieces.
+
+There is also a rogue named [[Shayde Higginsbot]] (not [[Slaythe]]) on the second floor of the Fool's Gold.  When you hand him the Shank he does not give the generic (Thank you.) response. Not sure what happens if you slay him too.
+
+[[Category:Quests]]
+[[Category:High Keep]]
+[[Category:Rogue Quests]]

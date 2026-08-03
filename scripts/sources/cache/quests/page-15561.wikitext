@@ -1,0 +1,83 @@
+{{Classic Era}}
+{{disambig3|Qeynos [[Moonstones]] quest}}
+[[File:npc_rueppy_kutpurse.png|frame|Rueppy Kutpurse]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Rueppy Kutpurse]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[Gunrich]]
+|}
+
+== Reward ==
+
+<ul><li>Experience</li>
+<li>Coin</li></ul>
+
+== Walkthrough ==
+
+Find [[Rueppy Kutpurse]] at (-86.66, -204.61, 2.19) in [[Rivervale]], in the back on the ground floor of the Fool's Gold.
+
+'''Lead-In'''
+
+You say, 'Hail, Rueppy Kutpurse'
+
+: Rueppy Kutpurse says, 'Hello. <name>.  Rueppy's my name.  Why don't you buy us something to [drink] and we can talk?'
+
+You say, 'what drink?'
+
+: Rueppy Kutpurse says, 'How about a short beer?  That sounds good.'
+
+Unfortunately, [[Short Beer]] is not sold in [[Rivervale]] (it is sold in [[Runnyeye]] so that should be a hint as to the character of this lady in case her name wasn't enough). Visit [[Burtle Barrelbelly]] upstairs for the ingredients and make one, then give it to Rueppy Kutpurse.
+
+: Rueppy Kutpurse says, 'Oh, thank you. AH!  That sure is good.  Not as good as [Blackburrow Stout] but what is?'
+
+You say, 'what blackburrow stout?'
+
+: Rueppy Kutpurse says, 'Blackburrow Stout is a special beer brewed by those dirty gnolls, the Sabertooths.  Of course to get it here in Rivervale, you have to [smuggle] it in.'
+
+You say, 'I can smuggle'
+
+: Rueppy Kutpurse says, 'You interested in a little Job?  I need you to meet someone who is brining me some stout.  He was supposed to meet me in the ruins on the other side of the Great Wall but I have other business to attend to.  His name is Gunrich.  You might have to wait for a while for him to show up, he will be skittish of a stranger.  Payment has already been made.  Just tell him. 'Dark rivers flow east,' and he will know you are legit.  Make sure you don't say anything else to him or the deal will sour.  Meet me back here with the stout.'
+
+'''Main Quest'''
+
+'''You have to go to the ruins on the other side of the great wall in [[Misty Thicket]], find [[Gunrich]], and tell him that "Dark Rivers Flow East":''' 
+
+The ruins are the undead hill just past the tunnel, to the north.  
+
+You say, 'Dark Rivers Flow East'
+
+: Gunrich says, 'Heh! Here, here, here.  Tell Rueppy hellos from Gunrich.  She am so perties. Heh, heh.'
+
+'''He gives you a [[Case of Blackburrow Stout]].  Take the case back to Rueppy Kutpurse and give it to her:'''
+
+: Rueppy Kutpurse says, 'Heh heh! You did it! I thought the deputies would get you for sure! I mean..you did it! heh! Here go buy yourself a drink on me.'
+
+{{YouGainExperience}}
+
+You receive 4 silver, 4 copper pieces.
+
+<div class="facblock">
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Circle Of Unseen Hands|CircleofUnseenHands]] got better.
+* Your faction standing with [[Merchants of Rivervale|MerchantsofRivervale]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground|CoalitionofTradeFolkIll]] got better.
+* Your faction standing with [[Carson McCabe|CarsonMcCabe]] got better.
+</div>
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

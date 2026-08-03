@@ -1,0 +1,166 @@
+{{Classic Era}}
+{{Disambig3|[[Orc Pawn Picks]] (Indigo Brotherhood)}}
+[[File:npc_guard_valon.png|frame|Guard Valon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Commonlands]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Valon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[East Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Pawn (Deathfist)]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+
+This quest is given by [[Guard Valon]] at the toll booth in the West Commonlands. ''(LOC: -4, +74)'' Dubious faction is sufficient.
+
+You say, 'Hail, Guard Valon'
+
+:Guard Valon says, 'Greetings, traveler! If you wish to walk upon the road to Freeport, you will pay the toll of two silver pieces. And you should. It is not safe to stray from the pathway. There are many [dangers in the Commonlands].'
+
+You say, 'dangers in the commonlands.'
+
+: Guard Valon says, 'The orcs have been a nuisance of late. Many travelers have perished at the hands of the orc pawns. Would you like to [assist the Freeport Militia] in ridding the lands of orcs?'
+
+You say, 'assist the freeport militia.'
+
+: Guard Valon says, 'Sir Lucan would be proud! Patrol the Commonlands and watch for any orc pawns. Should you find any orc pawn picks on them, I will pay your for every four you return to me. Be off, then! For the glory of Freeport!!'
+
+'''Valon has a bounty on orc pawns and will take their [[Orc Pawn Pick]]s from you four at a time in exchange for faction and a small amount of coin.'''
+
+'''Tip: You can often find huge amounts of Orc Picks on merchants near the Freeport newbie area and in The Commonlands.'''
+
+: Guard Valon says, 'You have done well. Keep up the good work and we may trust you to [hunt the dervish cutthroats] which in turn will allow you  to join the Reserve Freeport Militia.'
+
+<div class='facblock'>
+* Your faction standing with [[Coalition of Tradefolk Underground]] has gotten better.
+* Your faction standing with [[Freeport Militia]] has gotten better.
+* Your faction standing with [[Knights of Truth]] has gotten worse.
+* Your faction standing with [[Priests of Marr]] has gotten worse.
+</div>
+{{exp}}
+
+You receive 1 gold pieces.
+
+Once your faction is at a high enough level, you can do the [[Cutthroat Rings]] quest as well (a requirement for the Reserve Militia quest).
+
+== Exp Gain ==
+
+=== Human Bard ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 1
+| 11%
+| 0
+
+|-
+| 2
+| 11%
+| 0
+|-
+| 3
+| 11%
+| 1
+|}
+
+=== Wood Elf Warrior ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 1
+| 11%
+| 0
+|-
+| 2
+| 11%
+| 0
+|-
+| 3
+| 11%
+| 0
+|-
+| 4
+| 11%
+| 0
+|-
+| 5
+| 11%
+| 0
+|-
+| 6
+| 11%
+| 2
+|-
+| 7
+| 11%
+| 4
+|-
+| 8
+| 10%
+| 6
+|-
+| 9
+| 7%
+| 1
+|}
+
+=== Gnome Wizard ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 8
+| 2%
+| 2
+|}
+
+=== Halfling Rogue ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 5
+| 6%
+| 1
+|}
+
+=== Halfling Druid ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 14
+| 0.8%
+| 2
+|}
+[[Category:Quests]]
+[[Category:West Commonlands]]

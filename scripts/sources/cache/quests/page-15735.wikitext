@@ -1,0 +1,137 @@
+{{Velious Era}}
+__NOTOC__
+[[File:AswetramFe'Dhar.jpg|300px|thumb|Adwetram Fe`Dhar]]
+[[File:Scaled_Knight_Half_Elf.png|300px|thumb|A full suit of Scaled Knight's armour on a half-elf paladin (helm shown is custom)]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Adwetram Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Scaled Knight's Helm
+|Scaled Knight's Breastplate
+|Scaled Knight's Vambraces
+|Scaled Knight's Bracer
+|Scaled Knight's Gauntlets
+|Scaled Knight's Greaves
+|Scaled Knight's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Adwetram Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Scaled Knight's Helm]]
+:*[[Unadorned Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Scaled Knight's Breastplate]]
+:*[[Unadorned Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Scaled Knight's Vambraces]]
+:*[[Unadorned Plate Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Scaled Knight's Bracer]]
+:*[[Unadorned Plate Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Scaled Knight's Gauntlets]]
+:*[[Unadorned Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Scaled Knight's Greaves]]
+:*[[Unadorned Plate Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Scaled Knight's Boots]]
+:*[[Unadorned Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Adwetram Fe`Dhar is located in the top section of Skyshrine Tower, in the armor quest room (room 3 on the map).
+
+You say, 'Hail, Adwetram Fe`Dhar'
+
+: Adwetram Fe`Dhar says 'I wish to speak only to the knights called paladins.  If you are what I seek do you wish to partake of my quests?'
+
+You say, 'I wish to partake of your quests'
+
+: Adwetram Fe`Dhar says 'Excellent. By serving my cause, you in turn will further your own. I require certain components to aid me and if you bring them to me, I shall reward you for your honorable service. You may choose from among these items: a helm, a breastplate, armplates, bracers, gauntlets, greaves, and boots.'
+
+Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned plate armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.
+
+Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.
+
+== Helm ==
+
+You say, 'What helm?'
+
+: Adwetram Fe`Dhar says 'All I require are an unadorned plate helmet and three pieces of crushed coral.  This should be a small task for one such as you.  Go now and I shall await your return.'
+
+Return with [[Unadorned Plate Helmet]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Adwetram Fe`Dhar says 'As the resolve of your faith protects you, so shall this breastplate. All that is required are three flawless diamonds and an unadorned breastplate. Do this quickly so that you may return to the field of battle.'
+
+Return with an [[Unadorned Breastplate]] and three [[Flawless Diamond]]s.
+
+== Vambraces ==
+
+You say, 'What armplates?'
+
+: Adwetram Fe`Dhar says 'So, a pair of armplates is what you require?  Well, I require unadorned plate vambraces and three flawed emeralds before you may receive it.'
+
+Return with [[Unadorned Plate Vambraces]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Adwetram Fe`Dhar says 'Bracers for the mighty?  Retrieve these components and I shall forge the item for you.  Bring me three crushed flame emeralds and an unadorned plate bracer.'
+
+Return with [[Unadorned Plate Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Adwetram Fe`Dhar says 'Mighty gauntlets to smite your foes for the glory of the greater good!  It is no easy task but I shall require a pair of unadorned plate gauntlets as well as three crushed topaz.'
+
+Return with [[Unadorned Plate Gauntlets]] and three [[Crushed Topaz]].
+
+== Greaves ==
+
+You say, 'What greaves?'
+
+: Adwetram Fe`Dhar says 'Sturdy are the pillars that support the temple. I shall make you just as strong with these leggings. Gather unadorned plate greaves and three flawed sea sapphires.'
+
+Return with [[Unadorned Plate Greaves]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Adwetram Fe`Dhar says 'A pair of boots you shall have once you have brought me a pair of unadorned plate boots, and three pieces of crushed black marble.'
+
+Return with [[Unadorned Plate Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Paladin Quests]]
+[[Category:Skyshrine Armor Quests]]

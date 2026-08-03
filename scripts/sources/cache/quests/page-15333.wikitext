@@ -1,0 +1,188 @@
+{{Classic Era}}
+[[File:Vhalen Nostrolo.jpeg|200px|right|Vhalen Nostrolo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Vhalen Nostrolo]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Cordelia Minster]], [[a hermit]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Jaxan's Jig o' Vigor|Song: Jaxan's Jig o' Vigor]]
+</li></ul>
+
+<ul><li>  1 silver
+</li></ul>
+
+== Walkthrough ==
+
+This quest starts with [[Vhalen Nostrolo]]. Completed by an Agnostic Dark Elf Wizard with apprehensive faction.
+
+You say, 'Hail, Vhalen'
+
+: Nice to meet you. Do not the plains of Karana about with life? This land is truly blessed by the gods. Would you like to hear a tune or will you pass up the opportunity?
+
+You say, 'I would like to hear a tune.'
+
+: Inside this heart, I am trapped with the sight of beautiful colors, all memories of your love. They attack me with full might. You left me here in this garden of grey Never to see the true colors of the happiness of day Here in my hear I sit and I cry. You have left me alone and my colors have all died.... What do you think? Is it a happy tune or a sad tune?
+
+You say, 'It is a sad tune.'
+
+: It takes a broken heart to truly appreciate that tune. I'm glad you enjoyed it. My dear Metala left me one year ago. The wound was healed, but the scar remains. I am presently trying to complete a new composition. Maybe that will turn me around.
+
+You say, 'What new composition?'
+
+: I have come here to create my greatest composition. I call it 'The Winds of Karana'. Alas, the song sheets have been taken from me. While I, ahem, attended to some personal business, a hermit came and stole two song sheets from my pack. It would be grand if, in your journeys, you were to come upon this hermit of the plains and return my song sheets to me. I would pay dearly. Now, I must get back to my thoughts. Please excuse me.
+
+Now, head southeast till you see a cottage. It has a hexagonal wall of stone surrounding it, so it's not hard to find. Inside the walls is '''[[a hermit]]'''. A very unfriendly sort. The door to the hermits house is either locked, or broken and won't open. So it's hard to get to him. 
+
+The easiest way to get him out is to stand behind the hut and say "I'm here to kill you."  You can also try to target him and attack him.  After he is dead, his body will contain the [[Cracked Flute]], [[Winds of Karana sheet 1]] or just one or the other.
+
+Kill the hermit until you loot a flute, and a sheet music page.
+
+The second piece is in the hands of [[Cordelia Minster]].
+
+You say, 'Hail, Cordelia'
+
+: I can not find my flute, my favorite possession. Is there anyone who can [help] me?
+
+You say, 'How can I help?'
+
+: My flute is missing, I think that old dirty hermit took off with it. He is always taking off with my things.
+
+When you hand her the flute from the hermit...
+
+: Why thank you, kind adventurer! Here is a little something to keep food in your belly. Now back to practice. La la la..
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+* Your faction standing with [[Ring of Scale]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 silver
+
+You receive [[Winds of Karana sheet 1]].
+
+Now that you have both pages of sheet music, go back to Vhalen and give them both to him.
+
+: Thank you, my friend. I have just completed the composition. It is a work of art. Here. Have a copy. I hope you have the musical talent required to play it. If not.. Practice, practice, practice!
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+* Your faction standing with [[Ring of Scale]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive [[Jaxan's Jig o' Vigor|Song: Jaxan's Jig o' Vigor]].
+
+==Alternative route==
+
+''If for some reason you don't want to kill the smelly hermit, you can do several quests for him instead.''
+
+You say, 'Do you have the Winds of Karana?'
+
+: a hermit says, 'So you seek the two song sheets? If you truly want them, you will help the cause of the Unkempt Druids. Otherwiset[sic], you would have to fight me for it. So, which will it be? Will you help the Unkempt Druids or will you fight me?
+
+''(this is why telling him you'll fight or kill causes him to attack)''
+
+You say, 'I will help the Unkempt Druids'
+
+: a hermit says, 'The Unkempt Druids are the voices of the trees and animals. We fight for the hunted prey and the vanishing forests. We are the true druids and rangers who fight for preservation of nature. If humanoid lives must be sacrificed to meet this goal, then so be it!'
+
+You say, 'I will help'
+
+: a hermit says, 'Wise decision. I ask you then, to go to the western plains of Karana. Seek a farmer named Linaya Sowlin. Bring me her heart. A heart for a song sheet. Fitting, don't you think?
+
+You have slain Linaya Sowlin!
+Jaggedpine Treefolk -50
+Protectors of Pine -12
+QRG Protected Animals -7
+Unkempt Druids +12
+Guards of Qeynos -7
+
+''Give her heart to a hermit.''
+
+: a hermit says, 'Good work, my friend! I thank you and the Unkempt Druids thank you. Unfortunately I have sold the other song sheet to a traveling bard of the plains. I believe her name was Cordelia. Now be on your way. Unless you plan to join the Unkempt Druids..?'
+
+''Receive page 2. Find [[Cordelia Minster]] in North Karana.''
+
+You say, 'Hail, Cordelia Minster'
+
+: Cordelia Minster says, 'Greetings! I am Cordelia, a traveling piper. I cannot play a tune for you, however, as my [flute] is gone.
+
+You say, 'What flute?'
+
+: Cordelia Minster says, I traded my flute to a hermit in the southern plains of Karana. I had a spare flute, but was taken from my by some bandits. If you could find this hermit and ask him for my flute back, I would be most appreciative.'
+
+''Back to a hermit.''
+
+You say, 'Do you have the flute?'
+
+: a hermit says, 'A flute, eh? I do have a flute from a bard named Cordelia. You can have it back if you do me a favor.'
+
+You say, 'What sort of favor?'
+
+: a hermit says, 'Oh! Will you? Well then, go into the Plains of Karana and search for a man named Talym Shoontar. He is a murderer of Norrath's creatures. He must be stopped! Bring me his head and you shall have your flute.'
+
+You have slain Talym Shoontar!
+Karana Residents -2
+Guards of Qeynos -1
+Priests of Life -1
+Knights of Thunder -1
+
+''Turn in Talym's head.''
+
+: a hermit says, 'What fine work you do! In the name of all Norrath's beasts and of the Unkempt Druids, I thank you. No longer will there be senseless slaughter. Here is the flute.'
+
+Unkempt Druids +20
+Guards of Qeynos -5
+Jaggedpine Treefolk -15
+QRG Protected Animals +10
+
+''Give flute to Cordelia.''
+
+: Cordelia Minster says, Why thank you, kind adventurer! Here is a little something to keep food in your belly. Now back to practice. La la la...
+
+League of Antonican Bards +5 (admin edit after doing quest)
+Knights of Truth +1
+Guards of Qeynos +1
+Ring of Scale -1
+Mayong Mistmoore -1
+
+''Now you have page 1 and 2. Give them to [[Vhalen Nostrolo]].''
+
+Vhalen Nostrolo says, 'Thank you, my friend. I have just completed the composition. It is a work of art. Here. Have a copy. I hope you have the musical talent to play it. If not... Practice, practice, practice!'
+League of Antonican Bards +30 (admin edit after doing quest)
+Knights of Truth +4 (added by admin after doing quest)
+Guards of Qeynos +4
+Ring of Scale -1
+Mayong Mistmoore -1
+
+==See also==
+* [[Unkempt Druids (Quest)]]
+
+[[Category:Quests]]
+[[Category:Southern Karana]]

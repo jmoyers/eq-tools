@@ -1,0 +1,59 @@
+{{Velious Era}}
+[[File:npc_a_storm_giant_architect.png|frame|a storm giant architect]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[a storm giant architect]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Paladin]], [[Ranger]], [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a geonid]], [[a geonid shaman]], [[Phenocryst]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Gigantic Kromzek Pick}}
+</li></ul>
+
+== Walkthrough ==
+
+''Works at dubious.''
+
+You say, 'Hail, a storm giant architect'
+
+: [[A storm giant architect]] says, 'Hmmm, I didn't know refuse could speak.  Are you here to annoy me or are you planning on making yourself useful, if the latter is even possible?'
+
+You say, 'I can make myself useful' 
+
+: A storm giant architect says, 'A feeble creature like yourself is near worthless. If you must insist on serving the mighty Kromzek then go to the caverns of the geonids and bring me four blocks of living granite so that I may perform some tests on its value as a resource in the expansion of Kael.'
+
+'''Geonid shaman drop a [[Block of Living Granite]]. Hand in four:'''
+
+: A storm giant architect says, 'So you proved to be of value after all, take this for your work. Don't let it go to your head.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive [[A Gigantic Kromzek Pick]].
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]
+[[Category:Ranger Quests]]
+[[Category:Paladin Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

@@ -1,0 +1,120 @@
+{{Classic Era}}
+[[File:npc_larn_brugal.png|frame|Larn Brugal]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Larn Brugal]]
+|-
+! ''' Minimum Level: '''
+| 9+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[orc weaponsmith]], [[Groflah Steadirt]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Groflah's Stoutbite}}
+</li></ul>
+
+==Quick Walkthough==
+''Amiable or higher faction is required.''
+
+# Go to Orc Camp 1 in EC, kill and loot [[Raw Short Sword 4]] from [[Orc Weaponsmith]]. Then go inside three tents to collect 3 Swords lying on the ground.
+# Go to West Freeport to the Arena and enter the building on the side to find Larn Brugal at -317,+58, give him the 4 raw swords and he will give you a raw sword back. [Say "I will get '''''our''''' shipment" if you want to deliver the ''optional'' Sealed letter.]
+# Trek to North Freeport and find Groflah's Forge (next to the bard building) and give [[Groflah Steadirt]] the raw sword (-15, +523 on the second level). You receive [[Groflah's Stoutbite]].
+
+== Walkthrough ==
+
+''This quest begins with Larn Brugal (Warrior GM) who is located in West Freeport Behind the Arena at -317.92, 58.29, -10.25''
+
+You say, 'Hail, Larn Brugal'
+
+: Larn Brugal says 'Good day to you, _____! I hope you yearn to become a Steel Warrior as we all are, here in the Bunker. We are in need of more recruits to continue the [war]'
+
+You say, 'What war is that?'
+
+: Larn Brugal says 'The war I speak of is the one we Steel Warriors have sworn to wage against [Clan Deathfist] in the Commonlands. We are doing a fine job, but we require more weapons. We are expecting a shipment of blades from Groflah's Forge. We require a warrior of the bunker to [get our shipment]. Maybe you.'
+
+You say, 'Who are Clan Deathfist?'
+
+: Larn Brugal says 'If you do not know of Clan Deathfist, go ask Cain who they are. He will not only tell you, he will sign you up to help fight our war!'
+
+You say, 'I will get your shipment!'
+
+: Larn Brugal says 'We would be most thankful for your service. Please take this voucher over to Groflah at Groflah's Forge. He will give you the shipment of weapons.'
+
+You receive a Sealed Letter which reads:
+
+ GROFLAH'S FORGE 4 - Raw Short Swords for stock
+ For The Bunker - Larn Brugal
+
+'''Travel to North Freeport and find Groflah Steadirt on the second floor of Groflah's Forge at location -15.33, 523.04, 17.75'''
+
+You say, 'Hail, Groflah Steadirt!'
+
+: Groflah Steadirt says 'Greetings, adventurer! Certainly a person who looks as hardened as yourself deserves a fine blade to match you prowess. Here at Groflah's Forge, we supply you with only the finest quality weapons.'
+
+'''Give him the Sealed Letter.'''
+
+: Groflah Steadirt says 'I am afraid I have some bad news, Steel Warrior. I had one of my workers take the raw blades out to be engraved by the Rivervale craftsmen. On his return, he was killed by the orcs in the Commonlands. The orcs now have the blades in their possession. I believe they have a camp nearby in the Commonlands. You may still be able to find all four blades within their camp and return them to Larn Brugal. Good Luck.'
+
+{{exp}}
+
+'''Travel to the East Commonlands to the first Orc camp. '''
+
+'''Three of the blades are found on the ground in the tents at Orc 1. The fourth is a rare drop from a Orc Weaponsmith also found at camp 1.'''
+
+For killing any of the Death Fist orcs in the commonlands, you receive the following faction hits:
+
+<div class="facblock">
+* Your faction standing with [[Death Fist Orcs]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+* Your faction standing with [[Commons Residents]] got better.
+</div>
+
+'''Once you have all four raw swords, return to Larn Brugal and give him the blades.'''
+
+: Larn Burgal says 'Good work, _____. The bunker shall be well stocked. Here you are, my friend. Take this raw blade. You can take it to Groflah - he will sharpen and polish it for you. It should be a formidable weapon.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better. (+20)
+* Your faction standing with [[Guards of Qeynos]] got better. (+5)
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse. (-3)
+* Your faction standing with [[The Freeport Militia]] got worse. (-3)
+* Your faction standing with [[Knights of Truth]] got better. (+5)
+</div>
+{{exp}}
+
+You receive 4 gold from Larn Brugal.
+
+'''You receive Reward Raw Short Sword.'''
+
+'''Return to Groflah's Forge with Reward Raw Short Sword and give it to Groflah.'''
+
+Groflah Steadirt says 'I heard you were on your way back. Here, then. Let us sharpen that blade for you. There you are. That should be much better in a fray now.'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+</div>
+
+{{exp}}
+
+You receive [[Groflah's Stoutbite]].
+
+[[Category:Quests]]
+[[Category:West Freeport]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,58 @@
+[[File:npc_sir_lucan_d`lere.png|frame|Sir Lucan D`Lere]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Sir Lucan D`Lere]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Message Intercept]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Alayle]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin (10 silver - 7 gold)
+</li></ul>
+
+== Walkthrough ==
+
+'''Upon giving Sir Lucan D`lere the note during the [[Message Intercept]] Quest.'''
+
+: Sir Lucan Dlere says, 'So I see you decided to bring me the message. Good. I would hate to have to hunt you down. It could have gotten really messy and I hate reading bloodstained messages. Well it seems Antonius Bayle and the Knights of Truth have begun an alliance. And it sounds as though I may have a traitor among my guards. If you wish to switch your allegiance to Freeport, then find me this traitor. Bring me his militia tunic. Try to keep the blood from staining it.' 
+
+'''The traitor's name is [[Guard Alayle]], and he is in the Freeport Militia House's backyard, underneath the deck. You may have to kill him several times before he will give you a tunic.'''
+
+'''Return the [[Slashed Militia Tunic]] to D'Lere. Dubious faction was sufficient for this turn-in.'''
+
+: Sir Lucan D`Lere says, 'So, it was Alayle!  He was of no importance to us.  He knew nothing.  I thank you for assisting the Freeport Militia.  My men shall keep an eye out for you.  Unfortunately, so will the Knights of Truth.  Might I suggest you spend less time in North Freeport?'
+
+<div class="facblock">
+* Your faction standing with Freeport Militia got better.
+* Your faction standing with Coalition of Tradefolk Underground got better.
+* Your faction standing with Knights of Truth got worse.
+* Your faction standing with Priests of Marr got worse.
+</div>
+{{exp}}
+
+You receive 7 gold from Sir Lucan D`Lere.
+
+== Experience Gain ==
+
+(green 99, 12/31/2022) For a level 12 Dark Elf Cleric, it gives 2-3% of xp bar per tunic.
+
+== Trivia ==
+Sir Lucan D`Lere sends [[Krazen Loosh]] to murder the traitor in the "good" version of this quest.
+
+
+[[Category:Quests]]
+[[Category:West Freeport]]

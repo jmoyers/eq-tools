@@ -1,0 +1,150 @@
+[[File:npc_renth_mclanis.png|frame|Renth McLanis]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Renth McLanis]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Frostbite]], [[Iceberg]], [[Basil]], [[Paglan]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Langseax}}
+</li><li> {{:Langseax of the Wolves}}
+</li></ul>
+
+== Walkthrough ==
+
+''This is the quest to obtain the Langseax or the Langseax of the Wolves.  You need at least Kindly with the [[Wolves of the North]] to start this quest.''
+
+Faction Note: This quest requires a secondary quest - [[Lion Meat Shipment Quest]] which can probably be done with much lower faction. You can also do this quest a bunch of times in one go by asking Misla for the lion meat multiple times. Take empty bags and do you can do the quest 50+ times in one trip, gaining +350 [[Wolves of the North]] faction. You can use this to boost your faction for the Langsaex quest and get plenty [[Lion Delight]] for [[Iceberg]].
+
+=== Quest Summary ===
+*Complete the Lion Meat Shipment quest to get Lion Delight.
+*Run to Iceberg, give Lion Delight, receive shirt. 
+*Run to Frostbite, give shirt, follow Frostbite to the criminal. 
+*Kill the criminal. 
+*Return criminal's head for Langseax.
+
+=== Part 1: The Story ===
+Go through the following steps to learn the story behind this quest.  However, it's unnecessary - you can skip it and go to Part 2.
+
+*Go to [[Renth McLanis]] in the tavern across from Mac's Kilts.  Ask him "What dangerous matter?".  He tells you of a crime.  Agree to hunt the murderer.  Renth then sends you to see Dok in Dok's Cigars.  Find out all you can about the crime. 
+
+*He tells you to go see the leader of Clan McMannus.  This is the fishing village located in West Karanas.  Speak to the leader.  Then speak to Ulrich McMannus and he tells you Frostbite can track prey if he has a piece of sweaty clothing.
+
+*Return to Dok and ask him "Where is the sweaty shirt?".  He then tells you he sold it to Tundra Jack.  Find Tundra Jack on the tundra of Everfrost.  He will tell you that Iceberg is using it for a collar and that you can distract [[Iceberg]] with his favorite meal, [[Lion Delight]].
+
+Short version: You need a [[Sweaty Shirt]] for Frostbite to track the murderer. The polar bear Iceberg, Tundra Jack's companion and very good boy, has the shirt. You need some [[Lion Delight]] to get the shirt.
+
+=== Part 2: The Sweaty Shirt ===
+
+*Go back to Halas and speak to [[Teria O`Danos]].  Do the [[Lion Meat Shipment Quest]].
+**If you want to do this quest multiple times - either to merge multiple [[Langseax]] or to get [[Langseax of the Wolves]] you can do a bunch of the Lion meat quests in one go to save time. Simply ask Misla for the lion meat shipment a bunch of times.
+**WARNING: Once you have Lion Delight, be sure to bury it lower in your container than your normal food to prevent it being eaten by you.
+
+*Take the Lion Delight to [[Iceberg]] and receive the [[Sweaty Shirt]] and a faction adjustment.
+**Iceberg can be found roaming the tundra of Everfrost, usually west of the river. He spawns at Tundra Jack's tower (2050,-3800) and immediately runs off to find Tundra Jack. However, if you wait at the tower, the two of them return to the tower frequently.
+***You can often find him stuck in pathing in front of the tower if you hop into a difficulty instance no one else is using, like D2 or D3.
+***After giving him the meat, he immediately respawns at the tower, making it easy to hand in the meat over and over and over for faction and more shirts if you plan to complete the quest multiple times.
+
+=== Part 3: The Murderers ===
+'''This step appears to be slightly broken on EQ Legends - giving Frostbite the shirt causes the murderer to spawn, but Frostbite will not track for you.'''
+
+*Return to the McMannus fishing village in West Karana and give the shirt to Frostbite. 
+
+If Frostbite responds to the shirt with "RUFF RUFF" something bugged and the murderer did not spawn. He should react to the shirt with "Frostbite takes a whiff of the sweaty shirt and barks".
+
+The murderer will be either [[Paglan]] or [[Basil]].  [[Paglan]] is tougher to kill and probably in his low to mid 20's, [[Basil]] is around level 20. Since Frostbite won't track for you it is recommended you just a loadout that includes a class with tracking.  You can try finding them on your own, they seem to spawn on the western side of the map, but then run up into the mountainous north/northeast area of the map.  Typically they pass through the area north of the Ogre shaman camp (area 18 on the [[West Karana]] map). Run speed buffs are also recommended.
+
+Give the head to Renth for faction, coin, and of course, the Langseax (if you have Basil's head) or the Langseax of the Wolves (if it is Paglan's head).  I am not sure what triggers which criminal you get or even if you can just kill both and get both heads, but it seems that you wil normally get Basil.
+
+=== Faction Adjustments ===
+
+When you complete the lion meat quest:
+
+* Shaman of Justice (+7)
+* Wolves of the North (+7)
+* Merchants of Halas (+10)
+* Rogues of the White Rose (+5)
+
+When you trick Iceberg and get the Sweaty Shirt:
+
+* Shaman of Justice (+5)
+* Wolves of the North (+5)
+* Merchants of Halas (+5)
+* Steel Warriors (+5)
+* Rogues of the White Rose (+5)
+
+When you kill Paglan or Basil:
+
+* Rogues of the White Rose (-5)
+
+
+(Stuff after this is unconfirmed for EQL)
+
+
+
+<s>When you turn in Paglan's or Basil's head for your reward:</s>
+<div class="facblock">
+<s>* Shaman of Justice (-1)
+* Wolves of the North (+1)
+* Merchants of Halas (-1)
+* Rogues of the White Rose (+1
+</s></div>
+
+<s>Faction adjustments overall:
+
+</s><div class="facblock">
+<s>* Shaman of Justice (+1)
+* Wolves of the North (+3)
+* Merchants of Halas (+1)
+* Steel Warriors (+1)
+* Rogues of the White Rose (-2)
+</s></div>
+
+
+Here are the quest completion texts, and the unquantified faction changes.
+
+Basil's Head
+
+Renth McLanis says, 'Nice work [YourName]! Basil has always been an outcast of sorts. I'm glad to see you were able to stop him. Here is a Langseax for your efforts.'
+* Your faction standing with WolvesoftheNorth got worse.
+* Your faction standing with ShamenofJustice got worse.
+* Your faction standing with MerchantsofHalas got worse.
+* Your faction standing with SteelWarriors got worse.
+* You gain experience!!
+* You receive 8 gold from Renth McLanis.
+
+OR Paglan's head
+
+* Renth McLanis says, 'Incredible!!  We'd heard Paglan was killed attempting to cross an ice floe!!  It appears his escape was for naught.  Ye've earned something greater than a mere Langseax.  Ye've earned the Langseax o' the Wolves.  Tis an enchanted weapon meant for a warrior's skill only.  The Tribunal will watch over ye.'
+* Your faction standing with WolvesoftheNorth got worse.
+* Your faction standing with ShamenofJustice got worse.
+* Your faction standing with MerchantsofHalas got worse.
+* Your faction standing with SteelWarriors got worse.
+* You receive 4 platinum pieces from Renth McLanis.
+* You gain experience!!
+* You receive 8 gold from Renth McLanis.
+
+
+
+Be warned that the Halas Banker is part of the Rogues of the White Rose, so you may lose banking privileges if you lose too much of that faction.
+
+''Need all dialogues, current faction hits, /loc of quest mobs, additional quest items, quest mobs, details to get both Langseax and Langseax of the Wolves.''
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Warrior Quests]]

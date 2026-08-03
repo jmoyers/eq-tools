@@ -1,0 +1,69 @@
+{{Temple Era}}
+[[File:npc_joyce.png|frame|Joyce]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Joyce]]
+|-
+! ''' Minimum Level: '''
+| 28
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[Lake Rathetear]], [[Upper Guk]]
+|-
+! ''' Related NPCs: '''
+| [[a froglok tonta knight]], [[a glyphed guard]], [[a stone skeleton]]
+|}
+
+==Checklist==
+
+{{CheckboxList}}
+*[[Stone Marker]] from [[a glyphed guard]] in [[Mistmoore]]
+*[[Heart of Stone]] from [[a stone skeleton]] in [[Lake Rathe]]
+*[[Soiled Boots]] from [[a froglok tonta knight]] in [[Upper Guk]]
+*[[Cat's Eye Agate]]
+{{end}}
+
+== Reward ==
+
+<ul><li>  {{:Earthen Boots}}
+</li></ul>
+
+== Walkthrough ==
+''[[Joyce]] can be found at (433, 77) in the [[Temple of Solusek Ro]].''
+
+You say, 'Hail, Joyce'
+
+: Joyce says, 'I am Joyce of the Temple of Solusek Ro. I am the guardian of four of the items of the elementalist. If you are a magician, ask me about the [Robe of the Elements], the [clay bracelet], the [earthen boots] or the [Circlet of Mist].'
+
+You say, 'What are earthen boots?'
+
+: Joyce says, 'Earthen boots are a fine adornment for the feet of any magician. They have a wonderful brown color, and are known to enhance the stamina of any magician who wears them. As an added bonus, animals tend not to notice those who wear earthen boots. Are you [interested] in the [boots]?'
+
+You say, 'I am interested in the boots.'
+
+: Joyce says, 'I will cobble you a pair of earthen boots, but you will need to bring me the proper components. I need a Stone Marker from a glyphed guard in Castle Mistmoore, a Heart of Stone from the stone skeleton near Lake Rathe, Soiled Boots from a froglok tonta knight in the caverns of Guk and a Cat's Eye Agate. Bring me these four items, and I will cobble you a pair of earthen boots.'
+
+'''Hand Joyce the [[Stone Marker]], [[Heart of Stone]], [[Soiled Boots]], and [[Cat's Eye Agate]].'''
+
+: Joyce says, 'Marker, heart, boots and gem. All four items that I need to cobble earthen boots for you. Well done! Take these boots, and may they serve you well!'
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Notes == 
+
+* The Invis vs Animals effect of this item will force your pet to "Go Away"
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]

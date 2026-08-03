@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_tarker_blazetoss.png|frame|Tarker Blazetoss]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Southern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[Tarker Blazetoss]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a black wolf]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bandages}}
+</li><li> {{:Copper Band}}
+</li><li> {{:Rusty Dagger}}
+</li><li> [[Numbing Cold|Spell: Numbing Cold]] 
+</li><li> {{:Worn Great Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tarker Blazetoss]] is at location 507, -408, -1 in the Wizard's Guild.''
+
+You say, 'Hail, Tarker Blazetoss'
+
+: Tarker Blazetoss says, 'Hail and well met, ______! Have you come to study, or can you [perform a task] for me this day?'
+
+You say, 'I can perform a task'
+
+: Tarker Blazetoss says, 'That is the spirit. There are many black wolves wandering Faydark these days. One of my brethren needs a black wolf skin as a component for his magic. Bring me a black wolf skin, and I shall reward you for your efforts.'
+
+'''Hand [[Tarker Blazetoss]] a [[Black Wolf Skin]]. One at a time, as he seems to eat any more beyond the first for no reward.'''
+
+: Tarker Blazetoss says, 'Ah yes. This is exactly what I need. Thank you very much.'
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Southern Felwithe]]
+[[Category:All Classes Quests]]

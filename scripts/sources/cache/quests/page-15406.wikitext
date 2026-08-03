@@ -1,0 +1,62 @@
+{{Classic Era}}
+:''For the overview of the many orc belt quests, see [[Orc Belt Quests]].''
+[[File:npc_deputy_budo.png|frame|Deputy Budo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Misty Thicket]]
+|-
+! ''' Quest Giver: '''
+| [[Deputy Budo]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Legionnaire (Deathfist)]], [[Orc Centurion (Deathfist)]], [[Orc Pawn (Deathfist)]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], [[Tagglefoot Tingle Drink]] and nominal coin 
+</li></ul>
+
+== Walkthrough ==
+
+Note: This can be turned in at Dubious. Watch out for Roaming Ela Foodcrafter, it seemed as an iksar I got to dubious with Guardians of the Vale long before Storm Reapers who were threatning, red con at 40 she had a large aggro radius and cast dispell.
+
+Deputy Budo is located (-256, 561) in the first tower south of the opening in the wall.
+
+You say, 'Hail, Deputy Budo'
+
+: Deputy Budo says 'Hail, ______.  I am Deputy Budo Bullnose, the squad leader of the Great Wall Patrol.  Be very careful in the lands beyond the wall.  They are filled with dangerous beasts, as well as Clan Runnyeye.'
+
+Deputy Budo no longer responds to any further text, if you hand him a [[Deathfist Slashed Belt]] you receive:
+
+: Deputy Budo says 'Grand work, Deputy _____! You will become a full-fledged deputy in no time. You should check in with [[Marshal Ghobber]] from time to time to see if you have earned your squad ring. Just go up to him and ask, 'Am I one with the Wall?' He will know, but you must first show your bravery in many battles against the goblins.'
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got better.
+* Your faction standing with [[Mayor Gubbin]] got better.
+* Your faction standing with [[Storm Reapers]] got better.
+* Your faction standing with [[Merchants of Rivervale]] got better.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+</div>
+
+{{exp}}
+
+* 4.76% exp for 7 Halfling Druid [21 hand ins = ~100%]
+* 3.46% exp for 8 Halfling Druid [13 hand ins = ~45%]
+* ~3% exp for 9 Halfling druid
+* ~1.6% exp for 11 High Elf enchanter [27 hand ins =  ~45%]
+
+You receive 9 gold from Deputy Budo and a [[Tagglefoot Tingle Drink]]. Make sure to hand belts in individually. You get 9 gold regardless the number of belts you give him.
+
+[[Category:Quests]]
+[[Category:Misty Thicket]]
+[[Category:All Classes Quests]]

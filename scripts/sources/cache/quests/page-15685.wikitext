@@ -1,0 +1,200 @@
+{{Velious Era}}
+
+[[File:npc_lawyla.png|frame|Lawyla]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Lawyla]]
+|-
+! ''' Minimum Level: '''
+| 60
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| [[A Kromzek Spy]], [[Derasinal]], [[Draazak]], [[Entariz]], [[Ionat]], [[Jualicn]], [[Noble Helssen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Hsagra's Wrath|Spell: Hsagra's Wrath]]
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* Kill [[A Kromzek Spy]] and loot [[Head of a Kromzek Spy]]
+* Kill [[Noble Helssen]] and loot [[Scale of Hsagra]]
+* Obtain [[Jualicn's Token]] and [[Lexicon of Relinar]] from [[Jualicn]]
+** Obtain [[Rune of Revenge]] from [[Ionat]] by giving [[Jualicn's Token]]
+** Obtain [[Rune of Eradication]] from [[Entariz]] by giving [[Jualicn's Token]]
+** Obtain [[Rune of Concentration]] from [[Draazak]] by giving [[Jualicn's Token]]
+** Obtain [[Rune of Bleve]] from [[Derasinal]] by giving [[Jualicn's Token]] ('''NOTE:''' Do this turn in last, you don't get the token back)
+* Create [[Teachings of Relinar]] by combining the runes of [[Rune of Revenge|Revenge]], [[Rune of Eradication|Eradication]], [[Rune of Concentration|Concentration]], and [[Rune of Bleve|Bleve]] in [[Lexicon of Relinar]]
+* Hand Lawyla the [[Head of a Kromzek Spy]], the [[Scale of Hsagra]], and the [[Teachings of Relinar]]
+
+== Walkthrough ==
+
+The Quest starts at Lawyla, a wurm found at the top of skyshrine very near Yelinak. You must be of amiably or higher faction in order to do this quest.
+
+You say, 'hail Lawyla'
+
+: Lawyla says 'Hail and well met Ninan . I can see by your appearance that you are well traveled. I congratulate you on your thirst for adventure as you are obviously far from where you call home. Would you happen to study the art of Sorcery? 
+
+You say, 'yes, i study the art of sorcery'
+
+: Lawyla says 'Then I believe you would be interested in hearing of the sad tale of our beloved Hsagra. Many years ago, Hsagra was slain by the wicked Kromzek Porlos. Unfortunately, Porlos found out that Hsagra
+had discovered a new magic that was extremely powerful against the Giants. Hsagra was the mate of Yelinak.  You might have heard the tale of Yelinak, for he still
+lives with the terrible memory of the horrid day that he lost his wingmate. The Giants even have the gaul to have made the throne of King Tormax out of the skull of Hsagra. Do you wish to avenge Hsagra after what I
+have told you? 
+
+You say, 'i wish to avenge hsagra'
+
+: Lawyla says 'The Kromzek have been a bane upon our very existence for far too long. If you wish to aid our cause, I will need proof of your devotion and allegiance. We will not waste our time educating anyone who does not have our best interests at heart. The journey will prove very dangerous both to you as well as whom you choose to accompany you. After knowing this, do you still want to prove your allegiance? 
+
+You say, 'yes, i wish to prove my allegiance'
+
+: Lawyla says 'Before I divulge the secret behind the sorcery against the Kromzek, I require three items from you, and you alone. Please also keep in mind I will need to combine these 3 items together, so I will not accept them individually. First, we must start out with the teachings of Relinar, for it is necessary in recreating the magic against the vile giants. Our lorekeeper is one you must seek out to acquire those teachings, He resides within the confines of our dwelling. 
+
+You say, 'who is the lorekeeper'
+
+: Lawyla says 'Jualicn is the one that you seek. Ask him of Relinar and he will guide you in acquiring the teachings of our Relinar who rediscovered the lost magic that once belonged to Hsagra. Once you have all of the items in hand that are needed to recreate this powerful spell, come back and we will continue this discussion then. Until that point, our business here is done. May you be blessed in your efforts to assist in the annihilation of the Kromzek. 
+
+Jualicn is the dragon we passed just before Lawyla.
+
+You say, 'hail Jualicn'
+
+Jualicn says 'Why hello there Ninan . I do not see many that pass through these chambers unless they are trusted. What brings you before me today?  
+
+You say, 'i wish to acquire the teachings of relinar'
+
+Jualicn says 'In order to receive the teachings, you need to gather four runes from the descendants of Relinar. Each descendant of Relinar has one of the four runes. You will find them where they stand six abreast in the wasteland. However in order to know that you have my blessing you must present them with a treasure that they would know came from me. 
+
+You say, 'treasure'
+
+Jualicn says 'I do have an ancient token that I have carried with me for quite some time. It is very special to me, but if you have been sent here by Lawyla then you must be worthy, for she is quick to see through the lies that some believe will gain them admittance to our halls. Please take this and present it to each of the descendants so that they will know you are truthful when you say that you were sent by me. 
+
+You now have the Jualicn token.
+
+You say, 'who are descendants of relinar'
+
+Jualicn says 'Another Wizard joining our ranks? Excellent. Listen closely Ninan . I will give you the Lexicon of Relinar, a great and well remembered Sorcerer whose teachings are necessary in constructing a spell that is very powerful against the Giants. I will give you his ancient lexicon which can harness his teachings if you can carry this large tome. You may need to rearrange your belongings. Are you ready to receive the Lexicon? 
+
+You say, 'i am ready to receive the lexicon'
+
+Jualicn says 'Combine the four in this lexicon and you will then have the teachings of Relinar. After you have done this, you are required to speak again with Lawyla about the problems we are having of late with
+Kromzek spies. 
+
+You will now be given back the Jualicn Token and you will also receive a Lexicon of Relinar (be sure to have one main slot empty in your inventory because the the lexicon is a container.. therefore it won't fit in another container). 
+
+Now go back to Lawyla -
+
+You say, 'what problems with Kromzek spies?'
+
+: Lawyla says 'Hello again Ninan . I see that you have spoken to Jualicn. We have been having problems with spies in this area. I require three items in order to recreate the magic necessary to scribe the spell. I need the [[Head of a Kromzek Spy]], the teachings of Relinar, and finally a scale from Hsagra. In order for the magic of Hsagra to work, we must have some of her remains to complete the components. It is rumored that high ranking Giant Noble that goes by the name [[Noble Helssen|Helssen]], treasures a scale that came from the body of Hsagra herself. But I believe you will have to kill him in order to take the scale away from him. He resides in the Giant City with the other vile creatures. Bring it to me along with the head of the spy and the Teachings of Relinar and we will conclude our dealings. 
+
+Now move to Western Wastes, the dragons guard the entrance to Temple of Veeshan and find Ionat (loc +195.00, +1557.00).
+
+You say, 'hail Ionat'
+
+Ionat says 'Hello Ninan . It is good to see that you have traveled so far to be in my presence. I do believe that you are the one chosen to aid us in our fight against the Giants. If you are then I am sure that you will need my rune for your research. 
+
+Give Ionat the Jualicn token -
+
+Ionat says 'Take this Rune of Revenge Ninan . You will need it to extract retribution in remembrance of our dear Hsagra. I thank you for your contributions to our cause, It is good to have you amongst our ranks.  
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You now have from Ionat, a Rune of Revenge as well as the Jualicn Token. Go find Entariz in Western Wastes (loc +343.00, +1191.00)
+
+You say, 'hail Entariz'
+
+Entariz says 'Greetings Ninan . I have heard that one is amongst us in the lands which will aid us in our cause. If you are the one that seeks my ancient rune for your studies please make sure it is not used in vain. I do not talk to many that pass through here and I feel in my heart that it is you that shall help us. 
+
+Give Entariz the Jualicn token -
+
+Entariz says 'Ah of course Ninan . You will need a Rune of Eradication for your lexicon. We are counting on your loyalty. Remember that you will need to bring the teachings of Relinar to Lawyla for further instructions, as she requires them to pass on the magic to those worthy of it. I bid you farewell Ninan
+. 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You will get a Rune of Eradication as well as the Jualicn Token. You now need to find Draazak in Western Wastes (loc +859.00, +65.00)
+
+You say, 'hail Draazak'
+
+Draazak says 'Greetings Ninan . It cannot be that you would present yourself before me without reason. What brings you to these lands on this day? Please be quick for I have many ancient runes I must study. 
+
+Give Draazak the Jualicn token -
+
+Ninan , which Relinar found to be necessary for the success of the magic against those foul Giants. I present this to you with faith that you are trusted amongst us or you would not have been sent to me. Make haste so that no time is wasted in extracting revenge for their past transgressions. 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You now have gotten back the Jualicn Token as well as the Rune of Concentration. Now find Derasinal in Western Wastes (loc +872.00, -486.00)
+
+You say, 'hail Derasinal'
+
+Derasinal says 'It is not often that I see strangers in these dangerous lands. Perhaps you are the chosen that Jualicn speaks of that will aid us in our battle against the foul Giants. I do not believe you would be here if you were not in need of my sacred rune.
+
+Give Jualicn token
+
+Derasinal says 'I have given you the Rune of Bleve, to assist you in your research for the once lost magic against the Kromzek. I hope that you can make good use of it for it is very sacred to me. May Veeshan guide
+your path! 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You now have all four runes. Put the runes into the Lexicon of Relinar and combine.
+
+Now you have the Teachings of Relinar, it now fits inside a container.
+
+So you just have to kill now Noble Helsson in Kael, found next to Wenglawks in the Noble building.
+
+He cons yellow to Lvl 53, so his lvl is max 55. We took him down with one group, Monk58, Rogue56, Paladin53, Cleric56, Druid57, Wizard60. He dropped a scale of Hsagra.
+
+Back to Skyshrine, we moved up again very high and found the Kromzek Spy on the icy path before Jualicn at loc 1413,2465,-37. He cons yellow again to lvl 53, so again max lvl 55. The icy path is tricky, so keep in mind to have levitation or dead man floating on.
+
+a kromzek spy says 'Your bones will be crushed by the Kromzek of Kael Drakkel! 
+
+He is slowable and hits for 202. We took him down with the same group. He dropped the head of a kromzek spy.
+
+Now moved the short way to Lawyla and handed over the three pieces from the quest (head, scale, teachings).
+
+: Lawyla says 'Ninan . You are to be commended for your valor and determination in assisting my Kin. Here is the spell that Hsagra died so long ago over. I only ask that each time that you use the sorcery here, that you remember Hsagra in a silent prayer of thanks. For I hope that will help ease Yelinaks still tormented soul from his loss. I bid you farewell. You are welcome amongst our ranks. 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better.
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{exp}}
+
+You get in return, the level 60 spell, [[Hsagra's Wrath]].
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Wizard Quests]]

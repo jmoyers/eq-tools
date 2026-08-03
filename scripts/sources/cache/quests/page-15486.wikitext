@@ -1,0 +1,102 @@
+{{Classic Era}}
+{{Disambig3|[[Orc Runner (Felwithe)]]}}
+[[File:npc_dill_fireshine.png|frame|Dill Fireshine]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Dill Fireshine]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Bard]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[orc runner]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Longbow}}
+</li><li> {{:Rusty Short Sword}}
+</li><li> {{:Rusty Spear}}
+</li><li> {{:Rusty Two Handed Sword}}
+</li><li> {{:Tarnished Bastard Sword}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest follows [[Orc Hatchets]] given by [[Dill Fireshine]], located at -434, 524, 118 in the Faydark's Champions ([[Ranger]]) Guild Hall.''
+
+You say, 'What Crushbone allies'
+
+: Dill Fireshine says, 'It seems the orcs have allied themselves with the wicked Teir'Dal. We know of this through reports of a Teir'Dal presence within Crushbone. We must [intercept the Crushbone runners] and find a reason for their union.'
+
+You say, 'I will intercept the Crushbone runners'
+
+: Dill Fireshine says, 'Go to the Butcherblocks. You stand a greater chance of finding the runners there. I shall pay a bounty for all returned runner pouches.'
+
+'''The [[orc runner]] spawns every 23 minutes at -1121, -2843, 0 near the zone line into [[Greater Faydark]] where he will run west along the road until meeting his demise at the hands of, [[Guard Mandin]] and [[Guard Zyburr]], the two dwarf guards at -968, 6, 0.'''
+ 
+'''Loot [[a Sealed Letter]] and the [[Runner Pouch]] from the slain [[orc runner]].'''
+
+<div class="facblock">
+* Your faction standing with [[Crushbone Orcs]] got worse.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+'''Hand [[Dill Fireshine]] the [[Runner Pouch]].'''
+
+: Dill Fireshine says, 'Good work. We shall cut off correspondence between these two. It is for the best. Remember, if you find any notes to Neriak from the ambassador in Crushbone, give them to me.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 12 copper pieces.
+(Another data point) You receive 4 gold, 4 silver, 9 copper pieces, and a [[Rusty Two Handed Sword]].
+
+'''Hand [[Dill Fireshine]] [[A Sealed Letter]].'''
+
+::''A Sealed Letter reads:''
+
+::<code>King Naythox Thex, Continue with your plans to exile the inept Ogres. Emperor Crush has agreed to aid us in our wars. He will require the help of the Indigo Brotherhood to rid him of the traitorous Deathfist Clan of Orcs in the Eastern Antonican region. We shall also continue our supply of arcane knowledge to their agent in Freeport. Ambassador D'Vinn Crushbone Region</code>
+
+: Dill Fireshine says, 'Yes. A recent report has proven this to be true. An evil alliance has been made. We shall soon need many more experienced adventurers such as yourself. For now, take this reward and strengthen your skills.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 platinum, 15 silver pieces.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

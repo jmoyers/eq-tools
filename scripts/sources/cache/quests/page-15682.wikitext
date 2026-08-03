@@ -1,0 +1,82 @@
+{{Classic Era}}
+[[File:JinkusFelligan.png|alt=Jinkus Felligan, shaman guildmaster of Halas|thumb|Jinkus Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Jinkus Felligan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Cindl]], [[Eracon Krengon]], [[Greta Terrilon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Initiate Symbol of the Tribunal}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Jinkus Felligan]] is located inside the Temple of the Tribunal in Halas (/loc 315, 444).<blockquote>You say, 'Hail, Jinkus Felligan'
+
+Jinkus Felligan says, 'Welcome! Welcome to the Church o' the Tribunal! Do ye require healing or are ye [new to the Shamans o' Justice], then, eh?'
+
+You say, 'I am new to the shamans of justice.'
+
+Jinkus Felligan says, 'Then I welcome ye into our noble order. Ye'll serve us well or spend an eternity in the dungeons o' the Tribunal. Are ye willing to [contribute to our church] or did ye just come to meditate within our walls?'
+
+You say, 'I am ready to contribute to yer church.'
+
+Jinkus Felligan says, 'Ye'll help all o' Halas by doing the bidding o' the church. Go to Holana. Tell her [Jinkus sent] ye to assist her. She'll have worrk for ye. Perhaps, if ye're planning on passing near Qeynos, ye can [make a delivery] as well?'
+
+You say, 'I will make a delivery.'
+
+Jinkus Felligan says, 'The Church of the Tribunal works with the Qeynos Guards to apprehend fugitives. There's a new criminal on the loose, so we must send a wanted poster to Qeynos for them to display on the walls of their bank. Speak with Cindl about a piece o' mammoth hide parchment and with Greta about some ink and I'll prepare the bounty poster.'</blockquote>
+
+
+[[Cindl]] is located behind the counter inside Mac's Kilts (/loc 271, -172). '''(Note: You can start the quest here, if you so choose.)'''<blockquote>You say, 'I need a mammoth hide parchment.'
+
+Cindl says, 'Jinkus must've sent ye fer some more mammoth hide parchment fer his posters. Here, take it, free o' charge, as a donation to the church and to the will o' the Tribunal as well.'</blockquote>'''''Cindl hands you a [[Mammoth Hide Parchment]].'''''
+
+
+[[Greta Terrilon]] is located close to the oven outside McDaniels Smokes & Spirits (/loc 280, -327).<blockquote>You say, 'I need some ink.'
+
+Greta Terrilon says, 'On an errand for Jinkus eh? No - no money, consider this a donation to the church.'</blockquote>'''''Greta hands you a [[Vial of Datura Ink]].'''''
+
+
+Return to Jinkus Felligan and hand him the vial of ink and the parchment.<blockquote>Jinkus Felligan says, 'This is what I needed, thank-you. Your next task is to take this wanted poster to Dun at the bank in Qeynos. Go quickly, this is important'</blockquote>
+
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Circle Of Unseen Hands|Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+* Your faction standing with [[Ebon Mask]] got worse.
+
+
+Next, make the run through Everfrost Peaks, Blackburrow, Qeynos Hills, North Qeynos, and finally, to the bank in South Qeynos. Just outside the bank, you'll meet [[Dun]], a barbarian guard (/loc 320, -453).
+
+Hand Dun the Wanted Poster.<blockquote>Dun says 'Tis good that Jinkus has sent you with this poster. There has been talk of a northman fugitive in the city. Take this list back to Jinkus so that our brethren in Halas are aware of the many criminals that have fled Qeynos and are still at large.'</blockquote>'''''Dun hands you a [[List of Qeynos Most Wanted]].'''''
+
+
+Finally, return to Jinkus Felligan in Halas and hand him the List of Qeynos Most Wanted.<blockquote>Jinkus Felligan says, 'Great work, Soandso You will be a welcome addition to our rolls. Take this as a token of your new status.'</blockquote>
+
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Rogues of the White Rose|Rogues of the White]] Rose got worse.
+
+You receive your [[Initiate Symbol of the Tribunal]].
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Shaman Quests]]

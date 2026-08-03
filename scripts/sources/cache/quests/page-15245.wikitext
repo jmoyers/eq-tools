@@ -1,0 +1,76 @@
+{{Classic Era}}
+[[File:npc_geeda.png|frame|Geeda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Geeda]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Kelynn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Scouts Cape}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Geeda]] is located at -566, -145, 161 behind the Scouts of Tunare ([[Rogue]]) Guild Hall.''
+
+You say, 'Hail, Geeda'
+
+: Geeda says, 'Are not the woods of the Faydarks a lovely sight? Tunare has truly blessed us. It is unfortunate that the orcs of [Crushbone Citadel] have chosen to invade our lands.'
+
+You say, 'What Crushbone Citadel'
+
+: Geeda says, 'Within the Greater Faydarks can be found the entrance to Crushbone Citadel, home of the orcs. They have increased their raids on our lands. We do not know why. The High Elder of Kelethin has instructed us to keep tabs on the orcs' movements. Hmmm.. How would you like to [assist the scouts]?'
+
+You say, 'I will assist the scouts'
+
+: Geeda says, 'We trust this operation to high standing rogues of the Scouts of Tunare. Easy it may be, but the reward is a scout cape. The scout cape is meant for Scouts of Tunare only. Have you [contributed to the Scouts' cause]?'
+
+You say, 'I have contributed to the Scouts' cause'
+
+: Geeda says, 'So we have heard. Here, then. Take this coin. Venture into Crushbone and find our scout, Kelynn. He is posing as a slave to gain information. He tries to work very close to an opening in a cave near the moats. Find this point and wait for him to appear. Give him the coin and he shall give you the information you are to return to me.'
+
+'''You receive a [[Useless Token]] from [[Geeda]]. Find [[Kelynn]] within the slave mines of [[Crushbone]] at location 3, 388, -14. [[Kelynn]]'s placeholder is a random, unnamed slave or an [[orc slaver]].  Respawn time is 10 minutes.'''
+
+You say, 'Hail, Kelynn'
+
+: Kelynn says, 'What are you doing here?!! Get out before you find yourself mining for these wretched beasts!'
+
+'''Hand [[Kelynn]] the [[Useless Token]].'''
+
+: Kelynn says, 'You were sent by Geeda!! Here. Take the information. Maybe next you shall earn your [Scout Blade] from Laren. Quickly!! Leave at once!!'
+
+'''You receive a [[Sealed Note]] from [[Kelynn]]'''
+
+'''Return to [[Geeda]] and hand her the [[Sealed Note]].'''
+
+: Geeda says, 'Fine work. We are very grateful. Take this Scout Cape. May you use it to serve Kelethin.'
+
+<div class="facblock">
+* Your faction standing with [[Tunare's Scouts]] got better.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Scout Blade]]
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Rogue Quests]]

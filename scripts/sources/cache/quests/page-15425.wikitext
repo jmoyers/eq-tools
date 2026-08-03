@@ -1,0 +1,60 @@
+{{Classic Era}}
+[[File:npc_manik_compolten.png|frame|Manik Compolten]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Manik Compolten]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[rogue clockwork]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+''[[Manik Compolten]] ({{loc|Ak'Anon|902, -470|map}}) is found in the [[Gem Choppers]] guild hall in [[Ak'Anon]]. Note: this quest can be done with apprehensive faction. ' '''As on 23rd May 2023 my Woodelf ranger did NOT get the quest at apprehensively. Best you try to trigger the dialogue and you'll see if it's doable.'''
+'''As of 3/27/2025, my Halfling Druid could not get the quest at indifferent, but he did give the reward.'''
+
+You say, 'Hail, Manik Compolten'
+
+: Manik Compolten says, 'Greetings, young one. I am Manik Compolten, High Watchman. Are you a [new warrior] or an [experienced fighter]?'
+
+You say, 'I am an experienced fighter' (Note: answering 'I am a new warrior' will start the [[Series C Black Boxes]] quest.)
+
+: Manik Compolten says, 'Good.  I require your talents to destroy rogue clockworks.  After we sent the clockworks to destroy the Asylum of the Mad we found some of the clockworks went haywire and never returned.  We must destroy them, not for the safety of the people, but to keep our technology from falling into the hands of any other nation. Go to the [[Steamfont Mountains]] and return their rogue blackboxes to me.'
+
+'''He wants [[Rusted Blackbox|rusted blackboxes]], found on [[rogue clockworks]].'''
+
+'''Hand him two rusted blackboxes:''' (Attention, at aprehensive faction as an erudite necro, he ate my blackboxes and i didnt get credit for the turn-ins, i imagine you need to be at least indifferent for this quest to work)
+
+: Manik Compolten says, 'Excellent work. You were born to be a warrior. Here is a little bonus for the good job.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[Clan Grikbar]] got worse.
+* Your faction standing with [[Dark Reflection]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 1-2 gold, 3 silver, 1 copper pieces.
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,68 @@
+{{Kunark Era}}
+[[File:npc_slixin_klex.png|frame|Slixin Klex]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Burning Woods]]
+|-
+! ''' Quest Giver: '''
+| [[Slixin Klex]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Dreadlands]], [[Trakanon's Teeth]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[rotting skeleton]], [[Pained Soul]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Medallion of the Obulus}}
+</li></ul>
+
+== Walkthrough ==
+
+<ul><li>  Part of the [[Sebilis and Veeshan's Peak Key Quest | Rune of Scale (Key to Veeshan's Peak)]]
+</li></ul>
+
+
+Slixin Klex is located at -681.59, -1120.76, -559.74. He is a level 50 skeleton and is indifferent to both good and evil races. He wants three medallion pieces:
+
+Ask him "what burning of the land?"
+
+: Slixin Klex says 'Fiery death from the sky. Rock and fire burning our lands. Death and destruction splintering our tribe. Once strong we were but the fiery rocks from the sky crushed our proud cities and weakened our tribe." 
+
+Ask him "what tribe?"
+
+: Slixin Klex says "Obulus was our peoples. The hills and trees were our lands. We tamed the dark and wilds and bent the forests to our needs. But all is gone, all our peoples, all our works, even the medallion that was the symbol of our power." 
+
+Ask him "what medallion?"
+
+: Slixin Klex says "Medallion of the Obulus. Symbol of our proud peoples. Broken into pieces long lost to the dark forests now. I know where they are now but I am no longer flesh. If I were I would find them to bring them back together." 
+
+Ask him "what pieces?" 
+
+: Slixin Klex says "Hhhhh. Three pieces there are. One sits in the hands of Sselot though he knows its purpose not. Another sits upon an iksar ghost in Trakanons. The last is held by a long rotted iksar skeleton in the Dreadlands. Bring them all here and I may be able to unite them again. Perhaps this will even free me from my torment or not."
+Remember that there are three separate medallions in the game, each broken into three peices that just say a piece of broken medallion when you find it. You need to identify the piece of medallion you find to determine which one it is. 
+
+Obtain the three pieces:
+
+* '''Upper Portion''': Given to you by [[Ssolet Dnaas]], who spawns in the island in [[Warsliks Woods]]. You must do the [[Burnished Wooden Staff Quest]] to get it.
+* '''Middle Portion''': Drops off a [[rotting skeleton]] at approximately loc 2250, -5140 in the [[Dreadlands]] 6 minute 40 second respawn.
+* '''Bottom Portion''': Dropped by the [[Pained Soul]] in [[Trakanon's Teeth]], Near the entrance to Old Sebilis. 1% @ (-1834, -4368)
+
+
+Return them to Slixin. (This turn-in may be MQable.)
+
+: Slixin Klex says, 'Ssssss. I thought I would never see these. I never thought the symbol of our people would be made whole again. I feel no rest for my sssoul though. My torment still flows as freely as when my peoples first suffered fiery death. I need this not. It is useless to me. Here, you take it. Maybe you can find some good to do with it.'
+
+You obtain the [[Medallion of the Obulus]], which is one of three medallions needed for the [[Rune of Scale Quest]] Quest to get into [[Veeshan's Peak]]. 
+
+[[Category:Quests]]
+[[Category:Burning Woods]]
+[[Category:All Classes Quests]]

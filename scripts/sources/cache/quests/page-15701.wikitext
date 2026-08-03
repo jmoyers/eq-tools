@@ -1,0 +1,77 @@
+{{Luclin Era}}Added in early Luclin.[[File:npc_trooper_vaurk.png|frame|Trooper Vaurk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Quest Giver: '''
+| [[Trooper Vaurk]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[a lead explorer]], [[an explorer]]
+|}
+
+== Reward ==
+
+* None
+
+== Walkthrough ==
+
+Speak with Trooper Vaurk in the Lake of Ill Omen, about halfway bewteen Cabilis and the lake shore, at loc 4575.60, -3095.45.
+
+You say, 'Hail, Trooper Vaurk'
+
+: Trooper Vaurk says 'Have you been sent by the War Baron to [assist]?  The explorers from Firiona Vie draw closer. '
+
+You say, 'i am here to assist'
+
+: Trooper Vaurk says 'That is good, I will stay here to halt any advances.  Head out near the lake and destroy the trespassers on our land!  Bring me four of their knives that they carry for survival.  Prove your allegiance to the Legion of Cabilis. '
+
+Not far from Trooper Vaurk is a large yellow tower, which was previously uninhabited. It is now occupied with about 6 explorers and a lead explorer.
+
+The explorers were extremely green to a level 51, had about 600 hit points.
+
+You have slain an explorer!
+<div class="facblock">
+* Your faction standing with [[Firiona Vie]] got worse.
+* Your faction standing with [[Emerald Warriors]] got worse.
+* Your faction standing with [[Storm Guard]] got worse.
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Pirates Of Gunthak]] got better.
+</div>
+
+The lead explorer was a paladin, LoHed himself, and took quite a bit more killing, although still a pushover for a 51 warrior.
+
+You have slain a lead explorer!
+<div class="facblock">
+* Your faction standing with [[Firiona Vie]] got worse.
+* Your faction standing with [[Emerald Warriors]] got worse.
+* Your faction standing with [[Storm Guard]] got worse.
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Pirates Of Gunthak]] got better.
+</div>
+
+'''The explorers dropped ringmail armor, food items, and the occasional [[Explorer Survival Knife]] (stackable). Give the knives to Trooper Vaurk:'''
+
+: Trooper Vaurk says 'Great work, the Legion of Cabilis will not soon forget your dedication.  The trespassers shall all be dealt with. '
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+{{YouGainExperience}}
+
+Need required faction level and name required to get quest.
+
+[[Category:Quests]]
+[[Category:Lake of Ill Omen]]

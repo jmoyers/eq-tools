@@ -1,0 +1,80 @@
+[[File:npc_innkeep_james.png|frame|Innkeep James]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Innkeep James]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Innkeep James in his small inn off the path in North Karana.
+
+The conversation with Innkeep James:
+
+You say, 'Hail Innkeep James'
+
+: Innkeep James says 'I knew this would happen. Food is becoming so scare that I'm starting to run out of stock. You wouldn't happen to [be a baker] yourself or maybe you [know] someone who bakes?'
+
+You say, 'I happen to be a baker'
+
+: Innkeep James says 'Well good! Maybe you can help me restock. If you are a baker, you could help me out by restocking my [muffin supply]. Or if you don't mind a little travel, you can pick up a [shipment of bread] for me.'
+
+You say, 'I'll pick up a shipment of bread.'
+(note that responding to 'muffins' gives [[Muffin Quests|a different quest]])
+
+: Innkeep James says 'There is a guy that lives in the plains to the south. I guess the plague hasn't hit that area too bad. Anyway, he's one heck of a baker and makes some quality bread. Go look him up and tell him you want a bag bread  loaves. He's one of those fellas that goes by the name of Meadowgreen.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Innkeep James.
+
+: Innkeep James says 'Thanks for running that errand for me, you are a life saver. I hate having to turn folks away like that. Here is your payment and you have my deepest thanks.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk|Coalition of Trade Folk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum - 3 platinum from Innkeep James.
+
+Experience gained was approximately 1.5-2% as a level 19 Druid.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Northern Karana]]
+[[Category:All Classes Quests]]

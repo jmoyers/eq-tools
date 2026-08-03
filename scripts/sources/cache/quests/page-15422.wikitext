@@ -1,0 +1,93 @@
+{{Classic Era}}
+[[File:npc_larkon_theardor.png|frame|Larkon Theardor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Larkon Theardor]]
+|-
+! ''' Recommended Level: '''
+| 3
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Fodin Frugrin]], [[an infected rat]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Larkon Theardor]] is located at 1029, -978, 32 behind the Library Mechanimagica on the right.''
+
+You say, 'Hail, Larkon Theardor'
+
+: Larkon Theardor says, 'Greetings! Welcome to the Library of Mechanimagica. You must be a [current member of the Library] or has my [mind begun to slip]?'
+
+You say, 'Your mind has begun to slip'
+
+: Larkon Theardor says, 'What!!? That was but a joke. I try to make you feel comfortable with a little levity and you proclaim my mind has gone the way of Meldrath's. Well.. enough frivolity. You will do your part to help in the menial tasks of the Collective. Do you want the [clean tasks] or the [dirty tasks]?'
+
+You say, 'I want the clean tasks.'
+
+''Alternately you could say 'I want the dirty tasks' with the same response''
+
+: Larkon Theardor says 'Clean... Dirty... It matters not. You have upset me with your rude remarks. You will go to the Steamfont Mountains. There you will find Fodin and tell him I have sent you. He will have a nice tidy task for you. A bath! Be on your way!' 
+
+----
+
+''[[Fodin Frugrin]] is located at -1788, 667, -107 inside the observatory in the Steamfont Mountains.''
+
+You say, 'Hail, Fodin Frugrin'
+
+: Fodin Frugrin says 'Hello ______. Have you ever peered beyond our little world? Somewhere out there in the vast darkness is a world filled with great technology and adventure. Our people should concentrate on reaching these distant worlds beyond the sparkling skies.'
+
+You say, 'Larkon sent me'
+
+''At Apprehensive faction''
+
+: Fodin Frugrin says, 'There is much you must do for the Library of Machanimagica before such things can be revealed to you. Perhaps fetching minotaur horns and returning them to Professor Theardor will earn you membership to the Library of Machanimagica. But I suppose if Larkon sent you that you truly wish to prove yourself, eh? You'll have to get your hands a bit dirty, though. Take this box and fill it with livers from those infected rats. We need them for research. Well go on. You can take a bath when you're done.'
+
+''At amiable faction or higher''
+
+: Fodin Frugrin says, 'So they found another young member to attend to their putrid hunt, eh? Take this box. You will notice that your box has ten slots and does not smell very good. That is because each slot must be filled with the diseased livers of infected rats. Hop to it, then! Go get some diseased livers. And if you should get bitten and find yourself diseased or poisoned, be sure to visit the Abbey of Deep Musing. They have healers who can cure disease. Do not forget to return the box to Larkon.'
+
+'''You receive an [[Air Tight Box]]; a 10 slot tiny capacity container. Inside the box, combine 10 [[Infected Rat Livers]] randomly looted from [[an infected rat]] located throughout the Steamfont Mountains.'''
+
+----
+
+'''Hand [[Larkon Theardor]] the combined Air Tight Box'''
+
+: Larkon Theardor says, 'Whew!! What smells of rotting disease? Oh.. It's you. I see you've gathered all the diseased livers. I shall have them incinerated in the scrapyard. The only reason we do this is to keep the Dark Reflection from using these components in their black arts. Take this. I hope you use it wisely. Oh, and.. take a bath. You stink!!'
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King AkAnon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+</div> 
+
+{{YouGainExperience}}
+
+You receive 5 silver, 6 copper pieces.
+
+0%XP at lvl 8.
+
+== Related Quests == 
+
+* [[Basilisk Tongues]]
+* [[Minotaur Horns]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

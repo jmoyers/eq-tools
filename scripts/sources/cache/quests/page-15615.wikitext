@@ -1,0 +1,72 @@
+{{Kunark Era}}
+[[File:npc_mystic_dovan.png|frame|Mystic Dovan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Quest Giver: '''
+| [[Mystic Dovan]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]], [[Warsliks Woods]], [[Lake of Ill Omen]]
+|-
+! ''' Related NPCs: '''
+| [[a giant swamp leech]], [[a skeleton (Iksar)]], [[Decaying skeleton]], [[A Goblin Watcher]]
+|}
+
+== Reward ==
+
+<ul><li> Faction, Experience
+</li></ul>
+
+== Walkthrough ==
+
+[[Mystic Dovan]] spawns at night (in the same exact spot as [[Captain Nedar]]) at location 2644.81, 3029.77, 43.69.
+
+You say, 'Hail, Mystic Dovan'
+
+Mystic Dovan shows the signs of a great mystic. You can feel the power resonating from his aura. 'Greetings and may the cursed blessings of Cazic-Thule be yours. What may I do for you this fine evening? Perhaps I can [cure disease] or [heal] you, perhaps even [purge toxins] from your system?'
+
+''' You say, 'Cure disease.' '''
+
+: Mystic Dovan says 'Your malady shall dissipate once you deliver to me one [[Giant Blood Sac]].'
+
+Mystic Dovan grabs from his beltpouch a fine dust and cakes the slimy blood sac with it. He then punctures the sac and smears the blood upon your chest. Your chest tingles. Your fill your lungs and exhale a bitter mist.
+
+<div class="facblock">
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div> 
+
+
+''' You say, 'Heal me.' '''
+
+: Mystic Dovan says 'I can call upon the power of the ancients to mend your wounds if you can deliver to me two [[Brittle Iksar Skull]]s.'
+
+Mystic Dovan chants in an unknown tongue as he takes a dagger and slits your forearm. He then takes a tiny glowing vein worm from his beltpouch and forces it into the open wound. You feel the worm explode inside. The pain is unbearable, but then, a coolness courses through your body. 
+
+<div class="facblock">
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div> 
+
+
+''' You say, 'Purge toxins.' '''
+
+: Mystic Dovan says 'The toxins shall surely be purged from your system when I have proof of your allegiance to the empire. Let that proof be one Goblin [[Watcher Signal Torch]].'
+
+Mystic Dovan takes the skulls and holds them before your wounds. They shatter into a fine glowing powder and you feel your wounds beiing[sic] cauterized with no visible flame upon them.
+
+<div class="facblock">
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div> 
+
+[[Category:Quests]]
+[[Category:Swamp of No Hope]]

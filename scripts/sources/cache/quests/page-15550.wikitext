@@ -1,0 +1,76 @@
+{{Classic Era}}
+[[File:npc_rephas.png|frame|Rephas]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Hills]]
+|-
+! ''' Quest Giver: '''
+| [[Rephas]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Dagnor's Cauldron]], [[North Kaladim]], [[Qeynos Aqueducts]], [[Steamfont Mountains]] 
+|-
+! ''' Related NPCs: '''
+| [[a cauldron rat]], [[Giant Rat]], [[a giant sewer rat]], [[a nesting rat]], [[a giant rat]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Minor Items, [[Rat Ear Pie]] Recipe
+</li></ul>
+
+== Walkthrough ==
+
+[[Rephas]] is a crazed hermit who lives near the lake in the [[Qeynos Hills]] (northwest corner of the zone), with a penchant for rat ears...
+
+You say, 'Hail, Rephas'
+
+: Rephas says 'Aagggh...Get away from here.. Go, run.. Far away.. Or I shall call [Karana's] wrath upon you!'
+
+You say, 'Who is Karana?'
+
+:Rephas says 'Heh! Ignorant one! Begone, and take your stupidity with you!'
+
+He doesn't have much to say about rat ears (he may if your faction is better), but if you give him the regular [[Rat Ears]] (common drop from rats) he'll give you an item called [[Grilled Rat Ears]] (edible and stackable).
+
+:Rephas says 'Ahhh yes... These are a little small, but still some good eating, if you know how to cook 'em or course. Here ya go, enjoy and may Karana keep your fields lush and green.'
+<div class='facblock'>
+* Your faction standing with [[Arcane Scientists]] has been adjusted by 5.
+* Your faction standing with [[Knights of Truth]] has been adjusted by 5.
+* Your faction standing with [[Opal Darkbriar]] has been adjusted by -1.
+* Your faction standing with [[Freeport Militia ]] has been adjusted by -1.
+</div>
+{{exp}}
+
+'''If you give the [[Grilled Rat Ears]] back to him, you receive a [[Fish Scales]], faction, and experience.'''
+
+:Rephas says, 'Wha?..   Ah, I guess it's a bit of an acquired taste..  Oh well, your loss..  Here, take this..  They ain't no ears, but it's the least I could do..   And if ya find any more rat ears, good ol' Rephas here will be glad to take 'em off your hands for ya!'
+<div class='facblock'>
+* Your faction standing with [[Arcane Scientists]] has been adjusted by 5.
+* Your faction standing with [[Knights of Truth]] has been adjusted by 5.
+* Your faction standing with [[Opal Darkbriar]] has been adjusted by -1.
+* Your faction standing with [[Freeport Militia ]] has been adjusted by -1.
+</div>
+{{exp}}
+
+'''If you give him 3 [[Giant Rat Ear]]s, you receive a experience, faction, and a recipe for [[Rat Ear Pie]] ([[Giant Rat Ear]] + [[Baking Spirits]] + [[Cup of Flour]] in a mixing bowl). The Rat Ear Pie is used in the [[Paw of Opolla Quest]].'''
+
+:Rephas says, 'Hey...  wow...  Now THESE are some good, meaty ears...  These will make one great rat ear pie...  Tell ya what, kid...  bring me a few more o' these beauties, and I'll give you my secret recipe for cooking 'em.'
+:Rephas says, 'Wow!...  How big was the dang varmint that these come off of?!  Bigger'n a ol' grizzly, I bet!  You've earned this, my friend!  It's my own secret recipe for rat ear pie...  sure is tasty, easy to make, and keeps your belly full while you're running about in the hills and such.  Take care, and may Karana keep your path clear and our lakes full.'
+
+<div class='facblock'>
+* Your faction standing with [[Arcane Scientists]] has been adjusted by 5.
+* Your faction standing with [[Knights of Truth]] has been adjusted by 5.
+* Your faction standing with [[Opal Darkbriar]] has been adjusted by -1.
+* Your faction standing with [[Freeport Militia ]] has been adjusted by -1.
+</div>
+{{exp}}
+[[Category:Quests]]
+[[Category:Qeynos Hills]]
+[[Category:All Classes Quests]]

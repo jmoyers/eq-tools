@@ -1,0 +1,267 @@
+{{Epics Era}}
+__NOTOC__
+[[File:ClericEpic.jpg|200px|thumb|Water Sprinkler of Nem`Ankh]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lake Rathetear]]
+|-
+! ''' Quest Giver: '''
+| [[Shmendrik Lavawalker]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+Ragefire
+
+Zone: Nagafen’s Lair
+
+Translocate Allotment:
+
+Run Speed Consideration(s):
+
+Location of Engagement:
+
+Additional Rule Consideration:
+
+Additional Notes: Whoever turns in "Shimmering Pearl" to Zordak Ragefire has 20 minutes to engage Zordakalicus Ragefire, after 20 minutes has elapsed, it goes FFA.
+
+== Reward ==
+
+<ul><li> {{:Water Sprinkler of Nem Ankh}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+'''Orb of Frozen Water'''
+* Loot [[Lord Bergurgle's Crown]] from [[Lord Bergurgle]] in [[Lake Rathetear]]
+:* Give [[Lord Bergurgle's Crown]] to [[Shmendrik Lavawalker]] in [[Lake Rathetear]] to spawn [[Natasha Whitewater]] nearby - receive [[Oil of Fennin Ro]] ('''Natasha Whitewater will despawn 5 minutes after spawning in Lake Rathetear unless engaged in combat and after turning in the Damaged Goblin Crown.''')
+* Kill [[Shmendrik Lavawalker]] to spawn [[A Spirit of Flame]]
+:* Loot [[Damaged Goblin Crown]] from [[A Spirit of Flame]] ('''Do not let Natasha Whitewater get the last hit or the corpse will disappear''')
+:* Give [[Damaged Goblin Crown]] to [[Natasha Whitewater]] -- receive [[Ornate Sea Shell]] ('''Natasha Whitewater will despawn 5 minutes after spawning in Lake Rathetear unless engaged in combat and after turning in the Damaged Goblin Crown.''') 
+:* Give [[Ornate Sea Shell]] to [[Omat Vastsea]] in [[Timorous Deep]] -- receive [[Coral Statue of Tarew]]
+:* Give the [[Coral Statue of Tarew]] to a [[A Seeker|Seeker]] in [[The Temple of Solusek Ro]] causing them to become [[A Plasmatic Priest]]
+:* Kill [[A Plasmatic Priest]] in [[The Temple of Solusek Ro]] and loot [[Blood Soaked Plasmatic Priest Robe]]
+:* Give the [[Blood Soaked Plasmatic Priest Robe]] to [[Omat Vastsea]] –- receive [[Orb of Frozen Water]] (This spawns Natasha inside the hut, It is suggested you wait to turn in until you have [[Lord Gimblox's Signet Ring]])
+
+'''Orb of Clear Water'''
+
+* Loot [[Lord Gimblox's Signet Ring]] from [[Lord Gimblox]] in [[Solusek's Eye]]
+:* Give [[Lord Gimblox's Signet Ring]] to [[Natasha Whitewater]] in [[Timorous Deep]] –- receive [[Ornate Sea Shell]](v2) (This despawns Natasha)
+:* Give [[Ornate Sea Shell]](v2) to [[Naxot Deepwater]] in [[Burning Woods]] - receive [[Message to Natasha]] (This spawns Ixiblat Fer)
+::* Loot [[Sceptre of Ixiblat Fer]] from [[Ixiblat Fer]] in [[Burning Woods]]
+* Loot [[Singed Scroll]] from [[Overking Bathezid]] in [[Chardok]]
+:* Give [[Sceptre of Ixiblat Fer]] and [[Singed Scroll]] to [[Omat Vastsea]] -– receive [[Orb of Clear Water]] (This spawns Natasha inside the hut)
+
+'''Orb of Vapor (Classic)'''
+
+* Give [[Message to Natasha]] (Received when spawning Ixiblat Fer) to [[Natasha Whitewater]] in [[Timorous Deep]] –- receive [[Shimmering Pearl*]] (This does not despawn Natasha)
+:* Give [[Shimmering Pearl*|Shimmering Pearl]] to [[Zordak Ragefire]] in [[Nagafen's Lair]] -- causes him to repop as [[Zordakalicus Ragefire]] and attack you - kill and loot [[Heart of Zordak Ragefire]]
+:* Give [[Heart of Zordak Ragefire]] to [[Omat Vastsea]] – receive Orb of Vapor (Do NOT do this until ready to turn all orbs into Jhassad, as this step spawns Jhassad for the final turn in)
+
+'''Water Sprinkler of Nem Ankh'''
+
+* Give all three orbs (Frozen Water / Clear Water / Vapor) to [[Jhassad Oceanson]] in [[Timorous Deep]] -- receive Orb of Triumvirate (This spawns the [[Avatar of Water]] in the lake)
+:* Give Orb of Triumvirate to [[Avatar of Water]] –- receive [[Water Sprinkler of Nem Ankh]]
+{{End}}
+
+== Short Walkthrough ==
+
+'''[[Orb of Frozen Water]]'''
+
+The quest begins in [[Lake Rathetear]] where you must kill a named water goblin, [[Lord Bergurgle]]. He spawns in the underwater goblin cave, in the tower at (2800, 150). He is around level 40 and casts Complete Heal on himself. He is a rare spawn on a 29 minute spawn timer with a placeholder. The Deepwater Goblins spawn around him so have some companions come along with you, and remember to have [[Enduring Breath]] active. He drops [[Lord Bergurgle's Crown]]. 
+
+Take the crown to [[Shmendrik Lavawalker]] (3600, 0) who spawns once every 3 hours. Stay at his spawn spot because he is level 30 so someone might kill him if you're not there. When you trade him the crown he will give you {{:Oil of Fennin Ro}} (a potion that's unrelated to the quest) and [[Natasha Whitewater]] will spawn. Natasha will kill Shmendrik, causing [[a spirit of flame]] to immediately spawn on his corpse. Kill this level 40 spirit of flame who has approximately 3300 hitpoints.  Natasha may despawn approximately 5 minutes after she first appears.
+
+Natasha will also try to kill Spirit of Flame so just root, enstill, mesmerize, or do something that will keep her out of the fight (but don't killer her!) because if she gets the killing blow it may cause the corpse to disappear. Loot the [[Damaged Goblin Crown]] from him. Next, give Natasha the Damaged Goblin Crown. Make sure you clear your aggro if you rooted, mezzed, or otherwise took any aggressive action before you attempt to do the trade in. After giving Natasha the Damaged Goblin Crown, she will give you an [[Ornate Sea Shell]]. 
+
+(An alternate way to do the turn in (but more time consuming) is to first just kill Shmendrik without giving him the Lord Bergurgle's Crown, then kill spirit of the flame and loot the Damaged Goblin Crown. Then wait for Shmendrik to spawn again, give him Lord Bergurgle's Crown, kill the spirit of flame and give Natasha the Damaged Goblin Crown you already have. After giving Natasha the Damaged Goblin Crown, she will give you an Ornate Sea Shell.)
+
+Take the Ornate Sea Shell to [[Omat Vastsea]] in [[Timorous Deep]] (-11567, -2227). To reach him, take the cave entrance at (-11530, -3728), and then the entrance at (-11336, -1307). He will give you a [[Coral Statue of Tarew]]. Take the statue to [[a seeker]] in the [[Temple of Solusek Ro]]. He is on the upper level at (326,38,29) and will spawn at 9 A.M. and despawn at 9 P.M. game time.
+
+When you give a seeker the Coral Statue, he will take it and change into [[a plasmatic priest]] and start attacking you. He hits in the high hundreds and has ~13k hit points. He is level 55 and casts Complete Heal, Tremor, Annul Magic, Reckoning. You should always bring him to the zone before attacking him because his Area Effect Tremor makes the keepers around him attack him, and if they get the kill you will lose the corpse and have to start over. Once you have killed him, loot his [[Blood Soaked Plasmatic Priest Robe]].
+
+Now head to [[Solusek's Eye]] (Solusek A) and kill [[Lord Gimblox]]. He is a rare spawn on a 18 minute spawn timer with a placeholder. He is only level 30 and shouldn't be hard to kill. Loot his [[Lord Gimblox's Signet Ring]]. Now, take the Blood Soaked Plasmatic Priest Robe to Omat Vastsea back in Timorous Deep, who will give you the [[Orb of Frozen Water]] in return and cause Natasha Whitewater to spawn nearby.
+
+'''Orb of Clear Water'''
+
+Immediately after giving Omat Vastsea the Blood Soaked Plasmatic Priest Robe, run to Natasha Whitewater in a house close to Omat. Give her Lord Gimblox's Signet Ring and she will give you a second Ornate Sea Shell. (She despawns after being handed Lord Gimblox's Signet Ring per the December 1st 2014 patch notes.
+
+Take this Sea Shell to [[Naxot Deepwater]] in [[Burning Woods]]. Her location is (3400, -2150). He spawns there at 6 P.M. game time and despawns at 6 A.M. He will give you a [[Message to Natasha]]. Upon handing Naxot Deepwater the Ornate Sea Shell, [[Ixiblat Fer]] will spawn.
+
+Now you must kill Ixiblat Fer. He is an immense level 62 Fire Elemental. Hit hits for up to 575 damage and has over 32000 hit points. He spawns in the Burning Woods at (-2000, 1500). He casts a 300 damage Area Effect fire based spell. His magic resistance is average to below average for his level. He is not completely immune to fire-based spells but it is recommended that you use cold-based and magic. (Ixiblat <em>is</em> considered Summoned which means that the Ward Summoned line of spells will hit for full damage.) Once he's at low health he will try to run. Try and keep him still because he has a fast regeneration rate. Loot off of him the [[Sceptre of Ixiblat Fer]]. This drops every time.
+
+Now you have to kill the [[Overking Bathezid]]. This level 63 sarnak spawns in [[Chardok]] and takes many people to kill. He casts a 500 damage Area Effect spell, Complete Heal, Gravity Flux, and Gate. You have to be careful when killing him. If you fight him at his spawning location you must take caution that you don't aggro the Queen and you also have to be careful that he doesn't cast Gravity Flux, which will aggro more mobs in the upstairs rooms such as the Herbalist. You can also fight him in the hallway but then you must be careful he doesn't Gate, because then he will start summoning people and they will die. Loot a [[Singed Scroll]] off him which drops every time.
+
+Take the Singed Scroll and Sceptre of Ixiblat Fer to Omat Vastsea in Timorous Deep. He will give you the [[Orb of Clear Water]] and Natasha Whitewater will spawn again.
+
+'''Orb of Vapor'''
+
+Run straight to Natasha Whitewater after doing the previous step. Give her the Message to Natasha and you will receive a shimmering pearl. Now comes what most players agree to be the most tedious part of the quest, killing [[Zordak Ragefire]] (or rather, waiting for him to spawn in order to kill him).
+
+Once inside [[Nagafen's Lair|Solusek B]], head to the back to Nagafen's Lair. Hand him your shimmering pearl. After being given the shimmering pearl, Zordak Ragefire will attack you. When he is killed, his true (dragon) form, [[Zordakalicus Ragefire]], will spawn on the spot where he dies. Zordakilicus Ragefire is a clone of Lord Nagafen, but will not banish level +53 characters. Normal Nagafen tactics apply. 
+
+You will end up with the [[Heart of Zordak Ragefire]]. Take this to Omat Vastsea in Timorous Deep.
+
+Omat Vastsea says 'I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.'
+
+Receive 'Orb of Vapor'.
+
+'''Water Sprinkler of Nem Ankh'''
+
+After the last step, [[Jhassad Oceanson]] will spawn close to the shore. Give Jhassad the three orbs: Orb of Frozen Water, Orb of Water, and Orb of Vapor. He will return to you the Orb of Triumvirate, and the Avatar of Water will spawn near Jhassad by the shore. The avatar will then roam around the shore and finally come stand next to Jhassad. It is recommended you wait for the Avatar of Water to stand next to Jhassad because then you will receive experience when you turn in the last Orb, a rather substantial amount due to this being an epic quest. If you give it to him while he is on his roam path, you will not receive experience. Turn in the Orb of Triumvirate to the Avatar of Water. He will give you the [[Water Sprinkler of Nem Ankh]].
+
+The effect is right click-based and is a level 56 cleric spell summoning someone to his/her corpse with a 96% experience regain. Note: you can equip the epic at level 46 but must be level 50 to use the click effect.
+
+== Walkthrough with Dialogue ==
+
+'''Step One: Obtain the Orb of Frozen Water'''
+
+Shmendrik Lavawalker can be found at loc (+3600, 0) in Lake Rathetear. He has a spawn timer of three hours.
+
+You say, 'Hail, Shmendrik Lavawalker.'
+
+: Shmendrik Lavawalker says 'Hail, good [your name here] !! Be wary near the waters of Lake Rathe! The Riptide goblin king, Lord Bergurgle has been commanding his minions to murder and rob all who come near it! I am here seeking his death but I am afraid I am no match for all of his subjects. I shall reward you greatly for the death of Lord Bergurgle. I simply ask that you bring me his crown as proof.'
+
+Seek out Lord Bergurgle (loc 2800, 150 in underwater cave). He is a Cleric, and a rare spawn on a 29 minute PH spawn timer. Kill him and loot Lord Bergurgle's Crown.
+
+Take the crown to Shmendrik Lavawalker.
+
+: Shmendrik Lavawalker shoves the crown into a scorch marked leather satchel and cackles uncontrollably as madness twists his features and flames dance in his eyes. You have reduced the Riptides into chaos! Without a king to keep them in control they will ravage the settlements surrounding this lake! After the slaughter I shall return and easily burn the remainder of the villages and fishing shanties to the ground! None shall escape the fires of the Tyrant!!'
+
+You'll receive Oil of Fennin Ro in exchange for the crown, and will have Natasha Whitewater spawn in a hut nearby.
+
+: Natasha Whitewater shouts, 'The Triumvirate of Water has decreed your fate, Shmendrik Lavawalker!! I am here to deliver said fate!!'
+
+: Shmendrik Lavawalker says, 'I'll slay you like I slaughtered your fellow missionaries! The Triumvirate can not decide the fate of a follower of the Tyrant!!'
+
+: Natasha Whitewater says, 'Enough!! Your existence has come to an end!'
+
+: Natasha Whitewater says, 'This conflict has been destined by the waters of the Triumvirate!'
+
+A Spirit of Flame spawns. It is a Warrior, and 40th level. It has no special attacks and must be killed. Loot the Damaged Goblin Crown from him.
+
+You say, 'Hail, Natasha Whitewater.'
+
+: Natasha Whitewater says 'The Riptide goblins must have their crown returned to them. If you would be so kind as to give me the crown I will make sure that it reaches them. Hopefully they are capable enough to repair the damage that has been done to it.'
+
+Give her the Damaged Goblin Crown.
+
+: Natasha Whitewater says 'I will have this crown returned to the Riptide Goblins immediately! Should you ever come across an Erudite named Omat Vastsea, give him this sea shell. The waters of Norrath shimmer with awareness of your deeds here today!'
+
+Receive an Ornate Sea Shell (Item Lore: Ornate Sea Shell I).
+
+Head to the paradise area of Timorous Deep and find Omat Vastsea (loc -11565, -2235; cave entrance loc -11530, -3728).
+
+You say, 'Hail, Omat Vastsea.'
+
+: Omat Vastsea bows deeply. 'I have been expecting you. The waters have foretold your arrival. I am High Priest Omat Vastsea of the Triumvirate missionaries. Please feel free to enjoy the quiet solitude of this inn.'
+
+You say, 'Who are the Triumvirate?'
+
+: Omat Vastsea says 'The Triumvirate of Water are: E'ci, the mistress of ice; Tarew Marr, the lord of water; and Povar, the formless master of vapor and mist. We Triumvirate missionaries are granted great divinatory powers and wisdom through our devotion to the Triumvirate and must defend the waters of Norrath from the ravages of the Tyrant of Fire, Fennin Ro.'
+
+You say, 'Who is Fennin Ro?'
+
+: Omat Vastsea says 'The Tyrant of Fire, Fennin Ro, is the merciless lord of fire in all its forms. The rivalry between the tyrant and the Triumvirate is as old as the gods themselves and is an eternal battle. We witness the struggle every moment of our lives as the Oasis of Marr succumbs to the heat of the surrounding desert and is replenished by the swelling of the Lifire River. That fragile balance between the elements must be maintained but the Plasmatic Priesthood threatens that balance.'
+
+You say, 'Who are the Plasmatic Priesthood?'
+
+: Omat Vastsea says 'The Plasmatic Priesthood are worshipers of the Tyrant of Fire, but they have been driven mad by their fanaticism and have forgotten the importance of the balance. In their madness they would set the whole world aflame, leaving nothing but lifeless ash.'
+
+Hand him the Ornate Sea Shell.
+
+: Omat Vastsea says 'So, you are a friend of Natasha's? That is good to see. She is a very wise and gifted woman. The Riptide goblins have adopted a new king but are still in a vulnerable state until his subjects accept his rule. The Plasmatic Priesthood is aware of the weakened state of the Riptides and has convinced the Fire Peak goblins to strike against them. Although I do not agree with the mannerisms or actions of any goblin clan, such a war would be detrimental to all who are caught in its path. Lord Gimblox of the Fire Peak clan has been meeting with a member of the Plasmatic Priesthood in the Temple of Solusek Ro. Locate the Plasmatic Priest, hand him this statue to hinder his powers, then eliminate him and bring me his robe.'
+
+Receive Coral Statue of Tarew Marr.
+
+You must now head to the Temple of Solusek Ro, and take the Coral Statue to a seeker. He can be found at loc (+326, +38, +29). He spawns at 9 A.M. and despawns at 9 P.M. game time.
+
+Upon giving him the statue, he will attack.
+
+: A seeker shakes violently as his hand closes on the coral statue and flames dance in the depths of his eyes! The statue begins to emit a reddish glow then shatters in a burst of fire and smoke! The flames in the plasmatic priest's eyes vanish with the explosion and only madness remains! 'The Triumvirate thinks that destroying my spirit of flame will stop me?!! I will kill you all now, the goblins will continue to war, and when my spirit is restored I will ensure that Ixiblat Fer consumes all of Norrath in his flames!!'
+
+A Seeker will now change into a Plasmatic Priest and start attacking you. He is a 55th level Cleric with about 12000 hitpoints. It is recommended you bring him to the zone so that any AE spells he casts do not aggro other NPCs. Kill him and loot the Blood Soaked Plasmatic Robe.
+
+Now head to Solusek's Eye and kill Lord Gimblox, loc (-796, -366). He is 30th level and a rare spawn on a 19 minute timer with PH. Kill him and loot Lord Gimblox's Signet Ring.
+
+Head back to Timorous Deep and see Omat Vastsea. Give him the Blood Soaked Plasmatic Robe.
+
+: Omat Vastsea says, 'You have proven yourself to be one who is willing to take responsibility for his own actions. Such a trait is desired by all deities to be present in their faithful. I pray that you had the wisdom to slay Lord Gimblox as well as the Plasmatic Priest in order to prevent further advancement in the incursion against the Riptides. Priestess Natasha awaits inside the inn for Lord Gimblox's ring, make haste for she is a busy women and will depart soon.'
+
+Receive Orb of Frozen Water.
+
+'''Step Two: Obtain the Orb of Clear Water'''
+
+After giving Omat Vastea the Plasmatic Robe, Natasha Whitewater will have spawned nearby. Give her Lord Gimblox's Ring.
+
+: Natasha Whitewater says, 'Thank you for your services thus far. The Triumvirate missionaries are, so far, impressed. However, there is yet another threat rising from the Plasmatic Priesthood that may have dire effects on all of Norrath if it is not stopped. An Iksar member of the Triumvirate missionaries has discovered that the Plasmatic Priesthood has somehow convinced the sarnak summoners of Chardok to assit them in summoning Ixilblat Fer to Norrath. Take this shell to Naxton Deepwater in the Burning Woods so that she knows I have sent you. We ask that you return with the Sceptre of Ixiblat Fer as well as evidence to show that the Plasmatic Priesthood is dealing with sarnaks. High Priest Omat will await your return. I Must depart now. I pray for your success.'
+
+Receive Ornate Sea Shell (Item Lore: Ornate Sea Shell II).
+
+You must take this Sea Shell to Naxot Deepwater in the Burning Woods, loc (+3400, -2150). She spawns at 6 P.M. and despawns at 6 A.M gametime.
+
+You say, 'Hail, Naxot Deepwater.'
+
+: Naxot Deepwater says, 'Beware these woods! The sarnak claim this land as their own and wicked creatures walk beneath the burning foliage.'
+
+: Naxot Deepwater says, 'Praise the Triumvirate! Natasha sent you just in time! Those twisted sarnak summoners are summoning Ixiblat Fer as we speak! We must stop Ixiblat Fer while he is still weak or all of Norrath may be set aflame! Please do me one more favor, should I perish to this beast of fire. Give this note to Natasha when you next see her, and if you should perish and I survive, I will make sure the waters never forget your reflections of your deeds this day.'
+
+Receive Message to Natasha. Ixiblat Fir spawns at loc (-2000, +1500). He is a 62nd level gigantic Fire Elemental, and hits for 575 damage with about 32000 hit points in total. He also casts an AE fire spell for 300. Kill him and loot the Sceptre of Ixiblat Fir. Other loot he drops is not relevant to the quest.
+
+You're now due in Chardok and need to kill Overking Bathezid. He is located deep in Chardok in the royals area. He is 63rd level and takes about two good groups to kill. He casts an AE spell for 500 and gates. Loot a Singed Scroll off his corpse. It reads:
+
+ Greetings Overking Bathezid. The time has come for you to return the boon owed to me from so long ago.
+ I have need of your most powerful summoners to bring Ixiblat Fer into the mortal realm and rain fire upon my enemies.
+ Your old friend, Zordak Ragefire.
+
+Take the Singed Scroll and Sceptre of Ixiblat Fir to Omat Vastsea.
+
+: Omat Vastsea says, 'I commend you on your success over the fire elemental lord, Ixiblat Fer. The fact that the Plasmatic Priesthood has mustered up the power to summon such a being means drastic actions must be taken to stop the fanatic cult of Fennin Ro. I wonder what kind of favor Zordak Ragefire performed for the sarnak summoners to convince them to assist in the ritual that brought forth Ixiblat Fer. The dragon Iksar hybrid abominations are not beings who ally with others easily. All I have seen in my divinations of the High Plasmatic Priest are riddles, and signs that the one who slays him may be awarded an Orb of the Triumvirate. If you are the one whom my visions foretell, then seek Zordak Ragefire and bring me his heart.'
+
+Receive the Orb of Clear Water.
+
+'''Step Three: Obtain the Orb of Vapor'''
+
+After giving Omat Vastsea the Scroll and Sceptre, Natasha Whitewater will spawn nearby. Give her the Message to Natasha.
+
+: Natasha Whitewater lowers her head in mourning and whispers a prayer. It is a shame that fate has decided one so young and from such a background should perish, but we must not attempt to change what was destined to be. Priestess Naxot sacrificed herself selflessly so that others may be spared the horrors Ixiblat would have brought to Norrath. May the waters of Norrath forever remember her reflection. I thank you for delivering Naxot's message to me and give you this pearl imbued with the power of the Triumvirate. Should you find Zordak Ragefire, speak with him before all else then hold this pearl before him. When the pearl begins to swirl its enchantment will have taken effect.'
+
+{{YouGainExperience}}
+
+Receive a Shimmering Pearl.
+
+Head to Nagafen's Lair and go to the back of the dragon's lair and find [[Zordak Ragefire]].
+
+Give him the Shimmering Pearl, this spawns the dragon human version [[Zordakalicus Ragefire]]. He'll attack and needs to be killed. Kill him and loot the [[Heart of Zordak Ragefire]].
+
+Head back to the Timorous Deep and give the heart to Omat Vastsea.
+
+: Omat Vastsea says, 'I see now that Zordak Ragefire and the exiled elder dragon Zordakalicus were the same being. That explains how he resisted our attempts to divine his affairs and past. Each of these orbs I have granted you represents one of the Triumvirate. Jhassad Oceanson awaits on the shore below to perform the ritual that will merge the orbs into a single Orb of the Triumvirate and summon an avatar from the Plane of Water. Present the Orb of the Triumvirate to the Avatar of Water when it arrives and allow your destiny to be unraveled.'
+
+Receive the Orb of Vapor.
+
+'''Step Four: Obtain the Orb of the Triumvirate'''
+
+After turning in Zordak Ragefire's Heart, Jhassad Oceanson spawns nearby. Give him the Orb of Frozen Water, Orb of Clear Water, and Orb of Vapor.
+
+: Jhassad Oceanson kneels in the sand and places the three orbs into a large abalone shell bowl. A blue glow surrounds his hands as he waves them over the orbs resting in the bowl. The orbs crack and fall apart, releasing their contents, then reform into a single glowing orb. Jhassad Oceanson gently removes the Orb of the Triumvirate and places it in your hands. 'The Avatar of Water approaches. You must hand him the Orb of the Triumvirate and it will be decided if it is your destiny to wield the Nem Ankh Sprinkler.'
+
+Receive Orb of the Triumvirate.
+
+'''Step Five: Obtain the Water Sprinkler of Nem Ankh'''
+
+Upon turning the three orbs into Jhassad Oceanson, the Avatar of Water will spawn. It does not respond to hails, so you may have to chase it down. Hand in the Orb of the Triumvirate and receive the [[Water Sprinkler of Nem Ankh]].
+
+[[Category:Quests]]
+[[Category:Lake Rathetear]]
+[[Category:Cleric Quests]]

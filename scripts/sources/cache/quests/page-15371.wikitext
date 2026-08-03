@@ -1,0 +1,80 @@
+{{Classic Era}}
+[[File:npc_Rihtur_Fullome.png|frame|Rihtur Fullome]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Rihtur Fullome]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Elias]], [[Milea Clothspinner]], [[Nerissa Clothspinner]]
+|-
+! ''' Related Quests: '''
+| [[The Clothspinner Sisters (good)]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>Experience, Faction</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with [[Rihtur Fullome]] located at (357, -450) in the [[Qeynos Aqueducts]].''
+ 
+You say, 'Hail, Rihtur Fullome'
+
+: Rihtur Fullome says, 'Hail, _______! I hope the trek into our shrine has not scared you in any way. Our defenses have been increased lately. Many of the citizens have heard rumors about our shrine. I say it is all due to that [soldier].'
+
+You say, 'What soldier?'
+
+: Rihtur Fullome says, 'The soldier I refer to is Commander Kane Bayle. The supreme officer himself. Don't get me wrong, I trust Kane. He has quite a black heart. I just don't trust that girl, [Nerissa].'
+
+You say, 'Who is Nerissa?'
+
+: Rihtur Fullome says, 'Nerissa Clothspinner. Her sister was a good friend of Kane's. When she left Qeynos to venture into the world, she asked Kane to watch over that girl. Now Kane tries to hide from the child the fact that he is allied with our church. I do not think he has hidden it well. I have told the others, but they do not believe me. I do not care. I have my own [plans].'
+
+You say, 'What plans?'
+
+: Rihtur Fullome says, 'Nerissa is well protected by Kane. She will no doubt attempt to inform someone of her suspicions, most likely her sister, Milea. You must find Milea Clothspinner and kill her. No word of our operations must leak out. Return with proof of Milea's death and we shall see to a reward.'
+
+'''From here, you can speak to Nerissa for hints as to her whereabouts.'''
+
+''You may also complete [[The Clothspinner Sisters (good)|Nerissa's quest]] to receive the Monogrammed Cloth to turn in.''
+
+Milea can be found in East Karana. For the sake of being evil, we choose to kill her.
+
+You loot a [[Monogrammed Cloth]].
+
+'''You return to Rihtur Fullome and hand him the [[Monogrammed Cloth]].'''
+
+: Rihtur Fullome says, 'You have done a truly wicked deed. Good work! Milea was a prestigious member of the Hall fo Steel and a friend fo the Knights of Truth. It is better that she now fertilizes the flowers of the Plains of Karana. Here. A fitting reward for such a deed.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] has been adjusted by 10.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -1.
+* Your faction standing with [[Opal Dark Briar]] has been adjusted by 1.
+* Your faction standing with [[Priests of Life]] has been adjusted by -2.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 1.
+</div> 
+{{YouGainExperience}}
+
+You also gain a minor item, such as Patchwork armor, Rusty weapons, Cleric spells, with a small chance of a [[Rat Shaped Ring]].
+
+''In the Good version of this quest, Rihtur sends [[Guard Elias]] to do his dirty work.''
+
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]

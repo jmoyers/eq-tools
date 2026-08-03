@@ -1,0 +1,90 @@
+{{Velious Era}}
+
+[[File:npc_ergrez_shortpaw.png|frame|Ergrez Shortpaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ergrez Shortpaw]]
+|-
+! ''' Minimum Level: '''
+| 27
+|-
+! ''' Classes: '''
+| ALL except NEC WIZ MAG ENC
+|-
+! ''' Related Zones: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Related NPCs: '''
+| [[a dire wolf]], [[a savage dire wolf]], [[a drakkel dire wolf]], [[a snow cougar]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Cougarskin Sleeves}}
+</li><li> {{:Cougarskin Boots}}
+</li><li> {{:Cougarskin Mask}}
+</li><li> {{:Direwolf Fur Hood}}
+</li><li> {{:Direwolf Fur Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Ergrez Shortpaw]] may be found at 1071.65, 2417.22, 35.11.
+
+Ergrez Shortpaw makes armor for his village and is willing to make some for you if you bring him twice what it takes to make the armor. Each piece takes a combination of animal pelt(s) and some other item(s).
+
+:Ergrez Shortpaw works at skinning and cleaning the raw furs around him.
+;You say, 'are you skinning those?'
+:Ergrez Shortpaw says. 'Yes. I take the skin of animal that hunters catch and make into things. Very important, very big job for clan.'
+;You say, 'Why is it important?'
+:Ergrez Shortpaw says 'Is important because I make all the clothes, armor, bags, hut covers, and more. Life much harder for clan if I not here to clean and cure skins. Not many have knowledge anymore.'
+;You say, 'What armor?'
+:Ergrez Shortpaw says 'Many armors. All of animal hides from the islands. If you wanting armor then I can make for you. All I ask is you do me favor.'
+;You say, 'What favor?'
+:Ergrez Shortpaw says 'Snowfangs in need of much help lately. Once we mighty but now weak. You help us get stronger. If you want armor of wolves or cougar then I need you bring twice as many materials. For each thing you wanting I need thing. Just tell me what furs you have and I tell you what I need.'
+
+=== Cougarskin Sleeves Quest ===
+
+;You say, 'I have a Low Quality Cougarskin.'
+:Ergrez Shortpaw says 'More cat skin. You bring more meat but this time bring fatty walrus meat. Many gnolls need for winter fat. Keeps gnolls healthy.'
+;Give Ergrez Shortpaw 1 x [[Low Quality Cougarskin]] and 1 x [[Fatty Walrus Meat]].
+:Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+;You recieve [[Cougarskin Sleeves]].
+
+=== Cougarskin Boots Quest ===
+
+;You say, 'I have Medium Quality Cougarskin.'
+:Ergrez Shortpaw spits. 'Grrrrr. More Cat. All I need for this is cutting shells. We do not get them much but I need.'
+;Give Ergrez Shortpaw 1 x [[Medium Quality Cougarskin]] and 2 x [[Cutting Shells]].
+:Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+;You recieve [[Cougarskin Boots]].
+
+=== Cougarskin Mask Quest ===
+
+;You say, 'I have High Quality Cougarskin.'
+:Ergrez Shortpaw growls loudly. 'I not like making things of cat fur. Smells bad, hurts nose. You want me to work with that you bring food, lots of food. You bring me mammoth meats.'
+;Give Ergrez Shortpaw 1 x [[High Quality Cougarskin]] and 2 x [[Mammoth Meat]].
+:Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+;You recieve [[Cougarskin Mask]].
+
+=== Direwolf Fur Hood Quest ===
+
+;You say, 'I have Low Quality Dire Wolf Fur.'
+:Ergrez Shortpaw says, 'Bad fur I make into cap for head. Keep your small furless skull warm. You bring me two bark bindings for that. Bindings for sewing.
+;Give Ergrez Shortpaw 1 x [[Low Quality Dire Wolf Fur]] and 2 x [[Bark Bindings]].
+:Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+;You recieve [[Direwolf Fur Hood]].
+
+=== Direwolf Fur Cloak Quest ===
+
+;You say, 'I have Medium Quality Dire Wolf Fur.'
+:Ergrez Shortpaw says, 'Good wolf fur I make you cloak. All it take for cloak is fur and skinning rock. I need two skinning rock though. I very low on rocks.'
+;Give Ergrez Shortpaw 1 x [[Medium Quality Dire Wolf Fur]] and 2 x [[Skinning Rock]]s.
+:Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it.
+;You recieve [[Direwolf Fur Cloak]].
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

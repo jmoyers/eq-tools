@@ -1,0 +1,51 @@
+{{DNE}}
+[[File:npc_cain_darkmoore.png|frame|Cain Darkmoore]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Cain Darkmoore]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| ?
+|-
+! ''' Related NPCs: '''
+| ?
+|}
+
+'''''This quest was removed from Live EQ. Marking it as "Does Not Exist."'''''
+
+== Reward ==
+
+<ul><li>  {{:Bunker Battle Blade}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Cain Darkmoore]] is at location 662, -675 in East Freeport.
+
+You say, 'Hail, Cain Darkmoore'
+
+: Cain Darkmoore says 'Hail, ______! We are the Steel Warriors of Freeport. Our training disciplines have created some of the finest warriors ever to walk upon Norrath. Perhaps the bards shall sing songs of you one day. Let your first mission be the extermination of [Clan Deathfist].'
+
+You say, 'What Clan Deathfist?'
+
+: Cain Darkmoore says 'The orcs of the Commonlands call themselves Clan Deathfist. They have committed many vile acts upon the residents of the Commonlands as well as persons traveling to and from Freeport. They must be destroyed. Go forth to slay them. I shall pay a bounty for every two Deathfist belts. If you are a true warrior of the bunker, perhaps you can begin with [the green and blue].'
+
+You say, 'What is the green and blue?'
+
+: Cain Darkmoore says 'The green and blue was a test for all skilled warriors. But we have no more bunker battle blades to spare, and I can not offer you the green and the blue. We must prepare for war!!'
+
+You say, 'what bunker battle blade?"
+
+: Cain Darkmoore says 'The bunker battle blade was crafted and enchanted for use by warriors only. It has the power to strike down those creatures which hide behind their magic. Once bestowed upon a warrior, it cannot leave your side or it shall vanish from this realm forever. One must perform the [green and blue] to earn such a blade.'
+
+[[Category:Quests]]
+[[Category:West Freeport]]

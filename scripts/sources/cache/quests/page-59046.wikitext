@@ -1,0 +1,92 @@
+[[File:npc_the_kerran_sha`rr.png|thumb|right|The Kerran Sha`rr]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Kerra Island]]
+|-
+!''' Quest Giver: '''
+| [[The Kerran Sha`rr]]
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Kerra Island]]
+|-
+!''' Related NPCs: '''
+| [[kerran `amir]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Hamed's Ring of Tears}}
+</li></ul>
+
+== Walkthrough ==
+
+'''The Kerran Sha`rr is located at 902.55, 347.27, -6.81'''
+
+You say, 'Hail, The Kerran Sha`rr'
+
+The Kerran Sha`rr says, 'Something is wrrrong. Tigerrrs of late have rrreturrrned from the trrraining pits with a hostility I have neverrrr seen. Strrrange sounds come from that island at night. The keeperrrs of the island do not come home to theirrr families. I must ask you to [explorrre the island]. Deterrrmine what is happening there.'
+
+You say, 'explorrre the island'
+
+* You have been assigned the task 'Something is Wrrrong'.
+
+The Kerran Sha`rr says, 'Be on guarrrd. I advise you limit yourrr investigation to the norrrth side of the island until we know morrre. Find some evidence that explains these strrrange happenings. Avoid the tigerrr pits to the south, rrreturn alive.'
+
+Quest Stage 1:
+Step 1 - Search the north side of the island for clues.
+Text 1 - The Kerran Sha`rr has sensed that something is amiss in Kerra Isle. The trouble seems to stem from the small island south of the village. He has asked you to investigate the situation on the island and report back.
+"Locate evidence of the threat to Kerra Village"
+
+'''[[kerran `amir]] has multiple spawns around -315.25, -199.31, 5.19'''
+
+Kerran `Amir spawns on the northern part of the South Island
+
+--You have looted a [[Desecrated Kejaar Totem]] from a kerran `amir's corpse.--
+
+* Your task 'Something is Wrrrong' has been updated.
+
+Quest Stage 1:
+Step 2 - Show the Kerran Sha`rr what you have uncovered.
+Text 2 - The Kerran Sha`rr has sensed that something is amiss in Kerra Isle. The trouble seems to stem from the small island south of the village. He has asked you to investigate the situation on the island and report back.
+"Locate evidence of the threat to Kerra Village"
+
+* You offered 1 Desecrated Kejaar Totem to The Kerran Sha`rr.
+
+* Your task 'Something is Wrrrong' has been updated.
+
+You validated the Kerran Sha`rr's concerns about troubling forces working against Kerra Village.
+
+* Your faction standing with Kerra Isle has been adjusted by 20.
+
+* You gain experience! (0.044%) @level 5
+
+* You have been given: Hamed's Ring of Tears
+
+* You have been assigned the task 'This Means Warrr'.
+
+The Kerran Sha`rr says, 'Herrresy! No disciple of Kejaarrr would do such a thing! And even the pumas of the isle have turrrned on us, you say? I must ask yourrr aid once again. The danger is grrreat. Make any necessarrry prrreparrrations, and then storrrm the tigerrr trrraining pit on the south end of that once sacrrred island. Do not rrreturrrn until you have rrrouted what evil has taken rrroot. I fearrr anything less could mean the dawn of a new warrr.'
+
+You complete the trade with The Kerran Sha`rr.
+
+
+== Rewards ==
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+{{YouGainExperience}} (0.044%) @level 5
+
+* You have been given: Hamed's Ring of Tears
+
+* You have been assigned the task '[[This Means Warrr]]'.
+
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

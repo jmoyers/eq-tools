@@ -1,0 +1,49 @@
+{{unsolved}}
+{{kunark Era}}
+[[File:npc_trooper_neozite.png|frame|Trooper Neozite]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Trooper Neozite]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Iksar)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+'''NOTE: the Trooper was possibly removed from the game'''
+
+[[Trooper Neozite]], inside the Warsliks Woods entrance in West Cabilis states how much he wants a drink of [[Legion Lager]] which the master brewer can no longer make.  This can be brewed (see brewing recipes).
+
+You get some experience and small coin with the following faction hits:
+
+<div class='facblock'>
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+[[Category:Quests]]
+[[Category:West Cabilis]]
+[[Category:All Classes Quests]]

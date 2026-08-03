@@ -1,0 +1,126 @@
+[[File:npc_zamel.png|frame|Zamel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Zamel]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Cuburt]], [[Endric]], [[Guard Elron]], [[Zamel]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Golden Ear Stud}}
+</li><li> {{:Golden Locket (Locket of Courage)}}
+</li><li> {{:Hematite}}
+</li></ul>
+
+== Walkthrough ==
+
+A little girl named Lucie Elron has gone missing. Her father Guard Elron, in Qeynos North, wants someone to look for her. He has already hired some citizens to search for her. It turns out she was eaten by a small gelatinous cube named Cuburt in the Qeynos Aqueducts. All now that remains of her is the [[Small Tattered Dress]]. If you find this, you may return it to either Guard Elron himself, or one of his hired men, Zamel or Endric (both found in Qeynos South).
+
+This quest can start with any of those three people. The quest dialogue of each of the three:
+
+'''Guard Elron (Qeynos North)'''
+
+You say, 'Hail, Guard Elron'
+
+: Guard Elron says 'Greetings. I am sorry but I can't concentrate on my post and talk to you at the same time.  Especially when I should be out searching for [Lucie]..  Please excuse me.'
+
+You say, 'Who is Lucie?'
+
+: Guard Elron says 'Lucie is my only daughter.  Her mother was killed by gnolls a little over a year ago.  Now Lucie is missing.  Ton Firepride said he saw her playing in the south pond.  I have told her a million times to stay out of the aqueducts..  She never listens..  Now I spend every free moment searching for my little girl..  If only I could find some clue to her fate..  Well, I need to get back to work.  Fare well, Arctura.'
+
+'''Handing in the [[Small Tattered Dress]] to Guard Elron shows this:''' 
+
+: Guard Elron says 'Oh dear.. no.. no.. I warned her about the aqueducts.. I warned her.. I coudn't watch her every minute of the day, could I? Oh Lucie.. Why didn't you listen to me? Here, take this. It belonged to her mother. She always said that in times of need, it gave her courage to go on.. Thank you so much for your efforts.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+You receive 3 silver from Guard Elron.
+ 
+Reward: experience, money, Golden Locket.
+
+'''Zamel (Qeynos South)'''
+
+: Zamel says 'Clean the [aqueducts] they tell me!  Peh.  I don't care how much they pay me, I am not climbing into that filth.'
+
+You say, 'Hail, Zamel'
+
+: Zamel says 'Greetings.  My name is Zamel and I have the much coveted duty of pulling sludge up out of the pools and [aqueducts] of Qeynos..'
+
+You say, 'What aqueducts?'
+
+: Zamel says 'Aye, the aqueducts are a horrible place.  I have heard rumors of horrible [beasts] who live under the city in the water and just the other day, a child playing in the water just up and disappeared!'
+
+You say, 'What beasts?'
+
+: Zamel says 'I know nothing of what or where they may be, just rumors, friend.  However, should you foolishly choose to enter the waters to brave the possibilities and return with some evidence of the [child's] fate, I would be most appreciative.'
+
+You say, 'What child?'
+
+: Zamel says 'The daughter of one of our own guardsmen is missing.  He has offered me a reward for any information about her disappearance.  So, if you find out anything, let me know and I will cut you in on the reward.'
+
+'''Handing in the [[Small Tattered Dress]] to Zamel  shows this:''' 
+ 
+: Zamel says 'Yes.  I do believe this was the child's dress.  Here, take this as your share of the reward.  Her father will be heartbroken..'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+ 
+Reward: experience, Hematite or rarely Golden Ear Stud.
+
+'''Endric  (Qeynos South)'''
+
+You say, 'What aqueducts?'
+
+: Endric says 'Aye, the aqueducts are a horrible place.  I have heard rumors of horrible [beasts] who live under the city in the water and just the other day, a child playing in the water just up and disappeared!'
+ 
+You say, 'what beasts?'
+
+: Endric says 'I know nothing of what or where they may be, just rumors, friend.  However, should you foolishly choose to enter the waters to brave the possibilities and return with some evidence of the [child's] fate, I would be most appreciative.'
+
+You say, 'What child's fate?'
+
+(No response from Endric)
+ 
+'''Handing in the [[Small Tattered Dress]] to Endric shows this: '''
+ 
+: Endric says 'Yes.  I do believe this was the child's dress.  Here, take this as your share of the reward.  Her father will be heartbroken..'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+ 
+Reward: experience, Hematite or rarely {{:Golden Ear Stud}}.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

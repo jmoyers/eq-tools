@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_sneed_galliway.png|frame|Sneed Galliway]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Sneed Galliway]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]], [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[a mangy rat]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Small Coin, Minor Items
+</li><li> {{:Dagger}}
+</li><li> {{:Water Flask}}
+</li><li> {{:Torch}}
+</li></ul>
+
+== Walkthrough ==
+
+Sneed may be found inside Sneed Galliway's Trading Post, at +135, +240.
+
+You say, 'Hail, Sneed Galliway'
+
+: Sneed Galliway says 'Hello, ______. I am Sneed Galliway, merchant and citizen. I run the only general store in all of Qeynos, serving the needs of the many adventurers who call Qeynos home. If only one of them would take the time to help me with my er... [problem]...'
+
+You say, 'What problem?'
+
+: Sneed Galliway says 'Shhh.. Keep it down. It seems I have a little rodent problem in my store. A mangy rat keeps digging into my crates of rations. He looks as if he is diseased. If you help me by killing this pest, I will make it worth your while. Bring me his head as proof it is done.'
+
+''' [[a mangy rat]] spawns periodically upstairs.  Kill it and loot a [[Rat Head]].  Give the head to Sneed.'''
+
+: Sneed Galliway says 'HA! Good work! I knew you were the person for the job. A regular ratslayer you are. Here is your reward as promised. Be sure you keep this between us.'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 4 copper from Sneed Galliway.
+
+You also receive a minor item (a [[Water Flask]] is among known rewards).
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

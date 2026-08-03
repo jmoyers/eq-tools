@@ -1,0 +1,142 @@
+[[File:npc_shakey_scarecrow.png|frame|Shakey Scarecrow]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Shakey Scarecrow]]
+|-
+! ''' Minimum Level: '''
+| 1?
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Karana]]
+| [[North Qeynos]]
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| [[Cleet Miller]]
+| [[a scarecrow]]
+| [[Nomsoe Jusagta]]
+| [[Roror]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Belt of the River}}
+</li><li> {{:Wee Harvester}}
+</li></ul>
+
+== Walkthrough ==
+
+*Obtain [[Sack of Hay]] from the Miller farm in West Karana
+*Obtain [[Blessed Oil Flask]] from [[Nomsoe Jusagta]] at the Temple of Life in Qeynos (say "I will deliver a flask")
+*Have [[Roror]] in the Feerrott curse the Sack of Hay to obtain [[Sack of Cursed Hay]] for the price of 66 gold
+*Combine the Sack of Cursed Hay and the Blessed Oil Flask in any non-cultural forge to create [[Sack of Writhing Hay]]
+*Give the Sack of Writhing Hay to Shakey Scarecrow to receive [[Wee Harvester]] or [[Belt of the River]]
+
+
+At the Tagglefoot farm in Rivervale, hail Shakey Scarecrow and one of the Leafsway NPCs should comment that Shakey isn't himself lately.
+
+'Hail, Shakey Scarecrow.'
+<br>
+Shakey Scarecrow rustles and looks up at you in acknowledgment.
+
+It seems Shakey's stuffing is rather old, and his pumpkin head is beginning to crack. To fix his stuffing, you need magical hay.  The hay that must be harvested can only be found on the Plains of West Karana. Cleet Miller will leave [[Sack of Hay]] behind here and there after he halts to survey his farm.  The scarecrows who infest the fields also commonly drop the sacks of hay although magical weapons are required to strike them.
+
+This hay is so far inert and not much use for a magical scarecrow, so to add the necessary hocuspocus seek out Roror, a High Priest of Cazic-Thule in the Feerrott.
+First however, before you make this long trek, run over to the Qeynos Hills zoneline to have a chat with Brother Estle.  He may be found wandering the road. 
+
+'Hail, Brother Estle.'
+<br>
+Brother Estle says 'Greetings, child of life. The way of the [Prime Healer] shall set you free and cleanse your soul. I hope to see you at [mass].'
+<br>
+'What Prime Healer?'
+<br>
+Brother Estle says 'Rodcet Nife is the Prime Healer. His way is the path of healing and life. There can be no true life until your soul is healed by healing others. This will take you into the eternal when your time comes.'
+<br>
+'What mass?'
+<br>
+Brother Estle says 'Mass is not being held out here as yet. I am waiting for the [blessed oil] from the Temple of Life. You may attend services there.'
+<br>
+'What blessed oil?'
+<br>
+Brother Estle says 'The blessed oil is necessary during services. It is blessed by High Priestess Jahnda at the [Temple of Life]. If you are going in the direction, please stop at the temple and remind High Priestess Jahnday that brother Estle is waiting for his blessed oil.'
+<br>
+'What is the Temple of Life?'
+<br>
+Brother Estle says 'The Temple of Life is the center of worship for the followers of Rodcet Nife. It is located in North Qeynos and is one of the greatest temples ever created. Be sure to visit and attend services.'
+
+Venture westward to Qeynos and visit Priestess Jahnda at the Temple of Life.
+
+'Hail, Priestess Jahnda.'
+<br>
+Priestess Jahnda says 'Welcome to the Temple of Life, where the will of Rodcet Nife, the Prime Healer, is carried out. I am the High Priestess Jahnda. If you require any training in our ways, please talk to any of our priests or any of the paladins of the Temple of Life.'
+<br>
+'Brother Estle needs the blessed oil.'
+<br>
+Priestess Jahnda says 'I do not distribute the blessed oil of life. Please speak with Nomsoe Jusagta. Tell Nomsoe that Brother Estle needs the blessed oil.'
+
+Nomsoe is outside near the pond, hanging out with a group against a wall.
+
+'Hail, Nomsoe Jusagta.'
+<br>
+Nomsoe Jusagta says 'Greetings and welcome to the Temple of Life! The healing of the world shall begin within. Let me know if you have seen a [new disciple of life]. I have a task which needs to be attended to.'
+<br>
+'I am a new disciple of life.'
+<br>
+Nomsoe Jusagta says 'It is good to meet a new follower of the Prime Healer. Remember that we must defend all life. Disease and poison are the enemies. Within Qeynos we work hand in hand with other guilds. I seek an acolyte to [deliver a flask].'
+<br>
+'I will deliver a flask.'
+<br>
+Nomsoe Jusagta says 'Our allies, the Knights of Thunder, have requested that we aid their followers in the Plains of Karana. We have a few young acolytes working there now. Take this blessed oil to Brother Estle. Follow the path to the plains. He shall be waiting for you by a tree alongside the path.'
+ 
+Nomsoe hands you a Blessed Oil Flask.  Our minor deception of the credulous clergy of the Temple of Life notwithstanding, this oil is necessary to purify the hay of the undesirable effects of having Cazic-Thule curse the hay, which you should now set about doing by tracking down Roror, a lizardman who wanders the southwestern quadrant of the Feerrott.  He claims to be the High Priest of Cazic-Thule and would be happy to establish his bonafides if you doubt him.
+
+'Hail, Roror.'
+<br>
+Roror will ask you if you fear.  If you respond affirmatively, he responds with 'That's great!'.  If you respond in the negative, he sets about teaching you the meaning of fear with gusto.  As he is a 49 shaman, this is usually accomplished with aplomb.
+For our present purposes, we need to ask him to either [bless my hay] or [curse my hay].  Both lead to the same response.
+
+Roror says 'You sssseek the blesssssssing of the Lord of Fear?! Give me what you have and 66 gold pieces as an offering to Cazic-Thule.'
+
+Quickly hand him the Sack of Hay and 66 gold.  He doesn't halt long for hails so you may need to engage his attention longer by saying something else, such as [I fear] or [bless my hay].
+
+Roror says 'Yesss. But remember, Cazic-Thule demandsssss both the item and 66 gold piecessss assssss an offering.'
+<br> 
+Roror says 'Whatsssss thisssss? You sssseek my blessssssssing? Heh heh heh... Very well... CAZIC-THULE! Take this fruit of Karana into horror'sss dark embrace. Fear and death made manifesssssst. A harvesssst of terror! Here, take your gift of blood and sssstraw. Use its dark powersssss in the name of the Fear Lord!' 
+
+<div class='facblock'>
+* Your faction standing with Beta Neutral got better.
+</div>
+
+You receive a Sack of Cursed Hay (identifies as "Straw of Cazic-Thule").
+
+Combine this Sack of Cursed Hay with the Blessed Oil Flask in any non-cultural forge (this is a no-fail combine).
+The result is a Sack of Writhing Hay (identifies as "Scarecrow Stuffing").
+Return to Rivervale and give this sack to Shakey. 
+
+Shakey Scarecrow shakes his head around and beams a smile at you. 
+
+<div class='facblock'>
+* Your faction standing with Storm Reapers got better. 
+* Your faction standing with Mayor Gubbin got better. 
+* Your faction standing with Merchants of Rivervale got better. 
+* Your faction standing with Unkempt Druids got worse. 
+</div>
+{{exp}}
+
+You receive some money and either the [[Wee Harvester]] or [[Belt of the River]].
+
+== See Also ==
+
+* [[Shakey the Scarecrow's Head]]
+* [[Blessed Oil]]
+* [[Gathering Grain]]
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

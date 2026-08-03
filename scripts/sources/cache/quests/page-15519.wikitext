@@ -1,0 +1,67 @@
+{{Classic Era}}
+[[File:npc_aderius_rhenar.png|thumb|Aderius Rhenar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Warrens]]
+|-
+! ''' Quest Giver: '''
+| [[Aderius Rhenar]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Leraena Shelyrak]]
+|}
+
+== Reward ==
+
+<ul><li>Coin</li>
+<li>[[Faction]]</li></ul>
+
+== Walkthrough ==
+
+''[[Aderius Rhenar]] can be found in the prison area of The Warrens (270.79, -1110.29, -95.65).''
+
+You say, 'Hail, Aderius Rhenar'
+
+: Aderius Rhenar says, 'Hail, _______. I am Aderius Rhenar, priest of Quellious and assistant to Lady Leraena. I have been fortunate to be imprisoned here with these Kejekan cat men, they are a very wise people. Are you planning on returning to Erudin soon my friend?'
+
+You say, 'I am planning to return to Erudin'
+
+: Aderius Rhenar says, 'I have managed to prepare a message on this scrap of cloth for the priestess Leraena. It is a matter of great importance to the High Council of Erudin. Please deliver this message to her promptly. I must stay here for a while longer and converse further with my Kejekan friends.'
+
+''You receive a [[Rolled Up Strip of Cloth]]. {{Item Lore|message to Laraena}}.''
+
+'''Bring the [[Rolled Up Strip of Cloth]] to Leraena Shelyrak in the Temple of Divine Light in Erudin (-649.03, -91.10, 67.10).'''
+
+You say, 'Hail, Leraena Shelyrak'
+
+:[[Leraena Shelyrak]] says, 'Welcome my, child. I am Leraena Shelyrak, overseer of the Temple of Divine Light. Inside this temple, you may find the path to inner peace. Introduce yourself to each of the priests and priestesses of the temple as well as the paladins. Together we shall put an end to such disruptive influences as the [kobold shaman].'
+
+'''Upon turn-in:'''
+
+: Leraena Shelyrak says, 'This is important news indeed. It seems there is a tribe of cat men in the Stonebrunt Mountains that wishes to form an alliance with Erudin. I must alert the High Council of this immediately, thank you for your services.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] has been adjusted by 5.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by 5.
+* Your faction standing with [[Heretics]] has been adjusted by -1.
+</div>
+
+{{exp}}
+
+You receive 9 copper from Leraena Shelyrak.
+
+== Notes ==
+
+<ul><li>Aderius will give you the note at scowling faction.</li></ul>
+
+[[Category:Quests]]
+[[Category:The Warrens]]

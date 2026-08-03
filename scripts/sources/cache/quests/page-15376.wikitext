@@ -1,0 +1,37 @@
+[[File:npc_ged_twigborn.png|frame|Ged Twigborn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Ged Twigborn]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| [[A brown bear]], [[A Bear Cub]], [[A Black Bear]], [[A Polar Bear]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bearskin Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+There is an NPC named Ged Twigborn who hangs around another NPC and they will wander the forest at times. I usually see them in one of two places: either along the same wall as the zone to the commonlands, or by turning on the path off the main road from the sign pointing towards Freeport. 
+
+Ged will make you some gloves for a price. The Bearskin Gloves cost 25 gold and a [[High Quality Bear Skin]].
+
+''Need missing dialogues, current faction hits if any, /loc of quest mobs.''
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,122 @@
+[[File:npc_danaria_hollin.png|frame|Danaria Hollin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Danaria Hollin]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[East Commonlands]], [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Lenka Stoutheart]], [[Nesin Tapper]], [[Palatos Kynarn]], [[Svinal Wyspin]]
+|}
+
+== Reward ==
+
+<ul><li>  Experience
+</li><li> Platinum
+</li><li> [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''Danaria Hollin can be found roaming the dock area of South Qeynos.''
+
+You say, 'Hail, Danaria Hollin'
+
+: Danaria Hollin says 'Greetings! Nice to meet someone with manners. I do not see how you people stand to live in this madhouse of ruffians. I would have left weeks ago if I were not waiting for a delivery. Oh, well. Nice to have met you.'
+
+You say, 'What delivery?'
+
+: Danaria Hollin says 'I am in Qeynos to meet up with a fellow Erudite coming from Freeport. He is two weeks late and I fear the worst. I shall need to hire some lackey to go to Freeport to find him.'
+
+You say, 'I will find him'
+
+: Danaria Hollin says 'Yes, that might work. Please go to Freeport and find him. His name is Palatos Kynarn. Tell him that Danaria has sent you for the painting. And be quick about it! Thank you.'
+
+'''Head to East Freeport and find Palatos Kynarn. He's located in the shady part of town.'''
+
+You say, 'Hail, Palatos Kynarn'
+
+: Palatos Kynarn says 'What do you want? Can't you see that I wish to be alone?! I have no need nor desire to speak with anyone. I have a minor dilemma to ponder and the only person I wish to speak with is the [captain].'
+
+You say, 'Danaria sent me'
+
+: Palatos Kynarn says 'If you are working for Danaria, you have been misguided. You will go back to her empty handed. Now leave. The [captain] and I have some business to discuss.'
+
+'''The 'captain' he speaks of is an alcoholic beverage, [[Capt. Orlin's Spiced Ale]]. This can be purchased from the bartender right next to you, Nesin Tapper.'''
+
+Upon handing Palatos four drinks:
+
+: Palatos Kynarn says 'Ahh.. I..  Need help..   You.. take this.. Go build.. boat beacon.    Ask gnomes about..  boat beacon. They know how.. Then bring back..   Unnnhh!! Prexus help me!! I will never drink again.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] has been adjusted by 5.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by 5.
+* Your faction standing with [[Heretics]] has been adjusted by -1.
+* Your faction standing with [[High Guard of Erudin]] has been adjusted by 5.
+</div>
+{{YouGainExperience}}
+
+(This step can be repeated to easily raise Craftkeepers and Erudin city factions. Palatos Kynarn is on Craftkeepers so he can be /considered to test it.)
+
+'''Receive a Beacon Mount. In his drunkedness, Palatos advises you to seek out Svinal Wyspin, a Gnome merchant in the Emporium in West Freeport, at -250, -30.'''
+
+You say, 'Hail, Svinal Wyspin'
+
+: Svinal Wyspin says 'Welcome, welcome, welcome! This is the Emporium. If we don't have it, we can get it!!'
+
+You say, 'Tell me about the boat beacon'
+
+: Svinal Wyspin says 'What!!? Looking for a boat beacon? We may be getting one from Ak'Anon in about a year. You can always try to make one. Find a greater lightstone, a metal disk and a copper band. If you have a beacon mount, go to a forge and combine them all. It's not that hard, but it's not that easy, either.'
+
+'''Buy the Metal Disk and Copper Band. You'll also need a Greater Lightstone. Combine those three items and the Beacon Mount in a Forge (reported trivial 70) to create a Boat Beacon.'''
+
+'''You can do one of two things with this Boat Beacon. Turn it in to Palatos Kynarn, or to Lenka Stoutheart (found occasionally in the Grub 'n Grog Tavern at the Freeport dock). Upon turning it into Palatos, the quest is over.'''
+
+: Palatos Kynarn says 'Thanks..   That saved me a lot of money.  Now I can spend more time with the captain before I give this back to Lenka Stoutheart.  Here is a little so...mething.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Upon turning it into Lenka Stoutheart, you receive positive Halas faction and a portrait of King Ak'Anon.''' Note: standing next to Lenka is [[Bronto Thudfoot]], an Ogre on [[Wolves of the North]] faction who is KoS to both wolf form and earth elemental illusion. This greatly complicates doing this quest as an evil character looking to improve Barbarian faction.
+
+: Lenka Stoutheart says 'Oh!! You must work for that Erudite named Palatos. I guess he won't have to spend anymore money drinking in Freeport. Here. Here is the portrait I kept until he could get me a new boat beacon.'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Upon turning Ak'Anon's Portrait over to Palatos:'''
+
+Palatos Kynarn says 'Wise decision!!   Little reward for a large deed. Bye.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

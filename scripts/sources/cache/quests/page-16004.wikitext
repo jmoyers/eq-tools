@@ -1,0 +1,180 @@
+
+[[File:npc_scholar_darnathn.png|300px|right|Scholar Darnath]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Commonlands|East Commonlands]]
+|-
+! ''' Quest Giver: '''
+| [[Scholar Darnath]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[East Commonlands]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+Level 46+ Round Robin Rewards
+<ul><li>{{:Zombie Flesh Bracer}}</li>
+<li>{{:Paebala Fetish}}</li>
+<li>{{:Cloak of Confusion}}</li></ul>
+
+OR Sub-46 Round Robin Rewards
+<ul><li>{{:Supple Scale Armband}}</li>
+<li>{{:Matchless Dragonwing Mantle}}</li>
+<li>{{:Gangrenous Beetle Mask}}</li>
+<li>{{:Coldain Military Wristguard}}</li></ul>
+
+Note: For any items listed, you can turn in the item from mob drop or quest to begin the item cycle.
+
+
+== High-level Checklist ==
+{{CheckboxList}}
+* '''Obtain [[Chapter I, The Shatter Sky]]'''
+:* Run to Permafrost. On the way kill any Mammoths and Goblins you see in Everfrost (for the next step’s items). Run to King Thex'Ka IV’s spawn point @POS 680, NEG281 (spot 3 on the map). Say “Aurilias, I remember” to get a [[Permafrost Resonance Crystal]].
+:* Go to Thurgadin, and go behind the statue directly across from Icewell @NEG200, 0 and say “Aurilias, I remember” to get a [[Thurgadin Resonance Crystal]].
+:* Go to the Dreadlands and head for the Yeti Caves (#1 on the map @POS2098, POS5050). At the intersection inside the caves (only one crossroads), say “Aurilias, I remember” to get a [[Dreadlands Resonance Crystal]].
+:* Go to Everfrost. Run to [[Watcher Aenwen]] @POS 3100, POS750. Hand in the THREE RESONANCE CRYSTALS to receive CHAPTER I and a Holiday Gift. Use up this Gift.
+
+*'''Obtain [[Chapter II, Of Bards and Bitter Winters]]'''
+:* Go to Iceclad and tell [[Archivist Tyriele]] @POS4645, POS1930 "I will find who this belonged to." to get your [[Lost Gift Box]].
+:* Go to Thurgadin. Go to the bar in northeast Thurgadin and hand in your [[Lost Gift Box]] to [[Kirvil Snowstring]] @POS110, NEG425 to get a [[Discarded Packaging]].
+:* Return to [[Archivist Tyriele]] in Iceclad @POS4645, POS1930 and hand in your [[Discarded Packaging]] to get CHAPTER II and holiday gift. Use up this gift.
+
+*'''Obtain [[Chapter III, When Stars Forget Their Light]]'''
+:*Go to TOFS and get the 4 LOST PAGES:
+::*[[Forgotten Page 1]] - Skeletons on floor 1 & 3.
+::*[[Forgotten Page 2]] - Any ghost on floor 2.
+::*[[Forgotten Page 3]] - Only the Armored Shadows and Zombies on floor 3 (Confirmed Narmak Berreka on Floor 4 dropped page 3).
+::*[[Forgotten Page 4]] - From any on floor 4.
+:* Go to Great Divide and turn in your 4 LOST PAGES to [[Windscribe Thaloria]] @NEG1950, NEG2650 and receive CHAPTER III and a holiday gift. Use up your gift
+
+*'''Obtain [[Chapter IV, Of Flame and Frost]]'''
+:* [[Frostbitten Hide]] - Mammoths in Everfrost.
+:* [[Emberberry Cluster]] - Goblins in Sol A.
+:* [[Dew of First Light]] - [[Will O Wisp]] in North Karana (or anywhere you want for this, really).
+:* Return to DL. Run to [[Frosti Bramblebrew]] @POS 725, POS 6700. Turn in your hide, cluster, and dew, to receive CHAPTER IV and a Holiday Gift. Use up this Gift.
+
+*'''Obtain [[Chapter V, Ashes in the Margins]]'''
+:* Run to EW. Tell [[Isolde Winterveil]] at @NEG4500, NEG4400 "I will take this shard." to get your [[Frosted Memory Shard]].
+:* Go to Qeynos Hills. Find [[Guard Lammel]]. He walks from Surefall to Qeynos along the path. Give him your [[Frosted Memory Shard]] and receive a [[Frosted Broach]].
+:* Port to Iceclad and run to Eastern Wastes. Go to [[Isolde Winterveil]] @NEG4500, NEG4400. Give her the [[Frosted Broach]] to receive CHAPTER V and a HOLIDAY GIFT. Keep this gift for chapter six.
+
+*'''Obtain [[Chapter VI, The First Frost]]'''
+:* [[Goblin Ice Necklace]] - any goblin in Everfrost Peaks.
+:* [[Fire Goblin Skin]] - any goblin in Solusek's Eye
+:* [[Holiday Gift]] from any turn in. Must be unopened.
+:* Go to EW. Run to [[Dreamspeaker Lyssiara]] @NEG4140, NEG2490. Give her your necklace, skin, and gift, to receive CHAPTER VI and a gift.
+<br/><strong>NOTE: do NOT have the [[Zombie Flesh Bracer]] on your person when you do the turn in or the turn in will fail</strong>.
+*'''The Final Steps'''
+:* Make sure you don't have the first reward anywhere in your inventory.
+:* Go to a loom (or use a sewing kit) to sew up all SIX CHAPTERS.
+:* Go to the EC tunnel. Find [[Scholar Darnath]], who is by Shady. Hand in your [[Whispers of the Icestar]] to receive your reward! You can turn in until you receive the desired item. 
+<br/><strong>NOTE: do NOT have the [[Zombie Flesh Bracer]] on your person when you do the turn in or the turn in will fail</strong>.
+{{End}}
+
+== Notes ==
+
+There are six elves across Norrath.
+
+{| class="eoTable2"
+|- 
+! NPC
+! Zone
+! Chapter
+! Quest
+|- 
+| '''[[Watcher Aenwen]]'''
+| [[Everfrost Peaks]]
+| [[Chapter I, The Scatter Sky]]
+| [[The Icestar Dims]]
+|- 
+| '''[[Archivist Tyriele]]'''
+| [[Iceclad]]
+| [[Chapter II, Of Bards and Bitter Winters]]
+| [[The Unnamed Gift]]
+|-
+| '''[[Windscribe Thaloria]]'''
+| [[Great Divide]]
+| [[Chapter III, When Stars Forget Their Light]]
+| [[The Four Fragments]]
+|- 
+| '''[[Frosti Bramblebrew]]'''
+| [[Dreadlands]]
+| [[Chapter IV, Of Flame and Frost]]
+| [[Emberfold Exchange]]
+|- 
+| '''[[Isolde Winterveil]]'''
+| [[Eastern Wastes]]
+| [[Chapter V, Ashes in the Margins]]
+| [[The Icestar Remembers]]
+|-
+| '''[[Dreamspeaker Lyssira]]'''
+| [[Eastern Wastes]]
+| [[Chapter VI, The First Frost]]
+| [[Old Dreams]]
+|}
+
+
+There is a seventh and eighth elf. Note more as they are found.
+
+* [[Quartermaster Nellian]] ([[Northern Karana]])
+* [[Merry Snowgleam]] ([[East Commonlands]])
+
+== Walkthrough ==
+
+You say, 'Hail, Scholar Darnath'
+
+: Scholar Darnath says, 'Ah… another curious one. Good. You may be just what the Icestar needs. The Snowdrift Elves speak of a forgotten book — one older than their own songs. A ledger kept by the Icestar itself, tracking both good and evil deeds. It lives not as a physical book, but instead as a sort of magical recording. But the Icestar [cracked] somehow, and with it, the memory of how to access the Ledger was also lost. But I do have some good news. The preamble to the Ledger of Virtues and Wrongs is a written instruction book of sorts, containing the history and memories of the Icestar. If we can piece the preamble back together, we should be able to repair the Icestar and access the ledger once again.'
+
+You say, 'what cracked?'
+
+: Scholar Darnath says, 'Unfortunately, the cracking of the Icestar created very powerful rifts within our worlds, and with it, the preamble’s pages now drift across Norrath, caught in frost, memory… and silence. I could use your [help] in finding them.'
+
+You say, 'I will help'
+
+: Scholar Darnath says, 'Restoring the preamble, the 'Whispers of the Icestar', will restore the Icestar enough, allowing for the memories of the ledger to be accessed once again and the Icestar to be repaired fully. If you're bold enough to [seek] them, make haste to sew them together and recreate the tome.'
+
+You say, 'I am bold enough to seek'
+
+: Scholar Darnath says, 'Six chapters must be found to complete the record. Each is protected by frost and time - and by stories waiting to be told again. Snowdrift Elves are out searching this very moment for them. Find them and sew the binding in the chapters in a sewing kit to complete the tome. Bring the full tome back to me when it is complete and if the Icestar still listens… perhaps it will speak once more. Until then, the memories contained within will continue to fade. Even now, memories and deeds are forgotten.'
+
+Complete Quests for Chapters I - VI from the Snow Elves Across Norrath.
+
+Combine all chapters in a Large Sewing Kit to create [[Whispers of the Icestar]].
+
+Hand [[Whispers of the Icestar]] to Scholar Darnath.
+
+: Scholar Darnath says, 'Thank you %Player% for your help restoring the preamble and allowing us access to the memories once more. Your deed has mended more than a fragment of lore - it has given hope new shape. The preamble is once again restored, the Ledger accessed, and the Icestar mended. You have helped the memories of the good deeds be remembered, helping us to restore Aurilias' promise to Norrath.  In my years of studying, I’ve come across a few items that may be of interest. If it doesn't meet your needs, hand it back and I'll see if I can find one that better suits you. Unfortunately we still don't know [why].'
+
+You say, 'Why?'
+
+: Scholar Darnath says, 'The reason for the cracking is still unknown - disturbing. The immediate issue has been resolved, but we will need to delve more into this to find the true cause of the cracking in the first place. This reason must exist within the Plane of Snowdrift, to which we must retreat and do more research.'
+
+You receive [[Zombie Flesh Bracer]] and a [[Holiday Gift]]. From here you can Round Robin trade for other items.
+
+: Scholar Darnath says, 'Of course. May the light guide your choice.' 
+
+Trade [[Zombie Flesh Bracer]] for [[Paebala Fetish]].
+
+: Scholar Darnath says, 'Still doesn't suit your fancy eh? Try this one'
+
+Trade [[Paebala Fetish]] for [[Cloak of Confusion]].
+
+: Scholar Darnath says, 'Well that's all I have, but I'm happy to offer the same items.'
+
+Trade [[Cloak of Confusion]] for [[Zombie Flesh Bracer]].
+
+[[Category:Quests]]
+[[Category:East Commonlands]]

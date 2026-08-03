@@ -1,0 +1,221 @@
+== Checklist ==
+Bold items are No Drop, while bold NPC names indicate island bosses.{{CheckboxList}}<ul>
+Test of Bash - Gragrot
+<li>{{:Amulet of the Sphinx Eye}}
+  <ul>
+  <li>1 - {{:Ebon Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Sphinx Eye Opal}} ([[Protector of Sky]])
+  <li> '''3''' - <span style="font-weight: bold">{{:Finely Crafted Amulet}}</span> ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+Test of Smash - Gragrot
+<li>{{:Crimson Ring of the Djinni}}
+  <ul>
+  <li>2 - {{:Copper Disc}} ([[an azarack]])
+  <li>3 - <span style="font-weight: bold">{{:Small Sapphire}}</span> ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - <span style="font-weight: bold">{{:Silvery Ring}}</span>  ('''[[Keeper of Souls]]''')
+  <li>
+  </ul>
+</ul>
+<ul>
+Test of Slash - Gragrot
+<li>{{: Pegasus-Hide Belt}}
+  <ul>
+  <li>3 - {{:Diaphanous Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Dried Leather}} ([[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Finely Woven Cloth Belt}}</span> ('''[[The Spiroc Lord]]''')
+</ul>
+</ul>
+<ul>
+Test of Disempowerment - Tynicon DLin
+<li>{{: Blood Sky Face Plate}}
+  <ul>
+  <li>4 - {{:Griffon Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>5 - {{:Blood Sky Emerald}} ([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]])
+  <li>'''6''' - <span style="font-weight: bold">{{:Rusted Pauldrons}}</span> ('''[[Bazzt Zzzt]]''')
+</ul>
+</ul>
+<ul>
+Test of Envenoming - Tynicon DLin
+<li>{{:Obtenebrate Mithril Guard}}
+  <ul>
+  <li>'''5''' - {{:Dark Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 - <span style="font-weight: bold">{{:Obsidian Shard (Sky)}}</span> ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]])
+  <li>1.5, 4, 8 {{:Efreeti War Shield}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+<ul>
+Test of Raising of the Dead - Tynicon DLin
+<li>{{:Pearlescent Pauldrons}}
+  <ul>
+  <li>6 - {{:Jar of Honey}} ([[Bazzzazzt]])
+  <li>7 - <span style="font-weight: bold">{{:Sphinxian Ring}}</span> ('''[[Sister of the Spire]]''')
+  <li>8 - <span style="font-weight: bold">{{:Fae Pauldrons}}</span> ('''[[Eye of Veeshan]]''')
+  <li>1.5, 4, 8 {{:Large Sky Pearl}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+<ul>
+Test of Necropotence - Tynicon DLin
+<li>{{:Khyldorn the Blood Drinker}}
+  <ul>
+  <li>6 - {{:Dulcet Nectar}} ([[Bzzazzt]])
+  <li>7 - {{:Bloodstained Hilt}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>8 - <span style="font-weight: bold">{{:Blood Sky Ruby}}</span> ('''[[Eye of Veeshan]]''')
+  <li>1.5, 4, 8 {{:Efreeti War Axe}} ([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])
+  </ul>
+</ul>
+
+== Quest Start ==
+Talk to Sarkis Ebonblade in the [[Plane of Sky]].
+
+You say, 'hail Sarkis Ebonblade'
+:''Sarkis Ebonblade says 'Greetings.  Have you come here to test your dark powers of skill and spell casting? ''
+:''Sarkis Ebonblade says 'You will be tested by either Gragrot or Tynicon.  Choose one! ''
+
+= Gragrot =
+
+You say, 'I choose gragrot'
+:''Sarkis Ebonblade says 'Gragrot it is!  Take this book (Shadowy Virtues) and read it.  When you are finished, hand it back to me and I shall summon Gragrot to test you.'' 
+:''Sarkis Ebonblade says 'Farewell. ''
+:''Gragrot says 'I am here to do your bidding, Shadowknight Spirit! ''
+You say, 'hail Gragrot'
+:Gragrot says 'Hail!  So you think you are a mighty Knight of Shadows?  We must test these skills.  Are you ready to begin the test? Or do you think you have already proof of your deeds? ''
+You say, 'I have proof of my deeds'
+:''Gragrot says 'So you think you've proven yourself?  Well bring me a Sphinx Eye Amulet or a Djinni Finger Ring to claim your just reward. ''
+You say, 'I am ready to begin the test'
+:''Gragrot says 'Great, let us waste no more time!  I offer to you three challenges.  Bash, smash, or slash?  What do you wish to be tested in? ''
+
+== Shadow Knight Test of Bash ==
+
+Gragrot says 'Gragrot like bashin.  Gragrot say you like bashin too!  Give Gragrot an ebon tessera, a sphinx eye opal, and a finely crafted amulet.  Gragrot then give you sphinx eye amulet. 
+
+'''Reward:''' {{:Amulet of the Sphinx Eye}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Ebon Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Sphinx Eye Opal]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Finely Crafted Amulet]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+== Shadow Knight Test of Smash ==
+
+Gragrot says 'Gragrot wants you smashin.  Smash, smash, and return a copper disk, a small sapphire, and a silvery ring.  Then Gragrot give you djinni's finger ring. 
+
+'''Reward:''' {{:Crimson Ring of the Djinni}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Copper Disc]] || [[an azarack]] || Island 2
+|-
+| [[Small Sapphire]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Silvery Ring]] || [[Keeper of Souls]] || Island 4 Boss
+|}
+
+== Shadow Knight Test of Slash ==
+
+Gragrot says 'Gragrot see you is powerful, but Gragrot wonders if you is good at slashin'.  Gragrot says return with a diaphanous globe, a piece of dried leather, and a finely woven cloth belt.  Gragrot then give you pegasus hide belt. 
+
+'''Reward:''' {{:Pegasus-Hide Belt}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Diaphanous Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Dried Leather]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Finely Woven Cloth Belt]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+= Tynicon Dlin =
+
+You say, 'I wish to be tested by tynicon'
+:''Sarkis Ebonblade says 'Tynicon it is!  Take this book (Knights of the Malign) and read it.  When you are finished, hand it back to me and I shall summon Tynicon to test you. ''
+:''Sarkis Ebonblade says 'Farewell. ''
+:''Tynicon DLin says 'I am here to do your bidding, Shadowknight Spirit! ''
+You say, 'hail Tynicon DLin'
+:''Tynicon DLin says 'Hail!  So you think you are a mighty shadowknight?  Your dark magic is very important to us.  Are you ready to be tested or could it be that you have come back in hopes of a trade? ''
+You say, 'I have come back in hopes of a trade'
+:''Tynicon DLin says 'Ahh, well, prove to me that you have passed these tests and are worthy to wield the power I grant.  Bring me Rheumguls and I will replace it with something more fitting for your abilities. ''
+You say, 'I am ready to be tested'
+:''Tynicon DLin says 'Great, let us waste no more time!  I offer to you four challenges.  Disempowement, envenoming,  raising of the dead, or necropotence.  Choose one to be tested on. ''
+
+== Shadow Knight Test of Disempowerment ==
+
+Tynicon DLin says 'Disempowerment, destroying goodly magic.  Proceed upward through the sky and return to me a griffon statuette, a blood sky emerald, and rusted pauldrons.  This will prove your abilities to me and I will reward you with the Blood Sky Faceplate. 
+
+'''Reward:''' {{:Blood Sky Face Plate}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Griffon Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Blood Sky Emerald]] || [[a spiroc arbiter]], [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|-
+| [[Rusted Pauldrons]] || [[Bazzt Zzzt]] || Island 6 Boss
+|}
+
+== Shadow Knight Test of Envenoming ==
+
+Tynicon DLin says 'Venom and hate permeate us more than our dumber, larger brohers.  Return to me an efreeti war shield, a dark spiroc feather, and a shard of obsidian and prove that your soul is envenomed with hatred. If you do so, the obtenebrate metal guard shall be yours. 
+
+'''Reward:''' {{:Obtenebrate Mithril Guard}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Dark Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Obsidian Shard (Sky)]] || [[Bazzzazzt]], [[Bzzzt]] || Island 6
+|-
+| [[Efreeti War Shield]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+== Shadow Knight Test of Raising of the Dead ==
+
+Tynicon DLin says 'The dead are our allies against those who would oppose us.  Proceed upward through the sky and return to me a large sky pearl, a jar of honey, a sphinxian ring, and fae pauldrons.  This will prove your abilities to me and I will reward you with the pearlescent pauldrons. 
+
+'''Reward:''' {{:Pearlescent Pauldrons}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Large Sky Pearl]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|-
+| [[Jar of Honey]] || [[Bazzzazzt]] || Island 6
+|-
+| [[Sphinxian Ring]] || [[Sister of the Spire]] || Island 7
+|-
+| [[Fae Pauldrons]] || [[Eye of Veeshan]] || Island 8
+|}
+
+== Shadow Knight Test of Necropotence ==
+
+Tynicon DLin says 'Only the most powerful and vile of shadowknights manage to complete this test.  Return to me an efreeti war axe, some dulcet nectar, a bloodstained hilt, and a blood sky ruby.  Doing so will earn you the right to wield the Drinker of Blood. 
+
+'''Reward:''' {{:Khyldorn the Blood Drinker}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Dulcet Nectar]] || [[Bzzazzt]] || Island 6
+|-
+| [[Bloodstained Hilt]] || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Blood Sky Ruby]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti War Axe]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Shadow Knight Quests]]

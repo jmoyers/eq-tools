@@ -1,0 +1,47 @@
+{{Classic Era}}
+[[File:Npc_dun_mcdowell.png|200px|frame|Dun McDowell]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Torn White Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Barbarian Rogue, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'If you wish join our cause, give this note to [[Dun McDowell]]. He likes to hang out behind Cappi's, near the docks.'
+
+Upon handing him the tattered note:
+
+: [[Dun McDowell]] says, 'Ah.. ye wish to be a member o' the White Rose, then. eh? Well, let's train ye fer a bit. and see if ye've got what it takes.'
+
+<div class='facblock'>
+* Your faction standings with [[Rogues of the White Rose]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Torn White Tunic*]]. Good luck, rogue!
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Rogue Quests]]

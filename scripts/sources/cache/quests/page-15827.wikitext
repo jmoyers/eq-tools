@@ -1,0 +1,82 @@
+__NOTOC__
+{{Velious Era}}
+
+''Need info on minimum required reputation; Kcor confirmed to eat the toes at scowling.''<br>
+Give [[Storm Giant Toes]] to [[Sentry Kcor]] for CoV and Yelinak faction (1 at a time).<br>
+It seems that there is no quest text to get this information from the Sentry.
+
+[[File:npc_sentry_kcor.png|frame|Sentry Kcor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kcor]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]], [[Wakening Lands]]
+|-
+! ''' Related NPCs: '''
+| storm giants
+|}
+
+== Reward ==
+
+<ul><li>  Faction, Small coin
+</li></ul>
+
+
+== Walkthrough ==
+
+Sentry Kcor in [[Skyshrine]] requires [[Storm Giant Toes]] to be handed in 1 at a time. These drop commonly off storm giants in Kael or Wakening Lands.
+
+''Sentry Kcor may be found at +50, -640 in Skyshrine (near the [[Wakening Lands]] zonein). '''Note:''' This quest lowers faction with [[Kromzek]].''
+
+<div style="padding-left:30px;">
+<span style="font-weight:bold;color:#007345;"> You say, 'Hail, Sentry Kcor'</span> 
+
+Sentry Kcor says, 'Halt, who goes there? Hmmm. What manner of strangers are you? Let it be known that the Kin hold no love for outsiders, only those truly worthy may walk amongst the Kin.'
+
+Sentry Enots says 'It was because of an outsider that the dragons were forced to flee.'
+
+Sentry Kcor says 'Perhaps, but then again these strangers may be worthy of our trust unlike that vile Kragen Morshire, perhaps we should give them a chance to prove themselves truly worthy to walk amongst the Kin.'
+
+Sentry Enots says 'Perhaps you are right Kcor, but we will see.'
+
+Sentry Enots says 'I must speak with the Herald, Kcor please see to the gate until I return. '
+
+Sentry Kcor says 'Very well Enots, but do not be long, Lord Yelinak would have your hide should invaders arrive while you are not at your post.'
+
+Sentry Enots says 'I shall not be long.'
+</div>
+
+
+[[Storm Giant Toes]] drop from storm giants in [[Kael Drakkel]]. Hand one in: 
+<div style="padding-left:30px;">
+Sentry Kcor says, 'Ahh these will go nicely with the rest of my collection. Here is a small reward for your trouble.'
+</div>
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan|ClawsofVeeshan]] got better. [likely +5]
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] could not possibly get any worse.
+</div>
+
+<div style="padding-left:30px;">
+<span style="font-weight:bold;color:#D6A100;">
+You gain experience!!
+</span> 
+
+You receive 2 gold, 1 silver, 4 copper pieces.
+</div>
+
+[[Category: Quests]]
+
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

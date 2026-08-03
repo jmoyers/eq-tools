@@ -1,0 +1,141 @@
+{{Classic Era}}[[File:npc_tobon_starpyre.png|frame|Tobon Starpyre]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Tobon Starpyre]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Wizard
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]], [[Greater Faydark]], [[Lesser Faydark]], [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Bidl Frugrin]], [[Fodin Frugrin]], [[Phiz Frugrin]], [[Trudo Frugrin]], [[Zenita D`Rin]]
+|}
+Requires Amiable or better faction, quest is multiquestable.
+
+== Reward ==
+
+<ul><li>  [[Column of Frost|Spell: Column of Frost]]
+</li><li> [[Fire Bolt|Spell: Fire Bolt]]
+</li><li> [[Shock of Ice|Spell: Shock of Ice]]
+</li></ul>
+
+== Walkthrough ==
+
+'''[[Tobon Starpyre]] (1049, -989) can be found in the Library Mechanamagica.'''
+
+You say, 'Hail, Tobon Starpyre'
+
+:Tobon Starpyre says, 'It is good to see the young show an interest in the ways of magic. Its circles can be used in tandem with our unique ways of tinkering. Have you [joined the Eldritch Collective] or are you [merely curious]?'
+
+You say, 'I have joined the Eldritch Collective'
+
+:Tobon Starpyre says, 'Very good. Would you like to [go on a little mission] or are you busy studying?'
+
+You say, 'I would like to go on a little mission'
+
+:Tobon Starpyre says, 'Fabulous! Here is a list of the observers outside Ak'Anon. Go and ask each for a [spare telescope lens]. Each should give you one. We have need of them. I await your return as does your reward, either Fire Bolt or Fingers of Fire. Meant for a skilled wizard of the eighth trial.'
+
+You receive a [[List (item)]]. It indicates that there are 3 observers in Steamfont Mountains (Fodin Frugrin, Tindo Frugrin, and Phiz Frugrin) and 1 observer in Lesser Faydark (Trudo Frugrin). Seek ye these observers and ask each if they have a spare lens. They're very easy to find. Look for the little gnome house with the telescope sticking out of one end.
+
+'''The first one, [[Fodin Frugrin]], is just outside of the entrance of Ak'Anon.'''
+
+You say, 'Hail, Fodin Frugrin'
+
+:Fodin Frugrin says, 'Hello [name]. Have you ever peered beyond our little world? Somewhere out there in the vast darkness is a world filled with great technology and adventure. Our people should concentrate on reaching these distant worlds beyond the sparkling skies.'
+
+You say, 'Do you have a spare lens?'
+
+:Fodin Frugrin says, 'Spare Telescope Lens?? I am sorry but I do not have any spares right now.. Oh wait!! I do. Here you are my friend. Careful with that. They are very rare.'
+
+'''The second one, [[Tindo Frugrin]] (1870, -280), can be found at #2 on the map of Steamfont Mountains.'''
+
+You say, 'Hail, Tindo Frugrin'
+
+:Tindo Frugrin says, 'Greetings! It is good to see a new face around here. I am Tindo Frugrin, observer for the Eldritch Collective.'
+
+You say, 'Do you have a spare lens?'
+
+:Tindo Frugrin says, 'I was hoping you were not the one they sent. I have a slight problem. My brother Bidl Frugrin is holding the lens. He went to Kelethin for a little observation. He has been there for quite some time. I fear he has found the local tavern. He will no doubt spend the day in the forest and every night at the tavern.'
+
+'''The third observer, [[Phiz Frugrin]] (-1570, -1820), is located at #11 on the map of Steamfont Mountains.'''
+
+You say, 'Hail, Phiz Frugrin'
+
+:Phiz Frugrin says, 'Hello my friend. Good to meet you.'
+
+You say, 'Do you have a spare lens?'
+
+:Phiz Frugrin says, 'Oh my. I have bad news. It was stolen by a dark elf rogue. She fled very quickly. My little legs could not keep up. Here. She dropped this. You must find her. Get it back. We have very few Lenses.'
+
+You receive a [[Filthy Towel]] which reads "Chops N Hops Finest Drinking Establishment in Freeport".
+
+'''The last observer, Trudo Frugrin (1069, -1676), is in Lesser Faydark, just outside the zone to Steamfont Mountains (marked #5 in Lfay).'''
+
+You say, 'Hail, Trudo Frugrin'
+
+:Trudo Frugrin says, 'What. what?!! I am quite busy here. I have studies to complete and charts to make!'
+
+You say, 'Do you have a spare lens?'
+
+:Trudo Frugrin says, 'Yes, of course. Here you are. Now be off.'
+
+'''Travel to [[Kelethin]] to find Bidl Frugrin, the inebriated gnome, in the tavern on the same platform as Trueshot Bows.''' Please note that he only shows up there at night.
+
+You say, 'Hail, Bidl Frugrin'
+
+:Bidl Frugrin says, 'Greetings!  Do you not find the wine of Kelethin as sweet as their women?'
+
+You say, 'Do you have a spare lens?'
+
+:Bidl Frugrin says, 'Oh my!! I forgot I had that. Here you are. You better take it back I need to go elsewhere, bye now.'
+
+'''Travel to [[East Freeport]] and look for a dark elf rogue named Zenita D`Rin.''' You can either kill her for the lens (quite hard at level 8, and it earns you faction hits) or play a card game with her. To play, hand her [[Innoruuk's Kiss of Death]] repeatedly until you draw a King card, then hand the King card back to her to receive the lens she stole.
+
+You say, 'Hail, Zenita D`Rin'
+
+:Zenita D`Rin says, 'Greetings. I would love to chat with you, but I just realized something.. I do not waste time with whelps.'
+
+You say, 'Did you steal a lens?'
+
+:Zenita D`Rin says, 'So you seek the Spare Lens. Yes. I have it. There are only two ways you can obtain it, [fight] the great Zenita or [play a game of chance].'
+
+''If you choose the game''
+
+You say, 'I will play a game of chance'
+
+:Zenita D`Rin says, 'Great. It is rather simple. I have five cards and only one is King Naythox. Find it. In order to get one card all you need to do is buy me a bottle of Innoruuks Kiss of Death from the barkeep in Chops N Hops. One bottle for one card. Return the King Naythox card to me and you shall get the Spare Lens.'
+
+''If you choose to fight''
+
+You say, 'I'll fight'
+
+:Zenita D`Rin says, 'Darn!! I was hoping not to hear that word, fight. Oh well.'
+
+(She will attack you here. Be warned, you will take [[Zenita D`Rin|faction hits]] upon her death. The hits can be repaired with the quest [[Note for Rebby]] and similar tasks.)
+
+'''Hand all four lenses back to Tobon Starpyre for your reward.'''
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 1 platinum pieces.
+
+Receive any of several wizard spells.
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Wizard Quests]]

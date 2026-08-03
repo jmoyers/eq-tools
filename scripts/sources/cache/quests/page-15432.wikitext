@@ -1,0 +1,57 @@
+{{Kunark Era}}
+[[File:npc_warlord_geot.png|frame|Warlord Geot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Quest Giver: '''
+| [[Warlord Geot]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All (Iksar)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a Sarnak hatchling]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dried Froglok Leg}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Warlord Geot]] is upstairs in the leftmost building as you exit Cabilis, at 5982.67, -6586.45, 73.63.
+
+You say, 'Hail, Warlord Geot'
+
+: Warlord Geot says 'Greetings!! You look like an adventurer. I have a bit of a problem with which you might be able to help. You see, there have been reports of sarnak hatchlings near the lake. I do not know why they are here, but I do know we need them exterminated. Here is the deal ... You bash them good and return their brains for me. For every four brains, I shall reward you.'
+
+Hand in four [[Sarnak Hatchling Brain]]s:
+
+: Warlord Geot says 'Bravo!! You have done well. Here is a small reward. The greater reward is service to the empire.'
+
+<div class='facblock'>
+* You faction standing with [[Legion of Cabilis]] got better.
+* You faction standing with [[Cabilis Residents]] got better.
+* You faction standing with [[Scaled Mystics]] got better.
+* You faction standing with [[Crusaders Of Greenmist]] got better.
+* You faction standing with [[Swift Tails]] got better.
+</div>
+
+{{YouGainExperience}}
+
+5% @ level 4 
+
+3% @ level 5 with a shadowknight
+
+You receive 1 silver from Warlord Geot.
+
+[[Category:Quests]]
+[[Category:Lake of Ill Omen]]

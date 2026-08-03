@@ -1,0 +1,74 @@
+{{Classic Era}}
+[[File:npc_josper_kenshed.png|frame|Josper Kenshed]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+!''' Quest Giver: '''
+| Josper Kenshed
+|-
+!''' Minimum Level: '''
+| 1+ 
+|-
+!''' Classes: '''
+| [[Enchanter]], [[Magician]], [[Necromancer]], [[Wizard]]
+|-
+!''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+!''' Related NPCs: '''
+| [[an ice goblin whelp]], [[an ice goblin scout]], [[ice goblin diver]]
+|-
+!''' Required Faction: '''
+| Amiable or better
+|}
+
+== Rewards ==
+
+<ul><li> {{:Servant's Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+Josper Kenshed is located at +910, +740 in the Tower of The Crimson Hands in Erudin Palace.
+
+You say, 'Hail, Josper Kenshed'
+
+: Josper Kenshed says 'Come forward and speak. What is it you seek within these walls? Let it be the knowledge of wizardry, for that is what we are. Only a [servant of wizardry] should be within these walls.'
+
+You say, 'I am a servant of wizardry.'
+
+: Josper Kenshed says 'A servant, you say? If you be a young apprentice, perhaps you might assist me? I could use you to [collect components]. If you believe yourself to be beyond such things, you may wish to assist me with a [special matter].'
+
+You say, 'I can collect components.'
+
+: Josper Kenshed says 'Of course you may assist me!! We have much need of a certain item which can only be found in the frigid peaks of Everfrost. There you shall find creatures called ice goblins. Take this bag and fill it with ice goblin beads and be sure to combine them before you return them. Well, then... Off with you!! And be quick about it and I shall give you a fine wizard's weapon. None of this rust-covered garbage offered by our associates!'
+
+'''Receive an Empty Bag (identifies as "Bag for Ice Necklaces"), a 6-slot container.'''
+
+'''Head to Everfrost Peaks and kill ice goblins to loot Goblin Ice Necklaces.  Ice goblins near Halas are lvls 1 - 3 and can drop these'''
+
+'''Combine 6 Goblin Ice Necklaces in the Empty Bag to create a [[Bag of Ice Necklaces]].'''
+
+Hand Josper Kenshed the [[Bag of Ice Necklaces]].
+
+: Josper Kenshed says 'Well done, my young apprentice. I call you apprentice for you are nothing but a spark to my fire. This is the final component for my greatest creation. AHA!! I call it - iced tea!! Never again shall I boil under the hot sun. As for you, take this. It should serve you well. Now go away. There is no iced tea for you.'
+
+<div class='facblock'>
+* Your faction standing with [[Crimson Hands]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 7 gold from Josper Kenshed.
+
+You receive {{:Servant's Staff}}.
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Wizard Quests]]

@@ -1,0 +1,125 @@
+[[File:Eq3 zps000eb056.png|frame|Server's First Fiery Avenger]]
+[[File:Elegor.png|right|250px]]
+
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Plane of Sky]]
+|-
+! ''' Quest Giver: '''
+|Inte Akera
+|-
+! ''' Minimum Level: '''
+|46
+|-
+! ''' Classes: '''
+|[[Paladin]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li> {{:Fiery Avenger}}
+</li></ul>
+
+== Checklist ==
+: ''See also: [[Zimel's Blades (SoulFire)]], [[The Sword of Nobility]], & [[Tome of Ages]]''
+
+'''You'll need Warmly or higher [[Deepwater Knights]] faction for the turn ins.'''
+
+{{CheckboxList}}
+* Swords
+** Obtain a [[Ghoulbane]]
+** Obtain a [[SoulFire]]
+* [[Tome of Ages]]
+** Obtain the [[Torn, burnt book]] 
+** Obtain the [[Torn, Frost covered book]]
+** Turn in 1000pp and the books to [[Rysva To`Biath]] or [[Rineval Talyas]] to obtain [[Book of Scale]]
+* [[Miragul's Robe]] and [[Miragul's Head|Head]] 
+** Turn in Book of Scale to [[Oracle of K`Arnon]] to obtain [[Miragul's Phylactery]]
+** Hand [[Miragul's Phylactery]] to the [[Lich of Miragul]] to spawn [[Miragul]]
+** Obtain [[Miragul's Robe]] and [[Miragul's Head]] by killing [[Miragul]]- '''Only to whoever turned in the Phylactery!'''
+* Final hand-in to [[Inte Akera]]
+** In the [[Plane of Sky]] Efreeti room, tell [[Dason Goldblade]] that you wish to be tested by [[Dirkog Steelhand]]
+** Give Dirkog Steelhand 500pp to spawn Inte Akera -- '''Doing so will spawn Inte Akera in the Windmill on Island 4. Inte is a Deepwater Knight of Prexus and will unleash the Oceanlord's fury upon those deemed 'evil' in their eyes -- including your raid. Inte Akera only stays up for a few minutes which is why you need someone else to spawn him from the Quest Room.'''
+**  Give [[Inte Akera]] the [[Soulfire]] ALONE for the [[Blessing of Nobility]]. Warmly Faction Needed
+**  Give [[Inte Akera]] the [[Ghoulbane]] ALONE for the [[Blessing of Sacrifice]]. Warmly Faction Needed
+**  Give Inte Akera the head, robe, and both blessings (TOGETHER) for the [[:Fiery Avenger]]. Warmly Faction Needed
+{{end}}
+
+
+== Walkthrough ==
+
+Your final turn-in will consist of [[SoulFire]], [[Ghoulbane]], and [[Miragul's Robe]] and [[Miragul's Head]]. Note that even though the quest technically begins in Plane of Sky, there is no need to speak with Inte Akera before you have all the items ready to hand in. Also note that Inte Akera is a Deepwater Knight, and you need high faction with Erudite Paladins. It would be wise to have sufficient faction as well before going to Sky.
+
+How to acquire the Head and Robe of Miragul is as follows:
+
+Collect the [[Torn, burnt book]] and the [[Torn, Frost covered book]] from named dragons ([[Lord Nagafen]], [[Talendor]], and [[Severilous]] will drop the burnt book, and [[Vox]], [[Gorenaire]], and [[Faydedar]] will drop the frost book)
+
+[[Rysva To`Biath]], a bartender downstairs in the Blind Fish Tavern of [[Neriak Commons]] will combine them into the [[Book of Scale]] for 1000pp. Simply hand both half books and 1000pp to her. 
+
+Alternately, [[Rineval Talyas]] is in the [[Qeynos|North Qeynos]] newbie yard for good-aligned characters who don't wish to delve into Neriak.
+
+: Rysva To`Biath says, 'Phagh! This is not enough. Get out of my sight!'
+: Rysva To`Biath says, 'Phagh! This is not enough. Get out of my sight!'
+: Rysva To`Biath says, 'Know this now... I will not be helping your people soon enough. I suggest looking for another to aide you in this process. I hear that there is a woman known as Rineval who may be able to help you in the future. I have done what you asked, now begone from this place, I can bear your stink no longer.'
+
+Alternately:
+
+: Rineval Talyas says, 'Take this book quickly and tell no one about this.'
+
+{{exp}}
+
+'''You receive the [[Book of Scale]].'''
+
+*Note: since the combined book of scale is tradeable it could be purchased as well.
+*note: You *DO NOT* need to do any faction work whatsoever to successfully complete this turn-in.
+*note: If you invis to her in Neriak, Rsyva faces away and approached from the back for turn-in.
+
+Give Book of Scale to [[Oracle of K`Arnon]] in exchange for [[Miragul's Phylactery]]:
+
+: Oracle of K`Arnon says, 'Unbelievable! The legendary Book of Scale is mine! Please, take this as a small token of my thanks. I warn you, however, if you ever manage to join the corporeal body to the evil that resides within, you will rue the day.'
+
+<div class="facblock">
+* Your faction standing with [[Oracle of K`Arnon]] has been adjusted by 10.
+* Your faction standing with Oracle of Marud has been adjusted by -10.
+</div>
+
+{{exp}}
+
+'''You receive the [[Miragul's Phylactery]].'''
+
+In the underwater ice caves of northern [[Everfrost]] find the [[Lich of Miragul]], whic has a long spawn time, but does spawn on zone creation, so if it's not up you can create a new instance and it should be available in the caves. Turn in [[Miragul's Phylactery]] to the lich to spawn the true [[Miragul]] (53 necro)! Kill him to get [[Miragul's Head]] and [[Miragul's Robe]].
+
+'''PLEASE NOTE that only the character that turned in the Phylactery can receive the Head and Robe from Miragul!'''
+
+Spawn [[Inte Akera]] (Plane of Sky, 4th isle) by saying "I wish to be tested by Dirkog" to [[Dason Goldblade]] in the quest cave and returning the book you are handed.
+
+This will spawn [[Dirkog Steelhand]] (do not spawn Dirkog until you're ready to do the turn-in - he will depop after FIVE minutes), to whom you give 500p. 
+
+[[Inte Akera]] will spawn inside the windmill on isle 4 and despawn after FIVE minutes. He is a Deepwater Knight and will aggro anyone on the entire island who is KoS to erudite paladins. If you have any evils or people kos to erudite paladins for whatever reason, they should stay on 3 until Inte fully despawns. 
+
+Due to Inte's 5 minute despawn timer, you should have a friend waiting in the quest room while you run to the windmill. Do not (have your friend) turn in the 500p until you are in the windmill on island 4 and ready for the turn in. You'll also need Warmly or higher Deepwater Knight faction for the turn ins. Confirmed 7/17/23 kindly faction will eat the items.
+
+'''Confirmed as of 28/12/21 very beginning of warmly with Deepwater Knights is enough faction to turn in with [[Inte Akera]]'''
+
+Hand in your items SEPARATELY as so:
+
+* SoulFire ALONE for the Blessing of Nobility
+
+* Ghoulbane ALONE for the Blessing of Sacrifice
+
+Now, hand in the head, robe, and both blessings TOGETHER for the {{:Fiery Avenger}}.
+
+==See also==
+
+* [[Fiery Defender]] (Paladin Epic)
+
+[[Category:Quests]]
+[[Category:Plane of Sky]]
+[[Category:Paladin Quests]]

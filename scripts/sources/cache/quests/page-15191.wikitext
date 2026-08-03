@@ -1,0 +1,65 @@
+{{Kunark Era}}
+[[File:npc_keeper_bile.png|frame|Keeper Bile]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Keeper Bile]]
+|-
+! ''' Minimum Level: '''
+| 6+
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! '''Related Zones:'''
+| [[Lake of Ill Omen]], [[Field of Bone]]
+|-
+! '''Related NPCs:'''
+| [[a large scorpion]], [[a sabertooth cub]], [[a decaying skeleton]]
+
+|}
+
+== Reward ==
+
+<ul><li>Coin</li>
+<li>A random low-level [[Necromancer]] spell
+</li></ul>
+
+== Walkthrough ==
+
+''Find [[Keeper Bile]] in West Cabilis at location -380, 260, 3.''
+
+You say, 'Hail, Keeper Bile'
+
+: Keeper Bile bows before you as a gesture of kindness and respect. 'Greetings. I am Bile, Keeper of the Apprentice Ranks. My knowledge is that of the first circle of necromancy. I was once a great necromancer, but now i have a greater calling to protect the words of Kotiz. I also Conduct many tests to ensure the spells are deciphered correctly. I am in need of an apprentice to [collect components.]'
+
+You say, 'I will collect components'
+
+: Keeper Bile takes out a tattered scroll and looks upon its words. 'Hmm. Yes. I will need the following; One large scorpion pincer, one sabertooth cub canine and two brittle skulls. Bring these to me and I shall pay you and if I have an overscribed spell, I shall give you that also.'
+
+'''He wants you to collect some components for him. These are:'''
+
+* [[Sabertooth Cub Canine]] (dropped from Sabertooth Cubs in [[Lake of Ill Omen]])
+* [[Large Scorpion Pincer]] (dropped from Large Scorpions in [[Field of Bone]])
+* and 2 [[Brittle Iksar Skull]]s (dropped from decaying skeletons everywhere).
+
+'''Upon handing him a Sabertooth Cub Canine, a Large Scorpion Pincer and two Brittle Iksar Skulls:'''
+
+: Keeper Bile tosses the items into a nearby box and reaches into a sack at his feet. He hands you your reward. 'This spell is going to need some major testing. I can always use more of the same components.' 
+
+<div class="facblock">
+* Your faction standing with [[Brood of Kotiz]] got better. 
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+{{YouGainExperience}}
+
+== Notes ==
+* Gave 2-3% experience at lvl 8
+* This quest is a good way to get your low level spells (levels 1 & 4) for free. It's also a good way to make a little money by selling the spells you don't need back to Keeper Bile.
+
+[[Category: Quests]]
+[[Category:West Cabilis]]
+[[Category:Necromancer Quests]]

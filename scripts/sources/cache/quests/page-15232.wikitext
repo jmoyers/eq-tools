@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:npc_conium_darkblade.jpg|frame|Conium Darkblade]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Dagnor's Cauldron]]
+|-
+! ''' Quest Giver: '''
+| [[Conium Darkblade]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a giant wasp]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Giant Wasp Venom}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Conium Darkblade]] is located atop the island peak (-263, -826) in Dagnor's Cauldron.''
+
+You say, 'Hail, Conium Darkblade'
+
+: Conium Darkblade says, 'You seek Cinium Darkblade, do you? Find me you have. Often I am here. To test my [Wasp Poison], yes. Less Aqua Gobs there now are. Ha!! A true rogue am I with no leader or guild. Just the wind and shadows and much treasure to be had.'
+
+You say, 'What is wasp poison?'
+
+: Conium Darkblade says, 'Giant Wasp Venom made from the Giant Wasp Venom Sacs. An interest in poison we share? Need the insect venom, you do. It comes not cheap. My time is precious, my talent supreme.. 30 Gold is my price and also provide me with three Giant Wasp Venom Sacs.' 
+
+'''Hand Conium 3 x [[Giant Wasp Venom Sac|Giant Wasp Venom Sacs]] and 30gp.''' 
+
+: Conium Darkblade says, 'Eh, you didn't get this from meh.'
+
+{{YouGainExperience}}
+
+== See Also ==
+
+* [[Poison Making]] (Tradeskill)
+
+[[Category:Quests]]
+[[Category:Dagnor's Cauldron]]
+[[Category:Rogue Quests]]

@@ -1,0 +1,71 @@
+__NOTOC__
+[[File:npc_marshal_ghobber.png|frame|Marshal Ghobber]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Marshal Ghobber]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Hendi Mrubble]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Squad Ring}}
+</li></ul>
+
+== Walkthrough ==
+
+=== To Obtain the Ring ===
+
+At the end of the "Orc Belts" quest, [[Deputy Budo]] told you to find Marshal Ghobber and tell him, "Am I one with the Wall?"
+
+'''Find [[Marshal Ghobber]] at the ground level of the bank in Rivervale.''' (Your Location is 126.28, -203.77, 7.29)
+
+You say, 'Hail, Marshal Ghobber'
+
+: Marshal Ghobber says 'Greetings!  Allow me to introduce myself.  I am Marshal Ghobber Truppack,  Marshal of the Great Wall Patrol.  Are you [new to the squad]?'
+
+If you have warmly or better faction standing with Marshal Ghobber (he is on Guardians of the Vale), you will see the following in response to this:
+
+You say, 'Am I one with the Wall?'
+
+<nowiki>**</nowiki>Note that you MUST have 2000+ standing to receive the Squad Ring
+
+<div class="facblock">
+* Your faction standing with [[Guardians of the Vale]] got worse. (-500)
+</div>
+
+(This drop in standing appears to be a bug in the quest.)
+
+: Marshal Ghobber says 'Yes!!   Welcome, Deputy ______!   You are now an elite member of the Great Wall Division.  Wear this ring with pride.  You may take it to Hendi Mrubble of the Clerics of Mischief for healing at any time.  Wear it with pride.'
+
+'''You receive a Squad Ring.  Since your faction has been lowered to warmly at least, you cannot repeat the dialogues with Marshal Ghobber.'''
+
+=== To Recharge the Ring ===
+
+'''Find [[Hendi Mrubble]].''' (Your Location is -230.38, -379.60, -14.71)
+
+You say, 'Hail, Hendi Mrubble'
+
+: Hendi Mrubble says 'Why, hello there!!  Welcome to the Church of Mischief.  I am Hendi Mrubble. The 'R' is silent.  I am the resident healer of the church, so if you are in [need of healing], or want me to [cure poison] or [cure disease], let me know.  If you've got a touch of the crazy brain, I can't do a thing for you.'
+
+When you give her the ring, she gives it back.
+
+''What faction standing is required with Hendi to recharge the ring, and is there more to the quest?''
+
+Does not work at indifferent faction.  She takes the ring and keeps it. Amiable faction needed to recharge.
+
+[[Category:Quests]]
+[[Category:Rivervale]]

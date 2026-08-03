@@ -1,0 +1,107 @@
+{{Velious Era}}
+[[File:kkeak.png|frame|Kkeak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Wenglawks Kkeak]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Cobalt Scar]]
+|-
+! ''' Related NPCs: '''
+| [[Kellek Felhammer]], [[a siren enticer]], [[an outcast siren]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Wenglawks Manly Purse}}
+</li></ul>
+
+== TL;DR ==
+
+
+
+{{CheckboxList}}
+Optional:
+* Go to [[Kael Drakkel]] and find [[Wenglawks Kkeak]] (spot 4 on map, back room) and say "You can trust me".  You will receive the [[Voucher for Mechanical Net]].
+* Find [[Kellek Felhammer]] in the next room and hand him the [[Voucher for Mechanical Net]]. Receive [[Mechanical Net]].
+* Hand in [[Mechanical Net]] to an Outcast Siren in [[Cobalt Scar]] to receive [[Idol of Solusek Ro (Quest Version)]] (no known use).
+
+Mandatory:
+* Get three (3) [[Excellent Siren Scales]] from sirens (not the outcast siren) in [[Cobalt Scar]].
+* Hand in 3 [[Excellent Siren Scales]] to [[An outcast siren]]. Receive [[Giant Siren Scale Cloak]].
+* Go to [[Kael Drakkel]] and give [[Wenglawks Kkeak]] the [[Giant Siren Scale Cloak]]. Receive [[Wenglawks Manly Purse]].
+
+'''Note for final turn in:''' There is a level 55 Wizard giant in the room with Wenglawks but Wenglawks will NOT assist if that giant attacks you.  For the final turn in, you can go in the room invis and hand in the [[Giant Siren Scale Cloak]] to Wenglawks quickly and the other giant will attack you.  This will not hurt the hand in. You can get the reward and gate with it on your cursor, it is no drop.  If you die with it on your cursor the purse will be on your corpse.
+
+== Walkthrough ==
+
+''This quest is the third in a series of quests, following [[Toolset Delivery]] and [[Spear Delivery]]. Those preceding quests are optional.''
+
+''The first steps of this quest, in Kael, are also optional, and may even be considered a separate and unsolved quest. If you only want the purse, you may begin in Cobalt Scar by collecting 3 excellent siren scales and handing them to the outcast siren.''
+
+Wenglawks Kkeak regards you indifferently -- You would probably win this fight..it's not certain though.
+
+You say, 'What third client?'
+
+Wenglawks Kkeak says, 'Are you sure you will be up to this journey? It will take a hardened person to survive the trip. Let alone find my client. Do you really [want to go] out into the dangerous lands in the west?'
+
+You say, 'I want to go.'
+
+Wenglawks Kkeak says, 'I'm not sure if I can [trust] you with this. If you die on the trip, I will be losing profit! The other deliveries were much simpler, I remind you. Can I really [trust] you as far as I can throw you? Wait, that's a bad example - I could probably throw you quite far.'
+
+You say, 'You can trust me.'
+
+Wenglawks Kkeak says, 'I will curse your immortal soul if you fail, Rums. In the depths of the icy waters of the cobalt scar lives an outcast siren who preys upon her own kind. We have a deal, I will provide her with an excellent hunting net and she will provide me with a giant cloak made of the scales of her kind. Take this voucher to Kellek and deliver the net. Do whatever it takes to get my cloak.'
+
+''You receive [[Voucher for Mechanical Net]]. Give it to [[Kellek Felhammer]] in the next room. Kellek is a merchant, and so will never con worse than dubious unless you attack him. Just hand him the voucher.
+
+Kellek Felhammer says, 'It's hard to belive a Iksar like you is going to make a trip like this. I don't envy you little fool.'
+
+''You receive the [[Mechanical Net]].''
+
+''[[An outcast siren]] can be found in [[Cobalt Scar]] at /loc -1414 -937 -39 in the water off the southern cliff.''
+
+an outcast siren regards you indifferently -- it appears to be quite formidable.
+
+You say, 'Hail, an outcast siren'
+
+an outcast siren says, 'Leave me alone, beast!  Or I will cut your belly open and feed your entrails to the sharks.'
+
+''Give the [[Mechanical Net]] to [[an outcast siren]].''
+
+[[An outcast siren]] says, "So you are the servant of Wenglawks here to retrieve the cloak. I will need more scales to make the cloak in his size. I have already slaughtered a good thirty sirens and the cloak is nearly complete. Go forth and slaughter my kind and bring me the finest scales you can find. Let this idol be your protection from the wrath of E'ci. I will continue my work on the cloak.'
+
+{{exp}}
+
+''You receive [[Idol of Solusek Ro (Quest Version)]] (quest version is no drop with no stats, nothing like pottery created version). You must now find three [[Excellent Siren Scales]] (uncommon drops from [[A Siren Enticer]] or [[A Siren Seductress]] in CS and rare drops from any siren in Sirens Grotto).
+
+''Return the three scales to her and she will give you back a cloak.''
+
+''(1-2 scales may be MQ'ed)''
+
+An outcast siren says, "You are an excellent hunter. Tell me, did you enjoy the screams of the sirens as they perished? I find the sound so wonderful."
+
+{{exp}}
+
+''You receive [[Giant Siren Scale Cloak]]. Return to Wenglawks in Kael. Give the [[Giant Siren Scale Cloak]] to [[Wenglawks Kkeak]].''
+
+Wenglawks Kkeak says, 'It is truly a sight to behold. This is the most fashionable cloak I have yet to see. Even King Tormax will be green with envy. This old bag has served me well, I hope you will find it to your liking.'
+
+{{exp}}
+
+''You receive [[Wenglawks Manly Purse]].''
+
+<b>Note:</b> Make sure you target him while turning it in. I had Noble helssen targeted by accident but was facing wenglawks when he ate my cloak. Had it do it all over again.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

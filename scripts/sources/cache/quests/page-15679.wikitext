@@ -1,0 +1,53 @@
+{{Classic Era}}
+[[File:npc_armorer_dellin.png|frame|Armorer Dellin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Armorer Dellin]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| Melee
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Valon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Reserve Militia Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+Talk to [[Armorer Dellin]] in West Freeport's Militia House. Location: -84, -123, 3 (upstairs).
+
+You say, 'Hail, Armorer Dellin' 
+
+: Armorer Dellin says, 'Hail!! If you be a new reserve member show me your militia armory token. If you are not yet initiated, I suggest you head to the toll gate in the Commonlands and speak with Guard Valon.'
+
+'''The [[Militia Armory Token]] he speaks of is a reward for completing the Cutthroat Insignia quest from [[Guard Valon]] in the Commonlands.'''
+
+'''You must have at least amiable faction with the Freeport Militia before Dellin will accept this item.'''
+
+: Armorer Dellin says, 'Welcome to the Freeport Militia. As a reserve member we require you to wear this tunic and fight whomever, whenever, and wherever Sir Lucan commands, no questions asked!! There is no turning back!! Remember to keep clear of North Freeport. You have made a wise decision. Hail Sir Lucan!!' 
+
+<div class="facblock">
+* Your faction standing with [[The Freeport Militia]] got better.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Priests of Marr]] got worse.
+</div> 
+{{YouGainExperience}}
+
+You receive a [[Reserve Militia Tunic]].
+
+[[Category:Quests]]
+[[Category:West Freeport]]

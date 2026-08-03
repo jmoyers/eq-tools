@@ -1,0 +1,57 @@
+{{Kunark Era}}
+[[File:npc_jondin.png|frame|Jondin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Jondin]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  {{:Kromdul Toothpick}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Jondin'
+
+: Jondin says 'Greetings, friend.  I have many fine herbs for sale. My prices are reasonable for I am not governed by the [Haggle Baron]. If you fancy yourself an adventurer, I would like to hire you for a [simple mission].'
+
+You say, 'What is the simple mission?'
+
+: Jondin says 'I actually have a few items I am presently low on. I would appreciate some assistance to [collect fern flowers] or maybe you are an alchemist who can [gather bone chips].'
+
+You say, 'I will gather bone chips.'
+
+: Jondin says, 'I should tell you. I do not need the bone chips. I need bone granite powder. In order to get it. you must find some bone granite pebbles and then three piles of bone chips from decaying skeletons. After you gather the items you will have to use your skill in alchemy to combine the items and create bone granite powder. The powder is what you need.'
+
+'''Combine 1x [[Pile of Granite Pebbles]], 2x [[Bone Chips]], and 1x [[Forging Hammer]] in a Forge (Trivial: 21) to produce 1x [[Bone Granite Powder]].'''
+** ''Note that the [[Bone Granite Powder]] is Lore, and so if you create a 2nd, you will simply get a failure message.''
+
+'''Give 1x [[Bone Granite Powder]] to Jondin.'''
+
+: Jondin says, 'Excellent!!! You are a fine alchemist. Please accept this as a token of my appreciation.'
+
+<div class="facblock">
+* Your faction standing with [[Brood of Kotiz]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+{{Exp}}
+** ''Note: Gained 13% experience as a level 5 Iksar Shaman. 
+
+[[Category:Quests]]
+[[Category:West Cabilis]]

@@ -1,0 +1,53 @@
+[[File:icebear.png|frame|Karg IceBear]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Quest Giver: '''
+| [[Karg IceBear]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Commonlands]], [[Mistmoore Castle]], [[Southern Karana]], [[Western Karana]], [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a werewolf]]
+|}
+May be multiquestable, needs verification.
+
+== Reward ==
+
+<ul><li>  {{:Lupine Claw Gauntlets}}
+</li></ul>
+
+== Walkthrough ==
+
+''Karg IceBear wanders the tundra, often passing by the North Tower.''
+
+You say, 'Hail, Karg IceBear'
+
+: Karg IceBear says 'Hail, traveler! I am Karg of Clan IceBear, lone hunter of the Everfrost Peaks.  Have you seen any polar bears about?'
+
+You say, 'I have slain a werewolf.'
+
+: Karg IceBear says 'Werewolf?!  I have not seen a werewolf in years.  Have you slain one and collected its skin or its claws?'
+
+You say, 'I have its claws.'
+
+: Karg IceBear says 'Oh, a werewolf claw? If you were to give me the claw and 75 platinum, I could craft excellent gauntlets.'
+
+'''Hand in Werewolf Claws and 75 pp for your reward.'''
+
+: Karg IceBear says, 'OK! Now, where is the rest?'
+: Karg IceBear says, 'It has been a long time since I crafted items from werewolves. I hope this aids you in your journeys. Farewell, friend, until we meet again.'
+
+No faction hit. Karg despawns.
+
+[[Category:Quests]]
+[[Category:Everfrost Peaks]]
+[[Category:All Classes Quests]]

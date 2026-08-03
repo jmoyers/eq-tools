@@ -1,0 +1,91 @@
+[[File:npc_hasten_bootstrutter.png|frame|Hasten Bootstrutter]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Hasten Bootstrutter]]
+|-
+! ''' Minimum Level: '''
+|1, (32-41 solo)
+|-
+! ''' Classes: '''
+| All
+|-
+! '''Related Zones:'''
+| [[Rathe Mountains]], [[Southern Desert of Ro]], [[Ocean of Tears]]
+|-
+! '''Related NPCs:'''
+| [[Ancient Cyclops]], [[a shadowed man]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Journeyman's Boots}}
+</li></ul>
+
+== Walkthrough ==
+
+'''[[Hasten Bootstrutter]]''' is a [[gnome]] that wanders [[Rathe Mountains]]. (For a map, see the NPC page.)
+
+He wants three items:
+
+* [[Ring of the Ancients]] from [[Ancient Cyclops]]
+* [[Shadowed Rapier]]
+* 3250 Gold Pieces (''must'' be Gold)
+
+There is no minimum level, but it is only realistically soloable at level 30+, 42+ recommended. This quest is multi-quest-able, and players often sell the multi-quest as a service. Check the [[Ring of the Ancients]] page for current market prices.
+
+The first item one should achieve is the Ring, chiefly because it is the most difficult piece to obtain, and the rapier is a temporary item that disappears when logged out for too long.
+
+The ring drops from the Ancient Cyclops, a rare mob that can be found in four zones, although the two main areas to kill it in are [[Ocean of Tears]] and [[Southern Desert of Ro]]. It also exceptionally rarely can spawn in [[South Karana]] and [[East Karana]], although the spawn mechanics for the Karanas are relatively unknown and highly debated, so the strategy for these zones will not be covered in this guide.
+
+The first, and only realistic way of killing the [[An ancient_cyclops (Southern_Ro)|ancient cyclops]] below level 41 or so, is the Southern Desert of Ro. The mob is a rare spawn that has a 10% chance of appearing every night at 9PM, anywhere in the desert portion of the zone. Do note that this spawn is usually contested by players trying to complete the quest as well as people farming the rings to sell multi-quests, so having [[Spirit of the Wolf]] and an instant-cast ability to engage the cyclops with is highly recommended. Playing at off-peak hours for less competition is also an advantage. If your class has [[tracking]], this is yet another advantage you have, and [[Wizard|Wizards]] can also get here easily using [[Evacuate: Ro]] at level 39, so stopping by the zone every night at 8PM can be a relatively painless, albeit heavily luck-based method for completing the quest with potentially little overall time investment. There is a first to engage message that shows in the chat on whoever the cyclops attacks first as to avoid disputes over this.
+
+The second, higher level method is to kill the [[An_ancient_cyclops_(Ocean_of_Tears)|ancient cyclops]] in the Ocean of Tears. This is a much more relaxed and arguably more consistent method of obtaining the ring. However, the spot is usually camped so be sure to do a camp check and ask to be put on the list for the camp if it's currently taken. The Ancient Cyclops resides on the island marked "8" on the Ocean of Tears map, and shares a placeholder with [[a pirate]], [[Boog Mudtoe]] and [[a cyclops]]. There are two cyclops on the island, the one on the southern part of the island that does not move is the placeholder. The cyclops and its ancient counterpart are both level 41. The ancient cyclops spawn is significantly rarer than its placeholders, so be prepared to invest several hours in one sitting should you decide to obtain it this way.
+
+Once the ring is obtained, then one must obtain the shadowed rapier by killing [[a shadowed man]]. They are in multiple zones and usually in groups, so be prepared to fight more than one at once. They run extremely fast, so don't expect to fight them without winning, as escaping is very difficult. It is be advisable to check if [[Hasten Bootstrutter]] is up before obtaining the rapier, as the rapier is no rent and will disappear if you happen to log out with it for over 30 minutes. (You CAN, however, die intentionally and leave it on your corpse, retrieving it when you're ready to hand in the quest). He shares a placeholder with [[a drake]], [[Maldyn the Unkempt]], and [[Brother Zephyl]], which all naturally despawn and switch randomly on a 4 hour interval. They can also be killed to force a spawn rotation with a 6 minute respawn timer. None of the placeholders have any faction associated and can be freely killed, however, Zephyl is a level 61 with over 40,000 health, so you will likely be unable to kill him and will have to wait out the 4 hour spawn cycle if he's up.
+
+When you obtain all the items and have 3,250 gold pieces (it '''MUST''' be in gold, not platinum), hand all of them in to Hasten Bootstrutter who wanders on the east side of [[Rathe Mountains]] for your journeyman's boots!
+
+Note: It is difficult to catch him with that much weight unless you have high strength or [[Spirit of Wolf]]. So you may have to wait along his route and target him with Hail, spamming to get him to stop. Turn in your items quickly or re-hail him frequently or he will run off. His round trip on his path is about 2m 40s.
+
+== Dialogue ==
+
+You say, 'Hail Hasten Bootstrutter'
+
+Hasten Bootstrutter says 'Stopped I have done. Greet you I will. What business do we have? Hmm? Speak up!!
+ 
+You say, 'What journeyman boots'
+
+Hasten Bootstrutter says 'Journeyman's Boots are what you seek? Ha!! I have those upon my feet and disinigrate will they if my life is taken. Extra pair have I and [rare trade] can we make.
+
+You say, 'What rare trade'
+
+Hasten Bootstrutter says 'I call for three things and Journeyman Boots are yours. I call for a [Shadowed Rapier], call for the [Ring of the Ancients] and call for Gold,.. 3250 Gold Coins!! This the trade that I call.
+
+You say, 'What shadowed rapier'
+
+Hasten Bootstrutter says 'Shadowed Men, foes to all, have appeared. Many lands do they walk. Invisible are they, but items they wield can be seen. Seek them out and return to me a Shadowed Rapier. Return it with haste before 'poof' goes the rapier!! No time to camp have you.
+
+You say, 'What ring of the ancients'
+
+Hasten Bootstrutter says 'Ancient Cyclops do march the land. Long have they lived and crafted the Ring of the Ancients have they. I must have one and you shall go and fetch one for me. Seek the lands of the oldest Cyclops clans. Seek the plains, seek the island in tears and seek the dunes for there is one who is last. His clan was blown from the sands.
+
+== Turn-In ==
+
+'''After handing him any of the items (but not all three), he will say:'''
+
+Hasten Bootstrutter says 'Trade we shall not!! When I hold in my hands the Ring of the Ancients , a Shadowed Rapier and 3250 Gold Coins then you shall wear the Journeyman Boots.'
+
+'''After handing him all three items ([[Ring of the Ancients]], [[Shadowed Rapier]], 3250 Gold Pieces), he will give you [[Journeyman's Boots]] and say:'''
+
+Hasten Bootstrutter says 'The time to trade has come!! I am now rich and you are now fast. Take the Journeyman Boots and run like the wind.'
+
+''NOTE: if doing MQ, as long as the character who is receiving the jboots is the one to turn in the final piece, likely 3250 gold or the rapier, that character receives the reward''
+
+[[Category: Quests]]
+
+[[Category:Rathe Mountains]]
+[[Category:All Classes Quests]]

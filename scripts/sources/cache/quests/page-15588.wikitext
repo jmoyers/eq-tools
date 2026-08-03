@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:npc_bumle_reminjar.png|frame|Bumle Reminjar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Bumle Reminjar]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a krag elder]]
+|}
+
+May be multiquestable with correct faction requirements.
+
+== Reward ==
+
+<ul><li> Coin (Platinum), [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''This is a continuation of the [[Aviak Chicks]] quest which [[Bumle Reminjar]], located at 1382, 132, 39 in the dining hall of the Paladin guild, will offer at Kindly faction following the turn in of the [[Aviak Chick Talon]]s.''
+
+: Bumle Reminjar says, 'You have proven yourself worthy, ______. Now, the real threat from the birdmen are the more fully-grown aviaks. Return no less than four talons from these creatures and I shall reward you!'
+
+'''Hand [[Bumle Reminjar]] 4 [[Aviak Talon]]s, randomly looted from [[a krag elder]], primarly located in the southern region of the [[Butcherblock Mountains]] between the [[Greater Faydark]] and [[Dagnor's Cauldron]] zone lines.'''
+
+: Bumle Reminjar says, 'Ahh! You are truly brave, ______!'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 2 platinum, 5 gold, 4 silver pieces.
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,71 @@
+{{Temple Era}}
+[[File:npc_gardern.png|frame|Gardern]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Gardern]]
+|-
+! ''' Minimum Level: '''
+| 30-35 if you're alone. 25 if you bring friends. Staff will not be clickable until 20.
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! '''Related Zones:'''
+| [[Temple of Solusek Ro]], [[Lake Rathetear]], [[Solusek's Eye|Solusek's Eye (Sol A)]], [[Permafrost]]
+|-
+! '''Related NPCs:'''
+| [[a stone skeleton]], [[a goblin wizard (Permafrost)]], [[inferno goblin wizard]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Staff of Temperate Flux}}
+</li></ul>
+
+== Walkthrough ==
+
+The quest start in Temple of Solusek Ro. Gardern is on a balcony at {{Loc| Temple of Solusek Ro |+425, -70, 2nd floor}} near the spell vendors.
+
+You say, 'Hail, Gardern'
+
+: Gardern says 'I am Gardern, listed among the chosen of Solusek Ro. I hold the [lore to the staff] of Temperate Flux and the [lore] to the Weeping [Wand] - items which are highly coveted by my wizardly brethren.'
+
+You say, 'What lore to the staff?'
+
+: Gardern says 'The staff of Temperate Flux is a boon to those who dabble in the elemental arts, for it can increase the susceptibility of a creature to both fire and cold. Are you [interested] in the [staff]?'
+
+You say, 'I am interested in the staff.'
+
+: Gardern says 'I will craft you a staff of Temperate Flux, but you must bring me the components I require to make it. I will need a heart of fire from an inferno goblin wizard in the caverns of Solusek, a heart of frost from a goblin wizard in the caverns of Permafrost, a rod of bone from a stone skeleton by the shores of Lake Rathe and a Staff of Ro. Bring me these items, and I will make you your staff.'
+
+He wants four items:{{CheckboxList}}
+* [[Darkwood Staff]] obtained by giving [[Romar Sunto]] in [[Temple of Solusek Ro]] a [[Lambent Stone]]
+* [[Heart of Fire]] from [[inferno goblin wizard]] in [[Solusek's Eye|Solusek's Eye (Sol A)]]
+* [[Heart of Frost]] from [[a goblin wizard (Permafrost)|a goblin wizard]] in [[Permafrost]]
+* [[Rod of Bone]] from [[a stone skeleton]] in [[Lake Rathetear]] (note: '''Rod of Bone''', ''not Heart of Stone'')
+{{End}}
+
+Hand in the four items:
+
+: Gardern says 'Well done, ______ - here is the staff of Temperate Flux. Use it with the blessings of the Temple of Solusek Ro.'
+
+{{YouGainExperience}}
+
+'''Note:'''
+
+The most difficult part of this quest is getting the Rod of Bone in Lake Rathetear. Stone Skeletons spawn in a tower in the southeast corner of the zone. There are two of them, very close to each other. They both have earth pet, who cast Root. So, you will have trouble single pulling them, which makes soloing this part mostly impossible before level 30 (while the skeletons are level 24-26). You might want to look for another wizard in his 20's or get a few partners to help you for this part.
+
+Note: At lvl 29 you can use Bonds of Force (aoe snare) on one of the pets, and then run to zone. At zone root the stone skeleton and zone dance, then root the pet again and quickly burst down stone skeleton. Use leatherskin.
+
+Note: The above method did not work for me. However, I found a method that does, and I was able to solo them at 31 with a Stein of Moggok as my only int gear. Bind yourself at the tower off to the side. Port to WC and grab a sow from a druid, and stock up on bloodstones for Leatherskin, and bat wings for levitate. You will need these buffs up at all times. You can tip a cleric for buffs if you want another safety net. As always, clarity will speed up the process here. Root the stone skeleton you want to kill and then high tail it for Rathe Mountains. After you zone in, gate. Run in and fight the skeleton. Fight him in melee range so he casts less. If you get two resists, you won't have enough mana to kill him. After you kill him, it takes about 10-20 seconds for his elemental earth pet to get to you. You must root him and camp or gate out to west commons. It takes about a minute for the other skeleton and pet to get back because they walk. Rinse and repeat until you get your staff!
+
+'''Multiquestable'''
+
+The quest may be [[multiquest]]able? The helper should be able to hand in all the no-drop items, then the recipient must hand in the staff.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

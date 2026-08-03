@@ -1,0 +1,124 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_mcneal_jocub.png|thumb|right|McNeal Jocub]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[McNeal Jocub]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]]
+|-
+! ''' Related NPCs: '''
+| [[Captain Tillin]]
+|}
+
+== Reward ==
+
+<ul><li> Experience, Faction, Coin
+</li>
+<li> {{:Black Burrow Stout}} (optional)
+</li></ul>
+
+== Checklist ==
+'''Fangs'''
+* Loot [[Gnoll Fang]]s from gnolls on [[Sabertooths of Blackburrow]] faction
+* Turn in Fang(s) to [[Captain Tillin]] to receive [[Moonstone|Moonstones]] and faction
+'''Moonstones''' (optional)
+* Instead of vendoring Moonstone(s), turn in to [[McNeal Jocub]] to receive [[Black Burrow Stout]] and faction
+
+== Faction ==
+I was able to complete the turn in to [[Captain Tillin]] while he conned Apprehensive.
+
+I was able to complete the turn in to [[McNeal Jocub]] while he conned Dubious.
+
+== Walkthrough ==
+
+''Inside Fish's Ale: Your Location is -243.82, -261.48, 3.28''
+
+: [[McNeal Jocub]] says 'Blast!! We are running [low]!!'
+
+You say, 'Hail, McNeal Jocub'
+
+: McNeal Jocub says 'Good ta see ya! Now start showin' these poodlewalkers how a real fish drinks!'
+
+You say, 'Running low on what?'
+
+: McNeal Jocub says 'This is going to sound crazy, but my main supplier of [Blackburrow Stout] is one of the brewers themselves. I have run too low on the fine brew and need someone to [pick up my shipment].'
+
+You say, 'What is Blackburrow Stout?'
+
+: McNeal Jocub says 'Keep it down!! So you've heard of Blackburrow Stout? We sell it here in Fish's Backroom. If the Qeynos Guards knew, well.. it wouldn't be such a good thing. The stout is illegal. It's made by the gnolls. It is one of the finest brews you will ever taste. If you want any.. slide me a [moonstone].'
+
+You say, 'What is a moonstone?'
+
+: McNeal Jocub says 'Looking for moonstones, are we? The only way I know of getting a moonstone is to hunt gnolls for Captain Tillin of the Qeynos Guards.'
+
+'''Inside the arena: Your Location is 36.82, -512.45, 31.29'''
+
+: [[Captain Tillin]] regards you indifferently -- what would you like your tombstone to say?
+
+You say, 'Hail, Captain Tillin'
+
+[[File:Npc captain tillin.png|thumb|right|Capt Tillin]]
+
+: Captain Tillin says 'Hail, ______! Spend your time wisely in the city of Qeynos. Do not let your mind wander to thoughts of bravado or crime. My guards can easily put to rest any outbreaks. Good day to you, citizen!'
+
+He does not respond to any of the following:
+
+* You say, 'What is a moonstone?'
+* You say, 'I will hunt gnolls.'
+* You say, 'What are gnolls?'
+* You say, 'I will go on a hunt.'
+
+'''Give him a [[Gnoll Fang]], dropped by various gnolls.'''
+
+Captain Tillin says 'Very good! One less gnoll the people of Qeynos need to fear. Here is your bounty as promised.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Antonius Bayle]] has been adjusted by 5.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by -1.
+* Your faction standing with [[Circle Of Unseen Hands]] has been adjusted by -5.
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 5.
+</div>
+
+{{exp}}
+
+===Moonstones (optional)===
+
+'''You receive a [[Moonstone]].  Give to [[McNeal Jocub]] in the Fish's Ale. You can hand him up to FOUR Moonstones at a time.'''
+
+: McNeal Jocub says 'Here you go then. Don't go tellin' no Guards where that came from. I would hate to rid myself of a good paying customer.'
+
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Priests of Life]] has been adjusted by 5.
+* Your faction standing with [[Knights of Thunder]] has been adjusted by 5.
+</div>
+
+{{exp}}
+
+'''Note: Moonstones can be purchased from some vendors for around 8s. The Blackburrow Stout from this quest sells to vendors for 7.6s.. ...'''
+
+'''This gives negligible EXP: 3% for 20 moonstones at level 12.'''
+
+You receive [[Black Burrow Stout]].
+
+== See Also ==
+
+* [[Gnoll Bounty]]
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

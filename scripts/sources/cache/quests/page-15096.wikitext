@@ -1,0 +1,73 @@
+{{Temple Era}}
+[[File:npc_vira.png|frame|Vira]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vira]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  {{:Torch of Alna}}
+</li></ul>
+
+== Walkthrough ==
+
+Vira may be found on the balcony to the left, at +410, +85. She will give quest dialog and rewards to a level 9 Magician (perhaps lower).
+
+You say, 'Hail, Vira'
+
+: Vira says 'I am Vira, elementalist of Solusek Ro. I guard the secrets of the tools of [elemental summoning]. If you are a magician, you might be interested.'
+
+You say, 'What is elemental summoning?'
+
+: Vira says 'I hold the secrets to the construction of four tools which assist magicians with the summoning of elementals. I know about the [broom of Trilon], the [shovel of Ponz], the [torch of Alna] and the [stein of Ulissa].'
+
+You say, 'What of the torch of Alna?'
+
+: Vira says 'The torch of Alna was constructed and held by the fire mistress of the same name. Are you [interested] in the [torch]?'
+
+You say, 'I am interested in the torch.'
+
+: Vira says 'I will make a replica of the torch of Alna for you, but I will need the following items to make it: a fire emerald, a scale from a fire drake, a torch from a magician in Najena and the toes of a fire giant. Bring me these four components, and I will build for you an object of elemental power.'
+
+'''She wants the following four items:'''
+{{CheckboxList}}
+* [[Fire Emerald]] may be purchased from a jewelry merchant
+* [[Fire Drake Scale]] drops from various fire drakes in the [[Lavastorm Mountains]] and [[Solusek's Eye]] (Sol A)
+* [[A Torch]] (not just "Torch", identifies as "Torch of Fire") drops from the magicians and goblin magicians in [[Najena]] or alligators in [[Cazic_Thule_(Zone)]] or [[Lake Rathetear]].
+* [[Fire Giant Toes]] drop from various fire giants around the world.
+{{End}}
+
+'''After turn in:'''
+
+: Vira says 'All of the pieces of the famous Torch of Alna! I never thought you would find them all! As you have displayed courage, I grant you this torch.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Torch of Alna}}.
+
+
+[[Category:Quests]]
+
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]
+[[Category:Magician Focus Items]]

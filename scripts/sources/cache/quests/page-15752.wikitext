@@ -1,0 +1,124 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_bygloirn_omorden.jpg|frame|Bygloirn Omorden]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Bygloirn Omorden]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+
+Ally faction is required for all Kael armor quests.<br>
+
+== Reward ==
+
+{{Gear Set
+|Troubadour's Helm
+|Troubadour's Breastplate
+|Troubadour's Vambraces
+|Troubadour's Bracer
+|Troubadour's Gauntlets
+|Troubadour's Greaves
+|Troubadour's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Bygloirn Omorden]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Troubadour's Helm]]
+:*[[Ancient Tarnished Plate Helmet]]
+:*3x [[Crushed Coral]]
+*[[Troubadour's Breastplate]]
+:*[[Ancient Tarnished Breastplate]]
+:*3x [[Flawless Diamond]]
+*[[Troubadour's Vambraces]]
+:*[[Ancient Tarnished Vambraces]]
+:*3x [[Flawed Emerald]]
+*[[Troubadour's Bracer]]
+:*[[Ancient Tarnished Plate Bracelet]]
+:*3x [[Crushed Flame Emerald]]
+*[[Troubadour's Gauntlets]]
+:*[[Ancient Tarnished Plate Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Troubadour's Greaves]]
+:*[[Ancient Tarnished Greaves]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Troubadour's Boots]]
+:*[[Ancient Tarnished Plate Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+After handing in your items:
+
+Bygloirn Omorden smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[King Tormax (Faction)|King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+{{exp}}
+
+== Helm ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you a helm if you bring him an [[Ancient Tarnished Plate Helmet]] and three pieces of [[Crushed Coral]].
+
+== Breastplate ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you a breastplate if you bring him an [[Ancient Tarnished Breastplate]] and three [[Flawless Diamond]]s.
+
+== Armplates ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you some armplates if you bring him a pair of [[Ancient Tarnished Vambraces]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you some bracers if you bring him an [[Ancient Tarnished Plate Bracelet]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you some gauntlets if you bring him a pair of [[Ancient Tarnished Plate Gauntlets]] as well as three [[Crushed Topaz]].
+
+== Greaves ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you some greaves if you bring him a pair of [[Ancient Tarnished Greaves]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Bygloirn promises to make you some boots if you bring him a pair of [[Ancient Tarnished Plate Boots]] and a set of three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Bard Quests]]
+[[Category:Kael Armor Quests]]

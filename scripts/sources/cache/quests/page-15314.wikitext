@@ -1,0 +1,43 @@
+{{Classic Era}}
+[[File:npc_kejar_the_mighty.png|frame|Kejar the Mighty]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Hole]]
+|-
+! ''' Quest Giver: '''
+| [[Kejar the Mighty]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Lower Guk]]
+|-
+! ''' Related NPCs: '''
+| [[the ghoul arch magus]]
+|}
+
+== Possible Rewards ==
+
+<ul><li>  {{:Shiny Hunk of Metal}}
+</li><li> {{:Shiny Robe of the Underfoot}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+Kejar the Mighty, a named imp found deep in The Hole (#9 on the map) asks you to bring him a Shining Metallic Robe. Kejar is scowls with benevolence and in elemental illusion. Blue to lvl 43 enchanter. Must be charmed to turn in? Ate SMR when mezzed.
+
+The [[Shining Metallic Robes]] is dropped rarely off [[the ghoul arch magi]] on the dead side of Lower Guk.
+
+In exchange for the SMR, you'll either receive either a Shiny Hunk of Metal or a Shiny Robe of the Underfoot. The former is the more common of the two.
+
+02/10/2024: Eight turn ins yielded two Robes.
+
+[[Category:Quests]]
+[[Category:The Hole]]
+[[Category:All Classes Quests]]

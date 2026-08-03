@@ -1,0 +1,54 @@
+{{Classic Era}}
+[[File:Id3125.png|frame|Ace Slighthand]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Ace Slighthand]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Mangler]]
+|}
+
+== Reward ==
+
+<ul>
+<li> coins </li>
+<li> requires at least better than apprehensive, no reward at apprehensive</li>
+</ul>
+
+== Walkthrough ==
+
+Ace Slighthand may be found in the casino on the second floor of the rogues' guild (Fools Gold) in {{Loc|Rivervale|-62,-195}}.
+
+You say, 'Hail, Ace Slighthand' 
+
+: Ace Slighthand says 'Hey, hey, hey! Welcome to the Fool's Gold. Don't bet more than you can afford to lose, pal! You don't want to end up like ol' [Kevlin]. If you're looking for something to do after you have a drink, you may be interested in a [task].' 
+
+You say, 'Who is Kevlin?'
+
+: Ace Slighthand says 'Kevlin Diggs.  His family sells armor here in Rivervale. He has a nice shop right across from us here. But he owes us Deeppockets some [gold] that we need to collect. We can't rough him up because he is a friend of Mayor Gubbin. We need someone to steal it.' 
+
+You say, 'What gold?'
+
+: Ace Slighthand says 'He keeps his money in a sack on his bed. But he has a mean pet wolf, named Mangler, who mangled the last cutpurse we sent after it. If you were to wait until he leaves his shop, then sneak past Mangler and bring me the money he owes us, I will make it worth your time.'
+
+'''Do as he says and bring him Kevlin's Debt ('''-172.69, -248.29''') {{Loc|Rivervale|-172,-248}}. [[Mangler]] is a level 2 NPC, it's not recommended to kill him as it will give you negative faction hits.'''
+
+: Ace Slighthand says 'Heh heh! You got a career ahead of ya kid! Good work. Here is your cut.'
+You gain experience!!
+You receive 10 copper from Ace Slighthand.
+You receive 4 silver from Ace Slighthand.
+
+[[Category:Quests]]
+[[Category:Rivervale]]

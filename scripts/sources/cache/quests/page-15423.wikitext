@@ -1,0 +1,82 @@
+{{Classic Era}}
+[[File:npc_larkon_theardor.png|frame|Larkon Theardor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Larkon Theardor]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Necromancer]], [[Paladin]], [[Shaman]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Rathe Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a basilisk]], [[a lowland basilisk]]
+|-
+! ''' Minimum Faction '''
+| Kindly
+|}
+
+== Reward ==
+
+<ul><li> [[Burst of Flame|Spell: Burst of Flame]]
+</li><li> [[Elementaling: Water|Spell: Elementaling Water]]
+</li><li> [[Elementalkin: Earth|Spell: Elementalkin Earth]]
+</li><li> [[Fire Flux|Spell: Fire Flux]]
+</li><li> [[Gate|Spell: Gate]]
+</li><li> [[True North|Spell: True North]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Larkon Theardor]] is located at 1029, -978, 32 behind the Library Mechanimagica on the right.''
+
+You say, 'Hail, Larkon Theardor'
+
+: Larkon Theardor says, 'Greetings! Welcome to the Library of Mechanimagica. You must be a [current member of the Library] or has my [mind begun to slip]?'
+
+You say, 'I am a current member of the Library'
+
+: Larkon Theardor says, 'Good. The last thing a member of the Eldritch Collective needs is to lose his mind. Look what happened to Meldrath. Enough chitchat. I am Larkon and it is not my job to teach you. It is my job to direct you to service. We require items and such to complete our studies. We need someone of moderate skill to [gather minotaur horns] and [collect basilisk tongues].'
+
+You say, 'I will collect basilisk tongues'
+
+: Larkon Theardor says, 'Very good of you. Go beyond the land of the gnomes and seek out basilisks. Return four of their tongues to me and I shall share the knowledge of the magicians of the Eldritch Collective.'
+
+'''Hand [[Larkon Theardor]] 4 [[Basilisk Tongue]]s.'''
+
+: Larkon Theardor says, 'Very very good! I can use these in some of our experiments. These tongues are hard to come by and more than a few of our scouts have been turned to stone because of these creatures, but I'm sure you found that out by now, eh?'
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 platinum, 5 gold, 1 silver, 6 copper pieces.
+
+== Related Quests == 
+
+* [[Air Tight Box Quest]]
+* [[Minotaur Horns]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Paladin Quests]]
+[[Category:Shaman Quests]]
+[[Category:Wizard Quests]]

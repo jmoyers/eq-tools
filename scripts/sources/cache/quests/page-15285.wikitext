@@ -1,0 +1,258 @@
+{{Classic Era}}
+[[File:npc_vicus_nonad.png|frame|Vicus Nonad]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Vicus Nonad]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]], [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Captain Rohand]], [[Fhara Semhart]], [[Fish Ranamer]], [[Flynn Merrington]], [[Mira Sayer]], [[Nesiff Tallaherd]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brass Ring}}
+</li><li> {{:Copper Amulet}}
+</li><li> {{:Turquoise}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with Vicus Nonad at location 255, -285 (second floor of a small white building to the east of the Lion's Mane Tavern and to the south of Nesiff's Wooden Weapons and the Bag and Barrel.''
+
+You say, 'Hail, Vicus Nonad'
+
+: [[Vicus Nonad]] says 'Greetings, _____. My name is Vicus Nonad. <cough> I am the official tax collector for the fine city of Qeynos. <cough> I serve the will of Antonius Bayle, our glorious leader. <cough> <cough> Please excuse my [cough]. <cough>'
+
+You say, 'What's this cough you have?'
+
+: Vicus Nonad says 'Oh, <cough> I am sorry, but it seems I have fallen a bit ill. I was caught out in the rain the other day and my chills have gotten the best of me. <cough> If only someone would [help] me with today's [collections].. <cough>'
+
+You say, 'I'll help with today's collections'
+
+: Vicus Nonad says 'Oh thank <cough> you so <cough> <cough> much <cough> Here is the official collection box. Please collect from each merchant on the <cough> [list]. Then bring me back the combined total of all your collections.'
+
+'''You receive a [[Tax Collection Box]].'''
+
+You say, 'Tell me about this list'
+
+: Vicus Nonad says 'Oh. <cough> I am sorry.. I forgot to give it to you. Here you go. Be sure to give that back when your job is finished. <cough>'
+
+'''You receive a List of Debtors. In South Qeynos, you need to see:'''
+
+* [[Ton Firepride]] (175, -330, 3)
+* [[Mar Sedder]] (535, -85, 3)
+* [[Nesiff Tallaherd]] (440, -245, 3)
+* [[Fhara Semhart]] (400, -80, 3)
+* [[Tasya Huntlan]] (260, -70, 3)
+* [[Captain Rohand]] (15, -40, 3)
+* [[Fish Ranamer]] (-290, -270, 3)
+* [[Voleen Tassen]] (-190, -265, 3)
+
+In North Qeynos:
+
+* [[Sneed Galliway]] (130, 240, 3)
+* [[Flynn Merrington]] (35, 330, 3)
+
+In Qeynos Hills:
+
+* [[Mira Sayer]] (1400, 300, 8)
+
+You say, 'Hail, Ton Firepride'
+
+: Ton Firepride says 'Greetings, adventurer! A mighty warrior such as yourself deserves only the finest in armor and we here at Firepride's were trained by the finest dwarven smiths. We shall be branching out and crafting [other items] soon, also.'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div>
+
+: Ton Firepride says 'Oh I see, Vicus has got some other sap to do his work. Fine. Here are your stinking taxes. If Kane were in charge, things would be different around here.'
+
+'''You receive [[Firepride's Tax Payment]].'''
+
+You say, 'Hail, Mar Sedder'
+
+: Mar Sedder says 'Hail, _____. What brings you to the Tin Soldier? We have the finest in previously owned weapons and armor. Feel free to browse.'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Mar Sedder says 'Here are the taxes, _____. Boy, you call the guards and they take their time to show up but be a few days late on your taxes and they send the goons after you. Sheesh!'
+
+'''You receive [[Sedder's Tax Payment]].'''
+
+You say, 'Hail, Sneed Galliway'
+
+: Sneed Galliway says 'Hello, _____. I am Sneed Galliway, merchant and citizen. I run the only general store in all of Qeynos, serving the needs of the many adventurers who call Qeynos home. If only one of them would take the time to help me with my er... [problem]...'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Sneed Galliway says 'Hey, _____, how the heck did Vicus convince you to do his job? He better be paying you well. Here you go.'
+
+'''You receive [[Galliway's Tax Payment]].'''
+
+You say, 'Hail, Nesiff Tallaherd'
+
+: Nesiff Tallaherd says 'Greetings, _____! Nesiff Tallaherd, owner and operator of Nesiff's Wooden Weapons, at your service. I am the finest woodworker in all of Qeynos. Even the Qeynos Guard uses my arrows, thanks to [Guard Weleth].'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Nesiff Tallaherd says 'Tax time again already?? It seems like I just paid yesterday.. High taxes and low sales mean I won't be able to stay in business much longer. Good thing ol' Weleth is taking care of me. Here are my taxes.'
+
+'''You receive [[Tallaherd's Tax Payment]].'''
+
+You say, 'Hail, Mira Sayer'
+
+: Mira Sayer says 'Welcome, _____. What brings you out this way? Be careful, we have had problems with bandits of late. As if the gnolls were not enough!!'
+
+You say, 'I'm here about your tax collection'
+
+: Mira Sayer looks up with tear-filled eyes and sobs uncontrollably.
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+You say, 'why are you crying?'
+
+: Mira Sayer .sniff.. Oh, dear. We do not have the money. We were just robbed by a dreadful halfling bandit named Flynn something-or-other. He took the money we had set aside for Antonius. Please. Find this highwayman and retrieve our tax payment. ..sob..
+
+'''Back in Qeynos:'''
+
+You say, 'Hail, Flynn Merrington'
+
+: Flynn Merrington says 'I didn't know Slime could speak common..go back to the sewer before I lose my temper.'
+
+You say, 'Did you steal Mira Sayer's taxes?'
+
+: Flynn Merrington says 'Ha! Yeah, I took their tax money. What are you going to do about it, little gnoll pup? Tell you what.. I will cut you a deal. You tell me you are a [gnoll loving weakling who isn't fit to comb my feet] and I will give you that merchant's tax money.'
+
+You say, 'I am a gnoll loving weakling who isn't fit to comb your feet...'
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+</div>
+
+: Flynn Merrington shouts 'BWAH! HA HA HA! Did you all hear that?! _____ is a gnoll loving weakling who isn't fit to comb my feet! BWAH HA HA! MY FEET! HA HA HA! Oh.. too rich.. Heh.. HA HA HA! Oh.. Heh heh heh.'
+
+: Sabnie Blagard says 'Hee hee hee! Oh.. how sad! HEE HEE HEE HEE HEE!'
+
+: Crow says 'Bwah! Ha! Ha! I love it when he does that! HA HA HA! You are too much, Flynn!'
+
+'''You receive [[Sayer's Tax Payment]].'''
+
+You say, 'Hail, Fhara Semhart'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+Fhara Semhart says 'Taxes? How can I afford more taxes!? You tax us poor merchants right out of Qeynos. Freeport is looking better and better every day.'
+
+'''You receive [[Semhart's Tax Payment]].'''
+
+You say, 'Hail, Tasya Huntlan'
+
+: Tasya Huntlan says 'Hail, _____! Are you just visiting Qeynos? We have plenty of rooms available or, if your throat is parched, you can always visit Earron in our pub.'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Tasya Huntlan says 'Taxes? Oh, that time again huh? Here you are. Give Vicus our best. I hear he is under the weather.'
+
+'''You receive [[Huntlan's Tax Payment]].'''
+
+You say, 'Hail, Captain Rohand'
+
+: Captain Rohand says 'Greetings, friend, and welcome to the Mermaid's Lure. Here, we sell fishing supplies and some imported goods from far-off lands. And, if you've got a few minutes, I could even tell you a [story] or two.'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Captain Rohand says 'Argh! You scurvy sea goblin! Taxes, you say?! Peh! I got your taxes right here! I sure don't get the services those taxes are supposed to provide! You can tell them ol' Captain Rohand said so!'
+
+'''You receive [[Rohand's Tax Payment]].'''
+
+You say, 'Hail, Fish Ranamer'
+
+: Fish Ranamer says 'Hail, _____! Welcome to Fish's Ale. I am Fish Ranamer, owner of the joint. Come in and have some brew but don't be startin' no trouble or Bruno will bust you open!'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Fish Ranamer says 'Taxes?! Taxes?! Tax me right out of business is what you folks are doing! Take your taxes and get out of my pub! Unless, of course, you care to buy some drinks...?'
+
+'''You receive [[Ranamer's Tax Payment]].'''
+
+You say, 'Hail, Voleen Tassen'
+
+: Voleen Tassen says 'Oh, it's so nice to see you again _____. Why don't you have a look around and buy something nice for yourself today?'
+
+You say, 'I'm here about your tax collection'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+</div>
+
+: Voleen Tassen says 'Oh dear. We had forgotten about those pesky taxes. Here you go, _____. Sorry you had to come collect them. We will try to be on time from now on.'
+
+'''You receive [[Tassen's Tax Payment]].'''
+
+By this time, you should have all tax payments in the box. Hit combine to create a [[Full Tax Collection Box]]. Take this along with the List of Debtors to him to complete the quest.
+
+: Vicus Nonad says 'My family is personally indebted to you for your assistance today Torrin. Please speak to my brother. I'm sure he will have some small reward for your dutiful service.'
+
+: Vicus Nonad says '<cough> Great! Thank you so much. Here is a small gratuity for a job well done. Thank you again. <cough> Antonius Bayle and the People of Qeynos appreciate all you have done.'
+
+<div class="facblock">
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+
+Rewards range from a few silver pieces to minor items ([[Copper Amulet]]; [[Brass Ring]]; Turquoise).
+
+'''NOTES: The faction hits for collecting the tax payments are minor. The final faction hit makes up for them. You can say "tax collection" to the NPCs without having spoken with Vicus first. You can bypass Mira Sayer by just speaking with Flynn.'''
+
+[[Category:Quests]]
+
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

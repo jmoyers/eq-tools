@@ -1,0 +1,83 @@
+{{Classic Era}}
+[[File:npc_lozani.png|frame|Lozani]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[High Keep]] (or [[Freeport|East Freeport]])
+|-
+! ''' Quest Giver: '''
+| [[Lozani]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| Casters and Priests
+|-
+! ''' Related Zones: '''
+| [[Crushbone]], [[East Commonlands]], [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Apprentice]], [[Orc Oracle (Crushbone)]], [[Orc Oracle (Deathfist)]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li> Low level spells, such as: 
+    <ul><li>[[Bone Walk|Spell: Bone Walk]]</li>
+        <li>[[Cure Blindness|Spell: Cure Blindness]]</li>
+        <li>[[Spirit Sight|Spell: Spirit Sight]]</li>
+        <li>[[Tainted Breath|Spell: Tainted Breath]]</li></ul>
+</li></ul>
+
+== Walkthrough ==
+
+''Find a gnome named [[Lozani]] on the third floor of [[High Keep]]. He shares at least one spawn point with a noble, so if there is someone else camping them,  you might have to wait or kill the placeholder.''
+
+You say, 'Hail, Lozani'
+
+: Lozani says 'Greetings, friend!! I am Lozani, Scribe Supreme of the Eldritch Collective. I have been sent forth from the great Library of Mechanimagica in the city of Ak'Anon, to study the arcane knowledge of man and beast alike. I have studied many languages and spells, from Crushbone to Kerra Ridge. I have found most languages hard to decipher. As of this date, I have learned to read only the script of the [orc oracles]. Oh well, I am on a five decade mission. Better luck next language.'
+
+You say, 'What orc oracles?'
+
+: Lozani says 'Oh!! Heard of the orc oracles have you? A ghastly bunch they are!! Argh! The numerous days I spent interrogating those beasts with their foul breath. It was as if rats had gone and died in their mouths. I wished I could read minds after those days. TWENTY WEEKS of that rat-carcass breath and all I have learned is the ability to decipher [oracle scrolls] and [apprentice cantrips]. What a mess that was! I'm beginning to think I should have become a Gemchopper.'
+
+You say, 'What oracle scrolls?'
+
+: Lozani says 'Orc oracle scrolls? Mere shaman spells are they. I know how to decipher those illegible scrolls. I can do so, but it will cost you. Nothing is for free in this world, y'know? You give me one of those illegible scrolls and four gold coins.'
+
+You say, 'What apprentice cantrips?'
+
+: Lozani says 'Orc apprentice cantrips. Child's play they are. Very difficult to decipher, mostly due to the orc sweat smearing the writing. I fill in the blanks with a second orc cantrip and my universe of knowledge, so you never know what spell is going to be scribed! Could be magic, could be wizardry, could be necromancy, golly!! Sometimes I even end up with a recipe!! If you want me to try to decipher one just hand me two illegible cantrips. No coinage necessary!! They are mostly apprentice spells. Nothing much.'
+
+'''Give Lozani an [[Illegible Scroll]] (dropped by [[an orc oracle|orc oracles]]) and 4 gold.'''
+
+: Lozani says, 'Hey!  I said FOUR gold and the illegible scroll!  Sheesh.'
+: Lozani says, Hmmm... Aha!  Well, I think this is it.  A fine spell.  I hope you need it because you are not getting your gold back.'
+
+{{YouGainExperience}}
+
+You receive a low level spell.
+
+''OR''
+
+'''Give him two [[Illegible Cantrip|Illegible Cantrips]] (dropped by [[orc apprentice|orc apprentices]]).'''
+
+: Lozani says, 'I need TWO illegible cantrips.  Not much to ask for.'
+: Lozani says, 'And the winning spell is...  Here, you do the honors.'
+
+{{YouGainExperience}}
+
+You receive a low level spell.
+
+== Notes ==
+
+* Experience gained was <2.5% for a level 13 High Elf Enchanter.
+* Do NOT try and use the rotted illegible scrolls. They do not work.
+* Lozani is also part of the NPC cycle at [[Seafarer's Roost]] in [[Freeport|East Freeport]] where he offers this same quest.
+
+[[Category:Quests]]
+[[Category:High Keep]]
+[[Category:East Freeport]]

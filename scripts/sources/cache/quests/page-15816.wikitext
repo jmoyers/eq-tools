@@ -1,0 +1,55 @@
+{{Velious Era}}
+{{Disambig3|[[Custom Plate Helms - Skyshrine]]}}
+{{Disambig3|[[Custom Plate Helms - Kael Drakkel]]}}
+[[File:npc_royal_armorer_slade.png|frame|Royal Armorer Slade]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Icewell Keep]]
+|-
+! ''' Quest Giver: '''
+| [[Royal Armorer Slade]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Warrior]], [[Paladin]], [[Shadow Knight]], [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[Thurgadin]], [[Icewell Keep]]
+|-
+! ''' Related NPCs: '''
+| [[Loremaster Dorinan]], [[Captain Njall]], [[Battlepriest Daragor]], [[Dalgrim Underbelly]], [[Leifur]]
+|}
+Despite being in Icewell Keep and surrounded by Dain Frostreaver faction mobs, Royal Armorer Slade is on Coldain faction. I can only assume Kindly is required for the turn in, just like the base level Thurgadin faction quests. The standard method for checking if you have sufficient faction is to go through the text triggers and see if the NPC responds to the one just before the turn in; in this case, that phrase is "What services?"
+== Reward ==
+
+<ul><li>  {{:Custom Champion's Crown}}
+</li><li>{{:Custom Cowl of Mortality}}
+</li><li>{{:Custom Crown of Forbidden Rites}}
+</li><li>{{:Custom Crown of the Kromzek Kings}}
+</li><li>{{:Custom Dark Runed Crown}}
+</li><li>{{:Custom Frostreaver's Velium Crown}}
+</li><li>{{:Custom Resonant Helm}}
+</li><li>{{:Custom Runed Protector's Helm}}
+</li></ul>
+
+== Walkthrough ==
+Can be found on the 3rd floor near where Dain spawns. Loc is 693.54, 76.14, 61.85
+
+
+You say, 'Hail, Royal Armorer Slade'
+
+: [[Royal Armorer Slade]] says 'Welcome, ______. I'm Slade, Royal Armorer to the Dain and his personal guardsmen. I've heard yer name once or twice in these halls and apparently ye'ver earned the respect of my people. In light of that I'm willin ta offer my [services] to you if'n ye need them.'
+
+You say, 'What services?'
+
+: Royal Armorer Slade says 'If'n ye've had the fortune to earn any of the plate helms that are made by my people in the city then I can use my skills to custom fit and detail it for a ______ of yer like. I can do this fer the [[Dark Runed Crown]], the [[Runed Protector's Helm]], the [[Resonant Helm]], the [[Crown of Forbidden Rites]], [[Crown of the Kromzek Kings]], [[Frostreaver's Velium Crown]], [[Cowl of Mortality]], and the [[Champions Crown]]. Simply hand me one of these and I'll do the work for you.'
+
+The result is a "Custom" helmet with the same stats but different look under pre-Luclin models.
+
+==See also==
+* [[Players:Fashion#Velious Armor Sets by Race]]
+
+[[Category:Quests]]
+[[Category:Icewell Keep]]

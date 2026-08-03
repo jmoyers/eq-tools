@@ -1,0 +1,85 @@
+{{Classic Era}}
+[[File:JinkusFelligan.png|alt=Jinkus Felligan, shaman guildmaster of Halas|thumb|Jinkus Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Jinkus Felligan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Einhorst McMannus]], [[Holana Oleary]]
+|-
+!Repeatable:
+|Yes
+|}
+Requires amiable or better faction.
+
+== Reward ==
+
+<ul><li> Coin plus...
+</li><li> Low-level Shaman Spells or...
+</li>
+<li>Low-level leather gear, or possibly {{:Polar_Bear_Cloak}} (rare)
+</li></ul>
+
+== Walkthrough ==
+
+You'll need to talk to [[Jinkus Felligan]], the Shaman Guildmaster, inside the Temple of the Tribunal (/loc 315, 444). <blockquote>You say, 'Hail, Jinkus Felligan' 
+
+Jinkus Felligan says, 'Welcome! Welcome to the Church o' the Tribunal! Do ey require healing or are ya [new to the Shamans o' Justice], then, eh?' 
+
+You say, 'new to the Shamans' Justice' 
+
+Jinkus Felligan says, 'Then I welcome ye into our noble order. Ye'll serve us well or spend an eternity in the dungeons o' the Tribunal. Are ye ready to [contribute to yer church] or do ye [wish to meditate] within our walls?' 
+
+You say, 'contribute to yer church' 
+
+Jinkus Felligan says, 'Ye'll help all o' Halas by doing the bidding o' this church. Go to Holana. Tell her [Jinkus sent] ye to assist her. She'll have work fer ye. Perhaps, if ye're planning on passing near Qeynos, ye can [make a delivery] as well?' </blockquote> 
+
+Next, go find [[Holana Oleary]] in Ye Majik shop on the east side of Halas (/loc 134, -336). <blockquote>You say, 'Jinkus sent me' 
+
+Holana Oleary says, 'So, ye're the next to be tested, then, eh?! I pray ye're able to return. Ye'll need to take this note to Einhorst in Clan McMannus' fishing village in the Plains o' Karana. He'll hand ye the monthly Karana clover shipment to be returned to me. Just remember, dinnae stop running! Do ye [need directions to Clan McMannus]?' </blockquote>You receive [[A tattered note]], and off to the McMannus Clan fishing village of [[Western Karana]] ye' go to deliver the note to Einhorst! 
+
+==== Traveling to West Karana and the fishing village: ====
+To get to the village, go though Blackburrow to Qeynos Hills. Then follow the mountains south until you hit a path which leads to the West Karana zone line. In West Karana follow path until it splits turn right to head south, the fishing village is straight ahead and not far from here. Einhorst is in one of the small fishing huts (/loc -3807, -2096). 
+
+Hand over the note to [[Einhorst McMannus]]. <blockquote>Einhorst McMannus says, 'Yes. We almost forgot of the shipment of Karana clovers. Here you are, my friend. Back to the north with you. I am sure the Shamans of Justice will need this.' </blockquote>
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Rogues of the White Rose]] got worse. 
+{{exp}}
+
+You receive various amounts of coin and the [[Karana Clover Shipment]] to return to Holana.
+
+<blockquote>
+==== Side Quest Opportunity ====
+Before you hurry back to Halas to delivery the clover shipment to Holana, speaking to Einhorst further will offer you up another delivery quest ([[Lion Meat Shipment Quest]]) that leads you back to Halas as well. </blockquote> 
+
+Hand over the shipment to Holana. <blockquote>Holana Oleary says, 'Good work. We Shamans o' Justice are like no other. We must remain in top physical form for we never know when justice must be served. I was commanded to give ye a reward. Take this. It was doing nothing more than collecting dust. Go, and serve justice well.' </blockquote> 
+
+When you give the shipment to Holana, you'll receive coin, experience, an item (gear or a 5th level shaman spell). On occasion you may even receive a [[Polar Bear Cloak|polar bear cloak]]. (Confirmed for EQ Legends - Was awarded with three cloaks over the course of 32 turn ins.)
+
+Completion also receives the following faction adjustments: 
+
+<div class="facblock">
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Circle Of Unseen Hands|Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse. 
+* Your faction standing with [[Ebon Mask]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Halas]]

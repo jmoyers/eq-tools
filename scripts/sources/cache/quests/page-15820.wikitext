@@ -1,0 +1,120 @@
+{{cleanup}}
+The term "'''Bard Mail'''" is usually used to refer to the group of quests: [[Going Postal]]
+
+== Rewards ==
+
+* [[Faction]]
+* Experience
+* Small Coin
+
+----
+
+
+This Page will, more specifically, list the most time efficient versions of this large group of quests:
+
+
+== Felwithe to Kelethin ==
+
+{| class="questTopTable"
+!''' Start Zone: '''
+| Felwithe
+|-
+!''' Quest Giver: '''
+| Tascar Tissleplay
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| Greater Faydark
+|-
+!''' Related NPCs: '''
+| Jakum Webdancer
+|}
+
+
+Time:5-8 min
+
+This quest takes place mostly in Greater Faydark and involves running a message from Tascar Tissleplay, in Felwithe, to Jakum Webdancer, in Kelethin. 
+
+(Tascar Tissleplay loc:-89, -322) (Jakum Webdancer loc: -232, 259)
+
+The idea is to run back and forth doing this delivery repeatedly. Time wise, running this quest can be comparable  to killing the bats and wolves that inhabit the area. Especially at times when the zone is crowded with new players, or when SoW is Available. On this point: Its recommended to find a druid using "/who druid" ( Sow is a level 14 spell), as having SoW will about double your rate of experience gain while doing this quest.  (If there is any, offer to meet them or donate for Sow at the "PoD Lift")
+
+
+'''Walkthrough''' 
+
+----
+
+Video Guide: https://youtu.be/YtDvKTydd28
+
+This quest is doable by any of the good races, starting at level 1.
+
+Head to [[Felwithe]] in the South East corner of [[Greater Faydark]]. 
+You can follow the path from [[Kelethin]] if you started there. You will go around some corners, do not turn at any junctions you pass. Eventually the path stops in a T intersection.  Turn left at this T intersection and you should see the front gate of Felwithe loading in immediately in front of you. (Felwithe Entrance loc: -1980, -2308) 
+Inside the city, head across the bridge and into the tunnel on the right. Just through this tunnel, you will see Tascar Tissleplay standing to the left of the Entrance to Faydark's Bane. (Number 7 on the [[Felwithe]] Map)
+
+
+
+
+Hail Tascar and say 
+     what mail
+ 
+followed by 
+     I am interested 
+
+and then 
+     I will deliver to Kelethin 
+
+(On all subsequent trips back to Tascar you can simply target him and say "'''i will deliver to Kelethin'''" to receive a new letter.)
+
+
+
+
+Once you have the letter it is time to head to Kelethin.
+
+After Leaving Felwithe veer right, across the grass, and follow the path back to Kelethin. (Do not turn at the junction you pass) After some turns, the path ends at the 1st lift of Kelethin (loc 52, -148) Take the lift up, then take the bridge to the right to the next platform.  From this platform there will be a bridge on the left leading to the Bard's Guildhall.  Inside the guildhall, in the first room on the right will be Jakum Webdancer. (Bards guild is number 14 on the [[Kelethin]] Map)
+
+Hand the letter to him to receive '''XP''' and a '''random amount of gold, 1-16 pieces'''.
+
+You will also Receive the following Faction Changes:
+	
+        [[League of Antonican Bards]] got Better +5
+        [[Guards of Qeynos]] got Better +1
+        [[Knights of Truth]] got Better +1
+        [[Ring of Scale]] got Worse -1
+        [[Mayong Mistmoore]] got Worse -1
+
+After the turn in, take the lift you took up into the city back down. The path makes a right turn, just past the lift and your on your way back to Felwithe!
+
+== Other Information ==
+
+1) One run from Tascar to the bard's guild and back to Tascar, on the path:
+     Without Sow: 7.5min
+     With Sow: 4.5 min
+
+2) It is best to sick to the path if you don't know the way ([[Sense Heading]] anyone?), and keep your eyes on the road, as the aggressive orcs and black wolves can be lethal at these levels. Times will vary based on load time at Felwithe and how much of the path you need to follow. 
+
+3) From Felwithe to Kelethin you can run straight north west across the zone and to the newbie lift. From The Bard guild in Kelethin, back to Felwithe, its harder to tell what direction you are facing, and thus the path becomes the fastest route.
+
+4) You can make a social Macro that is "/say i will deliver to Kelethin" and put it on your hot bar to prevent misspellings and speed up the process.
+
+5) At level 5 (wood elf druid) the quest turn in gives 1/2 a yellow per completion.
+
+
+== Nektulos Forest to North Freeport==
+
+Classes with gate can repeat this quest fairly quickly, especially after obtaining SoW and Clarity from the nearby EC tunnel entrance. As a human enchanter with the default bind point in East Freeport, one quest loop took a hair over three minutes. This loop used two gate casts: One after each NPC interaction. A bit more time could be saved if one were to get a bind inside the bard guild.  Clarity is important because untwinked characters will likely run out of mana, especially using the two-gate loop. 
+
+At level 9, this was a safe and reliable source of experience, though not spectacular.
+
+----
+
+[[Category: Quests]]
+[[Category: All Classes Quests]]
+[[Category:Bard Guides]]
+
+--[[User:Trappindotcom|Trappindotcom]] ([[User talk:Trappindotcom|talk]]) 08:06, 5 April 2016 (UTC)

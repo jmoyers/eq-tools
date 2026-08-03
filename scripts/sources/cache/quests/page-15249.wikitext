@@ -1,0 +1,88 @@
+{{Classic Era}}
+[[File:npc_Trantor_Everhot.png|frame|Trantor Everhot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Trantor Everhot]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]], [[South Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Cleonae Kalen]], [[Tumpy Irontoe]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Dwarven Wire}}
+</li></ul>
+
+== Walkthrough ==
+
+'''(If you are doing this to unlock the Dwarf Race, it took 805 Tumpy Tonics on an Ogre with Agnostic Diety to get Ally)'''
+
+''[[Trantor Everhot]] paths between three locations: 402, -156, 15 upstairs in the Everhot Forge; 657, -197, 3 outside the Grey Bloom Farms next to the oven; and 507, 314, -33 next to a kiln near the entrance to the mines.''
+
+You say, 'Hail, Trantor Everhot'
+
+: Trantor Everhot says, 'Yes, yes!! I am a very busy man. I've got blueprints to work on, [dwarven wire] to perfect and formulae to calculate. In between those tasks, I have to find time to head down to Irontoe's and down a few Tumpy Tonics.'
+
+You say, 'What dwarven wire'
+
+: Trantor Everhot says, 'Oh!! Interested in my dwarven wire, are you? Many are. I have no problem letting you use a spool, but I have to warn you that I have not perfected the strength of it yet. I will make you a trade. A couple of [Tumpy Tonics] for a spool.'
+
+You say, 'What Tumpy Tonics'
+
+: Trantor Everhot says' Aaah!! I love Tumpy Tonics. They were created by Tumpy Irontoe. He was once a member of the famed Irontoe Brigade. Since they disbanded and left for parts unknown he decided to stay in Kaladim and open Irontoe's, the finest well in Faydwer.'
+
+[[File:Npc_tumpy_irontoe.png|frame|Tumpy Irontoe (Kaladim)]]
+
+''[[Tumpy Irontoe]] is located at 177, 313, 3 inside Irontoe's Eats in [[South Kaladim]].''
+
+: Tumpy Irontoe says, 'Welcome to Irontoe's! The finest watering hole this side of Oggok! If you're looking for anything special and it ain't behind the bar, just ask. Maybe I can make it.'
+
+You say, 'Make me a Tumpy Tonic'
+
+: Tumpy Irontoe says, 'So you want a Tumpy Tonic? I can make you one. All I need is a flask of water and a kiola nut. The kiola nut can be bought in the Ocean of Tears island chain.'
+
+''[[Kiola Nut]]s are purchased only from [[Cleonae Kalen]], located just up the dock at 503, -9253, 12 on the Island of the Sisters of Erollisi in the [[Ocean of Tears]], for about 2 gold each.''
+
+'''Hand [[Tumpy Irontoe]] 1 [[Kiola Nut]] plus 1 [[Water Flask]], and receive a [[Tumpy Tonic]] in return.'''
+
+: Tumpy Irontoe says, 'Here you go. One Tumpy Tonic. Don't drink that too fast now.'
+
+'''Return to [[Trantor Everhot]] and hand him 2 [[Tumpy Tonic]]s, unstacked.'''
+
+: Trantor Everhot says, 'Hey!! Only One?!!'
+
+: Trantor Everhot says, 'Thank you, that hit the spot!! Here is the spool, as promised.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] has been adjusted by 5.
+* Your faction standing with [[Kazon Stormhammer]] has been adjusted by 5.
+* Your faction standing with [[Miners Guild 249]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Kaladim]] has been adjusted by 5.
+* Your faction standing with [[Craknek Warriors]] has been adjusted by -1.
+</div>
+
+{{YouGainExperience}}
+
+
+'''Quest Turn in Experience gains
+: Level 7 Druid with 60 Nuts got me to level 8, another 60 nuts got me half way to level 9.
+
+== Related Quests ==
+
+* [[Trueshot Longbow Quest]]
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:All Classes Quests]]

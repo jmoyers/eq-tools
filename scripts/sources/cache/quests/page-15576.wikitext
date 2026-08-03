@@ -1,0 +1,60 @@
+{{Disambig3|[[Necromancer Words - X`Ta Tempi]]}} {{Disambig3|[[Necromancer Words - X`Ta Timpi]]}} {{Disambig3|[[Necromancer Words - X`Ta Tompi]]}} {{Disambig3|[[Necromancer Spells|Necromancer Spells (The Overthere)]]}}
+
+[[File:npc_izarod_fristan.png|frame|Izarod Fristan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Izarod Fristan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Minion of Shadows|Spell: Minion of Shadows]]
+* [[Sacrifice (spell)|Spell: Sacrifice]]
+* [[Scent of Terris|Spell: Scent of Terris]]
+* [[Shadowbond|Spell: Shadowbond]]
+
+== Walkthrough ==
+
+He wants any of the following spell scrolls:
+
+* [[Convergence]]
+* [[Defoliation]]
+* [[Splurt]]
+* [[Thrall of Bones]]
+
+== Dialogue ==
+
+Izarod Fristan may be found on the upper level of the necromancer guild tower, at +325, +790, +45.
+
+'''You say, 'Hail, Izarod Fristan''''
+
+: Izarod Fristan says 'Hail there, ______.  So you are ready to learn more about our ways?  Do you wish to try and expand your knowledge of your arcane arts?  Then venture far from here to the darkest depths of our once great empire and seek the minions that inhabit the ruins.  The arcane powers will come in the form of '''[scrolls]'''.'
+
+'''You say, 'What scrolls?''''
+
+Izarad Fristan says 'Besides all the ones you will find, there are some that are only in my possession.  To show that you have been successful on your journey, return one of [[Splurt]], [[Defoliation]], [[Convergence]], or [[Thrall of Bones]].  You then will be rewarded with one of my scrolls.'
+
+'''Turn in one of the requested scrolls.'''
+
+: Izarod Fristan says 'Here is the scroll that I promised. We have both gained much today. I hope to do business with you again soon. Farewell.
+
+You receive one of four different scrolls:  Sacrifice, Scent of Terris, Minion of Shadows, or Shadowbond.
+
+[[Category:Quests]]
+[[Category:West Cabilis]]
+[[Category:Necromancer Quests]]

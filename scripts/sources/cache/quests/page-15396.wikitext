@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_hogunk_ventille.png|frame|Hogunk Ventille]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Hogunk Ventille]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Blyle Bundin]]
+|}
+
+== Reward ==
+
+<ul><li> a [[Bronze Weapons|Bronze Weapon]]
+
+</li></ul>
+
+== Walkthrough ==
+
+''[[Hogunk Ventille]] is located at 142, 306, 4 in the spectator stands of the Kaladim Warrior's Guild arena.''
+
+You say, 'Hail, Hogunk Ventille'
+
+: Hogunk Ventille says, 'Hail, and welcome to Stormguard Hall. Home to all great warriors! Are you also a [warrior of the Stormguard] or do you [follow another guild]?'
+
+:: ''You say, 'I follow another guild'''
+
+:: ''Hogunk Ventille says, 'Then go to your guild. This is the hall of the dwarven warriors - not a place for common folk to lounge around.'''
+
+You say, 'I am a warrior of the Stormguard'
+
+[[File:Npc_blyle_bundin.png|frame|Blyle Bundin]]
+
+: Hogunk Ventille says, 'As I thought. You do not appear to be one who relies on wits rather than brawn, no offense. I have word that a Stormguard on duty has deserted his post at one of the guardposts in the Butcherblocks. I want you to go and seek him out. He is Guard Bundin. Return his Stormguard axe to me, along with his head. There shall be no cowards in the Stormguard!!'
+
+''[[Blyle Bundin]] paths between four locations in the [[Butcherblock Mountains]]: 1272, 2039, 0 near the entrance to the Butcherblock docks, 17, 2441, 0 near the guardpost he abandoned, 115, 1765, 0 overlooking the dwarven bandit camp where [[Peg Leg]] resides, and 120, 2042, 0 halfway between the guardpost and bandit camp.''
+
+: Blyle Bundin says, 'Oh!! Please just surrender.'
+
+: Blyle Bundin says, 'I'll teach you to interfere with me ______.'
+
+: Blyle Bundin says, 'My brothers of the Stormguard shall avenge me!! Your days are numbered.'
+
+<div class='facblock'>
+* Your faction with [[Kaladim Citizens]] has gotten worse.
+</div>
+
+'''Loot [[Blyle Bundin]]'s corpse for his [[Dwarf Head|head]] and [[Rusty Axe| rusty "Stormguard" axe]].'''
+
+'''Return to [[Hogunk Ventille]] and hand him the [[Dwarf Head]] and [[Rusty Axe]].'''
+
+: Hogunk Ventille says, 'I shall display this in the guard hall. Let it be a warning to all those who dare to run from battle. As for you. That was splendid work, but next remember to wrap decapitated heads in something drip proof. Those stains will never come off!! Oh yes, and here is your reward.'
+
+<div class='facblock'>
+* Your faction with [[Storm Guard]] has gotten better.
+* Your faction with [[Kazon Stormhammer]] has gotten better.
+* Your faction with [[Miners Guild 249]] has gotten better.
+* Your faction with [[Merchants of Kaladim]] has gotten better.
+* Your faction with [[Craknek Warriors]] has gotten worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 6 gold pieces.
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

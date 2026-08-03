@@ -1,0 +1,91 @@
+{{Classic Era}}
+[[File:npc_toresian_fhabel.png|frame|Toresian Fhabel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin|Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Toresian Fhabel]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All  (Faction Dependent)
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Slansin]], [[Slansin Denvin]]
+|}
+
+== Rewards ==
+
+* Experience
+* [[Faction]]
+
+== Walkthrough ==
+
+''[[Toresian Fhabel]] is at 727.01, 804.42, 35.13 in [[Erudin]] Palace. Requires amiable faction to start the quest.''
+
+You say, 'Hail, Toresian Fhabel'
+
+: Toresian Fhabel says 'Welcome, my friend! We are the Craftkeepers. We study the circle of magic called enchantment. What circle do you [study]?'
+
+You say, 'i will study enchantment'
+
+: Toresian Fhabel says 'Then I welcome you into our circle. It is good to see new blood. I have a favor to ask of you. Do you wish to [assist Toresian] or do you not have the time?'
+
+This spawns either [[Slansin]] or [[Slansin Denvin]] downstairs in the shop Vials of Vitality. '''Slansin''' is a merchant selling one item, a cloth cap. '''Slansin Denvin''' is not a merchant, is wearing armor, and is an enchanter who will summon an enchanter pet after spawning. Only one Slansin can be up a time.
+
+You say, 'I wish to assist Toresian'
+
+: Toresian Fhabel says 'Ahhhhh _____ . Slansin used to have need of these potions, how ever he mysteriously disappeared long ago. The only person I know of who still wants them is a cleric of the Church of Marr in Freeport.'
+
+Receive [[Inert Potion]].
+
+===Slansin===
+
+Give Slansin the Inert Potion.
+
+: Slansin says 'Thank you. I have been expecting this. We require it for mixing.' 
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Craftkeepers]] got '''worse'''.
+* Your faction standing with [[High_Council_of_Erudin|High Council of Erudin]] got '''worse'''.
+* Your faction standing with [[High_Guard_of_Erudin|High Guard of Erudin]] got '''worse'''. 
+</div>
+{{exp}}
+
+Slansin then despawns. If you are after the other version, Slansin Devin, like most people are, you will need to repeat this step until he spawns. You can try again by saying 'I will study enchantment' to Toresian Fhabel. ''It took around 20 hands in and took a level 1 to a level 2 and 2 yellows before he spawned''
+
+===Slansin Denvin===
+''Works at dubious.''
+
+Give Slansin Denvin the Inert Potion.
+
+: Slansin Denvin says 'Ha!! What a fool!! I have stolen another potion to add to the crate. I shall make a fortune!! The real Slansin is in back. Now it is time for me to leave.' 
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better. +1  
+* Your faction standing with [[Coalition of Tradefolk]] got better. +1
+* Your faction standing with [[Carson_McCabe|Carson McCabe]] got better. +1
+* Your faction standing with [[Corrupt Qeynos Guards]] got better. +1
+* Your faction standing with [[Freeport Militia]] got better. +1
+</div>
+
+Slansin Denvin does ''not'' despawn right away, meaning you can now repeat this part of the quest until he does. He stays up for at least 20 minutes.
+
+===Tips===
+You can actually trigger Toresian from the bottom floor to get the potion with hotkeys if you stand in the right spot. Go into Erudin City Office to the right wall (there is a bench there). Toresian is above at (727, 805). It's actually the "I will study enchantment" dialogue that spawns Slansin, the second line only gets the NPC to give you the potion. Make hotkey macro with the following lines:<br>
+ /target Toresian_Fhabel 
+ /say I will study Enchantment
+ /pause 3
+ /say I wish to assist Toresian
+Then just go straight across to Vials of Vitality, where Slansin is.
+
+[[Category:Quests]]
+[[Category:Erudin Palace]]
+[[Category:All Classes Quests]]

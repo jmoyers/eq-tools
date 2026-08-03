@@ -1,0 +1,73 @@
+{{Paineel Era}}
+[[File:npc_davorre_bloodthorn.png|frame|Davorre Bloodthorn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Davorre Bloodthorn]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Auhrik Siet`ka]]
+|}
+
+== Reward ==
+
+<ul><li>  Experience, Coin.</li></ul>
+
+== Walkthrough ==
+
+''Find [[Davorre Bloodthorn]] in [[Paineel]]'s Shadow Knight guild, The Fell Blade @(863, 444). Minimum faction for this quest is not documented, but kindly is sufficient.''
+
+You say, 'Hail, Davorre Bloodthorn'
+
+: Davorre Bloodthorn says, 'Greetings. Perhaps within that husk you call a body there is some worth? Are you [experienced] in your craft, young one, or are you a [neonate]?'
+
+You say, 'I am a neonate.'
+
+: Davorre Blodthorn says, 'Well then, child, I may still have a task for you. Will you [make use of your pathetic cowardice], then, eh?'
+
+You say, 'I will make use of my pathetic cowardice.'
+
+: Davorre Bloodthorn says, 'I see. This will not be the first time for you, I am sure. Take this list to Auhrik Siet`ka. His writing has become illegible in his old age, but he shall clarify what it is he needs you to do. Do as he says, child, and perhaps you will prove yourself a bit more worthy than the rotting flesh he will most likely have you return to him.'
+
+''--You receive [[A Rolled Up Note]].--''
+
+'''Give the note to [[Auhrik Siet`ka]]. You'll find him in The Abbatoir, [[Paineel]]'s Necromancer guild @(762, 849).'''
+
+: Auhrik Siet`ka says, 'Why are you giving this to me? Oh I see. I forgot that rats don't know how to read. Haha! Well, then, I shall read it for you. You do [understand common] don't you? Haha.'
+
+You say, 'I understand common.'
+
+: Auhrik Siet`ka says, 'Of course you do. Now, listen carefully. It may be too much for your feeble mind to gather all at once, and I hate to repeat myself. Bring me one bat wing, one rat ear, one snake egg, and one fire beetle eye. Take this bag, and make sure it's sealed before you return it to me. Snake eggs spoil. Now, quit staring at me with your jaw hanging open like a dead codfish. I would have mistaken you for one, but dead codfish smell better. Haha!'
+
+''--You receive a [[Small Sealable Bag]].--''
+
+'''As instructed, gather the following items, all of which are obtainable from creatures found in the [[Paineel]] newbie yard, and combine them in the [[Small Sealable Bag]], a 4-slot container:'''
+
+* [[Bat Wing]]
+* [[Rat Ears]]
+* [[Snake Egg]]
+* [[Fire Beetle Eye]]
+
+''--You receive a [[Small Sealed Bag]].--''
+
+'''Return the [[Small Sealed Bag]] to [[Auhrik Siet`ka]]. Upon turn-in:'''
+
+: Auhrik Siet`ka says, 'Well, that wasn't so hard, was it? I suppose I must now thank you for your services. Now, leave me to my studies. I would tell you what I needed the items for, but that would just cloud your fragile little mind. Off with thee!'
+
+{{YouGainExperience}}
+
+You receive 8 copper pieces. 
+
+[[Category:Quests]]
+[[Category:Paineel]]

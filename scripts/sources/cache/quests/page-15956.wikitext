@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Sragg_Bloodheart.png|frame|Sragg Bloodheart]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Quest Giver: '''
+| [[Sragg Bloodheart]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Related NPCs: '''
+| [[Sragg Bloodheart]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ruined Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Sragg Bloodheart]] is located at 415, -310 in the Shrine of Bertoxxulous Guild Hall.''
+
+You say, 'Hail, Sragg Bloodheart'
+
+: Sragg Bloodheart says nothing.
+
+'''Hand [[Sragg Bloodheart]] your [[Stained Cloth Note]]'''
+
+:: ''Stained Cloth Note reads:''
+
+:: <code>The tide shall turn, as will the light. Your talents could reward you greatly. Follow the shadows down, deep into the darkness. The filth and bile that flows silently underneath Qeynos shall become this city's deadliest enemy. Secretly enter the underworld from below the Grounds of Fate. The passage lies behind the bones, but watch your step, and your back. It is also in your best interest, if you value what little life you have, to be sure you are not followed. Sragg calls for you now.</code>
+
+: Sragg Bloodheart says, 'Ah, another would-be soldier for the army of the Plaguebringer. Begone!"
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Shadow Knight Quests]]

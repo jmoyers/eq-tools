@@ -1,0 +1,82 @@
+{{Classic Era}}
+[[File:npc_chanda_miller.png|frame|Chanda Miller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Hills]]
+|-
+! ''' Quest Giver: '''
+| [[Chanda Miller]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a brown bear]], [[a black bear]]
+|}
+== Rewards ==
+
+<ul><li>  {{:Bear-hide Belt}}
+</li><li> {{:Bear-hide Boots}}
+</li><li> {{:Bear-hide Cape}}
+</li></ul>
+
+Note: the {{:Bear-hide Jerkin}} drops in [[Northern Karana]] and is not a reward from this quest.
+
+== Walkthrough ==
+
+[[Chanda Miller]] in [[Qeynos Hills]] makes bear hide armor. ''(All 3 pieces obtainable at apprehensive faction.)''
+
+Chanda can be found with her brother at a campfire outside Surefall Glade, /loc 4995, 105.  She periodically wanders away so you may have to wait for her to return.
+
+You say, 'Hail, Chanda Miller'
+
+: Chanda Miller says, 'Um.. I do not know you. Please um.. leave me be.'
+
+You say, 'Baobob sent me'
+
+: Chanda Miller says, 'Oh.. Hello. My name is Chanda. (your name) is your name? That's a nice name. My [brother] sent you to talk to me? You must want some bear.. um.. '''[clothes]'''.'
+
+You say, 'yes your brother sent me' 
+
+: Chanda Miller says, 'umm.. My brother.. Um.. I mean my BROTHER.. He is the finest tanner there is. His name is Baobob and I love him very much.'
+
+You say, 'I want some clothes'
+
+: Chanda Miller says, 'I um.. know how to make.. umm.. '''[cloaks]''' and '''[boots]'''. Oh yes! and belts! I love to make bear skin belts! Um.. I really like '''[belts]'''. My [brother] says I have to start charging more gold for my stuff though..'
+
+You say, 'What cloaks?
+
+: Chanda Miller says, 'I.. um.. can make.. um.. a good cloak for you. You have to get me a '''[[High Quality Bear Skin|bear skin of high quality]]''' and my brother says I should not make them unless you also give me 21 gold pieces. I used to give them away but [Baobob] got mad at me so I don't do that anymore.'
+
+You say, 'What boots?'
+
+: Chanda Miller says, 'I know how to make boots. Um.. I don't like them as much as belts. They are harder to make. You have to get me a '''[[Medium Quality Bear Skin|medium quality bear skin]]''' and give me 15 gold pieces if you want some bear boots. They are really good, though. At least that is what Baobob tells me.'
+
+You say, 'What belts?'
+
+: Chanda Miller says, 'Oh, yes, I like making belts! They are easy! All I need is a '''[[Low Quality Bear Skin|bear skin]]''' and 5 gold pieces. The bear skin doesn't have to be that great but don't bring me a ruined one. The gold was my brother's idea.. sorry.'
+
+'''Turn-in the following combinations for either the belt, boots, or cape:'''
+
+* [[Bear-hide Belt]] - 5 gp and [[Low Quality Bear Skin]],
+* [[Bear-hide Boots]] - 15 gp and [[Medium Quality Bear Skin]],
+* [[Bear-hide Cape]] - 21 gp and [[High Quality Bear Skin]].
+
+Completing the quest also gives you the following faction adjustments:
+
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by 5.
+* Your faction standing with [[Priests of Life]] has been adjusted by 5.
+* Your faction standing with [[Knights of Thunder]] has been adjusted by 5.
+</div>
+
+[[Category:Quests]]
+[[Category:Qeynos Hills]]
+[[Category:All Classes Quests]]

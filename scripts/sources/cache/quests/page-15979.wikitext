@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_kaglari.png|200px|frame|Kaglari]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Muck Stained Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Troll Shaman, you will have a tattered note in your inventory. The note reads as follows:
+
+: Give note Kaglari. . .Kaglari pretty. . .Kaglari learn you majik. . .make you powerful.
+
+Upon handing the note to [[Kaglari]]:
+
+: [[Kaglari]] says, 'Good.. Kaglari need you help.. Kaglari teach you majik now.'
+
+<div class='facblock'>
+* Your faction standing with [[Dark Ones]] got better.
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Muck Stained Tunic*]]. Good luck, Shaman!
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Shaman Quests]]

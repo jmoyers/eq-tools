@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_heartwood_master.png|frame|Heartwood Master]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Heartwood Master]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Heartwood Master]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Green and Tan Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Heartwood Master]] is located at -637, 213, 77 in the Soldiers of Tunare ([[Druid]]) Guild Hall.''
+
+You say, 'Hail, Heartwood Master'
+
+: Heartwood Master says, 'Welcome! We are the Soldiers of Tunare, the sworn protectors of Faydark. Through the magic of Tunare we care for the land and with blade, staff and spell we protect the Faydark against those who would destroy and despoil it. We are always grateful for any assistance to our cause. Perhaps you could help me with some simple [errands].'
+
+'''Hand [[Heartwood Master]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>We are the Soldiers of Tunare, protectors of this great forest, known as the Faydark. Seek out the Heartwood Master, and give him this note. He will teach you the ways of Tunare.</code>
+
+: Heartwood Master says, 'Welcome! We are the Soldiers of Tunare, the sworn protectors of Faydark. I thank you for joining our cause, we can always use the help. Here, put on this tunic, and let's get started.. you have much to learn.'
+
+<div class="facblock">
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Druid Quests]]

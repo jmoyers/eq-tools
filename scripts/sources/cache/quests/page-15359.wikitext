@@ -1,0 +1,79 @@
+[[File:npc_palon_deskeb.png|frame|Palon Deskeb]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Palon Deskeb]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[West Freeport]], [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[a minnow]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li><li> Minor Items
+</li></ul>
+
+== Walkthrough ==
+
+''Would not give jar with amiable faction. Requires you to prove your worth by doing more quests with [[Tara Neklene]]
+''OR you can also do [[Rat Ear Pie Quest]] for [[Rephas]] in Qeynos Hills even at amiable to boost Arcane Scientist faction''''
+
+'''Palon can be found on the 2nd floor of the Academy of Arcane Sciences in West Freeport. (loc +112, -771, 4)'''
+
+You say, 'Hail, Palon Deskeb'
+
+: Palon Deskeb says 'Pleased to meet you. Have you seen how clear the water is underneath the Academy? All sorts of life could flourish there. What a shame there are no [Marr Minnows] there.'
+
+You say, 'What Marr Minnows?'
+
+: Palon Deskeb says 'The Marr Minnow swims in the pond near the Temple of Marr. I wish I had one. Not a dead one. A live one. I need someone to [get the minnow].'
+
+You say, 'I will get the minnow'
+
+: Palon Deskeb says 'Please try. Here you are. Take this jar. Offer the jar to the minnows. Maybe they will swim into it.'
+
+He hands you [[A Jar of Liquid]]
+
+'''Head to ''North'' Freeport outside the Hall of Truth (loc +210, 0.0 ) To the left side is a river, with minnows and piranhas in it. Give the Jar of Liquid to [[a minnow]]. You'll either fail or the Jar will turn into Fish in a Jar.'''
+
+a minnow darts into the jar, or just darted past it!! The Knights of Truth do not tolerate people attempting to catch these fish!!
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+* Your faction standing with [[Priests of Marr]] got worse.
+* Your faction standing with [[Steel Warriors]] got worse.
+</div>
+
+You Receive [[Fish in a Jar]]
+
+'''Once you have a Fish in a Jar, go back to the Academy and give it to Palon. You'll receive a minor item and some coin for your trouble.'''
+
+: Palon Deskeb says 'Oh!! A beautiful Marr Minnow. This shall look grand in my aquarium!! How lucky that you are a friend to the Academy of Arcane Science. Take your reward'
+
+<div class="facblock">
+* Your faction standing with [[Arcane Scientists]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+</div>
+
+You received a [[Ration]] !<br>
+You receive 10 silver, 6 copper pieces
+
+[[Category:Quests]]
+[[Category:West Freeport]]
+[[Category:All Classes Quests]]

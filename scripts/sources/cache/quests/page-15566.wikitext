@@ -1,0 +1,92 @@
+{{Classic Era}}
+[[File:npc_guard_beren.png|frame|Guard Beren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Beren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Faren]], [[Trumpy Irontoe]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Hurrieta's Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Guard Beren'
+
+: Guard Beren says 'What do you want? Are you friends with that lousy [dwarf]?! You had better not be unless you want to spend the rest of the week bleeding!'
+
+You say, 'What dwarf?'
+
+: Guard Beren says 'That dwarf, Trumpy, who Corshin here thinks is a friend of Commander Bayle's, keeps pestering my poor brother Faren. I have had just about enough of him and [his kind].'
+
+You say, 'Who is Faren?'
+
+: Guard Beren says 'My brother Faren is a fine fisherman just like our father was. He fishes out there on the East Dock just about every day.'
+
+[[Trumpy Irontoe]] periodically walks up to Faren.
+
+: Trumpy Irontoe says 'Hey, Fishboy! You dropped something! Bwah ha ha ha!'
+
+[[Faren]] says 'Huh? What? My [tacklebox]!? You know I can't swim, you rotten [dwarf]!'
+
+: Trumpy Irontoe says 'Better start learning, [Skippy].'
+
+: Faren says 'My name is not Skippy.'
+
+You say, 'Hail, Faren'
+
+: Faren says 'Oh. Hiya. I'm just out here fishing, since I can't find a job. I hope this [bait] I just bought catches me a big ol' fish.'
+
+You say, 'What bait?'
+
+: Faren says 'I use Captain Rohand's Secret Recipe Super Magic Catch-A-Lot brand bait. I bought my pole from Sneed's up by the north pond.'
+
+You say, 'What happened to your tacklebox?'
+
+: Faren says 'Oh. That mean [dwarf], Trumpy, just knocked my tacklebox into the water. Could you please get it for me? I can't swim.'
+
+Jump in the water, just on the right side of the dock. The tacklebox looks like a small bag.
+
+You pick up the [[Wooden Fishing Tackle]].
+
+To Trumpy:
+You say, 'Who is Skippy?'
+
+: Trumpy Irontoe says 'You had better just be.. .. minding your own business if you know what is good for you. Gnollbreath. We Irontoes are a proud and strong bunch of dwarves from [Kaladim]. We crush weaklings like you. '
+
+Give Faren the tacklebox.
+
+: Faren says 'Thank you so much! If you want some free advice, steer clear of those [Irontoes]! They are nothing but trouble. Here. It's not much but I must thank you somehow.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}}
+You receive 9 copper from Faren.
+
+'''You receive [[Hurrieta's Tunic]].'''
+
+''I believe the reward of this quest is a very old misplaced Item ID bug that existed from the beginning. The quest reward and the fact that Hurrieta's Tunic also drops from some fishermen in BBM leads me to think that the intended reward for this quest was a fishing pole but was never fixed. The tunic likely is a remnant of an unimplemented quest as you can see vague hints of it, but it has no real beginning.''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

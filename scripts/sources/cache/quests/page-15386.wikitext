@@ -1,0 +1,47 @@
+[[File:npc_zulort.png|frame|Zulort]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Zulort]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]], [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[a froglok tad]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Burst of Flame|Spell: Burst of Flame]], experience
+</li></ul>
+
+== Walkthrough ==
+
+Talk to the Shaman Master, Zulort, and say "me Gonna Help!"
+
+He'll give you a simple quest to get 4 Froglock Tadpole Fleshies. Requires Higher than Indifferent faction. 
+
+'''Hand him 4 [[Froglok Tadpole Flesh]] (stacked is fine, can also give any size stack as long as it divides evenly by 4)'''
+
+: Zulort says, 'Oh, me.. um.. Warlord BERRY happy.  Berry like dese.  Gimme.  Uh, why is you still here?  Take dis and gets more kills.  You learning good, come sees me. I teaches you bout stuff.  Make you [bedder shaman].  Go.  He and me watching.'
+
+<div class='facblock'>
+* Your faction standing with [[Shamen of War]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}}
+
+You Receive [[Burst of Flame|Spell: Burst of Flame]].
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Shaman Quests]]

@@ -1,0 +1,47 @@
+{{Kunark Era}}
+[[File:npc_glinya_sweetpie.png|frame|Glinya Sweetpie]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Glinya Sweetpie]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Scout Treekill]]
+|}
+
+== Reward ==
+
+<ul><li>  None
+</li></ul>
+
+== Walkthrough ==
+
+Ask Glinya Sweetpie about Treekill.
+
+: Glinya Sweetpie turns angry and says, "Treekill!! I do not want to see nor hear of him. He is always trying to impress me!! I finally told him that I would walk with him if he could bake a Burynai Bunt Cake."  
+
+Ask her 'what is a burynai bunt cake'
+
+: Glinya Sweetpie says, "Burynai Bunt Cake? There is no such thing."
+
+'''Ask Treekill about the cake and he is, quite obviously very anxious to get his hands on one to win the ladies hand.'''
+
+'''He promises to reward you with a helm he got from a bard if you bring him a "Burynai Bunt Cake" (may be foraged?).'''
+
+'''It has been confirmed that this is not a quest at this time, but is simply a storyline.  Thus, there is no reward available.'''
+
+Need all dialogues, /loc of quest mobs.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

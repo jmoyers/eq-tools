@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_tiam_khonsir.png|thumb|Tiam Khonsir]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Tiam Khonsir]]
+|-
+! ''' Minimum Level: '''
+| 6
+|-
+! ''' Classes: '''
+| Paladin, others?
+|-
+! ''' Related Zones: '''
+| [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>Money, faction, low chance at [[Ringmail Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+'''Find [[Tiam Khonsir]] located behind the Temple of Deepwater Knights in the city of [[Erudin]].'''
+
+You say, 'Hail, Tiam Khonsir'
+
+: [[Tiam Khonsir]] says 'Greetings, ______. Are you a follower of our order, the Deepwater Knights, servants of the Ocean Lord, Prexus?'
+
+You say, 'Yes.'
+
+: Tiam Khonsir says 'That is good, ______. Our followers are few but our faith is strong. With the efforts of those few, our destiny may be reached in time. We must walk with perseverence and devotion, much like the tides that, over time, can destroy a mighty stone cliff. Have you [come to serve our Lord], ______?'
+
+You say, 'I have come to serve our lord.'
+
+: Tiam Khonsir says 'Then I shall send you on a quest to prove your devotion. No doubt you have seen the vermin kobolds scuttling about the land as fleas upon a mangy dog. The kobolds have a lair on our continent from which they launch their wantonly destructive raids. You are to enter that lair and destroy as many of these dogs as you can. For each molar you bring me, you will receive praise, admiration, and perhaps some coin.'
+
+'''Head to the Warrens and kill kobolds.  Any kobold in the zone has a chance to drop a [[Kobold Molar]].<br>
+'''Return to Erudin and hand them in to Tiam. You may hand in 1, or up to 4 at a time''''''
+
+: Tiam Khonsir says 'Wonderful work, friend ______. One less land dwelling, flea ridden, primitive for our wondrous lord to sweep aside when the apocalypse is upon us. Here is your reward. Perhaps if you gather enough molars, we can offer you a [[Kobold Shaman Artifacts|quest of greater importance]].'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] has been adjusted by 7.
+* Your faction standing with [[High Council of Erudin]] has been adjusted by 5.
+* Your faction standing with [[Heretics]] has been adjusted by -1.
+</div>
+{{exp}}
+
+You receive 12 copper from Tiam Khonsir.<br>
+You receive 14 silver from Tiam Khonsir.<br>
+You receive 5 gold from Tiam Khonsir.<br>
+
+You also have about a one in four chance of getting a piece of [[Ringmail Armor]] or minor weapon. The experience is negligible at level 8. This leads into the [[Kobold Shaman Artifacts]] quest. 
+
+[[Category:Quests]]
+[[Category:Erudin]]

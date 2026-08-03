@@ -1,0 +1,92 @@
+[[File:npc_gehna_solbenya.png|frame|Gehna Solbenya]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Gehna Solbenya]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Minda]], [[Maldin the Old]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li> One random spell per turn in including:
+</li><li> [[Center|Spell: Center]]
+</li><li> [[Root|Spell: Root]]
+</li><li> [[Soothe|Spell: Soothe]]
+</li><li> [[Hammer of Wrath|Spell: Hammer of Wrath]]
+</li></ul>
+
+== Walkthrough ==
+
+This quest works with multiple mobs.
+
+''[[Gehna Solbenya]] can be found inside the Knights of Thunder building in South Qeynos.''
+
+You say, 'Hail, Gehna Solbenya'
+
+: Gehna Solbenya says 'Greetings and blessings to you. Karana offers you his protection and guidance. All who accept the offer shall find safe haven within our Temple of Thunder. If you are a cleric of Karana, you must have a [desire to serve Karana]'s flock.'
+
+You say, 'I desire to serve Karana's flock'
+
+: Gehna Solbenya says 'If you are a young acolyte, you may [deliver blessings to the flock] and if you are a skilled cleric, we need you to [hunt bandit binders].' 
+
+(On Aprehensive, her reply instead is: "[...]But this matter is of vital importance to us and we need more proof of your devotion to our cause." And the quest does not start. Dec/18/21, Green)
+
+You say, 'I will deliver blessings to the flock'
+
+: Gehna Solbenya says 'Then go to the Plains of Karana. It is there that the blessings are needed. Ask every resident of the plains if they are followers of Karana. If they are, then ask them if they [require Karana's blessings]. Let them drink from this temple chalice. Return the empty chalice to me and you shall never go thirsty again.'
+
+'''Head to the [[Western Plains of Karana]] and find [[Minda]]. She's at a farm house along the southern boundary of the zone (#15 on map).'''
+
+You say, 'Hail, Minda'
+
+: Minda says 'Hello. Nice to make your acquaintance. Be careful in the plains. There are many creatures. Just stay close to the guard towers.'
+
+You say, 'Are you a follower of Karana?'
+
+: Minda says 'Yes. I am a follower of Karana, the Rainkeeper. It is He who keeps the plains fertile.'
+
+You say, 'Do you require Karana's blessings?'
+
+: Minda says, 'Of the things I desire, I can think of nothing I wish for more than the blessings of Karana. By drinking from the temple chalice of a Karana cleric I can attain this.'
+
+'''Hand her the Full Chalice:'''
+
+: Minda says 'May the Rainkeeper keep you safe. I thank you. Here is the empty chalice. By the way, inform your superior that the operations of the [Karana bandits] are getting closer to Qeynos.'
+
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+</div>
+{{exp}}
+
+'''Receive Empty Chalice, and upon handing it to Gehna back in Qeynos:'''
+
+: Gehna Solbenya says 'You have done a good service for the flock of Karana.  Study the words upon this scroll and soon Karana shall keep you from thirst.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

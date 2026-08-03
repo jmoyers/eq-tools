@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_venox_tarkog.png|frame|Venox Tarkog]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Venox Tarkog]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Venox Tarkog]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Crimson Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Venox Tarkog]] is located at -18, -198 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Venox Tarkog'
+
+: Venox Tarkog says, 'Welcome to the shrine of the Dismal Rage.  May [Innoruuk] guide your every move in life.  Here. we will teach you to release your rage unto the world.  My priests are at your disposal.'
+
+'''Hand [[Venox Tarkog]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>From secret tunnels and basements, we are quietly sowing the seeds of hate into the underworld of this city. Innoruuk surely has a place for you in his army of hate. Take this note to Venox Tarkog, of the Dismal Rage, he'll have some work for you. They are currently working out of the basement of an abandoned building in the East Freeport slums.</code>
+
+: Venox Tarkog says, 'Here we find a new follower.  Here we find a tunic of the Dismal Rage.  Put the two together and let the hate grow.  Let it be known from now on that your soul belongs to the Prince of Hate, Innoruuk.  It is his power which flows within you.  Destroy all those who oppose us.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Cleric Quests]]

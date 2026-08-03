@@ -1,0 +1,66 @@
+{{Classic Era}}
+{{Nerfed Quest}}
+[[File:npc_lynuga.png|frame|Lynuga]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Innothule Swamp]]
+|-
+! ''' Quest Giver: '''
+| [[Lynuga]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Rewards ==
+
+<ul><li> {{:Midnight Mallet}} (Rare)
+</li><li> {{:Brutechopper}} (Common)
+</li><li> {{:Ivandyr's Hoop}} (Ultra-Rare)
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Lynuga, a wandering troll in Innothule Swamp (usually found near the entrance to Guk). 
+
+You say, 'Hail, Lynuga' 
+
+: Lynuga says 'Hrrump?! Who you? _____? What you want with Lynuga? Me am out [collecting]. Leave me be!' 
+
+You say, 'Collecting what?' 
+
+: Lynuga says 'I collect all sorts of things. Gems be my favorite. Me really like rubies. If you have ruby, give to me! Why you want to know? You want to steal my collection?!?! I squish you if you do!!' 
+
+'''You can buy a [[Ruby]] from most jewelry vendors for about 131pp. Upon giving her a Ruby:'''
+
+: Lynuga says 'Mmm. Ruby!! Me thanks you! Here take this, me got it off dead someone who try take my collection. Me thinks this valuable thing..' 
+
+<div class="facblock">
+* Your faction standing with [[Broken Skull Clan]] got better. 
+* Your faction standing with [[Shadowknights of Night Keep]] got worse. 
+* Your faction standing with [[DaBashers]] got worse. 
+</div>
+
+'''You receive one of the three rewards at random - the Hoop is the (ultra)rarest of the rewards.  All three rewards are lore, to receive substantial return on investment do not turn in multiple rubies at once or duplicate rewards will be lost.''' ''Note: The Hoop was made even more rare on the 9/10/11 patch due to balance issues.''.
+
+[[Category:Quests]]
+[[Category:Innothule Swamp]]
+[[Category:Enchanter Quests]]
+[[Category:Magician Quests]]
+[[Category:Wizard Quests]]
+[[Category:Necromancer Quests]]
+[[Category:Cleric Quests]]
+[[Category:Shaman Quests]]
+[[Category:Ranger Quests]]
+[[Category:Paladin Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Warrior Quests]]

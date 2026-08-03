@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:Npc_perrir_zexus.png|200px|frame|Perrir Zexus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crimson Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Cleric, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'The Priests of Innoruuk embody the very essence of Hate. Join them at the Spires, and help their cause. Take this note to the High Priest Perrir Zexus, he will begin your training.'
+
+Upon handing the note to [[Perrir Zexus]]:
+
+: [[Perrir Zexus]] says, 'Welcome, child of Hate. I am Perrir Zexus, High Priest. We all draw power from the very source that created us, the will of Innoruuk. Here, put on this tunic. It is the tunic of our guild.'
+
+<div class='facblock'>
+* Your faction standings with [[Priests of Innoruuk]] got better.
+* Your faction standings with [[King Aythox Thex]] got better.
+* Your faction standings with [[Clerics of Tunare]] got worse.
+* Your faction standings with [[Priests of Life]] got worse.
+* Your faction standings with [[Priests of Marr]] got worse.
+* Your faction standings with [[Primordial Malice]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Crimson Training Tunic*]]. Good luck, cleric!
+
+[[Category:Quests]]
+[[Category:Cleric Quests]]

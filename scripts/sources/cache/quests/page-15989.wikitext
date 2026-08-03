@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_eestyana_naestra.png|frame|Eestyana Naestra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Eestyana Naestra]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Purple Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+a tattered note reads: Go to North Freeport and cross the river, and seek out Eestyana Naestra inside the Hall of Truth. Give her this note, and join the Knights of Truth in spreading the word of Mithaniel Marr.
+
+''[[Eestyana Naestra]] is located at 186, -126 in the Hall of Truth ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Eestyana Naestra'
+
+: Eestyana Naestra says, 'Welcome to the Hall of Truth!  May the will of Mithaniel Marr guide you through life.  We are glad to see that you have an interest in our ways.  Please speak with any of my priests or knights and they shall help you find your faith.'
+
+'''Hand [[Eestyana Naestra]] [[a tattered note]].'''
+
+:: <code></code>
+
+: Eestyana Naestra says, 'The Truthbringer welcomes you into his life,  here is the tunic of Marr.  Wear it with pride and be sure to conduct yourself with valor.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Cleric Quests]]

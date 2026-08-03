@@ -1,0 +1,180 @@
+[[File:npc_urako.png|frame|Urako]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Urako]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Feerrott]], [[Oggok]], [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[Clurg (NPC)|Clurg]], [[Chef Dooga]], [[A lizardman scout]], [[A froglok]]
+|}
+
+Multiquestable with correct faction requirements
+
+
+== Reward ==
+
+<ul><li>  {{:Kaglari Mana Doll}}
+</li></ul>
+
+== Walkthrough ==
+=== The Baker ===
+Urako is located in the the back of the Troll Shaman Guild.
+
+You say, 'Hail, Urako'
+
+:  Urako says, 'Me says hi to you.  What you want from me?  Oh!!  Me shaman trainer.  You must be shaman.  Are you [shaman Darkone]?'
+
+You say, 'I am shaman Darkone'
+
+:  Urako says, 'You choose rite if you bes a shaman.  Wes da best.  You remember ta not get in Kaglari way.  He get mad berry easy.  He gets berry mad at Urako if he finds out me make [big mistake].'
+
+You say, 'What big mistake?'
+
+:  Urako says, 'Kaglari makes Urako cleans his kwarters.  He says nots to open closet.  Me make mistake and opens his closet and out comes da skeletons.  Dey runs out into Grobb.  Me needs ta gets dem back before Kaglari finds out.  Me needs sumwun to [collect Kaglari skeletons].'
+
+You say, 'I will collect Kaglari skeletons'
+
+:  Urako says, 'Tank you!!  Dere is fours of dem.  You can finds dem here in Grobb.  I no tink dey will want to come homes to Kaglari's closet.  You ask dem to [come back to the closet] and see whut dey say.  If you gets dem back me promise to gives you a [Kaglari mana doll].'
+
+You say, 'What Kaglari mana doll?'
+
+:  Urako says, 'Kaglari catch many humans.  He pull spirit from dem and force into dolls.  Now deir spirit give shaman extra mana.  Dey good power source.  Now humans good for someting.  Da mana dolls only for shaman power.'
+
+This quest dialogue will spawn a skeleton behind the bar of Gunthak's Belch.
+
+You say, 'Hail, a skeleton'
+
+:  a skeleton says, 'Sorry.  Nothing to sell at this time.  Maybe later.  Good day.'
+
+You say, 'Come back to the closet'
+
+:  a skeleton says, 'Back to the closet?!!  I just got out.  I would go back if I had a pair of Oven Mittens.'
+
+To get the [[Grobb Oven Mittens]], give [[Carver Cagrek]] 3x (unstacked) [[Froglok Meat]] and 10 gold.  Hand the Oven Mittens to the skeleton behind the bar.
+
+:  a skeleton says, 'Ahh!! Oven Mittens!!  Kinda' large, don't you think?!!  Oh well, now I can bake all I want without burning my hands.  OK!!  Let's go.  I overheard some Basher named Nanrum saying he spotted my friend, The Butcher.  You should ask him [wheres the skeleton].'
+
+:  You receive [[The Baker]]
+
+
+=== The Butcher ===
+
+[[Basher Nanrum]] is located in an alcove around the corner from the Priest of Discord, near the front of the cave. 
+
+You say, 'Hail, Basher Nanrum'
+
+:  Basher Nanrum says, 'Peh!  What you wanted?!  I am Basher Nanrum.  You?  _______?  Heh, you look for works?  Hmm, me tinks you too weakling for [job] me need done.  Hmm..  You might do, mebbe.'
+
+You say, "Wheres the skeleton'.  (Yes, you have to leave off the apostrophe.  If you try to be all grammatically correct about it, he won't respond.)
+
+:  Basher Nanrum says, 'Yeah!!  Me see that bone man.  He over by da Carver.  He tink he butcher or sumting!!'
+
+This dialogue will spawn a skeleton on the same platform where [[Carver Cagrek]] can be found.
+
+You say, 'Hail, a skeleton'
+
+:  a skeleton says, 'Hello there!'
+
+You say, 'Come back to the closet'
+
+:  a skeleton says, 'Darn!! I was just starting to have fun.  Tell you what.  You find me a nice Ogre Butcher Apron and I will gladly go back to my cramped quarters.'
+
+To get an [[Ogre Butcher Apron]], go to [[Oggok]] and give [[Chef Dooga]] 3x (unstacked) [[Pickled Froglok]] and 10 gold.  While you're there, buy a [[Ship in a Bottle]] from [[Clurg (NPC)|Clurg]], because you'll need it later and this will save you a trip.
+
+Give the apron to the skeleton near Carver Cagrek.
+
+:  a skeleton says, 'Thanks!!  Now I'm a real butcher just like Carver Cagrek!!  Ok, before you take me back, we need to find my friend The Captain.  Last I heard, he was boating around the swamp.  Ask the guards outside if they have [seen the captain].'
+
+:  You receive [[The Butcher]]
+
+
+=== The Captain ===
+
+[[Basher Sklama]] is one of the guards who protect Troll lowbies.  He can be found off to the left as you exit Grobb and enter the Swamp.  The other two guards near Grobb will not respond to hails.
+
+You say, 'Hail, Basher Sklama'
+
+:  Basher Sklama says, 'Me hear dat dere are humans, elves and other weaklings hunting in da swamp.'
+
+You say, 'Have you seen the captain?'
+
+:  Basher Sklama says, 'The bone captain?  Him funny ting.  Him ask me where ta find a boat.  Me says me seen wun up north, but it not so gud boat.  Lotsa holes.  He go anyway.  Mebbe him sink, mebbe not.'
+
+This dialogue will spawn a skeleton somewhat northwest-ish from Basher Sklama, at loc -1640, 800.
+
+You say, 'Hail, a skeleton'
+
+:  a skeleton says, 'Yes?'
+
+You say, 'Come back to the closet'
+
+:  a skeleton lets out a long sigh
+:  a skeleton says, 'If I must...but only if I can take a bit of my former life with me inside the closet.  Since my boat is broken, bring me a Ship in a Bottle and I will accept my fate.'
+
+You can purchase a [[Ship in a Bottle]] from [[Clurg (NPC)|Clurg]] in [[Oggok]].  Hopefully you did that already while you were getting the apron from Chef Dooga.  Hand the [[Ship in a Bottle]] to the skeleton.
+
+:  a skeleton says, 'At least I can dream I'm on this ship out on the wide open sea...Thanks friend.  You know what would make being in that closet easier?  Having my friend The Minstrel playing music.  I heard Basher Avisk trying to hum a tune that I know The Minstrel plays a lot.  Maybe he knows where to find The Minstrel.   Hmm...I doubt he'll know what a minstrel is...better ask him about the [tune] he's always humming.'
+
+:  You receive [[The Captain]]
+
+
+=== The Minstrel ===
+
+[[Basher Avisk]] patrols through Grobb, between Da Bashin' Place and Carver Cagrek's platform.
+
+You say, 'Hail, Basher Avisk'
+
+:  Basher Avisk stops humming to himself and turns to look at you.
+:  Basher Avisk says, 'Hey dere.'
+
+You say, 'What tune?'
+
+: Basher Avisk says, 'Yous like da toon me hum? Me hum gud! Me hears it sumtimes when me walks by da Dark Ones place. Dey gots strong majik back dere, me gets funny feeling in me tummy.'
+
+This dialogue will spawn a skeleton on the throne at the top of the Shaman guild, back near Urako where this whole business started.It should be noted that this skeleton is slightly difficult to get to without dying if you are a large newbie troll in Grobb. It is possible to fall off the throne into the pool and die!
+
+You say 'Hail, a skeleton'
+
+:  a skeleton stops playing a lively tune.
+:  a skeleton says, 'Come to enjoy my music?'
+
+You say, 'Come back to the closet'
+
+:  a skeleton says, 'No!! I'm getting so good!! Even these trolls appreciate my music! <sigh>...fine I'll go. But before I do, can you do me a favor first? I'd like to study a new instrument. I hear that some lizardmen near the ogre city make an interesting instrument called a fife. If you can get me a few samples, say four, just to make sure I get a good quality one, I'll gladly go back in the closet.'
+
+[[Lizardman Scout Fife]]s are uncommon drops from [[a lizardman scout|lizardman scouts]] in [[The Feerrott]].  Turn in 4 of them to the skeleton on the throne.
+
+:  a skeleton says, 'Oh good, you got four!! I hope at least one of them is of decent quality. Well, guess I should keep up my end of the bargain. Let's go.'
+
+:  You receive [[The Minstrel]]
+
+=== Urako ===
+
+Go back to Urako and hand him all four skulls you have collected.
+
+:  Urako says, 'Ohh, tank you!! Kaglari not hafta do bad tings to Urako!! Me berry berry happy!! Oh, here is da doll, me tanks you a lot!!'
+
+<div class="facblock">
+* Your faction standing with [[Dark Ones]] got better.
+* Your faction standing with [[Shadowknights of Night Keep]] got better.
+</div>
+
+{{YouGainExperience}}
+
+:  You receive [[Kaglari Mana Doll]]
+:  You receive 5 platinum pieces
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Shaman Quests]]

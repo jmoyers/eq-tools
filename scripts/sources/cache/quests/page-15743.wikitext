@@ -1,0 +1,139 @@
+{{Velious Era}}__NOTOC__
+[[File:npc_nalelin_fe`dhar.png|frame|Nalelin Fe`Dhar]]
+[[File:Golden_Leaf_Armor.png|300px|thumb|A full suit of Golden Leaf armour on a human ranger (helm shown is Custom Helm of the Tracker)]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Nalelin Fe`Dhar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| ToV East Mobs
+|}
+Ally faction is required for all Skyshrine armor quests.<br>
+Set Totals ''(1 bracer)''
+
+
+== Reward ==
+
+{{Gear Set
+|Golden Leaf Helm
+|Golden Leaf Breastplate
+|Golden Leaf Vambraces
+|Golden Leaf Bracer
+|Golden Leaf Gauntlets
+|Golden Leaf Greaves
+|Golden Leaf Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Nalelin Fe`Dhar]] in [[Skyshrine]].{{CheckboxList}}
+*[[Golden Leaf Helm]]
+:*[[Unadorned Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Golden Leaf Breastplate]]
+:*[[Unadorned Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Golden Leaf Vambraces]]
+:*[[Unadorned Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Golden Leaf Bracer]]
+:*[[Unadorned Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Golden Leaf Gauntlets]]
+:*[[Unadorned Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Golden Leaf Greaves]]
+:*[[Unadorned Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Golden Leaf Boots]]
+:*[[Unadorned Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+Nalelin Fe`Dhar is located in the quest NPC room past the maze and long staircases, through the final globe teleporter, and into the area leading up to Yelinak's.
+
+You say, 'Hail, Nalelin Fe`Dhar'
+
+: Nalelin Fe`Dhar says 'Greetings, I seek the ones who stalk through the forests protecting it. If you are one known as a ranger, submit to my will and become stronger. The tasks I set forth will not be easy. Are you ready to submit to my will?'
+
+You say, 'I am ready to submit to your will'
+
+: Nalelin Fe`Dhar says 'That is good, for there is nothing like the wrath of nature, woodland warrior.  And Nature's wrath shall you be, with this armor to protect you in your struggle. I shall forge a coif, breastplate, sleeves, bracers, gauntlets, leggings, and boots for you.'
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Unadorned chain armor is dropped randomly in the Halls of Testing inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+You say, 'What coif?'
+
+: Nalelin Fe`Dhar says 'This coif shall protect you from battle and the elements. What I require of you are these: an unadorned chain coif and three pieces of crushed coral. Do not waste precious time!'
+
+Return with an [[Unadorned Chain Coif]] and three [[Crushed Coral]] pieces.
+
+== Breastplate ==
+
+You say, 'What breastplate?'
+
+: Nalelin Fe`Dhar says 'Even as the hardest tree in the forest gains protection from its bark, so shall you gain the protection of this breastplate.  Bring these components for me - an unadorned chain tunic and three flawless diamonds.'
+
+Return with an [[Unadorned Chain Tunic]] and three [[Flawless Diamond]]s.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Nalelin Fe`Dhar says 'I require unadorned chain sleeves, as well as three flawed emeralds. Do this so that I may grant you them as a gift for your diligence.'
+
+Return with [[Unadorned Chain Sleeves]] and three [[Flawed Emerald]]s.
+
+== Bracer ==
+
+You say, 'What bracers?'
+
+: Nalelin Fe`Dhar says 'This shall help shield your forearms from any stray blows. Bring me an unadorned chain bracelet and three crushed flame emeralds.'
+
+Return with [[Unadorned Chain Bracer]] and three [[Crushed Flame Emerald]]s.
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Nalelin Fe`Dhar says 'Bring me these items, for I will not grant you your pair until then - a pair of unadorned chain gauntlets and a set of three crushed topaz.'
+
+Return with [[Unadorned Chain Gauntlets]] and three [[Crushed Topaz]].
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Nalelin Fe`Dhar says 'A pair of leggings you seek? I seek something as well. Bring me a pair of unadorned chain leggings and three flawed sea sapphires. Go now. The struggle continues as we speak.'
+
+Return with [[Unadorned Chain Leggings]] and three [[Flawed Sea Sapphire]]s.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Nalelin Fe`Dhar says 'For the boots, I shall require a pair of unadorned chain boots as well as three pieces of crushed black marble.'
+
+Return with [[Unadorned Chain Boots]] and three [[Crushed Black Marble]] pieces.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:Ranger Quests]]
+[[Category:Skyshrine Armor Quests]]

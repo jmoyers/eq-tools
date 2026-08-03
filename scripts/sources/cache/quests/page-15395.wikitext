@@ -1,0 +1,53 @@
+{{Classic Era}}
+[[File:npc_Horgus.png|frame|Horgus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Horgus]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All (Ogre)
+|-
+! ''' Related Zones: '''
+| [[The Feerrott]]
+|-
+! ''' Related NPCs: '''
+| newbie lizards
+|}
+
+== Reward ==
+
+<ul><li>Experience</li>
+<li>[[Faction]]</li>
+<li>A piece of [[Raw-Hide Armor Set|Raw-Hide Armor]]</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Horgus'
+
+:Horgus says, 'What!!? You [Craknek] or you [pest]?'
+
+You say, 'i craknek'
+
+:Horgus says, 'Good. Me not bash you.  You help Horgus and Crakneks.  Go smash lizards.  Bring four tails.  Greenbloods think they get all lizard tails.  We take first.  Taste good.  You bring four tails.  Me give you tings.  Me gives armur.  Now go!!'
+
+'''Upon handing him 4 [[Lizard Tail]]s:'''
+
+:Horgus says, 'Mmmhmm!! Me favorites!! You do gud, here, take dis armur.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Green Blood Knights]] got worse.
+</div>
+
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

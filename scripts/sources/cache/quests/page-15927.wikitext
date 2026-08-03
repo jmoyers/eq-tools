@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:Npc_welno_tanboots.png|200px|frame|Welno Tanboots]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[A note (Gnome Rogue) | A note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Scuffed Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Rogue who doesn't follow Bertoxxulous, you will have A note in your inventory. The note reads as follows:
+
+: Journey to the Abbey of Deep Musing, where [[Welno Tanboots]] awaits.  She is the Master Cleric of the Deep Muses.  Take this note to her, and she will instruct you further.
+
+Upon handing the note to [[Welno Tanboots]]:
+
+: [[Welno Tanboots]] says, 'Yes, I just knew you'd see it my way, Teddee. Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small organziation hidden, which keeps us all busy around here.'
+
+<div class='facblock'>
+* Your faction standing with [[Deep Muses]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Scuffed Tunic*]]. Good luck, Rogue!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Rogue Quests]]

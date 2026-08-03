@@ -1,0 +1,296 @@
+{{Classic Era}}
+[[File:npc_capt_linarius.png|frame|Capt Linarius]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Capt Linarius]]
+|-
+! ''' Minimum Level: '''
+| 15 (lowest level of the guard you need to kill is 30)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Guard McCluskey]]
+|}
+{
+<span class='profac'>'''WARNING:'''</span> [[Guard Oystin]], [[Guard Westyn]], [[Guard Stanard]], [[Guard Bartley]], and [[Guard Fredrick]] in [[North Karana]] also drop bracelets, but if you try to hand them in Capt Linarius reacts badly.
+
+: Capt Linarius says, 'You fool!!! You have slain a loyal defender of the guard!  Prepare to DIE!!!'
+: Capt Linarius says, 'Time to die, <name>.'
+: Capt Linarius says, 'I shall rid the land of another infamous villain!'
+
+== Reward ==
+
+The rewards seem pretty evenly distributed between:
+
+<ul><li>  {{:Bunker Battle Blade}}
+</li><li> {{:Round Shield}}
+</li><li> {{:Targ Shield}}
+</li><li> {{:Fine Steel Warhammer}}
+</li><li> {{:Fine Steel Dagger}}
+</li><li> {{:Bronze Long Sword}}
+</li><li> {{:Bronze Bracers}}
+</li><li> {{:Reinforced Boots}}
+</li><li> {{:Tentacle Whip}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Capt Linarius'
+
+: [[Capt Linarius]] says 'Hail, traveler! You are free to rest within this keep or within any of my towers along the roads to Qeynos. My guards shall keep watch over you. While you tread upon the roads, be warned that there are [local dangers] as well as rumors of [corrupt guards].'
+
+You say, 'What corrupt guards?'
+
+: Capt Linarius says 'I have heard rumors of dissension among my guards. I will reward any fine resident for the death of these traitorous guards. If you find you must kill one, bring his guard bracelet back to me. I cannot allow such men among my guards. Be sure they are corrupt, or I shall have your head as well.'
+
+A [[Guard Bracelet]] (identifies as "Corrupt Guard Bracelet") drops from [[Guard McCluskey]] and [[Guard Donlan]] in West Karana (-2913, -2043). 
+
+Give the bracelet to Capt Linarius. '''Required higher than dubious faction for turn in.'''
+
+: Capt Linarius says 'What a pity. Such a promising soldier. I thank you for ridding us of this corruption and offer you this as a reward. It is nothing more than junk which littered the roadways of the Plains of Karana. I hope you can find a use for it.'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+{{exp}} (About 48,000 exp per bracer - compared to the 97,000 exp you get from killing [[Guard McCluskey]] or 67,000 exp from killing [[Guard Donlan]])
+
+You receive 8 gold from Capt Linarius. <br>
+
+{| class="eoTable3"
+|+ '''Experience Gains - Green'''
+|-
+! Class
+! Race
+! Level
+! Bracer's needed for next level
+|-
+| Enchanter
+| High Elf
+| 12
+| 10
+|-
+| Enchanter
+| High Elf
+| 13
+| 11
+|-
+| Enchanter
+| High Elf
+| 14
+| 13
+|-
+| Enchanter
+| High Elf
+| 15
+| 15
+|-
+| Enchanter
+| High Elf
+| 16
+| 17
+|-
+| Enchanter
+| High Elf
+| 17
+| 19
+|-
+| Enchanter
+| High Elf
+| 18
+| 22
+|-
+| Enchanter
+| High Elf
+| 19
+| 24
+|-
+| Enchanter
+| High Elf
+| 20
+| 27
+|-
+| Enchanter
+| High Elf
+| 21
+| 29
+|-
+| Enchanter
+| High Elf
+| 22
+| 32
+|-
+| Enchanter
+| High Elf
+| 23
+| 35
+|-
+| Enchanter
+| High Elf
+| 24
+| 38
+|-
+| Enchanter
+| High Elf
+| 25
+| 42
+|-
+| Enchanter
+| High Elf
+| 26
+| 45
+|-
+| Enchanter
+| High Elf
+| 27
+| 49
+|-
+| Enchanter
+| High Elf
+| 28
+| 52
+|-
+| Enchanter
+| High Elf
+| 29
+| 56
+|-
+| Enchanter
+| High Elf
+| 30
+| 122
+|-
+| Enchanter
+| High Elf
+| 31
+| 71
+|-
+| Enchanter
+| High Elf
+| 32
+| 75
+|-
+| Enchanter
+| High Elf
+| 33
+| 80
+|-
+| Enchanter
+| High Elf
+| 34
+| 85
+|-
+| Enchanter
+| High Elf
+| 35
+| 189
+|-
+| Enchanter
+| High Elf
+| 36
+| 104
+|-
+| Enchanter
+| High Elf
+| 37
+| 110
+|-
+| Enchanter
+| High Elf
+| 38
+| 116
+|-
+| Enchanter
+| High Elf
+| 39
+| 123
+|-
+| Enchanter
+| High Elf
+| 40
+| 275
+|-
+| Enchanter
+| High Elf
+| 41
+| 147
+|-
+| Enchanter
+| High Elf
+| 42
+| 154
+|-
+| Enchanter
+| High Elf
+| 43
+| 162
+|-
+| Enchanter
+| High Elf
+| 44
+| 169
+|-
+| Enchanter
+| High Elf
+| 45
+| 386
+|-
+| Enchanter
+| High Elf
+| 46
+| 199
+|-
+| Enchanter
+| High Elf
+| 47
+| 208
+|-
+| Enchanter
+| High Elf
+| 48
+| 217
+|-
+| Enchanter
+| High Elf
+| 49
+| 227
+|-
+| Enchanter
+| High Elf
+| 50
+| 236
+|-
+| Enchanter
+| High Elf
+| 51
+| 549
+|-
+| Enchanter
+| High Elf
+| 52
+| 595
+|-
+| Enchanter
+| High Elf
+| 53
+| 644
+|-
+| Enchanter
+| High Elf
+| 54
+| 1055
+|}
+[[Category:Quests]]
+[[Category:Northern Karana]]
+[[Category:All Classes Quests]]

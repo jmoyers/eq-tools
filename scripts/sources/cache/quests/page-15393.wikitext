@@ -1,0 +1,56 @@
+[[File:npc_suuspa_clanim.png|frame|Suuspa Clanim]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Suuspa Clanim]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Brother Estle]], [[Brother Trintle]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+Tell Suuspa Clanim in the Temple of Life in North Qeynos about Brother Trintle attacking Brother Estle and she is shocked and expresses the thought that Trintle must have been swayed by the words of Bertoxxulous. 
+
+You Say: Brother Trintle Attacked Brother Estle.
+
+: Suuspa Clanim says: "Impossible!! What madness do you speak off!!? If he did he must have had a reason. Maybe Trintle had been tainted by the words of Bertoxxulous..?
+
+If you kill Brother Trintle in West Karanas you discover that indeed he is now a follower of Bertoxxulous.
+
+'''Turn in [[Busted Prayer Beads]] to Suuspa'''
+
+: Suusupa Clanim says: "This is not good. Hmph. It appears they are shattered. For the first time one of our members has been swayed. I reward you for your deed. Also, if you have found anything upon Trintle, let me know."
+
+''She is referring to her [[Rat Shaped Rings]] quest.''
+
+You receive 7 copper pieces.
+
+<div class='facblock'>
+* Your faction with [[Priests of Life]] has gotten better.
+* Your faction with [[Knights of Thunder]] has gotten better.
+* Your faction with [[Guards of Qeynos]] has gotten better.
+* Your faction with [[Bloodsabers]] has gotten worse.
+* Your faction with [[Antonius Bayle]] has gotten better.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

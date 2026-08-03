@@ -1,0 +1,85 @@
+[[File:npc_beek_guinders.png|frame|Beek Guinders]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rivervale|Rivervale]]
+|-
+! ''' Quest Giver: '''
+| [[Beek Guinders]] 
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kithicor Forest]] or [[Misty Thicket]]
+|-
+! ''' Related NPCs: '''
+| [[a black wolf]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Courage|Spell: Courage]]
+</li><li> [[Cure Poison|Spell: Cure Poison]]
+</li><li> [[Divine Aura|Spell: Divine Aura]]
+</li><li> [[Flash of Light|Spell: Flash of Light]]
+</li><li> [[Minor Healing|Spell: Minor Healing]]
+</li><li> [[Spook the Dead|Spell: Spook the Dead]]
+</li><li> [[Strike|Spell: Strike]]
+</li><li> [[True North|Spell: True North]]
+</li><li> [[Yaulp|Spell: Yaulp]]
+</li><li> [[Cure Blindness|Spell: Cure Blindness]]
+</li><li> [[Cure Disease|Spell: Cure Disease]]
+</li><li> [[Furor|Spell: Furor]]
+</li><li> [[Gate|Spell: Gate]]
+</li><li> [[Holy Armor|Spell: Holy Armor]]
+</li><li> [[Light Healing|Spell: Light Healing]]
+</li><li> [[Reckless Strength|Spell: Reckless Strength]]
+</li><li> [[Stun|Spell: Stun]]
+</li><li> [[Summon Drink|Spell: Summon Drink]]
+</li><li> [[Ward Undead|Spell: Ward Undead]]
+</li></ul>
+
+== Walkthrough ==
+
+NOTES: *Iksar Shammy was KOS with these after reaching non-KOS with all others, wolf form made it possible to turn in, after hitting dubious I was able to turn in no problem. 
+
+[[Beek Guinders]] is located at -216, -380 in Rivervale.
+
+You say, 'Hail, Beek Guinders' 
+
+: Beek Guinders waves enthusiastically and says, 'Hay, ho, there, young ______! I'd love to yak it up with you but I'm a bit busy at the moment, trying to find some [help].'
+ 
+You say, 'What help?' 
+
+: Beek Guinders says 'Well, we're experimenting with some tanning methods but we're running low on supplies. We need to find someone to go out and [gather some things]. Seems no one wants to do an honest day's work any more. I'd do it myself but, errrr, my, uhhh, foot hair has been hurting lately... yes, that's it.'
+ 
+You say, 'I will gather some things.' 
+
+: Beek Guinders cheers and says, 'Ahhh, excellent! Okay, first, we'll need a couple of wolf pelts. They don't have to be perfect, completely ruined would work just fine, hehe. I'll also need a black wolf skin and a handful of berries. The berries you should be able to find out in the Thicket. I hear they grow in a small canyon near the lone tower. Hurry, hurry!
+ 
+Obtain:
+: 2 [[Ruined Wolf Pelt]]s, 
+: 1 [[Black Wolf Skin]], 
+: 1 [[Berries]]
+
+Turn in the items to Beek...
+
+: Beek Guinders says 'Hey, great! You found the materials! We'll get to work right away. If you find any more, please come by again. Here's a little something for your troubles, friend.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Mischief]] has been adjusted by 5.
+* Your faction standing with [[Mayor Gubbin]] has been adjusted by 5.
+* Your faction standing with [[Guardians of the Vale]] has been adjusted by 5.
+</div>
+{{exp}}
+
+You receive 13 Silver, 23 Copper from Beek Guinders. 
+
+You receive a random low-level cleric spell.
+
+[[Category:Quests]]
+[[Category:Rivervale]]
+[[Category:All Classes Quests]]

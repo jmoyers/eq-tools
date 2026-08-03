@@ -1,0 +1,66 @@
+[[File:npc_gearin_gaxx.png|frame|Gearin Gaxx]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Gearin Gaxx]]
+|-
+! ''' Minimum Level: '''
+| 36
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[City of Mist]]
+|-
+! ''' Related NPCs: '''
+| [[A Pirate Cartographer]], [[Captain of the Guard]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Guard of Ik}}
+</li></ul>
+
+== Walkthrough ==
+
+Quest items:
+
+* You will find two [[Trooper Shield]]s on the [[Captain of the Guard]] in the City of Mist (need to kill him twice)
+* The [[Scribbled Note]] (game typo) is found on [[A Pirate Cartographer]] in Fironia Vie. 
+
+You say, 'Hail, Gearin Gaxx'
+
+Gearin Gaxx says, 'Welcome. friend!  If armor is what you seek, let the house of Gaxx provide you with the finest.  Our metalwork is second to none.  Every now and again we may even create [rare armor] for the general public to purchase.'
+
+You say, 'what rare armor'
+
+Gearin Gaxx says, 'I have found many exotic materials in Kunark with which I can create rare armor.  I currently am working on the [Guard of Ik] and the [Hate Tail Guard] shields.  I have no armor as of yet. but I am experimenting with new designs.'
+
+You say, 'what is the guard of ik'
+
+Gearin Gaxx says, 'The Guards of Ik are made from shields found in the jungles.  I would be selling them if it were not for the unfortunate fact that the shields are spectral and vanish overnight.  Another bit of bad news is that the formula I was working on to stabilize the essence of the metal was stolen by local pirates.  I need two more shields and my formula.  Bring these to me and I shall not charge you.'
+
+* Hand in the two shields and the scribbled note.
+
+Gearin Gaxx says, 'Hey?!! We had a deal!! I get two ik shields and my ik formula!!'<br />
+Gearin Gaxx says, 'Hey?!! We had a deal!! I get two ik shields and my ik formula!!'<br />
+Gearin Gaxx places the formula in a box which appears to have similar copies in it. Thank you!! I can now reward you with this Guard of Ik shield I had lying around.
+
+<div class='facblock'>
+* Your faction standing with FirionaVie got better.
+* Your faction standing with EmeraldWarriors got better.
+* Your faction standing with StormGuard got better.
+* Your faction standing with LegionofCabilis got worse.
+* Your faction standing with PiratesofGunthak got worse.
+</div>
+{{YouGainExperience}}
+
+No visible experience gain at 40.
+
+The reward is so mediocre, even by old world standards, that it seems like this must have been the first in a chain of quests, and was either never solved or was broken.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

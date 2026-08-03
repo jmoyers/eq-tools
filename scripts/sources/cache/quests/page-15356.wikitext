@@ -1,0 +1,50 @@
+[[File:npc_timtok_tonsmith.png|frame|Timtok Tonsmith]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Commonlands]] (or East?)
+|-
+! ''' Quest Giver: '''
+| [[Timtok Tonsmith]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Small Crafted Armor
+</li></ul>
+
+== Walkthrough ==
+
+There are two dwarven smiths at the inn next to Befallen who offer to resize Crafted Armor for you.
+
+* Timtok Tonsmith will resize Gauntlets, Vambraces, Helm and Boots.
+* Ranvigoz Tonsmith will resize Bracers, Pauldron, Brestplate and Greaves.
+
+This reduces the size to small and the weight of the armor as follows:
+
+* Gauntlets were 5.0 now 3.7 wt.
+* Vambraces were 6.5 now 4.8 wt.
+* Bracers were 4.0 now 3.0 wt each.
+* Helm was 6.0 now 4.5 wt.
+* Pauldron was 4.5 now 3.3 wt.
+* Breastplate was 10.0 now 7.5 wt.
+* Greaves were 7.5 now 5.6 wt.
+* Plate boots were 6.5 now 4.8 wt. 
+
+You may need to be amiable to them to get the quest.  I definitely wouldn't go handing them your armor if they haven't responded to your hails and given you the quest. 
+-When conned indifferent they responded to hails but would not complete quest.
+
+[[Category:Quests]]
+[[Category:West Commonlands]]
+[[Category:All Classes Quests]]

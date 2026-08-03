@@ -1,0 +1,156 @@
+{{Classic Era}}
+__NOTOC__
+[[File:npc_an_elven_slave.png|frame|an elven slave (wood elf, male)]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Crushbone]]
+|-
+! ''' Quest Giver: '''
+| [[an elven slave]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Butcherblock Mountains]], [[Kaladim]], [[Felwithe]]
+|-
+! ''' Related NPCs: '''
+| Various, [[orc taskmaster]]
+|}
+
+== Reward ==
+
+<ul><li>  Experience, Minor Items
+</li></ul>
+
+== Walkthrough ==
+
+If you kill the [[orc taskmaster]], he sometimes drops a [[Brass Earring]]. You can turn it in to any of the different slaves:  
+
+'''Faction Note:'''  Must be debiously or better.
+
+ * I received no reward while:  an elven slave glares at you threateningly
+ * I received reward while:  an elven slave glowers at you dubiously (killed orc to increase faction)
+
+=== Wood Elf, Male ===
+
+Hand an elven slave (Male Wood Elf) a Brass Earring.
+
+: an elven slave says 'You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!'
+
+{{YouGainExperience}}
+
+You receive A Tattered Cloth Note (identifies as "Csb I.O.U. Elf 1"), which reads:
+
+ Brother.. Nildar.. I live still.. I will be home soon
+
+[[Merchant Nildar]] is located at 882, 202 in Kelethin.  Give him the note.
+
+: Merchant Nildar says 'My brother still lives? Thank you for this news. Please, take this with my deepest thanks.'
+
+{{YouGainExperience}} You receive: A piece of Leather Armor.
+
+=== Wood Elf, Female ===
+
+Hand it to the female wood elf version of "an elven slave." 
+
+: an elven slave says 'You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!'
+
+{{YouGainExperience}}
+
+You receive A Faded Wedding Cloth, which reads:
+
+ Sister Iludarae, Long have I been held here in this stinking rothole of a camp. If you hold this note then know that I will soon be home
+
+[[Merchant Iludarae]] is located at -36, -151, in Kelethin. Hand in the wedding cloth.
+
+: Merchant Iludarae says 'I have no words for the gratitude I feel. So many of our young ones have been captured by the filthy orcs. Please, take this for saving my sister.'
+
+{{YouGainExperience}} You receive: [[Leather Leggings]], [[Leather Shoulderpads]], [[Leather Boots]] or [[Leather Cloak]].
+
+=== Dwarf, Male ===
+
+Give this to any male dwarf slave.
+
+: a dwarven slave says 'You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!'
+
+{{YouGainExperience}}
+
+You receive [[A Worn Rune]], which reads:
+
+ Haldin, me ol' partner. If yer getting a note like this ye know what it means.
+
+[[Guard Haldin]] is at location -145, 50 in Butcherblock Mountains. Give him the rune.
+
+: Guard Haldin says 'Eh, strapling? Ye got this from me ol' partner? Huh. Aye, I know what it means but ye're not hearin'. Here, take this. It was his but he's not needin' it now.'
+
+{{YouGainExperience}} 
+
+You receive either a {{:Bronze Two Handed Battle Axe}} or a {{:Dwarven Axe}}.
+
+=== Dwarf, Female ===
+
+Hand it to a dwarven slave (female).
+
+: a dwarven slave says 'You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!'
+
+{{YouGainExperience}}
+
+You receive a Small Wood Carving, which reads:
+
+ I've had enough o' this 'field research' Kalameky. I'm quittin' and ye can take yer low wage pay and do what ye know what to do with it.
+
+[[Kalameky Darkfoam]] is at location 168, 389 inside Tanned Assets in South Kaladim. Hand in the carving.
+
+: Kalameky Darkfoam says 'Why, that..! Bah! Fine. Stupid as a newborn gob. He's not gonna get this, then. Hey, you might as well take it. It was gonna be his reward fer a job well done.'
+
+{{YouGainExperience}} 
+
+You receive a {{:Targ Shield}}.
+
+=== High Elf, Female ===
+
+Give it to any female High Elf Slave and she replies:
+
+: ''You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!''
+
+{{YouGainExperience}}
+
+She gives you ''A Torn Drawing'', which reads:
+
+ Mistress Niola - My research is close to, if not completely, finished. Our suspicions may not have been as well founded as thought. I will be back within our halls soon.
+
+Then take ''A Torn Drawing'' to [[Niola Impholder]], located at 795, -599 in the northmost room of the Magicians Guild in Felwithe.
+
+: Niola Impholder says, 'What? Not as supposed? What can he... Well, that's all well and good. You, I assume, wish a reward for your 'valiant work'? Well, here you go, adventurer.'
+
+{{YouGainExperience}} 
+
+You receive a {{:Gossamer Robe}}.
+
+=== High Elf, Male ===
+
+Give this to any male high elf slave.
+
+: an elven slave says 'You killed the taskmaster?! Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!'
+
+{{YouGainExperience}}
+
+You receive A Ragged Cloth Note (identifies as "Csb I.O.U. Hie 1"), which reads:
+
+ Dear Settine. Your inability or reluctance to leave your post in order to even attempt a rescue has shown me the quality of your heart. Hopefully our eyes will never meet again
+
+[[Guard Settine]] is located at -10, -171 (near zone in bridge on ground level) in North Felwithe. Hand in the note.
+
+: Guard Settine says 'I.. but.. she.. You can take this. I guess I don't need it any more.'
+
+{{YouGainExperience}}
+
+You receive a {{:Silver Amber Ring}}.
+
+[[Category:Quests]]
+[[Category:Crushbone]]
+[[Category:All Classes Quests]]

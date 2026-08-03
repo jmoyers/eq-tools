@@ -1,0 +1,136 @@
+{{Kunark Era}}
+__NOTOC__
+[[File:npc_a_skeletal_cook.png|frame|a skeletal cook]]
+{| class="raidMobTopTable"
+!''' Start Zone: '''
+| [[Kurn's Tower]]
+|-
+!''' Quest Giver: '''
+| [[a skeletal cook]]
+|-
+!''' Minimum Level: '''
+| 20+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Field of Bone]], [[Cabilis]]
+|-
+!''' Related NPCs: '''
+| [[an undead jester]], [[A_skeletal_cook]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:The Skull of Torture}}   
+</li></ul>
+
+
+=== Walkthrough ===
+
+Give [[A Glowing Skull]] (no rent item) to [[A skeletal cook]], you'll be rewarded with [[The Skull of Torture]].
+
+==== Looting the Glowing Skull ====
+
+While waiting for [[A skeletal cook]] to pop, kill high level skeletons around:
+* greater scalebones
+* lesser charbone skeletons
+* lesser icebone skeletons
+
+Those skeletons can drop [[A Glowing Skull]].
+
+If you want more skeletons to kill, head to the second and third floors into the tower.
+
+==== The Hand-In ====
+
+Hand the Glowing Skull to [[A skeletal cook]]:
+
+: The cook's bones crack as he reaches out to take the skull from your hands. A voice in your mind says, 'thank you now I can leave this dreadful place. Please take this as I no longer have any use for it' The cook places the skull back in your hands before collapsing into a lifeless pile of bones.
+
+He doesn't despawn after the hand-in. No faction hits are awarded.
+
+==== Building the Glowing Skull by yourself (Broken)====
+'''''Attention:''' The following is part of the broken quest that was not fixed on Live until Oct 2003.''
+
+''You say, 'Hail, a skeletal cook' ''
+
+''a skeletal cook says, 'Some cracked old bones, two zombie flesh, and a salt minnow make up the rest. Throw inside a skull and mix, and I would have a delightful dish. But with no eyes I have no sight to make Kurn's delicious delight. And if I could I would not eat without a tongue behind my teeth.' ''
+
+The Cook wants you to gather a number of items:
+
+* Bone Chips
+* Two Zombie Flesh - dropped by Rotting Flesh Hunters in the [[Field of Bone]]
+* Salt Minnow (fished in [[Cabilis]]) - Fished in East Cabilis
+* [[Preserved Eye (Left)]] - Give [[Galdon Vok Nir]] the left [[A Dusty Sealed Canopic]]
+* [[Preserved Eye (Right)]] - Give [[Galdon Vok Nir]] the right [[A Dusty Sealed Canopic]]
+* [[Dried Tongue]] - Dropped by [[Burynai Forager]]
+* [[Hollow Skull (Skull of the Tower Cook)]] - dropped by [[an undead jester]], north of the stables
+
+The Jester also drops a [[Tattered Scroll]] related to the quest. It reads:
+
+ Within the tower lies the corpse of Mirgon Dower.
+ A faithful servant of Kurn's deadly tower.
+ He served Kurn and kept him very well fed.
+ Now it is time to replace his head.
+ His new head did glow once upon a time.
+ Now there are no eyes, no tongue, to taste the sweet crunchy flesh.
+ And so the years flow.
+ When all are back together the magic will once again glow.
+
+Inside the Hollow Skull, combine: Bone Chips + Zombie Flesh x2 + Salt Minnow. This yields you a Kurn's Jerky Delight (edible, so make sure not to eat it).
+
+The Hollow Skull is returned to you. Now combine the Kurn's Jerky Delight + Preserved Eyes + Dried Tongue in the same container. This yields you a Glowing Skull (which is TEMPORARY).
+
+=====ADDITIONAL NOTES REGARDING THE FORAGER=====
+
+Once in a while a Burynai Forager will pop in the Stables area. When killed he either yields one of 2 LORE dusty sealed canopics or a dried tongue.
+
+When identified they turn out to be the Left Eye of Torture, the Right Eye of Torture, and the Tongue of Torture. Seems we are on the right track, but the canopics will not fit inside the skull, since they are SMALL sized.
+
+The trick is to get the canopics opened. Go to Galdon Vok Nir, an Iksar in the evil outpost in The Overthere, he can be found inside the compound next to its easternmost wall. Invisibility will get you by the guards so you can talk to him. I am not sure if he indifferent to everyone or just Iksar.
+
+You say, 'Hail Galdon Vok Nir'
+Galdon Vok Nir says 'Please do not harm me. I am not the one who brought the outsiders to our land. I am innocent and deserve to return to my people.
+
+You say, 'what is the eye of torture?'
+Galdon Vok Nir says 'I have heard of such things. You must have stumbled upon an ancient jar devised by one of my long-dead ancestors. They were fine craftsmen. I do not share their gift, but I do know the secret of the locks. If you have one of the ancient Vok Nir canopics, allow me to open it
+for you.
+
+[ Give him one of the canopics ]
+Galdon Vok Nir grasps the jar and begins to push and turn the lid. 'Ahhh!! Here you are, my friend. Unngh!! It appears to be a preserved eye. I do not think it would be wise to eat it. Perhaps you can use it for another purpose.
+Where did you find this jar?'
+You gain experience!!
+
+[ Give him the other canopic ]
+Galdon Vok Nir grasps the jar and begins to push and turn the lid. 'Ahhh!! Here you are, my friend. Unngh!! It appears to be a preserved eye. I do not think it would be wise to eat it. Perhaps you can use it for another purpose.
+Where did you find this jar?'
+You gain experience!!
+
+You say, 'in kurns tower'
+Galdon Vok Nir says 'Kurn's Tower!! Such a dangerous place for one to wander. It is a place of great suffering. Kurn was well known for the torture of many races, mostly the giants named the Kromdul. Long after the destruction of the tower by an unknown foe, the Kromdul returned to retrieve Kurn's body for sacrifice to their gods. They did not find his body, but rumor has it they found Kurn's favorite torture weapon. What happened to it, only they would know.
+
+You say, 'what Kromdul?'
+Galdon Vok Nir says 'The Kromdul are a race of giants. I believe they inhabit the woods of Kunark.
+
+The two Eyes of Torture will now fit inside the skull along with the tongue.
+
+id#12394 A Dusty Sealed Canopic Lore:Right Eye of Torture
+
+id#12395 A Dusty Sealed Canopic Lore:Left Eye of Torture
+
+id#12396 a preserved eye Lore:Right Eye of Torture
+
+id#12397 a preserved eye Lore:Left Eye of Torture
+
+id#12398 Unknown item (likely missing component)
+
+id#12399 a dried tongue Lore:Tongue of Torture
+
+id#12400 Unknown item (likely reward item for quest)
+
+id#12401 A glowing skull lore:Skull of Torture
+
+[[Category:Quests]]
+[[Category:Kurn's Tower]]
+[[Category:All Classes Quests]]

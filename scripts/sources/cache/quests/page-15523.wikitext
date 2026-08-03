@@ -1,0 +1,68 @@
+{{Disambig3|[[Poacher's Head Quest (Surefall Glade)]]}}
+[[File:npc_jras_solsier.png|frame|Jras Solsier]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Jras Solsier]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Minimum Faction: '''
+| Amiable
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[A Poacher]], [[Poacher]], [[Poacher Dell]], [[Poacher Hill]], [[Poacher Shelli]], [[Poacher Topi]], [[Poacher Willa]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Copper Band}}
+</li><li> {{:Malachite}}
+</li><li> {{:Fishing Spear}}
+</li><li> {{:Rusty Rapier}}
+</li><li> {{:Small Lantern}}
+</li></ul>
+
+== Walkthrough ==
+
+CANNOT BE COMPLETED AT INDIFFERENT FACTION; MUST BE HIGHER.
+
+Jras Solsier is located at -610, -135 outside the Temple of Divine Light in Erudin.
+
+You say, 'Hail, Jras Solsier'
+
+: Jras Solsier says 'Welcome to the Temple of Divine Light. We are the Peacekeepers, followers of Quellious. If you are a paladin of this temple, you can assist us by showing a desire to [protect the peace].'
+
+You say, 'I will protect the peace.'
+
+: Jras Solsier says 'It was a fine decision. We are in need of your services. It seems there is a disturbance in Toxxulia Forest. There are poachers from other nations who have sought to cause turbulence among the creatures there. Will you help us [catch the poachers] or are you skeptical about this mission?'
+
+You say, 'I will catch the poachers.'
+
+: Jras Solsier says 'The infidels are in Toxxulia Forest. They have begun hunting the kobolds. We have no love of the kobolds, but cannot allow the lands of Odus to be overrun by outsiders. The ways of tranquility are balanced with harmony. We will not allow chaos to take hold of our land. Go and find these poachers. Bring me their heads!!'
+
+Hand in a [[Poacher's Head]] to Jras. Note that the poacher's head doesn't have to be from one of the poachers in the [[Toxxulia Forest]].  The heads from the [[Surefall Glade]] poachers will also work.
+
+: Jras Solsier says 'You have served us well. The harmony of the forest shall be preserved. I have word that theses infidels were all working for one man. Find me evidence pertaining to this man. Surely one of these poachers has something which could aid in finding this man. Go in peace.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+{{YouGainExperience}}
+: You get a small amount of coin
+: You get a minor item
+
+
+[[Category:Quests]]
+[[Category:Erudin]]

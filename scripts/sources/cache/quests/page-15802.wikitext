@@ -1,0 +1,75 @@
+{{:Does Not Exist}}
+[[File:npc_ssynthi.png|frame|Ssynthi]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Mistmoore Castle]]
+|-
+! ''' Quest Giver: '''
+| [[Ssynthi]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Commonlands]], [[Innothule Swamp]], [[Kithicor Forest]], [[Lavastorm Mountains]], [[Rathe Mountains]], [[Nektulos Forest]], [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| '''Ytyrs the Reborn''', '''a minion of Ytyrs''', [[a shadowed man]]
+|}
+
+== Reward ==
+
+* Penumbral Rod
+
+== Real Life Lore ==
+
+This was one of the quests that was revealed through the d20 Everquest Role-Playing Game.
+
+== Walkthrough ==
+
+Ssynthi may be found at -55, 385, in the graveyard behind the mausoleum.
+
+You say, 'A new breed of shadowed man walks Norrath. What can you tell me of the deathspeakers?'
+
+: Ssynthi says 'Ah, so the deathspeakers have decided to reveal themselves again. They are beings who claim they are closer to the realms of the dead than any other known race, and they have been known to rally the shadowed men in times when they deem other races to be dabbling too much in the powers of death and rebirth. Just as shadowed men as a whole despise those of us who follow Solusek Ro because they deem all of magic to have sprung from themselves.'
+
+You say, 'Could it concern the Burning Dead's plan to resurrect Marnek?'
+
+: Ssynthi says 'Marnek, you say?! I admit that rumors have come to me concerning an alliance between the Temple of Ro and the Burning Dead, and perhaps this is the goal of that union. I must therefore act, for who knows the shadowed men better than I? But I cannot leave this place right now. Will you help me in this task?'
+
+You say, 'I will help you.'
+
+: Ssynthi says 'Then take this and collect within the drops of shadow that spill when a deathspeaker is killed. There will be a deathspeaker wherever shadowed men can be found, but even more important is the location of Ytyrs the Reborn. His shadow must be collected as well. And have care not to mix this shadow stuff with drink lest you unleash a dangerous magic.'
+
+You receive an 8-slot Cauldron of Shadow Essence. Go to each of the shadowed men camps (locations needed): 
+
+* Innothule Swamp 
+* Nektulos Forest 
+* Lavastorm Mountains 
+* Lesser Faydark 
+* South Karana 
+* Commonlands 
+* Kithicor Forest 
+
+A rare drop at each camp is a Vial of Shadow.  Each vial identifies differently:
+
+* Innothule Swamp - Shadow of the first Deathspeaker
+* Nektulos Forest - Shadow of the second Deathspeaker
+* Lavastorm Mountains - Shadow of the third Deathspeaker
+* Lesser Faydark - Shadow of the fourth Deathspeaker
+* South Karana - Shadow of the fifth Deathspeaker
+* Commonlands - Shadow of the sixth Deathspeaker
+* Kithicor Forest - Shadow of the seventh Deathspeaker
+
+Find Ytyrs the Reborn in the Rathe Mountains at -750, -1580.  Kill it to spawn Ytyrs Reborn, who spawns with several of "a minion of Ytyrs."
+
+Kill Ytyrs Reborn for the eighth Vial of Shadow, which identifies as "Shadow of Ytyrs the Reborn."
+
+Combine the eight vials in the cauldron to craft a Concoction of Shadow and give that to Ssynthi to receive a Penumbral Rod, an item with 3 charges of Shadow Burst.
+
+(Closing dialogue?)
+
+[[Category:Quests]]

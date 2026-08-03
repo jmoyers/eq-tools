@@ -1,0 +1,64 @@
+{{Classic Era}}
+{{Disambig3|[[Pixie Dust (Kelethin Ranger)]]}}
+[[File:npc_expin.png|frame|Expin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Expin]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a pixie trickster]], [[a pixie prankster]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Patchwork Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Expin]] is located at -553, -157, 162 in the Scouts of Tunare ([[Rogue]]) Guild Hall.''
+
+You say, 'Hail, Expin'
+
+: Expin says, 'How are you, my friend? You must be a [new scout of Kelethin]. I would hope so. We dearly need more recruits. Most of the Fier'Dal choose the path of the ranger.'
+
+You say, 'I am a new scout of Kelethin'
+
+: Expin says, 'Good. I have an easy, but very important, task for you. We require all young members to cleanse these woods of the troublesome pixie tricksters. Take this pouch, fill it, and when it is combined, return it to me. I just may have some used armor lying around for you.'
+
+'''You recieve an [[Empty Pouch]], a six slot, tiny capacity container.  Fill it with 6 unstacked [[Pixie Dust]]s, looted from [[a pixie trickster]] and combine it.  Return the [[Pouch of Pixie Dust]] to [[Expin]].'''
+
+: Expin says, 'Good work, scout!! You have earned this reward. It is all we have at the time. I am certain you are satisfied. If not, then do not let me hear of it.'
+
+<div class="facblock">
+* Your faction standing with [[Tunare's Scouts]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 6 silver, 3 copper pieces.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

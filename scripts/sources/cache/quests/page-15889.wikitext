@@ -1,0 +1,71 @@
+{{Classic Era}}
+
+[[File:Npc_guard_shilster.png|frame|Guard Shilster]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Guard Shilster]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+<ul><li>{{:Blackburrow Stout}}
+</li><li>Faction (Evil)
+</li></ul>
+
+==Description== 
+
+This Quest is very useful for raising [[Bloodsabers]] and several other Evil Qeynos factions because it is rapidly repeatable--so long as you have the gold for it. There are very few other options to raise Bloodsabers and they mostly involve a much longer messenger quest or killing and damaging another faction, so this one is arguably the fastest and safest. In addition to this, the only negative Faction hit is to Guards of Qeynos which is quickly repaired just by killing more gnolls and numerous other quests.
+
+The faction hit for Corrupt guards is 1. And most likely for the others too. 
+I did 297 turn in's while Apprehensive, the range for Apprehensive is 400, so if they were 2+ I would have made it to Indifferent. 
+
+== Walkthrough ==
+
+*Step 1 - Go to a bank and exchange Platinum into as much Gold as you are willing to spend. If you are going from scowls KOS and want to completely repair this faciton I suggest starting with 500p > 5000 Gold which would be 1000 turn ins.<br> Clear your bags and reduce your weight as much as possible. Being over encumbered for a long journey is still probably faster than making multiple trips to and from a bank in the Karanas.<br>
+*Step 2 - Request SoW/Scale and STR and if necessary an Illusion if KOS consult [[Faction Tricks]] for assistance.
+
+'''Find [[Guard Shilster]] who is often standing in the NorthEast corner of [[Northern Plains of Karana]] at loc 1380, -2764 . Occasionally he will wander to the South Karana bridge and stand there for a few minutes and then go back.<br>'''
+
+You say, 'Hail, Guard Shilster'
+
+:Guard Shilster says, 'Hey hey! I have some Blackburrow Stout for sale. Just hand over five gold and I'll give you a bottle of it. Don't get caught though because it is considered [contraband]. [Antonius] don't like it being smuggled but what does he know, anyway?
+
+You say 'Who is Antonius?'
+
+:Guard Shilster says, 'That man is as clueless as a froglok tad swimming in a keg of dwarven ale! He has no idea what is going on around him. He won't be around for much longer I wager.'
+
+You say, 'Why is it considered contraband?'
+
+:Guard Shilster says, 'Well it's brewed by gnolls, ya know. Don't know exactly why it's considered contraband but I think it's because they use the money they get from the selling stout to buy arms. I dunno. I buy low and sell high. Blackburrow Stout is good for you though!. It does wonders for me! Now buy some already before someone hears us talking.'
+
+'''Hand Guard Shilster 5gold pieces.'''
+
+:Guard Shilster says, 'There you go, sport. If you get caught with that, you didn't get it from me!'
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got worse. (-1)
+* Your faction standing with [[Kane Bayle]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better. (1)
+* Your faction standing with [[Bloodsabers]] got better.
+</div>
+
+You receive [[Black Burrow Stout]]
+
+[[Category:Quests]]
+[[Category:Northern Karana]]
+[[Category:All Classes Quests]]

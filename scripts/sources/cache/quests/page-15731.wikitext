@@ -1,0 +1,57 @@
+{{Velious Era}}
+[[File:npc_errgriz.png|frame|Errgriz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Errgriz]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[a dire wolf]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Wolf Fur Earcovers}}
+</li></ul>
+
+== Walkthrough ==
+
+Errgriz may be found near the Tower of Frozen Shadow, at +1065, +2415.
+
+You say, 'Hail, Errgriz'
+
+: Errgriz says 'Errrr.  You come for master, learning like me?'
+
+You say, 'What are you learning?'
+
+: Errgriz says 'I am learning ways of skinning and tailoring.  None left but the master so I must learn to help.  For now I only clean the furs.'
+
+You say, 'You clean furs?'
+
+: Errgriz says 'Yes.  I clean the furs and then the master makes things from them.'
+
+You say, 'What things do you make?'
+
+: Errgriz says 'I wish I could make things.  Headcoverings, to keep cold from head is what I want to make.  I think I ready but not able to make until I get furs.  Master says to find skin of high quality, thick and strong, but I have no training in hunting.'
+
+'''Give him a [[High Quality Dire Wolf Fur]].'''
+
+: Errgriz starts to cut and scrape the furs.  He growls softly as he works and his master watches his progress.  'Grrr.  Much too small.  I fail.  I not ready to work on my own.  Sorry to waste your time.  Here, take what I made.  Maybe you can find use for it.' 
+
+'''You receive [[Wolf Fur Earcovers]].'''
+
+Part of the [[Captain Nalot's Triple Strength Rum]] questline
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

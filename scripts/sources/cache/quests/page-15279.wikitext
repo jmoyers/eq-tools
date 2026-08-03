@@ -1,0 +1,85 @@
+[[File:npc_commander_kane.jpg|frame|Commander Kane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Quest Giver: '''
+| [[Commander Kane]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]], [[Highpass]], [[Surefall Glade]], [[Ak'Anon]], [[South Ro]]
+|-
+! ''' Related NPCs: '''
+| [[Frenway Marthank]], [[Mammoth]], [[Mutt Rootlit]], [[Pietro Zarn]], [[Rathmana Allin]], [[Dyllin Starshine]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rage War Maul}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Note:''' Warmly faction required.
+
+: [ ] Complete [[Blackburrow Stout Delivery]] or kill [[Mutt Rootlit]] for [[Bayle List I]]
+: [ ] Complete [[The Regurgitonic]] quest or kill [[Mammoth]] for [[Bayle List II]]
+: [ ] Kill [[Dyllin Starshine]] for [[Bayle List III]]
+
+This a long and involved quest, and can be started in a number of different places, but revolves around Qeynos, Surefall and Freeport.  The details I was given are still unclear in spots, but it ultimately results in a high powered shadowknight weapon.  It involves getting all three parts of the Bayle List.  Each part can also be gotten separately for a different reward, as listed on the separate quests.
+
+===List I===
+For Part one of the list, talk to [[Commander Kane]] in the Shrine of Bertoxxulus in [[Qeynos Aqueducts]] and he will ask you to deliver [[Blackburrow Stout]] '''(NO DROP version)''' to [[Barn Bloodstone]] who is outside the Golden Rooster in [[Highpass]].  Make sure your faction with Barn is at least indifferent.  To raise, do the [[Note for Janam]] and [[Note for Rebby]] quests in the [[East Freeport]]. If [[Commander Kane]] doesn't talk to you at first, just Hail him and say, "The disease is spreading."  Then he will be much more manageable.  Doing so results in [[Bayle List I]], part one of the list. 
+
+As an alternative, you can kill [[Mutt Rootlit]], who stands next to [[Barn Bloodstone]], and she will drop the [[Bayle List I]]. Doing this will give a serious faction hit for Coalition of TradeFolk III, Coalition of TradeFolk, Carson McCabe, Corrupt Qeynos Guards, and The Freeport Militia.
+
+===List II===
+For part two of the list, you can choose to kill a named bear or you can do [[The Regurgitonic]] quest.
+
+Sidequest background: Talk to Runethar Hamest in the Temple of Thunder, who is investigating corruption among the guards of Qeynos. He asks you to go to Surefall Glade, find [[Frenway Marthank]] in the Druids' Guild, and ask him for "The Bayle List."  When you do, Frenway is in a state of depression.  His son -- who happened to be carrying the very list you're looking for -- was killed and devoured by the great grizzly bear Mammoth, who lives deep in the caves of [[Surefall Glade]].  As a Druid, Frenway is forbidden to harm the bears of the Glade, but he wants vengeance.  
+
+If you can find and slay the level 20-25 [[Mammoth]] behind the waterfall, you will get a the [[Bayle List II]].  
+
+As an alternative, you can feed [[Mammoth]] a {{:Regurgitonic}}, which can be obtained from [[The Regurgitonic]] quest.
+
+===List III===
+For part three, talk to [[Raltur Caliskon]] in the Dismal Rage in [[Freeport]] and he tells you to assist [[Sir Lucan D`Lere]] in any task he has. But to return any interesting information to him and not Delere.  Ralture will then tell you to kill [[Lady Shae]] and get the Bayle List.  However, [[Lady Shae]] will tell you that [[Dyllin Starshine]] was sent from Qeynos to retrieve this list, and that he just left for High Pass Hold/Qeynos with it.
+
+He can be found in the smuggler's camp in Highpass.  If you have a high faction or use your influence spell on him, he will give you the list. You can also get the [[Bayle List III]] by killing him, but you will take a bad faction hit from that that might cause you to not be able to complete the final part of the quest.
+
+===Final===
+Take all three parts to [[Rathmana Allin]] in South Ro along with 20 gp and he will give you back a translated list.
+
+If you give this to [[Pietro Zarn]], the shadowknight guildmaster in the [[East Freeport]] Sewers, he will usually reward you with a Rage War Maul (you may need very high faction with him to get it - thus you shouldn't kill Dyllin unless you started extremely high).
+
+It is possible that this is used to obtain an even better shadowknight weapon.  It also seems likely that there is a good person to give the list to to get a good-oriented reward.
+
+
+===Translation===
+Translated the list says (''substitution cipher: abcdefghijklmnopqrstuvwxyz => uxbcadfgehzklminpqrsotqwxy'')
+
+:BAYLE LIST 
+:QEYNOS [[Drosco|DROSCO]] BERTOXXULOUS 
+:FREEPORT [[Guard Alayle|ALAYLE]] MILITIA
+:NERIAK FININ INDIGO
+:ERUDIN GELLIN MERCHANTS
+:FELWITHE HELSHIN CHAMPIONS
+
+According to [https://everquest.allakhazam.com/db/quest.html?quest=503&mid=1578172128471733&p=1#msg1578172128471733](Zam Thread)
+
+:Commander Kane says, ''Thank you for your help. Soon Antonius' agents will be exterminated like roaches. May the virus of the Plaguebringer run through your veins.''
+
+Which suggests the it's a list of spies working for Antonius Bayle and giving the list to Kane/Zarn will cause their exposure and assassination.
+
+
+Only known 'Good' variant of this quest is the [[Bonethunder Staff Quest]].
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Shadow Knight Quests]]

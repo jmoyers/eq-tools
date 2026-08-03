@@ -1,0 +1,80 @@
+{{Kunark Era}}
+:''For an overview of the many bone chips quests, see [[Bone Chips Quests]].''
+[[File:npc_trooper_mozo.png|frame|Trooper Mozo]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Field of Bone]]
+|-
+! ''' Quest Giver: '''
+| [[Trooper Mozo]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]]
+|-
+! ''' Required Faction: '''
+| Dubious or better
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]], Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+
+''[[Trooper Mozo]] can be found at -2555, +3565, guarding the zone-in to East Cabilis.''
+
+You say, 'Hail, Trooper Mozo'
+
+: Trooper Mozo looks upon you smugly. 'And what are you? Some sort of adventurer. Bah!! You will be shaken by the first undead you come across. Wetting your pants you shall be. Ha ha!! I doubt you could even [kill the decaying skeletons].'
+
+You say, 'I can kill the decaying skeletons.'
+
+: Trooper Mozo says, 'You kill skeletons?!! I think not!! They will bounce you with no trouble at all. Ten silver says you cannot collect four bone chips!! When Velious melts!! Hah!'
+
+'''Hand in four [[Bone Chips]], unstacked.'''
+
+: Trooper Mozo says, 'I don't see four bone chips.'
+: Trooper Mozo says, 'I don't see four bone chips.'
+: Trooper Mozo says, 'I don't see four bone chips.'
+: Trooper Mozo gasps in astonishment. Wha...? This!! But... I... Why you... I oughts.. All right!! A bet is a bet. Here you go. A few silver pieces for your achievement. What?!! You thought I would give ten? Fat chance! Now get lost or I will haul you in for impersonating a froglok.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better. +1
+* Your faction standing with [[Cabilis Residents]] got better. +1
+* Your faction standing with [[Scaled Mystics]] got better. +1
+* Your faction standing with [[Crusaders Of Greenmist]] got better. +1
+* Your faction standing with [[Swift Tails]] got better. +1
+</div>
+{{YouGainExperience}}
+
+You receive ~7 silver from Trooper Mozo.
+
+== Experience & Faction Gains ==
+
+At level 1 it's 11% xp per turn in so 2 stacks gets you a ding. After that you double the chips every level more or less, but it's still very easy to hit level 4-5 without too much carpal damage.
+
+=== Faction gains ===
+
+:''See also: [[Faction Tricks]]''
+
+* http://everquest.allakhazam.com/db/quest.html?quest=260&p=2#m102640577693677
+ Here are the results for a Human Warrior who follows Rallos Zek. 
+  * 4600 Bone chips -- Threateningly with both Quarg and Bodil. (didn't check other factions but i'm assuming they were as well since they all changed at the same time later on) 
+  * 5600 Bone chips -- Dubious to Quarg and Bodil 
+  * 7000 Bone chips -- Apprehensive to Crusaders, Shaman, Monks, Residents. 
+  * 7400 Bone Chips -- Indifferent (and maxed) to Crusaders, Shaman, Monks, Residents, and Troopers (troopers maxed long before this during the quest) 
+
+[[Category: Quests]]
+[[Category:Field of Bone]]
+[[Category:All Classes Quests]]

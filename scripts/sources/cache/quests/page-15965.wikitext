@@ -1,0 +1,57 @@
+
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_camlend_serbold.png|frame|Camlend Serbold]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Camlend Serbold]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Camlend Serbold]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Camlend Serbold]] is located at -206, -677 in the Temple of Life ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Camlend Serbold'
+
+: Camlend Serbold says, 'I say, good to meet you, Teddee !  I am Camlend Serbold.  Some call me Serbold the Great.  I am the leader of the righteous order of paladins which serves the Temple of Life.  Together with the clerics of this temple, we defend the will of the great [Rodcet Nife] and smite all who dare to oppose us.'
+
+'''Hand [[Camlend Serbold]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Follow the will of the Prime Healer. Devote your life to Rodcet Nife, and spread health and wellness throughout the lands of Norrath. Go to the Temple of Life, where Guild Master Camlend Serbold shall help guide you on your new journeys. The Temple is to the north and east of the Clock of Ak'Anon.</code>
+
+: Camlend Serbold says, 'Welcome to the Temple of Life. You have much to learn and we have much work to do. Pain, hurt, disease and death lurk everywhere, our job is seemingly endless, but none is more gratifying. Here is our guild tunic, represent us well. Good health be with you.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:Paladin Quests]]

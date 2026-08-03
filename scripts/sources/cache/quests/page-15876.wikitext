@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_maesyn_trueshot.png|frame|Maesyn Trueshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Maesyn Trueshot]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Maesyn Trueshot]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Green Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Maesyn Trueshot]] is located at -462, 525, 118 in the Faydark's Champions ([[Ranger]]) Guild Hall.''
+
+You say, 'Hail, Maesyn Trueshot'
+
+: Maesyn Trueshot says, 'Welcome to Kelethin, ______! I am Maesyn Trueshot, commander of Faydark's Champions. We are the finest marksmen in all of Norrath. With our trusty [Trueshot longbows] we can miss no target regardless of the distance or the conditions.'
+
+'''Hand [[Maesyn Trueshot]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Hail young woodsman. If you wish to learn the ways of the Ranger, then join Faydark's Champions. Give this note to Master Ranger Maesyn Trueshot, and he will train you well.</code>
+
+: Maesyn Trueshot says, 'Hail, ______, and welcome.. I am Maesyn Trueshot, leader of Faydark's Champions. I will teach and train you, as I have done for many others. Let's get started.. Here, put this on.. it'll help protect you from the elements. Once you are ready to begin your training please make sure that you see Samatansyn Flamecaller, he can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art. I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.'
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Ranger Quests]]

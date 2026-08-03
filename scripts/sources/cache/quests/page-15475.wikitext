@@ -1,0 +1,60 @@
+{{Kunark Era}}
+[[File:npc_kwinn_the_outlander.png|frame|Kwinn the Outlander]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Kwinn the Outlander]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]], [[The Overthere]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[a pygmy skulking brute]], [[a sabertooth tiger]], [[a stoneglint cockatrice]], [[war boned skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mechanical Iksar Tail}}
+</li></ul>
+
+== Walkthrough ==
+
+Kwinn the Outlander (a rare spawn barbarian who wanders all over the zone) has a quest for you. 
+
+You say, 'Hail, Kwinn the Outlander'
+
+: Kwinn the Outlander says 'Hail, adventurer!  Kwinn's the name.  Hunting is my game.  I have been all over this continent.  Seen many things and found [odd trinkets].  I have no quarrel with any race.  I judge a person or critter by their actions.  Heck, my best friend is a troll !! 
+
+You say, 'What odd trinkets?'
+
+: Kwinn the Outlander says 'Blast!! I found some strange thingamajigs!! Most of it I toss or sell to vendors and crazy sages.  I am on my way to sell this [iron tail] to a tinkerer. 
+
+You say, 'What iron tail?'
+
+: Kwinn the Outlander says 'Found the thing washed up on the shore in Timorous Deep.  Looks like a metal lizardman tail.   It is all rusted and covered with barnacles.  Probably can't get much for it, but I'll try.  Why do you ask?  Are you looking to [trade for the mechanical thing]? 
+
+You say, 'I am looking to trade for the mechanical thing'
+
+: Kwinn the Outlander takes out an extra pack.  'Thought you might be interested.  I don't want to take a loss and I only trade for things I am hunting, so here!!  
+: '''Inside this pack you need to combine the following items:
+
+:{{box}} a [[Sabertooth Tiger Mane]]
+:{{box}} a pair of [[Intact Pygmy Brute Choppers]]
+:{{box}} a [[Stoneglint Lime Plume]] and
+:{{box}} a [[Skeleton Fist]].'''
+: '''Return the full sack to me and the tail is yours.''' ' 
+
+'''Upon turn-in:'''
+
+: Kwinn the Outlander says 'Kackling Quellious!!  This will bring a fortune on the black market!!  Well, a deal is a deal.  Here is the tail.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

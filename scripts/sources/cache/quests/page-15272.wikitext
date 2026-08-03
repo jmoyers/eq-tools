@@ -1,0 +1,71 @@
+{{Unknown Era}}
+
+{{delete|quest was revamped, and this one is no longer valid a new page has been made for the updated quest}}
+
+[[File:npc_kerran_tseq.png|thumb|kerran tseq]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[kerran tseq]]
+|-
+! ''' Minimum Level: '''
+| 21
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Nilit's contraption]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Kerran Toy}}
+</li></ul>
+
+== Walkthrough ==
+
+''kerran tseq is located at +230, -150 on Kerra Isle.''
+
+You say, 'Hail, kerran tseq'
+
+: kerran tseq says 'Yes. You bring us toy?!'
+
+You say, 'Hail, kerran tseq'
+
+: kerran tseq says 'Errr. You smell funny. You bring us [toy]?'
+
+You say, 'What toy?'
+
+: kerran tseq says 'You go, bring us gnome toy. You not come back or we eat you and then you die like short one.'
+: kerran tseq says 'Gnome toy! You bring. You good person.'
+
+'''OPTIONAL: [[Nilit Druzlit]] is a gnome found in [[Steamfont Mountains]].'''
+
+You say, 'Hail, Nilit Druzlit'
+
+: Nilit Druzlit says, 'Eh? Eh?! Talk not now! My [creation] is running wild! Destroy it for me. please! If you do you can keep whatever parts you want from it.'
+
+You say, 'What creation?'
+
+: Nilit Druzlit says, 'Did you kill it yet? What? Bah! Yes. I made it. Nilit's clockwork it is. I made it to carry my toys to and from Ak'Anon but now it's gone wild and started attacking people. Please. destroy it!'
+
+'''[[Nilit's contraption]] wanders [[Steamfont Mountains]].  Kill it and loot a [[Gnome Tinkered Toy]].  Bring it back to the kerran tseq.'''
+
+: kerran tseq says 'Rreeee! Great toy. Shiny. We not need this old toy anymore. You take. Now go way, this our toy, we play.'
+
+<div class="facblock">
+* Your faction standing with [[Kerra Isle]] got better.
+</div>
+{{exp}}
+
+Reward: {{:Kerran Toy}}
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,67 @@
+{{Velious Era}}
+
+
+[[File:npc_guardian_of_takish.png|frame|Guardian of Takish]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[Guardian of Takish]]
+|-
+! ''' Minimum Level: '''
+| 46
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Plane of Hate]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[a corrupted faun]], [[a corrupted panther]], [[Corrupter of Life]], [[a corrupted unicorn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Natures Defender}}
+</li></ul>
+
+== Walkthrough == 
+{{expand}}
+
+MQable with Chanter/Collaborate = Amiable Faction.
+
+You say, 'Hail, Guardian of Takish'
+
+: [[Guardian of Takish]] says 'Well met Phazrael . It is indeed a wondrous day to be serving the lady Tunare.  If you know of any templars or knights send them to me.
+
+You say, 'I am a knight' 
+
+: Guardian of Takish says 'Fortune smile upon me this day. It seems that the great corrupter and the Prince of Hate have spreading the seeds of corruption within this continent. Will you assist us to stop them?
+
+You say, 'I will assist you'
+
+: Guardian of Takish says 'Seek out the corrupter of life in the plane of hate and slay him. He has been reported performing dark rituals upon various wildlife within the Wakening Lands during the late hours of night. Return to me any evidence that you may find.
+
+'''Return to him the following items:'''
+  
+<ol><li> {{:Fleshless Skull}} from the [[Corrupter of Life]] ([[Plane of Hate]])
+</li><li> {{:Corrupted Fauns Skin}} (Wakening Lands, [[a corrupted faun]])
+</li><li> {{:Corrupted Panther Skin}} (Wakening Lands, [[a corrupted panther]])
+</li><li> {{:Corrupted Unicorns Skin}} (Wakening Lands, [[a corrupted unicorn]])
+</li></ol>
+
+After turn in
+
+: Guardian of Takish says 'May Tunare's blessing be upon thee! Here, take this item and use it wisely.'
+
+''Need faction hits, etc.''
+
+Confirmed no faction hits on 08/20/2021
+
+'''NOTE:''' The dialogue will not start unless you're practically standing inside the Guardian.
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Paladin Quests]]

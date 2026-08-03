@@ -1,0 +1,93 @@
+{{Classic Era}}
+[[File:npc_corun_finisc.jpg|frame|Corun Finisc]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Corun Finisc]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| [[Druid]], [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[a gnoll hunter]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+Note: [[a gnoll hunter]] is an extremely rare spawn.
+
+== Reward ==
+
+<ul><li>{{:Jaggedpine Crook}}</li>
+<li>Coin</li></ul>
+
+== Walkthrough ==
+
+[[Corun Finisc]] can be found at -125, -160 in Surefall Glade.
+
+You say, 'Hail, Corun Finisc'
+
+: Corun Finisc says 'Hello.  My name is Corun Finisc and I am one of the Jaggedpine Treefolk.  It is our divine responsibility to watch over and protect Surefall Glade and its '''[inhabitants]''' from those who seek to '''[destroy]''' them.'
+
+You say, 'Who are the inhabitants?'
+
+: Corun Finisc says 'The bears of Surefall Glade are our brothers.  We are all children of '''[Tunare]'''.  We would gladly die in their defense.'
+
+You say, 'Who is Tunare?'
+
+: Corun Finisc says '[[Tunare]] is the Mother of All.  It is through Her will that we protect this land and its many creatures.'
+
+You say, 'Who is destroying them?'
+
+: Corun Finisc says 'Poachers in seach of bear skins and '''[gnolls]''' who attack us unprovoked.  We are doing all we can to stop them.  May '''[Tunare]''' give me the strength needed to smite them dead with my '''[crook].''''
+
+You say, 'What about your crook?'
+
+: Corun Finisc says 'My crook?  The Jaggedpine crook is an enchanted weapon of the Jaggedpine Treefolk.  The '''[Sabertooths]''' take great pleasure in destroying the crooks ofany '''[sic]''' Treefolk they manage to slay.  If you were to recover the pieces of a broken crook, I would gladly mend it for you.'
+
+You say, "What Sabertooths?"
+
+: Corun Finisc says 'The gnolls of Blackburrow are called Sabertooths. They have been seen in force on a regular basis. They are surely up to something.'
+
+'''This is a Jaggedpine crook staff that is broken in pieces in Qeynos Hills. Only Gnoll Hunters have the parts.  The gnoll hunters are very rare and getting the staff pieces is difficult.'''
+
+'''Gnoll hunters can be found wandering between Surefall Glade and Blackburrow.'''
+
+You have slain [[a gnoll hunter]]!
+
+<div class="facblock">
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+
+'''Once you have both the [[Bottom of Broken Staff]] and [[Top of Broken Staff]], give them to Corun.'''
+
+: Corun Finisc says 'Excellent! Here is a Jaggedpine Crook of your own. Please use it only to defend yourself and never to attack one of Tunare's creatures. You will find that while wielding the crook, Tunare grants you a boon of strength and the power to smite enemies who would otherwise be impervious to physical attacks.'
+
+<div class="facblock">
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[QRG Protected Animals]] got better.
+* Your faction standing with [[Unkempt Druids]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}} (Barely even registered for a 13 elf Druid)(1/2 a blue at level 6)
+
+You receive 8 Gold, 8 Silver, 6 Copper.(updated 4/15/18)
+
+You receive 5 platinum, 8 gold, 1 silver, 5 copper pieces. (updated 5/10/18 - received 6 platinum one turn in as well as just 2 gold for another as well)
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:Ranger Quests]]

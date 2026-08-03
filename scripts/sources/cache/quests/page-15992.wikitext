@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_tholius_quey.png|frame|Tholius Quey]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Tholius Quey]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:White and Blue Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+a tattered note reads: 
+
+:: <code>Followers of Erollisi Marr unite to spread her will and love across all of Norrath. Go north from the West Gate to Temple of Marr, and give this note to Tholius Quey. He will accept you into the Priests of Marr, and train you well.</code>
+
+''[[Tholius Quey]] is located at 140, 351 in the Temple of Marr ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Tholius Quey'
+
+: Tholius Quey says, 'Welcome Teddee. This is the Temple of Marr and you must be another seeker of Passion and Valor. That is good. Become one with us and help us to defeat the [fallen knight]. It is he who has caused the demise of this city.'
+
+'''Hand [[Tholius Quey]] [[a tattered note]].'''
+
+: Tholius Quey says, 'Welcome to the Priests of Marr. Here, you will be taught how powerful passion truly is. The passion of Erollisi Marr, the Queen of Love, shall flow through you and into all those you meet. Wear this tunic in the name of Love.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Freeport Militia]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Cleric Quests]]

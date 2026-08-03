@@ -1,0 +1,49 @@
+{{Classic Era}}
+[[File:Npc_guntrik.png|200px|frame|Guntrik]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mud Stained Skin Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating an Ogre Warrior, you will have a tattered note in your inventory. The note reads as follows:
+
+: You go Guntrik. . .Give note. . .Become Craknek Warrior.
+
+Upon handing the note to [[Guntrik]]:
+
+: [[Guntrik]] says, 'Ahh..  good..  good..  here. take..  now you Craknek! You bash good. Bash lizards. Bash froggies. Bash mushrooms. Remember. you no help Greenbloods. Crakneks stronger than Greenbloods.'
+
+<div class='facblock'>
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Green Blood Knights]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Mud Stained Skin Tunic*]]. Good luck, warrior!
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Warrior Quests]]

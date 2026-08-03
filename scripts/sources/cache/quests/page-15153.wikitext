@@ -1,0 +1,157 @@
+
+__NOTOC__
+[[File:npc_brother_qwinn.jpg|frame|Brother Qwinn]]
+[[File:npc_brother_zephyl.jpg|frame|Brother Zephyl]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Brother Qwinn]]
+|-
+! ''' Minimum Level: '''
+| ?
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! '''Related Zones:'''
+| [[Freeport]], [[Qeynos]], [[Nagafen's Lair]], [[Rathe Mountains]], [[Lower Guk]]
+|-
+! '''Related NPCs:'''
+| [[Brother Zephyl]], [[Targin the Rock]], [[Raster of Guk]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Robe of the Lost Circle}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* Qwinn
+** Obtain [[Code of Zan Fi]] from [[Targin the Rock]]
+**  Obtain [[Purple Headband]]
+** Turn in Code and Headband to [[Brother Qwinn]] (to receive [[Needle of the Void]])
+* Zephyl
+** Obtain [[The Idol]] from [[Raster of Guk]]
+** Obtain [[Red Sash of Order]]
+** Turn in Idol and Sash to [[Brother Zephyl]] (to receive [[Rare Robe Pattern]])
+* Robe tailoring
+** [[Tailor]] or obtain [[Shadow Silk]]
+** Obtain [[Jonthan's Whistling Warsong]] ([[bard]] song)
+** Tailor the Silk, Song, Robe Pattern and Needle (to craft [[Robe of the Lost Circle]])
+{{end}}
+
+== Brother Qwinn ==
+
+''This quest begins with [[Brother Qwinn]] in [[South Karana]].''
+
+You say, 'Hail, Brother Qwinn'
+
+: Brother Qwinn says 'In the name of the [Brotherhood of the Lost Circle], I greet you.'
+
+You say, 'What about the Brotherhood of the Lost Circle?'
+
+: Brother Qwinn says 'The [monks of the Whistling Fist] are called the Lost Circle by others. We are an ancient league of monks, long forgotten and nearly extinct. Within this realm, there are only two. [Brother Zephyl] and myself. We seek the items stolen from us. I seek the [Code of Zan Fi].'
+
+You say, 'What Monks of the Whistling Fist?'
+
+: Brother Qwinn says 'The monks of the Whistling fist were forged from the vision of the great master, Zan Fi. When the Combine Empire reigned supreme, a single bard grew to learn the ways of the monk. This bard was Zan Fi. The brotherhood was all but destroyed in the times that followed. Now only a few remain to carry on Zan Fi's legacy.'
+
+You say, 'Who is Brother Zephyl?'
+
+: Brother Qwinn says 'Brother Zephyl is searching for one who can return the [idol of Zan Fi]. I believe he is somewhere in the vicinity of the Rathe Mountains.'
+
+You say, 'What is the Code of Zan Fi?'
+
+: Brother Qwinn says 'The tome called the Code of the Whistling Fist has been stolen from me. It contains many secrets pertaining to our brotherhood. Thankfully, it is magically locked and only a Zan Fi master could unlock it. I require a monk to retrieve it. Would you be an [interested monk]?'
+
+You say, 'I am an interested monk'
+
+: Brother Qwinn says 'Then venture into the depths beyond the great Solusek Mining Company. There, living among the kobolds, will be Targin the Rock. Get the book from him, then return here and wait for my reappearance. When we meet again, you shall hand me the book and a purple headband earned from the Silent Fist clan. Do so and you shall be closer to joining the brotherhood.'
+
+You say, 'What about the idol of Zan Fi?'
+
+: Brother Qwinn says 'The idol of Zan Fi is a totem that is sacred to our brotherhood. I cannot share its secrets, but I can tell you that [Brother Zephyl] will offer to you a reward for its return..'
+
+'''You will need to bring him The Code of Zan Fi and the Purple Headband:'''
+
+* [[Code of Zan Fi]] - Dropped by [[Targin the Rock]], a rare spawn in the throne room of [[Nagafen's Lair]] (Solusek B). 
+* [[Purple Headband]] - From completing the [[Monk Headband Quests]]
+
+: Brother Qwinn says 'We had an agreement. The proof of a skilled monk, the purple headband, and the Code of the Whistling Fist.'
+
+: Brother Qwinn says 'We thank you for the return of the Code of the Whistling Fist. Take this sewing needle. You shall find it useful should you aid [Brother Zephyl] in his quest. His item, the needle, a swatch of shadow silk and a scroll containing Jonathan's Whistling Warsong. Into a sewing kit they will be going. And into the brotherhood will you. I hope you do not wish me to [return the headband]..'
+{{YouGainExperience}}
+
+'''You receive a special needle.''' ([[Needle of the Void]])
+
+You say, 'Return the headband?'
+
+: Brother Qwinn says 'Then you will return that which was earned or the robe.'
+
+== [[Hasten_Bootstrutter_and_Brother_Zephyl_Cycle|Brother Zephyl]] ==
+
+[[Brother Zephyl]] is found in the [[Rathe Mountains]]...
+
+You say, 'Hail, Brother Zephyl'
+
+: Brother Zephyl says 'Greetings. I am one with the [Lost Circle]. You have found me. What is it you desire?'
+
+You say, 'What about the Lost Circle?'
+
+: Brother Zephyl says 'The [monks of the Whistling Fist] are called the Lost Circle by others. We are an ancient league of monks. Long forgotten and few yet remain. Within this realm there are only two. [Brother Qwinn] and I. We seek the items stolen from us. I seek the [idol of Zan Fi].'
+
+You say, 'What is the Idol of Zan Fi?'
+
+: Brother Zephyl says 'The idol of Zan Fi is a totem that is sacred to our brotherhood. I cannot share its secrets, but I can offer to you a reward for its return. Are you an [interested monk]?'
+
+You say, 'I am an interested monk'
+
+: Brother Zephyl says 'Then venture to the lands of evil. The swamps of the trolls and ogres. There, seek out a monk called Raster. He has the idol. You will return here and wait for my reappearance. When we meet again, you shall hand me the idol and a red sash earned from the Ashen Order. Do so and you shall be closer to joining the brotherhood.'
+
+'''You will need to bring him The Idol and the Red Sash:'''
+
+* [[The Idol]] - Drops from [[Raster of Guk|Brother Raster]], who spawns in the Mino Elders room in [[Lower Guk]]. 
+* [[Red Sash of Order]] from completing the [[Monk Sash Quests]].
+
+: Brother Zephyl says 'We had an agreement. The proof of a skilled monk, the red sash, and the idol of Zan Fi.'
+
+: Brother Zephyl says 'We thank you for the return of the idol of Zan Fi. Take this rare robe pattern. You shall find it useful should you aid [Brother Qwinn] in his quest. His item, the rare robe pattern, a swatch of shadow silk and a scroll containing Jonathan's Whistling Warsong. Into a sewing kit they will be going. And into the brotherhood will you. I hope you do not wish me to [return the sash].'
+
+{{YouGainExperience}}
+
+'''You receive a special tailoring pattern.''' ([[Rare Robe Pattern]])
+
+You say, 'Can you return the sash?'
+
+: Brother Zephyl says 'Very well. Give to me that which you have been rewarded or the robe, if you have a tailored one.'
+
+== The Robe ==
+
+'''For the combine you will need the following:'''
+
+* [[Needle of the Void]]
+* [[Rare Robe Pattern]]
+* [[Jonthan's Whistling Warsong|Song: Jonthan's Whistling Warsong]] - Can be purchased from the Bard's Guild.
+* [[Shadow Silk]] (Tailoring trivial at 36)
+**1 x [[Shadow Wolf Pelt]] - Dropped from shadow wolves.
+**1 x [[Silk Swatch]] - Crafted using two spider silk.
+**1 x [[Gather Shadows|Spell: Gather Shadows]] - Bought.
+
+This produces the [[Robe of the Lost Circle]].
+
+== Additional Information ==
+
+If you have messed up your faction, you can get around this by using wolf form, or by sneaking up from behind them with a sow on. If you get in front of them while sneaked you will still be kos. They will turn to you after you turn in the items so be ready to fd since they quad for 300's.
+
+== Related Quests ==
+
+* [[Monk Sash Quests]]
+* [[Monk Headband Quests]]
+
+[[Category:Quests]]
+[[Category:Southern Karana]]
+[[Category:Monk Quests]]

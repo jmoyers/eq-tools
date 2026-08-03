@@ -1,0 +1,111 @@
+{{Classic Era}}
+[[File:TreantFists.png|right|On male human this item appears as blood red plate fists.]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Puab Closk]]
+|-
+! ''' Minimum Level: '''
+| 25+
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[Clan Runnyeye]], [[Misty Thicket]], [[Beholder's Maze]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a banished kerran]], [[a gelatinous cube]], [[a goblin alchemist]], [[a goblin captain]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Treant Fists}}
+</li></ul>
+
+== Walkthrough ==
+
+1. Say, "I am a monk of great skill to [[Puab Closk]] in [[West Freeport]] to receive [[Puab's Token]].
+
+2. Give [[Puab's Token]] to [[a banished kerran]] in [[Kerra Isle]] to receive [[Box With Pawprints]].
+
+3. Kill [[a goblin alchemist]] that spawns in [[Misty Thicket]] for [[Ribcage Chest Armor]].
+
+4. Kill [[a goblin alchemist]] to get the [[Humerus Handled Mace]] in the [[Gorge of King Xorbb]].
+
+5. Kill [[A Pickclaw Mindripper]] to get the [[Cat Skull Cap]] in [[RunnyEye Citadel]].
+
+6. Kill [[A Pickclaw bonemender]] to get the [[Fractured Femur]] in [[RunnyEye Citadel]].
+
+7. Combine the items in the box to get [[A Box of Cat Bones]].
+
+8. Hand [[A Box of Cat Bones]] to [[a banished kerran]] to receive [[Tattered Parchment]].
+
+9. Bring [[Tattered Parchment]] to [[Puab Closk]] for your [[Treant Fists]].
+
+
+In the guild house of the [[Ashen Order]], Puab Closk has a task for you.
+
+He is located in the top of the guild house.
+
+You say, 'Hail, Puab Closk'
+
+Puab Closk says, 'Greetings, I am Puab Closk, Master of the Ashen Order.  Our home is your home, friend. Feel free to stay as long as you like.  Learn our ways as many have done in the past.  To fight like the tiger and strike like the cobra are your goals. Cough- [treant fist] -Cough!' 
+
+You say, 'What treant fist'
+
+Puab Closk says, 'I have these items, and will gift them to any [monk of great skill]'
+
+You say, 'I am monk of great skill'
+
+Puab Closk says, 'Then you shall aid our family. My former pupil [Clawfist] has been banished by his people. You will go to him and hand him this token as proof of your origin. He shall be expecting you.'
+
+Puab Closk hands you [[Puab's Token]].
+
+You say, 'Who is Clawfist'
+
+Puab Closk says, 'Clawfist is a Kerran, a catman. He braved the dangers of Norrath to reach the Ashen Order. He sought knowledge of our disiples [sic]. He learned well.'
+
+Clawfist is actually a Kerran named [[a banished kerran]] in [[Kerra Isle]]. He is in the basement of the temple, (behind the throne and down a ramp.)
+
+You say, 'Hail, a banished kerran'
+
+a banished kerran says, 'Rrrrrr..  Away frrrom this isle of death and.. prrrr.. punishment.'
+
+You say, 'Puab sent me'
+
+a banished kerran says, 'Prrr.. Master Puab?  Show me prrroof.'
+
+Hand him your [[Puab's Token]].
+
+a banished kerran says, 'Ashen Order!! Prrr.. My order. I have been expecting one of us. Prrr.. Help me rejoin my native land. Return the [remains of Thipt] to me. This shall aid me in my redemption.'
+
+He hands youa [[Box With Pawprints]] (a 4 slot combine box).
+
+a banished kerran says, 'Clawknight Thipt wished to learn the ways of Ashen. Prrr. Together we go into green Goblin's lair to train. Prrr.. We find too many and he is too weak. Seperated and unable to find him, I hear his death cry. Prr.. I cannot make it back, the eyes are upon me. Now I must find one sent by Ashen to aid in the recoverrry of his remains - his Humorous Handled Mace, Ribcage Breastplate, Cat Skullcap and Fractured Femur Bone'
+
+* The '''[[Humerus Handled Mace]]''' is found on [[a goblin alchemist]] in the [[Gorge of King Xorbb]]. The spawn point (loc 705, -1794) is at the fork in the gorge directly outside the entrance to Runnyeye. The placeholder is a goblin lookout, a goblin sentry, or a goblin veteran. However, there are two identical spawn cycles at this loc with different timers; 72 minutes and 6 minutes. Both spawns can be up at the same time. The alchemist is a random spawn on the 72 minute respawn timer.  --  These are the easy but frustrating two to get. Both goblin alchemists seem to be about 18-19th level, and while they can be hard to find typically once found go down pretty easily.
+
+* The Ribcage Breastplate is '''[[Ribcage Chest Armor]]''', which may be found on [[a goblin alchemist]] that spawns in [[Misty Thicket]]. The spawn rate varies: he has been hunted for 6 hours and never appeared, and then popped up twice in an hour on another day. The camp he spawns at is the southern goblin camp from the entrance to Runnyeye, and the placeholder spawn ''seems'' to be [[Mooto]], [[a goblin shaman]] and/or [[a goblin warrior]]. Seven-minute respawn time on the placeholder at loc -885.42, 1114.96.
+
+* The '''[[Cat Skull Cap]]''' now drops off [[A Pickclaw Mindripper]] in [[RunnyEye Citadel]]. 
+
+* The '''[[Fractured Femur]]''' now drops off [[A Pickclaw bonemender]] in [[RunnyEye Citadel]]. 
+
+Once you have all 4 items, place them in the [[Box With Pawprints]] and combine. You'll be rewarded with [[A Box of Cat Bones]]. Take this back to Kerra and hand it into the banished kerran, Clawfist.
+
+a banished kerran says, 'Prrr.. Thank you brother of Ashen. I can now spend my time upon this island in peace, until my penance is serrrved. He dabs his paw into the mud and places it upon a tattered parchment. Take this message to Puab. Farrrwell.'
+
+{{YouGainExperience}}
+
+He hands you a [[Tattered Parchment]].
+
+Bring this back to [[Puab Closk]].
+
+{{expand}}
+
+[[Category:Quests]]
+[[Category:West Freeport]]
+[[Category:Monk Quests]]

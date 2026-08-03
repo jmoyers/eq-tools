@@ -1,0 +1,61 @@
+[[File:npc_barnal_flamehand.png|frame|Barnal Flamehand]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Barnal Flamehand]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Abscond]]
+* [[Tears of Solusek]]
+* [[Thunderbold]]
+* [[Tishan's Discord]]
+
+== Walkthrough ==
+
+Barnal Flamehand may be found in Firiona Vie (loc -3268, 3076).  He wants any of the following spell scrolls:
+
+* [[Atol's Spectral Shackles]]
+* [[Inferno of Al'Kabor]]
+* [[Pillar of Frost]]
+* [[Tears of Druzzil]]
+
+The reward is a random spell scroll from the list in the "Reward" section above.
+
+== Dialogue ==
+
+You say, 'Hail, Barnal Flamehand'
+
+''Barnal Flamehand says 'And a fine day to you, too, _____! What is it that brings you here? Fortune? Adventure? In either case, it will be more fun than the duty I have. I am to acquire what scrolls I can for the High Council of Erudin. And you're also in luck, as I seek the services of a mighty adventurer like yourself. Do you wish to [aid me in my duty]?' ''
+
+You say, 'I will aid you in your duty'
+
+''Barnal Flamehand says 'Then you will do this for me. Venture beyond this outpost to the most distant lands and the darkest dungeons. Within them, the creatures with the greatest power will have scrolls. The residents here will be able to give you general locations of the most dangerous places. I wish to obtain the scrolls of Atol's Spectral Shackles, Tears of Druzzil, Inferno of Al'Kabor, and lastly, Pillar of Frost. Make haste, as the High Council cannot be kept waiting! Fear not, I shall [reward] you well.' ''
+
+You say, 'What reward?'
+
+''Barnal Flamehand says 'I am not empty-handed. I have already located some of the most rare scrolls. I'll part with one of my four for what you return to me. Fare thee well!' ''
+
+Hand in one of the four scrolls mentioned above.
+
+''Barnal Flamehand says 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!' ''
+
+[[Category: Quests]]
+
+[[Category:Firiona Vie]]
+[[Category:Wizard Quests]]

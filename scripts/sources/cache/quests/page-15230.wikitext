@@ -1,0 +1,77 @@
+[[File:npc_the_great_oowomp.png|frame|The Great Oowomp]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Timorous Deep]]
+|-
+! ''' Quest Giver: '''
+| [[The Great Oowomp]]
+|-
+! ''' Recommended Level: '''
+| 40+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[City of Mist]], [[Dreadlands]], [[Kaesora]], [[Trakanon's Teeth]], [[Karnor's Castle]]
+|-
+! ''' Related NPCs: '''
+| [[an army behemoth]], [[gem cutter skeleton]], [[spectral guardian]], [[a froglok yun shaman]], [[skeletal warlord]]
+|}
+
+== Reward ==
+
+* [[McMerin's Feast]]
+
+== Checklist ==
+
+{{CheckboxList}}
+* Get [[Strange Ochre Clay]] off [[an army behemoth]] in [[City of Mist]]
+* Get [[Yun Shaman Powder]] from [[froglok yun shaman]] in [[Trakanon's Teeth]]
+* Get [[Greyish Bone Chips]] from [[skeletal warlord]] in [[Karnor's Castle]]
+* Get [[Crushed Diamonds]] as ground spawn at -8850, -6040 in [[Timorous Deep]] or see other method below
+Give all four items to [[The Great Oowomp]] in [[Timorous Deep]]
+{{End}}
+
+== Walkthrough ==
+
+''Note that there is an identical quest for good races: [[Cannibalize II (Good)]].''
+
+You say, 'Hail, The Great Oowomp'
+
+: The Great Oowomp gestures as if casting a powerful spell. 'Come forward, adventurer! Come and [see the dancing skeleton]. I shall cast a powerful spell and bring forth this operatic, clattering jumble of bones and he shall do a fine dance for you. From the nether regions and planes beyond, I call forth this bardic, magical, rhyming, tap-dancing hunk of undead!! I am Oowomp the Great!!'
+
+You say, 'I want to see the dancing skeleton.'
+
+: The Great Oowomp says 'Oh!! You wish to see the great Oowomp perform his magic!! I have studied with the grand mages and wise [McMerin clan] of Norrath, as my speech implies. I can call forth the skeleton with but a twinkling of my power and five of your gold.'
+
+You say, 'Who are the McMerin clan?'
+
+: The Great Oowomp says 'Clan McMerin were wise shamans from the North. They allowed me to study with them. I learned many spells while I communed with them. From them, I sto.. I mean, I learned, the secret of McMerin's Feast. If you want to know the secret, you could [help gather components] for future rituals.'
+
+You say, 'I will help gather components.'
+
+: The Great Oowomp says 'Actually... Not so much help as do - ALL - of the gathering. In the lands of Kunark are clay of Ghiosk, crushed dread diamond and powder of Yun. A rare find would be the bones of one who touched the Bath of Obulus. Find and return these to me and the shaman secret of McMerin's Feast is yours.' 
+
+'''The Great Oowomp wants the following:'''
+
+* 1. Clay of Ghiosk. Comes from [[an army behemoth]] in the [[City of Mist]] - Called '''[[Strange Ochre Clay]]''', and identifies as "Clay of Ghiosk."
+
+* 2. Crushed Dread Diamonds. You can find '''[[Crushed Diamonds]]''' as a ground spawn in the [[Timorous Deep]] on the Golra island at -8850, -6040.
+Alternately: Go get a dufrenite (you can buy this at several cities). In the [[Dreadlands]], in the area with all the wizard spires, there is a MOB called [[gem cutter skeleton]]. He is inside one of the pyramids (there's an entrance on the ground), and is KOS to everyone. An Enchanter, Necro, or Bard is required to charm him so that you can hail him, and he talks about sparklies. Ask him "what dread diamond," and he offers to trade a dufrenite for one. Give him a dufrenite (while he's charmed) and he gives you a [[Dread Diamond]] [No Drop](not crushed), and says how they are very valuable but more so in the crushed form, and that you would require high skill and a spectral pestle to crush it. The spectral pestles are found on [[spectral guardian]]s in [[Kaesora]] and [[Trakanon's Teeth]], and combining the dread diamond + spectral pestle to make [[Crushed Diamonds]], which identifies as "Crushed Dread Diamonds" (trivializes at around 70 [[Skill Alchemy|Alchemy skill]], so make sure your skill is high enough - you lose the pestle, but get the diamond back). 
+
+* 3. Powder of Yun. Come from [[froglok yun shaman]] in [[Trakanon's Teeth]]. It is droppable, black and called '''[[Yun Shaman Powder]]'''. Identifies as "Powder of Yun."
+
+* 4. Bone chips from the bones of one who has touched the Bath of Obulus. These are called '''[[Greyish Bone Chips]]''', and come from [[skeletal warlord]]s in [[Karnor's Castle]]. People will often let you loot these from their kill. They identify as "Obulus Bone Chips."
+
+'''Return all 4 items to Oowomp for your spell scroll.'''
+
+: The Great Oowomp begins to jump for joy.  The ground trembles.  'Grand!!  Here is the secret of McMerin's Feast.  Scribe it and you shall learn more of its power.'
+
+{{YouGainExperience}}
+
+You receive McMerin's Feast.
+
+[[Category:Quests]]
+[[Category:Timorous Deep]]
+[[Category:Shaman Quests]]

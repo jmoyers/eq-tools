@@ -1,0 +1,99 @@
+{{Classic Era}}
+[[File:npc_capt_linarius.png|frame|Capt Linarius]]
+[[File:npc_camlend_serbold.png|frame|Camlend Serbold]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Karana]]
+|-
+! ''' Quest Giver: '''
+| [[Capt Linarius]]
+|-
+! ''' Minimum Level: '''
+| 35+
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos|North Qeynos]], [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Camlend Serbold]], [[Lord Grimrot]], [[Lord Grimrot (undead)]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Aegis of Life}}
+</li></ul>
+
+== Walkthrough ==
+
+'''NOTE: THIS QUEST REQUIRES WARMLY FACTION WITH CAMLEND SERBOLD TO DO TURN IN.<BR> IF YOU ARE NOT WARMLY FACTION YOU WILL LOSE YOUR ITEMS. DON'T WASTE HOURS OF CAMPING.
+
+''Notes on faction: Do not despair! Acquiring the appropriate faction is easy and straightforward! If by the end of camping Grimrot you haven't hit warmly by killing the putrid skellies, there is a simple quest to do. Turn in 2g at a time to [[Lashun Novashine]] in the Qeynos newbie yard. It took me 450 turn-ins to go from apprehensive to warmly, but as long as you aren't KOS it is possible. The 450 turn-ins took maybe an hour to do... Just grab 1000 gold and it should be enough.
+
+''"It took my Dwarf Cleric 1750 gold (approximately 875 turn ins) to go from Apprehensive to Warmly." "2274 gold to get from dubious to warmly on my Human Innoruuk Cleric".
+
+This quest begins with [[Capt Linarius]] in North Karana (on the bridge to South Karana). He asks you to speak with Camlend Serbold in [[Qeynos]].
+
+Go to [[Southern Karana]]. Not far from the end of the bridge is an undead camp. [[Lord Grimrot]]'s placeholder is the only putrid skeleton that is standing.
+<BR>The Respawn timer is exactly 3 hours, 12 minutes (192 minutes). Confirmed 6/22/14. 
+
+The live version drops two Pestilence Scythes. The {{:Pestilence Scythe}} with the proc is the one you need to turn-in. The undead version drops the {{:Decaying Heart}}.
+<BR>Turn in both the Scythe and the Heart to [[Camlend Serbold]] to receive the {{:Aegis of Life}}.
+
+''Note: A common misconception is that the Undead Grimrot only spawns during the Night, and the live version during the day.  This is NOT true.
+
+You Can turn in both the [[Decaying Heart]] and [[Pestilence Scythe]] at the same time.
+
+== Dialogue ==
+
+'''You say, 'Hail, Capt Linarius''''
+
+: [[Capt Linarius]] says 'Hail, traveler! You are free to rest within this keep or within any of my towers along the roads to Qeynos. My guards shall keep watch over you. While you tread upon the roads, be warned that there are '''[local dangers]''' as well as rumors of [corrupt guards].'
+
+'''You say, 'What local dangers?''''
+
+: Capt Linarius says 'My guards report daily to me of dangers in the plains. Lately, they've been telling me of rumors of ''''[Lord Grimrot].''''
+
+'''You say, 'Who is Lord Grimrot?''''
+
+: Capt Linarius says 'My guards have heard rumors of this Lord Grimrot. It is said that he is a powerful shadowknight who is raising an army of undead. Such things should be reported to the Temple of Life. Journey to Qeynos and speak with Camlend Serbold. Tell him of Lord Grimrot.'
+
+''Do as Linarius says, and journey to '''[[Qeynos]]'''. Camlend is inside the priest guild in North Qeynos.''
+
+'''You say, 'Hail, Camlend Serbold''''
+
+: [[Camlend Serbold]] says 'I say, good to meet you, Sephira! I am Camlend Serbold. Some call me Serbold the Great. I am the leader of the righteous order of paladins which serves the Temple of Life. Together with the clerics of this temple, we defend the will of the great '''[Rodcet Nife]''' and smite all who dare to oppose us.'
+
+'''You say, 'I like Rodcet Nife, he's a nice guy''''
+
+: Camlend Serbold says 'Do you feel your heart beating within your chest!!? It is Rodcet Nife, the Prime Healer, whose breath keeps it in perfect rhythm. If you do not pray to His glory then I assure you, someday when your heart begins to slow, you shall be crying out loud to Rodcet Nife.'
+
+'''You say, 'Who is Lord Grimrot?''''
+
+: Camlend Serbold says 'You have heard of Lord Grimrot? He is a shadowknight working with the Bloodsabers. We have word he is trying to build an army of undead. Only a powerful knight can rid the lands of Grimrot. So, did you come here to '''[defend life]?''''
+
+'''You say, 'I came here to defend life.''''
+
+''Note: If Camlend responds with 'The Temple Smiles Upon you, friend... but such a delicate matter can only be entrusted to our most loyal members' -- Then you do not have the required faction for turn in. He must have the dialogue below.
+
+: Camlend Serbold says 'Then go to the Plains of Karana. Somewhere there, Lord Grimrot is hatching his little plan for the Bloodsabers. Bring me his evil scythe and his heart. It is said that upon his death, his soul will be absorbed into this weapon of darkness. Do this and be rewarded.'
+
+: Camlend Serbold says 'We must have both Lord Grimrot's scythe, Pestilence,and his misshapen heart.'
+
+: Camlend Serbold says 'We thank you for your service. With Lord Grimrot's evil soul trapped in this scythe, all but the truly evil shadowknights would be able to wield it. I would like to present you with this as a token of our appreciation. Your devotion to life is supreme. Go now, and serve life.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Antonius Bayle]] got better.
+</div>
+
+[[Category: Quests]]
+[[Category:Northern Karana]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]

@@ -1,0 +1,94 @@
+{{Classic Era}}
+[[File:npc_jeet.png|frame|Jeet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Jeet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ak'Anon]]
+|-
+! ''' Related NPCs: '''
+| [[clockwork scrubber]]
+|}
+
+== Reward ==
+Equal chance of one of the following:
+
+<ul><li>  {{:Bead Necklace}}
+</li><li>  {{:Bloodstone}}
+</li><li>  {{:Copper Amulet}}
+</li><li>  {{:Copper Band}}
+</li><li>  {{:Engagement Ring}}
+</li><li>  {{:Fire Beetle Eye}}
+</li><li>  {{:Golden Ear Stud}}
+</li><li>  {{:Hematite}}
+</li><li>  {{:Iony's Absorber}}
+</li><li>  {{:Jasper}}
+</li><li>  {{:Lapis Lazuli}}
+</li><li>  {{:Malachite}}
+</li><li>  {{:Moonstone}}
+</li><li>  {{:Onyx}}
+</li><li>  {{:Royal Jelly}}
+</li><li>  {{:Silver Earring}}
+</li><li>  {{:Silver Stud}}
+</li><li>  {{:Silver Ring}}
+</li><li>  {{:Small Piece of Ore}}
+</li><li>  {{:Turquoise}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest follows [[Rat Patrol]], given by [[Jeet]], located at 563, 193, -33 outside the Ratsbone Treasury & Assay Office. You must have Amiable faction to complete this quest.''
+
+You say, 'I will run to the gnome city'
+
+: Jeet says, 'Well, as you most likely know, we here are a non profit organization,.. In Kaladim. We need to make our profit elsewhere and that means a little bit of thieving. Presently we need loyal members to [collect the gnome profit].'
+
+You say, 'I will collect the gnome profit'
+
+: Jeet says, 'Take this key. Don't lose it!! You will need to use it on a metal rat called a Scrubber. They are all over Ak'Anon. You must find the one which responds to the number, '628'. If it responds then use the key on it. It will hand over a bag with the 'Gnome Take'. Return it to me. Get moving!!.'
+
+''[[clockwork scrubber]]s can be found roaming within [[Ak'Anon]]''
+
+You say, 'Hail, clockwork scrubber'
+
+''The [[clockwork scrubber]] does not respond, but will pause in its pathing.''
+
+You say, '628'
+
+: clockwork scrubber says 'wiz... tik... 628'
+
+'''If you get the prior response, give the [[clockwork scrubber]] the key you received from [[Jeet]]. You will be given the [[Gnome Take]] in return.'''
+
+* Your faction standing with [[Clockworks of Ak`Anon]] has been adjusted by -5.
+
+'''Hand [[Jeet]] the [[Gnome Take]].'''
+
+: Jeet says, 'What is all this junk! That blasted tin rat is supposed to be heisting expensive goods from rich gnomes - not all this garbage! Here. This is your cut of this junk.'
+
+''Alternatively, you might see the text''
+
+: Jeet says, 'Good work miner. This is a fantastic haul! Those wrinkly little gnomes don't know what is going on. Here is your cut. Now get back to work.'
+
+<div class="facblock">
+* Your faction standing with [[Miners Guild 628]] has been adjusted by 25.
+* Your faction standing with [[Circle Of Unseen Hands|Circle of Unseen Hands]] has been adjusted by -1.
+* Your faction standing with [[Butcherblock Bandits]] has been adjusted by -1.
+* Your faction standing with [[DeepPockets|Deeppockets]] has been adjusted by 1.
+* Your faction standing with [[Hall of the Ebon Mask|Ebon Mask]] has been adjusted by -3.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,70 @@
+{{Kunark Era}}
+[[File:npc_captain_nealith.png|frame|Captain Nealith]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Nealith]]
+|-
+! ''' Minimum Level: '''
+| 26
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Ranger]], [[Druid]], [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[a drolvarg scavenger]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Glaive of Marltek}}
+</li></ul>
+
+== Walkthrough ==
+
+During the [[Drolvarg Teeth]] quest, Captain Nealith mentions his siblings...
+
+You say, 'What about your sibling?'
+
+: Captain Nealith appears saddened by the mention of his sibling. 'My brother Marltek has been missing for quite some time. I found coarse Drolvarg hair inside his tent which leads me to believe he has become a meal for the dogs. CURSE THE EVIL DOGS!! I shall see them all dead!!'
+
+'''At +1510, -1395, there are two tents with a fixed spawn of three drolvargs.  Keep clearing these drolvargs until [[a drolvarg scavenger]] spawns.'''
+
+: a drolvarg scavenger begins to howl and yip. 'Grrr.. Mad..ness!! Red, sweet red.' 
+
+'''Kill it.'''
+
+a drolvarg scavenger's corpse yips and falls to the ground. A tattered note appears to be tucked into his armor. 
+
+Loot a [[Bloodsoaked Note]], which reads:
+
+ Dear, brother, I fear that my soul has been overtaken by a great evil. My sanity barely hangs on by a thread.
+ My dreams of the sweet red blood of others are soon to drive me mad.  The howls in the night call to me.
+ It is best for me to leave.  I pray that I can deliver this note before I go mad.
+ Please understand that it is better that I am never seen again.
+ Goodbye.  Keep up the fight for the forest folk.
+
+: Two things to be aware of, #1 The scavenger at this camp doesn't drop the note every time. #2 The wandering scavengers never drop it. 
+
+'''Give the note to Captain Nealith.'''
+
+: Captain Nealith nearly faints after reading the letter. 'Dear Marltek!! I shall miss you. There is more evil in this land!! Madness beyond description. Thank you ______. You put my soul at ease and give me new direction. Please accept my brothers blade. He found it in the wilds. May you use it to slay many Drolvarg!!'
+
+<div class="facblock">
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Pirates Of Gunthak]] got worse.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive some gold, and the [[Glaive of Marltek]].
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

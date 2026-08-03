@@ -1,0 +1,42 @@
+{{Velious Era}}
+
+[[File:npc_ergrez_shortpaw.png|frame|Ergrez Shortpaw]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Quest Giver: '''
+| [[Ergrez Shortpaw]]
+|-
+! ''' Location: '''
+| 50% @ (1064, 2409)
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Paladin]], [[Shadowknight]], [[Ranger]], [[Monk]], [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[a dire wolf]], [[a savage dire wolf]], [[a drakkel dire wolf]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Direwolf Fur Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+Ergrez will make you a Direwolf Fur Cloak if you bring him a [[Medium Quality Dire Wolf Fur]] and 2 [[Skinning Rock]]s.
+
+''Ergrez does not respond to hails at indifferent faction.''
+
+Upon handing in the items, you receive [[Direwolf Fur Cloak]] and the message of:
+"Ergrez Shortpaw works with the fur for awhile by skinning it and sewing it."
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]

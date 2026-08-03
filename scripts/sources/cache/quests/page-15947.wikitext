@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Rlqyns.jpg|frame|Renic Losaren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Renic Losaren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Renic Losaren]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Gray Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Renic Losaren]] is located at -149, -440 in the Temple of Thunder ([[Cleric]] and [[Paladin]]) Guild Hall.''
+
+You say, 'Hail, Renic Losaren'
+
+: Renic Losaren says, 'Welcome, Teddee.  Please feel at ease here in the Temple of Thunder.  We, the Knights of Thunder, are here to guide and serve.'
+
+'''Hand [[Renic Losaren]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Channel the might of the storm and the life force of rain. Draw power, knowledge, and enlightenment from Karana. Give this note to Guild Master Renic Losaren at the Temple of Thunder, south of the Grounds of Fate Arena and east of the Qeynos docks.</code>
+
+: Renic Losaren says, 'Welcome, friend, to the Temple of Thunder. Here, you can practice your skills and learn the ways of Karana. Take this tunic and wear it with pride, for you are now a Priest of Thunder.'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Cleric Quests]]

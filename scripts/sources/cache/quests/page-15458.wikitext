@@ -1,0 +1,54 @@
+{{Temple Era}}
+[[File:npc_romar_sunto.png|frame|Romar Sunto]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Romar Sunto]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+<ul><li>  {{:Darkwood Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+''(This is a subset of the [[Staff of Temperate Flux Quest]])''
+
+Romar Sunto may be found at +385, +90, +19, a few doors down from Gardern.  The room he is in looks like a library and has two places to drop down to the next floor, one with a staircase.  Romar is in the far corner after you walk down.
+
+You say, 'Hail, Romar Sunto'
+
+: Romar Sunto says 'I am Romar Sunto, servant of Solusek Ro.  I am searching for the [coin] of the mighty enchanter [Tash] - if you are interested in helping me acquire it, I will [reward] you with a powerful spell.  I am also a dispenser of the Staff of Ro, sometimes also called [darkwood staves].'
+
+You say, 'What darkwood staves?'
+
+: Romar Sunto says 'Bring me a [[Lambent Stone]] from a hill giant, a sand giant or a griffin and I will give you a [[Darkwood Staff]].'
+
+Bring him the Lambent Stone and you receive a Darkwood Staff.
+
+: Romar Sunto says 'A stone for a staff - very well.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro|Temple of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

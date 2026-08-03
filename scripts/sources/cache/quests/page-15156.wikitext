@@ -1,0 +1,54 @@
+{{Unknown Era}}
+
+{{delete|This quest was replaced with the revamped Fang Tooth quest]]
+
+[[File:npc_thalith_mamluk.png|thumb|Thalith Mamluk]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Kerra Island]]
+|-
+!''' Quest Giver: '''
+| [[Thalith Mamluk]]
+|-
+!''' Minimum Level: '''
+| 15+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+!''' Related NPCs: '''
+| [[Fang Tooth]], [[wharf rat]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Fishbone Necklace}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Thalith Mamluk is located at -165, 107, 23.'''
+
+You say, 'Hail, Thalith Mamluk' 
+
+Thalith Mamluk says 'Wha? Rarrr! Thalith try to fish but with [rrrats] and you bothering him, he cannot concentrate on water! Go away, let Thalith fish!' 
+
+You say, 'What rats?' 
+
+Thalith Mamluk says 'Rats. Yes. Small, furry, brown, with teeth. They come, bite my paws, steal my bait, chew on lines and rods. They nasty little beasts and easy to kill but me not able to leave this position or fish get away. Errr. Maybe you keep the rats away? You kill baddest rat, Sharptooth. You bring me his tooth. I be very happy.' 
+
+A [[Sharp Tooth]] drops from [[Fang Tooth]] and from the [[wharf rat]] in the hut with him (the only level 15 wharf rat-- the others are level 11). Hand one in. 
+
+Thalith Mamluk says 'You.. You kill the rats? Errr. Thalith thanks you. Here. Take this. It's good luck charm I've had for years.' 
+
+<div class="facblock">
+* Your faction standing with [[Kerra Isle]] got better.
+</div> 
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

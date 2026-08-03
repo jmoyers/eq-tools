@@ -1,0 +1,86 @@
+{{Classic Era}}[[File:npc_renux_herkanor.png|frame|Renux Herkanor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Renux Herkanor]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Lomarc]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li><li> Experience
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+''This quest begins in the Qeynos rogue guild and is a low level quest. If you hang out in the main hall near guildleader Hanns and wait, eventually the female rogue guildmaster in the room with him, Renux Herkanor, will approach Hanns, and have the following conversation with him: ''
+
+: [[Renux Herkanor]] says 'When is Lomarc getting back from Odus? He was supposed to be back three nights ago. Have you heard anything?' 
+
+[[Hanns Krieghor]] says 'Lomarc is already back. He sent word that the guards are onto him, so he's laying low for a bit. He also said the cost for delivery just went up, because he had to pay off the owner of Mermaid's Lure. 
+
+: Renux Herkanor says 'Ok, I'll send someone out to meet [Lomarc] behind the [Mermaid's Lure] tonight.'
+
+Hail Renux and ask 'Who is Lomarc?' 
+
+: Renux Herkanor says 'Lomarc? He's a small time smuggler who runs from here to Odus. He got sloppy this last run, and now the guards are onto him. We need to have someone [meet him behind the Mermaid's Lure] tonight to pick up a package. 
+
+You say, 'I will meet Lomarc' 
+
+: Renux Herkanor says 'Hmm, you think you can handle it? Eh, Lomarc is nothing but a two-bit smuggler anyways. Take this payment to him for the package, and don't let him give you any grief. Got it?'  
+
+'''She hands you a note called [[Lomarc's Payment]] or something like that. If you open and read it, it says something to the effect of "you screwed up".'''
+
+'''Lomarc spawns at night only. His placeholder is [[Den Magason]], an NPC who is involved in two other quests ('[[The Package]]' and '[[Blank Scrolls]]'). They both walk the same route in South Qeynos at the docks. They stop at the merchant with the big fish next to him, and they walk down the set of stairs and stand on the shore. they also stand in the corner on the outside of the empty port authority building. Give the so-called 'payment' to Lomarc, and he says:'''
+
+Lomarc says 'What the heck is this?!? No money at all? You'll pay for this you back-stabbing punk!' 
+
+Lomarc says 'Fishbait is about all you'll be good for, after I'm finished with you!'  
+
+'''He then attacks you. Faction hits for killing him:'''
+
+<div class="facblock">
+* Your faction with [[Circle Of Unseen Hands]] got worse.
+* Your faction with [[Corrupt Qeynos Guards]]  got worse.
+* Your faction with [[Kane Bayle]] got worse.
+* Your faction with [[Guards of Qeynos]] got better.
+* Your faction with [[Merchants of Qeynos]] got better.
+</div>
+
+'''[[Lomarc]] drops [[a Kerran Doll]]. I am not sure if this is the same as the [[Kerran Doll]] required in the new [[Paineel]] cleric guild quest or not. Loot the Kerran Doll, and return it to Renux in the rogue guild. she will respond:''' 
+
+: Renux Herkanor says 'Yes, I see you aim to please. I hope you gave Lomarc the payment that he deserved? Heh, that punk had no idea of the value of this shipment. The emerald inside this doll will fetch a pretty penny from those greedy merchants.' 
+
+You gain the normal Qeynos rogue faction (opposite of when you kill Lomarc), and
+{{exp}}  
+
+''Need /loc of quest mobs, quest rewards.''
+
+: Renux Herkanor says, 'Yes, I see you aim to please. I hope you gave Lomarc the payment he deserved? Heh, that punk had no idea of the value of this shipment. The emerald inside this doll will fetch a pretty penny from those greedy merchants.'
+
+<div class="facblock">
+*Your faction standing with CircleofUnseenHands got better.
+*Your faction standing with MerchantsofQeynos got worse.
+*Your faction standing with CorruptQeynosGuards got better.
+*Your faction standing with GuardsofQeynos got worse.
+*Your faction standing with KaneBayle got better.
+</div>
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

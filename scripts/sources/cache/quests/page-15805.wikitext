@@ -1,0 +1,53 @@
+[[File:npc_himart_kichith.png|frame|Himart Kichith]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Himart Kichith]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Insidious Decay]]
+* [[Shroud of the Spirits]]
+* [[Talisman of Shadoo]]
+* [[Torrent of Poison]]
+
+== Walkthrough ==
+
+Himart Kichith may be found in East Cabilis, in the catacombs beneath the eastern tower of the Temple of Terror. He wants any of the following spell scrolls:
+
+* [[Cannibalize III]]
+* [[Cripple]]
+* [[Spirit of Scale]]
+* [[Talisman of Jasinth]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+
+You say, 'Hail, Himart Kichith'
+
+Himart Kichith says, 'Greetings young one, I am Himart Kichith, shaman of the Scaled Mystics and storekeeper of valuable knowledge of the past.  I am always looking for knowledge of the past in the form of spells and [rare scrolls].  If you are interested in a tidy profit perhaps you would be willing to help me.'
+
+You say, 'What rare scrolls?'
+
+Himart Kichith says, 'The remaining scrolls are very rare indeed. Very few have surfaced over the past few years. Should you happen to find more than you can use, return one of them to me and I shall grant you even more power. I still seek the Talisman of Jasinth, Spirit of Scale, Cripple, and the third rank of Cannibalize.'
+
+[[Category: Quests]]
+
+[[Category:East Cabilis]]
+[[Category:Shaman Quests]]

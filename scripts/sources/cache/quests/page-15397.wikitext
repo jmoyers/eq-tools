@@ -1,0 +1,58 @@
+{{Classic Era}}
+[[File:npc_beno_targnarle.png|frame|Beno Targnarle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Beno Targnarle]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Cleaner VII]]
+|}
+Requires Amiable or better faction, is multiquestable.
+
+== Reward ==
+
+<ul><li>  {{:Knight Card}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest immediately follows [[Rat Pelts]] given by [[Beno Targnarle]], located at 84, 404, 15 in the north turret of the Kaladim Warrior's Guild.''
+
+You say, 'What metal rat'
+
+: Beno Targnarle says, 'I cannot tell you how many reports I have heard of metal rats in Kaladim. I first thought it was a vision obtained from having too many Tumpy Tonics, but Furtog himself is said to have seen them. If you ever catch sight of the little metal beast, give chase!! Return its metal carcass to me and I shall reward you.'
+
+'''Hand [[Beno Targnarle]] the [[Scrap Metal]], looted from [[Cleaner VII]], a clockwork rat that shares a spawn with [[a Giant Rat]] in the mines under the [[North Kaladim]] bank.'''
+
+: Beno Targnarle says, 'I thank you, my friend. I was to destroy this metal monster months ago. I could never find him. Please accept this reward for such good service. Oh yes.. And take this card to a man named [Doran Vargnus]. He is a fine blacksmith. I am sure he will reward you with one of his finest suits of armor. Perhaps you may now assist in an [important Stormguard matter].'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Knight Card Quest]]
+* [[Eye of Stormhammer]]
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

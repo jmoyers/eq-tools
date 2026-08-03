@@ -1,0 +1,84 @@
+{{Classic Era}}
+[[File:npc_laoni_reista.png|frame|Laoni Reista]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Laoni Reista]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| [[Cenn Lostin]], [[Grendin Maze]], [[Lenya Wisk]], [[Megan Tiglin]], [[Taler Bilge]], [[Zip Fendil]]
+|}
+
+== Reward ==
+
+<ul>Random piece of [[Patchwork Armor]]</ul>
+
+== Walkthrough ==
+
+''[[Laoni Reista]] is located at -1109, -399, 51 on the first floor of the Deepwater Knights ([[Paladin]]) Guild Hall. This quest can be completed at Apprehensive faction.''
+
+You say, 'Hail, Laoni Reista'
+
+: Laoni Reista says, 'Very good to make your acquaintance, ______. If you are a [new knight], then let it be known. for I am seeking young knights of Deepwater.'
+
+You say, 'I am a new knight'
+
+: Laoni Reista says, 'You do seem a bit young. We shall have to test your mettle. Within this temple. you shall learn to swim as fast as the swordfish and attack with the bravery and skill of the shark. Are you willing to [assist with the cleansing of the ocean]?'
+
+You say, 'I will assist with the cleansing of the ocean'
+
+: Laoni Reista says, 'Go to the waters near the harbor. We have heard of Qeynos' rogue guild attempting to smuggle our valuable Vasty Deep water from Odus by way of swimmers. We require proof of their involvement. It is said they often carry special coins. Return one of these coins to me.'
+
+'''There are various NPCs swimming in Erudin Bay, including: [[Cenn Lostin]], [[Lenya Wisk]], [[Megan Tiglin]], [[Taler Bilge]], and [[Zip Fendil]] (And quite possibly [[Genna Lostin]]). They have two routes, spawning far out into the ocean, eventually swimming to the wall either north or south of the dock, and then despawning.''' 
+
+'''[[Grendin Maze]] (level 9) or [[Buzzlin Bornahm]] (level 25) spawns on the rocks to the right of the dock at loc -470, -630. Kill anyone (besides [[Buzzlin Bornahm]] to loot [[A Nicked Coin]] (uncommon drop).'''
+
+''Upon the death of [[Lenya Wisk]]:''
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands|Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+
+'''Hand [[Laoni Reista]] [[A Nicked Coin]].'''
+
+: Laoni Reista says, 'Good work. You have shown these rogues who are the better swimmers. Now we have proof of their involvement. You are a fine addition to the temple. Take this small reward. Go, and serve Prexus.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 9 copper pieces. 
+
+You receive a random piece of [[Patchwork Armor]].
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

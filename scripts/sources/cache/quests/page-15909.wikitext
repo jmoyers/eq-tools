@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:Npc_margyn_mccann.png|200px|frame|Margyn McCann]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Blue Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Barbarian Shaman, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'Greetings, friend. Come join us at the Church of the Tribunal. Give this note to High Priestess Margyn. She will initiate you and teach the ways of The Six Hammers'
+
+Upon handing the note to [[Margyn McCann]]:
+
+: [[Margyn McCann]] says, 'Welcome t' the Church o' the Tribunal. Here, we practice the will o' the Six Hammers. This is our guild tunic - wear it with pride and repesent us well.'
+
+<div class='facblock'>
+* Your faction standings with [[Shamen of Justice]] got better.
+* Your faction standings with [[Merchants of Halas]] got better.
+* Your faction standings with [[Circle of Unseen Hands]] got worse.
+* Your faction standings with [[Coalition of Tradefolk Ill]] got worse.
+* Your faction standings with [[Hall of the Ebon Mask]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Faded Blue Tunic*]]. Good luck, shaman!
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Shaman Quests]]

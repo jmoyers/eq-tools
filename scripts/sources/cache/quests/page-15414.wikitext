@@ -1,0 +1,75 @@
+{{Classic Era}}
+[[File:npc_seloxia_punox.png|frame|Seloxia Punox]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Seloxia Punox]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Oggok]]
+|-
+! ''' Related NPCs: '''
+| [[Ambassador K`Ryn]]
+|}
+
+quest require amiable or better faction.
+
+== Reward ==
+
+<ul><li>Experience and [[Bronze Short Sword]]
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+Hail [[Seloxia Punox]] and she will say that he has a little test for the young warrior.  She wants you to deliver a report to [[Ambassador K`Ryn]] {sic} in the Ogre city of [[Oggok]].  Tell her you will venture to Oggok and she gives you a note.
+
+Take it to K'rynn (yes it is spelled differently) for some xp and change. He spawns near the Shaman's Guild and is not always there.  He spawns at 8am right after [[Bouncer Gronk]] despawns and stays until 7pm.
+
+He will then give you a report to deliver back to Seloxia. She will reward you with a minor item.
+
+You say, 'Hail, Seloxia Punox' 
+
+Seloxia Punox's eyes flare with fury as her beautiful features twist into a snarl of hatred that echoes her hissing voice, 'How dare you address me in such a fashion?! I am the leader of the Indigo Brotherhood! You are lucky I do not strike you down where you stand! You shall address me as 'Mistress.' Many warriors have died so that I might gain this title.' 
+
+You say, 'Mistress' 
+
+Seloxia Punox maintains her imposing posture as she indifferently eyes _______, 'You stand now in the Cauldron of Hate -- the Indigo Brotherhood. We are an organization of Neriak's finest warriors whom remain dedicated to Neriak, the Dark Father, and our founder -- his majesty, King Naythox Thex. I am Seloxia Punox, second to only his majesty in command of the Brotherhood. From the Cauldron of Hate, we maintain the protection of the city both within our city walls and beyond in the forest of Nektulos. Perhaps you would wish to prove yourself worthy of our ranks and perform a [little test] of your skills and dedication?' 
+
+You say, 'What little test?'
+
+Seloxia Punox says 'My little test is this - I desire a report from Ambassador K'rynn in the ogre city of Oggok. You shall run to him. I will not wait until you raise your fighting skills. Combat is not your test. Overcoming the odds is. Fast, agile warriors are we. We desire nothing less. Will you [venture to Oggok]?' 
+
+You say, 'I will venture to Oggok' 
+
+Seloxia Punox says 'Then you must go at once. Find your own way. Deliver this note to Ambassador K'rynn and he shall give you another note to return to me. Do not stop to practice your skills. I offer this test only to young warriors. If you die, then so be it. We need no inferior warriors. Now go!' 
+
+Give Ambassador K'Rynn the [[Sealed Letter]] from Seloxia: 
+
+Ambassador K`Ryn says 'Another young warrior. I pray you shall not meet the fate of the last twelve. Here then. Take this report to Mistress Seloxia at once. And stay clear of the froglok lair called Gukk.'
+
+{{exp}}
+
+Give Seloxia Punox the [[Sealed Letter]] from Ambassador K'Rynn: 
+
+Seloxia Punox says 'Very fine work, my young warrior. You may soon be ready to become a Teir'Dal courier. For now, we shall reward you. This will assist you in further service to the Indigo Brotherhood and King Naythox Thex.' 
+
+* Your faction standing with [[Indigo Brotherhood]] has been adjusted by 10. 
+* Your faction standing with [[Emerald Warriors]] has been adjusted by -1. 
+* Your faction standing with [[Steel Warriors]] has been adjusted by -1. 
+* Your faction standing with [[Primordial Malice]] has been adjusted by -20.
+
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:All Classes Quests]]

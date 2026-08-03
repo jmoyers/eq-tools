@@ -1,0 +1,88 @@
+{{Classic Era}}
+[[File:npc_umvera_dekash.png|frame|Umvera Dekash]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Umvera Dekash]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Freeport]], [[Splitpaw Lair]], [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Durkis Battlemore]], [[Jheron Felkis]], [[a Tesch Mas Gnoll]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Gem Inlaid Gauntlets}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with Umvera Dekash in North Qeynos. He can be found in Crow's Tavern.''
+
+You say, 'Hail, Umvera Dekash'
+
+: Umvera Dekash says 'What, _____? Do I look like a merchant to you? Just because all these merchants are in my library, it doesn't mean that I am one. If you are interested in something other than spell scrolls, then, we can talk.'
+
+You say, 'I am interested in something other than spell scrolls'
+
+: Umvera Dekash says 'Ah, so you do have half a wit about you! Very well. As you can clearly see, I am the librarian here. I keep track of all of the mystic tomes that enter this divine building. I also take care of all of the purchasing. Have you something to offer?'
+
+You say, 'I have something to offer'
+
+: Umvera Dekash says 'Excellent! You have no idea how difficult it is to get good help these days. Do you think you would have the time to gather some information for me?'
+
+You say, 'I have the time to gather information for you'
+
+: Umvera Dekash says 'Even better! Well, it has been some time since the Tesch Val gnolls moved in on the Split Paw. That being said, we still know little to nothing of their origins. If you can bring me back the four scrolls that our diviners speak of, I believe I can reward you well.'
+
+'''Head to [[Southern Karana]] and collect four different [[Tanned Split Paw Skin (lore)]] scrolls. These are LORE items and look like rolled up scrolls. When you right click you can read the message written on them if you are fluent in gnoll. But even those unversed in gnoll can notice the number on the page. Collect scroll Volume 1, 2, 3, and 4, and return them to Umvera in Qeynos:'''
+
+: Umvera Dekash says 'It's about time. Let's see here. Right.. right.. right. Very good. Right. There you are! I translated the text. Now the scrolls need to be bound. Take these scrolls to Jheron Felkis in Freeport. I believe he is staying in one of the spare rooms in Velith and Bardo's establishment. He will ensure they are bound correctly. Return to me when the binding is complete.'
+
+'''You receive [[Tesch Val Compilation]] (LORE, tradable)'''
+
+'''Jheron Felkis is located in [[Freeport|East Freeport]] in the building "Velith and Bardo's" (third floor). Hand him the Tesch Val Compilation.'''
+
+: Jheron Felkis says, 'Ah, yes - the splitpawbook.  Umvera sent word that you should be arriving, you certainly made your way here quickly!  Very well, then, one moment as I work my magic...'
+
+: Jheron Felkis takes the book  from your hand and fiddles about with the spine, whispering odd runes as he does.
+
+: Jheron Felkis says, 'Good, good - here you are!  Take this back to Umvera, I'm sure he'll be happy to lay eyes on such an item of lore!'
+
+You say, 'Hail, Jheron Felkis'
+
+: Jheron Felkis says, 'Greetings, Wood Elf.  My name is Jheron Felkis, artificer and friend to all those who seek knowledge of the arcane!'
+
+''NOTE: his text is different that what is posted on ZAM, and he does not respond if you say 'what shipment of books?'  Turn in the compliation you got from Umvera, no additional text is needed.''
+
+'''You receive the [[Pawbook]]. You can open it up and read it (8 pages of text).'''
+
+'''Take [[Pawbook]] back to Umvera in Qeynos.'''
+: Umvera Dekash says 'You have returned safely. That is wonderful! Where the heck is my book, child? In my hands, I see. Such a bright little twinkle you are! Well, let me scribble something down on this pad here. There you are. Take this note to Durkis Battlemore in the Butcherblock Mountains. He is a remarkable smith, but more importantly, he owes me for his smithing books.'
+'''recieve a note '''
+
+'''Durkis Battlemore is in the [[Butcherblock Mountains]] inside one of the guard buildings: location 2072, 400 (on the path leading from the dock, just before Kaladim).Give him the note.'''
+
+You say, 'Hail, Durkis Battlemore'
+
+: Durkis Battlemore says 'What have ye got there, lad? Ack. I thought I would never hear from that crazy old man again. He wants me to give you a pair o' me gauntlets. I suppose I kin do that. Here you are, Southern. Wear them in good health.'
+
+You receive {{:Gem Inlaid Gauntlets}}.
+
+==External links==
+
+* http://runen.co.uk/Everquest/Zones/Quests/NQeynos/UmveraDekash.htm
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

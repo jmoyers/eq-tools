@@ -1,0 +1,110 @@
+:''For the overview of the many bone chips quests, see [[Bone Chips Quests]].''
+[[File:npc_xelha_nevagon.png|frame|Xelha Nevagon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Xelha Nevagon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Freeport|West Freeport]], [[East Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]], [[a fire beetle]], [[a spiderling]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Cavorting Bones|Spell: Cavorting Bones]]
+</li><li> [[Reclaim Energy|Spell: Reclaim Energy]]
+</li><li> {{:Xelha's Sparkler}}
+</li><li> Small Coin, Experience, Faction
+</li></ul>
+
+== Walkthrough ==
+
+* Note: This quest made MQable on the 2/13/13 patch.
+
+Your Location is -1409.67, 547.72, -49.54
+
+* '''Even though Xelha doesn't talk to you at dubious, or apprehensive, she will accept the [[Bone Chips]].''' She WILL NOT accept fire beetle eyes or spiderling silk until faction is more suitable (Xelha is [[Dismal Rage]]).
+
+You say, 'Hail, Xelha Nevagon'
+
+: [[Xelha Nevagon]] says 'A new recruit to our cause. Just what I have been waiting for! How would you like to serve the great Xelha Nevagon? I need an apprentice necromancer to [assist the great Xelha].'
+
+You say, 'I will assist the great Xelha.'
+
+: Xelha Nevagon says 'Oh look..a talking lump of refuse..how novel!'
+
+'''Give her 4 x [[Bone Chips]]. (Can be stacked and can be multiple turn-ins as long as its in multiples of 4)''' 
+
+: Xelha Nevagon says 'Excellent work! You are quite the little helper. Here you go, then. A little something for your little work. Your service to me has caused Innoruuk to look upon you favorably. Your faith in our group has grown. Continue the work.'
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better. (+5)
+* Your faction standing with [[Knights of Truth]] got worse. (-1)
+* Your faction standing with [[Opal Dark Briar]] got better. (+5)
+</div>
+{{Exp}}
+
+You receive 1 gold from Xelha Nevagon.
+
+'''Experience from Turn-ins''':
+
+* 10%-11% xp at Level 2 (Troll Shaman Innoruuk)
+* 4% at Level 3 (Troll Shaman Innoruuk)
+* 2.15% at level 4 (Ogre Shadow Knight)
+* 1.1% at level 5 (Ogre Shadow Knight)
+
+
+
+* At amiable to Dismal Rage, Xelha would talk to me and accept both fire beetle eyes and spiderling silk. I did not try at indifferent.
+
+* edit : At indifferent, she actually offer the 3 quest. you can start with fire beetle and silk.
+* edit : I can confirm she offered the 3 quests but did not accept fire beetle and silk until amiable.
+
+You say, 'I will assist the great Xelha.'
+
+: Xelha Nevagon says 'Fantastic. Stick with me and you shall ascend in our ranks quickly. I am in need of some components for new spells. Will you collect them for me? I shall need four each of the following - fire beetle eyes, bone chips and spiderling silk. Fetch these items for me at once. Well..? Did not you hear the great Xelha? Begone!'
+
+'''Give her 4 x [[Fire Beetle Eye]].'''
+
+: Xelha Nevagon says 'This is a good sight. I needed these to complete the current mixture.
+Bah!! I shall reward you for this small, very small, deed!! I pass on to you the knowledge of summoning. The more you serve, the more your faith in Innoruuk grows.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+{{Exp}}
+
+You receive 5 silver from Xelha Nevagon.
+
+You receive either '''Spell: Cavorting Bones''' or '''Spell: Reclaim Energy'''.
+
+'''Give her 4 x [[Spiderling Silk]].'''
+
+: Xelha Nevagon says 'Let's see here. One.. two.. three.. and.. four. Great!! Just enough for my needs. You are serving Xelha well. I give you Xelha's Sparkler. It is not much, but neither are you. You know what I really need is a cyclops eye. That would be worthy of a great reward.'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+{{exp}}
+
+You receive 3 silver from Xelha Nevagon.
+
+You receive {{:Xelha's Sparkler}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Necromancer Quests]]

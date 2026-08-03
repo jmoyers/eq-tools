@@ -1,0 +1,63 @@
+{{Velious Era}}
+
+[[File:npc_king_tormax.png|frame|King Tormax]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[King Tormax]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ALL [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Icewell Keep]]
+|-
+! ''' Related NPCs: '''
+| [[Dain Frostreaver IV]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Belt of Dwarf Slaying}}
+</li></ul>
+
+== Walkthrough ==
+''[[King Tormax]] can be found in the throne room (-1521, 1700) of [[Kael Drakkel]].''
+
+You say, 'Hail, King Tormax'
+
+: King Tormax says, 'Greetings. You know who I am, but I only vaguely know of you. My purpose is simple, I will rule these lands like my father, and my grandfather before him. All tasks but two are inconsequential to me.'
+
+You say, 'What tasks?'
+
+: King Tormax says, 'The tasks are simple. I wish the death of the other 'powers' of this frozen waste land. If you are able to destroy either of my mortal foes, bring me proof of your exploits and you will be known as the hero of Kael Drakkel.'
+
+You say, 'What powers?'
+
+: King Tormax laughs deeply, 'I speak of the foolish old dragon Yelinak and that pitiful Dain Frostreaver.'
+
+'''Slay [[Dain Frostreaver IV]] in [[Icewell Keep]] and bring [[Dain Frostreaver's Head]] to King Tormax.'''
+
+: King Tormax laughs deeply as he takes the bloody head then gives you your reward.
+
+<div class='facblock'>
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Yelinak]] got worse.
+* Your faction standing with [[Dain Frostreaver IV]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive [[Belt of Dwarf Slaying]].
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,96 @@
+{{Classic Era}}
+[[File:npc_gans_paust.png|frame|Gans Paust]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Gans Paust]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| Erudite [[Cleric]] or [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Erud's Crossing]]
+|-
+! ''' Related NPCs: '''
+| [[Yelesom Paust]], [[a frantic kerran]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Midnight Sea Mail Sleeves}}
+</li></ul>
+
+== Walkthrough ==
+''At the end of the [[Kobold Shaman Artifacts]] quest, Breya says "You may want to ask Gans about his brother"''
+
+You say, 'Hail, Gans Paust'
+
+: Gans Paust glances at you and hurriedly makes a gesture of religious meaning before you and says, 'Yes, yes, I hereby bless you in the name of Prexus. May your catch be plentiful and your nets never snag. Are there any other fisherman seeking a blessing? I'm very busy.'
+
+You say, 'What of your brother?'
+
+: Gans Paust says, 'What? How do you know of my brother? Ahh I assume Breya told you. He's been gone for quite some time with no word sent on his progress or his well being. I need to find someone to [check on him].'
+
+You say, 'I will check on him for you.'
+
+: Gans Paust says, 'Thank you, adventurer. He's one of our people's most knowledgeable geologists and has left to survey an island out in Erud's Crossing. He was sending monthly reports until two weeks ago when his report never showed up.  I'm worried something may have happened to him. Take this note to Yelesom and bring back something to assure me of his safety. A reward fitting a Deepwater Knight shall be yours upon your success.'
+
+''You receive [[Gans's note to Yelesom]].''
+
+The note reads: 
+ Brother, Your report is two weeks late. I fear something has harmed you and have sent this courier to inquire
+ about your well being. Please send the courier back with message of your health and progress. Regards, Gans.''
+
+'''Travel to [[Erud's Crossing]] to find [[Yelesom Paust]] in the volcanic crater.'''
+
+You say, 'Hail, Yelesom Paust'
+
+: Yelesom Paust says, 'Ahh salutations young adventurer. I'd love to chat, but I have much studying to do. Farewell.'
+
+'''Hand him [[Gans's note to Yelesom]].'''
+
+: Yelesom Paust says, 'Gans sent you to check on me did he? Well you can tell my dear brother that the surveying has been halted. One of those furballs has stolen my tools, making my job impossible. Kerrans, kobolds, gnolls - we're constantly under siege by these primitives...Anyway, perhaps you could [help me]?'
+
+{{YouGainExperience}}
+
+You say, 'I will help you.'
+
+: Yelesom Paust says, 'Wonderful. The beast took my tool kit whilst I slept at camp. I awoke only to see him paddling frantically out into the ocean in a small boat. He couldn't have gone very far. If you stand at my [camp] and look towards the next closest head stone, you will be facing the direction in which the Kerran thief fled. Swim straight out from there and you should see his cunning little boat.'
+
+You say, 'Where is your camp?'
+
+: Yelesom Paust says, 'My camp is next to the head stone on the eastern most portion of this island. The Kerran may have dropped some of my tools into the ocean as it fled. Please return the complete tool kit and I'll make sure my brother rewards you.'
+
+'''Seek out the missing tools:'''
+
+* The [[Magnifying Glass]] is a bag sitting on the ground not too far from the shore. The loc is -600, 2000.
+* The [[Geologist's Hammer]] looks like a hammer and is on the ocean floor at the bottom of the big drop off. You will have to swim down the deep drop off here to find it. The loc is -526, 2287.
+* The [[a frantic kerran|frantic kerran]] is underwater at loc 33, 3158. Avoid the sharks getting to him, and kill him to get the [[Incomplete Tool Kit]]. Careful, you end up very far from shore with a 25 stone container.
+
+'''Combine the [[Magnifying Glass]] and the [[Geologist's Hammer]] in the [[Incomplete Tool Kit]] to create [[Yelesom's Tools]]. Turn this in to Yelesom.'''
+
+: Yelesom Paust says, 'You got it! And found the missing pieces! Now, I can finally get back to my studies. Thank you, _______. Please take these reports to my brother, Gans. Your valiant deed will surely win you a reward.?'
+
+{{YouGainExperience}}
+
+''You receive [[Yelesom's Reports]].''
+
+'''Return to [[Erudin]] and hand [[Yelesom's Reports]] to [[Gans Paust]].'''
+
+: Gans Paust says, 'Ahhh, thank you for your effort, _______. I'm glad he's doing ok despite the theft. I now award you the Sleeves of Midnight Sea. May they protect you until the time of our glorious redemption.'
+
+<div class="facblock">
+* Your faction standing with [[Deepwater Knights]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+
+''No experience is awarded, but you do receive [[Midnight Sea Mail Sleeves]]''
+
+[[Category:Quests]]
+[[Category:Erudin]]

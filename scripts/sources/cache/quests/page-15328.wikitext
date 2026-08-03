@@ -1,0 +1,65 @@
+{{Classic Era}}
+[[File:npc_lysbith_mcnaff.png|frame|Lysbith McNaff]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Lysbith McNaff]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| [[Rogue]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a snow orc trooper]]
+|}
+Requires amiable or better faction.
+
+== Reward ==
+
+<ul><li>  {{:Seax}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Lysbith McNaff]] may be found at (553, -414) in the Pit o Doom of Halas.''
+
+You say, 'Hail, Lysbith McNaff' 
+
+: Lysbith McNaff says 'Hail! Ye've come to [serve Halas], have ye not? We're the Wolves o' the North and it is our task to defend our city from harm.' 
+
+You say, 'I serve Halas' 
+
+: Lysbith McNaff says 'Halas is surrounded by barren arctic tundra. We've many foes. Among them are the [orc troopers], [ice goblins] and the ever-present polar bears.' 
+
+You say, 'What orc troopers?' 
+
+: Lysbith McNaff says 'So. Ye think yerself strong enough to battle the snow orc troopers? I pray to the Tribunal that ye are. If ye can return to me four wrath orc wristbands from the troopers' bodies, I'll reward ye with the [Seax].' 
+
+You say, 'What Seax?' 
+
+: Lysbith McNaff says 'The Seax is a Northman warrior's piercing weapon. Dinnae confuse this with another [weapon] related to the Seax called the Langseax. The local rogues have also learned to master the Seax. I'll only offer it to those who battle the [orc troopers].' 
+
+'''After handing in four [[Wrath Orc Wristbands]]:'''
+
+: Lysbith McNaff says 'Ye're becoming a fine champion o' Halas. Take th' Seax. May ye always defend Halas!' 
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div> 
+{{exp}}
+
+You receive Seax, a piercing weapon usable by Rogues.
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Warrior Quests]]

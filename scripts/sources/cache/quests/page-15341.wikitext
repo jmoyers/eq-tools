@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_chef_dooga.png|frame|Chef Dooga]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Chef Dooga]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| newbie frogloks
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ogre Butcher Apron}}
+</li></ul>
+
+== Walkthrough ==
+There doesn't appear to be any intro text associated with this quest.  Hailing Chef Dooga will give you dialogue options for the [[Preserved Meat Delivery]] quest.  But it still works.
+
+Chef Dooga is located at (201,-243) in Oggok.
+
+'''Give Chef Dooga 3 x [[Pickled Froglok]] and 10 gp.''' (1 platinum also works.)
+
+: Chef Dooga says 'You gud baker!! Here take dis, it got sum stains, but still gud.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] has been adjusted by 5.
+* Your faction standing with [[Kazon Stormhammer]] has been adjusted by -5.
+* Your faction standing with [[Green Blood Knights]] has been adjusted by 5.
+* Your faction standing with [[Craknek Warriors]] has been adjusted by 5.
+* Your faction standing with [[Oggok Guards]] has been adjusted by 5.
+</div>
+{{YouGainExperience}}
+
+The [[Ogre Butcher Apron]] vendors to [[Chef Dooga]] for over 8gp, making this a cheap quest for repeating.
+
+== Faction Notes ==
+<ul>
+<li>I did 33 turn-ins with my Rallos Zek worshiping Barbarian Warrior, and went from Dubious with Chef Dooga and Clurg to Apprehensive, allowing me to trade with them. I also went from Threatening to Dubious with the warrior guild, and was thereafter able to walk freely among my fellow warriors. The shadowknight guild started out Threatening, and was still Threatening after I finished all the turn-ins, unfortunately. The Ogre guards inside of Oggok also went from Dubious to Apprehensive, as did the Ogre guards out in the Feerrott. Most of the other non-guild merchants in Oggok were all still dubious to me however, so I'm not sure what faction they're actually on because it doesn't seem to be Clurg.
+
+
+<br />&nbsp;<br />33 more turn-ins a few days later resulted in the shadowknight guild's view of me shifting from Threatening to Dubious. Clurg and Chef Dooga remained at apprehensive, as did the guards. The warrior guild also remained at dubious.
+</li>
+<li>
+As a Halfling Druid (Karana) it took me 101 or 102 turn-ins to get to dubious. I had a faction hit to Clurg early in this character's life from killing [[Corflunk]], so it's likely that the actual number required is an even hundred.
+<br />
+</li>
+</ul>
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:All Classes Quests]]

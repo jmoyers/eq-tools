@@ -1,0 +1,55 @@
+[[File:npc_solvedi_aldeberan.png|frame|Solvedi Aldeberan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Rathe Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Solvedi Aldeberan]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Northern Karana]], [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Groi Gutblade]], [[Timbur the Tiny]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Solvedi Scimitar}}
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+[[Solvedi Aldeberan]], in the druid circle, will present you with your very own Solvedi Scimitar, a druid 1HS sword, if you give him:
+
+* [[Giant Laceless Sandal]] (found on the giant [[Timbur the Tiny]] in NK)
+* [[Lionhide Backpack]] (found on [[Groi Gutblade]] in SK)
+
+Many will debate if it is worth the trade. ''**'''Warning!!'''** You must hail him and follow the chat dialogue until he talks about offering his weapon as a reward. If you don't and give him one of the items, you will lose the item and no reward.**''
+
+''[[Solvedi Aldeberan]] can be found in [[Rathe Mountains]] at /loc (5095, 1727).''
+
+You say, 'Hail Solvedi Aldeberan'
+
+: Solvedi Aldeberan says, 'Hail, Player. Welcome to the Rathe bear preserve of the Unkempt Druids. We strive to protect nature with diligence and punish her [defilers] with prejudice!'
+
+You say, 'What defilers?'
+
+: Solvedi Aldeberan says, 'There are many defilers of nature about that warrant eradication. Groi Gutblade is a loathsome troll poacher who lurks in South Karana. Slay him and bring me his Lionhide Backpack. Timbur the Tiny takes pride in crushing the trees in North Karana into pulp under feet. Make him pay for this affront and bring me his Laceless Sandal as proof of his demise. I will give you my own blade if you succeed.'
+
+Give him a [[Lionhide Backpack]] and a [[Giant Laceless Sandal]].
+
+: Solvedi Aldeberan says, 'You have done well. Here, take my blade as promised'
+: You gain experience!!
+
+[[Category:Quests]]
+[[Category:Rathe Mountains]]
+[[Category:Druid Quests]]

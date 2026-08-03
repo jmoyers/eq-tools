@@ -1,0 +1,67 @@
+{{Kunark Era}}
+[[File:npc_shrub_marwood.png|frame|Shrub Marwood]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Shrub Marwood]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Emerald Jungle]], [[Frontier Mountains]], [[Kaesora]]
+|-
+! ''' Related NPCs: '''
+| [[Erollisi mantrap]], [[a mountain giant tump]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Oak Shillelagh}}
+</li></ul>
+
+== Walkthrough ==
+
+Find [[Shrub Marwood]] in the eastern hideout of the Firiona Vie outpost.
+
+You say, 'Hail, Shrub Marwood'
+
+Shrub Marwood brushes pollen off of his tunic. 'Aachoo!!  Oh!! Hello.  Please look around.  Unless you are a [druid looking for work].'
+
+You say, 'I am a druid looking for work'
+
+: Shrub Marwood says 'Good.  I need a stout adventurer to go to the wilds and find me a few items.  I need some tump stumps - one Kromdul and one Kromdek type.  I also need a mantrap root.  Get me those three things and I will give you this handy shillelagh I found in the forest.'
+
+'''The items he needs:'''
+
+* One [[Tump Stump|Kromdul Stump]] (forest giants in Burning Woods or Firiona Vie)
+* One [[Tump Stump|Kromdek Stump]] (forest giants in Frontier Mountains)
+* One [[Mantrap Root]] ([[erollisi mantrap]] in the Emerald Jungle, [[Weeping Mantrap]] in Swamp of No Hope)
+
+Note: I was unable to get the Root off of the Mantraps in EJ, but got it on the first try in TT.
+
+'''Give him those three items, and in exchange you will receive a [[Dark Oak Shillelagh]], some faction, and some experience.'''
+
+: Shrub Marwood says 'Hey!!  Trying to pull a fast one?!!  I said I wanted tump stumps of Kromdek and Kromdul type and a mantrap root!!'
+
+Shrub Marwood tosses the mantrap root out the window.. SPLASH!!  'I made a mistake.  I didn't need that one.  Here is the shillelagh I told you about.  I found it in some burned out woods far from here.  I cleaned it up and found it had a spark of mana so I had it enchanted with a few charges of my spell, [Fertile Crop]. Hope you like it.'
+
+<div class="facblock">
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates Of Gunthak]] got worse.
+</div>
+{{YouGainExperience}}
+
+The fertile crop he mentions is the lead-in to the [[Beguile Plants Quest|Beguile Plants]] quest.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Druid Quests]]

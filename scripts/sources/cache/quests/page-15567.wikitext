@@ -1,0 +1,73 @@
+{{Classic Era}}
+[[File:npc_trumpy_irontoe.png|frame|Trumpy Irontoe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Trumpy Irontoe (NPC)]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Faction (Evil)
+</li></ul>
+
+== Walkthrough ==
+
+'''Trumpy Irontoe may be found inside the Fish's Ale at (loc -309.10, -260.72) but he also wanders to and from the Docks at (loc -161, 119). He stops at the end of Docks for a moment and also stops once on his way there and back, near the archway at (loc -224, -132)'''
+
+You say, 'Hail, Trumpy Irontoe'
+
+: Trumpy Irontoe says 'Heh? What's yer name? ______? Never heard of ya. Now quit breathin' on me and buy us some [drinks]!'
+
+You say, 'What drinks?'
+
+: Trumpy Irontoe says ' Yeah. Gimme a.  er. honey mead.'
+
+You say, 'What is honey mead?'
+
+: Trumpy Irontoe says ' Yeah. Gimme a.  er. honey mead.'
+
+'''Give him 4 x [[Honey Mead]].'''<br>
+'''''Note: This is not Multi-Questable. You must hand in 4 Honey Mead at a time. If you hand in only 1 at a time, on the 4th you will not get the reward unlike other quests.''
+'''
+: Trumpy Irontoe says 'Beh! Thanks, Skippy. Why don't ya buy yourself one? And. . . get me another!'
+: Trumpy Irontoe says 'Beh! Thanks, Skippy. Why don't ya buy yourself one? And. . . get me another!'
+: Trumpy Irontoe says 'Beh! Thanks, Skippy. Why don't ya buy yourself one? And. . . get me another!'
+: Trumpy Irontoe says 'BWAH hah hah! I knew you wasn't the loser you. . . appear to be! I will have to tell [Kane]. . all about you. Maybe get you in the gang!'
+
+<div class="facblock">
+* Your faction standing with [[Circle Of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Additional Dialogue'''
+
+You say, 'Who is Kane?'
+
+: Trumpy Irontoe says 'Ah..burp.. that piece of cr.. eh? Oh its you.. Kane runs this burg.. or at least he will.. if [Sragg] can get his act together.'
+
+You say, 'Who is Sragg?'
+
+: Trumpy Irontoe says 'Where did you hear that name?!? Not from me! I didn't say nothing about Sragg or those Bloodsabers or their dang temple in the sewers! Get away from me ya hobgoblins! I don't want no trouble!'
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

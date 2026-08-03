@@ -1,0 +1,126 @@
+{{Classic Era}}
+[[File:npc_plagus_ladeson.png|frame|Plagus Ladeson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Plagus Ladeson]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Hollish Tnoops]], [[Shintl Lowbrew]], [[Toala Nehron]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+In the Steel Warrior's Guild, you are given a quest to investigate the Hog Caller's Inn. Apparantly, someone is leaking information to the dark elves concerning the city defenses.  
+
+You say, 'Hail, Plagus Ladeson'
+
+:[[Plagus Ladeson]] says, 'Greetings Playername, and welcome to the Bunker. Are you a [new warrior] or [veteran]?'
+
+You say, 'I am a new warrior.'
+
+:Plagus Ladeson says, 'Good to know you chose the Bunker to train you. It is the home of The Steel Warriors. We find our inner strengths grow through battles and deeds to further our growth. Do you [seek deeds] or [crave battle] ?'
+
+You say, 'I seek deeds'
+
+:Plagus Ladeson says, 'It may not be a fray, but who said all we Steel Warriors are nothing more than brawn. There has been recent reports of frequent visits by Dark 
+Elves to the Hog Caller's Inn, here in Freeport. Go speak with Lady Shae. Tell her, the [Steel Warriors sent you]. We cannot rely on the Freeport Militia to look into such matters. They are probably involved. Bring me any clues.'
+
+Your contact, [[Lady Shae]], is on the second floor of the Hog Caller's Inn. Tell her who sent you and she will give you some information and ask for a glass of [[White Wine]].
+
+:Lady Shae says, 'Hello. It is always good to meet someone new. I am Lady Shae of the House of Dumas. And what [house] are you from?'
+
+You say, 'The Steel Warriors sent me.'
+
+:Lady Shae says, 'Thank you for checking into this matter. I told the Militia, but they just ignored me. It appears the darkelves keep coming in leaving mail for [Shintl] Lowbrew. Before I tell you more could you please buy me A white wine please. '
+
+Go buy her a [[White Wine]] from [[Swin Blackeye]] downstairs. Return and give her the wine. 
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+{{Exp}}
+
+:Lady Shae says, 'Thank you. Pandos has been telling me to try white wine forever. I mostly only drink red wine. Pardon me for getting off track. Anyway, it is a good thing you showed up. The lady in room 2 has been receiving mail from a Dark Elf. You [need the mail for room two]. The Innkeeper usually holds it for the guests.'
+
+If you head back downstairs to Swin:
+You say, 'I need the mail for room two'
+
+:Swin Blackeye says, 'Hmmph !! If you're here to get the mail for room two, you'll need to show me the room key.'
+
+The middle room on the right on the second floor you may see [[Shintl Lowbrew]]. She may leave to get her mail from the Innkeeper, if you wait until after she has her mail, she will drop both the sealed letter and the key. 
+
+You have slain Shintl Lowbrew!
+
+<div class="facblock">
+* Your faction standing with [[Carson McCabe]] got worse.
+* Your faction standing with [[Coalition of Tradefolk]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Ill]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+</div>
+
+:Shintl Lowbrew says, 'You have no idea what a big mistake you made. Either my fellow rogues shall find you or the Freeport Mi.. Unnnghh'
+
+Loot the [[Hog Key No 2]]. Return to Swin and give him the key. She may also have a [[Sealed Letter]] which is lore, you will not receive another one when you hand the key to Swin, and a [[Halfling Head]].
+
+:The note reads: " Shintl Lowbrew Give this courier 1 vial of Opal's special poison. Signed Mendl V took - personal guard to The Great Queen Christanos "
+
+Return the letter to [[Toala Nehron]] on the top floor of the arena. 
+
+:Toala Nehron says, 'Why, that little trollop! What is she up to? Cain will never believe this! She must be in league with some faction of the dark elves, but why? Neither the Academy of Arcane Science nor Cain will believe this note. I will see what I can do. As for you, I command you to kill this Shintl and her dark elf courier!! Put their heads into this box and combine them. We shall cut the link. Bring me her head.'
+
+{{Exp}}
+
+Toala will give you a [[Toala's Box for heads]]. Place Shintl's head in the box, and go kill the dark elf courier [[Hollish Tnoops]], also in Freeport, just outside the gates. 
+
+You have slain Hollish Tnoops!
+
+<div class="facblock">
+* Your faction standing with [[Carson McCabe]] got worse.
+* Your faction standing with [[Coalition of Tradefolk]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Ill]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+</div>
+
+Combine the heads in the box to get a [[Box with Two Heads]]. Return this to Toala. 
+
+:Toala Nehron says, 'Good work!! We will soon catch Opal. I have started to formulate a plan to stop her. When I complete it, I shall notify you. Here, Take this small reward. I am sure killing Shintl was no trouble. She was just a halfling.'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Freeport Militia]] got worse.
+</div>
+You receive 2 gold, 10 silver pieces.
+
+{{Exp}}
+
+[[Category:Quests]]
+[[Category:West Freeport]]

@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:npc_yvonne_ani.png|frame|Yvonne Ani]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Yvonne Ani]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> None known. Seems like this quest is just for lore?
+</li></ul>
+
+== Walkthrough ==
+
+:You say, 'Hail, Yvonne Ani'
+
+Yvonne Ani say, 'Welcome to my shop ______. Feel free to purchase whatever you need. I am sure that I can fill those needs, as [The seekers of Dark Truth] generally keep me stocked and on my toes.'
+
+:You say, 'Who are the seekers of the Dark Truth?'
+
+Yvonne Ani says, 'Ah, so you wish to know about the seekers. They are the guild of Necromancers here in Paineel. They are by far the most knowledgeable in the dark arts in all the known world. They frequently purchace a good many [herbs] from me.'
+
+:You say, 'What herbs?'
+
+Yvonne Ani says, 'The herbs that the necromancers use, typically have properties that are useful in the preservation of dead flesh. Who knows what they use them for?'
+
+
+''I am told that this is just a story line and that there is no more to it than this.''
+
+Possible missing dialogues, faction hits, /loc of quest mobs, and list of additional quest rewards.
+
+[[Category:Quests]]
+[[Category:Paineel]]

@@ -1,0 +1,76 @@
+{{Classic Era}}
+{{Disambig3|[[Bone Chips Quests]]}}
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Vexia D`Ynth]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Rewards ==
+
+<ul><li>  Faction
+</li>
+</ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Vexia D`Ynth'
+
+Vexia D`Ynth says, in Dark Elvish, '[Track].'
+
+You say, 'Track'
+
+Vexia D`Ynth says, in Dark Elvish, '[Stalk].'
+
+You say, 'Stalk'
+
+Vexia D`Ynth says, in Dark Elvish, '[Hunt].'
+
+You say, 'Hunt'
+
+Vexia D`Ynth says, in Dark Elvish, 'Yes. Hunt. Track, stalk, and hunt. Ignore that silly talk about conservation. Protecting nature. Nurturing the forest. [Drivel]. It's all drivel.'
+
+You say, 'Drivel'
+
+Vexia D`Ynth says, in Dark Elvish, 'Yes, drivel. Hunt for the joy of the kill. Hunt for Queen Cristanos and King Naythox Thex. Hunt for the [glory] of Innoruuk.'
+
+You say, 'glory'
+
+Vexia D`Ynth says, in Dark Elvish, 'Yes. You will hunt for the Dread Slayers. You will hunt and you will learn through the doing. You do not have to hunt these all at once. I will accept each as its own task. Bring back four each of Garter Snake Tongue, Spider Venom Sac, Wolf Meat, Bone Chips, and Giant Bat Fur.'
+
+<div class="facblock">
+* Your faction standing with Dread Slayers has been adjusted by 5.
+* Your faction standing with Indigo Brotherhood has been adjusted by 5.
+* Your faction standing with Dreadguard Outer has been adjusted by 5.
+* Your faction standing with Dreadguard Inner has been adjusted by 5.
+* Your faction standing with Guardians of the Vale has been adjusted by -1.
+* Your faction standing with Wolves of the North has been adjusted by -1.
+</div>
+
+{{YouGainExperience}}
+
+
+== Notes ==
+
+All of the turn ins here can be done independently; as described by Vexia you just have to hand in four of a kind. Turn in whatever you have - likely [[Bone Chips]]. 
+
+[[Category: Quests]]
+[[Category: Neriak Commons]]

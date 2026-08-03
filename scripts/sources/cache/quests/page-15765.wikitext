@@ -1,0 +1,129 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_argash.png|frame|Argash]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Argash]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+Kindly faction is required for all Thurgadin armor quests.<br>
+Set Totals ''(1 bracer)''
+
+== Reward ==
+
+{{Gear Set
+|Runed Scout's Helm
+|Runed Scout's Breastplate
+|Runed Scout's Vambraces
+|Runed Scout's Bracer
+|Runed Scout's Gauntlets
+|Runed Scout's Greaves
+|Runed Scout's Boots
+}}
+
+== Checklist ==
+
+Turn-ins to [[Argash]] in [[Thurgadin]].{{CheckboxList}}
+*[[Runed Scout's Helm]]
+:*[[Corroded Chain Coif]]
+:*3x [[Crushed Coral]]
+*[[Runed Scout's Breastplate]]
+:*[[Corroded Chain Tunic]]
+:*3x [[Flawless Diamond]]
+*[[Runed Scout's Vambraces]]
+:*[[Corroded Chain Sleeves]]
+:*3x [[Flawed Emerald]]
+*[[Runed Scout's Bracer]]
+:*[[Corroded Chain Bracer]]
+:*3x [[Crushed Flame Emerald]]
+*[[Runed Scout's Gauntlets]]
+:*[[Corroded Chain Gauntlets]]
+:*3x [[Crushed Topaz]]
+*[[Runed Scout's Greaves]]
+:*[[Corroded Chain Leggings]]
+:*3x [[Flawed Sea Sapphire]]
+*[[Runed Scout's Boots]]
+:*[[Corroded Chain Boots]]
+:*3x [[Crushed Black Marble]]
+{{End}}
+
+== Walkthrough ==
+
+You say, 'Hail, Argash'
+
+: Argash says 'Greetins, ______, you look like a Human who knows the value of a good bow when ye see one. I'll let ye in on a li'l secret, the bow is the greatest of all weapons as it allows you to inflict maximum punishment on yer foes with minimum risk. How can ye possibly go wrong? Or better yet, if'n ye be a ranger, I can see my way clear to making you a coif, tunic, sleeves, bracer, gauntlets, leggings, or boots that I'm sure ye would enjoy.'
+
+'''Gems are dropped in various Velious zones while Corroded Chain Armor drops from the higher level giants in Kael Drakkel.'''
+
+'''After turn-in:'''
+
+Argash smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Helm ==
+
+You say, 'What coif?'
+
+: Argash says 'To create a piece of armor to protect your sensitive skull, I will require three pieces of [[Crushed Coral]] as well as a [[Corroded Chain Coif]].'
+
+== Tunic ==
+
+You say, 'What tunic?'
+
+: Argash says 'To forge a spectacular chain tunic I will require three [[Flawless Diamond]]s and a [[Corroded Chain Tunic]].  With the gems and my skills I may be able to draw out some of its magical powers.'
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Argash says 'Protection for your arms will come at the price of three [[Flawed Emerald]]s and a set of [[Corroded Chain Sleeves]].'
+
+== Bracers ==
+
+You say, 'What bracers?'
+
+: Argash says 'For the bracers, I will require a [[Corroded Chain Bracer]] as well as three [[Crushed Flame Emerald]]s. Return to me when you find such things, Human.'
+
+== Gauntlets ==
+
+You say, 'What gauntlets?'
+
+: Argash says 'Protecting your hands is very important. I can forge protection for your hands if you bring me a pair of [[Corroded Chain Gauntlets]] and three [[Crushed Topaz]].'
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Argash says 'A set of [[Corroded Chain Leggings]] might be salvageable if you were to find three [[Flawed Sea Sapphire]]s. With the right techniques and ingredients almost anything is possible.'
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Argash says 'We use our feet so often, should not they be protected as well as any other portion of our bodies? If you seek fine protection for your feet, return to me with three pieces of [[Crushed Black Marble]] and a set of [[Corroded Chain Boots]].'
+
+[[Category:Ranger Quests]]
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Thurgadin Armor Quests]]

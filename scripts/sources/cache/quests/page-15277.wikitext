@@ -1,0 +1,269 @@
+{{Temple Era}}
+__NOTOC__
+[[File:npc_lon_the_redeemed.png|frame|Lon the redeemed]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Lon the redeemed]]
+|-
+! ''' Minimum Level: '''
+| 30 but can be done at level 1 with proper help
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Blackburrow]], [[Mistmoore Castle]], [[Dagnor's Cauldron]], [[East Commonlands]], [[Freeport|East Freeport]], [[Halas]], [[Felwithe]], [[Ocean of Tears]], [[Rivervale]], [[Solusek's Eye]], [[Kaladim|South Kaladim]], [[West Commonlands]], [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Bubar]], [[CWG Model CX]], [[Conium Darkblade]], [[Kizdean Gix]], [[Lynada the exiled]], [[Noresa Sparkle]], [[Ortallius]], [[Toxdil]], [[Wela Muselender]], [[a gnoll brewer]], [[a hemo enologist]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Burning Rapier}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* be a [[Rogue]]
+* Go to Sol Ro temple and find [[Lon the Redeemed]] in the back Say "I am a rogue in need of redemption" get a [[Sealed Note]].
+* Go to Sol A have someone kill (or pickpocket) [[CWG Model CX]] to obtain the [[Clockwork Oil Stout]] and have someone group with you and bring [[Lynada the Exiled]] to the ent and kill her then loot the [[Sparkle]] purse.
+* Travel to ButcherBlock via boat or port go to South Kaladim and buy [[Underfoot Triple Bock]] and also [[Tunare's Finest]] in Felwithe.
+* Head to Castle Mistmoore and kill [[A Hemo Enologist]] to loot [[Blood Spirit]].
+* Then run to Dagnor's Cauldron and on top of the Island find [[Conium Darkblade]] and give him the Sealed Note from Lon the Redeemed he will give you [[Never Stop Chopping]].
+* Hop on the boat to Freeport and buy [[Vasty Deep Ale]] at the first dock then run back to the boat ride a bit then jump off into the Ocean of Tears at loc -1611, +2924 and find [[The Oblong Bottle]] at the bottom the the ocean. It's a little south below the rock spires swim to the nearest dock and ride the boat to Freeport.
+* Trek yonder to [[Bubar]] and buy [[Gator Gulp Ale]] then run to WC and buy [[A Sparkling Sapphire]] from [[Noresa Sparkle]] (it's NO DROP and costs between 500-550pp), and give Her the Sparkle purse, she will give you a [[Tiny Key]]. Do not kill her, she has only negative general Freeport faction hits.
+* Brew [[Ol'Tujim's Fierce Brew]] x2 - brewed in a brew barrel, trivial at 135: cask, barley, malt, yeast, hops. (You can just as easily brew this yourself in Rivervale at level 1, all the ingredients are on second floor of Fool's Gold)
+* Run to Rivervale and buy [[Lendel's Grand Lager]] then run to Blackburrow kill the [[Master Brewer]] for a [[Blackburrow Cask]] (always drops). You need 4 [[Blackburrow Gnoll Skin]]s - they drop off Gnoll Elites and above not guardsmen or the brewers. After you get the Blackburrow Cask and 4 Skins, 2 pup scalps and 2 Ol'Tujim's Fierce Brew combine to make [[Blackburrow Swig]]. This can be the easiest or most time consuming step of this quest. 
+* Go to Halas and buy a bottle of [[Frozen Toe Rum]] at McDaniel's Smokes & Spirits (when you enter the city turn right and you should find it).
+* Run to Highpass and give [[Never Stop Chopping]] to [[Bryan McGee]] on the second floor of The Lumberyard (near keep ent). He will give you a [[Bottle Crate]] then put all the booze you have collected along with [[The Oblong Bottle]] and combine. Now you have [[Case of Spirits]], give it back to Brian McGee and get the [[Gem of Stamina]] then head back to EC. (*beware if you are Dark Elf rogue you may need wolf form for faction)
+* Go to West Freeport and find [[Toxdil]] behind hidden wall and give him [[A Sparkling Sapphire]], purchased from Noresa Sparkle, and he will give you a [[Tiny Key]] then go to East Freeport to Hallard's Resale have someone with 130 lock pick open the door at the bottom and get the [[Gem Case]] on the floor.
+* Go back to [[Bubar]] in EC and give him both keys and the gem case he will give you the Gem Of Righteousness ([[A Sparkling Sapphire]]).
+* Go to South Ro and find a Orc named [[Ortallius]] (right side of ent) give him both Gems and he will give you the Burning Rapier!
+{{End}}
+
+== Walkthrough ==
+
+''This quest involves collecting the Gem of Stamina and the Gem of Rightousness, then turning them in to a named orc in South Ro. Plan to spend a good few solid hours doing this quest and walking around the continents of Faydwer and Antonica.''
+
+=== Gem of Stamina ===
+
+'''1. Go to the Temple of Solusek Ro. Find Lon the Redeemed at +553, -17. Hail him and tell him 'I am a rogue in need of redemption.' He will give you a sealed note to deliver.'''
+
+You say, 'Hail, Lon the Redeemed'
+
+Lon the Redeemed says 'Welcome, friend. I am one of the redeemed. I once walked the path of evil and woe. My talents were those of the House of V'ree of Neriak. I now serve the Burning Prince. Are you a [rogue in need of redemption] also?'
+
+You say, 'I am a rogue in need of redemption.'
+
+: Lon the Redeemed says 'Then, so be it. Ro commands you to aid the saved one, Ortallius of the hot sands. He is in need of two gems, the Gem of Stamina, also known as the Gem of Passion, and the Gem of Righteousness. I once owned these gems in my former life. They rest with my old friend, [Conium Darkblade]. Take this note to him and he shall give you the gems which you will then take to Ortallius. Be off.'
+
+You say, 'Who is Conium Darkblade?'
+
+: Lon the Redeemed says 'When evil ruled my life, I hid in the shadows with a fellow thief. This dwarf's name was Conium Darkblade. He was a genius when it came to poisons. I believe he now taints this world with his evil toxins. No doubt he hides near his homeland.' 
+ 
+'''2. Make your way to Conium Darkblade, a dwarf on the center island in Dagnor's Cauldron (location: -235, -829). Hail him if and talk to him a bit if you'd like. Hand him the sealed note from Lon the Redeemed. He will give you a 1H Slash weapon named 'Never Stop Chopping.' '''
+ 
+You say, 'Hail, Conium Darkblade'
+
+: Conium Darkblade says 'You seek Conium Darkblade, do you? Often I am here. To test my [wasp poison], yes. Fewer aqua gobs there now are. Ha!! A true rogue am I with no leader or guild. Just the wind and shadows and much treasure to be had.'
+
+: Conium Darkblade says 'So Lon has sworn allegiance to a temple. What a fool, but he is a skilled fool. My word is my bond and if he asks for the gem, then so be it. Unfortunately I traded it for a much-needed axe. It was in the middle of a dungeon and.. well, that is a long story. If you want to get the gem, take this axe back to the [one who once owned it].'
+
+You say, 'Who is the one who once owned it?'
+
+: Conium Darkblade says 'The human who gave me the axe remains nameless. We were separated during the battle. If he ever got out of there with all his gold, I do not know. The only clue I know of is the axe itself. The words 'Top of the World' were once printed on its handle.' 
+ 
+'''3. This is a two-part step. The first part is to pay a visit to Falyn Farreach (location: +178, +426). He is in High Pass Hold, in the back room of 'Top of the World' building in the far left corner of the zone. '''
+
+You say, 'Hail, Falyn Farreach'
+
+: Falyn Farreach says 'Welcome to Top of the World, the newest shop in the pass!'
+
+You say, 'Never stop chopping.'
+
+: Falyn Farreach says ''Never stop chopping?!!' Hey! I engraved that on a special order for a fellow Highpass citizen. I can't remember his name. He gave me not only some rare gems for it, but also a case of something called 'Lumberjack Pale Ale.' Great stuff!!' 
+
+'''Now head to a bar named the Lumberjack, located a bit south of the entrance to High Keep. You'll find Bryan McGee on the balcony on the second floor (-242, +90), next to an ogre named Beef (heh). Give him the Never Stop Chopping axe, and he'll give you a Bottle Crate, which you'll need to fill with 10 different liquors (detailed in the next step).'''
+ 
+You say, 'Hail, Bryan McGee'
+
+: Bryan McGee says 'I do not know what you are doing up here, but I am a busy man. Please return to the bar downstairs and enjoy the atmosphere.'
+
+: Beef says 'Gets moving before me smash yu to pulp!!'
+
+You say, 'Never stop chopping.'
+
+: Bryan McGee says 'Hey!! You must be the one I traded my axe to. Funny.. I thought you were much shorter. If you have my axe I will return your gem to you. Well..? Let's have it!'
+
+'''Hand him the axe.'''
+
+: Bryan McGee says 'On second thought.. You can do a little favor for me first. An associate of mine has asked me to acquire a case of spirits for him. Take this box and seek out what is needed to fill it. Inside you will combine the spirits of Lendel's Grand Lager, Gator Gulp Ale, Blackburrow Swig, Tunare's Finest, Underfoot Triple Bock, Frozen Toe Rum, Blood Spirit, Vasty Deep Ale, Clockwork Oil Stout and the legendary..[Oblong Bottle].'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{exp}}
+
+: Beef says 'BWAHAHA HA!! Yoo werk fer Mister Axe now. Hehehe!!'
+
+You say, 'What is an Oblong Bottle?'
+
+: Bryan McGee says 'The oblong bottle is a legend. They say one drink and you're off to oblivion, but just before that you feel the best you've ever felt and relive all your finest memories in the blink of an eye. The last I heard, some guy by the name of Turgin Swillfod turned up in Freeport spouting that he had found it. He was never heard from again.' 
+
+'''4. You may want to have an enduring breath item ready for this step, as it will involve some swimming underwater. The following drinks are needed:'''
+
+Purchase:
+* [[Tunare's Finest]] - Wela Muselender, Felwithe, +100, -343
+* [[Underfoot Triple Bock]] - Tumpy Irontoe, South Kaladim (Irontoe's Eats), +178, +317
+* [[Lendel's Grand Lager]] - Mac Deeppockets, Rivervale (Fool's Gold), -60, -190
+* [[Gator Gulp Ale]] - Bubar, East Commonlands (tunnel), -1591, -2696
+* [[Frozen Toe Rum]] - Scon McDaniel, Halas (McDaniel's Smokes & Spirits), +340, -348
+* [[Vasty Deep Ale]] - Cleonae Kalen, Ocean of Tears (Sister Island), +501, -9250, or Geoard BlueHawk, Erudin (BlueHawk's), -1175, -331
+
+Find:
+
+* [[The Oblong Bottle]] - ground spawn, Ocean of Tears, -1611, +2924
+
+Loot:
+
+* [[Clockwork Oil Stout]] - pickpocket this from a CWG Model CX (gnome robot) in Solusek's Eye (aka Sol A).
+* [[Blood Spirit]] - dropped from 'a hemo enologist,' a female Teir'Dal in Castle Mistmoore at location -63, +164. 
+
+a hemo enologist says 'Do not underestimate the might of Mistmoore!'
+
+You have slain a hemo enologist!
+
+<div class="facblock">
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Agents of Mistmoore]] got worse.
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Ring of Scale]] got better.
+</div> 
+
+Create:
+
+[[Blackburrow Swig]] - This is a no-fail brewing combine made in the Blackburrow Cask (a looted item from Blackburrow). I highly recommend that you first check the Bazaar on your server to see if some of these components are available. 
+
+* [[Gnoll Pup Scalp]] x 2
+* [[Blackburrow Gnoll Skin]] x 4
+* [[Ol'Tujim's Fierce Brew]] x 2 - brewed in a brew barrel, trivial at 135: cask, barley, malt, yeast, hops. 
+
+Combine all the drinks in the Bottle Crate to create a Case of Spirits.
+ 
+'''5. Turn the Case of Spirits in to Bryan McGee to receive the Gem of Stamina.'''
+
+Bryan McGee says 'I cannot believe you actually acquired all those drinks!! You do good work, kid. Here is the gem as I promised. And a few plat for good measure. Don't let it be said that the Axe doesn't treat his friends right.'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+* Your faction standing with [[Coalition of Tradefolk]] got better.
+* Your faction standing with [[Carson McCabe]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[The Freeport Militia]] got better.
+</div>
+{{exp}}
+
+=== Gem of Rightousness ===
+
+'''1. Go to the slums of East Freeport and enter a building called Hallar's Resale. Go to the basement to approximately -90, -465, where you'll find a locked door. The lock can be picked easily at a skill of 130 or higher. Loot the Gem Case at -958, +7, +24, which is a ground spawn that looks like a little bag. It is not a container, so it can be placed in a backpack. '''
+ 
+'''2. Travel to the West Commonlands and seek out Noresa Sparkle, and be sure to bring approximately 550 PP with you. She is located in a hut near Befallen (approximately -705, +258). Target and hail her.'''
+ 
+You say, 'Hail, Noresa Sparkle'
+
+: Noresa Sparkle says, 'He.. Hello. Wou.. would you like to buy something? Be quick or [Kizdean] will return!'
+
+You say, 'Who is Kizdean?'
+
+: Noresa Sparkle says, '(whispering)..'Sshhh..Please..save me. Get..rid..of..him.'' 
+
+While you're there, purchase a single sparking sapphire from her. You'll need it a bit later for another part of the quest, and can be a bit costly (510-540 PP or so, depending on charisma).
+
+'''Find Kizdean Gix and kill him. Though he can wander the zone, he's typically found not far from the Freeport Militia guard hut near the border with East Commonlands (approximately -175, +260). Kill him and loot 'A Sealed Note.' It tells you the location of your next victim. '''
+
+You say, 'Hail, Kizdean Gix'
+
+: Kizdean Gix says 'If you have business then out with it!! If not, then please be gone. I have little time to waste on chitchat!'
+
+: Kizdean Gix says 'I shall show you the pure fury of the Dead!!' 
+
+You have slain Kizdean Gix!
+
+<div class="facblock">
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Queen Cristanos Thex]] got worse.
+* Your faction standing with [[King Naythox Thex]] got better.
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Primordial Malice]] got better.
+</div>
+
+Kizdean Gix's corpse says 'Soon you shall learn the extent of the Dead's power. Vengeance shall be theirs.' 
+ 
+'''3. Visit Toxdil, a Teir'Dal poison vendor in West Freeport, just inside the northern secret tunnel outside the West Gates.'''
+ 
+You say, 'Hail, Toxdil'
+
+: Toxdil says 'Correct, Toxdil is my name. No last name. I swear allegiance to no house nor guild. What brings you down here? Perhaps you seek my [deadly liquid], perhaps not. Whatever your reasons, I warn you to keep an eye out for the militia. They have begun to patrol the sewers.'
+
+You say, 'I seek the gem of righteousness.'
+
+: Toxdil says 'That gem is worthless!! If you want it, you can have it. Oh, but I forgot! I sold it to some gem merchant. I can't seem to remember her name, but she paid highly for it. Ha!! Imagine that. Worthless hunk of crystal. Do not bother looking for it.'
+
+'''Give him the sapphire that you purchased from Noresa.'''
+
+Toxdil says 'The gem!! I would notice its sparkle anywhere!! I cannot believe you are handing it back to me!! What a fool. Here you are, fool. You can have this worthless key now.' 
+ 
+You receive A Tiny Key (identifies as "Gem Case Key 2").
+
+'''4. Go to Solusek's Eye (aka Sol A) by means most convenient to you. I would advise sneak/hiding around to avoid having the goblins pile on you. Search out and destroy Lynada the Exiled at location -999, -654, a Teir'Dal magician. She is of a relatively low level, so her spells are easily resistible. Loot a sparkle purse. Her faction is with the goblins here, on the Goblins of Fire Peak and Tribe Vrodak. '''
+ 
+'''5. Hobble back to Noresa in East Commonlands. Give her the sparkle purse, and she'll give you A Tiny Key (identifies as "Gem Case Key 1").'''
+
+Noresa Sparkle says 'Oh!!! Thank you. You are my hero. I have been held captive by that horrid dark elf for weeks. Please take this. It was the key to a [gem case] which was stolen from me by an unseen rogue. If you find the gem case you can take it and the key to the original craftsman. He can open it with only two keys.'
+You gain experience!! 
+
+'''6. Head to the tunnel of East Commonlands. Visit a human by the name of Bubar (-1518, -116).'''
+
+You say, 'Hail, Bubar'
+
+: Bubar says 'Greetings, friend! I am Bubar, merchant from the burning sands. You must be thirsty or, perhaps, hungry. Please look over my goods.'
+
+You say, 'What gem case?'
+
+: Bubar says 'Talking of containers? I do not make containers any longer. Provisions are much more profitable. Do you have one of my containers? Most likely you have locked yourself out then. My specialty was the three-lock case. They always lose one of the keys. Hand me the case and at least two of the keys and I can open it for you.'
+
+'''Give him both tiny keys and the gem case. (Note: This turn-in may be able to be multiquested)'''
+
+: Bubar says 'Mmmph!!.. *Pop!!* Ouch, my thumb!! Here you are. You had a gem inside.'
+
+'''You receive A Sparkling Sapphire (identifies as "Gem Of Righteousness").'''
+
+'''Now that you have both the Gem of Stamina and the Gem of Rightousness, you'll need to turn them in to Ortallius. He's found very northwest corner of the Southern Desert of Ro, at location +1266, -325. Once you turn in both gems, he'll give you the Burning Rapier. '''
+ 
+You say, 'Hail, Ortallius'
+
+: Ortallius says 'Welcome to the lands of Ro. Stand and fight with me. We shall fight to reclaim the desert in the name of Solusek Ro. Death to all [dervish cutthroats]!!'
+
+: Ortallius says 'You serve the Burning Prince as I do. The Redeemed has instructed me to give you this reward upon completion of your test. Practice your arts and prepare yourself. Evil approaches our realm. Long live Ro!!'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{exp}}
+
+[[Category:Quests]]
+
+[[Category:Temple of Solusek Ro]]
+[[Category:Rogue Quests]]

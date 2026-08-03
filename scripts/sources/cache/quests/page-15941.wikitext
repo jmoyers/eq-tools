@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:old_patched_robe.png|frame|Teddeefashion wearing the reward]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin Palace]]
+|-
+! ''' Quest Giver: '''
+| [[Lanken Rjarn]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Erudin Palace]]
+|-
+! ''' Related NPCs: '''
+| [[Lanken Rjarn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Patched Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Lanken Rjarn]] is located at 537, 776 in Guild Tower of the Craft Keepers.''
+
+You say, 'Hail, Lanken Rjarn'
+
+: Lanken Rjarn looks up irritably. 'I do not have time to speak with thee. I have a problem on my hands. Feel free to speak with any of my trainers.'
+
+'''Hand [[Lanken Rjarn]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>You seek to learn the ways of the Enchanter? Join the Being's Keep. Go to the blue teleport gem above the fountain, it will take you into the palace. Go upstairs and give this note to Lanken Rjarn, he will help you learn the ways of magic.</code>
+
+: Lanken Rjarn says, 'Welcome to the Craft Keepers! You have much to learn. and I'm sure you are anxious to get started. Here's your training robe. Go see Nolusia. she'll give you your first lesson.'
+
+<div class="facblock">
+* Your faction standing with [[Craftkeepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Erudin]]
+[[Category:Enchanter Quests]]

@@ -1,0 +1,58 @@
+{{Kunark Era}}
+[[File:npc_gracie_f`liler.png|frame|Gracie F`Liler]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Gracie F`Liler]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Reward ==
+
+* [[Boon of the Clear Mind]]
+* [[Clarity II]]
+* [[Recant Magic]]
+* [[Wake of Tranquility]]
+
+== Walkthrough ==
+
+[[Gracie F`Liler]] is found at location -3346, 2714 (next to Fyrefly and Luminare Pasinia in the east wing of the "merchant building").  She wants any of the following spell scrolls:
+
+* [[Color Slant]]
+* [[Cripple]]
+* [[Dementia]]
+* [[Theft of Thought]]
+
+The reward is a random selection from the four listed spell scrolls.
+
+== Dialogue ==
+
+You say, 'Hail, Gracie F`Liler'
+
+''Gracie F`Liler says, 'It's so good to see new faces, not to mention more adventurers in the area. On some nights, the sounds that come from the nearby hills will scare even the hardiest of travelers. I volunteered in the name of the Keepers of the Art to help locate any [new spell scrolls] that might surface. Maybe you will have a successful journey and find some of these scrolls yourself.' ''
+
+You say, 'What new spell scrolls?'
+
+''Gracie F`Liler says, 'I have recently come into possession of some of these scrolls. They seem to be very promising in adding to the strength of our occupation. Some more good news is that I have a few extra of these scrolls. Perhaps you might have or find an extra of your own and be willing to trade? In case you are interested, I am looking for the scrolls Theft of Thought, Color Slant, Cripple, and lastly Dementia. Bring me one of these and I'll make an even trade.' ''
+
+Upon handing Gracie one of the mentioned spells:
+
+''Gracie F`Liler sats, 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to business with you again soon. Farewell.' ''
+
+[[Category: Quests]]
+
+[[Category:Firiona Vie]]
+[[Category:Enchanter Quests]]

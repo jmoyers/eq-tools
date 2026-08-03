@@ -1,0 +1,205 @@
+{{Classic Era}}
+[[File:npc_carver_cagrek.png|thumb|Carver Cagrek]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Carver Cagrek]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Neriak|Neriak Foreign Quarter]], [[Ocean of Tears]], [[Oggok]]
+|-
+! ''' Related NPCs: '''
+| [[Chef Dooga]], [[Nerbilik]], [[The Gobbler]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Grobb Cleaver}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Carver Cagrek]] is located at +378, -455 in Grobb, standing on a platform in the middle of the shaman spell vendors' area, just outside the bank.''
+
+'''Note: This is a simple quest, requiring only 3x [[HEHE Meat]] (purchased from [[Chef Dooga]]) and a [[Tattered Recipe]] dropped by [[Nerbilik]] (Level 20 troll) in the Ocean of Tears. Turn in those four items to Carver Cagrek for a Grobb Cleaver.'''
+
+---
+
+Below here are all the details, including the side quests that bring it all together.
+
+You say, 'Hail, Carver Cagrek' 
+
+: Carver Cagrek Says 'Away from carver Cagrek you get!! Me's a busy troll. Must punish enmees of Grobb and feeds trolls a plenty. Trolls complain meats no good. Dey say dey hears ogres have special meat which taste better den pris'ners of Grobb. Do you knows name of meat? What kinda [meat] dat be? Tell me!!' 
+
+You say, 'HEHE meat' 
+
+: Carver Cagrek says 'HEHE meat!! What dat stand for? Mes need some of dis HEHE meat!! Gos and get me some. Cagrek not just want some. Cagrek want more dan twenny!! Cagrek want three HEHE meat and mes want HEHE recipe. Youg et and me makes _____ honeraree carver. Me gives you Grobb Cleaver. It cut skins like dey butter!!' 
+
+'''Meanwhile, in Oggok, Chef Dooga is at +200, -240, in "Meet and Drink Tew Bie." '''
+
+You say, 'Hail, Chef Dooga' 
+
+: Chef Dooga says 'Welcome you, _____. You look all skin 'n bones. Eat you must do. Chef Dooga can fix up goodies for you. Try [HEHE meat].' 
+
+You say, 'What is HEHE meat?' 
+
+: Chef Dooga says 'It is a secret ground meat made with high elf, human, and Erudite Flesh. Mmmm. It good stuff. Dooga make it and [the Gobbler] make it. If you find any of those meats in the swamps bring to me and I pay you.' 
+
+'''Chef Dooga will not take the more common and universally-dropped Human Parts, High Elf Parts, or Erudite Parts. She will, however, take Human Flesh or High Elf Flesh, which drops from the named cycle in Innothule and Rathe Mountains. Upon handing in Human Flesh (works at indifferent, not at dubious):'''
+
+: Chef Dooga says 'MmmmMmm. Human make good meat pies. Here. A little coins for you.' 
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Oggok Guards]] got better.
+</div> 
+
+You receive ~7 copper from Chef Dooga. 
+
+Upon handing in [[High Elf Flesh]]:
+
+: Chef Dooga says 'High elf!! Now that is a good meat. Goes good with Ogre Swill.'
+
+<div class="facblock">
+* Your faction standing with [[Clurg]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+* Your faction standing with [[Craknek Warriors]] got better.
+* Your faction standing with [[Oggok Guards]] got better.
+</div>
+{{YouGainExperience}}
+You receive 4 silver from Chef Dooga.
+
+{{expand}}
+
+Upon handing in Erudite Meat? (what?):
+
+''(Dialogues?)''
+
+You say, 'Who is the Gobbler?' 
+
+: Chef Dooga says 'You no hear of the Gobbler!! Him great butcher. Have all kinds of meat. Him am low on froglok legs. Dooga supply him. Dooga need someone to [deliver froglok legs].' 
+
+You say 'I will deliver froglok legs' 
+
+: Chef Dooga says 'You think so!! That be good thing. Make the Gobbler happy. Maybe he give you something good. Maybe not. you take this. Deliver meat.' 
+
+'''You receive a [[Preserved Leg]].'''
+
+'''Find the Gobbler in Neriak Foreign Quarter at location -325, -125.'''
+
+You say, 'Hail, The Gobbler' 
+
+: The Gobbler says 'Meat!! You need meat. Me gots meat!! High elf meat, dwarf meat, human meat, [HEHE meat], [froggy legs]. Me got a lot.' 
+
+You say, 'What is HEHE meat?' 
+
+: The Gobbler says 'HEHE meat? It human, Erudite 'n high elf, mashed together. Mmmm. Very tasty!' 
+
+You say, 'What froggy legs?' 
+
+: The Gobbler says 'Froggy legs come from far away. Me get from friend, [Chef Dooga]. It not tasty. Trolls like it. Eat it up much. They eat too much froggy. Me glad [Nerbilik] leave Neriak!! He eat way too much froggy.' 
+
+You say, 'Who is Chef Dooga?' 
+
+: The Gobbler says 'Friend in Oggok is Chef Dooga. Chef she is. Used to work in Neriak. She beautiful. She supply the Gobbler with [froglok legs]. They very low now. Fat trolls eat too many!! Me need to [pick up froglok legs].' 
+
+You say, 'I will pick up froglok legs.' 
+
+: The Gobbler says 'That good news. Oggok far away. Me got no time to go. If you go speak to Chef Dooga, say you pick up froglok legs. You bring back and me give you coin, maybe even something good.' 
+
+Upon turning in the Preserved Leg:
+
+The Gobbler says 'Uggh!! Froglok legs!! Me hate smelly legs, but me need it for fat trolls.' 
+
+<div class="facblock">
+* Your faction standing with [[Neriak Ogre]] got better.
+</div> 
+{{YouGainExperience}}
+You receive 3 gold from The Gobbler. 
+
+'''You also receive [[Ogre Butcher Gloves]].'''
+
+You say, 'Who is Nerbilik?' 
+
+: The Gobbler says 'Big and fat troll Nerbilik is. He leave to fish in tearsy ocean. Me promised to deliver him food or he come bak. The Gobbler needs some dumb person to [deliver grub locker] to Nerbilik.' 
+
+You say, 'I will deliver grub locker.' 
+
+: The Gobbler says 'Good. Me wrap order of dwarf pickles in.. HEY!! Me out of special wrapping paper!! Hmm.. Here. Me use dis. Now,  Here. You take to Nerbilik in tearsy ocean and he pay you. No think of opening locker. Only Nerbilik has key.' 
+
+You receive "Grub Locker".
+
+'''Find [[Nerbilik]] in the Ocean of Tears at location +125, +9300.'''
+
+You say, 'Hail, Nerbilik' 
+
+: Nerbilik says 'What you want?!! Face so ugly you scare fish away!! ..sniff, sniff. Smell so bad, too!! Me sure is hungry. Wish had [grub locker].' 
+
+You say, 'What grub locker?' 
+
+: Nerbilik says 'You gots grub locker!! Give to me. Me sick of fish and not many dwarves fall off ship. Me pay a plat to get me grub locker from the Gobbler in Neriak. Go to him and say you [deliver grub locker] if you wants one plat.' 
+
+'''Upon turning in the Grub Locker:'''
+
+: Nerbilik says 'Oooh!! Grub locker!' There is a loud click. He opens the locker and unwraps dwarf pickles. 'What this dumb wrapper? R, E, C, I, P, E.. Ahh!! It say pickles!! Me read good. Here your plat. Me give you little more. Me was very hungry for pickles." 
+
+<div class="facblock">
+* Your faction standing with [[DaBashers]] got better.
+* Your faction standing with [[Grobb Merchants]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+</div> 
+{{YouGainExperience}}
+You receive 2 platinum from Nerbilik. 
+
+You say, 'Give me the wrapper.' 
+
+Nerbilik says 'You no get my wrapper!! Me use it later when me needs to make more room in stomach!! You never get it!!' 
+
+Attack and slay Nerbilik.
+
+Nerbilik says 'I shall pluck you limb from limb!!' 
+
+<div class="facblock">
+* Your faction standing with [[DaBashers]] got worse.
+* Your faction standing with [[Broken Skull Clan]] got better.
+</div> 
+
+: Nerbilik's corpse says 'Curse you!! Da bashers will have yer head.' 
+
+Nerbilik drops a [[Tattered Recipe]]. The text is as follows:
+
+ HEHE Recipe By Chef Dooga WUN - HUMAN FLESH WUN - ERUDITE FLESH WUN -
+ HIGH ELF FLESH BOILS WIT WUNFLAMING PUNGLA IN DA OVEN. EATS!!
+ Impoortent!! Must get flesh froms Innathoole 
+
+''[[HEHE Meat]] can be purchased from Chef Dooga in Oggok.  Give Carver Cagrek three of these, and the recipe from Nerbilik.''
+
+: Carver Cagrek says 'Yous a maroon or what! Me says bring back THREE HEHE meat and HEHE recipe!' 
+: Carver Cagrek says 'Yous a maroon or what! Me says bring back THREE HEHE meat and HEHE recipe!' 
+: Carver Cagrek says 'Yous a maroon or what! Me says bring back THREE HEHE meat and HEHE recipe!' 
+: Carver Cagrek says 'Finally! What takes yous so long? Now carver Cagrek try and makes meat and feeds to trolls. Yous getting to be deputy carver. Mes give you a Grobb cleaver! Make strong and smarts on you it will. Just like carver Cagrek.' 
+
+<div class="facblock">
+* Your faction standing with DaBashers has gotten better.
+* Your faction standing with Broken Skull Clan has gotten worse.
+{{exp}}
+</div>
+
+You receive 3 platinum from Carver Cagrek.
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Warrior Quests]]
+[[Category:Shadow Knight Quests]]

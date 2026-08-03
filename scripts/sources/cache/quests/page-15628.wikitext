@@ -1,0 +1,64 @@
+{{Velious Era}}
+
+[[File:npc_lendiniara_the_keeper.png|frame|Lendiniara the Keeper]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Lendiniara the Keeper]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Grozzmel]], [[Krigara]], [[Lepethida]], [[Midayor]], [[Ymmeln]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Silver Bracelet of Speed}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Lendiniara the Keeper'
+
+: Lendiniara the Keeper says 'Greetings Ayama . I am the keeper of relics. If you are brave I have tasks to test your might and perhaps rewards. 
+
+You say, 'What rewards?'
+
+: Lendiniara the Keeper says 'One should ask of the tasks before worrying about rewards, Dark Elf.' 
+
+You say, 'What tasks?'
+
+: Lendiniara the Keeper says 'Enter into the halls of testing to complete these tasks. Seek out the ancient ones inside and see if your might is as great as theirs and fear not, those who you slay will be returned to the temple by the gift of Veeshan's great power. I have three tasks, which any may complete, as well as a request of both the arcane and the strong. 
+
+You say, 'what request of the three?'
+
+: Lendiniara the Keeper says 'Tears from the cursed you much seek for each task. The test of the Ruby Tear, the test of the Platinum Tear and the test of the Emerald Tear await all who wish to partake of them. 
+
+You say, 'What test of the platinum tear?'
+
+: Lendiniara the Keeper says 'Seek the platinum tear and three symbols to bind its powers to a bracelet. The black symbol to add raw power, the serrated symbol to enchant its powers and the runed symbol to hold the powers to the bracelet.
+
+== Related Items ==
+<ul><li>{{:Platinum Tear}} </li></ul>
+<ul><li>{{:Black Symbol}}</li></ul> ([[Krigara]] or [[Ymmeln]])
+<ul><li>{{:Serrated Symbol}}</li></ul> ([[Lepethida]])
+<ul><li>{{:Runed Symbol}}</li></ul> ([[Grozzmel]] or [[Midayor]])
+
+== Related Quests ==
+<ul><li>[[Test of the Emerald Tear]]</li></ul>
+<ul><li>[[Test of the Ruby Tear]] </li></ul>
+
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:All Classes Quests]]

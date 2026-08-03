@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_zulort.png|200px|frame|Zulort]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Zulort]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dirty Patched Fur Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating an Ogre Shaman, you will have a tattered note in your inventory. The note reads as follows:
+
+: Find Zulort. . .Give note. . .Follow Zulort. . .Follow Greenbloods.
+
+Upon handing the note to [[Zulort]]:
+
+: [[Zulort]] says, 'Take, take.. You now Shaman of War.. Zulort make you majik, too. When you [gonna help] u tell Zulort.'
+
+<div class='facblock'>
+* Your faction standing with [[Shamen of War]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Dirty Patched Fur Tunic*]]. Good luck, Shaman!
+
+[[Category:Quests]]
+[[Category:Oggok]]
+[[Category:Shaman Quests]]

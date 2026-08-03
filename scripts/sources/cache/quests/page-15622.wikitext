@@ -1,0 +1,46 @@
+{{Velious Era}}
+[[File:npc_sentry_kcor.png|frame|Lieutenant Milven]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Kcor]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+Note: You can do turn-ins for this quest as low as dubious (he just won't talk to you). Currently Helmets are turned into Sentry Kcor for Claws of Veeshan and Yelinak faction.
+
+Upon turning in a [[Giant Warrior Helmet]] (You can turn in one at a time or four at once):
+
+The message you get seems to depend on your faction.
+
+: Sentry Kcor says, 'Very good, you are on your way to proving yourself.' - Ally and Warmly
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better. +15
+* Your faction standing with [[Yelinak]] got better. +3
+* Your faction standing with [[Kromzek]] got worse. -7
+</div>
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,129 @@
+{{Classic Era}}
+[[File:Toxx skelly miners.png|right|400px|thumb|abandoned heretic pet says 'Speed up the digging my pets!!']]
+{| class="questTopTable"
+!''' Start Zone: '''
+| [[Toxxulia Forest]]
+|-
+!''' Quest Giver: '''
+| [[a skeleton (miner)]]
+|-
+!''' Minimum Level: '''
+| 2+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+!''' Related NPCs: '''
+| [[A kobold scout (Toxxulia)|a kobold scout]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Bone Shield}}
+</li><li> {{:Fractured Femur}}
+</li><li> {{:Bone Chips}}
+</li><li> {{:Zombie Skin}}
+</li><li> Experience (about half a blue at level 5), {{:Carnelian}}, {{:Amber}}, {{:Jade}}, {{:Hematite}}, {{:Jasper}}, {{:Lapis Lazuli}}, {{:Emerald}}, possibly other gems
+</li></ul>
+
+== Walkthrough ==
+
+"Skeletal miners" are at the zoneline of Paineel in southern Toxxulia. Observe their back-and-forth dialogues:
+
+:[[abandoned heretic pet]] says 'Blast you skeletons!  Why I ever ressurected you, I don't know!!'
+:abandoned heretic pet says 'Speed up the digging my pets!!'
+:[[a skeleton (miner)]] says 'We are not your pets!!'
+:a skeleton says 'We will speed up when you return our mining caps. There are falling rocks all over this place!! We could get killed!!'
+
+[[Useless Cloth Cap]] can sometimes be looted from [[a kobold scout (Toxxulia)|a kobold scout]]. Take a Cap to the two skeleton miners (or the abandoned heretic pet) at the entrance to [[Paineel]].
+
+;Talrigar Eklorin
+[[Talrigar_Eklorin|Talrigar]] wanders the Paineel side of the river in Toxxulia.  When he is near [[a skeleton (miner)]] you may sometimes observe the following dialogue:
+: Talrigar Eklorin says 'How many times must I remind you,.. YOU ARE ALREADY DEAD!! I shall find a young apprentice to [seek out the mining caps].'
+When hailed the following dialogue becomes available
+You say, 'Hail, Talrigar Eklorin'
+:Talrigar Eklorin says, 'This is no place for adventures of any sort. You had best leave before your bones join in on my private task. Heed my words, unless of course you are a [practitioner of the black arts]'
+You say, 'I am a practitioner of the black arts'
+:Talrigar Eklorin says, 'So you are a fellow necromancer? You have chosen the most powerful circle of magic. You are wise. I seek to employ a young necromancer to [seek out two mining caps]'
+You say, 'I will seek out two mining caps'
+:Talrigar Eklorin says, 'Somewhere within this forest are two Mining Caps. They are nothing more than cloth caps which I used to fake my summoned pet's working within the cave nearby. They were stolen by a couple of kobold scouts. Return these caps to me and I shall reward thee. Maybe even with knowledge of Necromancy.'
+Upon turning in '''TWO''' [[Useless Cloth Cap]]:
+:Talrigar Eklorin says, 'Good work. I can now silence the continual whining of my skeletons. Here young apprentice, your reward. Ask for nothing more.'
+
+{{exp}}
+
+''NOTE: Unlike the abandoned heretic pet and the skeletal miners, choosing to turn in caps with Talrigar gives the following faction hits:
+Heretics improves, while High Council of Erudin, Craftkeepers, Crimson Hands, and Gatecallers each decrease. 
+
+[[File:Talrigar_Useless_Cap_Pair.jpg]]
+
+~~Be cautious if you are a good-aligned character as these factions may be difficult to repair.~~''
+
+''You receive a low-level item (possibly low level Necromancer Spell?)''
+
+;Abandoned heretic pet
+
+The abandoned heretic's pet wanders a path from the wall to the "porch" at [[Paineel]].
+
+<span style="color:#008000">abandoned heretic pet glowers at you dubiously -- You could probably win this fight.</span>
+
+Upon turning in Useless Cap:
+
+:abandoned heretic pet says, 'Good work, you should be running this operation instead of that [[Talrigar Eklorin|Talrigar]] fellow. Have a small reward. A little bit of the gems I found while tunneling through this rock.'
+
+{{exp}}
+
+''You receive a low-level gem ([[Amber]], etc)''
+
+;Lefthand Busy skeleton
+
+<span style="color:#008000">a skeleton glares at you threateningly -- You could probably win this fight.</span>
+
+* ''NOTE: a skeleton will attack if hailed or if too close''
+* ''NOTE: couldn't do turn in at Threateningly, had to [[sneak]] to succeed''
+
+You say, 'Hail, a skeleton'
+
+: a skeleton says, 'Can't you see we're busy here?!!'
+
+<span style="color:#008000">a skeleton regards you '''indifferently''' -- You could probably win this fight.</span>
+
+Upon turning in Useless Cap:
+
+a skeleton says, 'Good work, you should be running this operation instead of that Talrigar fellow. Have a small reward. A little bit of the gems I found while tunneling through this rock.'
+
+{{exp}}
+
+''You receive a low-level gem ([[Onyx]], etc)''
+
+;Righthand skeleton
+
+<span style="color:#008000">a skeleton glares at you threateningly -- You could probably win this fight.</span>
+
+* ''NOTE: a skeleton will attack if hailed or if too close''
+* ''NOTE: couldn't do turn in at Threateningly, had to [[sneak]] to succeed''
+
+You say, 'Hail, a skeleton'
+
+:a skeleton says, 'Grab a pick. Give us a hand!!'
+
+<span style="color:#008000">a skeleton regards you '''indifferently''' -- You could probably win this fight.</span>
+
+Upon turning in Useless Cap:
+
+: a skeleton says, 'Aye.. You cut out the middleman..  I shall reward you.. hmm..  I have not found anything, how about..  <CRACK!! SNAP!! RIPP!!>  How about something off meself?'
+
+{{exp}}
+
+''You receive an undead item ([[Bone Chips]], [[Zombie Skin]], etc)
+
+Note: This quest does not affect any faction unless you give caps to Talrigar, and can be completed at dubious faction. Good-aligned Erudites CAN successfully turn in to the heretic pet, who wanders outside of the tunnel.
+
+Gave 10% experience at level 3.
+
+[[Category:Quests]]
+[[Category:Toxxulia Forest]]
+[[Category:All Classes Quests]]

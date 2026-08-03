@@ -1,0 +1,76 @@
+{{Velious Era}}
+
+[[File:npc_wenglawks_kkeak.png|frame|Wenglawks Kkeak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Wenglawks Kkeak]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Iceclad Ocean]]
+|-
+! ''' Related NPCs: '''
+| [[Kellek Felhammer]], [[Sojan the Sleepless]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Engraved Bone Pauldrons}}
+</li></ul>
+
+== Walkthrough ==
+
+''This is the first in a series of three quests including [[Spear Delivery]] and [[Mechanical Net Delivery]]. The player may skip this optional quest and start either of the others.''
+
+Wenglawks Kkeak regards you indifferently -- You would probably win this fight..it's not certain though.
+
+You say, 'hail Wenglawks Kkeak'
+
+: Wenglawks Kkeak says 'Greetings, Kabal , I have heard of you.  My name is Wenglawks Kkeak.  Welcome to my humble home.  My sources tell me you are a mercenary.  Is this true? 
+
+You say, 'I am a mercenary'
+
+: Wenglawks Kkeak says 'Well then, I suppose you might be looking for work.  Are you? 
+
+You say, 'I am looking for work'
+
+: Wenglawks Kkeak says 'I have been looking for a few good people to deliver goods for me.  I have several deliveries to clients which must be made soon.  My last delivery person ended up dead, unfortunately.
+
+You say, 'I will deliver package for you' 
+
+: Wenglawks Kkeak says 'Wonderful, Kabal .  Take this note to Kellek and he will give you the tools. 
+ 
+<b>Give the note to Kellek Felhammer in the next room and he gives you a Coldain Toolset.</b>  YOU NEED MORE THAN DUBIOUS FACTION - Take the toolset to Sojan in Iceclad (Gnome Igloos). Fatties will need an Ant Potion in order to enter the igloo or get someone to pull Sojan outside.  Sojan will give you a receipt for Wenglawks that when returned will yield the Engraved Bone Pauldrons.
+
+There are no faction effects for this quest.
+
+Sojan the Sleepless /loc 4541 1283
+
+You say, 'Hail, Sojan the Sleepless'
+
+Sojan the Sleepless stares at you through bleary eyes. 'I get enough conversation from my wife. If ya want water or biscuits, buy em! Otherwise, leave me alone!'
+
+<b>Give the toolset and he will fall asleep and drop the receipt on the floor!</b>
+
+Sojan the Sleepless says, 'Uhh, thank you.. Now I can uh... work on fixing some things around.. Sonaj seems to nod off for a moment as he drops a small note on the ground.'
+
+(no faction changes) You gain experience!
+
+<b> Give the receipt back to Wenglawks Kkeak.</b>
+
+Wenglawks Kkeak says, 'I assume the delivery went well? You can have these as payment. One of my customers just decided he does not wish to buy them. They are rather sturdy! I do have another task available if you wish to [undertake] it.'
+
+(no faction changes) You gain experience!
+
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

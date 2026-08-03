@@ -1,0 +1,63 @@
+{{Velious Era}}
+
+[[File:npc_wenglawks_kkeak.png|frame|Wenglawks Kkeak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Wenglawks Kkeak]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| Rogue
+|-
+! ''' Related Zones: '''
+| [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Bekerak Coldbones]], [[Kellek Felhammer]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bracer of Midnight}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest is the second in a series of three quests, following the [[Toolset Delivery]] quest. The third quest, [[Mechanical Net Delivery]], can be started and completed without doing either of the others.''
+
+Wenglawks Kkeak regards you indifferently -- You would probably win this fight..it's not certain though.
+
+You say, 'I wish to undertake it'
+
+: Wenglawks Kkeak says 'In the great divide there is a small outpost of kromrif.  In that outpost you will find Bekerak, my client.  I have acquired this new hunting spear for him and he may wish to test it out.  Because of one simple mistake, once in my past, he thinks all of my wares are shoddy.  I need the payment for the transaction still so don't let him get away without giving it to you.  Take this voucher to Kellek and he will give you the spear.' 
+ 
+<b>Take the note to Kellek Felhammer in the next room. He will give you a spear.</b>
+
+<b>Take the spear to Bekerak Coldbones at the Kromrif outpost in Great Divide. Doing so will spawn an angry shardwurm.</b>
+
+Bekerak Coldbones says, 'Well, well, I see Wenglawks finally got around to sending me my new spear. I hope it's not as shoddy as the last one. Your payment? Bahaha, did Wenglawks not tell you? Payment was to be a giant icewurm tooth carved into an amulet. Come now, little one. I will find an ice wurm for us to slay together. Then you can pull one of it's teeth out for me and I will fashion the talisman for that greedy merchant.'
+
+[[An angry shardwurm]] spawns where Bekerak is, as a level 55 it seems to con a light blue (green with extra text). Is solo'able for melee with proper gear, has a ton of HP ~6575 and max hits at 101. No faction hits when the wurm dies.
+
+<b>Give the [[Giant Shard Wurm Tooth]] to Bekarak.</b>
+
+Bekerak Coldbones pulls out a large knife and begins to carve at the tooth. After a few minutes he pulls out a length of rope and fashions it into a very large necklace. 'Here is his payment. Tell him the spear is fine, and that I might reconsider his last offer to me. He will know what I mean.'
+
+You receive a Giant Icewurm Talisman.
+
+'''Give Wenglawks Kkeak the Giant Icewurm Talisman.'''
+
+Wenglawks Kkeak says, 'He has reconsidered the offer you say? This is most excellent! I hope this will be acceptable payment for your troubles. My cash situation is not the best at this point in time. I do have a [third client] who needs delivery...'
+
+{{exp}}
+
+You receive Bracer of Midnight.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Rogue Quests]]

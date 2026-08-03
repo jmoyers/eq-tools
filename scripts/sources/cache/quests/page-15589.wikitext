@@ -1,0 +1,87 @@
+{{Classic Era}}
+[[File:npc_bumle_reminjar.png|frame|Bumle Reminjar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Bumle Reminjar]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a Krag Chick]], [[an aviak chick]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Small Patchwork Boots}}
+</li><li> {{:Small Patchwork Cloak}}
+</li><li> {{:Small Patchwork Pants}}
+</li><li> {{:Small Patchwork Sleeves}}
+</li><li> {{:Small Patchwork Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Bumle Reminjar]] is located at 1382, 132, 39 in the dining hall of the Paladin guild. <s>You must have Amiable faction to complete this quest</s>'' <br>''Completed with indifferent faction, even though Bumle will not give all of the quest details when spoken to. Required amiable as agnostic half-elf bard as of May 2023. Required amiable as Tunare Wood Elf Druid as of July 2023.''<br><br>
+
+You say, 'Hail, Bumle Reminjar'
+
+: Bumle Reminjar says, 'Welcome, ______. The Cathedral of Underfoot welcomes all good persons. May you find peace from the dangers of Butcherblock within these walls. The paladins of this holy place are very much aware of the evils outside Kaladim. The threat of goblins and [birdmen] has increased.'
+
+You say, 'What birdmen'
+
+: Bumle Reminjar says, 'The birdmen I speak of are the aviak krags. These vile creatures have desecrated our land. They have dared to perch upon our great statue. The king has instructed all noble paladins in this order to [destroy the krag chicks].'
+
+You say, 'I will destroy the krag chicks'
+
+: Bumle Reminjar says, 'Yes. You are known to have aided our cause. You shall continue by returning any aviak chick talons to me. I will reward you for the return of no fewer than four at a time. Go, and serve the will of the king!'
+
+''Upon the death of [[a Krag Chick]] or [[an aviak chick]]''
+
+<div class="facblock">
+* Your faction standing with [[Krag]] got worse.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+'''Hand [[Bumle Reminjar]] 4 [[Aviak Chick Talon]]s, randomly looted from [[a Krag Chick]] or [[an aviak chick]] roaming throughout the [[Butcherblock Mountains]]'''
+
+: Bumle Reminjar says, 'Well done, ______! Thanks for the Aviak Chick Talons.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Underfoot]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 1 random piece of Small Patchwork armor
+
+== Related Quests ==
+
+* [[Aviak Talons]]
+
+== Experience Amounts ==
+
+10% for a level 4 druid, ~3% for a level 9 rogue
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

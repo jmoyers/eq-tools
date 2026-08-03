@@ -1,0 +1,58 @@
+{{Kunark Era}}
+[[File:npc_captain_keatar.png|frame|Captain Keatar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Keatar]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin watcher]], [[a goblin hunter]], [[a goblin outrider]], others
+|}
+
+== Reward ==
+
+<ul><li>  Minor Items (e.g, [[Wooden Shield]] and 8 gold)
+</li></ul>
+
+== Walkthrough ==
+
+
+Captain Keatar may be found at -3440, 3320 in the Ranger guild building.
+
+Captain Keatar tells you that the goblin raiders have been quite a nuisance to his trackers.   Bring him proof that you have taken at least four of these beasts down and you will earn the respect of this outpost and insure your well being.   The raiders and other goblins sometimes drop [[Red Headband (Kunark)|Red Headbands]].  
+
+Captain Keatar says, 'Hail!! Beware of the [goblin raiders] roaming the plains outside of Firiona Vie. They have cause much trouble and continue to assault this outpost.'
+
+Captain Keatar says, 'The goblin raiders have been quite a nuisance to my trackers. I implore you to aid my men and lessen the presence of the vile beasts. Bring me proof that you have taken at least four of these raiders down. You shall earn the respect of this outpost and insure your own well-being.'
+
+Note: if you don't hand in all four headbands at once he will eat them.
+
+Handing in the four [[Red Headband (Kunark)|Red Headbands]] gets you:
+
+Captain Keatar says, 'You serve this outpost well. Here is a small reward. You should try and hunt down [[Goblin Battlemasters]]. I have very few resources to send into the plains to track them down. Perhaps you can help us.'
+
+<div class="facblock">
+* Your faction with [[Inhabitants of Firiona Vie]] has gotten better.
+* Your faction with [[Emerald Warriors]] has gotten better.
+* Your faction with [[Storm Guard]] has gotten better.
+* Your faction with [[Legion of Cabilis]] has gotten worse.
+* Your faction with [[Pirates of Gunthak]] has gotten worse.
+</div>
+{{YouGainExperience}}
+
+Need list of quest rewards.
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:All Classes Quests]]

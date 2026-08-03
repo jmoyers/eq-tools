@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_ranjor.png|frame|Ranjor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Ranjor]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Paladin]], [[Ranger]], [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[a froglok tad]], various [[froglok|frogloks]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rusty Two Handed Battle Axe}}
+</li></ul>
+
+== Walkthrough ==
+
+''Ranjor is located up a set of stairs, near the bridge leading to the Gunthak's Belch tavern.''
+
+You say, 'Hail, Ranjor'
+
+:  Ranjor says, 'Ya wanna be a member a Da Bashers. duz ya? What making ya tink yooz is good nuff ta be one o' us? Can ya proves ta me why I shouldn't oughtta just eat yer smelly hide? I gonna tests ya, ya big, ugly peece o' meet. Ya [willin ta test] or duz I just eats ya now?'
+
+You say, 'I willin ta test.'  (Note: The phrase "I'm willing to test" also works if you feel like being all grammatically correct about it.)
+
+:  Ranjor says, Stoopid meat.  I gonna eats ya anyways sumday. Brings me a froglok meat and two dem li'l froglok tadpole fleshes. Dey berry good.'
+
+'''Obtain [[Froglok Meat]] and two [[Froglok Tadpole Flesh]]. Give the items to Ranjor.'''
+
+:  Ranjor says, 'Raar..  Ranjor gives yous a good weapon...yous bash stuff better now!'
+
+<div class="facblock">
+* Your faction standing with [[Da Bashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+(Literally 1% at Level 2)
+
+''You receive a [[Rusty Two Handed Battle Axe]].''
+
+== Notes ==
+* This quest is multi-questable.
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Warrior Quests]]

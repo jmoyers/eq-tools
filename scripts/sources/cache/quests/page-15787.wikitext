@@ -1,0 +1,82 @@
+{{Velious Era}}
+[[File:npc_vorken_iceshard.png|frame|Vorken Iceshard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Vorken Iceshard]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Great Divide]]
+|-
+! ''' Related NPCs: '''
+| [[Blizzent]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dragonhide Belt}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail Vorken Iceshard'
+
+: [[Vorken Iceshard]] says 'I am Vorken Iceshard, one of the lords of Iceshard manor.  In this day and age you can never tell where one's allegiances are.  Leave my servants in peace or you may leave in pieces. 
+
+You say, 'what allegiances?'
+
+: Vorken Iceshard says 'Loyalties, of course, little one.  Each day I see more mercenaries come to Kael, seeking their fortunes .  King Tormax will use your kind to wage war on the dragons and upon the Coldain.  But I question the motives of your kind. 
+
+You say, 'I will wage war on the Dragons an Coldain'
+
+: Vorken Iceshard says 'So your cause is to destroy the dragons as King Tormax says?  If you wish to be noticed by King Tormax, you must do great deeds. 
+
+You say, 'I will do great deeds'
+
+: Vorken Iceshard says 'If you expected to come to Kael Drakkel and immediately have an audience with the king, you are a bigger fool than most.  Go out and slay the weaker members of dragonkind.  That might gain his favor.  If you do hunt the wurms and drakes, you may be able to please me as well. 
+
+You say, 'what motives?'
+
+: Vorken Iceshard says 'My motives are simple.  I will acquire as much power and prestige as possible before I die.  Such is life for me, a constant search for power and wealth.  But my great power and wealth have not brought me happiness.   Enough of my motives, what drives you?  A constant search for more power, a search for security and happiness?  Or do you truly believe in the rhetoric of King Tormax which advocates that we eradicate the dragons? 
+
+You say, 'how can I please you as well?'
+
+: Vorken Iceshard says 'In my youth, I was bitten by a very intelligent wurm named Bllizent.  My brother and I were foolish enough to try to slay the great beast.  He tasted my flesh and the flesh of my brother that day and I fear he liked it too much.  I have nightmares of this beast's return to taste me again.  I would rest easier at night if I knew Bllizent was dead and gone.   He will be quite an elderly wurm if he is still alive today. 
+ 
+[[Blizzent]] can be found in the Great Divide, the [[Bllizent's Fang]] that can be returned for the reward.
+
+Hand the Fang in to Vorken:
+
+: Vorken Iceshard says 'So, the beast was still alive! Now I may rest easier knowing my dreams are only my dreams and not a prophecy of his return to finish me off. The king will surely hear of your deeds, Player. Take this belt as a token of my gratitude.
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]
+
+
+{{YouGainExperience}}

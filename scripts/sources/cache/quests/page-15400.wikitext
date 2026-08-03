@@ -1,0 +1,120 @@
+{{Classic Era}}
+[[File:npc_beno_targnarle.png|frame|Beno Targnarle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Beno Targnarle]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Doran Vargnus]]
+|}
+Requires Amiable or better faction, is multiquestable.
+
+== Reward ==
+
+<ul><li> {{:Blackened Iron Armplates}}
+</li><li> {{:Blackened Iron Bracers}}
+</li><li> {{:Blackened Iron Collar}}
+</li><li> {{:Blackened Iron Crown}}
+</li><li> {{:Blackened Iron Legplates}}
+</li><li> {{:Blackened Iron Mail}}
+</li><li> {{:Blackened Iron Waistband}}
+</li><li> {{:Supple Black Cloak}}
+</li><li> {{:Bloodstone Eyepatch}}
+</li><li> {{:Bronze Gauntlets}}
+</li><li> {{:Bronze Bracers}}
+</li><li> {{:Bronze Girdle}}
+</li><li> {{:Bronze Greaves}}
+</li><li> {{:Bronze Breastplate}}
+</li><li> {{:Bronze Pauldron}}
+</li><li> {{:Bronze Vambraces}}
+</li><li> {{:Splinted Bronze Cloak}}
+</li><li> {{:Cloth Cap}}
+</li><li> {{:Cloth Cord}}
+</li><li> {{:Cloth Pants}}
+</li><li> {{:Cloth Sleeves}}
+</li><li> {{:Cloth Veil}}
+</li><li> {{:Large Bronze Bracers}}
+</li><li> {{:Large Bronze Collar}}
+</li><li> {{:Large Bronze Greaves}}
+</li><li> {{:Large Bronze Mask}}
+</li><li> {{:Large Bronze Pauldron}}
+</li><li> {{:Large Cloth Cape}}
+</li><li> {{:Large Cloth Choker}}
+</li><li> {{:Large Cloth Pants}}
+</li><li> {{:Large Cloth Shirt}}
+</li><li> {{:Large Cloth Sleeves}}
+</li><li> {{:Large Cloth Veil}}
+</li><li> {{:Large Ringmail Cape}}
+</li><li> {{:Large Ringmail Coif}}
+</li><li> {{:Large Splinted Bronze Cloak}}
+</li><li> {{:Patch of Shadow}}
+</li><li> {{:Ringmail Coat}}
+</li><li> {{:Ringmail Gloves}}
+</li><li> {{:Ringmail Neckguard}}
+</li><li> {{:Ringmail Sleeves}}
+</li><li> {{:Sleek Black Cape}}
+</li><li> {{:Small Bronze Breastplate}}
+</li><li> {{:Small Bronze Collar}}
+</li><li> {{:Small Bronze Greaves}}
+</li><li> {{:Small Bronze Mask}}
+</li><li> {{:Small Bronze Vambraces}}
+</li><li> {{:Small Cloth Cape}}
+</li><li> {{:Small Cloth Pants}}
+</li><li> {{:Small Cloth Veil}}
+</li><li> {{:Small Ringmail Bracelet}}
+</li><li> {{:Small Ringmail Cape}}
+</li><li> {{:Small Ringmail Coat}}
+</li><li> {{:Small Ringmail Gloves}}
+</li><li> {{:Small Ringmail Mantle}}
+</li><li> {{:Small Ringmail Pants}}
+</li><li> {{:Serpentskin Eyepatch}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest follows [[Cleaner Clockwork]] given by [[Beno Targnarle]], located at 84, 404, 15 in the north turret of the Kaladim Warrior's Guild.''
+
+You say, 'Where is Doran Vargnus'
+
+: Beno Targnarle says, 'Doran resides on an island in the Ocean of Tears. The island is filled with beautiful maidens. I could think of worse places to live.'
+
+[[File:npc_Doran_Vargnus.png|frame|Doran Vargnus]]
+
+''[[Doran Vargnus]] is located at 1287, -9244, 43 in a small camp on the west side of the Island of the Sisters of Erollisi, in the [[Ocean of Tears]]**(See Note at bottom).''
+
+You say, 'Hail, Doran Vargnus'
+
+: Doran Vargnus says, 'Well 'ello thar! I'm Doran Vargnus, chief armor smith to the court 'o Kaladim.'
+
+'''Hand [[Doran Vargnus]] a [[Knight Card]].'''
+
+: Doran Vargnus says, 'Ahh!! You must have been sent by Beno of the Stormguard. I have been wondering when he would return my card. I have not been playing with a full deck. How about a reward? Hmm. Let's see what I have lying around.. Here!! Take this. I cannot possibly give you any of my good armor.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]
+
+
+**Doran Vargnus is very frequently charmed by Enchanters as a pet and will not be at his location in the tent.  You either have to wait until they release him or he dies and respawns.

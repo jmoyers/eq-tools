@@ -1,0 +1,59 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_xeture_demiagar.jpg|frame|Xeture Demiagar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Quest Giver: '''
+| [[Xeture Demiagar]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos Catacombs]]
+|-
+! ''' Related NPCs: '''
+| [[Xeture Demiagar]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Ruined Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Xeture Demiagar]] is located at 357, -620 in the Shrine of Bertoxxulous Guild Hall.''
+
+You say, 'Hail, Xeture Demiagar'
+
+: Xeture Demiagar says, 'I have much to do here for the defense of our Temple and the appeasing of our patron Bertoxxulous, the Plague Lord. If the Plague Lord has gifted you with the desire to [serve his will] as a priest of the Bloodsabers I will assist in your training. If not, then leave me now and do not interrupt me again.'
+
+'''Hand [[Xeture Demiagar]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Your fate lurks in disease and bile, the blood of Bertoxxulous. Beneath the Grounds of Fate Arena, the rotting bones of fallen warriors mark the entrance to the underworld. In these shadowy depths, lurk the Bloodsabers and other minions of the Lord of Disease. Seek out Xeture Demiagar, he shall initiate you into this circle of darkness that eats away at the world above.</code>
+
+: Xeture Demiagar says, 'Hmm. Another rat has found its way to my doorstep, huh? Well, we may have use for you. Go find Rihtur, maybe he has an errand for you.'
+
+<div class="facblock">
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Priests of Life]] got worse.
+* Your faction standing with [[Knights of Thunder]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Qeynos Aqueducts]]
+[[Category:Cleric Quests]]

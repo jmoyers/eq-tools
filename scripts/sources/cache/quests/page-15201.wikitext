@@ -1,0 +1,75 @@
+{{Classic Era}}
+:''For the overview of the many muffin quests, see [[Muffin Quests]].''
+[[File:npc_pandos_flintside.png|right|400px|Pandos Flintside]]
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Pandos Flintside]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Rewards ==
+
+<ul><li>Faction</li></ul>
+
+== Walkthrough ==
+'' Muffins can be bought in West Freeport from [[Pincia Brownloe]] (-276, -698).''
+
+'''Note: If Lady Shae is not KoS to you, then it is possible to do this quest at any faction with Pandos as long as you have the ability to go invisible or hide. Cast invisbility and make your way into Lady Shaes' room. If you stand in the corner of Lady Shaes' room at Loc (-206.42, -507.30, -10.87), Pandos will not aggro you no matter what level you are. By opening the door, you can then hand him 1 muffin. The give box will then come up, and the door can close but you will still be able to put more muffins into the slots. Once all four slots have been filled with muffins, you can then cast invisibility on yourself, or activate the hide ability. Con Pandos, and make sure that he is indifferent to you. When he is, press the give button.'''
+
+'''If you make the mistake of moving from the corner, Pandos will most likely attack you. Be careful, and happy factioning!'''
+
+''Pandos Flintside may be found at +100, -615 in the Hogcaller's Inn.''
+
+You say, 'Hail, Pandos Flintside'
+
+Pandos Flintside says 'Greetings! Please move along. I am not paid to converse with strangers... unless of course you have a muffin or two..?'
+
+''Give him a [[Muffin]].''
+
+Pandos Flintside says 'Mmmm. This smells delicious. Oh great!! No milk!! Don't you have any sense?! Just tell me the name of the bakery and I will run and get it myself. I am sure Lady Shae will be safe.'
+
+<div class="facblock">
+*Your faction standing with [[Faydarks Champions]] got better. (+5)
+*Your faction standing with [[King Tearis Thex]] got better. (+5)
+*Your faction standing with [[Clerics of Tunare]] got better. (+5)
+*Your faction standing with [[Soldiers of Tunare]] got better. (+5)
+*Your faction standing with [[Crushbone Orcs]] got worse. (-1)
+</div>
+
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span> 
+
+*Faction for quest is per 1 muffin so when u turn in 4 muffins thats +20 factions u want and -4 to Orcs*
+
+If you tell him you got the muffins at the Brownloe bakery, he'll go there. As soon as he leaves, this ward comes out and will talk to you. This dovetails into the [[Hogcaller's Inn]] Quest.
+
+== Faction Gains - Personal Experience ==
+
+53 Halfling Druid: 660 muffins took me from Apprehensive to Kindly. 8/19/2022
+
+22 Iksar Monk: ~1200 muffins took me from KOS to Apprehensive, ~900 to dubious 5/8/2023 -- Pandos is red at this level and hits for about 50. It is possible to run to the corner inside the door and FD then sneak to hand in at KOS/Threatening.
+
+== Related Quests ==
+
+* [[Ranger Epic Quest]]
+* [[Hogcaller's Inn]]
+
+[[Category: Quests]]
+
+[[Category:West Freeport]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

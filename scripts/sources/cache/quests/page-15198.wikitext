@@ -1,0 +1,79 @@
+{{Temple Era}}
+[[File:npc_vurgo.png|frame|Vurgo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vurgo]]
+|-
+! ''' Minimum Level: '''
+| ??
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Lake Rathetear]], [[Permafrost]]
+|-
+! ''' Related NPCs: '''
+| [[a shadowed man]], [[Cyanelle]], [[an icy goblin]]
+|} 	
+
+== Reward ==
+
+<ul><li>  {{:Words of Darkness}}
+</li></ul>
+
+== Walkthrough ==
+(I was able to turn this in as an Iksar with the starting faction to Temple of Sol Ro.)
+
+You say, 'Hail, Vurgo'
+
+:Welcome! I am Vurgo, follower of Solusek Ro and holder of the [harvester] and the [Words of Darkness].'
+
+You say, 'What Words of Darkness?
+
+:Vurgo says, 'I can scribe for you the Words of Darkness, but you will need to bring me the correct [word components].'
+
+You say, 'What word components?'
+
+:Vurgo says, 'The first thing that I need is a shadowed book from our mortal enemies, the shadowed men.'
+
+'''Hand Vurgo the [[Shadowed Book]].'''
+
+:Vurgo says, 'A shadowed book! Well done! The more banished shadowed men the better. As the items of the shadowed men tend to disappear, I have given you a note to remind me that you have indeed supplied me with a book. Give me the note with the following items, and I will scribe for you Words of Darkness: a book of darkness from the Erudites in the tower by Lake Rathe, a book of frost from the icy goblin in Permafrost Keep and 300 golden coins. Bring me these items, and I will scribe for you the Words of Darkness.'
+
+''Vurgo gives you a [[Note]].''
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Hand Vurgo the following items:'''
+* [[Note]] from turning in the [[Shadowed Book]]
+* [[Book of Darkness]] from [[Cyanelle]] in [[Lake Rathetear]]
+* [[Book of Frost]] from [[an icy goblin]] in [[Permafrost]]
+* 300 gold coins
+
+:Vurgo says, 'All of the necessary components for me to scribe the Words of Darkness! Very good, adventurer. Take your tome, you have earned it.'
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Drop Rate Notes ==
+
+* [[Shadowed Book]] is a very rare drop off of any of the shadowed men in any zone. It can take a couple of hours to farm this piece.
+
+* [[Book of Frost]] (drops off of [[An icy goblin]] in Permafrost); the center mob in the room, PHs are as other mobs in the jail. 
+
+* [[Book of Darkness]] (drops off of [[Cyanelle]] in Lake Rathe); she is in the building on the top right island in the lake and the drop rate is common, but not always. [[Eldreth]] stands next to her and will assist.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Necromancer Quests]]

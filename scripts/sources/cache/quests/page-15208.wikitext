@@ -1,0 +1,930 @@
+{{Epics Era}}
+[[File:shamanepic.jpg|400px|thumb|Spear of Fate]]
+[[File:shamanepic.jpg|thumb|200px|Spear of Fate]]
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| Various
+|-
+! ''' Quest Giver: '''
+| [[a lesser spirit]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Shield of Falsehood}}
+</li><li> {{:Black Fur Boots}}
+</li><li> {{:Spear of Fate}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* Begin quest by talking to [[a lesser spirit]] after killing one of the mobs in RM, OoT, BBM, or FoB, receive [[Tiny Gem]] from a Lesser Spirit (do not kill him).
+* Take gem to North Freeport and give the gem to [[Bondl Felligan]] who will lead you to the Jade Tiger and spawn Greater Spirits.
+* Talk to the proper Greater Spirit for your god until you get an [[Opaque Gem]].
+* Test of Patience in [[Erud's_Crossing|Erud’s Crossing]], receive a small gem from a Greater Spirit.
+* Turn gem into [[a wandering spirit]] in West Karana.
+* Kill [[Glaron the Wicked]] (drops [[Envy]] & [[Woe]]) and [[Tabien the Goodly]] (drops [[Marr's Promise]]) in [[Rathe Mountains]].
+* Take Envy, Woe, and Marr’s Promise to the Wandering Spirit in West Karana (generally between Qeynos hills and bandit camp in the mountains,) receive [[Shield of Falsehood]] and gem in return.
+* Take gem to [[Spirit Sentinel]] in Emerald Jungle.
+* Kill [[Black Dire]] in Mistmoore (minimum level 5 to zone into Mistmoore), loot [[Black Dire Pelt]].
+* Turn in pelt to [[Spirit Sentinel]] in Emerald Jungle (you need faction for this turn in) Receive [[Black Fur Boots]]! Get 6 slot booklet from the spirit.
+* Collect 6 reports from the City of Mist for booklet. (turn in is KINDLY or better)
+* Combine and turn in completed booklet to [[Spirit Sentinel]] in Emerald Jungle.
+* Kill [[Lord Ghiosk]] in the City of Mist and loot the 3 books.
+* Turn in books to Spirit (in lake) in Emerald Jungle.
+* Obtain [[Icon of the High Scale]] from the City of Mist (ground spawn in the temple).
+* Give Icon to [[High Scale Kirn]] in the Hole, kill him and loot his ring.
+* Give the ring to [[Neh`Ashiir]] in the City of Mist, kill her, loot her diary.
+* Turn in the diary to [[Spirit Sentinel]] in Emerald Jungle.
+* Go to Fear to kill the [[Iksar Broodling]], loot [[Child's Tear]] (random spawn from killing Golems, slay either [[Dread]], [[Fright]], or [[Terror]]).
+* Give the tear to [[Lord Rak`Ashiir]] in City of Mist, kill him and loot his [[Iksar Scale]]. '''''YOU NEED ALLY FACTION FOR THIS TURN IN -- JUST NOT MAXED ALLY'''''
+* Take Scale to [[Spirit Sentinel]] wolf in Emerald Jungle '''IN THE POND''' to receive your epic! ''''' YOU NEED MAX ALLY, NOT JUST ALLY'''''
+{{end}}
+
+== Short Faction Walkthrough ==
+
+You can fast track the faction grind by using a gate + resurrection trick near any of the mobs that spawn the lesser spirit for the gem turn in. The method requires three players, the shaman, a cleric, and someone random to hail lock Bondl. Here is how I did it:
+
+Have anyone hail lock [[Bondl Felligan]] in the Jade Tiger Den in [[North Freeport]]. He may spawn in the sewers, or he may spawn at +30, +480 and path to the inn. The person hail locking can keep him there forever. 
+
+Have the shaman doing the turn ins bind right next to Bondl in Freeport.
+
+The shaman doing the turn ins should then head to a location with a mob that once killed spawns [[a lesser spirit]] with the cleric who will be doing the rezzing. We used [[Peg Leg]] in [[Butcherblock Mountains]]. Once there, the shaman can kill themselves by canni'ing down to 0, and will respawn in Freeport. Have the cleric there rez the shaman with a max % rez. You can loot all but one item to keep a corpse on the ground.
+
+With a corpse on the ground near the trigger mob, and your bind in Freeport next to Bondl, you're ready to start the turn ins. Have the cleric pull the mob, in this case [[Peg Leg]], and kill him to spawn the spirit. The shaman should have a macro set up that says "I wish to know more."
+
+Peg Leg notes: a lesser spirit stays up for 5min and Peg Leg Respanws in roughly 50 seconds after spirit despawn.
+
+Simply target the spawned spirit, and hit your macro. He'll hand you a [[Tiny Gem]]. You then Gate to Freeport, and turn the gem into Bondl. The cleric will then cast a 0% resurrection on your corpse, and you'll pop back up next to the spirit in Butcher Block. Simply hit your macro again, and receive another gem. You can canni 2-3 times to get mana back for a gate, and gate again to turn in the gem. Repeat until MAX faction. Just having ally faction will not get you your spear, so unless you get a message saying "Your faction with True Spirit can not get any better," DO NOT do the final turn in! '''YOU ''NEED'' MAX ALLY FOR THE FINAL "Scale" TURN IN. IF YOU DON'T HAVE MAX ALLY, YOUR SCALE ''WILL'' BE EATEN.'''
+
+You can skip the majority of the entire epic quest with your faction maxed. At this point all you need is a [[Child's Tear]] to turn into [[Lord Rak`Ashiir]], triggering the final epic fight. You can also head straight to [[Black Dire]] and kill him for the boots.
+
+==== Faction-Based Completions ====
+
+* If one does the quest with all the steps up to finishing one turn in of CoM pages, it takes 25 turn-ins of Envy, Woe, and Marr's Promise to the wandering spirit in West Karana to reach max Truespirit faction.
+* Ogre Rallos Zek Shaman went from indifferent to max faction by doing the Tiny Gem turn in 13 times, 1 turn in of Woe/Envy/Marr, 1 turn in of 6 CoM letters, 1 turn in of 3 CoM books, 1 turn in of Dire Pelt.
+* Iksar Shaman lvl 14 - 2x turn-ins of Envy, Woe, and Marr's Promise got me to amiable. I then went to turn in the resulting gem from the Wandering Spirit and was also able to complete the Black Fur Boots portion directly afterward (still amiable).
+* Repeating Part 2 - The Drunken Shaman took approximately 76 turn ins of the 'Tiny Gem' to Bondl Felligan to go from start to max faction with Truespirit.
+* For a Rallos Zek Ogre, it only took me 20 hand ins to Bondl Felligan to get to max ally. 
+
+== Long Walkthrough with Dialogue ==
+
+'''Note:''' The entire quest is faction based. This means that you are able to skip the latter parts by doing earlier steps over and over again until you max your True Spirit faction. Once you have max faction, you can go straight to Lord Rak'Ashiir and turn in your child's tear. However, this can be very time consuming and is not recommended.
+
+'''Note:''' DO NOT perform any of the quest turn-ins while using Form of the Bear or Form of the Great Bear. Being in an illusion may bug the quest NPCs to misread your True Spirit faction and cause the quest trigger to fail.
+
+'''Note:''' There is no level restriction for the shaman epic quest. However, you do have to be level 46 to enter the Plane of Fear to get the tear. One can get around this by just having another player turn in the tear for them and then looting the scale. If you are doing this, make sure you both have maxed out your True Spirit faction beforehand using the above method. Be aware also that the spear cannot be equipped until level 46.
+
+=== Part 1 - Beginning the Quest ===
+
+There are several methods to begin the quest, including:
+
+# Kill [[Capt Surestout]] in the [[Ocean of Tears]] at location +800, -5400.
+# Kill [[Blinde the Cutpurse]] in the [[Rathe Mountains]] +3087, +1302 (on cyclops hill).
+# Kill [[Peg Leg]] in the [[Butcherblock Mountains]] at location +260, +1650.
+# Kill [[an iksar manslayer]] in the [[Field of Bone]] (in the marauder cave, pather near the entrance or any of the ones in the back room)
+
+While the information here is gleaned from Capt Surestout, any of the above will yield the same information and the " [[Tiny Gem]] " needed to continue in the quest.
+
+After killing Surestout (he's level 20), [[a lesser spirit]] will spawn where he's killed.
+
+* Capt Surestout died.
+* Your faction standing with [[Pirates of Gunthak]] got worse.
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+
+: Capt Surestout says 'You have run me through! Beware the Pirates of Gunthak.. They will avenge me.. Unngh!!
+: a lesser spirit begins to cast a spell.
+: a lesser spirit's body pulses with energy.
+
+
+You say, 'Hail, a lesser spirit'
+
+: a lesser spirit says 'Did you take this person's life, shaman?'
+
+You say, 'Yes'
+
+: a lesser spirit says 'Why have you taken this person's life? Did he threaten your life? Did you dislike him? Or was his death a profit to you in some way?'
+
+You say, 'He threatened my life'
+
+: a lesser spirit says 'I see. It brings me sadness to see another die, but his heart was black and a great nothingness. His body will become the grass now. Thank you for what you have done, shaman.'
+
+You say, 'Who are you?'
+
+: a lesser spirit says 'What, or who, I am isn't as important as what, or who, WE are. Do you wish to know more, shaman?'
+
+You say, 'I wish to know more'
+
+: a lesser spirit says 'That is good. Take this gem. It is a part of us like the clouds to the sky and is a wonderful gift from the grandfather. Take this gem to where the humans gather to spoil the land and water. Some call it a port. There you will find one of us, a shaman like yourself. Give him the gem and perhaps he will tell you more of the spirits.'
+
+=== Part 2 - The Drunken Shaman ===
+
+'''Head to [[North Freeport]]. Go in the sewers in the northwestern part of town (In the river on the way to WFP, rough loc +304, +431). A little ways in on the inside of a colapsed wall is [[Bondl Felligan]].'''
+
+You say, 'Hail, Bondl Felligan'
+
+: Bondl Felligan burps loudly in your face and says, 'Bah! Leave me be, fool! You have nothin' I want and I certainly have nothin' you want.'
+
+'''Give Bondl the "[[Tiny Gem]]".'''
+
+: Bondl Felligan says 'WOW, thanks! This must be worth a fortune! I could drink for a month after sellin' this to one of them fool merchants. I'm going to see how much I can get for it right now!'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+'''Next, wait for him to move and follow him out of the sewers. There he will stop and speak to you.'''
+
+: Bondl Felligan says 'What!? You don't approve of me buyin' some drinks with this gem? Who the heck are you to offer me a gift and order me what to do with it? Is this some kinda conditional kindness? Well? Are you gonna let me buy some booze with this or not?'
+
+You say, 'You can buy booze.'
+
+: Bondl Felligan suddenly becomes completely sober and says, 'Very well, shaman, please come with me.'
+
+'''Follow him to the Jade Tiger's Den. Head up to the second floor, middle room and go inside. There you'll find a greater spirit waiting.'''
+
+You say, 'Hail a greater spirit'
+
+: a greater spirit says 'Greetings, shaman. Tell me, do you follow [Justice], [War], [Fear], or [Hate]?
+
+'''If you are a Barbarian, choose justice. If you are an Ogre, choose war. If you are an Iksar, choose fear. If you are a Troll, choose hate. What follows is the Barbarian response:'''
+
+You say, 'I follow justice.'
+
+: a greater spirit says 'Ah, a follower of the Tribunal from the North you are, then. You would be best served by speaking to my brother in the next room. Farewell.'
+
+'''Go to the other room as instructed by a greater spirit.'''
+
+You say, 'Hail a greater spirit'
+
+: a greater spirit says 'It is good to see you. We're glad you trusted in our brother and did what was asked regardless of Bondl's intentions. This fills us with joy, as the [true spirits] work in ways most people would not understand and [trust] is the first lesson of the [Heyokah].'
+
+You say, 'What trust do you speak of?'
+
+: a greater spirit says 'Trust is the glue of the universe. When one trusts others to do their part, it allows them to focus on what they must do themselves. The trust that others have in us also gives us the confidence to do our parts effectively, thus maintaining harmony. When one becomes dissatisfied with his part and pursues his own desires, this is called greed. And greed destroys the glue of the universe. This is why we wished the bandits under the grass.'
+
+You say, 'What true spirits?'
+
+: a greater spirit says 'As a shaman, spirits are known to you. They aid you if you pay them homage and respect the world around you. They also will bend to your will if you are powerful enough. We are a part of the entire universe and we exist because people believe and feel us. However [very few] know us in this form. To mortals we are but ideas, [wisps of consciousness] in an expanse of emptiness and as difficult to grasp as breath in Everfrost.'
+
+You say, 'What very few?'
+
+: a greater spirit says 'There are only a handful of mortals we've judged worthy to be friends and, reluctantly, masters. We call them the [Heyokah]. Bondl is one of them and he helps to test those we believe might be able to grasp our existence. There are many troubles that threaten us and our home. We seek those with the wisdom, patience, and might to help us ensure the health of the cosmos. Whether you seek balance or personal power, this is important to you.'
+
+You say, 'What wisps of consciousness?'
+
+: a greater spirit says 'It is difficult for mortals to grasp what we are for we are not material that can be held or consumed. We are the spirit that drives beings to do what beings do. The wolf lives to run and hunt. When you ask for his aid, his spirit enters your body and you 'become' wolf. The ox is the personification of endurance and when he enters your body, you do not become an ox, you become all that is ox. I myself am the spirit of understanding.'
+
+You say, 'What Heyokah?'
+
+: a greater spirit says 'The Heyokah are our mortal counterparts. Some are our friends who seek to help us in whatever goals we deem important. Some seek nothing more than to enslave and command us to do their bidding. We accept this and often make deals with those we realize are powerful enough to accomplish what needs to be done. To judge such individuals, we have prepared a test. We ask that before we enter into these contracts, the shaman walk the [path of the Heyokah]. We see you may be worthy. Will you walk the path? You will be rewarded for your efforts, albeit grudgingly.
+
+'''The greater spirit should now give you an [[Opaque Gem]].'''
+
+'''WARNING: DO NOT say the following line until you have received the gem. The next line will cause the spirit to immediately disappear but will start the next part of the quest for you.'''
+
+You say, 'I will walk the path of the Heyokah.'
+
+: a greater spirit says 'That is good. You will need to walk three paths before you can reach that of the Heyokah. The paths of patience, wisdom, and might. First, you must learn patience. Take this gem and go on a pilgrimage to an island in the great water the wasichu call Erud's Crossing. The Kerrans there are our allies and can show you to our next contact, Ooglyn. Give Ooglyn the gem and do what she asks. As you walk the path, remember what you've learned about trust.
+
+=== Part 3 - The Test of Patience ===
+
+Head to Erud's Crossing. Find [[Ooglyn]], a female ogre shaman, on the island (location -900, +1600). If she isn't up, her spawn time is 2 hours.
+
+Make sure you have Spirit of Wolf, Levitation, and Enduring Breath (reagent Fish Scales) up and running, as well as a pet. During this encounter you may have to kill sharks, some as high as level 42.
+'''NOTE: Watch out for a killer shark, it cannot be rooted and chain dispels. It will path near the NPCs you have to speak with underwater. It does see invis. You will need to bring friends to kill it or be extremely vigilant in avoiding it as it paths near you.'''  Also, some of the wait times listed below are inaccurate.  The times are usually shorter than what is listed.
+
+Personal Sidenote: Having done this first part of the quest as a level 30 Iskar, all you need is invis, (or invis vs animals) as well as sow and enduring breath, and to stay all the way at the bottom of the sea. It's scary to watch the killer shark swim above you, but they shouldn't agro.
+
+ 'Hail, Ooglyn'
+
+        Ooglyn says 'Ooooh, it you, shaman . Me's been waitin for you cuz our frenz say you comin an need da test. So's I gib you 
+        da test. Hmm, now where me put it? Ooglyn been waiting for sign for so long dat me forget where me put test. Keep your eyes 
+        out for sign while me look for test. Oh, hey, shaman, they gib you gem? I need dat gem, please, heheh.'
+
+Give her the gem.
+
+        Ooglyn says 'Ahhh, tank you, now me can...OH LOOK!! DA SIGN!!!! Oh, sorry you missed it. The sign show you where to wait for 
+        da test. Follow me...I like you so I take you there. We goin for a swim, shaman!'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+        Ooglyn begins to cast a spell.
+        Ooglyn feels much faster.
+        Ooglyn begins to cast a spell.
+        Ooglyn is surrounded by a brief lupine aura.
+        Ooglyn begins to cast a spell.
+        Ooglyn's body pulses with energy.
+
+Follow Ooglyn. She will swim past a ruined boat and eventually end up at the bottom of the ocean at location -1600, +4200. If you accidentally lose her, just go to the location. She might be waiting there for you and she might not. Either way, it doesn't matter. Now, summon a pet if you plan to fight the sharks or cast Invisibility/Invisibility versus Animals if you want to try and avoid them. Note that some killer sharks see through invisibility.
+
+'''Neither strategy is necessary as long as you stay on the sea floor at the location.'''
+
+Also worth mentioning: Some of the following NPC's will tell you to follow them, and then swim away. DO NOT. They are trying to trick you into leaving your spot in your "Test of Patience." Just be patient, as a Shaman should be.
+
+        Ooglyn says 'Ok, here is place for you to for waiting. Hab fun shaman!'
+
+During the course of this event many NPC's will spawn, asking you to follow them. Do NOT move from this spot or you will have to start over. You do not actually have to talk to any of the NPC's, you just have to wait. Four minutes later, Srafen the Soaked will appear.
+
+You say, 'Hail, Srafen the Soaked'
+
+        Srafen the Soaked says 'Why hello there! Ahh, it's good to see a new face down [here]. So you've come to [wait] with [us] 
+        eh? That is splendid! It's been getting very boring lately.'
+
+You say, 'Where is here?'
+
+        Srafen the Soaked says 'Oh! Well this is where [we wait]. It's not much for looks but if you're lucky, a pretty fish will 
+        swim by. Oh, and once Dillon said he saw one of those fish women, a mermaid, he called it! Although, I'm not so sure of 
+        his state of mind, hehehe. He's been waiting here much longer than I.'
+
+You say, 'What do we wait for?'
+
+        Srafen the Soaked says 'We've been waiting quite some time, really. I have been here the least amount of time, but that 
+        doesn't help keep the boredom away, heheh. What are we waiting for, you ask? HehehHAahahah! What are we waiting for?? 
+        Heheheh, what a silly question! It's quite obvious if you take the time to think about it. Heh. Ummm.. I'm really not sure.'
+
+You say, 'What about us?'
+
+        Srafen the Soaked says 'Well, there's me, Srafen. I've been down here for, can't quite remember, a number of years, I guess. 
+        If my wife saw the condition my clothes are in, she'd whack me, I'm sure, heheh. Although I'd bet she's long since dead, 
+        probably. Then there's Dillon. He says he's been here since those people up top in Erud blew that big hole in the ground. 
+        Not sure what happened but I guess it was a long time ago. Hmmmm, who [else]?'
+
+You say, 'Who else?'
+
+        Srafen the Soaked says 'Ahh, yes, there's also a really old guy I've only seen a couple times, name's Froham. Whew, he is 
+        really old, and not much of a talker. Mostly mumbles from time to time. Dillon says he's been here since Erud first took his
+        people across the sea. Not sure who this Erud feller is but Froham isn't in the best of shape, so it must have been a LONG 
+        time ago. Froham did mention there's one other guy but we've never seen him. He apparently had something to do with the 
+        Combine Empire, no idea what that is though.'
+
+Three minutes after Srafen appears, Dillon the Drowned will appear.
+
+        Dillon the Drowned says 'Well met again, Srafen. How goes it?' Srafen the Soaked says 'Hey there, Dillon! Good to see you again, I think.'
+
+You say, 'Hail, Dillon the Drowned'
+
+        Dillon the Drowned says 'Hey Srafen, who is this weirdo talking to me? Or is it another one of those funny illusions Froham 
+        keeps talking about?'
+        Srafen the Soaked looks around frantically a moment then laughs and says, 'Ohhh, them! Hehehe! This is a friend of mine come 
+        to wait with us. Isn't that exciting, Dillon? And it's not just an illusion, I don't think! Say, are you [an illusion], shaman?'
+
+You say, 'I am not an illusion.'
+
+        Srafen the Soaked says 'Awww, well that's too bad. Although illusions and real people don't seem to be much different at times, 
+        so, please stay and keep Dillon and me company. We could use it, right Dillon?'
+        Dillon the Drowned shrugs and says, 'Whatever.'
+
+11 minutes after Dillon the Drowned appears, Srafen will speak.
+
+        Srafen the Soaked says 'Hey Dillon, why don't you tell us again about what happened up top? You know, where they blew that 
+        big hole into the ground.'
+        Dillon the Drowned says 'Again? Oh I don't know Srafen, I don't want to [bore] our company, even if it is an illusion.'
+
+You say, 'You won't bore me.'
+
+        Dillon the Drowned says 'Well ok, I was sent here a long time ago to wait. When I got here, I couldn't believe all the 
+        violence going on. Why would the spirits send me here to wait when all this fighting and commotion was going on, I wondered. 
+        There were great battles on the ocean in splendid ships made of pine and shining with [magical enhancements]. While I was 
+        waiting below, blasted, bloody body parts were floating down to the bottom of the ocean all around me.'
+
+You say, 'What were the magical enhancements?'
+
+        Dillon the Drowned says 'Yes, their ships were very strange, constructed in very unusual designs and all seemed to shine 
+        with a multicolored glow. I heard there was even a ship that could stay completely underwater for long periods of time. 
+        It had huge steel spikes protruding from the top of its hull used to 'swim' under enemy ships and puncture their hulls. 
+        I always thought that someday all this magic would cause something [disastrous] and eventually, it did.'
+
+You say, 'What was disastrous?'
+
+        Dillon the Drowned says 'Well, one time, I was here waiting as usual. The fighting was particularly heavy up top, lots of 
+        banging and rumbling around. And suddenly there was a tremendous screech! I had to cover my ears, it was so loud, even 
+        down here. It felt like the water itself was being torn asunder; I could imagine what was happening above. After a few 
+        seconds of the screeching came a terrible tremor and rumbling. Great cracks opened up around me and water rushed to fill 
+        them, almost dragging me down into the gods know what. It calmed down a little while after that and there hasn't been any
+        real fighting ever since. I suspect they're all dead now. For weeks afterwards, the water had a kind of dead taste to it. 
+        I became ill during that time.'
+
+3 minutes after Srafen speaks, he will say this and depart:
+
+        Srafen the Soaked says 'Okay, well, I've had enough. Yet again, we've waited for nothing. Sometimes I really wonder if 
+        the spirits are real after all. Well I for one am going to go find something fun to do - this is obviously a waste of time. 
+        Come with me, shaman, it'll be great fun! Fairwell Dillon.'
+        Dillon the Drowned says 'Hey wait! I'm coming with!'
+
+3 minutes later, Froham the Forgotten appears.
+
+You say, 'Hail, Froham the Forgotten'
+
+        Froham the Forgotten looks up at you and mumbles a brief greeting. He appears uncomfortable around others.
+
+You say, 'Who are you?'
+
+        Froham the Forgotten glances up at you, fiddling with his bony fingers and mumbles, 'Mmmm me name's Froham..I'm 'ere [waitin].'
+
+You say, 'What are you waiting for?'
+
+        Froham the Forgotten says, '...just waitin'..it'll [be ere soon], I s'pose.'
+
+You say, 'What will be here soon?'
+
+        Froham the Forgotten obviously has trouble communicating. He shifts uncomfortably and says, 'Well I'm not sure, 
+        but it's real important. I been 'ere fer a [long time], a real long time. So I'll keep waitin' til it comes.'
+
+You say, 'How long is a long time?'
+
+        Froham the Forgotten says 'Been 'ere since Erud sailed over with his friends. They let me catch a ride on their 
+        ship after I told them I needed to come 'ere to wait. He was a nice fella, real smart. Though I'm thinkin' he's 
+        dead by now. Maybe [Abe] knows fer sure. Abe's been here longer'n me, even.'
+
+You say, 'Who is Abe?'
+
+        Froham the Forgotten says 'Yeah, Abe's an old guy. Well, he's kinda beyond bein' old if ye know what I mean. 
+        Not all together either. His mind floats all over like the sea around us. But he's got enough sense to wait 
+        here like he's done fer, well, fer dang near ever. If ye see him, and he ain't much fer talkin straight, ask 
+        him about [a broken arrow]. Not sure what it means to him but it seems to bring him around.'
+
+Froham will not respond to any more attempts at conversation. 6 minutes after he appears, he will depart and say this:
+
+        Froham the Forgotten sighs heavily and says, 'Looks like it's not comin'. You know, Abe told me of a great treasure
+        a ways away from here, guarded by one o' them girls with the fish tails. I always wanted to go but those two jokers, 
+        Dillon and the other young one, never had the guts. Why don't ye come with me, shaman? We'll split the treasure 
+        fifty-fifty, fair and square.'
+
+5 minutes later, Abe the Abandoned will appear.
+
+You say, 'Hail Abe the Abandoned'
+
+        Abe the Abandoned turns his head slowly toward you but his eyes never come into focus. You can't tell if he's looking 
+        at you, behind you, or right in front of his own face. Then, suddenly, he shouts at the top of his lungs, 
+        'HOOOOKAAAHEEEEYYYY! I AM [ABE]!'
+
+You say, 'Who are you Abe?'
+
+        Abe the Abandoned says 'Nothing is hidden. All is discernible if you only know where to look and you have the right 
+        [eyes]. Don't be angry with me if you can't get your eyes right to see what you're looking for. I'd lend you mine but 
+        I don't wear the same size.
+
+You say, 'What eyes?'
+
+        Abe the Abandoned begins to draw a picture in the mud with his finger although it doesn't seem to make any sense at all. 
+        He points to his picture and nods approvingly at you, saying, 'You see? The curtains fell and it was naught but a dream 
+        upon a landscape that we thought we knew. The dream of the [Combine] fulfilled when we finally trimmed our fingernails 
+        and looked into the mud. And now we are abandoned, in a world that none can see, no one has the eyes.'
+
+You say, 'What is the Combine?'
+
+        Abe the Abandoned shakes his head in amusement and says, 'Heheheh, yeah, you'd think so, wouldn't you? But I guess not.'
+
+You say, 'What about a broken arrow?'
+
+        Abe the Abandoned 's eyes suddenly come into focus, looking deep into your own and says, 'There was a time when we cared 
+        for the world and trod with the spirits along the paths of the cosmos. We built many great things and worked to preserve 
+        what was. I came here to wait for an answer when we began to die off. We could not figure why this was and I was chosen 
+        to come here and commune with our friends. We carved an arrow, and everyone who was left shaved a sliver of wood from it. 
+        We let it drop to hallowed ground and our highest shaman stepped on it, breaking it. I've been waiting here for so long. 
+        So, so long, to give it to the spirits, and thank them.'
+
+4 minutes after he appears, Abe will say this:
+
+        Abe the Abandoned says 'Shaman? My time will soon be at hand and I fear I will never see our friends again. But the arrow 
+        must be given, our holy broken arrow. Shaman, will you bear our obligation and [give them the arrow]? You will know who to 
+        give it to when it is time.'
+
+You say, 'I will give them the arrow.'
+
+        Abe the Abandoned removes a quiver slung across his shoulder and solemnly hands it to you without a word.
+
+You recieve A Broken Arrow. 3 minutes later, Abe will depart and say:
+
+        Abe the Abandoned suddenly gasps and says, 'I have found it! I know the answer! Come with me and I will tell you. Eyes 
+        are everywhere and this knowledege is not for everyone. Finally my centuries of waiting are over hahahaha! Follow me Shaman!'
+
+Do NOT follow him.
+
+3-4 minutes later a greater spirit will spawn.
+
+You say, 'Hail a greater spirit'
+
+        a greater spirit says 'You have walked the path of patience and you now know what to expect. We are watchers. Our eyes are 
+        everywhere and we must be patient and quiet else we may miss what could be harmful. Can you sit still quietly and wait for 
+        just the right moment, then open your eyes with a fury and act with all the energy you have cultivated? Timing is everything, 
+        and without patience you cannot be sensitive to timing. You have shown your patience here and we believe you are ready to 
+        walk the [next path].'
+
+You say, 'What is the next path?'
+
+        a greater spirit says 'You know trust and patience. But before we can allow you to act in our name, we must know that when 
+        you do decide to act, you will make the right choices. We must ask that you now walk the path of wisdom. You must walk to 
+        the great plains and search out one of us. He is a wanderer, and it is his nature to drift with the winds and weather doing 
+        what he can to ensure understanding and longevity to all that respect their home. He will not be easy to find, though, and 
+        you must remember what you have learned down here to succeed in finding him. When you do, give him this gem and follow his 
+        instructions.'
+
+You will receive A Small Gem. At this point, the spirit will despawn immediately, unlike the steps before it. Only one shaman can benefit from the Test of Patience at a time.
+
+=== Part 4 - The Test of Wisdom ===
+
+Head to West Karana. Look for [[a wandering spirit]]. It looks exactly like a wisp but a little brighter/bigger. It is probably best to get a tracker to help you with this. However, if you don't have one, you can stand at -500, -5300 and the spirit will wander by you. However, this can take up to 30 minutes. Once spotted, run up to him and hail him at close range to get him to stop moving.
+
+You say, 'Hail a wandering spirit'
+
+        a wandering spirit stops and flashes brightly for a moment. It seems to be regarding you with interest.
+
+Give the "small gem" to the wandering spirit.
+
+        a wandering spirit says 'Oh, it is you, shaman! Good! You must hurry before it's too late. Go now to the Mountains they 
+        call Rathe and find them! They need your help quickly! They will know you when they see you and instruct you on how you 
+        can help, but you must hurry!'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+Head to the Rathe Mountains. You'll find [[Tabien the Goodly]] (level 32) at location +6300, +1550.  #2 on the [[Rathe Mountains]] map.
+
+You say, 'Hail Tabien the Goodly'
+
+        Tabien the Goodly says 'Oh thank Marr you are here. I was beginning to think I would be abandoned in my time of need. 
+        I have a [task] for you to complete in the name of my patron Mithaniel Marr.
+
+You say, 'What task?'
+
+        Tabien the Goodly display his shield that must once have been shining and regal but is now scoured in cuts, dents, and 
+        chipped paint. He says, 'This shield is known as Marr's Promise. It is a sacred relic that was actually used by one of 
+        Mithaniel's angels on the Plane of Valor. Its value to our church is immeasurable and I have been charged with the protection 
+        of it. However, a patriarch of the false god, Bertoxxulous, is after my shield and me. He must be stopped! Please, destroy 
+        him and bring me proof of his death.'
+
+Next, find [[Glaron the Wicked]] (level 32) at location +2900, -1900.  #17 on the [[Rathe Mountains]] map.
+
+        You say, 'Hail Glaron the Wicked'
+
+        Glaron the Wicked says 'Are you the one they sent to help our cause? I should have known they would send a green witch 
+        doctor to serve Bertoxxulous and myself. Very well, you will have to suffice. I have a [task] you must fulfill if you 
+        wish to know the blessing of my god and impress your masters.'
+
+You say, 'What task?'
+
+        Glaron the Wicked brandishes a long, wicked-looking bone dagger and there is a horrid, diseased stench as soon as 
+        he unsheathes it. He draws another blade, shorter and wider than the first, of blackened bone with a larger than 
+        normal hilt, obviously for defense. He says, 'This festering blade is called Woe, and this scorched one is called 
+        Envy. They were created on the Plane of Decay by Bertoxxulous' own hands. He has judged me worthy of the protection 
+        of such holy relics. However, there is one in these very mountains who seeks to destroy these relics. End this idiot 
+        follower of Marr's life and bring me proof.'
+
+Both of these men have lost sight of their true cause and instead spend all their energy trying to spite the other. Kill both and take the three items - Envy, Woe, and Marr's Promise. Give them all to [[a wandering spirit]] back in West Karana.
+
+        a wandering spirit says 'You are close to passing the test, keep up the good work.
+        a wandering spirit says 'You are close to passing the test, keep up the good work.
+        a wandering spirit says 'It is unfortunate that it came to this, but nothing else was to be done. Both paragons had lost sight of 
+        their virtures to protect the items given to them. The mere protection of these material belongings was not as important to Mithaniel
+        Marr or Bertoxulous as it was that they act with righteousness in their minds and purpose in their hearts. You saw this and acted 
+        accordingly. For that, we will reward you with the three treasures made into one to ward off the falsehood of possession, the [Shield 
+        of Falsehood]. You have walked the path and now, as your final test, we must set you along one [last path].'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+You say, 'What shield of falsehood?'
+
+        a wandering spirit says 'Yes, I have taken Marr's Promise along with Woe and Envy and fashioned them together to create the 
+        Shield of Falsehood. Wield this in defense of possession and the weakness that comes with hoarding treasure instead of using it 
+        to accomplish your goals. May it serve you well.'
+
+You receive the {{:Shield of Falsehood}}.
+
+You say, 'What last path?'
+
+        a wandering spirit says 'You have trusted us along the paths we have set before you. You have been known to be patient and 
+        await the right moment. And now, you have learned the wisdom to act in our best interest. However, one last path awaits, 
+        to determine if you have the ability to act out what must be done. There are many troubles about the world we try to rub 
+        out but none is more serious than the curse on what the wasichu call the Emerald Jungle. Go there and find one of our 
+        spirits. Show them the gem you have been given and follow the path they set you on.
+
+You will receive a Sparkling Gem.
+
+=== Part 5 - The Test of Might ===
+
+Head to location +1250, +300 in [[Emerald Jungle]]. There you'll find the [[Spirit Sentinel]] in a cylinder shaped building.
+Give him the gem you received from the wandering spirit.
+
+Know that if you hail him before handing in the gem, he will say respond "You need to prove your dedication to our cause before I can discuss such matters with you."
+This does not mean you cannot proceed or that you require more faction. The gem you hand him will be the way you 'prove' your worth and then begins the quest script below ''(Recent testing has revealed that Amiable may be needed for this hand in, confirmation pending!)'' :
+
+
+        Spirit Sentinel says 'Ahh, you live, shaman! I am glad the beasts of this jungle haven't torn your body asunder. Tell me, 
+        do you still walk the path? Are you willing to [continue what you have started]?'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+
+You say, 'I will continue what I have started.'
+
+        Spirit Sentinel says 'This brings happiness to our hearts and we are grateful. However, we must ask you to walk one more 
+        path before you can become a true Heyokah. With trust, one can focus on what is important. With patience, one can perceive 
+        what is harmful. With wisdom, one can know what must be done. These, you have learned, yet without the might to carry out 
+        what must be done, all is for naught. Are you [prepared to walk the path of might]?'
+
+You say, 'I am prepared to walk the path of might'
+
+        Spirit Sentinel says 'Good, good, Do you know this place, this forest? The wasichu call it the Emerald Jungle, but we know 
+        it only as the terrible place. Where there is no spirituality, we are weak. The lost city in the middle of this jungle is 
+        a great void of belief not only absent of spirituality, but actually draining it from others. We are here to neutralize 
+        that void. The void is like the sky, and nothing escapes its gaze. If it senses us, it will drain us away and sometimes 
+        it turns our minds, making us [like the wasichu], crazy for things with no meaning.'
+
+You say, 'How like the wasichu?'
+
+        Spirit Sentinel says 'Yes, there are some of us who have turned their backs on our world and struggle for possesions and 
+        power over others. These lost ones are our brothers and we cry for them. Our hearts are in pain like bleeding wounds when 
+        we think of them. The path of might will lead you to one of our lost brothers. We are afraid there is nothing we can do for 
+        him now, so you must eliminate him when you [find him].'
+
+You say, 'How do I find him?'
+
+        Spirit Sentinel says 'He left us long ago and walked the land for ages. He soon met a man, one of the pointy-ears that live 
+        underground. This man was like a void just like the one over that terrible place now. Our Brother-Friend was attracted to 
+        this man's desire and ambition. He no doubt thought that he could get what he wanted in service of this [dark point ear] 
+        who denied his own creator.'
+
+You say, 'What dark point ear?'
+
+        Spirit Sentinel says 'After our brother began traveling with this point-ear, they became shrouded in a darkness we could 
+        not peer through. The point-ear was a powerful being and we soon lost their trail. We have no idea where he could be now. 
+        Although, after all these centuries, he has no doubt been gathering and cultivating his wealth and power. He must be an 
+        incredibly influential being at this point. Find this point-ear and draw our brother out, then destroy him and bring us 
+        proof. We await your return in somber mourning.'
+
+==== Black Dire ====
+
+
+For this next part, you will be attempting to spawn and slay the [[Black Dire]] wolf. 
+
+First, you need to kill [[an advisor]]*** in the library of the castle. Check out the map of [[Mistmoore]] to find that an advisor is in room #19.a This can be reached by going into the Castle Entrance foyer(a.k.a the Entry Hall #8), up the stairs 'B' and then through the double doors. Take your first right, then a left(which passes the #19 Library). At the end of the short hall is a door on the right leading to an unmarked room. To the right is 19.a
+
+It is easier to take this path as there are less mobs to clear/deal with when pulling or killing an advisor. He spawns every four hours since last time of death.
+
+
+Once he is killed, the Black Dire will spawn in the back of the canyon where the blood hounds are at #4 on the map. He and his four wolf guardians will not attack you until you hail him. Know that hailing him is not required and is actually not recommended(see *** note below)
+
+You will want several 55+ characters and at a minimum a tank and healer(ideally Cleric or Shaman with Torpor). A damage dealer would speed things along though is not necessary as a strong tank and a healer can complete this as a duo.
+Black Dire is a Shadow Knight based creature and will perform the normal line of Shadow Knight spells. To increase your chances of success or efficiency, attack it as soon as possible to avoid it buffing itself.
+
+***Before killing an advisor, consider removing the four Blood Hounds in the canyon first. This way you can avoid any potential aggro/social assistance they might give Black Dire depending on your puller's level.
+However provided the wolf guardians consider green to all in the party, you can pull/fight the Black Dire without them aggroing.
+
+
+You say, 'Hail, Black Dire'
+
+        Black Dire says 'So, you've come. I suppose my brothers have sent you to lead me back to their flock. Those fools are 
+        so blinded by their devotion they know nothing of life. If they only knew the power I've become, the luxuries I've amassed, 
+        the pleasures I've known, they too would leave that sour and unrewarding existence in seconds. You know, you could come to 
+        know what I have, shaman. You found me, which speaks of your intelligence; we could use you. What do you say? [Will you 
+        join] my master Mayong Mistmoore?'
+
+You say, 'I will not join you.'
+
+        Black Dire says 'Good shaman, now bare your neck that I may show our master your devotion in death. The more blood you 
+        spill upon the grass, the more impressed our Lord Mistmoore will be. Then maybe, just maybe, you will be allowed to scour 
+        our kitchen floors in the eternity of unlife. TEAR him to pieces, my wolves!
+        Black Dire bites YOU for 200 points of damage.
+        Black Dire bashes YOU for 60 points of damage.
+        Black Dire bites YOU for 200 points of damage.
+        Black Dire bites YOU for 200 points of damage.
+
+
+Once you kill him, loot his pelt and return to the [[Spirit Sentinel]] in the Emerald Jungle (at location +1250, +300).
+
+You say, 'Hail, Spirit Sentinel'. Give the Spirit Sentinel the pelt.
+
+        Spirit Sentinel begins to weep softly as he sees the pelt, battered and bloody. After a few moments, he says, 'We can 
+        only hope his passing was quick and painless. The Dire was powerful and yet you overcame him. Always remember that when 
+        you became [Heyokah], it was the passing of a noble, yet misguided being that allowed you to do so. You should hold a 
+        special place in your heart for him and what he was in life. To help you remember him, we will fashion this pelt into 
+        a pair of boots and give them to you. With every step you take, you must think on the Dire, else his death be in vain forever.'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Black Fur Boots}}.
+
+You say, 'I am Heyokah.'
+
+        Spirit Sentinel says 'Yes, you have walked the Path of the Heyokah to its end. You have become what few have and we will 
+        now call to you as Heyokah. From now on, you are a direct link between the spirits and man. Whether your goals are to help 
+        us or master us, you are welcomed. Though there is little time for celebration. Do you feel the darkness of this place, 
+        the forest? To eyes not trained to see beyond physical appearances, it seems like any other forest. But you know, as do we, 
+        of the mantle over the city threatening all of us. We must [rub it out].'
+
+You say, 'How can we rub it out?'
+
+        Spirit Sentinel says 'There are many such mantles scarring the universe and each is very different from the last. Removing 
+        them requires that we learn how they were created and go about reversing the damage done. We cannot enter under the mantle 
+        for long which is why we search out Heyokah such as yourself. We need you to enter the city and find out what you can about 
+        the [city's demise]. We hope you will do this for the cause of balance but if you desire none but your own power, we shall 
+        grant that as well.'
+
+You say, 'What about the city's demise?'
+
+        Spirit Sentinel says 'It was known as Torsis. During its history it amassed great wealth and power yet it eventually crumbled. 
+        No one understands what happened. The men of the world ask themselves ow a nation as successful as Torsis could ever fall. Some 
+        blame plague, internal unrest, the constant encroachment of the forest, and marauding bands of monsters but we alone know what 
+        happened. Just as Tabien and Glaron lost sight of their spiritual paths, so did Torsis. Without the awe and inspiration of that
+         which was greater than themselves, they eventually withered away. The mantle was born long before the last days, though, and 
+        what we need to learn is [how it all began].'
+
+You say, 'I will find how it all began.'
+
+        Spirit Sentinel says 'Excellent! Go into the city and gather what evidence you can. The ghosts who still walk the streets may 
+        hoard precious memories that will aid us. Take this booklet and combine what you find in it. Then bring me the completed report. 
+        From there, we will know where to look next.
+
+You receive a booklet which is a 6 slot container. ('''NOTE:''' it appears that the spirit can give you the container before your faction is good enough for him to accept it back when you have combined the product - apparently you should not try to do these hand ins before KINDLY faction).
+
+=== Part 6 - The City of Mist Reports ===
+
+You must now acquire the following six reports from the [[City of Mist]]. Five of the six messages drop from skeletons, golems, and goos at the zone in, but the Student's Log is only found on a Spectral Courier (level 34). The Courier is a rare spawn in the western half of the stables. On [[City of Mist]] map, the courier spawn is #6. It's best to just clear the stables over and over again until you get all the pages.
+
+1) [[Personal Diary Page]], identifies as "Report Information 1 of 6" in Lizardman.
+
+I heard last night that there was some kind of commontion at the castle. Guards were shouting, spells went off throughout the halls and many died. Some say there was an assassination, some say a band of frogloks attacked under the command of a dragon, some even say there was some divine intervention. I have no idea why any god would strike against Lord Rak`Ashirr. He is a paragon for the cause of Cazic-Thule. I hope whatever it was sticks to attacking the castle and not my shop though.
+
+2) [[Crier's Scroll]], identifies as "Report Information 2 of 6" in Lizardman.
+
+Hear of all Torsis! Our beloved Lord Rak`Ashiir will be appointing another High Priest into the Cazic-Thule clergy in two days. A festival will be held in honor of the event and the High Scale will be present to judge various contests of skill in arms. Booths will be set up selling various wares and food to all. Cazic guide us all.
+
+3) [[Merchant's Letter]], identifies as "Report Information 3 of 6" in Lizardman.
+The list should all be in order except for the swatches of silk. I won't need such a large order in this quarter. Her Divinity Drian made it known to me that they would not need as many new robes this coming season as "none were quite ready to don them." My colleagues have all been confirming that the church is buying less and less these days. It seems Rak`Ashiir has decided the royal donation to be cut. However I'm sure we'll find new customers soon and our orders will be back to normal shortly.
+
+4) [[Written Announcement]], identifies as "Report Information 4 of 6" in Lizardmen
+
+Hear all Tosis! It is with great regret that we inform you of our Queen Neh`Ashiir's disappearance. Our best scouts have begun searching the surrounding countries for her trail. The Lord Rak`Ashiir also authorized the hire of mercenaries to venture into the Froglok Territories to search for traces of the Queen. All interested parties should report to the royal Quartermaster's office. Fear not citizens, our Queen will be found. Wisdom guide us.
+
+5) [[Priest's Diary Page]], identifies as "Report Information 5 of 6" in Lizardman.
+
+Well it appears our Lord Rak`Ashiir in his "wisdom" has cut our church's donation yet again. He claims it is to bolster the ranks of our garrison as many were wipe out during the Froglok incursions. However, I see more and more soldiers everyday, more that I ever have. And they are all equipped in the best armors the city's smiths can craft. This along with the recent replacement of our Bishop Screks with that coin grubber Biliaz leads me to suspect our King is planning on all but destroying our church entirely. I don't understand it, perhaps his missing Queen has driven him mad.
+
+6) [[Student's Log]], identifies as "Report Information 6 of 6" in Lizardman.
+
+Missed mass again today. This is the third time this week now. It is a worthy sacrifice however as I was able to attend the Master's National Coin exchange class. Perhaps the clergy will change the time of their masses, then I'll be able to attend regulary. Although with the appointment of the new Arch Priest it appears mass may be discontinued altogether. I honestly hope so. I could attend many more classes as well as spend more time rubbing elbows with merchants at the bazaars. I think I'll have to miss tomorrow's mass as well. I heard the Laughing Leech Guild is taking members again.
+
+Combine the 6 pages in the booklet and return the finished product back to the [[Spirit Sentinel]] (location +1250, +300).
+
+        Spirit Sentinel says 'Ahhh good, let us hope what you have found will point us in the right direction. Hmmm...this is interesting. 
+        It appears the disappearance of the first queen may have caused Rak'Ashiir's faith to decline. From there, the first King Rak laid 
+        down the groundwork for the city's eventual demise. We need to learn what happened to the queen. Perhaps bringing this knowledge to 
+        the King's now cursed form will lift the mantle. We've learned that the last lord of Torsis, Ghiosk, was a bit of a historian. Find 
+        him and see what you can learn about the queen. Take what you find to my brother here In the jungle beneath the murky waters of a pond.
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+If you hand the combined pages in at Amiable faction:
+
+        Spirit Sentinel says 'This is a sad day. You have failed and strayed from the path set before you. Please try to 
+        live as close to the spirits as you are abl, though this is the closest you will ever get.
+
+=== Part 7 - The Three Books of Lord Ghiosk ===
+
+'''>>>>NOTE: DO NOT give the 3 books to the Spirit Sentinel near CoM, this is NOT the right npc.<<<'''
+
+'''>>>>correct a "Spirit Sentinel" at the bottom of a pond in the Emerald Jungle, locacated at +3685, -640.>>>>'''
+
+You must now kill Lord Ghiosk in the City of Mist. You will need about 3 groups of level 55 or equivalent. '''(This is not quite accurate; we killed him without too much trouble with one group in the low 50's and most were not geared. Our healer was 45. I was the highest level [54] and best geared [rogue epic])'''. Check out this map from EQ Atlas. Lord Ghiosk is at #1. To get into the castle, you will need a rogue to picklock the door open. Ghiosk drops three books, all in the language of Lizardman.
+
+==== Historic Article ====
+
+Neh Ashiir's disappearance will always be cloaked in mystery. We of Torsis have a saying that goes "Neh's chances". We all know this is used to define an innumerable variable but not many know of its relation to the event in the early years of our fair city. For as many people as there were in Torsis there were that many theories regarding Neh Ashiir's disappearance. Others say there were political tensions between the queen and her lord, so much so that she had to leave to escape death. And for good measure a few pointed to the stars and said that people from beyond the sky took her. One thing all agreed upon however is that the relationship between the royal couple was decaying. Political scrutinizers noted small personal habits between the two that implied a separation of intimacy during their public appearances. Many even tie the highly publicized Crusade of Kirn into the disappearance of Neh as Kirn left the city only a few weeks before. It is recorded in many texts that the visage of Rak' Ashiir reflected his despair over his wife's vanishing although it is a well known fact that it was mostly an act played by the King to keep up his illusion of nobility. Perhaps one day we will find the truth but at this point it would mean little to the public.
+
+==== Head Housekeeper's Log ====
+
+1. New wash basins must be acquired. Servent Hujin will see the Quartermaster and place the order tomorrow.
+
+2. The chandelier in the main hall was finally repaired tonight. Payment must be sent to the contract holder tomorrow.
+
+3. Advisor Snith ordered that I personally find and acquire 3 dozen finely made vials. What they are for he would not explain and was very firm that I do this as quickly as possible. Best to make haste to fulfill the order, rumours abound of the Advisor's mastery of the arcane.
+
+4. We've been low on candles for the last week. There is no explanation for the shortage of wax. Perhaps I should send a Palace Reaver escort with the next pick up crew. The craftsman may have the intelligence to figure the symbolism.
+
+5. It is imperative that we return the High Scale's Icon to the church as discretely as possible. If Rak Ashiir returns from his journey early and discovers it was found in the royal bedroom it may prove disastrous. I cannot decide whether to place it ourselves with the help of our Black Guard, or to approach one of our contacts in the church. The less people that know of this the better. It might be prudent to ..remove.. the servant who found it within the sheets.
+
+==== Crusades of the High Scale ====
+
+Throughout the history of the High Scale it was common for the knights to practice complete celibacy. It wasn't until the controversial Kirn was given the hallowed title that contact between the sexes became tolerated. While Kirn wasn't the mightiest of the High Scales he was able to achieve many great victories in the name of our Lord of Fear. One being the battle known as the Bone Rending when Kirn lost his fabled whip, Thriaxis' Tail, as was still able to defeat scores of his enemies using his hands only. Before this battle many believed Kirn could not fulfil his duties as a leader and patriot for the people. However Kirn's might and his lecture on the use of females in religious crusade and duty convinced the public that celibacy had its place in divinity but non-celibacy also had a place and value within the church. A shrine depicting Kirn among many women was constructed in remembrance of his controversial reign although his corpse was never brought back for burial as it was lost far across the ocean among distant brothers on faith.
+
+==== Turn-In ====
+
+Give the three books to an a "Spirit Sentinel" at the bottom of a pond in the Emerald Jungle, locacated at +3685, -640.
+
+        Spirit Sentinel says 'Hmmm, it appears the queen's disappearance wasn't as random as we thought. It also looks as if this High 
+        Scale were having some sort of affair with Neh. We have little but speculation at this point, so making it known to Nak'Ashiir 
+        would do nothing. Perhaps finding the resting place of the High Scale will show us more of what really happened. We suspect the
+        icon mentioned in this log could now be located in the city's old temple. Find the icon and bring it to Kirn, wherever he is. 
+        Tell us what you learn afterwards.
+
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+
+=== Part 8 - Obtaining the Icon of the High Scale  ===
+
+132, -369, -13
+
+*Go into City of Mist.
+
+''Glumf's Personal Note: The instructions below are a little bit confusing. Just go in the temple to the bottom floor and go in the room on the left. Grab bag. or ...''
+
+*Go across the bridge.
+*Open the gate.
+*Turn right.
+*Go straight forward through 2 arches.
+*In the last room you will find a temple with a waterfall running down its side. Stay in that courtyard of temple, and pull skeletons, etc., from the first door you see at the base of the temple. 
+*Open the door. Inside is another door directly in front of you, do not open this door, it leads to top of temple. Look instead to the right, where three skeletons
+spawn. Pull these skletons to courtyard and kill them. Go back into door, head right and ye will see a room set below ground level with three phantoms in it, standing on a raised dais. Pull and kill these phantoms. There are two doors beside the dais, one opening to the left and one opening to the right. Choose the left door. Inside is a small room with no monsters inside, and a small bag on the floor in the left corner. Click on the bag, you now have the High Scale Icon. Gate out.
+
+Using Invisibility to Undead potion (Unlife Awareness) will get you past the last three skeletons and phantoms. They will still scowl at you, ready to attack, but it isa bluff. They will NOT be able to see you.
+
+Be warned, however, as the golems of the area can see through Invisibility to Undead, and you may run across a couple on the way to the temple area. There were no rogue-locked doors between the zone and the High Scale icon.
+
+=== Part 9 - High Scale Kirn ===
+
+For the next encounter you will need about 1 groups of level 60's. Proceed to The Hole, near Paineel. High Scale Kirn is located in the tower beyond the city. Check out this map from EQ Atlas. Kirn is #3. You might also want to try the maps at EQ Maps. Kirn's respawn time is four hours.
+
+As far as getting to Kirn, there are two options.
+
+Option 1: Yael drop down. This method should take about 20-30 minutes. Drop down from Paineel into Yaels pit. Some people are able to survive the fall, others are not. Lets hope your cleric does. If you drop down and immediately run into the water you won't aggro the surrounding mobs. From here you follow the tunnel up to the undead tower. Kill the roaming golem / elementals and then IVU up to the flat before Kirn.
+
+Option 2: Work your way through the city. This method can take up to 2 hours. Eventually you will come to an open area with the tower off in the distance. The open area has 2 spawns - a rock golem and elemental. Kill those, move up. You have 6 minutes. The open area faces the tower and dips down, flattening in the bottom before rising again towards the tower. In this area before the tower you will come across a few roamers.
+
+Your destination is ahead. Work your way to the base of the tower. In front of the castle are two spawns - revenant/wanderers. Now you have a choice.
+
+1) Invisibility versus Undead - The Keeper of the Tomb in the left hand courtyard of the revenant tower will eat 2-3 groups alive if you aggro him. The good news is that Invisibility versus Undead works in the tower (even though some of the revenants will scowl at you, they will not attack). Go through the gate, run through the middle main doors of the tower and to the back where a single door opens to stairs leading upward. Follow this up a couple flights to Kirn himself, then drop invisibility in his room. The disadvantage to this method is that it can be messy if a couple of raid memebers have invisibility drop on them and die. Make SURE everybody knows before hand to let people die if they get attacked - just drag the corpses up and rez them once you are situated.
+
+2) Kill your way through (be wary of the Keeper). Pull to the flat to prevent continuously fighting the 6 minute respawns at the top. This may be tough as you attract all of the roamers from the Master Yael tunnel. If you have been tearing through the mobs previously, it should be no problem progressing and moving up the tower. However, if you are not killing very fast you should probably not pull the inside of the tower for one or two rotations. Split up the spawn from this area first. Next, wait until the two revenants at the doorway spawn and then kill them. You then have 6 minutes to kill around 3 revenants in the first room of the tower. The trick here is to move inside. Do not try to pull a great portion of the tower to the outside; the respawn rate and number of mobs is likely to be too high. Work your way up to Kirn.
+
+Once you get to High Scale Kirn, kill the three revanants in his aggro range. Since Kirn is indifferent you should not be using area effect spells of any kind. Give Kirn the icon.
+
+        High Scale Kirn looks down at the icon in his hands for a long moment before speaking. 'Why did you bring me this? Are you 
+        here to accuse me of the queen's death?' High Scale Kirn chuckles venomously and continues, 'I am High Scale and beyond your 
+        petty laws. However, I wish the truth to be known. On my hand is a ring. If you can take it from me, show it to the queen 
+        and she will remember. However, I will not give up the ring easily. Defend yourself!'
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+Kirn is initially non-KoS, but will attack you the instant you hand him the Icon, so the above conversation will fly by. Kill him. He drops:
+
+        Engraved Ring
+        MAGIC ITEM LORE ITEM NO DROP
+        CHA: +5
+        WT: 0.2
+        Class: ALL
+        Race: ALL
+
+The ring identifies as "Promise Ring of Neh`Ashiir".
+
+We killed him with 1 cleric, 1 warrior, 1 enchanter and 1 monk. The enchanter had an elemental capturer as a pet. It was super easy.
+NOTE: THIS TURN IN REQUIRES TRUE SPIRIT FACTION. IT CANNOT BE MQ'd BY SOMEONE WITHOUT TP FACTION.
+
+=== Part 10 - The Final Steps ===
+
+'''*** Before you proceed, you MUST get MAX ALLY with True Spirit ***'''
+
+Return to the City of Mist and give the ring to Neh'Ashiir. To get to Neh'Ashiir, travel up to the final platform. Check out this map from EQ Atlas. Pull the Black Reaver, which is 100% magic immune. After Black Reavers are killed, there is a chance that another will spawn directly afterwards on the spot. In this way, up to 50 or more reavers can spawn in a row, although high numbers like this are very rare. After the all Black Reavers are done, Neh`Ashiir will spawn. She is non-KoS, but will attack immediately after you give her the ring, so the following conversation will fly by. '''If by this point you DON'T have max ally standing with True Spirit, repeat the gem quest with Bondl Felligan or do the city of mist reports until it is maxed. If you don't have max ally faction to the point where you are notified "Your faction standing with True Spirit can not get any better." you will have your scale eaten.'''
+
+        Neh`Ashiir says 'Nothing is left to hide now. You shall have the truth. But truth is not won easily and if you cannot defeat me, 
+        you have not the ability to see that vengeance is served. Brace yourself!
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+She drops Neh`Ashiir's Diary:
+
+        ..another bazaar.. I was asked to judge..wrestling contest. It must have been the ten thousandth one this week. Oh how I grow 
+        weary of...political monotony. The earlier days were much..exciting, crusades against..unworthy and smashing our opposition. 
+        Kirn's life must be epic indeed. He.. at me again during.. match. Hmmmm.
+
+Give the diary to the Spirit Sentinel under the pond in the Emerald Jungle (at location +3685, -640).
+
+        Spirit Sentinel says 'So, the truth is found! Rak mourned over the loss of his child instead of relishing the blessing of 
+        his god, Cazic-Thule. His wife and the High Scale then abandoned him in disgust, but even that was an aftereffect of what 
+        caused the king to turn his back on his faith. The child is the key! If we put the child to rest, Rak may repent of what 
+        he has done and the mantle may be lifted. The most difficult task is now at hand. Find the child, then take proof of her 
+        passing to Rak. I can feel the mantle's foundation crumbling! Now, go!
+
+<div class='facblock'>
+Your faction standing with [[True Spirit]] got better.
+</div>
+{{YouGainExperience}}
+
+Proceed to the Plane of Fear with a raid force and slay either Dread, Fright, or Terror (the three personal guards of Cazic Thule). After you kill one of them, an "Iksar Broodling" will spawn by the corpse. She is only level one and is not KoS. Kill her an loot the tear. If your guild is not powerful enough to raid the Plane of Fear, try to tag along with another raid. Ask beforehand if anybody will be needing the tear; if nobody does you are in luck.
+
+Return to City of Mist and give the Tear to Lord Rak'Ashiir <b>(YOU NEED ALLY FACTION FOR THIS TURN IN -- JUST NOT MAXED ALLY)</b> Rak'Ashiir can be found at the end of any Black Reaver "cycle", as explained above with Neh'Ashiir. This means he can be found at any place where Black Reavers spawn. When people are killing Reavers, they often leave without killing Rak'Ashiir (as they have no reason to and he is rather nasty). Check around with a tracker and you might find him without having to kill Reavers. Lord Rak'Ashiir is non-KoS, but will attack you immediately after you give him the Child's Tear.
+
+This is the final encounter of your epic quest. You will need a group or more of people able to defeat a reaver spawn to get to Rak'Ashiir in the first place. The following group (at a bare minimum) is recommended for TLP servers:
+
+* Rogue (for opening doors and to help pull)
+* Druid/Ranger/Monk (for pulling and/or splitting pulls)
+* Cleric
+* Shaman with Torpor or another Cleric
+* Tank (Warrior/Shadow Knight/Paladin)
+
+Once Rak'Ashiir is dead, loot the Iksar Scale. 
+'''>>>>NOTE: DO NOT give the scale to the Spirit Sentinel near CoM, this is NOT the right npc.<<<''' 
+
+'''AGAIN: Because this happens more often than people think: THE FINAL TURN IN IS TO THE DOG IN THE WATER!'''
+
+Head to the Spirit Sentinel under the pond in the Emerald Jungle (at location +3685, -640).
+
+        Spirit Sentinel says 'What is this? The scale of Rak'Ashiir's father? Then Rak has repented his mistake? But why is the mantle 
+        still in place? If Rak has repented, then the mantle should have dissolved since he was the one who initiated its construction. 
+        But is its initiation the key? How could we have been so blind? Kirn said Rak'Ashiir had the blood of his people on his hands 
+        but that is false. Rak merely pointed to a path that would lead them to destruction. It was the people who chose to follow.'
+
+You say, 'What is lost?'
+
+        Spirit Sentinel says 'The mantle was the product of thousands of faithless individuals. Not the single shroud we believed 
+        existed. Torsis is now truly cursed for all eternity as a great stain upon the universe. Today is a sad day, indeed. 
+        However, some good can still come of this. Your sacrifice and spiritual devotion in this matter have become legendary. 
+        You have waited for us at the bottom of the ocean. You have rubbed out a mighty rogue spirit. You have endured the black 
+        hole of Torsis and entered the a bode of Fear itself to save a child from eternal suffering. It is only fitting that we 
+        reward you with our greatest treasure, the [Spear of Fate].'
+
+You say, 'What is the Spear of Fate?'
+
+        Spirit Sentinel says 'The spear was constructed millennia ago by Thalger, the first human Heyokah. One of the most 
+        destructive wasichu of Norrath, Miragul, as he is known, had been traveling the world searching out all known magic. 
+        Wherever he went, he discovered and experimented with all forms of dangerous magic. Most of the world cannot even 
+        fathom what the Arch Necromancer was capable of. He had haphazardly discovered a way to directly create a mantle of 
+        negative spiritual energy similar to what curses Torsis. He himself had willed into existence one of these [black holes].'
+
+You say, 'What of these Black Holes?
+
+        Spirit Sentinel says 'Miragul often retreated to the frigid northlands to experiment in solitude. It was here that he 
+        created a black hole. Unfortunately for the small tribes of men who made the northlands their home, this new black hole 
+        threatened not only their livelihood but their entire existence. The mantle was so powerful it not only drained the spiritual 
+        energy of everything within its gaze, it also drained the life force as well. The tribes were threatened with complete 
+        annihilation. But one [powerful shaman] stepped forward and struck against Miragul's mantle.'
+
+You say, 'What powerful shaman?'
+
+        Spirit Sentinel says 'Thalger had been the first to pass our tests and the timing was lucky indeed. We supplied him with 
+        materials needed to construct a weapon that could pierce the very fabric of the [cosmos]. First, was the sharpened shoulder 
+        blade of an ancient lion matriarch. Then Thalger found a young sapling for the shaft and shaped it over the course of 45 days 
+        using nothing but his fingernails. He then split the top of the flexible shaft, lodged the blade into place and bound them 
+        together with the tanned entrails of an ox. Finally, he adorned the spear with the magical feathers of a an aviak elder.'
+
+You say, 'What of the cosmos?'
+
+        Spirit Sentinel says 'Miragul's casting was strong but it was a force brought into existence. This force was positive in 
+        nature, the opposite of nothingness. Even though it worked like a void, it was still created by an imposition of will. We 
+        figured that if we could rupture the planar boundary and create enough anti-existence or non-matter, the mantle might 
+        destroy itself. Thalger volunteered immediately to pierce the mantle as no spirits could even get close to it. In one 
+        act of devotion and singular purpose, Thalger rode the wind far above the land and with one colossal arch ripped a [breach] 
+        across the planes.'
+
+You say, 'What of the breach?'
+
+        Spirit Sentinel says 'The tear in the fabric of existence created enough negative material to cancel out Miragul's 
+        abomination. Thalger's strike was so perfect that he cut just enough planar material to destroy the mantle and nothing 
+        else. Unfortunately, Thalger himself was lost in the process. All that was left was the spear that fell from the heavens 
+        to the ground where we recovered it. We have kept it since then and now we wish you to have it. When you strike with it, 
+        you must have the same singularity of purpose as did Thalger when he defeated Miragul's mantle. Thank you, Heyokah.
+
+You recieve the {{:Spear of Fate}}!
+
+[[Curse of the Spirits]] is a magic based damage over time spell that starts off weak, but gradually increases in damage towards the end of the spell's duration. This is why it draws little or no aggro when you cast it. It does a total of 1425 dmg over a course of 1.5 minutes.
+
+[[Category: Quests]]
+[[Category:Shaman Quests]]

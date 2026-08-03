@@ -1,0 +1,85 @@
+{{Disambig3|[[Trumpy Irontoe (NPC)]]}}
+[[File:npc_byzar_bloodforge.png|frame|Byzar Bloodforge]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Byzar Bloodforge]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Trumpy Irontoe (NPC)|Trumpy Irontoe]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bloodforge Hammer}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Lead-in upon giving him both heads:'''
+
+: Byzar Bloodforge says, 'I underestimated you. You are truly a great warrior. I reward you with a piece of my own Bloodforge armor. You would be fine Bloodforge Brigade material! How would you like to [take a little trip] in the name of the Bloodforge Brigade?'
+
+: You say, 'I will take a little trip.'
+
+: Byzar Bloodforge says, 'Yes.  You will do.  My sister was once engaged to a fellow warrior.  He disgraced her and left her crying at the altar.  I will have his head for such a slap in the face of my family.  His name was Trumpy Irontoe, once a member of the now defunct Irontoe Brigade.  I know not where he went.  Find his whereabouts and return his head to me.  Do so, and I shall make you an honorary member of the Bloodforge Brigade.'
+
+[[Trumpy Irontoe (NPC)|Trumpy]] hangs out at the Fish's Ale in [[Qeynos|South Qeynos]] at (-309, -261). 
+
+The secret to killing Trumpy is you have to get him away from Barstomper.  In order to do this, you ask him in the bar about Sragg.  He then gets all huffy and walks out.  If you follow him he will get quite a ways from the bar.  You can then safely attack and kill him. Be warned he will run away so a good root spell or snare is a good idea.  Also, he is in good with the corrupt guards and they might help him if they see him getting attacked.  Do not chase him either; he will come back if you let him and eventually he will run back by Barstomper and then you have a much bigger fight on your hands.  
+
+''(Who is Barstomper? You can also just wait for Trumpy to leave the bar to, er, drain the dragon.. if ya know what he means.. bwah ha ha ha.)''
+
+: Trumpy Irontoe says, 'Prepare to meet my iron toe!'
+
+: You have slain Trumpy Irontoe!
+
+<div class="facblock">
+* Your faction standing with [[Circle of Unseen Hands]] got worse.
+* Your faction standing with [[Citizens of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+* Your faction standing with [[Kane Bayle]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+</div>
+
+:Trumpy Irontoe says, 'ARGH!!! <Burp!> Oh.. Kane will hear of this.. Yours days in Qeynos are numbered.. <BURP!>.. ouch.. Mommy..'
+
+You must have decent (at least amiable) faction in order to be able to get the hammer.  [[Dwarf Head|Trumpy's head]] is now a no trade/no drop item, so you can't give it to a dwarf to get the hammer, but must raise your own faction to get it.  If you hail him first, he will ask if you have come here to [[Runnyeye Warbeads (Kaladim Warrior)|return goblin beads]].  If you ask him about the beads, you will know if you have a good faction.  He may say that your shifty eyes tell him you are not good, and in that case, you do not.  If you do, then you can give him the head:
+
+:Byzar Bloodforge says, 'Ha!! His death brings me great happiness.  I owe you much.  Take this hammer.  It is the hammer of the Bloodforge Brigade.  May it serve you well.  Now go,so I can enjoy this moment of happiness alone.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+{{YouGainExperience}}
+
+Your reward for this quest is the [[Bloodforge Hammer]], a very nice 2HB magical weapon.
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

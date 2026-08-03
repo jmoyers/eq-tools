@@ -1,0 +1,213 @@
+== Faction through Quests ==
+
+Below is a list of quests which are commonly used to raise faction.
+:''See also: [[All Positive Faction Quests]]''
+
+=== Faction, Antonica ===
+
+{{DNE}}
+
+==== [[Orc Scalp Collecting]] ====
+
+'''Highpass Hold'''
+
+{{#lsth:Orc Scalp Collecting|Walkthrough}} 
+
+=== [[Inert_Potion_Quest|Inert Potion]] ===
+
+'''Erudin Palace'''
+
+{{#lsth:Inert_Potion_Quest|Walkthrough}} 
+
+==== [[Note for Rebby]] ====
+
+'''East Freeport'''
+
+{{#lsth:Note for Rebby|Walkthrough}} 
+
+==== [[Note for Janam]] ====
+
+'''West Freeport'''
+
+{{#lsth:Note_for_Janam|Walkthrough}} 
+
+==== [[The Frikniller Family]] ====
+
+'''East Freeport'''
+
+{{#lsth:The_Frikniller_Family|Walkthrough}}
+
+==== [[Lenka's Pouch]] ====
+
+'''East Freeport'''
+
+{{#lsth:Lenka's Pouch|Walkthrough}}
+
+==== [[The Lottery Ticket]] ====
+
+'''East Freeport'''
+
+{{#lsth:The Lottery Ticket|Walkthrough}} 
+
+==== [[Fabian's_Strings|Fabian the Bard]] ====
+
+'''East Freeport (Grub 'n Grog)'''
+
+{{#lsth:Fabian's_Strings|Walkthrough}} 
+
+==== [[Muffin_for_Pandos|Muffins for Pandos]] ====
+
+'''West Freeport'''
+
+Muffins can be bought in East Commonlands, from the INN #2, name Innkeep Juna ''OR'' at Brownloe Bakery in [[West Freeport]]
+
+{{#lsth:Muffin for Pandos|Walkthrough}} 
+
+==== [[Red_Wine_to_Lady_Shae|Red Wine for Lady Shae]] ====
+
+'''West Freeport'''
+
+{{#lsth:Red_Wine_to_Lady_Shae|Walkthrough}} 
+
+==== [[Note for Konem]] ====
+
+'''North Qeynos'''
+
+{{#lsth:Note_for_Konem|Walkthrough}}
+
+==== [[Bottle of Red Wine]] ====
+
+'''Neriak 3rd Gate'''
+
+{{#lsth:Bottle_of_Red_Wine|Walkthrough}} 
+
+==== [[Evil Research]] ====
+
+'''South Ro'''
+
+{{#lsth:Evil_Research|Walkthrough}}
+
+=== '''Faction, Faydwer''' ===
+
+==== [[Bone_Chips_Felwithe|Bone Chips, Felwithe]] ====
+
+{{#lsth:Bone_Chips_Felwithe|Walkthrough}} 
+
+==== [[Bone_Chips_Kaladim|Bone Chips, Kaladim]] ====
+
+{{#lsth:Bone_Chips_Kaladim|Walkthrough}} 
+
+==== [[Crushbone Belts|Crushbone Belts, Kaladim]] ====
+
+{{#lsth:Crushbone_Belts|Walkthrough}} 
+
+==== [[Shondo and the Tonic|Shondo and The Tonic, Erudin]] ====
+
+{{#lsth:Shondo_and_the_Tonic|Walkthrough}}
+
+==== [[Orc Vest]] ====
+
+{{#lsth:Orc_Vest|Walkthrough}}
+
+==== [[Muffin for Pandos]] ====
+
+{{#lsth:Muffin_for_Pandos|Walkthrough}}
+
+=== '''Faction, Bards''' ===
+
+==== [[Going Postal]] ====
+
+{{#lsth:Going Postal|Walkthrough}} 
+
+=== Faction, Kunark ===
+
+==== Cabilis Faction ====
+
+[[Cabilis]] contains six main faction groups:
+* [[Brood of Kotiz]] (Necromancers)
+* [[Legion of Cabilis]] (Warriors/Troopers)
+* [[Cabilis Residents]] (Merchants/Bankers)
+* [[Crusaders_Of_Greenmist|Crusaders of Greenmist]] (Shadowknights/Crusaders)
+* [[Swift Tails]] (Monks)
+* [[Scaled Mystics]] (Shamans) 
+
+'''Pre-Emptive Step: ''' Get an [[Worker_Sledgemallet|Overthere Hammer]], as later stages will involve trashing [[Venril_Sathir_(Faction)|Venril Sathir]] faction. So, go to [[The Overthere]], and kill 80+ sarnak berserkers (lvl 29-33) to collect sarnak war braids to hand in to Captain Rottgrime. The best camp spot, if you don’t have a tracker, is the couple of buildings at the south of the zone, north of the Frontier Mountains zone line; a number of static spawns and wanderers. Berzerkers seem to be on the general sarnak spawn table.
+
+As soon as you hit amiable, go to the undead foreman, just south of the ships, and hand him a jade (only one required, although he talks about “filling [his] eyesockets”. Bingo.
+
+'''Step 1: Mass Slaughter'''
+
+'''Outcast Iksar in [[Warsliks Wood]] -''' Iksar Bandits(lvl 9-10), Marauders (warrior, lvl 14-16), Manslayers (lvl 17-19),  Pariahs (lvl 19-23), Exiles (lvl 23-26).  There are six Exiles in a group in the SW corner of the zone next to a lake that are relatively easy to find. This seems to be the only way to raise [[Brood of Kotiz]] faction, and also raises [[Legion of Cabilis]]
+
+SKs need to be non-KoS with necros; necromancers interested in doing the skullcap quest need to reach amiable with Brood of Kotiz. 150 – 200 iksar kills will allegedly take you to glowers with necros. There are several camps of low level iksar outcasts that you can use for this: the caves in [[Warsliks Woods]], before the zone to [[Lake of Ill Omen|LOIO]]; several camps of three in huts in [[Warsliks Woods|WW]]; and the camp of four NE of the explorer tower in [[Lake of Ill Omen|LOIO]]. The cave in Field of Bone is on a very slow respawn timer, so I don’t recommend there. The caves in WW have 12 – 15 spawns on a 16 minute timer, but you need to pay full attention for 4-6 minutes to kill them all. The hut SE of the zone to [[The Overthere]] has the advantage that you can let him do most of the killing; overnight here should be enough for faction.
+
+'''Goblins in [[Warsliks Wood]] –''' These give faction for the [[Legion of Cabilis]] and for the [[Inhabitants of Firiona Vie]]. Good to raise this faction if you think you'll end up getting KoS to [[Venril_Sathir_(Faction)|Venril Sathir]] eventually as you will be unable to return to the outpost in [[The Overthere]].  
+
+There are many level ranges of these. A Goblin Thief (lvl 2), A Goblin Scout (lvl 2-4), A Goblin Watcher (lvl 3-5), A Goblin Outrider (lvl 5-6), A Goblin Hextracer (lvl  7-8), A Goblin Hunter (lvl 8-10), A Goblin Bonecaster (lvl 10-12), A Goblin Skirmisher (lvl 11-13), A Goblin Witchdoctor (lvl  13-15), A Goblin Battlemaster (lvl 14-16), A Goblin Bloodtracer (lvl 16-18), A Goblin Aggressor (lvl 17-19), A Goblin Pit Fighter (lvl 19-21), A Goblin Soothsayer (lvl 19-21), A Goblin Warrior (lvl 20-22), A Goblin Coward (lvl 20-23), Goblin Warlord (lvl 24), A Goblin Messenger (lvl 38), A Frantic Goblin (lvl 40), A Shady Goblin (lvl 40).
+
+The lower level goblins are closer to the [[Cabilis|West Cabilis]] and [[Field of Bone]] entrances, while the higher level ones are in forts in the center of the zone. See the [[Warsliks Woods|map]] for details. 
+
+'''Alternate Step 1: Item Turn-In Quests'''
+
+If you can, the fastest way to get Legion faction is to collect weapons in [[Lake_of_Ill_Omen|Veksar]] (lvl 55+) and hand them in the the NPC in Lake of Ill Omen until you reach dubious with the Legion. I haven’t done this, but I believe roughly 10 or more hand ins (40 weapons) will be required. If you kill explorers until you have 6 stacks of knives, you should have high enough legion faction to hand in. 
+
+The next best is the explorer knives quest; you will need roughly 6 stacks of these to max your faction. 4 – 5 stacks will be required to reach non-KoS with other factions; another 4 – 5 stacks if you need to become warmly or better. The explorers are in [[Lake of Ill Omen]], between the [[Warsliks Woods]] and [[Cabilis]] zones. NOTE: This will bring down your [[Inhabitants of Firiona Vie|Fironia Vie]] faction!
+
+'''Step 2: ''Bring Out Yer Dead!'' '''
+
+Hand in bone chips in vast numbers to Trooper Mozo in [[Field of Bone]] until you are non-KoS to merchants, shamans, etc. This is slower than the explorer knives, but without the FV faction hits.  Note that the wandering crusaders in the area (Quarg and Bhodli) are on different factions. One is on [[Crusaders Of Greenmist|Crusaders]] and the other is on [[Scaled Mystics]]. 
+
+Once you reach dubious to Iksar troopers head over to [[Kurn's_Tower|Kurn's Tower]] in [[Field of Bone]] or any other spot where you can get a LOT of bonechips (this will take many bags of bonechips). [[Kurn's_Tower|Kurn's Tower]] is the most convenient place because of its location. 
+
+There are two ways to do the turn-in:
+
+* Option 1 is to quickly feed as many stacks of 4 bonechips(remember 4 stacks at a time) to Trooper Mozo in the 4-6 minute window and retreat before the Crusaders go on patrol, however this makes it difficult and the Crusaders might not even leave and return in sync making it even harder. 
+
+* Option 2 is to stand behind Trooper Mozo in the corner by that lamp thing right up against the wall. SLOWLY take tiny steps forward until you are able to hand Trooper Mozo the stacks of bonechips(you're not close enough if you're right in the corner behind the lamp). 
+
+You should be able to give as many stacks as you want from this location WHILE the Crusaders walk past.. this is the method I used.. it was quite unnerving to have some red at level 48 shadowknight go walking past you repeatedly at that distance without turning me into a bloodstain on the ground, but it MUCH easier to give lots of bonechips without interruption.
+
+==== Chardok Faction ====
+
+It is possible to become non-kos with Chardok's Sarnak faction, [[Brood of Di`Zok]], by killing hundreds of goblins in the [[Temple of Droga]]. This is useful for pulling (especially in AoE groups) and corpse retrieval.  
+
+=== Faction, Velious ===
+
+First here are the general bonuses of each faction.
+
+'''Coldain''' = [[Thurgadin]] is a great utility city, [[Coldain Ring Quests]] and [[Coldain Shawl Quests]]. [[:Category:Thurgadin_Armor_Quests|Armor]] is sub par in comparison to the others.
+
+'''CoV''' = [[Skyshrine|HoT]] quest capable. Most HoT Quest items are on par if not better than many NToV drops. [[:Category:Skyshrine_Armor_Quests|Armor]] is on par with Kael gear, generally has better resists but lower AC.
+
+'''Kael''' = [[Kael]] [[:Category:Kael_Armor_Quests|armor]] is about the best there is in game aside from NToV drops, which you will be able to farm without faction worries. Dain Heads and Yelink Heads to Tormax generally result in the best rewards.
+
+* Coldain Faction = Easy, by killing Kromrif Giants to raise Coldain.
+* CoV Faction = Easy, by killing Kromzek Giants will raise CoV faction.
+* Kael = Moderate, Kill CoV mobs to raise Kromzek, and Coldain mobs to raise Kromrif. Kill boss mobs in those zones to raise Tormax faction.
+
+'''Coldain and CoV at the same time:''' Easy, killing giants of all types will eventually get you the faction for both. This is probably where most of CT is sitting right now. You have access to the SS quest armor, HoT quests, Kael mob drops, and Coldain Ring/Shawl quest as well as the utility of both cities.
+
+'''Coldain and Kael at the same time:''' Difficult, steps below on how to do this. End result is that you have access to NToV drops, Kael Quest Armor, Coldain Ring and Shawl quests, utility of both cities, Skyshrine and WW drops.
+
+Steps:
+* 1. Kill Giants till your max ally with Coldain.
+* 2. Kill CoV stuff till your dubious with Kromzek.
+* 3. Kill Coldain till your dubious with Kromrif.
+* 4. Save all Dwarf heads you find while killing coldain.
+* 5. Turn in dwarf heads to max out both giant factions and Tormax faction. Buy extra dwarf heads if you need to, however, they are quite hard to find on the open market.
+** Now you should be max kos to CoV, max ally or close to it for Kael, and hopefully not max kos to Coldain.
+* 6. Kill giants to get Coldain back up to where you want it. But, don't let yourself drop below Ally to giants. Turn in more Coldain heads that you have saved or have bought to keep repairing Kael faction so you can continue to raise Coldain faction and still keep yourself at the faction level you need for the Kael quests.
+* 7. Get extra Tormax faction by killing Velketor the Sorcerer.
+** It may be quite difficult to get ally to both at the same time, but if you can keep yourself with a decent supply of dwarf heads, it should be possibl to stay near the top of each faction and just edge into ally for whatever quest you need to complete. The goal here really is just to keep yourself non kos with Coldain so you can use the city.
+
+'''CoV and Kael Faction at the same time:''' Hard, this is probably the most difficult set of factions to max, aside from the CoV+Kael+Coldain. The down side of even attempting to do this is that you will be out of luck when it comes to most raids or high end quests. Its just not worth it. However, it can be done.
+
+* 1. Max CoV faction by killing giants.
+* 2. Kill Coldain for heads and Kael faction.
+* 3. Kill Dain as much as possible.
+* 4. Turn in heads but don't let yourself go below ally with CoV.
+* 5. Kill Velketor the sorcerer for Kael hits.
+
+Its possible to even get non kos to all 3. Ive herd of one person that is Ally to CoV, Ally to Kael, and currently up to amiable with Coldain. All he pretty much does is faction stuff these days. This is a great option for a 100% raid based Magician, since most magicians are generally the CotH people and during raids their function is mod rod creation to keep clerics healing and wizards nuking. Sorry mages, its just how things go.
+
+If you can sneak you may be able to get this faction work done much easier, as most of the time you can just sneak to get to indiffierent, stand behind the quest giver, and trade the item. Captain Belvos, however, is in a difficult spot to perform this feat, and may require someone thats not kos to kael to chain cast invis on you throughout the trade, or you may be forced to bolt for the zone.

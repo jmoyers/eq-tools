@@ -1,0 +1,57 @@
+{{Classic Era}}
+[[File:Jeet.png|frame|Jeet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Jeet]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Minimum Faction: '''
+| Indifferent
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[North Kaladim]]
+|-
+! ''' Related NPCs: '''
+| [[Cleaner VII]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Miners Cap 628}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest can be completed in tandem with [[Rat Patrol]], given by [[Jeet]], located at 563, 193, -33 outside the Ratsbone Treasury & Assay Office. While you will be turned away unless you have Kindly faction, you can still complete the quest at Indifferent faction.'' [Completed the quest at indifferent 03Nov2022 and 18Nov2024]
+
+You say, 'What cleaner'
+
+: Jeet says, 'Darn that blasted clockwork cleaner! No one in Kaladim even knows what it is! They all think it's some kinda rat in armor! Rat paladins?! The name fits. We miners have seen many like it in the gnome city during heists, err... visits. We have to get rid of this one in Kaladim! If you smash it and get its scrap metal, I am authorized to give you a mining cap, if you are a member of Miner's Guild 628.'
+
+''[[Cleaner VII]] spawns as one of the three Giant Rats that roam the mines underneath the bank area.''
+
+'''Hand [[Jeet]] the [[Scrap Metal]].'''
+
+: Jeet says, 'Great work! We need this junk for something and we sure didn't need this rat sucking up any of our gems. Here. This is a Mining Cap 628. It's not much, but it is the mark of our miners and provides light for mining purposes. Hold onto it. You never know when we may call upon you to produce it.'
+
+<div class="facblock">
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Hall of the Ebon Mask]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category: Quests]]
+[[Category:North Kaladim]]
+[[Category:Rogue Quests]]

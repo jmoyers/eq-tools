@@ -1,0 +1,58 @@
+{{Temple Era}}
+[[File:npc_gardern.png|frame|Gardern]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Gardern]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[Lesser Faydark]], [[Rathe Mountains]], [[Cazic Thule]]
+|-
+! ''' Related NPCs: '''
+| [[a silvered guard]], [[a giant skeleton]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Weeping Wand}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Gardern'
+
+:Gardern says 'I am Gardern, listed among the chosen of Solusek Ro. I hold the [lore to the staff] of Temperate Flux and the [lore] to the Weeping [Wand] - items which are highly coveted by my wizardly brethren'
+
+You say, 'Lore to what wand?'
+
+:Gardern says 'The Weeping Wand is a fine item for a wizard. It can serve as a focus for concentration, and, if needed, be used to parry as well. Are you[interested]in the [wand]'
+
+You say, 'I am interested in the wand'
+
+Gardern says 'I can make you a weeping wand, but you will need to bring me certain components. I will need a silver wand from a silvered guard in the temple of Cazic-Thule, a bloodblack wand from the Mountains of rathe, twice-woven silk from a faerie guard in Faydark and a Scepter of Sorrow from the tomb in castle Mistmoore. bring me these items and i will make a Weeping Wand for you.'
+
+
+Gardern needs:{{CheckboxList}}
+* A [[Silver Wand]] (from a silvered guard in Cazic)
+* A [[Bloodblack Wand]] (from giant skeletons in Mount Rathe)
+* [[Twice-Woven Silk]] (from fairies)
+* [[Scepter]] (from the Tomb in Castle Mistmoore - see the [[Solusek's Flower]] quest for more details)
+
+Hand in the four items:
+
+:Gardern says, 'Well done, Petel. Now I will craft your Weeping Wand, as promised.'
+:Your faction standing with TempleofSolusekRo got better.
+:Your faction standing with ShadowedMen got worse.
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Wizard Quests]]

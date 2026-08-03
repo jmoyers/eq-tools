@@ -1,0 +1,117 @@
+{{Classic Era}}
+[[File:npc_errrak_thickshank.png|thumb|Errrak Thickshank]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Errrak Thickshank]]
+|-
+! ''' Minimum Level: '''
+| 1+ (Rec. 12)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a kobold shaman]], various snakes, [[a wild tiger]]
+|}
+
+
+== Rewards ==
+
+<ul><li> {{:Bone Talisman}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.010%) @level 10
+
+== Checklist == 
+{{CheckboxList}}
+* [[Tiger Skin]](s)
+** Locate and Kill [[a wild tiger]] found on the Southern Island of Kerra Isle near -514, -109, 5
+* [[Odd Kobold Paw]](s)
+** Locate and Kill [[a kobold shaman]] found in Toxxulia Forest
+* [[Snake Fang]](s)
+** Locate and Kill one of the various snakes in Toxxulia Forest
+
+{{End}}
+== Walkthrough ==
+You say, 'Hail, Errrak Thickshank'
+
+: Errrak Thickshank says, 'What?  What do you want?  My tseq, Graalf, lies sick and you waste time with talk when you [cannot help].'
+
+You say, 'cannot help'
+
+: Errrak Thickshank says, 'Mitty and her loyalists. They do not care. They do not help. The shamans, they have said I need [talismans] to ward the sickness from Graalf.'
+
+You say, 'talismans'
+
+: Errrak Thickshank says, 'Errr?  You wish to help?  We will see.  I need a tiger's skin, from the trrraining pit south of ourrr village, for its brave spirit, an odd kobold paw carried by the forrrest kobold shamans, and a snake fang for the poison that can be made into an antidote.  If you truly intend to help, then good speed and hurry!'
+
+''' You have been assigned the task 'Health Potion'. '''
+
+=== Quest Stage 1: ===
+* Step - Collect 1 Tiger Skin(s)
+* Text - Kill wild tigers in Kerra Isle until you acquire a tiger skin. These can be found in the tiger pits on the island south of the mainland
+
+On the Southern reaches of Kerra Island is a smaller island. On the Southernmost Point is a pit with multiple tigers, they are around level 15 - 17.
+
+ You have slain a wild tiger!
+ --You have looted a tiger skin from a wild tiger.--
+
+''' Your task 'Health Potion' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Collect 1 Odd Kobold Paw(s)
+* Text - Kill kobold shamans in Toxxulia Forest until you acquire an Odd Kobold Paw
+
+Toxxulia Forest contains two camps of Kobolds where kobold shaman will spawn. Both are south of the river, one near the wizard spire, on kind of centered in the southern region.
+
+ You have slain a kobold shaman!
+ --You have looted an Odd Kobold Paw from a kobold shaman's corpse.--
+
+''' Your task 'Health Potion' has been updated. '''
+
+=== Quest Stage 3: ===
+* Step - Collect Snake Fang(s)
+* Text - Kill snakes anywhere you can find them until you require a snake fang of average size
+legit text in-game contains a typo
+
+Almost every snake in the world drops snake fangs. Toxxulia Forrest has multiples.
+
+ You have slain a moss snake!
+ --You have looted 2 Snake Fang from a moss snake's corpse.--
+
+''' Your task 'Health Potion' has been updated. '''
+
+=== Quest Stage 4: ===
+* Step - ???
+* Text - ???.
+
+ You offered 1 Tiger Skin to Errrak Thickshank.
+ You offered 1 Odd Kobold Paw to Errrak Thickshank.
+ You offered 1 Snake Fang to Errrak Thickshank.
+
+: Errrak Thickshank says, 'I cannot believe.  Thank you.  Please, take this talisman.  I bought from wandering shaman but it no help Graalf, maybe it help you.  Now please go, Errrak must see if this will help Graalf.'
+
+''' Your task 'Health Potion' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;"> 
+Errrak quickly combined the ingredients you provided into a health potion capable of curing his son. Only time will tell if Graalf will make a full recovery, but you have done what you can, and Errrak is grateful. </span>
+
+: Errrak Thickshank says, 'I cannot believe.  Thank you.  Please, take this talisman.  I bought from wandering shaman but it no help Graalf, maybe it help you.  Now please go, Errrak must see if this will help Graalf.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Bone Talisman <br>
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_gath_n`mare.png|200px|frame|Gath N`Mare]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Stained Red Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Wizard, you will have a tattered note in your inventory. The note reads as follows:
+
+: Welcome young wizard. Come and join the Spurned, master wizard [[Gath N`Mare|Gath N'Mare]] will teach you well. Take him this note to begin your studies.
+
+Upon handing the note to [[Gath N`Mare]]:
+
+: [[Gath N`Mare]] says, 'I am Gath N'Mare, master wizard of the Tower of the Spurned. Welcome to our guild. Let's get started, shall we? Here is your tunic, represent us well with it. Good luck and study hard'
+
+<div class='facblock'>
+* Your faction standings with [[The Spurned]] got better.
+* Your faction standings with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Crimson Training Tunic*]]. Good luck, Wizard!
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:Wizard Quests]]

@@ -1,0 +1,53 @@
+[[File:npc_menkes_tabolet.png|frame|Menkes Tabolet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Menkes Tabolet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| Newbie Area
+|-
+! ''' Related NPCs: '''
+| [[a moss snake]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Snake Fang Necklace}}
+</li></ul>
+
+== Walkthrough ==
+
+''Menkes Tabolet roams between 141.26, -163.01 near Lala Lenard and Byjan Timbokker (Tent #12 on Wiki map), the dock at -51.42, -17.95 near Mermaid's Lure, -11.50, -266.47 near the Grounds of Fate building (Warriors training hall), and behind the Fish's Ale building by the barrel at -221.75, -310.39.''
+
+You say, 'Hail, Menkes Tabolet'
+
+: Menkes Tabolet says 'Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee, I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].'
+
+You say, 'I want a snake fang necklace'
+
+: Menkes Tabolet says 'Hey, great choice..  the snake fang necklace just happens to be my specialty, Pekentus!  Just bring me 3 snake fangs, and 2 gold.  With one of these around your neck, you're sure to be the center of attention down at Crow's..  or anywhere else you fill your mug.'
+
+'''Bring him 3 snake fangs and 2 gold.'''
+
+: Menkes Tabolet says 'Hey, hey..  with this little baby, you will be the talk of the town tonight!'
+
+<div class="facblock">
+* Your faction standing with [[QeynosCitizen]] got better.
+</div>
+{{exp}}
+
+Receive Snake Fang Necklace.
+
+[[Category:Quests]]
+
+[[Category:South Qeynos]]
+[[Category:All Classes Quests]]

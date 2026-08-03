@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_ranjor.png|200px|frame|Ranjor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[a tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mud Covered Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Troll Warrior, you will have a tattered note in your inventory. The note reads as follows:
+
+: Go find Ranjor. . .give note Ranjor. . .become great warrior.
+
+Upon handing the note to [[Ranjor]]:
+
+: [[Ranjor]] says, 'Arhh.. Ranjor mighty warrior.. Ranjor teach you warrior.. you fight for Ranjor now.'
+
+<div class='facblock'>
+* Your faction standing with [[Da Bashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Mud Covered Tunic*]]. Good luck, warrior!
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Warrior Quests]]

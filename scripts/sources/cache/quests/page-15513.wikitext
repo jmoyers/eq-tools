@@ -1,0 +1,82 @@
+{{Classic Era}}
+{{disambig3|[[Cold Iron Armor]]}}
+[[File:npc_royal_guard_sheltuin.png|frame|Royal Guard Sheltuin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Royal Guard Sheltuin]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| SHD
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Qeynos Hills]], [[The Warrens]]
+|-
+! ''' Related NPCs: '''
+| [[Eichvul]], [[Keletha Nightweaver]], [[Smithy Rrarrgin]], [[erudite traveler]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Leggings of Ridossan}}
+</li></ul>
+
+== Walkthrough ==
+
+To [[Royal Guard Sheltuin]], you say, 'I wish an audience with the Overlord' 
+
+: Royal Guard Sheltuin says, 'The Overlord is not seeing anyone at this time, however I may have work for you. You seem to have some experience with the Kobold annoyance in the region. Are you [interested], _______? 
+
+You say, 'I am interested.'
+
+: Royal Guard Sheltuin says, 'Then I shall give you a task. I assume you are aware of the Kobold lair near by. Many of our adventurous knights and priests crusade to destroy those pests so seeing many Erudites frequent the area is normal. However it is not normal to see someone carry large crates into the lair and return empty handed. This person's movements also show he is attempting to remain unseen.....the [fool].'
+
+You say, 'What fool?'
+
+: Royal Guard Sheltuin says 'Whoever it is, obviously is not an Erudite, even though he appears to be. Only an outsider would take us to be such idiots as to fall for their pitiful attempt at disguise.  Or perhaps .... well, nevermind that. I want you to enter the Kobold lair and find these crates. Return one to me and we'll decide what to do from there.'
+
+'''Loot the [[Large Empty Crate]] found on [[Smithy Rrarrgin]] in the [[Warrens]] (it doesn't always drop) and return it to Sheltuin.'''
+
+: Royal Guard Sheltuin says, 'Hmmm. Very odd. The dust in the crate implies some sort of stone was transported in it. Perhaps our brothers of the Arcane will be able to find out where this dust came from and what it's used for. Take this dust sample and note to Keletha Nightweaver. She will examine the dust and send you back with a report. Make haste.'
+
+{{exp}}
+
+'''Royal Guard Sheltuin gives you experience and a [[Envelope with dust sample]]. Take the sample to [[Keletha Nightweaver]].'''
+
+: [[Keletha Nightweaver]] takes the note, dumps the dust into her hand and examines it for a moment. She looks up and chuckles, then says, 'It's amuzing how one of our Royal Guards cannot identify this substance. Do you feel how it's slightly cooler than other metals? It's called Permafrost Iron, also known as Cold Iron to laymen. Miragul wrote of it's properties in his memoirs. There are much better metals at our disposal now, so it's use is rare except in more primitive cultures. Here is my report.'
+
+{{exp}}
+
+'''Keletha gives you experience and [[Heretic's Report]] to take back to Sheltuin.'''
+
+Royal Guard Sheltuin's eyes redden with intense anger after reading the report. When he speaks, his voice is surprisingly calm and measured. He says, 'Listen close Erudite. When you leave this building, you will find the courier who is bringing the ore. You will kill him, and collect his head and a box of the ore. You will then find the supplier, and collect his head and any other information you find on him. Bring me these four things and you will be rewarded. Do not fail.'
+
+{{exp}}
+
+'''Head over to Qeynos Hills and seek out the [[erudite traveler]] by the lake. If you kill him, he drops [[Courier's Head]], [[Crate full of Ore]], and [[Note from Eichvul]] that leads you to [[Eichvul]], a dark elf in a tower in Everfrost near the entrance to Permafrost. Kill Eichvul to obtain a [[Supplier's Head]] and [[Sealed Letter]]. Lastly, return to Royal Guard Sheltuin in Paineel and turn in the [[Courier's Head]], [[Crate full of Ore]], [[Supplier's Head]], and [[Sealed Letter]] for your reward.'''   
+
+: Royal Guard Sheltuin says, 'Is this it? I asked for the head of the courier, the head of the supplier, a full box of ore, and evidence from the supplier. Do not return until you have all of these!'
+: Royal Guard Sheltuin says, 'Is this it? I asked for the head of the courier, the head of the supplier, a full box of ore, and evidence from the supplier. Do not return until you have all of these!'
+: Royal Guard Sheltuin says, 'Is this it? I asked for the head of the courier, the head of the supplier, a full box of ore, and evidence from the supplier. Do not return until you have all of these!'
+: Royal Guard Sheltuin says, 'Honestly, _______, I thought you would not return. Such strength and intelligence in a Knight of Fear I have not seen for quite some time. Wear this armor in pride of the ancient Ridossan. Perhaps when you are ready, I will give you a more important task. This conspiracy must be stopped.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{exp}}
+
+==See also==
+* [[Tunic of Ridossan Quest]]
+
+[[Category:Quests]]
+[[Category:Paineel]]

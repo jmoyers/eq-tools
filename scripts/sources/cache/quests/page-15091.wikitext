@@ -1,0 +1,92 @@
+{{Temple Era}}
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Gavel the Temperant]], [[Blaize the Radiant]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Clan Runnyeye]], [[Dagnor's Cauldron]]
+|-
+! ''' Related NPCs: '''
+| [[Dwigus Lowater]], [[Sludge Dankmire]]
+|}
+
+Armor of the Priest is a set of [[Cleric]] specific armor obtained through quests offered in [[The Temple of Solusek Ro]]. The level range for the quests are around the low 20s to mid 30s. The quests are offered by Blaize the Radiant and Gavel the Temperant.
+
+== Rewards ==
+
+{{Gear Set
+|Chestplate of the Constant
+|Greaves of the Penitent
+|Vambraces of the Fervent
+|Gauntlets of the Ardent
+|Boots of the Reliant
+|Bracers of the Reverent
+}}
+
+
+==[[Blaize the Radiant]]==
+[[File:npc_blaize_the_radiant.png|thumb|right|Blaize the Radiant]]
+
+===Greaves of the Penitent===
+'''{{:Greaves of the Penitent}}'''
+Turn the following in to [[Blaize the Radiant]]{{CheckboxList}}
+* [[Icon of the Penitent]] (Drops off of [[Maugarim]], an Erudite Shadow Knight, in [[Kerra Island]]. Semi-rare spawn on the Tiger/Heretic Necromancer Isle.
+
+* [[Ingot of the Penitent]] (Ground spawn in the [[Upper Guk]] Scryer Room, roughly 200, -500. Inside the eastern pillar of water.)
+* [[Magnetized Platinum Bar]] (Give 1 [[Enchanted Platinum Bar]] to [[Ostorm]].)
+
+
+===Vambraces of the Fervent===
+'''{{:Vambraces of the Fervent}}'''
+Turn the following in to [[Blaize the Radiant]]
+* [[Icon of the Fervent]] (Obtained by trading a [[Tumpy Tonic]] to Jovan in the Lumberyards of [[Highpass Hold]].)
+* [[Ingot of the Fervent]] (Drops from [[Gull Skytalon]] on Aviak Island in the [[Ocean of Tears]].)
+* [[Vulcanized Platinum Bar]] (Give 1 [[Enchanted Platinum Bar]] to [[Vilissia]].)
+
+===Boots of the Reliant===
+'''{{:Boots of the Reliant}}'''
+Turn the following in to [[Blaize the Radiant]]
+* [[Enchanted Platinum Bar]]
+* [[Icon of the Reliant]] (Turgan's Note is a ground spawn, inside of a burnt hut in [[Kithicor Woods]], at 1700, 1100. Give the note to Turgan in [[Lake Rathetear]] at 3641.08, 149.10.)
+* [[Ingot of the Reliant]] (Ground spawn on a tree stump in Kithicor. Jump off of the adjacent fallen tree onto the stump at -90, 3300.)
+
+===Gauntlets of the Ardent===
+'''{{:Gauntlets of the Ardent}}'''
+Turn the following in to [[Blaize the Radiant]]
+* [[Galvanized Platinum Bar]] (Give 1 [[Enchanted Platinum Bar]] to [[Genni]].)
+* [[Icon of the Ardent]] (Drops off of [[Boondin Babbinsbort]], a gnome necromancer, on the third floor of [[Befallen]].)
+* [[Ingot of the Ardent]] (Ground spawn in [[Everfrost Peaks]] at 2984, -5716. You'll most likely need Enduring Breath to get to it.  It's very hard to see and blends into the river floor.)
+
+
+==[[Gavel the Temperant]]==
+[[File:npc_gavel_the_temperant.png|thumb|right|Gavel the Temperant]]
+
+===Chestplate of the Constant===
+'''{{:Chestplate of the Constant}}'''
+Turn the following in to [[Gavel the Temperant]]{{CheckboxList}}
+* 2x [[Galvanized Platinum Bar]] (Give 1 [[Enchanted Platinum Bar]] to [[Genni]] for each bar needed.)
+* [[Icon of the Constant]] (Drops off of [[Sludge Dankmire]] in the well on the fourth level of [[Clan Runnyeye]].)
+* [[Ingot of the Constant]] (Drops off of [[Dwigus Lowater]] in [[Dagnor's Cauldron]] on the island.)
+
+===Bracers of the Reverent===
+'''{{:Bracers of the Reverent}}'''
+Turn the following in to [[Gavel the Temperant]]
+* 2x [[Enchanted Platinum Bar]]
+* [[Ingot of the Reverent]] (drops off of [[Regis the Reverent]] in North Karana.)
+* [[Icon of the Reverent]] (Give [[Lianna's Flute]] to [[Lianna]] in the [[Rathe Mountains]] (3989.64, 1477.37 ) in order to receive the Icon of the Reverent.)
+
+Turning in the Flute to Lianna is only for the [[Icon of the Reverent]]. '''IMPORTANT: DO NOT''' turn in the Enchanted Platinum Bars, and both ingots to '''Lianna'''! She will give you the Icon and eat the rest of the items. Take the Icon and turn it in with the other items to [[Gavel the Temperant]].
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Cleric Quests]]

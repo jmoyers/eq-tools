@@ -1,0 +1,51 @@
+{{Classic Era}}
+[[File:Npc_eolorn_j`axx.png|200px|frame|Eolorn J`Axx]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Black Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Rogue, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'Come to the Hall of the Ebon Mask, [[Eolorn J`Axx|Eolorn J'Axx]] has a job that requires your special talents. Take this note to him, and he will instruct you further.'
+
+Upon handing the note to [[Eolorn J`Axx]]:
+
+: [[Eolorn J`Axx]] says, 'You wanna be part of the Ebon Mask, huh? Well, you'll need to impress me. Here's your guild tunic. Seek out the other masters, they'll have some work for you, I'm sure. Don't screw up, kid. That pretty face of yours would make a fine trophy, got it? Now, quit breathin' my air, and go get some work done.'
+
+<div class='facblock'>
+* Your faction standings with [[Hall of the Ebon Mask]] got better.
+* Your faction standings with [[Guards of Qeynos]] got worse.
+* Your faction standings with [[Wolves of the North]] got worse.
+* Your faction standings with [[Guardians of the Vale]] got worse.
+* Your faction standings with [[Carson McCabe]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Old Black Tunic*]]. Good luck, Brigand!
+
+[[Category:Quests]]
+[[Category:Rogue Quests]]
+[[Category:Neriak Third Gate]]

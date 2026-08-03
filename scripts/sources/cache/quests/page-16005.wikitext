@@ -1,0 +1,60 @@
+
+[[File:npc_frosti_bramblebrew.png|300px|right|Frosti Bramblebrew]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Dreadlands]]
+|-
+! ''' Quest Giver: '''
+| [[Frosti Bramblebrew]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Dreadlands]], [[Solusek's Eye]], [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter IV, Of Flame and Frost]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Frosti Bramblebrew'
+
+: Frosti Bramblebrew says, 'Ah! You don't have the look of a snow-skulker. No, you've got warm fingers and colder feet — just the sort I need! See, I'm working on a new recipe — gloves that warm the hands and the heart. Meant to honor a tradition nearly lost — one the Elves used to call the [Emberfold Exchange].'
+
+You say, 'What Emberfold Exchange'
+
+: Frosti Bramblebrew says, 'A ritual from when flame and frost weren't enemies. Long before the wars, when warmth was a gift, not a weapon. Each year, an Elf would craft a pair of enchanted mittens, made from both frost-hide and emberberries. One was kept; the other, given to someone in need — even an enemy. The Icestar loved that. It glowed brightest when kindness crossed the coldest lines. Now… I just need the [ingredients].'
+
+You say, 'What ingredients'
+
+: Frosti Bramblebrew says, 'Frostbitten Hide, from frozen mammoths, Emberberry Cluster, found in the lair of fire dragons, and the Dew of First Light, dropped by wisps of magical energy.'
+
+: Frosti Bramblebrew wipes berry juice from his sleeve and shrugs.
+
+You will need the following:
+
+* [[Frostbitten Hide]] from any mammoth in [[Everfrost Peaks]]
+* [[Emberberry Cluster]] from any goblins in [[Solusek's Eye]]
+* [[Dew of First Light]] from any willowisp.
+
+Upon turning all three into Frosti Bramblebrew, he will say...
+
+: Frosti Bramblebrew stirs the pot, then pulls free a pair of soft, glowing mittens. A single page shimmers inside one of them, he says, 'Oho! You’ve done it. Even got the dew just right — not too sparkly, not too shy. What’s this? Hiding where it’s warmest. Clever page. Go on then — back to the preamble with you!'
+
+You receive [[Chapter IV, Of Flame and Frost]] and a [[Holiday Gift]].
+
+[[Category:Quests]]
+[[Category:Dreadlands]]

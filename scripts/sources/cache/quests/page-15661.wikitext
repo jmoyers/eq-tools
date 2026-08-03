@@ -1,0 +1,66 @@
+{{Unknown Era}}
+{{unsolved}}
+[[File:npc_lenka_stoutheart.png|frame|Lenka Stoutheart]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+| [[Lenka Stoutheart]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Bronto Thudfoot]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:UNKNOWN}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Lenka Stoutheart'
+
+Lenka Stoutheart sips on her ale, 'Look what we have here, Bronto! A would be hero!
+
+Bronto Thudfoot puts his head over your head as if measuring you. 'Heh!! Going to have to grow up before the General lets him out to play in Kunark!'
+
+: Lenka Stoutheart says 'We're just kidding with you, kid. Although they are making heroes kind of small these days. Hey you [want to see something interesting]?'
+
+You say,'I want to see something interesting.'
+
+Lenka Stoutheart takes a jagged scimitar out of a wrap and lets you hold it. You feel as though it is linked to the spirit world. Lenka grabs it back. 'No, no! You cant keep it. But I can tell you there are plenty more weopons and armor like this. Just have to do a little dragon slaying.'
+
+Bronto Thudfoot says 'No way, Lenka! This place is too dangerous for this kid. Why don't you just stay here and drink it up with us? the Samson couldn't even brew bog juice right, but every once in a while a bashed-up explorer comes in carrying [Cabby Pale Ale].'
+
+You say, 'What is Cabby Pale Ale?'
+
+Bronto Thudfoot takes a bottle from his pack and shows you. 'This is Cabby Pale Ale. CPA for short or, as they say in lizardtown, Cabilis Pale Ale. I got it off a drunken dwarf. He said he bought it off a dark elf. Where he really got it, I am not sure.'
+
+: Lenka Stoutheart says 'I hear they sell the stuff in only two places. Lizardtown and Neriak. Hmmm. Now, why is that?
+
+You say, 'What is lizardtown?'
+
+Bronto Thudfoot says 'Just like it sounds. A town full of those lizardmen called Iksar. I thought they were extinct along with raptors, the Combine Empire, and cheap booze.'
+
+You say, 'What is lizardtown?'
+
+: Lenka Stoutheart says 'The trackers of Firiona Vie have come back with reports that the Iksar are back in force and have a city somewhere in the heart of Kunark. There goes the neighborhood...again.'
+
+You can buy this Ale from vendors in the Field of Bones, Cabilis and Neriak, but giving it to them does not get anything.
+
+Lenka Stoutheart location: -2978.18, 3000.16, -77.65
+
+Bronto Thudfoot location: -2953.36, 2996.79, -77.65
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]

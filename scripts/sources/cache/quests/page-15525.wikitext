@@ -1,0 +1,83 @@
+{{Classic Era}}
+[[File:npc_hager_sureshot.png|frame|Hager Sureshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Hager Sureshot]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]], [[East Freeport]], [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Talym Shoontar]]
+|}
+
+== Reward ==
+
+<ul><li>[[Tailored Large Bag]]</li>
+<li>[[Faction]], Experience, Small Coin
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Hager Sureshot'
+
+: [[Hager Sureshot]] says 'Greetings, ______. Feel free to rest here in Surefall Glade. Just be sure you do no hunting whilst here. If so, then you shall pay the punishment of death. I trust you [will abide by the laws]?'
+
+You say, 'I will abide by the laws.'
+
+: Hager Sureshot says 'That is wise. Your health, for now, is assured. A plague of hunters has infested our land heavily in recent weeks. The word is out that [Mammoth] still lives. Hunters have flocked here in search of a trophy or profit and glory. Instead, they find the deadly accuracy of my arrows.'
+
+You say, 'Who is Mammoth?'
+
+: Hager Sureshot says '[[Mammoth]] is the great bear of the caves. [Tunare] has blessed our home with Mammoth's presence. It is said that when the great bear dies, so too shall the Jaggedpine. He would be quite a trophy to some hunter. And quite profitable to a poacher. Even the infamous [Talym Shoontar] has tried his hand at the hunt.'
+
+You say, 'Who is Talym Shoontar?'
+
+: Hager Sureshot says '[[Talym Shoontar]] is a poacher. He has eluded us for quite some time. He has organized parties of poachers to plague our forest as well as others. He hails from Halas, but I have heard he now calls the Plains of Karana home. I have placed a bounty upon his head. Do you [wish to collect the bounty]?'
+
+You say, 'I wish to collect the bounty.'
+
+: Hager Sureshot says 'That's the spirit!! Spoken like a true Protector of the Pine! Last I heard, Talym Shoontar was hunting in the Plains of Karana. He has also been spotted running to and from Qeynos. No doubt he is selling hides to some merchant. End his life of hunting. Bring me his head to collect the bounty.'
+
+[[Talym Shoontar]] spawns in the tunnels at loc 475, -177.  Aproximately 7 mins on respawn.
+
+'''Faction for killing Talym Shoontar:'''
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Karana Residents]] got worse.
+* Your faction standing with [[Knights of Thunder]] got worse.
+* Your faction standing with [[Priests of Life]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''Hand in the head:'''
+
+: Hager Sureshot says 'His days of hunting are over. In the name of the Protectors of the Pine, I offer you this reward. If you are unable to make use of it, you may sell it. I suggest you hold onto it. If you are a ranger it will come in handy.'
+
+<div class="facblock">
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+{{YouGainExperience}}
+
+Reward is [[Hunting Bow]].
+
+You receive 11 silver from Hager Sureshot.
+
+You receive 6 gold from Hager Sureshot.
+
+Need /loc of quest mobs, list of quest rewards.
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]

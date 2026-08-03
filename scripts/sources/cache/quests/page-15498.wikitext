@@ -1,0 +1,86 @@
+{{Classic Era}}
+[[File:npc_priestess_caulria.png|frame|Priestess Caulria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Priestess Caulria]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]], [[Western Karana]], [[Northern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a rabid grizzly]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Endure Disease|Spell: Endure Disease]]
+</li><li> Coin (2 Plat, 1 Gold, 1 Copper)
+<li> any disease cured
+</li>
+</li></ul>
+
+== Walkthrough ==
+
+[[Priestess Caulria]] (-130, -600, -10) is in the Temple of Life in North Qeynos. This #12 on North Qeynos map, or -162, -288. Take the teleport up to the structure that resembles a UFO next to it. The initial coordinates for Priestess Caulria are after you teleport into the UFO. 
+
+You say, 'I serve the [Prime Healer]'
+
+''Missing Dialog''
+
+She requires you to look into the problem of rabid animals in the area. Kill [[A rabid grizzly]] and loot its putrid hide, they are found in the Qeynos Hills and West Karana.
+
+'''Hand in a [[Putrid Bear Hide]].'''
+
+: Priestess Caulria says, 'Oh dear. The disease has spread to the realm of the Treefolk. It must have been difficult to kill such a large and rabid beast. Here. Take one of my personal scrolls as thanks for such a brave act of devotion. I pray you can use it. If not, then perhaps one of your fellow adventurers can.'
+
+<div class="facblock">
+* Your faction standing with [[Antonius Bayle]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+</div>
+{{exp}}
+
+You receive [[Endure Disease|Spell: Endure Disease]].
+
+Works at dubious faction (confirmed Nov 4, 2017), unlike [[Fleshy Orbs]] from the same NPC.
+
+== XP Gain ==
+
+<br>(12.5% of a level for a level 8 High Elf Magician)
+<br>(~3.3% of a level for a level 13 Half Elf Ranger (Green)) 
+<br>(~5% of a level for a level 14 High Elf Enchanter)
+<br>(~2% of a level for a level 21 Barbarian Shaman)
+<br>(1% of a level for a level 32 Halfling Druid)
+
+=== Wood Elf Ranger (Green, December 2020) ===
+
+{| class="eoTable2"
+! Level 
+! Turn-ins
+! % of Level gained 
+! XP to complete level
+! Est. XP gained
+! Est. XP per turn-in
+|-
+| 10
+| 10
+| 57%
+| 379400
+| 216258
+| 21626
+|}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

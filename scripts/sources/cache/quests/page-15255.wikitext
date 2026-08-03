@@ -1,0 +1,86 @@
+[[File:npc_diggins.png|frame|Diggins]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Diggins]]
+|-
+! ''' Minimum Level: '''
+| 18
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Boog Mudtoe]], [[Mater]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mining Pick 628}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest is the 3rd step following the [[Parrying Pick Quest]] from Diggins''
+
+'''Find [[Mater]] just outside the Kaladim Bank at loc 560, 205'''
+
+You say, 'Hail Mater'
+
+:Mater says, 'Welcome to the mines of Kaladim!'
+
+You say, 'I am ready to earn my Miners Pick 628'
+
+:Mater says 'So you have heard of Mining Pick 628 and feel you are ready to wield one? You shall earn one with the return of the ogre head of [Boog Mudtoe] and the 300 gold pieces he still owes me. Don't return unless you have the head and the 300 gold!!'
+
+You say, 'Who is Boog Mudtoe?'
+
+:Mater says 'Boog Mudtoe is one of the last remaining ogres of the Mudtoe clan. We helped him escape the assault of the Stormguard for a small fee. Unfortunately for him, we have come to believe his head to be more valuable than the fee. We hear there is someone near the port of Butcherblock who knows of the Mudtoe's whereabouts.'
+
+''(Optional)'' '''Glorin Binfurr is at location 1359, 3254 in Butcherblock Mountains at the docks.'''
+
+You say, 'Hail, Glorin Binfurr'
+
+:Glorin Binfurr says 'Pleasure to meet you. Keep your eye out for the ship. You don't want to miss it.'
+
+You say, 'Do you know of the Mudtoe's whereabouts?'
+
+:Glorin Binfurr says 'Mudtoes!! I have heard tales of that foul clan of ogres. A few of the passengers aboard the ships have claimed to have seen one of them, off and on, amongst pirates in the Ocean of Tears!!'
+
+'''Travel to the [[Ocean of Tears]] and find and kill [[Boog Mudtoe]] on the Ancient Cyclops (AC) Island. He is one of 3 placeholders for the AC which is frequently camped for Jboots. Therefore its most likely he is being killed anyways and you should be able to loot the No Drop head just by asking. '''
+
+''(Not to be confused with brother Goob Mudtoe who is on the adjacent Seafury Island. He also drops Ogre Head but its Item Lore will Identify differently as Goob's head and this will not work for turning into Mater. It tested this and he ate the head and gold. It must be Boog's head. )''
+
+You have slain Boog Mudtoe!
+<div class=facblock>
+* Your faction standing with [[Clurg]] got worse.
+* Your faction standing with [[Craknek Warriors]] got worse.
+* Your faction standing with [[Green Blood Knights]] got better.
+</div>
+
+--You have looted [[Ogre Head]]--<br>
+''(Item Lore: Boog's Head)''
+
+'''Travel back to [[Mater]] in Kaladim and hand him the [[Ogre Head]] and 300 Gold to receive your Pick (a magic weapon useable only by dwarf rogues).
+'''
+:Mater says, 'Well done! I didn't think you had it in you! As promised, here is your pick'
+
+<div class=facblock>
+* Your faction standing with [[Miners Guild 628]] got better.
+* Your faction standing with [[Circle Of Unseen Hands]] got worse.
+* Your faction standing with [[Butcherblock Bandits]] got worse.
+* Your faction standing with [[DeepPockets]] got better.
+* Your faction standing with [[Hall of the Ebon Mask]] got worse.
+</div>
+{{experience}}
+
+You receive [[Mining Pick 628]] !
+
+[[Category:Quests]]
+[[Category:North Kaladim]]
+[[Category:Rogue Quests]]

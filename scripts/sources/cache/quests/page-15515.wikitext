@@ -1,0 +1,72 @@
+[[File:npc_shevra_kollintar.png|frame|Shevra Kollintar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Shevra Kollintar]]
+|-
+! ''' Minimum Level: '''
+| 17
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Malik Zaren]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Blackened Iron Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Shevra Kollintar]] can be found inside The Fell Blade (863, 470) in [[Paineel]].''
+
+You say, 'Hail, Shevra Kollintar'
+
+: Shevra Kollintar says, 'Unless you intend to [make yourself useful], do not bother me. I await the return of our Lord, Cazic-Thule. He comes, and I shall be the first to greet Him. I will train you, if need be, for He looks upon those who aid Him kindly. If you are not here for training, return to your meditations or bother someone else.' 
+
+You say, 'I will make myself useful'
+
+: Shevra Kollintar says, 'One of our spies has reported a sighting of Malik Zaren, a courier of [the High Council].  He was seen resting at an inn called 'Golden Roosters' in High Pass Hold and is en route to Erudin Palace. He may be carrying a message containing information of great value to us.  Hunt him down and return to me with the letter he carries. I will reward you for this task.'
+
+You say, 'What is the High Council?'
+
+: Shevra Kollintar says, 'The High Council is the governing board of Erudin, our sword enemies. Beware of these types, they will not look upon you warmly.'
+
+'''Travel to [[Highpass Hold]] and find [[Malik Zaren]] on the second floor of the Golden Rooster Inn (336, -265). Kill him to obtain the letter.'''
+
+You have slain Malik Zaren!
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[High Council of Erudin]] got worse.
+* Your faction standing with [[High Guard of Erudin]] got worse.
+* Your faction standing with [[Kerra Isle]] got better.
+* Your faction standing with [[Ring of Scale]] got better.
+</div>
+
+''--You have looted a [[Sealed Letter]].--''
+
+'''Return to [[Paineel]] and turn in the Sealed Letter to [[Shevra Kollintar]].'''
+
+: Shevra Kollintar says, 'Ah, excellent work. I certainly had my doubts about you, _______. Wear this well.'
+
+<div class='facblock'>
+*Your faction standing with [[Heretics]] got better.
+*Your faction standing with [[Deepwater Knights]] got worse.
+*Your faction standing with [[Gate Callers]] got worse.
+*Your faction standing with [[Craftkeepers]] got worse.
+*Your faction standing with [[Crimson Hands]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Paineel]]

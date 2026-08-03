@@ -1,0 +1,71 @@
+{{Velious Era}}
+[[File:npc_a_mosscovered_treant.png|frame|a mosscovered treant]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Plane of Growth]]
+|-
+! ''' Quest Giver: '''
+| [[a mosscovered treant]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Magician]]
+|-
+! ''' Related Zones: '''
+| [[Skyshrine]]
+|-
+! ''' Related NPCs: '''
+| [[Jaelk]], [[Lararith]], [[Oglard]], [[Ralgyn]], [[Jualicn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Chord of Vines}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, a mosscovered treant'
+
+: a mosscovered treant says 'I welcome thee ______, is there something I can assist you with? I am afraid my tireless searching for the incantations is going to be endless.'
+
+You say, 'What searching?'
+
+: a mosscovered treant says 'For quite some time now I have been seeking the teachings and scribings of Conjurers and Summoners of great power. As I continue my personal quest towards enlightenment there is absolute knowledge that evades me to this day.'
+
+You say, 'What knowledge?'
+
+: a mosscovered treant says 'There is believed to be a tome that contained only the most spectacular and powerful summoning. Many great magicians of time passed were believe to be contributors to this magical tome. During the meeting called by these select few something went terribly wrong.'
+
+You say, 'What went wrong?'
+
+: a mosscovered treant says 'Of those in attendance, there was one servant of Innoruuk whose intentions were to steal the research and knowledge of his peers and use it to benefit himself and his Dark god. This selfishness led to numerous Intellectual conflicts and each Arch-Mage decided to go their separate ways, only to perish so close to the answer for which they seeked.'
+
+: a mosscovered treant whispers, like wind through the tree tops, as it speaks hushed words to the tree.
+
+You say, 'What answer?'
+
+: a mosscovered treant says 'As time progressed each Elementalist continued their studies and research only to soon discover that there was always something missing. As each of them decended upon the Skyshrine they continued to look, not knowing what they were searching for was each other.
+
+You say, 'I will look.'
+
+: a mosscovered treant says 'That is a kind gesture indeed my friend, but be warned the journey that lies ahead of you will not be easy. But as I have faith that this tome will one day be assembled as it was always meant to be and never was I have faith that the pages do still exist, waiting to be unearthed
+
+You say, 'What journey?'
+
+: a mosscovered treant says 'Search the lands for the remains of these Arch-mages Tirranna . Only when I have these teachings and am able to once again construct this tome may I bring myself closer to my Enlightenment and Arcane Mastery.
+
+'''Bring the treant four tomes (dropped randomly by named wurms in Skyshrine?):'''
+
+* [[Tome of Elemental Cognizance]] (confirmed from Jaelk; Lararith)
+* [[Tome of Elemental Contemplation]] (confirmed from Oglard; Ralgyn; Lararith; Jaelk)
+* [[Tome of Elemental Thought]] (confirmed from Jualicn; Ralgyn; Jaelk; Lararith)
+* [[Tome of Elemental Understanding]] (confirmed from Ralgyn; Jaelk)
+
+In exchange, you receive a [[Chord of Vines]].
+
+[[Category:Quests]]
+[[Category:Plane of Growth]]
+[[Category:Magician Quests]]

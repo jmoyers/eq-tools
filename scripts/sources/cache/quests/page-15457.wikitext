@@ -1,0 +1,39 @@
+{{Temple Era}}
+[[File:npc_gavel_the_temperant.png|frame|Gavel the Temperant]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Gavel the Temperant]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Minotaur Sentry]], [[Vilissia]], [[a glacier bear]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Shield of the Devout}}
+</li></ul>
+
+== Walkthrough ==
+
+You need the ingot and icon of Devout and 2 [[Vulcanized Platinum Bar]]s (give enchanted platinum to [[Vilissia]] for this).
+{{CheckboxList}}
+* The [[Icon of the Devout]] is looted from a [[Minotaur Sentry]] in the Minotaur caves found in Steamfont.
+* The [[Ingot of the Devout]] is found on [[a Glacier Bear]] in the caves under the river in Everfrost peaks.
+
+Give all four items to Gavel to receive your shield. (Multiquestable confirmed 8/11/2020)
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Cleric Quests]]

@@ -1,0 +1,179 @@
+{{Classic Era}}{{cleanup}}
+[[File:npc_a_visiting_priestess.png|thumb|a visiting priestess]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Najena]]
+|-
+! ''' Quest Giver: '''
+| [[A Visiting Priestess]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| All except BRD ROG NEC WIZ MAG ENC
+|-
+! ''' Related Zones: '''
+| [[Mistmoore Castle]], [[Neriak|Neriak Commons]], [[Neriak|Neriak Third Gate]], [[Solusek's Eye]]
+|-
+! ''' Related NPCs: '''
+| [[Nallar Q`Tentu]], [[Zanotix Ixtaz]], [[a fallen noble]], [[goblin drunkard]], [[King Xorbb]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Blued Two-Handed Hammer}}
+</li></ul>
+
+== Checklist ==
+
+{{CheckboxList}}
+* ('''OPTIONAL''') Hail [[A Visiting Priestess]] in [[Najena]] who then asks "Are you the champion that Najena sent for?". You say "I will champion for Najena"
+* Get the [[:Ice Crystal Staff]] from [[a goblin scryer]] in [[Permafrost]]
+* Get the [[:Water Crystal Staff]] from [[Webclaw Murkwave]] in [[Lake Rathetear]]
+* Get the [[:Slime Crystal Staff]] from [[King Xorbb]] in [[Beholder's Maze]]
+* Get the [[:Fire Crystal Staff]] from [[goblin drunkard]] in [[Solusek's Eye]]
+* Give [[A Visiting Priestess]] the [[:Ice Crystal Staff]] , the [[:Water Crystal Staff]] , the [[:Slime Crystal Staff]] , and the [[:Fire Crystal Staff]]
+* Pick up [[Scroll of Flayed Goblin Skin]] from the ground near where [[A Visiting Priestess]] was.
+* ('''OPTIONAL''') Give [[Nallar Q`Tentu]] the [[Scroll of Flayed Goblin Skin]] and a [[:Star Ruby]] and receive [[Scroll of Flayed Goblin Skin]] back.
+* Get a [[:Vial of Noble's Blood]] from [[a fallen noble]] in [[Mistmoore Castle]] 
+* ('''OPTIONAL''')  Give [[Zanotix Ixtaz]] 75 pp
+* ('''OPTIONAL''')  Go to [[Nallar Q`Tentu]] and say "Denouncer Ixtaz sent me"
+* Go to [[Zanotix Ixtaz]] give him [[:Vial of Noble's Blood]], a spirit will appear in the blue flames.
+* Give the spirit the [[Scroll of Flayed Goblin Skin]] and receive the [[:Blued Two-Handed Hammer]].
+{{End}}
+
+== Walkthrough ==
+
+'''NOTE: Do yourself a HUGE favor and do not start this quest unless you get the [[:Slime Crystal Staff]] its by the far the rarest part of this quest. '''
+
+
+'''[[a visiting priestess]] spawns near [[the guard captain]] in Najena. Her PH is [[an ogre guard]] who stands next to him. She seems to be a rare spawn. The faction required for this quest is unknown and she appears to be on [[Priests of Innoruuk]], but apprehensive is high enough for the turn-in, which allows sneak to be enough. [[Dark Bargainers]] faction may also be required for the last step.'''
+
+a visiting princess looks your way apprehensively -- You could probably win this fight.
+
+You say, 'Hail, a visiting princess'
+
+: a visiting priestess says, 'Are you the [champion] that Najena sent for?'
+
+You say, 'I am the champion.'
+
+: a visiting priestess says, 'Very well champion.  Have you heard of The Staff of Ankexfen?'
+
+You say, 'I have not heard of this relic.'
+
+: a visiting priestess says, 'No? Why am I not surprised? You look too weak and frail to be of any use. You probably could not even best one of those intoxicated, weak-minded goblins controlled by that pathetic eye called Xxorb. Away with you, useless creature!'
+
+You say, 'I have heard of this relic.'
+
+: a visiting priestess says, 'Long ago, there existed a race known as the Ankexfen, after thair progenitor Hazeg Ankexfen, who were created by Rallos Zek during the Elder Age. This race was quite intelligent and cunning. They quickly expanded their knowledge of magic and the other planes, yet constantly yearned for more power. So, along with their ogre counterparts, they set out to master the Plane of Earth. Alas, their attempts proved futile and the combined might of the other gods forced Rallos Zek back to the Planes of Power, leaving his creations to the whims of the other gods.'
+
+You say, 'What happened to the Ankexfen?'
+
+: a visiting priestess says, 'The wrath of the unnamed gods was grim. Thousands of ogres were instantly slain - their empire left to crumble under the hand of retribution. The giants were flung across the face of Norrath like seeds to the wind. The Ankexfen's fates were more severe. The entire race was exterminated, but from the ashes were born the four goblin races. What is known is that each goblin clan was stripped of any knowledge and was neither informed of the other clans nor of their own origins. Each clan was then transported to a separate environment to help preserve the gods' will. However, the gods were not without mercy and each clan was granted a section of the staff. Upon each staff, a crystal was placed. These staves served to aid the goblin clans in understanding their environments. These remnants of the staff of Ankexfen are what I desire. Bring them to me and the Priests of Innoruuk shall reward you.'
+
+'''Give her the four staves (you may do this one by one).'''
+
+: a visiting priestess grins evilly as she disassembles the staff and holds forth a runed wooden rod.
+
+: a visiting priestess grins evilly as she disassembles the staff and holds forth a runed wooden rod.
+
+: a visiting priestess grins evilly as she disassembles the staff and holds forth a runed wooden rod.
+
+: a visiting priestess cackles with glees as she slowly assembles the runed rods, and with a muttered incantation and a flash of light, disappears, leaving only a note that slowly drifts to the ground.
+
+'''a visiting priestess despawns, and a ground spawn appears near where she spawns (it looks like a small brown bag, like any dropped item). Clicking this bag to pick it up will place [[Scroll of Flayed Goblin Skin]] on your cursor.'''
+
+: The scroll reads, "(some illegible and cryptic text regarding Neriak and blue flames. There is a portion that appears as if erased of ink, most likely by magical means)"
+
+'''Take the scroll to [[Nallar Q`Tentu]] in [[Neriak]], 3rd Gate.'''
+
+You say, 'Hail, Nallar Q`Tentu'
+
+: Nallar Q`Tentu says, 'Lower your voice *playerrace*, these halls contain many tomes.....speak the wrong word loudly enough, and you could be turned into a frog, or worse. Heed my warning'
+
+You say, 'What about the blue flame?'
+
+: Nallar Q`Tentu 's face twists into an expression of complete confusion. The librarian says, 'The Ritual? Of the Blue Flame? Yes I know of it. But why wou..never mind. The ritual is fairly simple. The sacrifice is [flayed] and thrown into the fire just before death overcomes it. The flaying brings out an almost euphoric state of hatred and despisal. It's this that feeds the flame. The influence of our Father blues the flame and allows it to melt our adamantium. '
+
+You say, 'What about the flayed?'
+
+: Nallar Q`Tentu says 'The flaying is done by our priests and the Denouncer. Flaying itself is used in many other rituals as well. For instance, the skin of a flayed goblin can be used to record a misdeed. The perpetrator records the misdeed upon the skin, an ancient practice which allows the victim to wreak [vengeance] upon the one who wronged them, or their ancestors. The perpetrator shows strength by allowing the victim a chance at vengeance, even though the victim is usually dead. '
+
+You say, 'What vengeance?'
+
+: Nallar Q`Tentu says 'Vengeance can only be wrought if the victim is given the goblin skin. Since the victim is usually dead it's not much of a danger. But..it has been known to happen. Ironically, this vengeance is possible through the use of the Blue Flame. This flame can act as a doorway to the nether realm, to [summon] the spirit of a victim. On the skin is recorded the House name of the victim and the reason for the deed. '
+
+You say, 'How to summon?'
+
+: Nallar Q`Tentu says 'Only the Denouncer can call forth a vengeful spirit from the flames. But before he can do so, he'll need blood from a member of the victim's House. Once the blood is cast into the flames, the spirit will emerge only for a short time before the negative pull of the other world draws it back. Why do you ask so many questions on this? Do you have one of these skins? '
+
+You say, 'Yes.'
+
+: Nallar Q`Tentu says 'Ahh, well I'll assume if you could read it you wouldn't be asking these questions. Fortunately for you I do have the ability to read these skins and will do so for only one star ruby. These spirits will often reward those who give them their vengeance. With my translation you may find the name of the House. Hand me the skin and a star ruby and we'll see. '
+
+'''After you hand him the [[Scroll of Flayed Goblin Skin]] and the [[Star Ruby]],'''
+
+: Nallar Q`Tentu takes the scroll and removes an  ornate magnifying glass from a pocket. After some examination and many frowns along with interjections of 'Hmmm,' he hands the scroll back to you and says, 'Unlucky for you indeed. The name of the House has been removed. This can only happen when the House itself is wiped out by another House. All record of that House is destroyed if the attacking house is succesful. You still have a chance though. Many House refugees find homes in other Houses. The Everliving Mayong is known to take in any Teir'Dal rabble, try his castle.'
+
+{{Experience}}
+
+Item Lore: [[Scroll of Flayed Goblin Skin]].
+
+<hr>
+
+'''[[Zanotix Ixtaz]] can be found in Neriak Commons, standing behind a big flame. Yes, it's blue.''
+
+You say, 'Hail, Zanotix Ixtaz'
+
+: Zanotix Ixtaz casts an icy glare at you and says 'I, Zanotix Ixtaz, am the greatest weaponsmith in all of Neriak. Have you disturbed me to purchase one of my superior products or have you come to learn the art of crafting [indigo sabres]? '
+
+You say, 'What about the blue flame?'
+
+: Zanotix Ixtaz gazes at you for many breaths, studying your eyes before looking back at his forge and saying, 'The Blue Flame. This is what allows us to forge our ancestral armor and weapons of adamantite. That and my unmatched skill that is. Many souls were [ritually] sacrificed to spark the flame that now feeds off the constant flow of hatred and envy of the victims . Some call it the Flame of Vengence.' Zanotix stares into the flames, poking at it absently. '
+
+You say, 'What is the ritual?'
+
+: Zanotix Ixtaz says 'The Ritual? Well I was young when it took place. I don't really remember. I've had so much on my mind lately, what with all these new taxes. For instance, I need to come up with an extra 75 pieces of platinum just to cover the forge tax. I don't know what I'm going to do.....*cough*. '
+
+'''Give him 75 platinum pieces.'''
+
+: Zanotix Ixtaz quickly pockets the coins and says, 'Go see the Librarian, Nallar. Tell him Denouncer Ixtaz sent you. Do not return here for at least 3 days, now go, Dark Elf.' '
+
+<div class="facblock">
+* No faction hits.
+</div>
+{{Experience}}
+
+'''Approach [[Nallar Q`Tentu]] in the library in Third Gate, Neriak.'''
+
+You say, 'Denouncer Ixtaz sent me.'
+
+: Nallar Q`Tentu stiffens at the mention of the title. His eyes dart back and forth about the room before speaking to you, his voice almost inaudible. He says, 'Why are you here? What do you want of me? I am nothing but a lowly librarian. I've already paid my debt, I have nothing else to give.' '
+
+You say, 'I am here for the ritual.'
+
+: Nallar Q`Tentu 's face twists into an expression of complete confusion. The librarian says, 'The Ritual? Of the Blue Flame? Yes I know of it. But why wou..never mind. The ritual is fairly simple. The sacrifice is [flayed] and thrown into the fire just before death overcomes it. The flaying brings out an almost euphoric state of hatred and despisal. It's this that feeds the flame. The influence of our Father blues the flame and allows it to melt our adamantium. '
+
+'''Attain a [[Vial of Noble's Blood]] found in [[Mistmoore Castle]] on [[a fallen noble]] in the courtyard before the fountain area where hooded dhampyre spawns. 
+
+'''Give [[Zanotix Ixtaz]] a [[Vial of Noble's Blood]]. Apprehensive was enough for this turn-in, sneak also works.'''
+
+: Zanotix Ixtaz accepts the vial and looks you over, eyebrow raised. He says, 'Well, a sacrifice to feed my forge. You have done Neriak a great service, Citizen Seiryu. I shall burn it now.' He then holds the vial up the the flames, the blood seems to glow brightly as he stares into it. Then suddenly, with the shout of an arcane phrase, he throws the vial violently into the flame. The force shatters the vial, spilling the blood about the flames. Almost immediately the flames flare up to the ceiling. When they die down a presence is felt within the flames. '
+
+'''Cast [[See Invisible]] or a similar spell to see the [[vengeful spirit]]. Hand it the [[Scroll of Flayed Goblin Skin]]. Indifferently with sneak was enough for this turn-in.'''
+
+: vengeful spirit flares brightly as you place the scroll into the blue flames of the forge. The scroll quickly catches fire and burns out in a flash of white fire. In it's place is left a hammer. As you snatch the hammer from the flames you hear the spirit begin to cackle wildly and fade away. '
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] (??) got better.
+</div>
+
+{{Experience}}
+
+'''You receive the [[Blued Two-Handed Hammer]].''' (See linked thread on this item page for more details about the time period of this quest.)
+
+''Need current dialogues, current faction hits, /loc of quest mobs, missing quest mobs, missing items, any other missing information.''
+
+[[Category:Quests]]
+[[Category:Najena]]

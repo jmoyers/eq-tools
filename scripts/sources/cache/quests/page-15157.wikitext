@@ -1,0 +1,123 @@
+__NOTOC__
+[[File:npc_lyra_lyrestringer.png|frame|Lyra Lyrestringer]]
+{| class="questTopTable"
+!''' Start Zone: '''
+| Various
+|-
+!''' Quest Giver: '''
+| Various
+|-
+!''' Minimum Level: '''
+| 1+
+|-
+!''' Classes: '''
+| All
+|-
+!''' Related Zones: '''
+| Various
+|-
+!''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+* [[Faction]]
+* Experience
+* Small Coin
+
+== Walkthrough ==
+
+This quest covers every town in Norrath, as well as some non-town areas. The reward varies (at whim) between 1gp and 15gp, with values in the middle more usual. With a couple of deliveries, low-level characters could get a few platinum easily. Bards with Selo's Accelerando are really in good shape, as some of these routes can be done in only a few minutes. 
+
+The quest is sponsored by the League of Antonican Bards. Faction hits are...
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better. (+5)
+* Your faction standing with [[Knights of Truth]] got better. (+1)
+* Your faction standing with [[Guards of Qeynos]] got better. (+1)
+* Your faction standing with [[Ring of Scale]] got worse. (-1)
+* Your faction standing with [[Mayong Mistmoore (Faction)|Mayong Mistmoore]] got worse. (-1)
+</div>
+{{exp}}
+
+
+Note: if you are delivering several packages at once, make sure to hand them in one at a time, otherwise you will only get credit for one of them.
+
+== Routes ==
+
+{| class="eoTable3 wikitable sortable" style="width:100%;"
+|-
+! Route!! Starting NPC !! Starting Zone/Loc !! Ending NPC !! Ending Zone/Loc 
+|-
+| [[Ak'Anon]] to [[Kelethin]] || [[Lyra Lyrestringer]] || Ak'Anon, outside the structure with the bank (1253, -769) || [[Jakum Webdancer]] || Greater Faydark/[[Kelethin]], Songweavers guild hall (-229, 265)
+|-
+| [[Butcherblock]] to [[Kelethin]] || [[Siltria Marwind]] || Butcherblock Mountains, at the docks (1422, 2711) || [[Jakum Webdancer]] || Greater Faydark/[[Kelethin]], Songweavers guild hall (-229, 265)
+|-
+| [[Erudin]] to [[Qeynos]] || [[Ticar Lorestring]] || Erudin, by Palace teleporter (-628, -228) || [[Tralyn Marsinger]] || South Qeynos, outside bard guild (520, -123)
+|-
+| [[Feerrott]] to [[Freeport]] || [[Drizda Tunesinger]] || Feerrott, by Innothule zoneline (-1128, -2922) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Felwithe]] to [[Kelethin]] || [[Tacar Tissleplay]] || Northern Felwithe, outside Faydark's Bane (-89, -325) || [[Jakum Webdancer]] || Greater Faydark/Kelethin, Songweavers guild hall (-229, 265)
+|-
+| [[Freeport]] to [[Kelethin]] || [[Ton Twostring]] || North Freeport, Marsheart's Chords (-76, 580) || [[Idia]] || Greater Faydark/Kelethin, outside Songweavers guild hall (-213, 265)
+|-
+| [[Freeport]] to [[High Keep]] || [[Ton Twostring]] || North Freeport, Marsheart's Chords (-76, 580) || [[Lislia Goldtune]] || High Keep, up front (8, -45)
+|-
+| [[Freeport]] to [[Qeynos]] || [[Ton Twostring]] || North Freeport, Marsheart's Chords (-76, 580) || [[Eve Marsinger]] || South Qeynos, outside bard guild (527, -123)
+|-
+| [[Halas]] to [[Qeynos]] || [[Marton Stringsinger]] || Halas, in bank (211, 166) || [[Tralyn Marsinger]] || South Qeynos, outside bard guild (520, -123)
+|-
+| [[High Keep]] to [[Freeport]] || [[Lislia Goldtune]] || High Keep, up front (8, -45) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[High Keep]] to [[Qeynos]] || [[Lislia Goldtune]] || High Keep, up front (8, -45) || [[Eve Marsinger]] || South Qeynos, outside bard guild (527, -123)
+|-
+| [[Innothule Swamp]] to [[Freeport]] || [[Dark Deathsinger]] || Innothule Swamp, middle of the south wall (-2592, 172) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Innothule Swamp]] to [[Qeynos]] || [[Dark Deathsinger]] || Innothule Swamp, middle of the south wall (-2592, 172) || [[Eve Marsinger]] || South Qeynos, outside bard guild (527, -123)
+|-
+| [[Kaladim]] to [[Kelethin]] || [[Kilam Oresinger]] || South Kaladim, outside Pub Kal (104, 222) || [[Jakum Webdancer]] || Greater Faydark/Kelethin, Songweavers guild hall (-229, 265)
+|-
+| [[Kelethin]] to [[Freeport]] || [[Idia]] || Greater Faydark/Kelethin, outside Songweavers guild hall (-213, 265) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Nektulos]] to [[Freeport]] || [[Travis Two Tone]] || Nektulos Forest, by EC zoneline (-2231, -306) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Qeynos]] to [[High Keep]] || [[Eve Marsinger]] || South Qeynos, outside bard guild (527, -123) || [[Lislia Goldtune]] || High Keep, up front (8, -45)
+|-
+| [[Qeynos]] to [[Freeport]] || [[Eve Marsinger]] || South Qeynos, outside bard guild (527, -123) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Rivervale]] to [[Freeport]] || [[Silna Songsmith]] || Rivervale, near Weary Foot Rest (149, -149) || [[Felisity Starbright]] || North Freeport, Marsheart's Chords (-108, 550)
+|-
+| [[Surefall Glade]] to [[Qeynos]] || [[Sivina Lutewhisper]] || Surefall Glade, in Ranger guild (119, -64) || [[Tralyn Marsinger]] || South Qeynos, outside bard guild (520, -123)
+|-
+| [[West Karana]] to [[Qeynos]] || [[Mistrana Two Notes]] || West Karana, #13 on map (-3668, -2001) || [[Tralyn Marsinger]] || South Qeynos, outside bard guild (520, -123)
+
+|}
+
+== Example Dialogue ==
+
+One example is the mail delivery from [[Ak'Anon]] to [[Kelethin]].
+
+You say, 'Hail, Lyra Lyrestringer' 
+
+: Lyra Lyrestringer says 'Hail, ______ - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?' 
+
+You say, 'What mail?' 
+
+: Lyra Lyrestringer says 'The League of Antonican Bards has a courier system made up of travelers and adventurers. We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices. Are you [interested]?' 
+
+You say, 'I am interested.' 
+
+: Lyra Lyrestringer says 'I have messages that need to go to - well, right now I have one that needs to go to Kelethin. Will you [deliver] mail to [Kelethin] for me?' 
+
+You say, 'I will deliver mail to Kelethin.' 
+
+: Lyra Lyrestringer says 'Take this letter to Jakum Webdancer in Kelethin. You can find him at the bard guild hall. I am sure he will compensate you for your troubles.' 
+
+Receive Bardic Letter (Kelethin). 
+
+
+=== See Also ===
+* [[Bard Mail]]
+
+[[Category: Quests]]
+[[Category: All Classes Quests]]

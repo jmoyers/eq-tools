@@ -1,0 +1,60 @@
+{{Chardok Revamp Era}}
+[[File:npc_queen_velazul_di`zok.png|frame|Queen Velazul Di`zok]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Chardok]]
+|-
+! ''' Quest Giver: '''
+| [[Queen Velazul Di`zok]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Howling Stones]], [[Old Sebilis]]
+|-
+! ''' Related NPCs: '''
+| [[Drusella Sathir]], [[Trakanon]], [[sebilite juggernaut]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Spirit Wracked Cord}}
+</li></ul>
+
+== Requirements ==
+
+You will need to obtain the {{:Regal Band of Bathezid}} (Ring #2) through the [[Regal Band of Bathezid Quest]] before you can start this one. Also '''Ally'''-level Faction is required for this quest.
+
+== Walkthrough ==
+
+You say, 'Hail, [[Queen Velazul Di`zok]]'
+
+: Queen Velazul Di`zok says 'Hail, minion! It is good to see a member of a lesser race striving to improve themself through service to the Dizok. We are feeling especially generous as of late, and if you would do us a [service], we shall reward you handsomely.'
+
+You say, 'What service?'
+
+: Queen Velazul Di`zok says 'We are not sure you are worthy, but shall assign you this task in hopes you prove mighty enough to resolve it. Gather your broodlings about you, and journey to Charasis. There you shall find a Urn of spirits. We require this, as well as [additional components].'
+
+You say, 'What additional components?' 
+
+: Queen Velazul Di`zok says 'Very well, if you feel you are up to it, lead your broodlings to fallen Sebilis and return to us with a portion of undead dragon sinew. Bring us the Sinew, the Urn, and your [[Regal Band of Bathezid]] as proof of service, and a worthy reward shall be yours.'
+{{CheckboxList}}
+* The [[Undead Dragon Sinew]] drops very rarely from [[Sebilite Juggernaut]]s and [[Trakanon]] in [[Sebilis]]. Trakanon seems to drop the sinew about one in three kills, occasionally dropping more than one.
+* The [[Spirit Wracked Urn]] drops sometimes by [[Drusella Sathir]] in [[Charasis]]. 
+{{end}}
+
+'''Hand the [[Undead Dragon Sinew]], [[Spirit Wracked Urn]] and [[Regal Band of Bathezid]] to the Queen in Chardok.'''
+
+(This turn-in is multi-questable, but the original ring's owner will lose their ring in the process. MQ confirmed done on a level 10 as of today, 2/27/2023)
+
+: Queen Velazul Di`zok says 'Amazing! You have returned the trophies I asked for, against impossible odds. Here is your reward, worthy minion, may it serve you well.'
+
+'''You'll receive the Ring back as well as the [[Spirit Wracked Cord]]. This is an innate (non-triggered) AoB effect.'''
+
+[[Category:Quests]]
+[[Category:Chardok]]
+[[Category:All Classes Quests]]

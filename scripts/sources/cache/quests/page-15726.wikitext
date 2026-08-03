@@ -1,0 +1,151 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_cobi_frostbeard.png|280px|right|Cobi Frostbeard]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Thurgadin]]
+|-
+! ''' Quest Giver: '''
+| [[Cobi Frostbeard]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| Giants
+|}
+
+
+KINDLY or higher faction is required with Coldain for all Thurgadin armor quests.
+
+
+Set Totals ''(1 bracer)'':
+
+
+== Reward ==
+
+{{Gear Set
+|Rowyl's Circlet of Nature
+|Rowyl's Chestguard of Nature
+|Rowyl's Vambraces of Nature
+|Rowyl's Bracer of Nature
+|Rowyl's Gauntlets of Nature
+|Rowyl's Greaves of Nature
+|Rowyl's Boots of Nature
+}}
+
+== Checklist ==
+Turn-ins to [[Cobi Frostbeard]] in [[Thurgadin]].{{CheckboxList}}
+*[[Rowyl's Circlet of Nature]]
+:*[[Eroded Leather Cap]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Rowyl's Chestguard of Nature]]
+:*[[Eroded Leather Tunic]]
+:*3x [[Black Marble]]
+*[[Rowyl's Vambraces of Nature]]
+:*[[Eroded Leather Sleeves]]
+:*3x [[Jaundice Gem]]
+*[[Rowyl's Bracer of Nature]]
+:*[[Eroded Leather Bracelet]]
+:*3x [[Crushed Opal]]
+*[[Rowyl's Gauntlets of Nature]]
+:*[[Eroded Leather Gloves]]
+:*3x [[Crushed Lava Ruby]]
+*[[Rowyl's Greaves of Nature]]
+:*[[Eroded Leather Leggings]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Rowyl's Boots of Nature]]
+:*[[Eroded Leather Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+This quest begins with Cobi Frostbeard in Thurgadin. He's found in Frostbeard's Furs and Leather: After zoning in, cross both bridges, turn left towards the bank, then (at the bank) hang a right. He'll be in the second shop on the right.
+
+You say, 'Hail, Cobi Frostbeard'
+
+: Cobi Frostbeard says 'Greetings to you. I seek one who calls himself a druid. What do you call yourself, manling?'
+
+You say, 'I call myself a druid'
+
+: Cobi Frostbeard says 'Good. I had hoped you were one. As nature's guardian, you fight the never-ending struggle against those who seek to defile it. It is an admirable quality and I wish to aid you. I will provide you with a cap, a tunic, sleeves, bracers, gloves, leggings and boots.'
+
+'''After turn-in:'''
+
+Cobi Frostbeard smiles warmly as he hands you your reward. 'You have done well, _____.'
+
+<div class="facblock">
+* Your faction standing with [[Coldain]] got better.
+* Your faction standing with [[Dain Frostreaver IV]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+* Your faction standing with [[Kromrif]] got worse.
+</div>
+{{YouGainExperience}}
+
+== Circlet ==
+
+You say, 'What cap?'
+
+: Cobi Frostbeard  says, 'Those who are wise as we are know that protection of the head is the most important. I may be able to forge you something most interesting if you were to bring me three pieces of crushed onyx sapphire and an eroded leather cap.
+
+[[Crushed Onyx Sapphire]]s are dropped in various Velious zones while [[Eroded Leather Cap]]s drop from the higher level giants in Kael Drakkel.
+
+== Tunic ==
+
+You say, 'What tunic?'
+
+: Cobi Frostbeard says, 'If you find an eroded leather tunic and three pieces of black marble bring them to me and I shall attempt to create an enchanted tunic that will serve you well.'
+
+[[Black Marble]]s are dropped in various Velious zones while [[Eroded Leather Tunic]] drops from the higher level giants in Kael Drakkel.
+
+== Sleeves ==
+
+You say, 'What sleeves?'
+
+: Cobi Frostbeard says 'Three jaundice gems and a set of eroded leather sleeves might be an interesting combination.  The powers of the gems may be harvested to imbue the sleeves.'
+
+[[Jaundice Gem|Jaundice Gems]] are dropped in various Velious zones while [[Eroded Leather Sleeves]] drops from the higher level giants in Kael Drakkel.
+
+== Bracers ==
+
+You say, 'What bracers?'
+
+: Cobi Frostbeard says 'Bracers are quite easy to imbue. Simply find three crushed opals and an eroded leather bracer and I will complete the ritual to enchant them.'
+
+[[Crushed Opal]]s are dropped in various Velious zones while [[Eroded Leather Bracelet]]s drop from the higher level giants in Kael Drakkel.
+
+== Gloves ==
+
+You say, 'What gloves?'
+
+: Cobi Frostbeard says 'Strong protection for one's hands is important. I may be able to craft you a set of powerful leather gloves if you find a set of eroded leather gloves and three crushed lava rubies.'
+
+[[Crushed Lava Ruby]]s are dropped in various Velious zones while [[Eroded Leather Gloves]] drop from the higher level giants in Kael Drakkel.
+
+== Leggings ==
+
+You say, 'What leggings?'
+
+: Cobi Frostbeard says, 'Leggings are a bit trickier to imbue. Three chipped onyx sapphires will allow me to channel the correct energies into a pair of eroded leather leggings. However, those chipped onyx sapphires are somewhat rare. Return to me if you find such things in your journeys.'
+
+[[Chipped Onyx Sapphire]]s are dropped in various Velious zones while [[Eroded Leather Leggings]] drop from the higher level giants in Kael Drakkel.
+
+== Boots ==
+
+You say, 'What boots?'
+
+: Cobi Frostbeard says 'Simply bring me a set of three crushed flame emeralds and a pair of eroded leather boots and I will imbue them. I bid you good luck in finding such things.'
+
+[[Crushed Flame Emerald]]s are dropped in various Velious zones while [[Eroded Leather Boots]] drop from the higher level giants in Kael Drakkel.
+
+[[Category:Druid Quests]]
+[[Category:Quests]]
+[[Category:Thurgadin]]
+[[Category:Thurgadin Armor Quests]]

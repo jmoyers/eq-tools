@@ -1,0 +1,111 @@
+{{Classic Era}}__NOTOC__
+
+[[File:npc_loveal_snez.png|frame|Loveal S`Nez]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Loveal S`Nez]]
+|-
+! ''' Minimum Level: '''
+| 20+
+|-
+! ''' Classes: '''
+| [[Necromancer]], [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Befallen]]
+|-
+! ''' Related NPCs: '''
+| [[Kizdean Gix]], [[Skeleton Lrodd]], [[Commander Windstream]], [[An Elf Skeleton]]
+|}
+
+== Rewards ==
+
+<ul>
+<li> {{:Reaper of the Dead}} <br></li>
+<li> or {{:Thex Mallet}} <br></li>
+</ul>
+
+== Walkthrough ==
+
+'''Note: This is extremely difficult faction-wise for anyone other than a [[Dark Elf]] [[Necromancer]], [[Shadow Knight]] or [[Cleric]] (must have amiable faction with [[The Dead]], the dark elf necromancer and shadow knight guild).'''
+
+An enchanter can charm Kizdean for the note, however the final turn in NPC cannot be charmed. Raising [[The Dead]] faction is possible (if tedious) by killing high elf or gnome casters from [[Eldritch Collective]] or [[Keepers of the Art]] such as [[Linara Parlone]] or [[Retlon Brenclog]]. Dark elf form or [[Guise of the Deceiver]] will also help. Faction can potentially be bypassed as both the [[Thex Mallet]] and [[Reaper of the Dead]] are tradable.
+
+You say, 'Hail [[Loveal S`Nez]]'
+
+: [[Loveal S`Nez]] says 'So you have succeeded where others have failed. You show promise. Take this then. You shall be a valuable asset to the Dead and soon this shall be of value to one so great. This will help you on your way. Are you still interested in my [appointed tasks]?'
+
+You say, 'I am interested in your appointed tasks.'
+
+: Loveal S`Nez says 'Very well. You have gained the appropriate power. I require you to journey to the Commonlands and seek out Kizdean Gix. He is a member of a very important force. Tell him 'Utalk Adarev Otcin'. Remember this password.'
+
+You say, 'What is the Thex Mallet?'
+
+: Loveal S`Nez says 'All you can know is that the Thex Mallet is desired by our Queen. If we are not successful in its retrieval, it will be our heads which adorn her trophy room. We have learned its location and believe it to be broken into three separate pieces.'
+
+You say, 'Who is Queen Cristanos Thex?'
+
+: Loveal S`Nez says 'The Queen of the Teir'Dal is the most powerful of all. It is she who should sit on the throne and not King Naythox. The Dead are her humble servants. We await the day when she shall finally take her rightful position as ruler of Neriak.'
+
+You say, 'Who is King Naythox Thex?'
+
+: Loveal S`Nez says 'A competent and powerful warrior, but a warrior nonetheless. He has suppressed the true glory of the Teir'Dal. Perhaps it is time for a new ruler of Neriak.'
+
+'''Travel now to the West Commonlands and find [[Kizdean Gix]] near the tollbooth.'''
+
+You say, 'Hail, Kizdean Gix'
+
+: Kizdean Gix says 'If you have business then out with it!! If not, then please be gone. I have little time to waste on chitchat!'
+
+You say, 'Utalk Adarev Otcin.' (Only indifferent faction is required for this step)(Did not work with indifferent faction on an agnostic Dark Elf Warrior)
+
+''Trivia note: This is "klatu verada nicto" backwards, a reference to ''"klaatu barada nikto"[https://en.wikipedia.org/wiki/Klaatu_barada_nikto].
+
+: Kizdean Gix says 'You speak the words of the Dead. You must be the assistance Loveal was to send. You must work quickly! Inside [[Befallen]] are the three pieces to the [[Thex Mallet]] which are to be returned to Loveal. Find [[Skeleton_Lrodd| Hubard L'rodd]]. He was my assistant. Give him this note and he should have information.'
+
+You receive [[A Tattered Cloth Note]]. This note is Lore/No Trade.  
+
+You say, 'Thex Mallet?'
+: Kizdean Gix says, 'The Thex Mallet is a very special weapon of elven creation. It is as ancient as Norrath itself. Queen Cristanos commands that we find it and return it to Loveal S'nez. That is all you need to know.'
+
+'''Travel to [[Befallen]]. Inside, near the well, you will find [[Skeleton Lrodd]] who is a guaranteed spawn and indifferent to all players. Give him the note.'''
+
+: [[skeleton Lrodd]] says 'Search!! Find Windstream. Find the mallet!! One. Two. Three.'
+
+'''Handing in the note will spawn [[ Commander Windstream | Cmdr Windstream ]] on level 3. He spawns on the chair/throne just through the invisible wall.  Kill him, and he will drop the "[[Mallet Stem]]."'''
+
+You have slain Cmdr Windstream!
+
+<div class='facblock'>
+* Your faction standing with [[Burning Dead]] got worse.
+</div>
+
+{{expand}}
+
+Cmdr Windstream and the other Befallen necromancers are on [[Burning Dead]] faction.
+
+'''The [[ An Elf Skeleton ]] is located on the same floor as Cmdr Windstream. Coming from the bottom of the well, the elf skeleton is just on the other side of the fake wall and to the left, next to the spikes near the hanging dwarf torso. If you're coming down from the zone in, it's beyond the second locked door at the bottom of the broken staircase. It will drop the [[Mallet Head]], [[Mallet Hilt]] or neither. When you have both, put the [[Mallet Head]] and [[Mallet Hilt]] inside the [[Mallet Stem]] and hit Combine. This will complete the [[Thex Mallet]]. [[An Elf Skeleton]] has a 6:40 respawn time.'''
+
+'''Journey back to Neriak 3rd Gate and give the mallet to [[Loveal S`Nez]].'''
+
+: Loveal S`Nez says 'Oh how grand it is!! Look at it!! I feel the power trembling within. Who would have thought such an item would be abandoned? You have performed supremely. Queen Cristanos shall reward me greatly and I shall reward you greatly. Here is my weapon from years past.. the Reaper of the Dead. I believe it has one soul still trapped within.' 
+
+<div class='facblock'>
+* Your faction standing with [[The Dead]] has been adjusted by 100.
+* Your faction standing with [[Queen Cristanos Thex]] has been adjusted by 15.
+* Your faction standing with [[King Naythox Thex]] has been adjusted by -15.
+* Your faction standing with [[Keepers of the Art]] has been adjusted by -15.
+* Your faction standing with [[Eldritch Collective]] has been adjusted by -15.
+* Your faction standing with [[Primordial Malice]] has been adjusted by -200.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Reaper of the Dead}}.
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Necromancer Quests]]
+[[Category:Shadow Knight Quests]]

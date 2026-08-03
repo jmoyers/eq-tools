@@ -1,0 +1,38 @@
+[[File:npc_ged_twigborn.png|frame|Ged Twigborn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Ged Twigborn]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Eastern Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a highland lion]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Lionskin Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+There is an NPC named Ged Twigborn who hangs around another NPC and they will wander the forest at times. I usually see them in one of two places: either along the same wall as the zone to the commonlands, or by turning on the path off the main road from the sign pointing towards Freeport. 
+
+Ged will make you some gloves for a price. The lionskin gloves cost 96 gold and a high quality lion skin. 
+
+In order to get the lionskin gloves, you need a high faction with Ged, which you can get by killing Shralok Orcs in the Forest. High Quality Lion Skins are dropped by Highland Lions in EK.   I have been told that a tiger spawns some times in the south west corner of Kith forest near the orc spawn and gives a high quality skin as well.
+
+''Need missing dialogues, current faction hits if any, /loc of quest mobs.''
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]

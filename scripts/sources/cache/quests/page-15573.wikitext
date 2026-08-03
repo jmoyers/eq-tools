@@ -1,0 +1,69 @@
+{{Classic Era}}
+[[File:ironforge.png|frame|Brohan Ironforge]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Brohan Ironforge]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Related NPCs: '''
+| [[Half Elf Maiden]], [[Mare X`Lottl]]
+|}
+
+According to Allakhazam, "the story is a bit quirky, so here's some clarification: Tayla first wanted to move to Kelethin, but probably never made it to there, then was last seen in Neriak. There she worked as a dancer or prostitute, or both, in a night club, but her NPC got removed from there by the devs after some turmoil including a court case against a fantasy writer.
+
+Before or after her stay in Neriak she gets enslaved, and after a stop in Highpass Hold she gets sold to Haggle Baron Klok, an iksar. She then appears as an "Half Elf Maiden" in a prison cell in Cabilis East, still stating that she want to move to the Faydark to live among the elves. This girl got around quite a bit." [https://everquest.allakhazam.com/db/quest.html?quest=529 ref]
+
+== Reward ==
+
+<ul><li>{{:Combine Short Sword}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Brohan Ironforge''' tells you that his daughter Tayla is missing and was last seen near Nektulos Forest. Bring him proof that she is safe and he will reward you. 
+
+Head to Neriak 3rd Gate and talk to '''Mare X`Lottl''' in the basement of Maiden's Fancy. Ask her about Tayla, and she will say: "Why do you seek that little scamp when you have Mare right here? If you really want to know where she is, it will cost you. Did I ever tell you that my heart belongs to Jasper?" 
+
+Go next door, buy a [[jasper]] and give it to her. 
+
+Mare X'lottl says 'Jasper! My one and only love! All right.. That Tayla creature was lost in a game of King's Court with a very important and secret merchant. Belyea will not speak of him but that he was some sort of Baron. He did give me this trinket from his new friend and owner of the half-elf scamp. You keep it. It is worth nothing compared to sweet, beautiful Jasper.'
+
+--You receive [[Klok's Seal]]--
+ 
+There is a [[Half Elf Maiden]] that spawns in a locked room in Cabilis, that is Tayla. She was won in a game of King's Court, which [[Carson Mccabe]] rigged so that the Iksar [[Haggle Baron Klok]] would win. She was taken to Cabilis, and is simply called 'Half Elf Maiden'.  ''Find '[[Key]]' as a ground spawn in front of [[Haggle Baron Klok]], and use this key to open the door to the maiden.''  
+
+--Give 'Klok's Seal' to Half Elf Maiden.--
+
+Half Elf Maiden says 'Oh! thank you! I did not expect to hear of my family ever again. This seal should grant me protection out of the city if I am careful. Please take this note to my father and let him know I am safe!'
+You gain experience!!
+ 
+--You receive 'a sealed letter'.  The letter says 'Father, I am well, I will be living among the elves now. Love, Tayla'
+ 
+Take the letter to Brohan Ironforge in North Qeynos
+
+--Give 'a sealed letter' to Brohan Ironforge--
+ 
+Brohan Ironforge says 'Oh! thank you! Now I know she is safe. My sweet Tayla. Here is your reward, as promised. A hero such as yourself deserves a weapon with which to uphold your noble values.'
+
+<div class="facblock">
+* Your faction standing with Merchants of Qeynos got better.
+* Your faction standing with Circle Of Unseen Hands got worse.
+* Your faction standing with Antonius Bayle got better.
+* Your faction standing with Coalition of Tradefolk got better.
+* Your faction standing with Guards of Qeynos got better.
+{{exp}}
+</div> 
+
+[[Category:Quests]]
+[[Category:North Qeynos]]

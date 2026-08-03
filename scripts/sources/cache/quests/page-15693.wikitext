@@ -1,0 +1,53 @@
+{{Velious Era}}
+
+[[File:npc_gozzrem.png|frame|Gozzrem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Quest Giver: '''
+| [[Gozzrem]]
+|-
+! ''' Minimum Level: '''
+| 55
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Druid]], [[Shaman]]
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[Dozekar the Cursed]], [[Casalen]], [[Essedera]], [[Grozzmel]], [[Krigara]], [[Lepethida]], [[Midayor]], [[Tavekalem]], [[Ymmeln]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Boots of Silent Striding}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Gozzrem'
+
+: Gozzrem says 'Greetings Ayama . If you seek wisdom or the arcane I have tasks in the halls of testing you may complete to gain what you seek. 
+
+You say, 'I seek wisdom'
+
+: Gozzrem says 'Wisdom can be gleaned from battle and that is what I wish you to do. Battle in the halls of testing may give you a different outlook on life. Which do you seek, the short battle or the long battle ? 
+
+You say, 'I seek the long battle'
+
+: Gozzrem says 'You will spend much time in the halls of testing. Seek out a [[Runed Tear]] ([[Dozekar the Cursed]]) and a [[Flame Kissed Tear]] ([[Dozekar the Cursed]]), bring them back to me with a [[Black Symbol]] ([[Krigara]]) as black as midnight and a [[Glowing Drake Orb]] (Named Drakes) of the ancient drakes.
+
+== Related Items ==
+<ul><li>{{:Runed Tear}} </li></ul>
+<ul><li>{{:Flame Kissed Tear}}</li></ul>
+<ul><li>{{:Black Symbol}}</li></ul> ([[Krigara]] or [[Ymmeln]])
+<ul><li>{{:Glowing Drake Orb}}</li></ul>
+
+[[Category:Quests]]
+[[Category:Temple of Veeshan]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Shaman Quests]]

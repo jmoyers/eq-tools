@@ -1,0 +1,65 @@
+{{Kunark Era}}
+[[File:npc_dugroz.png|frame|Dugroz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Quest Giver: '''
+| [[Dugroz]]
+|-
+! ''' Minimum Level: '''
+| 40+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Charasis]], [[Kaesora]]
+|-
+! ''' Related NPCs: '''
+| [[Xalgoz]], [[Chancellor of Di`Zok]]
+|}
+
+== Rewards ==
+
+<ul><li> {{:Key to Charasis}}
+</li></ul>
+
+== Walkthrough ==
+
+Dugroz may be found at {{Loc|Swamp of No Hope|411, -4023}}, in the tunnel to Trakanon's Teeth by the froglok temple in the Swamp of No Hope. ''Once inside the cave, follow the right wall and you will find a tunnel leading to Dugroz halfway between the tunnel entrance and the large area with the iksar outcasts. The tunnel is slightly above ground level, and the loc of the entrance is (1193, -3696). Once inside the tunnel the path will fork, follow the left fork and you will find Dugroz.''
+
+You say, 'Hail, Dugroz'
+
+: Dugroz says 'Fffrroaaak!! Go away! I don't want to [work for them] anymore! Go find another slave!'
+
+You say, 'What work for them?'
+
+: Dugroz looks relieved and eyes you, considering. Finally, he begins to recant his tale. 'I was once the slave of an important Iksar necromancer. I was his Dugroz, his head slave. One night, I heard two other slaves talking about me. I could barely hear them but what I did hear frightened me. My master was going to use me one last time. He was going to sacrifice me to craft a spell component for one of his most powerful spells. Hearing this, I used my privileges as his head slave and made my [escape].' 
+
+You say, 'How did you escape?'
+
+: Dugroz says 'As the head slave, I was allowed to move freely throughout my master's compound. I came across one of the slavemasters asleep in his chair and carefully relieved him of his [keys]. Then, quietly, I made my escape.' 
+
+You say, 'What keys?'
+
+: Dugroz says 'After I escaped, I lost myself in the depths of the swamp. I discarded all the keys but one. I will gladly give it to you if you can do me a [small favor].'
+
+You say, 'What small favor?'
+
+: Dugroz blinks his eyes and leans forward. He whispers so quietly you must strain to hear him, 'I have taken up the same magics as my master. I require two components to complete a spell I have been researching for quite some time. The first is a vampire's fang. I have heard tales of a vampire who haunts the ruins of Kaesora. I also need a jade weapon stained by the blood of a chokidai. Look in the Lake of Ill Omen at the sarnak outpost. The leader used to herd chokidai, or so I am told.'
+
+Dugroz wants:{{CheckboxList}}* "a vampire's fang" -- a [[Xalgozian Fang]], dropped by [[Xalgoz]] in the depths of [[Kaesora]]
+* "a jade weapon stained by the blood of a chokidai" -- a [[Jade Chokidai Prod]], dropped by the [[Chancellor of Di`Zok]] at the back of the Sarnak fort, by the [[Lake of Ill Omen]]
+{{end}}
+
+'''Give these two items to Dugroz to receive the Key to [[Charasis]] (a.k.a. Howling Stones). Ensure you hand the items to Dugroz, and not Dugroz's Pet who sits very close Dugroz. This key is soulbound.''' 
+
+After turn in:
+
+: Dugroz says 'My thanks to you, ___, take this key, I know not what door it opens. Now if I can just find that necklace of power that I took from my master's lair!'
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Swamp of No Hope]]
+[[Category:All Classes Quests]]

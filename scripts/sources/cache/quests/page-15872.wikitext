@@ -1,0 +1,53 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_tylfon.png|frame|Tylfon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Tylfon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Related NPCs: '''
+| [[Tylfon]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Old Worn Gray Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tylfon]] is located at -515, -229, 161 in the Scouts of Tunare ([[Rogue]]) Guild Hall.''
+
+You say, 'Hail, Tylfon'
+
+: Tylfon says, 'You [dare] to speak with a loyal member of the Scouts of Tunare?!! You are truly foolish!! Run away while you still can.'
+
+'''Hand [[Tylfon]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Hail friend. I have use of someone with your skills and talents. Please, return this letter to me and join our cause. In return for your help, I will help train you and teach you the ways of our small association. --Tylfon</code>
+
+: Tylfon says, 'Hmm.. I hope you can prove yourself a lot more valuable than you look. Here, throw this on.. It'll help protect you a little.'
+
+<div class="facblock">
+* Your faction standing with [[Tunare's Scouts]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Rogue Quests]]

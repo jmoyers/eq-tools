@@ -1,0 +1,78 @@
+{{Velious Era}}
+[[File:npc_eysa_florawhisper.png|frame|Eysa Florawhisper]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Eysa Florawhisper]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crest of the Wood Nymphs}}
+</li></ul>
+
+== Walkthrough ==
+
+After getting the case for the crests (see the [[Friend of the Tunarean Court]] Quest), you can do this one to get the Wood Nymph crest. 
+
+[[Eysa Florawhisper]] in the [[Wakening Land]] (-940, -1700) wants you to collect eight seeds for her to show that you are a friend of the Tunarean Court.
+
+These seeds come from Kunark, Antonica, Faydwer, and Odus. She gives you an 8-slot seed pack to fill and combine.
+
+
+You say, 'Hail, Eysa Florawhisper' 
+
+Eysa Florawhisper says 'A pleasure to meet you, ______. I am Countess Eysa Florawhisper of the Tunarean Court. Are you a friend of the court?' 
+
+You say, 'I am a friend of the court.' 
+
+Eysa Florawhisper says 'You appear to be a creature that has seen many foreign lands. There are a number of fruits and seeds that I desire in order to plant them and preserve their species here in the wakening land. I will provide a bag for you that will preserve the seeds until they can be returned to me. Will you gather seeds for me?' 
+
+You say, 'I will gather seeds for you.' 
+
+Eysa Florawhisper says 'I seek the following fruits and seeds. A misty acorn, emerald orange, bag of caynar nuts, vineclinger berries, ripened heartfruit, rathe berries, marr cherries, and flarefire seeds.' 
+
+You receive an [[Empty Seed Collection Bag]]. 
+
+The seeds and their forage locations:{{CheckboxList}}
+* [[Misty Acorn]]: foraged or picked up off ground in Misty Thicket
+* [[Emerald Orange]]: Emerald Jungle
+* [[Bag of Caynar Nuts]]: Toxxulia Forest
+* [[Vineclinger Berries]]: Butcherblock mountains (no drop)
+* [[Ripened Heartfruit]]: Greater Faydark (no drop)
+* [[Rathe Berries]]: Lake Rathe
+* [[Marr Cherries]]: Ocean Of Tears
+* [[Flarefire Seeds]]: Field of Bone (no drop)
+{{End}}
+Combine the 8 items within the Bag:
+You have fashioned the items together to create something new: [[Bag of Seeds]].
+
+Upon giving the bag to Eysa:
+
+Eysa Florawhisper says 'Ohhhh! You're the sweetest, ______. The nymphs of the Tunarean Court recognize you as a friend of our kind and our botanical brethren.'
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] has been adjusted by 20.
+{{exp}}
+</div>
+
+Receive: [[Crest of the Wood Nymphs]]
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]
+[[Category:Ranger Quests]]
+[[Category:Druid Quests]]

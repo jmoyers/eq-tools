@@ -1,0 +1,144 @@
+{{Classic Era}}
+[[File:npc_ernax_the_scholar.png|frame|Ernax the Scholar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Ernax the Scholar]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| Erudite [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]], [[Greater Faydark]], [[Halas]], [[The Feerrott]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[Alania Peaceheart]], [[Dark Assassin]], [[Gorth Bearsoul]], [[Jalen Goldsinger]]
+|-
+! ''' Required Faction: '''
+| Kindly or better (Heretics)
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mantle of Souls}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Ernax the Scholar]] can be found on the first floor of the Athenaeum Necromantia in [[Paineel]] at (1136, 899).''
+
+You say, 'Hail, Ernax the Scholar'
+
+: Ernax the Scholar says, 'Hello. Please leave me be. I am studying several interesting essays on mana storage devices.'
+
+You say, 'I wish to speak to you on a matter of the soul'
+
+: Ernax the Scholar says, 'Hrmm. That's a phrase I have not heard for some time, and one I thought I would not hear again, any time soon. So another fool seeks Azrax's legacy, eh? Well, so be it. Take this and follow its instructions. When you are finished reading and scribing, give it back to me.'
+
+''You receive [[A Tattered Book]].''
+
+Which reads:
+
+ Another fool doth step upon this path to power. Another fool most assuredly will die. It is of no consequence
+ if you succeed or fail, the outcome is yours to decide. What is needed from you is to stalk the land as the
+ dark master you wish to be, and obtain the following components through stealth, guile, and deceit: An
+ assassins Bloody mantle, a druid of renown's pure heart, and a crystal of capturing. When done, place them
+ within the enchanted soul trap and incant upon them that they may be combined. If you have not failed
+ miserably, take the resulting Soul Trap to the soul you wish to manipulate.
+
+'''Return the [[A Tattered Book|Tattered Book]] to Ernax to receive a [[Soul Trap]] (4 slot container).'''
+
+: Ernax the Scholar says, 'For your sake, I wish you a quick and painless death. For mine, I wish you a slow and painful one, as a warning to any fool who wishes to follow in your path.'
+
+You say, 'What is a crystal of capturing?'
+
+: Ernax the Scholar says, 'Ah. An interesting little item. Of great use in so many different ways. Its creation is a thing of some mystery. Few in the land know the particulars of its making. Find yourself the enchanter Jalen Goldsinger. Often he roams the misty forests of Tox.'
+
+'''Seek out the necessary components as instructed:'''
+
+* a [[Bloody Mantle]] which drops from a [[Dark Assassin]], a level 50 mob that can spawn in [[Everfrost Peaks]] and [[The Feerrott]]
+* the [[Heart of the Pure Druid]] which drops from [[Alania Peaceheart]] in [[Greater Faydark]] (1042, 1175)
+* an [[Empty Crystal Sphere]], made by [[Jalen Goldsinger]] in [[Toxxulia Forest]] (Mini quest, see below)
+
+==== Obtaining the Crystal of Capturing ====
+
+'''Step 1'''
+
+''Jalen Goldsinger can be found in Toxxulia Forest at (1525, -837). You need at least dubious faction with Gate Callers to speak with her. Or bring a 40+ enchanter to charm.''
+
+You say, 'Hail, Jalen Goldsinger'
+
+: Jalen Goldsinger says, 'A fine day. Quite murky and quiet is it not? May your path be filled with fortunes. Be well.'
+
+You say, 'How do I create a crystal of capturing?'
+
+: Jalen Goldsinger says, 'Hrm? A crystal of capturing? Aye. I do know the secret of their making. Not that I would tell you. I will, however, create one for you. Provided you bring some of their components and a large coin reserve that is. I require a [Potion of Sorrow] and 1000 gold coins. A tidy sum and for which I will do you the favor of not asking why you need such a... dark item.'
+
+You say, 'Where can I find a potion of sorrow?'
+
+: Jalen Goldsinger says, 'An interesting little concoction. Gorth Bearsoul is the only alchemist I know of who can make such an item. Loud and quite smelly, he is. Not unusual for a barbarian. He calls the icy city of Halas home.'
+
+
+'''Step 2'''
+
+''Travel to [[Halas]] and find [[Gorth Bearsoul]] inside The Golden Torc at (128, 390). You need at least dubious faction with Wolves of the North to speak with him and turn-in. Or bring a 40+ enchanter to charm.''
+
+You say, 'Hail, Gorth Bearsoul'
+
+: Gorth Bearsoul says, 'Hail. yerself. I'm sure ye've better things to do than to bother a man makin' his potions. then. eh?'
+
+You say, 'Can you make me a Potion of Sorrow?'
+
+: Gorth Bearsoul says, 'Ach! What'd ye be needin' that fer? Only those of dark magicks require such a thing and by me mother's eyes, never could I sell to such a soul. If yer soul be clean, then put yer [money] in this enchanted pouch and I will know yer intent. If yer soul be rotten, I'll be knowin', and ye'll be dead. Tis indifferent I'd better be to yer actions.'
+
+You say, 'How much money do you require?'
+
+: Gorth Bearsoul says, 'Sure'n ye dinnae think I'd give ye a potion fer free, then? I'll be needin' five hundred gold coins to make such an item. 'Tis hard t' make and few are the uses fer such a potion.'
+
+'''Give Gorth 500 GP to obtain the [[Potion of Sorrow]].'''
+
+: Gorth Bearsoul says, 'Aye. I guess ye truly are a good soul. Good luck on whatever ye needed such a dread item fer.'
+
+{{YouGainExperience}}
+
+
+'''Step 3'''
+
+''Return to [[Toxxulia Forest]] and [[Jalen Goldsinger]]. You need at least dubious faction with Gate Callers to turn-in with her. Or bring a 40+ enchanter to charm.''
+
+Give her the Potion of Sorrow and 1000 GP.
+
+: Jalen Goldsinger says, 'You surprise me. There is only a few uses for such a dark item. I need not know which you intend, as was our bargain. Here.'
+
+{{YouGainExperience}}
+
+''You receive an [[Empty Crystal Sphere]]'' {{Item Lore | A Soul Sphere}}''.''
+
+
+
+'''Final Combine'''
+
+'''Combine the [[Bloody Mantle]], [[Heart of the Pure Druid]], and [[Empty Crystal Sphere]] in the [[Soul Trap]] to create a [[Completed Soul Trap]]. Return to [[Paineel]] and give the Completed Soul Trap to the [[Tormented Soul]] located on the second floor balcony of The Abattoir at (734, 824).'''  
+
+: Tormented Soul says, 'Ahhh, sweet release. Wait.. what is this? No! Do not bind me to this filthy bit of leather! Release! Curse you and curse Azrax to damnation!!!'
+
+<div class='facblock'>
+* Your faction standings with [[Heretics]] got better.
+* Your faction standings with [[Deepwater Knights]] got worse.
+* Your faction standings with [[Gate Callers]] got worse.
+* Your faction standings with [[Craftkeepers]] got worse.
+* Your faction standings with [[Crimson Hands]] got worse. 
+</div>
+
+{{YouGainExperience}}
+
+''You receive [[Mantle of Souls]].''
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

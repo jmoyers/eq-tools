@@ -1,0 +1,42 @@
+[[File:npc_waltor_felligan.png|frame|Waltor Felligan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Waltor Felligan]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|- [[Halas]]
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li> [[Healing]] is cast upon you.
+</li></ul>
+
+== Walkthrough ==
+
+Waltor Felligan says, 'Hello, me friend! I'm the resident healer o' Halas. Please inform me when ye've a need fer me talents to [bind wounds], [cure disease] or [cure poison]. Might I add, if ye're a young shaman o' Halas, ye can also [assist in gathering fungus].'
+
+You say, "Please bind wounds"
+
+Waltor Felligan says, 'Before I bind yer wounds, ye must pay tribute to the Tribunal in the amount of ten gold coins.'
+
+After you hand him 10 gold coins:
+
+Waltor Felligan says, 'The scales have been balanced and the Tribunal has spoken.  Yer body shall be saved.'
+
+You feel much better.
+
+[[Category:Quests]]
+[[Category:Halas]]

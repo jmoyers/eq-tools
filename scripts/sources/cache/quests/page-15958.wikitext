@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_mespha_tevalian.png|frame|Mespha Tevalian]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Mespha Tevalian]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Mespha Tevalian]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Blue Training Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Mespha Tevalian]] is located at 320, -664 in the Hall of Sorcery: the Qeynos Caster Guild Hall.''
+
+You say, 'Hail, Mespha Tevalian'
+
+: Mespha Tevalian says, 'Greetings, Teddee. I am Mespha Tevalian, Arch Enchantress of the Order of Three. Here, we all study the trhee cirles of magic, and lend our services to citizens of Qeynos. Rumors of an underground group calling themselves the Bloodsabers have recently been spreading through the city. It is our duty to help the local guards protect Qeynos' citizens from this new evil.'
+
+'''Hand [[Mespha Tevalian]] [[a tattered note]]'''
+
+:: ''a tattered note reads:''
+
+:: <code>Existence is but a great illusion. Your aura, words, and actions affect everything around you. Go north and east from the Grounds of Fate Arena to the Hall of Sorcery. Take this scroll to the Enchantress Mespha Tevalian, and she shall guide you on your way.</code>
+
+: Mespha Tevalian says, 'Greetings, Teddee. Welcome to the Order of Three. You have much to learn. Wear this robe and represent us well.'
+
+<div class="facblock">
+*Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Enchanter Quests]]

@@ -1,0 +1,87 @@
+DISCLAIMER: THIS QUEST HAS BEEN REMOVED FROM EQL, YOU CAN NOT DO THIS QUEST TO RE-SPECIALIZE. You can still hand him 50 gold for faction.  
+
+[[File:npc_ostorm.png|frame|Ostorm]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Ostorm]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Casters
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li>  Reset all specialization skills to 49
+</li></ul>
+
+'''NOTE:''' This is an actual quest, so it also gives experience (about 2% at level 26).
+
+== Summary ==
+<ul>
+<li>Give [[Ostorm]] ({{Loc|Temple of Solusek Ro|+430, -80, +35}}) a {{:Ruby}}
+<li>All specialization skills will be reset to 49
+<li>(Optional) Give [[Ostorm]] a 50 gold (has no effect on specializations, but gives [[Temple Of Sol Ro]] faction
+</ul>
+
+== Walkthrough ==
+
+Ostorm can be found in the east upper hallway in the Temple of Solusek Ro,  at +430, -80, +35, through the door behind the throne along the corridor to the right.
+
+You say, 'Hail, Ostorm'
+
+: Ostorm says 'I am Ostorm of the Temple of Solusek Ro, guardian of the sacred crystal of Kintaz.  Be wary and keep your distance, lest the proximity of the crystal [steal] your [memories].'
+
+You say, 'Steal my memories?'
+
+: Ostorm says 'It is the nature of the crystal of Kintaz to steal the memories of those around it. Only I am safe, and then only because of the strong wardings placed on me by Solusek Ro himself. Are you interested in [losing] any [memories]?' 
+
+You say, 'Losing my memories?'
+
+: Ostorm says 'Recently, I have been experimenting with the crystal, and have found that those exposed to ruby light filtered through it tend to lose the memories of their most specialized arcane skills. Are you sure you want to [lose advanced memory] of specialization?' 
+
+You say, 'Lose advanced memory?'
+
+: Ostorm says 'Be warned that once exposed to the crystal, I can not reverse the effects. If you desire exposure, fetch me a ruby.' 
+
+'''Give him a [[Ruby]].'''
+
+Ostorm ..hear me? Ah, you seem to be coming out of your stupor. I think you have been exposed to the crystal long enough. By the time you leave the temple, your memories should have faded. Do you have the [fifty gold] coins that you owe me?
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+Your specialize skills have all been set to 49.
+You gain experience!!
+
+''Note: The following portion of the quest is schmuck bait. Your specializations were reset after simply turning in the ruby, but you can give him the gold for faction.''
+
+You say, 'What fifty gold?'
+
+: Ostorm says 'You do not remember?  You promised me fifty gold coins for allowing you to be exposed to the sacred crystal of Kintaz.'
+
+'''Give him 50 gold.'''
+
+: Ostorm says 'Thank you.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+
+'''Remember, only one specialization skill can exceed 50.  Make sure the one that hits 50 next is the one you really want.'''
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]

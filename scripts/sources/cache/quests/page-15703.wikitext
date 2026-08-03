@@ -1,0 +1,76 @@
+{{Classic Era}}
+{{Disambig3|[[Pixie Dust (Kelethin Rogue)]]}}
+[[File:npc_ran_sunfire.png|frame|Ran Sunfire]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Ran Sunfire]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]], [[Lesser Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a pixie trickster]], [[a pixie prankster]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Patchwork Boots}}
+</li><li>  {{:Patchwork Cloak}}
+</li><li>  {{:Patchwork Pants}}
+</li><li>  {{:Patchwork Sleeves}}
+</li><li>  {{:Leather Skullcap}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Ran Sunfire]] is located at -461, 496, 118 in the Faydark's Champions ([[Ranger]]) Guild Hall.''
+
+You say, 'Hail, Ran Sunfire'
+
+: Ran Sunfire says, 'Hail, ______! I trust you are not afraid of heights. Kelethin is a grand city, but it is also a safe haven from predators and evil beings. About the only thing to fear are the [pixie tricksters].'
+
+You say, 'What pixie tricksters'
+
+: Ran Sunfire says, 'An irritating lot of fairy folk. They have been starting fires in our great forest. They may just burn our grand community down. We will have to [exterminate the pixies]. It is unfortunate, but it is for the good of the entire forest.'
+
+You say, 'I will exterminate the pixies'
+
+: Ran Sunfire says, 'Then I give you this pouch. Should you fill and combine it with Pixie Dust, I shall pay you greatly for your deeds. We may even find a use for the dust itself. Careful, small though they may be, many are quite strong. Search for the weak ones for now.'
+
+'''You recieve an [[Empty Pouch]], a six slot, tiny capacity container.  Fill it with 6 unstacked [[Pixie Dust]]s, looted from [[a pixie trickster]] and combine it.  Return the [[Pouch of Pixie Dust]] to [[Ran Sunfire]].'''
+ 
+: Ran Sunfire says, 'We thank you for your deed. Here, then, is a small reward. Nothing more than long forgotten equipment, but it may be useful to a young ______.'
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 6 copper pieces.
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

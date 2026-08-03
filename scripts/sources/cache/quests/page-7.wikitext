@@ -1,0 +1,121 @@
+<div style="float:right;margin:5px 0px 10px 20px;">
+__TOC__
+</div>
+
+A listing of quests by class or deity. The class-specific sections are cross listed on the individual class pages, and could include any quest of ''particular'' interest to that class.
+
+'''Help requested: All Velious quests (other than the 3 main class armor sets) need to be added.'''
+
+== Bard ==
+{{:Class_Race_Quest_List/Bard}}
+
+== Cleric ==
+{{:Class_Race_Quest_List/Cleric}}
+
+== Druid ==
+
+{{:Class_Race_Quest_List/Druid}}
+
+== Enchanter ==
+
+{{:Class_Race_Quest_List/Enchanter}}
+
+== Magician ==
+
+{{:Class_Race_Quest_List/Magician}}
+
+== Monk ==
+
+{{:Class_Race_Quest_List/Monk}}
+
+== Necromancer ==
+
+{{:Class_Race_Quest_List/Necromancer}}
+
+== Paladin ==
+
+{{:Class_Race_Quest_List/Paladin}}
+
+== Ranger ==
+
+{{:Class_Race_Quest_List/Ranger}}
+
+== Rogue ==
+
+{{:Class_Race_Quest_List/Rogue}}
+
+== Shadow Knight ==
+
+{{:Class_Race_Quest_List/Shadow Knight}}
+
+== Shaman ==
+
+{{:Class_Race_Quest_List/Shaman}}
+
+== Warrior ==
+
+{{:Class_Race_Quest_List/Warrior}}
+
+== Wizard ==
+
+{{:Class_Race_Quest_List/Wizard}}
+
+== Deity Specific Quests ==
+
+=== Bertoxxulous ===
+
+You must be a [[Cleric]] worshiping [[Bertoxxulous]] to complete these quests.
+
+* [[Bertoxxulous Symbol Quests]]
+
+=== Brell Serilis ===
+
+You must be a [[Cleric]] worshiping [[Brell Serilis]] to complete these quests.
+
+* [[Brell Serilis Symbol Quests]]
+
+=== Cazic Thule ===
+
+You must be a [[Cleric]] or [[Shaman]] worshiping [[Cazic-Thule]] to complete these quests.
+
+* [[Cazic Thule Symbol Quests]]
+
+=== Innoruuk ===
+
+Completed by Troll Shaman at level 15.  You must worship [[Innoruuk]] to get this quest, but I did not need to do any additional faction work.
+
+* [[Innoruuk Symbol Quests]]
+
+=== Quellious ===
+
+Specifically for [[Cleric]]s of the [[Erudite]] race.
+
+* [[Quellious Symbol Quests]]
+
+=== Rallos Zek ===
+
+You must be an [[Ogre]] [[Shaman]] worshiping [[Rallos Zek]] to complete this quest.
+
+* [[Rallos Zek Symbol Quests]]
+
+=== The Tribunal ===
+
+You must be a [[Barbarian]] [[Shaman]] worshiping [[The Tribunal]].
+
+* [[Tribunal Symbol Quests]]
+
+=== Tunare ===
+
+You must worship [[Tunare]], and be either a [[Wizard]], [[Enchanter]], [[Ranger]], [[Paladin]], [[Magician]], [[Cleric]] or [[Druid]] to complete these quests.
+
+* [[Tunare Symbol Quests]]
+* [[Natures Defender Quest]]
+* [[The Lost Tome]]
+* [[Gloves of Earthcrafting Quest]]
+* [[Helm of the Tracker Quest]]
+* [[Scrolls of the Ancient Totem]]
+* [[The Four Idols]]
+* [[The Ancient Tomes]]
+
+[[Category:Quests]]
+[[Category:Guides]]

@@ -1,0 +1,123 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_yeeldan_spiritcaller.jpg|frame|Yeeldan Spiritcaller]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Yeeldan Spiritcaller]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (ToV West)
+|}
+Ally faction is required for all Kael armor quests.<br>
+Set Totals ''(1 bracer)'':
+
+== Reward ==
+
+{{Gear Set
+|Spirit Caller's Helm
+|Spirit Caller's Breastplate
+|Spirit Caller's Vambraces
+|Spirit Caller's Bracer
+|Spirit Caller's Gauntlets
+|Spirit Caller's Greaves
+|Spirit Caller's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Yeeldan Spiritcaller]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Spirit Caller's Helm]]
+:*[[Ancient Tarnished Chain Coif]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Spirit Caller's Breastplate]]
+:*[[Ancient Tarnished Chain Tunic]]
+:*3x [[Black Marble]]
+*[[Spirit Caller's Vambraces]]
+:*[[Ancient Tarnished Chain Sleeves]]
+:*3x [[Jaundice Gem]]
+*[[Spirit Caller's Bracer]]
+:*[[Ancient Tarnished Chain Bracer]]
+:*3x [[Crushed Opal]]
+*[[Spirit Caller's Gauntlets]]
+:*[[Ancient Tarnished Chain Gauntlets]]
+:*3x [[Crushed Lava Ruby]]
+*[[Spirit Caller's Greaves]]
+:*[[Ancient Tarnished Chain Leggings]]
+:*3x [[Chipped Onyx Sapphire]]
+*[[Spirit Caller's Boots]]
+:*[[Ancient Tarnished Chain Boots]]
+:*3x [[Crushed Flame Emerald]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Ancient tarnished chain armor is dropped randomly in the West Wing (Dragon Faction) inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you a coif if you bring him an [[Ancient Tarnished Chain Coif]] and three [[Crushed Onyx Sapphire]]s.
+
+== Breastplate ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you a breastplate if you bring him an [[Ancient Tarnished Chain Tunic]] as well as three [[Black Marble]] pieces.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you some sleeves if you bring him [[Ancient Tarnished Chain Sleeves]] and three [[Jaundice Gem]]s.
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you a bracer if you bring him an [[Ancient Tarnished Chain Bracer]] and three [[Crushed Opal]]s.
+
+== Gauntlets ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you some gauntlets if you bring him a pair of an [[Ancient Tarnished Chain Gauntlets]] as well as three [[Crushed Lava Ruby|Crushed Lava Rubies]].
+
+== Leggings ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you some leggings if you bring him a pair of an [[Ancient Tarnished Chain Leggings]] and three [[Chipped Onyx Sapphire]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Yeeldan promises to make you some boots if you bring him a pair of an [[Ancient Tarnished Chain Boots]] and three [[Crushed Flame Emerald]]s.
+
+== Fashion ==
+Full sets of Spirit Caller in various gender/races.
+<gallery widths=200px heights=300px perrow=5>
+File:Zallah.jpg | Male Troll
+File:barb_spirit-caller.png | Male Barbarian
+</gallery>
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Shaman Quests]]
+[[Category:Kael Armor Quests]]

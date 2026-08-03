@@ -1,0 +1,54 @@
+
+[[File:npc_dreamspeaker_lyssiara.png|300px|right|Dreamspeaker Lyssiara]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Eastern Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Dreamspeaker Lyssiara]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Permafrost]], [[Solusek's Eye]]
+|-
+! ''' Related NPCs: '''
+| ??
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter VI, The First Frost]]
+* [[Holiday Gift]]
+
+== Walkthrough ==
+
+You say, 'Hail, Dreamspeaker Lyssiara'
+
+: Dreamspeaker Lyssiara says, 'There is a dream older than this world. A dream that made the Icestar. It was Aurilias' — and though she never spoke it, it still waits to be heard. If you would see it, you must find the right [offering]. Not for her hands… but for her memory'
+
+You say, 'What offering?'
+
+: Dreamspeaker Lyssiara says, 'Three echoes must be offered — remnants of moments that almost never were. The dream remembers these… First: A string of beads made from ice, worn by those who never knew warmth. You'll find them in frost-bitten mountains, clutching their treasures with frozen fingers. Second: Skin still hot to the touch. It rests in the ash of creatures who once burned, in the home of goblins that dwell in heat. Third: A gift untouched by hands. It falls like snow, yet is not of this world. Some find them by chance this very season — tucked within the wind's generosity.'
+
+You will need the following:
+
+* [[Goblin Ice Necklace]] - any goblin in [[Everfrost Peaks]].
+* [[Fire Goblin Skin]] - any goblin in [[Solusek's Eye]]
+* [[Holiday Gift]] from any turn in. Must be unopened.
+
+Hand [[Dreamspeaker Lyssiara]] the [[Goblin Ice Necklace]], [[Fire Goblin Skin]], and a [[Holiday Gift]].
+
+: Dreamspeaker Lyssiara lays the items before her. A low hum begins to rise. Snowflakes around her stop moving midair — frozen in a perfect ring., She says, 'Yes… these are echoes of things never finished. You've stirred the dream. The first dream. The one that shaped the Icestar not with power, but with longing. Listen now. This is what Aurilias wished the world to remember.'
+
+You receive [[Chapter VI, The First Frost]] and a [[Holiday Gift]].
+
+[[Category:Quests]]
+[[Category:Eastern Wastes]]

@@ -1,0 +1,55 @@
+{{Kunark Era}}
+[[File:npc_cipse_tospyr.png|frame|Cipse Tospyr]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Cipse Tospyr]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Erudin]]
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Reward ==
+
+<ul><li> Heals and Cures
+</li></ul>
+
+== Walkthrough ==
+
+[[Cipse Tospyr]] is in the Temple of Divine Light.
+
+You say, 'Hail, Cipse Tospyr'
+
+Cipse Tospyr says, 'Hello, Erudito. I welcome you to the Temple of Divine Light. I am the resident healer. If you should ever require the power of Quellious to [bind wounds], [cure disease] or [cure poison], speak with me and I shall help you.'
+
+''' You say, 'Bind wounds.' '''
+
+: Cipse Tospyr says, 'I shall be pleased to help you with your wounds. The Temple of Divine Light requires a tribute of four gold before I may perform the service.'
+
+Cipse Tospyr casts a heal on you.
+
+''' You say, 'Cure disease.' '''
+
+: Cipse Tospyr says, 'Your malady will be nothing more than a memory, but before that can be, we ask that a donation of two gold coins be offered.'
+
+Cipse Tospyr casts Cure Disease on you.
+
+''' You say, 'Cure Poison.' '''
+
+: Cipse Tospyr says, 'You must pay the tribute of three gold before I cast the toxin from your body.'
+
+Cipse Tospyr casts Cure Poison on you.
+
+[[Category:Quests]]
+[[Category:Erudin]]

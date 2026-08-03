@@ -1,0 +1,48 @@
+{{Expand}}
+[[File:NPC Gunlok.jpg|frame|Gunlok Jure]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|North Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Gunlok Jure]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| All (Paladin?)
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[a putrid skeleton]]
+|}
+
+Quest requires amiable faction or better.
+
+== Reward ==
+
+<ul><li> Spell: [[Hammer of Wrath]]
+</li></ul>
+
+== Walkthrough ==
+
+This quest is sometimes given to you after you return 4 [[Bone Chips]] to [[Gunlok Jure]] in the paladin guild hall in North Kaladim, if you have a high enough faction (amiable). He will ask you to find the remains of his brother Cromil.  Supposedly he is now undead and is with an undead army located somewhere in the Plains of Karana.  You can find these remains in the Southern Karana. 
+
+Cromil is not actually a creature that is listed. It turns out that after you kill [[a dwarf skeleton]] (rare spawn) in the camp where Lord Grimrot hangs out, one of them might have a set of [[Dwarf Bones]]. These are in fact Cromil's remains.  The spawn point is one of the skeletons, usually a putrid skeleton, very near the Gnoll mob that is in camp.
+
+Be warned that the location is very dangerous, as many of the creatures there are well into the upper teens in level.  Especially beware of the roaming cyclops and Lord Grimrot, who is in fact the subject of another quest.
+
+While the above warning is true about the named wanderers, I fought there for hours and the camp itself was green to blue to me at 15.  The non-agro mobs nearby were light blue to white.  I will update the reward section when I get it finished, but if it is a level 15 spell as I suspect, you probably want to come here before 15.
+
+Turning in the dwarf remains to Gunlok produced this interaction:
+"Gunlok Jure says, Many thanks, my friend. Now my brother can rest in peace. Please take this spell. May it serve you well."
+<Received Spook the Dead spell upon completion and the following faction hits>
+Your faction standing with Clerics of Underfoot got better.
+Your faction standing with KazonStormhammer got better.
+Your faction standing with MinersGuild249 got better.
+
+[[Category:Quests]]
+[[Category:North Kaladim]]

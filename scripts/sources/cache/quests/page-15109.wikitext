@@ -1,0 +1,236 @@
+{{Classic Era}}
+__NOTOC__
+<onlyinclude>[[File:npc_phin_esrinap.png|frame|Phin Esrinap]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Phin Esrinap]], [[Togahn Sorast]]
+|-
+! ''' Minimum Level: '''
+| 1-30 (progresses)
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+The Monk Headband quests take place in [[Qeynos]].
+
+'''You do not have to be a monk to complete this you do however need Kindly faction with''' [[Silent Fist Clan]].  '''A newbie Qeynos monk starts at kindly.'''
+
+== Sections ==
+
+<ul><li>[[Monk_Headband_Quests#White Headband|White Headband]]
+</li><li>[[Monk_Headband_Quests#Yellow Headband|Yellow Headband]]
+</li><li>[[Monk_Headband_Quests#Orange Headband|Orange Headband]]
+</li><li>[[Monk_Headband_Quests#Red Headband|Red Headband]]
+</li><li>[[Monk_Headband_Quests#Purple Headband|Purple Headband]]
+</li><li>[[Monk_Headband_Quests#Blue and Black Headband|Blue and Black Headband]]
+</li><li>[[Monk_Headband_Quests#Faction|Faction]]
+</li></ul>
+
+== Rewards ==
+Links to items:
+
+<ul><li> {{:White Headband}}    
+</li><li> {{:Yellow Headband}}
+</li><li> {{:Orange Headband}} 
+</li><li> {{:Red Headband}}        
+</li><li> {{:Purple Headband}}    
+</li></ul>
+
+== White Headband ==
+
+You say, 'Hail, Phin Esrinap'
+
+: Phin Esrinap says, 'Hello, my name is Phin. Practice, practice, practice.. That's my motto. It is my responsibility to train our members, and help them to advance their skills and abilities. I also reward our members with colored [Headbands] for completing certain tasks.'
+
+You say, 'What Headbands?'
+
+: Phin Esrinap says, 'Yes, I give the [White, Yellow, and Orange Headbands] to our newer members, and Togahn gives out [Red, Purple, and Blue Headbands] to our elder members.'
+
+You say, 'What White Headband?'
+
+: Phin Esrinap says, 'That is our training headband.. Beginning students can earn this by slaying four [gnoll] pups, and bringing their scalps back to me.'
+
+Turn these in to '''Phin Esrinap''' in the Silent Fist Clan House in Qeynos.
+
+* 4x [[Gnoll Pup Scalp]]s - gnoll pups can be found outside the Qeynos gates, the top level of Blackburrow, and patroling the Everfrost canyons. Everfrost is easiest: every wolf, bear, skeleton, and spider CAN respawn as a gnoll pup. Also check the vendors inside Halas, who often have them for sale.
+
+: Phin Esrinap says 'Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.'
+
+: Phin Esrinap says 'Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.'
+
+: Phin Esrinap says 'Good.. the more of these vile dogs we slay, the safer the citizens of Qeynos will be.'
+
+: Phin Esrinap says 'Good job, Soandso, keep up the good work! Here is your white training headband. Wear it with honor, and make Lu'Sun proud.'
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Monk_Headband_Quests#Sections|Back to Top]]
+
+== Yellow Headband ==
+
+You say, 'What Yellow Headband?'
+
+: Phin Esrinap says, 'This is awarded to our students for helping clear out the evil that inhabits the old ruins of the Qeynos Hills. Just bring me back three putrid rib bones as proof of your good deeds and turn in your [training headband], and then I will give you the yellow headband.'
+
+Turn these in to '''Phin Esrinap''' in the Silent Fist Clan House in Qeynos. 
+
+* 3x [[Putrid Rib Bone]]s - from [[a putrid skeleton]] at the haunted ruins in [[Qeynos Hills]] (4664, -968) between [[Blackburrow]] and [[Surefall Glade]]. Each [[a dread corpse]] is a placeholder for [[a putrid skeleton]]. There is also [[a putrid skeleton]] that spawns at (2088,-848), then wanders around, with respawn timer of 6 min 40 sec.
+* 1 [[White Headband]] - From Prior Quest
+
+: Phin Esrinap says 'Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.'
+
+: Phin Esrinap says 'Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.'
+
+: Phin Esrinap says 'Ahh.. Good. I feel that your hard work and training will soon be rewarded.. and the yellow headband shall soon be yours.'
+
+: Phin Esrinap says 'Good work.. and, as promised, here is your reward. It is an honor to present this yellow headband to Soandso, for recent acts of courage and heroism, on behalf of the Silent Fist Clan.
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Monk_Headband_Quests#Sections|Back to Top]]
+
+== Orange Headband ==
+
+You say, 'What Orange Headband?'
+
+: Phin Esrinap says, 'This is a difficult award to obtain. The city of Qeynos is, as you know, under constant attack by the gnolls of Blackburrow. The Silent Fist Clan rewards its members who venture deep into this gnoll stronghold and bring swift justice to these vile creatures. Please return two Blackburrow gnoll pelts - make sure they aren't ruined - and a Blackburrow gnoll skin as proof of your noble actions. Also, turn in your [yellow headband], and then I shall give you the orange one. Good luck.'
+
+
+Turn these in to '''Phin Esrinap''' in the Silent Fist Clan House in Qeynos. 
+
+* 2x [[Blackburrow Gnoll Pelt]]s - In the second level of Blackburrow you'll find elite guards, commanders, guardsmen, etc. Most of these gnolls have a chance to drop a pelt. Make sure you don't keep any ruined pelts, as they are useless to this quest.
+* 1 [[Blackburrow Gnoll Skin]] - These will sometimes drop off elite guards and commanders in Blackburrow. Fairly rare drop, I had to slaughter several spawn points of these types for about an hour before I saw one. The Gnoll Brewer also drops the skin, and has various spawn points.
+* 1 Yellow Headband - From prior Quest
+
+: Phin Esrinap says 'Good work, Soandso. You are well on your way toward earning the orange headband.'
+
+: Phin Esrinap says 'Good work, Soandso. You are well on your way toward earning the orange headband.'
+
+: Phin Esrinap says 'Good work, Soandso. You are well on your way toward earning the orange headband.'
+
+: Phin Esrinap says 'It is an honor to present the orange headband of the Silent Fist Clan to one of our finest members, Soandso the mighty!
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+</div>
+{{YouGainExperience}}
+
+This is the '''LAST''' quest with [[Phin Esrinap]], don't give him anything else!
+
+[[Monk_Headband_Quests#Sections|Back to Top]]
+
+== Red Headband ==
+
+[[File:npc_togahn_sorast.png|frame|Togahn Sorast]]
+: You say, 'Hail, Togahn Sorast'
+
+: Togahn Sorast says, 'Greetings.. I am Second Master Togahn Sorast. I am here to teach the ways of our guild. For our more advanced members, I will give out [headbands] as a reward for their contribution to the clan.'
+
+You say, 'What headbands?'
+
+: Togahn Sorast says, 'The Silent Fist Clan gives out colored Headbands for various deeds completed by our students. [Phin] gives out the [White, Yellow, and Orange Headbands].. and I give out the [Red, Purple, and Blue Headbands].'
+
+You say, 'What Red Headband?'
+
+: Togahn Sorast says, 'Ah, you think you are skilled enough to earn the red headband of the Silent Fist Clan, Soandso ? Hmmm.. Well, if you can help us find [Brother Dareb], you would certainly deserve the honor of wearing the red headband.'
+
+You say, 'Who is Brother Dareb?'
+
+: Togahn Sorast says, 'Yes, brother Dareb was last heard from over two weeks ago. He was out in the Plains of South Karana, and then just disappeared. We fear that those vile gnolls fleeing Splitpaw may have captured him or worse. We sent brother Shen to go search the Karanas and look for Dareb over three days ago, but haven't heard from him, either. I fear the worst for both of them, especially if the [Splitpaws] are involved. Please, Soandso , find and return our lost brothers to us. If they are not alive, bring back their remains so we may give them a proper burial.. and, if it is that evil [Ghanex Drah]'s doing, bring me his head as well, for the honor of the clan. You do this for us, Soandso , and turn in your orange headband, and I will reward you with the red headband of the Silent Fist. Good luck.'
+
+You say, 'Who are the Splitpaws?'
+
+: Togahn Sorast says, 'The Splitpaws were a large clan of gnolls that lived in a burrow out in South Karana, They have recently been ousted from their home by a new clan of gnolls that are very powerful. We try to stay away from them if we can, for we do not know much about this new breed. The Splitpaws are on the move and now is the only time to strike. If we wait too long, there will be no way to find our brother. Go now my friend, we haven't much time.'
+
+You say, 'Who is Ghanex Drah?'
+
+: Togahn Sorast says, 'Ghanex Drah is ruler of the now fleeing gnolls of Splitpaw. I've heard rumors that he has been dabbling in the dark art of necromancy. Ghanex is looking for more test subjects, no doubt to rebuild his stronghold. The good people of Antonica must put an end to his evil reign soon, or I fear he could grow much more powerful.'
+
+Turn these in to '''TOGAHN SORAST''' in the Silent Fist Clan House in Qeynos.
+
+# [[Dareb's Skull]] - Dropped from [[High Shaman Phido]] in Southern Karana.
+# [[Head of Shen]] - Dropped from [[High Shaman Grisok]] in Southern Karana.
+# [[Head of Ghanex Drah]] - Dropped from [[Ghanex Drah]] at undead camp in Southern Karana.
+# Orange Headband - From prior Quest
+'''REMINDER : To Togahn Sorast'''
+
+: Togahn Sorast says, 'We are deeply honored to have such great warrior as part of our Clan. With a proper burial, Shen and Dareb's souls will finally be at peace, and with the death of that vile Ghanex, the plains will be much safer for travelers. It is a great honor to present you, Soandso, with the red headband of the Silent Fist Clan.'
+
+<div class="facblock">
+* Your faction standing with [[Silent Fist Clan]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ashen Order]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Monk_Headband_Quests#Sections|Back to Top]]
+
+== Purple Headband ==
+
+You say, 'What Purple Headband?'
+
+: Togahn Sorast says, 'Ah, you think you are now skilled enough to deserve the purple headband of the Silent Fist Clan? Very well, Soandso, I have a task for you that will prove whether or not you are worthy of this honor. I have heard recent rumors of ancient evils surfacing once again throughout Antonica. These evil groups have discovered some items that are giving them mystical and dangerous powers. These items must be destroyed, or else the evils of Norrath may gain control of the world's future. Bring me these [evil items], and turn in your red headband, and you will have proven yourself a mighty spirit and dedicated member of the Silent Fist.'
+
+You say, 'What evil items?'
+
+: Togahn Sorast says, 'These evil creations have been found all over Antonica, and no one knows, or at least no one admits to knowing, where exactly they were found, but we do know that they are currently in the wrong hands and must be destroyed. Please, Soandso, seek out the [Skull of Jhen'Tra], the [Dagger of Marnek], and the [Coronet of Buried Blood], and bring them to me.'
+
+You say, 'What is the Skull of Jhen'Tra?'
+
+: Togahn Sorast says, 'I don't know much about the Skull of Jhen'Tra. I've heard that it has resurfaced in the gnoll burial grounds of Lake Rathetear. Apparently, this skull is helping to give these gnolls the power to raise an undead army of their fallen ancestors. This evil must be stopped before their army becomes too powerful.'
+
+You say, 'What is the Dagger of Marnek?'
+
+: Togahn Sorast says, 'The Dagger of Marnek is a diabolical weapon created by the ancient necromancer Marnek Jaull. Marnek was the leader of a small cult of necromancers who worshipped Solusek Ro. Marnek used this dagger in his ceremonial sacrifices to the Burning Prince, to increase his own power and show his loyalty to his god. His cult grew stronger and word of the evil acts spread all over Antonica. Legend has it that a group of paladins from Erudin, followers of Prexus, spent over 10 years searching out Marnek and his followers, and finally destroyed them. Though Marnek's evil reign was put to an end, many of his books and items are still being uncovered to this day. The Dagger of Marnek is now being used by the evil inhabitants who control the depths of Befallen. Bring this dagger to me, so that we may dispose of it and banish its evil powers forever.'
+
+You say, 'What is the Coronet of Buried Blood?'
+
+: Togahn Sorast says, 'The Coronet of Buried Blood is an ancient headdress which is said to have belonged to the High Priest of the Plexant Temple. The Plexant were known to be devout followers of Innoruuk and the coronet is supposed to have been blessed by the Prince of Hate himself. Apparently, the coronet is now in the hands of a clan of goblins that dwell in the caverns of Permafrost.'
+
+Turn these in to '''TOGAHN SORAST''' in the Silent Fist Clan House in Qeynos.
+
+# [[Skull of Jhen`Tra]] - Drops from [[a gnoll embalmer]] in [[Lake Rathetear]].
+# [[Dagger of Marnek]] - Drops from [[the thaumaturgist]] in the third level of [[Befallen]]. (She is next to the spawn point for [[Priest Amiaz]] which is needed for [[Monk Sash Quests]])
+# [[Zaharn's Coronet]] - The "Coronet of Buried Blood" which drops from [[High Priest Zaharn]] in the [[Permafrost]] throne room. 
+# Red Headband - From prior Quest
+
+[[Monk_Headband_Quests#Sections|Back to Top]]
+
+== Blue and Black Headband ==
+
+These items are not the result of any quests. They drop from Monk Guildmasters in Qeynos. The Purple Headband is the highest headband you need to obtain for the [[Robe of the Lost Circle]]. 
+
+== Faction ==
+
+These turn ins require high amiably faction to turn in.  Since all of the items are tradeable, the turn ins can be done on a new monk.  If you want to do the turn ins on an Iksar monk, it will require approximately 1600 gnoll kills.
+</onlyinclude>
+
+==See also==
+*[[Monk Sash Quests]]
+*[[Monks of The Whistling Fist]]
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:Monk Quests]]

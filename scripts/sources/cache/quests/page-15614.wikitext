@@ -1,0 +1,159 @@
+{{Kunark Era}}
+[[File:npc_squire_fuzzmin.png|frame|Squire Fuzzmin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Firiona Vie]]
+|-
+! ''' Quest Giver: '''
+|[[Squire Fuzzmin]]
+|-
+! ''' Minimum Level: '''
+|45
+|-
+! ''' Classes: '''
+|[[Warrior]], [[Paladin]], [[Ranger]], [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+|[[Burning Wood]], [[The Overthere]], [[The Temple of Solusek Ro]]
+|-
+! ''' Related NPCs: '''
+|[[Gylton]], [[Azdalin]], [[Tektite]], [[Lord Lyfyx of Burwood]], [[Lenka Stoutheart]], [[Sir Hobble]], [[Squire Fuzzmin]]
+|} 	
+
+== Reward ==
+
+<ul><li> {{:Wurmslayer}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* Get a [[Peridot]]
+::Either purchase from vendor or loot from a slain high level mob
+* Get [[Tektite (Item)]]
+::Either kill [[Tektite]] or hand him two [[Carnelian]]s
+* Turn in [[Peridot]] & [[Tektite (Item)]] to [[Lord Lyfyx of Burwood]] to receive [[Dragon Scales]] (Xyfyl)
+* Get [[Azdalin]]'s Scales
+* Get [[Gylton]]'s Scales
+* Turn in in all three Scales to [[Squire Fuzzmin]] to receive [[Wurmslayer]]
+{{End}}
+
+== Walkthrough ==
+
+Obtain two carnelians either through drops or via NPC purchase.  Hand these to the stone gargoyle [[Tektite]] (guarding the [[The Overthere]] Outpost) for [[Tektite (Item)]]. Most likely must be an evil race to turn in carnelians to him.
+
+Kill [[Azdalin]] and [[Gylton]] in the [[Burning Wood]] for their scales.
+
+Azdalin spawns from the Gullerback that circles the crater south of the giant fort. The spawn point for this Gullerback/Azdalin is -449, 2683, -273.
+This is at the base of a downed tree.
+
+Turn in the Tektite and a Peridot to [[Lord Lyfyx of Burwood]] in the [[Temple of Solusek Ro]] for his scale.
+
+Tell [[Lenka Stoutheart]] in [[Firiona Vie]] Outpost "I want to see something interesting". Then complete dialogue, by asking "What Cabby Pale Ale" while speaking to Bronto Thudfoot'''*''', until she and the ogre mention Lizardtown and Neriak.  This will cause [[Sir Hobble]] to spawn at approximately P950, N525 in Firiona Vie in less than 18 minutes. (PS he walks in front of leech ruins near cliffs in very middle of the zone towards the drolvarg ruins, when you hail Hobble, Fuzzmin spawns from much farther back where Hobble originally spawned.)  
+
+Hail Sir Hobble and protect him until Squire Fuzzmin arrives.  Then let Hobble die and Fuzzmin will run back to the docks. (easier to do quest exchange there without mobs adding during dialogue).
+
+<<Once Sir Hobble has spawned after telling Lenka Stoutheart "i want to see something interesting" and "What Cabby Pale Ale,", you can lull him.  I used Kelin's Lugubrious Lament.  Harmony works. None of the mobs in zone (drovlargs, drachnids, frogloks, etc) will aggro on Sir Hobble, and he only becomes engaged when HE attacks him.  
+'''Hail him''' immediately and he will comment about a talking bear, and Squire Fuzzmin will run to him after a few minutes. If you do not hail him, he will walk a long and winding path across the zone, and when you do hail him, Fuzzmin spawns at Hobble's spot and runs to him!!  At this point, immediately switch pacify to Squire Fuzzmin, and discontinue the lull on Sir Hobble.  Once it wears off, he will aggro the next mob he comes to, if Squire Fuzzmin is pacified, by himself.  At this point, Squire Fuzzmin runs back to Firiona Vie.  It is not necessary for Sir Hobble to be dead or for Squire Fuzzmin to be in FV to receive Wurmslayer.>>
+
+Hand the 3 scales from Gylton, Azdalin, and Lord Lyfyx to the Squire to receive a {{:Wurmslayer}}.
+
+
+'''*''' Some NPCs on project99 will not immediately know you are talking to them.  If Bronto does not respond to "what cabby pale ale", then continue hailing him until he turns toward you, and repeat the phrase.
+
+== Dialogue ==
+NOTE: Hailing Sir Hobble with apprehensively faction resulted in the response. "You are no ally of the Union of Vie!! Leave my sight before I incarcerate you." Which did not spawn Squire Fuzzmin.
+
+You say, 'Hail, Sir Hobble'
+
+: [[Sir Hobble]] holds a cracked monocle up to his squinting eye. 'I say!! A talking bear!! Squire Fuzzmin, come and take a gander at this rare find! The wonders never cease in the land of Kunark!!'
+
+You say, 'Hail, Squire Fuzzmin'
+
+: [[Squire Fuzzmin]] awakens from a quick shuteye. 'Yawn.. Oh!! Hello. Don't mind the rusty old tin can. Sir Hobble is on a [quest] of sorts. I tell you, I would leave if he did not pay such good wages to carry his equipment.
+
+You say, 'What quest is Sir Hobble on?'
+
+: Squire Fuzzmin says 'Sir Hobble is searching for [three special dragons]. For all I know, they're not even dragons. He can't see or hear very well. He still thinks I am the only troll squire around.'
+
+: Sir Hobble tries to slash a drachnid webstrander, but misses!
+
+You say, 'What three special dragons?'
+
+: Squire Fuzzmin says 'Apparently he is after three dragons which are supposedly named Azdalin, Gylton and Xyfl. He will not rest until he holds their scales. I wish you could [find the dragons].'
+
+You say, 'I will find the dragons'
+
+: Squire Fuzzmin says 'If you bring me three scales I will be able to place them upon the next three victims of Sir Hobble. Then we can depart from this accursed isle. He would never know the difference. Do this and I will give you a warrior weapon out of the old knight's armory.'
+
+; Get the first two scales from the named wurms in the [[Burning Woods]], [[Azdalin]] and [[Gylton]].
+
+; For the third scale, you'll have some running around to do. Begin by giving two [[Carnelian]]s to Tektite, a gargoyle guard in [[The Overthere]]:
+
+: Tektite takes one hand and pries out one of his eyes, which he casts far into the plains. He then places the carnelian into his eye socket. He turns towards you and holds open his palm.
+
+: Tektite pries out his other eye and places the second carnelian gem in its place. His eyes burn brightly with scarlet fire. He then hands you a fragment of Tektite.
+
+(In the alternative, you can kill him to get the Tektite.)
+
+; Then take the Tektite to the Temple of Solusek Ro and find [[Lord Lyfyx of Burwood]].
+
+You say, 'Hail, Lord Lyfyx of Burwood'
+
+: Lord Lyfyx of Burwood bows as a courtesy. His face gleams as if tinged with red. 'Greetings, my friend. Welcome to the Temple of Ro, sanctuary to those who follow the words of the Burning Prince.'
+
+You say, 'What Burning Prince?'
+
+: Lord Lyfyx of Burwood closes his eyes and shakes his head in sorrow. 'Far away and better forgotten.'
+
+You say, 'Who is Doowrub fo Xyfyl Drol?'
+
+: Lord Lyfyx of Burwood says 'So you can pronounce my name backwards.. Is that your lot in life? Pronouncing names backwards? Be gone with your silliness! We need no court fool.'
+
+You say, 'What is the Temple of Ro?'
+
+: Lord Lyfyx of Burwood closes his eyes and shakes his head in sorrow. 'Far away and better forgotten.'
+
+You say, 'What about dragon scales?'
+
+: Lord Lyfyx of Burwood says 'Tektite and peridot shall get you what you desire.'
+
+; Hand him the Tektite and a Peridot.
+
+: Lord Lyfyx of Burwood places the gems inside an ornate metal box. He begins to tug at his skin. Your vision blurs as he performs his magic. 'This is what you seek. Now leave and bother me no further.'
+
+<div class="facblock">
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+{{exp}}
+</div>
+
+You receive [[Dragon Scales|Dragon Scales (Xyfyl)]].
+
+; Head back to Squire Fuzzmin in Firiona Vie:
+
+You say, 'Hail, Squire Fuzzmin'
+
+: Squire Fuzzmin awakens from a quick shuteye. 'Yawn.. Oh!! Hello. Don't mind the rusty old tin can. Sir Hobble is on a [quest] of sorts. I tell you, I would leave if he did not pay such good wages to carry his equipment.
+
+I don't say anything cause I'm diggin in my bags for the scales, and he goes on to say this, twice in a row:
+
+: Squire Fuzzmin says 'I need the three dragon scales of Azdalin, Gylton and Xyfyl.'
+
+; Hand Squire Fuzzmin the three scales.
+
+: Squire Fuzzmin tumbles around and stands on his hands. With his feet, he pulls a long polearm from a nearby weapons cache. 'Woohoo!! I can taste the brew in Freeport already. Here you are, my friend. A real Wurmslayer!!'
+
+<div class="facblock">
+* Your faction standing with [[Inhabitants of Firiona Vie]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Legion of Cabilis]] got worse.
+* Your faction standing with [[Pirates Of Gunthak]] got worse.
+</div>
+
+[[Category:Quests]]
+[[Category:Firiona Vie]]
+[[Category:Warrior Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Shadow Knight Quests]]

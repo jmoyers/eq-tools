@@ -1,0 +1,55 @@
+{{Classic Era}}
+[[File:npc_beur_tenlah.png|frame|Beur Tenlah]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Beur Tenlah]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Ranger]], [[Bard]], [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Harkin Duskfoot]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Used Merchants Gloves}}
+</li></ul>
+
+== Walkthrough ==
+
+Beur Tenlah may be located at -332, -836, -109.
+
+You say, 'Hail, Beur Tenlah'
+
+: Beur Tenlah says 'Heya, ______!  I've been on watch duty all night. Kinda makes a man thirsty, ya know?  Why don't you be a good little scamp and run up to the bar and get me a [dwarven ale]?  That sure would hit the spot right about now.'
+
+You say, 'What dwarven ale?'
+
+: Beur Tenlah says 'Ahhh..  Dwarven ale is the best.  You gotta hand it to those stinky little dirt diggers, they know how to make a good brew.  Now if they could just learn to shower, huh, Harkin? Ha ha ha!'
+
+'''Bring him some [[Dwarven Ale]].'''
+
+: Beur Tenlah says 'Well, well, well..  It's about time.  Whatta ya got, boots fulla stones?  Or maybe yer just part turtle?  Bah, anyways, thanks for the ale. Maybe I'll buy you one sometime, eh?  Bwahaha!'
+
+{{YouGainExperience}}
+
+'''This leads in to the [[Note for Janam]] quest as Harkin Dustfoot is stood next to him and adds his two cents into the conversation.'''
+
+: Harkin Duskfoot says 'Bah!  Don't listen to this fool.  Listen, I've something a little more important for you to do than buy ales.  I need you to take a [message] to my friend Janam over in West Freeport.'
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Warrior Quests]]
+[[Category:Ranger Quests]]
+[[Category:Bard Quests]]
+[[Category:Rogue Quests]]

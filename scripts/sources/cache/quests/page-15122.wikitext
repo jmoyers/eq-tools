@@ -1,0 +1,199 @@
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+Test of Might
+<li>{{:Amulet of the Fang}}
+  <ul>
+  <li>1 - {{:Auburn Tessera}} ([[a thunder spirit]])
+  <li>'''2''' - {{:Drake Fang}} '''([[Protector of Sky]])'''
+  <li> '''3''' - <span style="font-weight: bold">{{:Leather Cord}} ([[Gorgalosk]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Health 
+<li>{{:Bracelet of the Spirits}}
+  <ul>
+  <li>2 - {{:Platinum Disc}} ([[an azarack]])
+  <li>3 - {{:Ethereal Amber}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]])
+  <li>'''4''' - {{:Shimmering Amber}} '''([[Keeper of Souls]])'''
+  <li>'''5''' - <span style="font-weight: bold">{{:Ceremonial Belt}} ([[The Spiroc Lord]])</span>
+  <li>
+  </ul>
+</ul>
+<ul>
+Test of Sight 
+<li>{{:Fairy-Hide Mantle}}
+  <ul>
+  <li>3 - {{:Phosphoric Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Sphinx Hide}} ([[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Light Damask Mantle}} ([[The Spiroc Lord]])</span>
+</ul>
+</ul>
+<ul>
+Test of Shrink 
+<li>{{:Warhammer of the Wind}}
+  <ul>
+  <li>4 - {{:Djinni Statuette}} ([[a soul harvester]], [[an essence harvester]])
+  <li>'''1.5, 4, 8''' - {{:Efreeti War Club}} <span style="font-weight: bold">([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])</span>
+  <li>5 - {{:Wooden Bands}} ([[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]]
+  <li>'''6''' - <span style="font-weight: bold">{{:Corrosive Venom}} ([[Bazzt Zzzt]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Snake 
+<li>{{:Vermilion Sky Ring}}
+  <ul>
+  <li>5 - {{:Emerald Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]])
+  <li>6 -  <span style="font-weight: bold">{{:Bixie Essence}}</span> ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]])
+  <li>7 -  <span style="font-weight: bold">{{:Spiritualist's Ring}}</span> ([[Sister of the Spire]])
+  </ul>
+</ul>
+<ul>
+Test of The Witch Doctor 
+<li>{{:Garduk}}
+  <ul>
+  <li>6 - {{:Thickened Nectar}} ([[Bzzazzt]])
+  <li>7 - {{:Fire Sky Ruby}} (Shaman version weight 12.0) ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>'''8''' - <span style="font-weight: bold">{{:Symbol of Veeshan}} ([[Eye of Veeshan]])</span>
+  <li>'''1.5, 4, 8''' - {{:Efreeti War Maul}} <span style="font-weight: bold">([[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]])</span>
+  </ul>
+</ul>
+
+== Quests ==
+'''Note:''' For the older versions of the rewards for these quests (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+Talk to Medicine Man Veetra in the [[Plane of Sky]].
+
+You say, 'hail Medicine Man Veetra'
+:''Medicine Man Veetra says 'Good day to you. Are you a shaman of [much experience]? ''
+You say, 'Yes I am a shaman of much experience'
+:''Medicine Man Veetra says 'Then welcome to the tests of the medicine man. I have two tomes, each tells of a shaman of great accomplishment. They are Gina MacStargan and Ooga. Simply tell me the name of the shaman you want to be tested by. ''
+
+= Gina MacStargan =
+
+You say, 'I wish to be tested by Gina MacStargan'
+:''Medicine Man Veetra says 'Return this tome to me if you wish me to call forth Gina. Destroy it if you do not. ''
+:''Gina MacStargan says 'Hail, I have come to assist. ''
+:''Medicine Man Veetra says 'I am no longer needed and will take my leave. ''
+You say, 'hail Gina MacStargan'
+:''Gina MacStargan says 'Hello, Xekl . I am the keeper of the tests of might, of health, and of sight.  I also have been intrusted allow players to trade back their old items for a upgraded version. ''
+You say, 'I wish to trade'
+:''Gina MacStargan says 'I am currently looking for the following.  Drake Fang Amulet, Elder Shaman's Ceremonial Bracelet, or a Sphinx-Hide Mantle.  I will reward you fairly for your work if you bring me for any one of those items. ''
+
+== Shaman Test of Might ==
+
+Gina MacStargan says 'The test of might it is. Go find an auburn tessera, a drake fang and a leather cord. Bring them to me when you have them all and I shall reward you. 
+
+'''Reward:''' {{:Amulet of the Fang}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Auburn Tessera]] || [[a thunder spirit]] || Island 1
+|-
+| [[Drake Fang]] || [[Protector of Sky]] || Island 2 Boss
+|-
+| [[Leather Cord]] || [[Gorgalosk]] || Island 3 Boss
+|}
+
+== Shaman Test of Health ==
+
+Gina MacStargan says 'The test of health is difficult. I am sure that you will find it a challenge. Bring to me a platinum disc, some ethereal amber, a shimmering amber and finally a ceremonial belt. Return them all to me at once and you shall have your just reward. 
+
+'''Reward:''' {{:Bracelet of the Spirits}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Platinum Disc]] || [[an azarack]] || Island 2
+|-
+| [[Ethereal Amber]] || [[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] || Island 3
+|-
+| [[Shimmering Amber]] || [[Keeper of Souls]] || Island 4 Boss
+|-
+| [[Ceremonial Belt]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+== Shaman Test of Sight ==
+
+Gina MacStargan says 'So you wish to take the test of sigh, do you? Get me a phosphoric globe, a sphinx hide and a light damask mantle. Give them all to me at the same time and I shall reward you well. 
+
+'''Reward:''' {{:Fairy-Hide Mantle}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Phosphoric Globe]] || [[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] || Island 3
+|-
+| [[Sphinx Hide]] || [[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] || Island 4
+|-
+| [[Light Damask Mantle]] || [[The Spiroc Lord]] || Island 5 Boss
+|}
+
+= Ooga =
+
+You say, 'I want to be tested by Ooga'
+:''Medicine Man Veetra says 'Return this tome if you wish me to summon Ooga to assist you. Destroy it if you do not. ''
+:''Medicine Man Veetra says 'Farewell. ''
+:''Ooga says 'Hail, I have come to assist. ''
+:''Medicine Man Veetra says 'I am no longer needed and will take my leave. ''
+You say, 'hail Ooga'
+:''Ooga says 'Huddo, Xekl , me Ooga. Me make gud medaceen. Me can make tes' for yuz. Me got tes' of shrink, me got tes' of snake. Mmmm, me tink me got anudder.. Oh ya, me also got da tes' of witch doktor. Me do trade stuff fo udders too. ''
+You say, 'I wish to trade'
+:''Ooga says 'Me wunt Spiroc Warhammer or Crimson Ring of Desinence.  Me gib gud stuffs baks! ''
+
+== Shaman Test of Shrink ==
+
+Ooga says 'Ohh! Dat gud tes', me know cuz me did it. Me had get a efreeti war club, djinni statuette, sum corrosive venom an' sum wooden bands. Was hard for Ooga, me took long to get dem. Yuz give all to me at same time an' me give yuz what me got. 
+
+'''Reward:''' {{:Warhammer of the Wind}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Djinni Statuette]] || [[a soul harvester]], [[an essence harvester]] || Island 4
+|-
+| [[Efreeti War Club]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|-
+| [[Corrosive Venom]] || [[Bazzt Zzzt]] || Island 6 Boss
+|-
+| [[Wooden Bands]] || [[a spiroc expulser]], [[a spiroc revolter]], [[a spiroc walker]], [[Spiroc Guardian]] || Island 5
+|}
+
+== Shaman Test of Snake ==
+
+Ooga says 'Mmm, tes' of snake not too bad, me did it an' still alive. When me did it, me got emerald spiroc feather, bixie essence, an' spiritualist's ring. Me get gud stuff for dat. Yuz giv me stuff all at once an me give to yuz what me got. 
+
+'''Reward:''' {{:Vermilion Sky Ring}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Emerald Spiroc Feather]] || [[a spiroc arbiter]], [[a spiroc banisher]], [[a spiroc caller]] || Island 5
+|-
+| [[Bixie Essence]] || [[Bazzzazzt]], [[Bizazzt]], [[Bzzzt]] || Island 6
+|-
+| [[Spiritualist's Ring]] || [[Sister of the Spire]] || Island 7
+|}
+
+== Shaman Test of The Witch Doctor ==
+
+Ooga says 'Oh! Now yuz got in da big mojo, me had big hard time wit dis one. Me got in lot of trouble when me got efreeti war maul, thickened nectar, fire sky ruby an' symbol of Veeshan. Yuz giv to me. Me be easy on yuz an' giv prize me got. 
+
+'''Reward:''' {{:Garduk}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[Thickened Nectar]] || [[Bzzazzt]] || Island 6
+|-
+| [[Fire Sky Ruby]] (Shaman version weight 12.0) || [[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] || Island 7
+|-
+| [[Symbol of Veeshan]] || [[Eye of Veeshan]] || Island 8
+|-
+| [[Efreeti War Maul]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4, 8
+|}
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Shaman Quests]]

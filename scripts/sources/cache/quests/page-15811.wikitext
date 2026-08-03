@@ -1,0 +1,55 @@
+[[File:npc_unsar_koldhagon.png|thumb|Unsar Koldhagon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Unsar Koldhagon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| Any
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| newbie mobs
+|}
+
+== Reward ==
+
+<ul><li>  Experience, faction
+</li></ul>
+
+== Walkthrough ==
+
+Unsar may be found in the Hall of Sorcery (285, -655).  You may get this quest at dubious Order of Three faction.
+
+You say, 'Hail, Unsar Koldhagon'
+
+: Unsar Koldhagon says 'Hello, ______, I am Unsar, student of Mespha. I am working on a spell. . . I call it [Unsar's Glory]. Great name, huh?'
+
+You say, 'What is Unsar's Glory?'
+
+: Unsar Koldhagon says 'Ah, Unsar's Glory. . . Mind you, I haven't perfected it yet, but bring me some [[Rat Whiskers]], [[Snake Scales]], and two [[Bat Wing]]s, and I'll show you how it works.'
+
+The items are common drops from the mobs in the newbie yard outside the North Gate.  Hand them in.
+
+: Unsar Koldhagon says 'Thanks, but remember, I need all four items to show you the spell.'
+: Unsar Koldhagon says 'All right, check this out. . . Maybe one day you'll be good enough to do this, too.'
+
+(Unsar casts a buff on himself.)
+
+<div class="facblock">
+* Your faction standing with [[Order of Three]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Opal Dark Briar]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

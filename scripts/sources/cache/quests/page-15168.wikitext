@@ -1,0 +1,389 @@
+{{Epics Era}}
+
+__NOTOC__
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Kargek Redblade]], [[Wenden Blackhammer]]
+|-
+! ''' Recommended Level: '''
+| 46+
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+== Rewards ==
+
+<ul><li> {{:Jagged Blade of War}} (2H)
+</li><li> {{:Blade of Tactics}} (1H) [Blue]
+</li><li> {{:Blade of Strategy}} (1H) [Red]
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* '''Jeweled Dragon Head Hilt'''
+** Hail [[Kargek Redblade]] and [[Wenden Blackhammer]] in East [[Freeport]]
+** Retrieve [[Unjeweled Dragon Head Hilt]] from the bottom of [[Lake Rathetear]]
+** Give the [[Unjeweled Dragon Head Hilt]], a [[Diamond]], a [[Jacinth]], and a [[Black Sapphire]] to [[Wenden Blackhammer]]
+** Receive the [[Jeweled Dragon Head Hilt]]
+
+* '''Finely Crafted Dragon Head Hilt'''
+** Retrieve [[Severely Damaged Dragon Head Hilt]] from the chessboard in [[Timorous Deep]]
+** Get a [[Giant Sized Monocle]] from [[A mountain giant patriarch]] in [[Dreadlands]]
+** Give the [[Giant Sized Monocle]] to [[Mentrax Mountainbone]] in [[Frontier Mountains]] and receive [[Rejesiam Ore]].
+** Kill [[Fright]], [[Dread]], or [[Terror]] and loot [[Ball of Everliving Golem]] in [[Plane of Fear]]
+** Give [[Severely Damaged Dragon Head Hilt]], [[Rejesiam Ore]], and [[Ball of Everliving Golem]] to [[Wenden Blackhammer]] (MQable)
+** Receive [[Finely Crafted Dragon Head Hilt]]
+
+* '''The Blades'''
+** Purchase A [[Keg of Vox Tail Ale]] from various merchants across Norrath.
+** Purchase two(2) [[Rebreather]]s from other players, or craft as a Gnome with [[Tinkering]] Skill, Trivial 175.
+** Kill Ice Giants and Loot [[Block of Permafrost]] in [[Permafrost]]
+** Give [[Block of Permafrost]], A [[Keg of Vox Tail Ale]], and the two(2) [[Rebreather]]s to [[Denken Strongpick]] in [[Ocean of Tears]].
+** Receive [[Ancient Sword Blade]]
+** Kill [[Queen Velazul Di`zok]] in [[Chardok]] and loot [[Ancient Blade]]
+
+* '''The Red Scabbard'''
+** Hail [[Kargek Redblade]] and get [[Wax Sealed Note]] by saying "what favor" 
+** Give [[Wax Sealed Note]] to [[Oknoggin Stonesmacker]] in [[Feerrott]] and receive [[Tiny Lute]]
+** Give [[Tiny Lute]] to [[Kargek Redblade]] and receive the book [[Redblade's Legacy]]
+** Give book to [[Tenal Redblade]] in [[East Karana]] and receive [[Totem of the Freezing War]]
+** Kill [[A_goblin_wizard_(Permafrost)|goblin wizard]]s in [[Permafrost]], loot [[Heart of Frost]]
+** Give [[Totem of the Freezing War]] and [[Heart of Frost]] to [[Tenal Redblade]] and receive [[Totem of Fiery War]]
+** Kill [[Lord Nagafen]] or [[Ragefire]] in [[Nagafen's Lair]], [[Nortlav the Scalekeeper]] in [[The Hole]] or [[Talendor]] in [[Skyfire Mountains]] and loot [[Red Dragon Scales]]
+** Kill [[Severilous]] in [[Emerald Jungle]] or [[Hoshkar]] in [[Veeshan's Peak]] and loot [[Green Dragon Scales]]
+** Give [[Totem of Fiery War]], [[Red Dragon Scales]], and [[Green Dragon Scales]] to [[Tenal Redblade]] and receive [[Mark of the Sword]]
+** Kill [[Maestro]] in [[Plane of Hate]] and loot [[Hand of the Maestro]]
+** Give [[Mark of the Sword]] and [[Hand of the Maestro]] to [[Tenal Redblade]] and receive [[Tenal`s note to Kargek]]
+** Kill [[Spiroc Lord]] in [[Plane of Air]] and Loot [[Spiroc Wingblade]]
+** Give [[Tenal`s note to Kargek]] and [[Spiroc Wingblade]] to [[Kargek Redblade]] and receive [[Red Scabbard]]
+
+* '''Jagged Blade of War/Blades of Strategy and Tactics'''
+** Combine both hilts and both blades in [[Red Scabbard]] to receive the [[Jagged Blade of War]].{{End}}
+'''Note:''' Combine [[Jagged Blade of War]] in the [[Red Scabbard]] to receive the [[Blade of Strategy]] and the [[Blade of Tactics]].
+
+'''Note:''' Combine [[Blade of Strategy]] and [[Blade of Tactics]] in the [[Red Scabbard]] to receive [[Jagged Blade of War]] again.
+
+== Short Walkthrough ==
+
+'''The Beginning'''
+
+Kargak Redblade is standing next to a Dwarf named Wenden Blackhammer in East Freeport (/loc?). To get to them, head in the gate from North Ro and follow the left wall. They both start the quest.
+
+'''Hilt #1 - Jeweled Dragon Head Hilt'''
+
+Head to Lake Rathe and pick up an Unjeweled Dragon Head Hilt. It can be found on the lake floor at +2513, +920, underneath the aviak tower. You'll also need to get a Diamond, Black Sapphire, and Jacinth. They drop in various zones (Sebilis, Planes) and can almost always be found for sale in Eastern Commonlands.
+
+Take the Unjeweled Dragon Head Hilt, Diamond, Jacinth, and Black Sapphire to Wenden:
+
+Wenden Blackhammer begins to fiddle with the hilt, gently pressing the gems into place. It seems to take forever as you watch in silence. Wenden slowly places the last gem in place and gently bends the settings to hold the gems before he hands it back to you. 'That's a very impressive looking hilt there. The material it is made out of seems strangely familiar,' Wenden says as he turns back to his forge and his other work.
+
+You receive a Jeweled Dragon Head Hilt.
+
+'''Hilt #2 - Finely Crafted Dragon Head Hilt'''
+
+Head to the chessboard in Timorous Deep. At the base of the King piece you'll find a Severely Damaged Dragon Head Hilt.
+
+You'll also need a Ball of Everliving Golem. This drops from the named golems in the Plane of Fear: Fright, Dread and Terror.
+
+Now go to the Dreadlands, to the giant fort just west of Karnor's Castle. You need to kill the Mountain Giant Patriarch and loot a Giant Sized Monocle. Take the Monocle to Frontier Mountians. Get to the giant fort and get inside. When you get to the very end of the Mine you will see the giant named Mentrax Mountainbone.
+
+You say, 'Hail, Mentrax Mountainbone'
+
+: Mentrax Mountainbone says 'What be it you want! Go away before I eat you for dinner!'
+
+Hand him the Monocle. (How do you know what to give him?)
+
+: Mentrax Mountainbone says 'Eh, you actually found one! Thank you, ______. Here is a block of ore for you. Just don't let the other giants know.'
+
+{{YouGainExperience}}
+
+You receive Rejesiam Ore.
+
+Now run back to East Freeport with the Rejesiam Ore, Ball of Everliving Golem and Damaged Dragon Head Hilt. Give these to Wenden and receive a Finely Crafted Dragon Head Hilt.
+
+'''Sword Blade #1 - Ancient Sword Blade'''
+
+Talk to Denken Strongpick on Aviak Island in the Ocean of Tears.
+
+You say, 'Hail, Denken Strongpick'
+
+: Denken Strongpick says 'Hello, ______. I am Denken Strongpick. I wish I could get off this rock, silly clan honor. My boss broke our rebreathers and we can not go back to the mainland before we gather some goblin relics.'
+
+You say, 'What goblin relics?'
+
+: Denken Strongpick says 'There are supposedly goblin ruins around here somewhere. Fendlemend thinks we will find paydirt underwater. We did find one thing.'
+
+You say, 'What did you find?'
+
+: Denken Strongpick says 'We found a very fine sword blade.' Denken pulls open his pack and shows you a razor sharp sword covered with runes. 'I can't figure out what type of metal it is and I sure can't figure out what technique was used to forge it. Perhaps you would like to take it off my hands and [buy] it?'
+
+You say, 'I will buy it.'
+
+: Denken Strongpick says 'Out here, money is fairly useless to me. You see, I can't leave Fendlemend out here alone. I signed on with a very detailed contract. I could sure [use] a few things from the mainland though.'
+
+You say, 'What could you use?'
+
+: Denken Strongpick says 'I would be willing to part with this very fine blade for; a keg of Vox tail ale, a block of permafrost to keep it cool and two new rebreathers to get this operation back underway.'
+
+* a) A Keg of Vox Tail ale - bought from alot of vendors around the world. A good place to buy one is the sandfishers in North Ro or the Freeport Port Authority.
+* b) A Block Of Permafrost - Dropped by Ice Giants. (while you're here, kill some goblin wizards until you find a frozen goblin heart -- you'll need it later).
+* c) Two Rebreathers - Tinkered by Gnomes. Expect to drop as much as 4k for getting two rebreathers.
+
+Turn the Rebreathers, Keg of Vox Tail Ale, and the Block of Permafrost in to Denken:
+
+: Denken Strongpick says 'Excellent! Here is your sword. I feel like I'm at home already!'
+
+{{YouGainExperience}}
+
+You get the Ancient Sword Blade.
+
+'''Sword Blade #2 - Ancient Blade'''
+
+The Ancient Blade is dropped by the Queen of Chardok. Bring along a large group of friends.
+
+'''The Red Scabbard'''
+
+Find Kargak Redblade in East Freeport.
+
+You say, 'Hail, Kargak Redblade'
+
+: Kargek Redblade looks up from his forge and says, 'Hello there, can I help you?' Your eyes are drawn to an extremely large red sword scabbard strapped to his back with no sword in it. Kargek speaks again, 'I said, can I help you or do you need help from Wenden?'
+
+You say, 'Tell me about that scabbard.'
+
+: Kargek Redblade turns to look at you and says, 'It is a family heirloom. I might tell you the story behind it if you do me a little favor.'
+
+You say, 'What favor?'
+
+: Kargek Redblade says 'An associate of mine is wandering somewhere in the Feerrott. His name is Oknoggin Stonesmacker. If you will deliver this note to him, I would appreciate it.'
+
+You receive a Wax Sealed Note. Oknoggin hangs out between the Stone Bridge and the Fallen Totem (/loc?). Hand him the letter and receive a Tiny Lute.
+
+Run back to East Freeport and give the Tiny Lute to Kargek Redblade to receive a book. Take the book over to his brother in East Karana - Tenal Redblade, who is at the very end of the canyon next to the ramp to Highpass. Hand him the book and receive a Frozen War Totem.
+
+Go back to East Karana and hand Tenal the Totem of the Freezing War and a Heart of Frost.
+
+: Tenal Redblade says 'Very good, you have wreaked havoc on your foes in the ancient land of the giants. Rallos Zek must have guided your blade.' Tenal's voice is suddenly silenced and you feel as if your body is frozen. From Tenal's lips issues a voice that is not his own, 'Bring this mortal the scales of the children of Veeshan. The red and green as well as my war totem. I will guide your blade.' Your movement returns as Tenal falls to the ground, gasping for breath.'
+You gain experience!!
+
+He'll give you a Totem of Fiery War.
+
+Now get yourself a Green and Red Dragonscale (from Severilous in Emerald Jungle, and Nagafen in Naggy's Lair,Nortlav the Scalekeeper in The Hole or Talendor in Skyfire Mountains respectively).
+
+Go back to Tenal Redblade and give him the Totem of Fiery War, the Green Dragon Scale and the Red Dragon Scale.
+
+: Tenal Redblade looks at you oddly as you hand him the scales. 'What are..? You have done well, mortal, and you will be rewarded if you are truly brave. Travel to the Plane of Hatred and slay the ancient bard who lives there. Do not return without his hand and this mark or you will never be a true warlord.' Tenal drops to the ground as the last words leave his lips.
+
+{{YouGainExperience}}
+
+You receive The Mark of the Sword.
+
+You'll now need to go to the Plane of Hate and kill the Maestro of Rancor. You need to loot the hand, which is a rare drop. Bring that back and give it to Tenal along with the mark and he gives you a note to Kargek.
+
+You now need a Spiroc Wingblade from the Spiroc Lord in the Plane of Sky. Take the Wingblade and the note to Kargek where he gives you the Red Scabbard and instructions on how to combine the Ancient Blade, Ancient Sword Blade, Finely Crafted Dragon Head Hilt, and Jeweled Dragon Head Hilt. Do this and receive your reward.
+
+Combining the Jagged Blade of War in the Red Scabbard splits it into the Blade of Strategy and the Blade of Tactics. Combine the two blades in the Red Scabbard to get the two-handed version again.
+
+'''Congratulations on your [[Blade of Strategy]], [[Blade of Tactics]], [[Jagged Blade of War]], [[Red Scabbard]]!
+
+== Walkthrough with Dialogue ==
+
+Kargak Redblade is standing under a gazebo at -239, -566 in [[East Freeport]]. Nearby is a Dwarf named Wenden Blackhammer. They both start the quest. 
+
+=== Red Scabbard ===
+
+Find Kargak Redblade in East Freeport. 
+
+You say, 'Hail, Kargak Redblade' 
+
+: Kargek Redblade looks up from his forge and says, 'Hello there, can I help you?' Your eyes are drawn to an extremely large red sword scabbard strapped to his back with no sword in it. Kargek speaks again, 'I said, can I help you or do you need help from Wenden?' 
+
+You say, 'Tell me about that scabbard.' 
+
+: Kargek Redblade turns to look at you and says, 'It is a family heirloom. I might tell you the story behind it if you do me a little favor.' 
+
+You say, 'What favor?' 
+
+: Kargek Redblade says 'An associate of mine is wandering somewhere in the Feerrott. His name is Oknoggin Stonesmacker. If you will deliver this note to him, I would appreciate it.' 
+
+You receive a Wax Sealed Note. Oknoggin may be found at +800, +1140. Hand him the letter. 
+
+: Oknoggin Stonesmaker snatches the note from your hand and rips it open with your large hands. 'You take dis to Kargek. He want!' Oknoggin says, as he throws a tiny lute at you. 
+
+You receive a Tiny Lute. Run back to East Freeport and give the Tiny Lute to Kargek Redblade to receive a book called Redblade's Legacy. 
+
+: Kargek Redblade says 'Thank you for delivering the note to my associate. Take this book - it will tell you a little of the history of the old scabbard. If you would like to own the scabbard, seek out my younger brother Tenal and give him the book.' 
+
+{{YouGainExperience}}
+
+'''Take the book over to his brother in East Karana - [[Tenal Redblade]], who is next to a tower on the ramp to Highpass (-1765, -6000, 388). '''
+
+You say, 'Hail, Tenal Redblade' 
+
+: Tenal Redblade says 'What brings you to my home, ______? Do you seek knowledge of Rallos Zek and the great wars to come?' 
+
+'''Hand him the book. '''
+
+: Tenal Redblade says 'So, you know my brother Kargek. He is weak and does not believe the legend that our family was chosen by Rallos Zek to bear the great scabbard. Yet he still holds it. Very well, I shall give you the first test since my 'dear' brother seems to have forgotten it. Travel to the fortress where the children of Rallos were first cursed by the Rathe and bring me the heart of one of the goblins who have made it their new home. Do not return without the heart of your foe and this war totem.' 
+
+{{YouGainExperience}}
+
+'''You receive a Frozen War Totem.'''
+
+'''Go back to [[Eastern Karana]] and hand Tenal the Totem of the Freezing War and a Heart of Frost.'''
+
+: Tenal Redblade says 'Very good, you have wreaked havoc on your foes in the ancient land of the giants. Rallos Zek must have guided your blade.' Tenal's voice is suddenly silenced and you feel as if your body is frozen. From Tenal's lips issues a voice that is not his own, 'Bring this mortal the scales of the children of Veeshan. The red and green as well as my war totem. I will guide your blade.' Your movement returns as Tenal falls to the ground, gasping for breath.' 
+
+{{YouGainExperience}}
+
+'''He'll give you a Totem of Fiery War.'''
+
+'''Now get yourself a Green and Red Dragonscale (from [[Severilous]] in [[Emerald Jungle]], and [[Lord Nagafen]] in [[Nagafen's Lair]] respectively).'''
+
+'''Go back to Tenal Redblade and give him the Totem of Fiery War, the Green Dragon Scale and the Red Dragon Scale.'''
+
+: Tenal Redblade looks at you oddly as you hand him the scales. 'What are..? You have done well, mortal, and you will be rewarded if you are truly brave. Travel to the Plane of Hatred and slay the ancient bard who lives there. Do not return without his hand and this mark or you will never be a true warlord.' Tenal drops to the ground as the last words leave his lips. 
+
+{{YouGainExperience}}
+
+'''You receive The Mark of the Sword.'''
+
+'''You'll now need to go to the [[Plane of Hate]] and kill the Maestro of Rancor. You need to loot the hand, which is a rare drop. Bring that back and give it to Tenal along with the mark.'''
+
+: Tenal Redblade looks horrified as you give him the hand of the Maestro of Rancor and show him the mark of the sword. The godlike voice returns, 'You have done well to acquire this. One final task must be completed before you hold the red scabbard in your mortal hands.' Tenal reaches out and hands you a note. 'Take this note and a wingblade of the spiriocs to Kargek. When he receives them, I will speak to you one last time.' 
+
+'''You receive Tenal`s note to Kargek.'''
+
+'''You now need a [[Spiroc Wingblade]] from the Spiroc Lord in the [[Plane of Sky]]. Take the Wingblade and the note to Kargek where he gives you the Red Scabbard and instructions on how to combine the Ancient Blade, Ancient Sword Blade, Finely Crafted Dragon Head Hilt, and Jeweled Dragon Head Hilt.'''
+
+: Kargek Redblade says 'What is this? A note from my brother? Thank you for the gift as well.' Kargek reads the note and hands you the huge sword hilt. Your mind is filled with the sound of battle and a voice. 'Place the ancient sword blade, ancient blade, finely crafted dragon head hilt and the jeweled dragon head hilt into the scabbard to receive your rewards. If you think you are worthy, place your rewards into the scabbard and see what havoc you can unleash on the world. Kargek addresses you as you turn to leave. 'One more thing. Gartrog over there has told me of a great discovery. Seems there are all sorts of stones being found in the recently discovered lost dungeons scattered around Antonica. The Wayfarer's Brotherhood has found a way to make items even more powerful by using the stones with existing items.' 
+
+{{YouGainExperience}}
+
+=== Ancient Sword Blade ===
+
+Talk to [[Denken Strongpick]] on Aviak Island in the [[Ocean of Tears]]. 
+
+You say, 'Hail, Denken Strongpick' 
+
+: Denken Strongpick says 'Hello, ______. I am Denken Strongpick. I wish I could get off this rock, silly clan honor. My boss broke our rebreathers and we can not go back to the mainland before we gather some goblin relics.' 
+
+You say, 'What goblin relics?' 
+
+: Denken Strongpick says 'There are supposedly goblin ruins around here somewhere. Fendlemend thinks we will find paydirt underwater. We did find one thing.' 
+
+You say, 'What did you find?' 
+
+: Denken Strongpick says 'We found a very fine sword blade.' Denken pulls open his pack and shows you a razor sharp sword covered with runes. 'I can't figure out what type of metal it is and I sure can't figure out what technique was used to forge it. Perhaps you would like to take it off my hands and [buy] it?' 
+
+You say, 'I will buy it.' 
+
+: Denken Strongpick says 'Out here, money is fairly useless to me. You see, I can't leave Fendlemend out here alone. I signed on with a very detailed contract. I could sure [use] a few things from the mainland though.' 
+
+You say, 'What could you use?' 
+
+: Denken Strongpick says 'I would be willing to part with this very fine blade for; a keg of Vox tail ale, a block of permafrost to keep it cool and two new rebreathers to get this operation back underway.' 
+
+* a) A Keg of Vox Tail ale - bought from alot of vendors around the world. A good place to buy one is the sandfishers in North Ro or the Freeport Port Authority. 
+* b) A Block Of Permafrost - Dropped by Ice Giants. (while you're here, kill some goblin wizards until you find a frozen goblin heart -- you'll need it later). 
+* c) Two Rebreathers - Tinkered by Gnomes. Expect to drop as much as 4k for getting two rebreathers. 
+
+'''Turn the Rebreathers, Keg of Vox Tail Ale, and the Block of Permafrost in to Denken:'''
+
+: Denken Strongpick says 'Excellent! Here is your sword. I feel like I'm at home already!' 
+
+{{YouGainExperience}}
+
+'''You get the Ancient Sword Blade.'''
+
+=== Ancient Blade ===
+ 
+'''The Ancient Blade is dropped by the Queen of Chardok. Bring along a large group of friends.'''
+
+=== Finely Crafted Dragon Head Hilt ===
+
+'''Head to the chessboard in Timorous Deep. At the base of the Queen piece (-6450, 2835) you'll find a Severely Damaged Dragon Head Hilt. Head back to Wenden.'''
+
+You say, 'Hail, Wenden Blackhammer' 
+
+: Wenden Blackhammer says 'What do you need? Be specific, I'm busy right now!' 
+
+You say, 'I have a Severely Damaged Dragon Head Hilt.' 
+
+: Wenden Blackhammer says 'Where in the world did you drag that up?!' Denken peers closely at the severely damaged dragon head hilt. 'This metal is the same material that some mages use to make powerful golems and this other metal looks like rejesiam ore. If you can find some of those materials, I can fix this hilt up easily.' 
+
+You say, 'What kind of golems?' 
+
+: Wenden Blackhammer says 'That metal is used as the 'soul' of powerful magical constructions like golems. I do not know any place in this world where you could find a golem with a living center as powerful as this once was.' 
+
+You say, 'What is rejesiam ore?' 
+
+: Wenden Blackhammer says 'Rejesiam ore is from the lands of Kunark. The mountain giants in the frontier mountains control the only known mine of this great ore. They have built a vast fortress around the mine to protect it. The giants don't particularly like to trade with us smaller folks, but there is one old miner named Mentrax Mountainbone who has traded with me in the past. Go find him and tell him Wenden sent you.' 
+
+'''You'll also need a Ball of Everliving Golem. This drops from the named golems in the Plane of Fear: Fright, Dread and Terror.'''
+
+'''Now go to the Dreadlands, to the giant fort just west of Karnor's Castle. You need to kill the Mountain Giant Patriarch and loot a [[Giant Sized Monocle]]. Take the Monocle to Frontier Mountains. Get to the giant fort and get inside. When you get to the very end of the Mine you will see the giant named [[Mentrax Mountainbone]].'''
+
+You say, 'Hail, Mentrax Mountainbone' 
+
+: Mentrax Mountainbone says 'What be it you want! Go away before I eat you for dinner!' 
+
+You say, 'Wenden sent me.' 
+
+: Mentrax Mountainbone says 'Oh, old Wenden? I guess you be wanting some ore. Well, you can't have none! Not unless you get me a new monocle. No. No. No. Don't even try to talk, you either bring me a new monocle that will fit or no ore for you!' 
+
+'''Hand him the Monocle.'''
+
+: Mentrax Mountainbone says 'Eh, you actually found one! Thank you, ______. Here is a block of ore for you. Just don't let the other giants know.' 
+
+{{YouGainExperience}}
+
+'''You receive Rejesiam Ore.'''
+
+'''Now run back to East Freeport with the Rejesiam Ore, Ball of Everliving Golem and Damaged Dragon Head Hilt. Give these to Wenden.'''
+
+: Wenden Blackhammer begins to work and hammer away at the hilt pounding the new material into it. You can see the metal shifting and moving in ways you have never seen metal move before. Wenden wipes his brow as he hands you a fantastic looking hilt. 
+
+'''You receive a Finely Crafted Dragon Head Hilt.'''
+
+=== Jeweled Dragon Head Hilt ===
+
+Head to Lake Rathe and pick up an [[Unjeweled Dragon Head Hilt]]. It can be found on the lake floor at +2513, +920, underneath the aviak tower. Then head back to Wenden. 
+
+You say, 'Hail, Wenden Blackhammer' 
+
+: Wenden Blackhammer says 'What do you need? Be specific, I'm busy right now!' 
+
+You say, 'I have an Unjeweled Dragon Head Hilt.' 
+
+: Wenden Blackhammer says 'That just looks like it's missing some gems. I'm not quite sure what type of gems either but I can tell you two things about them just by the settings. They were all different, and they all were very, very expensive. If I try to put the wrong kind of gems in these slots, it may be ruined forever. I'll do whatever you want, though, just bring me the three gems you want me to try and put in the hilt.' 
+
+'''You'll need to get a Diamond, Black Sapphire, and Jacinth. They drop in various zones (Sebilis, Planes) and can almost always be found for sale in EC.'''
+
+'''Take the Unjeweled Dragon Head Hilt, Diamond, Jacinth, and Black Sapphire to Wenden:'''
+
+: Wenden Blackhammer begins to fiddle with the hilt, gently pressing the gems into place. It seems to take forever as you watch in silence. Wenden slowly places the last gem in place and gently bends the settings to hold the gems before he hands it back to you. 'That's a very impressive looking hilt there. The material it is made out of seems strangely familiar,' Wenden says as he turns back to his forge and his other work. 
+
+'''You receive a Jeweled Dragon Head Hilt.'''
+
+=== Assembling the Sword ===
+
+As originally instructed, place the Ancient Sword Blade, Ancient Blade, Finely Crafted Dragon Head Hilt and the Jeweled Dragon Head Hilt into the Red Scabbard to receive your rewards. 
+
+'''Combining Items'''
+
+Combining the Jagged Blade of War in the Red Scabbard splits it into the Blade of Strategy and the Blade of Tactics. Combine the two blades in the Red Scabbard to get the two-handed version again.
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Warrior Quests]]

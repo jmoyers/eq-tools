@@ -1,0 +1,62 @@
+{{Velious Era}}
+[[File:npc_slaggak_the_trainer.png|frame|Slaggak the Trainer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Slaggak the Trainer]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All [[Bard]], [[Cleric]], [[Druid]], [[Enchanter]], [[Magician]], [[Monk]], [[Necromancer]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]], [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Great Divide]], [[Thurgadin]]
+|-
+! ''' Related NPCs: '''
+| 
+Various Coldain will drop [[Coldain Head]]s.  It is confirmed for P1999 that [[a lesser tar goo]] in Thurgadin will also drop them.
+|}
+
+== Reward ==
+
+<ul><li>A random piece of [[Giant Scalemail Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Slaggak the Trainer]] can be found at #5 on the map of [[Kael Drakkel]].''
+
+You say, 'Hail, Slaggak the Trainer'
+
+: Slaggak the Trainer says, 'Hello there, _______. I am Slaggak, the trainer. The Kromrif here will soon be ready to serve the great and honorable King Tormax.'
+
+You say, 'I will serve King Tormax'
+
+: Slaggak the Trainer says, 'So you say, little one. Why are you here, then? You should be out slaying those pestering little Coldain or maybe those damnable shard wurms and wyverns.'
+
+You say, 'What Coldain?'
+
+: Slaggak the Trainer says, 'The Coldain are the ice dwarves. They have defiled our lands for long enough. Thinking of them makes my blood run hot. With my new position as trainer, I am not allowed to roam the lands and slaughter their kind as I once did.' Slaggak sighs. 'I long for the days when I could fashion necklaces from their skulls.'
+
+You say, 'What about their skulls?'
+
+: Slaggak the Trainer says, 'Go from here and seek out the Coldain, slay them, and return to me with their heads. I wish to fashion four skull talismans as I once did. If you can do this for me, I will surely let King Tormax know of your deeds and reward you with a piece of armor from the Militia armory.'
+
+'''In return for 4 [[Coldain Head]], the result is a random piece of Giant Scale Mail.'''
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[Coldain]] got worse.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+''CLARIFICATION NEEDED: He says he wants to make FOUR dwarf-head talismans. Can anyone confirm whether the result is different if 4 heads are handed in at once?'' Handing in one at a time won't do anything until you hand in the 4th one (you don't get exp, faction or items), so it's the same as handing in 4 at once.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

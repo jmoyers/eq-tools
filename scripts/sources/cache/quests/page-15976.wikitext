@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_nexvok_thirod.png|frame|Nexvok Thirod]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Nexvok Thirod]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Nexvok Thirod]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Stained Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Nexvok Thirod]] is located at -51, -248 in the Sewers of East Freeport among the Dismal Rage.''
+
+You say, 'Hail, Nexvok Thirod'
+
+: Nexvok Thirod says, 'I am Nexvok, master wizard of the Dismal Rage.  My associates Heneva and Konious and I provide our services to master Zarn on a regular basis.  People of our talent are in high demand. and Pietro pays well, so we are, of course, very loyal.'
+
+'''Hand [[Nexvok Thirod]] [[a tattered note]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>The Dismal Rage has need of your dark skills. Take this note to Nexvok Thirod, he has a job for you. The Dismal Rage is currently operating out of the basement of an abandoned building in the slums of East Freeport.</code>
+
+: Nexvok Thirod says, 'Thanks'
+
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Wizard Quests]]

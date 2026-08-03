@@ -1,0 +1,58 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_hanns_krieghor.png|frame|Hanns Krieghor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Hanns Krieghor]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Hanns Krieghor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Second Hand Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Hanns Krieghor]] is located at 31, 149 under Crow's Tavern in North Qeynos, amongst the Circle of the Unseen Hands.''
+
+You say, 'Hail, Hanns Krieghor'
+
+: Hanns Krieghor says, 'My name is Hanns..  Do as I say. and we shall get along just fine.'
+
+'''Hand [[Hanns Krieghor]] your [[Napkin from Crow's]]'''
+
+:: ''Napkin from Crow's reads:''
+
+:: <code>An unseen hand from the shadows beckons you into the darkness. Hanns Krieghor has need of your skills. Take this note to Hanns, and he shall instruct you further. Go to Crow's.  Your entryway into the unseen lies behind the painting. Tread carefully, the obvious path is the wrong path.  Feel the walls for safe passage to the hideout</code>
+
+:  Hanns Krieghor says, 'Lucky thing you weren't followed, or you'd be breathing through holes in your back right now.  Remember, we keep our business quiet, so watch yourself, sewer crawler.'
+
+<div class="facblock">
+* Your faction standing with [[Circle of Unseen Hands]] got better.
+* Your faction standing with [[Merchants of Qeynos]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Kane Bayle]] got better.
+
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:Rogue Quests]]

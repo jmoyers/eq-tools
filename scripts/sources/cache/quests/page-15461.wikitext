@@ -1,0 +1,75 @@
+{{Classic Era}}
+[[File:npc_larkon_theardor.png|frame|Larkon Theardor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Larkon Theardor]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Steamfont Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a minotaur slaver]]
+|}
+
+== Reward ==
+
+<ul><li>  Coin, Faction
+</li></ul>
+
+== Walkthrough ==
+
+''[[Larkon Theardor]] is located at 1029, -978, 32 behind the Library Mechanimagica on the right. You must have Indifferent faction to complete this quest.''
+
+You say, 'Hail, Larkon Theardor'
+
+: Larkon Theardor says, 'Greetings! Welcome to the Library of Mechanimagica. You must be a [current member of the Library] or has my [mind begun to slip]?'
+
+You say, 'I am a current member of the Library'
+
+: Larkon Theardor says, 'Good. The last thing a member of the Eldritch Collective needs is to lose his mind. Look what happened to Meldrath. Enough chitchat. I am Larkon and it is not my job to teach you. It is my job to direct you to service. We require items and such to complete our studies. We need someone of moderate skill to [gather minotaur horns] and [collect basilisk tongues].'
+
+You say, 'I will gather minotaur horns'
+
+: Larkon Theardor says, 'We magicians require the horns of the minotaurs. We crush them down and use the powder in many of our tests. Go and fetch two minotaur horns. Do not return empty-handed. I await your return as does your reward.'
+
+'''Hand [[Larkon Theardor]] 2 [[Minotaur Horn]]s.'''
+
+: Larkon Theardor says, 'Fine work. You have earned the respect of the Library. Here is a small token of our appreciation. We shall have this ground down as soon as we find someone to go to Kaladim.'
+
+<div class="facblock">
+* Your faction standing with [[Eldritch Collective]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+* Your faction standing with [[The Dead]] got worse.
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 2 gold, 1 silver, 6 copper pieces.
+
+7/17/2024
+
+Level 14: Three turn-ins (six minotaur horns) yielded 0% change in experience.
+
+11/5/24
+
+Lvl 22 Gnome Mage judged amiable - 2 turn ins, 4 mino horns was about 2.5 blue per turn in for a total of 5% xp. I went from 1% to 3% to 6%.
+
+== Related Quests == 
+
+* [[Air Tight Box Quest]]
+* [[Basilisk Tongues]]
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

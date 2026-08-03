@@ -1,0 +1,57 @@
+{{Classic Era}}
+[[File:npc_treskar.png|frame|Treskar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Treskar]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Cleric]], [[Shadowknight]], [[Rogue]], [[Shaman]], [[Wizard]], [[Necromancer]], [[Magician]], [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[Bonlarg]]
+|}
+
+
+== Reward ==
+
+<ul><li>  Rusty Weapons
+</li></ul>
+
+== Walkthrough ==
+''[[Treskar]] is found in the Shadowknights Guild in [[Grobb]].''
+
+You say, 'Hail, Treskar'
+
+: Treskar says, 'You dare to speak to Master Treskar!! You be [sent by Hukulk] or you be hurtin'!! Me have no time to waste with ugly one like you!!'
+
+You say, 'I sent by Hukulk'
+
+: Treskar says, 'Ha!! Hukulk accept puny troll now?!! Ha!! You join us and you join fight. Nightkeep enemy is Gamkek enemy!! You help smash [other weak shadowknights]. Them weak. We true power!! You bash good and maybe you do [secret mission] for Treskar.'
+
+You say, 'What other weak shadowknights'
+
+: Treskar says, 'Other shadowknights is ogre shadowknights! They name is Greenbloods. They no match for Nightkeep! We tear arms from ogre bodies. You not as powerful as Treskar so you smash young Greenbloods. You hunt YOUNG members of Greenblood shadowknights. You bring me black shadow tunic and me share treasures from Nightkeep vault with puny Teddee. Go!'
+
+Now here is where the quest gets weird. The only way to get 3 [[Black Shadow Tunic]] is to do the [[Guild Summons - Murdunk's Palace]] quest on 3 different Ogres, and then follow that by completing the [[Greenblood Shadowknight Tunic]] 3 times. 
+
+: Treskar says 'Treskar says 'Hmm... You do good job. You surprise Treskar. Maybe you good after all. Maybe Treskar give you [secret mission]. Maybe not.' 
+
+<div class="facblock">
+* Your faction standing with [[Shadowknights of Night Keep]] got better. 
+* Your faction standing with [[Green Blood Knights]] got worse.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+* Your faction standing with [[DaBashers]] got better.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Grobb]]

@@ -1,0 +1,111 @@
+[[File:npc_knargon_lanenda.png|frame|Knargon Lanenda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Knargon Lanenda]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Highpass Hold]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Stald]], [[Hanns Krieghor]], [[Jracol Brestiage]], [[Prak]], [[Zannsin Resdinet]]
+|}
+
+Quest(s) have faction requirements
+
+== Reward ==
+
+<ul><li>  {{:Black Leather Cloak}}
+</li></ul>
+
+== Walkthrough ==
+
+Notes:
+Illusion earth elemental brought my “scowling” kos Iksar Shaman to dubious with the rogues (and boosted everyone else a lot too), He could be given the bent playing card at dubious.
+Jracol was apprehensive to me (earth elemental had worn off before spawn) and ate the card no bote ir faction given.invis trick worked to hand in until naturally indifferent.
+51 turn ins took me to amiable but I wasn't bottom of apprehensive so hit to his faction is probably more than 2.
+
+''This starts with Knargon Lanenda in the rogue guild.  He responds to several different questions about people and places. If you ask him about Jracol.. ''
+
+: Knargon Lanenda says, 'I don't why [Carson] likes that guy ... he's certainly been nothing but trouble for me.' 
+
+You say, 'Who is Carson?'
+
+: Knargon Lanenda says 'Carson McCabe? He runs that sham of a fortress called [Highpass Hold]. We've been dealing with him for a few years, now. But, lately he seems to be losing control of his business. [Hanns] will whip him into shape pretty soon though, I bet.' 
+
+''(This is a bit of foreshadowing to the follow-up quest to this).''
+
+Ask him, "What is the shipment?"
+
+: Knargon Lanenda says 'We have a small shipment of goods coming in later tonight. The [courier] will be waiting outside the city gates. Casually tell the courier [Lovely night for a stroll], and give him this old card as proof that you work for us. Make certain that you are not followed, and return the shipment to me.' 
+
+Receive a Bent Playing Card. 
+
+You say, 'What courier?' 
+
+: Knargon Lanenda says 'The courier that usually runs [McCabe]'s shipment, is that good for nothing J'Racol. I don't trust his kind.' 
+
+'''Back to the quest: Jracol Brestiage is the Dark Elf with Highpass faction who hangs outside the north gate in the North Qeynos zone. If you hang a right coming out of the north gate and follow the wall, you should see him standing by the wall or by a tree close to the zone. He is only around at night between 8 PM to 5 AM. '''
+
+You say, 'Lovely night for a stroll.' 
+
+: Jracol Brestiage says 'Yes, it is a lovely night for a walk, especially with a good friend. Tell me, are you a [friend]?'
+
+You say, 'I am a friend.'  
+
+: Jracol Brestiage says 'My memory is a bit fuzzy. If you are a friend, prove it to me.' 
+
+'''Hand him the Bent Playing Card.'''
+
+: Jracol Brestiage says 'Ah, good, it seems we have much in common after all. Take this back to the Circle, before the city guards come nosing around over here.'
+
+<div class="facblock">
+* Your faction standing with [[Carson McCabe]] has been adjusted by 5.
+* Your faction standing with [[Coalition of Tradefolk Underground]] has been adjusted by 5.
+* Your faction standing with [[Ring of Scale]] has been adjusted by -1.
+* Your faction standing with [[Highpass Guards]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Highpass]] has been adjusted by 5.
+</div>
+
+'''Jracol gives back a note for Knargon. Hand the note to Knargon:'''
+
+: Knargon Lanenda says 'Hmm.  Carson better deal with his little 'problem' soon, it's costing us a lot of money.  Hanns is gonna skin us all when he hears this.  Go tell Hanns that [Carson has a mole in the Highpass] guards, and see what he wants us to do.'
+
+<div class="facblock">
+* Your faction standing with [[Circle of Unseen Hands]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by -1.
+* Your faction standing with [[Corrupt Qeynos Guards]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by -1.
+* Your faction standing with [[Kane Bayle]] has been adjusted by 5.
+</div>
+
+'''Find Hanns Krieghor, a rogue guildmaster:'''
+
+You say, 'Carson has a mole in the Highpass guards.'
+
+Hanns Krieghor says 'Arrgg, that Carson can't control anything. Sometimes he's practically useless. Go tell Zannsin that [I want him to send some of his men to Prak in Highpass], to help Carson get back on track.'
+
+'''Listening to the conversation between Hans and Zannsin reveals that the spy is working for the bandit leader in the Karanas named Rujahn Tahslek.'''
+
+Say to Zannsin Resdinet, 'Hanns wants you to send some of your men to Prak in Highpass.' 
+
+: Zannsin Resdinet says 'Hmm, I see. Maybe you can help us out with this, huh? I think it'd be a perfect opportunity for you to prove just how valuable you are to our little organization. Take this letter to Prak at Golden Rooster in Highpass, and see what you can do to help him out.' 
+
+'''Upon handing the note in to Prak, he asks you to kill Guard Stald and return with his badge as proof of his death. He mentions that you will receive a "Cloak of the Unseen Hands". '''
+
+'''Guard Stald spawns at either the front gate, beside the Tiger's Roar, or beside Top of the World. He is about level 15 or so. When you bring him the badge, he gives you a note to return back to Qeynos'''
+
+Returning the note results in a {{:Black Leather Cloak}}.
+
+[[Category:Quests]]
+
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

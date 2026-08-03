@@ -1,0 +1,114 @@
+{{Simple Quest 
+ |era=Velious
+ |image=npc_keref_spiritspear.png
+ |zone=Iceclad Ocean
+ |quest giver=Keref Spiritspear
+ |minimum level=35
+ |classes=[[Cleric]], [[Druid]], [[Shaman]]
+ |related zones=[[Iceclad Ocean]], [[Cobalt Scar]], [[Southern Karana]]
+ |related NPCs=[[Grizlin Bloodfang]], [[Ritap]], [[a frost giant scout]]
+ |reward=Icy Totem of Protection
+ |turn-in=Get a [[Runed Totem Staff]] which drops off gnolls on Antonica
+ |turn-in 2=Get a [[Whale Bone]] which drops off sharks in Cobalt Scar.
+ |turn-in 3=Get a [[Frost Giant Scout Beard]] which drops off [[a frost giant scout]] in [[Iceclad Ocean]]
+ |turn-in 4=In Iceclad Ocean, give [[Ritap]] the [[Frost Giant Scout Beard]] to get a [[Tinkered Rope]]
+ |turn-in 5=Give the [[Runed Totem Staff]], [[Whale Bone]], and [[Tinkered Rope]] to Grizlin Bloodfang to get a [[Rune Shafted Harpoon]]
+ |turn-in 6=Give the [[Rune Shafted Harpoon]] to [[Keref Spiritspear]] to receive your reward of a [[Icy Totem of Protection]]
+ |dialogue=TBD
+}}
+
+Quest is multiquestable.
+
+== Walkthrough ==
+
+You say, 'Hail, Keref Spiritspear'
+
+: Keref Spiritspear says 'Bark! Lo furless one. My people are Snowfang.  Once mighty tribe, now snowfang home lost to vengeful winter.
+
+You say, 'What vengeful winter?'
+
+: Keref Spiritspear says 'Our tribe once many strong, then vengeful winter come. Tribe grow lost in storm of ice.  Many moon, no food, no water, no home.  Many snowfang die, many snowfang leave to find new home.
+
+You say, 'What new home?'
+
+: Keref Spiritspear says 'Many go north, not see again.  Many family go, Keref family go. Aroooooooo. Someday Keref become brave, like mighty hero Groumshak. Keref go find pack to north.'
+
+You say, 'Who is Groumshak?'
+
+: Keref Spiritspear says 'Groumshak mighty snowfang hero.  Groumshak make battle with furless one fifty paws high. When Groumshak return to tribe, vengeful winter fall.  If you bring Keref mighty harpoon like Groumshak, then Keref become hero like Groumshak.  Will give totem of great protection for thanks.'
+
+'''To get the spear Keref Spiritspear wants, you need to talk to Grizlin Bloodfang in the Snow Fang camp.'''  
+
+You say, 'What Harpoon?'
+
+: Grizlin Bloodfang says, 'Ahh, Harpoon hard to make. Grizlin need many thing to make true harpoon. Will need strong staff, strong bone, strong rope.'
+
+You say, 'What Strong Staff?'
+
+: Grizlin Bloodfang says, 'Good staff always properly carved with totem and rune. Strong and mighty, very good for harpoon making. Not make in many moons here. All wood kept for fire. Perhaps find among outland gnoll tribe where wood is plentiful.'
+
+You say, 'What Strong Bone?'
+
+: Grizlin Bloodfang says, 'Mightiest bone come from whale. Very strong, very powerful. Yes, bone of mighty whale make very strong blade. Good for harpoon.'
+
+You say, 'What Strong Rope?'
+
+: Grizlin Bloodfang says, 'Not know where find strong rope. For mighty harpoon, need very strong bone or harpoon break rope too much. Maybe furless ones with steel canoe have mighty rope.'
+
+''' The items Grizlin needs are a Strong Staff (Runed Totem Staff), a Strong Bone (Whale Bone), and a Strong Rope (Tinkered Rope).'''
+
+* The [[Runed Totem Staff]] drops off gnolls on Antonica.
+* The [[Whale Bone]] is looted off sharks in Cobalt Scar.
+* For the [[Tinkered Rope]], you must visit [[Ritap]] in Icelcad.
+
+You say, 'Hail Ritap'
+
+: Ritap says 'Avast you! Ya best be shoving off if ye knows whats good for you. We be pirate raiders and ya not be messing with the likes of us!'
+
+: Ratop says 'Squawk! Pieces of eight! Pieces of eight!'
+
+: Ritap says 'The cap'n said PIRATES! Not parrots ye knucklehead!' He whacks the other raider upside the head. 'now whars the tinkered rope!?"
+
+: Ratop says 'We be out. Youll be needin to make more. Arg!'
+
+You say, 'What tinkered rope?'
+
+: Ritap says 'Batten down yer yapper! Ahl be doin the talking here. We be needin the rope to tie ye down fer ransom. Now fetch me the beard of a frost giant scout so's I can make some more rope to tie ye up with.'
+
+'''Give [[Frost Giant Scout Beard]] to Ritap.'''
+
+: Ritap says 'Arg! By blubberbeards nostril!  Ye'v done it!' He braids the beard together into a sturdy rope. 'Now take this here rope and tie yerself up! Come lets go tell the cap'n we've captured us some prisoners!'
+
+<div class="facblock">
+* Your faction standing with [[Pirates of Iceclad]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You say, 'Hail, Grizlin Bloodfang'
+
+Grizlin Bloodfang says, 'Lo outlander. Grizlin weaponsmaker for tribe. Make mighty blade from bone. Very important now.. need make many spear for hunter. Not make spear, then hunter not bring meat. Now my friend Keref sad, his pack gone north and Keref alone. Want to find way to help Keref but must make weapon for tribe. Maybe you go find what Keref need to make happy?'
+
+
+'''Give the rope, bone, and staff to Grizlin Bloodfang.'''
+: Grizlin Bloodfang says, 'Yes, these good.'
+: Grizlin Bloodfang forges the items into a finely crafted harpoon. Grizlin holds the weapon up and inspects it for a moment.
+: Grizlin Bloodfang says, 'Yes, this fine weapon. This hero weapon! Groumshak have harpoon much like this. May it bring much food for your pack, furless one.'
+: Grizlin Bloodfang hands you the harpoon with a nod of his head.
+: Your faction standing with SnowfangGnolls got better.
+: Your faction standing with Ulthork got worse.
+: You gain experience!!
+'''He may or may not at this point decide to attack you.'''
+ 
+'''Bring the spear to Keref Spiritspear.'''
+: Keref Spiritspear gasps in astonishment.  'This true hero weapon. This just like harpoon of mighty Groumshak! Now I can find family! Many thanks, friend to Snowfang. Take this for thanks. It protect from danger.'  He hands you an intricately carved ice totem. A feeling of safety washes over you as he places it in your hand.
+: Your faction standing with SnowfangGnolls got better.
+: Your faction standing with Ulthork got worse.
+: You gain experience!!
+'''You receive an [[Icy Totem of Protection]] as your reward. As was the case with Grizlin, Keref may get upset and attack you, so be prepared.'''
+
+[[Category:Quests]]
+[[Category:Iceclad Ocean]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Shaman Quests]]

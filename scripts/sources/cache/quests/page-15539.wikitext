@@ -1,0 +1,64 @@
+{{Classic Era}}
+[[File:npc_netuk_phenzon.png|frame|Netuk Phenzon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Netuk Phenzon]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Groflah Steadirt]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Siphon Strength|Spell: Siphon Strength]]
+</li></ul>
+
+== Walkthrough ==
+Netuk Phenzon is located in [[Freeport|East Freeport]] at loc (-73, -287). Found in the "evil" area of East Freeport, Netuk can be found just past the hidden entryway to the underground tunnels beneath the city.
+
+You say, 'Hail, Netuk Phenzon'
+
+: Netuk Phenzon says 'Welcome, ______! Let us fill your heart with hate. May you carry that hate unto your fellow citizens. Innoruuk has need of your services. We have a [mission] for you.'
+
+You say, 'What mission?'
+
+: Netuk Phenzon says 'There is a man called Groflah Steadirt. He runs a weapons shop here in Freeport.  Our sources tell us he was given a piece of parchment taken from one of our allies. Who that is is none of your business.  We only require you to recover the parchment, which he no doubt has on him. End his life and return the note to me. Do not let me see your miserable face again until you have the parchment.' 
+
+'''There are 2 versions of Groflah.'''
+
+A higher level is located in [[Freeport|North Freeport]], in the second story of his store Groflah's Forger.
+
+A lower level version has the chance to spawn at night (9-9pm) in the Seafarer's Roost in [[Freeport|East Freeport]]. 
+
+'''Beware entering the Seafarer's Roost during the daytime. [[Lenka Stoutheart]] and [[Bronto Thudfoot]] do not take kindly to the type of people willingly taking on this quest.'''
+
+Depending on the clientele in the tavern that night, it may be necessary to lubricate Groflah with some [[Tonics for Groflah|Tumpy Tonics]]. This will cause him to need to drain his dragon and walk out to the docks.
+
+'''Kill Groflah and Loot the Tattered Flier from his tired corpse and hand it back to Netuk in East Freeport.'''
+
+: Netuk Phenzon says 'It is about time you returned! Innoruuk would be proud of the red you have spread upon the land.'
+<div class="facblock">
+* Your faction standing with [[Dismal Rage]] got better.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Knights of Truth]] got worse.
+</div>
+{{exp}}
+
+You receive 6 gold from Netuk Phenzon.
+
+You receive the scroll Spell: Siphon Strength.
+
+[[Category:Quests]]
+[[Category:East Freeport]]

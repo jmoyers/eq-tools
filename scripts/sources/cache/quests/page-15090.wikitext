@@ -1,0 +1,111 @@
+{{Temple Era}}
+
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Cryssia Stardreamer]], [[Walthin Fireweaver]]
+|-
+! ''' Minimum Level: '''
+| 30
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| Various
+|-
+! ''' Related NPCs: '''
+| Various
+|}
+
+Lambent Armor is a set of [[Bard]] specific armor obtained through quests offered in the [[The Temple of Solusek Ro]].
+
+The level range for the quests are around the low 20s to mid 30s depending on your resources. Each piece requires a [[Lambent Stone]] (drops from Hill Giants, Griffons ~level 33) which can bought from higher level players (around 20-35pp). 
+
+'''Note:'''  A seven-piece visible set of Lambent armor costs approximately 1600pp to quest when purchasing gems and lambent stones from vendors.
+
+== Rewards ==
+
+'''Cryssia Stardreamer Quests'''
+{{Gear Set
+|Lambent Breastplate
+|Lambent Helm
+|Lambent Vambraces
+|Lambent Bracers
+}}
+
+'''Walthin Fireweaver Quests'''
+{{Gear Set
+|Lambent Greaves
+|Lambent Boots
+|Lambent Gauntlets
+}}
+
+== Fashion == 
+
+
+[[File:lambentSet_1.png|center|Ogre showing off the blue of the set]]
+
+
+==[[Cryssia Stardreamer]]==
+[[File:npc_cryssia_stardreamer.png|thumb|right|Cryssia Stardreamer]]
+
+'''Faction note: Please be at least Indifferent and when you hail she should give you the quest information. If below indifferent she will eat your quest items.'''
+
+Quests that Cryssia will complete, Turn in these items to her.
+
+===Lambent Breastplate===
+{{CheckboxList}}
+*[[Gypsy Lute]] - [[a gypsy musician]] (lvl 29) in [[Castle Mistmoore]]
+*[[Basalt Carapace]] - [[a basalt gargoyle]] (lvl 33) in [[Lower Guk]]
+*[[Lambent Ruby]] - [[Lambent Stone]] and two [[Ruby|Rubies]] to [[Vilissia]]
+
+===Lambent Helm===
+
+*[[Mudwater Rune]] - [[A Lizard Zealot]] and [[A Lizard Fanatic]] (lvls 32-34) in [[Cazic Thule]]
+*[[Opoline Helm]] - [[a deepwater goblin]] (lvl 36) in [[Oasis of Marr]] and [[Lake Rathetear]]
+*[[Lambent Star Ruby]] - [[Lambent Stone]] and two [[Star Ruby|Star Rubies]] to [[Genni]]
+
+===Lambent Vambraces===
+
+*[[Fiery Vambraces]] - [[Solusek Champion]] (lvl 28-30) in [[Solusek's Eye]]
+*[[Rune of the One Eye]] (Top) - [[Choon]] (lvl 30) in [[West Karana]]
+*[[Lambent Sapphire]] - [[Lambent Stone]] and two [[Sapphire|Sapphires]] to [[Gardern]]
+
+===Lambent Bracers===
+
+*[[Dark-boned Bracelet]] - [[A Greater Dark Bone]] (lvl 26-30) in [[Unrest]]
+*[[Griffenne Charm]] - [[a griffenne]] (lvl 23) in [[North Karana]]
+*[[Lambent Fire Opal]] - [[Lambent Stone]] and two [[Fire Opal|Fire Opals]] to [[Ostorm]]
+
+==[[Walthin Fireweaver]]==
+[[File:npc_walthin_fireweaver.png|thumb|right|Walthin Fireweaver]]
+
+'''Faction note: Please be at least Indifferent and when you hail he should give you the quest information. If below indifferent he will eat your quest items.'''
+
+Quests that Walthin will complete, Turn in these items to him.
+
+===Lambent Greaves===
+
+*[[Icy Greaves]] - [[an elite goblin guard]] (lvl 24-30) in [[Permafrost]]
+*[[Shin Greaves]] - [[a shin ghoul knight]], [[a froglok shin warrior]] (lvl 28) in [[Upper Guk]] or [[Lower Guk]]
+*[[Lambent Fire Opal]] - [[Lambent Stone]] and two [[Fire Opal|Fire Opals]] to [[Ostorm]]
+
+===Lambent Boots===
+
+*[[Firewalker Boots]] - [[Solusek Mage]] (lvl 30) in [[Solusek's Eye]]
+*[[Rune of the One Eye]] (Middle) - [[Froon]] (lvl 30) in [[West Karana]]
+*[[Lambent Sapphire]] - [[Lambent Stone]] and two [[Sapphire|Sapphires]] to [[Gardern]]
+
+===Lambent Gauntlets===
+
+*[[Shin Gauntlets]] - [[a froglok shin knight]], [[a froglok shin warrior]], [[a shin ghoul knight]] (lvls 25-31) in [[Upper Guk]] or [[Lower Guk]]
+*[[Black Silk Gloves]] - [[a glyphed aegis]], [[a deathly usher]], or [[a will sapper]] (lvls 29-31) in [[Castle Mistmoore]]
+*[[Lambent Star Ruby]] - [[Lambent Stone]] and two [[Star Ruby|Star Rubies]] to [[Genni]]
+
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Bard Quests]]

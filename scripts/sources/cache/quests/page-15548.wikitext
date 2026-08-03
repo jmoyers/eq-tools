@@ -1,0 +1,79 @@
+{{Classic Era}}
+[[File:npc_hemia_skemner.png|frame|Hemia Skemner]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Hemia Skemner]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Lydl the Great]]
+|-
+! ''' Required Faction: '''
+| Amiable or better
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li><li> Coin
+</li></ul>
+
+== Walkthrough ==
+
+[[Hemia Skemner]] is located on the top floor of the Academy of Arcane Science.
+
+You say, 'Hail, Hemia Skemner'
+
+: Hemia Skemner says 'How are you?  Welcome to the Academy of Arcane Science.  Please feel free to roam.  May knowledge be your goal.  Be you a [fellow scientist] or visitor, I am sure you will find whatever you seek.'
+
+You say, 'I am a fellow scientist.'
+
+: Hemia Skemner says 'That is good.  I hope you can handle the knowledge of arcane science.  Some have gone mad conducting research.  Such a person is [Lydl Mastat].'
+
+You say, 'Who is Lydl Mastat?'
+
+: Hemia Skemner says 'Lydl Mastat is nothing more than a young apprentice of mine.  He went mad working on a formula for deep water breathing.  He now roams the outskirts of Freeport boasting of power he does not have.  Someone should [teach Lydl a lesson].'
+
+You say, 'I will teach Lydl a lesson.'
+
+: Hemia Skemner says 'Then go.  He appears near the gates of Freeport from time to time.  He is not powerful, but he has a secret.  Nothing save magic can harm him.  This was the result of an experimental potion he drank.  Slay him and return his locked spellbook to me.'
+
+[[Lydl Mastat]] can sometimes be found outside the gate in East Freeport near a couple of cacti, he may also be an NPC titled [[Lydl the Great]], located at -770, -1190.  He is level 4 and is invulnerable to non-magic weapons, so he needs to be killed with magic. 
+
+: Lydl the Great says, 'Death to you all! Swords cannot harm a mighty follower of Innoruuk!'
+
+Killing Lydl Mastat results in these faction adjustments:
+
+<div class='facblock'>
+* Your faction with [[Dismal Rage]] got worse. (-5)
+* Your faction with [[Knights of Truth]] got better. (+5)
+* Your faction with [[Opal Darkbriar]] got worse. (-1)
+</div>
+
+Loot [[Locked Book]].
+
+You receive these faction adjustments when returning the book:
+
+<div class='facblock'>
+* Your faction with [[Arcane Scientists]] got better.
+* Your faction with [[Knights of Truth]] got better.
+* Your faction with [[Opal Darkbriar]] got worse.
+* Your faction with [[The Freeport Militia]] got worse.
+</div>
+{{exp}}
+
+Around 4% xp at level 3
+
+[[Category:Quests]]
+[[Category:West Freeport]]

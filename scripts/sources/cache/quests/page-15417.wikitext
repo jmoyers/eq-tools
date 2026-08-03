@@ -1,0 +1,91 @@
+{{Classic Era}}
+[[File:npc_regren.png|frame|Regren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Regren]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Monk]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[a black wolf]], [[a widow hatchling]], [[a bat]], [[a decaying skeleton]]
+|-
+! ''' Required Faction: '''
+| Amiable or better.
+|}
+
+== Reward ==
+
+<ul><li> {{:Rusty Axe}}
+</li><li> {{:Rusty Flail}}
+</li><li> {{:Rusty Long Sword}}
+</li><li> {{:Rusty Mace}}
+</li><li> {{:Rusty Scimitar}}
+</li><li> {{:Rusty Shortened Spear}}
+</li><li> {{:Rusty Spear}}
+</li><li> {{:Rusty Two Handed Battle Axe}}
+</li><li> {{:Rusty Two Handed Hammer}}
+</li><li> {{:Tarnished Axe}}
+</li><li> {{:Tarnished Battle Axe}}
+</li><li> {{:Tarnished Broad Sword}}
+</li><li> {{:Tarnished Flail}}
+</li><li> {{:Tarnished Mace}}
+</li><li> {{:Tarnished Morning Star}}
+</li><li> {{:Tarnished Rapier}}
+</li><li> {{:Tarnished Scimitar}}
+</li><li> {{:Tarnished Shortened Spear}}
+</li><li> {{:Tarnished Spear}}
+</li><li> {{:Tarnished Two Handed Battle Axe}}
+</li><li> {{:Tarnished Two Handed Sword}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Regren]] is located at 352, 269, 77 inside the Emerald Warriors Guild.''
+
+You say, 'Hail, Regren'
+
+: Regren says, 'Welcome, ______!  Show the Emerald Warriors your mettle and bring me a ruined wolf pelt, some bat fur, some bone chips, and a spiderling eye from the depths of Greater Faydark. If you succeed, my admiration and a reward will be yours. To battle!'
+
+'''Hand [[Regren]] one each of a [[Ruined Wolf Pelt]], [[Bat Fur]], [[Bone Chips]], and a [[Spiderling Eye]].'''
+
+: Regren says, 'Impressive, do you have the rest?'
+
+: Regren says, 'Impressive, do you have the rest?'
+
+: Regren says, 'Impressive, do you have the rest?'
+
+: Regren says, 'Fine work! You are on your way to becoming an adequate combatant.'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Merchants of Felwithe]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You receive 2 silver, 2 copper pieces. 
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Monk Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

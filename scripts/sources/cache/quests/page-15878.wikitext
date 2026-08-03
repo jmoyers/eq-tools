@@ -1,0 +1,77 @@
+[[File:npc_innkeep_wuleran.png|frame|Innkeep Wuleran]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark]]
+|-
+! ''' Quest Giver: '''
+| [[Innkeep Wuleran]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Southern Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Jarlen Meadowgreen]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Experience, Coin
+</li></ul>
+
+== Walkthrough ==
+
+Speak to Innkeep Wuleran up the ramp from the newbie lift in the hut on the right marked inn (#17 on [[Kelethin]] map.)
+
+The conversation with Innkeep Wuleran:
+
+You say, 'Hail Innkeep Wuleran'
+
+: Innkeep Wuleran says, 'This food shortage has finally started affecting even us, all the way over here in Faydwer. We are finding ourselves in [short supply] of certain goods. This is really hurting our business.'
+
+You say, 'short supply?'
+
+: Innkeep Wuleran says, 'It would really be a big help if you could find a way to assist us in restocking our suppy of baked goods. If you [can bake] or if you are [willing to travel] to help us out, that would be truly grand.'
+
+You say, 'willing to travel'
+(note that responding to 'can bake' gives [[Muffin Quests|a different quest]])
+
+: Innkeep Wuleran says, 'If you happen to travel to the continent of Antonica, look up a centaur by the name of Jarlen Meadowgreen. He is an excellent baker and his bread loaves are beyond compare. Tell him you are there to get a shipment of bread loaves and return his product to me. I'll make sure you are compensated for your efforts.'
+
+You then head to [[Jarlen Meadowgreen]] in South Karana. He is with the group of centaurs that hands out the crafted armor quests and circulates between standing near his brothers and checking his bread rising by the large fire pit (the text while he is checking this is rather amusing.)
+
+Hail him and say, 'I am here to pick up some bread loaves.'
+
+Jarlen Meadowgreen says 'So, ya want some of my bread is that it? Well, you've come to the right place I'd say. My brothers told me the market was ripe for that sort of thing so I decided to move on over here. Anyway, hand over two gold pieces and I'll give ya a sack of bread made by me own two hands.'
+
+Give him 2 gold and you get a [[Bag of Bread Loaves]] (LORE NO DROP.)
+
+: ''[[Bag of Bread Loaves]] can also be found in [[Runnyeye|RunnyEye Citadel]] off goblins and Sporali in the moldy area.''
+
+Return and give to Innkeep Wuleran.
+
+: Innkeep Wuleran says, 'Excellent, I see you made it back safely. Thank you so much, here is your payment as promised. Now I can get back to business as usual.'
+
+<div class="facblock">
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{Exp}}
+
+You receive 1 platinum - 3 platinum from Innkeep Wuleran.
+
+==See also==
+
+* [[Muffin Quests]]
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:All Classes Quests]]

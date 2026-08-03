@@ -1,0 +1,62 @@
+[[File:npc_vynon_estaliun.png|frame|Vynon Estaliun]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Vynon Estaliun]]
+|-
+! ''' Minimum Level: '''
+| 7
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a catfisher]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Brass Ring}}
+</li><li> {{:Torch}}
+</li></ul>
+
+== Walkthrough ==
+
+''Vynon Estaliun is at location -750, -120 in Erudin outside of the Peace Keeper guild.''
+
+You say, 'Hail, Vynon Estaliun'
+
+: Vynon Estaliun says 'I welcome you to the temple of the Peacekeepers. The ways of peace and tranquility are ours to uphold. May you find a place among us. We have much work to do. If you are a paladin of this temple, you must [desire to face fear].'
+
+You say, 'I desire to face fear.'
+
+: Vynon Estaliun says 'Very well. You shall face it. In Toxxulia Forest, you shall seek out Kerra Ridge. Once found, you will bring me the tail of a catfisher. Somehow, you shall find a way. They are weak, but they only work near the opposite side of the bridge, along the water's edge.'
+
+''a catfisher is at location -340, +1860 in Kerra Island.''
+
+:You have slain a catfisher!
+<div class="facblock">
+* Your faction standing with [[Kerra Isle]] got worse.
+</div>
+:You have looted a [[Fishy Cat Tail]].
+
+''Hand in Fishy Cat Tail to Vynon Estaliun.''
+
+: Vynon Estaliun says 'Good work. I knew you could do it. Take this as reward.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better.
+* Your faction standing with [[High Council of Erudin]] got better.
+* Your faction standing with [[Heretics]] got worse.
+</div>
+: {{YouGainExperience}}
+
+: You receive 5 copper from Vynon Estaliun.
+
+[[Category:Quests]]
+[[Category:Erudin]]

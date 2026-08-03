@@ -1,0 +1,75 @@
+{{Kunark Era}}
+[[File:npc_professor_akabao.png|frame|Professor Akabao]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Lake of Ill Omen]]
+|-
+! ''' Quest Giver: '''
+| [[Professor Akabao]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Karnor's Castle]], [[Kaesora]], [[Chardok]]
+|-
+! ''' Related NPCs: '''
+| [[Verix Kyloxs Remains]], [[Niblek]]
+|}
+
+== Rewards ==
+
+<ul><li>  {{:Medallion of the Kylong}}
+</li></ul>
+
+== Walkthrough ==
+
+<ul><li>  Part of the [[Sebilis and Veeshan's Peak Key Quest | Rune of Scale (Key to Veeshan's Peak)]]
+</li></ul>
+
+
+In the Lake of Ill Omen, southeast of the lake, there's a tower with an [[Erudite]] named [[Professor Akabao]].
+
+You say, 'hail Professor Akabao'.
+
+: Professor Akabao says 'Salutations traveler I dont get many visitors in these isolated regions. Have you come to learn of the ancient tribes of the Iksar?
+
+You say, 'i have come to learn of the ancient tribes of the iksar'.
+
+: Professor Akabao says 'There were five tribes of Iksars that rose from the ashes of the Shissar Empire and founded their kingdoms on the continent of Kunark. Three of the tribes were extinguished many years later by the Kunzar tribe which is the tribe that the current Iksar are descendant from. I focus my studies on learning of the extinct tribe of Kylong.
+
+You say, 'who are the kylong?'.
+
+: Professor Akabao says 'The Kylong were a mountain dwelling tribe of Iksar that strove for esoteric knowledge. They had vast libraries of ancient magical tomes that had been acquired from the Shissar sorcerers, and strove to understand and put the rituals documented in the tomes to practical use. When the Kunzar armies marched upon the Kylong, the three greatest Kylong mystics shattered the Medallion of Kylong, a holy relic of their tribe and fled their mountain homes in order to prevent the Kunzar from reassembling the Medallion of Kylong.
+
+You say, 'where is the medallion'.
+
+: Professor Akabao says 'I have been attempting to learn of the destinations of the three Kylong leaders that held the fragments of the medallion. I know only that they sought shelters to hide and continue the practice of their mystical arts In order to one day return their tribe to it's former glory. Their remains may exist beneath some of the fortresses that are centers of Iksar and Sarnak necromancy. I have seen indications that some of the tomes within those fortresses are in fact the very tomes once cherished by the Kylong. Should you manage to recover the broken pieces of the Medallion of Kylong bring them to me so that I may restore the ancient artifact.
+
+He wants three medallion pieces:
+
+* '''Upper Portion''': Found via the [[Niblek's Gems]] quest in [[Chardok]]. (bring Niblek a Black Sapphire and a Ruby) 
+* '''Middle Portion''': Dropped by [[Verix Kyloxs Remains]], found in the sewers of [[Karnor's Castle]].
+* '''Bottom Portion]''': Found sitting on the floor in the library in [[Kaesora]].
+
+Professor Akabao says 'Are you daft? How can I reconstruct the medallion of the Kylong without all three pieces?!!'
+
+Professor Akabao says 'Are you daft? How can I reconstruct the medallion of the Kylong without all three pieces?!!'
+
+Professor Akabao says 'For ages this medallion has been scattered across these inhospitable lands, I had just about given up hope of locating the pieces and rebuilding this piece of Iksar history. You may keep it. It is enough to know that I have done my part to restore such an artifact to the people of Norrath.'
+
+You gain experience!! 
+
+
+----
+
+This quest results in the Medallion of the Kylong, which is one of three medallions needed for the [[Rune of Scale Quest]] Quest to get into [[Veeshan's Peak]].
+
+Remember that there are three separate medallions in the game, each broken into three pieces that just say a piece of broken medallion when you find it. You need to identify the piece of medallion you find to determine which one it is.
+
+[[Category:Quests]]
+[[Category:Lake of Ill Omen]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,50 @@
+{{Classic Era}}
+[[File:npc_brutol_rhaksen.png|200px|frame|Brutol Rhaksen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| A tattered note
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Brutol Rhaksen]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Crimson Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Human or Half Elf Warrior follower of [[Innoruuk]], you will have a tattered note in your inventory. The note reads as follows:
+
+: ''The Dismal Rage has need of your dark skills. Take this note to Brutol Rhaksen, he has a job for you. The Dismal Rage is currently operating out of the basement of an abandoned building in the slums of East Freeport.''
+
+Upon handing him the tattered note:
+
+: Brutol Rhaksen says, 'Welcome to warriors guild of East Freeport. Take this to help you on your journeys.'
+
+<div class='facblock'>
+* Your faction standings with [[Dismal Rage]] got better.
+* Your faction standings with [[Knights of Truth]] got worse.
+* Your faction standings with [[Opal Dark Briar]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Faded Crimson Tunic*]]. Good luck, warrior!
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:Warrior Quests]]

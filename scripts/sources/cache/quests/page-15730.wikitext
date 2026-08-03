@@ -1,0 +1,72 @@
+{{Classic Era}}
+[[File:npc_jemoz_lerkarson.png|frame|Jemoz Lerkarson]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Jemoz Lerkarson]]
+|-
+! ''' Minimum Level: '''
+| ?
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Captain Hazran]]
+|}
+
+== Reward ==
+
+<ul><li>Random 34 Cleric Spell, [[Faction]], Experience</li>
+<li>Spell: Abundant Food</li><li>Spell: Atone</li><li>Spell: Word of Health</li></ul>
+
+== Walkthrough ==
+
+''This quest begins with Jemoz Lerkarson, a cleric guildmaster in the basement of the Temple of Marr in North Freeport.''
+
+On handing a Damaged Militia Helm to him, you saw: 
+
+: Jemoz Lerkarson says 'Bless you, my child.  Marr is grateful, as are we.  Here is our thanks.  Let it bring you greater strength to defeat the Militia.  Go and continue the crusade.  Soon you will be strong enough to slay the [true organizer].'
+
+You say, 'What true organizer?'
+
+: Jemoz Lerkarson says 'Captain Hazran is the commander of the Freeport Militia.  Lucan has no time to waste on relegating duties.  Hazran is the one who keeps these brutes together as a militia.  Stop him and maybe the militia will collapse.  Find a way to return his head to me.  That would surely bring great thanks from this temple.'
+
+'''[[Captain Hazran]] is a level 61 Warrior guildmaster found in the Militia House in West Freeport near the gate to East Commonlands.'''
+
+Captain Hazran smacks the flat of his blade against the palm of his hand and says, 'You want a taste of this, _____?!!'
+
+You have slain Captain Hazran!
+
+Captain Hazran's corpse says 'Your name shall be added to the most wanted list of the Freeport Militia!!'
+
+<div class="facblock">
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Priests of Marr]] got better.
+</div>
+
+'''Loot the [[Human Head]] from his corpse and bring it to Jemoz:'''
+
+: Jemoz Lerkarson says 'We heard of your assault.  We even attempted to slay Lucan. Alas, we failed.  You have done your part and as such have earned our thanks.  Beware of the Freeport Militia.  They will no doubt be on the lookout for you.  May Marr protect you.  Perhaps you should speak with Valeron Dushire, paladin of the Knights of Truth.  He seeks other to slay the fallen knight.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}}
+
+For your efforts, you receive a random low level spell.
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Cleric Quests]]

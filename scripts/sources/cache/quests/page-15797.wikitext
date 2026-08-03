@@ -1,0 +1,64 @@
+:''For the overview of the many bone chips quests, see [[Bone Chips Quests]].''
+[[File:npc_hukulk.png|frame|Hukulk]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Hukulk]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[a decaying skeleton]]
+|}
+
+== Rewards ==
+
+<ul><li>  Experience
+</li><li> [[Faction]]
+</li><li> [[Rusty Two Handed Sword]]
+</li></ul>
+
+== Walkthrough ==
+
+'''Indifferent is too low for this quest'''
+
+''[[Hukulk]] is in the Shadowknight guild in [[Grobb]].''
+
+You say, 'Hail, Hukulk'
+
+: Hukulk says, 'What you want!! You make fun of [helm of Hukulk]?!! Me smash you!! Maybe you come learn ways of Hate and Fear! You be dark power. You be Pain. You [want join Nightkeep]?'
+
+You say, 'I want join Nightkeep'
+
+: Hukulk says, 'Good. Hate and Pain. Innoruuk teach power. I teach power. Me make you power. You do what me say. You no mess up. I no kill you. We no like dead creature we no own. Go. kill dem. Bring four bone chips. I make you power.' 
+
+'''Hand in four [[Bone Chips]]. '''
+
+: Hukulk says 'You good. Take dis. Make much pain and hurt. Make tings bleeds. Kill, hurt all. Innoruuk and me say do, now go. You do much, come bak. Teach you how more hurt and pain make. Go.' 
+
+<div class="facblock">
+* Your faction standing with [[Shadowknights of Night Keep]] got better. 
+* Your faction standing with [[DaBashers]] got better. 
+* Your faction standing with [[Green Blood Knights]] got worse. 
+* Your faction standing with [[Broken Skull Clan]] got worse. 
+</div>
+{{YouGainExperience}}
+Level 1 - 8% 
+Level 2 - 1-2%
+Level 3 - 
+(Negligible) (1% @ Level 4)
+
+''' You receive a [[Rusty Two Handed Sword]].
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:All Classes Quests]]

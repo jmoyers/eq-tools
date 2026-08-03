@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_byzar_bloodforge.png|frame|Byzar Bloodforge]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Byzar Bloodforge]]
+|-
+! ''' Minimum Level: '''
+| 9
+|-
+! ''' Classes: '''
+| [[Bard]], [[Cleric]], [[Druid]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[a goblin warrior]]
+|}
+
+== Reward ==
+
+A piece of [[Small_Tattered_Armor_Set| small tattered armor]].
+
+== Walkthrough ==
+
+''[[Byzar Bloodforge]] is located at {{Loc| South Kaladim|-108, 381, 3}} or {{Loc| South Kaladim|-38, 400, 3}} as he paths between two rooms in the Kaladim Warrior's Guild.''
+
+You say, 'Hail, Byzar Bloodforge'
+
+: Byzar Bloodforge says, 'State your business!! I have no time for chitchat. Well.. speak up, toad!! What?!!.. Have you come here to [return goblin beads]?'
+
+You say, 'I have come to return goblin beads'
+
+: Byzar Bloodforge says, 'If you wish to return Runnyeye Warbeads you best have at least four of them. Do not waste my time with any less. If I am in a good mood I just may reward you with some trash, err.. I mean equipment from our armory.'
+
+'''Hand [[Byzar Bloodforge]] 4 [[RunnyEye Warbeads]].'''
+
+: Byzar Bloodforge says, 'You finally have proven yourself a warrior, a slow one!! Take this reward and ask for nothing else. You should be proud to defend Kaladim and expect no reward.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:South Kaladim]]
+[[Category:Bard Quests]]
+[[Category:Cleric Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

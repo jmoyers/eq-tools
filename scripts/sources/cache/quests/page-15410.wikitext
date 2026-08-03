@@ -1,0 +1,62 @@
+{{Classic Era}}
+[[File:npc_narex_t`vem.png|frame|Narex T`Vem]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[Narex T`Vem]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Najena]], [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[an injured halfling]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Footman's Voulge}}
+</li></ul>
+
+== Walkthrough ==
+
+''Faction hit amounts are from Allakhazam.''
+Indifferent required for hand-in.  
+
+[[Narex T`Vem]], in the warrior's guild will announce that the Indigo Brotherhood is looking for someone to kill halfling raiders (located in various camps in Nektulos Forest).
+
+You say, 'Hail, Narex T`Vem'
+
+Narex T'vem says 'Welcome to the cauldron of hate. If you are a young warrior, you have come to the right place. There are many [duties] to be performed. If you are a veteran of the blade, we welcome your return to service. Perhaps you return with a [leatherfoot] skullcap?'
+
+You say, 'What leatherfoot skullcap'
+
+Narex T`Vem says, 'Where have you been? The halflings of Rivervale have an elite force of warriors. They are called the Leatherfoot Raiders. They have been infiltrating our glorious city of Neriak for quite some time. They must be exterminated! I must hire strong warriors who wish to [collect the bounty].'
+
+You say, 'i will collect the bounty'
+
+Narex T`Vem says, 'So you wish to collect the bounty on Leatherfoot Raiders? Then go into Nektulos and hunt them down. I shall pay a reward for no fewer than four Leatherfoot Raider skullcaps.'
+
+Most Leatherfoot halflings in Nektulos occasionally drop a [[Leatherfoot Raider Skullcap (drop)]]. Turn in four of these at a time to Narex T`Vem for experience, coin, and faction.
+
+<div class="facblock">
+* Your faction standing with [[Indigo Brotherhood|IndigoBrotherhood]] got better. (50)
+* Your faction standing with [[Emerald Warriors|EmeraldWarriors]] got worse. (-7)
+* Your faction standing with [[Steel Warriors|SteelWarriors]] got worse. (-2)
+* Your faction standing with [[Primordial Malice|PrimordialMalice]] got worse. (-100)
+</div>
+
+== Experience Gain ==
+
+As a level 6 Dark Elf Cleric, each turn gave 1% exp bar.
+
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]

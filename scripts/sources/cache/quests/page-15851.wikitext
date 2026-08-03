@@ -1,0 +1,125 @@
+{{Classic Era}}
+[[File:npc_royal_guard_sheltuin.png|frame|Royal Guard Sheltuin]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Royal Guard Sheltuin]]
+|-
+! ''' Minimum Level: '''
+| 1 (RECCOMEND 25+)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Clan Runnyeye]], [[Najena]], [[Qeynos Aqueducts]], [[The Feerrott]], [[The Warrens]], [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Driana Poxsbourne]], [[Lyris Moonbane]], [[goblin janitor]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tunic of Ridossan}}
+</li></ul>
+
+== Walkthrough ==
+
+''This quest is a follow-up to the [[Cold Iron]] quest ([[Leggings of Ridossan]]).''
+
+You say, 'What more important task?'
+
+: Royal Guard Sheltuin says 'According to the evidence we've uncovered, it appears the kobolds are nothing but pawns to harass us. Or perhaps even all of Odus. If they wish to play these games, then we'll humor them. We'll take their pawn with one of our knights. Will you be the knight, ______?'
+
+You say, 'I will be the knight.'
+
+: Royal Guard Sheltuin says 'Then you will deliver this chest for us. Don't worry about what's inside it. Although we enjoy our solitude, we do make allies. We also make use of those allies. We will do so now. Take the chest to Lyris Moonbane below the human city of Qeynos. You will then follow her instructions and complete any tasks she assigns you. In return, she will send you back with what we wish. Fear is our armor.'
+
+''-- You receive a [[Heavy Locked Chest]]. --''
+
+'''Take it to [[Lyris Moonbane]] in the [[Qeynos Aqueducts]] (300, -445).'''
+
+: Lyris Moonbane examines the lock on the chest and pulls a black key from a pouch at her hip. The lock clicks open. Her eyes widen as she carefully opens the chest, revealing a pile of platinum coins and a small note. After admiring the coins she takes the note and reads it. The necromancer glances up, then at her spectral pet who then hands you a glass jar. She says, 'Are you ready for your first [assignment], Erudite?'
+
+{{YouGainExperience}}
+
+''-- You receive a [[Thick Glass Jar]], a 4-slot container. --''
+
+You say, 'What assignment?'
+
+: Lyris Moonbane says 'We have just the thing for your friends back home. It will take some doing, but the pay off will be lovely indeed. In that jar you must combine 4 substances. You'll need two portions of a [goblin..source], one portion of [[Green river sludge]], and one [portion of an experimental nature] that an agent of ours is working on. Bring the mixture back to me and we'll speak again.'
+
+You say, 'What goblin source?'
+
+: Lyris Moonbane says 'The goblins of Antonica are known for their filthy habits and unclean practices. They often carry a menagerie of diseases and conditions. A more concentrated form of this aspect of goblin life cannot be found anywhere else but in the sewers of their citadel in the Serpent Spine. They must have workers who maintain the sewers. Find them and find the substance.'
+
+You say, 'What green river sludge?'
+
+: Lyris Moonbane says 'The ogres of Oggok don't spend much time on sanitation, so naturally their kind harbors many diseases. This is easily apparent in the river that runs near their city, Greenblood. Down at the very bottom of the river is where the ancient plagues have come to rest and hibernate. Once the sludge is mixed in with the other substances, those glorious blessings of Bertoxxulous will most assuredly awaken.'
+
+You say, 'What portion of an experimental nature?'
+
+: Lyris Moonbane says 'We have an agent studying in Freeport. Well, she actually isn't in Freeport proper but rather under it, in the sewers. Her name is Driana Poxsbourne. When you find her, tell her I have sent you for the substance. She will most likely have a task for you to complete before she can give you the fourth portion. Obey her.'
+
+The items you need are:
+
+* 2 x [[Vile Substance]] dropped by [[Goblin Janitor]] which roams the 2nd level of [[RunnyEye Citadel]]
+* 1 x [[Green river sludge]] ground spawn in the river in [[The Feerrott]], near Oggok at (+135, +705)
+* 1 x [[putrid substance]] from Driana Poxbourne after you give her 3 x [[Reagent pouch]] from Najena mages
+
+You say, 'Hail, Driana Poxsbourne'
+
+Driana Poxsbourne says, 'Hail! _______, You best not be associating yourself with the likes of Najena.'
+
+'''Hand Driana Poxsbourne 3 [[Reagent pouch|Reagent pouches]].'''
+
+: Driana Poxsbourne says, 'Ahh, wonderful work, _______. Here is the substance...don't spill it! HAHAHAaahhahehehe...yes...you don't want to spill that, heheh.'
+
+<div class='facblock'>
+* Your faction standing with [[Bloodsabers]] got better.
+* Your faction standing with [[Opal Dark Briar]] got better.
+* Your faction standing with [[Corrupt Qeynos Guards]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Priests of Life]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''After you get all four items, combine them and return the [[Sealed Jar]] to Lyris Moonbane in the Qeynos Aquducts.''' 
+
+: Lyris Moonbane's eyes light up with childish glee as she takes the jar containing the disgusting and deadly substance. From her pouch she removes a gob of putty and a gem carved into the likeness of a flying insect. After sticking the putty to the lid of the jar, she mashes the carved gem into the putty and hands the jar back you. She then says, 'This is the Harbinger of Bertoxxulous. When the gem is brought near the kobold lair it will enchant the substance. You must then [deliver] the substance.' 
+
+''-- You receive a [[Harbinger of Bertoxxulous]]. --''
+
+You say, 'I will deliver the substance.'
+
+: Lyris Moonbane says, 'You'll need to find the source of the kobold water supply and pour the substance into it. Once you do that, the disease will infest whatever living organisms it comes in contact with so do yourself a favor and leave the area quickly. You can then take the empty jar to your master for your reward.' 
+
+'''Travel to [[The Warrens]] and trade the Harbinger of Bertoxxulous to the [[river source]] at (355, -535).'''
+
+{{YouGainExperience}}
+
+''-- You receive an [[Empty Jar]] --'' ({{Item Lore|Once held the Harbinger of Bertoxxulous}}).
+
+'''Take the Empty Jar back to [[Royal Guard Sheltuin]] in [[Paineel]] to receive the [[Tunic of Ridossan]].'''
+
+: Royal Guard Sheltuin says, 'Well done, _______! Now we need only wait for the kobolds to start dying off and our plan will be complete. Should only take 8 years or so. One such as yourself will wear this ancient armor well. The Tunic of the crusader Ridossan is now yours. He shall watch over and praise you in your triumphs... your defeats on the other hand... well, never mind that.'
+
+<div class='facblock'>
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}} 
+
+== Related Quests ==
+
+<ul>
+<li>[[Cold Iron]]</li>
+</ul>
+
+[[Category:Quests]]
+[[Category:Paineel]]

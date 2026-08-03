@@ -1,0 +1,141 @@
+[[File:npc_maesyn_trueshot.png|frame|Maesyn Trueshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark]]
+|-
+! ''' Quest Giver: '''
+| [[Maesyn Trueshot]]
+|-
+! ''' Minimum Level: '''
+| 8
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Kaladim|North Kaladim]], [[Steamfont Mountains]], [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Jyle Windshot]], [[Trantor Everhot]], [[rogue clockwork]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Trueshot Longbow}}
+</li></ul>
+
+== Walkthrough ==
+
+===Introductions===
+
+''[[Maesyn Trueshot]] may be found in the ranger guild in [[Kelethin]] at -451.03, 520.32, 116.28. Note: He will progress through dialogue at indifferent but won't hand you the pack until amiably. You can finish the quest as a non-ranger but you will need the faction.''
+
+You say, 'Hail Maesyn Trueshot'
+
+: Maesyn Trueshot says 'Welcome to Kelethin, ______! I am Maesyn Trueshot, commander of Faydark's Champions. We are the finest marksmen in all of Norrath. With our trusty [Trueshot longbows] we can miss no target regardless of the distance or the conditions.'
+
+You say, 'What Trueshot longbows?'
+
+: Maesyn Trueshot says 'The Trueshot Longbow was created by my famed father, Eldin Trueshot. It is quite accurate and takes a ranger's skill to wield. We use our new recruits to [gather materials] needed by my father. We shall soon begin to release the formula to good elves so all may fletch such a bow.'
+
+You say, 'I will gather materials.'
+
+: Maesyn Trueshot says 'Take this pack. Go to Kaladim, find [[Trantor Everhot]] and ask for dwarven wire. Then go to Freeport to meet [[Jyle Windshot]]. Search the inns for him and ask him for treant wood. Then, collect some spiderling silk from spiderlings and finally, in [[Steamfont Mountains|Steamfont]], we have the permission of the gnomes to use any micro servos we find while destroying rogue spiders. Combine them all and return the pack to me.'
+
+'''You receive a [[Material Pack]], a 4-slot MEDIUM container.'''
+
+===Dwarven Wire===
+
+'''[[Trantor Everhot]] may be found wandering around [[North Kaladim]].'''
+
+You say, 'Hail, Trantor Everhot'
+
+: Trantor Everhot says 'Yes, yes!! I am a very busy man. I've got blueprints to work on, [dwarven wire] to perfect and formulae to calculate. In between those tasks, I have to find time to head down to Irontoe's and down a few Tumpy Tonics.'
+
+You say, 'What dwarven wire?'
+
+: Trantor Everhot says 'Oh!! Interested in my dwarven wire, are you? Many are. I have no problem letting you use a spool, but I have to warn you that I have not perfected the strength of it yet. I will make you a trade. A couple of [Tumpy Tonics] for a spool.'
+
+You say, 'What Tumpy Tonics?'
+
+: Trantor Everhot says 'Aaah!! I love Tumpy Tonics. They were created by Tumpy Irontoe. He was once a member of the famed Irontoe Brigade. Since they disbanded and left for parts unknown he decided to stay in Kaladim and open Irontoe's, the finest well in Faydwer.'
+
+'''You can get [[Tumpy Tonics]] from [[Tumpy Irontoe]] or brew them yourself (1 [[Kiola Nut]] + 1 [[Water Flask]] in a brew barrel, trivial 135).  You'll need four Tumpy Tonics for the quest, so make sure you get enough.  Give two to Trantor Everhot unstacked.'''
+
+: Trantor Everhot says 'Hey!! Only one?!!'
+
+: Trantor Everhot says 'Great!! I did not have the time to get down to Irontoe's today. Here. Like I said. A spool of dwarven wire. Now go away. I ain't sharing these tonics.'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Merchants of Kaladim]] got better.
+* Your faction standing with [[Craknek Warriors]] got worse.
+</div>
+You gain experience!! 
+
+'''You receive [[Dwarven Wire]].  Give him another two [[Tumpy Tonics]] unstacked for the second piece of [[Dwarven Wire]].'''
+
+===Treant Wood===
+
+: [[Jyle Windshot]] may be found in [[West Freeport]] (a different version of him may be found in [[East Freeport]], but that's for a different quest).  Make sure he cons amiably or above.
+
+You say, 'Hail, Jyle Windshot'
+
+: Jyle Windshot says 'Hello. Might I ask what you are looking for?'
+
+You say, 'I am looking for treant wood.'
+
+: Jyle Windshot says 'You are a new courier from the Faydarks. I am sorry I did not stay closer to the docks. I hear that part of Freeport is dangerous and is filled with many rogues. I shall require a new Small Lantern in trade for the Treant Wood.'
+
+You can buy a [[Small Lantern]] at many vendors, including [[Innkeep Palola]] in [[North Freeport]] and [[Innkeep Harold]] in [[East Commonlands]].  '''Give Jyle the lantern.'''
+*Give them one at a time; Jyle will eat extras in the same trade.
+
+: Jyle Windshot says 'Thanks, friend. I have run a long way to get here in time. Mostly at night. I lost my lantern in a card game in Highkeep.'
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions|Faydark's Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div> 
+You gain experience!!
+
+'''You will probably receive [[Wooden Shards]], which identifies as "[[Treant Wood Shards]]."  Occasionally you instead receive [[A Wooden Heart]], which identifies as "[[A Treant Heart]]."  This is used in the subsequent [[Rain Caller Quest]].'''
+
+===Spiderling silk===
+
+[[Spiderling silk]] drops from spiderlings (and some spiders) around the world.
+
+===Micro Servos===
+
+Rogue clockworks in Steamfont drop [[Micro Servo|Micro Servos]].  You'll need at least two [[Micro Servo]]s, so make sure to collect spares.
+
+===The Finale===
+
+In the Material Pack, combine 1 [[Dwarven Wire]], 1 [[Wooden Shards]], 1 [[Spiderling Silk]], and 1 [[Micro Servo]] to craft a [[Pack of Materials]].  Give this to Maesyn Trueshot.
+
+: [[Maesyn Trueshot]] says 'I shall see that my father gets the materials. I hope this can be of use to you. It will serve as your starting point toward fletching a Trueshot longbow. It is unfortunate that we are unable to enchant the bow to its [next incarnation], but it is still a fine weapon. You do know the [correct components] needed for fletching such a bow, do you not?'
+
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions|Faydark's Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+You gain experience!!
+You receive 6 gold from Maesyn Trueshot.
+
+You say, 'What correct components?'
+
+: [[Maesyn Trueshot]] says 'Now that I have crafted the [[Treant Bow Staff]], you shall need one [[Planing Tool]], one [[Treant Bow Staff]], one [[Micro Servo]] and one spool of [[Dwarven Wire]]. These items will be used with your [[Fletching Kit]] as all other bows. Be forewarned, only a Master Fletcher can create such a bow and even a master fails from time to time. Good Luck.'
+
+'''You receive a [[Treant Bow Staff]].  Combine this in a [[Fletching Kit]] with a [[Micro Servo]], a piece of [[Dwarven Wire]], and a [[Planing Tool]] to craft a [[Trueshot Longbow]] (trivial 235).'''
+
+[[Category:Quests]]
+
+[[Category:Greater Faydark]]
+[[Category:Ranger Quests]]

@@ -1,0 +1,73 @@
+{{Classic Era}}
+[[File:npc_savarixsa_zexus.png|thumb|Savarixsa Zexus]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]], [[East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Savarixsa Zexus]] 
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Related NPCs: '''
+| [[Perrir Zexus]]
+|}
+
+== Reward ==
+
+<ul><li>  Faction, Minor Coin
+</li></ul>
+
+== Walkthrough ==
+
+''This quest can be initiated with two different NPCs: [[Savarixsa Zexus]] who is located in the Shaman guild in [[Grobb]] or [[Saxarivza Zaxun]] who is located in the tunnels underneath [[East Freeport]]. Both NPCs provide the same quest text and letter. The one from Freeport can be obtained even at KOS con by standing above ground, over top her position stand at -93, -175  /target Saxarivza_Zaxun and say 'I am devoted to Innoruuk' to receive the letter. For the version from Grobb - The required faction to start this quest is dubious. A [[Ball of Golem Clay]] can be used to boost your faction from threatening to amiably if needed. [[Ornate Velium Pendant]] may also get you to dubious. Once you are dubious, the recommendation will be accepted.''
+
+You say, 'Hail, Savarixsa Zexus'
+
+:Savarixsa Zexus says 'Salutations, ______! I am here as a favor to my brother, High Priest Perrir. We seek loyal followers of Innoruuk to earn their place among the hierarchy of the Spires. Are you [devoted to Innoruuk]?'
+
+You say, 'I am devoted to innoruuk'
+
+:Savarixsa Zexus says 'My brother requests your presence in Neriak at the Spires of Innoruuk. Take this note with you, _______. It will inform Perrir of who sent you.'
+
+''Deliver the note to [[Perrir Zexus]] in [[Neriak|Neriak Third Gate]] at (408, -781, -51).
+
+''Although you can receive the letter at Threateningly, it is not sufficient faction to do hand in. There is a way around this if you can Sneak or find someone to cast invis on you during the turn in. You can open trade window around the corner from Perrir, out of line of sight. Time it to avoid pathing guards. Open the trade window, have someone reapply invis (or Sneak), and complete the trade while indifferent from.''
+
+:Perrir Zexus says '_________ eh? My sister has a keen perception for seeing into a person's soul. You may store an abundance of hate but hate can be devoted to different ideals. Prove to me your devotion to our Lord Innoruuk by bringing me the skullcap of a Leatherfoot Raider who has invaded our forest. Go, ________, and do as I have requested'
+
+<div class="facblock">
+* Your faction standing with [[Priests of Innoruuk]] has been adjusted by 200.
+* Your faction standing with [[King Naythox Thex]] has been adjusted by 30.
+* Your faction standing with [[Priests of Marr]] has been adjusted by -70.
+* Your faction standing with [[Clerics of Tunare]] has been adjusted by -50.
+* Your faction standing with [[Priests of Life]] has been adjusted by -30.
+* Your faction standing with [[Primordial Malice]] has been adjusted by -800.
+</div>
+{{exp}}
+
+''You turn in a [[Leatherfoot Raider Skullcap (drop)]] to Perrir:''
+
+Perrir Zexus says 'Fine work, Deathtemplar! You are well on your way to reaping the rewards of the Spires of Innoruuk.'
+<div class="facblock">
+* Your faction standing with [[Priests of Innoruuk]] has been adjusted by 10.
+* Your faction standing with [[King Naythox Thex]] has been adjusted by 1.
+* Your faction standing with [[Priests of Marr]] has been adjusted by -3.
+* Your faction standing with [[Clerics of Tunare]] has been adjusted by -2.
+* Your faction standing with [[Priests of Life]] has been adjusted by -1.
+* Your faction standing with [[Primordial Malice]] got better.
+</div>
+{{exp}}
+
+''You receive minor coin from [[Perrir Zexus]].''
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:East Freeport]]

@@ -1,0 +1,95 @@
+{{Classic Era}}
+[[File:npc_chesgard_sydwen.png|frame|Chesgard Sydwen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Chesgard Sydwen]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Rongol]], [[Tukk]], [[Minya Coldtoes]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li></ul>
+
+== Walkthrough ==
+
+''Chesgard Sydwen may be found at -270, -500.''
+
+You say, 'Hail, Chesgard Sydwen'
+
+: Chesgard Sydwen says 'May Karana guide you. Are you a [citizen of Qeynos] or a visitor?'
+
+You say, 'I am a citizen of Qeynos.'
+
+: Chesgard Sydwen says 'Then I would urge you to attend daily services in the Temple of Thunder. You are a [member of Thunder], are you not? Or maybe I am mistaken and you are just lost..?'
+
+You say, 'I am a member of Thunder.'
+
+: Chesgard Sydwen says 'I welcome you. Karana cares for all of His flock. He bestows a touch of His power upon the souls of the Clerics and Paladins of our temple. We look after His flock. Speaking of which, I require the assistance of a young paladin to [deliver provisions to needy members].'
+
+You say, 'I will deliver provisions to needy members.'
+
+: Chesgard Sydwen says 'Good show!! Here you are, young knight. Take these blankets to any resident who desires warmth. Ask them if they are followers of Karana, then ask if they require temple blankets. Be careful, the plains are quite dangerous for a young knight.'
+
+'''You receive [[Temple Blankets]] (identifies as "Temple of Thunder Blankets").  Find Rongol in West Karana.'''
+
+''Rongol's location: Your Location is -3701.52, -9286.79, 0.19''
+
+You say, 'Hail, Rongol'
+
+: Rongol says 'Great!! I have fifty acres to seed and now I have visitors stopping by to waste my time!!'
+
+You say, 'Are you a follower of karana?'
+
+: Rongol says 'Yes. I am a follower of Karana, the Rainkeeper. It is He who keeps the plains fertile.'
+
+You say, 'Do you require a temple blanket?'
+
+: Rongol says 'With the frequent rains, I find my only need is a blanket to keep me warm during the long cold nights. Thank Karana the temple has begun to send young paladins to deliver extra blankets.'
+
+'''Upon turning in the temple blanket:'''
+
+: Rongol says 'Thank you, protector of Karana. This will be handy when the cold rushes into the valley. Allow me to offer you some provisions for your journey. And, might I add, the [Karana bandits] have begun to operate much closer to Qeynos.'
+
+<div class="facblock">
+* Your faction standing with [[Karana Residents]] has been adjusted by 5.
+* Your faction standing with [[Guards of Qeynos]] has been adjusted by  5.
+* Your faction standing with [[Priests of Life]] has been adjusted by  5.
+* Your faction standing with [[Knights of Thunder]] has been adjusted by  5.
+</div>
+{{exp}}
+
+You say, 'What about the Karana bandits?'
+
+: Rongol says 'The Karana bandits are rogues who operate in the plains. I have heard there are bounties for the bandits. Within the Temple of Thunder in Qeynos, Cleric Gehna offers one for [[Bandit Spectacles|bandit spectacles]] and Paladin Chesgard offers one for [[Bandit Sashes|bandit sashes]].'
+
+''This quest also worked with Tukk. Tukk's location: Your Location is -3694.14, -7672.21, 2.60.''
+
+You say, 'Are you a follower of Karana?'
+
+: Tukk says 'Yes. I am a follower of Karana, the Rainkeeper. It is He who keeps the plains fertile.'
+
+You say, 'Do you require a temple blanket?'
+
+: Tukk says 'With the frequent rains, I find my only need is a blanket to keep me warm during the long cold nights. Thank Karana the temple has begun to send young paladins to deliver extra blankets.'
+
+Give him the blanket.
+
+''Need dialogues, faction hits for giving the blankets to Tukk, names and /locs of other mobs who will accept the blankets.''
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

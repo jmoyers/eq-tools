@@ -1,0 +1,70 @@
+{{Temple Era}}
+[[File:npc_vira.png|frame|Vira]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Temple of Solusek Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Vira]]
+|-
+! ''' Minimum Level: '''
+| 33
+|-
+! ''' Classes: '''
+| [[Magician]] Quest is doable and spell confirmed usable by SHM and SHD.
+|-
+! ''' Related Zones: '''
+| [[Najena]]
+|-
+! ''' Related NPCs: '''
+| [[a griffin]], cyclops
+|}
+
+== Reward ==
+
+<ul><li> {{:Broom of Trilon}}
+</li></ul>
+
+== Walkthrough ==
+
+Vira may be found on the balcony to the left, at +410, +85.
+
+You say, 'Hail, Vira'
+
+: Vira says 'I am Vira, elementalist of Solusek Ro. I guard the secrets of the tools of [elemental summoning]. If you are a magician, you might be interested.'
+
+You say, 'What is elemental summoning?'
+
+: Vira says 'I hold the secrets to the construction of four tools which assist magicians with the summoning of elementals. I know about the [broom of Trilon], the [shovel of Ponz], the [torch of Alna] and the [stein of Ulissa].'
+
+You say, 'What of the Broom of Trilon?'
+
+: Vira says 'The broom of Trilon was held by the infamous Mistress of Air of the same name. Are you [interested] in the [broom]?'
+
+You say, 'I am interested in the broom.'
+
+: Vira says 'I will construct a replica of the broom of Trilon for you, but I will need the following components to make it: a star ruby; a feather from a griffon, a broom from a magician in Najena and the toes of a cyclops. Bring me these four components, and I will fashion for you an object of elemental power.'
+
+'''She wants the following four items:'''
+{{CheckboxList}}
+* A [[Star Ruby]] may be purchased from a jewelry merchant
+* [[Griffon Feathers]] drop from various griffins around the world.
+* [[A Broom]] (identifies as "Broom of Air") drops from magicians in [[Najena]] or alligators in [[Cazic_Thule_(Zone)]] or [[Lake Rathetear]].
+* [[Cyclops Toes]] drop from various cyclops around the world. 
+{{End}}
+'''Hand in all four items'''
+
+: Vira says 'All of the components to make the infamous broom of Trilon! Well done, adventurer. As you have proven yourself worthy, I grant you this broom.
+
+<div class='facblock'>
+* Your faction standing with [[Temple Of Sol Ro]] got better.
+* Your faction standing with [[Shadowed Men]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive the {{:Broom of Trilon}}.
+
+[[Category:Quests]]
+[[Category:Temple of Solusek Ro]]
+[[Category:Magician Quests]]
+[[Category:Magician Focus Items]]

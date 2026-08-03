@@ -1,0 +1,57 @@
+[[File:npc_slicia_j`singe.png|frame|Slicia J`Singe]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Slicia J`Singe]]
+|-
+! ''' Minimum Level: '''
+| 44
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Spell: Boon of Immolation}}
+</li><li> {{:Spell: Scintillation}}
+</li><li> {{:Spell: Vocarate: Air}}
+</li><li> {{:Spell: Vocarate: Fire}}
+</li></ul>
+
+== Walkthrough ==
+
+Slicia J`Singe may found in the caster circle, wearing magenta.
+
+Your Location is 2790.42, 2392.20, -49.97
+
+You say, 'Hail, Slicia J`Singe'
+
+: Slicia J`Singe says, 'Why is it that you have come to this place? If you are coming here in search of [magical scrolls], just get back on that so-called ship you came here on and forget everything you thought you heard.'
+
+You say, 'Magical scrolls?'
+
+: Slicia J`Singe says 'Is your hearing failing you!? Unless you [have something I need], be gone!'
+
+You say, 'What something do you need?'
+
+: Slicia J`Singe says 'I must have the scrolls of Gift of Xev, Bristlebane's Bundle, Quiver of Marr, and the Scars of Sigil. If you don't have one of these, leave my sight! If you do, I think we can work up a fair trade.'
+
+Hand in one of the scrolls mentioned.
+
+: Slicia J`Singe says 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!'
+
+You gain experience!!
+
+The scroll you get in return is a random 50 plus level spell.
+
+[[Category:Quests]]
+[[Category:The Overthere]]

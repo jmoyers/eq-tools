@@ -1,0 +1,70 @@
+{{Classic Era}}
+{{Disambig3|[[Titan Samples (good)]]}}
+[[File:npc_sejako_mujan.png|frame|Sejako Mujan]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Sejako Mujan]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Related NPCs: '''
+| [[Old Ghostback]], [[Prowler of the Jungle]], [[Slyder the Ancient]], [[Snowbeast]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Staff of the Moribund Spirits}}
+</li></ul>
+
+== Walkthrough ==
+
+Sejako is located inside the inn in Paineel. The inn is across from the Abbatoir, and there are skeletal musicians inside. Go through the door on the left and up the stairs to the second floor, and he will be standing in the hallway. His wife, Alaria, is asleep inside one of the rooms.
+
+You say, 'Hail, Sejako Mujan.'
+
+: [[Sejako Mujan]] says 'Shhhh....keep your voice down lest you wake Alaria. We can [speak elsewhere] if you wish.
+
+You say, 'Let us speak elsewhere.'
+
+: Sejako Mujan says 'Follow me and we shall discuss how you may assist me with my [current research].
+
+Sejako walks downstairs to where the skeletal musicians are playing.
+
+You say, 'What is your current research?'
+
+: Sejako Mujan says 'Recently patrols have been sent to the Stonebrunt Mountains to investigate rumors of an alliance between the Kejekans and Erudin. There is much spiritual activity in that region of Odus and the patrols have reported encountering massive beasts called Titans. These titans exhibit abilities that lead me to believe they are powerful animal spirits that have somehow taken on a physical form in order to enter and manipulate the realm of the living. I require [samples] of the Titans physiology in order to further my research.
+
+You say, 'What samples?'
+
+: Sejako Mujan says 'There have been sightings of Titans in many forms.  The samples I require are the fangs of the leopard, sabretooth, and gorilla titans, and the rattle of the snake titan.
+
+Turn in
+* [[Gigantic Gorilla Fang]]
+* [[Giant Leopard Fang]]
+* [[Giant Sabertooth Fang]], and 
+* [[Ancient Snake Rattle]]
+to Sejako Mujan.
+
+"I require all 4 titan samples in order to pursue the research I desire."<br>
+"I require all 4 titan samples in order to pursue the research I desire."<br>
+"I require all 4 titan samples in order to pursue the research I desire."<br>
+"Excellent!!! These shall provide valuable information to my research on the Spirit Realm."<br>
+
+{{exp}}
+
+No faction hits, No Coin.
+
+You receive {{:Staff of the Moribund Spirits}}.
+
+[[Category:Quests]]
+[[Category:Paineel]]

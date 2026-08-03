@@ -1,0 +1,82 @@
+{{Classic Era}}
+{{Disambig3|[[Illegible Scrolls]]}}
+[[File:npc_general_jyleel.png|frame|General Jyleel]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Felwithe|Northern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[General Jyleel]]
+|-
+! ''' Minimum Level: '''
+| 9
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Crushbone]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Oracle (Crushbone)]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Iron Ration}}
+</li><li> {{:Large Lantern}}
+</li><li> {{:Mead}}
+</li><li> {{:Lockpicks}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[General Jyleel]] is located at 18, -198, -19 downstairs in the Paladin Guild Hall.''
+
+You say, 'Hail, General Jyleel'
+
+: General Jyleel says, 'Stand at attention!! I am General Jyleel, of the Koada'Vie, defenders of Felwithe. Do you [follow Tunare], the Mother of All, or do you still [seek enlightenment]?'
+
+You say, 'I seek enlightenment'
+
+: General Jyleel says, 'Then seek it within these walls. We welcome all fine upstanding Koada'Dal.'
+
+You say, 'I follow Tunare'
+
+: General Jyleel says, 'Then you are wise indeed. Would you like to [assist the defenders] in our conflicts or have you other business to attend to?'
+
+You say, 'I will assist the defenders'
+
+: General Jyleel says, 'Seek out the Crushbone orcs of the Faydarks. We must have their oracle scrolls. They are illegible to you, but we will study them here in Felwithe. Only the orc oracles will carry them, so be very careful. There is also the problem with the [Crushbone runners].'
+
+'''[[Illegible Scroll]]s can be randomly Looted from an [[Orc Oracle (Crushbone)]].'''
+
+<div class="facblock">
+* Your faction standing with [[Crushbone Orcs]] got worse.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Indigo Brotherhood]] got worse.
+* Your faction standing with [[Storm Guard]] got better.
+</div>
+
+'''Hand [[General Jyleel]] the [[Illegible Scroll]].''' *Note* Ate my scroll at apprehensive.
+
+: General Jyleel says, 'Very fine work. A pity you are not Koada'Vie. Here is a small reward for you. Anytime you come upon an oracle, remember to return its scroll to me. Go and find your fate on the field of battle.'
+
+<div class="facblock">
+* Your faction standing with [[Anti-Mage]] got better. <<did not give this faction in EQL 0 in EQL>>
+* Your faction standing with [[Clerics of Tunare]] got better. <<+5 in EQL>>
+* Your faction standing with [[King Tearis Thex]] got better. <<+5 in EQL>> <<exp with half-elf shm/wiz/enc - 0.513% at lvl 10>> <<exp with half-elf BRD/RNG/DRU 0.513% at lvl 10>>
+</div>
+
+{{YouGainExperience}}
+
+You receive 2 silver, 1 copper pieces.
+
+== Related Quests ==
+
+* [[Orc Runner (Felwithe)]]
+
+[[Category:Quests]]
+[[Category:Northern Felwithe]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,57 @@
+{{Paineel Era}}
+[[File:npc_coriante_verisue.jpg|frame|Coriante Verisue]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Coriante Verisue]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Paineel]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a bat]], [[a snake]]
+|}
+
+== Reward ==
+
+<ul>
+<li>[[Cavorting Bones|Spell: Cavorting Bones]]</li>
+<li>[[Locate Corpse|Spell: Locate Corpse]]</li>
+</ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Coriante Verisue'
+
+: Coriante Verisue says 'Greetings, young one! There are many tasks to be performed aside from your studies to truly harness the powers passed down to us by our ancestor [Miragul]. The most basic of these tasks is the gathering of bat wings and snake fangs from the yard outside our city. I will reward you for every two bat wings and two snake fangs you bring to me.'
+
+You say, 'Who is Miragul?'
+
+: Coriante Verisue says 'You do not know of Miragul?!! You have more to learn of the heritage of the Dark Truth than at fist I thought. Miragul was the first High Man to unlock the secrets of necromancy and is the founder of our city as well as the creator of the treacherous Hole.'
+
+'''Upon hand-in:'''
+
+: Coriante Verisue says 'Very good, young acolyte. Maintain your diligence in your duties and you will quickly learn the secrets of the Dark Truth.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive one of two level 1 Necromancer spells.
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

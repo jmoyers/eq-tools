@@ -1,0 +1,89 @@
+{{Classic Era}}
+[[File:npc_kerran_tseq.png|thumb|kerran tseq]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[kerran tseq]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]], [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[abandoned heretic pet]]
+|}
+
+== Rewards ==
+<ul><li> {{:Kerran Toy}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.010%) @level 10
+
+== Checklist == 
+{{CheckboxList}}
+* [[Heretics' Toy]]
+** Locate and Kill [[abandoned heretic pet]]
+
+{{End}}
+
+== Walkthrough ==
+You say, 'Hail, kerran tseq'
+
+: Kerran tseq says, 'Errr.  You smell funny.  You bring us [toy]?'
+
+You say, 'toy'
+
+: Kerran tseq says, 'Nasty heretics use nasty spells to make bones walk! They merrrely [abandon] them anyway. You go, bring us heretic toy. You not come back or we eat you and then you die like short one.'
+
+You say, 'abandon'
+
+: Kerran tseq says, 'Yes yes. Abandon by drrruid stones. Forrrgotten toys.'
+
+''' You have been assigned the task 'Heretic's Toy'. ''' <br>
+A particularly fiery Kerran Tseq in the village on Kerra Isle has strongly recommended that you bring him a "toy" from Toxxulia Forest. From his descriptionm it sounds like the toy may actually be animated bones found somewhere near the Druid ring.
+
+=== Quest Stage 1: ===
+* Step - Smash a heretic's pet and gather up the remains
+* Text - Smash an abandoned heretic's pet and gather its remains
+
+A structure just East of the Druid Rings spawns multiple abandoned heretic pets. Kill some and get a toy.
+
+ You have slain abandoned heretic pet!
+  --You have looted a Heretics' Toy from abandoned heretic pet's corpse.--
+
+''' Your task 'Heretic's Toy' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Give the Heretic's Toy to the Kerran tseq
+* Text - Give the toy to the Kerran tseq in Kerra Isle
+
+ You offered 1 Heretics' Toy to kerran tseq.
+
+''' Your task 'Heretic's Toy' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">
+The tseq seems temporarily disatracted by his new toy. It looks like you're safe from the stew pot for now.
+</span>
+
+: Kerran tseq says, 'Rreeee!  Great toy.  Shiny.  We not need this old toy anymore.  You take.  Now go away, this our toy, we play.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Kerran Toy <br>
+
+ You complete the trade with kerran tseq.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

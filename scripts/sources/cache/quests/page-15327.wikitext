@@ -1,0 +1,72 @@
+{{Classic Era}}
+[[File:npc_cindl.png|frame|Cindl]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Cindl]]
+|-
+! ''' Minimum Level: '''
+| 3
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a glacier bear]], [[a polar bear]], [[a polar bear cub]]
+|}
+
+
+== Reward ==
+
+<ul><li>  Large Tattered, Patchwork, and Raw-Hide Armor
+</li></ul>
+
+== Walkthrough ==
+
+'''Can be done with dubious faction'''
+
+''Cindl may be found at +300, -160, inside Mac's Kilts.''
+
+You say, 'Hail, Cindl'
+
+: Cindl says 'Welcome t' me humble shop, then! I offer fine items fashioned from the skins o' the beasts o' Everfrrost, I do. Leather is me specialty and I can always use the [extra hides], ye know.'
+
+You say, 'What extra hides?'
+
+: Cindl says 'I'll offer any hunter some used tattered armor fer every polar bear skin I'm brought. I'm sure even ye can wrestle the skins from the backs o' the polar bear cubs, no?'
+
+'''Turn in a [[Polar Bear Skin]]:'''
+
+: Cindl says 'This is much appreciated! Please accept this used armor in return and a gold piece as well, fer yer troubles. Ye've done well! I may have a [second job] fer ye, if ye like?'
+
+<div class="facblock">
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+</div>
+{{YouGainExperience}}
+
+<ul><li>{{:Large Patchwork Boots}}
+</li><li>{{:Large Patchwork Cloak}}
+</li><li>{{:Large Patchwork Pants}}
+</li><li>{{:Large Patchwork Sleeves}}
+</li><li>{{:Large Patchwork Tunic}}
+</li><li>{{:Large Raw-hide Leggings}}
+</li><li>{{:Large Tattered Belt}}
+</li><li>{{:Large Tattered Gloves}}
+</li><li>{{:Large Tattered Gorget}}
+</li><li>{{:Large Tattered Mask}}
+</li><li>{{:Large Tattered Shoulderpads}}
+</li><li>{{:Large Tattered Skullcap}}
+</li><li>{{:Large Tattered Wristbands}}
+</li></ul>
+
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,69 @@
+{{Velious Era}}
+
+[[File:npc_leraena_shelyrak.png|frame|Leraena Shelyrak]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Erudin]]
+|-
+! ''' Quest Giver: '''
+| [[Leraena Shelyrak]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  [[Cure Disease|Spell: Cure Disease]]
+</li><li> [[Holy Armor|Spell: Holy Armor]]
+</li></ul>
+
+== Walkthrough ==
+
+:''NOTE AMIABLE [[faction]] or better is required''
+
+Leraena is located directly inside the Temple of Light, a Quellious-based Cleric/Paladin guild. Her specific location is -651, -84.
+
+You say, 'Hail, Leraena Shelyrak'
+
+: [[Leraena Shelyrak]] says 'Welcome my, child. I am Leraena Shelyrak, overseer of the Temple of Divine Light. Inside this temple, you may find the path to inner peace. Introduce yourself to each of the priests and priestesses of the temple as well as the paladins. Together we shall put an end to such disruptive influences as the [kobold shaman].'
+
+You say, 'What kobold shaman?'**
+
+: Leraena Shelyrak says 'The primitive kobold race has begun to show signs of healing ability. No doubt this was granted by some evil deity. Since they are of little power compared to a much more superior race such as ours, we only require the talents of young priests to [slay the kobold shaman].'
+
+You say, 'I will slay the kobold shaman.'*
+
+'''IMPORTANT NOTE:''' The dialogue for the [[Kobold Shaman Paws]] quest uses the word "Sham'''A'''n" while the dialogue for the [[Initiate Symbol of Quellious]] uses the word "Sham'''E'''n"
+
+: Leraena Shelyrak says 'You are so young... Go to Toxxulia and find these kobold shamans. Cut off their paws and return them to me. I require three paws as proof of your worth to our temple.'
+
+Hand in three Odd Kobold Paws.
+
+: Leraena Shelyrak says 'Fine work. They shall never lay hands upon another kobold again. I mean paws. Here is a small reward for a fine job. Unfortunatly we have recently learned that the shamen in the forest are merely underlings to more [powerful kobold shamen] that reside in the kobold warrens. Continue the work of Quellious.'
+
+<div class="facblock">
+* Your faction standing with [[Peace Keepers]] got better. +20
+* Your faction standing with [[High Council of Erudin]] got better. +5
+* Your faction standing with [[Heretics]] got worse. -5
+</div>
+{{exp}}
+
+You receive 17 silver from Leraena Shelyrak.
+
+{{expand}}
+You receive a low-level spell scroll as reward. 
+Need additional quest rewards if any.
+
+After 4 quest turnins, a level 6 paladin received 2% exp and got 4 copies of [[Holy Armor]]. 
+[[Category:Quests]]
+[[Category:Erudin]]

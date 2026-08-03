@@ -1,0 +1,60 @@
+[[File:npc_bukuku_wolffeetz.png|frame|Bukuku Wolffeetz]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Bukuku Wolffeetz]]
+|-
+! ''' Minimum Level: '''
+| 51+
+|-
+! ''' Classes: '''
+| [[Shaman]]
+|-
+! ''' Related Zones: '''
+| Kunark 50+ Zones
+|-
+! ''' Related NPCs: '''
+| Kunark 50+ Mobs
+|}
+
+There are alternative versions of this quest: [[Shaman Spells (Good)]] and [[Shaman Spells (Evil - Iksar)]]
+
+== Walkthrough ==
+
+Bukuku Wolffeetz may be found in The Overthere.  She wants any of the following spell scrolls:
+
+* [[Cannibalize III]]
+* [[Cripple]]
+* [[Spirit of Scale]]
+* [[Talisman of Jasinth]]
+
+The reward is one of these four spell scrolls.
+
+== Reward ==
+
+* [[Insidious Decay]]
+* [[Shroud of the Spirits]]
+* [[Talisman of Shadoo]]
+* [[Torrent of Poison]]
+
+
+== Dialogue ==
+
+You say, 'Hail, Bukuku Wolffeetz'
+
+:Bukuku Wolffeetz says 'Har har har! Yu funy lukking. Oooo.. do u hav doze smarty writin's?
+
+You say, 'What smarty writin's?'
+
+:Bukuku Wolffeetz says 'Me not know what dem ar for shure. Dem only hav dees names. Umm.. let me see if I can member dem. Taaalisman de umm.. Jasinth. Dat's one of dem. Spirited of Scaley?? OH!! Dis my favorite. Kripple. Den the last is the painful one. Canaabaalize canaabaalize canaabaalize. Yep, dat super duper one. Bring me bak one of dem, me trade.'
+
+Hand in one of Spell: Talisman of Jasinth, Spell: Spirit of Scale, Spell: Cripple, or Spell: Cannibalize III.
+
+:Bukuku Wolffeetz says 'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell!' 
+
+[[Category: Quests]]
+
+[[Category:The Overthere]]
+[[Category:Shaman Quests]]

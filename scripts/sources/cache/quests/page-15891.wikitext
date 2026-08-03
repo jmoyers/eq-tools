@@ -1,0 +1,67 @@
+{{Kunark Era}}
+[[File:npc_keeper_pain.png|frame|Keeper Pain]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[West Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Keeper Pain]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Crypt of Dalnir]]
+|-
+! ''' Related NPCs: '''
+| [[a coerced revenant]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Renew Bones|Spell: Renew Bones]]
+</li></ul>
+
+== Walkthrough ==
+You say, 'Hail, Keeper Pain'
+
+: Keeper Pain raises his gaze from his tomes to greet you. 'Ahh!! Welcome, seeker of knowledge! Come to fill your brain, have you? Look closer, adventurer. I have scribed some very powerful spells.'
+
+You say, 'What about the [[Wand of Pain]]?'
+
+: Keeper Pain drops his tome and monocle and looks at you sharply. 'What?!! Have you seen Revenant Vytrix? I let him borrow my wand for a quest. That was half a season ago!! I fear he is dust and my precious wand is lost.'
+
+'''Hand in [[Wand of Pain]] from [[a coerced revenant]] in Dalnir, a.k.a. Revenant Vytrix. (A small note identifies him as such.)'''
+
+: Keeper Pain begins jumping for joy. 'Yoohoo!! My wand!! Thank you. You must be some powerful adventurer. You can help me collect a few components. Fill this chest with a frost crystal, a cockatrice egg, a giant hornet egg and a plains pebble. Return the full chest to me and I shall offer you a spell I recently researched.'
+
+<div class='facblock'>
+* Your faction standing with [[Brood of Kotiz]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive 4 gold from Keeper Pain.
+
+You receive a [[Component Chest]] {{Item Lore | Empty Keeper Pain Chest}}, a combinable container with four small slots.
+
+'''Forage the following (all are tradeable):'''
+
+* [[Frost Crystal]] - the [[Dreadlands]]
+* [[Plains Pebble]] - any of the Plains of Karana
+* [[Cockatrice Egg]] - [[The Overthere]]
+* [[Giant Hornet Egg]] - the [[Burning Woods]]
+
+'''Combine the four items in the chest to get the [[Full Components Chest]]''' {{Item Lore | Pain's Components}}. '''Hand this in to Keeper Pain.'''
+
+<div class='facblock'>
+* Your faction standing with [[Brood of Kotiz]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+
+You receive [[Renew Bones|Spell: Renew Bones]].
+
+[[Category:Quests]]
+[[Category:West Cabilis]]

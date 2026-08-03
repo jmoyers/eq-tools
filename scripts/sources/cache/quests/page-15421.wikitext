@@ -1,0 +1,69 @@
+[[File:npc_lysbith_mcnaff.png|frame|Lysbith McNaff]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Lysbith McNaff]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+|  [[ice goblin whelp]] or [[ice goblin scout]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Iron Ration}}
+</li><li> {{:Large Lantern}}
+</li><li> {{:Ration}}
+</li><li> {{:Small Lantern}}
+</li><li> {{:Torch}}
+</li><li> {{:Water Flask}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Lysbith McNaff]] is located (566, -410) in the Pit of Doom. Faction of indifferent required for quest - CAN be completed while sneaking.
+
+You say, 'Hail, Lysbith McNaff'
+
+: Lysbith McNaff says 'Hail! Ye've come to [serve Halas], have ye not? We're the Wolves o' the North and it is our task to defend our city from harm.'
+
+You say, 'I serve Halas.'
+
+: Lysbith McNaff says 'Halas is surrounded by barren arctic tundra. We've many foes. Among them are the [orc troopers], [ice goblins] and the ever-present polar bears.'
+
+You say, 'What ice goblins?'
+
+: Lysbith McNaff says 'The ice goblins have plagued our community fer some time now.  At times, they even manage to get inside our walls. Fer the most part, they prey on travelers who pass through Everfrost Peaks. Since they're a weak race, we employ our youngest warriors to [protect the pass].'
+
+You say, 'I will protect the pass.'
+
+: Lysbith McNaff says 'Then travel to the Everfrost Peaks and take this pack with ye. I want ye to return this pack to me when it is filled with the beaded ice necklaces o' the ice goblins. When it is filled, combine the items and return it to me and I'll decide whether ye deserve a reward fer yer deed.'
+
+You receive a six-slot container called [[Empty Bag]] (identifies as "Bag for Ice Necklaces").  Kill [[ice goblin whelp]]s or [[ice goblin scout]]s in Everfrost Peaks and loot [[Goblin Ice Necklace]]. They are found wandering throughout the canyon area.  Combine six Goblin Ice Necklace in the bag to craft a [[Bag of Ice Necklaces]].  Hand this in to Lysbith.
+
+: Lysbith McNaff says 'Ye've done well, me young warrior. We've gathered these to add to yer provisions. While in the Everfrost Peaks, be on the watch fer any gnolls ye may find. I declare there to be a [gnoll bounty].'
+
+<div class="facblock">
+* Your faction standing with [[Wolves of the North]] got better.
+* Your faction standing with [[Shamen of Justice]] got better.
+* Your faction standing with [[Merchants of Halas]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+{{exp}}
+</div>
+
+You receive 3 gold from Lysbith McNaff.
+
+Additionally you will randomly receive: ration, iron ration, torch, water flask, or small lantern.
+
+[[Category:Quests]]
+[[Category:Halas]]

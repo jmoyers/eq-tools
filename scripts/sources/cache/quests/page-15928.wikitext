@@ -1,0 +1,49 @@
+{{Classic Era}}
+[[File:Npc_kaxon_frennor.png|200px|frame|Kaxon Frennor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Old Folded Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tin Patched Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Gnome Rogue of Bertoxxulous, you will have an Old Folded Letter in your inventory. The note reads as follows:
+
+: In the mirror of this wretched society, we await. . .the time grows ever near, for us to shatter these rose-colored visions of Ak'Anon's citizens, and let their eyes fall upon the image of our true selves. The Dark Reflection readies its soldiers of Bertoxxulous, hidden away deep beneath Ak'Anon, in the Mines of Malfunction. [[Kaxon Frennor]] is your new master now. . .do not keep him waiting.
+
+Upon handing the note to [[Kaxon Frennor]]:
+
+: [[Kaxon Frennor]] says, 'Yes, I just knew you'd see it my way, Teddee. Anyway, welcome to our little part of Ak'Anon's underworld. We have to pay a high price to keep our small organziation hidden, which keeps us all busy around here.'
+<div class='facblock'>
+* Your faction standing with [[Dark Reflection]] got better.
+* Your faction standing with [[Deep Muses]] got worse.
+* Your faction standing with [[Eldritch Collective]] got worse.
+* Your faction standing with [[Gem Choppers]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Tin Patched Tunic*]]. Good luck, Brigand!
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:Rogue Quests]]

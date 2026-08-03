@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:NpcNezzkaTolax.PNG|Nezzka Tolax|thumb|200px]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Black Training Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Shadowknight, you will have a tattered note in your inventory. The note reads as follows:
+
+: 'Follow your destiny into the Lodge of Dead and master your skills, dark knight. Seek out [[Nezzka Tolax]], and give him this note. With his training, you will become a powerful soldier of Hate.'
+
+Upon handing the note to [[Nezzka Tolax]]:
+
+: [[Nezzka Tolax]] says, 'Hmmm, I hope you're tougher than you look. Here, put this on. There's no turning back now, punk. So, you'd better do well, got it?'
+
+<div class='facblock'>
+* Your faction standings with [[The Dead]] got better.
+* Your faction standings with [[Queen Cristanos Thex]] got better.
+* Your faction standings with [[King Aythox Thex]] got worse.
+* Your faction standings with [[Keepers of the Art]] got worse.
+* Your faction standings with [[Eldritch Collective]] got worse.
+* Your faction standings with [[Primordial Malice]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Black Training Tunic*]]. Good luck, Shadowknight!
+
+[[Category:Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Neriak Third Gate]]

@@ -1,0 +1,51 @@
+[[File:npc_menkes_tabolet.png|frame|Menkes Tabolet]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Menkes Tabolet]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[a giant rat]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Rat Pelt Cape}}
+</li></ul>
+
+== Walkthrough ==
+
+Menkes Tabolet is located at -229, -298 in South Qeynos (behind Fish's Ale).
+
+You say, 'Hail, Menkes Tabolet'
+
+: Menkes Tabolet says 'Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee, I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].'
+
+You say, 'I want a rat pelt cape'
+
+: Menkes Tabolet says 'The rat pelt cape..  that happens to be my specialty!  I must say, it would be the perfect choice to go with that outfit you have on.  All I need are three [[Giant Rat Pelt]]s, those big ol' rats out in the hills work great for these capes, and 4 gold.  I must say, at these prices, everyone in Qeynos will be wearing one in a matter of weeks.'
+
+Hand him three Giant Rat Pelts and 4 gold pieces.
+
+: Menkes Tabolet says 'This cape turned out great.  It'll sure help keep you warm on those cold and stormy nights out in the Karanas.'
+
+<div class="facblock">
+* Your faction standing with [[QeynosCitizen]] got better.
+</div>
+You gain experience!!
+
+Receive a Rat Pelt Cape.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

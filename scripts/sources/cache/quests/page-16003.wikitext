@@ -1,0 +1,56 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:npc_tarker_blazetoss.png|frame|Tarker Blazetoss]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Southern Felwithe]]
+|-
+! ''' Quest Giver: '''
+| [[An Enrollment Letter]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[Southern Felwithe]]
+|-
+! ''' Related NPCs: '''
+| [[Tarker Blazetoss]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Faded Blue Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tarker Blazetoss]] is located at 507, -409 in the Amethyst Palace ([[Wizard]]) Guild Hall.''
+
+You say, 'Hail, Tarker Blazetoss'
+
+: Tarker Blazetoss says, 'Hail and well met. Teddee!  Have you come to study. or can you [perform a task] for me this day?'
+
+'''Hand [[Tarker Blazetoss]] [[An Enrollment Letter]].'''
+
+:: ''A tattered note reads:''
+
+:: <code>Keepers of the Art – Wizard Enrollment Form Return This form to Master Wizard Tarker Blazetoss. He will help you with your training and studies.</code>
+
+: Tarker Blazetoss says, 'Welcome to the wizards' guild of the Keepers of the Art. My name's Tarker and I run this guild.  You've got a lot of training ahead of you so let's get started. Here, take this - it's our guild tunic. Wear it with honor, friend.'
+
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Southern Felwithe]]
+[[Category:Wizard Quests]]

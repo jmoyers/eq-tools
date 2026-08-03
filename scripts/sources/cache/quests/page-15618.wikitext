@@ -1,0 +1,114 @@
+{{Kunark Era}}
+[[File:npc_master_bain.png|frame|Master Bain]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Master Bain]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[Swamp of No Hope]]
+|-
+! ''' Related NPCs: '''
+| [[a swamp leech]], [[The Toilmaster]]
+|}
+
+== Rewards ==
+
+{{Gear Set
+|Sparring Arm Guards
+|Sparring Clogs
+|Sparring Collar
+|Sparring Facemask
+|Sparring Grappler Gloves
+|Sparring Harness
+|Sparring Headgear
+|Sparring Rib Pad
+|Sparring Shin Guards
+|Sparring Shoulder Pads
+}}
+
+==Checklist==
+{{CheckboxList}}
+* 1 Talk to [[Master Bain]] to obtain [[Leech Husk Pouch]] container
+* 1 Obtain 4x [[Leech Husk]]s by various mobs or vendors
+* 1 Combine husks in the container (to craft [[Full Pouch of Leech Husks]])
+* 1 Give Full Pouch to [[Klok Mugruk]] (to receive [[Training Bag Husk]])
+* 1 ''Side-Quest: Perform the [[Granite Pebbles]] Quest to obtain [[Pile of Granite Pebbles]]''
+* 1 [[Tailor]] (with loom or sewing kit) the Training Bag Husk with 3x [[Pile of Granite Pebbles]] to craft [[Monk Training Bag]] (65% success chance at 0 Tailoring; 95% at 1+)
+* 1 Give Monk Training Bag to Master Bain to receive Sparring Armor pieces
+{{end}}
+
+== Walkthrough ==
+
+''[[Master Bain]] can be found at the Swift Tails guild hall in [[Cabilis|East Cabilis]] (285, -51).''
+
+You say, 'Hail, Master Bain'
+
+: Master Bain says, 'Who has [sent] you to me?'
+
+You say, 'Grand Master Glox has sent me'
+
+: Master Bain says, 'So Grand Master Glox has sent you? You must be new to the court. We are of the Swifttail castle as are you. Under the guidance of masters such as I, you will forge your body into a weapon of pure destruction. Do not bother the Grand Master, he is in constant meditation and is bothered with only the most paramount of concerns. Are you [ready to train]?'
+
+You say, 'I am ready to train.'
+
+: Master Bain says, 'Then I can offer training in the martial arts as well as other skills. Please remember to obtain knowledge from our court chronicler. You shall also begin to aid your brothers and sisters with [menial tasks]. All begin upon the rung of dust and all have done these tasks in order to climb to the next rung.'
+
+You say, 'What menial tasks?'
+
+: Master Bain says, 'We have a few menial tasks we require our young members to perform. Young members must [tailor training bags] for our court.'
+
+You say, 'I will tailor training bags'
+
+: Master Bain says, 'Then take this leech husk pouch and fill it with the obvious. Once done, combine the skins and take the full leech husk pouch to a local tailor by the name of Klok Murgruk. He is the one who cleans and toughens the husks for us. He shall hand you a ready-made training bag husk. He will instruct you further.'
+
+You receive a [[Leech Husk Pouch]].
+
+'''Proceed to hunt the various leeches near the city gate in [[Swamp of No Hope]]. Once you obtain 4 [[Leech Husk|Leech Husks]], combine them in the pouch and take the [[Full Pouch of Leech Husks]] to a local tailor by the name of [[Klok Mugruk]] at (386, -215) in [[Cabilis|East Cabilis]].'''
+
+Hand in the Full Pouch to Mugruk:
+
+: Klok Mugruk says, 'I see you have done some hunting, young broodling. I shall prepare these husks later, as for now you can have this training bag husk I have already prepared. You will require a sewing kit, but I am sure you already have one. You will next have to seek out granite pebbles. Where you shall find them in Cabilis is unknown to me. When you obtain no less than three piles of granite pebbles then you can tailor a monk training bag for your caste. Good luck!'
+
+<div class="facblock">
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive a [[Training Bag Husk]].
+
+'''To acquire the three [[Pile of Granite Pebbles]] requested, you must complete the [[Granite Pebbles]] quest three times which involves killing [[An escaped froglok]] for [[Busted Froglok Slave Shackles]] and turning two into [[The Toilmaster]].'''
+
+''When you tailor the Training Bag Husk and the 3 Piles of Granite Pebbles together (failure possible, trivial at 1 tailoring), you get a [[Monk Training Bag]]. <b>It is advisable to skill up tailoring for this quest given the time invested in farming Granite Pebbles</b>. Buy 1 point of Tailoring skill at the monk trainer or skill up by combining spider(ling) silks into swatches (or threads).''
+
+'''Hand the Monk Training Bag back to [[Master Bain]], and he will reward you with a random piece of Sparring Armor.'''
+
+: Master Bain says, 'We thank you, young monk. In exchange for your prompt service, please accept this piece of training armor. Please continue with your training.'
+
+<div class="facblock">
+* Your faction standing with [[Swift Tails]] got better.
+* Your faction standing with [[Legion of Cabilis]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive 1 gold piece.
+
+== Notes ==
+* Can be done with [[sneak]] (indifferent faction)
+* Generally, the sparring armor has the same AC stats as [[Curscale Armor]], with a few stat bonuses thrown in.
+
+== See also ==
+* [[Curscale Armor Quest]]
+
+[[Category:Quests]]
+[[Category:East Cabilis]]
+[[Category:Monk Quests]]

@@ -1,0 +1,50 @@
+{{Velious Era}}
+[[File:npc_a_storm_giant_foreman.png|frame|A Storm Giant Foreman]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[A Storm Giant Foreman]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Lord Gossimerwind]], [[Lord Prismwing]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Holgresh Mojo Stick (Air)}} ("Holgresh Air Wand")
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, a storm giant foreman'
+
+: A storm giant foreman says 'Hey there scrawny! I lead the finest team of laborers in all of Kael Drakkel! We've got little use for a weak creature like yourself, but if you want to help us out I've got a task for you.
+
+You say, 'what task' 
+
+: A storm giant foreman says 'Those pansy dragon would bees in the Tunarean Court have become quite the nuisance lately. The deaths of Lord Gossimerwind and Lord Prismwing would certainly put an end to the nuisance for a time. Bring me their wings as proof of their deaths.
+
+Upon turning in both:
+: A storm giant foreman says, 'You've done well. Maybe that foolish court will learn yet that the expansion of Kael can not be impeded.'
+
+Received: Holgresh Mojo Stick (Frost Shock)
+: [Which Mojo Stick is rewarded? Air is listed above, but Frost Shock is from Water]
+
+Your faction standing with Kromzek got better.<br>
+Your faction standing with Kromrif got better.<br>
+Your faction standing with KingTormax got better.<br>
+Your faction standing with ClawsofVeeshan got worse.<br>
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

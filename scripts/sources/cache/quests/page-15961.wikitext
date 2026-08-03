@@ -1,0 +1,55 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Npc_lusun.png|frame|LuSun]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[LuSun]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Monk]]
+|-
+! ''' Related Zones: '''
+| [[North Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[LuSun]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Torn Cloth Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''LuSun is located at 342, 301 in the Order of the Silent Fist ([[Monk]]) Guild Hall.''
+
+You say, 'Hail, LuSun'
+
+:  LuSun says, 'Ah.. Greetings.. I am LuSun, Guild Master of the Silent Fist Clan. Here, our goal is to train our body, mind, and soul to the peak of perfection.'
+
+'''Hand [[LuSun]] your [[Note with Fist Insignia]]'''
+
+:: ''Note with Fist Insignia reads:''
+
+:: <code>The most powerful weapon of all is your very spirit. Become unmatchable in mind, body, and heart. Seek out Lu'Sun [sic], the Mongoose, Guild Master of the Silent Fist Clan. Give him this note, and he shall help guide your spirit, focus your mind, and harden your body.</code>
+
+: LuSun says, 'Greetings, and welcome to the Silent Fist Clan. Don our guild tunic, purge your mind and soul, and begin your lifelong devotion to the Clan. Brother Esrinap will introduce you to our lifestyle and begin your training. Be sound, allow your spirit to open up and guide you.'
+
+<div class="facblock">
+* Your faction standing with [[Ashen Order]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Silent Fist Clan]] got better.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Qeynos]]
+[[Category:Monk Quests]]

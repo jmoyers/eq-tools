@@ -1,0 +1,93 @@
+[[File:npc_dyth_xteria.png|frame|Dyth X`Teria]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Dyth X`Teria]]
+|-
+! ''' Minimum Level: '''
+| 37+
+|-
+! ''' Classes: '''
+| [[Wizard]]
+|-
+! ''' Related Zones: '''
+| [[City of Mist]], [[Trakanon's Teeth]], [[Karnor's Castle]]
+|-
+! ''' Related NPCs: '''
+| [[a human skeleton]], Hampton, Mardon, Ryla
+|}
+
+<b>NOTE:</b> Spell scroll is NO DROP.
+
+== Reward ==
+
+* Scroll of Brain Bite ([[Concussion|Spell: Concussion]]) 
+{{Experience}}
+
+== Walkthrough ==
+
+Dyth X`Teria (+3138, +2253) resides in The Overthere. He is in the separate building to the North, in the OT outpost. Give him a [[Peridot]], an [[Onyx]] and a [[Star Rose Quartz]]. In exchange, you will receive three bottles of entrapment. They each look like a royal jelly jar and must be identified to figure out which is which. They identify as Hampton, Mardon and Ryla. Each needs to be given to a particular version of [[a human skeleton]] to receive a [[Bottle of Swirling Smoke]]. Return to Dyth X`Teria and hand him the three bottles of smoke to receive the spell Brain Bite.
+
+== Dialogue ==
+
+You say, 'Hail, Dyth X`Teria'
+
+: Dyth X`Teria appears to be the local master of wizardry. His garb clearly comes from the dark city of Neriak as it bears a black sun emblem. 'Speak!! I am dispatched from Neriak to this land by order of the king. I shall research [new spells] and aid the adventuring wizards. My knowledge of wizardry is offered to all in hopes of gaining information about Kunark.'
+
+You say, 'What new spells?'
+
+: Dyth X`Teria says 'Within this lost land could lie the knowledge of extinct civilizations. I am ordered to seek out this knowledge for the empire of Neriak. So far, all I have discovered is a way to create a spell of my own design. I call it [Brain Bite].'
+
+You say, 'What is Brain Bite?'
+
+: Dyth X`Teria says 'If you wish to own a copy of MY spell, Brain Bite, I would be glad to give you one. All I ask is that you [gather a few souls] for me.'
+
+You say, 'I will gather a few souls.'
+
+: Dyth X`Teria reveals three ornate bottles. 'While I finished my research on Brain Bite, I encountered three [interlopers] who wished to steal my spell. I had the dragoon garrison track them down and dispatch them. Unfortunately, I forgot to instruct them to trap their souls with these bottles. Do you want to [take the bottles] and finish the job?'
+
+You say, 'Who were the three interlopers?'
+
+: Dyth X`Teria says 'The garrison report was sloppy, to say the least. They informed me that Hampton was slain near some ruins within a jungle infested by raptors. Mardon was slain in an ancient city found deep in a jungle. Ryla was killed in a hidden fortress guarded by fierce armored wolves who walked on their hind legs.'
+
+You say, 'I will take the bottles.'
+
+: Dyth X`Teria says 'The bottles also require a gem. You will fetch me the three gems and I will prepare the bottles and give them to you to finish the job. I need an onyx, a peridot and a star rose quartz.'
+
+All three gems may be storebought. Hand them in:
+
+* Dyth X`Teria says 'This bottle is for the one called Hampton. If you look well, you can see his name.'
+* Dyth X`Teria says 'This bottle is for Mardon. You may be able to identify his name upon it.'
+* Dyth X`Teria says 'Identify this when the time comes. It is Ryla's prison.'
+
+You receive 3 x An Ornate Bottle, which respectively identify as:
+
+* Item Lore: Hampton. (Onyx)
+* Item Lore: Mardon. (Peridot)
+* Item Lore: Ryla. (Star Rose Quartz)
+{{CheckboxList}}
+* Head to Trakanon's Teeth. Your Location is 275.07, -3801.88, -366.59. This is just North of the Old Seb ruins.
+
+: You say, 'Hail, a human skeleton'
+
+: a human skeleton says 'Save my.. soul.. Find.. wizard.. desp..'
+
+: Give him the appropriate bottle (Hampton) and it will despawn, then respawn about ten seconds later. You receive a "bottle of swirling smoke," which identifies as: Item Lore: Hampton's Soul.
+
+* Ryla, a human skeleton, is located in a jail cell in Karnor's Castle. Take the stairs up to the roof and past the "Hand Room". After passing one corridor on your right, the next turn you come across is the jail. Second cell on the right is the spawn. Is on the normal KC 27:00 respawn so you might have to coordinate with the group pulling from LCY to leave it up, or just hangout in that cell until it spawns. Give the correct bottle to the skeleton to receive a bottle of swirling smoke, which identifies as Ryla's Soul.
+
+* Mardon, a human skeleton, is located in the City of Mist reaver tower at location +136 -641. The skeleton is kill-on-sight, <s>but you can do the turn-in from around the corner without aggro</s>. Give the correct bottle to the skeleton to receive a bottle of swirling smoke, which identifies as Mardon's Soul. Despawns upon turn in.
+{{End}}
+Return to Dyth X`Teria with the three bottles to receive the Spell: Brain Bite.
+
+Dyth X`Teria empties the bottle's smoke into a very large glass urn filled with similar swirling smoke. You think you hear the cries of a thousand tortured souls. He then closes the urn and hands you a scroll. 'Here is your reward. It will blast a foe's brain and hopefully, they may forget their hatred.' 
+
+<div class='facblock'>
+* Your faction standing with [[Venril Sathir (Faction)|Venril Sathir]] got better. 
+</div>
+
+[[Category:Quests]]
+[[Category:The Overthere]]
+[[Category:Wizard Quests]]

@@ -1,0 +1,68 @@
+{{Velious Era}}
+[[File:npc_ziglark_whisperwing.png|frame|Ziglark Whisperwing]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Ziglark Whisperwing]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kael Drakkel]]
+|-
+! ''' Related NPCs: '''
+| [[Wenglawks Kkeak]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Shrine Key}}
+</li></ul>
+
+== Walkthrough ==
+
+:  Ziglark Whisperwing glowers at you dubiously -- You would probably win this fight..it's not certain though.
+
+You say, 'Hail, Ziglark Whisperwing'
+
+: Ziglark Whisperwing says 'Greetings, ______, I am the Herald of Lord Yelinak, the great ice dragon.  I'm charged with taking care of all mundane tasks that are too trivial for the great dragon.'
+
+You say, 'What mundane trivial tasks'
+
+: Ziglark Whisperwing says 'I have many tasks. First, I must make sure all inhabitants of the Skyshrine are looked after, the cleaning cubes are keeping all things neat and orderly and also permit passage through the Skyshrine to those worthy.'
+
+You say, 'I am worthy.'
+
+: Ziglark Whisperwing says 'You must first prove this to me before I allow you through our home.  Wenglawks of Kael is an acquaintance of ours who has been feeding us information on the storm giants' movements through Velious.  Lately our couriers to him have disappeared.  What you must do is take this request to him along with 200 platinum as payment for the storm giants' locations and return the information to me.  After you complete this task for me, we will discuss passage through the Skyshrine.'
+
+'''You receive a [[Message to Wenglawks]].'''
+
+''Note: I couldn't trigger any text with any combination of mundane/trivial task dialogue but if you say "I am worthy" he'll hand you the scroll at dubious.''
+
+'''Travel to Kael Drakkel and find [[Wenglawks Kkeak]] in the back of the noble's house. Hand the [[Message to Wenglawks]] and 200 platinum pieces (no longer optional) to Wenglawks.'''
+
+: Wenglawks Kkeak says 'Here is the information your employer requested. Now be gone. I have more business to take care of.' 
+
+{{YouGainExperience}}
+
+'''You receive a [[Message to Herald]].  Head back to Skyshrine and give it to Ziglark.'''
+
+: Ziglark Whisperwing says 'I appear to have mistaken your declaration of worth as a phony attempt at bravado, and do apologize. You have truly proven yourself worthy of the shrine, and in short order as well. For your troubles, and as a token of your worth to the shrine, I grant you this key to traverse into the lands of the Cobalt Scar. Praise be with you and good journeys always, _____.'
+
+or alternatively (based on faction) he says:
+
+: Ziglark Whisperwing says 'Excellent, you have gotten the information back and you are still in one piece.  Perhaps you could be useful to our cause.  Here is the key to leave the Skyshrine.  Just place it on the flaming pot of the dragon statue, near the center of the pool in he courtyard.'
+
+{{YouGainExperience}}
+
+You receive a {{:Shrine Key}}.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]
+[[Category:All Classes Quests]]

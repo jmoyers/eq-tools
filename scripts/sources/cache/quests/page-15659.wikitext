@@ -1,0 +1,158 @@
+{{Velious Era}}
+[[File:npc_noble_helssen.png|frame|Noble Helssen]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Noble Helssen]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Barbarian Mercenary]], [[Gnome Mercenary]], [[Human Mercenary]], [[Ogre Mercenary]], [[Teir`Dal Mercenary]], [[Troll Mercenary]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Coin. Seems to give about 8 Kromzek faction per, 3 rif and less Tormax. Male Troll Merc doesn't give any Tormax.
+</li></ul>
+
+== Notes ==
+Approximately 125 turn-ins to go from Apprehensive to Indifferent with Kromrif. This will also take you from Indif to Warmly (within 100 points of Ally, tested with OVP) with the Kromzek.
+
+== Walkthrough ==
+
+You say, 'hail Noble Helssen'
+
+: Noble Helssen says 'You obviously have no idea where you have trespassed so I will generously allow you to live. I suggest you leave immediately before my generosity runs out however......Unless, you're looking for work.
+
+You say, 'I am looking for work'
+
+: Noble Helssen says 'Well, you might do. Out in the deepest scar, known as the Wakening Land we have deployed several Mercenaries to harass the local annoying population. They are in need of constant supplies so we hire those we can trust to deliver those supplies to the Mercenaries wandering out in the field. Are you interested Ogre? 
+
+You say, 'I am interested'
+
+: Noble Helssen says 'Very well. Take this pack of supplies to any of the Mercenaries you come across in the field. They will pay you upon delivery. Return here for more supplies to deliver when you are ready. 
+ 
+'''He gives you [[Field Supplies]].'''
+ 
+''You get some cash and a faction adjustment for delivering the Field Supplies. The following is one example.'' 
+
+=== Barbarian ===
+
+'''[[a barbarian mercenary]] is found in [[Kael Drakkel]] near [[Korakaz]]. Give him the [[Field Supplies]].'''<br>
+'''also found wandering through [[Wakening Lands]] closer to the central part of the zone'''<br>
+<br>
+a barbarian mercenary says, 'It's about time, whelp. Take your payment and leave, you're scaring away my... clients.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive 3 copper pieces.
+
+You receive 5 silver pieces.
+
+'''[[a barbarian mercenary]] despawns.'''
+
+=== Human ===
+
+'''[[Human Mercenary]] is found in [[Wakening Lands]] wandering between the Kael entrance and the Portal ring. Give him the [[Field Supplies]].'''
+
+a human mercenary says, 'It's about time, whelp. Take your payment and leave, you're scaring away my... clients.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive 3 copper pieces.
+
+You receive 4 silver pieces.
+
+'''[[Human Mercenary]] despawns.'''
+
+=== Troll ===
+
+''Male Troll mercenaries dont give +Tormax, Female ones do. This quest yields about 7 or 8 faction points for each turnin. Another example follows.''
+
+'''[[Troll Mercenary]] is found wandering in [[Wakening Land]] in the eastern parts. Give him the [[Field Supplies]].'''
+
+troll mercenary says, 'Ahh, thank you, Rums. I've been waiting for these supplies for ages.'
+
+<div class="facblock">
+* Your faction standing with ClawsofVeeshan could not possibly get any worse.
+* Your faction standing with Kromrif got better.
+* Your faction standing with Kromzek could not possibly get any better.
+</div>
+
+You receive 9 gold, 6 silver, 6 copper pieces.
+
+'''[[Troll Mercenary]] despawns.'''
+
+=== Ogre ===
+'''[[Ogre Mercenary]] can be found Wandering the jungle of [[Wakening Lands]] inbetween Kael ent and the Wakening Portal. Give him the [[Field Supplies]]'''<br>
+<br>
+Ogre Mercenary says, 'It's about time, whelp. Take your payment and leave, you're scaring away my... clients.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+You receive some coin
+
+'''[[Ogre Mercenary]] despawns'''
+
+=== Tier'Dal (Dark Elf) === 
+
+'''[[Teir`Dal Mercenary]] can be found Wandering the jungle of [[Wakening Lands]] inbetween Kael ent and the Wakening Portal. Give him the [[Field Supplies]]'''<br>
+<br>
+Tier'Dal Mercenary says, 'It's about time, whelp. Take your payment and leave, you're scaring away my... clients.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive some coin
+
+'''[[Teir`Dal Mercenary]] despawns'''
+=== Gnome ===
+
+'''[[Gnome Mercenary]] is found in [[Wakening Lands]] wandering around the central part of the zone. Give him the [[Field Supplies]].'''
+
+Gnome mercenary says, 'It's about time, whelp. Take your payment and leave, you're scaring away my... clients.'
+
+<div class="facblock">
+* Your faction standing with [[Kromrif]] got better.
+* Your faction standing with [[Kromzek]] got better.
+* Your faction standing with [[King Tormax]] got better.
+* Your faction standing with [[Claws of Veeshan]] got worse.
+</div>
+
+You receive 3 copper pieces.
+
+You receive 4 silver pieces.
+
+'''[[Gnome Mercenary]] despawns.'''
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

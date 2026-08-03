@@ -1,0 +1,126 @@
+{{Classic Era}}
+[[File:npc_feren.png|thumb|Feren]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Feren]]
+|-
+! ''' Minimum Level: '''
+| 1+ (Rec. 5)
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]]
+|-
+! ''' Related NPCs: '''
+| [[Razortooth (NPC)|Razortooth]]
+|}
+
+== Rewards ==
+<ul><li> {{:Kerran Fishingpole}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.010%) @level 10
+
+== Checklist == 
+{{CheckboxList}}
+* [[Razortooth (item)|Razortooth]]
+** Locate and Kill [[Razortooth (NPC)|Razortooth]]
+* Collect 3x [[Scrrrumptious Fish Meat]]
+** Locate and Kill [[a venomous spikefish]]
+
+{{End}}
+
+== Walkthrough ==
+You can find [[Feren]] on a boat in the wharf, fishing.  Get into his boat with him and hail him.  He says he enjoys fishing but is forever haunted by a vicious fish named Razortooth that continues to nibble at his boat and eat his catch.
+
+Feren - loc is -738.92, -199.34, 5.80  - Kerra Isle
+
+'''It is possible to do the turn-in on apprehensive faction. It is not confirmed whether the quest can be done at lower faction.'''
+
+You say, 'Hail, Feren'
+
+: Feren says, 'Rarr.  Me is Feren.  Me is fisher.  That means Feren catches [fish].'
+
+You say, 'fish'
+
+: Feren says, 'All kinds of fish.  Tasty fish.  All day Feren catches the fishes so all Kerran can eat.  I do for good of all Kerran.  Rrrrr.  One thing bother Feren always though.  Is bad fish.  [Razortooth].'
+
+You say, 'Razortooth'
+
+: Feren says, 'Rrrrrr!  Razortooth mean fish.  Razortooth eat fish off Feren's line.  Razortooth gnaw Feren's boat.  Razortooth smart and dangerous.  Feren never able to catch Razortooth.  This haunt Feren for months.  If you was able to catch Razortooth, Feren be forever grateful. Maybe even give you possessions.'
+
+''' You have been assigned the task 'Razortooth'. ''' <br>
+Feren, a fisher of Kerra Isle, has been having trouble bringing enough fish back tot he village lately. He told you that a particularly nasty fish in the lake has been harassing him and stealing the fish right off of his line. He's dubbed this fish 'Razortooth' and needs your help to catch him. He'll also need a little extra help from you if he's going to provide enough fresh fish to feed the village.
+
+=== Quest Stage 1: ===
+* Step - Kill Razortooh, the meanest fish in Kerra Isle
+* Text - Hunt and kill Razortooth in the Kerra Isle lake
+
+Razortooth roams the lake of Kerra Isle. It is a level 5 Warrior
+
+ You have slain Razortooth!
+
+''' Your task 'Razortooth' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Collect Razortooth's remains
+* Text - deliver the remains of Razortooth to Feren...
+
+ --You have looted a Razortooth from Razortooth's corpse.--
+
+''' Your task 'Razortooth' has been updated. '''
+
+=== Quest Stage 3: ===
+* Step - Collect 3 Scrrrumptious Fish Meat
+* Text - ...along with 3 additional Scrrruptious Fish Meat from fish in the lake.
+
+ You have slain a venomous spikefish!
+ --You have looted a Scrrrumptious Fish Meat from a venomous spikefish's corpse.--
+
+ You have slain a venomous spikefish!
+ --You have looted a Scrrrumptious Fish Meat from a venomous spikefish's corpse.--
+
+ You have slain a venomous spikefish!
+ --You have looted a Scrrrumptious Fish Meat from a venomous spikefish's corpse.--
+
+''' Your task 'Razortooth' has been updated. '''
+
+=== Quest Stage 4: ===
+* Step - Deliver the remains of Razortooth, along with 3 Scrrrrumptious Fish Meat to Feren in Kerra Isle.
+* Text - None
+
+ You offered 1 Razortooth to Feren.
+ You offered 1 Scrrrumptious Fish Meat to Feren.
+ You offered 1 Scrrrumptious Fish Meat to Feren.
+ You offered 1 Scrrrumptious Fish Meat to Feren.
+
+''' Your task 'Razortooth' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">
+You helped Feren catch Razortooth and get back on track feeding fresh fish to the villagers of Kerra Isle.
+</span>
+
+: Feren says, 'Razortooth!  You catch him!  Truly, you be great fisher.  Please take this from me.  Feren is forever owing you.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.010%) <br>
+You have been given: Kerran Fishingpole <br>
+
+ You complete the trade with Feren.
+
+=== Fashion ===
+
+[[File:Gdaan_Fishing_Poles.png|thumb|Kerran Fishing Pole and Tuuak's Fishing Pole]]
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

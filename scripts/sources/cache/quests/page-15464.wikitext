@@ -1,0 +1,53 @@
+{{Kunark Era}}
+{{expand}}
+[[File:npc_entalon.png|frame|Entalon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Burning Woods]]
+|-
+! ''' Quest Giver: '''
+| [[Entalon]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Firiona Vie]]
+|-
+! ''' Related NPCs: '''
+| [[Atheling Plague]], [[a stoneleer cockatrice]], [[a pilgrim]]
+|}
+
+== Reward ==
+
+<ul><li>  Teleport to [[Atheling Plague]]
+</li></ul>
+
+== Walkthrough ==
+
+Charm the dragon Entalon, then:
+
+You say, 'Hail, Entalon'
+
+: He will smile with a wide grin. "You are quite brave to approach me and speak.  On any other day, I would not give you the opportunity.  Fortunately for you, I am preoccupied with my master's quest."
+
+You say, 'What is your master's quest?'
+
+: Entalon says 'I have but a small task, to find the scribblings of Jarldyn.  A Fier'Dal has stolen them.  The scribblings will be illegible, but they must be returned to my master who rightfully won them in battle.  If you find them, bring them to me with an emerald plume and I will grant you an audience with my master.  Be forewarned, it may be a one-way trip.'
+
+'''Hand in the [[Scribblings]] (they identify as "Sorcerer Scribblings"), which are dropped by the rare spawn wood elf version of "a pilgrim" in Firiona Vie, and a [[Stoneleer Emerald Plume]], dropped by "a stoneleer cockatrice."'''
+
+: Entalon says 'Ha ha ha!! Fool! I have what I need. Now you are granted an audience with a noble sarnak lord, not my master. I am quite sure he shall do away with you. Ha ha ha!!
+
+{{exp}}
+
+You are teleported to see [[Atheling Plague]].
+
+''Need all dialogues, /loc of Entalon, /loc of Atheling Plague, faction hits if any, quest reward(s).''
+
+[[Category:Quests]]
+[[Category:Burning Woods]]
+[[Category:All Classes Quests]]

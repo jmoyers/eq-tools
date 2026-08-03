@@ -1,0 +1,116 @@
+{{Classic Era}}
+[[File:npc_feskr_drinkmaker.png|thumb|Feskr Drinkmaker]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kerra Island]]
+|-
+! ''' Quest Giver: '''
+| [[Feskr Drinkmaker]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Kerra Island]]
+|-
+! ''' Related NPCs: '''
+| [[a fire beetle]]
+|}
+
+
+== Rewards ==
+
+<ul><li> {{:Rough Leather Sack}} </li></ul>
+
+<div class="facblock">
+* Your faction standing with Kerra Isle has been adjusted by 20.
+</div> 
+
+* {{YouGainExperience}} (0.030%) @level 6
+
+== Checklist == 
+{{CheckboxList}}
+* [[Kerran Fish Oil]]
+** Locate and Kill [[a venomous spikefish]] found near the beach
+* [[Fire Beetle Leg]]
+** Locate and Kill [[a fire beetle]] found near the zone tunnel
+* [[Backpack]]
+** Purchase a Backpack from Tiki near the zone tunnel
+
+{{End}}
+== Walkthrough ==
+
+You say, 'Hail, Feskr Drinkmaker'
+
+: Feskr Drinkmaker says, 'Erh?  If you not be here to help Feskr with his [problem] then Feskr want you to leave.'
+
+You say, 'What problem?'
+
+: Feskr Drinkmaker says, 'You wish to help? Orrderrr of supplies I rrequest not arrive; ship sink. Now Feskr needs supplies. Feskr need bottle of Tunare's Finest, thunderhoof mushroom, tea leaf, and handmade backpack. Rrrr, strange items but Feskr need to sell. Feskr makes best bags. But these require best [materrrials]. You bring. Feskr give you nice bag.'
+
+You say, 'What materrrials?'
+
+: Feskr Drinkmaker says, 'Begins with norrrmal backpack. Adventuring Supplies Merchant acrrross brrridge sells. Then needs oil of fishes from ourrr verrry own riverrr. Finished off with beetle legs to toughen up. Beetles come frrrom forrrest, but sometimes make it into village.'
+
+''' You have been assigned the task 'Feskr's Supplies'. ''' <br>
+Feskr Drinkmake runs a side business crafting quality bags for the villagers. He's run out of supplies, but will reward you with a finely customized bag id you're willing to gather some for him. He uses a standard backpack as a base and performs enhancements using Kerran Fish Oil and Fire Beetle Letgs
+
+=== Quest Stage 1: ===
+* Step - Acquire a Backpack
+* Text - Acquire a backpack. Tiki, the adventuring Supply Merchant can help.
+
+Purchase a Backpack from a merchant. Tiki is right next to the Fire Beetles so start there.
+
+ You purchased 1 Backpack from Tiki for 6 gold 3 silver 6 copper.
+
+''' Your task 'Feskr's Supplies' has been updated. '''
+
+=== Quest Stage 2: ===
+* Step - Loot Kerran Fish Oil
+* Text - Acquire Kerran Fish Oil from the fish in the rivers of Kerra Isle.
+
+The water near the beach will have multiple fish spawns. It took two kills to get the Oil
+
+ You have slain a venomous spikefish!
+ --You have looted a Kerran Fish Oil from a venomous spikefish's corpse.--
+
+''' Your task 'Feskr's Supplies' has been updated. '''
+
+=== Quest Stage 3: ===
+* Step - Loot a Fire Beetle Leg
+* Text - Kill Fire Beetles to acquire one of their legs.
+
+Fire Beetles can be found all over, but easiest are the 4-7 that spawn right at the zone tunnel.
+
+ You have slain a fire beetle!
+ --You have looted a Fire Beetle Leg from a fire beetle's corpse.--
+
+''' Your task 'Feskr's Supplies' has been updated. '''
+
+=== Quest Stage 4: ===
+* Step - Deliver the components to Feskr Drinkmaster
+* Text - Return to Feskr and give him the supplies.
+
+ You offered 1 Kerran Fish Oil to Feskr Drinkmaker.
+ You offered 1 Backpack to Feskr Drinkmaker.
+ You offered 1 Fire Beetle Leg to Feskr Drinkmaker.
+
+''' Your task 'Feskr's Supplies' has been updated. '''
+
+=== Quest Completed: ===
+<span style="color: yellow; font-weight: bold;">With the supplies you gathered, Feskr was able to resume crafting high quality bags to sell. He rewarded you with one for personal use.</span>
+
+: Feskr Drinkmaker says, 'Ahhh.  This will help.  Many Kerrans will like these. Here.  Take this old bag. I have too many.  Maybe it help you.'
+
+Your faction standing with Kerra Isle has been adjusted by 20. <br>
+You gain experience! (0.030%) <br>
+You have been given: Rough Leather Sack <br>
+
+ You complete the trade with Feskr Drinkmaker.
+
+[[Category:Quests]]
+[[Category:Kerra Island]]
+[[Category:All Classes Quests]]

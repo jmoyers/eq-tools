@@ -1,0 +1,100 @@
+{{Classic Era}}
+[[File:npc_shazda_kaekwon.png|frame|Shazda Kaekwon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Stonebrunt Mountains]]
+|-
+! ''' Quest Giver: '''
+| [[Shazda Kaekwon]]
+|-
+! ''' Minimum Level: '''
+| 25
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| [[a heretic invader]], [[Jelquar the Soulslayer]]
+|}
+
+== Reward ==
+<ul><li>  {{:Kejekan Tribal Headband}} (common)
+</li><li> {{:Swiftclaw Sash}} (rare)
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Shazda Kaekwon'
+
+: Shazda Kaekwon says 'Shalom, _____! I welcome you to our humble village in these [trying times]. 
+
+You say, 'What trying times?'
+
+: Shazda Kaekwon says 'There are many threats currently facing this village. The kobolds of Clan Kolbok are becoming bolder in pushing the boundaries of the territory in which they usually hunt. A few of the kobolds now hunt recklessly, killing for pleasure instead of sustenance. [Rognarog] the Infuriated is the most murderous of such kobolds. Then there are the [heretics] that have been invading both Clan Kolbok and Kejek territories alike, practicing their dark sorceries as a show of devotion to their faceless god. 
+
+You say, 'What about the Heretics?'
+
+: Shazda Kaekwon says 'The heretics have not only corrupted their own spirits but they defile the spirits of the dead with their evil sorceries. Fill this satchel with the heads of invading heretics and I shall reward you for your allegiance to Kejek. 
+
+'''Receive Burlap Satchel. Inside it, combine four [[Heretics Head]]s (Male/Female heads work). Then hand in the Satchel of Heretic Heads.'''
+
+: Shazda Kaekwon says 'Less heretics to defile the lands and spirits. You have the gratitude of Kejek for your assistance in repelling the heretic threat.' 
+
+<div class="facblock">
+* Your faction standing with [[Kejek Village]] got better.
+* Your faction standing with [[Peace Keepers]] got better.
+</div> 
+{{YouGainExperience}}
+
+You receive ~2 platinum from Shazda Kaekwon.
+You receive either a {{:Kejekan Tribal Headband}} (common) or a {{:Swiftclaw Sash}} (rare).
+
+''Statistics per player:''
+
+{| class="eoTable"
+! Player Time !! # of Turn Ins !! # of Headbands !! # of Sashes
+|-
+| June 2017 || 9  || 8  || 1
+|-
+| Aug  2019 || 17 || 16 || 1
+|-
+| Sept 2019 || 6  || 6  || 0
+|-
+| Oct  2019 || 4  || 2  || 2
+|-
+| Nov  2019 || 4  || 4  || 0
+|-
+| Dec  2019 || 3  || 2  || 1
+|-
+| Oct  2022 (green) || 2  || 1 || 1
+|-
+| May  2023 (green) || 5  || 4 || 1
+|-
+| May  2023 (blue) || 7  || 6 || 1
+|-
+| June  2023 (green) || 4  || 3 || 1
+|-
+| July  2023 (green) || 16  || 15 || 1
+|-
+| Nov 2024 (green) || 24  || 23 || 1
+|-
+| Jan 2025 (green) || 5  || 4 || 1
+|}
+
+''According to the chart above, it is about a 10% chance to get a swiftclaw sash.''
+
+''Tips:''
+
+* Ensure you have plenty of carrying capacity as each head is quite heavy (WT 7.0)
+* Levitation or safe fall is highly recommended as the zone has many steep mountains. 
+* Tracking is highly recommended (I would say mandatory due to the limited visibility in the zone)
+
+== External links ==
+
+* http://runen.co.uk/Everquest/Zones/Quests/Stonebrunt/ShazdaKaekwon.htm
+
+[[Category:Quests]]
+[[Category:Stonebrunt Mountains]]

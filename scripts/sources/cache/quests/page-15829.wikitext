@@ -1,0 +1,273 @@
+{{Disambiguation}}
+
+==Description==
+*There are two different types of Muffin quests outlined below. The first two quests involve buying Vendor sold Muffins in infinite supply and handing them directly to NPC. The second kind involves Baking them and combining into a Muffin Crate.  <br>
+==Vendor purchased Muffin Hand-in==
+===[[Muffin for Pandos]] (Freeport, [[Pandos Flintside]])===
+===[[Wenbie's Muffins]] (Qeynos, [[Guard Wenbie]])===
+
+==Fresh Baked Muffins==
+*This type of quest requires using 'Baked Muffins' (and not bought) for the 'Fresh Baked Muffins' series of quest listed below.
+** You will need * [[Baking]] (Trivial: 135)
+** '''Yield: Muffin''' x6
+** In [[Oven]]:
+:: {{SmIcon|1036}} 1 x [[Muffin Tin]] - Crafted, Returned on Failure, Returned on Success
+:: {{SmIcon|1090}} 1 x [[Clump of Dough]] - Crafted
+:: {{SmIcon|1037}} 1 x [[Fruit]] - Foraged
+
+* Please Note: that baked [[Muffin]] will look exactly like the vendor sold kind. Even identify spell does not distinguish the two but one will combine in the muffin crate and the vendor sold kind will not. So they are in fact two different item IDs<br>
+
+ 
+===To get a [[Muffin Crate]] See [[Gretta Mottle]] in South [[Kaladim]]===
+'''Only [[Gretta Mottle]] in Kaladim will still respond to acquire [[Muffin Crate]] to initiate this quest, but the [[Full Muffin Crate]] can still be handed in to any of the Innkeepers related to the Bread Shipment quests listed below.'''<br>
+You say, 'Hail, Gretta Mottle'
+:Gretta Mottle says, 'Greetings, <player>. I'm Gretta Mottle. Tumpy has been kind enough to let me set up my bakery in his fine establishment here. Unfortunately, with that nasty plague corruptin' the crops in the Plains of Karana, things are going' a big slot for me. I keep runnin' out of bread and muffins to sell. Because of flour bein' easily spoiled now, it takes longer to make 'em just right. My assistant Buggle is still learnin cow to cook. Hehe.. All he can make is Meat Pie. If I don't get any [help to bake] soon I won't be able to keep the supply up with the demand.'
+You say, 'I will help to bake'
+:Gretta Mottle says, 'Glad to hear it. Are ye thinkin' of helpin' me to [bake muffins] or did ye want to [fetch some bread] for me?'
+You say, 'bake muffins'
+:Gretta Mottle says, 'Ah, if ye want to help me with the bakin', take this Muffin Crate, fill it up with some of your freshly baked Muffins, then seal them in so they won't become stale. I sure hope you can make 'em good enough.'
+
+You receive [[Muffin Crate]]!<br>
+'''Fill this container with 10 unstacked Muffins that were baked and Combine into a [[Full Muffin Crate]]. You can hand this back to Gretta to complete [[Fresh Baked Muffins (Kaladim)]] or you can hand it into any of the other towns Innkeepers that are related to the bread Shipment quests listed below.
+'''
+
+===[[Kaladim]] - Fresh Baked Muffins===
+====[[Gretta Mottle]] (South Kaladim)====
+Turning a [[Full Muffin Crate]] into Gretta Mottle ([[Kaladim]]):<br>
+Gretta Mottle smells the aroma in the air and says, 'Mmm... Mmm... That sure smells good. You truly are a fine baker. Here, take this payment for such fine bakin.'
+<div class="facblock">
+* Your faction standing with Merchants of Kaladim has been adjusted by 2.
+* Your faction standing with Storm Guard has been adjusted by 1.
+* Your faction standing with Miners Guild 628 has been adjusted by -1.
+* Your faction standing with Miners Guild 249 has been adjusted by 1.
+* Your faction standing with Kazon Stormhammer has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 8 gold.
+
+===[[Qeynos]] - [[Fresh Baked Muffins]]===
+====[[Karn Tassen]] (South Qeynos)====
+Turning a [[Full Muffin Crate]] into Karn ([[Qeynos]]):<br>
+Karn Tassen says, 'Hey, thanks kid! You are one top notch baker! Here's some coin for your trouble.'
+<div class="facblock">
+* Your faction standing with Merchants of Qeynos got better. +2
+* Your faction standing with Circle of Unseen Hands got worse. -1
+* Your faction standing with Antonius Bayle got better. +1
+* Your faction standing with Coalition of Tradefolk got better. +1
+* Your faction standing with Guards of Qeynos got better. +1
+</div>
+You receive 7 gold.
+====[[Voleen Tassen]]) (South Qeynos)====
+Turning a [[Full Muffin Crate]] into Voleen ([[Qeynos]]):<br>
+Voleen Tassen says, 'Oh my! Smell those muffins, fresh from the oven and ready to serve! They look delicious dear. Here is some money for your trouble.'
+<div class='facblock'>
+* Your faction standing with [[Merchants of Qeynos]] has gotten better.<span class='oppfac'>(+5)</span>
+* Your faction standing with [[Coalition of Tradefolk]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Antonius Bayle]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Guards of Qeynos]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Circle of Unseen Hands]] '''has gotten worse'''.<span class='profac'>(-1)</span>
+
+</div>
+You receive 6 gold.
+
+===[[North Karana]] - Fresh Baked Muffins===
+====[[Innkeep James]]====
+Turning a [[Full Muffin Crate]] into Innkeep James ([[Northern Karana]]):<br>
+Innkeep James says, 'Ah, praise Karana! These muffins look good enough to eat, har har har! Here is your payment and you have my deepest gratitude. We have to stick together in these times of turmoil you know.'
+<div class="facblock">
+* Your faction standing with Merchants of Qeynos has been adjusted by 2.
+* Your faction standing with Circle of Unseen Hands has been adjusted by -1.
+* Your faction standing with Antonius Bayle has been adjusted by 1.
+* Your faction standing with Coalition of Tradefolk has been adjusted by 1.
+* Your faction standing with Guards of Qeynos has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 8 gold.
+===Freeport Fresh Baked Muffins===
+====[[Winda Lylil]] East Freeport====
+Turning a [[Full Muffin Crate]] into Winda ([[Freeport]]):<br>
+Winda Lylil says, 'Ah yes! This is exactly what I am looking for, dear. Let me put these on the shelf right away. Here is some coin for your trouble. Perhaps we can do business again sometime.'
+<div class='facblock'>
+* Your faction standing with [[Freeport Militia]] has gotten better.<span class='oppfac'>(+2)</span>
+* Your faction standing with [[Coalition of Tradefolk Underground]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Knights of Truth]] '''has gotten worse'''.<span class='profac'>(-1)</span>
+* Your faction standing with [[Priests of Marr]] '''has gotten worse'''.<span class='profac'>(-1)</span>
+</div>
+{{exp}}
+====[[Innkeep Paggie]] East Freeport====
+Turning a [[Full Muffin Crate]] into Innkeep Paggie ([[East Freeport]]):<br>
+Innkeep Paggie says, 'Ah yes! This is exactly what I am looking for, dear. Let me put these on the shelf right away. Here is some coin for your trouble. Perhaps we can do business again sometime.'
+<div class='facblock'>
+* Your faction standing with [[Freeport Militia]] has gotten better.<span class='oppfac'>(+2)</span>
+* Your faction standing with [[Coalition of Tradefolk Underground]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Knights of Truth]] '''has gotten worse'''.<span class='profac'>(-1)</span>
+* Your faction standing with [[Priests of Marr]] '''has gotten worse'''.<span class='profac'>(-1)</span>
+</div>
+{{exp}}
+
+====[[Innkeep Rastle]] North Freeport====
+Turning a [[Full Muffin Crate]] into Innkeep Rastle ([[Freeport]]):<br>
+Gern Tassel says, 'These are quality muffins! You are obviously quite a skilled baker. Here is your payment as promised. Now I can get back to business again.'
+<div class="facblock">
+* Your faction standing with Coalition of Tradefolk has been adjusted by 2.
+* Your faction standing with Knights of Truth has been adjusted by 2.
+* Your faction standing with Merchants of Qeynos has been adjusted by 1.
+* Your faction standing with Coalition of Tradefolk Underground has been adjusted by 2.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 6 gold.
+
+====[[Innkeep Nasumi]] East Freeport====
+Turning a [[Full Muffin Crate]] into Innkeep Nasumi ([[Freeport]]):<br>
+Innkeep Nasumi says, 'Ah yes! This is exactly what I am looking for, dear. Let me put these on the shelf right away. Here is some coin for your trouble. Perhaps we can do business again sometime.'
+<div class='facblock'>
+* Your faction standing with [[Freeport Militia]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Coalition of Tradefolk Underground]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Knights of Truth]] has gotten better.<span class='oppfac'>(+1)</span>
+* Your faction standing with [[Priests of Marr]] has gotten better.<span class='oppfac'>(+1)</span>
+</div>
+{{exp}}
+You receive 6 gold.
+===Fresh Baked Muffins (North Freeport, [[Gern Tassel]])===
+Turning a [[Full Muffin Crate]] into Gern Tassel ([[Freeport]]):<br>
+Gern Tassel says, 'These are quality muffins! You are obviously quite a skilled baker. Here is your payment as promised. Now I can get back to business again.'
+<div class="facblock">
+* Your faction standing with Coalition of Tradefolk has been adjusted by 2.
+* Your faction standing with Knights of Truth has been adjusted by 2.
+* Your faction standing with Merchants of Qeynos has been adjusted by 1.
+* Your faction standing with Coalition of Tradefolk Underground has been adjusted by 2.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 6 gold.
+===Fresh Baked Muffins (Halas, [[Hetie McDonald]])===
+Turning a [[Full Muffin Crate]] into Hetie McDonald ([[Halas]]):<br>
+Hetie McDonald says, 'Oh, yes, this is exactly what I needed. These muffins look very fresh too, good work! Here is your payment, as promised. It was a pleasure doing business with you.'
+<div class="facblock">
+* Your faction standing with Merchants of Halas has been adjusted by 2.
+* Your faction standing with Wolves of the North has been adjusted by 1.
+* Your faction standing with Shamen of Justice has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 7 gold.
+===Fresh Baked Muffins (Feerrott, [[Innkeep Morpa]])===
+Turning a [[Full Muffin Crate]] into Inkeep Morpa ([[Feerrott]]):<br>
+Innkeep Gub says, 'Nice muffins, very stinky. Weeze tank you. Here some money. Weeze need more muffins later. You check back again sum time.'
+<div class="facblock">
+* Your faction standing with Merchants of Oggok got better. +2
+* Your faction standing with Clurg got better. +1
+* Your faction standing with Oggok Guards got better. +1
+</div>
+You receive 8 gold.
+===Fresh Baked Muffins (Feerrott, [[Innkeep Gub]])===
+Turning a [[Full Muffin Crate]] into Inkeep Gub ([[Feerrott]]):<br>
+Innkeep Gub says, 'MMmmm... Deez look like gud muffins. Here's sum money. Tanks. Now meez all stocked again.'
+<div class="facblock">
+* Your faction standing with Merchants of Oggok got better. +2
+* Your faction standing with Clurg got better. +1
+* Your faction standing with Oggok Guards got better. +1
+</div>
+You receive 8 gold.
+===Fresh Baked Muffins (Neriak, [[Sal Drana]])===
+Turning a [[Full Muffin Crate]] into Sal Drana ([[Neriak]]):<br>
+Sal Drana says, 'Very good work. I can see you are a talented baker and these muffins look suitable. You do Neriak a great service. Here is your payment. I look forward to conducting future business with you.'
+<div class="facblock">
+* Your faction standing with Dark Bargainers has been adjusted by 2.
+* Your faction standing with Dreadguard Outer has been adjusted by 1.
+* Your faction standing with Dreadguard Inner has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 7 gold.
+===Fresh Baked Muffins (Kelethin, [[Innkeep Wuleran]])===
+Turning a [[Full Muffin Crate]] into Innkeep Wuleran ([[Kelethin]]):<br>
+Innkeep Wuleran says, 'Oh, these look delicious! No doubt they were made with fresh fruit grown locally; I can tell by the aroma. You have quite a talent! Thank you so much. Here is your payment. This should be enough to last me for a little while.'
+<div class="facblock">
+* Your faction standing with [[Kelethin Merchants]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[Emerald Warriors]] got better.
+* Your faction standing with [[Anti-Mage]] got better.
+</div>
+
+{{Exp}}<br>
+You receive 7 gold
+===Fresh Baked Muffins (Erudin, [[Beth Breadmaker]])===
+Turning a [[Full Muffin Crate]] into Beth Breadmaker ([[Erudin]]):<br>
+Beth Breadmaker says, 'Ah yes! This is exactly what I am looking for, dear. Let me put these on the shelf right away. Here is some coin for your trouble. Perhaps we can do business again sometime.'
+<div class="facblock">
+* Your faction standing with Merchants of Erudin has been adjusted by 2.
+* Your faction standing with High Council of Erudin has been adjusted by 1.
+* Your faction standing with High Guard of Erudin has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 1 platinum.
+===Fresh Baked Muffins (West Karana, [[Innkeep Rislarn]])===
+Turning a [[Full Muffin Crate]] into Innkeep Rislarn ([[Western Plains of Karana|West Karana]]):<br>
+Innkeep Rislarn says, 'Ah, praise Karana! These muffins look good enough to eat, har har har! Here is your payment and you have my deepest gratitude. We have to stick together in these times of turmoil you know.'
+<div class="facblock">
+* Your faction standing with Merchants of Qeynos has been adjusted by 2.
+* Your faction standing with Circle of Unseen Hands has been adjusted by -1.
+* Your faction standing with Antonius Bayle has been adjusted by 1.
+* Your faction standing with Coalition of Tradefolk has been adjusted by 1.
+* Your faction standing with Guards of Qeynos has been adjusted by 1.
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 8 gold.
+
+
+==See also==
+* [[Bread Shipment Quests]]
+* [[Gretta's Baking Supplies Quest]] (Kaladim, Gretta)
+
+==Legacy (Removed) Original Quest Giver==
+
+''Original QUEST givers (FRESH MUFFINS)'' 
+
+You go to Voleen's Bakery in South Qeynos 
+Karn Tassen has no more muffins in his inventory, neither does Voleen Tassen 
+
+You say, 'Hail Karn Tassen' 
+Karn Tassen says 'Bah, I told Voleen it would happen and it finally did! Food is becoming so scarce that I'm starting to run out of stock. You wouldn't happen to [be a baker] yourself or maybe you [know] someone who bakes? 
+
+You say, 'I am a baker' 
+Karn Tassen says 'Well good! Maybe you can help me restock. If you are a baker you could help me out by restocking my [muffin supply]. Or if you don't mind a little travel, you can pick up a [shipment of bread] for me. 
+
+You say, 'what muffin supply ?' 
+Karn Tassen says 'Thanks, you're a pal. Take this crate and fill it with muffins, then seal it up and bring the Full Muffin Crate back to me. Don't go trying to pass off that store-bought stuff on me either, I need fresh baked muffins. The ones in the stores are already too old and will get moldy too fast, so I don't want those.' 
+
+You bake 10 muffins (135 baking skill, need some pottery and smithing too) and you combine them in the crate. 
+You have fashioned the items together to create something new! 
+You give the crate back 
+
+Karn Tassen says 'Hey, thanks kid! You are one top notch baker! Here's some coin for your trouble. 
+<div class="facblock">
+* Your faction standing with MerchantsofQeynos got better. 
+* Your faction standing with CircleOfUnseenHands got worse. 
+* Your faction standing with AntoniusBayle got better. 
+* Your faction standing with CoalitionofTradefolk got better. 
+* Your faction standing with GuardsofQeynos got better. 
+</div>
+<span style="font-weight:bold;color:#D6A100;">You gain experience!!</span><br>
+You receive 2 gold from Karn Tassen.
+
+
+Karn Tassen despawns and respawns 3 seconds later. Now he has muffins to sell. 
+
+You can do the same quest with Voleen Tassen: 
+
+You say, 'Hail Voleen Tassen' 
+Voleen Tassen says 'Hi Durix . Times are tough these days. It looks like Karn's fears have come to pass. We are finding ourselves running short on baked goods lately. Would you be [willing to help] us out? 
+
+You say, 'I am willing to help' 
+Voleen Tassen says 'You'd help us? Oh, you are such a dear! Well, there are two ways you can help us and our little business. If you [can bake] you can make us some muffins so we don't run out. Otherwise, you [can travel] a little way for us and pick up some bread. 
+
+You say, 'I can bake' 
+Voleen Tassen says 'A free lance baker, well that is nice. Here. Take this crate and make some of your muffins. Bring the Full Muffin Crate back to me when you are done. I'll pay you the same as we pay our regular suppliers. Make sure you bake them fresh yourself, we only sell quality muffins here.
+
+===Food shortages cause merchants concern===
+''From [[The Antonican Times]]<small>[http://everquest.allakhazam.com/db/quest.html?quest=1262#m99139627322152]</small>'':
+A poor harvest and damaged crops are leaving some merchants short of cretain baked goods. Karn Tassen, local merchant, had this to say about the food shortage. 
+"It is hard enough to scrape by and make enough money to pay your taxes in this town. Now with this blasted plague affecting everything, I'm starting to run out of stock. It's a mess I tell you." 
+
+A call has gone to independant bakers to assist our local merchants and those abroad in keeping their supplies properly stocked. Anyone interested in assisting the community in this time of need should inquire local members of the Merchants of Qeynos. Those traveling abroad are urged to contact the Coalition of Trade Folks. 
+
+
+[[Category:Quests]]

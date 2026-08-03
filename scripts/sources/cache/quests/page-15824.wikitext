@@ -1,0 +1,47 @@
+{{Velious Era}}
+[[File:npc_nojas_blackfist.png|frame|Nojas Blackfist]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Nojas Blackfist]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  {{:Silver Dragon Tattoo}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'hail Nojas Blackfist'
+
+: Nojas Blackfist says 'What brings you to the hall of the frost giants, little one?  Have you come to serve our lord and master?   Or are you simply a scout for a raiding party?  I warn you, do not make war on my kin.  I will twist the elements to my will and destroy you if that is your intent. 
+
+You say, 'I have come to serve'
+
+: Nojas Blackfist says 'You could best serve the masters by serving me.  The more time I have to tend to my research the better.  I have several minor tasks which you could easily handle... 
+
+You say, 'what about minor task?'
+
+: Nojas Blackfist says 'In the wreched jungle to the west there lives a race of faries protected by Tunare and her other minions.  These abominations are called the Sifaye.  I belive that the strength of the Wakening lands is linked not only to Tunare herself, but her connection with these foul beasts.  Bring me the wings of one of their so called knights and the heads of three commoners and I will reward you for such busy work.' 
+
+Do not hand in "A Sifaye Wing" which drops off many Sifaye.  What is required is the "Wing of a Sifaye Knight" (Magic Lore No Drop) that is dropped (rarely) by the Knights - who are themselves pretty rare.
+
+The heads are dropped by Sifaye Thanes and Troubadours.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]

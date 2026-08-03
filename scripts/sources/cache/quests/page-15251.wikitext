@@ -1,0 +1,75 @@
+[[File:npc_furtog_ogrebane.png|frame|Furtog Ogrebane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kaladim|South Kaladim]]
+|-
+! ''' Quest Giver: '''
+| [[Furtog Ogrebane]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Butcherblock Mountains]], [[Ocean of Tears]]
+|-
+! ''' Related NPCs: '''
+| [[Boog Mudtoe]], [[Glorin Binfurr]], [[Goob Mudtoe]]
+|}
+is multiquestable
+
+== Reward ==
+
+<ul><li>  {{:Ogre War Maul}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Furtog Ogrebane'
+
+: [[Furtog Ogrebane]] says 'Hail, mighty ______!  Welcome to Stormguard Hall.  I am Captain Furtog Ogrebane, only surviving descendant of the legendary Trondle Ogrebane, slayer of the [Mudtoes].  If you wish to serve the grand city of Kaladim, I urge you to speak with any of the trainers. Good day.'
+
+You say, 'Who are the Mudtoes?'
+
+: Furtog Ogrebane says 'The Mudtoes were a small but mighty clan of ogres.  My great father [Trondle] destroyed them.  I have heard disturbing rumors of one Mudtoe surviving.  Would you mind [searching for the Mudtoes] or have you other duties to perform?'
+
+You say, 'Trondle?'
+
+: Furtog Ogrebane says 'Trondle was my great father and slayer of the Mudtoes.  He was killed by those vile Crushbone orcs.  If you truly wish to help Kaladim remain safe, speak with trainer Canloe Nusback. Say that you are ready to serve Kaladim.'
+
+You say, 'I will go searching for the Mudtoes.'
+
+: Furtog Ogrebane says 'I have heard persistent rumors of two Mudtoe ogres who survived the slaughter.  Go to the port of Butcherblock.  Those dock hands must have heard of the name [Mudtoe].  Bring me the remaining heads of the Mudtoes!!  I want all the Mudtoes dead!!  Do not return until you have them both!!'
+
+{{expand}}
+
+'''Find Glorin Binfurr at the end of the docks in Butcherblock (/loc 1360, 3263).'''
+
+You say, 'What of the Mudtoes?'
+
+: Glorin Binfurr says 'Mudtoes!!  I have heard tales of that foul clan of ogres.  A few of the passengers aboard the ships have claimed to have seen one of them, off and on, amongst pirates in the Ocean of Tears!!'
+
+'''The two remaining Mudtoes, Boog and Goob, are in the Ocean of Tears.'''  You will find one named Boog Mudtoe on the island right across from the all girl island of Erollisi (/loc of Boog 1008, -8022).
+
+You kill him and get his head and a note that is to his brother (A tattered note).  His brother is on the island with Gornit the Giant (/loc 900, -6573).  He is a shaman and casts root a lot, so you have to be careful attacking him.
+
+'''Take their heads back to Furtog for a decent item (sometimes an Ogre War Maul) and the Trumpy Irontoe quest.'''
+
+: Furtog Ogrebane says 'Well done, ______!  The Mudtoes are finished and will haunt dwarves no more. Take this as symbol of this vic'try! For Kaladim!'
+
+<div class="facblock">
+* Your faction standing with [[Storm Guard]] got better.
+* Your faction standing with [[Kazon Stormhammer]] got better.
+* Your faction standing with [[Miners Guild 249]] got better.
+* Your faction standing with [[Craknek Warriors]] could not possibly get any worse.
+</div>
+
+
+''Need missing dialogues, current faction hits if any, /loc of quest mobs, additional rewards if any.''
+
+[[Category:Quests]]
+
+[[Category:South Kaladim]]
+[[Category:All Classes Quests]]

@@ -1,0 +1,57 @@
+{{Disambig3|[[Guild Summons]]}}
+{{Classic Era}}
+[[File:Caskinmarsheart.JPG|frame|Caskin Marsheart]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Caskin Marsheart]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Bard]]
+|-
+! ''' Related Zones: '''
+| [[North Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Caskin Marsheart]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Colorfully Patched Tunic*}}
+</li></ul>
+
+== Walkthrough ==
+
+''[[Caskin Marsheart]] is located at -146, 571 in the Marsheart's Chords ([[Bard]]) Guild Hall.''
+
+You say, 'Hail, Caskin Marsheart'
+
+: Caskin Marsheart says nothing
+
+'''Hand [[Caskin Marsheart]] [[a tattered note]]'''
+
+:: ''a tattered note reads: Come and join the Choir of Lore, and learn the legends and magics of Norrath. Go north from the West Gate to Marsheart's Chords. Give this note to Caskin Marsheart to be accepted into his guild.''
+
+:: <code></code>
+
+: Caskin Marsheart says, 'Welcome to the guild. here's your guild tunic. Now. let's get to work.'
+
+<div class="facblock">
+* Your faction standing with [[League of Antonican Bards]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Ring of Scale]] got worse.
+* Your faction standing with [[Mayong Mistmoore]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:North Freeport]]
+[[Category:Bard Quests]]

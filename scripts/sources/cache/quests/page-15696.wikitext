@@ -1,0 +1,63 @@
+{{Classic Era}}
+[[File:npc_gehna_solbenya.png|frame|Gehna Solbenya]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Gehna Solbenya]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[a bandit]]
+|}
+
+== Reward ==
+<ul><li>  [[Center|Spell: Center]]
+</li><li> [[Endure Poison|Spell: Endure Poison]]
+</li></ul>
+
+== Walkthrough ==
+
+''Confirmed 7/8/2022. Quest can be turned in at amicable despite her not giving you the quest when you say 'I will hunt bandit binders.'''
+
+[[Gehna Solbenya]] is located in the House of Thunder.
+
+You say, 'Hail, Gehna Solbenya'
+
+: Gehna Solbenya says 'Greetings and blessings to you, _____. Karana offers you his protection and guidance. All who accept the offer shall find safe haven within our Temple of Thunder. If you are a cleric of Karana, you must have a [desire to serve Karana]'s flock.'
+
+You say, 'I have a desire to serve Karana'
+
+: Gehna Solbenya says 'If you are a young acolyte, you may [deliver blessings to the flock] and if you are a skilled cleric, we need you to [hunt bandit binders].'
+
+You say, 'I will hunt bandit binders.'
+
+: Gehna Solbenya says 'Go to the Plains of Karana and seek out the Karana Bandits. Among them can be found their bandit binders. They are healers of sorts. Which evil deity granted them this power is unknown to us. Each carries a binder spectacle. I shall reward clerics for every two returned spectacles. Perhaps a new power may even be bestowed.'
+ 
+{{:Spectacle}}s are dropped by bandits in East Karana only. Upon handing in two of them:
+
+: Gehna Solbenya says 'The bounty will not be paid until two spectacles are received.'
+
+: Gehna Solbenya says 'Excellent work. These foul men have no right to be proficient in the ways of healing. Here then is your bounty. Use it in your continued war against the Karana bandits.'
+
+<div class="facblock">
+* Your faction standing with Knights of Thunder has been adjusted by 20.
+* Your faction standing with Bloodsabers has been adjusted by -20.
+* Your faction standing with Priests of Life has been adjusted by 15.
+* Your faction standing with Guards of Qeynos has been adjusted by 15. 
+</div>
+{{exp}}
+
+You receive some coin and a random spell scroll.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

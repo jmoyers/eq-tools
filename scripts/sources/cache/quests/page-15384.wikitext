@@ -1,0 +1,85 @@
+{{Kunark Era}}
+[[File:npc_drill_master_dal.png|frame|Drill Master Dal]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Cabilis|East Cabilis]]
+|-
+! ''' Quest Giver: '''
+| [[Drill Master Dal]]
+|-
+! ''' Minimum Level: '''
+| 14
+|-
+! ''' Classes: '''
+| All (Iksar Non-Caster)
+|-
+! ''' Related Zones: '''
+| [[Field of Bone]], [[Warsliks Woods]]
+|-
+! ''' Related NPCs: '''
+| [[an iksar marauder]]
+|}
+
+== Reward ==
+
+{{Gear Set
+|Leech Husk Boots
+|Leech Husk Gloves
+|Leech Husk Leggings
+|Leech Husk Tunic
+|Leech Husk Wrist Bands
+}}
+
+== Walkthrough ==
+
+''This quest is offered by [[Drill Master Dal]] in East Cabilis. He is found -250, -125, 32.''
+
+You say, 'Hail, Drill Master Dal'
+
+: Drill Master Dal says, 'Yes, yes!! What do I have here?!! Another [new recruit]? If so, then speak up! If not, then leave and do not waste my time nor risk your life. I also seek a [legion soldier] if you be one.'
+
+You say, 'I am a legion soldier'
+
+: Drill Master Dal says, 'Good news to my ears!! I seek to prove to the War Baron that the infamous forsaken band of thieves who call themselves Marrtail's Marauders are operating within earshot of our city. You must bring me proof that you encountered no fewer than four of these thieves. Do so and I shall off you an armor item unavailable to most.'
+
+'''Hand in four [[Marauder Snout Ring 'MM']] (dropped by [[an iksar marauder|iksar marauders]] in the zones surrounding Cabilis):'''
+
+: Drill Master Dal says, 'Ah Yes!! This is good, but I instructed you to bring me no fewer than four.'
+
+: Drill Master Dal hands you a shimmering black piece of armor which smells quite horrid. You find it hard to keep it from slithering out of your hand. 'Here is the armor the tailors have been working on for the legion. You may test it for us. Keep up your fine work and I may have other pieces available for you to test.'
+
+<div class="facblock">
+* Your faction standing with [[Legion of Cabilis]] got better.
+* Your faction standing with [[Cabilis Residents]] got better.
+* Your faction standing with [[Scaled Mystics]] got better.
+* Your faction standing with [[Crusaders Of Greenmist]] got better.
+* Your faction standing with [[Swift Tails]] got better.
+</div>
+
+{{YouGainExperience}}
+
+You also receive a small amount of coin and a random piece of Leech Husk armor.
+
+== Exp Gain ==
+
+=== Iksar Necromancer ===
+
+{| class="eoTable2"
+! Level
+! Exp per turn in (Rough Average)
+|-
+| 1
+| 13%
+|-
+| 12
+| 8%
+|-
+| 16
+| 4%
+|-
+| 18 & 19
+| 3%
+|}
+
+[[Category:Quests]]
+[[Category:East Cabilis]]

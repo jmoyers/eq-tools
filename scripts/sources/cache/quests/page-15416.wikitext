@@ -1,0 +1,57 @@
+{{Classic Era}}[[File:npc_morin_shadowbane.png|frame|Morin Shadowbane]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kithicor Forest]]
+|-
+! ''' Quest Giver: '''
+| [[Morin Shadowbane]]
+|-
+! ''' Recommended Level: '''
+| 28
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Western Plains of Karana]]
+|-
+! ''' Related NPCs: '''
+| [[Ghoul Messenger]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Short Sword of Morin}}
+</li></ul>
+
+== Walkthrough ==
+
+Morin's location is: 1511.83, 2314.86 in Kithicor.
+
+'''You say, 'Hail, Morin Shadowbane''''
+
+:Morin Shadowbane says, 'Hail, ________. I am the leader of this beleagured troop of rangers. Even though the once fair Kithicor slowly succumbs to the [darkness] at hand, we shall not abandon the woods without a fight.'
+
+'''You say, 'what darkness''''
+
+:Morin Shadowbane says, 'The denizens of these woods are slowly being overrun by dark fiends and shadowed men. As valiantly as we have fought, our numbers dwindle. We know very little about our aggressors, but if we or perhaps [fine weapons], then we may yet have a chance to retake the woods once more.'
+
+'''You say, 'what fine weapons''''
+
+:Morin Shadowbane says, 'My soldiers are valiant, but poorly equipped. I have heard of a magical weapon of great power, some call it the Ebony Blade. Amongst the Frogloks there can be found a Minotaur who wields this sword of might. If you are a ranger and could provide me with this sword then I would gladly exchange it with my own meager weapon. If you prefer, you may attempt to [acquire some information] for us instead.'
+
+'''You say, 'I will acquire some information''''
+
+:Morin Shadowbane says, 'Your tracking skills are invaluable to our cause, brave ________. Our scouts have reported of a Ghoul Messenger. They have spotted him traveling between Kithicor and an undead camp in the Plains of Karana. They have attempted to track the monster and obtain any Strategic Domumentation he may be carrying. Perhaps you can succeed where others have failed. Perhaps you can earn my personal short sword.'
+
+'''[Hand him the [[A Strategic Map of Kithicor]] from [[Ghoul Messenger]]]''' OR '''[Hand him the [[Ebony Bladed Sword]] from [[a minotaur patriarch]]]'''
+
+:Morin Shadowbane says, 'Excellent work, ________!! It is obvious that you are a highly skilled tracker and warrior. Accept this reward, my personal sword which has served me well in countless battles.'
+
+{{exp}}
+
+[[Category:Quests]]
+[[Category:Kithicor Forest]]
+[[Category:Ranger Quests]]
+
+Even though the quest is lvl 28, there is no level restriction. If you are leveling in West Karanas, you can ask a high level to kill the messenger for you even at lvl 3.

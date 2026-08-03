@@ -1,0 +1,218 @@
+{{Classic Era}}
+[[File:npc_maesyn_trueshot.png|frame|Maesyn Trueshot]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark]]
+|-
+! ''' Quest Giver: '''
+| [[Maesyn Trueshot]]
+|-
+! ''' Minimum Level: '''
+| 35
+|-
+! ''' Classes: '''
+| [[Ranger]]
+|-
+! ''' Related Zones: '''
+| [[Ak'Anon]], [[Cazic Thule]], [[Kedge Keep]], [[Lesser Faydark]], [[Felwithe]], [[The Feerrott]], [[Freeport|West Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Jyle Windshot]], [[Kinool Goldsinger]], [[Ping Fuzzlecutter]], [[Princess Joleena]], [[Sanfyrd Featherhead]], [[a golden haired mermaid]], [[a hulking gorilla]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Mane Attraction}}
+</li><li> {{:Rain Caller}}
+</li></ul>
+
+== Checklist ==
+{{CheckboxList}}
+* '''The Toupee'''
+** Obtain [[Trueshot Longbow]] through prerequisite quests
+** Obtain [[Crate for Tonics]] from [[Sanfyrd Featherhead]] in [[Ak'Anon]]
+** Obtain 10x [[Fuzzlecutter Formula 5000]] and combine in Crate (to yield [[Crate of Tonic]])
+** Obtain [[A Wooden Heart]] 
+*** Loot from either [[a treant]] (Karanas),
+*** OR [[Jyle Windshot]] (West Freeport Version) by handing him [[Small Lantern]]s ''(about ~10% chance to get the heart per lantern)''.
+** Turn in Tonic Crate to Sanfyrd (to receive [[Tattered Toupee]])
+
+* '''The Pouch'''
+** Obtain 2x [[Clump of Gorilla Hair]] from [[A Hulking Gorilla]] in [[Cazic Thule]]
+** Obtain a [[Lock of Hair]] from [[Golden_Haired_Mermaid|A Golden Haired Mermaid]] in [[Kedge Keep]]
+** Turn in Toupee, Gorilla Hairs and a Mermaid Lock to [[Ping Fuzzlecutter]] (to receive [[Mane Attraction]])
+** Turn in Mane to Sanfyrd (to receive [[A Glimmering Fairie Wing]])
+** Turn in Glimmering Wing to [[Princess Joleena]] (to receive [[Pouch of Gold Dust]])
+
+* '''The Kinool Reward'''
+** Turn in Gold Dust, Wooden Heart, Trueshot Longbow, and 3000 '''gold''' pieces to [[Kinool Goldsinger]] (to receive [[Rain Caller]])
+
+== Walkthrough ==
+
+''At the end of the Trueshot Longbow quest, [[Maesyn Trueshot]] mentioned a next incarnation of the bow.'' ''(Optional)''
+
+You say, 'What is the next incarnation?'
+
+: [[Maesyn Trueshot]] says 'The Trueshot Longbow was once enchanted by the Koada'Dal enchanters.  Once it was enchanted now it is no more.  I am sure if you were ask the Koada'Dal [where the enchanted bows] are you will get an answer.'
+
+'''Go to Felwithe. [[Kinool Goldsinger]] may be found in the Enchanter guild.''' ''(Optional)''
+
+You say, 'Where can I get an Enchanted Bow?'
+
+: Kinool Goldsinger says 'Alas... Another ranger in search of the [Rain Caller]. She is no more.'
+
+You say, 'What is the Rain Caller?'
+
+: Kinool Goldsinger says 'Rain Caller is the name we give each Trueshot longbow once it is enchanted. Unfortunately, I am unable to enchant them any longer. One of the components is no longer available. Someone would have to strike a [deal with the fairie folk]. Once I have that and the [remaining components] I can create the Rain Caller, a ranger's bow.'
+
+You say, 'What deal with the fairie folk?'
+
+: Kinool Goldsinger says 'The fairie princess, Joleena, used to have a metal gnome deliver [fairie gold dust] to the Keepers every month. She has stopped this and now refuses to offer it to any nation of Faydwer. What she is angry about, we do not know.'
+
+You say, 'What fairie gold dust?'
+
+: Kinool Goldsinger says 'Fairie gold dust is an enchanted powder which only a fairie princess can create.'
+
+You say, 'What remaining components?'
+
+: Kinool Goldsinger says 'The remaining components are the Trueshot longbow and a treant heart. There will also be the guild donation in the amount of 3000 gold coins. These and the [fairie gold dust] will merit a ranger the Rain Caller enchanted bow.'
+
+'''[[Princess Joleena]] may be found in the Lesser Faydark.''' ''(Optional)''
+
+You say, 'Hail, Princess Joleena'
+
+: Princess Joleena says 'I am the Fairie Princess, Joleena. You may stay amongst my people, but do not nibble from our homes.'
+
+You say, 'I want fairie gold dust.'
+
+: Princess Joleena says 'You wish the magical Fairie Gold Dust? Hmmph!! I refuse to offer it to any of the giants of Faydwer. How can I trust any of you. You have crept up upon my me and snatched one of my wings from my back. There will be no Fairie Gold Dust until my wing has been returned to me. You may not be the stalker [who snatched my wing], but all you giants are similar. Prove me wrong and return my wing.'
+
+You say, 'Who snatched your wing?'
+
+: Princess Joleena says 'I did not see the swift giant, I was blinded by the sun glaring off his balding head. I do remember the smell of rust and refuse. How he got past my Clockwork Guardian, Gearheart, is a mystery to us all.'
+
+'''The bald "giant" she's talking about is [[Sanfyrd Featherhead]] in Ak'Anon.'''
+
+You say, 'Hail, Sanfyrd Featherhead'
+
+: Sanfyrd Featherhead says 'Greetings. I am the operator of this Scrapyard. If you have any Scrap Metal I would be glad to purchase it from you in loads of four. The Gemchoppers no longer allow me to accept Blackbox Fragments and Micro Servos.'
+
+You say, 'Do you know where Princess Joleena's wing is?'
+
+: Sanfyrd Featherhead says 'No!! You cannot have my magic Fairie Wing!! I need it. I read somewhere within the great library that the magic wing from a fairie princess will restore my full head of hair. Look at me!! I am bald!! I have no [friends] at all.'
+
+You say, 'I am your friend.'
+
+: Sanfyrd Featherhead says 'Oh. You are just saying that so you can get my fairie wing. I will make you a deal. I cannot rely on this wing forever. I will trade it with you if you could get me a case of hair tonic. If you are a true friend you [will fetch the hair tonic] for me.'
+
+You say, 'I will fetch the hair tonic.'
+
+: Sanfyrd Featherhead says 'Great!! Here you go, my friend. Take this crate and within you shall fill each slot with hair tonic. When all are combined within the crate, return it to me for your wing. I am not sure what the tonic was or where I got it. There is some writing on the crate, but I could not identify it.'
+
+'''You receive a [[Crate for Tonics]], a 10-slot SMALL container. <br>
+'''You must now go to Freeport.  [[Ping Fuzzlecutter]] is a gnome merchant located outside the west gate.  Buy 10 of [[Fuzzlecutter Formula 5000]] from him, enough to fill the crate, then hit combine to craft a [[Crate of Tonic]]. '''
+
+'''While you're in West Freeport, find [[Jyle Windshot]] and keep giving [[Small Lantern]]s to him until he gives you [[A Wooden Heart]], which identifies as "A Treant Heart." '''
+
+'''You can also obtain them as rare drops from treants, but rangers shouldn't kill treants, so that isn't really an option.<br> 
+Upon turning in 1 small lantern: 
+
+: Jyle Windshot says, 'Thanks, friend. I have run a long way to get here in time. Mostly at night. I lost my lantern in a card game in Highkeep.'
+<div class="facblock">
+* Your faction standing with [[Faydarks Champions]] has been adjusted by 1.
+* Your faction standing with [[King Tearis Thex]] has been adjusted by 1.
+* Your faction standing with [[Clerics of Tunare]] has been adjusted by 1.
+* Your faction standing with [[Soldiers of Tunare]] has been adjusted by 1.
+* Your faction standing with [[Crushbone Orcs]] has been adjusted by -1.
+</div>
+{{YouGainExperience}} <br>
+<br>
+'''Once you have everything, head back to [[Sanfyrd Featherhead]] in [[Akanon]] and give him the [[Crate of Tonic]].'''
+
+: Sanfyrd Featherhead says 'Huzzah!! You are my friend. Now you can take my old toupee and get it repaired. Just go to Freeport and ask Ping to [repair the toupee]. Hey!! You know what? He is the guy who sells the hair tonic!! I remember now. Well,.. Get my toupee repaired and I will give you the fairie wing.'
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] has been adjusted by 1.
+* Your faction standing with [[Merchants of Ak'Anon]] has been adjusted by 1.
+* Your faction standing with [[King Ak'Anon]] has been adjusted by 1.
+* Your faction standing with [[Dark Reflection]] has been adjusted by -1.
+* Your faction standing with [[Clan Grikbar]] has been adjusted by -1.
+</div>
+
+
+'''You receive a [[Tattered Toupee]], which identifies as "Sanfyrd's Used Toupee." <br>
+<br>
+'''Head back to [[West Freeport]] and [[Ping Fuzzlecutter]].'''
+
+You say, 'Can you repair the toupee?'
+
+: Ping Fuzzlecutter says 'Ah!! You have a toupee to repair. It must be the [Mane Attraction]. I gave one out and it seems to always fall to pieces. Seeing as it has a 100 season warranty and I only created it 5 seasons ago, I suppose I can do it. Do you want me to [make the Mane Attraction]?'
+
+You say, 'What is the Mane Attraction?'
+
+: Ping Fuzzlecutter says 'The [[Mane Attraction]] is a special toupee I created for a Gnome junker. He wasn't getting much attention at the taverns till I created the eye-catching toupee. He became one charismatic Gnome after that. Unfortunately, it seems to fall to pieces too easily and since it has a warranty, I have to fix it for him every time at no charge!! I will never make another.'
+
+You say, 'I want you to make the Mane Attraction.'
+
+: Ping Fuzzlecutter says 'If you have the original tattered toupee then I can do it. Before you give it to me I will also need three other items. I require two clumps of hair from a Hulking Gorilla and a strand of hair from a [certain mermaid].'
+
+You say, 'What certain mermaid?'
+
+: Ping Fuzzlecutter says 'I encountered a particular mermaid with beautiful hair!! She had beautiful golden tresses. I used a lock of her hair to create the Mane Attraction. That was a while back when I was in Faydwer.'
+
+* [[A Hulking Gorilla]] may be found in the [[Cazic Thule]].
+* [[A Golden Haired Mermaid]] may be found in [[Kedge Keep]].  She drops A [[Lock of Hair]].
+
+'''Give the [[Tattered Toupee]], the Two [[Clump of Gorilla Hair]] and the [[Lock of Hair]] to [[Ping Fuzzlecutter]].'''
+
+:Ping Fuzzlecutter says 'You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guaranteed to lower prices world wide. Guaranteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.'
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk]] has been adjusted by 5.
+* Your faction standing with [[Knights of Truth]] has been adjusted by 5.
+* Your faction standing with [[Merchants of Qeynos]] has been adjusted by 5. (PLEASE CONFIRM THIS NUMBER)
+* Your faction standing with [[Coalition of Underground Tradefolk]] has been adjusted by 5.
+</div>
+{{YouGainExperience}}
+
+'''You receive the [[Mane Attraction]]. <br>
+<br>
+'''Head back to [[Sanfyrd Featherhead]] in [[Akanon]] and give the [[Mane Attraction]] to him.'''
+
+:Sanfyrd Featherhead says 'Double Huzzah!! You are a good friend ______. Now mayhaps I shall find myself a wife. Here pal, the fairy wing. I hope it can give you a great head of hair. You need it.'
+
+<div class="facblock">
+* Your faction standing with [[Gem Choppers]] got better.
+* Your faction standing with [[Merchants of Ak'Anon]] got better.
+* Your faction standing with [[King Ak'Anon]] got better.
+* Your faction standing with [[Dark Reflection]] got worse.
+</div>
+{{YouGainExperience}}
+
+'''You receive [[A Glimmering Fairie Wing]], which identifies as "Princess Joleena's Wing."  <br>
+<br>
+'''Head back to [[Lesser Faydark]] and hand [[Princess Joleena]] her [[A Glimmering Fairie Wing]]'''<br>
+''Note* as a Ranger who was KOS to Fairies, I was able to do the turn in by casting Harmony on the whole Fairie village. Cast Superior Camouflage to invis yourself, stand behind Princess Joleena. Sneak. Open Trade window with Glimmering Fairie Wing, recast Invis. Complete the turn in.''<br>
+:Princess Joleena says 'My wing!! I am so happy!! Thank you ____. You have proved that I can trust giants once again. Please take a Pouch of Fairie Gold Dust. Its magical properties are desired by all.'
+
+<div class="facblock">
+* Your faction standing with [[Fairie]] got better.
+</div>
+{{YouGainExperience}}
+
+'''You receive a [[Pouch of Gold Dust]], which identifies as "Fairie Gold Dust." <br>
+<br>
+''' Head back to [[South Felwithe]] to see [[Kinool Goldsinger]] and give him the [[Pouch of Gold Dust]],  [[A Wooden Heart]], the [[Trueshot Longbow]], and 3000 GOLD Pieces.'''
+
+Kinool Goldsinger says 'Fine work!! I now reward you with The {{:Rain Caller}}.'<br>
+<div class="facblock">
+* Your faction standing with [[Keepers of the Art]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[The Dead]] got worse.
+</div>
+{{YouGainExperience}}
+-
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Ranger Quests]]

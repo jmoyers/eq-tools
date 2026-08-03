@@ -1,0 +1,56 @@
+{{Classic Era}}
+[[File:npc_captain_orben.png|frame|Captain Orben]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Highpass Hold]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Orben]]
+|-
+! ''' Minimum Level: '''
+| 11
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| gnolls
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]], Coin, Experience
+</li></ul>
+
+== Walkthrough ==
+
+:Note: You must have '''dubious''' or better [[faction]] with Captain Orben or he will not accept it. You'll see the message:
+: ''Captain Orben says, 'I will not aid beings such as you.'''
+
+Captain Orben is found around the northern guard lookout/arch/bridge area, near the zoneline with Eastern Plains of Karana. He's often surrounded by gnolls. 
+
+Captain Orben collects [[Gnoll Scalp]]s.  He will give you some coins from 4sp up to 1pp and experience. You will raise faction with these groups:
+
+<div class='facblock'>
+* Your faction standing with [[Corrupt Qeynos Guards]] has gotten better. (+2)
+* Your faction standing with [[Freeport Militia]] has gotten better. (+1)
+* Your faction standing with [[Highpass Guards]] has gotten better. (+1)
+* Your faction standing with [[Merchants of Highpass]] has gotten better. (+1)
+* Your faction standing with [[Carson McCabe]] has gotten better. (+1)
+</div>
+{{YouGainExperience}}
+
+'''You may turn in up to four at once.'''
+
+This is a great way to improve faction with the shadier groups without losing any with the good groups.
+
+==See Also==
+*[[Orc Scalp Collecting]]
+*[[Left Goblin Ears]]
+
+[[Category:Quests]]
+[[Category:Highpass Hold]]
+[[Category:All Classes Quests]]

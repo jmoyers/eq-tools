@@ -1,0 +1,50 @@
+{{Velious Era}}
+[[File:npc_lord_prismwing.png|frame|Lord Prismwing]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Wakening Land]]
+|-
+! ''' Quest Giver: '''
+| [[Lord Prismwing]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Ranger]], [[Druid]]
+|-
+! ''' Related Zones: '''
+| [[Cobalt Scar]]
+|-
+! ''' Related NPCs: '''
+| [[Yvolcarn]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Crest of the Drixie}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'Hail, Lord Prismwing'
+
+: Lord Prismwing flutters his wings rapidly sending shimmering dust through the air around you. Although he speaks in high pitched chirps you somehow understand his meaning. Hello Jaeden , I am the Count of the Tunarean Drixies. Are you a friend of the Tunarean Court? 
+
+You say, 'I am a friend of the court'
+
+: Lord Prismwing says 'I am in need of some help. One of my heralds was sent to deliver a message to the Othmir in the Cobalt Scar some time ago and has not returned. I fear for his safety, if your travels should lead you in that direction please attempt to find news of my missing herald. 
+
+Head to Cobalt Scar and kill the dreaded [[Yvolcarn]] (52nd level warrior type, doesn't summon, is immune to changes in run speed). As a 60 Druid there was no difficulty pulling him down to the beach and running him in circles loaded up with [[Winged Death]], [[Breath of Ro]], and [[Drones of Doom]]. Some have expressed difficulty landing Breath of Ro and so Fiery Sundering may be useful. With a C2, PotG, Mask of the Hunter, and strategic sitting on a tick mana was nothing of an issue. Loot the [[Drixie Remains]] off him. Note that killing Yvolcarn carries a fairly large Claws of Veeshan and [[Yelinak]] faction hit.
+
+Give the remains to Prismwing and receive a Crest of the Drixie.
+
+: Lord Prismwing says 'This is sad news you have returned to the court, but now his body may be laid to rest in the soil of Tunares[sic] land."
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+{{exp}}
+</div>
+
+[[Category:Quests]]
+[[Category:The Wakening Land]]

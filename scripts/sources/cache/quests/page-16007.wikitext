@@ -1,0 +1,65 @@
+
+[[File:npc_isolde_winterveil.png|300px|right|Isolde Winterveil]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Eastern Wastes]]
+|-
+! ''' Quest Giver: '''
+| [[Isolde Winterveil]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| ??
+|-
+! ''' Related Zones: '''
+| [[Eastern Wastes]], [[Qeynos Hills]]
+|-
+! ''' Related NPCs: '''
+| [[Guard Lammel]]
+|-
+| ''' GM Event: '''
+| [[The Cracking of the Icestar]]
+|}
+
+== Reward ==
+
+* [[Chapter V, Ashes in the Margins]]
+* [[Holiday Gift]]*
+
+== Walkthrough ==
+
+You say, 'Hail, Isolde Winterveil'
+: Isolde Winterveil says, 'The Icestar remembers much — but it is not whole. And so, some names fade. There is one… a good soul, long unthanked. His name is gone from my memory, but I've felt the echo. [Take this shard] of memory. It may stir something in someone who once knew him.'
+
+You say, 'I will take this shard.'
+: Isolde Winterveil says, 'Thank you, Norrathian. Please [find] the one whose name is forgotten.'
+You say, 'Find who?'
+: Isolde Winterveil says, 'I remember snow. Mountains... no — hills. A patrol along an old road. He served without praise, yet never faltered. There is a guard in the hills that surround Qeynos. I think his name began with an L? Lamet? Lamile? Something like that. Do you see how memory decays without the Icestar's light? Making it whole again is no longer a wish — it's a necessity. Before more names are lost. Bring me back anything that can help restore this memory.'
+
+You receive [[Frosted Memory Shard]]
+
+You say, 'Hail, [[Guard Lammel]]'
+: Guard Lammel says, 'I've wandered these hills for many years. Seen many things.'
+: Guard Lammel says, '...That mark... I haven't seen it in years. There was a fellow. Younger. Always volunteered for the winter watch. Shared his cloak with a merchant once. Dug out a buried traveler near Blackburrow without orders. No one ever remembered his name. Not even me. While the name escapes me, the memory does not. He [mattered].'
+
+You say, 'Who mattered?'
+
+: Guard Lammel says, 'Thank you. Yes, If someone out there still holds a memory of him, he mattered for sure. The memory of him warms my heart once again. Here, take this broach - it was his. I’ve held onto it in my backpack for years now in case I ever ran into him again. Maybe you can find him now.'
+
+Give [[Guard Lammel]] the [[Frosted Memory Shard]].
+
+You receive a [[Frosted Broach]]. Return to Eastern Waste and turn in a [[Frosted Broach]] to Isolde Winterveil.
+
+Upon turning in Frosted Broach to Isolde Winterviel, 
+
+: Isolde Winterveil places the broach on a frozen tablet. It dissolves into silver light, etching new text onto a frosted page. She says, 'Then the echo has found its voice. Another soul no longer lost. The margins of the preamble grow fuller. And the Icestar shines a little brighter.'
+
+You receive [[Chapter V, Ashes in the Margins]] and a [[Holiday Gift]]*.
+
+
+'''* NOTE: You will only receive the Holiday Gift from this quest the first time you complete it. Due to abuse of the questline, repeatable attempts had the Holiday Gift removed.'''
+
+[[Category:Quests]]
+[[Category:Eastern Wastes]]

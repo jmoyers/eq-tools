@@ -1,0 +1,165 @@
+{{Classic Era}}
+[[File:npc_marda.png|frame|Marda]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Oggok]]
+|-
+! ''' Quest Giver: '''
+| [[Marda]]
+|-
+! ''' Minimum Level: '''
+| 9
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]], [[Northern Desert of Ro]]
+|-
+! ''' Related NPCs: '''
+| [[Dorn B`Dynn]], [[Forager Grikk]], [[Zimbittle]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Drowsy|Spell: Drowsy]]
+</li><li> [[Endure Disease|Spell: Endure Disease]]
+</li><li> [[Spirit of Bear|Spell: Spirit of Bear]]
+</li><li> [[Summon Drink|Spell: Summon Drink]]
+</li></ul>
+
+== Walkthrough ==
+
+{{expand}}
+
+This quest begins with [[Marda]] in the Shaman guild hall of Oggok.
+
+After completing the captain necklace turn-in with Emissary Glib in the quest, [[The Emissary]], he says:
+
+[[Emissary Glib]] says 'Oooh!! .. You have dispatched the slayer captain. It will take them time to reorganize the slayers. During this time the froglok foragers can gather more provisions for Guk. Please take this as a token of my people's appreciation. Your standing with my brethren has grown. As for Marda's information.. within Grobb lies my aide, Groak. He was captured. Tell him Glib sent you.' 
+
+The froglok he refers to is [[a prisoner]] who's found near the jewelry vendor in Grobb. Say to him, "Glib sent me".
+
+You say, 'Hail, a prisoner'
+
+: [[a prisoner]] says 'Rrrribit.. Please, let me go!! I don't want to be eaten!!'
+
+You say, 'Glib sent me'
+
+: a prisoner says 'Liessss. ...Groakk.. I do not believe you!! Bring me proof. Bring me the necklace of a basher!! ..Groakk..'
+
+He tells you he doesn't believe you and to prove you are legitimate. To prove it to him, hand him the necklace of a Troll basher. This is the "[[Intestine Necklace]]" that drops from Basher guards in Grobb and in Innothule Swamp.
+
+Upon handing in the necklace, he gives you an Empty Vial to be taken to Forager Grikk in Innothule Swamp. (you may also receive a Hopper Spear for this turn-in):
+
+a prisoner .Groak.. So you are a friend to the froglok. ..Grooakk.. I am soon to die. My precious legs are a delicacy here. Before I go I must contact my brother Grikk. He is a froglok forager in Innothule. Give him this vial. He will know what it means.
+
+<div class="facblock">
+* Your faction standing with [[Oggok Citizens]] got better.
+</div> 
+{{exp}}
+
+You receive [[Empty Vial]] ["Groak's Empty Vial"].
+
+Take the vial to [[Forager Grikk]].
+
+You say, 'Hail, Forager Grikk'
+
+: Forager Grikk says 'Grikk.. Please leave me be. I but a humble forager. My people are starving.'
+
+: Forager Grikk says 'grrrikk.. This is Groak's vial!! He must be in danger. Here. Return this liquid to him. Be quick!'
+
+{{exp}}
+
+You receive "Ochre Liquid" which you need to take back to the prisoner
+
+: a prisoner .Grooak.. You have done much to help me. This will come in handy soon. Thank you. Here is Marda's information. Take it to her. They must know. Farewell. 
+
+<div class="facblock">
+* Your faction standing with [[Oggok Citizens]] got better.
+</div> 
+{{exp}}
+
+The prisoner will then give you one of two different possible notes (both have the same outcome).
+
+'''Zimbittle'''
+
+One possible note involves [[Zimbittle]] (a female troll in Innothule Swamp) and how she's teaching the Lizardman Mystics to fight Ogres. Take the note to Marda who will insist you kill [[Zimbittle]]:
+
+: Marda says 'I see you finally decided to return. Hmmm. What is this? Those little hoppers have done well. What!! So the troll scum have been aiding our foes, the lizards!! The lizard mystics are trained by this troll shaman called [[Zimbittle]]. Find him!! Kill him. Bring me his shaman pouch!! Now!!'
+
+<div class="facblock">
+* Your faction standing with [[Shamen of War]] got better.
+</div> 
+
+You receive a low level spell at this point.
+
+Return to her with [[Zimbittle's Pouch]] as proof of her death:
+
+: Marda says ' Ahhh!! Good work. You are a bright one. Now let us see if you can master this spell. Learn it well and may it bring you much glory.'
+
+<div class="facblock">
+* Your faction standing with [[Shamen of War]] got better.
+</div> 
+
+You receive another low level spell.
+
+'''Dorn B`Dynn'''
+
+The other possible note involves [[Dorn B`Dynn]] (a dark elf in North Ro).
+
+You receive 'A Tattered Cloth Note' that reads:
+
+ Nothern Desert of Ro B'Dynn Dervish Camp near shore. MUKK 
+
+Upon handing this note to Marda:
+
+: Marda says 'What is this? More information? There seems to be a larger plan in the making. B'Dynn sounds like a Dark Elf name. I do not like the sound of this. You must go quickly to North Ro. Find this Dark Elf. Find out what he knows, any way you can.'
+
+<div class="facblock">
+* Your faction standing with [[Shamen of War]] got better.
+</div> 
+
+You receive a low level spell at this point.
+
+Take the note to Dorn B`Dynn in North Ro:
+
+: [[Dorn B`Dynn]] says 'Just who are you? Do you expect some sort of courteous greeting? I have no time for idle chitchat!! Either you are here to attend to business or you seek shelter, which is it?'
+
+You say, ' I am here to attend to business'
+
+: Dorn B`Dynn says 'So, business is your mission! I have never met you. Who sent you?'
+
+You say, 'Zimbittle sent me'
+
+: Dorn B`Dynn says 'I do not know if I could trust you. You certainly do not look as though you are from Grobb, although your stench does hint of that place. If you are truly sent by Zimbittle, what is the passwrod?'
+
+You say, 'Mukk'
+
+: Dorn B'Dynn says 'So you were sent by Zimbittle. Take this note Kraagia of Da Bashers in Grobb. Do not lose the note. If it were to fall into the wrong hands of [Goonda], this whole plan could be disrupted. Now, leave, I can no longer tolerate you foul stench!'
+
+You receive a sealed note (called what?) that reads:
+
+ Dorn, it is imperative for Grobb to send a small detachment of Bashers to raid the ogre encampment in the Western Plains of Karana.
+ During the melee, an Ogre traitor shall retrieve the Crystal Shard from the stone and return it Neriak Foreign Quarter. Do so at once.
+ Let no one keep the traitor from his escape. Beware the Oggok Shaman Marda has dispatched an agent also.
+ Nezzka Tolax The Dead
+
+You say, 'Who is Goonda?'
+
+: Dorn B'Dynn says 'In the western planes of Karana, you will find Goonda. He seems to be the Ogre shaman in charge out there.'
+
+If you take this note to Marda, she'll tell you to kill [[Zimbittle]] and bring proof of her death. Upon turning in [[Zimbittle's Pouch]] to Marda:
+
+'''NOTE: This isn't true. Marda does not accept the note, and this little side quest is broken here and on live.'''
+
+: Marda says ' Ahhh!! Good work. You are a bright one. Now let us see if you can master this spell. Learn it well and may it bring you much glory.'
+
+<div class="facblock">
+* Your faction standing with [[Shamen of War]] got better.
+</div> 
+
+You receive a low level spell.
+
+[[Category:Quests]]
+[[Category:Oggok]]

@@ -1,0 +1,164 @@
+[[File:Holwin.png|right|200px|thumb|]]
+'''Note:''' Most quests in the Plane of Sky require two items. One of those items will be a wind rune and can be found on any mob as a random drop in the Plane of Sky. The second item you need is from an island boss, they are rare drops. Some quests require a third ''Efreeti'' weapon which is also attained from island bosses in the Plane of Sky.
+
+'''To reach the quest room find the ('''[[Key Master]]''') near where you zoned in on island 1 and purchase an [[Efreeti's Key]]. It is free and looks like a [[Jade]]. After you have the key left click on the teleportation pad at the North point of the island, around  [[Plane of Sky|1600, 520]] .''' You only need to buy the key one time and it will be saved to your character.
+
+'''Find''' '''Holwin and Hail him. He will tell you about the quests he has to offer. Reading his dialogue is optional and you can simply hand him your quest items.'''
+
+== Checklist ==
+Bold item names indicate No Drop items. {{CheckboxList}}<ul>
+
+'''Test of Strength:'''
+<li>Reward: {{:Back Straps of Mastery}}
+  <ul>
+  <li><span style="font-weight: bold">[[wind rune caza]]</span>
+  <li><span style="font-weight: bold">{{:Silken Strands}}</span> Island 3 - ('''[[Gorgalosk]]''')
+  </ul>
+</ul>
+<ul>
+'''Test of Sight:'''
+<li>Reward: {{:Ton Po's Eye Patch}}
+  <ul>
+  <li><span style="font-weight: bold">[[wind rune geza]]</span>
+  <li><span style="font-weight: bold">{{:Cracked Leather Eyepatch}}</span> Island 4 - ('''[[Keeper of Souls]]''')
+   </ul>
+</ul>
+<ul>
+'''Test of Speed:'''
+<li>Reward: {{:Sandals of Alacrity}}
+<ul>
+  <li><span style="font-weight: bold">[[wind rune jaka]]</span>
+  <li><span style="font-weight: bold">{{:Dove Slippers}}</span> Island 5 - ('''[[The Spiroc Lord]]''')
+</ul>
+</ul>
+<ul>
+'''Test of Tears:'''
+<li>Reward: {{:Ton Po's Shoulder Wraps}}
+  <ul>
+  <li><span style="font-weight: bold">[[wind rune beza]]</span>
+  <li><span style ="font-weight: bold">{{:Silken Wrap}}</span> Island 6 - ('''[[Bazzt Zzzt]]''')
+  </ul>
+</ul>
+<ul>
+'''Test of Fists:'''
+<li>Reward: {{:Wu's Fist of Mastery}}
+  <ul>
+  <li><span style="font-weight: bold">[[wind rune neza]]</span>
+  <li>{{:Brass Knuckles}} Islands 1.5, 4 and 8 - ('''[[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]]''')
+  <li><span style="font-weight: bold">{{:Nebulous Sapphire}}</span> Island 7 -  ('''[[Sister of the Spire]]''')
+  </ul>
+</ul>
+<ul>
+'''Test of Tranquility:'''
+<li>Reward: {{:Golden Sash of Tranquility}}
+  <ul>
+  <li><span style="font-weight: bold">[[wind rune lena]]</span>
+  <li><span style="font-weight: bold">{{:Tear of Quellious}}</span> Island 8 - ('''[[Eye of Veeshan]]''')
+  </ul>
+</ul>
+
+==Quest Start==
+
+Talk to Holwin in the [[Plane of Sky]].
+
+You say, 'Hail, Holwin'
+:''Holwin says, 'Peace to you, Gand.  I see that you have come far along the path of tranquility and enlightenment.  Do you wish to [test] yourself further, and perhaps complete the path you started on so long ago?' ''
+You say, 'I wish to test myself further and complete the path of tranquility and enlightenment'
+:''Holwin says 'Do you wish to follow the path of Ton Po or Wu?  The path of Ton Po, known for his uncanny abilities, consists of three trials. [Strength], [sight], and [speed]. The path of Wu, known for his introspection, has three further trials.  [Tears], [fists], and [tranquility].  Now, choose.''
+
+== Monk Test of Strength ==
+You say, 'Strength'
+
+Holwin says, 'So be it, the test of strength you shall have. Bring to me some silken strands and a wind rune caza.  The task will not be easy, but it should serve as an adequate test of strength, for one of your abilities.' 
+
+'''Reward:''' {{:Back Straps of Mastery}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+|-
+| [[wind rune caza]] || random drop || Plane of Sky
+|-
+| [[Silken Strands]] || [[Gorgalosk]] || Island 3
+|}
+
+== Monk Test of Sight ==
+You say, 'sight'
+
+Holwin says, 'The test of sight is a test of both body and mind.  The mind will allow you to see that which is usually invisible.  Bring me a cracked leather eyepatch and a wind rune geza and I will assist you in seeing what should not be seen.'
+
+'''Reward:''' {{:Ton Po's Eye Patch}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[wind rune geza]] || random drop || Plane of Sky
+|-
+| [[Cracked Leather Eyepatch]] || [[Keeper of Souls]] || Island 4
+|}
+
+== Monk Test of Speed ==
+You say, 'speed'
+
+Holwin says, 'The test of speed.  Every monk must be swift if he is to best his opponent.  Speed in both mind and body is essential in many facets of life.  Return to me some dove slippers and a wind rune jaka and I shall aid your speed of mind.'
+
+'''Reward:''' {{:Sandals of Alacrity}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[wind rune jaka]] || random drop || Plane of Sky
+|-
+| [[Dove Slippers]] || [[The Spiroc Lord]] || Island 5
+|}
+
+== Monk Test of Tears ==
+You say, 'Tears'
+
+Holwin says, 'The test of tears involves knowing when to release, and when to provide a shoulder for another.  Bring me a silken wrap and a wind rune beza.  I will teach you the way.' 
+
+'''Reward:''' {{:Ton Po's Shoulder Wraps}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[wind rune beza]] || random drop || Plane of Sky
+|-
+| [[Silken Wrap]] || [[Bazzt Zzzt]] || Island 6
+|}
+
+== Monk Test of Fists ==
+You say, 'fists'
+
+Holwin says, 'A monk must know when to use his or her fists, and when to use the mind.  In this endeavor, you must decide which you shall use.  Return to me, once you have found them, a pair of brass knuckles, nebulous sapphire and a wind rune neza.'
+
+'''Reward:''' {{:Wu's Fist of Mastery}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[rune neza]] || random drop || Plane of Sky
+|-
+| [[Brass Knuckles]] || [[Noble Dojorn]], [[Overseer of Air]], [[the Hand of Veeshan]] || Islands 1.5, 4 and 8
+|-
+| [[Nebulous Sapphire]] || [[Sister of the Spire]] || Island 7
+|}
+
+== Monk Test of Tranquility ==
+You say, 'tranquility'
+
+Holwin says, 'Ah, the test of tranquility.  Only the tranquil monk can achieve enlightenment.  Are you such an individual?  Time shall tell.  Retrieve these items for me.  Bring a Tear of Quellious, and a wind rune lena.  Then we shall assess your ability.' 
+
+'''Reward:''' {{:Golden Sash of Tranquility}}
+
+{| class="eoTable3"
+! Item || Who || Where
+|-
+| [[wind rune lena]] || random drop || Plane of Sky
+|-
+| [[Tear of Quellious]] || [[Eye of Veeshan]] || Island 8 
+|}
+
+[[Category: Quests]]
+[[Category:Plane of Sky]]
+[[Category:Monk Quests]]

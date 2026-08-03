@@ -1,0 +1,65 @@
+{{Paineel Era}}
+[[File:npc_dzan_amo.png|frame|Dzan Amo]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Dzan Amo]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Cleric]]
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a bat]], [[a fire beetle]]
+|}
+
+== Reward ==
+
+<ul>
+
+<li>[[Cure Poison|Spell: Cure Poison]]</li>
+<li>[[Divine Aura|Spell: Divine Aura]]</li>
+<li>[[Flash of Light|Spell: Flash of Light]]</li>
+<li>[[Lull|Spell: Lull]]</li>
+<li>[[Spook the Dead|Spell: Spook the Dead]]</li>
+<li>[[Strike|Spell: Strike]]</li>
+<li>[[True North|Spell: True North]]</li>
+<li>[[Yaulp|Spell: Yaulp]]</li>
+</ul>
+
+== Walkthrough ==
+''[[Dzan Amo]] is located in the Tabernacle of Terror.''
+
+You say, 'Hail, Dzan Amo'
+
+: Dzan Amo says, 'Welcome to the Tabernacle of Terror. Perhaps you can control your fear long enough to be of [service] to us.'
+
+You say, 'What service?'
+
+: Dzan Amo says, 'I need some things fetched from the creatures just outside our city for some ritual experimentation. Bring me two tufts of bat fur and two fire beetle legs and I will school you in the ways of terror.'
+
+You hand in 2 'Bat Fur' and 2 "Fire Beetle Leg'
+: Dzan Amo says, 'I need no fewer than four infected rat livers!! Now, go get me what I require!!'
+: Dzan Amo says, 'I need no fewer than four infected rat livers!! Now, go get me what I require!!'
+: Dzan Amo says, 'I need no fewer than four infected rat livers!! Now, go get me what I require!!'
+: Dzan Amo says, 'Very good young one. Here is something to assist in your studies of the principles of terror.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Cleric Quests]]

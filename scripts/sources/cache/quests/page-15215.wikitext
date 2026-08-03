@@ -1,0 +1,67 @@
+__NOTOC__
+{{Classic Era}}
+[[File:npc_lokar_tobiath.png|frame|Lokar To`Biath ]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Lokar To`Biath]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All 
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| [[Lokar To`Biath]]
+|}
+
+== Rewards ==
+
+* [[Faction]]
+
+== Walkthrough ==
+
+''Must be Apprehensive to [[Dark Bargainers]]''
+
+''Find [[Lokar To`Biath]] in the library of the 3rd Gate at +895, -1245. Responded to hails as an indifferent agnostic DE enchanter.''
+
+You say, 'Hail, Lokar To`Biath.'
+
+: Lokar To`Biath says, 'I am the Scribe of Innoruuk. If you do not have business with me, begone!'
+
+You say, 'Are you a Scribe of Dal?'
+
+: Lokar To`Biath says 'The Scribes of Dal? All of them are long since [dead].. or at least most would say that.' 
+
+You say, 'Why are they Dead?' 
+
+: Lokar To`Biath says 'Perhaps, perhaps not. I cannot remember, but perhaps Innoruuk would help me remember should you tithe him a bottle of red wine from the Blind Fish.' 
+
+'''Give him a [[Red Wine]] (up to 4 unstacked). It can be from anywhere, not just the Blind Fish. The nearest bar might be the Cuisine Excelsior, which is also conveniently devoid of hostile patrons.'''
+
+: Lokar To`Biath says 'Ah, yes, let me pray to our god.. Yes, Innoruuk has given me wisdom. A Scribe of Dal still exists, disguised as a barkeep in the Blind Fish. This information will not help you though, for she has sworn a [vow] of silence and will not speak of the Dal.' 
+
+<div class="facblock">
+* Your faction standing with [[Dreadguard Outer]] got better. (+5)
+* Your faction standing with [[Dreadguard Inner]] got better. (+5)
+* Your faction standing with [[Dark Bargainers]] got better. (+10) 
+</div>
+{{YouGainExperience}}
+
+''Note: This is one of the best quests to gain faction with the [[Dark Bargainers]] ([[Neriak]] Residents) and with [[Dreadguard Outer]] and [[Dreadguard Inner]] as it boosts the factions without giving you faction loss with anyone else. 151 turn-ins will take an Iksar Necromancer or Shadow Knight from scowling to dubious with the Neriak guards. It took between 401 and 460 turn-ins to get an Iksar Monk to dubious, without any other faction work.
+
+== Related Quests ==
+
+* [[Tome of Ages]]
+* [[Evil Research]] (also gives the same faction)
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

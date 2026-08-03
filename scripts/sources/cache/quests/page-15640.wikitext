@@ -1,0 +1,77 @@
+{{Velious Era}}
+[[File:npc_sentry_emil.png|frame|Sentry Emil]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Skyshrine]]
+|-
+! ''' Quest Giver: '''
+| [[Sentry Emil]]
+|-
+! ''' Minimum Level: '''
+| -
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[The Wakening Land]]
+|-
+! ''' Related NPCs: '''
+| [[Eysa Florawhisper]]
+|}
+
+== Reward ==
+
+<ul><li>Coin</li>
+<li>Faction</li></ul>
+
+== Walkthrough ==
+Can be completed at dubious, but Emil will not give you the note without indifferent or better faction (sneak works). Note: Charm works to get the quest text and note, but you will get no faction on final turn in if Emil is charmed! 
+
+''[[Sentry Emil]] can be found in [[Skyshrine]] at (194, -781), in the room across from [[Ziglark Whisperwing]].''
+
+You say, 'Hail, Sentry Emil'
+
+: Sentry Emil says, 'Ah, hello, you must be the strangers that call yourselves friend to the Kin. Perhaps you would be interested in proving your worth?'
+
+You say, 'I am interested in proving my worth' 
+
+: Sentry Emil says, 'Good, then perhaps you wouldn't mind performing a small task then? With the betrayal of Kragen Morshire, the kin retreated from the Skyshrine and have taken up residence in the Tunare Court. Before I was called to guard the gate, I had been assigned to deliver a report to them. If you indeed wish to be friend to the kin, take this report to the Wakening. Eysa Florawhisper. She will give you a token indicating that she has received the message, return this to me and we may see a reward.'
+
+''You receive [[Note to Tunare's Court]].''
+
+'''Seek out [[Eysa Florawhisper]] in  [[The Wakening Land]] at (-962, -1697).'''
+
+You say, 'Hail, Eysa Florawhisper'
+
+: Eysa Florawhisper says, 'A pleasure to meet you. I am Countess Eysa Florawhisper of the Tunarean Court. Are you a friend of the court?'
+
+'''Hand her the [[Note to Tunare's Court]] and ignore her prompt, which is for a different quest.'''
+
+Eysa Florawhisper says, 'Ahh, why thank you, friend! We are greatful. I believe if we work together, those children of Zek can be driven back in time. Otherwise, survival hangs in the balance, for both of us. Take this token back to the sentry as a symbol of our acceptance.'
+
+<div class="facblock">
+* Your faction standing with [[Tunarean Court]] got better.
+</div>
+{{YouGainExperience}}
+
+''You receive [[Eysa's Token]].''
+
+'''Return to [[Sentry Emil]] in [[Skyshrine]] and give him [[Eysa's Token]].'''
+
+: Sentry Emil says, 'Your service is appreciated, _______. I cannot reward you well at this point but you have come closer to the kin, the citizens of Skyshrine. Continue to prove your loyalty and greater rewards you may see, perhaps the greatest of all. . . in time.' 
+
+<div class="facblock">
+* Your faction standing with [[Claws of Veeshan]] got better. (+10)
+* Your faction standing with [[Yelinak]] got better.
+* Your faction standing with [[Kromzek]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive 1 platinum, 3 gold, 7 silver, 7 copper pieces.
+
+== Notes ==
+* There are two different versions of [[Sentry Emil]], one offering the prompt for the classically unfinished [[Boysenberry Pie Quest]] and one offering the prompt for this quest.
+
+[[Category:Quests]]
+[[Category:Skyshrine]]

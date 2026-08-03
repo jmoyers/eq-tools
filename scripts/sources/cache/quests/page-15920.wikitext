@@ -1,0 +1,58 @@
+{{Delete|No longer in game}}
+
+{{Classic Era}}
+[[File:npc_priest_of_discord.png|frame|Priest of Discord]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Ak'Anon]]
+|-
+! ''' Quest Giver: '''
+| [[Priest of Discord]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Ak'Anon]]
+|-
+! ''' Related NPCs: '''
+| [[Priest of Discord]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Tome of Order and Discord}}
+</li></ul>
+
+== Walkthrough ==
+
+''The [[Priest of Discord]] is located at 497, -101 a bit inside of [[Ak'Anon]].''
+
+You say, 'Hail, Priest of Discord'
+
+: Priest of Discord says, 'Greetings, ______. Are you a child of Order? If you have come seeking the path of Discord, I require only that you give me your [Tome of Order and Discord] and I shall show you the way. Only then will you be freed from Order's confining restraints.'
+
+You say, 'What Tome of Order and Discord'
+
+: Priest of Discord says, 'The Tome of Order and Discord was penned by the seventh member of the Tribunal and has become the key to a life of Discord, in spite of the author's pitiful warnings. Do you not have one, child of Order? Would you [like to read] it?'
+
+You say, 'I would like to read it'
+
+: Priest of Discord says, 'Very well. Here you go. Simply return it to me to be released from the chains of Order.'
+
+'''Hand the [[Priest of Discord]] your copy of the [[Tome of Order and Discord]]'''
+
+: Priest of Discord says, 'I see you wish to join us in Discord! Welcome! By turning your back on the protection of Order you are now open to many more opportunities for glory and power. Remember that you can now be harmed by those who have also heard the call of Discord.'
+
+'''<div style="color:red">You are now player kill and follow the ways of Discord.</div>'''
+
+== Notes ==
+
+Your player name will now show in-game as red, instead of blue, and you will be vulnerable to other PvP players. Additionally, you can no longer be affected by beneficial spells from non-PvP players.
+
+[[Category:Quests]]
+[[Category:Ak'Anon]]
+[[Category:All Classes Quests]]

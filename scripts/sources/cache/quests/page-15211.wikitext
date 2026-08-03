@@ -1,0 +1,75 @@
+{{Classic Era}}
+[[File:npc_lady_shae.png|thumb|upright=1.7|Lady Shae]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Lady Shae]]
+|-
+! ''' Minimum Level: '''
+| 1+
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Rewards ==
+
+* [[Faction]]
+* Experience
+
+== Walkthrough ==
+
+''Lady Shae is in  [[Freeport|West Freeport]] in Hogcallers Inn at 173.41, -650.93, -87.87. She wanders to different rooms at the inn.''
+
+You say, 'Hail, Lady Shae'
+
+: Lady Shae says, 'Hello.  It is always good to meet someone new.  I am Lady Shae of the House of Dumas.  And what house are you from? Or do you hail from [no house]?'
+
+You say, 'I have no house.' 
+
+: Lady Shae says 'Good. I care not to hang around any snobs this evening. Would you be so kind as to buy me some wine?' 
+
+'''Give her four [[Red Wine]].'''
+
+: Lady Shae says, 'Oh my...  You are so kind.  I cannot tell you the last time I had so much fine wine.  Well, there was the time [[Antonius Bayle]] told me he no longer had the time for a committed relationship.  Mister big ruler of the world.  Make it to the top and find someone younger.  I know his plan.  I hate him.  I will never trust another human again.  After all that, he goes and asks me to hold on to this list for him.  Well I am glad it was taken from me by that [Dyllin].  Antonius Bayle has no ties to me any more!  Good riddance!  Oooooh! I love him.'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] has been adjusted by 5.
+* Your faction standing with [[Indigo Brotherhood]] has been adjusted by -1.
+* Your faction standing with [[Merchants of Felwithe]] has been adjusted by 5.
+* Your faction standing with [[Kelethin Merchants]] has been adjusted by 5.
+</div>
+
+{{YouGainExperience}}
+
+You say, 'Who is Dyllin?'
+
+: Lady Shae says '[[Dyllin Starsine|Dyllin]] was the name of a [[Qeynos]] guard who was sent to pick up the list I was holding for dear, sweet Antonius. He left just yesterday. If you wish to meet up with him, I heard him say he was going to stop at [[Highpass_Hold|Highpass Hold]].'
+
+'''Give her one [[White Wine]].'''
+
+: Lady Shae says, 'Thank you.  Pandos has been telling me to try white wine forever.  I mostly only drink red wine. Pardon me for getting off track.  Anyway, it is a good thing you showed up.  The lady in room two has been receiving mail from a dark elf.  You [need the mail for room two].  The innkeeper usually holds it for the guests.'
+
+<div class="facblock">
+* Your faction standing with [[Emerald Warriors]] has been adjusted by 5.
+* Your faction standing with [[Indigo Brotherhood]] has been adjusted by -1.
+* Your faction standing with [[Merchants of Felwithe]] has been adjusted by 5.
+* Your faction standing with [[Kelethin Merchants]] has been adjusted by 5.
+</div>
+
+== Related Quests ==
+* [[The Bayle List]]
+* [[Library Book]]
+* [[Hogcaller's Inn]]
+
+[[Category:Quests]]
+[[Category:West Freeport]]
+[[Category:All Classes Quests]]

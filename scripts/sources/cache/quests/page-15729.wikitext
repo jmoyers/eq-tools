@@ -1,0 +1,40 @@
+{{Classic Era}}
+{{Unsolved}}
+{{expand}}
+[[File:npc_dorn_b`dynn.png|frame|Dorn B`Dynn]]
+[[File:A_dark_elf_spy.jpg|frame|a dark elf spy]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Northern Desert of Ro]]
+|-
+! ''' Quest Giver: '''
+| [[Dorn B`Dynn]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| 
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>   need possible rewards
+</li></ul>
+
+== Walkthrough ==
+
+If you kill Dorn B'Dynn, on occasion a dark elf spy will appear and head towards the zone.  Interestingly, Dorn says something along the lines of "I can no longer
+hold this form" when he dies and the faction changes are different, so I think you actually killing a Dorn imposter.  You should have sow on at this point because he runs pretty fast.  Catch
+him and kill him and his body will crumble to dust and a spider-like critter will spring forth and head to the zone at a very fast clip.  Killing this creature gets you the Charasis Tome.  The tome gives you background on the dungeon Charisis (Howling Stones) and some clues on how to get the key to enter.  There is little practical reason to do this.
+
+Need all dialogues, faction hits if any, exact in-game name of quest items/rewards, exact in-game names of additional quest mobs.
+
+[[Category:Quests]]
+[[Category:Northern Desert of Ro]]

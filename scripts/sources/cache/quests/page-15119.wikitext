@@ -1,0 +1,164 @@
+'''Note:''' For the older versions of the rewards for these quest (prior to the 7/24/11 patch) see [[Plane of Sky Quests (Old)]].
+
+== Checklist ==
+Bold numbers indicate island bosses, while bold item names indicate No Drop items. {{CheckboxList}}<ul>
+Test of Thievery
+<li>{{:Wispy Choker of Vigor}}
+  <ul>
+  <li>1 - {{:Ivory Tessera}} ([[a thunder spirit]] - Island 1)'''
+  <li>'''2''' - {{:Gem of Invigoration}}<span style="font-weight: bold"> ([[Protector of Sky]])</span>
+  <li>'''3''' - <span style="font-weight: bold">{{:Inlaid Choker}} ([[Gorgalosk]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Silence
+<li>{{:Griffon Wing Spauldors}}
+  <ul>
+  <li>3 - {{:Pearlescent Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]])
+  <li>4 - {{:Black Griffon Feather}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]])
+  <li>'''5''' - <span style="font-weight: bold">{{:Spiroc Sky Totem}} ([[The Spiroc Lord]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Trickery
+<li>{{:Renard's Belt of Quickness}}
+  <ul>
+  <li>5 - {{:Mottled Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]] - Island 5)'''
+  <li>6 - {{:Cracked Leather Belt}} ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]]])
+  <li>7 - <span style="font-weight: bold">{{:Sphinxian Circlet}}</span> ([[Sister of the Spire]])
+  </ul>
+</ul>
+<ul>
+Test of Cunning
+<li>{{:Crystal Mask}}
+  <ul>
+  <li>2 - {{:Bronze Disc}} ([[an azarack]])
+  <li>3 - {{:Red Face Paint}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] - Island 3)
+  <li>'''4''' - <span style="font-weight: bold">{{:Jester's Mask}} ([[Keeper of Souls]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Stealth
+<li>{{:Scintillating Bracer of Protection}}
+  <ul>
+  <li>4 - {{:Pegasus Statuette}} ([[a soul harvester]], [[an essence harvester]])'''
+  <li>5 - {{:Prismatic Sphere}} ([[Spiroc Guardian]])
+  <li>'''6''' - <span style="font-weight: bold">{{:Fine Wool Cloak}} ([[Bazzt Zzzt]])</span>
+  </ul>
+</ul>
+<ul>
+Test of Deception
+<li>{{:Thornstinger}}
+  <ul>
+  <li>6 - {{:Honeyed Nectar}} ([[Bazzzazzt]] - Island 6)
+  <li>'''6''' - {{:Bixie Stinger (Bixie God's Stinger)}}  <span style="font-weight: bold">([[Bazzt Zzzt]])</span>
+  <li>7 - {{:Lightning Rod}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]])
+  <li>'''8''' - <span style="font-weight: bold">{{:Bloodsky Sapphire}}</span> ([[Eye of Veeshan]])
+  </ul>
+</ul>
+==Quests==
+Talk to Thalik Silenthand in the [[Plane of Sky]].
+
+You say, 'hail Thalik Silenthand'
+:''Thalik Silenthand says 'Greetings.  Do you believe you are a great rogue? ''
+You say, 'I am a great rogue'
+:''Thalik Silenthand says 'I will not take your word for it!  You must prove your greatness to one of my apprentices.  Do you wish to be tested by Rayne or by Kendrick? ''
+
+= Kendrick the Great =
+
+You say, 'i choose kendrick'
+:''Thalik Silenthand says 'Kendrick it shall be.  Take this book (Silent Strider) and read it.  When you are finished, hand it back to me and I shall summon the mighty rogue Kendrick to test you. ''
+:''Thalik Silenthand says 'Farewell. ''
+:''Kendrick says 'I am Kendrick the great. ''
+You say, 'hail Kendrick'
+:''Kendrick says 'Welcome, Xekl .  I am apprentice Kendrick.  Do you wish to test your abilities? ''
+You say, 'what abilities?'
+:''Kendrick says 'Great, let us waste no more time!  Do you wish to begin your test of thievery, silence , or trickery? ''
+
+== Rogue Test of Thievery ==
+
+Kendrick says 'Thievery is absolute.  Travel beyond and bring forth an ivory tessera, a gem of invigoration, and an inlaid choker to complete the test of thievery and earn the wispy choker of vigor! 
+
+'''Reward:''' {{:Wispy Choker of Vigor}}
+<ul>
+  <li>{{:Ivory Tessera}} ([[a thunder spirit]] - Island 1)'''
+  <li><span style="font-weight: bold">{{:Gem of Invigoration}}</span> ([[Protector of Sky]] - Island 2 Boss)
+  <li><span style="font-weight: bold">{{:Inlaid Choker}}</span> ([[Gorgalosk]] - Island 3 Boss)
+</ul>
+
+== Rogue Test of Silence ==
+
+Kendrick says 'Silence makes us deadly.  Proceed upward and bring to me a spiroc sky totem, a pearlescent globe, and a black griffon feather.  Griffon wing spauldors shall be yours if you complete this. 
+
+'''Reward:''' {{:Griffon Wing Spauldors}}
+
+<ul>
+  <li>{{:Pearlescent Globe}} ([[a crystalline cloud]], [[a shimmering meteor]], [[a gust of wind]] - Island 3)'''
+  <li>{{:Black Griffon Feather}} ([[a soul carrier]], [[an essence carrier]], [[a soul tamer]], [[an essence tamer]] - Island 4)
+  <li><span style="font-weight: bold">{{:Spiroc Sky Totem}}</span> ([[The Spiroc Lord]] - Island 5 Boss)
+</ul>
+
+== Rogue Test of Trickery ==
+
+Kendrick says 'Trickery, ahh, how Fizzlethorpe blesses us!  Adventure and return a mottled spiroc feather, a cracked leather belt, and a sphinxian circlet to complete the test of trickery and earn Renard's Belt of Quickness. 
+
+'''Reward:''' {{:Renard's Belt of Quickness}}
+
+<ul>
+  <li>{{:Mottled Spiroc Feather}} ([[a spiroc arbiter]], [[a spiroc banisher]] - Island 5)'''
+  <li>{{:Cracked Leather Belt}} ([[Bazzzazzt]], [[Bizazzzt]], [[Bzzzt]]] - Island 6 Boss)
+  <li><span style="font-weight: bold">{{:Sphinxian Circlet}}</span> ([[Sister of the Spire]] - Island 7)
+</ul>
+
+= Rayne =
+{{CheckboxList}}
+You say, 'I wish to be tested by rayne'
+:''Thalik Silenthand says 'Rayne it shall be.  Take this book and read it.  When you are finished, hand it back to me and I shall summon the mighty rogue Rayne to test you.'' 
+:''Thalik Silenthand says 'Farewell. ''
+:''Rayne says 'Rayne has come. ''
+You say, 'hail Rayne'
+:''Rayne says 'Welcome, Xekl .  I am apprentice Rayne.  Do you wish to test your abilities? Or perhaps you would like to find out what I have to trade? ''
+You say, 'I would like to see what you have for trade'
+:''Rayne says 'Bartering is another important skill.  Sometimes finding something that most consider junk can be useful to another for a whole different reason.  Find me a Transparent Mask, Bracer of Protection or Ebonsting and I will search out a much better upgrade for you. ''
+
+== Rogue Test of Cunning ==
+
+Rayne says 'Cunning, the true source of all rogue power.  Plan and succeed above us and return to me a bronze disc, a destule mask, and some red face paint to complete the test of cunning.  The transparent mask shall be yours if you do so. 
+
+'''Reward:''' {{:Crystal Mask}}
+<ul>
+  <li>{{:Bronze Disc}} ([[an azarack]] - Island 2)'''
+  <li>{{:Red Face Paint}} ([[a gorgalask]], [[a watchful guard]], [[a spirited harpie]], [[an avenging gazer]] - Island 3)
+  <li><span style="font-weight: bold">{{:Jester's Mask}}</span> ([[Keeper of Souls]] - Island 4 Boss)
+</ul>
+
+== Rogue Test of Stealth ==
+
+Rayne says 'Stealth is a must.  Travel among the residents of the sky and bring to me a pegasus statuette, a prismatic sphere, and a fine wool cloak.  In return, the scintillating bracer of protection shall be yours. 
+
+'''Reward:''' {{:Scintillating Bracer of Protection}}
+<ul>
+  <li>{{:Pegasus Statuette}} ([[a soul harvester]], [[an essence harvester]] - Island 4)'''
+  <li>{{:Prismatic Sphere}} ([[Spiroc Guardian]] - Island 5)
+  <li><span style="font-weight: bold">{{:Fine Wool Cloak}}</span> ([[Bazzt Zzzt]] - Island 6 Boss)
+</ul>
+
+== Rogue Test of Deception ==
+
+Rayne says 'Deception it is.  Proceed upward through the sky and return to me the honied nectar, a bixie stinger from this plane, a lightning rod, and a bloodsky sapphire for the test of deception and earn Ebonsting, caller of lightning. 
+
+'''Reward:''' {{:Thornstinger}}
+<ul>
+  <li>{{:Honeyed Nectar}} ([[Bazzzazzt]] - Island 6)'''
+  <li><span style="font-weight: bold">{{:Bixie Stinger (Bixie God's Stinger)}}</span> ([[Bazzt Zzzt]] - Island 6 Boss)
+  <li>{{:Lightning Rod}} ([[a fatestealer drake]], [[heartsbane drake]], [[a windrider drake]], [[a greater sphinx]], [[undine spirit]] - Island 7)
+  <li><span style="font-weight: bold">{{:Bloodsky Sapphire}}</span> ([[Eye of Veeshan]] - Island 8 Boss)
+</ul>
+
+
+
+
+[[Category: Quests]]
+
+[[Category:Plane of Sky]]
+[[Category:Rogue Quests]]

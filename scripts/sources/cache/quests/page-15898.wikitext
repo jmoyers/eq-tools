@@ -1,0 +1,59 @@
+{{Classic Era}}
+[[File:npc_kasine_paegra.png|thumb|right|upright=1.5|Kasine Paegra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Kasine Paegra]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Aqueducts]]
+|-
+! ''' Related NPCs: '''
+| [[Drosco]]
+|-
+! ''' Required Faction: '''
+| Indifferent or better
+|}
+
+== Reward ==
+
+<ul><li>  Faction
+</li></ul>
+
+== Walkthrough ==
+
+''[[Kasine Paegra]] can be found at the Temple of Thunder in [[Qeynos|South Qeynos]] (-246, -477).''
+
+You say, 'Hail, Kasine Paegra'
+
+: Kasine Paegra  says, 'May the blessings of the Rainkeeper protect you in your travels. I am Kasine Paegra, keeper of the [Order of Thunder] medallions.'
+
+You say, 'What is the Order of Thunder?'
+
+: Kasine Paegra  says, 'The Order of Thunder is the medal awarded to a Knight of Thunder who has proven himself superior to the average warrior. All knights and priests of Thunder have one, save for the youngest members. Along with the medal comes great respect. You might say the wearer becomes more charismatic. Should you find one, please return it to Kasine Paegra, unless told otherwise.'
+
+'''The [[Order of Thunder (Drosco)|Order of Thunder]] rarely drops from [[Drosco]] in the [[Qeynos Aqueducts]]. Return it to Kasine.'''
+
+: Kasine Paegra says, 'You have returned an Order of Thunder which has been drained of all its power. I wonder how this could have happened. No doubt evil is behind this. Thank you for its return. I give you the blessings of Karana. Go and serve the Rainkeeper.'
+
+<div class='facblock'>
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Bloodsabers]] got worse.
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+Kasine Paegra begins to cast a spell.
+
+You feel a little better.
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

@@ -1,0 +1,48 @@
+{{Classic Era}}
+[[File:Npc_camia_v`retta.png|200px|frame|Camia V`Retta]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak Commons]]
+|-
+! ''' Quest Giver: '''
+| [[A tattered note]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Enchanter]]
+|-
+! ''' Related Zones: '''
+| None
+|-
+
+|}
+
+== Reward ==
+
+<ul><li>  {{:Stained Red Robe*}}
+</li></ul>
+
+== Walkthrough ==
+
+Upon creating a Dark Elf Enchanter, you will have a tattered note in your inventory. The note reads as follows:
+
+: Join the Spurned, and learn the ways of the Enchanter. Take this note to [[Camia V`Retta | Camia V'Retta]] at the Tower of the Spurned. She will help teach you the skills of the arcane.
+
+Upon handing the note to [[Camia V`Retta]]:
+
+: [[Camia V`Retta]] says, 'Greetings, and welcome to the Tower of the Spurned. I am Camia V'Retta, master enchantress. Here is your guild tunic, wear it with pride.'
+
+<div class='facblock'>
+* Your faction standings with [[The Spurned]] got better.
+* Your faction standings with [[The Dead]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You also receive the [[Crimson Training Tunic*]]. Good luck, Enchanter!
+
+[[Category:Quests]]
+[[Category:Neriak Commons]]
+[[Category:Enchanter Quests]]

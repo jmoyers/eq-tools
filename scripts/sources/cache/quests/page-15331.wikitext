@@ -1,0 +1,63 @@
+[[File:npc_cappi_mctarnigal.png|frame|Cappi McTarnigal]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Halas]]
+|-
+! ''' Quest Giver: '''
+| [[Cappi McTarnigal]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| [[Rogue]]
+|-
+! ''' Related Zones: '''
+| [[Everfrost Peaks]]
+|-
+! ''' Related NPCs: '''
+| [[a wooly mammoth calf]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Black Wolf Armplates}}
+</li><li> {{:Black Wolf Boots}}
+</li><li> {{:Black Wolf Bracers}}
+</li><li> {{:Black Wolf Cape}}
+</li><li> {{:Black Wolf Collar}}
+</li><li> {{:Black Wolf Crown}}
+</li><li> {{:Black Wolf Gloves}}
+</li><li> {{:Black Wolf Legplates}}
+</li><li> {{:Black Wolf Mail}}
+</li><li> {{:Black Wolf Mask}}
+</li><li> {{:Black Wolf Pauldrons}}
+</li><li> {{:Black Wolf Waistband}}
+</li></ul>
+
+== Walkthrough ==
+
+You say, 'hail Cappi McTarnigal'
+
+: Cappi McTarnigal says 'Hail there Kazor ! If you are not a [member of the White Rose], then it be best that you stay on the lower level. This here floor is for honest ...ermm respectable rogues only.
+
+You say, 'I am a member of the white rose.' ''(If your faction is too low, he responds with 'The Order of the White Rose does not trust you with such a task.')''
+
+: Cappi McTarnigal says 'I hope that you are indeed respectable, and loyal to Halas and the Rogues of the White Rose. To do otherwise would bring the wrath of the Six Hammers down on you. But enough with talk! Our caravan to the frigid north leaves in less than two days, and we are short on mammoth calf hides. Return four of them and you will be given items that show  your loyalty to our Clan.
+
+Ysanna MacGibbon says 'The mammoth calf hides are used to shield our beasts of burden from the icy wind. You are probably now asking what shields us Northmen from that same icy wind eh? Well, along with many other furs and leathers, we have come to find that [gnoll fur] of all things is a good insulator against the cold.  Look at their tiny bodies and it's obvious their fur does something good.
+
+'''Give Cappi McTarnigal 4 [[Mammoth Calf Hide]]s.'''
+
+: Cappi McTarnigal says 'You returned? We believed the gnoll pups got you.  The caravan has already left, and these do me little good now. But, as I said before, one must remain respectable. Here is what I promised.
+
+<div class="facblock">
+* Your faction standing with [[Rogues of the White Rose]] got better.
+{{YouGainExperience}}
+</div>
+
+Although he prompts the phrase "[gnoll fur]", he does not respond to it.
+
+[[Category:Quests]]
+[[Category:Halas]]
+[[Category:Rogue Quests]]

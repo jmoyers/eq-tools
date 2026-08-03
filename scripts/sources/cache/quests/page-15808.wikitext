@@ -1,0 +1,79 @@
+[[File:npc_hergor.jpg|frame|Hergor]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Grobb]]
+|-
+! ''' Quest Giver: '''
+| [[Hergor]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Innothule Swamp]]
+|-
+! ''' Related NPCs: '''
+| [[A fungus spore]]
+|}
+
+== Reward ==
+
+<ul><li>  Random piece of
+* [[Large Raw-Hide Armor Set]], or
+* [[Large Tattered Armor Set]]
+</li></ul>
+
+== Walkthrough ==
+
+[[Hergor]] is located at the first main crossroad in Grobb, a bit past merchant [[Ootok]].
+
+You say, 'Hail, Hergor'
+
+:  Hergor says, 'Whats you wants!!  Me great master of da bashers.  Me tinks yooz must be lookin' fer trainin'.  Yooz looks like a weaklin'  Me train yooz and yooz helps me get fatter.  Well!  Are yooz gonna [helps Hergor get fatter]?!!'
+
+You say, 'I help Hergor get fatter'
+
+:  Hergor says, 'Yooz makes da good choice.  Me nevers get enuff ta eats.  Eats more and gets more stronger. me always say.  Yooz gos and speaks wit carver Cagrek.  Yooz tell him [Hergor wants his fungus dung pie].  Yooz duz dis an dme gives you sum rawhide armer or tatters armer.'
+
+[[Carver Cagrek]] is located in front of the Shaman guild, at 375, -450.
+
+You say, 'Hail, Carver Cagrek'
+
+:  Carver Cagrek says, 'Away from carver Cagrek you get!!  Me's a busy troll.  Must punish enmees of Grobb and feeds trolls a plenty.  Trolls complain meats no good.  Dey says dey hears ogres have special meat which taste better den pris'ners of Grobb.  Do you knows name of meat?  What kinda [meat] dat be?  Tell me!!'
+
+You say, 'Hergor wants his fungus dung pie'
+
+:  Carver Cagrek says, 'Oh nos!!!  Him wants anudder wum?!!  Me just makes wum fer him!!  You gos ta swamp and gets me sume spore mushrooms.  Be carefuls, dey easy ta bash, but sumtimes yous bash dem too gud and dey fall apparts.  Gets me four and me can make pie.'
+
+Hand Carver Cagrek 4x [[A Spore Mushroom]].
+
+Carver Cagrek says, 'Gud werk!! Me already, err, founds, dung part of meal.  Here we go.  One Fungus Dung Pie!!  Enjoys.'
+
+<div class="facblock">
+* Your faction standing with [[Da Bashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+{{YouGainExperience}}
+</div>
+
+: You receive 5 gold pieces.
+: You receive [[Fungus Dung Pie]]
+
+Hand Fungus Dung Pie to Hergor.
+
+:  Hergor says, 'Mmmmm..Mm..Mmm!!! Dat smells gud!! Me gets more fat and get more strength.  You dus gud job weekiling.  Me gives you dis armer.  Now gos away.  Me no share pie wit weekling.'
+
+<div class="facblock">
+* Your faction standing with [[Da Bashers]] got better.
+* Your faction standing with [[Broken Skull Clan]] got worse.
+{{YouGainExperience}}
+</div>
+
+: You receive 2 gold pieces.
+: You receive a random piece of large tattered or large raw-hide armor.
+
+[[Category:Quests]]
+[[Category:Grobb]]
+[[Category:Warrior Quests]]

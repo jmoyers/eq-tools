@@ -1,0 +1,93 @@
+{{Classic Era}}
+[[File:npc_runethar_hamest.png|frame|Runethar Hamest]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Runethar Hamest]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Surefall Glade]]
+|-
+! ''' Related NPCs: '''
+| [[Frenway Marthank]], [[Mammoth]]
+|}
+
+== Reward ==
+<ul><li>  {{:Bonethunder Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Runethar Hamest]] in the Temple of Thunder is investigating corruption among the guards of Qeynos.
+
+You say, 'Hail, Runethar Hamest'
+
+:Runethar Hamest says, 'Welcome to the Temple of Thunder. We are home to paladins and clerics who follow the ways of Karana. Do you [need guidance] or are you [already a follower of Karana]?'
+
+You say, 'I am already a follower of Karana'
+
+:Runethar Hamest says, 'Karana, the Rainkeeper, is the provider of the storms.  If it were not for the storms of Karana, life would not flourish.  All should pay tribute to the Rainkeeper.'
+:Runethar Hamest says, 'So you are one with our cause? This is good. Be aware that there are forces at work which not even the Qeynos Guard can keep at bay. We are here to spread the words of Karana and smite those who should try to end His children. We and Antonius Bayle shall work together in our destruction of evil. He requests our aid. Do you also [wish to assist Lord Bayle]?'
+
+You say, 'I wish to assist Lord Bayle'
+
+:Runethar Hamest says, 'Then we command you to assist the Qeynos Guard with the destruction of Blackburrow. Report to Captain Tillin of the Qeynos Guard and speak with him of the [gnolls of Blackburrow]. I believe he is at the arena. My loyal friend, if you have earned your Thunder Staff, I urge you to [retrieve the Bayle list].'
+
+You say, 'I will retrieve the Bayle list'
+
+:Runethar Hamest says, 'The Temple of Thunder was asked by Antonius Bayle to retrieve a list. He does not trust his own militia of late. He asked me to send a knight to the Jaggedpine to find a man named Frenway Marthank. When you find him, you are to tell him that [Toe needs the Bayle List]. Return the Bayle List and your Thunder Staff to me and I shall provide a fine reward. Be aware that the shadowknights of Bertoxxulous are also after the list. Be careful!'
+
+
+----
+
+
+''You can find [[Frenway Marthank]] in Surefall.''
+
+You say, 'Hail, Frenway Marthank' 
+
+:Frenway Marthank says, 'Greetings, stranger. Please excuse my melancholy state. I just received some [bad news] that has brought me much sorrow.
+
+You say, 'What bad news?'
+
+:Frenway Marthank says, 'My youngest son was performing a task of great importance to me earlier this day and as he was making his way through the caves he was attacked by a grizzly bear. He died in my arms only recently' - Frenway wipes a tear from his eye.
+
+If you can find and slay Mammoth, you will get the [[Bayle List II]]. If you do not want to kill the bear, you can give Mammoth the {{:Regurgitonic}} (which can be obtained from [[The Regurgitonic]] quest) and he will cough the list up for you. 
+
+You can return [[Mammoth's Hide]] to Frenway to get back faction lost slaying Mammoth.
+
+Take the {{:Thunder_Staff}} (from [[Drosco the Zombie (good)]]) and the [[Bayle List II]] back to [[Runethar Hamest]].
+
+:Runethar Hamest says, 'Antonius Bayle will be pleased. The Temple is also pleased. Here is the enchanted staff we call Bonethunder. Should you find the enchantment gone, just ask Kasine to [enchant Bonethunder]. We need more disciples like you! Go forth to tell the world of the Rainkeeper.'
+
+You receive {{:Bonethunder Staff}}!
+
+== Notes ==
+
+The final dialogue leads into the [[Enchant Bonethunder]] quest.
+
+Completion dialog
+Runethar Hamest says, 'Well friend, the Temple of Thunder has recognized and appreciates your past deeds for us. But this matter is of vital importance to us and we need more proof of your devotion to our cause.'
+
+
+<div class=facblock>
+* Your faction standing with Knightsofthunder got better.
+* Your faction standing with PriestsofLife got better.
+* Your faction standing with GuardsofQeynos got better.
+* Your faction standing with Bloodsabers got worse.
+</div>
+
+===See also===
+* [[The Bayle List]]
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]

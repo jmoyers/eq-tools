@@ -1,0 +1,159 @@
+[[File:npc_lokar_to`biath.png|Lokar To`Biath|thumb|380x380px]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Lokar To`Biath]]
+|-
+! ''' Minimum Level: '''
+| 40
+|-
+! ''' Classes: '''
+| [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[Neriak|Neriak Commons]]
+|-
+! ''' Related NPCs: '''
+| [[Rysva To`Biath]], [[Oracle of K`Arnon]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Book of Turmoil}}
+<li>{{:Glowing Torch}}
+</li></ul>
+
+== Walkthrough ==
+
+Find [[Lokar To`Biath]] in the library of the 3rd Gate at +895, -1245.
+
+At the end of the quest "Bottle of Red Wine"...
+
+: Lokar To`Biath says 'Ah, yes, let me pray to our god..  Yes, Innoruuk has given me wisdom.  A Scribe of Dal still exists, disguised as a barkeep in the Blind Fish.  This information will not help you though, for she has sworn a [vow] of silence and will not speak of the Dal.'
+
+You say, 'who is innoruuk?'
+
+: Lokar To`Biath says 'I am his scribe, and He is our god.  There is nothing else to be said.'
+
+You say, 'what vow?'
+
+: Lokar To`Biath says 'Break the vow?  She might.  Were you to tithe 70 gold to your god, Innoruuk, he might aid you.'
+
+'''Hand 70gp to Lokar.'''
+
+: Lokar To`Biath says 'Take this note to the Scribe of Dal, and perhaps she will break her vow.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better.
+* Your faction standing with [[Dreadguard Outer]] got better.
+* Your faction standing with [[Dreadguard Inner]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive a [[Note]].  It is written in [[Teir'dal]] and says...
+
+ Rysva, I urge you to break your vow of silence and renounce the dead D'al! Join those who follow Innoruuk, and do his will!
+ Innoruuk shall crush those who do not follow him, but if you aid this person and give him that which he seeks, I am sure you will be forgiven and might then join me!
+ - your brother, Lokar
+
+'''[[Rysva To'Biath]] is a female barkeep in the Blind Fish Tavern in Neriak Commons. Give her the note from her brother.'''
+
+: Rysva To`Biath says 'Take this note and be gone with you.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better.
+* Your faction standing with [[Dreadguard Outer]] got better.
+* Your faction standing with [[Dreadguard Inner]] got better.
+</div>
+{{YouGainExperience}}
+
+She gives you another [[Note]], also written in [[Teir'dal]], that says..
+
+ I will not break my vow of silence, so I give you this note that you might read it.
+ I will give you that which you seek, the Book of Turmoil, but first you must slay my brother, for he has revealed who I truly am.
+ I will never follow Innoruuk, and am forever a Scribe of D'al. Bring me the head of my brother and return to me this note.
+ In return, I shall give you the book of Turmoil, one of the books in the Tome of Ages.
+ If you need any other of these books restored, I will do so for 1000 platinum
+
+'''She wishes you to return to Lokar and slay him.'''
+
+: Lokar To`Biath says 'Come and feel the blade of the Dark Bargainers.'
+
+You have slain Lokar To`Biath!
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got worse.
+* Your faction standing with [[Dreadguard Outer]] got worse.
+* Your faction standing with [[Dreadguard Inner]] got worse.
+</div>
+
+: Lokar To`Biath's corpse says 'The death of a Dark Bargainer never goes unnoticed!' 
+
+'''Loot [[Dark Elf Decapitated Head]]. Hand the Head and the Note to Rysva.'''
+
+Rysva To`Biath says 'Take this book and be gone with you.'
+
+<div class="facblock">
+* Your faction standing with [[Dark Bargainers]] got better.
+* Your faction standing with [[Dreadguard Outer]] got better.
+* Your faction standing with [[Dreadguard Inner]] got better.
+</div>
+{{YouGainExperience}}
+
+You receive [[Book of Turmoil]], one of the books in the [[Tome of Ages]].
+
+The [[Oracle of K`Arnon]] is searching for this book.
+
+''The Oracle may be found on top of a mountain at -15, -6730, -200 in the [[Ocean of Tears]].''
+
+You say, 'Hail, Oracle of K`Arnon' 
+
+: Oracle of K`Arnon says 'Greetings, ______, I am the Oracle of K'Arnon. Do you quest for [knowledge] yourself, or do you offer that which I [seek]?'
+
+You say, 'What about knowledge?' 
+
+: Oracle of K`Arnon says 'I have lived long and have insight into many matters, yet I despise charity. To learn from me, you must first bring me that which I [seek].'
+
+You say, 'What do you seek?' 
+
+: Oracle of K`Arnon says 'I seek knowledge, which is superior to all things. And no knowledge is greater than that which is contained within the [Tome of Ages].'
+
+You say, 'What is the Tome of Ages?' 
+
+: Oracle of K`Arnon says 'The Tome of Ages has been compiled over the millennia by the Scribes of [Dal]. It was divided into seven distinct books by the scribes to keep the knowledge from one such as me. That said, with aid, I shall unite these books and the Tome of Ages shall be mine.'
+
+You say, 'What about the Dal?' 
+
+: Oracle of K`Arnon says 'They were elves once, but now are Teir'Dal, and as evil as they are wise. Many tomes have they written, but none greater than the Tome of Ages.'
+
+You say, 'What about the Book of Ages?' 
+
+: Oracle of K`Arnon says 'The seven Books that make up the Tome of Ages are those of Enlightenment, Scale, Turmoil, Monuments, Elders, Blood, and the Lost Book. Each of these great books is an important chapter in the history of Norrath. If ever you find one of these books, bring it to me.'
+
+
+You say, 'What about the Book of Turmoil?' 
+
+: Oracle of K`Arnon says 'Ah, yes! The Book of Turmoil. I seek this book, and should you find it and return it to me, I will reward you with secret knowledge.'
+
+: Oracle of K`Arnon says 'Thank thee for this tome. Be sure to check back with me later, as I might have another task for thee.'
+
+You receive a [[Glowing Torch]].
+
+<div class="facblock">
+* Your faction standing with [[Oracle Of Karnon]] got better.
+* Your faction standing with [[Oracle Of Marud]] got worse.
+</div> 
+{{exp}}
+
+== Related Quests ==
+
+* [[The Fiery Avenger]]
+* [[Paladin Epic Quest]]
+* [[Tome of Ages]]
+
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Paladin Quests]]

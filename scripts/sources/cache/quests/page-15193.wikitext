@@ -1,0 +1,122 @@
+{{Kunark Era}}
+[[File:npc_captain_rottgrime.png|frame|Captain Rottgrime]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[The Overthere]]
+|-
+! ''' Quest Giver: '''
+| [[Captain Rottgrime]]
+|-
+! ''' Minimum Level: '''
+| 30+
+|-
+! ''' Classes: '''
+| All
+|-
+! '''Related Zones:'''
+| [[Frontier Mountains]]
+|-
+! '''Related NPCs:'''
+| [[a Sarnak berzerker]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Guard of the Marines}}
+</li><li> [[Venril Sathir (Faction)]] (+5 per completion).
+</li></ul>
+
+== Walkthrough ==
+
+* Requires Dubious (or better) faction for turn-in of braids.
+**Can ask another to cast Invisibility Versus Undead on you when your trade window is open to get indifferent. 
+*[[Captain Rottgrime]] is located in the outpost at +2465, +2150. 
+
+'''You say, 'Hail, Captain Rottgrime''''
+
+Captain Rottgrime has a multitude of cracks and holes in his skull from his many battles. 'Attention, marine!! You will go into battle and fear nothing! You shall prevail over one enemy and then you shall be sent back into battle! We '''[shall not allow those sarnak to overtake the Danak shipyards]'''! Is that clear, marine?!!' 
+
+'''You say, 'I shall not allow those sarnaks to overtake the Danak shipyards.''''
+ 
+Captain Rottgrime says 'Stand up straight!! That's correct marine!! YOU shall not allow the sarnak to overtake the shipyards!! Head out to the frontlines, marine!! Kill the berzerkers and return their war braids to me!! For every four, you shall earn your wages!!! Now get to the front, marine!! Move it!! Move it!!' 
+
+'''Hand in 4 x [[A Sarnak War Braid]], dropped by "[[A Sarnak berzerker|a sarnak berzerker]]" which commonly inhabits the western and southern parts of The Overthere and possibly the western parts of Frontier Mountains''' [sic].
+
+Captain Rottgrime says 'Great job, marine!! Word of your heroics shall be passed on to the Admiral. If you don't have a shield, then take one. If you do, then get back to the front lines. This is no time for R n' R!! Move it, marine!! Or you'll be pushing Danak till the cockatrice crows!!' 
+
+<div class='facblock'>
+* Your faction standing with [[Venril Sathir (Faction)|Venril Sathir]] got better.
+</div>
+{{exp}}
+
+You receive 1-3 gold from Captain Rottgrime. 
+You receive a {{:Guard of the Marines}}.
+
+<s>'''Note:''' It is important to destroy the {{:Guard of the Marines}} if you intend to repeat this quest. When you possess a Guard of the Marines while completing the trade to Captain Rottgrime, you will lose the Sarnak War Braids, you will not receive the faction increase, and the message "You were unable to complete this quest because it would result in a Guard of the Marines, and you already have one." will appear.</s>
+
+
+== Required  Faction ==
+See [[The_New_Worker#Raising_Venril_Sathir_Faction]]
+
+== Exp Gain ==
+
+Erudite Wizard
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 36
+| 5%
+| 8
+|}
+
+Dark Elf Wizard
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 29
+| 9-10%
+|
+|-
+| 30
+| 4-5%
+| 
+|-
+| 31
+| 7-8%
+|
+|-
+| 40
+| 2%
+| 10
+|-
+|46
+| 2-3%
+|
+|}
+
+Ogre Shaman
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 50
+| 2-3%
+| 20
+|-
+| 51
+| 0-1%
+| 20
+|}
+
+== Related Quests ==
+
+* [[The New Worker]]
+
+[[Category:Quests]]
+[[Category:The Overthere]]
+[[Category:All Classes Quests]]

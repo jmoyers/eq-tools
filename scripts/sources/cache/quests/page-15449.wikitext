@@ -1,0 +1,57 @@
+[[File:npc_theron_rolius.png|frame|Theron Rolius]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|North Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Theron Rolius]]
+|-
+! ''' Minimum Level: '''
+| 15
+|-
+! ''' Classes: '''
+| ?
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| corrupt guards
+|}
+
+== Reward ==
+
+<ul><li> [[Faction]], Coin
+</li></ul>
+
+== Walkthrough ==
+
+Theron Rolius is a paladin guildmaster who may be found in the Hall of Truth in North Freeport at Location: (239, -142).
+
+You say, 'Hail, Theron Rolius'
+
+: Theron Rolius says 'Greetings, ______!  To enter these grounds is to proclaim your faith in the Truthbringer. In this city you shall find no greater allies than the [[Knights of Truth]]. We urge all knights and clerics who oppose the hand of the [[Freeport Militia]] to [join the crusade].'
+
+You say, 'I will join the crusade.'
+
+: Theron Rolius says 'Then take arms against the Freeport Militia! They serve no one save [Sir Lucan], the fallen knight. From this day forth, I put a bounty upon all militia members. For every bashed milita helm, a reward!! If you are not prepared to battle the militia just yet, you may [assist in other areas].'
+
+The Freeport Militia house is located in East Freeport.  Various named guards there drop a [[Damaged Militia Helm]].  Hand in '''ONE'''
+at a time.
+
+: Theron Rolius says 'Fantastic work, my young knight. Here is a small token of the my appreciation. I would offer you a sharkskin shield, but I have made only a few and the paladins are testing them.'
+
+<div class="facblock">
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[Dismal Rage]] got worse.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Priests of Marr]] got better.
+* Your faction standing with [[Steel Warriors]] got better.
+</div>
+{{YouGainExperience}} ~5% at level 2, negligible (1% or less) at level 5, as a bard.
+
+You receive 1 - 3 platinum from Theron Rolius.
+
+
+[[Category:Quests]]
+[[Category:North Freeport]]

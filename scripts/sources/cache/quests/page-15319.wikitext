@@ -1,0 +1,136 @@
+[[File:npc_larsk_juton.png|frame|Larsk Juton]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Surefall Glade]]
+|-
+! ''' Quest Giver: '''
+| [[Larsk Juton]]
+|-
+! ''' Minimum Level: '''
+| 10
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Qeynos Hills]], [[Qeynos|South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Captain Tillin]], [[Gnasher Furgutt]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Medal of Merit}}
+</li><li> {{:Raw-hide Tunic}}
+</li></ul>
+
+== Walkthrough ==
+
+[[Larsk Juton]] is located at 244, -18 in [[Surefall Glade]].
+
+You say, 'Hail, Larsk Juton'
+
+: Larsk Juton says 'Hail, Adventurer! I hope you are enjoying your time in Surefall Glade. You must be careful when leaving the Jaggedpine. There have been many report of [Sabertooths] attacking travelers.'
+
+You say, 'What are Sabertooths?'
+
+: Larsk Juton says 'The gnolls of Blackburrow are called Sabertooths. They have been seen in force on a regular basis. They are surely up to something. We have even heard rumors of a [pact] between Qeynos merchants and the dogs.'
+
+You say, 'What pact?'
+
+: Larsk Juton says 'Sources have come forward to tell of a pact between a merchant of Qeynos and the Sabertooths. It all has to do with blades and brew. We hear that a meeting will occur soon, somewhere in the Qeynos Hills at night. Do not fear, we shall find a brave ranger to [halt this meeting].'
+
+You say, 'I will halt this meeting.'
+
+: Larsk Juton says 'Very good of you. Stop this meeting by killing the gnoll in Qeynos Hills. We hear that he shall be there in the late evening, and that his name is Furgoot or Furgy, something like that. Find him and kill him. I want his head. And if you should find any evidence of who the merchant is, be sure to hand it over to me.'
+
+<blockquote>[[Gnasher Furgutt]] may be found in [[Qeynos Hills]] pacing around outside of [[Blackburrow]].</blockquote>
+
+You say, 'Hail, Gnasher Furgutt'
+
+: Gnasher Furgutt says 'Who are you? Did McNeal send you? If not, you would do yourself good to leave Gnasher alone. I have friends in high places.'
+
+'''Kill him to loot his '''{{:Gnoll Head}}''', which can be identified as "Gnasher's Head," and head back to Larsk. If '''{{:a tattered note}}''' drops, loot it as well.'''
+
+=== Upon turning in the [[Gnoll Head]] ===
+
+: Larsk Juton says 'So, I see you rid the hills of the beast. Good work! I have a reward for you. I hope it will be usefull. I am afraid this gnoll's death will not halt the alliance between the two. I shall require your services to [assist in the extermination of the gnoll brewers].'
+
+<div class="facblock">
+* Your faction standing with [[Protectors of Pine]] got better.
+* Your faction standing with [[Jaggedpine Treefolk]] got better.
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse.
+* Your faction standing with [[Guards of Qeynos]] got better.
+</div>
+
+{{YouGainExperience}} (Roughly 2% at level 12)
+
+You receive gold, silver, and copper, and a random piece of low-level armor ({{:Raw Hide Tunic}}).
+
+=== Upon turning in [[a tattered note]] (#1) ===
+
+: Larsk Juton says 'Fine work, _____. Hmmm. It seems this needs taking care of. Take this note to the Captain of the City Guard in Qeynos. His name is Captain Tillin. He will have to attend to this matter. Also... Let me see the gnoll's head. I must know you killed him. Be safe, my friend. I am sure that whoever this McNeal is, he was simply a lackey. Whoever he works for is most likely going to be looking for you. Watch your back in Qeynos.' 
+
+<div class="facblock">
+* Your faction standing with [[Protectors of Pine]] got better. 
+* Your faction standing with [[Jaggedpine Treefolk]] got better. 
+* Your faction standing with [[Sabertooths of Blackburrow]] got worse. 
+* Your faction standing with [[Guards of Qeynos]] got better. 
+</div>
+{{YouGainExperience}}
+You receive gold, silver, and copper from Larsk
+
+You receive another note with the same name, flagged as a new note.
+
+<blockquote>'''NOTE:''' On 7/12/2019, Larsk handed the note back but did not mention Captain Tillin. After a second turn-in with the handed-back note (tried because there was no dialogue), he eats the note.</blockquote> Tried with amiable faction, got new note March 29, 2020
+
+'''Go to the [[South Qeynos]] Arena and turn in this other note to [[Captain Tillin]].'''
+
+=== Upon turning in [[a tattered note]] (#2) ===
+
+: Captain Tillin says 'I heard you were on your way. I have called for the state [executioner]. She should be on her way now. She will deal with our friend, [[McNeal Jocub]]. Thank you for your help, citizen.' 
+
+<div class="facblock">
+* Your faction standing with [[Guards of Qeynos]] got better. 
+* Your faction standing with [[Antonius Bayle]] got better. 
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse. 
+* Your faction standing with [[Circle Of Unseen Hands]] got worse. 
+* Your faction standing with [[Merchants of Qeynos]] got better. 
+</div>
+{{YouGainExperience}}
+You receive 6 platinum, 9 gold, and 1 silver from Captain Tillin.  
+
+You receive {{:Medal of Merit}} (CHA +5), and an NPC called [[Executioner]] spawns.
+
+=== Conclusion ===
+
+You say, 'executioner' 
+
+: Captain Tillin says, 'The executioner is quite an exceptional person. [Field Marshall Ralem] happened upon her while on a secret operation in Everfrost Peaks. They fought side by side against some creature the locals named Iceberg. The creature escaped. Ralem was grateful and eventually recruited her when she decided to separate from the guards of Halas.' 
+
+You say, 'Field Marshall Ralem' 
+
+: Captain Tillin says, 'Field Marshall Ralem Christof is in charge of a brigade of roving rangers, druids and warriors. He hails from the Jaggedpine. He is quite an exceptional ranger. No one is ever really sure where he is. His brigade is constantly on the move.' 
+
+Executioner says 'Sir. You called for me?' 
+
+: Captain Tillin says 'Ah. Good. You have arrived. Executioner, could you please visit McNeal Jocub at Fish's Tavern. He has violated our laws and the sentence is death.' 
+
+: Executioner says 'Aye sir!' 
+
+You say, 'Hail, Executioner' 
+
+: Executioner says 'I have no time to talk, citizen. Please, step aside!' 
+
+: Executioner says 'McNeal Jocub? You have been found guilty of crimes against the city of Qeynos.' 
+
+: McNeal Jocub says 'You shall never take me alive!!' 
+
+''The Executioner kills McNeal Jocub''
+
+
+[[Category:Quests]]
+[[Category:Surefall Glade]]
+[[Category:All Classes Quests]]
+__NOTOC__

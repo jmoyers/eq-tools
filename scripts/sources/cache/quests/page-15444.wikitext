@@ -1,0 +1,67 @@
+[[File:npc_hekzin_g`zule.png|frame|Hekzin G`Zule]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Hekzin G`Zule]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Warrior]], [[Cleric]], [[Shadow Knight]], [[Rogue]] (DE)
+|-
+! ''' Related Zones: '''
+| [[Nektulos Forest]]
+|-
+! ''' Related NPCs: '''
+| [[a moss snake]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Dark Shield of Ebon}} or minor items, rations
+</li></ul>
+
+== Walkthrough ==
+
+Talk to [[Hekzin G`Zule]] in the rogue guild. He will say he is working on some new type of armor.
+
+You say, 'Hail, Hekzin G`Zule' 
+
+: Hekzin G`Zule says 'How's it going, scrub? Correct me if I'm wrong, but you appear to be a rogue. If you're a [new rogue], it's my job to test your skill. If you are not, then by speaking with me, I see you show interest in [joining this house of rogues].' 
+
+You say, 'I am interested in joining this house of rogues' 
+
+: Hekzin G`Zule says 'We of the Ebon Mask must first be sure you are skilled with a blade. At the same time, we are attempting to create a new type of armor for our rogues. So it is the test of each young rogue to take this bag into Nektulos and fill it with three moss snake skins and three snake fangs, then combine them. We get the bag and you earn a little respect as well as the [Dark Shield of Ebon].' 
+
+You receive an Empty Bag in which you need to combine three [[Snake Scales]] and three [[Snake Fang]]s. This produces a [[Bag of Snake Parts]]. Give this to Hekzin.
+
+: Hekzin G`Zule says 'Fine work for a scrub. Maybe one day you will be able to test this new snakescale armor out. For the moment you shall take the [Dark Shield of Ebon] if you do not own one already.' 
+
+<div class="facblock">
+* Your faction standing with [[Ebon Mask]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Wolves of the North]] got worse.
+* Your faction standing with [[Guardians of the Vale]] got worse.
+* Your faction standing with [[Carson McCabe]] got worse.
+{{exp}}
+</div> 
+
+You receive between 3-12 silver from Hekzin G`Zule. 
+
+You also receive the Dark Shield of Ebon.
+
+== Experience Gain ==
+
+As a level 9 Dark Elf Shadow Knight, this quest gives about 1/3 gold bubble in experience.
+
+(green 99, 9/22/2020) As a newly level 8 Dark Elf Shadow Knight, it took me 17 turn ins to reach level 9.
+
+(green 99, 9/15/2021) For a level 11 Dark Elf Shadow Knight, every 4 turn in was about 1 yellow bubble.
+
+(green 99, 12/28/2022) For a level 6-7 Dark Elf Cleric, it gives 11% (rarely 12%) of xp bar per turn, then 6-7% at level 10 and 5% at level 11.
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]

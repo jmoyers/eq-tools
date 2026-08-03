@@ -1,0 +1,85 @@
+{{Classic Era}}
+[[File:npc_dill_fireshine.png|frame|Dill Fireshine]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Greater Faydark|Kelethin]]
+|-
+! ''' Quest Giver: '''
+| [[Dill Fireshine]]
+|-
+! ''' Minimum Level: '''
+| 2
+|-
+! ''' Classes: '''
+| [[Bard]], [[Druid]], [[Paladin]], [[Ranger]], [[Rogue]], [[Shadow Knight]], [[Shaman]], [[Warrior]]
+|-
+! ''' Related Zones: '''
+| [[Greater Faydark]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Pawn (Crushbone)]], [[orc hatchetman]]
+|}
+
+== Reward ==
+
+<ul><li> {{:Rusty Short Sword}}
+</li><li> {{:Rusty Spear}}
+</li><li> {{:Rusty Two Handed Sword}}
+</li><li> {{:Tarnished Bastard Sword}}
+</li><li> {{:Tarnished Scimitar}}
+</li></ul>
+
+== Walkthrough ==
+
+You must have Amiable faction to complete this quest.
+
+''[[Dill Fireshine]] is located at -434, 524, 118 in the Faydark's Champions ([[Ranger]]) Guild Hall.''
+
+You say, 'Hail, Dill Fireshine'
+
+: Dill Fireshine says, 'Welcome to the treetops and the home of Faydark's Champions. We are the skilled rangers of the Faydarks. You are safe in Kelethin, but watch yourself upon the forest floor. I hear the [blue meanies] have been on the rise.'
+
+You say, 'What blue meanies'
+
+: Dill Fireshine says, 'That is a little name I have given the Crushbone Orcs. It appears they have increased their numbers. The Emerald Warriors are charged with our defense against them. We rangers are to seek out the [orc saboteurs].'
+
+You say, 'Who are the orc saboteurs'
+
+: Dill Fireshine says, 'As others move to battle the orc armies, we have word that the orc pawns have been sent into the woods to damage the great trees which support Kelethin. We shall employ the talents of our young rangers to halt their efforts. I currently seek those who will [hunt the orc pawns].'
+
+You say, 'I will hunt the orc pawns'
+
+: Dill Fireshine says, 'Go to the forest floor and seek out the orc pawns. Within their ranks can sometimes be found orc hatchetmen. They carry orc hatchets which you must return and I shall reward you for every two orc hatchets and perhaps offer you a weapon in return, should we have any to spare at the time.'
+ 
+'''Hand [[Dill Fireshine]] 2 [[Orc Hatchet]]s, looted from [[orc hatchetman|orc hatchetmen]] and [[Orc Pawn (Crushbone)|orc pawns]] roaming throughout the [[Greater Faydark]].'''
+
+: Dill Fireshine says, 'I expect to receive TWO orc hatchets.'
+
+: Dill Fireshine says, 'Fantastic work!! Your actions shall earn you the respect of all Fier'Dal! Take this as a small bounty for your deed. We have heard of [Crushbone allies] who wish our demise.'
+
+<div class="facblock">
+* Your faction standing with [[Clerics of Tunare]] got better.
+* Your faction standing with [[Faydarks Champions]] got better.
+* Your faction standing with [[King Tearis Thex]] got better.
+* Your faction standing with [[Soldiers of Tunare]] got better.
+* Your faction standing with [[Crushbone Orcs]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 12 copper pieces.
+
+== Related Quests ==
+
+* [[Orc Runner (Kelethin)]]
+
+[[Category:Quests]]
+[[Category:Greater Faydark]]
+[[Category:Bard Quests]]
+[[Category:Druid Quests]]
+[[Category:Paladin Quests]]
+[[Category:Ranger Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]
+[[Category:Shaman Quests]]
+[[Category:Warrior Quests]]

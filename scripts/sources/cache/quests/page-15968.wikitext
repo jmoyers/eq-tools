@@ -1,0 +1,52 @@
+{{Classic Era}}
+[[File:npc_kasine_paegra.png|frame|Kasine Paegra]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Runethar Hamest]]
+|-
+! ''' Minimum Level: '''
+| 20
+|-
+! ''' Classes: '''
+| [[Cleric]], [[Paladin]]
+|-
+! ''' Related Zones: '''
+| [[South Qeynos]]
+|-
+! ''' Related NPCs: '''
+| [[Kasine Paegra]]
+|}
+
+== Reward ==
+
+<ul><li>  {{:Bonethunder Staff}}
+</li></ul>
+
+== Walkthrough ==
+
+Note: This quest is pointless on this server, as both the quest item and reward are the same.
+
+After receiving your [[Bonethunder Staff]], [[Runethar Hamest]] tells you to go to [[Kasine Paegra]] to recharge your (non rechargeable) staff.
+
+You say, 'Will you please enchant bonethunder?'
+
+Kasine Paegra says, 'I am ordered to only enchant the spell when I have both Bonethunder and 500 gold coins.'
+
+Upon turning in your staff and 500gp:
+
+Kasine Paegra says, 'The Rainkeeper has bestowed this weapon with power once more. Take it and defend our temple.'
+
+You will find yourself holding the same staff and 500 less gold coins.
+
+Kasine Paegra 
+===See also===
+* [[The Bayle List]]
+* [[Bonethunder Staff Quest]]
+
+[[Category:Quests]]
+[[Category:South Qeynos]]
+[[Category:Cleric Quests]]
+[[Category:Paladin Quests]]

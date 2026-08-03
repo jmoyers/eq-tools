@@ -1,0 +1,66 @@
+{{Paineel Era}}
+[[File:npc_noclin_saah.png|frame|Noclin Saah]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Paineel]]
+|-
+! ''' Quest Giver: '''
+| [[Noclin Saah]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| Paineel
+|-
+! ''' Related NPCs: '''
+| [[Noclin`s Pet]]
+|-
+! ''' Required Faction: '''
+| Dubious or better
+|}
+
+== Reward ==
+
+<ul><li>  {{:Noclin's Femur}}
+</li></ul>
+
+== Walkthrough ==
+
+MUST BE ABOVE DUBIOUS OR HE WILL EAT THE TURN IN!
+
+''Noclin Saah may be found at 981.29, -101.52, just to the left as you enter the Paineel newbie yard.''
+
+You say, 'Hail, Noclin Saah'
+
+: Noclin Saah says, 'Hail to yourself fool. Leave me be. I have '''[matters of importance]''' to ponder.'
+
+You say, 'What matters of importance?'
+
+: Noclin Saah says, 'If you are so greatly interested in my affairs then so be it. I have lost my skeleten [sic] servant. He now wanders the yard, taking his pain out on the new apprentices of our guild. I cannot return to my guild without ridding the yard of that menace for my mistake will cost me dearly if it is brought to the attention of my masters. Hrm. Perhaps you could destroy my pet for me and bring me proof of his removal. If you do I may even grace you with a '''[reward]'''.'
+
+You say, 'What reward?'
+
+: Noclin Saah says, 'Speak not of reward when you have not even finished this simple task! Now leave me be.'
+
+'''Kill [[Noclin`s Pet]] and loot his [[Rotting Femur]].  Give the Rotting Femur to Noclin Saah.'''
+
+: Noclin Saah says, 'Ah! You found him and obviously removed his presence from the yard. You have my thanks, small as it is for such a menial task. Here. Keep this worthless bit of bone for your labors.'
+
+<div class="facblock">
+* Your faction standing with [[Heretics]] got better.
+* Your faction standing with [[Deepwater Knights]] got worse.
+* Your faction standing with [[Gate Callers]] got worse.
+* Your faction standing with [[Craftkeepers]] got worse.
+* Your faction standing with [[Crimson Hands]] got worse.
+</div>
+{{YouGainExperience}}
+
+You receive {{:Noclin's Femur}}!
+
+[[Category:Quests]]
+[[Category:Paineel]]
+[[Category:Necromancer Quests]]

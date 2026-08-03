@@ -1,0 +1,83 @@
+{{Velious Era}}
+[[File:npc_dlammaz_stormslayer.png|frame|Dlammaz Stormslayer]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Dlammaz Stormslayer]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Western Wastes]]
+|-
+! ''' Related NPCs: '''
+| Western Wastes Dragons
+|}
+
+== Reward ==
+
+<ul><li>  {{:Frostbringer}}
+</li><li> {{:Cloak of the Maelstrom}}
+</li></ul>
+
+== Walkthrough ==
+
+'''Dlammaz appears to be on [[King Tormax (Faction)]]. Amiable faction is required for this quest.'''
+
+You say, 'Hail, Dlammaz Stormslayer'
+
+: [[Dlammaz Stormslayer]] says 'Welcome to the castle of King Tormax.  It is quite an accomplishment for one of your kind to have lived this long in the service of our great King Tormax. You must be powerful indeed.  My power is like a storm - I may rage and destroy my foes with great fury.
+
+You say, 'What foes?'
+
+: Dlammaz Stormslayer says 'The dragons are the greatest threat to Kael Drakkel.  For some reason they believe that this land we inhabit is holy and should not be tread upon.  I cannot count the number of wurms I have beaten back from the gates of Kael Drakkel in the past.  We giants will live on, though, for each year their numbers thin and ours only grow.  With the help of mercenaries such as yourself we may be able to eradicate them from the face of Velious.
+
+You say, 'Eradicate?'
+
+: Dlammaz Stormslayer says 'I dream of the day when the only dragons in Velious are the ones whose skins line my boots.  Some day my dream will come true.  Until the day I can gather a force powerful enough to assault their homes, I will slay whatever foul beasts tread near Kael Drakkel.
+
+You say, 'Assault their homes?'
+
+: Dlammaz Stormslayer says 'That is an aspiration of King Tormax.  One day, it may be possible for us to do so.  Encountering so many dragons at once may very well be suicide though.  Enough of my banter about dragons.  What is it that brings you to Dragon Death Keep?  Do you seek more challenging tasks?
+
+You say, 'I seek more challenging tasks.'
+
+: Dlammaz Stormslayer says 'If you are as mighty as I believe you to be, travel out from this city and fight off the draconian menace.  For the head of an elder dragon you will be handsomely rewarded.
+
+You say, 'What reward?'
+
+Dlammaz Stormslayer pats the huge axe at his side and drapes his shimmering cloak over his shoulders.
+
+You say, 'What axe?'
+
+: Dlammaz Stormslayer says 'My axe is named Frostbringer. It was given to me by the great King Tormax for my service to him. Serving the king can be quite advantageous.
+
+You say, 'What cloak?'
+
+: Dlammaz Stormslayer says 'The cloak of the Maelstrom allows me to rage like a great storm.  It is but a simple possession - the head of an elder dragon would be worth far more to my kind.
+
+'''Turning in the [[Greater Dragon's Head]] results in [[Frostbringer]]'''
+
+'''Turning in the [[Great Dragon's Head]] results in [[Cloak of the Maelstrom]]'''
+
+<div class="facblock">
+*Your faction standing with [[King Tormax (Faction)]] got better.
+*Your faction standing with [[Kromzek]] got better.
+*Your faction standing with [[Yelinak]] got worse.
+*Your faction standing with [[Dain Frostreaver IV (Faction)]] got worse.
+</div>
+{{exp}}
+
+:Dlammaz  Stormslayer says, We shall hang this head from the halls of Dragondeath Keep and sing of your praises, Sopinak.  Take my axe as a reward for your great deeds. You are true hero for Kael Drakkel!
+
+:Dlammaz  Stormslayer says, 'The bards will sing of your greatness, Sopinak. Rage like the Maelstrom when you wear this cloak. You have done a great service for the city of Kael Drakkel, and we the Kromzek do not soon forget great deeds.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:All Classes Quests]]

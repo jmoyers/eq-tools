@@ -1,0 +1,112 @@
+{{Velious Era}}
+__NOTOC__
+[[File:npc_bjarorm_mjlorn.png|frame|Bjarorm Mjlorn]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Kael Drakkel]]
+|-
+! ''' Quest Giver: '''
+| [[Bjarorm Mjlorn]]
+|-
+! ''' Minimum Level: '''
+| 50
+|-
+! ''' Classes: '''
+| [[Necromancer]]
+|-
+! ''' Related Zones: '''
+| [[Temple of Veeshan]]
+|-
+! ''' Related NPCs: '''
+| Dragons (West Wing)
+|}
+Ally faction is required for all Kael armor quests.<br>
+== Reward ==
+
+{{Gear Set
+|Plague Bearer's Circlet
+|Plague Bearer's Robe
+|Plague Bearer's Sleeves
+|Plague Bearer's Wristguard
+|Plague Bearer's Gloves
+|Plague Bearer's Trousers
+|Plague Bearer's Boots
+}}
+
+== Checklist ==
+Turn-ins to [[Bjarorm Mjlorn]] in [[Kael Drakkal]].{{CheckboxList}}
+*[[Plague Bearer's Circlet]]
+:*[[Ancient Silk Turban]]
+:*3x [[Crushed Flame Opal]]
+*[[Plague Bearer's Robe]]
+:*[[Ancient Silk Robe]]
+:*3x [[Pristine Emerald]]
+*[[Plague Bearer's Sleeves]]
+:*[[Ancient Silk Sleeves]]
+:*3x [[Flawed Topaz]]
+*[[Plague Bearer's Wristguard]]
+:*[[Ancient Silk Wristband]]
+:*3x [[Crushed Onyx Sapphire]]
+*[[Plague Bearer's Gloves]]
+:*[[Ancient Silk Gloves]]
+:*3x [[Crushed Topaz]]
+*[[Plague Bearer's Trousers]]
+:*[[Ancient Silk Pantaloons]]
+:*3x [[Nephrite]]
+*[[Plague Bearer's Boots]]
+:*[[Ancient Silk Boots]]
+:*3x [[Crushed Jaundice Gem]]
+{{End}}
+
+== Walkthrough ==
+
+''Intro dialogue needed.''
+
+'''Gems are dropped off various NPCs in Velketor's Labyrinth, Siren's Grotto, Cobalt Scar and The Wakening Land. Ancient silk armor is dropped randomly in the West Wing (Dragon Faction) inside the Temple of Veeshan.'''
+
+'''Bring the three gems and armor piece back and in exchange, you'll receive your reward, experience and faction.'''
+
+== Helm ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you a cap if you bring him an [[Ancient Silk Turban]] and three [[Crushed Flame Opal]]s.
+
+== Robe ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you a robe if you bring him an [[Ancient Silk Robe]] and three [[Pristine Emerald]]s.
+
+== Sleeves ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you some sleeves if you bring him a pair of [[Ancient Silk Sleeves]] and three [[Flawed Topaz]].
+
+== Bracer ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you a wristband if you bring him an [[Ancient Silk Wristband]] and three [[Crushed Onyx Sapphire]]s.
+
+== Gloves ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you some gloves if you bring him three a pair of [[Ancient Silk Gloves]] and [[Crushed Topaz]].
+
+== Leggings ==
+
+Bjarorm promises to make you some leggings if you bring him a pair of [[Ancient Silk Pantaloons]] as well as three [[Nephrite]]s.
+
+== Boots ==
+
+''Dialogue needed.''
+
+Bjarorm promises to make you some boots if you bring him a pair of [[Ancient Silk Boots]] and a trilogy of [[Crushed Jaundice Gem]]s.
+
+[[Category:Quests]]
+[[Category:Kael Drakkel]]
+[[Category:Necromancer Quests]]
+[[Category:Kael Armor Quests]]

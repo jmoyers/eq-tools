@@ -1,0 +1,161 @@
+__NOTOC__
+{{Classic Era}}
+:''For the overview of the many orc belt quests, see [[Orc Belt Quests]].''
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|West Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Cain Darkmoore]], [[Captain Hazran]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[East Commonlands]], [[West Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Orc Centurion (Deathfist)]]
+|}
+
+== Reward ==
+
+<ul><li>  [[Faction]]
+</li><li> Experience
+</li><li> Gold
+</li></ul>
+
+== Walkthrough ==
+
+'''There are two versions of this quest, one for evil classes/races, and one for good classes/races.'''
+
+=== Good Version ===
+
+[[File:npc_cain_darkmoore.png|thumb|Cain Darkmoore (Good)]]
+
+This quest can be performed at '''dubious''' and higher [[faction]] with the quest giver.
+
+[[Cain Darkmoore]], who is located in the banquet room on the 2nd floor of the warrior guildhall. He now wants two [[Deathfist Slashed Belt]]s at a time. When you give him two belts, you gain faction with the warriors and paladins, and you lose it with the militia. You also get 2 - 10 gp and some decent xp. Also, when you give Cain a belt, he'll thank and ask you for help with his "bigger problem." Asking about this sends you to the paladin guild where you learn about the [[Corrupt Guards]] quest.
+
+You say, 'Hail, Cain Darkmoore'
+
+: Cain Darkmoore says 'Hail, ______! We are the Steel Warriors of Freeport. Our training disciplines have created some of the finest warriors ever to walk upon Norrath. Perhaps the bards shall sing songs of you one day. Let your first mission be the extermination of [Clan Deathfist].'
+
+You say, 'What is Clan Deathfist?'
+
+: Cain Darkmoore says 'The orcs of the Commonlands call themselves Clan Deathfist. They have committed many vile acts upon the residents of the Commonlands as well as persons traveling to and from Freeport. They must be destroyed. Go forth to slay them. I shall pay a bounty for every two Deathfist belts. If you are a true warrior of the bunker, perhaps you can begin with [the green and blue].'
+
+You say, 'What is the green and blue?'
+
+: Cain Darkmoore says 'The green and blue was a test for all skilled warriors. But we have no more bunker battle blades to spare, and I can not offer you the green and the blue. We must prepare for war!!'
+
+: Cain Darkmoore says 'I must have two Deathfist belts.'
+
+Hand in two. Note: If you hand in four belts you will only be rewarded for two of them and the other two will be lost.
+
+: Cain Darkmoore says 'Very fine work, ______. With your help, we shall soon rid the commonlands of the orcs. Then we can move on to a [bigger problem].'
+
+<div class="facblock">
+* Your faction standing with Steel Warriors has been adjusted by 5.
+* Your faction standing with Guards of Qeynos has been adjusted by 5.
+* Your faction standing with Corrupt Qeynos Guards has been adjusted by -1.
+* Your faction standing with The Freeport Militia has been adjusted by -1.
+* Your faction standing with Knights of Truth has been adjusted by 5.
+</div>
+{{exp}}
+
+You gain experience! (______%)
+
+You receive 9 gold from Cain Darkmoore.
+
+Asking about the "bigger problem" sends you to the paladin guild where you learn about the Corrupt Guards quest.
+
+=== Evil Version (Freeport Militia) ===
+
+[[File:npc_captain_hazran.png|thumb|Captain Hazran (Evil)]]
+
+[[Captain Hazran]] of the militia is located on the outside balcony of the militia HQ building in West Freeport. Give him one deathfist slashed belt at a time for a reward.
+
+You say, 'Hail, Captain Hazran'
+
+: Captain Hazran says, 'Hail citizen. Welcome to the Freeport Militia House. It is time for you to serve the state. You will assist us with our war with [Clan Deathfist] before you are truly accepted within our city. We urge you to be all we command you to be.'
+
+You say, 'What is Clan Deathfist?'
+
+: Captain Hazran says, 'Clan Deathfist are the orcs of the Commonlands. They are a nuisance and Sir Lucan has ordered their extermination. You will go forthh into the Commonlands and kill these orcs. Clan Deathfits is known to wear a Clan Belt. Bring this belt to me as proof of their death and you shall receive your wages and prove your allegiance to Freeport and all that is good.'
+
+After handing in a [[Deathfist Slashed Belt]] (you can hand in 1, 2, 3, or 4 at a time):
+
+Captain Hazran says, 'Good work warrior. Your are good Militia material. Beware though, there are some who dare to call us foe. You have performed so well.'
+
+<div class="facblock">
+* Your faction standing with '''[[The Freeport Militia]] got better.'''
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Priests of Marr]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got better.
+</div>
+{{exp}}
+
+You receive 3 gold from Captain Hazran.
+
+== Notes ==
+
+Players will often buy deathfist slashed belts for 2-5pp each. Also, the good version lowers faction with Freeport Militia and raises faction with the Warrior's guild and Paladin's guild, while the evil version raises Freeport Militia faction and lowers faction with the Priest's and Paladin's guild.
+
+If you kill orcs for the belts, instead of buying them, then the killing of orcs will raise your faction with [[Knights of Truth]] (but not [[Steel Warriors]]) more than it is hurt by turning in the belts to [[Captain Hazran]] ("evil version"). Both good and evil races can thus come into good standing with both the Militia and paladins of North Freeport.
+
+If you are unfortunate enough to be hated by both guard factions and wish to fix that (so that you can turn in belts), killing [[Mojax Hikspin]] in West Commonlands (south side of the lake) will improve your [[Freeport Militia]] faction, ''but also hurt all of the important North Freeport factions'' ([[Knights of Truth]], [[Steel Warriors]], and [[Priests of Marr]]). You can fix those, however, with the right kills later.
+
+== Exp Gain (Evil Turn In) ==
+
+=== Dark Elf Mage (-10% Exp penalty) ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 6
+| 10.375%
+| 9
+|-
+| 7
+| 7.33%
+| 3
+|-
+| 9
+| 4.36%
+| 11
+|-
+| 10
+| 3.75%
+| 8
+|-
+| 11
+| 2.75%
+| 4
+|}
+
+=== Dark Elf SK (Good turn in) ===
+
+{| class="eoTable2"
+! Level 
+! Exp per turn in (Rough Average)
+! Sample size (Number of runs)
+|-
+| 10
+| 4%
+| 8
+|-
+| 14
+| 2%
+| 15
+|}
+
+[[Category:Quests]]
+[[Category:West Freeport]]
+[[Category:All Classes Quests]]
+[[Category: Repeatable Turn-in Quests]]

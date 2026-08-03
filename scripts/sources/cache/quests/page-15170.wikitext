@@ -1,0 +1,70 @@
+{{Kunark Era}}
+[[File:npc_ssolet_dnaas.png|frame|Ssolet Dnaas]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Warsliks Woods]]
+|-
+! ''' Quest Giver: '''
+| [[Ssolet Dnaas]]
+|-
+! ''' Minimum Level: '''
+| 45
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Chardok]]
+|-
+! ''' Related NPCs: '''
+| [[a Reanimated Berserker]], [[a Reanimated Conscript]],[[a Reanimated Partisan]], [[a Tortured Iksar Miner]]
+|}
+
+== Reward ==
+
+<ul>
+<li>Top Shard of the [[Medallion of the Obulus Quest|Obulus Medallion]]</li>
+</ul>
+
+== Walkthrough ==
+
+''Can be performed at apprehensive faction, as of 2022-05-12.''
+
+''Ssolet Dnaas may be found at +4015, +390 on a small island in Warsliks Woods. He is aggro to non-Iksar, so you may have to charm him to do this.''
+
+You say, 'Hail, Ssolet Dnaas'
+
+: Ssolet Dnaas says, 'Greetingss, ______. Unlesss you bring closssure to my ssearch, leave me while I contemplate thingss.'
+
+You say, 'What search?'
+
+: Ssolet Dnaas says, 'My sssearch. I have been ssent out by my massster to find an item. A burnished wooden sstaff. I know not why and I do not quessstion. I know not where thiss item is found. I musst have one though. Ssssss. If you can find one for me I will give you a trinket.'
+
+'''A [[Burnished Wooden Stave]] is a random drop from sarnak mobs (reanimated mobs, after the revamp) in [[Chardok]]. Give one to Ssolet.'''
+
+: Ssolet Dnaas says, 'Sssss. Thisss is what I need. You have my thanksss. Please, take thiss. I know not what it iss for but maybe you will find a ussse for it.'
+
+--''You receive a [[Piece of a medallion]]'' {{Item Lore|Top shard of the Obulus Medallion}}.--
+
+== Notes ==
+
+<ul>
+<li>2018-05-05 - Worked with an indifferent con in Skeleton/Lich.</li>
+<li>2020-05-28 - Worked with indifferent con while sneaking.</li>
+<li>2021-08-21 - As a druid, I could harmo him then open a trade window at max range. Then I cast invis on myself and pressed trade. Worked.</li>
+<li>2021-09-09 - 52 Enchanter charmed him, other person turned in successfully. - Verycharming</li>
+<li>2022-01-05 - Rogue sneak works to complete quest. DO NOT HIDE, only sneak. Don't need to hail him, just hand him the item.
+<li>2022-04-06 - Did NOT work with spells Lich or Call of Bones.</li>
+<li>2022-05-12 - Worked at apprehensive. Also worked with pacify + invis self with trade window open.</li>
+</ul>
+
+== Related Quests ==
+
+<ul>
+<li>[[Medallion of the Obulus Quest]]</li>
+<li>[[Rune of Scale Quest]]</li>
+</ul>
+
+[[Category:Quests]]
+[[Category:Warsliks Woods]]
+[[Category:All Classes Quests]]

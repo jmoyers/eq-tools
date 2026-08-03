@@ -1,0 +1,93 @@
+[[File:npc_tani_n`mar.png|frame|Tani N`Mar]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Neriak|Neriak Third Gate]]
+|-
+! ''' Quest Giver: '''
+| [[Tani N`Mar]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| [[Bard]], [[Rogue]], [[Shadow Knight]]
+|-
+! ''' Related Zones: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Giz Dinree]], [[Lyda Nasin]]
+|-
+! ''' Required Faction: '''
+| Amiable or better.
+|}
+
+== Reward ==
+
+<ul><li>  {{:Cinctured Whip}}
+</li></ul>
+
+== Walkthrough ==
+
+You say 'Hail, Tani N'Mar'
+
+: [[Tani N`Mar]] says 'Greetings! You must be a stranger or [new to the Hall]. If you are a stranger, be warned that these halls are intended for the Ebon Mask only. If you are found to be a member of another house, you just may feel the sting of a blade in your back.'
+
+You say 'I am new to the Hall.'
+
+: Tani N`Mar says 'Then I am glad to make your acquaintance. Have you ever been to Freeport? If not, how would you like to go? It is a test of your cunning we wish. Are you prepared to risk your young life? Are you [ready to venture to Freeport]?'
+
+You say 'I am ready to venture to Freeport.'
+
+: Tani N`Mar says 'Find a way to the port of Freeport. Seek out Giz Dinree. She is usually near the shores at night. She is your contact. Tell her you were [sent by Tani]. She will fill you in on your mission. Good luck. Do not waste your time practicing your skills. Go as you are.'
+
+
+: [[Giz Dinree]] used to be found around the corner to the right of the docks, by the shark '-374.91,-1083.97'
+
+You say 'Hail, Giz Dinree'
+
+: Giz Dinree says 'Excuse me! I came here in hopes of being alone!'
+
+WARNING! As a Dark Elf Shadowknight Giz Dinree conned amiably towards me but when I said "Tani sent me." She turned and attacked me. She called me a "Liar!" and said, "Silent and deadly are the daggers of the Ebon Mask!"
+Hit me for 34 damage until I died.
+
+You say 'Tani sent me'
+
+: Giz Dinree says 'You're a new rogue, then! Your mission is to kill the young daughter of the owner of the Seafarer's Roost. Wait for the right time. Why? You don't need to know. Do it and return Lyda's head to Tani in Neriak. I hope you can make it back to Neriak alive. Good hunting!'
+
+Do not enter the Seafarer's Roost until 9pm, there is a high level Ogre right inside during the day that is kos to Dark Elves.
+
+[[Lyda Nasin]] Spawns at 9pm behind the bar on the second floor of the Seafarer's Roost. 
+
+You have slain Lyda Nasin!
+
+<div class="facblock">
+* Your faction standing with [[Coalition of Tradefolk]] got worse.
+* Your faction standing with [[Knights of Truth]] got worse.
+* Your faction standing with [[Merchants of Qeynos]] got worse.
+* Your faction standing with [[Coalition of Tradefolk Underground]] got worse.
+</div>
+Lyda Nasin's corpse says 'The good people of this city will know of this. They will strike back at you!'
+
+--You have looted [[Human Head]]--
+
+'''Hand the head in to Tani N`Mar back in the rogues guild in Neriak.'''
+
+: Tani N`Mar says 'Good work! I knew you could prove your worth. Most waste time training. I do not reward those who waste my time. Please take this. It is from our horde, from countless robberies. I hope you can use it to advance yourself. Remember to always stay faithful to Neriak.'
+
+<div class="facblock">
+* Your faction standing with [[Ebon Mask]] got better.
+* Your faction standing with [[Guards of Qeynos]] got worse.
+* Your faction standing with [[Wolves of the North]] got worse.
+* Your faction standing with [[Guardians of the Vale]] got worse.
+* Your faction standing with [[Carson McCabe]] got worse.
+</div>
+{{exp}}
+
+You receive 8 silver from Tani N`Mar.
+
+[[Category:Quests]]
+[[Category:Neriak Third Gate]]
+[[Category:Bard Quests]]
+[[Category:Rogue Quests]]
+[[Category:Shadow Knight Quests]]

@@ -1,0 +1,50 @@
+{| class="questTopTable"
+! ''' Start Zone: '''
+|[[Splitpaw Lair]]
+|-
+! ''' Quest Giver: '''
+|[[Brother Hayle]]
+|-
+! ''' Minimum Level: '''
+|46
+|-
+! ''' Classes: '''
+|[[Paladin]], [[Shadowknight]]
+|-
+! ''' Related Zones: '''
+| [[Splitpaw Lair]], [[South Karana]], [[Paineel]], [[Plane of Sky]], [[East Freeport]]
+|-
+! ''' Related NPCs: '''
+| [[Luxio Nulsis]]
+|}
+[[File:Torrid Corruptor.png|alt=The Torrid Corruptor|thumb|The Torrid Corruptor]]
+
+== Reward ==
+
+<ul><li> {{:Torrid Corruptor}}
+</li></ul>
+
+== Checklist ==
+: ''See also: [[Zimel's Blades (SoulFire)]]
+Note, you will want Warmly faction with Bloodsabers before turnin to Lord Grimrot, Heretics before turn in to Jotayi Ibupran, etc.
+
+If you click your burning soul, and it still gives you text, you have not completed the turn in likely due to faction issues.{{CheckboxList}}
+* Prepare these items first!
+** Obtain a [[SoulFire]]
+** Obtain a [[Dark Reaver]]
+* Slay [[Brother Hayle]]
+** Loot and click on soul
+* Find [[Lord Grimrot]] - MUST BE LIVING VERSION!
+** Give Lord Grimrot Dark Reaver and clicked [[Burning Soul of the Pious]] - requires [[Bloodsabers]] Kindly Faction
+** Kill Lord Grimrot
+* Find [[Jotayi Ibupran]] in [[Paineel]]
+** Give Jotayi Ibupran [[Pestilence Scythe]] (with charges, not uncharged) and [[Burning Soul of the Pestilent]] - requires [[Heretics]] Warmly Faction
+* Find [[Inte Akera]]
+** Give [[Dason Goldblade]] 500pp to spawn Inte Akera -- '''Doing so will spawn Inte Akera in the Windmill on Island 4. Inte is a Deepwater Knight of Prexus and will unleash the Oceanlord's fury upon those deemed 'evil' in their eyes. Inte Akera only stays up for a few minutes, so hustle.'''
+**  Kill [[Inte Akera]] and loot the [[Burning Soul of the Virtuous]].
+*  Give [[Luxio Nulsis]] in East Freeport the three souls and [[Soulfire]]. Requires [[Dismal Rage]] kindly faction!
+
+[[Category:Quests]]
+[[Category:Plane of Sky]]
+[[Category:Paladin Quests]]
+[[Category:Shadow Knight Quests]]

@@ -1,0 +1,66 @@
+{{Classic Era}}
+
+[[File:npc_tabure_ahendle.png|frame|Tabure Ahendle]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|South Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Tabure Ahendle]]
+|-
+! ''' Minimum Level: '''
+| 4
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| [[Toxxulia Forest]]
+|-
+! ''' Related NPCs: '''
+| 
+|}
+
+== Reward ==
+
+<ul><li>  Random piece of Medium [[Raw-hide Armor Set]]
+</li></ul>
+
+== Walkthrough ==
+
+''[[Tabure Ahendle]] is located at 65, -507, 5 in the South Qeynos Steel Warriors Arena. You must have Amiable faction to complete this quest. (60 wood elf druid of Tunare - I was able to turn in the hides as apprehensive and received faction/reward)''
+
+You say, 'Hail, Tabure Ahendle'
+
+: Tabure Ahendle says, 'What have we here? Perhaps a future Ebon Strongbear? A [member of the Steel Warriors]? If the way of the warrior is not to your liking, might I suggest joining the League of Antonican Bards? The only damage you might take there is a sore throat! HAHAHA!'
+
+You say, 'I am a member of the Steel Warriors'
+
+: Tabure Ahendle says, 'A warrior, you say? I have never met you. You must be from the [bunker] or perhaps just a new recruit. You should test your skills with [[Brin Stolunger]]. When you have done that, then, maybe you could [assist] me.'
+
+You say, 'I will assist you'
+
+: Tabure Ahendle says, 'So, you think you can be of assistance to me? Let me test your skill. Travel to Erudin and seek out the beasts which are called Kobolds. I have never seen one and would very much like to have four Kobold Hides with which to make a rug. To do so would earn you some barely used rawhide armor - maybe even a shield.'
+
+'''Hand [[Tabure Ahendle]] 4 [[Kobold Hide]]s.'''
+
+: Tabure Ahendle says, 'Incredible!! Such grand tones. It shall make a fine rug. You have shown me that you cannot always judge a book by its cover. You are quite skilled. Would you like to perform a [dangerous task] for me?'
+
+<div class="facblock">
+* Your faction standing with [[Steel Warriors]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Knights of Truth]] got better.
+* Your faction standing with [[The Freeport Militia]] got worse.
+* Your faction standing with [[Corrupt Qeynos Guards]] got worse.
+</div>
+
+{{YouGainExperience}}
+
+You receive 7 silver.
+
+''Completing '''Kobold Killing''' opens the [[Blurred Map Quest]].''
+
+Note: Took about 40 turn-ins (160 hides) to get a full set of raw-hide armor. This was negligible xp for a lvl 4 Erudite Paladin, but the armor set is better then cloth, and the coin earned from duplicate pieces was decent (raw-hide tunics vendor for over 1pp).  
+
+[[Category:Quests]]
+[[Category:South Qeynos]]

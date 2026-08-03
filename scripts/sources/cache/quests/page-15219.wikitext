@@ -1,0 +1,75 @@
+:''For the overview of the many bone chips quests, see [[Bone Chips Quests]].''
+[[File:npc_lashun_novashine.png|frame|Lashun Novashine]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Qeynos|North Qeynos]]
+|-
+! ''' Quest Giver: '''
+| [[Lashun Novashine]]
+|-
+! ''' Minimum Level: '''
+| 1
+|-
+! ''' Classes: '''
+| All
+|-
+! ''' Related Zones: '''
+| None
+|-
+! ''' Related NPCs: '''
+| None
+|}
+
+== Rewards ==
+
+<ul><li> [[Faction]]
+</li><li> NPC Heal
+</li></ul>
+
+== Walkthrough ==
+''Note that you can do both the Bone Chips and 2GP quests at dubious, confirmed as of April 2024.''
+
+''Lashun Novashine can be found in North Qeynos wandering from the temple to the front gate, and back. One location at which he stops is -158, -350. ''
+
+You say, 'Hail, Lashun Novashine'
+
+: Lashun Novashine says 'Well met, ______. My name is Lashun Novashine and I am a humble priest of Rodcet Nife, the Prime Healer. I wish to spread His word to every corner of Norrath. My job gets more difficult each day with so many so willing to take lives rather than preserve them.'' 
+
+'''Turn in two [[Bone Chips]], unstacked.'''
+
+: Lashun Novashine says 'Ah good, I see you seek healing. But you must offer the remains of one more minion of Bertoxxulous before Rodcet will deem you worthy.'
+
+: Lashun Novashine says 'Very well, young one. May the light of the Prime Healer wash away your scars.' 
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better. 
+* Your faction standing with [[Bloodsabers]] got '''worse'''.
+</div>
+{{YouGainExperience}} About 0.5% at level 4.
+
+Lashun Novashine begins to cast a spell. You feel a little better. You have been healed for 14 points.
+
+'''Hand Lashun Novashine 2 Gold.''' (Depending on his inventory of personal gold, copper pieces may work at times)
+
+: Lashun Novashine says 'Thank you for the donation to the Temple of Life. May Rodcet Nife cleanse your body of all ills.' 
+
+<div class="facblock">
+* Your faction standing with [[Priests of Life]] got better.
+* Your faction standing with [[Knights of Thunder]] got better.
+* Your faction standing with [[Guards of Qeynos]] got better.
+* Your faction standing with [[Antonius Bayle]] got better. 
+* Your faction standing with [[Bloodsabers]] got '''worse'''.
+</div>
+
+{{YouGainExperience}}
+
+== Related Quests ==
+
+* [[Armor_of_Ro_Quests|Armor of Ro]]
+
+[[Category: Quests]]
+[[Category:North Qeynos]]
+[[Category:All Classes Quests]]

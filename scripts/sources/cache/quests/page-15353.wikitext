@@ -1,0 +1,96 @@
+[[File:Npc_raltur_caliskon.jpeg|frame|Raltur Caliskon]]
+{| class="questTopTable"
+! ''' Start Zone: '''
+| [[Freeport|East Freeport]]
+|-
+! ''' Quest Giver: '''
+| [[Raltur Caliskon]]
+|-
+! ''' Minimum Level: '''
+| 5
+|-
+! ''' Classes: '''
+| All (Evil)
+|-
+! ''' Related Zones: '''
+| [[Commonlands]]
+|-
+! ''' Related NPCs: '''
+| [[Mojax Hikspin]], [[Sir Lucan D`Lere]]
+|}
+
+== Reward ==
+
+<ul><li>  Faction
+</li><li> Exp
+</li></ul>
+
+== Walkthrough ==
+
+'''This is the Evil version of the [[Errand for Wolten]] and [[Paladin Message]] quests.'''
+
+''Raltur Caliskon looks your way apprehensively -- what would you like your tombstone to say?''
+
+You say, 'Hail, Raltur Caliskon'
+
+: Raltur Caliskon says, 'May the rage of Innoruuk flow through your veins. Welcome Hogs. Soon the Dismal Rage shall run rampant in the streets of Freeport. Our numbers grow. Like you, so many feel the rage within. It is now time to [ serve Innoruuk ].'
+
+You say, 'I wish to serve Innoruuk.'
+
+: Raltur Caliskon says, 'Wise choice. We of the Dismal Rage have learned of the value of incompetence. As the Teir'Dal use the ogres and the trolls so to shall the Dismal Rage have A pawn in this game. Ours is the Freeport Militia. They trust us. How unfortunate for them. I want you to go speak with Sir Lucan D'lere, the so called ruler of this city and leader of this mob of ruffians called the Freeport Militia. Tell him you are [ from the Shrine of Innoruuk ]. Do as he asks. Little favors lead to large debts. And if you should find something of importance, bring it to me not that inept warrior.'
+
+'''Raltur wants you to report to [[Sir Lucan D`Lere]] himself. Normally Lucan is found in the Militia House in [[West Freeport]], although he is often killed as part of the SoulFire quest and is usually down with a long respawn time.'''
+
+You say, 'I am from the Shrine of Innoruuk'
+
+: Sir Lucan Dlere says, 'It is about time Pietro sent someone. You people should be lucky I allow you to conduct your business in this city. I will have you all locked up if you cannot be more prompt. Now, listen up! I want you to go out to the Commonlands. My guards have reported that a messenger from Qeynos is staying at an inn near the western edge of the Commonlands. I suspect he is carrying vital information to the Hall of Truth. I want him stopped. Bring me the message if you know what's good for you and the Dismal Rage. Now, get out of here!'
+
+'''The messenger you must kill is [[Mojax Hikspin]], who is sitting on the south ridge of the lake in the [[West Commonlands]]. He has the message that was meant for the [[Knights of Truth]].'''
+
+
+'''From here you have the option of returning the letter to either Sir Lucan or Raltur.
+
+===Giving the Note to Sir Lucan D`Lere===
+
+You give the note to Sir Lucan D`Lere.
+
+:Sir Lucan D`lere says, 'So I see you decided to bring me the message. Good. I would hate to have to hunt you down. It could have gotten really messy and I hate reading bloodstained messages. Well it seems Antonius Bayle and the Knights of Truth have begun an alliance. And it sounds as though I may have a traitor among my guards. If you wish to switch your allegiance to Freeport, then find me this traitor. Bring me his militia tunic. Try to keep the blood from staining it.'
+
+Quest: [[The Traitor]]
+
+<div class="facblock">
+* Your faction standing with FreeportMilitia got better.
+* Your faction standing with CoalitionofTradeFolkIll got better.
+* Your faction standing with KnightsofTruth got worse.
+* Your faction standing with PriestsofMarr got worse.
+</div>
+{{exp}}
+
+You receive 10 silver pieces.
+
+===Giving the Note to Raltur Caliskon===
+
+You give the note to Raltur Caliskon.
+
+:Raltur Caliskon says, 'So the great Antonius Bayle wishes to ally himself with the mighty Knights of Truth.  How pathetic.  It would appear that the alliance has spawned infiltrators of sorts.  Of course, we of the Dismal Rage are already aware of this, but I am sure Sir Lucan D'Lere knows nothing as usual.  I have a [mission] for any evil shadowknight of Innoruuk.'
+
+Quest: [[The Bayle List]]
+
+<div class="facblock">
+* Your faction standing with DismalRage got better.
+* Your faction standing with KnightsofTruth got worse.
+* Your faction standing with OpalDarkBriar got better.
+</div>
+
+{{exp}}
+
+== Trivia ==
+Sir Lucan D`Lere sends [[Duggin Scumber]] to do the dirty work in the "good" version of this quest.
+
+== See Also ==
+
+* [[The Traitor]] quest.
+
+[[Category:Quests]]
+[[Category:East Freeport]]
+[[Category:All Classes Quests]]
