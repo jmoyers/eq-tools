@@ -28,6 +28,7 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { logError } from './errorLog'
 import { normalizeItemName, parseItemWikitext } from './itemLookupParse'
+import { buildQuestItemIndex } from './questItemIndex'
 import type { ItemKnowledge, ItemQuestUse, PoskyData, QuestData } from '../shared/types'
 
 export { normalizeItemName, parseItemWikitext }
@@ -55,7 +56,13 @@ const UA = 'everquest-companion/0.1 (personal quest tracker)'
 // the merged record and positives never expire, so every item cached under v2 would keep
 // serving a recipe-less answer and a QUEST-ITEM-flagged tradeskill component (Gnome Meat,
 // Troll Parts, Spider Legs) would stay unexplained forever.
-const CACHE_VERSION = 3
+//
+// Bumped to 4 when a `role: 'required'` quest use gained `rewards` — what the quest HANDS OUT
+// for that turn-in (questItemIndex.ts). Same reasoning a third time: the cache stores the
+// MERGED record and positives never expire, so every item cached under v3 would keep serving
+// reward-less turn-in uses and the hover card's outcome line ("→ Bunker Battle Blade") would
+// never appear for anything already looted.
+const CACHE_VERSION = 4
 const NEG_TTL_MS = 7 * 24 * 60 * 60 * 1000 // negative results: retry after 7 days
 const OFFLINE_TTL_MS = 30 * 60 * 1000 // offline misses: retry after 30 min
 const REQUEST_SPACING_MS = 150 // polite inter-request delay (wiki)
@@ -99,23 +106,12 @@ const questData = questsJson as unknown as QuestData
  * BOTH sides of a quest: its turn-in/collectible items (role 'required') and the items it
  * hands out (role 'reward'). This is the answer for every classic turn-in item whose own
  * wiki page never listed a quest.
+ *
+ * The builder itself is `questItemIndex.ts` — pure, so the golden test can exercise the
+ * SHIPPED index (this module can't be imported outside Electron). It also attaches each
+ * turn-in use's REWARD names, which is what lets the hover card answer "and what do I get".
  */
-const questsByItem = new Map<string, ItemQuestUse[]>()
-for (const q of questData.quests) {
-  const add = (itemName: string, role: 'required' | 'reward'): void => {
-    const key = cacheKey(itemName)
-    const uses = questsByItem.get(key) ?? []
-    if (!uses.some((u) => u.page === q.page && u.role === role)) {
-      const use: ItemQuestUse = { quest: q.name, page: q.page, source: 'quests', role }
-      if (q.giver) use.giver = q.giver
-      if (q.startZone) use.zone = q.startZone
-      uses.push(use)
-    }
-    questsByItem.set(key, uses)
-  }
-  for (const it of q.requiredItems ?? []) add(it, 'required')
-  for (const r of q.rewards ?? []) add(r.name, 'reward')
-}
+const questsByItem = buildQuestItemIndex(questData)
 
 /** Quest identity for de-duping across sources: drop a "Class · " prefix + fold case. */
 function questIdentity(s: string): string {

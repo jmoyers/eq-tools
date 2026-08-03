@@ -284,6 +284,14 @@ export interface ItemQuestUse {
   role?: 'required' | 'reward'
   /** the quest's start zone, when known (quests catalog only) */
   zone?: string
+  /**
+   * What the quest HANDS OUT, for a `role: 'required'` use — i.e. the outcome of turning
+   * this item in. Names only (capped; see MAX_ATTACHED_REWARDS), so the UI can offer the
+   * reward item as its own hoverable card without a second index. Present ONLY on the
+   * 'quests' source and ONLY when the catalog actually names rewards (law 1: never
+   * invented), and never on a 'reward'-role use — an item is not its own outcome.
+   */
+  rewards?: string[]
 }
 
 /**

@@ -22,6 +22,9 @@ import {
   normalizeItemName
 } from '../src/main/itemLookupParse'
 import { craftedByLabel, isNotableKnowledge, recipeUseLabel } from '../src/shared/itemKnowledge'
+// The renderer-side VIEW rule (which items the push surfaces hide). Pure + MUI-free, so it
+// runs here; its only import is a type, which tsx erases.
+import { isTradeskillOnly } from '../src/renderer/src/lib/itemKnowledgeView'
 import {
   parseStatsBlock,
   damageRatio,
@@ -727,4 +730,32 @@ test('recipes do NOT make an item notable — that predicate drives the push sur
   assert.equal(isNotableKnowledge(meat), true)
   assert.equal(meat.questUses.length, 0)
   assert.equal((meat.recipes ?? []).length, 1)
+})
+
+// --- the tradeskill-only view rule (Task #62) ---------------------------------------
+//
+// The gap the predicate closes: Gnome Meat passes `isNotableKnowledge` purely on its stats
+// block's QUEST ITEM flag while no quest in either local catalog uses it. That is what put
+// ingredients in the pickups strip and the event-log overlay; this rule takes them back out.
+
+test('isTradeskillOnly: an ingredient nothing quests for is hidden; anything quest-bound is not', () => {
+  const meat = { ...BASE, ...parseItemWikitext('Gnome Meat', GNOME_MEAT) }
+  assert.equal(isTradeskillOnly(meat), true) // recipes, no quest use, no lore ⇒ ingredient
+
+  // A quest use ALWAYS wins, whatever the recipes say — including a posky (Plane of Sky) one,
+  // which is a quest use like any other, so a Sky drop can never read as tradeskill-only.
+  assert.equal(
+    isTradeskillOnly({ ...meat, questUses: [{ quest: 'Corrupt Guards', source: 'quests', role: 'required' }] }),
+    false
+  )
+  assert.equal(
+    isTradeskillOnly({ ...meat, questUses: [{ quest: 'Warrior · Test of Blood', source: 'posky' }] }),
+    false
+  )
+  // LORE is its own reason to surface an item.
+  assert.equal(isTradeskillOnly({ ...meat, lore: true }), false)
+  // No recipes at all ⇒ not an ingredient. Vendor trash and unresolved items stay visible;
+  // hiding on absence of knowledge would hide everything the wiki hasn't answered for.
+  assert.equal(isTradeskillOnly({ ...BASE, quest: true }), false)
+  assert.equal(isTradeskillOnly({ ...BASE, offline: true }), false)
 })

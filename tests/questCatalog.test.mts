@@ -26,6 +26,7 @@ import {
   stripMarkup,
   transclusionTargets
 } from '../scripts/sources/questPage'
+import { MAX_ATTACHED_REWARDS, buildQuestItemIndex, questItemKey } from '../src/main/questItemIndex'
 import questsJson from '../src/renderer/src/data/eqlegends/quests.json'
 import type { QuestData } from '../src/shared/types'
 
@@ -213,21 +214,12 @@ test('splitSections separates the lead from == Heading == blocks', () => {
 const data = questsJson as unknown as QuestData
 
 /**
- * The same item→quests index src/main/itemLookup.ts builds from this file (both roles,
- * case-insensitive key). Rebuilt here because itemLookup imports `electron`, which cannot
- * load outside an Electron process.
+ * The item→quests index src/main/itemLookup.ts serves — the REAL builder, not a mirror of it.
+ * It lives in its own pure module (src/main/questItemIndex.ts) precisely so this test can
+ * import it: itemLookup itself imports `electron`, which cannot load outside an Electron
+ * process, and a re-implemented index proves nothing about the shipped one.
  */
-const byItem = new Map<string, { quest: string; role: 'required' | 'reward' }[]>()
-for (const q of data.quests) {
-  const add = (name: string, role: 'required' | 'reward'): void => {
-    const key = name.toLowerCase().replace(/\s+/g, ' ').trim()
-    const uses = byItem.get(key) ?? []
-    uses.push({ quest: q.name, role })
-    byItem.set(key, uses)
-  }
-  for (const it of q.requiredItems ?? []) add(it, 'required')
-  for (const r of q.rewards ?? []) add(r.name, 'reward')
-}
+const byItem = buildQuestItemIndex(data)
 
 test('quests.json loads with a sane, non-empty catalog', () => {
   assert.ok(data.scrapedAt)
@@ -263,6 +255,55 @@ test('the index carries BOTH roles: reward items resolve too', () => {
   assert.ok(rewardItems.length > 50, 'quest rewards should be indexed, not just turn-ins')
   const requiredItems = [...byItem.entries()].filter(([, uses]) => uses.some((u) => u.role === 'required'))
   assert.ok(requiredItems.length > 50, 'turn-in items should be indexed')
+})
+
+// --- reward attachment (Task #62) --------------------------------------------------
+//
+// A turn-in use now carries what the quest HANDS OUT, so the item hover card can answer
+// "…and what do I get for it" one hop deep without a second lookup. Identity-style: the
+// attached names must be exactly the quest's own reward names, capped — never invented,
+// never on the wrong role.
+
+test('a required-role use carries its quest rewards; a reward-role use never does', () => {
+  let checkedRequired = 0
+  for (const q of data.quests) {
+    const rewardNames = (q.rewards ?? []).map((r) => r.name.trim()).filter(Boolean)
+    for (const it of q.requiredItems ?? []) {
+      const use = (byItem.get(questItemKey(it)) ?? []).find((u) => u.page === q.page && u.role === 'required')
+      assert.ok(use, `${it} should carry a required use for ${q.page}`)
+      if (rewardNames.length === 0) {
+        // Law 1: a quest whose page names no reward attaches NOTHING, not an empty list.
+        assert.equal(use.rewards, undefined, `${q.page}: no rewards known ⇒ no rewards field`)
+      } else {
+        assert.deepEqual(use.rewards, rewardNames.slice(0, MAX_ATTACHED_REWARDS))
+        checkedRequired++
+      }
+    }
+    for (const r of q.rewards ?? []) {
+      const use = (byItem.get(questItemKey(r.name)) ?? []).find((u) => u.page === q.page && u.role === 'reward')
+      assert.ok(use, `${r.name} should carry a reward use for ${q.page}`)
+      assert.equal(use.rewards, undefined, 'a reward item is its own outcome — never re-listed')
+    }
+  }
+  assert.ok(checkedRequired > 20, `expected many turn-ins to name an outcome, got ${checkedRequired}`)
+})
+
+test('attached rewards are capped and are real, non-empty names', () => {
+  for (const uses of byItem.values()) {
+    for (const u of uses) {
+      if (!u.rewards) continue
+      assert.equal(u.role, 'required')
+      assert.ok(u.rewards.length > 0 && u.rewards.length <= MAX_ATTACHED_REWARDS)
+      for (const r of u.rewards) assert.ok(r.trim().length > 0 && !r.includes('[['), `clean reward name: ${r}`)
+    }
+  }
+})
+
+test('the index keys items the way itemLookup does (base name, case-folded)', () => {
+  // `+N` upgrade variants share the base item's knowledge (Task #42) — the index must key
+  // the same way itemLookup's cacheKey does or a looted "Sphinx Claw +1" resolves to nothing.
+  assert.equal(questItemKey('  Dwarven Ale '), questItemKey('dwarven ale'))
+  assert.equal(questItemKey('Guard Bracelet +2'), questItemKey('Guard Bracelet'))
 })
 
 test('quest metadata survives the scrape (givers, zones, levels are real values)', () => {

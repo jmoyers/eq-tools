@@ -27,6 +27,8 @@ import { useWindowedRows } from '../../lib/useWindowedRows'
 import { normalizeQuery } from '../../lib/search'
 import { itemCountKey } from '../../lib/itemName'
 import { formatDateTime, formatTime } from '../../lib/formatDate'
+import { KnownItemTooltip } from '../../lib/KnownItemTooltip'
+import { isTradeskillOnly } from '../../lib/itemKnowledgeView'
 import { getPoskyData } from '../../data'
 import { useFavorites } from '../favorites/useFavorites'
 import { FavoriteStar } from '../favorites/FavoriteStar'
@@ -53,6 +55,20 @@ for (const qz of posky.quests) {
 
 // Fixed dense-row height (px) for the windowed tables (MUI Table size="small").
 const ROW_HEIGHT = 37
+
+// Renderer-local view pref (same shape as App.tsx's saved view / `eq.combat.scope`): does the
+// notable-pickups strip surface pure tradeskill components? Default OFF — a grinding session
+// loots hundreds of spider legs, and a strip full of ingredients drowns the one coin that
+// actually starts a quest. The loot HISTORY table is never filtered by this: it is a ledger.
+const TRADESKILL_KEY = 'eq.loot.showTradeskill'
+
+function loadShowTradeskill(): boolean {
+  try {
+    return localStorage.getItem(TRADESKILL_KEY) === '1'
+  } catch {
+    return false
+  }
+}
 
 // A loot event with two precomputed keys — computed ONCE per history change so the
 // per-keystroke filter is a plain substring test (never re-lowercasing thousands of rows
@@ -170,17 +186,28 @@ interface GroupRow {
 
 // "Notable pickups" strip (Task #53): the last few looted items that are lore- or
 // quest-relevant. Dense, dismissable, no narration — a quiet "hey, that coin you grabbed
-// is for the Tashania spell quest". Clicking a chip opens that item's detail dialog.
+// is for the Tashania spell quest". Hovering a chip shows the item card; clicking it opens
+// that item's detail dialog.
+//
+// TRADESKILL (Task #62): components are hidden by default — see TRADESKILL_KEY below. The
+// strip stays mounted while any are hidden so the toggle that reveals them is reachable, and
+// it says how many are behind it rather than pretending the pickups didn't happen.
 function NotablePickupsStrip({
   notable,
+  hiddenTradeskill,
+  showTradeskill,
+  onToggleTradeskill,
   onSelect,
   onDismiss
 }: {
   notable: NotablePickup[]
+  hiddenTradeskill: number
+  showTradeskill: boolean
+  onToggleTradeskill: (v: boolean) => void
   onSelect: (item: string) => void
   onDismiss: (key: string) => void
 }): JSX.Element | null {
-  if (notable.length === 0) return null
+  if (notable.length === 0 && hiddenTradeskill === 0) return null
   return (
     <Box
       sx={{
@@ -208,20 +235,35 @@ function NotablePickupsStrip({
                 : n.item
           const key = itemCountKey(n.item)
           return (
-            <Chip
-              key={key}
-              size="small"
-              variant="outlined"
-              color={n.knowledge.lore ? 'warning' : 'secondary'}
-              icon={n.knowledge.lore ? <AutoStoriesIcon /> : undefined}
-              label={label}
-              onClick={() => onSelect(n.item)}
-              onDelete={() => onDismiss(key)}
-              deleteIcon={<CloseIcon />}
-              sx={{ maxWidth: 320 }}
-            />
+            <KnownItemTooltip key={key} name={n.item} knowledge={n.knowledge}>
+              <Chip
+                size="small"
+                variant="outlined"
+                color={n.knowledge.lore ? 'warning' : 'secondary'}
+                icon={n.knowledge.lore ? <AutoStoriesIcon /> : undefined}
+                label={label}
+                onClick={() => onSelect(n.item)}
+                onDelete={() => onDismiss(key)}
+                deleteIcon={<CloseIcon />}
+                sx={{ maxWidth: 320 }}
+              />
+            </KnownItemTooltip>
           )
         })}
+        <Box sx={{ flexGrow: 1 }} />
+        <Tooltip title="Tradeskill components (spider legs, bone chips, gnome meat…) are ingredients, not quest items — hidden here by default. Hover any item name to see what it's for.">
+          <FormControlLabel
+            sx={{ m: 0 }}
+            control={
+              <Switch size="small" checked={showTradeskill} onChange={(e) => onToggleTradeskill(e.target.checked)} />
+            }
+            label={
+              <Typography variant="caption" color="text.secondary">
+                show tradeskill{hiddenTradeskill > 0 ? ` (${hiddenTradeskill})` : ''}
+              </Typography>
+            }
+          />
+        </Tooltip>
       </Stack>
     </Box>
   )
@@ -256,7 +298,12 @@ const GroupedRow = memo(function GroupedRow({
       </TableCell>
       <TableCell>
         <Stack direction="row" spacing={1} alignItems="center">
-          <span>{g.item}</span>
+          {/* Hover = what it is + what it's for (fetched on open); click (the row) = deep dive. */}
+          <KnownItemTooltip name={g.item} knowledge={knowledge}>
+            <Box component="span" sx={{ cursor: 'help' }}>
+              {g.item}
+            </Box>
+          </KnownItemTooltip>
           {posky && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
           <KnowledgeBadge knowledge={knowledge} isPosky={posky} />
           <DispositionChip disposition={g.disposition} />
@@ -303,7 +350,11 @@ const FlatRow = memo(function FlatRow({
       <TableCell sx={{ color: 'text.secondary' }}>{fmtTime(e.ts)}</TableCell>
       <TableCell>
         <Stack direction="row" spacing={1} alignItems="center">
-          <span>{e.count && e.count > 1 ? `${e.count} × ${e.item}` : e.item}</span>
+          <KnownItemTooltip name={e.item} knowledge={knowledge}>
+            <Box component="span" sx={{ cursor: 'help' }}>
+              {e.count && e.count > 1 ? `${e.count} × ${e.item}` : e.item}
+            </Box>
+          </KnownItemTooltip>
           {posky && <Chip size="small" color="primary" variant="outlined" label="PoSky" />}
           <KnowledgeBadge knowledge={knowledge} isPosky={posky} />
           <DispositionChip disposition={e.disposition} />
@@ -346,6 +397,21 @@ export default function LootView(): JSX.Element {
   // from the strip. `byKey` also feeds the per-row LORE/quest indicator.
   const [dismissed, setDismissed] = useState<Set<string>>(new Set())
   const { byKey: knowledgeByKey, notable } = useNotablePickups(history, dismissed)
+  // Tradeskill-only pickups are hidden by default (see TRADESKILL_KEY).
+  const [showTradeskill, setShowTradeskill] = useState<boolean>(loadShowTradeskill)
+  const tradeskillHidden = useMemo(() => notable.filter((n) => isTradeskillOnly(n.knowledge)), [notable])
+  const visibleNotable = useMemo(
+    () => (showTradeskill ? notable : notable.filter((n) => !isTradeskillOnly(n.knowledge))),
+    [notable, showTradeskill]
+  )
+  const onToggleTradeskill = (v: boolean): void => {
+    setShowTradeskill(v)
+    try {
+      localStorage.setItem(TRADESKILL_KEY, v ? '1' : '0')
+    } catch {
+      /* a renderer without storage just doesn't remember — never a crash */
+    }
+  }
 
   useEffect(() => {
     const off = window.eq.onInventoryReload(() => setAutoUpdatedAt(Date.now()))
@@ -542,7 +608,10 @@ export default function LootView(): JSX.Element {
       </Typography>
 
       <NotablePickupsStrip
-        notable={notable}
+        notable={visibleNotable}
+        hiddenTradeskill={showTradeskill ? 0 : tradeskillHidden.length}
+        showTradeskill={showTradeskill}
+        onToggleTradeskill={onToggleTradeskill}
         onSelect={setSelected}
         onDismiss={(key) => setDismissed((prev) => new Set(prev).add(key))}
       />

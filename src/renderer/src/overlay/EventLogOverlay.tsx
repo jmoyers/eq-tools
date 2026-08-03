@@ -29,6 +29,7 @@ import { Suspense, lazy, useEffect, useRef, useState } from 'react'
 import type { FeedDelta, FeedEvent, FeedSnap, ItemKnowledge, ModuleDelta, OverlayConfig } from '@shared/types'
 import { wikiPageUrl } from '@shared/wiki'
 import { formatTime } from '../lib/formatDate'
+import { isTradeskillOnly } from '../lib/itemKnowledgeView'
 
 // The game-style item window is a MUI component; the overlay bundle is otherwise MUI-free by
 // design. Loading it LAZILY keeps that promise where it matters — a pinned, locked overlay (and
@@ -49,6 +50,61 @@ const KIND_STYLE: Record<FeedEvent['kind'], { color: string; glyph: string; labe
 /** Newest first — the feed module keeps its ring newest-LAST. */
 function newestFirst(rows: FeedSnap): FeedEvent[] {
   return rows.slice().reverse()
+}
+
+/**
+ * TRADESKILL FILTER (Task #62) — hide loot rows for items that are only recipe ingredients.
+ *
+ * The feed admits a loot row when the item is NOTABLE, and an item page's stats block hands
+ * the QUEST ITEM flag to a whole family of things no quest anywhere uses (spider legs, gnome
+ * meat, bone-chip-grade components). On a glanceable overlay that is pure noise, so they never
+ * appear here. UNCONDITIONAL, unlike the loot tab's toggle: this window is a separate renderer
+ * entry with its own storage partition (it cannot read the main window's localStorage) and its
+ * persisted config lives in the main-owned store, so there is no honest place to keep a pref
+ * yet. The loot tab remains the surface where you can ask to see them.
+ *
+ * A row is held back until its verdict lands rather than shown-then-yanked: the item is already
+ * in main's item cache (the feed only exists because a lookup resolved it), so the answer is an
+ * IPC round trip, not a wiki call. A lookup that fails counts as "not tradeskill" — an outage
+ * must never blank the feed.
+ */
+function useTradeskillFilter(feed: FeedEvent[]): FeedEvent[] {
+  const [verdict, setVerdict] = useState<Record<string, boolean>>({})
+  const asked = useRef<Set<string>>(new Set())
+
+  const lootKeys = feed
+    .filter((e) => e.kind === 'loot')
+    .map((e) => e.title.toLowerCase())
+    .join('|')
+
+  useEffect(() => {
+    let alive = true
+    const todo: string[] = []
+    for (const e of feed) {
+      if (e.kind !== 'loot') continue
+      const key = e.title.toLowerCase()
+      if (asked.current.has(key)) continue
+      asked.current.add(key)
+      todo.push(e.title)
+    }
+    for (const title of todo) {
+      void window.eqOverlay
+        .lookupItem(title)
+        .then((k: ItemKnowledge) => {
+          if (alive) setVerdict((v) => ({ ...v, [title.toLowerCase()]: isTradeskillOnly(k) }))
+        })
+        .catch(() => {
+          if (alive) setVerdict((v) => ({ ...v, [title.toLowerCase()]: false }))
+        })
+    }
+    return () => {
+      alive = false
+    }
+    // Re-run when the set of loot titles on screen changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lootKeys])
+
+  return feed.filter((e) => e.kind !== 'loot' || verdict[e.title.toLowerCase()] === false)
 }
 
 /**
@@ -248,7 +304,7 @@ export default function EventLogOverlay(): JSX.Element {
 
   const dragRegion = !locked ? ({ WebkitAppRegion: 'drag' } as React.CSSProperties) : {}
   const noDrag = { WebkitAppRegion: 'no-drag' } as React.CSSProperties
-  const feed = newestFirst(rows)
+  const feed = useTradeskillFilter(newestFirst(rows))
 
   return (
     <div
