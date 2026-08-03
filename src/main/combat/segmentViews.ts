@@ -247,6 +247,7 @@ export function buildTimeline(st: EngineState, id: string, now: number): Timelin
   return {
     id: e.id,
     name: encounterName(e, isCurrent),
+    startTs: start,
     durationMs,
     lanes,
     events,

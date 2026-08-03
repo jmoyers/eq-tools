@@ -9,10 +9,68 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import PetsIcon from '@mui/icons-material/Pets'
+import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
 import UpdateChip from './UpdateChip'
 import type { View } from '../appViews'
 
 export const DRAWER_WIDTH = 220
+
+interface NavRow {
+  view: View
+  label: string
+  icon: JSX.Element
+  /** trailing state chip, when a row has one to state */
+  badge?: JSX.Element
+}
+
+/* State, not process: this tab is unfinished, and the chip says so. */
+const IN_DEV = (
+  <Chip
+    size="small"
+    label="in dev"
+    variant="outlined"
+    sx={{ height: 18, fontSize: 10, color: 'text.secondary', '& .MuiChip-label': { px: 0.75 } }}
+  />
+)
+
+// Row ORDER is the nav's order. Overview leads: it is the at-a-glance landing surface.
+const ROWS: NavRow[] = [
+  { view: 'overview', label: 'Overview', icon: <SpaceDashboardIcon /> },
+  { view: 'combat', label: 'Combat', icon: <BarChartIcon /> },
+  { view: 'mobs', label: 'Mobs', icon: <PetsIcon /> },
+  { view: 'bosses', label: 'Raid Targets', icon: <EmojiEventsIcon /> },
+  { view: 'posky', label: 'Plane of Sky', icon: <ShieldMoonIcon /> },
+  { view: 'alerts', label: 'Alerts', icon: <NotificationsActiveIcon /> },
+  { view: 'leveling', label: 'Leveling', icon: <TrendingUpIcon /> },
+  { view: 'loot', label: 'Loot', icon: <ReceiptLongIcon /> },
+  { view: 'buffs', label: 'Buffs', icon: <AutoFixHighIcon />, badge: IN_DEV }
+]
+
+/** Bottom-aligned, outside ROWS — it is not a feature view and never moves. */
+const PREFERENCES: NavRow = { view: 'preferences', label: 'Preferences', icon: <SettingsIcon /> }
+
+/** One nav row. `data-testid="nav-<view>"` is the stable handle the e2e clicks. */
+function NavRowButton({
+  row,
+  view,
+  onSelect
+}: {
+  row: NavRow
+  view: View
+  onSelect: (v: View) => void
+}): JSX.Element {
+  return (
+    <ListItemButton
+      data-testid={`nav-${row.view}`}
+      selected={view === row.view}
+      onClick={() => onSelect(row.view)}
+    >
+      <ListItemIcon>{row.icon}</ListItemIcon>
+      <ListItemText primary={row.label} />
+      {row.badge}
+    </ListItemButton>
+  )
+}
 
 /**
  * The permanent left nav: one row per view, Preferences bottom-aligned with the ambient
@@ -45,73 +103,16 @@ export default function NavDrawer({
       }}
     >
       <List>
-        <ListItemButton selected={view === 'combat'} onClick={() => onSelect('combat')}>
-          <ListItemIcon>
-            <BarChartIcon />
-          </ListItemIcon>
-          <ListItemText primary="Combat" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'mobs'} onClick={() => onSelect('mobs')}>
-          <ListItemIcon>
-            <PetsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Mobs" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'bosses'} onClick={() => onSelect('bosses')}>
-          <ListItemIcon>
-            <EmojiEventsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Raid Targets" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'posky'} onClick={() => onSelect('posky')}>
-          <ListItemIcon>
-            <ShieldMoonIcon />
-          </ListItemIcon>
-          <ListItemText primary="Plane of Sky" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'alerts'} onClick={() => onSelect('alerts')}>
-          <ListItemIcon>
-            <NotificationsActiveIcon />
-          </ListItemIcon>
-          <ListItemText primary="Alerts" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'leveling'} onClick={() => onSelect('leveling')}>
-          <ListItemIcon>
-            <TrendingUpIcon />
-          </ListItemIcon>
-          <ListItemText primary="Leveling" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'loot'} onClick={() => onSelect('loot')}>
-          <ListItemIcon>
-            <ReceiptLongIcon />
-          </ListItemIcon>
-          <ListItemText primary="Loot" />
-        </ListItemButton>
-        <ListItemButton selected={view === 'buffs'} onClick={() => onSelect('buffs')}>
-          <ListItemIcon>
-            <AutoFixHighIcon />
-          </ListItemIcon>
-          <ListItemText primary="Buffs" />
-          {/* State, not process: this tab is unfinished, and the chip says so. */}
-          <Chip
-            size="small"
-            label="in dev"
-            variant="outlined"
-            sx={{ height: 18, fontSize: 10, color: 'text.secondary', '& .MuiChip-label': { px: 0.75 } }}
-          />
-        </ListItemButton>
+        {ROWS.map((row) => (
+          <NavRowButton key={row.view} row={row} view={view} onSelect={onSelect} />
+        ))}
       </List>
 
       {/* Bottom-aligned Preferences (Task #55) — replaces the old update-channel block. */}
       <Box sx={{ mt: 'auto' }}>
         <Divider />
         <List disablePadding>
-          <ListItemButton selected={view === 'preferences'} onClick={() => onSelect('preferences')}>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Preferences" />
-          </ListItemButton>
+          <NavRowButton row={PREFERENCES} view={view} onSelect={onSelect} />
         </List>
         {/* …and directly beneath it, the AMBIENT update affordance (Task #60):
             a gold "Restart to update" chip when a build is downloaded and

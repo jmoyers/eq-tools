@@ -3,33 +3,57 @@
 // them — no data shaping, no MUI, no chart library. Split out of LevelingView.tsx
 // for file mass; the drawing rules themselves are unchanged.
 
-import type { JSX } from 'react'
+import type { CSSProperties, JSX } from 'react'
 import type { LevelSegment } from './levelSeries'
+import { CHART_H, CHART_W, xOf, type AaPoint, type ChartScale } from './levelChartGeometry'
+import { LevelHoverLayer } from './LevelHoverLayer'
+
+const W = CHART_W
+const H = CHART_H
+
+/**
+ * Positioned ancestor for the hover layer. A plain `div`, not an MUI `Box`: this file is
+ * deliberately MUI-free (see the header), and emotion would serialize a style object on
+ * every render of a component that sits directly under a pointermove path.
+ */
+const WRAP_STYLE: CSSProperties = { position: 'relative' }
 
 /** Simple filled area chart of a cumulative series over time. */
 export function AreaChart({
   points,
-  color
+  color,
+  suppressed
 }: {
-  points: { ts: number; y: number }[]
+  points: AaPoint[]
   color: string
+  /** Forwarded to the hover layer — see LevelHoverLayer (drag-select seam). */
+  suppressed?: boolean
 }): JSX.Element | null {
   if (points.length < 2) return null
-  const W = 720
-  const H = 150
   const pad = 8
-  const t0 = points[0].ts
-  const t1 = points[points.length - 1].ts
+  // The X mapping is levelChartGeometry's, not a local copy — the hover layer below
+  // reads the cursor back through the same scale, so the readout cannot drift from the
+  // line it is pointing at.
+  const scale: ChartScale = { t0: points[0].ts, t1: points[points.length - 1].ts, w: W, padX: pad }
   const yMax = points[points.length - 1].y || 1
-  const x = (t: number): number => pad + ((t - t0) / Math.max(1, t1 - t0)) * (W - 2 * pad)
+  const x = (t: number): number => xOf(scale, t)
   const y = (v: number): number => H - pad - (v / yMax) * (H - 2 * pad)
   const line = points.map((p) => `${x(p.ts).toFixed(1)},${y(p.y).toFixed(1)}`).join(' ')
   const area = `${pad},${H - pad} ${line} ${(W - pad).toFixed(1)},${H - pad}`
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
-      <polygon points={area} fill={color} opacity={0.18} />
-      <polyline points={line} fill="none" stroke={color} strokeWidth={2} />
-    </svg>
+    <div style={WRAP_STYLE}>
+      <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
+        <polygon points={area} fill={color} opacity={0.18} />
+        <polyline points={line} fill="none" stroke={color} strokeWidth={2} />
+      </svg>
+      <LevelHoverLayer
+        scale={scale}
+        height={H}
+        color={color}
+        aaPoints={points}
+        suppressed={suppressed}
+      />
+    </div>
   )
 }
 
@@ -48,15 +72,19 @@ export const SWAP_COLOR = '#8fa3b8'
  */
 export function LevelStepChart({
   segments,
-  color
+  color,
+  aaPoints,
+  suppressed
 }: {
   segments: LevelSegment[]
   color: string
+  /** Cumulative AA series — context only ("AA gained by then"), never drawn here. */
+  aaPoints: AaPoint[]
+  /** Forwarded to the hover layer — see LevelHoverLayer (drag-select seam). */
+  suppressed?: boolean
 }): JSX.Element | null {
   const all = segments.flatMap((s) => s.points)
   if (all.length < 2) return null
-  const W = 720
-  const H = 150
   const padX = 8
   const padTop = 14
   const padBottom = 8
@@ -70,7 +98,10 @@ export function LevelStepChart({
   // Baseline one level under the lowest observed ding: the fill follows the steps rather
   // than reaching an arbitrary zero, so a low post-swap segment doesn't look like a crater.
   const base = lo - 1
-  const x = (t: number): number => padX + ((t - t0) / (t1 - t0)) * (W - 2 * padX)
+  // Same shared mapping as AreaChart — note the domains still differ (this one carries the
+  // trailing pad), which is exactly what ChartScale makes explicit instead of implicit.
+  const scale: ChartScale = { t0, t1, w: W, padX }
+  const x = (t: number): number => xOf(scale, t)
   const y = (v: number): number => H - padBottom - ((v - base) / Math.max(1, hi - base)) * (H - padTop - padBottom)
   const floor = H - padBottom
 
@@ -96,36 +127,46 @@ export function LevelStepChart({
   })
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
-      {drawn.map((d, i) => (
-        <g key={i}>
-          <polygon points={d.area} fill={color} opacity={0.12} />
-          <polyline points={d.line} fill="none" stroke={color} strokeWidth={2} />
-        </g>
-      ))}
-      {drawn.map((d, i) =>
-        d.afterSwap ? (
-          <g key={`s${i}`}>
-            <line
-              x1={d.startX}
-              y1={padTop - 6}
-              x2={d.startX}
-              y2={floor}
-              stroke={SWAP_COLOR}
-              strokeWidth={1}
-              strokeDasharray="3 4"
-              opacity={0.9}
-            />
-            <circle cx={d.startX} cy={d.startY} r={3.5} fill="none" stroke={SWAP_COLOR} strokeWidth={1.5} />
+    <div style={WRAP_STYLE}>
+      <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
+        {drawn.map((d, i) => (
+          <g key={i}>
+            <polygon points={d.area} fill={color} opacity={0.12} />
+            <polyline points={d.line} fill="none" stroke={color} strokeWidth={2} />
           </g>
-        ) : null
-      )}
-      <text x={padX} y={padTop} fill={color} fontSize={10} opacity={0.7}>
-        {hi}
-      </text>
-      <text x={padX} y={floor - 2} fill={color} fontSize={10} opacity={0.7}>
-        {lo}
-      </text>
-    </svg>
+        ))}
+        {drawn.map((d, i) =>
+          d.afterSwap ? (
+            <g key={`s${i}`}>
+              <line
+                x1={d.startX}
+                y1={padTop - 6}
+                x2={d.startX}
+                y2={floor}
+                stroke={SWAP_COLOR}
+                strokeWidth={1}
+                strokeDasharray="3 4"
+                opacity={0.9}
+              />
+              <circle cx={d.startX} cy={d.startY} r={3.5} fill="none" stroke={SWAP_COLOR} strokeWidth={1.5} />
+            </g>
+          ) : null
+        )}
+        <text x={padX} y={padTop} fill={color} fontSize={10} opacity={0.7}>
+          {hi}
+        </text>
+        <text x={padX} y={floor - 2} fill={color} fontSize={10} opacity={0.7}>
+          {lo}
+        </text>
+      </svg>
+      <LevelHoverLayer
+        scale={scale}
+        height={H}
+        color={color}
+        aaPoints={aaPoints}
+        segments={segments}
+        suppressed={suppressed}
+      />
+    </div>
   )
 }

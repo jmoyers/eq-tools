@@ -14,13 +14,18 @@ import type { CoatSlot, ProcLane, ProcsView, SlowRollup } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
 import { CAT_COLOR, KIND_COLOR, QuietNote } from './combatShared'
 import { fmtElapsed, slowRollupText } from './copyText'
+import { MARKER_COLOR } from './markerStyle'
+
+// The three hues below are the MARKER hues — this panel and the charts are talking about the
+// same events, so they read from the one map (markerStyle.ts) instead of keeping copies of the
+// hexes, which is how a third copy starts to drift.
 
 /** The blade-coat hue, shared with the header's slot-3 pill and the chart's coat markers. */
-export const POISON_COLOR = '#c46fd2'
+export const POISON_COLOR = MARKER_COLOR.coat
 /** The slow hue, shared with the chart's flagged slow marker and the meter's slow chip. */
-export const SLOW_COLOR = '#57e0a0'
+export const SLOW_COLOR = MARKER_COLOR.slow
 /** The invocation hue, shared with the header's slot-2 pill. */
-const INVOCATION_COLOR = '#a98fe0'
+const INVOCATION_COLOR = MARKER_COLOR.invocation
 
 /**
  * The card's tab pair. Deliberately the LIGHTEST control in the app's hierarchy — plain text

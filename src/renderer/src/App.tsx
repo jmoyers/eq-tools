@@ -1,4 +1,4 @@
-import { type JSX, useEffect, useState } from 'react'
+import { type JSX, useCallback, useEffect, useState } from 'react'
 import { Box, Button, CssBaseline, Snackbar, Alert, Typography } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
 import TravelExploreIcon from '@mui/icons-material/TravelExplore'
@@ -15,6 +15,8 @@ import BossView from './features/bosses/BossView'
 import MobsView from './features/mobs/MobsView'
 import type { MobTarget } from './features/mobs/mobTarget'
 import CombatView from './features/combat/CombatView'
+import type { CombatFocus } from './features/combat/combatFocus'
+import OverviewView from './features/overview/OverviewView'
 import AlertsView from './features/alerts/AlertsView'
 import BuffsView from './features/buffs/BuffsView'
 import PreferencesView from './features/preferences/PreferencesView'
@@ -67,26 +69,80 @@ function NoLogsEmptyState({ onOpenPreferences }: { onOpenPreferences: () => void
   )
 }
 
+/**
+ * App-wide DEEP-LINK routing: one detail surface per subject, so the thing that ROUTES to it
+ * is app-level. Mobs (Task #64) has three callers — a Raid Targets roster card, the Overview
+ * mob card, and the `app:focusView` deep link from the events overlay's con rows; Combat has
+ * Overview's DPS card linking down to the fight it is already showing.
+ *
+ * The NONCE is the load-bearing part: the destination view keys its effect on it and stays
+ * MOUNTED across a link, so asking for the same subject twice arrives twice instead of looking
+ * broken. `clear*` is called the moment the payload is applied, so a stale one can't re-fire
+ * when you next return to that tab.
+ */
+interface AppRouting {
+  mobTarget: MobTarget | null
+  mobNonce: number
+  openMob: (t: MobTarget) => void
+  clearMob: () => void
+  combatFocus: CombatFocus | null
+  combatNonce: number
+  openCombat: (f: CombatFocus) => void
+  clearCombatFocus: () => void
+}
+
+function useAppRouting(setView: (v: View) => void): AppRouting {
+  const [mobTarget, setMobTarget] = useState<MobTarget | null>(null)
+  const [mobNonce, setMobNonce] = useState(0)
+  const [combatFocus, setCombatFocus] = useState<CombatFocus | null>(null)
+  const [combatNonce, setCombatNonce] = useState(0)
+  // The openers are memoized because one of them is a DEPENDENCY of the mount-only effect that
+  // installs the cross-window `app:focusView` listener — a fresh identity each render would
+  // tear down and re-register that subscription on every render.
+  const openMob = useCallback(
+    (t: MobTarget) => {
+      setMobTarget(t)
+      setMobNonce((n) => n + 1)
+      setView('mobs')
+    },
+    [setView]
+  )
+  const openCombat = useCallback(
+    (f: CombatFocus) => {
+      setCombatFocus(f)
+      setCombatNonce((n) => n + 1)
+      setView('combat')
+    },
+    [setView]
+  )
+  return {
+    mobTarget,
+    mobNonce,
+    openMob,
+    clearMob: () => setMobTarget(null),
+    combatFocus,
+    combatNonce,
+    openCombat,
+    clearCombatFocus: () => setCombatFocus(null)
+  }
+}
+
 /** Which feature view is on screen. Preferences renders even with zero characters — it's how
  *  a user fixes the install path, so the fresh-machine empty state must never hide it. */
 function ViewContent({
   view,
   hasCharacters,
   viewKey,
-  mobTarget,
-  mobNonce,
-  onTargetConsumed,
-  onOpenMob,
-  onOpenPreferences
+  routing,
+  onOpenPreferences,
+  onOpenLoot
 }: {
   view: View
   hasCharacters: boolean
   viewKey: string
-  mobTarget: MobTarget | null
-  mobNonce: number
-  onTargetConsumed: () => void
-  onOpenMob: (t: MobTarget) => void
+  routing: AppRouting
   onOpenPreferences: () => void
+  onOpenLoot: () => void
 }): JSX.Element {
   if (view === 'preferences') return <PreferencesView />
   if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
@@ -99,14 +155,31 @@ function ViewContent({
       {view === 'mobs' && (
         <MobsView
           key={viewKey}
-          target={mobTarget}
-          targetNonce={mobNonce}
-          onTargetConsumed={onTargetConsumed}
+          target={routing.mobTarget}
+          targetNonce={routing.mobNonce}
+          onTargetConsumed={routing.clearMob}
         />
       )}
-      {view === 'bosses' && <BossView key={viewKey} onOpenMob={onOpenMob} />}
+      {view === 'bosses' && <BossView key={viewKey} onOpenMob={routing.openMob} />}
       {view === 'leveling' && <LevelingView key={viewKey} />}
-      {view === 'combat' && <CombatView key={viewKey} />}
+      {view === 'overview' && (
+        <OverviewView
+          key={viewKey}
+          onOpenCombat={routing.openCombat}
+          onOpenMob={routing.openMob}
+          onOpenLoot={onOpenLoot}
+        />
+      )}
+      {/* Like Mobs, the Combat tab stays MOUNTED across a deep link — the focus arrives
+          through the nonce, not through a remount. */}
+      {view === 'combat' && (
+        <CombatView
+          key={viewKey}
+          focus={routing.combatFocus}
+          focusNonce={routing.combatNonce}
+          onFocusConsumed={routing.clearCombatFocus}
+        />
+      )}
       {view === 'buffs' && <BuffsView key={viewKey} />}
       {view === 'alerts' && <AlertsView key={viewKey} />}
     </>
@@ -225,18 +298,8 @@ export default function App(): JSX.Element {
 
   const [rebuild, setRebuild] = useState(0)
 
-  // ---- app-wide mob routing (Task #64) ----
-  // ONE detail surface for a mob, so the thing that ROUTES to it is app-level. Three callers:
-  // a Raid Targets roster card, and — over the `app:focusView` deep link — a click on a con row
-  // in the events overlay. The NONCE is what makes "open the mob I already have open" work:
-  // MobsView keys its effect on it, so asking twice opens twice.
-  const [mobTarget, setMobTarget] = useState<MobTarget | null>(null)
-  const [mobNonce, setMobNonce] = useState(0)
-  const openMob = (t: MobTarget): void => {
-    setMobTarget(t)
-    setMobNonce((n) => n + 1)
-    setView('mobs')
-  }
+  const routing = useAppRouting(setView)
+  const { openMob } = routing
 
   useAppCelebrations(setDefeatToast, setQuestToast)
 
@@ -278,7 +341,7 @@ export default function App(): JSX.Element {
       offEqConfig()
       offFocus()
     }
-  }, [])
+  }, [openMob])
 
   const onSelectCharacter = async (logPath: string): Promise<void> => {
     const res = await window.eq.setCharacter(logPath)
@@ -317,11 +380,9 @@ export default function App(): JSX.Element {
               view={view}
               hasCharacters={characters.length > 0}
               viewKey={viewKey}
-              mobTarget={mobTarget}
-              mobNonce={mobNonce}
-              onTargetConsumed={() => setMobTarget(null)}
-              onOpenMob={openMob}
+              routing={routing}
               onOpenPreferences={() => setView('preferences')}
+              onOpenLoot={() => setView('loot')}
             />
           </Box>
         </Box>

@@ -21,11 +21,15 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
 
 ## Operating model (how work happens here — this works, keep it)
 
-- **Roles: Fable plans, Opus does.** The main session (Fable) is the
-  integrator / designer / thinker: it diagnoses, designs, writes precise
-  briefs, dispatches parallel Opus executor agents with DISJOINT file
-  ownership, reviews their reports, runs the verification gauntlet, and
-  commits per wave. Executors do the work and report honestly — including
+- **Roles: Fable plans, Opus does — and that includes SUBAGENT dispatch
+  (user rule, 2026-08-03).** The main session (Fable) is the integrator /
+  designer / thinker: it diagnoses, designs, writes precise briefs,
+  dispatches parallel Opus executor agents with DISJOINT file ownership,
+  reviews their reports, runs the verification gauntlet, and commits per
+  wave. Design/planning work — data models, API surfaces, plan review —
+  is Fable's own job, never delegated to Opus planning agents; Opus
+  subagents get concrete implementation briefs only (read-only
+  research/fact-gathering subagents are fine). Executors do the work and report honestly — including
   when the brief is WRONG. An executor overturning the integrator's
   assumption with evidence is a feature, not insubordination (it has
   corrected real briefing errors: dispel attribution, venom stacking, the
@@ -327,8 +331,9 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   sweep: 5747 (you 1749 / pet 390-by-name but ~2019 once charmed mobs
   resolve / other-mob 1695 dropped / incoming 1913). Misses: `tries to … but
   misses!` family (miss/dodge/parry/riposte/block/absorb).
-- Stances: two mutually exclusive groups — 9 stances (`You assume a X
-  stance.`) and 9 invocations (`You begin reciting the X invocation`);
+- Stances: two mutually exclusive groups — 9 stances (`You assume a/an X
+  stance.` — the article conjugates: "an offensive stance") and 9
+  invocations (`You begin reciting the X invocation`);
   "begin to change your …" lines are flavor, not state.
 - Quick Buff AA: `You activate Quick Buff.` → burst of landing emotes, NO
   cast lines. Permanent Illusion AA (ownership learned from its purchase

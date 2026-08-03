@@ -617,6 +617,13 @@ export interface TimelineView {
   /** the encounter id this timeline is for. */
   id: string
   name: string
+  /**
+   * Epoch ms of the encounter's start — the absolute clock `t: 0` stands for. DISPLAY ONLY:
+   * every other time in this view stays relative (the renderer needn't know absolute ts), and
+   * nothing derives from this. It exists so a hover readout can say what time of day an instant
+   * happened without threading the segment's start through three components. Not persisted.
+   */
+  startTs: number
   /** encounter duration in ms (X-axis extent). */
   durationMs: number
   /** ordered lane labels (Y axis), grouped by category then by total desc. */

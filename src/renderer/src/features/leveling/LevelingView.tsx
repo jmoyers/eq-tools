@@ -17,6 +17,7 @@ import {
   type LevelSegment
 } from './levelSeries'
 import { AreaChart, LevelStepChart, SWAP_COLOR } from './levelCharts'
+import { fmtDelta, type AaPoint } from './levelChartGeometry'
 
 const EMPTY_LEVELING: LevelingSnap = { levels: [], aaGains: [], aaSpends: [] }
 
@@ -25,15 +26,6 @@ const applyLevelingDelta = (s: LevelingSnap, d: LevelingDelta): LevelingSnap => 
   aaGains: [...s.aaGains, ...d.aaGains],
   aaSpends: [...s.aaSpends, ...d.aaSpends]
 })
-
-function fmtDelta(ms: number): string {
-  if (ms <= 0) return '—'
-  const mins = ms / 60000
-  if (mins < 60) return `${Math.round(mins)}m`
-  const hrs = mins / 60
-  if (hrs < 48) return `${hrs.toFixed(1)}h`
-  return `${(hrs / 24).toFixed(1)}d`
-}
 
 function HeroCard({
   icon,
@@ -155,7 +147,7 @@ function AaOverTimePanel({
   points,
   aaEarned
 }: {
-  points: { ts: number; y: number }[]
+  points: AaPoint[]
   aaEarned: number
 }): JSX.Element | null {
   if (points.length < 2) return null
@@ -175,11 +167,14 @@ function AaOverTimePanel({
 function LevelOverTimePanel({
   segments,
   levelCount,
-  swaps
+  swaps,
+  aaPoints
 }: {
   segments: LevelSegment[]
   levelCount: number
   swaps: number
+  /** Context for the hover readout only ("AA gained by then") — nothing is drawn from it. */
+  aaPoints: AaPoint[]
 }): JSX.Element | null {
   if (levelCount < 2) return null
   return (
@@ -198,7 +193,7 @@ function LevelOverTimePanel({
           'steps hold until the next ding'
         )}
       </Typography>
-      <LevelStepChart segments={segments} color="#d9b25f" />
+      <LevelStepChart segments={segments} color="#d9b25f" aaPoints={aaPoints} />
     </Paper>
   )
 }
@@ -344,9 +339,11 @@ export default function LevelingView(): JSX.Element {
     return [...byKey.values()].sort((a, b) => b.ev.ts - a.ev.ts)
   }, [spends])
 
-  const aaCumulative = useMemo(() => {
+  // `nowHave` rides along so the hover readout can state the unspent balance the gain line
+  // itself reported, instead of re-deriving a balance the log already gave us.
+  const aaCumulative = useMemo<AaPoint[]>(() => {
     let sum = 0
-    return sortedAAs.map((a) => ({ ts: a.ts, y: (sum += a.amount) }))
+    return sortedAAs.map((a) => ({ ts: a.ts, y: (sum += a.amount), nowHave: a.nowHave }))
   }, [sortedAAs])
 
   const feed = useMemo<FeedItem[]>(() => {
@@ -395,6 +392,7 @@ export default function LevelingView(): JSX.Element {
               segments={levelSegments}
               levelCount={sortedLevels.length}
               swaps={swaps}
+              aaPoints={aaCumulative}
             />
           </Stack>
 

@@ -3,39 +3,31 @@
 // their transforms stay in the parent, so the emitted SVG tree is exactly what it was when this
 // was one function.
 
-import { Box, Typography } from '@mui/material'
 import type { TimelineEvent, TimelineView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
 import { CAT_COLOR, RESIST_COLOR } from './combatShared'
-import {
-  PIN_H,
-  fmtClock,
-  fmtDur,
-  tickTooltip,
-  type Hover,
-  type PinGroup,
-  type TimelineMetrics
-} from './timelineGeometry'
+import { MARKER_COLOR } from './markerStyle'
+import { MARKER_RAIL_H, PIN_H, fmtClock, fmtDur, type PinGroup, type TimelineMetrics } from './timelineGeometry'
 
 // Category colors + the miss/resist tint come from combatShared — ONE source, so the timeline
 // lane stripe, the drill-down bar and the overlay can never disagree about what 'slay' looks
 // like (it used to keep a private copy, which is how slay stayed melee-gold here).
 const KIND_OPACITY: Record<string, number> = { you: 1, pet: 0.75, enemy: 0.5 }
 
-type SetHover = (h: Hover | null) => void
+// NOTHING here binds a pointer handler. Hover is one capture surface on the wrapper plus a
+// nearest-in-time hit test (TimelineHoverLayer): a per-element `onMouseEnter` meant up to ~2k
+// fresh closures per render, and a 2px tick is a sub-pixel mouse target.
 
 /** The pinned stance / invocation spans, one row per group that the fight actually had. */
 export function PinSpans({
   tl,
   m,
-  xOf,
-  setHover
+  xOf
 }: {
   tl: TimelineView
   m: TimelineMetrics
   xOf: (t: number) => number
-  setHover: SetHover
 }): React.JSX.Element {
   return (
     <>
@@ -57,15 +49,8 @@ export function PinSpans({
                       height={PIN_H - 2}
                       rx={2}
                       fill={group === 'stance' ? 'rgba(217,178,95,0.35)' : 'rgba(169,143,224,0.35)'}
-                      stroke={group === 'stance' ? '#d9b25f' : '#a98fe0'}
+                      stroke={group === 'stance' ? MARKER_COLOR.stance : MARKER_COLOR.invocation}
                       strokeWidth={0.5}
-                      onMouseEnter={() =>
-                        setHover({
-                          x: Math.max(m.labelW, (x1 + x2) / 2),
-                          y: y + PIN_H,
-                          lines: [`${group}: ${s.name}`, `${fmtDur(s.start)}–${fmtDur(s.end)}`]
-                        })
-                      }
                     />
                     {x2 - x1 > 30 && (
                       <text x={Math.max(m.labelW + 3, x1 + 3)} y={y + PIN_H - 4} fontSize={9} fill="#e6e6e6" style={{ pointerEvents: 'none' }}>
@@ -120,23 +105,9 @@ export function LaneRows({ tl, m }: { tl: TimelineView; m: TimelineMetrics }): R
  * ONE event tick. A miss/resist is a HOLLOW, red-tinted mark — an open circle for a resist, a
  * thin hollow bar for a miss — visually distinct from the solid damage ticks (world-model law 8).
  */
-function EventTick({
-  e,
-  x,
-  y,
-  m,
-  onEnter
-}: {
-  e: TimelineEvent
-  x: number
-  y: number
-  m: TimelineMetrics
-  onEnter: () => void
-}): React.JSX.Element {
+function EventTick({ e, x, y, m }: { e: TimelineEvent; x: number; y: number; m: TimelineMetrics }): React.JSX.Element {
   if (e.outcome === 'resist') {
-    return (
-      <circle cx={x} cy={y + m.laneH / 2} r={3} fill="none" stroke={RESIST_COLOR} strokeWidth={1.2} onMouseEnter={onEnter} />
-    )
+    return <circle cx={x} cy={y + m.laneH / 2} r={3} fill="none" stroke={RESIST_COLOR} strokeWidth={1.2} />
   }
   if (e.outcome === 'miss') {
     return (
@@ -149,7 +120,6 @@ function EventTick({
         stroke={RESIST_COLOR}
         strokeWidth={0.9}
         opacity={0.85}
-        onMouseEnter={onEnter}
       />
     )
   }
@@ -162,7 +132,6 @@ function EventTick({
       height={h}
       fill={CAT_COLOR[e.category]}
       opacity={KIND_OPACITY[e.kind] ?? 0.7}
-      onMouseEnter={onEnter}
     />
   )
 }
@@ -172,31 +141,68 @@ export function EventTicks({
   events,
   laneIndex,
   m,
-  xOf,
-  setHover
+  xOf
 }: {
   events: TimelineEvent[]
   laneIndex: Map<string, number>
   m: TimelineMetrics
   xOf: (t: number) => number
-  setHover: SetHover
 }): React.JSX.Element {
   return (
     <>
       {events.map((e, i) => {
         const lane = laneIndex.get(e.lane)
         if (lane === undefined) return null
-        const x = xOf(e.t)
-        const y = lane * m.laneH
+        return <EventTick key={i} e={e} x={xOf(e.t)} y={lane * m.laneH} m={m} />
+      })}
+    </>
+  )
+}
+
+/**
+ * The MARKER RAIL (Task #64 follow-up): the instants the fight CHANGED — a stance/invocation
+ * commit, a blade coat, a slow landing — drawn as a head glyph in their own thin rail plus a
+ * full-plot-height guide, so a tick can be read against the setting that was in force when it
+ * landed. The same hues and the same slow pennant the DPS curve flies (markerStyle.ts).
+ *
+ * The guide is deliberately faint: it is a reference line behind the data, not another series.
+ */
+export function MarkerRail({
+  tl,
+  m,
+  xOf
+}: {
+  tl: TimelineView
+  m: TimelineMetrics
+  xOf: (t: number) => number
+}): React.JSX.Element {
+  return (
+    <>
+      {tl.markers.map((mk, i) => {
+        const x = xOf(mk.t)
+        const color = MARKER_COLOR[mk.kind]
+        const slow = mk.kind === 'slow'
         return (
-          <EventTick
-            key={i}
-            e={e}
-            x={x}
-            y={y}
-            m={m}
-            onEnter={() => setHover({ x: Math.max(m.labelW, x), y: y + m.laneH, lines: tickTooltip(e) })}
-          />
+          <g key={`${mk.kind}|${mk.t}|${i}`}>
+            <line
+              x1={x}
+              x2={x}
+              y1={m.markerTop}
+              y2={m.laneTop + m.plotH}
+              stroke={color}
+              strokeWidth={1}
+              opacity={slow ? 0.45 : 0.22}
+              strokeDasharray={slow ? undefined : '2 3'}
+            />
+            {slow ? (
+              <polygon
+                points={`${x.toFixed(1)},${m.markerTop} ${(x + 7).toFixed(1)},${m.markerTop + 3.5} ${x.toFixed(1)},${m.markerTop + 7}`}
+                fill={color}
+              />
+            ) : (
+              <rect x={x - 2} y={m.markerTop + 1} width={4} height={MARKER_RAIL_H - 5} rx={1} fill={color} opacity={0.9} />
+            )}
+          </g>
         )
       })}
     </>
@@ -224,36 +230,5 @@ export function TimeAxis({
         </text>
       ))}
     </>
-  )
-}
-
-/** The floating hover card, positioned in the scroll box (outside the SVG). */
-export function HoverCard({ hover, m }: { hover: Hover; m: TimelineMetrics }): React.JSX.Element {
-  return (
-    <Box
-      sx={{
-        position: 'absolute',
-        left: Math.min(hover.x + 8, m.labelW + m.plotW - 170),
-        top: hover.y + 4,
-        bgcolor: 'rgba(20,20,24,0.96)',
-        border: '1px solid rgba(255,255,255,0.15)',
-        borderRadius: 0.5,
-        px: 0.75,
-        py: 0.25,
-        pointerEvents: 'none',
-        zIndex: 5,
-        maxWidth: 260
-      }}
-    >
-      {hover.lines.map((ln, i) => (
-        <Typography
-          key={i}
-          variant="caption"
-          sx={{ whiteSpace: 'nowrap', display: 'block', color: i === 0 ? 'text.primary' : 'text.secondary', fontWeight: i === 0 ? 600 : 400 }}
-        >
-          {ln}
-        </Typography>
-      ))}
-    </Box>
   )
 }

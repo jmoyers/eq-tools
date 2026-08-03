@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { CombatSnapshot } from '@shared/combat'
 import { LIVE_SELECTION, defaultSelection, type CombatScope } from './dashboardData'
+import type { CombatFocus } from './combatFocus'
 
 /** Re-export: the sentinel lives with the scope helpers (dashboardData) so the overlay entry —
  *  which never imports this hook — can share one definition. */
@@ -34,6 +35,13 @@ export interface UseCombat {
    */
   scope: CombatScope
   setScope: (s: CombatScope) => void
+  /**
+   * Jump to an explicit scope + selection (a deep link from another tab). Distinct from
+   * `setScope`, which deliberately resets the selection to that scope's head row: here the
+   * caller has already decided what it wants selected. The scope is persisted, exactly as a
+   * manual scope change is — arriving via "see this fight in Combat" is a real scope choice.
+   */
+  focusFight: (f: CombatFocus) => void
   /** current finalized-fight cap in the fetched snapshot */
   maxSegments: number
   /** bump the cap by another page of fights (Load more) */
@@ -100,6 +108,13 @@ export function useCombat(): UseCombat {
     setSelection(defaultSelection(s))
   }
 
+  /** See UseCombat.focusFight — a deep link decides BOTH halves, so the selection survives. */
+  const focusFight = (f: CombatFocus): void => {
+    setScopeState(f.scope)
+    localStorage.setItem(SCOPE_KEY, f.scope)
+    setSelection(f.selection)
+  }
+
   return {
     snap,
     combinePets,
@@ -110,6 +125,7 @@ export function useCombat(): UseCombat {
     setSelection,
     scope,
     setScope,
+    focusFight,
     maxSegments,
     loadMore,
     wantTimeline,

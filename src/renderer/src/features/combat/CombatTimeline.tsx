@@ -1,29 +1,23 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Box, IconButton, Paper, Stack, Tooltip as MuiTooltip, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
 import FitScreenIcon from '@mui/icons-material/FitScreen'
 import type { TimelineView } from '@shared/combat'
-import { EventTicks, HoverCard, LaneRows, PinLabels, PinSpans, TimeAxis } from './TimelineChart'
-import {
-  MIN_PLOT_W,
-  MIN_SPAN_MS,
-  PAD,
-  ZOOM_STEP,
-  fmtDur,
-  timelineMetrics,
-  type Hover,
-  type WrapSize
-} from './timelineGeometry'
+import { EventTicks, LaneRows, MarkerRail, PinLabels, PinSpans, TimeAxis } from './TimelineChart'
+import { TimelineHoverLayer, type HoverHandle } from './TimelineHoverLayer'
+import { buildDpsSeries } from './dashboardData'
+import { MIN_PLOT_W, MIN_SPAN_MS, PAD, ZOOM_STEP, fmtDur, timelineMetrics, type WrapSize } from './timelineGeometry'
 import { useTimelineViewport, type TimelineViewport } from './useTimelineViewport'
 
 // Dense, dark, WarcraftLogs-style timeline (Task #51 v2): X = encounter time, Y = one row
 // per skill/spell (left-axis labels), ticks where events occurred. Stance/invocation spans
-// are pinned above the skill lanes. SVG render (crisp at any zoom, cheap hover).
+// are pinned above the skill lanes, markers ride their own rail. SVG render (crisp at any zoom).
 //
-// The three halves live in their own modules: `timelineGeometry.ts` (sizing + tooltip text),
-// `useTimelineViewport.ts` (the zoom/pan window and its wheel/drag interactions) and
-// `TimelineChart.tsx` (the SVG parts). What is left here is the chart's frame.
+// The four halves live in their own modules: `timelineGeometry.ts` (sizing + tooltip models),
+// `useTimelineViewport.ts` (the zoom/pan window and its wheel/drag interactions),
+// `TimelineChart.tsx` (the SVG parts) and `TimelineHoverLayer.tsx` (the crosshair + tooltip).
+// What is left here is the chart's frame.
 
 /** Measure the scroll container so the SVG fills it, responsively (Task #54). */
 function useWrapSize(ref: React.RefObject<HTMLDivElement>): WrapSize {
@@ -86,14 +80,33 @@ function TimelineToolbar({ tl, vp }: { tl: TimelineView; vp: TimelineViewport })
 }
 
 function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
-  const [hover, setHover] = useState<Hover | null>(null)
   const dur = Math.max(1, tl.durationMs)
   const svgRef = useRef<SVGSVGElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const hoverRef = useRef<HoverHandle>(null)
   const wrap = useWrapSize(wrapRef)
   const m = timelineMetrics(tl, wrap)
   const vp = useTimelineViewport({ dur, id: tl.id, svgRef, labelW: m.labelW, plotW: m.plotW })
   const { view, span, zoomedIn, xOf } = vp
+
+  // The hover readout's rate is a SAMPLE of the DPS card's own curve, so the two surfaces can
+  // never disagree. Keyed on the timeline's identity, which CombatView stabilises across
+  // snapshot ticks — a finalized fight builds this once.
+  const dpsSeries = useMemo(() => buildDpsSeries(tl), [tl])
+
+  // HOVER / DRAG SEAM (§7.1): a bare pointermove only. `buttons` is non-zero throughout a drag
+  // (setPointerCapture included), so bailing on it lets the viewport's drag-pan and this hover
+  // coexist with NO shared state and no change to useTimelineViewport.
+  const onHoverMove = useCallback((ev: React.PointerEvent<HTMLDivElement>) => {
+    const el = ev.currentTarget
+    if (ev.buttons !== 0) {
+      hoverRef.current?.clear()
+      return
+    }
+    const r = el.getBoundingClientRect()
+    hoverRef.current?.move(ev.clientX - r.left + el.scrollLeft, ev.clientY - r.top + el.scrollTop)
+  }, [])
+  const onHoverLeave = useCallback(() => hoverRef.current?.clear(), [])
 
   // Lane index by label (Y position). Lanes are pre-sorted (category, total desc) by the
   // engine; keep that order top→bottom.
@@ -120,7 +133,12 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
   return (
     <Paper variant="outlined" sx={{ p: 1.5, flexGrow: 1, minHeight: 0, display: 'flex', flexDirection: 'column' }}>
       <TimelineToolbar tl={tl} vp={vp} />
-      <Box ref={wrapRef} sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, position: 'relative' }}>
+      <Box
+        ref={wrapRef}
+        sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, position: 'relative' }}
+        onPointerMove={onHoverMove}
+        onPointerLeave={onHoverLeave}
+      >
         <svg
           ref={svgRef}
           width={m.labelW + m.plotW + PAD}
@@ -129,7 +147,6 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
           onPointerDown={vp.onPointerDown}
           onPointerMove={vp.onPointerMove}
           onPointerUp={vp.onPointerUp}
-          onMouseLeave={() => setHover(null)}
         >
           {/* clip the plot so ticks/spans don't draw over the label gutter when panning */}
           <defs>
@@ -138,9 +155,11 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
             </clipPath>
           </defs>
 
-          {/* pinned stance / invocation spans */}
+          {/* pinned stance / invocation spans, then the marker rail + its guides — BEFORE the
+              lanes, so a guide is a faint reference line behind the ticks, never over them */}
           <g clipPath="url(#tl-plot-clip)">
-            <PinSpans tl={tl} m={m} xOf={xOf} setHover={setHover} />
+            <PinSpans tl={tl} m={m} xOf={xOf} />
+            <MarkerRail tl={tl} m={m} xOf={xOf} />
           </g>
           {/* pin-row labels (outside the clip, in the gutter) */}
           <PinLabels pinRows={m.pinRows} />
@@ -152,7 +171,7 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
             {/* event ticks (windowed to the visible time range) */}
             <g clipPath="url(#tl-plot-clip)" transform={`translate(0, ${-m.laneTop})`}>
               <g transform={`translate(0, ${m.laneTop})`}>
-                <EventTicks events={visibleEvents} laneIndex={laneIndex} m={m} xOf={xOf} setHover={setHover} />
+                <EventTicks events={visibleEvents} laneIndex={laneIndex} m={m} xOf={xOf} />
               </g>
             </g>
           </g>
@@ -163,7 +182,16 @@ function CombatTimelineInner({ tl }: { tl: TimelineView }): React.JSX.Element {
           </g>
         </svg>
 
-        {hover && <HoverCard hover={hover} m={m} />}
+        <TimelineHoverLayer
+          api={hoverRef}
+          tl={tl}
+          events={visibleEvents}
+          laneIndex={laneIndex}
+          m={m}
+          view={view}
+          span={span}
+          series={dpsSeries}
+        />
       </Box>
       <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5 }}>
         Scroll to zoom around the cursor · Shift+scroll or drag to pan · hollow red = miss/resist

@@ -30,6 +30,7 @@ import {
   type TargetDetail
 } from './dashboardData'
 import { CHART_H, CHART_W, PAD_B, PAD_T, PAD_X, buildDpsChart, type DpsChart } from './dpsChart'
+import { MARKER_COLOR, MARKER_WORD } from './markerStyle'
 
 /** Why the selection has no per-event ring — decides the wording of the quiet note. */
 export type Ringless = 'zone' | 'evicted' | null
@@ -45,29 +46,6 @@ function ringlessText(r: Ringless): string {
 const OUT_COLOR = '#d9b25f'
 const PET_COLOR = '#6fb3d2'
 const INC_COLOR = '#cf6679'
-
-/**
- * MARKER COLORS (Task #64) — deliberately the SAME hues as the header's modifier slots, so a
- * violet tick on the curve and the violet "3: Neurotoxic" pill are obviously the same fact:
- *   stance      gold   (slot 1)
- *   invocation  violet (slot 2)
- *   coat        magenta(slot 3)
- *   slow        green  — the one marker that is an OUTCOME rather than a choice, so it also
- *                        gets a flag head instead of a plain tick. It is what the user is
- *                        looking for on this chart; it must not read as another setting.
- */
-const MARKER_COLOR: Record<TimelineMarker['kind'], string> = {
-  stance: '#d9b25f',
-  invocation: '#a98fe0',
-  coat: '#c46fd2',
-  slow: '#57e0a0'
-}
-const MARKER_WORD: Record<TimelineMarker['kind'], string> = {
-  stance: 'stance',
-  invocation: 'invocation',
-  coat: 'coat',
-  slow: 'slow landed'
-}
 
 /** One marker, already placed in chart X coordinates. */
 interface PlacedMarker {

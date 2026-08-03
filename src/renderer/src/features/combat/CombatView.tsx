@@ -8,6 +8,7 @@ import { SegmentBody } from './SegmentPanel'
 import { DpsChartCard, MobDamageCard, type Ringless } from './CombatDashboard'
 import { BreakdownPreviewCard } from './BreakdownCard'
 import { scopeOptions, type CombatScope, type Drill, type ScopeOptions } from './dashboardData'
+import type { CombatFocus } from './combatFocus'
 import type { CombatSnapshot, SegmentView, SourceView, TimelineView } from '@shared/combat'
 
 /**
@@ -149,7 +150,24 @@ function ScopeEmptyPane({ scope }: { scope: 'fight' | 'overall' }): React.JSX.El
   )
 }
 
-export default function CombatView(): React.JSX.Element {
+/**
+ * @param focus             a scope + selection to land on (a deep link from another tab —
+ *                          Overview's "Open in Combat"). Re-applied whenever `focusNonce`
+ *                          changes, so asking for the SAME fight twice works twice.
+ * @param onFocusConsumed   told the moment the focus has been applied, so the router drops it.
+ *                          Load-bearing: this view unmounts when you switch tabs, and a focus
+ *                          still parked in the router would silently re-select a fight you had
+ *                          already navigated away from the next time you came here.
+ */
+export default function CombatView({
+  focus,
+  focusNonce,
+  onFocusConsumed
+}: {
+  focus?: CombatFocus | null
+  focusNonce?: number
+  onFocusConsumed?: () => void
+}): React.JSX.Element {
   const {
     snap,
     combinePets,
@@ -160,6 +178,7 @@ export default function CombatView(): React.JSX.Element {
     setSelection,
     scope,
     setScope,
+    focusFight,
     maxSegments,
     loadMore
   } = useCombat()
@@ -185,6 +204,15 @@ export default function CombatView(): React.JSX.Element {
 
   // Reset the drill when the selected fight / mode changes (a drill is per-fight).
   useEffect(() => setDrill(null), [selection, mode])
+
+  // An inbound focus (deep link) picks the scope + selection, then is consumed. Keyed on the
+  // NONCE, not the payload's identity: the same fight asked for twice must select twice.
+  useEffect(() => {
+    if (!focus) return
+    focusFight(focus)
+    onFocusConsumed?.()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusNonce])
 
   const { opts, capped } = segmentOptions(snap, scope, maxSegments)
   // A single `now` for the whole render so all the relative-age labels agree; it advances

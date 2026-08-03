@@ -3,6 +3,7 @@
 // can import it without importing the app itself.
 
 export type View =
+  | 'overview'
   | 'combat'
   | 'mobs'
   | 'bosses'
@@ -16,7 +17,10 @@ export type View =
 export const VIEW_KEY = 'eq.view'
 export const DEFAULT_VIEW: View = 'combat'
 
+// Every member of `View`. A view missing here is silently bounced to the default on the next
+// launch, so the two lists are edited together — always.
 const KNOWN_VIEWS: View[] = [
+  'overview',
   'combat',
   'mobs',
   'bosses',
