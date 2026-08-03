@@ -1,6 +1,13 @@
 // Public combat model shared between the engine (main) and the UI (renderer).
 // All types here are plain/serializable so snapshots can cross the IPC boundary.
 
+import type {
+  AttributionReport,
+  ProcLaneView,
+  ProcRateView,
+  StateSpan
+} from './procAnalytics'
+
 export type SourceKind = 'you' | 'pet' | 'enemy'
 export type DamageType = 'melee' | 'spell' | 'dot' | 'ds'
 
@@ -280,6 +287,26 @@ export interface ProcsView {
   /** Stance / invocation commits inside this segment. */
   stanceSwitches: number
   invocationSwitches: number
+
+  // ---- PROC ANALYTICS (docs/plans/proc-analytics.md). ADDITIVE ONLY. -------------------
+  // The shipped `strikes` / `poisonDamage` / `dispels` arrays above are UNCHANGED and stay the
+  // poison tab's source; everything below is a SUPERSET view over the same ingest-folded
+  // counters. Optional while the serialization wave lands, so the tree stays buildable and no
+  // existing consumer (ProcsBody, formatProcsText, the overlays, the golden tests) has to
+  // change to keep compiling.
+
+  /** Every proc lane — poison Strikes, cast-less spell effects, Slay Undead — with the three
+   *  rate denominators and Tier-A (measured) attribution. */
+  lanes?: ProcLaneView[]
+  /** All lanes together: the "procs per minute" headline. */
+  overall?: ProcRateView
+  /** Active-state spans overlapping this segment, for the ledger and the link joins. Each
+   *  carries evidence on BOTH edges — a span end is almost never printed by the game. */
+  states?: StateSpan[]
+  /** TIER B, the counterfactual. Present only for a ZONE-session selection: a single fight has
+   *  no inactive sample, and offering a per-fight counterfactual would be an invitation to read
+   *  noise as an effect. */
+  attribution?: AttributionReport
 }
 
 /** A source of incoming healing (to You / your pet), for the incoming section. */

@@ -20,6 +20,8 @@ import {
   type ZoneSession
 } from './encounter'
 import { idKey } from '../log/parser'
+import { StateTimeline } from './stateTimeline'
+import type { RecentCasts } from './procDetect'
 import type { ClassifiedLine, CoatSlot } from '../../shared/combat'
 
 export class EngineState {
@@ -93,6 +95,20 @@ export class EngineState {
    * never averaged in as zero (law 5).
    */
   slowSamples: (number | null)[] = []
+  /**
+   * THE ACTIVE-STATE TIMELINE (proc-analytics §3) — "what was on at time T" as an interval
+   * model with evidence on both edges. SESSION-level and purely ADDITIVE: it is written
+   * alongside the fields above by the same writers (applyStance / routeCoat / routeDry / the
+   * proc-buff landing path), and `Encounter.stanceSpans` is deliberately left alone — that
+   * list feeds the shipped TimelineView and sits inside the byte-identical regression surface.
+   */
+  stateTimeline = new StateTimeline()
+  /**
+   * Rank-normalized own-casts (`You begin casting <Spell>.`) → ts, for the cast-less proc
+   * detector. Only the PLAYER prints that line, which is exactly the gate the detector needs.
+   * Pruned to the 12s attribution window on write.
+   */
+  recentCasts: RecentCasts = new Map()
 
   /** Enable classification logging (after the historical scan, for the live tail), and
    *  flip HYDRATION off — from here on every snapshot describes the real present. */
@@ -138,6 +154,8 @@ export class EngineState {
     this.coatUtility = undefined
     this.coatCombat = []
     this.slowSamples = []
+    this.stateTimeline.reset()
+    this.recentCasts.clear()
   }
 
   log(ts: number, cat: string, role: ClassifiedLine['role'], text: string): void {

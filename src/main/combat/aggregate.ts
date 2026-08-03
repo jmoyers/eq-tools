@@ -7,6 +7,8 @@
 // that decides WHICH aggregate a line belongs to lives in routing.ts.
 
 import { HealAccum } from './healing'
+import { addSpellProc, type SpellProcLane } from './procDetect'
+import { WindowAccum } from './procWindows'
 import type { MissType } from '../../shared/logEvents'
 import type { DamageCategory, DamageType, MissBreakdown, SourceKind } from '../../shared/combat'
 
@@ -247,6 +249,27 @@ export class ProcAccum {
   coats: { poison: string; ts: number }[] = []
   stanceSwitches = 0
   invocationSwitches = 0
+  /**
+   * YOUR logged swing attempts in this segment: melee + slay hits, plus your misses. The
+   * MECHANICAL denominator for a chance-on-hit proc rate, and the only one of the three with
+   * no active-time ambiguity. Main-hand vs off-hand and double/triple attack are
+   * undistinguishable in this log (law 6), so this is swings-AS-LOGGED.
+   *
+   * A COUNT, not an amount: it moves no damage total, which is what keeps this whole feature
+   * inside law 8's tripwire.
+   */
+  swings = 0
+  /**
+   * SPELL-PROC lanes (proc-analytics §4.1): spell effects with no own cast behind them, keyed
+   * by `spellCanonKey`. The damage they carry is ALREADY inside this segment's outgoing total
+   * — this is an INDEX over damage already counted, never a second accumulation of it.
+   */
+  spellProcs = new Map<string, SpellProcLane>()
+
+  /** Count one detected cast-less spell effect. */
+  addSpellProc(spell: string, amount: number, isHeal: boolean): void {
+    addSpellProc(this.spellProcs, spell, amount, isHeal)
+  }
 
   addStrike(name: string, ambiguous: boolean, ts: number, isSlow: boolean): void {
     const s = this.strikes.get(name) ?? { name, count: 0, ambiguous }
@@ -292,6 +315,14 @@ export class Agg {
    * free, and the numbers are folded on INGEST so they never depend on the event ring.
    */
   procs = new ProcAccum()
+  /**
+   * THE MINUTE-WINDOW LEDGER (proc-analytics §5.1) — the matched-window sample the Tier-B
+   * counterfactual is computed from. On the `Agg` for the third time and for the third
+   * identical reason: a finalized zone session inherits it FROZEN, so "how much DPS did X add
+   * this session" survives the zone change that produced it, with no parallel machinery and no
+   * dependence on any event ring.
+   */
+  windows = new WindowAccum()
   addOut(ref: SourceRef, ev: DamageEvent, ambiguous = false): void {
     const s = this.out.get(ref.id) ?? newSource(ref.name, ref.kind)
     if (s.name !== ref.name) s.name = ref.name

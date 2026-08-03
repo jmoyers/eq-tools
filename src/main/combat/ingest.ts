@@ -13,12 +13,30 @@
 import { idKey } from '../log/parser'
 import { damageCategory } from './taxonomy'
 import { evalClosure, ensureEncounter, finalizeCurrent, finalizeZoneSession } from './lifecycle'
-import { route, routeHeal, routeMiss, routeMitigation, routeResist } from './routing'
-import { applyStance, routeCoat, routeDispelLanding, routeDry, routeProc } from './procRouting'
+import { classify, route, routeHeal, routeMiss, routeMitigation, routeResist } from './routing'
+import {
+  applyStance,
+  routeCoat,
+  routeDispelLanding,
+  routeDry,
+  routeProc,
+  routeProcBuffApply,
+  routeProcBuffWearOff
+} from './procRouting'
+import { isCastless, noteCast, procEligibleDamage } from './procDetect'
 import { CC_HOLD_MS } from './encounter'
 import { Agg, type DamageEvent } from './aggregate'
+import type { WindowFold } from './procWindows'
 import type { EngineState } from './state'
-import type { CcEvent, DamageEventE, DeathEvent, LogEvent, MitigationEvent } from '../../shared/logEvents'
+import type {
+  CcEvent,
+  DamageEventE,
+  DeathEvent,
+  HealEvent,
+  LogEvent,
+  MissEvent,
+  MitigationEvent
+} from '../../shared/logEvents'
 
 /**
  * Crowd control (mez/root, not charm). Evaluate any pending closure at this
@@ -69,6 +87,9 @@ function ingestWorld(st: EngineState, ev: LogEvent): boolean {
       finalizeCurrent(st)
       st.petNames = new Set()
       st.world.reset()
+      // An epoch severs every active-state span: the beta character's stances, coats and buffs
+      // are not this character's. CENSORED, never 'observed' (proc-analytics §3.1 boundaries).
+      st.stateTimeline.censorAll(ev.ts)
       return true
     }
     case 'zone': {
@@ -149,23 +170,122 @@ function mitigationLine(ev: MitigationEvent): string {
   return `⛊ absorbed ${ev.source ?? '?'}'s damage shield`
 }
 
+/**
+ * PROC ANALYTICS for one attributed damage line (docs/plans/proc-analytics.md §4).
+ *
+ * PURELY ADDITIVE, and it must stay that way: everything below is a COUNT or an INDEX over
+ * damage the meter already counted. Nothing here calls an `add*` that moves a damage total,
+ * so every total stays byte-identical (law 8's tripwire).
+ *
+ * `activeDeltaMs` is the ENGINE'S OWN per-hit active-time accrual, measured by the caller as
+ * the difference route() just made to `Encounter.activeMs` — not a re-derivation. That is what
+ * "reuse the active-time definition verbatim" means here: the two can never drift, because
+ * there is only one computation.
+ *
+ * The three judgements, each with its gate:
+ *   - OUTGOING-YOURS only. A pet's damage is not your swing and not your proc.
+ *   - SWING = a melee or slay HIT (misses are added by the miss path). Slay counts because a
+ *     Slay Undead proc rides an ordinary swing — it IS a swing.
+ *   - PROC = a `dtype: 'spell'` line with no own cast behind it. `dot` is never eligible (its
+ *     ticks are cast-detached by construction), which is the one gate that keeps this
+ *     inference honest.
+ */
+interface DamageAnalytics {
+  /** Attributed to YOU (not a pet, not incoming). */
+  mine: boolean
+  /** 1 when this was one of your logged swing attempts. */
+  swing: number
+  /** A cast-less spell effect of yours. */
+  proc: boolean
+}
+
+/** The three judgements, separated from the accumulation so each stays readable. `null` means
+ *  "the meter ignored this line", in which case the ledgers must ignore it too. */
+function damageAnalytics(st: EngineState, ev: DamageEvent): DamageAnalytics | null {
+  if (ev.amount <= 0) return null
+  const at = classify(ev, st.petNames)
+  if (at.kind === 'ignore') return null
+  if (at.kind !== 'out-you') return { mine: false, swing: 0, proc: false }
+  const swing = ev.category === 'melee' || ev.category === 'slay' ? 1 : 0
+  const proc = procEligibleDamage(ev.dtype) && isCastless(st.recentCasts, ev.skill, ev.ts)
+  return { mine: true, swing, proc }
+}
+
+function foldDamageAnalytics(st: EngineState, ev: DamageEvent, activeDeltaMs: number): void {
+  const a = damageAnalytics(st, ev)
+  if (!a) return
+  const fold: WindowFold = {
+    ts: ev.ts,
+    activeDeltaMs,
+    outDamage: a.mine ? ev.amount : 0,
+    procDamage: a.proc ? ev.amount : 0,
+    swings: a.swing
+  }
+  const active = st.stateTimeline.active
+  const enc = st.freshEncounter(ev.ts)
+  st.zoneAgg.windows.fold(fold, active)
+  enc?.agg.windows.fold(fold, active)
+  st.zoneAgg.procs.swings += a.swing
+  if (enc) enc.agg.procs.swings += a.swing
+  if (a.proc) {
+    st.zoneAgg.procs.addSpellProc(ev.skill, ev.amount, false)
+    enc?.agg.procs.addSpellProc(ev.skill, ev.amount, false)
+  }
+}
+
+/** A heal with no own cast behind it — the healing half of the same inference (`Lifetap
+ *  Strike`, 1,814 procs / 52,861 hit points restored, zero casts, in the real log). Gated to
+ *  YOUR OWN heals: another player's cast-less heal is their proc, not yours. */
+function foldHealAnalytics(st: EngineState, ev: HealEvent): void {
+  const spell = ev.spell
+  if (!spell || idKey(ev.healer ?? '') !== 'you') return
+  if (!isCastless(st.recentCasts, spell, ev.ts)) return
+  st.zoneAgg.procs.addSpellProc(spell, ev.amount, true)
+  st.freshEncounter(ev.ts)?.agg.procs.addSpellProc(spell, ev.amount, true)
+}
+
+/** YOUR avoided swing. It is still a swing ATTEMPT, and the mechanical proc denominator is
+ *  attempts — a proc that cannot fire on a miss still had the chance to. */
+function foldMissAnalytics(st: EngineState, ev: MissEvent): void {
+  if (idKey(ev.attacker) !== 'you') return
+  const active = st.stateTimeline.active
+  const enc = st.freshEncounter(ev.ts)
+  st.zoneAgg.windows.fold({ ts: ev.ts, swings: 1 }, active)
+  enc?.agg.windows.fold({ ts: ev.ts, swings: 1 }, active)
+  st.zoneAgg.procs.swings++
+  if (enc) enc.agg.procs.swings++
+}
+
+/** One canonical `damage` line: route it, then index it. */
+function ingestDamage(st: EngineState, ev: DamageEventE): void {
+  // Caster-less other-player DoTs (attacker:null) are not our fight.
+  if (ev.attacker === null) {
+    st.log(ev.ts, 'other', 'dropped', ev.raw)
+    return
+  }
+  // Close any pending encounter at this ts BEFORE routing, so attributed damage
+  // after a closure starts a fresh encounter rather than reviving the old one.
+  evalClosure(st, ev.ts)
+  const dmgEv = toDamageEvent(ev, ev.attacker)
+  // Read the engine's active-time clock either side of route(): the DIFFERENCE is the exact
+  // capped-gap delta it accrued for this hit. A fresh encounter (route() opened one)
+  // contributes 0, which is precisely what routing.ts does for a first hit.
+  const encBefore = st.current
+  const activeBefore = encBefore?.activeMs ?? 0
+  route(st, dmgEv)
+  const delta = st.current === encBefore ? (st.current?.activeMs ?? 0) - activeBefore : 0
+  foldDamageAnalytics(st, dmgEv, delta)
+}
+
 /** damage / heal / mitigation / miss / resist. Returns true if consumed. */
 function ingestCombat(st: EngineState, ev: LogEvent): boolean {
   switch (ev.kind) {
-    case 'damage': {
-      // Caster-less other-player DoTs (attacker:null) are not our fight.
-      if (ev.attacker === null) {
-        st.log(ev.ts, 'other', 'dropped', ev.raw)
-        return true
-      }
-      // Close any pending encounter at this ts BEFORE routing, so attributed damage
-      // after a closure starts a fresh encounter rather than reviving the old one.
-      evalClosure(st, ev.ts)
-      route(st, toDamageEvent(ev, ev.attacker))
+    case 'damage':
+      ingestDamage(st, ev)
       return true
-    }
     case 'heal':
       routeHeal(st, ev)
+      foldHealAnalytics(st, ev)
       st.log(ev.ts, 'heal', 'info', `+ ${ev.healer ?? '?'} → ${ev.target} ${ev.amount}${ev.spell ? ` (${ev.spell})` : ''}`)
       return true
     case 'mitigation':
@@ -174,6 +294,7 @@ function ingestCombat(st: EngineState, ev: LogEvent): boolean {
       return true
     case 'miss':
       routeMiss(st, ev)
+      foldMissAnalytics(st, ev)
       return true
     case 'resist':
       routeResist(st, ev)
@@ -203,11 +324,36 @@ function ingestModifier(st: EngineState, ev: LogEvent): void {
     case 'poisonProc':
       routeProc(st, ev)
       return
-    case 'buffApply':
+    case 'buffApply': {
       // DISPEL LANDINGS on the mobs we are fighting (Task #64) — the "counts of spells (like
       // the dispel variants and such)" ledger. Message-driven and gated to DISPEL_FAMILY; it
       // names NO caster, and the view labels it accordingly.
-      routeDispelLanding(st, ev.ts, ev.target, ev.candidates.map((c) => c.name))
+      const names = ev.candidates.map((c) => c.name)
+      routeDispelLanding(st, ev.ts, ev.target, names)
+      // The SAME landing stream also carries the tracked proc-buff spans (§3.2). Two disjoint
+      // curated gates over one event: DISPEL_FAMILY names a lane on a mob, PROC_BUFF_CATALOG
+      // opens a self-buff span. Neither can consume the other's lines.
+      routeProcBuffApply(st, ev.ts, ev.target, names)
+      return
+    }
+    case 'buffWearOff':
+      // The rare PRINTED end of a tracked proc buff — the only path that can close a buff span
+      // 'observed'. In the real log this fires once against 97 landings, which is exactly why
+      // EdgeEvidence exists.
+      routeProcBuffWearOff(st, ev.ts, ev.candidates)
+      return
+    case 'castBegin':
+      // The cast-attribution window's only input (§4.1). Only the PLAYER prints
+      // `You begin casting <Spell>.`, so this map can never be polluted by a mob's or another
+      // player's cast — which is what lets a cast-less effect line be read as a proc.
+      noteCast(st.recentCasts, ev.spell, ev.ts)
+      return
+    case 'playerDeath':
+      // A boundary that SEVERS every span. The end is unknowable, so it is 'censored' — never
+      // 'observed', and never a fabricated expiry (law 1). Deliberately does not touch
+      // st.stance / st.coatUtility / st.coatCombat: those are shipped session-scoped fields
+      // inside the regression surface, and re-deciding their lifetime is not this feature's job.
+      st.stateTimeline.censorAll(ev.ts)
       return
     default:
       return

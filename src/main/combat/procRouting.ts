@@ -8,9 +8,38 @@
 
 import { idKey } from '../log/parser'
 import { DISPEL_FAMILY, SLOW_STRIKE } from '../../shared/poisons'
+import { procBuffInCandidates } from '../../shared/procBuffs'
+import { stateKeyOf, type CloseStateArgs, type OpenStateArgs } from './stateTimeline'
 import type { EngineState } from './state'
 import type { CoatSlot } from '../../shared/combat'
 import type { PoisonCoatEvent, PoisonDryEvent, PoisonProcEvent } from '../../shared/logEvents'
+
+/**
+ * Open a span on the session state timeline AND stamp the commit into the minute-window
+ * ledgers (proc-analytics §3, §5.1).
+ *
+ * The window stamp is what makes the Tier-B purity gate implementable: the minute a state
+ * changed in is DISCARDED from that state's comparison, because the boundary carries the reuse
+ * timer, the re-buff burst and the mid-window re-target — precisely the confound. Both ledgers
+ * are stamped (the fresh encounter's and the zone's) for the same reason every other proc
+ * counter is: a finalized zone session must inherit it frozen.
+ */
+function commitState(st: EngineState, a: OpenStateArgs): void {
+  st.stateTimeline.noteState(a)
+  noteStateTransition(st, a.group ?? stateKeyOf(a.kind, a.key), a.ts)
+}
+
+/** Close a span from a printed line, with the same window stamp — an END is a transition too. */
+function endState(st: EngineState, a: CloseStateArgs, group: string): void {
+  st.stateTimeline.closeState(a)
+  noteStateTransition(st, group, a.ts)
+}
+
+function noteStateTransition(st: EngineState, group: string, ts: number): void {
+  const active = st.stateTimeline.active
+  st.zoneAgg.windows.noteTransition(ts, group, active)
+  st.freshEncounter(ts)?.agg.windows.noteTransition(ts, group, active)
+}
 
 /**
  * Apply a blade coat (Task #64). ONLY your own coats move state — a third-person coat line
@@ -39,6 +68,21 @@ export function routeCoat(st: EngineState, ev: PoisonCoatEvent): void {
     st.pushMarker(enc, { ts, kind: 'coat', label, detail: `${group} coat` })
   }
   st.zoneAgg.procs.coats.push({ poison, ts })
+  // ACTIVE-STATE SPAN (proc-analytics §3.1). An 'unknown' poison opens NO span: the blades
+  // demonstrably got re-coated, but the line refused to name what is on them, and a span keyed
+  // on a name we do not have would be an invention. The utility slot is one exclusive group
+  // (a new coat replaces the old); each combat venom is its OWN group, because combat venoms
+  // STACK (wiki, Rogue page — and the real log proves it: three venoms coated eighteen minutes
+  // before a utility coat were all still proccing afterwards).
+  if (poison !== 'unknown' && group !== 'unknown') {
+    commitState(st, {
+      kind: 'coat',
+      key: idKey(poison),
+      name: poison,
+      ts,
+      group: group === 'utility' ? 'coat:utility' : `coat:combat:${idKey(poison)}`
+    })
+  }
   st.log(ts, 'poison', 'info', `☠ coated: ${label}${group === 'unknown' ? '' : ` (${group})`}`)
 }
 
@@ -54,7 +98,43 @@ export function routeCoat(st: EngineState, ev: PoisonCoatEvent): void {
 export function routeDry(st: EngineState, ev: PoisonDryEvent): void {
   if (ev.group === 'utility') st.coatUtility = undefined
   else st.coatCombat = []
+  // SPAN EDGES, exactly mirroring the asymmetry above. A UTILITY dry is unambiguous — there is
+  // only ever one utility coat — so its span ends 'observed', the game said so. A COMBAT dry
+  // cannot say WHICH venom of a stack expired (law 6), so the whole stack closes 'inferred':
+  // under-claiming what is coated is honest, claiming an observed end for a venom the line
+  // never named is not.
+  const prefix = ev.group === 'utility' ? 'coat:utility' : 'coat:combat:'
+  st.stateTimeline.closeGroupPrefix(prefix, ev.ts, ev.group === 'utility' ? 'observed' : 'inferred')
+  noteStateTransition(st, prefix, ev.ts)
   st.log(ev.ts, 'poison', 'info', `☠ ${ev.group} coat dried`)
+}
+
+/**
+ * A tracked PROC BUFF landed on you (proc-analytics §3.2). Gated to `PROC_BUFF_CATALOG` — the
+ * same discipline `DISPEL_FAMILY` applies to dispel landings, and for the same reason: feeding
+ * 1,926 spells into a span tracker would flood the model with irrelevant states and make every
+ * co-occurrence number meaningless.
+ *
+ * A re-apply SUPERSEDES its own span with `endEvidence: 'inferred'` — the game printed a new
+ * landing, not an end. That is not a rounding detail: in the real log `Instrument of Nife`
+ * lands 97 times and fades exactly ONCE, so almost every one of its spans ends in an inference
+ * and the model has to say so rather than fabricate an expiry.
+ */
+export function routeProcBuffApply(st: EngineState, ts: number, target: string, candidates: string[]): void {
+  if (target !== 'self') return
+  const def = procBuffInCandidates(candidates)
+  if (!def) return
+  commitState(st, { kind: 'buff', key: idKey(def.name), name: def.name, ts })
+}
+
+/** A tracked proc buff's OWN wears-off line — the rare case where the end is printed, so the
+ *  span closes 'observed'. Candidate-gated because wears-off messages are shared across whole
+ *  families (law 3); this catalog's one entry has a message unique in the DB. */
+export function routeProcBuffWearOff(st: EngineState, ts: number, candidates: string[]): void {
+  const def = procBuffInCandidates(candidates)
+  if (!def) return
+  const key = idKey(def.name)
+  endState(st, { kind: 'buff', key, ts, endEvidence: 'observed' }, stateKeyOf('buff', key))
 }
 
 /**
@@ -124,6 +204,13 @@ export function applyStance(st: EngineState, group: 'stance' | 'invocation', nam
   if (cur?.name === name) return
   if (group === 'stance') st.stance = { name, ts }
   else st.invocation = { name, ts }
+  // SESSION SPAN (proc-analytics §3.1), alongside — never instead of — the encounter's
+  // stanceSpans below: that list feeds the shipped TimelineView and sits inside the
+  // byte-identical regression surface. Two lists, one writer. The nine stances (and the nine
+  // invocations) are mutually exclusive, so each is ONE exclusivity group and a commit ENDS the
+  // previous span as 'inferred' — the game prints no "your stance ends" line, ever. The no-op
+  // re-assert already returned above, so this never accrues zero-width spans.
+  commitState(st, { kind: group, key: idKey(name), name, ts, group })
   // Reflect the change on the open encounter's span list (if any).
   const enc = st.current
   if (enc) {
