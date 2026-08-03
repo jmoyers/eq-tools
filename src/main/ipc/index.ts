@@ -16,6 +16,7 @@
 import { registerAlertsIpc } from './alerts'
 import { registerCharacterIpc } from './character'
 import { registerKnowledgeIpc } from './knowledge'
+import { registerMapsIpc } from './maps'
 import { registerShareIpc } from './share'
 import { registerSoundsIpc } from './sounds'
 import { registerWindowIpc } from './windowControls'
@@ -28,5 +29,6 @@ export function registerIpc(): void {
   registerShareIpc()
   registerSoundsIpc()
   registerKnowledgeIpc()
+  registerMapsIpc()
   registerWindowIpc()
 }

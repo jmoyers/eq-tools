@@ -135,3 +135,35 @@ export interface MapPackPrefs {
   /** Pack for labels/POIs — usually a DIFFERENT pack (§1a). */
   labels?: string
 }
+
+// ---- IPC payloads (§4.2) --------------------------------------------------------------
+//
+// The four `maps:*` channels' result shapes. Here rather than in `shared/ipc.ts` (which is
+// channel NAMES only, by construction) so main, preload and the renderer all read one
+// definition. Every one of them is a RESULT, never a throw: an error crossing IPC loses its
+// type and its message, so failures come back as data — the established shape in this app.
+
+/** Reply of `maps:listPacks`. An absent EQ dir is an empty list + prose, not a rejection. */
+export interface MapPackListResult {
+  packs: MapPackInfo[]
+  /** Absent EQ dir / absent maps dir — the UI shows a quiet empty state, not an error. */
+  error?: string
+}
+
+/** Reply of `maps:get`. `ok:false` covers "no map files for that zone", the common case. */
+export type MapGetResult = { ok: true; data: MapData } | { ok: false; error: string }
+
+/** Argument of `maps:search`. Omitting `zone` searches the whole corpus (§7.2). */
+export interface MapSearchOpts {
+  /** Restrict to one zone. Omit for a corpus-wide search. */
+  zone?: ZoneShort
+  /** Hit cap; clamped at the handler so a renderer bug can't ask for an unbounded payload. */
+  limit?: number
+}
+
+/** One scored label hit. Carries the point itself, so the caller can pan straight to it. */
+export interface MapSearchHit {
+  zone: ZoneShort
+  point: MapPoint
+  score: number
+}

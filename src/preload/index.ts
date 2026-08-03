@@ -24,6 +24,14 @@ import type {
   SpellCatalog
 } from '../shared/types'
 import type { CombatSnapshot, FightSearchResult, SnapshotOpts } from '../shared/combat'
+import type {
+  MapGetResult,
+  MapPackListResult,
+  MapPackPrefs,
+  MapSearchHit,
+  MapSearchOpts,
+  ZoneShort
+} from '../shared/maps'
 import type { OverlayKind, UpdateStatus } from '../shared/types'
 import type { ShareApplyResult, SharePreview } from '../shared/profiles'
 
@@ -144,6 +152,23 @@ const api = {
    *  completions, which only the renderer's posky/turn-in detector can see. Fire-and-forget;
    *  main owns the capped ring and pushes it on to the 'events' overlay. */
   reportFeedEvent: (report: FeedReport): void => ipcRenderer.send(IPC.feedReport, report),
+
+  // ---- map viewer (docs/plans/map-viewer.md §4.3) ----
+  // Main reads and parses `<eqRoot>\maps`; the renderer never sees a path. `zone` is a map-file
+  // STEM ('airplane'), not the log's long name — fold that through `shared/zones.ts` first.
+  /** The installed map packs. Empty list + `error` prose on a machine with no EQ maps dir. */
+  listMapPacks: (): Promise<MapPackListResult> => ipcRenderer.invoke(IPC.mapsListPacks),
+  /** Zone stems, ascending — across every pack, or within one when `packId` is given. */
+  listMapZones: (packId?: string): Promise<ZoneShort[]> =>
+    ipcRenderer.invoke(IPC.mapsListZones, packId),
+  /** One zone's parsed map. `prefs` picks the pack PER LAYER (geometry and labels routinely
+   *  come from different packs); what was actually used comes back in `data.sources`. */
+  getMapData: (zone: string, prefs?: MapPackPrefs): Promise<MapGetResult> =>
+    ipcRenderer.invoke(IPC.mapsGet, zone, prefs),
+  /** Fuzzy label search: one zone (`opts.zone`) or the whole corpus. Same scorer as every
+   *  other search box in the app (`shared/fuzzy.ts`). Empty query resolves to no hits. */
+  searchMapPoints: (q: string, opts?: MapSearchOpts): Promise<MapSearchHit[]> =>
+    ipcRenderer.invoke(IPC.mapsSearch, q, opts),
 
   // ---- settings / alert sharing ("profiles" — src/shared/profiles.ts) ----
   // The renderer owns the localStorage half of a bundle, so it passes its whitelisted

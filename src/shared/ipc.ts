@@ -157,6 +157,22 @@ export const IPC = {
   // consider rows ask the same question of the same cache-first door.
   mobsLookup: 'mobs:lookup',
 
+  // ---- map viewer (docs/plans/map-viewer.md §4.2) ----
+  // Main owns `fs` and owns effectiveEqRoot(), so main reads and parses `<eqRoot>\maps` and
+  // the renderer receives columnar typed arrays (~690 KB worst case, once per zone change).
+  // `zone` and every packId reach a join() and are validated AT THE HANDLER (isSafePackId).
+  // renderer -> main: the installed packs (no absolute paths). Returns MapPackListResult.
+  mapsListPacks: 'maps:listPacks',
+  // renderer -> main: zone stems, all packs or one. Args: (packId?). Returns ZoneShort[].
+  mapsListZones: 'maps:listZones',
+  // renderer -> main: one zone's parsed map. Args: (zone, prefs?) where prefs picks the pack
+  // PER LAYER — geometry and labels routinely come from different packs (§6.3), and the
+  // outcome is reported back in MapData.sources. Returns MapGetResult.
+  mapsGet: 'maps:get',
+  // renderer -> main: fuzzy label search — one zone (opts.zone) or the whole corpus.
+  // Args: (query, opts?). Returns MapSearchHit[].
+  mapsSearch: 'maps:search',
+
   // ---- settings / alert sharing ("profiles" — src/shared/profiles.ts) ----
   // Every call carries the renderer's whitelisted localStorage prefs (UI_PREF_SPECS): main
   // owns the electron-store half of a bundle, the renderer owns the localStorage half.
