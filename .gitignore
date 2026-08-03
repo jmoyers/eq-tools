@@ -32,6 +32,13 @@ tests/e2e/artifacts/
 # actually needs; the cache is only a re-run accelerator for whoever refreshes it next.
 scripts/sources/cache/mobs/
 
+# ITEM-SCRAPER response cache. Same reasoning as the mob cache above, one size up: 18,367
+# pages fetched 50-at-a-time, so the cache is ~370 batch responses / ~30MB of raw wikitext,
+# fully REGENERABLE (`npm run scrape:items` refills it in a couple of minutes because the
+# fetch is batched). The DATASET it produces — src/main/data/items.json — is committed,
+# which is what reproducibility actually needs.
+scripts/sources/cache/items/
+
 # clean-machine sandbox harness writes results here; keep the folder, not the output
 scripts/sandbox/results/*
 !scripts/sandbox/results/.gitkeep

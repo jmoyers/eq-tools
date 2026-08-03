@@ -17,6 +17,7 @@
     "scrape:mobs": "tsx scripts/scrape-mobs.ts",
     "scrape:quests": "tsx scripts/scrape-quests.ts",
     "scrape:spells": "tsx scripts/scrape-spells.ts",
+    "scrape:items": "tsx scripts/scrape-items.ts",
     "fetch:packs": "tsx scripts/fetch-packs.mts",
     "gen:icon": "tsx scripts/gen-icon.mts",
     "gen:message-overlay": "tsx scripts/gen-message-overlay.ts",

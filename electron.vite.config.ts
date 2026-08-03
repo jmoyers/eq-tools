@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()],
+    // Inlined data JSONs (spells/mobs/items/classes) emit as JSON.parse("...") instead of
+    // pretty-printed object literals — measured 4.66 MB smaller main bundle and a faster
+    // startup parse the day items.json (6.8 MB raw) landed.
+    json: { stringify: true },
     build: {
       rollupOptions: {
         input: { index: resolve(__dirname, 'src/main/index.ts') }

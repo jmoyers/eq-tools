@@ -7,11 +7,20 @@
 // item-into-inventory line the log carries.)
 //
 // DESIGN (per AGENTS.md "Data sources & scrapers" + the Task #34 spell-DB precedent):
+//   0. THE COMMITTED ITEM DATABASE IS THE PRIMARY SOURCE (`src/main/data/items.json`,
+//      scripts/scrape-items.ts — every item page on the wiki, 11,247 of them, parsed by the
+//      very same `parseItemWikitext` the live path below uses). It answers instantly,
+//      offline, identically for every user, and it is what makes the wiki fallback a
+//      fallback: the network is now touched only for an item whose page was created since
+//      the last `npm run scrape:items`. A DB hit short-circuits everything after it — no
+//      cache read, no request, and (see `lookupItem`) NO NEGATIVE CACHING, since negative
+//      caching only ever describes keys the committed DB does not have.
 //   1. LOCAL-FIRST. The scraped Plane of Sky dataset (posky.json) already knows every
 //      Sky class-Test quest item + its quests + giver. Check it BEFORE any network so
 //      a known Sky rune/claw/etc. answers INSTANTLY and offline. Its associations are
-//      merged with any the wiki adds (deduped).
-//   2. WIKI lookup (MediaWiki at eqlwiki.com, same API the posky/spell scrapers use):
+//      merged with any the wiki adds (deduped) — including into a DB hit, because posky
+//      carries per-item island/giver detail the item page never states.
+//   2. WIKI lookup — now the FALLBACK (MediaWiki at eqlwiki.com, same API the scrapers use):
 //      search → resolve the item page → parse its {{Itempage}} wikitext for the
 //      LORE/QUEST flags (statsblock) + the |relatedquests bulleted link list +
 //      |notes summary. Polite: a single serialized in-flight queue with a small
@@ -29,9 +38,14 @@ import { join } from 'node:path'
 import { logError } from './errorLog'
 import { normalizeItemName, parseItemWikitext } from './itemLookupParse'
 import { buildQuestItemIndex } from './questItemIndex'
+import { buildItemDbIndex, itemKey, knowledgeFromDb, type ItemDbFile } from './itemsDb'
 import type { ItemKnowledge, ItemQuestUse, PoskyData, QuestData } from '../shared/types'
 
 export { normalizeItemName, parseItemWikitext }
+// The COMMITTED wiki item database — the PRIMARY source (see the design note above).
+// Imported directly, like posky/quests/spells, so electron-vite INLINES it into the main
+// bundle; a path-relative read would miss it in out/main/ in production.
+import itemsJson from './data/items.json'
 // The scraped Plane of Sky dataset is the local-first source. Imported directly so
 // electron-vite INLINES it into the main bundle (same reason spells.json is imported,
 // not readFileSync'd — a path-relative read misses it in out/main/ in production).
@@ -70,8 +84,23 @@ const REQUEST_TIMEOUT_MS = 8000
 
 // ---- normalization ------------------------------------------------------------
 
-function cacheKey(name: string): string {
-  return normalizeItemName(name).toLowerCase()
+/** The ONE canonical item key. Defined in itemsDb.ts so the committed DB, this cache and
+ *  the scraper that writes the DB can never key items three different ways. */
+const cacheKey = itemKey
+
+// ---- the committed item database (PRIMARY source) ------------------------------
+
+const itemDb = buildItemDbIndex(itemsJson as unknown as ItemDbFile)
+
+/**
+ * The committed DB's answer for a key, already in `ItemKnowledge` shape (the record IS those
+ * fields — see itemsDb.ts), or null when the corpus doesn't have this item. `name` is
+ * overridden with what the CALLER asked for: every other path returns the requested display
+ * name, and a DB hit must not be the one answer that renames the player's item.
+ */
+function dbKnowledge(key: string, display: string): Omit<ItemKnowledge, 'cached'> | null {
+  const entry = itemDb.get(key)
+  return entry ? { ...knowledgeFromDb(entry), name: display } : null
 }
 
 // ---- local (posky) cross-ref --------------------------------------------------
@@ -294,16 +323,26 @@ function mergeLocal(base: Omit<ItemKnowledge, 'cached'>, local: ItemQuestUse[] |
 let queue: Promise<unknown> = Promise.resolve()
 
 /**
- * Look up an item's knowledge. Local-first (posky), then cache, then a serialized,
- * politely-spaced wiki lookup. Never throws — failures degrade to a cached-negative /
- * offline record (which still carries any posky-local answer).
+ * Look up an item's knowledge. Resolution order: the COMMITTED item DB (items.json) →
+ * the userData cache → a serialized, politely-spaced wiki lookup as the FALLBACK. The local
+ * quest sources (posky + the quest catalog) are merged into whichever of those answers,
+ * because they say something about the item's USES that no item page states.
+ *
+ * Never throws — failures degrade to a cached-negative / offline record (which still carries
+ * any posky-local answer).
  */
 export async function lookupItem(name: string): Promise<ItemKnowledge> {
   const key = cacheKey(name)
   const display = normalizeItemName(name)
   const local = localKnowledge(name)
-  const cache = loadCache()
 
+  // PRIMARY: the committed database. Answered here, an item costs no cache read, no request
+  // and no negative-cache entry — negative caching now describes ONLY keys the DB lacks.
+  // `cached: true` because this is knowledge we already had, not a fresh network lookup.
+  const fromDb = dbKnowledge(key, display)
+  if (fromDb) return { ...mergeLocal(fromDb, local), cached: true }
+
+  const cache = loadCache()
   const cached = cache.get(key)
   if (cached && cacheHit(cached)) {
     // Re-merge local in case the dataset changed since the cache was written.
@@ -357,6 +396,7 @@ export async function lookupItem(name: string): Promise<ItemKnowledge> {
  */
 export function prefetchItem(name: string): void {
   const key = cacheKey(name)
+  if (itemDb.has(key)) return // the committed DB already answers this — nothing to warm
   const cache = loadCache()
   const cached = cache.get(key)
   if (cached && cacheHit(cached)) return
