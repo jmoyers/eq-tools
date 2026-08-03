@@ -19,8 +19,23 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   `config.ts effectiveEqRoot()/eqLogsDir()`.
 - Active dev character: `Primitive@freeport`. The log is LIVE and growing.
 
-## Operating model (how work happens here)
+## Operating model (how work happens here — this works, keep it)
 
+- **Roles: Fable plans, Opus does.** The main session (Fable) is the
+  integrator / designer / thinker: it diagnoses, designs, writes precise
+  briefs, dispatches parallel Opus executor agents with DISJOINT file
+  ownership, reviews their reports, runs the verification gauntlet, and
+  commits per wave. Executors do the work and report honestly — including
+  when the brief is WRONG. An executor overturning the integrator's
+  assumption with evidence is a feature, not insubordination (it has
+  corrected real briefing errors: dispel attribution, venom stacking, the
+  ratchet's item-category filter).
+- **Work ships in WAVES.** 1–5 agents in parallel, then integrate → verify
+  (typecheck + lint + full unit suite + e2e when main/renderer changed) →
+  commit with a detailed message. Big projects (the lint campaign) are
+  partitioned into disjoint waves with per-wave regression gates and run
+  until done. The user gets a short "In flight / Settled" readout whenever
+  a turn ends with agents still running.
 - **Planner/integrator diagnoses against the REAL log first** (grep/sed, or a
   throwaway `scripts/_*.mts` replay via `npx tsx` — delete after). Executors
   get verified findings, not hypotheses. Never write to the game log.
@@ -441,6 +456,11 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   it, and can't drift from the tag — the old "bump after tagging" rule is
   dead). Release process: `git tag vX.Y.Z && git push origin vX.Y.Z`. Semver,
   increment per release; first stable is v0.1.0.
+- **RELEASE CADENCE: tag only when the user asks, or at a clearly STABLE
+  point** — features verified end-to-end, the gauntlet green, no waves in
+  flight. Commits land on main continuously; a tag is a deliberate act,
+  never an automatic one and never mid-wave. When in doubt, don't tag —
+  the next stable point is never far.
 - **main.yml BRIDGE (do not remove)**: every install to date polls the 'main'
   channel feed. A stable release natively writes only latest.yml, so the tag
   job uploads a copy as main.yml on the same release — semver puts `X.Y.Z`
