@@ -158,7 +158,8 @@ function ViewContent({
   viewKey,
   routing,
   onOpenPreferences,
-  onOpenLoot
+  onOpenLoot,
+  onOpenLeveling
 }: {
   view: View
   hasCharacters: boolean
@@ -166,6 +167,10 @@ function ViewContent({
   routing: AppRouting
   onOpenPreferences: () => void
   onOpenLoot: () => void
+  /** Overview's leveling card → the Leveling tab. A PLAIN tab switch, so it rides here beside
+   *  `onOpenLoot` rather than in `AppRouting`: that hook is for DEEP links, and its nonce
+   *  machinery exists to re-deliver a PAYLOAD. This destination carries none. */
+  onOpenLeveling: () => void
 }): JSX.Element {
   if (view === 'preferences') return <PreferencesView />
   if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
@@ -189,6 +194,7 @@ function ViewContent({
           onOpenCombat={routing.openCombat}
           onOpenMob={routing.openMob}
           onOpenLoot={onOpenLoot}
+          onOpenLeveling={onOpenLeveling}
         />
       )}
       {/* Like Mobs, the Combat tab stays MOUNTED across a deep link — the focus arrives
@@ -402,6 +408,7 @@ export default function App(): JSX.Element {
               routing={routing}
               onOpenPreferences={() => setView('preferences')}
               onOpenLoot={() => setView('loot')}
+              onOpenLeveling={() => setView('leveling')}
             />
           </Box>
         </Box>
