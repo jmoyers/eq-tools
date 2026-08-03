@@ -253,6 +253,10 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    articles; damage lines capitalize). Strip spell rank suffixes (casts say
    `Swift Like the Wind I`, fades are rank-less) and item ` +N` variants at
    COUNTING boundaries only. Strip leading a/an/the for boss matching.
+   OUR OWN labels are dirty too: `WorldModel.label()` appends a
+   spawn-generation ` (N)` suffix ("the 14th capturer this session") that
+   rides `currentTarget` into lookups — `mobKey` strips it; it is display
+   flavor, never identity. The suffix appears in NO log line.
 3. **Shared messages are the norm.** 123 wears-off families ("Your speed
    returns to normal." = 9 hastes), generic illusion landings ("You feel
    different."). Parser carries candidate lists; the MODEL resolves against

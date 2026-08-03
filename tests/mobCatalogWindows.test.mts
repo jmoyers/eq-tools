@@ -221,6 +221,49 @@ test('mobKey folds the three ways EQ/the wiki spell an apostrophe, and keeps the
   assert.notEqual(mobKey('a giant rat'), mobKey('giant rat'))
 })
 
+test('mobKey strips the " (N)" spawn-copy suffix WorldModel.label() adds', () => {
+  // THE BUG (dev cache, 2026-08-03): Overview said "No wiki page for this mob" for a mob whose
+  // page AND catalog entry both exist. `CurrentTarget.name` carries combat/world.ts's generation
+  // label, so lookupMob was asked about 'an elemental capturer (14)' — which matched no catalog
+  // key, failed the wiki identity gate, and negative-cached.
+  assert.equal(mobKey('an elemental capturer (14)'), mobKey('An elemental capturer'))
+  assert.equal(mobKey('a rock golem (45)'), 'a rock golem')
+  // Multi-digit, no space, and a trailing space all fold to the same identity.
+  assert.equal(mobKey('a rock golem(7)'), 'a rock golem')
+  assert.equal(mobKey('a rock golem (7) '), 'a rock golem')
+  // Only DIGITS. A parenthesized WORD is part of the name (instance tiers, wiki disambiguators),
+  // and a number anywhere but the END is untouched.
+  assert.equal(mobKey('a rock golem (Awakened)'), 'a rock golem (awakened)')
+  assert.notEqual(mobKey('Sirran the Lunatic (2nd)'), mobKey('Sirran the Lunatic'))
+  assert.equal(mobKey('a golem (3) guard'), 'a golem (3) guard')
+})
+
+test('a "(N)"-labelled target resolves to its catalog entry — the reported bug, end to end', () => {
+  // Drives the SHIPPED index directly (mobLookupLocal is electron-free). Every key the dev cache
+  // had negative-cached under a copy number is a real catalog hit once the suffix folds.
+  for (const labelled of [
+    'an elemental capturer (14)',
+    'an elemental warrior (30)',
+    'an elemental crusader (28)',
+    'an elemental channeler (19)',
+    'a rock golem (45)'
+  ]) {
+    const bare = labelled.replace(/ \(\d+\)$/, '')
+    const hit = localMobEntry(labelled)
+    assert.ok(hit, `catalog hit for ${labelled}`)
+    // …and it is the SAME entry the bare name resolves to, not merely some entry.
+    assert.equal(hit.page, localMobEntry(bare)?.page)
+  }
+  // The own-loot index folds the same way, so loot taken off a numbered corpse is that mob's.
+  const idx = new MobLootIndex()
+  idx.note('Sky Stone', 'an elemental capturer', 1_000, 2)
+  idx.note('Sky Stone', 'An elemental capturer (14)', 2_000)
+  assert.equal(idx.size, 1)
+  assert.deepEqual(idx.drops('an elemental capturer (9)'), [
+    { item: 'Sky Stone', count: 3, lastTs: 2_000 }
+  ])
+})
+
 test('unlink keeps a wiki link\'s label, drops citation URLs, and leaves plain text alone', () => {
   assert.equal(unlink('[[Lower Guk]]'), 'Lower Guk')
   assert.equal(unlink('[[Giant Rats | Giant Rat]]'), 'Giant Rat')
