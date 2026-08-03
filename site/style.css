@@ -136,6 +136,14 @@ code {
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--fg);
+  /* The brand is a link back to the top of the page; it should read as the wordmark,
+     not as a hyperlink. */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand:hover {
+  color: var(--gold);
 }
 
 .brand-mark {
