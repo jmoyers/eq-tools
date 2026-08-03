@@ -1,5 +1,5 @@
-// OverviewView — the at-a-glance landing surface: current DPS, the mob in front of you and its
-// drops, your zone, and the recent-drops feed. A renderer-side COMPOSITION over existing module
+// OverviewView — the at-a-glance landing surface: current DPS (headline + the live curve), the
+// mob in front of you and its drops, your zone, and the recent-drops feed. A COMPOSITION over module
 // snapshots + the combat engine's pull-snapshot; it owns no state of its own and is deliberately
 // not an EqModule (docs/plans/overview-tab.md §0).
 //
@@ -24,11 +24,14 @@ import { Box, CircularProgress, Paper, Skeleton, Stack, Typography } from '@mui/
 import type { CombatFocus } from '../combat/combatFocus'
 import type { MobTarget } from '../mobs/mobTarget'
 import { DpsCard } from './DpsCard'
+import { DpsCurveCard } from './DpsCurveCard'
 import { CurrentMobCard } from './CurrentMobCard'
+import { LevelingCard } from './LevelingCard'
 import { RecentDropsCard } from './RecentDropsCard'
 import { ZoneStrip } from './ZoneStrip'
 import { useCurrentMob } from './useCurrentMob'
 import { useOverviewCombat } from './useOverviewCombat'
+import { useOverviewLeveling } from './useOverviewLeveling'
 import { useRecentDrops } from './useRecentDrops'
 
 export interface OverviewViewProps {
@@ -38,6 +41,8 @@ export interface OverviewViewProps {
   onOpenMob: (t: MobTarget) => void
   /** Drops feed → "All loot": the Loot tab is the ledger, this card is the glance. */
   onOpenLoot: () => void
+  /** Leveling card → the Leveling tab: charts, the drag-selected range, AA. */
+  onOpenLeveling: () => void
 }
 
 /**
@@ -65,10 +70,18 @@ function OverviewHydrating(): JSX.Element {
   )
 }
 
-export default function OverviewView({ onOpenCombat, onOpenMob, onOpenLoot }: OverviewViewProps): JSX.Element {
+export default function OverviewView({
+  onOpenCombat,
+  onOpenMob,
+  onOpenLoot,
+  onOpenLeveling
+}: OverviewViewProps): JSX.Element {
   const snap = useOverviewCombat()
   const mob = useCurrentMob(snap)
   const rows = useRecentDrops()
+  // Its own module, its own hook: the leveling card asks for what it needs, exactly like every
+  // other card here, so nothing about it touches the combat snapshot.
+  const leveling = useOverviewLeveling()
   const hydrating = snap?.hydrating ?? true
 
   return (
@@ -98,6 +111,15 @@ export default function OverviewView({ onOpenCombat, onOpenMob, onOpenLoot }: Ov
           <>
             <DpsCard snap={snap} onOpenCombat={onOpenCombat} />
             <CurrentMobCard state={mob} onOpenMob={onOpenMob} />
+            {/* Gated with the NOW row for the same reason the others are: its window is "the last
+                hour of the log", and mid-replay that hour is an arbitrary point in your past. */}
+            <LevelingCard state={leveling} onOpenLeveling={onOpenLeveling} />
+            {/* Full width, directly under the NOW row and gated with it: the curve describes the
+                SAME fight the DPS card above names, so showing it while the replay still calls an
+                hours-old fight `current` would be the same lie the gate exists to prevent. */}
+            <Box sx={{ gridColumn: { md: '1 / -1' }, minWidth: 0 }}>
+              <DpsCurveCard snap={snap} />
+            </Box>
           </>
         )}
         <Box sx={{ gridColumn: { md: '1 / -1' }, minWidth: 0 }}>
