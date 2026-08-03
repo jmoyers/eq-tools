@@ -151,30 +151,43 @@ function drawMaster(): Canvas {
   cv.roundRect(16, 16, S - 16, S - 16, 40, [58, 48, 26, 255]) // gold-ish border
   cv.roundRect(20, 20, S - 20, S - 20, 36, PANEL)
 
-  // "EQ" glyph. Draw an E on the left, a Q on the right, both gold with a highlight.
-  const strokeW = 16
+  // "EQC" glyph (was "EQ" — the two-letter mark read as plain "EverQuest", which is
+  // exactly the confusion the app must not invite; EQC is the app's own identity).
+  // Three narrower letterforms sharing the E/Q language: gold with highlight accents.
+  const strokeW = 12
+  // One shared cap height (72px) for all three letters — the first draft kept the old
+  // 100px E beside 64px rings and read as "Eqc".
+  const top = 88
+  const bot = 168
+  const midY = (top + bot) / 2 // 128
+
   // --- E ---
-  const eX = 58
-  const eTop = 78
-  const eBot = 178
-  const eW = 62
-  cv.rect(eX, eTop, eX + strokeW, eBot, GOLD) // vertical spine
-  cv.rect(eX, eTop, eX + eW, eTop + strokeW, GOLD) // top bar
-  cv.rect(eX, (eTop + eBot) / 2 - strokeW / 2, eX + eW - 8, (eTop + eBot) / 2 + strokeW / 2, GOLD) // mid bar
-  cv.rect(eX, eBot - strokeW, eX + eW, eBot, GOLD) // bottom bar
-  // highlight along the spine
-  cv.rect(eX, eTop, eX + 5, eBot, GOLD_HI)
+  const eX = 28
+  const eW = 44
+  cv.rect(eX, top, eX + strokeW, bot, GOLD) // vertical spine
+  cv.rect(eX, top, eX + eW, top + strokeW, GOLD) // top bar
+  cv.rect(eX, midY - strokeW / 2, eX + eW - 7, midY + strokeW / 2, GOLD) // mid bar
+  cv.rect(eX, bot - strokeW, eX + eW, bot, GOLD) // bottom bar
+  cv.rect(eX, top, eX + 4, bot, GOLD_HI) // highlight along the spine
 
   // --- Q ---
-  const qcx = 176
-  const qcy = 128
-  cv.disc(qcx, qcy, 52, 52 - strokeW, GOLD) // ring
-  cv.disc(qcx, qcy, 52, 52 - 4, GOLD_HI) // thin bright outer edge
-  cv.disc(qcx, qcy, 52 - strokeW + 4, 52 - strokeW, [58, 48, 26, 255]) // inner shadow edge
-  // Q tail (diagonal stroke bottom-right)
-  for (let t = 0; t < 34; t++) {
-    cv.rect(qcx + 18 + t, qcy + 18 + t, qcx + 18 + t + strokeW, qcy + 18 + t + strokeW, GOLD)
+  const qcx = 120
+  const qR = 40
+  cv.disc(qcx, midY, qR, qR - strokeW, GOLD) // ring
+  cv.disc(qcx, midY, qR, qR - 4, GOLD_HI) // thin bright outer edge
+  cv.disc(qcx, midY, qR - strokeW + 4, qR - strokeW, [58, 48, 26, 255]) // inner shadow edge
+  // Q tail (short diagonal, sized to stop before the C's ring)
+  for (let t = 0; t < 14; t++) {
+    cv.rect(qcx + 14 + t, midY + 14 + t, qcx + 14 + t + strokeW, midY + 14 + t + strokeW, GOLD)
   }
+
+  // --- C --- (the Q's ring with its right side opened — erased back to panel color)
+  const ccx = 200
+  const cR = 40
+  cv.disc(ccx, midY, cR, cR - strokeW, GOLD)
+  cv.disc(ccx, midY, cR, cR - 4, GOLD_HI)
+  cv.disc(ccx, midY, cR - strokeW + 4, cR - strokeW, [58, 48, 26, 255])
+  cv.rect(ccx + 12, midY - 14, ccx + cR + 2, midY + 14, PANEL) // the C's opening
   return cv
 }
 
