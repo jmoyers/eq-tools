@@ -263,8 +263,19 @@ const HEAL_RE = /^(.+?) healed (.+?) for (\d+)(?: \((\d+)\))? hit points?(?: by 
 //   <name>'s magical skin absorbs the blow!      → 'absorb'
 // An optional trailing swing modifier " (Riposte)"/"(Flurry)"/"(Rampage)" may
 // follow the "!" — allowed and discarded.
+//
+// PREPOSITIONAL VERBS (Task #58): a few melee verbs take an object preposition —
+// "You try to frenzy ON a deadly black widow, but miss!" — and the bare `\w+ (.+?)`
+// capture swallowed it, so the miss carried the target "on a deadly black widow"
+// while the LANDED form ("You frenzy on X for N points…") parsed clean. That leaked a
+// phantom "on <mob>" defender into every per-mob view. The optional `(?:on )?` is
+// greedy, so it is consumed whenever present and skipped otherwise.
+// VERIFIED against the real log (full sweep, 2026-08-02): of the 26 distinct verbs in the
+// "tr(y|ies) to <verb>" family, `frenzy` is the ONLY one that takes a preposition
+// (1,012 lines, all "on"); no other verb is ever followed by on/at/with/upon/into, and no
+// mob name begins with the word "on", so the strip cannot eat part of a real name.
 const MISS_RE = new RegExp(
-  '^(.+?) tr(?:y|ies) to \\w+ (.+?), but ' +
+  '^(.+?) tr(?:y|ies) to \\w+ (?:on )?(.+?), but ' +
     '(?:(miss|misses)' + // 3: plain miss (self/3rd person)
     '|(.+?) (parries|dodges|ripostes|blocks)' + // 4:defender 5:3rd-person verb
     '|(YOU) (parry|dodge|riposte|block)' + // 6:YOU 7:base verb

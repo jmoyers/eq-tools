@@ -978,12 +978,41 @@ export class CombatEngine {
     }
     enc?.agg.addOutMiss(id, name, kind, mtype, 'Melee')
     this.zoneAgg.addOutMiss(id, name, kind, mtype, 'Melee')
-    // Timeline: a miss tick lanes under "Melee" (hollow/red mark in the renderer).
+    // Timeline: a miss tick lanes under "Melee" (hollow/red mark in the renderer). The
+    // defender goes through defenderLabel() so it matches the INSTANCE label the damage
+    // path writes — a raw name made every whiff at a twin pile onto a phantom bare row.
+    const tgtName = enc ? this.defenderLabel(enc, target, ts) : target
     if (enc) this.pushTimeline(enc, {
       ts, lane: 'Melee', category: 'melee', amount: 0, crit: false, kind,
-      outcome: 'miss', detail: mtype, target: kind === 'you' || kind === 'pet' ? target : 'You'
+      outcome: 'miss', detail: mtype, target: tgtName
     })
-    this.log(ts, 'miss', kind, `${name} ✕ ${target} (${mtype})`)
+    this.log(ts, 'miss', kind, `${name} ✕ ${tgtName} (${mtype})`)
+  }
+
+  /**
+   * INSTANCE-RESOLVED defender label for a damage-free instant (miss/resist), Task #58.
+   *
+   * The damage path labels its defender `world.label(world.resolve(target, ts))`, so twins
+   * read as "a deadly black widow (7)" / "(8)". Miss and resist ticks carried the RAW log
+   * name instead, so the dashboard's per-mob panel — which groups timeline instants by
+   * `target` — grew a bare-named 0-damage ghost row alongside the two real instances.
+   *
+   * Resolution is GATED on the name already being engaged in this encounter (the same
+   * nameKey-prefix scan notePresence uses). That keeps AGENTS.md law 8 intact in both
+   * directions: `engaged` membership only ever comes from LANDED damage/heals, so a whiff
+   * at a mob we have never damaged still has ZERO world-model side effects (no instance is
+   * spawned, no gen counter moves) and simply keeps its raw name — the honest label when no
+   * instance exists. When the name IS engaged, resolve() returns the same instance the next
+   * landed hit would, so the miss lands on the right twin's row.
+   */
+  private defenderLabel(enc: Encounter, name: string, ts: number): string {
+    const key = idKey(name)
+    if (key === 'you') return 'You'
+    for (const id of enc.engaged) {
+      const hash = id.lastIndexOf('#')
+      if (hash > 0 && id.slice(0, hash) === key) return this.world.label(this.world.resolve(name, ts))
+    }
+    return name
   }
 
   /**
@@ -1052,11 +1081,14 @@ export class CombatEngine {
     }
     enc?.agg.addOutResist(id, name, kind, spell, category)
     this.zoneAgg.addOutResist(id, name, kind, spell, category)
+    // Same instance resolution as the miss/damage paths (see defenderLabel) — a resisted
+    // cast at a twin must land on that twin's per-mob row, not a bare-named ghost.
+    const tgtName = enc ? this.defenderLabel(enc, target, ts) : target
     if (enc) this.pushTimeline(enc, {
       ts, lane: spell, category, amount: 0, crit: false, kind,
-      outcome: 'resist', detail: 'resisted', target
+      outcome: 'resist', detail: 'resisted', target: tgtName
     })
-    this.log(ts, 'resist', kind, `${name}'s ${spell} resisted by ${target}`)
+    this.log(ts, 'resist', kind, `${name}'s ${spell} resisted by ${tgtName}`)
   }
 
   /**
