@@ -87,7 +87,7 @@ jobs:
         # persist-credentials:false keeps the job's token out of the runner's
         # git config. Nothing here pushes; the release job talks to GitHub via
         # the GH_TOKEN env var, not via git credentials.
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4 (v4.4.0)
         with:
           persist-credentials: false
 
@@ -162,7 +162,7 @@ jobs:
       contents: write # create/update the GitHub Release + upload its assets
     steps:
       - name: Checkout
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4 (v4.4.0)
         with:
           persist-credentials: false
 
