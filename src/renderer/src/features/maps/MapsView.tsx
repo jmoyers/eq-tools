@@ -28,7 +28,7 @@
 // the marker and its label can never disagree.
 
 import { useCallback, useEffect, useMemo, useState, useRef, type JSX, type RefObject } from 'react'
-import { Box, Chip, Paper, Stack, Typography } from '@mui/material'
+import { Box, Chip, Paper, Stack, Tooltip, Typography } from '@mui/material'
 import MapIcon from '@mui/icons-material/Map'
 import type { CharacterDelta, CharacterSnap } from '@shared/types'
 import type { MapBounds, MapData, MapPackPrefs, MapSearchHit, ZoneShort } from '@shared/maps'
@@ -324,6 +324,40 @@ function MapSurface({
   )
 }
 
+/**
+ * THE ATTRIBUTION LINE (§9.2).
+ *
+ * These packs ship no license file and state no terms — the credit lives INSIDE the map data,
+ * as legend-layer label points, and `parseMap.ts` mines it into `MapData.credits` already
+ * deduped and reader-ready (underscores expanded, first-seen order). Brewall's only stated wish
+ * is that credit, so the viewer prints it under the map it describes, naming whoever drew the
+ * layers actually on screen. Parsing it and dropping it would be the one discourtesy the feature
+ * cannot afford.
+ *
+ * `noWrap` + tooltip because this is WORLD-SUPPLIED text of unbounded length (AGENTS.md: one
+ * ellipsizing group for it, the tooltip keeps the facts) — the map owns the height, not its
+ * footnote. A pack with no credit points renders nothing rather than an empty row — which is
+ * why this takes the whole `MapData | null` and decides for itself: the caller stays one
+ * expression, not another branch in a view that is already at the complexity ceiling.
+ */
+function MapCredits({ data }: { data: MapData | null }): JSX.Element | null {
+  if (data == null || data.credits.length === 0) return null
+  const line = data.credits.join(' · ')
+  return (
+    <Tooltip title={line}>
+      <Typography
+        variant="caption"
+        color="text.secondary"
+        noWrap
+        data-testid="maps-credits"
+        sx={{ flexShrink: 0 }}
+      >
+        {line}
+      </Typography>
+    </Tooltip>
+  )
+}
+
 export default function MapsView(): JSX.Element {
   // WHERE YOU ARE. The character module owns the raw display zone off the `zone` log event; it
   // is undefined until the log prints one, and that absence is a state this view renders.
@@ -391,6 +425,7 @@ export default function MapsView(): JSX.Element {
           <MapsEmpty raw={raw} auto={auto} zones={zones} zone={zone} error={error} onPick={pick} />
         )
       )}
+      <MapCredits data={data} />
     </Stack>
   )
 }
