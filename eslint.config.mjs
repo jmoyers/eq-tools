@@ -165,6 +165,10 @@ const IGNORES = [
   'out/**',
   'out-e2e/**',
   'dist/**',
+  // esbuild bundle output for the feedback Lambda (infra/build.mjs) — generated,
+  // 5.8k phantom no-var errors if linted. gitignored too; both lists need it.
+  'infra/dist/**',
+  'infra/.terraform/**',
   'release/**',
   'node_modules/**',
   'build/**',
