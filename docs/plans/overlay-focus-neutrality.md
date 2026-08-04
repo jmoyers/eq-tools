@@ -1,3 +1,17 @@
+# RETRACTED (2026-08-04) — the diagnosis below was wrong
+
+The doer implementing this plan proved §0 misread the code: presence.ts's
+own-windows rule (`pid === process.pid` ⇒ EQ-side, a deliberate design) already
+made focus excursions into ANY of our windows — main included — invisible to
+the model. The real mechanism was Z-ORDER: ring and overlays share the
+'screen-saver' always-on-top level, the most recent assertion wins, and
+auto-hide's re-shows re-asserted the overlays above the ring on every EQ
+refocus. Fixed in windows.ts ("Cursor ring: above the overlays by INVARIANT"):
+every overlay show/re-raise path now ends with raiseCursorRing(). The
+implementation branch for THIS plan was discarded — its faithful rendering of
+§1 would have regressed main-window focus behavior the codebase chose on
+purpose. Kept for the record; nothing below is to be built.
+
 # Overlay focus neutrality — mousing over our own windows is not leaving EQ
 
 Design by the integrator (Fable), 2026-08-04. Owner report: with overlay
