@@ -21,7 +21,7 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { parseEvent } from '../src/main/log/parser'
 import { installSpellDb } from '../src/main/log/rulesets'
 import { loadSpellDb, buildSpellCatalog } from '../src/main/data/spellDb'
@@ -310,13 +310,16 @@ test('P5 the poison-slow offer truth table', () => {
 })
 
 // ─────────────────────────────────────────────────────────────────────────────
-// (P6) THE RELOCATION (docs/plans/suggest-dialog-redesign.md §2).
+// (P6) THE RELOCATION (docs/plans/suggest-dialog-redesign.md §2) AND THE DE-CARDING.
 //
 // The offer moved OUT of the alerts view's strip and INTO the suggest dialog's "From your
 // fights" section — "rogue slows should not be exceptional, they're part of add suggestion"
-// (the owner). The detector, the dismissal set and the def are unchanged (P5 pins all three),
-// so what is left to prove is the MOUNT, and that is a fact about the source tree: exactly one
-// surface renders the card, and it is the dialog's.
+// (the owner). Then, living with it: "get rid of this — just a normal row", so the bordered
+// card with its ADD ALERT button became one ordinary suggestion line among its neighbours.
+//
+// The detector, the dismissal set and the def are unchanged (P5 pins all three), so what is
+// left to prove is facts about the source tree: exactly one surface renders the offer, it is
+// the dialog's, and it wears the SHARED row shell rather than a card of its own.
 
 test('P6 the offer is mounted by the suggest dialog, not by the alerts view', () => {
   const read = (rel: string): string => readFileSync(new URL(rel, import.meta.url), 'utf8')
@@ -324,7 +327,7 @@ test('P6 the offer is mounted by the suggest dialog, not by the alerts view', ()
   const results = read('../src/renderer/src/features/alerts/SuggestResults.tsx')
 
   assert.equal(
-    /import\s+PoisonSlowOffer\s+from/.test(view),
+    /PoisonSlowRow|PoisonSlowOffer/.test(view),
     false,
     'AlertsView must no longer render the poison-slow strip'
   )
@@ -333,15 +336,33 @@ test('P6 the offer is mounted by the suggest dialog, not by the alerts view', ()
     false,
     '…nor hold its detector: one surface owns the offer'
   )
-  assert.ok(
-    /import\s+PoisonSlowOffer\s+from/.test(results),
-    'the suggest dialog’s results body mounts it'
-  )
+  assert.ok(results.includes('<PoisonSlowRow'), 'the suggest dialog’s results body mounts it')
   assert.ok(results.includes('From your fights'), 'inside the observation-driven section')
 
   // The RANK-UPGRADE strip is untouched: it rewrites alerts that already exist, so it stays
   // beside the list it edits. Losing it in this move would be a silent regression.
   assert.ok(view.includes('useUpgradeOffers') && view.includes('<UpgradeOffers'))
+})
+
+test('P6b the offer is a NORMAL ROW — the same shell and chip its neighbours use', () => {
+  const read = (rel: string): string => readFileSync(new URL(rel, import.meta.url), 'utf8')
+  const sections = read('../src/renderer/src/features/alerts/SuggestSections.tsx')
+
+  // The dedicated card component is gone, not merely unused: a file that still exists is a
+  // file the next reader will wire back up.
+  assert.equal(
+    existsSync(new URL('../src/renderer/src/features/alerts/PoisonSlowOffer.tsx', import.meta.url)),
+    false,
+    'the card component is deleted, folded into the row components'
+  )
+
+  assert.ok(sections.includes('export function PoisonSlowRow'), 'the row lives with the rows')
+  // The shell and the create affordance are IMPORTED from the spell row, not re-authored —
+  // "it is just another row" is only true if it is literally the same box and the same chip.
+  assert.ok(sections.includes('SUGGEST_ROW_SX'), 'wears the shared row shell')
+  assert.ok(sections.includes('<TemplateChip'), 'creates through the shared template chip')
+  assert.equal(/Add alert/.test(sections), false, 'no contained ADD ALERT button any more')
+  assert.equal(/borderColor:\s*'primary\.main'/.test(sections), false, 'and no card border')
 })
 
 test('P5b the dead `lands` suggestion is gone for poison Strikes, and only for them', () => {

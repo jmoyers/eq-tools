@@ -75,12 +75,16 @@ function textOf(page: Page, selector: string): Promise<string> {
 }
 
 /** Pick a value out of a MUI Select (its popup renders `li[data-value=…]`). */
-async function selectValue(page: Page, testid: string, value: string): Promise<void> {
-  await page.click(`[data-testid="${testid}"]`)
+async function selectIn(page: Page, selector: string, value: string): Promise<void> {
+  await page.click(selector)
   await page.waitForSelector(`li[data-value="${value}"]`, { timeout: 10_000 })
   await page.click(`li[data-value="${value}"]`)
   // MUI's menu animates out; clicking through it while it fades hits the backdrop.
   await sleep(400)
+}
+
+function selectValue(page: Page, testid: string, value: string): Promise<void> {
+  return selectIn(page, `[data-testid="${testid}"]`, value)
 }
 
 /** §2: the section exists, and it is OFF until asked for (decision D4). */
@@ -173,6 +177,62 @@ async function stepKokoroInstall(page: Page): Promise<void> {
   await selectValue(page, 'pref-voice-engine', 'system')
 }
 
+/**
+ * THE ROW'S OWN DROPDOWNS (owner: "the voice vs sound should be integrated into this dropdown
+ * instead of having to drill into edit").
+ *
+ * This is the one claim the pure tests cannot make. audioChoice.ts pins what the selects WRITE;
+ * what only the real app can show is that the first select actually offers the voice outputs
+ * beside the packs, that choosing one persists through main and comes back as the displayed
+ * value, that the SECOND select swaps from sounds to speak-what modes, and that the row's ▶ then
+ * SPEAKS — through `playAlertNow`'s existing plan, with no second preview path.
+ *
+ * It runs BEFORE the editor step, while the seeded alert is still sound-only, so the write it
+ * makes is a real change rather than a no-op.
+ */
+const FIRST_ROW = '[data-testid="alert-row"]:first-of-type'
+
+async function stepRowPicker(page: Page): Promise<void> {
+  await page.click('[data-testid="nav-alerts"]', { timeout: 60_000 })
+  await page.waitForSelector('[data-testid="alert-row"]', { timeout: 30_000 })
+  check(
+    'an alert row shows its sound, not a drill-down: two selects, output and sound',
+    (await countOf(page, `${FIRST_ROW} [data-testid="alert-output"]`)) === 1 &&
+      (await countOf(page, `${FIRST_ROW} [data-testid="alert-sound"]`)) === 1
+  )
+
+  await selectIn(page, `${FIRST_ROW} [data-testid="alert-output"]`, 'output:speech')
+  // MUI pads a Select's rendered value with a zero-width space (its empty-value placeholder), so
+  // it has to come out before this compares text.
+  const shown = (await textOf(page, `${FIRST_ROW} [data-testid="alert-output"]`))
+    .replace(/\u200b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  check('the output select states the channel the def is actually in', shown === 'Voice (spoken)', shown)
+  check(
+    '…and the second select becomes what to SAY, not which sound to play',
+    (await countOf(page, `${FIRST_ROW} [data-testid="alert-say"]`)) === 1 &&
+      (await countOf(page, `${FIRST_ROW} [data-testid="alert-sound"]`)) === 0
+  )
+
+  const stored = await page.evaluate(() =>
+    (window as unknown as { eq: { listAlerts: () => Promise<{ audio?: string }[]> } }).eq.listAlerts()
+  )
+  check(
+    'the row wrote the audio channel onto the stored def (no editor was opened)',
+    stored[0]?.audio === 'speech',
+    JSON.stringify(stored[0]?.audio)
+  )
+
+  const before = (await spoken(page)).length
+  await page.click(`${FIRST_ROW} [data-testid="alert-test"]`)
+  await sleep(800)
+  check(
+    'and the row’s ▶ SPEAKS it — the same firing path, no new preview seam',
+    (await spoken(page)).length === before + 1
+  )
+}
+
 /** The alert name the dialog is editing, read off its own title ("Edit alert — <name>"). */
 async function editingName(page: Page): Promise<string> {
   const title = (await textOf(page, '[data-testid="alert-dialog"] .MuiDialogTitle-root')).replace(/\s+/g, ' ').trim()
@@ -260,6 +320,7 @@ async function main(): Promise<void> {
       await stepEnable(page)
       await stepPreview(page)
       await stepKokoroInstall(page)
+      await stepRowPicker(page)
       const name = await stepEditor(page)
       if (name) await stepFire(page, name)
       else note('no seeded alert to edit this run — the firing path is not asserted')

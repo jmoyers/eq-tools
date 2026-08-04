@@ -24,7 +24,7 @@ import HistoryIcon from '@mui/icons-material/History'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import type { AlertDef, AlertFireRecord, SoundPack } from '@shared/types'
 import { formatTime } from '../../lib/formatDate'
-import SoundPicker from './SoundPicker'
+import AudioPicker from './AudioPicker'
 import { triggerBadge } from './conditionDraft'
 
 /** The expandable "recent fires" panel for one alert. */
@@ -268,14 +268,10 @@ function AlertRow({
 
         <AlertRowIdentity def={def} badge={badge} />
 
-        {/* `inGrid` puts these two Selects in the 'voice' / 'line' columns above. */}
-        <SoundPicker
-          inGrid
-          packs={packs}
-          packId={def.sound.packId}
-          soundId={def.sound.soundId}
-          onChange={(p, s) => handlers.onPersist({ ...def, sound: { packId: p, soundId: s } })}
-        />
+        {/* The two audio Selects — output (pack | voice | both) and, contextually, the sound or
+            the speak-what mode. `display: contents` puts them in the 'voice' / 'line' columns
+            above; the column NAMES predate the picker and now describe it exactly. */}
+        <AudioPicker packs={packs} def={def} onChange={handlers.onPersist} />
 
         <AlertRowVolume
           volume={def.volume ?? 1}

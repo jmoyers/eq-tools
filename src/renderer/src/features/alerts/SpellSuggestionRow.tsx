@@ -38,8 +38,31 @@ export interface RowContext {
 /** How many class-level chips a row shows before folding the rest into "+N". */
 const MAX_LEVEL_CHIPS = 2
 
-/** Shared geometry for the row's small chips — the whole point of the redesign is density. */
-const CHIP_SX = { height: 18, '& .MuiChip-label': { px: 0.6, fontSize: '0.68rem' } } as const
+/**
+ * Shared geometry for the row's small chips — the whole point of the redesign is density.
+ * EXPORTED because the poison-slow offer is a row in the same list (SuggestSections.tsx): its
+ * chips have to be the same 18px objects, not a second opinion about density.
+ */
+export const ROW_CHIP_SX = { height: 18, '& .MuiChip-label': { px: 0.6, fontSize: '0.68rem' } } as const
+const CHIP_SX = ROW_CHIP_SX
+
+/**
+ * The row shell every suggestion line wears: one line, never wrapping (`flexWrap` turns
+ * overflow into HEIGHT — AGENTS.md), hover-highlighted. Exported for the same reason as
+ * ROW_CHIP_SX — "the offer is just another row" is a claim that only holds if it is literally
+ * the same box.
+ */
+export const SUGGEST_ROW_SX = {
+  display: 'flex',
+  alignItems: 'center',
+  flexWrap: 'nowrap',
+  gap: 0.5,
+  px: 0.75,
+  py: 0.125,
+  minHeight: 26,
+  borderRadius: 1,
+  '&:hover': { bgcolor: 'action.hover' }
+} as const
 
 /** Coarse relative-time label for the usage tooltip's "last seen" (Task #45 recency hint). */
 export function relativeTime(ms: number): string {
@@ -163,19 +186,7 @@ function SpellRow({
   // rank — so a re-render that changes neither (a parent re-render, a hover) does none of it.
   const suggestions = useMemo(() => suggestionsFor(entry, rank), [entry, rank])
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'nowrap',
-        gap: 0.5,
-        px: 0.75,
-        py: 0.125,
-        minHeight: 26,
-        borderRadius: 1,
-        '&:hover': { bgcolor: 'action.hover' }
-      }}
-    >
+    <Box sx={SUGGEST_ROW_SX}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: 0, flexGrow: 1 }}>
         <Typography variant="body2" sx={{ fontWeight: 500, minWidth: 0 }} noWrap>
           {entry.name}

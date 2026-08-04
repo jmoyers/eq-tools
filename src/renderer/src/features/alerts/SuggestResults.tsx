@@ -14,8 +14,7 @@ import type { AlertDef } from '@shared/types'
 import type { AlertGroup } from '@shared/alertGroups'
 import type { PoisonSlowOffer as Offer } from '@shared/spellLines'
 import AlertGroupsPanel from './AlertGroupsPanel'
-import PoisonSlowOffer from './PoisonSlowOffer'
-import { IllusionAction, SectionShell, SpellRows } from './SuggestSections'
+import { IllusionAction, PoisonSlowRow, SectionShell, SpellRows } from './SuggestSections'
 import type { RowContext } from './SpellSuggestionRow'
 import type { Suggestion } from './suggestions'
 import type { ResultSection, SuggestResults as Results } from './resultSections'
@@ -51,8 +50,12 @@ function isOpen(state: SectionState, id: string): boolean {
  * catalog's recency order.
  *
  * The OFFER is hidden while a query is active: a search is a question about spells, and an
- * offer card sitting above the answer is noise. It is never dismissed by that — it comes back
+ * unrelated row sitting above the answer is noise. It is never dismissed by that — it comes back
  * the moment the box is cleared.
+ *
+ * It renders FIRST and as a plain row (SuggestSections.PoisonSlowRow): first because the app
+ * has actually watched it happen, plain because being watched does not make it a different kind
+ * of thing than the rows under it (owner: "just a normal row").
  */
 function FightsSection({
   section,
@@ -69,8 +72,8 @@ function FightsSection({
   handlers: ResultsHandlers
   state: SectionState
 }): JSX.Element | null {
-  const showOffer = !state.searching && offers.length > 0
-  if (section.total === 0 && !showOffer) return null
+  const offer = state.searching ? undefined : offers[0]
+  if (section.total === 0 && !offer) return null
   return (
     <SectionShell
       title={section.title}
@@ -78,14 +81,13 @@ function FightsSection({
       open={isOpen(state, section.id)}
       onToggle={() => state.toggle(section.id)}
     >
-      {showOffer && (
-        <Box sx={{ px: 0.5, pb: 0.5 }}>
-          <PoisonSlowOffer
-            offers={offers}
-            onPersist={handlers.onPersist}
-            onDismiss={handlers.onDismissOffer}
-          />
-        </Box>
+      {offer && (
+        <PoisonSlowRow
+          offer={offer}
+          existingIds={existingIds}
+          onPersist={handlers.onPersist}
+          onDismiss={handlers.onDismissOffer}
+        />
       )}
       <SpellRows
         rows={section.rows}

@@ -10,12 +10,20 @@
 // looking at has to stay on screen while you scroll through it.
 
 import type { JSX, ReactNode } from 'react'
-import { Box, Chip, Stack, Typography } from '@mui/material'
+import { Box, Chip, IconButton, Stack, Tooltip, Typography } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import type { SpellCatalogEntry } from '@shared/types'
-import SpellRow, { type RowContext } from './SpellSuggestionRow'
-import type { Suggestion } from './suggestions'
+import CloseIcon from '@mui/icons-material/Close'
+import type { AlertDef, SpellCatalogEntry } from '@shared/types'
+import type { PoisonSlowOffer } from '@shared/spellLines'
+import { poisonSlowAlertDefs } from '@shared/alertGroups'
+import SpellRow, {
+  ROW_CHIP_SX,
+  SUGGEST_ROW_SX,
+  TemplateChip,
+  type RowContext
+} from './SpellSuggestionRow'
+import { SUGGEST_TEMPLATES, type Suggestion } from './suggestions'
 
 /**
  * One collapsible section. `count` is the TRUE match count, so a collapsed or truncated
@@ -115,6 +123,84 @@ export function SpellRows({
         </Typography>
       )}
     </>
+  )
+}
+
+/** "3 slows landed" — the observation, plural-correct, with no rate and no percentage. */
+function observedSlows(n: number): string {
+  return n === 1 ? '1 slow landed' : `${n} slows landed`
+}
+
+/**
+ * THE ROGUE-SLOW OFFER, AS A NORMAL ROW (owner, looking at the old bordered card: "get rid of
+ * this — just a normal row").
+ *
+ * It used to be a primary-bordered card with an icon, a bold headline and a contained ADD ALERT
+ * button, sitting above the spell rows it belongs with. That styling said "I am exceptional",
+ * which is the opposite of what §2 of docs/plans/suggest-dialog-redesign.md moved it here to say:
+ * the app volunteers alerts in ONE list, ordered by what it has seen, and this is one of them.
+ *
+ * So it is literally the same box as its neighbours — `SUGGEST_ROW_SX`, the same primary/muted
+ * type pair, the same `TemplateChip` create affordance, the same 18px chips — plus one small
+ * inline X, because unlike a spell row this one can be waved away for good.
+ *
+ * NOTHING BEHIND IT CHANGED: same detector (`detectPoisonSlowOffers`), same dismissal set, same
+ * def written by the same `poisonSlowAlertDefs()` the "Rogue slow poisons" group card writes —
+ * one id, two doors, so clicking either is idempotent.
+ *
+ * COPY RULE (unchanged): no slow PERCENTAGE appears here or anywhere else in the feature. The
+ * wiki states both 35% and 15% for Weakening Strike and the contradiction is unresolved; the
+ * observed count and the mob it last landed on are the facts we actually have.
+ */
+export function PoisonSlowRow({
+  offer,
+  existingIds,
+  onPersist,
+  onDismiss
+}: {
+  offer: PoisonSlowOffer
+  existingIds: Set<string>
+  /** persist one alert (the same upsert the groups panel and the upgrade strip use). */
+  onPersist: (def: AlertDef) => void
+  /** hide this offer for good. */
+  onDismiss: (id: string) => void
+}): JSX.Element {
+  const defs = poisonSlowAlertDefs()
+  const created = defs.length > 0 && defs.every((d) => existingIds.has(d.id))
+  return (
+    <Box sx={SUGGEST_ROW_SX}>
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: 0, flexGrow: 1 }}>
+        <Typography variant="body2" sx={{ fontWeight: 500, minWidth: 0 }} noWrap>
+          Rogue slow landed
+        </Typography>
+        {/* The neighbouring rows in this section carry a buff/debuff chip (`showType`); a slow
+            landing on a mob is a debuff, and saying so keeps the column reading as one list. */}
+        <Chip size="small" label="debuff" color="error" variant="outlined" sx={ROW_CHIP_SX} />
+        <Typography variant="caption" color="text.secondary" noWrap>
+          {observedSlows(offer.count)} · last on {offer.lastTarget}
+        </Typography>
+      </Box>
+      <Stack direction="row" spacing={0.5} alignItems="center" sx={{ flexShrink: 0 }}>
+        <Tooltip title="Weakening Strike, the rogue utility-poison slow — 3:30, rate-limited to about one nudge per pull">
+          {/* The SAME wording the per-spell `lands` template uses, from the same constant: this
+              row creates the same kind of alert, so it must not invent a second phrasing. */}
+          <span>
+            <TemplateChip
+              label={SUGGEST_TEMPLATES.lands.chip}
+              created={created}
+              onClick={() => {
+                for (const def of defs) onPersist(def)
+              }}
+            />
+          </span>
+        </Tooltip>
+        <Tooltip title="Dismiss — don’t offer this again">
+          <IconButton size="small" sx={{ p: 0.25 }} onClick={() => onDismiss(offer.id)}>
+            <CloseIcon sx={{ fontSize: 15 }} />
+          </IconButton>
+        </Tooltip>
+      </Stack>
+    </Box>
   )
 }
 

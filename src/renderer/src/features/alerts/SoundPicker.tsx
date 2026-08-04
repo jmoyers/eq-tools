@@ -1,8 +1,16 @@
-// SoundPicker — the pack→sound picker used inline per-alert (AlertList) and in the
-// add/edit dialog (AlertDialog). Extracted from AlertsView.tsx (Wave D factoring).
+// SoundPicker — the pack→sound picker, and the two pack helpers everything audio-shaped shares.
+// Extracted from AlertsView.tsx (Wave D factoring).
+//
+// IT IS THE EDITOR'S PICKER NOW. The alert LIST used to mount this too (through an `inGrid`
+// escape hatch); it mounts AudioPicker.tsx instead, whose first select also offers the two voice
+// outputs — that is where the owner asked the sound/voice choice to live. The dialog keeps this
+// plain pack+sound pair because the dialog already has the Speech block right below it, which is
+// authoritative for the channel, the phrase and the voice: a second control for `audio` six
+// inches away would be two ways to say one thing in one form. The `inGrid`/`display: contents`
+// mechanism moved WITH the row, to AudioPicker.
 
 import type { JSX } from 'react'
-import { Box, MenuItem, Select, Stack } from '@mui/material'
+import { MenuItem, Select, Stack } from '@mui/material'
 import type { SoundPack } from '@shared/types'
 import { DEFAULT_PACK_ID } from './suggestions'
 
@@ -21,44 +29,22 @@ export function firstSoundId(pack: SoundPack | undefined): string {
   return pack ? Object.keys(pack.sounds)[0] ?? '' : ''
 }
 
-/**
- * The pack→sound picker used inline per-alert and in the add/edit dialog.
- *
- * `inGrid` is a LAYOUT-only escape hatch for the alert list. There the picker's two
- * Selects must be columns of the ROW's shared grid template (see the grid comment in
- * AlertList) — a self-sized `Stack` here would size to whichever pack/line names
- * happen to be selected, and every row would land its selects at a different x. With
- * `inGrid` the wrapper is `display: contents`, so the two Selects become grid items of
- * the caller's grid and take their width from the shared template instead of from
- * their own text; each one ellipsizes its displayed value rather than growing.
- * Behavior, props and callbacks are otherwise identical in both modes.
- */
+/** The pack→sound picker used in the add/edit dialog. */
 export default function SoundPicker({
   packs,
   packId,
   soundId,
-  onChange,
-  inGrid = false
+  onChange
 }: {
   packs: SoundPack[]
   packId: string
   soundId: string
   onChange: (packId: string, soundId: string) => void
-  inGrid?: boolean
 }): JSX.Element {
   const pack = packs.find((p) => p.id === packId) ?? fallbackPack(packs)
   const soundIds = pack ? Object.keys(pack.sounds) : []
-  // A grid item must be allowed to shrink below its content (minWidth: 0) for the
-  // Select's own text-overflow to ever kick in.
-  const gridSx = {
-    minWidth: 0,
-    width: '100%',
-    '& .MuiSelect-select': { overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }
-  }
-  const packSx = inGrid ? { gridArea: 'voice', ...gridSx } : { minWidth: 130 }
-  const soundSx = inGrid ? { gridArea: 'line', ...gridSx } : { minWidth: 170 }
-  const selects = (
-    <>
+  return (
+    <Stack direction="row" spacing={1}>
       <Select
         size="small"
         value={pack?.id ?? ''}
@@ -67,7 +53,7 @@ export default function SoundPicker({
           const firstSound = np ? Object.keys(np.sounds)[0] : ''
           onChange(e.target.value, firstSound)
         }}
-        sx={packSx}
+        sx={{ minWidth: 130 }}
       >
         {packs.map((p) => (
           <MenuItem key={p.id} value={p.id}>
@@ -80,7 +66,7 @@ export default function SoundPicker({
         size="small"
         value={pack?.sounds[soundId] ? soundId : soundIds[0] ?? ''}
         onChange={(e) => onChange(pack?.id ?? packId, e.target.value)}
-        sx={soundSx}
+        sx={{ minWidth: 170 }}
       >
         {soundIds.map((sid) => (
           <MenuItem key={sid} value={sid}>
@@ -88,12 +74,6 @@ export default function SoundPicker({
           </MenuItem>
         ))}
       </Select>
-    </>
-  )
-  if (inGrid) return <Box sx={{ display: 'contents' }}>{selects}</Box>
-  return (
-    <Stack direction="row" spacing={1}>
-      {selects}
     </Stack>
   )
 }
