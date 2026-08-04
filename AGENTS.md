@@ -872,6 +872,19 @@ first-run provisioning.
 
 ## Known open items
 
+- **TOOLCHAIN WAVE (security, owner-flagged 2026-08-04)**: Electron 33 is
+  EOL (Chromium 130, ~13 majors behind; 17 open advisories, most
+  foreclosed by the trust boundary — the honest residual is Chromium
+  image decoders fed by wiki-fetched icons). The wave: electron 33→43
+  PAIRED WITH electron-builder 25→26 (they travel together), and
+  vite 5→7 PAIRED WITH electron-vite 2→5 (lower urgency, dev-server
+  only). Gate with full e2e + the Windows Sandbox tier. Also stale after
+  onnxruntime-node landed: .npmrc's audited-hooks comment (it declares a
+  postinstall — verified NOT needed on win32-x64, binaries ship in the
+  tarball), electron-builder.yml's 'no native modules' comment, and the
+  installer ships ~150MB of other-platform onnx binaries (trim via
+  asarUnpack filters).
+
 - **Feedback loop (the next big feature)**: fully planned + reviewed in
   `docs/plans/feedback-triage.md` — in-app reports, scrubbed log-window
   uploads, **Terraform** infra (owner decision: HCL, us-east-1, dedicated
