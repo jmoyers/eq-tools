@@ -50,6 +50,29 @@ export interface PresenceState {
   eqFocused: boolean
   /** Last known EQ window rectangle, or null if we have never seen it foreground. */
   eqBounds: ScreenRect | null
+  /**
+   * Is the system cursor being drawn? False while EverQuest holds mouselook (right button down),
+   * which hides the cursor AND re-centers it every frame — an absolute cursor sample dances
+   * around a pointer nobody can see.
+   *
+   * TRUE by default, so the ring behaves exactly as before until the watcher says otherwise. A
+   * feature that only ever REMOVES the ring must not remove it on a state we have not measured.
+   */
+  cursorVisible: boolean
+}
+
+/**
+ * "Nothing seen yet" — the state before the watcher's first line, and the state it is reset to
+ * if the watcher ever dies. Every fact is the one that makes the app do NOTHING on it: no
+ * hiding (`observed:false`), no ring (`eqFocused:false`, no bounds) — and `cursorVisible:true`,
+ * because a signal that can only ever REMOVE the ring must never remove it unmeasured.
+ */
+export const INITIAL_PRESENCE: PresenceState = {
+  observed: false,
+  eqRunning: false,
+  eqFocused: false,
+  eqBounds: null,
+  cursorVisible: true
 }
 
 /** One cursor sample pushed to the ring window, in that window's own CSS px. */

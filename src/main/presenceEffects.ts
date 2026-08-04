@@ -21,9 +21,13 @@
 //      exists, no interval exists, and this file's cost is a single subscription that was never
 //      made. That is the default install.
 //   2. THE 8 ms POLL IS THE NARROWEST GATE IN THE APP. It runs only while the ring is ENABLED
-//      *and* EQ is FOCUSED *and* the ring window exists. Alt-tab out of the game and the
-//      interval is cleared — not skipped, cleared. `cursorStreamStats()` exists so that can be
-//      MEASURED rather than asserted.
+//      *and* EQ is FOCUSED *and* the SYSTEM CURSOR IS VISIBLE *and* the ring window exists.
+//      Alt-tab out of the game — or hold right-click for mouselook, which hides the cursor — and
+//      the interval is cleared, not skipped, cleared. The ring is parked with a single message on
+//      the way out and reads nothing until it is active again, so a mouselook turn costs zero
+//      `getCursorScreenPoint()` calls rather than one per tick of a pointer EverQuest is
+//      re-centering every frame. `cursorStreamStats()` exists so that can be MEASURED rather
+//      than asserted.
 //   3. AN UNMOVED CURSOR SENDS NOTHING. The sample is compared against the last one sent and
 //      dropped if identical, so a hand resting on the mouse costs one `getCursorScreenPoint()`
 //      per tick and zero IPC. Reading a quest text with the ring on is free.
@@ -34,7 +38,7 @@
 // The renderer's half of the contract (coalesce to rAF, compositor-only transform, never queue)
 // is in `src/renderer/src/overlay/cursorRing.ts`.
 
-import { screen } from 'electron'
+import { screen, type BrowserWindow } from 'electron'
 import { IPC } from '../shared/ipc'
 import { logError } from './errorLog'
 import { presenceSnapshot, stopPresence, subscribePresence } from './presence'
@@ -95,6 +99,15 @@ export function cursorStreamStats(): {
   return { streaming: pollTimer !== null, samples, sends }
 }
 
+/** Push a point to the ring unless it is already the point the ring has. Unchanged ⇒ nothing to
+ *  say: this is what makes a still mouse (and a parked one) free. */
+function sendPoint(w: BrowserWindow, next: CursorPoint): void {
+  if (lastSent?.x === next.x && lastSent.y === next.y) return
+  lastSent = next
+  sends++
+  w.webContents.send(IPC.onCursorPoint, next)
+}
+
 /** One cursor sample: read the pointer, convert to the ring window's own CSS px, send if it
  *  moved. Kept tiny on purpose — this is the only code in the app that runs at 125 Hz. */
 function sampleCursor(): void {
@@ -106,12 +119,22 @@ function sampleCursor(): void {
   const x = p.x - origin.x
   const y = p.y - origin.y
   const inside = x >= 0 && y >= 0 && x <= origin.width && y <= origin.height
-  const next = inside ? { x, y } : PARKED
-  // Unchanged ⇒ nothing to say. This is what makes a still mouse (and a parked one) free.
-  if (lastSent?.x === next.x && lastSent.y === next.y) return
-  lastSent = next
-  sends++
-  w.webContents.send(IPC.onCursorPoint, next)
+  sendPoint(w, inside ? { x, y } : PARKED)
+}
+
+/**
+ * Park the ring because it is not active: one PARKED point, then silence.
+ *
+ * The ring window is hidden rather than destroyed, so without this it would carry the last point
+ * it was told about — a stale halo for the frame between `showInactive()` and the first fresh
+ * sample. Parking also settles the inside/outside question ONCE: while the ring is suppressed the
+ * stream is stopped, so nothing re-evaluates the edge test against a pointer EverQuest is
+ * re-centering, and a cursor sitting on the window border cannot flip the ring on and off.
+ */
+function parkRing(): void {
+  const w = getCursorRingWindow()
+  if (!w || w.isDestroyed()) return
+  sendPoint(w, PARKED)
 }
 
 function startStream(): void {
@@ -122,11 +145,14 @@ function startStream(): void {
   pollTimer.unref?.()
 }
 
+/** Stop sampling. `lastSent` deliberately SURVIVES: the caller parks the ring next, and the
+ *  dedup is what makes that park cost one message instead of one per presence transition. It is
+ *  cleared by `startStream` (a fresh stream owes the renderer an unconditional first point) and
+ *  by a bounds change (the point it holds describes the wrong origin). */
 function stopStream(): void {
   if (!pollTimer) return
   clearInterval(pollTimer)
   pollTimer = null
-  lastSent = null
 }
 
 /** Fold the current presence + settings into the ring window's existence, bounds and stream. */
@@ -141,9 +167,11 @@ function applyRing(state: PresenceState): void {
   const bounds = state.eqBounds
   if (!bounds) {
     // The ring is on, but the EQ window has never been seen this session — there is nowhere to
-    // put it, and inventing a rectangle would put a halo over the desktop.
+    // put it, and inventing a rectangle would put a halo over the desktop. (A watcher that DIES
+    // lands here too, with a live ring window, so it parks like any other deactivation.)
     stopStream()
     setCursorRingVisible(false)
+    parkRing()
     return
   }
   createCursorRingWindow(bounds)
@@ -155,8 +183,13 @@ function applyRing(state: PresenceState): void {
   }
   const active = cursorRingActive(state, ring)
   setCursorRingVisible(active)
-  if (active) startStream()
-  else stopStream()
+  if (active) {
+    startStream()
+    return
+  }
+  // Order matters: stop sampling first, THEN park, so the park is the last word the ring hears.
+  stopStream()
+  parkRing()
 }
 
 function sameRect(a: ScreenRect | null, b: ScreenRect | null): boolean {

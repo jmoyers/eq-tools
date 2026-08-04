@@ -26,11 +26,13 @@ import {
 import {
   DEFAULT_CURSOR_RING,
   DEFAULT_OVERLAY_AUTO_HIDE,
+  INITIAL_PRESENCE,
   normalizeCursorRing,
   normalizeOverlayAutoHide,
   presenceNeeded
 } from '../src/shared/presencePrefs'
-import type { PresenceState } from '../src/shared/types'
+// PresenceState is NOT re-exported from shared/types.ts — see the note at its foot.
+import type { PresenceState } from '../src/shared/presencePrefs'
 
 const EQ_ROOT = 'C:\\Users\\Public\\Daybreak Game Company\\Installed Games\\EverQuest Legends'
 
@@ -81,6 +83,11 @@ test('a running record decodes to a boolean, both ways', () => {
   assert.deepEqual(parsePresenceLine('R|0'), { t: 'run', running: false })
 })
 
+test('a cursor-visibility record decodes to a boolean, both ways', () => {
+  assert.deepEqual(parsePresenceLine('C|1'), { t: 'cursor', visible: true })
+  assert.deepEqual(parsePresenceLine('C|0'), { t: 'cursor', visible: false })
+})
+
 test('a trailing CR is stripped — the child writes Windows line endings', () => {
   assert.deepEqual(parsePresenceLine('R|1\r'), { t: 'run', running: true })
 })
@@ -93,6 +100,9 @@ test('anything malformed decodes to null and can never move the state', () => {
     'R',
     'R|',
     'R|yes',
+    'C',
+    'C|',
+    'C|shown',
     'F',
     'F|1|2|3',
     'F|1|2|3|4|5',
@@ -220,6 +230,7 @@ const presence = (p: Partial<PresenceState> = {}): PresenceState => ({
   eqRunning: false,
   eqFocused: false,
   eqBounds: null,
+  cursorVisible: true,
   ...p
 })
 
@@ -253,7 +264,7 @@ test('NOTHING IS HIDDEN BEFORE THE WATCHER HAS REPORTED — never act on a guess
   // "we have not looked", and hiding on it would blink every overlay off at launch and back on a
   // second later on a machine where the game was running the whole time. The same flag resets if
   // the watcher ever dies, so a dead watcher fails OPEN rather than hiding everything forever.
-  const unobserved = { observed: false, eqRunning: false, eqFocused: false, eqBounds: null }
+  const unobserved = INITIAL_PRESENCE
   for (const prefs of [
     DEFAULT_OVERLAY_AUTO_HIDE,
     { hideWhenNotRunning: true, hideWhenUnfocused: true }
@@ -289,6 +300,33 @@ test('THE CURSOR STREAM RUNS ONLY WHEN ENABLED **AND** FOCUSED **AND** POSITIONE
     cursorRingActive(presence({ eqFocused: true, eqBounds: null }), on),
     false,
     'no known EQ window ⇒ nowhere to draw, so nothing is drawn or streamed'
+  )
+})
+
+test('MOUSELOOK: a hidden system cursor deactivates the ring, and showing it brings it back', () => {
+  // EverQuest hides the pointer while the right button is held AND re-centers it every frame, so
+  // an absolute sample oscillates around a cursor that is not on screen — the ring danced by
+  // itself. There is nothing to halo, so there is nothing to draw and nothing to poll.
+  const on = { ...DEFAULT_CURSOR_RING, enabled: true }
+  const live = { eqRunning: true, eqFocused: true, eqBounds: BOUNDS }
+
+  assert.equal(cursorRingActive(presence({ ...live, cursorVisible: false }), on), false)
+  assert.equal(
+    cursorRingActive(presence({ ...live, cursorVisible: true }), on),
+    true,
+    'releasing the button shows the cursor again, and the ring comes straight back'
+  )
+})
+
+test('the cursor is presumed VISIBLE until the watcher says otherwise', () => {
+  // The gap before the child's first line, and the reset after one that died. This signal can
+  // only ever REMOVE the ring, so an unmeasured default must leave the prior behavior alone —
+  // the ring then turns on the moment focus and bounds arrive, exactly as it did before.
+  const on = { ...DEFAULT_CURSOR_RING, enabled: true }
+  assert.equal(INITIAL_PRESENCE.cursorVisible, true)
+  assert.equal(
+    cursorRingActive({ ...INITIAL_PRESENCE, eqFocused: true, eqBounds: BOUNDS }, on),
+    true
   )
 })
 

@@ -2,8 +2,8 @@
 // presence.ts — the WATCHER: one long-running child, and the state it maintains.
 // ============================================================================
 //
-// Two features need the same three facts — is EQ running, is EQ the foreground window, and
-// where is that window — so they are answered ONCE, here:
+// Two features need the same four facts — is EQ running, is EQ the foreground window, where is
+// that window, and is the system cursor being drawn — so they are answered ONCE, here:
 //
 //   * overlay AUTO-HIDE (hide the floating meters when the game isn't running / isn't focused)
 //   * the CURSOR RING (a halo drawn only over the EQ window, only while it is focused)
@@ -39,6 +39,7 @@ import {
   newFocusDebounce,
   parsePresenceLine
 } from './presenceProtocol'
+import { INITIAL_PRESENCE } from '../shared/presencePrefs'
 import type { PresenceState, ScreenRect } from '../shared/presencePrefs'
 
 // ------------------------------------------------------------------ the watcher child itself
@@ -50,7 +51,14 @@ import type { PresenceState, ScreenRect } from '../shared/presencePrefs'
  *
  * Everything expensive happens once, before the loop: the P/Invoke surface is compiled by
  * `Add-Type` at startup (~1 s, paid a single time per app run) and process image paths are
- * memoized per pid. The loop itself is four user32 calls and a string compare.
+ * memoized per pid. The loop itself is five user32 calls and a string compare.
+ *
+ * CURSOR VISIBILITY is one of those calls. `GetCursorInfo` reports the session-wide cursor, and
+ * EverQuest hides it for the whole time the right button is held (mouselook) — during which it
+ * also re-centers the pointer every frame, so an absolute cursor sample oscillates while nothing
+ * is on screen to follow it. `CURSORINFO.flags` is a bit field, so the test is
+ * `& CURSOR_SHOWING(0x1)`, not `!= 0`. A failed call answers "showing": the ring is a display
+ * aid, and a watcher that cannot see the cursor must not be the reason it disappears.
  *
  * `$ErrorActionPreference` drops to SilentlyContinue after `Add-Type`, ON PURPOSE: reading
  * `.Path` on a protected process raises a non-terminating error every 5 s forever, and the
@@ -83,6 +91,17 @@ public static class EqcWin {
   [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr hWnd, out RECT r);
   [DllImport("user32.dll", CharSet = CharSet.Unicode)] public static extern int GetWindowTextW(IntPtr hWnd, StringBuilder text, int max);
   public static string Title(IntPtr h) { StringBuilder sb = new StringBuilder(512); GetWindowTextW(h, sb, 512); return sb.ToString(); }
+  [StructLayout(LayoutKind.Sequential)]
+  public struct POINT { public int X; public int Y; }
+  [StructLayout(LayoutKind.Sequential)]
+  public struct CURSORINFO { public int cbSize; public int flags; public IntPtr hCursor; public POINT ptScreenPos; }
+  [DllImport("user32.dll")] public static extern bool GetCursorInfo(ref CURSORINFO pci);
+  public static int CursorShowing() {
+    CURSORINFO ci = new CURSORINFO();
+    ci.cbSize = Marshal.SizeOf(typeof(CURSORINFO));
+    if (!GetCursorInfo(ref ci)) return 1;
+    return (ci.flags & 0x1) != 0 ? 1 : 0;
+  }
 }
 '@
 $ErrorActionPreference = 'SilentlyContinue'
@@ -91,6 +110,7 @@ $cmp = [System.StringComparison]::OrdinalIgnoreCase
 $paths = @{}
 $lastFg = ''
 $lastRun = -1
+$lastCur = -1
 $nextRun = [DateTime]::MinValue
 while ($true) {
   $h = [EqcWin]::GetForegroundWindow()
@@ -107,6 +127,8 @@ while ($true) {
   }
   $line = 'F|' + $fgPid + '|' + $rect.Left + '|' + $rect.Top + '|' + ($rect.Right - $rect.Left) + '|' + ($rect.Bottom - $rect.Top) + '|' + $paths[$fgPid] + '|' + [EqcWin]::Title($h)
   if ($line -ne $lastFg) { $lastFg = $line; [Console]::Out.WriteLine($line) }
+  $cur = [EqcWin]::CursorShowing()
+  if ($cur -ne $lastCur) { $lastCur = $cur; [Console]::Out.WriteLine('C|' + $cur) }
   $now = [DateTime]::UtcNow
   if ($now -ge $nextRun) {
     $nextRun = $now.AddMilliseconds(${runningPollMs})
@@ -145,7 +167,7 @@ let focus = newFocusDebounce(false)
 let focusTimer: NodeJS.Timeout | null = null
 let lastObservedFocus = false
 
-let state: PresenceState = { observed: false, eqRunning: false, eqFocused: false, eqBounds: null }
+let state: PresenceState = INITIAL_PRESENCE
 
 /** The presence facts as of the last watcher line. Defaults are "nothing seen yet". */
 export function presenceSnapshot(): PresenceState {
@@ -170,6 +192,7 @@ function update(next: Partial<PresenceState>): void {
     merged.observed === state.observed &&
     merged.eqRunning === state.eqRunning &&
     merged.eqFocused === state.eqFocused &&
+    merged.cursorVisible === state.cursorVisible &&
     sameRect(merged.eqBounds, state.eqBounds)
   if (same) return
   state = merged
@@ -217,11 +240,15 @@ function applyFocus(observed: boolean): void {
  * question but they are not where the game is, and the ring must not jump onto them.
  */
 function applyRecord(rec: PresenceRecord): void {
-  // ANY record means we have actually looked (the child emits both an `F` and an `R` on its
-  // very first tick). Until then `observed:false` keeps auto-hide from acting on a default
-  // that only looks like a fact — see `overlaysShouldHide`.
+  // ANY record means we have actually looked (the child emits an `F`, a `C` and an `R` on its
+  // very first tick, in that order). Until then `observed:false` keeps auto-hide from acting on
+  // a default that only looks like a fact — see `overlaysShouldHide`.
   if (rec.t === 'run') {
     update({ observed: true, eqRunning: rec.running })
+    return
+  }
+  if (rec.t === 'cursor') {
+    update({ observed: true, cursorVisible: rec.visible })
     return
   }
   const ours = rec.pid === process.pid
@@ -298,7 +325,7 @@ function startWatcher(): void {
     // — a stuck `eqRunning:false` would hide every overlay forever.
     if (listeners.size > 0) {
       logError('main:presence', { message: 'presence watcher exited unexpectedly', code })
-      state = { observed: false, eqRunning: false, eqFocused: false, eqBounds: null }
+      state = INITIAL_PRESENCE
       focus = newFocusDebounce(false)
       emit()
     }
@@ -318,7 +345,7 @@ function stopWatcher(): void {
   c.removeAllListeners('exit')
   c.kill()
   logInfo('[everquest-companion] presence watcher stopped')
-  state = { observed: false, eqRunning: false, eqFocused: false, eqBounds: null }
+  state = INITIAL_PRESENCE
   focus = newFocusDebounce(false)
 }
 

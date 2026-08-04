@@ -25,6 +25,7 @@ import type {
 //
 //   F|<pid>|<x>|<y>|<w>|<h>|<exePath>|<title>   foreground window changed
 //   R|<0|1>                                      EQ process existence changed (5 s cadence)
+//   C|<0|1>                                      system cursor visibility changed
 //
 // `title` is last because it is the only field that may contain anything (including `|`); a
 // Windows path cannot contain `|`, so every field before it is unambiguous.
@@ -33,12 +34,34 @@ import type {
 export type PresenceRecord =
   | { t: 'fg'; pid: number; rect: ScreenRect; exePath: string; title: string }
   | { t: 'run'; running: boolean }
+  | { t: 'cursor'; visible: boolean }
 
 /** A finite integer from one protocol field, or null when the field is not one. */
 function intField(s: string | undefined): number | null {
   if (s === undefined || s === '') return null
   const n = Number(s)
   return Number.isFinite(n) && Number.isInteger(n) ? n : null
+}
+
+/** The `<0|1>` payload `R` and `C` share, or null when the field is not one. */
+function boolField(s: string | undefined): boolean | null {
+  const v = intField(s)
+  return v === null ? null : v !== 0
+}
+
+/** The one record with a payload: `F|<pid>|<x>|<y>|<w>|<h>|<exePath>|<title>`. */
+function parseForeground(parts: string[]): PresenceRecord | null {
+  if (parts.length < 7) return null
+  const [pid, x, y, w, h] = [1, 2, 3, 4, 5].map((i) => intField(parts[i]))
+  if (pid === null || x === null || y === null || w === null || h === null) return null
+  return {
+    t: 'fg',
+    pid,
+    rect: { x, y, width: w, height: h },
+    exePath: parts[6] ?? '',
+    // The title is whatever remains — it is user/game-supplied text and may contain `|`.
+    title: parts.slice(7).join('|')
+  }
 }
 
 /**
@@ -50,21 +73,11 @@ export function parsePresenceLine(line: string): PresenceRecord | null {
   const trimmed = line.replace(/\r$/, '').trim()
   if (trimmed === '') return null
   const parts = trimmed.split('|')
-  if (parts[0] === 'R') {
-    const v = intField(parts[1])
-    return v === null ? null : { t: 'run', running: v !== 0 }
-  }
-  if (parts[0] !== 'F' || parts.length < 7) return null
-  const [pid, x, y, w, h] = [1, 2, 3, 4, 5].map((i) => intField(parts[i]))
-  if (pid === null || x === null || y === null || w === null || h === null) return null
-  return {
-    t: 'fg',
-    pid,
-    rect: { x, y, width: w, height: h },
-    exePath: parts[6] ?? '',
-    // The title is whatever remains — it is user/game-supplied text and may contain `|`.
-    title: parts.slice(7).join('|')
-  }
+  if (parts[0] === 'F') return parseForeground(parts)
+  const flag = boolField(parts[1])
+  if (parts[0] === 'R') return flag === null ? null : { t: 'run', running: flag }
+  if (parts[0] === 'C') return flag === null ? null : { t: 'cursor', visible: flag }
+  return null
 }
 
 // ------------------------------------------------------- is this window EverQuest?
@@ -186,7 +199,12 @@ export function overlaysShouldHide(p: PresenceState, prefs: OverlayAutoHidePrefs
  * ring and "tracking but not visible" is exactly the poll the performance contract exists to
  * avoid. Requires known bounds: the ring is sized and positioned to the EQ window, and there is
  * nowhere to put it until that window has been seen.
+ *
+ * A HIDDEN CURSOR IS NOT A CURSOR. EverQuest hides the pointer for the duration of mouselook and
+ * re-centers it every frame, so `getCursorScreenPoint()` oscillates around a pointer that is not
+ * on screen — the ring danced by itself. `cursorVisible` defaults true, so this narrows the
+ * predicate only once the watcher has actually measured a hidden cursor.
  */
 export function cursorRingActive(p: PresenceState, ring: CursorRingPrefs): boolean {
-  return ring.enabled && p.eqFocused && p.eqBounds !== null
+  return ring.enabled && p.eqFocused && p.cursorVisible && p.eqBounds !== null
 }
