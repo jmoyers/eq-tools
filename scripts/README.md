@@ -11,6 +11,35 @@ Node on PATH (`export PATH="/c/Program Files/nodejs:$PATH"` on this machine).
 | `fetch-packs.mts` | `fetch:packs` | Downloads the shipped voice pack (`alan-rickman`, pinned tag — see `src/main/data/defaultPacks.ts`) into `resources/soundpacks/`, converting the source `openpeon.json` to our `manifest.json` shape. **The audio is gitignored** (it stays out of the public repo) — run this after a fresh clone before `npm run dist`. Idempotent: only missing/empty files are re-downloaded. |
 | `scrape-posky.ts` / `scrape-bosses.ts` | `scrape:posky` / `scrape:bosses` | Refresh quest / raid-target data (offline, committed output). |
 
+## Fixture extractors (`tests/extract-*.mjs`) — run them under **tsx**
+
+`tests/fixtures/*.log` is committed to a PUBLIC repo, so every extractor routes its slice
+through the shared scrub. That scrub now lives in **`src/shared/logScrub.ts`** (TypeScript —
+the same drop list also governs the log slice an in-app feedback report attaches);
+`tests/fixture-scrub.mjs` is a thin shim that binds the self-`/who` carve-out to `Primitive`.
+
+Because the import chain reaches a `.ts` file, run every extractor through the tsx loader:
+
+```bash
+node --import tsx tests/extract-combat-fixtures.mjs "$EQLOG"
+```
+
+That is exactly what the `fixtures:*` npm scripts do, so the invocation lives in
+`package.json` instead of in someone's memory:
+
+```bash
+npm run fixtures:combat -- "C:\Users\Public\Daybreak Game Company\Installed Games\EverQuest Legends\Logs\eqlog_Primitive_freeport.txt"
+```
+
+(Node 22+/24 will type-strip `logScrub.ts` on its own, so a bare `node` happens to work today
+— with a `MODULE_TYPELESS_PACKAGE_JSON` warning and no guarantee across versions. Use the
+scripts.)
+
+**The gate after ANY scrub change**: re-run every extractor against the live log and prove
+`git diff --stat tests/fixtures/` is EMPTY. A byte-identical fixture tree is the only proof
+that a change to the drop list changed nothing it was not meant to. Baseline first if the tree
+is already dirty.
+
 ## Installer packaging
 
 - **`seed-wincodesign.ps1`** — one-time, per-machine workaround for the winCodeSign
