@@ -11,6 +11,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import Tooltip from '@mui/material/Tooltip'
 import type { CharacterRef, OverlayKind } from '@shared/types'
 import { OVERLAY_KINDS } from '@shared/types'
+import { track } from '../lib/telemetry'
 
 /**
  * Frameless window title bar (Task #23). Replaces BOTH the OS chrome and the old
@@ -95,6 +96,18 @@ function OverlayMenu({ overlayState }: { overlayState: Record<OverlayKind, boole
   const btnRef = useRef<HTMLButtonElement>(null)
   const anyOverlayOpen = Object.values(overlayState).some(Boolean)
 
+  /**
+   * Toggle one overlay and record WHICH and WHETHER (usage-analytics §2 `overlayToggle`) — the
+   * "which meters do people actually keep open" signal. The tracked `open` is main's ANSWER,
+   * never the optimistic guess: the toggle IPC resolves to the resulting state, so a toggle
+   * that failed to open a window cannot be counted as one that did.
+   */
+  const toggle = (kind: OverlayKind): void => {
+    void window.eq.toggleOverlay(kind).then((open) => {
+      track({ t: 'overlayToggle', kind, open })
+    })
+  }
+
   return (
     <Box data-no-drag sx={{ WebkitAppRegion: 'no-drag', display: 'flex', alignItems: 'center' }}>
       <Tooltip title="Floating DPS overlays">
@@ -139,28 +152,28 @@ function OverlayMenu({ overlayState }: { overlayState: Record<OverlayKind, boole
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <MenuItem dense onClick={() => void window.eq.toggleOverlay('fight')}>
+        <MenuItem dense onClick={() => { toggle('fight') }}>
           <Checkbox size="small" edge="start" checked={overlayState.fight} tabIndex={-1} disableRipple />
           <ListItemText primary="Fight meter" secondary="Current fight + fight selector" />
         </MenuItem>
-        <MenuItem dense onClick={() => void window.eq.toggleOverlay('overall')}>
+        <MenuItem dense onClick={() => { toggle('overall') }}>
           <Checkbox size="small" edge="start" checked={overlayState.overall} tabIndex={-1} disableRipple />
           <ListItemText primary="Zone meter" secondary="Zone total + zone selector" />
         </MenuItem>
         {/* Task #59: the HEALING pair — siblings of the damage meters above, same per-kind
             machinery (persisted config, position, lock, drill) and the same fight vs
             zone-session selection semantics. */}
-        <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-fight')}>
+        <MenuItem dense onClick={() => { toggle('heal-fight') }}>
           <Checkbox size="small" edge="start" checked={overlayState['heal-fight']} tabIndex={-1} disableRipple />
           <ListItemText primary="Fight healing" secondary="Healing + absorption, current fight" />
         </MenuItem>
-        <MenuItem dense onClick={() => void window.eq.toggleOverlay('heal-overall')}>
+        <MenuItem dense onClick={() => { toggle('heal-overall') }}>
           <Checkbox size="small" edge="start" checked={overlayState['heal-overall']} tabIndex={-1} disableRipple />
           <ListItemText primary="Zone healing" secondary="Healing + absorption, zone total" />
         </MenuItem>
         {/* Task #59: the event log — a non-meter overlay kind driven by the same
             per-kind machinery (persisted config, position, lock). */}
-        <MenuItem dense onClick={() => void window.eq.toggleOverlay('events')}>
+        <MenuItem dense onClick={() => { toggle('events') }}>
           <Checkbox size="small" edge="start" checked={overlayState.events} tabIndex={-1} disableRipple />
           <ListItemText primary="Event log" secondary="Alerts, notable loot, quest completions" />
         </MenuItem>

@@ -51,6 +51,14 @@ import type {
   LogSliceMeta,
   SubmitErrorCode
 } from '../shared/feedback'
+// Usage analytics (docs/plans/usage-analytics.md). The event union is a SHARED contract — the
+// renderer builds values of it, main re-validates them at the handler, and wave A2's Lambda
+// validates them again on arrival, all from one definition.
+import type {
+  TelemetryEvent,
+  TelemetryPayloadView,
+  TelemetryPrefs
+} from '../shared/telemetry'
 // The DEV-ONLY triage surface (see the banner above its methods, below). Types only — the
 // contract lives in src/shared so main, preload and the renderer name one definition.
 import type {
@@ -142,6 +150,7 @@ export type { AppFocus, UpdateStatus }
 export type { CursorRingPrefs, OverlayAutoHidePrefs }
 export type { ShareApplyResult, SharePreview }
 export type { FeedbackDraft, FeedbackEnv, LogSliceMeta, SubmitErrorCode }
+export type { TelemetryEvent, TelemetryPayloadView, TelemetryPrefs }
 // Dev-only triage (above): re-exported for the same reason every other payload shape is — a
 // renderer view names them without reaching across the tsconfig boundary into src/shared.
 export type {
@@ -533,6 +542,44 @@ const api = {
    *  is retried later; a 4xx resolves `{ok:false, queued:false}` and is not retried. */
   submitFeedback: (draft: FeedbackDraft, opts: SubmitOpts): Promise<SubmitResult> =>
     ipcRenderer.invoke(IPC.feedbackSubmit, draft, opts),
+
+  // ---- usage analytics (docs/plans/usage-analytics.md wave A1) ---------------------------
+  //
+  // THIS BUILD SENDS NOTHING. `TELEMETRY_API_URL` is '' and there is no fetch anywhere under
+  // `src/main/telemetry/`, so every method below is local: the ring on disk, the prefs in the
+  // settings store, and a viewer that shows you both.
+  /**
+   * Record one usage event. FIRE-AND-FORGET by design — nothing the user does may ever wait on
+   * a counter, and nothing they do may ever fail because of one.
+   *
+   * The value is validated TWICE with the same shared function: here, so a mistake is caught
+   * where it was made, and again in main at the handler, because the renderer is untrusted.
+   * The event union has no free-text field, so this call cannot carry a name, a zone or a line
+   * of log even by accident.
+   */
+  track: (event: TelemetryEvent): void => {
+    try {
+      ipcRenderer.send(IPC.telemetryTrack, event)
+    } catch {
+      // Analytics is the one feature that must never make noise when it fails.
+    }
+  },
+  /** The persisted prefs: master switch, whether the first-run notice has been shown, and the
+   *  rotatable anonymous id (null until the collector mints one). */
+  getTelemetryPrefs: (): Promise<TelemetryPrefs> => ipcRenderer.invoke(IPC.telemetryPrefsGet),
+  /** Flip the master switch. Turning it OFF drops the local buffer immediately. */
+  setTelemetryEnabled: (enabled: boolean): Promise<TelemetryPrefs> =>
+    ipcRenderer.invoke(IPC.telemetrySetEnabled, enabled),
+  /** The first-run notice was answered — or dismissed, which KEEPS it on (that is what opt-out
+   *  means). Either way `noticeShown` flips, so the modal is a once-ever event. */
+  telemetryNoticeShown: (keepEnabled: boolean): Promise<TelemetryPrefs> =>
+    ipcRenderer.invoke(IPC.telemetryNoticeShown, keepEnabled),
+  /** New anonymous id + an emptied buffer. Severs the retention chain on purpose. */
+  rotateAnalyticsId: (): Promise<TelemetryPrefs> => ipcRenderer.invoke(IPC.telemetryRotate),
+  /** Everything the payload viewer shows: prefs, whether this build has an endpoint at all,
+   *  the live buffer, and the last batch sent (permanently null while the build is dark). */
+  getTelemetryPayload: (): Promise<TelemetryPayloadView> =>
+    ipcRenderer.invoke(IPC.telemetryPayload),
 
   // ---- feedback TRIAGE (DEV BUILDS ONLY — src/main/triage/**) ----------------------------
   //

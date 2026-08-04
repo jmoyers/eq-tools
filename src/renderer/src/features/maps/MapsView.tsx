@@ -34,6 +34,7 @@ import type { CharacterDelta, CharacterSnap } from '@shared/types'
 import type { MapBounds, MapData, MapPackPrefs, MapSearchHit, ZoneShort } from '@shared/maps'
 import { zoneShortName } from '@shared/zones'
 import { useModule } from '../../lib/useModule'
+import { trackFeature } from '../../lib/telemetry'
 import { MapCanvas } from './MapCanvas'
 import { MapPointsLayer, labelPosition } from './MapPointsLayer'
 import { DEFAULT_LAYERS, type LayerMask } from './mapGeometry'
@@ -358,6 +359,21 @@ function MapCredits({ data }: { data: MapData | null }): JSX.Element | null {
   )
 }
 
+/**
+ * usage-analytics `featureUse: mapOpen` — a map that actually RENDERED, which is a different
+ * fact from "the Maps tab was visited" (`viewDwell` already carries that, including the
+ * zero-maps case where this view only ever shows the picker). Fires once per loaded zone.
+ *
+ * The zone itself is never carried: the schema has no field a zone name could go in, and this
+ * hook takes the whole `MapData` precisely so the caller never has to reach for one.
+ */
+function useMapOpenTracking(data: MapData | null): void {
+  const loaded = data?.zone
+  useEffect(() => {
+    if (loaded !== undefined) trackFeature('mapOpen')
+  }, [loaded])
+}
+
 export default function MapsView(): JSX.Element {
   // WHERE YOU ARE. The character module owns the raw display zone off the `zone` log event; it
   // is undefined until the log prints one, and that absence is a state this view renders.
@@ -379,6 +395,8 @@ export default function MapsView(): JSX.Element {
   const [floor, setFloor] = useState<number | null>(null)
   // A new zone starts on All levels — a floor index means nothing across two different maps.
   useEffect(() => setFloor(null), [data?.zone])
+
+  useMapOpenTracking(data)
 
   const hostRef = useRef<HTMLDivElement>(null)
   const vp = useMapViewport({ bounds: data?.bounds ?? EMPTY_BOUNDS, id: data?.zone ?? '', hostRef })

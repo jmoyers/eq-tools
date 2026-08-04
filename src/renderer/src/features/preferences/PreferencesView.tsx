@@ -35,6 +35,8 @@
 //   Updates — app version, last-checked time, a manual check, background download
 //             progress, and the "Relaunch to update" action when one is waiting.
 //             Lives in ./UpdateSetting.tsx; this file only names it in the table.
+//   Usage analytics — the anonymous-counts switch, the rotatable id, and the payload
+//             viewer that makes the privacy claim checkable. ./TelemetrySetting.tsx.
 //   Feedback — the second entry point into the feedback DIALOG (the first is the nav
 //             drawer's footer). Feedback is not a view, so this section only opens it.
 
@@ -58,6 +60,7 @@ import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import FeedbackIcon from '@mui/icons-material/Feedback'
+import PrivacyTipIcon from '@mui/icons-material/PrivacyTip'
 import LayersIcon from '@mui/icons-material/Layers'
 import AdjustIcon from '@mui/icons-material/Adjust'
 import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
@@ -70,6 +73,7 @@ import { FeedbackSetting, type OpenFeedback } from './FeedbackSetting'
 import { VoiceSetting } from './VoiceSetting'
 import { OverlayAutoHideSetting } from './OverlayAutoHideSetting'
 import { CursorRingSetting } from './CursorRingSetting'
+import { TelemetrySetting } from './TelemetrySetting'
 import { normalizeQuery } from '../../lib/search'
 
 // -------------------------------------------------------------- Combat section
@@ -166,6 +170,31 @@ function overlaysSection(): PrefSection {
         keywords:
           'overlay overlays meter meters hide auto autohide show running focus focused unfocused alt tab background desktop game closed floating',
         content: <OverlayAutoHideSetting />
+      }
+    ]
+  }
+}
+
+/**
+ * Usage analytics (docs/plans/usage-analytics.md). Its own factory for the same reason the two
+ * above are — `buildSections` sits against the 100-code-line ceiling.
+ *
+ * It is a SECTION rather than a line inside another one because of what it contains: the switch
+ * is one control, but the payload viewer beside it is the whole privacy claim made checkable,
+ * and that does not belong tucked under "Updates".
+ */
+function analyticsSection(): PrefSection {
+  return {
+    id: 'analytics',
+    label: 'Usage analytics',
+    icon: <PrivacyTipIcon fontSize="small" />,
+    items: [
+      {
+        id: 'telemetry',
+        label: 'Anonymous usage counts',
+        keywords:
+          'telemetry analytics usage privacy tracking opt out optout data collect anonymous id rotate payload send stats metrics',
+        content: <TelemetrySetting />
       }
     ]
   }
@@ -269,6 +298,7 @@ function buildSections(
         }
       ]
     },
+    analyticsSection(),
     {
       id: 'feedback',
       label: 'Feedback',

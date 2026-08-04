@@ -47,6 +47,7 @@ import {
 } from '@shared/speechText'
 import { applyVoicePrefs, currentVoicePrefs, forgetSystemVoices, speak } from '../../lib/speech'
 import { useVoiceOptions } from '../../lib/useVoices'
+import { trackFeature } from '../../lib/telemetry'
 
 /** What each tier is, in one line. The size lives on the download button, where it is actionable. */
 const ENGINE_LABELS: Record<SpeechEngine, string> = {
@@ -343,7 +344,12 @@ function VoicePickerRow({
         size="small"
         startIcon={<PlayArrowIcon />}
         data-testid="pref-voice-preview"
-        onClick={() => void speak(PREVIEW_TEXT, prefs)}
+        onClick={() => {
+          // usage-analytics `featureUse: speechPreview` — "did anyone ever hear this work".
+          // A count, with no voice id and no text attached; the utterance is a fixed constant.
+          trackFeature('speechPreview')
+          void speak(PREVIEW_TEXT, prefs)
+        }}
       >
         Preview
       </Button>

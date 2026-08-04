@@ -56,6 +56,11 @@ import {
 // prefs module (no Electron, no types.ts, no LogEvent union) and duplicating the ring's clamps
 // here would create a second answer to "what is a valid cursor-ring config".
 import { normalizeCursorRing, normalizeOverlayAutoHide } from '../shared/presencePrefs'
+// The THIRD such exception, and the strictest of the three: shared/telemetry.ts is the pure,
+// ZERO-IMPORT usage-analytics contract (no Electron, no parser, no types.ts), and its prefs
+// normalizer is the one answer to "what is a valid telemetry pref block" that the store, the
+// IPC handler and this migration all have to agree on.
+import { normalizeTelemetryPrefs } from '../shared/telemetry'
 
 /** A store file, parsed. Deliberately untyped: a migration's INPUT is a shape the current
  *  code no longer describes, so `StoreShape` would be a lie at every step but the last. */
@@ -68,7 +73,7 @@ export const SCHEMA_VERSION_KEY = 'schemaVersion'
  * The schema the code running right now expects. Bump by exactly one whenever a persisted
  * shape changes, and add the matching MIGRATIONS entry in the same commit.
  */
-export const CURRENT_SCHEMA_VERSION = 5
+export const CURRENT_SCHEMA_VERSION = 6
 
 export interface Migration {
   /** Version this step produces. Steps run in ascending `to` order, contiguously. */
@@ -296,6 +301,39 @@ const migrateToV5: Migration = {
   }
 }
 
+// -------------------------------------------------- 5 → 6: usage-analytics prefs
+//
+// docs/plans/usage-analytics.md wave A1. ONE new top-level blob:
+//
+//   `telemetry` {enabled:true, noticeShown:false, analyticsId:null}
+//
+// THE DEFAULTS ARE THE POLICY, and each one is a decision:
+//
+//   * `enabled: true` — OPT-OUT. The owner's call, taken over the integrator's opt-in
+//     recommendation and recorded as such in the plan (decision T1).
+//   * `noticeShown: false` — and this is what makes opt-out honest. Collection may buffer to
+//     the local ring, but the NETWORK gate (`telemetryFlushEnabled`, src/main/telemetry/net.ts)
+//     additionally requires this flag, so nothing can ever be transmitted before the first-run
+//     notice has rendered. An upgrading user is a first-run user for this purpose: they have
+//     not been told either, so they get the notice too.
+//   * `analyticsId: null` — NOT minted here. A migration runs for every user, including one who
+//     opens Preferences and immediately switches the feature off; creating an identifier for
+//     them would be creating exactly the thing they just declined. The collector mints it on
+//     its first start, and only while the switch is on.
+//
+// Same treatment as 3→4 and 4→5: every reader defaults, so this step is not strictly required
+// for a v5 store to boot — it ships so a v6 store is a PROMISE that whatever is in the key is a
+// complete, in-range block. A malformed `analyticsId` is DROPPED (⇒ the collector mints a fresh
+// one) rather than repaired into something that is not a UUID.
+const migrateToV6: Migration = {
+  to: 6,
+  describe: 'add the telemetry prefs blob (opt-out, notice not yet shown, no analytics id yet)',
+  migrate(data) {
+    data.telemetry = normalizeTelemetryPrefs(data.telemetry)
+    return data
+  }
+}
+
 /**
  * The chain, ascending. APPEND ONLY — never renumber, never edit a shipped step (a store
  * out there was migrated by the old text and will never run it again), never delete one:
@@ -305,7 +343,8 @@ export const MIGRATIONS: readonly Migration[] = [
   migrateToV2,
   migrateToV3,
   migrateToV4,
-  migrateToV5
+  migrateToV5,
+  migrateToV6
 ]
 
 /** Version recorded in `data`; anything absent, non-integer or < 1 means "pre-framework" ⇒ 1. */

@@ -28,6 +28,11 @@ import FeedbackDialog from './features/feedback/FeedbackDialog'
 import DevTriageView from './devTriage'
 import { DEV_TOOLS } from './devFlags'
 import { useFeedbackDialog, type FeedbackPrefill } from './features/feedback/useFeedback'
+// Usage analytics (docs/plans/usage-analytics.md). The notice is mounted unconditionally and
+// renders nothing once it has been answered; `useViewDwell` reports how long each tab was on
+// screen. Both are local-only in this build — there is no telemetry endpoint compiled in.
+import { TelemetryNotice } from './features/preferences/TelemetryNotice'
+import { useViewDwell } from './lib/telemetry'
 import AlertPlayer, { fireAppSignal } from './features/alerts/player'
 import { getBossData } from './data'
 import { useBossKills } from './features/bosses/useBossKills'
@@ -352,6 +357,11 @@ export default function App(): JSX.Element {
     localStorage.setItem(VIEW_KEY, view)
   }, [view])
 
+  // How long each tab was on screen, reported ON SWITCH (plan §2). `View` and the schema's
+  // `viewDwell` enum are the same set by construction — a tab the schema does not list could
+  // not be reported at all.
+  useViewDwell(view)
+
   useEffect(() => {
     void window.eq.getCharacter().then(setCharacter)
     void window.eq.listCharacters().then(setCharacters)
@@ -448,6 +458,11 @@ export default function App(): JSX.Element {
           opened from the nav footer, from Preferences, and by the ErrorBoundary's "Report this"
           (which reloads and lands a prefilled bug — see useFeedbackDialog). */}
       <FeedbackDialog open={feedback.open} onClose={feedback.close} prefill={feedback.prefill} />
+
+      {/* The first-run usage-analytics notice (plan T1). Renders nothing once answered — which
+          is every launch after the first — and is the ONLY thing that sets `noticeShown`, the
+          flag main's network gate requires. Nothing may be transmitted before it has shown. */}
+      <TelemetryNotice />
     </Box>
   )
 }

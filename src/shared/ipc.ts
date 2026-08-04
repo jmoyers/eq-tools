@@ -284,6 +284,34 @@ export const IPC = {
   // a network failure resolves with {ok:false, queued:true}. Returns SubmitResult.
   feedbackSubmit: 'feedback:submit',
 
+  // ---- usage analytics (docs/plans/usage-analytics.md wave A1) ------------------------
+  //
+  // THE BUILD IS DARK: `TELEMETRY_API_URL` is '' (src/main/telemetry/net.ts) and there is no
+  // fetch anywhere under src/main/telemetry/, so none of these can put a byte on the wire.
+  // They exist so the local ring, the switch and the payload viewer are real from day one.
+  //
+  // renderer -> main, FIRE-AND-FORGET: record one event. The payload is VALIDATED AT THE
+  // HANDLER with the shared `validateTelemetryEvent` — the renderer is untrusted here like
+  // everywhere else, and the schema is a closed allowlist, so an unknown tag or an unlisted
+  // enum member is dropped rather than buffered. Arg: TelemetryEvent.
+  telemetryTrack: 'telemetry:track',
+  // renderer -> main: the persisted prefs {enabled, noticeShown, analyticsId}. Returns
+  // TelemetryPrefs.
+  telemetryPrefsGet: 'telemetryPrefs:get',
+  // renderer -> main: flip the master switch. OFF drops the local buffer immediately.
+  // Arg: boolean. Returns TelemetryPrefs.
+  telemetrySetEnabled: 'telemetry:setEnabled',
+  // renderer -> main: the first-run notice has been ANSWERED (or dismissed — dismissal keeps
+  // it on, that is what opt-out means). Sets noticeShown either way. Arg: boolean (keep on).
+  telemetryNoticeShown: 'telemetry:noticeShown',
+  // renderer -> main: mint a new anonymous analyticsId and DROP the local buffer (T3).
+  // Returns TelemetryPrefs.
+  telemetryRotate: 'telemetry:rotate',
+  // renderer -> main: everything the Preferences payload viewer renders — prefs, whether this
+  // build has an endpoint at all, the live buffer, and the last batch sent (permanently null
+  // while dark). Returns TelemetryPayloadView.
+  telemetryPayload: 'telemetry:payload',
+
   // ---- feedback TRIAGE (the dev-only operator tab — src/main/triage/**) ----------------
   //
   // ============ DEV BUILDS ONLY. NO SHIPPED APP EVER REGISTERS THESE HANDLERS. ============

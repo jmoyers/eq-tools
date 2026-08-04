@@ -21,6 +21,7 @@
     "fetch:packs": "tsx scripts/fetch-packs.mts",
     "gen:icon": "tsx scripts/gen-icon.mts",
     "gen:message-overlay": "tsx scripts/gen-message-overlay.ts",
+    "gen:telemetry-doc": "tsx scripts/gen-telemetry-doc.mts",
     "dev:stack": "tsx scripts/dev-feedback-server.mts",
     "fixtures:buffs": "node --import tsx tests/extract-fixtures.mjs",
     "fixtures:combat": "node --import tsx tests/extract-combat-fixtures.mjs",

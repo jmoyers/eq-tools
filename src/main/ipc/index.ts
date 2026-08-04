@@ -24,6 +24,7 @@ import { registerPresenceIpc } from './presence'
 import { registerShareIpc } from './share'
 import { registerSoundsIpc } from './sounds'
 import { registerSpeechIpc } from './speech'
+import { registerTelemetryIpc } from './telemetry'
 import { registerWindowIpc } from './windowControls'
 import { registerWorldIpc } from './world'
 
@@ -41,4 +42,5 @@ export function registerIpc(): void {
   registerWindowIpc()
   registerClipboardIpc()
   registerFeedbackIpc()
+  registerTelemetryIpc()
 }

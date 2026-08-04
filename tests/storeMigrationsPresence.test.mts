@@ -44,7 +44,10 @@ test('a v4 store gains both presence blobs at their defaults, and nothing else m
   assert.equal(status, 'migrated')
   assert.equal(from, 4)
   assert.equal(to, CURRENT_SCHEMA_VERSION)
-  assert.deepEqual(applied, [5], 'a v4 store runs exactly one step')
+  // Every step from 5 up: this file owns step 5, and a later step landing here is expected —
+  // what it must not do is disturb the two blobs asserted below.
+  assert.ok(applied.includes(5), 'a v4 store runs the presence step')
+  assert.deepEqual(applied, [5, 6])
 
   assert.deepEqual(data['cursorRing'], RING_DEFAULT, 'the ring is OFF for an upgrading user')
   assert.deepEqual(data['overlayAutoHide'], AUTOHIDE_DEFAULT)

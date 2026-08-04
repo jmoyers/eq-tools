@@ -17,7 +17,10 @@ const SPECS = [
   'leveling.e2e.mts',
   'copy.e2e.mts',
   'feedback.e2e.mts',
-  'voice-alerts.e2e.mts'
+  'voice-alerts.e2e.mts',
+  // Telemetry launches the app TWICE against one userData dir (the restart is the assertion),
+  // so it must stay in this sequential list and must never be run beside another spec.
+  'telemetry.e2e.mts'
 ]
 
 let failed = 0

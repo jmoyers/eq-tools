@@ -33,6 +33,7 @@ import { IPC } from '../shared/ipc'
 import { errorLogPath, logError, logInfo } from './errorLog'
 import { saveUserOverlay } from './data/overlayPersistence'
 import { startQueueFlush, stopQueueFlush } from './feedback'
+import { startTelemetry, stopTelemetry } from './telemetry'
 import { registerAppSchemes } from './appSchemes'
 import { installImageCacheProtocol } from './imageCache'
 import { installSpeechCacheProtocol } from './speech/cache'
@@ -58,6 +59,11 @@ import { OVERLAY_KINDS } from '../shared/types'
 // scope; each handler itself is installed in whenReady below. Electron permits exactly ONE
 // registerSchemesAsPrivileged call, which is why both schemes go through appSchemes.ts.
 registerAppSchemes(protocol)
+
+// Cold-start stopwatch: module scope is the earliest this process can measure from, and the
+// number is bucketed (never sent raw) into `sessionStart` when the window exists. See
+// src/shared/telemetry.ts COLD_START_MS_EDGES.
+const PROCESS_START_MS = Date.now()
 
 // Epoch detection subscription (Task #49; launch-anchored in Task #50). Runs LAST — after
 // pipeline.ts's registry + combat subscriptions, which is why it is added here rather than
@@ -196,6 +202,17 @@ if (!gotSingleInstanceLock) {
     // `queueFlushEnabled` in net.ts, shared with `flushQueue`) rather than being restated
     // here — two copies of a network gate is how one of them drifts.
     startQueueFlush()
+    // Usage analytics (docs/plans/usage-analytics.md wave A1), started right beside the feedback
+    // drain and for the same reasons: after the window exists, timers unref'd, and every gate
+    // inside `startTelemetry` rather than restated here.
+    //
+    // THIS BUILD SENDS NOTHING. `TELEMETRY_API_URL` is '' and there is no fetch anywhere under
+    // src/main/telemetry/, so what this call starts is purely local: an analytics id if the
+    // user's switch is on, a `sessionStart` record, and a 5-minute heartbeat into the ring at
+    // <userData>/telemetry.json. The 60 s FLUSH timer is not even created — `telemetryFlushEnabled`
+    // (telemetry/net.ts) is false without an endpoint, without the user's switch, and without
+    // the first-run notice having rendered. Same predicate discipline as `queueFlushEnabled`.
+    startTelemetry(Date.now() - PROCESS_START_MS)
     // Self-provision the shipped voice packs (Task #39): a CI-built installer ships
     // WITHOUT the gitignored peon/sc_marine packs, so a fresh install's seeded
     // charm-break alert would reference a missing sound. Download any missing default
@@ -239,6 +256,11 @@ app.on('window-all-closed', () => {
   // Stop the feedback drain's timers. They are unref'd, so they cannot be the reason the
   // process lives on; this is about not starting an attempt into a process that is quitting.
   stopQueueFlush()
+  // Close the analytics session: records `sessionEnd` into the LOCAL ring (duration + how many
+  // tabs were visited) and stops the heartbeat. Nothing is transmitted — there is nowhere to
+  // transmit to — and the timers were unref'd anyway, so this is about writing the last record
+  // before the process goes, not about letting it go.
+  stopTelemetry()
   // Flush the learned message overlay one last time so the final session's observations
   // aren't lost between debounced saves (Task #36).
   saveUserOverlay(buffsModule.overlaySnapshot())

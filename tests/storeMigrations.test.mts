@@ -190,6 +190,7 @@ test('an EMPTY pre-framework store migrates to a valid current store, not to jun
     voice: { enabled: false, engine: 'system', voiceId: null, rate: 1, volume: 1 },
     cursorRing: { enabled: false, sizePx: 44, thicknessPx: 4 },
     overlayAutoHide: { hideWhenNotRunning: true, hideWhenUnfocused: false },
+    telemetry: { enabled: true, noticeShown: false, analyticsId: null },
     [SCHEMA_VERSION_KEY]: CURRENT_SCHEMA_VERSION
   })
 })

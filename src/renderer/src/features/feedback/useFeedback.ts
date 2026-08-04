@@ -22,6 +22,7 @@ import {
   type FeedbackType
 } from '@shared/feedback'
 import { CRASH_REPORT_KEY } from '../../lib/ErrorBoundary'
+import { track, trackFeature } from '../../lib/telemetry'
 
 /**
  * The BRIDGE's own reply shapes, derived from the bridge rather than re-declared.
@@ -228,6 +229,11 @@ export function useFeedbackDialog(): FeedbackDialogControl {
   const openFeedback = useCallback((p?: FeedbackPrefill): void => {
     setPrefill(p)
     setOpen(true)
+    // usage-analytics §2/§3: reach ("did anyone find this at all") and the first step of the
+    // feedback funnel, whose interesting number is the GAP between opened and sent. Both are
+    // counts with no content attached — the schema has no field the description could go in.
+    trackFeature('feedbackOpen')
+    track({ t: 'funnelStep', funnel: 'feedback', step: 'dialogOpened' })
   }, [])
   const close = useCallback((): void => {
     setOpen(false)

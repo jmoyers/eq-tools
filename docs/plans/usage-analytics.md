@@ -115,6 +115,28 @@ version where drop-off changed. Three at v1:
   lambda or handler extension, dashboard, alarms on ingest 5xx), `analytics
   digest`/`wipe --id` in the triage CLI. Rides the owner's next
   `terraform apply`.
+
+  > **TODO — A2 CANNOT SHIP WITHOUT THE DOC AMENDMENT, IN THE SAME COMMIT.**
+  > A1 deliberately left `SECURITY.md`'s "No telemetry, analytics, crash
+  > reporting, or phone-home of any kind" untouched, and that statement is still
+  > TRUE: `TELEMETRY_API_URL` is `''`, there is no `fetch` anywhere under
+  > `src/main/telemetry/`, and `tests/telemetryNet.test.mts` pins both. The
+  > moment A2 fills that constant in, the promise becomes false. So the commit
+  > that lights the endpoint MUST also:
+  >   * rewrite SECURITY.md's "What the app never does" bullet and add a
+  >     retention row for `usage_daily` / `usage_funnel_daily` /
+  >     `analytics_install` beside the existing feedback table;
+  >   * add the analytics paragraph to README (linking `TELEMETRY.md`, which is
+  >     already committed and already generated from the schema);
+  >   * update `tests/telemetryNet.test.mts` — the dark-build pins there are
+  >     designed to FAIL on that change, so the doc edit cannot be forgotten;
+  >   * update `TELEMETRY.md`'s "no build sends anything at all" paragraph via
+  >     `npm run gen:telemetry-doc` (the parity test enforces it).
+  > Also carried forward from A1, deliberately unbuilt: `setupSnapshot`,
+  > `healthCounters`, `updateOutcome` and the `first-run` / `voice-install`
+  > funnel steps exist in the schema and in `TELEMETRY.md` but have no producers
+  > yet — the enum was designed so later waves add call sites without a schema,
+  > doc or server change.
 - **A3 — the readout**: fill the Analytics sub-tab's `available: true` arm
   (Pulse / Adoption / Funnels / Health / Versions off `usage_daily` +
   `usage_funnel_daily` + `analytics_install`), plus the CloudWatch dashboard
