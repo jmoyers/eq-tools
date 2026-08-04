@@ -168,8 +168,43 @@ build log for that tag.
   machine or in CI. See `.npmrc`.
 - All GitHub Actions are pinned to full commit SHAs, not mutable tags.
 - Dependabot watches npm and Actions weekly (`.github/dependabot.yml`).
-- The shipped runtime dependencies currently report **zero** known
-  vulnerabilities (`npm audit --omit=dev`).
+- The tree currently reports **zero** known vulnerabilities — `npm audit` and
+  `npm audit --omit=dev` both say `found 0 vulnerabilities`. See
+  [Known dependency advisories](#known-dependency-advisories) for why the plain
+  `npm audit` number is the one that matters here.
+
+## Known dependency advisories
+
+**There are none open right now.** This section exists to say how they are judged
+when there are, because the default reading of the numbers is wrong for this
+project in one specific way.
+
+**`--omit=dev` is not the runtime.** npm and Dependabot classify a package by
+which block of `package.json` it sits in, and `electron` sits in
+`devDependencies` — that is correct for how it is *installed* (it is not
+`require`d from the packaged app's `node_modules`; it *is* the packaged app). The
+consequence is that `npm audit --omit=dev` hides every Chromium advisory in the
+thing users actually run. So the number quoted above is the plain `npm audit`,
+and an electron advisory is treated as a **shipping** vulnerability regardless of
+which block it was found in. `vite`, `esbuild`, `electron-builder` and friends
+genuinely are build-time only: nothing they contain is copied into the installer.
+
+**Electron is held to the supported line, not to the minimum patch.** Electron
+takes Chromium security fixes on the newest three majors only. Pinning to the
+exact version an advisory names would park us on a line that has stopped
+receiving them, so the target is the current supported major even when that is a
+larger jump. Majors are still hand-driven (`.github/dependabot.yml` ignores
+`electron` / `electron-builder` majors on purpose) and are verified by building
+and packaging, not by reading a changelog: `npm test`, `npm run test:e2e`
+against a real boot, and `npm run dist:dir` through to a launchable
+`win-unpacked`.
+
+**Unreachable is stated, not assumed.** Where an advisory does not apply, the
+reason is written down with the fix rather than used to skip it — for example
+`GHSA-7g7r-gx96-252g` (`app-builder-lib`) is an `AppImage` `AppRun` bug, and
+`electron-builder.yml` builds exactly one target, Windows `nsis` `x64`. It was
+upgraded anyway. "Not reachable" is a note in the commit, not a reason to leave
+a version behind.
 
 ## Scope
 
