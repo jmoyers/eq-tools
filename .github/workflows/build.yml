@@ -130,7 +130,7 @@ jobs:
       # UNSIGNED on purpose, and NO AZURE_* env: this job verifies + produces a CI
       # artifact, it publishes nothing, so it has no business holding the signing
       # secrets (least privilege — same reasoning as its read-only token). The
-      # win.sign hook (scripts/azure-sign.cjs) self-skips without
+      # win.signtoolOptions.sign hook (scripts/azure-sign.cjs) self-skips without
       # AZURE_SIGNING_ENDPOINT. This step previously carried a stale copy of the
       # pre-hook azureSignOptions args from the job split, which invoked the
       # UNQUOTED Invoke-TrustedSigning path and failed on the space in
@@ -223,7 +223,7 @@ jobs:
           AZURE_SIGNING_PROFILE: ${{ secrets.AZURE_SIGNING_PROFILE }}
         run: |
           npm run build
-          # Signing is driven by electron-builder.yml's win.sign hook
+          # Signing is driven by electron-builder.yml's win.signtoolOptions.sign hook
           # (scripts/azure-sign.cjs), NOT azureSignOptions: the built-in path
           # splices file paths into pwsh -Command unquoted and dies on our
           # space-bearing exe name ("File not found: ...\EQ" — the v0.1.8

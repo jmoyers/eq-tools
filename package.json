@@ -72,7 +72,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^5.2.0",
     "cheerio": "^1.0.0",
-    "electron": "^33.2.0",
+    "electron": "^43.2.0",
     "electron-builder": "^26.15.7",
     "electron-vite": "^5.0.0",
     "esbuild": "^0.25.12",
