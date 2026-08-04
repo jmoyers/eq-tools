@@ -42,7 +42,11 @@ import {
 } from '../src/shared/telemetryDoc'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
-const committed = (): string => readFileSync(join(ROOT, 'TELEMETRY.md'), 'utf8')
+// CRLF-normalized: parity is about CONTENT, and this repo checks out with core.autocrlf=true,
+// so the committed file's on-disk bytes carry \r\n while the renderer emits \n. Comparing
+// bytes would make the suite red on every Windows checkout for a doc that has not drifted.
+const committed = (): string =>
+  readFileSync(join(ROOT, 'TELEMETRY.md'), 'utf8').replace(/\r\n/g, '\n')
 
 test('COMPLETENESS: every event in the schema has a doc row, in the schema’s order', () => {
   assert.deepEqual(DOC_EVENT_KINDS, [...TELEMETRY_EVENT_KINDS])
