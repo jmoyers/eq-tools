@@ -6,10 +6,18 @@ detailed); this file holds only repeatable rules and load-bearing design.
 ## What this is
 
 Electron (electron-vite) + TS + React + MUI desktop app that tails the
-**EverQuest Legends** log in real time: Plane of Sky quest tracking, loot,
-inventory reconcile, leveling/AA, raid targets, buffs simulation, alerts with
-sounds, a Details-style DPS meter with drill-down/timeline, and floating
-overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
+**EverQuest Legends** log in real time: an Overview landing tab (default
+view — DPS w/ inline drill, live curve, current mob, zone, leveling rate +
+next-level ETA, class loadout, recent drops/kills), Plane of Sky quest
+tracking, loot, inventory reconcile, leveling/AA analytics (zone bands,
+drag-select range stats), a Maps tab (Brewall/default rendering, POI
+search, label declutter, floor slicing), class-combo inference with user
+corrections, proc analytics (PPM + state attribution), raid targets, buffs
+simulation, alerts with sounds + rank-upgrade intelligence, a Details-style
+DPS meter with drill-down/timeline (drilled by default, pet nested), and
+floating overlay meters. Committed knowledge DBs: mobs (7.9k), items
+(11.2k), spells (1.9k), classes, zones. First stable release v0.2.0
+(2026-08-03). Layout: `src/main` (Node), `src/preload`, `src/renderer`,
 `src/shared`, `tests/`, `scripts/`.
 
 - Repo: `C:\Users\jmoye\everquest-companion` (public: github.com/jmoyers/everquest-companion).
@@ -97,6 +105,30 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   (index.ts, ipc.ts, types.ts, preload, App.tsx) immediately before each
   surgical edit. errors.log noise from mid-edit HMR is normal — judge by
   final typecheck/tests and check timestamps before blaming current code.
+- **PATH-SCOPED COMMITS (integrator law, learned the hard way 2026-08-03).**
+  While waves overlap, the integrator stages EXPLICIT file lists from the
+  finished agent's report — never `git add <dir>` and never `git add
+  tests/fixtures`. Broad adds swept in-flight files three times in one day
+  (another agent's fixtures; half of a preload edit, leaving HEAD unable to
+  typecheck in isolation; a view importing untracked files, leaving HEAD
+  unbuildable from a clean checkout). After any commit touching shared hot
+  files, sanity-check that HEAD is self-consistent. A follow-up commit says
+  "completes <sha>" when it repairs one of these.
+- **Mid-flight course changes go BY MESSAGE to the owning agent** (owner
+  amendments, hazards discovered by a sibling wave) — never by dispatching a
+  second agent into owned files, and never by the integrator editing them.
+- **During parallel waves, red is ambient; final reports are the truth.**
+  Executors report other agents' failures SEPARATELY from their own (whose
+  file, what error). eslint's cache lies after cross-agent deletes — errors
+  at line numbers past a file's length mean `rm -rf
+  node_modules/.cache/eslint`, not code. A throwaway `scripts/_*.mts` left
+  behind breaks `typecheck:node` for everyone: delete before reporting.
+- **Plans go stale while agents fly.** Line ranges, counts and tables in a
+  design doc describe the log/tree at planning time — executors re-derive
+  them fresh and treat every measured claim as re-checkable. The session's
+  scoreboard: ~20 briefing errors overturned by executor measurement, zero
+  overturned briefs that turned out right. Reward the overturn, then encode
+  what it taught.
 - **KEEP THE TREE BUILDABLE (user rule, 2026-08-03): the dev app must not
   stay down.** Transient seconds-long HMR breakage is fine; MINUTES is not.
   Concretely: create any file you import (even an empty stub) BEFORE writing
@@ -128,7 +160,25 @@ overlay meters. Layout: `src/main` (Node), `src/preload`, `src/renderer`,
   readFile would miss in `out/main/`.
 - TS: discriminated unions with union-typed tags need a single-guard
   narrowing (`if (ev.t !== 'dmg') return`); `@shared/*` value imports need
-  the renderer `resolve.alias` in electron.vite.config.ts.
+  the renderer `resolve.alias` in electron.vite.config.ts. Node-tested
+  pure modules use RELATIVE value imports (type-only may keep the alias) —
+  the mobSearch.ts precedent, now repo-wide.
+- Vite 5 inlines JSON as PRETTY-PRINTED object literals unless
+  `json: { stringify: true }` — measured 1.56× bundle bloat on items.json
+  before the flag. Keep it set for the main bundle.
+- Blink scrollbars: setting the STANDARD props (`scrollbar-width`/
+  `scrollbar-color`) switches to native Fluent bars and SILENTLY IGNORES
+  every `::-webkit-scrollbar-*` rule — the two are mutually exclusive.
+  The themed inset scrollbar lives in theme.ts + overlay.html (values
+  must move together; the overlay is MUI-free and can't import tokens).
+- `flexWrap` converts content overflow into HEIGHT — a "compact bar"
+  contract means `nowrap` + one shrinkable/ellipsizing group for
+  world-supplied text (tooltips keep the facts); controls never shrink.
+- Chromium `navigator.clipboard` needs a permission this app denies
+  wholesale — clipboard writes route over IPC to main's clipboard API.
+- MediaWiki: anonymous `eilimit` caps at 500; >50 pageids per revisions
+  batch returns HTTP 200 with ZERO pages and no warning — BATCH=50 is
+  measured, not tunable.
 
 ## Linting (ESLint 9 flat config + the ratchet)
 
@@ -180,9 +230,19 @@ scan (live:false) + Tailer (live:true, byte-offset handoff — LOSSLESS seam)
         │    onTick?(now), snapshot()→{seq,state}, flushDelta()→delta|null }
         │  Live deltas push `module:delta` (throttled); replay is silent.
         │  A 1s wall-clock tick drives time-based logic while the log idles.
+        │  Modules incl. `progression` (columnar exp/kill/zone analytics,
+        │  capped w/ windowStart honesty, recent-kills ring) and `combo`
+        │  (registered FIRST; evidence → candidate-set slots → fuzzy
+        │  intervals; corrections TIME-keyed in the store, v3 migration).
         └► CombatEngine (pull-snapshot variant: `combat:snapshot` IPC +
            throttled `combat:activity` nudge; per-encounter event ring for
-           the timeline; cached finalized summaries; capped payloads)
+           the timeline; cached finalized summaries; capped payloads;
+           session state timeline + proc detection/PPM/attribution —
+           procDetect/procWindows/procViews, all law-8 additive)
+Maps: src/main/maps (pack discovery/per-layer cross-pack merge/LRU/search,
+Electron-free w/ injected roots) over shared/maps types + shared/zones
+(THE zone-knowledge table); renderer features/maps (canvas geometry, DOM
+labels w/ collision declutter, floor slicing). Pure fns + goldens all over.
 Renderer: useModule(id, applyDelta) — hydrate, seq-dedupe deltas, re-hydrate
 on `log:character`. Overlay = second renderer entry (overlay.html) with a
 minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
@@ -299,7 +359,7 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    (you/pet/incoming; hostile-mob-vs-mob resists dropped) but carry NO
    amount — so every damage total stays byte-identical (the tripwire, per
    source: `Σ category.total == source.total`). They enter the timeline
-   ring as hollow/red ticks (miss → "Melee" lane; resist → the spell's own
+   ring as hollow/red ticks (miss -> "Melee" lane; resist -> the spell's own
    lane, so an always-resisted mez shows a 0-hit / N-resist lane). Rates:
    melee hit% = hits/(hits+misses) [hits counts ALL landed incl. spells —
    the per-category melee row isolates pure melee]; resist% =
@@ -311,6 +371,36 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
    retained, <1MB). Timeline zoom/pan is renderer-side view-window state
    (wheel = cursor-anchored zoom, shift-wheel/drag = pan, Fit = reset,
    starts fit); windowed by visible time range so the SVG stays cheap.
+9. **One time base per chart.** A curve's vertices, markers, axis and hover
+   inverse all read ONE `{t0, t1, bucketMs}`; samples anchor at bucket
+   centres; live windows advance in whole buckets. Mixing an index-fraction
+   vertex mapping with a time-fraction marker mapping stretched markers a
+   full bucket at the right edge, and a wall-clock window length made them
+   swim against a still curve every tick (fixed 5a9dbc2). Canvas is never
+   the answer to arithmetic disagreement. Chart interaction seam: hover
+   binds pointermove/pointerleave ONLY and bails when `ev.buttons !== 0`;
+   drag interactions own pointerdown/up/cancel; a `suppressed` prop ties
+   them without shared state.
+10. **Revisable intervals JOIN AT READ; nothing stamps their ids.** Combo
+   intervals (fuzzy, retroactively re-labeled by a later /who or a user
+   correction) are queried by timestamp (`comboAt`/`groupByCombo`); an id
+   stamped onto a boss kill goes stale with no reconciliation path.
+   Persisted corrections key on TIME; interval ids are recompute-unstable
+   and never leave the renderer.
+11. **Exclusivity gates are RATE-AWARE.** "Never fired without X" requires
+   the inactive exposure to PREDICT evidence (>= 3 expected firings at the
+   lane's own active rate), never a flat swing floor — 289 swings deny
+   Instrument of Nife what 225 earn Spellblade, and that asymmetry is the
+   point. Direct observation beats the model (a lane that DID fire inactive
+   is never "under-sampled"). States active for the same firings declare
+   co-exclusivity — two rows never silently claim one body of evidence.
+12. **Cross-source name RENAMES are knowledge, never fuzzy.** The log, the
+   mob catalog and the map stems disagree by NAME (The Ruins of Old
+   Paineel = The Hole), not spelling. `shared/zones.ts` is the ONE
+   hand-authored, evidence-verified artifact (short names, aliases,
+   `catalogZonesFor`); closest-match would conflate genuinely distinct
+   zones, and an anti-fuzzy tripwire pins two near-name rosters disjoint.
+   A new gap gets a VERIFIED row, never a matcher.
 
 ## Log-format quick reference (all validated against the real log)
 
@@ -345,7 +435,28 @@ minimal `eqOverlay` bridge (transparent alwaysOnTop, click-through pin).
   `Your illusion fades.` is the shared remover.
 - Summoned pets have random proper names (Vebarn, Garer…); bind via
   owner-only tells `<Name> told you, '… Master.'`; they persist across
-  zones (charmed pets do not).
+  zones (charmed pets do not). A pet-claim tell from a name EVER seen
+  charmed re-arms the charmed set, never the permanent one — one charmed
+  mob's tell must not credit its kills to you forever (`everCharmed`).
+- Exp: `You gain (party )?experience!( (N.NN%))?` — the percent is an
+  INCREMENT of the current level bar (sums to ~100 between dings);
+  unstated ⇒ at the cap, modeled `pct: undefined` never 0. The exp line
+  PRECEDES its kill line, same second (4,887/4,909) — joins consume the
+  pending exp line at the next credited kill, never search forward.
+- Self `/who` row (keyed on the tailed character's name via
+  `ParserConfig.characterName`, never a constant) states the loadout;
+  skill-ups `You have become better at <Skill>! (n)`; item activations
+  `Your <item> shimmers briefly.` / `feels alive with power.` are CLICKY
+  emotes, not procs — a castBegin within ~2.5s of one is clicky-sourced
+  and is NOT class evidence. Wiki skill names ≠ client skill names
+  (`1 Hand Slashing` vs `1H Slashing`) — classes.json carries the alias
+  table measured from the log.
+- Feign death has NO failure line (1.14M lines: only the success emote).
+  An alert cannot fire on the absence of a line — the group ships hidden.
+- `LogEvent.raw` INCLUDES the `[timestamp] ` prefix: a `^`-anchored raw
+  alert regex silently never matches — anchor on `\] ` (tripwire test).
+- WorldModel labels append a spawn-generation ` (N)` suffix that appears
+  in NO log line (law 2) — `mobKey` strips it.
 
 ## Data sources
 
@@ -712,11 +823,20 @@ first-run provisioning.
 
 ## Known open items
 
+- **Feedback loop (the next big feature)**: fully planned + reviewed in
+  `docs/plans/feedback-triage.md` — in-app reports, scrubbed log-window
+  uploads, **Terraform** infra (owner decision: HCL, us-east-1, dedicated
+  AWS sub-account, alarms to jmoyers+eqc@gmail.com), agentic triage CLI.
+  Wave F1 ships dark (no endpoint) and needs no cloud; F2 (deploy) needs
+  the owner to create the sub-account. Targeted at the v0.3.0 cycle.
 - Azure signing: waiting on Microsoft identity validation → cert profile +
   app registration + repo secrets.
-- Windows Sandbox: WORKING (revalidated 2026-08-02, 17/17 PASS incl.
-  Add/Remove-Programs registration + clean uninstall) —
+- Windows Sandbox: WORKING (last run 2026-08-03, PASS, gating v0.2.0) —
   `run-installer-test.ps1` is the standard pre-ship clean-machine gate.
+- Design docs for every shipped 2026-08-03 feature live in `docs/plans/`
+  — historical intent; the code + this file are the current truth, and
+  several plan numbers were overturned by executor measurement (each
+  overturn is recorded in the relevant commit message).
 - Startup could be TAIL-FIRST: attach the live tail immediately, then backfill
   history BACKWARDS into the model, so the meter is live in ~0s and deepens as
   the replay lands (today: ~6s of `hydrating` on this log, then live). Needs
