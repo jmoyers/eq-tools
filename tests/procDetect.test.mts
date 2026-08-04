@@ -26,9 +26,11 @@ import {
   PROC_CAST_WINDOW_MS,
   addSpellProc,
   isCastless,
+  laneCount,
   noteCast,
   procEligibleDamage,
   pruneCasts,
+  sidesCount,
   type RecentCasts,
   type SpellProcLane
 } from '../src/main/combat/procDetect'
@@ -85,15 +87,48 @@ test('pruning drops only casts that can no longer suppress anything', () => {
   assert.deepEqual([...recent.keys()], ['fresh spell'])
 })
 
+const NONE: ReadonlySet<string> = new Set()
+
 test('a proc lane counts every firing and keeps damage and healing apart', () => {
   const lanes = new Map<string, SpellProcLane>()
-  addSpellProc(lanes, 'Lifetap Strike', 40, false)
-  addSpellProc(lanes, 'Lifetap Strike', 31, true)
-  addSpellProc(lanes, 'Lifetap Strike II', 9, false)
+  addSpellProc(lanes, { spell: 'Lifetap Strike', amount: 40, isHeal: false, active: NONE })
+  addSpellProc(lanes, { spell: 'Lifetap Strike', amount: 31, isHeal: true, active: NONE })
+  addSpellProc(lanes, { spell: 'Lifetap Strike II', amount: 9, isHeal: false, active: NONE })
   const lane = lanes.get('lifetap strike')
-  assert.equal(lane?.count, 3)
   assert.equal(lane?.damage, 49)
   assert.equal(lane?.heal, 31)
+  // THE TAP RULE. Two damage lines and one heal line is TWO firings, not three: one lifetap
+  // prints both a hit and a heal, so the sides are counted apart and the lane takes the LARGER.
+  // (Wave 2 shipped a single counter and w39's twelve firings reported 24.)
+  assert.deepEqual(lane?.hits, { damage: 2, heal: 1 })
+  assert.equal(laneCount(lane!), 2)
+})
+
+test('a HEAL-ONLY proc still counts once — max, never damageHits alone', () => {
+  const lanes = new Map<string, SpellProcLane>()
+  // `Center`, delivered inside a Quick Buff burst (w40): a real firing that prints no damage
+  // line at all. Counting only the damage side would erase it.
+  addSpellProc(lanes, { spell: 'Center', amount: 66, isHeal: true, active: NONE })
+  const lane = lanes.get('center')
+  assert.equal(laneCount(lane!), 1)
+  assert.equal(lane?.damage, 0)
+  assert.equal(lane?.heal, 66)
+})
+
+test('the per-state split folds the ACTIVE SET at the firing instant, side by side', () => {
+  const lanes = new Map<string, SpellProcLane>()
+  const blade: ReadonlySet<string> = new Set(['invocation:spellblade', 'stance:offensive'])
+  // One tap under two states: both sides bump, both states record ONE firing — never two.
+  addSpellProc(lanes, { spell: 'Lifetap Strike', amount: 40, isHeal: false, active: blade })
+  addSpellProc(lanes, { spell: 'Lifetap Strike', amount: 31, isHeal: true, active: blade })
+  // A second firing with nothing on: the lane grows, neither state does.
+  addSpellProc(lanes, { spell: 'Lifetap Strike', amount: 12, isHeal: false, active: NONE })
+  const lane = lanes.get('lifetap strike')
+  assert.equal(laneCount(lane!), 2)
+  assert.equal(sidesCount(lane?.byState.get('invocation:spellblade')), 1)
+  assert.equal(sidesCount(lane?.byState.get('stance:offensive')), 1)
+  // A state nobody ever saw is ABSENT, and reads 0 rather than throwing or inventing a row.
+  assert.equal(sidesCount(lane?.byState.get('invocation:inversion')), 0)
 })
 
 // ---------------------------------------------------------------------------------------
@@ -262,7 +297,13 @@ function replay(lines: string[]): { eng: CombatEngine; lastTs: number } {
 /** The engine's private state, reached the way the shipped combat tests reach it. */
 function stateOf(eng: CombatEngine): {
   stateTimeline: StateTimeline
-  zoneAgg: { procs: { swings: number; spellProcs: Map<string, SpellProcLane> } }
+  zoneAgg: {
+    procs: {
+      swings: number
+      swingsByState: Map<string, number>
+      spellProcs: Map<string, SpellProcLane>
+    }
+  }
 } {
   return (eng as unknown as { st: ReturnType<typeof stateOf> }).st
 }
@@ -282,7 +323,7 @@ const GRIND = [
 test('END-TO-END: a cast-less spell effect counts as a proc, a hand-cast one does not', () => {
   const { eng } = replay(GRIND)
   const procs = stateOf(eng).zoneAgg.procs
-  assert.equal(procs.spellProcs.get('smiting strike')?.count, 1)
+  assert.equal(laneCount(procs.spellProcs.get('smiting strike')!), 1)
   assert.equal(procs.spellProcs.get('smiting strike')?.damage, 102)
   assert.equal(
     procs.spellProcs.has('discordant mind'),
@@ -295,6 +336,19 @@ test('END-TO-END: swings are melee + slay hits plus YOUR misses, and nothing els
   const { eng } = replay(GRIND)
   // 2 slashes + 1 slay backstab + 1 miss = 4. The two spell lines are NOT swings.
   assert.equal(stateOf(eng).zoneAgg.procs.swings, 4)
+})
+
+test('END-TO-END: the per-state split is folded on INGEST, from the state open at the line', () => {
+  const { eng } = replay(GRIND)
+  const procs = stateOf(eng).zoneAgg.procs
+  // The invocation commits at 43:01, before any of it — so all four swings and the one proc are
+  // logged under it. Both halves of a ProcLink, and neither is derivable from the event ring:
+  // a zone session has no ring at all.
+  assert.equal(procs.swingsByState.get('invocation:inversion'), 4)
+  assert.equal(procs.swings, 4)
+  assert.equal(sidesCount(procs.spellProcs.get('smiting strike')?.byState.get('invocation:inversion')), 1)
+  // Nothing else was ever on, so nothing else has an exposure. An absent state is absent, not 0.
+  assert.deepEqual([...procs.swingsByState.keys()], ['invocation:inversion'])
 })
 
 test('END-TO-END: every damage total is untouched by the analytics fold (law 8 tripwire)', () => {

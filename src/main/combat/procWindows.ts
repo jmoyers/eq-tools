@@ -27,6 +27,7 @@ import type {
   AttributionReport,
   EffectAttribution,
   MarginalEstimate,
+  ProcLaneView,
   ProcLink,
   ProcRateView,
   StateKind,
@@ -515,10 +516,32 @@ export interface EffectInput {
   key: string
   name: string
   windows: readonly ProcWindow[]
+  /** TIER A, when a lane earned it — see `directFor`. Present ⇒ the verdict is 'measured' and
+   *  no counterfactual is attempted, because none is needed. */
+  direct?: DirectRollup
 }
 
-/** No direct (Tier-A) roll-up is claimable for a STATE today — see the note in
- *  `attributeEffect`. The per-LANE Tier-A numbers are exact and live in `ProcsView.lanes`.
+/** A Tier-A roll-up plus the states it CANNOT be told apart from. */
+export interface DirectRollup {
+  direct: EffectAttribution['direct']
+  /** Display names of the other states the same lanes fired exclusively under. Two states
+   *  switched on together own one body of evidence between them, and both rows must say so. */
+  shared: string[]
+}
+
+/** The confound a shared roll-up declares. Two states committed together (w39 commits
+ *  spellblade and offensive three seconds apart) leave the same lane exclusive to BOTH, and each
+ *  row reports the full damage — so each row must name the other, or two rows silently claim one
+ *  body of evidence twice. */
+function sharedConfound(shared: readonly string[]): string {
+  return (
+    `co-exclusive — ${shared.join(', ')} ${shared.length > 1 ? 'were' : 'was'} active for exactly ` +
+    'the same firings; the log cannot say which state the proc belongs to'
+  )
+}
+
+/** The EMPTY Tier-A roll-up — the honest default for a state no lane fired exclusively under.
+ *  The per-LANE Tier-A numbers are exact regardless and live in `ProcsView.lanes`.
  *  A fresh object every call: `lanes` is the audit list, and one shared array across every
  *  effect in every report is a mutation waiting to happen. */
 const noDirect = (): EffectAttribution['direct'] => ({
@@ -529,9 +552,57 @@ const noDirect = (): EffectAttribution['direct'] => ({
   lanes: []
 })
 
+/**
+ * THE TIER-A ROLL-UP: every lane whose link to this state came back 'exclusive'.
+ *
+ * 'exclusive' is not "100% of firings were under it" — that is `concentration`, and it is worth
+ * nothing on its own. It is the rate-aware gate in `linkStrength`: the lane's own observed rate,
+ * projected onto the swings logged WITHOUT the state, predicted at least
+ * MIN_EXPECTED_INACTIVE_PROCS firings, and none happened. Only then is the lane's damage that
+ * state's damage, exactly, with no window comparison needed at all.
+ *
+ * `damage` / `heal` are the lane's WHOLE totals and that is not a shortcut: `withoutCount === 0`
+ * is what 'exclusive' means, so every firing the lane had happened with the state on.
+ *
+ * It remains a CO-OCCURRENCE (law 1). The log never names what fired a proc, so this measures
+ * "these firings all happened with X on", never "X fired them" — which is why the note says so
+ * and why no other number here is adjusted by it.
+ */
+export function directFor(
+  lanes: readonly ProcLaneView[] | undefined,
+  stateKey: string
+): DirectRollup | undefined {
+  if (!lanes) return undefined
+  const d = noDirect()
+  const shared = new Set<string>()
+  for (const l of lanes) {
+    const link = l.linked.find((k) => stateKeyOf(k.kind, k.key) === stateKey)
+    if (link?.strength !== 'exclusive') continue
+    d.damage += l.directDamage
+    d.heal += l.directHeal
+    d.hits += link.withCount
+    d.dpsContribution += l.dpsContribution
+    d.lanes.push(l.name)
+    for (const other of l.linked) {
+      if (other.strength === 'exclusive' && stateKeyOf(other.kind, other.key) !== stateKey) shared.add(other.name)
+    }
+  }
+  return d.lanes.length > 0 ? { direct: d, shared: [...shared].sort() } : undefined
+}
+
 /** Kept SHORT on purpose: it rides every effect row of a 4×/sec snapshot, and a paragraph
  *  repeated twenty-five times is payload, not honesty. */
 const DIRECT_NOTE = 'No lane is attributed to this state; the exact per-lane numbers are in the lane list.'
+
+/** The measured row's own note, held to the same length budget. Names the lanes so the number
+ *  is auditable, and states the co-occurrence limit so it cannot travel without it. */
+function measuredNote(d: EffectAttribution['direct']): string {
+  return (
+    `${d.hits} firings of ${d.lanes.join(', ')} landed only while this state was active, ` +
+    `for ${d.damage} damage and ${d.heal} healing — counted, not estimated. A co-occurrence: ` +
+    'the log never names what fired a proc.'
+  )
+}
 
 /**
  * One state's counterfactual verdict.
@@ -544,16 +615,29 @@ const DIRECT_NOTE = 'No lane is attributed to this state; the exact per-lane num
  *   'not-observable'      — one arm is structurally empty: the state was on in every eligible
  *                           minute, or off in every one. No comparison is possible at all. This
  *                           is Instrument of Nife's answer, and it is the RESULT, not a defect.
- *   'measured'            — reserved for a state with an exclusive proc lane behind it. NOT
- *                           reachable in this wave: see DIRECT_NOTE.
+ *   'measured'            — a state with an EXCLUSIVE proc lane behind it (`directFor`). An
+ *                           exact count, so it takes precedence over every window verdict: a
+ *                           measurement never yields to an estimate of the same thing.
  */
 export function attributeEffect(i: EffectInput): EffectAttribution {
   const stateKey = stateKeyOf(i.kind, i.key)
+  const base = { kind: i.kind, key: i.key, name: i.name, direct: noDirect() }
+  // The stance/invocation sentence rides the row WHATEVER the verdict is (§5.5): an exclusive
+  // proc lane measures that lane, and says nothing about the base-melee bonus the log never marks.
+  const marker = i.kind === 'stance' || i.kind === 'invocation' ? ` ${NO_PER_HIT_MARKER_NOTE}` : ''
+  if (i.direct) {
+    const { direct, shared } = i.direct
+    return {
+      ...base,
+      direct,
+      verdict: 'measured',
+      confounds: shared.length > 0 ? [sharedConfound(shared)] : [],
+      note: `${measuredNote(direct)}${marker}`
+    }
+  }
   const arms = partitionWindows(i.windows, stateKey, groupOf(i.kind, i.key))
   const nA = arms.active.length
   const nI = arms.inactive.length
-  const base = { kind: i.kind, key: i.key, name: i.name, direct: noDirect() }
-  const marker = i.kind === 'stance' || i.kind === 'invocation' ? ` ${NO_PER_HIT_MARKER_NOTE}` : ''
   if (nA >= MIN_ARM_WINDOWS && nI >= MIN_ARM_WINDOWS) {
     return {
       ...base,
@@ -588,6 +672,10 @@ export interface ReportInput {
   sessionId: string
   windows: readonly ProcWindow[]
   states: readonly StateSpan[]
+  /** This segment's proc lanes, carrying their per-state links. The TIER-A feed: a lane that
+   *  fired only while a state was open (at real exposure) makes that state's contribution an
+   *  exact count. Optional so a caller with no lane list still gets the Tier-B half. */
+  lanes?: readonly ProcLaneView[]
 }
 
 /**
@@ -602,8 +690,16 @@ export function buildAttributionReport(i: ReportInput): AttributionReport {
     const k = stateKeyOf(s.kind, s.key)
     if (!seen.has(k)) seen.set(k, s)
   }
-  const effects = [...seen.values()]
-    .map((s) => attributeEffect({ kind: s.kind, key: s.key, name: s.name, windows: i.windows }))
+  const effects = [...seen.entries()]
+    .map(([k, s]) =>
+      attributeEffect({
+        kind: s.kind,
+        key: s.key,
+        name: s.name,
+        windows: i.windows,
+        direct: directFor(i.lanes, k)
+      })
+    )
     .sort((a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind) || a.name.localeCompare(b.name))
   return {
     sessionId: i.sessionId,

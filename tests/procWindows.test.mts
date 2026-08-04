@@ -32,6 +32,7 @@ import {
   attributeEffect,
   buildAttributionReport,
   concentrationOf,
+  directFor,
   expectedInactiveProcs,
   linkStrength,
   marginalOf,
@@ -40,7 +41,7 @@ import {
   volumeEligible,
   type ProcWindow
 } from '../src/main/combat/procWindows'
-import type { StateSpan } from '../src/shared/procAnalytics'
+import type { ProcLaneView, ProcLink, StateSpan } from '../src/shared/procAnalytics'
 
 // ---------------------------------------------------------------------------------------
 // 1. The three denominators, and their floors
@@ -368,14 +369,74 @@ test('the FOUR verdicts, and none of them is rendered as another', () => {
   assert.equal(nife.marginal, undefined)
   assert.ok(nife.note?.includes('no control group'))
 
-  // MEASURED is deliberately unreachable in this wave: it needs an exclusive proc lane behind
-  // the state, and the per-lane × per-state split is not folded on ingest yet. Every row says so
-  // rather than reporting a zero as if it were an attribution.
+  // MEASURED needs an EXCLUSIVE proc lane behind the state — a Tier-A count, not a window
+  // comparison. Without one, none of the three above may borrow it: each reports an empty
+  // roll-up and says so, rather than printing a zero as if it were an attribution.
   for (const e of [est, short, nife]) {
     assert.notEqual(e.verdict, 'measured')
     assert.deepEqual(e.direct, { damage: 0, heal: 0, hits: 0, dpsContribution: 0, lanes: [] })
     assert.ok(e.note?.includes('No lane is attributed to this state'))
   }
+
+  // MEASURED — and it OUTRANKS the estimate it is handed beside. `est` above cleared both arms
+  // on the very same windows; an exact count of the same effect never yields to a median-of-
+  // medians comparison of it, so the verdict flips and no `marginal` is offered at all.
+  const measured = attributeEffect({
+    kind: 'invocation', key: 'spellblade', name: 'spellblade',
+    windows: arms(25, 25),
+    direct: { direct: { damage: 5_482, heal: 0, hits: 14, dpsContribution: 15.5, lanes: ['Discordant Mind'] }, shared: [] }
+  })
+  assert.equal(measured.verdict, 'measured')
+  assert.equal(measured.marginal, undefined)
+  assert.equal(measured.direct.damage, 5_482)
+  assert.deepEqual(measured.direct.lanes, ['Discordant Mind'])
+  assert.ok(measured.note?.includes('counted, not estimated'))
+  // …and it still declares its LIMIT: a proc line never names what fired it (law 1), and an
+  // invocation's base-melee bonus stays unmarked whatever a lane measures.
+  assert.ok(measured.note?.includes('never names what fired a proc'))
+  assert.ok(measured.note?.includes('no per-hit marker in the log'))
+  assert.deepEqual(measured.confounds, [])
+})
+
+test('a SHARED exclusive lane is declared on both rows, never claimed twice in silence', () => {
+  // Two states committed together (w39 switches spellblade and offensive three seconds apart)
+  // leave one lane exclusive to BOTH, and each row reports the lane's whole damage. Splitting it
+  // would invent a division the log cannot support; reporting it twice without saying so would
+  // double-count the session. So it is reported twice AND declared.
+  const shared = attributeEffect({
+    kind: 'invocation', key: 'spellblade', name: 'spellblade',
+    windows: arms(2, 2),
+    direct: { direct: { damage: 5_482, heal: 0, hits: 14, dpsContribution: 15.5, lanes: ['Discordant Mind'] }, shared: ['offensive'] }
+  })
+  assert.equal(shared.verdict, 'measured')
+  assert.equal(shared.confounds.length, 1)
+  assert.ok(shared.confounds[0].startsWith('co-exclusive'))
+  assert.ok(shared.confounds[0].includes('offensive'))
+})
+
+test('directFor: only an EXCLUSIVE link earns a Tier-A roll-up', () => {
+  const link = (key: string, strength: ProcLink['strength']): ProcLink => ({
+    kind: 'invocation', key, name: key, withCount: 14, withoutCount: 0, concentration: 1,
+    inactiveSwings: 225, strength
+  })
+  const laneOf = (name: string, damage: number, links: ProcLink[]): ProcLaneView => ({
+    name, count: 14, origin: 'spell', rate: { count: 14, swings: 631 },
+    directDamage: damage, directHeal: 0, pctOfOut: 0, dpsContribution: damage / 100, linked: links
+  })
+  const lanes = [
+    laneOf('Discordant Mind', 5_482, [link('spellblade', 'exclusive'), link('offensive', 'exclusive')]),
+    // 'correlated' is NOT 'exclusive'. A lane that fired without the state, however lopsidedly,
+    // is not that state's damage and may never be rolled up as if it were.
+    laneOf('Lifetap Strike', 458, [link('spellblade', 'correlated')])
+  ]
+  const roll = directFor(lanes, 'invocation:spellblade')
+  assert.equal(roll?.direct.damage, 5_482, 'the correlated lane is excluded')
+  assert.deepEqual(roll?.direct.lanes, ['Discordant Mind'])
+  assert.deepEqual(roll?.shared, ['offensive'])
+  // A state no lane fired exclusively under gets NOTHING — undefined, so the verdict falls
+  // through to the window comparison instead of reporting a zero attribution.
+  assert.equal(directFor(lanes, 'invocation:inversion'), undefined)
+  assert.equal(directFor(undefined, 'invocation:spellblade'), undefined)
 })
 
 test('CONFOUNDS ARE DECLARED, NEVER CORRECTED — including the ones that could not be tested', () => {

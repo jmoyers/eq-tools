@@ -159,7 +159,10 @@ export interface ProcLink {
    *  of the claim "it never fired without it". */
   inactiveSwings: number
   /**
-   * 'exclusive'    — withoutCount === 0 AND inactiveSwings >= MIN_INACTIVE_SWINGS.
+   * 'exclusive'    — withoutCount === 0 AND the inactive exposure predicts >=
+   *                  MIN_EXPECTED_INACTIVE_PROCS firings at the lane's own active
+   *                  rate (the rate-aware gate; a flat swing floor could not tell
+   *                  "never fires without it" from "too few swings to expect one").
    * 'correlated'   — concentration >= 0.8 with both sides sampled.
    * 'weak'         — both sides sampled, concentration < 0.8.
    * 'inconclusive' — the inactive side was never meaningfully sampled. The DEFAULT, and the

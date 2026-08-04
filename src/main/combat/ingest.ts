@@ -211,6 +211,22 @@ function damageAnalytics(st: EngineState, ev: DamageEvent): DamageAnalytics | nu
   return { mine: true, swing, proc }
 }
 
+/**
+ * Fold one judgement into BOTH ledgers this segment has — the zone aggregate and the fresh
+ * encounter, if any. Every proc counter is written through here so the two can never disagree
+ * about a line, and so the per-state split below is fed from exactly one place.
+ *
+ * `active` is the state timeline's O(1) open set, read at the event's own instant. It is passed
+ * (not re-read) into every accumulator, because the whole point of folding on ingest is that
+ * "what was on when this fired" is knowable only now.
+ */
+function foldBoth(st: EngineState, ts: number, fold: (agg: Agg, active: ReadonlySet<string>) => void): void {
+  const active = st.stateTimeline.active
+  const enc = st.freshEncounter(ts)
+  fold(st.zoneAgg, active)
+  if (enc) fold(enc.agg, active)
+}
+
 function foldDamageAnalytics(st: EngineState, ev: DamageEvent, activeDeltaMs: number): void {
   const a = damageAnalytics(st, ev)
   if (!a) return
@@ -221,16 +237,11 @@ function foldDamageAnalytics(st: EngineState, ev: DamageEvent, activeDeltaMs: nu
     procDamage: a.proc ? ev.amount : 0,
     swings: a.swing
   }
-  const active = st.stateTimeline.active
-  const enc = st.freshEncounter(ev.ts)
-  st.zoneAgg.windows.fold(fold, active)
-  enc?.agg.windows.fold(fold, active)
-  st.zoneAgg.procs.swings += a.swing
-  if (enc) enc.agg.procs.swings += a.swing
-  if (a.proc) {
-    st.zoneAgg.procs.addSpellProc(ev.skill, ev.amount, false)
-    enc?.agg.procs.addSpellProc(ev.skill, ev.amount, false)
-  }
+  foldBoth(st, ev.ts, (agg, active) => {
+    agg.windows.fold(fold, active)
+    if (a.swing) agg.procs.addSwing(active)
+    if (a.proc) agg.procs.addSpellProc({ spell: ev.skill, amount: ev.amount, isHeal: false, active })
+  })
 }
 
 /** A heal with no own cast behind it — the healing half of the same inference (`Lifetap
@@ -240,20 +251,19 @@ function foldHealAnalytics(st: EngineState, ev: HealEvent): void {
   const spell = ev.spell
   if (!spell || idKey(ev.healer ?? '') !== 'you') return
   if (!isCastless(st.recentCasts, spell, ev.ts)) return
-  st.zoneAgg.procs.addSpellProc(spell, ev.amount, true)
-  st.freshEncounter(ev.ts)?.agg.procs.addSpellProc(spell, ev.amount, true)
+  foldBoth(st, ev.ts, (agg, active) => {
+    agg.procs.addSpellProc({ spell, amount: ev.amount, isHeal: true, active })
+  })
 }
 
 /** YOUR avoided swing. It is still a swing ATTEMPT, and the mechanical proc denominator is
  *  attempts — a proc that cannot fire on a miss still had the chance to. */
 function foldMissAnalytics(st: EngineState, ev: MissEvent): void {
   if (idKey(ev.attacker) !== 'you') return
-  const active = st.stateTimeline.active
-  const enc = st.freshEncounter(ev.ts)
-  st.zoneAgg.windows.fold({ ts: ev.ts, swings: 1 }, active)
-  enc?.agg.windows.fold({ ts: ev.ts, swings: 1 }, active)
-  st.zoneAgg.procs.swings++
-  if (enc) enc.agg.procs.swings++
+  foldBoth(st, ev.ts, (agg, active) => {
+    agg.windows.fold({ ts: ev.ts, swings: 1 }, active)
+    agg.procs.addSwing(active)
+  })
 }
 
 /** One canonical `damage` line: route it, then index it. */

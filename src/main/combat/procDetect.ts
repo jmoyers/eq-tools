@@ -83,28 +83,96 @@ export function procEligibleDamage(dtype: DamageType): boolean {
   return dtype === 'spell'
 }
 
+/**
+ * ONE FIRING CAN PRINT TWO LINES, and counting both is how a tap lane starts reporting double.
+ *
+ * `Lifetap Strike` fires once and the game prints `You hit <mob> … by Lifetap Strike.` AND
+ * `You healed Primitive for N hit points by Lifetap Strike.` — two events, one proc. A single
+ * `count` bumped from both ingest paths read 24 for w39's twelve firings (the defect wave 2
+ * pinned with a deliberate warning assertion).
+ *
+ * So the two sides are counted SEPARATELY and the lane's count is `max` of them, never the sum:
+ *   - a damage-only proc (Smiting Strike) counts its damage lines,
+ *   - a heal-only proc (Center, delivered inside a Quick Buff burst) still counts once,
+ *   - a tap that prints both counts each firing exactly once.
+ * `max` and not `damageHits` alone precisely because of the third case above and because a tick
+ * can print no heal line at all (w41's Blood Siphon: 14 ticks, 13 heals) — the larger side is
+ * the number of firings we actually observed.
+ */
+export interface LaneSides {
+  /** Firings that printed a DAMAGE line. */
+  damage: number
+  /** Firings that printed a HEAL line. */
+  heal: number
+}
+
 /** One accumulated proc lane of `origin: 'spell'`: exact counts and the damage/healing those
  *  lines carried. Keyed by `spellCanonKey`, displayed by the raw name we first saw. */
 export interface SpellProcLane {
   name: string
-  count: number
+  /** Firings, split by which line carried them — see LaneSides. */
+  hits: LaneSides
   damage: number
   heal: number
+  /**
+   * THE PER-STATE FIRING SPLIT (proc-analytics §2.1 `ProcLink`), folded on INGEST because it can never be
+   * folded later: the encounter event ring is capped, truncated on finalize, and absent
+   * ENTIRELY for zone sessions, so a link derived from it would be silently wrong exactly where
+   * the sample is biggest.
+   *
+   * `<kind>:<key>` (stateKeyOf) → the firings observed while that state was open, split by side
+   * under the same rule the lane's own count uses. States OVERLAP, so these never sum to the
+   * lane count and are not meant to: each entry answers one question, "how many of this lane's
+   * firings happened with X on".
+   */
+  byState: Map<string, LaneSides>
+}
+
+/** Firings on a side pair: `max`, never the sum — see LaneSides. */
+export function sidesCount(s: LaneSides | undefined): number {
+  return s ? Math.max(s.damage, s.heal) : 0
+}
+
+/** One lane's firings, the number every rate and every link is built from. */
+export function laneCount(l: SpellProcLane): number {
+  return sidesCount(l.hits)
+}
+
+/** Everything one detected proc contributes. An args object: five positional parameters would
+ *  blow `max-params`, and the active set is not optional — a firing with no state open folds an
+ *  EMPTY set, which is a real observation ("nothing was on"), not a missing argument. */
+export interface SpellProcFold {
+  spell: string
+  amount: number
+  isHeal: boolean
+  /** `<kind>:<key>` of every state open at the firing instant (StateTimeline.active). */
+  active: ReadonlySet<string>
 }
 
 /** Fold one detected proc into a lane map. `amount` lands in `damage` or `heal` per `isHeal`;
  *  a proc that carries neither (none exist today) still counts, because the COUNT is the
  *  measurement and the amount is the annotation. */
-export function addSpellProc(
-  lanes: Map<string, SpellProcLane>,
-  spell: string,
-  amount: number,
-  isHeal: boolean
-): void {
-  const key = spellCanonKey(spell)
-  const lane = lanes.get(key) ?? { name: spell, count: 0, damage: 0, heal: 0 }
-  lane.count++
-  if (isHeal) lane.heal += amount
-  else lane.damage += amount
+export function addSpellProc(lanes: Map<string, SpellProcLane>, f: SpellProcFold): void {
+  const key = spellCanonKey(f.spell)
+  const lane = lanes.get(key) ?? {
+    name: f.spell,
+    hits: { damage: 0, heal: 0 },
+    damage: 0,
+    heal: 0,
+    byState: new Map<string, LaneSides>()
+  }
+  bumpSide(lane.hits, f.isHeal)
+  if (f.isHeal) lane.heal += f.amount
+  else lane.damage += f.amount
+  for (const stateKey of f.active) {
+    const sides = lane.byState.get(stateKey) ?? { damage: 0, heal: 0 }
+    bumpSide(sides, f.isHeal)
+    lane.byState.set(stateKey, sides)
+  }
   lanes.set(key, lane)
+}
+
+function bumpSide(s: LaneSides, isHeal: boolean): void {
+  if (isHeal) s.heal++
+  else s.damage++
 }

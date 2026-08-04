@@ -23,22 +23,33 @@
 //      added" — the swing was going to land anyway. The excess over an ordinary swing rides in
 //      `marginalDamage` with its assumption stated in the type.
 //
-// WHAT IS NOT HERE, and why: `ProcLaneView.linked` ships EMPTY. A link needs each lane's firings
-// split by which state was active at the time, and that split has to be folded on INGEST (the
-// event ring is capped, truncated, and absent entirely for zone sessions — the exact law the
-// Task #64 ledger obeys). Wave 1's `SpellProcLane` carries no such split and `aggregate.ts` /
-// `ingest.ts` are outside this wave's ownership, so the honest serialization is an empty list
-// rather than a number derived from a ring. The link CLASSIFIER itself (linkStrength) is
-// shipped, gated and tested against the goldens — only the per-lane feed is missing.
+// THE LINK FEED (§2.1 `ProcLink`), which used to be the hole in this file. `ProcLaneView.linked` is now
+// filled from the per-state firing split `SpellProcLane.byState` carries, against the per-state
+// swing exposure `ProcAccum.swingsByState` carries — BOTH folded on ingest, because the event
+// ring is capped, truncated and absent entirely for zone sessions, so a link derived from it
+// would be silently wrong exactly where the sample is biggest.
+//
+// SPELL LANES ONLY, and the two absences are deliberate rather than pending:
+//   - a POISON lane's link to its own coat is TAUTOLOGICAL — an Asp Venom Strike cannot fire
+//     without asp venom on the blade, so 'exclusive' there restates the mechanic instead of
+//     measuring anything. (Its firings are also folded in procRouting.ts, not on this path.)
+//   - a SLAY lane's count comes from the damage taxonomy, not from a proc fold, and its
+//     `directDamage` is "damage on swings that procced" rather than damage the proc ADDED — so
+//     rolling it up as a state's exact contribution would overstate it by a whole swing each.
+// Both keep an empty list, which is the same discipline as everything else here: a number is
+// absent when the sample cannot support it, never zero-filled.
 
 import { sumMap } from './aggregate'
-import { buildAttributionReport, procRate } from './procWindows'
+import { stateKeyOf } from './stateTimeline'
+import { buildAttributionReport, concentrationOf, linkStrength, procRate } from './procWindows'
+import { laneCount, sidesCount } from './procDetect'
 import { spellCanonKey } from '../log/parseCommon'
 import { isSlowCapable } from '../../shared/poisons'
 import type { Agg, SourceStat } from './aggregate'
+import type { SpellProcLane } from './procDetect'
 import type { Encounter } from './encounter'
 import type { EngineState } from './state'
-import type { ProcLaneView, ProcOrigin, ProcRateView } from '../../shared/procAnalytics'
+import type { ProcLaneView, ProcLink, ProcOrigin, ProcRateView, StateSpan } from '../../shared/procAnalytics'
 import type { ProcLane, ProcsView } from '../../shared/combat'
 
 /** Everything one `ProcsView` needs. An args object: a fight, the live zone aggregate and a
@@ -92,8 +103,8 @@ export function buildProcsView(spec: ProcsViewSpec): ProcsView {
     .sort(byCount)
   const coatAtEngage = enc?.coatAtEngage
   const start = enc?.startTs ?? 0
-  const lanes = buildLanes(spec)
   const states = spec.st.stateTimeline.spansOverlapping(spec.startTs, spec.endTs)
+  const lanes = buildLanes(spec, states)
   return {
     coatAtEngage: coatAtEngage ? { ...coatAtEngage } : undefined,
     combatAtEngage: enc ? enc.combatAtEngage.map((c) => ({ ...c })) : [],
@@ -115,7 +126,7 @@ export function buildProcsView(spec: ProcsViewSpec): ProcsView {
     // TIER B IS OVERALL-SCOPE ONLY (§1). A single pull has no inactive sample, so offering a
     // per-fight counterfactual would be an invitation to read one minute of noise as an effect.
     ...(spec.kind === 'zone'
-      ? { attribution: buildAttributionReport({ sessionId: spec.id, windows: agg.windows.list(), states }) }
+      ? { attribution: buildAttributionReport({ sessionId: spec.id, windows: agg.windows.list(), states, lanes }) }
       : {})
   }
 }
@@ -135,7 +146,7 @@ function rateOf(count: number, b: RateBase): ProcRateView {
 
 /** The lane list, in one pass per origin. Order: poison, then spell, then slay — the order the
  *  questions get asked, with each block sorted by count desc. */
-function buildLanes(spec: ProcsViewSpec): ProcLaneView[] {
+function buildLanes(spec: ProcsViewSpec, states: readonly StateSpan[]): ProcLaneView[] {
   const b = rateBase(spec)
   const you = spec.agg.out.get('you')
   const poison = poisonLanes(spec, you, b)
@@ -143,7 +154,62 @@ function buildLanes(spec: ProcsViewSpec): ProcLaneView[] {
   for (const l of poison) {
     for (const k of candidateKeys(l.name)) covered.add(k)
   }
-  return [...poison, ...spellLanes(spec, b, covered), ...slayLanes(you, b)]
+  return [...poison, ...spellLanes(spec, b, covered, linkCtx(spec, states)), ...slayLanes(you, b)]
+}
+
+/** The two denominators every link in this segment shares, plus the states to test. */
+interface LinkCtx {
+  /** One entry per distinct `<kind>:<key>`, in the order the spans first appear. */
+  states: StateSpan[]
+  swingsByState: ReadonlyMap<string, number>
+  swings: number
+}
+
+function linkCtx(spec: ProcsViewSpec, states: readonly StateSpan[]): LinkCtx {
+  const seen = new Map<string, StateSpan>()
+  for (const s of states) {
+    const k = stateKeyOf(s.kind, s.key)
+    if (!seen.has(k)) seen.set(k, s)
+  }
+  return {
+    states: [...seen.values()],
+    swingsByState: spec.agg.procs.swingsByState,
+    swings: spec.agg.procs.swings
+  }
+}
+
+/**
+ * One lane's co-occurrence with every state this segment saw.
+ *
+ * EVERY state gets a row, including the ones whose answer is 'inconclusive' — the same rule the
+ * Tier-B report follows, and for the same reason: an omitted comparison reads as one that was
+ * never worth making, when in fact it was made and refused.
+ *
+ * `withoutCount` is the lane's remaining firings, not a second counter. Since states overlap,
+ * two links of the same lane can both report most of its firings; that is the truth about
+ * overlapping states and not a double count — each row answers one question on its own.
+ */
+function linksFor(lane: SpellProcLane, ctx: LinkCtx): ProcLink[] {
+  const count = laneCount(lane)
+  const out: ProcLink[] = []
+  for (const s of ctx.states) {
+    const key = stateKeyOf(s.kind, s.key)
+    const withCount = sidesCount(lane.byState.get(key))
+    const withoutCount = Math.max(0, count - withCount)
+    const activeSwings = ctx.swingsByState.get(key) ?? 0
+    const inactiveSwings = Math.max(0, ctx.swings - activeSwings)
+    out.push({
+      kind: s.kind,
+      key: s.key,
+      name: s.name,
+      withCount,
+      withoutCount,
+      concentration: concentrationOf(withCount, withoutCount),
+      inactiveSwings,
+      strength: linkStrength({ withCount, withoutCount, activeSwings, inactiveSwings })
+    })
+  }
+  return out
 }
 
 /**
@@ -187,6 +253,8 @@ interface LaneSpec {
   count: number
   damage: number
   heal: number
+  /** Co-occurrence rows. Absent ⇒ empty: see the header for the two origins that have none. */
+  linked?: ProcLink[]
 }
 
 function lane(s: LaneSpec, b: RateBase): ProcLaneView {
@@ -199,7 +267,7 @@ function lane(s: LaneSpec, b: RateBase): ProcLaneView {
     directHeal: s.heal,
     pctOfOut: b.outTotal > 0 ? (s.damage / b.outTotal) * 100 : 0,
     dpsContribution: b.activeSec > 0 ? s.damage / b.activeSec : 0,
-    linked: []
+    linked: s.linked ?? []
   }
 }
 
@@ -218,12 +286,28 @@ function poisonLanes(spec: ProcsViewSpec, you: SourceStat | undefined, b: RateBa
   return out.sort((x, y) => y.count - x.count || x.name.localeCompare(y.name))
 }
 
-/** CAST-LESS SPELL lanes, minus any name a poison emote already counted (rule 2). */
-function spellLanes(spec: ProcsViewSpec, b: RateBase, covered: ReadonlySet<string>): ProcLaneView[] {
+/**
+ * CAST-LESS SPELL lanes, minus any name a poison emote already counted (rule 2).
+ *
+ * RULE 4, and it is as load-bearing as the other three: a lane's `count` is `laneCount` — the
+ * LARGER of its damage-line and heal-line firings, never their sum. One Lifetap Strike prints
+ * both, and adding them reported 24 firings for w39's twelve.
+ */
+function spellLanes(
+  spec: ProcsViewSpec,
+  b: RateBase,
+  covered: ReadonlySet<string>,
+  ctx: LinkCtx
+): ProcLaneView[] {
   const out: ProcLaneView[] = []
   for (const [key, l] of spec.agg.procs.spellProcs) {
     if (covered.has(key)) continue
-    out.push(lane({ name: l.name, origin: 'spell', count: l.count, damage: l.damage, heal: l.heal }, b))
+    out.push(
+      lane(
+        { name: l.name, origin: 'spell', count: laneCount(l), damage: l.damage, heal: l.heal, linked: linksFor(l, ctx) },
+        b
+      )
+    )
   }
   return out.sort((x, y) => y.count - x.count || x.name.localeCompare(y.name))
 }

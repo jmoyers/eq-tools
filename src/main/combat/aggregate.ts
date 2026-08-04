@@ -7,7 +7,7 @@
 // that decides WHICH aggregate a line belongs to lives in routing.ts.
 
 import { HealAccum } from './healing'
-import { addSpellProc, type SpellProcLane } from './procDetect'
+import { addSpellProc, type SpellProcFold, type SpellProcLane } from './procDetect'
 import { WindowAccum } from './procWindows'
 import type { MissType } from '../../shared/logEvents'
 import type { DamageCategory, DamageType, MissBreakdown, SourceKind } from '../../shared/combat'
@@ -260,6 +260,16 @@ export class ProcAccum {
    */
   swings = 0
   /**
+   * THE SWING EXPOSURE PER STATE (proc-analytics §2.1, `ProcLink`): `<kind>:<key>` → how many
+   * of the swings above were logged while that state was open. The other half of a link — "it
+   * never fired without it" is evidence only in proportion to how many swings there WERE without it,
+   * and that denominator, like the firings themselves, can only be counted on ingest.
+   *
+   * Bounded by the number of distinct states a segment ever saw (a couple of dozen at the very
+   * most), and each entry is one integer.
+   */
+  swingsByState = new Map<string, number>()
+  /**
    * SPELL-PROC lanes (proc-analytics §4.1): spell effects with no own cast behind them, keyed
    * by `spellCanonKey`. The damage they carry is ALREADY inside this segment's outgoing total
    * — this is an INDEX over damage already counted, never a second accumulation of it.
@@ -267,8 +277,16 @@ export class ProcAccum {
   spellProcs = new Map<string, SpellProcLane>()
 
   /** Count one detected cast-less spell effect. */
-  addSpellProc(spell: string, amount: number, isHeal: boolean): void {
-    addSpellProc(this.spellProcs, spell, amount, isHeal)
+  addSpellProc(f: SpellProcFold): void {
+    addSpellProc(this.spellProcs, f)
+  }
+
+  /** Count one of YOUR logged swing attempts, against the states open when you made it. Both
+   *  numbers move together on purpose: a total and a per-state split that could be updated
+   *  independently would drift the moment one call site forgot the other. */
+  addSwing(active: ReadonlySet<string>): void {
+    this.swings++
+    for (const key of active) this.swingsByState.set(key, (this.swingsByState.get(key) ?? 0) + 1)
   }
 
   addStrike(name: string, ambiguous: boolean, ts: number, isSlow: boolean): void {

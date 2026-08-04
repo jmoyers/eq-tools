@@ -26,7 +26,7 @@ import { parseEvent } from '../src/main/log/parser'
 import { installSpellDb } from '../src/main/log/rulesets'
 import { loadSpellDb } from '../src/main/data/spellDb'
 import { CombatEngine } from '../src/main/combat/engine'
-import type { ProcLaneView } from '../src/shared/procAnalytics'
+import type { EffectAttribution, ProcLaneView } from '../src/shared/procAnalytics'
 import type { ProcsView, SegmentView } from '../src/shared/combat'
 
 const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
@@ -161,15 +161,27 @@ test('W39: healing is its own field and can EXCEED the damage on the same lane',
   assert.equal(tap.directHeal, 474)
   assert.ok(tap.directHeal > tap.directDamage)
 
-  // ⚠ PINNED DEFECT, NOT A DESIGN. `count` reads 24 for 12 firings: wave 1's ingest folds the
-  // damage line and the heal line of ONE lifetap as two separate procs
-  // (ingest.ts foldDamageAnalytics + foldHealAnalytics both call ProcAccum.addSpellProc, which
-  // carries a single `count`). The fix belongs in procDetect.ts/aggregate.ts — separate
-  // damage-firing and heal-firing counters, with the lane reporting max(damageHits, healHits)
-  // so a heal-ONLY proc still counts once — which is outside this wave's file ownership. Pinned
-  // here so correcting it is a deliberate act with a failing test behind it, never a surprise.
-  assert.equal(tap.count, 24)
-  assert.equal(tap.count, 12 * 2)
+  // THE DEFECT WAVE 2 PINNED, NOW CORRECTED. One lifetap prints a damage line AND a heal line,
+  // and wave 1's single `count` was bumped from both ingest paths — so twelve firings reported
+  // 24. `SpellProcLane` now counts the two sides apart and the lane takes the LARGER
+  // (procDetect.laneCount): twelve damage lines, twelve heal lines, TWELVE firings.
+  assert.equal(tap.count, 12)
+  assert.notEqual(tap.count, 12 * 2)
+  // The damage and healing TOTALS were never wrong and did not move — only the firing count did.
+  assert.equal(tap.directDamage + tap.directHeal, 458 + 474)
+  // …and the ppm headline follows the count, so the fix reaches every rate the lane reports.
+  assert.equal(tap.rate.count, 12)
+})
+
+test('W39: a heal-ONLY proc still counts once — max, never the damage side alone', { skip: missing(W40) }, () => {
+  // The other half of the same rule, from w40: `Center` arrives inside a Quick Buff burst and
+  // prints NO damage line at all. Counting only damage lines would have erased it entirely,
+  // which is why the lane count is max(damage, heal) and not `damageHits`.
+  const { procs } = zoneProcs(W40)
+  const center = laneNamed(procs, 'Center')
+  assert.equal(center.count, 1)
+  assert.equal(center.directDamage, 0)
+  assert.equal(center.directHeal, 66)
 })
 
 test('W39: the counterfactual is ZONE-SCOPE ONLY — a single pull never gets one', { skip: missing(W39) }, () => {
@@ -197,14 +209,13 @@ test('W39: a six-minute window cannot fill the arms, and the report SAYS so', { 
   assert.equal(a.windowsEligible, 4)
   assert.equal(a.effects.some((e) => e.verdict === 'estimate'), false)
 
-  // SPELLBLADE. The one place this log measures a 100% co-occurrence — and Tier B still refuses
-  // to put a number on it, because two eligible minutes is not a comparison. That refusal is
-  // the feature working, not the feature failing.
+  // SPELLBLADE. Tier B still refuses to put a number on it — two eligible minutes is not a
+  // comparison — but TIER A now answers instead, exactly: one lane fired only under it, at real
+  // exposure. `measured` is not a Tier-B estimate and never carries a `marginal`.
   const blade = a.effects.find((e) => e.key === 'spellblade')
   assert.ok(blade)
-  assert.equal(blade.verdict, 'insufficient-sample')
+  assert.equal(blade.verdict, 'measured')
   assert.equal(blade.marginal, undefined)
-  assert.ok(blade.note?.includes('are needed'))
   // Every stance/invocation row carries the "no per-hit marker" sentence whatever its verdict:
   // per the wiki that is 17 of the 18, and the report must SAY it rather than omit the rows.
   for (const e of a.effects) {
@@ -361,17 +372,121 @@ test('W40: WITH THE SPELL DB, the aura becomes a span and Tier B still says no',
 })
 
 // ─────────────────────────────────────────────────────────────────────────────────────
-// The link feed — declared missing rather than faked
+// The link feed — folded on ingest, and it agrees with the hand-read split
 // ─────────────────────────────────────────────────────────────────────────────────────
 
-test('every lane ships an EMPTY link list, because the per-state split is not folded yet', { skip: missing(W39) }, () => {
+test('W39: the per-state split reproduces the hand-read spellblade partition exactly', { skip: missing(W39) }, () => {
   const { procs } = zoneProcs(W39)
-  // A `ProcLink` needs each lane's firings split by which state was active at the time, and that
-  // split has to be folded on INGEST — the event ring is capped, truncated and absent entirely
-  // for zone sessions, so deriving it from there is the one thing the plan forbids. Wave 1's
-  // SpellProcLane carries no such split, so the honest serialization is an empty list rather
-  // than a number reconstructed from a ring. `linkStrength` itself is shipped, gated and pinned
-  // against the goldens (procGoldenWindows) — only the per-lane feed is missing.
-  assert.ok((procs.lanes?.length ?? 0) > 0)
-  for (const l of procs.lanes ?? []) assert.deepEqual(l.linked, [])
+  // procGoldenWindows hand-split this fixture on the spellblade span 16:08:56 → 16:11:19: 406
+  // swings inside, 225 outside, 631 total. The ingest-folded exposure must land on the same 225
+  // — the whole link surface rests on that denominator, and a re-derivation from the (capped,
+  // zone-less) event ring is exactly what folding on ingest exists to avoid.
+  const dm = laneNamed(procs, 'Discordant Mind')
+  const blade = dm.linked.find((l) => l.key === 'spellblade')
+  assert.ok(blade)
+  assert.equal(blade.inactiveSwings, 225)
+  assert.equal(procs.overall?.swings, 631)
+  // 14 firings, every one of them under spellblade — and it is the EXPOSURE, not the ratio,
+  // that earns 'exclusive' (225 swings at 14/406 predict ~7.8 firings; seeing zero is a
+  // measurement). Pinned in procGoldenWindows against these same numbers.
+  assert.equal(blade.withCount, 14)
+  assert.equal(blade.withoutCount, 0)
+  assert.equal(blade.concentration, 1)
+  assert.equal(blade.strength, 'exclusive')
+
+  // The same fixture separates the classifier's other verdicts on its OTHER lanes, so one window
+  // proves all four are reachable rather than just the interesting one.
+  const strength = (lane: string, key: string): string | undefined =>
+    laneNamed(procs, lane).linked.find((l) => l.key === key)?.strength
+  assert.equal(strength('Smiting Strike', 'spellblade'), 'weak') // 13 / 7 — fires on both sides
+  assert.equal(strength('Lifetap Strike', 'offensive'), 'correlated') // 11 / 1 — 92%
+  assert.equal(strength('Condemnation of Nife', 'spellblade'), 'weak') // 0 / 6 — the reverse
+})
+
+test('W39: every state gets a row on every spell lane, and only spell lanes get rows', { skip: missing(W39) }, () => {
+  const { procs } = zoneProcs(W39)
+  const states = new Set((procs.states ?? []).map((s) => `${s.kind}:${s.key}`))
+  assert.equal(states.size, 6) // 4 invocations + 2 stances, deduped across seven spans
+  for (const l of procs.lanes ?? []) {
+    if (l.origin !== 'spell') {
+      // A SLAY lane's count comes from the damage taxonomy, not a proc fold, and its damage is
+      // "damage on swings that procced" — rolling that up as a state's exact contribution would
+      // overstate it by a whole swing each. Absent, not zero-filled.
+      assert.deepEqual(l.linked, [], `${l.name} (${l.origin}) has no per-state fold`)
+      continue
+    }
+    assert.equal(l.linked.length, states.size, `${l.name} reports every state, none omitted`)
+    // withCount + withoutCount is the lane's own count on EVERY row — the split is a partition
+    // of the same firings, never a second counter that can drift from it.
+    for (const k of l.linked) assert.equal(k.withCount + k.withoutCount, l.count)
+  }
+})
+
+/** One effect row of a zone selection's Tier-B report. */
+const effectNamed = (p: ProcsView, key: string): EffectAttribution => {
+  const e = p.attribution?.effects.find((x) => x.key === key)
+  assert.ok(e, `effect ${key} is reported`)
+  return e
+}
+
+test('W39: TIER A reaches `measured`, and the roll-up IS the lane', { skip: missing(W39) }, () => {
+  const { procs, seg } = zoneProcs(W39)
+  const blade = effectNamed(procs, 'spellblade')
+  assert.equal(blade.verdict, 'measured')
+  // 14 firings, 5,482 damage, no healing — the lane's own numbers, named so they are auditable.
+  assert.deepEqual(blade.direct.lanes, ['Discordant Mind'])
+  assert.equal(blade.direct.hits, 14)
+  assert.equal(blade.direct.damage, 5482)
+  assert.equal(blade.direct.damage, laneNamed(procs, 'Discordant Mind').directDamage)
+  assert.ok(Math.abs(blade.direct.dpsContribution - 5482 / seg.activeSec) < 1e-9)
+  // A measured verdict is a COUNT, so it never carries a window estimate beside it.
+  assert.equal(blade.marginal, undefined)
+})
+
+test('W39: two states switched on together each DECLARE the other', { skip: missing(W39) }, () => {
+  const { procs } = zoneProcs(W39)
+  // `offensive` was committed three seconds after spellblade and covers the same fourteen
+  // firings, so BOTH rows measure the same 5,482 damage. Each must name the other: two rows
+  // silently claiming one body of evidence is how a proc meter double-counts a session.
+  const blade = effectNamed(procs, 'spellblade')
+  const off = effectNamed(procs, 'offensive')
+  assert.equal(off.verdict, 'measured')
+  assert.equal(off.direct.damage, 5482)
+  assert.ok(blade.confounds.some((c) => c.startsWith('co-exclusive') && c.includes('offensive')))
+  assert.ok(off.confounds.some((c) => c.startsWith('co-exclusive') && c.includes('spellblade')))
+})
+
+test('W40: exclusivity still cannot be bought with concentration alone', { skip: missing(W40) }, () => {
+  // The honest-limits case, now through the link feed. Condemnation of Nife fired 4 times with
+  // the aura up and never without — a 100% concentration — against 36 inactive swings, which at
+  // the lane's own rate predict 0.16 firings. 'inconclusive', so no state reaches 'measured'
+  // anywhere in this window. This is the assertion that stops the gate being loosened.
+  installSpellDb(loadSpellDb())
+  try {
+    const { eng, lastTs } = replay(W40)
+    const procs = segment(eng, lastTs, 'zone').procs
+    const nife = laneNamed(procs, 'Condemnation of Nife').linked.find((l) => l.kind === 'buff')
+    assert.equal(nife?.name, 'Instrument of Nife')
+    assert.equal(nife?.withCount, 4)
+    assert.equal(nife?.withoutCount, 0)
+    assert.equal(nife?.concentration, 1)
+    assert.equal(nife?.inactiveSwings, 36)
+    assert.equal(nife?.strength, 'inconclusive')
+    assert.equal(procs.attribution?.effects.some((e) => e.verdict === 'measured'), false)
+  } finally {
+    installSpellDb(undefined)
+  }
+})
+
+test('W41: a poison lane keeps an EMPTY link list, because the link would be tautological', { skip: missing(W35, W41) }, () => {
+  const { procs } = zoneProcs([...W35, ...W41])
+  // An Asp Venom Strike cannot fire without asp venom on the blade. 'exclusive' there would
+  // restate the mechanic rather than measure anything, so the poison lanes carry no rows at all
+  // — and no coat reaches 'measured' off the back of one.
+  for (const l of procs.lanes ?? []) {
+    if (l.origin === 'poison') assert.deepEqual(l.linked, [])
+  }
+  const coats = procs.attribution?.effects.filter((e) => e.kind === 'coat') ?? []
+  assert.ok(coats.length > 0)
+  assert.equal(coats.some((e) => e.verdict === 'measured'), false)
 })
