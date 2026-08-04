@@ -821,6 +821,55 @@ first-run provisioning.
   and stacking upward with column wrap (`overlayLayout.ts`); PERSISTED bounds
   always win.
 
+## Cloud (feedback backend + future web) — state as of 2026-08-04
+
+- **AWS**: dedicated sub-account `eqcompanion` **001634075447** (org
+  management = the `jmoyers` account 383185690517), region **us-east-1**.
+  CLI: profile `eqc` in `~/.aws/config` assumes
+  `OrganizationAccountAccessRole` via source profile `windows-desktop-eqc`
+  (an IAM user whose key the OWNER manages; a least-privilege inline
+  policy limiting it to that one AssumeRole was recommended and handed to
+  the owner). Terraform + AWS CLI are installed (winget; terraform.exe
+  under `%LOCALAPPDATA%\Microsoft\WinGet\Packages\Hashicorp.Terraform_*`).
+- **Terraform**: root `infra/`, state in s3 bucket
+  `eqcompanion-tf-state-dae027bf` (versioned, BPA) + lock table
+  `eqcompanion-tf-lock`. Deploys are MANUAL from this machine with
+  `AWS_PROFILE=eqc`; CI only fmt/validate/bundle. `terraform apply` of the
+  30-resource stack was launched 2026-08-04 (owner-approved) — VERIFY it
+  completed before assuming resources exist.
+- **Store is Aurora DSQL** (owner: "I hate dynamodb"), not DynamoDB:
+  schema in `infra/schema.sql`, applied by `triage-feedback migrate`
+  (never yet run against a live cluster — it stops on and prints a bad
+  statement). Ingest connects as a DB role holding **INSERT ON report and
+  nothing else**; IAM tokens, zero passwords. DSQL laws: no FKs/triggers/
+  PLpgSQL, fixed Repeatable Read + OCC (retry only SQLSTATE 40001),
+  3,000-row txn cap (bounds every sweep), one DDL per txn,
+  `CREATE INDEX ASYNC`, jsonb young + unindexable (we use text).
+- **F2: DEPLOYED AND LIVE (2026-08-04).** Applied (29+1 resources; Lambda
+  runs UNRESERVED concurrency — the fresh sub-account's limit of 10 made
+  reserving 5 illegal ("below minimum unreserved"); request a quota bump
+  then restore `-var lambda_reserved_concurrency=5`). Schema migrated
+  (14+3), kill switch OPEN, the three constants filled in net.ts
+  (api pcy0z3xjp9…/v1/feedback · bucket eqcompanion-logs-6c58f5cc ·
+  us-east-1). LIVE-VERIFIED: submit 201 + ULID, idempotent replay 200
+  same id, oversize 413. Two DSQL live findings now encoded: grants on
+  the system-owned `public` schema are unsupported (table-level grants
+  suffice; schema.sql fixed) and `statement_timeout` cannot be SET
+  (node-postgres sends it when configured — use client-side
+  query_timeout only; db.ts fixed). REMAINING: 429/503/403/expired-
+  presign negatives + a real log-upload round trip + the owner clicking
+  the SNS confirmation email. Telemetry A2 rides the next apply.
+- **Local dev story**: `scripts/dev-feedback-server.mts` (wave in flight
+  at write time) — same contract, same shared validator, failure knobs;
+  the app reaches it via `EQ_FEEDBACK_URL`, honored ONLY behind
+  `!app.isPackaged` (the lawful exception to the no-override rule —
+  packaged builds must prove the env var does nothing).
+- **Usage analytics**: opt-OUT (owner decision over the integrator's
+  opt-in recommendation) but NOTHING transmits before the first-run
+  notice renders; allowlist schema; separate rotatable analyticsId;
+  payload viewer + TELEMETRY.md. Plan: docs/plans/usage-analytics.md.
+  A1 (client, dark) + A2 (infra) not yet built.
+
 ## Known open items
 
 - **Feedback loop (the next big feature)**: fully planned + reviewed in

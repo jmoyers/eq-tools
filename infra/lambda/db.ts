@@ -135,7 +135,10 @@ async function open(): Promise<PgClient> {
     ssl: { rejectUnauthorized: true },
     application_name: 'eqc-feedback-submit',
     connectionTimeoutMillis: CONNECT_TIMEOUT_MS,
-    statement_timeout: STATEMENT_TIMEOUT_MS,
+    // DSQL rejects SET statement_timeout ("setting configuration parameter not
+    // supported", live 2026-08-04) — node-postgres sends it on connect when the
+    // option is present. query_timeout is CLIENT-side (a socket timer, no SET
+    // on the wire) and stays: it is the only statement bound we get.
     query_timeout: STATEMENT_TIMEOUT_MS,
   })
   // A dropped socket surfaces here, NOT at the next query. Without this listener
