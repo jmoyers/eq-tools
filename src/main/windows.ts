@@ -3,11 +3,12 @@
 // applied to it.
 // ============================================================================
 //
-// Two window populations live here because they share ONE security posture and are
-// entangled at teardown (closing the main window destroys the overlays):
+// Three window populations live here because they share ONE security posture and are
+// entangled at teardown (closing the main window destroys the rest):
 //
-//   - the main app window (frameless, bounds persisted), and
-//   - the floating overlays (one per OverlayKind, transparent + always-on-top).
+//   - the main app window (frameless, bounds persisted),
+//   - the floating overlays (one per OverlayKind, transparent + always-on-top), and
+//   - the cursor ring (one transparent click-through window tracking the EQ window).
 //
 // The module owns their handles. Nothing outside reaches for a BrowserWindow: callers
 // push to the renderer through `sendToMain` / `getOverlayWindow`, which keeps the
@@ -27,6 +28,9 @@ import { defaultOverlayBounds, overlayDefaultSize } from './overlayLayout'
 import { allowedExternalUrl, isInternalPageUrl } from './security'
 import { getOverlayConfig, getWindowBounds, setOverlayConfig, setWindowBounds } from './store'
 import { OVERLAY_KINDS, type OverlayKind } from '../shared/types'
+// ScreenRect lives in shared/presencePrefs.ts, not shared/types.ts — see the note at the
+// bottom of types.ts (that file is at its factoring ceiling).
+import type { ScreenRect } from '../shared/presencePrefs'
 
 let mainWindow: BrowserWindow | null = null
 // The floating overlays (Task #52; kinds in Task #54, more in Task #59): separate transparent,
@@ -327,6 +331,9 @@ export function createMainWindow(): void {
         overlayWindows[kind] = null
       }
     }
+    // Same contract for the ring: an accessory window must never keep the app alive. Its
+    // persisted `enabled` is untouched, so it comes back on the next launch.
+    destroyCursorRingWindow()
   })
 
   // Navigation + window.open policy is installed for EVERY webContents by the
@@ -511,4 +518,184 @@ export function overlayStateMap(): Record<OverlayKind, boolean> {
     out[kind] = isOverlayOpen(kind)
   }
   return out
+}
+
+// ---- overlay AUTO-HIDE (presence-driven; src/main/presence.ts) ----
+//
+// HIDE, NEVER DESTROY. An auto-hidden overlay is the same window it was a moment ago: its
+// bounds, its lock state, its selected fight and its drill-down are all still there, and its
+// persisted `open:true` is untouched, so the TitleBar menu keeps telling the truth and a
+// re-show is instant. Closing and re-creating them would churn five windows on every alt-tab,
+// lose the mini drill-down, and (via the 'closed' handler) silently rewrite the user's
+// open-state on a transition they never asked about.
+//
+// Only OPEN overlays are affected — this is a visibility filter layered over the open-state,
+// never a second opinion about it.
+
+/**
+ * Show or hide every open overlay window.
+ *
+ * `showInactive`, not `show`: the same reason the first open uses it. An overlay must never
+ * steal focus from the game, and coming back from auto-hide is exactly the moment it would —
+ * the user just alt-tabbed INTO EverQuest, and a window that grabs focus on the way would undo
+ * the thing that triggered it. Always-on-top and the locked/click-through mode are re-asserted
+ * on the way back, because a hidden window can lose both on Windows.
+ *
+ * E2E never shows a window (src/main/e2e.ts is the whole test mode), so a re-show is skipped
+ * there; hiding stays live, since hiding an already-hidden window is a no-op.
+ */
+export function setOverlaysHidden(hidden: boolean): void {
+  for (const kind of OVERLAY_KINDS) {
+    const w = overlayWindows[kind]
+    if (!w || w.isDestroyed()) continue
+    if (hidden) {
+      if (w.isVisible()) w.hide()
+      continue
+    }
+    if (E2E || w.isVisible()) continue
+    w.showInactive()
+    w.setAlwaysOnTop(true, 'screen-saver')
+    applyOverlayLocked(kind, getOverlayConfig(kind).locked)
+  }
+}
+
+// ---- the CURSOR RING window ----
+//
+// A fourth population of one: transparent, click-through, always-on-top, sized to the EQ window,
+// containing a single <div> that follows the pointer (renderer: src/renderer/cursor.html +
+// src/renderer/src/overlay/cursorRing.ts).
+//
+// It is built HERE, from the same `WEB_PREFERENCES()` every other window uses, for the reason
+// stated at the top of that function: a window created somewhere else with its own idea of
+// webPreferences is precisely the drift this file exists to prevent. Its preload is the third
+// and leanest bridge (preload/cursor.ts — three receive-only methods).
+//
+// Three properties make it invisible to everything except the eye:
+//   * `focusable:false` + `type:'toolbar'` + `skipTaskbar` — never takes focus, never appears in
+//     Alt-Tab or the taskbar. A ring that could be focused would be a ring that could steal a
+//     keystroke mid-fight.
+//   * `setIgnoreMouseEvents(true, {forward:true})` — every click passes straight through to the
+//     game. Unlike the overlays there is NO hover sensor and no interactive mode: this window
+//     has nothing to click, so pass-through is unconditional and permanent.
+//   * NO `-webkit-app-region` anywhere in its page — it is not draggable, and cannot become a
+//     window the user accidentally picks up while playing.
+
+let cursorRingWindow: BrowserWindow | null = null
+
+/** The ring window while it exists (null when the ring is off). */
+export function getCursorRingWindow(): BrowserWindow | null {
+  return cursorRingWindow
+}
+
+/** Is there a live, undestroyed ring window? */
+export function isCursorRingOpen(): boolean {
+  return cursorRingWindow !== null && !cursorRingWindow.isDestroyed()
+}
+
+/**
+ * Create the ring window at `bounds` (the EQ window's rectangle) if it does not already exist.
+ * Idempotent: an existing window is simply re-bounded, so the presence watcher can call this on
+ * every transition without tracking whether it already did.
+ */
+export function createCursorRingWindow(bounds: ScreenRect): void {
+  if (isCursorRingOpen()) {
+    setCursorRingBounds(bounds)
+    return
+  }
+  const w = new BrowserWindow({
+    ...bounds,
+    show: false,
+    frame: false,
+    transparent: true,
+    resizable: false,
+    movable: false,
+    minimizable: false,
+    maximizable: false,
+    closable: false,
+    // Never take focus, never appear in the taskbar or Alt-Tab (see the note above).
+    focusable: false,
+    skipTaskbar: true,
+    type: 'toolbar',
+    backgroundColor: '#00000000',
+    hasShadow: false,
+    title: 'Cursor Ring',
+    // Same hardened posture as every other window in this app — ONE definition (WEB_PREFERENCES).
+    webPreferences: WEB_PREFERENCES(join(__dirname, '../preload/cursor.js'))
+  })
+  cursorRingWindow = w
+
+  // Above the overlays' own 'screen-saver' level is not expressible, but the ring is created
+  // after them in practice and re-asserts on every show, which puts it on top in Z order.
+  w.setAlwaysOnTop(true, 'screen-saver')
+  // Unconditional and permanent: this window is never a mouse target. `forward:true` costs
+  // nothing here (nothing listens for the forwarded moves) and keeps the flag identical to the
+  // locked-overlay call, so there is one spelling of "click-through" in the file.
+  w.setIgnoreMouseEvents(true, { forward: true })
+
+  const wc = w.webContents
+  wc.on('preload-error', (_e, preloadPath, error) =>
+    logError('cursorRing:preload-error', { preloadPath, error })
+  )
+  forwardConsoleMessages(wc, 'cursorRing:console')
+
+  w.on('ready-to-show', () => {
+    if (E2E) return
+    w.showInactive()
+    w.setAlwaysOnTop(true, 'screen-saver')
+  })
+  w.on('closed', () => {
+    cursorRingWindow = null
+  })
+
+  const rendererUrl = process.env.ELECTRON_RENDERER_URL
+  if (rendererUrl) {
+    void w.loadURL(`${rendererUrl}/cursor.html`)
+  } else {
+    void w.loadFile(join(__dirname, '../renderer/cursor.html'))
+  }
+}
+
+/** Move/resize the ring window onto the EQ window. Called ONLY when the bounds actually
+ *  changed — a setBounds per cursor sample would be a window-manager round trip at 125 Hz. */
+export function setCursorRingBounds(bounds: ScreenRect): void {
+  const w = cursorRingWindow
+  if (!w || w.isDestroyed()) return
+  const cur = w.getBounds()
+  if (
+    cur.x === bounds.x &&
+    cur.y === bounds.y &&
+    cur.width === bounds.width &&
+    cur.height === bounds.height
+  ) {
+    return
+  }
+  w.setBounds(bounds)
+}
+
+/**
+ * Show/hide the ring without destroying it — the same hide-never-destroy contract the overlays
+ * follow, and for a sharper reason here: the ring window hosts a renderer, and re-creating one
+ * on every alt-tab would pay a page load (and a fresh compositor layer) for a window whose whole
+ * value is that it is already warm when the game comes back.
+ */
+export function setCursorRingVisible(visible: boolean): void {
+  const w = cursorRingWindow
+  if (!w || w.isDestroyed()) return
+  if (!visible) {
+    if (w.isVisible()) w.hide()
+    return
+  }
+  if (E2E || w.isVisible()) return
+  w.showInactive()
+  w.setAlwaysOnTop(true, 'screen-saver')
+}
+
+/** Tear the ring window down (setting switched off, app quitting). */
+export function destroyCursorRingWindow(): void {
+  const w = cursorRingWindow
+  cursorRingWindow = null
+  if (!w || w.isDestroyed()) return
+  w.removeAllListeners('closed')
+  // `closable:false` makes `close()` a no-op — destroy is the only way out for this window.
+  w.destroy()
 }

@@ -16,6 +16,11 @@
 //   store-v3-alerts.json        the shape every build shipped between class-combo corrections
 //                               and voice alerts: alerts with no `audio`/`speech` at all, plus
 //                               a hand-edited def carrying values no build ever wrote.
+//   store-v4-presence.json      a fully-populated voice-era store (v0.2.0): characters, alerts
+//                               WITH voice fields, a voice blob, per-kind overlay config with
+//                               persisted bounds, an EQ-dir override and update bookkeeping —
+//                               i.e. the file a real user upgrading into the cursor-ring build
+//                               actually has on disk.
 //
 // No Electron, no log, no fixture *replay*: the runner is a pure function over plain objects
 // and the file half takes a path, so this suite is as cheap and as unskippable as
@@ -183,6 +188,8 @@ test('an EMPTY pre-framework store migrates to a valid current store, not to jun
   assert.deepEqual(data, {
     byCharacter: {},
     voice: { enabled: false, engine: 'system', voiceId: null, rate: 1, volume: 1 },
+    cursorRing: { enabled: false, sizePx: 44, thicknessPx: 4 },
+    overlayAutoHide: { hideWhenNotRunning: true, hideWhenUnfocused: false },
     [SCHEMA_VERSION_KEY]: CURRENT_SCHEMA_VERSION
   })
 })
@@ -351,6 +358,11 @@ test('malformed alert voice fields are dropped and over-long phrases capped — 
   assert.equal(alerts[2], 'not an alert', 'a non-object entry is passed through, never thrown on')
 })
 
+// 4 → 5 (cursor ring + overlay auto-hide) lives in `storeMigrationsPresence.test.mts`: this
+// file is at the repo's 400-code-line factoring ceiling, and the answer to that is a split, not
+// a threshold. The chain-integrity tests above still cover step 5 — they assert the registry is
+// contiguous and lands exactly on CURRENT_SCHEMA_VERSION, whatever the newest step is.
+
 // ------------------------------------------------------------------------ idempotence
 
 test('running the chain twice equals running it once, for every fixture', () => {
@@ -358,7 +370,8 @@ test('running the chain twice equals running it once, for every fixture', () => 
     'store-v1-first-build.json',
     'store-v1-pre-framework.json',
     'store-v2-characters.json',
-    'store-v3-alerts.json'
+    'store-v3-alerts.json',
+    'store-v4-presence.json'
   ]) {
     const once = migrateStoreData(fixture(name))
     const twice = migrateStoreData(once.data)

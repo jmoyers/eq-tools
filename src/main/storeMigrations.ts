@@ -52,6 +52,10 @@ import {
   SPEECH_MODES,
   normalizeVoicePrefs
 } from '../shared/speechText'
+// The SECOND such exception, for exactly the same reason: shared/presencePrefs.ts is a pure
+// prefs module (no Electron, no types.ts, no LogEvent union) and duplicating the ring's clamps
+// here would create a second answer to "what is a valid cursor-ring config".
+import { normalizeCursorRing, normalizeOverlayAutoHide } from '../shared/presencePrefs'
 
 /** A store file, parsed. Deliberately untyped: a migration's INPUT is a shape the current
  *  code no longer describes, so `StoreShape` would be a lie at every step but the last. */
@@ -64,7 +68,7 @@ export const SCHEMA_VERSION_KEY = 'schemaVersion'
  * The schema the code running right now expects. Bump by exactly one whenever a persisted
  * shape changes, and add the matching MIGRATIONS entry in the same commit.
  */
-export const CURRENT_SCHEMA_VERSION = 4
+export const CURRENT_SCHEMA_VERSION = 5
 
 export interface Migration {
   /** Version this step produces. Steps run in ascending `to` order, contiguously. */
@@ -263,12 +267,46 @@ const migrateToV4: Migration = {
   }
 }
 
+// ------------------------------------------- 4 → 5: cursor ring + overlay auto-hide
+//
+// Two new top-level blobs, added in one step because they ship as one feature: the app now has
+// an opinion about the EverQuest WINDOW (is it running, is it focused, where is it), and both
+// settings are consumers of that one answer.
+//
+//   `cursorRing`       {enabled:false, sizePx:44, thicknessPx:4} — the opt-in halo.
+//   `overlayAutoHide`  {hideWhenNotRunning:true, hideWhenUnfocused:false}.
+//
+// Same treatment as the voice blob in 3→4 and for the same reason: every reader defaults, so
+// this step is not strictly required for a v4 store to boot — it ships so that a v5 store is a
+// PROMISE. After it runs, whatever is in those keys is a complete, in-range blob, and the next
+// step that touches them can rely on that instead of re-deriving it. Malformed values are
+// replaced by the documented default (`normalize*` clamps field by field), never coerced into
+// a different intent.
+//
+// The defaults are DELIBERATE and are the whole feature's posture: the ring is off (it costs a
+// window plus an 8 ms poll), and only the uncontroversial half of auto-hide is on (overlays
+// with no game to sit on are clutter; overlays vanishing every alt-tab is a preference).
+const migrateToV5: Migration = {
+  to: 5,
+  describe: 'add the cursorRing + overlayAutoHide prefs blobs',
+  migrate(data) {
+    data.cursorRing = normalizeCursorRing(data.cursorRing)
+    data.overlayAutoHide = normalizeOverlayAutoHide(data.overlayAutoHide)
+    return data
+  }
+}
+
 /**
  * The chain, ascending. APPEND ONLY — never renumber, never edit a shipped step (a store
  * out there was migrated by the old text and will never run it again), never delete one:
  * a file written years ago still enters the chain at its own version.
  */
-export const MIGRATIONS: readonly Migration[] = [migrateToV2, migrateToV3, migrateToV4]
+export const MIGRATIONS: readonly Migration[] = [
+  migrateToV2,
+  migrateToV3,
+  migrateToV4,
+  migrateToV5
+]
 
 /** Version recorded in `data`; anything absent, non-integer or < 1 means "pre-framework" ⇒ 1. */
 export function readSchemaVersion(data: StoreData): number {

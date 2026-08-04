@@ -14,6 +14,12 @@ import type {
   VoicePrefs
 } from '../shared/types'
 import { normalizeVoicePrefs } from '../shared/speechText'
+import {
+  normalizeCursorRing,
+  normalizeOverlayAutoHide,
+  type CursorRingPrefs,
+  type OverlayAutoHidePrefs
+} from '../shared/presencePrefs'
 import type { ComboCorrection } from '../shared/classCombo'
 import {
   ALERT_SOUND_MIGRATION_VERSION,
@@ -86,6 +92,15 @@ interface StoreShape {
    * downgrade-then-upgrade can leave any key in any state.
    */
   voice?: VoicePrefs
+  /**
+   * The opt-in cursor ring (schema migration 4→5). Off by default — see shared/presencePrefs.ts.
+   */
+  cursorRing?: CursorRingPrefs
+  /**
+   * Overlay auto-hide (schema migration 4→5): hide the floating overlays when EverQuest is not
+   * running / not focused. Two independent switches, defaults {true, false}.
+   */
+  overlayAutoHide?: OverlayAutoHidePrefs
 }
 
 /**
@@ -451,5 +466,37 @@ export function getVoicePrefs(): VoicePrefs {
 export function setVoicePrefs(prefs: VoicePrefs): VoicePrefs {
   const next = normalizeVoicePrefs(prefs)
   store.set('voice', next)
+  return next
+}
+
+// ----- Cursor ring + overlay auto-hide (schema v5; shared/presencePrefs.ts) -----
+//
+// Both blobs follow the voice-prefs shape exactly: read through the normalizer (so a hand edit,
+// a downgrade or a share import can never hand a caller an out-of-range value), write through
+// the SAME normalizer (so the reply is always what was actually stored), and PATCH rather than
+// replace — the two Preferences panels each own one field of a blob and must not clobber the
+// others by round-tripping a stale copy.
+
+/** The cursor-ring prefs, defaulted + clamped. Never throws, never returns a partial. */
+export function getCursorRing(): CursorRingPrefs {
+  return normalizeCursorRing(store.get('cursorRing'))
+}
+
+/** Merge-patch the cursor-ring prefs; returns the stored (re-normalized) value. */
+export function setCursorRing(patch: Partial<CursorRingPrefs>): CursorRingPrefs {
+  const next = normalizeCursorRing({ ...getCursorRing(), ...patch })
+  store.set('cursorRing', next)
+  return next
+}
+
+/** The overlay auto-hide prefs, defaulted. Never throws, never returns a partial. */
+export function getOverlayAutoHide(): OverlayAutoHidePrefs {
+  return normalizeOverlayAutoHide(store.get('overlayAutoHide'))
+}
+
+/** Merge-patch the overlay auto-hide prefs; returns the stored (re-normalized) value. */
+export function setOverlayAutoHide(patch: Partial<OverlayAutoHidePrefs>): OverlayAutoHidePrefs {
+  const next = normalizeOverlayAutoHide({ ...getOverlayAutoHide(), ...patch })
+  store.set('overlayAutoHide', next)
   return next
 }

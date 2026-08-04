@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      The CURSOR RING window (owner request: "I lose my mouse on EQ screens"). A transparent,
+      click-through, always-on-top window sized to the EverQuest window, containing exactly one
+      element: a white circle that follows the pointer.
+
+      CSP: the same deny-by-default policy as index.html / overlay.html, minus everything this
+      page cannot use. It loads no images, no fonts, and speaks to nothing — the only relaxation
+      is `style-src 'unsafe-inline'` for the <style> block below.
+        script-src 'self'   no inline/eval.
+        connect-src 'self'  no fetch of its own; 'self' covers dev HMR's WebSocket.
+        img-src / font-src / object-src / frame-src / child-src / base-uri / form-action  'none'.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'none'; font-src 'none'; connect-src 'self'; object-src 'none'; frame-src 'none'; child-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Cursor Ring</title>
+    <style>
+      /* Transparent window: the OS composites the game underneath. Nothing on this page
+         paints a background — only the ring itself is ever visible. */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
+        user-select: none;
+        /* Belt to the window-level setIgnoreMouseEvents braces: this page must never be
+           a mouse target, whatever the window is doing. */
+        pointer-events: none;
+        cursor: none;
+      }
+
+      /*
+        THE RING. Prerendered once and then only ever moved — see cursorRing.ts. Its size,
+        stroke width and translation are the ONLY properties that change at runtime, and the
+        translation is a compositor-only `translate3d`, so a cursor move costs no layout, no
+        style recalc of anything else, and no repaint of the ring's own pixels.
+
+        Readability on BOTH bright and dark scenes comes from three shadows drawn around one
+        white stroke: a 1px dark contour outside it, a 1px dark contour inside it, and a wide,
+        very soft dark glow. Over a snowfield the contours are what separate the ring from the
+        background; over a dungeon the white stroke does that on its own and the glow just
+        softens the edge.
+      */
+      #ring {
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.9);
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.6),
+          inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+          0 0 14px 4px rgba(0, 0, 0, 0.28);
+        /* Promote to its own compositor layer up front so the first move is as cheap as the
+           ten-thousandth, and hint that only `transform` will ever change. */
+        will-change: transform;
+        transform: translate3d(-9999px, -9999px, 0);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ring"></div>
+    <script type="module" src="/src/overlay/cursorRing.ts"></script>
+  </body>
+</html>
