@@ -15,6 +15,7 @@ import { IPC } from '../shared/ipc'
 import { logConsoleError, logInfo, logWarn } from './errorLog'
 import {
   characterId,
+  invalidateEqDiscovery,
   listCharacters,
   parseLogName,
   resolveActiveCharacter,
@@ -124,6 +125,10 @@ export function buildEqConfig(): EqConfig {
  * that didn't actually move the dir never disrupts an in-flight tail.
  */
 export async function applyEqDirChange(): Promise<EqConfig> {
+  // The override just changed, which is the ONE moment a person can tell us that where EQ lives
+  // has changed — so drop the memoized discovery (config.ts) before resolving anything. Clearing
+  // an override must be able to re-probe the machine, not serve the root we found an hour ago.
+  invalidateEqDiscovery()
   const config = buildEqConfig()
   // Refresh the character selector everywhere.
   const chars = listCharacters()
@@ -251,6 +256,16 @@ export async function tailCharacter(ref: CharacterRef): Promise<TailResult> {
   // Scan the whole log first (live:false) so loot/kills/AA and the combat engine's
   // charm/encounter state reflect reality before the live tail takes over. Modules
   // fold silently during replay; no deltas push until the live tail runs.
+  //
+  // THE HANDOFF, stated once here because this is where the two feeders meet
+  // (docs/plans/chunked-replay.md §1): there is NO buffer-then-drain in this app. `scanLog`
+  // freezes EOF at its own `stat()` and returns `endOffset`, the byte offset of the last COMPLETE
+  // line it folded; `startTailer` below opens the tailer AT that offset. Lines the game appends
+  // during the scan land past the frozen EOF, are never seen by the scan, and become the tailer's
+  // first bytes — so a line can be folded neither twice nor never. That property is a fact about
+  // byte offsets, not about timing, which is what makes the replay safe to slice cooperatively:
+  // the fold now yields to the event loop every REPLAY_SLICE_MS instead of every 1 MB read chunk,
+  // and a longer wall clock simply leaves more bytes waiting for the tailer.
   const scan = await scanLog(ref.logPath, bus, seq)
   seq = scan.seq
   combat.setLive()

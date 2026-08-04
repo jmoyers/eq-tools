@@ -36,12 +36,14 @@ import {
   aggregateMetrics,
   buildProfile,
   describeMarkError,
+  foldBlockSamples,
   lagStats,
   PERF_LAG_PROBE_INTERVAL_MS,
   PERF_SAMPLE_INTERVAL_MS,
   totalsOf,
   type PerfSample,
   type RawProcessMetric,
+  type StartupBlockStats,
   type StartupMark,
   type StartupPhase,
   type StartupProfile
@@ -64,6 +66,50 @@ const LAUNCH_STARTED_AT = Math.round(performance.timeOrigin)
 let marks: StartupMark[] = []
 let eventsReplayed: number | undefined
 let profileWritten = false
+
+// ------------------------------------------------------------------- the startup block probe
+//
+// ALWAYS ON, from `appReady` to `replayDone` (docs/plans/chunked-replay.md §2). The HUD's probe
+// below is the same measurement asked of a running app and gated on the user's switch; this one
+// is asked of the boot itself and gated on nothing, because a boot happens once and cannot be
+// re-run with the instrument turned on afterwards.
+//
+// It obeys the same performance contract as everything else in this file: ONE unref'd timer, for
+// the few seconds a replay lasts, and nothing at all outside that window.
+
+let blockTimer: ReturnType<typeof setInterval> | null = null
+let blockDrifts: number[] = []
+let blockDueAt = 0
+let blockStats: StartupBlockStats | undefined
+
+/** Start measuring the main loop's lateness. Idempotent; the window is opened by `appReady`. */
+function startStartupBlockProbe(): void {
+  if (blockTimer !== null) return
+  blockDrifts = []
+  blockDueAt = performance.now() + PERF_LAG_PROBE_INTERVAL_MS
+  blockTimer = setInterval(() => {
+    const now = performance.now()
+    blockDrifts.push(Math.max(0, now - blockDueAt))
+    blockDueAt = now + PERF_LAG_PROBE_INTERVAL_MS
+  }, PERF_LAG_PROBE_INTERVAL_MS)
+  blockTimer.unref()
+}
+
+/**
+ * Close the window and FREEZE the answer. Called when `replayDone` lands — and from `stopPerf`,
+ * so a launch that quit mid-replay still states how blocked it got before it died.
+ *
+ * A window that held no ticks reports nothing rather than `{max: 0}`: a probe that never sampled
+ * has not observed a smooth launch, it has observed nothing (see StartupBlockStats.samples).
+ */
+function stopStartupBlockProbe(): void {
+  if (blockTimer === null) return
+  clearInterval(blockTimer)
+  blockTimer = null
+  const stats = foldBlockSamples(blockDrifts)
+  blockDrifts = []
+  if (stats.samples > 0) blockStats = stats
+}
 
 /** Extra facts a mark may carry. `atMs` exists because the two module-evaluation phases finished
  *  BEFORE the composition root could speak (see shared/perf.ts's phase table) and are marked with
@@ -90,6 +136,11 @@ export function markStartupPhase(phase: StartupPhase, opts: MarkOptions = {}): v
     return
   }
   marks = result.marks
+  // The block probe's window IS the replay (plan §2), so the two phases that bound it own the
+  // probe's lifetime. Wiring it here rather than in the composition root means the window can
+  // never drift away from the phases the profile reports it against.
+  if (phase === 'appReady') startStartupBlockProbe()
+  if (phase === 'replayDone') stopStartupBlockProbe()
   if (startupProfile().complete) writeStartupProfile()
 }
 
@@ -98,7 +149,8 @@ export function startupProfile(): StartupProfile {
   return buildProfile(marks, {
     startedAt: LAUNCH_STARTED_AT,
     version: app.getVersion(),
-    ...(eventsReplayed === undefined ? {} : { eventsReplayed })
+    ...(eventsReplayed === undefined ? {} : { eventsReplayed }),
+    ...(blockStats === undefined ? {} : { block: blockStats })
   })
 }
 
@@ -112,9 +164,15 @@ function logStartupSummary(profile: StartupProfile): void {
     .join(', ')
   const replayed =
     profile.eventsReplayed === undefined ? '' : `, ${String(profile.eventsReplayed)} events replayed`
+  // The block figures ride the same line: "6 s of replay" and "6 s of replay during which the main
+  // loop was never more than 14 ms late" are different launches, and errors.log should say which.
+  const blocked =
+    profile.block === undefined
+      ? ''
+      : `, worst main-loop block ${String(profile.block.maxBlockMs)}ms (${String(profile.block.blocksOver50Ms)} over 50ms)`
   logInfo(
     `[everquest-companion] Startup ${String(Math.round(profile.totalMs))}ms` +
-      `${replayed} (${worst}) — profile at ${profilePath()}`
+      `${replayed}${blocked} (${worst}) — profile at ${profilePath()}`
   )
 }
 
@@ -146,8 +204,10 @@ function writeStartupProfile(): void {
   }
 }
 
-/** Write an INCOMPLETE profile on the way out, if the launch never reached the last phase. */
+/** Write an INCOMPLETE profile on the way out, if the launch never reached the last phase. The
+ *  block probe is closed FIRST so a launch that quit mid-replay still states how blocked it got. */
 export function flushStartupProfile(): void {
+  stopStartupBlockProbe()
   if (!profileWritten) writeStartupProfile()
 }
 

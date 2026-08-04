@@ -24,6 +24,14 @@ resources/soundpacks/sc_marine/
 # headless Electron e2e harness dumps DOM/screenshots here on a failed assertion
 tests/e2e/artifacts/
 
+# REPLAY BENCH (`npm run bench:replay`, docs/plans/chunked-replay.md §3). `.bench/replay.jsonl`
+# is a LOCAL accumulating ledger — one line per run, on one machine, whose numbers mean nothing
+# on another. `tests/bench/fixtures/` holds the standard bench input: ~100 MB of one person's
+# real game log, which is exactly what the scrub law keeps out of a public repo. The PATH is
+# the contract; the bytes stay local (the bench falls back to the machine's own log and says so).
+.bench/
+tests/bench/fixtures/
+
 # MOB-SCRAPER wikitext cache (Task #63). The quests/spells caches ARE committed — they are ~900
 # and ~2k small files and they make a re-scrape free for anyone. The mob corpus is 7,879 pages /
 # ~40MB, which is an order of magnitude past that, and it is fully REGENERABLE (`npm run

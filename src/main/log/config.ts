@@ -46,6 +46,43 @@ function realProbes(): DiscoveryProbes {
   }
 }
 
+/**
+ * MEMOIZED DISCOVERY — measured, not a micro-optimization (docs/plans/chunked-replay.md's
+ * blocked-main directive; the evidence is in `.bench/replay.jsonl` and the diagnosis below).
+ *
+ * `discoverEqRoot(realProbes())` spawns EIGHT synchronous `reg query … /s` subprocesses over the
+ * whole Uninstall hive and then stats six candidate paths on every fixed drive. MEASURED at
+ * ~150 ms, synchronously, on the main process — and `resolveEqDir()` is not a startup-only call:
+ * the `character:list` IPC runs it while the renderer is hydrating (it was the ONE main-loop stall
+ * left in an otherwise chunked replay — 77/90/106/160 ms across four boots, always at ~1.1 s,
+ * always inside `character:list`), the Settings pane runs it, and `presence.ts` runs it on every
+ * watcher tick.
+ *
+ * So the ANSWER is cached for the process, with the two escape hatches that keep it honest:
+ *   * a cached hit is RE-VALIDATED with `rootHasLogs` — one readdir — so an install that moves or
+ *     is uninstalled under us re-probes immediately rather than serving a dead path forever;
+ *   * `invalidateEqDiscovery()` drops it outright, and is called when the user changes the manual
+ *     override (session.ts's `applyEqDirChange`) — the one moment a person can tell us that where
+ *     EQ lives has changed.
+ * Nothing else is cached: `countCharacterLogs` still reads the directory on every call, because
+ * "how many characters are there" changes while the app runs and is one cheap readdir.
+ */
+let discoveredRoot: string | null | undefined
+
+function discoverOnce(): string | null {
+  if (discoveredRoot !== undefined) {
+    if (discoveredRoot === null) return null
+    if (rootHasLogs(discoveredRoot)) return discoveredRoot
+  }
+  discoveredRoot = discoverEqRoot(realProbes())
+  return discoveredRoot
+}
+
+/** Forget the discovered root, so the next resolution probes the machine again. */
+export function invalidateEqDiscovery(): void {
+  discoveredRoot = undefined
+}
+
 // ---------------------------------------------------------------------------
 // Effective-root resolver — the ONE entry point every path consumer uses.
 // ---------------------------------------------------------------------------
@@ -77,7 +114,7 @@ export function resolveEqDir(): ResolvedEqDir {
     root = override
     source = 'manual'
   } else {
-    const discovered = discoverEqRoot(realProbes())
+    const discovered = discoverOnce()
     if (discovered) {
       root = discovered
       source = 'auto'

@@ -26,11 +26,13 @@ import {
   LAG_WARN_P95_MS,
   PERF_PROCESS_TYPES,
   PERF_RING_SIZE,
+  STARTUP_BLOCK_THRESHOLD_MS,
   STARTUP_PHASES,
   addMark,
   aggregateMetrics,
   buildProfile,
   describeMarkError,
+  foldBlockSamples,
   formatChip,
   formatCpu,
   formatMemory,
@@ -336,8 +338,52 @@ test('a launch that never finished still produces an honest, incomplete profile'
   assert.equal(nothing.complete, false)
 })
 
+// -------------------------------------------------------------------- the startup block probe
+
+test('the startup block probe reports a worst stall and a count, and distinguishes 0 from unmeasured', () => {
+  // The threshold is deliberately the SAME number the HUD calls "warn" — one vocabulary, so a
+  // startup that would have coloured the chip is a startup that reports blocks.
+  assert.equal(STARTUP_BLOCK_THRESHOLD_MS, LAG_WARN_P95_MS)
+
+  assert.deepEqual(foldBlockSamples([2, 51, 7, 300, 49.6]), {
+    samples: 5,
+    maxBlockMs: 300,
+    blocksOver50Ms: 2
+  })
+  // AT the threshold counts (a boundary asserted, not assumed), just under it does not.
+  assert.equal(foldBlockSamples([50]).blocksOver50Ms, 1)
+  assert.equal(foldBlockSamples([49.999]).blocksOver50Ms, 0)
+  // A window that held no ticks says so: 0 ms here means "nothing was measured", which is not
+  // the same claim as "the launch never blocked".
+  assert.deepEqual(foldBlockSamples([]), { samples: 0, maxBlockMs: 0, blocksOver50Ms: 0 })
+  // Scheduling noise and a C++ boundary both exist: negatives clamp, junk is dropped.
+  assert.deepEqual(foldBlockSamples([-5, NaN, Infinity, 12]), { samples: 2, maxBlockMs: 12, blocksOver50Ms: 0 })
+})
+
+test('a launch that measured its blocking states it in the profile; one that did not omits it', () => {
+  const block = { samples: 17, maxBlockMs: 9, blocksOver50Ms: 0 }
+  const measured = buildProfile(fullChain(), { startedAt: 1, version: '', block })
+  assert.deepEqual(measured.block, block)
+  // Absent, never a fabricated zero — the same rule `eventsReplayed` follows.
+  assert.equal(buildProfile(fullChain(), { startedAt: 1, version: '' }).block, undefined)
+
+  // Read back off disk: all three fields or none. A half-parsed probe result would invite a
+  // conclusion from a number the file never stated.
+  const onDisk = { ...measured, block: { samples: 3, maxBlockMs: 'soon' } }
+  assert.equal(parseStartupProfile(JSON.parse(JSON.stringify(onDisk)) as unknown)?.block, undefined)
+  // …and a profile written by a build that predates the probe still parses (the field is optional).
+  const legacy = JSON.parse(JSON.stringify(measured)) as Record<string, unknown>
+  delete legacy.block
+  assert.equal(parseStartupProfile(legacy)?.phases.length, STARTUP_PHASES.length)
+})
+
 test('a profile round-trips through JSON, and anything else parses to null', () => {
-  const profile = buildProfile(fullChain(), { startedAt: 5, version: '9.9.9', eventsReplayed: 7 })
+  const profile = buildProfile(fullChain(), {
+    startedAt: 5,
+    version: '9.9.9',
+    eventsReplayed: 7,
+    block: { samples: 12, maxBlockMs: 31, blocksOver50Ms: 0 }
+  })
   const parsed = parseStartupProfile(JSON.parse(JSON.stringify(profile)) as unknown)
   assert.deepEqual(parsed, profile)
   // A phase name this build does not know is dropped, not guessed at.

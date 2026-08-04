@@ -187,6 +187,45 @@ export const LAG_WARN_P95_MS = 50
 export const LAG_ALERT_MAX_MS = 200
 
 /**
+ * THE STARTUP BLOCK PROBE's answer (docs/plans/chunked-replay.md §2).
+ *
+ * The HUD's lag probe runs only while the user's switch is on; this one runs on EVERY launch,
+ * from `appReady` to `replayDone`, and lands in perf-startup.json beside the phases. Same
+ * measurement (a self-timing interval's own lateness IS the block), different question: the HUD
+ * asks "is the app blocked right now", this asks "was the launch that already happened blocked" —
+ * and the launch you wish you had profiled is always that one.
+ *
+ * `samples` rides along for the same reason `PerfLagStats.samples` does: a probe window that held
+ * no ticks reports 0 ms because nothing was MEASURED, which is not the same claim as 0 ms of
+ * blocking, and a reader with only the max cannot tell those apart.
+ */
+export interface StartupBlockStats {
+  samples: number
+  /** The worst single stall observed in the window, ms. THE chunking invariant's subject. */
+  maxBlockMs: number
+  /** How many probe ticks were at least `STARTUP_BLOCK_THRESHOLD_MS` late. */
+  blocksOver50Ms: number
+}
+
+/**
+ * What counts as a BLOCK during startup. Deliberately the same number the HUD already calls
+ * "warn" (`LAG_WARN_P95_MS`) rather than a second opinion: one threshold, one vocabulary — a
+ * startup that would have coloured the chip is a startup that reports blocks.
+ */
+export const STARTUP_BLOCK_THRESHOLD_MS = LAG_WARN_P95_MS
+
+/** Drift samples → the two facts the profile states. Pure, so the arithmetic is pinned by tests
+ *  rather than inferred from a boot. Never NaN, never negative. */
+export function foldBlockSamples(drifts: readonly number[]): StartupBlockStats {
+  const clean = drifts.filter((d) => Number.isFinite(d)).map((d) => Math.max(0, d))
+  return {
+    samples: clean.length,
+    maxBlockMs: round(clean.length ? Math.max(...clean) : 0, 0),
+    blocksOver50Ms: clean.filter((d) => d >= STARTUP_BLOCK_THRESHOLD_MS).length
+  }
+}
+
+/**
  * Chip colour, from lag ALONE (plan P3). Deliberately not from CPU%: an app that is busy because
  * you asked it to replay a 1.1M-line log is not misbehaving, and colouring that red would train
  * the user to ignore the chip exactly when it finally means something.
@@ -330,6 +369,12 @@ export interface StartupProfile {
   totalMs: number
   /** Events the historical scan folded, when `replayDone` reported one. */
   eventsReplayed?: number
+  /**
+   * How badly the main loop was BLOCKED between `appReady` and `replayDone` — the always-on probe
+   * of docs/plans/chunked-replay.md §2. Absent on a launch whose probe never ran (or never held a
+   * tick), never a fabricated zero.
+   */
+  block?: StartupBlockStats
   /** Did every phase land? False for a launch that quit early (or crashed) mid-boot. */
   complete: boolean
 }
@@ -409,6 +454,7 @@ export interface StartupProfileMeta {
   startedAt: number
   version: string
   eventsReplayed?: number
+  block?: StartupBlockStats
 }
 
 /**
@@ -435,7 +481,21 @@ export function buildProfile(
     complete: marks.length === STARTUP_PHASES.length
   }
   if (meta.eventsReplayed !== undefined) profile.eventsReplayed = Math.max(0, meta.eventsReplayed)
+  if (meta.block !== undefined) profile.block = meta.block
   return profile
+}
+
+/** Shape check for the block stats read back off disk. All three fields or none — a half-parsed
+ *  probe result would let a reader draw a conclusion from a number the file never stated. */
+function parseBlockStats(raw: unknown): StartupBlockStats | null {
+  if (!isPlainObject(raw)) return null
+  if (typeof raw.samples !== 'number' || typeof raw.maxBlockMs !== 'number') return null
+  if (typeof raw.blocksOver50Ms !== 'number') return null
+  return {
+    samples: Math.max(0, finite(raw.samples)),
+    maxBlockMs: Math.max(0, finite(raw.maxBlockMs)),
+    blocksOver50Ms: Math.max(0, finite(raw.blocksOver50Ms))
+  }
 }
 
 /** Shape check for a profile read back off disk — the file half's parser (never a migration:
@@ -452,12 +512,14 @@ export function parseStartupProfile(raw: unknown): StartupProfile | null {
     timings.push({ phase, atMs: finite(entry.atMs), durationMs: finite(entry.durationMs) })
   }
   if (timings.length === 0) return null
+  const block = parseBlockStats(raw.block)
   return {
     startedAt: finite(raw.startedAt),
     version: typeof raw.version === 'string' ? raw.version : '',
     phases: timings,
     totalMs: finite(raw.totalMs),
     ...(typeof raw.eventsReplayed === 'number' ? { eventsReplayed: finite(raw.eventsReplayed) } : {}),
+    ...(block === null ? {} : { block }),
     complete: raw.complete === true
   }
 }

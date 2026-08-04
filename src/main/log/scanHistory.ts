@@ -1,7 +1,7 @@
 import { createReadStream } from 'fs'
 import { stat } from 'fs/promises'
-import { setImmediate as yieldToLoop } from 'timers/promises'
 import { parseEvent } from './parser'
+import { createSlicer, type Slicer } from './replaySlicer'
 import type { LogBus } from './bus'
 
 export interface ScanResult {
@@ -17,6 +17,19 @@ export interface ScanResult {
    * sequence for the character.
    */
   seq: number
+}
+
+/** Everything about a scan that is not "which file, which bus, from which seq". */
+export interface ScanOptions {
+  /** Parser ruleset id (defaults to the classic EQ profile). */
+  profileId?: string
+  /**
+   * The cooperative scheduler (docs/plans/chunked-replay.md §1). Defaults to a REPLAY_SLICE_MS
+   * budget, which is what production always wants — the only other caller is the equivalence test,
+   * which passes `unchunkedSlicer()` to fold the same bytes with no yielding at all and compare.
+   * There is deliberately no environment variable behind this: see replaySlicer.ts.
+   */
+  slicer?: Slicer
 }
 
 /**
@@ -38,8 +51,22 @@ interface SplitState {
  * Split ONE chunk into complete lines, handing each to `handle`, and carry the trailing
  * partial line into `st` for the next chunk. Extracted from scanLog's loop body so the byte
  * accounting lives in one place; the arithmetic is unchanged.
+ *
+ * CHUNKED (docs/plans/chunked-replay.md §1): the yield lives HERE, per line, not per read chunk.
+ * A 1 MB chunk is ~75 ms of folding on a real log — measured, and four times the whole slice
+ * budget — so a scheduler that could only pause between chunks could not honour a 12 ms budget
+ * at all. The check happens AFTER the line is folded, so a single monster event overshoots the
+ * budget and then yields, rather than being split (it cannot be split) or skipped.
+ *
+ * Nothing else changes: the byte accounting, the order and the `handle` calls are exactly as they
+ * were, which is what lets the equivalence test compare the two arms byte for byte.
  */
-function consumeChunk(buf: Buffer, st: SplitState, handle: (raw: string) => void): void {
+async function consumeChunk(
+  buf: Buffer,
+  st: SplitState,
+  handle: (raw: string) => void,
+  slicer: Slicer
+): Promise<void> {
   let lineStart = 0
   for (let i = 0; i < buf.length; i++) {
     if (buf[i] !== 0x0a) continue // find '\n'
@@ -52,6 +79,7 @@ function consumeChunk(buf: Buffer, st: SplitState, handle: (raw: string) => void
     st.leftover = ''
     st.pendingBytes = 0
     lineStart = i + 1
+    if (slicer.expired()) await slicer.yield()
   }
   // Carry the trailing partial line to the next chunk.
   if (lineStart < buf.length) {
@@ -72,16 +100,28 @@ function consumeChunk(buf: Buffer, st: SplitState, handle: (raw: string) => void
  * blocked for the multi-second duration of a 68MB scan. Events are emitted in
  * strict file order.
  *
+ * COOPERATIVELY SCHEDULED (docs/plans/chunked-replay.md §1): "periodically" used to mean "between
+ * read chunks", which measured at 75 ms of main-loop stall per chunk. It now means "every
+ * REPLAY_SLICE_MS of folding", which bounds the block directly. See replaySlicer.ts.
+ *
  * Bounded (FIX 1): captures the file size S up front, processes only bytes [0, S),
  * and returns `endOffset` = the byte offset of the end of the last complete line
  * at or before S. The caller hands this to the tailer as its start offset for a
  * gapless handoff.
+ *
+ * THE LIVE HANDOFF IS UNAFFECTED BY SLICING, and this is the property that makes chunking safe.
+ * There is no buffer-then-drain anywhere in this app: the scan reads to a FROZEN EOF (the size
+ * captured above, before the first byte is read) and returns the byte offset of the last complete
+ * line it consumed; session.ts then starts the Tailer AT that offset. Lines the game appends while
+ * the scan runs land past S, are never read here, and are read by the tailer as its first bytes.
+ * So a longer wall-clock scan simply means more bytes waiting for the tailer — never a line folded
+ * twice, never one skipped, whatever the slice budget is.
  */
 export async function scanLog(
   logPath: string,
   bus: LogBus,
   startSeq = 0,
-  profileId?: string
+  opts: ScanOptions = {}
 ): Promise<ScanResult> {
   let size: number
   try {
@@ -94,7 +134,7 @@ export async function scanLog(
   let seq = startSeq
 
   const handle = (raw: string): void => {
-    const ev = parseEvent(raw, seq, profileId)
+    const ev = parseEvent(raw, seq, opts.profileId)
     if (!ev) return // not a log line at all (no timestamp)
     seq++
     bus.emit(ev, false)
@@ -102,16 +142,13 @@ export async function scanLog(
 
   // Byte-accurate line splitting (see SplitState / consumeChunk).
   const st: SplitState = { endOffset: 0, pendingBytes: 0, leftover: '' }
-  let chunkCount = 0
+  const slicer = opts.slicer ?? createSlicer()
 
   const stream = createReadStream(logPath, { start: 0, end: size - 1, highWaterMark: 1 << 20 })
 
   try {
     for await (const chunk of stream) {
-      const buf = chunk as Buffer
-      consumeChunk(buf, st, handle)
-      // Yield to the event loop so IPC / UI stay responsive during a big scan.
-      if (++chunkCount % 4 === 0) await yieldToLoop()
+      await consumeChunk(chunk as Buffer, st, handle, slicer)
     }
   } catch {
     // Partial results are still valid up to endOffset; fall through and return.

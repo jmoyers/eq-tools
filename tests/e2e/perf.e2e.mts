@@ -44,6 +44,8 @@ const SWITCH = '[data-testid="pref-perf-enabled"] input'
 const BREAKDOWN = '[data-testid="perf-startup"]'
 /** The sampler pushes every 2 s and emits one immediately on start; be generous anyway. */
 const SAMPLE_WAIT_MS = 6_000
+/** A full historical scan of a months-old live log takes seconds; be generous, fail loudly. */
+const REPLAY_WAIT_MS = 300_000
 
 /**
  * The strictly-sequential head of the boot, asserted as a LIST: a profile whose phases arrived
@@ -67,12 +69,18 @@ interface Phase {
   atMs: number
   durationMs: number
 }
+interface BlockStats {
+  samples: number
+  maxBlockMs: number
+  blocksOver50Ms: number
+}
 interface Profile {
   startedAt: number
   version: string
   phases: Phase[]
   totalMs: number
   eventsReplayed?: number
+  block?: BlockStats
   complete: boolean
 }
 
@@ -187,8 +195,39 @@ async function stepPopover(page: Page): Promise<void> {
   await sleep(400)
 }
 
+/**
+ * Wait for the historical replay to finish. `hydrating` is the combat engine's own answer to
+ * exactly that question (it stays true until `setLive()`, which is the statement immediately after
+ * the scan returns), so this asks the app rather than sleeping at it.
+ */
+async function waitForReplay(page: Page): Promise<boolean> {
+  const deadline = Date.now() + REPLAY_WAIT_MS
+  while (Date.now() < deadline) {
+    const snap = await page
+      .evaluate(() =>
+        (
+          window as unknown as { eq: { getCombatSnapshot: (o: unknown) => Promise<{ hydrating: boolean }> } }
+        ).eq.getCombatSnapshot({})
+      )
+      .catch(() => null)
+    if (snap && !snap.hydrating) return true
+    await sleep(500)
+  }
+  return false
+}
+
 /** The startup breakdown in Preferences — the half that is recorded whether the HUD is on or not. */
 async function stepStartupPane(page: Page): Promise<void> {
+  // The pane reads the profile SO FAR, ONCE, when it mounts — and on a real log the historical
+  // replay is still folding ten seconds into a launch. So "names every phase" is a claim about the
+  // pane's VOCABULARY that can only be made after the last phase has landed AND the pane has been
+  // mounted since. Wait for the replay, then remount by leaving the tab and coming back. Before
+  // this the assertion passed on the strength of the replay beating the spec's own click sequence,
+  // which is luck rather than a test — and chunked replay's ~7% throughput cost was enough to run
+  // it out (measured: the pane showed 7 of 8 phases, twice in a row).
+  check('the historical replay finishes within the spec’s patience', await waitForReplay(page))
+  await page.click('[data-testid="nav-overview"]', { timeout: 30_000 })
+  await sleep(400)
   await page.click('[data-testid="nav-preferences"]', { timeout: 30_000 })
   await page.click('[data-testid="prefs-rail-performance"]', { timeout: 15_000 })
   await page.waitForSelector(BREAKDOWN, { timeout: 15_000 })
@@ -247,6 +286,30 @@ function stepProfileFile(): void {
     'the replay states how many events it folded, beside how long it took',
     typeof profile.eventsReplayed === 'number' && profile.eventsReplayed >= 0,
     `${String(profile.eventsReplayed)} events`
+  )
+  stepBlockProbe(profile.block)
+}
+
+/**
+ * THE ALWAYS-ON BLOCK PROBE (docs/plans/chunked-replay.md §2), asserted additively beside the
+ * phases it shares a file with. Unlike the HUD's probe this one is not opt-in and has no switch to
+ * forget, so its absence from a real boot IS the regression. Identities only: how blocked this
+ * particular machine got is not something a spec can assert — the bench (`npm run bench:replay`)
+ * owns that budget, against a known log, on one machine.
+ */
+function stepBlockProbe(block: BlockStats | undefined): void {
+  const ok = check(
+    'the launch also states how blocked the main loop got — the always-on startup probe',
+    block !== undefined && block.samples > 0,
+    block ? `${String(block.samples)} probe ticks` : 'absent'
+  )
+  if (!ok || !block) return
+  const sane =
+    Number.isFinite(block.maxBlockMs) && block.maxBlockMs >= 0 && Number.isInteger(block.blocksOver50Ms)
+  check(
+    '…as a worst single stall and a count of the ones past the HUD’s own warn threshold',
+    sane && block.blocksOver50Ms >= 0 && block.blocksOver50Ms <= block.samples,
+    `max ${String(block.maxBlockMs)}ms · ${String(block.blocksOver50Ms)}/${String(block.samples)} over 50ms`
   )
 }
 
