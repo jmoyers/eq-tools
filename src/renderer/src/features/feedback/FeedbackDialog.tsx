@@ -36,13 +36,7 @@ import {
 } from '@mui/material'
 import BugReportIcon from '@mui/icons-material/BugReport'
 import LightbulbIcon from '@mui/icons-material/Lightbulb'
-import {
-  LOG_WINDOW_CHOICES,
-  MAX_CONTACT,
-  MAX_DESCRIPTION,
-  MAX_TITLE,
-  type FeedbackType
-} from '@shared/feedback'
+import { LOG_WINDOW_CHOICES, MAX_DESCRIPTION, type FeedbackType } from '@shared/feedback'
 import LogPreview from './LogPreview'
 import {
   useFeedback,
@@ -94,21 +88,12 @@ function TypeToggle({
   )
 }
 
-/** Title (optional) · Description (required, live counter) · Contact (optional, honest label). */
+/** Description (required, live counter). The one field — everything else goes in the body. */
 function DraftFieldsBlock({ state }: { state: FeedbackState }): JSX.Element {
   const { fields, setField, problem } = state
   const overlong = fields.description.trim().length > MAX_DESCRIPTION
   return (
     <>
-      <TextField
-        size="small"
-        fullWidth
-        label="Title (optional)"
-        value={fields.title}
-        data-testid="feedback-title"
-        slotProps={{ htmlInput: { maxLength: MAX_TITLE } }}
-        onChange={(e) => setField('title', e.target.value)}
-      />
       <TextField
         size="small"
         fullWidth
@@ -125,17 +110,9 @@ function DraftFieldsBlock({ state }: { state: FeedbackState }): JSX.Element {
         }`}
         onChange={(e) => setField('description', e.target.value)}
       />
-      <TextField
-        size="small"
-        fullWidth
-        label="Email or Discord (optional)"
-        placeholder="Only if you want a reply"
-        value={fields.contact}
-        data-testid="feedback-contact"
-        slotProps={{ htmlInput: { maxLength: MAX_CONTACT } }}
-        helperText="Only if you want a reply. Stored with the report; ask us to delete it any time."
-        onChange={(e) => setField('contact', e.target.value)}
-      />
+      <Typography variant="caption" color="text.secondary">
+        You can drop your email or Discord in the message if you care to.
+      </Typography>
     </>
   )
 }

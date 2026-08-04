@@ -57,15 +57,16 @@ export const REPORT_STATUSES = [
 ] as const
 export const SEVERITIES = ['p0', 'p1', 'p2', 'p3'] as const
 
-/** What the user typed. Renderer-owned; validated by the SAME function main and the Lambda use. */
+/** What the user typed. Renderer-owned; validated by the SAME function main and the Lambda use.
+ *
+ *  `title` and `contact` were REMOVED from the contract: the description is the whole report,
+ *  and anyone who wants a follow-up puts their email/Discord in the body. Old clients that
+ *  still send them are not rejected — the validator simply drops unknown fields — and the
+ *  `report` table keeps its columns for the legacy rows that carry values. */
 export interface FeedbackDraft {
   type: FeedbackType
-  /** <= MAX_TITLE. Optional but strongly encouraged — it is the best clustering signal we get. */
-  title?: string
   /** MIN_DESCRIPTION..MAX_DESCRIPTION after trim. */
   description: string
-  /** Optional email / Discord handle, <= MAX_CONTACT. PII — see retention (§3.5). */
-  contact?: string
 }
 
 /** Everything the CLIENT knows about itself. Assembled in main; never typed by the user. */
@@ -178,8 +179,6 @@ export interface SaveSliceResult {
 
 export const MIN_DESCRIPTION = 10
 export const MAX_DESCRIPTION = 4_000
-export const MAX_TITLE = 120
-export const MAX_CONTACT = 200
 export const MAX_BODY_BYTES = 32 * 1024 // whole JSON request
 export const MAX_UPLOAD_BYTES = 2 * 1024 * 1024 // gzipped slice
 export const MAX_SLICE_LINES = 50_000
@@ -246,24 +245,6 @@ function requiredText(
   return { ok: true, value: t }
 }
 
-/** Optional text: absent / null / blank all normalize to `undefined`. */
-function optionalText(
-  raw: unknown,
-  field: string,
-  max: number,
-): Validated<string | undefined> {
-  if (raw === undefined || raw === null) return { ok: true, value: undefined }
-  if (typeof raw !== 'string') return fail(field, `${field} must be text.`)
-  const t = raw.trim()
-  if (t.length === 0) return { ok: true, value: undefined }
-  if (t.length > max)
-    return fail(
-      field,
-      `${field} must be ${max} characters or fewer (it is ${t.length}).`,
-    )
-  return { ok: true, value: t }
-}
-
 function integerInRange(
   raw: unknown,
   field: string,
@@ -318,19 +299,13 @@ export function validateDraft(input: unknown): Validated<FeedbackDraft> {
   )
   if (!description.ok) return description
 
-  const title = optionalText(input.title, 'title', MAX_TITLE)
-  if (!title.ok) return title
-
-  const contact = optionalText(input.contact, 'contact', MAX_CONTACT)
-  if (!contact.ok) return contact
-
+  // A retired-field `title`/`contact` from an older client is dropped, never rejected: the
+  // constructed value below carries only the fields the contract still has.
   return {
     ok: true,
     value: {
       type: type.value,
       description: description.value,
-      ...(title.value === undefined ? {} : { title: title.value }),
-      ...(contact.value === undefined ? {} : { contact: contact.value }),
     },
   }
 }

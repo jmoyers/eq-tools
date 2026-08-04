@@ -17,7 +17,6 @@ import { useCallback, useEffect, useState } from 'react'
 import {
   DEFAULT_LOG_WINDOW,
   MAX_DESCRIPTION,
-  MAX_TITLE,
   validateDraft,
   type FeedbackDraft,
   type FeedbackType
@@ -53,28 +52,24 @@ export interface FeedbackOutcome {
 /** Seed values for an entry point that already knows something (ErrorBoundary → a bug). */
 export interface FeedbackPrefill {
   type?: FeedbackType
-  title?: string
   description?: string
 }
 
+// The dialog asks for the user's words and nothing else — title and contact were dropped
+// (anyone who wants a follow-up puts their email/Discord in the body). The WIRE contract
+// (src/shared/feedback.ts) still carries both as optionals; this client just never sends them.
 interface DraftFields {
   type: FeedbackType
-  title: string
   description: string
-  contact: string
 }
 
-const EMPTY: DraftFields = { type: 'feature', title: '', description: '', contact: '' }
+const EMPTY: DraftFields = { type: 'feature', description: '' }
 
-/** The typed fields as the contract wants them: trimmed, with empty optionals omitted. */
+/** The typed fields as the contract wants them: trimmed. */
 export function toDraft(f: DraftFields): FeedbackDraft {
-  const title = f.title.trim()
-  const contact = f.contact.trim()
   return {
     type: f.type,
-    description: f.description.trim(),
-    ...(title ? { title } : {}),
-    ...(contact ? { contact } : {})
+    description: f.description.trim()
   }
 }
 
@@ -200,7 +195,6 @@ function readCrashPrefill(): FeedbackPrefill | null {
   // Send button that can never light up, which reads as the report form being broken too.
   return {
     type: 'bug',
-    title: `Crash: ${message}`.slice(0, MAX_TITLE),
     description: `The app hit a render error and I reloaded it.\n\n${message}\n\n${stack}`.slice(
       0,
       MAX_DESCRIPTION
@@ -274,7 +268,6 @@ export function useFeedback(open: boolean, prefill?: FeedbackPrefill): FeedbackS
     setFields({
       ...EMPTY,
       type,
-      title: prefill?.title ?? '',
       description: prefill?.description ?? ''
     })
     // Bug reports attach the log BY DEFAULT — it is the whole point of a bug report.

@@ -19,11 +19,9 @@ import {
   DEFAULT_LOG_WINDOW,
   FEEDBACK_API_VERSION,
   LOG_WINDOW_CHOICES,
-  MAX_CONTACT,
   MAX_DESCRIPTION,
   MAX_ENV_FIELD,
   MAX_SLICE_LINES,
-  MAX_TITLE,
   MAX_UPLOAD_BYTES,
   MIN_DESCRIPTION,
   validateDraft,
@@ -49,13 +47,11 @@ const draft = (over: Partial<FeedbackDraft> = {}): unknown => ({
 const chars = (n: number): string => 'x'.repeat(n)
 
 test('validateDraft accepts the shape the dialog produces', () => {
-  const res = validateDraft(draft({ title: 'DPS resets', contact: 'me@example.com' }))
+  const res = validateDraft(draft())
   assert.equal(res.ok, true)
   assert.deepEqual(res.ok && res.value, {
     type: 'bug',
-    description: 'the meter shows zero dps after zoning',
-    title: 'DPS resets',
-    contact: 'me@example.com'
+    description: 'the meter shows zero dps after zoning'
   })
 })
 
@@ -88,19 +84,12 @@ test('REJECT, NEVER TRUNCATE — an over-long description is an error, not a hai
   assert.equal(at.ok && at.value.description.length, MAX_DESCRIPTION)
 })
 
-test('optional fields: bounded, and blank normalizes to absent', () => {
-  assert.equal(validateDraft(draft({ title: chars(MAX_TITLE) })).ok, true)
-  const bigTitle = validateDraft(draft({ title: chars(MAX_TITLE + 1) }))
-  assert.equal(bigTitle.ok, false)
-  assert.equal(!bigTitle.ok && bigTitle.field, 'title')
-
-  assert.equal(validateDraft(draft({ contact: chars(MAX_CONTACT) })).ok, true)
-  const bigContact = validateDraft(draft({ contact: chars(MAX_CONTACT + 1) }))
-  assert.equal(bigContact.ok, false)
-  assert.equal(!bigContact.ok && bigContact.field, 'contact')
-
-  for (const blank of ['', '   ', undefined, null]) {
-    const res = validateDraft(draft({ title: blank as string, contact: blank as string }))
+test('retired fields: a title/contact from an older client is dropped, never rejected', () => {
+  // The wire once carried optional `title` and `contact`; both were retired. An older client
+  // still sending them must not meet a 400 — the validator constructs the value from the
+  // fields the contract still has, so the retired ones simply vanish.
+  for (const legacy of ['DPS resets', 'me@example.com', chars(10_000), '', null]) {
+    const res = validateDraft(draft({ title: legacy, contact: legacy } as object))
     assert.equal(res.ok, true)
     assert.equal(res.ok && 'title' in res.value, false)
     assert.equal(res.ok && 'contact' in res.value, false)

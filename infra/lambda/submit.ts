@@ -401,9 +401,10 @@ function reportParams(
     reportId,
     req.installId,
     req.draft.type,
-    req.draft.title ?? null,
+    // title/contact were retired from the wire contract; the columns stay for legacy rows.
+    null,
     req.draft.description,
-    req.draft.contact ?? null,
+    null,
     req.env.channel,
     req.env.appVersion,
     req.env.platform,

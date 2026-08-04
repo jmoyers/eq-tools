@@ -116,7 +116,8 @@ async function withStack(fn: (stack: DevStack) => Promise<void>, maxPerDay = 10)
 
 test('a submit with a log round-trips: 201, presign, upload, bytes on disk', async () => {
   await withStack(async (stack) => {
-    const req = request({ log: metaFor(GZ), draft: { type: 'bug', title: 'blank overlay', description: 'It goes blank after zoning, every time.' } })
+    // `title` rides along as a retired legacy field — the server must drop it, not reject it.
+    const req = request({ log: metaFor(GZ), draft: { type: 'bug', title: 'blank overlay', description: 'It goes blank after zoning, every time.' } as never })
     const a = await submit(stack, req)
 
     assert.equal(a.status, 201)
@@ -147,7 +148,8 @@ test('a submit with a log round-trips: 201, presign, upload, bytes on disk', asy
     assert.equal(seen.count, 1)
     assert.equal(seen.reports[0]?.reportId, reportId)
     assert.equal(seen.reports[0]?.uploaded, true)
-    assert.equal(seen.reports[0]?.title, 'blank overlay')
+    // Retired wire field: the legacy title a old client sent is dropped, and the row shows null.
+    assert.equal(seen.reports[0]?.title, null)
   })
 })
 
