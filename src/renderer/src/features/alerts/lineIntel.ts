@@ -21,8 +21,7 @@ import {
   detectPoisonSlowOffers,
   detectRankUpgrades,
   spellLineKey,
-  spellLineLevel,
-  type LineLevel,
+  type ClassLevel,
   type PoisonSlowOffer,
   type RankUpgradeOffer,
   type SpellLine
@@ -119,9 +118,28 @@ export function useResolvedClasses(): ClassAbbr[] {
   return useMemo(() => (combo.current ? resolvedClasses(combo.current) : []), [combo])
 }
 
-/** The level chip for one catalog row, or null when the DB places the line in no class. */
-export function levelFor(entry: SpellCatalogEntry, resolved: readonly ClassAbbr[]): LineLevel | null {
-  return spellLineLevel(entry.classLevels ?? [], resolved)
+/** One class-level chip: the DB fact, plus whether it is a class YOUR loadout resolved to. */
+export interface ClassLevelChip extends ClassLevel {
+  /** true when the combo module has RESOLVED this class for the current loadout. */
+  yours: boolean
+}
+
+/**
+ * The row's class-level chips, RESOLVED CLASSES FIRST (redesign §3), then by level.
+ *
+ * The compact row shows the first few and folds the rest into a "+N" chip, so the ordering is
+ * load-bearing: the level that is actually yours must never be the one that got folded away.
+ * Every chip states a DB fact for ONE class — which is why this replaced the old single
+ * "min lvl N" chip: with the classes named, there is nothing left to be ambiguous about
+ * (world-model law 1). Ranks within a line still have no level of their own; the tooltip says so.
+ */
+export function classLevelChips(
+  entry: SpellCatalogEntry,
+  resolved: readonly ClassAbbr[]
+): ClassLevelChip[] {
+  return (entry.classLevels ?? [])
+    .map((c) => ({ ...c, yours: resolved.includes(c.cls) }))
+    .sort((a, b) => Number(b.yours) - Number(a.yours) || a.level - b.level || a.cls.localeCompare(b.cls))
 }
 
 /** The upgrade-offer strip's state: the live offers plus the per-offer dismiss action. */

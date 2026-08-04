@@ -192,6 +192,25 @@ const ABBR_BY_NAME: Record<string, ClassAbbr> = {
   wizard: 'WIZ'
 }
 
+/** Abbr set, for the direct `class:shm` spelling (the map above is by wiki NAME). */
+const ABBR_SET: ReadonlySet<string> = new Set<string>(Object.values(ABBR_BY_NAME))
+
+/**
+ * A user-typed class token → the /who code, or null when it names no class we know.
+ *
+ * Accepts either spelling the user is likely to reach for: the three-letter code (`shm`) or
+ * the wiki's full class name (`shaman`, and both spellings of Shadow Knight). ONE
+ * implementation, exported here beside the table it reads, so the search box and the level
+ * chips can never disagree about what "SHD" means.
+ */
+export function classAbbrFor(text: string): ClassAbbr | null {
+  const t = text.trim().toLowerCase()
+  if (!t) return null
+  const upper = t.toUpperCase()
+  if (ABBR_SET.has(upper)) return upper as ClassAbbr
+  return ABBR_BY_NAME[t] ?? null
+}
+
 /**
  * Parse a `classes` string into per-class entry levels, sorted by level then class. A class
  * named twice (rank variants folded into one line) keeps its LOWEST level — the earliest

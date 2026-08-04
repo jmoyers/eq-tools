@@ -181,6 +181,23 @@ function suggestionTemplates(s: SpellEntry): SpellCatalogEntry['templates'] {
   }
 }
 
+/**
+ * The prejoined, lowercased SEARCH SURFACE for one line (SpellCatalogEntry.searchText):
+ * display name + every rank name the DB knows + the three message texts.
+ *
+ * The messages are the whole point (docs/plans/suggest-dialog-redesign.md §1): they let one
+ * search box answer "slow", "root", "dispel" from the game's own words instead of from an
+ * invented effect taxonomy. Lowercased HERE so the renderer's per-keystroke work is a plain
+ * substring test — see the field's doc comment in shared/buffTypes.ts.
+ */
+export function searchTextFor(s: SpellEntry, rankNames: readonly string[] | undefined): string {
+  const parts = [s.name, ...(rankNames ?? []), s.msgCastOnYou, s.msgCastOnOther, s.msgWearsOff]
+  return parts
+    .filter((p): p is string => !!p)
+    .join(' ')
+    .toLowerCase()
+}
+
 export function buildSpellCatalog(
   db: SpellDb,
   usage: Map<string, number>,
@@ -205,7 +222,8 @@ export function buildSpellCatalog(
       classLevels: parseSpellClassLevels(s.classes),
       // Always present in practice (the map is built from the same spell list db.byKey is);
       // the optional field absorbs the impossible miss without a branch.
-      rankNames: rankNames.get(key)
+      rankNames: rankNames.get(key),
+      searchText: searchTextFor(s, rankNames.get(key))
     })
   }
   // Sort (Task #45 — the user's directive: recency over frequency). USED spells (those the

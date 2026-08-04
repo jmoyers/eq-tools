@@ -21,6 +21,7 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
 import { parseEvent } from '../src/main/log/parser'
 import { installSpellDb } from '../src/main/log/rulesets'
 import { loadSpellDb, buildSpellCatalog } from '../src/main/data/spellDb'
@@ -306,6 +307,41 @@ test('P5 the poison-slow offer truth table', () => {
   // the upgrade strip); what the detector owes it is a STABLE id, which is pinned here.
   const dismissed = new Set([POISON_SLOW_OFFER_ID])
   assert.equal(detectPoisonSlowOffers([], SEEN).filter((o) => !dismissed.has(o.id)).length, 0)
+})
+
+// ─────────────────────────────────────────────────────────────────────────────
+// (P6) THE RELOCATION (docs/plans/suggest-dialog-redesign.md §2).
+//
+// The offer moved OUT of the alerts view's strip and INTO the suggest dialog's "From your
+// fights" section — "rogue slows should not be exceptional, they're part of add suggestion"
+// (the owner). The detector, the dismissal set and the def are unchanged (P5 pins all three),
+// so what is left to prove is the MOUNT, and that is a fact about the source tree: exactly one
+// surface renders the card, and it is the dialog's.
+
+test('P6 the offer is mounted by the suggest dialog, not by the alerts view', () => {
+  const read = (rel: string): string => readFileSync(new URL(rel, import.meta.url), 'utf8')
+  const view = read('../src/renderer/src/features/alerts/AlertsView.tsx')
+  const results = read('../src/renderer/src/features/alerts/SuggestResults.tsx')
+
+  assert.equal(
+    /import\s+PoisonSlowOffer\s+from/.test(view),
+    false,
+    'AlertsView must no longer render the poison-slow strip'
+  )
+  assert.equal(
+    view.includes('usePoisonSlowOffers'),
+    false,
+    '…nor hold its detector: one surface owns the offer'
+  )
+  assert.ok(
+    /import\s+PoisonSlowOffer\s+from/.test(results),
+    'the suggest dialog’s results body mounts it'
+  )
+  assert.ok(results.includes('From your fights'), 'inside the observation-driven section')
+
+  // The RANK-UPGRADE strip is untouched: it rewrites alerts that already exist, so it stays
+  // beside the list it edits. Losing it in this move would be a silent regression.
+  assert.ok(view.includes('useUpgradeOffers') && view.includes('<UpgradeOffers'))
 })
 
 test('P5b the dead `lands` suggestion is gone for poison Strikes, and only for them', () => {

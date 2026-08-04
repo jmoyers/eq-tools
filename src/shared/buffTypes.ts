@@ -308,6 +308,21 @@ export interface SpellCatalogEntry {
    */
   classLevels?: { cls: ClassAbbr; level: number }[]
   rankNames?: string[]
+  /**
+   * THE SEARCH SURFACE, prejoined and LOWERCASED once in main (spellDb.ts `searchTextFor`).
+   *
+   * Name + every rank display name + the spell's three message texts (cast-on-you /
+   * cast-on-other / wears-off), separated by a space. The messages are what make the dialog's
+   * search comprehensive without inventing an effect taxonomy: "slower" finds the spells whose
+   * landing emote says it, "dispelled" finds the dispel family, and none of that is a curated
+   * list that can go stale (world-model law 1 — the message IS the ground truth).
+   *
+   * Prejoined because the renderer filters per KEYSTROKE across ~1.6k rows: the per-row work
+   * must stay ONE substring test against ONE string (AGENTS.md UI conventions — the search key
+   * is computed per data change, never per keystroke). Built server-side so even that is paid
+   * once, at catalog build.
+   */
+  searchText: string
 }
 
 /** Reply of `spells:catalog`: the catalog + summary stats for the wizard header. */

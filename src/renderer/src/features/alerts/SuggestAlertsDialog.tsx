@@ -1,26 +1,28 @@
-// SuggestAlertsDialog — the one-click "suggested alerts" wizard (Task #38).
+// SuggestAlertsDialog — the one-click "add an alert" surface (Task #38, redesigned).
 //
 // The user's intent: "integrate spell database info into alerts — discover frequently used
 // spells, debuffs, buffs, and suggest the exact setup for how they can use alerts. Easy to
-// use, search-to-select, one-click."
+// use, search-to-select, one-click." Then, after living with it (docs/plans/
+// suggest-dialog-redesign.md): "rogue slows should not be exceptional — part of add
+// suggestion; search should be comprehensive (level, type, name, spell text); group results
+// sensibly; more compact so things fit on screen."
 //
-// So this dialog:
-//   - loads a slim spell CATALOG from main (spells.json + live usage from the buffs model),
-//   - lists spells RECENCY-first (Task #45 — used spells sorted by when you last saw them,
-//     most recent at the top; tie-broken by usage), a usage badge, then the never-used
-//     alphabetical tail, filtered by a fuzzy-ish substring search box,
-//   - each row shows the spell name, a buff/debuff chip (+ illusion), and small one-click
-//     TEMPLATE chips — each chip authors the EXACT alert whose trigger the spell DB can
-//     actually fire (validated against logEvents.ts + the AlertsModule matcher):
-//       "wears off (you or pet)" → { event, buffExpired, where:{spell} }  (Beneficial + wears-off
-//                                    msg) — the DUAL DEFAULT (Task #47): the buffs module emits a
-//                                    RESOLVED buffExpired for a self wears-off AND a pet/target
-//                                    fade, so ONE simple trigger covers both sides by default.
-//       "fades on pet/target only" → { event, buffFade,   where:{spell} }  (Beneficial, pet side only)
-//       "lands on a target"      → { event, buffApply,   where:{spell} }  (Detrimental + cast-on-other)
-//       "illusion fades"         → { event, illusionFade }                (shared, illusion spells)
-//   - clicking a chip saves the alert immediately and shows an "Alert created — <name>"
-//     snackbar with an UNDO (deletes it) — no multi-step forms.
+// So this dialog is now ONE box over EVERYTHING the app can offer:
+//   - a TOKENIZED search (shared/spellSearch.ts): bare text matches the spell's own words —
+//     name, rank names and its three message texts — so "slower" finds a spell by its landing
+//     emote; `level:25` / `level:20-30`, `class:shm`, `type:buff|debuff|illusion|poison|seen`
+//     narrow it, AND-composed. No invented effect taxonomy anywhere (world-model law 1).
+//   - SECTIONS in the order that matches how you actually pick an alert (SuggestResults.tsx):
+//     "From your fights" (what the log has seen, plus the observed rogue-slow offer that used
+//     to be a strip in AlertsView), "Ready-made sets", then Buffs · Debuffs · Illusions ·
+//     Poisons.
+//   - DENSE single-line rows (SpellSuggestionRow.tsx) with the one-click template chips —
+//     each chip authors the EXACT alert whose trigger the spell DB can actually fire
+//     (suggestions.ts), saves it immediately, and offers an Undo on the snackbar.
+//
+// GEOMETRY THAT HOLDS STILL (the search-perf fix, kept intact): the paper has a FIXED height,
+// the result list scrolls inside it, rows answer a DEFERRED query and are memoized, and at most
+// MAX_ROWS of them are mounted across all sections. Everything above is built ON those rules.
 //
 // Idempotency: each suggestion has a STABLE id (`suggest:<spellKey>:<template>`, illusion is
 // the shared `suggest:illusion:fade`). An already-created suggestion renders as a checked,
@@ -51,14 +53,14 @@ import {
 import SearchIcon from '@mui/icons-material/Search'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
 import EditNoteIcon from '@mui/icons-material/EditNote'
-import type { AlertDef, SpellCatalog, SpellCatalogEntry } from '@shared/types'
-import type { AlertGroup } from '@shared/alertGroups'
+import type { AlertDef, PoisonSlowRecency, SpellCatalog } from '@shared/types'
+import { VERIFIED_ALERT_GROUPS, type AlertGroup } from '@shared/alertGroups'
+import { tokenizeSpellQuery, type SpellSearchToken } from '@shared/spellSearch'
 import { illusionSuggestion, type Suggestion } from './suggestions'
-import AlertGroupsPanel from './AlertGroupsPanel'
-import SpellRow, { TemplateChip, type RowContext } from './SpellSuggestionRow'
-import { useResolvedClasses, useSpellLines } from './lineIntel'
-
-const MAX_ROWS = 200
+import type { RowContext } from './SpellSuggestionRow'
+import SuggestResults, { type ResultsHandlers, type SectionState } from './SuggestResults'
+import { buildSuggestResults, filterAlertGroups } from './resultSections'
+import { usePoisonSlowOffers, useResolvedClasses, useSpellLines } from './lineIntel'
 
 /** Title row: what this dialog is, how big the catalog is, and the manual escape hatch. */
 function SuggestHeader({
@@ -69,7 +71,7 @@ function SuggestHeader({
   onCreateManually: () => void
 }): JSX.Element {
   return (
-    <DialogTitle sx={{ pb: 1 }}>
+    <DialogTitle sx={{ pb: 0.5, pt: 1.5 }}>
       <Stack direction="row" spacing={1} alignItems="center">
         <AutoAwesomeIcon fontSize="small" color="primary" />
         <span>Add an alert</span>
@@ -83,83 +85,7 @@ function SuggestHeader({
           Create manually
         </Button>
       </Stack>
-      <Typography variant="caption" color="text.secondary">
-        Pick a suggested alert below, or create one manually for full control.
-      </Typography>
     </DialogTitle>
-  )
-}
-
-/** The ONE alert that covers every illusion click-off — offered above the per-spell rows. */
-function IllusionBanner({
-  created,
-  onCreate
-}: {
-  created: boolean
-  onCreate: () => void
-}): JSX.Element {
-  return (
-    <Box sx={{ p: 1, borderRadius: 1, bgcolor: 'action.hover' }}>
-      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          Illusions
-        </Typography>
-        <Typography variant="caption" color="text.secondary">
-          one alert for any illusion click-off:
-        </Typography>
-        <TemplateChip label="When your illusion fades" created={created} onClick={onCreate} />
-      </Stack>
-    </Box>
-  )
-}
-
-/**
- * The scrolling result list. It fills the dialog's fixed-height paper and scrolls inside, so the
- * paper's geometry is the same whether the list holds MAX_ROWS rows or none.
- *
- * `loaded` gates the "no match" line so an un-hydrated catalog reads as empty, never as "nothing
- * matches". `query` is the DEFERRED query — the one `entries` was actually filtered by, so the
- * empty-state line can never name a string the list has not caught up to. `stale` marks exactly
- * that lag: the rows on screen answer an older query than the box shows.
- */
-function SpellResults({
-  entries,
-  existingIds,
-  onCreate,
-  query,
-  loaded,
-  stale,
-  ctx
-}: {
-  entries: SpellCatalogEntry[]
-  existingIds: Set<string>
-  onCreate: (s: Suggestion) => void
-  query: string
-  loaded: boolean
-  stale: boolean
-  ctx: RowContext
-}): JSX.Element {
-  return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        minHeight: 0,
-        overflow: 'auto',
-        opacity: stale ? 0.6 : 1,
-        transition: 'opacity 120ms ease-out'
-      }}
-    >
-      <Stack spacing={0.75}>
-        {entries.map((e) => (
-          <SpellRow key={e.key} entry={e} existingIds={existingIds} onCreate={onCreate} ctx={ctx} />
-        ))}
-        {loaded && entries.length === 0 && (
-          <Typography variant="body2" color="text.secondary" sx={{ p: 1 }}>
-            No spells match “{query}”.
-          </Typography>
-        )}
-      </Stack>
-    </Box>
   )
 }
 
@@ -178,7 +104,7 @@ function SearchBox({
       inputRef={inputRef}
       size="small"
       fullWidth
-      placeholder="Search spells, debuffs, buffs…"
+      placeholder="Search name, spell text, level:25, class:shm, type:debuff…"
       value={query}
       onChange={(e) => onQuery(e.target.value)}
       slotProps={{
@@ -220,7 +146,7 @@ function CreatedSnackbar({
   )
 }
 
-/** The catalog fetch plus the search box's state and its filtered result set. */
+/** The catalog fetch plus the search box's state and the TOKENS the rows are filtered by. */
 interface SpellSearch {
   catalog: SpellCatalog | null
   searchRef: RefObject<HTMLInputElement | null>
@@ -231,13 +157,15 @@ interface SpellSearch {
   deferredQuery: string
   /** the rows are answering an older query than the box shows. */
   catchingUp: boolean
-  entries: SpellCatalogEntry[]
+  /** the DEFERRED query, tokenized once per deferred change (never per row). */
+  tokens: SpellSearchToken[]
 }
 
 /**
- * Catalog + search. Loads the catalog on open, echoes typing instantly, and filters the
- * 1,600+-spell list from a DEFERRED copy of the query so a keystroke never waits on the rows
- * (Task #41). The lowercase search key is computed once per catalog load, never per keystroke.
+ * Catalog + search. Loads the catalog on open, echoes typing instantly, and tokenizes a
+ * DEFERRED copy of the query so a keystroke never waits on the rows (Task #41). The lowercase
+ * search surface (`searchText`) is built ONCE in main, so the per-row work stays a substring
+ * test — never a per-keystroke lowercase of 1.6k strings.
  */
 function useSpellSearch(open: boolean): SpellSearch {
   const [catalog, setCatalog] = useState<SpellCatalog | null>(null)
@@ -254,32 +182,31 @@ function useSpellSearch(open: boolean): SpellSearch {
   }, [open])
 
   const deferredQuery = useDeferredValue(query)
+  const tokens = useMemo(() => tokenizeSpellQuery(deferredQuery), [deferredQuery])
 
-  const keyed = useMemo(
-    () => (catalog ? catalog.entries.map((e) => ({ e, key: e.name.toLowerCase() })) : []),
-    [catalog]
-  )
+  return { catalog, searchRef, query, setQuery, deferredQuery, catchingUp: query !== deferredQuery, tokens }
+}
 
-  const entries = useMemo(() => {
-    const q = deferredQuery.trim().toLowerCase()
-    const rows = q ? keyed.filter((r) => r.key.includes(q)) : keyed
-    return rows.slice(0, MAX_ROWS).map((r) => r.e)
-  }, [keyed, deferredQuery])
+/** No section is collapsed to begin with — the redesign's point is that everything is visible. */
+const NONE: ReadonlySet<string> = new Set<string>()
 
-  return {
-    catalog,
-    searchRef,
-    query,
-    setQuery,
-    deferredQuery,
-    catchingUp: query !== deferredQuery,
-    entries
-  }
+/** Per-section fold state. A live search overrides it (SuggestResults `isOpen`). */
+function useSectionState(searching: boolean): SectionState {
+  const [collapsed, setCollapsed] = useState<ReadonlySet<string>>(NONE)
+  const toggle = useCallback((id: string) => {
+    setCollapsed((prev) => {
+      const next = new Set(prev)
+      if (!next.delete(id)) next.add(id)
+      return next
+    })
+  }, [])
+  return { collapsed, toggle, searching }
 }
 
 export default function SuggestAlertsDialog({
   open,
-  existingIds,
+  alerts,
+  poisonSlowSeen,
   onClose,
   onCreate,
   onDelete,
@@ -287,8 +214,10 @@ export default function SuggestAlertsDialog({
   spellLastCast
 }: {
   open: boolean
-  /** ids of alerts that already exist — for the checked/disabled state. */
-  existingIds: Set<string>
+  /** every stored alert: the created/checked state AND the poison-slow offer's coverage test. */
+  alerts: readonly AlertDef[]
+  /** the alerts module's rogue-slow observation, or null — drives the offer in "From your fights". */
+  poisonSlowSeen: PoisonSlowRecency | null
   onClose: () => void
   /** Persist a new alert (returns after the write). */
   onCreate: (def: AlertDef) => Promise<void>
@@ -300,10 +229,14 @@ export default function SuggestAlertsDialog({
   spellLastCast: Record<string, number>
 }): JSX.Element {
   const [snack, setSnack] = useState<{ name: string; id: string } | null>(null)
-  // Everything downstream of the search box reads `deferredQuery` — a single raw-`query` read
-  // would put the whole row subtree back on the keystroke's critical path.
-  const { catalog, searchRef, query, setQuery, deferredQuery, catchingUp, entries } =
+  // Everything downstream of the search box reads the DEFERRED tokens — a single raw-`query`
+  // read would put the whole row subtree back on the keystroke's critical path.
+  const { catalog, searchRef, query, setQuery, deferredQuery, catchingUp, tokens } =
     useSpellSearch(open)
+  const state = useSectionState(tokens.length > 0)
+  const poisonSlow = usePoisonSlowOffers(alerts, poisonSlowSeen)
+
+  const existingIds = useMemo(() => new Set(alerts.map((a) => a.id)), [alerts])
 
   const create = useCallback(
     async (s: Suggestion) => {
@@ -311,15 +244,6 @@ export default function SuggestAlertsDialog({
       setSnack({ name: s.def.name, id: s.def.id })
     },
     [onCreate]
-  )
-
-  // Stable handler + context: SpellRow is memoized, and a fresh closure or object literal per
-  // render would defeat its shallow compare for every mounted row.
-  const createNow = useCallback(
-    (s: Suggestion) => {
-      void create(s)
-    },
-    [create]
   )
 
   // One click on a ready-made SET writes every alert it is missing (never re-writes one the
@@ -339,10 +263,30 @@ export default function SuggestAlertsDialog({
     setSnack(null)
   }, [snack, onDelete])
 
+  // Stable handlers + context: SpellRow is memoized, and a fresh closure or object literal per
+  // render would defeat its shallow compare for every mounted row.
+  const handlers = useMemo<ResultsHandlers>(
+    () => ({
+      onCreate: (s) => void create(s),
+      onCreateGroup: (g, defs) => void createGroup(g, defs),
+      onPersist: (def) => void onCreate(def),
+      onDismissOffer: poisonSlow.dismiss
+    }),
+    [create, createGroup, onCreate, poisonSlow.dismiss]
+  )
+
   const illusion = catalog?.hasIllusions ? illusionSuggestion() : null
   const lines = useSpellLines(catalog, spellLastCast)
   const resolved = useResolvedClasses()
   const ctx = useMemo<RowContext>(() => ({ lines, resolved }), [lines, resolved])
+
+  // A COLLAPSED section mounts no rows and spends none of the shared MAX_ROWS budget, so the
+  // fold state is an input to the result build, not just to the render.
+  const results = useMemo(
+    () => buildSuggestResults(catalog?.entries ?? [], tokens, state.searching ? NONE : state.collapsed),
+    [catalog, tokens, state.searching, state.collapsed]
+  )
+  const groups = useMemo(() => filterAlertGroups(VERIFIED_ALERT_GROUPS, tokens), [tokens])
 
   return (
     <Dialog
@@ -356,30 +300,21 @@ export default function SuggestAlertsDialog({
       slotProps={{ paper: { sx: { height: 'min(85vh, 760px)' } } }}
     >
       <SuggestHeader catalog={catalog} onCreateManually={onCreateManually} />
-      <DialogContent sx={{ display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-        <Stack spacing={1.5} sx={{ flexGrow: 1, minHeight: 0 }}>
+      <DialogContent sx={{ display: 'flex', flexDirection: 'column', minHeight: 0, pt: 1 }}>
+        <Stack spacing={1} sx={{ flexGrow: 1, minHeight: 0 }}>
           <SearchBox inputRef={searchRef} query={query} onQuery={setQuery} />
-
-          <AlertGroupsPanel
+          <SuggestResults
+            results={results}
+            groups={groups}
+            offers={poisonSlow.offers}
+            illusion={illusion}
             existingIds={existingIds}
-            onCreate={(g, defs) => void createGroup(g, defs)}
-          />
-
-          {illusion && (
-            <IllusionBanner
-              created={existingIds.has(illusion.def.id)}
-              onCreate={() => void create(illusion)}
-            />
-          )}
-
-          <SpellResults
-            entries={entries}
-            existingIds={existingIds}
-            onCreate={createNow}
+            ctx={ctx}
+            handlers={handlers}
+            state={state}
             query={deferredQuery}
             loaded={catalog != null}
             stale={catchingUp}
-            ctx={ctx}
           />
         </Stack>
       </DialogContent>

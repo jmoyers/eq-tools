@@ -18,7 +18,7 @@
 // toast, and wiring the pieces to useAlertsStore.ts (defs/prefs/packs over IPC
 // plus the live recent-fires history from the alerts module).
 
-import { type JSX, useCallback, useMemo, useState } from 'react'
+import { type JSX, useCallback, useState } from 'react'
 import {
   Button,
   Dialog,
@@ -39,8 +39,7 @@ import AlertDialog from './AlertDialog'
 import AlertList from './AlertList'
 import AlertsToolbar from './AlertsToolbar'
 import UpgradeOffers from './UpgradeOffers'
-import PoisonSlowOffer from './PoisonSlowOffer'
-import { usePoisonSlowOffers, useUpgradeOffers } from './lineIntel'
+import { useUpgradeOffers } from './lineIntel'
 import { useAlertsStore, type AlertsStore } from './useAlertsStore'
 import ShareImportDialog from '../profiles/ShareImportDialog'
 import { copyText } from '../../lib/clipboard'
@@ -171,34 +170,27 @@ function useShareToast(): {
 }
 
 /**
- * THE OFFER STRIPS — the two places the app volunteers an alert, and neither ever acts on its
- * own (AGENTS.md: state, never process).
- *   * levelling intelligence: an alert pinned to a rank you have outgrown. "Add alongside"
- *     (the default) keeps the old rank firing for the loadout that still uses it.
- *   * observed-driven: a rogue's slow poison has actually landed in your fights and nothing
- *     you own would fire on it. Accepting authors the SAME def the "Rogue slow poisons" group
- *     card does, so the two entry points can never diverge.
- * Both render nothing at all when there is nothing to say.
+ * THE UPGRADE STRIP — the one place THIS view volunteers an alert, and it never acts on its own
+ * (AGENTS.md: state, never process). Levelling intelligence: an alert pinned to a rank you have
+ * outgrown. "Add alongside" (the default) keeps the old rank firing for the loadout that still
+ * uses it. It renders nothing at all when there is nothing to say.
+ *
+ * IT BELONGS HERE BECAUSE IT EDITS THIS LIST. The observed-driven poison-slow offer used to sit
+ * beside it and does NOT (docs/plans/suggest-dialog-redesign.md §2): that one CREATES an alert
+ * from something the log showed, which is exactly what the suggest dialog is for, so it moved
+ * into that dialog's "From your fights" section. This strip rewrites alerts that already exist.
  */
 function OfferStrips({ store }: { store: AlertsStore }): JSX.Element {
-  const { alerts, spellLastCast, poisonSlowSeen, persistAlerts } = store
+  const { alerts, spellLastCast, persistAlerts } = store
   const upgrades = useUpgradeOffers(alerts, spellLastCast)
-  const poisonSlow = usePoisonSlowOffers(alerts, poisonSlowSeen)
   const persist = (def: AlertDef): void => void persistAlerts(def)
   return (
-    <>
-      <UpgradeOffers
-        offers={upgrades.offers}
-        alerts={alerts}
-        onPersist={persist}
-        onDismiss={upgrades.dismiss}
-      />
-      <PoisonSlowOffer
-        offers={poisonSlow.offers}
-        onPersist={persist}
-        onDismiss={poisonSlow.dismiss}
-      />
-    </>
+    <UpgradeOffers
+      offers={upgrades.offers}
+      alerts={alerts}
+      onPersist={persist}
+      onDismiss={upgrades.dismiss}
+    />
   )
 }
 
@@ -219,10 +211,6 @@ export default function AlertsView(): JSX.Element {
     await store.resetAlerts()
     setConfirmReset(false)
   }, [store])
-
-  // ids of alerts that already exist — the Suggest wizard renders those suggestions as
-  // checked/disabled (match by the stable `suggest:<key>:<template>` id convention).
-  const existingIds = useMemo(() => new Set(alerts.map((a) => a.id)), [alerts])
 
   return (
     <Stack spacing={2} sx={{ height: '100%' }}>
@@ -276,7 +264,8 @@ export default function AlertsView(): JSX.Element {
 
       <SuggestAlertsDialog
         open={suggestOpen}
-        existingIds={existingIds}
+        alerts={alerts}
+        poisonSlowSeen={store.poisonSlowSeen}
         onClose={() => setSuggestOpen(false)}
         onCreate={persistAlerts}
         onDelete={removeAlert}
