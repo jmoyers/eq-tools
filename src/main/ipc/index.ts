@@ -20,6 +20,7 @@ import { registerComboIpc } from './combo'
 import { registerFeedbackIpc } from './feedback'
 import { registerKnowledgeIpc } from './knowledge'
 import { registerMapsIpc } from './maps'
+import { registerPresenceIpc } from './presence'
 import { registerShareIpc } from './share'
 import { registerSoundsIpc } from './sounds'
 import { registerSpeechIpc } from './speech'
@@ -36,6 +37,7 @@ export function registerIpc(): void {
   registerSpeechIpc()
   registerKnowledgeIpc()
   registerMapsIpc()
+  registerPresenceIpc()
   registerWindowIpc()
   registerClipboardIpc()
   registerFeedbackIpc()

@@ -802,6 +802,7 @@ export type {
   SpeechSayRequest,
   SpeechSayResult,
   SpeechInstallResult,
+  SpeechInstallProgress,
   FiredAlert,
   AlertFireRecord,
   AlertsSnap,
@@ -842,3 +843,13 @@ export type {
   ProgressionDelta,
   ProgressionKill
 } from './progressionTypes'
+
+// NOTE (presence-driven settings — the cursor ring + overlay auto-hide): their shapes
+// (CursorRingPrefs, OverlayAutoHidePrefs, PresenceState, ScreenRect, CursorPoint) are NOT
+// re-exported here. They live in `shared/presencePrefs.ts` beside their normalizers — the
+// `shared/speechText.ts` arrangement, because `storeMigrations.ts` must reach the normalizers
+// from store.ts's module scope without importing this file (and the LogEvent union behind it).
+// Consumers import them from `@shared/presencePrefs` directly, which is a deliberate exception
+// to the one-import-site convention: this file is AT the 400-code-line factoring ceiling, and
+// widening a measured threshold to hold five re-export names is exactly the trade the ratchet
+// exists to refuse.

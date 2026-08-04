@@ -22,6 +22,7 @@ import type {
   SoundData,
   SoundPack,
   SpeechEngine,
+  SpeechInstallProgress,
   SpeechInstallResult,
   SpeechSayRequest,
   SpeechSayResult,
@@ -40,6 +41,9 @@ import type {
   ZoneShort
 } from '../shared/maps'
 import type { OverlayKind, UpdateStatus } from '../shared/types'
+// Presence-driven prefs live beside their normalizers, not in shared/types.ts — see the note at
+// the bottom of that file.
+import type { CursorRingPrefs, OverlayAutoHidePrefs } from '../shared/presencePrefs'
 import type { ShareApplyResult, SharePreview } from '../shared/profiles'
 import type {
   FeedbackDraft,
@@ -47,6 +51,19 @@ import type {
   LogSliceMeta,
   SubmitErrorCode
 } from '../shared/feedback'
+// The DEV-ONLY triage surface (see the banner above its methods, below). Types only — the
+// contract lives in src/shared so main, preload and the renderer name one definition.
+import type {
+  TriageAnalytics,
+  TriageDetail,
+  TriageDigest,
+  TriageListQuery,
+  TriageOpsState,
+  TriagePatch,
+  TriageResult,
+  TriageRow,
+  TriageSlice
+} from '../shared/triage'
 
 /** Reply of share:saveFile — the OS save dialog either wrote a file or was cancelled. */
 export interface ShareSaveResult {
@@ -111,11 +128,33 @@ export interface SubmitOpts {
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge, MobKnowledge }
-export type { SpeechEngine, SpeechInstallResult, SpeechSayRequest, SpeechSayResult, SpeechVoice, VoicePrefs }
+export type {
+  SpeechEngine,
+  SpeechInstallProgress,
+  SpeechInstallResult,
+  SpeechSayRequest,
+  SpeechSayResult,
+  SpeechVoice,
+  VoicePrefs
+}
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { AppFocus, UpdateStatus }
+export type { CursorRingPrefs, OverlayAutoHidePrefs }
 export type { ShareApplyResult, SharePreview }
 export type { FeedbackDraft, FeedbackEnv, LogSliceMeta, SubmitErrorCode }
+// Dev-only triage (above): re-exported for the same reason every other payload shape is — a
+// renderer view names them without reaching across the tsconfig boundary into src/shared.
+export type {
+  TriageAnalytics,
+  TriageDetail,
+  TriageDigest,
+  TriageListQuery,
+  TriageOpsState,
+  TriagePatch,
+  TriageResult,
+  TriageRow,
+  TriageSlice
+}
 // The combo module rides the generic transport, so the renderer never names these on an API
 // method — re-exported here for the same reason every other module payload is: so a view can
 // say `useModule<ComboSnap, ComboDelta>('combo', …)` without reaching across the tsconfig
@@ -245,8 +284,9 @@ const api = {
   // The 'system' tier needs NOTHING here: Chromium's `speechSynthesis` is already in the
   // renderer, so the free tier speaks without crossing this boundary at all. The three engine
   // calls below serve the DOWNLOADED (Kokoro) tier, whose model and wav cache live in main —
-  // and in this build they are honest stubs (see main/ipc/speech.ts), answering with a STATE
-  // ('engine-not-installed' / 'not-implemented') rather than throwing or pretending.
+  // and every failure answers with a STATE ('engine-not-installed' / 'not-implemented' /
+  // 'disabled') rather than throwing — which is what lets the renderer degrade any {ok:false}
+  // to the system voice instead of going silent.
   /** Synthesize + cache one utterance; resolves to a playable url once an engine exists.
    *  Both fields are re-validated at the handler (they reach a cache key and a file name). */
   speechSay: (request: SpeechSayRequest): Promise<SpeechSayResult> =>
@@ -254,9 +294,17 @@ const api = {
   /** Voices the DOWNLOADED tier can speak with — empty until it is installed. System-tier
    *  voices come from the renderer's own `speechSynthesis.getVoices()`, never from here. */
   speechVoices: (): Promise<SpeechVoice[]> => ipcRenderer.invoke(IPC.speechVoices),
-  /** Provision an engine tier (pinned release, sha256-verified). `not-implemented` until W3. */
+  /** Provision an engine tier (pinned release, sha256-verified, atomic, resumable). Resolves
+   *  only when the ~120 MB download has FINISHED — subscribe below to render it meanwhile. */
   speechInstall: (engine: SpeechEngine): Promise<SpeechInstallResult> =>
     ipcRenderer.invoke(IPC.speechInstall, engine),
+  /** Subscribe to install progress while `speechInstall` is outstanding. The terminal
+   *  'done'/'failed' phase always matches the verdict that invoke resolves with. */
+  onSpeechInstallProgress: (cb: (progress: SpeechInstallProgress) => void): (() => void) => {
+    const listener = (_e: unknown, progress: SpeechInstallProgress): void => cb(progress)
+    ipcRenderer.on(IPC.onSpeechInstallProgress, listener)
+    return () => ipcRenderer.removeListener(IPC.onSpeechInstallProgress, listener)
+  },
   /** Read the global voice prefs blob. REAL from day one — the store is main-owned. */
   getVoicePrefs: (): Promise<VoicePrefs> => ipcRenderer.invoke(IPC.voicePrefsGet),
   /** Persist the global voice prefs; resolves to what was actually stored (every field is
@@ -431,6 +479,23 @@ const api = {
     return () => ipcRenderer.removeListener(IPC.onOverlayState, listener)
   },
 
+  // ---- cursor ring + overlay auto-hide (presence-driven settings) ----
+  // Both are main-owned store blobs, so Preferences has no other door. The setters take a
+  // PARTIAL patch (each panel owns one field and must not clobber its siblings by
+  // round-tripping a stale copy) and resolve to what was ACTUALLY stored — every field is
+  // re-clamped at the handler, so a slider that asks for more than the cap visibly lands on it.
+  /** The cursor-ring prefs: enabled + size + stroke width. */
+  getCursorRing: (): Promise<CursorRingPrefs> => ipcRenderer.invoke(IPC.cursorRingGet),
+  /** Merge-patch the cursor-ring prefs; the ring appears/resizes live. */
+  setCursorRing: (patch: Partial<CursorRingPrefs>): Promise<CursorRingPrefs> =>
+    ipcRenderer.invoke(IPC.cursorRingSet, patch),
+  /** The overlay auto-hide prefs: hide when EQ isn't running / isn't focused. */
+  getOverlayAutoHide: (): Promise<OverlayAutoHidePrefs> =>
+    ipcRenderer.invoke(IPC.overlayAutoHideGet),
+  /** Merge-patch the overlay auto-hide prefs; applies to the live overlays immediately. */
+  setOverlayAutoHide: (patch: Partial<OverlayAutoHidePrefs>): Promise<OverlayAutoHidePrefs> =>
+    ipcRenderer.invoke(IPC.overlayAutoHideSet, patch),
+
   // ---- clipboard ----
   /**
    * Put plain text on the OS clipboard; resolves to whether it was written.
@@ -464,6 +529,58 @@ const api = {
    *  is retried later; a 4xx resolves `{ok:false, queued:false}` and is not retried. */
   submitFeedback: (draft: FeedbackDraft, opts: SubmitOpts): Promise<SubmitResult> =>
     ipcRenderer.invoke(IPC.feedbackSubmit, draft, opts),
+
+  // ---- feedback TRIAGE (DEV BUILDS ONLY — src/main/triage/**) ----------------------------
+  //
+  // ============================ THESE METHODS ARE DEV-ONLY. ==============================
+  //
+  // The handlers behind them are registered from `src/main/index.ts` ONLY when
+  // `!app.isPackaged && !E2E`, via a dynamic import of a module that reaches `pg` and
+  // `@aws-sdk/*` — devDependencies, which electron-builder never packages. In a shipped build
+  // there are no handlers, so every one of these REJECTS with Electron's own
+  // "No handler registered for 'triage:…'". That is the designed outcome, not a bug: the
+  // bridge is a door, and in a packaged app there is nothing on the other side of it.
+  //
+  // The renderer half of this feature is compiled out entirely by the `__EQ_DEV_TOOLS__`
+  // define (electron.vite.config.ts), so in practice nothing in a shipped build ever calls
+  // them either. Two independent mechanisms, deliberately.
+  //
+  // Everything here reads the OWNER'S feedback backlog with the launching shell's AWS
+  // credentials. Possession of those credentials is the access control.
+  /** The filtered backlog. Every field of the query is re-validated at the handler. */
+  triageList: (query: TriageListQuery): Promise<TriageResult<TriageRow[]>> =>
+    ipcRenderer.invoke(IPC.triageList, query),
+  /** One full record, incl. the contact and the S3-resolved `present`/`missing` log state. */
+  triageDetail: (reportId: string): Promise<TriageResult<TriageDetail | null>> =>
+    ipcRenderer.invoke(IPC.triageDetail, reportId),
+  /** A report's log slice as CAPPED text. The gz bytes stay in main and on disk; the lines
+   *  are rendered in a local window and go nowhere else (§10.3 — THE LAW). */
+  triageSlice: (reportId: string): Promise<TriageResult<TriageSlice | null>> =>
+    ipcRenderer.invoke(IPC.triageSlice, reportId),
+  /** status / severity / cluster / dupe-of / note. `issueUrl` is not writable from here. */
+  triagePatch: (reportId: string, patch: TriagePatch): Promise<TriageResult<void>> =>
+    ipcRenderer.invoke(IPC.triagePatch, reportId, patch),
+  /** §3.5 forget: strip the contact, delete the slice object, keep the report itself. */
+  triageForget: (reportId: string): Promise<TriageResult<void>> =>
+    ipcRenderer.invoke(IPC.triageForget, reportId),
+  /** The kill switch + the block list. */
+  triageOps: (): Promise<TriageResult<TriageOpsState>> => ipcRenderer.invoke(IPC.triageOps),
+  /** Set the kill switch. POSITIVE polarity: `false` is what the CLI spells `closed on`. */
+  triageSetAccepting: (accepting: boolean, message?: string): Promise<TriageResult<void>> =>
+    ipcRenderer.invoke(IPC.triageSetAccepting, accepting, message),
+  /** Block / unblock one install id. A block requires a reason; the profile records why. */
+  triageSetBlocked: (
+    installId: string,
+    blocked: boolean,
+    reason?: string
+  ): Promise<TriageResult<void>> =>
+    ipcRenderer.invoke(IPC.triageSetBlocked, installId, blocked, reason),
+  /** The same markdown digest `triage-feedback digest` prints, plus its clusters. */
+  triageDigest: (query: TriageListQuery): Promise<TriageResult<TriageDigest>> =>
+    ipcRenderer.invoke(IPC.triageDigest, query),
+  /** Usage analytics — answers `available:false` until telemetry wave A2 exists. */
+  triageAnalytics: (): Promise<TriageResult<TriageAnalytics>> =>
+    ipcRenderer.invoke(IPC.triageAnalytics),
 
   // ---- frameless window controls (Task #23) ----
   minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),

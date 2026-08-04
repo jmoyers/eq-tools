@@ -204,6 +204,36 @@ export type SpeechInstallResult =
   | { ok: true }
   | { ok: false; reason: SpeechUnavailableReason; message?: string }
 
+/**
+ * WHERE A RUNNING INSTALL IS (W3). `speech:install` resolves only when provisioning has
+ * FINISHED — a ~120 MB download — so the panel that started it needs a second channel to say
+ * anything meanwhile. These land on `speech:installProgress` (main → renderer, broadcast to
+ * the main window) while that one invoke is outstanding.
+ *
+ * The phases are STATES the UI renders, not log lines:
+ *  - 'checking'    → deciding what is already on disk (a re-run of a finished install spends
+ *                    its whole life here and then reports 'done').
+ *  - 'downloading' → bytes are moving; `received`/`total` are the WHOLE install, so a single
+ *                    progress bar is correct across both assets.
+ *  - 'verifying'   → the file is complete and its sha256 is being checked. Deliberately its
+ *                    own phase: it takes a visible second on 92 MB and a bar that sat at 100%
+ *                    in silence reads as a hang.
+ *  - 'done' / 'failed' → terminal, and always sent exactly once (the same verdict the
+ *                    `speech:install` reply carries — this channel never disagrees with it).
+ */
+export interface SpeechInstallProgress {
+  engine: SpeechEngine
+  phase: 'checking' | 'downloading' | 'verifying' | 'done' | 'failed'
+  /** File currently being worked on, when one is ('kokoro-v1.0.int8.onnx'). */
+  asset?: string
+  /** Bytes secured across the whole install so far. */
+  received: number
+  /** Total bytes the install will move (0 while unknown). */
+  total: number
+  /** Human-readable detail for a 'failed' phase. Never shown for the others. */
+  message?: string
+}
+
 /** A single alert definition (persisted, JSON-serializable). */
 export interface AlertDef {
   id: string

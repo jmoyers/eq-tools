@@ -82,6 +82,12 @@ export const IPC = {
   // renderer -> main: provision an engine tier (pinned release, sha256-verified, atomic).
   // Arg: SpeechEngine. Returns SpeechInstallResult.
   speechInstall: 'speech:install',
+  // main -> renderer: where a RUNNING install is (W3). `speech:install` resolves only when a
+  // ~120 MB download has finished, so the panel that started it needs somewhere to hear
+  // 'downloading 40%' meanwhile. Payload: SpeechInstallProgress (shared/alertTypes.ts). Sent
+  // only while an install is in flight, and its terminal phase always matches the invoke's
+  // own verdict.
+  onSpeechInstallProgress: 'speech:installProgress',
   // renderer -> main: read/write the global voice prefs blob (§2). Unlike the three above these
   // are REAL from day one — the store is main-owned, so the Preferences panel has no other door.
   // The setter re-clamps every field at the handler.
@@ -135,6 +141,25 @@ export const IPC = {
   // main -> renderer(overlay): the persisted config changed. Payload: {kind, config}. The overlay
   // ignores pushes that aren't its own kind.
   onOverlayConfig: 'overlay:config',
+
+  // ---- cursor ring + overlay auto-hide (presence-driven settings) ----
+  // Both blobs are main-owned (electron-store), so Preferences has no other door. The setters
+  // are MERGE-PATCHES and every field is re-validated + clamped AT THE HANDLER through
+  // `shared/presencePrefs.ts` — the same normalizer the store migration uses, so a renderer and
+  // a hand-edited file can never disagree about what a valid ring is.
+  // renderer(main app) -> main: read / patch the cursor-ring prefs. Returns CursorRingPrefs.
+  cursorRingGet: 'cursorRing:get',
+  cursorRingSet: 'cursorRing:set',
+  // renderer(main app) -> main: read / patch the overlay auto-hide prefs. Returns OverlayAutoHidePrefs.
+  overlayAutoHideGet: 'overlayAutoHide:get',
+  overlayAutoHideSet: 'overlayAutoHide:set',
+  // main -> renderer(ring window ONLY): the ring's size/thickness changed. Payload CursorRingPrefs.
+  onCursorRingConfig: 'cursorRing:config',
+  // main -> renderer(ring window ONLY): one cursor sample, in the ring window's own CSS px.
+  // THE HOT CHANNEL: ~8 ms cadence, and ONLY while the ring is enabled AND EQ is focused AND
+  // the point actually moved. Nothing is sent otherwise — that gating is the performance
+  // contract, and it is asserted in tests/presence.test.mts.
+  onCursorPoint: 'cursorRing:point',
 
   // ---- auto-update (Task #27; reworked in Task #55) ----
   // main -> renderer: push update lifecycle {state, version?, percent?, message?, checkedAt?}.
@@ -252,6 +277,50 @@ export const IPC = {
   // renderer -> main: submit. Args (draft, {attachLog, windowMinutes}). Never rejects;
   // a network failure resolves with {ok:false, queued:true}. Returns SubmitResult.
   feedbackSubmit: 'feedback:submit',
+
+  // ---- feedback TRIAGE (the dev-only operator tab — src/main/triage/**) ----------------
+  //
+  // ============ DEV BUILDS ONLY. NO SHIPPED APP EVER REGISTERS THESE HANDLERS. ============
+  //
+  // The names live here because every channel name in this app lives here — but nothing in a
+  // packaged build listens on them. Registration happens from `src/main/index.ts` behind
+  // `if (!app.isPackaged && !E2E)` via a dynamic import, and the module it imports reaches
+  // `pg` + `@aws-sdk/*`, which are devDependencies and therefore never packaged. Calling one
+  // of these from a shipped build rejects with "No handler registered", which is the correct
+  // and intended outcome.
+  //
+  // These channels read the OWNER'S FEEDBACK BACKLOG (Aurora DSQL + S3) using the launching
+  // shell's AWS profile (AWS_PROFILE, default 'eqc'). Possession of those IAM credentials is
+  // the access control; there is no password and no server-side read API to secure.
+  //
+  // Every argument is VALIDATED AT THE HANDLER (src/main/triage/validate.ts) — `reportId`
+  // reaches a file path as well as a SQL parameter and must be a 26-character ULID. Every
+  // reply is a `TriageResult<T>` (never a rejection), so an IAM denial renders as prose.
+  //
+  // renderer -> main: the filtered backlog. Arg: TriageListQuery. Returns TriageRow[].
+  triageList: 'triage:list',
+  // renderer -> main: one full record + the S3-resolved log state. Arg: reportId.
+  triageDetail: 'triage:detail',
+  // renderer -> main: download (cached) + gunzip a report's log slice and return CAPPED text.
+  // The gz bytes never cross; at most PREVIEW_MAX_LINES lines do. Arg: reportId.
+  triageSlice: 'triage:slice',
+  // renderer -> main: the triage-only writes (status/severity/cluster/dupe/note). Args:
+  // (reportId, TriagePatch). `issueUrl` is deliberately NOT writable from the UI.
+  triagePatch: 'triage:patch',
+  // renderer -> main: §3.5 forget — strip the contact, delete the slice object, keep the
+  // report. Arg: reportId.
+  triageForget: 'triage:forget',
+  // renderer -> main: the kill switch + block list. Returns TriageOpsState.
+  triageOps: 'triage:ops',
+  // renderer -> main: set the kill switch. POSITIVE polarity — `accepting:false` is what the
+  // CLI spells `closed on`. Args: (accepting, message?).
+  triageSetAccepting: 'triage:setAccepting',
+  // renderer -> main: block/unblock one install. Args: (installId, blocked, reason).
+  triageSetBlocked: 'triage:setBlocked',
+  // renderer -> main: the CLI's markdown digest + its deterministic clusters. Arg: query.
+  triageDigest: 'triage:digest',
+  // renderer -> main: usage analytics. Answers `available:false` until telemetry wave A2.
+  triageAnalytics: 'triage:analytics',
 
   // ---- misc pushes ----
   onLine: 'log:line',

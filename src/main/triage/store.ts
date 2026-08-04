@@ -1,35 +1,46 @@
 /**
- * triageStore.mts — the I/O half of triage: Aurora DSQL + S3, directly over IAM.
+ * store.ts — the I/O half of triage: Aurora DSQL + S3, directly over IAM.
  *
- * THERE IS NO SERVER-SIDE READ API (D4). The dev machine has an AWS profile; this
- * module opens a postgres connection to the DSQL cluster and talks to S3 with the
- * SDK. Building a public, authenticated read endpoint would be a second thing to
- * secure for zero benefit.
+ * RELOCATED from `scripts/triageStore.mts` (unchanged in substance) so that the SAME code
+ * backs both readers: the `triage-feedback` CLI, which still imports it, and the dev-only
+ * triage tab in the app. There is exactly one implementation of "read the backlog", and the
+ * two front ends cannot drift apart.
  *
- * NO PASSWORD EXISTS. DSQL authenticates with a short-lived IAM token that
- * `@aws-sdk/dsql-signer` derives LOCALLY from whatever credentials the CLI is
- * running under. Nothing is stored, nothing is rotated, nothing can be copied out
- * of a config file — which is the same reason the ingest Lambda needs no secret.
- * The CLI connects as `admin` (IAM action `dsql:DbConnectAdmin`, granted to the
- * triage role in iam.tf) because it is the operator identity: it applies the
- * schema and it is the deletion path for `forget` and `wipe`.
+ * ===========================================================================================
+ * WHO CAN USE THIS: whoever holds the owner's AWS credentials. Nobody else. That is the whole
+ * access-control story and it is deliberate.
  *
- * POLITENESS, the same discipline AGENTS.md's scraper law asks of every fetcher in
- * this repo, applied to a paid API instead of someone else's server:
+ *   * NO PASSWORD EXISTS. DSQL authenticates with a short-lived IAM token that
+ *     `@aws-sdk/dsql-signer` derives LOCALLY from whatever credentials the process is running
+ *     under — read from the launching shell's `AWS_PROFILE` (default `eqc`), exactly like the
+ *     CLI. Nothing is stored in the app, nothing is rotated, nothing can be copied out of a
+ *     config file — the same reason the ingest Lambda needs no secret.
+ *   * A build shipped to a user has no credentials, so every statement here would fail at the
+ *     IAM boundary. It also has no `@aws-sdk/*` to load in the first place: those are
+ *     devDependencies, which electron-builder never packages. The dev-flag guard in
+ *     `src/main/index.ts` is the third, outermost lock, not the only one.
+ *   * The CLI connects as `admin` (IAM action `dsql:DbConnectAdmin`, granted to the triage
+ *     role in iam.tf) because it is the operator identity: it applies the schema and it is the
+ *     deletion path for `forget` and `wipe`.
+ * ===========================================================================================
+ *
+ * THERE IS NO SERVER-SIDE READ API (D4). The dev machine has an AWS profile; this module opens
+ * a postgres connection to the DSQL cluster and talks to S3 with the SDK. Building a public,
+ * authenticated read endpoint would be a second thing to secure for zero benefit.
+ *
+ * POLITENESS, the same discipline AGENTS.md's scraper law asks of every fetcher in this repo,
+ * applied to a paid API instead of someone else's server:
  *   * CACHE FIRST — `terraform output -json` is shelled out ONCE and cached in
- *     .triage/stack.json; a downloaded slice is written to .triage/slices/ and a
- *     second `show` never re-downloads it. Re-runs are free.
+ *     .triage/stack.json; a downloaded slice is written to .triage/slices/ and a second read
+ *     never re-downloads it. Re-runs are free, and the app shares the CLI's cache.
  *   * ONE ROUND TRIP — every read is a single indexed statement with a LIMIT.
- *     The DynamoDB version paged and paused between pages because a `--since 90d`
- *     sweep was N queries; in SQL it is one, so there is nothing to pace.
- *   * BACK OFF — DSQL is optimistic: a write that raced is aborted at commit with
- *     SQLSTATE 40001 and must be retried, not hammered. `withRetry` is bounded
- *     and jittered.
- *   * IDEMPOTENT — every mutation is keyed by primary key; re-running a command
- *     converges instead of duplicating.
+ *   * BACK OFF — DSQL is optimistic: a write that raced is aborted at commit with SQLSTATE
+ *     40001 and must be retried, not hammered. `withRetry` is bounded and jittered.
+ *   * IDEMPOTENT — every mutation is keyed by primary key; re-running a command converges
+ *     instead of duplicating.
  *
- * PHYSICAL NAMES ARE NEVER COMMITTED. Everything comes from the Terraform outputs
- * at run time; .triage/ is gitignored.
+ * PHYSICAL NAMES ARE NEVER COMMITTED. Everything comes from the Terraform outputs at run time;
+ * .triage/ is gitignored.
  */
 
 import pg from 'pg'
@@ -44,15 +55,35 @@ import {
 import { fromTemporaryCredentials } from '@aws-sdk/credential-providers'
 import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { join, resolve } from 'node:path'
+import { dirname, join } from 'node:path'
 import { gunzipSync } from 'node:zlib'
 import { setTimeout as sleep } from 'node:timers/promises'
-import type { TriageReport } from './triageCluster.mjs'
-import type { AppChannelTag, FeedbackType, ReportStatus, Severity } from '../src/shared/feedback'
+import type { TriageReport } from '../../../scripts/triageCluster.mjs'
+import type { AppChannelTag, FeedbackType, ReportStatus, Severity } from '../../shared/feedback'
 
 const { Client, types } = pg
 
-const ROOT = resolve(import.meta.dirname, '..')
+/**
+ * The repo root — where `.triage/` and `infra/schema.sql` live.
+ *
+ * This used to be `resolve(import.meta.dirname, '..')`, one fixed hop up from `scripts/`. That
+ * stopped being a single rule the moment the module gained a second caller: under `tsx` it
+ * sits at `src/main/triage/`, and inside the dev app it has been bundled into `out/main/`.
+ * Walking UP for the marker file is the one rule true for both, and it also survives a CLI
+ * invocation from a subdirectory (which the old form handled and a bare `process.cwd()` would
+ * not).
+ */
+function findRepoRoot(): string {
+  let dir = process.cwd()
+  for (;;) {
+    if (existsSync(join(dir, 'infra', 'schema.sql'))) return dir
+    const up = dirname(dir)
+    if (up === dir) return process.cwd()
+    dir = up
+  }
+}
+
+const ROOT = findRepoRoot()
 export const TRIAGE_DIR = join(ROOT, '.triage')
 const STACK_FILE = join(TRIAGE_DIR, 'stack.json')
 const SLICE_DIR = join(TRIAGE_DIR, 'slices')
@@ -342,6 +373,27 @@ export async function getReport(c: Clients, reportId: string): Promise<Row | nul
  */
 export function reportsForInstall(c: Clients, installId: string): Promise<Row[]> {
   return c.query('SELECT * FROM report WHERE install_id = $1', [installId])
+}
+
+/**
+ * The kill-switch row (§9.6), keyed read. `setAccepting` upserts it and the CLI never needed
+ * to read it back — an Ops PANEL does, because a toggle that cannot show its current position
+ * is a button, not a switch. Null when the seed statement has not run against this cluster.
+ */
+export async function getFeedbackConfig(c: Clients): Promise<Row | null> {
+  const rows = await c.query(`SELECT * FROM feedback_config WHERE id = 'FEEDBACK'`)
+  return rows[0] ?? null
+}
+
+/**
+ * The block list. Bounded by a LIMIT like every other read here: this table has one row per
+ * install ever blocked OR unblocked (a `block` followed by an `unblock` leaves a row with
+ * `blocked = false`), so "everything" is not a size the UI should promise to render.
+ */
+export function listInstallProfiles(c: Clients, limit = 200): Promise<Row[]> {
+  return c.query('SELECT * FROM install_profile ORDER BY blocked_at DESC NULLS LAST LIMIT $1', [
+    limit,
+  ])
 }
 
 // ---- writes ------------------------------------------------------------------------

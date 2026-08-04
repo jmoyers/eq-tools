@@ -176,6 +176,21 @@ floating overlay meters. Committed knowledge DBs: mobs (7.9k), items
   world-supplied text (tooltips keep the facts); controls never shrink.
 - Chromium `navigator.clipboard` needs a permission this app denies
   wholesale — clipboard writes route over IPC to main's clipboard API.
+- **A dynamic `import()` is BUNDLED, not externalized** — "it's a devDep so
+  production can't load it" is FALSE by default: the triage tab's first
+  build shipped 917 kB of working AWS SDK into `out/main` with only a
+  boolean guarding it. Dev-only main-process code must ALSO be listed in
+  `externalizeDepsPlugin({ include })` so the emitted chunk carries bare
+  unresolvable `require`s. Measure the built output; never trust the
+  dependency graph's intuition.
+- **Never reference a vite `define` bare.** Defines exist only from
+  dev-server START — config edits never hot-apply, and a bare identifier
+  in a stale server is a `ReferenceError` that blanks the whole app (it
+  did, 2026-08-04). ONE guarded reader
+  (`typeof __X__ !== 'undefined' && __X__`) per flag, everything imports
+  it; a stale server degrades to feature-hidden. Config changes (defines,
+  entries, externals) require the OWNER to restart `npm run dev` — say so
+  in the report.
 - MediaWiki: anonymous `eilimit` caps at 500; >50 pageids per revisions
   batch returns HTTP 200 with ZERO pages and no warning — BATCH=50 is
   measured, not tunable.

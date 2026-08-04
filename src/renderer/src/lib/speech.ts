@@ -349,6 +349,9 @@ async function sayThroughEngine(
     return false
   }
   const audio = new Audio(result.url)
+  // Kokoro synthesizes at speed 1.0 (the cache key is (voice, text) — a baked-in
+  // rate would make one key mean two sounds); the user's rate applies at PLAYBACK.
+  audio.playbackRate = clamp(voicePrefs.rate, 0.5, 2, 1)
   audio.volume = clamp(voicePrefs.volume * (opts.gain ?? 1), 0, 1, 1)
   void audio.play().catch(() => undefined)
   return true

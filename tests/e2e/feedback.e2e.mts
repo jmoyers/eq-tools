@@ -79,6 +79,43 @@ async function setDescription(page: Page, text: string): Promise<void> {
   await sleep(250)
 }
 
+/**
+ * THE STRIP, asserted against a real running app.
+ *
+ * The dev-only feedback-TRIAGE tab (`src/renderer/src/features/triage/**`) is gated on the
+ * compile-time `__EQ_DEV_TOOLS__` define, which `electron-vite build` sets to `false`. This
+ * harness builds exactly that way (`buildIfStale` → `electron-vite build --outDir=out-e2e`), so
+ * this run is production-shaped and the nav row must NOT exist. If it appears here, it appears
+ * in the installer — and the installer would be shipping a button aimed at the owner's backlog.
+ *
+ * Absence is asserted on the DOM, not on the bundle: the grep-for-a-marker proof lives beside
+ * the build, and this proves the user-visible consequence.
+ */
+async function stepTriageStripped(page: Page): Promise<void> {
+  check(
+    'the dev-only Triage tab is STRIPPED from a production-shaped build (no nav row)',
+    (await countOf(page, '[data-testid="nav-triage"]')) === 0
+  )
+  // …and the bridge method the tab would call is a door with nothing behind it. It is still on
+  // the preload (channel names are not secrets), but the handler is registered only when
+  // `!app.isPackaged && !E2E`, so under EQ_E2E=1 an invoke must reject.
+  const reachable = await page.evaluate(async () => {
+    const call = (window as unknown as { eq: Record<string, unknown> }).eq.triageOps
+    if (typeof call !== 'function') return false
+    try {
+      await (call as () => Promise<unknown>)()
+      return true
+    } catch {
+      return false
+    }
+  })
+  check(
+    '…and its IPC handlers are not registered in this build either',
+    reachable === false,
+    `triage:ops ${reachable ? 'ANSWERED' : 'rejected, as designed'}`
+  )
+}
+
 /** The dialog opens from the drawer's footer row, which is an ACTION, not a view. */
 async function stepOpen(page: Page): Promise<boolean> {
   await page.click('[data-testid="nav-feedback"]', { timeout: 60_000 })
@@ -236,6 +273,7 @@ async function main(): Promise<void> {
     page.on('pageerror', (e) => consoleErrors.push(String(e)))
 
     await page.waitForSelector('[data-testid="nav-feedback"]', { timeout: 60_000 })
+    await stepTriageStripped(page)
     if (await stepOpen(page)) {
       await stepDarkBuild(page)
       await stepValidatorGate(page)

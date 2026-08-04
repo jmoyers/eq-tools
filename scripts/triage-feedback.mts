@@ -20,6 +20,11 @@
  *
  * AUTH: `--profile <name>` (the deploy profile already performs role assumption via
  * source_profile/role_arn) or `--role-arn <arn>` to assume the triage role directly.
+ *
+ * THE I/O HALF NOW LIVES IN `src/main/triage/store.ts`, not beside this file. It moved when
+ * the dev-only triage TAB landed in the app: both front ends read the same backlog, so there
+ * is exactly one implementation of every statement and they cannot drift. Nothing about this
+ * CLI changed — same commands, same flags, same output.
  */
 
 import { parseArgs } from 'node:util'
@@ -54,7 +59,7 @@ import {
   type Clients,
   type ListFilter,
   type Row,
-} from './triageStore.mjs'
+} from '../src/main/triage/store'
 import {
   REPORT_STATUSES,
   SEVERITIES,

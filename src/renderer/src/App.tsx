@@ -22,6 +22,11 @@ import AlertsView from './features/alerts/AlertsView'
 import BuffsView from './features/buffs/BuffsView'
 import PreferencesView from './features/preferences/PreferencesView'
 import FeedbackDialog from './features/feedback/FeedbackDialog'
+// DEV-ONLY. `devTriage` holds the single `DEV_TOOLS ? lazy(() => import(…)) : null`; in a build
+// without the flag its only use below is dead code, so rollup drops the import and the entire
+// triage feature with it. See devTriage.tsx / devFlags.ts.
+import DevTriageView from './devTriage'
+import { DEV_TOOLS } from './devFlags'
 import { useFeedbackDialog, type FeedbackPrefill } from './features/feedback/useFeedback'
 import AlertPlayer, { fireAppSignal } from './features/alerts/player'
 import { getBossData } from './data'
@@ -177,6 +182,9 @@ function ViewContent({
   onOpenLeveling: () => void
 }): JSX.Element {
   if (view === 'preferences') return <PreferencesView onSendFeedback={onSendFeedback} />
+  // DEV-ONLY, and ABOVE the no-characters gate on purpose: the triage tab reads the cloud
+  // backlog, not the game log, so a machine with no EverQuest install must still reach it.
+  if (DEV_TOOLS && view === 'triage') return <DevTriageView />
   if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
   return (
     <>

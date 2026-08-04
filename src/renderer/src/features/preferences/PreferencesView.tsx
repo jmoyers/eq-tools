@@ -23,6 +23,11 @@
 //   Game     — EverQuest install-folder discovery/override (effective path + how it
 //             resolved + a folder picker + character-log validation). Lives in
 //             ./EqFolderSetting.tsx, like Updates does — this file only names it.
+//   Overlays — when the floating meters get out of the way: hide them while EverQuest isn't
+//             running (on by default) and/or while it isn't the window you're in (off).
+//             Lives in ./OverlayAutoHideSetting.tsx.
+//   Cursor ring — the opt-in white halo that follows the mouse over the EQ window (off by
+//             default; size + thickness). Lives in ./CursorRingSetting.tsx.
 //   Voice    — spoken alerts (docs/plans/voice-alerts.md §2): the master switch, engine tier,
 //             default voice + preview, speed and volume. Lives in ./VoiceSetting.tsx.
 //   Profiles — export your GLOBAL settings as a paste-safe share string / file, and import
@@ -53,6 +58,8 @@ import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import FeedbackIcon from '@mui/icons-material/Feedback'
+import LayersIcon from '@mui/icons-material/Layers'
+import AdjustIcon from '@mui/icons-material/Adjust'
 import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
 import { ClassComboSetting } from '../profiles/ClassComboPanel'
 import { useCombinePetRow } from '../combat/useCombatPrefs'
@@ -61,6 +68,8 @@ import type { UpdateStatus } from '@shared/types'
 import { EqFolderSetting } from './EqFolderSetting'
 import { FeedbackSetting, type OpenFeedback } from './FeedbackSetting'
 import { VoiceSetting } from './VoiceSetting'
+import { OverlayAutoHideSetting } from './OverlayAutoHideSetting'
+import { CursorRingSetting } from './CursorRingSetting'
 import { normalizeQuery } from '../../lib/search'
 
 // -------------------------------------------------------------- Combat section
@@ -140,6 +149,46 @@ function voiceSection(): PrefSection {
   }
 }
 
+/**
+ * The floating overlays' auto-hide rules. Its own factory for the same reason `voiceSection` is
+ * one — `buildSections` sits against the 100-code-line ceiling — and, like that one, it depends
+ * on none of buildSections' inputs.
+ */
+function overlaysSection(): PrefSection {
+  return {
+    id: 'overlays',
+    label: 'Overlays',
+    icon: <LayersIcon fontSize="small" />,
+    items: [
+      {
+        id: 'overlay-autohide',
+        label: 'Hide overlays automatically',
+        keywords:
+          'overlay overlays meter meters hide auto autohide show running focus focused unfocused alt tab background desktop game closed floating',
+        content: <OverlayAutoHideSetting />
+      }
+    ]
+  }
+}
+
+/** The cursor ring (the "where is my mouse" halo). Same factory rationale as above. */
+function cursorRingSection(): PrefSection {
+  return {
+    id: 'cursor',
+    label: 'Cursor ring',
+    icon: <AdjustIcon fontSize="small" />,
+    items: [
+      {
+        id: 'cursor-ring',
+        label: 'Cursor ring',
+        keywords:
+          'cursor mouse pointer ring circle halo highlight find lost locate ultimate size thickness white',
+        content: <CursorRingSetting />
+      }
+    ]
+  }
+}
+
 /** The whole settings table, in render order. Rebuilt only when its inputs change. */
 function buildSections(
   version: string,
@@ -173,6 +222,8 @@ function buildSections(
         }
       ]
     },
+    overlaysSection(),
+    cursorRingSection(),
     voiceSection(),
     {
       id: 'profiles',

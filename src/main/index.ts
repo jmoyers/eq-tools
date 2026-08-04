@@ -32,9 +32,12 @@ import { app, BrowserWindow, protocol, session } from 'electron'
 import { IPC } from '../shared/ipc'
 import { errorLogPath, logError, logInfo } from './errorLog'
 import { saveUserOverlay } from './data/overlayPersistence'
-import { installImageCacheProtocol, registerImageCacheSchemes } from './imageCache'
+import { registerAppSchemes } from './appSchemes'
+import { installImageCacheProtocol } from './imageCache'
+import { installSpeechCacheProtocol } from './speech/cache'
 import { registerIpc } from './ipc'
 import { bus, buffsModule, epoch, sessionDetector } from './pipeline'
+import { initPresenceEffects, stopPresenceEffects } from './presenceEffects'
 import { provisionDefaultPacks } from './provisionPacks'
 import { getActiveCharacter, startTailing, stopSession } from './session'
 import { getOverlayConfig } from './store'
@@ -49,10 +52,11 @@ import {
 } from './windows'
 import { OVERLAY_KINDS } from '../shared/types'
 
-// --- permanent image cache (eqimg://) ---
+// --- custom schemes: the permanent image cache (eqimg://) and the speech cache (eqspeech://) ---
 // Scheme privileges MUST be declared before the app's `ready` event, so this runs at module
-// scope; the handler itself is installed in whenReady below. See imageCache.ts.
-registerImageCacheSchemes(protocol)
+// scope; each handler itself is installed in whenReady below. Electron permits exactly ONE
+// registerSchemesAsPrivileged call, which is why both schemes go through appSchemes.ts.
+registerAppSchemes(protocol)
 
 // Epoch detection subscription (Task #49; launch-anchored in Task #50). Runs LAST — after
 // pipeline.ts's registry + combat subscriptions, which is why it is added here rather than
@@ -97,6 +101,39 @@ bus.subscribe((ev, live) => {
   if (gap) bus.emitDerived(gap, live)
 })
 
+// ---------------------------------------------------------------------------------------
+// DEV-ONLY: the feedback-triage IPC surface (src/main/triage/**).
+// ---------------------------------------------------------------------------------------
+//
+// This is the operator's window onto the feedback backlog — the same Aurora DSQL rows and S3
+// slices `scripts/triage-feedback.mts` reads, over the same IAM door. It exists in the DEV app
+// and nowhere else, and there are THREE independent reasons a shipped build cannot reach it:
+//
+//   1. THIS GATE. `app.isPackaged` is false only in a dev run; `E2E` excludes the headless
+//      harness, which builds production-shaped and must stay off the network. The import is
+//      DYNAMIC, so a packaged build never even evaluates the module.
+//   2. THE DEPENDENCIES. That module reaches `pg` and `@aws-sdk/*` — devDependencies, which
+//      electron-builder never packages. A build with this gate patched out still could not
+//      resolve them. The property is structural, not a runtime check.
+//   3. THE CREDENTIALS. Auth is an IAM token derived locally from the LAUNCHING SHELL's AWS
+//      profile (AWS_PROFILE, default 'eqc'). There is no password to leak, and a shell without
+//      the owner's credentials gets IAM denials on the first statement.
+//
+// Failure to load is logged and startup continues: a dev tool must never be able to take the
+// app down. `closeDevTriage` is the teardown — a live DSQL socket would otherwise hold the
+// process open, the same hang the CLI's `finally` exists for.
+let closeDevTriage: (() => Promise<void>) | null = null
+
+function registerDevTriageIpc(): void {
+  if (app.isPackaged || E2E) return
+  void import('./triage/ipc')
+    .then(({ registerTriageIpc }) => {
+      closeDevTriage = registerTriageIpc()
+      logInfo('[everquest-companion] Dev triage IPC registered (dev build only, AWS profile auth).')
+    })
+    .catch((err: unknown) => logError('main:triage', err))
+}
+
 // Single-instance lock (Task #23): a second launch (e.g. re-running the installed
 // app, or an auto-update restart) must not spin up a second window tailing the same
 // log. If we don't get the lock, quit immediately; the primary instance receives a
@@ -123,6 +160,7 @@ if (!gotSingleInstanceLock) {
       `[everquest-companion] Channel '${CHANNEL}' — userData ${USER_DATA}, error log ${errorLogPath()}`
     )
     registerIpc()
+    registerDevTriageIpc()
     // Trust boundary, installed BEFORE the first window exists: the catch-all fires for every
     // webContents this process will ever create (main window, each overlay, anything a future
     // feature adds), which is the only placement that can't be forgotten later.
@@ -136,6 +174,14 @@ if (!gotSingleInstanceLock) {
     installImageCacheProtocol(protocol, {
       userData: USER_DATA,
       onError: (msg, err) => logError('main:imageCache', { message: msg, err })
+    })
+    // …and `eqspeech://<hash>` from <userData>/speech-cache, beside it and for the same
+    // reason: one read-only handler on the default session serves every window. It NEVER
+    // synthesizes and never touches the network — only `speech:say` can cause a synthesis
+    // (see speech/cache.ts).
+    installSpeechCacheProtocol(protocol, {
+      userData: USER_DATA,
+      onError: (msg, err) => logError('main:speechCache', { message: msg, err })
     })
     createMainWindow()
     void startTailing()
@@ -163,6 +209,11 @@ if (!gotSingleInstanceLock) {
       if (getOverlayConfig(kind).open) createOverlayWindow(kind)
     }
 
+    // Presence-driven features (overlay auto-hide + the cursor ring). LAST, because both act on
+    // windows that must already exist. Costs one store read when both are off — which is the
+    // default install: `presenceNeeded()` decides whether the watcher child is spawned at all.
+    initPresenceEffects()
+
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createMainWindow()
     })
@@ -171,8 +222,14 @@ if (!gotSingleInstanceLock) {
 
 app.on('window-all-closed', () => {
   stopSession()
+  // Kill the presence watcher child + the cursor stream. Both already unref their timers, but a
+  // child process is not a timer: nothing else would reap it.
+  stopPresenceEffects()
   // Flush the learned message overlay one last time so the final session's observations
   // aren't lost between debounced saves (Task #36).
   saveUserOverlay(buffsModule.overlaySnapshot())
+  // Dev only, and null in every other build: a live DSQL socket is not a timer and would hold
+  // the process open long past the last window.
+  if (closeDevTriage) void closeDevTriage().catch((err: unknown) => logError('main:triage', err))
   if (process.platform !== 'darwin') app.quit()
 })
