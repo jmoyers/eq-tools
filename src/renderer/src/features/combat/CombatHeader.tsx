@@ -57,14 +57,18 @@ function ModifierSlot({
         alignItems="baseline"
         data-testid={`stance-slot-${slot}`}
         sx={{
+          // SHRINKABLE, in that order: minWidth 0 lets the pill give ground when the lens line
+          // runs out of room, and the value below ellipsizes rather than pushing the line into
+          // a second row (the header's height is the thing that must not move — see the header
+          // Paper). The tooltip above always carries the full value, so nothing is lost.
           minWidth: 0,
-          px: 0.6,
+          px: 0.5,
           py: '1px',
           borderRadius: 999,
           bgcolor: 'rgba(255,255,255,0.04)'
         }}
       >
-        <Typography variant="caption" sx={{ fontSize: 10, color: 'text.disabled' }}>
+        <Typography variant="caption" sx={{ fontSize: 10, color: 'text.disabled', flexShrink: 0 }}>
           {slot}:
         </Typography>
         <Typography variant="caption" noWrap sx={{ color, fontWeight: 600, textTransform: 'capitalize' }}>
@@ -407,15 +411,24 @@ function CombinePetsChip({
   )
 }
 
-/** The in-combat dot: state, not a control. */
+/**
+ * The in-combat dot: state, not a control.
+ *
+ * The DOT is the signal; the words next to it are the label. Below `lg` they are dropped and the
+ * tooltip carries them, because this is the cheapest ~50px on the lens line and at the 900px
+ * minimum window that line has no room to spare (three modifier pills now live at the end of it).
+ * A green dot that explains itself on hover is a fair trade for a header that stays one bar.
+ */
 function InCombatDot(): React.JSX.Element {
   return (
-    <Stack direction="row" spacing={0.5} alignItems="center">
-      <CircleIcon sx={{ fontSize: 8, color: 'success.main' }} />
-      <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-        in combat
-      </Typography>
-    </Stack>
+    <Tooltip title="In combat">
+      <Stack direction="row" spacing={0.5} alignItems="center" sx={{ flexShrink: 0 }}>
+        <CircleIcon sx={{ fontSize: 8, color: 'success.main' }} />
+        <Typography variant="caption" noWrap sx={{ color: 'text.secondary', display: { xs: 'none', lg: 'block' } }}>
+          in combat
+        </Typography>
+      </Stack>
+    </Tooltip>
   )
 }
 
@@ -426,14 +439,23 @@ function hasPassiveStatus(snap: CombatSnapshot | null): boolean {
   )
 }
 
-/** Everything past the lens line's divider is READ-ONLY state, not a control. */
+/**
+ * Everything past the lens line's divider is READ-ONLY state, not a control.
+ *
+ * It is also the only part of the bar that GROWS with the world (a third modifier slot arrived
+ * with blade coats; the values are log-supplied names of unbounded length), so it is the part
+ * that gives: one shrinkable group, `minWidth: 0`, whose pills ellipsize under pressure. The
+ * controls beside it never shrink — a half-word button is useless, an abbreviated readout is not.
+ */
 function PassiveStatus({ snap }: { snap: CombatSnapshot | null }): React.JSX.Element | null {
   if (!hasPassiveStatus(snap)) return null
   return (
     <>
       <Divider orientation="vertical" flexItem sx={{ my: 0.25 }} />
-      {snap?.stance && <StanceReadout stance={snap.stance} poison={snap.poison} />}
-      {snap?.inCombat && <InCombatDot />}
+      <Stack direction="row" spacing={0.5} alignItems="center" sx={{ minWidth: 0, overflow: 'hidden' }}>
+        {snap?.stance && <StanceReadout stance={snap.stance} poison={snap.poison} />}
+        {snap?.inCombat && <InCombatDot />}
+      </Stack>
     </>
   )
 }
@@ -496,18 +518,11 @@ export function CombatHeader(p: CombatHeaderProps): React.JSX.Element {
         now={p.now}
       />
 
-      {/* ── LINE 2: LENS + REFINEMENTS ── controls left, passive state right. It wraps (rather
-          than overflows) if a very long modifier name ever meets a very narrow window; at the
-          900px minimum window it is one line. */}
-      <Stack
-        direction="row"
-        spacing={0.75}
-        rowGap={0.5}
-        alignItems="center"
-        flexWrap="wrap"
-        useFlexGap
-        sx={{ mt: 0.5, minWidth: 0 }}
-      >
+      {/* ── LINE 2: LENS + REFINEMENTS ── controls left, passive state right. It NEVER wraps:
+          wrapping turns content growth into HEIGHT, and this bar's whole contract is that it
+          stays two ranks (the headless harness measures it). Overflow is absorbed by the passive
+          readout instead, which shrinks and ellipsizes with its tooltips intact. */}
+      <Stack direction="row" spacing={0.5} alignItems="center" flexWrap="nowrap" useFlexGap sx={{ mt: 0.5, minWidth: 0 }}>
         <ViewSwitch view={p.view} setView={p.setView} noTimeline={p.noTimeline} />
 
         {p.view === 'dash' && <DirectionFilter mode={p.mode} setMode={p.setMode} />}
