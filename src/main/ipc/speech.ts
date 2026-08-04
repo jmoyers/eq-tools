@@ -49,6 +49,7 @@ import { IPC } from '../../shared/ipc'
 import { MAX_SPEECH_CHARS, SPEECH_ENGINES, normalizeVoicePrefs } from '../../shared/speechText'
 import { logError, logInfo } from '../errorLog'
 import { createSpeechEngine } from '../speech/engine'
+import { KOKORO_TOTAL_BYTES } from '../speech/pinned'
 import { listKokoroVoices, provisionKokoro } from '../speech/provision'
 import { getVoicePrefs, setVoicePrefs } from '../store'
 import { sendToMain } from '../windows'
@@ -150,6 +151,14 @@ export function registerSpeechIpc(): void {
     if (engineId === 'system') return { ok: true }
     if (E2E) return { ok: false, reason: 'not-implemented', message: 'downloads are disabled in e2e' }
     return installing ?? startInstall()
+  })
+
+  ipcMain.handle(IPC.speechInstallSize, (_e, engineId: unknown): number => {
+    // The price of the download, read from the same pinned table the downloader uses — so the
+    // "~115 MB" the button promises is the sum of the two assets it will actually fetch. The
+    // system tier downloads nothing, and so does an engine id we do not recognize.
+    if (typeof engineId !== 'string' || !(SPEECH_ENGINES as readonly string[]).includes(engineId)) return 0
+    return engineId === 'kokoro' ? KOKORO_TOTAL_BYTES : 0
   })
 
   ipcMain.handle(IPC.voicePrefsGet, (): VoicePrefs => getVoicePrefs())

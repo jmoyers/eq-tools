@@ -82,6 +82,12 @@ export const IPC = {
   // renderer -> main: provision an engine tier (pinned release, sha256-verified, atomic).
   // Arg: SpeechEngine. Returns SpeechInstallResult.
   speechInstall: 'speech:install',
+  // renderer -> main: how many bytes provisioning a tier would download, so the button can say
+  // the price before the user pays it. Arg: SpeechEngine. Returns a number (0 for a tier with
+  // nothing to download). It is an IPC read rather than a shared constant because the sizes live
+  // with the sha256s in main's pinned.ts — one file decides what we download, and a second copy
+  // of the number in shared/ could drift from the bytes actually fetched.
+  speechInstallSize: 'speech:installSize',
   // main -> renderer: where a RUNNING install is (W3). `speech:install` resolves only when a
   // ~120 MB download has finished, so the panel that started it needs somewhere to hear
   // 'downloading 40%' meanwhile. Payload: SpeechInstallProgress (shared/alertTypes.ts). Sent

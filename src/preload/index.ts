@@ -298,6 +298,10 @@ const api = {
    *  only when the ~120 MB download has FINISHED — subscribe below to render it meanwhile. */
   speechInstall: (engine: SpeechEngine): Promise<SpeechInstallResult> =>
     ipcRenderer.invoke(IPC.speechInstall, engine),
+  /** Bytes `speechInstall` would download for a tier (0 for one that downloads nothing). Read
+   *  from main's pinned asset table so the UI states the real price, never a copied number. */
+  speechInstallSize: (engine: SpeechEngine): Promise<number> =>
+    ipcRenderer.invoke(IPC.speechInstallSize, engine),
   /** Subscribe to install progress while `speechInstall` is outstanding. The terminal
    *  'done'/'failed' phase always matches the verdict that invoke resolves with. */
   onSpeechInstallProgress: (cb: (progress: SpeechInstallProgress) => void): (() => void) => {

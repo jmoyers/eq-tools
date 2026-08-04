@@ -139,6 +139,40 @@ async function stepPreview(page: Page): Promise<void> {
   )
 }
 
+/**
+ * §2 (W3): the DOWNLOADED tier states its price and its refusal, in the panel.
+ *
+ * The e2e channel declines to download (a throwaway userData would re-fetch ~120 MB every run),
+ * which is exactly what makes this cheap AND worth asserting: clicking Download proves the button
+ * reaches main, and the refusal proves the reason lands INLINE instead of vanishing into a
+ * promise. The tier is put back to 'system' afterwards so the later steps see the default.
+ */
+async function stepKokoroInstall(page: Page): Promise<void> {
+  await selectValue(page, 'pref-voice-engine', 'kokoro')
+  check(
+    'choosing the downloaded tier says plainly that it is not installed',
+    (await countOf(page, '[data-testid="pref-voice-not-installed"]')) === 1
+  )
+  // `innerText` is the RENDERED text, and MUI Buttons uppercase it — match case-insensitively
+  // rather than pinning a theme decision this spec has no opinion about.
+  const label = (await textOf(page, '[data-testid="pref-voice-install"]')).replace(/\s+/g, ' ').trim()
+  check(
+    '…and offers the download, stating what it costs BEFORE the user pays it',
+    /^download natural voice \(~\d+ MB\)$/i.test(label),
+    label
+  )
+
+  await page.click('[data-testid="pref-voice-install"]')
+  await page.waitForSelector('[data-testid="pref-voice-install-error"]', { timeout: 20_000 })
+  const failure = (await textOf(page, '[data-testid="pref-voice-install-error"]')).replace(/\s+/g, ' ')
+  check(
+    'clicking it reaches main, and main’s refusal is rendered inline with its reason',
+    failure.includes('disabled in e2e'),
+    failure
+  )
+  await selectValue(page, 'pref-voice-engine', 'system')
+}
+
 /** The alert name the dialog is editing, read off its own title ("Edit alert — <name>"). */
 async function editingName(page: Page): Promise<string> {
   const title = (await textOf(page, '[data-testid="alert-dialog"] .MuiDialogTitle-root')).replace(/\s+/g, ' ').trim()
@@ -225,6 +259,7 @@ async function main(): Promise<void> {
     if (await stepPanel(page)) {
       await stepEnable(page)
       await stepPreview(page)
+      await stepKokoroInstall(page)
       const name = await stepEditor(page)
       if (name) await stepFire(page, name)
       else note('no seeded alert to edit this run — the firing path is not asserted')

@@ -15,11 +15,16 @@ import type { SpeechEngine, SpeechVoice } from '@shared/types'
 import { listVoices } from './speech'
 
 /**
- * The voices of one engine tier, or `[]` while they load — and `[]` FOREVER for a tier that is
- * not installed, which is not an error but the accurate inventory (the kokoro row renders
+ * The voices of one engine tier, or `[]` while they load — and `[]` for a tier that is not
+ * installed, which is not an error but the accurate inventory (the kokoro row renders
  * "not installed" from exactly this emptiness, per voice-alerts §2).
+ *
+ * `refreshKey` is the seam for the one thing that CHANGES a tier's inventory while the panel is
+ * open: finishing the Kokoro download. Engine alone is not enough — the tier the user is looking
+ * at is the same tier before and after the install, so a bump of this number is what re-asks. Any
+ * changing value works; the preferences panel counts completed installs.
  */
-export function useVoiceOptions(engine: SpeechEngine): SpeechVoice[] {
+export function useVoiceOptions(engine: SpeechEngine, refreshKey = 0): SpeechVoice[] {
   const [voices, setVoices] = useState<SpeechVoice[]>([])
   useEffect(() => {
     let alive = true
@@ -29,6 +34,6 @@ export function useVoiceOptions(engine: SpeechEngine): SpeechVoice[] {
     return () => {
       alive = false
     }
-  }, [engine])
+  }, [engine, refreshKey])
   return voices
 }
