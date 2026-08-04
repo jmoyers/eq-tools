@@ -53,7 +53,7 @@
     "@mui/material": "^6.1.6",
     "@mui/x-data-grid": "^7.22.2",
     "chokidar": "^4.0.1",
-    "electron-store": "^8.2.0",
+    "electron-store": "^11.0.2",
     "electron-updater": "^6.8.9",
     "onnxruntime-node": "1.20.1",
     "phonemizer": "1.2.1",
