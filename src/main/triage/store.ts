@@ -305,11 +305,9 @@ const num = (v: unknown, fallback = 0): number => (typeof v === 'number' ? v : f
 
 /** Report row -> the PII-free projection clustering and the digest work on. */
 export function toTriageReport(row: Row): TriageReport {
-  const title = str(row.title)
   return {
     reportId: str(row.report_id),
     type: str(row.report_type, 'bug') as FeedbackType,
-    ...(title ? { title } : {}),
     description: str(row.description),
     appVersion: str(row.app_version, '?'),
     platform: str(row.platform, '?'),
@@ -470,15 +468,19 @@ export async function setAccepting(c: Clients, accepting: boolean, message?: str
 }
 
 /**
- * `forget` (§3.5): the ONE PII field goes, the description stays — it is the bug
- * report, and keeping it is why "we deleted your contact details" is not a lie about
- * the rest. `redacted_at` records that it happened.
+ * `forget` (§3.5): stamp the report as redacted. The caller has just deleted the log
+ * slice object; this records on the row that it happened, so a later reader can tell a
+ * report that never attached a slice from one whose slice was destroyed on request.
+ *
+ * IT NO LONGER CLEARS A CONTACT FIELD because there is no longer one to clear — `title`
+ * and `contact` left the wire contract and then the schema. The description stays, as it
+ * always did: it IS the bug report.
  */
-export async function redactContact(c: Clients, reportId: string): Promise<void> {
-  const rows = await c.execute(
-    'UPDATE report SET contact = NULL, redacted_at = $1 WHERE report_id = $2',
-    [Date.now(), reportId],
-  )
+export async function stampRedacted(c: Clients, reportId: string): Promise<void> {
+  const rows = await c.execute('UPDATE report SET redacted_at = $1 WHERE report_id = $2', [
+    Date.now(),
+    reportId,
+  ])
   if (rows === 0) throw new Error(`no such report: ${reportId}`)
 }
 

@@ -564,7 +564,7 @@ const api = {
   /** status / severity / cluster / dupe-of / note. `issueUrl` is not writable from here. */
   triagePatch: (reportId: string, patch: TriagePatch): Promise<TriageResult<void>> =>
     ipcRenderer.invoke(IPC.triagePatch, reportId, patch),
-  /** §3.5 forget: strip the contact, delete the slice object, keep the report itself. */
+  /** §3.5 forget: delete the slice object and stamp the redaction, keep the report itself. */
   triageForget: (reportId: string): Promise<TriageResult<void>> =>
     ipcRenderer.invoke(IPC.triageForget, reportId),
   /** The kill switch + the block list. */

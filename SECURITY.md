@@ -84,7 +84,7 @@ AWS account, and the whole stack is in this repo under [`infra/`](infra/).
 | --- | --- |
 | The report itself — type, your description, the version block | **indefinitely**. It *is* the bug backlog; deleting it would mean losing the bug. |
 | An attached log slice | **90 days**, then the object expires automatically. This is an S3 lifecycle rule on the bucket, not a script we have to remember to run — and versioning is off, so an expired or deleted object is gone rather than shadowed by an old version. |
-| Contact details | Reports no longer have a contact field — anything you want us to have goes in the description, where you can see it. Rows filed before that change still carry one, and it can be stripped on request without touching the report. |
+| Contact details | **The field is gone, not hidden.** Reports have no contact field — anything you want us to have goes in the description, where you can see it. The database column that older reports used has been removed from the schema, and the values it held are destroyed rather than kept: there is nothing left to strip on request, because there is nothing left. |
 | API gateway access logs, which include your source IP | **14 days**, then CloudWatch drops them. They exist for one reason: if the public endpoint is ever flooded, there is evidence for two weeks. **Your IP is never written onto a report and the two are never joined** — there is no query that turns an access log line back into "who filed what". |
 | Rate-limit counters and duplicate-send keys | Days, not weeks (3 and 7 respectively), then deleted. |
 
@@ -93,10 +93,10 @@ send — keep it. Quote that id in a
 [GitHub issue](https://github.com/jmoyers/everquest-companion/issues) (or a
 [private advisory](https://github.com/jmoyers/everquest-companion/security/advisories/new)
 if you'd rather it not be public) and say what you want removed. Deleting a slice
-deletes the object outright; stripping contact details clears the field and stamps the
-row so we can tell it was done. The description itself stays unless you ask for the
-whole report to go, in which case the report and its slice both go — that is what the
-`wipe` path in the triage tool exists for.
+deletes the object outright and stamps the row so we can tell it was done. The
+description itself stays unless you ask for the whole report to go, in which case the
+report and its slice both go — that is what the `wipe` path in the triage tool exists
+for.
 
 Two things about how the collected data is handled, because they bound the damage a
 mistake could do: **a log slice is never pasted into a public GitHub issue** (the repo

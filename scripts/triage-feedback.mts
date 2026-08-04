@@ -49,12 +49,12 @@ import {
   logKeyOf,
   logObjectExists,
   makeClients,
-  redactContact,
   reportsForInstall,
   SCHEMA_FILE,
   setAccepting,
   setBlocked,
   setTriage,
+  stampRedacted,
   toTriageReport,
   type Clients,
   type ListFilter,
@@ -83,7 +83,7 @@ const USAGE = `triage-feedback <command> [options]
   set     <reportId...> [--status S] [--severity p0..p3] [--cluster ID]
           [--dupe-of ID] [--note "..."] [--stdin]
   issue   <reportId>                  gh issue create; stamps issueUrl back
-  forget  <reportId>                  strip contact + delete the slice object
+  forget  <reportId>                  delete the slice object + stamp the redaction
   wipe    --install <installId>       delete every report + object from an install
   block   <installId> --reason "..."  |  unblock <installId>
   closed  <on|off> [--message "..."]  the kill switch (instant, no deploy)
@@ -196,7 +196,7 @@ async function cmdList(ctx: Ctx): Promise<void> {
   }
   for (const row of rows) {
     const r = toTriageReport(row)
-    const head = (r.title ?? r.description).replace(/\s+/g, ' ').slice(0, 60)
+    const head = r.description.replace(/\s+/g, ' ').slice(0, 60)
     console.log(
       `${r.reportId}  ${shortDate(r.receivedAt)}  ${r.type.padEnd(7)} ${r.status.padEnd(9)} ` +
         `${r.appVersion.padEnd(8)} ${r.hasLog ? 'log' : '   '} ${r.spamScore.toString().padStart(3)}  ${head}`,
@@ -300,7 +300,9 @@ async function cmdIssue(ctx: Ctx): Promise<void> {
   if (!row) throw new Error(`no such report: ${reportId}`)
   const r = toTriageReport(row)
 
-  const title = (r.title ?? r.description).replace(/\s+/g, ' ').slice(0, 100)
+  // The issue title is the first 100 characters of the description — reports carry no title
+  // of their own any more, so there is nothing to prefer over it.
+  const title = r.description.replace(/\s+/g, ' ').slice(0, 100)
   const body = issueBody(row, r)
   // THE LAW. Refuse rather than trust ourselves to have been careful.
   assertNoLogSlice(`${title}\n${body}`, `a public issue for ${reportId}`)
@@ -314,6 +316,15 @@ async function cmdIssue(ctx: Ctx): Promise<void> {
   console.log(url)
 }
 
+/**
+ * `forget` — the deletion-request path, minus a job it no longer has.
+ *
+ * It used to do two things: NULL the `contact` column and delete the S3 slice object. The
+ * contact half is gone with the column (retired from the wire, then dropped from the schema),
+ * so what remains is the half that was always the substantive one — the log window somebody
+ * attached is destroyed, and `redacted_at` records that it was. The description stays: it IS
+ * the bug report. For "delete everything about me", that is `wipe --install`.
+ */
 async function cmdForget(ctx: Ctx): Promise<void> {
   const [reportId] = ctx.rest
   if (!reportId) throw new Error('forget: <reportId> is required')
@@ -322,9 +333,12 @@ async function cmdForget(ctx: Ctx): Promise<void> {
   if (!row) throw new Error(`no such report: ${reportId}`)
   const key = logKeyOf(row)
   if (key) await deleteSlice(c, key)
-  // The description stays: it IS the bug report. The contact and the slice go.
-  await redactContact(c, reportId)
-  console.log(`forgot contact + slice for ${reportId}${key ? ` (deleted ${key})` : ''}`)
+  await stampRedacted(c, reportId)
+  console.log(
+    key
+      ? `forgot the log slice for ${reportId} (deleted ${key})`
+      : `${reportId} had no slice; stamped redacted anyway`,
+  )
 }
 
 async function cmdWipe(ctx: Ctx): Promise<void> {

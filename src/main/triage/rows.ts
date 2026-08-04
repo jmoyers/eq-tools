@@ -81,16 +81,14 @@ export function declaresLog(row: Row): boolean {
   return row.log_json !== null && row.log_json !== undefined
 }
 
-/** One list row. No `contact`: PII is never list-renderable. */
+/** One list row. The description IS the report — there is no title and no contact to read. */
 export function toRow(row: Row): TriageRow {
-  const title = opt(row.title)
   const severity = opt(row.severity)
   const cluster = opt(row.cluster_id)
   const triagedAt = optNum(row.triaged_at)
   return {
     reportId: str(row.report_id),
     type: str(row.report_type, 'bug') as FeedbackType,
-    ...(title ? { title } : {}),
     description: str(row.description),
     appVersion: str(row.app_version, '?'),
     platform: str(row.platform, '?'),
@@ -113,7 +111,6 @@ export function toRow(row: Row): TriageRow {
 export function toDetail(row: Row, logLanded: boolean): TriageDetail {
   const key = opt(row.log_key)
   const meta = parseLogMeta(row.log_json)
-  const contact = opt(row.contact)
   const dupeOf = opt(row.dupe_of)
   const issueUrl = opt(row.issue_url)
   const note = opt(row.disposition)
@@ -123,7 +120,6 @@ export function toDetail(row: Row, logLanded: boolean): TriageDetail {
     row: toRow(row),
     installId: str(row.install_id),
     clientTs: num(row.client_ts),
-    ...(contact ? { contact } : {}),
     env: parseEnv(row.env_json),
     ...(dupeOf ? { dupeOf } : {}),
     ...(issueUrl ? { issueUrl } : {}),

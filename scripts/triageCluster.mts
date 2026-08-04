@@ -28,12 +28,12 @@
 
 import type { AppChannelTag, FeedbackType, ReportStatus } from '../src/shared/feedback'
 
-/** The projection of a report row that clustering and the digest need. NO `contact`,
- *  ever: this shape is what gets rendered, and PII must not be renderable. */
+/** The projection of a report row that clustering and the digest need. NO `contact`, ever:
+ *  this shape is what gets rendered, and PII must not be renderable — and since the schema
+ *  dropped `title` and `contact` outright there is no longer a column to project. */
 export interface TriageReport {
   reportId: string
   type: FeedbackType
-  title?: string
   description: string
   appVersion: string
   platform: string
@@ -169,18 +169,21 @@ export function clusterId(firstReportId: string): string {
 }
 
 function reportText(r: TriageReport): string {
-  return `${r.title ?? ''} ${r.description}`
+  return r.description
 }
 
 function label(r: TriageReport): string {
-  const raw = (r.title ?? r.description).replace(/\s+/g, ' ').trim()
+  const raw = r.description.replace(/\s+/g, ' ').trim()
   return raw.length > 72 ? `${raw.slice(0, 71)}…` : raw
 }
 
 function summarize(members: TriageReport[], kind: Cluster['kind'], signature?: string): Cluster {
   const versions = [...new Set(members.map((m) => m.appVersion))].sort()
-  // Prefer a member who wrote a title — a pasted stack trace is a terrible label.
-  const named = members.find((m) => (m.title ?? '').trim().length > 0) ?? members[0]
+  // The FIRST member labels the cluster. This used to prefer a member who wrote a title,
+  // on the reasoning that a pasted stack trace is a terrible label; with `title` gone from
+  // the contract there is nothing to prefer, and first-by-ULID is the stable choice (it is
+  // already the id's source, so label and id name the same report).
+  const named = members[0]
   return {
     id: clusterId(members[0].reportId),
     kind,
@@ -269,7 +272,7 @@ function isoDay(ms: number): string {
 
 /** One report, <= 200 chars, PII-free by construction (this shape has no contact field). */
 export function digestLine(r: TriageReport): string {
-  const text = (r.title ?? r.description).replace(/\s+/g, ' ').trim()
+  const text = r.description.replace(/\s+/g, ' ').trim()
   const head = `${r.reportId.slice(-6)} ${r.appVersion} ${r.platform} · `
   const tail = `${r.hasLog ? ' · log ✔' : ''}${r.spamScore >= 40 ? ` · spam ${r.spamScore}` : ''}`
   const room = Math.max(20, DIGEST_LINE_MAX - head.length - tail.length - 2)

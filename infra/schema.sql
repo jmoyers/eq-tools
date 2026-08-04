@@ -47,6 +47,17 @@
 --  * `report_id` is a ULID (server-minted). It stays the primary key so a report
 --    is addressable by exactly the id the user is shown, and `received_at`
 --    carries the timeline for every range query.
+--  * NO `title`, NO `contact`. Both were retired from the wire contract first (the
+--    description is the whole draft) and then from storage: nothing writes them,
+--    nothing reads them, and a stack migrated from this file never has them.
+--    A CLUSTER MIGRATED BEFORE THAT CHANGE STILL HAS THE TWO COLUMNS, and this
+--    file cannot remove them: Aurora DSQL's documented ALTER TABLE grammar has no
+--    `DROP [COLUMN]` action (it has DROP DEFAULT / DROP NOT NULL / DROP EXPRESSION
+--    / DROP IDENTITY / DROP CONSTRAINT, and conspicuously not that one) —
+--    https://docs.aws.amazon.com/aurora-dsql/latest/userguide/alter-table-syntax-support.html
+--    Writing the drop here anyway would fail the whole `migrate` run on syntax.
+--    The runbook in infra/README.md carries the one-off statement that DESTROYS
+--    the legacy values, and the physical drop stays open against DSQL.
 
 -- ---- tables -----------------------------------------------------------------
 
@@ -77,9 +88,7 @@ CREATE TABLE IF NOT EXISTS report (
   report_id   text   NOT NULL,
   install_id  text   NOT NULL,
   report_type text   NOT NULL,
-  title       text,
   description text   NOT NULL,
-  contact     text,
   channel     text   NOT NULL,
   app_version text   NOT NULL,
   platform    text   NOT NULL,

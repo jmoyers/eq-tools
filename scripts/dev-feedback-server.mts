@@ -247,9 +247,10 @@ function reportRow(req: SubmitRequest, reportId: string, now: number): Record<st
     t: 'report', reportId, installId, clientReportId, receivedAt: now, clientTs, status: 'new',
     // Scored only by the Lambda — never guessed at here (see FIDELITY in the header).
     spamScore: null,
-    // title/contact were retired from the wire contract; nulls mirror the Lambda's row shape.
-    type: draft.type, title: null, description: draft.description,
-    contact: null, env, log,
+    // No title/contact keys: they left the wire contract and then the `report` table, so the
+    // Lambda's INSERT does not name them and this row must not either.
+    type: draft.type, description: draft.description,
+    env, log,
     logKey: log === null ? null : logObjectKey(reportId, now),
   }
 }

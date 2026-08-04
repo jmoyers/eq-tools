@@ -2,10 +2,12 @@
 // ReportDetail — one report, whole: what was sent, what the client was, what we decided.
 // ============================================================================
 //
-// Three blocks in the order an operator reads them: the DRAFT (what the human typed), the ENV
-// (what the client says it was), and the TRIAGE fields (what we have decided so far), then the
-// actions, then the log slice — which is loaded ON DEMAND, because downloading and gunzipping
-// somebody's log window is not something a click on a table row should do silently.
+// Three blocks in the order an operator reads them: the DRAFT (what the human typed — one
+// description, which is the whole draft since `title` and `contact` left the contract and then
+// the schema), the ENV (what the client says it was), and the TRIAGE fields (what we have
+// decided so far), then the actions, then the log slice — which is loaded ON DEMAND, because
+// downloading and gunzipping somebody's log window is not something a click on a table row
+// should do silently.
 
 import { type JSX, useCallback, useState } from 'react'
 import {
@@ -115,7 +117,6 @@ export default function ReportDetail({
   return (
     <Stack spacing={2} data-testid="triage-detail">
       <Stack direction="row" spacing={1} alignItems="center" useFlexGap flexWrap="wrap">
-        <Typography variant="subtitle1">{r.title ?? '(no title)'}</Typography>
         <StatusChip status={r.status} />
         <SeverityChip severity={r.severity} />
         <LogChip state={detail.log} />
@@ -133,9 +134,8 @@ export default function ReportDetail({
         <Field label="Received" value={formatDateTime(r.receivedAt)} />
         <Field label="Client clock" value={formatDateTime(detail.clientTs)} />
         <Field label="Type / channel" value={`${r.type} · ${r.channel}`} />
-        {detail.contact !== undefined && <Field label="Contact" value={detail.contact} />}
         {detail.redactedAt !== undefined && (
-          <Field label="Redacted" value={formatDateTime(detail.redactedAt)} />
+          <Field label="Slice deleted" value={formatDateTime(detail.redactedAt)} />
         )}
         {detail.dupeOf !== undefined && <Field label="Duplicate of" value={detail.dupeOf} />}
         {r.triagedAt !== undefined && <Field label="Triaged" value={formatDateTime(r.triagedAt)} />}

@@ -5,9 +5,11 @@
 // Three of these change a row; two of them are destructive in a way no undo exists for, so
 // both ask first and both say exactly what they are about to do:
 //
-//   * FORGET (§3.5) strips the contact and DELETES the S3 object. The description stays,
-//     because the description IS the bug report — the confirm says so, so "we deleted your
-//     contact details" never turns out to have meant something larger.
+//   * FORGET (§3.5) DELETES the S3 slice object and stamps the row redacted. The report stays,
+//     because the description IS the bug report — the confirm says so, so "we deleted your log"
+//     never turns out to have meant something larger. It used to strip a `contact` column too;
+//     that column was retired from the wire and then dropped from the schema, so the slice is
+//     now the whole of what this button destroys.
 //   * BLOCK writes a per-install profile row; every future submit from that install 403s,
 //     instantly, with no deploy. A reason is REQUIRED — the profile records why, and a block
 //     with no stated reason is one nobody can review later.
@@ -203,7 +205,7 @@ function DestructiveActions({
         onClick={() => setForgetOpen(true)}
         data-testid="triage-forget"
       >
-        Forget contact + slice
+        Forget log slice
       </Button>
       <Button
         size="small"
@@ -218,12 +220,12 @@ function DestructiveActions({
 
       <ConfirmDialog
         open={forgetOpen}
-        title="Forget this reporter's details?"
+        title="Forget this report's log slice?"
         body={
-          `The contact field is cleared and the log slice object is deleted from the bucket.\n\n` +
+          `The log slice object is deleted from the bucket.\n\n` +
           `The report itself STAYS — the description is the bug report, and keeping it is why ` +
-          `"we deleted your contact details" is not a claim about the rest. A redaction timestamp ` +
-          `is recorded. This cannot be undone.`
+          `"we deleted your log" is not a claim about the rest. A redaction timestamp is ` +
+          `recorded. This cannot be undone. To remove everything from one install, use wipe.`
         }
         confirmLabel="Forget"
         busy={mutate.busy}

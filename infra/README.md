@@ -128,6 +128,44 @@ After a successful apply:
 3. The endpoint is seeded **closed**, on purpose. Open it once you have smoke
    tested: `npx tsx scripts/triage-feedback.mts closed off --profile <profile>`.
 
+## Removing a column: the ordering, and what DSQL will not do
+
+**THE BUNDLE GOES FIRST, THEN THE SCHEMA.** A running Lambda that still names a
+column in its `INSERT` starts failing with `42703 undefined_column` the instant
+that column disappears — every submit, immediately, with the endpoint open. So:
+
+1. `npm run build` in `infra/`, `terraform apply` — the new bundle is live and its
+   `INSERT` no longer names the column.
+2. *Then* change the live schema.
+
+Reversing the two turns a cleanup into an outage. Adding a column is the opposite
+order (schema first, then the bundle that writes it), for the same reason.
+
+**`title` and `contact` are the worked example, and step 2 is blocked.** Both left
+the wire contract, then `schema.sql`, then every reader — so a stack migrated from
+today's `schema.sql` never has them. A cluster migrated *before* that still does,
+and **Aurora DSQL cannot drop a column**: its documented `ALTER TABLE` grammar has
+no `DROP [COLUMN]` action at all (it has `DROP DEFAULT`, `DROP NOT NULL`,
+`DROP EXPRESSION`, `DROP IDENTITY` and `DROP CONSTRAINT` — and not that one). See
+<https://docs.aws.amazon.com/aurora-dsql/latest/userguide/alter-table-syntax-support.html>.
+Putting the statement in `schema.sql` anyway would fail the whole `migrate` run on
+a syntax error, so it is not there.
+
+What *is* available is destroying the values, which is the point of the exercise:
+
+```sql
+UPDATE report SET title = NULL, contact = NULL
+ WHERE title IS NOT NULL OR contact IS NOT NULL;
+```
+
+Run it once, as `admin`, against a cluster that predates the change — never as part
+of `migrate`, because on a cluster built from today's `schema.sql` those column
+names do not resolve. It is idempotent (the `WHERE` makes a re-run touch nothing)
+and it is bounded by DSQL's **3,000-modified-rows-per-transaction** cap: if the
+backlog is ever larger than that, run it in `report_id`-keyed batches. Afterwards
+the columns are empty shells — no reader anywhere names them — and the physical
+drop stays open until DSQL grows the grammar for it.
+
 ## Validate without touching the cloud
 
 Exactly what CI runs. No credentials, no state, no lock:
@@ -152,7 +190,7 @@ offending statement and prints it.
 | Active flood — stop everything now | `triage-feedback closed on --message "..."` (one statement; **no deploy**) |
 | One install spamming | `triage-feedback block <installId> --reason "..."` |
 | Tighten the daily quota | `UPDATE feedback_config SET max_per_install_per_day = N` — deploy-free |
-| Deletion request | `triage-feedback forget <reportId>` / `wipe --install <id>` |
+| Deletion request | `triage-feedback forget <reportId>` (the slice) / `wipe --install <id>` (everything) |
 | Schema change | edit `schema.sql`, then `triage-feedback migrate` |
 | Read the handler's logs | `aws logs tail "$(terraform output -raw lambda_log_group)" --follow` |
 | Who hit us | `aws logs tail "$(terraform output -raw api_access_log_group)"` (source IPs, 14-day retention, incident-only) |
@@ -166,8 +204,7 @@ the kill switch rides in the submit response.
 | Data | Retention | Mechanism |
 | --- | --- | --- |
 | Report row | indefinite — it *is* the backlog | none |
-| `contact` field | until `triage-feedback forget <id>` | manual, one command |
-| Log object | 90 days | **S3 lifecycle — unchanged** |
+| Log object | 90 days | **S3 lifecycle — unchanged**; `triage-feedback forget <id>` deletes one on request |
 | Quota counters (3 d), idempotency keys (7 d), dedupe probes (2 d) | lazy | swept by the ingest handler |
 | Lambda / API access logs | 14 days | CloudWatch retention |
 

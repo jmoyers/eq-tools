@@ -148,8 +148,11 @@ test('a submit with a log round-trips: 201, presign, upload, bytes on disk', asy
     assert.equal(seen.count, 1)
     assert.equal(seen.reports[0]?.reportId, reportId)
     assert.equal(seen.reports[0]?.uploaded, true)
-    // Retired wire field: the legacy title a old client sent is dropped, and the row shows null.
-    assert.equal(seen.reports[0]?.title, null)
+    // Retired wire field, retired COLUMN: the legacy title an old client sent is dropped before
+    // the row is built, and the row carries no `title` key at all — not a null one. The real
+    // Lambda's INSERT no longer names the column, because the column no longer exists.
+    assert.equal('title' in (seen.reports[0] ?? {}), false)
+    assert.equal('contact' in (seen.reports[0] ?? {}), false)
   })
 })
 

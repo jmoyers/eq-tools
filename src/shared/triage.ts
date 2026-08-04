@@ -63,12 +63,12 @@ export const TRIAGE_DEFAULT_QUERY: TriageListQuery = {
  */
 export type TriageLogState = 'none' | 'declared' | 'present' | 'missing'
 
-/** One row of the Reports table. NO `contact`: PII is not list-renderable (the same rule
- *  `TriageReport` in scripts/triageCluster.mts obeys). */
+/** One row of the Reports table. The description IS the report: `title` and `contact` were
+ *  retired from the wire contract and then dropped from the schema, so there is nothing here
+ *  for a list to leak (the same rule `TriageReport` in scripts/triageCluster.mts obeys). */
 export interface TriageRow {
   reportId: string
   type: FeedbackType
-  title?: string
   description: string
   appVersion: string
   platform: string
@@ -83,19 +83,19 @@ export interface TriageRow {
   log: TriageLogState
 }
 
-/** The full record behind one row. `contact` IS present here: this surface is the operator's
- *  own machine, and `forget` (which deletes it) has to be able to show what it is deleting. */
+/** The full record behind one row. There is no `contact`: the column is gone from the schema,
+ *  so the detail pane has nothing extra to show and `forget` has nothing extra to clear. */
 export interface TriageDetail {
   row: TriageRow
   installId: string
   clientTs: number
-  contact?: string
   /** `env_json`, parsed. TEXT-holding-JSON in the schema, so the parse is total: an
    *  unparseable blob yields `{}` rather than throwing across IPC. */
   env: Record<string, string>
   dupeOf?: string
   issueUrl?: string
   note?: string
+  /** Stamped by `forget`: this report's log slice was destroyed on request. */
   redactedAt?: number
   logKey?: string
   /** From `log_json` — what the client SAID it uploaded. */

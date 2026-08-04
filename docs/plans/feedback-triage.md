@@ -87,6 +87,12 @@ export type Severity = 'p0' | 'p1' | 'p2' | 'p3'
 > **Deviation (2026-08):** `title` and `contact` were **retired from the wire** — the
 > description is the whole draft, and anyone wanting a reply puts their email/Discord in it.
 > See `src/shared/feedback.ts`; legacy fields from an old client are dropped, never rejected.
+> They were then **removed from storage as well**: `infra/schema.sql` no longer declares the
+> two columns, the Lambda's `INSERT` no longer names them, and no reader projects them. The
+> physical drop on a cluster migrated before that change is **blocked** — Aurora DSQL's
+> `ALTER TABLE` grammar has no `DROP COLUMN` — so the legacy values are destroyed by a one-off
+> `UPDATE ... SET title = NULL, contact = NULL`; the runbook in `infra/README.md` carries it,
+> along with the deploy-the-bundle-before-the-schema ordering.
 
 ```ts
 /** What the user typed. Renderer-owned; validated by the SAME function main and the Lambda use. */
@@ -246,7 +252,7 @@ so an object always maps back to exactly one row.
 | Data | Retention | Mechanism |
 |---|---|---|
 | Report row (description, env, triage) | indefinite — it *is* the backlog | none |
-| `contact` field | until `triage-feedback forget <id>` | manual, one command |
+| ~~`contact` field~~ | **the column is gone** (§3.1 deviation) — `forget` now deletes only the slice | — |
 | Log object | 90 days | S3 lifecycle |
 | Quota counters | 3 days | DynamoDB TTL |
 | Idempotency keys | 7 days | DynamoDB TTL |

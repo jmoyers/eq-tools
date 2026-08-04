@@ -199,7 +199,7 @@ function ReportRow({
         </Stack>
       </TableCell>
       <TableCell sx={{ maxWidth: 420, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-        {row.title ?? row.description}
+        {row.description}
       </TableCell>
     </TableRow>
   )
@@ -297,7 +297,7 @@ export default function ReportsPanel(): JSX.Element {
     const needle = deferred.trim().toLowerCase()
     if (needle.length === 0) return all
     return all.filter((r) =>
-      `${r.title ?? ''} ${r.description} ${r.reportId} ${r.appVersion} ${r.cluster ?? ''}`
+      `${r.description} ${r.reportId} ${r.appVersion} ${r.cluster ?? ''}`
         .toLowerCase()
         .includes(needle)
     )

@@ -378,11 +378,16 @@ function logObjectKey(reportId: string, now: number): string {
 // The triage-only columns (severity, cluster_id, dupe_of, disposition, issue_url,
 // triaged_at, redacted_at) are deliberately absent: ingest never writes them, and
 // the GRANT list says INSERT, so it could not amend them afterwards either.
+//
+// `title` and `contact` are absent for a different reason: they were retired from the
+// wire contract, then from the schema. NAMING A COLUMN THAT NO LONGER EXISTS WOULD 42703
+// EVERY SUBMIT, which is why this bundle has to be deployed BEFORE the columns are
+// removed from a live cluster (infra/README.md states the ordering).
 const REPORT_SQL = `INSERT INTO report (
-  report_id, install_id, report_type, title, description, contact,
+  report_id, install_id, report_type, description,
   channel, app_version, platform, env_json, log_json, log_key,
   client_ts, received_at, spam_score, status
-) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'new')`
+) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,'new')`
 
 const IDEMP_SQL = `INSERT INTO report_idempotency
   (install_id, client_report_id, report_id, expires_at)
@@ -401,10 +406,7 @@ function reportParams(
     reportId,
     req.installId,
     req.draft.type,
-    // title/contact were retired from the wire contract; the columns stay for legacy rows.
-    null,
     req.draft.description,
-    null,
     req.env.channel,
     req.env.appVersion,
     req.env.platform,

@@ -47,10 +47,10 @@ import {
   logKeyOf,
   logObjectExists,
   makeClients,
-  redactContact,
   setAccepting,
   setBlocked,
   setTriage,
+  stampRedacted,
   toTriageReport,
   type Clients,
   type ListFilter
@@ -63,7 +63,7 @@ export interface TriageBackend {
   detail: (reportId: string) => Promise<TriageDetail | null>
   slice: (reportId: string) => Promise<TriageSlice | null>
   patch: (reportId: string, patch: TriagePatch) => Promise<void>
-  /** Strip the contact and delete the S3 object. The description STAYS — it is the report. */
+  /** Delete the S3 slice object and stamp the redaction. The report STAYS — it is the report. */
   forget: (reportId: string) => Promise<void>
   ops: () => Promise<TriageOpsState>
   setAccepting: (accepting: boolean, message?: string) => Promise<void>
@@ -141,10 +141,11 @@ export function awsBackend(): TriageBackend {
       const row = await getReport(c, reportId)
       if (!row) throw new Error(`no such report: ${reportId}`)
       const key = logKeyOf(row)
-      // Statement for statement, this is the CLI's `forget`: the object goes, the contact is
-      // nulled and stamped, the description stays because the description IS the bug report.
+      // Statement for statement, this is the CLI's `forget`: the slice object goes and the row
+      // is stamped redacted. The report stays because the description IS the bug report — and
+      // there is no contact column left to clear, the schema dropped it.
       if (key) await deleteSlice(c, key)
-      await redactContact(c, reportId)
+      await stampRedacted(c, reportId)
     },
 
     ops: async () => {

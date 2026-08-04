@@ -165,10 +165,20 @@ test('the declared slice metadata rides along so the UI can say how big it was',
 })
 
 test('NULL and empty optional columns are absent, never the empty string', () => {
-  const d = toDetail({ ...BASE, contact: '', severity: null, disposition: '   ' }, false)
-  assert.equal(d.contact, undefined)
+  const d = toDetail({ ...BASE, severity: null, disposition: '   ' }, false)
   assert.equal(d.row.severity, undefined)
   assert.equal(d.note, undefined)
+})
+
+test('`title` and `contact` are DROPPED COLUMNS: a legacy row still carrying them leaks neither', () => {
+  // A cluster migrated before the columns were removed still returns them from `SELECT *`.
+  // The mappers must ignore what they are handed rather than pass it across the bridge —
+  // that is what makes "the columns are gone" true for every reader, not just fresh stacks.
+  const legacy = { ...BASE, title: 'blank overlay', contact: 'someone@example.com' }
+  assert.equal('title' in toRow(legacy), false)
+  const d = toDetail(legacy, false)
+  assert.equal('title' in d.row, false)
+  assert.equal('contact' in d, false)
 })
 
 // ---- 3. the kill switch's polarity -------------------------------------------------------
