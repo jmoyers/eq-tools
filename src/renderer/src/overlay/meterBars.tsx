@@ -11,6 +11,7 @@ import type { OverlayDrill } from '@shared/types'
 import { CATEGORY_LABEL, type DamageCategory, type SegmentView } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../lib/formatRate'
 import { flattenSkills, type FlatSkill, type SkillRow } from '../features/combat/dashboardData'
+import { landEvidence } from '../features/combat/landEvidence'
 
 const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 // KEEP IN SYNC with the app's CAT_COLOR (features/combat/combatShared.tsx) — the overlay is a
@@ -115,7 +116,11 @@ export type Drill = OverlayDrill
  * The row TOTAL is not here — it owns the right end of the bar.
  */
 function skillStat(s: FlatSkill): string {
-  if (s.hits === 0) return `0 landed · ${s.resists ?? 0} resisted`
+  // A lane with no damage line of its own — an effect proc counted from its landing emotes, or a
+  // spell that only ever resisted. `landEvidence` is the ONE spelling of that row (see its
+  // header): the main view's bar renders the identical string, and neither surface manufactures
+  // a 100% resist rate out of resists alone.
+  if (s.hits === 0) return landEvidence(s).text
   const misses = s.misses ?? 0
   const swings = s.hits + misses
   const parts: string[] = []
@@ -127,11 +132,13 @@ function skillStat(s: FlatSkill): string {
 
 /** The labeled stat run for one row, shared by the row title and its children lines. */
 function skillFacts(s: FlatSkill): string {
-  if (s.hits === 0) return `0 landed · ${s.resists ?? 0} resisted`
+  const land = landEvidence(s)
+  // The overlay has no expansion, so the damage-less row's hover carries the BASIS too — where
+  // the landings came from, or why a resist rate is being withheld.
+  if (s.hits === 0) return `${land.text} · ${land.hint}`
   const misses = s.misses ?? 0
   const swings = s.hits + misses
   const resists = s.resists ?? 0
-  const casts = s.hits + resists
   const bits = [
     `total ${fmt(s.total)}`,
     `${s.hits} hits`,
@@ -139,7 +146,7 @@ function skillFacts(s: FlatSkill): string {
     `${s.crits} crits (${Math.round((s.crits / s.hits) * 100)}% crit)`
   ]
   if (misses > 0) bits.push(`${Math.round((misses / swings) * 100)}% miss (${misses} of ${swings} swings avoided)`)
-  if (resists > 0) bits.push(`${resists} resisted of ${casts} casts (${Math.round((resists / casts) * 100)}%)`)
+  if (resists > 0) bits.push(land.resistText)
   const min = s.min ?? 0
   bits.push(min > 0 && min !== s.max ? `damage range ${fmt(min)} - ${fmt(s.max)}` : `damage range ${fmt(s.max)}`)
   return bits.join(' · ')

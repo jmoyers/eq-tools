@@ -27,6 +27,7 @@
 
 import type { SegmentView, SourceView } from '@shared/combat'
 import { flattenSkills, type MobBreakdown, type SkillRow, type TargetDetail } from './dashboardData'
+import { landEvidence } from './landEvidence'
 import { nestedRows, type OwnRow } from './petRows'
 import { RANK, count, pctText, statLines, subjectLine, table, type Col } from './copyTable'
 import { formatNum, formatRate } from '../../lib/formatRate'
@@ -150,6 +151,7 @@ function skillCols(rows: SkillRow[]): Col[] {
   ]
   if (rows.some((s) => s.hits > 0)) cols.push({ header: 'Avg', align: 'right' }, { header: 'Max', align: 'right' })
   if (rows.some((s) => s.crits > 0)) cols.push({ header: 'Crit', align: 'right' })
+  if (rows.some((s) => (s.lands ?? 0) > 0)) cols.push({ header: 'Landed', align: 'right' })
   if (rows.some((s) => (s.misses ?? 0) > 0)) cols.push({ header: 'Miss', align: 'right' })
   if (rows.some((s) => (s.resists ?? 0) > 0)) cols.push({ header: 'Resist', align: 'right' })
   return cols
@@ -163,15 +165,21 @@ function skillCols(rows: SkillRow[]): Col[] {
 function skillCells(s: SkillRow, cols: Col[], a: string): string[] {
   const misses = s.misses ?? 0
   const resists = s.resists ?? 0
+  // Resist rate over ATTEMPTS — landings included, and an effect proc's landings are its emotes
+  // (`landEvidence`, which owns the one case where the rate is withheld because the lane has no
+  // landing evidence at all). Pasting `100%` for a Weakening Strike that landed 562 times was
+  // the same defect the panel had.
+  const land = landEvidence(s, a)
   const by = new Map<string, string>([
     ['Total', `${a}${formatNum(s.total)}`],
     ['Hits', `${a}${s.hits}`],
+    ['Landed', (s.lands ?? 0) > 0 ? `${a}${s.lands}` : ''],
     ['Avg', s.hits > 0 ? `${a}${formatNum(Math.round(s.total / s.hits))}` : ''],
     ['Max', s.hits > 0 ? formatNum(s.max) : ''],
     ['Crit', s.crits > 0 ? pctText((s.crits / Math.max(1, s.hits)) * 100, a) : ''],
     // Same omission the meter row makes: a rate is only meaningful once something was avoided.
     ['Miss', misses > 0 ? pctText((misses / (s.hits + misses)) * 100, a) : ''],
-    ['Resist', resists > 0 ? pctText((resists / (s.hits + resists)) * 100, a) : '']
+    ['Resist', resists > 0 && land.resistPct !== undefined ? pctText(land.resistPct, a) : '']
   ])
   return cols.map((c, i) => (i === 0 ? skillName(s) : (by.get(c.header) ?? '')))
 }

@@ -99,16 +99,27 @@ function rateLines(p: ProcsView, activeSec: number): string[] {
   const lanes = p.lanes ?? []
   if (!overall || lanes.length === 0) return []
   const out = ['', ...statLines(overallParts(overall, activeSec).map((p) => p.text))]
+  const rows = laneRows(lanes, activeSec)
+  // The RESISTED column appears only when some lane in this selection was resisted — an
+  // all-empty column is noise in a pasted block, and its absence is not a claim about anything.
+  const showResisted = rows.some((r) => r.resisted !== undefined)
   const cols: Col[] = [
     { header: 'Proc lane', align: 'left' },
     { header: 'Count', align: 'right' },
+    ...(showResisted ? [{ header: 'Resisted', align: 'right' } as Col] : []),
     { header: 'PPM', align: 'right' },
     { header: 'Per 100', align: 'right' }
   ]
   out.push(
     ...table(
       cols,
-      laneRows(lanes, activeSec).map((r) => [laneName(r), String(r.count), r.ppm.text, r.per100.text])
+      rows.map((r) => [
+        laneName(r),
+        String(r.count),
+        ...(showResisted ? [r.resisted ?? ''] : []),
+        r.ppm.text,
+        r.per100.text
+      ])
     )
   )
   return out

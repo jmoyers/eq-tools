@@ -88,22 +88,46 @@ function plural(n: number, word: string): string {
 }
 
 /**
+ * THE SOURCE-WINDOW SENTENCE (2026-08-04). A proc can only fire while the thing that grants it
+ * is present, so the engine now divides a lane's ppm by that window when it knows it — and says
+ * so here, in the one place a ppm hover is written.
+ *
+ * The AMBIGUOUS wording is the load-bearing half: when the window is unknown the rate assumes
+ * the source was up for the whole selection, which makes it a LOWER BOUND, and a lower bound
+ * that does not announce itself is just a wrong number (law 1).
+ */
+export function sourceNote(rate: ProcRateView): string {
+  if (rate.sourceName !== undefined) {
+    return ` Per minute of ${rate.sourceName}’s own observed window (${Math.round(rate.sourceSec ?? 0)}s), not of the whole selection — a proc cannot fire while its source is off.`
+  }
+  if (rate.sourceAmbiguous) {
+    return ' Assumes the source was active the whole fight: nothing in the log bounds when this proc’s source came or went, so the window is the whole selection and this rate is a LOWER bound.'
+  }
+  return ''
+}
+
+/**
  * The ppm cell. `ppmActive` is the headline denominator; the engine withholds it (and `ppmWall`)
  * below `MIN_ACTIVE_SEC`, and this renders that withholding rather than papering over it.
+ *
+ * `activeSec` is the SELECTION's active time, used only to word the absence. The denominator the
+ * engine actually divided by rides on the rate itself (`sourceSec`) — see `sourceNote`.
  */
 export function ppmCell(rate: ProcRateView, activeSec: number): RateCell {
   if (rate.ppmActive === undefined) {
+    const sec = Math.round(rate.sourceSec ?? activeSec)
     return {
       text: ABSENT,
       absent: true,
       hint:
-        `No per-minute rate: that needs at least ${MIN_ACTIVE_SEC}s of active combat time and this ` +
-        `selection has ${Math.round(activeSec)}s. ${plural(rate.count, 'proc')} counted — the count ` +
-        'is exact; only the division is withheld.'
+        `No per-minute rate: that needs at least ${MIN_ACTIVE_SEC}s of active combat time and ` +
+        `${rate.sourceName === undefined ? 'this selection' : `${rate.sourceName}’s window`} has ` +
+        `${sec}s. ${plural(rate.count, 'proc')} counted — the count is exact; only the division ` +
+        'is withheld.'
     }
   }
   const wall = rate.ppmWall === undefined ? '' : ` (${formatPpm(rate.ppmWall)} of wall clock)`
-  return { text: formatPpm(rate.ppmActive), absent: false, hint: `${ACTIVE_TIME_NOTE}${wall}` }
+  return { text: formatPpm(rate.ppmActive), absent: false, hint: `${ACTIVE_TIME_NOTE}${wall}${sourceNote(rate)}` }
 }
 
 /** The per-100-swings cell. Absent below `MIN_SWINGS` logged swings. */
@@ -164,6 +188,17 @@ export interface LaneRow {
   heal?: number
   /** SLAY ONLY: the excess over an ordinary swing. An ESTIMATE — see SLAY_MARGINAL_NOTE. */
   marginal?: number
+  /** `34 resisted · 6% resist` — the other half of the lane's record (2026-08-04). Absent when
+   *  nothing was resisted; the ROW never renders a 0 for it. */
+  resisted?: string
+}
+
+/** The lane's landed/resisted run. The ledger row and the drill row now describe the same lane
+ *  from the same two counters, which is the disagreement the owner reported closing. */
+function resistedText(l: ProcLaneView): string | undefined {
+  if (l.resisted === undefined || l.resisted <= 0) return undefined
+  const pct = l.resistPct === undefined ? '' : ` · ${Math.round(l.resistPct)}% resist`
+  return `${plural(l.resisted, 'resist')}${pct}`
 }
 
 function contributionOf(l: ProcLaneView): LaneContribution | undefined {
@@ -178,7 +213,9 @@ function contributionOf(l: ProcLaneView): LaneContribution | undefined {
 
 function laneRow(l: ProcLaneView, activeSec: number): LaneRow {
   const contribution = contributionOf(l)
+  const resisted = resistedText(l)
   return {
+    ...(resisted !== undefined ? { resisted } : {}),
     key: `${l.origin}|${l.name}`,
     name: l.name,
     ambiguous: l.ambiguous === true,
@@ -324,9 +361,13 @@ export function procAnnotationFor(
     t.lane === t.skill
       ? ''
       : ` Counted in the “${t.lane}” lane: one emote names both Strikes, so the count is exact and the name is not.`
+  // The basis names the denominator the engine ACTUALLY divided by — the source's own window
+  // when it knows one, the selection otherwise. `ppm.hint` then says which it was and what it
+  // assumed; the two sentences are written once, in ppmCell/sourceNote, and read here.
+  const sec = Math.round(t.rate.sourceSec ?? t.activeSec)
   const basis = ppm.absent
     ? ''
-    : `${plural(t.rate.count, 'proc')} over ${Math.round(t.activeSec)}s of active combat in this selection. `
+    : `${plural(t.rate.count, 'proc')} over ${sec}s of active combat in this selection. `
   return {
     text: ppm.absent ? 'proc' : `proc · ${ppm.text}`,
     hint: `${ORIGIN_NOTE[t.origin]}${lane} ${basis}${ppm.hint}`

@@ -281,6 +281,34 @@ export interface RateInput {
   activeSec: number
   durationSec: number
   swings: number
+  /** The lane's SOURCE window, when one is modeled — see `ProcSourceWindow`. */
+  source?: ProcSourceWindow
+  /**
+   * The caller is a LANE whose source window it could not resolve. The segment's own active
+   * time is used and `sourceAmbiguous` is set, so the assumption travels with the number.
+   *
+   * Distinct from passing neither field, which is what the OVERALL headline does: "every proc
+   * in this selection per minute of it" is a question about the selection, so the segment is
+   * not an assumption there — it is the subject.
+   */
+  sourceUnknown?: boolean
+}
+
+/**
+ * How long the thing that FIRES a lane was actually present, and what it was called.
+ *
+ * A proc cannot fire while its source is off: a rogue Strike needs the coat on the blades, an
+ * aura-granted proc needs the aura up. `ppmActive` over the whole segment therefore answers a
+ * question nobody asked ("how often did this fire per minute of a fight it was mostly unable to
+ * fire in"), and the answer is systematically low. Where the model KNOWS the window — coat
+ * spans and tracked proc-buff spans are both already on the state timeline, with active-time
+ * exposure folded per state on ingest — the rate is over that window instead.
+ */
+export interface ProcSourceWindow {
+  /** Active seconds the source was present for, inside the segment. */
+  activeSec: number
+  /** The span's display name, for the hover ('Neurotoxic Poison', 'Instrument of Nife'). */
+  name: string
 }
 
 /**
@@ -289,11 +317,31 @@ export interface RateInput {
  * `count` and `swings` are always present and always exact — they are counts of lines the game
  * printed. Only the RATES can be missing, and they are missing precisely when dividing would
  * manufacture a number the sample cannot support.
+ *
+ * `ppmActive` divides by the SOURCE window when one is known and by the segment otherwise, and
+ * says which it did (`sourceSec` / `sourceAmbiguous` / `sourceName`). The floor applies to
+ * whichever denominator is actually used — a coat that was on for four seconds of a ten-minute
+ * session yields no rate at all, which is the honest answer and not a 15-ppm headline.
+ *
+ * `ppmWall` and `per100Swings` are UNCHANGED. Wall clock is wall clock; and swings are the
+ * mechanical denominator whose whole virtue is having no window ambiguity in it — a
+ * chance-on-hit proc that could not fire on a swing still had that swing counted against every
+ * other lane, so re-basing it per source would make the lanes incomparable.
  */
 export function procRate(i: RateInput): ProcRateView {
   const view: ProcRateView = { count: i.count, swings: i.swings }
-  if (i.activeSec >= MIN_ACTIVE_SEC) {
-    view.ppmActive = i.count / (i.activeSec / 60)
+  const sec = i.source ? i.source.activeSec : i.activeSec
+  // The window is declared whether or not it clears the floor — the ABSENCE message has to be
+  // able to say "this coat was on for 4 seconds", not quote the segment it did not divide by.
+  if (i.source) {
+    view.sourceSec = sec
+    view.sourceName = i.source.name
+  } else if (i.sourceUnknown) {
+    view.sourceSec = sec
+    view.sourceAmbiguous = true
+  }
+  if (sec >= MIN_ACTIVE_SEC) {
+    view.ppmActive = i.count / (sec / 60)
     if (i.durationSec > 0) view.ppmWall = i.count / (i.durationSec / 60)
   }
   if (i.swings >= MIN_SWINGS) view.per100Swings = (100 * i.count) / i.swings

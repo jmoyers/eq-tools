@@ -20,10 +20,13 @@
 //   w41-poison-asp-venom.log    the poison DAMAGE lane (Asp Venom Strike deals; Weakening does not)
 //   w38-proc-ppm.log            no poison at all — three cast-less lanes and the slay group
 //
-// ONE MEASURED CORRECTION TO THE PLAN, written down rather than smoothed over: §3 asks for
-// "Weakening/Venom drill rows". `Weakening Strike` is a SLOW — it deals no damage, so the meter
-// has no row for it to annotate, in any fixture. It is in the ledger and absent from the drill,
-// and the test pins that absence (see the last case) instead of inventing a row for it.
+// ONE MEASURED CORRECTION TO THE PLAN, AND ITS LATER REVERSAL — both written down rather than
+// smoothed over. §3 asked for "Weakening/Venom drill rows"; `Weakening Strike` is a SLOW that
+// deals no damage, so wave 1 found no meter row to annotate and pinned that ABSENCE instead of
+// inventing a row. The owner's 2026-08-04 report is what settled it the other way: the absence
+// was not neutral, because a RESIST does create a row, and that row then read `0 landed`. A
+// damage-less Strike now gets a row built from its landing emotes and the annotation to match
+// (tests/procAccuracy.test.mts owns the full case; the two cases below pin the reversal here).
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
@@ -44,6 +47,7 @@ import {
   procTagIndex
 } from '../src/renderer/src/features/combat/procRows'
 import { flattenSkills } from '../src/renderer/src/features/combat/dashboardData'
+import { landEvidence } from '../src/renderer/src/features/combat/landEvidence'
 import type { ProcsView, SegmentView, SourceView } from '../src/shared/combat'
 import type { ProcRateView, ProcSkillTag } from '../src/shared/procAnalytics'
 
@@ -236,11 +240,22 @@ test('W36: the badge, the strip and the drill rows all light from the same ledge
   assert.match(s.strip, /^Procs: 50 landed · /)
   assert.equal(hasProcActivity(zone.procs), true)
 
-  // THE DRILL. Three lanes carry damage, so three rows learn a rate; the five weapon lanes and
-  // the one spell the player actually CAST (Wrath — it has a cast line, so procDetect scores it
-  // no proc) stay unannotated.
+  // THE DRILL. Three lanes carry damage — and THREE MORE carry only landing emotes (2026-08-04,
+  // the owner's report). Befuddling, Stunning and Weakening Strike deal nothing at all; before
+  // the fix they were in the ledger and absent from the drill, which is how the same Strike came
+  // to read `90 landings` in one panel and `0 landed · N resisted` in the other. Every one of
+  // the six now learns the lane's rate. The five weapon lanes and the one spell the player
+  // actually CAST (Wrath — it has a cast line, so procDetect scores it no proc) stay
+  // unannotated.
   const rows = annotatedRows(zone)
-  assert.deepEqual(sortedKeys(rows), ['Asp Venom Strike', 'Blood Siphon Strike', 'Smiting Strike'])
+  assert.deepEqual(sortedKeys(rows), [
+    'Asp Venom Strike',
+    'Befuddling Strike',
+    'Blood Siphon Strike',
+    'Smiting Strike',
+    'Stunning Strike',
+    'Weakening Strike'
+  ])
   for (const plain of ['Melee', 'Backstab', 'Frenzy', 'Bash', 'Kick', 'Wrath']) {
     assert.equal(rows.get(plain), undefined, `${plain} is not a proc`)
   }
@@ -302,21 +317,37 @@ test('W41: the venom row learns its rate; the slow lane has no row to learn one'
   const asp = procAnnotationFor(procTagIndex(zone.procs.procSkills), 'Asp Venom Strike')
   assert.match(asp?.text ?? '', /^proc · /)
   assert.match(asp?.hint ?? '', /Asp Venom Strike \/ Cobra Venom Strike/)
-  assert.deepEqual(sortedKeys(rows), ['Asp Venom Strike', 'Blood Siphon Strike', 'Smiting Strike'])
+  assert.deepEqual(sortedKeys(rows), [
+    'Asp Venom Strike',
+    'Befuddling Strike',
+    'Blood Siphon Strike',
+    'Smiting Strike',
+    'Stunning Strike',
+    'Weakening Strike'
+  ])
 
-  // THE MEASURED CORRECTION (see the header): Weakening Strike fired six times in this window
-  // and is in the ledger — but it is a SLOW, it deals nothing, and the damage meter therefore
-  // has no row for it. The join emits no tag rather than inventing a row.
+  // THE OVERTURNED DECISION (owner report, 2026-08-04). Weakening Strike fired six times in this
+  // window. It is a SLOW: it deals nothing, so the damage meter had no row for it and the wave
+  // that shipped the drill annotation deliberately emitted no tag — "the drill lists damage".
+  // The owner's screenshots showed the cost of that: the Procs tab counted the landings while
+  // the drill, on the strength of RESISTS alone, said `0 landed`. A damage-less Strike now gets
+  // its row and its tag, and the row carries the landings rather than a damage total.
   const weakening = (zone.procs.lanes ?? []).find((l) => l.name === 'Weakening Strike')
   assert.equal(weakening?.count, 6)
   assert.equal(
     (zone.procs.procSkills ?? []).some((t) => t.lane === 'Weakening Strike'),
-    false
+    true
   )
-  assert.equal(
-    flattenSkills(you(zone)).some((r) => r.name === 'Weakening Strike'),
-    false
-  )
+  const row = flattenSkills(you(zone)).find((r) => r.name === 'Weakening Strike')
+  assert.ok(row, 'the damage-less Strike now has a drill row')
+  assert.equal(row.total, 0, 'and it still deals nothing — the row is landings, not damage')
+  assert.equal(row.hits, 0)
+  assert.equal(row.lands, 6, 'the six emote landings, the same six the ledger counted')
+
+  // …and the row's own wording is the fix in one line: not `0 landed`.
+  const ev = landEvidence(row)
+  assert.equal(ev.landed, 6)
+  assert.match(ev.text, /^0 dmg · 6 landed/)
 })
 
 test('W38: the merged Slay Undead row learns the slay lane rate; no poison anywhere', { skip: missing(W38) }, () => {

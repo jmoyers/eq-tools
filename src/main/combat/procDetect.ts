@@ -22,6 +22,42 @@
 // to `dtype === 'spell'` and to heals; `dot` is NEVER eligible, and `melee`/`ds` are not spell
 // effects at all. (Slay Undead procs are counted from the taxonomy's own `slay` category, not
 // from here — they carry no spell line.)
+//
+// ── TWO CAST-LESS SHAPES THAT ARE NOT PROCS (2026-08-04, from the owner's accuracy report) ──
+//
+// The wave-1 header above measured the window against DIRECT DAMAGE lanes only, and the
+// partition it reports is still exactly right for them. The HEAL half had no equivalent sweep,
+// and it turns out to contain both of the failure modes a "no cast line behind it" inference
+// can have. Full-log sweep, 2026-08-04, over every cast-less heal of the player's:
+//
+//   spell                castless  overTime  ≤5s after `You activate Quick Buff.`
+//   Lifetap Strike           1964         0     0      ← true proc, untouched by both gates
+//   Blood Siphon Strike      1160         0     0      ← true proc
+//   Vampiric Embrace          562         0     0      ← true proc
+//   Siphon Life               284         0     0      ← true proc (the spellblade lane)
+//   Ethereal Cleansing         91        91     2      ← HoT TICKS
+//   Valor                      57         0    57      ← QUICK BUFF BURST
+//   Symbol of Pinzarn          55         0    55      ← QUICK BUFF BURST
+//   Center                     54         0    54      ← QUICK BUFF BURST
+//   Symbol of Ryltan           39         0    39      ← QUICK BUFF BURST
+//   Daring                     28         0    28      ← QUICK BUFF BURST
+//   Symbol of Transal          21         0    21      ← QUICK BUFF BURST
+//
+// The separation is total, which is why both gates are RULES and not thresholds:
+//
+//   1. THE HoT GATE, and it is the DoT gate again on the other side of the meter. Every one of
+//      Ethereal Cleansing's 91 cast-less ticks is a `healed <target> over time for N` line, and
+//      its ticks run 60+ seconds past a 3-second cast. `isCastlessHeal` refuses them outright.
+//      (The owner saw `Ethereal Cleansing · proc` in the ledger; it is a hand-cast HoT.)
+//   2. THE QUICK BUFF GATE. `You activate Quick Buff.` is an AA that re-applies the player's
+//      memorized buffs and prints NO `You begin casting` line for any of them — only the
+//      landings. Six buff spells account for 254 phantom "procs" that way, and every single one
+//      of them lands within 5 seconds of that activation line. So the burst is CAST EVIDENCE of
+//      a different shape, and it suppresses the heal inference for its duration.
+//      It suppresses the HEAL side ONLY. A damage line inside the burst is still a weapon proc
+//      — Smiting Strike alone has 9 of its 11,606 firings inside a burst window by coincidence,
+//      and Quick Buff casts no nuke, so there is nothing for a damage-side gate to catch and a
+//      real proc to lose by adding one.
 
 import { spellCanonKey } from '../log/parseCommon'
 import type { DamageType } from '../../shared/combat'
@@ -81,6 +117,48 @@ export function isCastless(recent: RecentCasts, spell: string, ts: number): bool
  */
 export function procEligibleDamage(dtype: DamageType): boolean {
   return dtype === 'spell'
+}
+
+/**
+ * How long after `You activate Quick Buff.` a landing still belongs to that burst.
+ *
+ * FIVE SECONDS, and the number is not this file's invention: it is the SAME window the buffs
+ * module already uses to mark a burst's message-driven applies confident
+ * (`buffsShapes.QUICK_BUFF_WINDOW_MS`). Spelled again here rather than imported because
+ * src/main/combat may not depend on src/main/modules, and re-exporting a module constant
+ * through shared/ to satisfy one comparison would be more coupling than the number is worth.
+ * The two are pinned equal by a test.
+ *
+ * MEASURED, like the cast window: all 254 of the log's burst-delivered buff landings sit inside
+ * it, and the nearest true proc (one Blood Siphon Strike tap) sits at 5–10s, outside.
+ */
+export const QUICK_BUFF_BURST_MS = 5_000
+
+/** `idKey` of the AA whose activation opens that burst. Same reason as the window above:
+ *  spelled here rather than imported from src/main/modules (buffsShapes imports back OUT of
+ *  src/main/combat, so the import would close a cycle), and pinned equal by a test. */
+export const QUICK_BUFF_AA = 'quick buff'
+
+/** Everything the heal side of the inference needs to judge one line. */
+export interface HealProcInput {
+  spell: string
+  ts: number
+  /** The line said `over time` — a HoT tick. */
+  overTime: boolean
+  /** ts of the last `You activate Quick Buff.`, or 0 when none has been seen. */
+  quickBuffTs: number
+}
+
+/**
+ * True when a heal line of YOURS is a cast-less proc — the heal half of the inference, with
+ * both of its exclusions in one place so neither can be applied at one call site and forgotten
+ * at another. See the file header for the sweep that fixes each rule.
+ */
+export function isCastlessHeal(recent: RecentCasts, h: HealProcInput): boolean {
+  if (h.overTime) return false
+  const burst = h.ts - h.quickBuffTs
+  if (h.quickBuffTs > 0 && burst >= 0 && burst <= QUICK_BUFF_BURST_MS) return false
+  return isCastless(recent, h.spell, h.ts)
 }
 
 /**

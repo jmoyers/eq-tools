@@ -26,6 +26,8 @@ import { parseEvent } from '../src/main/log/parser'
 import { installSpellDb } from '../src/main/log/rulesets'
 import { loadSpellDb } from '../src/main/data/spellDb'
 import { CombatEngine } from '../src/main/combat/engine'
+import { addSpellProc, laneCount } from '../src/main/combat/procDetect'
+import type { SpellProcLane } from '../src/main/combat/procDetect'
 import type { EffectAttribution, ProcLaneView } from '../src/shared/procAnalytics'
 import type { ProcsView, SegmentView } from '../src/shared/combat'
 
@@ -173,15 +175,40 @@ test('W39: healing is its own field and can EXCEED the damage on the same lane',
   assert.equal(tap.rate.count, 12)
 })
 
-test('W39: a heal-ONLY proc still counts once — max, never the damage side alone', { skip: missing(W40) }, () => {
-  // The other half of the same rule, from w40: `Center` arrives inside a Quick Buff burst and
-  // prints NO damage line at all. Counting only damage lines would have erased it entirely,
-  // which is why the lane count is max(damage, heal) and not `damageHits`.
+test('a heal-ONLY proc still counts once — max, never the damage side alone', () => {
+  // The other half of the same rule. It used to be pinned on w40's `Center`, which is no longer
+  // a lane at all (the next test says why), so it is pinned where the rule actually lives: a
+  // lane whose firings printed ONLY heal lines counts them, because counting damage lines alone
+  // would erase it. `Blood Siphon Strike` in w41 is the real shape — 13 heal lines, 0 damage
+  // lines on the spell-proc side — and the rule is `max`, never `damageHits`.
+  const lanes = new Map<string, SpellProcLane>()
+  for (let i = 0; i < 13; i++) {
+    addSpellProc(lanes, { spell: 'Center', amount: 66, isHeal: true, active: new Set<string>() })
+  }
+  const lane = lanes.get('center')
+  assert.ok(lane)
+  assert.equal(lane.hits.damage, 0)
+  assert.equal(lane.hits.heal, 13)
+  assert.equal(laneCount(lane), 13)
+})
+
+test('W40: a Quick Buff burst is CAST EVIDENCE — its landings are not procs', { skip: missing(W40) }, () => {
+  // `You activate Quick Buff.` at 19:26:58, then at 19:27:01 `You healed Primitive for 66 hit
+  // points by Center.` with no cast line anywhere. Wave 1 called that a cast-less effect and
+  // said so in this test's old name; the owner's report is what settled it. The AA re-applies
+  // every memorized buff and prints ONLY the landings — six buff spells, 254 phantom "procs"
+  // across the real log, every one of them inside five seconds of that activation line, and not
+  // one true proc inside the same window (procDetect's header carries the sweep).
+  //
+  // So the burst is cast evidence in a different shape, and `Center` is a buff the player cast.
   const { procs } = zoneProcs(W40)
-  const center = laneNamed(procs, 'Center')
-  assert.equal(center.count, 1)
-  assert.equal(center.directDamage, 0)
-  assert.equal(center.directHeal, 66)
+  assert.equal(
+    (procs.lanes ?? []).some((l) => l.name === 'Center'),
+    false
+  )
+  // The aura landing in the SAME burst is still a state span, and the weapon procs around it
+  // are still procs: the gate suppresses the heal inference only, and only inside the burst.
+  assert.equal(laneNamed(procs, 'Smiting Strike').count, 28)
 })
 
 test('W39: the counterfactual is ZONE-SCOPE ONLY — a single pull never gets one', { skip: missing(W39) }, () => {
@@ -316,21 +343,17 @@ test('W40: Tier A is exact and serialized; Tier B refuses to guess', { skip: mis
   assert.ok(/never active in an eligible minute|active in every one of the/.test(balanced?.note ?? ''))
 })
 
-test('W40: a Quick Buff heal with no cast line IS a cast-less effect, and is labeled as one', { skip: missing(W40) }, () => {
+test('W40: a lane that carries no damage contributes 0% and 0 dps — never NaN', { skip: missing(W40) }, () => {
+  // The arithmetic this used to prove on `Center` (now suppressed as a Quick Buff landing) is
+  // still worth pinning, so it moves to a lane the window still has: every lane divides by the
+  // segment's totals, and a zero numerator must produce 0 and not NaN.
   const { procs } = zoneProcs(W40)
-  // `You healed Primitive for 66 hit points by Center.` at 19:27:01 — inside the Quick Buff
-  // burst, which prints landings and NO cast line at all. The detector is right that nothing
-  // cast it; what it cannot know is that an AA activation, not a weapon, delivered it. That is
-  // law 6 in one row: a proc line never names its source, so `origin: 'spell'` claims only
-  // "a spell effect with no own cast behind it" and nothing more.
-  const center = laneNamed(procs, 'Center')
-  assert.equal(center.origin, 'spell')
-  assert.equal(center.count, 1)
-  assert.equal(center.directDamage, 0)
-  assert.equal(center.directHeal, 66)
-  // A lane that carries no damage still contributes 0% and 0 dps — never NaN.
-  assert.equal(center.pctOfOut, 0)
-  assert.equal(center.dpsContribution, 0)
+  for (const l of procs.lanes ?? []) {
+    assert.ok(Number.isFinite(l.pctOfOut), `${l.name} pctOfOut is finite`)
+    assert.ok(Number.isFinite(l.dpsContribution), `${l.name} dpsContribution is finite`)
+  }
+  const slay = laneNamed(procs, 'Slay Undead')
+  assert.equal(slay.directHeal, 0)
 })
 
 test('W40: WITH THE SPELL DB, the aura becomes a span and Tier B still says no', { skip: missing(W40) }, () => {

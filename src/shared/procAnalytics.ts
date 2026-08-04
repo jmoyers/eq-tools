@@ -102,6 +102,31 @@ export interface ProcRateView {
    */
   swings: number
   per100Swings?: number
+  /**
+   * THE SECONDS `ppmActive` ACTUALLY DIVIDED BY (2026-08-04, the owner's denominator report).
+   *
+   * A proc can only fire while its SOURCE is present: a rogue Strike needs its coat on the
+   * blades, an aura-granted proc needs the aura up. Dividing either by the whole segment
+   * understates the rate by exactly the time the source was absent — coat a slow venom for the
+   * last minute of a ten-minute session and a 30-per-minute proc reads as 3.
+   *
+   * So when the source's presence is MODELED — a coat span, a tracked proc-buff span — this is
+   * that span's active seconds inside the segment and `ppmActive` is per minute OF THAT WINDOW.
+   * When it is not, this is the segment's own active seconds and `sourceAmbiguous` is set.
+   * Present whenever `ppmActive` is.
+   */
+  sourceSec?: number
+  /**
+   * TRUE when `sourceSec` is the whole segment because the source window is UNKNOWN — a buff
+   * that predates the log window, a permanent aura with no wear-off, an item proc with no coat
+   * or buff evidence at all. The rate is then a LOWER BOUND that assumes the source was present
+   * throughout, and every surface that prints it has to say so (law 1: an assumption travels
+   * with its number). Absent ⇒ the window is known and the rate is over it exactly.
+   */
+  sourceAmbiguous?: boolean
+  /** The state span the denominator came from, for the hover ('Neurotoxic Poison'). Absent
+   *  when `sourceAmbiguous` — there is no window to name. */
+  sourceName?: string
 }
 
 /**
@@ -136,6 +161,20 @@ export interface ProcLaneView {
    * whole damage IS its marginal damage.
    */
   marginalDamage?: number
+
+  /**
+   * TIMES THIS LANE'S SPELL WAS RESISTED in the segment, read back out of the same per-skill
+   * resist counters the drill renders (2026-08-04). Present only when non-zero.
+   *
+   * A resist line names the spell (`A wanderer resisted your Weakening Strike!`) while an
+   * effect proc's LANDING names only the mob, so a ledger that showed `count` alone and a drill
+   * that showed resists alone described the same lane with two disjoint halves of its record —
+   * which is exactly the disagreement the owner reported. The pair is now on one row:
+   * `count` landed, `resisted` did not, and the rate below is over their sum.
+   */
+  resisted?: number
+  /** `resisted / (count + resisted)` as a percentage. Absent when nothing was resisted. */
+  resistPct?: number
 
   /** Co-occurrence with tracked states. CORRELATION — see ProcLink. */
   linked: ProcLink[]

@@ -261,8 +261,11 @@ export const SLOW_STRIKE = 'Weakening Strike'
  * eleven classes and the log carries NPCs casting it (`a glare lord begins casting Beholder
  * Dispel.`); the rogue's own dispel proc (Banishing Strike, from Banishing / Antimagic / Mage
  * Bane poison) prints a completely different line — `<mob>'s blessings wither!` — which is in
- * POISON_PROCS above and is counted as a Strike. The user's log has 1,386 dispel landings and
- * ZERO `blessings wither` lines, so every one of them came from somebody else.
+ * POISON_PROCS above and is counted as a Strike. When this was first written the log had 1,386
+ * dispel landings and ZERO `blessings wither` lines; re-swept 2026-08-04 it has NINETEEN (plus
+ * 3 `resisted your Banishing Strike!`), because the player has since coated Mage Bane. The
+ * conclusion is unchanged and now has both arms: the two families are separately counted and
+ * the 19 that ARE the rogue's proc are in the Strike ledger, not in this one.
  *
  * This list is a CURATED gate on purpose. The raw message-driven landing stream is far too
  * broad to tabulate — a single lifetap landing message resolves to 36 candidate spells — so a

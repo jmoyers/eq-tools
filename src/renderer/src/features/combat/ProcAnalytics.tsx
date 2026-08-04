@@ -35,7 +35,7 @@ import {
   type LaneRow,
   type RateCell
 } from './procRows'
-import { CAT_COLOR, QuietNote } from './combatShared'
+import { CAT_COLOR, QuietNote, RESIST_COLOR } from './combatShared'
 import { MARKER_COLOR } from './markerStyle'
 
 /** Lane hues, by origin — the same three the charts use, so a lane means one thing app-wide. */
@@ -117,6 +117,14 @@ function LaneRateRow({ row }: { row: LaneRow }): React.JSX.Element {
       <Typography variant="caption" color="text.secondary" sx={{ flexShrink: 0 }}>
         ×{row.count}
       </Typography>
+      {/* THE OTHER HALF OF THE LANE'S RECORD (2026-08-04). Landings alone were what let this
+          panel say `90 slow landings` while the drill said `0 landed · 34 resisted` about the
+          same Strike. Shown only when something WAS resisted — a 0 here would be furniture. */}
+      {row.resisted !== undefined && (
+        <Typography variant="caption" noWrap sx={{ flexShrink: 0, color: RESIST_COLOR }}>
+          {row.resisted}
+        </Typography>
+      )}
       <Rate cell={row.ppm} width={62} />
       <Rate cell={row.per100} width={54} />
     </Box>

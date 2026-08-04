@@ -8,7 +8,7 @@
 import { sourceViews } from './sourceViews'
 import { sumHeal } from './aggregate'
 import { buildHealingView } from './healing'
-import { buildProcsView } from './procViews'
+import { buildProcsView, effectLandings } from './procViews'
 import { zoneActiveSec, zoneDurationSec } from './lifecycle'
 import { ACTIVE_MS, TIMELINE_BUDGET, encounterName, type Encounter, type TimelineRaw } from './encounter'
 import { CATEGORY_ORDER } from '../../shared/combat'
@@ -82,7 +82,11 @@ export function buildSelected(st: EngineState, id: string, now: number, combineP
 
 function buildView(spec: ViewSpec, combinePets: boolean): SegmentView {
   const { agg, durationSec, activeSec } = spec
-  const entities = sourceViews(agg.out, durationSec, combinePets)
+  // THE EFFECT-LANDING GRAFT (2026-08-04). `effectLandings` is the proc ledger's own count of
+  // landings that no damage row represents; handing it to the OUTGOING view is what lets a
+  // Weakening Strike row say `0 dmg · 562 landed · 34 resisted` instead of `0 landed`. The
+  // INCOMING view gets nothing: a mob slowing you is not a lane of yours.
+  const entities = sourceViews(agg.out, durationSec, combinePets, effectLandings(agg))
   const incoming = sourceViews(agg.inc, durationSec, false)
   const outTotal = entities.reduce((s, e) => s + e.total, 0)
   const inTotal = incoming.reduce((s, e) => s + e.total, 0)

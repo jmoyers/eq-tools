@@ -43,8 +43,17 @@ const DOT_NOCASTER_RE = /^(.+?) has taken (\d+) damage by (.+?)\.(?: \((.+?)\))?
 // including the biggest single-hit heals in the log). The optional trailing group fixes that;
 // a full-log sweep (2026-08-02) confirms `(Critical)` is the ONLY modifier a heal ever carries.
 // Spell names contain no '.', so the lazy spell capture can never swallow the period.
+//
+// HEAL-OVER-TIME TICKS (2026-08-04). `<healer> healed <target> OVER TIME for N hit points by
+// <Spell>.` is a real and common shape — 752 lines in the log across 12 distinct spells
+// (Slugs Healing 191, Ethereal Cleansing 131, Echoing Light 78, …), 117 of them the player's
+// own. The ` over time` sits between the target and the `for`, so the lazy target capture
+// SWALLOWED it and every HoT tick was attributed to a phantom entity called
+// "Primitive over time". It is now captured as its own optional group: the target is the real
+// name again, and `overTime` reaches the model, where the cast-less proc detector needs it (a
+// HoT tick is cast-DETACHED exactly the way a DoT tick is — see procDetect's DoT gate).
 const HEAL_RE =
-  /^(.+?) healed (.+?) for (\d+)(?: \((\d+)\))? hit points?(?: by (.+?))?\.(?: \(([A-Za-z][A-Za-z ]*)\))?$/
+  /^(.+?) healed (.+?)( over time)? for (\d+)(?: \((\d+)\))? hit points?(?: by (.+?))?\.(?: \(([A-Za-z][A-Za-z ]*)\))?$/
 
 // ----- absorption / mitigation (Task #59) — damage PREVENTED, never hit points restored -----
 // Three VERIFIED self-form families (see MitigationEvent in shared/logEvents.ts for the counts):
@@ -350,11 +359,12 @@ export function classifyHeal({ text, ts, seq, raw }: ClassifyCtx): LogEvent | nu
       return {
         kind: 'heal', seq, ts, raw,
         target: reflexive ? healer : norm(tRaw),
-        amount: Number(m[3]),
-        rawAmount: m[4] ? Number(m[4]) : undefined,
-        spell: m[5]?.trim() || undefined,
+        amount: Number(m[4]),
+        rawAmount: m[5] ? Number(m[5]) : undefined,
+        spell: m[6]?.trim() || undefined,
         healer,
-        crit: /critical/i.test(m[6] ?? '')
+        crit: /critical/i.test(m[7] ?? ''),
+        ...(m[3] ? { overTime: true } : {})
       }
     }
   }

@@ -13,9 +13,12 @@
 //   - overheal is DERIVED from the `for N (M) hit points` form only. EQ writes the parens exactly
 //     when raw > effective, so a plain line contributes 0 and the sum is a FLOOR, never a rate
 //     projected over ticks we never saw.
-//   - HoT ticks are NOT separated from direct heals. No `healed over time` / `regeneration` line
-//     family exists in the log and a regen tick is byte-identical in shape to a direct heal —
-//     splitting them would be an invention.
+//   - HoT ticks are NOT separated from direct heals HERE, though the log does distinguish them
+//     (corrected 2026-08-04: `healed <target> over time for N` is a real family — 752 lines,
+//     12 spells — and `HealEvent.overTime` now carries it. What this module still cannot do is
+//     attribute a tick to the cast that started it; the split it declines to make is
+//     "which heal was this a tick OF", not "was this a tick". A regen tick with no HoT wording
+//     is still byte-identical in shape to a direct heal.)
 //   - the two `magical skin absorbs` families carry NO amount. They are counted, never valued —
 //     they enter no sum anywhere, because there is nothing to sum.
 //   - a rune's amount is absorption GRANTED, not damage consumed. It DOES count toward the

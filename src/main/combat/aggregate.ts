@@ -54,6 +54,11 @@ export interface SkillStat {
   misses: number
   /** Spell resists on this spell/dot lane (Task #51 v2). */
   resists: number
+  /** Landings this lane recorded with NO damage line of its own — effect-proc emotes, joined
+   *  in at view-build from the proc ledger (see SkillView.lands). Always 0 on the accumulator
+   *  itself: nothing on the ingest path writes it, because the join needs the whole segment's
+   *  strike map to know which lanes have damage rows and which do not. */
+  lands: number
 }
 
 /** Per-category rollup within a source (Task #51 drill-down level 2). Holds the
@@ -104,7 +109,7 @@ export interface SourceStat {
 }
 
 export function newSkill(name: string): SkillStat {
-  return { name, total: 0, hits: 0, crits: 0, max: 0, min: 0, misses: 0, resists: 0 }
+  return { name, total: 0, hits: 0, crits: 0, max: 0, min: 0, misses: 0, resists: 0, lands: 0 }
 }
 
 /**
@@ -270,6 +275,19 @@ export class ProcAccum {
    */
   swingsByState = new Map<string, number>()
   /**
+   * THE ACTIVE-TIME EXPOSURE PER STATE: `<kind>:<key>` → ms of the meter's own active time that
+   * elapsed while that state was open. The PPM denominator for any lane whose SOURCE window is
+   * known (2026-08-04) — a poison Strike can only fire while its coat is on the blades, and an
+   * aura-granted proc only while the aura is up, so dividing either by the whole segment
+   * understates it by exactly the time the source was absent.
+   *
+   * Folded on ingest from the SAME per-hit delta `WindowAccum` receives (routing.ts's capped-gap
+   * accrual, handed down by the caller and never recomputed), so it can no more drift from
+   * `activeSec` than the window ledger can. Bounded like `swingsByState`: one integer per state
+   * the segment ever saw.
+   */
+  activeMsByState = new Map<string, number>()
+  /**
    * SPELL-PROC lanes (proc-analytics §4.1): spell effects with no own cast behind them, keyed
    * by `spellCanonKey`. The damage they carry is ALREADY inside this segment's outgoing total
    * — this is an INDEX over damage already counted, never a second accumulation of it.
@@ -287,6 +305,14 @@ export class ProcAccum {
   addSwing(active: ReadonlySet<string>): void {
     this.swings++
     for (const key of active) this.swingsByState.set(key, (this.swingsByState.get(key) ?? 0) + 1)
+  }
+
+  /** Charge one hit's active-time delta to every state that was open for it. Called on EVERY
+   *  folded damage line, incoming included, because that is precisely what the meter's own
+   *  `activeMs` counts — the two denominators have to mean the same thing to be comparable. */
+  addActiveMs(ms: number, active: ReadonlySet<string>): void {
+    if (ms <= 0) return
+    for (const key of active) this.activeMsByState.set(key, (this.activeMsByState.get(key) ?? 0) + ms)
   }
 
   addStrike(name: string, ambiguous: boolean, ts: number, isSlow: boolean): void {

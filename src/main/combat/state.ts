@@ -112,6 +112,13 @@ export class EngineState {
    * Pruned to the 12s attribution window on write.
    */
   recentCasts: RecentCasts = new Map()
+  /**
+   * ts of the last `You activate Quick Buff.` (0 = never). That AA re-applies the player's
+   * memorized buffs and prints only their LANDINGS — no cast line for any of them — so the
+   * burst it opens is cast evidence of a different shape, and the heal side of the cast-less
+   * proc inference must not read those landings as procs (procDetect's Quick Buff gate).
+   */
+  quickBuffTs = 0
 
   /** Enable classification logging (after the historical scan, for the live tail), and
    *  flip HYDRATION off — from here on every snapshot describes the real present. */
@@ -159,6 +166,7 @@ export class EngineState {
     this.slowSamples = []
     this.stateTimeline.reset()
     this.recentCasts.clear()
+    this.quickBuffTs = 0
   }
 
   log(ts: number, cat: string, role: ClassifiedLine['role'], text: string): void {

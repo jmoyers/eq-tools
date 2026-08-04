@@ -23,7 +23,7 @@ import {
   routeProcBuffApply,
   routeProcBuffWearOff
 } from './procRouting'
-import { isCastless, noteCast, procEligibleDamage } from './procDetect'
+import { QUICK_BUFF_AA, isCastless, isCastlessHeal, noteCast, procEligibleDamage } from './procDetect'
 import { CC_HOLD_MS } from './encounter'
 import { Agg, type DamageEvent } from './aggregate'
 import type { WindowFold } from './procWindows'
@@ -239,6 +239,7 @@ function foldDamageAnalytics(st: EngineState, ev: DamageEvent, activeDeltaMs: nu
   }
   foldBoth(st, ev.ts, (agg, active) => {
     agg.windows.fold(fold, active)
+    agg.procs.addActiveMs(activeDeltaMs, active)
     if (a.swing) agg.procs.addSwing(active)
     if (a.proc) agg.procs.addSpellProc({ spell: ev.skill, amount: ev.amount, isHeal: false, active })
   })
@@ -246,11 +247,13 @@ function foldDamageAnalytics(st: EngineState, ev: DamageEvent, activeDeltaMs: nu
 
 /** A heal with no own cast behind it — the healing half of the same inference (`Lifetap
  *  Strike`, 1,814 procs / 52,861 hit points restored, zero casts, in the real log). Gated to
- *  YOUR OWN heals: another player's cast-less heal is their proc, not yours. */
+ *  YOUR OWN heals: another player's cast-less heal is their proc, not yours — and to
+ *  `isCastlessHeal`, which additionally refuses HoT ticks and Quick Buff bursts (see the two
+ *  sweeps in procDetect's header). */
 function foldHealAnalytics(st: EngineState, ev: HealEvent): void {
   const spell = ev.spell
   if (!spell || idKey(ev.healer ?? '') !== 'you') return
-  if (!isCastless(st.recentCasts, spell, ev.ts)) return
+  if (!isCastlessHeal(st.recentCasts, { spell, ts: ev.ts, overTime: ev.overTime === true, quickBuffTs: st.quickBuffTs })) return
   foldBoth(st, ev.ts, (agg, active) => {
     agg.procs.addSpellProc({ spell, amount: ev.amount, isHeal: true, active })
   })
@@ -351,6 +354,13 @@ function ingestModifier(st: EngineState, ev: LogEvent): void {
       // 'observed'. In the real log this fires once against 97 landings, which is exactly why
       // EdgeEvidence exists.
       routeProcBuffWearOff(st, ev.ts, ev.candidates)
+      return
+    case 'aaActivate':
+      // THE QUICK BUFF BURST (procDetect's second gate). This AA re-applies every memorized
+      // buff and prints their LANDINGS ONLY — no `You begin casting` for any of them — so
+      // without this line 254 buff landings in the real log read as cast-less procs. Recording
+      // the activation is the whole fix: the burst is cast evidence in a different shape.
+      if (idKey(ev.name) === QUICK_BUFF_AA) st.quickBuffTs = ev.ts
       return
     case 'castBegin':
       // The cast-attribution window's only input (§4.1). Only the PLAYER prints

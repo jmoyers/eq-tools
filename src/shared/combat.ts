@@ -46,8 +46,28 @@ export interface SkillView {
   min?: number
   /** Avoided swings for this skill (miss/dodge/parry/riposte/block/absorb). */
   misses?: number
-  /** Spell resists for this spell/dot lane (Task #51 v2). resist rate = resists/(hits+resists). */
+  /** Spell resists for this spell/dot lane (Task #51 v2). resist rate = resists/(hits+lands+resists). */
   resists?: number
+  /**
+   * LANDINGS THIS LANE RECORDED WITH NO DAMAGE LINE OF ITS OWN (2026-08-04).
+   *
+   * An effect proc — a rogue slow, stun, dispel or mana drain — lands by printing a per-spell
+   * EMOTE (`<mob>'s limbs move slower!`) and never a damage line, while its RESISTS print the
+   * spell name like any other (`A wanderer resisted your Weakening Strike!`). So the lane
+   * existed in the drill built entirely out of resists and read `0 landed · 34 resisted` — a
+   * 100% resist rate for a proc that landed 562 times in the same log.
+   *
+   * This is the count of those emote landings, joined in at view-build from the proc ledger's
+   * own strike map (the count the Procs tab already shows), and it is populated ONLY for lanes
+   * with no damage rows at all — where a lane DOES carry damage (Asp Venom Strike prints an
+   * emote AND a damage line for one firing) the damage rows already represent those firings
+   * and adding the emotes would count each of them twice.
+   *
+   * Absent ⇒ no landing evidence exists for this lane, which is NOT the same as zero: a
+   * hand-cast stun (Divine Stun) prints nothing at all when it lands, so its resist RATE has
+   * no denominator and the UI must decline to state one rather than print 100%.
+   */
+  lands?: number
 }
 
 /** Breakdown of avoided swings by outcome (for hit% + defensive tooltip). */

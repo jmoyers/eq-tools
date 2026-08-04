@@ -185,6 +185,14 @@ export interface HealEvent extends LogEventBase {
    * `(Critical)` is the ONLY modifier a heal line has ever carried.
    */
   crit?: boolean
+  /**
+   * A HEAL-OVER-TIME TICK — `You healed Primitive over time for 102 hit points by Ethereal
+   * Cleansing.` (752 such lines in the real log, 12 spells). Load-bearing for the cast-less
+   * proc detector and nothing else today: a HoT tick is cast-DETACHED by construction, so a
+   * tick arriving more than the attribution window after its cast would misclassify as a proc
+   * — the exact failure the damage path's DoT gate exists to prevent. Absent = a direct heal.
+   */
+  overTime?: boolean
 }
 
 /**

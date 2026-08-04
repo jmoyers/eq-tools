@@ -83,6 +83,7 @@ export function groupSlay(rows: SkillRow[]): SkillRow[] {
     min: minima.length > 0 ? Math.min(...minima) : undefined,
     misses: sum((s) => s.misses ?? 0),
     resists: sum((s) => s.resists ?? 0),
+    lands: sum((s) => s.lands ?? 0),
     // Children bar widths are relative to the LARGEST slay skill, so the nested list reads as
     // its own ranking rather than as slivers of the parent's width.
     children: children.map((s) => ({ ...s, pct: (s.total / childMax) * 100 }))

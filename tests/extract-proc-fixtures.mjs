@@ -161,3 +161,58 @@ slice(1021992, 1024215, 'w40-nife-buff.log')
 // for their own question. The plan's detector is gated OFF `dot` on purpose, so this lane can
 // only ever be a 'poison'-origin lane, never a 'spell' one.
 slice(1126794, 1128400, 'w41-poison-asp-venom.log')
+
+// ---------------------------------------------------------------------------------------
+// THE ACCURACY WAVE (owner report, 2026-08-04). Two more windows, each cut around ONE of the
+// two defects the report named, and each chosen so the answer is legible by eye.
+//
+// (The third case the report needed — a Quick Buff burst delivering buffs with no cast line —
+// is ALREADY a committed fixture: `w7-quick-buff.log` ends on `You activate Quick Buff.` at
+// 20:29:44 followed by `You healed Primitive for 216 hit points by Valor.` and
+// `… 331 hit points by Symbol of Pinzarn.` at 20:29:46. Cutting a second window for it would
+// duplicate a shipped one.)
+
+// ---------------------------------------------------------------------------------------
+// W42 THE EFFECT PROC: LANDS AND RESISTS, ON THE SAME LANE (Mon Aug 03 23:00:40 → 23:05:15,
+// raw 1210281..1212412).
+//
+// DEFECT 1's window. A Lord of Ire pull followed by four more, run with the rogue's utility
+// coat on, where the same Strikes both LAND and get RESISTED — which is the pairing the drill
+// could not see, because a landing prints an emote that names no spell and a resist prints the
+// spell name and no emote.
+//   23:00:48 / 23:01:08 / 23:01:11 / 23:01:23  `Lord of Ire resisted your Weakening Strike!` ×4
+//   23:02:23                                    `Lord of Ire's limbs move slower!` — the SAME
+//             lane landing on the SAME mob, 60 seconds later. Four resists and a landing, and
+//             before this wave the drill row for it read `0 landed · 4 resisted`.
+//   23:00:56 / 23:01:45 / 23:01:54              `… resisted your Clumsiness Strike!` ×3, with
+//             `Cleric of Innoruuk's fingers slow down.` landings on either side of the pull.
+//   23:05:01  `You begin casting Divine Stun I.` AND `A forsaken revenant resisted your Divine
+//             Stun I!` in the same second — the OTHER shape, and the one that must stay
+//             withheld: Divine Stun deals no damage and prints NOTHING when it lands, so its
+//             resist rate has no denominator and the row may not claim one.
+//   23:01:20 / 23:02:02  `You begin casting Ethereal Cleansing.`, whose ticks then run to
+//             23:02:43 — 41 seconds past the second cast, well outside PROC_CAST_WINDOW_MS.
+//             DEFECT 2's HoT case, in the same window: every one of those ticks says
+//             `healed Primitive over time for 102`, and the gate refuses them on the wording
+//             rather than on the clock.
+slice(1210281, 1212412, 'w42-effect-proc-resist.log')
+
+// ---------------------------------------------------------------------------------------
+// W43 EARTHQUAKE — THE TRUE PROC THAT MUST STAY TAGGED (Mon Aug 03 21:05:16 → 21:07:38, raw
+// 1182112..1183531).
+//
+// The owner's report listed `Earthquake` among the spells they believed they were casting. The
+// log says otherwise, and this window is the evidence: `You begin casting Earthquake.` appears
+// ZERO times in the entire 1.24M-line log, while `You hit <mob> for 246 points of magic damage
+// by Earthquake.` appears 87 times, always in AoE bursts of 2–4 targets in ONE second, each
+// followed by `<mob> is smashed by the heaving ground.` It is the proc on the Boon of the Garou
+// illusion (an enchanter in General chat says so in the same log), and no cast-pairing rule of
+// any width can demote it, because there is no cast to pair with.
+//   21:05:31  a single-target firing on an elemental channeler for 74 — mid-melee, no cast.
+//   21:06:04  FOUR targets in one second for 246 each — the AoE shape.
+//   21:06:16 / 21:06:53…21:07:07  `Lay on Hands IX` and four `Greater Healing` casts, so the
+//             window also proves the detector is not simply calling everything a proc.
+// What it pins: Earthquake stays `origin: 'spell'` with its firings intact, and its rate is
+// `sourceAmbiguous` — the illusion that grants it opens no span this model tracks, so the ppm
+// assumes it was up all along and SAYS so, rather than quietly pretending to know.
+slice(1182112, 1183531, 'w43-earthquake-proc.log')

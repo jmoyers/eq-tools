@@ -9,6 +9,7 @@ import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
 import { MARKER_COLOR } from './markerStyle'
 import type { ProcAnnotation } from './procRows'
+import { landEvidence } from './landEvidence'
 import type { FlatSkill, SkillRow } from './dashboardData'
 
 // `fmtDur` lives in the MUI-free copyText module (the plain-text serializer needs it and cannot
@@ -190,6 +191,24 @@ function StatItem({ label, value, color }: { label: string; value: string; color
 }
 
 /**
+ * The three figures that only exist once a lane has LANDED A HIT: the average, the crit rate and
+ * the damage range. Split out of `SkillReadout` so the readout does not have to repeat the same
+ * `hits > 0` guard four times — a lane can now be present with zero hits and real landings (an
+ * effect proc), which makes the guard load-bearing rather than defensive.
+ */
+function DamageStats({ s, a }: { s: FlatSkill; a: string }): React.JSX.Element | null {
+  if (s.hits === 0) return null
+  const min = s.min ?? 0
+  return (
+    <>
+      <StatItem label="Avg per hit" value={`${a}${fmt(Math.round(s.total / s.hits))}`} />
+      <StatItem label="Crits" value={`${a}${s.crits} (${Math.round((s.crits / s.hits) * 100)}% crit)`} />
+      <StatItem label="Damage range" value={min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : fmt(s.max)} />
+    </>
+  )
+}
+
+/**
  * The expanded per-ability readout (one level below the flat row, inline — no new nav level,
  * no breadcrumb). Everything the bar compresses, spelled out and labeled: the category, the
  * total, hit/crit counts with the crit rate, the miss rate over swings, resists over casts,
@@ -213,8 +232,7 @@ function SkillReadout({
   const misses = s.misses ?? 0
   const resists = s.resists ?? 0
   const swings = s.hits + misses
-  const casts = s.hits + resists
-  const min = s.min ?? 0
+  const land = landEvidence(s, a)
   const color = CAT_COLOR[s.category]
   return (
     <Box
@@ -232,13 +250,7 @@ function SkillReadout({
         <StatItem label="Category" value={CATEGORY_LABEL[s.category]} color={color} />
         <StatItem label="Total" value={`${a}${fmt(s.total)}`} />
         <StatItem label="Hits" value={`${a}${s.hits}`} />
-        {s.hits > 0 && <StatItem label="Avg per hit" value={`${a}${fmt(Math.round(s.total / s.hits))}`} />}
-        {s.hits > 0 && (
-          <StatItem
-            label="Crits"
-            value={`${a}${s.crits} (${Math.round((s.crits / s.hits) * 100)}% crit)`}
-          />
-        )}
+        <DamageStats s={s} a={a} />
         {misses > 0 && (
           <StatItem
             label="Miss rate"
@@ -246,16 +258,11 @@ function SkillReadout({
             color={RESIST_COLOR}
           />
         )}
-        {resists > 0 && (
-          <StatItem
-            label="Resists"
-            value={`${a}${resists} of ${a}${casts} casts (${Math.round((resists / casts) * 100)}%)`}
-            color={RESIST_COLOR}
-          />
-        )}
-        {s.hits > 0 && (
-          <StatItem label="Damage range" value={min > 0 && min !== s.max ? `${fmt(min)} - ${fmt(s.max)}` : fmt(s.max)} />
-        )}
+        {/* LANDINGS WITH NO DAMAGE (an effect proc: a slow, a stun, a dispel). Its own figure,
+            because "landed" and "hit for damage" are different facts and this lane has only the
+            first. */}
+        {(s.lands ?? 0) > 0 && <StatItem label="Landed" value={`${a}${s.lands}`} />}
+        {resists > 0 && <StatItem label="Resists" value={land.resistText} color={RESIST_COLOR} />}
       </Stack>
       {after}
     </Box>
@@ -356,10 +363,12 @@ export function SkillBar({
   const [open, setOpen] = useState(false)
   const color = CAT_COLOR[s.category]
   const resists = s.resists ?? 0
-  const casts = s.hits + resists
   const a = approx ? '~' : ''
-  // A spell/dot lane can carry resists (Task #51 v2). Show a resist-rate badge and,
-  // for a lane that only ever resisted (0 hits), a resist-only embedded summary.
+  // A spell/dot lane can carry resists (Task #51 v2) and — for an effect proc that prints only
+  // a landing emote — LANDS with no damage behind them (2026-08-04). `landEvidence` owns both
+  // the wording and the one case where the resist rate is withheld rather than divided: a lane
+  // with no landing evidence at all has no denominator, and 100% would be a fabrication.
+  const land = landEvidence(s, a)
   return (
     <Box>
       <Bar
@@ -371,19 +380,24 @@ export function SkillBar({
         name={
           <>
             <SkillName name={s.name} category={s.category} plain={nested} />
-            {resists > 0 && casts > 0 && (
-              <Tooltip
-                title={`${resists} resisted of ${casts} cast${casts === 1 ? '' : 's'} — ${Math.round(
-                  (s.hits / casts) * 100
-                )}% landed`}
-              >
+            {land.resistPct !== undefined && (
+              <Tooltip title={`${resists} resisted, ${land.landed} landed — ${Math.round(100 - land.resistPct)}% landed. ${land.hint}`}>
                 <Typography component="span" variant="caption" sx={{ ml: 0.75, color: RESIST_COLOR }}>
-                  {Math.round((resists / casts) * 100)}% resist
+                  {Math.round(land.resistPct)}% resist
                 </Typography>
               </Tooltip>
             )}
             <InlineStats>
-              {s.hits > 0 ? skillStatText(s, a) : `0 landed · ${a}${resists} resisted`}
+              {s.hits > 0 ? (
+                skillStatText(s, a)
+              ) : (
+                // The hover carries the basis on a damage-less row — and, for the row with no
+                // landing evidence at all, carries the REASON the resist rate is missing. A
+                // withheld number that never says why reads as a bug.
+                <Tooltip title={land.hint}>
+                  <span>{land.text}</span>
+                </Tooltip>
+              )}
               {/* A group row says how many skills it stands for, so the merge is visible from the
                   row itself and the expansion is obviously worth a click. */}
               {s.children && s.children.length > 0 ? ` · ${s.children.length} skills` : ''}
