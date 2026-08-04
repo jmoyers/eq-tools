@@ -37,6 +37,9 @@
 //             Lives in ./UpdateSetting.tsx; this file only names it in the table.
 //   Usage analytics — the anonymous-counts switch, the rotatable id, and the payload
 //             viewer that makes the privacy claim checkable. ./TelemetrySetting.tsx.
+//   Performance — the title-bar CPU/memory HUD switch (off by default) and the read-only
+//             breakdown of how long this launch's startup took, phase by phase.
+//             Lives in ./PerfSetting.tsx.
 //   Feedback — the second entry point into the feedback DIALOG (the first is the nav
 //             drawer's footer). Feedback is not a view, so this section only opens it.
 
@@ -74,6 +77,10 @@ import { VoiceSetting } from './VoiceSetting'
 import { OverlayAutoHideSetting } from './OverlayAutoHideSetting'
 import { CursorRingSetting } from './CursorRingSetting'
 import { TelemetrySetting } from './TelemetrySetting'
+// Performance is the one section whose DESCRIPTOR lives with its card rather than here: this
+// file sits at the 400-code-line factoring ceiling, and the section's own file is the honest
+// place for the label, icon and search keywords that name it. See ./PerfSetting.tsx.
+import { perfSection } from './PerfSetting'
 import { normalizeQuery } from '../../lib/search'
 
 // -------------------------------------------------------------- Combat section
@@ -114,7 +121,7 @@ function PetNestingSetting(): JSX.Element {
 
 // ------------------------------------------------------------------- the view
 
-interface PrefItem {
+export interface PrefItem {
   id: string
   label: string
   /** Extra searchable words that aren't shown in the label. */
@@ -122,7 +129,10 @@ interface PrefItem {
   content: JSX.Element
 }
 
-interface PrefSection {
+/** Exported so a section whose descriptor lives with its own card (./PerfSetting.tsx) names the
+ *  same shape. TYPE-ONLY in both directions, so the import cycle it forms is erased at compile
+ *  time and no module ever waits on the other. */
+export interface PrefSection {
   id: string
   label: string
   icon: JSX.Element
@@ -299,6 +309,7 @@ function buildSections(
       ]
     },
     analyticsSection(),
+    perfSection(),
     {
       id: 'feedback',
       label: 'Feedback',

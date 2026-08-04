@@ -20,7 +20,10 @@ const SPECS = [
   'voice-alerts.e2e.mts',
   // Telemetry launches the app TWICE against one userData dir (the restart is the assertion),
   // so it must stay in this sequential list and must never be run beside another spec.
-  'telemetry.e2e.mts'
+  'telemetry.e2e.mts',
+  // Performance wipes userData too ("the chip is absent by default" needs a fresh install) and
+  // reads <userData>/perf-startup.json AFTER the app quits — same sequential requirement.
+  'perf.e2e.mts'
 ]
 
 let failed = 0

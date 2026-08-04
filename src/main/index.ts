@@ -38,11 +38,12 @@ import { registerAppSchemes } from './appSchemes'
 import { installImageCacheProtocol } from './imageCache'
 import { installSpeechCacheProtocol } from './speech/cache'
 import { registerIpc } from './ipc'
-import { bus, buffsModule, epoch, sessionDetector } from './pipeline'
+import { DATA_READY_MS, bus, buffsModule, epoch, sessionDetector } from './pipeline'
+import { markStartupPhase, startPerfSampler, stopPerf } from './perf'
 import { initPresenceEffects, stopPresenceEffects } from './presenceEffects'
 import { provisionDefaultPacks } from './provisionPacks'
 import { getActiveCharacter, startTailing, stopSession } from './session'
-import { getOverlayConfig } from './store'
+import { STORE_READY_MS, getOverlayConfig, getPerfHudPrefs } from './store'
 import { initUpdater } from './updater'
 import {
   createMainWindow,
@@ -64,6 +65,20 @@ registerAppSchemes(protocol)
 // number is bucketed (never sent raw) into `sessionStart` when the window exists. See
 // src/shared/telemetry.ts COLD_START_MS_EDGES.
 const PROCESS_START_MS = Date.now()
+
+// --- startup profile, phases 1 and 2 (docs/plans/perf-profiling.md P4) ---
+//
+// MARKED ON EVERY LAUNCH, HUD or no HUD: a mark is an array push, and the launch you wish you
+// had profiled is always the one that already happened.
+//
+// These two are marked with the timestamps their OWN modules recorded, not with "now", because
+// both finished during module EVALUATION — before this statement, and long before Electron's
+// `ready`. The plan listed `appReady` first; the tree says otherwise, and a phase order that
+// disagrees with the boot it describes would put three zeroes in the breakdown and hide the real
+// cost of opening the store and parsing the spell DB inside `appReady`. Measured beats guessed
+// (see shared/perf.ts STARTUP_PHASES for the full table).
+markStartupPhase('storeLoaded', { atMs: STORE_READY_MS })
+markStartupPhase('dataLoaded', { atMs: DATA_READY_MS })
 
 // Epoch detection subscription (Task #49; launch-anchored in Task #50). Runs LAST — after
 // pipeline.ts's registry + combat subscriptions, which is why it is added here rather than
@@ -163,6 +178,7 @@ if (!gotSingleInstanceLock) {
   })
 
   void app.whenReady().then(() => {
+    markStartupPhase('appReady')
     logInfo(
       `[everquest-companion] Channel '${CHANNEL}' — userData ${USER_DATA}, error log ${errorLogPath()}`
     )
@@ -190,8 +206,24 @@ if (!gotSingleInstanceLock) {
       userData: USER_DATA,
       onError: (msg, err) => logError('main:speechCache', { message: msg, err })
     })
+    markStartupPhase('protocols')
     createMainWindow()
+    markStartupPhase('windowCreated')
+    // `replayDone` is the LONG one on a real log (a full historical scan), so it is marked when
+    // the session's promise settles — with the event count, because "6 s" means something very
+    // different for 40k events than for 1.1M. `tailAttached` is marked immediately after the
+    // call: the composition root's own step is handing the session its work, and everything the
+    // scan then does belongs to the phase that names it. A failed attach still marks the phase
+    // (with no count) rather than leaving the profile forever incomplete.
     void startTailing()
+      .then((res) => {
+        markStartupPhase('replayDone', { eventsReplayed: res?.eventsReplayed ?? 0 })
+      })
+      .catch((err: unknown) => {
+        markStartupPhase('replayDone')
+        logError('main:startTailing', err)
+      })
+    markStartupPhase('tailAttached')
     // Drain the offline feedback queue (feedback/queue.ts). A report filed while the user's
     // network was unhappy is spooled to <userData>/feedback.json + feedback-pending/*.gz and
     // sent later over the same wire, carrying the same idempotency key; without this call it
@@ -242,6 +274,13 @@ if (!gotSingleInstanceLock) {
     // default install: `presenceNeeded()` decides whether the watcher child is spawned at all.
     initPresenceEffects()
 
+    // The performance HUD (docs/plans/perf-profiling.md P1). Costs one store read when it is
+    // off — which is the default install: with `perfHud.enabled` false no timer is created at
+    // all, so there is nothing to skip on each tick. The pref is read HERE rather than inside
+    // the sampler because src/main/perf.ts deliberately does not import the store (the sampler
+    // is a mechanism, the switch is a policy) — the same one-way dependency the IPC setter keeps.
+    if (getPerfHudPrefs().enabled) startPerfSampler()
+
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createMainWindow()
     })
@@ -261,6 +300,11 @@ app.on('window-all-closed', () => {
   // transmit to — and the timers were unref'd anyway, so this is about writing the last record
   // before the process goes, not about letting it go.
   stopTelemetry()
+  // Stop the HUD's sampler and make sure this launch left a startup profile behind. The timers
+  // are unref'd, so this is about not sampling a process that is quitting — and about the launch
+  // that never reached `rendererHydrated` still writing what it DID reach, which is exactly the
+  // launch whose profile is worth having.
+  stopPerf()
   // Flush the learned message overlay one last time so the final session's observations
   // aren't lost between debounced saves (Task #36).
   saveUserOverlay(buffsModule.overlaySnapshot())

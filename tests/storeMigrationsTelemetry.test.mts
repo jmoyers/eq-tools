@@ -52,7 +52,9 @@ test('a v5 store gains the telemetry blob at its defaults, and nothing else move
   assert.equal(status, 'migrated')
   assert.equal(from, 5)
   assert.equal(to, CURRENT_SCHEMA_VERSION)
-  assert.deepEqual(applied, [6], 'a v5 store runs exactly one step')
+  // Written append-proof: this step is 6, and whatever later waves add runs after it. Pinning
+  // the whole list here would make every future migration edit a test about a different feature.
+  assert.equal(applied[0], 6, 'a v5 store enters the chain at the telemetry step')
 
   assert.deepEqual(data['telemetry'], DEFAULT_TELEMETRY_PREFS)
   assert.deepEqual(data['telemetry'], { enabled: true, noticeShown: false, analyticsId: null })

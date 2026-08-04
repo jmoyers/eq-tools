@@ -61,6 +61,10 @@ import { normalizeCursorRing, normalizeOverlayAutoHide } from '../shared/presenc
 // normalizer is the one answer to "what is a valid telemetry pref block" that the store, the
 // IPC handler and this migration all have to agree on.
 import { normalizeTelemetryPrefs } from '../shared/telemetry'
+// The FOURTH, and identical in kind to the third: shared/perf.ts is the pure, ZERO-IMPORT
+// performance contract, and its prefs normalizer is the one answer to "what is a valid perf-HUD
+// pref block" that the store, the IPC handler and this migration all have to agree on.
+import { normalizePerfHudPrefs } from '../shared/perf'
 
 /** A store file, parsed. Deliberately untyped: a migration's INPUT is a shape the current
  *  code no longer describes, so `StoreShape` would be a lie at every step but the last. */
@@ -73,7 +77,7 @@ export const SCHEMA_VERSION_KEY = 'schemaVersion'
  * The schema the code running right now expects. Bump by exactly one whenever a persisted
  * shape changes, and add the matching MIGRATIONS entry in the same commit.
  */
-export const CURRENT_SCHEMA_VERSION = 6
+export const CURRENT_SCHEMA_VERSION = 7
 
 export interface Migration {
   /** Version this step produces. Steps run in ascending `to` order, contiguously. */
@@ -334,6 +338,34 @@ const migrateToV6: Migration = {
   }
 }
 
+// ------------------------------------------------------ 6 → 7: the performance HUD switch
+//
+// docs/plans/perf-profiling.md P5. ONE new top-level blob, holding one boolean:
+//
+//   `perfHud` {enabled:false}
+//
+// OFF IS THE POLICY, not a placeholder. The switch is the ONLY thing that creates the 2 s
+// metrics poll and the 500 ms event-loop probe — with it off, main creates no timer at all, so
+// a user who never opens Preferences → Performance pays literally nothing for this feature.
+// A HUD is an instrument you reach for, not a tax on everyone who might one day want one.
+//
+// Nothing else about the feature is persisted here, deliberately: the live samples are a
+// two-minute ring in renderer memory, and the startup profile is one disposable file
+// (`<userData>/perf-startup.json`) that is rewritten every launch. Neither has any business in a
+// settings file that must load cleanly in every future build, forever.
+//
+// Same treatment as 4→5 and 5→6: every reader defaults, so a v6 store boots fine without this
+// step — it ships so a v7 store is a PROMISE that whatever is in the key is a complete, in-range
+// block. A malformed value is replaced by the documented default, never coerced.
+const migrateToV7: Migration = {
+  to: 7,
+  describe: 'add the perfHud prefs blob (performance HUD off by default)',
+  migrate(data) {
+    data.perfHud = normalizePerfHudPrefs(data.perfHud)
+    return data
+  }
+}
+
 /**
  * The chain, ascending. APPEND ONLY — never renumber, never edit a shipped step (a store
  * out there was migrated by the old text and will never run it again), never delete one:
@@ -344,7 +376,8 @@ export const MIGRATIONS: readonly Migration[] = [
   migrateToV3,
   migrateToV4,
   migrateToV5,
-  migrateToV6
+  migrateToV6,
+  migrateToV7
 ]
 
 /** Version recorded in `data`; anything absent, non-integer or < 1 means "pre-framework" ⇒ 1. */

@@ -312,6 +312,30 @@ export const IPC = {
   // while dark). Returns TelemetryPayloadView.
   telemetryPayload: 'telemetry:payload',
 
+  // ---- performance HUD + startup profile (docs/plans/perf-profiling.md) ----------------
+  //
+  // NOTHING ON THIS CHANNEL SET COSTS ANYTHING WHILE THE HUD IS OFF. Main creates no timer at
+  // all until `perf:setEnabled` says so, so an install that never opens the section never sees
+  // a single `perf:sample`.
+  //
+  // main -> renderer, PUSH: one `PerfSample` every 2 s while the HUD is enabled — or `null`,
+  // sent exactly once when it is switched off, which is how the title-bar chip learns to
+  // disappear instead of freezing on the last numbers it saw.
+  onPerfSample: 'perf:sample',
+  // renderer -> main: the persisted HUD pref ({enabled}). Returns PerfHudPrefs.
+  perfPrefsGet: 'perfPrefs:get',
+  // renderer -> main: flip the HUD switch. Starts/stops the sampler in the SAME call, so the
+  // pref and this session's timers can never disagree. A non-boolean leaves the pref alone.
+  // Arg: boolean. Returns PerfHudPrefs.
+  perfSetEnabled: 'perf:setEnabled',
+  // renderer -> main: the last startup profile — the launch you are in (it is written to disk
+  // for the next one). Returns StartupProfile. Read by Preferences → Performance.
+  perfGetStartup: 'perf:getStartup',
+  // renderer -> main, FIRE-AND-FORGET: "the renderer has mounted" — the `rendererHydrated`
+  // startup phase, which only the renderer can observe. Sent once per window lifetime; a
+  // repeat is refused by the phase accounting itself (shared/perf.ts `addMark`).
+  perfRendererHydrated: 'perf:rendererHydrated',
+
   // ---- feedback TRIAGE (the dev-only operator tab — src/main/triage/**) ----------------
   //
   // ============ DEV BUILDS ONLY. NO SHIPPED APP EVER REGISTERS THESE HANDLERS. ============

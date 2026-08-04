@@ -227,8 +227,19 @@ function startHeartbeat(): void {
   }, 1000)
 }
 
+/**
+ * What attaching a character cost, in events. Returned rather than logged only, because the
+ * startup profile states it beside the replay's duration (docs/plans/perf-profiling.md P4) —
+ * "6 s" means something quite different for 40k events than for 1.1M, and the composition root
+ * is where the two facts meet.
+ */
+export interface TailResult {
+  /** Events the historical scan folded. `seq` is reset per character, so this is the whole scan. */
+  eventsReplayed: number
+}
+
 /** Point the tailer + loot history at a character (used at startup and on switch). */
-export async function tailCharacter(ref: CharacterRef): Promise<void> {
+export async function tailCharacter(ref: CharacterRef): Promise<TailResult> {
   await tailer?.stop()
   tailer = null
   character = ref
@@ -263,6 +274,7 @@ export async function tailCharacter(ref: CharacterRef): Promise<void> {
   // renderer the character's state was fully rebuilt so views remount/re-hydrate.
   registry.flushNow()
   sendToMain(IPC.onCharacter, character)
+  return { eventsReplayed: scan.seq }
 }
 
 /**
@@ -295,14 +307,15 @@ function startInventoryWatch(ref: CharacterRef): void {
   )
 }
 
-/** Startup entry point: resolve a character and tail it, or idle quietly if there is none. */
-export async function startTailing(): Promise<void> {
+/** Startup entry point: resolve a character and tail it, or idle quietly if there is none.
+ *  Resolves to what the replay cost, or null on a machine with no log to tail at all. */
+export async function startTailing(): Promise<TailResult | null> {
   const ref = resolveInitialCharacter()
   if (!ref) {
     logWarn('[everquest-companion] No EQ log found; log tailing disabled.')
-    return
+    return null
   }
-  await tailCharacter(ref)
+  return tailCharacter(ref)
 }
 
 /** Release the session's OS resources (tail, watcher, heartbeat) on the way out. */

@@ -47,7 +47,10 @@ test('a v4 store gains both presence blobs at their defaults, and nothing else m
   // Every step from 5 up: this file owns step 5, and a later step landing here is expected —
   // what it must not do is disturb the two blobs asserted below.
   assert.ok(applied.includes(5), 'a v4 store runs the presence step')
-  assert.deepEqual(applied, [5, 6])
+  // Append-proof: step 5 is this file's, and the chain continues contiguously from there.
+  // Pinning the whole list would make every future migration edit a test about another feature.
+  assert.equal(applied[0], 5, 'a v4 store enters the chain at the presence step')
+  assert.deepEqual(applied, Array.from({ length: applied.length }, (_, i) => i + 5))
 
   assert.deepEqual(data['cursorRing'], RING_DEFAULT, 'the ring is OFF for an upgrading user')
   assert.deepEqual(data['overlayAutoHide'], AUTOHIDE_DEFAULT)

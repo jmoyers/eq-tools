@@ -30,6 +30,11 @@
     "src/renderer/src/**/*.tsx",
     "src/shared/**/*",
     "src/preload/index.d.ts",
-    "src/preload/overlay.d.ts"
+    "src/preload/overlay.d.ts",
+    // `index.d.ts` declares `window.eq` as `typeof api`, so this project already type-checks
+    // src/preload/index.ts as a dependency of it. With `composite: true` every file TypeScript
+    // reaches has to be LISTED, so a module index.ts imports must be named here too — that is
+    // what `perf.ts` (the HUD's slice of the bridge) is doing in this list.
+    "src/preload/perf.ts"
   ]
 }

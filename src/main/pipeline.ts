@@ -207,3 +207,15 @@ bus.subscribe((ev, live) => combat.ingestEvent(ev, live))
 // module has finished wiring: it must observe each event only once the modules and the
 // combat engine have folded it, and it reaches for the active character, which session.ts
 // owns. See the composition root.
+
+/**
+ * When the log-derived world finished being CONSTRUCTED, in ms since process start — the
+ * `dataLoaded` startup phase (docs/plans/perf-profiling.md P4): the spell DB is parsed, the
+ * learned message overlay is folded in, the mob catalog is counted and every module exists.
+ *
+ * A plain exported number, for the same reason `STORE_READY_MS` is one: this all happens during
+ * module EVALUATION, long before Electron's `ready`, and importing main's perf module from here
+ * to mark it would buy a dependency cycle for a timestamp. The composition root imports both and
+ * does the marking.
+ */
+export const DATA_READY_MS = performance.now()

@@ -12,6 +12,7 @@ import Tooltip from '@mui/material/Tooltip'
 import type { CharacterRef, OverlayKind } from '@shared/types'
 import { OVERLAY_KINDS } from '@shared/types'
 import { track } from '../lib/telemetry'
+import PerfChip from './PerfChip'
 
 /**
  * Frameless window title bar (Task #23). Replaces BOTH the OS chrome and the old
@@ -348,6 +349,11 @@ export default function TitleBar({
       <Box sx={{ flexGrow: 1 }} />
 
       {live && <CircleIcon sx={{ fontSize: 12, color: 'success.main' }} />}
+
+      {/* The performance HUD (docs/plans/perf-profiling.md P3). Renders NOTHING at all unless
+          the user turned it on in Preferences → Performance — no placeholder, no reserved slot,
+          and no cost: main creates no timer and pushes no sample while it is off. */}
+      <PerfChip />
 
       <OverlayMenu overlayState={overlayState} />
 

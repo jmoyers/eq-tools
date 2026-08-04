@@ -59,6 +59,11 @@ import type {
   TelemetryPayloadView,
   TelemetryPrefs
 } from '../shared/telemetry'
+// Performance profiling (docs/plans/perf-profiling.md). Same arrangement as presencePrefs: the
+// shapes live beside their pure helpers in shared/perf.ts, not in types.ts, because
+// storeMigrations.ts must reach the prefs normalizer from module scope.
+import type { PerfHudPrefs, PerfSample, StartupProfile } from '../shared/perf'
+import { perfBridge } from './perf'
 // The DEV-ONLY triage surface (see the banner above its methods, below). Types only — the
 // contract lives in src/shared so main, preload and the renderer name one definition.
 import type {
@@ -151,6 +156,7 @@ export type { CursorRingPrefs, OverlayAutoHidePrefs }
 export type { ShareApplyResult, SharePreview }
 export type { FeedbackDraft, FeedbackEnv, LogSliceMeta, SubmitErrorCode }
 export type { TelemetryEvent, TelemetryPayloadView, TelemetryPrefs }
+export type { PerfHudPrefs, PerfSample, StartupProfile }
 // Dev-only triage (above): re-exported for the same reason every other payload shape is — a
 // renderer view names them without reaching across the tsconfig boundary into src/shared.
 export type {
@@ -215,6 +221,10 @@ export interface RendererErrorReport {
 }
 
 const api = {
+  // The performance HUD's five methods (./perf.ts). Spread rather than inlined for file size
+  // alone; on `window.eq` they are indistinguishable from every method written out below.
+  ...perfBridge,
+
   /**
    * Is this the headless integration-test channel (`EQ_E2E=1`, src/main/e2e.ts)?
    *
@@ -580,6 +590,10 @@ const api = {
    *  the live buffer, and the last batch sent (permanently null while the build is dark). */
   getTelemetryPayload: (): Promise<TelemetryPayloadView> =>
     ipcRenderer.invoke(IPC.telemetryPayload),
+
+  // ---- performance HUD + startup profile (docs/plans/perf-profiling.md) -------------------
+  // Its five methods live in ./perf.ts and are spread in below — this file is at the 400-line
+  // factoring ceiling, and a split is the answer to that rather than a widened threshold.
 
   // ---- feedback TRIAGE (DEV BUILDS ONLY — src/main/triage/**) ----------------------------
   //

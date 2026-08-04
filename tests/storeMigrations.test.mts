@@ -191,6 +191,7 @@ test('an EMPTY pre-framework store migrates to a valid current store, not to jun
     cursorRing: { enabled: false, sizePx: 44, thicknessPx: 4 },
     overlayAutoHide: { hideWhenNotRunning: true, hideWhenUnfocused: false },
     telemetry: { enabled: true, noticeShown: false, analyticsId: null },
+    perfHud: { enabled: false },
     [SCHEMA_VERSION_KEY]: CURRENT_SCHEMA_VERSION
   })
 })
@@ -372,7 +373,9 @@ test('running the chain twice equals running it once, for every fixture', () => 
     'store-v1-pre-framework.json',
     'store-v2-characters.json',
     'store-v3-alerts.json',
-    'store-v4-presence.json'
+    'store-v4-presence.json',
+    'store-v5-telemetry.json',
+    'store-v6-perf.json'
   ]) {
     const once = migrateStoreData(fixture(name))
     const twice = migrateStoreData(once.data)

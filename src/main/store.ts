@@ -21,6 +21,7 @@ import {
   type OverlayAutoHidePrefs
 } from '../shared/presencePrefs'
 import { normalizeTelemetryPrefs, type TelemetryPrefs } from '../shared/telemetry'
+import { normalizePerfHudPrefs, type PerfHudPrefs } from '../shared/perf'
 import type { ComboCorrection } from '../shared/classCombo'
 import {
   ALERT_SOUND_MIGRATION_VERSION,
@@ -108,6 +109,11 @@ interface StoreShape {
    * `analyticsId` until the collector mints one on its first start.
    */
   telemetry?: TelemetryPrefs
+  /**
+   * The performance HUD switch (schema migration 6→7; docs/plans/perf-profiling.md). OFF by
+   * default — an enabled HUD is the only thing that creates the metrics poll and the lag probe.
+   */
+  perfHud?: PerfHudPrefs
 }
 
 /**
@@ -144,6 +150,18 @@ if (schemaMigration.to === CURRENT_SCHEMA_VERSION && !schemaMigration.readError)
     logError('main:storeSchema', err)
   }
 }
+
+/**
+ * When the settings store finished opening, in ms since PROCESS START — the `storeLoaded`
+ * startup phase (docs/plans/perf-profiling.md P4).
+ *
+ * It is a plain exported number rather than a `markStartupPhase()` call ON PURPOSE: this module
+ * runs from module scope, and importing main's perf module (which reaches windows.ts, which
+ * reaches this file) would make a cycle out of a measurement. The composition root imports both
+ * and does the marking — everything below this line in this file is function declarations, so
+ * this really is the last thing the store's initialization does.
+ */
+export const STORE_READY_MS = performance.now()
 
 export function getWindowBounds(): WindowBounds | undefined {
   return store.get('windowBounds')
@@ -527,5 +545,25 @@ export function getTelemetryPrefs(): TelemetryPrefs {
 export function setTelemetryPrefs(patch: Partial<TelemetryPrefs>): TelemetryPrefs {
   const next = normalizeTelemetryPrefs({ ...getTelemetryPrefs(), ...patch })
   store.set('telemetry', next)
+  return next
+}
+
+// ----- Performance HUD (schema v7; shared/perf.ts) -----
+//
+// The same read-through-the-normalizer / write-through-the-same-normalizer shape as every prefs
+// blob above. It holds ONE switch, and it is the only persisted state the whole performance
+// feature has: the live samples are a two-minute ring in renderer memory and the startup profile
+// is a single disposable file (`<userData>/perf-startup.json`), neither of which belongs in a
+// settings store that must load cleanly in every future build.
+
+/** The performance-HUD prefs, defaulted. Never throws, never returns a partial. */
+export function getPerfHudPrefs(): PerfHudPrefs {
+  return normalizePerfHudPrefs(store.get('perfHud'))
+}
+
+/** Merge-patch the performance-HUD prefs; returns the stored (re-normalized) value. */
+export function setPerfHudPrefs(patch: Partial<PerfHudPrefs>): PerfHudPrefs {
+  const next = normalizePerfHudPrefs({ ...getPerfHudPrefs(), ...patch })
+  store.set('perfHud', next)
   return next
 }
