@@ -43,6 +43,7 @@ import {
 } from './conditionDraft'
 import ConditionEditor from './ConditionEditor'
 import SoundPicker, { fallbackPack, firstSoundId } from './SoundPicker'
+import SpeechBlock, { type SpeechForm, speechFieldsFor, useSpeechForm } from './SpeechBlock'
 import { DEFAULT_PACK_ID } from './suggestions'
 
 const DEFAULT_COOLDOWN_MS = 2000
@@ -67,6 +68,8 @@ interface AlertForm {
   setVolume: (v: number) => void
   cooldownMs: number
   setCooldownMs: (v: number) => void
+  /** The Speech block's own sub-form (voice-alerts §4) — see SpeechBlock.tsx. */
+  speech: SpeechForm
 }
 
 function useAlertForm(open: boolean, initial: AlertDef | null, packs: SoundPack[]): AlertForm {
@@ -77,6 +80,8 @@ function useAlertForm(open: boolean, initial: AlertDef | null, packs: SoundPack[
   const [soundId, setSoundId] = useState(firstSoundId(fallbackPack(packs)))
   const [volume, setVolume] = useState(1)
   const [cooldownMs, setCooldownMs] = useState(DEFAULT_COOLDOWN_MS)
+  // The Speech block hydrates itself from the same `open`/`initial` pair.
+  const speech = useSpeechForm(open, initial)
 
   // Hydrate the form from `initial` (edit) or blanks (add) whenever it opens.
   useEffect(() => {
@@ -133,7 +138,8 @@ function useAlertForm(open: boolean, initial: AlertDef | null, packs: SoundPack[
     volume,
     setVolume,
     cooldownMs,
-    setCooldownMs
+    setCooldownMs,
+    speech
   }
 }
 
@@ -165,7 +171,10 @@ function defFromForm(f: AlertForm, initial: AlertDef | null): AlertDef {
     sound: { packId: f.packId, soundId: f.soundId },
     volume: f.volume,
     cooldownMs: f.cooldownMs,
-    note: initial?.note
+    note: initial?.note,
+    // audio / speech / alwaysPlay, each omitted at its default so a sound-only alert saves
+    // byte-identically to how it always did (SpeechBlock.speechFieldsFor).
+    ...speechFieldsFor(f.speech)
   }
 }
 
@@ -331,7 +340,7 @@ export default function AlertDialog({
   const editing = initial != null
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth data-testid="alert-dialog">
       <DialogTitle>{editing ? `Edit alert — ${initial?.name}` : 'Add alert'}</DialogTitle>
       <DialogContent>
         <Stack spacing={2} sx={{ mt: 1 }}>
@@ -369,11 +378,19 @@ export default function AlertDialog({
             cooldownMs={f.cooldownMs}
             setCooldownMs={f.setCooldownMs}
           />
+
+          <Divider />
+          <SpeechBlock name={f.name} form={f.speech} />
         </Stack>
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button variant="contained" disabled={!formCanSave(f)} onClick={() => onSave(defFromForm(f, initial))}>
+        <Button
+          variant="contained"
+          data-testid="alert-save"
+          disabled={!formCanSave(f)}
+          onClick={() => onSave(defFromForm(f, initial))}
+        >
           {editing ? 'Save' : 'Add'}
         </Button>
       </DialogActions>

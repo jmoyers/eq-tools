@@ -11,7 +11,17 @@
 // The codec (compression) lives in src/main/shareCodec.ts because it needs node:zlib;
 // everything here is pure so it runs in the renderer, in main, and under node:test.
 
-import type { AlertDef, AlertPrefs, AlertSoundRef, AlertTrigger, OverlayKind } from './types'
+import type {
+  AlertAudio,
+  AlertDef,
+  AlertPrefs,
+  AlertSoundRef,
+  AlertSpeech,
+  AlertTrigger,
+  OverlayKind,
+  SpeechMode
+} from './types'
+import { ALERT_AUDIO_ACTIONS, MAX_SPEECH_CHARS, SPEECH_MODES } from './speechText'
 
 /** Human-readable prefix + format generation. Bump the digit only for a BREAKING format. */
 export const SHARE_PREFIX = 'EQC1-'
@@ -114,7 +124,9 @@ export const SHARE_LIMITS = {
   maxNoteChars: 500,
   maxRegexChars: 500,
   maxWhereFields: 12,
-  maxUiValueChars: 20 * 1024
+  maxUiValueChars: 20 * 1024,
+  /** A voice id is an engine-scoped opaque string (a SAPI voice URI is the long shape). */
+  maxVoiceIdChars: 256
 } as const
 
 // ------------------------------------------------------------------ canonical JSON + checksum
@@ -281,9 +293,44 @@ function sanitizeTrigger(v: unknown): AlertTrigger | null {
 }
 
 /**
+ * An alert's VOICE config (docs/plans/voice-alerts.md §1), or undefined when the payload names
+ * no legal one.
+ *
+ * The mode is matched against the CLOSED `SPEECH_MODES` set rather than clamped as a string:
+ * an unknown mode is not "some future mode we should keep", it is a value this build cannot
+ * resolve, and `speechTextFor` would silently take the alertName fallback for it forever. The
+ * phrase is clamped to the same MAX_SPEECH_CHARS the editor and the `speech:say` handler
+ * enforce — one cap, three enforcers — and the voice id is bounded because it reaches a cache
+ * key and (wave 3) a file name.
+ */
+function sanitizeSpeech(v: unknown): AlertSpeech | undefined {
+  if (!v || typeof v !== 'object') return undefined
+  const r = v as Record<string, unknown>
+  const mode = SPEECH_MODES.find((m: SpeechMode) => m === r.mode)
+  if (!mode) return undefined
+  const out: AlertSpeech = { mode }
+  const phrase = clampStr(r.phrase, MAX_SPEECH_CHARS).trim()
+  if (phrase) out.phrase = phrase
+  const voiceId = clampStr(r.voiceId, SHARE_LIMITS.maxVoiceIdChars).trim()
+  if (voiceId) out.voiceId = voiceId
+  return out
+}
+
+/**
  * Normalize ONE alert from an untrusted payload, or null if it can't be made sense of.
  * Unknown keys are dropped by construction (we rebuild the object field by field), so a
  * sender can't smuggle extra state into your store.
+ *
+ * VOICE FIELDS RIDE ALONG (the W1 hand-off): this function rebuilding the def field by field is
+ * what makes it safe, and is also what silently DROPPED `audio`/`speech` the moment voice alerts
+ * existed — an exported settings bundle round-tripped every alert back to sound-only. Anything
+ * added to AlertDef has to be added here too, or it does not survive a share.
+ *
+ * Each voice key is written only when it is non-default, exactly as the editor saves it, so a
+ * sound-only alert sanitizes to the byte-identical object it always did — which matters because
+ * `alertBehaviorKey` (shareMerge.ts) hashes a subset of these fields to decide "you already have
+ * this alert", and a def that gained a redundant `audio:'sound'` would stop matching the copy
+ * already in the user's store.
  */
 export function sanitizeAlertDef(v: unknown): AlertDef | null {
   if (!v || typeof v !== 'object') return null
@@ -306,7 +353,27 @@ export function sanitizeAlertDef(v: unknown): AlertDef | null {
   }
   const note = clampStr(r.note, SHARE_LIMITS.maxNoteChars).trim()
   if (note) def.note = note
+  applyVoiceFields(def, r)
   return def
+}
+
+/**
+ * Copy the VOICE keys onto a def in place — audio channel, speech config, throttle opt-out.
+ *
+ * Its own function because `sanitizeAlertDef` is already at the factoring ceiling, and because
+ * these three share one rule: each is written ONLY when it is present, legal, and not the
+ * default (see sanitizeAlertDef's note on why a redundant key would break import dedupe).
+ */
+function applyVoiceFields(def: AlertDef, r: Record<string, unknown>): void {
+  const audio = ALERT_AUDIO_ACTIONS.find((a: AlertAudio) => a === r.audio)
+  if (audio && audio !== 'sound') def.audio = audio
+  const speech = sanitizeSpeech(r.speech)
+  if (speech) def.speech = speech
+  // TRUE-ONLY, never coerced: `alwaysPlay` opts an alert OUT of cross-alert audio coalescing
+  // (renderer/features/alerts/audioThrottle.ts). A truthy-looking string from a stranger's
+  // bundle must not make their alert the one that always shouts, so anything but a real `true`
+  // is dropped back to the throttled default.
+  if (r.alwaysPlay === true) def.alwaysPlay = true
 }
 
 /** The three header fields that must be present and well-typed before anything else is read. */

@@ -50,11 +50,17 @@ interface Toast {
 }
 
 /**
- * Play an alert directly at the current global × per-alert volume (ignores mute so
- * the user can hear what they're configuring).
+ * Play an alert directly at the current global × per-alert volume, as if it had just fired —
+ * including its speech, so Test is what the user is actually configuring.
+ *
+ * `enabled` is forced so a disabled alert can still be auditioned, and `alwaysPlay` so the
+ * cross-alert audio throttle (audioThrottle.ts) can never swallow a button the user just
+ * pressed — a Test that does nothing because an unrelated alert fired 1s ago reads as a broken
+ * sound file. MUTE is still honored: the master mute means the app makes no noise, and a Test
+ * is not an exception to that (the toolbar's mute toggle is right there).
  */
 function testAlert(def: AlertDef): void {
-  playAlertNow({ ...def, enabled: true })
+  playAlertNow({ ...def, enabled: true, alwaysPlay: true })
 }
 
 /** Toast for a share-string copy of one alert (`ids:[id]`) or every alert. */

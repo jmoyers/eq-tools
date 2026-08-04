@@ -42,20 +42,51 @@ export function getSoundUrl(packId: string, soundId: string): Promise<string | n
   return p
 }
 
+/** Longest an alert's sound may hold a queued utterance hostage before it speaks anyway. */
+const MAX_QUEUED_SOUND_MS = 10_000
+
 /**
  * Play a pack sound at `volume` (0..1). Overlapping plays are allowed — each call
  * uses its own <audio> element so a rapid burst doesn't cut off the previous
  * sound. Resolves when playback starts (or immediately on failure).
+ *
+ * `onEnded` is the SEAM the `audio:'both'` alerts use (voice alerts, decision D5): the sound
+ * plays and the speech is queued behind it, so the two never talk over each other. It is
+ * called EXACTLY ONCE and it is called on every path — playback finished, playback errored,
+ * autoplay refused, the sound could not be loaded at all — because the caller is a
+ * continuation, not a success handler: a missing wav must not swallow the spoken half of the
+ * alert. A hard cap backstops a media element that never fires `ended` (a zero-byte or
+ * unseekable file), so a queued utterance can't be lost to a stuck decoder.
  */
-export async function playSound(packId: string, soundId: string, volume: number): Promise<void> {
+export async function playSound(
+  packId: string,
+  soundId: string,
+  volume: number,
+  onEnded?: () => void
+): Promise<void> {
+  let done = false
+  const finish = (): void => {
+    if (done) return
+    done = true
+    onEnded?.()
+  }
   const url = await getSoundUrl(packId, soundId)
-  if (!url) return
+  if (!url) {
+    finish()
+    return
+  }
   const audio = new Audio(url)
   audio.volume = Math.max(0, Math.min(1, volume))
+  if (onEnded) {
+    audio.addEventListener('ended', finish)
+    audio.addEventListener('error', finish)
+    setTimeout(finish, MAX_QUEUED_SOUND_MS)
+  }
   try {
     await audio.play()
   } catch {
     // Autoplay/user-gesture policies can reject the first play; nothing to do.
+    finish()
   }
 }
 

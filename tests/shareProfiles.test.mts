@@ -23,6 +23,7 @@ import {
   mergeUiPref,
   planAlertMerge,
   planScalarChanges,
+  SHARE_LIMITS,
   SHARE_PREFIX,
   SHARE_SCHEMA_VERSION,
   sanitizeAlertDef,
@@ -32,6 +33,7 @@ import {
   type SettingsBundleBody
 } from '../src/shared/profiles'
 import { decodeShareString, encodeShareString, looksLikeShareString } from '../src/main/shareCodec'
+import { MAX_SPEECH_CHARS } from '../src/shared/speechText'
 import type { AlertDef } from '../src/shared/types'
 
 const MACHINE_PATH = 'C:\\Users\\jmoye\\AppData\\Roaming\\everquest-companion-dev'
@@ -163,6 +165,87 @@ test('sanitizes untrusted payloads: unknown keys dropped, bad regex refused', ()
     'an unparseable regex is refused rather than stored to blow up the evaluator'
   )
   assert.equal(sanitizeAlertDef({ id: 'z', name: 'Z' }), null, 'a def with no trigger/sound is refused')
+})
+
+// ---------------------------------------------------- voice alerts survive the wire (W1→W2)
+//
+// `sanitizeAlertDef` rebuilds the def field by field, which is what makes an untrusted payload
+// safe — and is exactly why it SILENTLY DROPPED `audio`/`speech` the moment voice alerts
+// existed: exporting your settings and importing them back turned every spoken alert into a
+// sound-only one, with no error anywhere. These pin that the voice config makes the round trip,
+// and that it is validated rather than trusted.
+
+test('the voice config survives a share round trip, validated field by field', () => {
+  const spoken = sanitizeAlertDef({
+    id: 'mez',
+    name: 'Mez broke',
+    trigger: { type: 'event', kind: 'buffFade' },
+    sound: { packId: 'p', soundId: 's' },
+    audio: 'both',
+    speech: { mode: 'spellFirstWord', voiceId: 'urn:sapi:Zira?en-US' },
+    alwaysPlay: true
+  })
+  assert.deepEqual(spoken?.audio, 'both')
+  assert.deepEqual(spoken?.speech, { mode: 'spellFirstWord', voiceId: 'urn:sapi:Zira?en-US' })
+  assert.equal(spoken?.alwaysPlay, true)
+
+  // …and end to end through the real codec, which is where a dropped field actually bites.
+  const body = buildAlertSetBody([spoken as AlertDef])
+  const decoded = decodeShareString(encodeShareString(makeEnvelope('alerts', body, '9.9.9')))
+  assert.equal(decoded.ok, true)
+  if (!decoded.ok) return
+  const back = (decoded.envelope.body as AlertSetBody).alerts[0]
+  assert.deepEqual(back.audio, 'both')
+  assert.deepEqual(back.speech, { mode: 'spellFirstWord', voiceId: 'urn:sapi:Zira?en-US' })
+  assert.equal(back.alwaysPlay, true)
+})
+
+test('a sound-only alert is byte-identical after sanitizing (the merge fingerprint stays stable)', () => {
+  const plain = sanitizeAlertDef({
+    id: 'x',
+    name: 'X',
+    trigger: { type: 'raw', regex: 'ok' },
+    sound: { packId: 'p', soundId: 's' },
+    // Explicit defaults must NOT be written back as keys — a def that gained `audio:'sound'`
+    // would stop matching the copy already in a user's store (shareMerge.alertBehaviorKey).
+    audio: 'sound',
+    alwaysPlay: false
+  })
+  assert.equal(Object.prototype.hasOwnProperty.call(plain as object, 'audio'), false)
+  assert.equal(Object.prototype.hasOwnProperty.call(plain as object, 'alwaysPlay'), false)
+  assert.equal(Object.prototype.hasOwnProperty.call(plain as object, 'speech'), false)
+})
+
+test('untrusted voice fields are validated against the closed sets, clamped, or dropped', () => {
+  const base = {
+    id: 'v',
+    name: 'V',
+    trigger: { type: 'raw', regex: 'ok' },
+    sound: { packId: 'p', soundId: 's' }
+  }
+  const bogus = sanitizeAlertDef({
+    ...base,
+    audio: 'megaphone',
+    speech: { mode: 'readMyEmail', phrase: 'nope' },
+    alwaysPlay: 'yes'
+  })
+  assert.equal(bogus?.audio, undefined, 'an unknown audio action is dropped, never coerced')
+  assert.equal(bogus?.speech, undefined, 'an unknown speech mode is dropped, never defaulted')
+  assert.equal(bogus?.alwaysPlay, undefined, 'alwaysPlay is TRUE-only — no truthy strings')
+
+  const long = sanitizeAlertDef({
+    ...base,
+    audio: 'speech',
+    speech: { mode: 'custom', phrase: 'x'.repeat(500), voiceId: 'v'.repeat(9999) }
+  })
+  assert.equal(long?.speech?.phrase?.length, MAX_SPEECH_CHARS, 'the phrase is capped, not refused')
+  assert.equal(long?.speech?.voiceId?.length, SHARE_LIMITS.maxVoiceIdChars)
+
+  const empties = sanitizeAlertDef({
+    ...base,
+    speech: { mode: 'custom', phrase: '   ', voiceId: '' }
+  })
+  assert.deepEqual(empties?.speech, { mode: 'custom' }, 'blank optional fields are omitted, not stored empty')
 })
 
 // ------------------------------------------------------------------ additive merge

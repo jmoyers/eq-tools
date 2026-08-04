@@ -15,7 +15,8 @@ const SPECS = [
   'overview.e2e.mts',
   'maps.e2e.mts',
   'copy.e2e.mts',
-  'feedback.e2e.mts'
+  'feedback.e2e.mts',
+  'voice-alerts.e2e.mts'
 ]
 
 let failed = 0

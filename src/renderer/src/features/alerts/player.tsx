@@ -1,5 +1,16 @@
 // AlertPlayer — an always-mounted (App-level) component that turns fired alerts
-// into sound, and the `fireAppSignal` entry point for renderer-side app triggers.
+// into sound AND SPEECH, and the `fireAppSignal` entry point for renderer-side app triggers.
+//
+// SPEECH (docs/plans/voice-alerts.md §3, wave 2) rides the SAME firing paths, decided by ONE
+// pure function — `speechPlan` in lib/speech.ts — rather than by a branch at each call site:
+//   audio:'sound'  (or absent) → unchanged: the pack sound, as it always was.
+//   audio:'speech'            → the utterance INSTEAD of the sound.
+//   audio:'both'              → the sound, then the utterance queued behind it (D5), using
+//                               soundCache's `onEnded` continuation so they never overlap.
+// The alerts module's master MUTE and its volumes govern both halves: mute silences speech
+// too, and the utterance is spoken at VoicePrefs.volume × this alert's effective volume. The
+// engine itself (which tier, which voice, and the fact that the e2e channel never utters)
+// lives entirely behind `speak()` — this file never touches speechSynthesis.
 //
 // Two firing paths converge here:
 //   1. module:delta 'alerts' — the main-side AlertsModule fired an event/raw
@@ -16,8 +27,17 @@
 // what they need without prop-drilling.
 
 import { useEffect } from 'react'
-import type { AlertDef, AlertPrefs, AlertsDelta, AppSignal, ModuleDelta } from '@shared/types'
+import type {
+  AlertDef,
+  AlertPrefs,
+  AlertsDelta,
+  AppSignal,
+  FiredAlert,
+  ModuleDelta
+} from '@shared/types'
 import { playSound } from './soundCache'
+import { currentVoicePrefs, loadVoicePrefs, speak, speechPlan } from '../../lib/speech'
+import { coalesceAudio } from './audioThrottle'
 
 // ---- shared, module-level alert state (so fireAppSignal works outside React) ----
 
@@ -25,6 +45,12 @@ let defs: AlertDef[] = []
 let prefs: AlertPrefs = { globalVolume: 0.7, muted: false }
 const appCooldown = new Map<string, number>()
 const DEFAULT_COOLDOWN_MS = 2000
+/**
+ * When the audio channel was last occupied (audioThrottle.ts). One cell for the whole app on
+ * purpose: coalescing is CROSS-alert — three different alerts landing together is the case it
+ * exists for — so a per-def cell would gate nothing that `cooldownMs` doesn't already gate.
+ */
+let lastAudioMs: number | null = null
 
 const subscribers = new Set<() => void>()
 /** Subscribe to defs/prefs changes (AlertsView re-reads after it saves). */
@@ -36,9 +62,14 @@ function notify(): void {
   for (const cb of subscribers) cb()
 }
 
-/** Re-fetch defs + prefs from main into the shared player state. */
+/** Re-fetch defs + prefs (including the voice prefs) from main into the shared player state. */
 export async function refreshAlertStore(): Promise<void> {
-  const [d, p] = await Promise.all([window.eq.listAlerts(), window.eq.getAlertPrefs()])
+  const [d, p] = await Promise.all([
+    window.eq.listAlerts(),
+    window.eq.getAlertPrefs(),
+    // Hydrates lib/speech's own cache — the engine seam owns that copy, not this module.
+    loadVoicePrefs()
+  ])
   defs = d
   prefs = p
   notify()
@@ -57,10 +88,36 @@ function effectiveVolume(def: AlertDef): number {
   return Math.max(0, Math.min(1, v))
 }
 
-/** Play a def's sound now (skips if muted). Used by both firing paths + test. */
-export function playAlertNow(def: AlertDef): void {
-  if (prefs.muted) return
-  void playSound(def.sound.packId, def.sound.soundId, effectiveVolume(def))
+/**
+ * Fire ONE alert's audio now — sound, speech, or both — respecting the master mute. Used by
+ * both firing paths and by the list's Test button.
+ *
+ * `firing` carries the matched event's SPELL CONTEXT (rank intact, see FiredAlert.spell) so the
+ * `spellName`/`spellFirstWord` modes have something to say; omitted for a Test or an app signal,
+ * where `speechTextFor` falls back to the alert's own name rather than inventing one.
+ *
+ * CROSS-ALERT COALESCING is applied here and only here, AFTER the sound/speech plan and only
+ * when something would actually have been audible: a muted app (or a plan that resolved to
+ * nothing) must not consume the window and silence the next alert for 1.5s. The firing itself
+ * is already recorded upstream — this drops noise, never history.
+ */
+export function playAlertNow(def: AlertDef, firing?: Pick<FiredAlert, 'spell'>): void {
+  const voice = currentVoicePrefs()
+  const plan = speechPlan(def, firing ?? null, voice, prefs.muted)
+  if (!plan.sound && !plan.speak) return
+  const gate = coalesceAudio(def, Date.now(), lastAudioMs)
+  lastAudioMs = gate.lastAudioMs
+  if (!gate.play) return
+  const gain = effectiveVolume(def)
+  const say = (): void => {
+    if (plan.speak) void speak(plan.speak, voice, { ...(def.speech?.voiceId ? { voiceId: def.speech.voiceId } : {}), gain })
+  }
+  if (!plan.sound) {
+    say()
+    return
+  }
+  // 'both': the utterance is the sound's continuation, so nothing talks over the airhorn.
+  void playSound(def.sound.packId, def.sound.soundId, gain, plan.after ? say : undefined)
 }
 
 /**
@@ -97,7 +154,9 @@ export default function AlertPlayer(): null {
       if (d.moduleId !== 'alerts') return
       for (const fire of d.delta.fired) {
         const def = defs.find((a) => a.id === fire.alertId)
-        if (def) playAlertNow(def)
+        // The firing is passed through: it is where the spell context lives (W1), and the
+        // speech modes are the only thing that reads it.
+        if (def) playAlertNow(def, fire)
       }
     })
     return () => {

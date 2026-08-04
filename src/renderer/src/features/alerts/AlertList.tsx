@@ -207,7 +207,7 @@ function AlertRowActions({
         </IconButton>
       </Tooltip>
       <Tooltip title="Test (play now)">
-        <IconButton size="small" onClick={onTest}>
+        <IconButton size="small" data-testid="alert-test" onClick={onTest}>
           <PlayArrowIcon fontSize="small" />
         </IconButton>
       </Tooltip>
@@ -217,7 +217,7 @@ function AlertRowActions({
         </IconButton>
       </Tooltip>
       <Tooltip title="Edit">
-        <IconButton size="small" onClick={onEdit}>
+        <IconButton size="small" data-testid="alert-edit" onClick={onEdit}>
           <EditIcon fontSize="small" />
         </IconButton>
       </Tooltip>
@@ -257,7 +257,7 @@ function AlertRow({
 }): JSX.Element {
   const badge = triggerBadge(def.trigger)
   return (
-    <Paper variant="outlined" sx={ALERT_ROW_PAPER_SX}>
+    <Paper variant="outlined" sx={ALERT_ROW_PAPER_SX} data-testid="alert-row">
       <Box sx={ALERT_ROW_GRID_SX}>
         <Switch
           size="small"

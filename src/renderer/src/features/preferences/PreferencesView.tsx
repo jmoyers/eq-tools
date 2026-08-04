@@ -23,6 +23,8 @@
 //   Game     — EverQuest install-folder discovery/override (effective path + how it
 //             resolved + a folder picker + character-log validation). Lives in
 //             ./EqFolderSetting.tsx, like Updates does — this file only names it.
+//   Voice    — spoken alerts (docs/plans/voice-alerts.md §2): the master switch, engine tier,
+//             default voice + preview, speed and volume. Lives in ./VoiceSetting.tsx.
 //   Profiles — export your GLOBAL settings as a paste-safe share string / file, and import
 //             someone else's ADDITIVELY (see src/shared/profiles.ts for the data model).
 //   Updates — app version, last-checked time, a manual check, background download
@@ -48,6 +50,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
+import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver'
 import IosShareIcon from '@mui/icons-material/IosShare'
 import FeedbackIcon from '@mui/icons-material/Feedback'
 import { ExportSettingsSetting, ImportSettingsSetting } from '../profiles/ProfileSharing'
@@ -57,6 +60,7 @@ import { UpdateSetting, VersionSetting, useUpdateStatus } from './UpdateSetting'
 import type { UpdateStatus } from '@shared/types'
 import { EqFolderSetting } from './EqFolderSetting'
 import { FeedbackSetting, type OpenFeedback } from './FeedbackSetting'
+import { VoiceSetting } from './VoiceSetting'
 import { normalizeQuery } from '../../lib/search'
 
 // -------------------------------------------------------------- Combat section
@@ -114,6 +118,28 @@ interface PrefSection {
 
 const RAIL_WIDTH = 168
 
+/**
+ * Spoken alerts (docs/plans/voice-alerts.md §2). Its own factory rather than a literal inside
+ * `buildSections` only because that function is at the 100-code-line ceiling; nothing about
+ * this section is special, and it depends on none of buildSections' inputs.
+ */
+function voiceSection(): PrefSection {
+  return {
+    id: 'voice',
+    label: 'Voice',
+    icon: <RecordVoiceOverIcon fontSize="small" />,
+    items: [
+      {
+        id: 'voice-alerts',
+        label: 'Spoken alerts',
+        keywords:
+          'voice speech speak tts talk say spoken narrate announce engine kokoro sapi rate speed volume alert sound',
+        content: <VoiceSetting />
+      }
+    ]
+  }
+}
+
 /** The whole settings table, in render order. Rebuilt only when its inputs change. */
 function buildSections(
   version: string,
@@ -147,6 +173,7 @@ function buildSections(
         }
       ]
     },
+    voiceSection(),
     {
       id: 'profiles',
       label: 'Profiles',

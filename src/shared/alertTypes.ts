@@ -224,6 +224,18 @@ export interface AlertDef {
   audio?: AlertAudio
   /** What to say when `audio` includes speech. Absent ⇒ `{ mode: 'alertName' }`. */
   speech?: AlertSpeech
+  /**
+   * OPT OUT of cross-alert audio coalescing (renderer/features/alerts/audioThrottle.ts).
+   *
+   * By default every alert's audio is throttled ACROSS alerts — three buffs fading at once is
+   * one audio alert, not three — because a smear of simultaneous sounds carries less than one.
+   * `true` marks an alert that must never be swallowed by that window (a charm break, a raid
+   * call): it always plays, and it does not itself occupy the window. Absent ⇒ throttled,
+   * which is the default the owner asked for and the meaning every def written before this
+   * existed already had — so it needs no store migration (readers default; electron-store
+   * round-trips the key untouched).
+   */
+  alwaysPlay?: boolean
 }
 
 /** Global sound preferences (main-owned, persisted). */

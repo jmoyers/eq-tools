@@ -167,6 +167,19 @@ export interface RendererErrorReport {
 }
 
 const api = {
+  /**
+   * Is this the headless integration-test channel (`EQ_E2E=1`, src/main/e2e.ts)?
+   *
+   * A STATIC boolean, not a channel: the env var is decided before the process starts and can
+   * never change, so an IPC round-trip would buy nothing and every consumer would have to be
+   * async. The renderer has no `process` (nodeIntegration is off) — this is its only door to
+   * the flag, and it exists because some renderer behavior is genuinely too intrusive for a
+   * test that runs BESIDE the user's game: `lib/speech.ts` must not speak out loud during
+   * `npm run test:e2e`. Read-only, and never a trust decision (main enforces its own e2e
+   * behavior in main).
+   */
+  isE2E: process.env.EQ_E2E === '1',
+
   getCharacter: (): Promise<CharacterRef | null> => ipcRenderer.invoke(IPC.getCharacter),
   listCharacters: (): Promise<CharacterRef[]> => ipcRenderer.invoke(IPC.listCharacters),
   setCharacter: (logPath: string): Promise<SetCharacterResult> =>
