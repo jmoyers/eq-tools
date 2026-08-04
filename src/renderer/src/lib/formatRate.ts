@@ -55,3 +55,27 @@ export function formatLevelRate(n: number): string {
 export function formatKillRate(n: number): string {
   return `${formatSmall(n)} kills/hr`
 }
+
+/**
+ * A PROCS-PER-MINUTE rate (proc analytics): '4.12 ppm', '0.35 ppm', '210 ppm'. The word after
+ * the number, exactly like `dps` and `hps`, and deliberately NOT '/min' — the Task #54 sweep
+ * removed every '/s' from the app and a '/min' would reintroduce the same spelling by another
+ * name.
+ *
+ * Small-number shaped (`formatSmall`), never `formatNum`: a proc rate lives in the 0–20 band
+ * and `formatNum` rounds to an integer below a thousand, so an honest 4.12 ppm would render as
+ * a flat '4'. Same reasoning as the leveling rates above.
+ */
+export function formatPpm(n: number): string {
+  return `${formatSmall(n)} ppm`
+}
+
+/**
+ * Procs per 100 logged swing attempts: '3.52/100'. The only MECHANICALLY correct figure for a
+ * chance-on-hit proc — it has none of active time's ambiguity — so it sits beside the ppm
+ * headline rather than replacing it. The caller appends the word 'swings' where there is room;
+ * the number's own spelling is this one everywhere.
+ */
+export function formatPer100(n: number): string {
+  return `${formatSmall(n)}/100`
+}

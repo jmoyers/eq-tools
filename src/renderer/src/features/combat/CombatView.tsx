@@ -251,8 +251,6 @@ export default function CombatView({
 }): React.JSX.Element {
   const {
     snap,
-    combinePets,
-    setCombinePets,
     showUnparsed,
     setShowUnparsed,
     selection,
@@ -327,8 +325,6 @@ export default function CombatView({
         noTimeline={noTimeline}
         mode={mode}
         setMode={setMode}
-        combinePets={combinePets}
-        setCombinePets={setCombinePets}
       />
 
       <CombatBody

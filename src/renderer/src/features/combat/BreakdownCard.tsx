@@ -73,19 +73,12 @@ function CompositionBody({ source, onOpen }: { source: SourceView; onOpen: () =>
 }
 
 /**
- * Is the Procs tab worth its pixels for this selection? `slowExpected` counts as content even
- * with no rows: "you had the poison on and it never landed" is exactly the answer the user
- * asked for, and it is the one answer that has nothing to list.
+ * How many procs this selection saw — the tab's right-hand readout. The unified lane count when
+ * the engine sent one (poison Strikes, cast-less spell effects and Slay Undead together), else
+ * the shipped poison-only count, so the number always matches the list under it.
  */
-function hasProcContent(p: ProcsView): boolean {
-  return (
-    p.strikeCount > 0 ||
-    p.dispelCount > 0 ||
-    p.poisonDamage.length > 0 ||
-    p.coats.length > 0 ||
-    p.slowExpected ||
-    p.stanceSwitches + p.invocationSwitches > 0
-  )
+function procCount(p: ProcsView): number {
+  return p.overall?.count ?? p.strikeCount
 }
 
 /**
@@ -107,10 +100,11 @@ export function BreakdownPreviewCard({
 }): React.JSX.Element {
   const [tab, setTab] = useState<'breakdown' | 'procs'>('breakdown')
   const procs = seg.procs
-  // The tab pair only appears once there is something behind it — but it must not vanish out
-  // from under a user who is standing on the Procs tab when the selection changes.
-  const showTabs = hasProcContent(procs) || tab === 'procs'
-  const onProcs = showTabs && tab === 'procs'
+  const onProcs = tab === 'procs'
+  const nProcs = procCount(procs)
+  // A LIVE segment's open state spans are still running, so `now` is their honest end; a
+  // finalized one has no knowable end here and its open spans decline to state a length.
+  const endTs = seg.active ? Date.now() : 0
 
   return (
     <DashCard
@@ -120,7 +114,7 @@ export function BreakdownPreviewCard({
           {onProcs ? (
             <>
               <Typography variant="caption" color="text.secondary" noWrap>
-                {procs.strikeCount} proc{procs.strikeCount === 1 ? '' : 's'}
+                {nProcs} proc{nProcs === 1 ? '' : 's'}
               </Typography>
               <CopyButton getText={() => formatProcsText(seg, slow)} title="Copy this proc breakdown as text" />
             </>
@@ -129,14 +123,24 @@ export function BreakdownPreviewCard({
               {fmt(source.total)} · {formatRate(source.dps)}
             </Typography>
           ) : null}
-          {showTabs && <CardTabs value={tab} onChange={setTab} />}
+          {/* ALWAYS rendered (owner report: "I can't find it in the UI"). The old auto-hide made
+              discoverability depend on whether the CURRENT selection happened to have procs —
+              so a user who had never fought something proccy never learned the tab existed.
+              An empty selection now shows a quiet, honest line instead. */}
+          <CardTabs value={tab} onChange={setTab} />
         </Stack>
       }
       fill
       testId="dash-panel"
     >
       {onProcs ? (
-        <ProcsBody procs={procs} slow={slow} isFight={seg.kind === 'fight'} />
+        <ProcsBody
+          procs={procs}
+          slow={slow}
+          isFight={seg.kind === 'fight'}
+          activeSec={seg.activeSec}
+          endTs={endTs}
+        />
       ) : source ? (
         <CompositionBody source={source} onOpen={onOpen} />
       ) : (

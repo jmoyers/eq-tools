@@ -368,50 +368,6 @@ function DirectionFilter({
 }
 
 /**
- * A toggle CHIP, not a Switch: the raw Switch + label was the widest thing on this line (~120px
- * — what pushed the lens line to wrap at the 900px minimum window) and the one control still
- * speaking a different visual language than the line's pills. As a chip it reads as what it is:
- * a lens option, on or off.
- */
-function CombinePetsChip({
-  combinePets,
-  setCombinePets
-}: {
-  combinePets: boolean
-  setCombinePets: (v: boolean) => void
-}): React.JSX.Element {
-  return (
-    <Tooltip title="Roll every pet's damage into its owner's row">
-      <ToggleButton
-        value="combine"
-        size="small"
-        data-testid="combine-pets"
-        selected={combinePets}
-        onChange={() => setCombinePets(!combinePets)}
-        sx={{
-          border: 0,
-          borderRadius: '999px',
-          px: 1,
-          py: '1px',
-          minHeight: 0,
-          fontSize: 11,
-          fontWeight: 600,
-          lineHeight: 1.7,
-          textTransform: 'none',
-          color: 'text.secondary',
-          flexShrink: 0,
-          '&:hover': { bgcolor: 'rgba(255,255,255,0.06)', color: 'text.primary' },
-          '&.Mui-selected': { bgcolor: 'rgba(255,255,255,0.09)', color: 'text.primary', fontWeight: 700 },
-          '&.Mui-selected:hover': { bgcolor: 'rgba(255,255,255,0.09)' }
-        }}
-      >
-        Combine pets
-      </ToggleButton>
-    </Tooltip>
-  )
-}
-
-/**
  * The in-combat dot: state, not a control.
  *
  * The DOT is the signal; the words next to it are the label. Below `lg` they are dropped and the
@@ -477,8 +433,6 @@ export interface CombatHeaderProps {
   noTimeline: boolean
   mode: 'out' | 'in'
   setMode: (m: 'out' | 'in') => void
-  combinePets: boolean
-  setCombinePets: (v: boolean) => void
 }
 
 /**
@@ -489,9 +443,9 @@ export interface CombatHeaderProps {
  *
  * LINE 2 — LENS ("how am I looking at it"), left to right in decreasing consequence: the view
  * switch (the tab's navigation, the only control wearing the accent), the direction filter (dash
- * only), then right-aligned the one setting that changes the numbers (combine pets), and past a
- * divider the purely passive readout — modifier slots and the in-combat dot, which are STATE,
- * not controls.
+ * only), then right-aligned the purely passive readout — modifier slots and the in-combat dot,
+ * which are STATE, not controls. (The engine-combine pets chip that lived here was retired when
+ * the pet-nesting preference replaced it — eq.combat.petRow, Preferences > Combat.)
  *
  * The two lines are EXPLICIT rather than a wrapping row: at the 900px minimum window everything
  * cannot fit on one line, and a wrap point that moves with the fight name is exactly the mess
@@ -528,8 +482,6 @@ export function CombatHeader(p: CombatHeaderProps): React.JSX.Element {
         {p.view === 'dash' && <DirectionFilter mode={p.mode} setMode={p.setMode} />}
 
         <Box sx={{ flexGrow: 1, minWidth: 8 }} />
-
-        <CombinePetsChip combinePets={p.combinePets} setCombinePets={p.setCombinePets} />
 
         <PassiveStatus snap={p.snap} />
       </Stack>

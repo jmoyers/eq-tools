@@ -298,6 +298,37 @@ test('formatEntityText is the flat skill list, slay grouped, with the rounds foo
   assert.ok(fits(text))
 })
 
+test('formatEntityText NESTS the pet as a line item when the preference passes it in', () => {
+  // The drill wave made the panel nest the pet inside your breakdown as one line item, but the
+  // clipboard kept calling `flattenSkills` — so a pasted "your breakdown" silently dropped a row
+  // the reader could see on screen. Passing the pets closes that: one table, ONE column set, the
+  // pet ranked among your lanes by damage (petRows.nestedRows), wearing its REAL display name.
+  const text = formatEntityText(SEG, YOU, [PET])
+  assert.equal(
+    text,
+    [
+      'You — a deadly black widow +2 · 1:23',
+      // The header stats stay YOURS — nesting is a layout of the rows, never a fold of the
+      // numbers: not one point of pet damage joins a lane of yours.
+      '31.2k · 375 dps · 260 hits · 12% crit · 82% hit · 29% resist',
+      '',
+      'Skill          Total  Hits  Avg  Max  Crit  Miss  Resist',
+      'Melee          21.2k   210  101  412   11%   18%',
+      // 9.0k ranks the pet second, between Melee and the slay group. Its Avg/Max/Crit/Miss cells
+      // stay EMPTY: a pet aggregate has no single biggest hit, and printing one would invent an
+      // observation.
+      'Vebarn (pet)    9.0k   120',
+      'Slay Undead     6.0k    45  133  500   18%   21%',
+      'Ancient Wrath   4.0k     5  800  900                 29%',
+      '',
+      'Melee rounds: 186 · avg 1.29 hits/round · 41 multi-hit · up to 3/round'
+    ].join('\n')
+  )
+  assert.ok(fits(text))
+  // No pets passed (the preference off, or a non-self source) ⇒ byte-identical to before.
+  assert.equal(formatEntityText(SEG, YOU, []), formatEntityText(SEG, YOU))
+})
+
 test('formatEntityText omits every column the source has no data for', () => {
   const text = formatEntityText(SEG, ALLY)
   assert.equal(

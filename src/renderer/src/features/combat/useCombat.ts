@@ -22,8 +22,6 @@ const DEFAULT_MAX_SEGMENTS = 100
 
 export interface UseCombat {
   snap: CombatSnapshot | null
-  combinePets: boolean
-  setCombinePets: (v: boolean) => void
   showUnparsed: boolean
   setShowUnparsed: (v: boolean) => void
   selection: string
@@ -68,7 +66,6 @@ export interface UseCombat {
  * (the "active" state decay) and to cover any missed event.
  */
 export function useCombat(): UseCombat {
-  const [combinePets, setCombinePets] = useState(false)
   const [showUnparsed, setShowUnparsed] = useState(false)
   const [scope, setScopeState] = useState<CombatScope>(loadScope)
   const [selection, setSelection] = useState<string>(() => defaultSelection(loadScope()))
@@ -80,7 +77,9 @@ export function useCombat(): UseCombat {
     let alive = true
     const tick = async (): Promise<void> => {
       const s = await window.eq.getCombatSnapshot({
-        combinePets,
+        // The engine-side pet fold is retired UI: pet presentation is the renderer's
+        // nesting pref (eq.combat.petRow); the snapshot always carries separate sources.
+        combinePets: false,
         selectedId: selection === LIVE ? undefined : selection,
         showUnparsed,
         maxSegments,
@@ -96,7 +95,7 @@ export function useCombat(): UseCombat {
       off()
       clearInterval(iv)
     }
-  }, [combinePets, selection, showUnparsed, maxSegments, wantTimeline])
+  }, [selection, showUnparsed, maxSegments, wantTimeline])
 
   const loadMore = (): void => setMaxSegments((n) => n + DEFAULT_MAX_SEGMENTS)
 
@@ -117,8 +116,6 @@ export function useCombat(): UseCombat {
 
   return {
     snap,
-    combinePets,
-    setCombinePets,
     showUnparsed,
     setShowUnparsed,
     selection,

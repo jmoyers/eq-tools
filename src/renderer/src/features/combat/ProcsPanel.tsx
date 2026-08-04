@@ -12,9 +12,10 @@ import { type ReactNode } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
 import type { CoatSlot, ProcLane, ProcsView, SlowRollup } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
-import { CAT_COLOR, KIND_COLOR, QuietNote } from './combatShared'
+import { CAT_COLOR, KIND_COLOR } from './combatShared'
 import { fmtElapsed, slowRollupText } from './copyText'
 import { MARKER_COLOR } from './markerStyle'
+import { NoProcs, ProcAnalytics, hasProcAnalytics } from './ProcAnalytics'
 
 // The three hues below are the MARKER hues — this panel and the charts are talking about the
 // same events, so they read from the one map (markerStyle.ts) instead of keeping copies of the
@@ -192,34 +193,77 @@ function ChangesSection({ procs }: { procs: ProcsView }): React.JSX.Element | nu
 }
 
 /**
+ * The shipped POISON PROCS list. Rendered only when the engine sent NO unified `lanes` array —
+ * a lane list is a strict SUPERSET of these rows (it carries the same poison Strikes with their
+ * rates attached), so drawing both would list every poison lane twice. Kept for the payload
+ * shape that predates the analytics wave, and for the golden fixtures built against it.
+ */
+function LegacyStrikes({ procs }: { procs: ProcsView }): React.JSX.Element | null {
+  if (procs.strikes.length === 0) return null
+  return (
+    <ProcSection title="POISON PROCS">
+      {procs.strikes.map((s) => (
+        // The slow lane wears the slow hue — it is the lane this whole tab is about.
+        <ProcRow key={s.name} lane={s} color={s.name.startsWith('Weakening') ? SLOW_COLOR : POISON_COLOR} />
+      ))}
+    </ProcSection>
+  )
+}
+
+/**
+ * Does this selection have NOTHING proc-shaped to say? Every dimension the tab can draw, in one
+ * predicate — including `slowExpected`, which is content even with no rows ("you had the poison
+ * on and it never landed" is exactly the answer the user asked for, and it is the one answer
+ * that has nothing to list).
+ */
+function nothingToShow(p: ProcsView): boolean {
+  return (
+    p.strikeCount === 0 &&
+    p.dispelCount === 0 &&
+    p.poisonDamage.length === 0 &&
+    p.coats.length === 0 &&
+    !p.slowExpected &&
+    p.stanceSwitches + p.invocationSwitches === 0 &&
+    !hasProcAnalytics(p)
+  )
+}
+
+/**
  * The PROCS body. Every number is engine-folded (see this file's header), so nothing here is
  * ever an estimate; the section order is the order the user asks the questions in — did the
- * slow land, how does that compare, what else procced, and what changed mid-fight.
+ * slow land, how does that compare, what is proccing and how often, what does it deliver, what
+ * was on at the time, and what changed mid-fight.
+ *
+ * The empty case is a QUIET LINE, never a vanished tab (the tab pair renders always now): a
+ * feature the owner cannot find in the UI is a feature that does not exist.
  */
 export function ProcsBody({
   procs,
   slow,
-  isFight
+  isFight,
+  activeSec,
+  endTs
 }: {
   procs: ProcsView
   slow: SlowRollup | undefined
   isFight: boolean
+  /** The segment's active seconds — the ppm denominator, in the meter's own definition. */
+  activeSec: number
+  /** Segment end in epoch ms, or 0 when it is not knowable; only clips an OPEN span's
+   *  displayed length, never its evidence chip. */
+  endTs: number
 }): React.JSX.Element {
-  const nothing = procs.strikeCount === 0 && procs.dispelCount === 0 && procs.poisonDamage.length === 0
+  const hasLanes = (procs.lanes?.length ?? 0) > 0
+  const nothing = nothingToShow(procs)
   return (
     <Box sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, minWidth: 0 }}>
       <SlowHeadline procs={procs} isFight={isFight} />
       <SlowRolling slow={slow} />
       <CoatLine coat={procs.coatAtEngage} combat={procs.combatAtEngage} />
 
-      {procs.strikes.length > 0 && (
-        <ProcSection title="POISON PROCS">
-          {procs.strikes.map((s) => (
-            // The slow lane wears the slow hue — it is the lane this whole tab is about.
-            <ProcRow key={s.name} lane={s} color={s.name.startsWith('Weakening') ? SLOW_COLOR : POISON_COLOR} />
-          ))}
-        </ProcSection>
-      )}
+      <ProcAnalytics procs={procs} activeSec={activeSec} endTs={endTs} />
+
+      {!hasLanes && <LegacyStrikes procs={procs} />}
 
       {procs.poisonDamage.length > 0 && (
         <ProcSection title="POISON DAMAGE">
@@ -246,7 +290,7 @@ export function ProcsBody({
 
       <ChangesSection procs={procs} />
 
-      {nothing && <QuietNote>No procs recorded in this segment.</QuietNote>}
+      {nothing && <NoProcs />}
     </Box>
   )
 }

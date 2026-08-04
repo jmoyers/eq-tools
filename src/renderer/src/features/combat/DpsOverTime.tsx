@@ -270,7 +270,7 @@ export function DpsOverTime({
   testId,
   fill
 }: DpsOverTimeProps): React.JSX.Element {
-  const series = useMemo(() => (tl ? buildDpsSeries(tl) : null), [tl])
+  const series = useMemo(() => (tl ? buildDpsSeries(tl, live) : null), [tl, live])
   const chart = useMemo(() => buildDpsChart(series, live), [series, live])
   const markers = useMemo(() => placeMarkers(tl, chart), [tl, chart])
   const a = series?.estimated ? '~' : ''

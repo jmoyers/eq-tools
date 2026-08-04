@@ -172,6 +172,34 @@ export function approxNote(tl: TimelineView): ApproxNote | null {
 const MAX_BUCKETS = 360
 /** Rolling-window width for the smoothed rate (reads as a curve, not a comb). */
 const SMOOTH_MS = 5_000
+/**
+ * How much of a LIVE fight the curve actually SHOWS before it starts scrolling with `now`.
+ * Spelled here rather than imported from dpsChart.ts so this module stays free of the chart
+ * geometry (it is the pure, node-tested half); the chart owns the window, this owns the
+ * sampling grid, and `bucketMsFor` below is the one place the two have to agree.
+ */
+const LIVE_WINDOW_MS = 120_000
+
+/**
+ * Bucket width for a series. The polyline must stay ≤ MAX_BUCKETS *of what is drawn* — and for
+ * a scrolling live fight what is drawn is the last LIVE_WINDOW_MS, not the whole encounter.
+ *
+ * THE RESIDUAL THIS CLOSES (commit 5a9dbc2's note): sizing off raw `durationMs` made a long
+ * live fight coarsen its buckets at 6/12/18 minutes even though the visible window never grew
+ * past two minutes — so a marathon pull's curve lost resolution in the one region the user is
+ * looking at, and every re-size stepped the whole line. Sizing off `min(durationMs,
+ * LIVE_WINDOW_MS)` keeps 1-second buckets in the visible window for a fight of any length:
+ * 120s ÷ 360 is well under a second, so the drawn bucket count stays ~120, far inside the
+ * budget.
+ *
+ * A FINALIZED fight is byte-identical to before: it draws its WHOLE span, so its grid must be
+ * sized by that span, and `live` defaults to false. This is opt-in on purpose — the timeline's
+ * hover sampler reads the curve across the entire encounter and wants exactly the old grid.
+ */
+function bucketMsFor(durationMs: number, live: boolean): number {
+  const shown = live ? Math.min(durationMs, LIVE_WINDOW_MS) : durationMs
+  return Math.max(1000, Math.ceil(shown / MAX_BUCKETS / 1000) * 1000)
+}
 
 export interface DpsSeries {
   /** bucket width in ms (≥1s; grows for long fights so the polyline stays ≤MAX_BUCKETS). */
@@ -202,10 +230,14 @@ export interface DpsSeries {
  * curve's height at time t is a rate you could actually have seen on screen at time t.
  * Leading buckets divide by the (shorter) elapsed window rather than the full one, so the
  * curve starts at the real opening rate instead of ramping from a fake zero.
+ *
+ * `live` says the curve will SCROLL — only then is the bucket grid sized by the visible window
+ * instead of the whole encounter (see `bucketMsFor`). Default false, so every existing caller
+ * and every finalized fight keeps exactly the grid it had.
  */
-export function buildDpsSeries(tl: TimelineView): DpsSeries {
+export function buildDpsSeries(tl: TimelineView, live = false): DpsSeries {
   const durationMs = Math.max(1000, tl.durationMs)
-  const bucketMs = Math.max(1000, Math.ceil(durationMs / MAX_BUCKETS / 1000) * 1000)
+  const bucketMs = bucketMsFor(durationMs, live)
   const n = Math.max(1, Math.ceil(durationMs / bucketMs))
   const rawYou = new Float64Array(n)
   const rawPet = new Float64Array(n)

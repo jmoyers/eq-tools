@@ -423,7 +423,9 @@ export function SegmentBody({
   // clipboard can never hold a level the user isn't looking at. Built on click, never on render.
   const copyView = (): string =>
     d.entity
-      ? formatEntityText(seg, d.entity)
+      ? // The SAME pets the body nests into this list (`SegmentContent` uses this exact test),
+        // so the clipboard can no longer drop a row the reader can see on screen.
+        formatEntityText(seg, d.entity, d.entity.kind === 'you' ? pets : [])
       : d.targetDetail && d.targetName
         ? formatTargetText(seg, d.targetName, d.targetDetail)
         : formatSegmentText(seg, mode)
