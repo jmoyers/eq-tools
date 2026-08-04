@@ -28,6 +28,9 @@ import type { SpellCatalog, SpellCatalogEntry, SpellDbFile, SpellEntry } from '.
 // Line/rank model + the level-keeping twin of spellClasses.ts's class parse (shared/, so the
 // renderer compiles against the SAME implementation the catalog was built with).
 import { parseSpellClassLevels, parseSpellRank } from '../../shared/spellLines'
+// THE source of truth for which cast-on-other emotes are rogue-poison Strike procs. Imported,
+// never copied: the suffix list belongs to shared/poisons.ts and a second copy would drift.
+import { POISON_PROCS } from '../../shared/poisons'
 // Import the committed catalog directly so it's BUNDLED into the main build (electron-vite
 // inlines JSON imports). A readFileSync from a path relative to import.meta.url would look
 // beside out/main/index.js in production, where the JSON isn't copied — so import it.
@@ -150,6 +153,34 @@ function rankNamesByLine(db: SpellDb): Map<string, string[]> {
   return out
 }
 
+/**
+ * The cast-on-other emotes the PARSER routes to `poisonProc`, not to `buffApply` — verbatim
+ * the `suffix` of every POISON_PROCS entry, which is verbatim the DB's own msgCastOnOther for
+ * those Strikes (that is how the table was built; shared/poisons.ts says so).
+ *
+ * WHY THE CATALOG CARES. `templates.lands` authors a `{event, kind:'buffApply', where:{spell}}`
+ * alert. For these twelve detrimental Strikes that alert CAN NEVER FIRE: the parser cascade
+ * (parser.ts CLASSIFIERS) offers the line to `classifyPoisonProc` BEFORE `classifyDbBuff`, so
+ * `<mob>'s limbs move slower!` becomes a poisonProc and no buffApply is ever emitted. The
+ * suggestion wizard was offering a dead alert — a guessed trigger that never fires is worse
+ * than an absent one (shared/alertGroups.ts's law), so the template is suppressed and the
+ * "Rogue slow poisons" group covers the real event instead.
+ */
+const POISON_PROC_MSGS: ReadonlySet<string> = new Set(POISON_PROCS.map((p) => p.suffix))
+
+/** Which one-click suggestion templates a spell can offer (see SpellCatalogEntry.templates). */
+function suggestionTemplates(s: SpellEntry): SpellCatalogEntry['templates'] {
+  const beneficial = s.spellType === 'Beneficial'
+  return {
+    wearsOff: beneficial && !!s.msgWearsOff,
+    fade: beneficial,
+    lands:
+      s.spellType === 'Detrimental' &&
+      !!s.msgCastOnOther &&
+      !POISON_PROC_MSGS.has(s.msgCastOnOther)
+  }
+}
+
 export function buildSpellCatalog(
   db: SpellDb,
   usage: Map<string, number>,
@@ -159,13 +190,7 @@ export function buildSpellCatalog(
   const rankNames = rankNamesByLine(db)
   let hasIllusions = false
   for (const [key, s] of db.byKey) {
-    const beneficial = s.spellType === 'Beneficial'
-    const detrimental = s.spellType === 'Detrimental'
-    const templates = {
-      wearsOff: beneficial && !!s.msgWearsOff,
-      fade: beneficial,
-      lands: detrimental && !!s.msgCastOnOther
-    }
+    const templates = suggestionTemplates(s)
     if (s.illusion) hasIllusions = true
     // Nothing to suggest for a spell with no template and not an illusion — skip it.
     if (!templates.wearsOff && !templates.fade && !templates.lands && !s.illusion) continue

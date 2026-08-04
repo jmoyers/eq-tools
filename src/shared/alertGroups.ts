@@ -36,6 +36,15 @@ import type { AlertDef, AlertTrigger } from './alertTypes'
 export const GROUP_PACK_ID = 'alan-rickman'
 
 /**
+ * The rogue-slow group's id and its ONE def's id, named here so the two entry points that
+ * create it — the groups panel and the observed-driven offer strip
+ * (docs/plans/poison-slow-alerts.md §1.3) — author the SAME def. One id, two doors: creating
+ * it from either is idempotent, and having it from either retires the offer.
+ */
+export const POISON_SLOW_GROUP_ID = 'poisonSlow'
+export const POISON_SLOW_ALERT_ID = 'alert:poison-slow-landed'
+
+/**
  * Alan Rickman lines used by the groups (derived soundIds; see defaultPacks.ts header).
  * The spoken line each one is, so a future edit keeps the INTENT rather than the id.
  */
@@ -57,7 +66,9 @@ const SOUND = {
   /** "I find myself... requiring your attention." — the seeded charm-break line. */
   charmBreak: 'input-required-input-required-02',
   /** an attention read — the thing you were holding is loose again. */
-  ccBreak: 'input-required-input-required-03'
+  ccBreak: 'input-required-input-required-03',
+  /** "Consider this my opening move." — a debuff took hold on the mob in front of you. */
+  debuffLanded: 'task-acknowledge-task-acknowledge-05'
 } as const
 
 /** Every group sound id, for the defaultPacks.ts cross-check + provisioning verification. */
@@ -74,6 +85,12 @@ export interface AlertGroupDefSpec {
   line: string
   /** how many times that shape occurs in the reference log (provenance, not a threshold). */
   observed: number
+  /**
+   * Extra provenance appended to the created def's `note` — what the alert MEANS in the
+   * fight (a duration, a re-landing habit), never how the matcher works. Optional; most
+   * groups' quoted line says everything there is to say.
+   */
+  note?: string
 }
 
 /** A one-click group of alerts. */
@@ -320,6 +337,54 @@ export const ALERT_GROUPS: AlertGroup[] = [
     ]
   },
   {
+    // ON-YOU VARIANT: DELIBERATELY ABSENT. Weakening Strike's msgCastOnYou is
+    // `Your limbs slow down!` (spells.json), but a full-log sweep of
+    // eqlog_Primitive_freeport.txt (1,211,830 lines, 2026-08-03) finds it ZERO times, so
+    // there is no fixture line to quote and no `observed` count to state — this file's law
+    // forbids shipping it. It would also NOT be a `poisonProc`: that line's last word is
+    // "down!", which is in no proc suffix, so the parser cascade falls through the poison
+    // branch to the DB cast-on-you table and emits `buffApply { spell:'Weakening Strike' }`
+    // (pinned in tests/poisonSlowAlerts.test.mts, so if the line ever appears, the shape it
+    // needs is already measured rather than guessed).
+    id: POISON_SLOW_GROUP_ID,
+    title: 'Rogue slow poisons',
+    subtitle: 'A mob in your fight just got slowed.',
+    verified: true,
+    defs: [
+      {
+        // THE ROGUE SLOW. Weakening Strike — the proc granted by the four utility poisons
+        // (Weakening, Binding, Neurotoxic, Paralytic) — prints ONE line and no cast line at
+        // all, so the parser's first-class `poisonProc` event is the only honest handle on
+        // it. `where:{effect:'slow'}` is what picks this proc out of the other nine: the
+        // effect class is unambiguous even for the two emotes shared by a pair of Strikes
+        // (shared/poisons.ts), and it survives a Strike being renamed.
+        //
+        // NO PERCENTAGE APPEARS ANYWHERE IN THIS COPY, deliberately: the wiki states both
+        // 35% and 15% for this line on different pages and the contradiction is unresolved.
+        // The DURATION is safe — spells.json has 210000 ms for Weakening Strike — so that is
+        // what the note says.
+        //
+        // COOLDOWN 30s: the proc RE-LANDS on a mob that is already slowed, several times a
+        // pull — the reference window (tests/fixtures/w41-poison-asp-venom.log) lands four
+        // on Stonesoul the Unmoving inside 44 s. 30 s is roughly one user-visible episode
+        // per pull without muting the NEXT pull. Fight-scoped dedupe is not expressible in
+        // the alert engine and is not worth building for this; the honest consequence is
+        // that a long pull can nudge you twice, which the tests pin exactly.
+        id: POISON_SLOW_ALERT_ID,
+        name: 'Mob slowed (rogue poison)',
+        trigger: { type: 'event', kind: 'poisonProc', where: { effect: 'slow' } },
+        soundId: SOUND.debuffLanded,
+        cooldownMs: 30000,
+        line: "Stonesoul the Unmoving's limbs move slower!",
+        observed: 482,
+        note:
+          'Weakening Strike, the rogue utility-poison slow — 3:30 duration. It re-lands on a ' +
+          'mob that is already slowed several times a pull, so this alert is rate-limited to ' +
+          'about one nudge per pull rather than one per landing.'
+      }
+    ]
+  },
+  {
     // ---- NOT OFFERED -------------------------------------------------------------------
     id: 'feignDeath',
     title: 'Feign death failed',
@@ -362,8 +427,21 @@ export function alertGroupDefs(group: AlertGroup, packId: string = GROUP_PACK_ID
     trigger: spec.trigger,
     sound: { packId, soundId: spec.soundId },
     cooldownMs: spec.cooldownMs,
-    note: `Suggested group "${group.title}" — fires on: ${spec.line}`
+    note:
+      `Suggested group "${group.title}" — fires on: ${spec.line}` +
+      (spec.note ? ` ${spec.note}` : '')
   }))
+}
+
+/**
+ * The def(s) the rogue-slow OFFER creates when accepted — the same list the groups panel's
+ * "Add" button produces for that group, built from the same catalog entry. Two entry points,
+ * one authored def: accepting the offer and clicking the group card are interchangeable, and
+ * doing both is a no-op (the store upserts by id).
+ */
+export function poisonSlowAlertDefs(packId: string = GROUP_PACK_ID): AlertDef[] {
+  const group = ALERT_GROUPS.find((g) => g.id === POISON_SLOW_GROUP_ID)
+  return group ? alertGroupDefs(group, packId) : []
 }
 
 /** Every def id a group would create (for the created/partially-created chip state). */

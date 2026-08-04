@@ -13,21 +13,29 @@
 // suggestion is a UI preference and adding a persisted shape would demand a store migration.
 
 import { useCallback, useMemo, useState } from 'react'
-import type { AlertDef, SpellCatalog, SpellCatalogEntry } from '@shared/types'
+import type { AlertDef, PoisonSlowRecency, SpellCatalog, SpellCatalogEntry } from '@shared/types'
 import type { ClassAbbr } from '@shared/classCombo'
 import { resolvedClasses } from '@shared/classCombo'
 import {
   buildSpellLine,
+  detectPoisonSlowOffers,
   detectRankUpgrades,
   spellLineKey,
   spellLineLevel,
   type LineLevel,
+  type PoisonSlowOffer,
   type RankUpgradeOffer,
   type SpellLine
 } from '@shared/spellLines'
 import { useComboSnap } from '../profiles/ClassComboData'
 
-/** localStorage key for offers the user waved away (session-independent, schema-free). */
+/**
+ * localStorage key for offers the user waved away (session-independent, schema-free).
+ *
+ * ONE SET FOR EVERY OFFER STRIP. Offer ids are namespaced by construction (`upgrade:…`,
+ * `offer:poison-slow`), so a second kind of offer needs no second key — and "I waved this
+ * away" is one idea, not one per feature.
+ */
 const DISMISSED_KEY = 'eq.alerts.upgradeDismissed'
 
 function readDismissed(): Set<string> {
@@ -40,6 +48,31 @@ function readDismissed(): Set<string> {
     // A corrupt/absent value must never take the alerts view down — start clean.
     return new Set()
   }
+}
+
+/** The dismissal set + the one action that grows it, shared by every offer strip. */
+export interface OfferDismissals {
+  dismissed: Set<string>
+  dismiss: (id: string) => void
+}
+
+/**
+ * Per-offer dismissals. The write RE-READS storage and merges before saving, so two strips
+ * holding their own copies of the set can never clobber each other's dismissals — the hook is
+ * called once per strip, and only the merged write is authoritative.
+ */
+export function useOfferDismissals(): OfferDismissals {
+  const [dismissed, setDismissed] = useState<Set<string>>(readDismissed)
+  const dismiss = useCallback((id: string) => {
+    const merged = readDismissed().add(id)
+    try {
+      localStorage.setItem(DISMISSED_KEY, JSON.stringify([...merged]))
+    } catch {
+      // Storage full/blocked: the dismissal still holds for this session.
+    }
+    setDismissed((prev) => new Set(prev).add(id))
+  }, [])
+  return { dismissed, dismiss }
 }
 
 /**
@@ -111,24 +144,38 @@ export function useUpgradeOffers(
   spellLastCast: Readonly<Record<string, number>>
 ): UpgradeOffers {
   const lines = useSpellLines(null, spellLastCast)
-  const [dismissed, setDismissed] = useState<Set<string>>(readDismissed)
-
-  const dismiss = useCallback((id: string) => {
-    setDismissed((prev) => {
-      const next = new Set(prev).add(id)
-      try {
-        localStorage.setItem(DISMISSED_KEY, JSON.stringify([...next]))
-      } catch {
-        // Storage full/blocked: the dismissal still holds for this session.
-      }
-      return next
-    })
-  }, [])
+  const { dismissed, dismiss } = useOfferDismissals()
 
   const offers = useMemo(
     () => detectRankUpgrades(alerts, [...lines.values()]).filter((o) => !dismissed.has(o.id)),
     [alerts, lines, dismissed]
   )
 
+  return { offers, dismiss }
+}
+
+/** The poison-slow offer strip's state: the live offer (0 or 1) plus its dismiss action. */
+export interface PoisonSlowOffers {
+  offers: PoisonSlowOffer[]
+  dismiss: (id: string) => void
+}
+
+/**
+ * The observed-driven "a rogue is slowing your mobs — want an alert?" offer.
+ *
+ * Same shape and same rules as the upgrade strip: pure detection in shared/, dismissal in the
+ * SAME localStorage set (offer ids are namespaced), recompute driven by the alerts module's
+ * own delta — the module flushes the moment a slow lands, so nothing here polls and nothing
+ * waits for a re-hydration.
+ */
+export function usePoisonSlowOffers(
+  alerts: readonly AlertDef[],
+  poisonSlowSeen: PoisonSlowRecency | null | undefined
+): PoisonSlowOffers {
+  const { dismissed, dismiss } = useOfferDismissals()
+  const offers = useMemo(
+    () => detectPoisonSlowOffers(alerts, poisonSlowSeen).filter((o) => !dismissed.has(o.id)),
+    [alerts, poisonSlowSeen, dismissed]
+  )
   return { offers, dismiss }
 }

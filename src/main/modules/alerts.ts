@@ -30,7 +30,8 @@ import type {
   AlertsSnap,
   AlertTrigger,
   AlertTriggerPrimitive,
-  FiredAlert
+  FiredAlert,
+  PoisonSlowRecency
 } from '../../shared/types'
 
 const DEFAULT_COOLDOWN_MS = 2000
@@ -234,6 +235,16 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
   private spellLastCast = new Map<string, number>()
   /** Names whose recency advanced since the last flush (delta payload). */
   private castPending = new Map<string, number>()
+  /**
+   * ROGUE SLOW POISON RECENCY (docs/plans/poison-slow-alerts.md §1.3) — the observation the
+   * "alert when a mob gets slowed?" offer is made from. Recorded on REPLAY as well as live,
+   * exactly like `spellLastCast` above and for the same reason: the offer must be right at
+   * hydration, not one proc later. Null until a slow has actually been seen — an offer is
+   * never made from an assumption about what class you are playing beside.
+   */
+  private poisonSlowSeen: PoisonSlowRecency | null = null
+  /** true when `poisonSlowSeen` advanced since the last flush (delta payload). */
+  private poisonSlowDirty = false
 
   /** Replace the live alert set (called by main after load + every save/delete). */
   setDefs(defs: AlertDef[]): void {
@@ -255,6 +266,8 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
     this.pending = []
     this.spellLastCast = new Map()
     this.castPending = new Map()
+    this.poisonSlowSeen = null
+    this.poisonSlowDirty = false
   }
 
   /**
@@ -277,9 +290,30 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
     }
   }
 
+  /**
+   * Record a rogue slow landing. Like `noteCast`, this runs for REPLAY events too — the
+   * record describes the character's fights, not the current session, and the offer strip
+   * must be correct at hydration.
+   *
+   * `effect` is the unambiguous half of a poison proc: the two shared emotes are shared
+   * between strikes that agree on their effect (shared/poisons.ts), so 'slow' is exactly
+   * Weakening Strike's landing and nothing else.
+   */
+  private notePoisonSlow(ev: LogEvent): void {
+    if (ev.kind !== 'poisonProc' || ev.effect !== 'slow') return
+    const prev = this.poisonSlowSeen
+    this.poisonSlowSeen = {
+      lastAt: Math.max(prev?.lastAt ?? 0, ev.ts),
+      count: (prev?.count ?? 0) + 1,
+      lastTarget: ev.ts >= (prev?.lastAt ?? 0) ? ev.target : (prev?.lastTarget ?? ev.target)
+    }
+    this.poisonSlowDirty = true
+  }
+
   onEvent(ev: LogEvent, live: boolean): void {
     this.seq = ev.seq
     this.noteCast(ev)
+    this.notePoisonSlow(ev)
     // Fire on LIVE events only — replay must never make a sound.
     if (!live) return
     // Resolved once per firing (fires are rare), not once per compiled alert.
@@ -392,24 +426,31 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
   }
 
   snapshot(): { seq: number; state: AlertsSnap } {
-    return {
-      seq: this.seq,
-      state: {
-        defs: this.defs(),
-        history: this.historyObj(),
-        spellLastCast: Object.fromEntries(this.spellLastCast)
-      }
+    const state: AlertsSnap = {
+      defs: this.defs(),
+      history: this.historyObj(),
+      spellLastCast: Object.fromEntries(this.spellLastCast)
     }
+    // Omitted rather than null: the snapshot is JSON over IPC and an absent key is the honest
+    // encoding of "no slow has ever been observed for this character".
+    if (this.poisonSlowSeen) state.poisonSlowSeen = { ...this.poisonSlowSeen }
+    return { seq: this.seq, state }
   }
 
   flushDelta(): { seq: number; delta: AlertsDelta } | null {
-    // A flush is warranted by EITHER a fire or a cast-recency advance — the upgrade offers
-    // recompute off the latter, and they must not wait for an unrelated alert to fire.
-    if (this.pending.length === 0 && this.castPending.size === 0) return null
+    // A flush is warranted by a fire, a cast-recency advance OR a slow landing — the upgrade
+    // offers recompute off the second and the poison-slow offer off the third, and neither
+    // may wait for an unrelated alert to fire.
+    const slow = this.poisonSlowDirty ? this.poisonSlowSeen : null
+    if (this.pending.length === 0 && this.castPending.size === 0 && !slow) return null
     const fired = this.pending
     this.pending = []
     const cast = [...this.castPending].map(([spell, ts]) => ({ spell, ts }))
     this.castPending = new Map()
-    return { seq: this.seq, delta: cast.length > 0 ? { fired, cast } : { fired } }
+    this.poisonSlowDirty = false
+    const delta: AlertsDelta = { fired }
+    if (cast.length > 0) delta.cast = cast
+    if (slow) delta.poisonSlow = { ...slow }
+    return { seq: this.seq, delta }
   }
 }

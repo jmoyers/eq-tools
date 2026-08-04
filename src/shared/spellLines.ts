@@ -26,7 +26,8 @@
 // Lives in shared/ so the renderer (suggestions surface, upgrade strip) and any future
 // main-side caller compile against ONE implementation; it imports nothing but types.
 
-import type { AlertDef, AlertTrigger, AlertTriggerPrimitive } from './alertTypes'
+import type { AlertDef, AlertTrigger, AlertTriggerPrimitive, PoisonSlowRecency } from './alertTypes'
+import { POISON_SLOW_ALERT_ID } from './alertGroups'
 import type { ClassAbbr } from './classCombo'
 
 /**
@@ -374,6 +375,91 @@ export function detectRankUpgrades(
     })
   }
   return offers.sort((a, b) => a.lineKey.localeCompare(b.lineKey))
+}
+
+// ---- the observed-driven poison-slow offer -------------------------------------------
+//
+// The other half of "suggested alerts auto-detected from rogue slows landing"
+// (docs/plans/poison-slow-alerts.md §1.3). The rank-upgrade offers above watch the alerts
+// you HAVE; this one watches the FIGHTS you have had: if a rogue slow has actually landed in
+// front of you and nothing you own would fire on it, say so once and offer the alert.
+//
+// It is an OFFER, on the same terms as the upgrades: nothing is created without a click, the
+// dismissal is per-offer, and the id is stable so a dismissal sticks.
+
+/** The one pending offer: slows are landing and no alert covers them. */
+export interface PoisonSlowOffer {
+  /** stable dismissal key — one offer, so one id. */
+  id: string
+  /** how many slow landings have been observed for this character (replay + live). */
+  count: number
+  /** newest sighting (ms). */
+  lastAt: number
+  /** RAW display name of the mob the newest one landed on. */
+  lastTarget: string
+}
+
+/** The stable id of the poison-slow offer (namespaced, shares the upgrade dismissal set). */
+export const POISON_SLOW_OFFER_ID = 'offer:poison-slow'
+
+/** Whether ONE primitive condition would fire on a rogue slow landing. */
+function coversPoisonSlow(t: AlertTriggerPrimitive): boolean {
+  if (t.type !== 'event' || t.kind !== 'poisonProc') return false
+  const effect = t.where?.effect
+  // No `effect` matcher ⇒ the alert fires on EVERY poison proc, slows included.
+  if (effect === undefined) return true
+  const spec = effect.trim()
+  if (spec.length >= 2 && spec.startsWith('/') && spec.endsWith('/')) {
+    try {
+      return new RegExp(spec.slice(1, -1), 'i').test('slow')
+    } catch {
+      // A bad regex never matches at runtime either (alerts.ts compileCondition), so it
+      // covers nothing — offer the alert rather than assume a broken def has it handled.
+      return false
+    }
+  }
+  return spec.toLowerCase() === 'slow'
+}
+
+/**
+ * Is the user already covered? TWO ways, and both are deliberate:
+ *   * any ENABLED alert whose trigger would fire on a slow landing — however they authored
+ *     it (hand-written, shared string, the group card), the ask is already answered;
+ *   * the group def's own id, PRESENT AT ALL — a user who created this alert and then turned
+ *     it off has answered the question; re-offering it would be nagging, which is exactly
+ *     what `detectRankUpgrades` is careful not to do.
+ */
+function poisonSlowCovered(defs: readonly AlertDef[]): boolean {
+  return defs.some((d) => {
+    if (d.id === POISON_SLOW_ALERT_ID) return true
+    if (!d.enabled) return false
+    const conditions: AlertTriggerPrimitive[] =
+      'conditions' in d.trigger ? d.trigger.conditions : [d.trigger]
+    return conditions.some(coversPoisonSlow)
+  })
+}
+
+/**
+ * The pending poison-slow offer, or an empty list. Pure — the caller filters dismissals.
+ *
+ * ONE observation is enough (`count >= 1`): a slow landing is not a statistical signal that
+ * needs a threshold, it is proof that a rogue is in your group and that this alert would have
+ * had something to say. `seen` absent/zero ⇒ nothing is offered, because nothing was seen.
+ */
+export function detectPoisonSlowOffers(
+  defs: readonly AlertDef[],
+  seen: PoisonSlowRecency | null | undefined
+): PoisonSlowOffer[] {
+  if (!seen || seen.count < 1) return []
+  if (poisonSlowCovered(defs)) return []
+  return [
+    {
+      id: POISON_SLOW_OFFER_ID,
+      count: seen.count,
+      lastAt: seen.lastAt,
+      lastTarget: seen.lastTarget
+    }
+  ]
 }
 
 /** Rewrite one primitive's `where.spell` from `from` to `to` (case-insensitive compare). */

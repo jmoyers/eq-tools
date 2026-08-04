@@ -4,8 +4,7 @@ import type { ConsiderFaction, LootDisposition } from './logEvents'
 import type { ItemStatBlock } from './itemStats'
 import type { ComboProgress } from './classCombo'
 
-export type { LootDisposition }
-export type { ItemStatBlock }
+export type { LootDisposition, ItemStatBlock }
 
 /**
  * The spawnable overlay window KINDS (Task #54 — overlay v2; 'events' added in Task #59):
@@ -808,6 +807,7 @@ export type {
   AlertsSnap,
   AlertsDelta,
   SpellCastRecency,
+  PoisonSlowRecency,
   PackSound,
   SoundPackManifest,
   SoundPack,

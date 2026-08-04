@@ -39,8 +39,9 @@ import AlertDialog from './AlertDialog'
 import AlertList from './AlertList'
 import AlertsToolbar from './AlertsToolbar'
 import UpgradeOffers from './UpgradeOffers'
-import { useUpgradeOffers } from './lineIntel'
-import { useAlertsStore } from './useAlertsStore'
+import PoisonSlowOffer from './PoisonSlowOffer'
+import { usePoisonSlowOffers, useUpgradeOffers } from './lineIntel'
+import { useAlertsStore, type AlertsStore } from './useAlertsStore'
 import ShareImportDialog from '../profiles/ShareImportDialog'
 import { copyText } from '../../lib/clipboard'
 
@@ -169,12 +170,41 @@ function useShareToast(): {
   return { toast, setToast, copyShare }
 }
 
+/**
+ * THE OFFER STRIPS — the two places the app volunteers an alert, and neither ever acts on its
+ * own (AGENTS.md: state, never process).
+ *   * levelling intelligence: an alert pinned to a rank you have outgrown. "Add alongside"
+ *     (the default) keeps the old rank firing for the loadout that still uses it.
+ *   * observed-driven: a rogue's slow poison has actually landed in your fights and nothing
+ *     you own would fire on it. Accepting authors the SAME def the "Rogue slow poisons" group
+ *     card does, so the two entry points can never diverge.
+ * Both render nothing at all when there is nothing to say.
+ */
+function OfferStrips({ store }: { store: AlertsStore }): JSX.Element {
+  const { alerts, spellLastCast, poisonSlowSeen, persistAlerts } = store
+  const upgrades = useUpgradeOffers(alerts, spellLastCast)
+  const poisonSlow = usePoisonSlowOffers(alerts, poisonSlowSeen)
+  const persist = (def: AlertDef): void => void persistAlerts(def)
+  return (
+    <>
+      <UpgradeOffers
+        offers={upgrades.offers}
+        alerts={alerts}
+        onPersist={persist}
+        onDismiss={upgrades.dismiss}
+      />
+      <PoisonSlowOffer
+        offers={poisonSlow.offers}
+        onPersist={persist}
+        onDismiss={poisonSlow.dismiss}
+      />
+    </>
+  )
+}
+
 export default function AlertsView(): JSX.Element {
   const store = useAlertsStore()
-  const { alerts, prefs, sortedPacks, history, spellLastCast, persistAlerts, removeAlert } = store
-
-  // Spell-line intelligence: alerts pinned to a rank the player has since outgrown.
-  const upgrades = useUpgradeOffers(alerts, spellLastCast)
+  const { alerts, prefs, sortedPacks, history, persistAlerts, removeAlert } = store
 
   const edit = useEditDialog()
   const [confirmReset, setConfirmReset] = useState(false)
@@ -208,15 +238,8 @@ export default function AlertsView(): JSX.Element {
         onReset={() => setConfirmReset(true)}
       />
 
-      {/* Levelling intelligence: alerts pinned to a rank you have outgrown. Never applied
-          automatically — "Add alongside" (the default) keeps the old rank firing for the
-          loadout that still uses it; "Replace" is the deliberate re-point. */}
-      <UpgradeOffers
-        offers={upgrades.offers}
-        alerts={alerts}
-        onPersist={(def) => void persistAlerts(def)}
-        onDismiss={upgrades.dismiss}
-      />
+      {/* What the app has noticed and would like to offer — see OfferStrips above. */}
+      <OfferStrips store={store} />
 
       {/* Alert list */}
       <AlertList
@@ -257,7 +280,7 @@ export default function AlertsView(): JSX.Element {
         onClose={() => setSuggestOpen(false)}
         onCreate={persistAlerts}
         onDelete={removeAlert}
-        spellLastCast={spellLastCast}
+        spellLastCast={store.spellLastCast}
         onCreateManually={() => {
           // Escape hatch: close the picker and open the blank manual editor.
           setSuggestOpen(false)

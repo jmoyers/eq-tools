@@ -44,6 +44,9 @@ export const ALL_LOG_EVENT_KINDS = [
   'stanceChange',
   'invocationChange',
   'consider',
+  'poisonProc',
+  'poisonCoat',
+  'poisonDry',
   'epoch',
   'unknown'
 ] as const satisfies readonly LogEventKind[]

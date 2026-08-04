@@ -48,6 +48,15 @@ export type LogEventKind =
   | 'stanceChange'
   | 'invocationChange'
   | 'consider'
+  // ROGUE POISONS (docs/plans/poison-slow-alerts.md §1). The parser has emitted these three
+  // families since Task #64 and the matcher has always been a plain string compare on `kind`
+  // — this curated allowlist was the ONLY thing gating them out of the editor and out of a
+  // group def. `poisonProc` carries `{strike, candidates, effect, target}` (so
+  // `where:{effect:'slow'}` is the rogue slow landing), `poisonCoat` `{poison, group, who}`,
+  // `poisonDry` `{group}`.
+  | 'poisonProc'
+  | 'poisonCoat'
+  | 'poisonDry'
   | 'unknown'
 
 /** Renderer-side app signals an alert can fire on (evaluated in the player, not main). */
@@ -322,6 +331,32 @@ export interface AlertsSnap {
    * Optional — a snapshot from a build before this existed simply has no ranks to offer.
    */
   spellLastCast?: Record<string, number>
+  /**
+   * ROGUE SLOW POISONS OBSERVED (docs/plans/poison-slow-alerts.md §1.3) — what the
+   * "alert when a mob gets slowed?" offer is built on.
+   *
+   * Recorded exactly as `spellLastCast` is: on REPLAY as well as live, so the offer is
+   * complete the moment the renderer hydrates rather than waiting for the next proc, and it
+   * rides the alerts snapshot/delta that already flow over useModule (zero new IPC).
+   *
+   * Absent when no `poisonProc { effect: 'slow' }` has ever been seen — which is the honest
+   * encoding of "this character is not fighting beside a rogue", and the state in which no
+   * offer is made.
+   */
+  poisonSlowSeen?: PoisonSlowRecency
+}
+
+/**
+ * Recency of the rogue slow proc (`<mob>'s limbs move slower!` → `poisonProc`, effect 'slow').
+ * A count and a last sighting, nothing derived: the offer says "N slows landed", never a rate.
+ */
+export interface PoisonSlowRecency {
+  /** newest ts (ms) a slow landing was observed. */
+  lastAt: number
+  /** how many have been observed for this character (replay + live). */
+  count: number
+  /** RAW display name of the mob the newest one landed on (canonicalize with idKey). */
+  lastTarget: string
 }
 /** One rank-preserving cast observed since the last flush. */
 export interface SpellCastRecency {
@@ -333,6 +368,12 @@ export interface AlertsDelta {
   fired: FiredAlert[]
   /** cast-recency entries that advanced since the last flush; merge by `spell`. */
   cast?: SpellCastRecency[]
+  /**
+   * The slow-proc recency AS OF THIS FLUSH (absolute, not an increment) — present only when a
+   * slow landed since the last one. Absolute because the record is a running total the module
+   * already owns; merging a delta of counts would drift if a delta were ever dropped.
+   */
+  poisonSlow?: PoisonSlowRecency
 }
 
 /** A discovered sound within a pack manifest. */

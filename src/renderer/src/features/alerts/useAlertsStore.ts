@@ -19,6 +19,7 @@ import type {
   AlertPrefs,
   AlertsDelta,
   AlertsSnap,
+  PoisonSlowRecency,
   SoundPack,
   SpellCastRecency
 } from '@shared/types'
@@ -27,7 +28,10 @@ import { onAlertStoreChange, refreshAlertStore } from './player'
 import { invalidateSoundCaches } from './soundCache'
 
 function applyAlertsDelta(state: AlertsSnap, delta: AlertsDelta): AlertsSnap {
-  const next = delta.cast?.length ? applyCastRecency(state, delta.cast) : state
+  let next = delta.cast?.length ? applyCastRecency(state, delta.cast) : state
+  // The slow-proc record is ABSOLUTE on the delta (the module owns the running total), so it
+  // is assigned, never accumulated — a dropped delta cannot make the count drift.
+  if (delta.poisonSlow) next = { ...next, poisonSlowSeen: delta.poisonSlow }
   if (!delta.fired.length) return next
   const history = { ...next.history }
   for (const f of delta.fired) {
@@ -62,6 +66,11 @@ export interface AlertsStore {
    * the "recently cast" ordering in the suggestions surface and the upgrade offers.
    */
   spellLastCast: Record<string, number>
+  /**
+   * Rogue slow-poison recency from the alerts module, or null when none has ever been seen.
+   * Drives the observed-driven "alert when a mob gets slowed?" offer.
+   */
+  poisonSlowSeen: PoisonSlowRecency | null
   /** Re-read defs + prefs + packs from main. */
   reload: () => Promise<void>
   /** Re-list packs after a registry install/uninstall. */
@@ -85,6 +94,7 @@ export function useAlertsStore(): AlertsStore {
   const snap = useModule<AlertsSnap, AlertsDelta>('alerts', applyAlertsDelta)
   const history = snap?.history ?? {}
   const spellLastCast = snap?.spellLastCast ?? {}
+  const poisonSlowSeen = snap?.poisonSlowSeen ?? null
 
   const reload = useCallback(async () => {
     const [a, p, ps] = await Promise.all([
@@ -162,6 +172,7 @@ export function useAlertsStore(): AlertsStore {
     sortedPacks,
     history,
     spellLastCast,
+    poisonSlowSeen,
     reload,
     refreshPacks,
     persistAlerts,

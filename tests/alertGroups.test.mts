@@ -63,7 +63,11 @@ const VERIFIED_LINES: Record<string, string[]> = {
     'Your Arch Shielding spell did not take hold. (Blocked by Talisman of Altuna.)'
   ],
   'group:mana:insufficient': ['Insufficient Mana to cast this spell!'],
-  'group:death:you': ['You have been slain by a magician!']
+  'group:death:you': ['You have been slain by a magician!'],
+  // The rogue slow proc. Its full behaviour (the fixture window, the cooldown collapse, the
+  // effect discriminator, the omitted on-you variant) lives in poisonSlowAlerts.test.mts;
+  // this entry keeps it inside the completeness check every verified group def must pass.
+  'alert:poison-slow-landed': ["Stonesoul the Unmoving's limbs move slower!"]
 }
 
 test('G1 every verified group def fires on its quoted real log line', () => {
