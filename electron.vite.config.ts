@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import { defineConfig } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -20,16 +20,20 @@ export default defineConfig({
     // resolve in a packaged app, because electron-builder never installs devDependencies.
     // That is what makes "a shipped build is structurally incapable of reading the backlog" a
     // property of the packaging rather than a promise about a boolean.
-    plugins: [
-      externalizeDepsPlugin({
-        include: ['pg', '@aws-sdk/client-s3', '@aws-sdk/credential-providers', '@aws-sdk/dsql-signer']
-      })
-    ],
+    //
+    // electron-vite 5 moved this from a plugin (`externalizeDepsPlugin`, now deprecated) to
+    // `build.externalizeDeps`, which is ON BY DEFAULT and takes the same {include, exclude}.
+    // Same behaviour, one fewer import — but note the default: every environment below
+    // externalizes `dependencies` now whether or not it says so.
+    //
     // Inlined data JSONs (spells/mobs/items/classes) emit as JSON.parse("...") instead of
     // pretty-printed object literals — measured 4.66 MB smaller main bundle and a faster
     // startup parse the day items.json (6.8 MB raw) landed.
     json: { stringify: true },
     build: {
+      externalizeDeps: {
+        include: ['pg', '@aws-sdk/client-s3', '@aws-sdk/credential-providers', '@aws-sdk/dsql-signer']
+      },
       rollupOptions: {
         // TWO main-process bundles. `index` is the app; `speechWorker` is the Kokoro
         // synthesis worker_thread (docs/plans/voice-alerts.md D2 — inference must never run
@@ -47,7 +51,8 @@ export default defineConfig({
     }
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    // No `externalizeDeps` line: electron-vite 5 defaults it to true, which is exactly what
+    // the old bare `externalizeDepsPlugin()` did here.
     build: {
       rollupOptions: {
         // Three preloads: the full app bridge (index), a minimal overlay bridge (overlay)
