@@ -1,7 +1,7 @@
-import { type JSX, useEffect, useRef, useState } from 'react'
+import { type JSX, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 /**
- * The overlay's segment/session selector.
+ * The overlay's segment/session selector — the OPEN half of it.
  *
  * WHY IT IS NOT A `<select>`: a native select paints its popup with the OS widget — an opaque
  * white list in a system font, with one flat line per option — dropped on top of a dark,
@@ -9,6 +9,16 @@ import { type JSX, useEffect, useRef, useState } from 'react'
  * rate on top, start clock · age · duration underneath) that tells five same-named giant pulls
  * apart. This is the same list rendered with the meter's own chrome: the panel background, the
  * bars' hairline borders, tabular-num rates and the same hover wash the bar rows use.
+ *
+ * WHERE THE CLOSED STATE WENT: the HEADER ROW is the trigger now (`OverlayHeader`). A 380×320
+ * window cannot afford a second row that repeats the name, the live dot and the rate the header
+ * is already showing — so the closed state IS the header, and this file owns only the popup.
+ *
+ * ANCHORING: `position: fixed`, with the top measured off the header's own rect. The overlay
+ * window IS the viewport, so a fixed box whose height is clamped against `innerHeight` can never
+ * paint outside the window — which an absolutely-positioned child of the header's flex row could
+ * not promise (it would inherit the trigger's width and hang off the bottom of a shortened
+ * window).
  *
  * MUI-FREE ON PURPOSE: the overlay is its own renderer entry (overlay.html) with no theme and no
  * component library — every pixel here is plain React + inline styles, exactly like Bar/IconButton
@@ -34,68 +44,13 @@ export interface OverlaySelectRow {
 
 /** Shared chrome tokens so the trigger, the popup and the meter agree. */
 const PANEL_BG = 'rgba(18,22,28,0.97)'
-const HAIRLINE = 'rgba(255,255,255,0.12)'
-const HOVER = 'rgba(255,255,255,0.08)'
+export const HAIRLINE = 'rgba(255,255,255,0.12)'
+export const HOVER = 'rgba(255,255,255,0.08)'
 
-/**
- * The closed-state trigger: live dot · label · rate · caret, in the meter's own chrome.
- * `current` is null only when there is nothing to select at all, which is also the
- * disabled state.
- */
-function SelectTrigger({
-  current,
-  open,
-  disabled,
-  accent,
-  emptyLabel,
-  onToggle
-}: {
-  current: OverlaySelectRow | null
-  open: boolean
-  disabled: boolean
-  accent: string
-  emptyLabel: string
-  onToggle: () => void
-}): JSX.Element {
-  return (
-    <div
-      role="button"
-      aria-haspopup="listbox"
-      aria-expanded={open}
-      onClick={() => !disabled && onToggle()}
-      title={current ? `${current.label} · ${current.rate} · ${current.timing}` : emptyLabel}
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        height: 20,
-        padding: '0 6px',
-        borderRadius: 4,
-        border: `1px solid ${open ? accent : HAIRLINE}`,
-        background: open ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.32)',
-        color: '#f2f2f2',
-        fontSize: 11,
-        lineHeight: 1,
-        cursor: disabled ? 'default' : 'pointer',
-        opacity: disabled ? 0.55 : 1,
-        userSelect: 'none'
-      }}
-    >
-      {current?.live && (
-        <span style={{ width: 5, height: 5, borderRadius: '50%', background: accent, flexShrink: 0 }} />
-      )}
-      <span style={{ flexGrow: 1, minWidth: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-        {current ? current.label : emptyLabel}
-      </span>
-      {current && (
-        <span style={{ color: 'rgba(255,255,255,0.6)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
-          {current.rate}
-        </span>
-      )}
-      <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: 9, flexShrink: 0 }}>{open ? '▲' : '▼'}</span>
-    </div>
-  )
-}
+/** Tallest the popup ever gets. */
+const MAX_POPUP_H = 220
+/** Side inset, matching the header's own 8px gutter closely enough to read as one piece. */
+const SIDE_INSET = 6
 
 /** One popup row: the dense two-line disambiguation the native widget could never carry. */
 function OptionRow({
@@ -166,38 +121,81 @@ function OptionRow({
   )
 }
 
-export function OverlaySelect({
+/** A ref shape both `RefObject<T>` and a plain holder satisfy — the popup only ever reads it. */
+export interface ElementRef {
+  current: HTMLElement | null
+}
+
+/** Where the popup sits: under the header, never past the bottom of the window. */
+interface PopupBox {
+  top: number
+  maxHeight: number
+}
+
+/**
+ * Measure the popup against the anchor (the header row) and the window. Re-measured on resize
+ * because an overlay is user-resizable down to 90px tall (windows.ts) — far shorter than the
+ * 320px default and shorter than the popup's own maximum. The height is therefore clamped to the
+ * room that actually exists BELOW the header and the list scrolls inside it: there is no minimum
+ * height, deliberately, because a floor is exactly how a popup ends up painting past the bottom
+ * edge of a window this small.
+ */
+function usePopupBox(anchorRef: ElementRef): PopupBox | null {
+  const [box, setBox] = useState<PopupBox | null>(null)
+  useLayoutEffect(() => {
+    const measure = (): void => {
+      const top = Math.round((anchorRef.current?.getBoundingClientRect().bottom ?? 0) + 2)
+      const room = window.innerHeight - top - SIDE_INSET
+      setBox({ top, maxHeight: Math.max(0, Math.min(MAX_POPUP_H, room)) })
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [anchorRef])
+  return box
+}
+
+/**
+ * The open list. Closes on Esc or on a mousedown outside BOTH itself and the trigger — the
+ * trigger is exempt because it owns the toggle, and a close-then-reopen would eat the click.
+ * Both listeners exist only while this is mounted, so a closed selector costs nothing and a
+ * locked (click-through) overlay never installs one at all.
+ */
+export function OverlaySelectPopup({
   rows,
   value,
-  onChange,
   accent,
-  emptyLabel,
-  noDragStyle
+  anchorRef,
+  triggerRef,
+  noDragStyle,
+  onPick,
+  onClose
 }: {
   rows: OverlaySelectRow[]
   value: string
-  onChange: (v: string) => void
   /** the owning overlay's accent color (damage gold / heal green). */
   accent: string
-  /** shown on the trigger when there is nothing to select at all. */
-  emptyLabel: string
+  /** the header row — the popup hangs off its bottom edge. */
+  anchorRef: ElementRef
+  /** the clickable part of the header, exempt from the outside-click close. */
+  triggerRef: ElementRef
   /** the caller's `WebkitAppRegion: 'no-drag'` style — the popup must not become a drag handle. */
   noDragStyle?: React.CSSProperties
-}): JSX.Element {
-  const [open, setOpen] = useState(false)
+  onPick: (v: string) => void
+  onClose: () => void
+}): JSX.Element | null {
   const [hover, setHover] = useState<string | null>(null)
-  const wrapRef = useRef<HTMLDivElement>(null)
-  const current = rows.find((r) => r.value === value) ?? rows[0] ?? null
+  const popRef = useRef<HTMLDivElement>(null)
+  const box = usePopupBox(anchorRef)
 
-  // Close on outside click / Esc. Both are registered only while open, so a closed selector
-  // costs nothing and the locked (click-through) overlay never installs a listener at all.
   useEffect(() => {
-    if (!open) return
     const onDown = (e: MouseEvent): void => {
-      if (!wrapRef.current?.contains(e.target as Node)) setOpen(false)
+      const t = e.target as Node
+      if (popRef.current?.contains(t) || triggerRef.current?.contains(t)) return
+      onClose()
     }
     const onKey = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') setOpen(false)
+      if (e.key === 'Escape') onClose()
     }
     window.addEventListener('mousedown', onDown)
     window.addEventListener('keydown', onKey)
@@ -205,57 +203,43 @@ export function OverlaySelect({
       window.removeEventListener('mousedown', onDown)
       window.removeEventListener('keydown', onKey)
     }
-  }, [open])
+  }, [onClose, triggerRef])
 
-  const disabled = rows.length === 0
+  // The box lands in a layout effect, i.e. before the browser paints — so this null render is
+  // never visible, and the popup never flashes at the top-left corner while it measures.
+  if (!box) return null
 
   return (
-    <div ref={wrapRef} style={{ ...noDragStyle, position: 'relative', padding: '4px 8px 2px', flexShrink: 0 }}>
-      <SelectTrigger
-        current={current}
-        open={open}
-        disabled={disabled}
-        accent={accent}
-        emptyLabel={emptyLabel}
-        onToggle={() => setOpen((o) => !o)}
-      />
-
-      {open && !disabled && (
-        <div
-          role="listbox"
-          style={{
-            position: 'absolute',
-            left: 8,
-            right: 8,
-            top: '100%',
-            zIndex: 20,
-            maxHeight: 220,
-            overflowY: 'auto',
-            background: PANEL_BG,
-            border: `1px solid ${HAIRLINE}`,
-            borderRadius: 5,
-            boxShadow: '0 6px 18px rgba(0,0,0,0.55)',
-            padding: 2
-          }}
-        >
-          {rows.map((r) => (
-            <OptionRow
-              key={r.value}
-              row={r}
-              selected={r.value === value}
-              hovered={hover === r.value}
-              accent={accent}
-              onHover={(hovering) =>
-                setHover((h) => (hovering ? r.value : h === r.value ? null : h))
-              }
-              onPick={() => {
-                onChange(r.value)
-                setOpen(false)
-              }}
-            />
-          ))}
-        </div>
-      )}
+    <div
+      ref={popRef}
+      role="listbox"
+      style={{
+        ...noDragStyle,
+        position: 'fixed',
+        top: box.top,
+        left: SIDE_INSET,
+        right: SIDE_INSET,
+        zIndex: 20,
+        maxHeight: box.maxHeight,
+        overflowY: 'auto',
+        background: PANEL_BG,
+        border: `1px solid ${HAIRLINE}`,
+        borderRadius: 5,
+        boxShadow: '0 6px 18px rgba(0,0,0,0.55)',
+        padding: 2
+      }}
+    >
+      {rows.map((r) => (
+        <OptionRow
+          key={r.value}
+          row={r}
+          selected={r.value === value}
+          hovered={hover === r.value}
+          accent={accent}
+          onHover={(hovering) => setHover((h) => (hovering ? r.value : h === r.value ? null : h))}
+          onPick={() => onPick(r.value)}
+        />
+      ))}
     </div>
   )
 }

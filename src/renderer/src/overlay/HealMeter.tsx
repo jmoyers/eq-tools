@@ -4,9 +4,10 @@ import type { CombatSnapshot, SegmentView } from '@shared/combat'
 import { formatNum as fmt, formatHealRate } from '../lib/formatRate'
 import { formatTime } from '../lib/formatDate'
 import { scopeOptions } from '../features/combat/dashboardData'
-import { OverlaySelect, type OverlaySelectRow } from './OverlaySelect'
+import { type OverlaySelectRow } from './OverlaySelect'
+import { OverlayHeader } from './OverlayHeader'
 import { HealBars, ABSORB_NOTE } from './healBars'
-import { IconButton, ICON_ACCENT_GREEN } from './IconButton'
+import { ICON_ACCENT_GREEN } from './IconButton'
 import { useOverlayChrome, type OverlayChrome } from './useOverlayChrome'
 import { useOverlayCombat } from './useOverlayCombat'
 
@@ -189,24 +190,19 @@ export default function HealMeter(): JSX.Element {
         overflow: 'hidden'
       }}
     >
-      <HealHeader
-        head={{ live, isFight, headerName, durationSec, totalHps, totalTitle }}
+      {/* Header AND selector, one row — same treatment as the damage pair: the title is the
+          selected segment's name, and interactive mode makes the row the trigger. */}
+      <OverlayHeader
+        live={live}
+        tag={isFight ? 'HEAL · FIGHT' : 'HEAL · ZONE'}
+        title={headerName}
+        titleColor={HEAL_GOLD}
+        tail={`${fmtDur(durationSec)} · ${formatHealRate(totalHps)}`}
+        tailTitle={totalTitle}
+        iconAccentBg={ICON_ACCENT_GREEN}
+        select={{ rows: selectRows, value: selection, onChange: selectSegment, accent: HEAL_GOLD }}
         chrome={{ locked, hovering, dragRegion, noDrag, toggleLock }}
       />
-
-      {/* Selector — interactive mode only. Same rows as the damage pair's selector. */}
-      {!locked && (
-        <div style={{ ...noDrag, padding: '4px 8px 2px', flexShrink: 0 }}>
-          <OverlaySelect
-            rows={selectRows}
-            value={selection}
-            onChange={selectSegment}
-            accent={HEAL_GOLD}
-            emptyLabel={isFight ? 'No fights yet' : 'No zone sessions yet'}
-            noDragStyle={noDrag}
-          />
-        </div>
-      )}
 
       {/* Bars + mini drill-down. Locked mode RENDERS the remembered drill read-only (no setter ⇒
           no click targets, no cursors, no back chevron) so the window stays click-through. */}
@@ -215,96 +211,6 @@ export default function HealMeter(): JSX.Element {
       </div>
 
       {!locked && <HealFooter bgAlpha={bgAlpha} topN={topN} patch={patch} noDrag={noDrag} />}
-    </div>
-  )
-}
-
-/** Header: kind tag + encounter/zone name + duration + live dot. Drag handle when interactive. */
-function HealHeader({
-  head,
-  chrome
-}: {
-  head: {
-    live: boolean
-    isFight: boolean
-    headerName: string
-    durationSec: number
-    totalHps: number
-    totalTitle: string
-  }
-  chrome: Pick<OverlayChrome, 'locked' | 'hovering' | 'dragRegion' | 'noDrag' | 'toggleLock'>
-}): JSX.Element {
-  const { live, isFight, headerName, durationSec, totalHps, totalTitle } = head
-  const { locked, hovering, dragRegion, noDrag, toggleLock } = chrome
-  return (
-    <div
-      style={{
-        ...dragRegion,
-        display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        padding: '4px 8px',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        fontSize: 11,
-        flexShrink: 0
-      }}
-    >
-      <span
-        title={live ? 'In combat' : 'Idle'}
-        style={{
-          width: 8,
-          height: 8,
-          borderRadius: '50%',
-          flexShrink: 0,
-          background: live ? '#5fbf72' : 'rgba(255,255,255,0.25)',
-          boxShadow: live ? '0 0 5px #5fbf72' : 'none'
-        }}
-      />
-      <span
-        style={{
-          fontSize: 8,
-          letterSpacing: 0.5,
-          textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.4)',
-          flexShrink: 0
-        }}
-      >
-        {isFight ? 'HEAL · FIGHT' : 'HEAL · ZONE'}
-      </span>
-      <span
-        style={{ fontWeight: 700, color: HEAL_GOLD, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flexGrow: 1 }}
-      >
-        {headerName}
-      </span>
-      <span
-        title={totalTitle}
-        style={{ color: 'rgba(255,255,255,0.7)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}
-      >
-        {fmtDur(durationSec)} · {formatHealRate(totalHps)}
-      </span>
-
-      {(!locked || hovering) && (
-        <div style={{ ...noDrag, display: 'flex', alignItems: 'center', gap: 2, marginLeft: 2 }}>
-          <IconButton
-            title={locked ? 'Unlock (interactive)' : 'Lock (click-through)'}
-            onClick={toggleLock}
-            accent={locked}
-            accentBg={ICON_ACCENT_GREEN}
-          >
-            {locked ? '🔓' : '📌'}
-          </IconButton>
-          {!locked && (
-            <IconButton
-              title="Close overlay"
-              onClick={() => window.eqOverlay.close()}
-              danger
-              accentBg={ICON_ACCENT_GREEN}
-            >
-              ✕
-            </IconButton>
-          )}
-        </div>
-      )}
     </div>
   )
 }

@@ -9,9 +9,9 @@ import {
   scopeOptions,
   type ScopeOption
 } from '../features/combat/dashboardData'
-import { OverlaySelect, type OverlaySelectRow } from './OverlaySelect'
+import { type OverlaySelectRow } from './OverlaySelect'
+import { OverlayHeader } from './OverlayHeader'
 import { MeterBars } from './meterBars'
-import { IconButton } from './IconButton'
 import { useOverlayChrome, type OverlayChrome } from './useOverlayChrome'
 import { useOverlayCombat } from './useOverlayCombat'
 
@@ -177,24 +177,19 @@ export default function OverlayMeter(): JSX.Element {
         overflow: 'hidden'
       }}
     >
-      <MeterHeader
-        view={{ live, headerName, durationSec, totalDps, headIsLast }}
-        isFight={isFight}
+      {/* Header AND selector, one row: the title is the selected segment's own name, and in
+          interactive mode the row is the trigger — clicking it drops the fight/zone list under
+          the header. A locked overlay gets the same row minus every affordance. */}
+      <OverlayHeader
+        live={live}
+        tag={isFight ? 'FIGHT' : 'ZONE'}
+        last={headIsLast}
+        title={headerName}
+        titleColor={GOLD}
+        tail={`${fmtDur(durationSec)} · ${formatRate(totalDps)}`}
+        select={{ rows, value: selection, onChange: selectSegment, accent: GOLD }}
         chrome={{ locked, hovering, dragRegion, noDrag, toggleLock }}
       />
-
-      {/* Selector — interactive mode only (a locked overlay is click-through, so it is simply
-          not rendered and installs no listeners). Styled to the meter, not to the OS. */}
-      {!locked && (
-        <OverlaySelect
-          rows={rows}
-          value={selection}
-          onChange={selectSegment}
-          accent={GOLD}
-          emptyLabel={isFight ? 'No fights yet' : 'No zone sessions yet'}
-          noDragStyle={noDrag}
-        />
-      )}
 
       {/* Bars + mini drill-down. Locked mode RENDERS the remembered drill (the pinned "damage by
           type" breakdown the user plays with) but hands MeterBars no setter, so there are no
@@ -204,82 +199,6 @@ export default function OverlayMeter(): JSX.Element {
       </div>
 
       {!locked && <MeterFooter bgAlpha={bgAlpha} topN={topN} patch={patch} noDrag={noDrag} />}
-    </div>
-  )
-}
-
-/** Header: kind tag + encounter/zone name + duration + live dot. Drag handle when interactive. */
-function MeterHeader({
-  view,
-  isFight,
-  chrome
-}: {
-  view: Pick<MeterView, 'live' | 'headerName' | 'durationSec' | 'totalDps' | 'headIsLast'>
-  isFight: boolean
-  chrome: Pick<OverlayChrome, 'locked' | 'hovering' | 'dragRegion' | 'noDrag' | 'toggleLock'>
-}): JSX.Element {
-  const { live, headerName, durationSec, totalDps, headIsLast } = view
-  const { locked, hovering, dragRegion, noDrag, toggleLock } = chrome
-  return (
-    <div
-      style={{
-        ...dragRegion,
-        display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        padding: '4px 8px',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        fontSize: 11,
-        flexShrink: 0
-      }}
-    >
-      <span
-        title={live ? 'In combat' : 'Idle'}
-        style={{
-          width: 8,
-          height: 8,
-          borderRadius: '50%',
-          flexShrink: 0,
-          background: live ? '#5fbf72' : 'rgba(255,255,255,0.25)',
-          boxShadow: live ? '0 0 5px #5fbf72' : 'none'
-        }}
-      />
-      <span
-        style={{
-          fontSize: 8,
-          letterSpacing: 0.5,
-          textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.4)',
-          flexShrink: 0
-        }}
-      >
-        {isFight ? 'FIGHT' : 'ZONE'}
-        {/* The head row is a FINISHED fight (no pull is open). Say so in the header, because a
-            LOCKED overlay hides the selector entirely — the tag would otherwise be the only
-            thing on screen and it would read as if this fight were still going. */}
-        {headIsLast && <span style={{ opacity: 0.75 }}> · LAST</span>}
-      </span>
-      <span
-        style={{ fontWeight: 700, color: GOLD, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flexGrow: 1 }}
-      >
-        {headerName}
-      </span>
-      <span style={{ color: 'rgba(255,255,255,0.7)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
-        {fmtDur(durationSec)} · {formatRate(totalDps)}
-      </span>
-
-      {(!locked || hovering) && (
-        <div style={{ ...noDrag, display: 'flex', alignItems: 'center', gap: 2, marginLeft: 2 }}>
-          <IconButton title={locked ? 'Unlock (interactive)' : 'Lock (click-through)'} onClick={toggleLock} accent={locked}>
-            {locked ? '🔓' : '📌'}
-          </IconButton>
-          {!locked && (
-            <IconButton title="Close overlay" onClick={() => window.eqOverlay.close()} danger>
-              ✕
-            </IconButton>
-          )}
-        </div>
-      )}
     </div>
   )
 }

@@ -45,7 +45,7 @@ import { isTradeskillOnly } from '../lib/itemKnowledgeView'
 import { ItemHoverCard, MobHoverCard, lookupItemCached } from './feedHoverCards'
 import { HoverCardLayer } from './hoverCardLayer'
 import { useOverlayChrome, type OverlayChrome } from './useOverlayChrome'
-import { IconButton } from './IconButton'
+import { OverlayHeader } from './OverlayHeader'
 
 const GOLD = '#d9b25f'
 
@@ -340,61 +340,6 @@ function useEventFeed(): FeedSnap {
   return rows
 }
 
-/** Header — same shape as the meter's: tag, title, count, controls. Drag handle when interactive. */
-function FeedHeader({
-  count,
-  chrome
-}: {
-  count: number
-  chrome: Pick<OverlayChrome, 'locked' | 'hovering' | 'dragRegion' | 'noDrag' | 'toggleLock'>
-}): JSX.Element {
-  const { locked, hovering, dragRegion, noDrag, toggleLock } = chrome
-  return (
-    <div
-      style={{
-        ...dragRegion,
-        display: 'flex',
-        alignItems: 'center',
-        gap: 6,
-        padding: '4px 8px',
-        borderBottom: '1px solid rgba(255,255,255,0.08)',
-        fontSize: 11,
-        flexShrink: 0
-      }}
-    >
-      <span
-        style={{
-          fontSize: 8,
-          letterSpacing: 0.5,
-          textTransform: 'uppercase',
-          color: 'rgba(255,255,255,0.4)',
-          flexShrink: 0
-        }}
-      >
-        EVENTS
-      </span>
-      <span style={{ fontWeight: 700, color: GOLD, flexGrow: 1, whiteSpace: 'nowrap' }}>Event log</span>
-      <span style={{ color: 'rgba(255,255,255,0.5)', fontVariantNumeric: 'tabular-nums' }}>{count}</span>
-      {(!locked || hovering) && (
-        <div style={{ ...noDrag, display: 'flex', alignItems: 'center', gap: 2, marginLeft: 2 }}>
-          <IconButton
-            title={locked ? 'Unlock (interactive)' : 'Lock (click-through)'}
-            onClick={toggleLock}
-            accent={locked}
-          >
-            {locked ? '🔓' : '📌'}
-          </IconButton>
-          {!locked && (
-            <IconButton title="Close overlay" onClick={() => window.eqOverlay.close()} danger>
-              ✕
-            </IconButton>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
-
 /** Footer — interactive mode only: the bg-alpha slider, matching the meters. */
 function FeedFooter({
   bgAlpha,
@@ -457,8 +402,15 @@ export default function EventLogOverlay(): JSX.Element {
         overflow: 'hidden'
       }}
     >
-      <FeedHeader
-        count={feed.length}
+      {/* Same one-row header as the meters, minus the selector: this kind has nothing to select
+          (the feed is one live stream, not a set of segments), so it draws no chevron, installs
+          no listeners, and reads exactly as it always did. */}
+      <OverlayHeader
+        tag="EVENTS"
+        title="Event log"
+        titleColor={GOLD}
+        tail={String(feed.length)}
+        tailColor="rgba(255,255,255,0.5)"
         chrome={{ locked, hovering, dragRegion, noDrag, toggleLock }}
       />
 
