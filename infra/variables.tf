@@ -45,9 +45,9 @@ variable "monthly_budget_usd" {
 }
 
 variable "lambda_reserved_concurrency" {
-  description = "The hard blast-radius cap. Bounds spend even if every throttle above it is misconfigured."
+  description = "The hard blast-radius cap. Bounds spend even if every throttle above it is misconfigured. -1 (UNRESERVED) is the default for the same reason as the telemetry function's: the sub-account's total limit of 10 makes ANY reservation illegal ('below minimum unreserved' — measured, 2026-08-04 apply). Set back to 5 once the account quota is raised."
   type        = number
-  default     = 5
+  default     = -1
 }
 
 variable "api_rate_limit" {
