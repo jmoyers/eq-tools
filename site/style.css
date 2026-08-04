@@ -255,6 +255,21 @@ h1 {
 
 /* Compact signed badge beside the release meta line. The tooltip carries the detail;
    the page spends no paragraph on it. */
+/* The beta tag: the same pill as .badge-signed, in the quiet tones — it states a fact
+   ("this is not a polished product yet"), it does not decorate. Lives in the topbar brand. */
+.badge-beta {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--fg-dim);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: default;
+}
+
 .badge-signed {
   display: inline-block;
   margin-left: 8px;
