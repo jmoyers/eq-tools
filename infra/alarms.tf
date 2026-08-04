@@ -150,6 +150,49 @@ resource "aws_cloudwatch_metric_alarm" "lambda_throttles" {
   alarm_actions       = [aws_sns_topic.ops.arn]
 }
 
+# ---- telemetry ingest ---------------------------------------------------------
+#
+# THE 5xx ALARM IS THE POINT. Everything else on this route fails as a CLIENT
+# error by design — a closed kill switch is a 503 the handler chose, a spent cap
+# is a 429, a malformed batch is a 400 — so a 5xx here is the handler itself
+# breaking, and it is invisible to users (nothing in the app surfaces a failed
+# flush; the buffer just refills). Without this alarm, telemetry ingest could be
+# down for a week and the first symptom would be a flat dashboard.
+
+resource "aws_cloudwatch_metric_alarm" "telemetry_lambda_errors" {
+  alarm_name          = "${var.name_prefix}-telemetry-lambda-errors"
+  alarm_description   = "Telemetry ingest handler errors over 10 in 5 minutes (a 5xx is always ours — 4xx/503 are by design)."
+  namespace           = "AWS/Lambda"
+  metric_name         = "Errors"
+  dimensions          = { FunctionName = aws_lambda_function.telemetry.function_name }
+  statistic           = "Sum"
+  period              = 300
+  evaluation_periods  = 1
+  threshold           = 10
+  comparison_operator = "GreaterThanThreshold"
+  treat_missing_data  = "notBreaching"
+  alarm_actions       = [aws_sns_topic.ops.arn]
+}
+
+# Throttles mean the concurrency cap is doing its job, which is exactly when a
+# human should look — the threshold is zero. Harmless while the function runs
+# UNRESERVED (it can then only throttle on the ACCOUNT limit, which is a much
+# louder thing to learn about).
+resource "aws_cloudwatch_metric_alarm" "telemetry_lambda_throttles" {
+  alarm_name          = "${var.name_prefix}-telemetry-lambda-throttles"
+  alarm_description   = "Telemetry ingest hit a concurrency cap."
+  namespace           = "AWS/Lambda"
+  metric_name         = "Throttles"
+  dimensions          = { FunctionName = aws_lambda_function.telemetry.function_name }
+  statistic           = "Sum"
+  period              = 300
+  evaluation_periods  = 1
+  threshold           = 0
+  comparison_operator = "GreaterThanThreshold"
+  treat_missing_data  = "notBreaching"
+  alarm_actions       = [aws_sns_topic.ops.arn]
+}
+
 # ---- the database ------------------------------------------------------------
 #
 # These two replace the DynamoDB read/write throttle alarms. There is no

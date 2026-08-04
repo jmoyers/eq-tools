@@ -22,6 +22,7 @@
 import { readFileSync } from 'node:fs'
 import { PREVIEW_MAX_LINES } from '../../shared/feedback'
 import type {
+  TriageAnalytics,
   TriageDetail,
   TriageDigest,
   TriageListQuery,
@@ -47,6 +48,10 @@ import {
   logKeyOf,
   logObjectExists,
   makeClients,
+  missingTable,
+  readAnalyticsInstalls,
+  readUsageDaily,
+  readUsageFunnelDaily,
   setAccepting,
   setBlocked,
   setTriage,
@@ -56,6 +61,8 @@ import {
   type ListFilter
 } from './store'
 import { toDetail, toOps, toRow } from './rows'
+import { buildAnalytics } from './analytics'
+import { addDays, dayOf, toFunnelRows, toInstallRows, toUsageRows } from './usageRows'
 
 /** The whole surface `ipc.ts` is allowed to reach. Nothing here knows about Electron. */
 export interface TriageBackend {
@@ -69,6 +76,8 @@ export interface TriageBackend {
   setAccepting: (accepting: boolean, message?: string) => Promise<void>
   setBlocked: (installId: string, blocked: boolean, reason: string) => Promise<void>
   digest: (q: TriageListQuery) => Promise<TriageDigest>
+  /** Usage analytics over the last `days`. Answers `available:false` ONLY for missing tables. */
+  analytics: (days: number) => Promise<TriageAnalytics>
   close: () => Promise<void>
 }
 
@@ -167,6 +176,53 @@ export function awsBackend(): TriageBackend {
         channel: q.channel
       })
       return { markdown, clusters, reportCount: reports.length }
+    },
+
+    /**
+     * THE TWO FAILURES THIS DISTINGUISHES, because the panel renders them completely
+     * differently and conflating them would be the tab's worst lie:
+     *
+     *   * `42P01 undefined_table` — the A2 migration has not been applied to this cluster.
+     *     There is no data because there is nowhere to put it: `available:false`, naming the
+     *     table, which is a fact an operator can act on.
+     *   * EVERY OTHER OUTCOME, including three empty result sets — the tables exist and are
+     *     empty (which is exactly the state while `TELEMETRY_API_URL` is still ''). That is
+     *     honest zeros plus "no data yet", not a "not built" banner.
+     *
+     * Anything else (an IAM denial, a dropped socket) is thrown and reaches the panel as prose
+     * through `attempt()`, the same as every other triage call.
+     */
+    analytics: async (days) => {
+      const c = clients()
+      const since = addDays(dayOf(Date.now()), -(days - 1))
+      try {
+        const [usage, funnels, installs] = await Promise.all([
+          readUsageDaily(c, since),
+          readUsageFunnelDaily(c, since),
+          readAnalyticsInstalls(c)
+        ])
+        return {
+          available: true,
+          data: buildAnalytics({
+            usage: toUsageRows(usage),
+            funnels: toFunnelRows(funnels),
+            installs: toInstallRows(installs),
+            windowDays: days,
+            nowMs: Date.now()
+          })
+        }
+      } catch (err) {
+        const table = missingTable(err)
+        if (table === null) throw err
+        return {
+          available: false,
+          table,
+          reason:
+            `The usage-analytics tables are not on this cluster (${table} does not exist). ` +
+            'They are created by `npx tsx scripts/triage-feedback.mts migrate`, which applies ' +
+            'infra/schema.sql — run it after the apply that ships wave A2.'
+        }
+      }
     },
 
     close: async () => {

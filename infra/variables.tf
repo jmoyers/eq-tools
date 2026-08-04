@@ -97,3 +97,29 @@ variable "default_max_reports_per_day" {
   type        = number
   default     = 10
 }
+
+# ---- usage analytics ingest (docs/plans/usage-analytics.md A2) ---------------
+
+variable "telemetry_reserved_concurrency" {
+  description = "Reserved concurrency for the telemetry ingest function. -1 means UNRESERVED, which is the default for a reason: a fresh sub-account's total limit is 10, and reserving from it made the feedback function's own reservation illegal ('below minimum unreserved'). Set a real number once the account's quota is raised."
+  type        = number
+  default     = -1
+}
+
+variable "telemetry_route_rate_limit" {
+  description = "Steady-state rate (rps) for POST /v1/telemetry. Wider than feedback's because every install is a caller on a 60s flush timer, not a human pressing a button."
+  type        = number
+  default     = 10
+}
+
+variable "telemetry_route_burst_limit" {
+  description = "Burst capacity for POST /v1/telemetry."
+  type        = number
+  default     = 20
+}
+
+variable "default_max_events_per_id_per_day" {
+  description = "Fallback per-analyticsId daily EVENT cap, used when the feedback_config column is NULL. The column is the live control (deploy-free); this is the cold-start default. 20,000 is ~14 events/minute sustained for 24h — far past a real install's flush loop."
+  type        = number
+  default     = 20000
+}

@@ -18,6 +18,11 @@
 
 locals {
   feedback_route_path = "/v1/feedback"
+
+  # The second public route (docs/plans/usage-analytics.md T5: "same API, same
+  # Lambda family, same kill-switch/caps philosophy"). Same $default stage, so
+  # the version stays in the path here too.
+  telemetry_route_path = "/v1/telemetry"
 }
 
 resource "aws_apigatewayv2_api" "main" {
@@ -49,6 +54,21 @@ resource "aws_apigatewayv2_route" "submit" {
   target    = "integrations/${aws_apigatewayv2_integration.submit.id}"
 }
 
+resource "aws_apigatewayv2_integration" "telemetry" {
+  api_id                 = aws_apigatewayv2_api.main.id
+  integration_type       = "AWS_PROXY"
+  integration_uri        = aws_lambda_function.telemetry.invoke_arn
+  integration_method     = "POST"
+  payload_format_version = "2.0"
+  timeout_milliseconds   = 15000
+}
+
+resource "aws_apigatewayv2_route" "telemetry" {
+  api_id    = aws_apigatewayv2_api.main.id
+  route_key = "POST ${local.telemetry_route_path}"
+  target    = "integrations/${aws_apigatewayv2_integration.telemetry.id}"
+}
+
 resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.main.id
   name        = "$default"
@@ -65,6 +85,16 @@ resource "aws_apigatewayv2_stage" "default" {
     route_key              = aws_apigatewayv2_route.submit.route_key
     throttling_rate_limit  = var.route_rate_limit
     throttling_burst_limit = var.route_burst_limit
+  }
+
+  # Telemetry gets its OWN budget, deliberately a little wider than feedback's: a
+  # client flushes on a 60s timer and every install in the field is a caller,
+  # where a feedback submit is a human pressing a button. It is still a per-route
+  # ceiling, so a telemetry flood cannot consume feedback's share of the stage.
+  route_settings {
+    route_key              = aws_apigatewayv2_route.telemetry.route_key
+    throttling_rate_limit  = var.telemetry_route_rate_limit
+    throttling_burst_limit = var.telemetry_route_burst_limit
   }
 
   access_log_settings {
@@ -89,6 +119,14 @@ resource "aws_lambda_permission" "api" {
   statement_id  = "AllowInvokeFromHttpApi"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.submit.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_apigatewayv2_api.main.execution_arn}/*/*"
+}
+
+resource "aws_lambda_permission" "api_telemetry" {
+  statement_id  = "AllowInvokeFromHttpApi"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.telemetry.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.main.execution_arn}/*/*"
 }

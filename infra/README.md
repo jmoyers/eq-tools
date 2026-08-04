@@ -1,9 +1,18 @@
-# infra/ — feedback ingest stack (Terraform)
+# infra/ — feedback + telemetry ingest stack (Terraform)
 
-The cloud half of the in-app feedback loop: one HTTP API route, one Lambda, one
-**Aurora DSQL** cluster, one S3 bucket, and the guard rails that make a **publicly
-writable** endpoint safe to leave running. Design + rationale live in
-`docs/plans/feedback-triage.md` (§7–§10); this file is the runbook.
+The cloud half of the in-app feedback loop and of usage analytics: one HTTP API with
+**two routes**, **two Lambdas**, one **Aurora DSQL** cluster, one S3 bucket, and the guard
+rails that make **publicly writable** endpoints safe to leave running. Design + rationale live
+in `docs/plans/feedback-triage.md` (§7–§10) and `docs/plans/usage-analytics.md`; this file is
+the runbook.
+
+> **TWO FUNCTIONS, ON PURPOSE.** `POST /v1/telemetry` is its own Lambda with its own IAM role
+> and its own **database** role, not a second route on the submit handler. Everything that
+> makes either endpoint safe is per-identity — an IAM policy with one or two statements, and a
+> GRANT list that is the real answer to "what can a compromised public endpoint do". One
+> function serving both would hold the union: `INSERT ON report` plus an S3 presign permission
+> for the counter path, and UPSERT on the counters for the feedback path. The cost of the split
+> is one more zip and one more log group.
 
 - **IaC: Terraform (HCL)** — owner decision, 2026-08-03. Not CDK.
 - **Store: Aurora DSQL** (serverless Postgres) — owner decision. The plan and the
@@ -20,21 +29,26 @@ writable** endpoint safe to leave running. Design + rationale live in
 | File | Resources |
 | --- | --- |
 | `versions.tf` | provider pins (aws `~> 6.0` — `aws_dsql_cluster` needs it) + the `backend "s3"` block + default tags |
-| `variables.tf` | region, name prefix, alarm email, triage principal, every spend knob |
-| `api.tf` | HTTP API `eqcompanion-api`, `$default` stage, `POST /v1/feedback`, stage + route throttles, access logging |
-| `lambda.tf` | `eqcompanion-feedback-submit` (Node 22, arm64, 256 MB, 10 s), reserved concurrency 5, its log group at 14-day retention |
+| `variables.tf` | region, name prefix, alarm email, triage principal, every spend knob (both routes) |
+| `api.tf` | HTTP API `eqcompanion-api`, `$default` stage, `POST /v1/feedback` + `POST /v1/telemetry`, stage + per-route throttles, access logging |
+| `lambda.tf` | `eqcompanion-feedback-submit` and `eqcompanion-telemetry-ingest` (both Node 22, arm64, 256 MB, 10 s), their log groups at 14-day retention |
 | `dsql.tf` | the Aurora DSQL cluster (deletion protection + `prevent_destroy`) and the endpoint/ingest-role locals |
-| `schema.sql` | the tables, indexes, config seed and ingest **database role** — applied by the CLI, not by Terraform (see step 2.5) |
+| `schema.sql` | the tables, indexes, config seed and the two ingest **database roles** — applied by the CLI, not by Terraform (see step 2.5) |
 | `s3.tf` | `eqcompanion-logs-<random hex>` + all four Block-Public-Access flags + SSE-S3 + versioning off + 90-day lifecycle + `prevent_destroy` |
-| `iam.tf` | the ingest role (`dsql:DbConnect` only) and `EqCompanionFeedbackTriageRole` (`dsql:DbConnectAdmin`) |
-| `alarms.tf` | `EqCompanionOpsAlerts` SNS topic + email sub + 6 alarms + a $10 monthly budget |
-| `outputs.tf` | `api_url`, `cluster_endpoint`, `bucket_name`, `triage_role_arn`, `lambda_role_arn`, log group names |
-| `build.mjs` | esbuild bundle of `lambda/submit.ts` → a **deterministic** `dist/submit.zip` |
+| `iam.tf` | the two ingest roles (`dsql:DbConnect` only; telemetry has no S3 at all) and `EqCompanionFeedbackTriageRole` (`dsql:DbConnectAdmin`) |
+| `alarms.tf` | `EqCompanionOpsAlerts` SNS topic + email sub + 8 alarms + a $10 monthly budget |
+| `dashboard.tf` | `eqcompanion-telemetry` CloudWatch dashboard, fed by the ingest handler's EMF documents |
+| `outputs.tf` | `api_url`, `telemetry_api_url`, `cluster_endpoint`, `bucket_name`, `triage_role_arn`, both `*_role_arn`s, log group names |
+| `build.mjs` | esbuild bundles of `lambda/submit.ts` and `lambda/telemetry.ts` → **deterministic** `dist/submit.zip` + `dist/telemetry.zip` |
 
-The handler imports `validateSubmit` from `src/shared/feedback.ts`, so the server
-runs the same validator as the dialog and the main process. `build.mjs` is what
-makes that import survive into a Lambda zip, and CI runs it on every change to
-either side so the two cannot drift apart silently.
+Each handler imports its validator from `src/shared/` — `validateSubmit` from
+`feedback.ts`, `validateTelemetryBatch` from `telemetryValidate.ts` — so the server runs the
+same validator as the client. `build.mjs` is what makes those imports survive into a Lambda
+zip, and CI runs it on every change to either side so the two cannot drift apart silently.
+
+The telemetry handler additionally imports `src/shared/telemetryRollup.ts`, which is the ONE
+definition of what a batch becomes: the metric names it writes are the metric names the triage
+Analytics tab and `triage-feedback analytics digest` read back.
 
 ## There is no database password
 
@@ -47,8 +61,9 @@ Two identities, and the difference matters:
 
 | Who | IAM action | Database role | Can do |
 | --- | --- | --- | --- |
-| the Lambda | `dsql:DbConnect` | `feedback_ingest` | `INSERT` on `report`; read config/profile; read+write+delete the three counter tables |
-| the triage CLI | `dsql:DbConnectAdmin` | `admin` | everything — it applies the schema and it is the deletion path for `forget`/`wipe` |
+| the submit Lambda | `dsql:DbConnect` | `feedback_ingest` | `INSERT` on `report`; read config/profile; read+write+delete the three counter tables |
+| the telemetry Lambda | `dsql:DbConnect` | `telemetry_ingest` | read `feedback_config`; UPSERT `usage_daily`, `usage_funnel_daily`, `analytics_install`. **No privilege at all on `report`, no `install_profile`, no DELETE anywhere.** |
+| the triage CLI | `dsql:DbConnectAdmin` | `admin` | everything — it applies the schema and it is the deletion path for `forget`/`wipe`/`analytics wipe` |
 
 §8.5's promise — *the ingest path can create and count; it cannot read the corpus
 or destroy anything* — used to be enforced by omitting `dynamodb:Query`/`Scan`/
@@ -86,11 +101,15 @@ physical names, not secrets: no account id appears anywhere in git.
 export AWS_PROFILE=<profile>
 cd infra
 
-node build.mjs                     # produce dist/submit.zip FIRST — plan hashes it
+node build.mjs                     # BOTH zips FIRST — plan hashes them
 terraform init                     # first run downloads providers + reads the backend
 terraform plan  -var triage_principal_arn=arn:aws:iam::<acct>:user/<you>
 terraform apply -var triage_principal_arn=arn:aws:iam::<acct>:user/<you>
 ```
+
+`node build.mjs` now emits **two** bundles — `dist/submit.zip` and `dist/telemetry.zip` — and
+both are hashed by the plan. A plan run without a build deploys nothing useful for either
+function.
 
 `alarm_email` defaults to `jmoyers+eqc@gmail.com`; override with
 `-var alarm_email=...`. **Confirm the SNS subscription email after the first
@@ -127,6 +146,70 @@ After a successful apply:
 
 3. The endpoint is seeded **closed**, on purpose. Open it once you have smoke
    tested: `npx tsx scripts/triage-feedback.mts closed off --profile <profile>`.
+
+## Wave A2 — usage analytics: EXACTLY WHAT TO RUN, IN ORDER
+
+Everything below is idempotent and safe to re-run. `<profile>` is the deploy profile;
+`<acct>` is the account id (never committed).
+
+```bash
+export AWS_PROFILE=<profile>
+cd infra
+
+# 1. BOTH bundles, before the plan. The telemetry zip is new; without it the plan
+#    would create the function with no code and the apply would fail.
+node build.mjs
+
+# 2. Plan and apply. New resources: the telemetry Lambda + its role/policy/log group,
+#    the /v1/telemetry route + integration + permission, two alarms, one dashboard.
+terraform plan  -var triage_principal_arn=arn:aws:iam::<acct>:user/<you>
+terraform apply -var triage_principal_arn=arn:aws:iam::<acct>:user/<you>
+
+# 3. THE STACK CACHE IS STALE. `terraform output` gained telemetry_lambda_role_arn,
+#    and .triage/stack.json was written before it existed. Refresh it, or `migrate`
+#    stops and tells you to (it refuses to send an unsubstituted ${...} to the cluster).
+cd ..
+npx tsx scripts/triage-feedback.mts migrate --profile <profile> --refresh
+
+# 4. Smoke test with the switch still CLOSED — a 503 is the correct answer here and
+#    proves the route, the function, the DSQL connection and the config read all work.
+curl -si -X POST "$(cd infra && terraform output -raw telemetry_api_url)" \
+  -H 'content-type: application/json' \
+  -d '{"v":1,"env":{"analyticsId":"3f2504e0-4f89-41d3-9a0c-0305e82c3301","appVersion":"0.2.0","channel":"dev","platform":"win32","tzOffsetBucket":0},"events":[{"ts":1,"ev":{"t":"sessionHeartbeat","uptimeMs":1000}}]}'
+# expect: HTTP/2 503  {"ok":false,"error":"closed",...}
+
+# 5. Open it, re-run step 4 (expect 202 {"ok":true,"accepted":1}), then read it back.
+npx tsx scripts/triage-feedback.mts analytics open   --profile <profile>
+npx tsx scripts/triage-feedback.mts analytics digest --profile <profile> --days 7
+```
+
+Step 4 is worth doing **before** step 5: it separates "the plumbing is wrong" from "the switch
+is off", which are the two failures that look identical from the client.
+
+**The client stays dark.** `TELEMETRY_API_URL` in `src/main/telemetry/net.ts` is still `''`
+and `tests/telemetryNet.test.mts` pins that it is. Filling it in is a separate, owner-approved
+commit that must ALSO rewrite `SECURITY.md`'s "no telemetry of any kind" bullet, add the
+retention rows for `usage_daily` / `usage_funnel_daily` / `analytics_install`, add the README
+paragraph, and re-run `npm run gen:telemetry-doc` — the dark-build pins are designed to fail on
+that change so the doc edit cannot be forgotten (`docs/plans/usage-analytics.md` A2).
+
+### Day-2 for the telemetry route
+
+| Situation | Command |
+| --- | --- |
+| Stop collecting NOW | `triage-feedback analytics close` (one statement; **no deploy**) |
+| Start collecting | `triage-feedback analytics open` |
+| Tighten the per-id daily event cap | `UPDATE feedback_config SET max_events_per_id_per_day = N` — deploy-free |
+| A deletion request for an analyticsId | `triage-feedback analytics wipe --id <analyticsId>` |
+| The numbers, as text | `triage-feedback analytics digest [--days N] [--json]` |
+| The numbers, in the app | Triage → Analytics (dev builds only) |
+| "Is anyone using it right now" | the `eqcompanion-telemetry` CloudWatch dashboard |
+| Read the handler's logs | `aws logs tail "$(terraform output -raw telemetry_log_group)" --follow` |
+
+`analytics wipe --id` deletes the `analytics_install` row, which is the id's entire footprint.
+The counters it contributed to are anonymous sums — `usage_daily` holds "37 map opens on
+2026-08-04" with no id in the table — so there is nothing in them to attribute, and subtracting
+a guess would corrupt a true number to satisfy a request the data does not contain.
 
 ## Removing a column: the ordering, and what DSQL will not do
 
@@ -204,6 +287,8 @@ the kill switch rides in the submit response.
 | Data | Retention | Mechanism |
 | --- | --- | --- |
 | Report row | indefinite — it *is* the backlog | none |
+| `usage_daily` / `usage_funnel_daily` | indefinite | none — they are anonymous daily sums with no id in them, and the whole point of the aggregates-on-arrival design (plan T6) is that there is no per-user trail to expire |
+| `analytics_install` | indefinite; deleted on request | `triage-feedback analytics wipe --id`. One row per analyticsId, and the only per-id row this feature has |
 | Log object | 90 days | **S3 lifecycle — unchanged**; `triage-feedback forget <id>` deletes one on request |
 | Quota counters (3 d), idempotency keys (7 d), dedupe probes (2 d) | lazy | swept by the ingest handler |
 | Lambda / API access logs | 14 days | CloudWatch retention |
@@ -243,9 +328,21 @@ Lambda/DSQL, under the $10 budget and alarmed within five minutes.
 
 ## Gotchas
 
-- **Build before you plan.** `source_code_hash` reads `dist/submit.zip`. It is
-  guarded by `fileexists()` so `terraform validate` works on a clean checkout, but
-  a plan without a build deploys nothing useful.
+- **Build before you plan.** `source_code_hash` reads `dist/submit.zip` and
+  `dist/telemetry.zip`. Both are guarded by `fileexists()` so `terraform validate` works on a
+  clean checkout, but a plan without a build deploys nothing useful.
+- **A NEW OUTPUT MEANS A STALE `.triage/stack.json`.** The cache is read back without
+  re-validating (it is a cache, not a contract), so a stack.json written before
+  `telemetry_lambda_role_arn` existed simply has no value for it. `migrate` catches that on the
+  SUBSTITUTED text — an unresolved `${...}` stops the run and says `--refresh` — because an
+  `AWS IAM GRANT … TO '${…}'` reaching the cluster literally would map the role to nothing and
+  fail much later, much more confusingly.
+- **`ALTER TABLE … ADD COLUMN` is how the config row grew, and it is not spelled
+  `IF NOT EXISTS`.** DSQL's supported ALTER grammar is a documented subset and that clause is
+  not in it, so a self-guarding statement would risk failing the whole run on syntax. Instead
+  the migrate runner treats `42701 duplicate_column` as "already there", exactly as it already
+  treats `42P07` for a table. Adding a column is therefore idempotent; **removing** one is
+  still impossible (see the section above).
 - **The zip is byte-deterministic** (fixed 1980 timestamps). Rebuilding without a
   source change produces the same hash and therefore no redeploy. Do not "fix"
   that by stamping the current time.
@@ -265,6 +362,13 @@ Lambda/DSQL, under the $10 budget and alarmed within five minutes.
   an alarm that sits in `INSUFFICIENT_DATA` forever and never fires.
 - **The stage is `$default`, not `v1`.** A named stage prefixes every path, so
   stage `v1` + route `/v1/feedback` would resolve at `/v1/v1/feedback`. The
-  version lives in the path; `api.tf` explains it at length.
+  version lives in the path; `api.tf` explains it at length. `/v1/telemetry` rides the same
+  stage, for the same reason.
+- **EMF is a LOG LINE, not an API call.** The telemetry dashboard is fed by JSON documents the
+  handler writes to stdout (`infra/lambda/emf.ts`); CloudWatch extracts the metrics from the log
+  group. So a metric that never appears has a typo in `_aws`, not a permission problem — a
+  malformed document is silently just a log line. Never put an analyticsId in a dimension: a
+  dimension value mints a billed metric and would rebuild, in the metrics store, exactly the
+  per-user trail the storage design refuses to keep.
 - **`.triage/stack.json` is a cache.** After an apply that renames anything, run
   the triage CLI once with `--refresh` (or delete the file).

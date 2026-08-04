@@ -79,6 +79,11 @@ import {
   type SubmitErrorCode,
   type SubmitRequest,
 } from '../src/shared/feedback'
+import { MAX_TELEMETRY_BODY_BYTES } from '../src/shared/telemetry'
+// The two halves that moved OUT of this file for room (each says why in its own header):
+// the S3 presign rehearsal's pure helpers, and the whole `/v1/telemetry` rehearsal.
+import { boundaryOf, multipartFields, policyViolation, s3Error, TOO_BIG, TOO_SMALL, type Res } from './devS3Leg.mjs'
+import { emptyTelemetryState, telemetryRoute, telemetryTables, type TelemetryState } from './devTelemetryStack.mjs'
 
 const DEFAULT_PORT = 8477
 const DEFAULT_DIR = '.devstack'
@@ -116,6 +121,10 @@ interface State {
   quota: Map<string, number>
   presigns: Map<string, Presign>
   rows: Record<string, unknown>[]
+  /** The `/v1/telemetry` rehearsal — in memory only, and deliberately NOT persisted to
+   *  reports.jsonl: aggregates are cheap to regenerate and a second on-disk truth is exactly
+   *  what `loadHistory`'s one-file rule exists to avoid. */
+  telemetry: TelemetryState
 }
 
 export interface DevStackOptions {
@@ -130,6 +139,10 @@ export interface DevStack {
   port: number
   /** The value to put in `EQ_FEEDBACK_URL`. */
   url: string
+  /** The telemetry route on the same server. NOTHING reads it from an env var: the client
+   *  ships dark and has no override (tests/telemetryNet.test.mts pins that there is none), so
+   *  this is for a test or a curl, not for pointing the app at. */
+  telemetryUrl: string
   dir: string
   close: () => Promise<void>
 }
@@ -161,31 +174,12 @@ function logObjectKey(reportId: string, now: number): string {
 
 const sleep = (ms: number): Promise<void> => new Promise((done) => setTimeout(done, ms))
 
-/** What a route answers with. `xml` is the S3 shape; `json` is the ingest API's. */
-interface Res {
-  status: number
-  json?: unknown
-  xml?: string
-  /** Extra detail for the one console line this request prints. */
-  note?: string
-}
-
 const fail = (
   status: number,
   error: SubmitErrorCode,
   message: string,
   extra: { field?: string; retryAfterSec?: number } = {},
 ): Res => ({ status, json: { ok: false, error, message, ...extra }, note: error })
-
-/** S3's own words for the two `content-length-range` failures. */
-const TOO_BIG = 'Your proposed upload exceeds the maximum allowed size'
-const TOO_SMALL = 'Your proposed upload is smaller than the minimum allowed size'
-
-const s3Error = (status: number, code: string, message: string): Res => ({
-  status,
-  xml: `<?xml version="1.0" encoding="UTF-8"?><Error><Code>${code}</Code><Message>${message}</Message></Error>`,
-  note: code,
-})
 
 // ---- persistence ---------------------------------------------------------------------------
 //
@@ -296,50 +290,6 @@ function submitRoute(state: State, body: Buffer): Res {
 
 // ---- POST /devstack/upload/<reportId> — the presign leg ---------------------------------------
 
-function boundaryOf(contentType: string | undefined): string | null {
-  const m = /boundary=(?:"([^"]+)"|([^;]+))/i.exec(contentType ?? '')
-  if (m === null) return null
-  const b = (m[1] ?? m[2] ?? '').trim()
-  return b.length === 0 ? null : b
-}
-
-function addPart(out: Map<string, Buffer>, raw: Buffer): void {
-  const sep = raw.indexOf('\r\n\r\n')
-  if (sep === -1) return
-  const name = /name="([^"]*)"/i.exec(raw.subarray(0, sep).toString('latin1'))?.[1]
-  if (name === undefined) return
-  // The payload runs to the CRLF that precedes the next delimiter.
-  out.set(name, raw.subarray(sep + 4, Math.max(sep + 4, raw.length - 2)))
-}
-
-/** Dependency-free multipart/form-data split. Enough for what `FormData` emits, no more. */
-function multipartFields(body: Buffer, boundary: string): Map<string, Buffer> {
-  const out = new Map<string, Buffer>()
-  const delim = Buffer.from(`--${boundary}`)
-  let at = body.indexOf(delim)
-  while (at !== -1) {
-    const start = at + delim.length
-    const next = body.indexOf(delim, start)
-    if (next === -1) break
-    addPart(out, body.subarray(start, next))
-    at = next
-  }
-  return out
-}
-
-/** The three `Conditions` the real presign policy pins, checked the way S3 checks them. */
-function policyViolation(parts: Map<string, Buffer>, presign: Presign): Res | null {
-  const field = (name: string): string => parts.get(name)?.toString('utf8') ?? ''
-  const pinned: [string, string][] = [
-    ['key', presign.key],
-    ['Content-Type', 'application/gzip'],
-    ['x-amz-server-side-encryption', 'AES256'],
-  ]
-  const bad = pinned.find(([name, want]) => field(name) !== want)
-  if (bad === undefined) return null
-  return s3Error(403, 'AccessDenied', `Invalid according to Policy: Policy Condition failed: ["eq", "$${bad[0]}", ...]`)
-}
-
 function storeSlice(state: State, reportId: string, presign: Presign, file: Buffer): Res {
   const sha256 = createHash('sha256').update(file).digest('hex')
   mkdirSync(join(state.dir, 'uploads'), { recursive: true })
@@ -362,7 +312,7 @@ function uploadRoute(state: State, reportId: string, contentType: string | undef
   if (boundary === null) return s3Error(400, 'MalformedPOSTRequest', 'not well-formed multipart/form-data')
 
   const parts = multipartFields(body, boundary)
-  const violation = policyViolation(parts, presign)
+  const violation = policyViolation(parts, presign.key)
   if (violation !== null) return violation
 
   const file = parts.get('file')
@@ -432,10 +382,13 @@ function send(res: ServerResponse, out: Res): void {
   res.end(out.xml ?? JSON.stringify(out.json))
 }
 
-/** The two read-only conveniences. Returns null when the path is not one of them. */
+/** The read-only conveniences. Returns null when the path is not one of them. */
 function getRoute(state: State, path: string): Res | null {
   if (path === '/devstack/reports') return listReports(state)
   if (path === '/devstack/mode') return { status: 200, json: { ok: true, mode: state.mode } }
+  // The aggregate tables a deployed stack would hold in DSQL. This is what replaces the EMF
+  // metrics locally: the counters, as JSON, in the shape the triage reader consumes.
+  if (path === '/devstack/usage') return telemetryTables(state.telemetry)
   return null
 }
 
@@ -448,6 +401,13 @@ async function postRoute(state: State, req: IncomingMessage, path: string): Prom
     const body = await readBody(req, MAX_BODY_BYTES + 1)
     await sleep(state.mode.latencyMs)
     return body === null ? fail(413, 'too_large', 'Report body is too large.') : submitRoute(state, body)
+  }
+  if (path === '/v1/telemetry') {
+    const body = await readBody(req, MAX_TELEMETRY_BODY_BYTES + 1)
+    await sleep(state.mode.latencyMs)
+    return body === null
+      ? fail(413, 'too_large', 'Telemetry batch is too large.')
+      : telemetryRoute(state.telemetry, body)
   }
   const upload = /^\/devstack\/upload\/([A-Za-z0-9]+)$/.exec(path)
   if (upload === null) return null
@@ -511,6 +471,7 @@ export async function startDevStack(opts: DevStackOptions = {}): Promise<DevStac
   const state: State = {
     dir, mode, origin: 'http://127.0.0.1', quiet: opts.quiet ?? false,
     idemp: new Map(), quota: new Map(), presigns: new Map(), rows: [],
+    telemetry: emptyTelemetryState(),
   }
   loadHistory(state)
 
@@ -526,7 +487,13 @@ export async function startDevStack(opts: DevStackOptions = {}): Promise<DevStac
       })
       server.closeAllConnections()
     })
-  return { port, url: `${state.origin}/v1/feedback`, dir, close }
+  return {
+    port,
+    url: `${state.origin}/v1/feedback`,
+    telemetryUrl: `${state.origin}/v1/telemetry`,
+    dir,
+    close,
+  }
 }
 
 // ---- cli ---------------------------------------------------------------------------------------

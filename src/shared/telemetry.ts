@@ -209,6 +209,18 @@ export function tzOffsetBucket(offsetMinutes: number): number {
 export const TELEMETRY_BUFFER_CAP = 500
 /** Most events one flush may carry. Same number: a full buffer is one batch. */
 export const MAX_BATCH_EVENTS = TELEMETRY_BUFFER_CAP
+/**
+ * The ingest body cap, checked BEFORE `JSON.parse` (the Lambda's cheapest step, and the only
+ * one that runs on a hostile body). Deliberately larger than feedback's 32 KB: a feedback body
+ * is one description, a telemetry body is up to `MAX_BATCH_EVENTS` records.
+ *
+ * MEASURED CEILING: the fattest record in the union is a `setupSnapshot` carrying all five
+ * overlay kinds — ~260 bytes with its `{ts, ev}` wrapper — so a maximal 500-record batch is
+ * ~130 KB. 256 KB is that with room to spare and still small enough that a flood of maximal
+ * bodies stays inside the route throttle's cost model.
+ */
+export const MAX_TELEMETRY_BODY_BYTES = 256 * 1024
+
 /** Ceiling for every plain count field. Well past any real session; refuses nonsense. */
 export const MAX_COUNT = 1_000_000
 /** Ceiling for every duration field (30 days). A longer session is a broken clock. */

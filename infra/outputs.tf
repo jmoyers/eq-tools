@@ -41,6 +41,29 @@ output "lambda_role_arn" {
   value       = aws_iam_role.lambda.arn
 }
 
+output "telemetry_api_url" {
+  description = "Full telemetry ingest URL. Wave A2 deliberately does NOT put this in the client: TELEMETRY_API_URL stays '' until the owner-approved commit that also amends SECURITY.md + README (usage-analytics.md A2)."
+  value       = "${trimsuffix(aws_apigatewayv2_stage.default.invoke_url, "/")}${local.telemetry_route_path}"
+}
+
+# Consumed by `triage-feedback migrate`, which substitutes it into schema.sql's
+# `AWS IAM GRANT telemetry_ingest TO '<arn>'` — the second placeholder, and the
+# second account-id-carrying value that is therefore not a literal in the file.
+output "telemetry_lambda_role_arn" {
+  description = "Execution role ARN the `telemetry_ingest` database role is mapped to."
+  value       = aws_iam_role.telemetry.arn
+}
+
+output "telemetry_function_name" {
+  description = "Telemetry ingest function name (for `aws logs tail`)."
+  value       = aws_lambda_function.telemetry.function_name
+}
+
+output "telemetry_log_group" {
+  description = "CloudWatch log group for the telemetry ingest handler (also where the EMF metric documents land)."
+  value       = aws_cloudwatch_log_group.telemetry.name
+}
+
 output "bucket_name" {
   description = "S3 bucket holding uploaded log slices under logs/."
   value       = aws_s3_bucket.logs.bucket

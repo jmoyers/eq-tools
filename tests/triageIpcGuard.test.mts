@@ -21,6 +21,7 @@ import assert from 'node:assert/strict'
 import {
   isInstallId,
   isReportId,
+  validateAnalyticsDays,
   validateBlockReason,
   validateClosedMessage,
   validatePatch,
@@ -28,7 +29,12 @@ import {
   MAX_NOTE
 } from '../src/main/triage/validate'
 import { parseEnv, toDetail, toOps, toRow } from '../src/main/triage/rows'
-import { TRIAGE_DEFAULT_QUERY, TRIAGE_LIMIT_MAX } from '../src/shared/triage'
+import {
+  TRIAGE_ANALYTICS_DAYS,
+  TRIAGE_ANALYTICS_DEFAULT_DAYS,
+  TRIAGE_DEFAULT_QUERY,
+  TRIAGE_LIMIT_MAX
+} from '../src/shared/triage'
 
 /** A real-shaped ULID: 26 Crockford base32 characters. */
 const ID = '01K1P6Q8ZJ7X4M2N9V5B3C6D7E'
@@ -104,6 +110,28 @@ test('issueUrl is NOT writable from the UI — only `triage-feedback issue` stam
   // It is stamped by the command that ran assertNoLogSlice over what it published; a URL
   // written from a panel would claim a publication nobody performed.
   assert.equal(validatePatch({ issueUrl: 'https://example.invalid/1' }), null)
+})
+
+// ---- the analytics window (usage-analytics A3) ---------------------------------------------
+
+test('the analytics window is an ENUM — it becomes a day floor over an unbounded table', () => {
+  for (const days of TRIAGE_ANALYTICS_DAYS) assert.equal(validateAnalyticsDays(days), days)
+  // Same reasoning as `since`: the answer set is the toolbar's own choices, not whatever a
+  // renderer computes, because the value reaches a `day >= :floor` on `usage_daily`.
+  assert.equal(validateAnalyticsDays(31), null)
+  assert.equal(validateAnalyticsDays(0), null)
+  assert.equal(validateAnalyticsDays(-30), null)
+  assert.equal(validateAnalyticsDays(30.5), null)
+  assert.equal(validateAnalyticsDays('30'), null)
+  assert.equal(validateAnalyticsDays({ days: 30 }), null)
+  assert.equal(validateAnalyticsDays(Number.NaN), null)
+})
+
+test('an OMITTED window is the default, not a rejection — the panel’s first render has none', () => {
+  assert.equal(validateAnalyticsDays(undefined), TRIAGE_ANALYTICS_DEFAULT_DAYS)
+  assert.equal(validateAnalyticsDays(null), TRIAGE_ANALYTICS_DEFAULT_DAYS)
+  // …and the default is itself one of the offered choices, so the toolbar can always show it.
+  assert.equal((TRIAGE_ANALYTICS_DAYS as readonly number[]).includes(TRIAGE_ANALYTICS_DEFAULT_DAYS), true)
 })
 
 // ---- the ops guards ----------------------------------------------------------------------

@@ -65,11 +65,17 @@
 -- Seeded below with accepting = false: a freshly migrated stack is CLOSED until
 -- the operator runs `triage-feedback closed off`, which is the safe default for
 -- an endpoint that has never been smoke-tested.
+-- The two `telemetry_*`/`max_events_*` columns are NULLABLE on purpose: they were
+-- added to a live table (the ALTERs further down are what a pre-existing cluster
+-- runs), and NULL has to be a legal value there. Both readers treat NULL as
+-- CLOSED / "use the env fallback", so an un-migrated column can only fail safe.
 CREATE TABLE IF NOT EXISTS feedback_config (
-  id                      text    NOT NULL,
-  accepting               boolean NOT NULL,
-  closed_message          text    NOT NULL,
-  max_per_install_per_day integer NOT NULL,
+  id                        text    NOT NULL,
+  accepting                 boolean NOT NULL,
+  closed_message            text    NOT NULL,
+  max_per_install_per_day   integer NOT NULL,
+  telemetry_accepting       boolean,
+  max_events_per_id_per_day integer,
   PRIMARY KEY (id)
 );
 
@@ -140,6 +146,79 @@ CREATE TABLE IF NOT EXISTS dedupe_probe (
   PRIMARY KEY (hash, probe_day)
 );
 
+-- ---- usage analytics (docs/plans/usage-analytics.md T6 + Â§4) ----------------
+--
+-- THREE TABLES, AND NO RAW EVENT STORE. The ingest handler AGGREGATES ON ARRIVAL:
+-- a batch becomes counter UPSERTs and is then forgotten. There is no per-user
+-- event trail here to subpoena, leak or have to delete, and the only per-id row
+-- that exists at all is `analytics_install` (which `analytics wipe --id` drops).
+--
+-- WHY THESE SHAPES:
+--  * `usage_daily` is ONE narrow table for every counter. `metric` names the
+--    counter and `dim` carries its closed-enum dimension (a view id, a feature
+--    id, a version, a bucket INDEX), '-' where the metric has none. The names
+--    are enumerated in src/shared/telemetryRollup.ts, which both the handler and
+--    the triage readout import â€” postgres sees text, the code sees an enum.
+--  * `usage_funnel_daily` is separate because its key is genuinely five columns
+--    wide and folding it into `dim` would make every funnel query a string parse.
+--  * `analytics_install` carries the day-grained per-id facts that a counter can
+--    never answer (WAU/MAU, retention cohorts, days-to-adopt) plus the per-id
+--    DAILY EVENT CAP, kept here rather than in a fourth table so that the whole
+--    per-id footprint stays exactly one row.
+--
+-- All four `n`/count columns are bigint: they are sums of client-reported counts
+-- and durations, and a busy day of `viewDwellMs` is comfortably past 2^31.
+
+CREATE TABLE IF NOT EXISTS usage_daily (
+  day    text   NOT NULL,
+  metric text   NOT NULL,
+  dim    text   NOT NULL,
+  n      bigint NOT NULL,
+  PRIMARY KEY (day, metric, dim)
+);
+
+CREATE TABLE IF NOT EXISTS usage_funnel_daily (
+  day         text   NOT NULL,
+  funnel      text   NOT NULL,
+  step        text   NOT NULL,
+  outcome     text   NOT NULL,
+  app_version text   NOT NULL,
+  n           bigint NOT NULL,
+  PRIMARY KEY (day, funnel, step, outcome, app_version)
+);
+
+-- ONE ROW PER analyticsId, and that is the entire per-id footprint of this
+-- feature. `quota_day`/`quota_n` are the daily event cap's counter: they live on
+-- this row so the guarded UPSERT that maintains the row IS the cap check, in one
+-- statement with no read-modify-write window (the same argument install_quota
+-- makes for feedback, written out in infra/lambda/telemetry.ts).
+CREATE TABLE IF NOT EXISTS analytics_install (
+  analytics_id   text   NOT NULL,
+  first_seen_day text   NOT NULL,
+  last_seen_day  text   NOT NULL,
+  days_seen      integer NOT NULL,
+  app_version    text   NOT NULL,
+  channel        text   NOT NULL,
+  quota_day      text   NOT NULL,
+  quota_n        bigint NOT NULL,
+  PRIMARY KEY (analytics_id)
+);
+
+-- The kill switch and the cap for the TELEMETRY route, added to the existing
+-- config row rather than a second table: one row is where an operator already
+-- looks, and `triage-feedback` already reads and writes it.
+--
+-- ADDED, NEVER DROPPED. Aurora DSQL's ALTER TABLE grammar has no DROP COLUMN
+-- (infra/README.md carries the worked example), so a column here is forever â€” it
+-- is two, both nullable, and the handler reads them field by field with a typed
+-- fallback so a NULL can only ever mean CLOSED. On a cluster created from this
+-- file the CREATE TABLE above already has them and these two statements report
+-- `exists` (42701 duplicate_column, which the migrate runner treats as success,
+-- same as 42P07 for a table).
+ALTER TABLE feedback_config ADD COLUMN telemetry_accepting boolean;
+
+ALTER TABLE feedback_config ADD COLUMN max_events_per_id_per_day integer;
+
 -- ---- indexes ----------------------------------------------------------------
 --
 -- `CREATE INDEX ASYNC` is mandatory in DSQL (DDL cannot lock in a distributed
@@ -162,12 +241,34 @@ CREATE INDEX ASYNC report_by_channel ON report (channel, received_at);
 
 CREATE INDEX ASYNC report_by_status ON report (status, received_at);
 
+-- The ONE analytics index. Every `usage_*` read is a `day >= :floor` range over
+-- the PRIMARY KEY's leading column, so those two tables need nothing extra â€” but
+-- WAU/MAU and the retention cohorts count `analytics_install` rows by
+-- `last_seen_day`, which is not the key, and that read grows with the install
+-- base rather than with the window.
+CREATE INDEX ASYNC analytics_install_by_last_seen ON analytics_install (last_seen_day);
+
 -- ---- seed -------------------------------------------------------------------
 -- DML, so it is its own transaction (DSQL forbids mixing it with DDL).
 
 INSERT INTO feedback_config (id, accepting, closed_message, max_per_install_per_day)
 VALUES ('FEEDBACK', false, 'Feedback is not open yet. Please try again later.', 10)
 ON CONFLICT (id) DO NOTHING;
+
+-- TELEMETRY IS SEEDED CLOSED, exactly like feedback was: a route that has never
+-- been smoke tested accepts nothing. `triage-feedback analytics open` (or one
+-- UPDATE) is the deliberate act that turns it on.
+--
+-- Guarded on IS NULL so it is idempotent AND so it can never re-close a switch an
+-- operator has already opened â€” re-running `migrate` after a schema change must
+-- not be a stealth outage.
+UPDATE feedback_config
+   SET telemetry_accepting = false
+ WHERE id = 'FEEDBACK' AND telemetry_accepting IS NULL;
+
+UPDATE feedback_config
+   SET max_events_per_id_per_day = 20000
+ WHERE id = 'FEEDBACK' AND max_events_per_id_per_day IS NULL;
 
 -- ---- the ingest database role ----------------------------------------------
 --
@@ -196,3 +297,29 @@ GRANT SELECT, INSERT, DELETE ON report_idempotency TO feedback_ingest;
 GRANT SELECT, INSERT, UPDATE, DELETE ON install_quota TO feedback_ingest;
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON dedupe_probe TO feedback_ingest;
+
+-- ---- the TELEMETRY ingest database role -------------------------------------
+--
+-- A SECOND ROLE FOR A SECOND FUNCTION, and the reason is the same one that made
+-- `feedback_ingest` narrow: what a public write endpoint may do is the GRANT list
+-- below, not a promise in a handler. This role can count usage and it can touch
+-- its own install row. It cannot read the feedback backlog, cannot see
+-- install_profile, cannot write `report`, and holds no DELETE anywhere â€” a full
+-- compromise of the telemetry Lambda can inflate counters and nothing else.
+--
+-- SELECT is granted alongside INSERT/UPDATE on the three tables because an
+-- `ON CONFLICT DO UPDATE ... WHERE` reads the existing row to evaluate the guard,
+-- and `RETURNING` reads it back. There is no DELETE: aggregates are anonymous and
+-- are kept; the one deletion path (`analytics wipe --id`) runs as `admin`.
+
+CREATE ROLE telemetry_ingest WITH LOGIN;
+
+AWS IAM GRANT telemetry_ingest TO '${TELEMETRY_LAMBDA_ROLE_ARN}';
+
+GRANT SELECT ON feedback_config TO telemetry_ingest;
+
+GRANT SELECT, INSERT, UPDATE ON usage_daily TO telemetry_ingest;
+
+GRANT SELECT, INSERT, UPDATE ON usage_funnel_daily TO telemetry_ingest;
+
+GRANT SELECT, INSERT, UPDATE ON analytics_install TO telemetry_ingest;

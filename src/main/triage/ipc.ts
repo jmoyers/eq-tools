@@ -30,33 +30,17 @@
 
 import { ipcMain } from 'electron'
 import { IPC } from '../../shared/ipc'
-import type { TriageAnalytics, TriageResult } from '../../shared/triage'
+import type { TriageResult } from '../../shared/triage'
 import { awsBackend, type TriageBackend } from './backend'
 import {
   isInstallId,
   isReportId,
+  validateAnalyticsDays,
   validateBlockReason,
   validateClosedMessage,
   validatePatch,
   validateQuery
 } from './validate'
-
-/**
- * Usage analytics has no table to read yet.
- *
- * `docs/plans/usage-analytics.md` wave A2 is the infra that would create one; A1 (the client)
- * is not built either. The panel says so in the app's own words rather than rendering zeros —
- * a zeroed dashboard is indistinguishable from "nobody used the app", and this app does not
- * invent data it cannot observe (world-model law 1).
- */
-const ANALYTICS_UNAVAILABLE: TriageAnalytics = {
-  available: false,
-  table: 'usage_daily',
-  reason:
-    'Usage analytics lands with telemetry wave A2 (docs/plans/usage-analytics.md). ' +
-    'Nothing is collected and no table exists yet, so there is nothing to show — ' +
-    'this panel stays empty rather than rendering zeros.'
-}
 
 /** Prose, never a stack. An IAM denial is the ACCESS CONTROL WORKING and must read like it. */
 function message(err: unknown): string {
@@ -130,10 +114,12 @@ export function registerTriageIpc(backend: TriageBackend = awsBackend()): () => 
     return q === null ? REJECT : await attempt(() => backend.digest(q))
   })
 
-  ipcMain.handle(IPC.triageAnalytics, (): TriageResult<TriageAnalytics> => ({
-    ok: true,
-    value: ANALYTICS_UNAVAILABLE
-  }))
+  // The window is an ENUM (validate.ts says why), and an omitted one is the default rather
+  // than a rejection — the panel's first render has not chosen a window yet.
+  ipcMain.handle(IPC.triageAnalytics, async (_e, rawDays: unknown) => {
+    const days = validateAnalyticsDays(rawDays)
+    return days === null ? REJECT : await attempt(() => backend.analytics(days))
+  })
 
   return () => backend.close()
 }

@@ -891,7 +891,18 @@ first-run provisioning.
   opt-in recommendation) but NOTHING transmits before the first-run
   notice renders; allowlist schema; separate rotatable analyticsId;
   payload viewer + TELEMETRY.md. Plan: docs/plans/usage-analytics.md.
-  A1 (client, dark) + A2 (infra) not yet built.
+  A1 (client) SHIPS DARK. A2 (infra + CLI) and A3 (the readout) are
+  BUILT AND UNAPPLIED: a second Lambda (`eqcompanion-telemetry-ingest`,
+  its own IAM + database role `telemetry_ingest`) behind
+  `POST /v1/telemetry`, aggregating on arrival into `usage_daily` /
+  `usage_funnel_daily` / `analytics_install` — NO raw-event store (T6) —
+  plus EMF metrics, a CloudWatch dashboard, `triage-feedback analytics
+  digest|wipe|open|close`, and the Triage → Analytics tab reading all
+  three tables. Rides the owner's next `terraform apply` +
+  `migrate --refresh` (exact ordered commands: infra/README.md, "Wave A2").
+  **The endpoint is still not lit**: `TELEMETRY_API_URL` is `''` and
+  tests/telemetryNet.test.mts pins it — lighting it is a separate,
+  owner-approved commit that must also amend SECURITY.md + README.
 
 ## Known open items
 

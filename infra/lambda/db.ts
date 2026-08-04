@@ -58,6 +58,14 @@ const { Client, types } = pg
 const HOST = process.env.DSQL_ENDPOINT ?? ''
 const DB_USER = process.env.DSQL_USER ?? 'feedback_ingest'
 const REGION = process.env.AWS_REGION ?? 'us-east-1'
+/**
+ * `application_name` is what a DSQL-side session listing calls this connection, so it must say
+ * WHICH handler is holding it now that there are two of them (submit and telemetry) sharing
+ * this module. It comes from the environment for the same reason `DSQL_USER` does: the two
+ * functions differ only in their env, so one bundle-shaped default would be a lie in one of
+ * them. Terraform sets it; the fallback is the older of the two callers.
+ */
+const APPLICATION = process.env.DSQL_APPLICATION ?? 'eqc-feedback-submit'
 
 /** DSQL hangs up at 60 minutes. Retire well before, so we never race the hangup. */
 const MAX_CONNECTION_AGE_MS = 45 * 60_000
@@ -133,7 +141,7 @@ async function open(): Promise<PgClient> {
     user: DB_USER,
     password: token,
     ssl: { rejectUnauthorized: true },
-    application_name: 'eqc-feedback-submit',
+    application_name: APPLICATION,
     connectionTimeoutMillis: CONNECT_TIMEOUT_MS,
     // DSQL rejects SET statement_timeout ("setting configuration parameter not
     // supported", live 2026-08-04) — node-postgres sends it on connect when the

@@ -49,6 +49,7 @@ import {
   logKeyOf,
   logObjectExists,
   makeClients,
+  missingTable,
   reportsForInstall,
   SCHEMA_FILE,
   setAccepting,
@@ -60,6 +61,7 @@ import {
   type ListFilter,
   type Row,
 } from '../src/main/triage/store'
+import { analyticsSubcommand, ANALYTICS_SUBCOMMANDS } from './triageAnalytics.mjs'
 import {
   REPORT_STATUSES,
   SEVERITIES,
@@ -88,6 +90,11 @@ const USAGE = `triage-feedback <command> [options]
   block   <installId> --reason "..."  |  unblock <installId>
   closed  <on|off> [--message "..."]  the kill switch (instant, no deploy)
 
+  analytics digest [--days 30] [--json]     usage analytics as text (same numbers as
+                                            the Triage -> Analytics tab, one computation)
+  analytics wipe   --id <analyticsId>       delete that id's analytics_install row
+  analytics open | close                    the TELEMETRY kill switch (instant, no deploy)
+
   Global: --profile <aws-profile> --role-arn <arn> --refresh (re-read tf outputs)`
 
 const OPTIONS = {
@@ -104,6 +111,11 @@ const OPTIONS = {
   reason: { type: 'string' },
   message: { type: 'string' },
   install: { type: 'string' },
+  // `analytics wipe --id` / `analytics digest --days`. `--id` is deliberately NOT `--install`:
+  // an analyticsId is not an installId and the two must never be interchangeable at the
+  // command line either (plan T3 — they are deliberately non-correlatable).
+  id: { type: 'string' },
+  days: { type: 'string' },
   profile: { type: 'string' },
   'role-arn': { type: 'string' },
   json: { type: 'boolean' },
@@ -172,10 +184,20 @@ function shortDate(ms: number): string {
  */
 async function cmdMigrate(ctx: Ctx): Promise<void> {
   const c = ctx.clients()
-  const sql = readFileSync(SCHEMA_FILE, 'utf8').replaceAll(
-    '${LAMBDA_ROLE_ARN}',
-    c.stack.lambda_role_arn,
-  )
+  const sql = readFileSync(SCHEMA_FILE, 'utf8')
+    .replaceAll('${LAMBDA_ROLE_ARN}', text(c.stack.lambda_role_arn))
+    .replaceAll('${TELEMETRY_LAMBDA_ROLE_ARN}', text(c.stack.telemetry_lambda_role_arn))
+  // A CACHED .triage/stack.json written before a new output existed has no value for it, and
+  // the cache is deliberately read back without re-validating (it is a cache, not a contract).
+  // So the check is on the SUBSTITUTED text: an `AWS IAM GRANT … TO '${…}'` that reached the
+  // cluster literally would map the role to nothing and fail confusingly later.
+  const unresolved = /\$\{([A-Z_]+)\}/.exec(sql)
+  if (unresolved) {
+    throw new Error(
+      `schema.sql still contains ${unresolved[0]} — the terraform output for it is missing ` +
+        'from .triage/stack.json. Re-run with --refresh (or delete the file) after an apply.',
+    )
+  }
   const steps = await applySchema(c, sql)
   for (const step of steps) {
     const head = step.sql.replace(/\s+/g, ' ').slice(0, 96)
@@ -359,6 +381,31 @@ async function cmdWipe(ctx: Ctx): Promise<void> {
   console.log(`wiped ${rows.length} report(s) for install ${installId}.`)
 }
 
+/**
+ * `analytics <digest|wipe|open|close>` — usage analytics (docs/plans/usage-analytics.md A2).
+ *
+ * The subcommands live in ./triageAnalytics.mts; this is the dispatch, plus the ONE error
+ * translation worth doing here: a cluster that has not run the A2 migration answers `42P01
+ * undefined_table`, and that is not a useful thing to print at somebody who can fix it in one
+ * command.
+ */
+async function cmdAnalytics(ctx: Ctx): Promise<void> {
+  const run = analyticsSubcommand(ctx.rest[0])
+  if (run === null) {
+    throw new Error(`analytics: expected one of ${Object.keys(ANALYTICS_SUBCOMMANDS).join(', ')}`)
+  }
+  try {
+    await run({ args: ctx.args, clients: ctx.clients, nowMs: NOW })
+  } catch (err) {
+    const table = missingTable(err)
+    if (table === null) throw err
+    throw new Error(
+      `${table} does not exist on this cluster. The usage-analytics tables ship in ` +
+        'infra/schema.sql — run `triage-feedback migrate` after the apply that created them.',
+    )
+  }
+}
+
 async function cmdBlock(ctx: Ctx): Promise<void> {
   const [installId] = ctx.rest
   if (!installId) throw new Error('block: <installId> is required')
@@ -400,6 +447,7 @@ const COMMANDS: Record<string, (ctx: Ctx) => Promise<void>> = {
   block: cmdBlock,
   unblock: cmdUnblock,
   closed: cmdClosed,
+  analytics: cmdAnalytics,
 }
 
 async function main(): Promise<void> {

@@ -643,9 +643,11 @@ const api = {
   /** The same markdown digest `triage-feedback digest` prints, plus its clusters. */
   triageDigest: (query: TriageListQuery): Promise<TriageResult<TriageDigest>> =>
     ipcRenderer.invoke(IPC.triageDigest, query),
-  /** Usage analytics — answers `available:false` until telemetry wave A2 exists. */
-  triageAnalytics: (): Promise<TriageResult<TriageAnalytics>> =>
-    ipcRenderer.invoke(IPC.triageAnalytics),
+  /** Usage analytics over the last `days` (one of TRIAGE_ANALYTICS_DAYS; omitted = the
+   *  default window). `available:false` now means one thing only: the tables are not on the
+   *  cluster. Tables that exist and are empty come back as honest zeros. */
+  triageAnalytics: (days?: number): Promise<TriageResult<TriageAnalytics>> =>
+    ipcRenderer.invoke(IPC.triageAnalytics, days),
 
   // ---- frameless window controls (Task #23) ----
   minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),

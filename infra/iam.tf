@@ -79,6 +79,42 @@ resource "aws_iam_role_policy_attachment" "lambda_basic" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
+# ---- telemetry ingest role --------------------------------------------------
+#
+# ONE STATEMENT. Read it beside the feedback role above and the difference IS the
+# design: no `s3:PutObject`, because this path has no upload leg and never mints
+# a presign. `dsql:DbConnect` (never `...Admin`) lets it log in only as the named
+# database role `telemetry_ingest`, whose GRANTs are at the bottom of schema.sql:
+# SELECT on the config row, UPSERT on the three counter tables, and nothing else.
+# It cannot read the backlog, cannot write a report, and holds no DELETE anywhere.
+
+data "aws_iam_policy_document" "telemetry_inline" {
+  statement {
+    sid       = "TelemetryDsqlConnectAsIngestRole"
+    effect    = "Allow"
+    actions   = ["dsql:DbConnect"]
+    resources = [aws_dsql_cluster.feedback.arn]
+  }
+}
+
+resource "aws_iam_role" "telemetry" {
+  name = "${var.name_prefix}-telemetry-ingest-role"
+  # The same trust policy document as the submit role: both are Lambda functions,
+  # and the document says only "lambda.amazonaws.com may assume this".
+  assume_role_policy = data.aws_iam_policy_document.lambda_assume.json
+}
+
+resource "aws_iam_role_policy" "telemetry" {
+  name   = "telemetry-ingest"
+  role   = aws_iam_role.telemetry.id
+  policy = data.aws_iam_policy_document.telemetry_inline.json
+}
+
+resource "aws_iam_role_policy_attachment" "telemetry_basic" {
+  role       = aws_iam_role.telemetry.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
 # ---- triage role ------------------------------------------------------------
 
 data "aws_iam_policy_document" "triage_assume" {

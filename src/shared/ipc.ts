@@ -377,7 +377,9 @@ export const IPC = {
   triageSetBlocked: 'triage:setBlocked',
   // renderer -> main: the CLI's markdown digest + its deterministic clusters. Arg: query.
   triageDigest: 'triage:digest',
-  // renderer -> main: usage analytics. Answers `available:false` until telemetry wave A2.
+  // renderer -> main: usage analytics over a window (arg: days, one of TRIAGE_ANALYTICS_DAYS).
+  // Reads usage_daily + usage_funnel_daily + analytics_install; `available:false` means the
+  // tables are missing (a cluster that predates the A2 migration), NOT that they are empty.
   triageAnalytics: 'triage:analytics',
 
   // ---- misc pushes ----

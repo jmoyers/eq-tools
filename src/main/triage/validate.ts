@@ -23,6 +23,8 @@
 
 import { FEEDBACK_TYPES, REPORT_STATUSES, SEVERITIES } from '../../shared/feedback'
 import {
+  TRIAGE_ANALYTICS_DAYS,
+  TRIAGE_ANALYTICS_DEFAULT_DAYS,
   TRIAGE_LIMIT_MAX,
   TRIAGE_SINCE_CHOICES,
   type TriageChannelFilter,
@@ -141,6 +143,19 @@ export function validatePatch(raw: unknown): TriagePatch | null {
   const patch: TriagePatch = {}
   if (!patchUnions(p, patch) || !patchText(p, patch)) return null
   return Object.keys(patch).length > 0 ? patch : null
+}
+
+/**
+ * The analytics window. An ENUM, not a bounded number, for the same reason `since` is: it
+ * becomes a `day >= :floor` over an unbounded table, so the answer set has to be the toolbar's
+ * own choices rather than whatever a caller computes. `undefined` means "the default window" —
+ * this is the one triage argument with a legitimate absent case, because the panel's first
+ * render has not chosen anything yet.
+ */
+export function validateAnalyticsDays(raw: unknown): number | null {
+  if (raw === undefined || raw === null) return TRIAGE_ANALYTICS_DEFAULT_DAYS
+  if (typeof raw !== 'number') return null
+  return (TRIAGE_ANALYTICS_DAYS as readonly number[]).includes(raw) ? raw : null
 }
 
 /** The kill switch's optional prose. `undefined` keeps whatever the cluster already says. */

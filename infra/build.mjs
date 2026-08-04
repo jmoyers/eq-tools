@@ -46,11 +46,32 @@ import process from 'node:process'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = dirname(HERE)
-const ENTRY = join(HERE, 'lambda', 'submit.ts')
-const CONTRACT = join(ROOT, 'src', 'shared', 'feedback.ts')
 const OUT_DIR = join(HERE, 'dist')
-const OUT_JS = join(OUT_DIR, 'submit.mjs')
-const OUT_ZIP = join(OUT_DIR, 'submit.zip')
+
+/**
+ * TWO ENTRY POINTS, TWO ZIPS — one per Lambda function (lambda.tf explains why the telemetry
+ * ingest is a second function rather than a second route on the first). They are built in one
+ * pass and share nothing at run time; each zip carries its own copy of what it imports, which
+ * is what makes "deploy one without touching the other" true.
+ *
+ * `contract` is the shared module the entry point is not allowed to be built without. It is
+ * checked before esbuild runs so the failure says WHICH promise broke ("one validator, client
+ * and server") instead of surfacing as a module-resolution error 40 frames deep.
+ */
+const ENTRIES = [
+  {
+    name: 'submit',
+    entry: join(HERE, 'lambda', 'submit.ts'),
+    contract: join(ROOT, 'src', 'shared', 'feedback.ts'),
+    why: 'infra/lambda/submit.ts imports validateSubmit from it on purpose — one validator, client and server.',
+  },
+  {
+    name: 'telemetry',
+    entry: join(HERE, 'lambda', 'telemetry.ts'),
+    contract: join(ROOT, 'src', 'shared', 'telemetryValidate.ts'),
+    why: 'infra/lambda/telemetry.ts imports validateTelemetryBatch from it on purpose — one validator, client and server.',
+  },
+]
 
 const say = (line) => process.stdout.write(`${line}\n`)
 
@@ -160,34 +181,25 @@ const stubNativeBackends = {
   },
 }
 
-async function main() {
+const kb = (n) => `${Math.round(n / 1024)} KB`
+
+/** One entry point → `dist/<name>.mjs` + a deterministic `dist/<name>.zip`. */
+async function bundleOne(esbuild, { name, entry, contract, why }) {
   try {
-    statSync(CONTRACT)
+    statSync(contract)
   } catch {
     throw new Error(
-      `the shared contract is missing: ${CONTRACT}\n` +
-        'infra/lambda/submit.ts imports validateSubmit from it on purpose — one validator, ' +
-        'client and server. Land src/shared/feedback.ts before building the handler.',
+      `the shared contract is missing: ${contract}\n${why}\n` +
+        'Land it before building the handler.',
     )
   }
 
-  let esbuild
-  try {
-    esbuild = await import('esbuild')
-  } catch {
-    throw new Error(
-      'esbuild is not resolvable from this tree. It ships as a dependency of vite/tsx, ' +
-        'but the Lambda bundle should not rely on that transitively — add `esbuild` to the ' +
-        'root devDependencies.',
-    )
-  }
-
-  rmSync(OUT_DIR, { recursive: true, force: true })
-  mkdirSync(OUT_DIR, { recursive: true })
+  const outJs = join(OUT_DIR, `${name}.mjs`)
+  const outZip = join(OUT_DIR, `${name}.zip`)
 
   const result = await esbuild.build({
-    entryPoints: [ENTRY],
-    outfile: OUT_JS,
+    entryPoints: [entry],
+    outfile: outJs,
     bundle: true,
     platform: 'node',
     format: 'esm',
@@ -201,15 +213,36 @@ async function main() {
     metafile: false,
     logLevel: 'warning',
   })
-  if (result.errors.length > 0) throw new Error('esbuild reported errors')
+  if (result.errors.length > 0) throw new Error(`esbuild reported errors for ${name}`)
 
-  const js = readFileSync(OUT_JS)
-  writeFileSync(OUT_ZIP, makeZip([{ name: 'submit.mjs', data: js }]))
+  const js = readFileSync(outJs)
+  // The zip entry name is what Lambda's `handler = "<file>.handler"` resolves against, so it
+  // has to match the function's configured handler in lambda.tf.
+  writeFileSync(outZip, makeZip([{ name: `${name}.mjs`, data: js }]))
 
-  const kb = (n) => `${Math.round(n / 1024)} KB`
-  say(`bundled ${ENTRY}`)
-  say(`  dist/submit.mjs  ${kb(js.length)}`)
-  say(`  dist/submit.zip  ${kb(statSync(OUT_ZIP).size)}  (deterministic)`)
+  say(`bundled ${entry}`)
+  say(`  dist/${name}.mjs  ${kb(js.length)}`)
+  say(`  dist/${name}.zip  ${kb(statSync(outZip).size)}  (deterministic)`)
+}
+
+async function main() {
+  let esbuild
+  try {
+    esbuild = await import('esbuild')
+  } catch {
+    throw new Error(
+      'esbuild is not resolvable from this tree. It ships as a dependency of vite/tsx, ' +
+        'but the Lambda bundle should not rely on that transitively — add `esbuild` to the ' +
+        'root devDependencies.',
+    )
+  }
+
+  // ONE clean of the whole dist/ before ANY entry is written: clearing it per entry would
+  // delete the zip the previous iteration just produced, and the plan would then find one.
+  rmSync(OUT_DIR, { recursive: true, force: true })
+  mkdirSync(OUT_DIR, { recursive: true })
+
+  for (const spec of ENTRIES) await bundleOne(esbuild, spec)
 }
 
 await main()

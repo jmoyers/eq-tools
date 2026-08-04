@@ -70,4 +70,9 @@ locals {
   # table privileges that makes the handler work (schema.sql spells them out).
   # It is emphatically NOT `admin`: see iam.tf.
   dsql_ingest_role = "feedback_ingest"
+
+  # And the analytics ingest path's role. A SECOND database role, not a widened
+  # first one: its GRANT list is UPSERT on the three `usage_*`/`analytics_*`
+  # tables plus SELECT on the config row, and nothing at all on `report`.
+  dsql_telemetry_role = "telemetry_ingest"
 }
