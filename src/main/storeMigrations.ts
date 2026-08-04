@@ -41,6 +41,17 @@
 // ever held: cheap insurance for a promise that has to hold forever.
 
 import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs'
+// The ONE dependency this module takes, and a deliberate exception to the note below about
+// LAUNCH_MS: shared/speechText.ts is a pure content module (it imports one rank helper and
+// nothing else — no Electron, no parser, no LogEvent union), and duplicating the speech mode
+// list or the 120-char cap here would create a second answer to "what is a valid speech
+// config" that could drift from the one the editor and the resolver use.
+import {
+  ALERT_AUDIO_ACTIONS,
+  MAX_SPEECH_CHARS,
+  SPEECH_MODES,
+  normalizeVoicePrefs
+} from '../shared/speechText'
 
 /** A store file, parsed. Deliberately untyped: a migration's INPUT is a shape the current
  *  code no longer describes, so `StoreShape` would be a lie at every step but the last. */
@@ -53,7 +64,7 @@ export const SCHEMA_VERSION_KEY = 'schemaVersion'
  * The schema the code running right now expects. Bump by exactly one whenever a persisted
  * shape changes, and add the matching MIGRATIONS entry in the same commit.
  */
-export const CURRENT_SCHEMA_VERSION = 3
+export const CURRENT_SCHEMA_VERSION = 4
 
 export interface Migration {
   /** Version this step produces. Steps run in ascending `to` order, contiguously. */
@@ -188,12 +199,76 @@ const migrateToV3: Migration = {
   }
 }
 
+// ------------------------------------------------------------------ 3 → 4: voice alerts
+//
+// docs/plans/voice-alerts.md §2 + decision D6. Two persisted shapes move at once, so they move
+// in one step: a new top-level `voice` prefs blob, and two new OPTIONAL fields on every
+// `AlertDef` (`audio`, `speech`).
+//
+// THE ALERT HALF IS TOLERATE-AND-NORMALIZE, NOT REWRITE. An alert written before voice existed
+// is already correct — an absent `audio` MEANS 'sound' and an absent `speech` MEANS "say your
+// own name" — so this step never adds either key to a def that lacks it. What it does is make
+// the v4 shape a PROMISE: after it runs, any `audio`/`speech` present in the file is one of the
+// values the code understands. A hand-edited file, a share-import from a future build, or a
+// half-written save can otherwise leave `speech.mode: "shout"` sitting in the store forever,
+// where every reader has to re-check it. Malformed values are DROPPED (back to the documented
+// default), never coerced into a different intent.
+
+/** One of the closed string sets, or undefined when the value is not a member. */
+function pickLiteral<T extends string>(value: unknown, allowed: readonly T[]): T | undefined {
+  return typeof value === 'string' && (allowed as readonly string[]).includes(value)
+    ? (value as T)
+    : undefined
+}
+
+/**
+ * One alert's `speech` block, or undefined when it holds nothing usable. An unknown mode is not
+ * repaired into a guess — the block goes, and the def falls back to speaking its own name.
+ */
+function normalizeAlertSpeech(value: unknown): StoreData | undefined {
+  if (!isPlainObject(value)) return undefined
+  const mode = pickLiteral(value.mode, SPEECH_MODES)
+  if (mode === undefined) return undefined
+  const out: StoreData = { mode }
+  const phrase = typeof value.phrase === 'string' ? value.phrase.trim() : ''
+  if (phrase) out.phrase = phrase.slice(0, MAX_SPEECH_CHARS)
+  const voiceId = typeof value.voiceId === 'string' ? value.voiceId.trim() : ''
+  if (voiceId) out.voiceId = voiceId
+  return out
+}
+
+/** Normalize the two voice fields on one stored alert, leaving every other field untouched. */
+function normalizeAlertVoiceFields(alert: unknown): unknown {
+  if (!isPlainObject(alert)) return alert
+  if (!('audio' in alert) && !('speech' in alert)) return alert
+  const next = { ...alert }
+  const audio = pickLiteral(next.audio, ALERT_AUDIO_ACTIONS)
+  if (audio === undefined) delete next.audio
+  else next.audio = audio
+  const speech = normalizeAlertSpeech(next.speech)
+  if (speech === undefined) delete next.speech
+  else next.speech = speech
+  return next
+}
+
+const migrateToV4: Migration = {
+  to: 4,
+  describe: 'add the voice prefs blob; normalize AlertDef.audio/.speech',
+  migrate(data) {
+    data.voice = normalizeVoicePrefs(data.voice)
+    if (Array.isArray(data.alerts)) {
+      data.alerts = (data.alerts as unknown[]).map(normalizeAlertVoiceFields)
+    }
+    return data
+  }
+}
+
 /**
  * The chain, ascending. APPEND ONLY — never renumber, never edit a shipped step (a store
  * out there was migrated by the old text and will never run it again), never delete one:
  * a file written years ago still enters the chain at its own version.
  */
-export const MIGRATIONS: readonly Migration[] = [migrateToV2, migrateToV3]
+export const MIGRATIONS: readonly Migration[] = [migrateToV2, migrateToV3, migrateToV4]
 
 /** Version recorded in `data`; anything absent, non-integer or < 1 means "pre-framework" ⇒ 1. */
 export function readSchemaVersion(data: StoreData): number {

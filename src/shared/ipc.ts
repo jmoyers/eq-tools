@@ -67,6 +67,27 @@ export const IPC = {
   // the scraped spell DB + live per-spell usage from the buffs module's snapshot.
   spellsCatalog: 'spells:catalog',
 
+  // ---- voice alerts / TTS (docs/plans/voice-alerts.md §3) ----
+  // The 'system' engine tier needs NO channel at all: Chromium's own `speechSynthesis` lives in
+  // the renderer. These three exist for the DOWNLOADED tier (Kokoro), whose model, worker and
+  // wav cache all live in main — and they ship as honest stubs until that wave lands, so the UI
+  // can be written against a real, typed door instead of a promise.
+  // renderer -> main: synthesize + cache one utterance. Arg: SpeechSayRequest (VALIDATED AT THE
+  // HANDLER — text and voiceId are renderer strings and reach a cache key). Returns
+  // SpeechSayResult: `{ok:true,url}` once an engine exists, `{ok:false,reason}` today.
+  speechSay: 'speech:say',
+  // renderer -> main: the voices the DOWNLOADED tier can speak with. Returns SpeechVoice[] —
+  // empty until a tier is installed. System-tier voices come from `getVoices()`, not from here.
+  speechVoices: 'speech:voices',
+  // renderer -> main: provision an engine tier (pinned release, sha256-verified, atomic).
+  // Arg: SpeechEngine. Returns SpeechInstallResult.
+  speechInstall: 'speech:install',
+  // renderer -> main: read/write the global voice prefs blob (§2). Unlike the three above these
+  // are REAL from day one — the store is main-owned, so the Preferences panel has no other door.
+  // The setter re-clamps every field at the handler.
+  voicePrefsGet: 'voicePrefs:get',
+  voicePrefsSet: 'voicePrefs:set',
+
   // ---- sound-pack registry (openpeon.com integration, Task #29) ----
   // renderer -> main: list registry packs annotated with installed flags.
   packsRegistry: 'packs:registry',

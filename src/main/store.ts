@@ -10,8 +10,10 @@ import type {
   OverlayConfig,
   OverlayKind,
   ProgressState,
-  UpdateChannel
+  UpdateChannel,
+  VoicePrefs
 } from '../shared/types'
+import { normalizeVoicePrefs } from '../shared/speechText'
 import type { ComboCorrection } from '../shared/classCombo'
 import {
   ALERT_SOUND_MIGRATION_VERSION,
@@ -78,6 +80,12 @@ interface StoreShape {
   overlay?: OverlayConfig
   /** per-kind floating overlay configs (Task #54): 'fight' + 'overall' windows. */
   overlays?: Partial<Record<OverlayKind, OverlayConfig>>
+  /**
+   * Voice alerts / TTS preferences (docs/plans/voice-alerts.md §2). Written by schema
+   * migration 3→4, so a v4 store always has it; the reader still defaults, because a
+   * downgrade-then-upgrade can leave any key in any state.
+   */
+  voice?: VoicePrefs
 }
 
 /**
@@ -419,5 +427,29 @@ export function setAlertPrefs(prefs: AlertPrefs): AlertPrefs {
     muted: prefs.muted
   }
   store.set('alertPrefs', next)
+  return next
+}
+
+// ----- Voice alerts / TTS preferences (docs/plans/voice-alerts.md §2) -----
+//
+// Speech obeys the alert master switches ABOVE, not instead of them: a muted alerts module
+// speaks nothing, whatever `voice.enabled` says. This blob only answers "with what voice, how
+// fast, how loud" — and, with `enabled:false` by default, "not at all until you ask".
+
+/**
+ * The stored voice prefs, defaulted + clamped field by field. `normalizeVoicePrefs` takes
+ * `unknown` on purpose: this key can hold anything a hand edit, a downgrade or a future build
+ * left behind, and every reader in this file defaults rather than trusts (the downgrade
+ * contract in storeMigrations.ts).
+ */
+export function getVoicePrefs(): VoicePrefs {
+  return normalizeVoicePrefs(store.get('voice'))
+}
+
+/** Persist voice prefs. Re-clamped through the SAME normalizer the read uses — a renderer
+ *  string is a renderer string, and the two can never disagree about what is valid. */
+export function setVoicePrefs(prefs: VoicePrefs): VoicePrefs {
+  const next = normalizeVoicePrefs(prefs)
+  store.set('voice', next)
   return next
 }

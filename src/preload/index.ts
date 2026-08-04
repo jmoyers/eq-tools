@@ -21,7 +21,13 @@ import type {
   RegistryListResult,
   SoundData,
   SoundPack,
-  SpellCatalog
+  SpeechEngine,
+  SpeechInstallResult,
+  SpeechSayRequest,
+  SpeechSayResult,
+  SpeechVoice,
+  SpellCatalog,
+  VoicePrefs
 } from '../shared/types'
 import type { CombatSnapshot, FightSearchResult, SnapshotOpts } from '../shared/combat'
 import type { ClassAbbr, ComboDelta, ComboSnap } from '../shared/classCombo'
@@ -105,6 +111,7 @@ export interface SubmitOpts {
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge, MobKnowledge }
+export type { SpeechEngine, SpeechInstallResult, SpeechSayRequest, SpeechSayResult, SpeechVoice, VoicePrefs }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { AppFocus, UpdateStatus }
 export type { ShareApplyResult, SharePreview }
@@ -220,6 +227,29 @@ const api = {
   },
   /** Suggested-alerts wizard (Task #38): the searchable spell catalog + live usage. */
   getSpellCatalog: (): Promise<SpellCatalog> => ipcRenderer.invoke(IPC.spellsCatalog),
+
+  // ---- voice alerts / TTS (docs/plans/voice-alerts.md §3) ----
+  // The 'system' tier needs NOTHING here: Chromium's `speechSynthesis` is already in the
+  // renderer, so the free tier speaks without crossing this boundary at all. The three engine
+  // calls below serve the DOWNLOADED (Kokoro) tier, whose model and wav cache live in main —
+  // and in this build they are honest stubs (see main/ipc/speech.ts), answering with a STATE
+  // ('engine-not-installed' / 'not-implemented') rather than throwing or pretending.
+  /** Synthesize + cache one utterance; resolves to a playable url once an engine exists.
+   *  Both fields are re-validated at the handler (they reach a cache key and a file name). */
+  speechSay: (request: SpeechSayRequest): Promise<SpeechSayResult> =>
+    ipcRenderer.invoke(IPC.speechSay, request),
+  /** Voices the DOWNLOADED tier can speak with — empty until it is installed. System-tier
+   *  voices come from the renderer's own `speechSynthesis.getVoices()`, never from here. */
+  speechVoices: (): Promise<SpeechVoice[]> => ipcRenderer.invoke(IPC.speechVoices),
+  /** Provision an engine tier (pinned release, sha256-verified). `not-implemented` until W3. */
+  speechInstall: (engine: SpeechEngine): Promise<SpeechInstallResult> =>
+    ipcRenderer.invoke(IPC.speechInstall, engine),
+  /** Read the global voice prefs blob. REAL from day one — the store is main-owned. */
+  getVoicePrefs: (): Promise<VoicePrefs> => ipcRenderer.invoke(IPC.voicePrefsGet),
+  /** Persist the global voice prefs; resolves to what was actually stored (every field is
+   *  re-clamped at the handler, so the reply may differ from what was sent). */
+  setVoicePrefs: (prefs: VoicePrefs): Promise<VoicePrefs> =>
+    ipcRenderer.invoke(IPC.voicePrefsSet, prefs),
 
   /** Item knowledge (Task #53): "what's this lore/quest item for" — local posky-first,
    *  then a cached, politely-throttled wiki lookup. Never rejects (degrades to a

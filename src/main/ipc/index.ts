@@ -22,6 +22,7 @@ import { registerKnowledgeIpc } from './knowledge'
 import { registerMapsIpc } from './maps'
 import { registerShareIpc } from './share'
 import { registerSoundsIpc } from './sounds'
+import { registerSpeechIpc } from './speech'
 import { registerWindowIpc } from './windowControls'
 import { registerWorldIpc } from './world'
 
@@ -32,6 +33,7 @@ export function registerIpc(): void {
   registerAlertsIpc()
   registerShareIpc()
   registerSoundsIpc()
+  registerSpeechIpc()
   registerKnowledgeIpc()
   registerMapsIpc()
   registerWindowIpc()

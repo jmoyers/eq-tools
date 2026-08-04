@@ -1,0 +1,87 @@
+{
+	"schemaVersion": 3,
+	"byCharacter": {
+		"fixture_freeport": {
+			"inventory": {
+				"sky quest turn-in token": 2
+			},
+			"completedQuests": [
+				"Enchanter::Sky Bracer"
+			],
+			"combo": {
+				"corrections": []
+			}
+		}
+	},
+	"activeLogPath": "C:\\Fixture\\Logs\\eqlog_Fixture_freeport.txt",
+	"alerts": [
+		{
+			"id": "charm-break",
+			"name": "Charm break",
+			"enabled": true,
+			"trigger": {
+				"type": "event",
+				"kind": "uncharm"
+			},
+			"sound": {
+				"packId": "alan-rickman",
+				"soundId": "attention"
+			},
+			"note": "Seeded default — written long before voice alerts existed."
+		},
+		{
+			"id": "mez-landed",
+			"name": "Mez landed",
+			"enabled": true,
+			"trigger": {
+				"type": "event",
+				"kind": "castBegin",
+				"where": {
+					"spell": "Mesmerization III"
+				}
+			},
+			"sound": {
+				"packId": "alan-rickman",
+				"soundId": "settled"
+			},
+			"volume": 0.8,
+			"cooldownMs": 5000,
+			"audio": "both",
+			"speech": {
+				"mode": "spellFirstWord",
+				"voiceId": "sapi:David"
+			}
+		},
+		{
+			"id": "hand-edited",
+			"name": "Hand-edited alert",
+			"enabled": false,
+			"trigger": {
+				"type": "raw",
+				"regex": "\\] You have entered"
+			},
+			"sound": {
+				"packId": "alan-rickman",
+				"soundId": "settled"
+			},
+			"audio": "shout",
+			"speech": {
+				"mode": "yell",
+				"phrase": "this mode does not exist"
+			}
+		}
+	],
+	"alertPrefs": {
+		"globalVolume": 0.5,
+		"muted": false
+	},
+	"overlays": {
+		"fight": {
+			"open": false,
+			"locked": false,
+			"bgAlpha": 0.72,
+			"topN": 5,
+			"drill": null
+		}
+	}
+}

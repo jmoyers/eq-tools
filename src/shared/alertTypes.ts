@@ -99,6 +99,111 @@ export interface AlertSoundRef {
   soundId: string
 }
 
+// ----- Voice alerts (docs/plans/voice-alerts.md §1) -----
+//
+// An alert can SPEAK as well as (or instead of) play a sound. Everything below is the
+// CONTENT model — what is said and by which voice. The engine plumbing (system
+// speechSynthesis vs the Kokoro tier) is deliberately absent from these shapes: a def
+// names a mode and, optionally, a voice, and nothing else. The runtime constants that go
+// with these types (the mode list, the char cap, the pref defaults) live beside the
+// resolver in `shared/speechText.ts`, which is the one module both sides already import.
+
+/**
+ * WHAT an alert says when it speaks.
+ *  - 'custom'         → the def's own `phrase`, verbatim.
+ *  - 'alertName'      → the alert's display name. Also the universal FALLBACK: a spell mode
+ *                       on a firing that carries no spell resolves here rather than to
+ *                       silence or to a guess (world-model law 1).
+ *  - 'spellName'      → the triggering spell's display name, RANK-STRIPPED ("Mesmerization
+ *                       III" → "Mesmerization"). Roman numerals are noise aloud.
+ *  - 'spellFirstWord' → the first word of that rank-stripped name ("Swift Like the Wind" →
+ *                       "Swift"). The owner's headline ask: the shortest useful utterance.
+ */
+export type SpeechMode = 'custom' | 'alertName' | 'spellName' | 'spellFirstWord'
+
+/**
+ * WHICH audio channel a fired alert uses (decision D5). Absent ⇒ 'sound', which is exactly
+ * what every alert written before voice alerts existed meant — so the field is optional and
+ * no migration has to touch a def that never asked to speak.
+ * 'both' plays the sound first and queues the speech after it; cooldowns are unchanged.
+ */
+export type AlertAudio = 'sound' | 'speech' | 'both'
+
+/** Per-alert speech configuration. Absent on a def ⇒ treated as `{ mode: 'alertName' }`. */
+export interface AlertSpeech {
+  mode: SpeechMode
+  /** Required iff mode === 'custom'; capped at MAX_SPEECH_CHARS (shared/speechText.ts). */
+  phrase?: string
+  /** Voice override for this alert; absent ⇒ the global default voice (VoicePrefs.voiceId). */
+  voiceId?: string
+}
+
+/**
+ * The two engine tiers (decision D1). 'system' is Chromium's own `speechSynthesis` (Windows
+ * SAPI voices — zero download, instant); 'kokoro' is the downloaded Kokoro-82M ONNX tier.
+ * Chatterbox is a NAMED SEAM, deliberately not a member.
+ */
+export type SpeechEngine = 'system' | 'kokoro'
+
+/** Global voice preferences (main-owned, persisted under the store's `voice` key). */
+export interface VoicePrefs {
+  /** Master switch. Off by default — an unasked-for feature never speaks. */
+  enabled: boolean
+  engine: SpeechEngine
+  /** Default voice id within the chosen engine; null = "whatever the engine defaults to". */
+  voiceId: string | null
+  /** Speaking rate multiplier, 0.5–2. */
+  rate: number
+  /** 0..1, applied on top of the alerts module's own master volume. */
+  volume: number
+}
+
+/** One voice a tier can speak with, as surfaced to the renderer by `speech:voices`. */
+export interface SpeechVoice {
+  /** engine-scoped id (a SAPI voice URI, or a Kokoro voice name). */
+  id: string
+  /** human label for the picker. */
+  label: string
+  engine: SpeechEngine
+  /** BCP-47 tag when the engine states one ('en-US'); absent when it does not. */
+  lang?: string
+}
+
+/**
+ * Why a speech request could not be served. These are STATES, not errors — the UI says
+ * what is missing instead of failing silently:
+ *  - 'engine-not-installed' → the selected tier has no model/voices on disk yet.
+ *  - 'not-implemented'      → this build ships the channel but not the engine behind it.
+ *  - 'disabled'             → voice is switched off in preferences.
+ *  - 'invalid-request'      → the handler rejected the payload (see ipc/speech.ts).
+ */
+export type SpeechUnavailableReason =
+  | 'engine-not-installed'
+  | 'not-implemented'
+  | 'disabled'
+  | 'invalid-request'
+
+/** Args of `speech:say` — re-validated at the handler, never trusted. */
+export interface SpeechSayRequest {
+  /** the resolved utterance (see `speechTextFor`), already capped by the caller. */
+  text: string
+  /** voice override; absent ⇒ VoicePrefs.voiceId. */
+  voiceId?: string
+}
+
+/**
+ * Reply of `speech:say`. On success `url` is a playable source the renderer hands to its
+ * existing alert audio element (W3 serves `eqspeech://<hash>` from the wav cache).
+ */
+export type SpeechSayResult =
+  | { ok: true; url: string }
+  | { ok: false; reason: SpeechUnavailableReason }
+
+/** Reply of `speech:install` — provisioning a downloadable engine tier. */
+export type SpeechInstallResult =
+  | { ok: true }
+  | { ok: false; reason: SpeechUnavailableReason; message?: string }
+
 /** A single alert definition (persisted, JSON-serializable). */
 export interface AlertDef {
   id: string
@@ -112,6 +217,13 @@ export interface AlertDef {
   cooldownMs?: number
   /** Freeform provenance note (e.g. "authored by agent from: alert me on charm breaks"). */
   note?: string
+  /**
+   * Which audio channel this alert uses (D5). Absent ⇒ 'sound' — the meaning every def
+   * written before voice alerts already had, which is why this is additive and optional.
+   */
+  audio?: AlertAudio
+  /** What to say when `audio` includes speech. Absent ⇒ `{ mode: 'alertName' }`. */
+  speech?: AlertSpeech
 }
 
 /** Global sound preferences (main-owned, persisted). */
@@ -128,6 +240,18 @@ export interface FiredAlert {
   ts: number
   /** The text that matched (raw line for raw/event triggers), for debugging/UI. */
   matchedText: string
+  /**
+   * SPELL CONTEXT for the speech modes (docs/plans/voice-alerts.md §1) — the triggering
+   * spell's DISPLAY name with its rank suffix INTACT ("Mesmerization III"), exactly as the
+   * log spelled it. Rank-stripping is the resolver's job (`speechTextFor`), not the
+   * producer's: a consumer that wants the rank must still be able to see it.
+   *
+   * ABSENT whenever the matched event names no spell — most of the event families, every
+   * 'raw' trigger that matched a spell-less line, and every renderer-evaluated 'app' signal
+   * (bossDefeat / questComplete). Which families DO carry one is enumerated in
+   * `SPELL_FIELD_BY_KIND` (main/modules/alerts.ts). Never synthesized, never guessed.
+   */
+  spell?: string
 }
 
 /** One recorded fire in an alert's recent-fires ring buffer (Task #22). */

@@ -124,6 +124,76 @@ function compileCondition(t: AlertTriggerPrimitive): CompiledCondition {
   return {}
 }
 
+// ---- spell context on the firing payload (docs/plans/voice-alerts.md §1) ----
+//
+// A spoken alert can say the spell that set it off ("Mesmerization", "Swift"), which means the
+// FIRING has to carry it: the renderer receives `FiredAlert`, and before this it carried only
+// the alert id, the timestamp and the matched raw line. Re-deriving the spell renderer-side
+// would mean a second parser for lines main has already parsed.
+//
+// WHICH FIELD NAMES THE SPELL, PER KIND — measured against shared/logEvents.ts, not assumed.
+// Most of the families spell it `spell`; three do not, and the exceptions are the whole reason
+// this is a table instead of a property read:
+//   * poisonProc  → `strike`  (the Strike's own name; a proc has no cast line at all)
+//   * poisonCoat  → `poison`  (and it is the literal string 'unknown' for the generic
+//                              third-person coat line, which is filtered below — 'unknown' is
+//                              a stated absence, not a spell name)
+//   * damage      → `skill`, but ONLY for dtype 'spell' | 'dot' (verified in log/parseCombat.ts:
+//                   the typed-nuke and DoT shapes put the spell name there). For 'melee' it is
+//                   a melee skill and for 'ds' it is the damage-shield element — neither is a
+//                   spell, so neither is claimed. Handled separately, below.
+//
+// FAMILIES THAT CARRY NO SPELL, and therefore fall back to the alert's name when a spell speech
+// mode fires on them: zone, loot, offer, trade, level, expGain, aaGain, aaSpend, aaActivate (an
+// AA name is not a spell), death, playerDeath, mitigation, miss, charm, uncharm, petClaim,
+// spellEmote (the emote text names no spell — that ambiguity is the point of the family),
+// illusionFade (27-way ambiguous by design), poisonDry, stanceChange, invocationChange, selfWho,
+// skillUp, itemActivate, itemMerge, itemMergeFailed, consider, epoch, sessionStart, campStart,
+// campAbort, offlineGap, unknown — plus EVERY 'raw' trigger that matched a spell-less line and
+// every renderer-evaluated 'app' signal (bossDefeat / questComplete, which arrive via appFired
+// and never see a LogEvent at all).
+//
+// `cc` and `heal` declare `spell?` — present on some shapes only (a CC application names no
+// spell; its worn-off keep-alive does). An absent field is simply an absent spell.
+
+/** Event kind → the field on that event whose value is the triggering spell's DISPLAY name. */
+const SPELL_FIELD_BY_KIND: Partial<Record<LogEvent['kind'], string>> = {
+  castBegin: 'spell',
+  castFizzle: 'spell',
+  castInterrupted: 'spell',
+  resist: 'spell',
+  cc: 'spell',
+  heal: 'spell',
+  buffApply: 'spell',
+  buffFade: 'spell',
+  buffWearOff: 'spell',
+  buffExpired: 'spell',
+  poisonProc: 'strike',
+  poisonCoat: 'poison'
+}
+
+/**
+ * The spell that set this event off, DISPLAY form with the rank suffix INTACT — or undefined
+ * when the family names none. Rank-stripping belongs to the speech resolver
+ * (shared/speechText.ts), never to the producer: a consumer that wants "Mesmerization III"
+ * must still be able to see the III.
+ *
+ * The one dynamic read mirrors `conditionMatches`'s own field access (the `where` matcher has
+ * always indexed events by an arbitrary key), so this introduces no new escape hatch.
+ */
+function firingSpell(ev: LogEvent): string | undefined {
+  if (ev.kind === 'damage') {
+    return ev.dtype === 'spell' || ev.dtype === 'dot' ? ev.skill.trim() || undefined : undefined
+  }
+  const field = SPELL_FIELD_BY_KIND[ev.kind]
+  if (field === undefined) return undefined
+  const value = (ev as unknown as Record<string, unknown>)[field]
+  if (typeof value !== 'string') return undefined
+  const name = value.trim()
+  // 'unknown' is what a poisonCoat says when the line deliberately hides which poison it was.
+  return name && name !== 'unknown' ? name : undefined
+}
+
 function compileAlert(def: AlertDef): CompiledAlert {
   const t: AlertTrigger = def.trigger
   if ('conditions' in t) {
@@ -212,13 +282,24 @@ export class AlertsModule implements EqModule<AlertsSnap, AlertsDelta> {
     this.noteCast(ev)
     // Fire on LIVE events only — replay must never make a sound.
     if (!live) return
+    // Resolved once per firing (fires are rare), not once per compiled alert.
+    let spell: string | undefined
+    let spellResolved = false
     for (const c of this.compiled) {
       if (!c.def.enabled) continue
       const matchedText = this.matches(c, ev)
       if (matchedText == null) continue
       if (this.onCooldown(c.def, ev.ts)) continue
       this.lastFire.set(c.def.id, ev.ts)
-      this.pending.push({ alertId: c.def.id, ts: ev.ts, matchedText })
+      if (!spellResolved) {
+        spell = firingSpell(ev)
+        spellResolved = true
+      }
+      const fired: FiredAlert = { alertId: c.def.id, ts: ev.ts, matchedText }
+      // Omitted rather than set to undefined: the delta is JSON over IPC, and an absent key
+      // is the honest encoding of "this family names no spell".
+      if (spell !== undefined) fired.spell = spell
+      this.pending.push(fired)
       this.record(c.def.id, ev.ts, matchedText)
     }
   }

@@ -13,6 +13,9 @@
 //                               update bookkeeping — and still no version.
 //   store-v99-future.json       a store from a build that does not exist yet, carrying a key
 //                               this build has never heard of (the downgrade case).
+//   store-v3-alerts.json        the shape every build shipped between class-combo corrections
+//                               and voice alerts: alerts with no `audio`/`speech` at all, plus
+//                               a hand-edited def carrying values no build ever wrote.
 //
 // No Electron, no log, no fixture *replay*: the runner is a pure function over plain objects
 // and the file half takes a path, so this suite is as cheap and as unskippable as
@@ -175,7 +178,13 @@ test('an EMPTY pre-framework store migrates to a valid current store, not to jun
   const { status, to, data } = migrateStoreData({})
   assert.equal(status, 'migrated')
   assert.equal(to, CURRENT_SCHEMA_VERSION)
-  assert.deepEqual(data, { byCharacter: {}, [SCHEMA_VERSION_KEY]: CURRENT_SCHEMA_VERSION })
+  // The EXACT shape, deliberately: every step that writes a key writes it here too, so this
+  // assertion is the one place a new migration has to state what it added to a fresh store.
+  assert.deepEqual(data, {
+    byCharacter: {},
+    voice: { enabled: false, engine: 'system', voiceId: null, rate: 1, volume: 1 },
+    [SCHEMA_VERSION_KEY]: CURRENT_SCHEMA_VERSION
+  })
 })
 
 test('a legacy progress blob is not salvaged over real characters, and empty blobs just go', () => {
@@ -262,21 +271,95 @@ test('PRE-LAUNCH combo corrections are dropped: they belong to the wiped beta ch
   assert.deepEqual(chars['primitive_freeport']['combo'], { corrections: [live] })
 })
 
-test('a store already at v3 is left exactly alone (the no-op case)', () => {
-  const current: StoreData = {
-    [SCHEMA_VERSION_KEY]: 3,
-    byCharacter: { primitive_freeport: { inventory: {}, completedQuests: [], combo: { corrections: [] } } }
+// -------------------------------------------------------------- 3 → 4: voice alerts (§2/D6)
+//
+// Speech is OFF by default — an unasked-for feature that downloads nothing and says nothing
+// until the user turns it on (decision D4). The alert half is TOLERATE-AND-NORMALIZE: a def
+// written before voice existed is already correct (absent `audio` means 'sound', absent
+// `speech` means "say your own name"), so the step never invents either key; what it does is
+// make the v4 shape a promise that any value PRESENT is one this build understands.
+
+const VOICE_OFF = { enabled: false, engine: 'system', voiceId: null, rate: 1, volume: 1 }
+
+test('a v3 store gains the voice prefs blob, and every alert keeps every field it had', () => {
+  const before = fixture('store-v3-alerts.json')
+  const { status, from, to, applied, data } = migrateStoreData(before)
+
+  assert.equal(status, 'migrated')
+  assert.equal(from, 3)
+  assert.equal(to, CURRENT_SCHEMA_VERSION)
+  assert.ok(applied.includes(4))
+  assert.deepEqual(data['voice'], VOICE_OFF)
+
+  const alerts = data['alerts'] as StoreData[]
+  const beforeAlerts = before['alerts'] as StoreData[]
+  assert.equal(alerts.length, 3)
+  assert.deepEqual(alerts[0], beforeAlerts[0], 'a pre-voice alert comes through byte-identical')
+
+  // A valid voice config survives verbatim, alongside every non-voice field.
+  assert.equal(alerts[1]['audio'], 'both')
+  assert.deepEqual(alerts[1]['speech'], { mode: 'spellFirstWord', voiceId: 'sapi:David' })
+  for (const key of ['id', 'name', 'enabled', 'trigger', 'sound', 'volume', 'cooldownMs']) {
+    assert.deepEqual(alerts[1][key], beforeAlerts[1][key], `${key} must survive untouched`)
   }
-  const out = migrateStoreData(current)
-  assert.equal(out.status, 'up-to-date')
-  assert.equal(out.changed, false)
-  assert.equal(out.data, current, 'not even a defensive clone — nothing ran')
+
+  // Values this build does not understand are DROPPED back to the documented default, never
+  // coerced into a different intent: 'shout' does not become 'both', and a def with an unknown
+  // speech mode falls back to speaking its own name.
+  assert.equal('audio' in alerts[2], false, 'an unknown audio action is dropped, not guessed at')
+  assert.equal('speech' in alerts[2], false, 'an unknown speech mode takes the whole block with it')
+  assert.deepEqual(alerts[2]['trigger'], beforeAlerts[2]['trigger'], 'the rest of the def is untouched')
+
+  // Nothing else in a v3 store moves.
+  for (const key of ['byCharacter', 'activeLogPath', 'alertPrefs', 'overlays']) {
+    assert.deepEqual(data[key], before[key], `${key} must survive untouched`)
+  }
+})
+
+test('an EXISTING voice blob is repaired field by field, never replaced wholesale', () => {
+  // The user's "on" survives; an engine this build has never heard of does not silently become
+  // the other tier's meaning; the out-of-range knobs are clamped rather than discarded.
+  const messy = { enabled: true, engine: 'chatterbox', voiceId: '  ', rate: 99, volume: -2 }
+  const { data } = migrateStoreData({ [SCHEMA_VERSION_KEY]: 3, voice: messy })
+  assert.deepEqual(data['voice'], { ...VOICE_OFF, enabled: true, rate: 2, volume: 0 })
+  // A garbage blob of any type still lands on a legal shape, and a store with no alerts key
+  // gains the blob without the migration inventing an alert list (store.ts owns seeding).
+  for (const junk of [null, 42, 'nonsense', [], true, undefined]) {
+    const out = migrateStoreData({ [SCHEMA_VERSION_KEY]: 3, voice: junk })
+    assert.deepEqual(out.data['voice'], VOICE_OFF)
+    assert.equal('alerts' in out.data, false)
+  }
+})
+
+test('malformed alert voice fields are dropped and over-long phrases capped — by the MIGRATION', () => {
+  // So no reader downstream has to re-check them. A phrase, a non-object speech block, and an
+  // entry that is not an alert at all: none may throw, and none may take a sibling with it.
+  const { data } = migrateStoreData({
+    [SCHEMA_VERSION_KEY]: 3,
+    alerts: [
+      { id: 'a', name: 'A', audio: 'speech', speech: { mode: 'custom', phrase: 'x'.repeat(400) } },
+      { id: 'b', name: 'B', speech: 'loud', audio: 7 },
+      'not an alert'
+    ]
+  })
+  const alerts = data['alerts'] as unknown[]
+  const first = alerts[0] as StoreData
+  assert.equal((first['speech'] as StoreData)['phrase'], 'x'.repeat(120))
+  assert.equal(first['audio'], 'speech')
+  const second = alerts[1] as StoreData
+  assert.deepEqual(second, { id: 'b', name: 'B' }, 'both junk fields go; the rest is preserved')
+  assert.equal(alerts[2], 'not an alert', 'a non-object entry is passed through, never thrown on')
 })
 
 // ------------------------------------------------------------------------ idempotence
 
 test('running the chain twice equals running it once, for every fixture', () => {
-  for (const name of ['store-v1-first-build.json', 'store-v1-pre-framework.json', 'store-v2-characters.json']) {
+  for (const name of [
+    'store-v1-first-build.json',
+    'store-v1-pre-framework.json',
+    'store-v2-characters.json',
+    'store-v3-alerts.json'
+  ]) {
     const once = migrateStoreData(fixture(name))
     const twice = migrateStoreData(once.data)
     assert.equal(twice.status, 'up-to-date', `${name}: a migrated store has nothing left to do`)
