@@ -217,6 +217,21 @@ export const IPC = {
   // length cap), never trusted because today's only caller is the app's own UI.
   clipboardWrite: 'clipboard:write',
 
+  // ---- in-app feedback (Task #65 — docs/plans/feedback-triage.md §4.3) ----
+  // renderer -> main: the dialog's header context (versions, channel, queued count,
+  // whether this build has an endpoint compiled in). Returns FeedbackContext.
+  feedbackContext: 'feedback:context',
+  // renderer -> main: build the scrubbed log slice for a window (minutes) and return a
+  // CAPPED preview + the real counts. The bytes never cross IPC — only PREVIEW_MAX_LINES
+  // of text plus the metadata. Returns FeedbackSlicePreview | null.
+  feedbackBuildSlice: 'feedback:buildSlice',
+  // renderer -> main: save the FULL slice to disk via the OS save dialog, so a user who
+  // wants to read every byte before sending can. Returns {ok, path?, canceled?}.
+  feedbackSaveSlice: 'feedback:saveSlice',
+  // renderer -> main: submit. Args (draft, {attachLog, windowMinutes}). Never rejects;
+  // a network failure resolves with {ok:false, queued:true}. Returns SubmitResult.
+  feedbackSubmit: 'feedback:submit',
+
   // ---- misc pushes ----
   onLine: 'log:line',
   onCharacter: 'log:character',

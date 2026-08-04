@@ -21,6 +21,8 @@ import OverviewView from './features/overview/OverviewView'
 import AlertsView from './features/alerts/AlertsView'
 import BuffsView from './features/buffs/BuffsView'
 import PreferencesView from './features/preferences/PreferencesView'
+import FeedbackDialog from './features/feedback/FeedbackDialog'
+import { useFeedbackDialog, type FeedbackPrefill } from './features/feedback/useFeedback'
 import AlertPlayer, { fireAppSignal } from './features/alerts/player'
 import { getBossData } from './data'
 import { useBossKills } from './features/bosses/useBossKills'
@@ -159,7 +161,8 @@ function ViewContent({
   routing,
   onOpenPreferences,
   onOpenLoot,
-  onOpenLeveling
+  onOpenLeveling,
+  onSendFeedback
 }: {
   view: View
   hasCharacters: boolean
@@ -167,12 +170,14 @@ function ViewContent({
   routing: AppRouting
   onOpenPreferences: () => void
   onOpenLoot: () => void
+  /** Preferences' Feedback section opens the app-level dialog, preselecting a type. */
+  onSendFeedback: (prefill?: FeedbackPrefill) => void
   /** Overview's leveling card → the Leveling tab. A PLAIN tab switch, so it rides here beside
    *  `onOpenLoot` rather than in `AppRouting`: that hook is for DEEP links, and its nonce
    *  machinery exists to re-deliver a PAYLOAD. This destination carries none. */
   onOpenLeveling: () => void
 }): JSX.Element {
-  if (view === 'preferences') return <PreferencesView />
+  if (view === 'preferences') return <PreferencesView onSendFeedback={onSendFeedback} />
   if (!hasCharacters) return <NoLogsEmptyState onOpenPreferences={onOpenPreferences} />
   return (
     <>
@@ -322,6 +327,9 @@ export default function App(): JSX.Element {
   const [questToast, setQuestToast] = useState<string | null>(null)
 
   const [rebuild, setRebuild] = useState(0)
+  // The feedback dialog's open-state + seed (Task #65). Also picks up a crash parked by the
+  // ErrorBoundary's "Report this", which reloads the window to get here.
+  const feedback = useFeedbackDialog()
 
   const routing = useAppRouting(setView)
   const { openMob } = routing
@@ -394,7 +402,7 @@ export default function App(): JSX.Element {
 
       {/* Everything below the bar: nav drawer + main content, side by side. */}
       <Box sx={{ display: 'flex', flexGrow: 1, minHeight: 0 }}>
-        <NavDrawer view={view} onSelect={setView} />
+        <NavDrawer view={view} onSelect={setView} onSendFeedback={() => feedback.openFeedback()} />
 
         <Box
           component="main"
@@ -409,6 +417,7 @@ export default function App(): JSX.Element {
               onOpenPreferences={() => setView('preferences')}
               onOpenLoot={() => setView('loot')}
               onOpenLeveling={() => setView('leveling')}
+              onSendFeedback={feedback.openFeedback}
             />
           </Box>
         </Box>
@@ -423,6 +432,11 @@ export default function App(): JSX.Element {
         onDismissDefeat={() => setDefeatToast(null)}
         onDismissQuest={() => setQuestToast(null)}
       />
+
+      {/* Feedback is a DIALOG, not a view (appViews.ts is untouched), so it is hosted here and
+          opened from the nav footer, from Preferences, and by the ErrorBoundary's "Report this"
+          (which reloads and lands a prefilled bug — see useFeedbackDialog). */}
+      <FeedbackDialog open={feedback.open} onClose={feedback.close} prefill={feedback.prefill} />
     </Box>
   )
 }

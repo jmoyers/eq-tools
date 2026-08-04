@@ -11,6 +11,7 @@ import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import PetsIcon from '@mui/icons-material/Pets'
 import MapIcon from '@mui/icons-material/Map'
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard'
+import FeedbackIcon from '@mui/icons-material/Feedback'
 import UpdateChip from './UpdateChip'
 import type { View } from '../appViews'
 
@@ -84,10 +85,14 @@ function NavRowButton({
  */
 export default function NavDrawer({
   view,
-  onSelect
+  onSelect,
+  onSendFeedback
 }: {
   view: View
   onSelect: (v: View) => void
+  /** Opens the feedback DIALOG (Task #65). Feedback is not a view — appViews.ts is untouched —
+   *  so this row carries a callback instead of a `View`, and never shows a selected state. */
+  onSendFeedback: () => void
 }): JSX.Element {
   return (
     <Drawer
@@ -114,6 +119,14 @@ export default function NavDrawer({
       <Box sx={{ mt: 'auto' }}>
         <Divider />
         <List disablePadding>
+          {/* Send feedback (Task #65): a dialog, so it is a plain action row — no `selected`
+              state to own, because nothing in the nav stays "on" while it is open. */}
+          <ListItemButton data-testid="nav-feedback" onClick={onSendFeedback}>
+            <ListItemIcon>
+              <FeedbackIcon />
+            </ListItemIcon>
+            <ListItemText primary="Send feedback" />
+          </ListItemButton>
           <NavRowButton row={PREFERENCES} view={view} onSelect={onSelect} />
         </List>
         {/* …and directly beneath it, the AMBIENT update affordance (Task #60):

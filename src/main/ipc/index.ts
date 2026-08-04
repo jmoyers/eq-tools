@@ -17,6 +17,7 @@ import { registerAlertsIpc } from './alerts'
 import { registerCharacterIpc } from './character'
 import { registerClipboardIpc } from './clipboard'
 import { registerComboIpc } from './combo'
+import { registerFeedbackIpc } from './feedback'
 import { registerKnowledgeIpc } from './knowledge'
 import { registerMapsIpc } from './maps'
 import { registerShareIpc } from './share'
@@ -35,4 +36,5 @@ export function registerIpc(): void {
   registerMapsIpc()
   registerWindowIpc()
   registerClipboardIpc()
+  registerFeedbackIpc()
 }

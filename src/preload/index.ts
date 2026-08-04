@@ -35,6 +35,12 @@ import type {
 } from '../shared/maps'
 import type { OverlayKind, UpdateStatus } from '../shared/types'
 import type { ShareApplyResult, SharePreview } from '../shared/profiles'
+import type {
+  FeedbackDraft,
+  FeedbackEnv,
+  LogSliceMeta,
+  SubmitErrorCode
+} from '../shared/feedback'
 
 /** Reply of share:saveFile — the OS save dialog either wrote a file or was cancelled. */
 export interface ShareSaveResult {
@@ -44,12 +50,65 @@ export interface ShareSaveResult {
   error?: string
 }
 
+// ---- in-app feedback (Task #65) ----
+//
+// The WIRE contract (draft, env, limits, validators) lives in `src/shared/feedback.ts` — one
+// definition for renderer, main and the ingest Lambda. What follows is the BRIDGE's own reply
+// shapes, which are renderer-facing only and therefore declared here, exactly like
+// `ShareSaveResult` above: main's `src/main/feedback/index.ts` names the same shapes on its own
+// side of the boundary, and neither tsconfig lets the renderer import that file.
+
+/** Reply of feedback:context — everything the dialog needs to render its header + gate Send. */
+export interface FeedbackContext {
+  env: FeedbackEnv
+  /** false when this build has no `FEEDBACK_API_URL` compiled in (every build before wave F2).
+   *  The dialog SAYS so rather than letting Send fail — see docs/plans/feedback-triage.md §6.2. */
+  endpointConfigured: boolean
+  /** Reports waiting in the offline queue. */
+  queued: number
+  /** Is there a character log to slice at all? */
+  logAvailable: boolean
+}
+
+/**
+ * Reply of feedback:buildSlice — the metadata plus a CAPPED preview. The gz BYTES never cross
+ * IPC (§5.4): at most `PREVIEW_MAX_LINES` lines of text do, and `truncatedPreview` says when
+ * that is less than the whole slice, which is what "Save a copy…" exists for.
+ */
+export type FeedbackSlicePreview = LogSliceMeta & {
+  previewLines: string[]
+  truncatedPreview: boolean
+  /** The window ACTUALLY used, after any fit-driven halving — not necessarily the one asked for. */
+  windowMinutes: number
+}
+
+/** Reply of feedback:submit. NEVER a rejection: a network failure resolves with `queued:true`. */
+export type SubmitResult =
+  | { ok: true; reportId: string; logUploaded: boolean }
+  | {
+      ok: false
+      error: SubmitErrorCode
+      message: string
+      queued: boolean
+      /** Set for `invalid_payload` so the dialog can focus the offending input. */
+      field?: string
+      /** Set for `quota_exceeded` — seconds until the daily counter rolls over. */
+      retryAfterSec?: number
+    }
+
+/** Args of feedback:submit's second parameter — re-validated at the handler. */
+export interface SubmitOpts {
+  attachLog: boolean
+  windowMinutes: number
+}
+
 export type { CharacterRef, EqConfig, EqConfigResult, LogLine, LootEvent, ProgressState }
 export type { ModuleDelta, ModuleSnapshot }
 export type { AlertDef, AlertPrefs, SoundData, SoundPack, SpellCatalog, ItemKnowledge, MobKnowledge }
 export type { PackInstallProgress, PackMutationResult, PackPreviewList, RegistryListResult }
 export type { AppFocus, UpdateStatus }
 export type { ShareApplyResult, SharePreview }
+export type { FeedbackDraft, FeedbackEnv, LogSliceMeta, SubmitErrorCode }
 // The combo module rides the generic transport, so the renderer never names these on an API
 // method — re-exported here for the same reason every other module payload is: so a view can
 // say `useModule<ComboSnap, ComboDelta>('combo', …)` without reaching across the tsconfig
@@ -340,6 +399,28 @@ const api = {
    * which also validates the text (non-empty string, length cap).
    */
   writeClipboard: (text: string): Promise<boolean> => ipcRenderer.invoke(IPC.clipboardWrite, text),
+
+  // ---- in-app feedback (Task #65; docs/plans/feedback-triage.md §4.3) ----
+  // All four are PULLS — the dialog asks when it opens. There is deliberately no push channel:
+  // a "queue changed" broadcast would be new surface for no benefit, since the only reader is a
+  // dialog that has to re-open to show it anyway.
+  /** The dialog's header context: versions, channel, queued count, and whether this build has
+   *  an ingest endpoint compiled in at all (it does not, until wave F2 deploys). */
+  getFeedbackContext: (): Promise<FeedbackContext> => ipcRenderer.invoke(IPC.feedbackContext),
+  /** Build the scrubbed slice for a window (minutes) and return the counts + a CAPPED preview.
+   *  `null` when no character log resolves or the window holds nothing. The gz bytes stay in
+   *  main; only `PREVIEW_MAX_LINES` lines of text cross. `windowMinutes` is re-validated at the
+   *  handler against LOG_WINDOW_CHOICES — never trusted because today's only caller is our UI. */
+  buildFeedbackSlice: (windowMinutes: number): Promise<FeedbackSlicePreview | null> =>
+    ipcRenderer.invoke(IPC.feedbackBuildSlice, windowMinutes),
+  /** Write the COMPLETE slice to a user-chosen path via the OS save dialog — the escape hatch
+   *  that makes "you can see exactly what is sent" literally true, not a claim about a preview. */
+  saveFeedbackSlice: (windowMinutes: number): Promise<ShareSaveResult> =>
+    ipcRenderer.invoke(IPC.feedbackSaveSlice, windowMinutes),
+  /** Submit. NEVER rejects: a network failure resolves `{ok:false, queued:true}` and the report
+   *  is retried later; a 4xx resolves `{ok:false, queued:false}` and is not retried. */
+  submitFeedback: (draft: FeedbackDraft, opts: SubmitOpts): Promise<SubmitResult> =>
+    ipcRenderer.invoke(IPC.feedbackSubmit, draft, opts),
 
   // ---- frameless window controls (Task #23) ----
   minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),

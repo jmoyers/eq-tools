@@ -20,6 +20,69 @@ interface State {
   info: React.ErrorInfo | null
 }
 
+/**
+ * Where "Report this" parks the crash before reloading (Task #65).
+ *
+ * The fallback below replaces the WHOLE app — App.tsx is unmounted, so there is no dialog left
+ * to open. So the action stashes the crash in `sessionStorage` (which survives a reload) and
+ * reloads; App.tsx picks it up on mount and opens the feedback dialog prefilled as a bug. That
+ * also matches what the user has to do anyway: the app is broken, it needs reloading.
+ *
+ * The key is exported FROM here rather than imported INTO here on purpose — this file
+ * deliberately imports no app code, because the app (or the theme) may be the crash source.
+ */
+export const CRASH_REPORT_KEY = 'eq.crashReport'
+
+/** Stash the crash for App.tsx, then reload. Never throws: a refusing sessionStorage (or a
+ *  quota) must still get the user their working app back. */
+function reportAndReload(error: Error, info: React.ErrorInfo | null): void {
+  try {
+    sessionStorage.setItem(
+      CRASH_REPORT_KEY,
+      JSON.stringify({
+        message: `${error.name}: ${error.message}`,
+        stack: `${error.stack ?? ''}${
+          info?.componentStack ? `\n\nComponent stack:${info.componentStack}` : ''
+        }`
+      })
+    )
+  } catch {
+    // Reload anyway — a report we could not prefill is better than a stuck window.
+  }
+  location.reload()
+}
+
+const BUTTON: React.CSSProperties = {
+  border: 'none',
+  borderRadius: 6,
+  padding: '10px 18px',
+  fontSize: 14,
+  cursor: 'pointer'
+}
+
+/** The two actions. Reporting is offered FIRST — the crash is most useful to us right now. */
+function CrashActions({ onReport }: { onReport: () => void }): React.ReactElement {
+  return (
+    <div style={{ display: 'flex', gap: 10 }}>
+      <button
+        type="button"
+        data-testid="crash-report"
+        onClick={onReport}
+        style={{ ...BUTTON, background: '#3b82f6', color: '#fff' }}
+      >
+        Report this
+      </button>
+      <button
+        type="button"
+        onClick={() => location.reload()}
+        style={{ ...BUTTON, background: '#2a2f3a', color: '#e6e6e6' }}
+      >
+        Reload
+      </button>
+    </div>
+  )
+}
+
 export class ErrorBoundary extends React.Component<Props, State> {
   state: State = { error: null, info: null }
 
@@ -71,7 +134,8 @@ export class ErrorBoundary extends React.Component<Props, State> {
           <h1 style={{ fontSize: 22, margin: '0 0 8px', color: '#ff6b6b' }}>Something broke</h1>
           <p style={{ margin: '0 0 16px', color: '#b9b9b9' }}>
             The app hit an unrecoverable render error. It has been written to{' '}
-            <code style={{ color: '#e6e6e6' }}>errors.log</code>. You can reload to try again.
+            <code style={{ color: '#e6e6e6' }}>errors.log</code>. Reporting it reloads the app and
+            opens a bug report with this crash filled in.
           </p>
           <div
             style={{
@@ -108,21 +172,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
               {detail}
             </pre>
           </details>
-          <button
-            type="button"
-            onClick={() => location.reload()}
-            style={{
-              background: '#3b82f6',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 6,
-              padding: '10px 18px',
-              fontSize: 14,
-              cursor: 'pointer'
-            }}
-          >
-            Reload
-          </button>
+          <CrashActions onReport={() => reportAndReload(error, info)} />
         </div>
       </div>
     )
