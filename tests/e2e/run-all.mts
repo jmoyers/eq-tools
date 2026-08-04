@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
 const here = dirname(fileURLToPath(import.meta.url))
-const SPECS = ['combat-dashboard.e2e.mts', 'overview.e2e.mts', 'maps.e2e.mts']
+const SPECS = ['combat-dashboard.e2e.mts', 'overview.e2e.mts', 'maps.e2e.mts', 'copy.e2e.mts']
 
 let failed = 0
 for (const spec of SPECS) {

@@ -48,6 +48,14 @@ export const RESIST_COLOR = '#e05663'
  * Feedback is the icon itself flashing to a checkmark for ~1.5s. No toast: this app doesn't nag,
  * and a copy is not an event worth a banner. A clipboard that isn't there (or refuses) logs and
  * changes nothing on screen — a failed copy must never look like a successful one.
+ *
+ * THE COPY GOES THROUGH MAIN (`window.eq.writeClipboard` → `clipboard:write`), not through
+ * `navigator.clipboard.writeText`. The web Clipboard API is permission-gated in Chromium
+ * ('clipboard-sanitized-write') and this app denies EVERY web permission wholesale
+ * (`hardenSession`, src/main/windows.ts), so writeText rejected with `NotAllowedError: Write
+ * permission denied.` on every click — measured in the real app, which is exactly why this
+ * button did nothing. Electron's main-process clipboard consults no permission, so the fix is a
+ * validated IPC hop, never a hole in the permission policy.
  */
 export function CopyButton({
   getText,
@@ -63,17 +71,20 @@ export function CopyButton({
     return () => clearTimeout(t)
   }, [done])
   const copy = (): void => {
-    const clip = navigator.clipboard
-    if (!clip) {
-      // Deliberate console (like lib/ErrorBoundary): main's console-message forwarder is what
-      // puts a renderer failure into errors.log, and a failed copy must leave a trace there
-      // rather than silently looking like a successful one.
-      // eslint-disable-next-line no-console
-      console.error('[everquest-companion:error] copy failed: no clipboard available')
-      return
-    }
-    clip.writeText(getText()).then(
-      () => setDone(true),
+    // Main answers false for a payload it refused to write (empty / oversized), so the
+    // checkmark tracks what actually reached the clipboard rather than that a call was made.
+    window.eq.writeClipboard(getText()).then(
+      (ok) => {
+        if (ok) {
+          setDone(true)
+          return
+        }
+        // Deliberate console (like lib/ErrorBoundary): main's console-message forwarder is what
+        // puts a renderer failure into errors.log, and a failed copy must leave a trace there
+        // rather than silently looking like a successful one.
+        // eslint-disable-next-line no-console
+        console.error('[everquest-companion:error] copy failed: nothing was written')
+      },
       // eslint-disable-next-line no-console
       (err: unknown) => console.error('[everquest-companion:error] copy failed', err)
     )

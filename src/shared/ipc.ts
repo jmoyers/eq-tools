@@ -205,6 +205,18 @@ export const IPC = {
   // Returns ShareApplyResult, incl. the localStorage writes the renderer must perform.
   shareApply: 'share:apply',
 
+  // ---- clipboard (the combat "Copy this view as text" buttons) ----
+  // renderer -> main: put plain text on the OS clipboard. Arg: text. Returns boolean (written).
+  // WHY THIS IS AN IPC CHANNEL AND NOT `navigator.clipboard.writeText`: the async Clipboard API
+  // is permission-gated in Chromium ('clipboard-sanitized-write'), and this app denies EVERY
+  // web permission wholesale (`hardenSession` in src/main/windows.ts — deliberate, deny-by-
+  // default policy). So writeText rejects with `NotAllowedError: Write permission denied.` in
+  // every window, verified in the real app. Electron's main-process `clipboard` module is not a
+  // web API and consults no permission, so the copy goes through here instead — the policy
+  // stays shut and the feature works. The text is VALIDATED AT THE HANDLER (non-empty string,
+  // length cap), never trusted because today's only caller is the app's own UI.
+  clipboardWrite: 'clipboard:write',
+
   // ---- misc pushes ----
   onLine: 'log:line',
   onCharacter: 'log:character',

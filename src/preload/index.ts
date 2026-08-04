@@ -329,6 +329,18 @@ const api = {
     return () => ipcRenderer.removeListener(IPC.onOverlayState, listener)
   },
 
+  // ---- clipboard ----
+  /**
+   * Put plain text on the OS clipboard; resolves to whether it was written.
+   *
+   * The renderer's own `navigator.clipboard.writeText` CANNOT do this here: it is gated on
+   * Chromium's 'clipboard-sanitized-write' permission and this app denies every web permission
+   * wholesale, so it rejects with `NotAllowedError: Write permission denied.` in every window.
+   * Main's `clipboard` module is not a web API and needs no permission — see ipc/clipboard.ts,
+   * which also validates the text (non-empty string, length cap).
+   */
+  writeClipboard: (text: string): Promise<boolean> => ipcRenderer.invoke(IPC.clipboardWrite, text),
+
   // ---- frameless window controls (Task #23) ----
   minimizeWindow: (): void => ipcRenderer.send(IPC.windowMinimize),
   toggleMaximizeWindow: (): void => ipcRenderer.send(IPC.windowToggleMaximize),
